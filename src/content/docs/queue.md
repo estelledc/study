@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**statelyai/xstate** — Season 2 第二篇，把"看似简单的状态"画成图。
+**TanStack/router** — Season 2 第三篇，类型系统当 UX 工具。
 
 ---
 
@@ -35,7 +35,7 @@ sidebar:
 | # | 项目 | 关键判断 |
 |---|------|---------|
 | 5 | [colinhacks/zod](/study/projects/zod/) ✅ | schema-first：编译期类型 + 运行时校验同源 |
-| 6 | statelyai/xstate | 把"看起来简单的状态"画成图——很多 bug 是状态机没画 |
+| 6 | [statelyai/xstate](/study/projects/xstate/) ✅ | 把"看起来简单的状态"画成图——很多 bug 是状态机没画 |
 | 7 | TanStack/router | 类型系统当 UX 工具：路由、loader、search params 全都类型推断 |
 | 8 | trpc/trpc | 协议消失：函数即 API，类型从 server 流到 client |
 
@@ -89,6 +89,7 @@ sidebar:
 - [zustand](/study/projects/zustand/)（2026-05-27）
 - [vercel/swr](/study/projects/swr/)（2026-05-27）— Season 1 完成
 - [colinhacks/zod](/study/projects/zod/)（2026-05-27）— Season 2 开篇
+- [statelyai/xstate](/study/projects/xstate/)（2026-05-27）
 
 ---
 
