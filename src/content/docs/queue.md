@@ -1,178 +1,104 @@
 ---
 title: 推荐队列
-description: 围绕"AI 时代产品工程师"成长路径的 GitHub 项目推荐清单
+description: 围绕"未来工程师"7 条信念精选的 20 个项目——按季度展开
 sidebar:
   order: 2
 ---
 
-> **入选标准**：和你当前做的事或目标画像有具体连接（不是"出名所以学"）。
-> **顺序**：簇内大致按"上手成本低 → 高 / 与当前工作连接强 → 弱"。
-> 排序持续会更新——做着做着发现新连接、当前工作方向变了，都会调整。
+> **20 不是 100**。100 是凑数，凑数学不到判断力。每个项目都满足
+> [立场宣言](/study/about/) 里的 5 条挑选标准，并且能展开**横向对比**——
+> "为什么是它而不是它的同类"才是这个站点的核心产出。
 
 ## 进行中
 
-无（等待 cron 下次触发）
+**vercel/swr** — Season 1 收尾，对照 TanStack Query 看同一问题的两种回答。
 
 ---
 
-## 待消化（按主题簇排序）
+## 五个季度（约 8-10 个月慢笔记）
 
-### 簇 1 · 前端基础原子层（14 / 让真实 React 产品成为肌肉记忆）
+### Season 1 · 状态与心智模型（3 / 4 完成）
 
-1. **pmndrs/zustand** — 极简状态管理 · `zustand`
-3. **radix-ui/primitives** — 无样式组件原语 + a11y · `radix-primitives`
-4. **tailwindlabs/tailwindcss** — utility-first CSS 范式本身 · `tailwindcss`
-5. **colinhacks/zod** — schema-first 类型 + 运行时校验 · `zod`
-6. **react-hook-form/react-hook-form** — 表单状态最小化 · `react-hook-form`
-7. **framer/motion** — 声明式动画 · `framer-motion`
-8. **floating-ui/floating-ui** — popover/tooltip 几何引擎 · `floating-ui`
-9. **TanStack/table** — headless 表格 · `tanstack-table`
-10. **tldraw/tldraw** — canvas + 状态机（设计灵感） · `tldraw`
-11. **mantinedev/mantine** — 完整组件库范式（对比 shadcn） · `mantine`
-12. **mui/material-ui** — 大厂组件库设计哲学（对比研究） · `mui`
-13. **ant-design/ant-design** — 国内生态对照 · `antd`
-14. **TanStack/router** — 类型安全路由 · `tanstack-router`
-15. **vercel/swr** — TanStack Query 之外的另一种数据获取流派 · `swr`
+| # | 项目 | 关键判断 |
+|---|------|---------|
+| 1 | [shadcn/ui](/study/projects/shadcn-ui/) ✅ | 不是组件库，是代码分发协议 |
+| 2 | [TanStack Query](/study/projects/tanstack-query/) ✅ | 服务端状态是独立物种，不是 Redux 的子集 |
+| 3 | [zustand](/study/projects/zustand/) ✅ | 101 行核心 + 反 Provider 派的极简心智 |
+| 4 | vercel/swr | 同问题的另一种回答：stale-while-revalidate vs 请求复用 |
 
-### 簇 2 · 前端构建 + 工程化（10）
+**这一季回答的问题**：状态管理这件事，前端社区在 2024-2026 收敛到了什么共识？哪些"看起来必须"的复杂度其实可以删掉？
 
-16. **vitejs/vite** — 现代构建工具的胜出范式 · `vite`
-17. **evanw/esbuild** — 为什么这么快 · `esbuild`
-18. **swc-project/swc** — Rust-based 编译器替代品 · `swc`
-19. **vercel/turborepo** — monorepo 构建编排 · `turborepo`
-20. **biomejs/biome** — 一个工具替代 ESLint+Prettier · `biome`
-21. **eslint/eslint** — 静态检查器架构 · `eslint`
-22. **prettier/prettier** — opinionated formatter 设计 · `prettier`
-23. **rollup/rollup** — 库打包标杆 · `rollup`
-24. **nrwl/nx** — 企业级 monorepo · `nx`
-25. **changesets/changesets** — 版本管理 + changelog · `changesets`
+---
 
-### 簇 3 · 全栈 + 后端框架（15 / 补 Java 之外的现代后端）
+### Season 2 · 类型当设计工具（验证 + 判断力）
 
-26. **honojs/hono** — 极简边缘函数后端 · `hono`
-27. **t3-oss/create-t3-app** — TS 端到端类型安全栈 · `t3-stack`
-28. **trpc/trpc** — RPC over types · `trpc`
-29. **prisma/prisma** — 现代 ORM 心智 · `prisma`
-30. **drizzle-team/drizzle-orm** — SQL-first ORM 反流派 · `drizzle`
-31. **vercel/next.js** — App Router 范式 · `nextjs`
-32. **remix-run/react-router** — web 平台对齐流派 · `react-router`
-33. **withastro/astro** — content-driven 站点（这站就用这个） · `astro`
-34. **nestjs/nest** — Java 程序员最熟悉的 Node 框架 · `nestjs`
-35. **expressjs/express** — Node 生态基石（最小依赖看 API 设计） · `express`
-36. **fastify/fastify** — 性能向后端框架 · `fastify`
-37. **payloadcms/payload** — headless CMS 范式 · `payload`
-38. **supabase/supabase** — Firebase 开源替代 · `supabase-core`
-39. **pocketbase/pocketbase** — 单二进制 BaaS · `pocketbase`
-40. **directus/directus** — 数据库即 API · `directus`
+| # | 项目 | 关键判断 |
+|---|------|---------|
+| 5 | colinhacks/zod | schema-first：编译期类型 + 运行时校验同源 |
+| 6 | statelyai/xstate | 把"看起来简单的状态"画成图——很多 bug 是状态机没画 |
+| 7 | TanStack/router | 类型系统当 UX 工具：路由、loader、search params 全都类型推断 |
+| 8 | trpc/trpc | 协议消失：函数即 API，类型从 server 流到 client |
 
-### 簇 4 · 大型真实产品（12 / 看代码组织 taste）
+**这一季回答的问题**：类型不只是防御工具，是**设计工具**——不是写完代码再加类型，而是通过类型先把约束讲清楚。
 
-41. **calcom/cal.com** — 复杂日程 SaaS 的代码分层 · `cal-com`
-42. **makeplane/plane** — Linear 开源替代，模块划分 · `plane`
-43. **shadcn-ui/taxonomy** — Next.js App Router 教科书 · `taxonomy`
-44. **excalidraw/excalidraw** — canvas + 协同 · `excalidraw`
-45. **immich-app/immich** — Google Photos 替代，全栈范例 · `immich`
-46. **AppFlowy-IO/AppFlowy** — Notion 替代 · `appflowy`
-47. **logseq/logseq** — 知识管理 + CRDT · `logseq`
-48. **mattermost/mattermost** — Slack 替代，Go+TS 双栈 · `mattermost`
-49. **nocodb/nocodb** — Airtable 替代 · `nocodb`
-50. **ToolJet/ToolJet** — 内部工具平台架构 · `tooljet`
-51. **n8n-io/n8n** — workflow 引擎设计 · `n8n`
-52. **activepieces/activepieces** — Zapier 替代 · `activepieces`
+---
 
-### 簇 5 · AI Agent + LLM 框架（15 / 你的强项延伸）
+### Season 3 · 下钻：构建与运行时（抽象下钻）
 
-53. **anthropics/anthropic-cookbook** — Claude API 权威范式 · `anthropic-cookbook`
-54. **anthropics/courses** — Anthropic 官方教程 · `anthropic-courses`
-55. **anthropics/claude-code** — 元学习：你天天用的工具怎么写的 · `claude-code-internals`
-56. **modelcontextprotocol/servers** — MCP 服务器示例库 · `mcp-servers`
-57. **modelcontextprotocol/typescript-sdk** — MCP SDK 设计 · `mcp-ts-sdk`
-58. **langchain-ai/langgraph** — production patterns（深入） · `langgraph-prod`
-59. **langchain-ai/langchainjs** — JS 生态 LangChain · `langchainjs`
-60. **mastra-ai/mastra** — TS 原生 Agent 框架 · `mastra`
-61. **vercel/ai** — Vercel AI SDK 设计 · `vercel-ai-sdk`
-62. **instructor-ai/instructor** — structured output 范式 · `instructor`
-63. **e2b-dev/e2b** — 沙箱执行 · `e2b`
-64. **microsoft/autogen** — 多 agent 编排 · `autogen`
-65. **crewAIInc/crewAI** — agent 角色协作 · `crewai`
-66. **langgenius/dify** — LLM 应用平台 · `dify`
-67. **langflow-ai/langflow** — 可视化 agent 编排 · `langflow`
+| # | 项目 | 关键判断 |
+|---|------|---------|
+| 9 | evanw/esbuild | 为什么这么快：一个人写的 Go 工程美学 |
+| 10 | vitejs/vite | dev / build 不对称——现代构建工具的胜出范式 |
+| 11 | oven-sh/bun | 全栈运行时的另一条路：性能优先 vs 兼容优先 |
+| 12 | biomejs/biome | 一个工具替代 ESLint + Prettier 的勇气和判断力 |
 
-### 簇 6 · AI 应用范式（8 / 学怎么做产品）
+**这一季回答的问题**：你天天用的 `npm run dev` 背后到底在做什么？为什么 esbuild 比 webpack 快两个数量级？AI 时代的工程师如何下钻到工具链底层？
 
-68. **vercel/ai-chatbot** — 流式 chat UI 范式 · `vercel-ai-chatbot`
-69. **lobehub/lobe-chat** — 完整 chat 应用架构 · `lobe-chat`
-70. **assistant-ui/assistant-ui** — chat UI 组件库 · `assistant-ui`
-71. **continuedev/continue** — IDE 内 AI 助手 · `continue`
-72. **cline/cline** — VSCode AI agent 实现 · `cline`
-73. **block/goose** — 本地 agent 框架 · `goose`
-74. **browserbase/stagehand** — 浏览器 agent · `stagehand`
-75. **browser-use/browser-use** — 浏览器自动化 · `browser-use`
+---
 
-### 簇 7 · DevOps + Infra（10 / 部署能力）
+### Season 4 · AI 协作（元学习）
 
-76. **docker/compose** — 多容器编排基础 · `docker-compose`
-77. **caddyserver/caddy** — 现代 web server · `caddy`
-78. **traefik/traefik** — 反向代理 + 服务发现 · `traefik`
-79. **coollabsio/coolify** — 自托管 Vercel · `coolify`
-80. **dokku/dokku** — 自托管 PaaS · `dokku`
-81. **denoland/deno** — Node 替代品的设计 · `deno`
-82. **oven-sh/bun** — JS 运行时性能流派 · `bun`
-83. **vercel/vercel** — 部署平台 CLI · `vercel-cli`
-84. **railway/cli** — 部署体验对照 · `railway-cli`
-85. **kubernetes/kubernetes** — 节选 controller 模式 · `k8s-controllers`
+| # | 项目 | 关键判断 |
+|---|------|---------|
+| 13 | anthropics/claude-code | 你天天用的工具自己怎么写的——元学习 |
+| 14 | modelcontextprotocol/typescript-sdk | MCP 协议设计：让 AI 调用外部世界的最小契约 |
+| 15 | vercel/ai | Stream / structured / multimodal 的产品化范式 |
+| 16 | continuedev/continue | IDE 内 AI 助手的另一种实现路径 |
 
-### 簇 8 · 质量 + 测试 + 可观测（10）
+**这一季回答的问题**：和 AI 协作不是"按一个按钮"，是一套**新的协议、状态机、产品形态**。当代码生成变便宜，**编辑、审阅、整合**的能力反而稀缺。
 
-86. **vitest-dev/vitest** — 现代 JS 测试框架 · `vitest`
-87. **microsoft/playwright** — E2E 测试标杆 · `playwright`
-88. **testing-library/react-testing-library** — 测试理念 · `testing-library`
-89. **cypress-io/cypress** — E2E 体验对照 · `cypress`
-90. **getsentry/sentry-javascript** — 错误监控集成 · `sentry-js`
-91. **open-telemetry/opentelemetry-js** — 可观测标准 · `otel-js`
-92. **PostHog/posthog** — 产品分析架构 · `posthog`
-93. **statelyai/xstate** — 状态机 in TS · `xstate`
-94. **Effect-TS/effect** — 函数式 TS 设计 · `effect`
-95. **streamich/react-use** — hooks 集合（学习套路） · `react-use`
+---
 
-### 簇 9 · 开发者工具 + 协同（10）
+### Season 5 · 系统编辑 + 验证（真实产品味道）
 
-96. **trigger.dev/trigger.dev** — 后台任务平台 · `trigger-dev`
-97. **novuhq/novu** — 通知基础设施 · `novu`
-98. **mintlify/writer** — 文档站对照 · `mintlify`
-99. **vuejs/vitepress** — Vue 文档站 · `vitepress`
-100. **withastro/starlight** — 你这站用的就是它，元学习 · `starlight-meta`
-101. **yjs/yjs** — CRDT 协同实现 · `yjs`
-102. **excalidraw/mermaid-to-excalidraw** — 小工具的工程性 · `mermaid-to-excalidraw`
-103. **sst/sst** — 全栈 IaC 框架 · `sst`
-104. **sst/opencode** — Claude Code 的开源对照 · `opencode`
-105. **anthropics/skills** — superpowers skills 元学习 · `anthropic-skills`
+| # | 项目 | 关键判断 |
+|---|------|---------|
+| 17 | excalidraw/excalidraw | canvas + 协同的最小心脏，怎么把"画图"做成产品 |
+| 18 | honojs/hono | 极简边缘后端：API 设计取舍如何影响开发体验 |
+| 19 | microsoft/playwright | 浏览器自动化的工程艺术：跨进程、跨语言的契约设计 |
+| 20 | Effect-TS/effect | 函数式错误 + 资源管理——TS 生态的"另一个未来" |
+
+**这一季回答的问题**：当代码生成变便宜，"如何确信这段代码真的对"和"如何把代码组织得能读"会变成区分线。
 
 ---
 
 ## 已消化
 
-- **shadcn-ui/ui**（2026-05-27）→ [笔记](/study/projects/shadcn-ui/)
-- **TanStack/query**（2026-05-27）→ [笔记](/study/projects/tanstack-query/)
+- [shadcn/ui](/study/projects/shadcn-ui/)（2026-05-27）
+- [TanStack Query](/study/projects/tanstack-query/)（2026-05-27）
+- [zustand](/study/projects/zustand/)（2026-05-27）
 
 ---
 
-## 评估标准（cron 自动选项目时参考）
+## 关于"为什么是这 20 个，不是别的"
 
-候选项目要满足至少 3 条：
+这个清单的偏见：
 
-- [ ] star > 5k 或社区活跃（不学小众玩具）
-- [ ] 代码主语言是 TS/JS/Python/Go（Jason 当前栈或近邻）
-- [ ] README/docs 质量高（自学友好）
-- [ ] 能在本机 30 分钟内跑起来 demo（或至少能跑 examples/）
-- [ ] 有清晰的"why this exists"（不为造而造）
-- [ ] 与 Jason 当前工作或 6 个月路线有连接
+- **不收"功能强大但读不出取舍"的项目**——比如 Material UI 的源码读到累，但学不到判断力
+- **不收同类竞品并列**——比如 Mantine 是 shadcn 的同类，已经收了 shadcn，Mantine 进不来
+- **不收维护停滞或商业模式扭曲的项目**——比如 Redux 在原帖（TanStack Query 笔记）里已经做过对照，单独写笔记意义不大
+- **优先收"心脏代码能在 1-2 个文件里读完"的项目**——zustand vanilla.ts (101 行) 是范例
+- **优先收"展示了清晰判断"的项目**——biome 拿掉 ESLint + Prettier 是判断力，不是工具
 
-不取的：
-
-- 纯学术 / paper 实现，没产品落地
-- 维护停滞 > 1 年
-- 单人玩具项目（除非工程艺术性极高，e.g. tinygrad）
-
----
-
+如果你觉得某个项目应该进来或出去，可以提"X 应该进，因为 Y"——
+反例能改我的判断。
