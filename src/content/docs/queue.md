@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**vercel/swr** — Season 1 收尾，对照 TanStack Query 看同一问题的两种回答。
+**colinhacks/zod** — Season 2 开篇，schema-first 把"编译期类型 + 运行时校验"做成同源。
 
 ---
 
@@ -24,7 +24,7 @@ sidebar:
 | 1 | [shadcn/ui](/study/projects/shadcn-ui/) ✅ | 不是组件库，是代码分发协议 |
 | 2 | [TanStack Query](/study/projects/tanstack-query/) ✅ | 服务端状态是独立物种，不是 Redux 的子集 |
 | 3 | [zustand](/study/projects/zustand/) ✅ | 101 行核心 + 反 Provider 派的极简心智 |
-| 4 | vercel/swr | 同问题的另一种回答：stale-while-revalidate vs 请求复用 |
+| 4 | [vercel/swr](/study/projects/swr/) ✅ | 同问题的另一种回答：全局事件广播 vs Query Observer |
 
 **这一季回答的问题**：状态管理这件事，前端社区在 2024-2026 收敛到了什么共识？哪些"看起来必须"的复杂度其实可以删掉？
 
@@ -87,6 +87,7 @@ sidebar:
 - [shadcn/ui](/study/projects/shadcn-ui/)（2026-05-27）
 - [TanStack Query](/study/projects/tanstack-query/)（2026-05-27）
 - [zustand](/study/projects/zustand/)（2026-05-27）
+- [vercel/swr](/study/projects/swr/)（2026-05-27）— Season 1 完成
 
 ---
 
