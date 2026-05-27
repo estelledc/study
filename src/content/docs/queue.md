@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**continuedev/continue** — Season 4 收尾：IDE 内 AI 助手另一种实现。
+**excalidraw/excalidraw** — Season 5 开篇：canvas + 协同的最小心脏。
 
 ---
 
@@ -63,7 +63,7 @@ sidebar:
 | 13 | [anthropics/claude-code](/study/projects/claude-code/) ✅ | 你天天用的工具自己怎么写的——元学习 |
 | 14 | [modelcontextprotocol/typescript-sdk](/study/projects/mcp-ts-sdk/) ✅ | MCP 协议设计：让 AI 调用外部世界的最小契约 |
 | 15 | [vercel/ai](/study/projects/vercel-ai/) ✅ | Stream / structured / multimodal 的产品化范式 |
-| 16 | continuedev/continue | IDE 内 AI 助手的另一种实现路径 |
+| 16 | [continuedev/continue](/study/projects/continue/) ✅ | IDE 内 AI 助手的另一种实现路径 |
 
 **这一季回答的问题**：和 AI 协作不是"按一个按钮"，是一套**新的协议、状态机、产品形态**。当代码生成变便宜，**编辑、审阅、整合**的能力反而稀缺。
 
@@ -99,6 +99,7 @@ sidebar:
 - [anthropics/claude-code](/study/projects/claude-code/)（2026-05-27）— S4 开篇
 - [modelcontextprotocol/typescript-sdk](/study/projects/mcp-ts-sdk/)（2026-05-27）
 - [vercel/ai](/study/projects/vercel-ai/)（2026-05-27）
+- [continuedev/continue](/study/projects/continue/)（2026-05-27）— Season 4 完成
 
 ---
 
