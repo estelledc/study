@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**anthropics/claude-code** — Season 4 开篇：你天天用的工具自己怎么写的（元学习）。
+**modelcontextprotocol/typescript-sdk** — Season 4 第二篇：MCP 协议设计。
 
 ---
 
@@ -60,7 +60,7 @@ sidebar:
 
 | # | 项目 | 关键判断 |
 |---|------|---------|
-| 13 | anthropics/claude-code | 你天天用的工具自己怎么写的——元学习 |
+| 13 | [anthropics/claude-code](/study/projects/claude-code/) ✅ | 你天天用的工具自己怎么写的——元学习 |
 | 14 | modelcontextprotocol/typescript-sdk | MCP 协议设计：让 AI 调用外部世界的最小契约 |
 | 15 | vercel/ai | Stream / structured / multimodal 的产品化范式 |
 | 16 | continuedev/continue | IDE 内 AI 助手的另一种实现路径 |
@@ -96,6 +96,7 @@ sidebar:
 - [vitejs/vite](/study/projects/vite/)（2026-05-27）
 - [oven-sh/bun](/study/projects/bun/)（2026-05-27）
 - [biomejs/biome](/study/projects/biome/)（2026-05-27）— Season 3 完成
+- [anthropics/claude-code](/study/projects/claude-code/)（2026-05-27）— S4 开篇
 
 ---
 
