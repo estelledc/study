@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**trpc/trpc** — Season 2 收尾，协议消失：函数即 API。
+**evanw/esbuild** — Season 3 开篇：为什么这么快。
 
 ---
 
@@ -37,7 +37,7 @@ sidebar:
 | 5 | [colinhacks/zod](/study/projects/zod/) ✅ | schema-first：编译期类型 + 运行时校验同源 |
 | 6 | [statelyai/xstate](/study/projects/xstate/) ✅ | 把"看起来简单的状态"画成图——很多 bug 是状态机没画 |
 | 7 | [TanStack/router](/study/projects/tanstack-router/) ✅ | 类型系统当 UX 工具：路由、loader、search params 全都类型推断 |
-| 8 | trpc/trpc | 协议消失：函数即 API，类型从 server 流到 client |
+| 8 | [trpc/trpc](/study/projects/trpc/) ✅ | 协议消失：函数即 API，类型从 server 流到 client |
 
 **这一季回答的问题**：类型不只是防御工具，是**设计工具**——不是写完代码再加类型，而是通过类型先把约束讲清楚。
 
@@ -91,6 +91,7 @@ sidebar:
 - [colinhacks/zod](/study/projects/zod/)（2026-05-27）— Season 2 开篇
 - [statelyai/xstate](/study/projects/xstate/)（2026-05-27）
 - [TanStack/router](/study/projects/tanstack-router/)（2026-05-27）
+- [trpc/trpc](/study/projects/trpc/)（2026-05-27）— Season 2 完成
 
 ---
 
