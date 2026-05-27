@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**biomejs/biome** — Season 3 收尾：一个工具替代 ESLint+Prettier。
+**anthropics/claude-code** — Season 4 开篇：你天天用的工具自己怎么写的（元学习）。
 
 ---
 
@@ -50,7 +50,7 @@ sidebar:
 | 9 | [evanw/esbuild](/study/projects/esbuild/) ✅ | 为什么这么快：一个人写的 Go 工程美学 |
 | 10 | [vitejs/vite](/study/projects/vite/) ✅ | dev / build 不对称——现代构建工具的胜出范式 |
 | 11 | [oven-sh/bun](/study/projects/bun/) ✅ | 全栈运行时的另一条路：性能优先 vs 兼容优先 |
-| 12 | biomejs/biome | 一个工具替代 ESLint + Prettier 的勇气和判断力 |
+| 12 | [biomejs/biome](/study/projects/biome/) ✅ | 一个工具替代 ESLint + Prettier 的勇气和判断力 |
 
 **这一季回答的问题**：你天天用的 `npm run dev` 背后到底在做什么？为什么 esbuild 比 webpack 快两个数量级？AI 时代的工程师如何下钻到工具链底层？
 
@@ -95,6 +95,7 @@ sidebar:
 - [evanw/esbuild](/study/projects/esbuild/)（2026-05-27）— S3 开篇
 - [vitejs/vite](/study/projects/vite/)（2026-05-27）
 - [oven-sh/bun](/study/projects/bun/)（2026-05-27）
+- [biomejs/biome](/study/projects/biome/)（2026-05-27）— Season 3 完成
 
 ---
 
