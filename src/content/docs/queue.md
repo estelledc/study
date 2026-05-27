@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**vitejs/vite** — Season 3 第二篇：dev/build 不对称的现代答案。
+**oven-sh/bun** — Season 3 第三篇：全栈运行时的另一条路。
 
 ---
 
@@ -48,7 +48,7 @@ sidebar:
 | # | 项目 | 关键判断 |
 |---|------|---------|
 | 9 | [evanw/esbuild](/study/projects/esbuild/) ✅ | 为什么这么快：一个人写的 Go 工程美学 |
-| 10 | vitejs/vite | dev / build 不对称——现代构建工具的胜出范式 |
+| 10 | [vitejs/vite](/study/projects/vite/) ✅ | dev / build 不对称——现代构建工具的胜出范式 |
 | 11 | oven-sh/bun | 全栈运行时的另一条路：性能优先 vs 兼容优先 |
 | 12 | biomejs/biome | 一个工具替代 ESLint + Prettier 的勇气和判断力 |
 
@@ -93,6 +93,7 @@ sidebar:
 - [TanStack/router](/study/projects/tanstack-router/)（2026-05-27）
 - [trpc/trpc](/study/projects/trpc/)（2026-05-27）— Season 2 完成
 - [evanw/esbuild](/study/projects/esbuild/)（2026-05-27）— S3 开篇
+- [vitejs/vite](/study/projects/vite/)（2026-05-27）
 
 ---
 
