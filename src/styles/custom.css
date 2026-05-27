@@ -1,0 +1,11 @@
+:root {
+  --sl-font: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+article h1, article h2, article h3 {
+  letter-spacing: -0.01em;
+}
+
+article table {
+  font-size: 0.95em;
+}
