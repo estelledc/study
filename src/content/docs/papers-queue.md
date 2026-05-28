@@ -20,13 +20,13 @@ sidebar:
 
 ## 进行中
 
-**第 6 篇**：SWE-bench (Jimenez et al., ICLR 2024)（待启动）
+**第 7 篇**：Raft (Ongaro & Ousterhout, USENIX 2014)（Season B 开篇）
 
 ---
 
 ## 4 季度（约 20 篇慢笔记）
 
-### Season A · AI Agent / LLM 系统（4 / 5 完成）
+### Season A · AI Agent / LLM 系统（5 / 5 完成 ✅）
 
 | # | 论文 | 关键判断 |
 |---|------|---------|
@@ -34,7 +34,7 @@ sidebar:
 | 2 | [**Chain-of-Thought Prompting Elicits Reasoning**](/study/papers/cot/) (Wei et al., NeurIPS 2022) ✅ | reasoning trace 为什么有用——ReAct 的根，emergent ability 的支点 |
 | 3 | [**Reflexion: Language Agents with Verbal RL**](/study/papers/reflexion/) (Shinn et al., NeurIPS 2023) ✅ | ReAct 没 retry 的硬伤怎么补——加自我反思层 |
 | 4 | [**Toolformer: LLM Can Teach Themselves to Use Tools**](/study/papers/toolformer/) (Schick et al., 2023) ✅ | 工具调用从 prompt 路线到 self-supervised 微调路线的分叉 |
-| 5 | **SWE-bench: Can LLMs Resolve Real GitHub Issues?** (Jimenez et al., ICLR 2024) | 把 agent 思路从 demo 推到真工程任务的基准 |
+| 5 | [**SWE-bench: Can LLMs Resolve Real GitHub Issues?**](/study/papers/swe-bench/) (Jimenez et al., ICLR 2024) ✅ | 把 agent 思路从 demo 推到真工程任务的基准 |
 
 **这一季回答的问题**：从 ReAct 到 SWE-bench 这 2 年，agent 范式经历了什么取舍？
 chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的 paper 拼成今天的产品形态的？
@@ -95,6 +95,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 - [ReAct (Yao et al., 2022)](/study/papers/react/) **重构版**（2026-05-28）— 用 deep-paper-note 15 步结构 + paper-comic 3 张 sketchnote 图（codex imagegen 生成 + webp 压缩）+ phd-skills 7 阶段复现，作为后续 18 篇的"状元篇"模板
 - [Reflexion (Shinn et al., NeurIPS 2023)](/study/papers/reflexion/)（2026-05-28）— L4 跑了一题 trial-error-reflect 完整循环，用 sr_0 反思修正 trial 2 答案；含 2 张 figure（架构 + Algorithm 1）
 - [Toolformer (Schick et al., 2023)](/study/papers/toolformer/)（2026-05-28）— L4 手算 self-supervised filter（Calculator vs Calendar 反例）；含 2 张 figure（pipeline + 两条路线对比）
+- [SWE-bench (Jimenez et al., ICLR 2024)](/study/papers/swe-bench/)（2026-05-28）— L4 读源码确认 F2P/P2P grading 协议；含 2 张 figure（评测流程 + 3-stage 数据 pipeline）。**Season A 完结篇**
 
 ---
 
