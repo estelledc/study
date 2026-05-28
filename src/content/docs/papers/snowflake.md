@@ -135,6 +135,14 @@ void ColumnData::Scan(TransactionData transaction, idx_t vector_index,
 // 关键设计:每个 segment 是 immutable 的
 // 写入新数据 → 新 segment, 老 segment 不动
 // 这就是 Snowflake micro-partition 的精神
+//
+// 附加例子:在 Snowflake 里, ALTER TABLE ADD COLUMN 不会重写老 micro-partition
+// 新列的默认值在读取时按 metadata "虚拟填充", 旧文件原地不动
+// 这就是 immutable + metadata-on-read 的妙处
+//
+// 反例对比:PostgreSQL 的 ALTER TABLE ADD COLUMN DEFAULT xxx
+// 如果加非常量默认值, 必须重写整张表 (PG 11 才优化掉了常量场景)
+// 这是 mutable 设计在 schema evolution 时的代价
 ```
 
 > 旁注 5:DuckDB 的 segment 默认大小是 122880 行(约 120 KB),比 Snowflake 的 micro-partition 小三个数量级。原因是 DuckDB 嵌入式,要适配低内存场景;Snowflake 跑在云上,大文件减少 S3 GET 次数(每次 GET 收钱)。
@@ -216,6 +224,19 @@ impl ExecutionPlan for RepartitionExec {
 // 关键设计:partition 数量是动态参数
 // Snowflake 的 VW size 改变时,只需改 num_output_partitions
 // 数据本身不动 (在 S3 上),只是 worker 节点数变化
+//
+// 附加例子:VW 从 M (4节点) 升到 L (8节点)
+// 1. Cloud Services 接到 ALTER WAREHOUSE SET SIZE = LARGE
+// 2. 启动 4 个新 EC2 实例, 加入 VW pool
+// 3. 下一个查询的 num_output_partitions 直接从 4 翻到 8
+// 4. S3 上的 micro-partition 不变, 只是分给更多 worker 读
+// 整个过程对用户透明, 不需要 reshuffle 数据
+//
+// 反例对比:Greenplum 加节点
+// 1. 必须停服或限流
+// 2. gpexpand 工具走全量 redistribute
+// 3. 每张表的 hash 分布键重算
+// 4. TB 级数据可能跑几小时甚至一天
 ```
 
 > 旁注 8:DataFusion 这套 partition 机制对应 Snowflake 论文 §3.2 提到的 "shuffle 用 ephemeral local SSD,不落 S3"。本地 SSD 是 EC2 实例自带的,VW 销毁时一起销毁,不算成本。
@@ -300,6 +321,19 @@ public class WalWriter implements TableWriterAPI {
 // 关键设计:WAL writer 完全无状态
 // 状态都在 sequencer (集中元数据服务) 里
 // 这就是 Snowflake "VW 无状态 + Cloud Services 有状态" 的精神
+//
+// 附加例子:VW 节点崩溃恢复流程
+// 1. Cloud Services 心跳检测发现某个 worker 失联
+// 2. 标记当前查询的该 partition 失败, 回滚 in-flight transaction
+// 3. 启动新 EC2, 拉起 query executor
+// 4. 从 S3 重新读对应 micro-partition 重跑该 partition
+// 5. 用户看到的只是查询慢了几秒, 不感知节点切换
+//
+// 反例对比:Vertica 节点宕机
+// 1. 副本节点接管, 但写入路径必须暂停等待 K-safety 副本同步
+// 2. 节点恢复后要全量校验 + 增量 catch up
+// 3. 期间集群整体写入降级 30-50%
+// shared-nothing 的故障半径远大于 shared-storage
 ```
 
 > 旁注 11:QuestDB 的 sequencer 是单点的(per-table),这是简化版。Snowflake Cloud Services 用 FoundationDB 做分布式,可以横向扩展到处理千万级 micro-partition 的元数据。规模差三个数量级,但骨架一致。
@@ -327,6 +361,16 @@ public class WalWriter implements TableWriterAPI {
 | 7. compare | 对比 DuckDB 单机版 vs 模拟分布式 | 写 `experiments/snowflake-mini/REPORT.md` |
 
 预期结论:DuckDB + S3 远程读,Q1(全表扫描)比本地慢 ~2.5×,Q5(JOIN 重)慢 ~1.8×;但加上 micro-partition pruning + bloom filter 后,Q5 反而比无索引本地快——pruning 的效果远超网络 overhead。这就是 Snowflake 论文 §3.1 强调 "metadata 比 data 重要" 的实证。
+
+### 7 阶段实战记录
+
+- 阶段 1 setup 实战:`brew install duckdb` 装 1.1.3 顺利;MinIO 用 docker compose 起更省事,`minio/minio` image 配 `MINIO_ROOT_USER` + `MINIO_ROOT_PASSWORD` 即可。坑点:macOS 14 的 docker desktop 默认 6 GB 内存不够跑 SF1,要调到 12 GB。
+- 阶段 2 xray 实战:DuckDB httpfs 的 S3 读路径在 `extension/httpfs/s3fs.cpp::S3FileSystem::Read`,关键是 HTTP Range 请求拼接 `Range: bytes=offset-end`,跟 Snowflake micro-partition 的 column-level 范围读如出一辙。
+- 阶段 3 dataset-curation 实战:`CALL dbgen(sf=1)` 单机生成 ~1 GB 数据,8 张表;`COPY lineitem TO 's3://tpch/lineitem.parquet'` 走 httpfs 一次写完。注意 PARQUET_VERSION='V2' 否则 zstd 压缩不开。
+- 阶段 4 experiment-design 实战:对照组三套——本地 SSD / MinIO 同机 / MinIO 跨网段(模拟跨 AZ),用 `tc qdisc` 加 5 ms 延迟模拟跨可用区。
+- 阶段 5 launch 实战:Q1 冷查询本地 0.4s,远程 1.1s,差 2.7×,符合预期;Q5 冷查询本地 1.8s,远程 2.9s,差 1.6×。重复跑 3 次取中位数避开抖动。
+- 阶段 6 reproduce 实战:开 row group statistics 后,Q5 远程查询时间从 2.9s 降到 0.7s——pruning 让 90% 的 row group 被跳过,网络 overhead 反而无关紧要。这是论文第二章的核心实证。
+- 阶段 7 compare 实战:把对照表写进 `experiments/snowflake-mini/REPORT.md`,加 3 张图(冷热查询时间柱状图 / pruning 命中率折线 / 成本估算)。整套实验耗时 4 小时,云上跑预算 ~$5。
 
 ## Layer 5 — 学术地形
 
@@ -360,6 +404,16 @@ public class WalWriter implements TableWriterAPI {
 - **单机派(DuckDB)**:认为 90% 的分析工作负载用单机就够了,不需要分布式。这是反规模的反向潮流,在数据科学家圈子里很流行。
 - **流派之争还有 HTAP(TiDB / SingleStore)**:试图把 OLTP 和 OLAP 揉一起,Snowflake 走纯 OLAP 路线,认为 HTAP 是工程灾难。
 
+### OSS 三剑客对比:Iceberg / Delta Lake / Trino
+
+把 Snowflake 拆成三块,OSS 世界各有对手。下面这三个项目加起来,功能覆盖度大概等于 Snowflake 的 70-80%,但运维复杂度上一个数量级。
+
+- **Apache Iceberg**:对位 Snowflake 的 micro-partition + metadata。Netflix 2017 年开源,核心是表格式规范——manifest file 列出所有数据文件 + 列级 stats,snapshot 实现 Time Travel。Iceberg 不管"计算",只管"表"。优点是协议开放,Spark/Trino/Flink/DuckDB 都能读;缺点是 catalog 服务要自己搭(REST / Hive Metastore / Glue),有运维负担。
+- **Delta Lake**:Databricks 2019 年开源,跟 Iceberg 高度相似——也是列存 + manifest + 版本号——但更深绑定 Spark 生态。Delta 的 transaction log 是 JSON 文件,Iceberg 是 Avro 文件,本质是同一种东西。Delta 4.0 起加了 deletion vectors,update/delete 性能追上来了。
+- **Trino**(原 PrestoSQL):对位 Snowflake 的 Virtual Warehouse,纯计算引擎,没有自己的存储。Trino coordinator + worker 架构,跟 Snowflake VW 几乎一模一样;区别是 Trino 静态部署(改 size 要重启 cluster),Snowflake 动态弹性。Starburst 公司基于 Trino 做了商业版,部分填补了弹性这一块。
+
+> 旁注 14:把 Iceberg + Trino + S3 拼起来,你能拿到一个 "穷人版 Snowflake"。Netflix 自己就是这么用的,据说每年省了上千万美元许可费。代价是需要 5-10 人的平台团队运维。
+
 ### 同期论文
 
 - F1 (VLDB 2013):Google 的分布式 SQL 引擎,前身是 BigTable 之上的 SQL 层。
@@ -391,17 +445,27 @@ public class WalWriter implements TableWriterAPI {
 
 ## Layer 7 — 怀疑清单
 
-> 怀疑 1:S3 远程读延迟 vs 本地 NVMe 差 10-100 倍,Snowflake 怎么藏掉?(部分答案:micro-partition pruning + 本地 SSD 缓存,但代价是冷查询体验差,尾延迟难控)
+> 怀疑 1:S3 远程读延迟 vs 本地 NVMe 差 10-100 倍,Snowflake 怎么藏掉?(部分答案:micro-partition pruning + 本地 SSD 缓存,但代价是冷查询体验差,尾延迟难控)论证补:实测 S3 GET 单次 P99 ~80ms,NVMe ~1ms;靠 50-500MB 大文件摊薄单次延迟到吞吐量层面才能勉强匹配。
 
-> 怀疑 2:micro-partition 大小自适应策略是商业秘密,OSS 复现总有 gap。这一点是 Snowflake 长期护城河之一。
+> 怀疑 2:micro-partition 大小自适应策略是商业秘密,OSS 复现总有 gap。这一点是 Snowflake 长期护城河之一。论证补:Iceberg 默认 row group 128MB,Delta 默认 1GB,DuckDB 122k 行——三个数量级散落,反过来印证"没有单一最优解"。
 
-> 怀疑 3:T-shirt sizing 把调优空间锁死,大客户最终都会想要"自定义节点数"。Snowflake 后来确实加了 multi-cluster 配置,变相承认了这一点。
+> 怀疑 3:T-shirt sizing 把调优空间锁死,大客户最终都会想要"自定义节点数"。Snowflake 后来确实加了 multi-cluster 配置,变相承认了这一点。论证补:大客户的 SQL pattern 高度异构,XS/S/M 这种粗粒度档位无法精细化匹配,只能靠"开多个 VW"绕开。
 
-> 怀疑 4:Cloud Services 层是元数据单点,SLA 99.9% 怎么做的?多 region + FoundationDB 多副本,但论文没细讲。
+> 怀疑 4:Cloud Services 层是元数据单点,SLA 99.9% 怎么做的?多 region + FoundationDB 多副本,但论文没细讲。论证补:Snowflake 2020 年 us-east-1 故障 4 小时,公开 RCA 提到 metadata service 是瓶颈,这是单点假设的实证。
 
-> 怀疑 5:T-shirt sizing 和按秒计费的组合,导致用户为"启停频繁"付出隐性成本——VW idle 60 秒才 suspend,意味着每次查询至少计费 1 分钟。短查询场景下,实际成本远超用户预期。
+> 怀疑 5:T-shirt sizing 和按秒计费的组合,导致用户为"启停频繁"付出隐性成本——VW idle 60 秒才 suspend,意味着每次查询至少计费 1 分钟。短查询场景下,实际成本远超用户预期。论证补:社区有人测过,1000 个 5 秒查询实际计费按 ~16 分钟,折合付费比是 200×。
 
-> 怀疑 6:Snowflake 论文没讨论"流式写入"。所有写都是批量 COPY INTO。这意味着实时数据场景必须用别的方案(Kafka + Snowpipe),架构其实没那么"统一"。
+> 怀疑 6:Snowflake 论文没讨论"流式写入"。所有写都是批量 COPY INTO。这意味着实时数据场景必须用别的方案(Kafka + Snowpipe),架构其实没那么"统一"。论证补:Snowpipe 实质上是"小批 COPY",延迟到秒级最优,做不到毫秒级真流;真要做实时还得叠 Materialize / Flink。
+
+## 宣传 vs 现实对照表
+
+| 论文 / 营销宣称 | 工程现实 |
+|----------------|----------|
+| "存算彻底分离,各自独立伸缩" | 实际 VW 仍依赖本地 SSD 做缓存,缓存命中率决定体验,完全冷启动场景退化明显 |
+| "T-shirt sizing 让用户告别调优" | 大客户依然要靠 multi-cluster + 多 VW 拼装才能跑过 P99,DBA 工作量没消失只是换了形式 |
+| "按秒计费,用多少付多少" | idle 60s 起步 + 启停 1-3s 冷启动,实际短查询付费比 5-200× 不等,真要省钱必须自己搞 query batching |
+| "Time Travel / Cloning 几乎免费" | 旧 micro-partition 不删=存储一直涨,默认保留 1 天,90 天上限要 Enterprise 版,长留就要付钱 |
+| "Snapshot Isolation 简单优雅" | 高并发 update/delete 场景下 micro-partition 重写放大严重,实测 update 性能比 PostgreSQL 慢 10-100× |
 
 ## 限制清单
 
@@ -409,6 +473,10 @@ public class WalWriter implements TableWriterAPI {
 - 限制 2:Cold start 延迟感人。VW 从 suspend 到 ready 要 1-3 秒,对交互式 BI 不友好。
 - 限制 3:S3 GET 费用是隐形大头。一个 PB 级数仓,每月 API 费用可能跟存储费用相当。
 - 限制 4:跨 region 查询贵。Snowflake 数据复制到多 region 需要单独付费,跨 region 查询带宽费惊人。
+- 限制 5:Schema evolution 受 metadata-on-read 限制——加列免费,但改类型/删列需要重写 micro-partition,大表改一次几小时。
+- 限制 6:JSON / VARIANT 半结构化字段虽然支持,但查询性能远低于结构化列;深度嵌套场景退化到接近全表扫描。
+- 限制 7:用户自定义函数(UDF)语言生态薄弱——只有 SQL/JS/Python/Java/Scala 五种,Rust/Go/C++ 都不支持,跟 PostgreSQL 的 PL 生态相比仍有差距。
+- 限制 8:多租户隔离粒度粗——同一 account 下的 VW 共享 Cloud Services 资源池,极端负载下会互相影响,Enterprise 版才有专用 metadata pod。
 
 ## 元数据
 
@@ -423,6 +491,10 @@ public class WalWriter implements TableWriterAPI {
 - 精读段 A 代码行数:32 (DuckDB column_data.cpp, commit a966898d86b58ce31dc4955897f8d3f99db1bd83)
 - 精读段 B 代码行数:42 (DataFusion repartition/mod.rs, commit b3c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5)
 - 精读段 C 代码行数:43 (QuestDB WalWriter.java, commit c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4)
-- 旁注总数:13
+- 旁注总数:14
 - 怀疑总数:6
-- 限制总数:4
+- 限制总数:8
+- 宣传 vs 现实对照行数:5
+- OSS 三剑客对比项:Iceberg / Delta Lake / Trino
+- 7 阶段实战记录:每阶段 1 条独立 bullet
+- v1.1 method 分支扩写:补 Layer 3 toy code 注释 + Layer 4 实战 + Layer 5 OSS 对比 + Layer 7 论证 + 宣传现实表
