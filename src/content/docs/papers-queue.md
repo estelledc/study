@@ -20,7 +20,7 @@ sidebar:
 
 ## 进行中
 
-**第 2 篇**：A Prettier Printer (Wadler 1998)（启动中）
+**第 3 篇**：Chain-of-Thought (Wei et al., NeurIPS 2022)（待启动）
 
 ---
 
@@ -57,11 +57,11 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 
 ---
 
-### Season C · 前端 / 编译器 / 工具链（0 / 5 完成）
+### Season C · 前端 / 编译器 / 工具链（1 / 5 完成）
 
 | # | 论文 | 关键判断 |
 |---|------|---------|
-| 11 | **A Prettier Printer** (Wadler, 1998) | esbuild / biome / Prettier 的 IR 思路源头——一个 16 页论文定义了一代 formatter 的设计语言 |
+| 11 | [**A Prettier Printer**](/study/papers/wadler-prettier/) (Wadler, 1998) ✅ | esbuild / biome / Prettier 的 IR 思路源头——一个 16 页论文定义了一代 formatter 的设计语言 |
 | 12 | **Self-Adjusting Computation** (Acar et al., POPL 2002) | Solid / Svelte 5 runes / Jotai 的祖宗——"细粒度响应式"的理论根 |
 | 13 | **Trees that Grow** (Najd & Peyton Jones, JFP 2017) | TypeScript / Babel / SWC 的 AST 设计典范——"扩展点 + 类型安全"如何同时拿到 |
 | 14 | **Push-Pull Functional Reactive Programming** (Elliott, ICFP 2009) | RxJS / SolidJS / Effect 的反应式编程理论——push 和 pull 不是二选一 |
@@ -90,6 +90,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 ## 已消化
 
 - [ReAct (Yao et al., NeurIPS 2022)](/study/papers/react/)（2026-05-28）— L4 用 Claude 跑了 1 题完整 trajectory；与 Brittle Foundations 2024 一并读
+- [A Prettier Printer (Wadler, 1998)](/study/papers/wadler-prettier/)（2026-05-28）— L4 100 行 Python 复现，width=30 输出与论文逐字一致；S3 季节开篇
 
 ---
 
