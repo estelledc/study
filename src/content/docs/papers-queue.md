@@ -20,7 +20,7 @@ sidebar:
 
 ## 进行中
 
-**第 13 篇**：Trees that Grow (Najd & Peyton Jones, JFP 2017)
+**第 14 篇**：Push-Pull Functional Reactive Programming (Elliott, ICFP 2009)
 
 ---
 
@@ -63,7 +63,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 |---|------|---------|
 | 11 | [**A Prettier Printer**](/study/papers/wadler-prettier/) (Wadler, 1998) ✅ | esbuild / biome / Prettier 的 IR 思路源头——一个 16 页论文定义了一代 formatter 的设计语言 |
 | 12 | [**Adaptive Functional Programming / Self-Adjusting Computation**](/study/papers/self-adjusting/) (Acar et al., POPL 2002) ✅ | Solid / Svelte 5 runes / Jotai 的祖宗——"细粒度响应式"的理论根 |
-| 13 | **Trees that Grow** (Najd & Peyton Jones, JFP 2017) | TypeScript / Babel / SWC 的 AST 设计典范——"扩展点 + 类型安全"如何同时拿到 |
+| 13 | [**Trees that Grow**](/study/papers/trees-that-grow/) (Najd & Peyton Jones, JFP 2017) ✅ | TypeScript / Babel / SWC 的 AST 设计典范——"扩展点 + 类型安全"如何同时拿到 |
 | 14 | **Push-Pull Functional Reactive Programming** (Elliott, ICFP 2009) | RxJS / SolidJS / Effect 的反应式编程理论——push 和 pull 不是二选一 |
 | 15 | **Adapton: Composable, Demand-Driven Incremental Computation** (Hammer et al., PLDI 2014) | "增量计算"在编译器与 IDE 工具链的工程实现——rust-analyzer / Salsa 的源头 |
 
@@ -102,6 +102,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 - [Lamport Time-Clocks (1978)](/study/papers/lamport-1978/)（2026-05-28）— L4 3 节点 logical clock + 互斥锁算法手算；含 1 张 figure（影响力地图）
 - [Dynamo (DeCandia et al., SOSP 2007)](/study/papers/dynamo/)（2026-05-28）— L4 5 节点 ring + sloppy quorum + concurrent update 三场景手算；含 1 张 figure（4 大技术四象限）。**Season B 完结篇**
 - [Adaptive Functional Programming (Acar et al., POPL 2002)](/study/papers/self-adjusting/)（2026-05-28）— L4 z=x+y 两阶段（initial + change propagation）手算；含 1 张 figure（mechanism）
+- [Trees that Grow (Najd & Peyton Jones, JFP 2017)](/study/papers/trees-that-grow/)（2026-05-28）— L4 Mini AST 4 phase 共享 traversal 手算；含 1 张 figure（extension fields）
 
 ---
 
