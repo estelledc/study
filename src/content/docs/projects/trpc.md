@@ -762,7 +762,7 @@ OpenAPI 是"我们后端是 Java/Go/Python，前端是 TS"时的好选择——
 
 - 给团队搭一个内部仪表盘——20 个 procedures + tRPC + react-query + tailwind 一周搞定
 - 把已有的 REST 接口包成 tRPC procedure 做渐进迁移（procedure 内部还是 fetch 旧 URL）
-- 给一个 LongCat 工具调用客户端写 tRPC 适配，用 procedure builder 抽象 tool schema
+- 给一个 LLM 工具调用客户端写 tRPC 适配，用 procedure builder 抽象 tool schema
 - 用 splitLink + wsLink 把 subscription 走 WebSocket、query 走 HTTP batch
 
 **不要用 tRPC 的部分**：
