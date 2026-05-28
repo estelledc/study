@@ -1,5 +1,5 @@
 ---
-title: "Drizzle ORM — TS-first SQL builder 与"反 DSL 派"的胜利"
+title: Drizzle ORM — TS-first SQL builder 与「反 DSL 派」的胜利
 description: schema 用纯 TS 写、类型从 schema 推、SQL builder 直接生成 query——一条不绕过 SQL 的 ORM 路线
 sidebar:
   order: 21
