@@ -56,7 +56,21 @@
 
 研究队列持续扩充，不卡 100 上限。已规划方向：
 
-- Season G：编程语言 / 编译器 II（HM 类型 / effect system / incremental compilation）
+### Season G（已规划，待写）
+
+主题：**PL II — 类型/效应系统怎么帮你写对**（Season C 是"编译器怎么把代码处理快"，G 是"类型/效应系统怎么帮你写对"，正交补完）
+
+| # | 论文 | 类型（v1.1） | venue/年 | 关键连接 |
+|---|---|---|---|---|
+| 31 | Principal Type-Schemes for Functional Programs | D theory | Damas & Milner, POPL 1982 | HM 是所有现代类型推断的根，TS/Rust/Swift 都源自此 |
+| 32 | Bidirectional Typing | D theory | Dunfield & Krishnaswami, ACM CSUR 2021 | HM 之后的现代类型系统，TS `as const` / Rust turbofish 来源 |
+| 33 | Salsa 设计 + Adapton 工业演化 | A method/system | Niko Matsakis 2018+ + Hammer 后续 | 直接续 Adapton（C15）—— rust-analyzer / TS incremental compilation 工程化 |
+| 34 | Linear Types Can Change the World | D theory | Wadler, 1990 | Rust 所有权 / move semantics 的祖宗 |
+| 35 | Handlers of Algebraic Effects | A method | Plotkin & Pretnar, ESOP 2009 | async/await / try-catch / generator 的统一抽象，Koka 可跑 L4 |
+
+备选池：Pierce & Turner 2000（Local Type Inference）/ Tofte-Talpin 1997（Region Inference / Rust lifetime 根）/ Kohlbecker 1986（Hygienic Macros）
+
+
 - Season H：多模态 / 视觉理解（DINO / SAM / Grounding DINO 类）
 - Season I：AI safety / interpretability 深化
 - Season J：HCI 程序员认知（cognitive load / debugging / flow）
