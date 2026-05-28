@@ -21,13 +21,34 @@
 
 完整 20 篇清单见 [papers-queue](https://estelledc.github.io/study/papers-queue/)。
 
-## 下一线（待规划）
+## Season E（已规划，待写）
 
-可能方向（任选一项启动新 worktree）：
+主题：**AI Agent 2024 一代 + 跨界基础设施补完**
 
-- Season E：新主题方向（如类型系统 / 数据库内核 / 编译器）
-- 主题导览长文：串联多季论文的判断（agent 范式 2 年取舍、共识协议家族谱系等）
-- 状元篇深化：把某几篇按 ReAct 那种"L4 全复现 + sketchnote"重写
+| # | 论文 | 类型（v1.1） | venue/年 | 关键连接 |
+|---|---|---|---|---|
+| 21 | SWE-agent: Agent-Computer Interfaces | A method | Yang et al., NeurIPS 2024 | Season A 后作必收，Activity Planner 工具 schema 设计参考 |
+| 22 | CLIP: Learning Transferable Visual Models | A method | Radford et al., ICML 2021 | 多模态空缺，H5 海报项目可直接用 embedding 找参考图 |
+| 23 | Spanner: Google's Globally-Distributed Database | A method | Corbett et al., OSDI 2012 | Season B 时间线延续到 2010s，DB 短板入门 |
+| 24 | Kafka: Distributed Messaging for Log Processing | A method | Kreps et al., NetDB 2011 | Activity Planner 的 LangGraph checkpoint 模式同源 |
+| 25 | A Mathematical Framework for Transformer Circuits | D theory | Elhage et al., Anthropic 2021 | Interpretability 入门，理解你天天用的 Claude 内部 |
+
+备选池（如某篇 L4 复现卡住推迟，从这补）：
+- Voyager: Open-Ended Embodied Agent (NeurIPS 2024 D&B) — agent 长期记忆 + skill library
+- Bidirectional Typing (Dunfield & Krishnaswami, CSUR 2021) — TypeScript / Rust 类型推导根
+- Programmer Interruption (Parnin & Rugaber, ICSE 2010) — 23 分钟 flow 恢复
+
+## 后续 Season（roadmap，未细化）
+
+需要写到 100 篇 = 80 篇待规划，按下面这些方向铺开（每季 5 篇）：
+
+- Season F：分布式系统 2.0（FoundationDB / TigerBeetle / Calvin / Aurora 等）
+- Season G：编程语言 / 编译器 II（HM 类型 / effect system / incremental compilation）
+- Season H：多模态 / 视觉理解（DINO / SAM / Grounding DINO 类）
+- Season I：AI safety / interpretability 深化（mechanistic interpretability 后续）
+- Season J：HCI 程序员认知（cognitive load / debugging / pair）
+- Season K：检索 / 记忆系统（retrieval / spaced repetition / vector DB）
+- Season L-T：根据 study 站使用反馈补缺口
 
 ## 历史里程碑
 
