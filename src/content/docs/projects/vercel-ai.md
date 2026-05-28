@@ -100,13 +100,264 @@ vercel/ai/
     └── react/                           ← React hooks 单独包
 ```
 
-**心脏文件**：
+**心脏文件**（按抽象厚度从薄到厚）：
 
-1. `packages/ai/src/generate-text/generate-text.ts`（1639 行）——`generateText()` 的实现
-2. `packages/ai/src/generate-text/stream-text.ts`（2817 行）——`streamText()` 的实现
-3. `packages/ai/src/ui-message-stream/`——UIMessage 协议（前后端 stream 协作）
+1. `packages/provider/src/language-model/v4/language-model-v4.ts`（**61 行**）——所有 provider 必须实现的接口。整个 SDK 的物理基石。
+2. `packages/ai/src/generate-text/generate-text.ts`（1639 行）——`generateText()` 实现，含 agent loop。
+3. `packages/ai/src/generate-text/stream-text.ts`（2830 行）——`streamText()` 实现，Web Streams API 流水线。
+
+> 怀疑 0：心脏排序为什么不是 generate-text 第一？因为 61 行的 `LanguageModelV4` 才是真正的"约定"——
+> 它说"任何 provider 只要实现 `doGenerate` + `doStream` 两个方法就行"。SDK 上层 4500 行代码全是消费这两个方法的不同 surface。
+> 这是典型的"窄腰" (waist) 设计：上下都厚，中间一根线把它们连起来。
+
+![Vercel AI SDK 架构全景](/projects/vercel-ai/01-architecture.webp)
+
+> 三层视图：上层是 5+ 个 provider adapter（每家厂商写一个 class implements `LanguageModelV4`），
+> 中层是 generate-text / stream-text / generate-object 三组核心 API，下层是 5 种消费 surface（result.text / fullStream / textStream / SSE / useChat）。
+> 抽象的"窄腰"在中层接口（61 行）。
 
 ## 核心机制 · Layer 3 精读
+
+### 段 1 · Provider 抽象层 —— 61 行接口扛住 5 家厂商
+
+打开 [`packages/provider/src/language-model/v4/language-model-v4.ts`](https://github.com/vercel/ai/blob/9b96132/packages/provider/src/language-model/v4/language-model-v4.ts)（commit `9b96132`，整 61 行）：
+
+```typescript
+import type { LanguageModelV4CallOptions } from './language-model-v4-call-options';
+import type { LanguageModelV4GenerateResult } from './language-model-v4-generate-result';
+import type { LanguageModelV4StreamResult } from './language-model-v4-stream-result';
+
+/**
+ * Specification for a language model that implements the language model interface version 4.
+ */
+export type LanguageModelV4 = {
+  readonly specificationVersion: 'v4';
+  readonly provider: string;
+  readonly modelId: string;
+
+  // 哪些 URL 让 provider 直接吃，哪些 SDK 自己下载（multimodal 用）
+  supportedUrls:
+    | PromiseLike<Record<string, RegExp[]>>
+    | Record<string, RegExp[]>;
+
+  /**
+   * Generates a language model output (non-streaming).
+   * Naming: "do" prefix to prevent accidental direct usage of the method
+   * by the user.
+   */
+  doGenerate(
+    options: LanguageModelV4CallOptions,
+  ): PromiseLike<LanguageModelV4GenerateResult>;
+
+  /**
+   * Generates a language model output (streaming).
+   * @return A stream of higher-level language model output parts.
+   */
+  doStream(
+    options: LanguageModelV4CallOptions,
+  ): PromiseLike<LanguageModelV4StreamResult>;
+};
+```
+
+旁注：
+
+- **specificationVersion = 'v4'** 是可见的版本号——provider 和上层 SDK 用这个字段做版本兼容；
+  v3 模型可以和 v4 SDK 共存，因为 [`resolve-model.ts`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/model/resolve-model.ts) 里有 dispatch
+- **provider + modelId** 两个 string，仅作 telemetry / 错误信息用——SDK 不靠这两个字段做行为分支，只靠 `doGenerate` / `doStream`
+- **`do` 前缀**——这个命名是故意的（注释明说："prevent accidental direct usage"）。
+  用户应该调 `generateText({ model })` 而不是 `model.doGenerate()`——前者带超时、retry、tool loop，后者裸调
+- **supportedUrls** 解决 multimodal 难题——OpenAI 自己能下 `https://...png`，但 Anthropic 要 base64 inline。
+  SDK 看 regex 决定要不要先 download 再 inline
+- **PromiseLike 而不是 Promise**——为了允许 provider 用同步常量返回（多数 provider 这里返回纯对象，不真做 await）
+- 整个 interface 只有 **2 个方法**——一个同步、一个流式。少到不能再少
+
+具体实现，看 [`packages/anthropic/src/anthropic-language-model.ts:152`](https://github.com/vercel/ai/blob/9b96132/packages/anthropic/src/anthropic-language-model.ts#L152)：
+
+```typescript
+export class AnthropicLanguageModel implements LanguageModelV4 {
+  readonly specificationVersion = 'v4';
+  readonly modelId: AnthropicModelId;
+
+  private readonly config: AnthropicLanguageModelConfig;
+  private readonly generateId: () => string;
+
+  constructor(modelId: AnthropicModelId, config: AnthropicLanguageModelConfig) {
+    this.modelId = modelId;
+    this.config = config;
+    this.generateId = config.generateId ?? generateId;
+  }
+
+  get provider(): string {
+    return this.config.provider;
+  }
+
+  // 实际 doGenerate 在 line 864、doStream 在 line 1433
+  // 主体职责：把 v4 的 prompt 转成 Anthropic Messages API 格式 → fetch → 把响应 normalize 回 v4 类型
+}
+```
+
+> 怀疑 1：61 行真能扛住 5 家厂商的差异？
+> 答：不能。差异下沉到了 `LanguageModelV4CallOptions`（option bag）和 `language-model-v4-stream-part.ts`（输出 part 类型）。
+> Anthropic 的 prompt caching、Google 的 grounding、OpenAI 的 logit_bias 都靠 `providerOptions: { anthropic: {...}, openai: {...} }` 这种**逃生通道**塞进去。
+> SDK 不约束这部分——provider 自己解析自己的命名空间。代价：跨 provider 切换时，特殊功能要手动迁移。
+
+→ **设计哲学**：把"通用部分"做窄做对（`doGenerate / doStream`），把"差异部分"做开放（`providerOptions`）。
+这是**抽象设计的二象性**——核心约定要硬、扩展点要软。
+
+### 段 2 · `generateText` 的 Agent Loop
+
+打开 [`packages/ai/src/generate-text/generate-text.ts:211`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/generate-text.ts#L211)。函数签名 110 行起手——但真正的灵魂是中段那个 do/while。看 [`generate-text.ts:1100-1180`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/generate-text.ts#L1100-L1180)：
+
+```typescript
+// 简化版（保留骨架，删掉 telemetry / cloneMessages 等噪音）
+do {
+  // 1. 调底层 doGenerate（这是和 provider 唯一接触点）
+  const currentModelResponse = await stepModel.doGenerate(callOptions);
+
+  // 2. 抽 content（text / tool-call / reasoning 等 part）
+  const stepContent = currentModelResponse.content;
+  const clientToolCalls = stepContent.filter(p => p.type === 'tool-call');
+
+  // 3. 用 stepResult 包装本步元数据（usage / finishReason / messages）
+  const currentStepResult: StepResult<TOOLS, RUNTIME_CONTEXT> =
+    new DefaultStepResult({
+      callId,
+      stepNumber,
+      provider: stepModel.provider,
+      modelId: stepModel.modelId,
+      content: stepContent,
+      finishReason: currentModelResponse.finishReason.unified,
+      usage: stepUsage,
+      // ...
+    });
+
+  steps.push(currentStepResult);
+  messagesForNextStep = [...stepMessages, ...stepResponseMessages];
+
+  // 4. 通知 onStepFinish 回调
+  await notify({ event: currentStepResult, callbacks: [onStepFinish, ...] });
+} while (
+  // 继续条件 1：还有 client tool 调用待执行
+  ((clientToolCalls.length > 0 &&
+    clientToolOutputs.length + deniedToolApprovalResponses.length === clientToolCalls.length) ||
+    pendingDeferredToolCalls.size > 0) &&
+  // 继续条件 2：没满足 stop condition（默认 stepCount=1）
+  !(await isStopConditionMet({ stopConditions, steps }))
+);
+```
+
+旁注：
+
+- **do/while 而不是 while**——保证至少跑一次（即使没 tool 也要调一次模型）
+- **退出条件是布尔合成**——既要"有 tool 待执行"又要"没满足 stop"，两者**与**关系
+- **`stopWhen = isStepCount(1)` 是默认值**（[L228](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/generate-text.ts#L228)）——
+  这是个**关键设计选择**：默认只跑 1 步，**避免无限 tool loop 烧钱**。用户必须显式传 `stopWhen: stepCountIs(5)` 才允许多步
+- **每一步推 `currentStepResult` 进 steps 数组**——最终结果可以拿到完整执行轨迹（debug / replay 都靠这个）
+- **`messagesForNextStep`** 拼接上一轮 `stepResponseMessages`（包括 tool result）——
+  这是把 multi-turn 上下文喂回模型的关键。Vercel AI SDK 帮你自动做 message accumulation
+- 真正执行 tool 在 [`generate-text.ts:1313`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/generate-text.ts#L1313) 的 `await executeToolCall(...)`——
+  和 [`execute-tool-call.ts:41`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/execute-tool-call.ts#L41) 配套
+- **abortSignal 一路传到底**——`mergeAbortSignals(abortSignal, toolTimeoutMs)` 让 user-cancel + per-tool-timeout 复合
+- 对比的话：自己写一个 OpenAI agent loop，**至少要 200 行**才能稳——message accumulation / tool dispatch / abort / per-step usage / deferred tools
+
+> 怀疑 2：默认 `stopWhen = isStepCount(1)` 等于"默认禁用 multi-step"。
+> 这是 footgun 还是 feature？我倾向于 **feature**——
+> 多数初学者写 `generateText({ tools })` 时**根本不知道 LLM 会无限调 tool**。强制 opt-in 多步是合理的安全默认。
+> 但代价是：90% 的 agent demo 第一次跑都"为什么 tool 调了但没拿到最终回复"——这是**设计 vs 易用**的取舍。
+> 我会写在 [agent loop 笔记](/study/projects/claude-code/) 的反面对照里。
+
+→ Claude Code 内部 agent loop 是**裸写**的（直接 `while` + `messages.create`），Vercel AI SDK 做成了**通用库**。
+两者心智一致，但工程关注点不同：前者要榨极致控制权，后者要提供安全默认。
+
+### 段 3 · `streamText` 的 Web Streams 流水线
+
+[`stream-text.ts`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/stream-text.ts) 整整 2830 行，但骨架就是 **5 段 pipe**。看 [`stream-text.ts:1300-1390`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/stream-text.ts#L1300-L1390)：
+
+```typescript
+// 简化版骨架
+const stitchableStream = createStitchableStream<TextStreamPart<TOOLS>>();
+this.addStream = stitchableStream.addStream;
+this.closeStream = stitchableStream.close;
+
+// 1. 弹性 ReadableStream（处理 abort / 错误）
+const reader = stitchableStream.stream.getReader();
+let stream = new ReadableStream<TextStreamPart<TOOLS>>({
+  async start(controller) {
+    controller.enqueue({ type: 'start' });
+  },
+  async pull(controller) {
+    try {
+      const { done, value } = await reader.read();
+      if (done) { controller.close(); return; }
+      if (abortSignal?.aborted) { await abort(); return; }
+      controller.enqueue(value);
+    } catch (error) {
+      if (isAbortError(error) && abortSignal?.aborted) await abort();
+      else controller.error(error);
+    }
+  },
+  cancel(reason) { return stitchableStream.stream.cancel(reason); },
+});
+
+// 2. 闸门：transform 调 stopStream() 后阻断剩余 token
+let isRunning = true;
+stream = stream.pipeThrough(
+  new TransformStream({
+    async transform(chunk, controller) {
+      if (isRunning) controller.enqueue(chunk);
+    },
+  }),
+);
+
+// 3. 用户传入的 transforms（中间件）依次 pipeThrough
+for (const transform of transforms) {
+  stream = stream.pipeThrough(
+    transform({
+      tools: tools as TOOLS,
+      stopStream() {
+        stitchableStream.terminate();
+        isRunning = false;
+      },
+    }),
+  );
+}
+
+// 4. output 解析（如 generateObject 的 partial JSON parser）
+// 5. eventProcessor（聚合 step、计 usage、触发 onFinish）
+this.baseStream = stream
+  .pipeThrough(createOutputTransformStream(output ?? text()))
+  .pipeThrough(eventProcessor);
+```
+
+旁注：
+
+- **stitchableStream** 是个自定义工具——允许往一条 stream 里**动态拼接子 stream**。
+  multi-step agent loop 时，每一 step 是一个新的 doStream() 调用，结果**拼接进同一条 fullStream**。
+  用户感知是一条连续流，内部其实是拼起来的
+- **闸门 (gate) 模式**：用户中间件可以调 `stopStream()` 提前终止——
+  闸门 transform 把 `isRunning = false`，后续 chunk 全丢。**为什么不直接 cancel 上游？**
+  因为要让 stop 之后的"finalize"事件（如 `finish-step`）依然能走完
+- **`pipeThrough` 链是单向数据流**——每一段 TransformStream 输入输出都是 `TextStreamPart`，类型在整条流里**不变**。
+  这是 Web Streams API 的核心好处：组合性强，每一段独立可测
+- **transforms 是 user-pluggable**——这是中间件机制的实现点（参考 [机制 6 Middleware](#机制-6--middleware-系统)）。
+  用户传 `experimental_transform: [smoothStream(), customLoggingTransform]`，被插进流水线的固定位置
+- **createOutputTransformStream** ([L675-755](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/stream-text.ts#L675-L755)) 是 `streamObject` 的核心——
+  它把 `text-delta` 累成完整 text，**实时调 partial JSON parser** 产出 `partialOutput`。
+  让前端能拿到"半成品 JSON"做 progressive UI
+- **abortSignal 在 pull() 里检查**——每读一个 chunk 都校验 abort，保证 cancel 响应延迟 ≤ 1 chunk
+- 真正的 multi-step 循环在 [stream-text.ts:1463](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/stream-text.ts#L1463) 的 `toolExecutionStepStream`——
+  generateText 用 do/while，streamText 用嵌套 ReadableStream。**心智一致，载体不同**
+
+> 怀疑 3：5 段 pipe 看起来很优雅，但**实际调试 stream-text bug 时简直地狱**——
+> 错误从哪一段产生很难追。我看 [`stream-text.test.ts`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/generate-text/stream-text.test.ts)
+> 测试代码量是实现的 2 倍以上（snapshot 文件夹 `__snapshots__` 几百个 case）。
+> 这告诉我：**Web Streams API 写起来流畅、调试起来痛苦**。tradeoff 不是"组合性 vs 难度"，而是"组合性 + 高 test 覆盖成本"。
+> 没有 snapshot test 就别用这个范式。
+
+→ 这是 [bun 笔记](/study/projects/bun/) 里"async pipeline 调试性"问题在 SDK 域的版本——
+任何 stream pipeline 都需要配套**全场景 snapshot 测试**才能维持。
+
+## Hands-on 之外的核心 API（接续 Layer 3）
 
 ### 机制 1 · `generateText` 的统一签名
 
@@ -265,15 +516,82 @@ const customAnthropic = wrapLanguageModel({
 
 ## 横向对比
 
-### vs LangChain — 厚 vs 薄
+### vs LangChain.js — 厚 vs 薄（用同一个 use case 对照）
 
-LangChain：1000+ class，Chain / Agent / Memory / Retriever / VectorStore / Tool / OutputParser ...
-Vercel AI SDK：generateText / streamText / generateObject / streamObject / embed —— 5 个核心 API。
+**Use case**：用户问天气，模型调 tool 拿数据，返回中文回答。
 
-LangChain 像 Spring Framework——给你完整框架。
-Vercel AI SDK 像 Express——给你最薄的中间件。
+**LangChain.js 写法**（约 60 行，简化）：
 
-**90% 应用场景，薄的反而胜**。
+```typescript
+import { ChatAnthropic } from '@langchain/anthropic'
+import { DynamicTool } from '@langchain/core/tools'
+import { AgentExecutor, createToolCallingAgent } from 'langchain/agents'
+import { ChatPromptTemplate } from '@langchain/core/prompts'
+
+const model = new ChatAnthropic({ model: 'claude-opus-4-7' })
+
+const weatherTool = new DynamicTool({
+  name: 'weather',
+  description: 'Get weather',
+  func: async (location: string) =>
+    JSON.stringify(await fetch(`/api/${location}`).then(r => r.json())),
+})
+
+const prompt = ChatPromptTemplate.fromMessages([
+  ['system', 'You are a helpful assistant'],
+  ['placeholder', '{chat_history}'],
+  ['human', '{input}'],
+  ['placeholder', '{agent_scratchpad}'],
+])
+
+const agent = await createToolCallingAgent({ llm: model, tools: [weatherTool], prompt })
+const executor = new AgentExecutor({ agent, tools: [weatherTool] })
+
+const result = await executor.invoke({ input: 'Beijing weather?' })
+console.log(result.output)
+```
+
+**Vercel AI SDK 写法**（约 15 行）：
+
+```typescript
+import { generateText, tool, stepCountIs } from 'ai'
+import { anthropic } from '@ai-sdk/anthropic'
+import { z } from 'zod'
+
+const result = await generateText({
+  model: anthropic('claude-opus-4-7'),
+  tools: {
+    weather: tool({
+      description: 'Get weather',
+      parameters: z.object({ location: z.string() }),
+      execute: async ({ location }) => fetch(`/api/${location}`).then(r => r.json()),
+    }),
+  },
+  stopWhen: stepCountIs(5),
+  prompt: 'Beijing weather?',
+})
+console.log(result.text)
+```
+
+差异不在行数，而在**心智负担**：
+
+| 维度 | LangChain.js | Vercel AI SDK |
+|---|---|---|
+| 概念数 | Agent / Executor / Prompt / Scratchpad / Memory / Chain | tool / stopWhen |
+| 类型安全 | tool input/output 是 string（手动 parse） | tool input 由 zod 推导成 typed object |
+| Stream | 默认非 stream，要切 `streamEvents()` | `streamText` 是平级 API |
+| Bundle 大小 | ~2 MB（含 hub 依赖） | ~150 KB |
+| 学习曲线 | 高（每个抽象都要懂） | 低（只懂 generateText 就够 90%） |
+
+**90% 应用场景，薄的胜**——因为概念越少，团队 onboard 越快、bug 越少、bundle 越小。
+
+**但 10% 场景厚框架反而胜**：复杂多 agent 编排（LangGraph）、RAG 流水线（LlamaIndex）、企业 eval（LangSmith）——
+这些 Vercel AI SDK 不做，也不打算做。
+
+> 怀疑 5：用 LangChain.js 的人**多数没真用满它的概念**——他们只用 `model.invoke()` + `RunnableSequence`，
+> 95% 的 Chain / Memory / Retriever 都用不上。这种用户**应该迁到 Vercel AI SDK**。
+> 但已经写了 1 年的 LangChain 应用迁移成本极高——这就是**抽象厚度的固化效应**。
+> 选 LLM 框架像选数据库 schema：第一选错，后面改不动。
 
 ### vs Mastra — 同代但理念不同
 
@@ -380,6 +698,83 @@ console.log('Tools called:', result.toolCalls)
 ```
 
 观察 LLM 的整个调用循环：你只要写 `execute`，SDK 跑 multi-turn。
+
+### Layer 4 实验 · 写一个 custom provider（10 行代码骗过整个 SDK）
+
+参考 [`language-model-v4.ts:8`](https://github.com/vercel/ai/blob/9b96132/packages/provider/src/language-model/v4/language-model-v4.ts#L8) 的接口，
+写一个**返回固定文本**的假 provider，看上层 SDK 怎么消费它：
+
+```typescript
+// fake-provider.ts —— 完整 LanguageModelV4 实现，约 40 行
+import type { LanguageModelV4 } from '@ai-sdk/provider'
+import { generateText } from 'ai'
+
+class EchoLanguageModel implements LanguageModelV4 {
+  readonly specificationVersion = 'v4' as const
+  readonly provider = 'echo'
+  readonly modelId = 'echo-1'
+  readonly supportedUrls = {}
+
+  async doGenerate(options: any) {
+    // 把用户最后一条 user message 原样回放
+    const lastUser = options.prompt
+      .filter((m: any) => m.role === 'user')
+      .pop()
+    const echoText = `ECHO: ${lastUser?.content[0]?.text ?? ''}`
+
+    return {
+      content: [{ type: 'text' as const, text: echoText }],
+      finishReason: { unified: 'stop' as const, raw: 'stop' },
+      usage: { inputTokens: 10, outputTokens: 10, totalTokens: 20 },
+      warnings: [],
+      request: {},
+      response: { id: 'echo-1', timestamp: new Date(), modelId: 'echo-1' },
+    }
+  }
+
+  async doStream(options: any) {
+    // 偷懒：把 doGenerate 结果切成 word-by-word stream
+    const result = await this.doGenerate(options)
+    const text = result.content[0].type === 'text' ? result.content[0].text : ''
+    const words = text.split(' ')
+
+    return {
+      stream: new ReadableStream({
+        start(controller) {
+          controller.enqueue({ type: 'text-start', id: '1' })
+          for (const word of words) {
+            controller.enqueue({ type: 'text-delta', id: '1', delta: word + ' ' })
+          }
+          controller.enqueue({ type: 'text-end', id: '1' })
+          controller.enqueue({ type: 'finish', usage: result.usage, finishReason: 'stop' })
+          controller.close()
+        }
+      }),
+      request: {},
+      response: result.response,
+    }
+  }
+}
+
+const result = await generateText({
+  model: new EchoLanguageModel(),
+  prompt: 'Hello world',
+})
+console.log(result.text)  // → "ECHO: Hello world"
+```
+
+关键观察：
+
+- `generateText` **完全不知道**你不是真的 LLM——它只调 `doGenerate()`、消费返回的 content 数组
+- 返回类型必须严格匹配 `LanguageModelV4GenerateResult`——少一个字段（如 `warnings`）TypeScript 立刻报错
+- 这意味着**测试 LLM 应用的逻辑**不需要 mock HTTP——直接传一个 fake `LanguageModel` 就行
+- 实际生产里 [`@ai-sdk/test`](https://github.com/vercel/ai/blob/9b96132/packages/ai/src/test) 内部就用这个模式
+- **这才是 61 行接口的真正价值**：测试边界清晰，单元测试不依赖网络
+
+> 怀疑 4：写 fake provider 时我 hit 一个坑——`finishReason` 必须是 `{ unified, raw }` 双字段对象，不是单个 string。
+> 这是 v3 → v4 的 breaking change（v3 是单 string）。文档没说清，必须看 [`language-model-v4-finish-reason.ts`](https://github.com/vercel/ai/blob/9b96132/packages/provider/src/language-model/v4/language-model-v4-finish-reason.ts)。
+> **provider 接口的 minor 改动会传染整个 ecosystem**——这是抽象稳定性的代价。
+> v7 SDK 当前版本仍在 canary，breaking changes 仍在发生。生产应用要锁版本。
 
 ## 与你工作的连接
 
