@@ -412,6 +412,14 @@ label 总结：
 - "Effect size 同向但幅度差 2-3 倍"是 single RCT 的 default 预期——读单 RCT 永远要打折看
 - **moderator 趋势在我的 toy 数据上确实复现**：student vs professional / simple vs complex 的子组方向都对
 
+**怀疑 4**：阶段 7 的 5 题对照表「方向同向 = 复现成功」是宽松定义。
+Q3 算出的 g=2.92 极端值反映的可能是 toy 数据 SD 偏小（5 题样本极小导致方差低估），
+而非真实的 effort overhead 量级。"我自己跑一遍 → 数字接近论文" 的因果链
+不能等同于"论文方法论可被复现"——self-replicate 在 empirical paper 上
+本质是 self-confirmation bias 的高危区。论文的 N=1078 + 18 RCT random-effects
+得出 g=-0.85，我的 N=5 + toy 算出 g=2.92，这两个数字根本不在同一统计阶。
+真要复现需要至少跑 1-2 个 2020+ 真实 PP RCT 数据 + 重算 Hedges' g。
+
 ### 阶段 7 补充 · 文档化为 results.md
 
 ```markdown
@@ -506,6 +514,9 @@ PP 真正的工业价值在 long-term 文化效应，而 18 RCT 都是 short-ter
 
 - **不要把 PP cost = 2x 简单等量**：实际 1.84x，但还要算 "知识传播 / 减少 bus factor" 的非量化收益
 - **不要在简单任务上 PP**：浪费 effort
+- **不要把 g=0.20 当成在你团队也是 +20% quality**：individual variance（人 / 任务 / 语言 / codebase 复杂度）远大于 pooled effect，pooled g 是"群体平均"不是"个体预测"
+- **不要拿学生 RCT 数字给 senior 团队做决策**：12/18 是学生样本，工业级 RCT 的 effect size 系统性偏小
+- **不要忘了 1995-2008 RCT 的工具年代**：那时还没 Copilot / AI pair。2024 年的 PP 数据需要重做（Copilot 已经吃了一部分 PP 收益）
 
 ## 怀疑 + 延伸阅读
 
