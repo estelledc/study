@@ -45,7 +45,7 @@ Trees that Grow 给"AST 设计"领域提供了 4 件真正新的东西：
 2017 后 TypeScript / Babel / SWC 等编译器的 AST 设计或多或少受其启发——
 **虽然他们不用 type family，但"phase 共享 AST 骨架 + phase 特有 annotation"的核心思路相同**。
 
-![Trees that Grow: 同一 AST 在 4 phase 复用](/papers/trees-that-grow/01-extension-fields.webp)
+![Trees that Grow: 同一 AST 在 4 phase 复用](/study/papers/trees-that-grow/01-extension-fields.webp)
 
 *图 1：Trees that Grow 核心机制。
 **顶部**：Generic AST type `data Exp x = Var (X_Var x) Name | App (X_App x) (Exp x) (Exp x)`，

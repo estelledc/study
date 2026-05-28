@@ -39,7 +39,7 @@ CI Effects 给"持续集成实证"领域提供了 4 件真正新的东西：
 build time > 10 min / 没有可靠 test 的 CI 弊大于利。**
 2014 后很多组织用此论文反驳"我们必须上 CI"的盲目推动——**先把 build/test 基础打好，CI 才有意义**。
 
-![CI Effects 22 项研究综述](/papers/ci-effects/01-ci-tradeoffs.webp)
+![CI Effects 22 项研究综述](/study/papers/ci-effects/01-ci-tradeoffs.webp)
 
 *图 1：CI 真实成本与收益的可视化。
 **中间 Pipeline**：commit → build → test → integrate → deploy 的反馈循环。

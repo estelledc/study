@@ -41,7 +41,7 @@ Great SWE 给"软件工程师素质"研究提供了 4 件真正新的东西：
 2015 年这个发现颠覆了"硬技能至上"招聘观，2024 年 AI 时代更显其分量——
 **当 AI 替你写代码，软技能成为差异化关键**。
 
-![Great SWE 8 大特质类别](/papers/great-swe/01-eight-categories.webp)
+![Great SWE 8 大特质类别](/study/papers/great-swe/01-eight-categories.webp)
 
 *图 1：Great SWE 的 8 大特质类别（按提及频次大小）。
 **个人特质（最大圆，浅红高亮）**：谦逊 / 持续学习 / 注重细节 / 有热情。

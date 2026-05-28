@@ -55,7 +55,7 @@ SWE-bench 给"LLM agent 评测"领域提供了 4 件真正新的东西：
 拿 30-90% 的方法，扔到真实 GitHub issue 上，全部跌到 < 5%。**
 这个数字差距催生了 2024-2026 年 agentic coding 系统的整个浪潮。
 
-![SWE-bench 评测全流程](/papers/swe-bench/01-eval-flow.webp)
+![SWE-bench 评测全流程](/study/papers/swe-bench/01-eval-flow.webp)
 
 *图 1：SWE-bench 评测流程。Issue text + codebase snapshot 喂给 LLM → 生成 Patch（unified diff 格式）→
 apply patch → run associated test suite → 检查两类 test：fail-to-pass（必须从 fail 变 pass）+
@@ -113,7 +113,7 @@ PDF 32 页（含 6 个 appendix），主体 11 页。章节角色：
 
 ## 数据采集流程（3 stage pipeline）
 
-![3-stage 数据采集 pipeline](/papers/swe-bench/02-data-pipeline.webp)
+![3-stage 数据采集 pipeline](/study/papers/swe-bench/02-data-pipeline.webp)
 
 *图 2：从 90,000 PR 漏斗式过滤到 2294 task instances 的 3 阶段流程。
 Stage 1 从 12 个 popular Python repo（sklearn / django / sympy / scikit-learn / matplotlib / pylint 等）抓 ~90k PR；

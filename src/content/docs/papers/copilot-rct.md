@@ -42,7 +42,7 @@ Copilot RCT 给"AI 编码影响实证"领域提供了 4 件真正新的东西：
 忽略了实验任务（implement HTTP server）是 Copilot 训练数据高度重合的"甜点"。**
 这种"宣传性数字 vs 真实生产力影响" 的张力，是后续所有 AI 编程研究的核心议题。
 
-![Copilot RCT 实验设计与关键结果](/papers/copilot-rct/01-rct-design.webp)
+![Copilot RCT 实验设计与关键结果](/study/papers/copilot-rct/01-rct-design.webp)
 
 *图 1：Copilot RCT 完整呈现。
 **实验设计（上）**：95 professional developers (Microsoft / 其他机构) → 随机分配 Treatment (n=45, 用 Copilot) vs Control (n=50, 不用) → 任务：JS 实现 HTTP server → 测量 completion time / code quality / 完成率。
