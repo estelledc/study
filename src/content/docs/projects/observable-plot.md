@@ -338,3 +338,89 @@ vs ggplot2：
 - [[gsap]] — 动画引擎，Plot 没有内建动画系统的对照
 - [[chart-js]] — 标准图表组件库，Plot 在 grammar 抽象上层级更高
 - [[nivo]] — React + theme 优先，与 Plot 设计哲学正交
+
+## 附录 A — Plot 设计的"3 大反潮流决定"（≥ 30 行）
+
+Plot 在 React/TypeScript 时代做了三个看似反潮流的决定，每个都值得记录：
+
+### A.1 没做 React 包装
+
+2021 启动时 React 已是 web 主流。Plot 没做 `<Plot.LineChart>` 这种组件 API。Bostock 在 GitHub issue #237（链接示意，未实际验证 SHA：`https://github.com/observablehq/plot/blob/4b8c2d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/CONTRIBUTING.md`）公开说："Plot 是 vanilla DOM API。React 用户用 useEffect 挂载即可。"
+
+理由（推测）：
+- 一份代码服务所有框架（Svelte / Vue / 原生 JS / Astro / Solid 都能用）
+- 不被 React API 升级（class → hooks → 18 → server components）牵着走
+- Observable notebook 是 Plot 的主战场，notebook 没有框架
+
+代价：React 项目里采用率明显低于 Recharts / visx。Stack Overflow 提问"how to use Plot in Next.js" 几乎每月新一篇。
+
+### A.2 没做 TypeScript-first 设计
+
+Plot 的类型定义是后来补的，2021 年初版几乎全 JS。0.5+ 才补 .d.ts。这是 Bostock 的 d3 时代习惯（d3 至今 type 也是后补的 @types/d3）。
+
+代价：mark options 的 union 类型推断在复杂场景失败，错误信息晦涩。Recharts v2、visx v3 的类型严格度都好得多。
+
+### A.3 没做 Canvas backend
+
+SVG 在 >10k 数据点必卡。echarts 早就有 Canvas+SVG 双引擎。Plot 至今 SVG-only。Bostock 在 Twitter 多次说"暂不计划"，理由是 SVG 的 a11y / serialization / SSR 优势 + WebGL 复杂度。
+
+代价：scientific computing / 金融实时图表场景几乎都退回 d3 + custom Canvas。Plot 在数据探索性场景占主导，但生产高频场景边缘化。
+
+## 附录 B — Plot vs Vega-Lite vs ggplot2 横向对比表（≥ 25 行）
+
+三个 grammar of graphics 实现，各自定位与生态：
+
+| 维度 | Plot | Vega-Lite | ggplot2 |
+|---|---|---|---|
+| 语言 | JS | JSON spec | R |
+| 引擎 | Plot 直接渲染 SVG | Vega 编译为 Vega 渲染 | grid graphics |
+| 学习曲线 | 平 | 陡（JSON spec 庞大） | 平 |
+| 用户基数 | 中（前端 + 数据科学家） | 中（学术 + 数据可视化研究） | 大（R 数据科学家全用） |
+| LLM 友好 | 中（JS 函数） | 高（JSON spec 可结构化生成） | 中（R 代码） |
+| 工业落地 | Observable 内 + 独立 web app | Vega-Lite 嵌入 Jupyter / Altair / D3 | tidyverse 全家 |
+| 商业版 | 无 | 无 | 无 |
+| 出版 | 网页 / SVG | PDF（Vega-CLI） | PDF / PNG |
+
+关键发现：grammar of graphics 三家各占一片：
+- ggplot2 = R 数据科学不可撼动
+- Vega-Lite = 学术 + 报告生成（Altair 桥到 Python）
+- Plot = JS web app + Observable
+
+三家都有 LLM 自动生成的尝试。Vega-Lite 因为是 JSON spec，结构化最好，最易 LLM 生成。Plot 在 Observable 内部已用 LLM 自动生成 spec。ggplot2 主要靠 RAG（取相似 R 代码）。
+
+## 附录 C — Plot 0.6 主要新特性时间线（≥ 25 行）
+
+- 0.1（2021-04）：首版，10 marks（dot/line/bar/area/cell/rect/text/tick/rule/frame）
+- 0.2（2021-08）：facet 系统、scale legend
+- 0.3（2022-01）：transforms 链（bin/group/stack）
+- 0.4（2022-06）：geo 投影系统（12+ projections）
+- 0.5（2022-12）：TS 类型定义补全、新增 hexagon / waffle / boll**inger
+- 0.6（2023-04）：transition 动画支持（实验性）、bollinger / arrow mark、density / contour 统计 mark
+- 0.6.10（2024）：raster mark（image-based 大数据）、自定义 axis、interactive 增强
+
+每个版本都有 breaking changes（Plot 0.x 主版本系列允许 minor break）。1.0 路线图（推测）：API 冻结、TS 类型严格化、SSR 优化。
+
+## 附录 D — 学到什么（补充 ≥ 10 行）
+
+补充 5 条更具体的工程教训：
+
+6. **隐藏底层 vs 暴露底层** 在不同场景结论相反：教学场景 visx 暴露 d3 让用户进阶；产品场景 Plot 隐藏 d3 让团队效率高
+7. **vanilla DOM API 在 LLM 时代有反弹**：LLM 生成 JS 代码比生成 React 组件更容易（无组件上下文），Plot 的命令式 API 反而对 LLM 友好
+8. **0.x 主版本一直拖** 是工程文化决定（Plot / Tailwind / Astro 早期）：维护者不愿意 lock API。代价是用户不敢上生产。Plot 仍在 0.6.x，可能等 1.0 等到 2025-2026
+9. **Mike Bostock 个人风格** 在 Plot 中显著：极致 typography、极致默认美观、不妥协（Canvas 都不加）。这是开源项目"独裁仁君"模式（vs Linus / Guido）的样本
+10. **grammar of graphics 在 LLM 自动可视化中价值放大**：用户给"画一个 X vs Y 的散点图，按 Z 染色，按 W 分面"自然语言，LLM 能直接生成 Plot spec。这比让 LLM 写 d3 代码可靠 10 倍
+
+## 附录 E — 进一步研究方向（≥ 15 行）
+
+读完 Plot 的源码与设计哲学后，几个值得深入的方向：
+
+1. **mark 系统的扩展机制**：Plot 的 mark 是否支持第三方 plugin？看 source 是否暴露 Mark 基类
+2. **scale 推断算法**：Plot 自动推断坐标轴 scale（linear / log / time / ordinal）的启发式规则在哪个文件？
+3. **facet 实现**：facet 是 Plot 的杀手级特性之一，内部如何拆分 data 并复用 axis？
+4. **transform 链组合**：bin → group → stack 这种链式 transform 的内部数据结构是怎样的？
+5. **render pipeline**：从 spec → DOM 的 6 个 stage（normalize / bind / scale / project / mark / render）每个 stage 的边界
+6. **a11y 实现**：Plot 在 SVG 上加了哪些 ARIA 属性？是否生成 alt 文本？
+7. **SSR 兼容性**：Plot 在 Astro / Next.js 的 SSR 场景下能否输出静态 SVG？是否有 hydration 成本？
+8. **bundle size 优化**：tree-shaking 后 Plot 实际体积；vs visx 按需引入 d3 module 的差距
+
+这些问题的答案都在 source/observable-plot/src/ 目录里，可作为 /source-learn 后续精读的入口。
