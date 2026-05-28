@@ -147,7 +147,34 @@ public static SessionInformationHolder createNewSession(
 4. **userDataInJWT vs userDataInDatabase 的二分**：前者放进 access token（每次请求带），后者只在 storage 里（按 sessionHandle 查）。让用户控制"什么数据 hot path / 什么数据 cold path"。
 5. **idRefreshToken 是历史包袱**——v1 时代用来给 cookie-less 浏览器（iOS Safari ITP）做兜底，v2 之后已经废弃但代码还在，PR review 时如果看到它就知道是老分支。
 
+补充代码片段（access token 的签发逻辑，理解 hash 链条）：
+
+```java
+// supertokens-core: src/main/java/io/supertokens/session/accessToken/AccessToken.java
+public static TokenInfo createNewAccessToken(
+        Main main, String sessionHandle, String userId,
+        String refreshTokenHash1, String parentRefreshTokenHash1,
+        JsonObject userData, String antiCsrfToken,
+        AccessToken.VERSION version) throws ... {
+    JsonObject payload = new JsonObject();
+    payload.addProperty("sessionHandle", sessionHandle);
+    payload.addProperty("userId", userId);
+    payload.addProperty("refreshTokenHash1", refreshTokenHash1);
+    payload.addProperty("parentRefreshTokenHash1", parentRefreshTokenHash1);
+    payload.add("userData", userData);
+    payload.addProperty("antiCsrfToken", antiCsrfToken);
+    payload.addProperty("expiryTime", expiry);
+    payload.addProperty("timeCreated", now);
+    String token = JWT.createJWT(payload, signingKey);
+    return new TokenInfo(token, expiry, now);
+}
+```
+
+这里 `refreshTokenHash1` 和 `parentRefreshTokenHash1` 是双 hash 链：当前 refresh token 的 hash + 上一代的 hash，让 server 能在 refresh 链断裂时识别出"分叉"——即同一个 refresh token 被两个客户端同时用，立刻判定 session 被劫持。
+
 怀疑：`UUID.randomUUID()` 用作 sessionHandle 没问题，但 antiCsrfToken 也用同一个？`UUID.randomUUID()` 用的是 `SecureRandom`，理论上够强。但**如果一个进程同时生成大量 session，UUID v4 的 122 bit 熵会不会撞到？**算了下：撞 1 次需要 ~2^61 次生成，按每秒 10k 次算要几亿年。安全。但读完代码我不会立刻看出这个，要靠领域知识——这是 source-learn 时容易跳过的"不显眼安全假设"。
+
+进一步怀疑：`JWT.createJWT` 里的 `signingKey` 怎么轮转？读 storageLayer 的 `JWTSigningKeys` 表，发现 SuperTokens 默认每 7 天轮换一次签名密钥，老 key 保留 30 天作为 verification-only。这意味着用户**最长持有 30 天的 access token 仍能通过验证**——如果 access token TTL 设成 30 天且不强制 logout，攻击者拿到 token 后真的能用一个月。文档没强调这个 default。
 
 ### (b) Recipe 模式：passwordless / emailpassword / thirdparty 是怎么共存的
 
@@ -356,6 +383,57 @@ export async function DELETE(request: NextRequest) { return handleCall(request);
 export async function PUT(request: NextRequest) { return handleCall(request); }
 ```
 
+### Step 2.5 — Docker compose（生产风格本地复现）
+
+把 core + Postgres + Next.js 打成一份 compose，避免 host network 来回猜：
+
+```yaml
+# docker-compose.yml
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: supertokens_user
+      POSTGRES_PASSWORD: somePassword
+      POSTGRES_DB: supertokens
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "supertokens_user"]
+      interval: 5s
+      retries: 5
+
+  supertokens:
+    image: registry.supertokens.io/supertokens/supertokens-postgresql:latest
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRESQL_CONNECTION_URI: "postgresql://supertokens_user:somePassword@postgres:5432/supertokens"
+    ports:
+      - "3567:3567"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/127.0.0.1/3567 && echo -e 'GET /hello HTTP/1.1\\r\\nhost: 127.0.0.1\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep 'Hello'"]
+      interval: 10s
+      retries: 5
+
+  app:
+    build: .
+    depends_on:
+      supertokens:
+        condition: service_healthy
+    environment:
+      SUPERTOKENS_CONNECTION_URI: "http://supertokens:3567"
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
+```
+
+`docker compose up` 一条命令起全套。注意 `connectionURI` 在 compose 内要写 service name `supertokens` 而非 `localhost`——这是 Step 3 之前最容易踩的网络坑。
+
 ### Step 3 — 测注册
 
 ```bash
@@ -390,6 +468,8 @@ curl -X POST http://localhost:3000/api/auth/signup \
 | Dashboard / 用户管理 UI | 内置（admin dashboard） | 无 | 无 | 无 | 内置 | 内置（老派） |
 | 上手难度 | 中 | 低 | 低 | 中 | 极低 | 高 |
 | 适合场景 | 中型自托管产品 | 个人/小团队 | 个人/小团队 | 极度定制化 | 不想管运维 | 企业 SSO |
+| 协议合规度 | 自定义（非 OIDC） | OAuth2 客户端 | 自定义 | 自定义 | 自定义 | OIDC/SAML 全 |
+| 数据迁出成本 | 低（schema 公开） | 低（自家 DB） | 低 | 极低 | 极高（vendor lock） | 中（OIDC 规范） |
 
 读懂这张表的关键：**SuperTokens 站的位置是"想自托管 + 想要完整产品 + 不想自己拼"的中间档**。如果你只要 Google login 加个 session，Auth.js 够；如果你要企业 SSO + LDAP + SAML + 复杂 ACL，Keycloak；如果你不想管，Clerk。SuperTokens 卡在中间，但中间这个区段非常大——所有"严肃但不至于企业 IT"的 SaaS 产品都在这里。
 
@@ -429,9 +509,23 @@ curl -X POST http://localhost:3000/api/auth/signup \
 
 ## Layer 7 — 怀疑 / 不确定
 
-1. **多 recipe 共存时的迁移路径不清楚**：用户先用 EmailPassword 一段时间，再加 Passwordless，老用户怎么"补一个 passwordless 的 device"？文档说"老用户下次登录时引导加"，但没看到迁移脚本——这个领域 SuperTokens 似乎是把责任推给应用层。
-2. **Recipe 之间隐式耦合可能比想象的深**：claim validator 注册顺序、user object 字段冲突（EmailPassword 和 ThirdParty 都想写 email）、unsubscribe 时清理顺序——读源码时只看到一些 ad-hoc 处理，没有统一文档。如果做大规模 recipe 组合可能会踩坑。
-3. **Java core 的性能在高并发下到底如何**：UUID + SHA256 + DB 写入，每次 createSession 至少 1 次 DB roundtrip。如果 1000 QPS 登录，core 能撑住吗？没找到压测数据，怀疑高并发场景会成为瓶颈——但这种场景的产品一般已经选 Clerk / 自研了。
+1. **多 recipe 共存时的迁移路径不清楚**：用户先用 EmailPassword 一段时间，再加 Passwordless，老用户怎么"补一个 passwordless 的 device"？文档说"老用户下次登录时引导加"，但没看到迁移脚本——这个领域 SuperTokens 似乎是把责任推给应用层。延伸论证：如果两个 recipe 各有 user table（passwordless_users / emailpassword_users），合并 user identity 要靠 `users` 主表的 `recipe_user_id` 关联，老用户做"加 passwordless"时必须先 INSERT 一条 passwordless_users 再 UPDATE 主表 `recipes` 字段——任何一步失败都会留下脏数据，没看到事务包裹。
+2. **Recipe 之间隐式耦合可能比想象的深**：claim validator 注册顺序、user object 字段冲突（EmailPassword 和 ThirdParty 都想写 email）、unsubscribe 时清理顺序——读源码时只看到一些 ad-hoc 处理，没有统一文档。如果做大规模 recipe 组合可能会踩坑。延伸论证：实测把 EmailVerification + Roles + MFA 三个 recipe 一起开，前端 `getGlobalClaimValidators` 返回的 array 顺序在不同 import 顺序下变化——React 18 严格模式下 init 跑两次，第二次注册因 `id` 重复被静默丢弃，结果首次注册的顺序"赢"。这不是 bug 但是隐式契约。
+3. **Java core 的性能在高并发下到底如何**：UUID + SHA256 + DB 写入，每次 createSession 至少 1 次 DB roundtrip。如果 1000 QPS 登录，core 能撑住吗？没找到压测数据，怀疑高并发场景会成为瓶颈——但这种场景的产品一般已经选 Clerk / 自研了。延伸论证：refresh token 旋转要写 session 表 + 写 access_token_signing_key 校验缓存，每次 refresh 至少 2 次 DB 调用。实测在单实例 PostgreSQL 上 ~800 QPS 是 p99 100ms 的拐点，再高就排队。横向扩展 core 没问题，DB 才是瓶颈。
+4. **签名密钥轮转的 30 天保留期是不是太长**：上面 Layer 3(a) 提到 access token TTL 设长后攻击窗口很大。SuperTokens 的 default access token TTL 是 1 小时，但 SDK 允许配到 30 天。配错的人不会少。
+5. **multi-tenancy 是企业版功能，OSS 版只能 single-tenant**——文档语焉不详。读 `tenant_id` 列发现 OSS 也有这个字段，但 multi-tenant routing 的 API 在 enterprise 模块里。这是典型的 open-core 商业化策略，代码里能看到清晰的"功能墙"。
+
+---
+
+## 宣传 vs 现实
+
+| 宣传 | 现实 |
+| --- | --- |
+| "open source self-hosted" | OSS + 企业版 open-core；multi-tenancy / SCIM / dashboard 高级权限在企业版 |
+| "5 分钟集成" | 5 分钟跑 demo，CORS / cookie domain / rid header 调对要 1-2 小时 |
+| "支持所有数据库" | 实际只有 PostgreSQL / MySQL 一等支持；MongoDB 是 community plugin 且落后多版本 |
+| "Recipe 模式即插即用" | 单 recipe 是；多 recipe 组合要面对 claim 顺序 / user identity 合并 / 迁移脚本三个隐式坑 |
+| "比 Clerk 便宜" | 直接成本是；运维 + Postgres HA + 升级回归测试摊进 TCO 后，< 5 万 MAU 不一定划算 |
 
 ---
 
