@@ -832,6 +832,6 @@ export const useUserStore = create(
 ---
 
 升级日期：2026-05-28
-总行数：~520（v1.1 分支 B 工具库标准 ≥ 400）
+总行数：~837（v1.1 分支 B 工具库标准 ≥ 400）
 启用工具：`git clone --depth 1` + 本地源码精读 + PIL 生成 figure + commit hash 锚定 permalink
 v1.1 分支 B 自检：心脏 3 个 / L3 4 段（≥ 3）/ L4 改一处 + logger 中间件 / Figure 1 张 / permalink ≥ 6 / 怀疑 3 处
