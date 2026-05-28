@@ -20,18 +20,18 @@ sidebar:
 
 ## 进行中
 
-**第 3 篇**：Chain-of-Thought (Wei et al., NeurIPS 2022)（待启动）
+**第 4 篇**：Reflexion (Shinn et al., NeurIPS 2023)（待启动）
 
 ---
 
 ## 4 季度（约 20 篇慢笔记）
 
-### Season A · AI Agent / LLM 系统（1 / 5 完成）
+### Season A · AI Agent / LLM 系统（2 / 5 完成）
 
 | # | 论文 | 关键判断 |
 |---|------|---------|
 | 1 | [**ReAct: Synergizing Reasoning and Acting**](/study/papers/react/) (Yao et al., NeurIPS 2022) ✅ | "think-act-observe" 循环的祖宗——直接对应 Claude Code agent loop |
-| 2 | **Chain-of-Thought Prompting Elicits Reasoning** (Wei et al., NeurIPS 2022) | reasoning trace 为什么有用——ReAct 的根 |
+| 2 | [**Chain-of-Thought Prompting Elicits Reasoning**](/study/papers/cot/) (Wei et al., NeurIPS 2022) ✅ | reasoning trace 为什么有用——ReAct 的根，emergent ability 的支点 |
 | 3 | **Reflexion: Language Agents with Verbal RL** (Shinn et al., NeurIPS 2023) | ReAct 没 retry 的硬伤怎么补——加自我反思层 |
 | 4 | **Toolformer: LLM Can Teach Themselves to Use Tools** (Schick et al., 2023) | 工具调用从 prompt 路线到 self-supervised 微调路线的分叉 |
 | 5 | **SWE-bench: Can LLMs Resolve Real GitHub Issues?** (Jimenez et al., ICLR 2024) | 把 agent 思路从 demo 推到真工程任务的基准 |
@@ -91,6 +91,8 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 
 - [ReAct (Yao et al., NeurIPS 2022)](/study/papers/react/)（2026-05-28）— L4 用 Claude 跑了 1 题完整 trajectory；与 Brittle Foundations 2024 一并读
 - [A Prettier Printer (Wadler, 1998)](/study/papers/wadler-prettier/)（2026-05-28）— L4 100 行 Python 复现，width=30 输出与论文逐字一致；S3 季节开篇
+- [Chain-of-Thought (Wei et al., NeurIPS 2022)](/study/papers/cot/)（2026-05-28）— L4 跑同一道 GSM8K 风格题在 standard / CoT 两种 prompt 下对照
+- [ReAct (Yao et al., 2022)](/study/papers/react/) **重构版**（2026-05-28）— 用 deep-paper-note 15 步结构 + paper-comic 3 张 sketchnote 图（codex imagegen 生成 + webp 压缩）+ phd-skills 7 阶段复现，作为后续 18 篇的"状元篇"模板
 
 ---
 
