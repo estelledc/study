@@ -20,7 +20,7 @@ sidebar:
 
 ## 进行中
 
-**第 17 篇**：What Makes a Great Software Engineer? (Li et al., ICSE 2015)
+**第 18 篇**：Do Developers Read Compiler Error Messages? (Barik et al., ICSE 2017)
 
 ---
 
@@ -77,7 +77,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 | # | 论文 | 关键判断 |
 |---|------|---------|
 | 16 | [**The Impact of AI on Developer Productivity (GitHub Copilot RCT)**](/study/papers/copilot-rct/) (Peng et al., 2023) ✅ | AI 协作时代第一篇严肃 RCT——"Copilot 让你快了 X%"这种数字方法学上稳吗 |
-| 17 | **What Makes a Great Software Engineer?** (Li et al., ICSE 2015) | "工程师素质"用人类学方法访谈 59 个 Microsoft 资深工程师后归纳出的 53 条 |
+| 17 | [**What Makes a Great Software Engineer?**](/study/papers/great-swe/) (Li et al., ICSE 2015) ✅ | "工程师素质"用人类学方法访谈 59 个 Microsoft 资深工程师后归纳出的 53 条 |
 | 18 | **Do Developers Read Compiler Error Messages?** (Barik et al., ICSE 2017) | 眼动追踪 + 调查：工程师其实不看错误信息——这事直接改变了 Rust / Elm / Svelte 的 error UX |
 | 19 | **Empirical Studies of Pair Programming** (Hannay et al., IST 2009) | 18 个 RCT 元分析——pair programming 真的"两倍人力换 1.5 倍质量"吗？ |
 | 20 | **The Effects of CI on Software Development** (Ståhl & Bosch, JSS 2014) | CI 这件事的实证基础——你信奉的"快速反馈循环"有多硬的数据 |
@@ -106,6 +106,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 - [Push-Pull FRP (Elliott, ICFP 2009)](/study/papers/push-pull-frp/)（2026-05-28）— L4 mouse click + position 跟踪场景手算；含 1 张 figure（events vs signals）
 - [Adapton (Hammer et al., PLDI 2014)](/study/papers/adapton/)（2026-05-28）— L4 lazy demand-driven 三 phase 演示（change 不读 0 cost）；含 1 张 figure（SAC→Adapton→Salsa 演化）。**Season C 完结篇**
 - [Copilot RCT (Peng et al. 2023)](/study/papers/copilot-rct/)（2026-05-28）— L4 4 阶段方法学批判（任务/测量/selection/effect size）；含 1 张 figure（实验设计 + 主结果 + heterogeneity）。**Season D 启动**
+- [Great SWE (Li et al., ICSE 2015)](/study/papers/great-swe/)（2026-05-28）— L4 访谈协议复用 ("我团队 great engineer" 小研究)；含 1 张 figure（8 大类别）
 
 ---
 
