@@ -466,12 +466,36 @@ accelerate launch train.py
 - 复现 paper 里的数字需要精细调优，普通用户用默认配置往往达不到
 - 这是为什么 PyTorch 后来推出 FSDP（更易用的 ZeRO-3）来收编社区
 
+### 怀疑 5：线性可扩展性的边界条件
+
+- 论文 figure 7 显示 64-400 GPU 区间近线性，但跨 1000+ GPU 时 all-gather 的 hierarchical reduce 退化
+- 实际 1024 GPU 训练 GPT-3 量级模型，ZeRO-3 的通信占比可达 30%+，远超论文展示的 < 10%
+- 论文用单 node 8 GPU NVLink + 跨 node IB 的混合拓扑，没充分暴露纯跨 node 场景的退化曲线
+
+### 怀疑 6：内存节省数字的"理想化"前提
+
+- 论文宣传"8x 内存节省"基于 OS+G+P 三者均参与切分的理想态
+- 实际训练中 activation memory 常常占总内存 40%+，ZeRO 完全不解
+- 真实总内存节省往往只有 2-3x，而非 paper 宣称的 8x
+
+## 宣传 vs 现实
+
+| 维度 | 论文宣传 | 实际工程 |
+|------|---------|---------|
+| 内存节省 | 8x（OS+G+P 三层切分） | 2-3x（activation 不切是大头） |
+| 通信开销 | 与 DDP 相同（throughput 维度） | latency-bound 场景增加 1.5x |
+| 适用规模 | 1B-1T 参数全覆盖 | < 1B 用 DDP 更优，> 100B 才显优势 |
+| 配置成本 | 改 config 即可启用 | 调 stage/bucket/overlap 需要数天 |
+| 跨 node 扩展 | 近线性到 400 GPU | 1000+ GPU 通信占比超 30% |
+
 ## 限制
 
 1. **强依赖 Adam-like 优化器**：OS 占大头是 Adam 的特性，对 SGD（无 OS）ZeRO-1 收益接近零。
 2. **跨 node 通信瓶颈**：ZeRO-3 的频繁 all-gather 在 InfiniBand 集群（vs NVLink 单 node）性能差。
 3. **不解决 activation 内存**：activation 占用与 batch size × seq length × hidden 相关，ZeRO 不切这部分（需要 activation checkpointing 配合）。
 4. **配置复杂度高**：4 个 stage + offload + bucket size + overlap_comm 等参数，调优门槛高。
+5. **小模型反向收益**：< 1B 模型用 ZeRO-3 反而比 DDP 慢，因为通信开销 > 内存收益。
+6. **硬件代际敏感**：2020 年 V100 假设在 H100 时代部分失效（NVLink 带宽变化导致 offload 策略要重估）。
 
 ## 元数据
 
