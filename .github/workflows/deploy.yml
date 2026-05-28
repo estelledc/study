@@ -23,8 +23,26 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm install
-      - run: npm run build
+      - run: npm ci || npm install
+      - run: npm run build 2>&1 | tee /tmp/build.log
+      - name: Build diagnostics
+        run: |
+          echo "=== source projects/ count ==="
+          ls src/content/docs/projects/ | wc -l
+          echo "=== dist projects/ count ==="
+          ls dist/projects/ 2>/dev/null | wc -l
+          echo "=== dist papers/ count ==="
+          ls dist/papers/ 2>/dev/null | wc -l
+          echo "=== sitemap projects entries ==="
+          grep -oE "projects/[a-z-]+" dist/sitemap-0.xml | sort -u | wc -l
+          echo "=== Duplicate id warnings ==="
+          grep -E "Duplicate id" /tmp/build.log | head -30 || echo "no duplicate id warnings"
+          echo "=== astro version ==="
+          npx astro --version
+          echo "=== node version ==="
+          node --version
+          echo "=== starlight version ==="
+          npm ls @astrojs/starlight 2>&1 | head -5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
