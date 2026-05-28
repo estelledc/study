@@ -361,6 +361,8 @@ storage.mount() 还是会成功返回 storage 对象，但 watch 静默失败。
 
 来源：[src/drivers/cloudflare-kv-binding.ts L20-82](https://github.com/unjs/unstorage/blob/2727956a9bd19059c742c8acb310df312ade5f74/src/drivers/cloudflare-kv-binding.ts#L20-L82)
 
+对照另一个最简 driver [src/drivers/fs-lite.ts L1-50](https://github.com/unjs/unstorage/blob/2727956a9bd19059c742c8acb310df312ade5f74/src/drivers/fs-lite.ts#L1-L50)（fs-lite 是 fs 的精简版，省略 watch 实现）—— 同样 driver interface 在 cloudflare-kv 和 local fs 两个完全不同的执行环境下表达，是 unstorage 抽象正确性的最强证据。
+
 ```typescript
 const driver: DriverFactory<KVOptions, CF.KVNamespace<string>> = (opts) => {
   const r = (key: string = "") => (opts.base ? joinKeys(opts.base, key) : key);
