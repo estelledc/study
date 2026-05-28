@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**Effect-TS/effect** — Season 5 收尾：函数式错误 + 资源管理。
+**全部完成 ✅**——20 个项目研究笔记已发布。后续转向"主题导览"长文，串联多个项目的判断。
 
 ---
 
@@ -76,7 +76,7 @@ sidebar:
 | 17 | [excalidraw/excalidraw](/study/projects/excalidraw/) ✅ | canvas + 协同的最小心脏，怎么把"画图"做成产品 |
 | 18 | [honojs/hono](/study/projects/hono/) ✅ | 极简边缘后端：API 设计取舍如何影响开发体验 |
 | 19 | [microsoft/playwright](/study/projects/playwright/) ✅ | 浏览器自动化的工程艺术：跨进程、跨语言的契约设计 |
-| 20 | Effect-TS/effect | 函数式错误 + 资源管理——TS 生态的"另一个未来" |
+| 20 | [Effect-TS/effect](/study/projects/effect/) ✅ | 函数式错误 + 资源管理——TS 生态的"另一个未来" |
 
 **这一季回答的问题**：当代码生成变便宜，"如何确信这段代码真的对"和"如何把代码组织得能读"会变成区分线。
 
@@ -103,6 +103,7 @@ sidebar:
 - [excalidraw/excalidraw](/study/projects/excalidraw/)（2026-05-28）— S5 开篇
 - [honojs/hono](/study/projects/hono/)（2026-05-28）
 - [microsoft/playwright](/study/projects/playwright/)（2026-05-28）
+- [Effect-TS/effect](/study/projects/effect/)（2026-05-28）— Season 5 完成 / 全队列完成
 
 ---
 
