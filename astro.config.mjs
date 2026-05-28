@@ -24,6 +24,7 @@ export default defineConfig({
           items: [
             { label: '项目消化方法论', link: '/method/' },
             { label: '项目推荐队列', link: '/queue/' },
+            { label: '项目全景索引', link: '/projects-atlas/' },
             {
               label: '项目笔记',
               autogenerate: { directory: 'projects' },
@@ -35,6 +36,7 @@ export default defineConfig({
           items: [
             { label: '论文消化方法论', link: '/papers-method/' },
             { label: '论文推荐队列', link: '/papers-queue/' },
+            { label: '论文全景索引', link: '/papers-atlas/' },
             {
               label: '论文笔记',
               autogenerate: { directory: 'papers' },
