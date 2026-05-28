@@ -11,7 +11,7 @@ sidebar:
 
 ## 进行中
 
-**excalidraw/excalidraw** — Season 5 开篇：canvas + 协同的最小心脏。
+**honojs/hono** — Season 5 第二篇：极简边缘后端 API 设计取舍。
 
 ---
 
@@ -73,7 +73,7 @@ sidebar:
 
 | # | 项目 | 关键判断 |
 |---|------|---------|
-| 17 | excalidraw/excalidraw | canvas + 协同的最小心脏，怎么把"画图"做成产品 |
+| 17 | [excalidraw/excalidraw](/study/projects/excalidraw/) ✅ | canvas + 协同的最小心脏，怎么把"画图"做成产品 |
 | 18 | honojs/hono | 极简边缘后端：API 设计取舍如何影响开发体验 |
 | 19 | microsoft/playwright | 浏览器自动化的工程艺术：跨进程、跨语言的契约设计 |
 | 20 | Effect-TS/effect | 函数式错误 + 资源管理——TS 生态的"另一个未来" |
@@ -100,6 +100,7 @@ sidebar:
 - [modelcontextprotocol/typescript-sdk](/study/projects/mcp-ts-sdk/)（2026-05-27）
 - [vercel/ai](/study/projects/vercel-ai/)（2026-05-27）
 - [continuedev/continue](/study/projects/continue/)（2026-05-27）— Season 4 完成
+- [excalidraw/excalidraw](/study/projects/excalidraw/)（2026-05-28）— S5 开篇
 
 ---
 
