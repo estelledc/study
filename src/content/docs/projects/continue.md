@@ -499,8 +499,8 @@ Continue checks 抓"语义级判断"——例如"这个新 endpoint 没改文档
 ### 今天就能用的部分
 
 - **给 study 站加 PR 自动评审**：写 `.continue/checks/no-business-context.md`——
-  规则正是 [memory 里 feedback_public_output_no_business_context.md](https://example.invalid/memory)，
-  让 AI 在 PR 上检查正文是否漏了公司业务词。比 grep 关键词更鲁棒（能识别"含业务上下文的隐喻"）
+  规则就是仓库 README 末尾「公开站红线」段那几条（项目代号 / 内部域名 / 团队关系等私域词
+  不得出现），让 AI 在 PR 上扫正文。比 grep 关键词更鲁棒（能识别"含业务上下文的隐喻"）。
 - **给 intern-journal 加 anti-slop check**：直接抄 Continue 仓库的
   [`.continue/checks/anti-slop.md`](https://github.com/continuedev/continue/blob/cb273098d968/.continue/checks/anti-slop.md)，
   防止 daily / learnings 里写出 ChatGPT 风套话（"In the realm of ..."）
