@@ -247,3 +247,127 @@ sidebar:
 - Andrew Ng 的"读 5 篇 vs 读 50 篇"建议
 - Karpathy 的"读论文先复现关键 figure"实践
 - 项目笔记 7 层方法论的迁移与改造
+
+---
+
+## 状元篇 Checklist v1
+
+> "状元篇"是这个站点对论文笔记的高水位标准——参考样本 [ReAct](/study/papers/react/)
+> （1100 行 + 3 张 sketchnote + 完整 7 阶段 reproduce）。
+> 这是 8 层方法论之上的可量化加固层，按层挂钩。
+> 对齐项目版 [状元篇 Checklist](/study/method/) 但有论文专属条目。
+
+### 严格度分级
+
+- **P0 必填**：缺则不及格，状元篇必须全部满足
+- **P1 推荐**：影响"状元"评级，应该满足
+- **P2 加分**：高阶项，做到额外加分
+
+### Frontmatter (P0)
+
+- [ ] `title` 含一句话定位（如 "ReAct — agent loop 的祖宗：think × act 的最小可执行三元组"）
+- [ ] `description` 1 行实质性叙事，禁 abstract 翻译
+- [ ] `sidebar.label` ≤ 25 字符 + 含 Venue/年（如 "ReAct (NeurIPS 2022)"）
+
+### Layer 0 · 核心信息表 (P0：≥ 9 字段)
+
+- [ ] 标题（英文）+ 标题翻译（中文）
+- [ ] 作者列表
+- [ ] 一作机构（含"当时 → 现在"，如 "Princeton NLP（Yao 时为博士生 → 现 OpenAI）"）
+- [ ] 发表时间 + 渠道
+- [ ] arXiv ID + 终版号（v1/v3）
+- [ ] 代码 repo + commit hash + star 数 + 读时日期
+- [ ] 数据 / 资源
+- [ ] 论文类型（method / benchmark / theory / survey）
+
+### 创新点段 (P0：method 里没要求，状元加的)
+
+- [ ] 3-5 个 numbered 创新点，每点粗体小标题 + 1-2 段解释
+- [ ] 至少 1 处 `path:line` 锚定（如 `wikienv.py:153-154`）
+- [ ] 至少 1 处指出"工程上最被低估的细节"
+
+### 一句话总结 + Hero figure (P0)
+
+- [ ] 醒目加粗的核心总结句
+- [ ] 视觉冲击式总结句（"你今天用的每一个 X 背后都是这个论文画的回路"）
+- [ ] Hero 位置嵌入 ≥ 1 张 sketchnote 风 figure（webp，13-15× 压缩，路径 `/papers/<slug>/01-*.webp`）
+- [ ] caption 标注图中元素 + 关键 hyperparameter + 画风注明
+
+### Layer 1 · Why 段 (P0)
+
+- [ ] 3-5 句话用自己的话总结"前世界缺什么"
+- [ ] 把对手分成两堆（如 reasoning 派 vs acting 派）
+- [ ] 至少 1 处 `path:line` 引用关键代码细节
+
+### Layer 2 · 论文地形 (P0)
+
+- [ ] 三列表：`Section / 角色 / 你该花多少时间`
+- [ ] 阅读策略动词（读 / 精读 / 看 Table X / 跳 / 必看）
+- [ ] "心脏物 N 个"清单（通常 2-3 项）
+
+### 机制流程段 (P1：method paper 必须，theory paper 可省)
+
+- [ ] 把方法压缩成 N 步（通常 3-5 步）
+- [ ] 配 figure 解释关键接口或路径
+
+### Layer 3 · 核心机制 (P0：≥ 3 段独立小节)
+
+- [ ] 每段 GitHub 永久链接（commit hash 锚定）
+- [ ] 每段 ≥ 20 行真实代码片段（不是伪代码）
+- [ ] 每段 ≥ 5 个旁注子弹
+- [ ] 每段尾 ≥ 1 个 "怀疑 N: ..." 显式段
+
+### Layer 4 · 复现 (P0：phd-skills 7 阶段全走)
+
+- [ ] 阶段 1 论文获取（命令 + arxiv id）
+- [ ] 阶段 2 代码盘点 inventory 表（文件 / 角色 / 是否齐全）
+- [ ] 阶段 3 Gap 分析表（论文版 vs 代码 / 推测）
+- [ ] 阶段 4 实现/替换说明（用什么 backend 替换原 LLM 或参考实现）
+- [ ] 阶段 5 数据集（≥ 5 题 toy 或真 dev split 子集）
+- [ ] 阶段 6 Smoke run（≥ 1 条完整 trajectory 打印）
+- [ ] 阶段 7 跑结果对照表（n_steps / EM / label 等，≥ 5 行）
+- [ ] 阶段 7 补 results.md（TL;DR / 分布 / Limitations）
+- [ ] 显式给出"绝对差异 vs 论文数字"的解释
+
+### Layer 5 · 谱系对比 (P0 + figure P1)
+
+- [ ] ≥ 1 篇前作 + ≥ 1 篇后作
+- [ ] ≥ 1 篇"反对者"（同期 critique 论文，如有）
+- [ ] 选型建议表：场景 → 选谁
+- [ ] (P1) 1 张演化树 sketchnote（figure 3）
+
+### Layer 6 · 与当前工作连接 (P0)
+
+- [ ] "今天就能用" / "下个月能用" / "不要用的部分" 三段，每段 ≥ 4 子弹
+
+### Layer 7 · 怀疑 + 延伸 (P0)
+
+- [ ] 3-5 件具体怀疑，每件锚定 paper 位置（Table X / Section Y）
+- [ ] "接下来读哪 N 篇"表
+
+### 限制段 (P0：DeepPaperNote 风格)
+
+- [ ] ≥ 4 条独立限制，禁抄 paper limitations
+
+### 附录：叙事错位清单 (P2 加分)
+
+- [ ] 论文宣称 vs 代码现实对比表，≥ 4 行
+
+### 结尾元数据 (P1)
+
+- [ ] 标记重构日期 + 总行数 + 启用 skill / 工具
+
+### 量化总指标
+
+| 维度 | 底线 | 标杆（ReAct） |
+|---|---|---|
+| 行数 | 500 | 1100 |
+| Figure 数（webp） | 2（hero + 演化树） | 3 |
+| GitHub 永久链接 | 3 | 5+ |
+| 显式怀疑 | 4 | 7+ |
+| `path:line` 引用 | 1 | 多处 |
+
+### 版本
+
+- **v1** (2026-05-28) — 基于 ReAct 反推首版 checklist
+- 修订规则：未来加新条目升 v2，原 v1 条目不删，只标 deprecated
