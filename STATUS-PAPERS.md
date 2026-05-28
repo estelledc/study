@@ -38,17 +38,32 @@
 - Bidirectional Typing (Dunfield & Krishnaswami, CSUR 2021) — TypeScript / Rust 类型推导根
 - Programmer Interruption (Parnin & Rugaber, ICSE 2010) — 23 分钟 flow 恢复
 
-## 后续 Season（roadmap，未细化）
+## Season F（已规划，待写）
 
-需要写到 100 篇 = 80 篇待规划，按下面这些方向铺开（每季 5 篇）：
+主题：**分布式系统 2.0 — post-2010 现代系统**（补 Season B/E 的 4 个真空：OLTP 事务 / 存算分离 / deterministic transaction / CRDT 协同）
 
-- Season F：分布式系统 2.0（FoundationDB / TigerBeetle / Calvin / Aurora 等）
+| # | 论文 | 类型 | venue/年 | 关键连接 |
+|---|---|---|---|---|
+| 26 | Amazon Aurora | A method/system | Verbitski et al., SIGMOD 2017 | "log is the database" — 补 GFS 2003 → cloud-native 演化必收一跳，工程师每天用 |
+| 27 | A Conflict-Free Replicated JSON Datatype | A method | Kleppmann & Beresford, IEEE TPDS 2017 | CRDT JSON 树 — Figma/Linear/Yjs 祖宗，Wiki 多端编辑直接相关 |
+| 28 | Calvin: Deterministic Transactions | A method | Thomson et al., SIGMOD 2012 | 与 Spanner（E）双路线对照：sequencer vs TrueTime |
+| 29 | TigerBeetle | A method/system | Pritchard et al., 2020+ design + VLDB 2024 | Raft 工程化极致 + 金融级 OLTP，Zig 源码 < 20k 行可读 |
+| 30 | FoundationDB Paper | A method | Zhou et al., SIGMOD 2021 | 测试方法论（deterministic simulation），10 年才发论文是因为前 9 年在测基建 |
+
+备选池：Snowflake 2016（OLAP 云原生）/ EPaxos 2013（共识进化）/ DynamoDB 2022（Dynamo 15 年回顾）/ Anna 2018（CRDT lattice KV）/ Pulsar 2019（Kafka 后继）
+
+## 后续 Season（roadmap）
+
+研究队列持续扩充，不卡 100 上限。已规划方向：
+
 - Season G：编程语言 / 编译器 II（HM 类型 / effect system / incremental compilation）
 - Season H：多模态 / 视觉理解（DINO / SAM / Grounding DINO 类）
-- Season I：AI safety / interpretability 深化（mechanistic interpretability 后续）
-- Season J：HCI 程序员认知（cognitive load / debugging / pair）
+- Season I：AI safety / interpretability 深化
+- Season J：HCI 程序员认知（cognitive load / debugging / flow）
 - Season K：检索 / 记忆系统（retrieval / spaced repetition / vector DB）
-- Season L-T：根据 study 站使用反馈补缺口
+- Season L-Z：根据 study 站使用反馈持续补缺口
+
+每季约 5 篇，主 CC 在 refactor 间隙陆续 dispatch 研究 subagent 详细化。
 
 ## 历史里程碑
 
