@@ -126,22 +126,60 @@ excalidraw/                                ← monorepo（yarn workspaces 协调
 | [`packages/fractional-indexing/src/index.ts`](https://github.com/excalidraw/excalidraw/blob/c08be696/packages/fractional-indexing/src/index.ts) | 322 | base62 字符串排序 → z-order 协同不冲突 |
 | [`packages/excalidraw/components/App.tsx`](https://github.com/excalidraw/excalidraw/blob/c08be696/packages/excalidraw/components/App.tsx) | 13053 | 主组件（**不要硬读**，hands-on 段量化它的复杂度） |
 
-### commit 热点 top 12（基于 `git log --depth=2000 --format='' --name-only` 实测）
+### commit 热点按子系统分组（基于 `git log --depth=2000 --format='' --name-only` 实测）
+
+数字保留实测真值，按 5 个子系统拆开看——能看出**哪一类心脏文件高频改、哪一类是 noise**，
+比单一总榜更能指导精读路径。每组前 1-2 句子系统说明：
+
+#### canvas 渲染（主组件 + 渲染调度）
+
+主组件是大型应用最容易膨胀的位置——App.tsx 的 commit 数高度暗示"god-class 自我加强"。
 
 | 排名 | 文件 | commits | 解读 |
 |---|---|---|---|
 | 1 | `src/components/App.tsx` | 275 | 旧路径（v0.x 之前），早期 monorepo 重构前位置 |
 | 2 | `packages/excalidraw/components/App.tsx` | 227 | **当前主组件**——重构后路径，热度依然最高 |
-| 3 | `yarn.lock` | 214 | 依赖更新（dependabot 贡献，noise） |
-| 4 | `package.json` | 166 | 同上，noise |
-| 5 | `src/types.ts` → `packages/excalidraw/types.ts` | 91+79 | 类型山，每加 feature 都要碰 |
-| 6 | `src/components/LayerUI.tsx` | 89 | UI 框架层，高频改动 |
-| 7 | `src/locales/en.json` → `.../locales/en.json` | 73+59 | i18n 字符串增删 |
-| 8 | `packages/excalidraw/tests/__snapshots__/history.test.tsx.snap` | 66 | history 测试快照——**说明 undo/redo 是高频回归区** |
-| 9 | `src/utils.ts` → `packages/excalidraw/utils.ts` | 65+? | 公共工具沉淀 |
-| 10 | `src/excalidraw-app/index.tsx` | 62 | app 入口 |
-| 11 | `excalidraw-app/collab/Collab.tsx` | 29+16(legacy) | 协同集成层 |
-| 12 | `packages/element/src/delta.ts` | 11 | delta 实现，**改动频率比想象低**——抽象一旦稳定就少动 |
+| 3 | `packages/excalidraw/scene/Renderer.ts` / `renderer/staticScene.ts` 等 | 14+17 | 渲染调度 + 完成图渲染，相对稳定（抽象做对了） |
+
+#### state / delta（Store/Snapshot/Delta 心脏）
+
+抽象一旦定型就很少动——这是 Excalidraw 架构稳的结构性证据。
+
+| 排名 | 文件 | commits | 解读 |
+|---|---|---|---|
+| 1 | `src/types.ts` → `packages/excalidraw/types.ts` | 91+79 | 类型山，每加 feature 都要碰 |
+| 2 | `packages/element/src/store.ts` | 9 | **2024 年新引入**——depth=2000 已覆盖完整历史 |
+| 3 | `packages/element/src/delta.ts` | 11 | delta 实现，**改动频率比想象低**——抽象稳定就少动 |
+| 4 | `packages/excalidraw/tests/__snapshots__/history.test.tsx.snap` | 66 | history 测试快照——**说明 undo/redo 是高频回归区** |
+
+#### collab（协同 + 加密）
+
+"喉咙文件"集中在两处：Collab.tsx 业务集成 + Portal.tsx socket 抽象。改动数不算高但每次都核心。
+
+| 排名 | 文件 | commits | 解读 |
+|---|---|---|---|
+| 1 | `excalidraw-app/collab/Collab.tsx` | 29+16(legacy) | 协同集成层 |
+| 2 | `excalidraw-app/collab/Portal.tsx` | 15 | socket.io 抽象，184 行小但关键 |
+
+#### i18n + UI 框架
+
+UI 框架层 + 多语言文案——高频但不是心脏，主要靠 PR 增量。
+
+| 排名 | 文件 | commits | 解读 |
+|---|---|---|---|
+| 1 | `src/components/LayerUI.tsx` | 89 | UI 框架层，高频改动 |
+| 2 | `src/locales/en.json` → `.../locales/en.json` | 73+59 | i18n 字符串增删 |
+| 3 | `src/utils.ts` → `packages/excalidraw/utils.ts` | 65+? | 公共工具沉淀 |
+| 4 | `src/excalidraw-app/index.tsx` | 62 | app 入口 |
+
+#### noise（依赖管理 / changelog，**不读心脏但 commit 数高**）
+
+读源码时**不要被这些迷惑**——dependabot 自动 PR 拉高了 yarn.lock / package.json 的数字，但这些不是设计决策。
+
+| 排名 | 文件 | commits | 解读 |
+|---|---|---|---|
+| 1 | `yarn.lock` | 214 | 依赖更新（dependabot 贡献，noise） |
+| 2 | `package.json` | 166 | 同上，noise |
 
 **怀疑 0**（数据局限）：`git fetch --depth=2000` 拉了 2000 commits 的 surface，
 仓库总 commits 量级 21k+，**冷门文件可能被截断**。`store.ts` 只统计到 9 commits 是因为这个文件
@@ -285,6 +323,20 @@ export class History {
 这种 edge case 在 `delta.ts` 2066 行里应该有保护，但 `--depth 1` 没读。**待补**。
 
 ### 机制 3 · `Portal.tsx` —— 协同不是 P2P，是"加密包裹 + 中心化中继"
+
+![Excalidraw collab 数据流 — 用户输入 → Store → Portal → AES-GCM → socket.io 中继 → 远端 applyRemote](/projects/excalidraw/02-collab-flow.webp)
+
+*图 2：Excalidraw collab 子系统的端到端数据流（commit `c08be696`）。手绘 sketchnote 风，
+和图 1 同一套配色（蓝=本地处理 / 橄榄绿=delta 生成 / 红=Portal 协同喉咙 / 黄=AES-GCM 加密 /
+灰=socket.io 中继）。流向分三段：①②③④ 上行（浏览器内本地处理 + Durable 增量生成）→
+④↓⑤ 加密（AES-GCM 128 在 [`encryption.ts:50-78`](https://github.com/excalidraw/excalidraw/blob/c08be696/packages/excalidraw/data/encryption.ts#L50-L78)，
+roomKey 在 URL `#hash` 不发服务器）→ ⑤⑥⑦ 下行（中心化中继转发，远端用
+`CaptureUpdateAction.NEVER` 反向应用 delta，不污染对端 undo 栈）。
+**关键节点**：④ [`Portal._broadcastSocketData`](https://github.com/excalidraw/excalidraw/blob/c08be696/excalidraw-app/collab/Portal.tsx#L85-L102)
+是唯一加密入口——只有 DurableIncrement 走到这里，EphemeralIncrement（鼠标移动）只刷 UI 不广播；
+⑤ AES-GCM 自带认证标签防服务器篡改密文；⑥ 中继看不到内容但仍可见元数据（traffic analysis 风险，
+见怀疑 3）。**和官网"E2E encrypted"叙事的对照**：是真 E2E（服务器无 key），但不是 P2P/WebRTC——
+这一道误读图 1 已经标过，图 2 在数据流层面再确认一次。*
 
 [`excalidraw-app/collab/Portal.tsx:85-102`](https://github.com/excalidraw/excalidraw/blob/c08be696/excalidraw-app/collab/Portal.tsx#L85-L102)
 是协同的"喉咙"——**所有广播在这里加密一次再 emit**：
@@ -633,7 +685,7 @@ grep -cE "render\(\)" "$APP"
 4. **`fractional-indexing/src/index.ts:212` `generateKeyBetween`**——
    如果两人同时调相同的 `(a, b)` 得到同一个 key，**Excalidraw 怎么处理冲突？**
    去 `excalidraw-app/collab/Collab.tsx` 找 element merge 逻辑，看是 last-write-wins 还是别的
-3. **`App.tsx` 13053 行 / 142 方法**——36 个 `addEventListener`，
+5. **`App.tsx` 13053 行 / 142 方法**——36 个 `addEventListener`，
    组件 unmount 时是不是 36 个都对应有 `removeEventListener`？grep 验证：
    `grep -c "removeEventListener" packages/excalidraw/components/App.tsx` 看数字对得上不
 
