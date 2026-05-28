@@ -20,7 +20,7 @@ sidebar:
 
 ## 进行中
 
-**第 20 篇（最后一篇）**：The Effects of CI on Software Development (Ståhl & Bosch, JSS 2014)
+**🎉 全部 20 篇完成 ✅（2026-05-28）**
 
 ---
 
@@ -72,7 +72,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 
 ---
 
-### Season D · DX 实证研究（0 / 5 完成）
+### Season D · DX 实证研究（5 / 5 完成 ✅）
 
 | # | 论文 | 关键判断 |
 |---|------|---------|
@@ -80,7 +80,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 | 17 | [**What Makes a Great Software Engineer?**](/study/papers/great-swe/) (Li et al., ICSE 2015) ✅ | "工程师素质"用人类学方法访谈 59 个 Microsoft 资深工程师后归纳出的 53 条 |
 | 18 | [**Do Developers Read Compiler Error Messages?**](/study/papers/compiler-errors/) (Barik et al., ICSE 2017) ✅ | 眼动追踪 + 调查：工程师其实不看错误信息——这事直接改变了 Rust / Elm / Svelte 的 error UX |
 | 19 | [**Empirical Studies of Pair Programming**](/study/papers/pair-programming/) (Hannay et al., IST 2009) ✅ | 18 个 RCT 元分析——pair programming 真的"两倍人力换 1.5 倍质量"吗？ |
-| 20 | **The Effects of CI on Software Development** (Ståhl & Bosch, JSS 2014) | CI 这件事的实证基础——你信奉的"快速反馈循环"有多硬的数据 |
+| 20 | [**The Effects of CI on Software Development**](/study/papers/ci-effects/) (Ståhl & Bosch, JSS 2014) ✅ | CI 这件事的实证基础——你信奉的"快速反馈循环"有多硬的数据 |
 
 **这一季回答的问题**：编程是工程也是人类活动。"AI 让工程师更快"/"pair programming 更好"
 这些经验之谈，谁真的做过 RCT？看完这 5 篇你会对"软件开发是不是科学"有更冷静的判断。
@@ -109,6 +109,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 - [Great SWE (Li et al., ICSE 2015)](/study/papers/great-swe/)（2026-05-28）— L4 访谈协议复用 ("我团队 great engineer" 小研究)；含 1 张 figure（8 大类别）
 - [Compiler Errors (Barik et al., ICSE 2017)](/study/papers/compiler-errors/)（2026-05-28）— L4 个人 fixation 观察（17/83 比论文 30/70 更极端）；含 1 张 figure（眼动 setup + 4 findings）
 - [Pair Programming Meta-Analysis (Hannay et al., IST 2009)](/study/papers/pair-programming/)（2026-05-28）— L4 团队 PP pilot 设计；含 1 张 figure（forest plot + 3 outcomes）
+- [CI Effects (Ståhl & Bosch, JSS 2014)](/study/papers/ci-effects/)（2026-05-28）— L4 5 问 CI ROI 诊断；含 1 张 figure（pipeline + benefits/costs）。**🎉 第 20 篇 = 全部完成！**
 
 ---
 
