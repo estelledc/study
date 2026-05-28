@@ -217,11 +217,18 @@ LLaVA 训练逻辑在
 
 ```python
 # Stage 1: pretrain projection only
+# 第一步：先把整个 LLaMA 主干冻住（requires_grad_=False
+# 会递归地把所有子模块的参数都设成不可训练）
 if model_args.freeze_backbone:
     model.model.requires_grad_(False)
 
-# ... vision tower setup ...
+# 第二步：vision tower（CLIP）也冻住——LLaVA 全程不动 CLIP
+vision_tower = model.get_vision_tower()
+vision_tower.requires_grad_(False)
+vision_tower.to(dtype=torch.bfloat16, device=training_args.device)
 
+# 第三步：把 projection W（mm_projector）单独解冻
+# 这是 Stage 1 唯一被训练的模块
 model.config.tune_mm_mlp_adapter = training_args.tune_mm_mlp_adapter = \
     model_args.tune_mm_mlp_adapter
 if model_args.tune_mm_mlp_adapter:
@@ -229,10 +236,42 @@ if model_args.tune_mm_mlp_adapter:
     for p in model.get_model().mm_projector.parameters():
         p.requires_grad = True
 
+# Stage 2 切到 finetune 时反过来——这里是 freeze projection 的开关
 model.config.freeze_mm_mlp_adapter = training_args.freeze_mm_mlp_adapter
 if training_args.freeze_mm_mlp_adapter:
     for p in model.get_model().mm_projector.parameters():
         p.requires_grad = False
+
+# 第四步：如果开 LoRA 路线（LLaMA-Adapter / LoRA fork），用 peft 包一层
+# 替代上面"全量解冻 LLaMA"的 Stage 2 路线，显存从 80G 降到 24G
+if training_args.lora_enable:
+    from peft import LoraConfig, get_peft_model
+    lora_config = LoraConfig(
+        r=training_args.lora_r,                 # 通常 64 或 128
+        lora_alpha=training_args.lora_alpha,    # 通常 16
+        target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+        lora_dropout=training_args.lora_dropout,
+        bias="none",
+        task_type="CAUSAL_LM",
+    )
+    model = get_peft_model(model, lora_config)
+
+# 第五步：dataloader 装配——Stage 1 用 CC-595K，Stage 2 用 LLaVA-Instruct-158K
+# DataCollator 负责把 image + text 拼成统一 batch，处理变长 padding
+train_dataset = LazySupervisedDataset(
+    data_path=data_args.data_path,
+    tokenizer=tokenizer,
+    data_args=data_args,
+)
+data_collator = DataCollatorForSupervisedDataset(tokenizer=tokenizer)
+trainer = LLaVATrainer(
+    model=model,
+    tokenizer=tokenizer,
+    args=training_args,
+    train_dataset=train_dataset,
+    data_collator=data_collator,
+)
+trainer.train()
 ```
 
 对应的 Stage 2 deepspeed launch 关键参数（`scripts/v1_5/finetune.sh`）：
@@ -593,30 +632,31 @@ OCR 和精确数值阅读是已知弱点。
 
 ## Layer 6 · 与你当前工作的连接
 
-### 今天就能用（intern-journal / activity-planner / video-eval-agent 三个项目）
+### 今天就能用（个人学习项目里能直接接的 4 个场景）
 
-- **video-eval-agent 视频评价场景**：现在的 6 件套 schema 里 evidence 字段是文本，
-  但视频 keyframe 是图像——可以把 LLaVA-1.5 7B 当一个 frame-level evaluator，
+- **视频/图像评价场景**：如果你的评价系统结构化输出 schema 里 evidence 字段是文本，
+  但实际证据是图像 keyframe——可以把 LLaVA-1.5 7B 当一个 frame-level evaluator，
   对每个 keyframe 问"这帧里的 X 行为是否发生"。比训练专用 vision classifier 快 10 倍。
-- **activity-planner 把 POI 图作为 LLM 上下文**：现在 plan agent 只看文本 POI 描述，
-  如果接入 LLaVA 对 POI 的图片做"看图描述"，再喂给 LongCat 做规划，质量会涨。
-- **blindbox 的视觉对齐工作流**：每次 ResultV2 重构都要人工肉眼比对截图，
+- **把图像作为 LLM 上下文喂给 planner**：如果你的 agent 只看文本描述，
+  接入 LLaVA 对图片做"看图描述"，再喂给你用的 LLM 做规划，质量会涨。
+  适用于任何"文本 agent 但其实有视觉信息可用"的场景。
+- **做 UI/UX 视觉回归的场景**：每次前端重构都要人工肉眼比对截图，
   可以用 LLaVA 生成"两张截图差异描述"作为 PR 自动 review 的第一道——
   hallucination 风险高但作为 pre-screen 够用。
 - **学习节奏验证**：LLaVA 是"开源最简多模态"的 canonical example，
   把 CLIP / LLaMA / GPT-4 instruction tuning 三个独立学过的概念缝在一起——
-  适合作为 H 季多模态主题收官的"集大成"复习。
+  适合作为多模态主题收官的"集大成"复习。
 
 ### 下个月能用
 
-- **如果 video-eval-agent v0.5 要支持视频帧打分**：先用 LLaVA-1.5 7B 做 baseline
-  （单帧 inference 约 1.5s on M2），如果数字不达标再考虑 fine-tune（对 video-eval 任务做 LoRA）。
+- **如果你的视频评价系统要支持视频帧打分**：先用 LLaVA-1.5 7B 做 baseline
+  （单帧 inference 约 1.5s on M2），如果数字不达标再考虑 fine-tune（对你的任务做 LoRA）。
 - **复现一次完整训练**：在云上租 8×A100 跑 1 次 LLaVA-1.5 Stage 2（~12-20h, ~$400）——
   这是整个站点目前还没有的"亲手训过 LLM"经验。优先级中等。
 - **学 LoRA / QLoRA**：LLaVA 全量微调对显存要求太高，下一步学 LoRA 套到 LLaVA 上
   （LLaVA-Adapter / LoRA 已经有现成实现）——这一步打通后就能在自己的数据上训。
 - **GPT-4-as-judge 的 evaluation 范式**：把 LLaVA 用的"GPT-4 给两个回答打分"搬到
-  video-eval-agent，作为 fact_coverage v0.7 评测的 baseline——比现有 EM 评分能捕捉更多 nuance。
+  你的评价系统，作为事实覆盖率打分的 baseline——比现有 EM 评分能捕捉更多 nuance。
 
 ### 不要用的部分
 
