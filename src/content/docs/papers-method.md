@@ -370,4 +370,131 @@ sidebar:
 ### 版本
 
 - **v1** (2026-05-28) — 基于 ReAct 反推首版 checklist
+- **v1.1** (2026-05-28) — 加论文类型分支（见下），解决 v1 默认 method paper、empirical / benchmark / theory paper 套不上的问题
 - 修订规则：未来加新条目升 v2，原 v1 条目不删，只标 deprecated
+
+---
+
+## 状元篇 Checklist v1.1：论文类型分支
+
+> v1 默认是 method/algorithm paper（参考 ReAct）。
+> empirical / benchmark / theory paper 没有 GitHub repo 或没有 20 行算法代码——硬套 v1 会逼笔记作者造代码。
+> v1.1 引入"论文类型 self-classify"，每类有专属的 Layer 3 / Layer 4 / 锚定形式。
+
+### Step 1：先 self-classify
+
+写笔记前先在草稿顶部标论文类型（4 选 1）：
+
+| 类型 | 判定 | 例子 |
+|---|---|---|
+| **method / algorithm** | 提出一个新方法或算法，通常有 prototype repo | ReAct, Toolformer, Reflexion, Wadler-Prettier, Adapton |
+| **empirical study** | 测人/系统的行为，有 stimuli + 数据 + 统计 | Compiler Errors, Copilot RCT, Great SWE, Pair Programming, CI Effects |
+| **benchmark** | 提出评测数据集 + 协议 + baseline 分数 | SWE-bench |
+| **theory** | 数学形式化 + 定理 + 证明，无原型代码或代码次要 | Lamport Time-Clocks, Trees that Grow, Push-Pull FRP |
+| system paper（含 Raft / GFS / MapReduce / Dynamo） | 描述大型工程系统，按"心脏算法"在哪决定 | 算法重 → method 类；架构重 → 走 method 类 + 强调 architecture 图 |
+
+### Step 2：按类型套对应 Layer 3 / Layer 4 模板
+
+通用条目（所有类型共享，不变）：
+- Frontmatter / Layer 0 ≥ 9 字段 / 创新点 / 一句话总结 + Hero figure
+- Layer 1 Why / Layer 2 论文地形 / Layer 5 谱系对比 / Layer 6 三段 / Layer 7 怀疑
+- 限制段 / 叙事错位附录 / 结尾元数据
+
+差异条目（按类型分支）：
+
+#### 分支 A · method / algorithm paper（v1 默认，不变）
+
+**Layer 3** ≥ 3 段独立小节：
+- 每段 GitHub 永久链接（commit hash 锚定）
+- 每段 ≥ 20 行真实代码片段（不是伪代码）
+- 每段 ≥ 5 个旁注子弹
+- 每段尾 ≥ 1 个"怀疑 N"段
+
+**Layer 4** phd-skills 7 阶段全走，跑 repo → 1 个数字（LLM 类允许降级到 1 完整 trajectory）
+
+**主锚定形式**：`path:line`（带 commit hash）
+
+#### 分支 B · empirical study paper
+
+**Layer 0 增项 (P0)**：
+- [ ] 数据 / 资源字段必填具体规模（如 "Tobii X120 + 56 NCSU 学生"）
+- [ ] 测量工具年代（"Tobii X120 是 2017 技术，2026 已有 250 Hz / 0.3° 替代品"）
+
+**Layer 3** ≥ 3 段独立小节：
+- 第一段必须含 **stimuli inventory 表**（论文用了什么任务/材料/数据）
+- 每段 primary source URL（figshare / OSF / dryad / supplementary materials），不要求 GitHub
+- 每段 ≥ 20 行 stimuli 引用 / 数据 trajectory / Table 还原（ASCII 可）
+- 每段 ≥ 5 个旁注子弹
+- 每段尾 ≥ 1 个"怀疑 N"段
+
+**Layer 4** phd-skills 7 阶段降级版（self-replication 路径）：
+- 阶段 1-3 同 method 类
+- 阶段 4：替换矩阵（论文工具 → 我的替代 + 损失什么）
+- 阶段 5：自出 ≥ 5 题（控制论文同样的变量轴）
+- 阶段 6-7：self-observation 完整 trajectory + 5 题对照表 + 显式声明 N=1 / 录屏分辨率 / 主观打标
+- 阶段 7 results.md 必须含 "Limitations: N=1 / 工具精度损失 / 我有先验" 段
+
+**主锚定形式**：`Section X.Y` / `Table N` / `Figure N`
+
+**限制段必填三类**：sample size + 任务边界 + 测量工具时代
+
+#### 分支 C · benchmark paper
+
+**Layer 0 增项 (P0)**：
+- [ ] leaderboard 当前 SOTA + 提交时间（截至读时）
+- [ ] 数据集大小 / split / 是否有 contamination 警告
+
+**Layer 3** ≥ 3 段独立小节：
+- 第一段必须画 **task structure**（至少 1 个完整 task 跑通：input → expected output → scoring）
+- 每段 dataset URL / scoring code 引用
+- 每段 ≥ 20 行 schema / example / scoring rubric
+- 每段尾 ≥ 1 个"怀疑 N"段
+
+**Layer 4** 在 dev split 子集上跑现成 model（≥ 5 samples）：
+- 阶段 5 数据集 = dev split 随机抽 5-10 题
+- 阶段 6-7：每题完整 model output + 论文 baseline 数字对比
+- 显式给出 "我跑出来 X，论文 baseline Y，差距来自 Z" 的解释
+
+**主锚定形式**：dataset card / leaderboard URL / scoring rubric Section
+
+**限制段必填三类**：contamination + ceiling effect + 任务 narrow 度
+
+#### 分支 D · theory paper
+
+**Layer 0 增项 (P0)**：
+- [ ] Notation 速记表（论文里关键符号表）
+
+**Layer 3** ≥ 3 段独立小节：
+- 至少 1 段是 **反例构造**（找到定理边界 / 假设打破时发生什么）
+- 每段重述 1 个 Definition / Theorem / Lemma
+- 每段 ≥ 20 行 LaTeX 或 pseudo-code（重述 + 你的注释）
+- 每段尾 ≥ 1 个"怀疑 N"段
+
+**Layer 4** 手算 toy 验证：
+- ≥ 3 个不同实例验证定理（小数 / corner case / 极限情况各一）
+- 阶段 5-7：每个 toy 的完整推导 + 与定理对照
+
+**主锚定形式**：`Theorem N` / `Lemma N` / `Definition N`
+
+**限制段必填三类**：假设强度 + 实际系统差距 + 复杂度边界
+
+### Step 3：量化指标按类型差异化
+
+| 类型 | 行数底线 | Figure 数 | 一级锚定数 ≥ | 显式怀疑 ≥ |
+|---|---|---|---|---|
+| method | 500 | 2 | 3（GitHub permalink） | 4 |
+| empirical | 500 | 2 | 3（primary source + Section/Figure） | 4 |
+| benchmark | 500 | 2 | 3（dataset / leaderboard / rubric） | 4 |
+| theory | 400 | 1 | 5（Definition / Theorem / Lemma） | 4 |
+
+> 行数底线说明：theory paper 单页定理密度高，500 行底线偏松——400 行 + 5 个一级锚定才是真正的"信息密度足够"标准。
+
+### Step 4：自检流程
+
+写完笔记后按以下顺序自检：
+1. 论文类型 self-classify 标对了吗（看心脏物：是 algorithm / data / dataset / theorem 哪个？）
+2. 通用条目全过了吗（Frontmatter / Layer 0-2 / Layer 5-7 / 限制 / 附录 / 元数据）
+3. 类型专属条目全过了吗（参照上面分支 A/B/C/D）
+4. 量化指标全过了吗（行数 / figure / 锚定 / 怀疑）
+
+任意一项 P0 缺失 → 不及格，要补。
