@@ -22,6 +22,17 @@ sidebar:
 你今天看到的所有 LLM "先思考再回答"行为（包括 ChatGPT、Claude、ReAct、o1），
 都是这个朴素 prompt trick 在不同方向的演化。
 
+![Standard Prompting vs Chain-of-Thought Prompting](/study/papers/cot/01-standard-vs-cot.webp)
+
+*图 1：CoT 论文 Figure 1 重制版。**左 Standard Prompting**（灰）：only "The answer is X"。
+模型在第二题答错（cafeteria 题答 27，正确是 9）。
+**右 Chain-of-Thought**（蓝）：each example 多了自然语言推理 trace（"5+6=11"），
+high light 黄色。第二题正确推理出 23-20=3 → 3+6=9。
+**底部数字**：GSM8K 上 PaLM-540B 标准 prompt 18% → CoT 57%（3× 提升）。
+**emergent at ~100B 参数**——小模型用 CoT 反而变差。
+**底部说明**：Section 3.3 的三个 ablation（equation-only / variable-compute / reasoning-after-answer）全都 fail，
+**只有顺序自然语言推理才 work**。论文 paper-figure 风。*
+
 ## Why（这篇出现前世界缺什么）
 
 2022 年初，让 LLM 做"多步推理"有两条路线，都不够：
