@@ -59,7 +59,21 @@
 
 研究队列持续扩充，不卡 100 上限。已规划方向：
 
-- Season 8：数据库与数据工具（drizzle 已 S6 / duckdb / clickhouse / arrow / supabase）
+### Season 8（已规划，待写）
+
+主题：**数据存储 + 查询引擎**（drizzle 已 S6 上层 ORM，S8 下钻协议/驱动/搜索/KV）
+
+| # | 项目 | GitHub | 类型（v1.1） | 关键连接 |
+|---|---|---|---|---|
+| 31 | postgres.js | porsager/postgres | B 工具库 | 单作者 ~3k 行完整 PG wire protocol，drizzle 下钻一层 |
+| 32 | duckdb-wasm | duckdb/duckdb-wasm | C 编译器/运行时 | 浏览器跑 OLAP，列存 + 向量化执行心脏 |
+| 33 | supabase | supabase/supabase | A 大型应用 | open-source Firebase；postgres + auth + realtime + storage |
+| 34 | minisearch | lucaong/minisearch | B 工具库 | ~1500 行 BM25 + 倒排索引教科书 |
+| 35 | unstorage | unjs/unstorage | B 工具库 | 统一 KV 抽象，adapter pattern 范本 |
+
+备选池：apache/arrow-js（列存协议）/ kysely（type-level SQL）/ electric-sql（local-first 同步）
+
+
 - Season 9：大型协作 SaaS II（cal.com / appwrite / immich / penpot）
 - Season 10：AI 应用范式（dify / langfuse / chatgpt-clone 类）
 - Season 11：浏览器 agent 与 RPA（midscene / steel / playwright-controller）
