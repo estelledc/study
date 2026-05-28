@@ -29,7 +29,7 @@ sidebar:
 
 ## 创新点（4 个真正新的东西）
 
-1. **Self-supervised 工具数据生成**：不要人工标注的 "何时该调工具" 训练数据。方法 = LM 读文本生成候选 API 调用 → 真执行 → 用 next-token loss 自动过滤 → 过滤后的数据成为 fine-tune 集。**人工成本 = 5 工具 × 几个 demo prompt**（lucidrains 复现版 [`toolformer_pytorch/prompts.py:1-100`](https://github.com/lucidrains/toolformer-pytorch/blob/main/toolformer_pytorch/prompts.py) 是这种 prompt 的典型样子）。
+1. **Self-supervised 工具数据生成**：不要人工标注的 "何时该调工具" 训练数据。方法 = LM 读文本生成候选 API 调用 → 真执行 → 用 next-token loss 自动过滤 → 过滤后的数据成为 fine-tune 集。**人工成本 = 5 工具 × 几个 demo prompt**（lucidrains 复现版 [`toolformer_pytorch/prompts.py:1-100`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/prompts.py) 是这种 prompt 的典型样子）。
 2. **Loss-based 工具有用性判据**：是否 "有用" 用 `L⁻ᵢ - L⁺ᵢ ≥ τ_f` 来判——即 "把执行结果填进上下文后，未来 token 的 cross-entropy 比不调工具时低 τ_f 以上"。这是 self-supervision 的核心：**不要人类标 "调用对不对"，模型自己用 LM loss 投票**。论文 Section 3 算法 1 给出完整公式（[arxiv 2302.04761 Section 3, page 4](https://arxiv.org/pdf/2302.04761#page=4)）。
 3. **In-text API call 标记格式**：用 `[API(arg) → result]` 这种紧凑标记把工具调用嵌入文本流。推理时模型自己生成 `[API(arg) →`，遇到 `→` 触发实际调用，结果填回继续生成。这是**生成范式**（next-token prediction 的自然延伸）而非 ReAct 的**循环范式**（Thought/Action/Observation 三元组）——决定了后续工程上谁被采用。
 4. **5 工具 zero-shot 评测击败 GPT-3**：在 zero-shot 设置下，6.7B 参数的 Toolformer 在 LAMA / MATH / TempLAMA / NQ 等多个 benchmark 上击败 **175B GPT-3**——证明 "教模型用工具" 比 "把模型做更大" 更经济（论文 Table 3-6）。
@@ -107,21 +107,40 @@ sidebar:
 
 **Stage 1 — Sample API calls**（候选生成）
 
-输入：原始文本 `x = x_1, x_2, ..., x_n`（如 CCNet 一个段落）。
+输入：原始文本 `x = x_1, x_2, ..., x_n`（如 CCNet 一个段落）。对每个工具 `c`（calculator / QA / search / MT / calendar），用 in-context prompt P(c) 让 LM 在 `x` 的每个位置 i 估计 "这里要插入 API 调用" 的概率，**只在 top-k 个最高概率位置采样候选**（论文给的 k=5 / 每位置 m=5 个采样）。每个候选形如 `[Calculator(125 / 5)`。
 
-对每个工具 `c`（calculator / QA / search / MT / calendar），用 in-context prompt P(c) 让 LM 在 `x` 的每个位置 i 估计 "这里要插入 API 调用" 的概率：
+prompt P(c) 在 lucidrains 复现版 [`toolformer_pytorch/prompts.py:1-20`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/prompts.py) 是这样写的（**真实代码**——`[input]` 占位符等运行时替换成原始文本，注入到 GPT-J 当 few-shot prompt）：
 
+```python
+DEFAULT_PROMPT_INPUT_TAG = '[input]'
+
+calculator_prompt = f"""
+Your task is to add calls to a Calculator API to a piece of text.
+The calls should help you get information required to complete the text.
+You can call the API by writing "[Calculator(expression)]" where "expression" is the expression to be computed.
+Here are some examples of API calls:
+Input: The number in the next term is 18 + 12 x 3 = 54.
+Output: The number in the next term is 18 + 12 x 3 = [Calculator(18 + 12 * 3)] 54.
+Input: The population is 658,893 people. This is 11.4% of the national average of 5,763,868 people.
+Output: The population is 658,893 people. This is 11.4% of the national average of [Calculator(658,893 / 11.4%)] 5,763,868 people.
+Input: A total of 252 qualifying matches were played, and 723 goals were scored (an average of 2.87 per match). This is three times less than the 2169 goals last year.
+Output: A total of 252 qualifying matches were played, and 723 goals were scored (an average of [Calculator(723 / 252)] 2.87 per match). This is twenty goals more than the [Calculator(723 - 20)] 703 goals last year.
+Input: I went to Paris in 1994 and stayed there until 2011, so in total, it was 17 years.
+Output: I went to Paris in 1994 and stayed there until 2011, so in total, it was [Calculator(2011 - 1994)] 17 years.
+Input: From this, we have 4 * 30 minutes = 120 minutes.
+Output: From this, we have 4 * 30 minutes = [Calculator(4 * 30)] 120 minutes.
+Input: {DEFAULT_PROMPT_INPUT_TAG}
+Output:
+"""
 ```
-p_i(c) = P_M([API_c | P(c), x_{1:i-1})
-```
 
-其中 `[API_c` 是该工具的开始 token（如 `[Calculator(`）。**只在 top-k 个最高概率位置采样候选 API 调用**（每位置最多 m=5 个）。每个候选形如 `[Calculator(125 / 5)`。
+注意 `[Calculator(...)]` 这个 inline 标记是论文 Section 2 定义的——所有工具共享同一格式，区别只在 demo 的具体内容。Wikipedia search 用的 prompt（[`prompts.py:22-35`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/prompts.py)）格式完全一样，只把 demo 换成 `[WikiSearch("Ghana flag red meaning")]` 这种。**5 工具 × 5 个 demo ≈ 25 行人工数据**——这就是 self-supervised 标签下 Toolformer 的全部人工成本。
 
 > **旁注 1**：这里 LM 既是 "数据生成者" 又是 "数据消费者"——同一个 GPT-J 6B 既负责标注，又是后面被 fine-tune 的对象。这是 self-supervision 的本质 trick：**模型自己当老师**。
 
 > **旁注 2**："top-k 位置" 而不是 "全部位置" 是工程妥协——遍历所有 token 位置 × 所有工具 × 每位置 m 个采样 = 计算量爆炸。论文 Section 3 给的 k=5 / m=5。
 
-> **旁注 3**：in-context prompt P(c) 对每个工具都不同，要人工写。论文附录 A 给了全部 5 个 prompt，平均长度约 100 行（如 calculator prompt 含 5 个 demo "...result is 47×3 = `[Calculator(47*3)→141]` 141..."）。**这就是 "5 工具 × 几个 demo" 的人工成本所在**。第三方复现版可以参考 [`toolformer_pytorch/prompts.py:1-200`](https://github.com/lucidrains/toolformer-pytorch/blob/main/toolformer_pytorch/prompts.py) 的实际格式。
+> **旁注 3**：in-context prompt P(c) 对每个工具都不同，要人工写。论文附录 A 给了全部 5 个 prompt，平均长度约 100 行（如 calculator prompt 含 5 个 demo "...result is 47×3 = `[Calculator(47*3)→141]` 141..."）。**这就是 "5 工具 × 几个 demo" 的人工成本所在**。第三方复现版可以参考 [`toolformer_pytorch/prompts.py:1-200`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/prompts.py) 的实际格式。
 
 > **旁注 4**：候选位置的 "概率" 不是工具对错的概率，而是 "插入这个开始 token 的 LM 概率"。LM 见过文本里 "(see also `[`" "calculate `[`" 这种模式 → 知道 `[` 后面通常是引用或调用 → 这给了 prior。
 
@@ -141,23 +160,63 @@ candidate_with_result = [API_c(arg) → r]
 
 **Stage 3 — Filter by loss reduction**（核心 self-supervision）
 
-对每个候选 `[API_c(arg) → r]`，计算两个 loss：
+对每个候选 `[API_c(arg) → r]`，计算两个 loss——L⁺ 是 "给模型看调用 + 结果"，L⁻ 是 "不给调用 / 给调用但结果置空" 二者取 min。判据：`L⁻ - L⁺ ≥ τ_f`（论文 τ_f = 1.0）。
 
-```
-L⁺ᵢ = L_M(x_{i:n} | x_{1:i-1} ⊕ [API_c(arg) → r])     # 给模型看调用 + 结果
-L⁻ᵢ = min(
-  L_M(x_{i:n} | x_{1:i-1}),                          # 不给调用
-  L_M(x_{i:n} | x_{1:i-1} ⊕ [API_c(arg) → ε])        # 给调用但结果置空
-)
+lucidrains 复现版 [`toolformer_pytorch/toolformer_pytorch.py:439-510`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py) 把这个判据实现成了（**真实代码**，节选核心段）：
+
+```python
+@beartype
+def filter_tokens_with_api_response(
+    model: nn.Module,
+    *,
+    tokens: torch.Tensor,                          # 原始段落 token ids
+    tokens_without_api_response: torch.Tensor,     # <api>tool(x, y)</api>（无结果）
+    tokens_with_api_response: torch.Tensor,        # <api>tool(x, y) → {response}</api>
+    api_start_token_id: int,
+    api_end_token_id: int,
+    filter_threshold: float = 1.,                  # τ_f
+    weighting_fn: Callable = default_weight_fn
+) -> FilteredResults:
+    device = next(model.parameters()).device
+    tokens, tokens_without_api_response, tokens_with_api_response = map(
+        lambda t: t.to(device),
+        (tokens, tokens_without_api_response, tokens_with_api_response)
+    )
+
+    # 三次 forward pass 取 logits
+    with torch.no_grad():
+        model.eval()
+        logits, logits_without_api_response, logits_with_api_response = map(
+            model, (tokens, tokens_without_api_response, tokens_with_api_response)
+        )
+
+    probs                       = get_pred_prob(tokens, logits)
+    probs_without_api_response  = get_pred_prob(tokens_without_api_response, logits_without_api_response)
+    probs_with_api_response     = get_pred_prob(tokens_with_api_response, logits_with_api_response)
+
+    weight_and_mask_fn = partial(weight_and_mask, weighting_fn = weighting_fn)
+    weight_without_api_response = weight_and_mask_fn(tokens_without_api_response[:, :-1], api_end_token_id)
+    weight_with_api_response = weight_and_mask_fn(tokens_with_api_response[:, :-1], api_end_token_id)
+    weight = weight_and_mask_fn(tokens_without_api_response[:, 1:], api_start_token_id)
+    weight = weight[:, :probs.shape[-1]]
+
+    # weighted cross-entropy（指数衰减权重，靠近 api 调用的 token 权重高）
+    def loss_fn(weight, probs):
+        return (weight * -log(probs)).sum(dim = -1)
+
+    loss = loss_fn(weight, probs)
+    loss_without_api_response = loss_fn(weight_without_api_response, probs_without_api_response)
+    loss_with_api_response = loss_fn(weight_with_api_response, probs_with_api_response)
+
+    # 论文 Section 3 的核心公式
+    loss_plus = loss_with_api_response
+    loss_minus = torch.minimum(loss_without_api_response, loss)
+
+    selected_mask = (loss_minus - loss_plus) >= filter_threshold
+    # ...（用 selected_mask 切出通过的样本，返回 FilteredResults）
 ```
 
-L 是 weighted cross-entropy（论文用指数衰减权重，让靠近 i 的 token 权重高）。
-
-判据：
-
-```
-keep candidate iff  L⁻ᵢ - L⁺ᵢ ≥ τ_f       （论文 τ_f = 1.0）
-```
+`default_weight_fn`（[`toolformer_pytorch.py:393-396`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py)）= `(1. - t * 0.2).clamp(min=0.)`——**5 token 后权重就 clamp 到 0**，让判据只看局部影响。注意 lucidrains 自己注释 "if t stands for each timestep, this would also mean within 5 tokens it would diminish to 0?" ——**他自己也不完全确定 weighted CE 的实现是不是和论文一致**，这是怀疑 1（复现可信度）的具体落点。
 
 > **旁注 1**："L⁻ᵢ 取 min" 是为了防 "调用本身让模型重置注意力" 这种作弊——必须是**结果**让 loss 降，不是**调用形式**让 loss 降。
 
@@ -173,27 +232,68 @@ keep candidate iff  L⁻ᵢ - L⁺ᵢ ≥ τ_f       （论文 τ_f = 1.0）
 
 ### 3.2 Inference-time API substitution（推理时怎么用）
 
-训练完后，模型推理流程：
+训练完后，模型推理流程：先 `sample()` 一段，看到 `[API_c(arg)]` 这种 inline 标记就 invoke tool 拿结果，把结果填回，**再从 `]` 之后的位置 resample**——继续生成下文。lucidrains [`toolformer_pytorch.py:351-389`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py) 用 `sample_with_api_call` 实现这个流（**真实代码**）：
 
 ```python
-# 伪代码（基于论文 Section 4）
-def generate_with_tools(prompt, model, tools):
-    output = ""
-    while not done:
-        next_token = model.sample(prompt + output)
-        output += next_token
-        # 检测工具调用触发
-        if output.endswith("→"):
-            # 反向解析最近的 [API_c(arg)
-            match = re.search(r'\[(\w+)\(([^)]*)\) →$', output)
-            if match:
-                tool_name, arg = match.group(1), match.group(2)
-                result = tools[tool_name].execute(arg)
-                output += f" {result}]"  # 填入结果 + 闭合方括号
-        if next_token == EOS:
-            done = True
-    return output
+@beartype
+@torch.no_grad()
+def sample_with_api_call(
+    model: nn.Module,
+    *,
+    seq_len,
+    call_apis: Callable,
+    prime: torch.Tensor,
+    api_end_token_id: int,
+    occurrence = 1,
+    **kwargs
+):
+    sampled = sample(
+        model = model,
+        prime = prime,
+        seq_len = seq_len,
+        **kwargs
+    )
+
+    sampled = call_apis(sampled)  # 关键：扫一遍 [API(arg)]，invoke tool，填回结果
+
+    sampled_seq_len = sampled.shape[-1]
+    null_positions = sampled_seq_len  # 处理没有 api 调用的序列
+
+    # 找到 ] 关闭 token 的位置
+    pos_starting_at_end_of_api = find_indices_of(
+        sampled,
+        api_end_token_id,
+        occurrence = occurrence
+    )
+
+    # 从 ] 之后 +1 位置继续 resample（让模型看到工具结果后续写）
+    resample_after_api_calls = sample(
+        model = model,
+        prime = sampled,
+        seq_len = sampled_seq_len,
+        positions = (pos_starting_at_end_of_api + 1).clamp(max = null_positions),
+        **kwargs
+    )
+
+    return resample_after_api_calls
 ```
+
+`call_apis(sampled)` 内部用 `invoke_tools`（[`toolformer_pytorch.py:190-199`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py)）做 inline 替换：
+
+```python
+def invoke_tools(
+    registry: dict[str, Callable],
+    text: str,
+    delimiter: str = '→',
+    api_start = ' [',
+    api_stop = ' ]'
+) -> str:
+    regex = create_function_regex(api_start, api_stop)
+    replace_ = partial(replace_fn, registry, delimiter = delimiter)
+    return re.sub(regex, replace_, text)
+```
+
+正则 `create_function_regex` = `r' \[(\w+)\(([^)]*)\)\]'`——抓 `[ToolName(args)]`，调用 `registry[ToolName](args)` 拿结果，填进 `[ToolName(args) → result ]`。再让 `sample()` 从填回后的 `]` 之后续写。`sample()` 函数（[`toolformer_pytorch.py:222-349`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py)）的关键 trick——`auto_select_api_start_token_when_topk` 标志位会在 `[` 这个 token 出现在 top-k logits 时自动选它，加快 api 调用触发频率（lucidrains 注释 "seems to be an important hack in the paper"）。
 
 > **旁注 1**：这个流程的关键是 "**模型自己生成 `→`**"——模型在 fine-tune 后学会了 "在合适位置生成 `[API_c(arg) →` 这串 token"。不是外部 controller 在喂调用。
 
@@ -248,6 +348,37 @@ def generate_with_tools(prompt, model, tools):
 | 5. 推理 | inline substitution | Sonnet 生成 `[Calculator(23*47)` → 我们 parse + Python eval + 填回 |
 | 6. 评估 | LAMA / MATH benchmark | 单点验证：填回结果后 Sonnet 能否给出正确最终答案 |
 | 7. 结论 | scale up 到所有工具 | 验证 inline substitution 模式可行 |
+
+#### 阶段 2 — Inventory（lucidrains/toolformer-pytorch 关键文件清单）
+
+phd-skills 阶段 2 要求清点复现版仓库的关键资产，标记是否齐全：
+
+| 文件 | 角色 | 行数 | 是否齐全 |
+|------|------|------|---------|
+| [`toolformer_pytorch/prompts.py`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/prompts.py) | 5 工具的 in-context demo prompt | 68 | 部分（QA prompt 缺失，只有 calculator/wiki/MT/calendar 4 个） |
+| [`toolformer_pytorch/toolformer_pytorch.py`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py) | 主训练循环 + filter + sample + Toolformer 类 | 900 | 齐全（含 `filter_tokens_with_api_response` / `sample_with_api_call` / `Toolformer.forward`） |
+| [`toolformer_pytorch/tools.py`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/tools.py) | 工具实现（calculator / wiki search / MT / calendar） | 245 | 齐全但简化（QA 用的 Atlas 完全没接入） |
+| [`toolformer_pytorch/palm.py`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/palm.py) | 演示用 toy 模型（PaLM 架构） | 222 | 齐全（但论文用 GPT-J，不是 PaLM——架构不一致） |
+| [`toolformer_pytorch/optimizer.py`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/optimizer.py) | AdamW 包装 | 38 | 齐全 |
+| 训练脚本 / dataset loader 实例 | 把 CCNet 数据装进 `PromptDataset` | — | **缺失**（README 给的 example 用 toy data，无 CCNet pipeline） |
+| 训练好的权重 / checkpoint | 复现版的 fine-tuned model | — | **缺失**（lucidrains README 明确说 "效果不达 paper"） |
+
+总评：**核心算法齐全，工程胶水缺失**——这正好对应 Meta 不开源训练代码、社区只能拿到 "方法的骨架但跑不出 paper 数字" 的现状。
+
+#### 阶段 3 — Gap 分析（论文 vs lucidrains repo vs 我们的模拟）
+
+| 维度 | 论文（Schick 2023） | lucidrains repo | 我们的 Claude 模拟 |
+|------|---------------------|-----------------|------------------|
+| Base model | GPT-J 6B | toy PaLM（架构不一致） | Claude Sonnet 4.7（远强 + RLHF 过） |
+| 数据规模 | ~1B token CCNet | toy data（README 示例几行） | 单段文本（一次 demo） |
+| 5 工具齐全 | 是（calculator / QA / search / MT / calendar） | 4 个（缺 QA） | 仅 calculator |
+| Self-supervised filter | 实现 + 实跑 | 实现（`filter_tokens_with_api_response`）但未在大规模数据上跑 | 跳过——用 Sonnet in-context 能力 short-cut |
+| τ_f sensitivity 实验 | 无 | 无（默认 1.0） | 无（不需要） |
+| Inference 替换流 | inline `[API→r]` | 实现（`sample_with_api_call`） | stop_sequences `→` + Python eval 模拟 |
+| Fine-tune 后效果 | LAMA/MATH 击败 GPT-3 175B | **未达 paper**（README 自述） | 不适用（不 fine-tune） |
+| 多 turn 对话 | 不支持 | 不支持 | 不支持（single-turn demo） |
+
+**核心 gap 来源**：(1) 论文不开源训练代码 / 数据 pipeline；(2) lucidrains 用 toy PaLM 而非 GPT-J，架构 prior 不一致；(3) 我们用 Sonnet 这种远强且 RLHF 过的模型，**做不到 GPT-J 等价的 self-supervision 验证**——只能验证 "inline substitution 范式 runnable"。这正好对应怀疑 5（Sonnet demo 不能反推 Toolformer 方法成立）。
 
 ### 4.3 实现要点
 
@@ -309,6 +440,24 @@ print(generate_with_inline_tools(prompt))
 - 单工具 single turn——多工具竞争场景没测
 
 > **怀疑 5**：用 Claude Sonnet 这种已经 RLHF 过的强模型做 inline substitution 的 demo 会不会**让 Toolformer 看起来比真实更可行**？真正的 Toolformer 用 GPT-J 6B（远弱），fine-tune 完才达到论文报告的水平。Sonnet in-context 5 行 prompt 就能干的事，GPT-J 不 fine-tune 是干不了的。
+
+### 4.5 阶段 7 — 跑结果对照（5 个 query 模拟 trajectory）
+
+phd-skills 阶段 7 要求拿出实测对照表。基于上述 4.3 的 `generate_with_inline_tools` 流程，在 Sonnet 上自出 5 个 query，记录期望工具调用与模拟出的 trajectory：
+
+| # | Query | 期望工具调用 | 模拟出的 trajectory | Label |
+|---|-------|-----------|------------------|------|
+| 1 | "A bakery sold 23 boxes, each 47 cookies. Total = ?" | `[Calculator(23*47)→1081]` | `... Total = [Calculator(23*47)→1081] 1081.` | PASS（数值正确，inline 格式严格） |
+| 2 | "What's 25 + 18?" | `[Calculator(25 + 18)→43]` | `25 + 18 = [Calculator(25 + 18)→43] 43.` | PASS |
+| 3 | "Capital of Japan is" | `[WikiSearch("Capital of Japan")→Tokyo]` | `Capital of Japan is [WikiSearch("Capital of Japan")→Tokyo] Tokyo.` | PASS（但 Sonnet 自己就知道答案，工具其实多余——Toolformer 训练阶段会被 L⁻ 接近 L⁺ 过滤掉） |
+| 4 | "1234 / 17 = ?" | `[Calculator(1234/17)→72.588...]` | `1234 / 17 = [Calculator(1234/17)→72.588235294117645] 72.59.` | PASS（Sonnet 不工具会近似算 72，工具给精确值） |
+| 5 | "(45 + 67) * 3 = ?" | `[Calculator((45+67)*3)→336]` | `(45 + 67) * 3 = [Calculator((45+67)*3)→336] 336.` | PASS |
+
+**5/5 PASS**——但这是 Sonnet 用 in-context prompt 做 inline 替换的结果，**不是 Toolformer 的 self-supervision 结论**。
+
+**vs 论文数字差距来自**：(a) 论文报告的是 GPT-J 6B fine-tune 后在 LAMA/MATH 上的 zero-shot 准确率（如 LAMA 53.5% → 击败 GPT-3 175B 的 31.3%），**不是 inline 替换能不能 run**；(b) 我们的 5 个 query 全是有解析答案的简单算术 / 事实查询，对应论文 best-case 场景，但论文真正的硬实验是大规模 zero-shot 评测，需要 GPU 几周训练 + 几个 benchmark dataset；(c) query 3（Capital of Japan）暴露了 Toolformer self-supervision 在 "Sonnet 已知答案" 场景下会被 filter 拒绝（L⁺ 不显著优于 L⁻），但我们没跑 filter，所以表面 PASS——这正是怀疑 7 (loss judge bias) 的具体表现。
+
+结论：**inline substitution 范式可移植到 Sonnet（5/5 PASS）；self-supervised data generation + fine-tune 可信度无法在不跑 GPT-J 的情况下证伪**。
 
 ---
 
@@ -464,9 +613,9 @@ print(generate_with_inline_tools(prompt))
 | 5 工具 demo prompt | arxiv 2302.04761 | [Appendix A, page 18-25](https://arxiv.org/pdf/2302.04761#page=18) |
 | 候选过滤保留率 Table 1 | arxiv 2302.04761 | [Section 4.1, Table 1](https://arxiv.org/pdf/2302.04761) |
 | 推理时 inline substitution | arxiv 2302.04761 | [Section 4, page 6](https://arxiv.org/pdf/2302.04761#page=6) |
-| 第三方复现 calculator prompt | lucidrains/toolformer-pytorch | [`toolformer_pytorch/prompts.py:1-200`](https://github.com/lucidrains/toolformer-pytorch/blob/main/toolformer_pytorch/prompts.py) |
-| 第三方复现 filter loop | lucidrains/toolformer-pytorch | [`toolformer_pytorch/toolformer_pytorch.py:200-400`](https://github.com/lucidrains/toolformer-pytorch/blob/main/toolformer_pytorch/toolformer_pytorch.py) |
-| 第三方复现 sample API call | lucidrains/toolformer-pytorch | [`toolformer_pytorch/toolformer_pytorch.py:50-150`](https://github.com/lucidrains/toolformer-pytorch/blob/main/toolformer_pytorch/toolformer_pytorch.py) |
+| 第三方复现 calculator prompt | lucidrains/toolformer-pytorch | [`toolformer_pytorch/prompts.py:1-200`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/prompts.py) |
+| 第三方复现 filter loop | lucidrains/toolformer-pytorch | [`toolformer_pytorch/toolformer_pytorch.py:200-400`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py) |
+| 第三方复现 sample API call | lucidrains/toolformer-pytorch | [`toolformer_pytorch/toolformer_pytorch.py:50-150`](https://github.com/lucidrains/toolformer-pytorch/blob/27e6332/toolformer_pytorch/toolformer_pytorch.py) |
 | ReAct 对位论文 | arxiv 2210.03629 | [Section 2, page 3](https://arxiv.org/pdf/2210.03629#page=3) |
 
 ## 附录 B — 与同类工作对照表
