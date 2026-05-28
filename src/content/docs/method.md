@@ -294,4 +294,123 @@ sidebar:
 ### 版本
 
 - **v1** (2026-05-28) — 7 层方法论之上首版 checklist，对齐论文版
+- **v1.1** (2026-05-28) — 加项目类型分支（见下），解决 v1 默认"工具库"心智模型、大型应用 / 编译器运行时 / 测试工具套不上的问题
 - 修订规则：未来加新条目升 v2，原 v1 条目不删，只标 deprecated
+
+---
+
+## 状元篇 Checklist v1.1：项目类型分支
+
+> v1 默认是**工具库**（small-surface API library，参考 zustand / swr / shadcn-ui）。
+> 大型应用 / 编译器运行时 / 框架SDK / 测试工具的"心脏物"和"改一处"路径不同——硬套 v1 会逼笔记作者扭曲叙事。
+> v1.1 引入"项目类型 self-classify"，每类有专属 Layer 2 / Layer 3 / Layer 4 模板。
+> 对齐论文版 [状元篇 Checklist v1.1](/study/papers-method/) 的类型分支思想。
+
+### Step 1：先 self-classify
+
+写笔记前先在草稿顶部标项目类型（5 选 1）：
+
+| 类型 | 判定 | 例子 |
+|---|---|---|
+| **大型应用** | 端到端用户产品，仓库含 multiple subsystem，star ≥ 5k 用户量大 | excalidraw / claude-code / continue / plane / cal.com |
+| **工具库** | 小 surface API，单一职责，500-3000 行核心 | zustand / swr / tanstack-query / zod / xstate / shadcn-ui / vercel-ai / mcp-ts-sdk |
+| **编译器/运行时** | 输入文本或字节，输出 transformed；含 pipeline 多阶段 | vite / esbuild / bun / biome / rolldown / oxc |
+| **框架/SDK** | 服务端或客户端框架，提供 abstraction + extension points | hono / trpc / drizzle-orm / inngest |
+| **测试/验证工具** | 围绕 test runner / assertion / fixture 模型 | playwright / vitest / effect (validation) / msw |
+
+混合类型（如 playwright 既是测试工具又有 browser driver 内核）：选**主导特征**，附录段说明跨类。
+
+### Step 2：按类型套对应 Layer 模板
+
+通用条目（所有类型共享，不变）：
+
+- Frontmatter / Layer 0 ≥ 8 字段 / Layer 1 Why
+- Layer 5 横向对比 / Layer 6 三段 / Layer 7 自检
+- 限制段 / 宣传 vs 现实附录 / 结尾元数据
+
+差异条目按类型分支：
+
+#### 分支 A · 大型应用（user-facing product）
+
+**Layer 2 仓库地形**：
+- 顶层目录注释表必含"路由 / 数据层 / 业务模块"三类区分
+- 心脏文件清单 **≥ 3**（不是 2-3）—— 大型应用的"心脏"分布在 multiple subsystem
+- commit 热点按 subsystem 分组，不只一个总榜
+
+**架构图（P0 必填，不是 P1 推荐）**：
+- ≥ 1 张全局架构图 + 1 张关键 subsystem 数据流图
+
+**Layer 3 ≥ 3 段**：每段对应一个 subsystem（如 excalidraw：canvas 渲染 / state 管理 / 协同）
+
+**Layer 4 改一处**：
+- 不要求跑通完整 build（大型 monorepo 环境配置成本不可控）
+- 允许"读+理解" + 1 个具体 subsystem 的小改实验
+- 如改一行 default value + 看行为变化即可
+
+#### 分支 B · 工具库（v1 默认，结构不变）
+
+保留原 v1 checklist：
+- L2 心脏文件 2-3 个
+- L3 ≥ 3 段独立小节，每段 30-100 行真实代码
+- L4 30 分钟跑通 + 1 个改一处实验
+
+#### 分支 C · 编译器/运行时
+
+**Layer 2 仓库地形**：
+- 顶层目录注释必须画出 pipeline phase 划分（parser → transformer → emitter / 或 lex → parse → typecheck → codegen）
+- 心脏文件 = 每个 phase 1 个代表实现
+
+**Pipeline 图（P0 必填）**：≥ 1 张 pipeline 流图，标 input → phase 1 → ... → output + 每个 phase 的关键 trade-off
+
+**Layer 3 ≥ 3 段**：按 phase 切——每个 phase 一段精读（parser / transformer / emitter 等）
+
+**Layer 4 改一处**：
+- 加一个 transform 或改一个 default option，看 output 字节级变化
+- 必须含 before/after diff 输出对比
+
+#### 分支 D · 框架/SDK
+
+**Layer 2 仓库地形**：
+- 心脏文件清单含核心 abstraction 定义文件（如 Hono 的 `app.ts` / Drizzle 的 schema 引擎）
+- 必须列 extension point（middleware / plugin / hook 类）所在路径
+
+**Layer 3 ≥ 3 段**：核心 abstraction + middleware/handler 模型 + lifecycle
+
+**Layer 4 改一处**：
+- 写 1 个 plugin / middleware / schema extension
+- 跑 example 看 lifecycle 何时触发
+
+#### 分支 E · 测试/验证工具
+
+**Layer 2 仓库地形**：
+- 心脏文件 = test runner 主循环 + fixture 注入 + assertion / matcher
+
+**Layer 3 ≥ 3 段**：runner loop / fixture 系统 / matcher 模型
+
+**Layer 4 改一处**：
+- 写 1 个 custom matcher / reporter / fixture
+- 跑 1 个 test 看生命周期 hook
+
+### Step 3：量化指标按类型差异化（覆盖 v1 通用指标）
+
+| 类型 | 行数底线 | Figure 数 ≥ | GitHub permalink ≥ | 显式怀疑 ≥ |
+|---|---|---|---|---|
+| 大型应用 | 500 | 2 | 5 | 3 |
+| 工具库 | 400 | 1 | 3 | 3 |
+| 编译器/运行时 | 500 | 2 | 5 | 4 |
+| 框架/SDK | 500 | 1 | 4 | 3 |
+| 测试/验证 | 400 | 1 | 3 | 3 |
+
+> 工具库 / 测试工具底线 400（不是 500）：表面小、抽象集中，500 行容易逼出冗余。
+> 编译器底线 figure 2 + 怀疑 4：pipeline 性质决定了视觉表达 + 多 phase 都需要审视。
+
+### Step 4：自检流程
+
+写完笔记后按以下顺序自检：
+
+1. 项目类型 self-classify 标对了吗（看心脏物：是 product / library / pipeline / abstraction / runner 哪个？）
+2. 通用条目全过了吗（Frontmatter / Layer 0-1 / Layer 5-7 / 限制 / 附录 / 元数据）
+3. 类型专属条目全过了吗（参照上面分支 A/B/C/D/E）
+4. 量化指标全过了吗（行数 / figure / 锚定 / 怀疑）
+
+任意一项 P0 缺失 → 不及格，要补。
