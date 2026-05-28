@@ -170,6 +170,20 @@ class ColumnParallelLinear(nn.Module):
 
 如果 `out_features` 是奇数、或不能被 8 整除（比如某些 vision-language 模型用 hidden=2304 这种），那这个模块就废了。Megatron 在 2019 的实验里全部用 8 的倍数避开了这个问题。**实际工程里这是个隐藏的硬约束，会强迫架构设计师选 hidden=2^k 或 8k 的"漂亮数字"，间接影响了之后所有大模型的 hidden dim 选择**。
 
+#### 进一步代码细节（初始化与 gather）
+
+```python
+def gather_output_for_inference(local_out, world_size):
+    """推理时如果下一层不是行并行，需要 all-gather 把列拼回完整矩阵。
+    训练时永远不要这样做——会浪费一次通信。
+    """
+    gathered = [torch.empty_like(local_out) for _ in range(world_size)]
+    dist.all_gather(gathered, local_out)
+    return torch.cat(gathered, dim=-1)  # 沿最后一维拼接列
+```
+
+**额外旁注**：训练时列并行的输出绝对不要 all-gather，必须直接喂给行并行；只有推理 / debug / 转 checkpoint 时才 gather。这是 Megatron 仓库里 `tensor_parallel/mappings.py` 的 `gather_from_tensor_model_parallel_region` 反复强调的。
+
 ### 3.2 Row Parallel Linear（按行切权重）
 
 #### 直觉
@@ -245,6 +259,12 @@ class RowParallelLinear(nn.Module):
 #### 我的怀疑
 
 行并行的 all-reduce 是个**同步阻塞点**。当 TP=8 时，8 张卡必须在这一刻全部到齐才能继续——任何一张卡掉队，其他 7 张都得等。NVLink 带宽很高时这个开销不大，但跨节点 TP（用 InfiniBand）时 all-reduce 会成为瓶颈。**这就是为什么 Megatron 推荐 TP 不要跨节点，PP 才跨节点**——但论文里没明说这个工程约束，是后续 Megatron-Turing NLG 论文才补上的。
+
+#### 通信量估算（旁注 6-8）
+
+- **旁注 6**：一个 Transformer layer 的 forward 通信量 = 2 × (batch × seq × hidden × 4 bytes)，分别来自 attention 后的 W_O all-reduce 和 FFN 后的第二个 Linear all-reduce。bf16 训练时除以 2。
+- **旁注 7**：backward 同样有 2 次 all-reduce（对应输入梯度），所以一个 layer 一次 step = 4 次 TP all-reduce。当 layers=96、TP=8、batch×seq=1M 时，单 step TP 通信量约 1.5 TB——必须靠 NVLink 才不被吃死。
+- **旁注 8**：实测中 NCCL all-reduce 在 8 卡 NVLink 上能跑到 ~250 GB/s 有效带宽，TP=8 的通信开销大约占整个 step 时间的 15-20%。这是 76% scaling efficiency 的主要来源。
 
 ### 3.3 Self-Attention 张量并行（QKV + 输出投影 切）
 
@@ -349,6 +369,33 @@ class TensorParallelSelfAttention(nn.Module):
 
 实际跑下来预期会撞到 3-5 个坑（bias 重复 / rng 不同步 / contiguous 缺失 / num_heads 不能被整除 / all-reduce 在 backward 漏写），每一个都是论文里没明写但代码里必须处理的。
 
+### 4.x 各阶段实战命令
+
+```bash
+# 阶段 1: 环境
+conda create -n tp python=3.11 -y && conda activate tp
+pip install torch==2.3.0 transformers==4.41 accelerate==0.30 datasets
+accelerate config  # 选 multi-GPU, mixed_precision=bf16, num_processes=2
+
+# 阶段 2: baseline
+python train_baseline.py --model gpt2 --dataset wikitext-2 --epochs 1 \
+  --output_dir runs/baseline 2>&1 | tee runs/baseline.log
+
+# 阶段 3-4: 单测列并行 + 行并行
+torchrun --nproc_per_node=2 tests/test_column_parallel.py
+torchrun --nproc_per_node=2 tests/test_row_parallel.py
+torchrun --nproc_per_node=2 tests/test_col_row_chain.py  # 数值误差 < 1e-5
+
+# 阶段 5-6: 替换 FFN / attention 后训练
+torchrun --nproc_per_node=2 train_tp.py --tp_size 2 --replace_ffn --replace_attn
+
+# 阶段 7: 对比 loss 曲线 + 显存
+nvidia-smi --query-gpu=memory.used --format=csv -l 5 > runs/tp_mem.log &
+python tools/plot_loss.py runs/baseline.log runs/tp.log
+```
+
+每一行命令背后都对应一个验证点：torchrun 的 `--nproc_per_node` 等于 TP world_size；nvidia-smi 的轮询能直接看到"显存约 1/N"是否成立；plot_loss 用来确认 TP 不会让 loss 曲线和 baseline 偏离超过 0.5%。
+
 ---
 
 ## Layer 5 — 学术家谱
@@ -364,10 +411,23 @@ class TensorParallelSelfAttention(nn.Module):
 
 ### 5.2 后作（被它喂养的论文）
 
-- **DeepSpeed ZeRO（2020，Microsoft）**：把 DP 的"每张卡复制全模型"改成"切优化器状态/梯度/参数"。和 TP 正交，可以叠加。
+- **DeepSpeed ZeRO（2020，Microsoft）**：把 DP 的"每张卡复制全模型"改成"切优化器状态/梯度/参数"。和 TP 正交，可以叠加。ZeRO 分三 stage：stage 1 切优化器状态（Adam 的 m/v，占用最大），stage 2 加切梯度，stage 3 把参数本身也切掉。stage 3 时每个前向都要 all-gather 参数、反向后再 reduce-scatter，通信换显存。**ZeRO 切 DP 维度，TP 切算子维度，二者正交叠加是 175B 训练的标配**。论文出现之前所有人觉得 DP 已经被榨干了，ZeRO 用"反正大家手里都有完整模型，那就别复制了"这个最朴素的洞察打开了新空间。
 - **Megatron-Turing NLG 530B（2021）**：3D 并行（DP × TP × PP）。TP 用 Megatron-LM 这一篇的算法。
-- **Pathways / PaLM（2022，Google）**：把 3D 并行扩到 6144 张 TPU。架构思想是 Megatron + GShard 的合流。
-- **FSDP（2022，PyTorch 官方）**：把 ZeRO-3 落到 PyTorch 里。和 TP 互补，FSDP 切参数维度，TP 切算子维度。
+- **Pathways / PaLM（2022，Google）**：把 3D 并行扩到 6144 张 TPU。架构思想是 Megatron + GShard 的合流。Pathways 最大的新意是"异步分发"——把 SPMD 的同步执行模型换成 dataflow 调度，让不同 pod 上的 TPU 切片可以以 DAG 形式编排。它本质上是把 Megatron 的"手写并行算子"和 GShard 的"编译器自动切"统一在一个运行时里。
+- **FSDP（2022，PyTorch 官方）**:把 ZeRO-3 落到 PyTorch 里。和 TP 互补，FSDP 切参数维度，TP 切算子维度。
+
+#### FSDP vs TP 对比段（小表）
+
+| 维度 | TP（Megatron） | FSDP（ZeRO-3） |
+|------|---------------|----------------|
+| 切什么 | 算子内的权重矩阵列/行 | 模型参数（按 module 切） |
+| 通信时机 | forward / backward 各一次 all-reduce | forward 前 all-gather 参数、backward 后 reduce-scatter |
+| 通信量 | O(batch × seq × hidden) per layer | O(参数量 / world_size) per module |
+| 跨节点友好度 | 差（需要 NVLink） | 较好（通信可与计算 overlap） |
+| 编程改动 | 需要重写 Linear / Attention | 一行 `model = FSDP(model)` 即可 |
+| 显存收益 | 切权重→1/N | 切参数+梯度+优化器→1/N×3 |
+
+**结论**：单节点优先 TP，跨节点必上 FSDP。175B 训练通常 TP=8（节点内）× FSDP=N（跨节点）× PP=K（深层切）三层叠。
 - **Sequence Parallelism（2022，Megatron-v3）**：补 TP 的盲区——把 LayerNorm/Dropout 的序列维度也切了，进一步省显存。
 
 ### 5.3 反对者 / 替代者
@@ -412,6 +472,20 @@ class TensorParallelSelfAttention(nn.Module):
 3. **行并行的 all-reduce 是同步阻塞点**：8 张卡必须同步，掉一个等所有人。在跨节点训练时（IB 带宽远低于 NVLink），这成为隐藏瓶颈。论文用 76% scaling efficiency 隐藏了这个事实——24% 损失里很大一部分就是这个同步点。
 
 4. **bias / LayerNorm / Dropout 这些"小模块"反而是 TP 的高 bug 区**：论文 §3 主要讲 Linear 切分，但工程实现里 bias 加两次、dropout rng 不同步、LayerNorm 没切都是高频 bug。这些"细节"占了 Megatron-LM 仓库一半的 issue 量，但论文只用一段话提了一下。**这暗示一个普遍现象——分布式系统论文写 happy path 容易，写 corner case 难，学生抄思想容易，抄实现难**。
+
+5. **scaling efficiency 76% 这个数字本身值得怀疑**：论文用的是 weak scaling（卡数翻倍、模型也翻倍）测出 76%。但如果换成 strong scaling（固定模型、卡数翻倍）数字会跌到 50% 以下。论文没披露这个对照，是个有意识的取舍——大模型场景天然是 weak scaling，但读者很容易误以为"加卡就能近线性加速"。
+
+6. **论文对 checkpoint 兼容性只字未提**：TP 切过的 checkpoint 不能直接被另一个 TP size 加载（比如 TP=8 训出来的不能用 TP=4 推理）。Megatron 后来不得不写 `tools/checkpoint_util.py` 做转换，这是论文设计阶段就该考虑的接口问题，但被略过了。这暗示**学术论文的"完整性"和工程产品的"可演进性"是两个不同的标准**。
+
+### 7.x 宣传 vs 现实对照表
+
+| 宣传 | 现实 |
+|------|------|
+| TP 把显存降到 1/N | 仅切权重，激活值/梯度仍按 1 份计；实际显存约 1/N + 激活开销 |
+| 76% scaling efficiency | weak scaling 数字；strong scaling 远低于此 |
+| 列并行 forward 不通信 | forward 不通信但 backward 必须 all-reduce，总通信只是延迟到反向 |
+| TP=8 是最优 | 是 NVLink 8 卡 600GB/s 时代的最优，下一代互联会改答案 |
+| 一次 all-reduce 解决一切 | 还需要管 rng tracker / bias 单加 / LayerNorm 序列切，corner case 一堆 |
 
 ---
 
