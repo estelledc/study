@@ -48,7 +48,7 @@ MapReduce 给"分布式数据处理"领域提供了 4 件真正新的东西：
 2004 后整个 big data 生态都基于这个范式：Hadoop / Spark / Flink / Beam / Dataflow。
 **限制表达力 = 自动获得分布式能力**——这是 Google 工程美学的代表作。
 
-![MapReduce 执行模型 6 阶段](/papers/mapreduce/01-execution.webp)
+![MapReduce 执行模型 6 阶段](/study/papers/mapreduce/01-execution.webp)
 
 *图 1：MapReduce 执行模型 6 阶段。Input split (M=2000 typical) → Map workers 并行处理 →
 Intermediate (k,v) buffered + partitioned by `hash(key) % R` → **Shuffle** Reduce workers fetch 各自的 partition →
@@ -109,7 +109,7 @@ PDF 13 页。章节角色：
 
 关键观察：**整个流程没有 cross-worker checkpointing**。任何 worker 失败 → master 重启该 task → 因为 map/reduce 是纯函数 → 结果一致。
 
-![MapReduce 取舍：限制表达力换大规模](/papers/mapreduce/02-tradeoff.webp)
+![MapReduce 取舍：限制表达力换大规模](/study/papers/mapreduce/02-tradeoff.webp)
 
 *图 2：MapReduce 设计哲学的可视化。
 **用户能做的（左栏）**：只允许写 map(k1,v1)→list(k2,v2) + reduce(k2,list(v2))→list(v3) + 可选的 Combiner（map 端预聚合）；纯函数 / 无状态。

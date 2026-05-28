@@ -53,7 +53,7 @@ ReAct 走 prompt-only（不动权重），Toolformer 走 self-supervised fine-tu
 两条路在 2023 后都活下来了——ChatGPT plugins / Claude tool use 是 prompt-only 的工程化，
 GPT-4 / Gemini 训练时的 tool use 数据是 Toolformer 思路的工程化。
 
-![Toolformer 三步 self-supervised pipeline](/papers/toolformer/01-pipeline.webp)
+![Toolformer 三步 self-supervised pipeline](/study/papers/toolformer/01-pipeline.webp)
 
 *图 1：Toolformer 自监督数据生成流水线。Step 1 用 in-context prompt 让 GPT-J 给原始文本标注候选 API
 调用（如把 "Pittsburgh is also known as the Steel City." 标成 "...known as `[QA(?)]` the Steel City."）；
@@ -118,7 +118,7 @@ PDF 13 页（含 appendix），主体 9 页。章节角色：
 
 推理时：模型按正常 LM decode → 遇到生成 `→` 时（说明它"想"调一个 API）→ 拦截 decode → 真调 API → 把 result 填回继续 decode。
 
-![prompt-only vs fine-tune 两条路线](/papers/toolformer/02-routes-compare.webp)
+![prompt-only vs fine-tune 两条路线](/study/papers/toolformer/02-routes-compare.webp)
 
 *图 2：LLM 工具调用的两条路线对比。左 prompt-only（[ReAct](/study/papers/react/) / [Reflexion](/study/papers/reflexion/)）：
 零训练，工具用法从 system prompt 的 few-shot 例子学，灵活但 prompt token 占用高、受限于 in-context 能力。

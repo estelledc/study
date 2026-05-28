@@ -52,7 +52,7 @@ Reflexion 给"LLM agent"领域带来 4 件真正新的东西：
 塞进下一轮 prompt，让 agent "记得" 自己上次为什么失败。** verbal RL 不动权重、不做 fine-tune，
 就靠 prompt 工程吃下了 ReAct 的 ceiling 提升 +20% EM。
 
-![Reflexion 三模型架构 + 双层 memory](/papers/reflexion/01-three-models.webp)
+![Reflexion 三模型架构 + 双层 memory](/study/papers/reflexion/01-three-models.webp)
 
 *图 1：Reflexion 三模型架构。Actor (Ma)、Evaluator (Me)、Self-Reflection (Msr) 三个 LLM 协同工作；
 左下短期 memory（当前 trajectory 的 Thought/Action/Obs 序列）+ 右下长期 memory（自反思历史，Ω=1-3 上限）；
@@ -128,7 +128,7 @@ Algorithm 1 翻译成 5 步：
 4. **退出**：成功（Me 通过）或耗尽预算（max_trials）
 5. **返回最终 trajectory** + 完整 reflection 历史
 
-![Reflexion Algorithm 1 trial-error-reflect 循环](/papers/reflexion/02-algorithm-loop.webp)
+![Reflexion Algorithm 1 trial-error-reflect 循环](/study/papers/reflexion/02-algorithm-loop.webp)
 
 *图 2：Algorithm 1 的可视化——4 个步骤组成 while loop（generate trajectory → evaluate → reflect → append to mem），
 出口条件是 `Me passes OR t ≥ max_trials`。紫色 next-trial 箭头从 mem 回到 step 1，

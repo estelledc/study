@@ -60,7 +60,7 @@ ReAct 给"语言模型 agent"领域提供了 4 个真正新的东西：
 你今天用的每一个 ChatGPT plugin / Claude Code 工具调用 / LangChain agent 背后，
 都是这个 2022 年 12 页论文画的回路。
 
-![ReAct think → act → observe 三元组循环](/papers/react/01-react-loop.webp)
+![ReAct think → act → observe 三元组循环](/study/papers/react/01-react-loop.webp)
 
 *图 1：ReAct 的最小循环——4 站点（Thought / Action / Environment / Observation）+ 真动作支路（深蓝箭头：search / lookup / finish）+ 伪动作 `think[...]` 支路（橄榄绿虚线，仅返回 "Nice thought."）+ stop token 标注 + 7 步硬上限。手绘 sketchnote 风。*
 
@@ -122,7 +122,7 @@ ReAct 的方法可以被压缩成 4 步：
 3. **环境 step**：把 Action 解析为 `verb[arg]` 喂给 wikienv；wikienv 调真 Wikipedia / 返回 Lookup 结果 / 结束 episode；返回 Observation 字符串
 4. **拼接进 prompt**：把 `Thought i / Action i / Observation i` 三行拼到 prompt 末尾，回到第 2 步；最多循环 7 次或遇到 `Finish[answer]` 退出
 
-![wikienv.step(action) 4 种 action 路径](/papers/react/02-wikienv-actions.webp)
+![wikienv.step(action) 4 种 action 路径](/study/papers/react/02-wikienv-actions.webp)
 
 *图 2：`wikienv.step(action)` 接口分解——4 种 action 形式各走不同路径。前 3 条（search / lookup / finish）是真动作，调外部世界或改环境状态；第 4 条 `think[hypothesis]` 是伪动作（橙色虚线），不查任何东西，仅返回 `"Nice thought."`——把模型思考变成 trajectory 一等公民。代码行号锚定到 wikienv.py。论文 paper-figure 风。*
 
@@ -437,7 +437,7 @@ label 总结：
 
 ## 谱系对比
 
-![Reasoning-Acting 范式 2022-2024 演化树](/papers/react/03-evolution-tree.webp)
+![Reasoning-Acting 范式 2022-2024 演化树](/study/papers/react/03-evolution-tree.webp)
 
 *图 3：Reasoning-Acting 范式 2022.01 → 2024 的演化树（以 ReAct 为中心）。CoT (2022.01) 是 reasoning 起点 → 分两支：Self-Consistency (2022.03) 加多次采样 / Tree of Thoughts (2023.05) 加搜索；ReAct (2022.10, 红色高亮) 把 acting 接入 reasoning → 后作 Reflexion (2023.03) 加自我反思 / SWE-bench (2023.10) 换 action 空间。2024 年的 OpenAI o1 / Claude thinking 把推理能力内化进模型本体（紫色虚线）。手绘 sketchnote 风。*
 

@@ -49,7 +49,7 @@ Raft 给"分布式共识"领域提供了 4 件真正新的东西：
 2014 后整个分布式系统生态用 Raft 替代 Paxos：etcd / TiKV / Consul / CockroachDB / Cloudflare Quicksilver
 全部基于 Raft 而非 Paxos。
 
-![Raft 三状态机：Follower / Candidate / Leader](/papers/raft/01-state-machine.webp)
+![Raft 三状态机：Follower / Candidate / Leader](/study/papers/raft/01-state-machine.webp)
 
 *图 1：Raft 节点状态机的 3 状态 + 6 转换。Follower 等 leader 心跳；election timeout 后变 Candidate
 发起选举；拿到 majority 票变 Leader；任何状态发现更高 term 立刻退回 Follower。
@@ -350,7 +350,7 @@ label：`[mechanism verified at toy level]` —— 用 5 节点 toy 例子验证
 
 ## 谱系对比
 
-![Raft vs Paxos](/papers/raft/02-vs-paxos.webp)
+![Raft vs Paxos](/study/papers/raft/02-vs-paxos.webp)
 
 *图 2：Raft 与 Paxos 的对比。左：Paxos (1989/1998 Lamport) 符号公式重、缺少结构、单一推导路径，
 "看不懂"用一团缠绕的线表示；Lamport 自己说"没人真的实现过我描述的 Paxos"。

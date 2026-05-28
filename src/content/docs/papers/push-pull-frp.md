@@ -46,7 +46,7 @@ RxJS 的 Observable / SolidJS 的 createSignal+createEffect / Effect-TS 的 Stre
 Conal Elliott 1997 创立 FRAN（pull-only），2009 用这篇 push-pull 修复了性能问题——
 **12 年后他自己打了自己原作品的脸**。
 
-![Push-Pull FRP 双模型](/papers/push-pull-frp/01-events-signals.webp)
+![Push-Pull FRP 双模型](/study/papers/push-pull-frp/01-events-signals.webp)
 
 *图 1：Push-Pull FRP 的二元模型。
 **左侧 Events (push-based)**：discrete-time stream `[(t1,p1), (t2,p2), ...]`，

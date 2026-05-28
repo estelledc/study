@@ -41,7 +41,7 @@ Compiler Errors 给"PL 工具 UX"提供了 4 件真正新的东西：
 这是 Rust 那种漂亮 error message 设计哲学的实证根。**
 2017 后，**好的错误信息成为现代 PL 的差异化指标**——Rust / Elm / Svelte / TypeScript 都在这条路上竞争。
 
-![Compiler Errors 眼动追踪研究](/papers/compiler-errors/01-eye-tracking.webp)
+![Compiler Errors 眼动追踪研究](/study/papers/compiler-errors/01-eye-tracking.webp)
 
 *图 1：Barik et al. 2017 的眼动追踪研究全貌。
 **左侧 Setup**：56 学生 + Tobii eye tracker，破损 Java code with errors，测量 gaze time。

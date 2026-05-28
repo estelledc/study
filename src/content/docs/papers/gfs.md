@@ -41,7 +41,7 @@ GFS 给"分布式文件系统"领域提供了 4 件真正新的东西：
 2003 后整代云存储设计哲学（HDFS / S3 / Azure Blob / Tectonic）都源于这一篇——
 **应用配合 FS 而非反过来**。
 
-![GFS 三层架构：Master + Chunkservers + Clients](/papers/gfs/01-architecture.webp)
+![GFS 三层架构：Master + Chunkservers + Clients](/study/papers/gfs/01-architecture.webp)
 
 *图 1：GFS 三层架构。**Single master** 维护所有 metadata（namespace + chunk locations），完全装在内存。
 **Chunkservers (CS1-CS4)** 存 64MB chunks，每个 chunk 默认 3 replicas。
@@ -103,7 +103,7 @@ PDF 15 页。章节角色：
 
 ## 设计 trade-offs
 
-![GFS 不做的 vs GFS 才做的](/papers/gfs/02-tradeoffs.webp)
+![GFS 不做的 vs GFS 才做的](/study/papers/gfs/02-tradeoffs.webp)
 
 *图 2：GFS 设计哲学——工作负载反向定义系统语义。
 **左栏：GFS 不做**（POSIX 兼容文件系统会做但 GFS 放弃）：小文件优化 / 严格一致性 / 随机写优化 / 完整 POSIX 语义。
