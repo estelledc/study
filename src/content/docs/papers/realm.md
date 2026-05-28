@@ -521,12 +521,12 @@ REALM 的 joint pretrain 算法是博物馆藏品。*
 
 - **marginalize 思想可借鉴**：当我做 "video retrieval -> VLM 评价" 时，如果 retriever 能从评价 loss 接梯度，可以让 retriever 学到"哪些 frame 真的支持这个评价"——但这需要 differentiable retrieval pipeline，工程代价高
 - **ICT 预初始化的教训**：任何让 retriever 接收稀疏 reward 的系统，都需要先做 pretrain task 让它"暖身"。直接随机初始化 + RL 大概率不收敛
-- **null document 的设计**：在 6 件套 schema 里加一个"无相关证据"的兜底 option，比强制选 top-1 更鲁棒
+- **null document 的设计**：在结构化输出 schema 里加一个"无相关证据"的兜底 option，比强制选 top-1 更鲁棒
 - **async index refresh 的工程模式**：trainer 读 stale 索引、独立 job 刷新——这个 pattern 适用于任何"模型权重在变 + index 需要重建"的场景，包括 vector DB 上线后的 re-embedding
 
 ### 下个月能用的部分（需要 1-2 周准备）
 
-- **复现 RealmForOpenQA**：在 video-eval-agent 的 evaluator 里替换 prompt-based retrieval 为 dense retrieval，用 chroma 起一个本地索引
+- **复现 RealmForOpenQA**：在视频/评测 agent 项目的 evaluator 里替换 prompt-based retrieval 为 dense retrieval，用 chroma 起一个本地索引
 - **salient span masking 思想推广**：把"只 mask 关键词"用到 daily 学习笔记的自测 quiz 生成——别 mask 介词，mask 实体和数字
 - **retrieval_utility metric**：在我的 RAG demo 里加一个 metric，衡量 top-k 中 top-2 到 top-k 提供了多少额外信息（marginal - top1）
 - **off_policy_delay 监控**：所有有"模型权重 vs 索引版本"差距的系统，这个 metric 都该加
