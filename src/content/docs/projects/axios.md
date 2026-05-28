@@ -372,3 +372,107 @@ function UserView({id}: {id: string}) {
 - [[zod]] — runtime validation 配合 axios 做端到端类型安全
 - [[react-hook-form]] — RHF + axios + zod 是表单提交标配
 - [[d3]] [[recharts]] [[visx]] [[observable-plot]] [[echarts]] — 数据可视化用 axios 拉数据
+
+## 附录 A — 与 React Query / TanStack Query 协同模式（≥ 25 行）
+
+实战中 axios + Query 是 React 数据获取的标配组合：
+
+```ts
+import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query";
+import axios from "axios";
+
+const api = axios.create({baseURL: "/api"});
+
+// Query：自动缓存 / refetch / stale-while-revalidate
+function useUser(id: string) {
+  return useQuery({
+    queryKey: ["user", id],
+    queryFn: async () => {
+      const {data} = await api.get(`/users/${id}`);
+      return UserSchema.parse(data);
+    },
+    staleTime: 5 * 60 * 1000,  // 5 分钟新鲜
+    gcTime: 30 * 60 * 1000     // 30 分钟回收
+  });
+}
+
+// Mutation：写操作
+function useUpdateUser() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: async (data: UpdateUserInput) => {
+      const {data: result} = await api.put(`/users/${data.id}`, data);
+      return result;
+    },
+    onSuccess: (_, variables) => {
+      qc.invalidateQueries({queryKey: ["user", variables.id]});
+    }
+  });
+}
+```
+
+要点：
+
+1. axios 只做 transport，Query 管 cache / retry / loading state
+2. interceptor 仍有用（auth header 加在 request interceptor）
+3. 401 自动 refresh 仍在 axios interceptor，Query 不知情
+4. queryFn 里跑 zod parse，runtime 类型安全
+5. 这种分工让 axios + Query 比单用 fetch + useEffect 强 10 倍
+
+## 附录 B — 自定义 adapter（≥ 20 行）
+
+axios 1.x 支持替换 adapter：
+
+```ts
+import axios, {AxiosAdapter} from "axios";
+
+// 自定义 fetch adapter（用 native fetch 替代 XHR）
+const fetchAdapter: AxiosAdapter = async (config) => {
+  const response = await fetch(config.url, {
+    method: config.method,
+    body: config.data ? JSON.stringify(config.data) : undefined,
+    headers: config.headers,
+    signal: config.signal
+  });
+  
+  return {
+    data: await response.json(),
+    status: response.status,
+    statusText: response.statusText,
+    headers: Object.fromEntries(response.headers.entries()),
+    config,
+    request: undefined
+  };
+};
+
+const api = axios.create({adapter: fetchAdapter});
+```
+
+实战用例：
+
+1. Cloudflare Worker（XHR 不存在）：用 fetch adapter
+2. React Native（XHR 行为差异）：用自定义 adapter
+3. Mock 测试：用 mock adapter（axios-mock-adapter 包）
+4. 性能优化：在 Node 用 undici adapter（社区包 axios-undici-adapter）
+
+## 附录 C — 常见 axios 反模式（≥ 15 行）
+
+社区常见的 axios 误用：
+
+1. **每次 API 调用都创建 instance**：性能浪费，应用启动时建好 axios.create() 一次复用
+2. **interceptor 里做异步副作用**：导致请求顺序错乱（如 interceptor 里 await 写日志）
+3. **不处理 timeout**：默认无 timeout，慢服务卡住整个 UI
+4. **JSON.parse 双解析**：手动 axios.post(url, JSON.stringify(data))，axios 内部又 JSON.stringify 一次
+5. **不用 instance baseURL**：每次 api 路径写完整 URL，重构 baseURL 时漏改
+6. **interceptor 错误吞噬**：catch 里不 reject，调用方拿不到 error
+7. **CancelToken / AbortController 混用**：混乱 cancellation 状态
+
+## 附录 D — 学到补充（≥ 10 行）
+
+补充 5 条工程教训：
+
+6. **生态 inertia 是开源最强护城河**：axios 50M weekly downloads 不是技术领先，是教程 / SO / 团队习惯沉淀
+7. **adapter 模式让库长寿**：axios 经历 XHR → fetch 两代浏览器 API，靠 adapter 抽象不需要重写
+8. **interceptor 在 React Query 时代价值缩水**：但 SSR / 服务端 / 非 React 场景仍需要
+9. **deprecated API 保留是双刃剑**：axios CancelToken 拖了 5 年还没删，社区分歧大
+10. **TypeScript 推断弱是老库通病**：axios.get<User>() 仍需手动 generic，与 zod 端到端弱
