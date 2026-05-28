@@ -109,7 +109,7 @@ tRPC 是框架无关的。
 (4) link chain (logger -> retry -> httpBatch) 把 op 包成 fetch；
 (5) server 端 fetchHTTPHandler 解析 path 查 procedure map，跑 middleware + resolver。
 画风：暖纸底 + 4 色分层（橙=Proxy / 蓝=类型 / 绿=link / 紫=网络）。
-](../../../public/projects/trpc/01-proxy-magic.webp)
+](/study/projects/trpc/01-proxy-magic.webp)
 
 ## 仓库地形
 
