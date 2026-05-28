@@ -20,7 +20,7 @@ sidebar:
 
 ## 进行中
 
-**第 8 篇**：The Google File System (Ghemawat et al., SOSP 2003)
+**第 9 篇**：MapReduce (Dean & Ghemawat, OSDI 2004)
 
 ---
 
@@ -46,7 +46,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 | # | 论文 | 关键判断 |
 |---|------|---------|
 | 6 | [**In Search of an Understandable Consensus Algorithm (Raft)**](/study/papers/raft/) (Ongaro & Ousterhout, USENIX 2014) ✅ | 把"可读性"当成研究贡献——共识协议从 Paxos 的天书走到能教学的版本 |
-| 7 | **The Google File System** (Ghemawat et al., SOSP 2003) | 大文件 + 顺序读 + 节点频繁失败的工程现实如何反向定义文件系统接口 |
+| 7 | [**The Google File System**](/study/papers/gfs/) (Ghemawat et al., SOSP 2003) ✅ | 大文件 + 顺序读 + 节点频繁失败的工程现实如何反向定义文件系统接口 |
 | 8 | **MapReduce: Simplified Data Processing on Large Clusters** (Dean & Ghemawat, OSDI 2004) | "限制表达能力换可扩展性"的范式典范——和 LangGraph 现在做的事是一脉 |
 | 9 | **Time, Clocks, and the Ordering of Events** (Lamport, 1978) | 分布式系统的"时间"为什么不是物理时钟——逻辑时钟与因果序的奠基 |
 | 10 | **Dynamo: Amazon's Highly Available Key-value Store** (DeCandia et al., SOSP 2007) | NoSQL 的源头——把 CAP 里的 AP 路线推到生产边界 |
@@ -97,6 +97,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 - [Toolformer (Schick et al., 2023)](/study/papers/toolformer/)（2026-05-28）— L4 手算 self-supervised filter（Calculator vs Calendar 反例）；含 2 张 figure（pipeline + 两条路线对比）
 - [SWE-bench (Jimenez et al., ICLR 2024)](/study/papers/swe-bench/)（2026-05-28）— L4 读源码确认 F2P/P2P grading 协议；含 2 张 figure（评测流程 + 3-stage 数据 pipeline）。**Season A 完结篇**
 - [Raft (Ongaro & Ousterhout, USENIX 2014)](/study/papers/raft/)（2026-05-28）— L4 5 节点 toy 选举/故障/split vote 三场景手算；含 2 张 figure（状态机 + vs Paxos）。**Season B 开篇**
+- [GFS (Ghemawat et al., SOSP 2003)](/study/papers/gfs/)（2026-05-28）— L4 read/write/atomic-append 三场景手算；含 2 张 figure（架构 + 不做 vs 才做）
 
 ---
 
