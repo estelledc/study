@@ -146,6 +146,55 @@ export async function buildProjectGraphUsingProjectFileMap(
 
 怀疑：cache 的 invalidation 边界看起来还是粗粒度的（rootTsConfig 一改就全量重算）。如果 ts paths 改了一项，整个 graph 都要重建，这在巨型 monorepo 上可能是真痛点。
 
+补充看一段 graph 的真正构建函数：
+
+```typescript
+// packages/nx/src/project-graph/build-project-graph.ts (节选)
+async function buildProjectGraphUsingContext(
+  externalNodes: Record<string, ProjectGraphExternalNode>,
+  ctx: CreateDependenciesContext,
+  cachedFileData: ProjectFileMap,
+  projectGraphVersion: string
+) {
+  performance.mark('build project graph:start');
+
+  const builder = new ProjectGraphBuilder(null, ctx.fileMap, cachedFileData);
+  builder.setVersion(projectGraphVersion);
+  for (const node in externalNodes) {
+    builder.addExternalNode(externalNodes[node]);
+  }
+
+  await normalizeProjectNodes(ctx, builder);
+  const initProjectGraph = builder.getUpdatedProjectGraph();
+
+  const r = await updateProjectGraphWithPlugins(ctx, initProjectGraph);
+  const updatedBuilder = new ProjectGraphBuilder(r, ctx.fileMap, cachedFileData);
+  for (const proj of Object.keys(ctx.projects)) {
+    for (const dep of r.dependencies[proj] ?? []) {
+      updatedBuilder.addDependency(dep.source, dep.target, dep.type, dep.sourceFile);
+    }
+  }
+
+  const finalGraph = await applyImplicitDependencies(
+    updatedBuilder.getUpdatedProjectGraph(),
+    ctx
+  );
+
+  performance.mark('build project graph:end');
+  performance.measure(
+    'build project graph',
+    'build project graph:start',
+    'build project graph:end'
+  );
+  return finalGraph;
+}
+```
+
+- 旁注 7：`ProjectGraphBuilder` 是 builder 模式的标准案例，先填 node 再填 edge，最后 `getUpdatedProjectGraph()` 出结果。
+- 旁注 8：`updateProjectGraphWithPlugins` 是 plugin 影响 graph 的唯一入口，所有 framework 插件（react、vue、angular）都靠这步把"import 关系"转成"project 边"。
+- 旁注 9：`applyImplicitDependencies` 处理用户在 project.json 里手写的 `implicitDependencies` 字段——比如 schema 改了导致下游 codegen 失效，但 import 看不出来这种隐式依赖。
+- 旁注 10：`performance.mark` 全程埋点，可以在 `NX_PERF_LOGGING=true` 下打开看每个阶段毫秒——这是看大 monorepo 性能瓶颈的入门方法。
+
 ### 3.2 Executor 与 Generator
 
 Nx 把"做事的方式"分成两类：generator 写代码、executor 跑命令。两者都通过 schema.json 描述输入。
@@ -197,6 +246,70 @@ export default echoExecutor;
 - 旁注 5：相比 Turborepo 的"配 task 字符串"，Nx 的 executor 是真正的代码，能做参数校验、能算 derived options、能 emit 多步操作。
 
 怀疑：Executor + Generator 的双轨制学习曲线明显比 Turborepo 陡。对于只想跑 build/test 的小团队，引入 generator 概念可能是过度抽象。
+
+再看一段真实的 generator 实现，体会 Tree 这个虚拟文件系统的味道：
+
+```typescript
+// 简化版 @nx/js:lib generator
+import { Tree, formatFiles, generateFiles, joinPathFragments, updateJson } from '@nx/devkit';
+
+interface LibGeneratorSchema {
+  name: string;
+  directory?: string;
+  tags?: string;
+}
+
+export async function libGenerator(tree: Tree, schema: LibGeneratorSchema) {
+  const projectRoot = schema.directory
+    ? joinPathFragments(schema.directory, schema.name)
+    : `libs/${schema.name}`;
+
+  // 1. 从模板目录批量生成文件（src/index.ts, README.md, tsconfig.json...）
+  generateFiles(
+    tree,
+    joinPathFragments(__dirname, 'files'),
+    projectRoot,
+    { name: schema.name, tmpl: '' }
+  );
+
+  // 2. 注册到 root tsconfig 的 paths
+  updateJson(tree, 'tsconfig.base.json', (json) => {
+    json.compilerOptions.paths ??= {};
+    json.compilerOptions.paths[`@org/${schema.name}`] = [
+      `${projectRoot}/src/index.ts`,
+    ];
+    return json;
+  });
+
+  // 3. 写 project.json，注册 build/test target
+  tree.write(
+    joinPathFragments(projectRoot, 'project.json'),
+    JSON.stringify({
+      name: schema.name,
+      sourceRoot: `${projectRoot}/src`,
+      projectType: 'library',
+      targets: {
+        build: { executor: '@nx/js:tsc', options: { outputPath: `dist/${projectRoot}` } },
+        test: { executor: '@nx/jest:jest' },
+      },
+      tags: schema.tags?.split(',').map((t) => t.trim()) ?? [],
+    }, null, 2)
+  );
+
+  // 4. 格式化所有改动文件，让 prettier 兜底
+  await formatFiles(tree);
+
+  // 5. 返回一个回调，所有改动落盘后才执行（用来跑 npm install 之类）
+  return () => {
+    console.log(`Library ${schema.name} created at ${projectRoot}`);
+  };
+}
+```
+
+- 旁注 6：`Tree` 是 stage area 概念，所有 `tree.write` 都不立刻落盘，等 generator 全跑完才统一刷新——这让 dry-run 几乎免费。
+- 旁注 7：`updateJson` 是 Nx 提供的 JSON 安全编辑工具，自动保留注释（虽然 JSON 标准不允许，Nx 自己魔改了一层）。
+- 旁注 8：返回的回调函数会在所有 generator 执行完后调用，用于副作用（npm install / git init）——这种"先 staged、再 side effect"的设计很值得借鉴。
+- 旁注 9：`formatFiles` 必跑一次，让生成代码和 repo 现有 prettier 配置对齐，避免 generator 模板和真实代码风格冲突。
 
 ### 3.3 Nx Cloud distributed cache + DTE
 
@@ -271,6 +384,43 @@ npx nx affected:graph
 
 第一次跑 run-many 会感觉慢，第二次同 cacheKey 会瞬间从 cache 命中——这是入门 Nx 最直观的"魔法时刻"。建议改一行 utils 的 src，再跑一次 affected:graph，会看到只有 utils 自己亮起。
 
+再深一步的实验菜单，每条都是 ~10 分钟的小练习：
+
+```bash
+# 1. 看 hash 是怎么算的（开 perf log 看每步耗时）
+NX_PERF_LOGGING=true npx nx build utils
+
+# 2. 看 cache 命中数据
+ls -lah .nx/cache/  # 每个目录是一次任务的缓存
+cat .nx/cache/<hash>/terminalOutputs/*  # 直接看 cached stdout
+
+# 3. 故意改 nx.json 触发全量重算，对比 graph 重建耗时
+echo '{"npmScope":"changed"}' > /tmp/x && jq -s '.[0]*.[1]' nx.json /tmp/x > nx.json.new && mv nx.json.new nx.json
+NX_PERF_LOGGING=true npx nx graph
+
+# 4. 自定义一个 executor 并注册
+mkdir -p tools/executors/echo
+cat > tools/executors/echo/executor.ts <<'EOF'
+import { ExecutorContext } from '@nx/devkit';
+export default async function (options: { msg: string }, ctx: ExecutorContext) {
+  console.log('[echo]', ctx.projectName, options.msg);
+  return { success: true };
+}
+EOF
+
+# 5. 强制本地 cache miss 看真实耗时
+npx nx reset && npx nx build utils --skip-nx-cache
+
+# 6. 跑 affected dry-run（不真跑，只列受影响 project）
+npx nx affected --target=test --dry-run
+
+# 7. 接 Nx Cloud（需要 token）
+npx nx connect-to-nx-cloud
+NX_CLOUD_DISTRIBUTED_EXECUTION=true npx nx run-many -t build --parallel=8
+```
+
+跑完这一套，你对"local cache → distributed cache → DTE"的差别就有手感了。建议每条命令的耗时都记到一个表格里，下次面试聊 monorepo 性能时直接掏出来。
+
 ## Layer 5 横向对比
 
 | 维度 | Nx | Turborepo | Lerna | Bazel | pnpm workspaces | Rush |
@@ -283,8 +433,31 @@ npx nx affected:graph
 | 代码生成 | generator | 无 | 无 | 无 | 无 | 无 |
 | IDE 集成 | Nx Console | 无 | 无 | 弱 | 无 | 无 |
 | 适用规模 | 中到超大 | 小到中 | 小 | 超大 | 小到中 | 中到大 |
+| 配置文件量 | 多（nx.json + project.json） | 少（turbo.json） | 中 | 极多（BUILD/WORKSPACE） | 极少 | 多（rush.json） |
+| 增量构建 | 文件级 hash | 文件级 hash | 无 | 文件级 hash + sandbox | 无 | project 级 |
+| 远程 cache | Nx Cloud（商业） | Vercel/自建 | 无 | bazel-remote 自建 | 无 | 有限 |
+| 主要语言体验 | TS 一等 | TS 一等 | JS | 全语言一等 | JS | JS |
+| 社区插件 | 多（react/vue/jest 全官方） | 少 | 多但停滞 | 极多 | 少 | 中 |
+| 本机性能 | 中（rust hasher 加速） | 极快（rust 原生） | 慢 | 中 | 极快 | 中 |
+| 商业模型 | 开源 + Nx Cloud | 开源 + Vercel cache | 纯开源（Nrwl 接管） | 纯开源 | 纯开源 | 纯开源 |
+| 上手门槛 | 高（要懂 graph/executor） | 低（10 分钟） | 低 | 极高（要写 BUILD） | 极低 | 中 |
+| 文档质量 | 极强 + 视频 | 强 | 弱 | 强但艰深 | 强 | 中 |
+| GitHub stars 规模 | 26k+ | 26k+ | 35k+（旧粉丝） | 22k+ | 28k+ | 5k+ |
 
 简短结论：Turborepo 在小到中规模 monorepo 是更轻的选择；Bazel 在超大规模 + 跨语言场景仍是 ceiling；Nx 卡在中到大规模 + 想要"开箱即用框架感"的位置。
+
+### 宣传 vs 现实对照
+
+| 官方宣传 | 实际体验 | 落差点 |
+|---------|---------|-------|
+| "10x faster builds" | 第一次冷跑没差，第二次起靠 cache | 比较基线是无 cache |
+| "Works with any framework" | TS 系一等公民，其他语言 plugin 弱 | 跨语言≠跨技术栈 |
+| "Generators save hours" | 第一次写 generator 反而花 3 小时 | 收益靠多次复用摊销 |
+| "Distributed task execution" | DTE 要付费 + 网络抖动易踩坑 | 自由层只有 remote cache |
+| "Smart rebuilds with affected" | rootTsConfig 改一行触发全量重算 | hash 边界粗 |
+| "Easy migration from any monorepo" | nx init 后还要手改 50+ 文件 | 自动化不彻底 |
+| "Project graph visualization" | 大 monorepo 上 graph 卡顿 | 1000+ project 时浏览器吃力 |
+| "Plugin ecosystem" | 官方插件好，社区插件维护参差 | 长尾质量不稳 |
 
 ## Layer 6 通用启发
 
@@ -318,9 +491,17 @@ npx nx affected:graph
 
 ## Layer 7 怀疑
 
-1. project graph 全量重算的触发面太广——rootTsConfig 一改就全量，对 ts paths 频繁调整的项目可能很痛
-2. Executor + Generator 的双轨 + plugin 体系学习曲线，让 Nx 在小团队几乎是过度工程，但官方营销不强调这一点
-3. Nx Cloud DTE 在 agent 心跳超时/网络抖动下的行为公开材料里语焉不详，生产 SRE 必须自己摸索运维经验
+1. project graph 全量重算的触发面太广——rootTsConfig 一改就全量，对 ts paths 频繁调整的项目可能很痛。深一层看，`shouldRecomputeWholeGraph` 把 packageJsonDeps + nxJson + rootTsConfig 三件事任一变化都判 cache 失效，这种"宁可重算不可错算"的策略在小 monorepo 完全够用，但 5000+ 文件的项目里每次 ts paths 微调都要重算全图，就会把 dev loop 变成 30 秒起步，体验掉一档。
+
+2. Executor + Generator 的双轨 + plugin 体系学习曲线，让 Nx 在小团队几乎是过度工程，但官方营销不强调这一点。看官方 docs 几乎默认你已经接受 framework 思维，跳过了"为什么要分两类"的论证。事实是 Turborepo 用 npm scripts + turbo.json 就够小团队用，Nx 的 generator 收益要在团队规模 ≥ 20 人 + 重复脚手架场景 ≥ 月级才能正收支平衡。
+
+3. Nx Cloud DTE 在 agent 心跳超时/网络抖动下的行为公开材料里语焉不详，生产 SRE 必须自己摸索运维经验。Nrwl blog 写的都是 happy path，找不到一篇"agent 跑了一半挂了 protocol 怎么走"的细节。从代码侧推测应该有重试，但 backoff 策略、最大重试次数、agent 黑名单机制都没有公开 API——这对要把 DTE 接到内部 CI 的团队是不小的不确定性。
+
+4. project.json 的 schema 演进过快——从 workspace.json 拆到 project.json、再加 nx.json 顶层，每两个大版本就有一次"建议迁移"，老项目升级心智负担重。Nx 提供 `nx migrate` 自动迁移，但实际跑出来还是要手 review 50+ 文件，所谓"无痛升级"是营销话术。
+
+5. plugin 长尾质量不可控。官方维护的 `@nx/react`、`@nx/jest` 等质量很高，但社区贡献的 `nx-plugin-foo` 经常半年没更新、和最新 Nx 版本不兼容。这种"core 极简 + plugin 富生态"的设计美则美矣，但用户买单时要赌 plugin 维护者还没跑路。
+
+6. 文档碎片化。Nx 官网信息密度极高，但同一概念在 "Concepts"、"Recipes"、"Reference" 三个子目录都有，新手很难判断哪份是当前推荐的。结合版本演进快，搜出来的旧博客内容经常不再适用，对中文社区尤其不友好。
 
 ## 限制
 
