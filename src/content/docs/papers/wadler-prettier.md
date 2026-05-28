@@ -22,6 +22,17 @@ sidebar:
 2026 年你用的 Prettier / black / esbuild printer / biome formatter，背后那个"先建文档树、
 再让算法挑最优 layout"的两阶段套路，就是这篇 22 页论文定义的设计语言。
 
+![A Prettier Printer 的 6+1 operators / 7 algebraic laws / best 算法](/study/papers/wadler-prettier/01-operators-laws-best.webp)
+
+*图 1：Wadler Prettier Printer 三栏全貌。
+**左 6+1 Operators**：nil / text / line / nest / `<>` / layout 6 个基础原子，加 group 1 个分组算子——
+覆盖所有 formatter 表达力。
+**中 7 Algebraic Laws**：text 同态律、nest 与加法的 distribute 律、nest 对 text 透明（关键！）等——
+让一切操作都能用代数方式简化。
+**右 best Algorithm**（10 行 Haskell）：根据当前可用宽度选择最优 layout——core 在
+`if fits (w-k) x then x else y` 的判断。
+**底部说明**：70 lines of Haskell 定义了一代 formatter——Prettier / esbuild / biome / wl-pprint 全部基于这套设计语言。论文 paper-figure 风。*
+
 ## Why（这篇出现前世界缺什么）
 
 1998 年之前，"如何把树打印得好看"有两条路线，都很痛：
