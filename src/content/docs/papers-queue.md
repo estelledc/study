@@ -20,7 +20,7 @@ sidebar:
 
 ## 进行中
 
-**第 15 篇**：Adapton (Hammer et al., PLDI 2014)
+**第 16 篇**：The Impact of AI on Developer Productivity / Copilot RCT (Peng et al., 2023)（Season D 启动）
 
 ---
 
@@ -57,7 +57,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 
 ---
 
-### Season C · 前端 / 编译器 / 工具链（2 / 5 完成）
+### Season C · 前端 / 编译器 / 工具链（5 / 5 完成 ✅）
 
 | # | 论文 | 关键判断 |
 |---|------|---------|
@@ -65,7 +65,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 | 12 | [**Adaptive Functional Programming / Self-Adjusting Computation**](/study/papers/self-adjusting/) (Acar et al., POPL 2002) ✅ | Solid / Svelte 5 runes / Jotai 的祖宗——"细粒度响应式"的理论根 |
 | 13 | [**Trees that Grow**](/study/papers/trees-that-grow/) (Najd & Peyton Jones, JFP 2017) ✅ | TypeScript / Babel / SWC 的 AST 设计典范——"扩展点 + 类型安全"如何同时拿到 |
 | 14 | [**Push-Pull Functional Reactive Programming**](/study/papers/push-pull-frp/) (Elliott, ICFP 2009) ✅ | RxJS / SolidJS / Effect 的反应式编程理论——push 和 pull 不是二选一 |
-| 15 | **Adapton: Composable, Demand-Driven Incremental Computation** (Hammer et al., PLDI 2014) | "增量计算"在编译器与 IDE 工具链的工程实现——rust-analyzer / Salsa 的源头 |
+| 15 | [**Adapton: Composable, Demand-Driven Incremental Computation**](/study/papers/adapton/) (Hammer et al., PLDI 2014) ✅ | "增量计算"在编译器与 IDE 工具链的工程实现——rust-analyzer / Salsa 的源头 |
 
 **这一季回答的问题**：你日常用的"快"工具（esbuild / Vite / rust-analyzer）背后，
 快的不是工程优化，是 80-10 年代 PL 研究奠定的算法。
@@ -104,6 +104,7 @@ chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的
 - [Adaptive Functional Programming (Acar et al., POPL 2002)](/study/papers/self-adjusting/)（2026-05-28）— L4 z=x+y 两阶段（initial + change propagation）手算；含 1 张 figure（mechanism）
 - [Trees that Grow (Najd & Peyton Jones, JFP 2017)](/study/papers/trees-that-grow/)（2026-05-28）— L4 Mini AST 4 phase 共享 traversal 手算；含 1 张 figure（extension fields）
 - [Push-Pull FRP (Elliott, ICFP 2009)](/study/papers/push-pull-frp/)（2026-05-28）— L4 mouse click + position 跟踪场景手算；含 1 张 figure（events vs signals）
+- [Adapton (Hammer et al., PLDI 2014)](/study/papers/adapton/)（2026-05-28）— L4 lazy demand-driven 三 phase 演示（change 不读 0 cost）；含 1 张 figure（SAC→Adapton→Salsa 演化）。**Season C 完结篇**
 
 ---
 
