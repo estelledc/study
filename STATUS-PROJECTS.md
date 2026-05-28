@@ -74,7 +74,21 @@
 备选池：apache/arrow-js（列存协议）/ kysely（type-level SQL）/ electric-sql（local-first 同步）
 
 
-- Season 9：大型协作 SaaS II（cal.com / appwrite / immich / penpot）
+### Season 9（已规划，待写）
+
+主题：**大型协作 SaaS II — 不同业务域如何组织代码**（与 plane S6 横向对比）
+
+| # | 项目 | GitHub | 类型（v1.1） | 关键连接 |
+|---|---|---|---|---|
+| 36 | cal.com | calcom/cal.com | A 大型应用 | 调度算法（availability 窗口）vs plane 任务图 |
+| 37 | immich | immich-app/immich | A 大型应用 | 二进制 + ML 推理 + 移动同步，与 plane 纯文本对极 |
+| 38 | chatwoot | chatwoot/chatwoot | A 大型应用 | 实时消息 + 多渠道 adapter pattern，Rails 标准 |
+| 39 | penpot | penpot/penpot | A 大型应用 | ClojureScript + 实时协同，与 excalidraw 跨语言对比 |
+| 40 | affine | toeverything/AFFiNE | A 大型应用 | Rust + Yjs CRDT block tree + local-first |
+
+备选：appwrite（PaaS）/ outline / dify（留 Season 10 AI 应用）
+
+
 - Season 10：AI 应用范式（dify / langfuse / chatgpt-clone 类）
 - Season 11：浏览器 agent 与 RPA（midscene / steel / playwright-controller）
 - Season 12：构建工具新一代（rolldown / oxc / lightning-css / rspack）
