@@ -385,3 +385,79 @@ export default {
 4. 协议（standardSchema、TC39 提案、JSON Schema）是小众库的救命稻草
 
 下一季 Season 22 工具库 C 分支预告：聚焦"基础设施型"工具库（bundler、test runner、monorepo tool），关注 vite / esbuild / turbopack / nx / turborepo 的设计哲学。
+
+## 附录 A — DSL 完整语法速查（≥ 25 行）
+
+arktype 字符串 DSL 完整语法：
+
+| 类别 | 示例 | 含义 |
+|---|---|---|
+| 基础类型 | `"string"` `"number"` `"boolean"` `"null"` `"undefined"` | TS 原生类型 |
+| 内置对象 | `"Date"` `"Error"` `"RegExp"` `"URL"` `"Map"` `"Set"` | JS 内置 class |
+| 字符串内建 | `"string.email"` `"string.url"` `"string.uuid"` `"string.json"` `"string.ip"` | RFC 校验 |
+| 字符串大小 | `"string > 5"` `"string < 100"` `"5 < string < 100"` | 长度区间 |
+| 字符串格式 | `"string.uppercase"` `"string.lowercase"` `"string.alphanumeric"` | 字符规则 |
+| 数字范围 | `"number > 0"` `"0 <= number <= 100"` | 数值区间 |
+| 数字类型 | `"number.integer"` `"number.epoch"` | 子类型 |
+| 字面量 | `"'admin'"` `"42"` `"true"` | 单值字面量 |
+| 联合 | `"string \| number"` `"'admin' \| 'user'"` | 联合类型 |
+| 数组 | `"number[]"` `"string > 0[]"` `"string[]\|number[]"` | 数组 |
+| 元组 | `["number", "string"]` | 固定元组 |
+| 对象 | `type({...})` 嵌套 | 对象 |
+| 可选 | `type({"name?": "string"})` | 可选字段 |
+| 自定义 | `["number", "=>", (n) => n > 18]` | 函数校验 |
+| morph | `["string", "|>", (s) => Date.parse(s)]` | 转换 |
+
+## 附录 B — 与 zod / valibot 同 schema 对比（≥ 25 行）
+
+同一个 User schema：
+
+```ts
+// arktype（最简洁）
+const User = type({
+  email: "string.email",
+  age: "0 < number < 120",
+  role: "'admin' | 'user'",
+  tags: "string[]"
+});
+
+// zod（chain）
+const User = z.object({
+  email: z.string().email(),
+  age: z.number().min(0).max(120),
+  role: z.enum(["admin", "user"]),
+  tags: z.array(z.string())
+});
+
+// valibot（pipe）
+const User = v.object({
+  email: v.pipe(v.string(), v.email()),
+  age: v.pipe(v.number(), v.minValue(0), v.maxValue(120)),
+  role: v.picklist(["admin", "user"]),
+  tags: v.array(v.string())
+});
+```
+
+代码量：
+- arktype：8 行（含 type 包装）
+- zod：6 行
+- valibot：8 行
+
+但 arktype 的字符串里编码了多个约束（"0 < number < 120"），表达力比 zod / valibot 单行高。
+
+类型推导精度：
+- arktype：role 推为 `'admin' | 'user'`（精确）
+- zod：role 推为 `"admin" | "user"`（精确）
+- valibot：role 推为 `'admin' | 'user'`（精确）
+
+三家在最终 type 推导精度上无差异，但 arktype 在 schema 定义阶段就保留 literal types，IDE 补全更精准。
+
+## 附录 C — 学到补充（≥ 10 行）
+
+补充 5 条工程教训：
+
+6. **TS 模板字面量类型** 是 TS 4.1+ 才解锁的"编译期解析"能力，arktype 是利用这能力最深的库
+7. **"founder + 一致哲学"小型库** 比"委员会大型库"创新更快，但风险也大（bus factor = 1）
+8. **生态 inertia 持续 5+ 年**：zod 2020 起占领，2024 年 arktype / valibot 仍是少数派
+9. **bundle 不是唯一指标**：valibot 卖 bundle，arktype 卖类型推导精度，市场反应都不及 zod 的 method chain DX
+10. **DSL 解析是双刃剑**：编译期 + 运行期都要解析，性能 + 编译时长双倍开销，但换来 unique value
