@@ -379,6 +379,25 @@ class ZPage {
 6. 论文 + JEP 不给"何时不用 ZGC"的清单——这是工程实践中最被问到的问题，留给社区文档（OpenJDK Wiki / Oracle blog）填空。
 7. 染色指针让 core dump / debugger / heap profiler 必须懂 mask 规则；旧 profiler（YourKit / JProfiler 老版本）不支持 ZGC heap dump。
 
+## 附录 A：ZGC 关键参数速查
+
+- `-XX:+UseZGC` — 启用 ZGC（JDK 11 起 experimental，JDK 15 起 production）。
+- `-XX:+ZGenerational` — 启用分代 ZGC（JDK 21 起 experimental，JDK 23 起 production）。
+- `-Xmx` — 最大堆，ZGC 甜区是 16 GB 以上；上限受染色 layout 约束（JDK 17+ 16 TB，分代后 8 TB）。
+- `-XX:ConcGCThreads` — 并发 GC 线程数，默认 = vCPU/4，I/O 密集型可调小。
+- `-XX:ParallelGCThreads` — STW 阶段的并行根扫描线程数，默认 = vCPU。
+- `-XX:SoftMaxHeapSize` — 软上限，提示 ZGC 在低于此值时优先回收，避免触上限被 stall。
+- `-Xlog:gc*` 或 `-Xlog:gc+phases=info` — 输出每个 phase 的耗时，是看 ZGC 是否健康的第一手段。
+- `-XX:+UseLargePages`、`-XX:+AlwaysPreTouch` — 与 ZGC 多视图 mmap 交互复杂，开之前先压测。
+
+## 附录 B：阅读 ZGC GC log 的 5 个关键字段
+
+- `Pause Mark Start` / `Pause Mark End` / `Pause Relocate Start` —— 三次 STW 各自耗时，应稳定 < 1 ms。
+- `Concurrent Mark` —— 并发标记总耗时，正比于 |live|，长但与 mutator 并发。
+- `Concurrent Relocate` —— 并发疏散耗时，疏散集越大越长。
+- `Allocation Stall` —— mutator 因 GC 跟不上分配速率被强行暂停的次数；非零即报警。
+- `Memory: Heap` 行 —— 当前 used / committed / max；与 RSS 偏差是 ZGC 多视图监控的常见混淆点。
+
 ## 元数据
 
 - 收录季：D
