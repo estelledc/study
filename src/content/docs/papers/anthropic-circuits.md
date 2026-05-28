@@ -526,7 +526,7 @@ curl -s https://transformer-circuits.pub/2021/framework/index.html -o /tmp/circu
 | 官方 model checkpoint | 不发布 | — |
 | 官方 figure 可视化代码 | 公开 | [anthropic/PySvelte](https://github.com/anthropics/PySvelte) commit `ec2ce29` |
 | 后人复刻 minimal lib | 公开 | [neelnanda-io/TransformerLens](https://github.com/neelnanda-io/TransformerLens) commit `a1d1b91` |
-| 教程 / colab | 公开 | [Neel Nanda Mech Interp Tutorial](https://github.com/neelnanda-io/TransformerLens/blob/main/demos/Main_Demo.ipynb) |
+| 教程 / colab | 公开 | [Neel Nanda Mech Interp Tutorial](https://github.com/neelnanda-io/TransformerLens/blob/a1d1b91/demos/Main_Demo.ipynb) |
 
 ### 阶段 3：Gap 分析（论文版 vs 我能跑的）
 
@@ -777,7 +777,7 @@ print("predicted next token:", model.to_string(next_tok))
 - Toy Models of Superposition：https://transformer-circuits.pub/2022/toy_model/index.html
 - 官方 figure 可视化：https://github.com/anthropics/PySvelte（commit `ec2ce29`，约 600 stars，2026-05）
 - 后人 minimal lib：https://github.com/neelnanda-io/TransformerLens（commit `a1d1b91`，约 2.8k stars，2026-05）
-- ARENA mech interp 教程：https://github.com/neelnanda-io/TransformerLens/blob/main/demos/Main_Demo.ipynb
+- ARENA mech interp 教程：https://github.com/neelnanda-io/TransformerLens/blob/a1d1b91/demos/Main_Demo.ipynb
 - 反方 DAS：https://arxiv.org/abs/2303.02536
 - 反方 RepE：https://arxiv.org/abs/2310.01405
 
