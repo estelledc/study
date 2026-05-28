@@ -392,3 +392,47 @@ TypeScript 支持是 visx 的强项之一：
 
 这张表的核心信息：visx 不是 d3 的替代，是 d3 的"React 友好层"。
 理解这个定位之后，所有"visx 为什么这么设计"的问题都有答案 —— 它要保留 d3 心智模型的所有正确性，只在表层做 React 化。
+
+---
+
+## 附录 A：visx + Recharts 选型决策树
+
+实际项目里"用 visx 还是 Recharts"是高频问题。下面这棵决策树覆盖 90% 的常见场景，按优先级从上到下判断，命中第一条即可停止。
+
+1. 数据集 < 1k 点，图表类型属于柱/线/饼/散点常规组合 → 直接用 Recharts，开箱即用，省下大量样板代码
+2. 数据集 1k-10k 点，且需要自定义坐标轴/渐变/复合图层 → 选 visx，Recharts 在这个量级下重渲染会卡
+3. 数据集 > 10k 点，或需要平滑动画 60fps → 跳过 SVG 路线，改用 Canvas-based（react-konva / regl / pixi-react）
+4. 强 SSR 需求（需要爬虫抓取图表内容、首屏直出）→ 选 visx，SVG 友好，Recharts 在 Next.js SSR 下也行但 hydration 体积更大
+5. 团队 d3 经验深、有自定义 layout 算法（force / sankey / treemap）需求 → visx，d3 模块可直接复用
+6. 团队 React 经验浅、希望 props 即配置 → Recharts，DSL 更声明式
+7. 需要打印/导出 PDF（矢量保真）→ visx 或 Recharts 都行，但 visx 更易控制 viewBox 和 marker 细节
+8. 需要支持 a11y（屏幕阅读器读图表数据）→ visx 更可控，可手动加 `<title>` `<desc>` 和 `role`
+9. 移动端 H5、首屏 < 50KB JS 预算 → visx 按需引入子包（@visx/shape 单包 ~5KB）远比 Recharts 全量小
+10. 已有 ECharts 历史包袱、想渐进迁移 → 不要切 visx，先评估 ECharts 5.x 的 React 包装是否够用
+11. 强需求"图表里嵌套自定义 React 组件"（比如柱子内部放图标和按钮）→ visx 唯一选择，Recharts 自定义 shape 受限
+12. 老板说"先做出来再说"且没人会 d3 → Recharts，3 天能交付的不要选 3 周方案
+13. 需要做 BI 平台、用户自己拖拽配置图表 → 都不合适，看 Apache Superset / Grafana 这类完整方案
+14. 学习目的、想理解可视化底层 → 直接学 d3，不要被 Recharts/visx 屏蔽细节
+15. 决策不下来 → 先用 Recharts 跑 PoC 验证业务可行性，确认要做后再评估是否切 visx
+
+---
+
+## 附录 B：visx v3 升级注意事项
+
+v3.0 在 2024 年发布，是 visx 的一次主要破坏性更新。从 v2 升 v3 不是无脑替换，下面这些点踩过坑就知道。
+
+1. v3.0 起最低 React 版本提到 16.8 以上（强制 hooks 支持），React 16.7 及以下需要先升 React
+2. peer dependency 同时把 React 18 列为 supported，`<StrictMode>` 下双重渲染不再触发 console warning
+3. @visx/scale 的类型签名做了严格化，`scaleLinear<Output>()` 的泛型推断更严，TS 4.5+ 的用户可能需要显式标注 domain/range 类型
+4. @visx/zoom 的 transform 矩阵字段（scaleX/scaleY/translateX/translateY）从 string 改为 number，所有持久化到 localStorage 的旧矩阵都要做迁移
+5. @visx/responsive 的 ParentSize 组件 debounce 默认值从硬编码 300ms 改为可配置 prop，未传 debounceTime 时维持 300ms 不变（行为兼容）
+6. @visx/event 的 localPoint 在 React 18 自动批处理下偶尔返回 stale 坐标，已知 issue，workaround 是 wrap 一层 flushSync 或 useLayoutEffect
+7. @visx/legend 的 LegendOrdinal `labelFormat` 签名从 `(label, index)` 改为 `({ value, index })`，所有自定义 label 渲染要改对象解构
+8. @visx/curve re-export 的 d3-shape 升级到 3.x，对应的 monotone 曲线在端点处理上和 2.x 略有差异（极端数据下肉眼可见）
+9. @visx/glyph 新增 GlyphCross/GlyphWye 等形状，老版自定义实现可以删了
+10. peer dependency 仍兼容 d3-scale 4.x，不强制升 d3-scale 5（5.x 还在 alpha）
+11. CSS-in-JS 用户注意：v3 没有引入 emotion/styled-components 依赖，仍是无样式，旧版主题方案可平移
+12. SSR 场景下 ParentSize 在 v3 默认渲染 `null` 直到客户端 hydration，避免 SSR 报 width=0 警告，但首屏会有一帧空白，必要时配 initialWidth/initialHeight
+13. tree-shaking 在 v3 通过 sideEffects: false 标记进一步优化，bundle 体积平均减少 8-12%
+14. ESM/CJS 双出口已 ship，Node 18+ 用 ESM 直接 import 子包不再需要 transpile
+15. 升级建议路线：先升 @visx/scale @visx/shape @visx/axis 三个核心包跑回归，绿了再升 zoom/brush/responsive，最后升衍生工具包（legend/glyph/tooltip 等）
