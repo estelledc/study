@@ -71,7 +71,21 @@
 备选池：Pierce & Turner 2000（Local Type Inference）/ Tofte-Talpin 1997（Region Inference / Rust lifetime 根）/ Kohlbecker 1986（Hygienic Macros）
 
 
-- Season H：多模态 / 视觉理解（DINO / SAM / Grounding DINO 类）
+### Season H（已规划，待写）
+
+主题：**多模态 / 视觉理解 — 以 CLIP 为枢纽的 5 条辐射线**（segmentation / self-supervised / 生成式 / 3D / multimodal agent）
+
+| # | 论文 | 类型 | venue/年 | 关键连接 |
+|---|---|---|---|---|
+| 36 | SAM: Segment Anything | A method+benchmark | Kirillov et al., ICCV 2023 | promptable segmentation；浏览器 ONNX demo 直接 L4，Canvas 抠图 |
+| 37 | DINO: Self-Distillation with No Labels | A method | Caron et al., ICCV 2021 | self-supervised vision 思想原点；attention map 单图可视化 |
+| 38 | Latent Diffusion (Stable Diffusion) | A method | Rombach et al., CVPR 2022 | CLIP 最重要工业后作；H5 海报生成 |
+| 39 | 3D Gaussian Splatting | A method | Kerbl et al., SIGGRAPH 2023 | NeRF 后作；WebGL viewer 可直接读 .ply |
+| 40 | LLaVA: Visual Instruction Tuning | A method | Liu et al., NeurIPS 2023 | CLIP + LLaMA → 多模态 agent，Activity Planner 路线 |
+
+备选：MAE / Grounding DINO / NeRF / DDPM / DINOv2
+
+
 - Season I：AI safety / interpretability 深化
 - Season J：HCI 程序员认知（cognitive load / debugging / flow）
 - Season K：检索 / 记忆系统（retrieval / spaced repetition / vector DB）
