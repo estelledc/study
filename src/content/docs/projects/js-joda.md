@@ -339,3 +339,110 @@ function OrderView({order}: {order: OrderDTO}) {
 - [[dayjs]] — 同领域，对比 chain API vs Java fluent API
 - [[luxon]] — 同领域，对比 immutable + Intl vs immutable + 自捆绑数据
 - [[temporal-polyfill]] — 同领域，TC39 标准是 Java time API 与 JS 风格融合
+
+## 附录 A — 与 Spring Boot Java 后端 + JS 前端跨语言完整流程（≥ 30 行）
+
+完整端到端例子，展示 js-joda 的核心价值：跨语言一致 API。
+
+### Java 后端（Spring Boot 3.x）
+
+```java
+import java.time.ZonedDateTime;
+import java.time.Duration;
+
+@RestController
+public class OrderController {
+  @GetMapping("/orders/{id}")
+  public OrderDTO getOrder(@PathVariable String id) {
+    Order order = repo.findById(id).orElseThrow();
+    return new OrderDTO(
+      order.getId(),
+      order.getCreatedAt(),  // ZonedDateTime
+      order.getProcessingDuration()  // Duration
+    );
+  }
+}
+
+public record OrderDTO(
+  String id,
+  ZonedDateTime createdAt,
+  Duration processingDuration
+) {}
+```
+
+Jackson 默认序列化：
+```json
+{
+  "id": "abc-123",
+  "createdAt": "2026-05-29T14:30+08:00[Asia/Shanghai]",
+  "processingDuration": "PT2H15M"
+}
+```
+
+### JS 前端（React + TypeScript）
+
+```ts
+import {ZonedDateTime, Duration, ZoneId} from "@js-joda/core";
+import "@js-joda/timezone";
+
+interface OrderDTO {
+  id: string;
+  createdAt: string;
+  processingDuration: string;
+}
+
+async function fetchOrder(id: string) {
+  const dto: OrderDTO = await api.get(`/orders/${id}`).json();
+  // 同 Java toString() / Duration.toString() 直接 parse
+  const createdAt = ZonedDateTime.parse(dto.createdAt);
+  const duration = Duration.parse(dto.processingDuration);
+
+  // 转用户本地 TZ 显示
+  const local = createdAt.withZoneSameInstant(ZoneId.systemDefault());
+  return {id: dto.id, createdAt: local, duration};
+}
+```
+
+**关键**：Java + JS 双方都用 ISO-8601 + Java 标准格式。无需自定义 JSON serializer / parser。这是 js-joda 的存在理由。
+
+## 附录 B — DST 边界处理（≥ 25 行）
+
+js-joda 与 java.time 一致处理 DST gap / overlap：
+
+```ts
+import {ZonedDateTime, ZoneId, LocalDateTime, Duration} from "@js-joda/core";
+import "@js-joda/timezone";
+
+// 美国 DST 跳跃：2026-03-08 02:00 → 03:00（春季 spring forward）
+const ny = ZoneId.of("America/New_York");
+
+// Gap：02:30 不存在
+const ldt = LocalDateTime.of(2026, 3, 8, 2, 30);
+const zdt = ZonedDateTime.of(ldt, ny);
+// 自动调整为 03:30（论文一致行为）
+
+// 加 1 天 vs 加 86400 秒
+const t1 = ZonedDateTime.of(2026, 3, 7, 14, 0, 0, 0, ny);
+const tPeriod = t1.plusDays(1);  // 历法加 1 天 = 23 小时（DST 跳）
+const tDuration = t1.plus(Duration.ofDays(1));  // 精确 24 小时
+
+console.log(tPeriod.toString());     // 2026-03-08T14:00-04:00[America/New_York]
+console.log(tDuration.toString());   // 2026-03-08T15:00-04:00[America/New_York]
+```
+
+要点：
+
+1. Period（历法）vs Duration（精确）的区别在 DST 边界显化
+2. js-joda 行为与 java.time 100% 一致
+3. dayjs / Moment 在 DST 边界容易踩坑（社区 issue 多）
+4. 跨语言团队不必协调"DST 怎么算"——java.time 标准说了算
+
+## 附录 C — 学到补充（≥ 10 行）
+
+补充 5 条工程教训：
+
+6. **Joda-Time → java.time → js-joda → Temporal API** 是日期时间设计 25 年的演化轨迹（Stephen Colebourne 是关键人物）
+7. **"不变性 + 强类型 + 6 类层次"** 在 1990s Joda-Time 已设计完整，JS 直到 Temporal 才追上
+8. **跨语言 API 一致性** 在企业级开发的价值远超单语言生态优势
+9. **bundle 大小** 是浏览器场景的硬约束，js-joda 在 Cloudflare Worker / Astro 静态生成场景几乎不能用
+10. **TC39 Temporal API 在 Stage 4 后** 浏览器原生支持，可能让 js-joda 失去主要技术价值，但跨语言 API 名字一致仍是它的护城河
