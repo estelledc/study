@@ -39,20 +39,37 @@
 - cal.com — 大型 SaaS 替代选择（marketing/计费分散，更难做 L3）
 - rolldown / oxc — 编译器运行时新一代
 
-## 后续 Season（roadmap，未细化）
+## Season 7（已规划，待写）
 
-需要写到 100 个 = 80 个待规划，按下面方向铺开（每季 5 个）：
+主题：**可观测 — 你的代码上线之后还活着吗**（补 career-plan 短板：错误追踪 / 日志 / 指标 / 性能 全空白）
 
-- Season 7：可观测 / DevOps（grafana / prometheus / opentelemetry / sentry）
-- Season 8：数据库与数据工具（duckdb / clickhouse / arrow / supabase）
+与 Season 5 验证形成"代码生命周期"双拼：Season 5 上线前 / Season 7 上线后。
+
+| # | 项目 | GitHub | 类型（v1.1） | 关键连接 |
+|---|---|---|---|---|
+| 26 | sentry-javascript | getsentry/sentry-javascript | D 框架/SDK | 错误追踪业界标准；H5 + activity-planner 缺错误上报 |
+| 27 | pino | pinojs/pino | B 工具库 | "最快的 Node logger"；3000 行核心 = Layer 3 范本 |
+| 28 | web-vitals | GoogleChrome/web-vitals | B 工具库 | Google 官方 Core Web Vitals 测量；H5 项目性能短板正面回应 |
+| 29 | prom-client | siimon/prom-client | B 工具库 | Prometheus 指标采集；理解 counter/histogram 基本概念 |
+| 30 | why-did-you-render | welldone-software/why-did-you-render | E 测试/验证 | React rerender 诊断；hijack reconciler 的 hack 工程美学 |
+
+备选池：opentelemetry-js（如 prom-client 太浅升级到这）/ highlight-io（端到端 dashboard）/ datadog-browser-sdk（与 sentry 横向对比）
+
+## 后续 Season（roadmap）
+
+研究队列持续扩充，不卡 100 上限。已规划方向：
+
+- Season 8：数据库与数据工具（drizzle 已 S6 / duckdb / clickhouse / arrow / supabase）
 - Season 9：大型协作 SaaS II（cal.com / appwrite / immich / penpot）
 - Season 10：AI 应用范式（dify / langfuse / chatgpt-clone 类）
-- Season 11：浏览器 agent 与 RPA（playwright-controller / steel / midscene）
+- Season 11：浏览器 agent 与 RPA（midscene / steel / playwright-controller）
 - Season 12：构建工具新一代（rolldown / oxc / lightning-css / rspack）
 - Season 13：状态与心智补完（valtio / nanostores / jotai 横向）
-- Season 14：测试增强（vitest 内核 / msw 2.0 / storybook）
+- Season 14：测试增强（vitest 内核 / msw 2.0 / storybook 7）
 - Season 15：浏览器扩展平台（plasmo / wxt）
-- Season 16-25：根据 study 站使用反馈补缺口
+- Season 16-Z：根据 study 站使用反馈持续补缺口
+
+每季约 5 个，主 CC 在 refactor 间隙陆续 dispatch 研究 subagent 详细化。
 
 ## 历史里程碑
 
