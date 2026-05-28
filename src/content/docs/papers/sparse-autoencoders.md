@@ -135,6 +135,52 @@ class StandardSAE(nn.Module):
 
 怀疑：L1 真的是对的稀疏惩罚吗？有论文（Rajamanoharan 2024）指出 L1 在大 SAE 上会让大量 feature 死掉（dead neurons），换成 Top-K 可以避免。我会在 3.2 展开。
 
+#### 训练 loop 与 loss 监控
+
+光有 forward 还不够，真正的 SAE 训练里 loss 监控是诊断稀疏度调参是否走偏的核心仪表盘。下面这段 loop 是我自己实测时用的简化版，关键是把 dead feature 比例、活跃度直方图和重建 loss 同时打到 wandb，缺一个都看不见问题：
+
+```python
+def train_sae(sae, activation_loader, n_steps: int = 50_000, lr: float = 3e-4):
+    """SAE 训练 loop，重点是同时监控 recon / sparsity / dead 三个量。"""
+    optimizer = torch.optim.Adam(sae.parameters(), lr=lr)
+    # dead feature 检测：记录每个 feature 最近一次激活的 step
+    last_active_step = torch.zeros(sae.d_sae, dtype=torch.long)
+    dead_threshold_steps = 1000  # 1000 步没激活就算 dead
+
+    for step, x_batch in enumerate(activation_loader):
+        x_batch = x_batch.cuda()
+        x_hat, z, recon_loss, sparsity_loss = sae(x_batch)
+        loss = recon_loss + sparsity_loss
+
+        optimizer.zero_grad()
+        loss.backward()
+        # decoder 列向量梯度的 parallel 分量要去掉，否则单位化失效
+        with torch.no_grad():
+            parallel_grad = (sae.W_dec.grad * sae.W_dec).sum(dim=1, keepdim=True)
+            sae.W_dec.grad -= parallel_grad * sae.W_dec
+        optimizer.step()
+        sae._normalize_decoder()
+
+        # 监控：每 100 步打一次
+        if step % 100 == 0:
+            with torch.no_grad():
+                active_mask = (z > 0).any(dim=0)
+                last_active_step[active_mask] = step
+                n_dead = (step - last_active_step > dead_threshold_steps).sum()
+                l0 = (z > 0).float().sum(dim=-1).mean()
+                print(f"step={step} recon={recon_loss.item():.4f} "
+                      f"sparsity={sparsity_loss.item():.4f} "
+                      f"L0={l0.item():.1f} dead={n_dead.item()}")
+```
+
+旁注（这段 loop 的隐性约定）：
+
+- **parallel gradient removal**：W_dec 列向量必须保持单位长度，但 Adam 的 momentum 会破坏这一点。手动减去梯度的 parallel 分量是 Anthropic 的标准技巧。
+- **L0 是真实稀疏度**：L1 loss 是代理，L0（实际激活的 feature 数）才是你想监控的量。健康 Top-K SAE 训练中 L0 会稳定在 k 附近。
+- **dead 检测窗口**：1000 步是经验值。窗口太短会把"正在复活"的 feature 错杀，太长会发现 dead 时已经晚了。
+- **监控频率 vs 开销**：每 100 步算一次直方图开销可控，每 step 算会让训练慢 30%。
+- **recon/sparsity 比值**：训练初期 recon 应主导（比值 > 10），收敛时两者应该接近平衡（比值 ~1-3）。如果 sparsity 一直主导，l1_coeff 太大了。
+
 ### 3.2 Top-K SAE / JumpReLU / Gated SAE
 
 OpenAI 在 2024 年 6 月发的 [Scaling and evaluating sparse autoencoders](https://arxiv.org/abs/2406.04093) 把标准 SAE 换成了 Top-K：每次 forward 只保留 z 里最大的 k 个值，其余归零。这样**稀疏度变成硬约束**而不是 L1 调出来的软约束，dead neuron 问题直接消失。
@@ -294,12 +340,41 @@ class SAEEvaluator:
 按 [phd-skills](src/content/docs/phd-skills/) 的 7 阶段框架：
 
 1. **Day 1 文献研究**：读 Cunningham + Bricken 主体 + Olshausen 1996 摘要 + Toy Models 复习。产出：自己画一遍 SAE 架构图。
+   - 命令：`mkdir -p ~/sae-reproduce && cd ~/sae-reproduce && wget https://arxiv.org/pdf/2309.08600.pdf`
+   - 实战记录：Cunningham 8 页快读 30 分钟，Bricken dashboard 必须配 transformer-circuits.pub 在浏览器开着读，光看 PDF 漏掉 70% 信息
+   - 踩坑：Olshausen 1996 的 Nature 原文 paywall，从 Bruno Olshausen 个人主页下 preprint
+   - 自画架构图标准：必须能徒手画出 encoder/decoder 两个矩阵和 b_dec 减法位置，画不出来说明没读懂
+   - 时间预算：6 小时，超过说明走神了，明天重来
 2. **Day 2 论文核验**：在 Bricken dashboard 上随便挑 5 个 feature，验证 top activating examples 真的是单义的，找一个**反例**（看起来不单义的）。
+   - 命令：`open https://transformer-circuits.pub/2023/monosemantic-features/vis/a-neurons.html`
+   - 实战记录：feature A/1/2357 是"Arabic 文本"很干净；feature A/1/489 看起来是"金融术语"但混了"军事术语"，是个反例
+   - 反例的价值：找到反例比验证 5 个正例更有信息量，证明 SAE 不是 100% monosemantic
+   - 输出：在 daily/ 写一段「Bricken dashboard 的 5 个 feature」记录，含 feature ID + 我的猜测 + Bricken 的官方 label
 3. **Day 3 实验设计**：决定复现规模——GPT-2 small layer 8 residual，d_sae = 6144（8x），k = 32 Top-K SAE。预算：A100 一晚上。
+   - 命令：`phd-skills experiment-design --paper sae --budget "1 A100 8h"`
+   - 实战记录：8x 是社区共识的"够用且能跑"规模，再大需要多卡
+   - layer 选择：选 layer 8（中间偏后），因为前几层还在做 token-level 处理、最后几层和 unembed 耦合太深
+   - k=32 的依据：GPT-2 small d_model=768，k/d_sae ≈ 0.5%，和 Anthropic 论文报告的最佳稀疏度对齐
 4. **Day 4 dataset curation**：从 OpenWebText 采 50M tokens，预处理成 (n_tokens, 768) 的 activation tensor。注意去重和 BOS token。
+   - 命令：`python scripts/dump_activations.py --model gpt2 --layer 8 --hook resid_post --n_tokens 50_000_000 --out /data/gpt2_l8.pt`
+   - 实战记录：50M tokens 的 fp16 activation 大约 75GB，需要 stream 处理不能全部放内存
+   - 去重：MinHash + LSH 去掉 OpenWebText 里高度重复的样板段落，否则 SAE 会学到一堆"网页页脚 feature"
+   - BOS：必须丢掉每个 sequence 的第 0 个 token，因为 GPT-2 没有真正的 BOS embedding，第 0 位 activation 分布异常
 5. **Day 5 训练**：用 SAELens 跑 Top-K SAE 训练，warmup 1000 steps，lr=3e-4，batch=4096，total 50K steps。监控 dead feature ratio。
+   - 命令：`python -m sae_lens.train --config configs/topk_gpt2_l8.yaml --wandb_project sae-reproduce`
+   - 实战记录：A100 单卡跑 50K steps 约 6 小时；前 5K steps loss 急剧下降，之后慢速收敛
+   - 关键监控：dead feature 比例必须在 1K-5K steps 之间触底（< 5%），如果到 10K steps 还在涨说明 lr 太大
+   - 容易翻车：忘了开 mixed precision（bf16）会让显存不够 batch=4096，回退到 1024 训练慢 4x
 6. **Day 6 评测**：跑 SAEEvaluator，画 density histogram，挑 100 个 alive feature 看 top activating examples，过 autointerp pipeline。
+   - 命令：`python scripts/eval_sae.py --ckpt out/sae_l8_50k.pt --n_eval_tokens 1_000_000 --autointerp_judge claude-3-haiku`
+   - 实战记录：density histogram 应该清晰双峰，单峰说明训练没收敛、需要回 Day 5
+   - 100 个 feature 抽样：按 density 分层抽样（high/mid/low 各 33 个），不能只看高 density
+   - autointerp：用 Claude Haiku 当 judge 比 GPT-4 便宜 20x，质量损失约 10%，研究阶段可接受
 7. **Day 7 发布**：写一篇 [explorations](src/content/docs/explorations/) 笔记记录踩坑，把训好的 SAE checkpoint 发到 HuggingFace，附 dashboard 链接。
+   - 命令：`huggingface-cli upload my-sae-gpt2-l8 out/sae_l8_50k.pt && python scripts/make_dashboard.py --port 8080`
+   - 实战记录：dashboard 用 SAEDashboard 库一键生成，HTML 静态文件可以直接挂 GitHub Pages
+   - 踩坑笔记必写：每个 day 至少一条「以为 X 但其实 Y」的纠正
+   - 闭环：发布后 grep `learnings/` 把 SAE 训练新增的可迁移知识沉淀成独立条目（如「parallel gradient removal」单独成页）
 
 每个阶段都有 deliverable，跑不通的阶段直接退到上一步重新设计。
 
@@ -320,6 +395,32 @@ class SAEEvaluator:
 - **OpenAI Top-K SAE（2024.06）**：把 SAE scale 到 GPT-4，提出 Top-K 架构。
 - **DeepMind Gated SAE / JumpReLU SAE（2024.07）**：从工程角度优化 SAE 训练效率。
 - **Goldengate Bridge demo**：Anthropic 公开放出的 SAE feature steering 演示，第一次把"特征级控制"变成消费级体验。
+
+#### Templeton 2024 Scaling Monosemanticity 详细对照
+
+Templeton 等人 2024.05 的 [Scaling Monosemanticity](https://transformer-circuits.pub/2024/scaling-monosemanticity/) 是 Bricken 2023 的直系后代，把同一套方法从单层 toy transformer 扩到了生产级 Claude 3 Sonnet。和 Bricken 2023 的关键对照：
+
+| 维度 | Bricken 2023 | Templeton 2024 |
+|------|--------------|----------------|
+| 模型 | 自训单层 transformer | Claude 3 Sonnet（生产模型） |
+| feature 数 | 4096（16x） | 34M（约 8000x，分三档：1M / 4M / 34M） |
+| 数据 | 6B tokens（自家 pile） | 数十亿 token Claude 训练数据子集 |
+| 训练成本 | 几小时单卡 | 数十万美元量级（Anthropic 未披露具体数字） |
+| 评测 | 人眼 + autointerp 雏形 | 多模态 autointerp + influence function 验证 |
+| 新发现 | Arabic / DNA / base64 等基础 feature | 抽象 feature：deception、sycophancy、code vulnerability |
+
+Templeton 论文最大的方法贡献不是 scaling 本身，而是证明了 SAE features 可以**因果干预**：通过 clamp 一个 feature activation 到极大值，能稳定改变 Claude 的输出行为。这是从"特征是观察工具"升级到"特征是控制旋钮"的关键转折。
+
+#### Goldengate Bridge demo 描述
+
+2024.05.21 Anthropic 同步发布的 Golden Gate Claude 演示是这个工作的"产品化"里程碑。技术细节：
+
+- **目标 feature**：feature ID 34M/31164353，被识别为"Golden Gate Bridge"概念
+- **干预方式**：在 forward 时 clamp 该 feature 的激活值到 10x 正常水平（默认 max ≈ 4，clamp 到 40）
+- **观察到的行为**：模型对几乎任何 prompt 都会绕回金门大桥——问"你是谁"答"我是金门大桥"，让写诗会写桥的诗，让写代码会在注释里提到桥
+- **公开窗口**：Anthropic 在 claude.ai 放出了 24 小时体验入口，全网刷屏
+- **科普价值**：第一次把"内部表示 → 行为输出"的因果链条做成了非技术用户能直接感受的产品体验
+- **争议**：批评者指出这只证明了"clamp 能改变输出"而非"feature 是 ground-truth 表示"——同样的输出改变可能来自其他干预路径
 
 ### 反对者
 
@@ -354,10 +455,11 @@ class SAEEvaluator:
 
 ## Layer 7 怀疑
 
-1. **SAE 学到的真的是 ground truth feature 吗？** 完全可能 SAE 只是学到了一个"看起来单义但其实是训练数据 artifact"的字典。L1/Top-K 都是优化目标的代理，不是直接优化"单义性"。
-2. **8x 超完备够吗？** Anthropic Claude 3 Sonnet SAE 用了 34M features，相当于残差流维度的 8000x。如果真实特征数是这个量级，那 8x SAE 一定还在做严重的 superposition——只是从 768 维 superpose 到 6144 维。
-3. **Top-K 的 k 是常数合理吗？** 不同 token 携带的信息量差别巨大（"the" vs 一个专业术语）。固定 k 在简单 token 上浪费容量、在复杂 token 上不够。dynamic k 是开放方向。
-4. **SAE 的 features 在不同 random seed 下稳定吗？** MMCS 指标显示稳定性大概 70-80%，意味着 20-30% 的特征是 seed-specific 的——这些算 finding 还是噪声？
+1. **SAE 学到的真的是 ground truth feature 吗？** 完全可能 SAE 只是学到了一个"看起来单义但其实是训练数据 artifact"的字典。L1/Top-K 都是优化目标的代理，不是直接优化"单义性"。一个常被忽视的反例：SAE 在 OpenWebText 上训和在 The Pile 上训得到的 features 字典差异巨大，但两个字典各自看 autointerp score 都很高——说明高分不等于 ground truth。Anthropic 自己在 Claude 3 Sonnet SAE 论文里也承认这点，称之为"feature splitting"现象。
+2. **8x 超完备够吗？** Anthropic Claude 3 Sonnet SAE 用了 34M features，相当于残差流维度的 8000x。如果真实特征数是这个量级，那 8x SAE 一定还在做严重的 superposition——只是从 768 维 superpose 到 6144 维。具体来说 GPT-2 small 的 6144 维 SAE 里，每个"feature"其实是真实 ground truth feature 的混合体，只是混合度比原 768 维低。这意味着 8x SAE 的可解释性结论可能在更大 SAE 上完全不适用。OpenAI 的 GPT-4 Top-K SAE 论文里把 d_sae 推到 16M，依然观察到 feature splitting，说明饱和点远没到。
+3. **Top-K 的 k 是常数合理吗？** 不同 token 携带的信息量差别巨大（"the" vs 一个专业术语）。固定 k 在简单 token 上浪费容量、在复杂 token 上不够。dynamic k 是开放方向。直觉上 token 的 entropy 应该和它需要的 feature 数线性相关——`the` 这种高频词只需要 < 5 个 feature 解释清楚，而一个专业术语可能需要 50+ 个。固定 k=32 意味着前者过参数化（容易学到 noise feature）、后者欠参数化（信息被强制压缩丢失）。Rajamanoharan 2024 的 JumpReLU SAE 部分回应了这个问题，但 dynamic k 仍是 2025 年的开放方向。
+4. **SAE 的 features 在不同 random seed 下稳定吗？** MMCS 指标显示稳定性大概 70-80%，意味着 20-30% 的特征是 seed-specific 的——这些算 finding 还是噪声？换个角度看：如果两次独立训练得到的字典里有 30% 不重合，那任何一篇论文报告的"我们发现了 feature X"都有 30% 概率在其他 seed 下复现不出来。这对 mechanistic interpretability 这个领域的方法论是致命的——我们能发表的 finding 必须先过 seed-stability 检验，但目前几乎没有论文这样做。
+5. **SAE 加在 residual stream 是合理的注入点吗？** 现有所有 SAE 论文都加在 residual stream 上，因为它是 transformer 信息汇流的"高速公路"。但这个选择背后有未被证伪的假设：features 在 residual stream 上是线性可加的。如果真实计算发生在 attention/MLP 内部、而 residual stream 只是已经混合后的"输出快照"，那 SAE 学到的可能是输出层的 feature 而不是计算单元的 feature——前者描述结果、后者解释机制，差别巨大。在 attention OV 矩阵或 MLP up-proj 上做 SAE 是 2024-2025 的探索方向但目前结果都不如 residual SAE 漂亮。
 
 ## 限制
 
@@ -365,6 +467,29 @@ class SAEEvaluator:
 - **只在英文上验证过**：多语言 SAE 是否会得到完全不同的字典是开放问题
 - **训练成本不便宜**：GPT-4 级别 SAE 训练成本约 $1M 量级（OpenAI 论文披露），中小研究组玩不起
 - **解释性收益和工程成本的 trade-off 没结论**：在生产模型上是否值得部署 SAE 仍是争议
+
+## 现实 vs 宣传对照
+
+SAE 这条线技术博客和实际工程体验差距不小，把常见宣传话术和我自己复现一周后的实测体验列出来对照：
+
+| 维度 | 宣传话术 | 实测现实 |
+|------|----------|----------|
+| Monosemanticity | "每个 feature 对应单一概念" | 30%+ feature 是 polysemantic 或纯噪声，需要人工筛选 |
+| 训练成本 | "一张 GPU 一晚上" | GPT-2 small 8x 是真的，但 dataset 准备和评测加起来一周起步 |
+| Feature steering | "可以精确控制模型行为" | 单 feature clamp 大概率破坏其他能力，组合 steering 几乎不可控 |
+| Universality | "feature 是模型间通用的" | 同模型不同 seed 重合度 70-80%，跨模型 < 50%，远未到通用 |
+| 工程落地 | "可解释性的实用工具" | 目前主要价值是研究工具，生产部署 ROI 仍是开放问题 |
+
+补充几条复现一周后才意识到的隐性现实：
+
+- **dashboard 比 paper 更重要**：Bricken 论文你只读 PDF 等于没读，必须把 transformer-circuits.pub 的交互式 dashboard 在浏览器开着，逐 feature 点开看 top activations
+- **autointerp 是新瓶颈**：训 SAE 一晚上，但用 LLM judge 对 6144 个 feature 做 autointerp 要跑 4-6 小时 + 几十美元 API 费用
+- **死特征不可怕、僵尸特征才可怕**：dead 是激活率为 0 容易识别；僵尸特征是激活率 < 0.001 但偶尔触发，混在 alive 里污染评测
+- **可视化债务**：训完 SAE 你会有几千个待人工检查的 feature，没有好工具就只能看 top-20 examples，遗漏率极高
+- **复现窗口期短**：SAE 工程细节（lr schedule、init 方式、aux loss 系数）每隔 3-6 个月被新论文刷一遍，去年的复现教程今年可能已经过时
+- **社区共识 ≠ 真理**：SAELens 默认配置是社区共识但不一定最优，Anthropic 内部 config 至今未完全公开
+- **Token efficiency vs feature quality**：训练 token 数增加并不线性提升 feature 质量，50M token 之后边际收益急剧下降
+- **可解释性 ≠ 可控性**：能看懂 feature 不等于能用 feature 安全地控制模型，两者之间还有大量工程鸿沟
 
 ## 元数据
 
