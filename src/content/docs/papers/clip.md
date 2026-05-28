@@ -1,631 +1,512 @@
 ---
-title: CLIP — 把图像和文本放进同一个 embedding 空间，零样本就能分类
-description: 4 亿图文对 + InfoNCE 双塔对比学习。让 ResNet-50 ImageNet 76% 的有监督 top-1 被一个没看过 ImageNet 标签的模型追平
-sidebar:
-  label: CLIP (ICML 2021)
-  order: 22
+title: CLIP 视觉-语言对比预训练
+来源: Radford et al., "Learning Transferable Visual Models From Natural Language Supervision", ICML 2021 / arXiv 2103.00020
 ---
 
-## 核心信息
+> 一句话：CLIP 用 4 亿张互联网图文对，在图像编码器和文本编码器之间做对比学习；训练完之后不再用分类头，而是把"分类"变成"图片和哪段文字最匹配"，于是同一个模型可以零样本评估任何分类任务。
 
-- 标题：Learning Transferable Visual Models From Natural Language Supervision
-- 标题翻译：从自然语言监督中学到可迁移的视觉模型
-- 作者：Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, Ilya Sutskever（前 12，外加 5 位致谢挂名共 17 人）
-- 机构：OpenAI（San Francisco）
-- 发表时间：arXiv 2021-02-26 提交（v1），ICML 2021 接收
-- 发表渠道：ICML 2021（PMLR Vol. 139）
-- arXiv：[2103.00020](https://arxiv.org/abs/2103.00020)（v1 终版，没有 v2）
-- 代码 / 项目：[openai/CLIP](https://github.com/openai/CLIP)（commit `d05afc4`，2026-05-28 读时；star ~28k；OpenAI 仅放了 inference + ViT-B/16 / ViT-L/14 等 9 个 checkpoint，**没有放训练代码也没有放 WIT 数据集**——这是后面 mlfoundations/open_clip 出现的根本原因）
-- 数据 / 资源：WebImageText (WIT) 4 亿 (image, text) 对，从公开互联网搜集；OpenAI 没有公开数据集本身，只在论文 Section 2.2 里描述了"用 50 万 query 各检索约 800 对"的构造规则
-- 论文类型：method / algorithm paper（提出 contrastive language-image pretraining 这一训练目标 + 完整双塔架构）
+## 历史定位
 
-## 原文摘要翻译
+把视觉模型放在一条时间线上看：
 
-最先进的计算机视觉系统通常被训练用于预测一组固定的、预先定义好的类别。
-这种受限的监督形式限制了它们的通用性和可用性，因为要新增一个类别就需要额外标注数据。
-直接从图像的原始描述文字中学习是一条有前景的替代路径——它可以利用更广泛的监督来源。
-我们证明，"预测一张图片配的是哪段标题"这一简单的预训练任务，
-可以从一个 4 亿 (image, text) 对的互联网数据集上从零学到 SOTA 级别的图像表示。
-预训练之后，可以用自然语言**指代**所学到的视觉概念（或描述新概念），
-从而把模型零样本迁移到下游任务。
-我们在 30 多个不同的计算机视觉数据集上 benchmark 了这种方法的表现，
-涵盖 OCR、视频中的动作识别、地理定位以及许多类型的细粒度物体分类。
-模型在大多数任务上能进行非平凡的迁移，并经常能与完全有监督的 baseline 竞争——而无需任何针对该数据集的训练。
-例如，我们在 ImageNet 上零样本就达到了原始 ResNet-50 的准确率，
-而完全没有用到它训练时的 128 万张标注图片。
+- 2012 AlexNet——卷积网络在 ImageNet 上击败手工特征
+- 2015 ResNet——残差连接，深度从十几层冲到上百层
+- 2019-2020 BiT / EfficientNet / ViT——把"在更大数据上做监督预训练"推到极限
+- 2020 VirTex / ConVIRT / ICMLM——少量工作开始用 caption 监督视觉
+- **2021 CLIP——把对比图文学习推到 4 亿对的规模，并第一次把 zero-shot 做成核心卖点**
+- 2022 DALL-E 2 / Stable Diffusion——文本编码器直接复用 CLIP
+- 2023 LLaVA / MiniGPT-4——视觉编码器直接复用 CLIP-ViT
+- 2024-2025 GPT-4V / Claude / Gemini——视觉部分基本都是 CLIP 风格的双塔/对齐范式
 
-## 创新点
+理解 CLIP，等于理解过去五年所有 multimodal 系统的"视觉接入口"是怎么长出来的。
 
-CLIP 给"视觉模型"领域提供了 4 个真正新的东西：
+---
 
-1. **把"自然语言监督"工业化**：之前用 caption 学视觉的工作（VirTex / ConVIRT / ICMLM）都是 ≤ 30 万规模、
-   预测词袋 / 单词 / token-level alignment。CLIP 第一个证明：**只要把"哪张图配哪段文字"做成
-   batch 内对比学习目标，再把规模拉到 4 亿对**，就能学到比有监督 ImageNet 训练更可迁移的表示。
-   这把 captioned image 从"NLP 的副产品"升级为"视觉预训练的主信号"。
-2. **InfoNCE 上的对称对比损失**：在
-   [`clip/model.py:358-372`](https://github.com/openai/CLIP/blob/d05afc4/clip/model.py#L358-L372)
-   的 `forward`，CLIP 把一个 batch 的 N 张图 × N 段文字算成 N×N 相似度矩阵，
-   然后让对角线（真配对）的 logits 最大、其它（错配）的 logits 最小，**两个方向同时做 cross-entropy**
-   （image→text 找对的文 + text→image 找对的图）。这是 SimCLR / MoCo 的 InfoNCE 在
-   多模态上的对称化，后续 ALIGN / BASIC / SigLIP 全都基于这个骨架做修改。
-3. **Zero-shot classification 的 prompt engineering 公式**：在
-   [`notebooks/Prompt_Engineering_for_ImageNet.ipynb` cell 10](https://github.com/openai/CLIP/blob/d05afc4/notebooks/Prompt_Engineering_for_ImageNet.ipynb)，
-   作者列了 80 个 template（`'a photo of a {}.'`、`'a bad photo of a {}.'`、
-   `'a sculpture of a {}.'` 等），把每个 class name 套进 80 个模板后取 embedding 平均
-   作为该 class 的"分类器权重"。这把"文本编码器"重新定义成"按需合成的分类头"——
-   分类不再是固定 1000 类，而是任何能用语言描述的概念。
-4. **ViT 训练范式的早期推手**：CLIP 同时训了 ResNet 系列（RN50/101/50x4/50x16/50x64）
-   和 ViT 系列（ViT-B/32, B/16, L/14, L/14@336px）。ViT-L/14 在 zero-shot ImageNet 上
-   比 RN50x64 快 4 倍且更准，**给社区一个明确信号：图像 transformer 的 scaling 比 ResNet 好**。
-   2021 年那会儿 ViT (Dosovitskiy 2020) 刚出半年，CLIP 是把 ViT 当生产骨干训出 SOTA 的早期论文之一。
+## Section 1：动机——为什么从分类标签换成自然语言
 
-## 一句话总结
+CNN 时代主流范式：拿一个固定 label set（比如 ImageNet 1000 类），在上面做监督训练，输出一个 1000 维 logit。这套方案有三个隐藏代价：
 
-**有监督视觉的"标签集"是死的，自然语言是活的——
-把图像和句子映射到同一个 embedding 空间，分类就只是"找最近的句子"，
-任何能说出来的概念都可以是新类。**
+1. **类别集合是封闭的。** ImageNet 没有的类，模型完全不会。要新增一类必须重新标注、重新训练。
+2. **标签信息密度极低。** "cat" 这个 label 没有告诉模型它和"sofa"、"fluffy"、"orange"的关系。一张图配一段 caption 比一个标签携带的语义多一个数量级。
+3. **互联网上的免费数据被浪费。** 网页里图文对天然成双：alt text、caption、标题。只要把这些拿来当监督信号，数据就不再受人工标注瓶颈。
 
-你今天用的 Stable Diffusion 文本条件、Midjourney 图文搜索、
-Apple Vision Pro 的物体识别、几乎所有视觉 LLM (GPT-4V / Claude Vision)
-的 vision encoder 入口，背后都是这个 2021 年 48 页论文画的双塔。
+CLIP 的赌注是：用对比目标把图像和文本拉到同一个嵌入空间，类别就变成"任意一段文字"，不再受预定义集合束缚。这其实是把 NLP 里 word2vec / GloVe "分布式语义"的思路，迁移到视觉。
 
-![CLIP 双塔架构 + InfoNCE 对比损失](/study/papers/clip/01-dual-tower.webp)
+> 怀疑：「自然语言比标签信息密度高」听上去像 slogan。真到训练里 caption 是不是大量噪声？OpenAI 在论文 §2.2 提到他们用了 500K 个高频英文 query 做去重和均衡。这一步的工程量在论文里被一笔带过，但很可能是 CLIP 能 work 的关键。后续 LAION 团队复现时，他们的 CommonCrawl 抓取也专门做了类似的均衡，效果才接近原版。如果这一层假设破了，CLIP 故事就只剩"大数据+大模型"——这不是新东西。
 
-*图 1：CLIP 的双塔骨架——左塔 image encoder（ViT 或 ResNet）把 N 张图编成 N 个 d 维向量，
-右塔 text encoder（12 层 Transformer）把 N 段文字编成 N 个 d 维向量，
-中间 N×N 相似度矩阵的对角线是"真配对"（绿色），其它是"错配"（红色），
-两个方向同时算 cross-entropy。手绘 sketchnote 风。*
+### Definition 1：image-text pair
 
-## Why（这篇出现前世界缺什么）
+形式上 `(x_image, x_text)`，其中 `x_image` 是 RGB 图像，`x_text` 是与图像在网页里同时出现的英文文本（alt 属性、figcaption、附近段落、社交媒体 caption 等）。
 
-CLIP 出现前，"让模型识别新类"分两条互相不通气的路线：
+CLIP 用的数据集叫 **WIT (WebImageText)**——4 亿对，OpenAI 没公开。后续 LAION 社区做了 LAION-400M / LAION-5B 来近似。
 
-- **强监督派**（ImageNet pretraining，ResNet / EfficientNet）：用人工标注的 ImageNet-1k / 22k
-  做分类预训练，迁移到下游任务时**整个分类头要换**——新类必须重新训练，否则模型连"这是什么"都没法表达。
-  数据规模上限被人工标注成本卡死（ImageNet-22k 已经是 1400 万张 14 万人天）。
-- **弱监督 / 自监督派**（SimCLR / MoCo / BYOL）：用图像之间的 augmentation 一致性学表示，
-  不需要标签——但学到的是"无名"特征向量，下游任务还得 fine-tune 一个分类头。
-  迁移到 100 类细粒度数据集？还是要标 1000 张样本。
+### Definition 2：contrastive loss（对比损失）
 
-中间还有一小撮 "用文本学视觉" 的探索（VirTex 2020, ICMLM 2020, ConVIRT 2020），
-但都被规模卡住——VirTex 只有 12 万对、ConVIRT 只用 X-ray 报告（25 万对、医学领域）、
-任务都是 caption 预测词袋 / token，不是对比学习。
+给一个 batch 大小 N 的 image-text pair 集合 `{(I_1, T_1), ..., (I_N, T_N)}`：
 
-CLIP 的核心 insight 异常朴素：**互联网上 (image, alt-text) 对**够多——
-4 亿对随便爬，比 ImageNet 大 300 倍；
-**对比学习** 把 caption 预测从"生成对的句子"（极慢极难）降级为"在 batch 里挑出对的句子"
-（softmax 一下，O(N²) 计算但极易优化）；
-**zero-shot** 把"分类头"从权重矩阵变成"一组句子的 embedding"——
-要分新类？写新句子就行，不用一张标注图。
+- 把所有图过 image encoder 得到 `I_1...I_N`
+- 把所有文本过 text encoder 得到 `T_1...T_N`
+- 计算 NxN 相似度矩阵 `S[i][j] = cos(I_i, T_j) / tau`
+- 期望：`S[i][i]` 高（对角线），`S[i][j], i!=j` 低（非对角线）
 
-最关键的工程细节藏在 `forward` 里温度参数的写法（[`clip/model.py:295`](https://github.com/openai/CLIP/blob/d05afc4/clip/model.py#L295)）：
+具体损失（symmetric InfoNCE，详见 Section 3.2）。直觉上：每张图要和「自己的 caption」比「同 batch 其他 N-1 个 caption」更相似；反过来每段文字也要和「自己的图」比其他图更相似。
 
-```python
-self.logit_scale = nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
+### Definition 3：zero-shot transfer
+
+预训练完成后，给一个新分类任务：
+
+1. 把每个类别名套进一个 prompt template（比如 `"a photo of a {label}"`）
+2. 文本编码器把所有 prompt 编成 N 个文本向量 `T_1...T_N`
+3. 待分类图片过图像编码器得到 `I`
+4. 预测 = `argmax_i cos(I, T_i)`
+
+整套流程不需要看任何下游训练样本，所以叫 zero-shot。它把"分类"变成了"在 N 个候选 caption 里选一个"。
+
+---
+
+## Section 2：数据——WIT (WebImageText)
+
+论文 §2.2。三个关键设计：
+
+1. **规模：4 亿图文对。** 量级和 GPT-2 训练数据 (WebText) 同一档，比 ImageNet (1.4M) 大 280 倍。
+2. **覆盖广度：500,000 个 search query。** 每个 query 最多 20K 对，避免某个 query 主导分布。这步是关键的"均衡器"，让模型不至于全是猫狗。
+3. **隐私和版权：** OpenAI 没公开数据集，理由是版权和隐私顾虑。这后来成为 CLIP 复现的最大障碍——LAION 团队不得不从 Common Crawl 重新爬。
+
+> 怀疑：「500K query，每个最多 20K 对」很像在做隐式的类别均衡，效果上接近"长尾监督"。如果是这样，CLIP 的成功有多少来自"对比学习"，多少来自"工程师手工设计的均衡分布"？这问题论文没给答案。OpenCLIP 的消融显示：在 LAION-400M 上训练 ViT-B/32，ImageNet zero-shot 大约 62-63%；OpenAI 原版 CLIP 同规模约 63-64%。差距不大，说明数据均衡确实能近似复现，但仍有 1-2 点结构性 gap。
+
+数据清洗流程论文写得很简短（一段话），但实际工程量极大。这是"开源 + 复现"路上最容易翻车的环节。
+
+---
+
+## Section 3.1：模型架构
+
+CLIP 是经典的"双塔"结构（也叫 dual-encoder）：图像编码器和文本编码器共享一个嵌入空间，但本身互相不交互。
+
+### Image encoder
+
+CLIP 训练了两族：
+
+| 系列 | 变体 | 参数量级 |
+|------|------|----------|
+| ResNet | RN50, RN101, RN50x4, RN50x16, RN50x64 | 25M – 420M |
+| ViT | ViT-B/32, ViT-B/16, ViT-L/14, ViT-L/14@336 | 86M – 304M |
+
+ResNet 系列在原版 ResNet 基础上做了几处改动：
+
+- 用 **BlurPool** 替代 strided conv（抗混叠）
+- **Anti-aliased AvgPool** 在 stem 处
+- **attention pooling** 替代最终的 average pooling
+
+ViT 直接用 ViT 论文里的结构（patch 16×16 或 14×14，加 CLS token），最后 CLS token 经过 LayerNorm + linear projection 投到共享嵌入空间。
+
+最终最强模型是 **ViT-L/14**（224×224 训练，再用 336×336 fine-tune 一遍叫 ViT-L/14@336）——这就是 LLaVA、Stable Diffusion 用的那一版。
+
+代码参考（链接示意，40-char hex commit hash 锚定历史版本）：
+
+- OpenAI 官方 CLIP 实现：[openai/CLIP `clip/model.py`](https://github.com/openai/CLIP/blob/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1/clip/model.py)
+- OpenCLIP 复现版：[mlfoundations/open_clip `src/open_clip/model.py`](https://github.com/mlfoundations/open_clip/blob/73fa7f03a33da53653f61841eb6d69aef161e521/src/open_clip/model.py)
+- HuggingFace transformers 集成版：[huggingface/transformers `modeling_clip.py`](https://github.com/huggingface/transformers/blob/0a4b08c44b2ec0d4a8b04d6db52dc3c40e6f8a73/src/transformers/models/clip/modeling_clip.py)
+
+### Text encoder
+
+12 层 transformer，宽度 512，8 个 attention head，63M 参数。注意：
+
+- **不共享权重**——和 GPT-2 同款结构但完全独立训练
+- **causal mask**（保留自回归 mask，虽然这里不做生成）
+- 用 **end-of-sequence token (EOS)** 的最后一层激活作为整段文本的表示
+- 投影到共享嵌入空间（D = 512 或 768，取决于 image encoder 大小）
+- 最大序列长度 76 token（比 BERT 短）
+
+### 共享嵌入空间
+
+两个 encoder 输出都做 L2 归一化，然后相似度直接用点积（等价于余弦相似度）。
+
+### Figure 1：对比预训练流程
+
+![CLIP contrastive pretraining](/papers/clip/01-contrastive-pretraining.webp)
+
+图里展示的是 N=4 时的最小例子。实际训练 N=32768。
+
+---
+
+## Section 3.2：训练目标 / Algorithm 1
+
+### Algorithm 1：CLIP symmetric InfoNCE
+
 ```
+# 伪代码 — 简化自论文 Figure 3
+# I[N, H, W, C]   一个 batch 的图像
+# T[N, L]         对应 caption 的 token id
+# W_i, W_t        最终 projection（投到共享空间）
+# tau             learnable temperature scalar，初始化为 ln(1/0.07)
 
-`logit_scale` 是**可学习参数**，初始化为 `log(1/0.07) ≈ 2.66`，
-forward 时 `exp(logit_scale)` 当温度倒数乘上 cosine 相似度。
-作者在 Section 2.5 提到他们 clip 这个值不让超过 100（即温度不低于 0.01）防止训练发散。
-这一行就是 CLIP 工程化的点睛——**温度自适应**，
-不需要像 SimCLR 那样手调 τ=0.07 / 0.1 / 0.5 跑 grid search。
+I_f = image_encoder(I)              # [N, d_i]
+T_f = text_encoder(T)               # [N, d_t]
 
-第二个关键细节（论文叙事里被遮蔽的）：**CLIP 的成功不只是"加了 contrastive"，
-是 4 亿数据 + 大 batch (32768) + 混合精度 + gradient checkpointing + ViT-L/14 + 80 template ensemble
-多个细节合力**——任何一个减半，zero-shot ImageNet 数字都会掉 5-10 个百分点。
-论文的 Section 2.4 (Choosing and Scaling a Model) 和 Section 4 (Comparison to Human Performance) 
-里只对部分做了 ablation，prompt engineering 那 80 个模板的贡献只在 notebook 里隐含展示，
-是怀疑空间。
+# 投影到共享空间并归一化
+I_e = l2_normalize(I_f @ W_i)       # [N, d]
+T_e = l2_normalize(T_f @ W_t)       # [N, d]
 
-## 论文地形（章节角色注释）
+# 缩放点积相似度矩阵
+logits = (I_e @ T_e.T) * exp(tau)   # [N, N]
 
-PDF 48 页（含 appendix）。章节角色：
-
-| Section | 角色 | 你该花多少时间 |
-|---|---|---|
-| 1 Introduction & Motivating Work | 综述前作 + 自报数据规模 | 5 min（标比例感即可） |
-| 2 Approach (2.1-2.5) | **心脏物之一**：定义 contrastive 目标 + 数据集 + 模型选型 + 训练规模 | 30 min（每段细读） |
-| 2.4 Choosing and Scaling a Model | 解释 ResNet vs ViT 选择 + scaling rule | 10 min |
-| 3 Experiments | 30+ benchmark 数字海 | 15 min（挑 3.1 zero-shot 精读，其余扫读） |
-| **3.1.4 Prompt Engineering and Ensembling** | **心脏物之二**：80 template 怎么选 | 15 min（配 notebook 看） |
-| 4 Comparison to Human Performance | 给 5 个人看 Oxford Pets，比 CLIP 弱 | 5 min（趣闻） |
-| 5 Data Overlap Analysis | 自查 contamination | 10 min（关键：只测 12 个数据集） |
-| 6 Limitations | 自报弱点 | 10 min（精读，是 Layer 7 的来源） |
-| 7 Broader Impacts | bias / surveillance 讨论 | 10 min |
-| 8 Related Work | 综述 contrastive learning + caption pretraining | 5 min |
-| Appendix | 训练超参 / 完整 benchmark 表 | 按需查 |
-
-**心脏物**：Algorithm 1（Section 2.1，pseudo-code）+ Section 3.1.4（prompt engineering）。
-读懂这两段 + 跑通一次 zero-shot 推理 = 80% 的 CLIP。
-
-## Layer 3 · 心脏物精读
-
-### 3.1 Algorithm 1：InfoNCE 对称对比损失的实现
-
-论文 Section 2.1 给的伪代码是 11 行 NumPy 风格，对应 repo 里的实现是
-[`clip/model.py:358-372`](https://github.com/openai/CLIP/blob/d05afc4/clip/model.py#L358-L372)：
-
-```python
-def forward(self, image, text):
-    image_features = self.encode_image(image)
-    text_features = self.encode_text(text)
-
-    # normalized features
-    image_features = image_features / image_features.norm(dim=1, keepdim=True)
-    text_features = text_features / text_features.norm(dim=1, keepdim=True)
-
-    # cosine similarity as logits
-    logit_scale = self.logit_scale.exp()
-    logits_per_image = logit_scale * image_features @ text_features.t()
-    logits_per_text = logits_per_image.t()
-
-    # shape = [global_batch_size, global_batch_size]
-    return logits_per_image, logits_per_text
-```
-
-注意这里 `forward` 只**返回 logits 矩阵**——**loss 在 repo 里没有**！
-因为 OpenAI 没放训练代码，只放 inference。但论文 Algorithm 1 把缺失的部分补全了：
-
-```python
-# Algorithm 1 (paper Section 2.1, my reformat):
-# image_encoder, text_encoder shared; I, T are minibatch
-# I: [n, h, w, c]   T: [n, l]
-I_f = image_encoder(I)              # [n, d_i]
-T_f = text_encoder(T)               # [n, d_t]
-# joint multimodal embedding (linear proj + l2 norm)
-I_e = l2_normalize(np.dot(I_f, W_i), axis=1)  # [n, d_e]
-T_e = l2_normalize(np.dot(T_f, W_t), axis=1)  # [n, d_e]
-# scaled pairwise cosine similarities
-logits = np.dot(I_e, T_e.T) * np.exp(t)        # [n, n]
-# symmetric loss
-labels = np.arange(n)
-loss_i = cross_entropy_loss(logits, labels, axis=0)  # image -> text
-loss_t = cross_entropy_loss(logits, labels, axis=1)  # text -> image
+# 对称交叉熵
+labels = arange(N)                  # 对角线就是正样本下标
+loss_i = cross_entropy(logits, labels, axis=0)   # 文本到图像
+loss_t = cross_entropy(logits, labels, axis=1)   # 图像到文本
 loss = (loss_i + loss_t) / 2
 ```
 
-**5 条旁注**：
+几个细节非常关键，但论文用一两句话带过：
 
-- **L2 归一化是关键**：image / text 的 d 维向量都做了 `x / x.norm()`，
-  所以矩阵乘出来的 `logits[i,j]` 直接是**两向量的余弦相似度**（范围 -1 到 1），
-  不是任意 inner product。没归一化就退化成普通 dot-product，contrastive loss 会被向量长度主导。
-- **温度 `exp(t)` 在 logits 里乘**：把 cosine 相似度从 [-1, 1] 拉到 [-100, 100] 的尺度
-  （训练后 logit_scale ≈ 4.6，exp(4.6) ≈ 100）。softmax 之前必须拉开尺度，
-  否则 softmax 输出全在 [0.95, 1.05] 之间，梯度太小。
-- **labels = np.arange(n)** 是隐式约定：batch 里第 i 张图配第 i 段文字。
-  数据加载器必须保证 (image[i], text[i]) 是配对的。这看似废话，
-  但 distributed training 时 all_gather 顺序错了就会 silent bug。
-- **对称损失**（`(loss_i + loss_t) / 2`）：image→text 方向算 row-wise softmax + cross-entropy，
-  text→image 方向算 column-wise。两个方向都做的原因是 cosine 矩阵转置不等于自身——
-  虽然数值相同，但 softmax 沿行 vs 沿列归一化的结果不同。
-- **batch 内负样本免费**：N=32768 时每个正样本配 32767 个负样本，**不需要单独的 negative mining**。
-  这就是为什么 CLIP 必须用 32k batch—— 8k 时负样本数量不够，效果显著下降（论文 Figure 9）。
+1. **temperature τ 是可学习的，但 clamp 到 ≤ 100。** 不 clamp 会数值爆炸。τ 训练完一般稳定在 0.01 附近（也就是 logits scale ≈ 100）。
+2. **batch size 32768，必须跨 GPU all-gather。** 单 GPU 装不下这么多 pair；需要 distributed all-gather 把所有 rank 的 embedding 拼到一起，再算 logits。
+3. **混合精度 (fp16) + gradient checkpointing。** 否则装不进 V100 32G。
+4. **AdamW，lr 5e-4，cosine schedule，weight decay 0.2。** 模型规模大但 wd 用得不重。
 
-**怀疑 1**：为什么必须 32k batch？
+> 怀疑：CLIP 用 batch 32768 不是 batch size choice，是 **InfoNCE 本质决定的**。InfoNCE 的负样本就是同 batch 其他 N-1 个，N 越大估计越准。MoCo 用 queue 来绕开这个限制，但 CLIP 没这么做——为什么？可能因为图文对比里"负样本质量"比"负样本数量"更重要，queue 里旧的负样本会引入分布漂移。但这个权衡论文没拆开讲。
 
-论文说 8k 训练效果显著差。但 SigLIP (2023) 用 sigmoid loss + 16k batch 就追平了 CLIP 在 ImageNet 的 zero-shot。
-说明 InfoNCE 的"batch 内对比"形式本身就要求大 batch（softmax 的归一化在小 batch 下信号弱），
-不是 contrastive learning 本质要求。CLIP 的 32k batch 锁死了 OpenAI 之外
-（学术界、小公司）几乎没人能复现训练——这是不是 CLIP 一直没放训练代码的真实原因？
-论文没回答。
+### 计算成本
 
-### 3.2 Image Encoder + Text Encoder 选型
+最大模型 RN50x64：592 V100 GPU × 18 天。
+ViT-L/14：256 V100 GPU × 12 天。
+按 2026 年 A100 价格估算约 $200K-$400K 一次训练。
 
-`clip/model.py:243-297` 的 `CLIP.__init__`，两个 encoder 都用同一个超参数表初始化：
+学术界几乎没法独立复现 OpenAI 原版规模——这是 CLIP 一个被反复诟病的限制（详见 Section 7）。
 
-```python
-class CLIP(nn.Module):
-    def __init__(self,
-                 embed_dim: int,
-                 # vision
-                 image_resolution: int,
-                 vision_layers: Union[Tuple[int, int, int, int], int],
-                 vision_width: int,
-                 vision_patch_size: int,
-                 # text
-                 context_length: int,
-                 vocab_size: int,
-                 transformer_width: int,
-                 transformer_heads: int,
-                 transformer_layers: int):
-        super().__init__()
-        self.context_length = context_length
+---
 
-        if isinstance(vision_layers, (tuple, list)):
-            vision_heads = vision_width * 32 // 64
-            self.visual = ModifiedResNet(layers=vision_layers, output_dim=embed_dim, ...)
-        else:
-            vision_heads = vision_width // 64
-            self.visual = VisionTransformer(
-                input_resolution=image_resolution,
-                patch_size=vision_patch_size,
-                width=vision_width,
-                layers=vision_layers,
-                heads=vision_heads,
-                output_dim=embed_dim
-            )
+## Section 4：实验
 
-        self.transformer = Transformer(
-            width=transformer_width, layers=transformer_layers,
-            heads=transformer_heads,
-            attn_mask=self.build_attention_mask()
-        )
-        self.token_embedding = nn.Embedding(vocab_size, transformer_width)
-        self.text_projection = nn.Parameter(torch.empty(transformer_width, embed_dim))
-        self.logit_scale = nn.Parameter(torch.ones([]) * np.log(1 / 0.07))
+CLIP 实验铺得极广，论文有 30+ 数据集 zero-shot 结果。挑重点：
+
+### 4.1 ImageNet zero-shot
+
+| 模型 | ImageNet top-1 | 备注 |
+|------|----------------|------|
+| ResNet-50（监督） | 76.2% | 1.4M 标注样本 |
+| BiT-L（监督） | 87.5% | 300M 标注 |
+| CLIP RN50（zero-shot） | 59.6% | 0 ImageNet 样本 |
+| CLIP ViT-B/32（zero-shot） | 63.2% | 0 |
+| CLIP ViT-B/16（zero-shot） | 68.6% | 0 |
+| **CLIP ViT-L/14（zero-shot）** | **75.5%** | **0** |
+| CLIP ViT-L/14@336（zero-shot） | 76.2% | 0 |
+
+ViT-L/14 zero-shot 76.2% 几乎追上了 ResNet-50 的全监督水平。这是 CLIP 的 headline 数字。
+
+### 4.2 跨 30+ 数据集 robust
+
+CLIP 在以下数据集上 zero-shot 强势（部分超过 ResNet-50 fully supervised）：
+
+- StanfordCars (77.3%)
+- Food101 (88.8%)
+- OxfordFlowers (78.7%)
+- SUN397 (63.2%)
+- Country211 (32.2%)
+
+但在以下任务上 **明显弱**：
+
+- EuroSAT (49.4%) — 卫星图像
+- KITTI Distance (34.0%) — 车距离估计
+- CLEVRCounts (24.9%) — 计数
+
+模式：自然图像 / 抽象概念强；专业领域 / 细粒度结构 / 数值推理弱。
+
+### 4.3 distribution shift robustness
+
+最有说服力的实验：在 ImageNet variants（ImageNet-V2 / Sketch / R / A）上，CLIP zero-shot 的准确率下降幅度比同 ImageNet 准确率的监督模型小得多。
+
+| 评估集 | ResNet-101 (sup) | CLIP ViT-L/14 (zs) |
+|--------|------------------|--------------------|
+| ImageNet | 76.2 | 76.2 |
+| ImageNet-V2 | 64.3 | 70.1 |
+| ImageNet-Sketch | 25.2 | 60.2 |
+| ObjectNet | 32.6 | 70.7 |
+| ImageNet-A | 7.5 | 77.2 |
+| ImageNet-R | 37.7 | 88.9 |
+
+差距巨大。这条结果让 CLIP 在 robustness / distribution shift 文献里反复被引用，被解读为「自然语言监督带来更鲁棒的视觉特征」。
+
+> 怀疑：这套 robustness 数据是不是有 selection bias？ImageNet-A / R / Sketch 在 OpenAI 准备 WIT 时已经是已知的 hard set。如果 WIT 抓的网页里包含大量 sketch / abstract style 图片（合理推测，因为互联网本来就这样），那 CLIP 自然在 Sketch 上不下降。这不是「鲁棒」，是「训练分布更宽」。Hendrycks 等人后续工作 (Taori et al. 2020) 提出 effective robustness 度量，CLIP 在那个度量下确实优于纯 ImageNet 监督，但优势没论文里这么夸张。
+
+### Figure 2：zero-shot 流程
+
+![Zero-shot classification](/papers/clip/02-zero-shot.webp)
+
+图里左侧是 prompt 构造（class name → template → text encoder），右侧是测试图片过 image encoder 之后做 cosine 相似度 + argmax。这条路径是 CLIP 真正颠覆性的部分——分类不再需要训练。
+
+### 4.4 linear probe 和 fine-tune
+
+如果允许用下游任务的少量样本：
+
+- **Linear probe**（只学一层线性分类头）：CLIP ViT-L/14 在 12 个数据集平均 81.6%，比 BiT-L 平均 80.7% 高
+- **Full fine-tune**：CLIP 进一步涨 1-3 个点，但容易过拟合小数据集
+
+linear probe 是 CLIP 评估视觉表征质量的标准范式——后续 DINO / MAE / iBOT 都沿用这个评测。
+
+---
+
+## Section 5：Prompt engineering
+
+论文 §3.1.4 是一个被低估的章节。CLIP 的 zero-shot 数字背后藏着大量 prompt 工程。
+
+### 5.1 朴素 prompt vs ensemble
+
+最朴素：直接拿 class name 当 caption。
+
+```
+text = "cat"   →  text encoder
 ```
 
-text encoder 的 forward 在
-[`clip/model.py:343-356`](https://github.com/openai/CLIP/blob/d05afc4/clip/model.py#L343-L356)：
+ImageNet 上这样做 zero-shot 只有 ~58%。
 
-```python
-def encode_text(self, text):
-    x = self.token_embedding(text).type(self.dtype)  # [batch, n_ctx, d_model]
-    x = x + self.positional_embedding.type(self.dtype)
-    x = x.permute(1, 0, 2)  # NLD -> LND
-    x = self.transformer(x)
-    x = x.permute(1, 0, 2)  # LND -> NLD
-    x = self.ln_final(x).type(self.dtype)
-    # take features from the EOT embedding (eot_token is the highest number in each sequence)
-    x = x[torch.arange(x.shape[0]), text.argmax(dim=-1)] @ self.text_projection
-    return x
+加上模板：
+
+```
+text = "a photo of a cat"   →  text encoder
 ```
 
-**5 条旁注**：
+ImageNet 上跳到 ~63%。**+5 点纯靠加 6 个单词**。
 
-- **图像塔有两种**：ResNet 系（RN50/101/50x4/50x16/50x64，用 EfficientNet-style 复合 scaling）+
-  ViT 系（ViT-B/32, B/16, L/14, L/14@336px）。论文 Figure 9 显示 ViT 在同等算力下比 ResNet 好 3 倍效率，
-  这是 2021 年最早把 ViT scaling 优势拍实的经验数据之一。
-- **文本塔很小**：12 层 Transformer，width=512，heads=8，约 63M 参数。
-  对比 ViT-L/14 视觉塔 304M，文本塔只有视觉塔 1/5 大小。原因：caption 通常 ≤ 20 词，
-  上下文长度 77 token 即够；视觉塔需要建模 14×14=196 个 patch 的复杂空间关系。
-- **EOT 取 hidden state**：`x[torch.arange(...), text.argmax(dim=-1)]` 这行——
-  text.argmax 返回每个序列里最大 token id 的位置，**而 EOT (`<|endoftext|>`) 在 vocab 里恰好是最大 id**
-  （49407）。这是个 hack：用最大值定位 EOT 比单独传 attention mask 简单。
-- **causal attention mask**：`build_attention_mask()` 给 text transformer 加了下三角 mask，
-  让文本塔看起来像 GPT 而不是 BERT。论文 Section 2.4 解释说"为了能用初始化好的语言模型权重"——
-  但 CLIP 实际是从零训的，所以这个 design choice 留下来更像是**习惯使然**，不是必然。
-- **text_projection 是关键 bottleneck**：transformer hidden size = 512，
-  但最终投影到 embed_dim（512 for ViT-B/32, 768 for ViT-L/14）。
-  视觉塔同样有一个 `proj` 把 hidden 投到 embed_dim。两个 projection **不共享权重**，
-  这才是"双塔"的真正体现——共享了 attention 实现细节，没共享语义对齐头。
+更进一步——80 个 template 做 ensemble：
 
-**怀疑 2**：为什么文本塔比视觉塔小这么多？
-
-直觉上，要 align 视觉的"复杂层级语义"和文本的"简单 caption 语义"，
-两边表示能力应该匹配。但 CLIP 把文本塔做小（63M vs 304M）后效果反而好。
-有两种可能：(a) caption 太短太简单，大文本塔会过拟合；
-(b) 视觉表示比文本表示**更难学**，文本塔是"够用就行"的近似。
-论文没做 ablation，这是个开放问题。后来 LiT (Zhai 2022) 干脆**冻结**预训练的文本塔，
-只训视觉塔——也能 work，旁证 (a) 假设。
-
-### 3.3 Zero-shot Prompt Engineering
-
-`notebooks/Prompt_Engineering_for_ImageNet.ipynb` 的 cell 10 里列了 80 个 template，
-配合 cell 15 的 `zeroshot_classifier` 函数：
-
-```python
-imagenet_templates = [
-    'a bad photo of a {}.',
-    'a photo of many {}.',
-    'a sculpture of a {}.',
-    'a photo of the hard to see {}.',
-    'a low resolution photo of the {}.',
-    'a rendering of a {}.',
-    'graffiti of a {}.',
-    'a bad photo of the {}.',
-    'a cropped photo of the {}.',
-    'a tattoo of a {}.',
-    # ... 后面还有 70 个
-    'itap of a {}.',
-    'a tattoo of the {}.',
+```
+templates = [
+    "a photo of a {}",
+    "a low resolution photo of a {}",
+    "a satellite photo of a {}",
+    "a sketch of a {}",
+    "a tattoo of a {}",
+    ... (再 75 个)
 ]
-
-def zeroshot_classifier(classnames, templates):
-    with torch.no_grad():
-        zeroshot_weights = []
-        for classname in tqdm(classnames):
-            texts = [template.format(classname) for template in templates]  # 80 个 prompt
-            texts = clip.tokenize(texts).cuda()
-            class_embeddings = model.encode_text(texts)                     # [80, embed_dim]
-            class_embeddings /= class_embeddings.norm(dim=-1, keepdim=True)
-            class_embedding = class_embeddings.mean(dim=0)                  # 平均
-            class_embedding /= class_embedding.norm()                       # 再归一化
-            zeroshot_weights.append(class_embedding)
-        zeroshot_weights = torch.stack(zeroshot_weights, dim=1).cuda()      # [embed_dim, 1000]
-    return zeroshot_weights
 ```
 
-推理时：
+把每个 template 填上 class name，过 text encoder，**得到 80 个文本向量然后取平均**，再做 cosine 相似度。ImageNet 上再 +3.5 点。
 
-```python
-image_features = model.encode_image(images)                 # [batch, embed_dim]
-image_features /= image_features.norm(dim=-1, keepdim=True)
-logits = 100. * image_features @ zeroshot_weights           # [batch, 1000]
-predictions = logits.argmax(dim=-1)
-```
+### 5.2 class name 修复
 
-**5 条旁注**：
+CLIP 论文还提到一个有趣的 trick：很多 ImageNet class name 在 WIT 里出现频率极低，或者意思被多义性污染。
 
-- **80 模板的来源是手工迭代**：notebook 里作者亲口承认"this list is pretty haphazard and was
-  gradually made / expanded over the course of about a year of the project"——
-  没有系统性方法论，就是 Alec 调了一年的人肉 grid search。
-- **ensemble 的本质是降噪**：单个 prompt（如 `'a photo of a {}.'`）生成的 embedding
-  受 prompt 自身偏置影响（"photo of"会拉向"摄影"语义簇）。
-  80 个不同风格的 prompt embedding 平均后，**class 本身的语义被强化、prompt 偏置被抵消**。
-  这是 bagging 在文本空间的一种应用。
-- **平均后再归一化**：`class_embedding /= class_embedding.norm()` 这一行很关键——
-  embedding 平均后长度变了（≤ 1），不归一化会让不同 class 的 logit 尺度不可比。
-- **类名也要工程化**：作者发现 ImageNet 默认类名很多有歧义（"crane"是鸟还是塔吊？
-  "kite"是风筝还是鹰？"nail"是钉子还是指甲？），手动改成 "construction crane",
-  "kite (bird of prey)", "metal nail"——光是改类名 ImageNet zero-shot top-1 就提升 ~1.5%。
-  这告诉我们：**zero-shot 不是真的零工程**，prompt + class name 的人工成本被偷偷转移了。
-- **后向选择剪到 7 个模板**：论文锁定 80 模板做 benchmark 后，notebook 里又跑了
-  forward selection，发现 7 个模板（'itap of a {}.', 'a bad photo of the {}.',
-  'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.',
-  'art of the {}.', 'a photo of the small {}.'）就达到 80 模板的效果——
-  甚至小模型上更好。说明 80 里大部分是冗余的，真正起作用的是覆盖了"尺度（large/small）+
-  困难视角（bad photo）+ 抽象版本（origami / video game / art）"这 3 个轴。
+例子：
 
-**怀疑 3**：prompt engineering 是 CLIP 的 feature 还是 bug？
+- `crane` (鹤 / 起重机) → 改成 `"a photo of a crane bird"`
+- `boxer` (拳击手 / 拳师犬) → 改成 `"a photo of a boxer dog"`
+- `mouse` → 改成 `"a photo of a mouse animal"` 或 `"a computer mouse"`
 
-CLIP 论文宣称的 zero-shot ImageNet 76.2% (ViT-L/14@336) 是用 80 模板 ensemble 的数字。
-单 prompt（`'a photo of a {}.'`）只有约 71%。**5 个百分点来自 prompt engineering 本身**——
-这部分该不该算"零样本"？严格来说零样本应该是"模型对类的描述完全由用户控制"，
-而 80 模板 + 改类名的总人天工作量可能不下于训练一个 5-shot linear probe。
-后续工作（CoOp, CoCoOp, MaPLe）干脆把 prompt 当成可学习参数微调，
-把 prompt engineering 从黑魔法变回机器学习问题。
+这些手工修复又能再涨 1-2 个点。
 
-## Layer 4 · 复现：用 CLIP 跑 1 张图的 zero-shot 分类
+> 怀疑：80 templates 是怎么定下来的？论文给了一个 ImageNet 上验证集 grid search 的描述。但这意味着这 80 个 template 在 ImageNet 上做了"隐式微调"——所谓 zero-shot，其实在 prompt 设计层面有 ImageNet 的影子。这一点论文没否认但也没强调。后续工作 (CoOp, Zhou et al. 2022) 提出"learnable prompt"，承认了 prompt 不是 free lunch。
 
-按 phd-skills 7 阶段走（method paper 完整版）：
+### 5.3 prompt 工程的现代视角
 
-### 阶段 1：环境
+2026 年回头看 CLIP prompt engineering：
 
-机器：MacBook Pro M2 Max, 32GB RAM, macOS 14.5。
-Python 3.11，PyTorch 2.2 CPU 版（M 系列不用 CUDA，用 MPS 后端）。
+- 它本质和 LLM prompt engineering 是同一件事——只是发生在更小的输入空间
+- CLIP text encoder 只有 76 token，模板自由度有限
+- 现代 CLIP 变体（SigLIP, EVA-CLIP）大多保留了 prompt template 这一层
+- LLaVA 等 multimodal 模型用 LLM 替代 CLIP text encoder 之后，prompt 的角色就转移到 LLM 内部了
 
-```bash
-pip install torch torchvision ftfy regex tqdm
-pip install git+https://github.com/openai/CLIP.git
-```
+prompt template 这一招本身是 CLIP 留给 multimodal 的一项遗产。
 
-第一次跑会下载 ViT-B/32 权重（338 MB）到 `~/.cache/clip/`。
-SHA256 校验在 [`clip/clip.py:43-72`](https://github.com/openai/CLIP/blob/d05afc4/clip/clip.py#L43-L72)。
+---
 
-### 阶段 2-3：跑官方 README 的 5 行 demo
+## Section 6：后续 + 衍生工作（CLIP 的下游影响）
 
-```python
-import torch
-import clip
-from PIL import Image
+CLIP 是过去五年最被复用的视觉模型，没有之一。挑几个最重要的下游：
 
-device = "mps" if torch.backends.mps.is_available() else "cpu"
-model, preprocess = clip.load("ViT-B/32", device=device)
+### 6.1 文生图：DALL-E 2 / Stable Diffusion
 
-image = preprocess(Image.open("CLIP.png")).unsqueeze(0).to(device)
-text = clip.tokenize(["a diagram", "a dog", "a cat"]).to(device)
+- **DALL-E 2 (2022)**：用 CLIP text encoder 把文字编码成 embedding，然后扩散模型把 embedding 反推回图像（"unCLIP"）
+- **Stable Diffusion (2022)**：直接拿 CLIP-ViT-L/14（后来 SD2 换成 OpenCLIP-ViT-H/14）做文本条件
+- 直觉：CLIP 学到了图文对齐的语义空间，扩散模型只需要在这个空间里做 conditional sampling
 
-with torch.no_grad():
-    image_features = model.encode_image(image)
-    text_features = model.encode_text(text)
-    logits_per_image, logits_per_text = model(image, text)
-    probs = logits_per_image.softmax(dim=-1).cpu().numpy()
+如果没有 CLIP 的对齐空间，文生图至少要再延后两年。
 
-print("Label probs:", probs)  # [[0.99, 0.003, 0.005]] —— "a diagram" 拿 99%
-```
+### 6.2 多模态 LLM：LLaVA / MiniGPT-4
 
-跑通耗时：约 8 秒（含模型加载）。
+- **LLaVA (2023)**：CLIP-ViT-L/14 提取视觉特征 → 一层线性 projection 投到 LLM token 空间 → 接 Vicuna / LLaMA
+- 整个适配层只有 ~10M 参数，可以在 8 张 A100 上一天训完
+- 现代 multimodal 模型（Llava-NeXT, InternVL, Qwen-VL）基本都沿用「CLIP-style 视觉编码器 + projection + LLM」三段结构
 
-### 阶段 4：替换矩阵
+CLIP 把视觉变成「LLM 可以读的 token」，让多模态从"独立训练"变成"插件式接入"。
 
-| 论文用的 | 我的替代 | 损失什么 |
-|---|---|---|
-| ViT-L/14@336px (1.4B params) | ViT-B/32 (151M params) | zero-shot ImageNet 从 76.2% 掉到 63.2% |
-| 8 × A100 集群训练 | M2 Max 推理 | 不能复现训练，只能复现 inference |
-| ImageNet-V2 (10000 张) | 1 张本地图 | 没法算 top-1 数字，只能定性 |
+### 6.3 分割与检测：SAM / GLIP / OWL-ViT
 
-### 阶段 5：自出 5 题
+- **OWL-ViT**：把 CLIP 改造成 open-vocabulary 检测器
+- **GLIP**：grounding + CLIP 风格对齐做检测
+- **SAM**（Segment Anything）：虽然 SAM 本身不是 CLIP，但 SAM2 后续的 text-based prompting 仍然依赖 CLIP-like 文本特征
 
-我在桌面上找了 5 张照片：
-1. 一只我家的橘猫照片 → 候选类：["a cat", "a dog", "a tiger"]
-2. 我的 MacBook → ["a laptop", "a tablet", "a phone"]
-3. 一杯拿铁 → ["coffee", "tea", "milk"]
-4. 一本《Designing Data-Intensive Applications》→ ["a book", "a notebook", "a phone"]
-5. 一张窗外的多云天空 → ["sunny", "cloudy", "rainy"]
+### 6.4 自监督视觉的对照：DINO / MAE
 
-### 阶段 6：跑 + 记录
+- **DINO** / **DINOv2**：纯视觉自监督，不用文本，但学到的特征质量在很多 linear probe 任务上接近 CLIP
+- **MAE**：masked autoencoder，重建任务而非对比任务
+- 启示：CLIP 的核心收益可能不全来自"语言"，而来自"在大规模数据上做 contrastive"。MAE / DINO 用纯视觉也能逼近。但 zero-shot 这一项无法替代——只有 CLIP 把语言留在了模型里。
 
-| 题 | top-1 prediction | top-1 prob | 对错 |
-|---|---|---|---|
-| 1 | "a cat" | 0.96 | 对 |
-| 2 | "a laptop" | 0.91 | 对 |
-| 3 | "coffee" | 0.78 | 对（但有 0.18 给 "tea"） |
-| 4 | "a book" | 0.83 | 对 |
-| 5 | "cloudy" | 0.62 | 对（但 "sunny" 0.30） |
+### 6.5 中文 / 多语言变体
 
-5/5 全对。注意第 5 题的 cloudy 0.62 显著低于其它，
-说明天空类的 prompt 单 word（不带 `'a photo of a {}.'` 模板）效果不如物体类——
-**这是 prompt engineering 派上用场的地方**。
+- **Chinese-CLIP**（达摩院）
+- **mCLIP / AltCLIP**（多语言）
+- 中文 NLP 圈一度大量复用 OpenCLIP 框架训自己的模型
 
-### 阶段 7：results.md 反思
+### 6.6 Scaling 后续：SigLIP / EVA-CLIP
 
-跑出 5/5 的"成绩"远好于论文 ImageNet zero-shot 的 63.2%（ViT-B/32），原因：
-- 我的题目类间区分度高（cat vs dog 显著 vs 论文里 1000 类的 ImageNet 包含 bull mastiff vs Tibetan mastiff 这种细分）
-- N=5 没统计意义
-- 我没用 80 模板 ensemble，单 prompt 也够用——再次证明大部分日常 use case 不需要那个 5pp 的 prompt engineering 增益
+- **SigLIP (2023)**：用 sigmoid loss 替代 softmax，去掉 batch 全局归一化的依赖，可以无痛 scale
+- **EVA-CLIP**：把 CLIP image encoder 用 MIM 预训练，然后再 CLIP-style 对齐，效果更强
+- **InternVL**（2024-2025）：把视觉编码器 scale 到 6B，对齐到更大 LLM
 
-**Limitations: N=5 / 类间区分度高 / 我有先验（拍照时已经知道是什么）**
+CLIP 范式被持续推到更大规模，但对比学习 + 双塔的核心结构没变。
 
-## Layer 5 · 谱系（前作 + 后作 + 反对者）
+---
 
-### 前作（CLIP 站在谁的肩膀上）
+## Section 7：限制（论文 §7 + 后续工作发现的）
 
-- **VirTex** (Desai & Johnson 2020, CVPR 2021)：12 万 COCO captioned image，从零训 ResNet + Transformer，
-  做 image captioning 任务。证明"caption 比 ImageNet 标签信息密度更高"。CLIP 的引文里 [11]。
-- **ICMLM** (Bulent Sariyildiz et al. 2020)：用 caption 做 masked language modeling，规模 ≤ 30 万。
-- **ConVIRT** (Zhang et al. 2020, MLHC 2022)：医学 X-ray + 报告对比学习，
-  规模 25 万对。**架构和 CLIP 几乎一模一样**——双塔 + InfoNCE + 对称 loss。
-  CLIP 论文 Section 2.1 明确承认："Most closely related to our approach is ConVIRT."
-  CLIP 的真正贡献是把同样架构 scale 100x（25 万 → 4 亿）。
-- **SimCLR / MoCo** (2020)：图像 self-supervised contrastive learning，
-  CLIP 把单模态（同一张图的两个 augmentation）扩展为多模态（image-text 对）。
-- **ALIGN** (Jia et al. 2021, ICML 2021)：Google 同时期的工作，1.8B noisy image-text 对。
-  和 CLIP 几乎并列出现，结论一致：**多模态对比 + 大规模 = work**。
+CLIP 不是没有缺点。论文自己有专门一章列限制，五年下来又被发现更多。
 
-### 后作（2026 视角下被超越/继承的方向）
+### 7.1 计算成本
 
-- **OpenCLIP / open_clip** (Ilharco et al. 2022, mlfoundations 维护)：开源复现 CLIP。
-  用 LAION-400M / LAION-2B 数据集（公开版的"WIT"），训练代码 + 数据集都开源。
-  2026 年学术界用 open_clip 比用 OpenAI CLIP 多。
-- **SigLIP** (Zhai et al. 2023, ICCV 2023)：Google。把 InfoNCE 的 softmax-cross-entropy
-  换成 sigmoid binary classification。**不需要 batch 内归一化，所以 batch 可以小**——
-  16k batch 就追平 32k batch 的 CLIP。SigLIP 2 (2024) 进一步加 multilingual + dense prediction。
-- **EVA-CLIP** (Sun et al. 2023, CVPR 2024)：BAAI。把视觉塔从 ViT-L 升到 EVA-02-G (1B+),
-  + masked image modeling 预训练做初始化。zero-shot ImageNet 到 80%+。
-- **DINOv2** (Oquab et al. 2023, Meta)：纯视觉自监督（不要文本），
-  142M images。在 segmentation / depth 等密集预测任务上**超过** CLIP——
-  揭示 CLIP 学到的视觉表示对全局语义好但对像素级 localization 弱。
-- **Apple AIM / MobileCLIP** (2024)：把 CLIP 蒸馏到端侧设备 (iPhone)。
-  CLIP 的 inference 形式（双塔 + cosine）天然适合"先离线编码 caption 库 + 在线编码 image + 矩阵乘"
-  的检索范式。
-- **Florence-2 / OWL-ViT / GroundingDINO**：把 CLIP 双塔扩展到检测 / 分割任务，
-  zero-shot detection 是 CLIP 范式自然延伸。
+- ViT-L/14 训练一次 ~$200K-$400K
+- 学术界基本没法复现 OpenAI 原版规模
+- LAION + Stability + LMU 联合搞 OpenCLIP，背后还是商业资源
 
-### 反对者（不要只听 CLIP 自己的故事）
+### 7.2 数据不公开
 
-- **Goh et al. (Distill 2021) "Multimodal Neurons in Artificial Neural Networks"**（OpenAI 内部）：
-  发现 CLIP 神经元对"概念"（不是"视觉特征"）激活——
-  比如 "Spider-Man neuron" 对蜘蛛侠图、文字"Spider-Man"、蜘蛛 logo 都激活。
-  这是 CLIP 强项，但也意味着**它学到的不是视觉表示，而是 caption 共现概念**——
-  对没有 caption 描述的视觉细节（比如医学图像里的微小病变）很弱。
-- **Fang et al. (2022) "Data Determines Distributional Robustness in Contrastive Language Image Pre-training"**：
-  CLIP 对 distribution shift（ImageNet-A / ObjectNet）鲁棒**不是因为 contrastive 损失**，
-  而是因为**数据多样性**——同样数据用 supervised 训也鲁棒。挑战了 CLIP 论文 Section 3.3 的归因。
-- **Goh et al. "CLIP isn't really zero-shot"** (社区批评，多篇 blog post)：
-  CLIP 的 4 亿数据可能已经包含 ImageNet 测试集图片或非常相似的图片。
-  论文 Section 5 自查了 12 个数据集发现 contamination 在 0-7% 之间，
-  **但 ImageNet contamination 数字是 4%——这部分 zero-shot 性能其实是 leakage**。
-  WIT 没公开，没人能独立验证完整 contamination 程度。
-- **CoOp / CoCoOp** (Zhou et al. 2022)：把 prompt 从离散文本变成可学习连续向量。
-  本质是反对 "zero-shot 就够好" 的叙事——
-  你随便加 16 shots 微调 prompt，CLIP 性能就能涨 5-10pp。
+- WIT 4 亿对永远不会公开（OpenAI 已表态）
+- 复现需要从 Common Crawl 重新爬，质量、去重、隐私处理全靠社区
+- 这对开源生态是长期障碍
 
-![CLIP 演化树：从 ConVIRT 到 SigLIP / EVA-CLIP / DINOv2](/study/papers/clip/02-evolution.webp)
+### 7.3 偏见
 
-*图 2：CLIP 的演化树——上游 ConVIRT (2020) → CLIP (2021) → 开源复现 OpenCLIP (2022) → 
-sigmoid loss SigLIP (2023) → 大模型 EVA-CLIP (2023) + 纯视觉 DINOv2 (2023) → 端侧 MobileCLIP (2024)。
-旁支：CoOp (prompt tuning) 反对 "zero-shot" 叙事；
-Multimodal Neurons (Goh 2021) 揭示 CLIP 学的是 caption 概念而不是视觉特征。*
+- 互联网图文数据带文化偏见——CLIP 论文 §7 自己花了大量篇幅做 bias 评估
+- "doctor" 关联男性照片显著高于女性，"criminal" 关联深肤色显著高于浅肤色
+- 这些偏见会通过下游 (DALL-E 2 / Stable Diffusion) 放大
+- 没有简单的"训练后修复"——只能从数据源头下手
 
-## Layer 6 · 三段评估
+### 7.4 细粒度任务弱
 
-### 6.1 论文叙事是否站得住
+- 难以区分 "Boeing 737" vs "Boeing 747"
+- 难以做 fine-grained bird species
+- 论文 §3.1.5 就承认这一点：CLIP 在 fine-grained 上落后专门训练的模型 10-20 个点
 
-- **核心 claim "4 亿对 + contrastive = 可迁移视觉模型" 站得住**：30+ benchmark 数字 + ALIGN 同时期独立复现
-- **"zero-shot ImageNet 追平 ResNet-50" 部分站得住**：但 ResNet-50 用的是 2015 年训练 recipe，
-  2021 年的有监督 ResNet-50 ImageNet top-1 已经能到 80%+（用 timm 的现代 augmentation）
-- **"prompt engineering 增益小" 不站**：notebook 揭示 80 模板 + 类名重写共贡献 ~6pp，
-  这部分被论文藏在附录
-- **"模型规模 scale 收益持续" 站得住**：但只 scale 到 ViT-L/14，没看到明确瓶颈，
-  EVA-CLIP / SigLIP 2 后续证明继续 scale 还在涨
+### 7.5 数值 / 推理弱
 
-### 6.2 在 2026 工程语境下的位置
+- 数图片里物体数量（"3 只猫" vs "5 只猫"）严重出错
+- 空间关系（"猫在狗的左边" vs "右边"）也几乎不行
+- CLIP 学到的是"bag of concepts"，不是"compositional structure"
+- 这条限制在 LLaVA 等下游模型里被继承下来（早期 LLaVA 数物体能力差）
 
-- **作为 vision encoder 入口**：几乎所有 multimodal LLM（GPT-4V / Claude Vision / Gemini）
-  的视觉前端都是 CLIP 系（或 SigLIP / EVA-CLIP），CLIP 范式没死
-- **作为 zero-shot 分类器**：日常 use case（图片打标 / 内容审核 / 检索）依然首选，
-  但下游有 fine-grained 需求（医学影像 / 卫星图）会换专门数据集训的版本
-- **作为研究范式**：double-encoder + contrastive 的范式已被吸收到所有多模态预训练，
-  CLIP 的 paper 本身是必读 baseline 但不再是最强系统
-- **学习者实际用什么**：99% 的 CLIP 应用今天用 `mlfoundations/open_clip` 而不是 `openai/CLIP`，
-  因为 open_clip 有训练代码 + 更多 checkpoint + LAION 数据集
+### 7.6 长文本能力差
 
-### 6.3 H5 海报项目的可借用点
+- text encoder 只支持 76 token
+- 长 caption / 段落理解力很弱
+- 后来 Long-CLIP / CLIP-LSTM 等工作专门攻这一点，但仍然不及 LLM
 
-我做的 H5 学习海报项目（实习日志站）里几个直接可用的 CLIP 应用场景：
+### 7.7 zero-shot 只是"软"zero-shot
 
-- **找参考图片**：用 CLIP zero-shot 在我自己的图床里搜"复古 sketchnote 风格"——
-  4 亿对训出来的语义检索远比关键字搜准
-- **学习笔记封面图自动配文**：把 markdown 笔记的标题输入 text encoder，
-  在 hero image 库里找最相似的 → 自动生成封面
-- **判断我画的 figure 是否符合"sketchnote 风"**：用 CLIP 算 figure 和 prompt 
-  `'a hand-drawn sketchnote with notebook texture'` 的相似度，做风格 QA
-- **代码截图配类目**：自动给学习笔记里的代码截图打标 ("rust", "python", "shell")
-  做侧边栏 facet 筛选
+- prompt template 在 ImageNet 上 grid search 调出来——这等于在测试集上漏了一点信息
+- 严格 zero-shot 评估应该不允许 prompt tuning
+- 这条争议在 CLIP 之后的 OOD detection 文献里仍未完全解决
 
-这些都不需要训练，只用 inference：装 open_clip + 写 50 行 Python。
+> 怀疑：上面 7 条限制里，「成本」和「数据不公开」是社会问题，「偏见」是方法论问题，「细粒度 / 推理 / 长文本」是模型容量问题。但有一条被忽视的限制：**CLIP 学到的图文对齐是"统计共现"，不是"语义理解"。** 这意味着图里有"猫"+图里写着"cat"会让 CLIP 觉得对，即使 caption 是 "a photo without any cat"。Goh et al. (2021) 在 OpenAI 内部发的 "Multimodal Neurons" 论文明确指出 CLIP neurons 会对"图里有 cat 字符的图片"高激活——也就是说 CLIP 学到的是一个被 OCR 污染的视觉空间。这个问题至今没被根除。
 
-## Layer 7 · 显式怀疑（4 件具体的事）
+---
 
-**怀疑 4**：4 亿数据集的 contamination 真实规模
+## 学到什么
 
-论文 Section 5 自查了 12 个数据集发现 contamination 在 0-7%，
-但 WIT 数据集**没有公开**——任何独立的研究者都无法验证。
-ALIGN (Google) 的 1.8B 数据集同样不公开，OpenCLIP 用的 LAION 倒是公开了，
-但 LAION 不等于 WIT。CLIP 论文 zero-shot ImageNet 的 76.2% 里有多少是真"零样本"、
-多少是 train-test overlap？没人答得出。Birhane et al. (2021) 发现 LAION-400M 里
-含有 ImageNet 训练集图片的近重复——CLIP 的 WIT 大概率类似。
-**预判**：随着合成数据 / 数据 cleaning 工具进步，2027 年某个独立 audit 会算出 CLIP 真正的 zero-shot
-数字大概在 70-72%（不是 76.2%）。
+把 CLIP 拆到最朴素的几条：
 
-**怀疑 5**：WIT 不公开是技术原因还是法律原因
+1. **大规模 + 弱监督 > 小规模 + 强监督。** 4 亿条嘈杂 caption 比 1.4M 条精标 ImageNet 更有用，前提是模型容量够。
+2. **对比目标是把任意两个空间拉到一起的通用工具。** 视觉-文本可以，文本-代码可以（CodeBERT），文本-语音可以（CLAP）。CLIP 把"对比 + 双塔"打成了一个范式。
+3. **"评估方式"本身可以被发明。** Zero-shot transfer 不是预先存在的评测，是 CLIP 论文同时定义了任务和方法。所以 CLIP 既"赢"了又"定义"了赢的标准——这是论文影响力放大的关键。
+4. **prompt 是模型可读的接口。** 自然语言变成了视觉模型的"可调控旋钮"。这条直接铺垫了 LLaVA 等后续工作把 LLM 接到视觉上。
+5. **数据工程被严重低估。** 论文用一段话讲清的"500K query 均衡"很可能是 CLIP 真正的护城河。
 
-OpenAI 一直没公布 WIT，模型权重又只放了 inference 不放 training。
-官方解释是"数据集版权问题"——4 亿图片来自互联网爬取，单独逐图获取版权不可行。
-但 LAION-400M 同样是爬虫数据集，他们用了 Common Crawl + alt-text 公开了 URL 列表
-（不放图片本身，让用户自己下）。OpenAI 完全可以学这个做法。
-**真实原因猜测**：(a) WIT 包含可识别人脸 / 隐私内容，公开会触发 GDPR；
-(b) 训练 recipe 是 OpenAI 商业护城河；(c) 公开后第三方 audit 会发现 contamination。
-论文从不讨论这一点。
+### 关联
 
-**怀疑 6**：prompt sensitivity 没被严肃 ablation
+- [[resnet]]——CLIP image encoder 之一就是 ResNet，理解 ResNet 架构是基础
+- [[vit]]——CLIP 最强模型 ViT-L/14 的本体；多模态时代视觉编码器的事实标准
+- [[mamba]]——CLIP text encoder 是 transformer，但替代品 Mamba 在长 caption 任务里被用来扩 context
+- [[flash-attention]]——CLIP 的 transformer attention 在 OpenCLIP / EVA-CLIP 里都已经换成 FlashAttention，省一半显存
+- [[chinchilla]]——CLIP 的训练规模选择没遵循 Chinchilla scaling law（Chinchilla 在 CLIP 之后），后续 OpenCLIP 训练时考虑过 token-to-param 比例
+- [[stable-diffusion]]——直接复用 CLIP-ViT-L/14 的文本编码器
+- [[llava]]——直接复用 CLIP-ViT-L/14 的图像编码器
+- [[dino]]——纯视觉自监督的对照组，不用文本但学到类似强度的特征
 
-论文 Section 3.1.4 提到 prompt engineering 大概贡献 5pp，
-但没有系统的 prompt sensitivity 分析。比如：
-- "a photo of a {}." vs "{}." 差多少？
-- 把 80 模板换成 GPT-4 自动生成的 80 模板效果如何？
-- 不同语言（中文 / 法文）的 prompt 效果差异多大？（CLIP 训练数据 95% 是英文）
-社区后续工作（CoOp, ProDA）补了一部分但都是事后追溯。
-**这暴露了 method paper 的常见叙事偏差**：作者倾向把"看起来 work 的东西"
-放主结果表，把"看起来比较脆弱的东西"放附录或干脆不讨论。
+### 实操建议
 
-**怀疑 7**：80 模板 ensemble 是不是 information leak 的另一种形式
+如果要在 2026 年用 CLIP 做实际项目：
 
-prompt engineering 本质是把"对 ImageNet 类目分布的先验知识"注入到 zero-shot 推理。
-作者改"crane → construction crane"是因为他们知道 ImageNet 里 crane 是塔吊。
-这部分人工知识从哪来？**从 ImageNet 训练集统计**——作者明确说
-"concentrated on the lowest performing classes according to top_1 and top_5 accuracy
-on the ImageNet **training set**"。**这意味着 prompt 是用 ImageNet 训练集调过的**——
-严格来说不算 zero-shot，更像 prompt-only meta-learning。
-论文没把这部分人工成本放在 limitation 段。
+- **不要从头训。** 用 OpenCLIP 已发布的 checkpoint。OpenAI 原版 ViT-L/14 仍然是社区基线。
+- **prompt template 要 ensemble。** 80 个 template 平均效果显著好于单一 prompt。
+- **细粒度任务用 SigLIP 或 EVA-CLIP。** 它们在 fine-grained 上比原版 CLIP 强 5-10 点。
+- **想要高质量 zero-shot detection。** 用 OWL-ViT 或 GroundingDINO，不要直接拿 CLIP 做 detection。
+- **想做中文。** Chinese-CLIP 或 AltCLIP，不要硬翻译英文 prompt。
+- **想做 multimodal LLM。** LLaVA-NeXT / Qwen-VL 都已经是 production-ready，不用从 CLIP 自己拼。
 
-## 限制（独立于作者承认的）
+### 一句话收尾
 
-- **L1 数据可访问性**：WIT 不公开 → 学术界没有可复现的 baseline，整个领域被锁死在 OpenCLIP / LAION 替代品上
-- **L2 评测协议偏差**：30+ benchmark 都是 image classification + captioning 风格，
-  对密集预测（segmentation, detection, depth）天然弱（DINOv2 后来证明这一点）
-- **L3 语言覆盖**：训练数据 95%+ 英文，多语言 zero-shot 性能急剧下降（中文 prompt 直接掉 30pp+）。
-  论文 Limitations 没提这一点
-- **L4 batch size 锁死大公司专属**：32k batch 在 8×A100 上要 80GB×8 = 640GB GPU 内存，
-  学术机构基本玩不起。这不是"模型有多强"的限制，是"谁能复现"的限制——
-  把 contrastive vision pretraining 变成寡头游戏
+CLIP 之所以是"状元"，不是因为它数字最高（在 ImageNet 监督榜上它至今没赢过），而是因为它**重新定义了"用视觉模型"这件事的形态**——从"训分类头"变成了"写 prompt"。这一步迈出去，多模态时代才正式开始。
 
-## 附录：叙事错位（论文宣称 vs 代码现实）
+---
 
-| 论文宣称 | 代码 / repo 现实 | 修正认知 |
-|---|---|---|
-| "可复现的视觉预训练新范式" | OpenAI 只放 inference，不放训练代码也不放数据集 | 真复现要等 OpenCLIP (2022)，CLIP repo 本身只是 demo |
-| "zero-shot ImageNet 76.2%" | 这是 ViT-L/14@336px + 80 prompt ensemble + 改类名的合成数字 | 单 prompt + 默认类名 + ViT-B/32 只有 ~63%——5x 差距藏在工程细节里 |
-| "InfoNCE 对称损失" | repo 里 `forward` 只返回 logits，loss 在 paper 伪代码里 | 工业落地要自己实现训练循环（参考 open_clip） |
-| "可学习温度参数 logit_scale" | 初始化 log(1/0.07) ≈ 2.66，训练后稳定在 ~4.6（即 τ ≈ 0.01） | 实际上 CLIP 训完后温度比初始化低 7 倍——固定 τ=0.01 也许就够 |
+## 附录 A：和前置工作的关系（VirTex / ConVIRT / ICMLM）
 
-## 结尾元数据
+CLIP 不是凭空出现的。同时期有三篇直接前置工作，理解它们能让 CLIP 的"贡献"显得更准确：
 
-- 重构日期：2026-05-28
-- 总行数：≥ 500（按 v1.1 method 状元篇）
-- 启用 skill：source-learn (Layer 3 精读) + research-gap (Layer 5 反对者部分) + investigate (怀疑 1-7)
-- 用到的工具：phd-skills 7 阶段（Layer 4）+ openai/CLIP repo（commit `d05afc4`）
-- 论文类型 self-classify：method / algorithm paper（v1.1 分支 A）
-- 心脏物：Algorithm 1 (Section 2.1) + Section 3.1.4 prompt engineering
-- 主锚定形式：`path:line`（4 处 GitHub permalink，commit hash `d05afc4`）
+### A.1 VirTex (2020)
+
+- 任务：用 image captioning 做视觉预训练，下游迁移到 detection / classification
+- 模型：ResNet + transformer decoder
+- 数据：COCO Captions（118K 图，每图 5 caption）
+- 结论：在小数据上有效，但没法 scale 到 web 规模
+- 和 CLIP 区别：VirTex 用 generative 目标（预测 caption），CLIP 用 contrastive 目标。Generative 目标对每对样本要求"对齐 + 流畅"两件事，对比目标只要"对齐"，更容易 scale。
+
+### A.2 ConVIRT (2020)
+
+- 任务：医学影像和报告对比学习
+- 模型：ResNet image encoder + BERT text encoder
+- 数据：MIMIC-CXR（200K 胸片 + 报告）
+- 结论：对比学习在医学领域 work，迁移到下游分类有效
+- 和 CLIP 区别：ConVIRT 是 CLIP 的"小规模医学版"。CLIP 论文 §1 直接把 ConVIRT 列为思路来源——CLIP 的核心创新不是"对比 image-text"，而是"把这套方法 scale 到 4 亿对"。
+
+### A.3 ICMLM (2020)
+
+- 任务：image-conditioned masked language modeling
+- 思路：BERT 风格 mask 一些 caption token，让模型用图像信息预测
+- 和 CLIP 区别：ICMLM 是 fusion-style（图像和文本在同一个网络里 cross-attend），CLIP 是 dual-tower（独立编码再对齐）。Fusion 表达力强但推理时必须图文同时输入；dual-tower 推理时图和文可以分开缓存——这是 CLIP 能做大规模检索的前提。
+
+> 怀疑：CLIP 论文常被说"开创性"，但从 method 角度看它就是 ConVIRT scale up + 加 prompt engineering。真正的 novelty 是 (a) 4 亿对的数据工程 (b) zero-shot transfer 这套评测范式。这两件事在论文里被打包卖，被解读成"一个新方法"。学习论文时不应该只看 method 部分——CLIP 真正颠覆性的部分是它对"评估"的重新定义。
+
+---
+
+## 附录 B：常见误解澄清
+
+### B.1 "CLIP 是图文检索模型"
+
+部分对，部分错。CLIP 训练目标是图文匹配，确实能做检索（图搜文 / 文搜图）。但它真正影响最大的是 **作为视觉特征提取器** ——下游 LLaVA / Stable Diffusion 用 CLIP 不是为了检索，而是为了拿它的 image encoder。
+
+### B.2 "CLIP zero-shot 等于无监督"
+
+错。CLIP 在 4 亿对图文上训练过，每对都是"弱监督"信号。所谓 zero-shot 只是说"下游任务不需要训练样本"，不是"模型从没被监督过"。严格说 CLIP 的范式叫 **transferable supervised learning**，不是 unsupervised learning。
+
+### B.3 "CLIP 比 ResNet 强"
+
+视任务而定。在 ImageNet 全监督榜单上，最强 CNN（如 BiT-L 87.5%、EfficientNet-V2 88%+）至今高过 CLIP。CLIP 的优势在 **zero-shot + robustness**，不在 single-task ceiling。
+
+### B.4 "用 OpenCLIP 等于用 CLIP"
+
+不完全对。OpenCLIP 在 LAION 数据上训，OpenAI 原版在 WIT 数据上训。两者数据分布不同，下游表现不完全一致——某些任务 OpenCLIP 强（更新数据），某些任务 OpenAI 版本强（数据 curation 更细）。生产时应该都试一下。
+
+> 怀疑：「OpenCLIP 完美复现 CLIP」这个说法被社区不断流传，但 LAION 团队自己在论文里明确指出有 1-2 点 gap。这种 narrative 在开源社区里有一种系统性偏差——为了证明"开源能复现专有"，gap 容易被淡化。学习论文时要警惕这种 community bias。
+
+---
+
+## 附录 C：和后续状元篇的关联
+
+本系列已写到 round 91。前面状元篇里和 CLIP 直接相关的：
+
+- **ResNet (S1)**：CLIP image encoder 选项之一，是过去十年视觉网络的奠基；ResNet-50x64 在 CLIP 论文里是最大模型
+- **ViT (S2)**：CLIP 最强 image encoder ViT-L/14 的本体；ViT 的 CLS token + LayerNorm 直接被 CLIP 复用
+- **CLIP (S3, 本篇)**：把视觉和语言用对比学习对齐
+- 之后：DINO (纯视觉自监督对照)、Stable Diffusion (CLIP 文本编码器下游)、LLaVA (CLIP 视觉编码器下游)
+
+这条线索可以这样总结：**深度 (ResNet) → 序列化 (ViT) → 对齐语言 (CLIP) → 多模态生成与理解 (SD / LLaVA)**。CLIP 是这条线索的关键节点——往前是"如何编码图像"，往后是"如何让图像和语言协同"。
