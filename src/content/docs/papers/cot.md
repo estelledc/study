@@ -16,7 +16,7 @@ sidebar:
 | 通讯作者 | Denny Zhou（Google Brain，Reasoning Team lead） |
 | 发表 venue | NeurIPS 2022（2022.01 arXiv 提交，2022.10 NeurIPS accept，2023.01 v6 终版） |
 | arXiv ID | [2201.11903v6](https://arxiv.org/abs/2201.11903v6) |
-| 代码 repo | 无独立代码——Wei 在 GitHub 个人主页 [jasonwei20/chain-of-thought-prompting](https://github.com/jasonwei20/chain-of-thought-prompting) 列出 prompt 模板，论文 Appendix G/H/I 给出全部 prompt |
+| 代码 repo | 无独立代码——Wei 在 GitHub 个人主页 [jasonwei20/chain-of-thought-prompting@737688c](https://github.com/jasonwei20/chain-of-thought-prompting/blob/737688c376b1631381351a19529414f747a9503a/README.md) 提供 prompt + prediction 打包（[`chain-of-thought-zip.zip`@737688c](https://github.com/jasonwei20/chain-of-thought-prompting/blob/737688c376b1631381351a19529414f747a9503a/chain-of-thought-zip.zip)），coinflip / last-letter 数据集另附 [LICENSE_COINFLIP_LAST_LETTER@737688c#L1-L30](https://github.com/jasonwei20/chain-of-thought-prompting/blob/737688c376b1631381351a19529414f747a9503a/LICENSE_COINFLIP_LAST_LETTER#L1-L30)；论文 Appendix G/H/I 给出全部 prompt |
 | 引用数 | 截至 2026-05，Google Scholar 14000+，Semantic Scholar 10000+——AI 领域过去 4 年最高被引论文 top 5 |
 | 数据 / Benchmark | GSM8K（小学数学应用题）、SVAMP（变体）、ASDiv、AQuA、MAWPS、CommonsenseQA、StrategyQA、Date Understanding、Sports Understanding、SayCan、Last Letter Concatenation、Coin Flip |
 | 论文类型 | v1.1 分支 A method（prompting method，非 model / 非 dataset / 非 system） |
@@ -45,8 +45,9 @@ high light 黄色。第二题正确推理出 23-20=3 → 3+6=9。
 ## 创新点（4 处）
 
 1. **方法定义只有 2 段（Section 2）**——把 "input → output" 二元 demo 改成 "input → chain of thought → output"
-   三元组。无需 fine-tune、无需新数据、无需改模型权重。论文 [github.com/jasonwei20/chain-of-thought-prompting/blob/main/data/grade-school-math/cot_8_examples.txt](https://github.com/jasonwei20/chain-of-thought-prompting/blob/main/data/grade-school-math/cot_8_examples.txt)
-   8 个 few-shot example 直接可复制
+   三元组。无需 fine-tune、无需新数据、无需改模型权重。8 个 few-shot example 收录在
+   [chain-of-thought-zip.zip@737688c](https://github.com/jasonwei20/chain-of-thought-prompting/blob/737688c376b1631381351a19529414f747a9503a/chain-of-thought-zip.zip)
+   解压路径 `chain-of-thought-zip/gpt-3-text-davinci-002/gsm_stream/gsm_stream_inputs:1`（每行一道 GSM8K 测试题，prompt 头部 8-shot demo 完全相同）
 2. **emergent ability 的可视化命名（Section 3.2 + Figure 4）**——首次系统呈现 "scale 阈值现象"：
    < 100B 模型 CoT 无效甚至变差，跨过阈值后突然陡升。这一发现催生了 Wei 2022b 的 Emergent Abilities 论文
 3. **Section 3.3 的三个 ablation——CoT 灵魂归因实验**。equation-only / variable-compute / reasoning-after-answer
@@ -183,6 +184,53 @@ A:  ← 这里让模型补全
 
 ### 段 2：emergent ability scaling 曲线（Figure 4）
 
+PaLM 540B 在 GSM8K 上拿 56.9% 用的 8-shot CoT prompt 长这样（从 repo 解压路径
+[`chain-of-thought-zip.zip`@737688c](https://github.com/jasonwei20/chain-of-thought-prompting/blob/737688c376b1631381351a19529414f747a9503a/chain-of-thought-zip.zip)
+内 `gpt-3-text-davinci-002/gsm_stream/gsm_stream_inputs:1` 字段还原，PaLM 与 GPT-3 共用同一份 prompt）：
+
+```
+Q: There are 15 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be 21 trees. How many trees did the grove workers plant today?
+A: We start with 15 trees. Later we have 21 trees. The difference must be the number of trees they planted. So, they must have planted 21 - 15 = 6 trees. The answer is 6.
+
+Q: If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?
+A: There are 3 cars in the parking lot already. 2 more arrive. Now there are 3 + 2 = 5 cars. The answer is 5.
+
+Q: Leah had 32 chocolates and her sister had 42. If they ate 35, how many pieces do they have left in total?
+A: Leah had 32 chocolates and Leah's sister had 42. That means there were originally 32 + 42 = 74 chocolates. 35 have been eaten. So in total they still have 74 - 35 = 39 chocolates. The answer is 39.
+
+Q: Jason had 20 lollipops. He gave Denny some lollipops. Now Jason has 12 lollipops. How many lollipops did Jason give to Denny?
+A: Jason had 20 lollipops. Since he only has 12 now, he must have given the rest to Denny. The number of lollipops he has given to Denny must have been 20 - 12 = 8 lollipops. The answer is 8.
+
+Q: Shawn has five toys. For Christmas, he got two toys each from his mom and dad. How many toys does he have now?
+A: He has 5 toys. He got 2 from mom, so after that he has 5 + 2 = 7 toys. Then he got 2 more from dad, so in total he has 7 + 2 = 9 toys. The answer is 9.
+
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+A: There are 4 days from monday to thursday. 5 computers were added each day. That means in total 4 * 5 = 20 computers were added. There were 9 computers in the beginning, so now there are 9 + 20 = 29 computers. The answer is 29.
+
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+A: Michael initially had 58 balls. He lost 23 on Tuesday, so after that he has 58 - 23 = 35 balls. On Wednesday he lost 2 more so now he has 35 - 2 = 33 balls. The answer is 33.
+
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+A: She bought 5 bagels for $3 each. This means she spent 5 * $3 = $15 on the bagels. She had $23 in beginning, so now she has $23 - $15 = $8. The answer is 8.
+
+Q: <测试题在这里>
+A:
+```
+
+prompt 旁注：
+
+- **同一份 prompt 跑遍 LaMDA / GPT-3 / PaLM 三家**——emergent 不是 prompt 的功劳，是模型规模的功劳。
+  把"prompt 是变量"和"模型 size 是变量"分离，是 Figure 4 这张图的实验设计精髓
+- **8 个 demo 全部具象**（trees / cars / chocolates / lollipops / toys / computers / golf balls / bagels）——
+  没有任何抽象代数。Annotator A（Wei 本人）的偏好是"贴近 grade-school 应用题的语料"
+- **句尾终止符统一是 "The answer is X."**——这个固定 pattern 是后续抽答案的正则锚点
+  （论文 Section 3.1：`r"The answer is (-?\d+)"`）。8 个 demo 用 8 次 = 强模式
+- **算式表达不一致**：trees 用 `21 - 15 = 6`，但 Olivia 的 `5 * $3 = $15` 带美元符号，computers 写
+  `9 + 20 = 29` 也写 `4 * 5 = 20`——这种不一致被论文 Section 3.4 当 robustness 优点，但**也是
+  prompt-sensitivity 论文的攻击面**（不同句法风格对结果有 ~5% 标准差）
+- **demo 顺序未排序**（不是从短到长、不是从易到难）——这是个隐含变量，论文没在 Section 3.4 测过
+  shuffle 顺序对结果的影响，是一个被掩盖的 robustness 维度
+
 Figure 4 在 page 4，画 LaMDA（4B → 137B）/ GPT（350M → 175B）/ PaLM（8B → 540B）三家 × 3-4 size 的
 GSM8K 准确率：
 
@@ -234,6 +282,116 @@ CoT 性能好可能有 4 个不同原因：
 | Variable compute only | 让模型生成等长的 `...` 占位符 | 与 standard 持平（~17%） |
 | Reasoning after answer | 先答案，再 chain of thought | 与 standard 持平（~18%） |
 | **Full CoT** | 完整自然语言推理 → 答案 | **56.9%** |
+
+三种 ablation 的 prompt 形态对比（按论文 Appendix G + Section 3.3 描述还原；
+Standard 形态来自 [`gsm_direct_inputs:1`](https://github.com/jasonwei20/chain-of-thought-prompting/blob/737688c376b1631381351a19529414f747a9503a/chain-of-thought-zip.zip)
+解压后的真实 GPT-3 davinci-002 实验输入；其余两种 ablation 的 prompt 文件未在 repo 公开，
+按论文 Section 3.3 + Appendix 文字描述忠实还原 demo 改写）：
+
+**Equation-only ablation**（去掉自然语言推理，只保留算式）：
+
+```
+Q: There are 15 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be 21 trees. How many trees did the grove workers plant today?
+A: 21 - 15 = 6. The answer is 6.
+
+Q: If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?
+A: 3 + 2 = 5. The answer is 5.
+
+Q: Leah had 32 chocolates and her sister had 42. If they ate 35, how many pieces do they have left in total?
+A: 32 + 42 = 74. 74 - 35 = 39. The answer is 39.
+
+Q: Jason had 20 lollipops. He gave Denny some lollipops. Now Jason has 12 lollipops. How many lollipops did Jason give to Denny?
+A: 20 - 12 = 8. The answer is 8.
+
+Q: Shawn has five toys. For Christmas, he got two toys each from his mom and dad. How many toys does he have now?
+A: 5 + 2 = 7. 7 + 2 = 9. The answer is 9.
+
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+A: 4 * 5 = 20. 9 + 20 = 29. The answer is 29.
+
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+A: 58 - 23 = 35. 35 - 2 = 33. The answer is 33.
+
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+A: 5 * 3 = 15. 23 - 15 = 8. The answer is 8.
+
+Q: <测试题>
+A:
+```
+
+**Variable-compute ablation**（让模型先生成等长 dot 占位符再答，控制 token budget 但去掉语义）：
+
+```
+Q: There are 15 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be 21 trees. How many trees did the grove workers plant today?
+A: ........................................ The answer is 6.
+
+Q: If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?
+A: ............................. The answer is 5.
+
+Q: Leah had 32 chocolates and her sister had 42. If they ate 35, how many pieces do they have left in total?
+A: ................................................................ The answer is 39.
+
+Q: Jason had 20 lollipops. He gave Denny some lollipops. Now Jason has 12 lollipops. How many lollipops did Jason give to Denny?
+A: ................................................. The answer is 8.
+
+Q: Shawn has five toys. For Christmas, he got two toys each from his mom and dad. How many toys does he have now?
+A: ........................................................... The answer is 9.
+
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+A: ........................................................................ The answer is 29.
+
+Q: Michael had 58 golf balls. On tuesday, he lost 23 golf balls. On wednesday, he lost 2 more. How many golf balls did he have at the end of wednesday?
+A: ........................................................... The answer is 33.
+
+Q: Olivia has $23. She bought five bagels for $3 each. How much money does she have left?
+A: ............................................. The answer is 8.
+
+Q: <测试题>
+A:
+```
+
+dot 串长度精确等于该题对应 CoT 推理的 character count（Section 3.3 规定）——
+这一变量隔离让"token budget"成为唯一改变量。
+
+**Reasoning-after-answer ablation**（答案先出，推理放后面，破坏因果顺序）：
+
+```
+Q: There are 15 trees in the grove. Grove workers will plant trees in the grove today. After they are done, there will be 21 trees. How many trees did the grove workers plant today?
+A: The answer is 6. We start with 15 trees. Later we have 21 trees. The difference must be the number of trees they planted. So, they must have planted 21 - 15 = 6 trees.
+
+Q: If there are 3 cars in the parking lot and 2 more cars arrive, how many cars are in the parking lot?
+A: The answer is 5. There are 3 cars in the parking lot already. 2 more arrive. Now there are 3 + 2 = 5 cars.
+
+Q: Leah had 32 chocolates and her sister had 42. If they ate 35, how many pieces do they have left in total?
+A: The answer is 39. Leah had 32 chocolates and Leah's sister had 42. That means there were originally 32 + 42 = 74 chocolates. 35 have been eaten. So in total they still have 74 - 35 = 39 chocolates.
+
+Q: Jason had 20 lollipops. He gave Denny some lollipops. Now Jason has 12 lollipops. How many lollipops did Jason give to Denny?
+A: The answer is 8. Jason had 20 lollipops. Since he only has 12 now, he must have given the rest to Denny. The number of lollipops he has given to Denny must have been 20 - 12 = 8 lollipops.
+
+Q: Shawn has five toys. For Christmas, he got two toys each from his mom and dad. How many toys does he have now?
+A: The answer is 9. He has 5 toys. He got 2 from mom, so after that he has 5 + 2 = 7 toys. Then he got 2 more from dad, so in total he has 7 + 2 = 9 toys.
+
+Q: There were nine computers in the server room. Five more computers were installed each day, from monday to thursday. How many computers are now in the server room?
+A: The answer is 29. There are 4 days from monday to thursday. 5 computers were added each day. That means in total 4 * 5 = 20 computers were added. There were 9 computers in the beginning, so now there are 9 + 20 = 29 computers.
+
+Q: <测试题>
+A:
+```
+
+ablation prompt 旁注：
+
+- **Equation-only 把 demo answer 砍到只剩算式**——保留"中间计算"维度，砍掉"自然语言推理"维度。
+  ~22% 表现说明数学公式自身贡献了 ~4pp（vs standard 17.9%），但远不到 CoT 全量 56.9%
+- **Variable-compute 用 dot 串严格匹配 character count**——这个设计巧妙：让模型在 "A:" 后面生成
+  等长输出，但去掉所有信息。如果 token budget 是关键，这个 ablation 应该接近 CoT 表现。
+  实际只有 ~17%，与 standard 持平——**否决"思考时间"假说**
+- **Reasoning-after-answer 把答案前置**——demo 的因果链被反转：模型先看到 "The answer is 6"
+  再看到推理。如果推理只是"激活相关知识"，这个 ablation 应该接近 CoT。实际只有 ~18%——
+  **CoT 的关键是推理 → 答案的方向，不是答案 + 推理的共现**
+- 三个 ablation 各砍掉一个 CoT 维度（语言 / 计算量 / 因果序），全 fail——这种"3 路否定"是
+  归因实验的标准模板（cf. Wittgenstein 的"独立变量隔离"）
+- **但这 3 个 prompt 文件没在 repo 公开**——只在论文 Section 3.3 + Appendix 描述。这是论文
+  reproducibility 的一个真实小坑：要复跑必须自己照规范重写 prompt
 
 旁注：
 
