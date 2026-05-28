@@ -7,12 +7,12 @@
 围绕"AI 时代产品工程师"成长路径，深度研究 **GitHub 开源项目** + **学术论文** 并写笔记的站点。
 Astro + Starlight 构建，已发布到 GitHub Pages，每次推 main 自动 redeploy。
 
-两条平行学习线：
+两条平行学习线（状态独立维护，避免 worktree 间冲突）：
 
-| 线 | 状态 | 方法论 | 队列 |
+| 线 | 当前状态 | 方法论 | 队列 |
 |---|---|---|---|
-| 项目研究 | 20/20 ✅ 已完成 | [7 层方法论](https://estelledc.github.io/study/method/) | [项目队列](https://estelledc.github.io/study/queue/) |
-| 论文研究 | 进行中 (3/20) | [8 层方法论](https://estelledc.github.io/study/papers-method/) | [论文队列](https://estelledc.github.io/study/papers-queue/) |
+| 项目研究 | [STATUS-PROJECTS](./STATUS-PROJECTS.md) | [7 层方法论](https://estelledc.github.io/study/method/) | [项目队列](https://estelledc.github.io/study/queue/) |
+| 论文研究 | [STATUS-PAPERS](./STATUS-PAPERS.md) | [8 层方法论](https://estelledc.github.io/study/papers-method/) | [论文队列](https://estelledc.github.io/study/papers-queue/) |
 
 ## 目录
 
