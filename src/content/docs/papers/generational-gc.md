@@ -102,14 +102,45 @@ void minor_gc(GenHeap* h) {
 }
 ```
 
-旁注：
-- bump pointer 分配是 generational GC 的额外红利——Eden 区永远连续，不需要 free list。
-- minor GC 不动老年代，停顿正比于 young 活对象数，与堆总大小解耦。
-- Survivor 双 buffer 是为了"半空间复制"——From 扫完搬到 To，From 直接清零。
-- Eden 满才触发，不是定时——分配压力自适应。
-- 老年代扫描走 full GC（mark-sweep 或 mark-compact），频率低。
+补充：复制阶段的根集扫描
 
-怀疑：弱分代假设在"大对象池 + 长寿命缓存"场景失效——若对象都活很久，分代反而是负优化（每次 minor GC 都要把活对象提升，搬运成本叠加）。
+```c
+// minor GC 的根集来源（一段大约 30 行的展开）
+void scan_roots_into_to_survivor(GenHeap* h) {
+    // 1. 线程栈帧：每个线程的局部变量、寄存器中保存的 oop
+    for (Thread* t = thread_list_head; t != NULL; t = t->next) {
+        for (Frame* f = t->top_frame; f != NULL; f = f->prev) {
+            for (int i = 0; i < f->oop_count; i++) {
+                Object** slot = &f->oops[i];
+                if (in_young(*slot)) {
+                    *slot = copy_or_promote(*slot, h);
+                }
+            }
+        }
+    }
+    // 2. 全局变量：static field、JNI handles、class loader 引用
+    for (int i = 0; i < global_root_count; i++) {
+        Object** slot = &global_roots[i];
+        if (in_young(*slot)) {
+            *slot = copy_or_promote(*slot, h);
+        }
+    }
+    // 3. 跨代引用：由 card table 提供的"old 中可能指向 young 的位置"
+    //    详见段 (b) 的 scan_dirty_cards
+}
+```
+
+旁注：
+- bump pointer 分配是 generational GC 的额外红利——Eden 区永远连续，不需要 free list，分配指令缩到 1 条 add。
+- minor GC 不动老年代，停顿正比于 young 活对象数，与堆总大小解耦——这是分代 GC 最关键的工程价值。
+- Survivor 双 buffer 是为了"半空间复制"——From 扫完搬到 To，From 直接清零，避免 mark-sweep 的碎片。
+- Eden 满才触发，不是定时——分配压力自适应，低分配速率下几乎没有 GC 噪音。
+- 老年代扫描走 full GC（mark-sweep 或 mark-compact），频率低，但单次停顿明显。
+- 根集扫描必须 stop-the-world——线程栈是高速变化的，在并发扫描下需要 SATB 或 incremental update 协议来保证不漏标。
+- 复制式 minor GC 的活对象遍历采用 Cheney 算法的扫描指针 + 自由指针双指针，与 [Cheney Q1](/papers/cheney-gc/) 同构。
+
+怀疑 1：弱分代假设在"大对象池 + 长寿命缓存"场景失效——若对象都活很久，分代反而是负优化（每次 minor GC 都要把活对象提升，搬运成本叠加）。
+怀疑 2：根集扫描在大型应用（数千线程、数十万 JNI handle）中本身就成为 minor GC 停顿的主导项，与 young 区大小无关。
 
 ### 段 (b)：Card Table + Write Barrier（跨代引用追踪）
 
@@ -145,14 +176,41 @@ def write_barrier(obj, field, new_val):
         card_table.mark_dirty(addr_of(obj))
 ```
 
+补充：典型 write barrier 在 x86 汇编下的实际开销
+
+```asm
+; HotSpot 的 post-write barrier（伪汇编，3 条指令）
+mov   [rdi + offset], rsi      ; 1. 真实写入：obj.field = new_val
+shr   rdi, 9                    ; 2. 计算 card 索引（>> 9 = / 512）
+mov   byte [card_table + rdi], 0 ; 3. 标记 card 为脏（约定 0 表示脏）
+```
+
+```python
+# Remembered Set 实现（G1 GC 风格，更精确但更耗内存）
+class RememberedSet:
+    def __init__(self):
+        # 每个 region 维护一个集合：哪些其他 region 中有指针指向 self
+        self.incoming = set()  # set of (region_id, card_id)
+
+    def add(self, src_region, src_card):
+        self.incoming.add((src_region, src_card))
+
+    def scan(self, gc):
+        for (rid, cid) in self.incoming:
+            scan_card_in_region(rid, cid, gc)
+```
+
 旁注：
 - Card 粒度是 trade-off：太细（64 B）卡表巨大；太粗（4 KB）单次扫描扫太多。HotSpot 默认 512 B。
-- Write barrier 是每次指针赋值都跑的代码，必须极轻——通常就是 2-3 条机器指令。
-- "标脏不清"是 lazy 策略：写时只标 1，等下次 minor GC 才扫并清。
+- Write barrier 是每次指针赋值都跑的代码，必须极轻——通常就是 2-3 条机器指令，不能有分支。
+- "标脏不清"是 lazy 策略：写时只标 1，等下次 minor GC 才扫并清，把成本从写时摊到 GC 时。
 - 卡表是"过近似"——脏卡里可能没有任何 old→young 指针（false positive），但绝不会漏（no false negative）。
-- Remembered Set 是另一种实现（精确记录每个跨代指针），G1 GC 用它而非卡表。
+- Remembered Set 是另一种实现（精确记录每个跨代指针），G1 GC 用它而非卡表，代价是写时多查表。
+- 现代 JIT（C2、Graal）会消除冗余 barrier——若编译器能证明 obj 是新分配且未逃逸，barrier 可以省。
+- ZGC/Shenandoah 的读屏障与此正交：读屏障保护并发疏散期间的指针有效性，写屏障保护跨代引用追踪。
 
-怀疑：write barrier 对每次指针写入都加 overhead，写多读少的程序（图算法、in-place 更新）可能比无 GC 慢 10%-15%。这是分代 GC 的隐性税。
+怀疑 1：write barrier 对每次指针写入都加 overhead，写多读少的程序（图算法、in-place 更新）可能比无 GC 慢 10%-15%。这是分代 GC 的隐性税。
+怀疑 2：在 NUMA 大堆上，卡表本身的写入会引发 false sharing——多个 CPU 核同时把不同对象指针写到同一 cache line 的卡表项，触发 MESI 协议风暴。
 
 ### 段 (c)：Promotion 策略（age 阈值 + tenuring）
 
@@ -188,24 +246,55 @@ void adaptive_tenuring(GenHeap* h) {
 }
 ```
 
-旁注：
-- age 字段通常嵌在对象 header 里，4 bit 足够。
-- 转发指针（forwarding pointer）让旧位置仍能定位到新位置，防止重复复制。
-- 自适应阈值避免静态 threshold 在不同负载下的失配。
-- "premature promotion" 是病：本该死的对象被提升到 old，触发不必要的 full GC。
-- "survivor overflow" 也是病：survivor 太小，活对象溢出直接进 old。
+补充：复制 + 转发指针（forwarding）联动
 
-怀疑：提升后的对象若很快死亡（违反强分代假设），就成了 old 区垃圾，要等下次 full GC 才回收。某些负载下（短期缓存被频繁失效）这是真实问题。
+```c
+// 复制 + 转发指针 + 重复复制防御
+Object* copy_with_forwarding(Object* obj, GenHeap* h) {
+    if (obj->header & FORWARDED_BIT) {
+        // 已经被复制过——直接返回新地址
+        return (Object*)(obj->header & FORWARD_ADDR_MASK);
+    }
+    Object* new_loc = promote_or_copy_target(obj, h);
+    memcpy(new_loc, obj, obj->size);
+    // 在原对象 header 写入转发标记 + 新地址
+    obj->header = ((uintptr_t)new_loc) | FORWARDED_BIT;
+    return new_loc;
+}
+```
+
+旁注：
+- age 字段通常嵌在对象 header 里，4 bit 足够（HotSpot 用 mark word 中的 4 bit）。
+- 转发指针（forwarding pointer）让旧位置仍能定位到新位置，防止重复复制——是 Cheney 算法到分代 GC 的直接继承。
+- 自适应阈值避免静态 threshold 在不同负载下的失配，HotSpot 通过观察 survivor 占用率动态调整。
+- "premature promotion" 是病：本该死的对象被提升到 old，触发不必要的 full GC，常见于 survivor 过小。
+- "survivor overflow" 也是病：survivor 太小，活对象溢出直接进 old，等同于 age threshold 被强制变成 1。
+- 大对象（> Eden TLAB 阈值，HotSpot 默认 8 KB 起）通常直通 old，避免大对象在 young 间复制。
+- 复制顺序影响 cache locality：广度优先复制（Cheney）vs 深度优先复制（Hierarchical），后者对树形结构更友好。
+
+怀疑 1：提升后的对象若很快死亡（违反强分代假设），就成了 old 区垃圾，要等下次 full GC 才回收。某些负载下（短期缓存被频繁失效）这是真实问题。
+怀疑 2：自适应 tenuring 在突发负载下有滞后——压测开始的前几轮 minor GC 用的是上一轮的 threshold，导致首轮 GC 异常剧烈。
 
 ## Layer 4 — phd-skills 七阶段（toy 50 行 C generational GC）
 
-1. **复述**：用自己的话讲弱分代假设、card table、write barrier、tenuring 各自解决什么。
-2. **画图**：手画 Eden / From / To / Old 四区，标出 minor GC 时数据流向。
-3. **复现**：写 50 行 C：单线程，无并发，bump pointer 分配，半空间复制，age 字段，假装 write barrier 用 macro 包裹指针赋值。
-4. **变体**：把 age threshold 从 1 变到 15，跑同一段链表/树的分配负载，观察 minor GC 频率与 full GC 触发次数。
-5. **失败模式**：构造"循环引用 + 全部活到老"的负载，看 minor GC 退化（活对象 100%，复制成本无收益）。
-6. **对照**：跑 [Cheney Q1](/papers/cheney-gc/) 同样负载，比 GC 总时间。
-7. **总结**：写一段 200 字"何时用分代 GC，何时不用"。
+1. **复述**：用自己的话讲弱分代假设、card table、write barrier、tenuring 各自解决什么；同时讲清楚"为什么 Cheney 不够"。子目标：能在白板上 5 分钟讲清楚一个新人。
+2. **画图**：手画 Eden / From / To / Old 四区，标出 minor GC 时数据流向；再画一张 write barrier 与 card table 的时序图，标 mutator / GC 两条时间线。
+3. **复现**：写 50 行 C：单线程，无并发，bump pointer 分配，半空间复制，age 字段，假装 write barrier 用 macro 包裹指针赋值；用 `assert` 自检每次 minor GC 后 Eden 必空、From-Survivor 必空。
+4. **变体 A**：把 age threshold 从 1 变到 15，跑同一段链表/树的分配负载，观察 minor GC 频率与 full GC 触发次数；输出 CSV 画图。
+5. **变体 B**：把 Eden:Survivor:Old 比从 8:1:1 变到 4:3:3，看 promotion rate 与 minor GC 停顿如何随之漂移。
+6. **失败模式 A**：构造"循环引用 + 全部活到老"的负载，看 minor GC 退化（活对象 100%，复制成本无收益）。
+7. **失败模式 B**：构造"老对象频繁写 young"的负载（典型：缓存 LRU），看 card table 全部变脏，minor GC 退化为近似 full GC。
+8. **对照**：跑 [Cheney Q1](/papers/cheney-gc/) 同样负载，比 GC 总时间、单次最长停顿、总分配吞吐三项。
+9. **总结**：写一段 200 字"何时用分代 GC，何时不用"，附三个真实场景判定（Web 服务 / 数据流水线 / 嵌入式控制）。
+
+每个阶段的验收门：
+- 复述：让一个不懂 GC 的人能转述出 80% 内容。
+- 画图：图能脱稿讲解 3 分钟。
+- 复现：toy 能在不崩的前提下分配 1M 个 cons cell。
+- 变体：画出"参数 → 指标"的曲线，能解读拐点。
+- 失败模式：能口头解释为什么这种负载下分代 GC 退化。
+- 对照：能给出至少 2 项分代 GC 不如 Cheney 的指标（如内存占用、首次启动时间）。
+- 总结：判定能落到具体 JVM/V8 参数推荐。
 
 参考实现 commit：openjdk/jdk `c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7`（HotSpot ParallelGC 主体）。
 
@@ -222,7 +311,15 @@ void adaptive_tenuring(GenHeap* h) {
 - Ungar 1984 Generation Scavenging — 同期 Smalltalk 实现，工程更完整。
 - HotSpot G1 GC（2004）— 区域化分代，Region + Remembered Set 替代 card table。参考 commit openjdk/jdk `c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7`。
 - ZGC（2018）— 染色指针 + 读屏障，停顿 < 10 ms，弱化分代（最初无分代，2023 起加回分代）。
+  - 设计哲学：把"分代"从必选项降级为可选优化。早期 ZGC 论证：当停顿目标 < 10 ms 时，并发标记 + 并发疏散比分代更直接。
+  - 2023 后引入分代 ZGC：实测发现 single-generation ZGC 在 young 高分配速率场景下 CPU 开销过大，分代回归是现实妥协。
+  - 关键差异：染色指针把 forwarding/marked 信息塞进指针的高位，避免对象 header 加位；读屏障在每次指针 load 时触发。
+  - 与本论文的对照：ZGC 把 1983 年的"频繁小扫描 + 偶尔大扫描"换成"持续微扫描 + 几乎无停顿"，停顿模型完全不同。
 - Shenandoah — Brooks Pointer 转发，并发疏散，弱分代。
+  - 设计哲学：每个对象多一个间接指针（Brooks Pointer），所有访问通过它转发，让疏散与 mutator 并发进行。
+  - 与 ZGC 的差异：Shenandoah 用对象内的 forwarding word，ZGC 用染色指针；前者对老硬件友好，后者依赖 64 位虚拟地址空间充裕。
+  - 与本论文的对照：放弃严格分代，但仍保留"局部疏散"思想——每次只疏散一部分 region，与本论文的"局部扫描"精神一致。
+  - 实测在 100 GB 堆上停顿稳定 < 10 ms，但吞吐比 G1 低 5%-10%，是延迟换吞吐的典型。
 - Azul Pauseless GC — 商用，硬件辅助读屏障。
 - V8 Orinoco — Chrome JS 引擎的分代 GC，commit v8/v8 `d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0`。
 - .NET CLR GC — 三代分代（Gen0/Gen1/Gen2 + LOH），commit dotnet/runtime `e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1`。
@@ -267,19 +364,34 @@ void adaptive_tenuring(GenHeap* h) {
 - 极低延迟需求（< 1 ms）→ 即便 minor GC 也会引入毛刺，需用 ZGC / Shenandoah。
 - 内存敏感（嵌入式、容器小内存）→ 三段式分配反而浪费空间，单代 mark-sweep 更紧凑。
 
+## 宣传 vs 现实
+
+| 论文宣传 | 工程现实 |
+|---------|---------|
+| "实时 GC，停顿可控" | 仅在 young 区有界且无突发分配时成立；现代低延迟系统（< 1 ms）需要 ZGC/Shenandoah |
+| "10× 吞吐提升" | 对短寿命对象密集负载成立；写密集 + 跨代引用密集时收益缩水到 1.5-2× |
+| "弱分代假设普遍成立" | 缓存系统、对象池、in-memory 数据库下假设失效，反而更慢 |
+| "write barrier 开销可忽略" | 编译器消除不到的写位置仍有 3-5% 持续 CPU 开销，写密集场景达 10%-15% |
+| "硬件 tag bit 加速 barrier" | 仅 Lisp Machine 有；x86/ARM 通用平台只能软件实现，常数因子翻倍 |
+
 ## Layer 7 — 怀疑清单
 
-1. 弱分代假设是统计经验，不是数学定理——某些工作负载（持久缓存、长连接）下显著失效。
-2. write barrier 是隐形税，对写密集程序可能拖慢 10%-15%，论文未充分讨论。
-3. card table 的过近似在大堆下放大——1 GB old 区，512 B 卡，2M 卡表，单次扫描扫不完。
-4. age threshold 的最优值依赖工作负载，自适应算法本身有滞后；论文给的固定阈值在现代负载下常不合适。
+1. 弱分代假设是统计经验，不是数学定理——某些工作负载（持久缓存、长连接、嵌入式状态机）下显著失效，而论文没有给出失效边界的定量分析。
+2. write barrier 是隐形税，对写密集程序可能拖慢 10%-15%，论文未充分讨论；尤其是图算法、ORM、in-place 数组更新这三类。
+3. card table 的过近似在大堆下放大——1 GB old 区，512 B 卡，2M 卡表，单次扫描扫不完；G1 用 Remembered Set 部分缓解但写时成本更高。
+4. age threshold 的最优值依赖工作负载，自适应算法本身有滞后；论文给的固定阈值在现代负载下常不合适，尤其启动期与稳态阶段差异巨大。
+5. 论文的"实时性"主张在多核并发场景下站不住——现代 GC（ZGC/Shenandoah）已经证明并发疏散比分代假设更适合低延迟目标。
+6. 强分代假设（"老对象死得慢"）在 LRU 缓存、对象池等模式下系统性失效，反而导致 promotion 后的对象拖累 full GC。
+7. 论文未讨论 GC 与硬件 prefetcher、TLB、大页内存的交互——而在现代服务器上这些因素的影响经常压过算法层面的差异。
 
 ## 限制条件
 
-1. 论文实验在 MIT Lisp Machine 上，硬件 tag bit + 微编码 write barrier，软件实现的 overhead 比论文乐观。
-2. 单线程模型，多核并发 GC 的复杂度（concurrent marking、SATB / incremental update）完全未触及。
-3. 实时性证明依赖 young 区大小有界，若 young 中突然出现大量活对象（突发分配峰值），停顿上界破裂。
-4. 不讨论 GC 与 CPU cache / NUMA / 大页内存的交互——这些在 2010 后才成为主导因素。
+1. 论文实验在 MIT Lisp Machine 上，硬件 tag bit + 微编码 write barrier，软件实现的 overhead 比论文乐观——x86/ARM 通用平台的常数因子至少翻倍。
+2. 单线程模型，多核并发 GC 的复杂度（concurrent marking、SATB / incremental update、并发疏散）完全未触及；现代 GC 算法的核心难点在并发协议而非分代本身。
+3. 实时性证明依赖 young 区大小有界，若 young 中突然出现大量活对象（突发分配峰值、缓存预热、批量加载），停顿上界破裂，论文未给应对策略。
+4. 不讨论 GC 与 CPU cache / NUMA / 大页内存的交互——这些在 2010 后才成为主导因素，分代假设在 NUMA 上需要 per-node young 区才有意义。
+5. 假设对象大小较小（Lisp cons cell 级别），未讨论大对象（> 1 MB）的处理；现代 JVM 必须有 LOH（Large Object Heap）专门处理。
+6. 未给出"何时不用分代 GC"的判据——这是工程实践中最常被问到的问题，论文留给后人。
 
 ## 元数据
 
