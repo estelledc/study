@@ -36,6 +36,12 @@ jobs:
             ls dist/projects/ 2>/dev/null | wc -l
             echo "=== dist projects/ list ==="
             ls dist/projects/ 2>/dev/null
+            echo "=== dist projects/ INDEX.HTML count (real files) ==="
+            find dist/projects -name "index.html" -type f | wc -l
+            echo "=== dist projects/zustand/ contents ==="
+            ls -la dist/projects/zustand/ 2>/dev/null || echo "no zustand dir"
+            echo "=== dist projects/biome/ contents ==="
+            ls -la dist/projects/biome/ 2>/dev/null
             echo "=== dist papers/ count ==="
             ls dist/papers/ 2>/dev/null | wc -l
             echo "=== sitemap projects entries ==="
