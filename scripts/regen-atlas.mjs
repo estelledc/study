@@ -147,6 +147,9 @@ const THEMES_PROJECTS = {
   '基础组件 / Headless UI': [
     'radix-ui', 'shadcn-ui',
   ],
+  'Markdown / 解析': [
+    'unified', 'markdown-it',
+  ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
   ],
