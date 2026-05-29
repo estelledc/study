@@ -152,4 +152,9 @@ inngest.createFunction(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
+- [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
+- [[temporal]] —— Temporal — 持久化工作流引擎
+

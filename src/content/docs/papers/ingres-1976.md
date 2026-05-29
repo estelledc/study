@@ -151,6 +151,7 @@ INGRES 把它**拆**成两步：先扫 MANAGER 把每个部门的 manager.salary
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

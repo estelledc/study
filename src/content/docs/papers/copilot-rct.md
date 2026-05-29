@@ -158,7 +158,7 @@ Cohen's d ≈ 2.0 在心理学/社科属于 "罕见大"——通常 d>1.5 都需
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
-- [[great-swe]] —— Great SWE — 工程师的"伟大"是 humble + always learning，不是技术有多硬
+- [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 

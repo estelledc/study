@@ -170,6 +170,7 @@ const svgInline: Plugin = {
 
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bun]] —— Bun — JS 全能运行时
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器

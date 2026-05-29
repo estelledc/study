@@ -149,6 +149,7 @@ r.Route("/api/v1/users", func(r chi.Router) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
