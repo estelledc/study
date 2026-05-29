@@ -46,7 +46,7 @@ sidebar:
 |---|---|
 | [Agentless — 反 agent 派代表作：3 阶段 pipeline 在 SWE-bench 上反超复杂 agent](/study/papers/agentless/) | Xia 等人 2024 年的反命题论文——把 agent loop 拆掉，用 file-localize / function-localize / patch-validate 三段流水线在 SWE-bench Li… |
 | [AutoGen — Enabling Next-Gen LLM Applications via Multi-Agent Conversation](/study/papers/autogen/) | ConversableAgent + GroupChatManager 把多 agent 协作抽象成可编排的对话，奠定 2024 年 multi-agent framework 范式 |
-| [Chain-of-Thought Prompting (Wei et al. 2022) — reasoning trace 是涌现能力的钥匙](/study/papers/cot/) | 8 个 few-shot 例子加上一段"想一下"的中间过程，让 540B 模型 GSM8K 从 18% 跳到 57% |
+| [Chain-of-Thought Prompting](/study/papers/cot/) |  |
 | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | Edge et al |
 | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | SFT 13k demo + RM 33k 排序 + PPO with KL anchor |
 | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 把人类软件公司的标准作业流程（SOP）写进 multi-agent 系统：每个 agent 是一个角色（PM / Architect / Engineer / QA），用强结构化文档传递信息，把自由对话的随机性收敛为可… |
@@ -140,9 +140,9 @@ sidebar:
 |---|---|
 | [Chubby 分布式锁服务](/study/papers/chubby/) |  |
 | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 用 happens-before partial order 替代物理时间 |
-| [Paxos 异步分布式共识](/study/papers/paxos/) |  |
+| [Paxos — 分布式共识算法](/study/papers/paxos/) |  |
 | [Raft — 易理解的共识算法](/study/papers/raft/) |  |
-| [Spanner 全球分布式数据库](/study/papers/spanner/) |  |
+| [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) |  |
 
 ## 数据库
 
@@ -223,7 +223,7 @@ sidebar:
 | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
 | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 第一篇把 CRDT 从平坦寄存器扩到嵌套 map+list 任意嵌套结构的论文 |
 | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) |  |
-| [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | Joe Armstrong KTH 2003 博士论文 + 30 年 Ericsson 实战汇总 |
+| [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) |  |
 | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) |  |
 | [线性类型（Linear Types）](/study/papers/linear-types/) |  |
 | [LLVM — 模块化编译器框架](/study/papers/llvm/) |  |
@@ -337,7 +337,7 @@ sidebar:
 | `constitutional-ai` | [Constitutional AI — 让 AI 看着一组原则给自己挑刺：Claude 的训练骨架](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
 | `copilot-rct` | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
-| `cot` | [Chain-of-Thought Prompting (Wei et al. 2022) — reasoning trace 是涌现能力的钥匙](/study/papers/cot/) | 智能体与 LLM 系统 |
+| `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `crdt-json` | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
 | `dalle-2` | [DALL-E 2 / unCLIP 文本到图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `ddpm` | [DDPM Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
@@ -355,7 +355,7 @@ sidebar:
 | `dynamo` | [Dynamo (DeCandia et al. 2007) — NoSQL 的源头与 CAP 的 AP 路线](/study/papers/dynamo/) | 数据库 |
 | `ebpf` | [eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
-| `erlang-otp` | [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
+| `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `flash-attention` | [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `foundationdb` | [FoundationDB (Zhou et al. 2021) — Unbundled 分布式 KV + Sim2 确定性仿真：用 10 年 CI 把 bug 烧在设计期](/study/papers/foundationdb/) | 数据库 |
 | `fsrs-spaced-repetition` | [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
@@ -394,7 +394,7 @@ sidebar:
 | `no-silver-bullet` | [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `openhands` | [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `pair-programming` | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | HCI / 软件工程研究 |
-| `paxos` | [Paxos 异步分布式共识](/study/papers/paxos/) | 分布式系统 |
+| `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |
 | `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
 | `ppo` | [PPO Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
 | `program-comprehension-fmri` | [Understanding Program Comprehension with fMRI — 程序理解像语言而非数学的首个脑成像证据](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
@@ -424,7 +424,7 @@ sidebar:
 | `sleeper-agents` | [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
 | `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |
-| `spanner` | [Spanner 全球分布式数据库](/study/papers/spanner/) | 分布式系统 |
+| `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
 | `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
 | `stable-diffusion` | [Stable Diffusion / LDM — 把扩散从像素搬到 latent 空间，让消费级 GPU 也能跑文生图](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |

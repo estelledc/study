@@ -70,8 +70,8 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | anime |
-| [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 不是 CSS transition 的语法糖，是一个把 spring physics 的解析闭式解 + RAF 主循环 + FLIP layout projection 三件事缝在 motion |
-| [gsap — 把 timeline 做成第一等公民的 JS 动画运行时](/study/projects/gsap/) | 不是 keyframe 派的便携包装，是一台跑了 18 年、用闭式数学解 + 单 Ticker 主循环 + PropTween 链表挂插件的运行时 |
+| [Framer Motion — React 声明式动画](/study/projects/framer-motion/) |  |
+| [GSAP — GreenSock 高性能动画](/study/projects/gsap/) |  |
 | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 不是动画库，是 AE 到浏览器的协议层 |
 | [motion-one 状元篇](/study/projects/motion-one/) | 用 WAAPI 而非 RAF 写动画——浏览器自己跑，主线程不卡顿 |
 | [react-spring 状元篇](/study/projects/react-spring/) | 基于物理 spring 的 React 动画库，告别 duration-based 缓动 |
@@ -243,10 +243,10 @@ sidebar:
 |---|---|
 | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) |  |
 | [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 拆解 mswjs/msw 如何在浏览器用 Service Worker、在 Node 用 fetch interceptor，统一 mock API |
-| [Playwright — 浏览器自动化的工程艺术](/study/projects/playwright/) | 跨进程 + 跨语言的协议设计 + 自动等待 + auto-retry locator，把"测试浏览器"做到工业级 |
+| [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) |  |
 | [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 不是文档站、不是测试 runner、不是 playground —— 它是把这三件事缝起来的 dev-time framework，靠 Manager + Preview iframe 双 window 和一根 pos… |
 | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 从 Enzyme 时代到 Testing Library 时代，重构噩梦如何被一个简单原则解决 |
-| [Vitest — 测试工具如果跟开发用同一个工具栈会怎样](/study/projects/vitest/) | 拆解 vitest 如何复用 Vite dev server 的 transpile 与 ModuleRunner，把 worker pool 拆成 forks/threads/vmForks/vmThreads，并跑… |
+| [Vitest — Vite 原生测试框架](/study/projects/vitest/) |  |
 
 ## 编辑器 / 富文本
 
@@ -473,9 +473,9 @@ sidebar:
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
 | `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
-| `framer-motion` | [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 动画 |
+| `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
-| `gsap` | [gsap — 把 timeline 做成第一等公民的 JS 动画运行时](/study/projects/gsap/) | 动画 |
+| `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
@@ -530,7 +530,7 @@ sidebar:
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
 | `pixi` | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
-| `playwright` | [Playwright — 浏览器自动化的工程艺术](/study/projects/playwright/) | 测试 / 验证 |
+| `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `pnpm` | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `postgres-js` | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
@@ -587,7 +587,7 @@ sidebar:
 | `visx` | [visx Airbnb React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue + Vite 文档框架，零 framework 重负的 SSG](/study/projects/vitepress/) | 文档站点 |
-| `vitest` | [Vitest — 测试工具如果跟开发用同一个工具栈会怎样](/study/projects/vitest/) | 测试 / 验证 |
+| `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) | i18n 国际化 |
 | `web-vitals` | [web-vitals — 不是「测速工具」，是把 Chrome UX Report 的指标定义在浏览器端等值复刻的协议库](/study/projects/web-vitals/) | 可观测 / 性能 |

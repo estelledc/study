@@ -186,4 +186,5 @@ Bun.serve({
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[vitest]] —— Vitest — Vite 原生测试框架
 

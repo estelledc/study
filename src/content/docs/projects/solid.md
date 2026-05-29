@@ -161,4 +161,5 @@ function Cart() {
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[zustand]] —— Zustand — 极简 React 状态管理
 

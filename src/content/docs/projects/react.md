@@ -158,6 +158,9 @@ function Greeting({ name }) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[cot]] —— Chain-of-Thought Prompting
+- [[framer-motion]] —— Framer Motion — React 声明式动画
+- [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
@@ -170,4 +173,5 @@ function Greeting({ name }) {
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[zustand]] —— Zustand — 极简 React 状态管理
 

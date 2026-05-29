@@ -210,4 +210,5 @@ export const collections = { blog }
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[zod]] —— Zod — TypeScript-first schema 验证
 
