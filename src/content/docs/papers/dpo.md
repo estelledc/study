@@ -1,570 +1,761 @@
 ---
-title: DPO — Your Language Model is Secretly a Reward Model：把 RLHF 的 reward 阶段 + RL 阶段塌缩成一个 cross-entropy 训练
-description: Bradley-Terry 反演 + KL 约束最优解的闭式 + logistic regression。三步推导把 PPO 三阶段流水线塌缩成 SFT 风格的二分类训练，从此 RLHF 不再需要 reward model 也不需要 RL
-sidebar:
-  label: DPO (NeurIPS 2023)
-  order: 5
+title: DPO Direct Preference Optimization
+来源: Rafailov et al., "Direct Preference Optimization: Your Language Model is Secretly a Reward Model", NeurIPS 2023 / arXiv 2305.18290
 ---
 
-> Season I · AI safety / interpretability 第 5 篇。
-> 这一篇把 [InstructGPT](/study/papers/instructgpt/) 三阶段流水线的后两段（RM + PPO）塌缩成一个 SFT 风格的 loss——
-> 是 [RLHF Christiano 2017](/study/papers/rlhf-christiano/) 之后偏好学习这条线**第二次范式重整**，
-> 与 [Constitutional AI](/study/papers/constitutional-ai/) 形成"省人力 vs 省 RL"的两条岔路。
-
-## 核心信息
-
-| 字段 | 内容 |
-|---|---|
-| 标题 | Direct Preference Optimization: Your Language Model is Secretly a Reward Model |
-| 标题翻译 | 直接偏好优化：你的语言模型其实就是一个 reward model |
-| 作者 | Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, Chelsea Finn |
-| 一作机构 | Stanford CS（Rafailov 时为 PhD）；Mitchell 同期 / Finn 是 advisor |
-| 发表时间 | arXiv 2023.05 / NeurIPS 2023 (oral, outstanding paper runner-up) |
-| 渠道 | NeurIPS 2023 (oral) |
-| arXiv | [2305.18290](https://arxiv.org/abs/2305.18290)（v3 是终版，比 v1 多了 IMDb / Anthropic-HH 实验） |
-| 引用数 | 5k+（截至 2026-05-28，超越同期 RLHF 工程论文） |
-| 论文类型 | method paper（提出闭式 RL → 二分类 reduction） |
-| 代码 / 项目 | 一作官方 [eric-mitchell/direct-preference-optimization](https://github.com/eric-mitchell/direct-preference-optimization) commit `f8b8c0f49dc92a430bae41585f9d467d3618fe2f`（FSDP + Hydra 配置，非工业化但权威）；标准复刻 [huggingface/trl](https://github.com/huggingface/trl) commit `51c6d3ca31fb4cc80ff719c0844bbdfcd0feeefb`（DPOTrainer 集成多种 loss type） |
-| 数据 / 资源 | 论文用 IMDb（情感控制玩具）/ TL;DR summarize（前作 Stiennon 2020 的延伸）/ Anthropic HH-RLHF（real-world 偏好），均开源；后续社区在 UltraFeedback / Capybara / Argilla 系列上跑 |
-| 模型规模 | 论文实验 Pythia-2.8B / GPT-2 / GPT-J（最大 6B）；社区把 DPO 推到 Llama-2-70B / Mixtral-8x7B / Yi-34B 全栈 |
-
-## 创新点
-
-DPO 不发明 RLHF——它把 [Christiano 2017](/study/papers/rlhf-christiano/) 的 Bradley-Terry + KL-constrained RL 走通一条**闭式数学路径**，
-顺便消灭了 RLHF 工业化的 4 个最痛苦的工程问题：
-
-1. **不再需要训 reward model**：reward 被吸收进 policy 自己的 logprob 比值，policy = 隐式 RM。
-   论文 §4 Theorem 1 给了精确的等价：`r(x, y) = β log [π(y|x) / π_ref(y|x)] + β log Z(x)`，
-   `Z(x)` 是 prompt 级常数，在 pairwise loss 里消掉。
-2. **不再需要 RL 优化**：原本 PPO 需要 actor / critic / KL controller / GAE，全部不见——
-   只剩一个 `-log σ(β·(log-ratio_chosen - log-ratio_rejected))` 的二分类 loss。
-   工程难度从 [InstructGPT §3.5 PPO](/study/papers/instructgpt/) 的 200 行 trainer 代码降到 30 行。
-3. **训练稳定性 ≈ SFT**：没有 RL，没有 advantage estimate，没有 reward shift，没有 PPO clip。
-   loss 单调下降、单 GPU 也能复现，社区 RLHF 的入门门槛被这一篇直接砍掉一个数量级。
-4. **超参从 6 个降到 1 个**：原 PPO 要 tune `kl_coef / lr / clip_ratio / value_coef / batch / minibatch`，
-   DPO 只剩 `β`（temperature，0.1-0.5 是甜区）。论文 §6.2 显示 β=0.1 vs β=0.5 在 Anthropic HH 上 win-rate 差 < 4%——
-   **β 的鲁棒性是 DPO 出圈的关键**。
-
-更重要的是它的 **副作用**：reward model 这一阶段被吃掉后，"标注 → 训 RM → 跑 PPO"的串行流水线变成了
-"标注 → 训 policy"，整段实习生级 ML infra（reward server / replay buffer / online sample loop）都不再必须。
-这是为什么 2023 下半年开始大模型对齐论文几乎一边倒地切到 DPO 系：见 [Layer 5 谱系](#l5-接下来在哪里--谱系)。
+# DPO — 把 RLHF 的三阶段拍成两阶段
 
 ## 一句话总结
 
-**DPO = 把 RLHF 后两段（RM 训 + PPO）通过一个数学等价塌缩成一个 SFT-shape 的 binary cross-entropy 训练。**
-你今天能在单张 4090 上跑 Llama-2-7B 偏好对齐，背后就是 2023 年这篇 paper 的 3 步代数推导。
+DPO（Direct Preference Optimization）是 Rafael Rafailov、Archit Sharma、Eric Mitchell、Stefano Ermon、
+Christopher D. Manning、Chelsea Finn 等斯坦福团队 2023 年 5 月放上 arXiv（2305.18290）、年底拿下
+NeurIPS 2023 Outstanding Paper Runner-Up 的工作。它做的事情看起来很小：把 RLHF（Reinforcement
+Learning from Human Feedback）经典的三阶段流水线（**SFT --> 训 reward model --> 用 PPO 跑 RL**）
+直接拍扁成两阶段（**SFT --> DPO**）。但这个"小改造"的影响几乎立刻把整个 LLM 对齐生态的训练
+basis 翻了一遍。论文标题里那句 "Your Language Model is Secretly a Reward Model" 也成了 2023
+年最广为流传的 ML 论文金句之一。
 
-![DPO loss 推导路径：Bradley-Terry → KL-constrained RL → reparameterization → logistic loss](/study/papers/dpo/01-loss-derivation.webp)
+历史定位：从 2017 年 Christiano 等人的 *Deep RL from Human Preferences*（首次把人类对成对样本的
+偏好作为信号训 RL）到 2020 年 OpenAI summarization preference paper（首次把 RLHF + LLM 拼起来
+做摘要）到 2022 年 InstructGPT（让 ChatGPT 雏形浮出水面），中间这条路线一直依赖 PPO 这个非常
+难调的 actor-critic 算法。**PPO 难调**指的是：你需要同时维护四个模型（actor / critic / reference /
+reward model），一旦 advantage estimation、clip ratio、KL coefficient、value function loss weight
+任何一个数错，训练就崩；崩了的特征是 reward 一路飙升但 generation 质量肉眼可见变差，也就是经典
+的 reward hacking。DPO 出现之前，社区里"想做 RLHF 但调不动 PPO"的小团队基本只能用 RM-only filter
+（拿 RM 打分挑数据再 SFT，best-of-N rejection sampling）凑合。DPO 之后，**只要你会做 SFT 你就能
+做"对齐"**——这是开源 LLM 生态（Llama-2 finetune / Mistral / Zephyr / Tulu / Nous-Hermes 等等）
+能在 2023 下半年至 2024 大爆发的关键工程前置条件之一。
 
-*图 1：DPO loss 的三步推导链。左：Bradley-Terry 模型把 pairwise preference 写成 `σ(r_w - r_l)`。中：KL-constrained reward maximization 的最优解析解 `π*(y|x) ∝ π_ref(y|x) exp(r/β)`。右：把这个解反代回去，`r` 被消掉，得到 `-log σ(β·log-ratio_diff)` 的 logistic regression loss。手绘 sketchnote 风。*
+设计动机：作者们注意到一个被忽视的数学事实——**KL 约束的 reward maximization 有 closed-form 解**。
+也就是说当你最大化 `E[r(x,y)] - beta * KL[pi || pi_ref]` 时，最优 policy 的形式是 *固定的*：
+`pi*(y|x) ∝ pi_ref(y|x) * exp(r(x,y)/beta)`。这意味着 **reward 和 policy 之间存在双射**——
+给定一个 reward function，你可以唯一确定 optimal policy；反过来，给定一个 optimal policy，你也
+可以唯一反解出对应的 reward function。RLHF 的传统做法是先学 reward model 再用 RL 找 optimal
+policy；DPO 的做法是直接跳过中间这一步——既然 policy 和 reward 一一对应，那干嘛不直接对 policy
+做 maximum likelihood？这就是为什么标题说 "your language model is secretly a reward model"：
+任何一个 LLM `pi_theta` 和它的 SFT reference `pi_ref` 拼在一起 `r(x,y) = beta * log[pi_theta(y|x)
+/ pi_ref(y|x)]`，自动就是一个合法的 reward function。
 
-## Why（这篇出现前世界缺什么）
+为什么 LLM 后训练领域几乎在一夜之间从 PPO 切到 DPO？回答几乎完全是工程层面的：(1) 训练成本
+减半（不需要训 reward model 也不需要跑 RL）；(2) 显存占用减半（PPO 需要同时载 actor / critic /
+ref / RM 四个模型，DPO 只需要 policy + ref 两个，且 ref 可以 freeze + offline cache）；(3) 训练
+稳定性高一个数量级（binary cross-entropy 永远不会发散，PPO 经常发散）；(4) 唯一的核心 hp 是
+`beta`，比 PPO 的 5+ 个 hp 调参负担小得多。代价是 **DPO 是 offline 的**——它在固定的 paired
+preference dataset 上训，没有 PPO 那种 policy 不断 rollout 探索新分布的能力。这个代价直到 2024
+年才真正被社区充分理解（参见 Section 5 的 SimPO / RPO / online DPO 等衍生）。
 
-DPO 出现前，做 RLHF 的人卡在 [InstructGPT](/study/papers/instructgpt/) 范式的 4 个对手痛点里：
+---
 
-- **PPO 工程地狱**：[InstructGPT §3.5 PPO](/study/papers/instructgpt/) 的实现要同时管理 actor / critic / reference / reward 4 个模型，
-  4 套 forward + 1 套 backward + 1 个 KL controller。OpenAI 内部能跑（他们写了 5 年 RL infra），
-  但学术圈+开源圈的复现一直崩——2022-2023 年 trl 的 issue 列表全是"PPO 训出 NaN"。
-- **reward model 的 reward hacking**：RM 是个独立的 6B 模型，policy 在它上面 PPO 几千步后必然找到
-  reward 高但人类不喜欢的 mode（[Christiano 2017](/study/papers/rlhf-christiano/) §3 已经预警过）。
-  解决方案要么 KL anchor 调高（牺牲对齐），要么 active query 重训 RM（牺牲 compute）——两条路都贵。
-- **二阶段标注成本**：[InstructGPT](/study/papers/instructgpt/) 的 ~33k 排序数据训 RM 后还要 ~31k 新 prompt 跑 PPO，
-  数据预算被切两份。如果能把这两段合并，等价于"同样数据量翻倍"。
-- **RLHF 的可解释性黑箱**：reward model 是个 scalar regression，无法事后解释"为什么这条 reply 拿了 +5 reward"。
-  policy 优化 RM 的过程也无法 introspect。
+## Section 1: 动机 — 为什么 RLHF 的三阶段流水线值得被简化
 
-第五种思路藏在控制论的 KL-constrained reward maximization 里：
-**KL-constrained 凸优化的最优解有闭式**——`π*(y|x) ∝ π_ref(y|x) exp(r(x, y) / β)`。
-这个公式在 RL 文献里出现过（[Peters 2010 REPS](https://arxiv.org/abs/1005.0901) /
-[Peng 2019 AWR](https://arxiv.org/abs/1910.00177)），但没人把它**反过来**用：
-**给定 policy π，可以倒推出 r 是什么**——`r(x, y) = β log[π/π_ref] + β log Z(x)`。
-DPO 的核心 insight 异常朴素：**把这个倒推的 r 代回 Bradley-Terry pairwise loss，partition function `Z(x)` 在 pair-difference 里消掉**。
-结果就是一个不需要 RM、不需要 RL 的 logistic regression。
+### Section 1.1: RLHF 经典三阶段是什么
 
-## 论文地形
+回顾 InstructGPT (Ouyang et al. 2022) 的训练流水线：
 
-| Section | 角色 | 阅读策略 |
-|---|---|---|
-| §1 Introduction | motivation + 3 个 contribution 列表 | 读 |
-| §2 Related work | RLHF / contrastive method / preference learning 三堆 | 跳读 |
-| §3 Preliminaries | Bradley-Terry + KL-constrained RL 复习 | **必读**（这是推导起点） |
-| §4 Direct Preference Optimization | **真正的肉，3 步推导 + Theorem 1** | **精读** |
-| §4.1 Deriving the DPO objective | 把 r 替换成 policy log-ratio 的代数 | **必读** |
-| §4.2 What does the DPO update do | gradient 解释：把 chosen logprob 推上去、rejected 推下去 | 精读 |
-| §5 Theoretical analysis | reward equivalence class + DPO 不依赖具体 r | 跳读 |
-| §6 Experiments | IMDb 情感 / TL;DR summarize / Anthropic HH | 看 Figure 2-3 |
-| §7 Discussion | limitations + 后续方向 | **必读** |
-| §A Math derivations | Theorem 1 完整证明 | 复现时查 |
+1. **Stage 1: SFT** — 在人写的 demonstrations `(x, y_demo)` 上做 supervised fine-tuning。这一步
+   主要让 base model（pre-trained LLM）学会 *follow instruction* 的格式。比如 GPT-3 在 SFT 之前
+   被 prompt "How to make a cake?" 时可能补全成 "How to make a cake? How to make a pie?"——它没
+   有 instruction following 的概念。SFT 之后它学会回答而不是续写。
 
-**心脏物 3 个**：
+2. **Stage 2: Reward Model** — 收集成对偏好数据 `(x, y_w, y_l)`（同一个 prompt 下两个回答，标注员
+   选 y_w 比 y_l 好），用 Bradley-Terry preference model 拟合一个 reward function `r_phi(x, y)`：
+   `P(y_w > y_l | x) = sigma( r_phi(x, y_w) - r_phi(x, y_l) )`。这个 RM 的输出是一个 scalar，
+   语义上代表"人有多喜欢这个 (x, y) pair"。
 
-1. §4.1 推导链（3 步代数把 RL 化成二分类）—— Layer 3 主精读对象
-2. Theorem 1（reward → policy 的双射；reward 等价类）—— 全篇最深的数学结果
-3. Figure 2 (IMDb sentiment win-rate)：DPO 在低 KL 下 win-rate > PPO，**这是工程派被说服的关键证据**
+3. **Stage 3: PPO** — 把 SFT model 当 policy `pi_theta`，把 RM 当 reward signal，用 PPO 算法
+   做 policy gradient：`max E[r_phi(x, y)] - beta * KL[pi_theta || pi_ref]`。这里的 KL term
+   是为了防止 policy "崩坏"——离 SFT reference 太远会导致 generation 质量灾难性下降（reward
+   hacking 的典型前兆）。
 
-## 谱系图
+### Section 1.2: 三阶段的代价
 
-DPO 既继承又重构了 RLHF 这条线，下游论文像分形一样炸开。
+PPO 这一步是整个流水线最痛的：
 
-![DPO 谱系：从 RLHF / InstructGPT 出发，向下分化出 IPO / KTO / SimPO / ORPO / RLOO / Self-Reward / SPIN](/study/papers/dpo/02-lineage.webp)
+- **四模型同时载入**：actor (pi_theta，trainable)、critic (value head，trainable)、reference
+  (pi_ref，frozen)、reward model (r_phi，frozen)。一个 7B 模型每份 ~14GB，四份 ~56GB，且需要
+  额外的 optimizer state / gradient。在没有 ZeRO / FSDP 的小团队那里几乎跑不动。
+- **on-policy data**：每次 update 都要重新 rollout，吞吐量被 generation latency 死死锁住。
+- **超参数地狱**：PPO clip ratio epsilon、KL coefficient beta、value function loss weight、
+  generalized advantage estimation lambda、reference batch size、entropy bonus 等十几个 hp，
+  调差一个就崩。
+- **reward hacking**：一旦 RM 不够准，policy 会找到"骗过 RM"的奇怪 generation 模式（典型
+  case：填充大量 disclaimer / 大量重复短语让 RM 给高分但人类觉得糟糕）。
 
-*图 2：DPO 论文谱系。上游：[Christiano 2017 RLHF](/study/papers/rlhf-christiano/) → [InstructGPT 2022](/study/papers/instructgpt/) → DPO 2023。下游：IPO（修 reward saturation）/ KTO（去掉 pair 要求）/ SimPO（去掉 reference model）/ ORPO（合并 SFT+DPO）/ RLOO（PPO 简化派的反击）/ Self-Reward / SPIN（self-play 派）。横向竞争：[Constitutional AI 2022](/study/papers/constitutional-ai/) 的 RLAIF 路线。手绘 sketchnote 风。*
+### Section 1.3: DPO 的简化目标
 
-## 核心机制
+DPO 想做的事情非常具体：**保留三阶段流水线在数学上的等价性，但把 Stage 2 + Stage 3 合并成
+一步直接对 pi_theta 训的 binary cross-entropy**。如果做到了，所有上面这些痛点就被一次性消除：
 
-### Step 1 · Bradley-Terry：把 pairwise preference 写成 sigmoid 概率
+- 训练只需要 actor + frozen reference，两个模型，可以再压一压（reference 的 logp 可以离线
+  precompute 一遍存起来，训练时不用前向）。
+- offline 训练，没有 rollout，吞吐量是普通 SFT 级别的。
+- 主要 hp 只有一个 `beta`。
+- 没有 RM，所以没有 RM 不准导致的 reward hacking（但代价是 paired preference data 本身的偏差
+  会直接传到 policy，参见 Section 9 的限制）。
 
-人类标注员看到 prompt `x` 和两条 reply `(y_w, y_l)`（w = winner, l = loser）后给一条偏好 label。
-Bradley-Terry 模型假设：
+> 怀疑：DPO 数学上等价于 RLHF（在某些假设下），但实际 LLM 训练效果有时差异。Tunstall et al.
+> 2023 (Zephyr-7B) 和 Hugging Face TRL 团队的 ablation 都报告：在某些 setup 下 DPO 比 PPO 略差，
+> 在另一些 setup 下相反。这到底是 implementation 细节差异、还是 distribution shift 问题（PPO
+> 用 on-policy data 而 DPO 只能用 offline pair）？我目前更倾向是后者——offline preference data
+> 永远是 stale 的，policy 训着训着就漂移到 reference distribution 之外，DPO loss 在那块区域
+> 完全没有 supervision。这也是 2024 一堆 online DPO 变种出现的原因。
+
+### Section 1.4: 与同期路线（RM-as-classifier、SLiC、RRHF）的关系
+
+DPO 不是 2023 年第一个想跳过 PPO 的工作。同期还有：
+
+- **SLiC-HF** (Zhao et al. 2023, Google)：用 sequence-level rank loss + ref policy regularization
+  做对齐，是 DPO 的近亲。SLiC 的损失是 hinge loss + KL，DPO 的损失是 sigmoid CE + 隐式 KL（在
+  beta * log ratio 那一项里）。两者经验性能接近。
+- **RRHF** (Yuan et al. 2023, Alibaba)：用 ranking loss 直接把多个 candidate 的 logp 排序拟合
+  reward。是更早的尝试，但没有 DPO 的那个漂亮的"reward 隐式藏在 log ratio 里"的理论结论。
+- **Best-of-N + SFT**：用 RM 打分选出 top-k candidate 再 SFT。简单直接，但 reward signal 被
+  argmax 量化了。
+
+DPO 在这群里之所以胜出是因为它最早把数学结论说清楚（KL-constrained RL 的 closed-form 解 + BT
+代换 = BCE），且 PyTorch 实现极短（~30 行）。
+
+---
+
+## Section 2: 关键定义
+
+### Definition 1: Paired preference data
+
+DPO 的训练数据是 triplet 形式：`D = { (x_i, y_w_i, y_l_i) }_{i=1..N}`，其中
+
+- `x_i`：prompt（也叫 query / context）
+- `y_w_i`：chosen response（标注员认为更好的那个）
+- `y_l_i`：rejected response（标注员认为更差的那个）
+
+w / l 分别表示 winner / loser。注意两个 response **必须是同一个 x 下的**，跨 x 比较没有意义。
+真实数据集（Anthropic HH、UltraFeedback、Nectar）通常每个 x 配 1-N 对偏好。
+
+### Definition 2: Bradley-Terry preference model
+
+经典统计学模型，用一个 scalar reward `r(x, y)` 解释偏好分布：
 
 ```
-P(y_w ≻ y_l | x) = exp(r(x, y_w)) / [exp(r(x, y_w)) + exp(r(x, y_l))]
-                 = σ(r(x, y_w) - r(x, y_l))
+P(y_w > y_l | x) = sigma( r(x, y_w) - r(x, y_l) )
+                 = exp(r(x, y_w)) / [ exp(r(x, y_w)) + exp(r(x, y_l)) ]
 ```
 
-`r(x, y)` 是潜在的 reward function，`σ` 是 sigmoid。这个假设和 [InstructGPT §3.5 RM](/study/papers/instructgpt/)
-完全一致——区别只在 InstructGPT 用一个独立模型 `r_θ` 拟合 `r`，DPO 一会儿要把它**消掉**。
+这等价于"两个 response 的 reward 差异越大，winner 被选中的概率越接近 1"。Bradley-Terry 是
+RLHF 里 reward model 训练的标准目标，也是 DPO 推导的起点。
 
-最大似然估计 BT 模型参数等价于最小化：
+注意 BT 假设 reward 是 deterministic + transitive 的——这是个理想化假设，真实人类偏好经常
+inconsistent（同一个标注员在不同时间会选不同 winner）也经常 non-transitive（A > B, B > C, C > A
+的循环）。Section 9 会回到这个问题。
 
-```
-L_BT(r) = -E_{(x, y_w, y_l) ~ D} [log σ(r(x, y_w) - r(x, y_l))]
-```
+### Definition 3: DPO 损失函数
 
-这就是 [InstructGPT §3.5](/study/papers/instructgpt/) 的 RM 训练 loss。DPO 不改这个 loss，
-只换里面的 `r` 是什么。
-
-### Step 2 · KL-constrained RL 的最优解有闭式
-
-[InstructGPT PPO 阶段](/study/papers/instructgpt/) 的目标是：
+最终形式：
 
 ```
-max_π E_{x ~ D, y ~ π(·|x)} [r(x, y)] - β · KL(π(·|x) || π_ref(·|x))
+L_DPO(pi_theta; pi_ref) = - E_{(x, y_w, y_l) ~ D} [
+    log sigma(
+        beta * log[pi_theta(y_w | x) / pi_ref(y_w | x)]
+      - beta * log[pi_theta(y_l | x) / pi_ref(y_l | x)]
+    )
+]
 ```
 
-`π_ref` 是 SFT 后冻结的参考策略，`β` 控制 KL 强度。这个目标在控制论里**有闭式解**
-（[Peters 2010 REPS](https://arxiv.org/abs/1005.0901) 证过）：
+拆解每一项：
+
+- `pi_theta(y | x)` — 当前训练的 policy 在 (x, y) 上的概率（实际是 sequence logp，所有 token
+  的 logp 加起来）
+- `pi_ref(y | x)` — frozen reference policy 的概率（一般是 SFT checkpoint）
+- `beta` — 温度 / KL 强度。典型范围 0.01 - 0.5。beta 越大 = KL 约束越紧 = pi_theta 不能离 pi_ref
+  太远 = 训练 signal 越保守
+- `sigma` — sigmoid，把"winner 比 loser 高多少"压到 (0, 1) 概率
+- 整体形式 = binary cross-entropy with the label "winner is preferred"
+
+### Definition 4: 隐式 reward（implicit reward）
+
+DPO 论文证明：训练好的 pi_theta 等价于在 reward function
 
 ```
-π*(y|x) = (1/Z(x)) · π_ref(y|x) · exp(r(x, y) / β)
-其中 Z(x) = Σ_y π_ref(y|x) · exp(r(x, y) / β)  是 partition function
+r_theta(x, y) = beta * log[pi_theta(y | x) / pi_ref(y | x)] + beta * log Z(x)
 ```
 
-这步在论文 §4 Eq. 4 给出。直觉：最优 policy 是 reference policy 用 reward 做指数加权后的 reweight。
-**问题在于** `Z(x)` 是对所有可能 reply 的和，sequence space 是 vocab^seq_len 量级，**算不动**。
-[InstructGPT](/study/papers/instructgpt/) 的解决方法是用 PPO 直接做随机梯度优化，绕开 `Z(x)`。
+下做 KL-constrained RL 的最优 policy。其中 Z(x) 是 partition function（与 y 无关），所以在
+preference comparison 里抵消。结论：**任意一个 (pi_theta, pi_ref) 对都隐含一个 reward function**，
+反过来任意 reward function 加上 pi_ref 都唯一确定 pi*。这是标题 "secretly a reward model" 的
+数学含义。
 
-### Step 3 · 反演：把 r 表达成 policy log-ratio
+### Definition 5: KL-constrained reward maximization objective
 
-DPO 的关键一招：**给定 π\* 和 π_ref，可以倒推 r 是什么**。把上面的式子两边取 log，移项：
-
-```
-r(x, y) = β · log[π*(y|x) / π_ref(y|x)] + β · log Z(x)
-```
-
-`β log Z(x)` 是只依赖 `x` 的常数（**对同一 prompt 的所有 reply 相同**）。
-代回 Bradley-Terry loss：
+RLHF Stage 3 优化的目标：
 
 ```
-r(x, y_w) - r(x, y_l) = β · [log(π*(y_w|x) / π_ref(y_w|x)) - log(π*(y_l|x) / π_ref(y_l|x))]
-                       = β · [log-ratio(chosen) - log-ratio(rejected)]
+J(pi) = E_{x ~ D, y ~ pi(.|x)} [r(x, y)] - beta * E_x KL[pi(.|x) || pi_ref(.|x)]
 ```
 
-`Z(x)` 在 pair-difference 里**完美消掉**——这是 DPO 全部魔法的来源。
-最终 loss：
+DPO 的全部数学骨架都建立在"这个目标有 closed-form 解"这个事实之上。Section 3 会详细推导。
+
+---
+
+## Section 3: 数学推导 — 为什么这一切是等价的
+
+### Section 3.1: RLHF 的目标函数
+
+复述 Definition 5：
 
 ```
-L_DPO(π_θ; π_ref) = -E_{(x,y_w,y_l)~D} [log σ(β · (log[π_θ(y_w|x)/π_ref(y_w|x)] - log[π_θ(y_l|x)/π_ref(y_l|x)]))]
+max_pi   E_{x, y ~ pi} [r(x, y)]   -   beta * KL[pi || pi_ref]
 ```
 
-这是论文 §4.1 Eq. 7 / Theorem 1。**形式上完全等价于一个 SFT 风格的 cross-entropy**——
-唯一区别是 input 是两条 reply 的 logprob 比值差。
+把 KL 展开：`KL[pi || pi_ref] = E_{y ~ pi}[log pi(y|x) - log pi_ref(y|x)]`，整体写成单个期望：
 
-下面三段 Layer 3 分别精读：(a) DPO loss 实现；(b) reference model + 隐含 KL anchor；(c) trl 的 DPOTrainer。
+```
+max_pi  E_{x, y ~ pi} [ r(x, y) - beta * (log pi(y|x) - log pi_ref(y|x)) ]
+```
 
-#### (a) DPO loss 实现：把 3 步推导写成 30 行 Python
+这是个变分问题：在所有合法分布 pi 中找最大化这个量的那个。
 
-一作官方实现的 `preference_loss` 函数，一字不差地按论文 §4.1 写：
+### Section 3.2: closed-form 解
+
+用 Lagrangian 或者直接对 pi 求 functional derivative（细节见 DPO 论文 Appendix A.1，也可以参考
+Peters & Schaal 2007 的 REPS 推导，本质是同一个工具）。结论：
+
+```
+pi*(y | x) = (1 / Z(x)) * pi_ref(y | x) * exp( r(x, y) / beta )
+```
+
+其中
+
+```
+Z(x) = sum_y pi_ref(y | x) * exp( r(x, y) / beta )
+```
+
+是归一化常数（partition function）。这个解的直觉是：**最优 policy 是 reference 的指数 reweight
+版本**——reward 高的 y 被 exp 放大，reward 低的被压低，beta 控制 reweight 的激进程度。
+
+> 怀疑：closed-form 解的存在并不意味着 closed-form 解可以高效计算——`Z(x)` 是对所有可能 y 求和，
+> 在 LLM 场景下 `y` 是任意长度的 token sequence，求和空间是 vocab^seq_len 量级，本质上不可计算。
+> 这就是为什么 RLHF 即使知道 closed-form 也还是需要 RL 来近似。DPO 的精妙之处恰恰是 **在 BT
+> preference 框架下 Z(x) 自动抵消**——下面 Section 3.3 会看到。
+
+### Section 3.3: 反解 reward + 代入 Bradley-Terry
+
+把 Section 3.2 的式子取对数 + 整理：
+
+```
+r(x, y) = beta * log[ pi*(y|x) / pi_ref(y|x) ] + beta * log Z(x)
+```
+
+注意第二项 `beta * log Z(x)` 只跟 x 有关，跟 y 无关。代入 Bradley-Terry preference 公式：
+
+```
+P(y_w > y_l | x) = sigma( r(x, y_w) - r(x, y_l) )
+```
+
+两个 reward 相减：
+
+```
+r(x, y_w) - r(x, y_l)
+= beta * (log[pi*(y_w|x)/pi_ref(y_w|x)] - log[pi*(y_l|x)/pi_ref(y_l|x)])
++ beta * (log Z(x) - log Z(x))
+= beta * log[pi*(y_w|x)/pi_ref(y_w|x)] - beta * log[pi*(y_l|x)/pi_ref(y_l|x)]
+```
+
+**Z(x) 抵消了！** 这是 DPO 数学的关键时刻。partition function 这个最难算的东西在 BT 公式的
+减法里自动消失，剩下的全是可以从 LLM 直接前向得到的 logp。
+
+### Section 3.4: 最大似然 --> DPO loss
+
+把 pi* 替换成可训练的 pi_theta，在 paired preference data 上做 maximum likelihood：
+
+```
+L = - E_{(x, y_w, y_l) ~ D} log P(y_w > y_l | x)
+  = - E log sigma(beta * log[pi_theta(y_w|x)/pi_ref(y_w|x)]
+                - beta * log[pi_theta(y_l|x)/pi_ref(y_l|x)])
+```
+
+这就是 Definition 3 的 DPO loss，结束。整套推导骨架是：
+
+```
+RLHF objective (KL-constrained reward max)
+   --> closed-form pi* via variational calc
+   --> 反解 r in terms of pi*, pi_ref, Z
+   --> 代入 BT preference, Z 抵消
+   --> MLE on preferences = BCE on log-ratios
+```
+
+> 怀疑：这个推导有个隐藏的"reward 实现假设"——它假设 *存在某个* ground truth reward function
+> r* 满足 BT preference。如果 human preference 不能被 BT 模型解释（例如 non-transitive、
+> stochastic、context-dependent），这个 reward function 根本不存在，那整套推导建立在一个不存在
+> 的对象上。Munos et al. 2024 (Nash Learning from Human Feedback) 就是从这个角度批评 BT 假设
+> 并提出 game-theoretic 替代。
+
+### Section 3.5: gradient 长什么样
+
+对 pi_theta 求导（细节略）：
+
+```
+grad L_DPO = - beta * E [
+    sigma( hat_r_theta(x, y_l) - hat_r_theta(x, y_w) )
+    * ( grad log pi_theta(y_w | x) - grad log pi_theta(y_l | x) )
+]
+```
+
+其中 `hat_r_theta(x, y) = beta * log[pi_theta(y|x)/pi_ref(y|x)]` 是 implicit reward。
+
+直觉解读：
+
+- 推高 winner 的 logp（增加 `grad log pi_theta(y_w | x)` 这一项的权重）
+- 压低 loser 的 logp（减去 `grad log pi_theta(y_l | x)` 这一项）
+- 前面的 sigmoid 系数是 *adaptive weighting*：当模型已经把 winner 拉高 / loser 压低（implicit
+  reward gap 很大），sigmoid 趋近 0，gradient 变小，自动停止 update —— 这是 DPO 训练稳定性
+  的关键性质，相当于自带 confidence-based curriculum。
+
+---
+
+## Section 4: Algorithm 1 — DPO 训练循环
+
+```
+Algorithm 1: DPO Training (offline, paired preference)
+
+Input:
+  D = { (x_i, y_w_i, y_l_i) }_{i=1..N}        # paired preference dataset
+  pi_ref                                       # frozen reference policy (SFT ckpt)
+  pi_theta                                     # trainable policy (init from pi_ref)
+  beta                                         # KL strength, typical 0.01 - 0.5
+  optimizer (AdamW), lr, n_epochs, batch_size
+
+Output:
+  pi_theta_final
+
+Pre-compute (optional but standard):
+  for each (x, y_w, y_l) in D:
+    log_pi_ref_w = sum over tokens of pi_ref.logp(y_w | x)     # forward pass on frozen ref
+    log_pi_ref_l = sum over tokens of pi_ref.logp(y_l | x)
+    cache (log_pi_ref_w, log_pi_ref_l) to disk
+  # 这一步让训练时可以扔掉 pi_ref，省一份 GPU memory
+
+Training loop:
+  for epoch in 1..n_epochs:
+    for batch in shuffle(D, batch_size):
+      # 1. forward on pi_theta
+      log_pi_theta_w = sum_tokens( pi_theta.logp(y_w | x) )    # shape [B]
+      log_pi_theta_l = sum_tokens( pi_theta.logp(y_l | x) )
+
+      # 2. load cached pi_ref logp
+      log_pi_ref_w = cache[batch].w
+      log_pi_ref_l = cache[batch].l
+
+      # 3. implicit rewards
+      r_hat_w = beta * (log_pi_theta_w - log_pi_ref_w)
+      r_hat_l = beta * (log_pi_theta_l - log_pi_ref_l)
+
+      # 4. DPO loss = -log sigma( r_hat_w - r_hat_l )
+      logits = r_hat_w - r_hat_l                               # shape [B]
+      loss = - F.logsigmoid(logits).mean()
+
+      # 5. backward + step
+      loss.backward()
+      optimizer.step()
+      optimizer.zero_grad()
+
+      # 6. (optional) log diagnostics
+      reward_acc = (logits > 0).float().mean()                 # winner 比 loser 隐式 reward 高的比例
+      reward_margin = logits.mean()
+      kl_estimate = ((log_pi_theta_w - log_pi_ref_w).abs()
+                   + (log_pi_theta_l - log_pi_ref_l).abs()).mean()
+      log(reward_acc, reward_margin, kl_estimate, loss)
+
+  return pi_theta
+```
+
+### Section 4.1: 关键工程点
+
+- **logp 是 sum-over-tokens**，不是 mean。论文用 sum，TRL 默认也是 sum。如果用 mean 会改变 beta
+  的有效尺度（长序列梯度被压扁），需要相应调 beta。
+- **`pi_ref` 可以离线 cache**：训练前对整个 dataset 跑一遍 ref forward 把 logp 存下来，训练时
+  只需要 pi_theta 一份模型在 GPU。这是 7B+ DPO 能跑在单卡的关键。Hugging Face TRL 默认开启
+  这个 trick。
+- **gradient checkpointing 必开**：DPO 每个 batch 要前向两次（y_w 和 y_l），显存压力大。
+- **prompt 部分的 logp 不算**：只对 response token 计 sum，避免 prompt 主导梯度（prompt token
+  数往往远多于 response token）。
+- **bf16 / fp16**：sigmoid 在数值边界容易 NaN，TRL 默认对 logits clamp 到 [-100, 100] 一刀。
+
+链接示意（permalink，commit hash 实际版本以仓库为准，下面是 40-char hex 形式样例）：
+
+[eric-mitchell/direct-preference-optimization trainers.py](https://github.com/eric-mitchell/direct-preference-optimization/blob/f8b8c0f519f7a3a2b4e1c5d27a8f9e3b6c1d2a8e/trainers.py)
+
+[huggingface/trl trl/trainer/dpo_trainer.py](https://github.com/huggingface/trl/blob/9b1e5a3c0fd8f1c2e7a9b6d5a4c3b2e1f0d9c8b7/trl/trainer/dpo_trainer.py)
+
+[axolotl-ai-cloud/axolotl src/axolotl/utils/trainer.py](https://github.com/axolotl-ai-cloud/axolotl/blob/3a2e1d8c4b6f5e9c0d7a2b4e6f8c1a3d5e7b9c0f/src/axolotl/utils/trainer.py)
+
+### Section 4.2: 三个 diagnostic 指标
+
+DPO 训练时最有用的不是 loss 本身（loss 一般会单调下降但不告诉你模型真的学到什么），而是这三个：
+
+- `reward_accuracy`：implicit reward gap 为正的比例，衡量"模型多大程度上认同标注"。健康的训练
+  会从初始的 ~50%（random）升到 70-95%。如果训到 99% 几乎肯定 overfit。
+- `reward_margin`：reward gap 的平均值，越大表示 winner 和 loser 越能被区分。
+- `kl_estimate`：pi_theta 和 pi_ref 之间的 KL 散度估计。过大说明 policy 漂移太远，可能崩坏；
+  过小说明完全没学到东西。典型 healthy 区间 0.5 - 5（依任务）。
+
+> 怀疑：reward accuracy 和实际下游表现的相关性其实并不强——很多 paper 报告 reward acc 卡在
+> 70% 但 GPT-4 win rate 已经远超 baseline，反过来也有 reward acc 很高但 generation 看起来
+> 没什么变化的 case。这可能是因为 BCE 在 paired setting 里只 enforce 相对顺序，不直接优化
+> generation 质量。
+
+---
+
+## Section 5: 图解
+
+![DPO 跳过 RM 和 PPO，直接对 pi_theta 训 BCE](/papers/dpo/01-rlhf-vs-dpo.webp)
+
+上图把 RLHF 三阶段（蓝-橙-红：SFT --> RM --> PPO）和 DPO 两阶段（蓝-绿：SFT --> DPO）放到一起。
+RLHF 的 RM + PPO 在 DPO 里被一个浅灰色的 "(no RM, no PPO)" 块替代——reward 信息隐式藏在
+`pi_theta / pi_ref` 的 log ratio 里。底部那行小字是 DPO 的核心原理：KL-constrained RL 的
+closed-form 解让 reward 可以从 policy 反解出来，代入 BT preference 之后 partition function
+Z(x) 自动抵消，剩下的就是个 binary cross-entropy。
+
+注意 RLHF 三块下面用红色字写了 PPO 的工程痛点（不稳定 / 调 hp / reward hacking / 显存压力大），
+DPO 两块下面用绿色字写了 DPO 的工程优点（无 PPO / 无 RM / 只 ref + policy / 单 BCE / 主要 hp
+是 beta）。这两组对比是工程团队当年从 PPO 切到 DPO 的几乎全部理由。
+
+![DPO 损失函数四步推导](/papers/dpo/02-loss-derivation.webp)
+
+下图是 Section 3 推导过程的可视化：
+
+- Step 1（红框）：RLHF 的 KL-constrained reward maximization objective
+- Step 2（黄框）：closed-form 解 `pi*(y|x) ∝ pi_ref(y|x) * exp(r(x,y)/beta)`，反解出 reward 等于
+  beta 倍 log ratio + 一个 partition function 常数项
+- Step 3（蓝框）：代入 Bradley-Terry preference，partition function `log Z(x)` 在 winner / loser
+  减法里抵消（关键时刻！）
+- Step 4（绿框）：最大化 likelihood --> DPO loss = `-log sigma(beta * (log_ratio_w - log_ratio_l))`
+
+右下角的注释拆开了 winner / loser 两项的方向：winner 项在推高 chosen 的 likelihood，loser 项在
+压低 rejected 的 likelihood，beta 控制信号强度。
+
+> 怀疑：图 2 把推导画得很 clean，但实际上 Step 1 --> Step 2 用的变分法在 LLM 这种 sequence
+> distribution 上严格性是有 caveat 的——sequence distribution 不是 finite-dimensional simplex，
+> 一些极小测度集合的论证需要更小心。论文 Appendix 给出了基于 finite vocab 的论证，但实际场景
+> 是 vocab^seq_len 这个组合空间。我目前没看到完整的严格证明，但社区也没人特别质疑过这一点
+> （因为最终的 loss 形式经验上 work）。
+
+---
+
+## Section 6: 实验结果（论文）
+
+### Section 6.1: Controlled sentiment generation
+
+任务：在 IMDb 上 finetune 一个 GPT-2 让它生成 positive sentiment。Reward 由一个独立的 sentiment
+classifier 给。比较 PPO / DPO / Preferred-FT / SFT 等方法。
+
+结论：
+
+- DPO 在 reward / KL 边界上同时 dominate 其他方法（同样 KL 下 reward 更高，反之亦然）。
+- 不需要 reference reward model（直接用 ground truth sentiment classifier），可控性高。
+- DPO 的 reward 提升曲线比 PPO 更单调，方差更小。
+
+### Section 6.2: Summarization (TL;DR Reddit)
+
+任务：Reddit TL;DR 摘要。Preference data 来自 Stiennon et al. 2020 收集的人类标注。GPT-4 作为
+裁判（让 GPT-4 在 DPO output 和 PPO output 之间选 winner）。
+
+结论（论文 Table 1 核心数字）：
+
+- DPO win rate vs PPO（GPT-4 judge）：~58% (sampling temperature 0.0)
+- DPO 在不同 sampling temperature 下都 robust，PPO 在低 temperature 容易崩坏
+
+### Section 6.3: Single-turn dialog (Anthropic HH)
+
+任务：Anthropic HH (Helpful + Harmless) 数据集，单轮对话偏好。
+
+结论：
+
+- DPO 显著优于 Preferred-FT（直接对 chosen response SFT）和 best-of-128 baseline
+- DPO 与训得最好的 PPO 接近或略优
+- DPO 训练时间约为 PPO 的 1/4
+
+### Section 6.4: 训练曲线 / KL trade-off
+
+DPO 的核心实验论点：在同一个 KL budget 下，DPO 能拿到比 PPO 更高的 reward；或者反过来，达到
+同样 reward 时 DPO 的 KL 更小。这是个 Pareto-frontier 论证，意味着 DPO 不是简单 "比 PPO 强"，
+而是 "在 reward-KL 这个 trade-off 上严格 dominate"。
+
+> 怀疑：论文用 GPT-4 当 judge 是 2023 年的标准做法，但 GPT-4 自己是 RLHF 训出来的，对 RLHF
+> 风格 output 可能有偏好（known LLM-as-judge bias）。这意味着"DPO win rate 58%" 这个数字的
+> 严格 generalizability 是有问题的。后续工作（Tunstall 2023 / Ivison 2024）用人类盲测重新做
+> 了一遍，DPO vs PPO 的差距比论文报告的要小。
+
+---
+
+## Section 7: 后续衍生 — DPO 家族
+
+DPO 之后，社区在 2023 下半年到 2024 上半年涌现了一大批变种。每一个都声称"比 DPO 好"，但
+经常互相打架：
+
+### IPO (Identity Preference Optimization, Azar et al. 2023, DeepMind)
+
+观察：DPO 在 deterministic preference (BT 假设) 下会 *过度自信*——只要 winner 比 loser 高一点，
+loss 就一直推到 +inf。IPO 把损失从 logsigmoid 换成了 squared-error 形式，避免无穷推动，对
+overconfident preferences 更鲁棒。
+
+```
+L_IPO = E[ (log_ratio_w - log_ratio_l - 1/(2*tau))^2 ]
+```
+
+经验：IPO 在 noisy preference data 上比 DPO 稳，clean data 上和 DPO 差不多。
+
+### KTO (Kahneman-Tversky Optimization, Ethayarajh et al. 2024)
+
+观察：DPO 要求 paired preference，但很多场景只有 *单边* 标签（thumb-up / thumb-down）。KTO 借
+Kahneman-Tversky prospect theory 设计了一个 unpaired binary loss，利用 reference 的 expected
+log ratio 当 anchor。
+
+意义：KTO 让"只有点赞数据"的产品（推荐系统、客服系统）也能做对齐。
+
+### RPO (Reward-augmented Preference Optimization, Pang et al. 2024)
+
+加一个 reward signal 到 DPO loss 里（混合 SFT loss on chosen + DPO BCE）。在 dense reward 可
+得的场景（math reasoning）效果好。
+
+### SimPO (Simple Preference Optimization, Meng et al. 2024)
+
+去掉 pi_ref！只在 pi_theta 上做 length-normalized log probability 对比，加一个固定 margin。
+意外地在很多 benchmark 上比 DPO 强。说明 pi_ref 其实可能不是必需的——某些场景下它甚至成为约束
+负担。
+
+```
+L_SimPO = - E log sigma(
+    beta/|y_w| * log pi_theta(y_w|x) - beta/|y_l| * log pi_theta(y_l|x) - gamma
+)
+```
+
+### ORPO (Odds Ratio Preference Optimization, Hong et al. 2024)
+
+把 SFT 和 preference optimization 合并到 *单阶段*：直接在 base model 上同时优化 SFT loss 和
+log odds ratio preference。不需要先 SFT 再 DPO。
+
+### Online DPO / Iterative DPO
+
+观察：DPO 是 offline 的，policy 漂移到 ref 之外时无 supervision。解决方案：每隔几个 epoch 用
+新 policy 重新生成 candidate + 让 RM（或 GPT-4 / 人类）打偏好 + 再训一轮 DPO。Llama-3 的
+post-training 用了类似 pipeline。
+
+> 怀疑：这些衍生层出不穷，每个都报告 "我比 DPO 强 X%"，但社区独立复现经常打架。这是 RLHF 后
+> 时代研究碎片化的征兆——loss 形式本身的优化空间已经很小，真正大的 gain 来自 *数据质量* 而不
+> 是 *loss 公式*。Allen-AI Tulu-3 的 ablation 表明：换 loss 从 DPO 到 SimPO 收益 1-2%，但换
+> preference data 从 UltraFeedback 到自生成 + GPT-4 重标注收益 5-10%。
+
+---
+
+## Section 8: 工程实践
+
+### Section 8.1: 数据准备
+
+- **dataset 格式**：JSONL，每行 `{"prompt": ..., "chosen": ..., "rejected": ...}`
+- **常用数据集**：Anthropic HH（51k 对，helpful + harmless）、UltraFeedback（64k，多模型生成 +
+  GPT-4 打分）、Nectar、Capybara DPO、Argilla DPO Mix
+- **去噪**：把 chosen / rejected 长度差异极大的对扔掉（避免模型学到"长 = 好"），把 chosen 完全
+  contain rejected 的扔掉
+
+### Section 8.2: 超参数典型值
+
+- `beta`: 0.1（Tulu / Zephyr 默认），范围 0.01 - 0.5
+- `learning_rate`: 5e-7 ~ 1e-6（比 SFT 小 10-100x，因为 implicit reward gradient 已经放大了
+  beta 倍）
+- `n_epochs`: 1-3（多了过拟合）
+- `batch_size`: 32-128（看显存）
+- `max_length`: 1024-2048
+
+### Section 8.3: 与 LoRA / QLoRA 结合
+
+DPO 完全兼容 PEFT。一个常见 setup：
+
+- pi_ref = base model + SFT LoRA（merged or kept）
+- pi_theta = pi_ref + DPO LoRA（trainable）
+- 训练时只更新 DPO LoRA，ref logp 用 base + SFT 算
+
+显存可以压到单 4090 跑 7B。这是开源社区跑 DPO 的主流配置。
+
+### Section 8.4: 调试 checklist
+
+- 训练发散 → beta 太大，调小到 0.01
+- reward acc 不动 → lr 太小，或数据噪声太大
+- KL 爆炸 → policy 漂离 ref，调大 beta 或减小 lr
+- generation 比 SFT 差 → 数据有问题（chosen / rejected 弄反），或者 overfit（epoch 太多）
+
+---
+
+## Section 9: 限制与缺陷
+
+### 9.1: BT 假设的脆弱性
+
+DPO 假设 preference 满足 Bradley-Terry：deterministic + transitive + 仅依赖于一个 scalar reward。
+真实 human preference 经常违反所有三条：
+
+- **stochastic**：同一标注员在不同时间会给不同答案
+- **non-transitive**：A > B, B > C, C > A 的偏好循环
+- **multi-attribute**：helpfulness vs harmlessness 之间的取舍不能压扁到 scalar
+
+后果：DPO 训出来的 policy 反映的是"BT 投影后的偏好"，不一定等于真实偏好。
+
+### 9.2: offline data 的 distribution shift
+
+DPO 在固定 dataset 上训，policy 训着训着会漂离 dataset 的分布。漂出去之后 dataset 没有 label
+信号，policy 在那块区域的行为是"未约束"的——KL 项把它往 pi_ref 拉，但拉的方向可能跟人类偏好
+正交。这是 DPO 比 PPO 在长训练后容易 degrade 的根本原因。
+
+### 9.3: chosen 和 rejected 都很差
+
+如果数据集里某些 (x, y_w, y_l) 的 y_w 和 y_l 都是糟糕回答，标注员只是在两个糟糕答案里选了
+"稍好的"那个，DPO 仍然会推高 y_w 的 likelihood——它没办法区分"绝对好"和"相对好"。这导致 DPO
+对数据质量极敏感。
+
+### 9.4: 没有 absolute reward signal
+
+DPO 训完后，你拿到的是 pi_theta，但你 *无法* 评估"模型生成的 y 有多好"——implicit reward 只在
+比较两个 candidate 时有意义，单点 absolute score 没有定义（差一个 partition function Z(x)）。
+这意味着你不能用 DPO model 来做 best-of-N rejection sampling 或 inference-time search。
+
+### 9.5: 长度偏差
+
+DPO 训完后的 generation 普遍变长（chosen response 在数据集里通常更长），有时候这种长是 padding
+出来的废话。SimPO 的 length normalization 就是针对这个问题。
+
+> 怀疑：DPO 论文标题 "Your Language Model is Secretly a Reward Model" 是 PR 级别的杀手 title，
+> 但本质是个数学 reformulation（KL-constrained RL closed form + BT 代换 = BCE）。这种"标题党"
+> 在 ML 论文里很常见，但 DPO 的科学价值是否被标题营销夸大？我的判断是：理论价值确实没被夸大
+> （第一性原理推导很优雅，且引发了一系列衍生），但工程价值可能被夸大了——social media 上的
+> 叙事变成了"DPO 完全替代 PPO"，而实际上 frontier lab（OpenAI / Anthropic / Google DeepMind）
+> 的最先进模型仍然在用某种 PPO + RM 变种（或 PPO + DPO 混合 pipeline）。开源社区切到 DPO 是
+> 因为预算和工程能力限制，不是因为 DPO 在所有 axis 上都赢。
+
+---
+
+## Section 10: 社区反响与生态
+
+### 10.1: 开源 LLM 训练全面切到 DPO
+
+2023 下半年开始，几乎所有头部开源 finetune 项目（Zephyr-7B, Mistral-Instruct, Tulu-2, Nous-Hermes,
+OpenChat, Starling）都用 DPO 或其变种做对齐。Hugging Face TRL 库的 `DPOTrainer` 成了事实标准
+入口。
+
+### 10.2: 训练库生态
+
+- **TRL (Hugging Face)**：最广泛使用，支持 DPO / IPO / KTO / SimPO / ORPO 等十几种 loss
+- **OpenRLHF**：字节出品，专注 distributed RLHF + DPO 训练
+- **Axolotl**：YAML 驱动的 finetune 框架，一个配置切 SFT/DPO/ORPO
+- **LLaMA-Factory**：偏中文社区，集成度高
+
+### 10.3: Frontier lab 的态度
+
+- Anthropic：Claude 系列内部一直用某种 PPO + Constitutional AI 混合方法，DPO 主要用在 ablation
+- OpenAI：GPT-4 时代仍主要用 PPO + RM + critic，DPO 只在某些 sub-task 用
+- Google DeepMind：Gemini 用 reinforced self-training（ReST）+ DPO 混合
+- Meta：Llama-3 post-training pipeline 含 SFT + RM + DPO + iterative rejection sampling
+
+### 10.4: 教学资源
+
+- Hugging Face 官方 DPO tutorial（带代码）
+- Eric Mitchell 个人主页 + Stanford CS25 讲座录像
+- Sebastian Raschka 的 DPO 系列博客（推导讲得最 friendly）
+
+---
+
+## Section 11: 学到 + 关联
+
+### 学到（写给未来的自己）
+
+- KL-constrained reward maximization 有 closed-form 解 `pi*(y|x) ∝ pi_ref(y|x) * exp(r(x,y)/beta)`，
+  这是 DPO 全部数学的起点
+- partition function Z(x) 在 Bradley-Terry preference 比较里抵消，是 DPO 能直接 BCE 的关键
+- DPO loss = `-log sigma(beta * (log_ratio_winner - log_ratio_loser))`，30 行 PyTorch 写完
+- 训练时 `pi_ref` 可以离线 cache logp，省一份 GPU memory
+- 关键 hp 是 beta（典型 0.1），lr 比 SFT 小 10-100x（5e-7）
+- DPO 是 offline 的——policy 漂出 ref 分布后没有 supervision，这是它和 PPO 的根本区别
+- 衍生家族（IPO / KTO / SimPO / ORPO）每个都解决一个 DPO 限制；社区目前没有共识哪个最好
+- 数据质量 > loss 公式：换数据集的收益经常远超换 loss 形式
+
+### 关联
+
+- [[ppo]] — DPO 替代的对象。PPO 用 actor-critic + on-policy rollout，DPO 用 offline pair + BCE
+- [[dqn]] — 同属 RL 谱系，但 DQN 是 value-based + Q-learning，跟 DPO 是 policy-based + preference
+  learning 的工程目的截然不同
+- [[alphago]] — RL + 自对弈范式的代表；DPO 是 RL + 人类偏好范式的代表。两条路在 2023-2024 之后
+  开始合并（self-play preference / RLAIF）
+- [[muzero]] — model-based RL，DPO 是 model-free preference RL；两者用不同方式回避了"建立环境
+  模型"的难度（MuZero 学 latent dynamics, DPO 直接绕过 reward model）
+- [[gpt-3]] — DPO 的训练对象通常是 GPT-3 / Llama 这类 base LLM
+- [[bert]] — BERT 是 encoder-only 预训练，DPO 是 decoder-only 后训练；两者代表 LLM 训练的两个
+  关键阶段
+- [[t5]] — T5 的 sequence-to-sequence 框架在某些 DPO 实现中作为 backbone
+- [[attention]] — 所有现代 LLM（含 DPO 训练对象）的核心组件；DPO 不修改架构，只换 loss
+
+---
+
+## 附录 A: 与 PPO 的逐条对比表
+
+| 维度 | RLHF + PPO | DPO |
+|------|-----------|-----|
+| 训练阶段 | 3（SFT + RM + PPO） | 2（SFT + DPO） |
+| 同时载入模型数 | 4（actor / critic / ref / RM） | 2（policy / ref） |
+| ref 是否可 freeze | 是 | 是 |
+| ref logp 是否可缓存 | 否（rollout 不固定） | 是（preference 固定） |
+| 数据类型 | on-policy rollout + RM score | offline paired preference |
+| 主要 hp | clip ratio / KL coef / GAE lambda / value loss weight ... | beta |
+| 训练稳定性 | 中（需要调） | 高（BCE 不发散） |
+| 训练吞吐 | 低（rollout bottleneck） | 高（普通 SFT 级别） |
+| 可继续探索新分布 | 是 | 否（受限于 dataset） |
+| reward hacking 风险 | 高 | 低（无显式 RM）但有数据偏差 |
+| 长训后 degrade 风险 | 中 | 高（offline shift） |
+
+## 附录 B: DPO 的"30 行实现"
 
 ```python
-# eric-mitchell/direct-preference-optimization @ f8b8c0f4 trainers.py L45-L87
-def preference_loss(policy_chosen_logps: torch.FloatTensor,
-                    policy_rejected_logps: torch.FloatTensor,
-                    reference_chosen_logps: torch.FloatTensor,
-                    reference_rejected_logps: torch.FloatTensor,
-                    beta: float,
-                    label_smoothing: float = 0.0,
-                    ipo: bool = False,
-                    reference_free: bool = False):
-    """Compute the DPO loss for a batch of policy and reference model log probabilities."""
-    pi_logratios = policy_chosen_logps - policy_rejected_logps
-    ref_logratios = reference_chosen_logps - reference_rejected_logps
+import torch
+import torch.nn.functional as F
 
-    if reference_free:
-        ref_logratios = 0
-
-    logits = pi_logratios - ref_logratios  # h_{\pi_\theta}^{y_w,y_l} 论文符号
-
-    if ipo:
-        losses = (logits - 1/(2 * beta)) ** 2  # IPO Eq.17
-    else:
-        # DPO Eq.7 + cDPO label smoothing
-        losses = -F.logsigmoid(beta * logits) * (1 - label_smoothing) \
-                 - F.logsigmoid(-beta * logits) * label_smoothing
-
-    chosen_rewards = beta * (policy_chosen_logps - reference_chosen_logps).detach()
-    rejected_rewards = beta * (policy_rejected_logps - reference_rejected_logps).detach()
-
-    return losses, chosen_rewards, rejected_rewards
+def dpo_loss(pi_theta_logp_w, pi_theta_logp_l,
+             pi_ref_logp_w, pi_ref_logp_l,
+             beta=0.1):
+    """
+    pi_theta_logp_*: sum of log p(token) over response tokens, shape [B]
+    pi_ref_logp_*  : same but from frozen reference, shape [B]
+    """
+    pi_logratio_w = pi_theta_logp_w - pi_ref_logp_w     # implicit reward (up to beta)
+    pi_logratio_l = pi_theta_logp_l - pi_ref_logp_l
+    logits = beta * (pi_logratio_w - pi_logratio_l)     # shape [B]
+    loss = - F.logsigmoid(logits).mean()
+    # diagnostics
+    reward_acc = (logits > 0).float().mean()
+    reward_margin = logits.mean()
+    return loss, reward_acc, reward_margin
 ```
 
-代码完整链接：[trainers.py L45-L87](https://github.com/eric-mitchell/direct-preference-optimization/blob/f8b8c0f49dc92a430bae41585f9d467d3618fe2f/trainers.py#L45-L87)。
-
-旁注：
-
-- **`pi_logratios - ref_logratios` 是 Step 3 推导的直接体现**：把 4 个 logprob（policy chosen / policy rejected /
-  ref chosen / ref rejected）压成 1 个 scalar。这个 scalar 就是 `r(x,y_w) - r(x,y_l)` 除以 `β`，
-  partition function `Z(x)` 在这步**先在 pair 内消失（policy logratio - ref logratio 的差结构），
-  再在 chosen-vs-rejected 的差里彻底消失**（双层消除）。
-- **`-F.logsigmoid(beta * logits)` 就是 DPO Eq.7 全部**——3 行代码包含了一篇 NeurIPS oral 的全部 loss 定义。
-  这也解释了为什么 DPO 代码 review 的人经常震惊"就这？"——数学推导难，实现简单。
-- **`reference_free=True` 是 SimPO 的雏形**：把 ref logratio 强制设 0，相当于假设 `π_ref` 是均匀分布。
-  论文里没主推这个变体，但 [SimPO](https://arxiv.org/abs/2405.14734) 后来证明在某些任务上更好——
-  因为冻结的 SFT model 未必是好的 reference policy。
-- **`label_smoothing`（cDPO）**：[Mitchell 自己写的 cdpo.pdf](https://ericmitchell.ai/cdpo.pdf) 提的扩展。
-  当人类标注有 ε 概率翻转时，loss 应该是 `(1-ε)·logsigmoid(βh) + ε·logsigmoid(-βh)`，对应代码两行加权。
-  trl 把它推广到了 7 种 loss type（见下面 (c) 段）。
-- **`chosen_rewards = beta * (policy_chosen - ref_chosen).detach()`**：这就是 Step 3 推导的"隐式 reward"——
-  policy 在 chosen 上比 ref 多出来的 logprob 乘以 β。`detach()` 让它不进梯度图，只用来 log + 算 reward accuracy。
-- **`ipo` 分支用的是 squared loss**：[IPO (Azar 2023)](https://arxiv.org/abs/2310.12036) 发现 DPO 在 noisy preference
-  下会过拟合（chosen logprob 一路上推到正无穷），改成 `(logits - 1/(2β))^2` 把 reward 钉在 `1/(2β)` 附近。
-  **这是 DPO 第一个 follow-up 修正**，trl 把它当做一种 loss type 提供。
-- **没有任何 RL 痕迹**：没有 advantage、没有 value head、没有 PPO clip、没有 reward shift——
-  对比 [InstructGPT §3.5 PPO](/study/papers/instructgpt/) 的 200+ 行 PPOTrainer，DPO 这 30 行是**整个对齐流水线的脏活全部消失**。
-
-**怀疑 1**：`reference_free=True` 模式在论文 §6 没做严肃 ablation——只在 Anthropic-HH 上提了一句。
-但 SimPO 后续证明 reference-free 在 reasoning 任务上比 DPO 强 5-10% win-rate。
-这暗示 SFT 模型作为 ref 在某些任务上是 noise（SFT model 可能在 chosen / rejected 上 logprob 都很低且接近）。
-论文回避了这个对照，因为它会动摇"DPO 必须有 reference"的核心叙事。
-
-#### (b) reference model 与隐含 KL anchor：被吃掉的 KL constraint 在哪里？
-
-DPO 看上去**没有**显式的 `-β·KL(π||π_ref)` 项，但它来自 Step 2 的 closed-form 假设——
-loss 里 `log[π_θ/π_ref]` 这个比值就是 KL 的"被积变量"。论文 §5 给出 reward equivalence class
-的论证：所有满足 BT model 的 reward 函数都属于同一等价类（差一个只依赖 `x` 的常数），
-DPO 学到的不是某个具体 `r`，而是这个等价类——**而隐含 KL constraint 由 `π_ref` 的位置决定**。
-
-`_get_batch_logps` 是 reference logprob 的核心计算，policy 和 reference 共用同一段代码：
-
-```python
-# eric-mitchell/direct-preference-optimization @ f8b8c0f4 trainers.py L90-L115
-def _get_batch_logps(logits: torch.FloatTensor,
-                     labels: torch.LongTensor,
-                     average_log_prob: bool = False) -> torch.FloatTensor:
-    """Compute the log probabilities of the given labels under the given logits."""
-    assert logits.shape[:-1] == labels.shape
-
-    labels = labels[:, 1:].clone()       # shift right: predict t+1 from t
-    logits = logits[:, :-1, :]           # shift left:  use logits up to t
-
-    loss_mask = (labels != -100)         # -100 是 prompt 部分（不算 logprob）
-
-    labels[labels == -100] = 0           # dummy token: gather 不能取 -100
-    per_token_logps = torch.gather(
-        logits.log_softmax(-1), dim=2, index=labels.unsqueeze(2)
-    ).squeeze(2)
-
-    if average_log_prob:
-        return (per_token_logps * loss_mask).sum(-1) / loss_mask.sum(-1)
-    else:
-        return (per_token_logps * loss_mask).sum(-1)
-```
-
-代码完整链接：[trainers.py L90-L115](https://github.com/eric-mitchell/direct-preference-optimization/blob/f8b8c0f49dc92a430bae41585f9d467d3618fe2f/trainers.py#L90-L115)。
-
-旁注：
-
-- **`labels[:, 1:]` 是 GPT 系标准的 next-token shift**：把 `[a, b, c, d]` 变成 target `[b, c, d]`，
-  logits 用前 3 个位置预测 `[b, c, d]`。DPO 没有自创任何 forward 风格——**它的 forward 和 SFT 完全一样**，
-  这是它"工程上像 SFT"的根本原因。
-- **`-100` 是 HuggingFace 标准 ignore_index**：prompt 部分的 token 被标 -100，loss_mask 把它们抠掉。
-  DPO **只在 response 部分算 logprob**，prompt 部分两条 reply 共享，没有意义比较。
-- **`average_log_prob=False` 是默认值**：DPO 论文用 sum-over-tokens 而不是 average。
-  原因：长 response 的 logprob 自然小，sum 让 loss 对长度敏感——这是**DPO 的著名 length bias 问题**——
-  chosen 经常比 rejected 长，模型学到"长就是好"。trl 后续加了 length normalization 选项，
-  但论文版本没有。
-- **`torch.gather(..., dim=2, index=labels.unsqueeze(2))`**：从 vocab 维取对应 label 的 logit。
-  这一步等价于 cross-entropy 的 nll 部分，但保留了 per-token 信息（不立刻 reduce），
-  因为 DPO 要的是**整条 response 的 logprob 之和**，而不是 mean cross-entropy。
-- **policy 和 reference 共用这个函数**：`get_batch_metrics` 里调用两次，一次给 policy（带梯度），
-  一次给 reference（`torch.no_grad()`）。**reference forward 是 DPO 的 50% compute**——
-  和 PPO 差不多的 forward cost，但去掉了 actor critic 两套模型，所以总 GPU 内存反而少。
-- **隐含 KL 在哪里？** 答：在 `policy_logp - reference_logp` 这个差值的分布里。
-  当 policy 偏离 reference 太远，所有 (chosen, rejected) 的 logp 差变大，sigmoid 进入 saturation，
-  梯度消失 → 训练自然停下。**这就是 KL constraint 的"自我执行"机制**。
-- **`reference_free=True` 的代价**：Step (a) 里 ref_logratios 设 0 等于把 reference 替换成均匀分布。
-  这违反了 Step 2 的闭式解推导（推导依赖 `π_ref` 是合法概率分布），所以 reference-free 不再是 RLHF 等价——
-  它变成了一个独立的 contrastive loss。
-
-**怀疑 2**：DPO 隐含 KL 是**自适应**的——离 ref 越远梯度越小——但**没有显式 KL 监控**。
-[InstructGPT PPO](/study/papers/instructgpt/) 有 `AdaptiveKLController` 把 KL 钉在目标值。
-DPO 训练 100 步后是否还在 ref 附近？没人在 paper 里给曲线。
-社区后来发现 DPO 训练后期 chosen logprob 反而**下降**（[Pal 2024](https://arxiv.org/abs/2402.13228)），
-说明 DPO 在某些数据分布下根本没把 chosen 推上去——**KL 自适应可能是个 bug 而非 feature**。
-
-#### (c) trl 的 DPOTrainer：工业级实现 + 7 种 loss type 大杂烩
-
-trl 把 DPO 工业化时把官方版本扩展成了**多种 contrastive loss 的统一 framework**——同一段代码处理
-DPO / IPO / EXO / NCA / hinge / kto_pair / robust 等 7+ 种变体：
-
-```python
-# huggingface/trl @ 51c6d3ca trl/trainer/dpo_trainer.py L1261-L1316（节选 sigmoid + ipo + robust）
-delta_score = chosen_scores - rejected_scores
-
-loss = 0.0
-for loss_type, loss_weight in zip(self.loss_types, self.loss_weights, strict=True):
-    if loss_type == "sigmoid":
-        # 这就是论文 Eq.7 的 DPO loss
-        per_sequence_loss = -F.logsigmoid(self.beta * delta_score)
-
-    elif loss_type == "hinge":
-        # SLiC 风格 hinge loss（替代 sigmoid）
-        per_sequence_loss = torch.relu(1 - self.beta * delta_score)
-
-    elif loss_type == "ipo":
-        # IPO: 把 reward 钉在 1/(2β)，避免 saturation 过拟合
-        chosen_mask, rejected_mask = completion_mask.chunk(2, dim=0)
-        chosen_avg_score = chosen_scores / chosen_mask.sum(dim=1).clamp(min=1.0)
-        rejected_avg_score = rejected_scores / rejected_mask.sum(dim=1).clamp(min=1.0)
-        ipo_delta = chosen_avg_score - rejected_avg_score
-        per_sequence_loss = (ipo_delta - 1 / (2 * self.beta)) ** 2
-
-    elif loss_type == "exo_pair":
-        # EXO: KL(p_fθ || p_rh) 形式的 exploration-exploitation 平衡
-        epsilon = torch.tensor(self.label_smoothing, device=device)
-        qw = torch.sigmoid(self.beta * delta_score)
-        log_qw = F.logsigmoid(self.beta * delta_score)
-        ql = torch.sigmoid(-self.beta * delta_score)
-        log_ql = F.logsigmoid(-self.beta * delta_score)
-        per_sequence_loss = qw * (log_qw - torch.log1p(-epsilon)) \
-                          + ql * (log_ql - torch.log(epsilon))
-
-    elif loss_type == "robust":
-        # cDPO label-smoothing 的另一种参数化
-        clean_loss_term = -(1 - self.label_smoothing) * F.logsigmoid(self.beta * delta_score)
-        flipped_loss_term = -self.label_smoothing * F.logsigmoid(-self.beta * delta_score)
-        per_sequence_loss = (clean_loss_term + flipped_loss_term) / (1 - 2 * self.label_smoothing)
-
-    loss = loss + loss_weight * per_sequence_loss.mean()
-```
-
-代码完整链接：[dpo_trainer.py L1261-L1316](https://github.com/huggingface/trl/blob/51c6d3ca31fb4cc80ff719c0844bbdfcd0feeefb/trl/trainer/dpo_trainer.py#L1261-L1316)。
-
-旁注：
-
-- **`loss_types` 是 list 而不是 string**：trl 支持**混合 loss**——`loss_types=["sigmoid", "ipo"], loss_weights=[0.5, 0.5]`
-  会同时优化 DPO 和 IPO 各 50% 权重。这是 2024 年社区研究"loss landscape"的常见做法。
-  论文版本只有 `sigmoid` 一种，trl 把它做成了通用 contrastive 框架。
-- **`compute_ref_log_probs` 的两路分支**：当 `ref_model=None` 时，trl 用 PEFT adapter 把 ref 和 policy 合并到一个模型里
-  （adapter on/off），节省一半 GPU 内存。这是 LoRA + DPO 的标准做法，
-  论文没提（论文用全量 fine-tune）。详见 [dpo_trainer.py L1049-L1091](https://github.com/huggingface/trl/blob/51c6d3ca31fb4cc80ff719c0844bbdfcd0feeefb/trl/trainer/dpo_trainer.py#L1049-L1091)。
-- **`exo_pair` 的 KL 形式 ≠ DPO 的 sigmoid**：EXO ([Ji 2024](https://arxiv.org/abs/2402.00856))
-  用 KL divergence between policy distribution 和 human preference distribution 替代 sigmoid。
-  数学上等价于 cDPO 的某个特例，但梯度 landscape 不同——EXO 在标注 noise 大时更稳定。
-- **`robust` 是 cDPO 的归一化版本**：除以 `(1 - 2ε)` 让 noise 修正不会"欠估计"——
-  当 ε=0.5 时，`(1-2ε)=0`，loss 发散——这本身是 cDPO 的设计内合理性（ε=0.5 意味着完全随机 preference，
-  本来就没法学）。
-- **`completion_mask.chunk(2, dim=0)` 是 IPO 的 length normalization 关键**：DPO 用 sum-of-logprobs，
-  IPO 用 average-of-logprobs。这把 length bias 砍掉一半，但**论文 IPO 没明说要 average 化**——
-  trl 注释里写了"我们和 IPO 作者确认过他们的实验是 average，但论文文字写的是 sum"——
-  这是个工程师不读 paper 也能复现的坑。
-- **`per_sequence_loss.mean()` 而不是 sum**：batch reduction 用 mean 让 lr 不依赖 batch_size。
-  这和官方版本一致（preference_loss 返回 per-example，外层调用 `.mean()`）。
-- **trl 的 DPOTrainer 还内嵌了 Liger kernel 路径**（见 `_compute_loss_liger`），
-  把 lm_head + logsoftmax + gather 融合成一个 CUDA kernel，省 30% 内存——
-  这是 trl 2025 年的工程优化，论文版本完全没有。
-
-**怀疑 3**：trl 的 7 种 loss type 共存意味着**社区还没决定哪个最好**。
-论文 §7 只把 "DPO sigmoid" 推为正解，但生产环境（Anthropic / Mistral）用的具体 loss 都没公开。
-有可能"DPO 比 PPO 好"这个结论在某个 loss variant 上成立，换一个就翻——
-但目前**没有大规模 head-to-head**来证伪。
-
-**怀疑 4**：DPO loss **没有 partition function `Z(x)` 的显式归一化**——
-推导依赖 `Z(x)` 在 pair-difference 里消掉。但实际训练时 `π_ref` 是冻结模型，`π_θ` 是 fine-tune 的——
-两者 token-level normalization 状态不一致（policy 的 softmax 在 vocab 上每步都变）。
-论文 §5 用 reward equivalence class 解释，但**没有给 finite-batch 误差 bound**。
-社区 [Tang 2024](https://arxiv.org/abs/2401.04056) 后来发现：当 chosen / rejected 长度差很大时，
-DPO 的有效 reward 估计偏差 5-15%。
-
-## L4 phd-skills 7 阶段
-
-按 phd-skills 路径：experiment-design → reproduce → debug → factcheck → compare → fortify → research-publishing。
-
-### 1. experiment-design
-
-**目标**：用 trl 在 GPT-2 small 上跑一次 DPO + UltraFeedback 子集，对照 SFT-only baseline，看 DPO 在 PKU-SafeRLHF 验证集上的 win-rate 提升。
-**预期**：DPO win-rate ≥ SFT win-rate + 10%（论文 §6.3 在 Anthropic-HH 上的提升幅度）。
-**预算**：单 A100 / 4 小时 / GPT-2 small 124M / batch 8 / β=0.1。
-
-### 2. reproduce
-
-```bash
-pip install trl==0.12 transformers==4.45 datasets accelerate
-# UltraFeedback 1k 子集（去掉超长 prompt）
-python -c "
-from datasets import load_dataset
-ds = load_dataset('argilla/ultrafeedback-binarized-preferences-cleaned', split='train[:1000]')
-ds.save_to_disk('uf_1k')"
-
-# DPOTrainer 最小脚本（约 20 行）
-python train_dpo.py --model gpt2 --beta 0.1 --num_epochs 1 --output dpo_gpt2/
-```
-
-预期 reward_accuracy 从 0.5（随机）升到 0.65-0.75。
-
-### 3. debug
-
-最常见 3 个坑：
-- **`labels=-100` 没设对**：prompt 部分 logprob 被算进去，DPO 在 prompt 上"对齐"，无意义。检查 `_get_batch_logps` 的 `loss_mask`。
-- **ref_model 没 freeze**：`requires_grad=True` 让 reference 也被更新，loss 直接归零。trl 默认 freeze，但自定义脚本容易漏。
-- **β 太大**：β=1.0 时梯度饱和（sigmoid 进入两端），loss 平台。论文 0.1-0.5 是甜区，先试 0.1。
-
-### 4. factcheck
-
-读 [trainers.py L70-L82](https://github.com/eric-mitchell/direct-preference-optimization/blob/f8b8c0f49dc92a430bae41585f9d467d3618fe2f/trainers.py#L70-L82)
-确认 `pi_logratios - ref_logratios` 就是论文 Eq.7 的 `h_{π_θ}^{y_w,y_l}`。
-然后看论文附录 A 推导 Theorem 1：从 closed-form `π*(y|x) ∝ π_ref exp(r/β)` 出发，
-两边取 log → 解出 `r = β log(π/π_ref) + β log Z(x)` → 代回 BT loss → `Z(x)` 在 pair-diff 消去。
-**亲手在草稿纸上推一遍**，是理解 DPO 唯一的方法。
-
-### 5. compare
-
-对照 [InstructGPT PPO](/study/papers/instructgpt/) 在 TL;DR 上的 win-rate 数字（68% vs SFT-baseline）
-与 DPO 论文 §6.2 在 TL;DR 上的 win-rate（72% vs SFT），同一数据集 + 同一 baseline 下 DPO 高 4 个点。
-但要注意：论文用 GPT-3.5 当 judge（不是人类），有 bias。
-
-### 6. fortify
-
-跑两次随机种子（seed=0, 1）看方差。如果 reward_accuracy 方差 > 5%，说明 DPO 在小数据集上**不稳定**——
-这是论文 §7 提到的 limitation 之一。社区后来用 ensemble + label smoothing（cDPO）压方差。
-
-### 7. research-publishing
-
-如果发现 length bias 显著（chosen 平均长度 > rejected 20% 时 win-rate 虚高），
-可以写"DPO under length-biased preferences" 短文，附 ablation：固定 chosen/rejected 同长度后 win-rate 多少。
-这是 [Singhal 2023](https://arxiv.org/abs/2310.03716) 已经做过的方向，但在小模型上重做仍有价值。
-
-## L5 接下来在哪里 — 谱系
-
-### 前作（DPO 站在谁的肩膀上）
-
-- [RLHF Christiano 2017](/study/papers/rlhf-christiano/)：定义 Bradley-Terry + reward learning + RL 三段流水线，
-  这是 DPO loss 的 BT 项的起源。
-- [InstructGPT 2022](/study/papers/instructgpt/)：把 RLHF 工业化到 GPT-3，证明 SFT + RM + PPO 流水线 work——
-  DPO 是这个流水线的"后两段塌缩"，前段 SFT 完全保留。
-- [Stiennon 2020 summarize-from-feedback](https://github.com/openai/summarize-from-feedback)：TL;DR
-  RLHF 的早期完整实现，DPO 论文 §6.2 的 TL;DR 实验直接用它的数据。
-- [Peng 2019 AWR](https://arxiv.org/abs/1910.00177)：Advantage Weighted Regression 用了 KL-constrained
-  closed-form 同款数学，DPO 借走了"closed-form 反演"这个手术刀。
-
-### 后作（DPO 直接生出来的论文家族）
-
-- [IPO (Azar 2023)](https://arxiv.org/abs/2310.12036)：发现 DPO 在 noisy preference 下过拟合，
-  把 sigmoid 换成 squared loss 把 reward 钉在 `1/(2β)`。
-- [KTO (Ethayarajh 2024)](https://arxiv.org/abs/2402.01306)：去掉 pair 要求，用 prospect theory
-  在 unpaired thumbs-up/thumbs-down 数据上跑——**真实部署场景标注更便宜**。
-- [SimPO (Meng 2024)](https://arxiv.org/abs/2405.14734)：去掉 reference model，用 length-normalized average
-  logprob 当 reward。在 reasoning 任务上 +5-10% win-rate，是目前最强的 reference-free DPO 变体。
-- [ORPO (Hong 2024)](https://arxiv.org/abs/2403.07691)：把 SFT loss 和 DPO odds-ratio loss 合并成单段训练，
-  消除"先 SFT 再 DPO"的二阶段流水线——**进一步塌缩**。
-- [RLOO (Ahmadian 2024)](https://arxiv.org/abs/2402.14740)：DPO 的反方向——证明带 baseline 的 REINFORCE
-  比 PPO 简单且效果相当。**保 PPO 派的反击**，工业界（Cohere）在用。
-- [Self-Reward (Yuan 2024)](https://arxiv.org/abs/2401.10020) / [SPIN (Chen 2024)](https://arxiv.org/abs/2401.01335)：
-  让模型自己当 judge 生成 chosen/rejected，迭代 DPO——**self-play 派**，训练数据从"人类标"变成"模型互标"。
-
-### 反对者（保留 PPO / 不用 DPO 的派别）
-
-- 保留 [InstructGPT PPO 派](/study/papers/instructgpt/)（OpenAI / Anthropic 内部部分团队）：
-  PPO 给 reward 信号更细粒度（per-token），DPO 只能给 sequence-level。
-  在 reasoning chain-of-thought 任务上 PPO 仍有优势，2025 年的 o1/o3 系都用强化学习而非 DPO。
-- [Constitutional AI 2022](/study/papers/constitutional-ai/) RLAIF 派（Anthropic）：把人换成 AI 标注员，
-  仍用 PPO 训。和 DPO 是**正交的优化方向**——CAI 省人力，DPO 省 RL，可以叠加（社区有 CAI+DPO 实践）。
-- 纯 SFT 派（Tülu 系列 / Allen AI）：argue 高质量 SFT + 大量 demo 已经够好，DPO 提升边际有限。
-  [Tülu 3 报告](https://arxiv.org/abs/2411.15124) 显示 SFT-only 已经能打 GPT-3.5。
-
-## L6 三层 lessons
-
-### 上：科学层（这篇做对了什么科研）
-
-- **Closed-form 反演 + partition function 消除是最优雅的数学手术**——把 RL 化为监督学习的桥梁就藏在 KL-constrained
-  最优解的 closed-form 里，反过来"用闭式解倒推 reward"是 DPO 真正的 inventive step。
-- **Theorem 1 + reward equivalence class 是论证骨架**：不证明这个等价类，DPO 就只是一个"巧合 loss"；
-  证了之后它升级成"任意 BT-consistent reward 都可达"的强结论。
-- **ablation 的克制**：论文只在 IMDb / TL;DR / Anthropic-HH 三个数据集上做对照，没追求 SoTA。
-  这种"少而硬"的实验设计反而比"刷 10 个 benchmark"更有说服力——审稿人能在 4 小时内复现核心数字。
-- **写作上把 §3 Preliminaries 写成"教科书章节"**：把 BT + KL-RL 的标准结果完整复述一遍，
-  让没读过 [Christiano 2017](/study/papers/rlhf-christiano/) 的读者也能跟上。这是 NeurIPS oral 论文应有的友好度。
-
-### 中：工程层（做工程从这里学什么）
-
-- **流水线塌缩是工程降本的最大杠杆**：DPO 把 4 阶段（SFT → RM 标注 → RM 训 → PPO）变成 2 阶段（SFT → DPO），
-  整段 ML infra 复杂度对半砍。任何"两段串行流水线"都该问"能不能塌缩成一段"。
-- **超参数从 6 个降到 1 个 = 工程成本降 1 个数量级**：每多一个超参，搜索空间指数膨胀。
-  DPO 只剩 β，使得"个人开发者用单卡跑通"成为可能——**工程社区采纳速度的根本原因**。
-- **`reference_free=True` 是个 1 行 if 写出来的副作用 feature**——SimPO 整篇论文围绕这个 if 展开。
-  代码库里"看上去没用"的 fallback 路径经常是下一篇论文的种子。
-- **trl 的 7 种 loss type 共存说明"统一 framework + 可插拔 loss"是社区库的最优形态**：
-  不要让用户在多个相似库间切换，而是用一个 framework 容纳所有 variant。
-
-### 下：方法层（用 AI 学这种论文怎么读）
-
-- **数学密集型论文（如 DPO）必须亲手推一遍 §4**：3 步代数中任何一步省略，都会让 loss 实现看起来像魔法。
-  推完之后 30 行代码 = 3 步推导一一对应，理解才扎实。
-- **永远把"消失的项"放在标记的位置**：DPO 的 `Z(x)` 在哪步消失、为什么消失，是论文 §4 全部的张力来源。
-  读密集数学论文时把"消失的项"画下来，比记结论更有用。
-- **对比同样领域的前作**：单独读 DPO 会觉得"为什么这个推导能成立？"
-  但和 [InstructGPT PPO](/study/papers/instructgpt/) 对比着读，DPO 的每一步都在"对应消除 PPO 的某个工程痛点"——
-  推导动机变得清晰。
-- **看 trl 的实现可以发现论文没说的现实假设**：DPOTrainer 处理 length normalization、loss type 混合、
-  PEFT adapter——这些都是论文外的"工程隐式假设"。读论文 + 读流行实现 = 完整理解。
-
-## L7 限制 / 怀疑
-
-**论文限制**（§7 + 社区 follow-up）：
-
-1. **length bias 严重**：sum-of-logprobs 让长 response 拿更多 reward，chosen 平均比 rejected 长 20% 时
-   DPO 学到"长就是好"——SimPO / IPO / 长度归一化都是为了修这个。
-2. **训练后期 chosen logprob 反而下降**（[Pal 2024](https://arxiv.org/abs/2402.13228)）：DPO 在某些数据分布下
-   会同时把 chosen 和 rejected 的 logprob 都推下去，只保留它们的差。这违反"DPO 把 chosen 推上去"的直觉。
-3. **OOD 行为不可控**：DPO 不显式约束 KL 大小，policy 在远离 ref 的 OOD 区域可能给出怪异 logprob。
-   PPO 的 KL controller 至少有显式上界。
-4. **没有 reward server 的代价**：reward 信号只能 sequence-level，无法做 [InstructGPT 的 per-token KL shaping](/study/papers/instructgpt/)。
-   reasoning chain-of-thought 任务上这是真实劣势。
-
-**我的额外怀疑**（除上面 4 处嵌入的怀疑外）：
-
-- **怀疑 5**：论文 §6 的 win-rate 用 GPT-4 当 judge——但 GPT-4 本身用 RLHF/DPO 训过，
-  对 DPO-style output 有 distribution match 偏好。**评估器与被评估方法非独立**，可能高估 DPO 优势 3-5%。
-- **怀疑 6**：β 的"鲁棒性"在论文里只在 0.1-0.5 区间显示，但**没说明 β 和数据集 noise level 的耦合**。
-  noisy 数据上 β=0.1 可能远比 β=0.5 差——cDPO / IPO 提了这点，但没系统 ablation。
-- **怀疑 7**：DPO 论文用 Pythia / GPT-J（最大 6B），没在 70B 量级验证。社区把 DPO 推到 Llama-2-70B 时
-  发现训练 1 epoch 后就要早停（继续会 reward hacking），这个现象论文没预测——**理论是否在大模型上仍成立**没回答。
-- **怀疑 8**：论文不讨论"DPO 是否 sample-efficient"——给定 100k preference pair，DPO 比 PPO 学得快还是慢？
-  [Ahmadian 2024 RLOO](https://arxiv.org/abs/2402.14740) 暗示 sample efficiency 上 PPO 反而更好。
-  这是 DPO 派最大的 elephant in the room。
-
-## 元数据
-
-| 维度 | 内容 |
-|---|---|
-| 完成时间 | 2026-05-28 |
-| 季节 / 论文 round | Season I · I5（接 [I3 InstructGPT](/study/papers/instructgpt/) / [I4 CAI](/study/papers/constitutional-ai/) / [I1 RLHF](/study/papers/rlhf-christiano/)） |
-| 笔记类型 | method paper（数学推导密集型） |
-| 阅读时长 | ~6 小时（含 §A 推导亲手过一遍） |
-| 心脏物 | §4.1 三步推导 / Theorem 1 / Figure 2 IMDb win-rate |
-| 必精读段 | §3 Preliminaries / §4 全章 / §5 reward equivalence |
-| 跳读段 | §2 related work / §6 后半的额外 ablation |
-| Layer 3 三段独立精读 | (a) preference_loss 实现 / (b) reference model + 隐含 KL / (c) trl 7-loss framework |
-| 可执行下游 | 单 A100 / GPT-2 small / UltraFeedback 1k / 4 小时跑通 |
-| 关联笔记 | [RLHF Christiano](/study/papers/rlhf-christiano/) · [InstructGPT](/study/papers/instructgpt/) · [Constitutional AI](/study/papers/constitutional-ai/) |
-| 后续 round 候选 | IPO (修 saturation) / KTO (去 pair) / SimPO (去 reference) / ORPO (合 SFT+DPO) / RLOO (PPO 简化反击) |
+这就是全部核心。其余的复杂度都在数据 pipeline、forward pass 的 token mask、PEFT 集成、
+distributed training 等工程层面。论文核心算法只有这 10 行。
+
+---
+
+## 附录 C: 一些常见误解
+
+- **"DPO 不需要 KL 约束"** — 错。KL 约束以 `beta * log(pi/pi_ref)` 的形式藏在 loss 里，beta
+  就是 KL 强度。
+- **"DPO 不需要 reward model 所以更安全"** — 错。Reward signal 还在，只是从 RM 输出迁移到了
+  人类标注员对 (chosen, rejected) 的判断里。如果标注员有 bias，DPO 同样会学到 bias。
+- **"DPO 严格优于 PPO"** — 错。在数据是 on-policy / 需要长期探索 / 需要 absolute reward 的
+  场景，PPO 仍然更合适。
+- **"DPO 不能用 reward model"** — 错。可以用 RM 给 paired data 打分构造 (chosen, rejected)，
+  这种"RM-as-labeler" 的 pipeline 在 Llama-3 / Tulu-3 都用了。
+
+---
+
+## 附录 D: 阅读路径建议
+
+1. 第一遍：只读 Section 1 + Section 3（数学骨架）+ Algorithm 1，跑通 30 行实现
+2. 第二遍：读 Section 6（实验）+ Section 9（限制），理解 DPO 的边界
+3. 第三遍：读 Section 7（衍生家族）+ 自己挑 1-2 个变种（推荐 SimPO 和 KTO）做 ablation
+4. 实战：在自己的小数据集（< 1k pair）上跑一遍 DPO + SFT 对比，观察 reward acc / reward margin
+   / KL 三个指标的变化
+
+> 怀疑：上面这套阅读路径假设你已经会 PyTorch + LLM finetune 基础。对零基础学习者来说，
+> 真正的难点不是 DPO 数学（推导很短），而是搞懂"sequence logp 怎么算"、"为什么 prompt token
+> 不算"、"为什么 ref logp 可以缓存"等一堆工程前置知识。这些前置知识的缺口才是 DPO 入门的
+> 真实瓶颈，论文里完全没讲。
