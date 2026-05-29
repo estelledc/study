@@ -158,9 +158,9 @@ Chubby / ZooKeeper / Spanner / etcd 全部是这种 Multi-Paxos with leader 形�
 - [[gfs]] —— GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
-- [[resnet]] —— ResNet — 残差连接
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[tcp]] —— TCP Transmission Control Protocol

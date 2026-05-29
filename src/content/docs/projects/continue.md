@@ -155,3 +155,7 @@ Check if this PR has any AI-generated slop:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[anthropic-cookbook]] —— Anthropic Cookbook — Claude API 实战示例
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
+

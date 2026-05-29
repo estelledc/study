@@ -147,6 +147,7 @@ START SLAVE;
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

@@ -153,6 +153,7 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计

@@ -157,6 +157,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递

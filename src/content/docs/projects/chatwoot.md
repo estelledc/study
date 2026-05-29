@@ -149,5 +149,9 @@ end
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
+- [[supabase]] —— Supabase — Firebase 的开源替代
+- [[vue]] —— Vue.js — 渐进式 UI 框架
 

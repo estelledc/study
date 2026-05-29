@@ -151,6 +151,7 @@ System R 的处理：
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mysql]] —— MySQL — 全球最流行关系数据库

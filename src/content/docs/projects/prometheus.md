@@ -185,6 +185,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[jaeger]] —— Jaeger — 分布式追踪系统
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[langfuse]] —— Langfuse — LLM 应用可观测性
+- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代

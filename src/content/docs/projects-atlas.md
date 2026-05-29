@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 223 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 225 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：223 个
+- **总数**：225 个
 - **已分类**：206
-- **未分类**：17（落入"其他 / 待分类"段）
+- **未分类**：19（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 17 |
+| [其他 / 待分类](#其他--待分类) | 19 |
 
 ---
 
@@ -317,7 +317,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [codemirror — 编辑器不是一个类，是一组 Facet 的合奏](/study/projects/codemirror/) | CodeMirror 6 完全重写为分包架构，每个特性都是 plugin |
+| [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) |  |
 | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | Lexical 用 native browser selection + immutable EditorState + dirty-set reconciler，把 contentEditable 从"性能黑盒"压回… |
 | [monaco-editor — 把 VSCode 的编辑器内核搬进浏览器的 IDE 级控件](/study/projects/monaco-editor/) | Monaco 把 VSCode 的 CodeEditorWidget / TextModel / ViewModel / Web Worker LSP 协议原样拆出来作为浏览器 SDK，让任何站点都能挂上 IDE 级 … |
 | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | ProseMirror 用强 schema + Step + immutable State 把"在 contentEditable 上做协同富文本"从玄学变成可证明正确 |
@@ -353,7 +353,7 @@ sidebar:
 |---|---|
 | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) |  |
 | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) |  |
-| [Continue — 把 AI code review 写成 git 跟踪的 markdown，让 PR 跑 status check](/study/projects/continue/) | 不再是"开源 Cursor"——v1 |
+| [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) |  |
 | [Dify — LLM 应用开发平台](/study/projects/dify/) |  |
 | [LangChain — LLM 应用开发框架](/study/projects/langchain/) |  |
 | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) |  |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 17 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 19 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -512,14 +512,16 @@ sidebar:
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
+| `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
+| `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 
 ---
 
-## 全部 223 个（字母序）
+## 全部 225 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -553,9 +555,9 @@ sidebar:
 | `clerk` | [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
-| `codemirror` | [codemirror — 编辑器不是一个类，是一组 Facet 的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
+| `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `commander` | [commander.js](/study/projects/commander/) | CLI / 命令行工具 |
-| `continue` | [Continue — 把 AI code review 写成 git 跟踪的 markdown，让 PR 跑 status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
+| `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `d3` | [d3.js 数据驱动文档](/study/projects/d3/) | 数据可视化 |
 | `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
@@ -642,6 +644,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
 | `nestjs` | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) | Web 框架 |
+| `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | 其他 |
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | 文档站点 |
@@ -695,6 +698,7 @@ sidebar:
 | `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | 数据库本体 / 存储引擎 |
 | `stagehand` | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | AI 浏览器自动化 |
+| `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | 其他 |
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |
 | `storybook` | [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 测试 / 验证 |

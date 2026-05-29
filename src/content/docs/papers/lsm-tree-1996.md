@@ -142,6 +142,7 @@ client read key="foo"
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

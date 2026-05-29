@@ -156,5 +156,6 @@ app.get('/users/:id', (c) => {
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
+- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

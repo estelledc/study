@@ -177,5 +177,9 @@ class ArticleAdmin(admin.ModelAdmin):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 
