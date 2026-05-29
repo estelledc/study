@@ -274,9 +274,9 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [AES Rijndael 对称分组密码](/study/papers/aes/) |  |
-| [Bitcoin — 一种点对点电子现金系统](/study/papers/bitcoin/) | 中本聪 2008 白皮书的状元篇 D 分支精读：PoW 共识 / UTXO / 拜占庭容错 / 经济激励 |
+| [Bitcoin 白皮书](/study/papers/bitcoin/) |  |
 | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) |  |
-| [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (RSA 1978)](/study/papers/rsa/) |  |
+| [RSA 公钥密码](/study/papers/rsa/) |  |
 | [zk-SNARK：证明"我知道"但不说"是什么"](/study/papers/zk-snark/) |  |
 
 ## HCI / 软件工程研究
@@ -321,7 +321,7 @@ sidebar:
 | `bert` | [BERT 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bidirectional-typing` | [Bidirectional Typing (Dunfield & Krishnaswami CSUR 2021) — TS/Rust/Swift 类型推断的工程基础](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
 | `bigtable` | [Bigtable 分布式结构化存储](/study/papers/bigtable/) | 数据库 |
-| `bitcoin` | [Bitcoin — 一种点对点电子现金系统](/study/papers/bitcoin/) | 密码学 / 安全 |
+| `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `borg` | [Borg 大规模集群管理](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `calvin` | [Calvin (Thomson et al. 2012) — 不要时钟，要 sequencer，全球事务的另一条路](/study/papers/calvin/) | 数据库 |
@@ -411,7 +411,7 @@ sidebar:
 | `retro` | [RETRO (DeepMind ICML 2022) — 用 2T tokens 外部数据库 + chunked cross-attention 让 7.5B 模型媲美 175B Gopher，把检索抬成与参数并列的第二个 LLM 缩放轴](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `rlhf-christiano` | [RLHF — 用人比较两条轨迹学奖励：ChatGPT/Claude 的奠基论文](/study/papers/rlhf-christiano/) | 强化学习 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB 状元篇](/study/papers/rocksdb-lsm/) | 数据库 |
-| `rsa` | [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (RSA 1978)](/study/papers/rsa/) | 密码学 / 安全 |
+| `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
 | `salsa-adapton` | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
 | `sam` | [SAM — 把分割做成可 prompt 的基础模型，image encoder 一次、prompt 解码 N 次](/study/papers/sam/) | 计算机视觉 |
 | `scaling-laws` | [Scaling Laws — 把 LLM 的 loss 写成参数 N、数据 D、计算 C 的三参数 power law](/study/papers/scaling-laws/) | NLP 基础与 Scaling |

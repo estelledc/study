@@ -129,6 +129,10 @@ C = 20×10^6 × log₂(1001) ≈ 200 Mbps
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[turing-1936]] —— Turing 1936 可计算性
 

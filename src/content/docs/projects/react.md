@@ -159,11 +159,13 @@ function Greeting({ name }) {
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[next-js]] —— Next.js — React 全栈框架
+- [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
 - [[svelte]] —— Svelte — 编译时 UI 框架
+- [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架

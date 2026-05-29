@@ -163,3 +163,6 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bitcoin]] —— Bitcoin 白皮书
+
