@@ -151,9 +151,8 @@ ViT 是 2020 年代视觉的 ResNet 时刻——架构转折点。
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[ddpm]] —— DDPM Denoising Diffusion Probabilistic Models
+- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
-- [[dit]] —— DiT Diffusion Transformer
-- [[llava]] —— LLaVA Visual Instruction Tuning
+- [[dit]] —— DiT — Diffusion Transformer
 - [[mae]] —— MAE Masked Autoencoder 视觉自监督
 

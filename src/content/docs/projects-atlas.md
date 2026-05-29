@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 196 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 200 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：196 个
-- **已分类**：196
+- **总数**：200 个
+- **已分类**：200
 
 ### 按主题分布
 
@@ -26,7 +26,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 14 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 18 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
 | [监控 / 时序](#监控---时序) | 4 |
 | [Web 框架](#web-框架) | 6 |
@@ -163,7 +163,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 14 个。
+共 18 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -173,14 +173,18 @@ sidebar:
 | [Dgraph — 分布式图数据库](/study/projects/dgraph/) |  |
 | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
 | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
+| [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) |  |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) |  |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
 | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) |  |
 | [Neo4j — 主流图数据库](/study/projects/neo4j/) |  |
 | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) |  |
+| [Qdrant — Rust 向量数据库](/study/projects/qdrant/) |  |
 | [Redis — 内存键值数据库](/study/projects/redis/) |  |
 | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) |  |
+| [Typesense — 高性能搜索引擎](/study/projects/typesense/) |  |
 | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) |  |
+| [Weaviate — 模块化向量数据库](/study/projects/weaviate/) |  |
 
 ## DevOps / 容器 / 运维
 
@@ -483,7 +487,7 @@ sidebar:
 
 ---
 
-## 全部 196 个（字母序）
+## 全部 200 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -572,6 +576,7 @@ sidebar:
 | `markdown-it` | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) | Markdown / 解析 |
 | `mcp-ts-sdk` | [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
+| `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) | ORM / DB 客户端 |
@@ -615,6 +620,7 @@ sidebar:
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
+| `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
@@ -661,6 +667,7 @@ sidebar:
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
 | `turborepo` | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Monorepo / 包管理 |
 | `typeorm` | [TypeORM Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
+| `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
 | `unified` | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) | Markdown / 解析 |
 | `unstorage` | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `valibot` | [valibot 模块化模式校验](/study/projects/valibot/) | 表单 / Schema 校验 |
@@ -674,6 +681,7 @@ sidebar:
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) | i18n 国际化 |
+| `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |
 | `web-vitals` | [web-vitals — 不是「测速工具」，是把 Chrome UX Report 的指标定义在浏览器端等值复刻的协议库](/study/projects/web-vitals/) | 可观测 / 性能 |
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
 | `why-did-you-render` | [why-did-you-render — 把 React 的"假更新"从口头警告变成可定位的诊断对象](/study/projects/why-did-you-render/) | 可观测 / 性能 |

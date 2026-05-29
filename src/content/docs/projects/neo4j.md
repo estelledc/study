@@ -162,5 +162,10 @@ ORDER BY score DESC LIMIT 10
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
+- [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
 

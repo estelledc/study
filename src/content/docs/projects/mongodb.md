@@ -159,4 +159,5 @@ db.orders.aggregate([
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[typesense]] —— Typesense — 高性能搜索引擎
 
