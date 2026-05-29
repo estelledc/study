@@ -148,5 +148,6 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[valkey]] —— Valkey — Redis 7.4 的开源 fork
 

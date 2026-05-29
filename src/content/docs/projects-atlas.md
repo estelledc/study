@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 181 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 185 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：181 个
-- **已分类**：181
+- **总数**：185 个
+- **已分类**：185
 
 ### 按主题分布
 
@@ -28,6 +28,7 @@ sidebar:
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 11 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 4 |
+| [监控 / 时序](#监控---时序) | 4 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
@@ -188,6 +189,17 @@ sidebar:
 | [Docker — 容器化平台](/study/projects/docker/) |  |
 | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) |  |
 | [nginx — 高性能 Web 服务器](/study/projects/nginx/) |  |
+
+## 监控 / 时序
+
+共 4 个。
+
+| 项目 | 描述 |
+|---|---|
+| [Grafana — 监控可视化看板](/study/projects/grafana/) |  |
+| [InfluxDB — 专用时序数据库](/study/projects/influxdb/) |  |
+| [Prometheus — 时序监控系统](/study/projects/prometheus/) |  |
+| [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) |  |
 
 ## Web 框架
 
@@ -460,7 +472,7 @@ sidebar:
 
 ---
 
-## 全部 181 个（字母序）
+## 全部 185 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -511,11 +523,13 @@ sidebar:
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
+| `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 数据应用 / SaaS |
+| `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
 | `ink` | [ink](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
@@ -579,6 +593,7 @@ sidebar:
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
 | `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
+| `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
@@ -619,6 +634,7 @@ sidebar:
 | `tanstack-router` | [TanStack Router — 把类型系统当 UX 工具](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `temporal-polyfill` | [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) | 日期时间 |
 | `testing-library` | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 测试 / 验证 |
+| `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
 | `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | 数据获取 / 路由 |
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
 | `turborepo` | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Monorepo / 包管理 |

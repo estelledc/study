@@ -150,3 +150,6 @@ from(bucket: "metrics")
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
+

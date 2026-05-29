@@ -158,3 +158,6 @@ python -m swebench.harness.run_evaluation \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+

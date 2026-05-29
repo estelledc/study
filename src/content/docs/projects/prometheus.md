@@ -175,3 +175,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[influxdb]] —— InfluxDB — 专用时序数据库
+

@@ -157,6 +157,7 @@ function Greeting({ name }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[cot]] —— Chain-of-Thought Prompting
 - [[framer-motion]] —— Framer Motion — React 声明式动画
@@ -169,9 +170,12 @@ function Greeting({ name }) {
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
+- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
+- [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[zustand]] —— Zustand — 极简 React 状态管理
 

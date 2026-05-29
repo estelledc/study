@@ -168,10 +168,13 @@ LIMIT 5;
 - [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 
