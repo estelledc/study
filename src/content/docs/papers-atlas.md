@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 140 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 141 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：140 篇
-- **已分类**：140
+- **总数**：141 篇
+- **已分类**：141
 
 ### 按主题分布
 
@@ -34,7 +34,7 @@ sidebar:
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
-| [HCI / 软件工程研究](#hci---软件工程研究) | 13 |
+| [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
 
 ---
 
@@ -279,10 +279,11 @@ sidebar:
 
 ## HCI / 软件工程研究
 
-共 13 篇。
+共 14 篇。
 
 | 论文 | 描述 |
 |---|---|
+| [Kent Beck — Test-Driven Development: By Example](/study/papers/beck-tdd/) |  |
 | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | Cognitive Science 12(2) 把为什么学不会形式化成 intrinsic + extraneous + germane 三类负荷之和，30 多年实证累积，影响 CS 教学 / UX / debug 流程 |
 | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | 95 个开发者 / 随机分组 / HTTP server 任务 / Copilot 组比 Control 组快 55 |
 | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | ICSE 2018 用 Visual Studio 插件 WatchDog 监控 458 名程序员 18 个月，发现 debug 行为分两轨——65% 会话 < 1 分钟、setting a breakpoint 在 … |
@@ -299,7 +300,7 @@ sidebar:
 
 ---
 
-## 全部 140 篇（字母序）
+## 全部 141 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -314,6 +315,7 @@ sidebar:
 | `attention` | [Transformer Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora (Verbitski et al. 2017) — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `autogen` | [AutoGen — Enabling Next-Gen LLM Applications via Multi-Agent Conversation](/study/papers/autogen/) | 智能体与 LLM 系统 |
+| `beck-tdd` | [Kent Beck — Test-Driven Development: By Example](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
 | `bert` | [BERT 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bidirectional-typing` | [Bidirectional Typing (Dunfield & Krishnaswami CSUR 2021) — TS/Rust/Swift 类型推断的工程基础](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
 | `bigtable` | [Bigtable 分布式结构化存储](/study/papers/bigtable/) | 数据库 |
