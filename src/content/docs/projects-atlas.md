@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 149 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 150 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：149 个
-- **已分类**：149
+- **总数**：150 个
+- **已分类**：150
 
 ### 按主题分布
 
@@ -43,7 +43,7 @@ sidebar:
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
 | [CLI / 命令行工具](#cli---命令行工具) | 5 |
-| [Terminal / 终端](#terminal---终端) | 3 |
+| [Terminal / 终端](#terminal---终端) | 4 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -368,12 +368,13 @@ sidebar:
 
 ## Terminal / 终端
 
-共 3 个。
+共 4 个。
 
 | 项目 | 描述 |
 |---|---|
 | [boxen — Terminal box 渲染库](/study/projects/boxen/) |  |
 | [chalk](/study/projects/chalk/) |  |
+| [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) |  |
 | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
 
 ## 其他基础设施
@@ -388,7 +389,7 @@ sidebar:
 
 ---
 
-## 全部 149 个（字母序）
+## 全部 150 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -451,6 +452,7 @@ sidebar:
 | `librechat` | [LibreChat — 不是再做一个 ChatGPT 替代品，是把"chat 应用"和"模型供应商"解耦成可热插拔的 provider 抽象层](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `lightningcss` | [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui 编译期提取的 React i18n](/study/projects/lingui/) | i18n 国际化 |
+| `listr2` | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) | Terminal / 终端 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lucia` | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | Auth 认证 |
 | `luxon` | [luxon TZ + i18n 现代 Moment 替代](/study/projects/luxon/) | 日期时间 |

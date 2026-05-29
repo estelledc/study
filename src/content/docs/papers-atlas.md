@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 133 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 134 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：133 篇
-- **已分类**：133
+- **总数**：134 篇
+- **已分类**：134
 
 ### 按主题分布
 
@@ -30,7 +30,7 @@ sidebar:
 | [网络协议](#网络协议) | 5 |
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 21 |
+| [编译器 / 编程语言理论](#编译器---编程语言理论) | 22 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
@@ -212,11 +212,12 @@ sidebar:
 
 ## 编译器 / 编程语言理论
 
-共 21 篇。
+共 22 篇。
 
 | 论文 | 描述 |
 |---|---|
 | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 把 Self-Adjusting Computation 从学术原型推到生产工程——lazy demand-driven 替代 eager push |
+| [Algol 60 — BNF / 块结构 / call-by-name 的诞生地](/study/papers/algol-60/) | 形式化语法描述、块结构、call-by-name、递归过程：现代编程语言的共同祖先 |
 | [Bidirectional Typing (Dunfield & Krishnaswami CSUR 2021) — TS/Rust/Swift 类型推断的工程基础](/study/papers/bidirectional-typing/) | check ⇐ vs infer ⇒ 双判断 + 局部标注 + 互相递归 |
 | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 22 项研究系统综述 |
 | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
@@ -292,7 +293,7 @@ sidebar:
 
 ---
 
-## 全部 133 篇（字母序）
+## 全部 134 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -301,6 +302,7 @@ sidebar:
 | `adapton` | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agentless` | [Agentless — 反 agent 派代表作：3 阶段 pipeline 在 SWE-bench 上反超复杂 agent](/study/papers/agentless/) | 智能体与 LLM 系统 |
+| `algol-60` | [Algol 60 — BNF / 块结构 / call-by-name 的诞生地](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `alphago` | [AlphaGo Mastering Go with Deep Neural Networks](/study/papers/alphago/) | 强化学习 |
 | `anthropic-circuits` | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `attention` | [Transformer Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |

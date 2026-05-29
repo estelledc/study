@@ -60,7 +60,7 @@ const THEMES_PAPERS = {
   ],
   '编译器 / 编程语言理论': [
     'llvm', 'ssa', 'self-pic', 'theorems-for-free', 'mccarthy-lisp',
-    'smalltalk-80', 'simula-67',
+    'smalltalk-80', 'simula-67', 'algol-60',
     'bidirectional-typing', 'hindley-milner', 'linear-types',
     'effect-handlers', 'compiler-errors', 'ci-effects', 'push-pull-frp',
     'trees-that-grow', 'wadler-prettier', 'adapton', 'salsa-adapton',
@@ -167,7 +167,7 @@ const THEMES_PROJECTS = {
     'yargs', 'commander', 'ink', 'oclif', 'clack',
   ],
   'Terminal / 终端': [
-    'chalk', 'ora', 'boxen',
+    'chalk', 'ora', 'boxen', 'listr2',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
