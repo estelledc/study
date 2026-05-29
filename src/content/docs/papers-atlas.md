@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 122 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 124 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：122 篇
-- **已分类**：122
+- **总数**：124 篇
+- **已分类**：123
+- **未分类**：1（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -31,9 +32,10 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
-| [计算理论 / 数学基础](#计算理论---数学基础) | 2 |
+| [计算理论 / 数学基础](#计算理论---数学基础) | 3 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
+| [其他 / 待分类](#其他--待分类) | 1 |
 
 ---
 
@@ -236,10 +238,11 @@ sidebar:
 
 ## 计算理论 / 数学基础
 
-共 2 篇。
+共 3 篇。
 
 | 论文 | 描述 |
 |---|---|
+| [Cook-Levin 定理](/study/papers/cook-levin/) | 1971 年 Cook（与 Levin 1973 独立）证明 SAT 是 NP-complete，奠定计算复杂性理论 |
 | [lambda-calculus](/study/papers/lambda-calculus/) |  |
 | [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | Alan Turing 1936 年的开山之作：用图灵机定义可计算性，证明 Halting Problem 不可判定，间接解决 Hilbert Entscheidungsproblem |
 
@@ -271,9 +274,17 @@ sidebar:
 | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | ICPC 2009 用 85 名工程师 10,000 个 IDE 会话证明只有 10% 能在 1 分钟内恢复编码，30% 编辑滞后超过 30 分钟 |
 | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | IEEE TSE 2008 用 25 名 industrial 程序员 + 9 名实验室程序员的录像归纳出 4 大类共 44 个问题，成为 IDE / Code Search / LLM agent 的隐性 refer… |
 
+## 其他 / 待分类
+
+共 1 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+
+| Slug | 论文 |
+|---|---|
+| `karp-21` | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) |
+
 ---
 
-## 全部 122 篇（字母序）
+## 全部 124 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -304,6 +315,7 @@ sidebar:
 | `cognitive-load-theory` | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `compiler-errors` | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
 | `constitutional-ai` | [Constitutional AI — 让 AI 看着一组原则给自己挑刺：Claude 的训练骨架](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
+| `cook-levin` | [Cook-Levin 定理](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
 | `copilot-rct` | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cot` | [Chain-of-Thought Prompting (Wei et al. 2022) — reasoning trace 是涌现能力的钥匙](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `crdt-json` | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
@@ -335,6 +347,7 @@ sidebar:
 | `instructgpt` | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
+| `karp-21` | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) | 其他 |
 | `lambda-calculus` | [lambda-calculus](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `linear-types` | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
