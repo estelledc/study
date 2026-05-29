@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 141 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 142 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：141 个
-- **已分类**：141
+- **总数**：142 个
+- **已分类**：142
 
 ### 按主题分布
 
@@ -42,6 +42,7 @@ sidebar:
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
+| [CLI / 命令行工具](#cli---命令行工具) | 1 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -352,6 +353,14 @@ sidebar:
 | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) |  |
 | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | Seek 工程师 Mark Dalgleish 出品 |
 
+## CLI / 命令行工具
+
+共 1 个。
+
+| 项目 | 描述 |
+|---|---|
+| [commander.js](/study/projects/commander/) |  |
+
 ## 其他基础设施
 
 共 3 个。
@@ -364,7 +373,7 @@ sidebar:
 
 ---
 
-## 全部 141 个（字母序）
+## 全部 142 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -383,6 +392,7 @@ sidebar:
 | `claude-code` | [Claude Code — 一个 LLM-runtime 暴露成 5 种 surface 的 agentic 产品](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
 | `clerk` | [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | Auth 认证 |
 | `codemirror` | [codemirror — 编辑器不是一个类，是一组 Facet 的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
+| `commander` | [commander.js](/study/projects/commander/) | CLI / 命令行工具 |
 | `continue` | [Continue — 把 AI code review 写成 git 跟踪的 markdown，让 PR 跑 status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `d3` | [d3.js 数据驱动文档](/study/projects/d3/) | 数据可视化 |
 | `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
