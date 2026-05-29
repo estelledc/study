@@ -60,7 +60,7 @@ const THEMES_PAPERS = {
   ],
   '编译器 / 编程语言理论': [
     'llvm', 'ssa', 'self-pic', 'theorems-for-free', 'mccarthy-lisp',
-    'smalltalk-80', 'simula-67', 'algol-60',
+    'smalltalk-80', 'simula-67', 'algol-60', 'standard-ml',
     'bidirectional-typing', 'hindley-milner', 'linear-types',
     'effect-handlers', 'compiler-errors', 'ci-effects', 'push-pull-frp',
     'trees-that-grow', 'wadler-prettier', 'adapton', 'salsa-adapton',

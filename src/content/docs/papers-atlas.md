@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 134 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 135 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：134 篇
-- **已分类**：134
+- **总数**：135 篇
+- **已分类**：135
 
 ### 按主题分布
 
@@ -30,7 +30,7 @@ sidebar:
 | [网络协议](#网络协议) | 5 |
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 22 |
+| [编译器 / 编程语言理论](#编译器---编程语言理论) | 23 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
@@ -212,7 +212,7 @@ sidebar:
 
 ## 编译器 / 编程语言理论
 
-共 22 篇。
+共 23 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -235,6 +235,7 @@ sidebar:
 | [Simula 67 Common Base Language](/study/papers/simula-67/) |  |
 | [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) |  |
 | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | Cytron, Ferrante, Rosen, Wegman, Zadeck, ACM TOPLAS 1991 — 用支配边界（dominance frontier）算法把 SSA 构造从 O(N³) 朴素做法降到几… |
+| [Standard ML](/study/papers/standard-ml/) |  |
 | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a |
 | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | type family + extension fields 让 AST 在 parse / rename / typecheck / optimize 各 phase 共享同一份 traversal 代码 |
 | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 16 页论文 + 70 行 Haskell，奠定了 Prettier / esbuild / biome 这一代 formatter 的 IR 思路 |
@@ -293,7 +294,7 @@ sidebar:
 
 ---
 
-## 全部 134 篇（字母序）
+## 全部 135 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -411,6 +412,7 @@ sidebar:
 | `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `ssa` | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | 编译器 / 编程语言理论 |
 | `stable-diffusion` | [Stable Diffusion / LDM — 把扩散从像素搬到 latent 空间，让消费级 GPU 也能跑文生图](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
+| `standard-ml` | [Standard ML](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `swe-agent` | [SWE-agent — 不靠模型变聪明、靠"接口"变聪明：ACI 把 SWE-bench 1.96% 推到 12.5%](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench (Jimenez et al. 2024) — 把 LLM 评测从 demo 题推到真实 GitHub issue](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
 | `t5` | [T5 Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
