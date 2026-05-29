@@ -156,6 +156,7 @@ W 出现在等式两边，不能直接代入算。Scott 的 domain theory 保证
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[turing-1936]] —— Turing 1936 可计算性
 

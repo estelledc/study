@@ -162,6 +162,7 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
+- [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

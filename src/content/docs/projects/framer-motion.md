@@ -158,6 +158,7 @@ function Drawer({ isOpen }) {
 - [[d3]] —— d3.js 数据驱动文档
 - [[echarts]] —— Apache ECharts 配置式数据可视化
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react]] —— React UI 组件库
 

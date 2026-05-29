@@ -149,5 +149,6 @@ client read key="foo"
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 

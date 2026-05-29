@@ -148,6 +148,7 @@ r.Route("/api/v1/users", func(r chi.Router) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API

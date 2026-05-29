@@ -152,6 +152,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[muzero]] —— MuZero — 不用规则也能下棋
 - [[ppo]] —— PPO — Proximal Policy Optimization
+- [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[resnet]] —— ResNet — 残差连接
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律

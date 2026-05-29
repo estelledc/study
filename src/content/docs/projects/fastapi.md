@@ -169,6 +169,7 @@ def me(user: dict = Depends(current_user)):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
