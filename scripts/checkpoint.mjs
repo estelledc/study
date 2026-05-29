@@ -6,10 +6,8 @@
 //   node scripts/checkpoint.mjs --update <key> <value> # 单字段更新
 
 import fs from 'node:fs/promises';
-import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { execSync } from 'node:child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,15 +18,12 @@ const DEFAULT = {
   version: 'v3',
   session_started: null,
   round_n: 0,
-  round_started: null,
   total: { papers: 0, projects: 0 },
   queue: { papers: 0, projects: 0 },
   rewrite_pool_available: 0,
   graveyard_size: 0,
   build_streak: 'ok',
   last_round_stats: null,
-  in_flight: [],
-  exit_condition_met: null,
   next_action: 'start-round-1',
 };
 
@@ -46,36 +41,42 @@ async function write(data) {
   await fs.writeFile(CHECKPOINT, JSON.stringify(data, null, 2));
 }
 
-function gitCount() {
-  const papers = parseInt(execSync(`ls ${ROOT}/src/content/docs/papers/*.md 2>/dev/null | wc -l`, { encoding: 'utf8' }).trim(), 10) || 0;
-  const projects = parseInt(execSync(`ls ${ROOT}/src/content/docs/projects/*.md 2>/dev/null | wc -l`, { encoding: 'utf8' }).trim(), 10) || 0;
-  return { papers, projects };
-}
-
-async function jsonlCount(filePath, predicate) {
+async function countMd(dir) {
   try {
-    const raw = await fs.readFile(filePath, 'utf8');
-    const lines = raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
-    return lines.filter(predicate).length;
+    return (await fs.readdir(dir)).filter(f => f.endsWith('.md') && !f.startsWith('_')).length;
   } catch (err) {
     if (err.code === 'ENOENT') return 0;
     throw err;
   }
 }
 
+async function readJsonlLines(filePath) {
+  try {
+    const raw = await fs.readFile(filePath, 'utf8');
+    return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
+  } catch (err) {
+    if (err.code === 'ENOENT') return [];
+    throw err;
+  }
+}
+
 async function autoStats() {
-  const [total, queuedPapers, queuedProjects, rewriteAvail, graveyard] = await Promise.all([
-    Promise.resolve(gitCount()),
-    jsonlCount(path.join(ROOT, 'data/candidates.jsonl'), c => c.status === 'queued' && c.area === 'papers'),
-    jsonlCount(path.join(ROOT, 'data/candidates.jsonl'), c => c.status === 'queued' && c.area === 'projects'),
-    jsonlCount(path.join(ROOT, 'data/rewrite-pool.jsonl'), p => p.status === 'available'),
-    jsonlCount(path.join(ROOT, 'data/graveyard.jsonl'), () => true),
+  // 单次读 candidates，本地双 filter；并行读 papers/projects/pool/graveyard
+  const [papers, projects, candidates, pool, graveyard] = await Promise.all([
+    countMd(path.join(ROOT, 'src/content/docs/papers')),
+    countMd(path.join(ROOT, 'src/content/docs/projects')),
+    readJsonlLines(path.join(ROOT, 'data/candidates.jsonl')),
+    readJsonlLines(path.join(ROOT, 'data/rewrite-pool.jsonl')),
+    readJsonlLines(path.join(ROOT, 'data/graveyard.jsonl')),
   ]);
   return {
-    total,
-    queue: { papers: queuedPapers, projects: queuedProjects },
-    rewrite_pool_available: rewriteAvail,
-    graveyard_size: graveyard,
+    total: { papers, projects },
+    queue: {
+      papers: candidates.filter(c => c.status === 'queued' && c.area === 'papers').length,
+      projects: candidates.filter(c => c.status === 'queued' && c.area === 'projects').length,
+    },
+    rewrite_pool_available: pool.filter(p => p.status === 'available').length,
+    graveyard_size: graveyard.length,
   };
 }
 

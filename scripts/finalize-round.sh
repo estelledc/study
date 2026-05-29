@@ -118,19 +118,21 @@ WORKTREES=(
   "$HOME/study-refactor-projects-3"
   "$HOME/study-refactor-projects-4"
 )
-for w in "${WORKTREES[@]}"; do
-  if [[ ! -d "$w" ]]; then
-    echo "  WARN: worktree missing: $w"
-    continue
-  fi
-  if [[ "$DRY_RUN" -eq 1 ]]; then
-    echo "  [DRY] sync $w"
-  else
-    git -C "$w" -c http.sslVerify=false fetch origin main >/dev/null 2>&1
-    git -C "$w" reset --hard origin/main >/dev/null 2>&1
-    git -C "$w" clean -fd >/dev/null 2>&1
-  fi
-done
+if [[ "$DRY_RUN" -eq 1 ]]; then
+  for w in "${WORKTREES[@]}"; do echo "  [DRY] sync $w"; done
+else
+  # 并行同步所有 worktree（fetch 是网络 IO，串行 ~9s → 并行 ~1.5s）
+  for w in "${WORKTREES[@]}"; do
+    [[ -d "$w" ]] || { echo "  WARN: missing: $w"; continue; }
+    (
+      git -C "$w" -c http.sslVerify=false fetch origin main >/dev/null 2>&1
+      git -C "$w" reset --hard origin/main >/dev/null 2>&1
+      git -C "$w" clean -fd >/dev/null 2>&1
+      echo "  synced $(basename $w)"
+    ) &
+  done
+  wait
+fi
 
 # 8. sync-written 同步索引
 if [[ "$DRY_RUN" -eq 0 ]]; then

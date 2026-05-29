@@ -102,8 +102,10 @@ function assignWorktrees(items) {
 async function main() {
   const args = parseArgs();
 
-  const candidates = await readJsonl(CANDIDATES);
-  const pool = await readJsonl(REWRITE_POOL);
+  const [candidates, pool] = await Promise.all([
+    readJsonl(CANDIDATES),
+    readJsonl(REWRITE_POOL),
+  ]);
 
   const rewriteItems = pickRewrite(pool, args.rewrite).map(x => ({
     slug: x.slug,
