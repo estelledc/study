@@ -139,5 +139,6 @@ Sleeper Agents 是从理论跨到实证那一步。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 

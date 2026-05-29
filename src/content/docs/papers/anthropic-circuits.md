@@ -128,3 +128,9 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
+- [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
+- [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
+- [[toy-models-superposition]] —— Toy Models of Superposition
+

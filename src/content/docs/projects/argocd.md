@@ -163,4 +163,5 @@ root-app.yaml  # source 指向 infra-apps/
 
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[temporal]] —— Temporal — 持久化工作流引擎
 

@@ -132,8 +132,11 @@ base 模型用 8 个头，每个头独立学。常见现象：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dit]] —— DiT — Diffusion Transformer
@@ -142,6 +145,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[dqn]] —— DQN — Deep Q-Network
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[mae]] —— MAE — Masked Autoencoders
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
