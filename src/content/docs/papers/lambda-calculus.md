@@ -148,9 +148,11 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[linear-types]] —— 线性类型（Linear Types）
+- [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
-- [[shannon-1948]] —— Shannon 信息论 通信的数学理论
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完

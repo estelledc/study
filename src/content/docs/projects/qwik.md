@@ -156,5 +156,8 @@ export default component$(() => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[react]] —— React UI 组件库
+- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
+- [[svelte]] —— Svelte — 编译时 UI 框架
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

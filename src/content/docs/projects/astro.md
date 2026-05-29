@@ -197,3 +197,15 @@ export const collections = { blog }
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[micromark]] —— micromark 流式 CommonMark 状态机解析器
+- [[next-js]] —— Next.js — React 全栈框架
+- [[preact]] —— Preact — 3KB React 替代
+- [[react]] —— React UI 组件库
+- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
+- [[starlight]] —— Starlight — Astro 文档站点主题
+- [[svelte]] —— Svelte — 编译时 UI 框架
+- [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vue]] —— Vue.js — 渐进式 UI 框架
+

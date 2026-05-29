@@ -181,7 +181,9 @@ webpack 没"死"——npm 周下载量截至 2026 初仍 30M+，超过所有替�
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[next-js]] —— Next.js — React 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
 - [[rollup]] —— Rollup — ESM 优先的打包器
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

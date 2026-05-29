@@ -154,6 +154,7 @@ function Cart() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
 - [[svelte]] —— Svelte — 编译时 UI 框架

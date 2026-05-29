@@ -119,6 +119,9 @@ const THEMES_PROJECTS = {
   'UI 框架 / Frontend Framework': [
     'react', 'vue', 'svelte', 'solid', 'preact', 'qwik', 'lit',
   ],
+  'Meta 框架 / 全栈': [
+    'next-js', 'nuxt', 'remix', 'astro', 'sveltekit', 'gatsby',
+  ],
   'Auth 认证': [
     'auth-js', 'better-auth', 'lucia', 'clerk', 'supertokens',
   ],
