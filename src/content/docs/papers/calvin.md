@@ -148,5 +148,9 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[dns]] —— DNS Domain Name System
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[raft]] —— Raft — 易理解的共识算法
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

@@ -131,10 +131,12 @@ PRAGMA journal_mode=WAL;
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 

@@ -149,6 +149,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[paxos]] —— Paxos — 分布式共识算法

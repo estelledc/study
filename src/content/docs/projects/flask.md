@@ -183,5 +183,10 @@ def list_users():
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
 

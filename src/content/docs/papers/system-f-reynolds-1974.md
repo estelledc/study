@@ -155,6 +155,7 @@ succ  = λn:Nat. Λα. λs:α→α. λz:α. s (n [α] s z)
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 

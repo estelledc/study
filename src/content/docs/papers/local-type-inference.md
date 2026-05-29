@@ -152,3 +152,6 @@ TypeScript 拿 `pipe` 的签名 + 两个实参的类型，**只看一层**就推
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

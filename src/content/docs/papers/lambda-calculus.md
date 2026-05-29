@@ -156,10 +156,10 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

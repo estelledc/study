@@ -164,5 +164,7 @@ async def highlight(params: HighlightParams, browser_session):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
 
