@@ -127,6 +127,8 @@ stable-diffusion
 standard-ml
 swe-agent
 swe-bench
+system-f-reynolds-1974
+system-r-1976
 t5
 tcp
 theorems-for-free
@@ -160,6 +162,7 @@ axios
 bat
 better-auth
 biome
+bitcoin-core
 boxen
 browser-use
 bun
@@ -201,6 +204,7 @@ etcd
 excalidraw
 express
 fabric-js
+fastapi
 fastify
 fd
 framer-motion
