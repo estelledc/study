@@ -182,5 +182,10 @@ export default defineConfig({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bun]] —— Bun — JS 全能运行时
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[webpack]] —— webpack 模块打包
 

@@ -143,3 +143,10 @@ ORDER BY date;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bigtable]] —— Bigtable 分布式结构化存储
+- [[dns]] —— DNS Domain Name System
+- [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
+- [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
+

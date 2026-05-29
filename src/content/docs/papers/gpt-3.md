@@ -140,3 +140,12 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[alphago]] —— AlphaGo Mastering Go with Deep Neural Networks
+- [[dpo]] —— DPO Direct Preference Optimization
+- [[dqn]] —— DQN Deep Q-Network 深度强化学习
+- [[muzero]] —— MuZero Mastering Games by Planning with Learned Model
+- [[ppo]] —— PPO Proximal Policy Optimization
+- [[t5]] —— T5 Text-to-Text Transfer Transformer
+- [[word2vec]] —— Word2Vec 词向量分布式表示
+

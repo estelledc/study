@@ -162,3 +162,10 @@ LIMIT 5;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[kysely]] —— Kysely — TypeScript SQL 查询构建器
+- [[redis]] —— Redis — 内存键值数据库
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+
