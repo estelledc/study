@@ -1,9 +1,9 @@
 ---
 title: eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑
 description: 1993 cBPF 起源 + 2014 Starovoitov 把它扩成内核通用扩展机制；verifier + JIT + map + hook = 现代 Linux 唯一可信第三方内核扩展通路
-来源: Steven McCanne, Van Jacobson, "The BSD Packet Filter: A New Architecture for User-level Packet Capture", USENIX Winter 1993; Alexei Starovoitov 2014 起在 Linux 主线扩展（无单一权威论文）
+来源: 'Steven McCanne, Van Jacobson, "The BSD Packet Filter: A New Architecture for User-level Packet Capture", USENIX Winter 1993; Alexei Starovoitov 2014 起在 Linux 主线扩展（无单一权威论文）'
 论文年份: 1993 (cBPF) / 2014 起 (eBPF)
-作者: Steven McCanne, Van Jacobson (cBPF) / Alexei Starovoitov, Daniel Borkmann 等 (eBPF)
+作者: 'Steven McCanne, Van Jacobson (cBPF) / Alexei Starovoitov, Daniel Borkmann 等 (eBPF)'
 分支: theory-D
 状态: 状元篇
 关联笔记:

@@ -1,9 +1,9 @@
 ---
 title: MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性
 description: 用户只写 map + reduce 两个函数，框架自动 parallelize / distribute / fault-tolerate。一代 big data 范式从这里开始
-来源: Jeffrey Dean, Sanjay Ghemawat, "MapReduce: Simplified Data Processing on Large Clusters", OSDI 2004
+来源: 'Jeffrey Dean, Sanjay Ghemawat, "MapReduce: Simplified Data Processing on Large Clusters", OSDI 2004'
 论文年份: 2004
-作者: Jeffrey Dean, Sanjay Ghemawat
+作者: 'Jeffrey Dean, Sanjay Ghemawat'
 分支: theory-D
 状态: 状元篇
 关联笔记:

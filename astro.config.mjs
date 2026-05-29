@@ -15,6 +15,9 @@ export default defineConfig({
       social: {
         github: 'https://github.com/estelledc/study',
       },
+      // Sidebar 是骨架，不放 100+ 笔记的扁平列表。
+      // 笔记发现走 papers-atlas / projects-atlas（多维索引，scripts/regen-atlas.mjs 自动生成）
+      // + 顶部 Pagefind 搜索（Cmd-K）+ 笔记尾部 [[backlink]]。
       sidebar: [
         { label: '主页', link: '/' },
         { label: '立场宣言', link: '/about/' },
@@ -25,10 +28,6 @@ export default defineConfig({
             { label: '项目消化方法论', link: '/method/' },
             { label: '项目推荐队列', link: '/queue/' },
             { label: '项目全景索引', link: '/projects-atlas/' },
-            {
-              label: '项目笔记',
-              autogenerate: { directory: 'projects' },
-            },
           ],
         },
         {
@@ -37,10 +36,6 @@ export default defineConfig({
             { label: '论文消化方法论', link: '/papers-method/' },
             { label: '论文推荐队列', link: '/papers-queue/' },
             { label: '论文全景索引', link: '/papers-atlas/' },
-            {
-              label: '论文笔记',
-              autogenerate: { directory: 'papers' },
-            },
           ],
         },
       ],

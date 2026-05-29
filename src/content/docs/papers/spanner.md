@@ -1,8 +1,8 @@
 ---
 title: Spanner 全球分布式数据库
-来源: James C. Corbett et al., "Spanner: Google's Globally-Distributed Database", OSDI 2012
+来源: 'James C. Corbett et al., "Spanner: Google''s Globally-Distributed Database", OSDI 2012'
 论文年份: 2012
-作者: James C. Corbett, Jeffrey Dean, et al.
+作者: 'James C. Corbett, Jeffrey Dean, et al.'
 分支: theory-D
 状态: 状元篇
 关联笔记:

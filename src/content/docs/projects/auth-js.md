@@ -4,7 +4,7 @@ description: 从 NextAuth.js 到 Auth.js — OAuth 流程抽象、JWT vs Databas
 season: 17
 episode: S17-1
 category: 框架与 SDK
-template: D
+branch: D
 status: 已发布
 ---
 

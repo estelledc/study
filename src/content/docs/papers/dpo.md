@@ -1,6 +1,6 @@
 ---
 title: DPO Direct Preference Optimization
-来源: Rafailov et al., "Direct Preference Optimization: Your Language Model is Secretly a Reward Model", NeurIPS 2023 / arXiv 2305.18290
+来源: 'Rafailov et al., "Direct Preference Optimization: Your Language Model is Secretly a Reward Model", NeurIPS 2023 / arXiv 2305.18290'
 ---
 
 # DPO — 把 RLHF 的三阶段拍成两阶段

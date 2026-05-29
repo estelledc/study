@@ -1,8 +1,8 @@
 ---
 title: Boehm-Weiser 保守式垃圾回收
-来源: Hans-Juergen Boehm & Mark Weiser, "Garbage Collection in an Uncooperative Environment", Software: Practice and Experience, Vol. 18(9), 807-820, September 1988
+来源: 'Hans-Juergen Boehm & Mark Weiser, "Garbage Collection in an Uncooperative Environment", Software: Practice and Experience, Vol. 18(9), 807-820, September 1988'
 论文年份: 1988
-作者: Hans-Juergen Boehm, Mark Weiser
+作者: 'Hans-Juergen Boehm, Mark Weiser'
 分支: theory-D
 状态: 状元篇
 关联笔记:

@@ -1,6 +1,6 @@
 ---
 title: BERT 双向 Transformer 预训练
-来源: Devlin et al., "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", NAACL 2019 / arXiv 1810.04805
+来源: 'Devlin et al., "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", NAACL 2019 / arXiv 1810.04805'
 ---
 
 ## 一句话总结

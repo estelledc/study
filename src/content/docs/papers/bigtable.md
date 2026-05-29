@@ -1,8 +1,8 @@
 ---
 title: Bigtable 分布式结构化存储
-来源: Fay Chang et al., "Bigtable: A Distributed Storage System for Structured Data", OSDI 2006
+来源: 'Fay Chang et al., "Bigtable: A Distributed Storage System for Structured Data", OSDI 2006'
 论文年份: 2006
-作者: Fay Chang, Jeffrey Dean, Sanjay Ghemawat, Wilson C. Hsieh, Deborah A. Wallach, Mike Burrows, Tushar Chandra, Andrew Fikes, Robert E. Gruber
+作者: 'Fay Chang, Jeffrey Dean, Sanjay Ghemawat, Wilson C. Hsieh, Deborah A. Wallach, Mike Burrows, Tushar Chandra, Andrew Fikes, Robert E. Gruber'
 分支: theory-D
 状态: 状元篇
 关联笔记:
