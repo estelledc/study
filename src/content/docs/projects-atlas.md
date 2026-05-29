@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 177 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 181 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：177 个
-- **已分类**：177
+- **总数**：181 个
+- **已分类**：181
 
 ### 按主题分布
 
@@ -27,6 +27,7 @@ sidebar:
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 11 |
+| [DevOps / 容器 / 运维](#devops---容器---运维) | 4 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
@@ -176,6 +177,17 @@ sidebar:
 | [Redis — 内存键值数据库](/study/projects/redis/) |  |
 | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) |  |
 | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) |  |
+
+## DevOps / 容器 / 运维
+
+共 4 个。
+
+| 项目 | 描述 |
+|---|---|
+| [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) |  |
+| [Docker — 容器化平台](/study/projects/docker/) |  |
+| [Kubernetes — 容器编排平台](/study/projects/kubernetes/) |  |
+| [nginx — 高性能 Web 服务器](/study/projects/nginx/) |  |
 
 ## Web 框架
 
@@ -448,7 +460,7 @@ sidebar:
 
 ---
 
-## 全部 177 个（字母序）
+## 全部 181 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -463,6 +475,7 @@ sidebar:
 | `boxen` | [boxen — Terminal box 渲染库](/study/projects/boxen/) | Terminal / 终端 |
 | `browser-use` | [browser-use — 不是 Playwright 升级版，是 LLM 驱动的「DOM-tree → tool-call → CDP 执行」反馈循环](/study/projects/browser-use/) | AI 浏览器自动化 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
+| `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
 | `cal-com` | [cal.com — 不是再做一个 Calendly，是把"调度 SaaS"做成开源 + 可自托管 + 50 个 provider 都能插的协议](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `chalk` | [chalk](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | Monorepo / 包管理 |
@@ -481,6 +494,7 @@ sidebar:
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
 | `dify` | [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `dnd-kit` | [dnd-kit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
+| `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docusaurus` | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | 文档站点 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
@@ -511,6 +525,7 @@ sidebar:
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
 | `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
+| `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `langfuse` | [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
@@ -543,6 +558,7 @@ sidebar:
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | 文档站点 |
+| `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
 | `nx` | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) | 数据可视化 |

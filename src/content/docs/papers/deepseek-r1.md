@@ -147,3 +147,7 @@ R1 推理时输出长这样：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cot]] —— Chain-of-Thought Prompting
+- [[llama]] —— LLaMA — Meta 开源大语言模型
+

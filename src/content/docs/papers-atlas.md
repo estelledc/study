@@ -48,7 +48,7 @@ sidebar:
 | [AutoGen — Enabling Next-Gen LLM Applications via Multi-Agent Conversation](/study/papers/autogen/) | ConversableAgent + GroupChatManager 把多 agent 协作抽象成可编排的对话，奠定 2024 年 multi-agent framework 范式 |
 | [Chain-of-Thought Prompting](/study/papers/cot/) |  |
 | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | Edge et al |
-| [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | SFT 13k demo + RM 33k 排序 + PPO with KL anchor |
+| [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) |  |
 | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 把人类软件公司的标准作业流程（SOP）写进 multi-agent 系统：每个 agent 是一个角色（PM / Architect / Engineer / QA），用强结构化文档传递信息，把自由对话的随机性收敛为可… |
 | [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | Wang 等人 2024 年从 OpenDevin 改名而来的开源平台论文 |
 | [RAG (NeurIPS 2020) — 把 differentiable retriever 和 seq2seq generator 联训成一个端到端模型，让生成式 AI 第一次能引用外部知识](/study/papers/rag-lewis-2020/) | Lewis et al |
@@ -69,14 +69,14 @@ sidebar:
 | [Attention Is All You Need](/study/papers/attention/) |  |
 | [BERT — 双向 Transformer 预训练](/study/papers/bert/) |  |
 | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) |  |
-| [DeepSeek-R1 状元篇 — 纯 RL 让 LLM 自己学会推理](/study/papers/deepseek-r1/) | DeepSeek-R1 用 GRPO + rule-based reward 跳过 SFT 阶段，让 base model 在纯强化学习下涌现长 chain-of-thought 与自我反思，开源对齐 OpenAI o… |
+| [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) |  |
 | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) |  |
 | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) |  |
 | [Mamba — 选择性状态空间模型](/study/papers/mamba/) |  |
-| [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | MoE 是 Switch Transformer + Mixtral 双论文驱动的 sparse 架构范式，把模型总参数 N 与 active 参数解耦，使万亿规模成为可能 |
+| [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) |  |
 | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) |  |
 | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) |  |
-| [Word2Vec 词向量分布式表示](/study/papers/word2vec/) |  |
+| [Word2Vec — 词向量奠基](/study/papers/word2vec/) |  |
 
 ## 计算机视觉
 
@@ -342,7 +342,7 @@ sidebar:
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `ddpm` | [DDPM Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
 | `debugging-dichotomy` | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
-| `deepseek-r1` | [DeepSeek-R1 状元篇 — 纯 RL 让 LLM 自己学会推理](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
+| `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [ZeRO - Memory Optimizations Toward Training Trillion Parameter Models](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
@@ -371,7 +371,7 @@ sidebar:
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `induction-heads` | [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | AI 安全与可解释性 |
-| `instructgpt` | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
+| `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
@@ -389,7 +389,7 @@ sidebar:
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `metagpt` | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 智能体与 LLM 系统 |
-| `mixture-of-experts` | [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
+| `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `muzero` | [MuZero Mastering Games by Planning with Learned Model](/study/papers/muzero/) | 强化学习 |
 | `no-silver-bullet` | [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `openhands` | [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | 智能体与 LLM 系统 |
@@ -446,6 +446,6 @@ sidebar:
 | `volcano` | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | 数据库 |
 | `voyager` | [Voyager — 让 LLM agent 在 Minecraft 里"越玩越强"：自动课程 + 技能库 + 错误反馈循环](/study/papers/voyager/) | 智能体与 LLM 系统 |
 | `wadler-prettier` | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
-| `word2vec` | [Word2Vec 词向量分布式表示](/study/papers/word2vec/) | NLP 基础与 Scaling |
+| `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `zgc` | [ZGC — 染色指针 + 读屏障下的 TB 级低延迟并发 GC](/study/papers/zgc/) | GC / 内存管理 |
 | `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |

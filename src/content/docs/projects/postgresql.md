@@ -165,6 +165,7 @@ LIMIT 5;
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
