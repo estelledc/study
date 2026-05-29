@@ -158,5 +158,12 @@ WHERE SALARY > (
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 

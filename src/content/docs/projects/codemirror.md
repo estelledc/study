@@ -155,3 +155,6 @@ const logUpdates = ViewPlugin.fromClass(class {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
+

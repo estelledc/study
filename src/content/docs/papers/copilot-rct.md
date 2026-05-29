@@ -151,3 +151,7 @@ Cohen's d ≈ 2.0 在心理学/社科属于 "罕见大"——通常 d>1.5 都需
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
+- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+

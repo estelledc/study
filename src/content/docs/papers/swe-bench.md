@@ -160,6 +160,7 @@ python -m swebench.harness.run_evaluation \
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[react]] —— React UI 组件库
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法

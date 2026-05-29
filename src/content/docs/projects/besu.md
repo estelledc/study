@@ -150,4 +150,11 @@ System.out.println("最新块号: " + bn.getBlockNumber());
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[prometheus]] —— Prometheus — 时序监控系统
+- [[raft]] —— Raft — 易理解的共识算法
+

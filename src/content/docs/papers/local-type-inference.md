@@ -153,5 +153,11 @@ TypeScript 拿 `pipe` 的签名 + 两个实参的类型，**只看一层**就推
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 

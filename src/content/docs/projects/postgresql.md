@@ -168,6 +168,7 @@ LIMIT 5;
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[dgraph]] —— Dgraph — 分布式图数据库
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[docker]] —— Docker — 容器化平台

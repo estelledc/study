@@ -153,5 +153,6 @@ npx changeset version                # 自动 bump、写 CHANGELOG、删 changes
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 

@@ -161,6 +161,7 @@ function Greeting({ name }) {
 - [[ag-grid]] —— AG Grid — 企业级数据表格
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[cot]] —— Chain-of-Thought Prompting
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG

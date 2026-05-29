@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 152 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 154 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：152 篇
+- **总数**：154 篇
 - **已分类**：143
-- **未分类**：9（落入"其他 / 待分类"段）
+- **未分类**：11（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 9 |
+| [其他 / 待分类](#其他--待分类) | 11 |
 
 ---
 
@@ -288,8 +288,8 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [Kent Beck — Test-Driven Development: By Example](/study/papers/beck-tdd/) |  |
-| [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | Cognitive Science 12(2) 把为什么学不会形式化成 intrinsic + extraneous + germane 三类负荷之和，30 多年实证累积，影响 CS 教学 / UX / debug 流程 |
-| [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | 95 个开发者 / 随机分组 / HTTP server 任务 / Copilot 组比 Control 组快 55 |
+| [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) |  |
+| [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) |  |
 | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | ICSE 2018 用 Visual Studio 插件 WatchDog 监控 458 名程序员 18 个月，发现 debug 行为分两轨——65% 会话 < 1 分钟、setting a breakpoint 在 … |
 | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 状元篇：不到 1000 字的 letter 如何掀翻一个时代——goto 让程序的'静态文本'与'动态执行'错位，结构化编程三件套（顺序/选择/循环）让每个文本位置的状态可推 |
 | [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | 从 Ebbinghaus forgetting curve 到 Leitner 1972 box / SuperMemo SM-2 (1990) / SSP shortest path (2022)，演化到 Anki … |
@@ -304,23 +304,25 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 9 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 11 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
+| `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
+| `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 
 ---
 
-## 全部 152 篇（字母序）
+## 全部 154 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -353,11 +355,12 @@ sidebar:
 | `clickhouse` | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
-| `cognitive-load-theory` | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
+| `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
+| `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
-| `copilot-rct` | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
+| `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `crdt-json` | [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
@@ -430,6 +433,7 @@ sidebar:
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
 | `realm` | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
+| `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 其他 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
