@@ -149,5 +149,10 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[raft]] —— Raft — 易理解的共识算法
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

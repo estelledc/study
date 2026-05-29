@@ -166,6 +166,7 @@ map f (map g xs) = map (f . g) xs
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架

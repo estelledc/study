@@ -159,6 +159,7 @@ const { data, isLoading } = api.user.byId.useQuery(
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arktype]] —— arktype TypeScript 字符串 DSL 模式校验
+- [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify schema-first Node 高性能 web 框架
 - [[hono]] —— Hono — 多运行时 Web 框架

@@ -178,6 +178,7 @@ Prisma 自动：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM

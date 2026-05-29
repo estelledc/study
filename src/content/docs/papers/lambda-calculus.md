@@ -145,6 +145,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
@@ -158,6 +159,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

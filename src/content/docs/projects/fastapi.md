@@ -169,5 +169,9 @@ def me(user: dict = Depends(current_user)):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[redis]] —— Redis — 内存键值数据库
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 
