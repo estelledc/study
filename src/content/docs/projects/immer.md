@@ -16,8 +16,6 @@ created: 2026-05-28
 updated: 2026-05-28
 ---
 
-import { Aside } from '@astrojs/starlight/components'
-
 ## Layer 0 — 项目身份卡
 
 | 字段 | 值 |

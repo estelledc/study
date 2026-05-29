@@ -8,8 +8,6 @@ category: tool-library
 status: published
 ---
 
-import Figure from '../../../components/Figure.astro';
-
 ## Layer 0 项目档案
 
 | 字段 | 值 |
@@ -32,11 +30,9 @@ import Figure from '../../../components/Figure.astro';
 
 motion-one 是**用 Web Animations API 而非 requestAnimationFrame 写动画**的轻量库——浏览器自己在合成线程跑动画，JS 主线程一帧不参与，连 spring 物理动画也提前预采样成 linear() easing 交给 WAAPI 去跑。
 
-<Figure
-  src="/projects/motion-one/01-architecture.webp"
-  alt="Motion One 架构图：animate() 双引擎分发"
-  caption="animate() 入口 → 检测 value 类型 → transform/opacity 走 NativeAnimation (WAAPI, GPU 合成线程) / 其他走 JSAnimation (RAF + generator.next)；spring/keyframes/inertia 三个 generator 是两套引擎共享的数学层；vs Framer Motion：mini 2.6KB / full 18KB / framer-motion 50KB，三层共用 motion-dom 包"
-/>
+![Motion One 架构图：animate() 双引擎分发](/projects/motion-one/01-architecture.webp)
+
+*animate() 入口 → 检测 value 类型 → transform/opacity 走 NativeAnimation (WAAPI, GPU 合成线程) / 其他走 JSAnimation (RAF + generator.next)；spring/keyframes/inertia 三个 generator 是两套引擎共享的数学层*
 
 ## Layer 1 为什么存在
 
