@@ -132,3 +132,7 @@ prompt → CLIP text encoder → text emb → prior → image emb → decoder �
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ddpm]] —— DDPM Denoising Diffusion Probabilistic Models
+- [[dit]] —— DiT Diffusion Transformer
+

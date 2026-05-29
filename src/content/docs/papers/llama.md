@@ -137,3 +137,6 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bert]] —— BERT — 双向 Transformer 预训练
+

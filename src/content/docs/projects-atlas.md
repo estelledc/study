@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 170 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 174 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：170 个
-- **已分类**：170
+- **总数**：174 个
+- **已分类**：174
 
 ### 按主题分布
 
@@ -26,7 +26,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 4 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 8 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
@@ -161,14 +161,18 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 4 个。
+共 8 个。
 
 | 项目 | 描述 |
 |---|---|
 | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) |  |
+| [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) |  |
+| [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
+| [MySQL — 全球最流行关系数据库](/study/projects/mysql/) |  |
 | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) |  |
 | [Redis — 内存键值数据库](/study/projects/redis/) |  |
 | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) |  |
+| [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) |  |
 
 ## Web 框架
 
@@ -441,7 +445,7 @@ sidebar:
 
 ---
 
-## 全部 170 个（字母序）
+## 全部 174 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -465,6 +469,7 @@ sidebar:
 | `claude-code` | [Claude Code — 一个 LLM-runtime 暴露成 5 种 surface 的 agentic 产品](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
 | `clerk` | [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
+| `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
 | `codemirror` | [codemirror — 编辑器不是一个类，是一组 Facet 的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `commander` | [commander.js](/study/projects/commander/) | CLI / 命令行工具 |
 | `continue` | [Continue — 把 AI code review 写成 git 跟踪的 markdown，让 PR 跑 status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
@@ -522,8 +527,10 @@ sidebar:
 | `minisearch` | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 其他基础设施 |
 | `mobx` | [MobX — Reactive state via TFRP](/study/projects/mobx/) | 状态管理 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 的编辑器内核搬进浏览器的 IDE 级控件](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
+| `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
 | `motion-one` | [motion-one 状元篇](/study/projects/motion-one/) | 动画 |
 | `msw` | [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
+| `mysql` | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) | 数据库本体 / 存储引擎 |
 | `nanobrowser` | [nanobrowser — 不是 cloud Chrome 的 AI agent，是把浏览器扩展当 sandbox 的 multi-agent runtime](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 框架无关的 atomic 状态库（< 1 KB）](/study/projects/nanostores/) | 状态管理 |
 | `nestjs` | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) | Web 框架 |
@@ -597,6 +604,7 @@ sidebar:
 | `unified` | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) | Markdown / 解析 |
 | `unstorage` | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `valibot` | [valibot 模块化模式校验](/study/projects/valibot/) | 表单 / Schema 校验 |
+| `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.count++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vercel-ai` | [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |

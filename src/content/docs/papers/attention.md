@@ -134,6 +134,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 
 - [[alphago]] —— AlphaGo Mastering Go with Deep Neural Networks
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dns]] —— DNS Domain Name System
 - [[dpo]] —— DPO Direct Preference Optimization
 - [[dqn]] —— DQN Deep Q-Network 深度强化学习
@@ -144,5 +145,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[t5]] —— T5 Text-to-Text Transfer Transformer
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
+- [[vit]] —— ViT — Vision Transformer
 - [[word2vec]] —— Word2Vec 词向量分布式表示
 
