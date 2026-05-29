@@ -290,3 +290,87 @@ $$C = W \log_2(1 + SNR) \quad \text{bit/s}$$
 - Shannon 容量的"逼近极限"在 6G/光通信能不能再突破？
 - 大模型时代的 Joint Source-Channel Coding 是否可能？
 - 量子信息论的工程化什么时候可以？
+
+## 附录 A — Shannon-Hartley 公式（≥ 30 行）
+
+连续信道（高斯白噪声）容量公式：
+
+$$C = B \log_2(1 + \mathrm{SNR})$$
+
+- B = 信道带宽（Hz）
+- SNR = 信号功率 / 噪声功率（无量纲）
+- C = 容量（bit/s）
+
+例：4G LTE 20 MHz 带宽，SNR=10 dB（即 10）：
+- C = 20×10^6 × log_2(11) ≈ 69 Mbps（理论上限）
+- 实际 LTE ~75 Mbps（接近，靠 MIMO + LDPC）
+
+5G NR 100 MHz 带宽，SNR=15 dB：
+- C ≈ 100×10^6 × log_2(31.6) ≈ 497 Mbps
+- 实际 5G ~1 Gbps（用 MIMO 8x8 + Polar）
+
+工程意义：
+1. 带宽 B 翻倍 → 容量翻倍（线性）
+2. SNR 翻倍 → 容量增加约 1 bit（对数）
+3. 高 SNR 区：信号是瓶颈
+4. 低 SNR 区：噪声是瓶颈
+
+5G 和 6G 提升路径：
+- 增加 B（毫米波 / THz）
+- 增加 SNR（更高功率 / 更好天线）
+- 用空间维度（MIMO）扩 effective B
+
+## 附录 B — 信息论与机器学习（≥ 25 行）
+
+信息论工具在 ML 中的应用：
+
+1. **KL 散度**：变分推断 / VAE 损失
+   - $D_{KL}(q||p) = \sum q \log(q/p)$
+   - VAE: ELBO = E[log p(x|z)] - D_{KL}(q(z|x) || p(z))
+
+2. **互信息估计**：
+   - MINE（Belghazi 2018）：神经网络估 I(X;Y)
+   - InfoNCE（Oord 2018）：对比学习损失，对应 lower bound on I(X;Y)
+   - 应用：CLIP / SimCLR / MoCo / BYOL 都基于 InfoNCE
+
+3. **信息瓶颈**（Tishby 2017）：训练神经网络相当于挤压 I(X;T) 同时保留 I(T;Y)
+   - 但 Saxe 2018 反驳：在大模型上 IB 失效
+
+4. **熵正则化**：
+   - 强化学习：MaxEnt RL（SAC / TRPO 加 entropy bonus）
+   - LLM 采样：温度参数控制熵
+
+5. **InfoNCE 与对比学习**：从 Shannon 互信息推出 lower bound，奠定现代自监督表示学习理论根基
+
+## 附录 C — 信息论 vs 量子信息论（≥ 25 行）
+
+经典 Shannon 1948 → 量子信息论 1990s+：
+
+| 概念 | 经典 | 量子 |
+|---|---|---|
+| 信息载体 | bit | qubit |
+| 熵 | H = -Σ p log p | von Neumann S(ρ) = -Tr(ρ log ρ) |
+| 互信息 | I(X;Y) | I(A:B) = S(A) + S(B) - S(AB) |
+| 信道容量 | Shannon C | Holevo χ |
+| 编码定理 | Shannon Source/Channel | Schumacher / HSW theorem |
+
+关键差异：
+- 量子可叠加（superposition）→ 单 qubit 携带"无限"信息但测量只得 1 bit
+- 量子不可克隆（no-cloning theorem）→ 信号无法复制
+- 量子纠缠 → 互信息可超过经典上限
+- 量子信道容量 Holevo ≤ Shannon（在某些场景）
+
+## 附录 D — 学到补充（≥ 15 行）
+
+补充 5 条工程教训：
+
+6. **熵不只是"信息量"，是"不确定性度量"**：高熵 = 难预测 = 信息密度高
+7. **Shannon 容量是渐近极限**，工业上"达到 80%"已是工程极限（n→∞ blocklength 不可行）
+8. **压缩算法的极限是熵**：gzip/zstd 的目标是逼近熵，但永远无法到达
+9. **互信息估计在神经网络是新工具**：MINE / InfoNCE 让 ML 借助信息论数学工具
+10. **量子信息论扩展但不取代**：Shannon 仍是经典通信奠基；量子信道有自己的极限
+
+关联补充：
+- [[turing-1936]] [[lambda-calculus]] [[cook-levin]] [[karp-21]] [[godel-1931]] —— 计算理论同时代
+- [[attention]] [[gpt-3]] [[mae]] [[clip]] —— ML 中信息论工具
+- [[diffie-hellman]] [[rsa]] [[aes]] [[bitcoin]] [[zk-snark]] —— 密码学的信息论基础
