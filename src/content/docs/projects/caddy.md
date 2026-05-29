@@ -178,6 +178,7 @@ docker run -d \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[prometheus]] —— Prometheus — 时序监控系统

@@ -136,6 +136,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[dit]] —— DiT — Diffusion Transformer
 - [[dns]] —— DNS Domain Name System
 - [[dpo]] —— DPO Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network

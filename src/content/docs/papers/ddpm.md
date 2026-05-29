@@ -129,3 +129,10 @@ GAN 的 loss 曲线经常上下震荡甚至崩塌，需要无数 trick（label s
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
+- [[dit]] —— DiT — Diffusion Transformer
+- [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
+- [[vit]] —— ViT — Vision Transformer
+

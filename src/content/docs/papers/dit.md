@@ -130,3 +130,10 @@ DiT 论文从挂 arXiv 到工业全面接受，花了一年半。架构革命从
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
+- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
+- [[vit]] —— ViT — Vision Transformer
+

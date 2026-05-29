@@ -119,6 +119,7 @@ const THEMES_PROJECTS = {
     'rocksdb', 'leveldb', 'lmdb', 'valkey', 'duckdb',
     'elasticsearch', 'kafka', 'milvus',
     'neo4j', 'dgraph', 'arangodb',
+    'meilisearch', 'typesense', 'qdrant', 'weaviate',
   ],
   'DevOps / 容器 / 运维': [
     'docker', 'kubernetes', 'nginx', 'caddy', 'traefik',

@@ -185,6 +185,7 @@ Bun.serve({
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
+- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

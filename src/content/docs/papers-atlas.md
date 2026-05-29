@@ -99,10 +99,10 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) |  |
-| [DDPM Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) |  |
-| [DiT Diffusion Transformer](/study/papers/dit/) |  |
-| [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 用一个小小的投影矩阵把 CLIP 视觉特征接到 LLaMA 的 token 空间，再用纯文本的 GPT-4 凭 caption + bbox 想象出 158K 条多模态指令数据，两阶段训练，做出第一个开源的视觉指令助手 |
-| [Stable Diffusion / LDM — 把扩散从像素搬到 latent 空间，让消费级 GPU 也能跑文生图](/study/papers/stable-diffusion/) | VAE 编码到 64×64 latent，diffusion 在 latent 空间训练与采样，cross-attention 注入文本条件——一篇 CVPR 2022 论文 + 一次 RunwayML 权重放出，把 … |
+| [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) |  |
+| [DiT — Diffusion Transformer](/study/papers/dit/) |  |
+| [LLaVA — 开源多模态对话模型](/study/papers/llava/) |  |
+| [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) |  |
 
 ## 强化学习
 
@@ -340,7 +340,7 @@ sidebar:
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `crdt-json` | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
-| `ddpm` | [DDPM Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
+| `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
 | `debugging-dichotomy` | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [ZeRO - Memory Optimizations Toward Training Trillion Parameter Models](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
@@ -348,7 +348,7 @@ sidebar:
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
-| `dit` | [DiT Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
+| `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dns` | [DNS Domain Name System](/study/papers/dns/) | 网络协议 |
 | `dpo` | [DPO Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
 | `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
@@ -381,7 +381,7 @@ sidebar:
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
-| `llava` | [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 生成模型 / 扩散 |
+| `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
@@ -427,7 +427,7 @@ sidebar:
 | `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
 | `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
-| `stable-diffusion` | [Stable Diffusion / LDM — 把扩散从像素搬到 latent 空间，让消费级 GPU 也能跑文生图](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
+| `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
 | `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |

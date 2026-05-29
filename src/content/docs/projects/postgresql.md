@@ -180,4 +180,6 @@ LIMIT 5;
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
+- [[typesense]] —— Typesense — 高性能搜索引擎
+- [[weaviate]] —— Weaviate — 模块化向量数据库
 
