@@ -145,3 +145,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aes]] —— AES Rijndael 对称分组密码
+- [[smalltalk-80]] —— Smalltalk-80 The Language and its Implementation
+
