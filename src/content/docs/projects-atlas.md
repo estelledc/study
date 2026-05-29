@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 189 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 192 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：189 个
-- **已分类**：189
+- **总数**：192 个
+- **已分类**：192
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 11 |
-| [DevOps / 容器 / 运维](#devops---容器---运维) | 8 |
+| [DevOps / 容器 / 运维](#devops---容器---运维) | 11 |
 | [监控 / 时序](#监控---时序) | 4 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
@@ -181,14 +181,17 @@ sidebar:
 
 ## DevOps / 容器 / 运维
 
-共 8 个。
+共 11 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Ansible — 无 agent 配置管理](/study/projects/ansible/) |  |
 | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) |  |
 | [Docker — 容器化平台](/study/projects/docker/) |  |
+| [etcd — 分布式键值数据库](/study/projects/etcd/) |  |
+| [Helm — Kubernetes 包管理器](/study/projects/helm/) |  |
 | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) |  |
+| [MinIO — S3 兼容对象存储](/study/projects/minio/) |  |
 | [nginx — 高性能 Web 服务器](/study/projects/nginx/) |  |
 | [Podman — 无 daemon 容器引擎](/study/projects/podman/) |  |
 | [Terraform — 基础设施即代码](/study/projects/terraform/) |  |
@@ -476,7 +479,7 @@ sidebar:
 
 ---
 
-## 全部 189 个（字母序）
+## 全部 192 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -522,6 +525,7 @@ sidebar:
 | `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
 | `enquirer` | [enquirer 终端交互提示库](/study/projects/enquirer/) | Terminal / 终端 |
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
+| `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
 | `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
@@ -530,6 +534,7 @@ sidebar:
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
+| `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
@@ -564,6 +569,7 @@ sidebar:
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
+| `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 其他基础设施 |
 | `mobx` | [MobX — Reactive state via TFRP](/study/projects/mobx/) | 状态管理 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 的编辑器内核搬进浏览器的 IDE 级控件](/study/projects/monaco-editor/) | 编辑器 / 富文本 |

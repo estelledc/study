@@ -122,7 +122,7 @@ const THEMES_PROJECTS = {
   'DevOps / 容器 / 运维': [
     'docker', 'kubernetes', 'nginx', 'caddy', 'traefik',
     'podman', 'containerd', 'helm', 'argocd', 'terraform',
-    'ansible',
+    'ansible', 'minio', 'etcd',
   ],
   '监控 / 时序': [
     'prometheus', 'grafana', 'timescaledb', 'influxdb',

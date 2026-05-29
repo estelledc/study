@@ -148,3 +148,6 @@ retro.eval(retrieval_db=wikipedia_2024)   # 换成 2024 年 Wikipedia
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+

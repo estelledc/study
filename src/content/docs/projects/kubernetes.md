@@ -136,6 +136,9 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
+- [[etcd]] —— etcd — 分布式键值数据库
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[minio]] —— MinIO — S3 兼容对象存储
 - [[podman]] —— Podman — 无 daemon 容器引擎
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[terraform]] —— Terraform — 基础设施即代码
