@@ -156,3 +156,7 @@ function Greeting({ name }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
+- [[vue]] —— Vue.js — 渐进式 UI 框架
+
