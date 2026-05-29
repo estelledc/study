@@ -174,5 +174,7 @@ let s2 = read_log(f);    // 报错：f 已 moved
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 

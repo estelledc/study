@@ -151,3 +151,10 @@ module.exports = {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[next-js]] —— Next.js — React 全栈框架
+- [[react]] —— React UI 组件库
+- [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vue]] —— Vue.js — 渐进式 UI 框架
+

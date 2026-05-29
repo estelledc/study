@@ -152,11 +152,14 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
+- [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[starlight]] —— Starlight — Astro 文档站点主题
 - [[turing-1936]] —— Turing 1936 可计算性
 

@@ -128,3 +128,7 @@ C = 20×10^6 × log₂(1001) ≈ 200 Mbps
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[turing-1936]] —— Turing 1936 可计算性
+

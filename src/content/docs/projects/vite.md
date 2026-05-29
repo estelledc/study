@@ -150,13 +150,16 @@ export default defineConfig({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[next-js]] —— Next.js — React 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[svelte]] —— Svelte — 编译时 UI 框架
+- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[webpack]] —— webpack 模块打包
 

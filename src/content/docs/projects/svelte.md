@@ -157,6 +157,8 @@ Svelte 学习曲线可以拆成 **三块**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[next-js]] —— Next.js — React 全栈框架
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架

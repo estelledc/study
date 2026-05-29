@@ -163,8 +163,9 @@ D(M):
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
-- [[shannon-1948]] —— Shannon 信息论 通信的数学理论
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 

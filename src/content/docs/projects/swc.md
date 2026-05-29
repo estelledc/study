@@ -169,6 +169,8 @@ pub fn process(mut program: Program, _: ()) -> Program {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bun]] —— Bun — JS 全能运行时
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[rollup]] —— Rollup — ESM 优先的打包器
 - [[webpack]] —— webpack 模块打包
 

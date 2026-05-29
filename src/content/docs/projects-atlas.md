@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 161 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 163 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：161 个
-- **已分类**：161
+- **总数**：163 个
+- **已分类**：163
 
 ### 按主题分布
 
@@ -28,6 +28,7 @@ sidebar:
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
+| [Meta 框架 / 全栈](#meta-框架---全栈) | 2 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -183,6 +184,15 @@ sidebar:
 | [Svelte — 编译时 UI 框架](/study/projects/svelte/) |  |
 | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) |  |
 
+## Meta 框架 / 全栈
+
+共 2 个。
+
+| 项目 | 描述 |
+|---|---|
+| [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) |  |
+| [Next.js — React 全栈框架](/study/projects/next-js/) |  |
+
 ## Auth 认证
 
 共 5 个。
@@ -255,7 +265,7 @@ sidebar:
 |---|---|
 | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | React + MDX + 内置 i18n / versioning / search / blog 的全功能文档框架 |
 | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | Vercel 系 docs 框架的另一极——shuding 起手 + dimaMachina 接棒，把 nextra(config)(nextConfig) 这一行 hooking 加在 a54da393 这条 com… |
-| [Starlight — Astro 官方文档框架，零 JS 默认 + sidebar autogen](/study/projects/starlight/) | 这个 study 站本身就用 Starlight 构建 |
+| [Starlight — Astro 文档站点主题](/study/projects/starlight/) |  |
 | [VitePress — Vue + Vite 文档框架，零 framework 重负的 SSG](/study/projects/vitepress/) | Vue 团队对 docs 框架的重构答卷——把 markdown-it + Vue SFC + Vite SSG + 默认主题缝在 ee02826 这条 commit 上，280 行 build |
 
 ## 数据获取 / 路由
@@ -367,7 +377,7 @@ sidebar:
 | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) |  |
 | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) |  |
 | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) |  |
-| [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) |  |
+| [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) |  |
 | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | Seek 工程师 Mark Dalgleish 出品 |
 
 ## CLI / 命令行工具
@@ -416,13 +426,14 @@ sidebar:
 
 ---
 
-## 全部 161 个（字母序）
+## 全部 163 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `affine` | [AFFiNE — 不是再做一个 Notion，是把 doc 和 whiteboard 融合到同一个 block 模型，再用 Yjs CRDT 把 local-first 做到底](/study/projects/affine/) | 数据应用 / SaaS |
 | `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
 | `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
+| `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `auth-js` | [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | Auth 认证 |
 | `axios` | [axios Promise-based HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `better-auth` | [better-auth 状元篇 — Plugin 化 TS-first 认证框架的可注册扩展思路](/study/projects/better-auth/) | Auth 认证 |
@@ -501,6 +512,7 @@ sidebar:
 | `nanostores` | [nanostores — 框架无关的 atomic 状态库（< 1 KB）](/study/projects/nanostores/) | 状态管理 |
 | `nestjs` | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) | Web 框架 |
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
+| `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | 文档站点 |
 | `nx` | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) | 数据可视化 |
@@ -540,7 +552,7 @@ sidebar:
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
 | `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `stagehand` | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | AI 浏览器自动化 |
-| `starlight` | [Starlight — Astro 官方文档框架，零 JS 默认 + sidebar autogen](/study/projects/starlight/) | 文档站点 |
+| `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |
 | `storybook` | [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |
@@ -550,7 +562,7 @@ sidebar:
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — 同一问题的另一种回答](/study/projects/swr/) | 数据获取 / 路由 |
-| `tailwind` | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) | CSS / 样式 |
+| `tailwind` | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | CSS / 样式 |
 | `tanstack-form` | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 服务端状态当成"独立物种"管](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把类型系统当 UX 工具](/study/projects/tanstack-router/) | 数据获取 / 路由 |

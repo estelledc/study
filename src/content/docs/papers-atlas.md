@@ -141,7 +141,7 @@ sidebar:
 | [Chubby 分布式锁服务](/study/papers/chubby/) |  |
 | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 用 happens-before partial order 替代物理时间 |
 | [Paxos 异步分布式共识](/study/papers/paxos/) |  |
-| [Raft 可理解的共识算法](/study/papers/raft/) |  |
+| [Raft — 易理解的共识算法](/study/papers/raft/) |  |
 | [Spanner 全球分布式数据库](/study/papers/spanner/) |  |
 
 ## 数据库
@@ -226,7 +226,7 @@ sidebar:
 | [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | Joe Armstrong KTH 2003 博士论文 + 30 年 Ericsson 实战汇总 |
 | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) |  |
 | [线性类型（Linear Types）](/study/papers/linear-types/) |  |
-| [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
+| [LLVM — 模块化编译器框架](/study/papers/llvm/) |  |
 | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) |  |
 | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | RxJS / SolidJS / Effect 的反应式编程理论根 |
 | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 不在 finetuning 时才接外部知识，而是让 retriever 和 BERT 一起预训练 |
@@ -251,7 +251,7 @@ sidebar:
 | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | Edsger Dijkstra 用一杯咖啡的时间在 1959 年的备忘里写下两个图论算法 |
 | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) |  |
 | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) |  |
-| [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | Donald Knuth 1968 年开篇的 TAOCP 第一卷，建立 MIX 抽象机器与算法分析数学基础，1974 年图灵奖核心成果，论文 round 144 = EE2 / theory 分支 D |
+| [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) |  |
 | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) |  |
 | [Turing 1936 可计算性](/study/papers/turing-1936/) |  |
 
@@ -265,7 +265,7 @@ sidebar:
 | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | Huffman 1952 状元篇 — 从作业题到 70 年标准：最优前缀码的贪心构造与现代压缩中的位置 |
 | [Polar Codes — Channel Polarization 与 5G 编码](/study/papers/polar-codes-2009/) | Arıkan 2009 年提出的信道极化方法，第一个被严格证明能达到 Shannon 容量的实用编码方案，5G NR 控制信道（PDCCH/PBCH/PUCCH）的官方编码 |
 | [Reed-Solomon 编码：多项式码与错误纠正的 60 年统治](/study/papers/reed-solomon-1960/) | Reed & Solomon 1960 论文精读 v1 |
-| [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) |  |
+| [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) |  |
 
 ## 密码学 / 安全
 
@@ -375,14 +375,14 @@ sidebar:
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
-| `knuth-taocp` | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
+| `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `llama` | [LLaMA — Chinchilla 实证落地版：7B 训 1T tokens，开放权重点燃 2023 开源 LLM 生态](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 生成模型 / 扩散 |
-| `llvm` | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | 编译器 / 编程语言理论 |
+| `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
@@ -401,7 +401,7 @@ sidebar:
 | `programmer-interruption` | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
 | `push-pull-frp` | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | 编译器 / 编程语言理论 |
 | `quic` | [QUIC UDP-Based Multiplexed Secure Transport](/study/papers/quic/) | 网络协议 |
-| `raft` | [Raft 可理解的共识算法](/study/papers/raft/) | 分布式系统 |
+| `raft` | [Raft — 易理解的共识算法](/study/papers/raft/) | 分布式系统 |
 | `rag-lewis-2020` | [RAG (NeurIPS 2020) — 把 differentiable retriever 和 seq2seq generator 联训成一个端到端模型，让生成式 AI 第一次能引用外部知识](/study/papers/rag-lewis-2020/) | 智能体与 LLM 系统 |
 | `react` | [ReAct — agent loop 的祖宗：think × act 的最小可执行三元组](/study/papers/react/) | 智能体与 LLM 系统 |
 | `realm` | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
@@ -418,7 +418,7 @@ sidebar:
 | `self-adjusting` | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-pic` | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `selinger-1979` | [Selinger 1979 — 把可见的执行计划装进每一台 SQL 数据库](/study/papers/selinger-1979/) | 数据库 |
-| `shannon-1948` | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
+| `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
 | `sleeper-agents` | [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
