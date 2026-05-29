@@ -157,6 +157,8 @@ function Greeting({ name }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[preact]] —— Preact — 3KB React 替代
+- [[qwik]] —— Qwik — Resumable UI 框架
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
 - [[svelte]] —— Svelte — 编译时 UI 框架

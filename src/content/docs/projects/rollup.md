@@ -154,6 +154,8 @@ const fn = debounce(handler, 300);
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[webpack]] —— webpack 模块打包
 

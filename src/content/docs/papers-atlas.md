@@ -222,10 +222,10 @@ sidebar:
 | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 22 项研究系统综述 |
 | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
 | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 第一篇把 CRDT 从平坦寄存器扩到嵌套 map+list 任意嵌套结构的论文 |
-| [Algebraic Effects (Plotkin & Pretnar ESOP 2009) — async/await、try-catch、generator 的统一抽象](/study/papers/effect-handlers/) | operation signature + handler clause + resume/abort 控制流 |
+| [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) |  |
 | [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | Joe Armstrong KTH 2003 博士论文 + 30 年 Ericsson 实战汇总 |
 | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) |  |
-| [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) |  |
+| [线性类型（Linear Types）](/study/papers/linear-types/) |  |
 | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
 | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) |  |
 | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | RxJS / SolidJS / Effect 的反应式编程理论根 |
@@ -234,7 +234,7 @@ sidebar:
 | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | modifiable + read + write 三个 primitive + change propagation |
 | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | Hölzle, Chambers, Ungar, ECOOP 1991 — 在动态类型对象语言里给每个 call site 配一张小缓存，按 receiver 类型记忆最近被调到的方法地址，让"虚函数 / 消息发送"在… |
 | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) |  |
-| [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) |  |
+| [Smalltalk-80](/study/papers/smalltalk-80/) |  |
 | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | Cytron, Ferrante, Rosen, Wegman, Zadeck, ACM TOPLAS 1991 — 用支配边界（dominance frontier）算法把 SSA 构造从 O(N³) 朴素做法降到几… |
 | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) |  |
 | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a |
@@ -250,7 +250,7 @@ sidebar:
 | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) |  |
 | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | Edsger Dijkstra 用一杯咖啡的时间在 1959 年的备忘里写下两个图论算法 |
 | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) |  |
-| [Karp's 21 NP-complete Problems](/study/papers/karp-21/) |  |
+| [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) |  |
 | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | Donald Knuth 1968 年开篇的 TAOCP 第一卷，建立 MIX 抽象机器与算法分析数学基础，1974 年图灵奖核心成果，论文 round 144 = EE2 / theory 分支 D |
 | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) |  |
 | [Turing 1936 可计算性](/study/papers/turing-1936/) |  |
@@ -354,7 +354,7 @@ sidebar:
 | `dqn` | [DQN Deep Q-Network 深度强化学习](/study/papers/dqn/) | 强化学习 |
 | `dynamo` | [Dynamo (DeCandia et al. 2007) — NoSQL 的源头与 CAP 的 AP 路线](/study/papers/dynamo/) | 数据库 |
 | `ebpf` | [eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
-| `effect-handlers` | [Algebraic Effects (Plotkin & Pretnar ESOP 2009) — async/await、try-catch、generator 的统一抽象](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
+| `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
 | `erlang-otp` | [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `flash-attention` | [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `foundationdb` | [FoundationDB (Zhou et al. 2021) — Unbundled 分布式 KV + Sim2 确定性仿真：用 10 年 CI 把 bug 烧在设计期](/study/papers/foundationdb/) | 数据库 |
@@ -374,12 +374,12 @@ sidebar:
 | `instructgpt` | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
-| `karp-21` | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) | 计算理论 / 数学基础 |
+| `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
 | `knuth-taocp` | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
-| `linear-types` | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
+| `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `llama` | [LLaMA — Chinchilla 实证落地版：7B 训 1T tokens，开放权重点燃 2023 开源 LLM 生态](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llvm` | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | 编译器 / 编程语言理论 |
@@ -422,7 +422,7 @@ sidebar:
 | `sillito-questions` | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
 | `sleeper-agents` | [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
-| `smalltalk-80` | [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
+| `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |
 | `spanner` | [Spanner 全球分布式数据库](/study/papers/spanner/) | 分布式系统 |
 | `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |

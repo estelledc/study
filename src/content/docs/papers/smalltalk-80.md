@@ -154,8 +154,9 @@ SavingsAccount >> deposit: amount
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
-</content>
-</invoke>
+- [[turing-1936]] —— Turing 1936 可计算性

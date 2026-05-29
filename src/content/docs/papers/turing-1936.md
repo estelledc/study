@@ -162,8 +162,9 @@ D(M):
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[shannon-1948]] —— Shannon 信息论 通信的数学理论
-- [[smalltalk-80]] —— Smalltalk-80 The Language and its Implementation
+- [[smalltalk-80]] —— Smalltalk-80
 

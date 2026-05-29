@@ -174,3 +174,6 @@ let collect body =
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[linear-types]] —— 线性类型（Linear Types）
+

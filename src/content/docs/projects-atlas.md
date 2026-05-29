@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 159 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 161 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：159 个
-- **已分类**：159
+- **总数**：161 个
+- **已分类**：161
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [Web 框架](#web-框架) | 6 |
-| [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 4 |
+| [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -130,14 +130,14 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Biome — 一个工具替代 ESLint + Prettier 的勇气](/study/projects/biome/) | 不是把两个工具合到一起，是从零写一个 Rust 工具链，复用 AST、共享配置、跑得快 25 倍 |
-| [Bun — 一个二进制 = 4 个 phase 的 JS 工具链](/study/projects/bun/) | 用 Zig 写的 JS runtime + bundler + test runner + package manager |
+| [Bun — JS 全能运行时](/study/projects/bun/) |  |
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) |  |
 | [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | Parcel 团队用 Rust 重写整个 CSS 工具链，200+ CSS property 各自一个 Rust 类型，一遍走完 cssnano + autoprefixer + postcss-preset-env … |
 | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 不是把现有 JS 工具搬到 Rust，是从零设计 parser / AST / linter 全栈，速度比 ESLint 快 50-100 倍 |
 | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 不是 Rollup 的替代品，是 Vite 的统一引擎 |
 | [Rollup — ESM 优先的打包器](/study/projects/rollup/) |  |
 | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 不是 webpack 的下位替代，是 webpack plugin API 的 Rust 实现 |
-| [swc Rust-based JS/TS 编译器](/study/projects/swc/) |  |
+| [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) |  |
 | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | Webpack 作者 Tobias Koppers 第二代 bundler |
 | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) |  |
 | [webpack 模块打包](/study/projects/webpack/) |  |
@@ -172,10 +172,12 @@ sidebar:
 
 ## UI 框架 / Frontend Framework
 
-共 4 个。
+共 6 个。
 
 | 项目 | 描述 |
 |---|---|
+| [Preact — 3KB React 替代](/study/projects/preact/) |  |
+| [Qwik — Resumable UI 框架](/study/projects/qwik/) |  |
 | [React UI 组件库](/study/projects/react/) |  |
 | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) |  |
 | [Svelte — 编译时 UI 框架](/study/projects/svelte/) |  |
@@ -414,7 +416,7 @@ sidebar:
 
 ---
 
-## 全部 159 个（字母序）
+## 全部 161 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -427,7 +429,7 @@ sidebar:
 | `biome` | [Biome — 一个工具替代 ESLint + Prettier 的勇气](/study/projects/biome/) | 构建工具 / Bundler |
 | `boxen` | [boxen — Terminal box 渲染库](/study/projects/boxen/) | Terminal / 终端 |
 | `browser-use` | [browser-use — 不是 Playwright 升级版，是 LLM 驱动的「DOM-tree → tool-call → CDP 执行」反馈循环](/study/projects/browser-use/) | AI 浏览器自动化 |
-| `bun` | [Bun — 一个二进制 = 4 个 phase 的 JS 工具链](/study/projects/bun/) | 构建工具 / Bundler |
+| `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `cal-com` | [cal.com — 不是再做一个 Calendly，是把"调度 SaaS"做成开源 + 可自托管 + 50 个 provider 都能插的协议](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `chalk` | [chalk](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | Monorepo / 包管理 |
@@ -515,9 +517,11 @@ sidebar:
 | `playwright` | [Playwright — 浏览器自动化的工程艺术](/study/projects/playwright/) | 测试 / 验证 |
 | `pnpm` | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `postgres-js` | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
+| `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
 | `prisma` | [Prisma TypeScript-first 现代 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
+| `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) | Drag & Drop / Interaction |
@@ -544,7 +548,7 @@ sidebar:
 | `supabase` | [supabase — 不是另一个 Firebase 替代品，是把 Postgres 包成了完整 BaaS](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
-| `swc` | [swc Rust-based JS/TS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
+| `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — 同一问题的另一种回答](/study/projects/swr/) | 数据获取 / 路由 |
 | `tailwind` | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) | CSS / 样式 |
 | `tanstack-form` | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
