@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 128 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 129 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：128 篇
-- **已分类**：128
+- **总数**：129 篇
+- **已分类**：129
 
 ### 按主题分布
 
@@ -32,7 +32,7 @@ sidebar:
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
-| [信息论 / 编码理论](#信息论---编码理论) | 3 |
+| [信息论 / 编码理论](#信息论---编码理论) | 4 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
@@ -249,12 +249,13 @@ sidebar:
 
 ## 信息论 / 编码理论
 
-共 3 篇。
+共 4 篇。
 
 | 论文 | 描述 |
 |---|---|
 | [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | Richard Hamming 1950 年 BSTJ 论文系统化错误检测与纠正理论，Hamming(7,4) 用 3 个校验位为 4 个数据位提供单错纠正，距离-纠错关系定理 ⌊(d-1)/2⌋ 至今仍是编码理论基石 |
 | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | Huffman 1952 状元篇 — 从作业题到 70 年标准：最优前缀码的贪心构造与现代压缩中的位置 |
+| [Reed-Solomon 编码：多项式码与错误纠正的 60 年统治](/study/papers/reed-solomon-1960/) | Reed & Solomon 1960 论文精读 v1 |
 | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) |  |
 
 ## 密码学 / 安全
@@ -287,7 +288,7 @@ sidebar:
 
 ---
 
-## 全部 128 篇（字母序）
+## 全部 129 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -379,6 +380,7 @@ sidebar:
 | `rag-lewis-2020` | [RAG (NeurIPS 2020) — 把 differentiable retriever 和 seq2seq generator 联训成一个端到端模型，让生成式 AI 第一次能引用外部知识](/study/papers/rag-lewis-2020/) | 智能体与 LLM 系统 |
 | `react` | [ReAct — agent loop 的祖宗：think × act 的最小可执行三元组](/study/papers/react/) | 智能体与 LLM 系统 |
 | `realm` | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
+| `reed-solomon-1960` | [Reed-Solomon 编码：多项式码与错误纠正的 60 年统治](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
 | `reflexion` | [Reflexion (Shinn et al. 2023) — verbal RL：用文字代替梯度让 agent 学习](/study/papers/reflexion/) | 智能体与 LLM 系统 |
 | `resnet` | [ResNet 深度残差学习](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO (DeepMind ICML 2022) — 用 2T tokens 外部数据库 + chunked cross-attention 让 7.5B 模型媲美 175B Gopher，把检索抬成与参数并列的第二个 LLM 缩放轴](/study/papers/retro/) | 智能体与 LLM 系统 |
