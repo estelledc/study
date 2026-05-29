@@ -162,10 +162,13 @@ function Greeting({ name }) {
 - [[cot]] —— Chain-of-Thought Prompting
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
+- [[reflexion]] —— Reflexion — 让 LLM 自我反思
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
 - [[svelte]] —— Svelte — 编译时 UI 框架

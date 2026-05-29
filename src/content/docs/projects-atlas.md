@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 185 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 189 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：185 个
-- **已分类**：185
+- **总数**：189 个
+- **已分类**：189
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 11 |
-| [DevOps / 容器 / 运维](#devops---容器---运维) | 4 |
+| [DevOps / 容器 / 运维](#devops---容器---运维) | 8 |
 | [监控 / 时序](#监控---时序) | 4 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
@@ -181,14 +181,18 @@ sidebar:
 
 ## DevOps / 容器 / 运维
 
-共 4 个。
+共 8 个。
 
 | 项目 | 描述 |
 |---|---|
+| [Ansible — 无 agent 配置管理](/study/projects/ansible/) |  |
 | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) |  |
 | [Docker — 容器化平台](/study/projects/docker/) |  |
 | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) |  |
 | [nginx — 高性能 Web 服务器](/study/projects/nginx/) |  |
+| [Podman — 无 daemon 容器引擎](/study/projects/podman/) |  |
+| [Terraform — 基础设施即代码](/study/projects/terraform/) |  |
+| [Traefik — 现代云原生反向代理](/study/projects/traefik/) |  |
 
 ## 监控 / 时序
 
@@ -472,12 +476,13 @@ sidebar:
 
 ---
 
-## 全部 185 个（字母序）
+## 全部 189 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `affine` | [AFFiNE — 不是再做一个 Notion，是把 doc 和 whiteboard 融合到同一个 block 模型，再用 Yjs CRDT 把 local-first 做到底](/study/projects/affine/) | 数据应用 / SaaS |
 | `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
+| `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `auth-js` | [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | Auth 认证 |
@@ -588,6 +593,7 @@ sidebar:
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `pnpm` | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | Monorepo / 包管理 |
+| `podman` | [Podman — 无 daemon 容器引擎](/study/projects/podman/) | DevOps / 容器 / 运维 |
 | `postgres-js` | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
@@ -633,8 +639,10 @@ sidebar:
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把类型系统当 UX 工具](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `temporal-polyfill` | [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) | 日期时间 |
+| `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
 | `testing-library` | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 测试 / 验证 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
+| `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | DevOps / 容器 / 运维 |
 | `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | 数据获取 / 路由 |
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
 | `turborepo` | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Monorepo / 包管理 |

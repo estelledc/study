@@ -135,5 +135,9 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[podman]] —— Podman — 无 daemon 容器引擎
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[terraform]] —— Terraform — 基础设施即代码
+- [[traefik]] —— Traefik — 现代云原生反向代理
 

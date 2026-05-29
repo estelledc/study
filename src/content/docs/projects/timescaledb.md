@@ -157,5 +157,10 @@ SELECT add_continuous_aggregate_policy('hourly_avg',
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[influxdb]] —— InfluxDB — 专用时序数据库
+- [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
+- [[valkey]] —— Valkey — Redis 7.4 的开源 fork
 

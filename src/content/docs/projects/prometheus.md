@@ -176,6 +176,12 @@ rate(http_requests_total{status=~"5.."}[5m])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[influxdb]] —— InfluxDB — 专用时序数据库
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[terraform]] —— Terraform — 基础设施即代码
 
