@@ -146,3 +146,6 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[shannon-1948]] —— Shannon 信息论 通信的数学理论
+

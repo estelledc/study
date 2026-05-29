@@ -157,4 +157,5 @@ Svelte 学习曲线可以拆成 **三块**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[vue]] —— Vue.js — 渐进式 UI 框架
+

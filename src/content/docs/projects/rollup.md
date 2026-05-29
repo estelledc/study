@@ -153,5 +153,7 @@ const fn = debounce(handler, 300);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包
+

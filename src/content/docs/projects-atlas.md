@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 157 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 159 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：157 个
-- **已分类**：157
+- **总数**：159 个
+- **已分类**：159
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [Web 框架](#web-框架) | 6 |
-| [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 2 |
+| [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 4 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -131,11 +131,11 @@ sidebar:
 |---|---|
 | [Biome — 一个工具替代 ESLint + Prettier 的勇气](/study/projects/biome/) | 不是把两个工具合到一起，是从零写一个 Rust 工具链，复用 AST、共享配置、跑得快 25 倍 |
 | [Bun — 一个二进制 = 4 个 phase 的 JS 工具链](/study/projects/bun/) | 用 Zig 写的 JS runtime + bundler + test runner + package manager |
-| [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) |  |
+| [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) |  |
 | [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | Parcel 团队用 Rust 重写整个 CSS 工具链，200+ CSS property 各自一个 Rust 类型，一遍走完 cssnano + autoprefixer + postcss-preset-env … |
 | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 不是把现有 JS 工具搬到 Rust，是从零设计 parser / AST / linter 全栈，速度比 ESLint 快 50-100 倍 |
 | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 不是 Rollup 的替代品，是 Vite 的统一引擎 |
-| [rollup ESM-first 库打包器](/study/projects/rollup/) |  |
+| [Rollup — ESM 优先的打包器](/study/projects/rollup/) |  |
 | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 不是 webpack 的下位替代，是 webpack plugin API 的 Rust 实现 |
 | [swc Rust-based JS/TS 编译器](/study/projects/swc/) |  |
 | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | Webpack 作者 Tobias Koppers 第二代 bundler |
@@ -172,11 +172,13 @@ sidebar:
 
 ## UI 框架 / Frontend Framework
 
-共 2 个。
+共 4 个。
 
 | 项目 | 描述 |
 |---|---|
 | [React UI 组件库](/study/projects/react/) |  |
+| [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) |  |
+| [Svelte — 编译时 UI 框架](/study/projects/svelte/) |  |
 | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) |  |
 
 ## Auth 认证
@@ -412,7 +414,7 @@ sidebar:
 
 ---
 
-## 全部 157 个（字母序）
+## 全部 159 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -450,7 +452,7 @@ sidebar:
 | `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
 | `enquirer` | [enquirer 终端交互提示库](/study/projects/enquirer/) | Terminal / 终端 |
-| `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
+| `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
 | `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
@@ -524,13 +526,14 @@ sidebar:
 | `react-spring` | [react-spring 状元篇](/study/projects/react-spring/) | 动画 |
 | `recharts` | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) | 数据可视化 |
 | `rolldown` | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 构建工具 / Bundler |
-| `rollup` | [rollup ESM-first 库打包器](/study/projects/rollup/) | 构建工具 / Bundler |
+| `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 构建工具 / Bundler |
 | `sentry` | [Sentry — 不是「日志收集器」，是「把崩溃当作可查询的列存事件」的双层数据库错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize Node.js Promise-based ORM 元老](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
+| `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
 | `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `stagehand` | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlight` | [Starlight — Astro 官方文档框架，零 JS 默认 + sidebar autogen](/study/projects/starlight/) | 文档站点 |
@@ -540,6 +543,7 @@ sidebar:
 | `stylex` | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `supabase` | [supabase — 不是另一个 Firebase 替代品，是把 Postgres 包成了完整 BaaS](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
+| `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
 | `swc` | [swc Rust-based JS/TS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — 同一问题的另一种回答](/study/projects/swr/) | 数据获取 / 路由 |
 | `tailwind` | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) | CSS / 样式 |

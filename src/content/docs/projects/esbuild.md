@@ -167,3 +167,9 @@ const svgInline: Plugin = {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[rollup]] —— Rollup — ESM 优先的打包器
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[webpack]] —— webpack 模块打包
+

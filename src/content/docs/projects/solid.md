@@ -153,3 +153,6 @@ function Cart() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[svelte]] —— Svelte — 编译时 UI 框架
+
