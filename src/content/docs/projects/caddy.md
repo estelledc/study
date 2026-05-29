@@ -178,5 +178,6 @@ docker run -d \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[prometheus]] —— Prometheus — 时序监控系统
 

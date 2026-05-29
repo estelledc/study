@@ -135,5 +135,5 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[prometheus]] —— Prometheus — 时序监控系统
 

@@ -169,4 +169,7 @@ location /static/ {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[next-js]] —— Next.js — React 全栈框架
+- [[prometheus]] —— Prometheus — 时序监控系统
+- [[redis]] —— Redis — 内存键值数据库
 

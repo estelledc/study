@@ -128,3 +128,6 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[influxdb]] —— InfluxDB — 专用时序数据库
+

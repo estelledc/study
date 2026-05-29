@@ -123,6 +123,10 @@ const THEMES_PROJECTS = {
     'docker', 'kubernetes', 'nginx', 'caddy', 'traefik',
     'podman', 'containerd', 'helm', 'argocd', 'terraform',
   ],
+  '监控 / 时序': [
+    'prometheus', 'grafana', 'timescaledb', 'influxdb',
+    'victoriametrics', 'loki', 'jaeger', 'opentelemetry',
+  ],
   'Web 框架': [
     'hono', 'fastify', 'express', 'koa', 'nestjs', 'elysia',
   ],

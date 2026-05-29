@@ -145,4 +145,5 @@ io-threads-do-reads yes
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[redis]] —— Redis — 内存键值数据库
+- [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 

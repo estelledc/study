@@ -155,5 +155,6 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[ppo]] —— PPO Proximal Policy Optimization
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
+- [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
 - [[word2vec]] —— Word2Vec — 词向量奠基
 

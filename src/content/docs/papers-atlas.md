@@ -44,7 +44,7 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [Agentless — 反 agent 派代表作：3 阶段 pipeline 在 SWE-bench 上反超复杂 agent](/study/papers/agentless/) | Xia 等人 2024 年的反命题论文——把 agent loop 拆掉，用 file-localize / function-localize / patch-validate 三段流水线在 SWE-bench Li… |
+| [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) |  |
 | [AutoGen — Enabling Next-Gen LLM Applications via Multi-Agent Conversation](/study/papers/autogen/) | ConversableAgent + GroupChatManager 把多 agent 协作抽象成可编排的对话，奠定 2024 年 multi-agent framework 范式 |
 | [Chain-of-Thought Prompting](/study/papers/cot/) |  |
 | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | Edge et al |
@@ -56,9 +56,9 @@ sidebar:
 | [Reflexion (Shinn et al. 2023) — verbal RL：用文字代替梯度让 agent 学习](/study/papers/reflexion/) | ReAct 没法 retry 的硬伤怎么补——加一个 self-reflection 模型把失败 trajectory 翻译成自然语言反思塞进下一轮 prompt |
 | [RETRO (DeepMind ICML 2022) — 用 2T tokens 外部数据库 + chunked cross-attention 让 7.5B 模型媲美 175B Gopher，把检索抬成与参数并列的第二个 LLM 缩放轴](/study/papers/retro/) | Borgeaud et al |
 | [SWE-agent — 不靠模型变聪明、靠"接口"变聪明：ACI 把 SWE-bench 1.96% 推到 12.5%](/study/papers/swe-agent/) | Agent 能不能修真实 GitHub issue，瓶颈不在 LLM 智力，而在它跟"电脑"之间的接口 |
-| [SWE-bench (Jimenez et al. 2024) — 把 LLM 评测从 demo 题推到真实 GitHub issue](/study/papers/swe-bench/) | 2294 个真实 GitHub issue + automated harness + Claude 2 baseline 1 |
-| [Toolformer (Schick et al. 2023) — LM 自己教自己用工具](/study/papers/toolformer/) | ReAct/Reflexion 走 prompt-only，Toolformer 走 self-supervised fine-tune——同一目标的另一条工程化路线 |
-| [Voyager — 让 LLM agent 在 Minecraft 里"越玩越强"：自动课程 + 技能库 + 错误反馈循环](/study/papers/voyager/) | Agent 真正学习的早期范例 |
+| [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) |  |
+| [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) |  |
+| [Voyager — LLM 终身学习智能体](/study/papers/voyager/) |  |
 
 ## NLP 基础与 Scaling
 
@@ -310,7 +310,7 @@ sidebar:
 | `activation-patching` | [Activation Patching - 把因果手术刀塞进 Transformer](/study/papers/activation-patching/) | AI 安全与可解释性 |
 | `adapton` | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
-| `agentless` | [Agentless — 反 agent 派代表作：3 阶段 pipeline 在 SWE-bench 上反超复杂 agent](/study/papers/agentless/) | 智能体与 LLM 系统 |
+| `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `alphago` | [AlphaGo Mastering Go with Deep Neural Networks](/study/papers/alphago/) | 强化学习 |
 | `anthropic-circuits` | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
@@ -430,21 +430,21 @@ sidebar:
 | `stable-diffusion` | [Stable Diffusion / LDM — 把扩散从像素搬到 latent 空间，让消费级 GPU 也能跑文生图](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
 | `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `swe-agent` | [SWE-agent — 不靠模型变聪明、靠"接口"变聪明：ACI 把 SWE-bench 1.96% 推到 12.5%](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
-| `swe-bench` | [SWE-bench (Jimenez et al. 2024) — 把 LLM 评测从 demo 题推到真实 GitHub issue](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
+| `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
 | `tcp` | [TCP Transmission Control Protocol](/study/papers/tcp/) | 网络协议 |
 | `theorems-for-free` | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `tigerbeetle` | [TigerBeetle (Joran Greef et al. 2024) — 金融级 OLTP，固定 schema + VSR + deterministic simulation](/study/papers/tigerbeetle/) | 数据库 |
 | `tls-1.3` | [TLS 1.3 The Transport Layer Security Protocol Version 1.3](/study/papers/tls-1.3/) | 网络协议 |
 | `tofte-talpin-regions` | [Tofte-Talpin Region-Based Memory Management](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |
-| `toolformer` | [Toolformer (Schick et al. 2023) — LM 自己教自己用工具](/study/papers/toolformer/) | 智能体与 LLM 系统 |
+| `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 智能体与 LLM 系统 |
 | `toy-models-superposition` | [Toy Models of Superposition (Elhage+ 2022) — 把 features-as-directions 钉在 capacity 数学上的 13 节论证](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `trees-that-grow` | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |
 | `volcano` | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | 数据库 |
-| `voyager` | [Voyager — 让 LLM agent 在 Minecraft 里"越玩越强"：自动课程 + 技能库 + 错误反馈循环](/study/papers/voyager/) | 智能体与 LLM 系统 |
+| `voyager` | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | 智能体与 LLM 系统 |
 | `wadler-prettier` | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `zgc` | [ZGC — 染色指针 + 读屏障下的 TB 级低延迟并发 GC](/study/papers/zgc/) | GC / 内存管理 |
