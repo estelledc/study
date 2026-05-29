@@ -387,3 +387,24 @@ Glamorous Toolkit（Tudor Girba 2018）：
 - [[self-pic]] —— Self / V8 的 inline cache（Smalltalk 性能优化的延续）
 - [[design-patterns-gof]] —— GoF 1994 大量 Smalltalk 例子
 - [[mvc-reenskaug]] —— Trygve Reenskaug 1979 在 Smalltalk 提出
+
+## 附录 — Smalltalk 在 2024 年的位置（≥ 15 行）
+
+商业现状：
+- ParcPlace 改名 Cincom，仍卖商用 Smalltalk（VisualWorks）给金融 / 保险大客户
+- IBM VisualAge 1990s 基于 Smalltalk，2000s 转 Eclipse 后停产
+- GemStone 仍在分布式 Smalltalk 数据库领域活跃（持久化 image）
+
+开源现状：
+- Pharo（2008-）：研究界主力，每年新 release，活跃社区 ~3000 人
+- Squeak（1996-）：教育 + Etoys 后续
+- Cuis Smalltalk：极简版 Squeak fork，~300 用户
+
+教学影响：
+- Eric Evans《领域驱动设计》大量 Smalltalk 例子
+- Refactoring（Fowler 1999）80% Smalltalk 代码示例
+- TDD（Beck 2002）SUnit 是 JUnit 的祖先
+
+未来命运：Smalltalk 不会消失，但永远小众。Alan Kay 仍在 VPRI 推动"未来计算"研究（OMeta / Croquet / STEPS 项目）。
+
+[[mccarthy-lisp]] [[lambda-calculus]] [[turing-1936]] [[hindley-milner]] [[llvm]]

@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 131 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 132 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：131 篇
-- **已分类**：131
+- **总数**：132 篇
+- **已分类**：132
 
 ### 按主题分布
 
@@ -30,7 +30,7 @@ sidebar:
 | [网络协议](#网络协议) | 5 |
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 19 |
+| [编译器 / 编程语言理论](#编译器---编程语言理论) | 20 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
@@ -212,7 +212,7 @@ sidebar:
 
 ## 编译器 / 编程语言理论
 
-共 19 篇。
+共 20 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -231,6 +231,7 @@ sidebar:
 | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | Niko Matsakis 把 Adapton 的 lazy demand-driven 思想翻译成 Rust 工业框架 |
 | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | modifiable + read + write 三个 primitive + change propagation |
 | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | Hölzle, Chambers, Ungar, ECOOP 1991 — 在动态类型对象语言里给每个 call site 配一张小缓存，按 receiver 类型记忆最近被调到的方法地址，让"虚函数 / 消息发送"在… |
+| [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) |  |
 | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | Cytron, Ferrante, Rosen, Wegman, Zadeck, ACM TOPLAS 1991 — 用支配边界（dominance frontier）算法把 SSA 构造从 O(N³) 朴素做法降到几… |
 | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a |
 | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | type family + extension fields 让 AST 在 parse / rename / typecheck / optimize 各 phase 共享同一份 traversal 代码 |
@@ -290,7 +291,7 @@ sidebar:
 
 ---
 
-## 全部 131 篇（字母序）
+## 全部 132 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -400,6 +401,7 @@ sidebar:
 | `shannon-1948` | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `sleeper-agents` | [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
+| `smalltalk-80` | [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |
 | `spanner` | [Spanner 全球分布式数据库](/study/papers/spanner/) | 分布式系统 |
 | `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
