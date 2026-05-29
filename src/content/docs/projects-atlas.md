@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 154 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 155 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,15 +11,15 @@ sidebar:
 
 ## 总览
 
-- **总数**：154 个
-- **已分类**：154
+- **总数**：155 个
+- **已分类**：155
 
 ### 按主题分布
 
 | 主题 | 数量 |
 |---|---:|
 | [数据可视化](#数据可视化) | 5 |
-| [动画](#动画) | 5 |
+| [动画](#动画) | 6 |
 | [表单 / Schema 校验](#表单---schema-校验) | 5 |
 | [HTTP 客户端](#http-客户端) | 5 |
 | [日期时间](#日期时间) | 5 |
@@ -63,10 +63,11 @@ sidebar:
 
 ## 动画
 
-共 5 个。
+共 6 个。
 
 | 项目 | 描述 |
 |---|---|
+| [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | anime |
 | [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 不是 CSS transition 的语法糖，是一个把 spring physics 的解析闭式解 + RAF 主循环 + FLIP layout projection 三件事缝在 motion |
 | [gsap — 把 timeline 做成第一等公民的 JS 动画运行时](/study/projects/gsap/) | 不是 keyframe 派的便携包装，是一台跑了 18 年、用闭式数学解 + 单 Ticker 主循环 + PropTween 链表挂插件的运行时 |
 | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 不是动画库，是 AE 到浏览器的协议层 |
@@ -337,8 +338,8 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [fabric-js](/study/projects/fabric-js/) |  |
-| [jimp](/study/projects/jimp/) |  |
+| [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) |  |
+| [Jimp 纯 JS 图像处理库](/study/projects/jimp/) |  |
 | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | Stage / Layer / Group / Shape 节点树 + 事件冒泡 + 多 Layer 合成性能策略 |
 | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | S29-5 收官：从 Application/Stage/Container 流水线到 v8 ECS 重写，看一个工具库如何在 13 年里成为 web 端 2D 图像渲染的事实标准 |
 | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
@@ -375,7 +376,7 @@ sidebar:
 |---|---|
 | [boxen — Terminal box 渲染库](/study/projects/boxen/) |  |
 | [chalk](/study/projects/chalk/) |  |
-| [enquirer](/study/projects/enquirer/) |  |
+| [enquirer 终端交互提示库](/study/projects/enquirer/) |  |
 | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) |  |
 | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
 
@@ -401,11 +402,12 @@ sidebar:
 
 ---
 
-## 全部 154 个（字母序）
+## 全部 155 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `affine` | [AFFiNE — 不是再做一个 Notion，是把 doc 和 whiteboard 融合到同一个 block 模型，再用 Yjs CRDT 把 local-first 做到底](/study/projects/affine/) | 数据应用 / SaaS |
+| `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
 | `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `auth-js` | [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | Auth 认证 |
 | `axios` | [axios Promise-based HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
@@ -437,11 +439,11 @@ sidebar:
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
 | `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
-| `enquirer` | [enquirer](/study/projects/enquirer/) | Terminal / 终端 |
+| `enquirer` | [enquirer 终端交互提示库](/study/projects/enquirer/) | Terminal / 终端 |
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
-| `fabric-js` | [fabric-js](/study/projects/fabric-js/) | 图像处理 / Canvas |
+| `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
 | `framer-motion` | [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 动画 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
@@ -453,7 +455,7 @@ sidebar:
 | `ink` | [ink](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
-| `jimp` | [jimp](/study/projects/jimp/) | 图像处理 / Canvas |
+| `jimp` | [Jimp 纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
 | `jotai` | [jotai — atomic 状态管理 + Daishi Kato 第三套](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |

@@ -257,7 +257,7 @@ try {
 
 ### 三层关系图
 
-![commander 命令树](../../../public/projects/commander/01-command-tree.webp)
+![commander 命令树](/projects/commander/01-command-tree.webp)
 
 图里展示了 root command 下挂 clone / commit / log 三个子命令，每个子命令各自的
 options 和 arguments。命令解析就是在这棵树上 walk：

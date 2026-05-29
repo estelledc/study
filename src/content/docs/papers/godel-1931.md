@@ -1,8 +1,8 @@
 ---
 title: "Gödel 不完备性定理（1931）"
-来源: Kurt Gödel, "Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I", Monatshefte für Mathematik und Physik, vol. 38, pp. 173-198, 1931. 英译本: van Heijenoort (ed.), "From Frege to Gödel: A Source Book in Mathematical Logic, 1879-1931", Harvard University Press, 1967, pp. 596-616. 经典中译本: 赵希顺《数理逻辑教程》附录, 高等教育出版社. 现代讲解: Smullyan, "Gödel's Incompleteness Theorems", Oxford UP, 1992; Smith, "An Introduction to Gödel's Theorems", 2nd ed., Cambridge UP, 2013.
+来源: 'Kurt Gödel, "Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I", Monatshefte für Mathematik und Physik, vol. 38, pp. 173-198, 1931. 英译本: van Heijenoort (ed.), "From Frege to Gödel: A Source Book in Mathematical Logic, 1879-1931", Harvard University Press, 1967, pp. 596-616. 经典中译本: 赵希顺《数理逻辑教程》附录, 高等教育出版社. 现代讲解: Smullyan, "Gödel''s Incompleteness Theorems", Oxford UP, 1992; Smith, "An Introduction to Gödel''s Theorems", 2nd ed., Cambridge UP, 2013.'
 日期: 2026-05-29
-tags: [logic, foundations, incompleteness, theory, AA5, round-127]
+tags: '[logic, foundations, incompleteness, theory, AA5, round-127]'
 分支: D-theory
 轮次: 127
 状态: published
