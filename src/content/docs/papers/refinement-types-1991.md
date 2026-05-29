@@ -148,5 +148,12 @@ TypeScript 的 control-flow narrowing 做的就是 1991 年抽象解释——一
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 

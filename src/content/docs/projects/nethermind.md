@@ -156,5 +156,11 @@ sedge cli \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[erigon]] —— Erigon — 存储优化型以太坊客户端
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[prometheus]] —— Prometheus — 时序监控系统
 

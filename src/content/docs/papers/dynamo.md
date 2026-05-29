@@ -157,3 +157,13 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
+- [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
+- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+

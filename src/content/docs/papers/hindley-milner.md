@@ -162,6 +162,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
+- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[mccarthy-lisp]] —— McCarthy LISP 1960

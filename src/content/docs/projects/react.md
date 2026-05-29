@@ -163,6 +163,7 @@ function Greeting({ name }) {
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[cot]] —— Chain-of-Thought Prompting
+- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[gsap]] —— GSAP — GreenSock 高性能动画

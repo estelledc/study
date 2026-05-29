@@ -151,6 +151,7 @@ INGRES 把它**拆**成两步：先扫 MANAGER 把每个部门的 manager.salary
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询

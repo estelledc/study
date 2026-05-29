@@ -154,6 +154,7 @@ GROUP BY customer_id;
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[dns]] —— DNS Domain Name System
+- [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport

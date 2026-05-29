@@ -175,6 +175,7 @@ def me(user: dict = Depends(current_user)):
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[redis]] —— Redis — 内存键值数据库
+- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

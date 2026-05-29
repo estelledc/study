@@ -189,5 +189,6 @@ def list_users():
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库
+- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 

@@ -147,3 +147,7 @@ npm run docusaurus docs:version 1.0
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[starlight]] —— Starlight — Astro 文档站点主题
+

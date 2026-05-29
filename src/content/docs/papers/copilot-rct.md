@@ -152,6 +152,12 @@ Cohen's d ≈ 2.0 在心理学/社科属于 "罕见大"——通常 d>1.5 都需
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
+- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
+- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 

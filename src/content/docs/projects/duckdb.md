@@ -147,6 +147,7 @@ result = con.execute("""
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

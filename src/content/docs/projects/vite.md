@@ -153,6 +153,7 @@ export default defineConfig({
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[next-js]] —— Next.js — React 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
