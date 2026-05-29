@@ -154,10 +154,12 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

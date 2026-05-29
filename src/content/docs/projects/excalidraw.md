@@ -147,3 +147,7 @@ public record(delta: StoreDelta) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
+- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
+
