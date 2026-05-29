@@ -340,3 +340,102 @@ console.log(data.token);
 - [[hono]] [[fastify]] [[express]] [[koa]] [[nestjs]] —— 同领域
 - [[zod]] [[arktype]] [[valibot]] [[react-hook-form]] —— Schema validation
 - [[axios]] [[ky]] [[ofetch]] —— HTTP 客户端
+
+## 附录 A — Bun runtime 详解（≥ 25 行）
+
+Bun（Jarred Sumner 2022 起）是 JavaScript runtime + bundler + test runner + package manager 一体化工具。
+
+性能源头：
+- **JavaScriptCore（JSC）**：来自 WebKit Safari，比 V8 启动快 60% 但峰值性能略弱
+- **Zig 实现**：底层 IO 用 Zig 写（vs Node 的 C++/JS），更轻量
+- **原生 TS**：直接执行 .ts 不需 transpile（用内置 transpiler）
+- **bundler 集成**：production build 时 macro 静态化、tree-shake、minify 一气呵成
+
+Elysia 利用了所有这些：
+1. JSC 启动快 → 冷启动延迟低（serverless 友好）
+2. Zig IO → 高 QPS
+3. 原生 TS → dev 模式不需 tsx / ts-node
+4. bundler macro → `.derive()` 等链调用编译期 inline
+
+但 Bun 的代价：
+- npm 兼容性 90%（部分包 fs hook 行为差异）
+- Worker / Cluster API 与 Node 不同
+- 生产部署案例少（比 Node 风险高）
+- HTTP/2 / TLS 实现仍在打磨
+
+## 附录 B — Elysia 与 tRPC / GraphQL Codegen 对比（≥ 25 行）
+
+端到端类型安全的三种主流方案：
+
+### Eden Treaty（Elysia）
+```ts
+const app = new Elysia().get('/users/:id', ({ params }) => ({ id: params.id }));
+type App = typeof app;
+
+// client
+const api = treaty<App>('http://localhost:3000');
+const { data } = await api.users({ id: '123' }).get();
+```
+
+### tRPC
+```ts
+const router = t.router({
+  user: t.procedure.input(z.object({ id: z.string() })).query(({ input }) => ...)
+});
+type Router = typeof router;
+
+// client
+const api = createTRPCClient<Router>({ url: '...' });
+const data = await api.user.query({ id: '123' });
+```
+
+### GraphQL Codegen
+```graphql
+query GetUser($id: ID!) { user(id: $id) { id, name } }
+```
++ codegen 生成 TS 类型 + React hook
+
+| 维度 | Eden | tRPC | GraphQL |
+|---|---|---|---|
+| 学习曲线 | 平 | 中 | 陡 |
+| 协议 | REST | RPC over JSON | GraphQL |
+| Schema 来源 | TypeBox | zod / valibot | GraphQL SDL |
+| 多语言 client | 难 | 难 | 易（任何语言）|
+| 跨网络（CDN）友好 | ✓（GET URL） | ✗（POST + body） | ✓（GET 简单 query）|
+
+Eden 在"小团队 + 单语言（TS）+ Bun"场景最佳；tRPC 在"全 TS 团队 + 不限 Bun"最佳；GraphQL 在"多端 + 多语言"最佳。
+
+## 附录 C — Elysia 学习路径（≥ 20 行）
+
+第一周（基础）：
+1. 安装 Bun + Elysia hello world
+2. 路由 + handler + body/params/query
+3. TypeBox `t.Object / t.String / t.Array` 基础
+4. typeof body 类型推导验证（在 IDE 里 hover 看类型）
+
+第二周（中级）：
+5. plugin 机制（@elysiajs/swagger / @elysiajs/jwt）
+6. `.guard()` 子作用域
+7. `.derive()` context 注入
+8. 错误处理（throw + onError hook）
+
+第三周（高级）：
+9. macro 编译期优化（看 Bun build 输出对比 dev vs prod）
+10. Eden treaty 客户端集成
+11. 自写 plugin（实现 onRequest / mapResponse）
+12. 性能调优（Bun.serve options + JSC heap）
+
+第四周（实战）：
+13. 完整 CRUD API + DB（drizzle / prisma）
+14. WebSocket 支持
+15. 部署到 Bun runtime（Cloudflare Worker via Bun adapter / 自托管）
+
+## 附录 D — 学到补充（≥ 15 行）
+
+补充 5 条工程教训：
+
+6. **Runtime + Framework 深度耦合** 是双刃剑：性能极致 + 移植代价
+7. **Method chain + 类型层累积** 是端到端类型安全的优雅路径，但 IDE 类型推导可能很慢（巨型路由树）
+8. **macro 在 build 时静态化** 让 dynamic 行为受限（plugin 不能动态加载）
+9. **小众 + 极客流派** 需要找到 Bun 这种 runtime 革命的窗口期
+10. **TypeBox vs zod** 是 schema 库哲学之争，没有绝对赢家
