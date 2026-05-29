@@ -28,3 +28,10 @@ pnpm-debug.log*
 # auto-push 机器状态（每批重写，不入仓）
 data/STATUS.md
 data/status.json
+
+# v3 pipeline 运行时状态
+data/pipeline-events.jsonl
+data/checkpoint.json
+data/round-lock.json
+data/STOP_SIGNAL
+data/graveyard.jsonl
