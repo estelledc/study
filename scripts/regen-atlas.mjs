@@ -66,7 +66,7 @@ const THEMES_PAPERS = {
     'self-adjusting', 'crdt-json', 'realm',
   ],
   '计算理论 / 数学基础': [
-    'turing-1936',
+    'turing-1936', 'lambda-calculus',
   ],
   '密码学 / 安全': [
     'diffie-hellman', 'rsa', 'aes', 'bitcoin', 'zk-snark',
@@ -154,7 +154,7 @@ const THEMES_PROJECTS = {
     'unified', 'markdown-it', 'marked', 'shiki', 'micromark',
   ],
   '图像处理': [
-    'sharp',
+    'sharp', 'jimp', 'fabric-js',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',

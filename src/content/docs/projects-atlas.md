@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 132 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 134 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：132 个
-- **已分类**：132
+- **总数**：134 个
+- **已分类**：134
 
 ### 按主题分布
 
@@ -40,7 +40,7 @@ sidebar:
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
-| [图像处理](#图像处理) | 1 |
+| [图像处理](#图像处理) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -329,10 +329,12 @@ sidebar:
 
 ## 图像处理
 
-共 1 个。
+共 3 个。
 
 | 项目 | 描述 |
 |---|---|
+| [fabric-js](/study/projects/fabric-js/) |  |
+| [jimp](/study/projects/jimp/) |  |
 | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
 
 ## 其他基础设施
@@ -347,7 +349,7 @@ sidebar:
 
 ---
 
-## 全部 132 个（字母序）
+## 全部 134 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -380,6 +382,7 @@ sidebar:
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
+| `fabric-js` | [fabric-js](/study/projects/fabric-js/) | 图像处理 |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
 | `framer-motion` | [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 动画 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
@@ -390,6 +393,7 @@ sidebar:
 | `immich` | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 数据应用 / SaaS |
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
+| `jimp` | [jimp](/study/projects/jimp/) | 图像处理 |
 | `jotai` | [jotai — atomic 状态管理 + Daishi Kato 第三套](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
