@@ -18,6 +18,7 @@ bigtable
 bitcoin
 boehm-gc
 borg
+calculus-of-constructions
 calvin
 causal-abstraction
 cheney-gc
@@ -66,6 +67,7 @@ hoare-logic
 http-2
 huffman-1952
 induction-heads
+ingres-1976
 instructgpt
 io-uring
 kafka
@@ -207,8 +209,10 @@ fabric-js
 fastapi
 fastify
 fd
+flask
 framer-motion
 fzf
+go-ethereum
 got
 grafana
 gsap
