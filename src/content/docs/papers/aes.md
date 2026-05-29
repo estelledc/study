@@ -214,3 +214,195 @@ NIST 评估：FIPS-197 至 2026 年仍为标准，预计延期至 2050+。后量
 15. AES 的成功告诉我们：好的工程设计在 25 年后看仍然优雅，简洁性是终极复杂性
 
 关联：[[diffie-hellman]] [[tls-1.3]] [[quic]] [[hindley-milner]] [[ssa]] [[llvm]]
+
+## 附录 A — Rijndael 数学基础（GF(2^8)）
+
+AES 所有操作都在有限域 GF(2^8)（伽罗瓦域，2^8 = 256 元素）上。每个字节是该域上一个元素，可加可乘。
+
+**加法**：GF(2^8) 加法 = 字节级 XOR。例：0x53 + 0xCA = 0x99（53 ⊕ CA = 99）。
+
+**乘法**：定义为多项式乘法 mod AES polynomial m(x) = x^8 + x^4 + x^3 + x + 1 = 0x11B。
+
+- 例：0x57 × 0x83 在 GF(2^8) 下 = ?
+  - 0x57 = x^6 + x^4 + x^2 + x + 1
+  - 0x83 = x^7 + x + 1
+  - 多项式乘 = x^13 + x^11 + x^9 + x^8 + x^6 + x^5 + x^4 + x^3 + 1
+  - 模 m(x) 后 = x^7 + x^6 + 1 = 0xC1
+
+**乘法逆元**：每个非零字节都有 GF(2^8) 逆元，可用扩展 Euclid 算法或表查找。S-box 第一步就是查找乘法逆元。
+
+**为什么用 GF(2^8)**：
+
+1. 字节级运算硬件友好（单字节 SIMD）
+2. 不可约多项式 m(x) 让所有运算定义良好
+3. 数学结构丰富（线性代数）让分析可形式化
+
+实战：所有 AES 实现在 SubBytes / MixColumns 步骤要么用查表（256-byte S-box / 多个 1KB 矩阵乘表），要么用硬件指令（AES-NI）。
+
+**S-box 构造细节**：S-box(x) = A · x^(-1) ⊕ b，其中 A 是固定 8×8 矩阵，b = 0x63。先取乘法逆元（非线性），再做仿射变换（线性）。这种"非线性 + 线性"的组合让 S-box 既混乱又便于硬件实现。
+
+**MixColumns 矩阵**：每列乘以固定 4×4 矩阵（在 GF(2^8) 下），矩阵元素为 {01, 02, 03}，分支数 = 5（最大可能值），保证扩散。逆操作矩阵元素为 {09, 0B, 0D, 0E}，比正向慢，所以解密通常用 inverse mix columns 的等价变形。
+
+## 附录 B — AES-NI 指令集
+
+Intel 2008 (Westmere) / AMD 2011 (Bulldozer) 在 x86 加 AES 硬件加速指令：
+
+| 指令 | 作用 |
+|---|---|
+| AESENC | 一轮 AES（除最后轮）|
+| AESENCLAST | 最后一轮 AES |
+| AESDEC | 一轮 AES 解密 |
+| AESDECLAST | 最后一轮 AES 解密 |
+| AESKEYGENASSIST | Key Schedule 辅助 |
+| AESIMC | 解密 inverse mix columns |
+| PCLMULQDQ | 无进位乘法（GCM mode 用）|
+
+性能数据（Intel Xeon E5-2680 @ 2.7 GHz）：
+
+- 软件实现：~200 MB/s
+- AES-NI：~5 GB/s（25x）
+- AES-NI + GCM 并行：~3.5 GB/s
+
+ARM CryptoExtension（ARMv8 起）有等价指令：AESE / AESD / AESMC / AESIMC。Apple Silicon 的 AES 性能和 Intel AES-NI 接近。
+
+工程意义：AES-NI 让 AES 几乎免费 → TLS 1.3 / 全盘加密 / VPN 性能瓶颈不再是 CPU 而是 IO / 网络。
+
+**指令延迟和吞吐**：Intel Skylake 上 AESENC 延迟 4 周期，吞吐 1 周期。意味着 4 路并行（独立块）可达全速。CTR / GCM mode 天然并行，单核可达 5 GB/s；CBC mode 因链接依赖只能串行，单核约 1.5 GB/s。
+
+**ARM 平台对比**：iPhone A14 Bionic AES 吞吐 ~3 GB/s/core（4 核可达 12 GB/s），略慢于 desktop x86 但功耗显著低。Android 中端 SoC（如 Snapdragon 7-series）AES 性能 ~1-2 GB/s。
+
+## 附录 C — GCM 模式详解
+
+GCM = AES-CTR 加密 + GHASH 认证。同一密钥同时提供机密性 + 完整性。
+
+**加密流程**：
+
+1. 选 96-bit nonce N（随机或计数器）
+2. CTR mode：keystream[i] = AES_K(N || counter_i)
+3. ciphertext[i] = plaintext[i] ⊕ keystream[i]
+4. 认证 tag = GHASH(K, AAD, ciphertext)
+   - GHASH 是 GF(2^128) 上的多项式哈希
+   - 输出 128-bit tag
+
+**输出**：(nonce, ciphertext, tag)
+
+**解密验证**：
+
+1. 重算 tag'，与收到 tag 比较（常时间比较防侧信道）
+2. tag 不一致 → 拒绝（不解密）
+3. tag 一致 → CTR mode 解密
+
+**安全要求**：同一 (key, nonce) 绝不能加密两次。否则攻击者可：
+
+- XOR 两密文消除 keystream，恢复明文异或
+- 通过 GHASH 数学反推 H = AES_K(0)，然后伪造任意消息
+
+**Nonce 选择**：
+
+- 随机 96-bit：在 2^48 次加密后 birthday paradox 碰撞，所以单密钥不能加密超 2^48 个消息
+- 计数器（counter-based）：每次 +1，密钥换前最多 2^96 次（无问题）
+
+**实战漏洞**：Microsoft Cisco IPSec / OpenSSL 早期版本都出过 nonce 重用 bug。AWS KMS / Cloud KMS 等服务的 envelope encryption 都用 counter-based nonce 避免。
+
+**GHASH 数学**：在 GF(2^128) 上定义，不可约多项式 x^128 + x^7 + x^2 + x + 1。H = AES_K(0^128) 是哈希子密钥。tag = (((C_1·H + C_2)·H + ... )·H + len)·H ⊕ AES_K(N || 0^31 || 1)。Carter-Wegman 构造。
+
+## 附录 D — XTS 模式（全盘加密）
+
+XTS = XEX-based Tweaked codebook + Ciphertext Stealing。专为全盘加密设计。
+
+**输入**：
+
+- 密钥 K1, K2（两个 AES key，组合存储）
+- 数据单元号 i（如磁盘扇区号）
+- 明文块 P_j（每 16 字节）
+
+**加密**：
+
+1. T = AES_K2(i) × α^j  （T = tweak，α = primitive element）
+2. ciphertext = AES_K1(P_j ⊕ T) ⊕ T
+
+**为什么 XTS 而非 CBC**：
+
+- 全盘加密需要 random access（数据库 / OS 任意读）
+- CBC 需要从前向后解密，random access 慢
+- XTS 每个块独立加密 + 通过 tweak 防 ECB 模式可见性
+
+**部署**：
+
+- macOS FileVault 2 用 AES-XTS-128
+- Windows BitLocker 用 AES-XTS-128 / 256
+- Linux LUKS dm-crypt 默认 AES-XTS-256
+- Apple File System (APFS) 加密用 AES-XTS
+
+**XTS 的限制**：不提供完整性（没有 MAC）。攻击者可翻转密文 bit，对应明文 bit 翻转可预测。但全盘加密场景认为 OS 层文件系统 metadata 已经能检测篡改，XTS 不解决这个。
+
+## 附录 E — AES vs ChaCha20-Poly1305
+
+ChaCha20 是 Daniel Bernstein 2008 设计的流密码，TLS 1.3 也支持。Poly1305 是配套 MAC。
+
+| 维度 | AES-GCM | ChaCha20-Poly1305 |
+|---|---|---|
+| 类型 | 分组密码 | 流密码 |
+| 块大小 | 128 bit | 流式（无块）|
+| 密钥大小 | 128/192/256 bit | 256 bit |
+| 性能（无硬件加速） | ~200 MB/s | ~700 MB/s |
+| 性能（AES-NI） | ~5 GB/s | ~700 MB/s |
+| 抗 cache timing | 需常时间实现 | 天然好 |
+| 移动端（无 AES-NI） | 慢 | 快 |
+| 抗量子 | AES-256 安全 | 同 AES-256 |
+
+工程选择：
+
+- 服务器（有 AES-NI）：AES-GCM 占主导
+- 移动端（早期 ARM 无 AES）：ChaCha20-Poly1305 优势
+- Google 在 Android 默认 ChaCha20，CPU 占用低 + 电量友好
+- TLS 1.3 自动协商：服务器选最快
+
+**ChaCha20 设计要点**：基于 ARX（Add-Rotate-XOR）操作，无 S-box 查表，所以天然抗 cache timing。20 轮，每轮 4 个 quarter-round。Poly1305 是 GF(2^130 - 5) 上多项式哈希，比 GHASH 快（不依赖 PCLMULQDQ）。
+
+## 附录 F — 后量子时代的 AES
+
+Grover 算法（量子搜索）让 brute-force 从 N 降到 sqrt(N)：
+
+- AES-128 → 等效 2^64（理论上不安全）
+- AES-256 → 等效 2^128（安全）
+
+NIST 后量子推荐：
+
+- 对称密码：AES-256 + SHA-512 / SHA-3
+- 公钥：Kyber（KEM）+ Dilithium / Falcon（签名）
+
+**工程过渡**：
+
+- 2024：AES-256 已是标配，量子威胁还远
+- 2030：第一台中型量子计算机可能出现，但破 AES-128 还需百万级 qubit
+- 2040+：AES 仍是对称密码默认，公钥已切换到 PQC
+
+**为什么 AES 不会死**：对称密码不像公钥被 Shor 算法直接破，只是 bit 数加倍。AES-256 的统治力可能比 RSA / ECDH 更持久。
+
+**Grover 的实际成本**：理论 sqrt(N) 但需 O(sqrt(N)) 量子门 + 长相干时间。破 AES-128 需 ~10^7 logical qubits + 10^32 量子门，远超目前预期的 fault-tolerant 量子计算机（2030 ~10^4 logical qubits）。所以 AES-128 短期内仍安全，AES-256 长期安全。
+
+## 附录 G — 实战 cipher suite 选择指南
+
+**TLS 1.3 强制 ciphersuite**：
+
+- TLS_AES_128_GCM_SHA256
+- TLS_AES_256_GCM_SHA384
+- TLS_CHACHA20_POLY1305_SHA256
+
+**默认建议**：
+
+1. 通用 web：让 TLS 1.3 自动协商，client 偏好优先
+2. 高性能 API：明确选 TLS_AES_128_GCM_SHA256（AES-NI 加速 + 128 bit 已足）
+3. 长期归档：TLS_AES_256_GCM_SHA384（PQC 时代仍安全）
+4. 移动端 / IoT：让 ChaCha20-Poly1305 优先
+
+**禁用列表**：
+
+- TLS_RSA_WITH_AES_*_CBC_*（Bleichenbacher / Lucky 13 攻击）
+- AES-CBC + HMAC（不如 AES-GCM）
+- 所有 TLS 1.0 / 1.1 ciphersuite
+- DES / 3DES / RC4
+
+**配置示例（nginx）**：`ssl_protocols TLSv1.3 TLSv1.2; ssl_ciphers 'TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES256-GCM-SHA384'; ssl_prefer_server_ciphers off;`。TLS 1.3 自带 ciphersuite 列表，TLS 1.2 fallback 时只允许 ECDHE + AEAD。
+
