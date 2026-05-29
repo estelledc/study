@@ -160,7 +160,7 @@ const THEMES_PROJECTS = {
     'sharp', 'jimp', 'fabric-js', 'konva', 'pixi',
   ],
   'CSS / 样式': [
-    'tailwind', 'emotion', 'styled-components', 'stylex',
+    'tailwind', 'emotion', 'styled-components', 'stylex', 'vanilla-extract',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
