@@ -177,3 +177,11 @@ Prisma 自动：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[mikro-orm]] —— MikroORM DataMapper + Unit of Work + Identity Map
+- [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
+- [[next-js]] —— Next.js — React 全栈框架
+- [[sequelize]] —— Sequelize Node.js Promise-based ORM 元老
+- [[typeorm]] —— TypeORM Decorator-based ORM
+

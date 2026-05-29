@@ -146,3 +146,8 @@ openssl pkey -in alice.pem -pubout -out alice.pub
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aes]] —— AES Rijndael 对称分组密码
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[rsa]] —— RSA 公钥密码
+

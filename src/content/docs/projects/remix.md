@@ -168,5 +168,7 @@ app/routes/
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[next-js]] —— Next.js — React 全栈框架
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 

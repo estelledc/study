@@ -147,3 +147,6 @@ def huffman(text):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+

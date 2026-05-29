@@ -261,8 +261,8 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | Richard Hamming 1950 年 BSTJ 论文系统化错误检测与纠正理论，Hamming(7,4) 用 3 个校验位为 4 个数据位提供单错纠正，距离-纠错关系定理 ⌊(d-1)/2⌋ 至今仍是编码理论基石 |
-| [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | Huffman 1952 状元篇 — 从作业题到 70 年标准：最优前缀码的贪心构造与现代压缩中的位置 |
+| [Hamming 纠错码](/study/papers/hamming-1950/) |  |
+| [Huffman 编码](/study/papers/huffman-1952/) |  |
 | [Polar Codes — Channel Polarization 与 5G 编码](/study/papers/polar-codes-2009/) | Arıkan 2009 年提出的信道极化方法，第一个被严格证明能达到 Shannon 容量的实用编码方案，5G NR 控制信道（PDCCH/PBCH/PUCCH）的官方编码 |
 | [Reed-Solomon 编码：多项式码与错误纠正的 60 年统治](/study/papers/reed-solomon-1960/) | Reed & Solomon 1960 论文精读 v1 |
 | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) |  |
@@ -275,9 +275,9 @@ sidebar:
 |---|---|
 | [AES Rijndael 对称分组密码](/study/papers/aes/) |  |
 | [Bitcoin 白皮书](/study/papers/bitcoin/) |  |
-| [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) |  |
+| [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) |  |
 | [RSA 公钥密码](/study/papers/rsa/) |  |
-| [zk-SNARK：证明"我知道"但不说"是什么"](/study/papers/zk-snark/) |  |
+| [zk-SNARK 零知识证明](/study/papers/zk-snark/) |  |
 
 ## HCI / 软件工程研究
 
@@ -344,7 +344,7 @@ sidebar:
 | `debugging-dichotomy` | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek-R1 状元篇 — 纯 RL 让 LLM 自己学会推理](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [ZeRO - Memory Optimizations Toward Training Trillion Parameter Models](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
-| `diffie-hellman` | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) | 密码学 / 安全 |
+| `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
@@ -365,11 +365,11 @@ sidebar:
 | `gpt-3` | [GPT-3 Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
 | `graphrag` | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | 智能体与 LLM 系统 |
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
-| `hamming-1950` | [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
+| `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
 | `hoare-logic` | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
-| `huffman-1952` | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
+| `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `induction-heads` | [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `instructgpt` | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
@@ -448,4 +448,4 @@ sidebar:
 | `wadler-prettier` | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `word2vec` | [Word2Vec 词向量分布式表示](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `zgc` | [ZGC — 染色指针 + 读屏障下的 TB 级低延迟并发 GC](/study/papers/zgc/) | GC / 内存管理 |
-| `zk-snark` | [zk-SNARK：证明"我知道"但不说"是什么"](/study/papers/zk-snark/) | 密码学 / 安全 |
+| `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |

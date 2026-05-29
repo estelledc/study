@@ -149,12 +149,12 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Drizzle ORM — TS-first SQL builder 与「反 DSL 派」的胜利](/study/projects/drizzle/) | schema 用纯 TS 写、类型从 schema 推、SQL builder 直接生成 query——一条不绕过 SQL 的 ORM 路线 |
+| [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) |  |
 | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | 用 Emscripten 把 C++ 列式分析数据库编译成 WASM，主线程 JS API → Web Worker → WASM bundle → virtual filesystem，让 SQL 直接在浏览器里跑 … |
 | [Kysely TypeScript-first SQL Query Builder](/study/projects/kysely/) | 不是 ORM 也不是 raw SQL——用 TypeScript 模板类型把 SQL 写成 method chain，每一步都被类型系统校验，编译期就把 select 列、join 条件、where 类型对齐 |
 | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) |  |
 | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | 用 tagged template literal 把 SQL 字符串和 parameter 在编译期就分开，自动绑参防注入 |
-| [Prisma TypeScript-first 现代 ORM](/study/projects/prisma/) | schema-first DSL → generate 类型安全 client → migrate 管 schema 演化，靠 Rust query engine 跨多种数据库说同一种话 |
+| [Prisma — 类型安全 ORM](/study/projects/prisma/) |  |
 | [Sequelize Node.js Promise-based ORM 元老](/study/projects/sequelize/) |  |
 | [TypeORM Decorator-based ORM](/study/projects/typeorm/) |  |
 
@@ -278,9 +278,9 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [SWR — 同一问题的另一种回答](/study/projects/swr/) | 把"远程数据该不该重新拉"做成一个全局事件广播，hook 第一、客户端对象消失 |
-| [TanStack Query — 服务端状态当成"独立物种"管](/study/projects/tanstack-query/) | 区别于 useState 的客户端状态，服务端状态需要缓存键、过期、回收、订阅 |
+| [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) |  |
 | [TanStack Router — 把类型系统当 UX 工具](/study/projects/tanstack-router/) | 路由不只是跳转，是从 URL 到组件的端到端类型契约 |
-| [tRPC — 协议消失：函数即 API](/study/projects/trpc/) | 把 client |
+| [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) |  |
 
 ## AI 应用 / Agent 平台
 
@@ -461,7 +461,7 @@ sidebar:
 | `dify` | [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `dnd-kit` | [dnd-kit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docusaurus` | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | 文档站点 |
-| `drizzle` | [Drizzle ORM — TS-first SQL builder 与「反 DSL 派」的胜利](/study/projects/drizzle/) | ORM / DB 客户端 |
+| `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `echarts` | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 数据可视化 |
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
@@ -534,7 +534,7 @@ sidebar:
 | `pnpm` | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `postgres-js` | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
-| `prisma` | [Prisma TypeScript-first 现代 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
+| `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
@@ -570,11 +570,11 @@ sidebar:
 | `swr` | [SWR — 同一问题的另一种回答](/study/projects/swr/) | 数据获取 / 路由 |
 | `tailwind` | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | CSS / 样式 |
 | `tanstack-form` | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
-| `tanstack-query` | [TanStack Query — 服务端状态当成"独立物种"管](/study/projects/tanstack-query/) | 数据获取 / 路由 |
+| `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把类型系统当 UX 工具](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `temporal-polyfill` | [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) | 日期时间 |
 | `testing-library` | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 测试 / 验证 |
-| `trpc` | [tRPC — 协议消失：函数即 API](/study/projects/trpc/) | 数据获取 / 路由 |
+| `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | 数据获取 / 路由 |
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
 | `turborepo` | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Monorepo / 包管理 |
 | `typeorm` | [TypeORM Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
