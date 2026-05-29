@@ -154,6 +154,7 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[borg]] —— Borg 大规模集群管理
 - [[dns]] —— DNS Domain Name System
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[ebpf]] —— eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[gfs]] —— GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利
@@ -162,6 +163,7 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
 

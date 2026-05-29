@@ -173,5 +173,6 @@ location /static/ {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[redis]] —— Redis — 内存键值数据库
+- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[traefik]] —— Traefik — 现代云原生反向代理
 

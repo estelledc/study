@@ -148,5 +148,6 @@ Web 团队（Stolberg）：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
+- [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 

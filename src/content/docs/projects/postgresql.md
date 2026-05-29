@@ -174,6 +174,7 @@ LIMIT 5;
 - [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[grafana]] —— Grafana — 监控可视化看板

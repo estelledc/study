@@ -165,6 +165,7 @@ export default {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮

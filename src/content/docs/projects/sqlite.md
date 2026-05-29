@@ -133,6 +133,7 @@ PRAGMA journal_mode=WAL;
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库

@@ -157,5 +157,10 @@ Check if this PR has any AI-generated slop:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anthropic-cookbook]] —— Anthropic Cookbook — Claude API 实战示例
+- [[autogen]] —— AutoGen — 多智能体对话框架
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

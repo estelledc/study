@@ -167,6 +167,8 @@ console.log(docB.getMap('root').get('title'))
 
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[dns]] —— DNS Domain Name System
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 

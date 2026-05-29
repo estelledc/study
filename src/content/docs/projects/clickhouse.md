@@ -148,6 +148,7 @@ ORDER BY date;
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[dns]] —— DNS Domain Name System
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎

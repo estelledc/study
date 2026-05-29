@@ -147,6 +147,7 @@ export default Page
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
+- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[nginx]] —— nginx — 高性能 Web 服务器
