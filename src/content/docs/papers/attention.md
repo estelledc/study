@@ -152,6 +152,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
+- [[toy-models-superposition]] —— Toy Models of Superposition
 - [[vit]] —— ViT — Vision Transformer
 - [[word2vec]] —— Word2Vec — 词向量奠基
 

@@ -130,6 +130,7 @@ PRAGMA journal_mode=WAL;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

@@ -126,11 +126,11 @@ sidebar:
 | [Activation Patching - 把因果手术刀塞进 Transformer](/study/papers/activation-patching/) | Wang et al |
 | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | residual stream 当公共总线 + 单 head = QK · OV 两个低秩电路 + 2-layer 模型解释 induction head 的两路径机制 |
 | [Causal Abstraction × DAS — 神经网络的因果抽象与对齐搜索](/study/papers/causal-abstraction/) | Geiger 2021 把 Pearl 因果模型套到 NN 内部 + DAS 2024 用旋转矩阵学分布式对齐——不必 sparse / mono 的另一条 mech interp 路线 |
-| [Constitutional AI — 让 AI 看着一组原则给自己挑刺：Claude 的训练骨架](/study/papers/constitutional-ai/) | 用 16 条自然语言 principle 让 LM critique + revise 自己的回答，再用 AI 的偏好替代人去训 reward model — RLAIF 的奠基论文，Anthropic Claude … |
+| [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) |  |
 | [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | 2-head circuit prefix-match × copy 是 ICL 的最小机器 |
-| [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | Anthropic 实验把 backdoor 灌进 LLM，然后用 SFT/RLHF/对抗训练去清除——结果是 backdoor 在 13B+ 模型上 95%+ 存活，CoT 变体甚至学会更隐蔽 |
-| [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | Cunningham 2023 与 Bricken 2023 双论文精读：从 toy models 的玩具实验到工业级特征解码器 |
-| [Toy Models of Superposition (Elhage+ 2022) — 把 features-as-directions 钉在 capacity 数学上的 13 节论证](/study/papers/toy-models-superposition/) | features ≠ neurons 的根本原因是网络在用干涉模式压缩 features —— Toy Models 给 SAE 派提供了"superposition 的逆问题"理论根 |
+| [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) |  |
+| [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) |  |
+| [Toy Models of Superposition](/study/papers/toy-models-superposition/) |  |
 
 ## 分布式系统
 
@@ -334,7 +334,7 @@ sidebar:
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `cognitive-load-theory` | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `compiler-errors` | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
-| `constitutional-ai` | [Constitutional AI — 让 AI 看着一组原则给自己挑刺：Claude 的训练骨架](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
+| `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
 | `copilot-rct` | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
@@ -421,11 +421,11 @@ sidebar:
 | `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
-| `sleeper-agents` | [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
+| `sleeper-agents` | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
 | `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |
 | `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
-| `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
+| `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
 | `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
 | `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
@@ -438,7 +438,7 @@ sidebar:
 | `tls-1.3` | [TLS 1.3 The Transport Layer Security Protocol Version 1.3](/study/papers/tls-1.3/) | 网络协议 |
 | `tofte-talpin-regions` | [Tofte-Talpin Region-Based Memory Management](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |
 | `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 智能体与 LLM 系统 |
-| `toy-models-superposition` | [Toy Models of Superposition (Elhage+ 2022) — 把 features-as-directions 钉在 capacity 数学上的 13 节论证](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
+| `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `trees-that-grow` | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
