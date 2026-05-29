@@ -12,8 +12,7 @@ sidebar:
 ## 总览
 
 - **总数**：131 篇
-- **已分类**：130
-- **未分类**：1（落入"其他 / 待分类"段）
+- **已分类**：131
 
 ### 按主题分布
 
@@ -31,12 +30,11 @@ sidebar:
 | [网络协议](#网络协议) | 5 |
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
+| [编译器 / 编程语言理论](#编译器---编程语言理论) | 19 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
-| [其他 / 待分类](#其他--待分类) | 1 |
 
 ---
 
@@ -214,7 +212,7 @@ sidebar:
 
 ## 编译器 / 编程语言理论
 
-共 18 篇。
+共 19 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -227,6 +225,7 @@ sidebar:
 | [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | Damas & Milner POPL 1982 — 把 Robinson unification + prenex 多态 + let-polymorphism 锁进算法 W，用形式系统证明每个可类型化表达式存在唯一最… |
 | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) |  |
 | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
+| [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) | S-expression 与 eval-apply 元循环解释器：函数式编程的奠基论文（CACM 1960） |
 | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | RxJS / SolidJS / Effect 的反应式编程理论根 |
 | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 不在 finetuning 时才接外部知识，而是让 retriever 和 BERT 一起预训练 |
 | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | Niko Matsakis 把 Adapton 的 lazy demand-driven 思想翻译成 Rust 工业框架 |
@@ -288,14 +287,6 @@ sidebar:
 | [Understanding Program Comprehension with fMRI — 程序理解像语言而非数学的首个脑成像证据](/study/papers/program-comprehension-fmri/) | Siegmund 2014 用 fMRI 扫了 17 名学生读 Java 代码，发现激活的是 Broca / BA47 等自然语言处理区域而非数学推理区——这给"编程是语言学"假说提供了首个生理学锚点 |
 | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | ICPC 2009 用 85 名工程师 10,000 个 IDE 会话证明只有 10% 能在 1 分钟内恢复编码，30% 编辑滞后超过 30 分钟 |
 | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | IEEE TSE 2008 用 25 名 industrial 程序员 + 9 名实验室程序员的录像归纳出 4 大类共 44 个问题，成为 IDE / Code Search / LLM agent 的隐性 refer… |
-
-## 其他 / 待分类
-
-共 1 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
-
-| Slug | 论文 |
-|---|---|
-| `mccarthy-lisp` | [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) |
 
 ---
 
@@ -375,7 +366,7 @@ sidebar:
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
-| `mccarthy-lisp` | [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) | 其他 |
+| `mccarthy-lisp` | [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `metagpt` | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
