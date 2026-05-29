@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 136 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 137 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：136 篇
-- **已分类**：136
+- **总数**：137 篇
+- **已分类**：137
 
 ### 按主题分布
 
@@ -34,7 +34,7 @@ sidebar:
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
-| [HCI / 软件工程研究](#hci---软件工程研究) | 10 |
+| [HCI / 软件工程研究](#hci---软件工程研究) | 11 |
 
 ---
 
@@ -278,7 +278,7 @@ sidebar:
 
 ## HCI / 软件工程研究
 
-共 10 篇。
+共 11 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -288,6 +288,7 @@ sidebar:
 | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 状元篇：不到 1000 字的 letter 如何掀翻一个时代——goto 让程序的'静态文本'与'动态执行'错位，结构化编程三件套（顺序/选择/循环）让每个文本位置的状态可推 |
 | [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | 从 Ebbinghaus forgetting curve 到 Leitner 1972 box / SuperMemo SM-2 (1990) / SSP shortest path (2022)，演化到 Anki … |
 | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | 半结构化访谈 59 位资深工程师 + manager，open coding 归纳 53 条具体属性 / 8 大类别 |
+| [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | Hoare Logic v1 |
 | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | 18 个 RCT 元分析 |
 | [Understanding Program Comprehension with fMRI — 程序理解像语言而非数学的首个脑成像证据](/study/papers/program-comprehension-fmri/) | Siegmund 2014 用 fMRI 扫了 17 名学生读 Java 代码，发现激活的是 Broca / BA47 等自然语言处理区域而非数学推理区——这给"编程是语言学"假说提供了首个生理学锚点 |
 | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | ICPC 2009 用 85 名工程师 10,000 个 IDE 会话证明只有 10% 能在 1 分钟内恢复编码，30% 编辑滞后超过 30 分钟 |
@@ -295,7 +296,7 @@ sidebar:
 
 ---
 
-## 全部 136 篇（字母序）
+## 全部 137 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -357,6 +358,7 @@ sidebar:
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
 | `hamming-1950` | [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hindley-milner` | [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
+| `hoare-logic` | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `induction-heads` | [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | AI 安全与可解释性 |
