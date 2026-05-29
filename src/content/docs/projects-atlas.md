@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 130 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 131 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：130 个
-- **已分类**：130
+- **总数**：131 个
+- **已分类**：131
 
 ### 按主题分布
 
@@ -39,7 +39,7 @@ sidebar:
 | [可观测 / 性能](#可观测---性能) | 5 |
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
-| [Markdown / 解析](#markdown---解析) | 4 |
+| [Markdown / 解析](#markdown---解析) | 5 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -316,12 +316,13 @@ sidebar:
 
 ## Markdown / 解析
 
-共 4 个。
+共 5 个。
 
 | 项目 | 描述 |
 |---|---|
 | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) |  |
 | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) |  |
+| [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) |  |
 | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) |  |
 | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
 
@@ -337,7 +338,7 @@ sidebar:
 
 ---
 
-## 全部 130 个（字母序）
+## 全部 131 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -397,6 +398,7 @@ sidebar:
 | `markdown-it` | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) | Markdown / 解析 |
 | `mcp-ts-sdk` | [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
+| `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `minisearch` | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 其他基础设施 |
