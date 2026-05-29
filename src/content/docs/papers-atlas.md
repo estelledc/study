@@ -227,7 +227,7 @@ sidebar:
 | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) |  |
 | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) |  |
 | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
-| [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) | S-expression 与 eval-apply 元循环解释器：函数式编程的奠基论文（CACM 1960） |
+| [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) |  |
 | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | RxJS / SolidJS / Effect 的反应式编程理论根 |
 | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 不在 finetuning 时才接外部知识，而是让 retriever 和 BERT 一起预训练 |
 | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | Niko Matsakis 把 Adapton 的 lazy demand-driven 思想翻译成 Rust 工业框架 |
@@ -236,7 +236,7 @@ sidebar:
 | [Simula 67 Common Base Language](/study/papers/simula-67/) |  |
 | [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) |  |
 | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | Cytron, Ferrante, Rosen, Wegman, Zadeck, ACM TOPLAS 1991 — 用支配边界（dominance frontier）算法把 SSA 构造从 O(N³) 朴素做法降到几… |
-| [Standard ML](/study/papers/standard-ml/) |  |
+| [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) |  |
 | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a |
 | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | type family + extension fields 让 AST 在 parse / rename / typecheck / optimize 各 phase 共享同一份 traversal 代码 |
 | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 16 页论文 + 70 行 Haskell，奠定了 Prettier / esbuild / biome 这一代 formatter 的 IR 思路 |
@@ -252,8 +252,8 @@ sidebar:
 | [Gödel 不完备性定理（1931）](/study/papers/godel-1931/) |  |
 | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) |  |
 | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | Donald Knuth 1968 年开篇的 TAOCP 第一卷，建立 MIX 抽象机器与算法分析数学基础，1974 年图灵奖核心成果，论文 round 144 = EE2 / theory 分支 D |
-| [Lambda Calculus 函数演算](/study/papers/lambda-calculus/) |  |
-| [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | Alan Turing 1936 年的开山之作：用图灵机定义可计算性，证明 Halting Problem 不可判定，间接解决 Hilbert Entscheidungsproblem |
+| [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) |  |
+| [Turing 1936 可计算性](/study/papers/turing-1936/) |  |
 
 ## 信息论 / 编码理论
 
@@ -376,7 +376,7 @@ sidebar:
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `karp-21` | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) | 计算理论 / 数学基础 |
 | `knuth-taocp` | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
-| `lambda-calculus` | [Lambda Calculus 函数演算](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
+| `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `linear-types` | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
@@ -386,7 +386,7 @@ sidebar:
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
-| `mccarthy-lisp` | [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
+| `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `metagpt` | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
@@ -428,7 +428,7 @@ sidebar:
 | `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `ssa` | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | 编译器 / 编程语言理论 |
 | `stable-diffusion` | [Stable Diffusion / LDM — 把扩散从像素搬到 latent 空间，让消费级 GPU 也能跑文生图](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
-| `standard-ml` | [Standard ML](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
+| `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `swe-agent` | [SWE-agent — 不靠模型变聪明、靠"接口"变聪明：ACI 把 SWE-bench 1.96% 推到 12.5%](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench (Jimenez et al. 2024) — 把 LLM 评测从 demo 题推到真实 GitHub issue](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
 | `t5` | [T5 Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
@@ -440,7 +440,7 @@ sidebar:
 | `toolformer` | [Toolformer (Schick et al. 2023) — LM 自己教自己用工具](/study/papers/toolformer/) | 智能体与 LLM 系统 |
 | `toy-models-superposition` | [Toy Models of Superposition (Elhage+ 2022) — 把 features-as-directions 钉在 capacity 数学上的 13 节论证](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `trees-that-grow` | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
-| `turing-1936` | [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
+| `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `vit` | [ViT 视觉变换器](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |
 | `volcano` | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | 数据库 |

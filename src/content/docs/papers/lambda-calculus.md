@@ -142,3 +142,12 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[godel-1931]] —— Gödel 不完备性定理（1931）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[shannon-1948]] —— Shannon 信息论 通信的数学理论
+- [[smalltalk-80]] —— Smalltalk-80 The Language and its Implementation
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[turing-1936]] —— Turing 1936 可计算性
+

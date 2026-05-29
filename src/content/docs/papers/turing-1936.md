@@ -157,3 +157,9 @@ D(M):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[godel-1931]] —— Gödel 不完备性定理（1931）
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[shannon-1948]] —— Shannon 信息论 通信的数学理论
+- [[smalltalk-80]] —— Smalltalk-80 The Language and its Implementation
+

@@ -147,5 +147,9 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aes]] —— AES Rijndael 对称分组密码
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[smalltalk-80]] —— Smalltalk-80 The Language and its Implementation
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[turing-1936]] —— Turing 1936 可计算性
 

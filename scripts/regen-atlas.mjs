@@ -116,6 +116,9 @@ const THEMES_PROJECTS = {
   'Web 框架': [
     'hono', 'fastify', 'express', 'koa', 'nestjs', 'elysia',
   ],
+  'UI 框架 / Frontend Framework': [
+    'react', 'vue', 'svelte', 'solid', 'preact', 'qwik', 'lit',
+  ],
   'Auth 认证': [
     'auth-js', 'better-auth', 'lucia', 'clerk', 'supertokens',
   ],

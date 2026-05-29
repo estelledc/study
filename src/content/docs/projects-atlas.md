@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 155 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 157 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：155 个
-- **已分类**：155
+- **总数**：157 个
+- **已分类**：157
 
 ### 按主题分布
 
@@ -27,6 +27,7 @@ sidebar:
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [Web 框架](#web-框架) | 6 |
+| [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 2 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -138,8 +139,8 @@ sidebar:
 | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 不是 webpack 的下位替代，是 webpack plugin API 的 Rust 实现 |
 | [swc Rust-based JS/TS 编译器](/study/projects/swc/) |  |
 | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | Webpack 作者 Tobias Koppers 第二代 bundler |
-| [Vite 现代前端构建工具](/study/projects/vite/) |  |
-| [webpack 现代前端工程化奠基](/study/projects/webpack/) |  |
+| [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) |  |
+| [webpack 模块打包](/study/projects/webpack/) |  |
 
 ## ORM / DB 客户端
 
@@ -168,6 +169,15 @@ sidebar:
 | [Hono — 极简边缘后端的 API 取舍](/study/projects/hono/) | 用 Web 标准（Request/Response）+ 多种 router 实现 + koa-compose 中间件做"任何 runtime 都能跑"的 web 框架 |
 | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) |  |
 | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) |  |
+
+## UI 框架 / Frontend Framework
+
+共 2 个。
+
+| 项目 | 描述 |
+|---|---|
+| [React UI 组件库](/study/projects/react/) |  |
+| [Vue.js — 渐进式 UI 框架](/study/projects/vue/) |  |
 
 ## Auth 认证
 
@@ -402,7 +412,7 @@ sidebar:
 
 ---
 
-## 全部 155 个（字母序）
+## 全部 157 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -507,6 +517,7 @@ sidebar:
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
 | `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
+| `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) | Drag & Drop / Interaction |
 | `react-hook-form` | [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
 | `react-intl` | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) | i18n 国际化 |
@@ -548,12 +559,13 @@ sidebar:
 | `vanilla-extract` | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vercel-ai` | [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `visx` | [visx Airbnb React 可视化原语](/study/projects/visx/) | 数据可视化 |
-| `vite` | [Vite 现代前端构建工具](/study/projects/vite/) | 构建工具 / Bundler |
+| `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue + Vite 文档框架，零 framework 重负的 SSG](/study/projects/vitepress/) | 文档站点 |
 | `vitest` | [Vitest — 测试工具如果跟开发用同一个工具栈会怎样](/study/projects/vitest/) | 测试 / 验证 |
+| `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) | i18n 国际化 |
 | `web-vitals` | [web-vitals — 不是「测速工具」，是把 Chrome UX Report 的指标定义在浏览器端等值复刻的协议库](/study/projects/web-vitals/) | 可观测 / 性能 |
-| `webpack` | [webpack 现代前端工程化奠基](/study/projects/webpack/) | 构建工具 / Bundler |
+| `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
 | `why-did-you-render` | [why-did-you-render — 把 React 的"假更新"从口头警告变成可定位的诊断对象](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wretch` | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) | HTTP 客户端 |
 | `xstate` | [XState — 把状态画成图](/study/projects/xstate/) | 状态管理 |
