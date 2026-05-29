@@ -1,4 +1,5 @@
 ---
+title: Jimp 纯 JS 图像处理库
 来源: https://github.com/jimp-dev/jimp
 season: 29
 episode: S29-2

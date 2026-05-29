@@ -68,6 +68,7 @@ const THEMES_PAPERS = {
   ],
   '计算理论 / 数学基础': [
     'turing-1936', 'lambda-calculus', 'cook-levin', 'karp-21', 'godel-1931', 'knuth-taocp',
+    'dijkstra-shortest-path',
   ],
   '信息论 / 编码理论': [
     'shannon-1948', 'huffman-1952', 'hamming-1950', 'reed-solomon-1960', 'polar-codes-2009',
@@ -89,7 +90,7 @@ const THEMES_PROJECTS = {
     'd3', 'echarts', 'visx', 'recharts', 'observable-plot',
   ],
   '动画': [
-    'framer-motion', 'gsap', 'lottie', 'react-spring', 'motion-one',
+    'framer-motion', 'gsap', 'lottie', 'react-spring', 'motion-one', 'anime',
   ],
   '表单 / Schema 校验': [
     'zod', 'valibot', 'arktype', 'react-hook-form', 'tanstack-form',

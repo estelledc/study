@@ -1,6 +1,6 @@
 ---
 title: AES Rijndael 对称分组密码
-来源: Joan Daemen & Vincent Rijmen, "AES Proposal: Rijndael", NIST AES competition 1998 → FIPS-197 (2001)
+来源: 'Joan Daemen & Vincent Rijmen, "AES Proposal: Rijndael", NIST AES competition 1998 → FIPS-197 (2001)'
 ---
 
 # AES — 现代世界默认对称密码

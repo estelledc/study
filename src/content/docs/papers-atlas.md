@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 142 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 143 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：142 篇
-- **已分类**：142
+- **总数**：143 篇
+- **已分类**：143
 
 ### 按主题分布
 
@@ -31,7 +31,7 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 24 |
-| [计算理论 / 数学基础](#计算理论---数学基础) | 6 |
+| [计算理论 / 数学基础](#计算理论---数学基础) | 7 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
@@ -224,7 +224,7 @@ sidebar:
 | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 第一篇把 CRDT 从平坦寄存器扩到嵌套 map+list 任意嵌套结构的论文 |
 | [Algebraic Effects (Plotkin & Pretnar ESOP 2009) — async/await、try-catch、generator 的统一抽象](/study/papers/effect-handlers/) | operation signature + handler clause + resume/abort 控制流 |
 | [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | Joe Armstrong KTH 2003 博士论文 + 30 年 Ericsson 实战汇总 |
-| [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | Damas & Milner POPL 1982 — 把 Robinson unification + prenex 多态 + let-polymorphism 锁进算法 W，用形式系统证明每个可类型化表达式存在唯一最… |
+| [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) |  |
 | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) |  |
 | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
 | [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) | S-expression 与 eval-apply 元循环解释器：函数式编程的奠基论文（CACM 1960） |
@@ -243,15 +243,16 @@ sidebar:
 
 ## 计算理论 / 数学基础
 
-共 6 篇。
+共 7 篇。
 
 | 论文 | 描述 |
 |---|---|
 | [Cook-Levin 定理](/study/papers/cook-levin/) | 1971 年 Cook（与 Levin 1973 独立）证明 SAT 是 NP-complete，奠定计算复杂性理论 |
+| [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | Edsger Dijkstra 用一杯咖啡的时间在 1959 年的备忘里写下两个图论算法 |
 | [Gödel 不完备性定理（1931）](/study/papers/godel-1931/) |  |
 | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) |  |
 | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | Donald Knuth 1968 年开篇的 TAOCP 第一卷，建立 MIX 抽象机器与算法分析数学基础，1974 年图灵奖核心成果，论文 round 144 = EE2 / theory 分支 D |
-| [lambda-calculus](/study/papers/lambda-calculus/) |  |
+| [Lambda Calculus 函数演算](/study/papers/lambda-calculus/) |  |
 | [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | Alan Turing 1936 年的开山之作：用图灵机定义可计算性，证明 Halting Problem 不可判定，间接解决 Hilbert Entscheidungsproblem |
 
 ## 信息论 / 编码理论
@@ -276,7 +277,7 @@ sidebar:
 | [Bitcoin — 一种点对点电子现金系统](/study/papers/bitcoin/) | 中本聪 2008 白皮书的状元篇 D 分支精读：PoW 共识 / UTXO / 拜占庭容错 / 经济激励 |
 | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) |  |
 | [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (RSA 1978)](/study/papers/rsa/) |  |
-| [zk-SNARK：证明"我知道"但不说"是什么](/study/papers/zk-snark/) |  |
+| [zk-SNARK：证明"我知道"但不说"是什么"](/study/papers/zk-snark/) |  |
 
 ## HCI / 软件工程研究
 
@@ -301,7 +302,7 @@ sidebar:
 
 ---
 
-## 全部 142 篇（字母序）
+## 全部 143 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -345,6 +346,7 @@ sidebar:
 | `deepspeed-zero` | [ZeRO - Memory Optimizations Toward Training Trillion Parameter Models](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `diffie-hellman` | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
+| `dijkstra-shortest-path` | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
 | `dit` | [DiT Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dns` | [DNS Domain Name System](/study/papers/dns/) | 网络协议 |
@@ -364,7 +366,7 @@ sidebar:
 | `graphrag` | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | 智能体与 LLM 系统 |
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
 | `hamming-1950` | [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
-| `hindley-milner` | [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
+| `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
 | `hoare-logic` | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
@@ -374,7 +376,7 @@ sidebar:
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `karp-21` | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) | 计算理论 / 数学基础 |
 | `knuth-taocp` | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
-| `lambda-calculus` | [lambda-calculus](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
+| `lambda-calculus` | [Lambda Calculus 函数演算](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `linear-types` | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
@@ -446,4 +448,4 @@ sidebar:
 | `wadler-prettier` | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `word2vec` | [Word2Vec 词向量分布式表示](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `zgc` | [ZGC — 染色指针 + 读屏障下的 TB 级低延迟并发 GC](/study/papers/zgc/) | GC / 内存管理 |
-| `zk-snark` | [zk-SNARK：证明"我知道"但不说"是什么](/study/papers/zk-snark/) | 密码学 / 安全 |
+| `zk-snark` | [zk-SNARK：证明"我知道"但不说"是什么"](/study/papers/zk-snark/) | 密码学 / 安全 |

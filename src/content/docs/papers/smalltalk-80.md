@@ -1,6 +1,6 @@
 ---
 title: Smalltalk-80 The Language and its Implementation
-来源: Adele Goldberg & Daniel Robson, "Smalltalk-80: The Language and its Implementation", Addison-Wesley 1983
+来源: 'Adele Goldberg & Daniel Robson, "Smalltalk-80: The Language and its Implementation", Addison-Wesley 1983'
 ---
 
 # Smalltalk-80 — OOP 的最纯粹形态

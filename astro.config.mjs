@@ -1,9 +1,13 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import remarkWikilinks from './scripts/remark-wikilinks.mjs';
 
 export default defineConfig({
   site: 'https://estelledc.github.io',
   base: '/study',
+  markdown: {
+    remarkPlugins: [remarkWikilinks],
+  },
   integrations: [
     starlight({
       title: "Jason's Study",

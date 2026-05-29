@@ -1,7 +1,7 @@
 ---
 title: Bitcoin — 一种点对点电子现金系统
 description: 中本聪 2008 白皮书的状元篇 D 分支精读：PoW 共识 / UTXO / 拜占庭容错 / 经济激励
-来源: Satoshi Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008-10-31, https://bitcoin.org/bitcoin.pdf （cryptography mailing list 自发布版本，9 页）
+来源: 'Satoshi Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008-10-31, https://bitcoin.org/bitcoin.pdf （cryptography mailing list 自发布版本，9 页）'
 版本: v1.1
 分支: D-theory
 轮次: 121

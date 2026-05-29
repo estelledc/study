@@ -1,12 +1,9 @@
 ---
-来源: Alonzo Church, "An Unsolvable Problem of Elementary Number Theory", American Journal of Mathematics, Vol. 58, No. 2 (Apr 1936), pp. 345-363, DOI 10.2307/2371045
-轮次: 124 (AA2)
-分支: D 理论 / 计算理论
-状态: v1.1 状元篇
+title: Lambda Calculus 函数演算
+来源: 'Alonzo Church, "An Unsolvable Problem of Elementary Number Theory", American Journal of Mathematics, 1936'
 日期: 2026-05-29
-关键词: lambda calculus, beta reduction, Church-Turing, Y combinator, functional programming
-前置: round-101 哥德尔不完备 / round-110 图灵机 / round-118 递归函数论
-后续: round-130 类型论 / round-140 effect system
+分类: 编程语言 / 计算理论
+难度: 中级
 ---
 
 # Round 124 — Lambda Calculus（λ-演算）

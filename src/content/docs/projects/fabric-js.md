@@ -1,4 +1,5 @@
 ---
+title: Fabric.js Canvas 对象模型
 来源: https://github.com/fabricjs/fabric.js
 season: 29
 episode: S29-3
