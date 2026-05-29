@@ -219,7 +219,7 @@ sidebar:
 | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
 | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 第一篇把 CRDT 从平坦寄存器扩到嵌套 map+list 任意嵌套结构的论文 |
 | [Algebraic Effects (Plotkin & Pretnar ESOP 2009) — async/await、try-catch、generator 的统一抽象](/study/papers/effect-handlers/) | operation signature + handler clause + resume/abort 控制流 |
-| [Hindley-Milner (Damas & Milner POPL 1982) — 编译器自己推类型的祖宗算法](/study/papers/hindley-milner/) | algorithm W + 唯一原则类型存在性定理 |
+| [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | Damas & Milner POPL 1982 — 把 Robinson unification + prenex 多态 + let-polymorphism 锁进算法 W，用形式系统证明每个可类型化表达式存在唯一最… |
 | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) |  |
 | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
 | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | RxJS / SolidJS / Effect 的反应式编程理论根 |
@@ -303,7 +303,7 @@ sidebar:
 | `gpt-3` | [GPT-3 Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
 | `graphrag` | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | 智能体与 LLM 系统 |
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
-| `hindley-milner` | [Hindley-Milner (Damas & Milner POPL 1982) — 编译器自己推类型的祖宗算法](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
+| `hindley-milner` | [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
 | `induction-heads` | [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `instructgpt` | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
