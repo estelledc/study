@@ -190,16 +190,15 @@ function LoginForm() {
 - [[i18next]] —— i18next framework-agnostic i18n 引擎
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
 - [[ky]] —— ky 极简 fetch-based HTTP 客户端
-- [[mikro-orm]] —— MikroORM DataMapper + Unit of Work + Identity Map
+- [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
-- [[sequelize]] —— Sequelize Node.js Promise-based ORM 元老
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-- [[typeorm]] —— TypeORM Decorator-based ORM
+- [[typeorm]] —— TypeORM — Decorator-based ORM
 - [[valibot]] —— valibot 模块化模式校验
 - [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
 

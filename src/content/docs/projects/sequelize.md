@@ -154,3 +154,9 @@ module.exports = {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
+- [[prisma]] —— Prisma — 类型安全 ORM
+- [[zod]] —— Zod — TypeScript-first schema 验证
+

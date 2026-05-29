@@ -157,6 +157,7 @@ function Greeting({ name }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ag-grid]] —— AG Grid — 企业级数据表格
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[cot]] —— Chain-of-Thought Prompting

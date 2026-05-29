@@ -181,6 +181,7 @@ LIMIT 5;
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[redis]] —— Redis — 内存键值数据库
+- [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展

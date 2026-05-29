@@ -163,5 +163,5 @@ export async function bookTrip(tripId: string) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 

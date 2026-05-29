@@ -164,3 +164,6 @@ console.log(docB.getMap('root').get('title'))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dns]] —— DNS Domain Name System
+

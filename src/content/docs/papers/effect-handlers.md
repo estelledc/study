@@ -179,4 +179,5 @@ let collect body =
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 
