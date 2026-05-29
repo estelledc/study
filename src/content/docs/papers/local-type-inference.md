@@ -156,6 +156,7 @@ TypeScript 拿 `pipe` 的签名 + 两个实参的类型，**只看一层**就推
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

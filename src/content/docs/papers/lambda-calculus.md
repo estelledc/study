@@ -162,6 +162,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

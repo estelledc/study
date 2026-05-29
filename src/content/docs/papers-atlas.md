@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 158 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 159 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：158 篇
+- **总数**：159 篇
 - **已分类**：143
-- **未分类**：15（落入"其他 / 待分类"段）
+- **未分类**：16（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 15 |
+| [其他 / 待分类](#其他--待分类) | 16 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 15 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 16 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -313,6 +313,7 @@ sidebar:
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
+| `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
@@ -326,7 +327,7 @@ sidebar:
 
 ---
 
-## 全部 158 篇（字母序）
+## 全部 159 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -388,6 +389,7 @@ sidebar:
 | `flash-attention` | [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `foundationdb` | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) | 数据库 |
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
+| `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | 其他 |
 | `generational-gc` | [Generational Garbage Collection — 分代假设与跨代引用追踪](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gfs` | [GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利](/study/papers/gfs/) | OS / 集群管理 / 系统 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
