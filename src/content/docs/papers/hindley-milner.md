@@ -149,6 +149,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
@@ -167,5 +168,8 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[starlight]] —— Starlight — Astro 文档站点主题
+- [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
+- [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
 - [[turing-1936]] —— Turing 1936 可计算性
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 

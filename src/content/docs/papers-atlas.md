@@ -220,7 +220,7 @@ sidebar:
 | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) |  |
 | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) |  |
 | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 22 项研究系统综述 |
-| [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
+| [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) |  |
 | [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) |  |
 | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) |  |
 | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) |  |
@@ -237,9 +237,9 @@ sidebar:
 | [Smalltalk-80](/study/papers/smalltalk-80/) |  |
 | [SSA — 静态单赋值形式](/study/papers/ssa/) |  |
 | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) |  |
-| [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a |
-| [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | type family + extension fields 让 AST 在 parse / rename / typecheck / optimize 各 phase 共享同一份 traversal 代码 |
-| [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 16 页论文 + 70 行 Haskell，奠定了 Prettier / esbuild / biome 这一代 formatter 的 IR 思路 |
+| [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) |  |
+| [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) |  |
+| [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) |  |
 
 ## 计算理论 / 数学基础
 
@@ -333,7 +333,7 @@ sidebar:
 | `clickhouse` | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `cognitive-load-theory` | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
-| `compiler-errors` | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
+| `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
 | `copilot-rct` | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
@@ -433,19 +433,19 @@ sidebar:
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
 | `tcp` | [TCP Transmission Control Protocol](/study/papers/tcp/) | 网络协议 |
-| `theorems-for-free` | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
+| `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `tigerbeetle` | [TigerBeetle (Joran Greef et al. 2024) — 金融级 OLTP，固定 schema + VSR + deterministic simulation](/study/papers/tigerbeetle/) | 数据库 |
 | `tls-1.3` | [TLS 1.3 The Transport Layer Security Protocol Version 1.3](/study/papers/tls-1.3/) | 网络协议 |
 | `tofte-talpin-regions` | [Tofte-Talpin Region-Based Memory Management](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |
 | `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 智能体与 LLM 系统 |
 | `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
-| `trees-that-grow` | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
+| `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |
 | `volcano` | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | 数据库 |
 | `voyager` | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | 智能体与 LLM 系统 |
-| `wadler-prettier` | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
+| `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `zgc` | [ZGC — 染色指针 + 读屏障下的 TB 级低延迟并发 GC](/study/papers/zgc/) | GC / 内存管理 |
 | `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |

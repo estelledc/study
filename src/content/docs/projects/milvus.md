@@ -184,6 +184,7 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展

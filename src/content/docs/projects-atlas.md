@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 212 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 213 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：212 个
+- **总数**：213 个
 - **已分类**：206
-- **未分类**：6（落入"其他 / 待分类"段）
+- **未分类**：7（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 6 |
+| [其他 / 待分类](#其他--待分类) | 7 |
 
 ---
 
@@ -351,8 +351,8 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [chroma — 不是 Pinecone 替代，是把向量检索拉回本地的 5 行 SDK](/study/projects/chroma/) | Python + Rust 双栈、单机即用的开源向量数据库 |
-| [Claude Code — 一个 LLM-runtime 暴露成 5 种 surface 的 agentic 产品](/study/projects/claude-code/) | 大型应用范例 (v1 |
+| [Chroma — Python 优先的向量数据库](/study/projects/chroma/) |  |
+| [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) |  |
 | [Continue — 把 AI code review 写成 git 跟踪的 markdown，让 PR 跑 status check](/study/projects/continue/) | 不再是"开源 Cursor"——v1 |
 | [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | 大型应用范例——143k stars 的开源 LLMOps 平台，Python 后端 + Next |
 | [LangChain — LLM 应用开发框架](/study/projects/langchain/) |  |
@@ -360,7 +360,7 @@ sidebar:
 | [LibreChat — 不是再做一个 ChatGPT 替代品，是把"chat 应用"和"模型供应商"解耦成可热插拔的 provider 抽象层](/study/projects/librechat/) | 大型应用范例——37k stars 的 self-hosted ChatGPT alternative，Express + React + MongoDB + Meilisearch，packages/api/src/… |
 | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) |  |
 | [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | 一个跨厂商的协议设计：tools / resources / prompts 三类原语 + JSON-RPC 传输 + 严格 schema |
-| [ollama — 让本地 LLM 像 docker 一样易用的 Go 框架](/study/projects/ollama/) | 框架/SDK 范例，173k stars 的本地 LLM 一键运行框架，Go 主程序通过 exec |
+| [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) |  |
 | [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | stream / structured output / tool use / multimodal 全统一在一组类型安全 API |
 | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) |  |
 
@@ -495,11 +495,12 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 6 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 7 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
+| `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -508,7 +509,7 @@ sidebar:
 
 ---
 
-## 全部 212 个（字母序）
+## 全部 213 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -516,6 +517,7 @@ sidebar:
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
 | `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
+| `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
@@ -532,9 +534,9 @@ sidebar:
 | `chalk` | [chalk](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | Monorepo / 包管理 |
 | `chatwoot` | [chatwoot — 不是再做一个 Intercom，是把"客服 SaaS"做成开源 + 自托管 + 11 类渠道全归一到 messages 表](/study/projects/chatwoot/) | 数据应用 / SaaS |
-| `chroma` | [chroma — 不是 Pinecone 替代，是把向量检索拉回本地的 5 行 SDK](/study/projects/chroma/) | AI 应用 / Agent 平台 |
+| `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
 | `clack` | [@clack/prompts: 用 ANSI 重新发明 CLI 交互](/study/projects/clack/) | CLI / 命令行工具 |
-| `claude-code` | [Claude Code — 一个 LLM-runtime 暴露成 5 种 surface 的 agentic 产品](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
+| `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
 | `clerk` | [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
@@ -630,7 +632,7 @@ sidebar:
 | `observable-plot` | [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
-| `ollama` | [ollama — 让本地 LLM 像 docker 一样易用的 Go 框架](/study/projects/ollama/) | AI 应用 / Agent 平台 |
+| `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
 | `oxc` | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在生产环境真正用得上](/study/projects/patchright/) | AI 浏览器自动化 |
