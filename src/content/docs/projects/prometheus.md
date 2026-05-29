@@ -176,6 +176,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎

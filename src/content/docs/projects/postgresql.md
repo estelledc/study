@@ -164,10 +164,12 @@ LIMIT 5;
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cassandra]] —— Apache Cassandra — 分布式宽列数据库
+- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[dgraph]] —— Dgraph — 分布式图数据库
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
@@ -186,6 +188,7 @@ LIMIT 5;
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[redis]] —— Redis — 内存键值数据库
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 - [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代

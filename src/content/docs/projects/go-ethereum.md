@@ -146,5 +146,10 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[raft]] —— Raft — 易理解的共识算法
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

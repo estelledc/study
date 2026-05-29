@@ -130,6 +130,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nats]] —— NATS — 极简云原生消息系统
 - [[raft]] —— Raft — 易理解的共识算法

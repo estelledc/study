@@ -158,6 +158,7 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep

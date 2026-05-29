@@ -148,5 +148,13 @@ Qed.
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[linear-types]] —— 线性类型（Linear Types）
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 

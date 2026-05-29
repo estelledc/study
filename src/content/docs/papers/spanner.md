@@ -150,7 +150,7 @@ GROUP BY customer_id;
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
-- [[chubby]] —— Chubby 分布式锁服务
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[dns]] —— DNS Domain Name System

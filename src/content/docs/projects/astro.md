@@ -198,6 +198,7 @@ export const collections = { blog }
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[micromark]] —— micromark 流式 CommonMark 状态机解析器
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架

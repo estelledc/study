@@ -179,6 +179,7 @@ let collect body =
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递

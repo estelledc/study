@@ -169,6 +169,7 @@ export function useMouse() {
 
 - [[ag-grid]] —— AG Grid — 企业级数据表格
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[react]] —— React UI 组件库
 - [[rollup]] —— Rollup — ESM 优先的打包器

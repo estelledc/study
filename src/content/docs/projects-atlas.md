@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 221 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 223 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：221 个
+- **总数**：223 个
 - **已分类**：206
-- **未分类**：15（落入"其他 / 待分类"段）
+- **未分类**：17（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 15 |
+| [其他 / 待分类](#其他--待分类) | 17 |
 
 ---
 
@@ -277,7 +277,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | 不是 Lerna 替代，是把 versioning 决策从 release 时刻推前到 PR 时刻——每个改动自带它该 bump 哪一档 |
+| [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) |  |
 | [lerna — JS monorepo 第一代工具，2022 EOL 后被 Nx 收编的代际故事](/study/projects/lerna/) | 不是另一个 monorepo 工具，是 monorepo 工具的"祖宗"——bootstrap + version + publish 三步流程定义了 2017-2020 整个生态 |
 | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | 从 Angular CLI 演化而来的 monorepo 元框架，靠 project graph + executor 抽象 + Nx Cloud DTE 把任务编排做到企业级 monorepo 的极致 |
 | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | 不是更快的 npm，是把"每个项目都复制一遍 node_modules"这件事重写成"全机器一份 store + 硬链接"——磁盘 50% 节省、phantom dependency 编译期可见、workspace p… |
@@ -397,7 +397,7 @@ sidebar:
 |---|---|
 | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) |  |
 | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) |  |
-| [chatwoot — 不是再做一个 Intercom，是把"客服 SaaS"做成开源 + 自托管 + 11 类渠道全归一到 messages 表](/study/projects/chatwoot/) | 大型应用范例——29 |
+| [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) |  |
 | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 大型应用范例——124k stars 背后的"四轨同核"架构判断，以及一处经常被误读的"P2P/E2E"叙事 |
 | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 大型应用范例——102k stars 的 Google Photos 替代品，TS 后端 + Python ML 服务 + Postgres + Redis + Object Storage 五件套同核运行 |
 | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 大型应用范例，48k stars 背后的"common/ |
@@ -495,14 +495,16 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 15 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 17 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
+| `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
+| `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
@@ -517,7 +519,7 @@ sidebar:
 
 ---
 
-## 全部 221 个（字母序）
+## 全部 223 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -532,6 +534,7 @@ sidebar:
 | `auth-js` | [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | Auth 认证 |
 | `axios` | [axios Promise-based HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) | 其他 |
+| `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) | 其他 |
 | `better-auth` | [better-auth 状元篇 — Plugin 化 TS-first 认证框架的可注册扩展思路](/study/projects/better-auth/) | Auth 认证 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
@@ -542,8 +545,8 @@ sidebar:
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
 | `chalk` | [chalk](/study/projects/chalk/) | Terminal / 终端 |
-| `changesets` | [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | Monorepo / 包管理 |
-| `chatwoot` | [chatwoot — 不是再做一个 Intercom，是把"客服 SaaS"做成开源 + 自托管 + 11 类渠道全归一到 messages 表](/study/projects/chatwoot/) | 数据应用 / SaaS |
+| `changesets` | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) | Monorepo / 包管理 |
+| `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
 | `clack` | [@clack/prompts: 用 ANSI 重新发明 CLI 交互](/study/projects/clack/) | CLI / 命令行工具 |
 | `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
@@ -558,6 +561,7 @@ sidebar:
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
+| `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
 | `dnd-kit` | [dnd-kit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docusaurus` | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | 文档站点 |

@@ -148,5 +148,12 @@ INGRES 把它**拆**成两步：先扫 MANAGER 把每个部门的 manager.salary
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 
