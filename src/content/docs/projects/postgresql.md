@@ -163,8 +163,10 @@ LIMIT 5;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cassandra]] —— Apache Cassandra — 分布式宽列数据库
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[dgraph]] —— Dgraph — 分布式图数据库
 - [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
@@ -174,6 +176,7 @@ LIMIT 5;
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[neo4j]] —— Neo4j — 主流图数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展

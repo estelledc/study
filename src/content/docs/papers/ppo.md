@@ -150,3 +150,15 @@ OpenAI Five 用 PPO 训练，128000 CPU + 256 GPU 跑了 10 个月。2019 年 4 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[alphago]] —— AlphaGo — 击败围棋世界冠军
+- [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[dpo]] —— DPO Direct Preference Optimization
+- [[dqn]] —— DQN — Deep Q-Network
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[mamba]] —— Mamba — 选择性状态空间模型
+- [[muzero]] —— MuZero — 不用规则也能下棋
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
+

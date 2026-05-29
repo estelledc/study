@@ -151,6 +151,7 @@ ORDER BY date;
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport

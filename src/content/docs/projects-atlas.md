@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 192 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 196 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：192 个
-- **已分类**：192
+- **总数**：196 个
+- **已分类**：196
 
 ### 按主题分布
 
@@ -26,8 +26,8 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 11 |
-| [DevOps / 容器 / 运维](#devops---容器---运维) | 11 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 14 |
+| [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
 | [监控 / 时序](#监控---时序) | 4 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
@@ -163,17 +163,20 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 11 个。
+共 14 个。
 
 | 项目 | 描述 |
 |---|---|
+| [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) |  |
 | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) |  |
 | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) |  |
+| [Dgraph — 分布式图数据库](/study/projects/dgraph/) |  |
 | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
 | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) |  |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
 | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) |  |
+| [Neo4j — 主流图数据库](/study/projects/neo4j/) |  |
 | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) |  |
 | [Redis — 内存键值数据库](/study/projects/redis/) |  |
 | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) |  |
@@ -181,11 +184,12 @@ sidebar:
 
 ## DevOps / 容器 / 运维
 
-共 11 个。
+共 12 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Ansible — 无 agent 配置管理](/study/projects/ansible/) |  |
+| [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) |  |
 | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) |  |
 | [Docker — 容器化平台](/study/projects/docker/) |  |
 | [etcd — 分布式键值数据库](/study/projects/etcd/) |  |
@@ -479,13 +483,14 @@ sidebar:
 
 ---
 
-## 全部 192 个（字母序）
+## 全部 196 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `affine` | [AFFiNE — 不是再做一个 Notion，是把 doc 和 whiteboard 融合到同一个 block 模型，再用 Yjs CRDT 把 local-first 做到底](/study/projects/affine/) | 数据应用 / SaaS |
 | `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
+| `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `auth-js` | [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | Auth 认证 |
@@ -497,6 +502,7 @@ sidebar:
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
 | `cal-com` | [cal.com — 不是再做一个 Calendly，是把"调度 SaaS"做成开源 + 可自托管 + 50 个 provider 都能插的协议](/study/projects/cal-com/) | 数据应用 / SaaS |
+| `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
 | `chalk` | [chalk](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | Monorepo / 包管理 |
 | `chatwoot` | [chatwoot — 不是再做一个 Intercom，是把"客服 SaaS"做成开源 + 自托管 + 11 类渠道全归一到 messages 表](/study/projects/chatwoot/) | 数据应用 / SaaS |
@@ -512,6 +518,7 @@ sidebar:
 | `d3` | [d3.js 数据驱动文档](/study/projects/d3/) | 数据可视化 |
 | `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
+| `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dify` | [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `dnd-kit` | [dnd-kit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
@@ -579,6 +586,7 @@ sidebar:
 | `mysql` | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) | 数据库本体 / 存储引擎 |
 | `nanobrowser` | [nanobrowser — 不是 cloud Chrome 的 AI agent，是把浏览器扩展当 sandbox 的 multi-agent runtime](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 框架无关的 atomic 状态库（< 1 KB）](/study/projects/nanostores/) | 状态管理 |
+| `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
 | `nestjs` | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) | Web 框架 |
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |

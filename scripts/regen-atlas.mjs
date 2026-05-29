@@ -118,6 +118,7 @@ const THEMES_PROJECTS = {
     'cockroachdb', 'tidb', 'cassandra', 'mariadb', 'mysql',
     'rocksdb', 'leveldb', 'lmdb', 'valkey', 'duckdb',
     'elasticsearch', 'kafka', 'milvus',
+    'neo4j', 'dgraph', 'arangodb',
   ],
   'DevOps / 容器 / 运维': [
     'docker', 'kubernetes', 'nginx', 'caddy', 'traefik',

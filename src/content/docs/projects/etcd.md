@@ -130,5 +130,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[raft]] —— Raft — 易理解的共识算法
+- [[redis]] —— Redis — 内存键值数据库
 

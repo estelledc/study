@@ -110,11 +110,11 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [AlphaGo Mastering Go with Deep Neural Networks](/study/papers/alphago/) |  |
+| [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) |  |
 | [DPO Direct Preference Optimization](/study/papers/dpo/) |  |
-| [DQN Deep Q-Network 深度强化学习](/study/papers/dqn/) |  |
-| [MuZero Mastering Games by Planning with Learned Model](/study/papers/muzero/) |  |
-| [PPO Proximal Policy Optimization](/study/papers/ppo/) |  |
+| [DQN — Deep Q-Network](/study/papers/dqn/) |  |
+| [MuZero — 不用规则也能下棋](/study/papers/muzero/) |  |
+| [PPO — Proximal Policy Optimization](/study/papers/ppo/) |  |
 | [RLHF — 用人比较两条轨迹学奖励：ChatGPT/Claude 的奠基论文](/study/papers/rlhf-christiano/) | 不写 reward function，让人对 trajectory pair 投票 |
 
 ## AI 安全与可解释性
@@ -312,7 +312,7 @@ sidebar:
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
-| `alphago` | [AlphaGo Mastering Go with Deep Neural Networks](/study/papers/alphago/) | 强化学习 |
+| `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
 | `anthropic-circuits` | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora (Verbitski et al. 2017) — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
@@ -351,7 +351,7 @@ sidebar:
 | `dit` | [DiT Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dns` | [DNS Domain Name System](/study/papers/dns/) | 网络协议 |
 | `dpo` | [DPO Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
-| `dqn` | [DQN Deep Q-Network 深度强化学习](/study/papers/dqn/) | 强化学习 |
+| `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
 | `dynamo` | [Dynamo (DeCandia et al. 2007) — NoSQL 的源头与 CAP 的 AP 路线](/study/papers/dynamo/) | 数据库 |
 | `ebpf` | [eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
@@ -390,13 +390,13 @@ sidebar:
 | `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
-| `muzero` | [MuZero Mastering Games by Planning with Learned Model](/study/papers/muzero/) | 强化学习 |
+| `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
 | `no-silver-bullet` | [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `pair-programming` | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |
 | `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
-| `ppo` | [PPO Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
+| `ppo` | [PPO — Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
 | `program-comprehension-fmri` | [Understanding Program Comprehension with fMRI — 程序理解像语言而非数学的首个脑成像证据](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
 | `push-pull-frp` | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | 编译器 / 编程语言理论 |
