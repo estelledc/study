@@ -130,12 +130,14 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddpm]] —— DDPM Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
 - [[dit]] —— DiT Diffusion Transformer
 - [[llava]] —— LLaVA Visual Instruction Tuning
 - [[mae]] —— MAE Masked Autoencoder 视觉自监督
+- [[milvus]] —— Milvus — 开源向量数据库
 - [[resnet]] —— ResNet 深度残差学习
 - [[vit]] —— ViT — Vision Transformer
 - [[word2vec]] —— Word2Vec 词向量分布式表示

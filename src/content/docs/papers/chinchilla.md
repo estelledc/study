@@ -128,3 +128,12 @@ Chinchilla 是 2022 年最重要的 LLM 训练范式转折点，没有之一。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[alphago]] —— AlphaGo Mastering Go with Deep Neural Networks
+- [[attention]] —— Attention Is All You Need
+- [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[ppo]] —— PPO Proximal Policy Optimization
+- [[resnet]] —— ResNet 深度残差学习
+- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[word2vec]] —— Word2Vec 词向量分布式表示
+

@@ -140,10 +140,11 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[dqn]] —— DQN Deep Q-Network 深度强化学习
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[mamba]] —— Mamba — 选择性状态空间模型
 - [[muzero]] —— MuZero Mastering Games by Planning with Learned Model
 - [[ppo]] —— PPO Proximal Policy Optimization
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
-- [[t5]] —— T5 Text-to-Text Transfer Transformer
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
 - [[vit]] —— ViT — Vision Transformer
 - [[word2vec]] —— Word2Vec 词向量分布式表示

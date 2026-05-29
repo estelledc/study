@@ -145,5 +145,8 @@ START SLAVE;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

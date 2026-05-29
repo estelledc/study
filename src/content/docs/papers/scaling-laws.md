@@ -128,3 +128,10 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[attention]] —— Attention Is All You Need
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[cot]] —— Chain-of-Thought Prompting
+- [[dqn]] —— DQN Deep Q-Network 深度强化学习
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+
