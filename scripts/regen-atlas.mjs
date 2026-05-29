@@ -69,7 +69,7 @@ const THEMES_PAPERS = {
     'turing-1936', 'lambda-calculus', 'cook-levin', 'karp-21', 'godel-1931',
   ],
   '信息论 / 编码理论': [
-    'shannon-1948',
+    'shannon-1948', 'huffman-1952',
   ],
   '密码学 / 安全': [
     'diffie-hellman', 'rsa', 'aes', 'bitcoin', 'zk-snark',

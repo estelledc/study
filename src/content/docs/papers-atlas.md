@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 126 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 127 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：126 篇
-- **已分类**：126
+- **总数**：127 篇
+- **已分类**：127
 
 ### 按主题分布
 
@@ -32,7 +32,7 @@ sidebar:
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
-| [信息论 / 编码理论](#信息论---编码理论) | 1 |
+| [信息论 / 编码理论](#信息论---编码理论) | 2 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
@@ -249,10 +249,11 @@ sidebar:
 
 ## 信息论 / 编码理论
 
-共 1 篇。
+共 2 篇。
 
 | 论文 | 描述 |
 |---|---|
+| [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | Huffman 1952 状元篇 — 从作业题到 70 年标准：最优前缀码的贪心构造与现代压缩中的位置 |
 | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) |  |
 
 ## 密码学 / 安全
@@ -285,7 +286,7 @@ sidebar:
 
 ---
 
-## 全部 126 篇（字母序）
+## 全部 127 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -345,6 +346,7 @@ sidebar:
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
 | `hindley-milner` | [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
+| `huffman-1952` | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `induction-heads` | [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `instructgpt` | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
