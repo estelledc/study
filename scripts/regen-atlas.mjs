@@ -170,7 +170,7 @@ const THEMES_PROJECTS = {
     'chalk', 'ora', 'boxen', 'listr2', 'enquirer',
   ],
   'Drag & Drop / Interaction': [
-    'dnd-kit',
+    'dnd-kit', 'react-dnd',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
