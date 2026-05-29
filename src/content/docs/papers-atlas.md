@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 120 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 121 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：120 篇
-- **已分类**：120
+- **总数**：121 篇
+- **已分类**：121
 
 ### 按主题分布
 
@@ -31,6 +31,7 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
+| [计算理论 / 数学基础](#计算理论---数学基础) | 1 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
@@ -233,6 +234,14 @@ sidebar:
 | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | type family + extension fields 让 AST 在 parse / rename / typecheck / optimize 各 phase 共享同一份 traversal 代码 |
 | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 16 页论文 + 70 行 Haskell，奠定了 Prettier / esbuild / biome 这一代 formatter 的 IR 思路 |
 
+## 计算理论 / 数学基础
+
+共 1 篇。
+
+| 论文 | 描述 |
+|---|---|
+| [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | Alan Turing 1936 年的开山之作：用图灵机定义可计算性，证明 Halting Problem 不可判定，间接解决 Hilbert Entscheidungsproblem |
+
 ## 密码学 / 安全
 
 共 5 篇。
@@ -263,7 +272,7 @@ sidebar:
 
 ---
 
-## 全部 120 篇（字母序）
+## 全部 121 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -379,6 +388,7 @@ sidebar:
 | `toolformer` | [Toolformer (Schick et al. 2023) — LM 自己教自己用工具](/study/papers/toolformer/) | 智能体与 LLM 系统 |
 | `toy-models-superposition` | [Toy Models of Superposition (Elhage+ 2022) — 把 features-as-directions 钉在 capacity 数学上的 13 节论证](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `trees-that-grow` | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
+| `turing-1936` | [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `vit` | [ViT 视觉变换器](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |
 | `volcano` | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | 数据库 |

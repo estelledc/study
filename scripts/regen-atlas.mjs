@@ -65,6 +65,9 @@ const THEMES_PAPERS = {
     'trees-that-grow', 'wadler-prettier', 'adapton', 'salsa-adapton',
     'self-adjusting', 'crdt-json', 'realm',
   ],
+  '计算理论 / 数学基础': [
+    'turing-1936',
+  ],
   '密码学 / 安全': [
     'diffie-hellman', 'rsa', 'aes', 'bitcoin', 'zk-snark',
   ],
