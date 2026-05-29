@@ -61,7 +61,9 @@ generational-gc
 gfs
 godel-1931
 gpt-3
+gradual-typing
 graphrag
+gray-1981-transaction
 great-swe
 hamming-1950
 hindley-milner
@@ -249,9 +251,11 @@ langfuse
 lerna
 lexical
 librechat
+lighthouse
 lightningcss
 lingui
 listr2
+litestar
 llamaindex
 lottie
 lucia
