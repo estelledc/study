@@ -59,7 +59,7 @@ const THEMES_PAPERS = {
     'cheney-gc', 'generational-gc', 'zgc', 'boehm-gc', 'tofte-talpin-regions',
   ],
   '编译器 / 编程语言理论': [
-    'llvm', 'ssa',
+    'llvm', 'ssa', 'self-pic',
     'bidirectional-typing', 'hindley-milner', 'linear-types',
     'effect-handlers', 'compiler-errors', 'ci-effects', 'push-pull-frp',
     'trees-that-grow', 'wadler-prettier', 'adapton', 'salsa-adapton',
@@ -102,7 +102,7 @@ const THEMES_PROJECTS = {
     'mikro-orm', 'postgres-js', 'duckdb-wasm',
   ],
   'Web 框架': [
-    'hono', 'fastify',
+    'hono', 'fastify', 'express', 'koa', 'nestjs',
   ],
   'Auth 认证': [
     'auth-js', 'better-auth', 'lucia', 'clerk', 'supertokens',
