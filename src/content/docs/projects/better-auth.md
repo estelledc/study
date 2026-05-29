@@ -4,7 +4,7 @@ description: 从 Auth.js 到 better-auth — Plugin Registry / Adapter 抽象 / 
 season: 17
 episode: S17-2
 category: 框架与 SDK
-template: D
+branch: D
 status: 已发布
 ---
 

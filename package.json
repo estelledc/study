@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "atlas": "node scripts/regen-atlas.mjs",
+    "prebuild": "node scripts/regen-atlas.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.30.3",
