@@ -176,5 +176,6 @@ stars 量级 11k+，依赖只有 `anyio`，依赖图极简。
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 

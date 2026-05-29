@@ -181,6 +181,7 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎

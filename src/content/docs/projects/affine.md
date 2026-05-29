@@ -153,6 +153,7 @@ yarn workspace @affine/web dev
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[react]] —— React UI 组件库
 

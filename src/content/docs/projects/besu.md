@@ -157,5 +157,6 @@ System.out.println("最新块号: " + bn.getBlockNumber());
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[raft]] —— Raft — 易理解的共识算法
 

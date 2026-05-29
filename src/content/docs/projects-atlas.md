@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 229 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 231 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：229 个
+- **总数**：231 个
 - **已分类**：206
-- **未分类**：23（落入"其他 / 待分类"段）
+- **未分类**：25（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 23 |
+| [其他 / 待分类](#其他--待分类) | 25 |
 
 ---
 
@@ -399,7 +399,7 @@ sidebar:
 | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) |  |
 | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) |  |
 | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) |  |
-| [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 大型应用范例——102k stars 的 Google Photos 替代品，TS 后端 + Python ML 服务 + Postgres + Redis + Object Storage 五件套同核运行 |
+| [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) |  |
 | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 大型应用范例，48k stars 背后的"common/ |
 | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 大型应用范例——49 |
 | [Supabase — Firebase 的开源替代](/study/projects/supabase/) |  |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 23 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 25 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -517,7 +517,9 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
+| `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
+| `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
@@ -525,7 +527,7 @@ sidebar:
 
 ---
 
-## 全部 229 个（字母序）
+## 全部 231 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -601,7 +603,7 @@ sidebar:
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
-| `immich` | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 数据应用 / SaaS |
+| `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | 数据应用 / SaaS |
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
 | `ink` | [ink](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
@@ -680,8 +682,10 @@ sidebar:
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
+| `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) | 其他 |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) | 其他 |
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
+| `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |

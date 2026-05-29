@@ -166,6 +166,11 @@ simulation 模式启动：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
+- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 
