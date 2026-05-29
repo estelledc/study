@@ -78,7 +78,7 @@ const THEMES_PAPERS = {
   'HCI / 软件工程研究': [
     'cognitive-load-theory', 'debugging-dichotomy', 'fsrs-spaced-repetition',
     'pair-programming', 'programmer-interruption', 'program-comprehension-fmri',
-    'sillito-questions', 'copilot-rct', 'great-swe',
+    'sillito-questions', 'copilot-rct', 'great-swe', 'dijkstra-goto',
   ],
 };
 
