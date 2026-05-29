@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 152 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 153 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：152 个
-- **已分类**：152
+- **总数**：153 个
+- **已分类**：153
 
 ### 按主题分布
 
@@ -44,7 +44,7 @@ sidebar:
 | [CSS / 样式](#css---样式) | 5 |
 | [CLI / 命令行工具](#cli---命令行工具) | 5 |
 | [Terminal / 终端](#terminal---终端) | 5 |
-| [Drag & Drop / Interaction](#drag--drop---interaction) | 1 |
+| [Drag & Drop / Interaction](#drag--drop---interaction) | 2 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -381,11 +381,12 @@ sidebar:
 
 ## Drag & Drop / Interaction
 
-共 1 个。
+共 2 个。
 
 | 项目 | 描述 |
 |---|---|
 | [dnd-kit](/study/projects/dnd-kit/) | TypeScript-first React 拖拽库 — 现代 API、零 HTML5 DnD 依赖、accessibility 一等公民 |
+| [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) |  |
 
 ## 其他基础设施
 
@@ -399,7 +400,7 @@ sidebar:
 
 ---
 
-## 全部 152 个（字母序）
+## 全部 153 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -503,6 +504,7 @@ sidebar:
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
 | `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
+| `react-dnd` | [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) | Drag & Drop / Interaction |
 | `react-hook-form` | [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
 | `react-intl` | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) | i18n 国际化 |
 | `react-spring` | [react-spring 状元篇](/study/projects/react-spring/) | 动画 |
