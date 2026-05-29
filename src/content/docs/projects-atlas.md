@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 151 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 152 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：151 个
-- **已分类**：151
+- **总数**：152 个
+- **已分类**：152
 
 ### 按主题分布
 
@@ -44,6 +44,7 @@ sidebar:
 | [CSS / 样式](#css---样式) | 5 |
 | [CLI / 命令行工具](#cli---命令行工具) | 5 |
 | [Terminal / 终端](#terminal---终端) | 5 |
+| [Drag & Drop / Interaction](#drag--drop---interaction) | 1 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -378,6 +379,14 @@ sidebar:
 | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) |  |
 | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
 
+## Drag & Drop / Interaction
+
+共 1 个。
+
+| 项目 | 描述 |
+|---|---|
+| [dnd-kit](/study/projects/dnd-kit/) | TypeScript-first React 拖拽库 — 现代 API、零 HTML5 DnD 依赖、accessibility 一等公民 |
+
 ## 其他基础设施
 
 共 3 个。
@@ -390,7 +399,7 @@ sidebar:
 
 ---
 
-## 全部 151 个（字母序）
+## 全部 152 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -418,6 +427,7 @@ sidebar:
 | `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
 | `dify` | [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
+| `dnd-kit` | [dnd-kit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docusaurus` | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | 文档站点 |
 | `drizzle` | [Drizzle ORM — TS-first SQL builder 与「反 DSL 派」的胜利](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |

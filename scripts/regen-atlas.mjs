@@ -169,6 +169,9 @@ const THEMES_PROJECTS = {
   'Terminal / 终端': [
     'chalk', 'ora', 'boxen', 'listr2', 'enquirer',
   ],
+  'Drag & Drop / Interaction': [
+    'dnd-kit',
+  ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
   ],
