@@ -310,8 +310,10 @@ prisma
 prom-client
 prometheus
 prosemirror
+prysm
 pulsar
 qdrant
+quart
 qwik
 radix-ui
 react
