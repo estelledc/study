@@ -128,3 +128,9 @@ MAE 是这条线上"视觉 BERT 终于跑通"的那篇。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[attention]] —— Attention Is All You Need
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[vit]] —— ViT — Vision Transformer
+

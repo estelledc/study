@@ -185,6 +185,7 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[langchain]] —— LangChain — LLM 应用开发框架
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[qdrant]] —— Qdrant — Rust 向量数据库
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基

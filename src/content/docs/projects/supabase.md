@@ -179,3 +179,6 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+

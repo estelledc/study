@@ -148,13 +148,13 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO Direct Preference Optimization
-- [[dqn]] —— DQN — Deep Q-Network
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[muzero]] —— MuZero — 不用规则也能下棋
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
+- [[resnet]] —— ResNet — 残差连接
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer

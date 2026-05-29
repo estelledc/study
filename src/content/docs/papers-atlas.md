@@ -87,9 +87,9 @@ sidebar:
 | [3D Gaussian Splatting — explicit primitives 把 NeRF 从 12 小时训练 0.1 FPS 拉到 5 分钟训练 100+ FPS](/study/papers/3d-gaussian-splatting/) | 用 3D 各向异性高斯（mean / 协方差 / SH / opacity）取代 NeRF 的 implicit MLP |
 | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) |  |
 | [DINO 自监督视觉 transformer](/study/papers/dino/) |  |
-| [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) |  |
-| [ResNet 深度残差学习](/study/papers/resnet/) |  |
-| [SAM — 把分割做成可 prompt 的基础模型，image encoder 一次、prompt 解码 N 次](/study/papers/sam/) | ViT-H 主干 + 三模态 prompt encoder + 极轻量 mask decoder |
+| [MAE — Masked Autoencoders](/study/papers/mae/) |  |
+| [ResNet — 残差连接](/study/papers/resnet/) |  |
+| [SAM — Segment Anything](/study/papers/sam/) |  |
 | [ViT — Vision Transformer](/study/papers/vit/) |  |
 
 ## 生成模型 / 扩散
@@ -383,7 +383,7 @@ sidebar:
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
-| `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
+| `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
@@ -407,13 +407,13 @@ sidebar:
 | `realm` | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
-| `resnet` | [ResNet 深度残差学习](/study/papers/resnet/) | 计算机视觉 |
+| `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `rlhf-christiano` | [RLHF — 用人比较两条轨迹学奖励：ChatGPT/Claude 的奠基论文](/study/papers/rlhf-christiano/) | 强化学习 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB 状元篇](/study/papers/rocksdb-lsm/) | 数据库 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
 | `salsa-adapton` | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
-| `sam` | [SAM — 把分割做成可 prompt 的基础模型，image encoder 一次、prompt 解码 N 次](/study/papers/sam/) | 计算机视觉 |
+| `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
 | `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
 | `self-adjusting` | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-pic` | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
