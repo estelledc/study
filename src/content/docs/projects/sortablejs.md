@@ -392,3 +392,37 @@ Sortable.create(doneList, {
 1. 对比 Sortable 1.15 与 vue.draggable.next 在 SSR 场景的 hydration 行为
 2. 把 Sortable 的 mouse+touch 适配层做成 standalone 包（pointer-shim）
 3. 调研 dnd-kit 的 PointerSensor 实现是否可学习并现代化 Sortable
+
+## 附录 — 与 dnd-kit 选型决策树（≥ 25 行）
+
+### 用 Sortable.js 的场景
+1. **vanilla JS / jQuery 项目**：没有 React / Vue，必须 framework-agnostic
+2. **Vue 3 项目**：vue.draggable.next 是 Vue 生态首选（vs vue-dnd 不成熟）
+3. **快速 prototype**：Sortable.create + 几行配置，5 分钟出 demo
+4. **嵌入第三方页面**：浏览器扩展 / Web Component，不强制框架
+
+### 用 dnd-kit 的场景
+1. **React 18+ 项目**：dnd-kit hooks API 与 React 心智一致
+2. **TypeScript 严格**：dnd-kit 类型定义完整，Sortable 需 @types/sortablejs
+3. **复杂 collision detection**：dnd-kit 内置 5 种算法可切换
+4. **accessibility first**：dnd-kit 内置 keyboard navigation + screen reader 支持
+
+### 用 react-dnd 的场景
+1. **维护已有老项目**（不要新建）：react-dnd 维护节奏放缓
+2. **需要 HTML5 DnD API 和外部应用交互**（如 file drop from desktop）
+
+### 用 react-beautiful-dnd 的场景
+1. **不要用**：已停止维护 2023+
+2. 老项目迁移路径：rbd → dnd-kit
+
+## 附录 B — Sortable 内部学到（≥ 15 行）
+
+读 Sortable.js 源码学到的工程模式：
+
+1. **state machine**：drag state 用 enum + 转换函数管理（idle / dragstart / dragmove / dragend）
+2. **delegated event listener**：单一 mousedown 监听父元素，e.target 反查 .item 子元素 → 减少 listener 数量
+3. **transform vs reflow**：拖动 ghost element 用 CSS transform（GPU 加速），避免 reflow
+4. **clone vs move**：pull: 'clone' 用 cloneNode(true) 而非 move，原元素留在 source list
+5. **boundingRect cache**：预计算每个 item 的 boundingRect 避免拖动时重复 query
+
+这些都是任何 imperative DOM 库可借鉴的工程模式。

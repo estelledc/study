@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 153 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 154 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：153 个
-- **已分类**：153
+- **总数**：154 个
+- **已分类**：154
 
 ### 按主题分布
 
@@ -44,7 +44,7 @@ sidebar:
 | [CSS / 样式](#css---样式) | 5 |
 | [CLI / 命令行工具](#cli---命令行工具) | 5 |
 | [Terminal / 终端](#terminal---终端) | 5 |
-| [Drag & Drop / Interaction](#drag--drop---interaction) | 2 |
+| [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -381,12 +381,13 @@ sidebar:
 
 ## Drag & Drop / Interaction
 
-共 2 个。
+共 3 个。
 
 | 项目 | 描述 |
 |---|---|
 | [dnd-kit](/study/projects/dnd-kit/) | TypeScript-first React 拖拽库 — 现代 API、零 HTML5 DnD 依赖、accessibility 一等公民 |
 | [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) |  |
+| [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) |  |
 
 ## 其他基础设施
 
@@ -400,7 +401,7 @@ sidebar:
 
 ---
 
-## 全部 153 个（字母序）
+## 全部 154 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -517,6 +518,7 @@ sidebar:
 | `shadcn-ui` | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
+| `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `stagehand` | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlight` | [Starlight — Astro 官方文档框架，零 JS 默认 + sidebar autogen](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |
