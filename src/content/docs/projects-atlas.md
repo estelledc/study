@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 135 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 136 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：135 个
-- **已分类**：135
+- **总数**：136 个
+- **已分类**：136
 
 ### 按主题分布
 
@@ -40,7 +40,7 @@ sidebar:
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
-| [图像处理 / Canvas](#图像处理---canvas) | 4 |
+| [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -329,12 +329,13 @@ sidebar:
 
 ## 图像处理 / Canvas
 
-共 4 个。
+共 5 个。
 
 | 项目 | 描述 |
 |---|---|
 | [fabric-js](/study/projects/fabric-js/) |  |
 | [jimp](/study/projects/jimp/) |  |
+| [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | Stage / Layer / Group / Shape 节点树 + 事件冒泡 + 多 Layer 合成性能策略 |
 | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | S29-5 收官：从 Application/Stage/Container 流水线到 v8 ECS 重写，看一个工具库如何在 13 年里成为 web 端 2D 图像渲染的事实标准 |
 | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
 
@@ -350,7 +351,7 @@ sidebar:
 
 ---
 
-## 全部 135 个（字母序）
+## 全部 136 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -398,6 +399,7 @@ sidebar:
 | `jotai` | [jotai — atomic 状态管理 + Daishi Kato 第三套](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
+| `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely TypeScript-first SQL Query Builder](/study/projects/kysely/) | ORM / DB 客户端 |
 | `langfuse` | [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
