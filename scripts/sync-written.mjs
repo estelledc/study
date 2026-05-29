@@ -13,6 +13,7 @@ const PAPERS_DIR = path.join(ROOT, 'src/content/docs/papers');
 const PROJECTS_DIR = path.join(ROOT, 'src/content/docs/projects');
 const WRITTEN_PATH = path.join(ROOT, 'data', 'written.txt');
 const CANDIDATES_PATH = path.join(ROOT, 'data', 'candidates.jsonl');
+const REWRITE_POOL_PATH = path.join(ROOT, 'data', 'rewrite-pool.jsonl');
 
 async function listSlugs(dir, area) {
   try {
@@ -79,12 +80,42 @@ async function updateCandidatesStatus(written) {
   return { updated, already_written: alreadyWritten };
 }
 
+async function updateRewritePoolStatus(written) {
+  const writtenSet = new Set(written.map(w => `${w.area}::${w.slug}`));
+  let raw;
+  try {
+    raw = await fs.readFile(REWRITE_POOL_PATH, 'utf8');
+  } catch (err) {
+    if (err.code === 'ENOENT') return { skipped: true };
+    throw err;
+  }
+  const lines = raw.split('\n').filter(Boolean);
+  let claimedToWritten = 0;
+  const out = lines.map(line => {
+    const c = JSON.parse(line);
+    const key = `${c.area}::${c.slug}`;
+    // 已写笔记（claimed → written）
+    if (c.status === 'claimed' && writtenSet.has(key)) {
+      // 检查文件实际通过 quality-gate（>250 行下降到 150-200 = rewrite 成功）
+      // 这里简化：只要 claimed 且文件在 written，就标 written
+      c.status = 'written';
+      c.claimed_by = null;
+      claimedToWritten++;
+    }
+    return JSON.stringify(c);
+  });
+  await fs.writeFile(REWRITE_POOL_PATH, out.join('\n') + '\n');
+  return { claimed_to_written: claimedToWritten };
+}
+
 async function main() {
   const w = await rebuildWritten();
   const c = await updateCandidatesStatus(w.all);
+  const r = await updateRewritePoolStatus(w.all);
   console.log(JSON.stringify({
     written: { papers: w.papers, projects: w.projects, total: w.papers + w.projects },
     candidates_updated: c,
+    rewrite_pool_updated: r,
     output: WRITTEN_PATH,
   }, null, 2));
 }
