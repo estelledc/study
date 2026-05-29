@@ -158,6 +158,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

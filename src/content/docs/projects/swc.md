@@ -171,6 +171,7 @@ pub fn process(mut program: Program, _: ()) -> Program {
 - [[bun]] —— Bun — JS 全能运行时
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[webpack]] —— webpack 模块打包
 

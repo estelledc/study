@@ -150,11 +150,13 @@ GROUP BY customer_id;
 - [[bigtable]] —— Bigtable 分布式结构化存储
 - [[chubby]] —— Chubby 分布式锁服务
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[dns]] —— DNS Domain Name System
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[tcp]] —— TCP Transmission Control Protocol
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
 

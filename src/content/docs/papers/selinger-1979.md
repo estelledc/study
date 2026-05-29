@@ -147,3 +147,9 @@ Seq Scan on orders  (cost=0.00..1234.56 rows=5000 width=64)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bigtable]] —— Bigtable 分布式结构化存储
+- [[chubby]] —— Chubby 分布式锁服务
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+

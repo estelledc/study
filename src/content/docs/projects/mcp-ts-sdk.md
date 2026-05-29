@@ -167,5 +167,6 @@ npm install -g @modelcontextprotocol/server-postgres
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

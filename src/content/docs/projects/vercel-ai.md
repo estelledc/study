@@ -168,5 +168,6 @@ function Chat() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[react]] —— React UI 组件库
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

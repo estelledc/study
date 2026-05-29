@@ -128,5 +128,5 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fzf]] —— fzf — 命令行模糊查找
 

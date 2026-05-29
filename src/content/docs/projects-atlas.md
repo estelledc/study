@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 213 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 217 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：213 个
+- **总数**：217 个
 - **已分类**：206
-- **未分类**：7（落入"其他 / 待分类"段）
+- **未分类**：11（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 7 |
+| [其他 / 待分类](#其他--待分类) | 11 |
 
 ---
 
@@ -495,21 +495,25 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 7 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 11 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
+| `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
+| `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
+| `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
+| `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 
 ---
 
-## 全部 213 个（字母序）
+## 全部 217 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -523,6 +527,7 @@ sidebar:
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `auth-js` | [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | Auth 认证 |
 | `axios` | [axios Promise-based HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
+| `bat` | [bat — 现代 cat 替代](/study/projects/bat/) | 其他 |
 | `better-auth` | [better-auth 状元篇 — Plugin 化 TS-first 认证框架的可注册扩展思路](/study/projects/better-auth/) | Auth 认证 |
 | `biome` | [Biome — 一个工具替代 ESLint + Prettier 的勇气](/study/projects/biome/) | 构建工具 / Bundler |
 | `boxen` | [boxen — Terminal box 渲染库](/study/projects/boxen/) | Terminal / 终端 |
@@ -567,7 +572,9 @@ sidebar:
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
 | `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
+| `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
+| `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
@@ -663,6 +670,7 @@ sidebar:
 | `recharts` | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) | 数据可视化 |
 | `redis` | [Redis — 内存键值数据库](/study/projects/redis/) | 数据库本体 / 存储引擎 |
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
+| `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
 | `rolldown` | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 构建工具 / Bundler |

@@ -166,6 +166,7 @@ LIMIT 5;
 - [[cassandra]] —— Apache Cassandra — 分布式宽列数据库
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[dgraph]] —— Dgraph — 分布式图数据库
 - [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
@@ -175,12 +176,14 @@ LIMIT 5;
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[langchain]] —— LangChain — LLM 应用开发框架
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[redis]] —— Redis — 内存键值数据库
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代

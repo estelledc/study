@@ -131,4 +131,5 @@ LLaMA 2、Mistral、DeepSeek 等开源模型的训练 pipeline 几乎都是 fork
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 

@@ -152,6 +152,8 @@ ALTER TABLE users CONFIGURE ZONE USING
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
