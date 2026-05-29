@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 139 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 140 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：139 个
-- **已分类**：139
+- **总数**：140 个
+- **已分类**：140
 
 ### 按主题分布
 
@@ -41,7 +41,7 @@ sidebar:
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
-| [CSS / 样式](#css---样式) | 3 |
+| [CSS / 样式](#css---样式) | 4 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -342,12 +342,13 @@ sidebar:
 
 ## CSS / 样式
 
-共 3 个。
+共 4 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) |  |
 | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) |  |
+| [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) |  |
 | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) |  |
 
 ## 其他基础设施
@@ -362,7 +363,7 @@ sidebar:
 
 ---
 
-## 全部 139 个（字母序）
+## 全部 140 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -473,6 +474,7 @@ sidebar:
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |
 | `storybook` | [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |
+| `stylex` | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `supabase` | [supabase — 不是另一个 Firebase 替代品，是把 Postgres 包成了完整 BaaS](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
 | `swc` | [swc Rust-based JS/TS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
