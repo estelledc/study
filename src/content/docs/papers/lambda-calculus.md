@@ -211,7 +211,7 @@ y[N/x]                = y                       (y ≠ x)
 
 ## 5. β-Reduction 一张图
 
-![β-Reduction 三步走](figures/01-beta-reduction.webp)
+![β-Reduction 三步走](/study/papers/lambda-calculus/01-beta-reduction.webp)
 
 图说：
 
