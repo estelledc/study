@@ -133,6 +133,7 @@ DiT 论文从挂 arXiv 到工业全面接受，花了一年半。架构革命从
 
 - [[attention]] —— Attention Is All You Need
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[resnet]] —— ResNet — 残差连接

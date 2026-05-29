@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 211 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 212 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：211 个
+- **总数**：212 个
 - **已分类**：206
-- **未分类**：5（落入"其他 / 待分类"段）
+- **未分类**：6（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 5 |
+| [其他 / 待分类](#其他--待分类) | 6 |
 
 ---
 
@@ -157,11 +157,11 @@ sidebar:
 | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) |  |
 | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | 用 Emscripten 把 C++ 列式分析数据库编译成 WASM，主线程 JS API → Web Worker → WASM bundle → virtual filesystem，让 SQL 直接在浏览器里跑 … |
 | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) |  |
-| [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) |  |
+| [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) |  |
 | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | 用 tagged template literal 把 SQL 字符串和 parameter 在编译期就分开，自动绑参防注入 |
 | [Prisma — 类型安全 ORM](/study/projects/prisma/) |  |
-| [Sequelize Node.js Promise-based ORM 元老](/study/projects/sequelize/) |  |
-| [TypeORM Decorator-based ORM](/study/projects/typeorm/) |  |
+| [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) |  |
+| [TypeORM — Decorator-based ORM](/study/projects/typeorm/) |  |
 
 ## 数据库本体 / 存储引擎
 
@@ -495,10 +495,11 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 5 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 6 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
+| `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -507,11 +508,12 @@ sidebar:
 
 ---
 
-## 全部 211 个（字母序）
+## 全部 212 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `affine` | [AFFiNE — 不是再做一个 Notion，是把 doc 和 whiteboard 融合到同一个 block 模型，再用 Yjs CRDT 把 local-first 做到底](/study/projects/affine/) | 数据应用 / SaaS |
+| `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
 | `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
@@ -604,7 +606,7 @@ sidebar:
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
-| `mikro-orm` | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) | ORM / DB 客户端 |
+| `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 其他基础设施 |
@@ -663,7 +665,7 @@ sidebar:
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 构建工具 / Bundler |
 | `sentry` | [Sentry — 不是「日志收集器」，是「把崩溃当作可查询的列存事件」的双层数据库错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
-| `sequelize` | [Sequelize Node.js Promise-based ORM 元老](/study/projects/sequelize/) | ORM / DB 客户端 |
+| `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
@@ -695,7 +697,7 @@ sidebar:
 | `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | 数据获取 / 路由 |
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
 | `turborepo` | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Monorepo / 包管理 |
-| `typeorm` | [TypeORM Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
+| `typeorm` | [TypeORM — Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
 | `unified` | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) | Markdown / 解析 |
 | `unstorage` | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 其他基础设施 |

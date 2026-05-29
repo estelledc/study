@@ -159,6 +159,7 @@ SavingsAccount >> deposit: amount
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[turing-1936]] —— Turing 1936 可计算性
 

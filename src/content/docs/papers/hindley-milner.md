@@ -160,6 +160,8 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
+- [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

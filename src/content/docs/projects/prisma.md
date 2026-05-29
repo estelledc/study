@@ -180,9 +180,9 @@ Prisma 自动：
 
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
-- [[mikro-orm]] —— MikroORM DataMapper + Unit of Work + Identity Map
+- [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
-- [[sequelize]] —— Sequelize Node.js Promise-based ORM 元老
-- [[typeorm]] —— TypeORM Decorator-based ORM
+- [[sequelize]] —— Sequelize — 老牌 Node ORM
+- [[typeorm]] —— TypeORM — Decorator-based ORM
 

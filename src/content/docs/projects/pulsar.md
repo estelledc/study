@@ -161,5 +161,5 @@ bin/pulsar-admin namespaces set-backlog-quota \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[redis]] —— Redis — 内存键值数据库
 
