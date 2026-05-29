@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 119 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 120 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：119 篇
-- **已分类**：119
+- **总数**：120 篇
+- **已分类**：120
 
 ### 按主题分布
 
@@ -31,7 +31,7 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
-| [密码学 / 安全](#密码学---安全) | 4 |
+| [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
 ---
@@ -235,7 +235,7 @@ sidebar:
 
 ## 密码学 / 安全
 
-共 4 篇。
+共 5 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -243,6 +243,7 @@ sidebar:
 | [Bitcoin — 一种点对点电子现金系统](/study/papers/bitcoin/) | 中本聪 2008 白皮书的状元篇 D 分支精读：PoW 共识 / UTXO / 拜占庭容错 / 经济激励 |
 | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) |  |
 | [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (RSA 1978)](/study/papers/rsa/) |  |
+| [zk-SNARK：证明"我知道"但不说"是什么](/study/papers/zk-snark/) |  |
 
 ## HCI / 软件工程研究
 
@@ -262,7 +263,7 @@ sidebar:
 
 ---
 
-## 全部 119 篇（字母序）
+## 全部 120 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -385,3 +386,4 @@ sidebar:
 | `wadler-prettier` | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `word2vec` | [Word2Vec 词向量分布式表示](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `zgc` | [ZGC — 染色指针 + 读屏障下的 TB 级低延迟并发 GC](/study/papers/zgc/) | GC / 内存管理 |
+| `zk-snark` | [zk-SNARK：证明"我知道"但不说"是什么](/study/papers/zk-snark/) | 密码学 / 安全 |
