@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 142 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 143 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：142 个
-- **已分类**：142
+- **总数**：143 个
+- **已分类**：143
 
 ### 按主题分布
 
@@ -42,7 +42,7 @@ sidebar:
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
-| [CLI / 命令行工具](#cli---命令行工具) | 1 |
+| [CLI / 命令行工具](#cli---命令行工具) | 2 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -355,11 +355,12 @@ sidebar:
 
 ## CLI / 命令行工具
 
-共 1 个。
+共 2 个。
 
 | 项目 | 描述 |
 |---|---|
 | [commander.js](/study/projects/commander/) |  |
+| [yargs](/study/projects/yargs/) |  |
 
 ## 其他基础设施
 
@@ -373,7 +374,7 @@ sidebar:
 
 ---
 
-## 全部 142 个（字母序）
+## 全部 143 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -516,6 +517,7 @@ sidebar:
 | `why-did-you-render` | [why-did-you-render — 把 React 的"假更新"从口头警告变成可定位的诊断对象](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wretch` | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) | HTTP 客户端 |
 | `xstate` | [XState — 把状态画成图](/study/projects/xstate/) | 状态管理 |
+| `yargs` | [yargs](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [yjs — collaborative editing 不应该锁住编辑器，CRDT 抽象层让任何编辑器都能接](/study/projects/yjs/) | 编辑器 / 富文本 |
 | `zod` | [zod TypeScript-first 模式校验](/study/projects/zod/) | 表单 / Schema 校验 |
 | `zustand` | [zustand — 101 行核心的"反 Provider 派"状态管理](/study/projects/zustand/) | 状态管理 |
