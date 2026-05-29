@@ -161,5 +161,6 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[supabase]] —— Supabase — Firebase 的开源替代
 

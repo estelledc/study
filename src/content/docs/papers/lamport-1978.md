@@ -154,3 +154,13 @@ class LogEmitter:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
+- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+

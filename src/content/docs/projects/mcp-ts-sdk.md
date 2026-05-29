@@ -169,5 +169,6 @@ npm install -g @modelcontextprotocol/server-postgres
 
 - [[browser-use]] —— browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[zod]] —— Zod — TypeScript-first schema 验证
 

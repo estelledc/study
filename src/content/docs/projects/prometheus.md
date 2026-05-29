@@ -184,6 +184,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[jaeger]] —— Jaeger — 分布式追踪系统
+- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[langfuse]] —— Langfuse — LLM 应用可观测性
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端

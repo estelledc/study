@@ -148,6 +148,7 @@ INSERT INTO emp VALUES ('alice', 12000);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象

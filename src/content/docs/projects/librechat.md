@@ -146,4 +146,5 @@ UI 里发 3 条消息：第 1 条用 OpenAI、第 2 条切 Anthropic、第 3 条
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-(占位：等其他笔记 [[librechat]] 引用本页后，由 regen 脚本自动填充。)
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+

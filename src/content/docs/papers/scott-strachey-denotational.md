@@ -150,5 +150,11 @@ W 出现在等式两边，不能直接代入算。Scott 的 domain theory 保证
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[turing-1936]] —— Turing 1936 可计算性
 

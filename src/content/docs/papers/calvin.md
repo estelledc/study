@@ -148,10 +148,12 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[dns]] —— DNS Domain Name System
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库

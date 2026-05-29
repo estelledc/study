@@ -161,6 +161,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
+- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
