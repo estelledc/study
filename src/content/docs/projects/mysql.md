@@ -144,3 +144,6 @@ START SLAVE;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+

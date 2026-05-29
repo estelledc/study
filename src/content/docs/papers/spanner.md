@@ -149,6 +149,7 @@ GROUP BY customer_id;
 
 - [[bigtable]] —— Bigtable 分布式结构化存储
 - [[chubby]] —— Chubby 分布式锁服务
+- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[dns]] —— DNS Domain Name System
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[paxos]] —— Paxos — 分布式共识算法

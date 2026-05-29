@@ -142,8 +142,12 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[alphago]] —— AlphaGo Mastering Go with Deep Neural Networks
+- [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[dpo]] —— DPO Direct Preference Optimization
 - [[dqn]] —— DQN Deep Q-Network 深度强化学习
+- [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[muzero]] —— MuZero Mastering Games by Planning with Learned Model
 - [[ppo]] —— PPO Proximal Policy Optimization
 - [[t5]] —— T5 Text-to-Text Transfer Transformer

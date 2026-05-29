@@ -71,7 +71,7 @@ sidebar:
 | [Chinchilla — 70B 训 1.4T tokens 打败 280B Gopher，把 Kaplan 的 compute-optimal 公式推翻一半](/study/papers/chinchilla/) | Hoffmann 2022 用三种独立 estimation method 重做 ~400 个训练 run，得出 N 与 D 应 1:1 同步增长（D ≈ 20×N），改写 LLaMA / Llama 2 / Deep… |
 | [DeepSeek-R1 状元篇 — 纯 RL 让 LLM 自己学会推理](/study/papers/deepseek-r1/) | DeepSeek-R1 用 GRPO + rule-based reward 跳过 SFT 阶段，让 base model 在纯强化学习下涌现长 chain-of-thought 与自我反思，开源对齐 OpenAI o… |
 | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) |  |
-| [LLaMA — Chinchilla 实证落地版：7B 训 1T tokens，开放权重点燃 2023 开源 LLM 生态](/study/papers/llama/) | Touvron 2023 用 RMSNorm + SwiGLU + RoPE + 公开数据 + 故意 over-train，把 Chinchilla M2 的 D=20N 推到 D≈140N，证明"小模型 + 多数据"… |
+| [LLaMA — Meta 开源大语言模型](/study/papers/llama/) |  |
 | [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | 状元篇 - Mamba 用 input-dependent SSM (S6) 替代 attention，训练用硬件感知的 parallel scan、推理时常数空间，长序列上比 Transformer 快 5-100x… |
 | [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | MoE 是 Switch Transformer + Mixtral 双论文驱动的 sparse 架构范式，把模型总参数 N 与 active 参数解耦，使万亿规模成为可能 |
 | [Scaling Laws — 把 LLM 的 loss 写成参数 N、数据 D、计算 C 的三参数 power law](/study/papers/scaling-laws/) | Kaplan 2020 用横跨 7 个数量级的 OpenAI 训练数据拟合出 L = (Nc/N)^α + (Dc/D)^β 的简单 power law |
@@ -85,12 +85,12 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [3D Gaussian Splatting — explicit primitives 把 NeRF 从 12 小时训练 0.1 FPS 拉到 5 分钟训练 100+ FPS](/study/papers/3d-gaussian-splatting/) | 用 3D 各向异性高斯（mean / 协方差 / SH / opacity）取代 NeRF 的 implicit MLP |
-| [CLIP 视觉-语言对比预训练](/study/papers/clip/) |  |
+| [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) |  |
 | [DINO 自监督视觉 transformer](/study/papers/dino/) |  |
 | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) |  |
 | [ResNet 深度残差学习](/study/papers/resnet/) |  |
 | [SAM — 把分割做成可 prompt 的基础模型，image encoder 一次、prompt 解码 N 次](/study/papers/sam/) | ViT-H 主干 + 三模态 prompt encoder + 极轻量 mask decoder |
-| [ViT 视觉变换器](/study/papers/vit/) |  |
+| [ViT — Vision Transformer](/study/papers/vit/) |  |
 
 ## 生成模型 / 扩散
 
@@ -98,7 +98,7 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [DALL-E 2 / unCLIP 文本到图像生成](/study/papers/dalle-2/) |  |
+| [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) |  |
 | [DDPM Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) |  |
 | [DiT Diffusion Transformer](/study/papers/dit/) |  |
 | [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 用一个小小的投影矩阵把 CLIP 视觉特征接到 LLaMA 的 token 空间，再用纯文本的 GPT-4 凭 caption + bbox 想象出 158K 条多模态指令数据，两阶段训练，做出第一个开源的视觉指令助手 |
@@ -331,7 +331,7 @@ sidebar:
 | `chubby` | [Chubby 分布式锁服务](/study/papers/chubby/) | 分布式系统 |
 | `ci-effects` | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
 | `clickhouse` | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | 数据库 |
-| `clip` | [CLIP 视觉-语言对比预训练](/study/papers/clip/) | 计算机视觉 |
+| `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `cognitive-load-theory` | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `compiler-errors` | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
 | `constitutional-ai` | [Constitutional AI — 让 AI 看着一组原则给自己挑刺：Claude 的训练骨架](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
@@ -339,7 +339,7 @@ sidebar:
 | `copilot-rct` | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `crdt-json` | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
-| `dalle-2` | [DALL-E 2 / unCLIP 文本到图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
+| `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `ddpm` | [DDPM Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
 | `debugging-dichotomy` | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek-R1 状元篇 — 纯 RL 让 LLM 自己学会推理](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
@@ -380,7 +380,7 @@ sidebar:
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
-| `llama` | [LLaMA — Chinchilla 实证落地版：7B 训 1T tokens，开放权重点燃 2023 开源 LLM 生态](/study/papers/llama/) | NLP 基础与 Scaling |
+| `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
@@ -441,7 +441,7 @@ sidebar:
 | `toy-models-superposition` | [Toy Models of Superposition (Elhage+ 2022) — 把 features-as-directions 钉在 capacity 数学上的 13 节论证](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `trees-that-grow` | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
-| `vit` | [ViT 视觉变换器](/study/papers/vit/) | 计算机视觉 |
+| `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |
 | `volcano` | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | 数据库 |
 | `voyager` | [Voyager — 让 LLM agent 在 Minecraft 里"越玩越强"：自动课程 + 技能库 + 错误反馈循环](/study/papers/voyager/) | 智能体与 LLM 系统 |
