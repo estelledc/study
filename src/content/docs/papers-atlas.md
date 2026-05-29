@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 139 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 140 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：139 篇
-- **已分类**：139
+- **总数**：140 篇
+- **已分类**：140
 
 ### 按主题分布
 
@@ -30,7 +30,7 @@ sidebar:
 | [网络协议](#网络协议) | 5 |
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 23 |
+| [编译器 / 编程语言理论](#编译器---编程语言理论) | 24 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
@@ -212,7 +212,7 @@ sidebar:
 
 ## 编译器 / 编程语言理论
 
-共 23 篇。
+共 24 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -223,6 +223,7 @@ sidebar:
 | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
 | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 第一篇把 CRDT 从平坦寄存器扩到嵌套 map+list 任意嵌套结构的论文 |
 | [Algebraic Effects (Plotkin & Pretnar ESOP 2009) — async/await、try-catch、generator 的统一抽象](/study/papers/effect-handlers/) | operation signature + handler clause + resume/abort 控制流 |
+| [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | Joe Armstrong KTH 2003 博士论文 + 30 年 Ericsson 实战汇总 |
 | [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | Damas & Milner POPL 1982 — 把 Robinson unification + prenex 多态 + let-polymorphism 锁进算法 W，用形式系统证明每个可类型化表达式存在唯一最… |
 | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) |  |
 | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
@@ -298,7 +299,7 @@ sidebar:
 
 ---
 
-## 全部 139 篇（字母序）
+## 全部 140 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -349,6 +350,7 @@ sidebar:
 | `dynamo` | [Dynamo (DeCandia et al. 2007) — NoSQL 的源头与 CAP 的 AP 路线](/study/papers/dynamo/) | 数据库 |
 | `ebpf` | [eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `effect-handlers` | [Algebraic Effects (Plotkin & Pretnar ESOP 2009) — async/await、try-catch、generator 的统一抽象](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
+| `erlang-otp` | [Erlang/OTP — Making Reliable Distributed Systems in the Presence of Software Errors](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `flash-attention` | [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `foundationdb` | [FoundationDB (Zhou et al. 2021) — Unbundled 分布式 KV + Sim2 确定性仿真：用 10 年 CI 把 bug 烧在设计期](/study/papers/foundationdb/) | 数据库 |
 | `fsrs-spaced-repetition` | [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
