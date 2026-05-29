@@ -102,7 +102,7 @@ const THEMES_PROJECTS = {
     'mikro-orm', 'postgres-js', 'duckdb-wasm',
   ],
   'Web 框架': [
-    'hono', 'fastify',
+    'hono', 'fastify', 'nestjs',
   ],
   'Auth 认证': [
     'auth-js', 'better-auth', 'lucia', 'clerk', 'supertokens',
