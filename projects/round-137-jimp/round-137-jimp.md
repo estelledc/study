@@ -557,7 +557,7 @@ export default {
 - **plugin 化的库选型策略**：默认 import 之前问一句"这个东西能 tree-shake 吗"——很多库主包都是为了向后兼容把所有东西都 re-export。jimp v1 的 `@jimp/core + 选 plugin` 路径是个好范例。
 - **维护节奏不只是看 commit 频率**——更要看 issue close 率 / PR merge 时长 / 上游依赖的健康。jimp 接手后 2024 commit 频率回来了，但上游 pngjs 之类的依赖仍在拖后腿，bus factor 隐患没消。
 - **API 设计的"同步 vs 异步"选择有真实代价**：jimp 的同步 bitmap 操作让代码读起来简单，但放在 Worker 这种 CPU time 敏感的环境就是定时炸弹。下次设计图像类工具，我会把每一步都做成 async（哪怕内部同步），让调用者有机会插入 yield。
-- **下一步**：尝试用 jimp 在 CF Worker 上做一个简单的图片代理（缩略图 + 加水印），实际感受 CPU time 限制，记录到 daily。如果能稳定跑下来，就把它纳入 blindbox 的"轻预览"链路。
+- **下一步**：尝试用 jimp 在 CF Worker 上做一个简单的图片代理（缩略图 + 加水印），实际感受 CPU time 限制，记录到 daily。如果能稳定跑下来，就把它纳入 某项目 的"轻预览"链路。
 
 ---
 
