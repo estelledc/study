@@ -155,6 +155,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[paxos]] —— Paxos — 分布式共识算法
+- [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[raft]] —— Raft — 易理解的共识算法
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库

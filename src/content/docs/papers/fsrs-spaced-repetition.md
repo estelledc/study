@@ -153,4 +153,6 @@ trained = minimize(fsrs_loss,
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
+- [[dqn]] —— DQN — Deep Q-Network
+- [[muzero]] —— MuZero — 不用规则也能下棋
 
