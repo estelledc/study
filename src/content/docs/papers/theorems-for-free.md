@@ -1,7 +1,7 @@
 ---
 title: Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量
-description: Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a. [a] -> [a] 直接推出 map f . r = r . map f 这类自由定理；不看一行实现代码，类型签名就是定理来源
-来源: Philip Wadler, "Theorems for Free!", FPCA 1989, ACM, pp. 347-359
+description: 'Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a. [a] -> [a] 直接推出 map f . r = r . map f 这类自由定理；不看一行实现代码，类型签名就是定理来源'
+来源: 'Philip Wadler, "Theorems for Free!", FPCA 1989, ACM, pp. 347-359'
 sidebar:
   order: 116
 season: Y

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 126 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 128 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：126 个
-- **已分类**：126
+- **总数**：128 个
+- **已分类**：128
 
 ### 按主题分布
 
@@ -39,6 +39,7 @@ sidebar:
 | [可观测 / 性能](#可观测---性能) | 5 |
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
+| [Markdown / 解析](#markdown---解析) | 2 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -313,6 +314,15 @@ sidebar:
 | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 用 Slot/asChild + 受控/非受控双模 hook + Portal/FocusScope 分层，把 WAI-ARIA Authoring Practices 翻译成可组合的 React primitive |
 | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 反 npm install 范式：组件源码直接复制进你的项目，让你 own 它 |
 
+## Markdown / 解析
+
+共 2 个。
+
+| 项目 | 描述 |
+|---|---|
+| [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) |  |
+| [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
+
 ## 其他基础设施
 
 共 3 个。
@@ -325,7 +335,7 @@ sidebar:
 
 ---
 
-## 全部 126 个（字母序）
+## 全部 128 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -382,6 +392,7 @@ sidebar:
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lucia` | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | Auth 认证 |
 | `luxon` | [luxon TZ + i18n 现代 Moment 替代](/study/projects/luxon/) | 日期时间 |
+| `markdown-it` | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `mcp-ts-sdk` | [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) | ORM / DB 客户端 |
@@ -438,6 +449,7 @@ sidebar:
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
 | `turborepo` | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Monorepo / 包管理 |
 | `typeorm` | [TypeORM Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
+| `unified` | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) | Markdown / 解析 |
 | `unstorage` | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `valibot` | [valibot 模块化模式校验](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valtio` | [valtio — 让 state.count++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
