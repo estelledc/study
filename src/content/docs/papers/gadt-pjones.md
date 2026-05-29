@@ -152,5 +152,10 @@ safeHead (Cons x _) = x
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[linear-types]] —— 线性类型（Linear Types）
+- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 

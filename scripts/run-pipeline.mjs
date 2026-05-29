@@ -30,16 +30,24 @@ const PROMPTS = {
   refiner: path.join(ROOT, 'prompts/refiner.md'),
 };
 
+// 4 papers worktree + 4 projects worktree。任何 paper kind（new/rewrite）都可用任意 papers worktree
 const WORKTREE_MAP = {
-  'rewrite-paper:0': { name: 'papers',    path: `${HOME}/study-refactor-papers`,    branch: 'refactor/papers' },
-  'rewrite-paper:1': { name: 'papers-2',  path: `${HOME}/study-refactor-papers-2`,  branch: 'refactor/papers-2' },
-  'new-paper:0':     { name: 'papers-3',  path: `${HOME}/study-refactor-papers-3`,  branch: 'refactor/papers-3' },
-  'new-paper:1':     { name: 'papers-4',  path: `${HOME}/study-refactor-papers-4`,  branch: 'refactor/papers-4' },
-  'rewrite-project:0': { name: 'projects',   path: `${HOME}/study-refactor-projects`,   branch: 'refactor/projects' },
-  'rewrite-project:1': { name: 'projects-2', path: `${HOME}/study-refactor-projects-2`, branch: 'refactor/projects-2' },
-  'new-project:0':     { name: 'projects-3', path: `${HOME}/study-refactor-projects-3`, branch: 'refactor/projects-3' },
-  'new-project:1':     { name: 'projects-4', path: `${HOME}/study-refactor-projects-4`, branch: 'refactor/projects-4' },
+  // papers: 0..3 任选
+  'paper:0': { name: 'papers',    path: `${HOME}/study-refactor-papers`,    branch: 'refactor/papers' },
+  'paper:1': { name: 'papers-2',  path: `${HOME}/study-refactor-papers-2`,  branch: 'refactor/papers-2' },
+  'paper:2': { name: 'papers-3',  path: `${HOME}/study-refactor-papers-3`,  branch: 'refactor/papers-3' },
+  'paper:3': { name: 'papers-4',  path: `${HOME}/study-refactor-papers-4`,  branch: 'refactor/papers-4' },
+  // projects: 0..3 任选
+  'project:0': { name: 'projects',   path: `${HOME}/study-refactor-projects`,   branch: 'refactor/projects' },
+  'project:1': { name: 'projects-2', path: `${HOME}/study-refactor-projects-2`, branch: 'refactor/projects-2' },
+  'project:2': { name: 'projects-3', path: `${HOME}/study-refactor-projects-3`, branch: 'refactor/projects-3' },
+  'project:3': { name: 'projects-4', path: `${HOME}/study-refactor-projects-4`, branch: 'refactor/projects-4' },
 };
+
+function lookupWorktree(kind, idx) {
+  const family = kind.endsWith('paper') ? 'paper' : 'project';
+  return WORKTREE_MAP[`${family}:${idx}`];
+}
 
 function parseArgs() {
   const args = { slug: null, stage: null, dump: false, kind: null, worktreeIdx: 0 };
@@ -99,8 +107,7 @@ async function buildContext(slug, kindOverride, worktreeIdx) {
   const kind = kindOverride || inferKind(slug, candidate, rewriteEntry, candidate?.area);
   const area = kind.endsWith('paper') ? 'papers' : 'projects';
 
-  const worktreeKey = `${kind}:${worktreeIdx}`;
-  const worktree = WORKTREE_MAP[worktreeKey];
+  const worktree = lookupWorktree(kind, worktreeIdx);
   if (!worktree) {
     throw new Error(`No worktree for kind=${kind} idx=${worktreeIdx}`);
   }

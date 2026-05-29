@@ -171,6 +171,7 @@ D(M):
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[rsa]] —— RSA 公钥密码
+- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器

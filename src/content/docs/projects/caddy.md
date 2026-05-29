@@ -178,7 +178,9 @@ docker run -d \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[nginx]] —— nginx — 高性能 Web 服务器

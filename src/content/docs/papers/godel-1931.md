@@ -147,7 +147,7 @@ S: "S 是假的。"
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明

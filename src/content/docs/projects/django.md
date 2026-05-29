@@ -177,6 +177,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）

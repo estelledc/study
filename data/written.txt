@@ -57,6 +57,7 @@ eswaran-1976
 flash-attention
 foundationdb
 fsrs-spaced-repetition
+gadt-pjones
 generational-gc
 gfs
 godel-1931

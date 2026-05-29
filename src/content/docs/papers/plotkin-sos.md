@@ -159,3 +159,6 @@ def step(prog, state):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+
