@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 138 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 139 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：138 个
-- **已分类**：138
+- **总数**：139 个
+- **已分类**：139
 
 ### 按主题分布
 
@@ -41,7 +41,7 @@ sidebar:
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
-| [CSS / 样式](#css---样式) | 2 |
+| [CSS / 样式](#css---样式) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -342,11 +342,12 @@ sidebar:
 
 ## CSS / 样式
 
-共 2 个。
+共 3 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) |  |
+| [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) |  |
 | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) |  |
 
 ## 其他基础设施
@@ -361,7 +362,7 @@ sidebar:
 
 ---
 
-## 全部 138 个（字母序）
+## 全部 139 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -471,6 +472,7 @@ sidebar:
 | `starlight` | [Starlight — Astro 官方文档框架，零 JS 默认 + sidebar autogen](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |
 | `storybook` | [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 测试 / 验证 |
+| `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |
 | `supabase` | [supabase — 不是另一个 Firebase 替代品，是把 Postgres 包成了完整 BaaS](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
 | `swc` | [swc Rust-based JS/TS 编译器](/study/projects/swc/) | 构建工具 / Bundler |

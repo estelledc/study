@@ -66,7 +66,7 @@ const THEMES_PAPERS = {
     'self-adjusting', 'crdt-json', 'realm',
   ],
   '计算理论 / 数学基础': [
-    'turing-1936', 'lambda-calculus', 'cook-levin', 'karp-21',
+    'turing-1936', 'lambda-calculus', 'cook-levin', 'karp-21', 'godel-1931',
   ],
   '信息论 / 编码理论': [
     'shannon-1948',
@@ -160,7 +160,7 @@ const THEMES_PROJECTS = {
     'sharp', 'jimp', 'fabric-js', 'konva', 'pixi',
   ],
   'CSS / 样式': [
-    'tailwind', 'emotion',
+    'tailwind', 'emotion', 'styled-components',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
