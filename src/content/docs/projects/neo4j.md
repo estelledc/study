@@ -162,6 +162,7 @@ ORDER BY score DESC LIMIT 10
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库

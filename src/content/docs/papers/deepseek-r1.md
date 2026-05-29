@@ -155,4 +155,5 @@ R1 推理时输出长这样：
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[ppo]] —— PPO — Proximal Policy Optimization
+- [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
 

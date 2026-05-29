@@ -129,3 +129,6 @@ LLaMA 2、Mistral、DeepSeek 等开源模型的训练 pipeline 几乎都是 fork
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
+

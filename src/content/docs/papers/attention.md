@@ -141,7 +141,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dns]] —— DNS Domain Name System
-- [[dpo]] —— DPO Direct Preference Optimization
+- [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2

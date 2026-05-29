@@ -111,11 +111,11 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) |  |
-| [DPO Direct Preference Optimization](/study/papers/dpo/) |  |
+| [DPO — Direct Preference Optimization](/study/papers/dpo/) |  |
 | [DQN — Deep Q-Network](/study/papers/dqn/) |  |
 | [MuZero — 不用规则也能下棋](/study/papers/muzero/) |  |
 | [PPO — Proximal Policy Optimization](/study/papers/ppo/) |  |
-| [RLHF — 用人比较两条轨迹学奖励：ChatGPT/Claude 的奠基论文](/study/papers/rlhf-christiano/) | 不写 reward function，让人对 trajectory pair 投票 |
+| [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) |  |
 
 ## AI 安全与可解释性
 
@@ -169,9 +169,9 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [ZeRO - Memory Optimizations Toward Training Trillion Parameter Models](/study/papers/deepspeed-zero/) | 状元篇 - DeepSpeed ZeRO 通过分区 Optimizer State / Gradient / Parameter 把内存占用从 N 倍复制降到 1/N，让单 cluster 训出万亿参数模型 |
+| [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) |  |
 | [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 状元篇 - FlashAttention 用 tiling + recomputation 把 attention 在 SRAM 里 fuse 成单一 kernel，避免 N×N 矩阵物化，让显存从二次降为线性，2-4… |
-| [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 用矩阵分块的小学算术把 Transformer 的 Linear 层横切纵切，让 8B+ 参数在 8 张 V100 上并行训练，是 GPT-3 / LLaMA / DeepSeek 之前所有大模型训练栈的共同地基 |
+| [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) |  |
 | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 状元篇 - vLLM 把操作系统分页思想搬进 KV cache 管理，固定大小 block + 间接寻址 + 引用计数共享，让显存利用率从 60-80% 跳到 96%，吞吐 2-4x，是 LLM 推理的标准方案 |
 
 ## 网络协议
@@ -343,14 +343,14 @@ sidebar:
 | `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
 | `debugging-dichotomy` | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
-| `deepspeed-zero` | [ZeRO - Memory Optimizations Toward Training Trillion Parameter Models](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
+| `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
 | `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dns` | [DNS Domain Name System](/study/papers/dns/) | 网络协议 |
-| `dpo` | [DPO Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
+| `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
 | `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
 | `dynamo` | [Dynamo (DeCandia et al. 2007) — NoSQL 的源头与 CAP 的 AP 路线](/study/papers/dynamo/) | 数据库 |
 | `ebpf` | [eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
@@ -387,7 +387,7 @@ sidebar:
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
-| `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
+| `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
@@ -409,7 +409,7 @@ sidebar:
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
-| `rlhf-christiano` | [RLHF — 用人比较两条轨迹学奖励：ChatGPT/Claude 的奠基论文](/study/papers/rlhf-christiano/) | 强化学习 |
+| `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB 状元篇](/study/papers/rocksdb-lsm/) | 数据库 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
 | `salsa-adapton` | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
