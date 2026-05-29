@@ -164,5 +164,6 @@ curl https://raw.githubusercontent.com/OffchainLabs/prysm/master/prysm.sh \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 
