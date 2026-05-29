@@ -184,23 +184,26 @@ else
 fi
 ```
 
-ScheduleWakeup prompt（self-contained，主 CC 醒来不依赖记忆）：
+**自循环机制（实测约束）**：
 
+ScheduleWakeup 工具只在 `/loop` 动态模式下可用，普通 CC session 不暴露。CronCreate 可用但 REPL idle 才 fire，与长跑 workflow 冲突。
+
+**可行的两条路径**：
+
+**A. 主 CC 直接接力（推荐，已验证）**：每 round 末尾**不退出**，主 CC 在自己 turn 内继续派下一 round 的 subagent。靠 CC 自带的 auto-compaction 在 context 60-80% 时自动压缩，session 可持续到几乎不限。
+
+```bash
+# round 末决策（主 CC 不退出，继续）
+EC=$(node /Users/jason/study/scripts/exit-conditions.mjs)
+if [[ should_exit ]]; then
+  写 SESSION-HANDOFF + exit
+else
+  # 主 CC 继续在同一 turn 启动 round N+1
+  # 即跳回 §1-6 流程，不需要 ScheduleWakeup
+fi
 ```
-/auto-push --resume
 
-按 .claude/skills/auto-push/SKILL.md §1-6 流程执行 round $((ROUND_N + 1))。前序 round $ROUND_N 已 commit + push 到 main，checkpoint 已写。读 /Users/jason/study/data/checkpoint.json 拿状态后启下一 round。
-```
-
-调用：
-
-```js
-ScheduleWakeup({
-  delaySeconds: 60,
-  reason: `round ${ROUND_N + 1} continuation`,
-  prompt: "/auto-push --resume\n\n按 .claude/skills/auto-push/SKILL.md §1-6 流程执行 round " + nextN + "..."
-})
-```
+**B. CronCreate 兜底巡检（可选）**：如果用户要彻底无人值守 + 跨 session 接力，用 CronCreate `*/30 * * * *` durable 起，cron 醒来读 checkpoint，但只在主 CC idle（即上一 session 关了/卡住）才 fire。这是 fallback heart beat，不是主 control flow。
 
 ## 异常告警条件
 

@@ -12,6 +12,7 @@ aurora
 autogen
 b-tree-1972
 beck-tdd
+bernstein-1981-cc
 bert
 bidirectional-typing
 bigtable
@@ -76,6 +77,7 @@ ingres-1976
 instructgpt
 io-uring
 kafka
+kahn-natural-semantics
 karp-21
 knuth-taocp
 lambda-calculus
@@ -252,6 +254,7 @@ js-joda
 kafka
 koa
 konva
+kratos
 kubernetes
 ky
 kysely
@@ -363,6 +366,7 @@ tailwind
 tanstack-form
 tanstack-query
 tanstack-router
+teku
 temporal
 temporal-polyfill
 terraform
