@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 150 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 151 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：150 个
-- **已分类**：150
+- **总数**：151 个
+- **已分类**：151
 
 ### 按主题分布
 
@@ -43,7 +43,7 @@ sidebar:
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
 | [CLI / 命令行工具](#cli---命令行工具) | 5 |
-| [Terminal / 终端](#terminal---终端) | 4 |
+| [Terminal / 终端](#terminal---终端) | 5 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -368,12 +368,13 @@ sidebar:
 
 ## Terminal / 终端
 
-共 4 个。
+共 5 个。
 
 | 项目 | 描述 |
 |---|---|
 | [boxen — Terminal box 渲染库](/study/projects/boxen/) |  |
 | [chalk](/study/projects/chalk/) |  |
+| [enquirer](/study/projects/enquirer/) |  |
 | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) |  |
 | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
 
@@ -389,7 +390,7 @@ sidebar:
 
 ---
 
-## 全部 150 个（字母序）
+## 全部 151 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -424,6 +425,7 @@ sidebar:
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
 | `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
+| `enquirer` | [enquirer](/study/projects/enquirer/) | Terminal / 终端 |
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
