@@ -359,3 +359,92 @@ export default function App() {
 关联：
 
 - [[zod]] [[react-hook-form]] [[d3]] [[recharts]] [[visx]] [[axios]] [[ky]] [[date-fns]] [[dayjs]] [[luxon]]
+
+## 附录 A — 翻译协作工作流（≥ 25 行）
+
+实战中翻译不是开发者一人写完，是 PM / 译员 / 法务多人协作。i18next 配合 locize（同团队 SaaS）支持完整工作流：
+
+### 流程
+
+1. **开发者** 在代码里 t("dashboard.welcome", {name})
+2. **i18next** 运行时拿不到翻译 → missingKeyHandler 把 key 上报到 locize
+3. **PM** 在 locize 网页 UI 看到新 key，写默认中文
+4. **译员** 在 locize 翻译到英文 / 日文 / 阿拉伯语
+5. **法务** 审核 review 标记翻译"已批准"
+6. **CI/CD** 拉取 locize 已批准翻译写入 git 仓库 `locales/*.json`
+7. **生产** 部署后用户看到正确翻译
+
+无 locize 的开源替代：
+
+- 自建 GitLab 仓库存翻译，用 PR review 审核
+- 配 i18next-fs-backend 从仓库加载
+- 缺点：协作 UI 不如 locize
+
+### 不用 locize 的痛点
+
+1. 译员需要懂 git → 学习成本高
+2. JSON 文件冲突合并难
+3. 翻译进度无法可视化
+4. 缺失 key 不主动报，发版后才发现
+
+## 附录 B — RSC / Next.js 14 App Router 集成方案对比（≥ 25 行）
+
+i18next 在 Server Components 痛点 + 三种社区方案：
+
+### 方案 1：每个 Page 单独 createInstance
+
+```ts
+async function initI18n(lng: string) {
+  const i = createInstance();
+  await i.use(resourcesToBackend((lng, ns) => import(`./locales/${lng}/${ns}.json`))).init({lng, fallbackLng: "en"});
+  return i;
+}
+
+export default async function Page({params: {lng}}: {params: {lng: string}}) {
+  const i18n = await initI18n(lng);
+  return <h1>{i18n.t("welcome")}</h1>;
+}
+```
+
+缺点：每次请求 init 一次，浪费
+
+### 方案 2：globalThis cache
+
+```ts
+declare global { var i18nInstances: Map<string, i18next>; }
+globalThis.i18nInstances ||= new Map();
+
+async function getI18n(lng: string) {
+  if (globalThis.i18nInstances.has(lng)) return globalThis.i18nInstances.get(lng);
+  const i = await initI18n(lng);
+  globalThis.i18nInstances.set(lng, i);
+  return i;
+}
+```
+
+缺点：dev mode hot reload 时 cache stale
+
+### 方案 3：迁移到 next-intl
+
+next-intl 是为 App Router 设计的：
+
+```ts
+import {useTranslations} from "next-intl";
+
+export default function Page() {
+  const t = useTranslations("Dashboard");
+  return <h1>{t("welcome")}</h1>;
+}
+```
+
+next-intl 在 Next 14+ 体验远优于 i18next。多数新 Next 项目直接选 next-intl。
+
+## 附录 C — 学到补充（≥ 15 行）
+
+补充 5 条工程教训：
+
+6. **i18n 是渐进式的工程难题**：MVP 阶段几乎不用 i18n，全球化阶段一次性补完。i18next 这种"全功能"工具支持渐进式（先 1 语言，后续加 plugin）
+7. **plural 是 i18n 最大的设计陷阱**：英语 plural 简单，阿拉伯语 6 种 plural，泰语无 plural —— 库要支持 CLDR 规则，开发者要懂 plural 心智
+8. **lazy loading 是性能 vs 用户体验权衡**：首屏不加载所有 namespace（小 bundle），但切语言时延迟（loading state）
+9. **missing translation 处理** 是 i18n 工具的灵魂——库该 silent fallback 到 fallbackLng？显示 key？显示 EN？取决于产品偏好
+10. **i18n + RSC 仍是开放问题**：next-intl 占领 Next 生态，i18next 仍是 framework-agnostic 通吃但慢半拍。未来 2-3 年 i18n 库会更分化
