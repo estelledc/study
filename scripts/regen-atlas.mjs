@@ -78,7 +78,8 @@ const THEMES_PAPERS = {
   'HCI / 软件工程研究': [
     'cognitive-load-theory', 'debugging-dichotomy', 'fsrs-spaced-repetition',
     'pair-programming', 'programmer-interruption', 'program-comprehension-fmri',
-    'sillito-questions', 'copilot-rct', 'great-swe', 'dijkstra-goto', 'hoare-logic',
+    'sillito-questions', 'copilot-rct', 'great-swe',
+    'dijkstra-goto', 'hoare-logic', 'lampson-hints',
   ],
 };
 
@@ -170,7 +171,7 @@ const THEMES_PROJECTS = {
     'chalk', 'ora', 'boxen', 'listr2', 'enquirer',
   ],
   'Drag & Drop / Interaction': [
-    'dnd-kit', 'react-dnd',
+    'dnd-kit', 'react-dnd', 'sortablejs',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
