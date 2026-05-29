@@ -144,5 +144,6 @@ SolidJS 的 `createSignal` 接近 Push-Pull 的 Behavior（pull-when-read），`
 
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 

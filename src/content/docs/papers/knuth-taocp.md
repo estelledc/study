@@ -145,7 +145,8 @@ TAOCP Vol 1 Section 1.2.1 讲数学归纳法，开头一句话直接挑明它的
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[great-swe]] —— Great SWE — 工程师的"伟大"是 humble + always learning，不是技术有多硬
+- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
+- [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960

@@ -161,6 +161,7 @@ WHERE SALARY > (
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
+- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化

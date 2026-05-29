@@ -181,7 +181,7 @@ LIMIT 5;
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
-- [[inngest]] —— Inngest — durable workflow 的事件溯源
+- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎

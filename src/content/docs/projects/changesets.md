@@ -155,5 +155,5 @@ npx changeset version                # 自动 bump、写 CHANGELOG、删 changes
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
-- [[lerna]] —— lerna — 一仓多包发版的祖宗工具
+- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 
