@@ -1,7 +1,7 @@
 ---
 title: LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期
-description: Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift / Rust / Julia 的现代编译器生态
-来源: Lattner & Adve, "LLVM: A Compilation Framework for Lifelong Program Analysis & Transformation", CGO 2004
+description: 'Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift / Rust / Julia 的现代编译器生态'
+来源: 'Lattner & Adve, "LLVM: A Compilation Framework for Lifelong Program Analysis & Transformation", CGO 2004'
 sidebar:
   order: 113
 season: Y

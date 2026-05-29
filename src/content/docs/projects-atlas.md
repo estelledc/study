@@ -12,8 +12,7 @@ sidebar:
 ## 总览
 
 - **总数**：124 个
-- **已分类**：122
-- **未分类**：2（落入"其他 / 待分类"段）
+- **已分类**：124
 
 ### 按主题分布
 
@@ -27,7 +26,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [Web 框架](#web-框架) | 2 |
+| [Web 框架](#web-框架) | 4 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -41,7 +40,6 @@ sidebar:
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 2 |
 
 ---
 
@@ -153,12 +151,14 @@ sidebar:
 
 ## Web 框架
 
-共 2 个。
+共 4 个。
 
 | 项目 | 描述 |
 |---|---|
+| [Express Node.js 经典 Web 框架](/study/projects/express/) |  |
 | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) |  |
 | [Hono — 极简边缘后端的 API 取舍](/study/projects/hono/) | 用 Web 标准（Request/Response）+ 多种 router 实现 + koa-compose 中间件做"任何 runtime 都能跑"的 web 框架 |
+| [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) |  |
 
 ## Auth 认证
 
@@ -321,15 +321,6 @@ sidebar:
 | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 倒排索引 + Radix Tree + BM25 + Levenshtein 矩阵剪枝，全部纯 TS 跑在 V8 里——证明大部分搜索场景根本不需要 server |
 | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 一个 storage interface + driver registry 跑通 fs/redis/s3/cloudflare-kv/upstash 等 35+ backend |
 
-## 其他 / 待分类
-
-共 2 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
-
-| Slug | 项目 |
-|---|---|
-| `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) |
-| `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) |
-
 ---
 
 ## 全部 124 个（字母序）
@@ -363,7 +354,7 @@ sidebar:
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
-| `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | 其他 |
+| `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
 | `framer-motion` | [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 动画 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
@@ -376,7 +367,7 @@ sidebar:
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
 | `jotai` | [jotai — atomic 状态管理 + Daishi Kato 第三套](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
-| `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | 其他 |
+| `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely TypeScript-first SQL Query Builder](/study/projects/kysely/) | ORM / DB 客户端 |
 | `langfuse` | [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
