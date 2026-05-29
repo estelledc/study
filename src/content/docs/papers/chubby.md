@@ -159,11 +159,11 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[gfs]] —— GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
 

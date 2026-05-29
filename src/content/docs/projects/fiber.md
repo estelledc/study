@@ -171,5 +171,10 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 

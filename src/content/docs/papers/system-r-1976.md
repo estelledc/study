@@ -148,6 +148,7 @@ System R 的处理：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基

@@ -160,6 +160,7 @@ Check if this PR has any AI-generated slop:
 - [[autogen]] —— AutoGen — 多智能体对话框架
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎

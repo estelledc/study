@@ -158,5 +158,13 @@ let run e = eval e [] (fun v -> v)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 

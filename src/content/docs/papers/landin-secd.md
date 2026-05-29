@@ -169,5 +169,13 @@ def secd_step(s, e, c, d):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
+- [[ssa]] —— SSA — 静态单赋值形式
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

@@ -152,6 +152,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[kafka]] —— Apache Kafka — 分布式流处理平台
 - [[langchain]] —— LangChain — LLM 应用开发框架
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库

@@ -160,5 +160,13 @@ def step(prog, state):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

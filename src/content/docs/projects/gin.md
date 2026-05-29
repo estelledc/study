@@ -154,5 +154,10 @@ r.POST("/users", func(c *gin.Context) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
+- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[prometheus]] —— Prometheus — 时序监控系统
+- [[redis]] —— Redis — 内存键值数据库
 

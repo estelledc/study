@@ -167,6 +167,7 @@ function Greeting({ name }) {
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
