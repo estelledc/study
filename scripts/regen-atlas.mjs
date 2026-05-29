@@ -148,7 +148,7 @@ const THEMES_PROJECTS = {
     'radix-ui', 'shadcn-ui',
   ],
   'Markdown / 解析': [
-    'unified', 'markdown-it',
+    'unified', 'markdown-it', 'marked',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',

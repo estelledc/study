@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 128 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 129 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：128 个
-- **已分类**：128
+- **总数**：129 个
+- **已分类**：129
 
 ### 按主题分布
 
@@ -39,7 +39,7 @@ sidebar:
 | [可观测 / 性能](#可观测---性能) | 5 |
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
-| [Markdown / 解析](#markdown---解析) | 2 |
+| [Markdown / 解析](#markdown---解析) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -316,11 +316,12 @@ sidebar:
 
 ## Markdown / 解析
 
-共 2 个。
+共 3 个。
 
 | 项目 | 描述 |
 |---|---|
 | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) |  |
+| [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) |  |
 | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
 
 ## 其他基础设施
@@ -335,7 +336,7 @@ sidebar:
 
 ---
 
-## 全部 128 个（字母序）
+## 全部 129 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -393,6 +394,7 @@ sidebar:
 | `lucia` | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | Auth 认证 |
 | `luxon` | [luxon TZ + i18n 现代 Moment 替代](/study/projects/luxon/) | 日期时间 |
 | `markdown-it` | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) | Markdown / 解析 |
+| `marked` | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) | Markdown / 解析 |
 | `mcp-ts-sdk` | [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) | ORM / DB 客户端 |
