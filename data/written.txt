@@ -53,6 +53,7 @@ dynamo
 ebpf
 effect-handlers
 erlang-otp
+eswaran-1976
 flash-attention
 foundationdb
 fsrs-spaced-repetition
@@ -78,6 +79,7 @@ lambda-calculus
 lamport-1978
 lampson-hints
 linear-types
+liquid-types
 llama
 llava
 llvm
@@ -207,6 +209,7 @@ elasticsearch
 elysia
 emotion
 enquirer
+erigon
 esbuild
 etcd
 excalidraw
@@ -319,6 +322,7 @@ ripgrep
 rolldown
 rollup
 rspack
+sanic
 sentry
 sequelize
 shadcn-ui
