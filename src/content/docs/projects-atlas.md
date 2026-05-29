@@ -12,8 +12,7 @@ sidebar:
 ## 总览
 
 - **总数**：126 个
-- **已分类**：125
-- **未分类**：1（落入"其他 / 待分类"段）
+- **已分类**：126
 
 ### 按主题分布
 
@@ -27,7 +26,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [Web 框架](#web-框架) | 5 |
+| [Web 框架](#web-框架) | 6 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -41,7 +40,6 @@ sidebar:
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 1 |
 
 ---
 
@@ -153,10 +151,11 @@ sidebar:
 
 ## Web 框架
 
-共 5 个。
+共 6 个。
 
 | 项目 | 描述 |
 |---|---|
+| [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) |  |
 | [Express Node.js 经典 Web 框架](/study/projects/express/) |  |
 | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) |  |
 | [Hono — 极简边缘后端的 API 取舍](/study/projects/hono/) | 用 Web 标准（Request/Response）+ 多种 router 实现 + koa-compose 中间件做"任何 runtime 都能跑"的 web 框架 |
@@ -324,14 +323,6 @@ sidebar:
 | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 倒排索引 + Radix Tree + BM25 + Levenshtein 矩阵剪枝，全部纯 TS 跑在 V8 里——证明大部分搜索场景根本不需要 server |
 | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 一个 storage interface + driver registry 跑通 fs/redis/s3/cloudflare-kv/upstash 等 35+ backend |
 
-## 其他 / 待分类
-
-共 1 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
-
-| Slug | 项目 |
-|---|---|
-| `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) |
-
 ---
 
 ## 全部 126 个（字母序）
@@ -363,7 +354,7 @@ sidebar:
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `echarts` | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 数据可视化 |
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
-| `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | 其他 |
+| `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
