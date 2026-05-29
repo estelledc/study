@@ -80,6 +80,7 @@ linear-types
 llama
 llava
 llvm
+local-type-inference
 lsm-tree-1996
 mae
 mamba
@@ -116,6 +117,7 @@ scaling-laws
 self-adjusting
 self-pic
 selinger-1979
+sequel-1974
 shannon-1948
 sillito-questions
 simula-67
@@ -162,6 +164,7 @@ astro
 auth-js
 axios
 bat
+besu
 better-auth
 biome
 bitcoin-core
@@ -188,6 +191,7 @@ date-fns
 dayjs
 dgraph
 dify
+django
 dnd-kit
 docker
 docusaurus
