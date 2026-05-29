@@ -1,0 +1,202 @@
+#!/usr/bin/env node
+// 单 slug 5-stage pipeline driver（M1 verbose 版）
+// 由 workflow 内 agent 调用，或手动 CLI 跑单 slug 验证
+//
+// 用法：
+//   node scripts/run-pipeline.mjs --slug codd-1979-extending           # 完整 pipeline
+//   node scripts/run-pipeline.mjs --slug X --stage researcher --dump  # 仅跑 researcher 输出 prompt（不调 agent）
+//
+// 注：本 driver 不直接调 LLM agent。它准备 prompt + 数据 + 写事件流，
+//     真正的 agent 调用由外层 workflow 编排。这样保持单文件可测、可 dry-run。
+
+import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { emit } from './pipeline-events.mjs';
+import { validate } from './quality-gate.mjs';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT = path.resolve(__dirname, '..');
+const HOME = process.env.HOME || '/Users/jason';
+
+const PROMPTS = {
+  researcher: path.join(ROOT, 'prompts/researcher.md'),
+  writer: path.join(ROOT, 'prompts/writer.md'),
+  'reviewer-zero-base': path.join(ROOT, 'prompts/reviewer-zero-base.md'),
+  'reviewer-academic': path.join(ROOT, 'prompts/reviewer-academic.md'),
+  'reviewer-engineer': path.join(ROOT, 'prompts/reviewer-engineer.md'),
+  refiner: path.join(ROOT, 'prompts/refiner.md'),
+};
+
+const WORKTREE_MAP = {
+  'rewrite-paper:0': { name: 'papers',    path: `${HOME}/study-refactor-papers`,    branch: 'refactor/papers' },
+  'rewrite-paper:1': { name: 'papers-2',  path: `${HOME}/study-refactor-papers-2`,  branch: 'refactor/papers-2' },
+  'new-paper:0':     { name: 'papers-3',  path: `${HOME}/study-refactor-papers-3`,  branch: 'refactor/papers-3' },
+  'new-paper:1':     { name: 'papers-4',  path: `${HOME}/study-refactor-papers-4`,  branch: 'refactor/papers-4' },
+  'rewrite-project:0': { name: 'projects',   path: `${HOME}/study-refactor-projects`,   branch: 'refactor/projects' },
+  'rewrite-project:1': { name: 'projects-2', path: `${HOME}/study-refactor-projects-2`, branch: 'refactor/projects-2' },
+  'new-project:0':     { name: 'projects-3', path: `${HOME}/study-refactor-projects-3`, branch: 'refactor/projects-3' },
+  'new-project:1':     { name: 'projects-4', path: `${HOME}/study-refactor-projects-4`, branch: 'refactor/projects-4' },
+};
+
+function parseArgs() {
+  const args = { slug: null, stage: null, dump: false, kind: null, worktreeIdx: 0 };
+  for (let i = 2; i < process.argv.length; i++) {
+    const a = process.argv[i];
+    if (a === '--slug') args.slug = process.argv[++i];
+    else if (a === '--stage') args.stage = process.argv[++i];
+    else if (a === '--dump') args.dump = true;
+    else if (a === '--kind') args.kind = process.argv[++i];
+    else if (a === '--worktree') args.worktreeIdx = parseInt(process.argv[++i], 10);
+  }
+  return args;
+}
+
+async function readJsonl(p) {
+  const raw = await fs.readFile(p, 'utf8');
+  return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
+}
+
+async function findCandidate(slug) {
+  const candidates = await readJsonl(path.join(ROOT, 'data/candidates.jsonl'));
+  return candidates.find(c => c.slug === slug);
+}
+
+async function findRewriteEntry(slug) {
+  try {
+    const pool = await readJsonl(path.join(ROOT, 'data/rewrite-pool.jsonl'));
+    return pool.find(p => p.slug === slug);
+  } catch {
+    return null;
+  }
+}
+
+function inferKind(slug, candidate, rewriteEntry, areaHint) {
+  // rewrite 优先（如果在 rewrite pool）
+  if (rewriteEntry && rewriteEntry.status === 'available') {
+    return rewriteEntry.area === 'papers' ? 'rewrite-paper' : 'rewrite-project';
+  }
+  if (candidate) {
+    return candidate.area === 'papers' ? 'new-paper' : 'new-project';
+  }
+  return areaHint === 'papers' ? 'new-paper' : 'new-project';
+}
+
+function renderPrompt(template, vars) {
+  let out = template;
+  for (const [k, v] of Object.entries(vars)) {
+    out = out.replace(new RegExp(`{{${k}}}`, 'g'), String(v ?? ''));
+  }
+  return out;
+}
+
+async function buildContext(slug, kindOverride, worktreeIdx) {
+  const candidate = await findCandidate(slug);
+  const rewriteEntry = await findRewriteEntry(slug);
+
+  const kind = kindOverride || inferKind(slug, candidate, rewriteEntry, candidate?.area);
+  const area = kind.endsWith('paper') ? 'papers' : 'projects';
+
+  const worktreeKey = `${kind}:${worktreeIdx}`;
+  const worktree = WORKTREE_MAP[worktreeKey];
+  if (!worktree) {
+    throw new Error(`No worktree for kind=${kind} idx=${worktreeIdx}`);
+  }
+
+  const isRewrite = kind.startsWith('rewrite-');
+  const outputPath = `${worktree.path}/src/content/docs/${area}/${slug}.md`;
+  const existingPath = isRewrite ? outputPath : '';
+
+  const tmpDir = `/tmp/pipeline-${slug}`;
+  fsSync.mkdirSync(tmpDir, { recursive: true });
+  const researchJson = path.join(tmpDir, 'research.json');
+  const writerOut = path.join(tmpDir, 'writer.json');
+  const reviewsJson = path.join(tmpDir, 'reviews.json');
+
+  return {
+    slug,
+    kind,
+    area,
+    topic: candidate?.topic || rewriteEntry?.area || '',
+    title: candidate?.title || slug,
+    year: candidate?.meta?.col3 || '',
+    why: candidate?.meta?.col4 || '',
+    url: candidate?.url || '',
+    worktree_path: worktree.path,
+    branch_name: worktree.branch,
+    output_path: outputPath,
+    existing_path: existingPath,
+    output_json: researchJson,
+    research_json: researchJson,
+    writer_out: writerOut,
+    reviews_json: reviewsJson,
+    tmp_dir: tmpDir,
+  };
+}
+
+async function dumpStagePrompt(stage, ctx) {
+  const tmpl = await fs.readFile(PROMPTS[stage], 'utf8');
+  const rendered = renderPrompt(tmpl, ctx);
+  console.log(JSON.stringify({
+    stage,
+    slug: ctx.slug,
+    prompt_path: PROMPTS[stage],
+    prompt_chars: rendered.length,
+    output_path: ctx.output_path,
+    research_json: ctx.research_json,
+    worktree: ctx.branch_name,
+    rendered,
+  }, null, 2));
+}
+
+// CLI
+async function main() {
+  const args = parseArgs();
+  if (!args.slug) {
+    console.error('usage: node run-pipeline.mjs --slug <slug> [--stage <name>] [--kind <kind>] [--worktree <0|1>] [--dump]');
+    process.exit(2);
+  }
+
+  const ctx = await buildContext(args.slug, args.kind, args.worktreeIdx);
+
+  emit({ event: 'pipeline-context-built', slug: ctx.slug, kind: ctx.kind, worktree: ctx.branch_name });
+
+  // 仅 dump 单 stage prompt（用于 manual 验证 / debug）
+  if (args.dump) {
+    if (!args.stage) {
+      console.error('--dump requires --stage');
+      process.exit(2);
+    }
+    await dumpStagePrompt(args.stage, ctx);
+    return;
+  }
+
+  // 默认行为：dump 所有 stage prompt 到 tmp，由外层 workflow agent 消费
+  for (const stage of Object.keys(PROMPTS)) {
+    const tmpl = await fs.readFile(PROMPTS[stage], 'utf8');
+    const rendered = renderPrompt(tmpl, ctx);
+    const out = path.join(ctx.tmp_dir, `${stage}.prompt.md`);
+    await fs.writeFile(out, rendered);
+  }
+
+  // 输出 ctx + 各 stage prompt 路径，workflow 用
+  console.log(JSON.stringify({
+    ...ctx,
+    stage_prompts: Object.fromEntries(
+      Object.keys(PROMPTS).map(s => [s, path.join(ctx.tmp_dir, `${s}.prompt.md`)])
+    ),
+  }, null, 2));
+}
+
+main().catch(err => {
+  console.error('run-pipeline failed:', err);
+  emit({ event: 'pipeline-driver-error', error: String(err) });
+  process.exit(1);
+});
+
+// Helpers exported for workflow programmatic use
+export { buildContext, renderPrompt, dumpStagePrompt };
+export const STAGES = Object.keys(PROMPTS);
+export const QUALITY_GATE = validate;
