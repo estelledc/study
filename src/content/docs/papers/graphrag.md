@@ -130,3 +130,7 @@ vector RAG 在同一题上**只能找出几段最像"主线"字面的句子**，
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
+- [[retro]] —— RETRO — DeepMind 的检索增强 LLM
+

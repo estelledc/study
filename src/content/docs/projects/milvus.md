@@ -186,4 +186,5 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
 

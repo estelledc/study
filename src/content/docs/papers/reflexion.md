@@ -164,5 +164,8 @@ Trial 2:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[autogen]] —— AutoGen — 多智能体对话框架
+- [[cot]] —— Chain-of-Thought Prompting
+- [[react]] —— React UI 组件库
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 

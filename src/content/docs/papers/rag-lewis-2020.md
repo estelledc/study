@@ -135,3 +135,7 @@ answer = llama.generate(prompt)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[retro]] —— RETRO — DeepMind 的检索增强 LLM
+

@@ -153,6 +153,7 @@ Agentless 的处理流程：
 
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[react]] —— React UI 组件库
+- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 

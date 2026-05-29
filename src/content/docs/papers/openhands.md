@@ -147,5 +147,8 @@ LLM 写 Python 比写 JSON 准——训练数据里 Python 代码比 JSON tool c
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[autogen]] —— AutoGen — 多智能体对话框架
+- [[react]] —— React UI 组件库
+- [[voyager]] —— Voyager — LLM 终身学习智能体
 

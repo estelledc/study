@@ -161,6 +161,7 @@ function Greeting({ name }) {
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[cot]] —— Chain-of-Thought Prompting
 - [[framer-motion]] —— Framer Motion — React 声明式动画
+- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[next-js]] —— Next.js — React 全栈框架
@@ -173,6 +174,7 @@ function Greeting({ name }) {
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
+- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库

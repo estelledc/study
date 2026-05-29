@@ -129,3 +129,7 @@ SWE-Agent 的动作序列：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
+
