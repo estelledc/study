@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 138 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 139 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：138 篇
-- **已分类**：138
+- **总数**：139 篇
+- **已分类**：139
 
 ### 按主题分布
 
@@ -34,7 +34,7 @@ sidebar:
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
-| [HCI / 软件工程研究](#hci---软件工程研究) | 12 |
+| [HCI / 软件工程研究](#hci---软件工程研究) | 13 |
 
 ---
 
@@ -278,7 +278,7 @@ sidebar:
 
 ## HCI / 软件工程研究
 
-共 12 篇。
+共 13 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -290,6 +290,7 @@ sidebar:
 | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | 半结构化访谈 59 位资深工程师 + manager，open coding 归纳 53 条具体属性 / 8 大类别 |
 | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | Hoare Logic v1 |
 | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | Butler Lampson 1983 SOSP keynote 论文笔记：functionality / performance / correctness 三大类 27 条 hints，含 14 个 Definit… |
+| [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | Brooks 1986：软件工程的本质难度（essence）vs 偶然难度（accident），以及 LLM 时代的再审视 |
 | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | 18 个 RCT 元分析 |
 | [Understanding Program Comprehension with fMRI — 程序理解像语言而非数学的首个脑成像证据](/study/papers/program-comprehension-fmri/) | Siegmund 2014 用 fMRI 扫了 17 名学生读 Java 代码，发现激活的是 Broca / BA47 等自然语言处理区域而非数学推理区——这给"编程是语言学"假说提供了首个生理学锚点 |
 | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | ICPC 2009 用 85 名工程师 10,000 个 IDE 会话证明只有 10% 能在 1 分钟内恢复编码，30% 编辑滞后超过 30 分钟 |
@@ -297,7 +298,7 @@ sidebar:
 
 ---
 
-## 全部 138 篇（字母序）
+## 全部 139 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -382,6 +383,7 @@ sidebar:
 | `metagpt` | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `muzero` | [MuZero Mastering Games by Planning with Learned Model](/study/papers/muzero/) | 强化学习 |
+| `no-silver-bullet` | [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `openhands` | [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `pair-programming` | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `paxos` | [Paxos 异步分布式共识](/study/papers/paxos/) | 分布式系统 |
