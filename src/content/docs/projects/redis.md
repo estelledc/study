@@ -141,10 +141,12 @@ SET lock:order123 "uuid-abc" NX EX 10
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[docker]] —— Docker — 容器化平台
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[kafka]] —— Apache Kafka — 分布式流处理平台
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[valkey]] —— Valkey — Redis 7.4 的开源 fork
 

@@ -148,10 +148,12 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[dpo]] —— DPO Direct Preference Optimization
 - [[dqn]] —— DQN Deep Q-Network 深度强化学习
+- [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[muzero]] —— MuZero Mastering Games by Planning with Learned Model
 - [[ppo]] —— PPO Proximal Policy Optimization
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
-- [[word2vec]] —— Word2Vec 词向量分布式表示
+- [[word2vec]] —— Word2Vec — 词向量奠基
 

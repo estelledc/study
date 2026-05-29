@@ -184,5 +184,6 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 

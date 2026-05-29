@@ -167,3 +167,6 @@ location /static/ {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+

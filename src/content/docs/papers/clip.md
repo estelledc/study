@@ -140,5 +140,5 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[resnet]] —— ResNet 深度残差学习
 - [[vit]] —— ViT — Vision Transformer
-- [[word2vec]] —— Word2Vec 词向量分布式表示
+- [[word2vec]] —— Word2Vec — 词向量奠基
 

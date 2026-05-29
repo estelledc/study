@@ -119,6 +119,10 @@ const THEMES_PROJECTS = {
     'rocksdb', 'leveldb', 'lmdb', 'valkey', 'duckdb',
     'elasticsearch', 'kafka', 'milvus',
   ],
+  'DevOps / 容器 / 运维': [
+    'docker', 'kubernetes', 'nginx', 'caddy', 'traefik',
+    'podman', 'containerd', 'helm', 'argocd', 'terraform',
+  ],
   'Web 框架': [
     'hono', 'fastify', 'express', 'koa', 'nestjs', 'elysia',
   ],
