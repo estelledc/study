@@ -166,7 +166,7 @@ const THEMES_PROJECTS = {
     'yargs', 'commander', 'ink', 'oclif', 'clack',
   ],
   'Terminal / 终端': [
-    'chalk',
+    'chalk', 'ora', 'boxen',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
