@@ -180,4 +180,5 @@ let collect body =
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 

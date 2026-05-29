@@ -170,4 +170,5 @@ map f (map g xs) = map (f . g) xs
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 

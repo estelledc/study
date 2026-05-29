@@ -144,6 +144,8 @@ rg --no-ignore "foo"         # 等价于 -u
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bat]] —— bat — 现代 cat 替代
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[fd]] —— fd — Rust 写的现代 find
 - [[fzf]] —— fzf — 命令行模糊查找
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 

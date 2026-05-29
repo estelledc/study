@@ -142,6 +142,7 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法

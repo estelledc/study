@@ -158,11 +158,11 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
 - [[turing-1936]] —— Turing 1936 可计算性

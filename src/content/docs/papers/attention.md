@@ -132,6 +132,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向

@@ -157,6 +157,7 @@ function Greeting({ name }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[ag-grid]] —— AG Grid — 企业级数据表格
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[astro]] —— Astro — 内容站点优先的 Web 框架

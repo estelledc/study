@@ -141,5 +141,8 @@ client read key="foo"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 
