@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 143 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 144 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：143 个
-- **已分类**：143
+- **总数**：144 个
+- **已分类**：144
 
 ### 按主题分布
 
@@ -42,7 +42,7 @@ sidebar:
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
-| [CLI / 命令行工具](#cli---命令行工具) | 2 |
+| [CLI / 命令行工具](#cli---命令行工具) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -355,11 +355,12 @@ sidebar:
 
 ## CLI / 命令行工具
 
-共 2 个。
+共 3 个。
 
 | 项目 | 描述 |
 |---|---|
 | [commander.js](/study/projects/commander/) |  |
+| [ink](/study/projects/ink/) |  |
 | [yargs](/study/projects/yargs/) |  |
 
 ## 其他基础设施
@@ -374,7 +375,7 @@ sidebar:
 
 ---
 
-## 全部 143 个（字母序）
+## 全部 144 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -418,6 +419,7 @@ sidebar:
 | `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 数据应用 / SaaS |
+| `ink` | [ink](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [jimp](/study/projects/jimp/) | 图像处理 / Canvas |

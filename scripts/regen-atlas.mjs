@@ -163,7 +163,7 @@ const THEMES_PROJECTS = {
     'tailwind', 'emotion', 'styled-components', 'stylex', 'vanilla-extract',
   ],
   'CLI / 命令行工具': [
-    'yargs', 'commander',
+    'yargs', 'commander', 'ink',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
