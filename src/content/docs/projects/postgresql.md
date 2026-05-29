@@ -1,0 +1,164 @@
+---
+title: PostgreSQL — 工业级关系数据库
+来源: https://github.com/postgres/postgres
+日期: 2026-05-29
+分类: 数据库
+难度: 中级
+---
+
+## 是什么
+
+PostgreSQL 是 1986 年 UC Berkeley 启动的关系型数据库，30+ 年持续迭代，号称"开源世界最先进的 SQL 库"。日常类比：「Oracle 是商业全套保险，PostgreSQL 是开源版的瑞士军刀——同等专业但免费」。
+
+你可以用它来：
+
+```sql
+-- 普通关系表
+CREATE TABLE users (id serial primary key, name text, age int);
+
+-- 但它远不止这些
+SELECT data->'name' FROM events WHERE data->>'kind' = 'click';  -- JSON 原生查询
+SELECT * FROM articles WHERE to_tsvector('chinese', body) @@ 'PostgreSQL';  -- 全文检索
+SELECT id, embedding <-> '[0.1, 0.2, ...]' AS dist FROM items ORDER BY dist;  -- 向量检索
+```
+
+一份引擎，关系 / JSON / 全文 / 向量 / 地理 / 时序——全都能干。
+
+## 为什么重要
+
+不理解 PostgreSQL，下面这些事都没法解释：
+
+- 为什么 Apple / Instagram / Reddit / Discord 这些超大流量公司都选 PostgreSQL 而不是 MySQL
+- 为什么 AI 时代 pgvector 一夜爆红，向量数据库公司都在被它"挤占"
+- 为什么 SaaS 公司常说"先用 PG，等真撑不住再考虑别的"——它的扩展性远比想象的强
+- 为什么 SQL 标准里 80% 的高级特性（窗口函数 / CTE / JSON / 物化视图）PostgreSQL 都最早完整实现
+
+## 核心要点
+
+PostgreSQL 的"工业级"不是营销词，背后有 **三个硬核设计**：
+
+1. **进程模型**：每个连接 fork 一个独立进程（不是线程）。优点是隔离强、一个连接崩了不影响别人；缺点是内存开销大，连接数飙到几百就吃力——这就是为什么生产必上 PgBouncer。
+
+2. **MVCC（多版本并发控制）**：写入新数据时不覆盖老数据，而是写新版本 + 标记旧版本。读不阻塞写、写不阻塞读，长事务也不卡读请求。代价是要定期 VACUUM 清理旧版本。
+
+3. **扩展系统**：`CREATE EXTENSION xxx;` 一句话，加新数据类型 / 新索引 / 新函数语言。pgvector / pg_cron / TimescaleDB / PostGIS 都是这套机制下的产物——它把数据库当成"可插拔平台"。
+
+## 实践案例
+
+### 案例 1：装上就能用
+
+```bash
+# macOS
+brew install postgresql@16
+brew services start postgresql@16
+
+# 或 docker（推荐做隔离实验）
+docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=secret postgres:16
+
+# 连进去
+psql -U postgres
+```
+
+第一次进 `psql`，输 `\l` 列所有库、`\dt` 列当前库的表、`\q` 退出——三个命令足够初学者活下来。
+
+### 案例 2：JSONB 把半结构化数据装进 SQL 表
+
+```sql
+CREATE TABLE events (id serial, data jsonb);
+
+INSERT INTO events (data) VALUES
+  ('{"kind": "click", "page": "/home", "user": {"id": 1, "name": "Alice"}}'),
+  ('{"kind": "view",  "page": "/about"}');
+
+-- 查询嵌套字段，像写 JS 一样
+SELECT data->'user'->>'name' FROM events WHERE data->>'kind' = 'click';
+
+-- 给 JSONB 加 GIN 索引，查询飞快
+CREATE INDEX ON events USING gin (data);
+```
+
+这是 **MongoDB 的核心卖点**，但 PostgreSQL 把它做成了"普通字段"——你不需要换数据库，原表里加一列就有了。
+
+### 案例 3：pgvector 让向量检索变成一句 SQL
+
+```sql
+CREATE EXTENSION vector;
+
+CREATE TABLE items (
+  id int primary key,
+  content text,
+  embedding vector(1536)  -- OpenAI text-embedding-3-small 维度
+);
+
+-- 插入向量（embedding 由模型生成）
+INSERT INTO items VALUES (1, 'PostgreSQL 教程', '[0.1, 0.2, ...]');
+
+-- 查最相似的 5 个
+SELECT id, content FROM items
+ORDER BY embedding <-> '[0.15, 0.18, ...]'
+LIMIT 5;
+```
+
+2023 年之前你需要 Pinecone / Weaviate 这些专门的向量库；现在，**一张普通表 + 一行 CREATE EXTENSION** 就够了。
+
+## 踩过的坑
+
+1. **连接数限制**：默认 `max_connections=100`。每个连接是独立进程，开销大。serverless / Lambda 场景下函数实例多、连接爆炸 → 必须前面挡一层 **PgBouncer**（连接池），把上千客户端复用到几十个底层连接。
+
+2. **VACUUM 老化**：MVCC 写新版本 + 标记旧版本，旧版本叫 dead tuples。autovacuum 默认开但调得保守，写密集表会膨胀。表突然 50GB 但实际数据只有 5GB → 跑 `VACUUM FULL`（但会锁表）或者调 autovacuum 阈值。
+
+3. **DDL 锁表**：`ALTER TABLE users ADD COLUMN age int DEFAULT 18;` 在百万行大表上是灾难——它会重写每一行并持有 ACCESS EXCLUSIVE 锁，期间业务停摆。正确姿势：分两步（先加无默认值的列，再 UPDATE 填值），或用 `pg_repack` 在线重组。索引同理，加 `CONCURRENTLY` 才不锁表。
+
+4. **复制延迟**：异步流复制（默认）是"主写完就返回，从库慢慢追"。主库挂了瞬间切换，**未复制完的数据会丢**。要"绝对不丢"必须用同步复制（`synchronous_commit=on`），但延迟会涨。这是 CAP 取舍，不是 bug。
+
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 中重度业务系统（电商 / SaaS / 金融）——事务 / 一致性 / 复杂查询都强
+- AI / RAG 应用——pgvector 一栈搞定向量
+- 地理信息（PostGIS 是行业事实标准）
+- 需要 JSON + SQL 混合的应用——避免"一半 Mongo 一半 MySQL"的双写
+
+**不适用**：
+
+- 极致写吞吐（每秒百万写入） → Cassandra / ScyllaDB 更合适
+- 简单 KV 缓存 → Redis 比 PG 快几十倍
+- 嵌入式 / 移动端单文件存储 → SQLite 更合适
+- 时序数据极致压缩 → TimescaleDB（其实也是 PG 扩展）/ ClickHouse
+
+## 历史小故事（可跳过）
+
+- **1986 年**：Berkeley 教授 Michael Stonebraker 启动 Postgres 项目，目标是改进 1970s 的 INGRES。早期版本用 QUEL 查询语言。
+- **1995 年**：Postgres95 加了 SQL 支持，从此世界都说 SQL。
+- **1996 年**：改名 PostgreSQL，社区接管，开源协议（PostgreSQL License，类 BSD）。
+- **2010 年代**：9.x 版本系列引入 JSON / 物化视图 / streaming replication，从"传统关系库"跨进"现代多模数据库"。
+- **2024 年**：PG16/17 引入逻辑复制改进、JSON Path、并行查询能力大幅增强，pgvector 走红让 PG 成为 AI 基础设施。
+
+40 年后，PostgreSQL 仍然是开源数据库领域功能最全、生态最活跃的一个。
+
+## 学到什么
+
+1. **MVCC 是"读不阻塞写、写不阻塞读"的工程根基**——没有它，长事务跑分析查询会让前台业务全卡住。
+2. **扩展系统是 PostgreSQL 的护城河**——一个能装 pgvector / TimescaleDB / PostGIS 的引擎，比"什么都内置"灵活得多。
+3. **进程模型 vs 线程模型**：MySQL 选了线程（轻量但隔离弱），PG 选了进程（重但稳）——架构选择没有对错，只有取舍。
+4. **生产数据库选型默认 PostgreSQL**——除非你有非常具体的反对理由，否则它几乎总是对的。
+
+## 延伸阅读
+
+- 官方教程：[PostgreSQL Tutorial](https://www.postgresql.org/docs/current/tutorial.html)（从 0 学，10 章）
+- 进阶必读：[Use The Index, Luke!](https://use-the-index-luke.com/)（讲 SQL 索引的圣经，PG 友好）
+- pgvector 教程：[supabase/blog/openai-embeddings](https://supabase.com/blog/openai-embeddings-postgres-vector)（一篇文章把向量检索讲透）
+- [[sql]] —— PostgreSQL 实现的查询语言
+- [[mysql]] —— 它的"商业死敌"，对比着学最好
+
+## 关联
+
+- [[sql]] —— 关系数据库通用查询语言；PG 是它最完整的开源实现
+- [[mysql]] —— 另一主流开源关系库；线程模型 vs PG 进程模型
+- [[redis]] —— 当 PG 不够快时的缓存层
+- [[sqlite]] —— 嵌入式场景的对应选择
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
