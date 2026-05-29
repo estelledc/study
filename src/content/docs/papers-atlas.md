@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 130 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 131 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：130 篇
+- **总数**：131 篇
 - **已分类**：130
+- **未分类**：1（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -35,6 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
+| [其他 / 待分类](#其他--待分类) | 1 |
 
 ---
 
@@ -287,9 +289,17 @@ sidebar:
 | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | ICPC 2009 用 85 名工程师 10,000 个 IDE 会话证明只有 10% 能在 1 分钟内恢复编码，30% 编辑滞后超过 30 分钟 |
 | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | IEEE TSE 2008 用 25 名 industrial 程序员 + 9 名实验室程序员的录像归纳出 4 大类共 44 个问题，成为 IDE / Code Search / LLM agent 的隐性 refer… |
 
+## 其他 / 待分类
+
+共 1 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+
+| Slug | 论文 |
+|---|---|
+| `mccarthy-lisp` | [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) |
+
 ---
 
-## 全部 130 篇（字母序）
+## 全部 131 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -365,6 +375,7 @@ sidebar:
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
+| `mccarthy-lisp` | [McCarthy LISP — Recursive Functions of Symbolic Expressions](/study/papers/mccarthy-lisp/) | 其他 |
 | `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `metagpt` | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |

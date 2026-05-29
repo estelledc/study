@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 145 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 146 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：145 个
-- **已分类**：145
+- **总数**：146 个
+- **已分类**：146
 
 ### 按主题分布
 
@@ -42,7 +42,7 @@ sidebar:
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
-| [CLI / 命令行工具](#cli---命令行工具) | 4 |
+| [CLI / 命令行工具](#cli---命令行工具) | 5 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -355,10 +355,11 @@ sidebar:
 
 ## CLI / 命令行工具
 
-共 4 个。
+共 5 个。
 
 | 项目 | 描述 |
 |---|---|
+| [@clack/prompts: 用 ANSI 重新发明 CLI 交互](/study/projects/clack/) |  |
 | [commander.js](/study/projects/commander/) |  |
 | [ink](/study/projects/ink/) |  |
 | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) |  |
@@ -376,7 +377,7 @@ sidebar:
 
 ---
 
-## 全部 145 个（字母序）
+## 全部 146 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -392,6 +393,7 @@ sidebar:
 | `changesets` | [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | Monorepo / 包管理 |
 | `chatwoot` | [chatwoot — 不是再做一个 Intercom，是把"客服 SaaS"做成开源 + 自托管 + 11 类渠道全归一到 messages 表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chroma` | [chroma — 不是 Pinecone 替代，是把向量检索拉回本地的 5 行 SDK](/study/projects/chroma/) | AI 应用 / Agent 平台 |
+| `clack` | [@clack/prompts: 用 ANSI 重新发明 CLI 交互](/study/projects/clack/) | CLI / 命令行工具 |
 | `claude-code` | [Claude Code — 一个 LLM-runtime 暴露成 5 种 surface 的 agentic 产品](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
 | `clerk` | [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | Auth 认证 |
 | `codemirror` | [codemirror — 编辑器不是一个类，是一组 Facet 的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
