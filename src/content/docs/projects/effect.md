@@ -156,6 +156,7 @@ const openLog = Effect.acquireRelease(
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hono]] —— Hono — 多运行时 Web 框架
+- [[inngest]] —— Inngest — durable workflow 的事件溯源
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[zod]] —— Zod — TypeScript-first schema 验证

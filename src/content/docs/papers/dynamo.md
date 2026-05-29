@@ -165,6 +165,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

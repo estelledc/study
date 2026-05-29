@@ -114,7 +114,24 @@ async function scanDir(dir, area) {
   return results;
 }
 
+async function loadExistingStatus() {
+  // 保留已 written / failed 状态，避免覆盖
+  try {
+    const raw = await fs.readFile(OUT_PATH, 'utf8');
+    const lines = raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
+    const map = new Map();
+    for (const x of lines) {
+      map.set(`${x.area}::${x.slug}`, x);
+    }
+    return map;
+  } catch (err) {
+    if (err.code === 'ENOENT') return new Map();
+    throw err;
+  }
+}
+
 async function main() {
+  const incremental = process.argv.includes('--incremental') || process.argv.includes('-i');
   await fs.mkdir(path.dirname(OUT_PATH), { recursive: true });
   const papers = await scanDir(PAPERS_DIR, 'papers');
   const projects = await scanDir(PROJECTS_DIR, 'projects');
@@ -124,18 +141,25 @@ async function main() {
   const pool = all.filter(x => x.score >= 1);
   pool.sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug));
 
-  const out = pool.map(x => JSON.stringify({
-    slug: x.slug,
-    area: x.area,
-    path: x.path,
-    score: x.score,
-    reasons: x.reasons,
-    lines: x.lines,
-    h2_hits: x.h2_hits,
-    status: 'available',
-    claimed_by: null,
-    attempts: 0,
-  })).join('\n') + '\n';
+  const existing = incremental ? await loadExistingStatus() : new Map();
+
+  const out = pool.map(x => {
+    const key = `${x.area}::${x.slug}`;
+    const prev = existing.get(key);
+    return JSON.stringify({
+      slug: x.slug,
+      area: x.area,
+      path: x.path,
+      score: x.score,
+      reasons: x.reasons,
+      lines: x.lines,
+      h2_hits: x.h2_hits,
+      // incremental: 保留 written / failed 状态；available / claimed 视新分数刷新
+      status: prev && (prev.status === 'written' || prev.status === 'failed') ? prev.status : 'available',
+      claimed_by: null,
+      attempts: prev?.attempts || 0,
+    });
+  }).join('\n') + '\n';
   await fs.writeFile(OUT_PATH, out);
 
   // 统计

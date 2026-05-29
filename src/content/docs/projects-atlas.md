@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 237 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 239 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：237 个
+- **总数**：239 个
 - **已分类**：206
-- **未分类**：31（落入"其他 / 待分类"段）
+- **未分类**：33（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 31 |
+| [其他 / 待分类](#其他--待分类) | 33 |
 
 ---
 
@@ -278,7 +278,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) |  |
-| [lerna — JS monorepo 第一代工具，2022 EOL 后被 Nx 收编的代际故事](/study/projects/lerna/) | 不是另一个 monorepo 工具，是 monorepo 工具的"祖宗"——bootstrap + version + publish 三步流程定义了 2017-2020 整个生态 |
+| [lerna — 一仓多包发版的祖宗工具](/study/projects/lerna/) |  |
 | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | 从 Angular CLI 演化而来的 monorepo 元框架，靠 project graph + executor 抽象 + Nx Cloud DTE 把任务编排做到企业级 monorepo 的极致 |
 | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | 不是更快的 npm，是把"每个项目都复制一遍 node_modules"这件事重写成"全机器一份 store + 硬链接"——磁盘 50% 节省、phantom dependency 编译期可见、workspace p… |
 | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Vercel 把 Jared Palmer 的 TS 版 turborepo 用 Rust 重写——task graph 拓扑序 + 本地/远程 cache 多路复用 + tokio 并行 runner，让"改一个包重… |
@@ -489,13 +489,13 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 用 step |
+| [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) |  |
 | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 倒排索引 + Radix Tree + BM25 + Levenshtein 矩阵剪枝，全部纯 TS 跑在 V8 里——证明大部分搜索场景根本不需要 server |
 | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 一个 storage interface + driver registry 跑通 fs/redis/s3/cloudflare-kv/upstash 等 35+ backend |
 
 ## 其他 / 待分类
 
-共 31 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 33 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -513,9 +513,11 @@ sidebar:
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
+| `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
+| `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
@@ -533,7 +535,7 @@ sidebar:
 
 ---
 
-## 全部 237 个（字母序）
+## 全部 239 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -602,10 +604,12 @@ sidebar:
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | 其他 |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 其他 |
+| `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
+| `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
@@ -631,7 +635,7 @@ sidebar:
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
 | `langfuse` | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
-| `lerna` | [lerna — JS monorepo 第一代工具，2022 EOL 后被 Nx 收编的代际故事](/study/projects/lerna/) | Monorepo / 包管理 |
+| `lerna` | [lerna — 一仓多包发版的祖宗工具](/study/projects/lerna/) | Monorepo / 包管理 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |

@@ -159,6 +159,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
+- [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

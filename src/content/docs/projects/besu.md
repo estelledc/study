@@ -152,6 +152,7 @@ System.out.println("最新块号: " + bn.getBlockNumber());
 
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端

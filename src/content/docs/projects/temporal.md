@@ -164,4 +164,5 @@ export async function bookTrip(tripId: string) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[inngest]] —— Inngest — durable workflow 的事件溯源
 

@@ -164,6 +164,7 @@ def step(prog, state):
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

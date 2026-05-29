@@ -158,6 +158,7 @@ Erigon 的省空间 + 快同步靠**三个机制**叠加：
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端

@@ -147,3 +147,8 @@ jstat -gcutil <pid> 1000
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收
+- [[tcp]] —— TCP Transmission Control Protocol
+- [[tofte-talpin-regions]] —— Tofte-Talpin Region-Based Memory Management
+
