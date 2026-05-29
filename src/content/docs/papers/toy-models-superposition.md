@@ -144,3 +144,6 @@ Anthropic 后来在 GPT-2 Small 里观察到：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
+

@@ -145,9 +145,11 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO Direct Preference Optimization
+- [[dqn]] —— DQN — Deep Q-Network
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)

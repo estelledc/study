@@ -147,6 +147,7 @@ ORDER BY date;
 - [[bigtable]] —— Bigtable 分布式结构化存储
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[dns]] —— DNS Domain Name System
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库

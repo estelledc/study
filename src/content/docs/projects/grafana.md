@@ -132,8 +132,10 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[influxdb]] —— InfluxDB — 专用时序数据库
+- [[jaeger]] —— Jaeger — 分布式追踪系统
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[terraform]] —— Terraform — 基础设施即代码
+- [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代
 

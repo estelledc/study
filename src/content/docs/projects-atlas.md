@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 203 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 207 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：203 个
-- **已分类**：203
+- **总数**：207 个
+- **已分类**：206
+- **未分类**：1（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -26,9 +27,9 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 18 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 19 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
-| [监控 / 时序](#监控---时序) | 4 |
+| [监控 / 时序](#监控---时序) | 6 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
@@ -51,6 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
+| [其他 / 待分类](#其他--待分类) | 1 |
 
 ---
 
@@ -163,7 +165,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 18 个。
+共 19 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -171,6 +173,7 @@ sidebar:
 | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) |  |
 | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) |  |
 | [Dgraph — 分布式图数据库](/study/projects/dgraph/) |  |
+| [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) |  |
 | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
 | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
 | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) |  |
@@ -207,14 +210,16 @@ sidebar:
 
 ## 监控 / 时序
 
-共 4 个。
+共 6 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Grafana — 监控可视化看板](/study/projects/grafana/) |  |
 | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) |  |
+| [Jaeger — 分布式追踪系统](/study/projects/jaeger/) |  |
 | [Prometheus — 时序监控系统](/study/projects/prometheus/) |  |
 | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) |  |
+| [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) |  |
 
 ## Web 框架
 
@@ -488,9 +493,17 @@ sidebar:
 | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 倒排索引 + Radix Tree + BM25 + Levenshtein 矩阵剪枝，全部纯 TS 跑在 V8 里——证明大部分搜索场景根本不需要 server |
 | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 一个 storage interface + driver registry 跑通 fs/redis/s3/cloudflare-kv/upstash 等 35+ backend |
 
+## 其他 / 待分类
+
+共 1 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+
+| Slug | 项目 |
+|---|---|
+| `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
+
 ---
 
-## 全部 203 个（字母序）
+## 全部 207 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -531,6 +544,7 @@ sidebar:
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docusaurus` | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | 文档站点 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
+| `duckdb` | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) | 数据库本体 / 存储引擎 |
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `echarts` | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 数据可视化 |
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
@@ -556,6 +570,7 @@ sidebar:
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
 | `ink` | [ink](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
+| `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [Jimp 纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
@@ -612,6 +627,7 @@ sidebar:
 | `oxc` | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在生产环境真正用得上](/study/projects/patchright/) | AI 浏览器自动化 |
 | `penpot` | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
+| `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
 | `pixi` | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
@@ -680,6 +696,7 @@ sidebar:
 | `valtio` | [valtio — 让 state.count++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vercel-ai` | [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
+| `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
 | `visx` | [visx Airbnb React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue + Vite 文档框架，零 framework 重负的 SSG](/study/projects/vitepress/) | 文档站点 |

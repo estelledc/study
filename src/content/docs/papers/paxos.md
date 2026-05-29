@@ -153,6 +153,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是这种 Multi-Paxos with leader 形�
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
+- [[resnet]] —— ResNet — 残差连接
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tcp]] —— TCP Transmission Control Protocol
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3

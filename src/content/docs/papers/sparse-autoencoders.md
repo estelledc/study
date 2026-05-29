@@ -130,3 +130,6 @@ SAE 的全部秘密就**三件事**：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[toy-models-superposition]] —— Toy Models of Superposition
+

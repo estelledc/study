@@ -169,6 +169,7 @@ LIMIT 5;
 - [[dgraph]] —— Dgraph — 分布式图数据库
 - [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[influxdb]] —— InfluxDB — 专用时序数据库
@@ -178,6 +179,7 @@ LIMIT 5;
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
+- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
