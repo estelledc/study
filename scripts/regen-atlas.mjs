@@ -69,7 +69,7 @@ const THEMES_PAPERS = {
     'turing-1936', 'lambda-calculus', 'cook-levin', 'karp-21', 'godel-1931',
   ],
   '信息论 / 编码理论': [
-    'shannon-1948', 'huffman-1952', 'hamming-1950', 'reed-solomon-1960',
+    'shannon-1948', 'huffman-1952', 'hamming-1950', 'reed-solomon-1960', 'polar-codes-2009',
   ],
   '密码学 / 安全': [
     'diffie-hellman', 'rsa', 'aes', 'bitcoin', 'zk-snark',
@@ -163,7 +163,7 @@ const THEMES_PROJECTS = {
     'tailwind', 'emotion', 'styled-components', 'stylex', 'vanilla-extract',
   ],
   'CLI / 命令行工具': [
-    'yargs', 'commander', 'ink',
+    'yargs', 'commander', 'ink', 'oclif',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
