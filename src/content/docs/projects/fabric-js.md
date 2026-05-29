@@ -42,7 +42,7 @@ tags: [canvas, fabric, object-model, event-system, javascript, design-tool, edit
 
 简而言之：**只要浏览器里出现"可拖拽的图形"，fabric 就有可能在背后撑场**。
 
-![Canvas + Object Model + Event Layer](01-canvas-objects.webp)
+![Canvas + Object Model + Event Layer](/study/projects/fabric-js/01-canvas-objects.webp)
 
 ## 起源故事
 
