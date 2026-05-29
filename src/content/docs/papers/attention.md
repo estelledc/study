@@ -131,3 +131,18 @@ base 模型用 8 个头，每个头独立学。常见现象：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[alphago]] —— AlphaGo Mastering Go with Deep Neural Networks
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[dns]] —— DNS Domain Name System
+- [[dpo]] —— DPO Direct Preference Optimization
+- [[dqn]] —— DQN Deep Q-Network 深度强化学习
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[muzero]] —— MuZero Mastering Games by Planning with Learned Model
+- [[ppo]] —— PPO Proximal Policy Optimization
+- [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
+- [[t5]] —— T5 Text-to-Text Transfer Transformer
+- [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
+- [[word2vec]] —— Word2Vec 词向量分布式表示
+

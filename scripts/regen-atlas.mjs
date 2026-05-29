@@ -113,6 +113,11 @@ const THEMES_PROJECTS = {
     'prisma', 'drizzle', 'kysely', 'typeorm', 'sequelize',
     'mikro-orm', 'postgres-js', 'duckdb-wasm',
   ],
+  '数据库本体 / 存储引擎': [
+    'postgresql', 'redis', 'sqlite', 'clickhouse', 'mongodb',
+    'cockroachdb', 'tidb', 'cassandra', 'mariadb', 'mysql',
+    'rocksdb', 'leveldb', 'lmdb', 'valkey', 'duckdb',
+  ],
   'Web 框架': [
     'hono', 'fastify', 'express', 'koa', 'nestjs', 'elysia',
   ],

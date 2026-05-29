@@ -139,3 +139,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+

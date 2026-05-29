@@ -168,6 +168,8 @@ gsap.to(".box", {
 
 - [[d3]] —— d3.js 数据驱动文档
 - [[echarts]] —— Apache ECharts 配置式数据可视化
+- [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[observable-plot]] —— Observable Plot Grammar of Graphics in JS
+- [[react]] —— React UI 组件库
 - [[visx]] —— visx Airbnb React 可视化原语
 
