@@ -161,6 +161,7 @@ PartTimeEmployee ⊂ Employee
 
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化

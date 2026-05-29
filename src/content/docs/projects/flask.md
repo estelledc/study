@@ -187,6 +187,7 @@ def list_users():
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[hono]] —— Hono — 多运行时 Web 框架
+- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐

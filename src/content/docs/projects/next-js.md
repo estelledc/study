@@ -150,6 +150,7 @@ export default Page
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[hono]] —— Hono — 多运行时 Web 框架
+- [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[prisma]] —— Prisma — 类型安全 ORM

@@ -153,6 +153,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）

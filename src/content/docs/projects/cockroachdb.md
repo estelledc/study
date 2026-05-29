@@ -153,6 +153,7 @@ ALTER TABLE users CONFIGURE ZONE USING
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[raft]] —— Raft — 易理解的共识算法

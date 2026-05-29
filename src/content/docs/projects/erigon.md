@@ -155,5 +155,9 @@ Erigon 的省空间 + 快同步靠**三个机制**叠加：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 

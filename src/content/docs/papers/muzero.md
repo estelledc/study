@@ -136,6 +136,7 @@ DeepMind 2022 报告，把 MuZero 用在 YouTube 视频编码器（VP9）的 RD�
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[attention]] —— Attention Is All You Need
 - [[dqn]] —— DQN — Deep Q-Network
+- [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[ppo]] —— PPO — Proximal Policy Optimization
 

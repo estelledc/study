@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 156 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 158 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：156 篇
+- **总数**：158 篇
 - **已分类**：143
-- **未分类**：13（落入"其他 / 待分类"段）
+- **未分类**：15（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 13 |
+| [其他 / 待分类](#其他--待分类) | 15 |
 
 ---
 
@@ -157,7 +157,7 @@ sidebar:
 | [Calvin — 不要每次都协商，先排好顺序大家照做](/study/papers/calvin/) |  |
 | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | VLDB 2024 ClickHouse 论文精读 — 列存 + vectorized + MergeTree 如何把 OLAP 推到极致 |
 | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) |  |
-| [FoundationDB (Zhou et al. 2021) — Unbundled 分布式 KV + Sim2 确定性仿真：用 10 年 CI 把 bug 烧在设计期](/study/papers/foundationdb/) | 不是又一个 NewSQL |
+| [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) |  |
 | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 第一个把 broker 当 append-only file、把 offset 当消费者状态而不是服务器状态、把 page cache + sendfile 当吞吐杠杆的消息系统 |
 | [LSM-tree 与 RocksDB 状元篇](/study/papers/rocksdb-lsm/) | O'Neil 1996 LSM-tree 原始论文 + Facebook RocksDB 2014/2017 工程论文综合精读 — 顺序写 + 后台 merge 如何取代原地更新 |
 | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) |  |
@@ -292,7 +292,7 @@ sidebar:
 | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) |  |
 | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) |  |
 | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 状元篇：不到 1000 字的 letter 如何掀翻一个时代——goto 让程序的'静态文本'与'动态执行'错位，结构化编程三件套（顺序/选择/循环）让每个文本位置的状态可推 |
-| [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | 从 Ebbinghaus forgetting curve 到 Leitner 1972 box / SuperMemo SM-2 (1990) / SSP shortest path (2022)，演化到 Anki … |
+| [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) |  |
 | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | 半结构化访谈 59 位资深工程师 + manager，open coding 归纳 53 条具体属性 / 8 大类别 |
 | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | Hoare Logic v1 |
 | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | Butler Lampson 1983 SOSP keynote 论文笔记：functionality / performance / correctness 三大类 27 条 hints，含 14 个 Definit… |
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 13 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 15 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -313,6 +313,8 @@ sidebar:
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
+| `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
+| `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
@@ -324,7 +326,7 @@ sidebar:
 
 ---
 
-## 全部 156 篇（字母序）
+## 全部 158 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -384,13 +386,15 @@ sidebar:
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
 | `flash-attention` | [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 分布式训练 / GPU |
-| `foundationdb` | [FoundationDB (Zhou et al. 2021) — Unbundled 分布式 KV + Sim2 确定性仿真：用 10 年 CI 把 bug 烧在设计期](/study/papers/foundationdb/) | 数据库 |
-| `fsrs-spaced-repetition` | [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
+| `foundationdb` | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) | 数据库 |
+| `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
 | `generational-gc` | [Generational Garbage Collection — 分代假设与跨代引用追踪](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gfs` | [GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利](/study/papers/gfs/) | OS / 集群管理 / 系统 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
+| `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) | 其他 |
 | `graphrag` | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | 智能体与 LLM 系统 |
+| `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 其他 |
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |

@@ -155,6 +155,8 @@ GROUP BY customer_id;
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[dns]] —— DNS Domain Name System
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport

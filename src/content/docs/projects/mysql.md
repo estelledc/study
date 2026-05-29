@@ -149,6 +149,7 @@ START SLAVE;
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[grafana]] —— Grafana — 监控可视化看板
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库

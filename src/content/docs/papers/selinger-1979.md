@@ -149,7 +149,7 @@ Seq Scan on orders  (cost=0.00..1234.56 rows=5000 width=64)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

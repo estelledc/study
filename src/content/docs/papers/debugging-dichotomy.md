@@ -158,4 +158,6 @@ inspect 变量    ████████████              58%
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 

@@ -165,3 +165,7 @@ simulation 模式启动：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+

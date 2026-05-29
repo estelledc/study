@@ -179,6 +179,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库

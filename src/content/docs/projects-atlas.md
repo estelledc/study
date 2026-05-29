@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 227 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 229 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：227 个
+- **总数**：229 个
 - **已分类**：206
-- **未分类**：21（落入"其他 / 待分类"段）
+- **未分类**：23（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 21 |
+| [其他 / 待分类](#其他--待分类) | 23 |
 
 ---
 
@@ -289,7 +289,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 把 Promise 升级成 Effect 类型，把 throw 换成可追踪 cause，把 try/finally 换成自动资源清理 |
+| [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) |  |
 | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 拆解 immer 如何用 ES6 Proxy 拦截写操作、构造 draft、最后 finalize 出新对象，并对比 Immutable |
 | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) |  |
 | [MobX — Reactive state via TFRP](/study/projects/mobx/) |  |
@@ -398,7 +398,7 @@ sidebar:
 | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) |  |
 | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) |  |
 | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) |  |
-| [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 大型应用范例——124k stars 背后的"四轨同核"架构判断，以及一处经常被误读的"P2P/E2E"叙事 |
+| [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) |  |
 | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 大型应用范例——102k stars 的 Google Photos 替代品，TS 后端 + Python ML 服务 + Postgres + Redis + Object Storage 五件套同核运行 |
 | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 大型应用范例，48k stars 背后的"common/ |
 | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 大型应用范例——49 |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 21 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 23 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -512,6 +512,8 @@ sidebar:
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
+| `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
+| `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -523,7 +525,7 @@ sidebar:
 
 ---
 
-## 全部 227 个（字母序）
+## 全部 229 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -574,7 +576,7 @@ sidebar:
 | `duckdb` | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) | 数据库本体 / 存储引擎 |
 | `duckdb-wasm` | [duckdb-wasm — 把分析数据库塞进浏览器标签页](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `echarts` | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 数据可视化 |
-| `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
+| `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
 | `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | 数据库本体 / 存储引擎 |
 | `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
@@ -582,7 +584,7 @@ sidebar:
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) | 其他 |
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
-| `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
+| `excalidraw` | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
 | `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
@@ -619,9 +621,11 @@ sidebar:
 | `lerna` | [lerna — JS monorepo 第一代工具，2022 EOL 后被 Nx 收编的代际故事](/study/projects/lerna/) | Monorepo / 包管理 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
 | `librechat` | [LibreChat — 不是再做一个 ChatGPT 替代品，是把"chat 应用"和"模型供应商"解耦成可热插拔的 provider 抽象层](/study/projects/librechat/) | AI 应用 / Agent 平台 |
+| `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |
 | `lightningcss` | [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui 编译期提取的 React i18n](/study/projects/lingui/) | i18n 国际化 |
 | `listr2` | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) | Terminal / 终端 |
+| `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lucia` | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | Auth 认证 |

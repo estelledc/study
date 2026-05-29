@@ -145,6 +145,7 @@ client read key="foo"
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 
