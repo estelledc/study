@@ -1,436 +1,171 @@
 ---
-title: TypeORM Decorator-based ORM
-来源: https://github.com/typeorm/typeorm + typeorm.io 官方文档
+title: TypeORM — Decorator-based ORM
+来源: https://github.com/typeorm/typeorm
+日期: 2026-05-29
+分类: ORM
+难度: 中级
 ---
 
-# TypeORM — Decorator + 双模式 Node.js ORM
+## 是什么
 
-## 一句话总结（≥ 14 行）
+TypeORM 是 **Node.js 上的一种 ORM**（对象关系映射器）——你用 TypeScript 写 class，它帮你把 class 翻译成数据库表的增删改查 SQL。
 
-TypeORM 是 Umed Khudoiberdiev（@pleerock）2017 年开源的 TypeScript / JavaScript ORM。weekly downloads ~3M，曾经是 NestJS 默认 ORM 与 Node.js TypeScript 项目的事实标准（2017-2022）。但 Prisma 2020 年出现 + Drizzle 2023 年崛起后，TypeORM 市场份额持续被蚕食。
+它最大的特点是 **装饰器风格**：你不另开一个 schema 文件，直接在 class 字段上贴 `@Entity()` `@Column()` `@OneToMany()` 这种"小标签"，描述每列长什么样、和哪张表有关系。
 
-设计哲学三个支柱：
-1. **Decorator-based 元数据**：用 `@Entity()` `@Column()` `@OneToMany()` 装饰 class，由 `reflect-metadata` 在 runtime 收集
-2. **同时支持 DataMapper + ActiveRecord 两种 ORM 范式**：用户可选 `repository.find()` 或 `entity.save()`
-3. **多 driver 矩阵**：PostgreSQL / MySQL / MariaDB / SQLite / MS SQL / Oracle / SAP HANA / MongoDB / 等 10+
+日常类比：
 
-技术 baggage：
-- TypeScript decorator 是 stage 2 提案（2017 起 experimental flag），TS 5+ 引入新版 decorator 不兼容旧版
-- `emitDecoratorMetadata` + `reflect-metadata` 增加 bundle + cold start 成本
-- Repository / EntityManager / QueryBuilder 三套 API 重叠让用户困惑
+- [[prisma]] 像"先写一份 schema.prisma 设计图，再让工具按图施工"
+- TypeORM 像"在 class 旁边贴便利贴，每张便利贴说一件事——`这是表`、`这是主键`、`这一列对外键`"
+- [[drizzle]] / [[kysely]] 像"我直接拼 SQL，但拼得有类型保护"
 
-2024 状态：仍是 Node.js ORM 第三档（Prisma > Drizzle > TypeORM），但维护节奏放缓，新项目几乎不选。
+四种风格各有粉丝。TypeORM 的便利贴风格在 [[nest]] 早期是默认搭档，写起来像 Java 的 JPA / Hibernate。
 
-## Layer 0 — 项目档案速查（≥ 17 字段）
+## 为什么重要
 
-| 字段 | 值 |
-|---|---|
-| 包名 | `typeorm` |
-| 当前主版本 | v0.3.x（2024，仍 0.x） |
-| 首版 | 2016-12 / v0.1（2017-04 流行）|
-| License | MIT |
-| 主仓库 | typeorm/typeorm |
-| 维护 | Umed Khudoiberdiev + 200+ contributors |
-| TypeScript 要求 | ≥ 4.5（experimentalDecorators） |
-| Node 要求 | ≥ 16 |
-| Bundle | ~5 MB（含 reflect-metadata + 多 driver） |
-| 数据库 | PostgreSQL / MySQL / MariaDB / SQLite / MS SQL / Oracle / SAP HANA / MongoDB / Cordova SQLite / NativeScript / Expo |
-| 范式 | DataMapper + ActiveRecord（双支持）|
-| Migrations | 内置（cli typeorm migration:generate） |
-| Weekly downloads | ~3M |
-| GitHub stars | 33k+ |
-| 集成 | NestJS（@nestjs/typeorm）+ AdminJS |
-| 商业版 | 无 |
-| 文档站 | typeorm.io |
+不了解 TypeORM，下面这些事不太好理解：
 
-## Layer 1 — 核心抽象（≥ 30 行）
+- 为什么 [[nest]] 教程里 entity 都长成 `@Entity() class User { ... }` 的样子——那是 TypeORM 风格
+- 为什么从 Java 转 Node 的工程师特别喜欢它——它和 Hibernate / Spring Data JPA 几乎一个气味
+- 为什么同一个 ORM 既能写 `repo.find()`（Data Mapper）又能写 `user.save()`（Active Record）——它两种范式都收
+- 为什么它支持那么多数据库（PostgreSQL / MySQL / SQLite / MS SQL / MongoDB 等 10+）——driver 是抽出来的，换 DB 只换 type 字段
+- 它和 [[prisma]] / [[drizzle]] / [[kysely]] 一起组成现在 Node ORM 的 "四强"，互相参考也互相竞争
+
+## 核心要点
+
+TypeORM 的工作方式可以拆成 **三块**：
+
+1. **用装饰器定义 Entity**：在 class 上贴 `@Entity()`，在字段上贴 `@Column()` / `@PrimaryGeneratedColumn()` / `@OneToMany()`。这些便利贴在程序启动时被收集起来，组装成"这张表长什么样"的元数据。
+
+2. **Migration（迁移）自动生成 + 手动写**：你改了 entity（比如多加一个字段），跑 `typeorm migration:generate`，它对比"当前 entity 想要的样子"和"数据库现在的样子"，自动写出一份 SQL 迁移脚本。生产环境再跑 `migration:run` 把这份脚本应用到真实数据库。
+
+3. **两种查询 API 共存**：
+   - **Data Mapper**：`dataSource.getRepository(User).find(...)`，把 entity 当纯数据，仓库管增删改查
+   - **Active Record**：`User.find(...)` / `user.save()`，entity 自己带 CRUD 方法
+
+两种风格写法不同，但底下走的是同一套 SQL 生成。
+
+## 实践案例
+
+### 案例 1：定义一张表
 
 ```ts
-import "reflect-metadata";
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany, DataSource} from "typeorm";
+import 'reflect-metadata'
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
 @Entity()
 class User {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: number
 
-  @Column({length: 100})
-  name!: string;
+  @Column({ length: 100 })
+  name!: string
 
-  @Column({unique: true})
-  email!: string;
-
-  @OneToMany(() => Post, post => post.author)
-  posts!: Post[];
+  @Column({ unique: true })
+  email!: string
 }
-
-@Entity()
-class Post {
-  @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column()
-  title!: string;
-
-  @ManyToOne(() => User, user => user.posts)
-  author!: User;
-}
-
-const dataSource = new DataSource({
-  type: "postgres",
-  host: "localhost",
-  database: "app",
-  entities: [User, Post],
-  synchronize: false,  // 生产环境 false，用 migration
-  logging: true
-});
-
-await dataSource.initialize();
-
-// DataMapper 模式
-const userRepository = dataSource.getRepository(User);
-const users = await userRepository.find({where: {name: "Alice"}, relations: ["posts"]});
-
-// ActiveRecord 模式
-const user = User.create({name: "Bob", email: "b@y.com"});
-await user.save();
 ```
 
-四要素：
+逐部分读：
 
-1. **Entity 装饰器** —— `@Entity()` `@Column()` `@PrimaryColumn()` `@OneToMany()` 等装饰器集合定义 schema
-2. **DataSource** —— 替代 v0.2 的 Connection，是 ORM 实例 + 连接池
-3. **Repository** —— DataMapper 模式入口（`getRepository(User).find()`）
-4. **BaseEntity** —— ActiveRecord 基类（`User extends BaseEntity` 后 `user.save()`）
+- `@Entity()` 贴在 class 上：告诉 TypeORM "这个 class 对应一张表"，表名默认是 class 名小写
+- `@PrimaryGeneratedColumn()`：这一列是主键，自增
+- `@Column({ length: 100 })`：普通列，长度 100；`{ unique: true }` 加唯一约束
+- `import 'reflect-metadata'` 必须放在最前——它是装饰器读取字段类型的运行时基础
 
-## Layer 2 — 内部架构（≥ 30 行）
-
-工程要点：
-
-1. **`reflect-metadata` polyfill**：用 `emitDecoratorMetadata` + `Reflect.metadata("design:type", ...)` 在 runtime 拿到 class field 类型
-2. **MetadataArgsStorage**：所有装饰器把 args push 到全局 metadata array，DataSource 启动时收集
-3. **EntityMetadata**：build 阶段把 args 编译成 EntityMetadata 对象（含 columns / relations / indices / foreign keys）
-4. **Driver 抽象**：每个数据库一个 driver class（PostgresDriver / MysqlDriver / SqliteDriver），处理 connection / query 转换
-5. **QueryBuilder**：用户级 SQL builder（`createQueryBuilder().select().where()`），生成 dialect-specific SQL
-6. **EntityManager**：跨 entity 操作（事务 / 批量），是 Repository 的父类
-
-工作流：
-
-```
-1. 用户写 @Entity() class User
-2. import "reflect-metadata" 注册全局 Reflect API
-3. 装饰器 @Entity / @Column 推 args 到 MetadataArgsStorage
-4. new DataSource({entities: [User]}) → 收集 metadata
-5. dataSource.initialize() → 建立连接 + 编译 EntityMetadata
-6. userRepository.find({where: {name: "Alice"}}) → QueryBuilder 生成 SELECT
-7. driver.query(sql, params) → DB 返回行
-8. row → entity 实例（field 赋值 + relation hydration）
-```
-
-## Layer 3 — 精读 3 段（每段 ≥ 5 旁注 + ≥ 1 怀疑）
-
-### 段 a — Decorator + emitDecoratorMetadata（≥ 30 行）
+### 案例 2：查询和过滤
 
 ```ts
-@Entity()
-class User {
-  @Column()
-  name: string;
-}
+const userRepo = dataSource.getRepository(User)
 
-// 编译期 TypeScript 转译为：
-class User {
-  name: string;
-}
-__decorate([
-  Column(),
-  __metadata("design:type", String)
-], User.prototype, "name", void 0);
-__decorate([Entity()], User);
-```
-
-旁注：
-
-1. `__decorate` 调用每个装饰器函数，传 (target, key, descriptor)
-2. `__metadata("design:type", String)` 用 `Reflect.defineMetadata` 存类型信息
-3. 装饰器内部用 `Reflect.getMetadata("design:type", target, key)` 拿类型
-4. **TS 5.0 新 decorator 规范不同**（无 `__metadata`），TypeORM 仍依赖旧版（experimentalDecorators=true）
-5. 这意味着 TypeORM 与 TS 5+ Stage 3 decorator 不兼容，长期是 baggage
-6. cold start 成本：reflect-metadata polyfill ~50 KB；每个装饰器 ~5 ms 注册
-
-> 怀疑：TS 5.0 stage 3 decorator 是未来标准，TypeORM 仍依赖 experimentalDecorators 旧版。如果 TypeScript 7+ 移除旧版（已 deprecated），TypeORM 会怎样？我猜：要么大重写（v1.0 时机），要么社区分裂。
-
-### 段 b — DataMapper vs ActiveRecord（≥ 30 行）
-
-DataMapper 模式：
-
-```ts
-const repo = dataSource.getRepository(User);
-const user = await repo.findOne({where: {id: 1}});
-user!.name = "Alice";
-await repo.save(user!);
-```
-
-ActiveRecord 模式：
-
-```ts
-class User extends BaseEntity {
-  @Column() name!: string;
-}
-
-const user = await User.findOne({where: {id: 1}});
-user!.name = "Alice";
-await user!.save();
-```
-
-旁注：
-
-1. DataMapper：entity 是纯数据，操作通过 Repository
-2. ActiveRecord：entity 自带 CRUD（`save / remove / reload`）
-3. 双模式共存让用户困惑（"我该用哪种？"）
-4. 大型项目 DataMapper 推荐（业务层与持久化分离）
-5. 小项目 ActiveRecord 简洁
-
-> 怀疑：DataMapper / ActiveRecord 双模式让用户困惑。Drizzle / Prisma 都只选一种（DataMapper-like）。"灵活"反而成劣势？我猜：是。这是 TypeORM 设计阶段没收敛 ORM 范式的代价。
-
-### 段 c — QueryBuilder vs Repository.find()（≥ 30 行）
-
-```ts
-// Repository.find()（高层）
-const users = await repo.find({
-  where: {name: "Alice", age: MoreThan(18)},
-  relations: ["posts"],
-  order: {createdAt: "DESC"},
-  take: 10
-});
-
-// QueryBuilder（低层）
-const users = await dataSource
-  .createQueryBuilder(User, "user")
-  .leftJoinAndSelect("user.posts", "post")
-  .where("user.name = :name", {name: "Alice"})
-  .andWhere("user.age > :age", {age: 18})
-  .orderBy("user.createdAt", "DESC")
-  .limit(10)
-  .getMany();
-```
-
-旁注：
-
-1. find / findOne / findAndCount 等是 high-level API，不支持复杂 join + 子查询
-2. QueryBuilder 是 SQL-like，支持几乎所有 SQL 操作
-3. find 内部转 QueryBuilder（Repository 是 QueryBuilder 的简化包装）
-4. 学习曲线：先 find 后 QueryBuilder
-5. relations 的 N+1 问题：默认 separate query，relations: [...] 会变 join
-
-> 怀疑：QueryBuilder 与 Repository.find() 重叠 80%，学习曲线陡（学两套 API）。Drizzle 只有一个 SQL-like API，更简洁。TypeORM 的"双 API"是不是设计错？
-
-![TypeORM Decorator + 双模式](/study/projects/typeorm/01-decorator.webp)
-
-## Layer 4 — 与 Prisma / Drizzle / Kysely / Sequelize / MikroORM 对比（≥ 30 行）
-
-| 维度 | TypeORM | Prisma | Drizzle | Kysely | Sequelize | MikroORM |
-|---|---|---|---|---|---|---|
-| 设计 | Decorator | DSL + generate | schema-as-code | builder | classic ORM | DataMapper + UoW |
-| TS 友好 | 中（旧 decorator） | 极佳（generate） | 极佳（infer） | 极佳（infer） | 中 | 佳 |
-| Bundle | ~5 MB | ~50 MB（Rust binary） | ~150 KB | ~80 KB | ~3 MB | ~2 MB |
-| 范式 | DataMapper + ActiveRecord | DataMapper | schema-first | builder | ActiveRecord | DataMapper + UoW |
-| Migration | 内置 | 内置 | 内置 | 第三方 | 内置 | 内置 |
-| 多 DB | 10+ | 6 | 8+ | 5+ | 8 | 6 |
-| Edge / serverless | 弱（cold start） | 弱（Rust binary） | 极佳 | 极佳 | 弱 | 弱 |
-| Weekly downloads | 3M | 3M | 1M | 500k | 4M | 200k |
-
-文化差异：
-
-- **TypeORM**：Java Hibernate / Spring Data 转 Node 用户偏爱
-- **Prisma**：现代 + DSL + 商业产品 + Edge 不友好
-- **Drizzle**：极简 + 低 bundle + Edge 友好
-- **Kysely**：纯 SQL builder，不是 ORM
-- **Sequelize**：jQuery 时代老牌
-- **MikroORM**：Unit of Work + Identity Map，DDD 风格
-
-## Layer 5 — 6 维评分（≥ 6 维）
-
-| 维度 | TypeORM | Prisma | Drizzle | Kysely |
-|---|---|---|---|---|
-| TS 推导 | 6 | 9 | 10 | 10 |
-| 学习曲线 | 5（双 API） | 8 | 9 | 7 |
-| Edge 友好 | 3 | 4 | 10 | 10 |
-| Migration | 8 | 9 | 7 | 5 |
-| 多 DB | 10 | 7 | 9 | 7 |
-| 生态 | 7 | 9 | 7 | 7 |
-| 总分 | 39 | 46 | 52 | 46 |
-
-TypeORM 在 Edge / Bundle / TS 推导多个维度落后。多 DB 仍是优势（10+ driver）。
-
-## Layer 6 — 限制（≥ 4 条）
-
-1. **TS 5+ stage 3 decorator 不兼容**：长期 baggage
-2. **DataMapper / ActiveRecord 双 API 让用户困惑**：选谁、何时切换无明确指引
-3. **Edge runtime 不友好**：reflect-metadata + 多 driver bundle 大
-4. **migrations 配置复杂**：CLI + entities glob + cli flag 多
-5. **N+1 问题需手动处理**：默认 lazy load，开发者要主动 relations: [...] 或 join
-6. **v0.x 长期不发 1.0**：API 偶有 break，让企业用户犹豫
-
-## 怀疑总集（前面散落 3 段，再补 2 段）
-
-> 怀疑：TypeORM 是 NestJS 早期默认，但 Prisma 出来后市场份额持续被蚕食。Decorator + reflection 对 TypeScript 5 + tsc 性能影响显著。是否注定边缘化？我猜：是。已是事实——新项目几乎不选 TypeORM。
-
-> 怀疑：Umed Khudoiberdiev 一人主导 + 社区维护，bus factor 高。如果他离开 TypeORM 怎么办？社区接管 v0.3 修 bug，但大重写（适配 TS 5+ decorator）需要 founder 决断。
-
-## GitHub Permalinks（≥ 3 处带 40-char hex SHA）
-
-源码精读入口（链接示意，未实际验证 SHA）：
-
-- Entity 装饰器：`https://github.com/typeorm/typeorm/blob/3a4f9b8e2d1c5a7e6b8d2f4a9c3e7d1b5f8a4c2e/src/decorator/Entity.ts`
-- Repository 实现：`https://github.com/typeorm/typeorm/blob/8b2c4d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/src/repository/Repository.ts`
-- QueryBuilder 主类：`https://github.com/typeorm/typeorm/blob/2a4f6e8b1d3c5e7f9a1b3d5c7e9f1a3b5d7e9c1f/src/query-builder/QueryBuilder.ts`
-- DataSource：`https://github.com/typeorm/typeorm/blob/9c1b3d5f7a9c1e3b5d7f9a1c3e5d7f9b1c3e5d7f/src/data-source/DataSource.ts`
-
-## Layer 7 — 实战（≥ 25 行）
-
-完整 TypeORM + NestJS + Postgres 项目骨架：
-
-```ts
-// app.module.ts
-import {Module} from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {User} from "./user.entity";
-
-@Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      type: "postgres",
-      host: "localhost",
-      database: "app",
-      entities: [User],
-      synchronize: false,
-      migrations: ["dist/migrations/*.js"]
-    }),
-    TypeOrmModule.forFeature([User])
-  ]
+// 找年龄大于 18 的用户
+const adults = await userRepo.find({
+  where: { age: MoreThan(18) },
+  order: { createdAt: 'DESC' },
+  take: 10,
 })
-export class AppModule {}
 
-// user.service.ts
-import {Injectable} from "@nestjs/common";
-import {InjectRepository} from "@nestjs/typeorm";
-import {Repository} from "typeorm";
-import {User} from "./user.entity";
-
-@Injectable()
-export class UserService {
-  constructor(@InjectRepository(User) private repo: Repository<User>) {}
-  
-  findById(id: number) { return this.repo.findOne({where: {id}}); }
-  create(data: Partial<User>) { return this.repo.save(this.repo.create(data)); }
-}
+// 复杂查询用 QueryBuilder
+const list = await userRepo
+  .createQueryBuilder('u')
+  .leftJoinAndSelect('u.posts', 'p')
+  .where('u.age > :age', { age: 18 })
+  .getMany()
 ```
 
-要点：
+简单查询用 `find`，复杂 join / 子查询用 `createQueryBuilder`——能力分两档，新手先学 `find`，碰到复杂场景再学后者。
 
-1. NestJS @InjectRepository 自动注入
-2. synchronize: false 生产环境（避免误改 schema）
-3. Migration 用 `typeorm migration:generate` 自动生成 SQL
-4. relations 显式声明避免 N+1
-5. Edge runtime 不推荐（cold start ~500 ms）
+### 案例 3：自动生成 Migration
 
-## 学到什么 + 关联（≥ 15 行）
+```bash
+# 改完 entity，让 TypeORM 对比 entity 和现有 DB schema，生成 SQL
+typeorm migration:generate -n AddEmailToUser
 
-学到的 ≥ 5 条：
+# 运行迁移到数据库
+typeorm migration:run
+```
 
-1. **Decorator + reflection** 在 NestJS 时代是优势，但 TS 5+ 时代是 baggage
-2. **DataMapper / ActiveRecord 双模式** 是设计错误（用户困惑）
-3. **Repository / QueryBuilder API 重叠** 增加学习曲线
-4. **Edge runtime 不友好** 在 serverless / Cloudflare 时代是劣势
-5. **生态 inertia 让 TypeORM 仍占 Node 第三档**，但新项目几乎不选
-
-关联：
-
-- [[prisma]] [[kysely]] —— 同领域
-- [[zod]] [[react-hook-form]] —— TypeScript 生态
-- [[i18next]] [[vue-i18n]] —— framework-specific 工具
-
-## 附录 A — TS 5+ stage 3 decorator 迁移挑战（≥ 25 行）
-
-TypeScript 5.0（2023-03）引入 stage 3 decorator 标准（与旧 stage 2 不兼容）。TypeORM 仍依赖旧版（experimentalDecorators=true），原因：
-
-### 旧 vs 新 decorator 差异
+生成的文件大致是：
 
 ```ts
-// 旧（experimentalDecorators，TypeORM 用）
-function Column(): PropertyDecorator {
-  return (target, propertyKey) => {
-    Reflect.defineMetadata("design:type", String, target, propertyKey);
-  };
-}
-
-// 新（stage 3，TS 5+）
-function Column<This, Value>(
-  target: ClassFieldDecoratorContext<This, Value>,
-  context: ClassFieldDecoratorContext<This, Value>
-) {
-  // 没有 reflect-metadata 内置
-  // 必须手动管理 metadata
+export class AddEmailToUser1700000000000 implements MigrationInterface {
+  async up(q: QueryRunner) {
+    await q.query(`ALTER TABLE "user" ADD COLUMN "email" varchar UNIQUE`)
+  }
+  async down(q: QueryRunner) {
+    await q.query(`ALTER TABLE "user" DROP COLUMN "email"`)
+  }
 }
 ```
 
-迁移挑战：
-1. 旧 decorator 依赖 `__metadata("design:type", ...)` 编译期 emit，新 decorator 没有
-2. TypeORM 100+ 装饰器全部要重写
-3. 用户代码 import 的装饰器签名变化（破坏性）
-4. 可能需要 v1.0 重写时机
-5. Vite / esbuild 支持新 decorator 但 emitDecoratorMetadata 兼容性差
+`up` 升级、`down` 回滚——两份成对，是 ORM migrations 的通用约定。
 
-社区方向：保持双版本（experimentalDecorators 支持旧项目，新版另写适配）—— 但维护成本翻倍。
+## 踩过的坑
 
-## 附录 B — 与 NestJS 集成深度（≥ 25 行）
+1. **装饰器 + class-validator 配置陡**：要在 `tsconfig.json` 同时开 `experimentalDecorators` 和 `emitDecoratorMetadata`，再 `import 'reflect-metadata'`。少一项就报"找不到类型"或装饰器静默失效。
 
-NestJS（@nestjs/typeorm 包）让 TypeORM 是 NestJS 早期默认 ORM：
+2. **多 entity 关联性能差**：默认 `find` 不会 join，relation 字段是 `undefined`；写 `relations: ['posts']` 又容易触发 N+1（每个 user 单跑一次 posts 查询）。要么用 `relations` + `take` 限量，要么改用 QueryBuilder 显式 `leftJoinAndSelect`。
 
-```ts
-// app.module.ts
-import {Module} from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
+3. **`synchronize: true` 在生产很危险**：开发期它会自动改表结构，方便。但生产开了就可能默默 drop 列、丢数据。**生产必须 `synchronize: false`**，所有 schema 变更走 migrations。
 
-@Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      type: "postgres",
-      // ...
-    }),
-    TypeOrmModule.forFeature([User, Post])
-  ]
-})
-export class AppModule {}
+4. **TS 编译目标和 reflect-metadata 的细节**：`tsconfig.json` 里 `target` 太新（如 ESNext）有时与旧版 decorator 行为不一致；`emitDecoratorMetadata` 不是默认开。TypeScript 5+ 的新 stage 3 decorator 与 TypeORM 用的旧 experimental decorator 不兼容——长期看是包袱。
 
-// user.service.ts
-@Injectable()
-export class UserService {
-  constructor(@InjectRepository(User) private repo: Repository<User>) {}
-}
-```
+## 适用 vs 不适用场景
 
-但 NestJS 11+ 也支持 Prisma / Drizzle 集成。NestJS 团队官方文档把 TypeORM / Prisma / Sequelize / MikroORM 列为同等推荐，TypeORM 失去"默认"光环。
+**适用**：
 
-实战痛点：
+- [[nest]] 项目（社区集成最成熟）
+- 需要支持多种数据库的项目（10+ driver 是 TypeORM 强项）
+- 团队从 Java Hibernate / Spring Data JPA 迁移过来，找熟悉的写法
+- 老项目（2018-2022 起家的 Node 后端，很多用 TypeORM）
 
-- 多 schema 跨数据库时 entities glob 配置易出错
-- 测试时 Mock Repository 复杂（@InjectRepository 注入需 Test container）
-- migration 生成与运行 CLI 配置 6+ 字段，文档分散
+**不适用**：
 
-## 附录 C — 学到补充（≥ 15 行）
+- Edge / serverless（reflect-metadata 增加 cold start 成本，[[drizzle]] / [[kysely]] 更合适）
+- 极致 TypeScript 类型推导（[[prisma]] / [[drizzle]] 的 infer 更好）
+- 想用 TypeScript 5+ 新装饰器（TypeORM 还在旧 decorator）
+- 全新项目且没有 TypeORM 历史包袱（社区潮流偏向 [[prisma]] 或 [[drizzle]]）
 
-补充 5 条工程教训：
+## 学到什么
 
-6. **Decorator 哲学的兴衰**：2017 NestJS 时代是优势，2024 stage 3 时代是 baggage
-7. **DataMapper / ActiveRecord 双模式** 是历史包袱（2017 设计阶段没收敛）
-8. **API 重叠**（Repository / QueryBuilder / EntityManager）让学习曲线陡
-9. **Edge runtime 不友好** 是 serverless 时代决定性劣势
-10. **生态网络效应** 让 TypeORM 仍占第三档（NestJS 老项目 + 多 DB driver 优势），但新项目几乎不选
+1. **ORM 的两种范式**：Data Mapper（仓库 + 纯数据）和 Active Record（entity 自带 CRUD），TypeORM 都收，是优点也是缺点——灵活但容易学乱
+2. **装饰器 + 反射元数据** 是 TypeScript 装饰器风格 ORM 的核心机制，理解 `reflect-metadata` 是理解 [[nest]] / TypeORM 的钥匙
+3. **Migrations 是生产必备**：`synchronize: true` 只能在开发用，生产必须靠 migrations 控制 schema 变更
+4. **多 DB 抽象的代价**：driver 抽象层让 TypeORM 支持 10+ 数据库，但每个 driver 行为有微妙差异（如 SQLite 没有真正的 timestamp with timezone），跨 DB 不能完全无感切换
+5. **生态会演进**：TypeORM 在 NestJS 早期是默认，但现在 [[prisma]] / [[drizzle]] 抢走新项目份额——选 ORM 时既要看现状也要看趋势
 
-关联补充：
+## 延伸阅读
 
-- [[zod]] —— TypeORM 与 zod 不直接集成（需 class-validator 中间层）
-- [[react-hook-form]] —— 后端不直接交互
-- [[i18next]] [[vue-i18n]] —— 跨技术栈对比
+- 官方文档：[typeorm.io](https://typeorm.io/)（覆盖装饰器 / Repository / QueryBuilder / Migrations 全部 API）
+- 官方仓库：[github.com/typeorm/typeorm](https://github.com/typeorm/typeorm)
+- NestJS 官方教程：[docs.nestjs.com/techniques/database](https://docs.nestjs.com/techniques/database)（@nestjs/typeorm 整合方式）
+- [[prisma]] —— 同领域 schema-first 风格 ORM
+- [[drizzle]] —— 同领域低 bundle / Edge 友好 ORM
+- [[kysely]] —— 纯 SQL builder 风格
+
+## 关联
+
+- [[prisma]] —— 同领域，schema.prisma 文件 vs class 装饰器风格的对比
+- [[drizzle]] —— 同领域，schema-as-code + 极小 bundle，Edge 场景首选
+- [[kysely]] —— 同领域，但定位是 SQL builder 而非 ORM
+- [[nest]] —— TypeORM 在 [[nest]] 生态里通过 `@nestjs/typeorm` 深度集成
+- [[zod]] —— 配 class-validator 用，给 entity 做输入校验
