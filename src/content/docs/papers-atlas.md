@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 129 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 130 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：129 篇
-- **已分类**：129
+- **总数**：130 篇
+- **已分类**：130
 
 ### 按主题分布
 
@@ -32,7 +32,7 @@ sidebar:
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
-| [信息论 / 编码理论](#信息论---编码理论) | 4 |
+| [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
@@ -249,12 +249,13 @@ sidebar:
 
 ## 信息论 / 编码理论
 
-共 4 篇。
+共 5 篇。
 
 | 论文 | 描述 |
 |---|---|
 | [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | Richard Hamming 1950 年 BSTJ 论文系统化错误检测与纠正理论，Hamming(7,4) 用 3 个校验位为 4 个数据位提供单错纠正，距离-纠错关系定理 ⌊(d-1)/2⌋ 至今仍是编码理论基石 |
 | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | Huffman 1952 状元篇 — 从作业题到 70 年标准：最优前缀码的贪心构造与现代压缩中的位置 |
+| [Polar Codes — Channel Polarization 与 5G 编码](/study/papers/polar-codes-2009/) | Arıkan 2009 年提出的信道极化方法，第一个被严格证明能达到 Shannon 容量的实用编码方案，5G NR 控制信道（PDCCH/PBCH/PUCCH）的官方编码 |
 | [Reed-Solomon 编码：多项式码与错误纠正的 60 年统治](/study/papers/reed-solomon-1960/) | Reed & Solomon 1960 论文精读 v1 |
 | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) |  |
 
@@ -288,7 +289,7 @@ sidebar:
 
 ---
 
-## 全部 129 篇（字母序）
+## 全部 130 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -371,6 +372,7 @@ sidebar:
 | `openhands` | [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `pair-programming` | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `paxos` | [Paxos 异步分布式共识](/study/papers/paxos/) | 分布式系统 |
+| `polar-codes-2009` | [Polar Codes — Channel Polarization 与 5G 编码](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
 | `ppo` | [PPO Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
 | `program-comprehension-fmri` | [Understanding Program Comprehension with fMRI — 程序理解像语言而非数学的首个脑成像证据](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |

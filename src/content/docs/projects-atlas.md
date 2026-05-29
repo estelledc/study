@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 144 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 145 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：144 个
-- **已分类**：144
+- **总数**：145 个
+- **已分类**：145
 
 ### 按主题分布
 
@@ -42,7 +42,7 @@ sidebar:
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
-| [CLI / 命令行工具](#cli---命令行工具) | 3 |
+| [CLI / 命令行工具](#cli---命令行工具) | 4 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -355,12 +355,13 @@ sidebar:
 
 ## CLI / 命令行工具
 
-共 3 个。
+共 4 个。
 
 | 项目 | 描述 |
 |---|---|
 | [commander.js](/study/projects/commander/) |  |
 | [ink](/study/projects/ink/) |  |
+| [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) |  |
 | [yargs](/study/projects/yargs/) |  |
 
 ## 其他基础设施
@@ -375,7 +376,7 @@ sidebar:
 
 ---
 
-## 全部 144 个（字母序）
+## 全部 145 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -456,6 +457,7 @@ sidebar:
 | `nextra` | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | 文档站点 |
 | `nx` | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) | 数据可视化 |
+| `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [ollama — 让本地 LLM 像 docker 一样易用的 Go 框架](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `oxc` | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
