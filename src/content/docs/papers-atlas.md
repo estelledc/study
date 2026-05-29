@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 118 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 119 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：118 篇
-- **已分类**：118
+- **总数**：119 篇
+- **已分类**：119
 
 ### 按主题分布
 
@@ -31,7 +31,7 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
-| [密码学 / 安全](#密码学---安全) | 3 |
+| [密码学 / 安全](#密码学---安全) | 4 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
 ---
@@ -235,11 +235,12 @@ sidebar:
 
 ## 密码学 / 安全
 
-共 3 篇。
+共 4 篇。
 
 | 论文 | 描述 |
 |---|---|
 | [AES Rijndael 对称分组密码](/study/papers/aes/) |  |
+| [Bitcoin — 一种点对点电子现金系统](/study/papers/bitcoin/) | 中本聪 2008 白皮书的状元篇 D 分支精读：PoW 共识 / UTXO / 拜占庭容错 / 经济激励 |
 | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) |  |
 | [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (RSA 1978)](/study/papers/rsa/) |  |
 
@@ -261,7 +262,7 @@ sidebar:
 
 ---
 
-## 全部 118 篇（字母序）
+## 全部 119 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -278,6 +279,7 @@ sidebar:
 | `bert` | [BERT 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bidirectional-typing` | [Bidirectional Typing (Dunfield & Krishnaswami CSUR 2021) — TS/Rust/Swift 类型推断的工程基础](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
 | `bigtable` | [Bigtable 分布式结构化存储](/study/papers/bigtable/) | 数据库 |
+| `bitcoin` | [Bitcoin — 一种点对点电子现金系统](/study/papers/bitcoin/) | 密码学 / 安全 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `borg` | [Borg 大规模集群管理](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `calvin` | [Calvin (Thomson et al. 2012) — 不要时钟，要 sequencer，全球事务的另一条路](/study/papers/calvin/) | 数据库 |
