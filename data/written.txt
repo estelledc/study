@@ -81,6 +81,7 @@ knuth-taocp
 lambda-calculus
 lamport-1978
 lampson-hints
+landin-secd
 linear-types
 liquid-types
 llama
@@ -100,6 +101,7 @@ no-silver-bullet
 openhands
 pair-programming
 paxos
+plotkin-sos
 polar-codes-2009
 ppo
 program-comprehension-fmri
@@ -115,12 +117,14 @@ refinement-types-1991
 reflexion
 resnet
 retro
+reynolds-definitional-interpreters
 rlhf-christiano
 rocksdb-lsm
 rsa
 salsa-adapton
 sam
 scaling-laws
+scott-strachey-denotational
 self-adjusting
 self-pic
 selinger-1979
@@ -184,6 +188,7 @@ cassandra
 chalk
 changesets
 chatwoot
+chi
 chroma
 clack
 claude-code
@@ -207,6 +212,7 @@ drizzle
 duckdb
 duckdb-wasm
 echarts
+echo
 effect
 elasticsearch
 elysia
@@ -221,9 +227,11 @@ fabric-js
 fastapi
 fastify
 fd
+fiber
 flask
 framer-motion
 fzf
+gin
 go-ethereum
 got
 grafana
