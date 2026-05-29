@@ -149,3 +149,6 @@ W 出现在等式两边，不能直接代入算。Scott 的 domain theory 保证
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

@@ -170,6 +170,7 @@ location /static/ {
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[next-js]] —— Next.js — React 全栈框架
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[redis]] —— Redis — 内存键值数据库

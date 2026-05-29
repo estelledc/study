@@ -153,3 +153,6 @@ r.POST("/users", func(c *gin.Context) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
+
