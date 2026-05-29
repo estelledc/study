@@ -1,410 +1,161 @@
 ---
-title: Smalltalk-80 The Language and its Implementation
-来源: 'Adele Goldberg & Daniel Robson, "Smalltalk-80: The Language and its Implementation", Addison-Wesley 1983'
+title: Smalltalk-80
+来源: 'Adele Goldberg & David Robson, "Smalltalk-80: The Language and its Implementation", Xerox PARC 1983'
+日期: 2026-05-29
+分类: 编程语言
+难度: 中级
 ---
 
-# Smalltalk-80 — OOP 的最纯粹形态
+## 是什么
 
-![Smalltalk-80 消息传递模型](/papers/smalltalk-80/01-message-passing.webp)
+Smalltalk-80 是 1980 年 Xerox PARC 团队设计的一门"**一切都是对象**"的编程语言。日常类比：想象桌上每件物品都是个有自己脾气的小生命——茶杯会回应"加水"，台灯会回应"开灯"——它们之间不靠按钮也不靠开关，而是互相递便条说"请你做这件事"。
 
-## 一句话总结（≥ 12 行）
-
-Smalltalk-80 是 Adele Goldberg 和 Daniel Robson 1983 年出版的书，整理了 Alan Kay 在 Xerox PARC 1972-1980 年间设计实现的 Smalltalk 系统。
-它和 LISP（McCarthy 1960）+ Algol 60 + Simula 67 一起构成了现代编程语言的四大根源。
-Smalltalk-80 不是单纯的语言定义，而是一整套"对象 + 消息 + 镜像"的计算哲学。
-它把 Simula 67 的 class 概念推到极致，把 LISP 的元编程思想引入对象世界。
-
-设计哲学三个核心：
-1. **everything is an object**：连数字 7、布尔 true、控制流 if/while 都是对象
-2. **消息传递是唯一交互**：对象之间通过 send message 通信，没有函数调用、没有方法调用
-3. **live image**：整个语言运行时 + 所有对象状态 + 所有源代码都在一张"镜像"里，可以暂停 / 修改 / 继续
-
-技术贡献：
-- 第一个 garbage-collected 语言（Java GC 的源头）
-- 第一个 GUI（窗口、菜单、鼠标、文本编辑都是对象）—— 启发 macOS / Windows
-- 第一个 IDE（Browser / Inspector / Debugger 都是 Smalltalk 对象）
-- 第一个 MVC 设计模式（Model-View-Controller）
-- 第一个 LiveProgramming 体验（修改代码立即生效，不重启）
-- 第一个 unit test 框架（SUnit，启发 JUnit / pytest 全家）
-- 第一个 refactoring 工具（Refactoring Browser 1995）
-
-影响：Java（Gosling 早期 Smalltalk 用户）、Python（Guido 借鉴）、Ruby（Matz 直接致敬）、Objective-C（Cox + NeXT）、Self / JavaScript prototype 链 / Erlang actor model 都源于此。
-某种程度上：现代所有动态语言都是 Smalltalk 的后代，现代所有 IDE 都是 Browser 的后代，现代所有 hot reload 都是 image 思想的退化版。
-
-但 1980s 工业落地受挫：商用 ParcPlace VM 价格高（每开发者 $5000）、性能差（vs C++）、image-based deploy 与企业 IT 不兼容。
-Java 1995 用 Smalltalk 的 80% 思想 + C++ 语法 + 免费 + JVM 部署，吃掉了 Smalltalk 的市场。
-Smalltalk 退守研究 / 教育 / 金融领域（GemStone 数据库、JPMorgan 早期交易系统），现代复活以 Pharo / Squeak 为载体。
-
-## Layer 0 — 论文档案速查（≥ 17 字段）
-
-| 字段 | 值 |
-|---|---|
-| 标题 | Smalltalk-80: The Language and its Implementation |
-| 作者 | Adele Goldberg, Daniel Robson |
-| 出版 | Addison-Wesley, 1983（"Blue Book"）|
-| 系列 | "Blue Book"（语言），"Orange Book"（实现），"Green Book"（哲学，Goldberg 1984）|
-| 设计源头 | Alan Kay + Dan Ingalls + Ted Kaehler（Xerox PARC）|
-| 早期版本 | Smalltalk-72 / Smalltalk-76 / Smalltalk-80 |
-| 实现 | VM + image，Bytecode |
-| 内存管理 | Generational GC（Lieberman-Hewitt 1983 算法源头之一）|
-| GUI | 第一代窗口 / 菜单 / 滚动条 / 重叠窗口 |
-| IDE | Browser / Inspector / Debugger / Workspace |
-| MVC | Trygve Reenskaug 1979 在 PARC 提出，Smalltalk-80 标准实现 |
-| 现代实现 | Pharo / Squeak / Cuis Smalltalk / GemStone / VAST |
-| 商业 VM | ParcPlace VisualWorks / IBM VisualAge / Cincom |
-| 影响语言 | Java / Python / Ruby / Objective-C / Self / JavaScript |
-| Alan Kay 后续 | Etoys（教育）/ Croquet（VR）|
-| 1973 年提出 | Dynabook（个人计算机愿景，影响 iPad）|
-| OOPSLA | Smalltalk 1986 OOPSLA 第一届主会议 |
-| 价格 | ParcPlace VisualWorks $5000/seat（1990s）|
-| 用户峰值 | ~50000 商业用户（1995 年）|
-
-## Section 1 — 历史定位（≥ 30 行）
-
-Smalltalk 起源于 1970-1972 年 Alan Kay 在 Xerox PARC 的 Learning Research Group。
-Kay 受 Sketchpad（Sutherland 1963）+ Simula 67 + LISP 启发，设计"小孩能用的编程语言"。
-Kay 后来在 OOPSLA 演讲中说："I made up the term 'object-oriented'，and I can tell you I did not have C++ in mind."
-
-时间线：
-- 1968：Alan Kay 在 University of Utah 读博，看到 Sketchpad 演示
-- 1970：Kay 加入 Xerox PARC，提出 Dynabook 愿景
-- 1972：Smalltalk-72，由 Dan Ingalls 实现，"消息传递"是最初设计核心
-- 1973：第一台 Alto 工作站，Smalltalk 在上面跑
-- 1976：Smalltalk-76 加 class hierarchy + bytecode VM
-- 1979：Steve Jobs 参观 PARC，看到 Smalltalk + GUI，回 Apple 做 Lisa / Macintosh
-- 1980：Smalltalk-80 标准化，Adele Goldberg 写文档
-- 1981：Byte Magazine 八月号专题报道 Smalltalk-80（封面：热气球）
-- 1983：Blue Book 出版
-- 1985：ParcPlace 公司成立商用化
-- 1986：第一届 OOPSLA 大会，Smalltalk 是主语言
-- 1987：Smalltalk-80 ANSI 标准
-- 1995：Java 1.0 发布，Smalltalk 工业份额开始下降
-- 1996：Refactoring Browser（Don Roberts + John Brant）发布，启发 IntelliJ
-- 2003：Squeak 开源（Alan Kay + Dan Ingalls 主导）
-- 2008：Pharo fork from Squeak（更现代化的 IDE）
-- 2024：Pharo 11，Smalltalk 在金融 / 教育 / 研究领域仍活跃
-
-技术成就：
-- 第一个 IDE（Browser）：能浏览所有 class、method、变量
-- 第一个 Inspector：实时查看对象内部状态
-- 第一个 Debugger：暂停 / 单步 / 修改 / 恢复
-- 第一个 unit test 框架：SUnit（后启发 JUnit / xUnit 全家）
-- 第一个 refactor 工具：Refactoring Browser 1995（启发 IntelliJ / VS Code）
-- 第一个 design pattern 实践地：GoF 1994 书里大量 Smalltalk 例子
-
-## Section 2 — 设计哲学（≥ 25 行）
-
-Alan Kay 给 OOP 下的定义（不是 C++ / Java 的版本）：
-
-1. EverythingIsAnObject
-2. Objects communicate by sending and receiving messages
-3. Objects have their own memory (state)
-4. Every object is an instance of a class
-5. The class holds the shared behavior for its instances
-6. To eval a program, control is passed to the first object and the remainder is treated as its message
-
-Kay 后来说："The big idea is messaging." OOP 的核心不是 class、不是继承、不是 encapsulation——是消息。
-
-为什么消息重要？
-- 消息是 late binding：发送者不知道接收者怎么处理
-- 消息允许接收者改变行为：doesNotUnderstand 可以拦截任何消息
-- 消息支持分布式：local send vs remote send 形式相同（Erlang / Akka 直接借鉴）
-- 消息支持元编程：sending message about messages（MOP，元对象协议）
-
-vs C++/Java OOP：
-- C++/Java 的 method call 是 early binding（compile-time vtable）
-- 消息（message）是 runtime dispatch + dynamic lookup
-- C++ 的 template / Java 的 generic 试图补救但本质不同
-
-## Definition 1 — Object（≥ 25 行）
-
-定义：Smalltalk-80 所有运行时实体都是 object。每个 object 有：
-1. **class pointer**：指向其所属 class 的指针
-2. **instance variables**：私有状态
-3. **method dictionary**：通过 class 间接持有
-
-primitive 类型也是 object：
-- 数字 7 是 SmallInteger 对象
-- 布尔 true 是 True singleton
-- nil 是 UndefinedObject singleton
-- block `[:x | x + 1]` 是 BlockContext 对象
-- class itself 是 Metaclass 对象（class 也是对象）
-
-实例代码：
-```smalltalk
-| x |
-x := 7.            "send '7' literal, store in x"
-x + 3.             "send '+ 3' message to x, returns 10"
-x class.           "send 'class' message, returns SmallInteger"
-x class superclass."returns Integer"
-x printString.     "send 'printString', returns '7'"
-```
-
-每个对象内存布局：
-```
-+------------------+
-| header (class)   |  ← 4 bytes 指针到 class object
-| inst var 1       |
-| inst var 2       |
-| ...              |
-+------------------+
-```
-
-class 对象的 method dictionary 是 hash table：selector → bytecode。
-method lookup 失败时，VM 自动 send `doesNotUnderstand:` message（这也是消息）。
-
-## Definition 2 — Message（≥ 25 行）
-
-定义：对象之间唯一交互方式。Message = (selector, arguments)。
-
-例：`3 + 4` 是 send `+ 4` 到 SmallInteger 3。
-- selector 是 `+`
-- argument 是 4
-
-控制流：`if true then: [...] else: [...]` 也是 send message 给 Boolean。
+代码长这样：
 
 ```smalltalk
-"if-else 是 message"
-(x > 0) ifTrue: ['positive'] ifFalse: ['non-positive'].
-
-"while 也是 message"
-[x > 0] whileTrue: [x := x - 1].
-
-"for-each 是 message"
-#(1 2 3) do: [:each | Transcript show: each printString].
+| sum |
+sum := 0.
+1 to: 10 do: [:i | sum := sum + i].
 ```
 
-实现：每次 send 走 method lookup chain：
-1. 查 receiver 的 class 的 method dictionary
-2. 找不到 → 查 superclass
-3. 一直到 Object（根类）
-4. 仍找不到 → send `doesNotUnderstand:` message（这也是 message！）
+这段代码累加 1 到 10。但有个反常的事实：**`+`、`to:do:`、连数字 `5` 本身都是对象**。`5 + 3` 在 Smalltalk 眼里是"对象 5 收到一张叫 `+ 3` 的便条"。
 
-bytecode 里 send message 的 opcode：
-- `send selector` → push receiver, push args, opcode `0xD0+arity`
-- VM 执行 lookup，跳到 method bytecode 起点
+## 为什么重要
 
-性能问题：每次 send 都查 method dictionary 太慢。
-解决方案：inline cache（Self 1986 引入，启发 V8 / HotSpot）。
-- 第一次 send：查 method dict，记录 (receiver class, method)
-- 后续 send：先比对 receiver class，命中则直接跳
-- monomorphic / polymorphic / megamorphic 三种状态
+不理解 Smalltalk-80，下面这些事都没法解释：
 
-## Definition 3 — Class hierarchy（≥ 20 行）
+- 为什么 Java / Python / Ruby / Objective-C / Swift 都把"对象"当核心概念——它们的祖父辈都在这本 1983 年的"蓝皮书"里
+- 为什么 IDE 里"修改代码立刻看到效果"是天经地义的——这个体验是 Smalltalk 第一个做出来的
+- 为什么 MVC（Model-View-Controller）会成为前端架构标准——它在 Xerox PARC 的 Smalltalk 项目里诞生
+- 为什么 Alan Kay 后来反复说"我说的 OOP 不是 Java 那种"——因为他指的是**消息传递**，不是 class 和继承
 
-每个 class 有 superclass 指针，形成单根树（root = Object）。
+## 核心要点
 
-```
-Object
-  ├── Magnitude
-  │     ├── Number
-  │     │     ├── Integer
-  │     │     │     ├── SmallInteger
-  │     │     │     └── LargePositiveInteger
-  │     │     └── Float
-  │     ├── Character
-  │     └── Date
-  ├── Collection
-  │     ├── Array
-  │     ├── Dictionary
-  │     └── String
-  ├── Boolean
-  │     ├── True (singleton: true)
-  │     └── False (singleton: false)
-  └── BlockContext
-```
+Smalltalk-80 的设计可以浓缩成 **三件事**：
 
-method lookup 从 receiver 的 class 开始向上查。
-继承不是 "extends" 关键字——是 superclass 指针。子类可以 override，可以调 `super` 触发上一级 lookup。
+1. **一切都是对象 + 用消息说话**：连数字、布尔值、`if/else` 控制流都是对象。`5 + 3` 是给 5 发消息 `+`，参数是 3。`if x > 0 then ... else ...` 是给布尔对象发消息 `ifTrue:ifFalse:`。
 
-metaclass：class 自己也是对象，所以 class 也有 class（Metaclass）。
-这让 Smalltalk 支持 class methods 和 class variables。
-metaclass 自己也是对象 → 元元类 → 但停在 `Metaclass class class = Metaclass`（自指）。
+2. **Image-based 持久化**：整个内存（所有对象 + 所有源代码 + 所有窗口位置）保存成一张"镜像"快照。下次启动直接接着昨天的状态跑，连未关闭的调试器都还在。类比：电脑不是关机重启，而是冬眠醒来。
 
-## Definition 4 — Image-based development（≥ 20 行）
+3. **Live coding**：改一个类的方法，**已经存在的对象立即生效**。不重启、不重新编译。类比：飞机飞行中换引擎，乘客毫无察觉。
 
-整个 Smalltalk 系统是一个"image" 文件（典型 ~30 MB，现代 Pharo ~100 MB）：
-- 所有 class / method 源码 + bytecode
-- 所有 object 实例
-- 所有窗口位置 / 字体设置 / 工具状态
-- 所有调试器栈帧（如果有未关闭的 debugger）
+## 实践案例
 
-启动 = 加载 image 到内存，关闭 = 写出 image。所有修改持久化。
-
-vs Unix 文件系统：
-- Unix：源码 → 编译 → 二进制 → 运行 → 数据写文件 → 关闭丢失运行时状态
-- Smalltalk：源码 + 二进制 + 运行时状态 都在 image 里，永远 live
-
-优势：
-- 修改代码立即生效，不需要重启
-- 调试时可以暂停 / 修改 / 恢复
-- 实验性质的探索（live coding）
-
-劣势：
-- image 越用越大，"垃圾" 累积（dead code、forgotten objects）
-- 多人协作困难（image 是单机状态，git 不友好）
-- 部署到生产是难题（image 包含 IDE、调试器、不需要的工具）
-- 解决方案：Monticello / Iceberg（git 集成）、Filein/Fileout（导出 .st 文本）
-
-## Theorem 1 — Universality（≥ 20 行）
-
-5 个 message: `+`、`assign`、`return`、`if`、`while` 在 Smalltalk-80 里都是 message send，没有 special syntax。
-这让语言极简（核心 ~5 个原语 + 1 个 send 操作）。
+### 案例 1：连循环都是消息
 
 ```smalltalk
-"true 和 false 用 message 实现"
-True>>ifTrue: aBlock ifFalse: bBlock
-    ^ aBlock value.
-
-False>>ifTrue: aBlock ifFalse: bBlock
-    ^ bBlock value.
-
-"3 < 5 返回 true 或 false 对象，对它 send ifTrue:ifFalse:"
-(3 < 5) ifTrue: ['yes'] ifFalse: ['no'].
-
-"完全不需要 if 关键字"
+| sum |
+sum := 0.
+1 to: 10 do: [:i | sum := sum + i].
+"sum = 55"
 ```
 
-这是 Smalltalk 设计的极致简洁：
-- LISP：1 + 7 个 special form（lambda, define, if, cond, let, quote, set!）
-- Smalltalk：1 个 send 操作 + 类层次
-- C / Java：~50 个关键字 + 各种 special syntax
+读法：
 
-## Section 5 — 实验：Smalltalk vs Java vs Python（≥ 30 行）
+- `1 to: 10 do: [...]` 不是 for 循环关键字，是给数字 1 发一个名叫 `to:do:` 的消息
+- 参数是数字 `10` 和一个 block（闭包）`[:i | sum := sum + i]`
+- 数字 1 收到消息后，自己负责重复执行 block，每次把当前数传给 `i`
 
-| 维度 | Smalltalk-80 | Java | Python |
-|---|---|---|---|
-| 一切都是对象 | 严格 | 几乎（primitive type 不是） | 几乎（low-level type）|
-| message passing | 严格 | method call | method call + duck typing |
-| live image | 是 | 否（class 文件 + JVM）| 否（pyc + interpreter）|
-| GC | 是（generational） | 是 | 是 |
-| GUI 内建 | 是（开始就有） | 否（AWT/Swing 后加） | 否（tkinter 后加）|
-| IDE 内建 | 是（Browser） | 否（Eclipse/IntelliJ） | 否（PyCharm）|
-| 类型系统 | 动态 | 静态 | 动态 |
-| 性能 | 慢（VM + GC） | 中（JIT） | 慢 |
-| 工业采用 | 1980s 高，2000s 低 | 1995-至今 主流 | 2000s 至今 主流 |
-| 元编程 | 强（MOP） | 弱（reflection） | 中（metaclass） |
-| reflection | 完全（包括 source）| 部分 | 部分 |
-| 部署 | 难（image-based） | 易（jar/war） | 易（pip）|
-| 生态 | 小（GemStone、Pharo） | 巨大 | 巨大 |
+整个语言只有 **send 一种操作**，不需要 `for` / `while` 关键字。
 
-为什么 Smalltalk 输给 Java？
-1. 性能：1995 年 ParcPlace VM 比 C++ 慢 10 倍，比 JVM 慢 3-5 倍
-2. 价格：ParcPlace 收 $5000/seat，Java 免费
-3. 部署：image 大、不能 strip、不能交叉编译；Java jar 简单
-4. 语法：Smalltalk 太另类，C++/Java 程序员看不懂
-5. 营销：Sun 投巨资推 Java，Xerox / ParcPlace 营销不力
-6. 生态：Java 早期就有 servlet、JDBC、JNDI；Smalltalk 都是商业方案
+### 案例 2：定义一个类 + super
 
-## Section 6 — 后续衍生 + 影响（≥ 30 行）
+```smalltalk
+Object subclass: #Account
+    instanceVariableNames: 'balance'
+    classVariableNames: ''.
 
-直接衍生：
-- **Self（David Ungar 1986）**：去掉 class，纯 prototype。直接启发 JavaScript prototype 链
-- **Objective-C（Brad Cox 1983）**：C + Smalltalk 消息传递。NeXT/Apple 主语言至 2014
-- **Java（James Gosling 1995）**：Smalltalk OOP + C++ 语法 + JVM。统治企业开发 25 年
-- **Python（Guido 1991）**：Smalltalk + Modula。每个对象有 __dict__ method dictionary
-- **Ruby（Matz 1995）**：Matz 公开称 Ruby 是"Smalltalk + Perl 的混血"
-- **Erlang（Joe Armstrong 1986）**：Smalltalk 消息传递 + 分布式 actor
-- **Pharo / Squeak**：现代 Smalltalk 复活（研究、教育）
-- **Newspeak（Gilad Bracha 2007）**：Java 派的 Smalltalk 现代化尝试
-- **Dart（Lars Bak 2011）**：Self/V8 经验做的现代脚本语言
+Account >> deposit: amount
+    balance := balance + amount.
+    ^ self.
 
-技术启发：
-- Java GC + bytecode VM：直接来自 Smalltalk
-- IDE 概念（Eclipse / IntelliJ / VS Code）：Browser 的延伸
-- MVC（React / Vue / Angular）：Reenskaug 1979 在 Smalltalk 实践
-- IDE refactoring 工具（Don Roberts 1996 Smalltalk Refactoring Browser）：IntelliJ refactor 起源
-- hot reload（React Fast Refresh / Erlang code reload）：image-based 思想退化
-- live coding（Sonic Pi / Glamorous Toolkit）：Smalltalk live image 复兴
+SavingsAccount subclass: #Account
+    instanceVariableNames: 'rate'.
 
-非技术启发：
-- Steve Jobs 1979 PARC 之行：见到 Smalltalk + GUI → Macintosh 设计基础
-- Alan Kay Dynabook 1973 设想：iPad 2010 实现
-- 教育领域：Etoys / Scratch（MIT Media Lab）—— 让小孩学编程
+SavingsAccount >> deposit: amount
+    super deposit: amount.
+    balance := balance + (amount * rate).
+```
 
-## Section 7 — 现代复活：Pharo / Squeak / Glamorous Toolkit（≥ 25 行）
+`super deposit: amount` 意思是"找父类（Account）的 deposit 方法跑一遍"。子类可以在父类基础上加东西，这就是**继承 + 覆盖**。
 
-2003 年 Squeak 开源（Alan Kay + Dan Ingalls 主导），目标：
-- 教育（小孩学编程，Etoys）
-- 研究（Croquet，VR / 元宇宙）
-- 探索（替代 Linux / Windows 的"个人计算机"愿景）
+### 案例 3：live coding 改类立刻生效
 
-2008 年 Pharo fork from Squeak：
-- 更现代的 IDE（Calypso Browser）
-- 更好的 git 集成（Iceberg）
-- 更小的核心 image（dead code 清理）
-- 工业友好（GemStone 数据库 / Seaside web 框架）
+```smalltalk
+"打开浏览器，找到 Account 类的 deposit 方法"
+"原本是 balance := balance + amount."
+"改成 balance := balance + amount + 1."
+"保存——所有已经存在的 Account 实例下次调 deposit 都加 1 了"
+```
 
-Glamorous Toolkit（Tudor Girba 2018）：
-- "moldable development"：每个数据结构有自己的 inspector view
-- 把 IDE 当作"思考工具"，不只是写代码
-- 启发 Cursor / Zed 等现代 IDE 的 AI 集成方向
+不需要重启程序，不需要重建对象。Smalltalk VM 会把方法字典里的指针换成新版本，下次发消息走新路径。
 
-应用领域（2024）：
-- 金融：JPMorgan Kapital（外汇交易系统，Smalltalk 25 年）
-- 物流：UPS / FedEx 内部系统（部分仍在 Smalltalk）
-- 数据库：GemStone/S（持久化对象数据库）
-- 教育：Etoys / Scratch（小孩学编程）
-- 研究：CS 课程（OOP 教学的最佳载体）
+## 踩过的坑
 
-## 怀疑（≥ 4 段）
+1. **image 越用越大**：所有"忘记的对象"和"半成品代码"都留在 image 里，几个月后 image 从 30 MB 涨到 500 MB。现代 Pharo 用 Iceberg（git 集成）+ 干净启动 image 缓解。
 
-> 怀疑：Smalltalk 1980s 太超前——live image / GC / GUI / IDE 一次性给齐，但工业用不起 ParcPlace VM 高价 + 性能差。如果 Sun 早 5 年开源 Smalltalk + 改 C++ 语法，是不是 Java 就不会被发明？答案可能：会发明类似的，但不会叫 Java。商业生态决定语言命运，不只是技术优劣。
+2. **多人协作难**：image 是单机状态，git diff 完全不友好（二进制）。1990 年代用 Monticello 切片导出文本，现代 Pharo 改成跟 git 兼容的格式。
 
-> 怀疑：Alan Kay 多次说"我说的 OOP 不是 C++/Java 那种"。他原意是"消息传递 + 极致动态"，工业理解成"class + 继承"。50 年后我们用的"OOP" 是被简化的版本。这是工业实用主义的胜利还是哲学的失败？也许都对：哲学纯粹度让位于工程可行性。
+3. **部署到生产困难**：image 包含 IDE / 调试器 / 临时变量——直接丢服务器上既臃肿又危险。要专门做 strip image 工具，剔除生产不需要的部分。
 
-> 怀疑：现代 Smalltalk（Pharo / Squeak）仍是研究界小众。每年 ~10000 活跃用户。是因为生态太小回不去主流？还是 Smalltalk 哲学本身（everything is an object）在编译期类型时代不再优势？Rust / Go 的崛起证明：现代主流是"少 OOP + 多 type / concurrency"，Smalltalk 的方向被时代抛弃了。
+4. **性能慢**：每次 send 都要查方法字典，1980s 比 C 慢 10 倍。1986 年 Self 发明 inline cache（缓存上次查到的方法），后来直接传给 V8 / HotSpot 用——你今天的 JS 引擎跑得快，要谢 Smalltalk 团队的后人。
 
-> 怀疑：Live image-based development 在 2024 hot reload / Smalltalk image 概念上 IDE（如 Cursor / VS Code）部分实现。但完整 image 思想在 cloud / serverless 时代是否复活？还是 stateless / 12-factor 已彻底胜出？目前看 stateless 主导，但 LLM 长程记忆 / agent state persistence 可能让 image 思想以新形态回归。
+## 适用 vs 不适用场景
 
-## GitHub Permalinks（≥ 3 处带 40-char hex SHA）
+**适用**：
 
-- squeak-smalltalk/squeak-vm: `https://github.com/squeak-smalltalk/squeak-vm/blob/3a4f9b8e2d1c5a7e6b8d2f4a9c3e7d1b5f8a4c2e/src/vm/sqVM.h`
-- pharo-project/pharo: `https://github.com/pharo-project/pharo/blob/8b2c4d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/src/Kernel/Object.class.st`
-- OpenSmalltalk/opensmalltalk-vm: `https://github.com/OpenSmalltalk/opensmalltalk-vm/blob/2a4f6e8b1d3c5e7f9a1b3d5c7e9f1a3b5d7e9c1f/platforms/Cross/vm/sqVirtualMachine.c`
+- 教育（Etoys / Scratch 是 Smalltalk 的后代——给小孩学编程）
+- 探索性研究（live image 让"边想边改"很顺）
+- 长期运行的金融系统（JPMorgan Kapital 用了 25 年；状态全在 image 里活着）
+- 持久化对象数据库（GemStone：把 image 思想做成多机数据库）
 
-## 学到 + 关联（≥ 15 行）
+**不适用**：
 
-学到 ≥ 5：
-1. "everything is an object" 是 OOP 的纯粹形态，但工程实践退而求次
-2. 消息传递 vs 方法调用：哲学差异巨大，工程影响微小
-3. live image 是 hot reload 的理论上限
-4. IDE / GUI / GC 都是 Smalltalk 给现代计算机的礼物
-5. Alan Kay 的"未来计算"哲学影响 Apple / iPad / 教育软件
-6. 商业生态决定语言成败，不只是技术优劣
-7. 元编程（MOP）是 Smalltalk 给 Python / Ruby 的核心遗产
-8. 单根继承 + dynamic dispatch 是现代 OO 语言的最大公约数
-9. inline cache（Self 1986）是 V8 / HotSpot 性能基础
-10. MVC 在前端框架（React / Vue）以新形态延续
+- 容器化 / serverless（image 思想和 stateless 部署天生冲突）
+- 需要静态类型 / 编译期检查（Smalltalk 是动态的，错的消息要运行时才发现）
+- 团队 > 50 人 + 严格 code review 流程（image 协作和 PR 流程不匹配）
+- 需要 jar / wheel / npm 这种打包发布（image 不是一个文件 = 一个产物）
 
-关联：
-- [[mccarthy-lisp]] —— 函数式 vs OOP 双源头，元编程思想 LISP 给 Smalltalk
-- [[hindley-milner]] —— 静态类型 vs Smalltalk 动态类型对照
-- [[lambda-calculus]] —— 计算理论基础
-- [[turing-1936]] —— 计算的可计算性根源
-- [[llvm]] —— 现代编译器基础设施（vs Smalltalk image-based）
-- [[ssa]] —— 现代编译器中间表示
-- [[self-pic]] —— Self / V8 的 inline cache（Smalltalk 性能优化的延续）
-- [[design-patterns-gof]] —— GoF 1994 大量 Smalltalk 例子
-- [[mvc-reenskaug]] —— Trygve Reenskaug 1979 在 Smalltalk 提出
+## 历史小故事（可跳过）
 
-## 附录 — Smalltalk 在 2024 年的位置（≥ 15 行）
+- **1971 年**：Alan Kay 在 Xerox PARC 提出"Dynabook"愿景（一台小孩能用的个人电脑），需要配一门小孩能学会的语言。受 [[simula-67]] 启发设计 Smalltalk-72，Dan Ingalls 实现。
+- **1976 年**：Smalltalk-76 加入 class 继承和 bytecode VM——开始有现代 OOP 的样子。
+- **1979 年**：Steve Jobs 参观 Xerox PARC，看到 Smalltalk 的图形界面 + 鼠标 + 窗口，回 Apple 做 Lisa / Macintosh。
+- **1980 年**：Smalltalk-80 定型，Adele Goldberg 主导文档化。
+- **1983 年**：这本"蓝皮书"出版（封面是热气球，1981 年 Byte Magazine 八月号封面同款）。
+- **1995 年**：Java 发布，吃掉 Smalltalk 的工业市场——但 Java 借了 Smalltalk 的 GC、bytecode VM、单根继承——只是把语法换成 C 风格。
+- **2008 年**：Pharo fork from Squeak，Smalltalk 在研究和金融小圈子里活到今天。
 
-商业现状：
-- ParcPlace 改名 Cincom，仍卖商用 Smalltalk（VisualWorks）给金融 / 保险大客户
-- IBM VisualAge 1990s 基于 Smalltalk，2000s 转 Eclipse 后停产
-- GemStone 仍在分布式 Smalltalk 数据库领域活跃（持久化 image）
+## 学到什么
 
-开源现状：
-- Pharo（2008-）：研究界主力，每年新 release，活跃社区 ~3000 人
-- Squeak（1996-）：教育 + Etoys 后续
-- Cuis Smalltalk：极简版 Squeak fork，~300 用户
+1. **"一切都是对象"是种世界观**——连 `if` 都不是关键字而是消息时，语言变得极简（核心 1 个 send 操作 + 类层次），但每一行代码都在思考"谁给谁发消息"
+2. **Image-based 是 hot reload 的理论上限**——React Fast Refresh / Erlang code reload 都是 image 思想的退化版
+3. **IDE / GUI / GC 都是 Smalltalk 给现代计算机的礼物**——Java GC、Eclipse Browser、IntelliJ refactor、JUnit 测试，每一项都能在 1980 年代 Smalltalk 找到原型
+4. **Alan Kay 的 OOP 和 Java 的 OOP 不是同一件事**——前者强调消息传递 + 极致动态，后者强调 class + 继承 + 静态类型；工业界选了后者，但前者的精神留在 Erlang / actor / 微服务里
+5. **商业生态决定语言成败**——Smalltalk 技术领先，但 ParcPlace VM 卖 $5000/seat、image 部署难、营销不力，输给免费的 Java；技术再好也得有可落地的商业模型
 
-教学影响：
-- Eric Evans《领域驱动设计》大量 Smalltalk 例子
-- Refactoring（Fowler 1999）80% Smalltalk 代码示例
-- TDD（Beck 2002）SUnit 是 JUnit 的祖先
+## 延伸阅读
 
-未来命运：Smalltalk 不会消失，但永远小众。Alan Kay 仍在 VPRI 推动"未来计算"研究（OMeta / Croquet / STEPS 项目）。
+- 蓝皮书 PDF：[Smalltalk-80: The Language and its Implementation](http://stephane.ducasse.free.fr/FreeBooks/BlueBook/Bluebook.pdf)（免费下载，660 页）
+- Alan Kay 演讲：[The Early History of Smalltalk](https://gagne.homedns.org/~tgagne/contrib/EarlyHistoryST.html)（OOPSLA 1993，Kay 自己讲设计动机）
+- 现代实现：[Pharo](https://pharo.org/)（开箱即用，下载就能玩 live image）
+- [[simula-67]] —— Smalltalk 的精神祖先，class 概念发源
+- [[mccarthy-lisp]] —— 元编程思想从 LISP 传到 Smalltalk
 
-[[mccarthy-lisp]] [[lambda-calculus]] [[turing-1936]] [[hindley-milner]] [[llvm]]
+## 关联
+
+- [[simula-67]] —— class / 继承的概念在 Simula 67 提出，Smalltalk 推到极致
+- [[mccarthy-lisp]] —— LISP 的"代码即数据"和元编程思想被 Smalltalk 吸收成元类（metaclass）
+- [[hindley-milner]] —— 静态类型推导 vs Smalltalk 的纯动态类型，两条不同路线
+- [[lambda-calculus]] —— Smalltalk 的 block（闭包）本质就是 λ 演算项
+- [[turing-1936]] —— 计算理论根基，Smalltalk 在它之上谈"如何组织计算"
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[simula-67]] —— SIMULA 67 — 面向对象的诞生
+</content>
+</invoke>
