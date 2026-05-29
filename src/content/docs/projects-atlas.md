@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 134 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 135 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：134 个
-- **已分类**：134
+- **总数**：135 个
+- **已分类**：135
 
 ### 按主题分布
 
@@ -40,7 +40,7 @@ sidebar:
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
-| [图像处理](#图像处理) | 3 |
+| [图像处理 / Canvas](#图像处理---canvas) | 4 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -327,14 +327,15 @@ sidebar:
 | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) |  |
 | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
 
-## 图像处理
+## 图像处理 / Canvas
 
-共 3 个。
+共 4 个。
 
 | 项目 | 描述 |
 |---|---|
 | [fabric-js](/study/projects/fabric-js/) |  |
 | [jimp](/study/projects/jimp/) |  |
+| [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | S29-5 收官：从 Application/Stage/Container 流水线到 v8 ECS 重写，看一个工具库如何在 13 年里成为 web 端 2D 图像渲染的事实标准 |
 | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
 
 ## 其他基础设施
@@ -349,7 +350,7 @@ sidebar:
 
 ---
 
-## 全部 134 个（字母序）
+## 全部 135 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -382,7 +383,7 @@ sidebar:
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
-| `fabric-js` | [fabric-js](/study/projects/fabric-js/) | 图像处理 |
+| `fabric-js` | [fabric-js](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
 | `framer-motion` | [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 动画 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
@@ -393,7 +394,7 @@ sidebar:
 | `immich` | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 数据应用 / SaaS |
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
-| `jimp` | [jimp](/study/projects/jimp/) | 图像处理 |
+| `jimp` | [jimp](/study/projects/jimp/) | 图像处理 / Canvas |
 | `jotai` | [jotai — atomic 状态管理 + Daishi Kato 第三套](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
@@ -432,6 +433,7 @@ sidebar:
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在生产环境真正用得上](/study/projects/patchright/) | AI 浏览器自动化 |
 | `penpot` | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
+| `pixi` | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `playwright` | [Playwright — 浏览器自动化的工程艺术](/study/projects/playwright/) | 测试 / 验证 |
 | `pnpm` | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | Monorepo / 包管理 |
@@ -450,7 +452,7 @@ sidebar:
 | `sentry` | [Sentry — 不是「日志收集器」，是「把崩溃当作可查询的列存事件」的双层数据库错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize Node.js Promise-based ORM 元老](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
-| `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 |
+| `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
 | `stagehand` | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlight` | [Starlight — Astro 官方文档框架，零 JS 默认 + sidebar autogen](/study/projects/starlight/) | 文档站点 |
