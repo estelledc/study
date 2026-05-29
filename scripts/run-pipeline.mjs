@@ -93,9 +93,10 @@ function inferKind(slug, candidate, rewriteEntry, areaHint) {
 }
 
 function renderPrompt(template, vars) {
+  // 用 split/join 做 literal 替换，避免 String.replace 把 v 中的 $&/$1 当反向引用
   let out = template;
   for (const [k, v] of Object.entries(vars)) {
-    out = out.replace(new RegExp(`{{${k}}}`, 'g'), String(v ?? ''));
+    out = out.split(`{{${k}}}`).join(String(v ?? ''));
   }
   return out;
 }
@@ -180,13 +181,12 @@ async function main() {
     return;
   }
 
-  // 默认行为：dump 所有 stage prompt 到 tmp，由外层 workflow agent 消费
-  for (const stage of Object.keys(PROMPTS)) {
-    const tmpl = await fs.readFile(PROMPTS[stage], 'utf8');
-    const rendered = renderPrompt(tmpl, ctx);
-    const out = path.join(ctx.tmp_dir, `${stage}.prompt.md`);
-    await fs.writeFile(out, rendered);
-  }
+  // 默认行为：并行读 6 个 stage 模板 + 并行写 6 个 rendered prompt 到 tmp
+  const stages = Object.keys(PROMPTS);
+  const templates = await Promise.all(stages.map(s => fs.readFile(PROMPTS[s], 'utf8')));
+  await Promise.all(stages.map((s, i) =>
+    fs.writeFile(path.join(ctx.tmp_dir, `${s}.prompt.md`), renderPrompt(templates[i], ctx))
+  ));
 
   // 输出 ctx + 各 stage prompt 路径，workflow 用
   console.log(JSON.stringify({
