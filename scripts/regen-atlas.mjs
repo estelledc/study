@@ -117,6 +117,7 @@ const THEMES_PROJECTS = {
     'postgresql', 'redis', 'sqlite', 'clickhouse', 'mongodb',
     'cockroachdb', 'tidb', 'cassandra', 'mariadb', 'mysql',
     'rocksdb', 'leveldb', 'lmdb', 'valkey', 'duckdb',
+    'elasticsearch', 'kafka', 'milvus',
   ],
   'Web 框架': [
     'hono', 'fastify', 'express', 'koa', 'nestjs', 'elysia',

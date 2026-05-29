@@ -68,14 +68,14 @@ sidebar:
 |---|---|
 | [Attention Is All You Need](/study/papers/attention/) |  |
 | [BERT — 双向 Transformer 预训练](/study/papers/bert/) |  |
-| [Chinchilla — 70B 训 1.4T tokens 打败 280B Gopher，把 Kaplan 的 compute-optimal 公式推翻一半](/study/papers/chinchilla/) | Hoffmann 2022 用三种独立 estimation method 重做 ~400 个训练 run，得出 N 与 D 应 1:1 同步增长（D ≈ 20×N），改写 LLaMA / Llama 2 / Deep… |
+| [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) |  |
 | [DeepSeek-R1 状元篇 — 纯 RL 让 LLM 自己学会推理](/study/papers/deepseek-r1/) | DeepSeek-R1 用 GRPO + rule-based reward 跳过 SFT 阶段，让 base model 在纯强化学习下涌现长 chain-of-thought 与自我反思，开源对齐 OpenAI o… |
 | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) |  |
 | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) |  |
-| [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | 状元篇 - Mamba 用 input-dependent SSM (S6) 替代 attention，训练用硬件感知的 parallel scan、推理时常数空间，长序列上比 Transformer 快 5-100x… |
+| [Mamba — 选择性状态空间模型](/study/papers/mamba/) |  |
 | [Mixture of Experts 状元篇 — 从 dense scaling 到 sparse routing](/study/papers/mixture-of-experts/) | MoE 是 Switch Transformer + Mixtral 双论文驱动的 sparse 架构范式，把模型总参数 N 与 active 参数解耦，使万亿规模成为可能 |
-| [Scaling Laws — 把 LLM 的 loss 写成参数 N、数据 D、计算 C 的三参数 power law](/study/papers/scaling-laws/) | Kaplan 2020 用横跨 7 个数量级的 OpenAI 训练数据拟合出 L = (Nc/N)^α + (Dc/D)^β 的简单 power law |
-| [T5 Text-to-Text Transfer Transformer](/study/papers/t5/) |  |
+| [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) |  |
+| [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) |  |
 | [Word2Vec 词向量分布式表示](/study/papers/word2vec/) |  |
 
 ## 计算机视觉
@@ -327,7 +327,7 @@ sidebar:
 | `calvin` | [Calvin (Thomson et al. 2012) — 不要时钟，要 sequencer，全球事务的另一条路](/study/papers/calvin/) | 数据库 |
 | `causal-abstraction` | [Causal Abstraction × DAS — 神经网络的因果抽象与对齐搜索](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
 | `cheney-gc` | [A Nonrecursive List Compacting Algorithm（Cheney 1970，Copying GC 始祖）](/study/papers/cheney-gc/) | GC / 内存管理 |
-| `chinchilla` | [Chinchilla — 70B 训 1.4T tokens 打败 280B Gopher，把 Kaplan 的 compute-optimal 公式推翻一半](/study/papers/chinchilla/) | NLP 基础与 Scaling |
+| `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chubby` | [Chubby 分布式锁服务](/study/papers/chubby/) | 分布式系统 |
 | `ci-effects` | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
 | `clickhouse` | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | 数据库 |
@@ -384,7 +384,7 @@ sidebar:
 | `llava` | [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
-| `mamba` | [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | NLP 基础与 Scaling |
+| `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
@@ -414,7 +414,7 @@ sidebar:
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
 | `salsa-adapton` | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
 | `sam` | [SAM — 把分割做成可 prompt 的基础模型，image encoder 一次、prompt 解码 N 次](/study/papers/sam/) | 计算机视觉 |
-| `scaling-laws` | [Scaling Laws — 把 LLM 的 loss 写成参数 N、数据 D、计算 C 的三参数 power law](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
+| `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
 | `self-adjusting` | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-pic` | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `selinger-1979` | [Selinger 1979 — 把可见的执行计划装进每一台 SQL 数据库](/study/papers/selinger-1979/) | 数据库 |
@@ -431,7 +431,7 @@ sidebar:
 | `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `swe-agent` | [SWE-agent — 不靠模型变聪明、靠"接口"变聪明：ACI 把 SWE-bench 1.96% 推到 12.5%](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench (Jimenez et al. 2024) — 把 LLM 评测从 demo 题推到真实 GitHub issue](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
-| `t5` | [T5 Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
+| `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
 | `tcp` | [TCP Transmission Control Protocol](/study/papers/tcp/) | 网络协议 |
 | `theorems-for-free` | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `tigerbeetle` | [TigerBeetle (Joran Greef et al. 2024) — 金融级 OLTP，固定 schema + VSR + deterministic simulation](/study/papers/tigerbeetle/) | 数据库 |

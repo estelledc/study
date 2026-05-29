@@ -133,6 +133,8 @@ prompt → CLIP text encoder → text emb → prior → image emb → decoder �
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM Denoising Diffusion Probabilistic Models
 - [[dit]] —— DiT Diffusion Transformer
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 

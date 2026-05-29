@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 174 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 177 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：174 个
-- **已分类**：174
+- **总数**：177 个
+- **已分类**：177
 
 ### 按主题分布
 
@@ -26,7 +26,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 8 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 11 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
@@ -161,12 +161,15 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 8 个。
+共 11 个。
 
 | 项目 | 描述 |
 |---|---|
 | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) |  |
 | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) |  |
+| [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
+| [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
+| [Milvus — 开源向量数据库](/study/projects/milvus/) |  |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
 | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) |  |
 | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) |  |
@@ -445,7 +448,7 @@ sidebar:
 
 ---
 
-## 全部 174 个（字母序）
+## 全部 177 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -483,6 +486,7 @@ sidebar:
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `echarts` | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 数据可视化 |
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
+| `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | 数据库本体 / 存储引擎 |
 | `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
 | `enquirer` | [enquirer 终端交互提示库](/study/projects/enquirer/) | Terminal / 终端 |
@@ -504,6 +508,7 @@ sidebar:
 | `jimp` | [Jimp 纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
+| `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
 | `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
@@ -524,6 +529,7 @@ sidebar:
 | `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) | ORM / DB 客户端 |
+| `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minisearch` | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 其他基础设施 |
 | `mobx` | [MobX — Reactive state via TFRP](/study/projects/mobx/) | 状态管理 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 的编辑器内核搬进浏览器的 IDE 级控件](/study/projects/monaco-editor/) | 编辑器 / 富文本 |

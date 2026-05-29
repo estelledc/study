@@ -139,4 +139,6 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 
