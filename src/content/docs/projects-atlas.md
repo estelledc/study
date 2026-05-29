@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 147 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 149 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：147 个
-- **已分类**：147
+- **总数**：149 个
+- **已分类**：149
 
 ### 按主题分布
 
@@ -43,7 +43,7 @@ sidebar:
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
 | [CLI / 命令行工具](#cli---命令行工具) | 5 |
-| [Terminal / 终端](#terminal---终端) | 1 |
+| [Terminal / 终端](#terminal---终端) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -368,11 +368,13 @@ sidebar:
 
 ## Terminal / 终端
 
-共 1 个。
+共 3 个。
 
 | 项目 | 描述 |
 |---|---|
+| [boxen — Terminal box 渲染库](/study/projects/boxen/) |  |
 | [chalk](/study/projects/chalk/) |  |
+| [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
 
 ## 其他基础设施
 
@@ -386,7 +388,7 @@ sidebar:
 
 ---
 
-## 全部 147 个（字母序）
+## 全部 149 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -396,6 +398,7 @@ sidebar:
 | `axios` | [axios Promise-based HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `better-auth` | [better-auth 状元篇 — Plugin 化 TS-first 认证框架的可注册扩展思路](/study/projects/better-auth/) | Auth 认证 |
 | `biome` | [Biome — 一个工具替代 ESLint + Prettier 的勇气](/study/projects/biome/) | 构建工具 / Bundler |
+| `boxen` | [boxen — Terminal box 渲染库](/study/projects/boxen/) | Terminal / 终端 |
 | `browser-use` | [browser-use — 不是 Playwright 升级版，是 LLM 驱动的「DOM-tree → tool-call → CDP 执行」反馈循环](/study/projects/browser-use/) | AI 浏览器自动化 |
 | `bun` | [Bun — 一个二进制 = 4 个 phase 的 JS 工具链](/study/projects/bun/) | 构建工具 / Bundler |
 | `cal-com` | [cal.com — 不是再做一个 Calendly，是把"调度 SaaS"做成开源 + 可自托管 + 50 个 provider 都能插的协议](/study/projects/cal-com/) | 数据应用 / SaaS |
@@ -472,6 +475,7 @@ sidebar:
 | `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [ollama — 让本地 LLM 像 docker 一样易用的 Go 框架](/study/projects/ollama/) | AI 应用 / Agent 平台 |
+| `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
 | `oxc` | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在生产环境真正用得上](/study/projects/patchright/) | AI 浏览器自动化 |
 | `penpot` | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
