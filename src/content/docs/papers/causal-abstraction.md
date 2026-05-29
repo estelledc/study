@@ -8,8 +8,6 @@ layer_focus: theory
 last_updated: 2026-05-29
 ---
 
-import { Aside } from '@astrojs/starlight/components';
-
 ## Layer 0 元数据
 
 | 字段 | 值 |
@@ -45,9 +43,7 @@ Causal Abstraction 给"神经网络的内部表示是不是某个人写的因果
 
 ![Causal Abstraction 数学结构](/study/papers/causal-abstraction/01-causal-abstraction-diagram.webp)
 
-<Aside type="note" title="读这篇之前">
-你应该已经读过 [Anthropic Circuits E5](/papers/anthropic-circuits/) 和 [Toy Models of Superposition N2](/papers/toy-models-superposition/) 了解 mech interp 的机制路线，以及 [Sparse Autoencoders N3](/papers/sparse-autoencoders/) 了解它的对手——SAE 派。这篇是 mech interp 里的另一条主线，2026 年还在和 SAE 派对峙。
-</Aside>
+> **读这篇之前**：你应该已经读过 [Anthropic Circuits E5](/papers/anthropic-circuits/) 和 [Toy Models of Superposition N2](/papers/toy-models-superposition/) 了解 mech interp 的机制路线，以及 [Sparse Autoencoders N3](/papers/sparse-autoencoders/) 了解它的对手——SAE 派。这篇是 mech interp 里的另一条主线，2026 年还在和 SAE 派对峙。
 
 ## 创新点（5 个 numbered）
 

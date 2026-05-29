@@ -8,8 +8,6 @@ category: tool-library
 status: published
 ---
 
-import Figure from '../../../components/Figure.astro';
-
 ## Layer 0 项目档案
 
 | 字段 | 值 |
@@ -29,11 +27,9 @@ import Figure from '../../../components/Figure.astro';
 
 react-spring 是一个**基于物理 spring 模型**的 React 动画库——它不让你设定"动画持续 300ms"，而是让你描述"这个东西的弹性、阻尼、初速度"，然后用数值积分让它自然地运动到目标值。
 
-<Figure
-  src="/projects/react-spring/01-architecture.webp"
-  alt="react-spring 架构总览"
-  caption="SpringValue（单值物理引擎）+ Controller（多动画协调）+ useSpring（React hook 桥）的三层结构"
-/>
+![react-spring 架构总览](/projects/react-spring/01-architecture.webp)
+
+*SpringValue（单值物理引擎）+ Controller（多动画协调）+ useSpring（React hook 桥）的三层结构*
 
 ## Layer 1 为什么存在
 

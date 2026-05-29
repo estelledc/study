@@ -15,8 +15,6 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
 ## 站点定位
 
 这不是把 GitHub trending 抄一遍，也不是"程序员必读 100 个开源项目"那种合集。
@@ -32,26 +30,12 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 每篇按同一套结构展开，让陌生项目变成可立刻动手的东西：
 
-<CardGrid>
-  <Card title="一句话定位" icon="approve-check">
-    一行讲清这东西是什么。不堆术语，不用项目自己的话。
-  </Card>
-  <Card title="Why（为什么推荐你看）" icon="puzzle">
-    它解决了什么以前没人解决的问题，以及为什么对你现在做的事重要。
-  </Card>
-  <Card title="How（核心机制）" icon="open-book">
-    从日常类比起步——租房 vs 买房、跑腿 vs 仓库管理员——再切到代码。零术语假设。
-  </Card>
-  <Card title="Hands-on" icon="laptop">
-    30 分钟内能跑通的最小命令清单。看完笔记就能动手，不用再去查 README。
-  </Card>
-  <Card title="与你当前工作的连接" icon="seti:plan">
-    立刻能迁移到你正在做的项目里的部分——不是抽象建议，是具体路径。
-  </Card>
-  <Card title="自检问题" icon="rocket">
-    几个还没回答的问题，留给下次精读源码时回头查。
-  </Card>
-</CardGrid>
+- **一句话定位**：一行讲清这东西是什么。不堆术语，不用项目自己的话。
+- **Why（为什么推荐你看）**：它解决了什么以前没人解决的问题，以及为什么对你现在做的事重要。
+- **How（核心机制）**：从日常类比起步——租房 vs 买房、跑腿 vs 仓库管理员——再切到代码。零术语假设。
+- **Hands-on**：30 分钟内能跑通的最小命令清单。看完笔记就能动手，不用再去查 README。
+- **与你当前工作的连接**：立刻能迁移到你正在做的项目里的部分——不是抽象建议，是具体路径。
+- **自检问题**：几个还没回答的问题，留给下次精读源码时回头查。
 
 ## 推荐分布
 

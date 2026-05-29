@@ -8,8 +8,6 @@ layer_focus: method
 last_updated: 2026-05-28
 ---
 
-import { Aside } from '@astrojs/starlight/components';
-
 ## Layer 0 元数据
 
 | 字段 | 值 |
@@ -30,9 +28,7 @@ SAE 是把 polysemantic neuron 拆成 monosemantic feature 的工业级扳手—
 
 ![SAE 架构图](/study/papers/sparse-autoencoders/01-sae-architecture.webp)
 
-<Aside type="note" title="读这篇之前">
-你应该已经读过 [Toy Models of Superposition](/papers/toy-models-superposition/)。Toy Models 解释了**为什么**会有 superposition（特征数 > 神经元数时的几何学必然），但没给出在真实 LLM 上**怎么解出来**的工具。SAE 就是那把工具。
-</Aside>
+> **读这篇之前**：你应该已经读过 [Toy Models of Superposition](/papers/toy-models-superposition/)。Toy Models 解释了**为什么**会有 superposition（特征数 > 神经元数时的几何学必然），但没给出在真实 LLM 上**怎么解出来**的工具。SAE 就是那把工具。
 
 ## Layer 1 Why
 
