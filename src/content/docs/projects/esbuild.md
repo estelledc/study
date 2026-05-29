@@ -168,8 +168,10 @@ const svgInline: Plugin = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bun]] —— Bun — JS 全能运行时
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[rollup]] —— Rollup — ESM 优先的打包器
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包
 

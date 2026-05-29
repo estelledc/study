@@ -141,7 +141,10 @@ S: "S 是假的。"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[shannon-1948]] —— Shannon 信息论 通信的数学理论
 - [[turing-1936]] —— Turing 1936 可计算性
 

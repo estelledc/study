@@ -167,3 +167,8 @@ pub fn process(mut program: Program, _: ()) -> Program {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bun]] —— Bun — JS 全能运行时
+- [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[webpack]] —— webpack 模块打包
+
