@@ -154,5 +154,7 @@ const doc = group(concat([
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[turing-1936]] —— Turing 1936 可计算性
 

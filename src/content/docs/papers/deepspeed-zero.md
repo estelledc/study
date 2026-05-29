@@ -141,3 +141,6 @@ accelerate launch train.py
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[megatron-lm]] —— Megatron-LM — NVIDIA 大规模训练框架
+

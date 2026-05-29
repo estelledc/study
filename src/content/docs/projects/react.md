@@ -180,6 +180,7 @@ function Greeting({ name }) {
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
+- [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[vue]] —— Vue.js — 渐进式 UI 框架

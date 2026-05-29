@@ -137,6 +137,8 @@ Assistant: 秋叶飘零落，金风送暮凉。
 
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
+- [[dpo]] —— DPO — Direct Preference Optimization
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[ppo]] —— PPO — Proximal Policy Optimization
+- [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
 

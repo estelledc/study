@@ -159,6 +159,7 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 
 - [[bun]] —— Bun — JS 全能运行时
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[supabase]] —— Supabase — Firebase 的开源替代
 

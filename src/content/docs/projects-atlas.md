@@ -354,14 +354,14 @@ sidebar:
 | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) |  |
 | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) |  |
 | [Continue — 把 AI code review 写成 git 跟踪的 markdown，让 PR 跑 status check](/study/projects/continue/) | 不再是"开源 Cursor"——v1 |
-| [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | 大型应用范例——143k stars 的开源 LLMOps 平台，Python 后端 + Next |
+| [Dify — LLM 应用开发平台](/study/projects/dify/) |  |
 | [LangChain — LLM 应用开发框架](/study/projects/langchain/) |  |
-| [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | 大型应用范例，28k stars 背后的「Next |
+| [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) |  |
 | [LibreChat — 不是再做一个 ChatGPT 替代品，是把"chat 应用"和"模型供应商"解耦成可热插拔的 provider 抽象层](/study/projects/librechat/) | 大型应用范例——37k stars 的 self-hosted ChatGPT alternative，Express + React + MongoDB + Meilisearch，packages/api/src/… |
 | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) |  |
-| [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | 一个跨厂商的协议设计：tools / resources / prompts 三类原语 + JSON-RPC 传输 + 严格 schema |
+| [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) |  |
 | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) |  |
-| [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | stream / structured output / tool use / multimodal 全统一在一组类型安全 API |
+| [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) |  |
 | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) |  |
 
 ## AI 浏览器自动化
@@ -547,7 +547,7 @@ sidebar:
 | `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
-| `dify` | [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
+| `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `dnd-kit` | [dnd-kit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docusaurus` | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | 文档站点 |
@@ -591,7 +591,7 @@ sidebar:
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
-| `langfuse` | [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
+| `langfuse` | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
 | `lerna` | [lerna — JS monorepo 第一代工具，2022 EOL 后被 Nx 收编的代际故事](/study/projects/lerna/) | Monorepo / 包管理 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
 | `librechat` | [LibreChat — 不是再做一个 ChatGPT 替代品，是把"chat 应用"和"模型供应商"解耦成可热插拔的 provider 抽象层](/study/projects/librechat/) | AI 应用 / Agent 平台 |
@@ -604,7 +604,7 @@ sidebar:
 | `luxon` | [luxon TZ + i18n 现代 Moment 替代](/study/projects/luxon/) | 日期时间 |
 | `markdown-it` | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) | Markdown / 解析 |
-| `mcp-ts-sdk` | [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
+| `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
 | `midscene` | [midscene — 不是 Playwright 升级版，是「自然语言 → 截图 + DOM → VLM 看图 → bbox → click」的反馈闭环框架](/study/projects/midscene/) | AI 浏览器自动化 |
@@ -707,7 +707,7 @@ sidebar:
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.count++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | CSS / 样式 |
-| `vercel-ai` | [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
+| `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
 | `visx` | [visx Airbnb React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
