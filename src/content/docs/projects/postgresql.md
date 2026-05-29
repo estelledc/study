@@ -187,6 +187,7 @@ LIMIT 5;
 - [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[weaviate]] —— Weaviate — 模块化向量数据库

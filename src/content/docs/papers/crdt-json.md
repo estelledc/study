@@ -165,6 +165,7 @@ console.log(docB.getMap('root').get('title'))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[dns]] —— DNS Domain Name System
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法

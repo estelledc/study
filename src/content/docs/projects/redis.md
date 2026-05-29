@@ -145,6 +145,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[dragonflydb]] —— Dragonfly — 多线程 Redis 替代
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[etcd]] —— etcd — 分布式键值数据库
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[kafka]] —— Apache Kafka — 分布式流处理平台
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[minio]] —— MinIO — S3 兼容对象存储

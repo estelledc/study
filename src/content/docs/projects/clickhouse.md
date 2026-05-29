@@ -158,6 +158,7 @@ ORDER BY date;
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[redis]] —— Redis — 内存键值数据库
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
 

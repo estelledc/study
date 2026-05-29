@@ -151,6 +151,7 @@ export default defineConfig({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[next-js]] —— Next.js — React 全栈框架
 - [[preact]] —— Preact — 3KB React 替代

@@ -148,3 +148,6 @@ for g in gaussians:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[vit]] —— ViT — Vision Transformer
+

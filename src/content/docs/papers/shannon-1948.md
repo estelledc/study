@@ -129,8 +129,13 @@ C = 20×10^6 × log₂(1001) ≈ 200 Mbps
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hamming-1950]] —— Hamming 纠错码
 - [[huffman-1952]] —— Huffman 编码
+- [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[reed-solomon-1960]] —— Reed-Solomon 编码

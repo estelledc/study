@@ -147,6 +147,7 @@ GROUP BY customer_id;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bigtable]] —— Bigtable 分布式结构化存储
 - [[chubby]] —— Chubby 分布式锁服务
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
@@ -157,6 +158,7 @@ GROUP BY customer_id;
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[tcp]] —— TCP Transmission Control Protocol
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
 

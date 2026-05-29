@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 217 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 219 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：217 个
+- **总数**：219 个
 - **已分类**：206
-- **未分类**：11（落入"其他 / 待分类"段）
+- **未分类**：13（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 11 |
+| [其他 / 待分类](#其他--待分类) | 13 |
 
 ---
 
@@ -135,7 +135,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Biome — 一个工具替代 ESLint + Prettier 的勇气](/study/projects/biome/) | 不是把两个工具合到一起，是从零写一个 Rust 工具链，复用 AST、共享配置、跑得快 25 倍 |
+| [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) |  |
 | [Bun — JS 全能运行时](/study/projects/bun/) |  |
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) |  |
 | [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | Parcel 团队用 Rust 重写整个 CSS 工具链，200+ CSS property 各自一个 Rust 类型，一遍走完 cssnano + autoprefixer + postcss-preset-env … |
@@ -395,7 +395,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [AFFiNE — 不是再做一个 Notion，是把 doc 和 whiteboard 融合到同一个 block 模型，再用 Yjs CRDT 把 local-first 做到底](/study/projects/affine/) | 大型应用范例——50k stars 的开源 Notion + Miro 替代，TypeScript + React + NestJS + Yjs，BlockSuite hyper-merged block 模型 + 本… |
+| [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) |  |
 | [cal.com — 不是再做一个 Calendly，是把"调度 SaaS"做成开源 + 可自托管 + 50 个 provider 都能插的协议](/study/projects/cal-com/) | 大型应用范例——44 |
 | [chatwoot — 不是再做一个 Intercom，是把"客服 SaaS"做成开源 + 自托管 + 11 类渠道全归一到 messages 表](/study/projects/chatwoot/) | 大型应用范例——29 |
 | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 大型应用范例——124k stars 背后的"四轨同核"架构判断，以及一处经常被误读的"P2P/E2E"叙事 |
@@ -495,14 +495,16 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 11 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 13 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
+| `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
+| `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
@@ -513,11 +515,11 @@ sidebar:
 
 ---
 
-## 全部 217 个（字母序）
+## 全部 219 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
-| `affine` | [AFFiNE — 不是再做一个 Notion，是把 doc 和 whiteboard 融合到同一个 block 模型，再用 Yjs CRDT 把 local-first 做到底](/study/projects/affine/) | 数据应用 / SaaS |
+| `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
 | `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
@@ -529,7 +531,8 @@ sidebar:
 | `axios` | [axios Promise-based HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) | 其他 |
 | `better-auth` | [better-auth 状元篇 — Plugin 化 TS-first 认证框架的可注册扩展思路](/study/projects/better-auth/) | Auth 认证 |
-| `biome` | [Biome — 一个工具替代 ESLint + Prettier 的勇气](/study/projects/biome/) | 构建工具 / Bundler |
+| `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
+| `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
 | `boxen` | [boxen — Terminal box 渲染库](/study/projects/boxen/) | Terminal / 终端 |
 | `browser-use` | [browser-use — 不是 Playwright 升级版，是 LLM 驱动的「DOM-tree → tool-call → CDP 执行」反馈循环](/study/projects/browser-use/) | AI 浏览器自动化 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
@@ -571,6 +574,7 @@ sidebar:
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
 | `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
+| `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |

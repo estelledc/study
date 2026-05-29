@@ -147,3 +147,6 @@ succ  = λn:Nat. Λα. λs:α→α. λz:α. s (n [α] s z)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

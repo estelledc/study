@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 146 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 148 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：146 篇
+- **总数**：148 篇
 - **已分类**：143
-- **未分类**：3（落入"其他 / 待分类"段）
+- **未分类**：5（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 3 |
+| [其他 / 待分类](#其他--待分类) | 5 |
 
 ---
 
@@ -86,7 +86,7 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [3D Gaussian Splatting — explicit primitives 把 NeRF 从 12 小时训练 0.1 FPS 拉到 5 分钟训练 100+ FPS](/study/papers/3d-gaussian-splatting/) | 用 3D 各向异性高斯（mean / 协方差 / SH / opacity）取代 NeRF 的 implicit MLP |
+| [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) |  |
 | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) |  |
 | [DINO 自监督视觉 transformer](/study/papers/dino/) |  |
 | [MAE — Masked Autoencoders](/study/papers/mae/) |  |
@@ -152,7 +152,7 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [Aurora (Verbitski et al. 2017) — 把数据库的下半身换成日志机](/study/papers/aurora/) | 第一个把 redo log 推到存储层、让存储自己重放并版本化页面的云原生关系数据库 |
+| [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) |  |
 | [Bigtable 分布式结构化存储](/study/papers/bigtable/) |  |
 | [Calvin (Thomson et al. 2012) — 不要时钟，要 sequencer，全球事务的另一条路](/study/papers/calvin/) | 用全局排序日志替代 2PC 与 commit-wait——Spanner 同期对手，把分布式事务 reduce 到「先排序后执行」的两段式 |
 | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | VLDB 2024 ClickHouse 论文精读 — 列存 + vectorized + MergeTree 如何把 OLAP 推到极致 |
@@ -304,21 +304,23 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 3 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 5 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
+| `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
+| `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 
 ---
 
-## 全部 146 篇（字母序）
+## 全部 148 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
-| `3d-gaussian-splatting` | [3D Gaussian Splatting — explicit primitives 把 NeRF 从 12 小时训练 0.1 FPS 拉到 5 分钟训练 100+ FPS](/study/papers/3d-gaussian-splatting/) | 计算机视觉 |
+| `3d-gaussian-splatting` | [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) | 计算机视觉 |
 | `activation-patching` | [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) | AI 安全与可解释性 |
 | `adapton` | [Adapton — 增量计算](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
@@ -327,7 +329,7 @@ sidebar:
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
 | `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
-| `aurora` | [Aurora (Verbitski et al. 2017) — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
+| `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 其他 |
 | `beck-tdd` | [Kent Beck — Test-Driven Development: By Example](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
@@ -446,6 +448,8 @@ sidebar:
 | `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
+| `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
+| `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
 | `tcp` | [TCP Transmission Control Protocol](/study/papers/tcp/) | 网络协议 |
 | `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |

@@ -149,10 +149,12 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
@@ -168,6 +170,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[starlight]] —— Starlight — Astro 文档站点主题
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
 - [[turing-1936]] —— Turing 1936 可计算性
