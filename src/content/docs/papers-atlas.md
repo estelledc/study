@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 127 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 128 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：127 篇
-- **已分类**：127
+- **总数**：128 篇
+- **已分类**：128
 
 ### 按主题分布
 
@@ -32,7 +32,7 @@ sidebar:
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
-| [信息论 / 编码理论](#信息论---编码理论) | 2 |
+| [信息论 / 编码理论](#信息论---编码理论) | 3 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
@@ -249,10 +249,11 @@ sidebar:
 
 ## 信息论 / 编码理论
 
-共 2 篇。
+共 3 篇。
 
 | 论文 | 描述 |
 |---|---|
+| [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | Richard Hamming 1950 年 BSTJ 论文系统化错误检测与纠正理论，Hamming(7,4) 用 3 个校验位为 4 个数据位提供单错纠正，距离-纠错关系定理 ⌊(d-1)/2⌋ 至今仍是编码理论基石 |
 | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | Huffman 1952 状元篇 — 从作业题到 70 年标准：最优前缀码的贪心构造与现代压缩中的位置 |
 | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) |  |
 
@@ -286,7 +287,7 @@ sidebar:
 
 ---
 
-## 全部 127 篇（字母序）
+## 全部 128 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -344,6 +345,7 @@ sidebar:
 | `gpt-3` | [GPT-3 Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
 | `graphrag` | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | 智能体与 LLM 系统 |
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
+| `hamming-1950` | [Hamming Codes：错误纠正的开山之作](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hindley-milner` | [Hindley-Milner — 让编译器自己推类型的祖宗算法（POPL 1982）](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [A Method for the Construction of Minimum-Redundancy Codes](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
