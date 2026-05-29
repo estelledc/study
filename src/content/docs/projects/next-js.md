@@ -148,6 +148,7 @@ export default Page
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[prisma]] —— Prisma — 类型安全 ORM
 - [[react]] —— React UI 组件库
 - [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
 - [[svelte]] —— Svelte — 编译时 UI 框架
@@ -157,4 +158,5 @@ export default Page
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

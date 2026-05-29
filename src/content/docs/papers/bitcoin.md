@@ -142,6 +142,8 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[raft]] —— Raft — 易理解的共识算法
+- [[reed-solomon-1960]] —— Reed-Solomon 编码
 - [[rsa]] —— RSA 公钥密码
 

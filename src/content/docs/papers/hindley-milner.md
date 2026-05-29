@@ -148,6 +148,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
@@ -159,6 +160,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
+- [[ssa]] —— SSA — 静态单赋值形式
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[turing-1936]] —— Turing 1936 可计算性

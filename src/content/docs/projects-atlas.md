@@ -86,7 +86,7 @@ sidebar:
 | [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) |  |
 | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) |  |
 | [valibot 模块化模式校验](/study/projects/valibot/) |  |
-| [zod TypeScript-first 模式校验](/study/projects/zod/) |  |
+| [Zod — TypeScript-first schema 验证](/study/projects/zod/) |  |
 
 ## HTTP 客户端
 
@@ -151,7 +151,7 @@ sidebar:
 |---|---|
 | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) |  |
 | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | 用 Emscripten 把 C++ 列式分析数据库编译成 WASM，主线程 JS API → Web Worker → WASM bundle → virtual filesystem，让 SQL 直接在浏览器里跑 … |
-| [Kysely TypeScript-first SQL Query Builder](/study/projects/kysely/) | 不是 ORM 也不是 raw SQL——用 TypeScript 模板类型把 SQL 写成 method chain，每一步都被类型系统校验，编译期就把 select 列、join 条件、where 类型对齐 |
+| [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) |  |
 | [MikroORM DataMapper + Unit of Work + Identity Map](/study/projects/mikro-orm/) |  |
 | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | 用 tagged template literal 把 SQL 字符串和 parameter 在编译期就分开，自动绑参防注入 |
 | [Prisma — 类型安全 ORM](/study/projects/prisma/) |  |
@@ -228,12 +228,12 @@ sidebar:
 |---|---|
 | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 把 Promise 升级成 Effect 类型，把 throw 换成可追踪 cause，把 try/finally 换成自动资源清理 |
 | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 拆解 immer 如何用 ES6 Proxy 拦截写操作、构造 draft、最后 finalize 出新对象，并对比 Immutable |
-| [jotai — atomic 状态管理 + Daishi Kato 第三套](/study/projects/jotai/) | jotai 是 pmndrs 出品的 atomic 状态管理库，Daishi Kato 在 zustand / valtio 之后给出的第三套答案：把"最小订阅单元"做到 atom 级别，用 read/write 函数… |
+| [Jotai — 原子化 React 状态管理](/study/projects/jotai/) |  |
 | [MobX — Reactive state via TFRP](/study/projects/mobx/) |  |
 | [nanostores — 框架无关的 atomic 状态库（< 1 KB）](/study/projects/nanostores/) | nanostores 是 Andrey Sitnik（PostCSS / Browserslist 作者）做的极小状态管理库，押注"state 不该绑定 React"——一个 ~265 字节的 atom 核心，再用独立… |
 | [valtio — 让 state.count++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | pmndrs 出品，459 行 vanilla |
 | [XState — 把状态画成图](/study/projects/xstate/) | 有限状态机 + Actor 模型，把"看似简单的状态"变成可视化的设计文档 |
-| [zustand — 101 行核心的"反 Provider 派"状态管理](/study/projects/zustand/) | pmndrs 出品 |
+| [Zustand — 极简 React 状态管理](/study/projects/zustand/) |  |
 
 ## 测试 / 验证
 
@@ -484,12 +484,12 @@ sidebar:
 | `inngest` | [Inngest — durable workflow 的事件溯源](/study/projects/inngest/) | 其他基础设施 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [Jimp 纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
-| `jotai` | [jotai — atomic 状态管理 + Daishi Kato 第三套](/study/projects/jotai/) | 状态管理 |
+| `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
 | `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
-| `kysely` | [Kysely TypeScript-first SQL Query Builder](/study/projects/kysely/) | ORM / DB 客户端 |
+| `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `langfuse` | [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
 | `lerna` | [lerna — JS monorepo 第一代工具，2022 EOL 后被 Nx 收编的代际故事](/study/projects/lerna/) | Monorepo / 包管理 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
@@ -597,5 +597,5 @@ sidebar:
 | `xstate` | [XState — 把状态画成图](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [yjs — collaborative editing 不应该锁住编辑器，CRDT 抽象层让任何编辑器都能接](/study/projects/yjs/) | 编辑器 / 富文本 |
-| `zod` | [zod TypeScript-first 模式校验](/study/projects/zod/) | 表单 / Schema 校验 |
-| `zustand` | [zustand — 101 行核心的"反 Provider 派"状态管理](/study/projects/zustand/) | 状态管理 |
+| `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |
+| `zustand` | [Zustand — 极简 React 状态管理](/study/projects/zustand/) | 状态管理 |

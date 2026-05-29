@@ -218,7 +218,7 @@ sidebar:
 |---|---|
 | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 把 Self-Adjusting Computation 从学术原型推到生产工程——lazy demand-driven 替代 eager push |
 | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) |  |
-| [Bidirectional Typing (Dunfield & Krishnaswami CSUR 2021) — TS/Rust/Swift 类型推断的工程基础](/study/papers/bidirectional-typing/) | check ⇐ vs infer ⇒ 双判断 + 局部标注 + 互相递归 |
+| [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) |  |
 | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 22 项研究系统综述 |
 | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
 | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 第一篇把 CRDT 从平坦寄存器扩到嵌套 map+list 任意嵌套结构的论文 |
@@ -235,7 +235,7 @@ sidebar:
 | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | Hölzle, Chambers, Ungar, ECOOP 1991 — 在动态类型对象语言里给每个 call site 配一张小缓存，按 receiver 类型记忆最近被调到的方法地址，让"虚函数 / 消息发送"在… |
 | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) |  |
 | [Smalltalk-80](/study/papers/smalltalk-80/) |  |
-| [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | Cytron, Ferrante, Rosen, Wegman, Zadeck, ACM TOPLAS 1991 — 用支配边界（dominance frontier）算法把 SSA 构造从 O(N³) 朴素做法降到几… |
+| [SSA — 静态单赋值形式](/study/papers/ssa/) |  |
 | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) |  |
 | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a |
 | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | type family + extension fields 让 AST 在 parse / rename / typecheck / optimize 各 phase 共享同一份 traversal 代码 |
@@ -263,8 +263,8 @@ sidebar:
 |---|---|
 | [Hamming 纠错码](/study/papers/hamming-1950/) |  |
 | [Huffman 编码](/study/papers/huffman-1952/) |  |
-| [Polar Codes — Channel Polarization 与 5G 编码](/study/papers/polar-codes-2009/) | Arıkan 2009 年提出的信道极化方法，第一个被严格证明能达到 Shannon 容量的实用编码方案，5G NR 控制信道（PDCCH/PBCH/PUCCH）的官方编码 |
-| [Reed-Solomon 编码：多项式码与错误纠正的 60 年统治](/study/papers/reed-solomon-1960/) | Reed & Solomon 1960 论文精读 v1 |
+| [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) |  |
+| [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) |  |
 | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) |  |
 
 ## 密码学 / 安全
@@ -319,7 +319,7 @@ sidebar:
 | `autogen` | [AutoGen — Enabling Next-Gen LLM Applications via Multi-Agent Conversation](/study/papers/autogen/) | 智能体与 LLM 系统 |
 | `beck-tdd` | [Kent Beck — Test-Driven Development: By Example](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
 | `bert` | [BERT 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
-| `bidirectional-typing` | [Bidirectional Typing (Dunfield & Krishnaswami CSUR 2021) — TS/Rust/Swift 类型推断的工程基础](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
+| `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
 | `bigtable` | [Bigtable 分布式结构化存储](/study/papers/bigtable/) | 数据库 |
 | `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收](/study/papers/boehm-gc/) | GC / 内存管理 |
@@ -395,7 +395,7 @@ sidebar:
 | `openhands` | [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `pair-programming` | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `paxos` | [Paxos 异步分布式共识](/study/papers/paxos/) | 分布式系统 |
-| `polar-codes-2009` | [Polar Codes — Channel Polarization 与 5G 编码](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
+| `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
 | `ppo` | [PPO Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
 | `program-comprehension-fmri` | [Understanding Program Comprehension with fMRI — 程序理解像语言而非数学的首个脑成像证据](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
@@ -405,7 +405,7 @@ sidebar:
 | `rag-lewis-2020` | [RAG (NeurIPS 2020) — 把 differentiable retriever 和 seq2seq generator 联训成一个端到端模型，让生成式 AI 第一次能引用外部知识](/study/papers/rag-lewis-2020/) | 智能体与 LLM 系统 |
 | `react` | [ReAct — agent loop 的祖宗：think × act 的最小可执行三元组](/study/papers/react/) | 智能体与 LLM 系统 |
 | `realm` | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
-| `reed-solomon-1960` | [Reed-Solomon 编码：多项式码与错误纠正的 60 年统治](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
+| `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
 | `reflexion` | [Reflexion (Shinn et al. 2023) — verbal RL：用文字代替梯度让 agent 学习](/study/papers/reflexion/) | 智能体与 LLM 系统 |
 | `resnet` | [ResNet 深度残差学习](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO (DeepMind ICML 2022) — 用 2T tokens 外部数据库 + chunked cross-attention 让 7.5B 模型媲美 175B Gopher，把检索抬成与参数并列的第二个 LLM 缩放轴](/study/papers/retro/) | 智能体与 LLM 系统 |
@@ -426,7 +426,7 @@ sidebar:
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |
 | `spanner` | [Spanner 全球分布式数据库](/study/papers/spanner/) | 分布式系统 |
 | `sparse-autoencoders` | [Sparse Autoencoders 把 superposition 解出来的那把扳手](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
-| `ssa` | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | 编译器 / 编程语言理论 |
+| `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
 | `stable-diffusion` | [Stable Diffusion / LDM — 把扩散从像素搬到 latent 空间，让消费级 GPU 也能跑文生图](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
 | `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `swe-agent` | [SWE-agent — 不靠模型变聪明、靠"接口"变聪明：ACI 把 SWE-bench 1.96% 推到 12.5%](/study/papers/swe-agent/) | 智能体与 LLM 系统 |

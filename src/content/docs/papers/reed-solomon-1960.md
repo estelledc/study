@@ -146,3 +146,7 @@ QR 码强制带 RS 冗余。四个等级对应不同的冗余比例：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hamming-1950]] —— Hamming 纠错码
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+

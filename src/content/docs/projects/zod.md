@@ -180,3 +180,25 @@ function LoginForm() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[arktype]] —— arktype TypeScript 字符串 DSL 模式校验
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[axios]] —— axios Promise-based HTTP 客户端
+- [[elysia]] —— Elysia Bun-first TypeScript Web 框架
+- [[express]] —— Express Node.js 经典 Web 框架
+- [[fastify]] —— Fastify schema-first Node 高性能 web 框架
+- [[i18next]] —— i18next framework-agnostic i18n 引擎
+- [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
+- [[ky]] —— ky 极简 fetch-based HTTP 客户端
+- [[mikro-orm]] —— MikroORM DataMapper + Unit of Work + Identity Map
+- [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
+- [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
+- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[sequelize]] —— Sequelize Node.js Promise-based ORM 元老
+- [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+- [[tanstack-form]] —— TanStack Form Headless 多框架表单库
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[typeorm]] —— TypeORM Decorator-based ORM
+- [[valibot]] —— valibot 模块化模式校验
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+
