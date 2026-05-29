@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 137 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 138 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：137 个
-- **已分类**：137
+- **总数**：138 个
+- **已分类**：138
 
 ### 按主题分布
 
@@ -41,7 +41,7 @@ sidebar:
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
-| [CSS / 样式](#css---样式) | 1 |
+| [CSS / 样式](#css---样式) | 2 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -342,10 +342,11 @@ sidebar:
 
 ## CSS / 样式
 
-共 1 个。
+共 2 个。
 
 | 项目 | 描述 |
 |---|---|
+| [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) |  |
 | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) |  |
 
 ## 其他基础设施
@@ -360,7 +361,7 @@ sidebar:
 
 ---
 
-## 全部 137 个（字母序）
+## 全部 138 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -390,6 +391,7 @@ sidebar:
 | `echarts` | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 数据可视化 |
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
 | `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
+| `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
