@@ -65,6 +65,9 @@ const THEMES_PAPERS = {
     'trees-that-grow', 'wadler-prettier', 'adapton', 'salsa-adapton',
     'self-adjusting', 'crdt-json', 'realm',
   ],
+  '密码学 / 安全': [
+    'diffie-hellman',
+  ],
   'HCI / 软件工程研究': [
     'cognitive-load-theory', 'debugging-dichotomy', 'fsrs-spaced-repetition',
     'pair-programming', 'programmer-interruption', 'program-comprehension-fmri',

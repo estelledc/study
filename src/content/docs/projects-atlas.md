@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 125 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 126 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：125 个
+- **总数**：126 个
 - **已分类**：125
+- **未分类**：1（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -40,6 +41,7 @@ sidebar:
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [其他基础设施](#其他基础设施) | 3 |
+| [其他 / 待分类](#其他--待分类) | 1 |
 
 ---
 
@@ -322,9 +324,17 @@ sidebar:
 | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 倒排索引 + Radix Tree + BM25 + Levenshtein 矩阵剪枝，全部纯 TS 跑在 V8 里——证明大部分搜索场景根本不需要 server |
 | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 一个 storage interface + driver registry 跑通 fs/redis/s3/cloudflare-kv/upstash 等 35+ backend |
 
+## 其他 / 待分类
+
+共 1 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+
+| Slug | 项目 |
+|---|---|
+| `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) |
+
 ---
 
-## 全部 125 个（字母序）
+## 全部 126 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -353,6 +363,7 @@ sidebar:
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `echarts` | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 数据可视化 |
 | `effect` | [Effect-TS — 函数式错误 + 资源管理的另一个未来](/study/projects/effect/) | 状态管理 |
+| `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | 其他 |
 | `esbuild` | [esbuild Go-based 极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `excalidraw` | [Excalidraw — 把 canvas / 协同 / 撤销 / 持久 都收敛到同一个 Store](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
