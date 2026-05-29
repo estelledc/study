@@ -179,5 +179,7 @@ const datasource = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[react]] —— React UI 组件库
+- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
+- [[vue]] —— Vue.js — 渐进式 UI 框架
 

@@ -173,5 +173,6 @@ D(M):
 - [[rsa]] —— RSA 公钥密码
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[smalltalk-80]] —— Smalltalk-80
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 - [[zk-snark]] —— zk-SNARK 零知识证明
 

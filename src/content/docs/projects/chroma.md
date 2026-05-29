@@ -136,3 +136,12 @@ col = client.create_collection("docs", embedding_function=ef)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dgraph]] —— Dgraph — 分布式图数据库
+- [[llamaindex]] —— LlamaIndex — LLM 数据框架
+- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+- [[milvus]] —— Milvus — 开源向量数据库
+- [[neo4j]] —— Neo4j — 主流图数据库
+- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
+- [[qdrant]] —— Qdrant — Rust 向量数据库
+
