@@ -1,5 +1,5 @@
 ---
-title: lerna — 一仓多包发版的祖宗工具
+title: lerna — 一个仓库发几十个 npm 包的祖宗工具
 来源: 'https://github.com/lerna/lerna'
 日期: 2026-05-30
 分类: 前端工程
@@ -8,7 +8,7 @@ title: lerna — 一仓多包发版的祖宗工具
 
 ## 是什么
 
-lerna 是一个**让你一条命令发布"一个仓库里的几十个 npm 包"**的工具。日常类比：像快递站老板，你把 30 个包裹一起递过去，他自己看哪个该贴 1.0、哪个该贴 1.1，再按"先寄轻的再寄重的"顺序送出去。
+lerna 是一个**让你一条命令把"一个仓库里几十个 npm 包"全部发出去**的工具。日常类比：像快递站老板，你把 30 个包裹一起递过去，他自己看哪个该贴 1.0、哪个该贴 1.1，再按"先寄轻的再寄重的"顺序送出去——你不用一个一个跑。
 
 具体来说，你的项目长这样：
 
@@ -43,7 +43,7 @@ lerna 的工作可以拆成 **三步**：
 
 3. **bump 版本 + publish**：lerna 有两种模式，**fixed**（所有包共用一个版本号，一改俱改）和 **independent**（每个包各自维护版本号）。决定好版本后，按拓扑顺序逐个 `npm publish`。
 
-这三步加起来就是经典的 lerna 工作流。
+这三步加起来就是经典的 lerna 工作流，今天的 changesets / Nx / Turborepo 都在沿用。
 
 ## 实践案例
 
@@ -64,7 +64,7 @@ npx lerna@latest init   # 生成 lerna.json + packages/ 目录
 }
 ```
 
-只有两行。**逐部分解释**：`version: "0.0.0"` 表示用 fixed 模式且当前全局版本号是 0.0.0；`npmClient` 告诉 lerna 你用 npm（也可以填 yarn/pnpm，pnpm 要再放一个 `pnpm-workspace.yaml`）。`packages/` 是放子包的默认目录。
+只有两行。**逐部分解释**：`version: "0.0.0"` 表示用 fixed 模式且当前全局版本号是 0.0.0；`npmClient` 告诉 lerna 你用 npm（也可填 yarn/pnpm，pnpm 还要配 `pnpm-workspace.yaml`）。`packages/` 是放子包的默认目录。
 
 ### 案例 2：fixed mode vs independent mode
 
@@ -97,13 +97,13 @@ publishing @demo/cli   ✓     ← core 已在 npm 上，cli 才能 resolve
 
 ## 踩过的坑
 
-1. **fixed mode 让用户重复升级**——改一个包导致全部升版本，用户下载到一堆"没动过却换号"的包，CHANGELOG 也全是空的。新项目大多选 independent 模式避免这个。
+1. **fixed mode 让用户重复升级**——改一个包导致全部升版本，用户下载到一堆"没改动却换号"的包，CHANGELOG 也全是空的。新项目大多选 independent 模式避免这个。
 
-2. **conventional commits 写错就 bump 错**——`independent + --conventional-commits` 时 lerna 看 commit 前缀决定 major/minor/patch；把 `feat:` 写成 `fix:` 直接少升一档版本，发出去的 1.2.4 实际是 breaking change，用户的 CI 全爆。
+2. **conventional commits 写错就 bump 错**——`independent + --conventional-commits` 时 lerna 看 commit 前缀决定 major/minor/patch；把 `feat:` 写成 `fix:` 直接少升一档，发出去的 1.2.4 实际是 breaking change，下游 CI 全爆。
 
-3. **`--reject-cycles` 默认是 false**——如果两个包循环依赖，lerna 不报错，而是把它们放到同一并发批"破环发布"，可能 race condition（A 引用 B 老版本）。生产环境必须显式开 `--reject-cycles=true`。
+3. **`--reject-cycles` 默认是 false**——两个包循环依赖时 lerna 不报错，而是把它们放到同一并发批"破环发布"，可能 race condition（A 引用 B 老版本）。生产环境必须显式开 `--reject-cycles=true`。
 
-4. **`lerna bootstrap` 在 v7 已删除**——历史上 lerna 最有名的命令现在不存在了。npm 7 / yarn / pnpm 都内置 workspace 自动 symlink。如果你看的博客是 2022 之前的、出现 `lerna bootstrap` 字样，直接换成 `npm install` 即可。
+4. **`lerna bootstrap` 在 v7 已删除**——历史上 lerna 最有名的命令现在不存在了。npm 7 / yarn / pnpm 都内置 workspace 自动 symlink。如果博客是 2022 之前的、出现 `lerna bootstrap` 字样，直接换成 `npm install` 即可。
 
 ## 适用 vs 不适用场景
 
@@ -156,7 +156,3 @@ publishing @demo/cli   ✓     ← core 已在 npm 上，cli 才能 resolve
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
-- [[framer-motion]] —— Framer Motion — React 声明式动画
-
