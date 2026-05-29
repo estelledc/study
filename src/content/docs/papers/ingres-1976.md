@@ -153,6 +153,7 @@ INGRES 把它**拆**成两步：先扫 MANAGER 把每个部门的 manager.salary
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询

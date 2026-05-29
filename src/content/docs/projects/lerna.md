@@ -156,3 +156,7 @@ publishing @demo/cli   ✓     ← core 已在 npm 上，cli 才能 resolve
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
+- [[framer-motion]] —— Framer Motion — React 声明式动画
+

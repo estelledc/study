@@ -94,10 +94,8 @@ async function updateRewritePoolStatus(written) {
   const out = lines.map(line => {
     const c = JSON.parse(line);
     const key = `${c.area}::${c.slug}`;
-    // 已写笔记（claimed → written）
+    // 已写笔记（claimed → written），不动 available（让 build-rewrite-pool 决定 legacy 是否仍需要 rewrite）
     if (c.status === 'claimed' && writtenSet.has(key)) {
-      // 检查文件实际通过 quality-gate（>250 行下降到 150-200 = rewrite 成功）
-      // 这里简化：只要 claimed 且文件在 written，就标 written
       c.status = 'written';
       c.claimed_by = null;
       claimedToWritten++;

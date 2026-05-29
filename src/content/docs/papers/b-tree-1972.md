@@ -129,6 +129,7 @@ B+Tree 的执行路径：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术

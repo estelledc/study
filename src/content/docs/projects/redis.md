@@ -149,7 +149,9 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[inngest]] —— Inngest — durable workflow 的事件溯源
 - [[kafka]] —— Apache Kafka — 分布式流处理平台
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器

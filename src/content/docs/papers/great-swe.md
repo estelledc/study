@@ -163,3 +163,7 @@ Great SWE 这篇论文（ICSE 2015）做的事很朴素：访谈 59 位资深工
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
+- [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
+

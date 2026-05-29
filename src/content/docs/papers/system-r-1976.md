@@ -147,6 +147,7 @@ System R 的处理：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储

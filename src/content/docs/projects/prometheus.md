@@ -181,6 +181,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[jaeger]] —— Jaeger — 分布式追踪系统

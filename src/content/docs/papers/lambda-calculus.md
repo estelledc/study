@@ -150,6 +150,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[huffman-1952]] —— Huffman 编码
@@ -167,7 +168,6 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

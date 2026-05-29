@@ -152,7 +152,9 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端

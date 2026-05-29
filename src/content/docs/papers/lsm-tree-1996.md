@@ -141,6 +141,7 @@ client read key="foo"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库

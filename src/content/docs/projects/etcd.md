@@ -131,6 +131,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nats]] —— NATS — 极简云原生消息系统
