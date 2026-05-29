@@ -7,6 +7,7 @@ agentless
 algol-60
 alphago
 anthropic-circuits
+aries-1992
 attention
 aurora
 autogen
@@ -59,6 +60,7 @@ flash-attention
 foundationdb
 fsrs-spaced-repetition
 gadt-pjones
+game-semantics-pcf
 generational-gc
 gfs
 godel-1931
@@ -231,10 +233,12 @@ fastify
 fd
 fiber
 flask
+foundry
 framer-motion
 fzf
 gin
 go-ethereum
+go-zero
 got
 grafana
 gsap

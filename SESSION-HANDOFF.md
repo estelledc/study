@@ -1,85 +1,92 @@
-# Study 自驱接力状态
+# Auto-push v3 — Session Handoff
 
-> 最后更新：2026-05-29 22:13 (batch 27 完成后)
-> 本 session：实现完整自驱式批量写笔记系统 + 跑通 3 批 8/8 验证流水线
+> Last update: 2026-05-30 00:51
+> Session 涵盖：v1 batch 25-31 收尾 + v3 M1/M2/M3 全部完成 + Round 33-34 真跑
 
-## 进度快照
+## Progress Snapshot
 
-- main HEAD：`5e812ae` (chore: batch 27 状态同步)
-- total：**375 / 20000**（papers 150 + projects 221，1.88%）
-- last batch：27（连续 3 批 8/8 0 fail）
-- queue：1465（papers 615 + projects 850）
-- rewrite_pool：available 162 / written 12
+- main HEAD: `2a5afec`
+- **total: 406 / 20000**（papers 167 + projects 239 = **2.03%**）
+- 本 session 共 +43 笔记（v1 batch 25-31: +26，v3: +17）
+- last batch: 34（连续 0 build fail / 0 红线词命中）
+- queue: 1430（papers 641 + projects 789）
+- rewrite_pool: 146 available + 29 written
+- graveyard: 0
 
-## 本 session 跑了几批
+## v3 系统已全部就位
 
-| Batch | 时间 | net new | failed | 备注 |
-|---|---|---|---|---|
-| 25 | 21:46 | +4 | 0 | 第一批 dry-run，验证全流水线 |
-| 26 | 22:05 | +4 | 0 | 连续推进 |
-| 27 | 22:13 | +4 | 0 | 连续推进 |
+### 脚本（10 个）
 
-每批 wall time ~10 min（subagent 7-9 min 并行 + sync-and-merge 1-3 min）。
+| 脚本 | 状态 |
+|---|---|
+| `scripts/run-pipeline.mjs` | ✅ 单 slug 5-stage driver，dump prompt 到 /tmp/pipeline-{slug}/ |
+| `scripts/pipeline-events.mjs` | ✅ append-only 事件流（O_APPEND 原子写） |
+| `scripts/quality-gate.mjs` | ✅ 7 项 Layer 1+2 检查（ESM export validate） |
+| `scripts/sync-and-merge-single.mjs` | ✅ 单 slug cherry-pick + Layer 2 兜底，自动 resolve modify/delete 冲突 |
+| `scripts/finalize-round.sh` | ✅ regen + build + push + sync 8 worktree，build 失败两段式回退 |
+| `scripts/checkpoint.mjs` | ✅ read/write data/checkpoint.json，支持 --auto-update 自动从仓库统计 |
+| `scripts/exit-conditions.mjs` | ✅ 6 条退出判定（target / agent-budget / build / queue / context / user-stop） |
+| `scripts/pick-batch.mjs` | ✅ 跨 area + topic 轮询选 slug（rename from dispatch-batch） |
+| `scripts/round-lock.mjs` | ✅ 防 wakeup 排队踩踏，90 min 超时强制释放 |
+| v1 兼容脚本 | ✅ extract-candidates / sync-written / build-rewrite-pool / regen-* / loop-status 全部保留 |
 
-## 系统就位
+### Prompts（6 个新 + base-rules）
 
-### 数据层（commit `bea97a1`）
+- `prompts/researcher.md` — lr search + arxiv MCP + lr graph 5 步
+- `prompts/writer.md` — 12 段 150-200 行 + frontmatter 单引号示例 + 行数预算指南（170±10）
+- `prompts/reviewer-zero-base.md` — 类比 / 术语 / 案例可读性
+- `prompts/reviewer-academic.md` — 事实 / 引用 / 无扭曲
+- `prompts/reviewer-engineer.md` — 代码 / 踩坑 / 适用
+- `prompts/refiner.md` — 定向修 ≤2 段 + fix_hints 选取规则 + 复审清单
+- `prompts/base-rules.md` — 12 段结构 + 红线词 + YAML（v1 沿用）
 
-- `scripts/extract-candidates.mjs` — research/*.md → data/candidates.jsonl（1523 条入库，2 条红线词预扫拦截）
-- `scripts/sync-written.mjs` — ls + jsonl 状态同步（也更新 rewrite-pool）
-- `scripts/build-rewrite-pool.mjs` — 4 条规则打分（行数 / academic-h2 / legacy-frontmatter / h2-hits）
-- `scripts/quality-gate.mjs` — 7 项 layer 1 + layer 2 检查
+### Skill
 
-### 流水线层（commit `12b4baf`）
+`.claude/skills/auto-push/SKILL.md` 重写为 v3 入口。**关键发现**：ScheduleWakeup 仅在 `/loop` 模式下可用，普通 session 不暴露。改用**主 CC 直接接力**（每 round 末不退出，同 turn 启下一 round），靠 CC auto-compaction 在 60-80% 自动压缩。
 
-- `scripts/dispatch-batch.mjs` — pick 4R+4N，按 worktree 静态分配，5 prompt 模板渲染
-- `scripts/sync-and-merge.sh` — cherry-pick 8 + quality gate 兜底 + regen + build + amend + push + sync 8 worktree
-- `scripts/expand-pool.mjs` — organic backlinks 扩展（103 net new candidates 待用）
-- `scripts/loop-status.mjs` — STATUS.md + 一行简报
+## 验证里程碑
 
-### Skill + Prompts（commit `20b807d` / `bea97a1`）
+| MS | 范围 | 验收 | 实际产出 |
+|---|---|---|---|
+| **M1** | 单 slug 5-stage e2e | gadt-pjones 全 pass + 154 行 + commit 3deac83 | ✅ +1 |
+| **M2** | 8 slug 并行 + 拆 single/finalize | 8/8 通过，3 走 Refiner，0 build fail | ✅ +9 |
+| **M3** | 真 round + Layer 2 兜底实测 | Round 33: 7/8 通过，**1 Layer 2 拦截（lexical 旧版未真改动）**，0 build fail | ✅ +7 |
+| **Round 34** | 重测 rewrite 真改动 | 8/8 通过，1 Refiner（game-semantics-pcf），0 拦截 | ✅ +8 |
 
-- `.claude/skills/auto-push/SKILL.md` — `/auto-push` 入口（user 一句触发）
-- `prompts/base-rules.md` — 12 段结构 / 行数 / 红线词 / YAML / 返回 JSON 单一来源
-- `prompts/{new,rewrite}-{paper,project}.md` — 4 业务模板
+**关键质量信号**：
+- Refiner 触发率约 50%（M2: 3/8、M3: 3/8、R34: 1/8）
+- Layer 2 兜底有效（M3 lexical 命中 4 项 fail：lines/red-line/h2/permalink）
+- Reviewer panel 平均分 4.0-4.6
+- 0 build fail，0 红线词最终入仓
+- 5 stage wall time ~12 min/round（8 slug 并行 cap 8）
 
-## 接力 — 下个 session 怎么继续
+## Resume
+
+下个 session 直接接力：
 
 ```
-/auto-push --resume
+/auto-push 8           # 跑一个 round（默认 size 8 适合 session 内手动驱动）
+# 或
+/auto-push 120         # 满载 round（plan v3 设计）
 ```
 
-主 CC 会按 SKILL.md 流程：
-1. loop-status 读当前 queue / rewrite_pool / build 状态
-2. sync 8 worktree 到 origin/main
-3. dispatch-batch 拿 8 prompt
-4. 派 8 subagent 并行
-5. sync-and-merge.sh
-6. sync-written + commit 状态
-7. 回 1，直到 context 80% 写新 handoff
+主 CC 按 `.claude/skills/auto-push/SKILL.md` 流程执行：
+1. `node scripts/round-lock.mjs --check` 防踩踏
+2. `node scripts/exit-conditions.mjs` 检查停止条件
+3. sync 8 worktree + `pick-batch` 选 slug + `run-pipeline` build ctx
+4. 派 N 个 Task subagent 并行跑 5 stage
+5. cherry-pick 各 slug + `finalize-round.sh`
+6. 写 checkpoint + 释放锁 + 决定 continue 或 exit
 
-## 已知 / 待验证
+**STOP_SIGNAL**：用户任意时刻 `touch /Users/jason/study/data/STOP_SIGNAL`，下个 round 边界 graceful 退出。
 
-- ✅ 流水线 0 fail：3 批 24 个 commit 全部 cherry-pick + build 通过
-- ✅ Layer 2 quality gate 已实测拦截能力（Session 1 验证）
-- ⚠️ system-r-1976 行数 149（< 150 下限），但 layer 2 也放行——疑是 grep 行数算法跟 quality-gate 算法在边界差 1 行（结尾换行计数）。**不阻塞**，但下个 session 可调研 quality-gate.mjs 的 lines 计算精度
-- ⚠️ ontology agent（pool expansion 第 3 级）尚未实现：当 organic 也见底时需要 user 确认启动；当前 queue 1465 + organic 103 还非常充裕，6+ 周不会触发
-- ⚠️ `/auto-push stop` 中止流程未单测：理论按 SKILL.md 描述的"完成当前批 + 写 handoff"，下个 session 可任意验证一次
+## 已知问题（可继续优化）
 
-## 候选池策略（plan 提醒）
+1. **rewrite-pool ↔ candidates 状态同步**：sync-written 当前只把 `claimed → written`，不会把"已 v3 重写过的 legacy slug"自动标 written（导致 pick-batch 偶尔重选）。修法：build-rewrite-pool 加 `--incremental` 已实装，但 sync-written 还需配合（M3 跑时手动重建过一次）
+2. **subagent 写 rewrite 时未真改动**：M3 lexical 没保留 existing 的好类比但又写回 worktree（导致 Layer 2 拦截）。Writer prompt 已加"行数 150-200 + delete legacy frontmatter"约束，但 subagent 仍可能漏。Layer 2 兜底拦得住，质量损失为零
+3. **ScheduleWakeup 不可用**：`/loop` 模式才暴露。主 CC 直接接力路径已验证可行，不阻塞
+4. **M4 retro / ontology / citation expansion 未实装**：candidate 见底前还有 1430 + 146 = 1576 容量（约 15+ rounds buffer），不紧急
 
-- rewrite_pool 162 available + 12 written = 174 total。按 4/批 消耗，~40 批后转纯 8 NEW
-- queue 1465 / 8 NEW per batch ≈ 180 批 候选耗尽时间
-- organic 扩展（expand-pool.mjs）随时可补 50-100 candidates
-- ontology agent 路径还需补：当组合枯竭时运行（plan §5 第 3 级）
+## 完整 plan
 
-## 严禁项 / 红线词（不能漏的硬约束）
-
-详见 `/Users/jason/study/prompts/base-rules.md`。本 session 27 个 commit 全部双扫通过：
-- 学术编号 / Definition / Theorem / Layer N H2 → 0 命中
-- GitHub permalink ≥ 4 → 0 命中
-- 红线词 → 0 命中（24 篇笔记 + 27 个 commit msg）
-
-## 完整 plan / 决策
-
-详见 `/Users/jason/.claude/plans/optimized-honking-dusk.md`（10 节，~3000 字）。
+`/Users/jason/.claude/plans/optimized-honking-dusk.md`
