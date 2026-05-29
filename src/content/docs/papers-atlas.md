@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 135 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 136 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：135 篇
-- **已分类**：135
+- **总数**：136 篇
+- **已分类**：136
 
 ### 按主题分布
 
@@ -34,7 +34,7 @@ sidebar:
 | [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
-| [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
+| [HCI / 软件工程研究](#hci---软件工程研究) | 10 |
 
 ---
 
@@ -278,13 +278,14 @@ sidebar:
 
 ## HCI / 软件工程研究
 
-共 9 篇。
+共 10 篇。
 
 | 论文 | 描述 |
 |---|---|
 | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | Cognitive Science 12(2) 把为什么学不会形式化成 intrinsic + extraneous + germane 三类负荷之和，30 多年实证累积，影响 CS 教学 / UX / debug 流程 |
 | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | 95 个开发者 / 随机分组 / HTTP server 任务 / Copilot 组比 Control 组快 55 |
 | [Debugging Dichotomy (Beller 2018) — 458 程序员 18 个月真实 debug 行为，65% 会话不到 1 分钟](/study/papers/debugging-dichotomy/) | ICSE 2018 用 Visual Studio 插件 WatchDog 监控 458 名程序员 18 个月，发现 debug 行为分两轨——65% 会话 < 1 分钟、setting a breakpoint 在 … |
+| [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 状元篇：不到 1000 字的 letter 如何掀翻一个时代——goto 让程序的'静态文本'与'动态执行'错位，结构化编程三件套（顺序/选择/循环）让每个文本位置的状态可推 |
 | [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | 从 Ebbinghaus forgetting curve 到 Leitner 1972 box / SuperMemo SM-2 (1990) / SSP shortest path (2022)，演化到 Anki … |
 | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | 半结构化访谈 59 位资深工程师 + manager，open coding 归纳 53 条具体属性 / 8 大类别 |
 | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | 18 个 RCT 元分析 |
@@ -294,7 +295,7 @@ sidebar:
 
 ---
 
-## 全部 135 篇（字母序）
+## 全部 136 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -336,6 +337,7 @@ sidebar:
 | `deepseek-r1` | [DeepSeek-R1 状元篇 — 纯 RL 让 LLM 自己学会推理](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [ZeRO - Memory Optimizations Toward Training Trillion Parameter Models](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `diffie-hellman` | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) | 密码学 / 安全 |
+| `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
 | `dit` | [DiT Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dns` | [DNS Domain Name System](/study/papers/dns/) | 网络协议 |
