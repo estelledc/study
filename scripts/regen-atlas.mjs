@@ -153,8 +153,8 @@ const THEMES_PROJECTS = {
   'Markdown / 解析': [
     'unified', 'markdown-it', 'marked', 'shiki', 'micromark',
   ],
-  '图像处理': [
-    'sharp', 'jimp', 'fabric-js',
+  '图像处理 / Canvas': [
+    'sharp', 'jimp', 'fabric-js', 'pixi',
   ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
