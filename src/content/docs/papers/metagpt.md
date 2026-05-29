@@ -1,6 +1,6 @@
 ---
 title: MetaGPT — 多智能体软件公司
-来源: Hong et al., "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework", ICLR 2024
+来源: 'Hong et al., "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework", ICLR 2024'
 日期: 2026-05-29
 分类: AI / Agent
 难度: 中级
