@@ -171,6 +171,7 @@ pub fn process(mut program: Program, _: ()) -> Program {
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bun]] —— Bun — JS 全能运行时
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[rollup]] —— Rollup — ESM 优先的打包器

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 241 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 243 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：241 个
+- **总数**：243 个
 - **已分类**：206
-- **未分类**：35（落入"其他 / 待分类"段）
+- **未分类**：37（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 35 |
+| [其他 / 待分类](#其他--待分类) | 37 |
 
 ---
 
@@ -138,7 +138,7 @@ sidebar:
 | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) |  |
 | [Bun — JS 全能运行时](/study/projects/bun/) |  |
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) |  |
-| [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | Parcel 团队用 Rust 重写整个 CSS 工具链，200+ CSS property 各自一个 Rust 类型，一遍走完 cssnano + autoprefixer + postcss-preset-env … |
+| [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) |  |
 | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 不是把现有 JS 工具搬到 Rust，是从零设计 parser / AST / linter 全栈，速度比 ESLint 快 50-100 倍 |
 | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 不是 Rollup 的替代品，是 Vite 的统一引擎 |
 | [Rollup — ESM 优先的打包器](/study/projects/rollup/) |  |
@@ -495,12 +495,14 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 35 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 37 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
+| `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
+| `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
@@ -537,15 +539,17 @@ sidebar:
 
 ---
 
-## 全部 241 个（字母序）
+## 全部 243 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
+| `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
 | `anime` | [anime.js — 让网页动起来的 JS 引擎](/study/projects/anime/) | 动画 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
+| `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
@@ -643,7 +647,7 @@ sidebar:
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |
-| `lightningcss` | [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | 构建工具 / Bundler |
+| `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui 编译期提取的 React i18n](/study/projects/lingui/) | i18n 国际化 |
 | `listr2` | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) | Terminal / 终端 |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |

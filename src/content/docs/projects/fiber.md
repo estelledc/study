@@ -171,6 +171,7 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API

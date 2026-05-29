@@ -164,5 +164,10 @@ networks: {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[webpack]] —— webpack 模块打包
 

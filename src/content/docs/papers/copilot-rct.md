@@ -159,6 +159,8 @@ Cohen's d ≈ 2.0 在心理学/社科属于 "罕见大"——通常 d>1.5 都需
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
+- [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
+- [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 

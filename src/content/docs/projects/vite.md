@@ -157,6 +157,7 @@ export default defineConfig({
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
+- [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[next-js]] —— Next.js — React 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架

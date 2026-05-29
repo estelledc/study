@@ -160,6 +160,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现

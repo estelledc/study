@@ -136,5 +136,6 @@ B+Tree 的执行路径：
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 

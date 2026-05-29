@@ -163,6 +163,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[pulsar]] —— Apache Pulsar — 云原生消息队列
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[valkey]] —— Valkey — Redis 7.4 的开源 fork

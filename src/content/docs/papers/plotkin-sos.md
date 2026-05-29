@@ -169,5 +169,6 @@ def step(prog, state):
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

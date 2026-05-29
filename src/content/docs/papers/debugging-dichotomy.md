@@ -161,4 +161,5 @@ inspect 变量    ████████████              58%
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
+- [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
 
