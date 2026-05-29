@@ -22,6 +22,12 @@ Express 是 TJ Holowaychuk 2010 年开源的 Node.js Web 框架，weekly downloa
 
 2024 状态：仍是 weekly downloads 王者，但 Fastify / Hono 在新项目蚕食市场。Express 的"教程化优势"（StackOverflow + tutorial 量级）让它仍是 Node.js 入门首选。这是一个"技术过气但生态不灭"的典型案例——就像 jQuery 之于前端，Express 之于 Node.js。
 
+为什么我们仍要精读 Express？三个原因：
+
+1. **它是事实标准**：你工作的 Node.js 老项目 80% 概率用 Express，看不懂中间件链就读不懂代码
+2. **它是中间件思想的范本**：Koa / Fastify / Hono / Hapi 都是基于"我对 Express 的反思"而生，不懂 Express 就不懂这些后辈在反对什么
+3. **它是 callback → async/await 转型的活化石**：v4 的 `(req, res, next)` vs v5 的 async 友好，正好对应 Node.js 整个生态的 API 演化
+
 ## Layer 0 — 项目档案速查
 
 | 字段 | 值 |
@@ -45,6 +51,8 @@ Express 是 TJ Holowaychuk 2010 年开源的 Node.js Web 框架，weekly downloa
 | HTTP/2 | v4 不支持，v5 通过 `http2` 模块 |
 | 路由 | path-to-regexp + Router |
 | 文档站 | expressjs.com |
+| 知名用户 | Uber / IBM / Twitch / MySpace（早期）/ Walmart |
+| CVE 历史 | 多个低危 CVE，body-parser 有过 DoS 漏洞 |
 
 ## Layer 1 — 核心抽象
 
@@ -95,6 +103,8 @@ app.listen(3000);
 3. `app.METHOD(path, fn)` 注册路由（METHOD = get/post/put/delete/patch/all）
 4. **`(req, res, next)` 签名** —— 调 next() 进入下一个；调 next(err) 进错误处理；res.send/json/end 终结请求
 
+日常类比：Express 就像工厂流水线。每个产品（请求）经过工人 1（贴标签）→ 工人 2（检查）→ 工人 3（包装）→ 出厂（响应）。每个工人做完自己的事就喊"下一个"（`next()`），如果发现次品就丢到次品流水线（`next(err)`）。`res.send()` 等于"出厂封箱"，封箱后就不能再上传送带了。
+
 ## Layer 2 — 内部架构
 
 Express 内部三层：
@@ -129,6 +139,8 @@ res.send(...) → response 写完
 
 vs Fastify：Fastify 用 Trie 路由 O(log n) + JIT 编译 schema → JSON serializer，throughput 是 Express 的 ~3x。
 
+为什么 Express 不优化路由数据结构？历史包袱 + 中间件灵活性。Trie 要求路由静态可知；Express 允许 `app.use(regex, handler)` 这种正则路由，无法塞进 Trie。这是"灵活性 vs 性能"的经典 tradeoff。
+
 ## Layer 3 — 精读 3 段
 
 ### 段 a — `(req, res, next)` 中间件签名
@@ -153,6 +165,7 @@ app.use(loggerMiddleware);
 4. 中间件顺序 matter：app.use 调用顺序 = 执行顺序
 5. 路由级中间件（`app.get(path, m1, m2, handler)`）先于全局中间件之后执行
 6. `res.on('finish')` 是终结回调，与 next() 互斥（不该在 finish 后再 next）
+7. 忘记调 `next()` 会让请求挂起直到客户端超时，是新人最常见 bug
 
 > 怀疑：`(req, res, next)` 签名在 callback hell 时代是创新，async/await 时代是负担。Hono / Fastify 都改成 `async (ctx) => {...}` 或 `async (req, reply) => {...}` 显式 Promise return。Express v5 算半步追赶。
 
@@ -181,6 +194,7 @@ app.use('/api/v1', router);
 4. Express v4 用 path-to-regexp v0.1（语法 hack）；v5 升 v6.x（语法严格）
 5. 大量路由（>1000）在 v4 是性能瓶颈（O(n)）；Fastify Trie O(log n)
 6. 路由参数走 `req.params.id`；query string `req.query.q`
+7. Router 实例可独立创建并 mount 到不同 path，是模块化的关键
 
 > 怀疑：Express v4 → v5 升级 path-to-regexp 是 breaking change。`/users/:id` 在 v5 里 `:id` 不再 capture 末尾的 `.json` 后缀。已有项目升级要重写正则。这是 v5 拖了 10 年原因之一？
 
@@ -215,6 +229,7 @@ app.use((err, req, res, next) => {
 4. v5 改为：async handler 抛错自动 next(err)（终于跟上 async/await 时代）
 5. 错误中间件签名是 4 参数（err 在前）—— TypeScript 推断容易错
 6. express-async-errors 第三方包给 v4 打补丁
+7. 错误中间件的注册顺序：必须放在所有路由后面，否则匹配不到
 
 > 怀疑：v4 的"async handler 不自动捕获"是事实标准 10 年的痛点。express-async-errors 包 weekly downloads ~3M 说明问题严重。Express 团队为什么拖到 v5 才修？我猜：v4 的稳定性优先（不能引入 breaking 默认行为）。
 
@@ -241,6 +256,19 @@ app.use((err, req, res, next) => {
 - **Hono**：边缘 runtime first（Cloudflare Worker / Bun / Deno），Bundle 极小
 - **NestJS**：Angular 风格 decorator 框架，企业级 + 模块化，但学习陡
 
+什么时候不该选 Express？
+
+1. **新项目 + 高 QPS**：选 Fastify，性能 3x 且 schema 内置
+2. **新项目 + 边缘部署**：选 Hono，Bundle 4 KB 且支持 CF Worker / Bun / Deno
+3. **新项目 + 大型企业**：选 NestJS，模块化 + DI 让团队协作好
+4. **新项目 + 需要 type-safe**：选 Hono / Fastify，TS 一等公民
+
+什么时候仍该选 Express？
+
+1. **维护已有 Express 项目**：迁移成本 >> 收益
+2. **Node.js 入门学习**：教程最多，stackoverflow 答案最全
+3. **中间件生态强依赖**：你需要的某个 middleware 只有 Express 版
+
 ## Layer 5 — 6 维评分
 
 | 维度 | Express | Koa | Fastify | Hono |
@@ -253,7 +281,7 @@ app.use((err, req, res, next) => {
 | TypeScript | 5（@types） | 6 | 9 | 10 |
 | 总分 | 35 | 33 | 42 | 51 |
 
-Express 在生态上仍是 #1，但综合分数已被 Hono / Fastify 反超。
+Express 在生态上仍是 #1，但综合分数已被 Hono / Fastify 反超。这个表的关键洞察：技术评分和市场份额不一定挂钩。30M weekly downloads 不等于"最值得新项目用"，只等于"最广泛部署"。
 
 ## Layer 6 — 限制
 
@@ -263,6 +291,8 @@ Express 在生态上仍是 #1，但综合分数已被 Hono / Fastify 反超。
 4. **无边缘 runtime 支持**：Cloudflare Worker / Bun / Deno 都无 Express 适配
 5. **错误处理双轨**：同步 throw 自动，异步 Promise reject 手动 next(err)（v4），坑多
 6. **HTTP/2 / WebSocket 弱**：v5 才加，且不如 Fastify / hono
+7. **TypeScript 二等公民**：`@types/express` 第三方维护，类型推断比 Hono / Fastify 弱
+8. **Schema 校验缺失**：必须配 zod / joi / Ajv 第三方，没有 Fastify 那种内置的 schema → JSON serializer 加速
 
 ## 怀疑总集
 
@@ -273,6 +303,8 @@ Express 在生态上仍是 #1，但综合分数已被 Hono / Fastify 反超。
 > 怀疑：Express 的极简哲学（核心只做 router + middleware）在 2010s 是优势，2020s 反成劣势。开箱即用的 NestJS / Fastify 让新人少写 50% 配置代码。极简 = 把复杂度推给用户。
 
 > 怀疑：TJ Holowaychuk 2014 离场后 Express 进入"维护模式"。同期他另起的 Koa 也类似命运。一个人能否驱动一个框架的现代化？答案似乎是：no，需要团队。
+
+> 怀疑：v5 升级后 weekly downloads 会涨吗？我猜：不会显著。新项目的迁移已发生（去 Fastify/Hono），老项目的迁移会拖到不得不升（Node.js EOL 强迫）。v5 救不了 Express 的市占率，只能稳住基本盘。
 
 ## GitHub Permalinks
 
@@ -344,10 +376,12 @@ app.listen(3000);
 3. 错误中间件 4 参数签名，必须最后注册
 4. `req.user` 由 JWT middleware 注入（运行时扩展 req 对象）
 5. Promise + try/catch 模式 v5 简化（直接 throw）
+6. 真实生产建议加 helmet（安全 header）+ cors + rate-limit + morgan（日志）+ compression
+7. 数据库连接池（pg.Pool）必须在 process exit 时正确关闭，避免泄漏
 
 ## 学到什么 + 关联
 
-学到的 ≥ 5 条：
+学到的：
 
 1. 中间件链式调度是 Web 框架的核心抽象，跨语言通用（Rack / WSGI / Connect）
 2. **(req, res, next)** vs **async (ctx)** 是 callback 时代 vs async/await 时代的 API 分水岭
@@ -356,9 +390,19 @@ app.listen(3000);
 5. v5 拖 10 年说明 OpenJS 接管后社区 contributor 难协调
 6. 错误处理双轨制（同步 / 异步）是 v4 的最大坑，新人易踩
 7. Trie 路由（Fastify）vs 线性 stack（Express）在 1000+ 路由场景性能差距明显
+8. 框架的"灵活性"和"性能"是 tradeoff —— Express 选灵活，Fastify 选性能
+9. weekly downloads ≠ 技术先进性，只反映存量市场
 
 关联：
 
 - [[koa]] [[fastify]] [[hono]] —— 同领域对手
 - [[axios]] [[ky]] —— HTTP 客户端
 - [[zod]] —— schema 校验（与 Express 配合需第三方）
+- [[node-js]] —— 运行时基础
+
+延伸阅读建议：
+
+1. 读 Koa 源码对比理解"中间件洋葱模型"vs Express 线性管线
+2. 读 Fastify 文档理解 schema-first 设计
+3. 读 Hono 源码理解边缘 runtime 适配
+4. 跑一遍 v4 → v5 升级 checklist，体会 path-to-regexp breaking change
