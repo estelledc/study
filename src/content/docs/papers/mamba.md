@@ -131,7 +131,5 @@ Mamba 的成功是 **算法 + 工程同等重要** 的典型——光有 selecti
 
 - [[attention]] —— Attention Is All You Need
 - [[dino]] —— DINO 自监督视觉 transformer
-- [[dqn]] —— DQN Deep Q-Network 深度强化学习
-- [[ppo]] —— PPO Proximal Policy Optimization
 - [[resnet]] —— ResNet 深度残差学习
 

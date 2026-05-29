@@ -159,5 +159,6 @@ helm rollback my-nginx 1
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 

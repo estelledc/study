@@ -148,6 +148,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[neo4j]] —— Neo4j — 主流图数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展

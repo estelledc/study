@@ -136,6 +136,9 @@ answer = llama.generate(prompt)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[milvus]] —— Milvus — 开源向量数据库
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 

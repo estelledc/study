@@ -132,4 +132,6 @@ SWE-Agent 的动作序列：
 
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[react]] —— React UI 组件库
+- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 
