@@ -165,4 +165,6 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bitcoin]] —— Bitcoin 白皮书
+- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[turing-1936]] —— Turing 1936 可计算性
 

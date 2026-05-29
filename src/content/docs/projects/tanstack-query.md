@@ -161,3 +161,9 @@ function AddTodo() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[react]] —— React UI 组件库
+- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
+- [[tanstack-form]] —— TanStack Form Headless 多框架表单库
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+

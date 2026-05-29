@@ -142,5 +142,6 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[raft]] —— Raft — 易理解的共识算法
+- [[rsa]] —— RSA 公钥密码
 

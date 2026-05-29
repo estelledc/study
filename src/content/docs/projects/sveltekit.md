@@ -153,5 +153,10 @@ export const load = async () => ({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[next-js]] —— Next.js — React 全栈框架
+- [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[react]] —— React UI 组件库
+- [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
+- [[svelte]] —— Svelte — 编译时 UI 框架
+- [[vue]] —— Vue.js — 渐进式 UI 框架
 

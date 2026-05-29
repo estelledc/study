@@ -160,8 +160,11 @@ D(M):
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[hamming-1950]] —— Hamming 纠错码
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[huffman-1952]] —— Huffman 编码
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
@@ -169,4 +172,5 @@ D(M):
 - [[rsa]] —— RSA 公钥密码
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[smalltalk-80]] —— Smalltalk-80
+- [[zk-snark]] —— zk-SNARK 零知识证明
 
