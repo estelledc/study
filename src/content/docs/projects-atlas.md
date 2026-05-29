@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 129 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 130 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：129 个
-- **已分类**：129
+- **总数**：130 个
+- **已分类**：130
 
 ### 按主题分布
 
@@ -39,7 +39,7 @@ sidebar:
 | [可观测 / 性能](#可观测---性能) | 5 |
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
-| [Markdown / 解析](#markdown---解析) | 3 |
+| [Markdown / 解析](#markdown---解析) | 4 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -316,12 +316,13 @@ sidebar:
 
 ## Markdown / 解析
 
-共 3 个。
+共 4 个。
 
 | 项目 | 描述 |
 |---|---|
 | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) |  |
 | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) |  |
+| [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) |  |
 | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
 
 ## 其他基础设施
@@ -336,7 +337,7 @@ sidebar:
 
 ---
 
-## 全部 129 个（字母序）
+## 全部 130 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -434,6 +435,7 @@ sidebar:
 | `sentry` | [Sentry — 不是「日志收集器」，是「把崩溃当作可查询的列存事件」的双层数据库错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize Node.js Promise-based ORM 元老](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
+| `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
 | `stagehand` | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlight` | [Starlight — Astro 官方文档框架，零 JS 默认 + sidebar autogen](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |
