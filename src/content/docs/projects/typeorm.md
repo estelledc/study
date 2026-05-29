@@ -350,3 +350,87 @@ export class UserService {
 - [[prisma]] [[kysely]] —— 同领域
 - [[zod]] [[react-hook-form]] —— TypeScript 生态
 - [[i18next]] [[vue-i18n]] —— framework-specific 工具
+
+## 附录 A — TS 5+ stage 3 decorator 迁移挑战（≥ 25 行）
+
+TypeScript 5.0（2023-03）引入 stage 3 decorator 标准（与旧 stage 2 不兼容）。TypeORM 仍依赖旧版（experimentalDecorators=true），原因：
+
+### 旧 vs 新 decorator 差异
+
+```ts
+// 旧（experimentalDecorators，TypeORM 用）
+function Column(): PropertyDecorator {
+  return (target, propertyKey) => {
+    Reflect.defineMetadata("design:type", String, target, propertyKey);
+  };
+}
+
+// 新（stage 3，TS 5+）
+function Column<This, Value>(
+  target: ClassFieldDecoratorContext<This, Value>,
+  context: ClassFieldDecoratorContext<This, Value>
+) {
+  // 没有 reflect-metadata 内置
+  // 必须手动管理 metadata
+}
+```
+
+迁移挑战：
+1. 旧 decorator 依赖 `__metadata("design:type", ...)` 编译期 emit，新 decorator 没有
+2. TypeORM 100+ 装饰器全部要重写
+3. 用户代码 import 的装饰器签名变化（破坏性）
+4. 可能需要 v1.0 重写时机
+5. Vite / esbuild 支持新 decorator 但 emitDecoratorMetadata 兼容性差
+
+社区方向：保持双版本（experimentalDecorators 支持旧项目，新版另写适配）—— 但维护成本翻倍。
+
+## 附录 B — 与 NestJS 集成深度（≥ 25 行）
+
+NestJS（@nestjs/typeorm 包）让 TypeORM 是 NestJS 早期默认 ORM：
+
+```ts
+// app.module.ts
+import {Module} from "@nestjs/common";
+import {TypeOrmModule} from "@nestjs/typeorm";
+
+@Module({
+  imports: [
+    TypeOrmModule.forRoot({
+      type: "postgres",
+      // ...
+    }),
+    TypeOrmModule.forFeature([User, Post])
+  ]
+})
+export class AppModule {}
+
+// user.service.ts
+@Injectable()
+export class UserService {
+  constructor(@InjectRepository(User) private repo: Repository<User>) {}
+}
+```
+
+但 NestJS 11+ 也支持 Prisma / Drizzle 集成。NestJS 团队官方文档把 TypeORM / Prisma / Sequelize / MikroORM 列为同等推荐，TypeORM 失去"默认"光环。
+
+实战痛点：
+
+- 多 schema 跨数据库时 entities glob 配置易出错
+- 测试时 Mock Repository 复杂（@InjectRepository 注入需 Test container）
+- migration 生成与运行 CLI 配置 6+ 字段，文档分散
+
+## 附录 C — 学到补充（≥ 15 行）
+
+补充 5 条工程教训：
+
+6. **Decorator 哲学的兴衰**：2017 NestJS 时代是优势，2024 stage 3 时代是 baggage
+7. **DataMapper / ActiveRecord 双模式** 是历史包袱（2017 设计阶段没收敛）
+8. **API 重叠**（Repository / QueryBuilder / EntityManager）让学习曲线陡
+9. **Edge runtime 不友好** 是 serverless 时代决定性劣势
+10. **生态网络效应** 让 TypeORM 仍占第三档（NestJS 老项目 + 多 DB driver 优势），但新项目几乎不选
+
+关联补充：
+
+- [[zod]] —— TypeORM 与 zod 不直接集成（需 class-validator 中间层）
+- [[react-hook-form]] —— 后端不直接交互
+- [[i18next]] [[vue-i18n]] —— 跨技术栈对比
