@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 140 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 141 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：140 个
-- **已分类**：140
+- **总数**：141 个
+- **已分类**：141
 
 ### 按主题分布
 
@@ -41,7 +41,7 @@ sidebar:
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
-| [CSS / 样式](#css---样式) | 4 |
+| [CSS / 样式](#css---样式) | 5 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -342,7 +342,7 @@ sidebar:
 
 ## CSS / 样式
 
-共 4 个。
+共 5 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -350,6 +350,7 @@ sidebar:
 | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) |  |
 | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) |  |
 | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) |  |
+| [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | Seek 工程师 Mark Dalgleish 出品 |
 
 ## 其他基础设施
 
@@ -363,7 +364,7 @@ sidebar:
 
 ---
 
-## 全部 140 个（字母序）
+## 全部 141 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -493,6 +494,7 @@ sidebar:
 | `unstorage` | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `valibot` | [valibot 模块化模式校验](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valtio` | [valtio — 让 state.count++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
+| `vanilla-extract` | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vercel-ai` | [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `visx` | [visx Airbnb React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite 现代前端构建工具](/study/projects/vite/) | 构建工具 / Bundler |
