@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 121 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 122 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：121 篇
-- **已分类**：121
+- **总数**：122 篇
+- **已分类**：122
 
 ### 按主题分布
 
@@ -31,7 +31,7 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
-| [计算理论 / 数学基础](#计算理论---数学基础) | 1 |
+| [计算理论 / 数学基础](#计算理论---数学基础) | 2 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
@@ -236,10 +236,11 @@ sidebar:
 
 ## 计算理论 / 数学基础
 
-共 1 篇。
+共 2 篇。
 
 | 论文 | 描述 |
 |---|---|
+| [lambda-calculus](/study/papers/lambda-calculus/) |  |
 | [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | Alan Turing 1936 年的开山之作：用图灵机定义可计算性，证明 Halting Problem 不可判定，间接解决 Hilbert Entscheidungsproblem |
 
 ## 密码学 / 安全
@@ -272,7 +273,7 @@ sidebar:
 
 ---
 
-## 全部 121 篇（字母序）
+## 全部 122 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -334,6 +335,7 @@ sidebar:
 | `instructgpt` | [InstructGPT — ChatGPT 的官方蓝图：把 RLHF 套到 GPT-3 上的三阶段流水线](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
+| `lambda-calculus` | [lambda-calculus](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `linear-types` | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `llama` | [LLaMA — Chinchilla 实证落地版：7B 训 1T tokens，开放权重点燃 2023 开源 LLM 生态](/study/papers/llama/) | NLP 基础与 Scaling |
