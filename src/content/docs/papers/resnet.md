@@ -161,3 +161,13 @@ def residual_block(x):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[attention]] —— Attention Is All You Need
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[dino]] —— DINO 自监督视觉 transformer
+- [[dit]] —— DiT — Diffusion Transformer
+- [[mae]] —— MAE — Masked Autoencoders
+- [[mamba]] —— Mamba — 选择性状态空间模型
+- [[paxos]] —— Paxos — 分布式共识算法
+

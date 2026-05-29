@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 200 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 203 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：200 个
-- **已分类**：200
+- **总数**：203 个
+- **已分类**：203
 
 ### 按主题分布
 
@@ -39,7 +39,7 @@ sidebar:
 | [编辑器 / 富文本](#编辑器---富文本) | 5 |
 | [文档站点](#文档站点) | 4 |
 | [数据获取 / 路由](#数据获取---路由) | 4 |
-| [AI 应用 / Agent 平台](#ai-应用---agent-平台) | 9 |
+| [AI 应用 / Agent 平台](#ai-应用---agent-平台) | 12 |
 | [AI 浏览器自动化](#ai-浏览器自动化) | 6 |
 | [可观测 / 性能](#可观测---性能) | 5 |
 | [数据应用 / SaaS](#数据应用---saas) | 8 |
@@ -342,7 +342,7 @@ sidebar:
 
 ## AI 应用 / Agent 平台
 
-共 9 个。
+共 12 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -350,11 +350,14 @@ sidebar:
 | [Claude Code — 一个 LLM-runtime 暴露成 5 种 surface 的 agentic 产品](/study/projects/claude-code/) | 大型应用范例 (v1 |
 | [Continue — 把 AI code review 写成 git 跟踪的 markdown，让 PR 跑 status check](/study/projects/continue/) | 不再是"开源 Cursor"——v1 |
 | [Dify — 不是再做一个 LangChain，是把 LLM workflow / RAG / agent / multi-provider 全装进一个 Flask + Next.js 单仓 LLMOps 平台](/study/projects/dify/) | 大型应用范例——143k stars 的开源 LLMOps 平台，Python 后端 + Next |
+| [LangChain — LLM 应用开发框架](/study/projects/langchain/) |  |
 | [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | 大型应用范例，28k stars 背后的「Next |
 | [LibreChat — 不是再做一个 ChatGPT 替代品，是把"chat 应用"和"模型供应商"解耦成可热插拔的 provider 抽象层](/study/projects/librechat/) | 大型应用范例——37k stars 的 self-hosted ChatGPT alternative，Express + React + MongoDB + Meilisearch，packages/api/src/… |
+| [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) |  |
 | [MCP TypeScript SDK — 让 AI 调外部世界的最小契约](/study/projects/mcp-ts-sdk/) | 一个跨厂商的协议设计：tools / resources / prompts 三类原语 + JSON-RPC 传输 + 严格 schema |
 | [ollama — 让本地 LLM 像 docker 一样易用的 Go 框架](/study/projects/ollama/) | 框架/SDK 范例，173k stars 的本地 LLM 一键运行框架，Go 主程序通过 exec |
 | [Vercel AI SDK — 把 LLM 调用产品化](/study/projects/vercel-ai/) | stream / structured output / tool use / multimodal 全统一在一组类型安全 API |
+| [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) |  |
 
 ## AI 浏览器自动化
 
@@ -394,7 +397,7 @@ sidebar:
 | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 大型应用范例——102k stars 的 Google Photos 替代品，TS 后端 + Python ML 服务 + Postgres + Redis + Object Storage 五件套同核运行 |
 | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 大型应用范例，48k stars 背后的"common/ |
 | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 大型应用范例——49 |
-| [supabase — 不是另一个 Firebase 替代品，是把 Postgres 包成了完整 BaaS](/study/projects/supabase/) | 大型应用范例 — 75k+ stars 的开源 Backend-as-a-Service，Auth/Realtime/Storage/Edge Functions 全部围绕 Postgres 一份事实 |
+| [Supabase — Firebase 的开源替代](/study/projects/supabase/) |  |
 
 ## 基础组件 / Headless UI
 
@@ -487,7 +490,7 @@ sidebar:
 
 ---
 
-## 全部 200 个（字母序）
+## 全部 203 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -563,6 +566,7 @@ sidebar:
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
+| `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
 | `langfuse` | [Langfuse — LLM 应用的 Datadog，把 trace/eval/cost 做成基础设施](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
 | `lerna` | [lerna — JS monorepo 第一代工具，2022 EOL 后被 Nx 收编的代际故事](/study/projects/lerna/) | Monorepo / 包管理 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
@@ -570,6 +574,7 @@ sidebar:
 | `lightningcss` | [lightningcss — 把 CSS 当类型系统，用 Rust 一遍跑完 parse / transform / minify / prefix](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui 编译期提取的 React i18n](/study/projects/lingui/) | i18n 国际化 |
 | `listr2` | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) | Terminal / 终端 |
+| `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lucia` | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | Auth 认证 |
 | `luxon` | [luxon TZ + i18n 现代 Moment 替代](/study/projects/luxon/) | 日期时间 |
@@ -648,7 +653,7 @@ sidebar:
 | `storybook` | [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |
 | `stylex` | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
-| `supabase` | [supabase — 不是另一个 Firebase 替代品，是把 Postgres 包成了完整 BaaS](/study/projects/supabase/) | 数据应用 / SaaS |
+| `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
 | `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | Meta 框架 / 全栈 |
@@ -679,6 +684,7 @@ sidebar:
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue + Vite 文档框架，零 framework 重负的 SSG](/study/projects/vitepress/) | 文档站点 |
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |
+| `vllm` | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) | AI 应用 / Agent 平台 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) | i18n 国际化 |
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |

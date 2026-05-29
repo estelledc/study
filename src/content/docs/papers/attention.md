@@ -142,11 +142,13 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[dqn]] —— DQN — Deep Q-Network
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[mae]] —— MAE — Masked Autoencoders
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[muzero]] —— MuZero — 不用规则也能下棋
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
+- [[resnet]] —— ResNet — 残差连接
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3

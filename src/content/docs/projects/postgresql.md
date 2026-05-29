@@ -173,12 +173,14 @@ LIMIT 5;
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
+- [[langchain]] —— LangChain — LLM 应用开发框架
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[supabase]] —— Supabase — Firebase 的开源替代
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[weaviate]] —— Weaviate — 模块化向量数据库

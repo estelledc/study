@@ -164,6 +164,7 @@ const THEMES_PROJECTS = {
   'AI 应用 / Agent 平台': [
     'dify', 'langfuse', 'librechat', 'ollama', 'chroma',
     'claude-code', 'mcp-ts-sdk', 'vercel-ai', 'continue',
+    'langchain', 'llamaindex', 'vllm',
   ],
   'AI 浏览器自动化': [
     'midscene', 'steel-browser', 'stagehand', 'patchright',

@@ -157,5 +157,7 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bun]] —— Bun — JS 全能运行时
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 
