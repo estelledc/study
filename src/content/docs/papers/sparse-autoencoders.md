@@ -131,5 +131,9 @@ SAE 的全部秘密就**三件事**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
+- [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
+- [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[toy-models-superposition]] —— Toy Models of Superposition
 

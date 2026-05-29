@@ -149,7 +149,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO Direct Preference Optimization
-- [[dqn]] —— DQN — Deep Q-Network
+- [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)

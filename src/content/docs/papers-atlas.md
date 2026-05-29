@@ -123,11 +123,11 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [Activation Patching - 把因果手术刀塞进 Transformer](/study/papers/activation-patching/) | Wang et al |
-| [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | residual stream 当公共总线 + 单 head = QK · OV 两个低秩电路 + 2-layer 模型解释 induction head 的两路径机制 |
-| [Causal Abstraction × DAS — 神经网络的因果抽象与对齐搜索](/study/papers/causal-abstraction/) | Geiger 2021 把 Pearl 因果模型套到 NN 内部 + DAS 2024 用旋转矩阵学分布式对齐——不必 sparse / mono 的另一条 mech interp 路线 |
+| [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) |  |
+| [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) |  |
+| [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) |  |
 | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) |  |
-| [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | 2-head circuit prefix-match × copy 是 ICL 的最小机器 |
+| [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) |  |
 | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) |  |
 | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) |  |
 | [Toy Models of Superposition](/study/papers/toy-models-superposition/) |  |
@@ -307,13 +307,13 @@ sidebar:
 | Slug | 论文 | 主题 |
 |---|---|---|
 | `3d-gaussian-splatting` | [3D Gaussian Splatting — explicit primitives 把 NeRF 从 12 小时训练 0.1 FPS 拉到 5 分钟训练 100+ FPS](/study/papers/3d-gaussian-splatting/) | 计算机视觉 |
-| `activation-patching` | [Activation Patching - 把因果手术刀塞进 Transformer](/study/papers/activation-patching/) | AI 安全与可解释性 |
+| `activation-patching` | [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) | AI 安全与可解释性 |
 | `adapton` | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
-| `anthropic-circuits` | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
+| `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora (Verbitski et al. 2017) — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
@@ -325,7 +325,7 @@ sidebar:
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `borg` | [Borg 大规模集群管理](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `calvin` | [Calvin (Thomson et al. 2012) — 不要时钟，要 sequencer，全球事务的另一条路](/study/papers/calvin/) | 数据库 |
-| `causal-abstraction` | [Causal Abstraction × DAS — 神经网络的因果抽象与对齐搜索](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
+| `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
 | `cheney-gc` | [A Nonrecursive List Compacting Algorithm（Cheney 1970，Copying GC 始祖）](/study/papers/cheney-gc/) | GC / 内存管理 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chubby` | [Chubby 分布式锁服务](/study/papers/chubby/) | 分布式系统 |
@@ -370,7 +370,7 @@ sidebar:
 | `hoare-logic` | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
-| `induction-heads` | [In-Context Learning and Induction Heads (Olsson+ 2022) — 把 ICL 钉在 induction head 因果上的六条证据](/study/papers/induction-heads/) | AI 安全与可解释性 |
+| `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |

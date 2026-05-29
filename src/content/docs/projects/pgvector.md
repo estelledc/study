@@ -155,5 +155,7 @@ LIMIT 3;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[milvus]] —— Milvus — 开源向量数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[qdrant]] —— Qdrant — Rust 向量数据库
 

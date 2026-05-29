@@ -132,8 +132,12 @@ DQN 的训练循环可以拆成 **三步**：
 
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[dpo]] —— DPO Direct Preference Optimization
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[mamba]] —— Mamba — 选择性状态空间模型
 - [[muzero]] —— MuZero — 不用规则也能下棋
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
 

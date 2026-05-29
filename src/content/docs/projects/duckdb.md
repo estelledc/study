@@ -146,5 +146,7 @@ result = con.execute("""
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

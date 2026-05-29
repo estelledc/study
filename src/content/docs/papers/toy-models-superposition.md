@@ -145,5 +145,8 @@ Anthropic 后来在 GPT-2 Small 里观察到：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
+- [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
 

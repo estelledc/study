@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 207 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 211 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：207 个
+- **总数**：211 个
 - **已分类**：206
-- **未分类**：1（落入"其他 / 待分类"段）
+- **未分类**：5（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 1 |
+| [其他 / 待分类](#其他--待分类) | 5 |
 
 ---
 
@@ -495,15 +495,19 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 1 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 5 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
+| `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
+| `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
+| `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
+| `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 
 ---
 
-## 全部 207 个（字母序）
+## 全部 211 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -543,6 +547,7 @@ sidebar:
 | `dnd-kit` | [dnd-kit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docusaurus` | [Docusaurus — Meta 出品的 docs 框架，plugin lifecycle 三段式](/study/projects/docusaurus/) | 文档站点 |
+| `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `duckdb` | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) | 数据库本体 / 存储引擎 |
 | `duckdb-wasm` | [duckdb-wasm — 把 OLAP 数据库塞进浏览器 tab 的疯狂工程](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
@@ -611,6 +616,7 @@ sidebar:
 | `mysql` | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) | 数据库本体 / 存储引擎 |
 | `nanobrowser` | [nanobrowser — 不是 cloud Chrome 的 AI agent，是把浏览器扩展当 sandbox 的 multi-agent runtime](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 框架无关的 atomic 状态库（< 1 KB）](/study/projects/nanostores/) | 状态管理 |
+| `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
 | `nestjs` | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) | Web 框架 |
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
@@ -641,6 +647,7 @@ sidebar:
 | `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
 | `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
+| `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) | 其他 |
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
@@ -679,6 +686,7 @@ sidebar:
 | `tanstack-form` | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把类型系统当 UX 工具](/study/projects/tanstack-router/) | 数据获取 / 路由 |
+| `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) | 其他 |
 | `temporal-polyfill` | [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) | 日期时间 |
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
 | `testing-library` | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 测试 / 验证 |

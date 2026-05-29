@@ -143,3 +143,6 @@ W_new = W_old + lambda_ * outer(value - W_old @ key, key)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
+
