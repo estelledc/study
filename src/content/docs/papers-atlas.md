@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 141 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 142 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：141 篇
-- **已分类**：141
+- **总数**：142 篇
+- **已分类**：142
 
 ### 按主题分布
 
@@ -31,7 +31,7 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 24 |
-| [计算理论 / 数学基础](#计算理论---数学基础) | 5 |
+| [计算理论 / 数学基础](#计算理论---数学基础) | 6 |
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
@@ -243,13 +243,14 @@ sidebar:
 
 ## 计算理论 / 数学基础
 
-共 5 篇。
+共 6 篇。
 
 | 论文 | 描述 |
 |---|---|
 | [Cook-Levin 定理](/study/papers/cook-levin/) | 1971 年 Cook（与 Levin 1973 独立）证明 SAT 是 NP-complete，奠定计算复杂性理论 |
 | [Gödel 不完备性定理（1931）](/study/papers/godel-1931/) |  |
 | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) |  |
+| [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | Donald Knuth 1968 年开篇的 TAOCP 第一卷，建立 MIX 抽象机器与算法分析数学基础，1974 年图灵奖核心成果，论文 round 144 = EE2 / theory 分支 D |
 | [lambda-calculus](/study/papers/lambda-calculus/) |  |
 | [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | Alan Turing 1936 年的开山之作：用图灵机定义可计算性，证明 Halting Problem 不可判定，间接解决 Hilbert Entscheidungsproblem |
 
@@ -300,7 +301,7 @@ sidebar:
 
 ---
 
-## 全部 141 篇（字母序）
+## 全部 142 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -372,6 +373,7 @@ sidebar:
 | `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `karp-21` | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) | 计算理论 / 数学基础 |
+| `knuth-taocp` | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
 | `lambda-calculus` | [lambda-calculus](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Time, Clocks (Lamport 1978) — 分布式系统中没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
