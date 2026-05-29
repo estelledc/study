@@ -152,6 +152,7 @@ app.get('/users/:id', (c) => {
 - [[express]] —— Express Node.js 经典 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify schema-first Node 高性能 web 框架
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架

@@ -129,6 +129,8 @@ B+Tree 的执行路径：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

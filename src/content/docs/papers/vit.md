@@ -148,6 +148,7 @@ ViT 是 2020 年代视觉的 ResNet 时刻——架构转折点。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training

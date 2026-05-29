@@ -144,6 +144,7 @@ rg --no-ignore "foo"         # 等价于 -u
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bat]] —— bat — 现代 cat 替代
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[fd]] —— fd — Rust 写的现代 find
 - [[fzf]] —— fzf — 命令行模糊查找

@@ -146,6 +146,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[kafka]] —— Apache Kafka — 分布式流处理平台
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[minio]] —— MinIO — S3 兼容对象存储

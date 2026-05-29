@@ -149,5 +149,9 @@ for g in gaussians:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[attention]] —— Attention Is All You Need
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[dit]] —— DiT — Diffusion Transformer
 - [[vit]] —— ViT — Vision Transformer
 

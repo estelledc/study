@@ -144,7 +144,7 @@ ORDER BY date;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bigtable]] —— Bigtable 分布式结构化存储
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[dns]] —— DNS Domain Name System
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP

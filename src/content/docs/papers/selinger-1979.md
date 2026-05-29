@@ -149,8 +149,8 @@ Seq Scan on orders  (cost=0.00..1234.56 rows=5000 width=64)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[bigtable]] —— Bigtable 分布式结构化存储
 - [[chubby]] —— Chubby 分布式锁服务
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

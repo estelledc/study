@@ -172,8 +172,10 @@ LIMIT 5;
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[influxdb]] —— InfluxDB — 专用时序数据库
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
