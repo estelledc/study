@@ -66,7 +66,7 @@ const THEMES_PAPERS = {
     'self-adjusting', 'crdt-json', 'realm',
   ],
   '密码学 / 安全': [
-    'diffie-hellman',
+    'diffie-hellman', 'rsa', 'aes',
   ],
   'HCI / 软件工程研究': [
     'cognitive-load-theory', 'debugging-dichotomy', 'fsrs-spaced-repetition',

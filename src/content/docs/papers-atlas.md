@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 116 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 118 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：116 篇
-- **已分类**：116
+- **总数**：118 篇
+- **已分类**：118
 
 ### 按主题分布
 
@@ -31,7 +31,7 @@ sidebar:
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
-| [密码学 / 安全](#密码学---安全) | 1 |
+| [密码学 / 安全](#密码学---安全) | 3 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
 ---
@@ -235,11 +235,13 @@ sidebar:
 
 ## 密码学 / 安全
 
-共 1 篇。
+共 3 篇。
 
 | 论文 | 描述 |
 |---|---|
+| [AES Rijndael 对称分组密码](/study/papers/aes/) |  |
 | [New Directions in Cryptography (Diffie-Hellman 1976)](/study/papers/diffie-hellman/) |  |
+| [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (RSA 1978)](/study/papers/rsa/) |  |
 
 ## HCI / 软件工程研究
 
@@ -259,13 +261,14 @@ sidebar:
 
 ---
 
-## 全部 116 篇（字母序）
+## 全部 118 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
 | `3d-gaussian-splatting` | [3D Gaussian Splatting — explicit primitives 把 NeRF 从 12 小时训练 0.1 FPS 拉到 5 分钟训练 100+ FPS](/study/papers/3d-gaussian-splatting/) | 计算机视觉 |
 | `activation-patching` | [Activation Patching - 把因果手术刀塞进 Transformer](/study/papers/activation-patching/) | AI 安全与可解释性 |
 | `adapton` | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 编译器 / 编程语言理论 |
+| `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agentless` | [Agentless — 反 agent 派代表作：3 阶段 pipeline 在 SWE-bench 上反超复杂 agent](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `alphago` | [AlphaGo Mastering Go with Deep Neural Networks](/study/papers/alphago/) | 强化学习 |
 | `anthropic-circuits` | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
@@ -348,6 +351,7 @@ sidebar:
 | `retro` | [RETRO (DeepMind ICML 2022) — 用 2T tokens 外部数据库 + chunked cross-attention 让 7.5B 模型媲美 175B Gopher，把检索抬成与参数并列的第二个 LLM 缩放轴](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `rlhf-christiano` | [RLHF — 用人比较两条轨迹学奖励：ChatGPT/Claude 的奠基论文](/study/papers/rlhf-christiano/) | 强化学习 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB 状元篇](/study/papers/rocksdb-lsm/) | 数据库 |
+| `rsa` | [A Method for Obtaining Digital Signatures and Public-Key Cryptosystems (RSA 1978)](/study/papers/rsa/) | 密码学 / 安全 |
 | `salsa-adapton` | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
 | `sam` | [SAM — 把分割做成可 prompt 的基础模型，image encoder 一次、prompt 解码 N 次](/study/papers/sam/) | 计算机视觉 |
 | `scaling-laws` | [Scaling Laws — 把 LLM 的 loss 写成参数 N、数据 D、计算 C 的三参数 power law](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
