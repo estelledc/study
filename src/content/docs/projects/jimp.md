@@ -110,9 +110,9 @@ jimp 占据的生态位：**所有 native 不能用、Canvas API 不存在的环
 
 ## Layer 2 — 实现机制（bitmap 流水线）
 
-> 配合图：`assets/01-pure-js.webp` —— Buffer → 解码 → bitmap → 操作 → 编码 → Buffer 全链路。
+> 配合图：`/study/projects/jimp/01-pure-js.webp` —— Buffer → 解码 → bitmap → 操作 → 编码 → Buffer 全链路。
 
-![pure-js pipeline](assets/01-pure-js.webp)
+![pure-js pipeline](/study/projects/jimp/01-pure-js.webp)
 
 ### 2.1 核心数据结构：`Bitmap`
 
