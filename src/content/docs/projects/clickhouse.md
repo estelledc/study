@@ -150,6 +150,7 @@ ORDER BY date;
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[neo4j]] —— Neo4j — 主流图数据库

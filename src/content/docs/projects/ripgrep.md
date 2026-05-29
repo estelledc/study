@@ -142,3 +142,8 @@ rg --no-ignore "foo"         # 等价于 -u
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bat]] —— bat — 现代 cat 替代
+- [[fd]] —— fd — Rust 写的现代 find
+- [[fzf]] —— fzf — 命令行模糊查找
+

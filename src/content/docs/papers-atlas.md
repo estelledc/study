@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 143 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 146 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：143 篇
+- **总数**：146 篇
 - **已分类**：143
+- **未分类**：3（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -35,6 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
+| [其他 / 待分类](#其他--待分类) | 3 |
 
 ---
 
@@ -158,7 +160,7 @@ sidebar:
 | [FoundationDB (Zhou et al. 2021) — Unbundled 分布式 KV + Sim2 确定性仿真：用 10 年 CI 把 bug 烧在设计期](/study/papers/foundationdb/) | 不是又一个 NewSQL |
 | [Kafka (Kreps et al. 2011) — 把消息系统重写成只追加的日志文件](/study/papers/kafka/) | 第一个把 broker 当 append-only file、把 offset 当消费者状态而不是服务器状态、把 page cache + sendfile 当吞吐杠杆的消息系统 |
 | [LSM-tree 与 RocksDB 状元篇](/study/papers/rocksdb-lsm/) | O'Neil 1996 LSM-tree 原始论文 + Facebook RocksDB 2014/2017 工程论文综合精读 — 顺序写 + 后台 merge 如何取代原地更新 |
-| [Selinger 1979 — 把可见的执行计划装进每一台 SQL 数据库](/study/papers/selinger-1979/) | System R cost-based optimizer 奠定 SQL 数据库范式 — DP 枚举 join order、统计直方图估 cost、interesting orders 剪枝 |
+| [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) |  |
 | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | SIGMOD 2016 Snowflake 论文精读 — 存算分离 + 弹性虚拟仓库如何重塑云数仓范式 |
 | [TigerBeetle (Joran Greef et al. 2024) — 金融级 OLTP，固定 schema + VSR + deterministic simulation](/study/papers/tigerbeetle/) | 不是通用数据库，是为金融双本记账写死的状态机 |
 | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | Graefe 1990 用 Open / GetNext / Close 三函数 + Exchange 算子定义"算子=迭代器"范式，36 年里几乎所有 SQL 数据库（Postgres / Oracle / Spar… |
@@ -300,9 +302,19 @@ sidebar:
 | [Programmer Interruption (Parnin & Rugaber 2009) — 给"程序员被打断"提供第一份量化资源损耗证据](/study/papers/programmer-interruption/) | ICPC 2009 用 85 名工程师 10,000 个 IDE 会话证明只有 10% 能在 1 分钟内恢复编码，30% 编辑滞后超过 30 分钟 |
 | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | IEEE TSE 2008 用 25 名 industrial 程序员 + 9 名实验室程序员的录像归纳出 4 大类共 44 个问题，成为 IDE / Code Search / LLM agent 的隐性 refer… |
 
+## 其他 / 待分类
+
+共 3 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+
+| Slug | 论文 |
+|---|---|
+| `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
+| `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
+| `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
+
 ---
 
-## 全部 143 篇（字母序）
+## 全部 146 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -317,6 +329,7 @@ sidebar:
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora (Verbitski et al. 2017) — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
+| `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 其他 |
 | `beck-tdd` | [Kent Beck — Test-Driven Development: By Example](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
@@ -332,6 +345,7 @@ sidebar:
 | `ci-effects` | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
 | `clickhouse` | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
+| `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
 | `cognitive-load-theory` | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
@@ -383,6 +397,7 @@ sidebar:
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
+| `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
@@ -417,7 +432,7 @@ sidebar:
 | `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
 | `self-adjusting` | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
-| `selinger-1979` | [Selinger 1979 — 把可见的执行计划装进每一台 SQL 数据库](/study/papers/selinger-1979/) | 数据库 |
+| `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
 | `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |

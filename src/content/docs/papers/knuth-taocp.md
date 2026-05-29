@@ -144,6 +144,7 @@ TAOCP Vol 1 Section 1.2.1 讲数学归纳法，开头一句话直接挑明它的
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
