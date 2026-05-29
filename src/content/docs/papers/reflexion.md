@@ -163,3 +163,6 @@ Trial 2:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
+

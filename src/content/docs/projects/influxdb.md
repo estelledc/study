@@ -151,5 +151,8 @@ from(bucket: "metrics")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[prometheus]] —— Prometheus — 时序监控系统
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 

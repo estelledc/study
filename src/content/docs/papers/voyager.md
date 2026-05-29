@@ -137,4 +137,8 @@ Voyager 论文不是终点，它是一条路线的发车站。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[cot]] —— Chain-of-Thought Prompting
+- [[metagpt]] —— MetaGPT — 多智能体软件公司
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[react]] —— React UI 组件库
 

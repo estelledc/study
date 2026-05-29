@@ -144,3 +144,8 @@ autogenstudio ui --port 8080
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[metagpt]] —— MetaGPT — 多智能体软件公司
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[reflexion]] —— Reflexion — 让 LLM 自我反思
+

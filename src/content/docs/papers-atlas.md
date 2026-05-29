@@ -45,15 +45,15 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) |  |
-| [AutoGen — Enabling Next-Gen LLM Applications via Multi-Agent Conversation](/study/papers/autogen/) | ConversableAgent + GroupChatManager 把多 agent 协作抽象成可编排的对话，奠定 2024 年 multi-agent framework 范式 |
+| [AutoGen — 多智能体对话框架](/study/papers/autogen/) |  |
 | [Chain-of-Thought Prompting](/study/papers/cot/) |  |
 | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | Edge et al |
 | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) |  |
-| [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 把人类软件公司的标准作业流程（SOP）写进 multi-agent 系统：每个 agent 是一个角色（PM / Architect / Engineer / QA），用强结构化文档传递信息，把自由对话的随机性收敛为可… |
-| [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | Wang 等人 2024 年从 OpenDevin 改名而来的开源平台论文 |
+| [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) |  |
+| [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) |  |
 | [RAG (NeurIPS 2020) — 把 differentiable retriever 和 seq2seq generator 联训成一个端到端模型，让生成式 AI 第一次能引用外部知识](/study/papers/rag-lewis-2020/) | Lewis et al |
 | [ReAct — Reasoning and Acting](/study/papers/react/) |  |
-| [Reflexion (Shinn et al. 2023) — verbal RL：用文字代替梯度让 agent 学习](/study/papers/reflexion/) | ReAct 没法 retry 的硬伤怎么补——加一个 self-reflection 模型把失败 trajectory 翻译成自然语言反思塞进下一轮 prompt |
+| [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) |  |
 | [RETRO (DeepMind ICML 2022) — 用 2T tokens 外部数据库 + chunked cross-attention 让 7.5B 模型媲美 175B Gopher，把检索抬成与参数并列的第二个 LLM 缩放轴](/study/papers/retro/) | Borgeaud et al |
 | [SWE-agent — 不靠模型变聪明、靠"接口"变聪明：ACI 把 SWE-bench 1.96% 推到 12.5%](/study/papers/swe-agent/) | Agent 能不能修真实 GitHub issue，瓶颈不在 LLM 智力，而在它跟"电脑"之间的接口 |
 | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) |  |
@@ -316,7 +316,7 @@ sidebar:
 | `anthropic-circuits` | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora (Verbitski et al. 2017) — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
-| `autogen` | [AutoGen — Enabling Next-Gen LLM Applications via Multi-Agent Conversation](/study/papers/autogen/) | 智能体与 LLM 系统 |
+| `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
 | `beck-tdd` | [Kent Beck — Test-Driven Development: By Example](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
@@ -388,11 +388,11 @@ sidebar:
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `megatron-lm` | [Megatron-LM 张量并行如何把单卡放不下的大模型切到多卡](/study/papers/megatron-lm/) | 分布式训练 / GPU |
-| `metagpt` | [MetaGPT — SOP 驱动的多 agent 软件公司框架](/study/papers/metagpt/) | 智能体与 LLM 系统 |
+| `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `muzero` | [MuZero Mastering Games by Planning with Learned Model](/study/papers/muzero/) | 强化学习 |
 | `no-silver-bullet` | [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
-| `openhands` | [OpenHands — 开源 generalist coding agent 平台：把 SWE-agent 的 ACI 工业化、多 agent 化、可扩展化](/study/papers/openhands/) | 智能体与 LLM 系统 |
+| `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `pair-programming` | [Pair Programming Meta-Analysis (Hannay et al. 2009) — 双倍人力换 1.2 倍质量](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |
 | `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
@@ -406,7 +406,7 @@ sidebar:
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
 | `realm` | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
-| `reflexion` | [Reflexion (Shinn et al. 2023) — verbal RL：用文字代替梯度让 agent 学习](/study/papers/reflexion/) | 智能体与 LLM 系统 |
+| `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
 | `resnet` | [ResNet 深度残差学习](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO (DeepMind ICML 2022) — 用 2T tokens 外部数据库 + chunked cross-attention 让 7.5B 模型媲美 175B Gopher，把检索抬成与参数并列的第二个 LLM 缩放轴](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `rlhf-christiano` | [RLHF — 用人比较两条轨迹学奖励：ChatGPT/Claude 的奠基论文](/study/papers/rlhf-christiano/) | 强化学习 |

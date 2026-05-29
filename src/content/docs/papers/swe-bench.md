@@ -160,4 +160,5 @@ python -m swebench.harness.run_evaluation \
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[react]] —— React UI 组件库
 
