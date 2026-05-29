@@ -200,8 +200,10 @@ export const collections = { blog }
 
 - [[micromark]] —— micromark 流式 CommonMark 状态机解析器
 - [[next-js]] —— Next.js — React 全栈框架
+- [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
 - [[react]] —— React UI 组件库
+- [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[svelte]] —— Svelte — 编译时 UI 框架

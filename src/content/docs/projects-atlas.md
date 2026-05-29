@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 163 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 166 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：163 个
-- **已分类**：163
+- **总数**：166 个
+- **已分类**：166
 
 ### 按主题分布
 
@@ -28,7 +28,7 @@ sidebar:
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
-| [Meta 框架 / 全栈](#meta-框架---全栈) | 2 |
+| [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -167,7 +167,7 @@ sidebar:
 | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) |  |
 | [Express Node.js 经典 Web 框架](/study/projects/express/) |  |
 | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) |  |
-| [Hono — 极简边缘后端的 API 取舍](/study/projects/hono/) | 用 Web 标准（Request/Response）+ 多种 router 实现 + koa-compose 中间件做"任何 runtime 都能跑"的 web 框架 |
+| [Hono — 多运行时 Web 框架](/study/projects/hono/) |  |
 | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) |  |
 | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) |  |
 
@@ -186,12 +186,15 @@ sidebar:
 
 ## Meta 框架 / 全栈
 
-共 2 个。
+共 5 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) |  |
 | [Next.js — React 全栈框架](/study/projects/next-js/) |  |
+| [Nuxt — Vue 全栈框架](/study/projects/nuxt/) |  |
+| [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) |  |
+| [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) |  |
 
 ## Auth 认证
 
@@ -426,7 +429,7 @@ sidebar:
 
 ---
 
-## 全部 163 个（字母序）
+## 全部 166 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -473,7 +476,7 @@ sidebar:
 | `framer-motion` | [framer-motion — 给 React 的声明式物理动画系统](/study/projects/framer-motion/) | 动画 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `gsap` | [gsap — 把 timeline 做成第一等公民的 JS 动画运行时](/study/projects/gsap/) | 动画 |
-| `hono` | [Hono — 极简边缘后端的 API 取舍](/study/projects/hono/) | Web 框架 |
+| `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救出来 · NestJS + FastAPI + pgvector 三栈混编的 self-hosted 照片基建](/study/projects/immich/) | 数据应用 / SaaS |
@@ -514,6 +517,7 @@ sidebar:
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | 文档站点 |
+| `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
 | `nx` | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
@@ -541,6 +545,7 @@ sidebar:
 | `react-intl` | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) | i18n 国际化 |
 | `react-spring` | [react-spring 状元篇](/study/projects/react-spring/) | 动画 |
 | `recharts` | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) | 数据可视化 |
+| `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
 | `rolldown` | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 构建工具 / Bundler |
@@ -560,6 +565,7 @@ sidebar:
 | `supabase` | [supabase — 不是另一个 Firebase 替代品，是把 Postgres 包成了完整 BaaS](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
+| `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | Meta 框架 / 全栈 |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — 同一问题的另一种回答](/study/projects/swr/) | 数据获取 / 路由 |
 | `tailwind` | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | CSS / 样式 |

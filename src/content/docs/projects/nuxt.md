@@ -170,3 +170,6 @@ const { data } = await useFetch('/api/hello')
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[sveltekit]] —— SvelteKit — Svelte 全栈框架
+

@@ -152,7 +152,6 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完

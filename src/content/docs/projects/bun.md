@@ -183,6 +183,7 @@ Bun.serve({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[hono]] —— Hono — 多运行时 Web 框架
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 
