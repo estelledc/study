@@ -1,6 +1,14 @@
 ---
 title: MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性
 description: 用户只写 map + reduce 两个函数，框架自动 parallelize / distribute / fault-tolerate。一代 big data 范式从这里开始
+来源: Jeffrey Dean, Sanjay Ghemawat, "MapReduce: Simplified Data Processing on Large Clusters", OSDI 2004
+论文年份: 2004
+作者: Jeffrey Dean, Sanjay Ghemawat
+分支: theory-D
+状态: 状元篇
+关联笔记:
+  - "[[gfs]]"
+  - "[[bigtable]]"
 sidebar:
   label: MapReduce (OSDI 2004)
   order: 9
@@ -561,6 +569,11 @@ Yahoo Doug Cutting 主导的 Java 重写。**和 Google 版本的差别**：
 GitHub: [apache/hadoop](https://github.com/apache/hadoop)
 Hadoop MapReduce 是 2008-2014 年大数据生态主力，现在主要是 legacy 维护。
 
+**关键源码锚点（permalink）**：
+
+- WordCount 经典样例：[apache/hadoop@rel/release-3.3.6 / hadoop-mapreduce-examples/.../WordCount.java](https://github.com/apache/hadoop/blob/rel/release-3.3.6/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples/WordCount.java) —— 21 行 mapper + 12 行 reducer，几乎逐字翻译论文 Section 2.1
+- speculative execution（backup task 的 Hadoop 命名）：[apache/hadoop@rel/release-3.3.6 / .../DefaultSpeculator.java](https://github.com/apache/hadoop/blob/rel/release-3.3.6/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java/org/apache/hadoop/mapreduce/v2/app/speculate/DefaultSpeculator.java) —— 论文 §3.6 的工业实现，多了"估算剩余时间 < 阈值才启动 backup"的条件
+
 ### 后作 2（颠覆者）：Spark RDD (Zaharia et al., NSDI 2012)
 
 Spark 是 MapReduce 的**精神继承者 + 颠覆者**。**关键改进**：
@@ -573,11 +586,18 @@ Spark 是 MapReduce 的**精神继承者 + 颠覆者**。**关键改进**：
 Spark 用同样的"限制表达 → 自动并行"哲学，但**抽象层次更高**——用户写更接近 SQL/Pandas 的代码，
 而不是裸的 map/reduce。**核心 insight 是 lazy evaluation**：用户描述 DAG，框架决定何时物化。
 
+**关键源码锚点（permalink）**：
+
+- RDD 抽象本体：[apache/spark@v3.5.0 / core/src/main/scala/org/apache/spark/rdd/RDD.scala](https://github.com/apache/spark/blob/v3.5.0/core/src/main/scala/org/apache/spark/rdd/RDD.scala) —— `class RDD` 前 80 行的注释把"5 个核心属性（partitions / dependencies / compute / preferred locations / partitioner）"写成 docstring，几乎是论文摘要的代码版
+- DAG 调度器（替代 master 的 task 状态机）：[apache/spark@v3.5.0 / core/src/main/scala/org/apache/spark/scheduler/DAGScheduler.scala](https://github.com/apache/spark/blob/v3.5.0/core/src/main/scala/org/apache/spark/scheduler/DAGScheduler.scala) —— `submitMissingTasks` 是 MapReduce master 调度循环的精神后继
+
 ### 后作 3（流处理）：Flink (2015) / Beam (2016)
 
 把 MapReduce 思路扩展到**流处理 + 批处理统一**。MapReduce 假设输入有界（batch），
 Flink/Beam 处理无界流。但**核心还是受限抽象 + 框架包办分布式**。
 Beam 的 PTransform / PCollection 几乎是 MapReduce 抽象的精确泛化。
+
+**关键源码锚点（permalink）**：[apache/flink@release-1.18.0 / flink-streaming-java/.../StreamExecutionEnvironment.java](https://github.com/apache/flink/blob/release-1.18.0/flink-streaming-java/src/main/java/org/apache/flink/streaming/api/environment/StreamExecutionEnvironment.java) —— `execute()` 把用户描述的 DAG 提交到 JobManager（Flink 的 master），骨架与 MapReduce paper Figure 1 同构，只是节点从"map/reduce 两类"变成"任意算子"
 
 ### 后作 4（同机构）：FlumeJava (Google PLDI 2010) / Dataflow (Google 2015)
 
