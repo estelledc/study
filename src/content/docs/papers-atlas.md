@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 124 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 125 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：124 篇
-- **已分类**：124
+- **总数**：125 篇
+- **已分类**：125
 
 ### 按主题分布
 
@@ -32,6 +32,7 @@ sidebar:
 | [GC / 内存管理](#gc---内存管理) | 5 |
 | [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
 | [计算理论 / 数学基础](#计算理论---数学基础) | 4 |
+| [信息论 / 编码理论](#信息论---编码理论) | 1 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
@@ -245,6 +246,14 @@ sidebar:
 | [lambda-calculus](/study/papers/lambda-calculus/) |  |
 | [Turing 1936: On Computable Numbers, with an Application to the Entscheidungsproblem](/study/papers/turing-1936/) | Alan Turing 1936 年的开山之作：用图灵机定义可计算性，证明 Halting Problem 不可判定，间接解决 Hilbert Entscheidungsproblem |
 
+## 信息论 / 编码理论
+
+共 1 篇。
+
+| 论文 | 描述 |
+|---|---|
+| [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) |  |
+
 ## 密码学 / 安全
 
 共 5 篇。
@@ -275,7 +284,7 @@ sidebar:
 
 ---
 
-## 全部 124 篇（字母序）
+## 全部 125 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -376,6 +385,7 @@ sidebar:
 | `self-adjusting` | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-pic` | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `selinger-1979` | [Selinger 1979 — 把可见的执行计划装进每一台 SQL 数据库](/study/papers/selinger-1979/) | 数据库 |
+| `shannon-1948` | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `sleeper-agents` | [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |

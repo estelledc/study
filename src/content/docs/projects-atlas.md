@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 136 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 137 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：136 个
-- **已分类**：136
+- **总数**：137 个
+- **已分类**：137
 
 ### 按主题分布
 
@@ -41,6 +41,7 @@ sidebar:
 | [基础组件 / Headless UI](#基础组件---headless-ui) | 2 |
 | [Markdown / 解析](#markdown---解析) | 5 |
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
+| [CSS / 样式](#css---样式) | 1 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -339,6 +340,14 @@ sidebar:
 | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | S29-5 收官：从 Application/Stage/Container 流水线到 v8 ECS 重写，看一个工具库如何在 13 年里成为 web 端 2D 图像渲染的事实标准 |
 | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
 
+## CSS / 样式
+
+共 1 个。
+
+| 项目 | 描述 |
+|---|---|
+| [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) |  |
+
 ## 其他基础设施
 
 共 3 个。
@@ -351,7 +360,7 @@ sidebar:
 
 ---
 
-## 全部 136 个（字母序）
+## 全部 137 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -464,6 +473,7 @@ sidebar:
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
 | `swc` | [swc Rust-based JS/TS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — 同一问题的另一种回答](/study/projects/swr/) | 数据获取 / 路由 |
+| `tailwind` | [Tailwind CSS — utility-first 怎么把 CSS 写法重写一遍](/study/projects/tailwind/) | CSS / 样式 |
 | `tanstack-form` | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 服务端状态当成"独立物种"管](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把类型系统当 UX 工具](/study/projects/tanstack-router/) | 数据获取 / 路由 |
