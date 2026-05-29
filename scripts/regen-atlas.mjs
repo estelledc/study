@@ -150,6 +150,9 @@ const THEMES_PROJECTS = {
   'Markdown / 解析': [
     'unified', 'markdown-it', 'marked', 'shiki', 'micromark',
   ],
+  '图像处理': [
+    'sharp',
+  ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
   ],
