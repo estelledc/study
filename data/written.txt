@@ -28,6 +28,7 @@ ci-effects
 clickhouse
 clip
 codd-1970
+codd-1979-extending
 cognitive-load-theory
 compiler-errors
 constitutional-ai
@@ -105,6 +106,7 @@ rag-lewis-2020
 react
 realm
 reed-solomon-1960
+refinement-types-1991
 reflexion
 resnet
 retro
@@ -272,6 +274,7 @@ nanostores
 nats
 neo4j
 nestjs
+nethermind
 next-intl
 next-js
 nextra
@@ -325,6 +328,7 @@ solid
 sortablejs
 sqlite
 stagehand
+starlette
 starlight
 steel-browser
 storybook
