@@ -1,0 +1,246 @@
+#!/usr/bin/env node
+// Pick 4 rewrite + 4 NEW，分配到 8 worktree，输出 8 个 prompt JSON 到 stdout
+// 同时把 candidates / rewrite-pool 中选中的条目状态改为 claimed
+// 主 CC 读 stdout 后并行调 Task tool（一个 prompt 一个 subagent）
+//
+// 用法：
+//   node scripts/dispatch-batch.mjs                    # 4R + 4N
+//   node scripts/dispatch-batch.mjs --rewrite 0 --new 8 # 全 NEW（rewrite 池空时）
+//   node scripts/dispatch-batch.mjs --dry-run           # 只输出，不改状态
+//
+// Worktree 静态分配：
+//   papers-rewrite x 2 → papers / papers-2
+//   papers-new x 2     → papers-3 / papers-4
+//   projects-rewrite x 2 → projects / projects-2
+//   projects-new x 2     → projects-3 / projects-4
+
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT = path.resolve(__dirname, '..');
+const CANDIDATES = path.join(ROOT, 'data/candidates.jsonl');
+const REWRITE_POOL = path.join(ROOT, 'data/rewrite-pool.jsonl');
+const PROMPTS_DIR = path.join(ROOT, 'prompts');
+const HOME = process.env.HOME || '/Users/jason';
+
+// Worktree 配置（按 area + kind 分配）
+const WORKTREES = {
+  'papers-rewrite': [
+    { name: 'papers',   path: `${HOME}/study-refactor-papers`,   branch: 'refactor/papers'   },
+    { name: 'papers-2', path: `${HOME}/study-refactor-papers-2`, branch: 'refactor/papers-2' },
+  ],
+  'papers-new': [
+    { name: 'papers-3', path: `${HOME}/study-refactor-papers-3`, branch: 'refactor/papers-3' },
+    { name: 'papers-4', path: `${HOME}/study-refactor-papers-4`, branch: 'refactor/papers-4' },
+  ],
+  'projects-rewrite': [
+    { name: 'projects',   path: `${HOME}/study-refactor-projects`,   branch: 'refactor/projects'   },
+    { name: 'projects-2', path: `${HOME}/study-refactor-projects-2`, branch: 'refactor/projects-2' },
+  ],
+  'projects-new': [
+    { name: 'projects-3', path: `${HOME}/study-refactor-projects-3`, branch: 'refactor/projects-3' },
+    { name: 'projects-4', path: `${HOME}/study-refactor-projects-4`, branch: 'refactor/projects-4' },
+  ],
+};
+
+function parseArgs() {
+  const args = { rewrite: 4, new: 4, dryRun: false };
+  for (let i = 2; i < process.argv.length; i++) {
+    const a = process.argv[i];
+    if (a === '--rewrite') args.rewrite = parseInt(process.argv[++i], 10);
+    else if (a === '--new') args.new = parseInt(process.argv[++i], 10);
+    else if (a === '--dry-run') args.dryRun = true;
+  }
+  return args;
+}
+
+async function readJsonl(filePath) {
+  const raw = await fs.readFile(filePath, 'utf8');
+  return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
+}
+
+async function writeJsonl(filePath, items) {
+  await fs.writeFile(filePath, items.map(x => JSON.stringify(x)).join('\n') + '\n');
+}
+
+function pickRewrite(pool, area, n) {
+  // 按 score desc 选 N 个 status=available
+  const eligible = pool
+    .filter(x => x.area === area && x.status === 'available')
+    .sort((a, b) => b.score - a.score || a.slug.localeCompare(b.slug));
+  return eligible.slice(0, n);
+}
+
+function pickNew(candidates, area, n, excludeSlugs = new Set()) {
+  // 按 source_file（topic）轮询，避免单一主题扎堆
+  const eligible = candidates.filter(c =>
+    c.area === area &&
+    c.status === 'queued' &&
+    !excludeSlugs.has(c.slug)
+  );
+  // 按 topic 分桶
+  const byTopic = new Map();
+  for (const c of eligible) {
+    if (!byTopic.has(c.topic)) byTopic.set(c.topic, []);
+    byTopic.get(c.topic).push(c);
+  }
+  // 轮询取
+  const topics = [...byTopic.keys()];
+  const picked = [];
+  let i = 0;
+  while (picked.length < n && topics.length) {
+    const t = topics[i % topics.length];
+    const bucket = byTopic.get(t);
+    if (bucket.length === 0) {
+      topics.splice(i % topics.length, 1);
+      continue;
+    }
+    picked.push(bucket.shift());
+    i++;
+  }
+  return picked;
+}
+
+async function loadPromptTemplate(kind) {
+  const map = {
+    'new-paper': 'new-paper.md',
+    'rewrite-paper': 'rewrite-paper.md',
+    'new-project': 'new-project.md',
+    'rewrite-project': 'rewrite-project.md',
+  };
+  return fs.readFile(path.join(PROMPTS_DIR, map[kind]), 'utf8');
+}
+
+function renderPrompt(template, vars) {
+  let out = template;
+  for (const [k, v] of Object.entries(vars)) {
+    out = out.replace(new RegExp(`{{${k}}}`, 'g'), String(v));
+  }
+  return out;
+}
+
+function buildAssignment(kind, area, item, worktree) {
+  const slug = item.slug;
+  const isRewrite = kind.startsWith('rewrite-');
+  const subdir = area; // papers / projects
+  const outputPath = `${worktree.path}/src/content/docs/${subdir}/${slug}.md`;
+  const existingPath = isRewrite
+    ? `${worktree.path}/${item.path || `src/content/docs/${subdir}/${slug}.md`}`
+    : null;
+
+  const vars = {
+    slug,
+    title: item.title || slug,
+    year: item.meta?.col3 || '',
+    why: item.meta?.col4 || item.title || '',
+    stars: item.meta?.col3 || '',
+    value: item.meta?.col4 || '',
+    url: item.url || '',
+    github_url: item.url || '',
+    topic: item.topic || 'wip',
+    worktree_path: worktree.path,
+    branch_name: worktree.branch,
+    output_path: outputPath,
+    existing_path: existingPath || '',
+  };
+
+  return { kind, area, slug, worktree, vars };
+}
+
+async function main() {
+  const args = parseArgs();
+
+  const candidates = await readJsonl(CANDIDATES);
+  const pool = await readJsonl(REWRITE_POOL);
+
+  // 4 类各 N/2（除非奇数）
+  const rewritePerArea = Math.floor(args.rewrite / 2);
+  const newPerArea = Math.floor(args.new / 2);
+  const rewriteRemainder = args.rewrite - rewritePerArea * 2; // 0 或 1
+  const newRemainder = args.new - newPerArea * 2;
+
+  // Pick rewrite
+  const papersRewrite = pickRewrite(pool, 'papers', rewritePerArea);
+  const projectsRewrite = pickRewrite(pool, 'projects', rewritePerArea + rewriteRemainder);
+
+  // Pick new（避开本批已选的 rewrite slug）
+  const exclude = new Set([...papersRewrite, ...projectsRewrite].map(x => `${x.area}::${x.slug}`));
+  const papersNew = pickNew(candidates, 'papers', newPerArea, new Set(
+    [...exclude].filter(k => k.startsWith('papers::')).map(k => k.split('::')[1])
+  ));
+  const projectsNew = pickNew(candidates, 'projects', newPerArea + newRemainder, new Set(
+    [...exclude].filter(k => k.startsWith('projects::')).map(k => k.split('::')[1])
+  ));
+
+  // 数量校验
+  const issues = [];
+  if (papersRewrite.length < rewritePerArea) issues.push(`papers-rewrite short: got ${papersRewrite.length}, need ${rewritePerArea}`);
+  if (projectsRewrite.length < (rewritePerArea + rewriteRemainder)) issues.push(`projects-rewrite short`);
+  if (papersNew.length < newPerArea) issues.push(`papers-new short: got ${papersNew.length}, need ${newPerArea}`);
+  if (projectsNew.length < (newPerArea + newRemainder)) issues.push(`projects-new short`);
+
+  // 分配 worktree
+  const assignments = [];
+  papersRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-paper', 'papers', item, WORKTREES['papers-rewrite'][i])));
+  projectsRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-project', 'projects', item, WORKTREES['projects-rewrite'][i])));
+  papersNew.forEach((item, i) => assignments.push(buildAssignment('new-paper', 'papers', item, WORKTREES['papers-new'][i])));
+  projectsNew.forEach((item, i) => assignments.push(buildAssignment('new-project', 'projects', item, WORKTREES['projects-new'][i])));
+
+  // Render prompts
+  const templates = {};
+  for (const kind of ['new-paper', 'rewrite-paper', 'new-project', 'rewrite-project']) {
+    templates[kind] = await loadPromptTemplate(kind);
+  }
+
+  const output = assignments.map(a => ({
+    kind: a.kind,
+    area: a.area,
+    slug: a.slug,
+    worktree: a.worktree.name,
+    worktree_path: a.worktree.path,
+    branch: a.worktree.branch,
+    output_path: a.vars.output_path,
+    prompt: renderPrompt(templates[a.kind], a.vars),
+  }));
+
+  // 标 claimed（除非 dry-run）
+  if (!args.dryRun) {
+    const rewriteClaimed = new Set([...papersRewrite, ...projectsRewrite].map(x => `${x.area}::${x.slug}`));
+    const newClaimed = new Set([...papersNew, ...projectsNew].map(x => `${x.area}::${x.slug}`));
+    for (const x of pool) {
+      if (rewriteClaimed.has(`${x.area}::${x.slug}`)) {
+        x.status = 'claimed';
+        x.claimed_by = assignments.find(a => a.slug === x.slug && a.area === x.area)?.worktree.name || null;
+      }
+    }
+    for (const x of candidates) {
+      if (newClaimed.has(`${x.area}::${x.slug}`)) {
+        x.status = 'claimed';
+        x.claimed_by = assignments.find(a => a.slug === x.slug && a.area === x.area)?.worktree.name || null;
+      }
+    }
+    await writeJsonl(REWRITE_POOL, pool);
+    await writeJsonl(CANDIDATES, candidates);
+  }
+
+  // Output to stdout: JSON array
+  console.log(JSON.stringify({
+    batch_size: assignments.length,
+    expected: args.rewrite + args.new,
+    issues,
+    dry_run: args.dryRun,
+    assignments: output,
+  }, null, 2));
+
+  if (issues.length && !args.dryRun) {
+    process.stderr.write(`WARNING: pool short on ${issues.length} slot(s)\n`);
+  }
+}
+
+main().catch(err => {
+  console.error('dispatch-batch failed:', err);
+  process.exit(1);
+});

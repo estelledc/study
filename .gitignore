@@ -24,3 +24,7 @@ pnpm-debug.log*
 !.vscode/extensions.json
 .idea/
 .research/
+
+# auto-push 机器状态（每批重写，不入仓）
+data/STATUS.md
+data/status.json
