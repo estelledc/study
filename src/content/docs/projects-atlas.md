@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 124 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 125 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：124 个
-- **已分类**：124
+- **总数**：125 个
+- **已分类**：125
 
 ### 按主题分布
 
@@ -26,7 +26,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [Web 框架](#web-框架) | 4 |
+| [Web 框架](#web-框架) | 5 |
 | [Auth 认证](#auth-认证) | 5 |
 | [Monorepo / 包管理](#monorepo---包管理) | 5 |
 | [状态管理](#状态管理) | 8 |
@@ -151,7 +151,7 @@ sidebar:
 
 ## Web 框架
 
-共 4 个。
+共 5 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -159,6 +159,7 @@ sidebar:
 | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) |  |
 | [Hono — 极简边缘后端的 API 取舍](/study/projects/hono/) | 用 Web 标准（Request/Response）+ 多种 router 实现 + koa-compose 中间件做"任何 runtime 都能跑"的 web 框架 |
 | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) |  |
+| [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) |  |
 
 ## Auth 认证
 
@@ -323,7 +324,7 @@ sidebar:
 
 ---
 
-## 全部 124 个（字母序）
+## 全部 125 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -389,6 +390,7 @@ sidebar:
 | `msw` | [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
 | `nanobrowser` | [nanobrowser — 不是 cloud Chrome 的 AI agent，是把浏览器扩展当 sandbox 的 multi-agent runtime](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 框架无关的 atomic 状态库（< 1 KB）](/study/projects/nanostores/) | 状态管理 |
+| `nestjs` | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) | Web 框架 |
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
 | `nextra` | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | 文档站点 |
 | `nx` | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | Monorepo / 包管理 |
