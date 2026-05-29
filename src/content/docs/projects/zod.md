@@ -192,6 +192,7 @@ function LoginForm() {
 - [[ky]] —— ky 极简 fetch-based HTTP 客户端
 - [[mikro-orm]] —— MikroORM DataMapper + Unit of Work + Identity Map
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
+- [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
 - [[sequelize]] —— Sequelize Node.js Promise-based ORM 元老

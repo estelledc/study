@@ -154,3 +154,9 @@ function Drawer({ isOpen }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[d3]] —— d3.js 数据驱动文档
+- [[echarts]] —— Apache ECharts 配置式数据可视化
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[react]] —— React UI 组件库
+

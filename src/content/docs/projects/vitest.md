@@ -182,4 +182,5 @@ export default defineConfig({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[vue]] —— Vue.js 渐进式前端框架
+- [[vue]] —— Vue.js — 渐进式 UI 框架
+
