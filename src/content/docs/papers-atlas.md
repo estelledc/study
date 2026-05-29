@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 111 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 112 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：111 篇
-- **已分类**：111
+- **总数**：112 篇
+- **已分类**：112
 
 ### 按主题分布
 
@@ -30,7 +30,7 @@ sidebar:
 | [网络协议](#网络协议) | 5 |
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 14 |
+| [编译器 / 编程语言理论](#编译器---编程语言理论) | 15 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
 ---
@@ -209,7 +209,7 @@ sidebar:
 
 ## 编译器 / 编程语言理论
 
-共 14 篇。
+共 15 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -221,6 +221,7 @@ sidebar:
 | [Algebraic Effects (Plotkin & Pretnar ESOP 2009) — async/await、try-catch、generator 的统一抽象](/study/papers/effect-handlers/) | operation signature + handler clause + resume/abort 控制流 |
 | [Hindley-Milner (Damas & Milner POPL 1982) — 编译器自己推类型的祖宗算法](/study/papers/hindley-milner/) | algorithm W + 唯一原则类型存在性定理 |
 | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) |  |
+| [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | Lattner & Adve, CGO 2004 — 用统一的 SSA-based IR 把 static + link-time + runtime 三阶段优化串成一套基础设施，催生了 Clang / Swift /… |
 | [Push-Pull FRP (Elliott 2009) — events 推 + signals 拉的二元模型](/study/papers/push-pull-frp/) | RxJS / SolidJS / Effect 的反应式编程理论根 |
 | [REALM (Guu et al. ICML 2020) — 把 retriever 塞进 MLM pretrain 的第一篇论文](/study/papers/realm/) | 不在 finetuning 时才接外部知识，而是让 retriever 和 BERT 一起预训练 |
 | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | Niko Matsakis 把 Adapton 的 lazy demand-driven 思想翻译成 Rust 工业框架 |
@@ -246,7 +247,7 @@ sidebar:
 
 ---
 
-## 全部 111 篇（字母序）
+## 全部 112 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -309,6 +310,7 @@ sidebar:
 | `linear-types` | [Linear Types Can Change the World (Wadler 1990) — Rust 所有权 30 年前的祖宗](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `llama` | [LLaMA — Chinchilla 实证落地版：7B 训 1T tokens，开放权重点燃 2023 开源 LLM 生态](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA Visual Instruction Tuning](/study/papers/llava/) | 生成模型 / 扩散 |
+| `llvm` | [LLVM — 一套 SSA IR 贯穿编译期 / 链接期 / 运行期](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `mae` | [MAE Masked Autoencoder 视觉自监督](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba - Linear-Time Sequence Modeling with Selective State Spaces](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
