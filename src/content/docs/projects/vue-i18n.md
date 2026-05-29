@@ -352,3 +352,84 @@ const {t, locale} = useI18n();
 
 - [[i18next]] — 同领域，对比 framework-agnostic vs Vue-only
 - [[zod]] [[react-hook-form]] [[d3]] [[recharts]] [[visx]] [[axios]] [[ky]] [[date-fns]] [[dayjs]] [[luxon]] [[arktype]] [[valibot]] [[tanstack-form]] [[temporal-polyfill]] [[js-joda]]
+
+## 附录 A — Nuxt 3 + vue-i18n 集成（≥ 25 行）
+
+Nuxt 3 用 @nuxtjs/i18n（vue-i18n 之上的 Nuxt 模块）：
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/i18n'],
+  i18n: {
+    locales: ['en', 'zh-CN', 'ja'],
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',  // /en/about → /about
+    vueI18n: './i18n.config.ts'
+  }
+});
+```
+
+```ts
+// i18n.config.ts
+import en from './locales/en.json';
+import zhCN from './locales/zh-CN.json';
+
+export default defineI18nConfig(() => ({
+  legacy: false,
+  locale: 'en',
+  fallbackLocale: 'en',
+  messages: {en, 'zh-CN': zhCN}
+}));
+```
+
+特性：
+
+1. URL 自动添加 locale 前缀（SEO 友好）
+2. SSR 自动检测 Accept-Language header
+3. 与 Nuxt useFetch / useAsyncData 协作
+4. Lazy loading（按需加载 messages）
+5. SEO meta 自动生成 hreflang 标签
+
+## 附录 B — 翻译协作工作流（≥ 25 行）
+
+vue-i18n 没有官方 SaaS（不像 i18next 的 locize），团队需自建：
+
+### 方案 1：Crowdin / Lokalise
+
+商业 SaaS（按字数收费），支持 vue-i18n JSON 格式。译员在 Web UI 翻译，CI 自动 sync 到 git 仓库。
+
+### 方案 2：自建 GitLab + PR Review
+
+```
+locales/
+├── en.json        ← 开发者写源语言
+├── zh-CN.json     ← 译员翻译
+└── ja.json
+```
+
+工作流：
+
+1. 开发者改 en.json，发 PR
+2. CI 检测 zh-CN.json / ja.json 缺 key
+3. 通知译员
+4. 译员开 PR 加翻译
+5. PM 合并
+
+### 方案 3：vue-i18n + 内部工具
+
+大公司常自研：
+- 翻译 KV 存数据库
+- API 编辑界面
+- CI 拉取生成 JSON
+- 部署到 CDN
+
+## 附录 C — 学到补充（≥ 15 行）
+
+补充 5 条工程教训：
+
+6. **Vue 生态官方 default 决定一切** —— vue-i18n 占 Vue 项目 i18n 80%+ 不是因为技术领先，是因为 Vue 团队推荐
+7. **ICU MessageFormat 是 Web 标准化趋势** —— Intl.MessageFormat 提案进 Stage 1，未来 i18next 自家格式可能被淘汰
+8. **Composition API 是 Vue 3 灵魂** —— 任何 Vue 库不深度支持 Composition API 都会被边缘化
+9. **编译期优化是现代 i18n 必选** —— pre-compile messages 减小 bundle 50%，与 SSR 配合更好
+10. **没有 SaaS 是 vue-i18n 的弱点** —— 团队必须自建翻译协作流程，对小团队是 friction
