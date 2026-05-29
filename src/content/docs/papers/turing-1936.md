@@ -158,8 +158,12 @@ D(M):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[godel-1931]] —— Gödel 不完备性定理（1931）
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[shannon-1948]] —— Shannon 信息论 通信的数学理论
 - [[smalltalk-80]] —— Smalltalk-80 The Language and its Implementation
 

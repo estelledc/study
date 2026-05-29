@@ -217,7 +217,7 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 把 Self-Adjusting Computation 从学术原型推到生产工程——lazy demand-driven 替代 eager push |
-| [Algol 60 — BNF / 块结构 / call-by-name 的诞生地](/study/papers/algol-60/) | 形式化语法描述、块结构、call-by-name、递归过程：现代编程语言的共同祖先 |
+| [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) |  |
 | [Bidirectional Typing (Dunfield & Krishnaswami CSUR 2021) — TS/Rust/Swift 类型推断的工程基础](/study/papers/bidirectional-typing/) | check ⇐ vs infer ⇒ 双判断 + 局部标注 + 互相递归 |
 | [CI Effects (Ståhl & Bosch 2014) — 持续集成的真实成本与收益](/study/papers/ci-effects/) | 22 项研究系统综述 |
 | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | Barik 2017 用 Tobii X120 + 56 名学生证明 CEM 区域只占 30% 注视时间，长报错被跳过更多——这是 Rust / Elm / Svelte error UX 革命的实证根 |
@@ -233,7 +233,7 @@ sidebar:
 | [Salsa-Adapton 工业演化 — 把增量计算变成 IDE 后端](/study/papers/salsa-adapton/) | Niko Matsakis 把 Adapton 的 lazy demand-driven 思想翻译成 Rust 工业框架 |
 | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | modifiable + read + write 三个 primitive + change propagation |
 | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | Hölzle, Chambers, Ungar, ECOOP 1991 — 在动态类型对象语言里给每个 call site 配一张小缓存，按 receiver 类型记忆最近被调到的方法地址，让"虚函数 / 消息发送"在… |
-| [Simula 67 Common Base Language](/study/papers/simula-67/) |  |
+| [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) |  |
 | [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) |  |
 | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | Cytron, Ferrante, Rosen, Wegman, Zadeck, ACM TOPLAS 1991 — 用支配边界（dominance frontier）算法把 SSA 构造从 O(N³) 朴素做法降到几… |
 | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) |  |
@@ -247,9 +247,9 @@ sidebar:
 
 | 论文 | 描述 |
 |---|---|
-| [Cook-Levin 定理](/study/papers/cook-levin/) | 1971 年 Cook（与 Levin 1973 独立）证明 SAT 是 NP-complete，奠定计算复杂性理论 |
+| [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) |  |
 | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | Edsger Dijkstra 用一杯咖啡的时间在 1959 年的备忘里写下两个图论算法 |
-| [Gödel 不完备性定理（1931）](/study/papers/godel-1931/) |  |
+| [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) |  |
 | [Karp's 21 NP-complete Problems](/study/papers/karp-21/) |  |
 | [The Art of Computer Programming Vol 1 - Knuth 的算法分析圣经（v1.1 状元篇）](/study/papers/knuth-taocp/) | Donald Knuth 1968 年开篇的 TAOCP 第一卷，建立 MIX 抽象机器与算法分析数学基础，1974 年图灵奖核心成果，论文 round 144 = EE2 / theory 分支 D |
 | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) |  |
@@ -311,7 +311,7 @@ sidebar:
 | `adapton` | [Adapton (Hammer et al. 2014) — 增量计算的工程化简化](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agentless` | [Agentless — 反 agent 派代表作：3 阶段 pipeline 在 SWE-bench 上反超复杂 agent](/study/papers/agentless/) | 智能体与 LLM 系统 |
-| `algol-60` | [Algol 60 — BNF / 块结构 / call-by-name 的诞生地](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
+| `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `alphago` | [AlphaGo Mastering Go with Deep Neural Networks](/study/papers/alphago/) | 强化学习 |
 | `anthropic-circuits` | [A Mathematical Framework for Transformer Circuits (Elhage+ 2021) — 把 attention head 拆成 QK + OV 两条电路](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `attention` | [Transformer Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
@@ -335,7 +335,7 @@ sidebar:
 | `cognitive-load-theory` | [Cognitive Load Theory (Sweller 1988) — 工作记忆 7±2 决定的学习设计法则](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `compiler-errors` | [Do Developers Read Compiler Error Messages? — 眼动追踪给"用户不读你的报错"提供量化证据](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
 | `constitutional-ai` | [Constitutional AI — 让 AI 看着一组原则给自己挑刺：Claude 的训练骨架](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
-| `cook-levin` | [Cook-Levin 定理](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
+| `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
 | `copilot-rct` | [Copilot RCT (Peng et al. 2023) — AI 编码辅助第一篇严肃 RCT](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cot` | [Chain-of-Thought Prompting (Wei et al. 2022) — reasoning trace 是涌现能力的钥匙](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `crdt-json` | [A Conflict-Free Replicated JSON Datatype (Kleppmann & Beresford 2017) — 把整棵 JSON 树变成可合并的 CRDT](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
@@ -361,7 +361,7 @@ sidebar:
 | `fsrs-spaced-repetition` | [FSRS (Ye 2022+) — 把 1885 年的遗忘曲线变成 17 个可训练参数](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
 | `generational-gc` | [Generational Garbage Collection — 分代假设与跨代引用追踪](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gfs` | [GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利](/study/papers/gfs/) | OS / 集群管理 / 系统 |
-| `godel-1931` | [Gödel 不完备性定理（1931）](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
+| `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `gpt-3` | [GPT-3 Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
 | `graphrag` | [GraphRAG (Microsoft 2024) — 用 LLM 把语料抽成 entity/relation 图 + Leiden community detection 分簇 + 每簇 summary，让 RAG 第一次能回答 global / multi-hop 问题](/study/papers/graphrag/) | 智能体与 LLM 系统 |
 | `great-swe` | [What Makes a Great Software Engineer? (Li et al. 2015) — 个人特质 > 技术技能](/study/papers/great-swe/) | HCI / 软件工程研究 |
@@ -420,7 +420,7 @@ sidebar:
 | `selinger-1979` | [Selinger 1979 — 把可见的执行计划装进每一台 SQL 数据库](/study/papers/selinger-1979/) | 数据库 |
 | `shannon-1948` | [Shannon 信息论 通信的数学理论](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito Questions (TSE 2008) — 程序员做修改任务时问的 44 个问题分类](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
-| `simula-67` | [Simula 67 Common Base Language](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
+| `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
 | `sleeper-agents` | [Sleeper Agents — 故意训出来的 LLM 卧底，证明安全训练可能"清不掉"已学会的欺骗](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
 | `smalltalk-80` | [Smalltalk-80 The Language and its Implementation](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |

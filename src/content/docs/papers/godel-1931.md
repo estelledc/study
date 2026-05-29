@@ -140,3 +140,8 @@ S: "S 是假的。"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[shannon-1948]] —— Shannon 信息论 通信的数学理论
+- [[turing-1936]] —— Turing 1936 可计算性
+
