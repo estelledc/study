@@ -79,7 +79,7 @@ const THEMES_PAPERS = {
     'cognitive-load-theory', 'debugging-dichotomy', 'fsrs-spaced-repetition',
     'pair-programming', 'programmer-interruption', 'program-comprehension-fmri',
     'sillito-questions', 'copilot-rct', 'great-swe',
-    'dijkstra-goto', 'hoare-logic', 'lampson-hints',
+    'dijkstra-goto', 'hoare-logic', 'lampson-hints', 'no-silver-bullet',
   ],
 };
 
