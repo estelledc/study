@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 114 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 115 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：114 篇
-- **已分类**：114
+- **总数**：115 篇
+- **已分类**：115
 
 ### 按主题分布
 
@@ -30,7 +30,7 @@ sidebar:
 | [网络协议](#网络协议) | 5 |
 | [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
 | [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 17 |
+| [编译器 / 编程语言理论](#编译器---编程语言理论) | 18 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 9 |
 
 ---
@@ -209,7 +209,7 @@ sidebar:
 
 ## 编译器 / 编程语言理论
 
-共 17 篇。
+共 18 篇。
 
 | 论文 | 描述 |
 |---|---|
@@ -228,6 +228,7 @@ sidebar:
 | [Adaptive Functional Programming (Acar et al. 2002) — 现代细粒度响应式的祖宗](/study/papers/self-adjusting/) | modifiable + read + write 三个 primitive + change propagation |
 | [Self / Polymorphic Inline Caches — 把动态分派打到接近静态调用](/study/papers/self-pic/) | Hölzle, Chambers, Ungar, ECOOP 1991 — 在动态类型对象语言里给每个 call site 配一张小缓存，按 receiver 类型记忆最近被调到的方法地址，让"虚函数 / 消息发送"在… |
 | [SSA — 用 dominance frontier 高效构造 Static Single Assignment Form](/study/papers/ssa/) | Cytron, Ferrante, Rosen, Wegman, Zadeck, ACM TOPLAS 1991 — 用支配边界（dominance frontier）算法把 SSA 构造从 O(N³) 朴素做法降到几… |
+| [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | Wadler, FPCA 1989 — 把 Reynolds 1983 的 relational parametricity 翻译成"工程师能用的工具"，对任何 polymorphic 函数 r :: ∀a |
 | [Trees that Grow (Najd & Peyton Jones 2017) — AST 类型如何在多 phase 复用](/study/papers/trees-that-grow/) | type family + extension fields 让 AST 在 parse / rename / typecheck / optimize 各 phase 共享同一份 traversal 代码 |
 | [A Prettier Printer (Wadler 1998) — 一个代数定义一代 formatter](/study/papers/wadler-prettier/) | 16 页论文 + 70 行 Haskell，奠定了 Prettier / esbuild / biome 这一代 formatter 的 IR 思路 |
 
@@ -249,7 +250,7 @@ sidebar:
 
 ---
 
-## 全部 114 篇（字母序）
+## 全部 115 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -354,6 +355,7 @@ sidebar:
 | `swe-bench` | [SWE-bench (Jimenez et al. 2024) — 把 LLM 评测从 demo 题推到真实 GitHub issue](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
 | `t5` | [T5 Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
 | `tcp` | [TCP Transmission Control Protocol](/study/papers/tcp/) | 网络协议 |
+| `theorems-for-free` | [Theorems for Free — 只看类型签名就能推出 polymorphic 函数的不变量](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `tigerbeetle` | [TigerBeetle (Joran Greef et al. 2024) — 金融级 OLTP，固定 schema + VSR + deterministic simulation](/study/papers/tigerbeetle/) | 数据库 |
 | `tls-1.3` | [TLS 1.3 The Transport Layer Security Protocol Version 1.3](/study/papers/tls-1.3/) | 网络协议 |
 | `tofte-talpin-regions` | [Tofte-Talpin Region-Based Memory Management](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |

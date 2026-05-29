@@ -59,7 +59,7 @@ const THEMES_PAPERS = {
     'cheney-gc', 'generational-gc', 'zgc', 'boehm-gc', 'tofte-talpin-regions',
   ],
   '编译器 / 编程语言理论': [
-    'llvm', 'ssa', 'self-pic',
+    'llvm', 'ssa', 'self-pic', 'theorems-for-free',
     'bidirectional-typing', 'hindley-milner', 'linear-types',
     'effect-handlers', 'compiler-errors', 'ci-effects', 'push-pull-frp',
     'trees-that-grow', 'wadler-prettier', 'adapton', 'salsa-adapton',
