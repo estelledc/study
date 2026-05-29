@@ -169,6 +169,7 @@ D(M):
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[rsa]] —— RSA 公钥密码
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[smalltalk-80]] —— Smalltalk-80

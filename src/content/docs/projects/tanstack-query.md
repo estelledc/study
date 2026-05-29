@@ -166,4 +166,5 @@ function AddTodo() {
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[zustand]] —— Zustand — 极简 React 状态管理
 

@@ -158,6 +158,7 @@ function Cart() {
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
 - [[svelte]] —— Svelte — 编译时 UI 框架
+- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 

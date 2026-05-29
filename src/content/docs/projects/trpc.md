@@ -163,4 +163,6 @@ const { data, isLoading } = api.user.byId.useQuery(
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
+- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

@@ -156,5 +156,7 @@ Groth 2016 把证明压到极致：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[turing-1936]] —— Turing 1936 可计算性
 
