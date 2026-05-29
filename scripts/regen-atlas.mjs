@@ -66,7 +66,7 @@ const THEMES_PAPERS = {
     'self-adjusting', 'crdt-json', 'realm',
   ],
   '计算理论 / 数学基础': [
-    'turing-1936', 'lambda-calculus', 'cook-levin',
+    'turing-1936', 'lambda-calculus', 'cook-levin', 'karp-21',
   ],
   '密码学 / 安全': [
     'diffie-hellman', 'rsa', 'aes', 'bitcoin', 'zk-snark',
