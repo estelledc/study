@@ -165,6 +165,9 @@ const THEMES_PROJECTS = {
   'CLI / 命令行工具': [
     'yargs', 'commander', 'ink', 'oclif', 'clack',
   ],
+  'Terminal / 终端': [
+    'chalk',
+  ],
   '其他基础设施': [
     'minisearch', 'unstorage', 'inngest',
   ],

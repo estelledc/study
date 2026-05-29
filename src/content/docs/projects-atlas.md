@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 146 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 147 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：146 个
-- **已分类**：146
+- **总数**：147 个
+- **已分类**：147
 
 ### 按主题分布
 
@@ -43,6 +43,7 @@ sidebar:
 | [图像处理 / Canvas](#图像处理---canvas) | 5 |
 | [CSS / 样式](#css---样式) | 5 |
 | [CLI / 命令行工具](#cli---命令行工具) | 5 |
+| [Terminal / 终端](#terminal---终端) | 1 |
 | [其他基础设施](#其他基础设施) | 3 |
 
 ---
@@ -365,6 +366,14 @@ sidebar:
 | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) |  |
 | [yargs](/study/projects/yargs/) |  |
 
+## Terminal / 终端
+
+共 1 个。
+
+| 项目 | 描述 |
+|---|---|
+| [chalk](/study/projects/chalk/) |  |
+
 ## 其他基础设施
 
 共 3 个。
@@ -377,7 +386,7 @@ sidebar:
 
 ---
 
-## 全部 146 个（字母序）
+## 全部 147 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -390,6 +399,7 @@ sidebar:
 | `browser-use` | [browser-use — 不是 Playwright 升级版，是 LLM 驱动的「DOM-tree → tool-call → CDP 执行」反馈循环](/study/projects/browser-use/) | AI 浏览器自动化 |
 | `bun` | [Bun — 一个二进制 = 4 个 phase 的 JS 工具链](/study/projects/bun/) | 构建工具 / Bundler |
 | `cal-com` | [cal.com — 不是再做一个 Calendly，是把"调度 SaaS"做成开源 + 可自托管 + 50 个 provider 都能插的协议](/study/projects/cal-com/) | 数据应用 / SaaS |
+| `chalk` | [chalk](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 把 monorepo 版本号从人脑搬到磁盘](/study/projects/changesets/) | Monorepo / 包管理 |
 | `chatwoot` | [chatwoot — 不是再做一个 Intercom，是把"客服 SaaS"做成开源 + 自托管 + 11 类渠道全归一到 messages 表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chroma` | [chroma — 不是 Pinecone 替代，是把向量检索拉回本地的 5 行 SDK](/study/projects/chroma/) | AI 应用 / Agent 平台 |
