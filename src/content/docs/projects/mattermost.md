@@ -147,5 +147,7 @@ cd ../webapp && make run  # 前端 dev server
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
+- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
+- [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
 

@@ -208,4 +208,5 @@ LIMIT 5;
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
 - [[weaviate]] —— Weaviate — 模块化向量数据库
+- [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
 

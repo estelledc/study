@@ -197,4 +197,5 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
+- [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
 

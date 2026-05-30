@@ -165,6 +165,7 @@ sudo ncdu -x /var/lib/docker
 - [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 - [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 - [[fzf]] —— fzf — 命令行模糊查找
+- [[gdu]] —— gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

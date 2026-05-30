@@ -148,5 +148,9 @@ dua 不支持 `-o` 离线导出快照，所以"扫描在被检方、分析在审
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
+- [[gdu]] —— gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI
+- [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

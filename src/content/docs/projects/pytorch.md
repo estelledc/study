@@ -159,4 +159,6 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
+- [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 

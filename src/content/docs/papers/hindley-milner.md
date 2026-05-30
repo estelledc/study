@@ -234,6 +234,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
+- [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去

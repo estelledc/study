@@ -170,4 +170,5 @@ def reduce(user_id, latencies):
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
+- [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 

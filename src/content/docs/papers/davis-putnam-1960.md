@@ -158,4 +158,5 @@ DP 把上面这堆**反复施三条规则**化简，直到要么得出"显然可
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
+- [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 
