@@ -162,10 +162,13 @@ GROUP BY customer_id;
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos]] —— Paxos — 分布式共识算法
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
+- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

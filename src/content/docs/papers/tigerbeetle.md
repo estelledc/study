@@ -153,5 +153,7 @@ VSR：view + view-change
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[paxos]] —— Paxos — 分布式共识算法
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法
+- [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
 

@@ -169,5 +169,12 @@ pts(p) = pts(q) = pts(r) = {x, y}
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[ssa]] —— SSA — 静态单赋值形式
+- [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 

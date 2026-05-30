@@ -183,4 +183,5 @@ let s2 = read_log(f);    // 报错：f 已 moved
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 

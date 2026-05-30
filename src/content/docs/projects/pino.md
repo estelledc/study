@@ -148,3 +148,6 @@ const log = pino(pino.transport({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fastify]] —— Fastify schema-first Node 高性能 web 框架
+

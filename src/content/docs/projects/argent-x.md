@@ -158,5 +158,13 @@ await starknet.account.execute([
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
+- [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

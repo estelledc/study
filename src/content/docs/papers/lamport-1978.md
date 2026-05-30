@@ -167,6 +167,7 @@ class LogEmitter:
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[paxos]] —— Paxos — 分布式共识算法
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流

@@ -183,6 +183,7 @@ let app = Route::new()
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
+- [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

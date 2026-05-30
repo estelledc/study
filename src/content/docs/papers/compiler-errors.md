@@ -168,6 +168,7 @@ Property 'foo' does not exist on type 'Bar'. Did you mean 'baz'?
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
@@ -176,4 +177,5 @@ Property 'foo' does not exist on type 'Bar'. Did you mean 'baz'?
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
 - [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
+- [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 
