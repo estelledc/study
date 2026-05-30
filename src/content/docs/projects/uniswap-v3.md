@@ -157,6 +157,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
+- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流

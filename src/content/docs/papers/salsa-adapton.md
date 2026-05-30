@@ -154,4 +154,5 @@ file_text(file_id)              # input：你刚改的 .rs 文件文本
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 

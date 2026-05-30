@@ -151,6 +151,9 @@ CQE 带 `IORING_CQE_F_MORE` 标记表示"还会有更多 CQE 来"。比 epoll + 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 

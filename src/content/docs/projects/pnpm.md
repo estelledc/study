@@ -161,4 +161,5 @@ find ~/.pnpm-store/v3/files -inum 1234567
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
+- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 

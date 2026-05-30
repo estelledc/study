@@ -192,6 +192,7 @@ LIMIT 5;
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[redis]] —— Redis — 内存键值数据库
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台

@@ -158,3 +158,10 @@ pnpm turbo run build
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
+- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
+- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
+

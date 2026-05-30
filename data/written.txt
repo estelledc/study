@@ -51,6 +51,7 @@ ddpm
 debugging-dichotomy
 deepseek-r1
 deepspeed-zero
+dewitt-gray-1992
 diffie-hellman
 dijkstra-goto
 dijkstra-shortest-path
@@ -78,6 +79,7 @@ gradual-typing
 graphrag
 gray-1981-transaction
 great-swe
+halide
 hamming-1950
 hindley-milner
 hoare-logic
@@ -211,6 +213,7 @@ astro
 auth-js
 axios
 axum
+balancer
 bat
 besu
 better-auth
@@ -248,6 +251,7 @@ docker
 docusaurus
 dragonflydb
 drizzle
+dropwizard
 duckdb
 duckdb-wasm
 echarts

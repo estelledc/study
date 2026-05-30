@@ -173,6 +173,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成

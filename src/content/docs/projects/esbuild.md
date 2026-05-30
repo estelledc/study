@@ -178,6 +178,7 @@ const svgInline: Plugin = {
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vitest]] —— Vitest — Vite 原生测试框架
 - [[webpack]] —— webpack 模块打包

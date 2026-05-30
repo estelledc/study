@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 269 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 271 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：269 个
+- **总数**：271 个
 - **已分类**：206
-- **未分类**：63（落入"其他 / 待分类"段）
+- **未分类**：65（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 63 |
+| [其他 / 待分类](#其他--待分类) | 65 |
 
 ---
 
@@ -144,7 +144,7 @@ sidebar:
 | [Rollup — ESM 优先的打包器](/study/projects/rollup/) |  |
 | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) |  |
 | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) |  |
-| [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | Webpack 作者 Tobias Koppers 第二代 bundler |
+| [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) |  |
 | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) |  |
 | [webpack 模块打包](/study/projects/webpack/) |  |
 
@@ -281,7 +281,7 @@ sidebar:
 | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) |  |
 | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | 从 Angular CLI 演化而来的 monorepo 元框架，靠 project graph + executor 抽象 + Nx Cloud DTE 把任务编排做到企业级 monorepo 的极致 |
 | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) |  |
-| [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Vercel 把 Jared Palmer 的 TS 版 turborepo 用 Rust 重写——task graph 拓扑序 + 本地/远程 cache 多路复用 + tokio 并行 runner，让"改一个包重… |
+| [Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"](/study/projects/turborepo/) |  |
 
 ## 状态管理
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 63 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 65 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -540,6 +540,7 @@ sidebar:
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
+| `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
@@ -547,6 +548,7 @@ sidebar:
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
+| `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
@@ -565,7 +567,7 @@ sidebar:
 
 ---
 
-## 全部 269 个（字母序）
+## 全部 271 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -726,6 +728,7 @@ sidebar:
 | `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
+| `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
 | `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
@@ -753,6 +756,7 @@ sidebar:
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
 | `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
+| `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) | Drag & Drop / Interaction |
 | `react-hook-form` | [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
@@ -806,7 +810,7 @@ sidebar:
 | `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | DevOps / 容器 / 运维 |
 | `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | 数据获取 / 路由 |
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
-| `turborepo` | [Turborepo — 把 monorepo build 重做成 task graph + 双层 cache](/study/projects/turborepo/) | Monorepo / 包管理 |
+| `turborepo` | [Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"](/study/projects/turborepo/) | Monorepo / 包管理 |
 | `typeorm` | [TypeORM — Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
 | `unified` | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) | Markdown / 解析 |

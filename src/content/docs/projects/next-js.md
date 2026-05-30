@@ -162,6 +162,8 @@ export default Page
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
+- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包

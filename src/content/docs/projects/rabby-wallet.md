@@ -153,6 +153,7 @@ Rabby 支持**只导入地址、不导入私钥**的模式（WatchOnly）：
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机

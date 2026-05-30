@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 197 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 199 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：197 篇
+- **总数**：199 篇
 - **已分类**：143
-- **未分类**：54（落入"其他 / 待分类"段）
+- **未分类**：56（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 54 |
+| [其他 / 待分类](#其他--待分类) | 56 |
 
 ---
 
@@ -198,7 +198,7 @@ sidebar:
 | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) |  |
 | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) |  |
 | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) |  |
-| [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | 用户只写 map + reduce 两个函数，框架自动 parallelize / distribute / fault-tolerate |
+| [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) |  |
 
 ## GC / 内存管理
 
@@ -295,7 +295,7 @@ sidebar:
 | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) |  |
 | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) |  |
 | [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) |  |
-| [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | Butler Lampson 1983 SOSP keynote 论文笔记：functionality / performance / correctness 三大类 27 条 hints，含 14 个 Definit… |
+| [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) |  |
 | [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | Brooks 1986：软件工程的本质难度（essence）vs 偶然难度（accident），以及 LLM 时代的再审视 |
 | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) |  |
 | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) |  |
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 54 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 56 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -357,15 +357,17 @@ sidebar:
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |
+| `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 | `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) |
+| `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) |
 | `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 
 ---
 
-## 全部 197 篇（字母序）
+## 全部 199 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -467,7 +469,7 @@ sidebar:
 | `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
-| `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
+| `lampson-hints` | [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) | 其他 |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
@@ -479,7 +481,7 @@ sidebar:
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
-| `mapreduce` | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
+| `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
@@ -541,6 +543,7 @@ sidebar:
 | `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
 | `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) | 其他 |
+| `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) | 其他 |
 | `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
@@ -556,6 +559,7 @@ sidebar:
 | `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) | 其他 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
+| `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) | 其他 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |
 | `volcano` | [Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式](/study/papers/volcano/) | 数据库 |

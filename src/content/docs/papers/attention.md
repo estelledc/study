@@ -141,7 +141,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dit]] —— DiT — Diffusion Transformer
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
@@ -160,6 +159,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[toy-models-superposition]] —— Toy Models of Superposition
+- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[vit]] —— ViT — Vision Transformer
 - [[word2vec]] —— Word2Vec — 词向量奠基
 
