@@ -184,6 +184,7 @@ mapreduce
 marques-silva-grasp-1996
 martin-lof-itt
 mattern-1989
+maxwell-architecture-2014
 mccarthy-lisp
 mcmillan-smv-1993
 megatron-lm
@@ -198,8 +199,10 @@ mlir
 monetdb-x100-2005
 muzero
 mycroft-strictness
+nelson-oppen-1979
 neumann-2015-large-joins
 no-silver-bullet
+ntp-mills-1991
 openhands
 ot-1989
 pair-programming
@@ -382,6 +385,7 @@ compound-v3
 conduit
 connect-rpc
 continue
+conversations
 cosmos-sdk
 cosmwasm
 curve
@@ -433,6 +437,7 @@ filecoin
 flask
 foundry
 framer-motion
+fx
 fzf
 gdu
 gin
@@ -654,6 +659,7 @@ tanstack-router
 teku
 temporal
 temporal-polyfill
+tensorflow
 terraform
 testing-library
 thirdweb-sdk
