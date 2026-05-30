@@ -157,6 +157,7 @@ oxc-resolver 还顺手把 `package.json` 的 `exports` / `imports` 字段、`bro
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
+- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 

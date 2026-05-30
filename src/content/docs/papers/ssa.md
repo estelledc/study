@@ -178,6 +178,7 @@ entry:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

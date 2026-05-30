@@ -183,6 +183,7 @@ def me(user: dict = Depends(current_user)):
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端

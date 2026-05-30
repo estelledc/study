@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 187 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 189 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：187 篇
+- **总数**：189 篇
 - **已分类**：143
-- **未分类**：44（落入"其他 / 待分类"段）
+- **未分类**：46（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 44 |
+| [其他 / 待分类](#其他--待分类) | 46 |
 
 ---
 
@@ -250,7 +250,7 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) |  |
-| [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | Edsger Dijkstra 用一杯咖啡的时间在 1959 年的备忘里写下两个图论算法 |
+| [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) |  |
 | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) |  |
 | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) |  |
 | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) |  |
@@ -291,7 +291,7 @@ sidebar:
 | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) |  |
 | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) |  |
 | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) |  |
-| [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 状元篇：不到 1000 字的 letter 如何掀翻一个时代——goto 让程序的'静态文本'与'动态执行'错位，结构化编程三件套（顺序/选择/循环）让每个文本位置的状态可推 |
+| [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 1968 年 3 月 Dijkstra 写给 CACM 的不到 1000 字 letter，论证 goto 让源代码的静态文本顺序与运行时执行顺序错位、状态难以推理 |
 | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) |  |
 | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) |  |
 | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | Hoare Logic v1 |
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 44 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 46 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -343,10 +343,12 @@ sidebar:
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
+| `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |
+| `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
@@ -355,7 +357,7 @@ sidebar:
 
 ---
 
-## 全部 187 篇（字母序）
+## 全部 189 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -411,7 +413,7 @@ sidebar:
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
-| `dijkstra-shortest-path` | [Dijkstra 最短路径：一份 1959 年的两页备忘](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
+| `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
 | `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dns` | [DNS Domain Name System](/study/papers/dns/) | 网络协议 |
@@ -497,6 +499,7 @@ sidebar:
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
+| `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 其他 |
 | `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB 状元篇](/study/papers/rocksdb-lsm/) | 数据库 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
@@ -517,6 +520,7 @@ sidebar:
 | `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `snowflake` | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | 数据库 |
 | `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
+| `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | 其他 |
 | `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
 | `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |

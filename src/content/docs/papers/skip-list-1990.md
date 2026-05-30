@@ -153,6 +153,7 @@ map.firstKey();   // O(log n) 有序查询
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储

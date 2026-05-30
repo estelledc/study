@@ -158,4 +158,5 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 

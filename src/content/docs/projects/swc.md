@@ -175,6 +175,7 @@ pub fn process(mut program: Program, _: ()) -> Program {
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[webpack]] —— webpack 模块打包
 

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 259 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 261 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：259 个
+- **总数**：261 个
 - **已分类**：206
-- **未分类**：53（落入"其他 / 待分类"段）
+- **未分类**：55（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 53 |
+| [其他 / 待分类](#其他--待分类) | 55 |
 
 ---
 
@@ -140,7 +140,7 @@ sidebar:
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) |  |
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) |  |
 | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) |  |
-| [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 不是 Rollup 的替代品，是 Vite 的统一引擎 |
+| [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) |  |
 | [Rollup — ESM 优先的打包器](/study/projects/rollup/) |  |
 | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 不是 webpack 的下位替代，是 webpack plugin API 的 Rust 实现 |
 | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) |  |
@@ -410,7 +410,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 用 Slot/asChild + 受控/非受控双模 hook + Portal/FocusScope 分层，把 WAI-ARIA Authoring Practices 翻译成可组合的 React primitive |
+| [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) |  |
 | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 反 npm install 范式：组件源码直接复制进你的项目，让你 own 它 |
 
 ## Markdown / 解析
@@ -495,10 +495,11 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 53 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 55 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
+| `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
@@ -529,6 +530,7 @@ sidebar:
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
+| `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -555,10 +557,11 @@ sidebar:
 
 ---
 
-## 全部 259 个（字母序）
+## 全部 261 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
+| `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) | 其他 |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
@@ -680,6 +683,7 @@ sidebar:
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
 | `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
+| `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) | 其他 |
 | `midscene` | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
@@ -733,7 +737,7 @@ sidebar:
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
-| `radix-ui` | [Radix Primitives — unstyled accessible 组件协议](/study/projects/radix-ui/) | 基础组件 / Headless UI |
+| `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) | Drag & Drop / Interaction |
 | `react-hook-form` | [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
@@ -745,7 +749,7 @@ sidebar:
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | 其他 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |
-| `rolldown` | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 构建工具 / Bundler |
+| `rolldown` | [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 构建工具 / Bundler |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) | 其他 |
