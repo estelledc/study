@@ -154,6 +154,7 @@ const fn = debounce(handler, 300);
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

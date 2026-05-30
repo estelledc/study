@@ -171,3 +171,7 @@ await authClient.organization.inviteMember({ email: "a@b.com", role: "admin" });
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
+- [[supabase]] —— Supabase — Firebase 的开源替代
+

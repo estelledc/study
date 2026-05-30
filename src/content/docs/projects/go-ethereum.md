@@ -155,6 +155,7 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端

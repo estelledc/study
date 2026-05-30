@@ -148,6 +148,7 @@ app.get('/users/:id', (c) => {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
+- [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[bun]] —— Bun — JS 全能运行时
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎

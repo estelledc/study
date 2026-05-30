@@ -163,6 +163,7 @@ function AddTodo() {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ag-grid]] —— AG Grid — 企业级数据表格
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[react]] —— React UI 组件库
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派

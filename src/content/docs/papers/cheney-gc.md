@@ -160,6 +160,7 @@ def minor_gc(self, roots):
 
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术

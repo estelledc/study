@@ -165,5 +165,6 @@ let ws = warp::path("ws")
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
+- [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
 

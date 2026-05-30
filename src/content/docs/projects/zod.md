@@ -183,7 +183,8 @@ function LoginForm() {
 
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
-- [[axios]] —— axios Promise-based HTTP 客户端
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[elysia]] —— Elysia Bun-first TypeScript Web 框架
 - [[express]] —— Express Node.js 经典 Web 框架
@@ -198,7 +199,6 @@ function LoginForm() {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
-- [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库

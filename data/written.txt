@@ -90,6 +90,7 @@ hoare-logic
 http-2
 huffman-1952
 hughes-fp-matters
+immix-mark-region
 induction-heads
 ingres-1976
 instructgpt
@@ -185,6 +186,7 @@ system-r-1976
 t5
 tcp
 theorems-for-free
+tidb-2020
 tigerbeetle
 tls-1.3
 tofte-talpin-regions
@@ -441,6 +443,7 @@ svelte
 sveltekit
 swc
 swr
+symfony
 tailwind
 tanstack-form
 tanstack-query
@@ -485,5 +488,6 @@ wretch
 xstate
 yargs
 yjs
+zksync-era
 zod
 zustand

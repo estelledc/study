@@ -152,6 +152,7 @@ P(false) ≈ heap_size / address_space / alignment
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿

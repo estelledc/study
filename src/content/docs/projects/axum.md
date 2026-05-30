@@ -196,6 +196,7 @@ let app = Router::new()
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
+- [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架

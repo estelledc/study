@@ -181,5 +181,12 @@ class SecurityHeaderListener {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
+- [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 

@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"arktype","area":"projects","path":"src/content/docs/projects/arktype.md","score":3,"reasons":["lines:464>250","h2-hits:2/11"],"lines":464,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"auth-js","area":"projects","path":"src/content/docs/projects/auth-js.md","score":3,"reasons":["lines:671>250","h2-hits:0/11"],"lines":671,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"axios","area":"projects","path":"src/content/docs/projects/axios.md","score":3,"reasons":["lines:479>250","h2-hits:2/11"],"lines":479,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"better-auth","area":"projects","path":"src/content/docs/projects/better-auth.md","score":3,"reasons":["lines:572>250","h2-hits:1/11"],"lines":572,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"boxen","area":"projects","path":"src/content/docs/projects/boxen.md","score":3,"reasons":["lines:621>250","h2-hits:0/11"],"lines":621,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
