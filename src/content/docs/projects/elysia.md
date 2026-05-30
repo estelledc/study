@@ -1,441 +1,164 @@
 ---
-title: Elysia Bun-first TypeScript Web 框架
-来源: https://github.com/elysiajs/elysia + elysiajs.com 官方文档
-season: 27
-episode: S27-5
+title: Elysia — 长在 Bun 上的极致类型安全 Web 框架
+来源: 'https://github.com/elysiajs/elysia + elysiajs.com 官方文档'
+日期: 2026-05-30
+分类: web 框架
+难度: 中级
 ---
 
-# Elysia — Bun runtime 上的极致类型安全 Web 框架
+## 是什么
 
-## 一句话总结（≥ 14 行）
+Elysia 是一套**绑死在 Bun runtime 上**的 TypeScript Web 框架。日常类比：像一台只插在新款充电桩上的电动车——在专属充电桩上跑得飞快、续航极长，但你拔下来插旧插座就只剩个壳。
 
-Elysia 是 SaltyAom（Athichai Lakthongnaewa，泰国开发者）2022 年开源的 Web 框架，2024 年 v1.x 稳定。它和 Hono 同属"边缘 runtime + Web 标准"阵营，但选择截然不同：Hono 拥抱所有 runtime（CF Worker / Bun / Deno / Node），Elysia 只服务 **Bun**。
-
-设计哲学三个支柱：
-1. **Bun-first**：依赖 Bun 的 transpiler、bundler、test runner，性能在 Bun 上 ~100k req/s（Node 上能跑但不优）
-2. **TypeScript-first 极致类型推导**：用 macro（Bun build 时插桩）+ method chaining + type-level computation 实现"零 runtime overhead 的 schema 校验 + 完整 TS 类型推断"
-3. **Sinclair TypeBox 集成**：schema 是 JSON Schema，编译期推导 TypeScript 类型 + runtime 校验合二为一
-
-性能：Elysia 在 Bun 上的 throughput 接近 Fastify（Node 最快）的 2x，是 Express 的 ~10x。Bundle 极小（~30 KB）。但生态远不如 Express / Fastify / NestJS（weekly downloads ~50k vs Express 30M）。
-
-定位 vs 竞品：
-- vs Hono：Elysia 类型推导更强（端到端类型安全），但只能 Bun。Hono 更通用但类型推导稍弱。
-- vs Fastify：Fastify 跨 Node/Bun，schema 用 Ajv runtime 编译；Elysia 编译期用 TypeBox + macro 静态化更激进。
-- vs NestJS：NestJS 是 decorator + class + DI 重型；Elysia 是 method chain + functional 轻量。
-
-2024 状态：Elysia + Bun 是新项目"小众极客流派"。企业极少选（Bun 1.x 仍年轻），但实际性能 + DX 实测优秀。
-
-## Layer 0 — 项目档案速查（≥ 17 字段）
-
-| 字段 | 值 |
-|---|---|
-| 包名 | `elysia` |
-| 当前主版本 | v1.0+（2024）|
-| 首版 | 2022-12（v0.1）|
-| License | MIT |
-| 主仓库 | elysiajs/elysia |
-| 维护 | SaltyAom（@SaltyAom）+ 社区 |
-| Runtime | Bun（首选）/ Node（次） |
-| TypeScript 要求 | ≥ 5.0 |
-| 内部依赖 | TypeBox / openapi-types / cookie 解析等 |
-| Bundle | ~30 KB min+gzip |
-| Schema | TypeBox（JSON Schema 自动推 TS 类型） |
-| Validator | TypeBox compile-time + runtime |
-| Plugin 数量 | 20+ 官方（@elysiajs/*）+ 社区 |
-| OpenAPI | 内置 swagger plugin |
-| Weekly downloads | ~50k |
-| GitHub stars | 9k+ |
-| 商业版 | 无 |
-| 文档站 | elysiajs.com |
-| HTTP/2 / WebSocket | Bun 原生支持 |
-
-## Layer 1 — 核心抽象（≥ 30 行）
+你写：
 
 ```ts
-import { Elysia, t } from 'elysia';
+import { Elysia, t } from 'elysia'
 
-const app = new Elysia()
-  .get('/users/:id', ({ params }) => {
-    return { id: params.id };  // params.id 自动推为 string
-  }, {
-    params: t.Object({
-      id: t.String({ format: 'uuid' })
-    })
-  })
+new Elysia()
+  .get('/hi/:name', ({ params }) => `hello ${params.name}`,
+       { params: t.Object({ name: t.String() }) })
+  .listen(3000)
+```
+
+`params.name` 在编辑器里直接被推成 `string`，运行时也会先按 schema 校验，再进 handler。一份 schema 同时做了校验 + TypeScript 类型 + OpenAPI 文档三件事。
+
+## 为什么重要
+
+不理解 Elysia，下面这些事都没法解释：
+
+- 为什么 2024 年突然冒出来"Bun 专属"的框架，老牌 Express 不香了吗
+- 为什么有人不用 zod 改用 TypeBox，schema 库选型背后的取舍
+- 为什么前端能 `import type { App } from './server'` 就拿到全部接口类型，不写一行 codegen
+- 为什么"性能"和"跨 runtime"在 Web 框架里几乎是反义词
+
+## 核心要点
+
+把 Elysia 拆成 **三件事** 看：
+
+1. **方法链注册路由**：`new Elysia().get(...).post(...)` 像往一条传送带上挂工位，每挂一个，框架就把这个路由的类型合并进整个 app 类型里。类比：每加一节车厢，整列火车的乘客名单都自动更新。
+
+2. **TypeBox 做 schema**：写一次 `t.Object({...})`，框架同时拿到 JSON Schema（生成 swagger）+ TypeScript 类型（编辑器推导）+ JIT 校验函数（runtime 拒绝坏请求）。类比：一份图纸同时给工人、税务局和质检员用。
+
+3. **Bun build 时 macro**：build 时 Bun bundler 把 `.derive(...)` 这种链调用直接 inline 进 handler，runtime 没有"中间件遍历"的开销。代价：换到 Node 上跑这一层就失效了。
+
+## 实践案例
+
+### 案例 1：体会"schema 同时是类型"
+
+```ts
+import { Elysia, t } from 'elysia'
+
+new Elysia()
   .post('/users', ({ body }) => {
-    // body 自动推为 { email: string, age: number }
-    return { created: body };
+    // 这里 body 已经是 { email: string, age: number }
+    return { ok: true, who: body.email }
   }, {
     body: t.Object({
       email: t.String({ format: 'email' }),
       age: t.Number({ minimum: 0 })
     })
   })
-  .listen(3000);
-
-console.log(`http://localhost:${app.server?.port}`);
+  .listen(3000)
 ```
 
-四要素：
+**逐部分**：
 
-1. **`new Elysia()`** 创建实例，方法链注册路由
-2. **`.get / .post / .put / .delete(path, handler, hooks)`** —— path + handler + 可选 schema/hooks
-3. **`t`（TypeBox）** —— schema builder，`t.Object / t.String / t.Number / t.Array` 等
-4. **handler 上下文** —— `{ params, body, query, headers, set, store }`，自动从 schema 推导
+- `t.Object` 写的 schema 既是 runtime 校验，也是编辑器看到的 TS 类型
+- 收到 `{ email: 'xx', age: -1 }` 会被 TypeBox 直接 422 掉，根本进不到 handler
+- 对比 Express：`req.body` 默认是 `any`，要自己挂 zod / joi 再 cast 一次
 
-## Layer 2 — 内部架构（≥ 30 行）
-
-Elysia 内部 4 大组件：
-
-1. **Router**（trie-based）：path-to-regexp 的 Bun-optimized 版，O(log n) 匹配
-2. **TypeBox Validator**：schema 编译为 JIT 函数，每次请求 ~µs 级开销
-3. **Macro System**：Bun build 时把 `.derive()` / `.use()` 等链调用静态化（生成 inlined code）
-4. **Plugin System**：`.use(plugin)` 注入 hooks / decorators，类型自动合并到 app 实例
-
-工作流：
-
-```
-1. new Elysia() → 初始化 Router + Hook Stack
-2. .get('/users/:id', handler, { params: t.Object(...) }) → 注册到 Router
-3. listen(3000) → Bun.serve(...) 接管 HTTP
-4. Request → Router 匹配 path → 跑 onRequest hooks
-5. parse body / query / headers → 跑 TypeBox 校验
-6. handler({ params, body, ... }) → 业务逻辑
-7. transform / mapResponse → response
-8. afterHandle hook → finalize
-```
-
-类型推导秘诀：每个 `.get()` 调用返回新 Elysia 类型，类型层累积所有路由的 schema → 最终 client（@elysiajs/eden）能直接 import 服务端类型，得到端到端类型安全 RPC。
-
-## Layer 3 — 精读 3 段（每段 ≥ 5 旁注 + ≥ 1 怀疑）
-
-### 段 a — TypeBox 集成（≥ 30 行）
+### 案例 2：登录 + JWT，看 plugin 怎么注入类型
 
 ```ts
-import { Elysia, t } from 'elysia';
+import { Elysia, t } from 'elysia'
+import { jwt } from '@elysiajs/jwt'
 
-const UserSchema = t.Object({
-  email: t.String({ format: 'email' }),
-  age: t.Number({ minimum: 18, maximum: 120 })
-});
-
-type User = typeof UserSchema.static;  // { email: string, age: number }
-
-const app = new Elysia()
-  .post('/users', ({ body }) => {
-    // body: User，已校验
-    return body;
-  }, { body: UserSchema });
-```
-
-旁注：
-
-1. TypeBox = JSON Schema + TypeScript 类型生成器（同 Sinclair 出品）
-2. `t.String({ format: 'email' })` 同时是 JSON Schema + 编译期 string 类型
-3. `typeof UserSchema.static` 提取 TS 类型（替代 zod 的 `z.infer`）
-4. JSON Schema 与 OpenAPI 兼容 → 自动生成 swagger 文档（@elysiajs/swagger）
-5. 校验是 TypeBox JIT 函数，不像 zod 用 method chain runtime 反射 → 性能 5-10x
-
-> 怀疑：TypeBox vs zod 的 schema 库选择是工程权衡。TypeBox bundle 小 + 性能强 + JSON Schema 兼容，但生态远不如 zod（@hookform/resolvers/typebox 没那么主流）。Elysia 押注 TypeBox 是 Bun-first 哲学一致，但和 React 生态的整合代价更高。
-
-### 段 b — Macro 系统（≥ 30 行）
-
-Elysia v1.0 引入 macro：编译期把 `.derive()` 等链调用 inline 到 handler：
-
-```ts
-const app = new Elysia()
-  .derive(({ headers }) => ({
-    user: parseAuth(headers.authorization)
-  }))
-  .get('/me', ({ user }) => user);  // user 自动注入
-
-// 编译后（Bun bundle 时）：
-// .get('/me', (ctx) => {
-//   const user = parseAuth(ctx.headers.authorization);
-//   return user;
-// });
-```
-
-旁注：
-
-1. `.derive()` 在 handler 前注入 context 字段（类似 Koa middleware 但类型安全）
-2. macro 让链式调用 0 runtime overhead（编译期展开）
-3. 与 Bun build 深度耦合：在 Node 上跑能用但失去 macro 优化
-4. macro 受限：只能在 build 时知道 schema/hook 结构（dynamic 路由不行）
-5. 与 Hono 的 `c.var.user` middleware 模式不同 —— Elysia 类型推导更直接
-
-> 怀疑：macro 黑魔法 vs 标准 TypeScript 是 trade-off。Elysia 的"零 runtime overhead"宣传只在 Bun build 时成立。Node 跑 Elysia 性能与 Hono 接近。这种"绑定 build 工具"是不是把 portability 交换给了性能？答案是：是。所以 Elysia 死在 Bun 上。
-
-### 段 c — Eden Treaty（端到端类型安全）（≥ 30 行）
-
-```ts
-// server.ts
-const app = new Elysia()
-  .get('/users/:id', ({ params }) => ({ id: params.id, name: 'Alice' }), {
-    params: t.Object({ id: t.String() })
-  });
-
-export type App = typeof app;
-
-// client.ts
-import { treaty } from '@elysiajs/eden';
-import type { App } from './server';
-
-const client = treaty<App>('http://localhost:3000');
-
-const { data, error } = await client.users({ id: '123' }).get();
-// data: { id: string, name: string } | null
-// error: Error | null
-```
-
-旁注：
-
-1. `typeof app` 包含全部路由签名 + schema 类型
-2. eden treaty 把服务端类型变成 client 调用
-3. tRPC 同思路但 tRPC 用 router context；Elysia + Eden 不需 router 抽象
-4. 类型完全在 build time，runtime 是普通 fetch
-5. 与 GraphQL codegen 类似但无中间 schema
-
-> 怀疑：端到端类型安全 = "import 服务端类型到客户端"。tRPC、ts-rest、Hono RPC 都做这事。差异只在语法。Elysia 的 Eden 学习曲线较陡（macro 和 schema 都要懂），与 tRPC 相比差异化不强。
-
-![Elysia + Bun runtime 架构](/study/projects/elysia/01-bun-runtime.webp)
-
-## Layer 4 — 与 Hono / Fastify / NestJS / tRPC 对比（≥ 30 行）
-
-### vs Hono
-
-| 维度 | Elysia | Hono |
-|---|---|---|
-| Runtime | Bun-only | CF Worker / Bun / Deno / Node |
-| 类型推导 | macro + TypeBox（极强） | TS 标准（强） |
-| Bundle | ~30 KB | ~14 KB |
-| 性能（Bun 上） | 105k req/s | 95k req/s |
-| 性能（Node 上） | 60k req/s | 75k req/s |
-| 生态 | 50k weekly | 500k weekly |
-| 学习曲线 | 中 | 平 |
-
-Bun 用户选 Elysia，跨 runtime 用户选 Hono。
-
-### vs Fastify
-
-Fastify 是 Node 之王（schema-first + Ajv），Bun 上表现一般。Elysia 在 Bun 上略胜。Fastify 生态（plugins / hooks）远大于 Elysia。
-
-### vs NestJS
-
-NestJS 是 decorator + class + DI 企业级；Elysia 是 method chain + functional 极简。NestJS 学习曲线陡（懂 Angular 体系），Elysia 平。NestJS 多 runtime，Elysia 锁 Bun。
-
-### vs tRPC
-
-tRPC 是 procedure-based RPC，需要客户端 import 服务端 router；Elysia + Eden 是 path-based REST + 类型注入。tRPC 跨多 framework（Next / Express / Fastify），Elysia 只跑自己。
-
-## Layer 5 — 6 维评分（≥ 6 维）
-
-| 维度 | Elysia | Hono | Fastify | NestJS | Express |
-|---|---|---|---|---|---|
-| 类型推导 | 10 | 8 | 7 | 7 | 4 |
-| Bundle | 8 | 10 | 6 | 4 | 5 |
-| 性能（Bun） | 10 | 9 | 7 | 6 | 5 |
-| 跨 runtime | 3 | 10 | 8 | 8 | 9 |
-| 生态 | 4 | 6 | 8 | 9 | 10 |
-| 学习曲线（易） | 7 | 9 | 7 | 4 | 9 |
-| 总分 | 42 | 52 | 43 | 38 | 42 |
-
-Elysia 在性能 + 类型推导极致，但跨 runtime 和生态弱。Hono 综合最强。
-
-## Layer 6 — 限制（≥ 4 条）
-
-1. **Bun 锁定**：Bun 1.x 还在快速演进，企业敢用的少。Node 跑能用但失去 macro 优化
-2. **生态小**：weekly downloads 50k vs Express 30M / Fastify 2M / Hono 500k。第三方 plugin 少
-3. **TypeBox vs zod 取舍**：选 TypeBox 在 React 生态（@hookform/resolvers/typebox）支持弱
-4. **macro 黑魔法**：Bun build 时插桩，调试时 stack trace 与源码不对齐
-5. **文档碎片**：官方文档好，但社区博客 / SO 答案少
-6. **企业不友好**：长期支持 / 生产案例 / 招聘市场都偏小众
-
-## 怀疑总集（前面散落 3 段，再补 2 段）
-
-> 怀疑：Bun 1.x 还在快速演进（每月 0.x → 1.x patch），企业生产环境敢用吗？我猜：2024-2026 仍小众，2027+ 才稳定。Elysia 共命运。
-
-> 怀疑：macro 黑魔法把"链式注册"编译为静态代码，性能极致但与标准 TS 不兼容。如果 TypeScript 5+ stage 3 decorator 标准化，Elysia 是不是会被淘汰？我赌：相反，Elysia 可能改用 stage 3 decorator 减少 macro 依赖，让 Node 跑也优化。
-
-## GitHub Permalinks（≥ 4 处带 40-char hex SHA）
-
-源码精读入口（链接示意，未实际验证 SHA）：
-
-- Elysia 主类：`https://github.com/elysiajs/elysia/blob/3a4f9b8e2d1c5a7e6b8d2f4a9c3e7d1b5f8a4c2e/src/index.ts`
-- Router 实现：`https://github.com/elysiajs/elysia/blob/8b2c4d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/src/router.ts`
-- Hook 系统：`https://github.com/elysiajs/elysia/blob/2a4f6e8b1d3c5e7f9a1b3d5c7e9f1a3b5d7e9c1f/src/handler.ts`
-- Bun runtime：`https://github.com/oven-sh/bun/blob/9c1b3d5f7a9c1e3b5d7f9a1c3e5d7f9b1c3e5d7f/src/bun.js/api/server.zig`
-- Hono 对比 Hono.tsx：`https://github.com/honojs/hono/blob/4b8c2d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/src/hono.ts`
-
-## Layer 7 — 实战（≥ 25 行）
-
-完整 Elysia + Bun + Eden + JWT 鉴权 API：
-
-```ts
-// server.ts
-import { Elysia, t } from 'elysia';
-import { jwt } from '@elysiajs/jwt';
-import { swagger } from '@elysiajs/swagger';
-
-const app = new Elysia()
-  .use(swagger())
-  .use(jwt({ name: 'jwt', secret: process.env.JWT_SECRET! }))
+new Elysia()
+  .use(jwt({ name: 'jwt', secret: process.env.SECRET! }))
   .post('/login', async ({ body, jwt }) => {
-    // body: { email: string, password: string }
-    const user = await authenticate(body.email, body.password);
-    if (!user) throw new Error('invalid creds');
-    const token = await jwt.sign({ id: user.id });
-    return { token };
-  }, {
-    body: t.Object({
-      email: t.String({ format: 'email' }),
-      password: t.String({ minLength: 8 })
-    })
-  })
-  .guard({ headers: t.Object({ authorization: t.String() }) }, (app) =>
-    app.derive(async ({ headers, jwt }) => {
-      const payload = await jwt.verify(headers.authorization.replace('Bearer ', ''));
-      if (!payload) throw new Error('invalid token');
-      return { user: payload };
-    })
-    .get('/me', ({ user }) => user)
-  )
-  .listen(3000);
+    // jwt 是 plugin 注入的字段，编辑器有提示
+    const token = await jwt.sign({ email: body.email })
+    return { token }
+  }, { body: t.Object({ email: t.String(), pwd: t.String() }) })
+  .listen(3000)
+```
 
-export type App = typeof app;
+`.use(jwt(...))` 之后，所有下游 handler 的 `ctx` 里都多了一个类型化的 `jwt` 字段，新人看到自动补全就明白 plugin 在干嘛。
+
+### 案例 3：Eden Treaty——把"接口文档"换成"import 类型"
+
+```ts
+// server.ts
+const app = new Elysia()
+  .get('/users/:id', ({ params }) => ({ id: params.id, name: 'Alice' }),
+       { params: t.Object({ id: t.String() }) })
+export type App = typeof app
 
 // client.ts
-import { treaty } from '@elysiajs/eden';
-import type { App } from './server';
+import { treaty } from '@elysiajs/eden'
+import type { App } from './server'
 
-const api = treaty<App>('http://localhost:3000');
-
-const { data, error } = await api.login.post({
-  email: 'a@b.com',
-  password: 'pass1234'
-});
-
-if (error) throw error;
-console.log(data.token);
+const api = treaty<App>('http://localhost:3000')
+const { data, error } = await api.users({ id: '123' }).get()
+// data 自动是 { id: string, name: string } | null
 ```
 
-要点：
-1. swagger 自动从 schema 生成 OpenAPI / Swagger UI
-2. jwt plugin 注入 `jwt.sign / jwt.verify` 方法
-3. `.guard` 创建子作用域，所有子路由共享 headers 校验
-4. `.derive` 注入 user context
-5. Eden treaty 让 client 直接 type-safe 调用
+服务端类型直接被前端 import，无需 OpenAPI codegen，也不用包一层 router。
 
-## 学到什么 + 关联（≥ 15 行）
+## 踩过的坑
 
-学到的 ≥ 5 条：
+1. **当 Express 用，连 schema 都不写**：等于把 Elysia 最大卖点关掉，body 又变 any，性能反而被运行时校验拖慢
+2. **在 Node 上跑求"通用性"**：macro 失效、JSC 优化没了，QPS 与 Hono 持平甚至更低，等于花了学习成本却没拿到收益
+3. **TypeBox 和 zod 两套 schema 共存**：表单层用 zod、API 层用 TypeBox，bundle 翻倍且心智重复，要么统一要么换框架
+4. **单文件 50+ 路由不拆分**：类型层会累积成巨型联合类型，IDE tsserver 容易卡顿，建议按业务用 `.group()` / `.use()` 切片
 
-1. Bun runtime 让 framework 设计有了新可能（macro / build-time codegen）
-2. TypeBox 在 schema-first 框架是合理选择（JSON Schema + TS 类型 + JIT 校验）
-3. method chain + 类型层累积 = 端到端类型安全的另一条路（vs tRPC procedure-based）
-4. 性能 vs 跨 runtime 是 Web 框架的根本 trade-off
-5. 小众极客流派需要找到细分市场（Elysia 找 Bun 用户）
+## 适用 vs 不适用场景
 
-关联：
-- [[hono]] [[fastify]] [[express]] [[koa]] [[nestjs]] —— 同领域
-- [[zod]] [[arktype]] [[valibot]] [[react-hook-form]] —— Schema validation
-- [[axios]] [[ky]] [[ofetch]] —— HTTP 客户端
+**适用**：
+- 新项目愿意押 Bun runtime（个人项目 / 小型创业 / 边缘函数）
+- 强调端到端类型安全，前后端都在 TypeScript 同一仓库
+- 高 QPS 场景（10k+ req/s 的轻量 API 网关）
+- 需要 schema 同时做校验 + OpenAPI 文档
 
-## 附录 A — Bun runtime 详解（≥ 25 行）
+**不适用**：
+- 必须跑在 Node 生产环境，运维不允许换 runtime
+- 需要 Spring/Nest 那样的 DI、依赖注入、企业级 plugin 生态
+- 多语言微服务体系，期望 GraphQL 或独立 IDL
+- 团队不熟 TypeScript 类型层，巨型类型会变成读不懂的报错
 
-Bun（Jarred Sumner 2022 起）是 JavaScript runtime + bundler + test runner + package manager 一体化工具。
+## 历史小故事（可跳过）
 
-性能源头：
-- **JavaScriptCore（JSC）**：来自 WebKit Safari，比 V8 启动快 60% 但峰值性能略弱
-- **Zig 实现**：底层 IO 用 Zig 写（vs Node 的 C++/JS），更轻量
-- **原生 TS**：直接执行 .ts 不需 transpile（用内置 transpiler）
-- **bundler 集成**：production build 时 macro 静态化、tree-shake、minify 一气呵成
+- **2022 年**：Bun runtime 进入公测，泰国独立开发者 SaltyAom（Athichai L.）开始写 Elysia v0.1，最初只是"在 Bun 上能跑的 Koa-like"
+- **2023 年**：放弃 zod 改用 Sinclair 的 TypeBox，因为 TypeBox 用 JSON Schema 又能直接生成 TS 类型，跟"一份 schema 三处用"的目标更契合
+- **2024 年**：Bun 1.0 + Elysia 1.0 同期发布，引入 macro 编译期优化，开始被并称为 Bun/Edge runtime 双子星之一
+- **2025 年**：Eden Treaty 走向稳定，端到端类型安全成主推卖点，社区 plugin 数量过百但仍远小于 Express 阵营
 
-Elysia 利用了所有这些：
-1. JSC 启动快 → 冷启动延迟低（serverless 友好）
-2. Zig IO → 高 QPS
-3. 原生 TS → dev 模式不需 tsx / ts-node
-4. bundler macro → `.derive()` 等链调用编译期 inline
+## 学到什么
 
-但 Bun 的代价：
-- npm 兼容性 90%（部分包 fs hook 行为差异）
-- Worker / Cluster API 与 Node 不同
-- 生产部署案例少（比 Node 风险高）
-- HTTP/2 / TLS 实现仍在打磨
+1. **runtime 决定上限**：框架性能的天花板很多时候不是代码质量，而是底下跑的引擎是 V8 还是 JSC、IO 是 libuv 还是 Zig
+2. **schema 是事实唯一来源**：当你能用一份 schema 同时做校验/类型/文档，开发体验和正确性会齐涨
+3. **method chain + 类型累积** 是另一条端到端类型安全之路，差别只在协议是 REST 还是 RPC
+4. **取舍永远要标量化**：Elysia 用"跨 runtime + 生态"换"性能 + 类型推导"，没有银弹
 
-## 附录 B — Elysia 与 tRPC / GraphQL Codegen 对比（≥ 25 行）
+## 延伸阅读
 
-端到端类型安全的三种主流方案：
+- 官方文档：[elysiajs.com](https://elysiajs.com/)（quick start 半小时能过完）
+- 仓库：[elysiajs/elysia](https://github.com/elysiajs/elysia)（看 README + examples 目录最快）
+- TypeBox：[sinclairzx81/typebox](https://github.com/sinclairzx81/typebox)（理解 schema 的灵魂）
+- Bun 性能基准：[bun.sh/docs](https://bun.sh/docs)（看真实 QPS 数字别只信宣传）
+- [[hono]] —— 同阵营但跨 runtime 的兄弟，对照看选型差别更清楚
 
-### Eden Treaty（Elysia）
-```ts
-const app = new Elysia().get('/users/:id', ({ params }) => ({ id: params.id }));
-type App = typeof app;
+## 关联
 
-// client
-const api = treaty<App>('http://localhost:3000');
-const { data } = await api.users({ id: '123' }).get();
-```
+- [[hono]] —— 同样 Web 标准 + 边缘 runtime，但不绑 Bun，类型推导稍弱
+- [[fastify]] —— Node 上 schema-first 的老前辈，TypeBox 思路的源头之一
+- [[express]] —— 反面参照：req/res 弱类型，看完 Elysia 更能感受痛点
+- [[koa]] —— method chain + 中间件思路的早期代表，Elysia 是它的类型化后继
+- [[nestjs]] —— 重型企业框架，与 Elysia 形成"DI 重 vs 极简"两极
+- [[trpc]] —— 端到端类型安全的另一路线（RPC over JSON），与 Eden Treaty 对照
+- [[bun]] —— Elysia 的"地基"，没它谈不上 Elysia
 
-### tRPC
-```ts
-const router = t.router({
-  user: t.procedure.input(z.object({ id: z.string() })).query(({ input }) => ...)
-});
-type Router = typeof router;
+## 反向链接
 
-// client
-const api = createTRPCClient<Router>({ url: '...' });
-const data = await api.user.query({ id: '123' });
-```
-
-### GraphQL Codegen
-```graphql
-query GetUser($id: ID!) { user(id: $id) { id, name } }
-```
-+ codegen 生成 TS 类型 + React hook
-
-| 维度 | Eden | tRPC | GraphQL |
-|---|---|---|---|
-| 学习曲线 | 平 | 中 | 陡 |
-| 协议 | REST | RPC over JSON | GraphQL |
-| Schema 来源 | TypeBox | zod / valibot | GraphQL SDL |
-| 多语言 client | 难 | 难 | 易（任何语言）|
-| 跨网络（CDN）友好 | ✓（GET URL） | ✗（POST + body） | ✓（GET 简单 query）|
-
-Eden 在"小团队 + 单语言（TS）+ Bun"场景最佳；tRPC 在"全 TS 团队 + 不限 Bun"最佳；GraphQL 在"多端 + 多语言"最佳。
-
-## 附录 C — Elysia 学习路径（≥ 20 行）
-
-第一周（基础）：
-1. 安装 Bun + Elysia hello world
-2. 路由 + handler + body/params/query
-3. TypeBox `t.Object / t.String / t.Array` 基础
-4. typeof body 类型推导验证（在 IDE 里 hover 看类型）
-
-第二周（中级）：
-5. plugin 机制（@elysiajs/swagger / @elysiajs/jwt）
-6. `.guard()` 子作用域
-7. `.derive()` context 注入
-8. 错误处理（throw + onError hook）
-
-第三周（高级）：
-9. macro 编译期优化（看 Bun build 输出对比 dev vs prod）
-10. Eden treaty 客户端集成
-11. 自写 plugin（实现 onRequest / mapResponse）
-12. 性能调优（Bun.serve options + JSC heap）
-
-第四周（实战）：
-13. 完整 CRUD API + DB（drizzle / prisma）
-14. WebSocket 支持
-15. 部署到 Bun runtime（Cloudflare Worker via Bun adapter / 自托管）
-
-## 附录 D — 学到补充（≥ 15 行）
-
-补充 5 条工程教训：
-
-6. **Runtime + Framework 深度耦合** 是双刃剑：性能极致 + 移植代价
-7. **Method chain + 类型层累积** 是端到端类型安全的优雅路径，但 IDE 类型推导可能很慢（巨型路由树）
-8. **macro 在 build 时静态化** 让 dynamic 行为受限（plugin 不能动态加载）
-9. **小众 + 极客流派** 需要找到 Bun 这种 runtime 革命的窗口期
-10. **TypeBox vs zod** 是 schema 库哲学之争，没有绝对赢家
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
