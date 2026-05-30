@@ -173,5 +173,6 @@ Sestoft 后来还写过一本 ML 的实现教材，把 PE 思路贯彻到底。J
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
+- [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 

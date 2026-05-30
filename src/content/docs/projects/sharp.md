@@ -161,3 +161,6 @@ async function optimizeImage(buffer, { width, format, quality }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
+

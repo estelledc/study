@@ -157,6 +157,7 @@ $ ipfs cat <CID> > big-dataset.tar    # B 从 A 拉，C 又从 A+B 拉
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
+- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[storj]] —— Storj — S3 兼容的去中心化对象存储
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 

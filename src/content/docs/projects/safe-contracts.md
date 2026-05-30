@@ -178,6 +178,7 @@ const predictedAddr = await calculateProxyAddress({
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
+- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 

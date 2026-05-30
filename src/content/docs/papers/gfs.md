@@ -161,11 +161,11 @@ def upload(key, data):
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

@@ -101,6 +101,7 @@ gray-1981-transaction
 great-swe
 halide
 hamming-1950
+hdfs-2010
 helium-type-errors
 herlihy-moss-tm
 hewitt-actor-model
@@ -145,6 +146,7 @@ mapreduce
 mccarthy-lisp
 megatron-lm
 metagpt
+metaml-multi-stage
 millwheel-2013
 milner-pi-calculus
 mixture-of-experts
@@ -285,6 +287,7 @@ biome
 bitcoin-core
 boxen
 browser-use
+bullmq
 bun
 caddy
 cairo-lang
@@ -518,6 +521,7 @@ stagehand
 starlette
 starlight
 steel-browser
+storj
 storybook
 strawberry
 styled-components

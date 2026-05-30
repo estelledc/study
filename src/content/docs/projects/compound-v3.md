@@ -157,6 +157,7 @@ comet.buyCollateral(WETH, 0, 1e18, msg.sender);
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

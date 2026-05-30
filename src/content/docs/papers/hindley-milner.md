@@ -215,6 +215,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
+- [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"

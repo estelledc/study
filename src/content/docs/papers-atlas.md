@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 256 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 258 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：256 篇
+- **总数**：258 篇
 - **已分类**：143
-- **未分类**：113（落入"其他 / 待分类"段）
+- **未分类**：115（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 113 |
+| [其他 / 待分类](#其他--待分类) | 115 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 113 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 115 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -409,6 +409,8 @@ sidebar:
 | `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
+| `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
+| `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) |
 | `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) |
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) |
@@ -424,7 +426,7 @@ sidebar:
 
 ---
 
-## 全部 256 篇（字母序）
+## 全部 258 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -655,7 +657,9 @@ sidebar:
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
+| `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | 其他 |
 | `tcp` | [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) | 网络协议 |
+| `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) | 其他 |
 | `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) | 其他 |
 | `tigerbeetle` | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) | 数据库 |

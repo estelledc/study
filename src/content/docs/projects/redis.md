@@ -172,6 +172,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[pulsar]] —— Apache Pulsar — 云原生消息队列
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头

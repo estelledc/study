@@ -169,6 +169,7 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
+- [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

@@ -174,4 +174,5 @@ map f (map g xs) = map (f . g) xs
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 

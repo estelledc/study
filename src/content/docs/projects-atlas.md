@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 331 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 333 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：331 个
+- **总数**：333 个
 - **已分类**：206
-- **未分类**：125（落入"其他 / 待分类"段）
+- **未分类**：127（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 125 |
+| [其他 / 待分类](#其他--待分类) | 127 |
 
 ---
 
@@ -65,7 +65,7 @@ sidebar:
 | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) |  |
 | [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) |  |
 | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) |  |
-| [Recharts JSX 数据可视化组件库](/study/projects/recharts/) |  |
+| [Recharts — 用 JSX 直接拼出图表的 React 组件库](/study/projects/recharts/) |  |
 | [visx Airbnb React 可视化原语](/study/projects/visx/) |  |
 
 ## 动画
@@ -435,7 +435,7 @@ sidebar:
 | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) |  |
 | [Konva — 给 HTML5 Canvas 装一棵会响应的节点树](/study/projects/konva/) |  |
 | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) |  |
-| [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
+| [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) |  |
 
 ## CSS / 样式
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 125 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 127 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -598,8 +598,10 @@ sidebar:
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
+| `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
+| `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) |
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
@@ -627,7 +629,7 @@ sidebar:
 
 ---
 
-## 全部 331 个（字母序）
+## 全部 333 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -862,7 +864,7 @@ sidebar:
 | `react-hook-form` | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
 | `react-intl` | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | i18n 国际化 |
 | `react-spring` | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | 动画 |
-| `recharts` | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) | 数据可视化 |
+| `recharts` | [Recharts — 用 JSX 直接拼出图表的 React 组件库](/study/projects/recharts/) | 数据可视化 |
 | `redis` | [Redis — 内存键值数据库](/study/projects/redis/) | 数据库本体 / 存储引擎 |
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | 其他 |
@@ -879,11 +881,13 @@ sidebar:
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
-| `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 / Canvas |
+| `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
+| `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
+| `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) | 其他 |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) | 其他 |
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) | 其他 |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) | 其他 |
