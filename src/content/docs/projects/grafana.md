@@ -131,6 +131,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[jaeger]] —— Jaeger — 分布式追踪系统

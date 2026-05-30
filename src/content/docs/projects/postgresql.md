@@ -182,6 +182,7 @@ LIMIT 5;
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎

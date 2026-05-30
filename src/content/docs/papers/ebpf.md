@@ -153,7 +153,7 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
-- [[io-uring]] —— io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流

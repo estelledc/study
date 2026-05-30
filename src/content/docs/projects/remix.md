@@ -173,4 +173,5 @@ app/routes/
 - [[next-js]] —— Next.js — React 全栈框架
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
+- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 

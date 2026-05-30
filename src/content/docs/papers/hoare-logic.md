@@ -169,9 +169,14 @@ method Sum(a: array<int>) returns (s: int)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
+- [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 

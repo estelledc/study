@@ -159,6 +159,7 @@ public interface GitHubClient {
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架

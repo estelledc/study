@@ -149,3 +149,8 @@ CQE 带 `IORING_CQE_F_MORE` 标记表示"还会有更多 CQE 来"。比 epoll + 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
+
