@@ -188,6 +188,7 @@ docker run -d \
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[postal]] —— Postal — 自托管的 Mailgun / SendGrid 替代
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[traefik]] —— Traefik — 现代云原生反向代理
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换

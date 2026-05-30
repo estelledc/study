@@ -31,6 +31,7 @@ bigtable-2006
 bitcoin
 blackwell-architecture-2024
 boehm-gc
+boogie-2005
 borg
 brewer-cap-2000
 brook-2004
@@ -115,6 +116,7 @@ fidge-1988
 flash-attention
 flexible-paxos-2016
 flink-2015
+flp-1985
 foundationdb
 foundationdb-2021
 frank-effects
@@ -125,6 +127,7 @@ gadt-pjones
 game-semantics-pcf
 generational-gc
 gfs
+gilbert-lynch-2002
 godel-1931
 gpt-3
 graalvm-truffle
@@ -170,6 +173,7 @@ kepler-architecture-2012
 kildall-dataflow
 knuth-lr-1965
 knuth-taocp
+kokkos-2014
 lalr-deremer
 lambda-calculus
 lamport-1978
@@ -310,6 +314,7 @@ tcp
 template-haskell
 tesla-architecture-2008
 theorems-for-free
+thrust-2010
 tidb-2020
 tigerbeetle
 tla-yu-tlc-1999
@@ -339,6 +344,7 @@ vr-1988
 vr-revisited-2012
 wadler-prettier
 wam-warren
+why3-2013
 word2vec
 xla-compiler
 z3-2008
@@ -428,6 +434,7 @@ dask
 date-fns
 dayjs
 deepspeed
+delta
 dendrite
 dgraph
 dify
@@ -435,6 +442,7 @@ django
 dnd-kit
 docker
 docusaurus
+dovecot
 dragonflydb
 drizzle
 dropwizard
@@ -476,6 +484,7 @@ framer-motion
 fx
 fzf
 gdu
+gh
 gin
 gitui
 glances
@@ -541,11 +550,13 @@ lingui
 listr2
 litestar
 liveblocks
+llama-cpp
 llamaindex
 lottie
 lsd
 lucia
 luxon
+mailcow
 makerdao
 markdown-it
 marked
@@ -665,6 +676,7 @@ scroll
 sd
 sentry
 sequelize
+sglang
 shadcn-ui
 sharedb
 sharp

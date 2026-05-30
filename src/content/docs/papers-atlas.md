@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 352 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 355 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：352 篇
+- **总数**：355 篇
 - **已分类**：143
-- **未分类**：209（落入"其他 / 待分类"段）
+- **未分类**：212（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 209 |
+| [其他 / 待分类](#其他--待分类) | 212 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 209 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 212 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -376,12 +376,14 @@ sidebar:
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) |
+| `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) |
 | `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) |
 | `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) |
 | `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
+| `gpu-microbenchmarking-2010` | [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) |
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) |
@@ -390,6 +392,7 @@ sidebar:
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) |
+| `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) |
 | `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) |
 | `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) |
 | `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) |
@@ -520,7 +523,7 @@ sidebar:
 
 ---
 
-## 全部 352 篇（字母序）
+## 全部 355 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -644,6 +647,7 @@ sidebar:
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | 其他 |
 | `foundationdb` | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) | 数据库 |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | 其他 |
+| `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) | 其他 |
 | `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) | 其他 |
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
 | `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) | 其他 |
@@ -655,6 +659,7 @@ sidebar:
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | 其他 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
+| `gpu-microbenchmarking-2010` | [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) | 其他 |
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) | 其他 |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) | 其他 |
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) | 其他 |
@@ -666,6 +671,7 @@ sidebar:
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 其他 |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | 其他 |
+| `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) | 其他 |
 | `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | 其他 |
 | `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) | 其他 |
 | `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |

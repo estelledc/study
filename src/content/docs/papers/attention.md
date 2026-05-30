@@ -143,7 +143,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dit]] —— DiT — Diffusion Transformer
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
@@ -163,6 +162,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[resnet]] —— ResNet — 残差连接
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
