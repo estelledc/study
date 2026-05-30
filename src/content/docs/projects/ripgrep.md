@@ -157,6 +157,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[gdu]] —— gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI
+- [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
 - [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化

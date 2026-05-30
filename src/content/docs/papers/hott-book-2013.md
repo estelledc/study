@@ -1,6 +1,6 @@
 ---
-title: HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
-来源: The Univalent Foundations Program, "Homotopy Type Theory: Univalent Foundations of Mathematics", IAS Princeton 2013（homotopytypetheory.org/book）
+title: 'HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材'
+来源: 'The Univalent Foundations Program, "Homotopy Type Theory: Univalent Foundations of Mathematics", IAS Princeton 2013（homotopytypetheory.org/book）'
 日期: 2026-05-31
 分类: 编程语言 / 形式化方法
 难度: 高级
@@ -158,3 +158,6 @@ data S¹ : Type where
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

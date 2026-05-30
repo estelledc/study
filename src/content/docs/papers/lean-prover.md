@@ -153,6 +153,7 @@ def map : (α → β) → List α → List β
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
+- [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
 - [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序

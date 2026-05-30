@@ -17,6 +17,7 @@ astree
 attention
 aurora
 autogen
+awodey-warren-2009
 azure-storage-2011
 b-tree-1972
 beck-tdd
@@ -31,6 +32,7 @@ blackwell-architecture-2024
 boehm-gc
 borg
 brewer-cap-2000
+brook-2004
 cakeml
 calculus-of-constructions
 call-by-need-1995
@@ -322,6 +324,7 @@ vellvm
 vertica-2012
 vit
 vllm
+vogels-eventual-2009
 volcano
 volcano-1994
 volta-architecture-2017
@@ -400,6 +403,7 @@ clerk
 clickhouse
 cockroachdb
 codemirror
+colossal-ai
 commander
 compound-v3
 conduit
@@ -516,6 +520,7 @@ langchain
 langfuse
 laravel
 layerzero
+lazygit
 ledger-app-sdk
 lerna
 lexical
@@ -587,6 +592,7 @@ orleans
 ovenmediaengine
 oxc
 pandas
+partykit
 patchright
 penpot
 pgvector

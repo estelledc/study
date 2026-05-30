@@ -152,6 +152,7 @@ Cassandra / DynamoDB 的单字段冲突解决就是 LWW。
 
 - [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
 - [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
