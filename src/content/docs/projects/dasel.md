@@ -166,4 +166,5 @@ dasel -r yaml -w json -f docker-compose.yaml '.services.web'
 - [[httpie]] —— HTTPie — curl 的人话版本
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
 - [[jq]] —— jq — JSON 的 sed/awk
+- [[xh]] —— xh — HTTPie 的 Rust 重写版
 

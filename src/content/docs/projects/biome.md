@@ -177,4 +177,5 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
+- [[xh]] —— xh — HTTPie 的 Rust 重写版
 

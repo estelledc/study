@@ -179,6 +179,7 @@ def compare(va, vb):
 - [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
 - [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法

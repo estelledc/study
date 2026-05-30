@@ -159,3 +159,6 @@ xh GET api.example.com/data | dasel -r json '.items.[0].name'
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[httpie]] —— HTTPie — curl 的人话版本
+

@@ -153,5 +153,8 @@ handle.change(d => d.todos.push('first'))   // 自动落盘 + 自动同步
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
+- [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
+- [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

@@ -150,6 +150,7 @@ DPO（Direct Preference Optimization）需要"chosen / rejected"成对数据，l
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象

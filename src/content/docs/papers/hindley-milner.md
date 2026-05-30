@@ -178,6 +178,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言

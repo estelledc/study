@@ -172,6 +172,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[janus-2016]] —— Janus 2016 — 把并发控制和共识捏成一个协议
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机

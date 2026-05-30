@@ -156,6 +156,7 @@ def step(params, x, y):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[flax]] —— Flax — JAX 上的神经网络库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
