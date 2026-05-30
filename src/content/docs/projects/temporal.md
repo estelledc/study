@@ -165,6 +165,7 @@ export async function bookTrip(tripId: string) {
 
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS

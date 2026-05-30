@@ -152,6 +152,7 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
+- [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[chainlink]] —— Chainlink — 智能合约的"感官系统"

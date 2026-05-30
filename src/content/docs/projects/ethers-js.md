@@ -168,6 +168,7 @@ console.log(ethers.formatUnits(raw, decimals), "USDC");
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架

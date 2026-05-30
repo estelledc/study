@@ -169,6 +169,7 @@ let run e = eval e [] (fun v -> v)
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
+- [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器

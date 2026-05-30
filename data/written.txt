@@ -226,7 +226,9 @@ swe-bench
 system-f-reynolds-1974
 system-r-1976
 t5
+tachyon-2014
 tcp
+template-haskell
 theorems-for-free
 tidb-2020
 tigerbeetle
@@ -508,8 +510,10 @@ shadcn-ui
 sharp
 shiki
 sia
+sidekiq
 sinatra
 slim-framework
+snapshot
 socket-io
 soketi
 solana

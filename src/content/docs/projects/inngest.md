@@ -153,6 +153,7 @@ inngest.createFunction(
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

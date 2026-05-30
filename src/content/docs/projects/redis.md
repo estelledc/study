@@ -141,6 +141,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库

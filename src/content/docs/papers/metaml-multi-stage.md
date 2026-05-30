@@ -156,6 +156,7 @@ Taha 2017 年早逝，但这条思想线一直延续。
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
+- [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去

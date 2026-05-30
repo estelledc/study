@@ -188,6 +188,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

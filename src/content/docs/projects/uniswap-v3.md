@@ -151,6 +151,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[anchor]] —— Anchor — Solana 合约开发框架
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
+- [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[arweave]] —— Arweave — 一次付费、永远存着的区块链
 - [[axelar]] —— Axelar — 通用跨链 gateway
