@@ -193,6 +193,7 @@ let app = Router::new()
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架

@@ -147,3 +147,9 @@ cat .nx/cache/abc123/terminalOutputs/build.txt
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
+- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
+- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
+

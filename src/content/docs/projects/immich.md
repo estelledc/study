@@ -150,6 +150,7 @@ Immich 在管理面板换模型时会拿到一把数据库锁，把 `smart_searc
 
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库

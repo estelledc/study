@@ -156,5 +156,13 @@ contract LogicV1 is UUPSUpgradeable, OwnableUpgradeable {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[anchor]] —— Anchor — Solana 合约开发框架
+- [[chainlink]] —— Chainlink — 智能合约的"感官系统"
+- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[move-language]] —— Move — 资源型智能合约语言
+- [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

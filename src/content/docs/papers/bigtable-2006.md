@@ -171,6 +171,7 @@ column families:
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳

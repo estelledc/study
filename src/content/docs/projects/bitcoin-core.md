@@ -155,6 +155,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端

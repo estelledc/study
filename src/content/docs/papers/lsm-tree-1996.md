@@ -153,6 +153,7 @@ client read key="foo"
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
+- [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库

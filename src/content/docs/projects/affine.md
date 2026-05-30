@@ -154,6 +154,7 @@ yarn workspace @affine/web dev
 
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[react]] —— React UI 组件库

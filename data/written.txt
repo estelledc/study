@@ -114,9 +114,11 @@ ingres-1976
 instructgpt
 io-uring
 kafka
+kafka-2011
 kahn-natural-semantics
 karp-21
 kildall-dataflow
+knuth-lr-1965
 knuth-taocp
 lambda-calculus
 lamport-1978
@@ -355,6 +357,7 @@ hardhat
 helidon
 helm
 hono
+hot-chocolate
 i18next
 immer
 immich
@@ -430,6 +433,7 @@ oclif
 ofetch
 ollama
 opensea-js
+openzeppelin-contracts
 optimism
 ora
 orleans

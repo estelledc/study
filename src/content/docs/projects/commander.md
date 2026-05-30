@@ -164,5 +164,6 @@ main().catch((err) => {
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

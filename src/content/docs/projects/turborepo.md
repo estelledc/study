@@ -167,6 +167,7 @@ pnpm turbo run build
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
+- [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

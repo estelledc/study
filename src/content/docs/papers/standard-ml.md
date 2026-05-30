@@ -155,6 +155,7 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
+- [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"

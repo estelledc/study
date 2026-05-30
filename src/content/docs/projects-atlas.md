@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 321 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 323 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：321 个
+- **总数**：323 个
 - **已分类**：206
-- **未分类**：115（落入"其他 / 待分类"段）
+- **未分类**：117（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 115 |
+| [其他 / 待分类](#其他--待分类) | 117 |
 
 ---
 
@@ -64,7 +64,7 @@ sidebar:
 |---|---|
 | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) |  |
 | [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) |  |
-| [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) |  |
+| [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) |  |
 | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) |  |
 | [visx Airbnb React 可视化原语](/study/projects/visx/) |  |
 
@@ -279,7 +279,7 @@ sidebar:
 |---|---|
 | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) |  |
 | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) |  |
-| [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | 从 Angular CLI 演化而来的 monorepo 元框架，靠 project graph + executor 抽象 + Nx Cloud DTE 把任务编排做到企业级 monorepo 的极致 |
+| [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) |  |
 | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) |  |
 | [Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"](/study/projects/turborepo/) |  |
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 115 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 117 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -552,6 +552,7 @@ sidebar:
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
+| `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
@@ -593,6 +594,7 @@ sidebar:
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
+| `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
@@ -617,7 +619,7 @@ sidebar:
 
 ---
 
-## 全部 321 个（字母序）
+## 全部 323 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -737,6 +739,7 @@ sidebar:
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
 | `ink` | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | 其他基础设施 |
+| `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | 其他 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
 | `jest` | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
@@ -800,8 +803,8 @@ sidebar:
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
-| `nx` | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | Monorepo / 包管理 |
-| `observable-plot` | [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) | 数据可视化 |
+| `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | Monorepo / 包管理 |
+| `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
@@ -867,6 +870,7 @@ sidebar:
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
+| `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) | 其他 |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) | 其他 |
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
 | `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |

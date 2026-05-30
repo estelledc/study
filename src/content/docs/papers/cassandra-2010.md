@@ -165,5 +165,6 @@ R+W>N（比如 R=2, W=2, N=3）→ 强一致；R+W≤N → 牺牲一致换延迟
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 

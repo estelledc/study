@@ -152,6 +152,7 @@ function onDragOver({ active, over }) {
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[react]] —— React UI 组件库
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 
