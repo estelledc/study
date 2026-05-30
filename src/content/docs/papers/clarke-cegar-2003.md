@@ -164,4 +164,5 @@ CEGAR 第一轮抽象不知道 `error_condition` 何时为真，过近似认为"
 - [[nieuwenhuis-dpll-t-2006]] —— Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[slam-microsoft]] —— SLAM — 让 Windows 驱动 bug 自己撞到工具上
+- [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
 

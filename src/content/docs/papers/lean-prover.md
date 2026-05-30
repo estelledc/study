@@ -158,4 +158,5 @@ def map : (α → β) → List α → List β
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
+- [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
 

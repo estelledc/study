@@ -178,6 +178,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
 - [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[sinfonia-2007]] —— Sinfonia 2007 — 把分布式协议降级成数据结构操作
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的

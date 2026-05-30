@@ -157,6 +157,7 @@ jq '.. | objects | select(has("email")) | .email' big-config.json
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[dasel]] —— dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV
 - [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行

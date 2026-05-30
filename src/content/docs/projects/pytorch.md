@@ -157,6 +157,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[jax]] —— JAX — Google 函数式数值计算
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

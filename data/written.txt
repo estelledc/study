@@ -201,16 +201,19 @@ muzero
 mycroft-strictness
 nelson-oppen-1979
 neumann-2015-large-joins
+nieuwenhuis-dpll-t-2006
 no-silver-bullet
 ntp-mills-1991
 openhands
 ot-1989
 pair-programming
 partial-evaluation-jones
+pascal-architecture-2016
 paxos
 paxos-1998
 paxos-simple-2001
 peg-packrat-ford
+percolator-2010
 peyton-jones-stg
 plotkin-sos
 pnueli-temporal-1977
@@ -449,6 +452,7 @@ gqlgen
 grafana
 grape
 graphql-yoga
+gron
 grpc-go
 gsap
 hanami
@@ -474,6 +478,7 @@ jotai
 jq
 js-joda
 kafka
+keras
 koa
 kong
 konva
@@ -551,6 +556,7 @@ openzeppelin-contracts
 optimism
 ora
 orleans
+ovenmediaengine
 oxc
 pandas
 patchright
