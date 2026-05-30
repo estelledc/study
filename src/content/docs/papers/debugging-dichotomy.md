@@ -164,4 +164,5 @@ inspect 变量    ████████████              58%
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
+- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 

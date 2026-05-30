@@ -204,5 +204,6 @@ fn rocket() -> _ {
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

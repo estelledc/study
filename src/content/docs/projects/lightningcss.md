@@ -153,6 +153,7 @@ echo '.a { & .b { color: oklch(70% 0.15 240); } }' \
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bun]] —— Bun — JS 全能运行时
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

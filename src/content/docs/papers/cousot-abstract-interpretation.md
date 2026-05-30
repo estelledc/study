@@ -155,5 +155,9 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 

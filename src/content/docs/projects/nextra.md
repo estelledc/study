@@ -148,3 +148,10 @@ Nextra 读出 `date`，自动按时间倒序排在首页，每篇文末自动有
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[next-js]] —— Next.js — React 全栈框架
+- [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
+- [[starlight]] —— Starlight — Astro 文档站点主题
+

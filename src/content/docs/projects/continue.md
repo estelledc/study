@@ -162,6 +162,7 @@ Check if this PR has any AI-generated slop:
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

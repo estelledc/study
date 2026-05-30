@@ -160,6 +160,7 @@ System R 的处理：
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[raft]] —— Raft — 易理解的共识算法

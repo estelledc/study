@@ -24,6 +24,7 @@ borg
 calculus-of-constructions
 call-by-need-1995
 calvin
+cascades-1995
 causal-abstraction
 cheney-gc
 chinchilla
@@ -40,6 +41,7 @@ constitutional-ai
 cook-levin
 copilot-rct
 cot
+cousot-abstract-interpretation
 crdt-json
 dalle-2
 ddpm
@@ -345,6 +347,7 @@ pulsar
 qdrant
 quart
 qwik
+rabby-wallet
 radix-ui
 react
 react-dnd
@@ -413,6 +416,7 @@ vitest
 vllm
 vue
 vue-i18n
+warp
 weaviate
 web-vitals
 webpack

@@ -165,4 +165,5 @@ e.Start(":1323")
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 

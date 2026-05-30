@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 249 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 251 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：249 个
+- **总数**：251 个
 - **已分类**：206
-- **未分类**：43（落入"其他 / 待分类"段）
+- **未分类**：45（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 43 |
+| [其他 / 待分类](#其他--待分类) | 45 |
 
 ---
 
@@ -139,7 +139,7 @@ sidebar:
 | [Bun — JS 全能运行时](/study/projects/bun/) |  |
 | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) |  |
 | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) |  |
-| [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 不是把现有 JS 工具搬到 Rust，是从零设计 parser / AST / linter 全栈，速度比 ESLint 快 50-100 倍 |
+| [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) |  |
 | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 不是 Rollup 的替代品，是 Vite 的统一引擎 |
 | [Rollup — ESM 优先的打包器](/study/projects/rollup/) |  |
 | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 不是 webpack 的下位替代，是 webpack plugin API 的 Rust 实现 |
@@ -330,7 +330,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) |  |
-| [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | Vercel 系 docs 框架的另一极——shuding 起手 + dimaMachina 接棒，把 nextra(config)(nextConfig) 这一行 hooking 加在 a54da393 这条 com… |
+| [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) |  |
 | [Starlight — Astro 文档站点主题](/study/projects/starlight/) |  |
 | [VitePress — Vue + Vite 文档框架，零 framework 重负的 SSG](/study/projects/vitepress/) | Vue 团队对 docs 框架的重构答卷——把 markdown-it + Vue SFC + Vite SSG + 默认主题缝在 ee02826 这条 commit 上，280 行 build |
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 43 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 45 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -530,6 +530,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
+| `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
@@ -541,11 +542,12 @@ sidebar:
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
+| `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 
 ---
 
-## 全部 249 个（字母序）
+## 全部 251 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -687,7 +689,7 @@ sidebar:
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | 其他 |
 | `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
-| `nextra` | [Nextra — Next.js 上盖一层 docs 框架，吃 React 生态全套电池](/study/projects/nextra/) | 文档站点 |
+| `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
 | `nx` | [Nx — 跨框架 monorepo 的 generator/executor 范式](/study/projects/nx/) | Monorepo / 包管理 |
@@ -696,7 +698,7 @@ sidebar:
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
-| `oxc` | [oxc — Rust 写一整套 JS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
+| `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在生产环境真正用得上](/study/projects/patchright/) | AI 浏览器自动化 |
 | `penpot` | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
@@ -706,6 +708,7 @@ sidebar:
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `pnpm` | [pnpm — 把 npm 的 flat node_modules 换成硬链接 + 内容寻址](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `podman` | [Podman — 无 daemon 容器引擎](/study/projects/podman/) | DevOps / 容器 / 运维 |
+| `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) | 其他 |
 | `postgres-js` | [postgres.js — 写 SQL 但更安全的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
@@ -787,6 +790,7 @@ sidebar:
 | `vllm` | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) | AI 应用 / Agent 平台 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) | i18n 国际化 |
+| `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | 其他 |
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |
 | `web-vitals` | [web-vitals — 不是「测速工具」，是把 Chrome UX Report 的指标定义在浏览器端等值复刻的协议库](/study/projects/web-vitals/) | 可观测 / 性能 |

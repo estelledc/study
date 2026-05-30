@@ -159,5 +159,9 @@ export const epoch = () => ++g.epoch
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
+- [[jotai]] —— Jotai — 原子化 React 状态管理
+- [[svelte]] —— Svelte — 编译时 UI 框架
+- [[zustand]] —— Zustand — 极简 React 状态管理
 
