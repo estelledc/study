@@ -153,7 +153,6 @@ dayjs.tz('2026-05-30 10:00', 'America/New_York').format();
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
-- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器

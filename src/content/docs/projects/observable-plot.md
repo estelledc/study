@@ -161,6 +161,7 @@ Plot.plot({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库

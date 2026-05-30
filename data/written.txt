@@ -120,6 +120,7 @@ karp-21
 kildall-dataflow
 knuth-lr-1965
 knuth-taocp
+lalr-deremer
 lambda-calculus
 lamport-1978
 lampson-hints
@@ -195,6 +196,7 @@ selinger-1979
 sequel-1974
 shannon-1948
 sillito-questions
+silt-2011
 simula-67
 skip-list-1990
 sleeper-agents
@@ -364,6 +366,7 @@ immich
 influxdb
 ink
 inngest
+ipfs
 jaeger
 jest
 jimp
@@ -494,6 +497,7 @@ sharp
 shiki
 sinatra
 slim-framework
+socket-io
 solana
 solid
 sortablejs

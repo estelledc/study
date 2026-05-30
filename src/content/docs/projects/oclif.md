@@ -171,3 +171,7 @@ abstract class BaseCommand extends Command {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+

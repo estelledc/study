@@ -152,6 +152,7 @@ column families:
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[ceph-2006]] —— Ceph — 让分布式文件系统不靠中心查表
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍

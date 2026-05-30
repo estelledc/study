@@ -151,6 +151,7 @@ VRF 节点用 BLS 签名生成随机数，链上合约能用公钥验签——**
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
+- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

@@ -166,4 +166,5 @@ if a then if b then x else y
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[tomita-glr]] —— Tomita GLR — 让 LR 解析器扛得住歧义文法
 
