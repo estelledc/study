@@ -149,6 +149,7 @@ IFDS 要求**分配**（distributive）。这种情况要扩到 **IDE**（Interp
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[llvm]] —— LLVM — 模块化编译器框架

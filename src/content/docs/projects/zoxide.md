@@ -161,6 +161,7 @@ zi proj
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fzf]] —— fzf — 命令行模糊查找
+- [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 

@@ -181,6 +181,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀

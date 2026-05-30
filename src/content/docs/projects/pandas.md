@@ -159,5 +159,10 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[numpy]] —— NumPy — Python 科学计算基石
+- [[polars]] —— Polars — Rust 写的列存 DataFrame
+- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

@@ -179,6 +179,7 @@ paxos-simple-2001
 peg-packrat-ford
 peyton-jones-stg
 plotkin-sos
+pnueli-temporal-1977
 polar-codes-2009
 pottier-merr
 ppo
@@ -220,12 +221,14 @@ shannon-1948
 sillito-questions
 silt-2011
 simula-67
+skeen-3pc-1981
 skip-list-1990
 sleeper-agents
 smalltalk-80
 smr-1990
 snowflake
 snowflake-2016
+souffle-datalog
 spanner
 spanner-2012
 sparse-autoencoders
@@ -445,6 +448,7 @@ luxon
 makerdao
 markdown-it
 marked
+matrix-js-sdk
 matrix-rust-sdk
 mcp-ts-sdk
 meilisearch
@@ -453,6 +457,7 @@ micromark
 micronaut
 midscene
 mikro-orm
+miller
 milvus
 minio
 minisearch
@@ -487,6 +492,7 @@ optimism
 ora
 orleans
 oxc
+pandas
 patchright
 penpot
 pgvector

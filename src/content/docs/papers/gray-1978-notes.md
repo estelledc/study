@@ -197,5 +197,6 @@ Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 
