@@ -168,6 +168,7 @@ method Sum(a: array<int>) returns (s: int)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器

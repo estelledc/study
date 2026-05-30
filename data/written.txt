@@ -148,6 +148,8 @@ infer-biabduction
 ingres-1976
 instructgpt
 io-uring
+isabelle-hol-2002
+janus-2016
 jupiter-1995
 kafka
 kafka-2011
@@ -305,6 +307,7 @@ trill-2014
 triton-llm
 turchin-supercompilation
 turing-1936
+turing-architecture-2018
 tvm
 vellvm
 vertica-2012
@@ -443,6 +446,7 @@ fd
 fiber
 filecoin
 flask
+flax
 foundry
 framer-motion
 fx
@@ -478,6 +482,7 @@ inngest
 ipfs
 jaeger
 jax
+jc
 jest
 jimp
 jotai
@@ -557,6 +562,7 @@ observable-plot
 oclif
 ofetch
 ollama
+openmeetings
 opensea-js
 openzeppelin-contracts
 optimism

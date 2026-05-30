@@ -162,5 +162,7 @@ Wicket 是 2004 年的服务端组件框架——按钮/表单/列表都是 Java
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
+- [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
+- [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
 

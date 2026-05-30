@@ -156,6 +156,7 @@ notes.set('note-1', { title: '...', body: '...' })
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
+- [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板

@@ -190,6 +190,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
 - [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标

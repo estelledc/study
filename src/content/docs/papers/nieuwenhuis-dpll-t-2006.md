@@ -195,6 +195,7 @@ DPLL(T) 的 *online* 路线：theory 与 SAT 同呼吸，每加一条文字 theo
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
