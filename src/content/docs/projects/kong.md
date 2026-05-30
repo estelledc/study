@@ -158,5 +158,11 @@ deck sync --state kong.yaml                # CI 里推回 Kong
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[redis]] —— Redis — 内存键值数据库
 

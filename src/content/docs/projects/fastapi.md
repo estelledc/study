@@ -178,6 +178,7 @@ def me(user: dict = Depends(current_user)):
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架

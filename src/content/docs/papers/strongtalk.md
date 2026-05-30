@@ -175,4 +175,5 @@ function add(x, y) {
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
+- [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 

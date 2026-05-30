@@ -159,6 +159,7 @@ Clack 的设计可以拆成 **三块**：
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[enquirer]] —— enquirer — 让 CLI 工具会问问题的轻量库
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
