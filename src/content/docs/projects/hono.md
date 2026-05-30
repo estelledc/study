@@ -156,7 +156,6 @@ app.get('/users/:id', (c) => {
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
@@ -164,6 +163,7 @@ app.get('/users/:id', (c) => {
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[next-js]] —— Next.js — React 全栈框架
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
+- [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

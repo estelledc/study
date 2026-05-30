@@ -207,6 +207,7 @@ def me(user: dict = Depends(current_user)):
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
+- [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema

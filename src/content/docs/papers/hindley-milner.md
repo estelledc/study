@@ -174,6 +174,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
+- [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题

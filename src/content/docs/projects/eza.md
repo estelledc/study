@@ -149,5 +149,9 @@ eza 是开源项目"原作者不维护 → 社区 fork → fork 反超原作"的
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bat]] —— bat — 现代 cat 替代
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[fzf]] —— fzf — 命令行模糊查找
+- [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

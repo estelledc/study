@@ -163,6 +163,7 @@ const openLog = Effect.acquireRelease(
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zod]] —— Zod — TypeScript-first schema 验证
 

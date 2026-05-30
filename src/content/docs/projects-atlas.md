@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 341 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 343 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：341 个
+- **总数**：343 个
 - **已分类**：206
-- **未分类**：135（落入"其他 / 待分类"段）
+- **未分类**：137（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 135 |
+| [其他 / 待分类](#其他--待分类) | 137 |
 
 ---
 
@@ -90,7 +90,7 @@ sidebar:
 | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) |  |
 | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) |  |
 | [TanStack Form — 跨框架共享一份表单校验逻辑](/study/projects/tanstack-form/) |  |
-| [valibot 模块化模式校验](/study/projects/valibot/) |  |
+| [Valibot — 拆成乐高的 TypeScript 校验库](/study/projects/valibot/) |  |
 | [Zod — TypeScript-first schema 验证](/study/projects/zod/) |  |
 
 ## HTTP 客户端
@@ -423,7 +423,7 @@ sidebar:
 | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) |  |
 | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) |  |
 | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) |  |
-| [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
+| [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) |  |
 
 ## 图像处理 / Canvas
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 135 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 137 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -572,6 +572,7 @@ sidebar:
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
+| `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
@@ -612,6 +613,7 @@ sidebar:
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) |
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
+| `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
@@ -637,7 +639,7 @@ sidebar:
 
 ---
 
-## 全部 341 个（字母序）
+## 全部 343 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -798,6 +800,7 @@ sidebar:
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
+| `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | 日期时间 |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | 其他 |
@@ -908,6 +911,7 @@ sidebar:
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) | 其他 |
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
 | `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | Drag & Drop / Interaction |
+| `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | 其他 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | 数据库本体 / 存储引擎 |
 | `stagehand` | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) | AI 浏览器自动化 |
@@ -948,10 +952,10 @@ sidebar:
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) | 其他 |
 | `typeorm` | [TypeORM — Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
-| `unified` | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) | Markdown / 解析 |
+| `unified` | [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) | Markdown / 解析 |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) | 其他 |
 | `unstorage` | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | 其他基础设施 |
-| `valibot` | [valibot 模块化模式校验](/study/projects/valibot/) | 表单 / Schema 校验 |
+| `valibot` | [Valibot — 拆成乐高的 TypeScript 校验库](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | CSS / 样式 |

@@ -3,6 +3,7 @@
 activation-patching
 adapton
 aes
+agda-norell
 agentless
 algol-60
 alphago
@@ -148,6 +149,7 @@ mapreduce
 martin-lof-itt
 mccarthy-lisp
 megatron-lm
+mencius-2008
 metagpt
 metaml-multi-stage
 millwheel-2013
@@ -356,6 +358,7 @@ etcd
 ethers-js
 excalidraw
 express
+eza
 fabric-js
 fastapi
 fastify
@@ -476,6 +479,7 @@ plane
 playwright
 plug
 pnpm
+pocketbase
 podman
 poem
 polygon-zkevm

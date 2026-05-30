@@ -171,9 +171,6 @@ function CustomTooltip({ active, payload, label }) {
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[sortablejs]] —— SortableJS — 一行代码让任何列表能用手拖排序
-- [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
-- [[valibot]] —— valibot 模块化模式校验
 - [[visx]] —— visx Airbnb React 可视化原语
 - [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
 

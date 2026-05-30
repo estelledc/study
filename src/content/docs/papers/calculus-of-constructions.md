@@ -154,6 +154,7 @@ Qed.
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[linear-types]] —— 线性类型（Linear Types）

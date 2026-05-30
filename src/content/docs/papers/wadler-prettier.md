@@ -161,4 +161,5 @@ const doc = group(concat([
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[turing-1936]] —— Turing 1936 可计算性
+- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 
