@@ -149,5 +149,9 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
+- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
+- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
+- [[vodozemac]] —— vodozemac — Matrix 端到端加密的 Rust 内核
 

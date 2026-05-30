@@ -154,6 +154,7 @@ Cassandra / DynamoDB 的单字段冲突解决就是 LWW。
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
 - [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
+- [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"
 - [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法

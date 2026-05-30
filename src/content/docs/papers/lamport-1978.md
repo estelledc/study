@@ -192,6 +192,7 @@ class LogEmitter:
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[stm-shavit-touitou]] —— STM Shavit-Touitou — 把"加锁"改成"事务"的源头
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
 - [[vr-revisited-2012]] —— VR Revisited 2012 — VR 协议的"工程化重写版"
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核

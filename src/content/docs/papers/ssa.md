@@ -194,6 +194,7 @@ entry:
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法

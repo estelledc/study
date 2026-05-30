@@ -151,6 +151,7 @@ Glances 在 9091 端口暴露 `/metrics`，Prometheus 配置里 scrape 它就能
 - [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索

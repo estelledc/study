@@ -1,6 +1,6 @@
 ---
-title: Logoot — 给每个字符发一张"永不过期的座位号"
-来源: Weiss, Urso, Molli, 'Logoot: A Scalable Optimistic Replication Algorithm for Collaborative Editing on P2P Networks', IEEE TPDS 2010
+title: 'Logoot — 给每个字符发一张"永不过期的座位号"'
+来源: 'Weiss, Urso, Molli, ''Logoot: A Scalable Optimistic Replication Algorithm for Collaborative Editing on P2P Networks'', IEEE TPDS 2010'
 日期: 2026-05-30
 分类: 分布式系统
 难度: 中级
@@ -148,3 +148,6 @@ Yjs 的 YArray / YText 不直接用 Logoot 的多层数字 ID，而是用"前驱
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
