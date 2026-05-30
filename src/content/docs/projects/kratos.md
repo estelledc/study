@@ -170,5 +170,6 @@ grpcSrv.Use(logging.Server(logger))
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[prometheus]] —— Prometheus — 时序监控系统
 

@@ -160,5 +160,12 @@ Solana 便宜 + 快，代价是**生态小、宕机风险**、写代码心智负
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anchor]] —— Anchor — Solana 合约开发框架
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[raft]] —— Raft — 易理解的共识算法
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

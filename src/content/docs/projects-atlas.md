@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 301 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 303 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：301 个
+- **总数**：303 个
 - **已分类**：206
-- **未分类**：95（落入"其他 / 待分类"段）
+- **未分类**：97（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 95 |
+| [其他 / 待分类](#其他--待分类) | 97 |
 
 ---
 
@@ -290,7 +290,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) |  |
-| [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 拆解 immer 如何用 ES6 Proxy 拦截写操作、构造 draft、最后 finalize 出新对象，并对比 Immutable |
+| [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) |  |
 | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) |  |
 | [MobX — Reactive state via TFRP](/study/projects/mobx/) |  |
 | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) |  |
@@ -457,7 +457,7 @@ sidebar:
 |---|---|
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) |  |
 | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) |  |
-| [ink](/study/projects/ink/) |  |
+| [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) |  |
 | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) |  |
 | [yargs](/study/projects/yargs/) |  |
 
@@ -495,13 +495,14 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 95 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 97 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
+| `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
@@ -536,6 +537,7 @@ sidebar:
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
+| `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
@@ -597,7 +599,7 @@ sidebar:
 
 ---
 
-## 全部 301 个（字母序）
+## 全部 303 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -605,6 +607,7 @@ sidebar:
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
+| `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
 | `anime` | [anime.js — 一行 JS 让网页元素按时间线动起来](/study/projects/anime/) | 动画 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
@@ -692,6 +695,7 @@ sidebar:
 | `got` | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
+| `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | 其他 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | 其他 |
@@ -700,10 +704,10 @@ sidebar:
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | i18n 国际化 |
-| `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
+| `immer` | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | 数据应用 / SaaS |
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
-| `ink` | [ink](/study/projects/ink/) | CLI / 命令行工具 |
+| `ink` | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | 其他基础设施 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
 | `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |

@@ -155,3 +155,6 @@ const back = applyPatches(next, inverse)  // back deepEquals base
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[valtio]] —— valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库
+

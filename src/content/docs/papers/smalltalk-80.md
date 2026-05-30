@@ -158,6 +158,7 @@ SavingsAccount >> deposit: amount
 - [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
+- [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

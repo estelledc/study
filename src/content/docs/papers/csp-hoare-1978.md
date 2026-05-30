@@ -153,6 +153,7 @@ case v := <-chB: handleB(v)
 
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
