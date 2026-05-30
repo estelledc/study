@@ -155,6 +155,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统

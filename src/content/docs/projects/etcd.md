@@ -132,6 +132,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则

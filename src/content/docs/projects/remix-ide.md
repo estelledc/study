@@ -162,6 +162,7 @@ contract HelloTest {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anchor]] —— Anchor — Solana 合约开发框架
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端

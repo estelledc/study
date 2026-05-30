@@ -171,6 +171,8 @@ function Greeting({ name }) {
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
+- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
+- [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[next-js]] —— Next.js — React 全栈框架

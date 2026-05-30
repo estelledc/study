@@ -149,6 +149,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[anchor]] —— Anchor — Solana 合约开发框架
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池

@@ -158,5 +158,6 @@ projection P2: (date, region, amount) 按 date 排序
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
 

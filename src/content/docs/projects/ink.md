@@ -150,3 +150,8 @@ test('counter increments', () => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boxen]] —— boxen — 给终端文本套个边框的事
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[enquirer]] —— enquirer — 让 CLI 工具会问问题的轻量库
+
