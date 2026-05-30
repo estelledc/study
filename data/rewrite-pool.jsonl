@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"konva","area":"projects","path":"src/content/docs/projects/konva.md","score":3,"reasons":["lines:708>250","h2-hits:2/11"],"lines":708,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"ky","area":"projects","path":"src/content/docs/projects/ky.md","score":3,"reasons":["lines:509>250","h2-hits:2/11"],"lines":509,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lingui","area":"projects","path":"src/content/docs/projects/lingui.md","score":3,"reasons":["lines:684>250","h2-hits:2/11"],"lines":684,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"listr2","area":"projects","path":"src/content/docs/projects/listr2.md","score":3,"reasons":["lines:533>250","h2-hits:0/11"],"lines":533,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lucia","area":"projects","path":"src/content/docs/projects/lucia.md","score":3,"reasons":["lines:526>250","h2-hits:1/11"],"lines":526,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}

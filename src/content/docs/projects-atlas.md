@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 309 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 311 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：309 个
+- **总数**：311 个
 - **已分类**：206
-- **未分类**：103（落入"其他 / 待分类"段）
+- **未分类**：105（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 103 |
+| [其他 / 待分类](#其他--待分类) | 105 |
 
 ---
 
@@ -124,7 +124,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) |  |
-| [Lingui 编译期提取的 React i18n](/study/projects/lingui/) |  |
+| [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) |  |
 | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) |  |
 | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) |  |
 | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) |  |
@@ -470,7 +470,7 @@ sidebar:
 | [boxen — 给终端文本套个边框的事](/study/projects/boxen/) |  |
 | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) |  |
 | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) |  |
-| [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) |  |
+| [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) |  |
 | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
 
 ## Drag & Drop / Interaction
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 103 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 105 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -516,6 +516,7 @@ sidebar:
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
+| `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
@@ -588,6 +589,7 @@ sidebar:
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
+| `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
@@ -605,7 +607,7 @@ sidebar:
 
 ---
 
-## 全部 309 个（字母序）
+## 全部 311 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -641,6 +643,7 @@ sidebar:
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | 其他 |
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
+| `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) | 其他 |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
@@ -744,8 +747,8 @@ sidebar:
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |
 | `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | 构建工具 / Bundler |
-| `lingui` | [Lingui 编译期提取的 React i18n](/study/projects/lingui/) | i18n 国际化 |
-| `listr2` | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) | Terminal / 终端 |
+| `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | i18n 国际化 |
+| `listr2` | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | Terminal / 终端 |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
@@ -859,6 +862,7 @@ sidebar:
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |
 | `stylex` | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
+| `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | 其他 |
 | `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |

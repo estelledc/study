@@ -151,6 +151,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
