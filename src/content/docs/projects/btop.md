@@ -150,6 +150,7 @@ git add btop/btop.conf && git commit -m 'sync btop config'
 - [[bat]] —— bat — 现代 cat 替代
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
+- [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 - [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）

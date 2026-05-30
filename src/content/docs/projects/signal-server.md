@@ -157,6 +157,7 @@ Signal 做法：
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
 - [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见

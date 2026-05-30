@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 304 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 307 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：304 篇
+- **总数**：307 篇
 - **已分类**：143
-- **未分类**：161（落入"其他 / 待分类"段）
+- **未分类**：164（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 161 |
+| [其他 / 待分类](#其他--待分类) | 164 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 161 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 164 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -328,6 +328,7 @@ sidebar:
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) |
+| `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) |
 | `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
@@ -349,6 +350,7 @@ sidebar:
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
 | `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) |
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |
+| `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
@@ -397,6 +399,7 @@ sidebar:
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
+| `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
@@ -472,7 +475,7 @@ sidebar:
 
 ---
 
-## 全部 304 篇（字母序）
+## 全部 307 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -516,6 +519,7 @@ sidebar:
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | 其他 |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) | 其他 |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | 其他 |
+| `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) | 其他 |
 | `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | GC / 内存管理 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
@@ -561,6 +565,7 @@ sidebar:
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) | 其他 |
 | `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dns` | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) | 网络协议 |
+| `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) | 其他 |
 | `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
 | `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
@@ -638,6 +643,7 @@ sidebar:
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | 其他 |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
+| `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |

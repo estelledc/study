@@ -147,5 +147,5 @@ cd ../webapp && make run  # 前端 dev server
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（首次创建，等其他笔记引用后会自动出现）
+（暂无反向链接）
 

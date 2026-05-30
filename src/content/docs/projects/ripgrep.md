@@ -150,6 +150,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fd]] —— fd — Rust 写的现代 find
