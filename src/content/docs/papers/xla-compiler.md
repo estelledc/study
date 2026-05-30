@@ -158,5 +158,12 @@ f(jnp.ones(5))   # ⚠️ 又重新编译
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+- [[ssa]] —— SSA — 静态单赋值形式
+- [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
+- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 

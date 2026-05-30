@@ -135,6 +135,7 @@ B+Tree 的执行路径：
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
+- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树

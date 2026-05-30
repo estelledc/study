@@ -162,12 +162,16 @@ opts.compaction_style = rocksdb.kCompactionStyleLevel    # 写多读少
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
+- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

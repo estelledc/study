@@ -167,3 +167,6 @@ const auth = createMachine({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[zustand]] —— Zustand — 极简 React 状态管理
+
