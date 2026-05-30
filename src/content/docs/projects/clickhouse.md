@@ -146,6 +146,7 @@ ORDER BY date;
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[grafana]] —— Grafana — 监控可视化看板

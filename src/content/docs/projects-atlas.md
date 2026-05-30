@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 263 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 265 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：263 个
+- **总数**：265 个
 - **已分类**：206
-- **未分类**：57（落入"其他 / 待分类"段）
+- **未分类**：59（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 57 |
+| [其他 / 待分类](#其他--待分类) | 59 |
 
 ---
 
@@ -374,7 +374,7 @@ sidebar:
 | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) |  |
 | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) |  |
 | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) |  |
-| [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | 框架/SDK 范例 (v1 |
+| [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) |  |
 | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | TypeScript + Fastify + puppeteer-core，让 LLM agent 像调外部 SaaS 一样用浏览器 |
 
 ## 可观测 / 性能
@@ -411,7 +411,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) |  |
-| [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 反 npm install 范式：组件源码直接复制进你的项目，让你 own 它 |
+| [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) |  |
 
 ## Markdown / 解析
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 57 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 59 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -527,9 +527,11 @@ sidebar:
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
+| `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
+| `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
@@ -559,7 +561,7 @@ sidebar:
 
 ---
 
-## 全部 263 个（字母序）
+## 全部 265 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -662,6 +664,7 @@ sidebar:
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
 | `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | 其他 |
+| `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
 | `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
@@ -680,6 +683,7 @@ sidebar:
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lucia` | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | Auth 认证 |
 | `luxon` | [luxon TZ + i18n 现代 Moment 替代](/study/projects/luxon/) | 日期时间 |
+| `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | 其他 |
 | `markdown-it` | [markdown-it CommonMark 兼容的可插拔 Markdown 解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) | Markdown / 解析 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
@@ -760,14 +764,14 @@ sidebar:
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | 其他 |
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
-| `shadcn-ui` | [shadcn/ui — 把组件库变成"代码源 + CLI 包管协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
+| `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
 | `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | 数据库本体 / 存储引擎 |
-| `stagehand` | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | AI 浏览器自动化 |
+| `stagehand` | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | 其他 |
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |

@@ -158,4 +158,5 @@ safeHead (Cons x _) = x
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 

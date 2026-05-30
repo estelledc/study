@@ -160,6 +160,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"

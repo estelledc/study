@@ -134,9 +134,10 @@ else
   wait
 fi
 
-# 8. sync-written 同步索引
+# 8. sync-written 同步索引 + rebuild rewrite-pool（已 rewrite 的从 available 摘掉）
 if [[ "$DRY_RUN" -eq 0 ]]; then
   node "$ROOT/scripts/sync-written.mjs" >/dev/null 2>&1
+  node "$ROOT/scripts/build-rewrite-pool.mjs" --incremental >/dev/null 2>&1
 fi
 
 NEW_HEAD=$(git rev-parse --short HEAD)

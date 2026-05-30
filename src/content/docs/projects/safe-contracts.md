@@ -168,6 +168,7 @@ const predictedAddr = await calculateProxyAddress({
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
+- [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 

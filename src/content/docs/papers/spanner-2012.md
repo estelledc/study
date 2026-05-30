@@ -151,6 +151,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树

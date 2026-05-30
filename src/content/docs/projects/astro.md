@@ -210,6 +210,7 @@ export const collections = { blog }
 - [[preact]] —— Preact — 3KB React 替代
 - [[react]] —— React UI 组件库
 - [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
+- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[svelte]] —— Svelte — 编译时 UI 框架

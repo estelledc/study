@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 191 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 193 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：191 篇
+- **总数**：193 篇
 - **已分类**：143
-- **未分类**：48（落入"其他 / 待分类"段）
+- **未分类**：50（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 48 |
+| [其他 / 待分类](#其他--待分类) | 50 |
 
 ---
 
@@ -172,7 +172,7 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) |  |
-| [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 状元篇 - FlashAttention 用 tiling + recomputation 把 attention 在 SRAM 里 fuse 成单一 kernel，避免 N×N 矩阵物化，让显存从二次降为线性，2-4… |
+| [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) |  |
 | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) |  |
 | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 状元篇 - vLLM 把操作系统分页思想搬进 KV cache 管理，固定大小 block + 间接寻址 + 引用计数共享，让显存利用率从 60-80% 跳到 96%，吞吐 2-4x，是 LLM 推理的标准方案 |
 
@@ -195,7 +195,7 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) |  |
-| [eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑](/study/papers/ebpf/) | 1993 cBPF 起源 + 2014 Starovoitov 把它扩成内核通用扩展机制 |
+| [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) |  |
 | [GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利](/study/papers/gfs/) | Google 不为通用工作负载设计存储——他们观察到大文件 / append-mostly / 节点常态故障，倒推 POSIX 该砍什么 |
 | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | Jens Axboe 2019 在 Linux 5 |
 | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | 用户只写 map + reduce 两个函数，框架自动 parallelize / distribute / fault-tolerate |
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 48 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 50 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -313,6 +313,7 @@ sidebar:
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
+| `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
@@ -354,12 +355,13 @@ sidebar:
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
+| `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) |
 | `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 
 ---
 
-## 全部 191 篇（字母序）
+## 全部 193 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -383,6 +385,7 @@ sidebar:
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
 | `bigtable` | [Bigtable — Google 把行级随机读写做到 PB 级的存储](/study/papers/bigtable/) | 数据库 |
+| `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 其他 |
 | `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
@@ -422,11 +425,11 @@ sidebar:
 | `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
 | `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
-| `ebpf` | [eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
+| `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
-| `flash-attention` | [FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness](/study/papers/flash-attention/) | 分布式训练 / GPU |
+| `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `foundationdb` | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) | 数据库 |
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | 其他 |
@@ -543,6 +546,7 @@ sidebar:
 | `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 智能体与 LLM 系统 |
 | `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
+| `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) | 其他 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |

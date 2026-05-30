@@ -148,5 +148,12 @@ comet.buyCollateral(WETH, 0, 1e18, msg.sender);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

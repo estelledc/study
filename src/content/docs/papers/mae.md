@@ -133,6 +133,7 @@ MAE 是这条线上"视觉 BERT 终于跑通"的那篇。
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[dino]] —— DINO 自监督视觉 transformer
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
 - [[vit]] —— ViT — Vision Transformer

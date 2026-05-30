@@ -157,6 +157,7 @@ export default Page
 - [[prisma]] —— Prisma — 类型安全 ORM
 - [[react]] —— React UI 组件库
 - [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
+- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架

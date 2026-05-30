@@ -179,5 +179,9 @@ client.preparedQuery("SELECT id FROM users WHERE name=$1").execute(Tuple.of("ali
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 

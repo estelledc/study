@@ -174,5 +174,8 @@ Sentry.init({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[react]] —— React UI 组件库
 
