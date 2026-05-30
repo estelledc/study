@@ -165,6 +165,7 @@ def main():
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 

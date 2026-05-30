@@ -150,4 +150,5 @@ public record(delta: StoreDelta) {
 
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 

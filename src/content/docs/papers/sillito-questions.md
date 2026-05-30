@@ -148,3 +148,7 @@ Q42 How do I know I did not break something?  → CI + 测试报告 + diff 截�
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
+

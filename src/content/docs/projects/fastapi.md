@@ -189,4 +189,5 @@ def me(user: dict = Depends(current_user)):
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

@@ -151,5 +151,11 @@ virtual OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 

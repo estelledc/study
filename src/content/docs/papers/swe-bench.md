@@ -163,5 +163,6 @@ python -m swebench.harness.run_evaluation \
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[react]] —— React UI 组件库
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
+- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 

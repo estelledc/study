@@ -156,6 +156,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
@@ -187,6 +188,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式
@@ -197,4 +199,5 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

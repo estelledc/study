@@ -149,5 +149,9 @@ ms.autoSuggest('cat fo', { fuzzy: 0.2 })
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+- [[starlight]] —— Starlight — Astro 文档站点主题
 

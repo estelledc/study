@@ -110,6 +110,7 @@ no-silver-bullet
 openhands
 pair-programming
 paxos
+peyton-jones-stg
 plotkin-sos
 polar-codes-2009
 ppo
@@ -167,6 +168,7 @@ turing-1936
 vit
 vllm
 volcano
+volcano-1994
 voyager
 wadler-prettier
 word2vec
@@ -291,6 +293,7 @@ markdown-it
 marked
 mcp-ts-sdk
 meilisearch
+metamask
 micromark
 midscene
 mikro-orm
@@ -353,6 +356,7 @@ redis
 remix
 remix-ide
 ripgrep
+rocket
 rolldown
 rollup
 rspack

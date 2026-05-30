@@ -166,6 +166,7 @@ async def highlight(params: HighlightParams, browser_session):
 
 - [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
+- [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
 
