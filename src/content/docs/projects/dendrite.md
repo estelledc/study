@@ -158,6 +158,7 @@ go run ./cmd/dendrite-demo-pinecone --listen :8008
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
+- [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

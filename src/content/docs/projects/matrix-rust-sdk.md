@@ -152,5 +152,10 @@ let plaintext = machine.decrypt_room_event(&event, &room_id).await?;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
+- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 

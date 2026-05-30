@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 352 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 355 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：352 个
+- **总数**：355 个
 - **已分类**：206
-- **未分类**：146（落入"其他 / 待分类"段）
+- **未分类**：149（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 146 |
+| [其他 / 待分类](#其他--待分类) | 149 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 146 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 149 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -578,9 +578,11 @@ sidebar:
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
+| `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
+| `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
@@ -590,6 +592,7 @@ sidebar:
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
+| `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
@@ -648,7 +651,7 @@ sidebar:
 
 ---
 
-## 全部 352 个（字母序）
+## 全部 355 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -819,6 +822,7 @@ sidebar:
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | 其他 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
+| `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) | 其他 |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | 其他 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
@@ -827,6 +831,7 @@ sidebar:
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) | 其他 |
 | `midscene` | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
+| `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | 其他 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
@@ -861,6 +866,7 @@ sidebar:
 | `ora` | [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
+| `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | 其他 |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |

@@ -40,6 +40,7 @@ cheney-gc
 chinchilla
 chubby
 ci-effects
+clarke-emerson-1981
 clickhouse
 clip
 cockroachdb-2020
@@ -104,6 +105,7 @@ gpt-3
 graalvm-truffle
 gradual-typing
 graphrag
+gray-1978-notes
 gray-1981-transaction
 great-swe
 halide
@@ -268,6 +270,7 @@ voyager
 vr-1988
 vr-revisited-2012
 wadler-prettier
+wam-warren
 word2vec
 xla-compiler
 zab-2011
@@ -307,6 +310,7 @@ better-auth
 biome
 bitcoin-core
 boxen
+broot
 browser-use
 bullmq
 bun
@@ -441,6 +445,7 @@ luxon
 makerdao
 markdown-it
 marked
+matrix-rust-sdk
 mcp-ts-sdk
 meilisearch
 metamask
@@ -469,6 +474,7 @@ next-intl
 next-js
 nextra
 nginx
+numpy
 nuxt
 nx
 observable-plot

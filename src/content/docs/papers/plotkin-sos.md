@@ -173,5 +173,6 @@ def step(prog, state):
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

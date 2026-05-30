@@ -193,6 +193,7 @@ let app = Router::new()
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
+- [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
