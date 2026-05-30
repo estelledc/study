@@ -179,5 +179,6 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

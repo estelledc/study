@@ -160,6 +160,7 @@ test('counter increments', () => {
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
+- [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
 - [[react]] —— React UI 组件库
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 

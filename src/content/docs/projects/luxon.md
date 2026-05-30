@@ -150,3 +150,9 @@ start2.plus(d).toISODate(); // '2026-05-30'
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
+- [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
+- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+

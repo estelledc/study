@@ -187,6 +187,7 @@ async fn signup(form: web::Json<Signup>) -> String {
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
+- [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架

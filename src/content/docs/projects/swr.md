@@ -153,6 +153,7 @@ middleware 自己**就是一个 hook**——里面可以调 `useEffect / useRef`
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
 - [[preact]] —— Preact — 3KB React 替代
 - [[react]] —— React UI 组件库
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库

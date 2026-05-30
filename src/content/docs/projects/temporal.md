@@ -167,5 +167,6 @@ export async function bookTrip(tripId: string) {
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
+- [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 

@@ -202,6 +202,7 @@ export const collections = { blog }
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
+- [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 - [[micromark]] —— micromark 流式 CommonMark 状态机解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架

@@ -201,4 +201,5 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
+- [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
 
