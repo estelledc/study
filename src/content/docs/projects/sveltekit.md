@@ -153,6 +153,7 @@ export const load = async () => ({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[react]] —— React UI 组件库

@@ -153,6 +153,7 @@ P(false) ≈ heap_size / address_space / alignment
 - [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
+- [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生

@@ -170,4 +170,5 @@ await starknet.account.execute([
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 - [[zk-snark]] —— zk-SNARK 零知识证明
+- [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
 

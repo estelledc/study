@@ -181,7 +181,7 @@ function LoginForm() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arktype]] —— arktype TypeScript 字符串 DSL 模式校验
+- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[axios]] —— axios Promise-based HTTP 客户端
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
@@ -198,6 +198,7 @@ function LoginForm() {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库

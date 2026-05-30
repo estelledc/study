@@ -167,6 +167,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
+- [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化

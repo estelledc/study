@@ -192,4 +192,5 @@ end
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
+- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 

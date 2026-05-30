@@ -149,5 +149,10 @@ stone-prover prove --trace trace.bin --output proof.json
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
+- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
+- [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

@@ -161,4 +161,5 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[zk-snark]] —— zk-SNARK 零知识证明
+- [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
 

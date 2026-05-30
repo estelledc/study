@@ -200,5 +200,6 @@ management:
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 

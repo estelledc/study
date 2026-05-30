@@ -197,6 +197,7 @@ let app = Router::new()
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
+- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架

@@ -157,5 +157,9 @@ notes.set('note-1', { title: '...', body: '...' })
 
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 
