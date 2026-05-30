@@ -158,5 +158,9 @@ job.apply_async()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
+- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[redis]] —— Redis — 内存键值数据库
+- [[temporal]] —— Temporal — 持久化工作流引擎
 

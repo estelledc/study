@@ -192,7 +192,7 @@ function Greeting({ name }) {
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
-- [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
+- [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法

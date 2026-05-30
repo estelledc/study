@@ -163,4 +163,5 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
 

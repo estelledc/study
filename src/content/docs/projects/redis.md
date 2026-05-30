@@ -140,6 +140,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器

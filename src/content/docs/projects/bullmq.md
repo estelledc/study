@@ -152,6 +152,7 @@ await queue.add('daily-report', {}, {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
