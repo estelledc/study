@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 185 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 187 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：185 篇
+- **总数**：187 篇
 - **已分类**：143
-- **未分类**：42（落入"其他 / 待分类"段）
+- **未分类**：44（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 42 |
+| [其他 / 待分类](#其他--待分类) | 44 |
 
 ---
 
@@ -155,7 +155,7 @@ sidebar:
 | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) |  |
 | [Bigtable — Google 把行级随机读写做到 PB 级的存储](/study/papers/bigtable/) |  |
 | [Calvin — 不要每次都协商，先排好顺序大家照做](/study/papers/calvin/) |  |
-| [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | VLDB 2024 ClickHouse 论文精读 — 列存 + vectorized + MergeTree 如何把 OLAP 推到极致 |
+| [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) |  |
 | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) |  |
 | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) |  |
 | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) |  |
@@ -207,7 +207,7 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) |  |
-| [A Nonrecursive List Compacting Algorithm（Cheney 1970，Copying GC 始祖）](/study/papers/cheney-gc/) | 状元篇 - Cheney 1970 用两片 semi-space 加 BFS scan 实现 copying GC，把递归 mark-and-sweep 换成迭代式 copy + forwarding pointer，… |
+| [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) |  |
 | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) |  |
 | [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) |  |
 | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) |  |
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 42 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 44 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -341,6 +341,7 @@ sidebar:
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
+| `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
@@ -350,10 +351,11 @@ sidebar:
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 | `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) |
+| `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 
 ---
 
-## 全部 185 篇（字母序）
+## 全部 187 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -385,11 +387,11 @@ sidebar:
 | `calvin` | [Calvin — 不要每次都协商，先排好顺序大家照做](/study/papers/calvin/) | 数据库 |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
-| `cheney-gc` | [A Nonrecursive List Compacting Algorithm（Cheney 1970，Copying GC 始祖）](/study/papers/cheney-gc/) | GC / 内存管理 |
+| `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | GC / 内存管理 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
 | `ci-effects` | [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
-| `clickhouse` | [ClickHouse Lightning Fast Analytics 状元篇](/study/papers/clickhouse/) | 数据库 |
+| `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
@@ -491,6 +493,7 @@ sidebar:
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 其他 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
+| `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 其他 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
@@ -540,5 +543,6 @@ sidebar:
 | `voyager` | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | 智能体与 LLM 系统 |
 | `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
+| `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | 其他 |
 | `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | GC / 内存管理 |
 | `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |

@@ -164,6 +164,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[penpot]] —— Penpot — 开源自托管的 Figma 替代
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[pulsar]] —— Apache Pulsar — 云原生消息队列
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展

@@ -117,6 +117,7 @@ openhands
 pair-programming
 paxos
 paxos-1998
+paxos-simple-2001
 peyton-jones-stg
 plotkin-sos
 polar-codes-2009
@@ -138,6 +139,7 @@ reynolds-definitional-interpreters
 rlhf-christiano
 rocksdb-lsm
 rsa
+sagiv-shape-analysis
 salsa-adapton
 sam
 scaling-laws
@@ -286,6 +288,7 @@ ky
 kysely
 langchain
 langfuse
+ledger-app-sdk
 lerna
 lexical
 librechat
@@ -381,6 +384,7 @@ sharp
 shiki
 solid
 sortablejs
+spring-boot
 sqlite
 stagehand
 starlette

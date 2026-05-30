@@ -143,6 +143,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[podman]] —— Podman — 无 daemon 容器引擎
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[traefik]] —— Traefik — 现代云原生反向代理

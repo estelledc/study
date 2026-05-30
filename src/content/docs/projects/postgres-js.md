@@ -151,5 +151,10 @@ await sql.notify('order_created', JSON.stringify({ id: 42 }))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bun]] —— Bun — JS 全能运行时
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[prisma]] —— Prisma — 类型安全 ORM
+- [[redis]] —— Redis — 内存键值数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
 

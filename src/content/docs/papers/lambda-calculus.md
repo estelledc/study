@@ -148,6 +148,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
+- [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
@@ -176,7 +177,6 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

@@ -183,5 +183,6 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 

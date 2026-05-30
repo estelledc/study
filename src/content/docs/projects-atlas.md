@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 257 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 259 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：257 个
+- **总数**：259 个
 - **已分类**：206
-- **未分类**：51（落入"其他 / 待分类"段）
+- **未分类**：53（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 51 |
+| [其他 / 待分类](#其他--待分类) | 53 |
 
 ---
 
@@ -320,7 +320,7 @@ sidebar:
 | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) |  |
 | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | Lexical 用 native browser selection + immutable EditorState + dirty-set reconciler，把 contentEditable 从"性能黑盒"压回… |
 | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) |  |
-| [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | ProseMirror 用强 schema + Step + immutable State 把"在 contentEditable 上做协同富文本"从玄学变成可证明正确 |
+| [ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架](/study/projects/prosemirror/) |  |
 | [yjs — collaborative editing 不应该锁住编辑器，CRDT 抽象层让任何编辑器都能接](/study/projects/yjs/) | Kevin Jahns 把 CRDT 从论文工艺做成工业基建 |
 
 ## 文档站点
@@ -384,7 +384,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [pino — 日志不该阻塞热路径](/study/projects/pino/) |  |
-| [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 把指标分四类（Counter / Gauge / Histogram / Summary），主线程零格式化累加，scrape 时一次性序列化为 OpenMetrics 文本 |
+| [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) |  |
 | [Sentry — 不是「日志收集器」，是「把崩溃当作可查询的列存事件」的双层数据库错误监控平台](/study/projects/sentry/) | 大型应用范例——38k+ stars 的开源错误监控平台，Python + Django + ClickHouse + TypeScript，事件 ingest / grouping / Snuba 抽象三轨精读 |
 | [web-vitals — 不是「测速工具」，是把 Chrome UX Report 的指标定义在浏览器端等值复刻的协议库](/study/projects/web-vitals/) | 工具库范例——8 |
 | [why-did-you-render — 把 React 的"假更新"从口头警告变成可定位的诊断对象](/study/projects/why-did-you-render/) | monkey-patch React |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 51 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 53 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -535,6 +535,7 @@ sidebar:
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
+| `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
@@ -548,12 +549,13 @@ sidebar:
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
+| `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 
 ---
 
-## 全部 257 个（字母序）
+## 全部 259 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -721,12 +723,13 @@ sidebar:
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
 | `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
-| `prom-client` | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
+| `prom-client` | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
-| `prosemirror` | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | 编辑器 / 富文本 |
+| `prosemirror` | [ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架](/study/projects/prosemirror/) | 编辑器 / 富文本 |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) | 其他 |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) | 其他 |
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
+| `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) | 其他 |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
@@ -788,6 +791,7 @@ sidebar:
 | `typeorm` | [TypeORM — Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
 | `unified` | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) | Markdown / 解析 |
+| `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) | 其他 |
 | `unstorage` | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `valibot` | [valibot 模块化模式校验](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
