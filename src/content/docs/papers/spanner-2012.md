@@ -1,0 +1,150 @@
+---
+title: Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+来源: 'Corbett et al., "Spanner: Google''s Globally-Distributed Database", OSDI 2012'
+日期: 2026-05-30
+分类: 分布式系统
+难度: 高级
+---
+
+## 是什么
+
+Spanner 是 **Google 把数据库摊到全球多个机房、还能跑强一致事务**的一套系统。日常类比：你和朋友分别在北京、纽约、伦敦记账本，三人都得同意"先收钱再发货"这个顺序——Spanner 让三个城市的账本看起来像一本，还知道哪笔记录在前哪笔在后。
+
+最难的不是复制数据（Paxos 早就会了），而是**给全球分布的事务一个公认的时间戳**。北京的服务器钟和纽约的不可能完全对齐，毫秒级偏差就能让"先收钱"和"先发货"颠倒。
+
+Spanner 的解法叫 **TrueTime**：每个数据中心装 GPS 接收器和原子钟，软件不再问"现在几点"，而是问"现在的真实时间一定落在 [earliest, latest] 这个区间里"。区间宽度 epsilon 通常 1-7ms。事务 commit 时**等满 epsilon** 再放锁，就能保证它的时间戳已经是绝对过去——后到的事务一定拿到更大的时间戳。
+
+## 为什么重要
+
+不理解 Spanner，下面这些事都没法解释：
+
+- 为什么 CockroachDB / YugabyteDB / TiDB / FoundationDB 这一波 NewSQL 几乎都在抄它的设计
+- 为什么 Google AdWords（F1）能把扣费数据从 MySQL 拆到全球还不重复扣
+- 为什么 "external consistency" 这个词突然在 2012 后火起来——它比线性一致还多一层
+- 为什么 "时钟"这个最不像计算机问题的东西，会成为分布式数据库的瓶颈
+
+## 核心要点
+
+Spanner 的设计可以拆成 **三件大事**：
+
+1. **数据切成 tablet 放进 Paxos group**：每个 group 是一组副本，跨机房跑 Paxos 选 leader 写日志。类比：每条街开一个分行，分行内部三个柜员投票决定账本写不写。
+
+2. **跨 group 事务用 2PC**：一个事务可能动两条街的账本，需要两阶段提交协调。Paxos 让 2PC 的协调者本身可容错——这是相对早期 2PC 的关键改进。
+
+3. **TrueTime 给事务发时间戳 + commit wait**：写事务拿到 TT.now().latest 当时间戳 s，**等到 TT.after(s) 才放锁**。等待的本质：让墙上的真实时间确定大于 s，这样后续事务的时间戳一定比 s 大。这一步叫 **commit wait**。
+
+读 read-only 事务挑一个 safe timestamp 直接快照读，**完全不用锁**——MVCC 让它和写并发不冲突，全局时间戳让它能跨 group 取一致视图。
+
+## 实践案例
+
+### 案例 1：跨机房扣广告费的强一致
+
+F1（AdWords 后端）把账户表分到全球。用户在欧洲点击广告，扣费写在欧洲机房，但月底结算要全球求和。
+
+```sql
+-- 写事务（commit timestamp = s）
+BEGIN;
+  UPDATE accounts SET balance = balance - 0.05 WHERE id = 'advertiser-42';
+COMMIT;  -- Spanner 等 commit wait 后才返回成功
+```
+
+逐部分解释：
+
+- BEGIN 拿到读 timestamp，UPDATE 走 Paxos 写一份多数派副本
+- COMMIT 时 leader 选时间戳 s = TT.now().latest，等到 TT.after(s)（约 5ms）才告诉客户端成功
+- 任何后到的事务（哪怕在亚洲发起）拿到的时间戳一定 > s，**永远不会出现 "我先扣的钱反而记成后到"** 这种灾难
+
+### 案例 2：read-only 事务无锁快照
+
+```sql
+-- 报表查询，不需要锁
+BEGIN READ ONLY;
+  SELECT SUM(balance) FROM accounts;  -- 快照在 t = TT.now().earliest
+COMMIT;
+```
+
+逐部分解释：
+
+- 读事务挑 t = TT.now().earliest，意思是"绝对已经过去的某个时刻"
+- Spanner 在每个副本本地读 t 时刻的 MVCC 版本——多副本读不需要协调
+- 跨 group 求和时，每个 group 独立返回 t 时刻的快照，加起来就是一致总和
+- 完全不阻塞写事务，写事务也不阻塞它
+
+### 案例 3：commit wait 的时序图
+
+```
+T1: leader 选 s=100, TT.now()=[95,105]
+T1: 写日志、Paxos 多数派 ack（耗时 3ms）
+T1: commit wait —— 等到 TT.now().earliest > 100 (再等 ~2ms)
+T1: 客户端收到 ACK，本次事务时间戳 = 100
+
+T2: 此时 TT.now()=[101,107]，挑 s=107
+    s=107 > 100，T2 严格在 T1 之后
+```
+
+commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的——延迟稍长，但全球时间戳完全可信。
+
+## 踩过的坑
+
+1. **以为 TrueTime 把时钟变准了**——它没有，它只是把不确定性显式建模成区间。所有写事务都要等满 epsilon，这是吞吐天花板：epsilon 越大、写延迟越高。
+
+2. **跨 Paxos group 用 2PC 放大故障**——单 group 内事务延迟 ~10ms，跨 group 因为 2PC 协调多一轮 RTT，跨大洲事务可达 100ms。设计 schema 时尽量把热点行放同一 group。
+
+3. **单数据中心部署反而吃亏**——commit wait 在低延迟环境没意义，纯属额外开销，本地业务直接用 PostgreSQL/MySQL 更划算。Spanner 是为跨地域设计的。
+
+4. **依赖 GPS 信号和原子钟**——普通云机房没这种硬件，自建 Spanner-like 系统得用 NTP + Hybrid Logical Clock 替代，epsilon 从 ms 变成秒级，吞吐和延迟都会差一个数量级。
+
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 跨大洲多机房、要求强一致 ACID 事务的业务（广告扣费、支付、订单）
+- 数据规模超过单机能撑（TB-PB），又不想牺牲事务的关系型场景
+- 需要外部一致性（external consistency）的金融/审计——比线性一致更严
+- 大量 read-only 报表查询，不想阻塞写——MVCC 快照读完美适配
+
+**不适用**：
+
+- 单数据中心、毫秒延迟敏感的小型 OLTP → 用 [[aurora]] / PostgreSQL
+- 写多读少的 KV 场景，不需要跨行事务 → 用 [[bigtable]] / [[dynamo]]
+- 没法部署 GPS+原子钟的私有云 → 用 [[foundationdb]]（不依赖物理时钟）/ [[calvin]]（确定性事务）
+- 分析型查询为主、强一致不重要 → 用 ClickHouse / BigQuery
+
+## 历史小故事（可跳过）
+
+- **2006 年**：[[bigtable]] 论文发表，证明 KV 大表能扩到 PB 级，但**不支持跨行事务**——业务方苦不堪言
+- **2008-2010 年**：Google 内部 Megastore 给 BigTable 加 Paxos 同步多副本+跨行事务，但写延迟 100-400ms 严重不可用
+- **2011 年**：F1 团队（AdWords）开始把 MySQL 后端迁到 Spanner，倒逼 Spanner 加 SQL 接口
+- **2012 年**：OSDI 论文 Best Paper，Spanner 公开 TrueTime + 全球外部一致性这套设计
+- **2013 年起**：CockroachDB（2014）、YugabyteDB（2017）、TiDB（2016）相继开源，几乎都是 Spanner 的开源克隆
+
+## 学到什么
+
+1. **物理硬件可以参与软件设计**——把"时钟同步"这个看似纯软件的问题外包给 GPS + 原子钟，省下大量协议复杂度
+2. **不确定性显式建模比假装精确更可靠**——TrueTime 不报"现在 X 点"而报区间，工程上反而更稳
+3. **Paxos + 2PC 的组合**：Paxos 解决"单组容错复制"、2PC 解决"多组事务协调"，这是后来所有分布式数据库的范式
+4. **NewSQL 的开端**：证明了"全球扩展"和"强一致 SQL"不是二选一，CAP 不等于必须放弃 C
+
+## 延伸阅读
+
+- 论文 PDF：[Spanner OSDI 2012](https://research.google.com/archive/spanner-osdi2012.pdf)（14 页，第 4 节 TrueTime 必读）
+- 视频：[Designing Data-Intensive Applications — Spanner 章节](https://www.youtube.com/results?search_query=spanner+truetime)（Martin Kleppmann 讲解 TrueTime）
+- 论文：F1 SIGMOD 2013（Spanner 的第一个真实业务，AdWords 后端）
+- [[paxos-1998]] —— Spanner 单 group 内的复制协议
+- [[bigtable]] —— Spanner 的前身，相同 sharding 思路但无事务
+- [[chubby]] —— Spanner 内部用它做配置和锁服务
+
+## 关联
+
+- [[bigtable]] —— Spanner 的直接前身，把 KV 大表扩展到事务 + SQL
+- [[paxos-1998]] —— Spanner 每个 tablet group 内部跑 Paxos 选 leader 复制日志
+- [[lamport-1978]] —— 全局事件偏序的奠基论文，Spanner 用物理时钟把它换成全序
+- [[chubby]] —— Spanner 用它存元数据和分布式锁
+- [[gfs]] —— Google 文件系统，Spanner 的 tablet 数据存在它上面（后来换成 Colossus）
+- [[aurora]] —— AWS 的对照系——单 region 优化、不做全球 TrueTime
+- [[foundationdb]] —— 另一种 NewSQL 路线：不依赖物理时钟，用 deterministic transaction
+- [[calvin]] —— 第三种思路：先排定全局事务顺序，再各副本本地执行
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
