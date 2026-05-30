@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 292 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 295 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：292 篇
+- **总数**：295 篇
 - **已分类**：143
-- **未分类**：149（落入"其他 / 待分类"段）
+- **未分类**：152（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 149 |
+| [其他 / 待分类](#其他--待分类) | 152 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 149 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 152 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -326,6 +326,7 @@ sidebar:
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |
+| `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
@@ -377,6 +378,7 @@ sidebar:
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
+| `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
@@ -403,6 +405,7 @@ sidebar:
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
+| `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) |
 | `paxos-simple-2001` | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) |
@@ -460,7 +463,7 @@ sidebar:
 
 ---
 
-## 全部 292 篇（字母序）
+## 全部 295 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -506,6 +509,7 @@ sidebar:
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
 | `ci-effects` | [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
+| `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) | 其他 |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) | 其他 |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) | 其他 |
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
@@ -598,6 +602,7 @@ sidebar:
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 其他 |
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
+| `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) | 其他 |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 其他 |
 | `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
@@ -646,6 +651,7 @@ sidebar:
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
 | `no-silver-bullet` | [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
+| `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |
 | `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |

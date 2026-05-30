@@ -188,6 +188,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 - [[raft]] —— Raft — 易理解的共识算法
 - [[skeen-3pc-1981]] —— Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁

@@ -165,6 +165,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招

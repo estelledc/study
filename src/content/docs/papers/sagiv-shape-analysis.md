@@ -152,6 +152,7 @@ sorted_upto(x) := ∀y.(y reachable_from list_head ∧ y ≠ x) ⇒ data(y) ≤ 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测

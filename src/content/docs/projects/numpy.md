@@ -161,6 +161,7 @@ print(a)              # a 不变
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
+- [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱

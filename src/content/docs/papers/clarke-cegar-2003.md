@@ -152,6 +152,7 @@ CEGAR 第一轮抽象不知道 `error_condition` 何时为真，过近似认为"
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行

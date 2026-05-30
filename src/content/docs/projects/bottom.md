@@ -168,5 +168,6 @@ strategy:
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
+- [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

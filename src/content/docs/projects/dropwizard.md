@@ -162,6 +162,7 @@ public class HelloConfig extends Configuration {
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
+- [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言

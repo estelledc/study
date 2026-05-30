@@ -160,6 +160,7 @@ allowed_outbound_hosts = ["https://api.github.com"]
 
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[bun]] —— Bun — JS 全能运行时
+- [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
