@@ -185,7 +185,7 @@ Bun.serve({
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hono]] —— Hono — 多运行时 Web 框架
-- [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
+- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器

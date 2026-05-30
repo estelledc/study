@@ -153,11 +153,13 @@ test('counter increments', () => {
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[enquirer]] —— enquirer — 让 CLI 工具会问问题的轻量库
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
+- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[react]] —— React UI 组件库
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 

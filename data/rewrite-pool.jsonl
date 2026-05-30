@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"jest","area":"projects","path":"src/content/docs/projects/jest.md","score":3,"reasons":["lines:417>250","h2-hits:0/11"],"lines":417,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"jimp","area":"projects","path":"src/content/docs/projects/jimp.md","score":3,"reasons":["lines:566>250","h2-hits:0/11"],"lines":566,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"js-joda","area":"projects","path":"src/content/docs/projects/js-joda.md","score":3,"reasons":["lines:449>250","h2-hits:2/11"],"lines":449,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"koa","area":"projects","path":"src/content/docs/projects/koa.md","score":3,"reasons":["lines:689>250","h2-hits:1/11"],"lines":689,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"konva","area":"projects","path":"src/content/docs/projects/konva.md","score":3,"reasons":["lines:708>250","h2-hits:2/11"],"lines":708,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}

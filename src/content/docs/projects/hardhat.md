@@ -170,6 +170,7 @@ networks: {
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包

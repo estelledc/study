@@ -156,6 +156,7 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 - [[chainlink]] —— Chainlink — 智能合约的"感官系统"
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
+- [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
