@@ -174,6 +174,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
 - [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
+- [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
 - [[epaxos-2013]] —— EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
 - [[fast-paxos-2006]] —— Fast Paxos — 给 Paxos 加一条乐观快车道
 - [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派

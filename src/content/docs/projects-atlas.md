@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 364 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 367 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：364 个
+- **总数**：367 个
 - **已分类**：206
-- **未分类**：158（落入"其他 / 待分类"段）
+- **未分类**：161（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 158 |
+| [其他 / 待分类](#其他--待分类) | 161 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 158 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 161 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -537,6 +537,7 @@ sidebar:
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
+| `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
@@ -558,6 +559,7 @@ sidebar:
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
+| `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) |
@@ -625,6 +627,7 @@ sidebar:
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
+| `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
@@ -660,7 +663,7 @@ sidebar:
 
 ---
 
-## 全部 364 个（字母序）
+## 全部 367 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -731,6 +734,7 @@ sidebar:
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
+| `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) | 其他 |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
@@ -775,6 +779,7 @@ sidebar:
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
+| `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
 | `got` | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
@@ -942,6 +947,7 @@ sidebar:
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | 其他 |
+| `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) | 其他 |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |

@@ -150,6 +150,7 @@ git add btop/btop.conf && git commit -m 'sync btop config'
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[fzf]] —— fzf — 命令行模糊查找
+- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[prometheus]] —— Prometheus — 时序监控系统

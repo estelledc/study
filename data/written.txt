@@ -41,6 +41,7 @@ cheney-gc
 chinchilla
 chubby
 ci-effects
+clarke-cegar-2003
 clarke-emerson-1981
 clickhouse
 clip
@@ -59,6 +60,7 @@ cot
 cousot-abstract-interpretation
 craq-2009
 crdt-json
+crdt-shapiro-2011
 csp-hoare-1978
 cstore-2005
 dalle-2
@@ -96,6 +98,7 @@ flexible-paxos-2016
 flink-2015
 foundationdb
 foundationdb-2021
+frank-effects
 fsrs-spaced-repetition
 fstar
 g1-collector
@@ -318,6 +321,7 @@ besu
 better-auth
 biome
 bitcoin-core
+bottom
 boxen
 broot
 browser-use
@@ -553,6 +557,7 @@ rspack
 safe-contracts
 salvo
 sanic
+scikit-learn
 scipy
 scroll
 sd
@@ -563,6 +568,7 @@ sharp
 shiki
 sia
 sidekiq
+signal-server
 sinatra
 slim-framework
 snapshot

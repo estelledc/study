@@ -150,5 +150,9 @@ Cassandra / DynamoDB 的单字段冲突解决就是 LWW。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[raft]] —— Raft — 易理解的共识算法
 
