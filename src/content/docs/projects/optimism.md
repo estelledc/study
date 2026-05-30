@@ -169,4 +169,5 @@ docker logs optimism-batcher-1 -f
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
 

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 279 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 281 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：279 个
+- **总数**：281 个
 - **已分类**：206
-- **未分类**：73（落入"其他 / 待分类"段）
+- **未分类**：75（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 73 |
+| [其他 / 待分类](#其他--待分类) | 75 |
 
 ---
 
@@ -87,7 +87,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) |  |
+| [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) |  |
 | [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) |  |
 | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) |  |
 | [valibot 模块化模式校验](/study/projects/valibot/) |  |
@@ -265,7 +265,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | 从 NextAuth |
+| [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) |  |
 | [better-auth 状元篇 — Plugin 化 TS-first 认证框架的可注册扩展思路](/study/projects/better-auth/) | 从 Auth |
 | [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | 从 Auth |
 | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | 从 v3 framework 到 v4 utility 拆分 — Lucia 主动 deprecate 自己、把 session 推回 ~150 行手写、把 OAuth/cookie/crypto 拆到 oslo + … |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 73 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 75 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -565,6 +565,7 @@ sidebar:
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
+| `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
@@ -572,10 +573,11 @@ sidebar:
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
+| `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
 
 ---
 
-## 全部 279 个（字母序）
+## 全部 281 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -590,9 +592,9 @@ sidebar:
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
-| `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
+| `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
-| `auth-js` | [Auth.js 状元篇 — 多框架认证库的 Provider/Adapter 双抽象](/study/projects/auth-js/) | Auth 认证 |
+| `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
 | `axios` | [axios Promise-based HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 其他 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
@@ -812,6 +814,7 @@ sidebar:
 | `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | Meta 框架 / 全栈 |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — React 远程数据 hook 的极简流派](/study/projects/swr/) | 数据获取 / 路由 |
+| `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | 其他 |
 | `tailwind` | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | CSS / 样式 |
 | `tanstack-form` | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
@@ -856,5 +859,6 @@ sidebar:
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
+| `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |
 | `zustand` | [Zustand — 极简 React 状态管理](/study/projects/zustand/) | 状态管理 |

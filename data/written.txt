@@ -27,6 +27,7 @@ brewer-cap-2000
 calculus-of-constructions
 call-by-need-1995
 calvin
+calvin-2012
 cascades-1995
 cassandra-2010
 causal-abstraction
@@ -103,6 +104,7 @@ lamport-1978
 lampson-hints
 landin-secd
 leis-2015-optimizers
+lieberman-realtime-gc
 linear-types
 liquid-types
 llama
@@ -232,6 +234,7 @@ boxen
 browser-use
 bun
 caddy
+cairo-lang
 cal-com
 cassandra
 chalk
@@ -318,6 +321,7 @@ ky
 kysely
 langchain
 langfuse
+laravel
 ledger-app-sdk
 lerna
 lexical

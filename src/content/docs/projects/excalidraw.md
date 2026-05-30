@@ -152,4 +152,5 @@ public record(delta: StoreDelta) {
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

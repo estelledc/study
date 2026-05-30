@@ -158,7 +158,8 @@ const { data, isLoading } = api.user.byId.useQuery(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arktype]] —— arktype TypeScript 字符串 DSL 模式校验
+- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
+- [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API

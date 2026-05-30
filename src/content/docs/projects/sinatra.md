@@ -158,4 +158,5 @@ Thread.new { StatusApp.run! port: 9292 }
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 

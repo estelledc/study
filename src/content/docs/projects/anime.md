@@ -165,5 +165,8 @@ io.observe(document.querySelector('.hero-title'))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[starlight]] —— Starlight — Astro 文档站点主题
 

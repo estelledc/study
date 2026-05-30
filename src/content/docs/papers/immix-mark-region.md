@@ -1,6 +1,6 @@
 ---
-title: Immix — 把"扫"和"搬"两种垃圾回收揉成一个
-来源: Blackburn & McKinley, "Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance", PLDI 2008
+title: 'Immix — 把"扫"和"搬"两种垃圾回收揉成一个'
+来源: 'Blackburn & McKinley, "Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance", PLDI 2008'
 日期: 2026-05-30
 分类: 垃圾回收
 难度: 中级
@@ -158,3 +158,6 @@ JikesRVM（一个研究用的 JVM）在 2008 年实测：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

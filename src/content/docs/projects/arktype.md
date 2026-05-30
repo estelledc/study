@@ -161,3 +161,11 @@ useForm({ validators: { onSubmit: LoginSchema } })
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[elysia]] —— Elysia Bun-first TypeScript Web 框架
+- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+- [[zod]] —— Zod — TypeScript-first schema 验证
+

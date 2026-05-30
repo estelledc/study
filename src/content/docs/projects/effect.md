@@ -152,6 +152,7 @@ const openLog = Effect.acquireRelease(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

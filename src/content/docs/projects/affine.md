@@ -157,4 +157,5 @@ yarn workspace @affine/web dev
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[react]] —— React UI 组件库
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

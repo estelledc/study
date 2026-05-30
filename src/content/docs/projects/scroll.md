@@ -154,4 +154,5 @@ forge create MyContract --rpc-url https://rpc.scroll.io --private-key $PK
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[zk-snark]] —— zk-SNARK 零知识证明
+- [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
 
