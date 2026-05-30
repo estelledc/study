@@ -193,6 +193,7 @@ rsa
 sagiv-shape-analysis
 salsa-adapton
 sam
+scala-macros
 scaling-laws
 scott-strachey-denotational
 self-adjusting
@@ -251,6 +252,7 @@ vllm
 volcano
 volcano-1994
 voyager
+vr-1988
 wadler-prettier
 word2vec
 xla-compiler
@@ -270,6 +272,7 @@ anthropic-cookbook
 ape-framework
 apollo-server
 aptos-core
+aragon
 arbitrum
 argent-x
 argocd
@@ -296,6 +299,7 @@ cairo-lang
 cal-com
 capnproto
 cassandra
+celery
 centrifugo
 chainlink
 chainlink-ccip

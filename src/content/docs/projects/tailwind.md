@@ -158,7 +158,8 @@ module.exports = {
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[react]] —— React UI 组件库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
-- [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
+- [[styled-components]] —— styled-components — React 生态最早的 CSS-in-JS 库
+- [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 

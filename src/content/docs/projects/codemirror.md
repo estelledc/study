@@ -160,6 +160,7 @@ const logUpdates = ViewPlugin.fromClass(class {
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[react]] —— React UI 组件库
+- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

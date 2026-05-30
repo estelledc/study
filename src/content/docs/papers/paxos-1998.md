@@ -189,6 +189,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
+- [[vr-revisited-2012]] —— VR Revisited 2012 — VR 协议的"工程化重写版"
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

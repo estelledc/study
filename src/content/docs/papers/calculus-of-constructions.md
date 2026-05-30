@@ -154,6 +154,7 @@ Qed.
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递

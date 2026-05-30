@@ -177,6 +177,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"

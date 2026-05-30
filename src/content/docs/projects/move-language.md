@@ -162,4 +162,5 @@ spec increment {
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
+- [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
 
