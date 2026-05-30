@@ -172,6 +172,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
+- [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器

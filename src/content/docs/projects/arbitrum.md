@@ -151,6 +151,7 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[axelar]] —— Axelar — 通用跨链 gateway
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端

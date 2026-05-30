@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 285 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 287 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：285 个
+- **总数**：287 个
 - **已分类**：206
-- **未分类**：79（落入"其他 / 待分类"段）
+- **未分类**：81（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 79 |
+| [其他 / 待分类](#其他--待分类) | 81 |
 
 ---
 
@@ -267,7 +267,7 @@ sidebar:
 |---|---|
 | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) |  |
 | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) |  |
-| [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | 从 Auth |
+| [Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK](/study/projects/clerk/) |  |
 | [Lucia 状元篇 — auth 是 utility 不是 framework 的反命题](/study/projects/lucia/) | 从 v3 framework 到 v4 utility 拆分 — Lucia 主动 deprecate 自己、把 session 推回 ~150 行手写、把 OAuth/cookie/crypto 拆到 oslo + … |
 | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | 从 Java core + Node/Python/Go SDK 多语言架构入手，理解 Recipe 模式如何把认证流程拆成可组合单元 |
 
@@ -455,7 +455,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [@clack/prompts: 用 ANSI 重新发明 CLI 交互](/study/projects/clack/) |  |
+| [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) |  |
 | [commander.js](/study/projects/commander/) |  |
 | [ink](/study/projects/ink/) |  |
 | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) |  |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 79 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 81 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -507,6 +507,7 @@ sidebar:
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
+| `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
@@ -548,6 +549,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
+| `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
@@ -581,7 +583,7 @@ sidebar:
 
 ---
 
-## 全部 285 个（字母序）
+## 全部 287 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -600,6 +602,7 @@ sidebar:
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | 其他 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
+| `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) | 其他 |
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 其他 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
@@ -620,9 +623,9 @@ sidebar:
 | `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | 其他 |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
-| `clack` | [@clack/prompts: 用 ANSI 重新发明 CLI 交互](/study/projects/clack/) | CLI / 命令行工具 |
+| `clack` | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | CLI / 命令行工具 |
 | `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
-| `clerk` | [clerk 状元篇 — SaaS 化 auth 平台的 SDK + Prebuilt UI 一体化打法](/study/projects/clerk/) | Auth 认证 |
+| `clerk` | [Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
@@ -751,6 +754,7 @@ sidebar:
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
 | `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
+| `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |

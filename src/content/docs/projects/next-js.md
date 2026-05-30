@@ -149,6 +149,7 @@ export default Page
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
+- [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[hono]] —— Hono — 多运行时 Web 框架

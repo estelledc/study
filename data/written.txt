@@ -49,6 +49,7 @@ copilot-rct
 cot
 cousot-abstract-interpretation
 crdt-json
+cstore-2005
 dalle-2
 ddpm
 debugging-dichotomy
@@ -72,7 +73,9 @@ f1-2013
 feautrier-polyhedral
 flash-attention
 foundationdb
+foundationdb-2021
 fsrs-spaced-repetition
+g1-collector
 gadt-pjones
 game-semantics-pcf
 generational-gc
@@ -222,6 +225,7 @@ arbitrum
 argent-x
 argocd
 arktype
+aspnetcore
 astro
 auth-js
 axios
@@ -324,6 +328,7 @@ kysely
 langchain
 langfuse
 laravel
+layerzero
 ledger-app-sdk
 lerna
 lexical
@@ -426,6 +431,7 @@ shadcn-ui
 sharp
 shiki
 sinatra
+slim-framework
 solid
 sortablejs
 spring-boot
@@ -484,6 +490,7 @@ weaviate
 web-vitals
 webpack
 why-did-you-render
+wormhole
 wretch
 xstate
 yargs
