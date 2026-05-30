@@ -154,6 +154,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fd]] —— fd — Rust 写的现代 find
+- [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[gdu]] —— gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）

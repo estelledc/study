@@ -153,6 +153,7 @@ client.on("Room.timeline", (event, room) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[conversations]] —— Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"

@@ -155,3 +155,6 @@ OMEMO 只加密文本？不是。Conversations 传图片时：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
