@@ -148,6 +148,7 @@ Spec == Init ∧ □[Next]_vars ∧ Liveness
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存

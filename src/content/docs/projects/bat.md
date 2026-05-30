@@ -129,6 +129,7 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
+- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）

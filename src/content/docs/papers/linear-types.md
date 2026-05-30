@@ -177,6 +177,7 @@ let s2 = read_log(f);    // 报错：f 已 moved
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[coeffect-petricek]] —— Coeffects — 让类型系统追踪「需要多少上下文」
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋

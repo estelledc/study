@@ -1,6 +1,6 @@
 ---
 title: Coeffects — 让类型系统追踪「需要多少上下文」
-来源: Petricek, Orchard, Mycroft, "Coeffects: Unified Static Analysis of Context-Dependence", ICALP 2013（ICFP 2014 扩展）
+来源: 'Petricek, Orchard, Mycroft, "Coeffects: Unified Static Analysis of Context-Dependence", ICALP 2013（ICFP 2014 扩展）'
 日期: 2026-05-30
 分类: 编程语言
 难度: 高级
@@ -152,3 +152,6 @@ double x = x * ?factor
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

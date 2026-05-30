@@ -66,6 +66,7 @@ debugging-dichotomy
 deepseek-r1
 deepspeed-zero
 dewitt-gray-1992
+differential-datalog
 diffie-hellman
 dijkstra-goto
 dijkstra-shortest-path
@@ -157,6 +158,7 @@ mamba
 mapreduce
 martin-lof-itt
 mccarthy-lisp
+mcmillan-smv-1993
 megatron-lm
 mencius-2008
 metagpt
@@ -183,6 +185,7 @@ pnueli-temporal-1977
 polar-codes-2009
 pottier-merr
 ppo
+presumed-abort-1986
 product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
@@ -365,6 +368,7 @@ echarts
 echo
 effect
 elasticsearch
+element-android
 elysia
 emotion
 encore
@@ -405,6 +409,7 @@ helm
 hocuspocus
 hono
 hot-chocolate
+htop
 i18next
 immer
 immich
@@ -506,6 +511,7 @@ pnpm
 pocketbase
 podman
 poem
+polars
 polygon-zkevm
 postgres-js
 postgresql
