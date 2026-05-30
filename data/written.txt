@@ -11,6 +11,7 @@ andersen-pointer-analysis
 anthropic-circuits
 aries-1992
 art-2013
+astree
 attention
 aurora
 autogen
@@ -138,6 +139,7 @@ infer-biabduction
 ingres-1976
 instructgpt
 io-uring
+jupiter-1995
 kafka
 kafka-2011
 kahn-natural-semantics
@@ -148,6 +150,7 @@ knuth-taocp
 lalr-deremer
 lambda-calculus
 lamport-1978
+lamport-tla-1994
 lampson-hints
 landin-secd
 lean-prover
@@ -322,6 +325,7 @@ axelar
 axios
 axum
 balancer
+bandwhich
 bat
 besu
 better-auth
@@ -457,6 +461,7 @@ ledger-app-sdk
 lerna
 lexical
 librechat
+libsignal
 lighthouse
 lightningcss
 lingui
@@ -484,6 +489,7 @@ milvus
 minio
 minisearch
 mobx
+modin
 monaco-editor
 monero
 mongodb

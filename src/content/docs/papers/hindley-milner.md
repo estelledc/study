@@ -207,6 +207,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
@@ -229,6 +230,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 - [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
+- [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
