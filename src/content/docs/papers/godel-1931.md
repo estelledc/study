@@ -150,6 +150,7 @@ S: "S 是假的。"
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明

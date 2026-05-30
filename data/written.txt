@@ -78,6 +78,7 @@ dynamo
 earley-parser
 ebpf
 effect-handlers
+epaxos-2013
 erlang-otp
 eswaran-1976
 f1-2013
@@ -114,6 +115,7 @@ hotspot-server-compiler
 http-2
 huffman-1952
 hughes-fp-matters
+idris-brady
 immix-mark-region
 induction-heads
 ingres-1976
@@ -424,6 +426,7 @@ listr2
 litestar
 llamaindex
 lottie
+lsd
 lucia
 luxon
 makerdao
@@ -534,6 +537,7 @@ soketi
 solana
 solid
 sortablejs
+spin
 spring-boot
 sqlite
 stagehand

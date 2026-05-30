@@ -173,6 +173,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[epaxos-2013]] —— EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
 - [[fast-paxos-2006]] —— Fast Paxos — 给 Paxos 加一条乐观快车道
+- [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象

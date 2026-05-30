@@ -154,5 +154,10 @@ select : (col : String) -> Query (Cols cs) -> {auto p : Has col cs} -> ...
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
+- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 

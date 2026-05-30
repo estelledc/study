@@ -157,4 +157,5 @@ publish(f"ai:user:{user_id}", {"done": True})
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[redis]] —— Redis — 内存键值数据库
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
+- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 

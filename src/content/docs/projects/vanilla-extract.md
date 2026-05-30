@@ -178,3 +178,8 @@ function processFile(source: string, filePath: string) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
+- [[styled-components]] —— styled-components — React 生态最早的 CSS-in-JS 库
+- [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
+

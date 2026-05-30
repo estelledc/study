@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 343 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 345 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：343 个
+- **总数**：345 个
 - **已分类**：206
-- **未分类**：137（落入"其他 / 待分类"段）
+- **未分类**：139（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 137 |
+| [其他 / 待分类](#其他--待分类) | 139 |
 
 ---
 
@@ -66,7 +66,7 @@ sidebar:
 | [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) |  |
 | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) |  |
 | [Recharts — 用 JSX 直接拼出图表的 React 组件库](/study/projects/recharts/) |  |
-| [visx Airbnb React 可视化原语](/study/projects/visx/) |  |
+| [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) |  |
 
 ## 动画
 
@@ -447,7 +447,7 @@ sidebar:
 | [styled-components — React 生态最早的 CSS-in-JS 库](/study/projects/styled-components/) |  |
 | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) |  |
 | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) |  |
-| [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | Seek 工程师 Mark Dalgleish 出品 |
+| [vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时](/study/projects/vanilla-extract/) |  |
 
 ## CLI / 命令行工具
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 137 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 139 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -536,6 +536,7 @@ sidebar:
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
+| `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
@@ -620,6 +621,7 @@ sidebar:
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
+| `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) |
@@ -639,7 +641,7 @@ sidebar:
 
 ---
 
-## 全部 343 个（字母序）
+## 全部 345 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -719,6 +721,7 @@ sidebar:
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | 其他 |
 | `duckdb` | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) | 数据库本体 / 存储引擎 |
 | `duckdb-wasm` | [duckdb-wasm — 把分析数据库塞进浏览器标签页](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
+| `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | 其他 |
 | `echarts` | [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) | 数据可视化 |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | 其他 |
 | `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
@@ -931,6 +934,7 @@ sidebar:
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — React 远程数据 hook 的极简流派](/study/projects/swr/) | 数据获取 / 路由 |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | 其他 |
+| `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) | 其他 |
 | `tailwind` | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | CSS / 样式 |
 | `tanstack-form` | [TanStack Form — 跨框架共享一份表单校验逻辑](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
@@ -958,12 +962,12 @@ sidebar:
 | `valibot` | [Valibot — 拆成乐高的 TypeScript 校验库](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
-| `vanilla-extract` | [vanilla-extract — 编译期 CSS-in-TypeScript 的零运行时反派](/study/projects/vanilla-extract/) | CSS / 样式 |
+| `vanilla-extract` | [vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
-| `visx` | [visx Airbnb React 可视化原语](/study/projects/visx/) | 数据可视化 |
+| `visx` | [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue 团队用 Vite 写的静态文档站点生成器](/study/projects/vitepress/) | 文档站点 |
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |

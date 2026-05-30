@@ -147,6 +147,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fd]] —— fd — Rust 写的现代 find
 - [[fzf]] —— fzf — 命令行模糊查找

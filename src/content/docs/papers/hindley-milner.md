@@ -182,6 +182,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[llvm]] —— LLVM — 模块化编译器框架
