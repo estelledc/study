@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 421 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 424 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：421 个
+- **总数**：424 个
 - **已分类**：206
-- **未分类**：215（落入"其他 / 待分类"段）
+- **未分类**：218（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 215 |
+| [其他 / 待分类](#其他--待分类) | 218 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 215 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 218 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -549,8 +549,10 @@ sidebar:
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
+| `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
+| `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
 | `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) |
@@ -668,6 +670,7 @@ sidebar:
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
+| `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
@@ -717,7 +720,7 @@ sidebar:
 
 ---
 
-## 全部 421 个（字母序）
+## 全部 424 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -802,6 +805,7 @@ sidebar:
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) | 其他 |
+| `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | 其他 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
@@ -809,6 +813,7 @@ sidebar:
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docusaurus` | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) | 文档站点 |
+| `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | 其他 |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | 其他 |
@@ -1039,6 +1044,7 @@ sidebar:
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
+| `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) | 其他 |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |

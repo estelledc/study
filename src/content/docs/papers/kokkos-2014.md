@@ -1,6 +1,6 @@
 ---
 title: Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
-来源: H. Carter Edwards, Christian Trott, Daniel Sunderland, "Kokkos: Enabling manycore performance portability through polymorphic memory access patterns", JPDC 2014
+来源: 'H. Carter Edwards, Christian Trott, Daniel Sunderland, "Kokkos: Enabling manycore performance portability through polymorphic memory access patterns", JPDC 2014'
 日期: 2026-05-31
 分类: GPU 架构
 难度: 中级
@@ -150,3 +150,6 @@ Kokkos::parallel_reduce("dot", N, KOKKOS_LAMBDA(int i, double& s) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

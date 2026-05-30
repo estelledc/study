@@ -151,6 +151,7 @@ case v := <-chB: handleB(v)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计

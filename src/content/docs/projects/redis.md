@@ -148,6 +148,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[docker]] —— Docker — 容器化平台
+- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
 - [[dragonflydb]] —— Dragonfly — 多线程 Redis 替代
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[etcd]] —— etcd — 分布式键值数据库

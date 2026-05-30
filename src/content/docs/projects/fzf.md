@@ -162,6 +162,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[delta]] —— delta — git diff 的语法高亮分页器
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）

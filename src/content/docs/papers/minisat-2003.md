@@ -175,6 +175,7 @@ while (qhead < trail.size()) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生

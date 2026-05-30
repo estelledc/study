@@ -171,6 +171,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
