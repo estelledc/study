@@ -155,5 +155,12 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
+- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[react]] —— React UI 组件库
 

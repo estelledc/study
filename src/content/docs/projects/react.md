@@ -185,6 +185,8 @@ function Greeting({ name }) {
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
+- [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
+- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"

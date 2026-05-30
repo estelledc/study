@@ -148,5 +148,11 @@ ar://Tx9k3L...PqR  ← 直接指向 Arweave，不依赖任何中心服务
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
+- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
+- [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
+- [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
+- [[solana]] —— Solana — Rust 写的高性能 PoH 链
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

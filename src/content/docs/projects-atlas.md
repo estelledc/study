@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 327 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 329 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：327 个
+- **总数**：329 个
 - **已分类**：206
-- **未分类**：121（落入"其他 / 待分类"段）
+- **未分类**：123（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 121 |
+| [其他 / 待分类](#其他--待分类) | 123 |
 
 ---
 
@@ -88,7 +88,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) |  |
-| [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) |  |
+| [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) |  |
 | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) |  |
 | [valibot 模块化模式校验](/study/projects/valibot/) |  |
 | [Zod — TypeScript-first schema 验证](/study/projects/zod/) |  |
@@ -480,7 +480,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) |  |
-| [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) |  |
+| [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) |  |
 | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) |  |
 
 ## 其他基础设施
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 121 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 123 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -554,6 +554,7 @@ sidebar:
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
+| `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
@@ -595,6 +596,7 @@ sidebar:
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
+| `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) |
@@ -623,7 +625,7 @@ sidebar:
 
 ---
 
-## 全部 327 个（字母序）
+## 全部 329 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -738,6 +740,7 @@ sidebar:
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
+| `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | 其他 |
 | `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | i18n 国际化 |
@@ -852,8 +855,8 @@ sidebar:
 | `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
-| `react-dnd` | [react-dnd —— React 时代第一个拖拽库的设计思考](/study/projects/react-dnd/) | Drag & Drop / Interaction |
-| `react-hook-form` | [react-hook-form Uncontrolled-first React 表单库](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
+| `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | Drag & Drop / Interaction |
+| `react-hook-form` | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
 | `react-intl` | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) | i18n 国际化 |
 | `react-spring` | [react-spring 状元篇](/study/projects/react-spring/) | 动画 |
 | `recharts` | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) | 数据可视化 |
@@ -875,6 +878,7 @@ sidebar:
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharp` | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
+| `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) | 其他 |

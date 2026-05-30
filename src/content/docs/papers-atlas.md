@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 253 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 254 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：253 篇
+- **总数**：254 篇
 - **已分类**：143
-- **未分类**：110（落入"其他 / 待分类"段）
+- **未分类**：111（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 110 |
+| [其他 / 待分类](#其他--待分类) | 111 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 110 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 111 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -336,6 +336,7 @@ sidebar:
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
+| `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |
@@ -421,7 +422,7 @@ sidebar:
 
 ---
 
-## 全部 253 篇（字母序）
+## 全部 254 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -500,6 +501,7 @@ sidebar:
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 其他 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
+| `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) | 其他 |
 | `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |

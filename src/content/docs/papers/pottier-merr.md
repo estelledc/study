@@ -171,6 +171,7 @@ expr: i = INT { i } | LPAREN e = expr RPAREN { e } | a = expr PLUS b = expr { a 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[earley-parser]] —— Earley Parser — 一个表能解析任何 CFG 的通用解析器
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

@@ -165,3 +165,21 @@ import Select from "react-select";
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
+- [[mobx]] —— MobX — 让 state 像电子表格一样自动重算
+- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
+- [[react]] —— React UI 组件库
+- [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
+- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+- [[swr]] —— SWR — React 远程数据 hook 的极简流派
+- [[tanstack-form]] —— TanStack Form Headless 多框架表单库
+- [[valibot]] —— valibot 模块化模式校验
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+- [[zod]] —— Zod — TypeScript-first schema 验证
+
