@@ -164,6 +164,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
+- [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提

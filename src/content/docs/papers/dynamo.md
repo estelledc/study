@@ -172,6 +172,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
+- [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎

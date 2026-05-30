@@ -149,5 +149,6 @@ thrust::transform(x.begin(), x.end(), y.begin(), z.begin(), saxpy(2.0f));
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 

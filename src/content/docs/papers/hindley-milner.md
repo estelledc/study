@@ -205,6 +205,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
 - [[move-language]] —— Move — 资源型智能合约语言
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手

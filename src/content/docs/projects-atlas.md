@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 427 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 430 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：427 个
+- **总数**：430 个
 - **已分类**：206
-- **未分类**：221（落入"其他 / 待分类"段）
+- **未分类**：224（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 221 |
+| [其他 / 待分类](#其他--待分类) | 224 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 221 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 224 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -581,6 +581,7 @@ sidebar:
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
 | `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) |
+| `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
@@ -625,6 +626,7 @@ sidebar:
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
+| `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
@@ -648,6 +650,7 @@ sidebar:
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
+| `postal` | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) |
 | `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) |
@@ -723,7 +726,7 @@ sidebar:
 
 ---
 
-## 全部 427 个（字母序）
+## 全部 430 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -861,6 +864,7 @@ sidebar:
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
 | `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | 其他 |
+| `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) | 其他 |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
@@ -949,6 +953,7 @@ sidebar:
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
+| `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | 其他 |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | 其他 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
@@ -1002,6 +1007,7 @@ sidebar:
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) | 其他 |
 | `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) | 其他 |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) | 其他 |
+| `postal` | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) | 其他 |
 | `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) | 其他 |
 | `postgres-js` | [postgres.js — 写 SQL 但语法层就防注入的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |

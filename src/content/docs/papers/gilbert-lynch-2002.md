@@ -150,5 +150,13 @@ Google 自己在 Spanner 论文里诚实写："we are not really CA, we are CP w
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[flp-1985]] —— FLP 1985 — 一个坏节点就能让异步共识永不终止
+- [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 
