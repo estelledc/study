@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 195 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 197 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：195 篇
+- **总数**：197 篇
 - **已分类**：143
-- **未分类**：52（落入"其他 / 待分类"段）
+- **未分类**：54（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 52 |
+| [其他 / 待分类](#其他--待分类) | 54 |
 
 ---
 
@@ -183,7 +183,7 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) |  |
-| [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) |  |
+| [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) |  |
 | [QUIC UDP-Based Multiplexed Secure Transport](/study/papers/quic/) |  |
 | [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) |  |
 | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) |  |
@@ -197,7 +197,7 @@ sidebar:
 | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) |  |
 | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) |  |
 | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) |  |
-| [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | Jens Axboe 2019 在 Linux 5 |
+| [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) |  |
 | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | 用户只写 map + reduce 两个函数，框架自动 parallelize / distribute / fault-tolerate |
 
 ## GC / 内存管理
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 52 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 54 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -322,12 +322,14 @@ sidebar:
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
+| `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
+| `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
@@ -363,7 +365,7 @@ sidebar:
 
 ---
 
-## 全部 195 篇（字母序）
+## 全部 197 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -419,6 +421,7 @@ sidebar:
 | `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
+| `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) | 其他 |
 | `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
@@ -446,16 +449,17 @@ sidebar:
 | `graphrag` | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | 智能体与 LLM 系统 |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 其他 |
 | `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | HCI / 软件工程研究 |
+| `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) | 其他 |
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
 | `hoare-logic` | [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
-| `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
+| `http-2` | [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 其他 |
 | `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
-| `io-uring` | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
+| `io-uring` | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `kafka` | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | 其他 |
 | `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |

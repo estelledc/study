@@ -155,6 +155,7 @@ Spell 通过 `pause.plot(spell, sig, data, eta)` 排进 GSM（Governance Securit
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[curve]] —— Curve — 稳定币低滑点兑换协议

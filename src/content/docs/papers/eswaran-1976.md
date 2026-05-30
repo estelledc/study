@@ -153,6 +153,7 @@ INSERT INTO emp VALUES ('alice', 12000);
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos]] —— Paxos — 分布式共识算法

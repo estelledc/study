@@ -141,11 +141,12 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[mae]] —— MAE — Masked Autoencoders
 - [[mamba]] —— Mamba — 选择性状态空间模型

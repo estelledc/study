@@ -157,6 +157,8 @@ def upload(key, data):
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[mapreduce]] —— MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性
-- [[paxos]] —— Paxos — 分布式共识算法
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
+- [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

@@ -154,6 +154,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug

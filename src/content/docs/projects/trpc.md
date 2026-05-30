@@ -167,5 +167,6 @@ const { data, isLoading } = api.user.byId.useQuery(
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
+- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[zod]] —— Zod — TypeScript-first schema 验证
 

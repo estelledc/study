@@ -27,6 +27,7 @@ calculus-of-constructions
 call-by-need-1995
 calvin
 cascades-1995
+cassandra-2010
 causal-abstraction
 cheney-gc
 chinchilla
@@ -63,6 +64,7 @@ ebpf
 effect-handlers
 erlang-otp
 eswaran-1976
+feautrier-polyhedral
 flash-attention
 foundationdb
 fsrs-spaced-repetition
@@ -234,6 +236,7 @@ codemirror
 commander
 compound-v3
 continue
+curve
 d3
 date-fns
 dayjs
@@ -276,6 +279,7 @@ got
 grafana
 gsap
 hardhat
+helidon
 helm
 hono
 i18next

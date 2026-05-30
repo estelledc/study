@@ -179,6 +179,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务

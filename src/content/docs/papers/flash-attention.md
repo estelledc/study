@@ -154,6 +154,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[vit]] —— ViT — Vision Transformer

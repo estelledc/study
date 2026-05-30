@@ -169,6 +169,7 @@ export default defineConfig({
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
+- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[vitest]] —— Vitest — Vite 原生测试框架
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[webpack]] —— webpack 模块打包

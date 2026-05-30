@@ -153,6 +153,7 @@ await sql.notify('order_created', JSON.stringify({ id: 42 }))
 
 - [[bun]] —— Bun — JS 全能运行时
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prisma]] —— Prisma — 类型安全 ORM
 - [[redis]] —— Redis — 内存键值数据库

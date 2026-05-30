@@ -146,11 +146,11 @@ ORDER BY date;
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
-- [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库

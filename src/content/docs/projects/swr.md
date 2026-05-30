@@ -152,3 +152,6 @@ middleware 自己**就是一个 hook**——里面可以调 `useEffect / useRef`
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
+
