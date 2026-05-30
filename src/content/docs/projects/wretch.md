@@ -152,3 +152,7 @@ const data = await api.url("/flaky").get().json()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
+

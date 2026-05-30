@@ -134,4 +134,5 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 

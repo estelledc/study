@@ -86,6 +86,7 @@ faiss-2017
 fast-paxos-2006
 feautrier-polyhedral
 flash-attention
+flexible-paxos-2016
 flink-2015
 foundationdb
 foundationdb-2021
@@ -133,6 +134,7 @@ lambda-calculus
 lamport-1978
 lampson-hints
 landin-secd
+lean-prover
 lean-tactics
 leis-2015-optimizers
 lerner-seminal
@@ -345,6 +347,7 @@ drizzle
 dropwizard
 duckdb
 duckdb-wasm
+dust
 echarts
 echo
 effect
@@ -557,6 +560,7 @@ sveltekit
 swc
 swr
 symfony
+synapse
 tailwind
 tanstack-form
 tanstack-query

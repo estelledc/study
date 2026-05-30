@@ -152,5 +152,6 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[fd]] —— fd — Rust 写的现代 find
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
+- [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 

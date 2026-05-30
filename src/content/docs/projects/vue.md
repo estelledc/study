@@ -181,4 +181,5 @@ export function useMouse() {
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vitest]] —— Vitest — Vite 原生测试框架
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

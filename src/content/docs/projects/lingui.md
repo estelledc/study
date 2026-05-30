@@ -153,4 +153,5 @@ msgstr "你好 {name}"
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

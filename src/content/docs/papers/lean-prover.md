@@ -148,5 +148,12 @@ def map : (α → β) → List α → List β
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
+- [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
+- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
+- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
+- [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 
