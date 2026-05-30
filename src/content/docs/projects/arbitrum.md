@@ -163,6 +163,7 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
+- [[monero]] —— Monero — 默认隐私的 PoW 加密货币
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机

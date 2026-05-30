@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 337 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 339 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：337 个
+- **总数**：339 个
 - **已分类**：206
-- **未分类**：131（落入"其他 / 待分类"段）
+- **未分类**：133（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 131 |
+| [其他 / 待分类](#其他--待分类) | 133 |
 
 ---
 
@@ -89,7 +89,7 @@ sidebar:
 |---|---|
 | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) |  |
 | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) |  |
-| [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) |  |
+| [TanStack Form — 跨框架共享一份表单校验逻辑](/study/projects/tanstack-form/) |  |
 | [valibot 模块化模式校验](/study/projects/valibot/) |  |
 | [Zod — TypeScript-first schema 验证](/study/projects/zod/) |  |
 
@@ -269,7 +269,7 @@ sidebar:
 | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) |  |
 | [Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK](/study/projects/clerk/) |  |
 | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) |  |
-| [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | 从 Java core + Node/Python/Go SDK 多语言架构入手，理解 Recipe 模式如何把认证流程拆成可组合单元 |
+| [SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe](/study/projects/supertokens/) |  |
 
 ## Monorepo / 包管理
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 131 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 133 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -506,6 +506,7 @@ sidebar:
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
+| `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
@@ -573,6 +574,7 @@ sidebar:
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
+| `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
@@ -633,7 +635,7 @@ sidebar:
 
 ---
 
-## 全部 337 个（字母序）
+## 全部 339 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -647,6 +649,7 @@ sidebar:
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
+| `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | 其他 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
@@ -809,6 +812,7 @@ sidebar:
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
+| `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | 其他 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | 其他 |
@@ -913,14 +917,14 @@ sidebar:
 | `stylex` | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | 其他 |
 | `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | 数据应用 / SaaS |
-| `supertokens` | [SuperTokens — 自托管认证框架精读](/study/projects/supertokens/) | Auth 认证 |
+| `supertokens` | [SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe](/study/projects/supertokens/) | Auth 认证 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
 | `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | Meta 框架 / 全栈 |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — React 远程数据 hook 的极简流派](/study/projects/swr/) | 数据获取 / 路由 |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | 其他 |
 | `tailwind` | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | CSS / 样式 |
-| `tanstack-form` | [TanStack Form Headless 多框架表单库](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
+| `tanstack-form` | [TanStack Form — 跨框架共享一份表单校验逻辑](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) | 其他 |

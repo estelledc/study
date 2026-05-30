@@ -168,6 +168,7 @@ class LogEmitter:
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[fast-paxos-2006]] —— Fast Paxos — 给 Paxos 加一条乐观快车道
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库

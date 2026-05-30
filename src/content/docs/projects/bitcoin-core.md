@@ -159,6 +159,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[monero]] —— Monero — 默认隐私的 PoW 加密货币
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
