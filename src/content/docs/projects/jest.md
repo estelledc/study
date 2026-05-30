@@ -160,6 +160,7 @@ test('用户卡片渲染', () => {
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

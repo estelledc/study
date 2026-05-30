@@ -174,6 +174,7 @@ class LogEmitter:
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[paxos]] —— Paxos — 分布式共识算法

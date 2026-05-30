@@ -159,5 +159,6 @@ rg --files | fzf --preview 'bat --color=always {}'
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bat]] —— bat — 现代 cat 替代
+- [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

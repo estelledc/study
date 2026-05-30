@@ -148,6 +148,7 @@ Qed.
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）

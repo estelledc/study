@@ -169,6 +169,7 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
@@ -193,10 +194,12 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+- [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[pino]] —— pino — 日志不该阻塞热路径
+- [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
@@ -211,4 +214,5 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

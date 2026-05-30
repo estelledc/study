@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 339 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 341 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：339 个
+- **总数**：341 个
 - **已分类**：206
-- **未分类**：133（落入"其他 / 待分类"段）
+- **未分类**：135（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 133 |
+| [其他 / 待分类](#其他--待分类) | 135 |
 
 ---
 
@@ -115,7 +115,7 @@ sidebar:
 | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) |  |
 | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) |  |
 | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) |  |
-| [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) |  |
+| [temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎](/study/projects/temporal-polyfill/) |  |
 
 ## i18n 国际化
 
@@ -308,7 +308,7 @@ sidebar:
 | [MSW — 让 mock 不改业务代码，在网络层透明拦截](/study/projects/msw/) |  |
 | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) |  |
 | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) |  |
-| [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 从 Enzyme 时代到 Testing Library 时代，重构噩梦如何被一个简单原则解决 |
+| [Testing Library — 像用户一样测前端，重构不再挂测试](/study/projects/testing-library/) |  |
 | [Vitest — Vite 原生测试框架](/study/projects/vitest/) |  |
 
 ## 编辑器 / 富文本
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 133 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 135 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -541,6 +541,7 @@ sidebar:
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
+| `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
@@ -585,6 +586,7 @@ sidebar:
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
+| `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
@@ -635,7 +637,7 @@ sidebar:
 
 ---
 
-## 全部 339 个（字母序）
+## 全部 341 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -730,6 +732,7 @@ sidebar:
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | 其他 |
 | `excalidraw` | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | Web 框架 |
+| `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | 其他 |
 | `fabric-js` | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | Web 框架 |
@@ -850,6 +853,7 @@ sidebar:
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) | 其他 |
 | `pnpm` | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) | Monorepo / 包管理 |
+| `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) | 其他 |
 | `podman` | [Podman — 无 daemon 容器引擎](/study/projects/podman/) | DevOps / 容器 / 运维 |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) | 其他 |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) | 其他 |
@@ -929,9 +933,9 @@ sidebar:
 | `tanstack-router` | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) | 其他 |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) | 其他 |
-| `temporal-polyfill` | [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) | 日期时间 |
+| `temporal-polyfill` | [temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎](/study/projects/temporal-polyfill/) | 日期时间 |
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
-| `testing-library` | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 测试 / 验证 |
+| `testing-library` | [Testing Library — 像用户一样测前端，重构不再挂测试](/study/projects/testing-library/) | 测试 / 验证 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | 其他 |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
