@@ -1,450 +1,163 @@
 ---
-title: i18next framework-agnostic i18n 引擎
-来源: https://github.com/i18next/i18next + i18next.com 官方文档
+title: i18next — 让一份 JS 代码同时讲几十种语言
+来源: 'https://github.com/i18next/i18next + https://www.i18next.com'
+日期: 2026-05-30
+分类: 前端国际化
+难度: 初级
 ---
 
-# i18next — i18n 领域的事实标准
+## 是什么
 
-## 一句话总结（≥ 12 行）
+i18next 是一个**让 JavaScript 应用同时支持很多种语言**的运行时引擎。日常类比：像餐厅里的一本"翻译菜单本"——服务员（你的代码）只喊菜名 `hello`，本子根据客人国籍翻到对应语言的那一页，把 `你好 Alice` 念出来。
 
-i18next 是 Jan Mühlemann 2011 年开源的 JavaScript 国际化（i18n）引擎，2024 v23.x。weekly downloads ~10M+，是 i18n 领域 weekly downloads 最大的库。
+你写的不是中文也不是英文，你写的是 **key**：
 
-设计哲学：framework-agnostic 核心 + 100+ 个 plugin。核心包 `i18next` 不依赖任何框架；framework adapters（react-i18next / vue-i18next / next-i18next / svelte-i18n / angular-i18next）单独维护。Backend plugins（i18next-http-backend / i18next-fs-backend / locize-backend / chained-backend）让翻译数据来源自由。LanguageDetector plugins 自动检测用户语言。
+```ts
+i18next.t("hello", { name: "Alice" });
+```
 
-特性矩阵：translation key + interpolation + plural（CLDR-based）+ context + namespace + lazy loading + locale detection + missing translation handling + i18nextify。
+`hello` 在 `zh-CN/common.json` 里是 `"你好 {{name}}"`，在 `en-US/common.json` 里是 `"Hi {{name}}"`。当前语言切到哪张表，输出就跟着变。
 
-定位 vs 竞品：
-- **vs FormatJS / react-intl**：i18next 自家 plural 语法，FormatJS 用 ICU MessageFormat 标准
-- **vs vue-i18n**：vue-i18n 是 Vue 官方，i18next 是 framework-agnostic 第三方
-- **vs lingui**：lingui 用 macro 编译期提取，i18next 是运行时
+i18next 的核心包不依赖 React/Vue 任何框架，所以叫 **framework-agnostic**——同一套引擎，React 项目、Vue 项目、Node 后端都能用，只是各家有不同的"小帽子"（react-i18next / vue-i18next / next-i18next）。
 
-i18next 的核心矛盾：framework-agnostic 让生态广，但深度框架集成（如 RSC / Next 14 App Router）总是落后。
+## 为什么重要
 
-## Layer 0 — 项目档案速查（≥ 17 字段）
+不理解 i18next，下面这些事都没法解释：
 
-| 字段 | 值 |
-|---|---|
-| 包名 | `i18next` + 100+ plugins（独立 npm 包） |
-| 当前主版本 | v23.x（2024） |
-| 首版 | 2011-12（v0.1） |
-| License | MIT |
-| 主仓库 | i18next/i18next |
-| 维护 | Jan Mühlemann（@jamuhl）+ 100+ contributors |
-| TypeScript | 完整支持（v17+ 起 type-safe key） |
-| Bundle 核心 | ~12 KB min+gzip |
-| Tree-shake | 中（plugin 独立 import 友好） |
-| 子包数 | 1 主包 + 100+ plugin |
-| 内部依赖 | 0 runtime（核心独立） |
-| Framework adapter | react / vue / next / svelte / angular / preact |
-| Plural 标准 | 自家（CLDR-based） |
-| Backend plugin | http / fs / chained / locize / multiload |
-| Weekly downloads | ~10M+ |
-| GitHub stars | 7k+ |
-| 商业版 | locize（i18next 团队的 SaaS） |
+- 为什么一份前端代码能切换中英日韩，而你**没在每个组件写 if 语言 == 'zh'**
+- 为什么"3 个苹果" / "1 apple" / "5 apples" 这种复数规则，库知道阿拉伯语有 6 种、中文 1 种
+- 为什么 React 项目和 Vue 项目都能装 i18next，而 Vue 自家有 vue-i18n、React 自家有 react-intl
+- 为什么 Next.js 14 出来后社区在讨论"i18next 还能不能用"——答案与 RSC 模型相关
 
-## Layer 1 — 核心抽象（≥ 30 行）
+## 核心要点
+
+i18next 的运行时由三件东西拼成：
+
+1. **资源仓**：内存里一个三层 Map `{ lng: { namespace: { key: 翻译值 } } }`。类比"一摞翻译本"，每本封面写着语言+主题。
+
+2. **插件总线**：Backend（从哪儿加载翻译，HTTP/文件/数据库）、LanguageDetector（怎么决定当前语言）、PostProcessor（翻译完后还要不要加工）。类比"流水线工位"，每个工位插一个插件。
+
+3. **Translator**：执行 `t(key)` 时干的活——查仓 → 用 `{{var}}` 插值 → 按复数规则选 `_one/_other` → 找不到就回退到 fallbackLng。
+
+把这三件捏在一起，就是为什么 i18next 既能做"小项目两行 init"，也能做"百万 key 大型应用"。
+
+## 实践案例
+
+### 案例 1：最小 init
 
 ```ts
 import i18next from "i18next";
-import HttpBackend from "i18next-http-backend";
-import LanguageDetector from "i18next-browser-languagedetector";
-
-await i18next
-  .use(HttpBackend)              // 加载 plugin
-  .use(LanguageDetector)
-  .init({
-    fallbackLng: "en",
-    debug: true,
-    interpolation: {escapeValue: false},
-    backend: {loadPath: "/locales/{{lng}}/{{ns}}.json"},
-    ns: ["common", "dashboard"],
-    defaultNS: "common"
-  });
-
-// 翻译
-const greeting = i18next.t("hello", {name: "Alice"});
-// 假设 hello 翻译为 "你好 {{name}}"，输出："你好 Alice"
-
-// plural
-i18next.t("apple", {count: 0});   // "0 个苹果"
-i18next.t("apple", {count: 1});   // "1 个苹果"
-i18next.t("apple", {count: 5});   // "5 个苹果"
-
-// namespace
-i18next.t("dashboard:welcome");
-
-// context（如性别）
-i18next.t("friend", {context: "male"});   // 用 friend_male key
-```
-
-四要素：
-
-1. **i18next.init(options)**：配置 fallbackLng / namespaces / interpolation / backend / detection
-2. **i18next.t(key, options)**：翻译函数，支持 interpolation / plural / context
-3. **i18next.use(plugin)**：注册插件（backend / language detector / postProcessor）
-4. **namespace + key 路径**：`dashboard:welcome` 或 `welcome`（默认 ns）
-
-## Layer 2 — 内部架构（≥ 30 行）
-
-i18next 内部 4 个核心组件：
-
-1. **Resource bundle**：`{lng: {ns: {key: value}}}` 三层 map
-2. **Backend plugin**：异步加载翻译 JSON / API / DB
-3. **LanguageDetector**：从 navigator / cookie / localStorage / URL / header 检测
-4. **Translator**：执行 t(key) 时 lookup + interpolation + plural + fallback
-
-工作流：
-
-```
-1. i18next.init() → 装载所有 plugin
-2. detect language → "zh-CN" / "en-US" / etc
-3. backend.read(language, ns) → 加载 JSON
-4. resourceStore[lng][ns] = json
-5. user 调 t("dashboard:welcome", {name: "Alice"})
-6. lookup resourceStore[currentLng][dashboard][welcome] = "欢迎，{{name}}"
-7. interpolate {{name}} → "欢迎，Alice"
-8. return
-```
-
-fallback 机制：
-- 找不到 key 在 currentLng → 回退到 fallbackLng
-- 仍找不到 → 返回 key 本身（或 missingKey handler）
-- 调用 missingKeyHandler（用于 locize 等持续上传缺失 key）
-
-## Layer 3 — 精读 3 段（每段 ≥ 5 旁注 + ≥ 1 怀疑）
-
-### 段 a — translation key 设计（≥ 30 行）
-
-```json
-{
-  "common": {
-    "save": "保存",
-    "cancel": "取消"
-  },
-  "dashboard": {
-    "welcome": "欢迎，{{name}}",
-    "stats": {
-      "users": "{{count}} 用户",
-      "users_one": "{{count}} 个用户",
-      "users_other": "{{count}} 个用户"
-    }
-  }
-}
-```
-
-旁注：
-
-1. namespace 分文件管理（dashboard.json / common.json）
-2. 嵌套 key 用 `.` 分隔：`stats.users`
-3. plural 后缀：`_one` / `_other` / `_zero` / `_two` / `_few` / `_many`
-4. 中文 plural 只有 `other`（无单复数）；英文有 `one` / `other`；阿拉伯语 6 种
-5. interpolation 用 `{{var}}` 默认 escape；用 `{{- var}}` 不 escape
-
-> 怀疑：i18next 的 namespace + dotted key 设计在 100+ 翻译时还好，1000+ 翻译时 lookup 性能成问题。是不是该用 flat key（`dashboard.welcome`）+ Map 替代？性能 benchmark 没看到。
-
-### 段 b — plural 规则（≥ 30 行）
-
-```json
-{
-  "apple_zero": "没有苹果",
-  "apple_one": "1 个苹果",
-  "apple_two": "2 个苹果",
-  "apple_few": "{{count}} 个苹果",
-  "apple_many": "{{count}} 个苹果",
-  "apple_other": "{{count}} 个苹果"
-}
-```
-
-i18next 用 CLDR (Common Locale Data Repository) plural rules：
-
-| Locale | 规则 |
-|---|---|
-| en | one (1) / other (rest) |
-| zh-CN | other only（无单复数） |
-| ar | zero / one / two / few / many / other |
-| ru | one / few / many / other |
-| ja | other only |
-
-旁注：
-
-1. 中文 / 日语 / 韩语 plural 规则只 `other`，多写 `_one` 也不会用
-2. 英语 plural 0 也用 `_other`（"0 apples" 而非 "0 apple"）
-3. 阿拉伯语最复杂，dual + few + many 区分
-4. 错误：把英语习惯硬套到其他语言（"1 个苹果" / "2 个苹果"）
-5. CLDR 规则在 Intl.PluralRules 浏览器内置，i18next 内部用此
-
-> 怀疑：i18next 自家 plural key 后缀 `_one` `_other` 与 ICU MessageFormat 标准的 `{count, plural, one {...} other {...}}` 不兼容。从 react-intl 迁过来需重写所有翻译。这种"标准 vs 自家"分裂是 i18n 生态长期问题。
-
-### 段 c — lazy loading + SSR（≥ 30 行）
-
-```ts
-// Next.js App Router (RSC) 集成
-import {createInstance} from "i18next";
-import resourcesToBackend from "i18next-resources-to-backend";
-
-async function initI18next(lng: string, ns: string) {
-  const instance = createInstance();
-  await instance.use(resourcesToBackend((lng, ns) => 
-    import(`./locales/${lng}/${ns}.json`)
-  )).init({
-    lng,
-    fallbackLng: "en",
-    ns
-  });
-  return instance;
-}
-
-export default async function Page({params}: {params: {lng: string}}) {
-  const i18n = await initI18next(params.lng, "common");
-  return <div>{i18n.t("welcome")}</div>;
-}
-```
-
-旁注：
-
-1. 每个 RSC 调用都 createInstance() + init() —— 每次都全量加载
-2. 优化：用 Module-level cache（globalThis.i18nInstance）
-3. App Router 不能在 RSC 用 react-i18next（client-side hooks）
-4. i18next-resources-to-backend 让 import 变 Promise，符合 RSC 异步
-5. SSR + RSC 双流支持是 i18next v23+ 的痛点（issue #1856 等长期讨论）
-
-> 怀疑：i18next 在 RSC / Next.js 14 App Router 集成困难（GitHub 长期 issue）。framework-agnostic 在 framework 深度集成时代是不是劣势？我猜：i18next 长期会被 next-intl 等专门适配 Next 的库蚕食市场。
-
-![i18next 架构 + plugin 生态](/study/projects/i18next/01-architecture.webp)
-
-## Layer 4 — 与 react-intl / vue-i18n / lingui / next-intl 对比（≥ 30 行）
-
-### vs react-intl (FormatJS)
-
-```tsx
-// react-intl
-<FormattedMessage id="hello" defaultMessage="Hello, {name}" values={{name}} />
-
-// react-i18next
-<Trans i18nKey="hello" values={{name}} />
-```
-
-| 维度 | i18next | react-intl |
-|---|---|---|
-| Plural 标准 | 自家 _one / _other | ICU MessageFormat 标准 |
-| 文件格式 | JSON / YAML / PO | JSON / .properties |
-| Bundle | 核心 12 KB | 核心 8 KB + intl 大 |
-| Framework | agnostic | React-only（FormatJS for others） |
-| 生态 | 100+ plugin | FormatJS 单一 |
-
-### vs vue-i18n
-
-- vue-i18n 是 Vue 官方，集成 Vue Composition API
-- i18next + vue-i18next 是 i18next 第三方适配
-- 国内 Vue 项目几乎默认 vue-i18n
-- 跨框架团队选 i18next
-
-### vs lingui
-
-- lingui 用 macro 编译期提取（@lingui/macro）
-- 优势：`t\`Hello ${name}\`` 语法熟悉
-- 劣势：Babel macro 配置复杂，Vite 兼容性弱
-
-### vs next-intl
-
-- next-intl 是为 Next.js App Router 优化
-- 优势：RSC 友好 / Server Action 支持
-- 劣势：仅 Next.js 用
-
-## Layer 5 — 6 维对比（≥ 6 个竞品）
-
-| 维度 | i18next | react-intl | vue-i18n | lingui | next-intl | LinguiJS |
-|---|---|---|---|---|---|---|
-| Framework | 通用 | React | Vue | React | Next-only | React |
-| Plural 标准 | 自家 | ICU | ICU | ICU | ICU | ICU |
-| Bundle | 12 KB | 30 KB | 15 KB | 18 KB | 8 KB | 18 KB |
-| Backend | 100+ plugin | 自己写 | 内置 | 内置 | 内置 | 内置 |
-| Plugin 生态 | ★★★★★ | ★★★ | ★★★ | ★★ | ★★ | ★★ |
-| RSC 支持 | ★★ | ★★★ | N/A | ★★★ | ★★★★★ | ★★★ |
-
-## Layer 6 — 限制（≥ 4 条）
-
-1. **plugin 配置复杂**：第一次用 i18next 通常折腾 1-2 天才跑起来。Backend / LanguageDetector / Resources 都要配
-2. **plural 自家语法**：与 ICU MessageFormat 标准不兼容，从 react-intl 迁过来要重写
-3. **RSC / Next 14 App Router 集成弱**：framework-agnostic 在 framework 深度集成时代是劣势
-4. **TypeScript type-safe key**：v17+ 才支持，v23 仍偶发 type 推断 break
-5. **bundle 不够极简**：12 KB 比 fluent-bundle / formatjs/intl 大；移动端慢
-6. **missing key handling**：默认返回 key 本身，需配 missingKeyHandler 否则 UI 显示 "dashboard:welcome"
-
-## 怀疑总集（前面散落 3 段，再补 2 段）
-
-> 怀疑：i18next plugin 100+ 让生态丰富但配置复杂。新项目第一次用 i18next 通常折腾 1-2 天才能跑起来。是不是 framework-agnostic 的代价？我猜：是。这是 i18next 与 Vue 官方 vue-i18n 的本质差距——后者一行 install 即可。
-
-> 怀疑：locize（i18next 团队的 SaaS）是 i18next 商业化路径，让 missingKeyHandler / 翻译协作 / live update 形成闭环。但开源用户不付费仍能用，locize 是不是没真正激励 i18next 团队推动核心创新？
-
-## GitHub Permalinks（≥ 3 处带 40-char hex SHA）
-
-源码精读入口（链接示意，未实际验证 SHA）：
-
-- i18next 主入口：`https://github.com/i18next/i18next/blob/3a4f9b8e2d1c5a7e6b8d2f4a9c3e7d1b5f8a4c2e/src/i18next.js`
-- Translator 核心：`https://github.com/i18next/i18next/blob/8b2c4d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/src/Translator.js`
-- react-i18next useTranslation：`https://github.com/i18next/react-i18next/blob/2a4f6e8b1d3c5e7f9a1b3d5c7e9f1a3b5d7e9c1f/src/useTranslation.js`
-- i18next-http-backend：`https://github.com/i18next/i18next-http-backend/blob/9c1b3d5f7a9c1e3b5d7f9a1c3e5d7f9b1c3e5d7f/lib/index.js`
-
-## Layer 7 — 实战（≥ 25 行）
-
-完整 React + i18next + http-backend 项目骨架：
-
-```ts
-// i18n.ts
-import i18next from "i18next";
-import {initReactI18next} from "react-i18next";
 import HttpBackend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 await i18next
   .use(HttpBackend)
   .use(LanguageDetector)
-  .use(initReactI18next)
   .init({
     fallbackLng: "en",
-    supportedLngs: ["en", "zh-CN", "ja"],
-    interpolation: {escapeValue: false},
-    backend: {loadPath: "/locales/{{lng}}/{{ns}}.json"},
-    ns: ["common", "dashboard"],
+    backend: { loadPath: "/locales/{{lng}}/{{ns}}.json" },
+    ns: ["common"],
     defaultNS: "common"
   });
 
-export default i18next;
+i18next.t("hello", { name: "Alice" });
+// zh-CN: "你好 Alice"  /  en: "Hi Alice"
 ```
 
-```tsx
-// App.tsx
-import {Suspense} from "react";
-import {useTranslation} from "react-i18next";
+逐行解释：
 
-function Welcome() {
-  const {t, i18n} = useTranslation("dashboard");
-  return (
-    <div>
-      <h1>{t("welcome", {name: "Alice"})}</h1>
-      <button onClick={() => i18n.changeLanguage("zh-CN")}>切换中文</button>
-      <p>{t("apple_count", {count: 5})}</p>
-    </div>
-  );
-}
+- `.use(plugin)` 是注册，**返回 i18next 自己**，所以可以链式
+- `loadPath` 里的 `{{lng}}` `{{ns}}` 会被替换成 `zh-CN` `common`，等于约定了文件位置
+- `await init` 让首批 JSON 加载完再继续渲染，避免空字符串
 
-export default function App() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Welcome />
-    </Suspense>
-  );
-}
+### 案例 2：复数 + 命名空间
+
+```json
+// locales/zh-CN/cart.json
+{ "apple_other": "{{count}} 个苹果" }
+
+// locales/en-US/cart.json
+{ "apple_one": "1 apple", "apple_other": "{{count}} apples" }
 ```
-
-要点：
-
-1. await init 让翻译数据加载完
-2. Suspense 处理首次加载的 lazy load
-3. useTranslation("dashboard") 锁定 namespace
-4. changeLanguage 异步切换，自动 backend 加载
-5. plural / interpolation 自动处理
-
-## 学到什么 + 关联（≥ 15 行）
-
-学到的 ≥ 5 条：
-
-1. framework-agnostic 在 framework 深度集成时代是劣势
-2. plugin 系统让生态丰富但配置复杂——trade-off
-3. plural 标准化（ICU vs 自家）是 i18n 库设计的根本分歧
-4. lazy loading + namespace 是大型应用的必要工具
-5. SaaS 商业化（locize）是开源 i18n 库的可行路径
-
-关联：
-
-- [[zod]] [[react-hook-form]] [[d3]] [[recharts]] [[visx]] [[axios]] [[ky]] [[date-fns]] [[dayjs]] [[luxon]]
-
-## 附录 A — 翻译协作工作流（≥ 25 行）
-
-实战中翻译不是开发者一人写完，是 PM / 译员 / 法务多人协作。i18next 配合 locize（同团队 SaaS）支持完整工作流：
-
-### 流程
-
-1. **开发者** 在代码里 t("dashboard.welcome", {name})
-2. **i18next** 运行时拿不到翻译 → missingKeyHandler 把 key 上报到 locize
-3. **PM** 在 locize 网页 UI 看到新 key，写默认中文
-4. **译员** 在 locize 翻译到英文 / 日文 / 阿拉伯语
-5. **法务** 审核 review 标记翻译"已批准"
-6. **CI/CD** 拉取 locize 已批准翻译写入 git 仓库 `locales/*.json`
-7. **生产** 部署后用户看到正确翻译
-
-无 locize 的开源替代：
-
-- 自建 GitLab 仓库存翻译，用 PR review 审核
-- 配 i18next-fs-backend 从仓库加载
-- 缺点：协作 UI 不如 locize
-
-### 不用 locize 的痛点
-
-1. 译员需要懂 git → 学习成本高
-2. JSON 文件冲突合并难
-3. 翻译进度无法可视化
-4. 缺失 key 不主动报，发版后才发现
-
-## 附录 B — RSC / Next.js 14 App Router 集成方案对比（≥ 25 行）
-
-i18next 在 Server Components 痛点 + 三种社区方案：
-
-### 方案 1：每个 Page 单独 createInstance
 
 ```ts
-async function initI18n(lng: string) {
-  const i = createInstance();
-  await i.use(resourcesToBackend((lng, ns) => import(`./locales/${lng}/${ns}.json`))).init({lng, fallbackLng: "en"});
-  return i;
-}
-
-export default async function Page({params: {lng}}: {params: {lng: string}}) {
-  const i18n = await initI18n(lng);
-  return <h1>{i18n.t("welcome")}</h1>;
-}
+i18next.t("cart:apple", { count: 5 });
+// zh-CN: "5 个苹果"  /  en: "5 apples"
 ```
 
-缺点：每次请求 init 一次，浪费
+中文只需要 `_other`（中文没有单复数），英语要 `_one/_other`，阿拉伯语要 `_zero/_one/_two/_few/_many/_other` 六个。i18next 内部用 CLDR 规则查"5 在英语里属于 other"，自动选对那一条。
 
-### 方案 2：globalThis cache
+`cart:apple` 里前缀 `cart` 是 namespace，让你按页面拆 JSON 文件，首屏只加载 `common`，进购物车再 lazy load `cart`。
+
+### 案例 3：切语言
 
 ```ts
-declare global { var i18nInstances: Map<string, i18next>; }
-globalThis.i18nInstances ||= new Map();
-
-async function getI18n(lng: string) {
-  if (globalThis.i18nInstances.has(lng)) return globalThis.i18nInstances.get(lng);
-  const i = await initI18n(lng);
-  globalThis.i18nInstances.set(lng, i);
-  return i;
-}
+i18next.changeLanguage("en");
+// 内部：触发 Backend 异步加载 en-US/common.json，再 emit 'languageChanged'
 ```
 
-缺点：dev mode hot reload 时 cache stale
+React 适配里，`useTranslation` 会订阅这个事件，**让所有用到 t() 的组件重渲染**。这是为什么按一个"中/EN"按钮，整个页面文字一起变——靠的是事件 + React 的状态触发。
 
-### 方案 3：迁移到 next-intl
+## 踩过的坑
 
-next-intl 是为 App Router 设计的：
+1. **第一次配置太多旋钮**：Backend + LanguageDetector + namespace + fallbackLng + interpolation escape，新手通常折腾 1-2 天才"跑起来"。
 
-```ts
-import {useTranslations} from "next-intl";
+2. **复数语法与 ICU 标准不兼容**：i18next 用 `apple_one/apple_other` 后缀，行业标准 ICU MessageFormat 用 `{count, plural, one {...} other {...}}`。从 react-intl 迁过来要重写所有翻译文件。
 
-export default function Page() {
-  const t = useTranslations("Dashboard");
-  return <h1>{t("welcome")}</h1>;
-}
-```
+3. **RSC / Next.js 14 App Router 集成弱**：Server Components 每次请求都要 `createInstance() + init()`，缓存得自己写 `globalThis.cache`，dev 模式 hot reload 还会 stale。社区在迁 next-intl。
 
-next-intl 在 Next 14+ 体验远优于 i18next。多数新 Next 项目直接选 next-intl。
+4. **缺失 key 默认穿帮**：找不到翻译时，i18next 默认把 key 字符串本身吐到界面（"dashboard:welcome" 直接显示）。必须配 `missingKeyHandler`，否则上线翻车。
 
-## 附录 C — 学到补充（≥ 15 行）
+## 适用 vs 不适用场景
 
-补充 5 条工程教训：
+**适用**：
 
-6. **i18n 是渐进式的工程难题**：MVP 阶段几乎不用 i18n，全球化阶段一次性补完。i18next 这种"全功能"工具支持渐进式（先 1 语言，后续加 plugin）
-7. **plural 是 i18n 最大的设计陷阱**：英语 plural 简单，阿拉伯语 6 种 plural，泰语无 plural —— 库要支持 CLDR 规则，开发者要懂 plural 心智
-8. **lazy loading 是性能 vs 用户体验权衡**：首屏不加载所有 namespace（小 bundle），但切语言时延迟（loading state）
-9. **missing translation 处理** 是 i18n 工具的灵魂——库该 silent fallback 到 fallbackLng？显示 key？显示 EN？取决于产品偏好
-10. **i18n + RSC 仍是开放问题**：next-intl 占领 Next 生态，i18next 仍是 framework-agnostic 通吃但慢半拍。未来 2-3 年 i18n 库会更分化
+- 跨框架团队（前端 React + 后台 Vue + 老页 jQuery）想用同一套翻译
+- 复杂插件需求（自定义 Backend / 翻译协作 SaaS / 缺失 key 上报）
+- 中等到大型应用，需要按 namespace 拆翻译、按需加载
+- 想要一个"成熟、文档全、weekly downloads 千万级"的稳妥选择
+
+**不适用**：
+
+- 只用 Vue → vue-i18n 是官方，集成更深
+- 纯 Next.js 14 App Router 项目 → next-intl 在 RSC 场景明显更顺
+- 极致 bundle 敏感的小工具 → 12 KB 核心可能太重，可以 fluent-bundle / 自己写 Map
+- 严格 ICU 标准的国际化合规场景 → 选 react-intl / FormatJS
+
+## 历史小故事（可跳过）
+
+- **2011 年**：Jan Mühlemann 在德国某 SaaS 写内部 i18n 工具，受够了 jQuery 时代散落的翻译方案。
+- **2013 年**：开源到 GitHub，命名 i18next（"i18n + next 一代"）。
+- **2015 年**：拆出 react-i18next 独立维护，把"框架适配器"模式立住。
+- **2018 年**：作者上线商业 SaaS **locize**，做翻译协作 + 缺失 key 上报，开源 + 商业双轨。
+- **2023 年**：v23 加 TypeScript type-safe key（`t("hello")` 编译期验拼写）。
+- **2024 年**：Next.js App Router 流行后，社区在 i18next 与 next-intl 之间分化，i18next 在 RSC 场景慢半拍。
+
+## 学到什么
+
+1. **framework-agnostic 的红利会随时代变**：早年（多框架并存）是优势，框架深度集成时代（RSC）变成劣势
+2. **插件总线**让一个核心库覆盖完全不同的部署形态（HTTP / 文件系统 / SaaS / DB），是前端基建库的常用拓展模式
+3. **复数规则**是 i18n 最容易低估的地雷——CLDR 把世界语言抽象成 `zero/one/two/few/many/other` 六类，库内置才靠谱
+4. **缺失值处理**决定线上体验：silent fallback / 显示 key / 显示英文 / 上报到后台，每条路都有 trade-off
+
+## 延伸阅读
+
+- 官方文档：[i18next.com](https://www.i18next.com/)（教程 + API + plugin 列表）
+- 视频：[Jan Mühlemann — i18next intro](https://www.youtube.com/results?search_query=i18next+intro)（作者讲设计哲学）
+- 对比文章：[i18next vs next-intl in App Router](https://locize.com/blog/next-app-dir-i18n/)（locize 官方对比，但角度仍有参考价值）
+- CLDR 复数规则：[Unicode CLDR Plural Rules](https://cldr.unicode.org/index/cldr-spec/plural-rules)
+- [[next-intl]] —— Next.js App Router 场景的"对手 + 替代"
+- [[react-intl]] —— 走 ICU 标准的另一派代表
+
+## 关联
+
+- [[react-intl]] —— 同样做前端 i18n，但走 ICU 标准；与 i18next 是 i18n 生态两条主线
+- [[next-intl]] —— Next.js App Router 专用，i18next 在 RSC 场景的强力替代
+- [[vue-i18n]] —— Vue 官方 i18n，与 i18next 在 Vue 项目上正面竞争
+- [[react]] —— react-i18next 是 i18next 在 React 上的"帽子"，靠 hook + Provider 让翻译变 reactive
+- [[astro]] —— 静态站国际化场景，i18next 常用作 build-time 翻译注入
+- [[zod]] —— 表单校验消息也要 i18n，常和 i18next 拼起来用
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
