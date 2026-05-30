@@ -164,6 +164,7 @@ export default {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

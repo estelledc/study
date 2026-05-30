@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"why-did-you-render","area":"projects","path":"src/content/docs/projects/why-did-you-render.md","score":4,"reasons":["lines:612>250","legacy-frontmatter","h2-hits:1/11"],"lines":612,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"xstate","area":"projects","path":"src/content/docs/projects/xstate.md","score":4,"reasons":["lines:998>250","legacy-frontmatter","h2-hits:1/11"],"lines":998,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"yjs","area":"projects","path":"src/content/docs/projects/yjs.md","score":4,"reasons":["lines:477>250","legacy-frontmatter","h2-hits:1/11"],"lines":477,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"anime","area":"projects","path":"src/content/docs/projects/anime.md","score":3,"reasons":["lines:560>250","h2-hits:1/11"],"lines":560,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"arktype","area":"projects","path":"src/content/docs/projects/arktype.md","score":3,"reasons":["lines:464>250","h2-hits:2/11"],"lines":464,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
@@ -71,7 +69,6 @@
 {"slug":"valibot","area":"projects","path":"src/content/docs/projects/valibot.md","score":3,"reasons":["lines:428>250","h2-hits:2/11"],"lines":428,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"vanilla-extract","area":"projects","path":"src/content/docs/projects/vanilla-extract.md","score":3,"reasons":["lines:780>250","h2-hits:1/11"],"lines":780,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"visx","area":"projects","path":"src/content/docs/projects/visx.md","score":3,"reasons":["lines:439>250","h2-hits:2/11"],"lines":439,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"vllm","area":"papers","path":"src/content/docs/papers/vllm.md","score":3,"reasons":["lines:577>250","h2-hits:0/11"],"lines":577,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"vue-i18n","area":"projects","path":"src/content/docs/projects/vue-i18n.md","score":3,"reasons":["lines:436>250","h2-hits:2/11"],"lines":436,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"wretch","area":"projects","path":"src/content/docs/projects/wretch.md","score":3,"reasons":["lines:614>250","h2-hits:1/11"],"lines":614,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"yargs","area":"projects","path":"src/content/docs/projects/yargs.md","score":3,"reasons":["lines:711>250","h2-hits:0/11"],"lines":711,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}

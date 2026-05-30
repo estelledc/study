@@ -159,6 +159,7 @@ docker logs optimism-batcher-1 -f
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
+- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链

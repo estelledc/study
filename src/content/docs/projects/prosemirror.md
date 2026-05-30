@@ -164,4 +164,5 @@ socket.on('message', steps => {
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

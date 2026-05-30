@@ -160,6 +160,7 @@ SavingsAccount >> deposit: amount
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生

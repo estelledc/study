@@ -161,6 +161,7 @@ class LogEmitter:
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
+- [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
@@ -176,5 +177,6 @@ class LogEmitter:
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

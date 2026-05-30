@@ -148,5 +148,6 @@ const STYLE = { width: 100 };
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[react]] —— React UI 组件库
+- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 

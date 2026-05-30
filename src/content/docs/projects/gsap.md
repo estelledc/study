@@ -166,6 +166,7 @@ gsap.to(".box", {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[d3]] —— d3.js 数据驱动文档
 - [[echarts]] —— Apache ECharts 配置式数据可视化
 - [[framer-motion]] —— Framer Motion — React 声明式动画

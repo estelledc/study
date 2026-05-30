@@ -147,3 +147,6 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

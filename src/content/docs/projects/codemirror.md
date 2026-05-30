@@ -161,4 +161,5 @@ const logUpdates = ViewPlugin.fromClass(class {
 - [[react]] —— React UI 组件库
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

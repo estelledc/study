@@ -169,5 +169,9 @@ end
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 
