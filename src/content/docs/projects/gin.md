@@ -163,4 +163,5 @@ r.POST("/users", func(c *gin.Context) {
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[redis]] —— Redis — 内存键值数据库
+- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 

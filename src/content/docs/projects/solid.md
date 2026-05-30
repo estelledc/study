@@ -157,6 +157,7 @@ function Cart() {
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
+- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

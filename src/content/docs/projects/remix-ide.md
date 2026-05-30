@@ -162,5 +162,12 @@ contract HelloTest {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 

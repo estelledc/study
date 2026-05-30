@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 245 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 247 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：245 个
+- **总数**：247 个
 - **已分类**：206
-- **未分类**：39（落入"其他 / 待分类"段）
+- **未分类**：41（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 39 |
+| [其他 / 待分类](#其他--待分类) | 41 |
 
 ---
 
@@ -319,7 +319,7 @@ sidebar:
 |---|---|
 | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) |  |
 | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | Lexical 用 native browser selection + immutable EditorState + dirty-set reconciler，把 contentEditable 从"性能黑盒"压回… |
-| [monaco-editor — 把 VSCode 的编辑器内核搬进浏览器的 IDE 级控件](/study/projects/monaco-editor/) | Monaco 把 VSCode 的 CodeEditorWidget / TextModel / ViewModel / Web Worker LSP 协议原样拆出来作为浏览器 SDK，让任何站点都能挂上 IDE 级 … |
+| [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) |  |
 | [prosemirror — schema 不是配置项，是 contentEditable 的护身符](/study/projects/prosemirror/) | ProseMirror 用强 schema + Step + immutable State 把"在 contentEditable 上做协同富文本"从玄学变成可证明正确 |
 | [yjs — collaborative editing 不应该锁住编辑器，CRDT 抽象层让任何编辑器都能接](/study/projects/yjs/) | Kevin Jahns 把 CRDT 从论文工艺做成工业基建 |
 
@@ -490,12 +490,12 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) |  |
-| [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 倒排索引 + Radix Tree + BM25 + Levenshtein 矩阵剪枝，全部纯 TS 跑在 V8 里——证明大部分搜索场景根本不需要 server |
+| [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) |  |
 | [unstorage — 让运行环境从代码里抹掉的 KV 抽象层](/study/projects/unstorage/) | 一个 storage interface + driver registry 跑通 fs/redis/s3/cloudflare-kv/upstash 等 35+ backend |
 
 ## 其他 / 待分类
 
-共 39 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 41 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -526,6 +526,7 @@ sidebar:
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
+| `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -534,6 +535,7 @@ sidebar:
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
+| `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
@@ -541,7 +543,7 @@ sidebar:
 
 ---
 
-## 全部 245 个（字母序）
+## 全部 247 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -662,14 +664,15 @@ sidebar:
 | `marked` | [marked regex-based 单文件 markdown 解析器](/study/projects/marked/) | Markdown / 解析 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
+| `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
 | `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
 | `midscene` | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
-| `minisearch` | [minisearch — 把 Elasticsearch 那一整套，压成一个 27KB 浏览器文件](/study/projects/minisearch/) | 其他基础设施 |
+| `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
 | `mobx` | [MobX — Reactive state via TFRP](/study/projects/mobx/) | 状态管理 |
-| `monaco-editor` | [monaco-editor — 把 VSCode 的编辑器内核搬进浏览器的 IDE 级控件](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
+| `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
 | `motion-one` | [motion-one 状元篇](/study/projects/motion-one/) | 动画 |
 | `msw` | [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
@@ -724,6 +727,7 @@ sidebar:
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | 其他 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
+| `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |
 | `rolldown` | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 构建工具 / Bundler |

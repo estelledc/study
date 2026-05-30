@@ -170,5 +170,6 @@ func Charge(ctx context.Context, orderID string) error {
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[temporal]] —— Temporal — 持久化工作流引擎
 

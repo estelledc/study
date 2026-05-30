@@ -168,5 +168,6 @@ export default {
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
 

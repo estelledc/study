@@ -153,6 +153,7 @@ jstat -gcutil <pid> 1000
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[smalltalk-80]] —— Smalltalk-80
 - [[tcp]] —— TCP Transmission Control Protocol
 - [[tofte-talpin-regions]] —— Tofte-Talpin Region-Based Memory Management

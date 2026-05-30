@@ -182,5 +182,8 @@ let app = Router::new()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 

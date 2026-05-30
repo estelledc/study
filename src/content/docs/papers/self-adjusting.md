@@ -148,3 +148,6 @@ trait Compiler: salsa::Database {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
+- [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
+

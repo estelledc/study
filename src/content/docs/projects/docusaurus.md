@@ -150,6 +150,7 @@ npm run docusaurus docs:version 1.0
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react]] —— React UI 组件库
 - [[starlight]] —— Starlight — Astro 文档站点主题

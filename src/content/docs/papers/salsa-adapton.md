@@ -147,3 +147,7 @@ file_text(file_id)              # input：你刚改的 .rs 文件文本
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[adapton]] —— Adapton — 增量计算
+- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
+
