@@ -451,7 +451,7 @@ const lucia = new Lucia(adapter, {
 ### 下个月能用的部分
 
 - **从 Auth.js 迁移到 utility 三件套**：如果实习项目正在用 Auth.js 但只用了 GitHub 登录 + DB session 两个特性，可以分两步迁移：先把 `providers: [GitHub({...})]` 换成 arctic 直调（保留 NextAuth 的 session 路由）；再把 NextAuth 整层抽掉，自己写 ~30 行 validateSession + sessionMiddleware
-- **学完后写自己的 mini auth lib**：基于 core.ts 模板加 1 个公司内部需要的 SSO provider（例如美团内网 OAuth），变成 ~200 行的私有 npm 包，避免 fork Auth.js 几千行
+- **学完后写自己的 mini auth lib**：基于 core.ts 模板加 1 个公司内部需要的 SSO provider（例如某大厂内网 OAuth），变成 ~200 行的私有 npm 包，避免 fork Auth.js 几千行
 - **把"哲学反命题"写进团队设计 RFC**：team 内部讨论 auth 选型时，把"是要 framework 还是 utility"作为第一个 axis 列出来，不要直接陷入 "Auth.js vs better-auth vs Clerk"——上一层抽象更值得讨论
 - **review 现有 cookie/session 代码**：拿 oslo 的 serializeCookie 检查内部代码——是否处理了 SameSite / Secure / HttpOnly 三件套；是否用 encodeURIComponent；是否处理 maxAge=0 的删除语义
 

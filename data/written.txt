@@ -32,6 +32,7 @@ clip
 codd-1970
 codd-1979-extending
 cognitive-load-theory
+comer-1979-btree
 compiler-errors
 constitutional-ai
 cook-levin
@@ -74,6 +75,7 @@ hindley-milner
 hoare-logic
 http-2
 huffman-1952
+hughes-fp-matters
 induction-heads
 ingres-1976
 instructgpt
@@ -101,6 +103,7 @@ megatron-lm
 metagpt
 mixture-of-experts
 muzero
+mycroft-strictness
 no-silver-bullet
 openhands
 pair-programming
@@ -136,6 +139,7 @@ sequel-1974
 shannon-1948
 sillito-questions
 simula-67
+skip-list-1990
 sleeper-agents
 smalltalk-80
 snowflake
@@ -168,11 +172,13 @@ zgc
 zk-snark
 
 # projects
+actix-web
 affine
 ag-grid
 anime
 ansible
 anthropic-cookbook
+ape-framework
 argocd
 arktype
 astro
@@ -221,6 +227,7 @@ effect
 elasticsearch
 elysia
 emotion
+encore
 enquirer
 erigon
 esbuild
@@ -242,6 +249,7 @@ go-zero
 got
 grafana
 gsap
+hardhat
 helm
 hono
 i18next

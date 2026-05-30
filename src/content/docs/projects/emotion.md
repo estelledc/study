@@ -426,11 +426,11 @@ Emotion 的 runtime 注入和 RSC 的冲突点：
 
 ---
 
-## 与 quanzhiping / blindbox 等当前项目的关联
+## 与 某直播业务 / 某 H5 业务 等当前项目的关联
 
 虽然 Emotion 不在我当前手上的项目里，但学完它能解释几个我以前看不懂的现象：
 
-- blindbox 项目里看到 `_app.tsx` 里有 `CacheProvider`——这是 Emotion 的 SSR cache 注入，避免请求间样式串扰
+- 某 H5 业务 项目里看到 `_app.tsx` 里有 `CacheProvider`——这是 Emotion 的 SSR cache 注入，避免请求间样式串扰
 - MUI 表单页 className 都是 `css-xxx` 形式——是 Emotion 的 hash className
 - 之前调试样式串扰时不知道为什么"明明组件分开却互相影响"——很可能就是没正确 scope cache 实例
 

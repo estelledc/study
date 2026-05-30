@@ -591,7 +591,7 @@ isEmpty(): boolean {
 - **immutable + 双缓冲 + dirty set** 这套组合在任何"高频小修改 + 偶发全量 commit"的场景都通用。
   比如做一个 "AI 实时改稿"按钮，按一下让 LLM 流式吐出 diff，每个 chunk 触发一次 `editor.update(() => applyDiffChunk(...))`。
   Lexical 自动 batch 进同一个 microtask 的 commit，避免每个 chunk 重 paint。
-- **plugin = 注册器返回 unregister**——这个模式适用于任何"可扩展运行时"。我可以把 [video-eval-agent](memory/projects/video-eval-agent/project_video_eval_agent_overview.md)
+- **plugin = 注册器返回 unregister**——这个模式适用于任何"可扩展运行时"。我可以把 [某 ML 评估系统](memory/projects/某 ML 评估系统/project_video_eval_agent_overview.md)
   里 evaluator 的 hook 系统改成同形：`agent.registerObserver(stage, fn)` 返回 unregister，`mergeRegister(...)` 一把撤销。
   比目前的 list-of-handlers 配置更清晰。
 - **dollar 函数 + 全局 active context** 是 hooks 同形——值得在我自己的 SDK 设计时复用：API 简洁，强位置约束做防呆。

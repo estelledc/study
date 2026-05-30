@@ -451,7 +451,7 @@ const defaultBM25params = { k: 1.2, b: 0, d: 0.5 }
 ### 下个月能用（≥ 4 子弹）
 
 - 如果做"个人 RAG"系统，minisearch 可以做 sparse retrieval 的那一层（BM25 是 dense embedding 的好搭档，hybrid 检索）
-- blindbox / quanzhiping 项目里如果有任何"按字段搜历史记录"的场景，可以替代 grep + sql LIKE
+- 某 H5 业务 / 某直播业务 项目里如果有任何"按字段搜历史记录"的场景，可以替代 grep + sql LIKE
 - 学完 BM25+ 公式后，可以反推 Elasticsearch 的 `match` query 默认行为，知道为什么 `b = 0.75` 是它的默认（minisearch 是 0.7）
 - Radix Tree 这个数据结构可以单独学——`SearchableMap` 是不依赖 minisearch 主体也能用的小工具，未来做任何"前缀查询"场景（自动补全、命令面板）都能套用
 
