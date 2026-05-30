@@ -200,6 +200,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
+- [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理

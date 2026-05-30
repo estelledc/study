@@ -155,4 +155,5 @@ let apply (f: ? -> ?) (x: int) =
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 

@@ -158,4 +158,9 @@ Clack 的设计可以拆成 **三块**：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[boxen]] —— boxen — 给终端文本套个边框的事
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 

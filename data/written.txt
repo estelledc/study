@@ -124,6 +124,7 @@ megatron-lm
 metagpt
 mixture-of-experts
 mlir
+monetdb-x100-2005
 muzero
 mycroft-strictness
 neumann-2015-large-joins
@@ -163,6 +164,7 @@ sam
 scaling-laws
 scott-strachey-denotational
 self-adjusting
+self-customization
 self-pic
 selinger-1979
 sequel-1974
@@ -228,6 +230,7 @@ arktype
 aspnetcore
 astro
 auth-js
+axelar
 axios
 axum
 balancer
@@ -379,6 +382,7 @@ ofetch
 ollama
 optimism
 ora
+orleans
 oxc
 patchright
 penpot

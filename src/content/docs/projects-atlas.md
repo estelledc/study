@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 287 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 289 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：287 个
+- **总数**：289 个
 - **已分类**：206
-- **未分类**：81（落入"其他 / 待分类"段）
+- **未分类**：83（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 81 |
+| [其他 / 待分类](#其他--待分类) | 83 |
 
 ---
 
@@ -62,7 +62,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [d3.js 数据驱动文档](/study/projects/d3/) | 不是图表库，是图表库的乐高底层——data join + scales + shapes + transitions |
+| [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) |  |
 | [Apache ECharts 配置式数据可视化](/study/projects/echarts/) | 不是底层乐高，是开箱图表 + 声明式 option JSON——把 17 种 series 类型 + zrender 自家渲染层封装成一个 setOption 调用 |
 | [Observable Plot Grammar of Graphics in JS](/study/projects/observable-plot/) |  |
 | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) |  |
@@ -456,7 +456,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) |  |
-| [commander.js](/study/projects/commander/) |  |
+| [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) |  |
 | [ink](/study/projects/ink/) |  |
 | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) |  |
 | [yargs](/study/projects/yargs/) |  |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 81 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 83 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -514,6 +514,7 @@ sidebar:
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
+| `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
@@ -551,6 +552,7 @@ sidebar:
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
+| `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
@@ -583,7 +585,7 @@ sidebar:
 
 ---
 
-## 全部 287 个（字母序）
+## 全部 289 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -618,6 +620,7 @@ sidebar:
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | 其他 |
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
+| `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
 | `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) | Monorepo / 包管理 |
 | `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
@@ -629,11 +632,11 @@ sidebar:
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
-| `commander` | [commander.js](/study/projects/commander/) | CLI / 命令行工具 |
+| `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | CLI / 命令行工具 |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | 其他 |
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
-| `d3` | [d3.js 数据驱动文档](/study/projects/d3/) | 数据可视化 |
+| `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
 | `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
@@ -759,6 +762,7 @@ sidebar:
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
+| `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | 其他 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
 | `pixi` | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |

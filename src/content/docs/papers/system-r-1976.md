@@ -172,5 +172,6 @@ System R 的处理：
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

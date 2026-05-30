@@ -163,5 +163,6 @@ JOIN dim_geo g ON u.gid = g.id
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[turing-1936]] —— Turing 1936 可计算性
+- [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

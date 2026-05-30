@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"clack","area":"projects","path":"src/content/docs/projects/clack.md","score":3,"reasons":["lines:528>250","h2-hits:1/11"],"lines":528,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"clerk","area":"projects","path":"src/content/docs/projects/clerk.md","score":3,"reasons":["lines:607>250","h2-hits:1/11"],"lines":607,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"commander","area":"projects","path":"src/content/docs/projects/commander.md","score":3,"reasons":["lines:534>250","h2-hits:0/11"],"lines":534,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"d3","area":"projects","path":"src/content/docs/projects/d3.md","score":3,"reasons":["lines:614>250","h2-hits:1/11"],"lines":614,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"date-fns","area":"projects","path":"src/content/docs/projects/date-fns.md","score":3,"reasons":["lines:446>250","h2-hits:1/11"],"lines":446,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
