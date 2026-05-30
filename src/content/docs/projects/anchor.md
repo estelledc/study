@@ -170,6 +170,7 @@ await program.methods
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[move-language]] —— Move — 资源型智能合约语言
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE

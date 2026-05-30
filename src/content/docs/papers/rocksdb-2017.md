@@ -157,4 +157,5 @@ Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 

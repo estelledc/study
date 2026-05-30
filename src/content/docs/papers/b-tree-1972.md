@@ -141,6 +141,7 @@ B+Tree 的执行路径：
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
+- [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

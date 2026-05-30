@@ -163,5 +163,6 @@ map.firstKey();   // O(log n) 有序查询
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[redis]] —— Redis — 内存键值数据库
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
+- [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

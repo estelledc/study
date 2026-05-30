@@ -157,5 +157,13 @@ if a then if b then x else y
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
+- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
+- [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

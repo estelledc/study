@@ -163,6 +163,7 @@ public interface GitHubClient {
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 

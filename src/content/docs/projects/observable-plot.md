@@ -159,3 +159,12 @@ Plot.plot({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
+- [[tanstack-form]] —— TanStack Form Headless 多框架表单库
+- [[valibot]] —— valibot 模块化模式校验
+- [[visx]] —— visx Airbnb React 可视化原语
+

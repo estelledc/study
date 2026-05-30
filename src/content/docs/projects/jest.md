@@ -156,6 +156,7 @@ test('用户卡片渲染', () => {
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
+- [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器

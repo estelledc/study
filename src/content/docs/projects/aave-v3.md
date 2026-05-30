@@ -168,6 +168,7 @@ pool.liquidationCall(
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
