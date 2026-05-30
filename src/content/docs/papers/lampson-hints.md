@@ -449,15 +449,15 @@ type watchableStore struct {
 
 ## 10. 实习日志的应用
 
-### 应用 1：blindbox 重构 ResultV2
+### 应用 1：某 H5 业务 重构 ResultV2
 
 - **hint 4.1 KISS**：先做 Result（单页）再 ResultV2（动效 + 分享 + 编辑）；不要一开始就做 ResultV3 的"通用结果中间页"——会进 second-system 陷阱
 - **hint 5.1 caching**：奖品图 prefetch 到 service worker 是 caching；用户切换 SKU 时 invalidate（注意 invalidation 协议）
 - **hint 6.3 atomic**：抽奖请求必须 idempotent，否则用户网络抖动重试会双扣
 
-### 应用 2：video-eval-agent 的 6 件套契约
+### 应用 2：某 ML 评估系统 的 评估契约契约
 
-- **hint 4.3 leave to client**：6 件套 schema（observations / hypotheses / decisions / plans / evidence / state）只规定结构，**不规定**评估算法——VLM/LLM 自己决定怎么填
+- **hint 4.3 leave to client**：评估契约 schema（observations / hypotheses / decisions / plans / evidence / state）只规定结构，**不规定**评估算法——VLM/LLM 自己决定怎么填
 - **hint 6.3 atomic**：每个 chapter 评估独立 atomic transaction，失败重试整章而非跨章修补
 - **hint 6.4 names refer to objects**：chapter ID 用 stable hash 而非顺序索引——视频片段重剪后引用仍然有效
 - **hint 5.5 shed load**：当 VLM 调用预算超限时主动降级（少 chapter / 短 prompt），别死等
