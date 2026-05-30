@@ -159,5 +159,13 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
+- [[ssa]] —— SSA — 静态单赋值形式
 

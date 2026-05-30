@@ -155,6 +155,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

@@ -152,3 +152,9 @@ Apache Flink 的 source / transform / sink 算子链 = Volcano 的算子树；Fl
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+

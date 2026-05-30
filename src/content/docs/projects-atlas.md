@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 251 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 253 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：251 个
+- **总数**：253 个
 - **已分类**：206
-- **未分类**：45（落入"其他 / 待分类"段）
+- **未分类**：47（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 45 |
+| [其他 / 待分类](#其他--待分类) | 47 |
 
 ---
 
@@ -373,7 +373,7 @@ sidebar:
 | [browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架](/study/projects/browser-use/) |  |
 | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) |  |
 | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) |  |
-| [patchright — 给 Playwright 打 patch 让浏览器自动化在生产环境真正用得上](/study/projects/patchright/) | 不是新 driver、不是 stealth 插件，是直接 fork Playwright 源码 ts-morph AST 改写——拔掉 Runtime |
+| [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) |  |
 | [stagehand — Playwright + LLM 的混血框架，act/extract/observe 三 API 共用 a11y 树](/study/projects/stagehand/) | 框架/SDK 范例 (v1 |
 | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | TypeScript + Fastify + puppeteer-core，让 LLM agent 像调外部 SaaS 一样用浏览器 |
 
@@ -400,7 +400,7 @@ sidebar:
 | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) |  |
 | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) |  |
 | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) |  |
-| [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 大型应用范例，48k stars 背后的"common/ |
+| [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) |  |
 | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 大型应用范例——49 |
 | [Supabase — Firebase 的开源替代](/study/projects/supabase/) |  |
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 45 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 47 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -503,6 +503,7 @@ sidebar:
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
+| `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
@@ -542,12 +543,13 @@ sidebar:
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
+| `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 
 ---
 
-## 全部 251 个（字母序）
+## 全部 253 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -558,6 +560,7 @@ sidebar:
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
+| `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype TypeScript 字符串 DSL 模式校验](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
@@ -699,8 +702,8 @@ sidebar:
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
-| `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在生产环境真正用得上](/study/projects/patchright/) | AI 浏览器自动化 |
-| `penpot` | [Penpot — 用一个 Lisp 方言打穿前后端的自托管 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
+| `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
+| `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
 | `pixi` | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | 图像处理 / Canvas |
@@ -768,6 +771,7 @@ sidebar:
 | `temporal-polyfill` | [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) | 日期时间 |
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
 | `testing-library` | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 测试 / 验证 |
+| `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
 | `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | DevOps / 容器 / 运维 |
 | `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | 数据获取 / 路由 |

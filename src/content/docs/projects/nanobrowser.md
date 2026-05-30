@@ -151,5 +151,6 @@ registry.action({
 
 - [[browser-use]] —— browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
+- [[patchright]] —— patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作
 - [[zod]] —— Zod — TypeScript-first schema 验证
 

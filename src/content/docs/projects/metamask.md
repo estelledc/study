@@ -151,6 +151,7 @@ window.ethereum.on('chainChanged', (chainId) => {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链

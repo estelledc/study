@@ -158,6 +158,7 @@ System R 的处理：
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解

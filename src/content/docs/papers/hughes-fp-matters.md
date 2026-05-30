@@ -162,4 +162,5 @@ maximise (Node n cs) = maximum (map minimise cs)
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
+- [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
 

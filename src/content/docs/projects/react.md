@@ -173,6 +173,7 @@ function Greeting({ name }) {
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[penpot]] —— Penpot — 开源自托管的 Figma 替代
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
