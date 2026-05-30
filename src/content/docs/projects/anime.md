@@ -165,6 +165,7 @@ io.observe(document.querySelector('.hero-title'))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[playwright]] —— Playwright — 跨浏览器自动化测试

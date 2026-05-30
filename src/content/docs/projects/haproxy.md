@@ -157,4 +157,5 @@ backend pg_pool
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[redis]] —— Redis — 内存键值数据库
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 

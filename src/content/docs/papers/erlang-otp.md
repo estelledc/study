@@ -174,6 +174,7 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
+- [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

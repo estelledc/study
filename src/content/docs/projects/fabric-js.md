@@ -149,3 +149,6 @@ fabric 没有官方 React 包装。这件事很反直觉——一个 2008 年起
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[excalidraw]] —— Excalidraw — 手绘风协作白板
+

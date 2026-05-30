@@ -160,6 +160,7 @@ e.Start(":1323")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[hono]] —— Hono — 多运行时 Web 框架

@@ -162,7 +162,7 @@ controller.abort();
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
-- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[i18next]] —— i18next framework-agnostic i18n 引擎
 - [[ky]] —— ky 极简 fetch-based HTTP 客户端
 - [[reservoir-sdk]] —— Reservoir SDK — 跨市场 NFT 聚合

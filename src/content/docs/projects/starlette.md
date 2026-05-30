@@ -171,6 +171,7 @@ stars 量级 11k+，依赖只有 `anyio`，依赖图极简。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[hono]] —— Hono — 多运行时 Web 框架

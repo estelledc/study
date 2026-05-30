@@ -163,6 +163,7 @@ socket.on('message', steps => {
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

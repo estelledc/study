@@ -164,6 +164,7 @@ class LogEmitter:
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎

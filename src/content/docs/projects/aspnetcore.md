@@ -171,6 +171,7 @@ app.Run();
 
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象

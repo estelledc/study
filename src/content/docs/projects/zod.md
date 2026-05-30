@@ -187,8 +187,7 @@ function LoginForm() {
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
-- [[fastify]] —— Fastify schema-first Node 高性能 web 框架
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[i18next]] —— i18next framework-agnostic i18n 引擎
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
 - [[ky]] —— ky 极简 fetch-based HTTP 客户端
@@ -199,7 +198,6 @@ function LoginForm() {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
-- [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库

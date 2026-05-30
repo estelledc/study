@@ -174,6 +174,7 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[hono]] —— Hono — 多运行时 Web 框架

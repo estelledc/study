@@ -172,6 +172,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
+- [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
 - [[valkey]] —— Valkey — Redis 7.4 的开源 fork
