@@ -162,6 +162,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[raft]] —— Raft — 易理解的共识算法
+- [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 253 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 255 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：253 个
+- **总数**：255 个
 - **已分类**：206
-- **未分类**：47（落入"其他 / 待分类"段）
+- **未分类**：49（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 47 |
+| [其他 / 待分类](#其他--待分类) | 49 |
 
 ---
 
@@ -383,7 +383,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [pino — 日志不该阻塞热路径](/study/projects/pino/) | 把 logging 拆成两段：主线程只做 string 拼接 + 一次 stream |
+| [pino — 日志不该阻塞热路径](/study/projects/pino/) |  |
 | [prom-client — Node 监控的事实标准 SDK](/study/projects/prom-client/) | 把指标分四类（Counter / Gauge / Histogram / Summary），主线程零格式化累加，scrape 时一次性序列化为 OpenMetrics 文本 |
 | [Sentry — 不是「日志收集器」，是「把崩溃当作可查询的列存事件」的双层数据库错误监控平台](/study/projects/sentry/) | 大型应用范例——38k+ stars 的开源错误监控平台，Python + Django + ClickHouse + TypeScript，事件 ingest / grouping / Snuba 抽象三轨精读 |
 | [web-vitals — 不是「测速工具」，是把 Chrome UX Report 的指标定义在浏览器端等值复刻的协议库](/study/projects/web-vitals/) | 工具库范例——8 |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 47 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 49 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -539,6 +539,8 @@ sidebar:
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
+| `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
+| `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
@@ -549,7 +551,7 @@ sidebar:
 
 ---
 
-## 全部 253 个（字母序）
+## 全部 255 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -740,6 +742,8 @@ sidebar:
 | `rolldown` | [rolldown — Vite 下一代打包引擎，Rust + oxc 重写 Rollup](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — Rust 重写的 webpack，兼容 plugin 生态的 bundler](/study/projects/rspack/) | 构建工具 / Bundler |
+| `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) | 其他 |
+| `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) | 其他 |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | 其他 |
 | `sentry` | [Sentry — 不是「日志收集器」，是「把崩溃当作可查询的列存事件」的双层数据库错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |

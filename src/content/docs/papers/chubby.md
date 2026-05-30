@@ -162,7 +162,9 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[paxos]] —— Paxos — 分布式共识算法
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

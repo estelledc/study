@@ -167,4 +167,5 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
+- [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
 

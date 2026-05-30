@@ -153,3 +153,8 @@ java -XX:+UseZGC -XX:+ZGenerational -Xmx32g MyApp
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收
+- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
+- [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
+

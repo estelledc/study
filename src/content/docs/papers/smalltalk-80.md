@@ -155,6 +155,7 @@ SavingsAccount >> deposit: amount
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

@@ -154,5 +154,6 @@ docker compose -p penpot -f docker-compose.yaml up -d
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[react]] —— React UI 组件库
+- [[redis]] —— Redis — 内存键值数据库
 

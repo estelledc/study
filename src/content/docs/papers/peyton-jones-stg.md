@@ -162,4 +162,5 @@ g = \r [xs] let n = \u [] length xs in case +# n 1 of r { __DEFAULT -> r }
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
 

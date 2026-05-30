@@ -169,4 +169,5 @@ def main():
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
+- [[safe-contracts]] —— Safe — 多签智能账户合约
 

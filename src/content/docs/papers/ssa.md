@@ -185,4 +185,5 @@ entry:
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 
