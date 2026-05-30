@@ -163,9 +163,9 @@ useForm({ validators: { onSubmit: LoginSchema } })
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[hono]] —— Hono — 多运行时 Web 框架
-- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
+- [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n

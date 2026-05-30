@@ -167,6 +167,7 @@ let run e = eval e [] (fun v -> v)
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递

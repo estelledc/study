@@ -13,6 +13,7 @@ art-2013
 attention
 aurora
 autogen
+azure-storage-2011
 b-tree-1972
 beck-tdd
 bernstein-1981-cc
@@ -73,6 +74,7 @@ dqn
 dstreams-2013
 duckdb-2019
 dynamo
+earley-parser
 ebpf
 effect-handlers
 erlang-otp
@@ -158,6 +160,7 @@ partial-evaluation-jones
 paxos
 paxos-1998
 paxos-simple-2001
+peg-packrat-ford
 peyton-jones-stg
 plotkin-sos
 polar-codes-2009
@@ -267,6 +270,7 @@ arbitrum
 argent-x
 argocd
 arktype
+arweave
 aspnetcore
 astro
 auth-js
@@ -362,6 +366,7 @@ haproxy
 hardhat
 helidon
 helm
+hocuspocus
 hono
 hot-chocolate
 i18next
@@ -499,9 +504,11 @@ sequelize
 shadcn-ui
 sharp
 shiki
+sia
 sinatra
 slim-framework
 socket-io
+soketi
 solana
 solid
 sortablejs

@@ -155,3 +155,11 @@ function List({ items }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
+- [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
+- [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
+- [[recharts]] —— Recharts JSX 数据可视化组件库
+- [[visx]] —— visx Airbnb React 可视化原语
+

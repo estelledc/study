@@ -158,4 +158,5 @@ lotus-worker run --listen 0.0.0.0:2345
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 - [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
+- [[storj]] —— Storj — S3 兼容的去中心化对象存储
 
