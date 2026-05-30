@@ -129,18 +129,16 @@ Chinchilla 是 2022 年最重要的 LLM 训练范式转折点，没有之一。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[ampere-architecture-2020]] —— NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[hopper-architecture-2022]] —— NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[ppo]] —— PPO — Proximal Policy Optimization
-- [[resnet]] —— ResNet — 残差连接
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[sleeper-agents]] —— Sleeper Agents — 故意藏后门的 LLM
-- [[word2vec]] —— Word2Vec — 词向量奠基
 

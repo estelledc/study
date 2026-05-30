@@ -1,5 +1,6 @@
 # papers
 3d-gaussian-splatting
+acl2-2000
 activation-patching
 adapton
 aes
@@ -7,6 +8,7 @@ agda-norell
 agentless
 algol-60
 alphago
+ampere-architecture-2020
 andersen-pointer-analysis
 anthropic-circuits
 aries-1992
@@ -189,6 +191,7 @@ mattern-1989
 maxwell-architecture-2014
 mccarthy-lisp
 mcmillan-smv-1993
+megastore-2011
 megatron-lm
 mencius-2008
 metagpt
@@ -352,6 +355,7 @@ aspnetcore
 astro
 asynq
 auth-js
+automerge
 axelar
 axios
 axum
@@ -473,6 +477,7 @@ hocuspocus
 hono
 hot-chocolate
 htop
+httpie
 i18next
 immer
 immich
@@ -565,6 +570,7 @@ ollama
 openmeetings
 opensea-js
 openzeppelin-contracts
+optax
 optimism
 ora
 orleans

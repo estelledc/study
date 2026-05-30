@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 331 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 334 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：331 篇
+- **总数**：334 篇
 - **已分类**：143
-- **未分类**：188（落入"其他 / 待分类"段）
+- **未分类**：191（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 188 |
+| [其他 / 待分类](#其他--待分类) | 191 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 188 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 191 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -385,7 +385,9 @@ sidebar:
 | `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) |
 | `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) |
 | `hnsw-2018` | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) |
+| `hol-light-2009` | [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) |
 | `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) |
+| `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) |
 | `hotspot-server-compiler` | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
@@ -409,6 +411,7 @@ sidebar:
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |
+| `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
@@ -499,7 +502,7 @@ sidebar:
 
 ---
 
-## 全部 331 篇（字母序）
+## 全部 334 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -642,7 +645,9 @@ sidebar:
 | `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) | 其他 |
 | `hnsw-2018` | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) | 其他 |
 | `hoare-logic` | [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
+| `hol-light-2009` | [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) | 其他 |
 | `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) | 其他 |
+| `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) | 其他 |
 | `hotspot-server-compiler` | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) | 其他 |
 | `http-2` | [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
@@ -678,6 +683,7 @@ sidebar:
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
+| `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) | 其他 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |

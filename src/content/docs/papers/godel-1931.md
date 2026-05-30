@@ -143,6 +143,7 @@ S: "S 是假的。"
 
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
 - [[huffman-1952]] —— Huffman 编码
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
@@ -151,6 +152,7 @@ S: "S 是假的。"
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明

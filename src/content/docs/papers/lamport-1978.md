@@ -181,6 +181,7 @@ class LogEmitter:
 - [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
 - [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader

@@ -165,5 +165,6 @@ jq '.. | objects | select(has("email")) | .email' big-config.json
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[xh]] —— xh — HTTPie 的 Rust 重写版
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）
 

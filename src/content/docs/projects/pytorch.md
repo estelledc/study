@@ -154,6 +154,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[flax]] —— Flax — JAX 上的神经网络库

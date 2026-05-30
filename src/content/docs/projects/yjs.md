@@ -162,6 +162,7 @@ notes.set('note-1', { title: '...', body: '...' })
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 
