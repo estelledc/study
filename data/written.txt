@@ -36,6 +36,7 @@ chubby
 ci-effects
 clickhouse
 clip
+cockroachdb-2020
 codd-1970
 codd-1979-extending
 cognitive-load-theory
@@ -188,6 +189,7 @@ tofte-talpin-regions
 toolformer
 toy-models-superposition
 trees-that-grow
+triton-llm
 turchin-supercompilation
 turing-1936
 tvm
@@ -288,6 +290,7 @@ go-ethereum
 go-zero
 got
 grafana
+grape
 gsap
 hanami
 hardhat
@@ -376,6 +379,7 @@ playwright
 pnpm
 podman
 poem
+polygon-zkevm
 postgres-js
 postgresql
 preact

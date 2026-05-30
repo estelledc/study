@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 205 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 207 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：205 篇
+- **总数**：207 篇
 - **已分类**：143
-- **未分类**：62（落入"其他 / 待分类"段）
+- **未分类**：64（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 62 |
+| [其他 / 待分类](#其他--待分类) | 64 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 62 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 64 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -317,6 +317,7 @@ sidebar:
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |
+| `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
@@ -339,6 +340,7 @@ sidebar:
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
+| `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
@@ -373,7 +375,7 @@ sidebar:
 
 ---
 
-## 全部 205 篇（字母序）
+## 全部 207 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -405,6 +407,7 @@ sidebar:
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | 其他 |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | 其他 |
 | `calvin` | [Calvin — 不要每次都协商，先排好顺序大家照做](/study/papers/calvin/) | 数据库 |
+| `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) | 其他 |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
@@ -481,6 +484,7 @@ sidebar:
 | `lampson-hints` | [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) | 其他 |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
+| `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |

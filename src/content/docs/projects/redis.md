@@ -154,6 +154,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[kafka]] —— Apache Kafka — 分布式流处理平台
 - [[langchain]] —— LangChain — LLM 应用开发框架
+- [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库

@@ -196,6 +196,7 @@ management:
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书

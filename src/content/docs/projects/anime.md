@@ -165,4 +165,5 @@ io.observe(document.querySelector('.hero-title'))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[gsap]] —— GSAP — 业界级 JS 动画引擎与 timeline 编排
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+
