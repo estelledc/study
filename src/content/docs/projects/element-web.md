@@ -157,6 +157,7 @@ client.on("Room.timeline", (event, room) => {
 - [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[react]] —— React UI 组件库
+- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 

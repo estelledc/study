@@ -134,6 +134,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[jaeger]] —— Jaeger — 分布式追踪系统
 - [[mysql]] —— MySQL — 全球最流行关系数据库

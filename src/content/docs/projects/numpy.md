@@ -154,6 +154,7 @@ print(a)              # a 不变
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[llvm]] —— LLVM — 模块化编译器框架

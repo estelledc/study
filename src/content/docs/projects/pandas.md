@@ -162,6 +162,7 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库

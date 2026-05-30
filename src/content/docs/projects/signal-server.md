@@ -150,5 +150,12 @@ Signal 做法：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
+- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
+- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
+- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
+- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[redis]] —— Redis — 内存键值数据库
+- [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 

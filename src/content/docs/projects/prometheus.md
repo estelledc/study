@@ -183,6 +183,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[influxdb]] —— InfluxDB — 专用时序数据库

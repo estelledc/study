@@ -175,6 +175,7 @@ result = (
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pandas]] —— pandas — Python 表格数据事实标准
