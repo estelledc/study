@@ -166,6 +166,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

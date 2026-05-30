@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 289 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 291 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：289 个
+- **总数**：291 个
 - **已分类**：206
-- **未分类**：83（落入"其他 / 待分类"段）
+- **未分类**：85（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 83 |
+| [其他 / 待分类](#其他--待分类) | 85 |
 
 ---
 
@@ -111,8 +111,8 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [date-fns 模块化日期函数库](/study/projects/date-fns/) |  |
-| [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) |  |
+| [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) |  |
+| [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) |  |
 | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) |  |
 | [luxon TZ + i18n 现代 Moment 替代](/study/projects/luxon/) |  |
 | [Temporal API JavaScript 现代日期时间标准](/study/projects/temporal-polyfill/) |  |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 83 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 85 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -514,6 +514,7 @@ sidebar:
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
+| `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
@@ -553,6 +554,7 @@ sidebar:
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
+| `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
@@ -585,7 +587,7 @@ sidebar:
 
 ---
 
-## 全部 289 个（字母序）
+## 全部 291 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -620,6 +622,7 @@ sidebar:
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | 其他 |
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
+| `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) | 其他 |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
 | `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) | Monorepo / 包管理 |
@@ -637,8 +640,8 @@ sidebar:
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
-| `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
-| `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
+| `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
+| `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
@@ -767,6 +770,7 @@ sidebar:
 | `pixi` | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
+| `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) | 其他 |
 | `pnpm` | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `podman` | [Podman — 无 daemon 容器引擎](/study/projects/podman/) | DevOps / 容器 / 运维 |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) | 其他 |

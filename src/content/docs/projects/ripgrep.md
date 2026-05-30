@@ -146,6 +146,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[bat]] —— bat — 现代 cat 替代
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[fd]] —— fd — Rust 写的现代 find
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器

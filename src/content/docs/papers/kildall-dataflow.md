@@ -167,6 +167,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快

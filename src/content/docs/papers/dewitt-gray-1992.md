@@ -155,6 +155,7 @@ GROUP BY 1;
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
+- [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

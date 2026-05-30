@@ -161,6 +161,7 @@ controller.abort();
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[elysia]] —— Elysia Bun-first TypeScript Web 框架
 - [[express]] —— Express Node.js 经典 Web 框架
 - [[i18next]] —— i18next framework-agnostic i18n 引擎
