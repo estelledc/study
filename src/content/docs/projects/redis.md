@@ -150,6 +150,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[kafka]] —— Apache Kafka — 分布式流处理平台

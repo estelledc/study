@@ -157,6 +157,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
@@ -164,6 +165,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码

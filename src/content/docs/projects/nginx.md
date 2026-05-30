@@ -171,6 +171,7 @@ location /static/ {
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
+- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[next-js]] —— Next.js — React 全栈框架
 - [[pino]] —— pino — 日志不该阻塞热路径

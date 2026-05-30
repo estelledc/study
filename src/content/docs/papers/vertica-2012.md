@@ -152,6 +152,7 @@ COPY fact_sales FROM '/data/sales_2026_05_30.csv'
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
 - [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解

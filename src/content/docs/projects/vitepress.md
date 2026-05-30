@@ -168,6 +168,7 @@ export default defineConfig({
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器

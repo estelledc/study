@@ -170,6 +170,7 @@ pool.liquidationCall(
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

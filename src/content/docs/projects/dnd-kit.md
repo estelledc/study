@@ -147,3 +147,6 @@ function onDragOver({ active, over }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+
