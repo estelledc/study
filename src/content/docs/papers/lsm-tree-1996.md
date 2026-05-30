@@ -149,6 +149,7 @@ client read key="foo"
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

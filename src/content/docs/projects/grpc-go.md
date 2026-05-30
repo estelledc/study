@@ -162,5 +162,11 @@ s := grpc.NewServer(grpc.UnaryInterceptor(loggingInterceptor))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
+- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
+- [[etcd]] —— etcd — 分布式键值数据库
+- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

@@ -94,6 +94,7 @@ gray-1981-transaction
 great-swe
 halide
 hamming-1950
+hewitt-actor-model
 hindley-milner
 hoare-logic
 hotspot-server-compiler
@@ -211,6 +212,7 @@ toolformer
 toy-models-superposition
 tracemonkey
 trees-that-grow
+trill-2014
 triton-llm
 turchin-supercompilation
 turing-1936
@@ -233,6 +235,7 @@ aave-v3
 actix-web
 affine
 ag-grid
+anchor
 anime
 ansible
 anthropic-cookbook
@@ -320,6 +323,7 @@ go-zero
 got
 grafana
 grape
+grpc-go
 gsap
 hanami
 haproxy

@@ -159,6 +159,7 @@ map.firstKey();   // O(log n) 有序查询
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[redis]] —— Redis — 内存键值数据库
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写

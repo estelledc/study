@@ -158,6 +158,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[chainlink]] —— Chainlink — 智能合约的"感官系统"
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

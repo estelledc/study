@@ -151,6 +151,7 @@ destChain:   Squid receiver._execute → DEX swap USDC → DAI → 转给 USER
 
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
+- [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息

@@ -171,6 +171,7 @@ const svgInline: Plugin = {
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bun]] —— Bun — JS 全能运行时
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
