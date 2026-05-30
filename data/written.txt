@@ -130,6 +130,7 @@ liquid-types
 llama
 llava
 llvm
+lmdb-2011
 local-type-inference
 lsm-tree-1996
 mae
@@ -156,6 +157,7 @@ paxos-simple-2001
 peyton-jones-stg
 plotkin-sos
 polar-codes-2009
+pottier-merr
 ppo
 product-quantization-2011
 program-comprehension-fmri
@@ -498,6 +500,7 @@ starlette
 starlight
 steel-browser
 storybook
+strawberry
 styled-components
 stylex
 sui
@@ -539,6 +542,7 @@ vanilla-extract
 vercel-ai
 vertx
 victoriametrics
+viem
 visx
 vite
 vitepress

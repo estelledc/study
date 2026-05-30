@@ -171,6 +171,7 @@ await program.methods
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[move-language]] —— Move — 资源型智能合约语言
+- [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 319 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 321 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：319 个
+- **总数**：321 个
 - **已分类**：206
-- **未分类**：113（落入"其他 / 待分类"段）
+- **未分类**：115（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 113 |
+| [其他 / 待分类](#其他--待分类) | 115 |
 
 ---
 
@@ -125,7 +125,7 @@ sidebar:
 |---|---|
 | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) |  |
 | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) |  |
-| [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) |  |
+| [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) |  |
 | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) |  |
 | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) |  |
 
@@ -232,7 +232,7 @@ sidebar:
 | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) |  |
 | [Hono — 多运行时 Web 框架](/study/projects/hono/) |  |
 | [Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架](/study/projects/koa/) |  |
-| [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) |  |
+| [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) |  |
 
 ## UI 框架 / Frontend Framework
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 113 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 115 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -551,6 +551,7 @@ sidebar:
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
+| `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
@@ -567,6 +568,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
+| `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -615,7 +617,7 @@ sidebar:
 
 ---
 
-## 全部 319 个（字母序）
+## 全部 321 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -728,6 +730,7 @@ sidebar:
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
+| `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | 其他 |
 | `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | 数据应用 / SaaS |
@@ -790,9 +793,9 @@ sidebar:
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
-| `nestjs` | [NestJS Angular 风格的企业级 Node.js 框架](/study/projects/nestjs/) | Web 框架 |
+| `nestjs` | [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) | Web 框架 |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | 其他 |
-| `next-intl` | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) | i18n 国际化 |
+| `next-intl` | [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) | i18n 国际化 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
@@ -803,6 +806,7 @@ sidebar:
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
+| `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
 | `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |

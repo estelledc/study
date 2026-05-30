@@ -150,6 +150,7 @@ TAOCP Vol 1 Section 1.2.1 讲数学归纳法，开头一句话直接挑明它的
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[mccarthy-lisp]] —— McCarthy LISP 1960

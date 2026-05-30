@@ -179,6 +179,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
+- [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包

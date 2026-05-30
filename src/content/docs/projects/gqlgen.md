@@ -162,6 +162,7 @@ models:
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
+- [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
 - [[prisma]] —— Prisma — 类型安全 ORM
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 
