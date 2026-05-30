@@ -179,6 +179,7 @@ class LogEmitter:
 - [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
+- [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍

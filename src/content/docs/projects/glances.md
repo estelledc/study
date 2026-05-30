@@ -148,5 +148,10 @@ Glances 在 9091 端口暴露 `/metrics`，Prometheus 配置里 scrape 它就能
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
+- [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
+- [[prometheus]] —— Prometheus — 时序监控系统
 

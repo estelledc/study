@@ -156,6 +156,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
+- [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd

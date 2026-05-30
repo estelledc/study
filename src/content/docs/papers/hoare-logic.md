@@ -170,6 +170,7 @@ method Sum(a: array<int>) returns (s: int)
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
+- [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
@@ -180,6 +181,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
+- [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序

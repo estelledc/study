@@ -155,6 +155,7 @@ eza 是开源项目"原作者不维护 → 社区 fork → fork 反超原作"的
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
+- [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

@@ -179,6 +179,7 @@ result = (
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pandas]] —— pandas — Python 表格数据事实标准
+- [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
 - [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式

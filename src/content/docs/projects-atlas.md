@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 367 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 370 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：367 个
+- **总数**：370 个
 - **已分类**：206
-- **未分类**：161（落入"其他 / 待分类"段）
+- **未分类**：164（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 161 |
+| [其他 / 待分类](#其他--待分类) | 164 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 161 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 164 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -607,8 +607,10 @@ sidebar:
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
+| `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
+| `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
@@ -627,6 +629,7 @@ sidebar:
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
+| `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) |
 | `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
@@ -663,7 +666,7 @@ sidebar:
 
 ---
 
-## 全部 367 个（字母序）
+## 全部 370 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -905,11 +908,13 @@ sidebar:
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
 | `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
+| `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) | 其他 |
 | `prom-client` | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
 | `prosemirror` | [ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架](/study/projects/prosemirror/) | 编辑器 / 富文本 |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) | 其他 |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) | 其他 |
+| `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) | 其他 |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) | 其他 |
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) | 其他 |
@@ -947,6 +952,7 @@ sidebar:
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | 其他 |
+| `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) | 其他 |
 | `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) | 其他 |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |

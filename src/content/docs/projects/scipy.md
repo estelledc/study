@@ -155,5 +155,6 @@ print(f"t-test p={p_t:.4f}, U-test p={p_u:.4f}")
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
+- [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 
