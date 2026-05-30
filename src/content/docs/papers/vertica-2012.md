@@ -149,5 +149,14 @@ COPY fact_sales FROM '/data/sales_2026_05_30.csv'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
+- [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
+- [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
+- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
+- [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
+- [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 

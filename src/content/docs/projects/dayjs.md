@@ -150,3 +150,10 @@ dayjs.tz('2026-05-30 10:00', 'America/New_York').format();
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
+- [[i18next]] —— i18next framework-agnostic i18n 引擎
+- [[js-joda]] —— js-joda Java java.time API JS 端口
+- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+

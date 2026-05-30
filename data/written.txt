@@ -184,6 +184,7 @@ stable-diffusion
 standard-ml
 steensgaard-pointer
 stonebraker-2010-sqlnosql
+strongtalk
 swe-agent
 swe-bench
 system-f-reynolds-1974
@@ -202,6 +203,7 @@ triton-llm
 turchin-supercompilation
 turing-1936
 tvm
+vertica-2012
 vit
 vllm
 volcano
@@ -246,6 +248,7 @@ caddy
 cairo-lang
 cal-com
 cassandra
+chainlink-ccip
 chalk
 changesets
 chatwoot
@@ -387,6 +390,7 @@ oxc
 patchright
 penpot
 pgvector
+phoenix
 pino
 pixi
 plane

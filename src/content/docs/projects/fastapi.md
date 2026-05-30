@@ -192,6 +192,7 @@ def me(user: dict = Depends(current_user)):
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
+- [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端

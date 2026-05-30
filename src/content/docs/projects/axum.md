@@ -192,6 +192,7 @@ let app = Router::new()
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
+- [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书

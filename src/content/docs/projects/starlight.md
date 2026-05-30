@@ -166,6 +166,7 @@ export default {
 
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器

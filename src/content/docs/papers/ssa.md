@@ -182,6 +182,7 @@ entry:
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
