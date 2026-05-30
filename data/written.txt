@@ -115,6 +115,7 @@ neumann-2015-large-joins
 no-silver-bullet
 openhands
 pair-programming
+partial-evaluation-jones
 paxos
 paxos-1998
 paxos-simple-2001
@@ -156,6 +157,7 @@ simula-67
 skip-list-1990
 sleeper-agents
 smalltalk-80
+smr-1990
 snowflake
 spanner
 spanner-2012
@@ -228,6 +230,7 @@ clickhouse
 cockroachdb
 codemirror
 commander
+compound-v3
 continue
 d3
 date-fns
@@ -431,6 +434,7 @@ valkey
 valtio
 vanilla-extract
 vercel-ai
+vertx
 victoriametrics
 visx
 vite
