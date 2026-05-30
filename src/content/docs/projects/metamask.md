@@ -158,6 +158,7 @@ window.ethereum.on('chainChanged', (chainId) => {
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
+- [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约

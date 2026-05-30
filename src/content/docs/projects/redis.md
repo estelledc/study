@@ -154,6 +154,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[kafka]] —— Apache Kafka — 分布式流处理平台
+- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器

@@ -150,6 +150,7 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
+- [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议

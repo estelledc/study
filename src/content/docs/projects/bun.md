@@ -182,6 +182,7 @@ Bun.serve({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架

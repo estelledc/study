@@ -142,6 +142,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[helm]] —— Helm — Kubernetes 包管理器
+- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[podman]] —— Podman — 无 daemon 容器引擎

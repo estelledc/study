@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 293 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 295 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：293 个
+- **总数**：295 个
 - **已分类**：206
-- **未分类**：87（落入"其他 / 待分类"段）
+- **未分类**：89（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 87 |
+| [其他 / 待分类](#其他--待分类) | 89 |
 
 ---
 
@@ -227,7 +227,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) |  |
+| [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) |  |
 | [Express Node.js 经典 Web 框架](/study/projects/express/) |  |
 | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) |  |
 | [Hono — 多运行时 Web 框架](/study/projects/hono/) |  |
@@ -443,7 +443,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) |  |
+| [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) |  |
 | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) |  |
 | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) |  |
 | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) |  |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 87 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 89 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -539,6 +539,7 @@ sidebar:
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
+| `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
@@ -551,6 +552,7 @@ sidebar:
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
+| `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -589,7 +591,7 @@ sidebar:
 
 ---
 
-## 全部 293 个（字母序）
+## 全部 295 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -659,8 +661,8 @@ sidebar:
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | 其他 |
 | `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
 | `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | 数据库本体 / 存储引擎 |
-| `elysia` | [Elysia Bun-first TypeScript Web 框架](/study/projects/elysia/) | Web 框架 |
-| `emotion` | [Emotion — runtime CSS-in-JS 的当代生产版本](/study/projects/emotion/) | CSS / 样式 |
+| `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | Web 框架 |
+| `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
 | `enquirer` | [enquirer 终端交互提示库](/study/projects/enquirer/) | Terminal / 终端 |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) | 其他 |
@@ -703,6 +705,7 @@ sidebar:
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
+| `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) | 其他 |
 | `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | 其他 |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
@@ -761,6 +764,7 @@ sidebar:
 | `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
+| `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
 | `ora` | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |

@@ -166,6 +166,7 @@ function Greeting({ name }) {
 - [[cot]] —— Chain-of-Thought Prompting
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[gsap]] —— GSAP — GreenSock 高性能动画

@@ -148,5 +148,7 @@ function onDragOver({ active, over }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[react]] —— React UI 组件库
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 
