@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 241 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 243 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：241 篇
+- **总数**：243 篇
 - **已分类**：143
-- **未分类**：98（落入"其他 / 待分类"段）
+- **未分类**：100（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 98 |
+| [其他 / 待分类](#其他--待分类) | 100 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 98 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 100 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -359,6 +359,7 @@ sidebar:
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
+| `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
@@ -380,6 +381,7 @@ sidebar:
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
+| `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
@@ -409,7 +411,7 @@ sidebar:
 
 ---
 
-## 全部 241 篇（字母序）
+## 全部 243 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -537,6 +539,7 @@ sidebar:
 | `lampson-hints` | [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) | 其他 |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
+| `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | 其他 |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
@@ -589,6 +592,7 @@ sidebar:
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 其他 |
 | `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
+| `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) | 其他 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB — 把所有写都变成顺序写](/study/papers/rocksdb-lsm/) | 数据库 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | 其他 |

@@ -151,6 +151,7 @@ client read key="foo"
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库

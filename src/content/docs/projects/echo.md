@@ -163,6 +163,7 @@ e.Start(":1323")
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
+- [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架

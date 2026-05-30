@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 315 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 317 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：315 个
+- **总数**：317 个
 - **已分类**：206
-- **未分类**：109（落入"其他 / 待分类"段）
+- **未分类**：111（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 109 |
+| [其他 / 待分类](#其他--待分类) | 111 |
 
 ---
 
@@ -292,7 +292,7 @@ sidebar:
 | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) |  |
 | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) |  |
 | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) |  |
-| [MobX — Reactive state via TFRP](/study/projects/mobx/) |  |
+| [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) |  |
 | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) |  |
 | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) |  |
 | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) |  |
@@ -421,7 +421,7 @@ sidebar:
 |---|---|
 | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) |  |
 | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) |  |
-| [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) |  |
+| [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) |  |
 | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) |  |
 | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 109 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 111 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -543,6 +543,7 @@ sidebar:
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
+| `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) |
@@ -606,12 +607,13 @@ sidebar:
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
+| `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
 
 ---
 
-## 全部 315 个（字母序）
+## 全部 317 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -712,6 +714,7 @@ sidebar:
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
 | `got` | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
+| `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) | 其他 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) | 其他 |
@@ -767,14 +770,14 @@ sidebar:
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
-| `micromark` | [micromark 流式 CommonMark 状态机解析器](/study/projects/micromark/) | Markdown / 解析 |
+| `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) | 其他 |
 | `midscene` | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
-| `mobx` | [MobX — Reactive state via TFRP](/study/projects/mobx/) | 状态管理 |
+| `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
 | `motion-one` | [motion-one 状元篇](/study/projects/motion-one/) | 动画 |
@@ -920,6 +923,7 @@ sidebar:
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | 其他 |
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | 可观测 / 性能 |
+| `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) | 其他 |
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
 | `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |

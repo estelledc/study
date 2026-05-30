@@ -155,6 +155,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
 

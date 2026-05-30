@@ -178,6 +178,7 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架

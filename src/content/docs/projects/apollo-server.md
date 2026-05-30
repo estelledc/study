@@ -170,6 +170,7 @@ const server = new ApolloServer({ schema: buildSubgraphSchema({ typeDefs, resolv
 
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架

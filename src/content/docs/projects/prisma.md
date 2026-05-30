@@ -182,6 +182,7 @@ Prisma 自动：
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架

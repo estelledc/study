@@ -136,6 +136,7 @@ B+Tree 的执行路径：
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
+- [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询

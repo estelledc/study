@@ -204,7 +204,7 @@ export const collections = { blog }
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
-- [[micromark]] —— micromark 流式 CommonMark 状态机解析器
+- [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
