@@ -164,13 +164,20 @@ gRPC 选 HTTP/2 不是历史包袱而是设计选择：
 - [[attention]] —— Attention Is All You Need
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
+- [[paxos]] —— Paxos — 分布式共识算法
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
+- [[raft]] —— Raft — 易理解的共识算法
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 

@@ -156,6 +156,7 @@ virtual OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行

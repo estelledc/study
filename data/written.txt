@@ -90,6 +90,7 @@ halide
 hamming-1950
 hindley-milner
 hoare-logic
+hotspot-server-compiler
 http-2
 huffman-1952
 hughes-fp-matters
@@ -176,6 +177,7 @@ sleeper-agents
 smalltalk-80
 smr-1990
 snowflake
+snowflake-2016
 spanner
 spanner-2012
 sparse-autoencoders
@@ -248,6 +250,7 @@ caddy
 cairo-lang
 cal-com
 cassandra
+chainlink
 chainlink-ccip
 chalk
 changesets
@@ -395,6 +398,7 @@ pino
 pixi
 plane
 playwright
+plug
 pnpm
 podman
 poem
