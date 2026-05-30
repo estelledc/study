@@ -164,5 +164,6 @@ succ  = λn:Nat. Λα. λs:α→α. λz:α. s (n [α] s z)
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 

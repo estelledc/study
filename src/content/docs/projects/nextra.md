@@ -152,6 +152,7 @@ Nextra 读出 `date`，自动按时间倒序排在首页，每篇文末自动有
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react]] —— React UI 组件库
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮

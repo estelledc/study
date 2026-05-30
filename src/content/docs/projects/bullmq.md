@@ -152,5 +152,11 @@ await queue.add('daily-report', {}, {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
+- [[redis]] —— Redis — 内存键值数据库
+- [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准
+- [[temporal]] —— Temporal — 持久化工作流引擎
 

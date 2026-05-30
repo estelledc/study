@@ -145,4 +145,5 @@ freeVars (App _ a b) = freeVars a <> freeVars b
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
 

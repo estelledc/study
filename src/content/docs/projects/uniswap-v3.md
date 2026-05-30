@@ -176,6 +176,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[reservoir-sdk]] —— Reservoir SDK — 跨市场 NFT 聚合
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流

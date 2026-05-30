@@ -180,5 +180,6 @@ column families:
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
+- [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
 

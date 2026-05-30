@@ -1,6 +1,6 @@
 ---
 title: Tachyon — 把集群存储推到内存速度，丢了再算回来
-来源: Li et al., "Tachyon: Reliable, Memory Speed Storage for Cluster Computing Frameworks", SoCC 2014
+来源: 'Li et al., "Tachyon: Reliable, Memory Speed Storage for Cluster Computing Frameworks", SoCC 2014'
 日期: 2026-05-30
 分类: 分布式系统
 难度: 中级

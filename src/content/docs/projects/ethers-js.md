@@ -174,6 +174,7 @@ console.log(ethers.formatUnits(raw, decimals), "USDC");
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[viem]] —— viem — 现代 TypeScript EVM 库

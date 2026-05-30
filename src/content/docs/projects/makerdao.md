@@ -163,5 +163,6 @@ Spell 通过 `pause.plot(spell, sig, data, eta)` 排进 GSM（Governance Securit
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 
