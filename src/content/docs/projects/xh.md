@@ -160,5 +160,9 @@ xh GET api.example.com/data | dasel -r json '.items.[0].name'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[curlie]] —— curlie — curl 的能力 + HTTPie 的语法
+- [[dasel]] —— dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV
 - [[httpie]] —— HTTPie — curl 的人话版本
+- [[jq]] —— jq — JSON 的 sed/awk
 

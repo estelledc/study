@@ -183,5 +183,6 @@ def compare(va, vb):
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
+- [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

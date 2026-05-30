@@ -172,6 +172,7 @@ trainer = pl.Trainer(callbacks=[
 - [[flax]] —— Flax — JAX 上的神经网络库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
+- [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库

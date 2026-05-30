@@ -163,6 +163,7 @@ double n = (2 * n , refl)
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[linear-types]] —— 线性类型（Linear Types）
+- [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 
