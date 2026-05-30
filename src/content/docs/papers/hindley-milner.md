@@ -185,6 +185,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[move-language]] —— Move — 资源型智能合约语言
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"

@@ -172,5 +172,6 @@ io.observe(document.querySelector('.hero-title'))
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
 - [[starlight]] —— Starlight — Astro 文档站点主题
 

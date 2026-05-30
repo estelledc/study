@@ -158,6 +158,7 @@ succ  = λn:Nat. Λα. λs:α→α. λz:α. s (n [α] s z)
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序

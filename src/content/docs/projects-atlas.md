@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 329 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 331 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：329 个
+- **总数**：331 个
 - **已分类**：206
-- **未分类**：123（落入"其他 / 待分类"段）
+- **未分类**：125（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 123 |
+| [其他 / 待分类](#其他--待分类) | 125 |
 
 ---
 
@@ -79,7 +79,7 @@ sidebar:
 | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) |  |
 | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 不是动画库，是 AE 到浏览器的协议层 |
 | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) |  |
-| [react-spring 状元篇](/study/projects/react-spring/) | 基于物理 spring 的 React 动画库，告别 duration-based 缓动 |
+| [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) |  |
 
 ## 表单 / Schema 校验
 
@@ -126,7 +126,7 @@ sidebar:
 | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) |  |
 | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) |  |
 | [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) |  |
-| [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) |  |
+| [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) |  |
 | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) |  |
 
 ## 构建工具 / Bundler
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 123 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 125 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -517,6 +517,7 @@ sidebar:
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
+| `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
@@ -604,6 +605,7 @@ sidebar:
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
+| `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
@@ -625,7 +627,7 @@ sidebar:
 
 ---
 
-## 全部 329 个（字母序）
+## 全部 331 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -659,6 +661,7 @@ sidebar:
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
 | `boxen` | [boxen — 给终端文本套个边框的事](/study/projects/boxen/) | Terminal / 终端 |
 | `browser-use` | [browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架](/study/projects/browser-use/) | AI 浏览器自动化 |
+| `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | 其他 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | 其他 |
@@ -857,8 +860,8 @@ sidebar:
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | Drag & Drop / Interaction |
 | `react-hook-form` | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
-| `react-intl` | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) | i18n 国际化 |
-| `react-spring` | [react-spring 状元篇](/study/projects/react-spring/) | 动画 |
+| `react-intl` | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | i18n 国际化 |
+| `react-spring` | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | 动画 |
 | `recharts` | [Recharts JSX 数据可视化组件库](/study/projects/recharts/) | 数据可视化 |
 | `redis` | [Redis — 内存键值数据库](/study/projects/redis/) | 数据库本体 / 存储引擎 |
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
@@ -892,6 +895,7 @@ sidebar:
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | 其他 |
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务](/study/projects/steel-browser/) | AI 浏览器自动化 |
+| `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) | 其他 |
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | 其他 |
 | `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |

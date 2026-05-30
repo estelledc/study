@@ -154,5 +154,6 @@ ar://Tx9k3L...PqR  ← 直接指向 Arweave，不依赖任何中心服务
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
 - [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
+- [[storj]] —— Storj — S3 兼容的去中心化对象存储
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

@@ -187,17 +187,15 @@ function LoginForm() {
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
+- [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
 - [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
 - [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
-- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
-- [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库

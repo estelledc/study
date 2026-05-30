@@ -153,5 +153,6 @@ inView("#card", el => animate(el, { opacity: [0, 1], y: [40, 0] }))
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 
