@@ -1,432 +1,166 @@
 ---
-title: Express Node.js 经典 Web 框架
-来源: https://github.com/expressjs/express + expressjs.com 官方文档
-season: 27
-episode: S27-2
+title: Express — Node.js 最经典的 Web 框架
+来源: 'https://github.com/expressjs/express + expressjs.com'
+日期: 2026-05-30
+分类: projects
+难度: 初级
 ---
 
-# Express — Node.js Web 框架的事实标准
+## 是什么
 
-## 一句话总结
+Express 是 **Node.js 上的 Web 框架**，让你用几行代码就能写出一个 HTTP 服务器。日常类比：像一条工厂流水线——请求是产品，每个工位（中间件）做一件事，做完喊"下一个"，最后一个工位把产品包装好发出去。
 
-Express 是 TJ Holowaychuk 2010 年开源的 Node.js Web 框架，weekly downloads ~30M（2024），是 Node.js 历史上最经典、最广泛部署的 Web 框架。它的核心是 **中间件链式管线**：每个请求按顺序经过 logger → body parser → auth → router → handler，每个中间件签名都是 `(req, res, next) => {}`，调用 `next()` 把控制权交给下一个。
-
-设计哲学：极简核心 + 可插拔中间件。Express 本身只有 router + middleware 调度，body parsing / cookie / session / CORS / static 全部走第三方包（body-parser / cookie-parser / express-session / cors / serve-static）。这是 Connect（Node.js 早期 web 中间件库）思想的 Express 版。
-
-技术 baggage 与历史关键节点：
-
-- v3 → v4（2014）拆出 router 子包，废 connect 内置中间件
-- v4 长期不变：2014-2024 整整 10 年没出 v5
-- v5 RC（2024）才发布：Promise 友好的错误处理、严格 path-to-regexp、移除若干废弃 API
-- 在 async/await 时代，`(req, res, next)` 模式显得笨拙——错误处理需 try/catch + `next(err)` 双轨，新人易踩坑
-
-2024 状态：仍是 weekly downloads 王者，但 Fastify / Hono 在新项目蚕食市场。Express 的"教程化优势"（StackOverflow + tutorial 量级）让它仍是 Node.js 入门首选。这是一个"技术过气但生态不灭"的典型案例——就像 jQuery 之于前端，Express 之于 Node.js。
-
-为什么我们仍要精读 Express？三个原因：
-
-1. **它是事实标准**：你工作的 Node.js 老项目 80% 概率用 Express，看不懂中间件链就读不懂代码
-2. **它是中间件思想的范本**：Koa / Fastify / Hono / Hapi 都是基于"我对 Express 的反思"而生，不懂 Express 就不懂这些后辈在反对什么
-3. **它是 callback → async/await 转型的活化石**：v4 的 `(req, res, next)` vs v5 的 async 友好，正好对应 Node.js 整个生态的 API 演化
-
-## Layer 0 — 项目档案速查
-
-| 字段 | 值 |
-|---|---|
-| 包名 | `express` |
-| 当前主版本 | v4.21（2024，v5 RC） |
-| 首版 | 2010-06 |
-| License | MIT |
-| 主仓库 | expressjs/express |
-| 维护 | OpenJS Foundation TSC（TJ Holowaychuk 2014 离场） |
-| TypeScript | 通过 `@types/express` 第三方 |
-| 内部依赖 | router / body-parser（v5 起）/ ~30 包传递 |
-| Bundle / Size | core ~150 KB（带依赖） |
-| Node 要求 | ≥ 0.10（v4）/ ≥ 18（v5） |
-| Weekly downloads | ~30M+（最高） |
-| GitHub stars | 64k+ |
-| 商业版 | 无 |
-| 中间件生态 | npm 包数千个 |
-| 错误处理 | `next(err)` 显式传递 |
-| async 支持 | v5 起原生 |
-| HTTP/2 | v4 不支持，v5 通过 `http2` 模块 |
-| 路由 | path-to-regexp + Router |
-| 文档站 | expressjs.com |
-| 知名用户 | Uber / IBM / Twitch / MySpace（早期）/ Walmart |
-| CVE 历史 | 多个低危 CVE，body-parser 有过 DoS 漏洞 |
-
-## Layer 1 — 核心抽象
+不用 Express 时，你要直接面对 Node.js 原生 `http` 模块——只给一个 `(req, res)` 回调，路由要自己 if/else，参数要自己解析，错误处理全靠手撸。Express 把这些抽成一个统一签名：
 
 ```js
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
+app.get('/hello', (req, res) => res.send('hi'))
+app.listen(3000)
+```
 
-// 全局中间件
-app.use(express.json());
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.url}`);
-  next();
-});
+四行代码就跑起来了。这就是 Express 2010 年的爆火原因——TJ Holowaychuk 把 Ruby Sinatra 的路由 DSL + Connect 的中间件链思想移植到 Node.js，定义了之后 10 多年 Node.js 服务端的写法。
 
-// 路由 + handler
+## 为什么重要
+
+不理解 Express，下面这些事都没法解释：
+
+- 为什么你工作的 Node.js 老项目大概率长得都像 Express（即便用的是 Koa / Nest）——它们的 API 形状是 Express 定义的
+- 为什么 Koa / Fastify / Hono 这些"后辈"框架要花大段文档说明"我和 Express 的差异"——它们都是对 Express 的反思
+- 为什么 `(req, res, next)` 这个三参数签名在所有 Node.js 框架里都眼熟——这是 Connect 中间件协议，Express 让它成事实标准
+- 为什么 weekly downloads 30M+ 的"老古董"还没死——生态、教程、StackOverflow 答案累计太厚，新项目还在用
+
+## 核心要点
+
+Express 的全部精髓可以拆成 **三件事**：
+
+1. **中间件链**：所有处理函数都是 `(req, res, next) => {}`。`next()` 把控制权交给下一个中间件；`next(err)` 跳过普通中间件直接进错误处理。类比：流水线传送带，每个工位做完按按钮放下一件。
+
+2. **路由 = 一种特殊中间件**：`app.get(path, handler)` 相当于"只在请求路径匹配时才执行的中间件"。内部一切都是中间件 + 一个数组（router stack），按注册顺序遍历。
+
+3. **极简核心 + 可插拔**：Express 自身只有 router + 中间件调度。body parsing / cookie / session / CORS / static 全部第三方包（body-parser / cookie-parser / cors / serve-static）。哲学：框架不要多管闲事，把选择权留给用户。
+
+## 实践案例
+
+### 案例 1：最小 Express app — 看懂中间件链
+
+```js
+const express = require('express')
+const app = express()
+
+app.use(express.json())                    // 中间件 1：解析 JSON body
+app.use((req, res, next) => {              // 中间件 2：日志
+  console.log(`${req.method} ${req.url}`)
+  next()                                    // 别忘了调 next！
+})
+
+app.get('/users/:id', (req, res) => {      // 路由（也是中间件）
+  res.json({ id: req.params.id })
+})
+
+app.listen(3000)
+```
+
+请求 `GET /users/42` 会依次经过 JSON 解析 → 日志 → 路由 handler → `res.json` 终结。中间件按 `app.use` 调用顺序执行，谁先注册谁先跑。
+
+### 案例 2：自定义 logger — 体会 next() 的控制流
+
+```js
+function logger(req, res, next) {
+  const start = Date.now()
+  res.on('finish', () => {                  // 监听响应结束事件
+    console.log(`${req.method} ${req.url} ${res.statusCode} ${Date.now() - start}ms`)
+  })
+  next()                                    // 立刻放行，不等响应
+}
+app.use(logger)
+```
+
+这里 `next()` 在 `res.on('finish')` **之前**调——说明 logger 不阻塞流程，只是订阅了"响应完成"事件，等之后真正响应完了再打日志。
+
+### 案例 3：async handler + 错误传递（v4 vs v5）
+
+v4 写法（必须手动 try/catch）：
+
+```js
 app.get('/users/:id', async (req, res, next) => {
   try {
-    const user = await db.users.findById(req.params.id);
-    if (!user) return res.status(404).json({ error: 'not found' });
-    res.json(user);
+    const user = await db.find(req.params.id)
+    if (!user) return res.status(404).json({ error: 'not found' })
+    res.json(user)
   } catch (err) {
-    next(err);  // 把错误抛给 error middleware
+    next(err)                               // v4 不会自动捕获 async 错误
   }
-});
+})
 
-app.post('/users', async (req, res, next) => {
-  try {
-    const created = await db.users.create(req.body);
-    res.status(201).json(created);
-  } catch (err) {
-    next(err);
-  }
-});
-
-// 错误中间件（4 参数）
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: err.message });
-});
-
-app.listen(3000);
+app.use((err, req, res, next) => {          // 错误中间件：4 参数！
+  res.status(500).json({ error: err.message })
+})
 ```
 
-四要素：
+v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这是 v5 最重要的体感升级。
 
-1. `express()` 返回 app 实例（既是 function 也是 object）
-2. `app.use(fn)` 注册全局中间件
-3. `app.METHOD(path, fn)` 注册路由（METHOD = get/post/put/delete/patch/all）
-4. **`(req, res, next)` 签名** —— 调 next() 进入下一个；调 next(err) 进错误处理；res.send/json/end 终结请求
+## 踩过的坑
 
-日常类比：Express 就像工厂流水线。每个产品（请求）经过工人 1（贴标签）→ 工人 2（检查）→ 工人 3（包装）→ 出厂（响应）。每个工人做完自己的事就喊"下一个"（`next()`），如果发现次品就丢到次品流水线（`next(err)`）。`res.send()` 等于"出厂封箱"，封箱后就不能再上传送带了。
+1. **忘记调 `next()`**：请求挂起直到客户端超时。新人 #1 bug，老手也偶尔翻车（特别是写带条件分支的中间件时漏掉某个分支的 next）。
 
-为什么是这种设计？2010 年 Node.js 还在用 `function (req, res) { res.end('hello') }` 这种最原始的 http server。Express 的贡献是把"路由 + 多步骤处理"抽象成中间件链——这种思路从 Ruby Rack / Python WSGI / Sinatra 借来，移植到了 Node.js。回头看，这是 Node.js 生态从"原始 http"走向"框架化"的关键一步。
+2. **错误中间件必须 4 参数**：`(err, req, res, next)`。少一个参数 Express 把它当普通中间件，错误被吞掉无声无息。Express 用函数 `length` 属性判断，TypeScript 没法救你。
 
-## Layer 2 — 内部架构
+3. **中间件顺序 matter**：`app.use(auth)` 写在 `app.use('/api', router)` 后面，则 `/api/*` 路由不走鉴权。先注册先执行，没有声明式优先级。
 
-Express 内部三层：
+4. **async 在 v4 里要手动 catch**：v4 的 `(req, res, next)` 是 callback 时代设计，async 函数 throw 出去 Express 不接。要么 try/catch + next(err)，要么用 `express-async-errors` 包打补丁。v5 原生修了，但生态升级慢。
 
-1. **app**（lib/application.js）：`Application` 是 EventEmitter，提供 `app.use / get / post / listen / set / engine`
-2. **Router**（lib/router/index.js）：维护 stack 数组，每个元素是 Layer（path + method + handler）
-3. **Layer / Route**（lib/router/layer.js / lib/router/route.js）：单个 path + handler 的封装
+## 适用 vs 不适用场景
 
-请求处理流程：
+**适用**：
 
-```
-incoming HTTP req
-  ↓
-app(req, res)  // Application 是函数
-  ↓
-router.handle(req, res, done)
-  ↓
-loop: layer.match_layer(layer, path)
-  ↓ matched
-layer.handle_request(req, res, next)
-  ↓ user handler
-res.send(...) → response 写完
-```
+- Node.js 入门项目、教学场景——StackOverflow 答案最多
+- 中小型 REST API、传统 SSR 应用、内部工具站
+- 维护已有的 Express 老项目（市场上多数 Node 服务端代码）
+- 需要海量第三方中间件（npm 上几千个 express- 包）
 
-每个 `next()` 调用让 router 内部的指针推进到下一个 layer。错误模式 `next(err)` 跳过普通 layer，只匹配 4 参数错误中间件。
+**不适用**：
 
-性能瓶颈：
+- 极致性能敏感场景（单机 QPS > 5 万）→ 选 Fastify 或 Hono
+- 需要类型安全的 RPC 风格 API → 选 NestJS / tRPC
+- Edge Runtime / Cloudflare Workers → Express 依赖 Node API，跑不动；选 Hono / Itty Router
+- 完整的"全栈框架体验"（路由 + ORM + 队列 + Auth）→ 选 NestJS / RedwoodJS / Next.js
 
-- 每请求都遍历 stack（O(n) 路由数）
-- path-to-regexp 编译开销（v5 改为更快版本）
-- body parsing 同步阻塞（只在小请求 OK）
+## 历史小故事（可跳过）
 
-vs Fastify：Fastify 用 Trie 路由 O(log n) + JIT 编译 schema → JSON serializer，throughput 是 Express 的 ~3x。
+- **2010-06**：TJ Holowaychuk 发布 Express v1，灵感来自 Ruby Sinatra（路由 DSL）+ Connect（中间件链）
+- **2012**：v3 发布，引入 view engine、把 Connect 内置中间件直接打包
+- **2014**：v4 拆出 router 子包、移除 Connect 内置中间件（推 body-parser 等独立包）；同年 TJ 把项目交给 StrongLoop / IBM，自己离场
+- **2016**：项目移交给 OpenJS Foundation TSC 集体维护
+- **2024**：v5 RC 发布——10 年没动后终于出大版本：原生 async 错误处理、严格 path-to-regexp、移除若干废弃 API
+- 这是个"技术过气但生态不灭"的范例，类比 jQuery 之于前端
 
-为什么 Express 不优化路由数据结构？历史包袱 + 中间件灵活性。Trie 要求路由静态可知；Express 允许 `app.use(regex, handler)` 这种正则路由，无法塞进 Trie。这是"灵活性 vs 性能"的经典 tradeoff。
+## 学到什么
 
-更深一层观察：Express 的 stack 是数组而非链表，每次 next 通过 idx++ 访问。这种实现在 1000 路由内还能接受，但 10000+ 路由就出问题了。真实生产场景通常通过 `app.use('/v1', v1Router)` 嵌套子路由分散，避免单一 stack 过大——这是 Express 用户的"民间智慧"，官方文档不提。
+1. **中间件 = 抽象成一个统一签名的函数管线**，是 web 框架最普适的设计模式（Rack / WSGI / Connect / Express / Koa 都是这个思想的不同投影）
+2. **极简核心 + 第三方插件** 是开源项目活 10 年的关键——核心稳定不动，扩展全交给生态
+3. **API 形状会绑架后续 10 年**：Express 的 `(req, res, next)` 签名一锁，整个 Node.js 生态被它定型
+4. 看不懂中间件链就读不懂任何 Node.js 后端代码，这是入行的最低门槛
 
-## Layer 3 — 精读 3 段
+## 延伸阅读
 
-### 段 a — `(req, res, next)` 中间件签名
+- 官方文档：[expressjs.com](https://expressjs.com)（最简洁的 web 框架文档之一）
+- 源码：[expressjs/express](https://github.com/expressjs/express)，整个项目不到 5000 行 JS，一周读完
+- 视频：[TJ Holowaychuk 早期 Express demo](https://www.youtube.com/results?search_query=tj+holowaychuk+express)（看 2011 年作者本人怎么讲）
+- [[koa]] —— TJ 自己写的 Express 后继者，async-first
+- [[fastify]] —— Express 的高性能替代品，schema 驱动
+- [[sinatra]] —— Express 的 Ruby 鼻祖
 
-```js
-function loggerMiddleware(req, res, next) {
-  const start = Date.now();
-  res.on('finish', () => {
-    console.log(`${req.method} ${req.url} ${res.statusCode} ${Date.now() - start}ms`);
-  });
-  next();
-}
+## 关联
 
-app.use(loggerMiddleware);
-```
+- [[koa]] —— 同一作者的下一代框架，用 generator/async 替代 callback
+- [[fastify]] —— Trie 路由 + JSON schema JIT，throughput 是 Express 的 ~3 倍
+- [[hono]] —— Edge Runtime 时代的 Express，跨 Cloudflare/Deno/Bun
+- [[sinatra]] —— Ruby 路由 DSL 鼻祖，Express 直接借鉴
+- [[nestjs]] —— 基于 Express（默认）的 TypeScript 全栈框架，加装饰器和 DI
+- [[fastapi]] —— Python 的 Express 等价物（路由 + 中间件 + ASGI）
+- [[axum]] —— Rust 的"中间件 + 路由"框架，Tower service 思想
 
-旁注：
+## 反向链接
 
-1. `next()` 不是 Promise return，是回调式控制反转（pre-2015 Node.js 风格）
-2. `next(err)` 跳过普通中间件，匹配 4 参数错误中间件
-3. async 函数在中间件里需要手动 try/catch + next(err)（v4），v5 才原生支持
-4. 中间件顺序 matter：app.use 调用顺序 = 执行顺序
-5. 路由级中间件（`app.get(path, m1, m2, handler)`）先于全局中间件之后执行
-6. `res.on('finish')` 是终结回调，与 next() 互斥（不该在 finish 后再 next）
-7. 忘记调 `next()` 会让请求挂起直到客户端超时，是新人最常见 bug
-
-> 怀疑：`(req, res, next)` 签名在 callback hell 时代是创新，async/await 时代是负担。Hono / Fastify 都改成 `async (ctx) => {...}` 或 `async (req, reply) => {...}` 显式 Promise return。Express v5 算半步追赶。
-
-### 段 b — Router stack + path-to-regexp
-
-```js
-const router = express.Router();
-
-router.get('/users/:id', handler1);
-router.post('/users', handler2);
-
-// 内部 stack：
-// [
-//   { method: 'GET', path: '/users/:id', regex: /^\/users\/(?<id>[^\/]+)$/, handler: handler1 },
-//   { method: 'POST', path: '/users', regex: /^\/users$/, handler: handler2 }
-// ]
-
-app.use('/api/v1', router);
-```
-
-旁注：
-
-1. `app.use(path, router)` 嵌套（前缀剥离 + 子 stack 扫描）
-2. path-to-regexp 把 `:id` 编译成 named capture group
-3. `:id?` optional / `:rest*` glob / `:slug(\\d+)` 自定义正则
-4. Express v4 用 path-to-regexp v0.1（语法 hack）；v5 升 v6.x（语法严格）
-5. 大量路由（>1000）在 v4 是性能瓶颈（O(n)）；Fastify Trie O(log n)
-6. 路由参数走 `req.params.id`；query string `req.query.q`
-7. Router 实例可独立创建并 mount 到不同 path，是模块化的关键
-
-> 怀疑：Express v4 → v5 升级 path-to-regexp 是 breaking change。`/users/:id` 在 v5 里 `:id` 不再 capture 末尾的 `.json` 后缀。已有项目升级要重写正则。这是 v5 拖了 10 年原因之一？
-
-### 段 c — 错误处理双轨制
-
-```js
-// 同步错误：抛出即可，Express 捕获
-app.get('/sync-err', (req, res) => {
-  throw new Error('boom');  // Express 捕获 → 转 next(err)
-});
-
-// 异步错误：必须手动 next(err)
-app.get('/async-err', async (req, res, next) => {
-  try {
-    await someAsync();
-  } catch (err) {
-    next(err);  // ⚠️ 不能 throw，Promise reject 不会被 Express 捕获（v4）
-  }
-});
-
-// 错误中间件（4 参数）
-app.use((err, req, res, next) => {
-  res.status(500).json({ error: err.message });
-});
-```
-
-旁注：
-
-1. 同步 throw 自动捕获 → next(err)
-2. 异步 Promise reject **不会** 被 v4 自动捕获（必须手动 try/catch + next(err)）
-3. 这是 Express v4 最大坑：新人写 async handler 漏 try/catch → unhandled rejection
-4. v5 改为：async handler 抛错自动 next(err)（终于跟上 async/await 时代）
-5. 错误中间件签名是 4 参数（err 在前）—— TypeScript 推断容易错
-6. express-async-errors 第三方包给 v4 打补丁
-7. 错误中间件的注册顺序：必须放在所有路由后面，否则匹配不到
-
-> 怀疑：v4 的"async handler 不自动捕获"是事实标准 10 年的痛点。express-async-errors 包 weekly downloads ~3M 说明问题严重。Express 团队为什么拖到 v5 才修？我猜：v4 的稳定性优先（不能引入 breaking 默认行为）。
-
-![Express 中间件管线](/study/projects/express/01-middleware-pipeline.webp)
-
-## Layer 4 — 与 Koa / Fastify / Hono / NestJS 对比
-
-| 维度 | Express | Koa | Fastify | Hono | NestJS |
-|---|---|---|---|---|---|
-| API 签名 | (req,res,next) | async (ctx, next) | async (req, reply) | (c) => c.json() | decorator + class |
-| async 友好 | v5 起 | 原生 | 原生 | 原生 | 原生 |
-| 性能 | 基线 | ~Express | ~3x Express | ~3x Express | ~Express |
-| Schema | 第三方 | 第三方 | 内置（Ajv） | 第三方 | 内置 |
-| HTTP/2 | v5 | 否 | 有 | 边缘 | 有 |
-| 边缘 runtime | 否（Node-only） | 否 | 否 | 是（CF/Bun/Deno） | 否 |
-| Bundle | 150 KB | 100 KB | 60 KB | 4 KB | 大 |
-| 学习曲线 | 平 | 中（generators 思维） | 中 | 平 | 陡 |
-| Weekly downloads | 30M | 1M | 2M | 0.5M | 5M |
-
-每个对手 1-2 行说明：
-
-- **Koa**：Express 同作者反思之作，async/await + ctx，但 "极简" 反需装 plugin
-- **Fastify**：schema-first + JSON Schema，性能 3x Express
-- **Hono**：边缘 runtime first（Cloudflare Worker / Bun / Deno），Bundle 极小
-- **NestJS**：Angular 风格 decorator 框架，企业级 + 模块化，但学习陡
-
-什么时候不该选 Express？
-
-1. **新项目 + 高 QPS**：选 Fastify，性能 3x 且 schema 内置
-2. **新项目 + 边缘部署**：选 Hono，Bundle 4 KB 且支持 CF Worker / Bun / Deno
-3. **新项目 + 大型企业**：选 NestJS，模块化 + DI 让团队协作好
-4. **新项目 + 需要 type-safe**：选 Hono / Fastify，TS 一等公民
-
-什么时候仍该选 Express？
-
-1. **维护已有 Express 项目**：迁移成本 >> 收益
-2. **Node.js 入门学习**：教程最多，stackoverflow 答案最全
-3. **中间件生态强依赖**：你需要的某个 middleware 只有 Express 版
-4. **团队人均经验少**：Express 的"啥都要自己装"反而让团队对所有依赖有掌控感
-
-## Layer 5 — 6 维评分
-
-| 维度 | Express | Koa | Fastify | Hono |
-|---|---|---|---|---|
-| async 友好 | 6（v5） | 9 | 10 | 10 |
-| 性能 | 5 | 6 | 9 | 9 |
-| 边缘 runtime | 0 | 0 | 0 | 10 |
-| 生态 | 10 | 6 | 7 | 4 |
-| 学习曲线（易） | 9 | 6 | 7 | 8 |
-| TypeScript | 5（@types） | 6 | 9 | 10 |
-| 总分 | 35 | 33 | 42 | 51 |
-
-Express 在生态上仍是 #1，但综合分数已被 Hono / Fastify 反超。这个表的关键洞察：技术评分和市场份额不一定挂钩。30M weekly downloads 不等于"最值得新项目用"，只等于"最广泛部署"。
-
-## Layer 6 — 限制
-
-1. **v5 拖了 10 年**：v4 → v5 升级 path-to-regexp 是 breaking，async 行为也变。企业升级压力大
-2. **`(req, res, next)` 签名笨拙**：async/await 时代显得 outdated
-3. **性能瓶颈**：高 QPS 场景被 Fastify 3x 击败
-4. **无边缘 runtime 支持**：Cloudflare Worker / Bun / Deno 都无 Express 适配
-5. **错误处理双轨**：同步 throw 自动，异步 Promise reject 手动 next(err)（v4），坑多
-6. **HTTP/2 / WebSocket 弱**：v5 才加，且不如 Fastify / hono
-7. **TypeScript 二等公民**：`@types/express` 第三方维护，类型推断比 Hono / Fastify 弱
-8. **Schema 校验缺失**：必须配 zod / joi / Ajv 第三方，没有 Fastify 那种内置的 schema → JSON serializer 加速
-9. **观察性弱**：没有内置 tracing / metrics hook，要靠第三方（OpenTelemetry / prom-client）拼装
-10. **冷启动慢**：相对 Hono 在 serverless 场景，Express 启动 200-300ms vs Hono < 50ms
-
-## 怀疑总集
-
-> 怀疑：Express v5 RC 拖了 10 年才出，期间 Fastify / Hono / NestJS 都崛起。OpenJS 接管后没动力推 v5？我猜：是。Express 的"稳定 = 不动" 哲学让它失去现代化机会。
-
-> 怀疑：weekly downloads 30M 中有多少是新项目？我猜：< 30%。教程 + 老项目 + Docker base image 占大头。新项目几乎不选 Express 了。
-
-> 怀疑：Express 的极简哲学（核心只做 router + middleware）在 2010s 是优势，2020s 反成劣势。开箱即用的 NestJS / Fastify 让新人少写 50% 配置代码。极简 = 把复杂度推给用户。
-
-> 怀疑：TJ Holowaychuk 2014 离场后 Express 进入"维护模式"。同期他另起的 Koa 也类似命运。一个人能否驱动一个框架的现代化？答案似乎是：no，需要团队。
-
-> 怀疑：v5 升级后 weekly downloads 会涨吗？我猜：不会显著。新项目的迁移已发生（去 Fastify/Hono），老项目的迁移会拖到不得不升（Node.js EOL 强迫）。v5 救不了 Express 的市占率，只能稳住基本盘。
-
-> 怀疑：Express 在边缘 runtime（CF Worker / Bun / Deno）的缺位是设计选择还是惰性？我猜：技术上需要重写 http 适配层（Express 强依赖 Node 的 IncomingMessage / ServerResponse），不是简单 polyfill。但社区如果有人推，做得到。所以是惰性。
-
-## GitHub Permalinks
-
-源码精读入口（链接示意，未实际验证 SHA）：
-
-- Application 主类：`https://github.com/expressjs/express/blob/3a4f9b8e2d1c5a7e6b8d2f4a9c3e7d1b5f8a4c2e/lib/application.js`
-- Router 实现：`https://github.com/expressjs/express/blob/8b2c4d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/lib/router/index.js`
-- Layer 路由层：`https://github.com/expressjs/express/blob/2a4f6e8b1d3c5e7f9a1b3d5c7e9f1a3b5d7e9c1f/lib/router/layer.js`
-- Koa 对比 application.js：`https://github.com/koajs/koa/blob/9c1b3d5f7a9c1e3b5d7f9a1c3e5d7f9b1c3e5d7f/lib/application.js`
-
-## Layer 7 — 实战
-
-完整 Express + Postgres + JWT 鉴权 API 骨架：
-
-```js
-import express from 'express';
-import jwt from 'jsonwebtoken';
-import pg from 'pg';
-
-const app = express();
-const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
-
-app.use(express.json());
-
-// JWT 中间件
-function authRequired(req, res, next) {
-  const token = req.headers.authorization?.split(' ')[1];
-  if (!token) return res.status(401).json({ error: 'no token' });
-  try {
-    req.user = jwt.verify(token, process.env.JWT_SECRET);
-    next();
-  } catch (err) {
-    res.status(401).json({ error: 'invalid token' });
-  }
-}
-
-// Public 登录
-app.post('/login', async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const user = await authenticate(email, password);
-    if (!user) return res.status(401).json({ error: 'wrong creds' });
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
-    res.json({ token });
-  } catch (err) { next(err); }
-});
-
-// Protected 资源
-app.get('/me', authRequired, async (req, res, next) => {
-  try {
-    const result = await pool.query('SELECT * FROM users WHERE id = $1', [req.user.id]);
-    res.json(result.rows[0]);
-  } catch (err) { next(err); }
-});
-
-// 错误处理（必须在最后）
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: err.message });
-});
-
-app.listen(3000);
-```
-
-要点：
-
-1. authRequired 是中间件，可加在任何路由上
-2. async handler 必须 try/catch + next(err)（v4）
-3. 错误中间件 4 参数签名，必须最后注册
-4. `req.user` 由 JWT middleware 注入（运行时扩展 req 对象）
-5. Promise + try/catch 模式 v5 简化（直接 throw）
-6. 真实生产建议加 helmet（安全 header）+ cors + rate-limit + morgan（日志）+ compression
-7. 数据库连接池（pg.Pool）必须在 process exit 时正确关闭，避免泄漏
-8. 优雅关闭：监听 SIGTERM / SIGINT，先停止 listen 再 drain in-flight 请求再关 pool
-
-常见生产配置 checklist：
-
-- [ ] 启用 helmet（HSTS / CSP / X-Content-Type-Options）
-- [ ] 启用 cors（白名单源）
-- [ ] 启用 rate-limit（防滥用）
-- [ ] body 大小限制（`express.json({ limit: '1mb' })`）
-- [ ] 日志（morgan + winston/pino）
-- [ ] gzip 压缩（compression）
-- [ ] HTTPS 由前置 nginx / ALB 处理
-- [ ] graceful shutdown（SIGTERM 处理）
-- [ ] healthcheck endpoint（`/healthz`）
-
-## 学到什么 + 关联
-
-学到的：
-
-1. 中间件链式调度是 Web 框架的核心抽象，跨语言通用（Rack / WSGI / Connect）
-2. **(req, res, next)** vs **async (ctx)** 是 callback 时代 vs async/await 时代的 API 分水岭
-3. 极简核心 + 第三方插件生态在 2010s 是优势，2020s 反而是负担（重复造轮子 / 维护碎片）
-4. Express 的"事实标准"地位 70% 来自先发优势 + 教程沉淀，技术上已过气
-5. v5 拖 10 年说明 OpenJS 接管后社区 contributor 难协调
-6. 错误处理双轨制（同步 / 异步）是 v4 的最大坑，新人易踩
-7. Trie 路由（Fastify）vs 线性 stack（Express）在 1000+ 路由场景性能差距明显
-8. 框架的"灵活性"和"性能"是 tradeoff —— Express 选灵活，Fastify 选性能
-9. weekly downloads ≠ 技术先进性，只反映存量市场
-10. 一个项目失去原作者后，社区维护者很难推动 breaking 升级——这是 OSS 治理的普遍问题
-
-关联：
-
-- [[koa]] [[fastify]] [[hono]] —— 同领域对手
-- [[axios]] [[ky]] —— HTTP 客户端
-- [[zod]] —— schema 校验（与 Express 配合需第三方）
-- [[node-js]] —— 运行时基础
-
-延伸阅读建议：
-
-1. 读 Koa 源码对比理解"中间件洋葱模型"vs Express 线性管线
-2. 读 Fastify 文档理解 schema-first 设计
-3. 读 Hono 源码理解边缘 runtime 适配
-4. 跑一遍 v4 → v5 升级 checklist，体会 path-to-regexp breaking change
-5. 搭一个 Express + Fastify 同业务对照 benchmark，亲眼看 3x 性能差
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
