@@ -148,5 +148,12 @@ projection P2: (date, region, amount) 按 date 排序
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
+- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
+- [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 

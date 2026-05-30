@@ -155,4 +155,5 @@ factI n = go 1 1 where
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
+- [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 

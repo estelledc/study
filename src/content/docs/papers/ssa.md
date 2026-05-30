@@ -190,6 +190,7 @@ entry:
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
+- [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel

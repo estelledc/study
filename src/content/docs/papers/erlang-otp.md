@@ -177,6 +177,7 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[smalltalk-80]] —— Smalltalk-80
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

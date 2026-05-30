@@ -155,6 +155,7 @@ UNDROP TABLE orders_2026;                  -- 误删后救回来
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL

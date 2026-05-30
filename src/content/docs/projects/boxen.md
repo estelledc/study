@@ -197,5 +197,5 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 

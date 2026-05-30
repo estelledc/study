@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 212 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 214 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：212 篇
+- **总数**：214 篇
 - **已分类**：143
-- **未分类**：69（落入"其他 / 待分类"段）
+- **未分类**：71（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 69 |
+| [其他 / 待分类](#其他--待分类) | 71 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 69 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 71 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -349,6 +349,7 @@ sidebar:
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
+| `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
@@ -362,6 +363,7 @@ sidebar:
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
+| `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |
@@ -380,7 +382,7 @@ sidebar:
 
 ---
 
-## 全部 212 篇（字母序）
+## 全部 214 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -509,6 +511,7 @@ sidebar:
 | `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |
+| `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
 | `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) | 其他 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
@@ -548,6 +551,7 @@ sidebar:
 | `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | 其他 |
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
+| `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 其他 |
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 其他 |

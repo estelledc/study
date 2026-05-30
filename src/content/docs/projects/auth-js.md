@@ -155,6 +155,7 @@ callbacks: {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
+- [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[next-js]] —— Next.js — React 全栈框架
 - [[prisma]] —— Prisma — 类型安全 ORM

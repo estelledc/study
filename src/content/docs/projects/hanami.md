@@ -185,6 +185,7 @@ end
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架

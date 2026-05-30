@@ -150,6 +150,7 @@ app.get('/users/:id', (c) => {
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[bun]] —— Bun — JS 全能运行时
+- [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[elysia]] —— Elysia Bun-first TypeScript Web 框架

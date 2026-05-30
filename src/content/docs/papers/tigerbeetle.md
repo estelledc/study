@@ -156,6 +156,7 @@ VSR：view + view-change
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍

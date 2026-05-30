@@ -174,6 +174,7 @@ def me(user: dict = Depends(current_user)):
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎

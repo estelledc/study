@@ -185,6 +185,7 @@ def list_users():
 
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[hono]] —— Hono — 多运行时 Web 框架

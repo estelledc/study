@@ -161,6 +161,7 @@ function Greeting({ name }) {
 - [[ag-grid]] —— AG Grid — 企业级数据表格
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[cot]] —— Chain-of-Thought Prompting
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
