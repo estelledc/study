@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 385 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 388 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：385 个
+- **总数**：388 个
 - **已分类**：206
-- **未分类**：179（落入"其他 / 待分类"段）
+- **未分类**：182（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 179 |
+| [其他 / 待分类](#其他--待分类) | 182 |
 
 ---
 
@@ -495,11 +495,12 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 179 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 182 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) |
+| `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
@@ -579,6 +580,7 @@ sidebar:
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
+| `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
@@ -617,6 +619,7 @@ sidebar:
 | `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
+| `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) |
@@ -681,11 +684,12 @@ sidebar:
 
 ---
 
-## 全部 385 个（字母序）
+## 全部 388 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) | 其他 |
+| `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) | 其他 |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
@@ -832,6 +836,7 @@ sidebar:
 | `jest` | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
+| `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) | 其他 |
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `koa` | [Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架](/study/projects/koa/) | Web 框架 |
@@ -936,6 +941,7 @@ sidebar:
 | `prom-client` | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
 | `prosemirror` | [ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架](/study/projects/prosemirror/) | 编辑器 / 富文本 |
+| `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) | 其他 |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) | 其他 |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) | 其他 |
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) | 其他 |

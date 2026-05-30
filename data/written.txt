@@ -101,6 +101,7 @@ f1-2013
 faiss-2017
 fast-paxos-2006
 feautrier-polyhedral
+fidge-1988
 flash-attention
 flexible-paxos-2016
 flink-2015
@@ -176,6 +177,7 @@ lsm-tree-1996
 mae
 mamba
 mapreduce
+marques-silva-grasp-1996
 martin-lof-itt
 mccarthy-lisp
 mcmillan-smv-1993
@@ -274,6 +276,7 @@ t5
 tachyon-2014
 tcp
 template-haskell
+tesla-architecture-2008
 theorems-for-free
 tidb-2020
 tigerbeetle
@@ -423,6 +426,7 @@ flask
 foundry
 framer-motion
 fzf
+gdu
 gin
 glances
 go-ethereum
@@ -646,6 +650,7 @@ thirdweb-sdk
 thrift
 tide
 timescaledb
+torchtune
 traefik
 trpc
 turbopack
@@ -689,4 +694,5 @@ zcash
 zksync-era
 zod
 zoxide
+zulip
 zustand

@@ -153,7 +153,9 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[fastai]] —— fastai — 三行代码做迁移学习
+- [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
