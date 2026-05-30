@@ -148,5 +148,12 @@ expect(screen.getByRole('button', { name: '(hover) Submit' })).toBeInTheDocument
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
+- [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[react]] —— React UI 组件库
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
+- [[storybook]] —— Storybook — 给 UI 组件的独立工作台
+- [[vitest]] —— Vitest — Vite 原生测试框架
+- [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
 

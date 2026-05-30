@@ -1,6 +1,6 @@
 ---
 title: Idris — 让依赖类型从证明助理变成通用编程语言
-来源: Edwin Brady, "Idris, a General-Purpose Dependently Typed Programming Language: Design and Implementation", JFP 2013
+来源: 'Edwin Brady, "Idris, a General-Purpose Dependently Typed Programming Language: Design and Implementation", JFP 2013'
 日期: 2026-05-30
 分类: 编程语言
 难度: 高级
@@ -153,3 +153,6 @@ select : (col : String) -> Query (Cols cs) -> {auto p : Has col cs} -> ...
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

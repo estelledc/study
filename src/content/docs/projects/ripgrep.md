@@ -150,5 +150,6 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fd]] —— fd — Rust 写的现代 find
 - [[fzf]] —— fzf — 命令行模糊查找
+- [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 

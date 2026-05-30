@@ -179,4 +179,5 @@ stars 量级 11k+，依赖只有 `anyio`，依赖图极简。
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 

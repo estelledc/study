@@ -171,6 +171,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
+- [[epaxos-2013]] —— EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
 - [[fast-paxos-2006]] —— Fast Paxos — 给 Paxos 加一条乐观快车道
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事

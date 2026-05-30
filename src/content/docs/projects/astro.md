@@ -218,7 +218,8 @@ export const collections = { blog }
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[svelte]] —— Svelte — 编译时 UI 框架
-- [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
+- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
+- [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vue]] —— Vue.js — 渐进式 UI 框架
