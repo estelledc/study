@@ -41,6 +41,7 @@ cheney-gc
 chinchilla
 chubby
 ci-effects
+cimatti-nusmv-2002
 clarke-cegar-2003
 clarke-emerson-1981
 clickhouse
@@ -61,6 +62,7 @@ cousot-abstract-interpretation
 craq-2009
 crdt-json
 crdt-shapiro-2011
+crdt-sss-2011
 csp-hoare-1978
 cstore-2005
 dalle-2
@@ -110,6 +112,7 @@ godel-1931
 gpt-3
 graalvm-truffle
 gradual-typing
+granule
 graphrag
 gray-1978-notes
 gray-1981-transaction
@@ -123,6 +126,7 @@ hewitt-actor-model
 hindley-milner
 hnsw-2018
 hoare-logic
+holzmann-spin-1997
 hotspot-server-compiler
 http-2
 huffman-1952
@@ -130,6 +134,7 @@ hughes-fp-matters
 idris-brady
 immix-mark-region
 induction-heads
+infer-biabduction
 ingres-1976
 instructgpt
 io-uring
@@ -178,6 +183,7 @@ mycroft-strictness
 neumann-2015-large-joins
 no-silver-bullet
 openhands
+ot-1989
 pair-programming
 partial-evaluation-jones
 paxos
@@ -357,6 +363,7 @@ cosmos-sdk
 cosmwasm
 curve
 d3
+dask
 date-fns
 dayjs
 dendrite
@@ -401,6 +408,7 @@ foundry
 framer-motion
 fzf
 gin
+glances
 go-ethereum
 go-zero
 got
@@ -526,11 +534,13 @@ postgres-js
 postgresql
 preact
 prisma
+procs
 prom-client
 prometheus
 prosemirror
 prysm
 pulsar
+pyarrow
 pyth
 qdrant
 quarkus
@@ -568,6 +578,8 @@ sharp
 shiki
 sia
 sidekiq
+signal-android
+signal-ios
 signal-server
 sinatra
 slim-framework

@@ -146,6 +146,7 @@ git add btop/btop.conf && git commit -m 'sync btop config'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[bat]] —— bat — 现代 cat 替代
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树

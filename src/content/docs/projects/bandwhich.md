@@ -147,4 +147,5 @@ sudo bandwhich --total-utilization
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
+

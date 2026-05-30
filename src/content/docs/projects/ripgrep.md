@@ -143,6 +143,7 @@ rg --no-ignore "foo"         # 等价于 -u
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[bat]] —— bat — 现代 cat 替代
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）

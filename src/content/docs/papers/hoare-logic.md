@@ -168,6 +168,7 @@ method Sum(a: array<int>) returns (s: int)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
@@ -183,6 +184,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"

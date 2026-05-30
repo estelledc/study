@@ -151,6 +151,7 @@ SSKEnvironment.messageSender.send(text, to: recipient)
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
 - [[matrix-js-sdk]] —— matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见

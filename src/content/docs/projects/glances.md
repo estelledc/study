@@ -148,6 +148,7 @@ Glances 在 9091 端口暴露 `/metrics`，Prometheus 配置里 scrape 它就能
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[grafana]] —— Grafana — 监控可视化看板
