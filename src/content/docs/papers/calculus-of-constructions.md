@@ -149,6 +149,7 @@ Qed.
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

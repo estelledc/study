@@ -162,6 +162,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 
 - [[anchor]] —— Anchor — Solana 合约开发框架
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[axelar]] —— Axelar — 通用跨链 gateway

@@ -151,6 +151,7 @@ function onDragOver({ active, over }) {
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
+- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 - [[react]] —— React UI 组件库
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 

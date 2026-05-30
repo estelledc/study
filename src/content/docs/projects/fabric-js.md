@@ -154,6 +154,7 @@ fabric 没有官方 React 包装。这件事很反直觉——一个 2008 年起
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 

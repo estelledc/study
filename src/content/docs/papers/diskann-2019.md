@@ -1,6 +1,6 @@
 ---
 title: DiskANN — 单机十亿向量近邻检索（图存 SSD）
-来源: Subramanya et al., "DiskANN: Fast Accurate Billion-point Nearest Neighbor Search on a Single Node", NeurIPS 2019
+来源: 'Subramanya et al., "DiskANN: Fast Accurate Billion-point Nearest Neighbor Search on a Single Node", NeurIPS 2019'
 日期: 2026-05-30
 分类: 数据库
 难度: 高级
@@ -168,3 +168,6 @@ alpha=2：很多冗余远跳边 → 跳数少但每跳邻居多，单跳成本�
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

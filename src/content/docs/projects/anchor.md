@@ -165,6 +165,7 @@ await program.methods
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约

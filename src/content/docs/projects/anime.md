@@ -168,6 +168,7 @@ io.observe(document.querySelector('.hero-title'))
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[starlight]] —— Starlight — Astro 文档站点主题
 

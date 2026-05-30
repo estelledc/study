@@ -161,6 +161,7 @@ export const Clicked: StoryObj<typeof Button> = {
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
+- [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"

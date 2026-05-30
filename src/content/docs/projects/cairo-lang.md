@@ -150,6 +150,7 @@ stone-prover prove --trace trace.bin --output proof.json
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anchor]] —— Anchor — Solana 合约开发框架
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
