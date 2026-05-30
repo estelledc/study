@@ -158,6 +158,7 @@ contract LogicV1 is UUPSUpgradeable, OwnableUpgradeable {
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[anchor]] —— Anchor — Solana 合约开发框架
+- [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[chainlink]] —— Chainlink — 智能合约的"感官系统"
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链

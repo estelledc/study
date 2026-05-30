@@ -156,5 +156,5 @@ function onDragOver({ active, over }) {
 - [[react]] —— React UI 组件库
 - [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+- [[sortablejs]] —— SortableJS — 一行代码让任何列表能用手拖排序
 

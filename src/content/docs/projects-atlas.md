@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 333 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 335 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：333 个
+- **总数**：335 个
 - **已分类**：206
-- **未分类**：127（落入"其他 / 待分类"段）
+- **未分类**：129（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 127 |
+| [其他 / 待分类](#其他--待分类) | 129 |
 
 ---
 
@@ -422,7 +422,7 @@ sidebar:
 | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) |  |
 | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) |  |
 | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) |  |
-| [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) |  |
+| [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) |  |
 | [unified AST + plugin pipeline 通用文档处理框架](/study/projects/unified/) |  |
 
 ## 图像处理 / Canvas
@@ -481,7 +481,7 @@ sidebar:
 |---|---|
 | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) |  |
 | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) |  |
-| [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) |  |
+| [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) |  |
 
 ## 其他基础设施
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 127 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 129 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -507,6 +507,7 @@ sidebar:
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
+| `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
@@ -520,6 +521,7 @@ sidebar:
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
+| `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
@@ -629,7 +631,7 @@ sidebar:
 
 ---
 
-## 全部 333 个（字母序）
+## 全部 335 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -644,6 +646,7 @@ sidebar:
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
+| `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | 其他 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
@@ -670,6 +673,7 @@ sidebar:
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
+| `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | 其他 |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | 其他 |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) | 其他 |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
@@ -882,7 +886,7 @@ sidebar:
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
-| `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
+| `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
@@ -892,7 +896,7 @@ sidebar:
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) | 其他 |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) | 其他 |
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
-| `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |
+| `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | 数据库本体 / 存储引擎 |
 | `stagehand` | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) | AI 浏览器自动化 |

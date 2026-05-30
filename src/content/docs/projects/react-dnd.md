@@ -154,5 +154,5 @@ DndProvider 通过 React Context 把 DragDropManager 单例传给所有后代。
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
-- [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+- [[sortablejs]] —— SortableJS — 一行代码让任何列表能用手拖排序
 

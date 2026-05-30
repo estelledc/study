@@ -174,6 +174,6 @@ export default {
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
-- [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
+- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 

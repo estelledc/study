@@ -149,6 +149,7 @@ comet.buyCollateral(WETH, 0, 1e18, msg.sender);
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[curve]] —— Curve — 稳定币低滑点兑换协议

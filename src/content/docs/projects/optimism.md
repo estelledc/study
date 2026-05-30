@@ -158,6 +158,7 @@ docker logs optimism-batcher-1 -f
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
+- [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[axelar]] —— Axelar — 通用跨链 gateway
