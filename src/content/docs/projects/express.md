@@ -168,7 +168,6 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
-- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
@@ -185,7 +184,7 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[hono]] —— Hono — 多运行时 Web 框架
-- [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
+- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
@@ -205,5 +204,4 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
-- [[zod]] —— Zod — TypeScript-first schema 验证
 

@@ -96,6 +96,7 @@ halide
 hamming-1950
 hewitt-actor-model
 hindley-milner
+hnsw-2018
 hoare-logic
 hotspot-server-compiler
 http-2
@@ -195,6 +196,7 @@ ssa
 stable-diffusion
 standard-ml
 steensgaard-pointer
+stm-shavit-touitou
 stonebraker-2010-sqlnosql
 strongtalk
 swe-agent
@@ -278,7 +280,9 @@ cockroachdb
 codemirror
 commander
 compound-v3
+connect-rpc
 continue
+cosmos-sdk
 curve
 d3
 date-fns

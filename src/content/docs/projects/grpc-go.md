@@ -169,4 +169,5 @@ s := grpc.NewServer(grpc.UnaryInterceptor(loggingInterceptor))
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
 

@@ -164,6 +164,7 @@ docker logs optimism-batcher-1 -f
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
+- [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息

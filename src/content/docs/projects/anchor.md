@@ -167,6 +167,7 @@ await program.methods
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
+- [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约

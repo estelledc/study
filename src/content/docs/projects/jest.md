@@ -152,6 +152,12 @@ test('用户卡片渲染', () => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[storybook]] —— Storybook — 给 UI 组件的独立工作台
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vitest]] —— Vitest — Vite 原生测试框架
 
