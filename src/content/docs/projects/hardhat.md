@@ -180,5 +180,6 @@ networks: {
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
+- [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 - [[webpack]] —— webpack 模块打包
 

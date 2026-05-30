@@ -167,6 +167,8 @@ const { data, isLoading } = api.user.byId.useQuery(
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[hono]] —— Hono — 多运行时 Web 框架

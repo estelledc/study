@@ -167,5 +167,13 @@ console.log(ethers.formatUnits(raw, decimals), "USDC");
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 

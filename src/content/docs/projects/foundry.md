@@ -188,4 +188,5 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
+- [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 

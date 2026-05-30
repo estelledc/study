@@ -155,6 +155,7 @@ function Cart() {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[mobx]] —— MobX — 让 state 像电子表格一样自动重算
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分

@@ -161,6 +161,7 @@ r.POST("/users", func(c *gin.Context) {
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[gqlgen]] —— gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
