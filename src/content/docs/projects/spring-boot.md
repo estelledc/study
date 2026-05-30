@@ -186,6 +186,7 @@ management:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"

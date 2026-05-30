@@ -156,6 +156,7 @@ System R 的处理：
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
+- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单

@@ -165,6 +165,7 @@ export default defineConfig({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架

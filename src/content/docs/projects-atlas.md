@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 283 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 285 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：283 个
+- **总数**：285 个
 - **已分类**：206
-- **未分类**：77（落入"其他 / 待分类"段）
+- **未分类**：79（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 77 |
+| [其他 / 待分类](#其他--待分类) | 79 |
 
 ---
 
@@ -467,8 +467,8 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [boxen — Terminal box 渲染库](/study/projects/boxen/) |  |
-| [chalk](/study/projects/chalk/) |  |
+| [boxen — 给终端文本套个边框的事](/study/projects/boxen/) |  |
+| [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) |  |
 | [enquirer 终端交互提示库](/study/projects/enquirer/) |  |
 | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) |  |
 | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 77 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 79 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -506,6 +506,7 @@ sidebar:
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
+| `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
@@ -575,11 +576,12 @@ sidebar:
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
+| `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
 
 ---
 
-## 全部 283 个（字母序）
+## 全部 285 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -595,6 +597,7 @@ sidebar:
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
+| `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | 其他 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
@@ -605,14 +608,14 @@ sidebar:
 | `better-auth` | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) | Auth 认证 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
-| `boxen` | [boxen — Terminal box 渲染库](/study/projects/boxen/) | Terminal / 终端 |
+| `boxen` | [boxen — 给终端文本套个边框的事](/study/projects/boxen/) | Terminal / 终端 |
 | `browser-use` | [browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架](/study/projects/browser-use/) | AI 浏览器自动化 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | 其他 |
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
-| `chalk` | [chalk](/study/projects/chalk/) | Terminal / 终端 |
+| `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) | Monorepo / 包管理 |
 | `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | 其他 |
@@ -859,6 +862,7 @@ sidebar:
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | 可观测 / 性能 |
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
 | `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
+| `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) | HTTP 客户端 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs](/study/projects/yargs/) | CLI / 命令行工具 |

@@ -166,6 +166,7 @@ controller.abort();
 - [[i18next]] —— i18next framework-agnostic i18n 引擎
 - [[ky]] —— ky 极简 fetch-based HTTP 客户端
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+- [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
 - [[zod]] —— Zod — TypeScript-first schema 验证
 
