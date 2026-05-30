@@ -166,5 +166,6 @@ flow:
 - [[langfuse]] —— Langfuse — LLM 应用可观测性
 - [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

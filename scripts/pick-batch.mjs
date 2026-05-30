@@ -16,6 +16,7 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 const CANDIDATES = path.join(ROOT, 'data/candidates.jsonl');
 const REWRITE_POOL = path.join(ROOT, 'data/rewrite-pool.jsonl');
+const GRAVEYARD = path.join(ROOT, 'data/graveyard.jsonl');
 
 function parseArgs() {
   const args = { count: 8, rewrite: null, new: null };
@@ -102,12 +103,18 @@ function assignWorktrees(items) {
 async function main() {
   const args = parseArgs();
 
-  const [candidates, pool] = await Promise.all([
+  const [candidates, pool, graveyard] = await Promise.all([
     readJsonl(CANDIDATES),
     readJsonl(REWRITE_POOL),
+    readJsonl(GRAVEYARD),
   ]);
 
-  const rewriteItems = pickRewrite(pool, args.rewrite).map(x => ({
+  // graveyard 永久排除（按 slug 唯一，跨 area 安全）
+  const graveSlugs = new Set(graveyard.map(g => g.slug));
+  const filteredPool = pool.filter(p => !graveSlugs.has(p.slug));
+  const filteredCandidates = candidates.filter(c => !graveSlugs.has(c.slug));
+
+  const rewriteItems = pickRewrite(filteredPool, args.rewrite).map(x => ({
     slug: x.slug,
     area: x.area,
     kind: x.area === 'papers' ? 'rewrite-paper' : 'rewrite-project',
@@ -115,7 +122,7 @@ async function main() {
   }));
 
   const exclude = new Set(rewriteItems.map(x => `${x.area}::${x.slug}`));
-  const newItems = pickNew(candidates, args.new, exclude).map(c => ({
+  const newItems = pickNew(filteredCandidates, args.new, exclude).map(c => ({
     slug: c.slug,
     area: c.area,
     kind: c.area === 'papers' ? 'new-paper' : 'new-project',
@@ -133,6 +140,7 @@ async function main() {
   const issues = [];
   if (rewriteItems.length < args.rewrite) issues.push(`rewrite short: ${rewriteItems.length}/${args.rewrite}`);
   if (newItems.length < args.new) issues.push(`new short: ${newItems.length}/${args.new}`);
+  if (graveSlugs.size > 0) issues.push(`graveyard excluded: ${graveSlugs.size}`);
 
   console.log(JSON.stringify({
     requested: { count: args.count, rewrite: args.rewrite, new: args.new },

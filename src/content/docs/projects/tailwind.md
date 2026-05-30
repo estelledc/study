@@ -156,6 +156,7 @@ module.exports = {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[react]] —— React UI 组件库
+- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架

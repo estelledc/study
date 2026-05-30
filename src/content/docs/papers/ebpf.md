@@ -151,3 +151,8 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[io-uring]] —— io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+

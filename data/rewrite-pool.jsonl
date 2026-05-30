@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"rspack","area":"projects","path":"src/content/docs/projects/rspack.md","score":4,"reasons":["lines:733>250","legacy-frontmatter","h2-hits:1/11"],"lines":733,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"sentry","area":"projects","path":"src/content/docs/projects/sentry.md","score":4,"reasons":["lines:665>250","legacy-frontmatter","h2-hits:1/11"],"lines":665,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"shadcn-ui","area":"projects","path":"src/content/docs/projects/shadcn-ui.md","score":4,"reasons":["lines:759>250","legacy-frontmatter","h2-hits:1/11"],"lines":759,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"stagehand","area":"projects","path":"src/content/docs/projects/stagehand.md","score":4,"reasons":["lines:591>250","legacy-frontmatter","h2-hits:1/11"],"lines":591,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"steel-browser","area":"projects","path":"src/content/docs/projects/steel-browser.md","score":4,"reasons":["lines:822>250","legacy-frontmatter","h2-hits:1/11"],"lines":822,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
@@ -31,9 +29,7 @@
 {"slug":"d3","area":"projects","path":"src/content/docs/projects/d3.md","score":3,"reasons":["lines:614>250","h2-hits:1/11"],"lines":614,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"date-fns","area":"projects","path":"src/content/docs/projects/date-fns.md","score":3,"reasons":["lines:446>250","h2-hits:1/11"],"lines":446,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"dayjs","area":"projects","path":"src/content/docs/projects/dayjs.md","score":3,"reasons":["lines:490>250","h2-hits:1/11"],"lines":490,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"dino","area":"papers","path":"src/content/docs/papers/dino.md","score":3,"reasons":["lines:566>250","h2-hits:1/11"],"lines":566,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"dnd-kit","area":"projects","path":"src/content/docs/projects/dnd-kit.md","score":3,"reasons":["lines:590>250","h2-hits:1/11"],"lines":590,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"dns","area":"papers","path":"src/content/docs/papers/dns.md","score":3,"reasons":["lines:719>250","h2-hits:2/11"],"lines":719,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"ebpf","area":"papers","path":"src/content/docs/papers/ebpf.md","score":3,"reasons":["lines:662>250","h2-hits:1/11"],"lines":662,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"echarts","area":"projects","path":"src/content/docs/projects/echarts.md","score":3,"reasons":["lines:493>250","h2-hits:2/11"],"lines":493,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"elysia","area":"projects","path":"src/content/docs/projects/elysia.md","score":3,"reasons":["lines:442>250","h2-hits:2/11"],"lines":442,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}

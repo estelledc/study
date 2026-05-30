@@ -147,3 +147,10 @@ with sdpa_kernel(SDPBackend.MATH):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
+- [[attention]] —— Attention Is All You Need
+- [[mamba]] —— Mamba — 选择性状态空间模型
+- [[vit]] —— ViT — Vision Transformer
+

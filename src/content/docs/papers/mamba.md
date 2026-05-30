@@ -130,7 +130,6 @@ Mamba 的成功是 **算法 + 工程同等重要** 的典型——光有 selecti
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[attention]] —— Attention Is All You Need
-- [[dqn]] —— DQN — Deep Q-Network
-- [[ppo]] —— PPO — Proximal Policy Optimization
-- [[resnet]] —— ResNet — 残差连接
+- [[dino]] —— DINO 自监督视觉 transformer
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 

@@ -161,5 +161,6 @@ export function MyTabs({ value, defaultValue, onValueChange }) {
 
 - [[preact]] —— Preact — 3KB React 替代
 - [[react]] —— React UI 组件库
+- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 

@@ -161,6 +161,7 @@ pool.liquidationCall(
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
