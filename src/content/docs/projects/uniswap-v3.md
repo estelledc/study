@@ -178,6 +178,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
+- [[viem]] —— viem — 现代 TypeScript EVM 库
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 - [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
 - [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2

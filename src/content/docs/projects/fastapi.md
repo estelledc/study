@@ -208,6 +208,7 @@ def me(user: dict = Depends(current_user)):
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
+- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架

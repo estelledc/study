@@ -161,6 +161,7 @@ function Drawer({ isOpen }) {
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react]] —— React UI 组件库
 

@@ -206,6 +206,7 @@ export const collections = { blog }
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
+- [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nuxt]] —— Nuxt — Vue 全栈框架

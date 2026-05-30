@@ -196,4 +196,5 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
+- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
 

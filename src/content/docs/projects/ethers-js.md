@@ -175,5 +175,6 @@ console.log(ethers.formatUnits(raw, decimals), "USDC");
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[viem]] —— viem — 现代 TypeScript EVM 库
 - [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 

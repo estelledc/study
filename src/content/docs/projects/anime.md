@@ -169,6 +169,7 @@ io.observe(document.querySelector('.hero-title'))
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[starlight]] —— Starlight — Astro 文档站点主题
 

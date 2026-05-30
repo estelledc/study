@@ -161,5 +161,12 @@ console.log("mined block:", receipt.blockNumber);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[viem]] —— viem — 现代 TypeScript EVM 库
 
