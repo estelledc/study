@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 343 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 346 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：343 篇
+- **总数**：346 篇
 - **已分类**：143
-- **未分类**：200（落入"其他 / 待分类"段）
+- **未分类**：203（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 200 |
+| [其他 / 待分类](#其他--待分类) | 203 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 200 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 203 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -318,6 +318,7 @@ sidebar:
 | `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) |
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
+| `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
@@ -352,6 +353,7 @@ sidebar:
 | `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) |
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
+| `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
@@ -483,6 +485,7 @@ sidebar:
 | `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) |
 | `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) |
 | `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) |
+| `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
@@ -511,7 +514,7 @@ sidebar:
 
 ---
 
-## 全部 343 篇（字母序）
+## 全部 346 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -536,6 +539,7 @@ sidebar:
 | `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) | 其他 |
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) | 其他 |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 其他 |
+| `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | 其他 |
 | `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | 其他 |
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
@@ -592,6 +596,7 @@ sidebar:
 | `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) | 其他 |
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | 其他 |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 其他 |
+| `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) | 其他 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | 其他 |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) | 其他 |
@@ -815,6 +820,7 @@ sidebar:
 | `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) | 其他 |
 | `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
+| `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) | 其他 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |

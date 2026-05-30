@@ -150,6 +150,7 @@ DPO（Direct Preference Optimization）需要"chosen / rejected"成对数据，l
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库

@@ -66,6 +66,7 @@ compiler-errors
 constitutional-ai
 cook-levin
 copilot-rct
+cops-2011
 cot
 cousot-abstract-interpretation
 craq-2009
@@ -145,6 +146,7 @@ hol-light-2009
 holzmann-spin-1997
 hopper-architecture-2022
 hotspot-server-compiler
+hott-book-2013
 http-2
 huffman-1952
 hughes-fp-matters
@@ -216,6 +218,7 @@ nieuwenhuis-dpll-t-2006
 no-silver-bullet
 ntp-mills-1991
 nuprl-1986
+opencl-2010
 openhands
 ot-1989
 pair-programming
@@ -403,6 +406,7 @@ clerk
 clickhouse
 cockroachdb
 codemirror
+collabora-online
 colossal-ai
 commander
 compound-v3
@@ -469,6 +473,7 @@ fx
 fzf
 gdu
 gin
+gitui
 glances
 go-ethereum
 go-zero
@@ -719,6 +724,7 @@ typeorm
 typesense
 unified
 uniswap-v3
+unsloth
 unstorage
 valibot
 valkey
