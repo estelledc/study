@@ -192,6 +192,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
+- [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
@@ -209,6 +210,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
+- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由

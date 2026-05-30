@@ -163,6 +163,7 @@ column families:
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节

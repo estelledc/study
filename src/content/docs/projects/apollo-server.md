@@ -174,6 +174,7 @@ const server = new ApolloServer({ schema: buildSubgraphSchema({ typeDefs, resolv
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
+- [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

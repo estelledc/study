@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 317 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 319 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：317 个
+- **总数**：319 个
 - **已分类**：206
-- **未分类**：111（落入"其他 / 待分类"段）
+- **未分类**：113（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 111 |
+| [其他 / 待分类](#其他--待分类) | 113 |
 
 ---
 
@@ -78,7 +78,7 @@ sidebar:
 | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) |  |
 | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) |  |
 | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 不是动画库，是 AE 到浏览器的协议层 |
-| [motion-one 状元篇](/study/projects/motion-one/) | 用 WAAPI 而非 RAF 写动画——浏览器自己跑，主线程不卡顿 |
+| [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) |  |
 | [react-spring 状元篇](/study/projects/react-spring/) | 基于物理 spring 的 React 动画库，告别 duration-based 缓动 |
 
 ## 表单 / Schema 校验
@@ -305,7 +305,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) |  |
-| [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 拆解 mswjs/msw 如何在浏览器用 Service Worker、在 Node 用 fetch interceptor，统一 mock API |
+| [MSW — 让 mock 不改业务代码，在网络层透明拦截](/study/projects/msw/) |  |
 | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) |  |
 | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) |  |
 | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 从 Enzyme 时代到 Testing Library 时代，重构噩梦如何被一个简单原则解决 |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 111 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 113 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -594,6 +594,7 @@ sidebar:
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
+| `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
@@ -605,6 +606,7 @@ sidebar:
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
+| `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
@@ -613,7 +615,7 @@ sidebar:
 
 ---
 
-## 全部 317 个（字母序）
+## 全部 319 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -780,9 +782,9 @@ sidebar:
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
-| `motion-one` | [motion-one 状元篇](/study/projects/motion-one/) | 动画 |
+| `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | 其他 |
-| `msw` | [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
+| `msw` | [MSW — 让 mock 不改业务代码，在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
 | `mysql` | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) | 数据库本体 / 存储引擎 |
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
@@ -871,6 +873,7 @@ sidebar:
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务](/study/projects/steel-browser/) | AI 浏览器自动化 |
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
+| `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | 其他 |
 | `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |
 | `stylex` | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | 其他 |
@@ -912,6 +915,7 @@ sidebar:
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
+| `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
 | `visx` | [visx Airbnb React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue 团队用 Vite 写的静态文档站点生成器](/study/projects/vitepress/) | 文档站点 |

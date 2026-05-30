@@ -147,3 +147,6 @@ inView("#card", el => animate(el, { opacity: [0, 1], y: [40, 0] }))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+

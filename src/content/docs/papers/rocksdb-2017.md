@@ -149,5 +149,12 @@ Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
+- [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 

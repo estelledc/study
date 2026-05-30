@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"micromark","area":"projects","path":"src/content/docs/projects/micromark.md","score":3,"reasons":["lines:417>250","h2-hits:2/11"],"lines":417,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"mobx","area":"projects","path":"src/content/docs/projects/mobx.md","score":3,"reasons":["lines:404>250","h2-hits:0/11"],"lines":404,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"motion-one","area":"projects","path":"src/content/docs/projects/motion-one.md","score":3,"reasons":["lines:498>250","h2-hits:1/11"],"lines":498,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"msw","area":"projects","path":"src/content/docs/projects/msw.md","score":3,"reasons":["lines:782>250","h2-hits:1/11"],"lines":782,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"nestjs","area":"projects","path":"src/content/docs/projects/nestjs.md","score":3,"reasons":["lines:631>250","h2-hits:2/11"],"lines":631,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}

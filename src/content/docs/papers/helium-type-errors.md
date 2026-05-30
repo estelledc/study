@@ -172,4 +172,5 @@ when using lookup with a Maybe context,
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 
