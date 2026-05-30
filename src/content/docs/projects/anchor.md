@@ -164,5 +164,12 @@ await program.methods
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
+- [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
+- [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[solana]] —— Solana — Rust 写的高性能 PoH 链
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

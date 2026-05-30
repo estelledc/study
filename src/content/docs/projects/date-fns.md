@@ -149,7 +149,6 @@ console.log(isAfter(end, start))            // true
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
-- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[js-joda]] —— js-joda Java java.time API JS 端口
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库

@@ -151,3 +151,7 @@ test('用户卡片渲染', () => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[vitest]] —— Vitest — Vite 原生测试框架
+

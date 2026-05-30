@@ -131,6 +131,7 @@ vector RAG 在同一题上**只能找出几段最像"主线"字面的句子**，
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
 - [[react]] —— React UI 组件库
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM

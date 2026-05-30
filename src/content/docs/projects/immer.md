@@ -156,5 +156,12 @@ const back = applyPatches(next, inverse)  // back deepEquals base
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
+- [[jotai]] —— Jotai — 原子化 React 状态管理
+- [[react]] —— React UI 组件库
+- [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
+- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[valtio]] —— valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库
+- [[zustand]] —— Zustand — 极简 React 状态管理
 

@@ -184,6 +184,7 @@ export default defineConfig({
 
 - [[bun]] —— Bun — JS 全能运行时
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台

@@ -184,6 +184,7 @@ let app = Router::new()
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
+- [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架

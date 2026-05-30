@@ -200,4 +200,5 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[ink]] —— ink — 用 React 组件树写终端 CLI
 

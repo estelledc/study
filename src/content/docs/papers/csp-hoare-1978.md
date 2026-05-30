@@ -158,5 +158,6 @@ case v := <-chB: handleB(v)
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[stm-shavit-touitou]] —— STM Shavit-Touitou — 把"加锁"改成"事务"的源头
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

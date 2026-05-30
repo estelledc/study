@@ -159,6 +159,7 @@ publishing @demo/cli   ✓     ← core 已在 npm 上，cli 才能 resolve
 
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[framer-motion]] —— Framer Motion — React 声明式动画
+- [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 

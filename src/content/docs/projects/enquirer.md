@@ -170,4 +170,5 @@ class Counter extends Prompt {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
+- [[ink]] —— ink — 用 React 组件树写终端 CLI
 

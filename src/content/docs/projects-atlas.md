@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 303 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 305 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：303 个
+- **总数**：305 个
 - **已分类**：206
-- **未分类**：97（落入"其他 / 待分类"段）
+- **未分类**：99（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 97 |
+| [其他 / 待分类](#其他--待分类) | 99 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) |  |
+| [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) |  |
 | [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 拆解 mswjs/msw 如何在浏览器用 Service Worker、在 Node 用 fetch interceptor，统一 mock API |
 | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) |  |
 | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) |  |
@@ -432,7 +432,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) |  |
-| [Jimp 纯 JS 图像处理库](/study/projects/jimp/) |  |
+| [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) |  |
 | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | Stage / Layer / Group / Shape 节点树 + 事件冒泡 + 多 Layer 合成性能策略 |
 | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | S29-5 收官：从 Application/Stage/Container 流水线到 v8 ECS 重写，看一个工具库如何在 13 年里成为 web 端 2D 图像渲染的事实标准 |
 | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 97 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 99 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -519,6 +519,8 @@ sidebar:
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
+| `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) |
+| `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
@@ -599,7 +601,7 @@ sidebar:
 
 ---
 
-## 全部 303 个（字母序）
+## 全部 305 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -650,7 +652,9 @@ sidebar:
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | CLI / 命令行工具 |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | 其他 |
+| `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) | 其他 |
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
+| `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
@@ -710,8 +714,8 @@ sidebar:
 | `ink` | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | 其他基础设施 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
-| `jest` | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) | 测试 / 验证 |
-| `jimp` | [Jimp 纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
+| `jest` | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) | 测试 / 验证 |
+| `jimp` | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
 | `js-joda` | [js-joda Java java.time API JS 端口](/study/projects/js-joda/) | 日期时间 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
