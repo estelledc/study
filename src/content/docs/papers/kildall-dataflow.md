@@ -161,6 +161,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架

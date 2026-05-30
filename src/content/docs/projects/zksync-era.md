@@ -156,6 +156,7 @@ function validateTransaction(...) external {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[llvm]] —— LLVM — 模块化编译器框架

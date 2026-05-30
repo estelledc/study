@@ -133,6 +133,7 @@ B+Tree 的执行路径：
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
+- [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写

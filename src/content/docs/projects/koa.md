@@ -148,6 +148,7 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[bun]] —— Bun — JS 全能运行时
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
@@ -157,10 +158,10 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[hono]] —— Hono — 多运行时 Web 框架
+- [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[marked]] —— marked regex-based 单文件 markdown 解析器
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
-- [[zod]] —— Zod — TypeScript-first schema 验证
 

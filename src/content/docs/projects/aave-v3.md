@@ -157,6 +157,7 @@ pool.liquidationCall(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
 - [[bitcoin]] —— Bitcoin 白皮书

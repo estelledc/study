@@ -161,6 +161,7 @@ Solana 便宜 + 快，代价是**生态小、宕机风险**、写代码心智负
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anchor]] —— Anchor — Solana 合约开发框架
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑

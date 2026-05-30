@@ -94,6 +94,7 @@ gray-1981-transaction
 great-swe
 halide
 hamming-1950
+herlihy-moss-tm
 hewitt-actor-model
 hindley-milner
 hnsw-2018
@@ -150,6 +151,7 @@ peyton-jones-stg
 plotkin-sos
 polar-codes-2009
 ppo
+product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
 push-pull-frp
@@ -283,6 +285,7 @@ compound-v3
 connect-rpc
 continue
 cosmos-sdk
+cosmwasm
 curve
 d3
 date-fns
@@ -504,6 +507,7 @@ traefik
 trpc
 turbopack
 turborepo
+twirp
 tyk
 typeorm
 typesense

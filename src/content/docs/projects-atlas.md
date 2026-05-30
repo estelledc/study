@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 307 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 309 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：307 个
+- **总数**：309 个
 - **已分类**：206
-- **未分类**：101（落入"其他 / 待分类"段）
+- **未分类**：103（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 101 |
+| [其他 / 待分类](#其他--待分类) | 103 |
 
 ---
 
@@ -101,7 +101,7 @@ sidebar:
 |---|---|
 | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) |  |
 | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) |  |
-| [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) |  |
+| [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) |  |
 | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) |  |
 | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) |  |
 
@@ -433,7 +433,7 @@ sidebar:
 |---|---|
 | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) |  |
 | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) |  |
-| [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | Stage / Layer / Group / Shape 节点树 + 事件冒泡 + 多 Layer 合成性能策略 |
+| [Konva — 给 HTML5 Canvas 装一棵会响应的节点树](/study/projects/konva/) |  |
 | [PixiJS — WebGL 2D 渲染引擎的状元收官](/study/projects/pixi/) | S29-5 收官：从 Application/Stage/Container 流水线到 v8 ECS 重写，看一个工具库如何在 13 年里成为 web 端 2D 图像渲染的事实标准 |
 | [sharp - libvips 之上的 Node 图像处理（S29-1）](/study/projects/sharp/) | Node |
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 101 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 103 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -505,6 +505,7 @@ sidebar:
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
+| `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
@@ -591,6 +592,7 @@ sidebar:
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) |
+| `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) |
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) |
@@ -603,7 +605,7 @@ sidebar:
 
 ---
 
-## 全部 307 个（字母序）
+## 全部 309 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -616,6 +618,7 @@ sidebar:
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
+| `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
@@ -724,12 +727,12 @@ sidebar:
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `koa` | [Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架](/study/projects/koa/) | Web 框架 |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) | 其他 |
-| `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
+| `konva` | [Konva — 给 HTML5 Canvas 装一棵会响应的节点树](/study/projects/konva/) | 图像处理 / Canvas |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) | 其他 |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | 其他 |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
-| `ky` | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) | HTTP 客户端 |
+| `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
 | `langfuse` | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
@@ -873,6 +876,7 @@ sidebar:
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
 | `testing-library` | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 测试 / 验证 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
+| `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | 其他 |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
 | `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | DevOps / 容器 / 运维 |

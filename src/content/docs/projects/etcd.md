@@ -139,4 +139,5 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[nats]] —— NATS — 极简云原生消息系统
 - [[raft]] —— Raft — 易理解的共识算法
 - [[redis]] —— Redis — 内存键值数据库
+- [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 

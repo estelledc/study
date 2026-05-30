@@ -173,5 +173,6 @@ for await (const item of got.paginate<Item>("items", {
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 
