@@ -181,4 +181,5 @@ def secd_step(s, e, c, d):
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
+- [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
 

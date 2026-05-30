@@ -231,5 +231,6 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
+- [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

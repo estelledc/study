@@ -151,6 +151,7 @@ case v := <-chB: handleB(v)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒

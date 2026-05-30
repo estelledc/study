@@ -159,6 +159,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bat]] —— bat — 现代 cat 替代
+- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）

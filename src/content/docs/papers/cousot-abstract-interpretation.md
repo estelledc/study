@@ -158,6 +158,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
+- [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

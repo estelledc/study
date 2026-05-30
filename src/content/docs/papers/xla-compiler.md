@@ -163,6 +163,7 @@ f(jnp.ones(5))   # ⚠️ 又重新编译
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+- [[numpy]] —— NumPy — Python 科学计算基石
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快

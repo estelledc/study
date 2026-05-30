@@ -54,6 +54,7 @@ cook-levin
 copilot-rct
 cot
 cousot-abstract-interpretation
+craq-2009
 crdt-json
 csp-hoare-1978
 cstore-2005
@@ -182,6 +183,7 @@ ppo
 product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
+prolog-colmerauer
 push-pull-frp
 pypy-tracing-jit
 quic
@@ -339,6 +341,7 @@ curve
 d3
 date-fns
 dayjs
+dendrite
 dgraph
 dify
 django
@@ -619,4 +622,5 @@ yjs
 zcash
 zksync-era
 zod
+zoxide
 zustand

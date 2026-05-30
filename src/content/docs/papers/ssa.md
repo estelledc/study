@@ -200,5 +200,6 @@ entry:
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

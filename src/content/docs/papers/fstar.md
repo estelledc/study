@@ -151,6 +151,7 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"

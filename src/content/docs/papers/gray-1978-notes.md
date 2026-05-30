@@ -190,3 +190,6 @@ Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

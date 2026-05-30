@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 274 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 277 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：274 篇
+- **总数**：277 篇
 - **已分类**：143
-- **未分类**：131（落入"其他 / 待分类"段）
+- **未分类**：134（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 131 |
+| [其他 / 待分类](#其他--待分类) | 134 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 131 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 134 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -325,6 +325,7 @@ sidebar:
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |
+| `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
@@ -355,6 +356,7 @@ sidebar:
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
+| `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
@@ -437,12 +439,13 @@ sidebar:
 | `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) |
 | `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) |
 | `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) |
+| `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 
 ---
 
-## 全部 274 篇（字母序）
+## 全部 277 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -487,6 +490,7 @@ sidebar:
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
 | `ci-effects` | [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
+| `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) | 其他 |
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) | 其他 |
@@ -551,6 +555,7 @@ sidebar:
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) | 其他 |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) | 其他 |
 | `graphrag` | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | 智能体与 LLM 系统 |
+| `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) | 其他 |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 其他 |
 | `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | HCI / 软件工程研究 |
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) | 其他 |
@@ -715,6 +720,7 @@ sidebar:
 | `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) | 其他 |
 | `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) | 其他 |
 | `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
+| `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 其他 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) | 其他 |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | 其他 |
