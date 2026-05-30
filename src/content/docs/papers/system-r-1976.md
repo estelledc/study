@@ -167,6 +167,7 @@ System R 的处理：
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
 - [[raft]] —— Raft — 易理解的共识算法
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询

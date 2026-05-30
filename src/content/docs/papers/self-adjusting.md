@@ -148,6 +148,7 @@ trait Compiler: salsa::Database {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

@@ -133,6 +133,7 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fzf]] —— fzf — 命令行模糊查找
+- [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep

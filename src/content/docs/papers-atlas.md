@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 280 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 283 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：280 篇
+- **总数**：283 篇
 - **已分类**：143
-- **未分类**：137（落入"其他 / 待分类"段）
+- **未分类**：140（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 137 |
+| [其他 / 待分类](#其他--待分类) | 140 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 137 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 140 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -337,6 +337,7 @@ sidebar:
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
+| `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) |
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
@@ -385,6 +386,7 @@ sidebar:
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
 | `martin-lof-itt` | [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) |
+| `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) |
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) |
 | `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) |
 | `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) |
@@ -401,6 +403,7 @@ sidebar:
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |
+| `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) |
@@ -448,7 +451,7 @@ sidebar:
 
 ---
 
-## 全部 280 篇（字母序）
+## 全部 283 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -519,6 +522,7 @@ sidebar:
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) | 其他 |
+| `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) | 其他 |
 | `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
@@ -610,6 +614,7 @@ sidebar:
 | `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
 | `martin-lof-itt` | [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) | 其他 |
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
+| `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | 其他 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) | 其他 |
 | `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
@@ -636,6 +641,7 @@ sidebar:
 | `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) | 其他 |
 | `ppo` | [PPO — Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
+| `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) | 其他 |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | 其他 |
 | `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |

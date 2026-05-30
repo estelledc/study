@@ -159,6 +159,7 @@ print(a)              # a 不变
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[pandas]] —— pandas — Python 表格数据事实标准
+- [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器

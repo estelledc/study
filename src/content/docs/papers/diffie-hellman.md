@@ -149,6 +149,7 @@ openssl pkey -in alice.pem -pubout -out alice.pub
 
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[bitcoin]] —— Bitcoin 白皮书
+- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[rsa]] —— RSA 公钥密码
 - [[turing-1936]] —— Turing 1936 可计算性

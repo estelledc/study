@@ -163,5 +163,9 @@ client.on("Room.timeline", async (event, room) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
+- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 

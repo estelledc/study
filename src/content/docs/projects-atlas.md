@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 355 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 358 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：355 个
+- **总数**：358 个
 - **已分类**：206
-- **未分类**：149（落入"其他 / 待分类"段）
+- **未分类**：152（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 149 |
+| [其他 / 待分类](#其他--待分类) | 152 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 149 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 152 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -541,6 +541,7 @@ sidebar:
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
 | `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
+| `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
@@ -566,6 +567,7 @@ sidebar:
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
+| `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
@@ -598,6 +600,7 @@ sidebar:
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
+| `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
@@ -651,7 +654,7 @@ sidebar:
 
 ---
 
-## 全部 355 个（字母序）
+## 全部 358 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -739,6 +742,7 @@ sidebar:
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | 其他 |
 | `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
 | `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | 数据库本体 / 存储引擎 |
+| `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | 其他 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
@@ -779,6 +783,7 @@ sidebar:
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | 其他 |
+| `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) | 其他 |
 | `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | 数据应用 / SaaS |
@@ -880,6 +885,7 @@ sidebar:
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) | 其他 |
 | `podman` | [Podman — 无 daemon 容器引擎](/study/projects/podman/) | DevOps / 容器 / 运维 |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) | 其他 |
+| `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) | 其他 |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) | 其他 |
 | `postgres-js` | [postgres.js — 写 SQL 但语法层就防注入的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |

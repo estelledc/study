@@ -155,6 +155,7 @@ go run ./cmd/dendrite-demo-pinecone --listen :8008
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
+- [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
