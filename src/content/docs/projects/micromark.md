@@ -1,416 +1,151 @@
 ---
-title: micromark 流式 CommonMark 状态机解析器
-来源: https://github.com/micromark/micromark + Titus Wormer 主导，2020 起
-season: 28
-episode: S28-5
+title: micromark — markdown 解析器里那台一个字一个字读的状态机
+来源: Titus Wormer, micromark, 2020 起；https://github.com/micromark/micromark
+日期: 2026-05-30
+分类: 前端工程
+难度: 中级
 ---
 
-# micromark — unified 内核的 char-by-char 状态机
+## 是什么
 
-## 一句话总结（≥ 14 行）
+micromark 是一个**专门把 markdown 文本读成结构化事件**的小工具。日常类比：像超市收银员读条形码——一个字符一个字符扫过去，每扫到一个有意义的边界就"叮"一声告诉后端发生了什么（"标题开始"、"段落结束"）。
 
-micromark 是 Titus Wormer（unified / remark / hast 全栈作者）2020 年开源的低层 CommonMark 解析器，2024 v4.x。
+你写一段 markdown：
 
-它和 remark-parse / markdown-it / marked 都不同：用 **char-by-char 状态机**（vs 大正则 / lexer-parser）扫描 markdown 文本。
+```js
+import { micromark } from 'micromark'
+const html = micromark('# Hello *world*')
+// '<h1>Hello <em>world</em></h1>'
+```
 
-设计动机：CommonMark spec 0.30+ 的 list / setext heading / link reference 等场景里，词法解析（先切 token 再 parse）会失败 —— 因为 markdown 是上下文敏感（"块级 vs inline" 取决于前后行）。
+它的特别之处：**不用大正则、不切 token，靠一个状态机一个字符一个字符地往前推**。每读一个字符，根据现在所处的"状态"（比如"刚见到 #"或"在段落里"）决定下一步走哪条路。
 
-状态机让每个字符都能根据当前 state 决定行为。
+micromark 不是给最终用户直接调的，而是 **unified / remark / MDX / Astro** 这一整条 markdown 工具链的底层引擎。
 
-工程结果：
+## 为什么重要
 
-1. **100% CommonMark 兼容**：spec test 0.30+ 全过（vs marked 95% / markdown-it 97%）
-2. **流式解析**：可消费 ReadableStream，处理任意长度 markdown（甚至 GB 级）
-3. **零分配**：每个字符走 state 不创建中间对象
-4. **可扩展 syntax**：micromark-extension-* 包加 GFM / MDX / math / footnote
+不理解 micromark，下面这些事都解释不通：
 
-性能：micromark 与 markdown-it 接近（~50 MB/s parse rate），但内存占用低 30%。bundle 大小约 30 KB（核心）+ 30 KB（GFM）。
+- 为什么 marked / markdown-it 能把 95% 的 markdown 解对，但总有一两个 case 跟 GitHub 渲染不一样——它们没做到 100% CommonMark 合规
+- 为什么 Astro / Next.js / VitePress 的 markdown 渲染都依赖一条叫 unified 的链，链的最深处就是 micromark
+- 为什么写 markdown 扩展（自定义 :::note::: 语法）很难——不是写正则，而是要写新的状态机片段
+- 为什么"流式渲染一个 GB 级 markdown 文件"成立——只要状态机不囤积上下文，输入流过去就行
+- 为什么 unified 生态的扩展（remark-gfm、remark-math）能拔插即用——它们最终都把构造塞给 micromark 的状态机，再没碰 AST 一根头发
 
-定位：**micromark 不直接给最终用户用，而是给 unified / remark 当内核**。最终用户通常 import unified + remark-parse（remark-parse 内部用 micromark）。weekly downloads ~30M（含间接依赖）。
+## 核心要点
 
-## Layer 0 — 项目档案速查（≥ 17 字段）
+micromark 的工作分 **三步**，看似简单但每步都有讲究：
 
-| 字段 | 值 |
-|---|---|
-| 包名 | `micromark`（核心）+ `micromark-util-*`（30+ 子模块）+ `micromark-extension-*`（GFM / MDX / math / footnote） |
-| 当前主版本 | v4.x（2024）|
-| 首版 | 2020-08（v0.1） |
-| License | MIT |
-| 主仓库 | micromark/micromark |
-| 维护 | Titus Wormer + 社区 |
-| TypeScript | 完整（v3+）|
-| 内部依赖 | micromark-util-character / micromark-util-symbol / 等 |
-| Bundle 核心 | ~30 KB |
-| Bundle + GFM | ~60 KB |
-| 兼容性 | CommonMark 0.30 spec 100%（742/742 tests）|
-| 扩展 | GFM / MDX / footnote / math / frontmatter / directive / strikethrough / table |
-| Streaming | ReadableStream / chunked input |
-| 性能 | ~50 MB/s（parse rate） |
-| Weekly downloads | ~30M（含间接） |
-| GitHub stars | 1.5k+ |
-| 集成 | unified / remark / mdx / Astro Markdown |
-| 文档站 | github.com/micromark/micromark README |
+1. **状态机扫字符**：维护一个 state（比如 `inParagraph`、`afterHash`），每读一个字符按 state 决定动作。类比：迷宫里的小人，根据脚下哪块地砖决定往哪走。
 
-## Layer 1 — 核心抽象（≥ 30 行）
+2. **发事件，不建树**：识别出"标题开始"就发一个 `enter('atxHeading')` 事件，识别完发 `exit('atxHeading')`。它**不直接构建 AST**，把建树的活留给上层（unified 链里的 mdast-util-from-markdown）。
 
-```ts
-import { micromark } from 'micromark';
+3. **可挂扩展**：每个状态机片段（叫 construct）能被替换或扩充。GFM、MDX、math、frontmatter 都是这样挂上去的——核心代码不动，往状态机里塞新分支。
 
-const html = micromark('# Hello *world*');
-// 输出: '<h1>Hello <em>world</em></h1>'
+最后一步的好处：核心包 30 KB，加了 GFM 也才 60 KB，不用全家桶。
 
-// 流式
-import { stream } from 'micromark/stream';
-import { createReadStream } from 'fs';
+## 实践案例
+
+### 案例 1：直接用 micromark 渲染 markdown
+
+```js
+import { micromark } from 'micromark'
+import { gfm, gfmHtml } from 'micromark-extension-gfm'
+
+const html = micromark('# 标题\n\n- [x] 任务一\n- [ ] 任务二', {
+  extensions: [gfm()],
+  htmlExtensions: [gfmHtml()],
+})
+```
+
+**逐步解释**：
+
+- `micromark(value, options)` 是一站式 API，吃 markdown 字符串吐 HTML
+- `extensions` 加进状态机的 syntax 分支（识别 GFM 语法）
+- `htmlExtensions` 加进 HTML 渲染分支（决定 `<input type="checkbox">` 怎么写）
+
+### 案例 2：从事件流自己造结构
+
+```js
+import { parse, postprocess, preprocess } from 'micromark/lib/parse'
+
+const events = postprocess(parse().document().write(preprocess()('# Hi')))
+for (const [kind, token] of events) {
+  console.log(kind, token.type) // 'enter' 'atxHeading' …
+}
+```
+
+每条事件是 `[enter|exit, token, context]` 三元组。**unified 拿到这条事件流，再翻译成 mdast 节点树**——micromark 不操心树。
+
+### 案例 3：用 stream 接 fs
+
+```js
+import { stream } from 'micromark/stream'
+import { createReadStream } from 'node:fs'
 
 createReadStream('huge.md', { encoding: 'utf8' })
   .pipe(stream())
-  .pipe(process.stdout);  // 流式 HTML
+  .pipe(process.stdout) // 输出 HTML
 ```
 
-四要素：
-
-1. **`micromark(value, options)`** —— 一站式 parse + render
-2. **`parse(options)`** —— 低层 parser，输出 events stream（[type, token, context]）
-3. **events**：每个 token 的 enter/exit 事件，type 描述类别
-4. **htmlExtensions / syntaxExtensions** —— 注入 GFM / MDX 等扩展
-
-vs unified：
-
-- unified 拿 events → mdast (Markdown AST) → mdast-util-to-* 转其他
-- micromark 是 events 层，可直接 → HTML
-- 多数用户用 unified（更高层），但 micromark 是性能最优路径
+输入 stream 流过来，状态机边读边吐 HTML。文件 1 GB 也只占常数内存。这一招让"切下来直接 pipe 到 stdout"成为常态——你不必等整篇 markdown 读完才能看到第一个 `<h1>` 出来。
 
-API 表层小但语义重：
+## 踩过的坑
 
-- 一行 `micromark(value)` 完成 parse + render
-- 想要中间表示就用 `parse()` 拿 events
-- options 控制 allowDangerousHtml / extensions / htmlExtensions
-- 扩展通过 syntaxExtensions（解析层）+ htmlExtensions（渲染层）双注入
-- 同步 / 流式两种模式可选
+1. **直接用 micromark 写法繁琐**：除非做底层基础设施，普通业务应该用 `unified().use(remarkParse).use(remarkRehype)`，让生态替你拼；直接撸 micromark 等于在汽车工厂里装螺丝，能装但不该这么干。
 
-## Layer 2 — 内部架构（≥ 30 行）
+2. **状态机 debug 难**：报错只看到 state 编号（比如 `code 35` 表示遇到 `#`），不会指 markdown 第几行第几列。要靠 token positional info 自己反查，新人通常会被劝退。
 
-micromark 分 4 层：
+3. **写 extension 门槛高**：不是写正则，是写 construct——一个 construct 含 tokenize（识别字符走法）、resolve（决定哪些事件保留）、continuation（多行块怎么续上）三段。要先读 micromark-extension-gfm-table 看人家怎么搭。
 
-1. **Tokenize**（micromark/dev/index.js）：状态机扫描字符流
-2. **Subtokenize**：嵌套 inline 内容（如 "**bold _italic_**" 的递归）
-3. **Postprocess**：解析后修正（如 link reference）
-4. **Compile**：events → HTML 字符串
+4. **stream 不处理编码**：BOM、UTF-16 都得自己 decode 成 UTF-8 字符串再喂进去，不然状态机直接乱。Node 里推荐先 `createReadStream('x.md', { encoding: 'utf8' })` 而不是 raw Buffer。
 
-状态机核心：
+5. **版本切换破坏性**：v3 → v4 把 token 类型重命名了几处（`atxHeadingText` → `atxHeadingContent`），下游 mdast-util-* 必须同步升，半路升级会炸。
 
-```
-state: function(code) {
-  if (code === markdownLineEnding(code)) {
-    return effects.exit('atxHeadingText'), atxHeadingFinish(code);
-  }
-  if (code === markdownSpace(code)) {
-    return effects.consume(code), space(code);
-  }
-  return effects.consume(code), atxHeadingText(code);
-}
-```
+## 适用 vs 不适用场景
 
-每个 state 是 function，接收 char code，返回下一个 state。effects（enter / exit / consume / attempt / check）是状态机操作。
+**适用**：
 
-工作流：
+- 写 markdown 工具链底层（unified / remark / MDX / Astro / Docusaurus 内核都用它）
+- 必须 100% CommonMark 合规（GitHub README 渲染对齐）
+- 需要流式 / 低内存解析（CMS 后台批量处理 GB 级 markdown）
+- 要做语法扩展（自定义 :::callout:::、math 公式块）
 
-```
-1. 输入: '# Hello\n'
-2. tokenize: char-by-char 走状态机
-3. emit events: [enter atxHeading, consume '#', enter atxHeadingText, ...]
-4. 嵌套 inline: '_italic_' 触发 emphasis state
-5. compile: events → HTML
-```
+**不适用**：
 
-vs marked / markdown-it：
+- 业务代码直接渲染一篇 markdown → 用 marked 或 markdown-it 更省事
+- 只需要把 markdown 转 HTML 一次 → 用 unified + remark-html，不要直接调 micromark
+- 不在意 100% 合规、追求极致小体积 → marked 更小（~10 KB）
 
-- marked 用大正则一次匹配整行
-- markdown-it 用 ruler + 正则
-- micromark 用 char-by-char + state，最精细
+这一招让"切下来直接 pipe 到 stdout"成为常态——你不必等整篇 markdown 读完才能看到第一个 `<h1>` 出来。
 
-模块拆分：
+## 历史小故事（可跳过）
 
-- micromark-core-commonmark：CommonMark 全部 construct
-- micromark-util-*：30+ 工具子包（character / chunked / classify-character / combine-extensions / decode-numeric-character-reference / ...）
-- micromark-factory-*：构造 helper（destination / label / title / whitespace）
+- **2014 年**：Titus Wormer 开始做 unified / remark 生态——"把 markdown 处理拆成可组合的小块"。
+- **2018 年前后**：他发现 remark-parse 在 CommonMark spec 0.28+ 上挂掉好几处（list 嵌套、setext heading 在 block quote 里），原因是底层基于 token-stream 的解析模型遇到上下文敏感语法吃不消。
+- **2020 年 8 月**：发布 micromark v0.1，**完全重写底层**，改成 char-by-char 状态机。同年 remark 12 切到 micromark 内核。
+- **2024 年**：v4.x 稳定，CommonMark 0.30 spec 742/742 全过，下游链路（unified / MDX / Astro）一起升级。
 
-每个 construct 一个文件，单测 + spec test 双保险。
+之后整条 JS markdown 处理链——只要走 unified 的——背后跑的都是这台状态机。
 
-## Layer 3 — 精读 3 段（每段 ≥ 5 旁注 + ≥ 1 怀疑）
+## 学到什么
 
-### 段 a — 状态机设计（≥ 30 行）
+1. **上下文敏感语法用状态机比 lexer 更稳**：markdown / Python 缩进这种"一行的意义取决于前后行"的格式，正则切 token 必然出 bug；状态机让"现在在什么位置"变成显式变量。
+2. **解析和建树拆开**：micromark 只发事件，建 AST 让上层做。这一拆使核心稳定不动，扩展成本极低——MDX、math、frontmatter 都没改一行核心代码。
+3. **库的最佳形态可能是底层**：micromark 自己只有 ~1.5k stars，但每周下载 ~30M，因为它跑在你装的每个用 markdown 的工具里。"用户感知不到"反而是好基础设施的标志。
+4. **重写一次比修补五年快**：Wormer 没去补 remark-parse 的旧引擎，直接重写 micromark，三年内整条生态切完——这种"敢推倒重来"在开源里很少见，因为下游迁移成本通常吓退作者。
 
-micromark 没有"lexer + parser"两阶段，而是 **直接状态机** 扫描：
+## 延伸阅读
 
-旁注：
-
-1. 每个 syntax constructor 是一个 .js 文件（如 atx-heading.js / emphasis.js / list.js）
-2. 文件内部定义 state functions：tokenize / continuation / exit
-3. effects.consume(code) 把当前 char 加入当前 token
-4. effects.attempt(construct, ok, nok) 试探性匹配（失败回退）
-5. effects.check(construct, ok, nok) 试探不消费 char
-6. 状态机比 lexer + parser 慢 1.5x 但正确性 100%
-7. attempt + check 是回溯机制，让状态机可处理 "看几个字符决定 construct" 的情况
-8. 每个 state function 平均 5-15 行，可读性比正则强
-
-代码片段示例（atx-heading 简化）：
+- 仓库 README：[micromark/micromark](https://github.com/micromark/micromark)（含架构图，先看 architecture 章节）
+- CommonMark spec：[spec.commonmark.org](https://spec.commonmark.org/0.30/)（吃透这份文档才敢 debug 边界 case）
+- 写扩展的范例：micromark-extension-gfm-table 源码（约 300 行，是入门写 construct 的最短路径）
+- [[unified]] —— micromark 的上层调度框架
+- [[markdown-it]] —— 同领域对手，正则 + token-stream 老派做法
 
-```ts
-function tokenize(effects, ok, nok) {
-  return start;
-  function start(code) {
-    if (code !== 35 /* '#' */) return nok(code);
-    effects.enter('atxHeading');
-    effects.enter('atxHeadingSequence');
-    return sequenceOpen(code);
-  }
-  function sequenceOpen(code) {
-    if (code === 35) {
-      effects.consume(code);
-      return sequenceOpen;
-    }
-    return atxHeadingFinish(code);
-  }
-}
-```
-
-> 怀疑：char-by-char 状态机虽然正确性高，但每个 char 一个 function call 的开销不容小觑。V8 inline cache 帮一部分，但极致性能场景（如 SSR 文档站）仍输给 marked。是不是只有 spec 严格场景才该用 micromark？
-
-### 段 b — Subtokenize（≥ 25 行）
+## 关联
 
-micromark 的 inline 内容是**事后解析**：
-
-1. 第一遍 tokenize 只标记 inline span 边界（如 paragraph 内容）
-2. 第二遍 subtokenize 进入 span，再用 inline tokenizer
-
-旁注：
-
-1. paragraph / heading 内文本是 "text" token，未解析
-2. subtokenize 触发 inline tokenizer，识别 emphasis / link / code
-3. text 内还可能有 reference link，需 postprocess 阶段解析
-4. 这种 "lazy parse" 让数据流式输出（块级先出，inline 滞后）
-5. CommonMark spec 要求的"link reference 跨段"语义靠这个实现
-6. subtokenize 在 events 流上"原地展开"嵌套 events
-7. postprocess 主要做 link reference resolution（跨块级跳引用）
-
-对照 markdown-it：markdown-it 是 block tokenizer + inline tokenizer 两阶段调用，但同步执行；micromark 用 events 流让阶段间可异步切换。
-
-> 怀疑：subtokenize + postprocess 让流式语义部分失效（postprocess 必须等所有 reference 收完）。GitHub 上某些大文件 markdown render 慢就是这原因。
-
-### 段 c — Extension 系统（≥ 25 行）
-
-```ts
-import { micromark } from 'micromark';
-import { gfm, gfmHtml } from 'micromark-extension-gfm';
-
-const html = micromark(input, {
-  extensions: [gfm()],
-  htmlExtensions: [gfmHtml()]
-});
-```
-
-旁注：
-
-1. `extensions` 加 syntax 规则（如 GFM 表格 / 删除线 / 任务列表）
-2. `htmlExtensions` 加 HTML 渲染规则
-3. extension 是函数返回 { tokenize: { ... } }，注入 state machine
-4. 多 extension 可叠加（GFM + footnote + math 共存）
-5. 自写 extension 难度中等（懂 state machine 即可）
-6. extension 注入点是 char code 触发表（如 `[codes.equalsTo]: { ... }`）
-7. construct 数组允许多 construct 在同 char 上竞争（attempt 顺序）
-
-extension 生态：
-
-- micromark-extension-gfm（表格 / 删除线 / 任务列表 / autolink / footnote）
-- micromark-extension-mdxjs（MDX 支持）
-- micromark-extension-math（KaTeX 数学公式）
-- micromark-extension-frontmatter（YAML / TOML frontmatter）
-- micromark-extension-directive（`:::` 指令块）
-
-> 怀疑：extension 系统强大但学习曲线陡。比 marked 的 hooks / markdown-it 的 ruler 都难。这是不是把 "复杂度" 推给 extension 作者？
-
-![micromark 状态机流程](/study/projects/micromark/01-streaming-state-machine.webp)
-
-## Layer 4 — 与 remark-parse / markdown-it / marked 对比（≥ 30 行）
-
-| 维度 | micromark | remark-parse | markdown-it | marked |
-|---|---|---|---|---|
-| 解析模型 | char-by-char 状态机 | 调用 micromark | regex + ruler | 大正则 |
-| CommonMark | 100% | 100%（依赖 micromark） | 97% | 95% |
-| 流式 | ✓ | ✗（依赖完整输入） | ✗ | ✗ |
-| Bundle | ~30 KB | ~50 KB（含 mdast） | ~50 KB | ~30 KB |
-| 性能 | 中（~50 MB/s） | 低（多一层 mdast） | 中 | 高（regex JIT） |
-| 扩展性 | 极强（state machine） | 通过 micromark | ruler | hooks |
-| 上手难度 | 难（需懂 state machine） | 平 | 平 | 平 |
-| 主要使用方 | unified 内核 | unified 用户 | 大型文档站 | 简单博客 |
-| AST 输出 | events（low-level） | mdast（high-level） | tokens 数组 | tokens 数组 |
-| 边缘 case | 100% spec 覆盖 | 100%（继承） | 97% | 95% |
-
-横向对比观察：
-
-- marked 走极致性能（regex JIT），但牺牲 5% 边缘 case
-- markdown-it 平衡选项，ruler 系统易扩展，但流式不支持
-- remark-parse 是 micromark 的 high-level wrapper，加 mdast 一层
-- micromark 是 unified 全栈最底层，正确性 + 流式 + 扩展性最强
-
-选型矩阵：
-
-- 简单博客：marked（性能 + 体积）
-- 大型文档站（VuePress / VitePress）：markdown-it（生态 + ruler）
-- AST 操作场景（lint / transform）：unified + remark-parse（mdast 友好）
-- 自定义 syntax / 流式 / spec 严格：micromark 直接用
-
-## Layer 5 — 6 维评分（≥ 6 维）
-
-| 维度 | micromark | remark | markdown-it | marked |
-|---|---|---|---|---|
-| 正确性 | 10 | 10 | 8 | 7 |
-| 流式 | 10 | 3 | 3 | 3 |
-| 扩展性 | 10 | 8 | 7 | 6 |
-| 性能 | 7 | 5 | 8 | 9 |
-| 学习曲线（易） | 4 | 7 | 9 | 9 |
-| 生态 | 8（间接） | 10 | 8 | 7 |
-| 总分 | 49 | 43 | 43 | 41 |
-
-micromark 在正确性 + 流式 + 扩展性极致，学习曲线最陡。
-
-总分领先但要看场景：90% 用户应该选 unified + remark（含 mdast 操作能力），仅 10% 极致场景（流式 / 自定义 syntax）才下沉到 micromark 直接用。
-
-## Layer 6 — 限制（≥ 4 条）
-
-1. **学习曲线陡**：state machine 心智模型与传统 lexer-parser 不同
-2. **性能不是最优**：char-by-char 比 regex JIT 慢 1.5x（在小文档场景感知不大）
-3. **直接使用案例少**：多数用户通过 unified / remark-parse 间接用
-4. **debug 困难**：state 切换难追踪，错误定位需懂状态机
-5. **扩展接口频繁演进**：v0 → v1 → v2 → v3 都有 API 变更
-6. **文档不友好**：github README 信息密集，新人难入门
-7. **events 层 API 偏底层**：直接消费需要写 events 处理器，比直接拿 AST 麻烦
-
-## 怀疑总集（前面散落 3 段，再补 2 段）
-
-> 怀疑：micromark 是 Titus Wormer 一人主导的项目（commit graph 90%+ 来自他）。bus factor 高。社区代码贡献集中在 extension，核心改动几乎只有 Wormer 推。
-
-> 怀疑：CommonMark spec 已稳定多年，micromark 投入 4 年才到 100% 兼容。"100% spec" 是营销话语还是真有实战价值？多数用户根本不关心边缘 case（spec 0.30 中 5% 边缘语义）。
-
-## GitHub Permalinks（≥ 3 处带 40-char hex SHA）
-
-源码精读入口（链接示意，未实际验证 SHA）：
-
-- micromark 主入口：`https://github.com/micromark/micromark/blob/3a4f9b8e2d1c5a7e6b8d2f4a9c3e7d1b5f8a4c2e/packages/micromark/dev/index.js`
-- atx-heading construct：`https://github.com/micromark/micromark/blob/8b2c4d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/packages/micromark-core-commonmark/dev/lib/heading-atx.js`
-- gfm extension：`https://github.com/micromark/micromark-extension-gfm/blob/2a4f6e8b1d3c5e7f9a1b3d5c7e9f1a3b5d7e9c1f/dev/index.js`
-- unified 集成：`https://github.com/unifiedjs/unified/blob/9c1b3d5f7a9c1e3b5d7f9a1c3e5d7f9b1c3e5d7f/lib/index.js`
-
-## Layer 7 — 实战（≥ 25 行）
-
-完整 micromark 自写 extension 例子（高亮 `==text==` 为 mark）：
-
-```ts
-import { micromark } from 'micromark';
-import { codes } from 'micromark-util-symbol/codes';
-
-const markExtension = {
-  text: {
-    [codes.equalsTo]: {
-      name: 'mark',
-      tokenize(effects, ok, nok) {
-        return start;
-
-        function start(code) {
-          if (code !== codes.equalsTo) return nok(code);
-          effects.enter('mark');
-          effects.consume(code);
-          return inside;
-        }
-
-        function inside(code) {
-          if (code === codes.equalsTo) {
-            effects.consume(code);
-            effects.exit('mark');
-            return ok;
-          }
-          if (code === codes.eof) return nok(code);
-          effects.consume(code);
-          return inside;
-        }
-      }
-    }
-  }
-};
-
-const markHtml = {
-  enter: { mark() { this.tag('<mark>'); } },
-  exit: { mark() { this.tag('</mark>'); } }
-};
-
-const html = micromark('Hello ==world==', {
-  extensions: [markExtension],
-  htmlExtensions: [markHtml]
-});
-// 输出: 'Hello <mark>world</mark>'
-```
-
-要点：
-
-1. tokenize 函数定义 state 转移
-2. ok / nok 是 success / failure 回调
-3. effects 操作 state machine（enter / consume / exit）
-4. htmlExtension 提供 enter/exit 钩子渲染 HTML
-5. 多 extension 可同时注入
-6. text 钩子表示 inline 内容，block 钩子表示块级
-7. codes 模块提供常用 char code 常量（避免 magic number）
-
-整合到 unified：
-
-```ts
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import rehypeStringify from 'rehype-stringify';
-
-const file = await unified()
-  .use(remarkParse, { extensions: [markExtension] })
-  .use(remarkRehype)
-  .use(rehypeStringify)
-  .process('Hello ==world==');
-```
-
-remark-parse 接受 extensions 直接传给底层 micromark。
-
-## 学到什么 + 关联（≥ 15 行）
-
-学到 ≥ 5 条：
-
-1. char-by-char 状态机是上下文敏感语法的最优表达
-2. unified / remark / micromark 是分层设计的范例（用户层 / AST 层 / 字符层）
-3. 100% spec 兼容是工程纪律，不是营销话术
-4. 流式解析需要算法本身支持，不能后补
-5. Titus Wormer 一人维护 unified 全栈是开源界传奇（也是 bus factor 风险）
-6. attempt / check 回溯机制让状态机可处理"先看后定"的语法
-7. subtokenize 让块级和 inline 分离，简化模块边界
-
-关联：
-
-- [[unified]] [[markdown-it]] [[marked]] [[shiki]] —— 同 Markdown 解析
-- [[mdx]] [[astro]] [[next.js]] —— 间接用户（通过 unified）
-- [[remark-parse]] [[mdast-util-to-hast]] —— unified 链路上下游
-
-## Season 28-5 收官小结
-
-S28 工具库板块至此完结：
-
-- S28-1 prettier：AST + IR + 选择性 break
-- S28-2 esbuild：Go 重写 + 并行 lex/parse
-- S28-3 vite：dev server + esbuild prebundle
-- S28-4 turbopack：Rust + Bazel-style 增量
-- S28-5 micromark：char-by-char 状态机（本篇）
-
-5 篇横跨格式化 / 打包 / 解析三大领域，统一观察：
-
-- 工具库胜在 "正确性 + 性能 + 扩展性" 三角，不同项目不同侧重
-- 大正则 / regex JIT（marked）极致性能，state machine（micromark）极致正确性
-- Rust / Go 重写（esbuild / turbopack）换性能，纯 JS（prettier / micromark）换可移植
-
-下一 season 将转向运行时（Deno / Bun / Node）。
+- [[unified]] —— remark / rehype / retext 生态总入口；它把 micromark 的事件翻译成 mdast
+- [[markdown-it]] —— 速度接近、合规率 97%、API 更直接，适合直接调
+- [[marked]] —— bundle 最小（~10 KB），合规率 95%，适合体积敏感场景
+- [[astro]] —— 内置 markdown 渲染走 unified → micromark 链路
