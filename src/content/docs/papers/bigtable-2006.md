@@ -155,5 +155,7 @@ column families:
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 

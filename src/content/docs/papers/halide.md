@@ -151,5 +151,12 @@ bx.compute_at(by,x); // 在 by 的某层循环内现算现用——内存小，b
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
+- [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
+- [[ssa]] —— SSA — 静态单赋值形式
+- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

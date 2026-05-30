@@ -155,6 +155,7 @@ def test_sum_multiple(): assert sum_list([5, 3]) == 8   # 被迫写循环
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
+- [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码

@@ -151,3 +151,10 @@ def reduce(user_id, latencies):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[gfs]] —— GFS — 编译器决定不做哪些事
+

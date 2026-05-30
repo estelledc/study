@@ -156,7 +156,8 @@ def upload(key, data):
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
-- [[mapreduce]] —— MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库

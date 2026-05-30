@@ -160,3 +160,6 @@ POST 不 idempotent——重复发 5 次会创建 5 个订单。所以 Stripe / 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
+

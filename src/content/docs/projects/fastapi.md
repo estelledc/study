@@ -189,6 +189,7 @@ def me(user: dict = Depends(current_user)):
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[redis]] —— Redis — 内存键值数据库
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架

@@ -186,10 +186,12 @@ let app = Router::new()
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
