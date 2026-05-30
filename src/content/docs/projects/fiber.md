@@ -178,4 +178,5 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 

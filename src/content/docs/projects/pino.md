@@ -149,5 +149,8 @@ const log = pino(pino.transport({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[fastify]] —— Fastify schema-first Node 高性能 web 框架
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[nginx]] —— nginx — 高性能 Web 服务器
 

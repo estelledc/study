@@ -149,6 +149,7 @@ brew install --cask activitywatch
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用

@@ -187,6 +187,7 @@ Bun.serve({
 - [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

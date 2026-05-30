@@ -150,12 +150,11 @@ jstat -gcutil <pid> 1000
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收
+- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[smalltalk-80]] —— Smalltalk-80
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
 

@@ -150,3 +150,6 @@ await sql.notify('order_created', JSON.stringify({ id: 42 }))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[supabase]] —— Supabase — Firebase 的开源替代
+
