@@ -164,14 +164,11 @@ def residual_block(x):
 
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
 - [[dit]] —— DiT — Diffusion Transformer
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[mae]] —— MAE — Masked Autoencoders
-- [[mamba]] —— Mamba — 选择性状态空间模型
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[vit]] —— ViT — Vision Transformer
 

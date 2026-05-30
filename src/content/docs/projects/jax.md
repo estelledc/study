@@ -161,6 +161,7 @@ def step(params, x, y):
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[optax]] —— Optax — JAX 优化器组合库
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[ssa]] —— SSA — 静态单赋值形式
 
