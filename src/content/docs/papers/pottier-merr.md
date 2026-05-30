@@ -168,5 +168,12 @@ expr: i = INT { i } | LPAREN e = expr RPAREN { e } | a = expr PLUS b = expr { a 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 

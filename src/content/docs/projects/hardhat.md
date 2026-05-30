@@ -174,6 +174,7 @@ networks: {
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
+- [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约

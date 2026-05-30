@@ -200,6 +200,7 @@ management:
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来

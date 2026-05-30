@@ -172,6 +172,7 @@ console.log(ethers.formatUnits(raw, decimals), "USDC");
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

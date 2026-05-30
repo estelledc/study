@@ -173,7 +173,9 @@ app.Run();
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
+- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
