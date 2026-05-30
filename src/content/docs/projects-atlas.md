@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 418 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 421 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：418 个
+- **总数**：421 个
 - **已分类**：206
-- **未分类**：212（落入"其他 / 待分类"段）
+- **未分类**：215（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 212 |
+| [其他 / 待分类](#其他--待分类) | 215 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 212 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 215 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -517,6 +517,7 @@ sidebar:
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
+| `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) |
@@ -642,6 +643,7 @@ sidebar:
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
+| `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
@@ -692,6 +694,7 @@ sidebar:
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
+| `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) |
 | `trl` | [TRL — RLHF / DPO / GRPO 训练库](/study/projects/trl/) |
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) |
@@ -714,7 +717,7 @@ sidebar:
 
 ---
 
-## 全部 418 个（字母序）
+## 全部 421 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -744,6 +747,7 @@ sidebar:
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) | 其他 |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) | 其他 |
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
+| `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) | 其他 |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 其他 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) | 其他 |
@@ -987,6 +991,7 @@ sidebar:
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) | 其他 |
 | `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) | 其他 |
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) | 其他 |
+| `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) | 其他 |
 | `postgres-js` | [postgres.js — 写 SQL 但语法层就防注入的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
@@ -1085,6 +1090,7 @@ sidebar:
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | 其他 |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
+| `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) | 其他 |
 | `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | DevOps / 容器 / 运维 |

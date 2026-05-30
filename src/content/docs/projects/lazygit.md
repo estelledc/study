@@ -158,5 +158,6 @@ customCommands:
 - [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
+- [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

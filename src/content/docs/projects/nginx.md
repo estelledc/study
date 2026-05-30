@@ -182,6 +182,7 @@ location /static/ {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
 - [[pino]] —— pino — 日志不该阻塞热路径
+- [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[redis]] —— Redis — 内存键值数据库

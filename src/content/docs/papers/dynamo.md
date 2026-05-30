@@ -160,6 +160,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
+- [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个

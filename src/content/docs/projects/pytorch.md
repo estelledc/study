@@ -154,6 +154,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[fastai]] —— fastai — 三行代码做迁移学习

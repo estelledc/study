@@ -168,6 +168,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 
