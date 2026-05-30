@@ -164,5 +164,6 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
+- [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

@@ -161,6 +161,7 @@ print(a)              # a 不变
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
+- [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

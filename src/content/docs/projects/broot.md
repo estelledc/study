@@ -149,6 +149,7 @@ br -g
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bat]] —— bat — 现代 cat 替代
+- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fzf]] —— fzf — 命令行模糊查找
