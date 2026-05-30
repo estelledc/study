@@ -147,3 +147,6 @@ expect(screen.getByRole('button', { name: '(hover) Submit' })).toBeInTheDocument
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
+

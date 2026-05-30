@@ -166,5 +166,6 @@ test('renders error state', async () => {
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
+- [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

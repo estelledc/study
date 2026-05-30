@@ -147,6 +147,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aes]] —— AES Rijndael 对称分组密码
+- [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
@@ -218,6 +219,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩
+- [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"

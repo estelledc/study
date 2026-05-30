@@ -152,6 +152,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"

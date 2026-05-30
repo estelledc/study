@@ -189,6 +189,7 @@ export default defineConfig({
 - [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
+- [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[webpack]] —— webpack 模块打包

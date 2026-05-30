@@ -164,8 +164,8 @@ Plot.plot({
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[gsap]] —— GSAP — GreenSock 高性能动画
-- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
+- [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
 - [[valibot]] —— valibot 模块化模式校验
 - [[visx]] —— visx Airbnb React 可视化原语
 

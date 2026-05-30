@@ -149,6 +149,7 @@ theorem easy (n : Nat) : n + 0 = n := by
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"

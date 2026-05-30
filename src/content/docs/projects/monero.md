@@ -147,5 +147,9 @@ Monero 的隐私机制可以拆成 **三块**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[zcash]] —— Zcash — 让转账在链上"既能被验证，又看不见内容"
 

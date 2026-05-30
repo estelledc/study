@@ -200,6 +200,7 @@ function Greeting({ name }) {
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
+- [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 - [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
 - [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

@@ -81,6 +81,7 @@ erlang-otp
 eswaran-1976
 f1-2013
 faiss-2017
+fast-paxos-2006
 feautrier-polyhedral
 flash-attention
 flink-2015
@@ -144,6 +145,7 @@ lsm-tree-1996
 mae
 mamba
 mapreduce
+martin-lof-itt
 mccarthy-lisp
 megatron-lm
 metagpt
@@ -273,6 +275,7 @@ ansible
 anthropic-cookbook
 ape-framework
 apollo-server
+appwrite
 aptos-core
 aragon
 arbitrum
@@ -435,6 +438,7 @@ minio
 minisearch
 mobx
 monaco-editor
+monero
 mongodb
 motion-one
 move-language

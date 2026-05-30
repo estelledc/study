@@ -147,3 +147,9 @@ const next = Temporal.PlainDate
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
+- [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
+- [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+
