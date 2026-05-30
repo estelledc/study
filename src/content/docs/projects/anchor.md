@@ -170,6 +170,7 @@ await program.methods
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[cosmwasm]] —— CosmWasm — Cosmos 上的 wasm 智能合约
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[move-language]] —— Move — 资源型智能合约语言
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链

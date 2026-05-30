@@ -156,6 +156,7 @@ app.addHook('preHandler', async (req) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
 - [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架
@@ -164,11 +165,11 @@ app.addHook('preHandler', async (req) => {
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hono]] —— Hono — 多运行时 Web 框架
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
+- [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
 - [[pino]] —— pino — 日志不该阻塞热路径
@@ -178,9 +179,7 @@ app.addHook('preHandler', async (req) => {
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-- [[zod]] —— Zod — TypeScript-first schema 验证
 

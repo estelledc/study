@@ -156,6 +156,7 @@ proposal -> staking voting -> threshold reached
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[move-language]] —— Move — 资源型智能合约语言
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1

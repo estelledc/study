@@ -158,6 +158,7 @@ const { data, isLoading } = api.user.byId.useQuery(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
@@ -166,6 +167,7 @@ const { data, isLoading } = api.user.byId.useQuery(
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架

@@ -159,6 +159,7 @@ const back = applyPatches(next, inverse)  // back deepEquals base
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[jotai]] —— Jotai — 原子化 React 状态管理
+- [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[react]] —— React UI 组件库
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分

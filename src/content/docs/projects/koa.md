@@ -148,6 +148,7 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[bun]] —— Bun — JS 全能运行时
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
@@ -164,5 +165,4 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
-- [[zod]] —— Zod — TypeScript-first schema 验证
 

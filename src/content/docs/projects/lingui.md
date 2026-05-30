@@ -147,5 +147,9 @@ msgstr "你好 {name}"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
+- [[react]] —— React UI 组件库
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 
