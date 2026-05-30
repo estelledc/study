@@ -155,5 +155,6 @@ await new Listr(
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
+- [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
 - [[webpack]] —— webpack 模块打包
 

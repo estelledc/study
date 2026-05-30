@@ -153,6 +153,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
+- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统

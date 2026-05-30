@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 323 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 325 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：323 个
+- **总数**：325 个
 - **已分类**：206
-- **未分类**：117（落入"其他 / 待分类"段）
+- **未分类**：119（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 117 |
+| [其他 / 待分类](#其他--待分类) | 119 |
 
 ---
 
@@ -102,7 +102,7 @@ sidebar:
 | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) |  |
 | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) |  |
 | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) |  |
-| [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) |  |
+| [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) |  |
 | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) |  |
 
 ## 日期时间
@@ -458,7 +458,7 @@ sidebar:
 | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) |  |
 | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) |  |
 | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) |  |
-| [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) |  |
+| [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) |  |
 | [yargs](/study/projects/yargs/) |  |
 
 ## Terminal / 终端
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 117 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 119 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -518,6 +518,7 @@ sidebar:
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
+| `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
@@ -537,6 +538,7 @@ sidebar:
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
+| `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
@@ -619,7 +621,7 @@ sidebar:
 
 ---
 
-## 全部 323 个（字母序）
+## 全部 325 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -658,6 +660,7 @@ sidebar:
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
+| `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | 其他 |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) | 其他 |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
 | `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
@@ -712,6 +715,7 @@ sidebar:
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | Web 框架 |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | 其他 |
+| `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | 其他 |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
@@ -805,8 +809,8 @@ sidebar:
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
 | `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |
-| `oclif` | [oclif —— Open CLI Framework 状元篇](/study/projects/oclif/) | CLI / 命令行工具 |
-| `ofetch` | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
+| `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | CLI / 命令行工具 |
+| `ofetch` | [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |

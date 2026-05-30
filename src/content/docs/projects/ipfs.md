@@ -149,5 +149,11 @@ $ ipfs cat <CID> > big-dataset.tar    # B 从 A 拉，C 又从 A+B 拉
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[anchor]] —— Anchor — Solana 合约开发框架
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
+- [[web3-js]] —— web3.js — 老牌 EVM JavaScript 客户端库
 

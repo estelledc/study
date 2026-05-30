@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 249 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 251 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：249 篇
+- **总数**：251 篇
 - **已分类**：143
-- **未分类**：106（落入"其他 / 待分类"段）
+- **未分类**：108（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 106 |
+| [其他 / 待分类](#其他--待分类) | 108 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 106 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 108 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -321,6 +321,7 @@ sidebar:
 | `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
+| `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
@@ -404,6 +405,7 @@ sidebar:
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) |
+| `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) |
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) |
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) |
 | `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) |
@@ -417,7 +419,7 @@ sidebar:
 
 ---
 
-## 全部 249 篇（字母序）
+## 全部 251 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -454,6 +456,7 @@ sidebar:
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
+| `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | 其他 |
 | `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | GC / 内存管理 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
@@ -648,6 +651,7 @@ sidebar:
 | `tigerbeetle` | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) | 数据库 |
 | `tls-1.3` | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) | 网络协议 |
 | `tofte-talpin-regions` | [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |
+| `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) | 其他 |
 | `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 智能体与 LLM 系统 |
 | `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) | 其他 |
