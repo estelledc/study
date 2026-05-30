@@ -154,6 +154,7 @@ column families:
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
+- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug

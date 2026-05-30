@@ -167,4 +167,5 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
+- [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
 

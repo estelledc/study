@@ -199,6 +199,7 @@ function LoginForm() {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库

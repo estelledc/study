@@ -149,5 +149,12 @@ await oapp.send{value: fee.nativeFee}(sendParam, fee, refundAddr);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
+- [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
+- [[rollup]] —— Rollup — ESM 优先的打包器
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
 

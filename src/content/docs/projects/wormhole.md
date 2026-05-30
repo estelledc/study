@@ -1,0 +1,164 @@
+---
+title: Wormhole — 多链之间替你跑腿的"邮政系统"
+来源: 'https://github.com/wormhole-foundation/wormhole'
+日期: 2026-05-30
+分类: blockchain
+难度: 中级
+---
+
+## 是什么
+
+Wormhole 是一套**跨链通用消息协议**——让一条区块链上的合约能"喊话"另一条链上的合约，让它做事（转代币、调方法、记账）。日常类比：像**多国邮政联盟**，A 国的信件经过 19 个邮局共同盖章，B 国邮局看到 13 枚以上有效印章就承认这封信，照单办事。
+
+每条链各自封闭，互相不知道对方发生过什么。Wormhole 用 19 个独立运行的 **Guardian 节点**当外部观察者：它们盯着源链发生的事件，达成 finality（最终确认）后各自签名，把"已发生"的事实凝固成一份带签名的小数据包——VAA（Verifiable Action Approval）。任何人都能把这份 VAA 提交到目标链，目标链合约验证至少 13/19 签名后就执行预定动作。
+
+```
+源链合约 emit("转 100 USDC 到 Bob 在以太坊的地址")
+   ↓ Guardian 19 个节点观察 + 各自签名
+   ↓ off-chain gossip 聚合成 VAA
+任何人 → 把 VAA 提交到以太坊 Wormhole 合约
+   ↓ 验证 13/19 签名
+目标合约 → mint 100 包装 USDC 给 Bob
+```
+
+## 为什么重要
+
+不理解跨链消息层，下面这些事都没法解释：
+
+- 为什么 Solana 链上的 USDC 能在以太坊也是 USDC——它不是"传送"过去的，是 Wormhole 发的"凭证"让以太坊合约 mint 一份
+- 为什么 2022 年一次跨链桥事故能丢 3.25 亿美元——签名验证一行代码漏掉就开门
+- 为什么"通用消息"比"代币桥"更重要——代币桥只是 message passing 的一种特例，通用层能跑借贷、清算、治理投票
+- 为什么跨链总要等几分钟到几十分钟——不是网络慢，是源链 finality 决定的（以太坊 ~13min）
+
+## 核心要点
+
+整个 Wormhole 协议拆开就是 **三件东西**：
+
+1. **Guardian 网络**：19 个独立运行的节点，每个有自己的私钥。类比"19 国海关共同盖章"——任意 13 国（2/3+）盖了章，世界其他海关就承认。私钥不放任何一个公司，也不放链上。
+
+2. **VAA（Verifiable Action Approval）**：跨链版的"已签名报关单"。结构 = 头（版本 + Guardian set 编号 + 签名列表）+ 身（哪条链 / 哪个合约发的 / sequence 编号 / payload 数据）。VAA 一旦签好就是不可变的事实证据。
+
+3. **Core 合约**：每条支持的链上都部署一份小合约，只做两件事——**emit message**（往外发）和 **verify VAA**（验签 + 调回应用合约）。应用合约（桥、NFT、DeFi）建在它之上。
+
+三者合起来叫 **xDapp 框架**（cross-chain dApp）。
+
+## 实践案例
+
+### 案例 1：跨链转 USDC（Portal Bridge）
+
+用户把 100 USDC 从 Solana 转到以太坊：
+
+```solidity
+// Solana 端：用户调 portal 合约
+portal.transferTokens(
+    USDC_mint,           // 哪种代币
+    100_000000,          // 数量（USDC 6 位精度）
+    ETH_chain_id,        // 目标链 = 2（以太坊）
+    bob_eth_address,     // 收款地址
+    fee
+);
+// → portal 把 USDC 锁进金库 + 调 wormhole.publishMessage(payload)
+```
+
+Guardian 看到这个 emit、等 Solana 确认、各自签名、聚合成 VAA。Bob（或任意 relayer）把 VAA 提交到以太坊：
+
+```solidity
+// 以太坊端：completeTransfer 验签后 mint 包装 USDC
+portal.completeTransfer(vaaBytes);
+// → wormhole.parseAndVerifyVM 验 13/19 签名
+// → mint 100 wUSDC 给 bob_eth_address
+```
+
+整个过程 Guardian 只签一份 VAA，但 Bob 可以无限次尝试 relay（链上 sequence 防重放）。
+
+### 案例 2：NTT（原生代币转账，不再包装）
+
+包装代币的痛点：以太坊 USDC 经 Wormhole 到 Polygon 变成 wUSDC，看起来像 USDC 但合约地址不同，DEX 流动性分裂。**NTT** 让发行方自己控制：源链 burn + 目标链 mint 原生代币：
+
+```solidity
+// 源链 burn
+ntt.transfer(amount, recipient, destChain);
+// → token.burn(amount) + wormhole.publishMessage("mint amount to recipient")
+
+// 目标链收到 VAA → token.mint(recipient, amount)
+```
+
+效果：所有链上看到的都是"同一个 USDC 合约"，跨链总供应量恒定。
+
+### 案例 3：通用合约调用（不只是转钱）
+
+借贷协议想做"以太坊抵押 ETH，在 Arbitrum 借 USDC"：
+
+```solidity
+// 以太坊端：lock 抵押 + emit 跨链消息
+collateral.lock(msg.sender, amount);
+wormhole.publishMessage(abi.encode("BORROW", msg.sender, USDC, borrowAmt));
+
+// Arbitrum 端：收到 VAA → 校验抵押率 → 放款
+function onMessage(bytes vaa) external {
+    (action, user, token, amt) = decode(verify(vaa));
+    require(action == "BORROW");
+    USDC.transfer(user, amt);
+}
+```
+
+VAA 的 `payload` 是任意 bytes，可以编码任何动作——这就是"通用消息层"的含义。
+
+## 踩过的坑
+
+1. **Guardian 多签 ≠ 去信任**：13/19 串谋或私钥泄漏即全网失守，本质是个有外部信任假设的 multi-sig。设计上比 zk-proof / 光明正大的 light client 要简单，但安全模型完全不同。
+2. **VAA 重放攻击**：协议层 sequence 单调递增，但 **应用合约自己**要把 `(emitter_chain, emitter_address, sequence)` 三元组存进 mapping，下次见到就拒——不少集成方漏掉这一步被偷过。
+3. **Finality 等待差异极大**：以太坊确认要 ~13min（2 个 epoch），Solana 秒级，BSC 1 分钟。同一笔跨链 UX 会因方向不同而差几十倍——产品设计要提前告诉用户"等多久"。
+4. **2022 hack 根因**：Solana 合约 `verify_signatures` 没校验 `guardian_set_index` 是否当前，攻击者用旧 set 的伪造签名通过，mint 12 万 wETH（约 3.25 亿美元）。教训：每个 verify 路径都必须查 set 是否当前 + 签名数 ≥ quorum。
+
+## 适用 vs 不适用场景
+
+**适用**：
+- 多链 dApp 需要跨链消息（DeFi 跨链清算、跨链治理投票、跨链 NFT 元数据同步）
+- 代币桥（包装代币 / NTT 原生代币）
+- 链覆盖广 + 集成成熟度高的需求（30+ 链中很多没别家方案）
+
+**不适用**：
+- 完全 trustless 要求（要 zk-bridge / 光明正大的 light client，不是 Guardian 多签）→ 看 zk-bridge 类方案
+- 高频低值小额（VAA 上链 gas 不便宜，单笔几美元起跳）
+- 仅以太坊 L2 之间互通（用 [[arbitrum]] / [[optimism]] 原生 L1↔L2 消息更便宜）
+- 链下应用调用（Wormhole 是链到链，不是链到 web2 后端）
+
+## 历史小故事（可跳过）
+
+- **2020 年**：Solana 生态启动 Wormhole v1，最初只接 Solana ↔ Ethereum 一条线，目的是把 Solana 上的资产桥到以太坊享受 DeFi 流动性。
+- **2021 年**：升级到 v2，Guardian 网络从 9 扩到 19，加入 BSC / Polygon / Avalanche。VAA 格式定型成今天的样子。
+- **2022 年 2 月**：Solana 端合约因 `guardian_set_index` 校验漏洞被攻破，攻击者 mint 12 万 wETH（约 3.25 亿美元）。Jump Crypto 当天宣布补足资金。这是当时第二大跨链桥事故。
+- **2023-2024 年**：扩展到 Aptos / Sui / Cosmos / Near 等 30+ 链；推出 NTT（原生代币转账，绕开包装代币流动性分裂）；推出 Connect（前端 SDK，三行代码集成桥）。
+
+## 学到什么
+
+1. **跨链的本质是"消息 + 验证"**——代币桥只是消息层的一种应用，通用消息层可以跑任何跨链业务
+2. **多签 Guardian 是"工程实用主义"的代价**——不去信任要 zk 或 light client，但成本高 100 倍；Wormhole 选了"够用 + 落地快"的中间点
+3. **VAA = 跨链版的签名收据**——一份不可变事实证据，链下生成，链上验签，与 [[layerzero]] 的"oracle + relayer 双独立"设计形成对比
+4. **2022 hack 是行业血泪教训**——所有桥都改了 guardian set 切换逻辑、增加形式化验证
+
+## 延伸阅读
+
+- 官方文档：[Wormhole Docs](https://wormhole.com/docs/)（VAA 格式 / 各链合约地址 / SDK 用法）
+- Whitepaper：[Wormhole xDapp Whitepaper](https://github.com/wormhole-foundation/wormhole/blob/main/whitepapers/0001_generic_message_passing.md)（generic message passing 设计）
+- 2022 hack 复盘：[CertiK Wormhole Bridge Exploit](https://www.certik.com/resources/blog/wormhole-bridge-exploit-incident-analysis)（漏洞代码逐行解读）
+- [[layerzero]] —— 同领域竞争方案，oracle + relayer 双独立模型（无 multi-sig 信任）
+- 视频：[Whiteboard Crypto — How Wormhole Works](https://www.youtube.com/results?search_query=how+wormhole+bridge+works)（动画讲解 Guardian 流程）
+
+## 关联
+
+- [[layerzero]] —— 同样是跨链消息协议，Wormhole 用 Guardian 多签，LayerZero 用 oracle+relayer 分离
+- [[uniswap-v3]] —— 多链部署的 DEX，用 Wormhole 类协议同步流动性 / 治理
+- [[arbitrum]] —— L2，本身有原生 L1↔L2 消息，不需要 Wormhole；但 Arbitrum ↔ Solana 仍要 Wormhole
+- [[optimism]] —— 与 Arbitrum 同理，原生跨 L1 用 native bridge，跨链 L2 之间用 Wormhole
+- [[aave-v3]] —— 跨链借贷协议，已集成 Wormhole 做 portal 模式
+- [[go-ethereum]] —— 以太坊主网客户端，Wormhole core 合约部署其上
+- [[bitcoin-core]] —— Wormhole 暂未原生支持 BTC（无 EVM），需要包装方案
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

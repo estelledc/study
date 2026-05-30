@@ -158,7 +158,6 @@ def upload(key, data):
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳

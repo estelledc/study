@@ -154,6 +154,7 @@ NoSQL 论点 C：扩展更容易
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半

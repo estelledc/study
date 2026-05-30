@@ -173,5 +173,11 @@ await authClient.organization.inviteMember({ email: "a@b.com", role: "admin" });
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[next-js]] —— Next.js — React 全栈框架
+- [[prisma]] —— Prisma — 类型安全 ORM
 - [[supabase]] —— Supabase — Firebase 的开源替代
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

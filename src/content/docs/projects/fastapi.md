@@ -170,6 +170,7 @@ def me(user: dict = Depends(current_user)):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router

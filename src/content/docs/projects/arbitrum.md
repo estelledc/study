@@ -161,6 +161,7 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"
 - [[zk-snark]] —— zk-SNARK 零知识证明
 - [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2
 
