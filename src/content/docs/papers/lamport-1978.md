@@ -166,6 +166,7 @@ class LogEmitter:
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点

@@ -189,6 +189,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
+- [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树

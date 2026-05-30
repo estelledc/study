@@ -149,5 +149,11 @@ backend pg_pool
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[redis]] —— Redis — 内存键值数据库
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

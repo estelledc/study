@@ -165,6 +165,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
+- [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码

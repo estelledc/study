@@ -165,3 +165,6 @@ const { styles } = extractCriticalToChunks(html)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
+

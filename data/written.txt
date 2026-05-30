@@ -64,6 +64,7 @@ dit
 dns
 dpo
 dqn
+duckdb-2019
 dynamo
 ebpf
 effect-handlers
@@ -82,6 +83,7 @@ generational-gc
 gfs
 godel-1931
 gpt-3
+graalvm-truffle
 gradual-typing
 graphrag
 gray-1981-transaction
@@ -311,6 +313,7 @@ grafana
 grape
 gsap
 hanami
+haproxy
 hardhat
 helidon
 helm
@@ -412,6 +415,7 @@ prometheus
 prosemirror
 prysm
 pulsar
+pyth
 qdrant
 quarkus
 quart

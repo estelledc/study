@@ -153,6 +153,7 @@ module.exports = {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
+- [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
 - [[next-js]] —— Next.js — React 全栈框架
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[react]] —— React UI 组件库

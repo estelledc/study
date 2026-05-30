@@ -173,6 +173,7 @@ location /static/ {
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[next-js]] —— Next.js — React 全栈框架
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK

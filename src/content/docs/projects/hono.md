@@ -153,7 +153,7 @@ app.get('/users/:id', (c) => {
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[elysia]] —— Elysia Bun-first TypeScript Web 框架
+- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[express]] —— Express Node.js 经典 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify schema-first Node 高性能 web 框架

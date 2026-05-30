@@ -162,3 +162,12 @@ const { data, error } = await api.users({ id: '123' }).get()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[fastify]] —— Fastify schema-first Node 高性能 web 框架
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
+- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[zod]] —— Zod — TypeScript-first schema 验证
+
