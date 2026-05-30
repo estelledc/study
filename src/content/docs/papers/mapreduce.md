@@ -158,6 +158,7 @@ def reduce(user_id, latencies):
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

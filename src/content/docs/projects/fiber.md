@@ -176,6 +176,7 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关

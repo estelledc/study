@@ -157,6 +157,7 @@ column families:
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事

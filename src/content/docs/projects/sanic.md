@@ -177,6 +177,7 @@ app.blueprint(users_bp)
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端

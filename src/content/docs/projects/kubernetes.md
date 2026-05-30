@@ -139,6 +139,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
+- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[helm]] —— Helm — Kubernetes 包管理器

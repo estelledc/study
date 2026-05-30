@@ -168,6 +168,7 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
@@ -177,6 +178,7 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
@@ -203,4 +205,5 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

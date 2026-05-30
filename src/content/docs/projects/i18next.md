@@ -161,3 +161,12 @@ React 适配里，`useTranslation` 会订阅这个事件，**让所有用到 t()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
+- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
+- [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+- [[zod]] —— Zod — TypeScript-first schema 验证
+

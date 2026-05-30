@@ -200,6 +200,7 @@ export const collections = { blog }
 
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[micromark]] —— micromark 流式 CommonMark 状态机解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎

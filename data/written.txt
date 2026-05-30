@@ -49,6 +49,7 @@ copilot-rct
 cot
 cousot-abstract-interpretation
 crdt-json
+csp-hoare-1978
 cstore-2005
 dalle-2
 dataflow-model-2015
@@ -127,6 +128,7 @@ mapreduce
 mccarthy-lisp
 megatron-lm
 metagpt
+millwheel-2013
 mixture-of-experts
 mlir
 monetdb-x100-2005
@@ -483,12 +485,14 @@ temporal
 temporal-polyfill
 terraform
 testing-library
+thirdweb-sdk
 tide
 timescaledb
 traefik
 trpc
 turbopack
 turborepo
+tyk
 typeorm
 typesense
 unified
