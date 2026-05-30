@@ -160,5 +160,6 @@ NoSQL 论点 C：扩展更容易
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
 

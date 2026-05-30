@@ -162,8 +162,10 @@ controller.abort();
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
-- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
+- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
+- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
 - [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库

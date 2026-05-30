@@ -168,6 +168,7 @@ networks: {
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶

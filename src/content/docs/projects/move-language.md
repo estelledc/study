@@ -156,5 +156,9 @@ spec increment {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anchor]] —— Anchor — Solana 合约开发框架
+- [[aptos-core]] —— Aptos — Move 系高性能 L1
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[linear-types]] —— 线性类型（Linear Types）
+- [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 

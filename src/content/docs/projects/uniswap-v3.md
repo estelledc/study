@@ -161,6 +161,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
+- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息

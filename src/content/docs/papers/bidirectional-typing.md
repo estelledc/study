@@ -157,6 +157,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
+- [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）

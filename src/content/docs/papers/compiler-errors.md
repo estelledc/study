@@ -170,6 +170,7 @@ Property 'foo' does not exist on type 'Bar'. Did you mean 'baz'?
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
+- [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

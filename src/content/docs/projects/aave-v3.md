@@ -166,6 +166,7 @@ pool.liquidationCall(
 - [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
+- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
