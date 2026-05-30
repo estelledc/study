@@ -162,6 +162,10 @@ pnpm turbo run build
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
+- [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[webpack]] —— webpack 模块打包
 

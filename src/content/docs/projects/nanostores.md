@@ -163,5 +163,6 @@ export const epoch = () => ++g.epoch
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[jotai]] —— Jotai — 原子化 React 状态管理
 - [[svelte]] —— Svelte — 编译时 UI 框架
+- [[valtio]] —— valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库
 - [[zustand]] —— Zustand — 极简 React 状态管理
 

@@ -158,6 +158,7 @@ R+W>N（比如 R=2, W=2, N=3）→ 强一致；R+W≤N → 牺牲一致换延迟
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议

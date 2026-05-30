@@ -162,6 +162,7 @@ const predictedAddr = await calculateProxyAddress({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端

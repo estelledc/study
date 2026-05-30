@@ -186,6 +186,7 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎

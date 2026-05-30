@@ -153,3 +153,6 @@ await prefixStorage(root, 'v1:').clear()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[minio]] —— MinIO — S3 兼容对象存储
+

@@ -156,5 +156,14 @@ docker logs optimism-batcher-1 -f
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
+- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
+- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[curve]] —— Curve — 稳定币低滑点兑换协议
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
+- [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

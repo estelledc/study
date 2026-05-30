@@ -160,6 +160,7 @@ app.get('/users/:id', (c) => {
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

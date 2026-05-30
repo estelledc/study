@@ -159,5 +159,6 @@ function App() {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
+- [[valtio]] —— valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库
 - [[zustand]] —— Zustand — 极简 React 状态管理
 
