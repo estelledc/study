@@ -155,3 +155,6 @@ h(v) 必须不高估真实剩余距离（admissible）才保证最优。Hart-Nil
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
+

@@ -149,4 +149,5 @@ npm install rolldown-vite
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 

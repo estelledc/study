@@ -154,6 +154,7 @@ echo '.a { & .b { color: oklch(70% 0.15 240); } }' \
 - [[bun]] —— Bun — JS 全能运行时
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
+- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

@@ -161,6 +161,7 @@ D(M):
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hamming-1950]] —— Hamming 纠错码
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

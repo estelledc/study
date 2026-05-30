@@ -162,6 +162,7 @@ export default defineConfig({
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
+- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[svelte]] —— Svelte — 编译时 UI 框架

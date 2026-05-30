@@ -185,6 +185,7 @@ async fn signup(form: web::Json<Signup>) -> String {
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架

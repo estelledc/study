@@ -166,7 +166,7 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

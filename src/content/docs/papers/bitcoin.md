@@ -142,6 +142,7 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换

@@ -133,6 +133,7 @@ realm
 reed-solomon-1960
 refinement-types-1991
 reflexion
+reps-ifds
 resnet
 retro
 reynolds-definitional-interpreters
@@ -182,6 +183,7 @@ volcano-1994
 voyager
 wadler-prettier
 word2vec
+zab-2011
 zgc
 zk-snark
 
@@ -356,6 +358,7 @@ prosemirror
 prysm
 pulsar
 qdrant
+quarkus
 quart
 qwik
 rabby-wallet
@@ -417,6 +420,7 @@ turborepo
 typeorm
 typesense
 unified
+uniswap-v3
 unstorage
 valibot
 valkey
