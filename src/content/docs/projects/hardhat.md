@@ -168,6 +168,7 @@ networks: {
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包

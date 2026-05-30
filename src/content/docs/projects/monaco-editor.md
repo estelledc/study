@@ -152,3 +152,8 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
+

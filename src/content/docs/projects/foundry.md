@@ -166,6 +166,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE

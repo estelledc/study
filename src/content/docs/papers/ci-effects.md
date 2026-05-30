@@ -152,4 +152,5 @@ Web 团队（Stolberg）：
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
+- [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
 

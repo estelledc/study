@@ -202,6 +202,7 @@ export const collections = { blog }
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[micromark]] —— micromark 流式 CommonMark 状态机解析器
+- [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[preact]] —— Preact — 3KB React 替代

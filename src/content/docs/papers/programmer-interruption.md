@@ -151,7 +151,9 @@ brew install --cask activitywatch
 
 - [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
+- [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 

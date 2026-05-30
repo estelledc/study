@@ -162,4 +162,8 @@ flow:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[browser-use]] —— browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[langfuse]] —— Langfuse — LLM 应用可观测性
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[vitest]] —— Vitest — Vite 原生测试框架
 

@@ -8,6 +8,7 @@ algol-60
 alphago
 anthropic-circuits
 aries-1992
+art-2013
 attention
 aurora
 autogen
@@ -21,6 +22,7 @@ bitcoin
 boehm-gc
 borg
 calculus-of-constructions
+call-by-need-1995
 calvin
 causal-abstraction
 cheney-gc
@@ -184,6 +186,7 @@ arktype
 astro
 auth-js
 axios
+axum
 bat
 besu
 better-auth
@@ -348,6 +351,7 @@ react-spring
 recharts
 redis
 remix
+remix-ide
 ripgrep
 rolldown
 rollup

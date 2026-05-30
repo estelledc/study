@@ -155,6 +155,7 @@ System.out.println("最新块号: " + bn.getBlockNumber());
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[grafana]] —— Grafana — 监控可视化看板
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[prometheus]] —— Prometheus — 时序监控系统
