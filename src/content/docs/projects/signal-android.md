@@ -149,6 +149,7 @@ $ cd Signal-Android && ./reproducible-builds/go.sh <version>
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[conversations]] —— Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）

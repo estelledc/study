@@ -133,6 +133,7 @@ helium-type-errors
 herlihy-moss-tm
 hewitt-actor-model
 hindley-milner
+hlc-2014
 hnsw-2018
 hoare-logic
 holzmann-spin-1997
@@ -152,6 +153,7 @@ kafka
 kafka-2011
 kahn-natural-semantics
 karp-21
+kepler-architecture-2012
 kildall-dataflow
 knuth-lr-1965
 knuth-taocp
@@ -190,6 +192,7 @@ metagpt
 metaml-multi-stage
 millwheel-2013
 milner-pi-calculus
+minisat-2003
 mixture-of-experts
 mlir
 monetdb-x100-2005
@@ -404,6 +407,7 @@ dust
 echarts
 echo
 effect
+ejabberd
 elasticsearch
 element-android
 element-web
@@ -658,6 +662,7 @@ tide
 timescaledb
 torchtune
 traefik
+trl
 trpc
 turbopack
 turborepo
@@ -696,6 +701,7 @@ wretch
 xstate
 yargs
 yjs
+yq
 zcash
 zksync-era
 zod

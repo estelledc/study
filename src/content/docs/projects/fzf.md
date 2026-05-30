@@ -164,6 +164,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
+- [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[jq]] —— jq — JSON 的 sed/awk
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）

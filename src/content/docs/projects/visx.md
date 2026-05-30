@@ -164,5 +164,4 @@ Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

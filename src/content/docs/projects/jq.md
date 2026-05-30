@@ -157,6 +157,7 @@ jq '.. | objects | select(has("email")) | .email' big-config.json
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
