@@ -98,12 +98,21 @@ else
   fi
 fi
 
-# 6. push origin main
+# 6. push origin main（失败时自动 rebase 再试一次，但不让失败阻断后续 sync-written）
 echo "[finalize-round] push origin main"
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "  [DRY] git push origin main"
 else
-  git -c http.sslVerify=false push origin main
+  if ! git -c http.sslVerify=false push origin main 2>&1; then
+    echo "  push rejected, attempt fetch + rebase + retry"
+    git -c http.sslVerify=false fetch origin main 2>&1 | tail -3 || true
+    if git rebase origin/main 2>&1 | tail -3; then
+      git -c http.sslVerify=false push origin main 2>&1 | tail -3 || echo "  WARN: push still failing, continuing anyway"
+    else
+      echo "  WARN: rebase failed, aborting and continuing"
+      git rebase --abort 2>/dev/null || true
+    fi
+  fi
 fi
 
 # 7. Sync 8 worktree
