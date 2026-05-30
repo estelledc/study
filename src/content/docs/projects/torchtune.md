@@ -153,4 +153,5 @@ DPO（Direct Preference Optimization）需要"chosen / rejected"成对数据，l
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
 
