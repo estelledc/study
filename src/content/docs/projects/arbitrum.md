@@ -150,5 +150,13 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
+- [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[scroll]] —— Scroll — 字节码级 zkEVM
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

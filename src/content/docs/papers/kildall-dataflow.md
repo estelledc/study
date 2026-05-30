@@ -174,4 +174,5 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

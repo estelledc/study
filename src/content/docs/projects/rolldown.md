@@ -158,4 +158,5 @@ npm install rolldown-vite
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 

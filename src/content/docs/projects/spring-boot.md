@@ -192,6 +192,7 @@ management:
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[kubernetes]] —— Kubernetes — 容器编排平台

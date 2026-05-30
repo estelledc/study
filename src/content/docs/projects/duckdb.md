@@ -149,5 +149,6 @@ result = con.execute("""
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

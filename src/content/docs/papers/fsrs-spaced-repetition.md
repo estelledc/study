@@ -156,5 +156,6 @@ trained = minimize(fsrs_loss,
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[dqn]] —— DQN — Deep Q-Network
 - [[muzero]] —— MuZero — 不用规则也能下棋
+- [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 

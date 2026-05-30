@@ -170,5 +170,6 @@ await chrome.kill();
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 - [[webpack]] —— webpack 模块打包
 

@@ -23,6 +23,7 @@ bigtable-2006
 bitcoin
 boehm-gc
 borg
+brewer-cap-2000
 calculus-of-constructions
 call-by-need-1995
 calvin
@@ -114,6 +115,7 @@ mccarthy-lisp
 megatron-lm
 metagpt
 mixture-of-experts
+mlir
 muzero
 mycroft-strictness
 neumann-2015-large-joins
@@ -208,6 +210,7 @@ anime
 ansible
 anthropic-cookbook
 ape-framework
+arbitrum
 argent-x
 argocd
 arktype
@@ -408,6 +411,7 @@ sequelize
 shadcn-ui
 sharp
 shiki
+sinatra
 solid
 sortablejs
 spring-boot

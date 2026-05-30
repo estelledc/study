@@ -172,7 +172,9 @@ export default defineConfig({
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vitest]] —— Vitest — Vite 原生测试框架
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 - [[webpack]] —— webpack 模块打包
 

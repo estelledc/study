@@ -156,3 +156,6 @@ export const observe = (type, callback, opts = {}) => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
+

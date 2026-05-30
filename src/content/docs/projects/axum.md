@@ -185,6 +185,7 @@ let app = Router::new()
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
