@@ -172,4 +172,5 @@ const { styles } = extractCriticalToChunks(html)
 - [[styled-components]] —— styled-components — React 生态最早的 CSS-in-JS 库
 - [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
+- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
 

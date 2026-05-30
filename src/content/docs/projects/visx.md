@@ -157,3 +157,12 @@ Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
+- [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
+- [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+

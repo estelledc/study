@@ -158,5 +158,11 @@ allowed_outbound_hosts = ["https://api.github.com"]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[bun]] —— Bun — JS 全能运行时
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

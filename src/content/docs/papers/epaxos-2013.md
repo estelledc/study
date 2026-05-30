@@ -152,5 +152,7 @@ R2 提议 c2: PUT x=2（认为 deps={}）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 

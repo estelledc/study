@@ -157,6 +157,7 @@ backend pg_pool
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[redis]] —— Redis — 内存键值数据库
+- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 

@@ -220,6 +220,7 @@ export const collections = { blog }
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
+- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vue]] —— Vue.js — 渐进式 UI 框架

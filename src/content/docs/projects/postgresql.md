@@ -200,6 +200,7 @@ LIMIT 5;
 - [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
+- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[typesense]] —— Typesense — 高性能搜索引擎
