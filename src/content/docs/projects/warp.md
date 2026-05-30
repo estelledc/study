@@ -161,6 +161,7 @@ let ws = warp::path("ws")
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架

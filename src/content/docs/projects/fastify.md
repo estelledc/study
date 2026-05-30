@@ -155,3 +155,21 @@ app.addHook('preHandler', async (req) => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
+- [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
+- [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
+- [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
+- [[next-js]] —— Next.js — React 全栈框架
+- [[pino]] —— pino — 日志不该阻塞热路径
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
+- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
+- [[zod]] —— Zod — TypeScript-first schema 验证
+

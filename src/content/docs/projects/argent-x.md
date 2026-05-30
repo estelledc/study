@@ -168,6 +168,7 @@ await starknet.account.execute([
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 - [[zk-snark]] —— zk-SNARK 零知识证明
 - [[zksync-era]] —— zkSync Era — Matter Labs 的 zkEVM L2

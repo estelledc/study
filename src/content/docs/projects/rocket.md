@@ -202,6 +202,7 @@ fn rocket() -> _ {
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架

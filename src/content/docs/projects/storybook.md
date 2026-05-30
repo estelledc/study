@@ -158,6 +158,7 @@ export const Clicked: StoryObj<typeof Button> = {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"

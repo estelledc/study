@@ -159,6 +159,7 @@ if (cluster.isPrimary) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[pino]] —— pino — 日志不该阻塞热路径

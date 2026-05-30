@@ -161,6 +161,7 @@ column families:
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半

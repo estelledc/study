@@ -169,5 +169,5 @@ class Counter extends Prompt {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 
