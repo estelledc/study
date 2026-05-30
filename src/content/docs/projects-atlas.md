@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 379 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 382 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：379 个
+- **总数**：382 个
 - **已分类**：206
-- **未分类**：173（落入"其他 / 待分类"段）
+- **未分类**：176（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 173 |
+| [其他 / 待分类](#其他--待分类) | 176 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 173 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 176 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -543,6 +543,7 @@ sidebar:
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
+| `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) |
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) |
 | `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
@@ -553,6 +554,7 @@ sidebar:
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
+| `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
@@ -590,6 +592,7 @@ sidebar:
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
+| `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
@@ -675,7 +678,7 @@ sidebar:
 
 ---
 
-## 全部 379 个（字母序）
+## 全部 382 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -760,6 +763,7 @@ sidebar:
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | 其他 |
+| `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) | 其他 |
 | `duckdb` | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) | 数据库本体 / 存储引擎 |
 | `duckdb-wasm` | [duckdb-wasm — 把分析数据库塞进浏览器标签页](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | 其他 |
@@ -783,6 +787,7 @@ sidebar:
 | `express` | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | Web 框架 |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | 其他 |
 | `fabric-js` | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) | 图像处理 / Canvas |
+| `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) | 其他 |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | Web 框架 |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
@@ -858,6 +863,7 @@ sidebar:
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) | 其他 |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | 其他 |
+| `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | 其他 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |

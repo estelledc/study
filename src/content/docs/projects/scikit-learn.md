@@ -154,6 +154,7 @@ pipe.score(X_test, y_test)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
+- [[fastai]] —— fastai — 三行代码做迁移学习
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame

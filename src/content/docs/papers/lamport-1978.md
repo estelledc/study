@@ -162,6 +162,7 @@ class LogEmitter:
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
+- [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构

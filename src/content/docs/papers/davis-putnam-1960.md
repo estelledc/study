@@ -152,5 +152,10 @@ DP 把上面这堆**反复施三条规则**化简，直到要么得出"显然可
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 

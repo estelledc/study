@@ -160,5 +160,9 @@ for (int i = 0; i < N; i++) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[ssa]] —— SSA — 静态单赋值形式
 

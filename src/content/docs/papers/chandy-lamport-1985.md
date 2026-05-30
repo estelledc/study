@@ -155,3 +155,6 @@ Raft 的快照之所以比 Chandy-Lamport 简单——因为 Raft 已经有单 l
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

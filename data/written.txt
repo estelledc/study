@@ -38,6 +38,7 @@ cassandra-2010
 causal-abstraction
 ceph-2006
 chain-replication-2004
+chaitin-graph-coloring
 cheney-gc
 chinchilla
 chubby
@@ -62,12 +63,14 @@ cot
 cousot-abstract-interpretation
 craq-2009
 crdt-json
+crdt-json-2017
 crdt-shapiro-2011
 crdt-sss-2011
 csp-hoare-1978
 cstore-2005
 dalle-2
 dataflow-model-2015
+davis-putnam-1960
 ddpm
 debugging-dichotomy
 deepseek-r1
@@ -504,6 +507,7 @@ mysql
 nanobrowser
 nanostores
 nats
+ncdu
 neo4j
 nestjs
 nethermind
@@ -553,6 +557,7 @@ pulsar
 pyarrow
 pyth
 pytorch
+pytorch-lightning
 qdrant
 quarkus
 quart
@@ -572,6 +577,7 @@ remix-ide
 reservoir-sdk
 ripgrep
 rocket
+rocket-chat
 rolldown
 rollup
 rspack
