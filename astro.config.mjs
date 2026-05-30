@@ -43,7 +43,7 @@ export default defineConfig({
           ],
         },
       ],
-      customCss: ['./src/styles/custom.css'],
+      customCss: ['./src/styles/custom.css', './src/styles/opendesign-theme.css'],
     }),
   ],
 });

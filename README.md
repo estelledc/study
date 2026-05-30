@@ -1,3 +1,7 @@
+> **观察期**：theme/opendesign branch 跑满 3 天日更不挂再 merge main。
+> tag: pre-opendesign-20260530（可随时 revert 旧主题）
+> abort 信号：build 连续 2 天失败 / 段落行宽 < 60ch / Pagefind 失效
+
 # Jason's Study — 仓库说明
 
 > 这个 README 给操作者看。访问者请去 [https://estelledc.github.io/study/](https://estelledc.github.io/study/) 或本地启 dev server。
