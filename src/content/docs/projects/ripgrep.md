@@ -159,6 +159,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[gdu]] —— gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI
 - [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
+- [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
 - [[jq]] —— jq — JSON 的 sed/awk
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk

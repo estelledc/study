@@ -156,6 +156,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+- [[flax]] —— Flax — JAX 上的神经网络库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jax]] —— JAX — Google 函数式数值计算
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型

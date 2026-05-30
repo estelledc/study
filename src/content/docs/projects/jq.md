@@ -161,6 +161,7 @@ jq '.. | objects | select(has("email")) | .email' big-config.json
 - [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
+- [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）

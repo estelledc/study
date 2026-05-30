@@ -135,6 +135,7 @@ prompt → CLIP text encoder → text emb → prior → image emb → decoder �
 
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[dit]] —— DiT — Diffusion Transformer
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
 
