@@ -172,6 +172,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[sglang]] —— SGLang — 结构化推理运行时
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tensorflow]] —— TensorFlow — Google 端到端 DL 平台
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机

@@ -20,6 +20,7 @@ autogen
 awodey-warren-2009
 azure-storage-2011
 b-tree-1972
+bayou-1995
 beck-tdd
 bernstein-1981-cc
 bert
@@ -76,6 +77,7 @@ crdt-shapiro-2011
 crdt-sss-2011
 csp-hoare-1978
 cstore-2005
+cubical-type-theory-2018
 dalle-2
 dataflow-model-2015
 davis-putnam-1960
@@ -299,6 +301,7 @@ stonebraker-2010-sqlnosql
 strongtalk
 swe-agent
 swe-bench
+sycl-cpp-2020
 system-f-reynolds-1974
 system-r-1976
 t5
@@ -370,6 +373,7 @@ auth-js
 automerge
 axelar
 axios
+axolotl
 axum
 balancer
 bandwhich
@@ -613,6 +617,7 @@ podman
 poem
 polars
 polygon-zkevm
+postfix
 postgres-js
 postgresql
 preact
@@ -711,6 +716,7 @@ testing-library
 thirdweb-sdk
 thrift
 tide
+tig
 timescaledb
 torchtune
 traefik

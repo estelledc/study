@@ -161,6 +161,7 @@ def step(params, x, y):
 - [[flax]] —— Flax — JAX 上的神经网络库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
+- [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库

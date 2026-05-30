@@ -176,6 +176,7 @@ class LogEmitter:
 - [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
 - [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
+- [[flp-1985]] —— FLP 1985 — 一个坏节点就能让异步共识永不终止
 - [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库

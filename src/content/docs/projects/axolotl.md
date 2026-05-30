@@ -160,5 +160,6 @@ flash_attention: true
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 

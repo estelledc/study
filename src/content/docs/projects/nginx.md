@@ -172,6 +172,7 @@ location /static/ {
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[express]] —— Express — Node.js 最经典的 Web 框架

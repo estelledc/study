@@ -154,6 +154,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算

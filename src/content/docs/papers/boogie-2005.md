@@ -1,6 +1,6 @@
 ---
 title: Boogie — 写一次验证后端，多种证明语言复用
-来源: Barnett, Chang, DeLine, Jacobs, Leino, "Boogie: A Modular Reusable Verifier for Object-Oriented Programs", FMCO 2005
+来源: 'Barnett, Chang, DeLine, Jacobs, Leino, "Boogie: A Modular Reusable Verifier for Object-Oriented Programs", FMCO 2005'
 日期: 2026-05-31
 分类: 形式化方法
 难度: 中级
