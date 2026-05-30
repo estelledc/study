@@ -150,5 +150,12 @@ INRIA 这股"理论 + 实现一起做"的工程文化，从 OCaml 到 Coq 到 Co
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
+- [[ssa]] —— SSA — 静态单赋值形式
 

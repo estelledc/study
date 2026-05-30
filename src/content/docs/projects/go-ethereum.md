@@ -166,6 +166,7 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机

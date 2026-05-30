@@ -150,3 +150,7 @@ await new Listr(
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boxen]] —— boxen — 给终端文本套个边框的事
+- [[ink]] —— ink — 用 React 组件树写终端 CLI
+

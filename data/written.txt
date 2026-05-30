@@ -42,6 +42,7 @@ codd-1970
 codd-1979-extending
 cognitive-load-theory
 comer-1979-btree
+compcert
 compiler-errors
 constitutional-ai
 cook-levin
@@ -62,6 +63,7 @@ diffie-hellman
 dijkstra-goto
 dijkstra-shortest-path
 dino
+diskann-2019
 dit
 dns
 dpo
@@ -244,6 +246,7 @@ anime
 ansible
 anthropic-cookbook
 ape-framework
+aptos-core
 arbitrum
 argent-x
 argocd
@@ -501,6 +504,7 @@ temporal-polyfill
 terraform
 testing-library
 thirdweb-sdk
+thrift
 tide
 timescaledb
 traefik

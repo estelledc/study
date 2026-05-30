@@ -159,6 +159,7 @@ export default defineConfig({
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
+- [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[next-js]] —— Next.js — React 全栈框架
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架

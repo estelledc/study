@@ -164,4 +164,5 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

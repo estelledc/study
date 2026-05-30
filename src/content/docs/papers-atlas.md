@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 236 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 238 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：236 篇
+- **总数**：238 篇
 - **已分类**：143
-- **未分类**：93（落入"其他 / 待分类"段）
+- **未分类**：95（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 93 |
+| [其他 / 待分类](#其他--待分类) | 95 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 93 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 95 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -315,6 +315,7 @@ sidebar:
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
+| `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |
 | `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) |
@@ -335,6 +336,7 @@ sidebar:
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
+| `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) |
@@ -404,7 +406,7 @@ sidebar:
 
 ---
 
-## 全部 236 篇（字母序）
+## 全部 238 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -433,6 +435,7 @@ sidebar:
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
+| `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | 其他 |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | 其他 |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | 其他 |
 | `calvin` | [Calvin — 不要每次都协商，先排好顺序大家照做](/study/papers/calvin/) | 数据库 |
@@ -485,6 +488,7 @@ sidebar:
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 其他 |
+| `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | 其他 |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | 其他 |

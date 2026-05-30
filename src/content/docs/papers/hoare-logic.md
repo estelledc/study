@@ -168,6 +168,7 @@ method Sum(a: array<int>) returns (s: int)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存

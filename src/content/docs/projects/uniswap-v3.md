@@ -174,6 +174,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
+- [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[thirdweb-sdk]] —— thirdweb SDK — 一站式 Web3 全家桶
 - [[wormhole]] —— Wormhole — 多链之间替你跑腿的"邮政系统"

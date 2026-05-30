@@ -160,6 +160,7 @@ column families:
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点

@@ -173,5 +173,6 @@ await program.methods
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
+- [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

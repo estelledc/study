@@ -162,6 +162,7 @@ s := grpc.NewServer(grpc.UnaryInterceptor(loggingInterceptor))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[capnproto]] —— Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC
 - [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[etcd]] —— etcd — 分布式键值数据库

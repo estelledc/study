@@ -164,6 +164,7 @@ pnpm turbo run build
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
