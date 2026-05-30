@@ -168,6 +168,7 @@ gsap.to(".box", {
 
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[observable-plot]] —— Observable Plot Grammar of Graphics in JS
 - [[react]] —— React UI 组件库

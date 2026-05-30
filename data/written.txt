@@ -24,6 +24,7 @@ bitcoin
 boehm-gc
 borg
 brewer-cap-2000
+cakeml
 calculus-of-constructions
 call-by-need-1995
 calvin
@@ -76,6 +77,7 @@ effect-handlers
 erlang-otp
 eswaran-1976
 f1-2013
+faiss-2017
 feautrier-polyhedral
 flash-attention
 flink-2015
@@ -223,6 +225,7 @@ triton-llm
 turchin-supercompilation
 turing-1936
 tvm
+vellvm
 vertica-2012
 vit
 vllm
@@ -246,6 +249,7 @@ anime
 ansible
 anthropic-cookbook
 ape-framework
+apollo-server
 aptos-core
 arbitrum
 argent-x
@@ -269,6 +273,7 @@ bun
 caddy
 cairo-lang
 cal-com
+capnproto
 cassandra
 chainlink
 chainlink-ccip
@@ -396,6 +401,7 @@ mobx
 monaco-editor
 mongodb
 motion-one
+move-language
 msw
 mysql
 nanobrowser
@@ -487,6 +493,7 @@ steel-browser
 storybook
 styled-components
 stylex
+sui
 supabase
 supertokens
 svelte

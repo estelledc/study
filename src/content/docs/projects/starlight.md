@@ -169,7 +169,8 @@ export default {
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
+- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
+- [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮

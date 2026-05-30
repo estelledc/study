@@ -152,7 +152,12 @@ start2.plus(d).toISODate(); // '2026-05-30'
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
+- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
+- [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
+- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
+- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[temporal]] —— Temporal — 持久化工作流引擎
 - [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
 

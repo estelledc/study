@@ -173,6 +173,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
+- [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包

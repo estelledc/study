@@ -168,3 +168,11 @@ marked.use({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
+- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
+- [[micromark]] —— micromark 流式 CommonMark 状态机解析器
+- [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
+- [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
+
