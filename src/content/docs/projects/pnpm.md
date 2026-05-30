@@ -156,3 +156,8 @@ find ~/.pnpm-store/v3/files -inum 1234567
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bun]] —— Bun — JS 全能运行时
+- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
+- [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+

@@ -151,6 +151,7 @@ GROUP BY customer_id;
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
@@ -163,11 +164,11 @@ GROUP BY customer_id;
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流

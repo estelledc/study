@@ -160,5 +160,14 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
+- [[raft]] —— Raft — 易理解的共识算法
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 

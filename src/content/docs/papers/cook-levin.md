@@ -151,6 +151,7 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明
 

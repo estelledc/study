@@ -162,6 +162,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[penpot]] —— Penpot — 开源自托管的 Figma 替代
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[pulsar]] —— Apache Pulsar — 云原生消息队列
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树

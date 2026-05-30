@@ -184,6 +184,7 @@ Prisma 自动：
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[typeorm]] —— TypeORM — Decorator-based ORM
 

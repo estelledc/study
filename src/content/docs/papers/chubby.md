@@ -152,7 +152,7 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
-- [[borg]] —— Borg 大规模集群管理
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[dns]] —— DNS Domain Name System
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[ebpf]] —— eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑
@@ -163,8 +163,8 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

@@ -149,3 +149,9 @@ P(false) ≈ heap_size / address_space / alignment
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
+- [[linear-types]] —— 线性类型（Linear Types）
+- [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
+- [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
+
