@@ -1,0 +1,50 @@
+/* study · Editorial Monocle override on Starlight
+ * 仅覆写 Starlight 暴露的 --sl-* 变量，禁动 layout
+ */
+
+:root {
+  --sl-color-bg: #faf6f0;
+  --sl-color-text: #1a1a1a;
+  --sl-color-text-accent: #c4452d;
+  --sl-color-accent: #c4452d;
+  --sl-color-accent-low: rgba(196, 69, 45, 0.08);
+  --sl-color-accent-high: #a83a26;
+  --sl-color-bg-nav: #f1ece4;
+  --sl-color-bg-sidebar: #faf6f0;
+  --sl-color-hairline: rgba(0, 0, 0, 0.08);
+  --sl-color-hairline-light: rgba(0, 0, 0, 0.04);
+  --sl-color-bg-inline-code: #f1ece4;
+  --sl-font: "Source Serif Pro", "Noto Serif SC", Georgia, serif;
+  --sl-font-system: Inter, "PingFang SC", -apple-system, sans-serif;
+  --sl-font-system-mono: "JetBrains Mono", Menlo, monospace;
+}
+
+:root[data-theme="dark"] {
+  --sl-color-bg: #1a1a1a;
+  --sl-color-text: #faf6f0;
+  --sl-color-text-accent: #e88a73;
+  --sl-color-accent: #e88a73;
+  --sl-color-bg-nav: #2a2825;
+  --sl-color-bg-sidebar: #1a1a1a;
+  --sl-color-bg-inline-code: #2a2825;
+}
+
+/* 标题字体阶梯 */
+h1, h2, h3 {
+  font-family: var(--sl-font);
+  letter-spacing: -0.01em;
+}
+
+/* return-to-hub 在 Starlight site-title 旁 */
+.return-to-hub {
+  font-family: var(--sl-font-system-mono);
+  font-size: 0.875rem;
+  color: var(--sl-color-text-accent);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  margin-left: 1rem;
+  border-bottom: 1px solid transparent;
+}
+.return-to-hub:hover {
+  border-bottom-color: var(--sl-color-text-accent);
+}
