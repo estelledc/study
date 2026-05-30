@@ -151,5 +151,6 @@ Kokkos::parallel_reduce("dot", N, KOKKOS_LAMBDA(int i, double& s) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[jax]] —— JAX — Google 函数式数值计算
+- [[thrust-2010]] —— Thrust — 让 GPU 编程像写 STL 一样一行调用
 

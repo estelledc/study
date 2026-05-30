@@ -168,6 +168,7 @@ export default {
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[gh]] —— gh — GitHub 官方命令行
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
