@@ -148,6 +148,7 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
 - [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
@@ -156,7 +157,6 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明
 

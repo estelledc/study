@@ -146,6 +146,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构

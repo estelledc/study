@@ -157,5 +157,9 @@ gdu --db scan.db --read-from-storage   # 下次直接读，不重扫
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
+- [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
+- [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

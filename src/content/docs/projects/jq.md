@@ -155,3 +155,6 @@ jq '.. | objects | select(has("email")) | .email' big-config.json
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
+

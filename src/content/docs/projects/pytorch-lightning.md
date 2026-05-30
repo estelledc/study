@@ -166,6 +166,7 @@ trainer = pl.Trainer(callbacks=[
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[pytorch]] —— PyTorch — 深度学习主流框架

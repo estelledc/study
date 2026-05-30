@@ -153,6 +153,7 @@ DP 把上面这堆**反复施三条规则**化简，直到要么得出"显然可
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
