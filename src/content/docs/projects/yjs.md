@@ -158,6 +158,7 @@ notes.set('note-1', { title: '...', body: '...' })
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 - [[automerge]] —— Automerge — 让两份 JSON 自动合并的 CRDT 库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[collabora-online]] —— Collabora Online — 浏览器里直接编辑 Office 文档的开源后端
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端

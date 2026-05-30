@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 340 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 343 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：340 篇
+- **总数**：343 篇
 - **已分类**：143
-- **未分类**：197（落入"其他 / 待分类"段）
+- **未分类**：200（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 197 |
+| [其他 / 待分类](#其他--待分类) | 200 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 197 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 200 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -344,6 +344,7 @@ sidebar:
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
+| `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
 | `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) |
 | `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) |
@@ -392,6 +393,7 @@ sidebar:
 | `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) |
 | `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) |
 | `hotspot-server-compiler` | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) |
+| `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
@@ -439,6 +441,7 @@ sidebar:
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |
 | `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) |
 | `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) |
+| `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
@@ -508,7 +511,7 @@ sidebar:
 
 ---
 
-## 全部 340 篇（字母序）
+## 全部 343 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -579,6 +582,7 @@ sidebar:
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
 | `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
+| `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) | 其他 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) | 其他 |
 | `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) | 其他 |
@@ -658,6 +662,7 @@ sidebar:
 | `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) | 其他 |
 | `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) | 其他 |
 | `hotspot-server-compiler` | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) | 其他 |
+| `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) | 其他 |
 | `http-2` | [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
@@ -729,6 +734,7 @@ sidebar:
 | `no-silver-bullet` | [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) | 其他 |
 | `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) | 其他 |
+| `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) | 其他 |
 | `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |

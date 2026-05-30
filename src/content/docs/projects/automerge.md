@@ -153,6 +153,7 @@ handle.change(d => d.todos.push('first'))   // 自动落盘 + 自动同步
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[collabora-online]] —— Collabora Online — 浏览器里直接编辑 Office 文档的开源后端
 - [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
 - [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"

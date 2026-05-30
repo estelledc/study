@@ -155,6 +155,7 @@ Qed.
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言

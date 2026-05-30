@@ -151,5 +151,12 @@ customCommands:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bat]] —— bat — 现代 cat 替代
+- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
+- [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[fzf]] —— fzf — 命令行模糊查找
+- [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
+- [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
+- [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
+- [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

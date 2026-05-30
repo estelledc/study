@@ -167,6 +167,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
+- [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象

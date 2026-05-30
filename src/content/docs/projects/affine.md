@@ -152,6 +152,7 @@ yarn workspace @affine/web dev
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[collabora-online]] —— Collabora Online — 浏览器里直接编辑 Office 文档的开源后端
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架

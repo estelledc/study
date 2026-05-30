@@ -166,6 +166,7 @@ def reduce(user_id, latencies):
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层

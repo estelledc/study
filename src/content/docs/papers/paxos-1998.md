@@ -172,6 +172,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[cosmos-sdk]] —— Cosmos SDK — 应用链开发框架
 - [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
 - [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一

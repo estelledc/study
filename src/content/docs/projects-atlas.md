@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 415 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 418 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：415 个
+- **总数**：418 个
 - **已分类**：206
-- **未分类**：209（落入"其他 / 待分类"段）
+- **未分类**：212（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 209 |
+| [其他 / 待分类](#其他--待分类) | 212 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 209 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 212 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -535,6 +535,7 @@ sidebar:
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
+| `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
 | `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) |
@@ -575,6 +576,7 @@ sidebar:
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
+| `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
@@ -695,6 +697,7 @@ sidebar:
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) |
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
+| `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
@@ -711,7 +714,7 @@ sidebar:
 
 ---
 
-## 全部 415 个（字母序）
+## 全部 418 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -777,6 +780,7 @@ sidebar:
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
+| `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | 其他 |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) | 其他 |
 | `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | CLI / 命令行工具 |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | 其他 |
@@ -843,6 +847,7 @@ sidebar:
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
+| `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | 其他 |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
@@ -1093,6 +1098,7 @@ sidebar:
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
 | `unified` | [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) | Markdown / 解析 |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) | 其他 |
+| `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) | 其他 |
 | `unstorage` | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `valibot` | [Valibot — 拆成乐高的 TypeScript 校验库](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |

@@ -165,6 +165,7 @@ class LogEmitter:
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
+- [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
