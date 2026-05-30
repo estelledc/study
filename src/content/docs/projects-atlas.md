@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 295 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 297 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：295 个
+- **总数**：297 个
 - **已分类**：206
-- **未分类**：89（落入"其他 / 待分类"段）
+- **未分类**：91（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 89 |
+| [其他 / 待分类](#其他--待分类) | 91 |
 
 ---
 
@@ -228,7 +228,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) |  |
-| [Express Node.js 经典 Web 框架](/study/projects/express/) |  |
+| [Express — Node.js 最经典的 Web 框架](/study/projects/express/) |  |
 | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) |  |
 | [Hono — 多运行时 Web 框架](/study/projects/hono/) |  |
 | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) |  |
@@ -469,7 +469,7 @@ sidebar:
 |---|---|
 | [boxen — 给终端文本套个边框的事](/study/projects/boxen/) |  |
 | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) |  |
-| [enquirer 终端交互提示库](/study/projects/enquirer/) |  |
+| [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) |  |
 | [listr2 — 终端任务列表运行器的设计与代价](/study/projects/listr2/) |  |
 | [ora — Terminal spinner 的 ANSI 重写艺术](/study/projects/ora/) | ora（sindresorhus）：从 \r + ANSI 控制码 + 80 帧数据集到 5000 万周下载量 |
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 89 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 91 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -540,6 +540,7 @@ sidebar:
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
+| `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
@@ -568,6 +569,7 @@ sidebar:
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
+| `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
@@ -591,7 +593,7 @@ sidebar:
 
 ---
 
-## 全部 295 个（字母序）
+## 全部 297 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -664,12 +666,12 @@ sidebar:
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
-| `enquirer` | [enquirer 终端交互提示库](/study/projects/enquirer/) | Terminal / 终端 |
+| `enquirer` | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) | Terminal / 终端 |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) | 其他 |
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
 | `excalidraw` | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) | 数据应用 / SaaS |
-| `express` | [Express Node.js 经典 Web 框架](/study/projects/express/) | Web 框架 |
+| `express` | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | Web 框架 |
 | `fabric-js` | [Fabric.js Canvas 对象模型](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
 | `fastify` | [Fastify schema-first Node 高性能 web 框架](/study/projects/fastify/) | Web 框架 |
@@ -707,6 +709,7 @@ sidebar:
 | `koa` | [Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架](/study/projects/koa/) | Web 框架 |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) | 其他 |
 | `konva` | [Konva.js — Canvas 2D 的"DOM 化"图形框架](/study/projects/konva/) | 图像处理 / Canvas |
+| `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) | 其他 |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | 其他 |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
@@ -808,6 +811,7 @@ sidebar:
 | `redis` | [Redis — 内存键值数据库](/study/projects/redis/) | 数据库本体 / 存储引擎 |
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | 其他 |
+| `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) | 其他 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |
 | `rolldown` | [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) | 构建工具 / Bundler |

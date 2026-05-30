@@ -167,6 +167,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
+- [[reservoir-sdk]] —— Reservoir SDK — 跨市场 NFT 聚合
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流

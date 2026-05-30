@@ -156,5 +156,6 @@ console.log(py(21));  // 42
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 

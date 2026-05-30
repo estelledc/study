@@ -162,6 +162,7 @@ r.POST("/users", func(c *gin.Context) {
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[prometheus]] —— Prometheus — 时序监控系统

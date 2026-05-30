@@ -166,5 +166,9 @@ const { styles } = extractCriticalToChunks(html)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
+- [[next-js]] —— Next.js — React 全栈框架
+- [[react]] —— React UI 组件库
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
+- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 

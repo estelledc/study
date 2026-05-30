@@ -164,3 +164,46 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
+- [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
+- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
+- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
+- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[fastify]] —— Fastify schema-first Node 高性能 web 框架
+- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[framer-motion]] —— Framer Motion — React 声明式动画
+- [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
+- [[hono]] —— Hono — 多运行时 Web 框架
+- [[koa]] —— Koa async/await + ctx 对象 + 洋葱模型 极简 web 框架
+- [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
+- [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
+- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+- [[marked]] —— marked regex-based 单文件 markdown 解析器
+- [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[pino]] —— pino — 日志不该阻塞热路径
+- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
+- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
+- [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
+- [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
+- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
+- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
+- [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
+- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
+- [[zod]] —— Zod — TypeScript-first schema 验证
+

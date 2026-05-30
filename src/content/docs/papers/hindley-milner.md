@@ -209,6 +209,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
+- [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 - [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 - [[turing-1936]] —— Turing 1936 可计算性

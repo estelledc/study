@@ -73,6 +73,7 @@ eswaran-1976
 f1-2013
 feautrier-polyhedral
 flash-attention
+flink-2015
 foundationdb
 foundationdb-2021
 fsrs-spaced-repetition
@@ -145,6 +146,7 @@ ppo
 program-comprehension-fmri
 programmer-interruption
 push-pull-frp
+pypy-tracing-jit
 quic
 raft
 rag-lewis-2020
@@ -331,6 +333,7 @@ jotai
 js-joda
 kafka
 koa
+kong
 konva
 kratos
 ktor
@@ -389,6 +392,7 @@ observable-plot
 oclif
 ofetch
 ollama
+opensea-js
 optimism
 ora
 orleans

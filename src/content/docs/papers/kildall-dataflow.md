@@ -163,6 +163,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
