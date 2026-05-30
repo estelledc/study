@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 277 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 280 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：277 篇
+- **总数**：280 篇
 - **已分类**：143
-- **未分类**：134（落入"其他 / 待分类"段）
+- **未分类**：137（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 134 |
+| [其他 / 待分类](#其他--待分类) | 137 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 134 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 137 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -399,6 +399,7 @@ sidebar:
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
+| `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
@@ -414,9 +415,11 @@ sidebar:
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) |
+| `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) |
+| `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |
 | `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) |
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |
@@ -445,7 +448,7 @@ sidebar:
 
 ---
 
-## 全部 277 篇（字母序）
+## 全部 280 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -629,6 +632,7 @@ sidebar:
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) | 其他 |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | 其他 |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) | 其他 |
+| `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | 其他 |
 | `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) | 其他 |
 | `ppo` | [PPO — Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
@@ -670,12 +674,14 @@ sidebar:
 | `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | 其他 |
 | `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
+| `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) | 其他 |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) | 其他 |
 | `sleeper-agents` | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
 | `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | 其他 |
 | `snowflake` | [Snowflake — 把数仓的存储和计算撕成两半](/study/papers/snowflake/) | 数据库 |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | 其他 |
+| `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) | 其他 |
 | `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | 其他 |
 | `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |

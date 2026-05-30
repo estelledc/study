@@ -154,5 +154,12 @@ print(a)              # a 不变
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
+- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+- [[pandas]] —— pandas — Python 表格数据事实标准
+- [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
+- [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

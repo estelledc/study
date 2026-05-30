@@ -177,6 +177,7 @@ pts(p) = pts(q) = pts(r) = {x, y}
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[souffle-datalog]] —— Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 

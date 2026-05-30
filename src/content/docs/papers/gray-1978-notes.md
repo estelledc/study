@@ -191,5 +191,11 @@ Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
+- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

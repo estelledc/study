@@ -148,5 +148,11 @@ br -g
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bat]] —— bat — 现代 cat 替代
+- [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
+- [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
+- [[fzf]] —— fzf — 命令行模糊查找
+- [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

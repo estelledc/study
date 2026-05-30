@@ -161,6 +161,7 @@ virtual OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
 - [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
+- [[pandas]] —— pandas — Python 表格数据事实标准
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
