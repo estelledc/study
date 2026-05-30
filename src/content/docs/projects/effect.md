@@ -155,6 +155,7 @@ const openLog = Effect.acquireRelease(
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘

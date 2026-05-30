@@ -162,6 +162,7 @@ let run e = eval e [] (fun v -> v)
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[earley-parser]] —— Earley Parser — 一个表能解析任何 CFG 的通用解析器
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

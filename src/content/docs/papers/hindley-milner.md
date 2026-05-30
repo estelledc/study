@@ -166,6 +166,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋

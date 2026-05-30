@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 361 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 364 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：361 个
+- **总数**：364 个
 - **已分类**：206
-- **未分类**：155（落入"其他 / 待分类"段）
+- **未分类**：158（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 155 |
+| [其他 / 待分类](#其他--待分类) | 158 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 155 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 158 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -520,6 +520,7 @@ sidebar:
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
+| `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) |
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) |
 | `btop` | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
@@ -618,11 +619,13 @@ sidebar:
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
+| `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
+| `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) |
@@ -657,7 +660,7 @@ sidebar:
 
 ---
 
-## 全部 361 个（字母序）
+## 全部 364 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -692,6 +695,7 @@ sidebar:
 | `better-auth` | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) | Auth 认证 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
+| `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) | 其他 |
 | `boxen` | [boxen — 给终端文本套个边框的事](/study/projects/boxen/) | Terminal / 终端 |
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) | 其他 |
 | `browser-use` | [browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架](/study/projects/browser-use/) | AI 浏览器自动化 |
@@ -927,6 +931,7 @@ sidebar:
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) | 其他 |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) | 其他 |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | 其他 |
+| `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) | 其他 |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) | 其他 |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | 其他 |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
@@ -937,6 +942,7 @@ sidebar:
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | 其他 |
+| `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) | 其他 |

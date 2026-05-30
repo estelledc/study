@@ -153,5 +153,11 @@ double x = x * ?factor
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ci-effects]] —— CI Effects — 持续集成不是免费午餐，价值看实现细节
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[linear-types]] —— 线性类型（Linear Types）
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 

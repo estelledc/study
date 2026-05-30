@@ -20,6 +20,7 @@ beck-tdd
 bernstein-1981-cc
 bert
 bidirectional-typing
+biere-bmc-1999
 bigtable
 bigtable-2006
 bitcoin
@@ -46,6 +47,7 @@ clip
 cockroachdb-2020
 codd-1970
 codd-1979-extending
+coeffect-petricek
 cognitive-load-theory
 comer-1979-btree
 compcert
@@ -209,6 +211,7 @@ rlhf-christiano
 rocksdb-2017
 rocksdb-lsm
 rsa
+saga-1987
 sagiv-shape-analysis
 salsa-adapton
 sam
@@ -318,6 +321,7 @@ bitcoin-core
 boxen
 broot
 browser-use
+btop
 bullmq
 bun
 caddy
@@ -369,6 +373,7 @@ echo
 effect
 elasticsearch
 element-android
+element-web
 elysia
 emotion
 encore
@@ -548,6 +553,7 @@ rspack
 safe-contracts
 salvo
 sanic
+scipy
 scroll
 sd
 sentry

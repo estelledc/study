@@ -163,5 +163,6 @@ go run ./cmd/dendrite-demo-pinecone --listen :8008
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 

@@ -159,6 +159,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
+- [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful

@@ -145,6 +145,7 @@ rg --no-ignore "foo"         # 等价于 -u
 
 - [[bat]] —— bat — 现代 cat 替代
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
