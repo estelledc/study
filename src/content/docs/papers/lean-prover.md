@@ -1,0 +1,149 @@
+---
+title: Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
+来源: 'de Moura & Ullrich, "The Lean 4 Theorem Prover and Programming Language", CADE 2021'
+日期: 2026-05-30
+分类: 编程语言
+难度: 高级
+---
+
+## 是什么
+
+**Lean 4** 是一个**既能证明数学定理、又能像 OCaml 一样跑得飞快的编程语言**。日常类比：以前你写文章用 Word，写代码用 IDE，写数学证明用 LaTeX——三套工具不互通。Lean 4 像一个全能编辑器，写定理、写程序、写宏扩展、改语法解析器，**全用同一种语言**。
+
+它的特别之处在于"自举"：**Lean 4 的编译器、elaborator、parser 全用 Lean 4 自己写**。Lean 3 时代内核是 C++ 写的，想加新功能就得改 C++ 重新编译；Lean 4 把所有这些都搬到 Lean 里，用户随时能改。
+
+```lean
+def or : Bool → Bool → Bool
+  | true,  _ => true
+  | false, b => b
+
+theorem or_true (b : Bool) : or true b = true := rfl
+```
+
+上面四行：**前两行是程序**（or 函数），**后一行是数学证明**（or true b 恒等于 true）。同一个文件，同一个语言。
+
+## 为什么重要
+
+不理解 Lean 4 的设计，下面这些事都没法解释：
+
+- 为什么数学家 **Peter Scholze 把 Liquid Tensor Conjecture** 拿到 Lean 上让计算机验证
+- 为什么 **mathlib4** 半百万行的形式数学库越长越快，没在性能上垮掉
+- 为什么 Lean 4 比 Coq / Agda 更受新一代形式数学社区欢迎——核心是性能 + 元编程开放
+- 为什么"用证明助手当通用编程语言"这个想法 30 年来第一次像真的（FBIP + 编 C）
+
+## 核心要点
+
+Lean 4 的革命性在 **四件事**：
+
+1. **自举**：Lean 4 的内核之外的全部组件——parser、elaborator、tactic、code generator——都用 Lean 写。类比：Word 的菜单按钮全是 Word 的宏，用户随时改。
+
+2. **卫生宏（hygienic macros）**：借鉴 Scheme 家族，用 `` `(...)`` 引用语法树、`$x` 反引用——同时解决"语法可扩展"和"名字捕获不出 bug"两个老问题。
+
+3. **Tabled typeclass resolution**：用 discrimination tree 索引 + 记忆化的 λ-Prolog 解释器，把 Lean 3 在 mathlib 里指数爆炸的 typeclass 解析压回多项式时间。
+
+4. **Functional but in-place（FBIP）**：纯函数式代码 + 引用计数，**当对象不被共享时就地改**——树更新、列表 map 都能 0 分配，性能跟 ocamlopt / GHC 比肩。
+
+## 实践案例
+
+### 案例 1：写一个 Boolean 表达式简化器（论文范例）
+
+```lean
+inductive BoolExpr where
+  | var (name : String)
+  | val (b : Bool)
+  | or  (p q : BoolExpr)
+  | not (p : BoolExpr)
+
+def simplify : BoolExpr → BoolExpr
+  | .or p q => mkOr (simplify p) (simplify q)
+  | .not p  => mkNot (simplify p)
+  | e       => e
+```
+
+**逐部分**：`inductive` 定义递归数据类型；`def` 定义函数；模式匹配跟 OCaml / Haskell 一样。这段代码**既是程序又能被证明正确**——下面写一行 `theorem denote_simplify : ... := by induction p ...` 就能形式化证明"简化后语义不变"。
+
+### 案例 2：用宏定义嵌入式 DSL
+
+```lean
+syntax "`[BExpr|" term "]" : term
+macro_rules
+  | `(`[BExpr| $x:ident]) => `(BoolExpr.var $(quote x.getId.toString))
+  | `(`[BExpr| $p ∨ $q])  => `(BoolExpr.or `[BExpr| $p] `[BExpr| $q])
+```
+
+这几行让你可以写 `` `[BExpr| p ∨ q] `` 而不是 `BoolExpr.or (BoolExpr.var "p") (BoolExpr.var "q")`。**关键是 hygienic**：宏里临时变量不会和用户代码里同名变量打架。
+
+### 案例 3：FBIP 让 map 0 分配
+
+```lean
+def map : (α → β) → List α → List β
+  | _, []      => []
+  | f, a :: as => f a :: map f as
+```
+
+写法跟教科书一样纯函数式。但 Lean 4 编译时如果 `as` 引用计数为 1（没人共享），生成的 C 代码**直接就地改 cons cell**，不分配新 cell。性能跟手写 C 接近——这是 Perceus（Reinking 等 2020）reference counting 的成果。
+
+## 踩过的坑
+
+1. **Lean 3 → Lean 4 不是小升级**：语法改了、元编程接口大改、tactic 写法不同。老 mathlib 整体迁移到 mathlib4 花了好几年，期间生态分裂。
+
+2. **FBIP 性能依赖『不被共享』**：写 `let xs := big_list in (xs, xs)` 就让 xs 引用计数 = 2，下一步任何更新都退化成分配新对象。读源码看不到这一层，只能跑 profile。
+
+3. **卫生宏的 quasiquotation 学习曲线陡**：`` `(foo $bar) `` 里 `$bar` 是反引用，但要懂 Syntax / TSyntax / `MacroM` 才能写复杂宏。新人会被语法绊住。
+
+4. **typeclass timeout 难 debug**：tabled resolution 比 Lean 3 快但不是万能，复杂 diamond instance 仍可能慢。报错只说"deterministic timeout"，根因藏在实例链里要靠 `set_option trace.Meta.synthInstance true` 翻日志。
+
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 形式化数学（mathlib4、Liquid Tensor、Perfectoid Spaces）
+- 写需要数学证明保证的程序（编译器、加密协议、智能合约）
+- 想把"程序 + 证明 + DSL + 元编程"写在同一份代码里
+
+**不适用**：
+
+- 只想快速 prototype 一个脚本——Lean 学习曲线比 Python 陡两个数量级
+- 团队不熟依赖类型——elaborator 的报错会让人绝望
+- 需要成熟商用库（Web 框架、机器学习库）——Lean 4 生态还在早期
+- 经典 LCF 风格的工业证明（Isabelle/HOL）——那边自动化更成熟
+
+## 历史小故事（可跳过）
+
+- **2013 年**：Leonardo de Moura 在 Microsoft Research 启动 Lean 项目，目标是给 SMT 求解器（他做过 Z3）找一个更好的搭档——基于 Calculus of Inductive Constructions。
+- **2017 年**：Lean 3 + mathlib 启动。**Kevin Buzzard 的 Xena 项目**把本科生数学搬上 Lean，社区开始扩张。
+- **2020 年**：Peter Scholze 抛出 **Liquid Tensor Experiment** 挑战——把他自己都不完全相信的定理放上 Lean 让计算机验证。一年内完成。
+- **2021 年**：de Moura + 博士生 Sebastian Ullrich 发布 Lean 4，这篇 CADE 论文。从 C++ 内核重写为 Lean 自举。
+- **2023-2025 年**：mathlib4 迁移完成，Lean 4 成为形式数学社区的事实标准。
+
+## 学到什么
+
+1. **自举是终极开放**：把编译器自己用目标语言写一遍，用户改语言等于写普通代码——这是 Smalltalk / Lisp 的老智慧，Lean 把它带到依赖类型世界
+2. **性能是采用率的关键**：FBIP + 编 C 让"用证明助手做日常编程"第一次实用，决定了 Lean 4 vs Coq/Agda 的胜负手
+3. **卫生宏不只是技巧**：它是把"语法扩展"从字符串黑魔法升级到类型化变换，让 DSL 嵌入变得安全可组合
+4. **理论 + 工程合体**：CIC（数学）+ tabled resolution（PL 算法）+ Perceus（系统）三栈合一才长出 Lean 4
+5. **可扩展 vs 复杂度**：把 parser / elaborator 都开放给用户的代价是认知负担——能改一切意味着学的时候要懂一切，这是 Lean 4 入门陡的根因
+
+## 延伸阅读
+
+- 论文 PDF：[Lean 4 System Description (CADE 2021)](https://lean-lang.org/papers/lean4.pdf)
+- 教程书：[Theorem Proving in Lean 4](https://lean-lang.org/theorem_proving_in_lean4/)（官方零基础入门）
+- 教程书：[Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/)（David Thrane Christiansen 写）
+- mathlib4 源码：[github.com/leanprover-community/mathlib4](https://github.com/leanprover-community/mathlib4)
+- [[lean-tactics]] —— Lean 的 tactic 框架
+- [[calculus-of-constructions]] —— Lean 的逻辑基础
+
+## 关联
+
+- [[calculus-of-constructions]] —— Lean 类型理论的祖先，Lean 4 在 CIC 上扩展归纳类型
+- [[martin-lof-itt]] —— 直觉主义类型论，CIC 的上游思想源
+- [[agda-norell]] —— 同源依赖类型语言，Lean 4 在元编程开放性上做得更激进
+- [[idris-brady]] —— 把依赖类型当通用语言的另一条路，Lean 4 走得更远
+- [[lean-tactics]] —— Lean 的 tactic 系统在 Lean 4 用 Lean 自己写
+- [[scala-macros]] —— 语法宏的另一种实现路线，Scala 选了字符串/AST 混合
+- [[peyton-jones-stg]] —— Lean 4 code generator 借鉴 GHC 的程序变换技术
+- [[hindley-milner]] —— HM 是简单类型推导的起点，Lean 4 在依赖类型层做更复杂的 elaboration
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
