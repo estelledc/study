@@ -260,6 +260,7 @@ shannon-1948
 sillito-questions
 silt-2011
 simula-67
+sinfonia-2007
 skeen-3pc-1981
 skip-list-1990
 slam-microsoft
@@ -311,6 +312,7 @@ vit
 vllm
 volcano
 volcano-1994
+volta-architecture-2017
 voyager
 vr-1988
 vr-revisited-2012
@@ -318,6 +320,7 @@ wadler-prettier
 wam-warren
 word2vec
 xla-compiler
+z3-2008
 zab-2011
 zgc
 zk-snark
@@ -354,6 +357,7 @@ bandwhich
 bat
 besu
 better-auth
+bigbluebutton
 biome
 bitcoin-core
 bottom
@@ -393,6 +397,7 @@ cosmos-sdk
 cosmwasm
 curve
 d3
+dasel
 dask
 date-fns
 dayjs
@@ -472,6 +477,7 @@ ink
 inngest
 ipfs
 jaeger
+jax
 jest
 jimp
 jotai

@@ -182,6 +182,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
+- [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
 - [[jax]] —— JAX — Google 函数式数值计算
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题

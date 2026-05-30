@@ -161,5 +161,8 @@ dasel -r yaml -w json -f docker-compose.yaml '.services.web'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
+- [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
+- [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
+- [[jq]] —— jq — JSON 的 sed/awk
 

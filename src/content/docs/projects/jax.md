@@ -156,5 +156,11 @@ def step(params, x, y):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[flax]] —— Flax — JAX 上的神经网络库
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[ssa]] —— SSA — 静态单赋值形式
 

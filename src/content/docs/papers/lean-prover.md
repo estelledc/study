@@ -152,6 +152,7 @@ def map : (α → β) → List α → List β
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
+- [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
