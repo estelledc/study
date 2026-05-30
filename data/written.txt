@@ -137,6 +137,7 @@ reps-ifds
 resnet
 retro
 reynolds-definitional-interpreters
+reynolds-separation-logic
 rlhf-christiano
 rocksdb-lsm
 rsa
@@ -157,6 +158,7 @@ sleeper-agents
 smalltalk-80
 snowflake
 spanner
+spanner-2012
 sparse-autoencoders
 ssa
 stable-diffusion
@@ -188,6 +190,7 @@ zgc
 zk-snark
 
 # projects
+aave-v3
 actix-web
 affine
 ag-grid
@@ -309,6 +312,7 @@ mcp-ts-sdk
 meilisearch
 metamask
 micromark
+micronaut
 midscene
 mikro-orm
 milvus
