@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 334 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 337 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：334 篇
+- **总数**：337 篇
 - **已分类**：143
-- **未分类**：191（落入"其他 / 待分类"段）
+- **未分类**：194（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 191 |
+| [其他 / 待分类](#其他--待分类) | 194 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 191 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 194 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -320,6 +320,7 @@ sidebar:
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
+| `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
@@ -435,6 +436,7 @@ sidebar:
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |
 | `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) |
+| `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
@@ -461,6 +463,7 @@ sidebar:
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
+| `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) |
 | `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) |
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |
@@ -502,7 +505,7 @@ sidebar:
 
 ---
 
-## 全部 334 篇（字母序）
+## 全部 337 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -534,6 +537,7 @@ sidebar:
 | `bigtable` | [Bigtable — Google 把行级随机读写做到 PB 级的存储](/study/papers/bigtable/) | 数据库 |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 其他 |
 | `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
+| `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 其他 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
@@ -719,6 +723,7 @@ sidebar:
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 其他 |
 | `no-silver-bullet` | [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) | 其他 |
+| `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) | 其他 |
 | `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
@@ -771,6 +776,7 @@ sidebar:
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 其他 |
+| `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) | 其他 |
 | `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | 其他 |

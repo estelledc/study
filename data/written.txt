@@ -138,7 +138,9 @@ hindley-milner
 hlc-2014
 hnsw-2018
 hoare-logic
+hol-light-2009
 holzmann-spin-1997
+hopper-architecture-2022
 hotspot-server-compiler
 http-2
 huffman-1952
@@ -174,6 +176,7 @@ lerner-seminal
 lieberman-realtime-gc
 linear-scan-reg-alloc
 linear-types
+linearizability-1990
 liquid-types
 llama
 llava
@@ -408,6 +411,7 @@ dasel
 dask
 date-fns
 dayjs
+deepspeed
 dendrite
 dgraph
 dify
@@ -518,6 +522,7 @@ lightningcss
 lingui
 listr2
 litestar
+liveblocks
 llamaindex
 lottie
 lsd
@@ -728,6 +733,7 @@ webpack
 why-did-you-render
 wormhole
 wretch
+xh
 xstate
 yargs
 yjs

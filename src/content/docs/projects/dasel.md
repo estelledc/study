@@ -161,6 +161,7 @@ dasel -r yaml -w json -f docker-compose.yaml '.services.web'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[curlie]] —— curlie — curl 的能力 + HTTPie 的语法
 - [[fx]] —— fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 - [[gron]] —— gron — 把 JSON 拍平成 grep 能吃的赋值行
 - [[httpie]] —— HTTPie — curl 的人话版本

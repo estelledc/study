@@ -166,5 +166,6 @@ Raft 的快照之所以比 Chandy-Lamport 简单——因为 Raft 已经有单 l
 - [[ntp-mills-1991]] —— NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法
+- [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 - [[sinfonia-2007]] —— Sinfonia 2007 — 把分布式协议降级成数据结构操作
 

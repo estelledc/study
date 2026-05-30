@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 409 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 412 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：409 个
+- **总数**：412 个
 - **已分类**：206
-- **未分类**：203（落入"其他 / 待分类"段）
+- **未分类**：206（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 203 |
+| [其他 / 待分类](#其他--待分类) | 206 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 203 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 206 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -541,6 +541,7 @@ sidebar:
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
+| `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
@@ -610,6 +611,7 @@ sidebar:
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
+| `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
@@ -659,6 +661,7 @@ sidebar:
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
+| `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
 | `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) |
@@ -705,7 +708,7 @@ sidebar:
 
 ---
 
-## 全部 409 个（字母序）
+## 全部 412 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -779,6 +782,7 @@ sidebar:
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | 其他 |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | 其他 |
+| `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | 其他 |
@@ -909,6 +913,7 @@ sidebar:
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | 其他 |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | 其他 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
+| `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) | 其他 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
 | `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
@@ -1019,6 +1024,7 @@ sidebar:
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
+| `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |

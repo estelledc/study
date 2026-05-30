@@ -162,6 +162,7 @@ Qed.
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
+- [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 

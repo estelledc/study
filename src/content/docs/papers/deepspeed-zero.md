@@ -142,6 +142,5 @@ accelerate launch train.py
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[megatron-lm]] —— Megatron-LM — NVIDIA 大规模训练框架
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 

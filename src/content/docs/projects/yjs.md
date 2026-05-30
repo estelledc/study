@@ -165,4 +165,5 @@ notes.set('note-1', { title: '...', body: '...' })
 - [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[sharedb]] —— ShareDB — 基于 OT 的实时数据库
 

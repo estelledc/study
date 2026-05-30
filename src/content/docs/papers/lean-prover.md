@@ -158,6 +158,7 @@ def map : (α → β) → List α → List β
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
+- [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
