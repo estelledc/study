@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"shadcn-ui","area":"projects","path":"src/content/docs/projects/shadcn-ui.md","score":4,"reasons":["lines:759>250","legacy-frontmatter","h2-hits:1/11"],"lines":759,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"stagehand","area":"projects","path":"src/content/docs/projects/stagehand.md","score":4,"reasons":["lines:591>250","legacy-frontmatter","h2-hits:1/11"],"lines":591,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"steel-browser","area":"projects","path":"src/content/docs/projects/steel-browser.md","score":4,"reasons":["lines:822>250","legacy-frontmatter","h2-hits:1/11"],"lines":822,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"storybook","area":"projects","path":"src/content/docs/projects/storybook.md","score":4,"reasons":["lines:655>250","legacy-frontmatter","h2-hits:0/11"],"lines":655,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"swr","area":"projects","path":"src/content/docs/projects/swr.md","score":4,"reasons":["lines:639>250","legacy-frontmatter","h2-hits:1/11"],"lines":639,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
@@ -30,7 +28,6 @@
 {"slug":"date-fns","area":"projects","path":"src/content/docs/projects/date-fns.md","score":3,"reasons":["lines:446>250","h2-hits:1/11"],"lines":446,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"dayjs","area":"projects","path":"src/content/docs/projects/dayjs.md","score":3,"reasons":["lines:490>250","h2-hits:1/11"],"lines":490,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"dnd-kit","area":"projects","path":"src/content/docs/projects/dnd-kit.md","score":3,"reasons":["lines:590>250","h2-hits:1/11"],"lines":590,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"ebpf","area":"papers","path":"src/content/docs/papers/ebpf.md","score":3,"reasons":["lines:662>250","h2-hits:1/11"],"lines":662,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"echarts","area":"projects","path":"src/content/docs/projects/echarts.md","score":3,"reasons":["lines:493>250","h2-hits:2/11"],"lines":493,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"elysia","area":"projects","path":"src/content/docs/projects/elysia.md","score":3,"reasons":["lines:442>250","h2-hits:2/11"],"lines":442,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"emotion","area":"projects","path":"src/content/docs/projects/emotion.md","score":3,"reasons":["lines:467>250","h2-hits:1/11"],"lines":467,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
@@ -38,7 +35,6 @@
 {"slug":"express","area":"projects","path":"src/content/docs/projects/express.md","score":3,"reasons":["lines:433>250","h2-hits:2/11"],"lines":433,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"fabric-js","area":"projects","path":"src/content/docs/projects/fabric-js.md","score":3,"reasons":["lines:485>250","h2-hits:1/11"],"lines":485,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"fastify","area":"projects","path":"src/content/docs/projects/fastify.md","score":3,"reasons":["lines:648>250","h2-hits:1/11"],"lines":648,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"flash-attention","area":"papers","path":"src/content/docs/papers/flash-attention.md","score":3,"reasons":["lines:699>250","h2-hits:0/11"],"lines":699,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"gfs","area":"papers","path":"src/content/docs/papers/gfs.md","score":3,"reasons":["lines:811>250","h2-hits:1/11"],"lines":811,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"got","area":"projects","path":"src/content/docs/projects/got.md","score":3,"reasons":["lines:546>250","h2-hits:1/11"],"lines":546,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"hoare-logic","area":"papers","path":"src/content/docs/papers/hoare-logic.md","score":3,"reasons":["lines:647>250","h2-hits:0/11"],"lines":647,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}

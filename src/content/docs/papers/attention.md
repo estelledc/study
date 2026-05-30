@@ -141,7 +141,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dit]] —— DiT — Diffusion Transformer
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU

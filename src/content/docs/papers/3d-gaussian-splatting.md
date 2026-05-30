@@ -153,5 +153,6 @@ for g in gaussians:
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dit]] —— DiT — Diffusion Transformer
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[vit]] —— ViT — Vision Transformer
 

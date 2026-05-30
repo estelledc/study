@@ -154,6 +154,7 @@ npm run docusaurus docs:version 1.0
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[react]] —— React UI 组件库
+- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[webpack]] —— webpack 模块打包
 

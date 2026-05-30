@@ -160,6 +160,7 @@ pool.liquidationCall(
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议

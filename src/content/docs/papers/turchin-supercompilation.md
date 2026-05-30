@@ -149,5 +149,10 @@ factI n = go 1 1 where
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
+- [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 

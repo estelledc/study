@@ -165,6 +165,7 @@ const predictedAddr = await calculateProxyAddress({
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架

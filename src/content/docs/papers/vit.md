@@ -155,6 +155,7 @@ ViT 是 2020 年代视觉的 ResNet 时刻——架构转折点。
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
 - [[dit]] —— DiT — Diffusion Transformer
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[mae]] —— MAE — Masked Autoencoders
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything

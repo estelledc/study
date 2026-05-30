@@ -165,6 +165,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题

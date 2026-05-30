@@ -150,6 +150,7 @@ comet.buyCollateral(WETH, 0, 1e18, msg.sender);
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[bitcoin]] —— Bitcoin 白皮书
+- [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议

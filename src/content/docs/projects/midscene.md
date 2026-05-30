@@ -167,5 +167,6 @@ flow:
 - [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
+- [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
 - [[vitest]] —— Vitest — Vite 原生测试框架
 
