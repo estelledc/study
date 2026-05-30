@@ -178,6 +178,7 @@ docker run -d \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架

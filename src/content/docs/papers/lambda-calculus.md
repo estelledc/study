@@ -168,6 +168,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
@@ -179,6 +180,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

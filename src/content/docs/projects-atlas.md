@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 299 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 301 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：299 个
+- **总数**：301 个
 - **已分类**：206
-- **未分类**：93（落入"其他 / 待分类"段）
+- **未分类**：95（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 93 |
+| [其他 / 待分类](#其他--待分类) | 95 |
 
 ---
 
@@ -100,7 +100,7 @@ sidebar:
 | 项目 | 描述 |
 |---|---|
 | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) |  |
-| [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) |  |
+| [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) |  |
 | [ky 极简 fetch-based HTTP 客户端](/study/projects/ky/) |  |
 | [ofetch — UnJS 现代 fetch 包装](/study/projects/ofetch/) |  |
 | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) |  |
@@ -123,7 +123,7 @@ sidebar:
 
 | 项目 | 描述 |
 |---|---|
-| [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) |  |
+| [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) |  |
 | [Lingui 编译期提取的 React i18n](/study/projects/lingui/) |  |
 | [next-intl Next.js App Router 专用 i18n](/study/projects/next-intl/) |  |
 | [react-intl FormatJS ICU MessageFormat 标准 i18n](/study/projects/react-intl/) |  |
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 93 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 95 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -524,6 +524,7 @@ sidebar:
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
+| `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
@@ -578,6 +579,7 @@ sidebar:
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
+| `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
@@ -595,7 +597,7 @@ sidebar:
 
 ---
 
-## 全部 299 个（字母序）
+## 全部 301 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -669,6 +671,7 @@ sidebar:
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
 | `enquirer` | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) | Terminal / 终端 |
+| `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) | 其他 |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) | 其他 |
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
@@ -686,7 +689,7 @@ sidebar:
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
-| `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
+| `got` | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
@@ -696,7 +699,7 @@ sidebar:
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
-| `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
+| `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写 mutable 代码却产出 immutable 状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | 数据应用 / SaaS |
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
@@ -830,6 +833,7 @@ sidebar:
 | `shiki` | [shiki TextMate Grammar 驱动的语法高亮](/study/projects/shiki/) | Markdown / 解析 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
+| `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) | 其他 |
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
 | `sortablejs` | [Sortable.js 框架无关 DnD 库](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |

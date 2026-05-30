@@ -164,6 +164,7 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[reservoir-sdk]] —— Reservoir SDK — 跨市场 NFT 聚合
 - [[scroll]] —— Scroll — 字节码级 zkEVM
+- [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

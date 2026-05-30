@@ -159,6 +159,7 @@ deck sync --state kong.yaml                # CI 里推回 Kong
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关

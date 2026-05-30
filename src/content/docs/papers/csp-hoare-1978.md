@@ -151,5 +151,11 @@ case v := <-chB: handleB(v)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
+- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

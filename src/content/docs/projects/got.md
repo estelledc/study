@@ -170,3 +170,6 @@ for await (const item of got.paginate<Item>("items", {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+

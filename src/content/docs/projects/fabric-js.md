@@ -150,5 +150,10 @@ fabric 没有官方 React 包装。这件事很反直觉——一个 2008 年起
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 

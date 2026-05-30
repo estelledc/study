@@ -152,6 +152,7 @@ export default Page
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具

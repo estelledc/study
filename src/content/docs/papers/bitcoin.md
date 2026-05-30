@@ -158,5 +158,6 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[reed-solomon-1960]] —— Reed-Solomon 编码
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[rsa]] —— RSA 公钥密码
+- [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

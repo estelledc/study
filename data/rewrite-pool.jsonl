@@ -1,8 +1,6 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"fabric-js","area":"projects","path":"src/content/docs/projects/fabric-js.md","score":3,"reasons":["lines:485>250","h2-hits:1/11"],"lines":485,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"fastify","area":"projects","path":"src/content/docs/projects/fastify.md","score":3,"reasons":["lines:648>250","h2-hits:1/11"],"lines":648,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"got","area":"projects","path":"src/content/docs/projects/got.md","score":3,"reasons":["lines:546>250","h2-hits:1/11"],"lines":546,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"i18next","area":"projects","path":"src/content/docs/projects/i18next.md","score":3,"reasons":["lines:451>250","h2-hits:2/11"],"lines":451,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"immer","area":"projects","path":"src/content/docs/projects/immer.md","score":3,"reasons":["lines:455>250","h2-hits:1/11"],"lines":455,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
