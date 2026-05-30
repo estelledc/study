@@ -153,5 +153,9 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[ssa]] —— SSA — 静态单赋值形式
 

@@ -177,6 +177,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
+- [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
