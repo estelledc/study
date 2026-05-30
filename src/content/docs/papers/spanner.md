@@ -166,6 +166,7 @@ GROUP BY customer_id;
 - [[raft]] —— Raft — 易理解的共识算法
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

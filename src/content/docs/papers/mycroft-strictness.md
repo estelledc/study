@@ -159,6 +159,7 @@ sum_worker (x:xs) = case x of I# x# ->
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么

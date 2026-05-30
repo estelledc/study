@@ -169,6 +169,7 @@ D(M):
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[rsa]] —— RSA 公钥密码
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义

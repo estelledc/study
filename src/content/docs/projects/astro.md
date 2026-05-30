@@ -204,7 +204,9 @@ export const collections = { blog }
 - [[micromark]] —— micromark 流式 CommonMark 状态机解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
+- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[preact]] —— Preact — 3KB React 替代
 - [[react]] —— React UI 组件库
 - [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架

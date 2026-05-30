@@ -169,5 +169,6 @@ export default {
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
+- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
 

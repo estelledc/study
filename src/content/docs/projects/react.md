@@ -170,6 +170,7 @@ function Greeting({ name }) {
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[next-js]] —— Next.js — React 全栈框架
+- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[preact]] —— Preact — 3KB React 替代

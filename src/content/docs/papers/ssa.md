@@ -178,6 +178,7 @@ entry:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[llvm]] —— LLVM — 模块化编译器框架

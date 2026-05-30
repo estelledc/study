@@ -172,5 +172,6 @@ networks: {
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 - [[webpack]] —— webpack 模块打包
 

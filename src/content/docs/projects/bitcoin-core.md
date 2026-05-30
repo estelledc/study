@@ -164,4 +164,5 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
+- [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 

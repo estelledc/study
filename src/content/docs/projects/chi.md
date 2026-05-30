@@ -154,5 +154,7 @@ r.Route("/api/v1/users", func(r chi.Router) {
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+- [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

@@ -152,6 +152,7 @@ npm run docusaurus docs:version 1.0
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
+- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[react]] —— React UI 组件库
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[webpack]] —— webpack 模块打包
