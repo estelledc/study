@@ -158,5 +158,6 @@ pipe.score(X_test, y_test)
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
+- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
 

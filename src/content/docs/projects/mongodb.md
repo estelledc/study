@@ -159,6 +159,7 @@ db.orders.aggregate([
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库
+- [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层

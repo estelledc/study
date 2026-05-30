@@ -165,6 +165,7 @@ llava
 llvm
 lmdb-2011
 local-type-inference
+logoot-2010
 lsm-tree-1996
 mae
 mamba
@@ -241,6 +242,7 @@ silt-2011
 simula-67
 skeen-3pc-1981
 skip-list-1990
+slam-microsoft
 sleeper-agents
 smalltalk-80
 smr-1990
@@ -269,6 +271,7 @@ template-haskell
 theorems-for-free
 tidb-2020
 tigerbeetle
+tla-yu-tlc-1999
 tls-1.3
 tofte-talpin-regions
 tomita-glr
@@ -382,6 +385,7 @@ drizzle
 dropwizard
 duckdb
 duckdb-wasm
+duf
 dust
 echarts
 echo
@@ -548,6 +552,7 @@ prysm
 pulsar
 pyarrow
 pyth
+pytorch
 qdrant
 quarkus
 quart
@@ -653,6 +658,7 @@ vite
 vitepress
 vitest
 vllm
+vodozemac
 vue
 vue-i18n
 walletconnect

@@ -160,6 +160,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
@@ -208,6 +209,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 376 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 379 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：376 个
+- **总数**：379 个
 - **已分类**：206
-- **未分类**：170（落入"其他 / 待分类"段）
+- **未分类**：173（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 170 |
+| [其他 / 待分类](#其他--待分类) | 173 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 170 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 173 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -597,6 +597,7 @@ sidebar:
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
+| `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
@@ -617,6 +618,7 @@ sidebar:
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) |
 | `pytorch` | [PyTorch — 深度学习主流框架](/study/projects/pytorch/) |
+| `pytorch-lightning` | [PyTorch Lightning — PyTorch 训练循环抽象](/study/projects/pytorch-lightning/) |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
@@ -625,6 +627,7 @@ sidebar:
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
+| `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
@@ -672,7 +675,7 @@ sidebar:
 
 ---
 
-## 全部 376 个（字母序）
+## 全部 379 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -878,6 +881,7 @@ sidebar:
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
+| `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
 | `nestjs` | [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) | Web 框架 |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | 其他 |
@@ -927,6 +931,7 @@ sidebar:
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) | 其他 |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) | 其他 |
 | `pytorch` | [PyTorch — 深度学习主流框架](/study/projects/pytorch/) | 其他 |
+| `pytorch-lightning` | [PyTorch Lightning — PyTorch 训练循环抽象](/study/projects/pytorch-lightning/) | 其他 |
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) | 其他 |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
@@ -946,6 +951,7 @@ sidebar:
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) | 其他 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |
+| `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) | 其他 |
 | `rolldown` | [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | 构建工具 / Bundler |

@@ -154,6 +154,7 @@ Glances 在 9091 端口暴露 `/metrics`，Prometheus 配置里 scrape 它就能
 - [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
+- [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[prometheus]] —— Prometheus — 时序监控系统
 
