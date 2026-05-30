@@ -168,5 +168,6 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 

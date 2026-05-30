@@ -150,5 +150,9 @@ echo '.a { & .b { color: oklch(70% 0.15 240); } }' \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[bun]] —— Bun — JS 全能运行时
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

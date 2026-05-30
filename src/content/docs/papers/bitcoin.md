@@ -152,5 +152,6 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 - [[reed-solomon-1960]] —— Reed-Solomon 编码
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[rsa]] —— RSA 公钥密码
 

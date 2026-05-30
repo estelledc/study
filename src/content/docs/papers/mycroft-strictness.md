@@ -156,5 +156,12 @@ sum_worker (x:xs) = case x of I# x# ->
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
+- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 

@@ -162,6 +162,7 @@ def step(prog, state):
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋

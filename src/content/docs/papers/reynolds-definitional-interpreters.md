@@ -159,6 +159,7 @@ let run e = eval e [] (fun v -> v)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

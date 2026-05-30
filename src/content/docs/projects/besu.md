@@ -160,5 +160,6 @@ System.out.println("最新块号: " + bn.getBlockNumber());
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[prysm]] —— prysm — 用 Go 写的 Ethereum 共识层客户端
 - [[raft]] —— Raft — 易理解的共识算法
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 

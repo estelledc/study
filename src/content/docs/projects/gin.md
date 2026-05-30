@@ -155,6 +155,7 @@ r.POST("/users", func(c *gin.Context) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
