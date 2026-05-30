@@ -160,3 +160,12 @@ controller.abort();
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[elysia]] —— Elysia Bun-first TypeScript Web 框架
+- [[express]] —— Express Node.js 经典 Web 框架
+- [[i18next]] —— i18next framework-agnostic i18n 引擎
+- [[ky]] —— ky 极简 fetch-based HTTP 客户端
+- [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+- [[vue-i18n]] —— vue-i18n Vue 官方推荐 i18n
+- [[zod]] —— Zod — TypeScript-first schema 验证
+

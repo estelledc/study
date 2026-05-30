@@ -154,5 +154,11 @@ callbacks: {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
+- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[next-js]] —— Next.js — React 全栈框架
+- [[prisma]] —— Prisma — 类型安全 ORM
 - [[supabase]] —— Supabase — Firebase 的开源替代
+- [[sveltekit]] —— SvelteKit — Svelte 全栈框架
+- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 
