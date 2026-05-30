@@ -167,6 +167,7 @@ trainer = pl.Trainer(callbacks=[
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[flax]] —— Flax — JAX 上的神经网络库

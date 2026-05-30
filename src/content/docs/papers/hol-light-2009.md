@@ -157,6 +157,7 @@ No subgoals
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
+- [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言

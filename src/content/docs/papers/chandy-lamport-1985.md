@@ -168,4 +168,5 @@ Raft 的快照之所以比 Chandy-Lamport 简单——因为 Raft 已经有单 l
 - [[raft]] —— Raft — 易理解的共识算法
 - [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 - [[sinfonia-2007]] —— Sinfonia 2007 — 把分布式协议降级成数据结构操作
+- [[vogels-eventual-2009]] —— Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
 

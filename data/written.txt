@@ -27,6 +27,7 @@ biere-bmc-1999
 bigtable
 bigtable-2006
 bitcoin
+blackwell-architecture-2024
 boehm-gc
 borg
 brewer-cap-2000
@@ -212,6 +213,7 @@ neumann-2015-large-joins
 nieuwenhuis-dpll-t-2006
 no-silver-bullet
 ntp-mills-1991
+nuprl-1986
 openhands
 ot-1989
 pair-programming
@@ -264,6 +266,7 @@ self-customization
 self-pic
 selinger-1979
 sequel-1974
+sequential-consistency-1979
 shannon-1948
 sillito-questions
 silt-2011
@@ -405,6 +408,7 @@ continue
 conversations
 cosmos-sdk
 cosmwasm
+curlie
 curve
 d3
 dasel
@@ -535,6 +539,7 @@ matrix-js-sdk
 matrix-rust-sdk
 mattermost
 mcp-ts-sdk
+megatron-lm
 meilisearch
 metamask
 micromark
@@ -645,6 +650,7 @@ sd
 sentry
 sequelize
 shadcn-ui
+sharedb
 sharp
 shiki
 sia

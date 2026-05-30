@@ -155,3 +155,6 @@ Vogels 这篇默认结论是"全球部署 → 必须放弃 C"。[[spanner-2012]]
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

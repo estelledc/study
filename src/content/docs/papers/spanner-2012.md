@@ -188,6 +188,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
+- [[vogels-eventual-2009]] —— Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
 - [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
 - [[vr-revisited-2012]] —— VR Revisited 2012 — VR 协议的"工程化重写版"
 
