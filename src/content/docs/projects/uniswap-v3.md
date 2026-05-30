@@ -151,6 +151,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
+- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议

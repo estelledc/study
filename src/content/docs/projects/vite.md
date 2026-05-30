@@ -164,6 +164,7 @@ export default defineConfig({
 - [[react]] —— React UI 组件库
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rollup]] —— Rollup — ESM 优先的打包器
+- [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架

@@ -184,6 +184,7 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎

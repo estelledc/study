@@ -157,5 +157,12 @@ pool.liquidationCall(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
+- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

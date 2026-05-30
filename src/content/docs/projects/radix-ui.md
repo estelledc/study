@@ -159,5 +159,7 @@ export function MyTabs({ value, defaultValue, onValueChange }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[preact]] —— Preact — 3KB React 替代
+- [[react]] —— React UI 组件库
+- [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 

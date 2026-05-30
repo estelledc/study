@@ -176,6 +176,7 @@ const svgInline: Plugin = {
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rollup]] —— Rollup — ESM 优先的打包器
+- [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vitest]] —— Vitest — Vite 原生测试框架

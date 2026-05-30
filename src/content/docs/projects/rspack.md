@@ -157,3 +157,9 @@ compiler.hooks.compilation.tap('demo', (compilation) => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[webpack]] —— webpack 模块打包
+

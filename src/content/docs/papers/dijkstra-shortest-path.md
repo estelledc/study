@@ -156,5 +156,13 @@ h(v) 必须不高估真实剩余距离（admissible）才保证最优。Hart-Nil
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
+- [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[ssa]] —— SSA — 静态单赋值形式
+- [[turing-1936]] —— Turing 1936 可计算性
 

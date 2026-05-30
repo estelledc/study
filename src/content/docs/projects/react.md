@@ -178,6 +178,7 @@ function Greeting({ name }) {
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
+- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[stylex]] —— StyleX Meta 编译期 atomic CSS-in-JS
 - [[svelte]] —— Svelte — 编译时 UI 框架
