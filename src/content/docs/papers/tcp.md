@@ -149,3 +149,17 @@ OSError: [Errno 99] Cannot assign requested address
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[dns]] —— DNS Domain Name System
+- [[ebpf]] —— eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑
+- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
+- [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
+- [[io-uring]] —— io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
+- [[raft]] —— Raft — 易理解的共识算法
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[tls-1.3]] —— TLS 1.3 The Transport Layer Security Protocol Version 1.3
+

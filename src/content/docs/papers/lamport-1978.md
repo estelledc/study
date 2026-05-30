@@ -169,4 +169,5 @@ class LogEmitter:
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

@@ -150,5 +150,12 @@ window.ethereum.on('chainChanged', (chainId) => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
+- [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 

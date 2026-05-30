@@ -173,4 +173,5 @@ Property 'foo' does not exist on type 'Bar'. Did you mean 'baz'?
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
+- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 

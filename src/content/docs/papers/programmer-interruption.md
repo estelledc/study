@@ -156,4 +156,5 @@ brew install --cask activitywatch
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
+- [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 

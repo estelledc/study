@@ -149,5 +149,9 @@ file_text(file_id)              # input：你刚改的 .rs 文件文本
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[adapton]] —— Adapton — 增量计算
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
+- [[ssa]] —— SSA — 静态单赋值形式
 

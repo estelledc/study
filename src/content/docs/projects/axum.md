@@ -186,4 +186,5 @@ let app = Router::new()
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

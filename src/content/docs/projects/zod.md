@@ -193,10 +193,12 @@ function LoginForm() {
 - [[ky]] —— ky 极简 fetch-based HTTP 客户端
 - [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
+- [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
 - [[nestjs]] —— NestJS Angular 风格的企业级 Node.js 框架
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form Uncontrolled-first React 表单库
 - [[react-intl]] —— react-intl FormatJS ICU MessageFormat 标准 i18n
+- [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[sortablejs]] —— Sortable.js 框架无关 DnD 库
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC

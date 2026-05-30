@@ -158,6 +158,7 @@ const openLog = Effect.acquireRelease(
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[zod]] —— Zod — TypeScript-first schema 验证
