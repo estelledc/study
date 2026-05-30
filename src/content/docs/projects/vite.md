@@ -179,6 +179,7 @@ export default defineConfig({
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vitest]] —— Vitest — Vite 原生测试框架
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 - [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 - [[webpack]] —— webpack 模块打包
 

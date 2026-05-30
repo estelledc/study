@@ -156,6 +156,7 @@ double n = (2 * n , refl)
 
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言

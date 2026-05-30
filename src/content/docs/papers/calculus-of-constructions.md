@@ -152,6 +152,7 @@ Qed.
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言

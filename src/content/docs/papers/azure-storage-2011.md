@@ -152,6 +152,7 @@ acct/cont/file | { size, etag, blocks=[...] }
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[chain-replication-2004]] —— Chain Replication — 把多副本排成流水线，简单且强一致
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳

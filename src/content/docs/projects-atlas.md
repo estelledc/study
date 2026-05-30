@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 345 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 347 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：345 个
+- **总数**：347 个
 - **已分类**：206
-- **未分类**：139（落入"其他 / 待分类"段）
+- **未分类**：141（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 139 |
+| [其他 / 待分类](#其他--待分类) | 141 |
 
 ---
 
@@ -103,7 +103,7 @@ sidebar:
 | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) |  |
 | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) |  |
 | [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) |  |
-| [wretch — fluent FP fetch wrapper](/study/projects/wretch/) |  |
+| [wretch — 把 fetch 写成一条链](/study/projects/wretch/) |  |
 
 ## 日期时间
 
@@ -127,7 +127,7 @@ sidebar:
 | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) |  |
 | [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) |  |
 | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) |  |
-| [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) |  |
+| [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) |  |
 
 ## 构建工具 / Bundler
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 139 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 141 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -529,6 +529,7 @@ sidebar:
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
+| `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) |
 | `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
@@ -606,6 +607,7 @@ sidebar:
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
+| `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
@@ -641,7 +643,7 @@ sidebar:
 
 ---
 
-## 全部 345 个（字母序）
+## 全部 347 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -702,6 +704,7 @@ sidebar:
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | CLI / 命令行工具 |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | 其他 |
+| `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) | 其他 |
 | `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) | 其他 |
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
@@ -899,6 +902,7 @@ sidebar:
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) | 其他 |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | 其他 |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | 其他 |
+| `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
@@ -973,7 +977,7 @@ sidebar:
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |
 | `vllm` | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) | AI 应用 / Agent 平台 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
-| `vue-i18n` | [vue-i18n Vue 官方推荐 i18n](/study/projects/vue-i18n/) | i18n 国际化 |
+| `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | 其他 |
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |
@@ -982,7 +986,7 @@ sidebar:
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
 | `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
-| `wretch` | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) | HTTP 客户端 |
+| `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |

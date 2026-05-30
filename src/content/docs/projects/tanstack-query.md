@@ -172,6 +172,7 @@ function AddTodo() {
 - [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[wretch]] —— wretch — 把 fetch 写成一条链
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zustand]] —— Zustand — 极简 React 状态管理
 

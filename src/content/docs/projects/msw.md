@@ -168,4 +168,5 @@ test('renders error state', async () => {
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 - [[vitest]] —— Vitest — Vite 原生测试框架
+- [[wretch]] —— wretch — 把 fetch 写成一条链
 
