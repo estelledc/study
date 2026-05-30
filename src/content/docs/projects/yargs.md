@@ -158,3 +158,9 @@ yargs(hideBin(process.argv))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
+- [[oclif]] —— oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架
+

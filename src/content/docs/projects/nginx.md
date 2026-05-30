@@ -170,6 +170,7 @@ location /static/ {
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[express]] —— Express — Node.js 最经典的 Web 框架

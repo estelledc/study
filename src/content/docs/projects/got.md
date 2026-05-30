@@ -176,4 +176,5 @@ for await (const item of got.paginate<Item>("items", {
 - [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
 - [[ofetch]] —— ofetch — Nuxt 默认的现代 fetch 包装
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
+- [[wretch]] —— wretch — 把 fetch 写成一条链
 

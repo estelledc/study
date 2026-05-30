@@ -169,6 +169,7 @@ LIMIT 5;
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[dgraph]] —— Dgraph — 分布式图数据库
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[docker]] —— Docker — 容器化平台

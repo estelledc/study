@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 272 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 274 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：272 篇
+- **总数**：274 篇
 - **已分类**：143
-- **未分类**：129（落入"其他 / 待分类"段）
+- **未分类**：131（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 129 |
+| [其他 / 待分类](#其他--待分类) | 131 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 129 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 131 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -331,6 +331,7 @@ sidebar:
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
+| `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) |
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
@@ -398,6 +399,7 @@ sidebar:
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
+| `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
@@ -440,7 +442,7 @@ sidebar:
 
 ---
 
-## 全部 272 篇（字母序）
+## 全部 274 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -499,6 +501,7 @@ sidebar:
 | `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) | 其他 |
+| `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) | 其他 |
 | `crdt-json` | [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | 其他 |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 其他 |
@@ -627,6 +630,7 @@ sidebar:
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | 其他 |
 | `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
+| `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) | 其他 |
 | `push-pull-frp` | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) | 编译器 / 编程语言理论 |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) | 其他 |
 | `quic` | [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) | 网络协议 |

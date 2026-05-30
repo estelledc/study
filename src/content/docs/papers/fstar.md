@@ -150,5 +150,13 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
+- [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
+- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
+- [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 

@@ -168,4 +168,5 @@ main().catch((err) => {
 - [[oclif]] —— oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
 

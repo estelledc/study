@@ -184,6 +184,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
+- [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义

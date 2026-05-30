@@ -1,6 +1,4 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:680>250","legacy-frontmatter","h2-hits:1/11"],"lines":680,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:459>250","legacy-frontmatter","h2-hits:1/11"],"lines":459,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:843>250","legacy-frontmatter","h2-hits:1/11"],"lines":843,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"vue-i18n","area":"projects","path":"src/content/docs/projects/vue-i18n.md","score":3,"reasons":["lines:436>250","h2-hits:2/11"],"lines":436,"h2_hits":2,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"wretch","area":"projects","path":"src/content/docs/projects/wretch.md","score":3,"reasons":["lines:614>250","h2-hits:1/11"],"lines":614,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"yargs","area":"projects","path":"src/content/docs/projects/yargs.md","score":3,"reasons":["lines:711>250","h2-hits:0/11"],"lines":711,"h2_hits":0,"status":"available","claimed_by":null,"attempts":0}

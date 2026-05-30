@@ -152,6 +152,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架

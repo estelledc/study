@@ -177,6 +177,7 @@ def secd_step(s, e, c, d):
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
+- [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 347 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 349 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：347 个
+- **总数**：349 个
 - **已分类**：206
-- **未分类**：141（落入"其他 / 待分类"段）
+- **未分类**：143（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 141 |
+| [其他 / 待分类](#其他--待分类) | 143 |
 
 ---
 
@@ -459,7 +459,7 @@ sidebar:
 | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) |  |
 | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) |  |
 | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) |  |
-| [yargs](/study/projects/yargs/) |  |
+| [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) |  |
 
 ## Terminal / 终端
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 141 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 143 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -534,6 +534,7 @@ sidebar:
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
+| `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
@@ -640,10 +641,11 @@ sidebar:
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
+| `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) |
 
 ---
 
-## 全部 347 个（字母序）
+## 全部 349 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -713,6 +715,7 @@ sidebar:
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
+| `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
@@ -988,9 +991,10 @@ sidebar:
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
-| `yargs` | [yargs](/study/projects/yargs/) | CLI / 命令行工具 |
+| `yargs` | [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | 其他 |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |
+| `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) | 其他 |
 | `zustand` | [Zustand — 极简 React 状态管理](/study/projects/zustand/) | 状态管理 |

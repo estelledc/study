@@ -149,7 +149,9 @@ S: "S 是假的。"
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明
