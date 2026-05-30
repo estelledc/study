@@ -164,6 +164,7 @@ if a then if b then x else y
 - [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[tomita-glr]] —— Tomita GLR — 让 LR 解析器扛得住歧义文法

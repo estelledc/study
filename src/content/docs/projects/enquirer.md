@@ -171,4 +171,5 @@ class Counter extends Prompt {
 
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
+- [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 

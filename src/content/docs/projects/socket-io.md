@@ -165,5 +165,6 @@ socket.on('save', async (data, cb) => {
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[redis]] —— Redis — 内存键值数据库
+- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

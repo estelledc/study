@@ -165,5 +165,6 @@ Clack 的设计可以拆成 **三块**：
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
+- [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 

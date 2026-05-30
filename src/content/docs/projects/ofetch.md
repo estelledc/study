@@ -152,4 +152,6 @@ const data = await $fetch<User[]>("/api/users");
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
+- [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
 

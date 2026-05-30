@@ -153,3 +153,8 @@ process.on('SIGINT', () => { clearInterval(id); process.stdout.write('\x1B[?25h\
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[boxen]] —— boxen — 给终端文本套个边框的事
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
+

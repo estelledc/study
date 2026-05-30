@@ -161,6 +161,7 @@ test('counter increments', () => {
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
+- [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[react]] —— React UI 组件库
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 

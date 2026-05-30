@@ -156,5 +156,6 @@ await new Listr(
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
+- [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[webpack]] —— webpack 模块打包
 

@@ -151,6 +151,7 @@ trait Compiler: salsa::Database {
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架

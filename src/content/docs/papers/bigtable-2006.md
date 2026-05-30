@@ -150,6 +150,7 @@ column families:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[ceph-2006]] —— Ceph — 让分布式文件系统不靠中心查表
