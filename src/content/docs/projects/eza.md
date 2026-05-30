@@ -150,6 +150,7 @@ eza 是开源项目"原作者不维护 → 社区 fork → fork 反超原作"的
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bat]] —— bat — 现代 cat 替代
+- [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）

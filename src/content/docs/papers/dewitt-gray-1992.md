@@ -152,6 +152,7 @@ GROUP BY 1;
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半

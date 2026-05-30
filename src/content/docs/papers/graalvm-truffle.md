@@ -159,4 +159,5 @@ console.log(py(21));  // 42
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
+- [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
 
