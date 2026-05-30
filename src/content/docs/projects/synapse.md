@@ -154,6 +154,7 @@ Matrix 的杀手锏是 **bridge**——通过中间程序把 IRC/XMPP/Slack/Disc
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

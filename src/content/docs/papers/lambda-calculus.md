@@ -178,12 +178,14 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
+- [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

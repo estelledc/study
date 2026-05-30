@@ -163,4 +163,5 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

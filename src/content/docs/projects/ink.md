@@ -164,4 +164,5 @@ test('counter increments', () => {
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[react]] —— React UI 组件库
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
+- [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
 

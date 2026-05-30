@@ -166,6 +166,7 @@ s := grpc.NewServer(grpc.UnaryInterceptor(loggingInterceptor))
 - [[capnproto]] —— Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
 - [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务

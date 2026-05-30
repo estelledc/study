@@ -35,6 +35,7 @@ cascades-1995
 cassandra-2010
 causal-abstraction
 ceph-2006
+chain-replication-2004
 cheney-gc
 chinchilla
 chubby
@@ -91,6 +92,7 @@ flink-2015
 foundationdb
 foundationdb-2021
 fsrs-spaced-repetition
+fstar
 g1-collector
 gadt-pjones
 game-semantics-pcf
@@ -328,6 +330,7 @@ cockroachdb
 codemirror
 commander
 compound-v3
+conduit
 connect-rpc
 continue
 cosmos-sdk
@@ -525,6 +528,7 @@ safe-contracts
 salvo
 sanic
 scroll
+sd
 sentry
 sequelize
 shadcn-ui

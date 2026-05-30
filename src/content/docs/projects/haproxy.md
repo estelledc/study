@@ -150,6 +150,7 @@ backend pg_pool
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关

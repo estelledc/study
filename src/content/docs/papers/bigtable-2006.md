@@ -156,6 +156,7 @@ column families:
 - [[ceph-2006]] —— Ceph — 让分布式文件系统不靠中心查表
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
+- [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
