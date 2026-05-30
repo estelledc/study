@@ -177,5 +177,6 @@ pub fn process(mut program: Program, _: ()) -> Program {
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rollup]] —— Rollup — ESM 优先的打包器
+- [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[webpack]] —— webpack 模块打包
 

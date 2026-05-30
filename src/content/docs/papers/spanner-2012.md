@@ -149,5 +149,13 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 

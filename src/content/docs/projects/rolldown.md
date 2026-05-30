@@ -149,5 +149,12 @@ npm install rolldown-vite
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
+- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
+- [[rollup]] —— Rollup — ESM 优先的打包器
+- [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
+- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

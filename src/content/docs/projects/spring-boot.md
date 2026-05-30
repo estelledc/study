@@ -194,4 +194,5 @@ management:
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
+- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 

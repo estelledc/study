@@ -151,18 +151,16 @@ OSError: [Errno 99] Cannot assign requested address
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[dns]] —— DNS Domain Name System
+- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[ebpf]] —— eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑
-- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[http-2]] —— HTTP/2 — Hypertext Transfer Protocol Version 2
 - [[io-uring]] —— io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

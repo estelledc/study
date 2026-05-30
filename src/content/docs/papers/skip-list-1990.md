@@ -158,6 +158,7 @@ map.firstKey();   // O(log n) 有序查询
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
+- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[redis]] —— Redis — 内存键值数据库
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

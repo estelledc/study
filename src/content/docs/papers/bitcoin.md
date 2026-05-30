@@ -145,6 +145,7 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链

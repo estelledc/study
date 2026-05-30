@@ -138,6 +138,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[minio]] —— MinIO — S3 兼容对象存储
@@ -147,4 +148,5 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
+- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 

@@ -146,7 +146,6 @@ ORDER BY date;
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
-- [[dns]] —— DNS Domain Name System
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[grafana]] —— Grafana — 监控可视化看板
@@ -160,6 +159,7 @@ ORDER BY date;
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[redis]] —— Redis — 内存键值数据库
+- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 

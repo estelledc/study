@@ -153,7 +153,6 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
-- [[dns]] —— DNS Domain Name System
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[ebpf]] —— eBPF (McCanne-Jacobson 1993 + Starovoitov 2014) — userspace 写程序，kernel 安全跑
 - [[etcd]] —— etcd — 分布式键值数据库
@@ -166,6 +165,8 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
