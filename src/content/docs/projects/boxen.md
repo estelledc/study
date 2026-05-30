@@ -198,4 +198,5 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 

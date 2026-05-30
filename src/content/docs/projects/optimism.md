@@ -161,6 +161,7 @@ docker logs optimism-batcher-1 -f
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[axelar]] —— Axelar — 通用跨链 gateway
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
+- [[chainlink-ccip]] —— Chainlink CCIP — 让两条链像两个银行那样互转钱
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链

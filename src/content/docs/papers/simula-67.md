@@ -197,4 +197,5 @@ end;
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[smalltalk-80]] —— Smalltalk-80
+- [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 

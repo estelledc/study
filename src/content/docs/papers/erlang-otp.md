@@ -178,6 +178,7 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
+- [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[smalltalk-80]] —— Smalltalk-80
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

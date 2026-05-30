@@ -185,6 +185,7 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+- [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书

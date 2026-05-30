@@ -176,6 +176,7 @@ DELETE /posts/:id      → destroy （删除）
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
+- [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务

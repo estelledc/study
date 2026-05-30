@@ -156,7 +156,7 @@ function Drawer({ isOpen }) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
-- [[d3]] —— d3.js 数据驱动文档
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts 配置式数据可视化
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具

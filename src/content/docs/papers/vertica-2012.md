@@ -148,3 +148,6 @@ COPY fact_sales FROM '/data/sales_2026_05_30.csv'
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

@@ -165,5 +165,6 @@ SavingsAccount >> deposit: amount
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
+- [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[turing-1936]] —— Turing 1936 可计算性
 

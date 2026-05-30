@@ -158,5 +158,6 @@ GROUP BY 1;
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

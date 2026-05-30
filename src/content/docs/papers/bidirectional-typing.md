@@ -166,6 +166,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
 

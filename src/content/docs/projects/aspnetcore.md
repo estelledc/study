@@ -174,6 +174,7 @@ app.Run();
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
+- [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
