@@ -1,61 +1,67 @@
 ---
-title: axios Promise-based HTTP 客户端
-来源: https://github.com/axios/axios + axios-http.com 官方文档
+title: axios — 浏览器和 Node 都能用的 HTTP 客户端
+来源: 'https://github.com/axios/axios'
+日期: 2026-05-30
+分类: projects
+难度: 初级
 ---
 
-# axios — Promise-based HTTP 客户端的事实标准
+## 是什么
 
-## 一句话总结（≥ 12 行）
+axios 是一个**让前端代码发 HTTP 请求**的库。日常类比：像办公室里那个"代收快递的前台"——你只递一张单子（"发到哪 / 装什么"），他帮你处理所有跑腿、签字、报错和退件。
 
-axios 是 Matt Zabriskie 2014 年开源的 HTTP 客户端，10 年后（2024）仍是 npm 下载量最大的 JS HTTP 库（weekly downloads 50M+）。
+你写：
 
-它的成功来自三件事：(1) Promise-based API（在 callback hell 时代是革命性体验）；(2) browser + Node 通用（一套代码两端跑）；(3) interceptor + 自动 JSON 解析等"开箱即用"行为，比当时的 fetch + 手动 .json() 友好。
+```js
+const {data} = await axios.get("/api/users", {params: {limit: 10}});
+```
 
-2025 年的现实：浏览器 fetch 早已普及（2015 起），Node 18+ 也内置 fetch（2022 起）。axios 的"网络抽象"价值在缩水。但它仍占据 50M downloads，因为：(1) 教程/文档/StackOverflow 答案 axios 占主导；(2) interceptor / cancel / progress 等 fetch wrapper 都要自己写；(3) 老项目 inertia 大。
+axios 替你做的：组装 URL 和 query、解析返回的 JSON、把 4xx / 5xx 自动转成可 catch 的错误、给浏览器和 Node 用同一份代码。它本质是**对 XMLHttpRequest 和 Node http 模块的统一包装**，加一层 Promise + interceptor。
 
-替代品（ky / ofetch / wretch / undici）在 2020+ 兴起，但 axios 仍是默认选择。这是开源生态网络效应的经典案例。
+2014 年它出现的时候，主流方案还是 `$.ajax` 回调嵌套，axios 的 Promise + 一致 API 直接成了事实标准；十年后浏览器和 Node 都内置了 fetch，但 axios 仍是 npm 周下载量第一的 HTTP 库（50M+）。
 
-## Layer 0 — 项目档案速查（≥ 17 字段）
+## 为什么重要
 
-| 字段 | 值 |
-|---|---|
-| 包名 | `axios` |
-| 当前主版本 | 1.x（2024 持续 patch） |
-| 首版 | 2014-08（v0.1） |
-| License | MIT |
-| 主仓库 | axios/axios |
-| 维护 | 社区驱动（原作者 Matt Zabriskie 2018 后逐步退出，OpenJS 接管） |
-| TypeScript | v0.27+ 内置 .d.ts |
-| 浏览器 + Node | XHR adapter / http(s) adapter / fetch adapter（v1.7+） |
-| Bundle 大小 | ~17 KB min+gzip |
-| Tree-shake | 不友好（method chain + interceptor 链） |
-| 子包数 | 1 主包 |
-| 内部依赖 | follow-redirects / form-data / proxy-from-env |
-| Weekly downloads | 50M+ |
-| GitHub stars | 105k+ |
-| 商业版 | 无 |
-| 文档站 | axios-http.com |
-| 主要用途 | HTTP API 调用 / SSR / 后台爬虫 |
+不理解 axios，下面这些事都没法解释：
 
-## Layer 1 — 核心抽象（≥ 30 行）
+- 为什么 React / Vue 教程八成第一个 import 就是 `import axios from "axios"`
+- 为什么很多团队从 fetch 迁回 axios——4xx 自动 reject、JSON 自动 parse、timeout 一行配
+- 为什么 SSR / Next.js 又开始推回 fetch——平台原生、可缓存、零依赖
+- 为什么 jQuery 退场了，但 axios 没退场——它解决的是"跨端 + 易用"，不是"DOM 操作"
 
-```ts
+## 核心要点
+
+axios 要点拆成 **四件事**：
+
+1. **config 对象**：每次请求都是一份配置（url / method / headers / data / params / timeout / signal），axios 把所有差异塞进这一个对象。类比：寄快递时填的运单。
+
+2. **interceptor 链**：在请求出门前 / 响应进门后插钩子。最经典用法是**统一加 token + 401 自动刷新重试**。本质就是 Promise.then 链，按注册顺序串起来。
+
+3. **adapter 适配器**：实际发请求的零件可以替换。浏览器走 XHR、Node 走 http、v1.7 起还能走 fetch。同一份业务代码，跑哪都行。
+
+4. **transformRequest / transformResponse**：发出前和拿到后自动转一道。默认就是 `JSON.stringify` 和 `JSON.parse`——这就是 axios 比 fetch "省事"的关键。
+
+## 实践案例
+
+### 案例 1：建一个共享 instance
+
+```js
 import axios from "axios";
 
-// GET
-const {data} = await axios.get("/api/users", {params: {limit: 10}});
-
-// POST 带 body
-const {data: created} = await axios.post("/api/users", {name: "Alice", age: 25});
-
-// 配置 instance
 const api = axios.create({
   baseURL: "https://api.example.com",
   timeout: 5000,
-  headers: {Authorization: "Bearer ..."}
+  headers: {"Content-Type": "application/json"}
 });
 
-// interceptor
+const {data} = await api.get("/users", {params: {limit: 10}});
+```
+
+`axios.create()` 返回一个**预填配置的实例**。整个 App 共用一份 `api`，换 baseURL 改一处即可。这是 axios 最该养成的第一个习惯。
+
+### 案例 2：interceptor 处理 401 自动刷新
+
+```js
 api.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${getToken()}`;
   return config;
@@ -66,413 +72,91 @@ api.interceptors.response.use(
   async (error) => {
     if (error.response?.status === 401) {
       await refreshToken();
-      return api.request(error.config);  // 重试
+      return api.request(error.config);   // 用新 token 重发原请求
     }
     return Promise.reject(error);
   }
 );
+```
 
-// cancellation
+请求拦截器统一塞 token；响应拦截器看到 401 就刷 token 再重试。业务代码完全不用知道有 token 这回事——这是 interceptor 模式最经典的舞台。
+
+### 案例 3：AbortController 取消请求
+
+```js
 const controller = new AbortController();
-api.get("/api/users", {signal: controller.signal});
+
+api.get("/slow-search", {signal: controller.signal})
+  .catch((err) => {
+    if (axios.isCancel(err)) console.log("用户离开页面，取消了");
+  });
+
+// 用户切走 → 取消
 controller.abort();
 ```
 
-四要素：
-
-1. **HTTP 方法** axios.get / post / put / delete / patch / head / options
-2. **request config** url / method / data / params / headers / timeout / responseType / signal
-3. **interceptor** request 加 auth / response 重试 / error 全局处理
-4. **instance** axios.create() 多套配置共存（不同 API 不同 baseURL）
-
-## Layer 2 — 内部架构（≥ 30 行）
-
-axios 主流程：
-
-```
-1. user 调 axios.get(url, config)
-2. dispatchRequest(config)
-3. 逐个跑 request interceptors（链式：每个 use 注册的回调）
-4. adapter（XHR / HTTP / fetch）发实际请求
-5. 逐个跑 response interceptors（链式）
-6. transformResponse（默认 JSON.parse）
-7. resolve(data)
-```
-
-适配器模式：
-
-- **XHR adapter**：浏览器，用 XMLHttpRequest
-- **HTTP adapter**：Node，用 http/https + follow-redirects
-- **fetch adapter**：v1.7+ 加，浏览器/Node 用原生 fetch（更现代但功能少）
-
-InterceptorManager：
-
-```ts
-class InterceptorManager {
-  handlers: Array<{fulfilled, rejected} | null>;
-  
-  use(fulfilled, rejected) {
-    this.handlers.push({fulfilled, rejected});
-    return this.handlers.length - 1; // id 用于 eject
-  }
-  
-  eject(id) {
-    if (this.handlers[id]) this.handlers[id] = null;
-  }
-}
-```
-
-interceptor 链是数组 reduce：每个 use 注册的 fulfilled 顺序执行；中间 throw 直接跳到 rejected。
-
-## Layer 3 — 精读 3 段（每段 ≥ 5 旁注 + ≥ 1 怀疑）
-
-### 段 a — interceptor 链错误传播（≥ 30 行）
-
-```ts
-api.interceptors.request.use(
-  (config) => {
-    if (!config.headers.Auth) throw new Error("Missing auth");
-    return config;
-  }
-);
-api.interceptors.request.use(
-  (config) => addLogId(config),
-  (error) => {
-    log.error("interceptor failed", error);
-    return Promise.reject(error);  // 必须 reject 才能继续传播
-  }
-);
-```
-
-旁注：
-
-1. interceptor 链按 use 注册顺序执行（FIFO）
-2. throw / reject 跳到 rejected handler；正常返回继续 fulfilled
-3. rejected handler 不 reject 就被认为"恢复"，链继续
-4. 这与 Promise.then chain 一致（axios 用 Promise.then 链实现）
-5. 全局 error handler 通常注册在最后一个 response interceptor
-
-> 怀疑：interceptor 模式在 React Query / TanStack Query 时代是不是过度设计？Query 自带 retry / refetch / stale-while-revalidate，比手动 interceptor 强。axios interceptor 真正还有用的场景是 SSR / 服务端 / 非 React 场景。
-
-### 段 b — cancellation 历史 API 切换（≥ 30 行）
-
-axios cancellation 三个时代：
-
-```ts
-// v0.x：CancelToken（已 deprecated）
-const source = axios.CancelToken.source();
-axios.get("/", {cancelToken: source.token});
-source.cancel("user navigated away");
-
-// v0.22+：AbortController（Web 标准）
-const controller = new AbortController();
-axios.get("/", {signal: controller.signal});
-controller.abort();
-
-// v1.0+：两者都支持，CancelToken 仍 deprecated
-```
-
-旁注：
-
-1. CancelToken 是 axios 自创 API（Promise + reject 组合）
-2. AbortController 是 Web 标准（fetch 用同样接口）
-3. 切换原因：与浏览器原生 fetch 一致，标准化
-4. 老项目仍大量用 CancelToken（迁移成本）
-5. v1.0 同时支持但 deprecated 警告
+`signal` 是 Web 标准（fetch 同款），axios 老的 `CancelToken` API 已 deprecated。React 组件 unmount 时调 `abort()`，避免"已卸载组件 setState"警告。
 
-> 怀疑：axios 自创 CancelToken 在 2017 是合理（AbortController 还没普及），但 5 年后仍维护是历史包袱。开源库的 API 演进难度比想象大——deprecated 不删除是兼容性 vs 整洁的工程权衡。
+## 踩过的坑
 
-### 段 c — transformRequest / transformResponse（≥ 25 行）
+1. **默认没有 timeout**：不显式配 timeout，遇到慢服务整个 await 卡死，UI 一直转圈。一律在 `axios.create` 里写 `timeout: 5000`。
 
-```ts
-// 默认 transformResponse
-const defaultResponseTransform = (data, headers) => {
-  if (headers["content-type"]?.includes("application/json")) {
-    return JSON.parse(data);
-  }
-  return data;
-};
+2. **interceptor 里塞 await 重活**：拦截器里 await 写日志 / 拉配置，会让所有请求**串行排队**，QPS 暴跌。拦截器只做"轻改 config"，重活放业务层。
 
-// 自定义
-api.defaults.transformResponse = [
-  (data) => JSON.parse(data),
-  (data) => convertCamelCase(data)  // snake_case 转 camelCase
-];
-```
+3. **CancelToken 老 API 还在文档里**：网上一半教程教旧的 `CancelToken.source()`，新代码统一用 `AbortController`。两套混用会让取消状态错乱。
 
-旁注:
+4. **TypeScript generic 不做运行时校验**：`api.get<User>("/x")` 只是骗 IDE，服务端返 `null` 也照样过编译。要安全得配 zod / valibot 在拦截器或 transform 里跑 parse。
 
-1. transformResponse 是数组（多个 transform 串行）
-2. 默认 JSON.parse（这是 axios 比 fetch "更友好"的关键点）
-3. transformRequest 同样：默认 JSON.stringify，可改 form-urlencoded
-4. 与 interceptor 区别：transform 操作 data；interceptor 操作整个 config / response
-5. 实战常见用例：camelCase 转换、字段重命名、加 metadata
+## 适用 vs 不适用场景
 
-> 怀疑：transformResponse 默认 JSON.parse 让 axios 比 fetch 友好，但代价是 ResponseType 推断不精准。TypeScript 严格项目里 axios 的 generic 比手写 fetch + zod 弱。
+**适用**：
 
-![axios 请求架构](/study/projects/axios/01-architecture.webp)
+- 浏览器 + Node 都要发请求的同构项目（SSR、CLI 工具）
+- 团队需要统一 auth / error 处理（interceptor 是最干净的落点）
+- 老项目持续维护——已经在用就别折腾换 fetch
+- 需要现成的 progress 事件（上传 / 下载进度）—— XHR adapter 内建
 
-## Layer 4 — 与现代 fetch wrapper 对比（≥ 25 行）
+**不适用**：
 
-### axios vs fetch（原生）
+- bundle 极致敏感的场景（Cloudflare Worker / 移动端 H5）→ 用 ky（4KB）或原生 fetch
+- Next.js / RSC / Server Action 里 → 平台推 fetch，能享受请求级缓存
+- Node-only 高性能后端 → 用 undici，HTTP/2 + keepalive 性能高 2-3x
+- 只发一两个请求的小工具 → 直接 fetch，不必 17KB 依赖
 
-| 维度 | axios | fetch |
-|---|---|---|
-| API | Promise + config object | Promise + Request/Response |
-| 默认 JSON | 自动解析 | 手动 .json() |
-| 4xx/5xx | reject | resolve（仅 network error reject） |
-| timeout | config.timeout | 用 AbortController + setTimeout |
-| interceptor | 内置 | 手写 wrapper |
-| Node 支持 | 内置 http adapter | Node 18+ 原生 |
-| Bundle | 17 KB | 0（原生） |
+## 历史小故事（可跳过）
 
-### axios vs ky
+- **2014-08**：Matt Zabriskie 发 v0.1，目标是给 AngularJS 1.x 当 `$http` 替代品
+- **2016-2017**：Promise 时代来临，axios 比 jQuery.ajax 易用、比原生 fetch 友好，迅速成主流
+- **2018**：Matt 退出维护，仓库一度无人合 PR，社区焦虑
+- **2020**：OpenJS Foundation 接管，恢复发版节奏
+- **2022**：v1.0 GA，TypeScript 类型内置，AbortController 接替 CancelToken
+- **2024**：v1.7+ 加 fetch adapter，承认"未来属于平台原生"
 
-ky 是 sindresorhus 出品的 fetch wrapper：
+## 学到什么
 
-- bundle ~4 KB（vs axios 17 KB）
-- 链式 API：`ky.get(url).json()`
-- retry / hooks / timeout 内置
-- 但社区采用慢，~3M weekly（vs axios 50M）
+1. **生态 inertia 比技术领先更顽固**——axios 50M weekly 不是因为最强，而是教程 / SO / 团队习惯堆出来的
+2. **adapter 抽象让库长寿**——XHR → fetch 两代浏览器 API 切换，业务代码零改动
+3. **interceptor 是横切关注点的标准答案**——auth / log / retry 这些不该写在每次调用里
+4. **deprecated API 删不掉**——CancelToken 拖了 5 年还活着，开源 API 兼容性比想象贵
 
-### axios vs ofetch
+## 延伸阅读
 
-ofetch 是 Nuxt 团队出品：
+- 官网文档：[axios-http.com](https://axios-http.com/)（中文版完整，例子多）
+- 源码精读：[lib/core/Axios.js](https://github.com/axios/axios/blob/v1.x/lib/core/Axios.js)、[InterceptorManager.js](https://github.com/axios/axios/blob/v1.x/lib/core/InterceptorManager.js)
+- 对比文章：[ky vs axios vs got](https://github.com/sindresorhus/ky#comparison)（sindresorhus 视角）
+- [[tanstack-query]] —— React 时代 axios 多半被它包一层用
+- [[zod]] —— 配 axios 把"运行时类型安全"补上
 
-- 内置 SSR / Nuxt / Nitro 集成
-- API 类似 fetch 但加智能（auto JSON / retry / timeout）
-- bundle ~7 KB
-- Vue 生态默认
-
-### axios vs undici
-
-undici 是 Node 官方 HTTP client：
-
-- 性能比 axios 快 2-3x（HTTP/2 + keepalive）
-- 替代 Node http 库
-- 浏览器不支持
-- axios 在 Node 12+ 可用 undici adapter（社区包）
-
-## Layer 5 — 6 维对比（≥ 7 个竞品）
-
-| 维度 | axios | fetch | ky | wretch | ofetch | undici | got | superagent |
-|---|---|---|---|---|---|---|---|---|
-| API | config | Web Std | chain | chain | config | low-level | builder | chain |
-| Bundle | 17 KB | 0 | 4 KB | 5 KB | 7 KB | Node only | 200 KB | 50 KB |
-| 浏览器 | ✓ | ✓ | ✓ | ✓ | ✓ | × | × | ✓ |
-| Node | ✓ | ✓ (18+) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| TS | ★★★★ | ★★★ | ★★★★★ | ★★★★ | ★★★★ | ★★★★★ | ★★★★ | ★★ |
-| 生态 | 50M | 原生 | 3M | 2M | 5M | 内置 | 25M | 6M |
-
-每个对手简评：
-
-- **fetch**：现代浏览器/Node 原生，最少 KB
-- **ky**：sindresorhus 出品，fetch wrapper 之王
-- **wretch**：FP 风格 fetch wrapper
-- **ofetch**：Nuxt 生态默认
-- **undici**：Node 官方 HTTP client
-- **got**：sindresorhus 早期作品（Node only）
-- **superagent**：老牌（2011 起），Express 生态
+## 关联
 
-## Layer 6 — 限制（≥ 4 条）
+- [[tanstack-query]] —— axios 做 transport，Query 管 cache / retry / loading state
+- [[react-hook-form]] —— RHF + axios + zod 是 React 表单提交三件套
+- [[zod]] —— interceptor 里跑 schema parse，端到端类型安全
+- [[ky]] —— 4KB 的 fetch wrapper，bundle 敏感时的替代
+- [[ofetch]] —— Nuxt 团队出品，SSR 友好的 fetch 增强
+- [[got]] —— Node-only 老牌 HTTP 客户端，sindresorhus 早期作品
+- [[wretch]] —— 链式 API 风格的 fetch wrapper
 
-1. **Bundle 偏大**：17 KB 比 ky 4 KB / fetch 0 KB 大很多。bundle 敏感项目（Cloudflare Worker / Astro / mobile web）选 ky / fetch 更优
-2. **默认 Node adapter 慢**：用 node:http 没 HTTP/2 / keepalive 优化，比 undici 慢 2-3x。社区有 undici-axios-adapter，axios 团队不默认换是兼容性考量
-3. **Tree-shake 不友好**：method chain + interceptor 链，全量 import 才能用
-4. **CancelToken deprecated 但保留**：历史包袱，社区有教程仍教旧 API
-5. **TypeScript generic 推断弱**：response.data 类型常需手动断言；与 zod / valibot 端到端集成需 wrapper
-6. **OpenJS 接管后维护节奏放缓**：Matt Zabriskie 2018 退出，社区接手后 patch 多但大重写少；fetch wrapper 创新的速度（ky / ofetch）比 axios 快
+## 反向链接
 
-## 怀疑总集（前面散落 3 段，再补 2 段）
-
-> 怀疑：axios 50M weekly downloads 是事实标准，但 fetch API 浏览器 + Node 全原生，axios 长期会不会被 fetch + ky / ofetch 替代？我猜：未来 5 年慢慢边缘化，但生态 inertia 大，2030 年仍有 30M+ weekly。
-
-> 怀疑：在 React Query / TanStack Query 时代，axios interceptor 的价值大降（Query 处理 retry / cache / stale）。axios 在 Server Action / RSC 时代的位置也微妙（Next.js 推 fetch 不推 axios）。10 年后 axios 是不是会变成 jQuery 一样的"老牌但少用"库？
-
-## GitHub Permalinks（≥ 3 处带 40-char hex SHA）
-
-源码精读入口（链接示意，未实际验证 SHA）：
-
-- Axios 主类：`https://github.com/axios/axios/blob/3a4f9b8e2d1c5a7e6b8d2f4a9c3e7d1b5f8a4c2e/lib/core/Axios.js`
-- InterceptorManager：`https://github.com/axios/axios/blob/8b2c4d6e1f3a5c7d9e1b3f5a7c9e1b3d5f7a9c1e/lib/core/InterceptorManager.js`
-- XHR adapter：`https://github.com/axios/axios/blob/2a4f6e8b1d3c5e7f9a1b3d5c7e9f1a3b5d7e9c1f/lib/adapters/xhr.js`
-- HTTP adapter：`https://github.com/axios/axios/blob/9c1b3d5f7a9c1e3b5d7f9a1c3e5d7f9b1c3e5d7f/lib/adapters/http.js`
-
-## Layer 7 — 实战（≥ 25 行）
-
-完整 axios + zod + RHF 端到端例子：
-
-```ts
-import axios from "axios";
-import {z} from "zod";
-
-const UserSchema = z.object({
-  id: z.string(),
-  email: z.string().email(),
-  age: z.number()
-});
-
-const api = axios.create({
-  baseURL: "/api",
-  timeout: 5000
-});
-
-api.interceptors.request.use((config) => {
-  config.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
-  return config;
-});
-
-api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    if (error.response?.status === 401) {
-      const newToken = await refreshToken();
-      localStorage.setItem("token", newToken);
-      return api.request(error.config);  // 重试
-    }
-    return Promise.reject(error);
-  }
-);
-
-async function getUser(id: string): Promise<z.infer<typeof UserSchema>> {
-  const {data} = await api.get(`/users/${id}`);
-  return UserSchema.parse(data);  // runtime validate
-}
-
-// React 组件
-function UserView({id}: {id: string}) {
-  const [user, setUser] = useState<z.infer<typeof UserSchema> | null>(null);
-  useEffect(() => {
-    getUser(id).then(setUser).catch(handleError);
-  }, [id]);
-  return user ? <div>{user.email}</div> : null;
-}
-```
-
-要点：
-
-1. axios.create 配 baseURL + timeout
-2. interceptor 注入 auth + 401 自动 refresh
-3. zod schema 在 transform 后跑 runtime 校验
-4. TS generic 通过 z.infer 端到端
-5. 实际项目里 React Query 包装这个 getUser，axios 只做 transport
-
-## 学到什么 + 关联（≥ 15 行）
-
-学到的 ≥ 5 条：
-
-1. 网络抽象库的价值随浏览器/Node 原生 API 进化而递减
-2. interceptor 模式适合"非 React 框架"场景，React 时代 React Query 接管
-3. 生态 inertia 是开源最强护城河，远超技术正确性
-4. CancelToken → AbortController 是开源 API 演进案例
-5. adapter 模式让 axios 在 XHR / HTTP / fetch 三代 API 间平滑过渡
-
-关联：
-
-- [[zod]] — runtime validation 配合 axios 做端到端类型安全
-- [[react-hook-form]] — RHF + axios + zod 是表单提交标配
-- [[d3]] [[recharts]] [[visx]] [[observable-plot]] [[echarts]] — 数据可视化用 axios 拉数据
-
-## 附录 A — 与 React Query / TanStack Query 协同模式（≥ 25 行）
-
-实战中 axios + Query 是 React 数据获取的标配组合：
-
-```ts
-import {useQuery, useMutation, useQueryClient} from "@tanstack/react-query";
-import axios from "axios";
-
-const api = axios.create({baseURL: "/api"});
-
-// Query：自动缓存 / refetch / stale-while-revalidate
-function useUser(id: string) {
-  return useQuery({
-    queryKey: ["user", id],
-    queryFn: async () => {
-      const {data} = await api.get(`/users/${id}`);
-      return UserSchema.parse(data);
-    },
-    staleTime: 5 * 60 * 1000,  // 5 分钟新鲜
-    gcTime: 30 * 60 * 1000     // 30 分钟回收
-  });
-}
-
-// Mutation：写操作
-function useUpdateUser() {
-  const qc = useQueryClient();
-  return useMutation({
-    mutationFn: async (data: UpdateUserInput) => {
-      const {data: result} = await api.put(`/users/${data.id}`, data);
-      return result;
-    },
-    onSuccess: (_, variables) => {
-      qc.invalidateQueries({queryKey: ["user", variables.id]});
-    }
-  });
-}
-```
-
-要点：
-
-1. axios 只做 transport，Query 管 cache / retry / loading state
-2. interceptor 仍有用（auth header 加在 request interceptor）
-3. 401 自动 refresh 仍在 axios interceptor，Query 不知情
-4. queryFn 里跑 zod parse，runtime 类型安全
-5. 这种分工让 axios + Query 比单用 fetch + useEffect 强 10 倍
-
-## 附录 B — 自定义 adapter（≥ 20 行）
-
-axios 1.x 支持替换 adapter：
-
-```ts
-import axios, {AxiosAdapter} from "axios";
-
-// 自定义 fetch adapter（用 native fetch 替代 XHR）
-const fetchAdapter: AxiosAdapter = async (config) => {
-  const response = await fetch(config.url, {
-    method: config.method,
-    body: config.data ? JSON.stringify(config.data) : undefined,
-    headers: config.headers,
-    signal: config.signal
-  });
-  
-  return {
-    data: await response.json(),
-    status: response.status,
-    statusText: response.statusText,
-    headers: Object.fromEntries(response.headers.entries()),
-    config,
-    request: undefined
-  };
-};
-
-const api = axios.create({adapter: fetchAdapter});
-```
-
-实战用例：
-
-1. Cloudflare Worker（XHR 不存在）：用 fetch adapter
-2. React Native（XHR 行为差异）：用自定义 adapter
-3. Mock 测试：用 mock adapter（axios-mock-adapter 包）
-4. 性能优化：在 Node 用 undici adapter（社区包 axios-undici-adapter）
-
-## 附录 C — 常见 axios 反模式（≥ 15 行）
-
-社区常见的 axios 误用：
-
-1. **每次 API 调用都创建 instance**：性能浪费，应用启动时建好 axios.create() 一次复用
-2. **interceptor 里做异步副作用**：导致请求顺序错乱（如 interceptor 里 await 写日志）
-3. **不处理 timeout**：默认无 timeout，慢服务卡住整个 UI
-4. **JSON.parse 双解析**：手动 axios.post(url, JSON.stringify(data))，axios 内部又 JSON.stringify 一次
-5. **不用 instance baseURL**：每次 api 路径写完整 URL，重构 baseURL 时漏改
-6. **interceptor 错误吞噬**：catch 里不 reject，调用方拿不到 error
-7. **CancelToken / AbortController 混用**：混乱 cancellation 状态
-
-## 附录 D — 学到补充（≥ 10 行）
-
-补充 5 条工程教训：
-
-6. **生态 inertia 是开源最强护城河**：axios 50M weekly downloads 不是技术领先，是教程 / SO / 团队习惯沉淀
-7. **adapter 模式让库长寿**：axios 经历 XHR → fetch 两代浏览器 API，靠 adapter 抽象不需要重写
-8. **interceptor 在 React Query 时代价值缩水**：但 SSR / 服务端 / 非 React 场景仍需要
-9. **deprecated API 保留是双刃剑**：axios CancelToken 拖了 5 年还没删，社区分歧大
-10. **TypeScript 推断弱是老库通病**：axios.get<User>() 仍需手动 generic，与 zod 端到端弱
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
