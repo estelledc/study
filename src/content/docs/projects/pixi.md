@@ -154,3 +154,6 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[excalidraw]] —— Excalidraw — 手绘风协作白板
+

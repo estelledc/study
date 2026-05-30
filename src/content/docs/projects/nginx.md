@@ -183,6 +183,7 @@ location /static/ {
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[redis]] —— Redis — 内存键值数据库
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换

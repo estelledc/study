@@ -177,5 +177,6 @@ expr: i = INT { i } | LPAREN e = expr RPAREN { e } | a = expr PLUS b = expr { a 
 - [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
 - [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
 - [[tomita-glr]] —— Tomita GLR — 让 LR 解析器扛得住歧义文法
 

@@ -173,6 +173,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
+- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 - [[typesense]] —— Typesense — 高性能搜索引擎

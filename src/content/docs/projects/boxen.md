@@ -202,4 +202,5 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
+- [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 
