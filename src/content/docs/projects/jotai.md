@@ -160,6 +160,7 @@ function App() {
 
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
+- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[valtio]] —— valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zustand]] —— Zustand — 极简 React 状态管理

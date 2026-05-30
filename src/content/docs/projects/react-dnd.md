@@ -147,3 +147,8 @@ DndProvider 通过 React Context 把 DragDropManager 单例传给所有后代。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
+- [[preact]] —— Preact — 3KB React 替代
+- [[sortablejs]] —— Sortable.js 框架无关 DnD 库
+

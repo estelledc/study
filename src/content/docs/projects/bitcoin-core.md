@@ -166,6 +166,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 - [[raft]] —— Raft — 易理解的共识算法
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机

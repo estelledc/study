@@ -154,6 +154,7 @@ tree-sitter 用 GLR 思路 + 增量更新。当你在 `func(a, b` 后还没敲 `
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[earley-parser]] —— Earley Parser — 一个表能解析任何 CFG 的通用解析器
 - [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
 - [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
