@@ -161,5 +161,6 @@ procs --watch-interval 2 --sortd cpu
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
+- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

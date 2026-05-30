@@ -155,6 +155,7 @@ double n = (2 * n , refl)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
+- [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理

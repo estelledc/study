@@ -175,4 +175,5 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[vogels-eventual-2009]] —— Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
 

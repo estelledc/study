@@ -137,6 +137,7 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
+- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索

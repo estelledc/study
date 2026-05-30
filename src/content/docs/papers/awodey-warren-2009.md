@@ -149,3 +149,6 @@ theorem nat_eq_of_eq_zero (n : Nat) (h : n = 0) : n + 0 = 0 := by
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
