@@ -208,5 +208,6 @@ method Sum(a: array<int>) returns (s: int)
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
+- [[why3-2013]] —— Why3 — 写一次程序规范，多个证明器一起来证
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
 

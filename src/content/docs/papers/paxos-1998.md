@@ -183,6 +183,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[flexible-paxos-2016]] —— Flexible Paxos — 两阶段不一定都要多数派
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端

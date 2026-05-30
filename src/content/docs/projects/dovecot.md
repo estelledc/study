@@ -157,5 +157,7 @@ src/plugins/     可加载插件（quota、acl、fts、sieve）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[mailcow]] —— mailcow — Docker compose 一键起一整套邮件服务
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[redis]] —— Redis — 内存键值数据库
 

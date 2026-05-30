@@ -157,6 +157,7 @@ Signal 做法：
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[mailcow]] —— mailcow — Docker compose 一键起一整套邮件服务
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
 - [[prosody]] —— Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）

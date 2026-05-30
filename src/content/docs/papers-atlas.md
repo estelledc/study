@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 349 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 352 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：349 篇
+- **总数**：352 篇
 - **已分类**：143
-- **未分类**：206（落入"其他 / 待分类"段）
+- **未分类**：209（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 206 |
+| [其他 / 待分类](#其他--待分类) | 209 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 206 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 209 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -381,6 +381,7 @@ sidebar:
 | `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
+| `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) |
@@ -494,6 +495,7 @@ sidebar:
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) |
 | `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) |
+| `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) |
 | `tla-yu-tlc-1999` | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) |
 | `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) |
@@ -511,13 +513,14 @@ sidebar:
 | `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) |
 | `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |
+| `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 
 ---
 
-## 全部 349 篇（字母序）
+## 全部 352 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -649,6 +652,7 @@ sidebar:
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | 其他 |
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | OS / 集群管理 / 系统 |
+| `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | 其他 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) | 其他 |
@@ -835,6 +839,7 @@ sidebar:
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) | 其他 |
 | `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) | 其他 |
 | `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
+| `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) | 其他 |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) | 其他 |
 | `tigerbeetle` | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) | 数据库 |
 | `tla-yu-tlc-1999` | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) | 其他 |
@@ -864,6 +869,7 @@ sidebar:
 | `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) | 其他 |
 | `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 其他 |
+| `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) | 其他 |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | 其他 |

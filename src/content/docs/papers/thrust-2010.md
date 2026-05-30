@@ -1,6 +1,6 @@
 ---
 title: Thrust — 让 GPU 编程像写 STL 一样一行调用
-来源: Hoberock & Bell, "Thrust: A Productivity-Oriented Library for CUDA", NVIDIA 2010
+来源: 'Hoberock & Bell, "Thrust: A Productivity-Oriented Library for CUDA", NVIDIA 2010'
 日期: 2026-05-31
 分类: GPU 与并行
 难度: 中级
@@ -148,3 +148,6 @@ thrust::transform(x.begin(), x.end(), y.begin(), z.begin(), saxpy(2.0f));
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

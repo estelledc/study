@@ -165,6 +165,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[llama-cpp]] —— llama.cpp — 让 LLM 在你电脑里直接跑
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
