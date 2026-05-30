@@ -183,8 +183,10 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机

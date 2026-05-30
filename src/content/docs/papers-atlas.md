@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 295 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 298 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：295 篇
+- **总数**：298 篇
 - **已分类**：143
-- **未分类**：152（落入"其他 / 待分类"段）
+- **未分类**：155（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 152 |
+| [其他 / 待分类](#其他--待分类) | 155 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 152 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 155 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -312,6 +312,7 @@ sidebar:
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |
+| `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) |
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
@@ -380,11 +381,13 @@ sidebar:
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
+| `jupiter-1995` | [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |
+| `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) |
 | `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) |
 | `lean-tactics` | [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) |
@@ -463,7 +466,7 @@ sidebar:
 
 ---
 
-## 全部 295 篇（字母序）
+## 全部 298 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -479,6 +482,7 @@ sidebar:
 | `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 其他 |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | 其他 |
+| `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | 其他 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
@@ -606,6 +610,7 @@ sidebar:
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 其他 |
 | `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
+| `jupiter-1995` | [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) | 其他 |
 | `kafka` | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) | 其他 |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | 其他 |
@@ -616,6 +621,7 @@ sidebar:
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | 其他 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lamport-1978` | [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
+| `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) | 其他 |
 | `lampson-hints` | [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) | 其他 |
 | `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) | 其他 |

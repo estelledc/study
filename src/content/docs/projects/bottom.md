@@ -163,6 +163,7 @@ strategy:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[bat]] —— bat — 现代 cat 替代
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图

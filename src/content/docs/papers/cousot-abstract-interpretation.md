@@ -156,6 +156,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC

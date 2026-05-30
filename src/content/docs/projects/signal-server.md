@@ -155,6 +155,7 @@ Signal 做法：
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[redis]] —— Redis — 内存键值数据库
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见

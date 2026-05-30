@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 370 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 373 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：370 个
+- **总数**：373 个
 - **已分类**：206
-- **未分类**：164（落入"其他 / 待分类"段）
+- **未分类**：167（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 164 |
+| [其他 / 待分类](#其他--待分类) | 167 |
 
 ---
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 164 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 167 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -517,6 +517,7 @@ sidebar:
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
+| `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
@@ -581,6 +582,7 @@ sidebar:
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
+| `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
@@ -590,6 +592,7 @@ sidebar:
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
+| `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
@@ -666,7 +669,7 @@ sidebar:
 
 ---
 
-## 全部 370 个（字母序）
+## 全部 373 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -696,6 +699,7 @@ sidebar:
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 其他 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
+| `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) | 其他 |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) | 其他 |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) | 其他 |
 | `better-auth` | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) | Auth 认证 |
@@ -831,6 +835,7 @@ sidebar:
 | `lerna` | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) | Monorepo / 包管理 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
+| `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) | 其他 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |
 | `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | i18n 国际化 |
@@ -858,6 +863,7 @@ sidebar:
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
+| `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | 其他 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | 其他 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
