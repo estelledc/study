@@ -184,6 +184,7 @@ export default defineConfig({
 
 - [[bun]] —— Bun — JS 全能运行时
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架

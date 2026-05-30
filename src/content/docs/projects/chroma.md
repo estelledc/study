@@ -144,4 +144,5 @@ col = client.create_collection("docs", embedding_function=ef)
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[qdrant]] —— Qdrant — Rust 向量数据库
+- [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 

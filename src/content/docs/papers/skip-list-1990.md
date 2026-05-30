@@ -153,5 +153,10 @@ map.firstKey();   // O(log n) 有序查询
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[redis]] —— Redis — 内存键值数据库
 

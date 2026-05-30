@@ -153,4 +153,5 @@ retro.eval(retrieval_db=wikipedia_2024)   # 换成 2024 年 Wikipedia
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
+- [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 

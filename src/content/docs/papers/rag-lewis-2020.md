@@ -140,5 +140,6 @@ answer = llama.generate(prompt)
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[milvus]] —— Milvus — 开源向量数据库
+- [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 

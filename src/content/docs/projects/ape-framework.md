@@ -160,5 +160,10 @@ def main():
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
+- [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 

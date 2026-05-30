@@ -161,6 +161,7 @@ Cohen's d ≈ 2.0 在心理学/社科属于 "罕见大"——通常 d>1.5 都需
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
+- [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 
