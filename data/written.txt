@@ -129,6 +129,7 @@ lambda-calculus
 lamport-1978
 lampson-hints
 landin-secd
+lean-tactics
 leis-2015-optimizers
 lerner-seminal
 lieberman-realtime-gc
@@ -253,6 +254,7 @@ volcano
 volcano-1994
 voyager
 vr-1988
+vr-revisited-2012
 wadler-prettier
 word2vec
 xla-compiler
@@ -280,6 +282,7 @@ arktype
 arweave
 aspnetcore
 astro
+asynq
 auth-js
 axelar
 axios
@@ -593,6 +596,7 @@ wretch
 xstate
 yargs
 yjs
+zcash
 zksync-era
 zod
 zustand

@@ -151,5 +151,8 @@ worker 每轮按权重随机挑队列拉任务，**不是严格优先级**而是
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
+- [[redis]] —— Redis — 内存键值数据库
+- [[temporal]] —— Temporal — 持久化工作流引擎
 

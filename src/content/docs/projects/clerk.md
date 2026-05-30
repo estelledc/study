@@ -161,6 +161,7 @@ function Toolbar() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[hono]] —— Hono — 多运行时 Web 框架
@@ -169,4 +170,5 @@ function Toolbar() {
 - [[react]] —— React UI 组件库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[supabase]] —— Supabase — Firebase 的开源替代
+- [[supertokens]] —— SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
 

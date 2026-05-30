@@ -154,6 +154,7 @@ callbacks: {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
@@ -162,6 +163,7 @@ callbacks: {
 - [[next-js]] —— Next.js — React 全栈框架
 - [[prisma]] —— Prisma — 类型安全 ORM
 - [[supabase]] —— Supabase — Firebase 的开源替代
+- [[supertokens]] —— SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

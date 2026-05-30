@@ -180,6 +180,7 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[cal-com]] —— cal.com — 自己能托管的开源 Calendly
