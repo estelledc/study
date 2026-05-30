@@ -157,6 +157,7 @@ const logUpdates = ViewPlugin.fromClass(class {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[react]] —— React UI 组件库
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

@@ -138,6 +138,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代

@@ -172,4 +172,5 @@ class LogEmitter:
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

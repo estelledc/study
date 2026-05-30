@@ -155,5 +155,11 @@ UI 层用 NBGL（Stax / Flex）或 BAGL（Nano 系），把目标地址 + 金额
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
+- [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
+- [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 

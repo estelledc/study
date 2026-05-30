@@ -163,6 +163,7 @@ sum_worker (x:xs) = case x of I# x# ->
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
+- [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器

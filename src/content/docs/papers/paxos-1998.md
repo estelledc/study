@@ -170,4 +170,6 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
+- [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 

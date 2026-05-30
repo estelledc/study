@@ -153,4 +153,5 @@ const log = pino(pino.transport({
 - [[fastify]] —— Fastify schema-first Node 高性能 web 框架
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 
