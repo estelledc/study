@@ -161,3 +161,13 @@ opts.compaction_style = rocksdb.kCompactionStyleLevel    # 写多读少
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
+

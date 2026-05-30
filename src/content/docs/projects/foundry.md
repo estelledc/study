@@ -178,6 +178,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[rabby-wallet]] —— Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
+- [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[walletconnect]] —— WalletConnect — dApp 与钱包之间的加密对讲机
 

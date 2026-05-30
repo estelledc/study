@@ -172,4 +172,5 @@ tuner.tune(n_trial=1000, ...)
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

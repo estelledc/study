@@ -171,4 +171,5 @@ export default {
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 

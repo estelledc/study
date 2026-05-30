@@ -178,5 +178,6 @@ export function useMouse() {
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

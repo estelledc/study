@@ -160,4 +160,5 @@ bx.compute_at(by,x); // 在 by 的某层循环内现算现用——内存小，b
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

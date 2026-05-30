@@ -182,5 +182,6 @@ export default {
 - [[react]] —— React UI 组件库
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 - [[webpack]] —— webpack 模块打包
 

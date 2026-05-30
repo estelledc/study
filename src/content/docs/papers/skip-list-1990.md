@@ -161,5 +161,6 @@ map.firstKey();   // O(log n) 有序查询
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[redis]] —— Redis — 内存键值数据库
+- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 

@@ -192,4 +192,5 @@ entry:
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

@@ -156,5 +156,6 @@ npm run docusaurus docs:version 1.0
 - [[react]] —— React UI 组件库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[starlight]] —— Starlight — Astro 文档站点主题
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[webpack]] —— webpack 模块打包
 

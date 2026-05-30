@@ -147,3 +147,9 @@ UNDROP TABLE orders_2026;                  -- 误删后救回来
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+

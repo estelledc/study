@@ -161,6 +161,7 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
+- [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

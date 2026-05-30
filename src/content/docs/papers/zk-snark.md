@@ -160,5 +160,6 @@ Groth 2016 把证明压到极致：
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[turing-1936]] —— Turing 1936 可计算性
 
