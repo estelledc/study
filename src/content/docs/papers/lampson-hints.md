@@ -161,5 +161,14 @@ POST 不 idempotent——重复发 5 次会创建 5 个订单。所以 Stripe / 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
+- [[etcd]] —— etcd — 分布式键值数据库
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

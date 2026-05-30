@@ -171,6 +171,7 @@ ssa
 stable-diffusion
 standard-ml
 steensgaard-pointer
+stonebraker-2010-sqlnosql
 swe-agent
 swe-bench
 system-f-reynolds-1974
@@ -186,6 +187,7 @@ toy-models-superposition
 trees-that-grow
 turchin-supercompilation
 turing-1936
+tvm
 vit
 vllm
 volcano
@@ -355,6 +357,7 @@ observable-plot
 oclif
 ofetch
 ollama
+optimism
 ora
 oxc
 patchright
@@ -382,6 +385,7 @@ quart
 qwik
 rabby-wallet
 radix-ui
+rails
 react
 react-dnd
 react-hook-form

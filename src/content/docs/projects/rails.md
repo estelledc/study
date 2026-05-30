@@ -169,5 +169,11 @@ DELETE /posts/:id      → destroy （删除）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
+- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 

@@ -155,6 +155,7 @@ bx.compute_at(by,x); // 在 by 的某层循环内现算现用——内存小，b
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快

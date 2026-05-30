@@ -161,4 +161,5 @@ db.orders.aggregate([
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[typesense]] —— Typesense — 高性能搜索引擎
+- [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
 

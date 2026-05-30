@@ -187,4 +187,5 @@ Prisma 自动：
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[sequelize]] —— Sequelize — 老牌 Node ORM
 - [[typeorm]] —— TypeORM — Decorator-based ORM
+- [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
 

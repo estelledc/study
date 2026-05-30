@@ -156,5 +156,6 @@ Nextra 读出 `date`，自动按时间倒序排在首页，每篇文末自动有
 - [[react]] —— React UI 组件库
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
 - [[starlight]] —— Starlight — Astro 文档站点主题
+- [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[webpack]] —— webpack 模块打包
 

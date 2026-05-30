@@ -155,6 +155,7 @@ Q42 How do I know I did not break something?  → CI + 测试报告 + diff 截�
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码

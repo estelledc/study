@@ -149,6 +149,7 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[balancer]] —— Balancer V2 — 通用 AMM 与权重池
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC

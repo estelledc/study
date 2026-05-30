@@ -148,6 +148,7 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现

@@ -150,12 +150,14 @@ column families:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
+- [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 

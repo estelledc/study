@@ -147,3 +147,6 @@ subscribeKey(cart, 'total', (total) => console.log('新总价', total))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
+
