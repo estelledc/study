@@ -152,6 +152,7 @@ Signal 做法：
 
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
+- [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程

@@ -172,4 +172,5 @@ trainer = pl.Trainer(callbacks=[
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
+- [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
 

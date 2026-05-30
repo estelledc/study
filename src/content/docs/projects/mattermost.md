@@ -147,6 +147,7 @@ cd ../webapp && make run  # 前端 dev server
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[prosody]] —— Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端

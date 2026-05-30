@@ -37,6 +37,7 @@ cascades-1995
 cassandra-2010
 causal-abstraction
 ceph-2006
+chaff-2001
 chain-replication-2004
 chaitin-graph-coloring
 chandy-lamport-1985
@@ -101,6 +102,7 @@ f1-2013
 faiss-2017
 fast-paxos-2006
 feautrier-polyhedral
+fermi-architecture-2010
 fidge-1988
 flash-attention
 flexible-paxos-2016
@@ -179,6 +181,7 @@ mamba
 mapreduce
 marques-silva-grasp-1996
 martin-lof-itt
+mattern-1989
 mccarthy-lisp
 mcmillan-smv-1993
 megatron-lm
@@ -312,6 +315,7 @@ zk-snark
 
 # projects
 aave-v3
+accelerate
 actix-web
 affine
 ag-grid
@@ -458,6 +462,7 @@ jaeger
 jest
 jimp
 jotai
+jq
 js-joda
 kafka
 koa
@@ -562,6 +567,7 @@ procs
 prom-client
 prometheus
 prosemirror
+prosody
 prysm
 pulsar
 pyarrow

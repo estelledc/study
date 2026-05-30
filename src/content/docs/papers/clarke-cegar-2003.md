@@ -160,6 +160,7 @@ CEGAR 第一轮抽象不知道 `error_condition` 何时为真，过近似认为"
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
+- [[minisat-2003]] —— MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[slam-microsoft]] —— SLAM — 让 Windows 驱动 bug 自己撞到工具上
 

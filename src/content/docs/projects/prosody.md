@@ -149,5 +149,8 @@ sql = { driver = "PostgreSQL", database = "prosody", host = "localhost", ... }
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
+- [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
+- [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
+- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 

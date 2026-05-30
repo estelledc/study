@@ -164,6 +164,7 @@ conn = psycopg2.connect("postgresql://crdb-cluster:26257/mydb")
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
 - [[raft]] —— Raft — 易理解的共识算法
