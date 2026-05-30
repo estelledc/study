@@ -168,4 +168,5 @@ const renderPage = memo((mdPath, mtime) => /* 真实渲染 */);
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包
+- [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
 

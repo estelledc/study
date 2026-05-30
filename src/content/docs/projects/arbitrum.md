@@ -154,6 +154,7 @@ forge create MyContract --rpc-url https://arb1.arbitrum.io/rpc --private-key $PK
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[optimism]] —— Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
+- [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[remix-ide]] —— Remix IDE — 浏览器内 Solidity IDE
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[scroll]] —— Scroll — 字节码级 zkEVM

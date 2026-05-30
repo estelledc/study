@@ -66,6 +66,7 @@ ebpf
 effect-handlers
 erlang-otp
 eswaran-1976
+f1-2013
 feautrier-polyhedral
 flash-attention
 foundationdb
@@ -197,6 +198,7 @@ volcano-1994
 voyager
 wadler-prettier
 word2vec
+xla-compiler
 zab-2011
 zgc
 zk-snark
@@ -287,6 +289,7 @@ go-zero
 got
 grafana
 gsap
+hanami
 hardhat
 helidon
 helm
@@ -406,6 +409,7 @@ rspack
 safe-contracts
 salvo
 sanic
+scroll
 sentry
 sequelize
 shadcn-ui

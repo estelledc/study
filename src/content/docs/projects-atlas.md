@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 275 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 277 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：275 个
+- **总数**：277 个
 - **已分类**：206
-- **未分类**：69（落入"其他 / 待分类"段）
+- **未分类**：71（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 69 |
+| [其他 / 待分类](#其他--待分类) | 71 |
 
 ---
 
@@ -295,7 +295,7 @@ sidebar:
 | [MobX — Reactive state via TFRP](/study/projects/mobx/) |  |
 | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) |  |
 | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) |  |
-| [XState — 把状态画成图](/study/projects/xstate/) | 有限状态机 + Actor 模型，把"看似简单的状态"变成可视化的设计文档 |
+| [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) |  |
 | [Zustand — 极简 React 状态管理](/study/projects/zustand/) |  |
 
 ## 测试 / 验证
@@ -387,7 +387,7 @@ sidebar:
 | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) |  |
 | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) |  |
 | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) |  |
-| [why-did-you-render — 把 React 的"假更新"从口头警告变成可定位的诊断对象](/study/projects/why-did-you-render/) | monkey-patch React |
+| [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) |  |
 
 ## 数据应用 / SaaS
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 69 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 71 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -529,6 +529,7 @@ sidebar:
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
+| `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
@@ -545,6 +546,7 @@ sidebar:
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
+| `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
@@ -571,7 +573,7 @@ sidebar:
 
 ---
 
-## 全部 275 个（字母序）
+## 全部 277 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -659,6 +661,7 @@ sidebar:
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
 | `got` | [got Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
+| `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
@@ -747,6 +750,7 @@ sidebar:
 | `pnpm` | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `podman` | [Podman — 无 daemon 容器引擎](/study/projects/podman/) | DevOps / 容器 / 运维 |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) | 其他 |
+| `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) | 其他 |
 | `postgres-js` | [postgres.js — 写 SQL 但语法层就防注入的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
@@ -843,9 +847,9 @@ sidebar:
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | 可观测 / 性能 |
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
-| `why-did-you-render` | [why-did-you-render — 把 React 的"假更新"从口头警告变成可定位的诊断对象](/study/projects/why-did-you-render/) | 可观测 / 性能 |
+| `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wretch` | [wretch — fluent FP fetch wrapper](/study/projects/wretch/) | HTTP 客户端 |
-| `xstate` | [XState — 把状态画成图](/study/projects/xstate/) | 状态管理 |
+| `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [yjs — collaborative editing 不应该锁住编辑器，CRDT 抽象层让任何编辑器都能接](/study/projects/yjs/) | 编辑器 / 富文本 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |

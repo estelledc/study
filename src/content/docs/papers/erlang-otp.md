@@ -178,4 +178,5 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[smalltalk-80]] —— Smalltalk-80
+- [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

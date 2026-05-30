@@ -169,5 +169,6 @@ function AddTodo() {
 - [[tanstack-form]] —— TanStack Form Headless 多框架表单库
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zustand]] —— Zustand — 极简 React 状态管理
 

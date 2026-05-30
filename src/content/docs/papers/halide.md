@@ -158,6 +158,7 @@ bx.compute_at(by,x); // 在 by 的某层循环内现算现用——内存小，b
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器

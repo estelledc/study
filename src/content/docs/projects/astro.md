@@ -216,6 +216,7 @@ export const collections = { blog }
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[unified]] —— unified AST + plugin pipeline 通用文档处理框架
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 - [[zod]] —— Zod — TypeScript-first schema 验证

@@ -180,6 +180,7 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端

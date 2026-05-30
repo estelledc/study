@@ -167,6 +167,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象

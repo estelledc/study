@@ -168,8 +168,10 @@ export default defineConfig({
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[markdown-it]] —— markdown-it CommonMark 兼容的可插拔 Markdown 解析器
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
+- [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[shiki]] —— shiki TextMate Grammar 驱动的语法高亮
 - [[starlight]] —— Starlight — Astro 文档站点主题
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 

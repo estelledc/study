@@ -169,6 +169,7 @@ System R 的处理：
 - [[raft]] —— Raft — 易理解的共识算法
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
+- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

@@ -194,5 +194,7 @@ function Greeting({ name }) {
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
+- [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zustand]] —— Zustand — 极简 React 状态管理
 

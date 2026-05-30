@@ -149,7 +149,13 @@ UNDROP TABLE orders_2026;                  -- 误删后救回来
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 

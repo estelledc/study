@@ -155,6 +155,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储

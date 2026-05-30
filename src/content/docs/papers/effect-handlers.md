@@ -188,4 +188,5 @@ let collect body =
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

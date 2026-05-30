@@ -153,6 +153,7 @@ column families:
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[gfs]] —— GFS — 编译器决定不做哪些事

@@ -156,20 +156,20 @@ GROUP BY customer_id;
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[raft]] —— Raft — 易理解的共识算法
+- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
+- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
