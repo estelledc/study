@@ -152,6 +152,7 @@ Web 团队（Stolberg）：
 - [[coeffect-petricek]] —— Coeffects — 让类型系统追踪「需要多少上下文」
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
+- [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码

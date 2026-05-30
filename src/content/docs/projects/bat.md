@@ -128,6 +128,7 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手

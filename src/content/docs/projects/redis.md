@@ -176,6 +176,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[pulsar]] —— Apache Pulsar — 云原生消息队列
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准
+- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头

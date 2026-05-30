@@ -166,6 +166,7 @@ def step(prog, state):
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
