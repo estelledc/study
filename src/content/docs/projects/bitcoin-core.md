@@ -149,6 +149,7 @@ bitcoin-cli -regtest sendtoaddress "$multisig_addr" 1.0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端

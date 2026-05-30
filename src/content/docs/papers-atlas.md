@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 179 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 181 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：179 篇
+- **总数**：181 篇
 - **已分类**：143
-- **未分类**：36（落入"其他 / 待分类"段）
+- **未分类**：38（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 36 |
+| [其他 / 待分类](#其他--待分类) | 38 |
 
 ---
 
@@ -163,7 +163,7 @@ sidebar:
 | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) |  |
 | [The Snowflake Elastic Data Warehouse 状元篇](/study/papers/snowflake/) | SIGMOD 2016 Snowflake 论文精读 — 存算分离 + 弹性虚拟仓库如何重塑云数仓范式 |
 | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) |  |
-| [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | Graefe 1990 用 Open / GetNext / Close 三函数 + Exchange 算子定义"算子=迭代器"范式，36 年里几乎所有 SQL 数据库（Postgres / Oracle / Spar… |
+| [Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式](/study/papers/volcano/) |  |
 
 ## 分布式训练 / GPU
 
@@ -209,7 +209,7 @@ sidebar:
 | [Boehm-Weiser 保守式垃圾回收](/study/papers/boehm-gc/) |  |
 | [A Nonrecursive List Compacting Algorithm（Cheney 1970，Copying GC 始祖）](/study/papers/cheney-gc/) | 状元篇 - Cheney 1970 用两片 semi-space 加 BFS scan 实现 copying GC，把递归 mark-and-sweep 换成迭代式 copy + forwarding pointer，… |
 | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) |  |
-| [Tofte-Talpin Region-Based Memory Management](/study/papers/tofte-talpin-regions/) |  |
+| [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) |  |
 | [ZGC — 染色指针 + 读屏障下的 TB 级低延迟并发 GC](/study/papers/zgc/) | Per Liden et al |
 
 ## 编译器 / 编程语言理论
@@ -304,10 +304,11 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 36 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 38 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
+| `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
@@ -329,6 +330,7 @@ sidebar:
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) |
+| `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
@@ -347,7 +349,7 @@ sidebar:
 
 ---
 
-## 全部 179 篇（字母序）
+## 全部 181 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -358,6 +360,7 @@ sidebar:
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
+| `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 其他 |
 | `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 其他 |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | 其他 |
@@ -445,6 +448,7 @@ sidebar:
 | `lamport-1978` | [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
 | `lampson-hints` | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
 | `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) | 其他 |
+| `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
@@ -516,14 +520,14 @@ sidebar:
 | `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `tigerbeetle` | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) | 数据库 |
 | `tls-1.3` | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) | 网络协议 |
-| `tofte-talpin-regions` | [Tofte-Talpin Region-Based Memory Management](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |
+| `tofte-talpin-regions` | [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |
 | `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 智能体与 LLM 系统 |
 | `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vllm` | [vLLM - Efficient Memory Management for LLM Serving with PagedAttention](/study/papers/vllm/) | 分布式训练 / GPU |
-| `volcano` | [Volcano 1990 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano/) | 数据库 |
+| `volcano` | [Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式](/study/papers/volcano/) | 数据库 |
 | `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) | 其他 |
 | `voyager` | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | 智能体与 LLM 系统 |
 | `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |

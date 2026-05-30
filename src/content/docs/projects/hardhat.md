@@ -165,6 +165,7 @@ networks: {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
+- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端

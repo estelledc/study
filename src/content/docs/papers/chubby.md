@@ -164,6 +164,5 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC UDP-Based Multiplexed Secure Transport
 - [[raft]] —— Raft — 易理解的共识算法
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

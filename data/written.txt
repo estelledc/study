@@ -87,6 +87,7 @@ io-uring
 kafka
 kahn-natural-semantics
 karp-21
+kildall-dataflow
 knuth-taocp
 lambda-calculus
 lamport-1978
@@ -108,6 +109,7 @@ metagpt
 mixture-of-experts
 muzero
 mycroft-strictness
+neumann-2015-large-joins
 no-silver-bullet
 openhands
 pair-programming
@@ -335,6 +337,7 @@ plane
 playwright
 pnpm
 podman
+poem
 postgres-js
 postgresql
 preact
@@ -416,6 +419,7 @@ vitest
 vllm
 vue
 vue-i18n
+walletconnect
 warp
 weaviate
 web-vitals

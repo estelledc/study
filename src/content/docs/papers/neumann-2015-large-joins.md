@@ -155,5 +155,11 @@ JOIN dim_geo g ON u.gid = g.id
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[leis-2015-optimizers]] —— Leis 2015 — 用真实数据打脸所有数据库的查询优化器
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[turing-1936]] —— Turing 1936 可计算性
+- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 
