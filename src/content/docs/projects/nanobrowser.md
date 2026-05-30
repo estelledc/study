@@ -153,5 +153,6 @@ registry.action({
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[patchright]] —— patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
+- [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
 - [[zod]] —— Zod — TypeScript-first schema 验证
 

@@ -151,6 +151,7 @@ VSR：view + view-change
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
+- [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议

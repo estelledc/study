@@ -160,6 +160,7 @@ r.POST("/users", func(c *gin.Context) {
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[prometheus]] —— Prometheus — 时序监控系统

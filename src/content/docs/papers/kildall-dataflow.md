@@ -164,6 +164,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"

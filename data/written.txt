@@ -19,6 +19,7 @@ bernstein-1981-cc
 bert
 bidirectional-typing
 bigtable
+bigtable-2006
 bitcoin
 boehm-gc
 borg
@@ -179,6 +180,7 @@ tofte-talpin-regions
 toolformer
 toy-models-superposition
 trees-that-grow
+turchin-supercompilation
 turing-1936
 vit
 vllm
@@ -291,6 +293,7 @@ kafka
 koa
 konva
 kratos
+ktor
 kubernetes
 ky
 kysely
@@ -309,6 +312,7 @@ llamaindex
 lottie
 lucia
 luxon
+makerdao
 markdown-it
 marked
 mcp-ts-sdk

@@ -186,6 +186,7 @@ export default defineConfig({
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[webpack]] —— webpack 模块打包

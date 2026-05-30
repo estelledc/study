@@ -132,6 +132,7 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
 - [[attention]] —— Attention Is All You Need
 - [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来

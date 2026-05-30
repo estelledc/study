@@ -151,6 +151,10 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[vit]] —— ViT — Vision Transformer
 

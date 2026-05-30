@@ -167,3 +167,11 @@ method Sum(a: array<int>) returns (s: int)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
+- [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+

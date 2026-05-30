@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 193 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 195 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：193 篇
+- **总数**：195 篇
 - **已分类**：143
-- **未分类**：50（落入"其他 / 待分类"段）
+- **未分类**：52（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 50 |
+| [其他 / 待分类](#其他--待分类) | 52 |
 
 ---
 
@@ -196,7 +196,7 @@ sidebar:
 |---|---|
 | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) |  |
 | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) |  |
-| [GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利](/study/papers/gfs/) | Google 不为通用工作负载设计存储——他们观察到大文件 / append-mostly / 节点常态故障，倒推 POSIX 该砍什么 |
+| [GFS — 编译器决定不做哪些事](/study/papers/gfs/) |  |
 | [io_uring (Axboe 2019) — Linux 异步 IO 的双 ring 共享内存模型](/study/papers/io-uring/) | Jens Axboe 2019 在 Linux 5 |
 | [MapReduce (Dean & Ghemawat 2004) — 限制表达力换可扩展性](/study/papers/mapreduce/) | 用户只写 map + reduce 两个函数，框架自动 parallelize / distribute / fault-tolerate |
 
@@ -294,7 +294,7 @@ sidebar:
 | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 1968 年 3 月 Dijkstra 写给 CACM 的不到 1000 字 letter，论证 goto 让源代码的静态文本顺序与运行时执行顺序错位、状态难以推理 |
 | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) |  |
 | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) |  |
-| [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | Hoare Logic v1 |
+| [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) |  |
 | [Lampson — Hints for Computer System Design (1983)](/study/papers/lampson-hints/) | Butler Lampson 1983 SOSP keynote 论文笔记：functionality / performance / correctness 三大类 27 条 hints，含 14 个 Definit… |
 | [No Silver Bullet — Essence and Accidents of Software Engineering](/study/papers/no-silver-bullet/) | Brooks 1986：软件工程的本质难度（essence）vs 偶然难度（accident），以及 LLM 时代的再审视 |
 | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) |  |
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 50 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 52 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -317,11 +317,13 @@ sidebar:
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
+| `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
+| `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
@@ -361,7 +363,7 @@ sidebar:
 
 ---
 
-## 全部 193 篇（字母序）
+## 全部 195 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -393,6 +395,7 @@ sidebar:
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | 其他 |
 | `calvin` | [Calvin — 不要每次都协商，先排好顺序大家照做](/study/papers/calvin/) | 数据库 |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
+| `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
 | `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | GC / 内存管理 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
@@ -429,13 +432,14 @@ sidebar:
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
+| `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `foundationdb` | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) | 数据库 |
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | 其他 |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | 其他 |
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
-| `gfs` | [GFS — workload reverse-defines the file system：single master + 64MB chunk + relaxed consistency 的工程胜利](/study/papers/gfs/) | OS / 集群管理 / 系统 |
+| `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | OS / 集群管理 / 系统 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) | 其他 |
@@ -444,7 +448,7 @@ sidebar:
 | `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | HCI / 软件工程研究 |
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
-| `hoare-logic` | [An Axiomatic Basis for Computer Programming](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
+| `hoare-logic` | [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
 | `http-2` | [HTTP/2 — Hypertext Transfer Protocol Version 2](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |

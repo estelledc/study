@@ -179,6 +179,7 @@ def me(user: dict = Depends(current_user)):
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器

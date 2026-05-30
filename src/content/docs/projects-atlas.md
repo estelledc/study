@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 265 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 267 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：265 个
+- **总数**：267 个
 - **已分类**：206
-- **未分类**：59（落入"其他 / 待分类"段）
+- **未分类**：61（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 59 |
+| [其他 / 待分类](#其他--待分类) | 61 |
 
 ---
 
@@ -307,7 +307,7 @@ sidebar:
 | [Jest 状元篇 — JS 测试框架的开箱即用](/study/projects/jest/) |  |
 | [MSW — mock 不该改业务代码，应该在网络层透明拦截](/study/projects/msw/) | 拆解 mswjs/msw 如何在浏览器用 Service Worker、在 Node 用 fetch interceptor，统一 mock API |
 | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) |  |
-| [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 不是文档站、不是测试 runner、不是 playground —— 它是把这三件事缝起来的 dev-time framework，靠 Manager + Preview iframe 双 window 和一根 pos… |
+| [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) |  |
 | [Testing Library 状元篇 — 用户视角的 DOM 测试哲学](/study/projects/testing-library/) | 从 Enzyme 时代到 Testing Library 时代，重构噩梦如何被一个简单原则解决 |
 | [Vitest — Vite 原生测试框架](/study/projects/vitest/) |  |
 
@@ -375,7 +375,7 @@ sidebar:
 | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) |  |
 | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) |  |
 | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) |  |
-| [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | TypeScript + Fastify + puppeteer-core，让 LLM agent 像调外部 SaaS 一样用浏览器 |
+| [Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务](/study/projects/steel-browser/) |  |
 
 ## 可观测 / 性能
 
@@ -495,7 +495,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 59 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 61 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -511,6 +511,7 @@ sidebar:
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
+| `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
@@ -526,6 +527,7 @@ sidebar:
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
+| `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
@@ -561,7 +563,7 @@ sidebar:
 
 ---
 
-## 全部 265 个（字母序）
+## 全部 267 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -605,6 +607,7 @@ sidebar:
 | `commander` | [commander.js](/study/projects/commander/) | CLI / 命令行工具 |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | 其他 |
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
+| `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `d3` | [d3.js 数据驱动文档](/study/projects/d3/) | 数据可视化 |
 | `date-fns` | [date-fns 模块化日期函数库](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [dayjs 极简 Moment.js 替代](/study/projects/dayjs/) | 日期时间 |
@@ -647,6 +650,7 @@ sidebar:
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
+| `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `i18next` | [i18next framework-agnostic i18n 引擎](/study/projects/i18next/) | i18n 国际化 |
@@ -774,8 +778,8 @@ sidebar:
 | `stagehand` | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | 其他 |
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
-| `steel-browser` | [Steel Browser — 把 Chromium 包成 AI agent 用的 REST API](/study/projects/steel-browser/) | AI 浏览器自动化 |
-| `storybook` | [Storybook — 给 UI 组件一个独立的工作台](/study/projects/storybook/) | 测试 / 验证 |
+| `steel-browser` | [Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务](/study/projects/steel-browser/) | AI 浏览器自动化 |
+| `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `styled-components` | [styled-components — CSS-in-JS 鼻祖与运行时样式注入](/study/projects/styled-components/) | CSS / 样式 |
 | `stylex` | [StyleX Meta 编译期 atomic CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | 数据应用 / SaaS |

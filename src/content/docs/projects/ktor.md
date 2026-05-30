@@ -162,5 +162,9 @@ val users: List<User> = client.get("https://api.example.com/users").body()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
+- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
+- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 

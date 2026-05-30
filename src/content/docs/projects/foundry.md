@@ -165,6 +165,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
