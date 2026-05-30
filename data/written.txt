@@ -39,6 +39,7 @@ causal-abstraction
 ceph-2006
 chain-replication-2004
 chaitin-graph-coloring
+chandy-lamport-1985
 cheney-gc
 chinchilla
 chubby
@@ -84,6 +85,7 @@ dino
 diskann-2019
 dit
 dns
+dpll-1962
 dpo
 dqn
 dstreams-2013
@@ -161,6 +163,7 @@ lean-tactics
 leis-2015-optimizers
 lerner-seminal
 lieberman-realtime-gc
+linear-scan-reg-alloc
 linear-types
 liquid-types
 llama
@@ -386,6 +389,7 @@ docusaurus
 dragonflydb
 drizzle
 dropwizard
+dua-cli
 duckdb
 duckdb-wasm
 duf
@@ -409,6 +413,7 @@ excalidraw
 express
 eza
 fabric-js
+fastai
 fastapi
 fastify
 fd
@@ -484,6 +489,7 @@ markdown-it
 marked
 matrix-js-sdk
 matrix-rust-sdk
+mattermost
 mcp-ts-sdk
 meilisearch
 metamask

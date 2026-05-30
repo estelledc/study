@@ -164,4 +164,5 @@ client.on("Room.timeline", (event, room) => {
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[vodozemac]] —— vodozemac — Matrix 端到端加密的 Rust 内核
+- [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
 

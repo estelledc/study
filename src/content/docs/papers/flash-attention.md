@@ -157,6 +157,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mamba]] —— Mamba — 选择性状态空间模型
+- [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[vit]] —— ViT — Vision Transformer
 

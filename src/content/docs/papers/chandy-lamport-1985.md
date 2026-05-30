@@ -156,5 +156,10 @@ Raft 的快照之所以比 Chandy-Lamport 简单——因为 Raft 已经有单 l
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
+- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[raft]] —— Raft — 易理解的共识算法
 
