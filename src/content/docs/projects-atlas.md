@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 613 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 616 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：613 个
+- **总数**：616 个
 - **已分类**：213
-- **未分类**：400（落入"其他 / 待分类"段）
+- **未分类**：403（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 400 |
+| [其他 / 待分类](#其他--待分类) | 403 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 400 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 403 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -588,6 +588,7 @@ sidebar:
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) |
 | `couchdb` | [Apache CouchDB — Erlang 写的文档数据库](/study/projects/couchdb/) |
 | `crewai` | [CrewAI — 把多 Agent 编排做成"组团队"](/study/projects/crewai/) |
+| `cri-o` | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
@@ -717,6 +718,7 @@ sidebar:
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
+| `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) |
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
@@ -857,6 +859,7 @@ sidebar:
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) |
+| `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
@@ -909,7 +912,7 @@ sidebar:
 
 ---
 
-## 全部 613 个（字母序）
+## 全部 616 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1025,6 +1028,7 @@ sidebar:
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | 其他 |
 | `couchdb` | [Apache CouchDB — Erlang 写的文档数据库](/study/projects/couchdb/) | 其他 |
 | `crewai` | [CrewAI — 把多 Agent 编排做成"组团队"](/study/projects/crewai/) | 其他 |
+| `cri-o` | [CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时](/study/projects/cri-o/) | 其他 |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | 其他 |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
@@ -1214,6 +1218,7 @@ sidebar:
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | 其他 |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | 其他 |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | 其他 |
+| `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) | 其他 |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 其他 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
@@ -1441,6 +1446,7 @@ sidebar:
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) | 其他 |
+| `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) | 其他 |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | 其他 |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) | 其他 |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) | 其他 |

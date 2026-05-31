@@ -157,4 +157,5 @@ WHERE dt >= '2026-05-01' GROUP BY dt, city;
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[questdb]] —— QuestDB — 高性能时序库
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 

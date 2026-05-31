@@ -200,6 +200,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代
 

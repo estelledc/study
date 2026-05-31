@@ -171,6 +171,7 @@ D(M):
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[minhash-broder-1997]] —— MinHash — 用最小哈希值估算两个集合的重叠度
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑

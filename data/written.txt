@@ -53,6 +53,7 @@ bitcoin
 blackwell-architecture-2024
 blink-2020
 blinn-1977
+blip2-2023
 block-max-wand-2011
 bm25-okapi
 boehm-gc
@@ -110,6 +111,7 @@ compiler-errors
 consistent-hashing-1997
 constitutional-ai
 cook-1984-distributed-ray-tracing
+cook-1986-stochastic-sampling
 cook-levin
 cook-torrance-1982
 copilot-rct
@@ -322,6 +324,7 @@ local-type-inference
 logoot-2010
 longformer-2020
 loop-1987-subdivision
+lsh-indyk-1998
 lsm-tree-1996
 lstm-1997
 macklin-2014-position-based-fluids
@@ -898,6 +901,7 @@ lottie
 lsd
 lucia
 luxon
+m3
 mage
 mailcow
 makerdao
@@ -968,6 +972,7 @@ oh-my-posh
 ollama
 open-sora
 openai-agents-sdk
+openlayers
 openmeetings
 opensea-js
 opentelemetry
@@ -1060,6 +1065,7 @@ rocksdb
 rolldown
 rollup
 rspack
+runc
 safe-contracts
 salvo
 sanic

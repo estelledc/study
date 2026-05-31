@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 603 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 606 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：603 篇
+- **总数**：606 篇
 - **已分类**：143
-- **未分类**：460（落入"其他 / 待分类"段）
+- **未分类**：463（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 460 |
+| [其他 / 待分类](#其他--待分类) | 463 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 460 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 463 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -379,6 +379,7 @@ sidebar:
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) |
+| `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
 | `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
@@ -491,6 +492,7 @@ sidebar:
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
+| `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) |
 | `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) |
 | `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) |
@@ -578,6 +580,7 @@ sidebar:
 | `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) |
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) |
+| `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
@@ -771,7 +774,7 @@ sidebar:
 
 ---
 
-## 全部 603 篇（字母序）
+## 全部 606 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -872,6 +875,7 @@ sidebar:
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | 其他 |
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
+| `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) | 其他 |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) | 其他 |
 | `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) | 其他 |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
@@ -1018,6 +1022,7 @@ sidebar:
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | 其他 |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 其他 |
+| `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) | 其他 |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | 其他 |
 | `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) | 其他 |
 | `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | 其他 |
@@ -1128,6 +1133,7 @@ sidebar:
 | `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) | 其他 |
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) | 其他 |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) | 其他 |
+| `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) | 其他 |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | 其他 |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | 其他 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
