@@ -149,6 +149,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[helm]] —— Helm — Kubernetes 包管理器
+- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[k3s]] —— k3s — 把完整 K8s 塞进一个 60 MB 的二进制
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI

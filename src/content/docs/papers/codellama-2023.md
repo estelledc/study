@@ -157,4 +157,5 @@ Code Llama 是开源代码模型生态的"奠基性配方书"。
 - [[attention]] —— Attention Is All You Need
 - [[deepseek-coder-2024]] —— DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA
 - [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[starcoder-2023]] —— StarCoder — 把训练数据完整公开的 15B 代码模型
 

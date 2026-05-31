@@ -166,6 +166,7 @@ function Greeting({ name }) {
 - [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
 - [[cot]] —— Chain-of-Thought Prompting
 - [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
+- [[dash]] —— Dash — Plotly 的 Python 仪表板框架
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
