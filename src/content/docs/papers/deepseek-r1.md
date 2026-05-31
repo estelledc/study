@@ -156,4 +156,5 @@ R1 推理时输出长这样：
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
+- [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"
 

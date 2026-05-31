@@ -149,5 +149,7 @@ Druid 内部：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[pinot]] —— Apache Pinot — LinkedIn 起家的实时 OLAP
 

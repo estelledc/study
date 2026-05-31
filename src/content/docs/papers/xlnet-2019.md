@@ -1,6 +1,6 @@
 ---
 title: XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向
-来源: Yang et al., "XLNet: Generalized Autoregressive Pretraining for Language Understanding", NeurIPS 2019
+来源: 'Yang et al., "XLNet: Generalized Autoregressive Pretraining for Language Understanding", NeurIPS 2019'
 日期: 2026-05-31
 分类: 机器学习
 难度: 高级
@@ -148,3 +148,6 @@ T! 是天文数字（T=512 时不可枚举）。XLNet 实际做法：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
