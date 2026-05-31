@@ -152,7 +152,6 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO — Direct Preference Optimization
-- [[dqn]] —— DQN — Deep Q-Network
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
@@ -160,6 +159,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
 - [[maml-2017]] —— MAML — 学一个"好起点"，几步就能学会新任务
+- [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[mmlu-2021]] —— MMLU — 用 57 个学科的多选题考一考语言模型
 - [[muzero]] —— MuZero — 不用规则也能下棋

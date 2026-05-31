@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 696 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 699 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：696 个
+- **总数**：699 个
 - **已分类**：214
-- **未分类**：482（落入"其他 / 待分类"段）
+- **未分类**：485（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 482 |
+| [其他 / 待分类](#其他--待分类) | 485 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 482 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 485 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -536,6 +536,7 @@ sidebar:
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) |
 | `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) |
 | `arrow` | [Apache Arrow — 内存列式标准](/study/projects/arrow/) |
+| `arrow-rs` | [arrow-rs — Apache Arrow / Parquet 的 Rust 参考实现](/study/projects/arrow-rs/) |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
@@ -771,6 +772,7 @@ sidebar:
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) |
 | `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) |
+| `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
@@ -954,6 +956,7 @@ sidebar:
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) |
+| `vector` | [Vector — Rust 写的统一可观测性数据管道](/study/projects/vector/) |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
 | `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
@@ -992,7 +995,7 @@ sidebar:
 
 ---
 
-## 全部 696 个（字母序）
+## 全部 699 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1031,6 +1034,7 @@ sidebar:
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `arrow` | [Apache Arrow — 内存列式标准](/study/projects/arrow/) | 其他 |
+| `arrow-rs` | [arrow-rs — Apache Arrow / Parquet 的 Rust 参考实现](/study/projects/arrow-rs/) | 其他 |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) | 其他 |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | 其他 |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | 其他 |
@@ -1355,6 +1359,7 @@ sidebar:
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) | 其他 |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) | 其他 |
 | `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) | 其他 |
+| `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) | 其他 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | 其他 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
 | `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
@@ -1638,6 +1643,7 @@ sidebar:
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) | 其他 |
+| `vector` | [Vector — Rust 写的统一可观测性数据管道](/study/projects/vector/) | 其他 |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | 其他 |
 | `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) | 其他 |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) | 其他 |

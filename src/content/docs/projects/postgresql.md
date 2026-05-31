@@ -197,6 +197,7 @@ LIMIT 5;
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
 - [[memgraph]] —— Memgraph — 内存图数据库
+- [[metabase]] —— Metabase — 让非技术人查数
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[mongo]] —— MongoDB — 文档数据库代表
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库

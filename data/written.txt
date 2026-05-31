@@ -461,6 +461,7 @@ mogul-1995-persistent-http
 monaghan-1992-sph
 monetdb-x100-2005
 mongo
+monitors-1974
 ms-marco-2016
 mueller-2007-pbd
 mueller-2022-instant-ngp
@@ -501,6 +502,7 @@ orca-2022
 orca-continuous-batching
 ot-1989
 owens-2007-gpgpu-survey
+p4-2014
 padmanabhan-1995-http-latency
 pagerank-1998
 pair-programming
@@ -651,6 +653,7 @@ sulsky-1994-mpm
 swe-agent
 swe-bench
 sycl-cpp-2020
+sycophancy-2023
 system-f-reynolds-1974
 system-r-1976
 t0-2021
@@ -777,6 +780,7 @@ argilla
 argo-workflows
 argocd
 arktype
+arrow
 arweave
 asdf
 aspnetcore
@@ -951,6 +955,7 @@ fish
 flask
 flax
 flowchart-js
+fluent-bit
 flux
 fooocus
 foundry
@@ -1324,6 +1329,7 @@ styled-components
 stylex
 sui
 supabase
+superset
 supertokens
 surrealdb
 svelte

@@ -153,7 +153,6 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
-- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
@@ -181,6 +180,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
+- [[frenetic-2011]] —— Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
