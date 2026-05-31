@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 730 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 734 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：730 篇
+- **总数**：734 篇
 - **已分类**：143
-- **未分类**：587（落入"其他 / 待分类"段）
+- **未分类**：591（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 587 |
+| [其他 / 待分类](#其他--待分类) | 591 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 587 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 591 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -339,6 +339,7 @@ sidebar:
 | `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) |
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
+| `b4-2013` | [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) |
 | `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) |
 | `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) |
 | `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) |
@@ -351,6 +352,7 @@ sidebar:
 | `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
 | `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) |
+| `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) |
 | `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
@@ -478,6 +480,7 @@ sidebar:
 | `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
+| `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) |
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) |
 | `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
@@ -598,6 +601,7 @@ sidebar:
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) |
 | `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) |
+| `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) |
 | `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) |
 | `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) |
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) |
@@ -898,7 +902,7 @@ sidebar:
 
 ---
 
-## 全部 730 篇（字母序）
+## 全部 734 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -944,6 +948,7 @@ sidebar:
 | `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) | 其他 |
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) | 其他 |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 其他 |
+| `b4-2013` | [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) | 其他 |
 | `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) | 其他 |
 | `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) | 其他 |
 | `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) | 其他 |
@@ -959,6 +964,7 @@ sidebar:
 | `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) | 其他 |
 | `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) | 其他 |
+| `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) | 其他 |
 | `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) | 其他 |
 | `bigtable` | [Bigtable — Google 把行级随机读写做到 PB 级的存储](/study/papers/bigtable/) | 数据库 |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 其他 |
@@ -1121,6 +1127,7 @@ sidebar:
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 其他 |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
+| `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) | 其他 |
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) | 其他 |
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) | 其他 |
@@ -1262,6 +1269,7 @@ sidebar:
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | 其他 |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) | 其他 |
 | `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) | 其他 |
+| `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) | 其他 |
 | `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) | 其他 |
 | `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | 其他 |
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | 其他 |

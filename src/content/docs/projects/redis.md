@@ -155,6 +155,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[dragonfly]] —— Dragonfly — 多线程 Redis 替代
 - [[dragonflydb]] —— Dragonfly — 多线程 Redis 替代
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[emqx]] —— EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[feast]] —— Feast — 让训练和上线用同一份特征定义的开源 Feature Store

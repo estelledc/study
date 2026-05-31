@@ -172,6 +172,7 @@ function Greeting({ name }) {
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
 - [[framer-motion]] —— Framer Motion — React 声明式动画
+- [[glide-data-grid]] —— glide-data-grid — Canvas 画出来的百万行表格
 - [[gradio]] —— Gradio — ML 模型 demo 框架
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[gsap]] —— GSAP — GreenSock 高性能动画
