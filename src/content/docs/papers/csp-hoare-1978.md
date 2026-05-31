@@ -156,6 +156,7 @@ case v := <-chB: handleB(v)
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行

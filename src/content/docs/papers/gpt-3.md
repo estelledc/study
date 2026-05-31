@@ -153,7 +153,6 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO — Direct Preference Optimization
-- [[dqn]] —— DQN — Deep Q-Network
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
@@ -172,6 +171,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 - [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[self-consistency-2022]] —— Self-Consistency — 让模型把同一道题做 40 遍再投票
 - [[starcoder-2023]] —— StarCoder — 把训练数据完整公开的 15B 代码模型
 - [[t0-2021]] —— T0 — 让 50 个人各写各的提示词，模型反而更会听新指令
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
