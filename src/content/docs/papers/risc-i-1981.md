@@ -154,5 +154,8 @@ RISC I 的核心论点：**让硬件简单，把复杂度推给编译器**。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
+- [[case-for-risc-1980]] —— Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[ssa]] —— SSA — 静态单赋值形式
 

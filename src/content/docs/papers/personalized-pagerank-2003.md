@@ -151,6 +151,7 @@ PR = (1 - c) · M · PR  +  c · v
 
 - [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
 

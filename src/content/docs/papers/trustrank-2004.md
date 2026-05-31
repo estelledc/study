@@ -158,6 +158,7 @@ spam_candidates = np.where(t < threshold)[0]
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[hits-1999]] —— HITS — 给网页同时打两个分：权威页 + 索引页
+- [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好

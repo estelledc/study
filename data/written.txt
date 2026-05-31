@@ -184,6 +184,7 @@ generational-gc
 gfs
 gilbert-lynch-2002
 godel-1931
+goldsmith-1987-bvh
 google-1998
 goral-1984-radiosity
 gpipe-2019
@@ -361,6 +362,7 @@ quic
 quincy-2009
 raft
 rag-lewis-2020
+ranknet-2005
 react
 react-server-components
 realm
@@ -374,6 +376,7 @@ retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
 ring-allreduce-2017
+risc-i-1981
 rlhf-christiano
 rocksdb-2017
 rocksdb-lsm
@@ -539,6 +542,7 @@ astro
 asynq
 auth-js
 autogen
+autogluon
 automerge
 aws-spot-best-practices
 axelar
@@ -600,6 +604,7 @@ conversations
 cosmos-sdk
 cosmwasm
 coturn
+couchdb
 crewai
 ctranslate2
 curlie
@@ -820,6 +825,7 @@ nushell
 nuxt
 nvidia-gpu-operator
 nvidia-mig
+nvm
 nx
 observable-plot
 oclif
