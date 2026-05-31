@@ -154,6 +154,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
 - [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
 - [[bentoml]] —— BentoML — 模型打包部署
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
