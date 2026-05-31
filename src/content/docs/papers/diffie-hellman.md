@@ -151,6 +151,7 @@ openssl pkey -in alice.pem -pubout -out alice.pub
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
+- [[logjam-2015]] —— Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[rsa]] —— RSA 公钥密码
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做

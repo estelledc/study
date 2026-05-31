@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 697 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 700 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：697 篇
+- **总数**：700 篇
 - **已分类**：143
-- **未分类**：554（落入"其他 / 待分类"段）
+- **未分类**：557（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 554 |
+| [其他 / 待分类](#其他--待分类) | 557 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 554 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 557 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -510,6 +510,7 @@ sidebar:
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
+| `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) |
@@ -610,6 +611,7 @@ sidebar:
 | `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
+| `logjam-2015` | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) |
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) |
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) |
@@ -760,6 +762,7 @@ sidebar:
 | `server-sent-events` | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) |
 | `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) |
 | `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) |
+| `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) |
 | `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) |
 | `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) |
@@ -865,7 +868,7 @@ sidebar:
 
 ---
 
-## 全部 697 篇（字母序）
+## 全部 700 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1126,6 +1129,7 @@ sidebar:
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | OS / 集群管理 / 系统 |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | 其他 |
+| `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) | 其他 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | 其他 |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | 其他 |
@@ -1248,6 +1252,7 @@ sidebar:
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) | 其他 |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) | 其他 |
+| `logjam-2015` | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) | 其他 |
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) | 其他 |
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | 其他 |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) | 其他 |
@@ -1434,6 +1439,7 @@ sidebar:
 | `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) | 其他 |
 | `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) | 其他 |
+| `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) | 其他 |
 | `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | 其他 |
 | `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) | 其他 |
