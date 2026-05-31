@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 401 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 404 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：401 篇
+- **总数**：404 篇
 - **已分类**：143
-- **未分类**：258（落入"其他 / 待分类"段）
+- **未分类**：261（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 258 |
+| [其他 / 待分类](#其他--待分类) | 261 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 258 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 261 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -340,6 +340,7 @@ sidebar:
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
+| `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) |
@@ -408,6 +409,7 @@ sidebar:
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) |
 | `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
+| `gshard-2020` | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) |
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) |
@@ -525,6 +527,7 @@ sidebar:
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) |
 | `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |
+| `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) |
 | `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) |
 | `stainless-2017` | [Stainless — 让编译器替你证明 Scala 函数真的满足规约](/study/papers/stainless-2017/) |
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |
@@ -569,7 +572,7 @@ sidebar:
 
 ---
 
-## 全部 401 篇（字母序）
+## 全部 404 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -625,6 +628,7 @@ sidebar:
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | 其他 |
+| `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) | 其他 |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) | 其他 |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) | 其他 |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | 其他 |
@@ -732,6 +736,7 @@ sidebar:
 | `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) | 其他 |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 其他 |
 | `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | HCI / 软件工程研究 |
+| `gshard-2020` | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) | 其他 |
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) | 其他 |
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 其他 |
@@ -909,6 +914,7 @@ sidebar:
 | `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) | 其他 |
 | `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | 其他 |
+| `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) | 其他 |
 | `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) | 其他 |
 | `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
