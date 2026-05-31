@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 652 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 654 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：652 个
+- **总数**：654 个
 - **已分类**：213
-- **未分类**：439（落入"其他 / 待分类"段）
+- **未分类**：441（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 439 |
+| [其他 / 待分类](#其他--待分类) | 441 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 439 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 441 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -668,6 +668,7 @@ sidebar:
 | `gradio` | [Gradio — ML 模型 demo 框架](/study/projects/gradio/) |
 | `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
+| `graphology` | [Graphology — 浏览器里的图数据结构与算法库](/study/projects/graphology/) |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) |
 | `greenplum-db` | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) |
@@ -736,6 +737,7 @@ sidebar:
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
+| `manticoresearch` | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) |
 | `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) |
@@ -948,7 +950,7 @@ sidebar:
 
 ---
 
-## 全部 652 个（字母序）
+## 全部 654 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1170,6 +1172,7 @@ sidebar:
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) | 其他 |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
+| `graphology` | [Graphology — 浏览器里的图数据结构与算法库](/study/projects/graphology/) | 其他 |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) | 其他 |
 | `greenplum-db` | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) | 其他 |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | 其他 |
@@ -1272,6 +1275,7 @@ sidebar:
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | 其他 |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | 其他 |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | 其他 |
+| `manticoresearch` | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) | 其他 |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) | 其他 |
 | `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) | 其他 |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 其他 |

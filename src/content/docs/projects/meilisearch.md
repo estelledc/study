@@ -162,6 +162,7 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+- [[manticoresearch]] —— Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[sonic]] —— Sonic — 极简前缀搜索引擎

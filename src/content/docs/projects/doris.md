@@ -153,6 +153,7 @@ WHERE dt = '2026-05-30' LIMIT 100;
 - [[databend]] —— Databend — Rust 写的存算分离云数仓
 - [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[manticoresearch]] —— Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
 - [[questdb]] —— QuestDB — 高性能时序库
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[starrocks]] —— StarRocks — MPP 列存数据库
