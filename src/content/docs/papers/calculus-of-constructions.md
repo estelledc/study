@@ -150,6 +150,7 @@ Qed.
 
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[cubical-type-theory-2018]] —— Cubical Type Theory — 让 Univalence 公理真的能算出结果
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）

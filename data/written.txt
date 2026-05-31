@@ -37,6 +37,7 @@ bm25-okapi
 boehm-gc
 boogie-2005
 borg
+borg-omega-kube-2016
 brewer-cap-2000
 brook-2004
 byzantine-generals-1982
@@ -184,6 +185,7 @@ infer-biabduction
 ingres-1976
 instructgpt
 io-uring
+iris-2015
 isabelle-hol-2002
 islands-architecture
 janus-2016
@@ -267,6 +269,7 @@ pbft-1999
 peg-packrat-ford
 percolator-2010
 peyton-jones-stg
+pipedream-2019
 plotkin-sos
 pnueli-temporal-1977
 pnuts-2008
@@ -482,6 +485,7 @@ continue
 conversations
 cosmos-sdk
 cosmwasm
+coturn
 ctranslate2
 curlie
 curve
@@ -570,6 +574,7 @@ hanami
 haproxy
 haraka
 hardhat
+haystack
 helidon
 helm
 hocuspocus
@@ -736,6 +741,7 @@ qwik
 rabby-wallet
 radix-ui
 rails
+ranger
 rasa
 ratatui
 react
