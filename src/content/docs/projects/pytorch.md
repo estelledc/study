@@ -181,6 +181,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[metaflow]] —— Metaflow — Netflix 给数据科学家的 Python 流水线
 - [[mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[optax]] —— Optax — JAX 优化器组合库
@@ -202,4 +203,5 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 - [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
 - [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
+- [[whisper]] —— Whisper — OpenAI 多语言 ASR
 

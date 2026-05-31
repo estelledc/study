@@ -149,6 +149,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ance-2020]] —— ANCE — 让模型自己挖训练负例，对比学习的"自给自足"
 - [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练

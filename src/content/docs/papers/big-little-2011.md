@@ -151,5 +151,8 @@ big.LITTLE 由三件事组成：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
+- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
+- [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[ssa]] —— SSA — 静态单赋值形式
 

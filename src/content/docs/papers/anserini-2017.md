@@ -152,6 +152,7 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ance-2020]] —— ANCE — 让模型自己挖训练负例，对比学习的"自给自足"
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模

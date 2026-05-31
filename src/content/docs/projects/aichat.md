@@ -150,5 +150,7 @@ aichat --rag mynotes
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[litellm-proxy]] —— LiteLLM Proxy — 自托管的 LLM 统一网关
+- [[oclif]] —— oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架
+- [[shell-gpt]] —— shell-gpt — 把 LLM 接进 shell 当命令行助理
 
