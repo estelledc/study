@@ -152,6 +152,7 @@ def map : (α → β) → List α → List β
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[cubical-type-theory-2018]] —— Cubical Type Theory — 让 Univalence 公理真的能算出结果
+- [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手

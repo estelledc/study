@@ -158,4 +158,5 @@ for g in gaussians:
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[vit]] —— ViT — Vision Transformer
+- [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

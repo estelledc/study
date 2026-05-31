@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 501 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 504 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：501 个
+- **总数**：504 个
 - **已分类**：207
-- **未分类**：294（落入"其他 / 待分类"段）
+- **未分类**：297（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 294 |
+| [其他 / 待分类](#其他--待分类) | 297 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 294 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 297 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -673,6 +673,7 @@ sidebar:
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
+| `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
@@ -707,6 +708,7 @@ sidebar:
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `postal` | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) |
 | `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) |
+| `prefect` | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
 | `promptfoo` | [promptfoo — 给 prompt 写单元测试的 CLI](/study/projects/promptfoo/) |
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) |
@@ -733,6 +735,7 @@ sidebar:
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) |
+| `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
@@ -797,7 +800,7 @@ sidebar:
 
 ---
 
-## 全部 501 个（字母序）
+## 全部 504 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1075,6 +1078,7 @@ sidebar:
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | 其他 |
 | `msw` | [MSW — 让 mock 不改业务代码，在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
+| `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) | 其他 |
 | `mysql` | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) | 数据库本体 / 存储引擎 |
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
@@ -1138,6 +1142,7 @@ sidebar:
 | `postgres-js` | [postgres.js — 写 SQL 但语法层就防注入的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
+| `prefect` | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) | 其他 |
 | `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) | 其他 |
 | `prom-client` | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
@@ -1182,6 +1187,7 @@ sidebar:
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | 其他 |
 | `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) | 其他 |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) | 其他 |
+| `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) | 其他 |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | 其他 |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
