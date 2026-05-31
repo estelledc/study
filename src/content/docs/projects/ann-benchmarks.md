@@ -164,6 +164,7 @@ class MyAlgo(BaseANN):
 - [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
 - [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[lm-evaluation-harness]] —— lm-evaluation-harness — LLM 基准评测底座
+- [[locust]] —— Locust — 用 Python 写压测脚本的分布式负载工具
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[qdrant]] —— Qdrant — Rust 向量数据库

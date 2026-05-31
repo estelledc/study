@@ -64,6 +64,7 @@ biggan-2018
 bigtable
 bigtable-2006
 bitcoin
+bittorrent-2003
 blackwell-architecture-2024
 blink-2020
 blinn-1977
@@ -139,6 +140,7 @@ colbert-v2
 comer-1979-btree
 compcert
 compiler-errors
+consistency-models-2023
 consistent-hashing-1997
 constitutional-ai
 cook-1984-distributed-ray-tracing
@@ -629,6 +631,7 @@ sinfonia-2007
 skeen-3pc-1981
 skip-list-1990
 skip-locked-postgres-9.5
+slab-1994
 slam-microsoft
 sleeper-agents
 slim-2011
@@ -1044,6 +1047,7 @@ jq
 js-joda
 just
 k3s
+k6
 k9s
 kafka
 kamailio
@@ -1212,7 +1216,9 @@ pandas
 panel
 partykit
 patchright
+pdfkit
 pdfmake
+pebble
 peerjs-server
 penpot
 pg-boss-readme

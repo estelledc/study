@@ -202,6 +202,7 @@ def me(user: dict = Depends(current_user)):
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[litellm-proxy]] —— LiteLLM Proxy — 自托管的 LLM 统一网关
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+- [[locust]] —— Locust — 用 Python 写压测脚本的分布式负载工具
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架

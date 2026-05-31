@@ -164,4 +164,5 @@ Check if this PR has any AI-generated slop:
 - [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 
