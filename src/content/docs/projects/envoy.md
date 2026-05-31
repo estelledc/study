@@ -165,8 +165,10 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
 - [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
+- [[token-bucket-stripe]] —— Stripe Rate Limiters — 工业级令牌桶长什么样
 

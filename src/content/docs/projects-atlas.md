@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 430 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 434 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：430 个
-- **已分类**：206
-- **未分类**：224（落入"其他 / 待分类"段）
+- **总数**：434 个
+- **已分类**：207
+- **未分类**：227（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -29,7 +29,7 @@ sidebar:
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 19 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
-| [监控 / 时序](#监控---时序) | 6 |
+| [监控 / 时序](#监控---时序) | 7 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 224 |
+| [其他 / 待分类](#其他--待分类) | 227 |
 
 ---
 
@@ -210,13 +210,14 @@ sidebar:
 
 ## 监控 / 时序
 
-共 6 个。
+共 7 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Grafana — 监控可视化看板](/study/projects/grafana/) |  |
 | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) |  |
 | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) |  |
+| [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) |  |
 | [Prometheus — 时序监控系统](/study/projects/prometheus/) |  |
 | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) |  |
 | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) |  |
@@ -495,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 224 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 227 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -528,6 +529,7 @@ sidebar:
 | `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) |
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) |
 | `btop` | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) |
+| `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
@@ -580,6 +582,7 @@ sidebar:
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
+| `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) |
 | `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) |
 | `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) |
@@ -640,6 +643,7 @@ sidebar:
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
+| `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
@@ -726,7 +730,7 @@ sidebar:
 
 ---
 
-## 全部 430 个（字母序）
+## 全部 434 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -771,6 +775,7 @@ sidebar:
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) | 其他 |
 | `browser-use` | [browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架](/study/projects/browser-use/) | AI 浏览器自动化 |
 | `btop` | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) | 其他 |
+| `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | 其他 |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | 其他 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
@@ -863,6 +868,7 @@ sidebar:
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | 其他 |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
+| `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) | 其他 |
 | `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | 其他 |
 | `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) | 其他 |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | 其他 |
@@ -983,11 +989,13 @@ sidebar:
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
+| `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
 | `ora` | [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |
+| `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | 其他 |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) | 其他 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | 其他 |

@@ -17,14 +17,20 @@ const ROOT = path.resolve(__dirname, '..');
 const CANDIDATES = path.join(ROOT, 'data/candidates.jsonl');
 const REWRITE_POOL = path.join(ROOT, 'data/rewrite-pool.jsonl');
 const GRAVEYARD = path.join(ROOT, 'data/graveyard.jsonl');
+const PRIORITY = path.join(ROOT, 'data/priority-queue.jsonl');
 
 function parseArgs() {
-  const args = { count: 8, rewrite: null, new: null };
+  const args = { count: 8, rewrite: null, new: null, priorityRatio: 0.7, noPriority: false };
   for (let i = 2; i < process.argv.length; i++) {
     const a = process.argv[i];
     if (a === '--count') args.count = parseInt(process.argv[++i], 10);
     else if (a === '--rewrite') args.rewrite = parseInt(process.argv[++i], 10);
     else if (a === '--new') args.new = parseInt(process.argv[++i], 10);
+    else if (a === '--priority-ratio') args.priorityRatio = parseFloat(process.argv[++i]);
+    else if (a === '--no-priority') args.noPriority = true;
+  }
+  if (Number.isNaN(args.priorityRatio) || args.priorityRatio < 0 || args.priorityRatio > 1) {
+    throw new Error(`--priority-ratio must be in [0, 1], got ${args.priorityRatio}`);
   }
   // 默认 50/50 split
   if (args.rewrite === null && args.new === null) {
@@ -44,6 +50,44 @@ async function readJsonl(p) {
     if (err.code === 'ENOENT') return [];
     throw err;
   }
+}
+
+async function writeJsonl(p, rows) {
+  const body = rows.map(r => JSON.stringify(r)).join('\n') + (rows.length ? '\n' : '');
+  await fs.writeFile(p, body, 'utf8');
+}
+
+function pickPriority(items, n, excludeSlugs) {
+  // 按 tier-1 → tier-2 → tier-3 → tier-4 顺序消费 status=new 的 entry
+  const tierOrder = ['tier-1', 'tier-2', 'tier-3', 'tier-4'];
+  const picked = [];
+  for (const tier of tierOrder) {
+    const bucket = items.filter(p =>
+      p.status === 'new' &&
+      p.priority_tier === tier &&
+      !excludeSlugs.has(`${p.area}::${p.slug}`)
+    );
+    for (const p of bucket) {
+      if (picked.length >= n) break;
+      picked.push(p);
+      excludeSlugs.add(`${p.area}::${p.slug}`);
+    }
+    if (picked.length >= n) break;
+  }
+  // 兜底：tier 字段缺失但 status=new 的 entry 也吃
+  if (picked.length < n) {
+    const rest = items.filter(p =>
+      p.status === 'new' &&
+      !tierOrder.includes(p.priority_tier) &&
+      !excludeSlugs.has(`${p.area}::${p.slug}`)
+    );
+    for (const p of rest) {
+      if (picked.length >= n) break;
+      picked.push(p);
+      excludeSlugs.add(`${p.area}::${p.slug}`);
+    }
+  }
+  return picked;
 }
 
 function pickRewrite(pool, n) {
@@ -103,16 +147,18 @@ function assignWorktrees(items) {
 async function main() {
   const args = parseArgs();
 
-  const [candidates, pool, graveyard] = await Promise.all([
+  const [candidates, pool, graveyard, priority] = await Promise.all([
     readJsonl(CANDIDATES),
     readJsonl(REWRITE_POOL),
     readJsonl(GRAVEYARD),
+    readJsonl(PRIORITY),
   ]);
 
   // graveyard 永久排除（按 slug 唯一，跨 area 安全）
   const graveSlugs = new Set(graveyard.map(g => g.slug));
   const filteredPool = pool.filter(p => !graveSlugs.has(p.slug));
   const filteredCandidates = candidates.filter(c => !graveSlugs.has(c.slug));
+  const filteredPriority = priority.filter(p => !graveSlugs.has(p.slug));
 
   const rewriteItems = pickRewrite(filteredPool, args.rewrite).map(x => ({
     slug: x.slug,
@@ -122,7 +168,13 @@ async function main() {
   }));
 
   const exclude = new Set(rewriteItems.map(x => `${x.area}::${x.slug}`));
-  const newItems = pickNew(filteredCandidates, args.new, exclude).map(c => ({
+
+  // hybrid_30_70_gap：先吃 priority-queue.jsonl 的 ratio*new 条，再 fallback 到 candidates.jsonl
+  const wantPriority = args.noPriority ? 0 : Math.round(args.new * args.priorityRatio);
+  const priorityPicked = wantPriority > 0
+    ? pickPriority(filteredPriority, wantPriority, exclude)
+    : [];
+  const priorityItems = priorityPicked.map(c => ({
     slug: c.slug,
     area: c.area,
     kind: c.area === 'papers' ? 'new-paper' : 'new-project',
@@ -131,20 +183,49 @@ async function main() {
     url: c.url,
     why: c.meta?.col4 || '',
     year: c.meta?.col3 || '',
+    source: 'priority-queue',
+    priority_tier: c.priority_tier || '',
   }));
 
+  const remaining = args.new - priorityItems.length;
+  const fallbackPicked = remaining > 0
+    ? pickNew(filteredCandidates, remaining, exclude)
+    : [];
+  const fallbackItems = fallbackPicked.map(c => ({
+    slug: c.slug,
+    area: c.area,
+    kind: c.area === 'papers' ? 'new-paper' : 'new-project',
+    topic: c.topic || '',
+    title: c.title,
+    url: c.url,
+    why: c.meta?.col4 || '',
+    year: c.meta?.col3 || '',
+    source: 'candidates',
+  }));
+
+  const newItems = [...priorityItems, ...fallbackItems];
   const all = [...rewriteItems, ...newItems];
   const assigned = assignWorktrees(all);
+
+  // 写回 priority-queue.jsonl：把刚选中的标 status=picked
+  if (priorityPicked.length > 0) {
+    const pickedKeys = new Set(priorityPicked.map(p => `${p.area}::${p.slug}`));
+    const updated = priority.map(p =>
+      pickedKeys.has(`${p.area}::${p.slug}`) ? { ...p, status: 'picked' } : p
+    );
+    await writeJsonl(PRIORITY, updated);
+  }
 
   // 数量校验
   const issues = [];
   if (rewriteItems.length < args.rewrite) issues.push(`rewrite short: ${rewriteItems.length}/${args.rewrite}`);
   if (newItems.length < args.new) issues.push(`new short: ${newItems.length}/${args.new}`);
+  if (priorityItems.length < wantPriority) issues.push(`priority short: ${priorityItems.length}/${wantPriority}`);
   if (graveSlugs.size > 0) issues.push(`graveyard excluded: ${graveSlugs.size}`);
 
   console.log(JSON.stringify({
-    requested: { count: args.count, rewrite: args.rewrite, new: args.new },
-    actual: { count: assigned.length, rewrite: rewriteItems.length, new: newItems.length },
+    requested: { count: args.count, rewrite: args.rewrite, new: args.new, priority_ratio: args.priorityRatio, want_priority: wantPriority },
+    actual: { count: assigned.length, rewrite: rewriteItems.length, new: newItems.length, priority: priorityItems.length, fallback: fallbackItems.length },
     issues,
     items: assigned,
   }, null, 2));

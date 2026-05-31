@@ -184,6 +184,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
+- [[token-bucket-stripe]] —— Stripe Rate Limiters — 工业级令牌桶长什么样
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层

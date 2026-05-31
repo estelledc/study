@@ -139,6 +139,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[jaeger]] —— Jaeger — 分布式追踪系统
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
+- [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
