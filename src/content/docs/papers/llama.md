@@ -146,4 +146,5 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[llava]] —— LLaVA — 开源多模态对话模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
+- [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
 

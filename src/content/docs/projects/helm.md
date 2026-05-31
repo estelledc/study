@@ -160,6 +160,7 @@ helm rollback my-nginx 1
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[drone]] —— Drone CI — 容器原生的 YAML 流水线
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kubernetes]] —— Kubernetes — 容器编排平台

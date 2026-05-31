@@ -149,5 +149,9 @@ T! 是天文数字（T=512 时不可枚举）。XLNet 实际做法：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
+- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
 

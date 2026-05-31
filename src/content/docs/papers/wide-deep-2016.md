@@ -151,5 +151,8 @@ model = tf.estimator.DNNLinearCombinedClassifier(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[dcn-2017]] —— DCN — 在 DNN 旁边并联一条专门学特征交叉的网络
+- [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
+- [[youtube-two-tower-2019]] —— YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
 

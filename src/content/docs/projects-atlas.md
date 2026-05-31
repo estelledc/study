@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 588 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 590 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：588 个
+- **总数**：590 个
 - **已分类**：212
-- **未分类**：376（落入"其他 / 待分类"段）
+- **未分类**：378（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 376 |
+| [其他 / 待分类](#其他--待分类) | 378 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 376 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 378 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -603,6 +603,7 @@ sidebar:
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
+| `drone` | [Drone CI — 容器原生的 YAML 流水线](/study/projects/drone/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
 | `druid` | [Apache Druid — 流批一体的实时分析数据库](/study/projects/druid/) |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/projects/dspy/) |
@@ -759,6 +760,7 @@ sidebar:
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) |
+| `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
@@ -884,7 +886,7 @@ sidebar:
 
 ---
 
-## 全部 588 个（字母序）
+## 全部 590 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1024,6 +1026,7 @@ sidebar:
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | 其他 |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
+| `drone` | [Drone CI — 容器原生的 YAML 流水线](/study/projects/drone/) | 其他 |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | 其他 |
 | `druid` | [Apache Druid — 流批一体的实时分析数据库](/study/projects/druid/) | 其他 |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/projects/dspy/) | 其他 |
@@ -1270,6 +1273,7 @@ sidebar:
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | 其他 |
+| `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) | 其他 |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) | 其他 |
 | `pnpm` | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) | 其他 |
