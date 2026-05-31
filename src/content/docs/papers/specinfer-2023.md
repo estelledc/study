@@ -154,5 +154,6 @@ prefix = prefix + accepted
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
+- [[sglang-2024]] —— SGLang — 把 LLM 程序当成共享前缀的树来跑
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

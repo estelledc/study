@@ -153,6 +153,7 @@ nix-build
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

@@ -164,5 +164,8 @@ F = 0.02 + (1 - 0.02) · (1 - 0.05)^5 ≈ 0.02 + 0.76 ≈ 0.78
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 

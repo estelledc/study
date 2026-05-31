@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 438 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 441 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：438 篇
+- **总数**：441 篇
 - **已分类**：143
-- **未分类**：295（落入"其他 / 待分类"段）
+- **未分类**：298（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 295 |
+| [其他 / 待分类](#其他--待分类) | 298 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 295 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 298 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -523,6 +523,7 @@ sidebar:
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
+| `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) |
 | `ps-li-2014` | [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) |
 | `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) |
@@ -543,6 +544,7 @@ sidebar:
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) |
 | `server-sent-events` | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) |
+| `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) |
 | `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) |
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |
@@ -596,6 +598,7 @@ sidebar:
 | `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) |
+| `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |
@@ -606,7 +609,7 @@ sidebar:
 
 ---
 
-## 全部 438 篇（字母序）
+## 全部 441 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -918,6 +921,7 @@ sidebar:
 | `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) | 其他 |
+| `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) | 其他 |
 | `ps-li-2014` | [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) | 其他 |
 | `push-pull-frp` | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) | 编译器 / 编程语言理论 |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) | 其他 |
@@ -957,6 +961,7 @@ sidebar:
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 其他 |
 | `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) | 其他 |
 | `server-sent-events` | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) | 其他 |
+| `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) | 其他 |
 | `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
 | `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | 其他 |
@@ -1038,6 +1043,7 @@ sidebar:
 | `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 其他 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) | 其他 |
+| `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) | 其他 |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |

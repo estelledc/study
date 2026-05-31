@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 497 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 500 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：497 个
+- **总数**：500 个
 - **已分类**：207
-- **未分类**：290（落入"其他 / 待分类"段）
+- **未分类**：293（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 290 |
+| [其他 / 待分类](#其他--待分类) | 293 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 290 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 293 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -518,6 +518,7 @@ sidebar:
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
+| `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
@@ -549,6 +550,7 @@ sidebar:
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
+| `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
@@ -635,6 +637,7 @@ sidebar:
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
+| `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) |
 | `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
@@ -793,7 +796,7 @@ sidebar:
 
 ---
 
-## 全部 497 个（字母序）
+## 全部 500 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -820,6 +823,7 @@ sidebar:
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) | 其他 |
+| `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | 其他 |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | 其他 |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | 其他 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
@@ -868,6 +872,7 @@ sidebar:
 | `clack` | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | CLI / 命令行工具 |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) | 其他 |
 | `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
+| `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) | 其他 |
 | `clerk` | [Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
@@ -1001,6 +1006,7 @@ sidebar:
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) | 其他 |
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
+| `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) | 其他 |
 | `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) | 其他 |
 | `koa` | [Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架](/study/projects/koa/) | Web 框架 |

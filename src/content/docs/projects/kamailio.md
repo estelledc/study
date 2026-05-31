@@ -156,3 +156,6 @@ def ksr_request_route(msg):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[freeswitch]] —— FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架
+

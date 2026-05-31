@@ -179,6 +179,7 @@ location /static/ {
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[kamailio]] —— Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[next-js]] —— Next.js — React 全栈框架
