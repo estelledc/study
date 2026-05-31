@@ -162,7 +162,10 @@ cy.layout({ name: 'fcose', quality: 'default' }).run()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
+- [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[kepler-gl]] —— kepler.gl — 拖拽式百万点 GIS 探索界面
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[vis-network]] —— vis-network — barnesHut 物理引擎驱动的网络图
 

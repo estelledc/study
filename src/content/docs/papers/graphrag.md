@@ -131,6 +131,7 @@ vector RAG 在同一题上**只能找出几段最像"主线"字面的句子**，
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基

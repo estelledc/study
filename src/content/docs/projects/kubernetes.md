@@ -175,6 +175,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
+- [[rook]] —— Rook — 把 Ceph 装进 K8s 的 CRD 里
 - [[runc]] —— runc — Linux 容器最底层那个真正在 fork 进程的 CLI
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
