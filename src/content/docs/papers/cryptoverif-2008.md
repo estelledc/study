@@ -152,5 +152,6 @@ CryptoVerif 证的是"**协议**用法对不对"，不是"**原语**安不安全
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
+- [[proverif-2001]] —— ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
 

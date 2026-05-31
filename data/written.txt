@@ -96,6 +96,7 @@ crdt-json
 crdt-json-2017
 crdt-shapiro-2011
 crdt-sss-2011
+cryptoverif-2008
 csp-hoare-1978
 cstore-2005
 cubical-type-theory-2018
@@ -166,6 +167,7 @@ gilbert-lynch-2002
 godel-1931
 gpipe-2019
 gpt-3
+gptq-2023
 gpu-cache-coherence-2013
 gpu-microbenchmarking-2010
 graalvm-truffle
@@ -215,6 +217,7 @@ jwt-rfc-7519
 kafka
 kafka-2011
 kahn-natural-semantics
+kajiya-1986-rendering-equation
 karp-21
 kepler-architecture-2012
 kildall-dataflow
@@ -549,6 +552,7 @@ dask
 datadog
 date-fns
 dayjs
+dbt-core
 debezium
 deepspeed
 delta
@@ -654,6 +658,7 @@ jimp
 jotai
 jq
 js-joda
+just
 kafka
 kamailio
 keras
@@ -755,6 +760,7 @@ openai-agents-sdk
 openmeetings
 opensea-js
 opentelemetry
+openvidu
 openzeppelin-contracts
 optax
 optimism

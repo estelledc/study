@@ -171,6 +171,7 @@ pnpm turbo run build
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
+- [[task]] —— Task — 用 YAML 写一份跨平台的 ‘项目命令清单’
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包

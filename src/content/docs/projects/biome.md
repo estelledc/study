@@ -177,6 +177,7 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
 - [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[task]] —— Task — 用 YAML 写一份跨平台的 ‘项目命令清单’
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
