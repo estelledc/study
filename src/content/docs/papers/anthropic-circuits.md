@@ -115,6 +115,7 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 6. **从 toy 到 production 是 5 年**：2021 框架 → 2022 induction head → 2023 superposition → 2024 SAE 上 Claude Sonnet。每一步都解决前一步的限制；这种"小步慢跑 + 工具迭代" 的研究节奏比"一篇大论文" 走得远。
 
 7. **W_QK / W_OV 是不显式构造的"思想物体"**：研究允许用"理想化但不实例化" 的对象当推理工具，写代码时再换工程实现——数学家 / 物理学家常用的招数被借进了 ML interp。
+8. **可解释性的三层路径**：从 attention 头 → 跨层 circuit → SAE 特征字典，每一层抽象都对应"什么算单位"的不同选择；研究方法的进步本质是"找到比上一代更可分解的单位"。
 
 ## 延伸阅读
 
