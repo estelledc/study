@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 510 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 512 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：510 个
+- **总数**：512 个
 - **已分类**：207
-- **未分类**：303（落入"其他 / 待分类"段）
+- **未分类**：305（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 303 |
+| [其他 / 待分类](#其他--待分类) | 305 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 303 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 305 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -598,6 +598,7 @@ sidebar:
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
+| `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
@@ -661,6 +662,7 @@ sidebar:
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
 | `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
+| `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
@@ -806,7 +808,7 @@ sidebar:
 
 ---
 
-## 全部 510 个（字母序）
+## 全部 512 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -959,6 +961,7 @@ sidebar:
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | Web 框架 |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
+| `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | 其他 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | 其他 |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | 其他 |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
@@ -1057,6 +1060,7 @@ sidebar:
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | 日期时间 |
+| `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | 其他 |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | 其他 |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | 其他 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |

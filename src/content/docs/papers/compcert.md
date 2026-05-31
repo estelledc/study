@@ -156,6 +156,7 @@ INRIA 这股"理论 + 实现一起做"的工程文化，从 OCaml 到 Coq 到 Co
 - [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[kami-2017]] —— Kami — 在 Coq 里造硬件并自动编译到 Verilog
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
 - [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小

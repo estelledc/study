@@ -25,6 +25,7 @@ aurora
 autogen
 awodey-warren-2009
 awq
+awq-2023
 azure-storage-2011
 b-tree-1972
 bayou-1995
@@ -83,6 +84,7 @@ compcert
 compiler-errors
 consistent-hashing-1997
 constitutional-ai
+cook-1984-distributed-ray-tracing
 cook-levin
 cook-torrance-1982
 copilot-rct
@@ -179,6 +181,7 @@ gray-1978-notes
 gray-1981-transaction
 great-swe
 gshard-2020
+hacl-star-2017
 halide
 hamming-1950
 hdfs-2010
@@ -661,6 +664,7 @@ js-joda
 just
 kafka
 kamailio
+kedro
 keras
 kitty
 koa
@@ -690,6 +694,7 @@ listr2
 litellm-proxy
 litestar
 liveblocks
+livekit-flutter
 llama-cpp
 llama-index
 llamaindex
@@ -888,6 +893,7 @@ tailwind
 tanstack-form
 tanstack-query
 tanstack-router
+task
 teku
 temporal
 temporal-polyfill
