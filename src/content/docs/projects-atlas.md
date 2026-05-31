@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 478 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 481 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：478 个
+- **总数**：481 个
 - **已分类**：207
-- **未分类**：271（落入"其他 / 待分类"段）
+- **未分类**：274（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 271 |
+| [其他 / 待分类](#其他--待分类) | 274 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 271 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 274 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -519,6 +519,7 @@ sidebar:
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
+| `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) |
 | `aws-spot-best-practices` | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
@@ -661,6 +662,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
+| `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
@@ -760,6 +762,7 @@ sidebar:
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
+| `webrtc-rs` | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) |
 | `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
@@ -774,7 +777,7 @@ sidebar:
 
 ---
 
-## 全部 478 个（字母序）
+## 全部 481 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -804,6 +807,7 @@ sidebar:
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | 其他 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
+| `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) | 其他 |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) | 其他 |
 | `aws-spot-best-practices` | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) | 其他 |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) | 其他 |
@@ -1049,6 +1053,7 @@ sidebar:
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
+| `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | 其他 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | 其他 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
@@ -1238,6 +1243,7 @@ sidebar:
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | 可观测 / 性能 |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) | 其他 |
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
+| `webrtc-rs` | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) | 其他 |
 | `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) | 其他 |
 | `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |

@@ -174,6 +174,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
+- [[nnn]] —— nnn — 50KB 内存就能跑的极简终端文件管理器
 - [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里

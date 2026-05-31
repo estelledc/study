@@ -1,6 +1,6 @@
 ---
 title: Apollo — 让两万台机器自己决定谁跑哪个任务
-来源: Boutin et al., "Apollo: Scalable and Coordinated Scheduling for Cloud-Scale Computing", OSDI 2014
+来源: 'Boutin et al., "Apollo: Scalable and Coordinated Scheduling for Cloud-Scale Computing", OSDI 2014'
 日期: 2026-05-31
 分类: 分布式系统
 难度: 中级
@@ -149,3 +149,6 @@ Apollo 不回滚，**server 自己处理**：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

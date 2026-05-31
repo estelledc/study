@@ -149,5 +149,10 @@ CertiKOS 的端到端定理大致是："如果 Coq 内核没 bug、CompCert 没 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
+- [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
+- [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[iris-2015]] —— Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木
 

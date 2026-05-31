@@ -136,6 +136,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
+- [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树

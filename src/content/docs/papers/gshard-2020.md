@@ -152,5 +152,9 @@ GShard 切**宽度方向**：每一层都横切到所有 device，每个 device 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
+- [[mixture-of-experts]] —— Mixture of Experts (MoE)
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
+- [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 
