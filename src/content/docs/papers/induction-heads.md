@@ -116,6 +116,12 @@ GPT-2 small 在 layer 5 head 5 上有一个明确的 induction head。给它喂 
 
 4. **工具基础设施很关键**——Anthropic 内部模型不开源，但开源的 TransformerLens 让 6 条证据中的至少 1 条（ablation）能在 GPT-2 small 上独立复刻。**没有工具的论文等于没法社区验证**。
 
+5. **toy → real 的双轨实验法**——先在 2-layer toy transformer 找清晰电路，再在 13B 大模型上验证同一机制存在。toy 给出强假设、real 给出现实意义；缺一会得到"看似优雅但与真模型无关" 或"看似真但说不清是什么" 两种典型失败。
+
+6. **超位置（superposition）问题接班**——induction head 在小模型可见、大模型 attention head 越来越多 polysemantic。这逼着 Anthropic 后续转向 [[sparse-autoencoders]]，从"head 是 atom" 升级到"feature 是 atom"。
+
+7. **训练动态学的窗口**——loss curve 上的 phase change 出现在 induction head 形成的瞬间；这种"内部机制变化映射到外部 metric" 的现象，给训练监控提供了可观测的代理指标。
+
 ## 延伸阅读
 
 - 论文 blog 版（含交互式 figure）：[Anthropic transformer-circuits.pub](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
