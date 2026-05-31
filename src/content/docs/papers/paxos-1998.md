@@ -162,6 +162,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[b4-2013]] —— B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+
 - [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
 - [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线

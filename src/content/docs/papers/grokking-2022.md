@@ -160,6 +160,7 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 - [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[attention]] —— Attention Is All You Need
+- [[bigbench-2022]] —— BIG-bench — 204 道题给大模型出考卷
 - [[double-descent-2019]] —— Double Descent — 模型越大越准，过参数化时代的反常识曲线
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 

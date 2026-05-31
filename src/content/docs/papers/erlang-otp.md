@@ -177,6 +177,7 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[ejabberd]] —— ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
+- [[emqx]] —— EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接
 - [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
