@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 447 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 451 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：447 个
+- **总数**：451 个
 - **已分类**：207
-- **未分类**：240（落入"其他 / 待分类"段）
+- **未分类**：244（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 240 |
+| [其他 / 待分类](#其他--待分类) | 244 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 240 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 244 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -539,6 +539,7 @@ sidebar:
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
+| `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
@@ -643,8 +644,10 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
+| `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
+| `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
@@ -707,6 +710,7 @@ sidebar:
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
+| `starship` | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
@@ -743,7 +747,7 @@ sidebar:
 
 ---
 
-## 全部 447 个（字母序）
+## 全部 451 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -807,6 +811,7 @@ sidebar:
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | 其他 |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
 | `clack` | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | CLI / 命令行工具 |
+| `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) | 其他 |
 | `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
 | `clerk` | [Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
@@ -1000,6 +1005,7 @@ sidebar:
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
+| `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
@@ -1008,6 +1014,7 @@ sidebar:
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
+| `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
@@ -1112,6 +1119,7 @@ sidebar:
 | `stagehand` | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | 其他 |
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
+| `starship` | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) | 其他 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务](/study/projects/steel-browser/) | AI 浏览器自动化 |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) | 其他 |
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
