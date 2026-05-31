@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 569 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 572 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：569 个
-- **已分类**：210
-- **未分类**：359（落入"其他 / 待分类"段）
+- **总数**：572 个
+- **已分类**：211
+- **未分类**：361（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 22 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 23 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
 | [监控 / 时序](#监控---时序) | 7 |
 | [Web 框架](#web-框架) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 359 |
+| [其他 / 待分类](#其他--待分类) | 361 |
 
 ---
 
@@ -165,7 +165,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 22 个。
+共 23 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -177,6 +177,7 @@ sidebar:
 | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) |  |
 | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
 | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
+| [LevelDB — Google LSM 库](/study/projects/leveldb/) |  |
 | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) |  |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) |  |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
@@ -499,7 +500,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 359 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 361 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -558,6 +559,7 @@ sidebar:
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) |
+| `chartist` | [Chartist — 极简 SVG 图表](/study/projects/chartist/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
@@ -799,6 +801,7 @@ sidebar:
 | `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) |
 | `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) |
+| `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
@@ -865,7 +868,7 @@ sidebar:
 
 ---
 
-## 全部 569 个（字母序）
+## 全部 572 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -943,6 +946,7 @@ sidebar:
 | `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) | Monorepo / 包管理 |
 | `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) | 其他 |
+| `chartist` | [Chartist — 极简 SVG 图表](/study/projects/chartist/) | 其他 |
 | `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | 其他 |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
@@ -1122,6 +1126,7 @@ sidebar:
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | 其他 |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | 其他 |
 | `lerna` | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) | Monorepo / 包管理 |
+| `leveldb` | [LevelDB — Google LSM 库](/study/projects/leveldb/) | 数据库本体 / 存储引擎 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | 其他 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
@@ -1320,6 +1325,7 @@ sidebar:
 | `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) | 其他 |
 | `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) | 其他 |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) | 其他 |
+| `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) | 其他 |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |

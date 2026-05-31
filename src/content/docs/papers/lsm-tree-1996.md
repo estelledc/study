@@ -150,6 +150,7 @@ client read key="foo"
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
+- [[leveldb]] —— LevelDB — Google LSM 库
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
