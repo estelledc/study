@@ -165,15 +165,13 @@ def residual_block(x):
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[liu-2020-dlss]] —— DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
 - [[mae]] —— MAE — Masked Autoencoders
-- [[mamba]] —— Mamba — 选择性状态空间模型
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[vit]] —— ViT — Vision Transformer
 

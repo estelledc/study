@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 637 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 640 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：637 个
+- **总数**：640 个
 - **已分类**：213
-- **未分类**：424（落入"其他 / 待分类"段）
+- **未分类**：427（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 424 |
+| [其他 / 待分类](#其他--待分类) | 427 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 424 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 427 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -566,6 +566,7 @@ sidebar:
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
+| `cert-manager` | [cert-manager — K8s 自动签发与续期 TLS 证书](/study/projects/cert-manager/) |
 | `cesium` | [CesiumJS — 浏览器里的三维地球与时间动画](/study/projects/cesium/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
@@ -740,6 +741,7 @@ sidebar:
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) |
+| `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
@@ -770,6 +772,7 @@ sidebar:
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) |
+| `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/projects/observable-framework/) |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
 | `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
@@ -933,7 +936,7 @@ sidebar:
 
 ---
 
-## 全部 637 个（字母序）
+## 全部 640 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1014,6 +1017,7 @@ sidebar:
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | 其他 |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | 其他 |
+| `cert-manager` | [cert-manager — K8s 自动签发与续期 TLS 证书](/study/projects/cert-manager/) | 其他 |
 | `cesium` | [CesiumJS — 浏览器里的三维地球与时间动画](/study/projects/cesium/) | 其他 |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) | 其他 |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
@@ -1265,6 +1269,7 @@ sidebar:
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) | 其他 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) | 其他 |
+| `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) | 其他 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | 其他 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
 | `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
@@ -1317,6 +1322,7 @@ sidebar:
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | 其他 |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | 其他 |
 | `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | Monorepo / 包管理 |
+| `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/projects/observable-framework/) | 其他 |
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |

@@ -2,6 +2,7 @@
 3d-gaussian-splatting
 acl2-2000
 activation-patching
+adafactor-2018
 adam-2014
 adamw-2017
 adapton
@@ -348,6 +349,7 @@ lindholm-2008-tesla
 linear-scan-reg-alloc
 linear-types
 linearizability-1990
+lion-2023
 liquid-types
 liu-2020-dlss
 llama
@@ -427,6 +429,7 @@ nvlink-nvswitch-2018
 nvm
 nvme-protocol-2017
 oauth-2.1-rfc
+observable-framework
 okapi-bm25-1994
 opencl-2010
 openhands
@@ -475,6 +478,7 @@ pypy-tracing-jit
 quantum-supremacy-2019
 quic
 quincy-2009
+r-bgp-2007
 raft
 rag-lewis-2020
 ranknet-2005
@@ -548,6 +552,8 @@ smoothquant-2023
 smr-1990
 snowflake
 snowflake-2016
+soft-updates-1999
+sophia-2023
 sorkine-2004-laplacian-editing
 souffle-datalog
 spann-2021
@@ -571,6 +577,7 @@ stm-shavit-touitou
 stonebraker-2010-sqlnosql
 strongtalk
 stylegan2-2020
+subramanian-2002-internet-hierarchy
 sulsky-1994-mpm
 swe-agent
 swe-bench
@@ -931,9 +938,11 @@ konva
 krakend
 kratos
 ktor
+kubebuilder
 kubectx
 kubernetes
 kustomize
+kuzu
 ky
 kysely
 label-studio
@@ -1052,6 +1061,7 @@ opentelemetry
 opentsdb
 openvidu
 openzeppelin-contracts
+operator-sdk
 optax
 optimism
 optuna
@@ -1062,6 +1072,7 @@ ovenmediaengine
 oxc
 paddleocr
 pandas
+panel
 partykit
 patchright
 peerjs-server
@@ -1258,6 +1269,7 @@ vitess
 vitest
 vllm
 vodozemac
+voila
 volta
 vue
 vue-i18n

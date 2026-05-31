@@ -172,6 +172,7 @@ param.mul_(1 - lr * weight_decay)
 - [[adafactor-2018]] —— Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)
 - [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[lion-2023]] —— Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半
 - [[pytorch]] —— PyTorch — 深度学习主流框架
