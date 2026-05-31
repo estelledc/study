@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 490 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 494 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：490 篇
+- **总数**：494 篇
 - **已分类**：143
-- **未分类**：347（落入"其他 / 待分类"段）
+- **未分类**：351（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 347 |
+| [其他 / 待分类](#其他--待分类) | 351 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 347 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 351 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -390,6 +390,7 @@ sidebar:
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
+| `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
 | `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) |
 | `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) |
@@ -462,6 +463,7 @@ sidebar:
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
+| `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
 | `iris-2015` | [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) |
@@ -518,6 +520,7 @@ sidebar:
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
+| `mongo` | [MongoDB — 把 JSON 直接当数据库存](/study/papers/mongo/) |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
 | `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) |
 | `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) |
@@ -630,6 +633,7 @@ sidebar:
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) |
 | `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) |
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |
+| `universal-ctags` | [Universal Ctags — 给源码做一本"卡片目录"，编辑器一秒跳到定义](/study/papers/universal-ctags/) |
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |
@@ -658,7 +662,7 @@ sidebar:
 
 ---
 
-## 全部 490 篇（字母序）
+## 全部 494 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -782,6 +786,7 @@ sidebar:
 | `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
+| `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) | 其他 |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) | 其他 |
 | `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) | 其他 |
 | `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
@@ -880,6 +885,7 @@ sidebar:
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 其他 |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 其他 |
+| `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) | 其他 |
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) | 其他 |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 其他 |
@@ -956,6 +962,7 @@ sidebar:
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 其他 |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
+| `mongo` | [MongoDB — 把 JSON 直接当数据库存](/study/papers/mongo/) | 其他 |
 | `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) | 其他 |
 | `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) | 其他 |
@@ -1119,6 +1126,7 @@ sidebar:
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) | 其他 |
 | `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) | 其他 |
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 其他 |
+| `universal-ctags` | [Universal Ctags — 给源码做一本"卡片目录"，编辑器一秒跳到定义](/study/papers/universal-ctags/) | 其他 |
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | 其他 |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 其他 |

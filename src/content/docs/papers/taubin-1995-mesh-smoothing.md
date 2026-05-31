@@ -162,5 +162,8 @@ V_smooth = igl.taubin_smoothing(V, F, lam=0.5, mu=-0.53, iterations=10)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[desbrun-1999-implicit-fairing]] —— Desbrun 1999 — 把热扩散方程隐式离散到三角网
+- [[goral-1984-radiosity]] —— Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
+- [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
+- [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 

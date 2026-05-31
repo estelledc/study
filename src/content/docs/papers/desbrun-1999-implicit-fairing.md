@@ -179,3 +179,4 @@ Cholesky 分解一次可缓存，后续多步重复使用同一个 A。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 （暂无反向链接）
+
