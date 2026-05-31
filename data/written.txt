@@ -63,6 +63,7 @@ calvin
 calvin-2012
 cap-12-years-later-2012
 cascades-1995
+case-for-risc-1980
 cassandra-2010
 catmull-clark-1978
 causal-abstraction
@@ -256,6 +257,7 @@ kokkos-2014
 lafortune-1993-bdpt
 lalr-deremer
 lambda-calculus
+lambdarank-2006
 lamport-1978
 lamport-tla-1994
 lampson-hints
@@ -495,6 +497,7 @@ vr-1988
 vr-revisited-2012
 vst-2014
 wadler-prettier
+wald-2007-sah-bvh
 wam-warren
 wandb
 ward-1992
@@ -529,6 +532,7 @@ apollo-server
 appwrite
 aptos-core
 aragon
+arangodb
 arbitrum
 argent-x
 argocd
@@ -881,6 +885,7 @@ prosody
 prysm
 pulsar
 pyarrow
+pyenv
 pyth
 pytorch
 pytorch-lightning
@@ -924,6 +929,7 @@ sentry
 sequelize
 sglang
 shadcn-ui
+shap
 sharedb
 sharp
 shellcheck
