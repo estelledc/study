@@ -158,6 +158,7 @@ vec3 albedo = baseColor * (1.0 - metallic);      // 金属无漫反射
 - [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
 - [[cohen-1985-hemicube]] —— Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分
 - [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
+- [[debevec-1998-rendering-with-natural-light]] —— Debevec 1998 — 用真实世界的光照亮 CG 物体
 - [[goral-1984-radiosity]] —— Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
 - [[hu-2018-mls-mpm]] —— MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本
 - [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"

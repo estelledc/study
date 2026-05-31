@@ -153,5 +153,6 @@ StyleGAN 的水滴瑕疵根源是 AdaIN 的 per-instance 标准差被 G 偷偷�
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[biggan-2018]] —— BigGAN — 把 GAN 暴力放大到 ImageNet 512×512
 

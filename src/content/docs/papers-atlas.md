@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 613 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 617 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：613 篇
+- **总数**：617 篇
 - **已分类**：143
-- **未分类**：470（落入"其他 / 待分类"段）
+- **未分类**：474（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 470 |
+| [其他 / 待分类](#其他--待分类) | 474 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 470 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 474 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -421,6 +421,7 @@ sidebar:
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
+| `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |
 | `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
@@ -514,6 +515,7 @@ sidebar:
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
+| `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
 | `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
@@ -540,6 +542,7 @@ sidebar:
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) |
+| `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |
 | `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) |
@@ -663,6 +666,7 @@ sidebar:
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
 | `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) |
 | `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) |
+| `rm3-2001` | [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) |
 | `roberta-2019` | [RoBERTa — 把 BERT 重训一遍就能拿 SOTA](/study/papers/roberta-2019/) |
 | `rocketqa-2021` | [RocketQA — 把稠密检索的训练拧到工业级](/study/papers/rocketqa-2021/) |
 | `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) |
@@ -781,7 +785,7 @@ sidebar:
 
 ---
 
-## 全部 613 篇（字母序）
+## 全部 617 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -933,6 +937,7 @@ sidebar:
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 其他 |
 | `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 其他 |
+| `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) | 其他 |
 | `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
@@ -1055,6 +1060,7 @@ sidebar:
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 其他 |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
+| `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | 其他 |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 其他 |
 | `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) | 其他 |
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
@@ -1087,6 +1093,7 @@ sidebar:
 | `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | 其他 |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) | 其他 |
+| `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) | 其他 |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) | 其他 |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | 其他 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
@@ -1244,6 +1251,7 @@ sidebar:
 | `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) | 其他 |
 | `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) | 其他 |
 | `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
+| `rm3-2001` | [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) | 其他 |
 | `roberta-2019` | [RoBERTa — 把 BERT 重训一遍就能拿 SOTA](/study/papers/roberta-2019/) | 其他 |
 | `rocketqa-2021` | [RocketQA — 把稠密检索的训练拧到工业级](/study/papers/rocketqa-2021/) | 其他 |
 | `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) | 其他 |
