@@ -147,4 +147,5 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[tikv]] —— TiKV — 分布式事务 KV
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
+- [[zookeeper]] —— Apache ZooKeeper — 给一群机器装一个共同的小脑
 

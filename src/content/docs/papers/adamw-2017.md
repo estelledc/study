@@ -178,6 +178,7 @@ param.mul_(1 - lr * weight_decay)
 - [[lion-2023]] —— Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半
 - [[lottery-ticket-2019]] —— 彩票假设 — 大网里藏着一张能独立训出来的小网
 - [[mixup-2018]] —— mixup — 把两张图按比例叠成一张，标签也一起叠
+- [[mode-connectivity-2018]] —— Mode Connectivity — 神经网络的两个最优解之间有低洼走廊
 - [[ntk-2018]] —— NTK — 把无限宽的神经网络变成一个可解的核方法
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[sophia-2023]] —— Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动
