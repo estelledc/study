@@ -153,6 +153,7 @@ else                work_B();
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aurora-exascale-2024]] —— Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算
+- [[cell-be-2005]] —— Cell BE — 一颗 CPU 里塞 8 个加速核
 - [[cohen-1985-hemicube]] —— Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分
 - [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU

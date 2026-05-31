@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 525 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 528 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：525 篇
+- **总数**：528 篇
 - **已分类**：143
-- **未分类**：382（落入"其他 / 待分类"段）
+- **未分类**：385（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 382 |
+| [其他 / 待分类](#其他--待分类) | 385 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 382 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 385 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -347,6 +347,7 @@ sidebar:
 | `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
+| `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
@@ -357,6 +358,7 @@ sidebar:
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
 | `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) |
+| `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
 | `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) |
@@ -373,6 +375,7 @@ sidebar:
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) |
+| `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) |
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
@@ -693,7 +696,7 @@ sidebar:
 
 ---
 
-## 全部 525 篇（字母序）
+## 全部 528 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -754,6 +757,7 @@ sidebar:
 | `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) | 其他 |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
+| `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | 其他 |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | 其他 |
@@ -766,6 +770,7 @@ sidebar:
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
 | `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) | 其他 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
+| `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) | 其他 |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | 其他 |
 | `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) | 其他 |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) | 其他 |
@@ -789,6 +794,7 @@ sidebar:
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 其他 |
 | `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | 其他 |
+| `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) | 其他 |
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) | 其他 |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 其他 |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 其他 |

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 550 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 552 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：550 个
+- **总数**：552 个
 - **已分类**：209
-- **未分类**：341（落入"其他 / 待分类"段）
+- **未分类**：343（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 341 |
+| [其他 / 待分类](#其他--待分类) | 343 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 341 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 343 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -519,6 +519,7 @@ sidebar:
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
+| `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
@@ -663,6 +664,7 @@ sidebar:
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
+| `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
@@ -846,7 +848,7 @@ sidebar:
 
 ---
 
-## 全部 550 个（字母序）
+## 全部 552 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -871,6 +873,7 @@ sidebar:
 | `arangodb` | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | 数据库本体 / 存储引擎 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
+| `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) | 其他 |
@@ -1083,6 +1086,7 @@ sidebar:
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) | 其他 |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | 其他 |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
+| `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) | 其他 |
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
