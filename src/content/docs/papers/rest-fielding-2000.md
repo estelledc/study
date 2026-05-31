@@ -159,6 +159,7 @@ DELETE /users/42
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 - [[oauth-2.1-rfc]] —— OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[skip-locked-postgres-9.5]] —— SKIP LOCKED — 让 Postgres 当任务队列用
 - [[tao-2013]] —— TAO — Facebook 给十亿人好友列表造的专用图数据库
 - [[turing-1936]] —— Turing 1936 可计算性

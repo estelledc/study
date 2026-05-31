@@ -179,6 +179,7 @@ entry:
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
+- [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[case-for-risc-1980]] —— Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命
 - [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题

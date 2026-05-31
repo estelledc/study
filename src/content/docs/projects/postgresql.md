@@ -201,6 +201,7 @@ LIMIT 5;
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[redis]] —— Redis — 内存键值数据库
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化

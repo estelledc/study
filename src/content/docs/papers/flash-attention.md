@@ -162,6 +162,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token

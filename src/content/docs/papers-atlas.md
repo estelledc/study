@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 516 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 519 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：516 篇
+- **总数**：519 篇
 - **已分类**：143
-- **未分类**：373（落入"其他 / 待分类"段）
+- **未分类**：376（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 373 |
+| [其他 / 待分类](#其他--待分类) | 376 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 373 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 376 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -344,6 +344,7 @@ sidebar:
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
+| `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
@@ -409,6 +410,7 @@ sidebar:
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) |
+| `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |
@@ -505,6 +507,7 @@ sidebar:
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
+| `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |
 | `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
@@ -684,7 +687,7 @@ sidebar:
 
 ---
 
-## 全部 516 篇（字母序）
+## 全部 519 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -742,6 +745,7 @@ sidebar:
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | 其他 |
+| `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) | 其他 |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
@@ -835,6 +839,7 @@ sidebar:
 | `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) | 其他 |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | 其他 |
+| `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 其他 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 其他 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
@@ -958,6 +963,7 @@ sidebar:
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | 其他 |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
+| `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) | 其他 |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) | 其他 |

@@ -165,5 +165,6 @@ curl -X POST http://localhost:4000/key/generate \
 
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[lm-evaluation-harness]] —— lm-evaluation-harness — LLM 基准评测底座
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

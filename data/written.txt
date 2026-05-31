@@ -181,6 +181,7 @@ g1-collector
 gadt-pjones
 game-semantics-pcf
 garland-heckbert-1997-qem
+gbrank-2007
 generational-gc
 gfs
 gilbert-lynch-2002
@@ -249,6 +250,7 @@ kahn-natural-semantics
 kajiya-1986-rendering-equation
 kami-2017
 karp-21
+karras-2012-parallel-bvh
 kepler-architecture-2012
 kildall-dataflow
 knuth-lr-1965
@@ -304,6 +306,7 @@ millwheel-2013
 milner-pi-calculus
 mine-octagon-2006
 minisat-2003
+mips-1981
 mixture-of-experts
 mlflow
 mlir
@@ -577,6 +580,7 @@ cairo-lang
 cal-com
 candle
 capnproto
+captum
 cassandra
 celery
 centrifugo
@@ -965,6 +969,7 @@ stylex
 sui
 supabase
 supertokens
+surrealdb
 svelte
 sveltekit
 swc
@@ -1022,6 +1027,7 @@ vitess
 vitest
 vllm
 vodozemac
+volta
 vue
 vue-i18n
 walletconnect
