@@ -127,10 +127,8 @@ rate(http_requests_total{status=~"5.."}[5m])
 ## 适用 vs 不适用
 
 **适用**：
-- 容器化 / 微服务监控（[[kubernetes]] / Docker / 服务网格）
-- 数值类指标（CPU / 内存 / QPS / 延迟 / 错误率）
-- 中短期数据（默认 15 天）
-- 拉模式可达的服务（HTTP 端点能被 Prometheus 访问）
+- 容器化 / 微服务监控（[[kubernetes]] / Docker / 服务网格）；数值指标（CPU / QPS / 延迟）
+- 中短期数据（默认 15 天）；拉模式可达的服务
 
 **不适用**：
 - 日志（用 Loki / [[elasticsearch]]）
@@ -149,10 +147,8 @@ rate(http_requests_total{status=~"5.."}[5m])
 
 ## 学到什么
 
-- **pull vs push 不是技术问题，是组织问题**：pull 让监控系统主动发现服务死活，对运维更友好
-- **维度建模 ≠ 随便加 label**：cardinality 是有成本的，时序数 = 各 label 取值的笛卡尔积
-- **专用查询语言的价值**：PromQL 把"时间窗口 + 速率 + 分位数"做成一等公民，比 SQL 查时序顺手十倍
-- **CNCF 顺序意味着什么**：[[kubernetes]] → Prometheus → 其他——基础设施层的优先级排序
+- **pull vs push**：pull 让监控系统主动发现服务死活；cardinality = label 笛卡尔积
+- **PromQL 把时间窗口/速率/分位数做成一等公民**；CNCF 顺序：[[kubernetes]] → Prometheus → 其他
 
 ## 延伸阅读
 
