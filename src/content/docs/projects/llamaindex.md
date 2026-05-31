@@ -15,6 +15,8 @@ LlamaIndex 是一个**专门把企业数据接到 LLM 上**的 Python / TypeScri
 - [[langchain]] 是**万能瑞士军刀**——什么都能做（agent / chain / RAG / tool），但每件事都不深
 - LlamaIndex 是**专做 RAG 的电锯**——只锯一种木头，但锯得又快又干净
 
+它的整条数据流可以记成 **RAG 四件套**：扫描器（loaders）→ 卡片柜（index store）→ 检索灯（retrievers）→ 复读员（synthesizers）。四步对应下面四行代码里的每一行。
+
 写一段最简检索：
 
 ```python
@@ -147,3 +149,5 @@ retriever = QueryFusionRetriever(
 - [[bm25]] —— Hybrid retrieval 里的关键词检索算法
 - [[chroma]] —— 默认推荐的开源向量数据库之一
 - [[ollama]] —— 想本地化跑 LLM + embedding 时常配的运行时
+
+<!-- 合并自 [[llama-index]] dedup 2026-05-31 -->
