@@ -124,6 +124,8 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 - 论文 PDF：[Kaplan et al. 2020 — Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)（30 页，曲线密集，前 10 页可读性好）
 - 后续修正：[Hoffmann et al. 2022 — Training Compute-Optimal LLMs](https://arxiv.org/abs/2203.15556)（Chinchilla，把 Kaplan 的数据/参数比例翻盘）
 - 视频解读：[Yannic Kilcher — Scaling Laws Explained](https://www.youtube.com/watch?v=h1QF1l1z7lY)（30 分钟把幂律推导讲清楚）
+- 反思：[Sasha Rush — Scaling Laws Are All You Need (?)](https://srush.github.io/)（用最新数据验证 Kaplan/Chinchilla）
+- 实操：[Alex Lewkowycz — Scaling Laws Cookbook](https://blog.eleuther.ai/scaling-laws/)（怎么自己拟合 scaling 曲线）
 
 ## 关联
 
