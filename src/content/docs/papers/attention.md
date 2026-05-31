@@ -148,7 +148,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -160,6 +159,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[gru-2014]] —— GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场
 - [[gshard-2020]] —— GShard — 用注解让 600B 模型自动跨设备切片
 - [[hopper-architecture-2022]] —— NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
@@ -183,6 +183,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[resnet]] —— ResNet — 残差连接
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复

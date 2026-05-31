@@ -174,6 +174,7 @@ column families:
 - [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+- [[leveldb]] —— LevelDB — Google LSM 库
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制

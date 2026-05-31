@@ -160,6 +160,7 @@ dssm-2013
 dstreams-2013
 duckdb-2019
 dynamo
+e5-2022
 eagle
 earley-parser
 easycrypt-2011
@@ -176,6 +177,7 @@ fastertransformer-2021
 feautrier-polyhedral
 fermi-architecture-2010
 fidge-1988
+filip-2021
 flash-attention
 flexible-paxos-2016
 flink-2015
@@ -297,6 +299,7 @@ local-type-inference
 logoot-2010
 loop-1987-subdivision
 lsm-tree-1996
+lstm-1997
 mae
 mamba
 mapreduce
@@ -327,6 +330,7 @@ mixture-of-experts
 mlflow
 mlir
 moesi-cache-coherence-1986
+monaghan-1992-sph
 monetdb-x100-2005
 mongo
 mueller-2022-instant-ngp
@@ -388,6 +392,7 @@ proverif-2001
 ps-li-2014
 push-pull-frp
 pypy-tracing-jit
+quantum-supremacy-2019
 quic
 quincy-2009
 raft
@@ -461,6 +466,7 @@ sqlite-2022
 ssa
 stable-diffusion
 stainless-2017
+stam-1999-stable-fluids
 standard-ml
 steensgaard-pointer
 stm-shavit-touitou
@@ -707,6 +713,7 @@ eza
 fabric-js
 fastai
 fastapi
+faster-whisper
 fastify
 fd
 feast
@@ -865,6 +872,7 @@ next-intl
 next-js
 nextra
 nginx
+nivo
 nix
 nnn
 nodemailer
@@ -965,6 +973,7 @@ ripgrep
 risingwave
 rocket
 rocket-chat
+rocksdb
 rolldown
 rollup
 rspack
