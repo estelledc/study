@@ -159,6 +159,7 @@ for g in gaussians:
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[jensen-1996-photon-mapping]] —— Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[vit]] —— ViT — Vision Transformer

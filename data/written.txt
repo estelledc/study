@@ -18,6 +18,7 @@ apollo-2014
 apron-2009
 aries-1992
 art-2013
+ast-grep
 asterisk
 astree
 attention
@@ -56,6 +57,7 @@ calvin-2012
 cap-12-years-later-2012
 cascades-1995
 cassandra-2010
+catmull-clark-1978
 causal-abstraction
 ceph-2006
 certikos-2016
@@ -379,6 +381,7 @@ shannon-1948
 shellcheck
 sillito-questions
 silt-2011
+simrank-2002
 simula-67
 sinfonia-2007
 skeen-3pc-1981
@@ -971,6 +974,7 @@ viem
 visx
 vite
 vitepress
+vitess
 vitest
 vllm
 vodozemac

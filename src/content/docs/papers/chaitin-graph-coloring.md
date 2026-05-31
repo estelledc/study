@@ -164,5 +164,6 @@ for (int i = 0; i < N; i++) {
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
 - [[ssa]] —— SSA — 静态单赋值形式
 

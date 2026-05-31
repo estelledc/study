@@ -143,6 +143,7 @@ rg --no-ignore "foo"         # 等价于 -u
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[bat]] —— bat — 现代 cat 替代
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）

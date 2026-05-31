@@ -166,4 +166,7 @@ sg --pattern 'request($URL, $OPTS)' \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+
