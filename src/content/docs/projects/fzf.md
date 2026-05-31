@@ -181,5 +181,6 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
+- [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

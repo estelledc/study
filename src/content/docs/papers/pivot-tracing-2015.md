@@ -151,5 +151,7 @@ Pivot Tracing：写上面那句查询，10 秒后报表出来——"用户 alice
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
+- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 
