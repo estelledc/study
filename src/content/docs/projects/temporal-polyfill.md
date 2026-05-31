@@ -156,5 +156,4 @@ const next = Temporal.PlainDate
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[vis-timeline]] —— vis-timeline — 时间轴 / 日程 / 历史事件三合一组件
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 666 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 668 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：666 个
+- **总数**：668 个
 - **已分类**：213
-- **未分类**：453（落入"其他 / 待分类"段）
+- **未分类**：455（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 453 |
+| [其他 / 待分类](#其他--待分类) | 455 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 453 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 455 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -688,6 +688,7 @@ sidebar:
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
+| `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) |
 | `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) |
@@ -707,6 +708,7 @@ sidebar:
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) |
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
+| `kaniko` | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) |
 | `kepler-gl` | [kepler.gl — 拖拽式百万点 GIS 探索界面](/study/projects/kepler-gl/) |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) |
@@ -962,7 +964,7 @@ sidebar:
 
 ---
 
-## 全部 666 个（字母序）
+## 全部 668 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1206,6 +1208,7 @@ sidebar:
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) | 其他 |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
+| `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) | 其他 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) | 其他 |
 | `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | 其他 |
@@ -1238,6 +1241,7 @@ sidebar:
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) | 其他 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |
+| `kaniko` | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) | 其他 |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) | 其他 |
 | `kepler-gl` | [kepler.gl — 拖拽式百万点 GIS 探索界面](/study/projects/kepler-gl/) | 其他 |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) | 其他 |

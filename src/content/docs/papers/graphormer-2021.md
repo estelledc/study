@@ -157,5 +157,7 @@ Graphormer：第 1 层就是全连接 attention，10 跳节点直接对话，靠
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+- [[graphsage-2017]] —— GraphSAGE 2017 — 给没见过的节点也能算嵌入
+- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
 

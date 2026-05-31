@@ -75,6 +75,7 @@ brewer-cap-2000
 brill-moore-2000
 brook-2004
 btrfs-2013
+buildkit
 burgess-2020-turing-rt
 bvt-1999
 byzantine-generals-1982
@@ -231,6 +232,7 @@ flamingo-2022
 flan-2021
 flash-attention
 flexible-paxos-2016
+flexsc-2010
 flink-2015
 flink-snapshots-2015
 flp-1985
@@ -253,7 +255,9 @@ gbrank-2007
 gcn-2017
 generational-gc
 gfs
+ghost-2021
 gilbert-lynch-2002
+gin-2019
 godel-1931
 goldsmith-1987-bvh
 google-1998
@@ -269,7 +273,9 @@ graalvm-truffle
 gradual-typing
 graf-saidi-1997
 granule
+graphormer-2021
 graphrag
+graphsage-2017
 gray-1978-notes
 gray-1981-transaction
 great-swe
@@ -375,6 +381,7 @@ llm-int8-2022
 llvm
 lmdb-2011
 local-type-inference
+logjam-2015
 logoot-2010
 longformer-2020
 loop-1987-subdivision
@@ -382,6 +389,7 @@ lottery-1994
 lsh-indyk-1998
 lsm-tree-1996
 lstm-1997
+lucky13-2013
 mach-1986
 macklin-2014-position-based-fluids
 mae
@@ -416,6 +424,7 @@ mine-octagon-2006
 minhash-broder-1997
 minisat-2003
 mips-1981
+mitls-2014-triple-handshake
 mixture-of-experts
 mixup-2018
 mlflow
@@ -560,6 +569,7 @@ server-sent-events
 sglang-2024
 shannon-1948
 shellcheck
+shenango-2019
 sillito-questions
 silt-2011
 simhash-charikar-2002
@@ -710,6 +720,7 @@ amcharts5
 anchor
 anime
 ann-benchmarks
+annoy
 ansible
 anthropic-cookbook
 antv-g2
@@ -762,6 +773,7 @@ broot
 browser-use
 btop
 bubbletea
+buildkit
 bullmq
 bun
 caddy
@@ -834,6 +846,7 @@ deepspeed
 delta
 dendrite
 dgraph
+dhtmlx-gantt
 dify
 discord-js
 discord-py
@@ -880,6 +893,7 @@ excalidraw
 express
 eza
 fabric-js
+faiss
 fastai
 fastapi
 faster-whisper
@@ -896,6 +910,7 @@ flux
 fooocus
 foundry
 framer-motion
+frappe-gantt
 freeswitch
 fx
 fzf
@@ -1311,6 +1326,7 @@ vespa
 victoriametrics
 viem
 vis-network
+vis-timeline
 visx
 vite
 vitepress
