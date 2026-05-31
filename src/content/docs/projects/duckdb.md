@@ -155,5 +155,4 @@ result = con.execute("""
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-- [[starrocks]] —— StarRocks — MPP 列存数据库
 

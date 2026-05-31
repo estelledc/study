@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 634 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 637 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：634 篇
+- **总数**：637 篇
 - **已分类**：143
-- **未分类**：491（落入"其他 / 待分类"段）
+- **未分类**：494（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 491 |
+| [其他 / 待分类](#其他--待分类) | 494 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 491 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 494 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -531,6 +531,7 @@ sidebar:
 | `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) |
 | `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) |
 | `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) |
+| `jacobson-1988` | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) |
 | `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) |
 | `jensen-1996-photon-mapping` | [Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照](/study/papers/jensen-1996-photon-mapping/) |
 | `jupiter-1995` | [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) |
@@ -578,6 +579,7 @@ sidebar:
 | `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) |
+| `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
 | `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) |
@@ -674,6 +676,7 @@ sidebar:
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) |
+| `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
@@ -802,7 +805,7 @@ sidebar:
 
 ---
 
-## 全部 634 篇（字母序）
+## 全部 637 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1096,6 +1099,7 @@ sidebar:
 | `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) | 其他 |
 | `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) | 其他 |
 | `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) | 其他 |
+| `jacobson-1988` | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) | 其他 |
 | `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) | 其他 |
 | `jensen-1996-photon-mapping` | [Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照](/study/papers/jensen-1996-photon-mapping/) | 其他 |
 | `jupiter-1995` | [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) | 其他 |
@@ -1153,6 +1157,7 @@ sidebar:
 | `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) | 其他 |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 其他 |
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | 其他 |
+| `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) | 其他 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 其他 |
@@ -1273,6 +1278,7 @@ sidebar:
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 其他 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
 | `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | 其他 |
+| `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | 其他 |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 其他 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) | 其他 |

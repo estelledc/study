@@ -142,5 +142,6 @@ answer = llama.generate(prompt)
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
+- [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 

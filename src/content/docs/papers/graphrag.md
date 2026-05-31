@@ -135,5 +135,6 @@ vector RAG 在同一题上**只能找出几段最像"主线"字面的句子**，
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
 - [[react]] —— React UI 组件库
+- [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 
