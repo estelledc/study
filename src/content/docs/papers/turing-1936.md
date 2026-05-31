@@ -166,6 +166,7 @@ D(M):
 - [[hamming-1950]] —— Hamming 纠错码
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[huffman-1952]] —— Huffman 编码
+- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

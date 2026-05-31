@@ -156,5 +156,6 @@ D, I = index.search(query, k=10)                 # 毫秒级
 
 - [[awq]] —— AWQ — 看激活脸色给权重打折
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 

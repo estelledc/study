@@ -131,6 +131,7 @@ duckdb-2019
 dynamo
 eagle
 earley-parser
+easycrypt-2011
 ebpf
 effect-handlers
 epaxos-2013
@@ -370,6 +371,7 @@ spanner
 spanner-2012
 sparrow-2013
 sparse-autoencoders
+sparsegpt-2023
 specinfer-2023
 sqlite-2022
 ssa
@@ -435,6 +437,7 @@ wam-warren
 wandb
 ward-1992
 websocket-rfc-6455
+whitted-1980
 why3-2013
 word2vec
 xla-compiler
@@ -720,6 +723,7 @@ mongodb
 motion-one
 move-language
 msw
+mumble
 mysql
 nanobrowser
 nanostores
@@ -783,6 +787,7 @@ postfix
 postgres-js
 postgresql
 preact
+prefect
 prisma
 procs
 prom-client
@@ -827,6 +832,7 @@ salvo
 sanic
 scikit-learn
 scipy
+scoop
 scroll
 sd
 sentry

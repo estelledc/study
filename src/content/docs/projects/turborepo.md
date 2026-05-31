@@ -163,6 +163,7 @@ pnpm turbo run build
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
+- [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
