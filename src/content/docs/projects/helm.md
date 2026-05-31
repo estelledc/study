@@ -171,6 +171,7 @@ helm rollback my-nginx 1
 - [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
+- [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈

@@ -151,5 +151,9 @@ Monorepo：Lerna + Yarn workspaces
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 

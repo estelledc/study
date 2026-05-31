@@ -168,6 +168,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
+- [[neovim]] —— Neovim — Lua 可扩展 vim 现代分叉
 - [[nnn]] —— nnn — 50KB 内存就能跑的极简终端文件管理器
 - [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索

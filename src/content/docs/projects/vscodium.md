@@ -154,5 +154,9 @@ mitmproxy -p 8080
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 
