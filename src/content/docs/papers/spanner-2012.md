@@ -101,7 +101,6 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - 跨大洲多机房、要求强一致 ACID 事务的业务（广告扣费、支付、订单）
 - 数据规模超过单机能撑（TB-PB），又不想牺牲事务的关系型场景
 - 需要外部一致性（external consistency）的金融/审计——比线性一致更严
-- 大量 read-only 报表查询，不想阻塞写——MVCC 快照读完美适配
 
 **不适用**：
 
@@ -112,18 +111,15 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 
 ## 历史小故事（可跳过）
 
-- **2006 年**：[[bigtable]] 论文发表，证明 KV 大表能扩到 PB 级，但**不支持跨行事务**——业务方苦不堪言
-- **2008-2010 年**：Google 内部 Megastore 给 BigTable 加 Paxos 同步多副本+跨行事务，但写延迟 100-400ms 严重不可用
-- **2011 年**：F1 团队（AdWords）开始把 MySQL 后端迁到 Spanner，倒逼 Spanner 加 SQL 接口
-- **2012 年**：OSDI 论文 Best Paper，Spanner 公开 TrueTime + 全球外部一致性这套设计
-- **2013 年起**：CockroachDB（2014）、YugabyteDB（2017）、TiDB（2016）相继开源，几乎都是 Spanner 的开源克隆
+- **2006 年**：[[bigtable]] 论文发表，证明 KV 大表能扩到 PB 级但**不支持跨行事务**
+- **2008-2011 年**：Google 内部 Megastore 给 BigTable 加 Paxos 同步多副本+跨行事务但写延迟 100-400ms；F1 团队（AdWords）把 MySQL 后端迁到 Spanner，倒逼 Spanner 加 SQL 接口
+- **2012-2013 年起**：OSDI 论文 Best Paper，Spanner 公开 TrueTime + 全球外部一致性；CockroachDB（2014）、YugabyteDB（2017）、TiDB（2016）相继开源，几乎都是 Spanner 的开源克隆
 
 ## 学到什么
 
 1. **物理硬件可以参与软件设计**——把"时钟同步"这个看似纯软件的问题外包给 GPS + 原子钟，省下大量协议复杂度
 2. **不确定性显式建模比假装精确更可靠**——TrueTime 不报"现在 X 点"而报区间，工程上反而更稳
-3. **Paxos + 2PC 的组合**：Paxos 解决"单组容错复制"、2PC 解决"多组事务协调"，这是后来所有分布式数据库的范式
-4. **NewSQL 的开端**：证明了"全球扩展"和"强一致 SQL"不是二选一，CAP 不等于必须放弃 C
+3. **Paxos + 2PC 的组合 + NewSQL 的开端**：Paxos 单组复制 + 2PC 多组协调成为分布式数据库范式；证明"全球扩展" 和"强一致 SQL" 不是二选一，CAP 不等于必须放弃 C
 
 ## 延伸阅读
 

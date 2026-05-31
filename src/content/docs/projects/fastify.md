@@ -133,8 +133,7 @@ app.addHook('preHandler', async (req) => {
 
 1. **"编译期做完，运行期不动" 是性能的黄金法则**——schema → fn 这个套路适用于任何"反复用同一规则处理大量数据"的场景
 2. **封装边界不一定要靠语言提供**——Fastify 用 `Object.create` 在 JS 层做出了 scope 隔离，思路可移植到任何语言
-3. **schema-first 在生态里赢了**——FastAPI（Python）/ Fastify（Node）/ Hono、Elysia（TS）都走这条路，Express 那种"代码即接口"的时代结束了
-4. **Hook 比 middleware 更结构化**——固定阶段比"想插就插"对大型项目更友好
+3. **schema-first 在生态里赢了 + Hook 比 middleware 更结构化**——FastAPI / Fastify / Hono、Elysia 都走 schema-first 路线，Express"代码即接口" 时代结束；固定 Hook 阶段比"想插就插" 对大型项目更友好
 
 ## 延伸阅读
 
