@@ -179,5 +179,8 @@ abcdefghijklmnopqrstuvwxyz\r\n
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[mogul-1995-persistent-http]] —— Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"
+- [[padmanabhan-1995-http-latency]] —— Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快
 

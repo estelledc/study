@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 684 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 687 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：684 篇
+- **总数**：687 篇
 - **已分类**：143
-- **未分类**：541（落入"其他 / 待分类"段）
+- **未分类**：544（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 541 |
+| [其他 / 待分类](#其他--待分类) | 544 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 541 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 544 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -475,6 +475,7 @@ sidebar:
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |
+| `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) |
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
@@ -704,6 +705,7 @@ sidebar:
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
+| `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) |
 | `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) |
 | `ps-li-2014` | [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) |
@@ -835,6 +837,7 @@ sidebar:
 | `wald-2007-sah-bvh` | [Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法](/study/papers/wald-2007-sah-bvh/) |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) |
+| `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) |
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) |
@@ -852,7 +855,7 @@ sidebar:
 
 ---
 
-## 全部 684 篇（字母序）
+## 全部 687 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1073,6 +1076,7 @@ sidebar:
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 其他 |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 其他 |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | 其他 |
+| `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) | 其他 |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) | 其他 |
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) | 其他 |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
@@ -1345,6 +1349,7 @@ sidebar:
 | `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) | 其他 |
+| `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) | 其他 |
 | `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) | 其他 |
 | `ps-li-2014` | [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) | 其他 |
 | `push-pull-frp` | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) | 编译器 / 编程语言理论 |
@@ -1523,6 +1528,7 @@ sidebar:
 | `wald-2007-sah-bvh` | [Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法](/study/papers/wald-2007-sah-bvh/) | 其他 |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 其他 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) | 其他 |
+| `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) | 其他 |
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) | 其他 |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) | 其他 |
