@@ -93,27 +93,21 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - **2014 年**：Bahdanau 在 RNN seq2seq 上加了 attention，让 decoder 能「看回」encoder 的所有时间步。但 attention 只是辅助，主体仍是 RNN。
 - **2017 年**：Vaswani 团队（Google Brain + Google Research）8 个人在一篇 NeurIPS 论文里**直接把 RNN 去掉**，只保留 attention，配上 multi-head + positional encoding，就是 Transformer。
 - **2018 年**：BERT（encoder-only）+ GPT-1（decoder-only）双线开花，把 Transformer 从「翻译架构」变成「通用预训练骨架」。
-- **2020 年**：GPT-3 175B 验证了 scale 下的涌现能力。
-- **2022 年**：ChatGPT 把 Transformer 推到亿级用户面前。
-- **现在**：整个 AI 行业的大模型几乎都是 attention 的徒孙。
+- **2020-2022**：GPT-3 175B 验证 scale 下的涌现能力，ChatGPT 把 Transformer 推到亿级用户面前；现在整个 AI 行业的大模型几乎都是 attention 的徒孙。
 
 最戏剧的是：论文发表当年（2017）BLEU 28.4 看起来只是渐进改进，没人预测它会改写整个深度学习。**架构论文的真正影响力要等 5-10 年下游 scale up 之后才看清**。
 
 ## 学到什么
 
-1. **简单 + 可并行 > 复杂 + 表达力强**——scaled dot-product 比 additive attention 简单，但 GPU 友好。硬件友好的设计赢在长期。
-2. **attention is all you need 不是夸张**——去掉 RNN、去掉所有归纳偏置，纯靠数据 + scale，反而干赢。这是 "bitter lesson"（算力胜过聪明设计）的早期实证。
-3. **三块拼图**：self-attention（关系建模）+ multi-head（多视角）+ positional encoding（位置信号）= Transformer。少任何一块都不行。
-4. **架构论文的影响周期是 5-10 年**——发表当年的指标提升不重要，重要的是它有没有「scale 起来还成立」的潜力。
+1. **简单 + 可并行 > 复杂 + 表达力强**——scaled dot-product 比 additive attention 简单但 GPU 友好；硬件友好的设计赢在长期。
+2. **三块拼图就够 Transformer**：self-attention（关系建模）+ multi-head（多视角）+ positional encoding（位置信号）。去掉 RNN 和归纳偏置纯靠 scale 反而干赢，是"bitter lesson" 的早期实证。
+3. **架构论文的影响周期是 5-10 年**——发表当年指标提升不重要，重要的是它有没有「scale 起来还成立」的潜力。
 
 ## 延伸阅读
 
-- 视频教程：[3Blue1Brown — But what is a GPT?](https://www.youtube.com/watch?v=wjZofJX0v4M)（用动画把 attention 整套讲一遍）
-- 自己写实现：[karpathy nanoGPT](https://github.com/karpathy/nanoGPT)（200 行 Python 跑通完整 GPT-2 训练）
 - 论文 PDF：[Vaswani et al. 2017 arXiv 1706.03762](https://arxiv.org/abs/1706.03762)（12 页，公式密度高但工程细节齐全）
-- 图解教程：[Jay Alammar — The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)（中文翻译版很多）
-- [[resnet]] —— 残差连接是 Transformer 训得动深层的前置
-- [[vit]] —— Transformer 在视觉的首次成功移植
+- 视频 + 图解：[3Blue1Brown — But what is a GPT?](https://www.youtube.com/watch?v=wjZofJX0v4M) + [Jay Alammar Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)（动画 + 中文翻译）
+- 自己写实现：[karpathy nanoGPT](https://github.com/karpathy/nanoGPT)（200 行 Python 跑通完整 GPT-2 训练）
 
 ## 关联
 

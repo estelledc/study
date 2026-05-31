@@ -145,16 +145,14 @@ async fn signup(form: web::Json<Signup>) -> String {
 
 - **2017 年**：Nikolay Kim（昵称 fafhrd91）个人项目起步，先做了 actix actor crate（自己写的 Erlang 风格 actor 库，参见 [[erlang-otp]]），再在它上面建 actix-web，故得名
 - **2018-2020 年**：屡次在 TechEmpower benchmark 夺冠，Rust 社区知名度爆发，被认为是"Rust 能写 web"的活证据
-- **2020 年初**：因 unsafe 代码使用引发社区争议，fafhrd91 一度删库退出
-- **2020 年中**：社区接手维护，actix-web 4.0 起转为社区驱动，重心从 actor 模型转向函数 handler + extractor
+- **2020 年**：因 unsafe 代码使用引发社区争议，fafhrd91 一度删库退出，社区接手维护，actix-web 4.0 起转为社区驱动，重心从 actor 模型转向函数 handler + extractor
 - **2024 年后**：axum 凭借 tower 生态和更简洁 API 抢走了不少新项目，但 actix-web 仍是老牌生产级选择
 
 ## 学到什么
 
 1. **快不快不只看语言，还看运行时模型**——同样 Rust，actix 的"多 worker × Tokio"组合比单线程同步快几十倍
 2. **类型驱动的 extractor 是 Rust web 框架的核心抽象**——一行 `web::Json<T>` 替代了几十行手写解析
-3. **共享状态要显式 web::Data**——比 Express 的 req.app.locals 啰嗦但保证编译期不会用错
-4. **框架名字 ≠ 当前主流用法**——actix-web 4.x 已经把 actor 推到边缘，新人不必先学 actor
+3. **共享状态要显式 web::Data + 框架名字 ≠ 当前主流用法**——比 Express 的 req.app.locals 啰嗦但编译期保证；actix-web 4.x 已经把 actor 推到边缘，新人不必先学 actor
 
 ## 延伸阅读
 

@@ -153,15 +153,11 @@ end;
 
 ## 历史小故事（可跳过）
 
-- **1962 年**：Nygaard 在挪威计算中心想做"船舶卸货排队仿真"。他和 Dahl 决定在 Algol 60 上加一套仿真扩展，叫 SIMULA I（SIMUlation LAnguage 缩写）。这个版本已经有"过程作为对象"的雏形，但还绑死在仿真场景。
-
-- **1967 年 5 月**：在 Oslo 开 IFIP 工作会议，Dahl 和 Nygaard 提出把 SIMULA I 的"process"抽象成通用 **class** 概念——任何"数据 + 操作"都可以是 class，不限于仿真。C.A.R. Hoare、Per Brinch Hansen 参与了讨论。会后正式定义为 SIMULA 67，第二年发表 Common Base Language 报告。
-
-- **1972 年**：Alan Kay 在 Xerox PARC 看了 SIMULA 论文，受启发做了 [[smalltalk-80]]——但他把"调用方法"改成了"发送消息"，OOP 自此分成两派。
-
-- **1979 年**：Bjarne Stroustrup 在剑桥用 SIMULA 67 写博士论文（操作系统仿真）。毕业后他想"把 SIMULA 的好思想带到 C 上"，就有了 C with Classes（1979）→ C++（1985）。
-
-- **2001 年**：图灵奖授予 Dahl 和 Nygaard，表彰"OOP 的奠基性贡献"。**第二年两人相继去世**，间隔仅 3 个月。
+- **1962 年**：Nygaard 在挪威计算中心想做"船舶卸货排队仿真"，和 Dahl 在 Algol 60 上加仿真扩展叫 SIMULA I——已有"过程作为对象"雏形但绑死在仿真场景。
+- **1967 年 5 月**：Oslo IFIP 工作会议上把"process"抽象成通用 **class**——任何"数据 + 操作" 都可以是 class，C.A.R. Hoare、Per Brinch Hansen 参与讨论；会后正式定义为 SIMULA 67。
+- **1972 年**：Alan Kay 在 Xerox PARC 看了 SIMULA 论文，受启发做了 [[smalltalk-80]]——把"调用方法" 改成"发送消息"，OOP 自此分两派。
+- **1979 年**：Bjarne Stroustrup 在剑桥用 SIMULA 67 写博士论文，毕业后做了 C with Classes → C++（1985）。
+- **2001 年**：图灵奖授予 Dahl 和 Nygaard 表彰"OOP 的奠基性贡献"，**第二年两人相继去世**，间隔仅 3 个月。
 
 ## 学到什么
 
@@ -169,9 +165,7 @@ end;
 
 2. **副产品比目标更重要**：Dahl 和 Nygaard 想做仿真工具，做出来 OOP；JavaScript 想做表单脚本，做出来全栈语言；HTTP 想做学术论文链接，做出来万维网。**伟大发明的诞生轨迹，常常和初衷无关**
 
-3. **先驱不一定赢市场**：SIMULA 67 是 OOP 鼻祖，但工业级落地等到 C++（1985）和 Java（1995）。**纯粹的好思想未必赢，能落地的实现才赢**
-
-4. **每条范式都有它的"祖坟"**：OOP 的祖坟在 SIMULA，FP 的祖坟在 LISP，类型推导的祖坟在 [[hindley-milner]]。读祖坟不是怀古——是看清今天每个设计决策的来路
+3. **先驱不一定赢市场，每条范式都有它的"祖坟"**：SIMULA 67 是 OOP 鼻祖，但工业级落地等到 C++（1985）和 Java（1995）；OOP 的祖坟在 SIMULA、FP 的祖坟在 LISP、类型推导的祖坟在 [[hindley-milner]]——读祖坟是看清今天每个设计决策的来路
 
 ## 延伸阅读
 

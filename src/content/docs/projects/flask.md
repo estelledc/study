@@ -158,13 +158,11 @@ def list_users():
 
 1. **少做事 = 易学 = 长寿**：Flask 15 年没大改核心 API，正因为它不试图把所有事包圆
 2. **装饰器是 Python web 的通用心智**：Flask 把它推成主流后，FastAPI / Starlette 都沿用同一套
-3. **微框架的代价是组合负担**：自由换来要自己挑数据库、表单、登录方案——决策疲劳是真实代价
-4. **thread-local 是双刃剑**：让 API 优雅，但和异步、多线程一起用就要懂底层机制
+3. **微框架的代价是组合负担**：自由换来要自己挑数据库、表单、登录——决策疲劳是真实代价；thread-local 让 API 优雅但和异步组合时要懂底层机制
 
 ## 延伸阅读
 
-- 官方教程：[Flask Tutorial](https://flask.palletsprojects.com/en/tutorial/)（一步步搭一个完整博客，新人最佳起点）
-- 设计哲学：[Design Decisions in Flask](https://flask.palletsprojects.com/en/design/)（解释"为什么是这样"，比 API 文档更值得读）
+- 官方教程 + 设计哲学：[Flask Tutorial](https://flask.palletsprojects.com/en/tutorial/) + [Design Decisions in Flask](https://flask.palletsprojects.com/en/design/)（搭完整博客 + 解释"为什么是这样"）
 - Miguel Grinberg 的 [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)（23 篇博文，社区公认最完整）
 - [[fastapi]] —— 用类型注解的现代继承者
 - [[express]] —— JS 世界同生态位的微框架

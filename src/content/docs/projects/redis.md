@@ -97,9 +97,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 
 - 缓存层（cache-aside / read-through / write-back）
 - 计数器、限流（`INCR` 原子自增 + `EXPIRE` 滑动窗口）
-- 排行榜、近期热度（sorted set）
-- 简单消息队列（list + `BLPOP`，或 Stream）
-- 分布式锁、会话存储、临时去重（set）
+- 排行榜（sorted set）/ 简单消息队列（list / Stream）/ 分布式锁、会话存储、临时去重（set）
 
 **不适用**：
 
@@ -113,16 +111,14 @@ SET lock:order123 "uuid-abc" NX EX 10
 - **2009 年**：意大利人 antirez（Salvatore Sanfilippo）做实时分析工具时嫌 MySQL 慢，自己用 C 写了 Redis 第一版
 - **2010 年**：VMware 看上他，把他雇下来全职维护
 - **2015 年**：Redis Labs（现 Redis Inc.）成立，商业化路线启动
-- **2020 年**：antirez 宣布退出核心维护，回归个人写作和小项目
-- **2024 年 3 月**：Redis Inc. 把许可证改成 SSPL——不再算 OSI 认证开源
-- **2024 年**：Linux 基金会接手社区诉求，fork 出 Valkey 继续 BSD 路线
+- **2020 年**：antirez 宣布退出核心维护
+- **2024 年 3 月**：Redis Inc. 把许可证改成 SSPL（不再算 OSI 开源），Linux 基金会接手社区诉求，fork 出 Valkey 继续 BSD 路线
 
 ## 学到什么
 
 - **简单 + 单线程**也能扛百万 QPS——架构常被高估、实现质量常被低估
 - **数据结构**不是大学课题，是产品差异——5 种结构让 Redis 在缓存外又吃下队列、排行、限流
-- **持久化是工程权衡**——RDB 快但糙，AOF 慢但准，生产同时开
-- **开源不是终点**——许可证可以变；社区可以 fork；技术栈选型要把"治理"算进去
+- **持久化是工程权衡 + 开源不是终点**——RDB 快但糙、AOF 慢但准生产同时开；许可证可以变、社区可以 fork，技术栈选型要把"治理"算进去
 
 ## 延伸阅读
 
