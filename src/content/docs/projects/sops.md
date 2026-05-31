@@ -155,5 +155,6 @@ Flux 的 SOPS controller 流程：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 

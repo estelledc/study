@@ -169,4 +169,5 @@ def consumer():
 - [[exokernel-1995]] —— Exokernel — 把抽象推到用户态的极致设计
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
+- [[soltesz-2007]] —— Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案
 

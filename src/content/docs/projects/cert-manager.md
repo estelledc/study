@@ -157,5 +157,6 @@ cert-manager 看到 annotation，自动建 Certificate → 找 ClusterIssuer →
 
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[sealed-secrets]] —— Sealed Secrets — 把加密后的 Secret 安全提交到 Git
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 

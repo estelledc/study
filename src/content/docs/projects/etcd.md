@@ -142,6 +142,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[nsq]] —— NSQ — Go 写的去中心化消息队列
 - [[raft]] —— Raft — 易理解的共识算法
 - [[redis]] —— Redis — 内存键值数据库
+- [[redpanda]] —— Redpanda — Kafka 兼容的 C++ 实现
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 - [[tikv]] —— TiKV — 分布式事务 KV
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移

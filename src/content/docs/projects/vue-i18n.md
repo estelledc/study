@@ -165,25 +165,10 @@ export default defineConfig({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
-- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
-- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
-- [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
-- [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[nuxt]] —— Nuxt — Vue 全栈框架
-- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
-- [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
-- [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
-- [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
-- [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
-- [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
-- [[zod]] —— Zod — TypeScript-first schema 验证
 
