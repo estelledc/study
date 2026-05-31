@@ -26,7 +26,7 @@ function Hello({ name }) {
 
 - **数据变了 UI 自动更新**，不用再手写 `document.querySelector(...).innerText = ...`——这是过去 10 年前端开发体感最大的飞跃
 - **组件复用让大型应用可拆**——一个 `<Button />` 写一次全站用，改一处全站跟着变
-- **全行业默认**：Meta / Airbnb / Netflix / 字节 / 阿里 / 腾讯都在用，招聘市场绝大多数前端岗要求 React
+- **全行业默认**：Meta / Airbnb / Netflix / ByteDance / 阿里 / 腾讯都在用，招聘市场绝大多数前端岗要求 React
 - **Hook 让逻辑复用不再需要继承或高阶组件**——这是 2019 年后的现代写法，比老式 class 简洁一个数量级
 
 ## 核心要点
@@ -207,7 +207,7 @@ function Greeting({ name }) {
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 - [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
-- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
+- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零ByteDance运行时
 - [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[voyager]] —— Voyager — LLM 终身学习智能体

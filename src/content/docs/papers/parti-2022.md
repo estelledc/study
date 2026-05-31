@@ -25,7 +25,7 @@ Parti（**Pa**thways Auto**r**egressive **T**ext-to-**I**mage）是 Google 2022 
 不读 Parti，下面这些事都解释不了：
 
 - 为什么 2022 年文生图"扩散派"和"自回归派"打对台——这两条路各有信徒，Parti 是自回归一边的旗舰
-- 为什么后来的 [[muse-2023]] / VAR / 字节 Seed 系都回头走自回归路——Parti 验证了 AR 也能 scale 到 SOTA
+- 为什么后来的 [[muse-2023]] / VAR / ByteDance Seed 系都回头走自回归路——Parti 验证了 AR 也能 scale 到 SOTA
 - 为什么"图像 token"这个想法这么重要——把图变成离散符号后，所有 LLM 工具链（数据并行 / Megatron / FlashAttention）直接复用
 - 为什么 OpenAI 后来 GPT-4o 原生图像生成不再用扩散——AR 派最终在多模态统一架构上占了上风
 
