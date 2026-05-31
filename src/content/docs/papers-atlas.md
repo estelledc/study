@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 754 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 757 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：754 篇
+- **总数**：757 篇
 - **已分类**：143
-- **未分类**：611（落入"其他 / 待分类"段）
+- **未分类**：614（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 611 |
+| [其他 / 待分类](#其他--待分类) | 614 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 611 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 614 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -347,6 +347,7 @@ sidebar:
 | `batchnorm-2015` | [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) |
 | `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) |
 | `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) |
+| `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
@@ -402,6 +403,7 @@ sidebar:
 | `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
+| `classifier-free-guidance-2022` | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) |
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) |
 | `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
@@ -740,6 +742,7 @@ sidebar:
 | `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
+| `pastry-2001` | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) |
 | `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) |
 | `paxos-simple-2001` | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) |
 | `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) |
@@ -922,7 +925,7 @@ sidebar:
 
 ---
 
-## 全部 754 篇（字母序）
+## 全部 757 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -977,6 +980,7 @@ sidebar:
 | `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | 其他 |
 | `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) | 其他 |
 | `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
+| `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | 其他 |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | 其他 |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | 其他 |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | 其他 |
@@ -1044,6 +1048,7 @@ sidebar:
 | `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) | 其他 |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) | 其他 |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) | 其他 |
+| `classifier-free-guidance-2022` | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) | 其他 |
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | 其他 |
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
@@ -1446,6 +1451,7 @@ sidebar:
 | `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) | 其他 |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) | 其他 |
+| `pastry-2001` | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) | 其他 |
 | `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |
 | `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) | 其他 |
 | `paxos-simple-2001` | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) | 其他 |

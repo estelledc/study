@@ -130,6 +130,7 @@ PRAGMA journal_mode=WAL;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP

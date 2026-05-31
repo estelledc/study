@@ -159,6 +159,7 @@ D(M):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[belady-1966]] —— Belady 1966 — 缓存替换的理论最优与 FIFO 异常
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法

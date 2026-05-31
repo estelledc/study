@@ -179,6 +179,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[pastry-2001]] —— Pastry — 用 nodeId 的前缀一位一位逼近目标
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[rethinkdb]] —— RethinkDB — 让数据库自己把更新推给客户端的先驱

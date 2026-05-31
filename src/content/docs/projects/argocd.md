@@ -172,6 +172,7 @@ root-app.yaml  # source 指向 infra-apps/
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
+- [[litmus]] —— LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
 - [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[sealed-secrets]] —— Sealed Secrets — 把加密后的 Secret 安全提交到 Git

@@ -151,6 +151,7 @@ result = con.execute("""
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
+- [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
 - [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
 - [[lance]] —— Lance — AI 数据列存格式
 - [[lightdash]] —— Lightdash — 寄生在 dbt 项目里的开源 BI
@@ -161,5 +162,4 @@ result = con.execute("""
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-- [[starrocks]] —— StarRocks — MPP 列存数据库
 

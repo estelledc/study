@@ -156,5 +156,7 @@ spec:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
+- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
 
