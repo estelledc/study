@@ -43,7 +43,13 @@ export default defineConfig({
           ],
         },
       ],
-      customCss: ['./src/styles/custom.css'],
+      customCss: [
+        './src/styles/jx/tokens.css',
+        './src/styles/jx/base.css',
+        './src/styles/jx/components.css',
+        './src/styles/custom.css',
+        './src/styles/opendesign-theme.css',
+      ],
     }),
   ],
 });
