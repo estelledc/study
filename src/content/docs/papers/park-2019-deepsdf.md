@@ -154,5 +154,7 @@ for t in [0, 0.25, 0.5, 0.75, 1.0]:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 

@@ -152,6 +152,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[minio]] —— MinIO — S3 兼容对象存储
+- [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
 - [[nomad]] —— Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[nvidia-mig]] —— NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡

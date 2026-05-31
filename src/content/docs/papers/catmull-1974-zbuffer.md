@@ -148,4 +148,5 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-(本页是新建笔记，反向链接会在下次 regen 时自动填入)
+（暂无反向链接）
+

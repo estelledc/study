@@ -175,6 +175,7 @@ Unity / Unreal 里的 light probe(光照探针):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bentley-1975-kdtree]] —— k-d 树 — 多维空间里的二叉搜索树
+- [[catmull-1974-zbuffer]] —— Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
 - [[cohen-1985-hemicube]] —— Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分
 - [[curless-levoy-1996-tsdf]] —— Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
