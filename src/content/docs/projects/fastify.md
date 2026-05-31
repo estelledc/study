@@ -103,11 +103,9 @@ app.addHook('preHandler', async (req) => {
 
 1. **不写 response schema = 性能归零**：没 schema 的路由会回退到通用 `JSON.stringify`，速度跟 Express 一样。schema-first 的红利只对配了 schema 的路由生效。
 
-2. **schema 字段错配会输出错误 JSON**：schema 说 `email` 是 string、handler 实际返回 number——fast-json-stringify 在 prod 直接拼接，输出 `{"email":123}` 这种不合法但能 parse 的 JSON。schema 是契约不是建议。
+2. **schema 是契约不是建议**：字段类型错配（schema 说 string、handler 返 number）会让 fast-json-stringify 在 prod 直接拼出 `{"email":123}` 这种不合法但能 parse 的 JSON；handler 多返字段 schema 只列 3 个，会被悄悄裁掉——dev 模式 strict 能提前抓到
 
 3. **register 不是 use**：第一次写的人会困惑"为什么我 decorate 的 helper 在外面调不到"。要全局共享得 `fastify-plugin` 包一层。
-
-4. **response schema 会悄悄裁字段**：handler return 7 个字段、schema 只列 3 个——客户端只收到 3 个，调试时常找半天才发现是 schema 漏写。dev 模式开 strict 能提前发现。
 
 ## 适用 vs 不适用场景
 
@@ -132,8 +130,7 @@ app.addHook('preHandler', async (req) => {
 ## 学到什么
 
 1. **"编译期做完，运行期不动" 是性能的黄金法则**——schema → fn 这个套路适用于任何"反复用同一规则处理大量数据"的场景
-2. **封装边界不一定要靠语言提供**——Fastify 用 `Object.create` 在 JS 层做出了 scope 隔离，思路可移植到任何语言
-3. **schema-first 在生态里赢了 + Hook 比 middleware 更结构化**——FastAPI / Fastify / Hono、Elysia 都走 schema-first 路线，Express"代码即接口" 时代结束；固定 Hook 阶段比"想插就插" 对大型项目更友好
+2. **封装边界 + 固定 Hook 比"想插就插" 更结构化**——Fastify 用 `Object.create` 在 JS 层做出 scope 隔离 + 八阶段固定 hook，思路可移植，且 FastAPI / Hono / Elysia 都已沿用 schema-first 路线，Express "代码即接口" 时代结束
 
 ## 延伸阅读
 

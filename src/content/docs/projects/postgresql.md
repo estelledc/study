@@ -48,68 +48,41 @@ PostgreSQL 的"工业级"不是营销词，背后有 **三个硬核设计**：
 ### 案例 1：装上就能用
 
 ```bash
-# macOS
-brew install postgresql@16
-brew services start postgresql@16
-
-# 或 docker（推荐做隔离实验）
+brew install postgresql@16 && brew services start postgresql@16
+# 或 docker
 docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=secret postgres:16
-
-# 连进去
 psql -U postgres
 ```
 
-第一次进 `psql`，输 `\l` 列所有库、`\dt` 列当前库的表、`\q` 退出——三个命令足够初学者活下来。
+进 `psql` 后 `\l` 列所有库、`\dt` 列表、`\q` 退出——三个命令初学者就能活下来。
 
 ### 案例 2：JSONB 把半结构化数据装进 SQL 表
 
 ```sql
 CREATE TABLE events (id serial, data jsonb);
-
-INSERT INTO events (data) VALUES
-  ('{"kind": "click", "page": "/home", "user": {"id": 1, "name": "Alice"}}'),
-  ('{"kind": "view",  "page": "/about"}');
-
--- 查询嵌套字段，像写 JS 一样
+INSERT INTO events (data) VALUES ('{"kind":"click","user":{"name":"Alice"}}');
 SELECT data->'user'->>'name' FROM events WHERE data->>'kind' = 'click';
-
--- 给 JSONB 加 GIN 索引，查询飞快
 CREATE INDEX ON events USING gin (data);
 ```
 
-这是 **MongoDB 的核心卖点**，但 PostgreSQL 把它做成了"普通字段"——你不需要换数据库，原表里加一列就有了。
+MongoDB 的核心卖点，PG 做成"普通字段"——不需要换数据库，加一列就有了。
 
 ### 案例 3：pgvector 让向量检索变成一句 SQL
 
 ```sql
 CREATE EXTENSION vector;
-
-CREATE TABLE items (
-  id int primary key,
-  content text,
-  embedding vector(1536)  -- OpenAI text-embedding-3-small 维度
-);
-
--- 插入向量（embedding 由模型生成）
-INSERT INTO items VALUES (1, 'PostgreSQL 教程', '[0.1, 0.2, ...]');
-
--- 查最相似的 5 个
-SELECT id, content FROM items
-ORDER BY embedding <-> '[0.15, 0.18, ...]'
-LIMIT 5;
+CREATE TABLE items (id int primary key, content text, embedding vector(1536));
+SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 ```
 
-2023 年之前你需要 Pinecone / Weaviate 这些专门的向量库；现在，**一张普通表 + 一行 CREATE EXTENSION** 就够了。
+2023 年之前需要 Pinecone / Weaviate；现在一张普通表 + 一行 CREATE EXTENSION 就够。
 
 ## 踩过的坑
 
-1. **连接数限制**：默认 `max_connections=100`。每个连接是独立进程，开销大。serverless / Lambda 场景下函数实例多、连接爆炸 → 必须前面挡一层 **PgBouncer**（连接池），把上千客户端复用到几十个底层连接。
-
-2. **VACUUM 老化**：MVCC 写新版本 + 标记旧版本，旧版本叫 dead tuples。autovacuum 默认开但调得保守，写密集表会膨胀。表突然 50GB 但实际数据只有 5GB → 跑 `VACUUM FULL`（但会锁表）或者调 autovacuum 阈值。
-
-3. **DDL 锁表**：`ALTER TABLE users ADD COLUMN age int DEFAULT 18;` 在百万行大表上是灾难——它会重写每一行并持有 ACCESS EXCLUSIVE 锁，期间业务停摆。正确姿势：分两步（先加无默认值的列，再 UPDATE 填值），或用 `pg_repack` 在线重组。索引同理，加 `CONCURRENTLY` 才不锁表。
-
-4. **复制延迟**：异步流复制（默认）是"主写完就返回，从库慢慢追"。主库挂了瞬间切换，**未复制完的数据会丢**。要"绝对不丢"必须用同步复制（`synchronous_commit=on`），但延迟会涨。这是 CAP 取舍，不是 bug。
+1. **连接数限制**：默认 `max_connections=100`，每个连接是独立进程开销大；serverless / Lambda 函数实例多易爆——必须前面挡 PgBouncer 把上千客户端复用到几十个底层连接。
+2. **VACUUM 老化**：MVCC 写新版本 + 标记旧版本（dead tuples），autovacuum 默认保守，写密集表会膨胀（50GB 实际 5GB）→ 跑 `VACUUM FULL` 或调 autovacuum 阈值。
+3. **DDL 锁表**：`ALTER TABLE ... ADD COLUMN ... DEFAULT 18` 在百万行大表会重写每行并持 ACCESS EXCLUSIVE 锁；分两步（先加无默认列、再 UPDATE）或用 `pg_repack` / `CONCURRENTLY`。
+4. **复制延迟**：异步流复制（默认）主库挂时未复制完数据会丢；要绝对不丢用同步复制（`synchronous_commit=on`），延迟换一致——CAP 取舍不是 bug。
 
 ## 适用 vs 不适用场景
 
