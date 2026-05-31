@@ -150,5 +150,9 @@ loader = NeighborLoader(data, num_neighbors=[25, 10], batch_size=1024)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
+- [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
+- [[gin-2019]] —— GIN — 把图神经网络的表达力顶到理论天花板
+- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 

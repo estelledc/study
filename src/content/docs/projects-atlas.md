@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 662 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 664 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：662 个
+- **总数**：664 个
 - **已分类**：213
-- **未分类**：449（落入"其他 / 待分类"段）
+- **未分类**：451（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 449 |
+| [其他 / 待分类](#其他--待分类) | 451 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 449 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 451 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -520,6 +520,7 @@ sidebar:
 | `amcharts5` | [amCharts 5 — TypeScript 重写的商业级图表库](/study/projects/amcharts5/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
+| `annoy` | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) |
@@ -655,6 +656,7 @@ sidebar:
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
+| `frappe-gantt` | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
@@ -958,7 +960,7 @@ sidebar:
 
 ---
 
-## 全部 662 个（字母序）
+## 全部 664 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -978,6 +980,7 @@ sidebar:
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
 | `anime` | [anime.js — 一行 JS 让网页元素按时间线动起来](/study/projects/anime/) | 动画 |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) | 其他 |
+| `annoy` | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) | 其他 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | 其他 |
@@ -1165,6 +1168,7 @@ sidebar:
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
+| `frappe-gantt` | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) | 其他 |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | 其他 |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | 其他 |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |

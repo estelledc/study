@@ -148,4 +148,5 @@ Adrian 等人扫了 Alexa Top 100 万 HTTPS / 全网 SMTP / IPsec / SSH，得到
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-(尚无入链；首次提交后由脚本自动维护)
+（暂无反向链接）
+

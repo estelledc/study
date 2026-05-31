@@ -168,6 +168,7 @@ export function Sales({ data }) {
 - [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[frappe-gantt]] —— Frappe Gantt — 200 行 SVG 写出的甘特图
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[sigma-js]] —— Sigma.js — 上万节点仍流畅的 WebGL 图渲染器

@@ -152,5 +152,6 @@ FlexSC 把这一整列成本压到接近 0——因为**根本不切模式**。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 
