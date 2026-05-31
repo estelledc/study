@@ -197,6 +197,7 @@ def me(user: dict = Depends(current_user)):
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
+- [[janusgraph]] —— JanusGraph — 可插拔后端的分布式图数据库
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[litellm-proxy]] —— LiteLLM Proxy — 自托管的 LLM 统一网关

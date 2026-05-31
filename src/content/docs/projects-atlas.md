@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 630 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 632 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：630 个
+- **总数**：632 个
 - **已分类**：213
-- **未分类**：417（落入"其他 / 待分类"段）
+- **未分类**：419（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 417 |
+| [其他 / 待分类](#其他--待分类) | 419 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 417 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 419 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -685,6 +685,7 @@ sidebar:
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) |
+| `janusgraph` | [JanusGraph — 可插拔后端的分布式图数据库](/study/projects/janusgraph/) |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
 | `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) |
@@ -715,6 +716,7 @@ sidebar:
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
+| `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
@@ -926,7 +928,7 @@ sidebar:
 
 ---
 
-## 全部 630 个（字母序）
+## 全部 632 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1175,6 +1177,7 @@ sidebar:
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | 其他 |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | 其他 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
+| `janusgraph` | [JanusGraph — 可插拔后端的分布式图数据库](/study/projects/janusgraph/) | 其他 |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) | 其他 |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | 其他 |
 | `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) | 其他 |
@@ -1223,6 +1226,7 @@ sidebar:
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |
 | `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | i18n 国际化 |
+| `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | 其他 |
 | `listr2` | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | Terminal / 终端 |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | 其他 |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
