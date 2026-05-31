@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 572 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 574 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：572 篇
+- **总数**：574 篇
 - **已分类**：143
-- **未分类**：429（落入"其他 / 待分类"段）
+- **未分类**：431（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 429 |
+| [其他 / 待分类](#其他--待分类) | 431 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 429 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 431 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -430,6 +430,7 @@ sidebar:
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
 | `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) |
+| `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
@@ -510,6 +511,7 @@ sidebar:
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
 | `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) |
 | `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) |
+| `karis-2014-ue4-pbr` | [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) |
 | `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
@@ -740,7 +742,7 @@ sidebar:
 
 ---
 
-## 全部 572 篇（字母序）
+## 全部 574 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -915,6 +917,7 @@ sidebar:
 | `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) | 其他 |
 | `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
+| `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) | 其他 |
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
@@ -1014,6 +1017,7 @@ sidebar:
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | 其他 |
 | `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) | 其他 |
 | `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) | 其他 |
+| `karis-2014-ue4-pbr` | [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) | 其他 |
 | `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
 | `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) | 其他 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 其他 |

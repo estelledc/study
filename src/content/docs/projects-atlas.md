@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 583 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 585 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：583 个
+- **总数**：585 个
 - **已分类**：212
-- **未分类**：371（落入"其他 / 待分类"段）
+- **未分类**：373（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 371 |
+| [其他 / 待分类](#其他--待分类) | 373 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 371 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 373 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -603,6 +603,7 @@ sidebar:
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
+| `druid` | [Apache Druid — 流批一体的实时分析数据库](/study/projects/druid/) |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/projects/dspy/) |
 | `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) |
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) |
@@ -631,6 +632,7 @@ sidebar:
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) |
+| `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) |
@@ -879,7 +881,7 @@ sidebar:
 
 ---
 
-## 全部 583 个（字母序）
+## 全部 585 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1019,6 +1021,7 @@ sidebar:
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | 其他 |
+| `druid` | [Apache Druid — 流批一体的实时分析数据库](/study/projects/druid/) | 其他 |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/projects/dspy/) | 其他 |
 | `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) | 其他 |
 | `duckdb` | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) | 数据库本体 / 存储引擎 |
@@ -1061,6 +1064,7 @@ sidebar:
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 其他 |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | 其他 |
+| `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | 其他 |
