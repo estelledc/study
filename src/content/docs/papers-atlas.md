@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 523 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 525 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：523 篇
+- **总数**：525 篇
 - **已分类**：143
-- **未分类**：380（落入"其他 / 待分类"段）
+- **未分类**：382（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 380 |
+| [其他 / 待分类](#其他--待分类) | 382 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 380 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 382 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -496,6 +496,7 @@ sidebar:
 | `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
+| `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) |
@@ -540,6 +541,7 @@ sidebar:
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
+| `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
 | `mongo` | [MongoDB — 把 JSON 直接当数据库存](/study/papers/mongo/) |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
@@ -561,6 +563,7 @@ sidebar:
 | `orca-2022` | [Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场](/study/papers/orca-2022/) |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
+| `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
@@ -590,7 +593,6 @@ sidebar:
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
-| `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/papers/rethinkdb/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
 | `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) |
@@ -691,7 +693,7 @@ sidebar:
 
 ---
 
-## 全部 523 篇（字母序）
+## 全部 525 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -952,6 +954,7 @@ sidebar:
 | `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) | 其他 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 其他 |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | 其他 |
+| `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | 其他 |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) | 其他 |
 | `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | 其他 |
@@ -1011,6 +1014,7 @@ sidebar:
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 其他 |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |
+| `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) | 其他 |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
 | `mongo` | [MongoDB — 把 JSON 直接当数据库存](/study/papers/mongo/) | 其他 |
 | `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
@@ -1035,6 +1039,7 @@ sidebar:
 | `orca-2022` | [Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场](/study/papers/orca-2022/) | 其他 |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | 其他 |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
+| `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | 其他 |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |
@@ -1079,7 +1084,6 @@ sidebar:
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 其他 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) | 其他 |
-| `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/papers/rethinkdb/) | 其他 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 其他 |

@@ -149,6 +149,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
 - [[docker]] —— Docker — 容器化平台
 - [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
 - [[dragonflydb]] —— Dragonfly — 多线程 Redis 替代

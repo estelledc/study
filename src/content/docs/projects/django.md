@@ -180,6 +180,7 @@ class ArticleAdmin(admin.ModelAdmin):
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
+- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
 - [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API

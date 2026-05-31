@@ -154,5 +154,6 @@ ColBERTv2 是当时**唯一兼具高精度 + 可索引**的方案。
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[dssm-2013]] —— DSSM — 把 query 和文档各编码成 128 维向量再算余弦
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 

@@ -157,5 +157,6 @@ cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 - [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
+- [[owens-2007-gpgpu-survey]] —— Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代
 - [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
 

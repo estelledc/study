@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 547 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 550 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：547 个
+- **总数**：550 个
 - **已分类**：209
-- **未分类**：338（落入"其他 / 待分类"段）
+- **未分类**：341（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 338 |
+| [其他 / 待分类](#其他--待分类) | 341 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 338 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 341 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -573,6 +573,7 @@ sidebar:
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
+| `cvat` | [CVAT — 视频帧标注与半自动追踪的开源王者](/study/projects/cvat/) |
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
@@ -653,6 +654,7 @@ sidebar:
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) |
+| `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) |
@@ -758,6 +760,7 @@ sidebar:
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
+| `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
@@ -843,7 +846,7 @@ sidebar:
 
 ---
 
-## 全部 547 个（字母序）
+## 全部 550 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -947,6 +950,7 @@ sidebar:
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | 其他 |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
+| `cvat` | [CVAT — 视频帧标注与半自动追踪的开源王者](/study/projects/cvat/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) | 其他 |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | 其他 |
@@ -1067,6 +1071,7 @@ sidebar:
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) | 其他 |
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | 其他 |
+| `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) | 其他 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) | 其他 |
@@ -1249,6 +1254,7 @@ sidebar:
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | 其他 |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) | 其他 |
+| `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) | 其他 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) | 其他 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |

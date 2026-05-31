@@ -146,6 +146,7 @@ dpll-1962
 dpo
 dqn
 drizzle-2017
+drmm-2016
 dspy
 dssm-2013
 dstreams-2013
@@ -295,6 +296,7 @@ martin-lof-itt
 mattern-1989
 maxwell-architecture-2014
 mccarthy-lisp
+mcfarling-bp-1993
 mcmillan-smv-1993
 mcp-spec
 meagher-1982-octree
@@ -321,6 +323,7 @@ naiad-2013
 narwhal-tusk-2022
 nelson-oppen-1979
 neumann-2015-large-joins
+nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
 nix
 no-silver-bullet
@@ -380,6 +383,7 @@ reflexion
 reps-ifds
 resnet
 rest-fielding-2000
+rethinkdb
 retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
@@ -754,10 +758,12 @@ ktor
 kubernetes
 ky
 kysely
+label-studio
 langchain
 langfuse
 laravel
 layerzero
+lazydocker
 lazygit
 ledger-app-sdk
 lerna

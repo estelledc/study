@@ -172,3 +172,6 @@ A 改了 line（M），B 来读：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
+

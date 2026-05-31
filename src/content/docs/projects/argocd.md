@@ -165,6 +165,7 @@ root-app.yaml  # source 指向 infra-apps/
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
 - [[helm]] —— Helm — Kubernetes 包管理器
+- [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[temporal]] —— Temporal — 持久化工作流引擎
