@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 597 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 600 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：597 个
+- **总数**：600 个
 - **已分类**：212
-- **未分类**：385（落入"其他 / 待分类"段）
+- **未分类**：388（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 385 |
+| [其他 / 待分类](#其他--待分类) | 388 |
 
 ---
 
@@ -501,12 +501,13 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 385 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 388 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) |
 | `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) |
+| `act` | [act — 在本地用 Docker 跑 GitHub Actions](/study/projects/act/) |
 | `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
@@ -550,6 +551,7 @@ sidebar:
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) |
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
+| `bokeh` | [Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流](/study/projects/bokeh/) |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) |
 | `botpress` | [Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台](/study/projects/botpress/) |
 | `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) |
@@ -602,6 +604,7 @@ sidebar:
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
 | `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
+| `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
@@ -893,12 +896,13 @@ sidebar:
 
 ---
 
-## 全部 597 个（字母序）
+## 全部 600 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) | 其他 |
 | `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) | 其他 |
+| `act` | [act — 在本地用 Docker 跑 GitHub Actions](/study/projects/act/) | 其他 |
 | `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) | 其他 |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
@@ -953,6 +957,7 @@ sidebar:
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) | 其他 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
+| `bokeh` | [Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流](/study/projects/bokeh/) | 其他 |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) | 其他 |
 | `botpress` | [Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台](/study/projects/botpress/) | 其他 |
 | `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) | 其他 |
@@ -1031,6 +1036,7 @@ sidebar:
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docusaurus` | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) | 文档站点 |
+| `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | 其他 |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | 其他 |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | 其他 |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |

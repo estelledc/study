@@ -133,6 +133,7 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[cot]] —— Chain-of-Thought Prompting
 - [[dqn]] —— DQN — Deep Q-Network
+- [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 

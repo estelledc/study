@@ -151,6 +151,9 @@ WHERE dt >= '2026-05-01' GROUP BY dt, city;
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
+- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 
