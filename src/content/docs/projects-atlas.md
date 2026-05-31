@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 641 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 643 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：641 个
+- **总数**：643 个
 - **已分类**：213
-- **未分类**：428（落入"其他 / 待分类"段）
+- **未分类**：430（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 428 |
+| [其他 / 待分类](#其他--待分类) | 430 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 428 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 430 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -573,6 +573,7 @@ sidebar:
 | `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) |
 | `chartist` | [Chartist — 极简 SVG 图表](/study/projects/chartist/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
+| `cilium` | [Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来](/study/projects/cilium/) |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) |
@@ -779,6 +780,7 @@ sidebar:
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
+| `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
@@ -937,7 +939,7 @@ sidebar:
 
 ---
 
-## 全部 641 个（字母序）
+## 全部 643 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1029,6 +1031,7 @@ sidebar:
 | `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | 其他 |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
+| `cilium` | [Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来](/study/projects/cilium/) | 其他 |
 | `clack` | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | CLI / 命令行工具 |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) | 其他 |
 | `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
@@ -1334,6 +1337,7 @@ sidebar:
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
+| `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |

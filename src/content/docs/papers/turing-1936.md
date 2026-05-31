@@ -162,6 +162,7 @@ D(M):
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hamming-1950]] —— Hamming 纠错码
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

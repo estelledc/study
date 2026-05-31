@@ -154,9 +154,11 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
+- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
@@ -192,7 +194,6 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
-- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

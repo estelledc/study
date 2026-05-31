@@ -168,6 +168,7 @@ spec:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nginx]] —— nginx — 高性能 Web 服务器

@@ -155,11 +155,13 @@ DELETE /users/42
 
 - [[caesar-rexford-2005]] —— Caesar-Rexford 2005 — 你的包为什么绕了大半个地球
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 - [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
+- [[nfs-1985]] —— NFS 1985 — 让远程磁盘看起来像本地磁盘
 - [[oauth-2.1-rfc]] —— OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[r-bgp-2007]] —— R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋

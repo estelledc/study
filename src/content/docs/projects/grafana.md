@@ -131,6 +131,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+- [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
@@ -142,6 +143,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[m3]] —— M3 — Uber 的分布式 TSDB
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
+- [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

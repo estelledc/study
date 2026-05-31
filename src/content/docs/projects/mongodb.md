@@ -160,6 +160,7 @@ db.orders.aggregate([
 - [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[neo4j]] —— Neo4j — 主流图数据库
+- [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
 - [[redis]] —— Redis — 内存键值数据库
