@@ -158,6 +158,7 @@ Manolios 后来去了 Northeastern，做 ACL2 定理证明；Yu 在 Microsoft Re
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
+- [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

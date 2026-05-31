@@ -1,6 +1,6 @@
 ---
 title: Drizzle — 让 micro-batch 也能跑出 100ms 延迟
-来源: Venkataraman et al., "Drizzle: Fast and Adaptable Stream Processing at Scale", SOSP 2017
+来源: 'Venkataraman et al., "Drizzle: Fast and Adaptable Stream Processing at Scale", SOSP 2017'
 日期: 2026-05-31
 分类: 分布式系统
 难度: 中级
@@ -159,3 +159,6 @@ driver 的 RPC 次数从 N 次降到 1 次，**网络往返被均摊**。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

@@ -154,6 +154,7 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
+- [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
