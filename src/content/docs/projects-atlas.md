@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 616 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 618 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：616 个
+- **总数**：618 个
 - **已分类**：213
-- **未分类**：403（落入"其他 / 待分类"段）
+- **未分类**：405（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 403 |
+| [其他 / 待分类](#其他--待分类) | 405 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 403 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 405 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -719,6 +719,7 @@ sidebar:
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) |
+| `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) |
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
@@ -742,6 +743,7 @@ sidebar:
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
+| `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) |
 | `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/projects/nix/) |
@@ -912,7 +914,7 @@ sidebar:
 
 ---
 
-## 全部 616 个（字母序）
+## 全部 618 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1219,6 +1221,7 @@ sidebar:
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | 其他 |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) | 其他 |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) | 其他 |
+| `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) | 其他 |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 其他 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
@@ -1261,6 +1264,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
+| `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) | 其他 |
 | `nestjs` | [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) | Web 框架 |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | 其他 |
 | `next-intl` | [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) | i18n 国际化 |

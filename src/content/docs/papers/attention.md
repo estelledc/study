@@ -142,6 +142,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[anthropic-prompt-caching]] —— Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[bert4rec-2019]] —— BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模
+- [[biggan-2018]] —— BigGAN — 把 GAN 暴力放大到 ImageNet 512×512
 - [[blackwell-architecture-2024]] —— NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化
 - [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
@@ -154,6 +155,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -197,7 +199,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[resnet]] —— ResNet — 残差连接
