@@ -159,7 +159,6 @@ jstat -gcutil <pid> 1000
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[smalltalk-80]] —— Smalltalk-80
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
 

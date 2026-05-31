@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 552 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 555 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：552 个
+- **总数**：555 个
 - **已分类**：209
-- **未分类**：343（落入"其他 / 待分类"段）
+- **未分类**：346（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 343 |
+| [其他 / 待分类](#其他--待分类) | 346 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 343 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 346 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -727,6 +727,7 @@ sidebar:
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
+| `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) |
@@ -759,6 +760,7 @@ sidebar:
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) |
+| `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
@@ -796,6 +798,7 @@ sidebar:
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `starship` | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) |
+| `stern` | [stern — 多 pod 多 container 日志聚合 tail](/study/projects/stern/) |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
@@ -848,7 +851,7 @@ sidebar:
 
 ---
 
-## 全部 552 个（字母序）
+## 全部 555 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1197,6 +1200,7 @@ sidebar:
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | 其他 |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) | 其他 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
+| `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) | 其他 |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | 其他 |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | 其他 |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
@@ -1247,6 +1251,7 @@ sidebar:
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) | 其他 |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) | 其他 |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | 其他 |
+| `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) | 其他 |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | Drag & Drop / Interaction |
@@ -1306,6 +1311,7 @@ sidebar:
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
 | `starship` | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) | 其他 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务](/study/projects/steel-browser/) | AI 浏览器自动化 |
+| `stern` | [stern — 多 pod 多 container 日志聚合 tail](/study/projects/stern/) | 其他 |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) | 其他 |
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | 其他 |
