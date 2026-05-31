@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 540 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 543 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：540 篇
+- **总数**：543 篇
 - **已分类**：143
-- **未分类**：397（落入"其他 / 待分类"段）
+- **未分类**：400（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 397 |
+| [其他 / 待分类](#其他--待分类) | 400 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 397 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 400 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -373,6 +373,7 @@ sidebar:
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
+| `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
@@ -585,11 +586,13 @@ sidebar:
 | `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) |
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) |
 | `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) |
+| `persistent-memory-2014` | [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) |
 | `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |
 | `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) |
 | `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) |
 | `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) |
+| `plenoxels-2022` | [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) |
@@ -708,7 +711,7 @@ sidebar:
 
 ---
 
-## 全部 540 篇（字母序）
+## 全部 543 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -803,6 +806,7 @@ sidebar:
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) | 其他 |
+| `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) | 其他 |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 其他 |
@@ -1078,11 +1082,13 @@ sidebar:
 | `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) | 其他 |
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) | 其他 |
 | `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) | 其他 |
+| `persistent-memory-2014` | [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) | 其他 |
 | `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) | 其他 |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | 其他 |
 | `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) | 其他 |
 | `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) | 其他 |
 | `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) | 其他 |
+| `plenoxels-2022` | [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) | 其他 |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) | 其他 |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | 其他 |
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) | 其他 |

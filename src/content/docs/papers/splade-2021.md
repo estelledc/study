@@ -151,6 +151,7 @@ L = L_contrastive(query, doc+, doc-) + λ_q * FLOPS(q) + λ_d * FLOPS(d)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
+- [[cocondenser-2021]] —— coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 

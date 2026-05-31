@@ -155,5 +155,9 @@ MLP 只有 2-3 层、64 维宽。这种**超小 MLP** 在普通框架（PyTorch 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[attention]] —— Attention Is All You Need
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 
