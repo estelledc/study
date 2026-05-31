@@ -204,6 +204,7 @@ entry:
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器

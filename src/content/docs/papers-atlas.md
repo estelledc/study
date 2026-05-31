@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 422 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 425 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：422 篇
+- **总数**：425 篇
 - **已分类**：143
-- **未分类**：279（落入"其他 / 待分类"段）
+- **未分类**：282（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 279 |
+| [其他 / 待分类](#其他--待分类) | 282 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 279 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 282 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -556,6 +556,8 @@ sidebar:
 | `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) |
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) |
 | `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) |
+| `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) |
+| `tensorrt-llm-2023` | [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) |
 | `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) |
 | `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) |
@@ -581,6 +583,7 @@ sidebar:
 | `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) |
 | `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |
+| `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |
@@ -590,7 +593,7 @@ sidebar:
 
 ---
 
-## 全部 422 篇（字母序）
+## 全部 425 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -969,6 +972,8 @@ sidebar:
 | `tcp` | [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) | 网络协议 |
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) | 其他 |
 | `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) | 其他 |
+| `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) | 其他 |
+| `tensorrt-llm-2023` | [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) | 其他 |
 | `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) | 其他 |
 | `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) | 其他 |
@@ -1007,6 +1012,7 @@ sidebar:
 | `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) | 其他 |
 | `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 其他 |
+| `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) | 其他 |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |

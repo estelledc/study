@@ -170,4 +170,5 @@ def step(params, x, y):
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 

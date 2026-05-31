@@ -182,4 +182,5 @@ trainer = pl.Trainer(callbacks=[
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 - [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
+- [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
 

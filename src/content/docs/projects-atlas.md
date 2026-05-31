@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 490 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 491 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：490 个
+- **总数**：491 个
 - **已分类**：207
-- **未分类**：283（落入"其他 / 待分类"段）
+- **未分类**：284（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 283 |
+| [其他 / 待分类](#其他--待分类) | 284 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 283 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 284 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -624,6 +624,7 @@ sidebar:
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
+| `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) |
@@ -786,7 +787,7 @@ sidebar:
 
 ---
 
-## 全部 490 个（字母序）
+## 全部 491 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -970,6 +971,7 @@ sidebar:
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
+| `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | 其他 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | 其他 |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) | 其他 |
