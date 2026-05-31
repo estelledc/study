@@ -159,6 +159,7 @@ Manolios 后来去了 Northeastern，做 ACL2 定理证明；Yu 在 Microsoft Re
 
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
+- [[disel-2018]] —— Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[ironfleet-2015]] —— IronFleet — 把分布式协议证到一行 bug 都没有

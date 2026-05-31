@@ -172,6 +172,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
+- [[mlflow]] —— MLflow — 给机器学习实验装上"记账本和身份证"
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
