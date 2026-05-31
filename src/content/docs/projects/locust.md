@@ -156,3 +156,5 @@ locust -f file.py --headless -u 200 -r 20 -t 5m \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[k6]] —— k6 — 用 JS 写脚本的现代负载测试器
+

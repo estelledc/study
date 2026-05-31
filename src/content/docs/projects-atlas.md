@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 711 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 714 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：711 个
+- **总数**：714 个
 - **已分类**：214
-- **未分类**：497（落入"其他 / 待分类"段）
+- **未分类**：500（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 497 |
+| [其他 / 待分类](#其他--待分类) | 500 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 497 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 500 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -719,6 +719,7 @@ sidebar:
 | `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) |
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
+| `jspdf` | [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) |
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) |
 | `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) |
@@ -760,6 +761,7 @@ sidebar:
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
 | `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) |
+| `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) |
@@ -981,6 +983,7 @@ sidebar:
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) |
+| `vscode` | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
@@ -1007,7 +1010,7 @@ sidebar:
 
 ---
 
-## 全部 711 个（字母序）
+## 全部 714 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1293,6 +1296,7 @@ sidebar:
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) | 其他 |
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
+| `jspdf` | [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) | 其他 |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | 其他 |
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) | 其他 |
 | `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) | 其他 |
@@ -1351,6 +1355,7 @@ sidebar:
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
 | `lmdb` | [LMDB — 内存映射 KV 库](/study/projects/lmdb/) | 数据库本体 / 存储引擎 |
+| `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | 其他 |
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | 监控 / 时序 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | 其他 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
@@ -1687,6 +1692,7 @@ sidebar:
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) | 其他 |
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) | 其他 |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) | 其他 |
+| `vscode` | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | 其他 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |
