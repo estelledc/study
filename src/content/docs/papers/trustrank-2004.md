@@ -156,5 +156,8 @@ spam_candidates = np.where(t < threshold)[0]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[hits-1999]] —— HITS — 给网页同时打两个分：权威页 + 索引页
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 

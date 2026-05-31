@@ -163,4 +163,5 @@ make -j8                 # 普通笔记本约 30 分钟
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
 

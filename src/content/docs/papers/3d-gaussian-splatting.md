@@ -150,6 +150,7 @@ for g in gaussians:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[attention]] —— Attention Is All You Need
+- [[catmull-clark-1978]] —— Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models

@@ -170,4 +170,5 @@ conn = psycopg2.connect("postgresql://crdb-cluster:26257/mydb")
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
+- [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
 
