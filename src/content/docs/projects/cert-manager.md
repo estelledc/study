@@ -155,5 +155,7 @@ cert-manager 看到 annotation，自动建 Certificate → 找 ClusterIssuer →
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[velero]] —— Velero — Kubernetes 集群备份与迁移
 

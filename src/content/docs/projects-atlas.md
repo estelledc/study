@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 640 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 641 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：640 个
+- **总数**：641 个
 - **已分类**：213
-- **未分类**：427（落入"其他 / 待分类"段）
+- **未分类**：428（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 427 |
+| [其他 / 待分类](#其他--待分类) | 428 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 427 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 428 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -906,6 +906,7 @@ sidebar:
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
 | `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) |
+| `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
@@ -936,7 +937,7 @@ sidebar:
 
 ---
 
-## 全部 640 个（字母序）
+## 全部 641 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1534,6 +1535,7 @@ sidebar:
 | `vanilla-extract` | [vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | 其他 |
 | `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) | 其他 |
+| `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) | 其他 |
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |

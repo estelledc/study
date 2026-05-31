@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 668 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 672 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：668 篇
+- **总数**：672 篇
 - **已分类**：143
-- **未分类**：525（落入"其他 / 待分类"段）
+- **未分类**：529（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 525 |
+| [其他 / 待分类](#其他--待分类) | 529 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 525 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 529 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -340,6 +340,7 @@ sidebar:
 | `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) |
 | `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) |
 | `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) |
+| `batchnorm-2015` | [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) |
 | `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) |
 | `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |
@@ -363,6 +364,7 @@ sidebar:
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
+| `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) |
@@ -427,6 +429,7 @@ sidebar:
 | `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) |
 | `curless-levoy-1996-tsdf` | [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) |
 | `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) |
+| `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |
 | `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) |
@@ -656,6 +659,7 @@ sidebar:
 | `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/papers/observable-framework/) |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) |
 | `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) |
+| `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) |
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) |
 | `orca-2022` | [Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场](/study/papers/orca-2022/) |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) |
@@ -836,7 +840,7 @@ sidebar:
 
 ---
 
-## 全部 668 篇（字母序）
+## 全部 672 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -883,6 +887,7 @@ sidebar:
 | `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) | 其他 |
 | `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) | 其他 |
 | `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) | 其他 |
+| `batchnorm-2015` | [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) | 其他 |
 | `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | 其他 |
 | `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) | 其他 |
 | `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
@@ -913,6 +918,7 @@ sidebar:
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
 | `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) | 其他 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
+| `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | 其他 |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | 其他 |
@@ -992,6 +998,7 @@ sidebar:
 | `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) | 其他 |
 | `curless-levoy-1996-tsdf` | [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) | 其他 |
 | `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) | 其他 |
+| `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | 其他 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | 其他 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | 其他 |
@@ -1275,6 +1282,7 @@ sidebar:
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | 其他 |
 | `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) | 其他 |
 | `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
+| `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) | 其他 |
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) | 其他 |
 | `orca-2022` | [Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场](/study/papers/orca-2022/) | 其他 |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | 其他 |
