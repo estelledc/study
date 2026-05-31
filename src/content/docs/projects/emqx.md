@@ -164,3 +164,7 @@ $share/billing/car/+/payment
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[redis]] —— Redis — 内存键值数据库
+

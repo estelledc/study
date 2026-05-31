@@ -20,6 +20,7 @@ ampere-architecture-2020
 amplification-hell-2014
 ance-2020
 andersen-pointer-analysis
+andromeda-2018
 anh-moffat-2005
 anserini-2017
 anthropic-circuits
@@ -41,6 +42,7 @@ awq
 awq-2023
 azure-storage-2011
 b-tree-1972
+b4-2013
 badger
 baraff-witkin-1998-cloth
 barrelfish-2009
@@ -56,6 +58,7 @@ bert4rec-2019
 bidirectional-typing
 biere-bmc-1999
 big-little-2011
+bigbench-2022
 biggan-2018
 bigtable
 bigtable-2006
@@ -218,6 +221,7 @@ ebpf
 effect-handlers
 electra-2020
 elmo-2018
+emqx
 epaxos-2013
 erlang-otp
 eros-1999
@@ -337,6 +341,7 @@ jacobson-1988
 janus-2016
 jensen-1996-photon-mapping
 jupiter-1995
+jupiter-2015
 jwt-rfc-7519
 k3s
 kafka
@@ -358,6 +363,7 @@ knuth-taocp
 kokkos-2014
 koren-mf-2009
 krishnamurthy-1999-http11
+kubernetes-2016
 kustomize
 kvm-2007
 l4-1995
@@ -443,7 +449,9 @@ mixture-of-experts
 mixup-2018
 mlflow
 mlir
+mmlu-2021
 mockapetris-1988-dns
+mode-connectivity-2018
 moesi-cache-coherence-1986
 mogul-1995-persistent-http
 monaghan-1992-sph
@@ -479,6 +487,7 @@ nvme-protocol-2017
 oauth-2.1-rfc
 observable-framework
 okapi-bm25-1994
+omega-2013
 opencl-2010
 openhands
 opensearch
@@ -933,6 +942,7 @@ filecoin
 fish
 flask
 flax
+flowchart-js
 flux
 fooocus
 foundry
@@ -948,6 +958,7 @@ github-actions
 gitui
 glab
 glances
+glide-data-grid
 go-ethereum
 go-zero
 got
@@ -965,6 +976,7 @@ gsap
 gum
 hadolint
 hanami
+handsontable
 haproxy
 haraka
 hardhat
@@ -1053,6 +1065,7 @@ llama-index
 llamaindex
 lm-evaluation-harness
 lmdb
+loki
 longhorn
 lottie
 lsd
@@ -1406,6 +1419,7 @@ zellij
 zincsearch
 zksync-era
 zod
+zookeeper
 zoxide
 zsh
 zulip
