@@ -1,6 +1,6 @@
 ---
 title: Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
-来源: Stoica et al., "Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications", SIGCOMM 2001
+来源: 'Stoica et al., "Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications", SIGCOMM 2001'
 日期: 2026-06-01
 分类: 网络协议
 难度: 中级
@@ -150,3 +150,8 @@ N1 的 finger table（简化版）：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
+- [[ceph-2006]] —— Ceph — 让分布式文件系统不靠中心查表
+- [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
+

@@ -166,6 +166,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[cap-12-years-later-2012]] —— CAP 十二年后 — Brewer 自己承认"三选二"是误读
+- [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致

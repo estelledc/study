@@ -175,5 +175,7 @@ exporter = OTLPSpanExporter(endpoint='http://signoz-collector:4317')
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
+- [[prometheus]] —— Prometheus — 时序监控系统
 

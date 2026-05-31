@@ -1,6 +1,6 @@
 ---
 title: Hazard Pointers — 多线程下安全释放共享节点
-来源: Maged M. Michael, "Hazard Pointers: Safe Memory Reclamation for Lock-Free Objects", IEEE TPDS 2004
+来源: 'Maged M. Michael, "Hazard Pointers: Safe Memory Reclamation for Lock-Free Objects", IEEE TPDS 2004'
 日期: 2026-06-01
 分类: 操作系统
 难度: 中级
@@ -160,3 +160,6 @@ void retire(Node* n) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

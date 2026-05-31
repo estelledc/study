@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 701 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 703 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：701 个
+- **总数**：703 个
 - **已分类**：214
-- **未分类**：487（落入"其他 / 待分类"段）
+- **未分类**：489（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 487 |
+| [其他 / 待分类](#其他--待分类) | 489 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 487 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 489 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -581,6 +581,7 @@ sidebar:
 | `cesium` | [CesiumJS — 浏览器里的三维地球与时间动画](/study/projects/cesium/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
+| `chaos-mesh` | [Chaos Mesh — K8s 原生混沌工程平台](/study/projects/chaos-mesh/) |
 | `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) |
 | `chartist` | [Chartist — 极简 SVG 图表](/study/projects/chartist/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
@@ -745,6 +746,7 @@ sidebar:
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
+| `lightdash` | [Lightdash — 寄生在 dbt 项目里的开源 BI](/study/projects/lightdash/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
@@ -997,7 +999,7 @@ sidebar:
 
 ---
 
-## 全部 701 个（字母序）
+## 全部 703 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1094,6 +1096,7 @@ sidebar:
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
 | `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) | Monorepo / 包管理 |
+| `chaos-mesh` | [Chaos Mesh — K8s 原生混沌工程平台](/study/projects/chaos-mesh/) | 其他 |
 | `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) | 其他 |
 | `chartist` | [Chartist — 极简 SVG 图表](/study/projects/chartist/) | 其他 |
 | `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
@@ -1321,6 +1324,7 @@ sidebar:
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | 其他 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) | 其他 |
+| `lightdash` | [Lightdash — 寄生在 dbt 项目里的开源 BI](/study/projects/lightdash/) | 其他 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |
 | `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | i18n 国际化 |
