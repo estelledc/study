@@ -189,6 +189,7 @@ LIMIT 5;
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
+- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支

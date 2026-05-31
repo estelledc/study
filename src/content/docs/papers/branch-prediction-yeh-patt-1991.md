@@ -149,5 +149,10 @@ if (x == 0) log_zero();
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
+- [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
+- [[mcfarling-bp-1993]] —— McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
+- [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[ssa]] —— SSA — 静态单赋值形式
+- [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 

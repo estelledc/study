@@ -53,6 +53,7 @@ boehm-gc
 boogie-2005
 borg
 borg-omega-kube-2016
+branch-prediction-yeh-patt-1991
 brewer-cap-2000
 brook-2004
 byzantine-generals-1982
@@ -146,6 +147,7 @@ dpo
 dqn
 drizzle-2017
 dspy
+dssm-2013
 dstreams-2013
 duckdb-2019
 dynamo
@@ -269,6 +271,7 @@ lean-tactics
 leis-2015-optimizers
 lerner-seminal
 lieberman-realtime-gc
+lindholm-2008-tesla
 linear-scan-reg-alloc
 linear-types
 linearizability-1990
@@ -633,6 +636,7 @@ dgraph
 dify
 discord-js
 discord-py
+dive
 django
 dnd-kit
 docker
@@ -772,6 +776,7 @@ livekit-flutter
 llama-cpp
 llama-index
 llamaindex
+lm-evaluation-harness
 lottie
 lsd
 lucia
@@ -877,6 +882,7 @@ postal
 postfix
 postgres-js
 postgresql
+pouchdb
 preact
 prefect
 prisma

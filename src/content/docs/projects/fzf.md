@@ -170,6 +170,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[gum]] —— gum — 把 TUI 组件搬进 shell 脚本
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[jq]] —— jq — JSON 的 sed/awk
+- [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[lf]] —— lf — 终端里像 vim 一样翻文件
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
