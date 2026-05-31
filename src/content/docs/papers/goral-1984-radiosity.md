@@ -174,5 +174,10 @@ Unity / Unreal 里的 light probe(光照探针):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cohen-1985-hemicube]] —— Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分
+- [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
+- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
+- [[ward-1992]] —— Ward 1992 — 第一个能落地的各向异性反射模型
+- [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

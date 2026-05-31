@@ -1,6 +1,6 @@
 ---
 title: Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分
-来源: Michael F. Cohen, Donald P. Greenberg, "The Hemi-cube: A Radiosity Solution for Complex Environments", SIGGRAPH 1985
+来源: 'Michael F. Cohen, Donald P. Greenberg, "The Hemi-cube: A Radiosity Solution for Complex Environments", SIGGRAPH 1985'
 日期: 2026-05-31
 分类: 图形学
 难度: 进阶
@@ -168,4 +168,5 @@ Unity / Unreal 里的烘焙光照:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-(暂无反向链接)
+（暂无反向链接）
+

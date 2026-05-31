@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 516 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 518 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：516 个
+- **总数**：518 个
 - **已分类**：207
-- **未分类**：309（落入"其他 / 待分类"段）
+- **未分类**：311（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 309 |
+| [其他 / 待分类](#其他--待分类) | 311 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 309 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 311 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -551,6 +551,7 @@ sidebar:
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
+| `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
@@ -751,6 +752,7 @@ sidebar:
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
+| `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
 | `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) |
@@ -812,7 +814,7 @@ sidebar:
 
 ---
 
-## 全部 516 个（字母序）
+## 全部 518 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -891,6 +893,7 @@ sidebar:
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) | 其他 |
 | `clerk` | [Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
+| `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) | 其他 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | 其他 |
@@ -1219,6 +1222,7 @@ sidebar:
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
+| `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | 其他 |
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | 其他 |

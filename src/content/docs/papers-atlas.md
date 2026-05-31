@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 471 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 474 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：471 篇
+- **总数**：474 篇
 - **已分类**：143
-- **未分类**：328（落入"其他 / 待分类"段）
+- **未分类**：331（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 328 |
+| [其他 / 待分类](#其他--待分类) | 331 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 328 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 331 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -361,6 +361,7 @@ sidebar:
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
+| `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) |
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
@@ -523,6 +524,7 @@ sidebar:
 | `orca-2022` | [Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场](/study/papers/orca-2022/) |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
+| `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
 | `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) |
@@ -592,6 +594,7 @@ sidebar:
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
 | `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) |
 | `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) |
+| `taso-2019` | [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) |
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) |
 | `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) |
 | `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) |
@@ -639,7 +642,7 @@ sidebar:
 
 ---
 
-## 全部 471 篇（字母序）
+## 全部 474 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -723,6 +726,7 @@ sidebar:
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 其他 |
 | `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
+| `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | 其他 |
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) | 其他 |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 其他 |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 其他 |
@@ -945,6 +949,7 @@ sidebar:
 | `orca-2022` | [Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场](/study/papers/orca-2022/) | 其他 |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | 其他 |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
+| `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) | 其他 |
@@ -1053,6 +1058,7 @@ sidebar:
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | 其他 |
 | `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) | 其他 |
 | `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) | 其他 |
+| `taso-2019` | [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) | 其他 |
 | `tcp` | [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) | 网络协议 |
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) | 其他 |
 | `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) | 其他 |
