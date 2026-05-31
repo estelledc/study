@@ -161,6 +161,7 @@ PipeDream 论文里其实是**异步 SGD** + weight stashing：相邻 micro-batc
 
 - [[attention]] —— Attention Is All You Need
 - [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
+- [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
 - [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 

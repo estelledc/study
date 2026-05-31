@@ -152,6 +152,7 @@ def reduce(user_id, latencies):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[borg]] —— Borg — Google 把一万台机器假装成一台

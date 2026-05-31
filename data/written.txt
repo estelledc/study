@@ -51,6 +51,7 @@ cascades-1995
 cassandra-2010
 causal-abstraction
 ceph-2006
+certikos-2016
 chaff-2001
 chain-replication-2004
 chaitin-graph-coloring
@@ -158,6 +159,7 @@ graphrag
 gray-1978-notes
 gray-1981-transaction
 great-swe
+gshard-2020
 halide
 hamming-1950
 hdfs-2010
@@ -335,6 +337,7 @@ snowflake-2016
 souffle-datalog
 spanner
 spanner-2012
+sparrow-2013
 sparse-autoencoders
 sqlite-2022
 ssa

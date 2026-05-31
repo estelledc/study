@@ -214,6 +214,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
+- [[verisoft-2008]] —— Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完
 - [[vst-2014]] —— VST — 把 C 程序的数学证明一路带到机器码
 - [[why3-2013]] —— Why3 — 写一次程序规范，多个证明器一起来证
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
