@@ -177,6 +177,7 @@ helm rollback my-nginx 1
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[sops]] —— SOPS — 让密码也能放心进 Git
 - [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
+- [[tilt]] —— Tilt — K8s 微服务本地开发的"文件保存即上线"
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
 

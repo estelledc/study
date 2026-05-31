@@ -150,6 +150,7 @@ column families:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
+- [[akamai-2010]] —— Akamai 2010 — 从内容分发网络长成全球应用平台
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个

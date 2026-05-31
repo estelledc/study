@@ -150,9 +150,9 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[codex-2021]] —— Codex — 让 GPT 学会写 Python，并造一把尺子量它
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
+- [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO — Direct Preference Optimization
-- [[dqn]] —— DQN — Deep Q-Network
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
