@@ -156,6 +156,7 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖

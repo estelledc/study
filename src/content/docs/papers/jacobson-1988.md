@@ -161,6 +161,7 @@ t=2.6s  cwnd=360 ← 砍半，重新线性爬
 - [[mockapetris-1988-dns]] —— Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[red-1993]] —— RED — 让路由器在队列还没塞满时就提前丢包
+- [[rtp-rfc-1889]] —— RTP RFC 1889 — 让 UDP 也能跑实时音视频
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tcp-vegas-1995]] —— TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
