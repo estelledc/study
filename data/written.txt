@@ -220,6 +220,7 @@ mattern-1989
 maxwell-architecture-2014
 mccarthy-lisp
 mcmillan-smv-1993
+mcp-spec
 megastore-2011
 megatron-lm
 mencius-2008
@@ -335,6 +336,7 @@ system-f-reynolds-1974
 system-r-1976
 t5
 tachyon-2014
+tao-2013
 tcp
 template-haskell
 tendermint-2016
@@ -441,6 +443,7 @@ chatwoot
 chi
 chroma
 clack
+claude-agent-sdk
 claude-code
 clerk
 clickhouse
@@ -634,6 +637,7 @@ next-intl
 next-js
 nextra
 nginx
+nodemailer
 numpy
 nushell
 nuxt
@@ -642,6 +646,7 @@ observable-plot
 oclif
 ofetch
 ollama
+openai-agents-sdk
 openmeetings
 opensea-js
 opentelemetry
@@ -746,6 +751,7 @@ sqlite
 stagehand
 starlette
 starlight
+starship
 steel-browser
 storj
 storybook

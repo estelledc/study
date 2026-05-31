@@ -149,5 +149,8 @@ Claude Desktop 配一个本地 MCP 服务器，启动时 fork 子进程，stdin/
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
+- [[anthropic-prompt-caching]] —— Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
+- [[autogen]] —— AutoGen — 多智能体对话框架
+- [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
 
