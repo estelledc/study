@@ -256,6 +256,7 @@ karp-21
 karras-2012-parallel-bvh
 kepler-architecture-2012
 kildall-dataflow
+knrm-2017
 knuth-lr-1965
 knuth-taocp
 kokkos-2014
@@ -315,6 +316,7 @@ mips-1981
 mixture-of-experts
 mlflow
 mlir
+moesi-cache-coherence-1986
 monetdb-x100-2005
 mongo
 muzero
@@ -339,6 +341,7 @@ optuna
 orca-2022
 orca-continuous-batching
 ot-1989
+owens-2007-gpgpu-survey
 pagerank-1998
 pair-programming
 partial-evaluation-jones
@@ -383,7 +386,6 @@ reflexion
 reps-ifds
 resnet
 rest-fielding-2000
-rethinkdb
 retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
@@ -624,6 +626,7 @@ crewai
 ctranslate2
 curlie
 curve
+cvat
 d3
 dagster
 dasel
@@ -744,6 +747,7 @@ jotai
 jq
 js-joda
 just
+k9s
 kafka
 kamailio
 kedro
@@ -926,6 +930,7 @@ redis
 remix
 remix-ide
 reservoir-sdk
+rethinkdb
 ripgrep
 risingwave
 rocket

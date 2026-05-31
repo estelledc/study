@@ -155,6 +155,7 @@ GPipe 论文最响的一击：把 AmoebaNet 从 84M 参数推到 557M，跑 Imag
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[attention]] —— Attention Is All You Need
 - [[blink-2020]] —— Blink — 按拓扑动态拼生成树替代 NCCL ring
+- [[cell-be-2005]] —— Cell BE — 一颗 CPU 里塞 8 个加速核
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
 - [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡

@@ -154,6 +154,7 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
+- [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[dssm-2013]] —— DSSM — 把 query 和文档各编码成 128 维向量再算余弦

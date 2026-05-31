@@ -151,6 +151,7 @@ ColBERTv2 是当时**唯一兼具高精度 + 可索引**的方案。
 
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[dssm-2013]] —— DSSM — 把 query 和文档各编码成 128 维向量再算余弦
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU

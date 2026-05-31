@@ -162,5 +162,4 @@ export default function Layout({ children }) {
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[next-intl]] —— next-intl — Next.js 专用的多语言开关
-- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 
