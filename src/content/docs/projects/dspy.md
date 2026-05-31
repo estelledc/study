@@ -182,6 +182,9 @@ dspy.configure(lm=dspy.LM("anthropic/claude-sonnet-4-7"))
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
+- [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 

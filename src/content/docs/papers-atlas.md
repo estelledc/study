@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 664 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 666 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：664 篇
+- **总数**：666 篇
 - **已分类**：143
-- **未分类**：521（落入"其他 / 待分类"段）
+- **未分类**：523（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 521 |
+| [其他 / 待分类](#其他--待分类) | 523 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 521 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 523 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -652,6 +652,7 @@ sidebar:
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) |
 | `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) |
 | `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) |
+| `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/papers/observable-framework/) |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) |
 | `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) |
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) |
@@ -743,6 +744,7 @@ sidebar:
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) |
 | `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) |
+| `sophia-2023` | [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) |
 | `sorkine-2004-laplacian-editing` | [Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节](/study/papers/sorkine-2004-laplacian-editing/) |
 | `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) |
 | `spann-2021` | [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) |
@@ -832,7 +834,7 @@ sidebar:
 
 ---
 
-## 全部 664 篇（字母序）
+## 全部 666 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1266,6 +1268,7 @@ sidebar:
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) | 其他 |
 | `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) | 其他 |
 | `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) | 其他 |
+| `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/papers/observable-framework/) | 其他 |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | 其他 |
 | `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) | 其他 |
 | `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
@@ -1389,6 +1392,7 @@ sidebar:
 | `snowflake` | [Snowflake — 把数仓的存储和计算撕成两半](/study/papers/snowflake/) | 数据库 |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | 其他 |
 | `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | 其他 |
+| `sophia-2023` | [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) | 其他 |
 | `sorkine-2004-laplacian-editing` | [Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节](/study/papers/sorkine-2004-laplacian-editing/) | 其他 |
 | `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) | 其他 |
 | `spann-2021` | [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) | 其他 |
