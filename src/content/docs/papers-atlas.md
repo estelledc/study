@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 760 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 763 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：760 篇
+- **总数**：763 篇
 - **已分类**：143
-- **未分类**：617（落入"其他 / 待分类"段）
+- **未分类**：620（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 617 |
+| [其他 / 待分类](#其他--待分类) | 620 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 617 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 620 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -357,6 +357,7 @@ sidebar:
 | `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) |
 | `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
+| `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
 | `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) |
 | `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) |
@@ -420,6 +421,7 @@ sidebar:
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
+| `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) |
 | `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) |
 | `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) |
@@ -823,6 +825,7 @@ sidebar:
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |
 | `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) |
+| `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) |
 | `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) |
 | `slim-2011` | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) |
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) |
@@ -928,7 +931,7 @@ sidebar:
 
 ---
 
-## 全部 760 篇（字母序）
+## 全部 763 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -997,6 +1000,7 @@ sidebar:
 | `bigtable` | [Bigtable — Google 把行级随机读写做到 PB 级的存储](/study/papers/bigtable/) | 数据库 |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 其他 |
 | `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
+| `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) | 其他 |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 其他 |
 | `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) | 其他 |
 | `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) | 其他 |
@@ -1072,6 +1076,7 @@ sidebar:
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 其他 |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 其他 |
 | `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
+| `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | 其他 |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | 其他 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) | 其他 |
@@ -1562,6 +1567,7 @@ sidebar:
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) | 其他 |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) | 其他 |
 | `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) | 其他 |
+| `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | 其他 |
 | `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) | 其他 |
 | `sleeper-agents` | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
 | `slim-2011` | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) | 其他 |

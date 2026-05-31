@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 708 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 711 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：708 个
+- **总数**：711 个
 - **已分类**：214
-- **未分类**：494（落入"其他 / 待分类"段）
+- **未分类**：497（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 494 |
+| [其他 / 待分类](#其他--待分类) | 497 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 494 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 497 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -721,6 +721,7 @@ sidebar:
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) |
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) |
+| `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) |
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
 | `kaniko` | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) |
@@ -834,7 +835,9 @@ sidebar:
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
+| `pdfkit` | [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) |
 | `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) |
+| `pebble` | [Pebble — CockroachDB 自研 LSM](/study/projects/pebble/) |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -1004,7 +1007,7 @@ sidebar:
 
 ---
 
-## 全部 708 个（字母序）
+## 全部 711 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1292,6 +1295,7 @@ sidebar:
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | 其他 |
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) | 其他 |
+| `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) | 其他 |
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) | 其他 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |
@@ -1460,7 +1464,9 @@ sidebar:
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) | 其他 |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | 其他 |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
+| `pdfkit` | [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) | 其他 |
 | `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | 其他 |
+| `pebble` | [Pebble — CockroachDB 自研 LSM](/study/projects/pebble/) | 其他 |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) | 其他 |
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) | 其他 |

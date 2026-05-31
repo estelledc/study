@@ -224,6 +224,7 @@ eagle
 earley-parser
 easycrypt-2011
 ebpf
+edm-2022
 effect-handlers
 electra-2020
 elmo-2018
@@ -355,6 +356,7 @@ jupiter-1995
 jupiter-2015
 jwt-rfc-7519
 k3s
+kademlia-2002
 kafka
 kafka-2011
 kahn-natural-semantics
@@ -420,6 +422,7 @@ lsm-tree-1996
 lstm-1997
 lucky13-2013
 mach-1986
+mach-vm-1987
 macklin-2014-position-based-fluids
 mae
 magic3d-2023
@@ -1209,6 +1212,7 @@ pandas
 panel
 partykit
 patchright
+pdfmake
 peerjs-server
 penpot
 pg-boss-readme
@@ -1321,6 +1325,7 @@ signoz
 silero-vad
 simple-peer
 sinatra
+sled
 slim-framework
 snapshot
 socket-io
