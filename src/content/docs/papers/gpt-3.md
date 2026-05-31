@@ -149,6 +149,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO — Direct Preference Optimization
+- [[dqn]] —— DQN — Deep Q-Network
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
@@ -165,4 +166,5 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
 - [[word2vec]] —— Word2Vec — 词向量奠基
+- [[xlnet-2019]] —— XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向
 

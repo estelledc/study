@@ -144,6 +144,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[helm]] —— Helm — Kubernetes 包管理器
+- [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令

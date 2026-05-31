@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 585 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 588 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：585 个
+- **总数**：588 个
 - **已分类**：212
-- **未分类**：373（落入"其他 / 待分类"段）
+- **未分类**：376（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 373 |
+| [其他 / 待分类](#其他--待分类) | 376 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 373 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 376 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -513,6 +513,7 @@ sidebar:
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
+| `altair` | [Altair — Python 上的 Vega-Lite 绑定](/study/projects/altair/) |
 | `amcharts5` | [amCharts 5 — TypeScript 重写的商业级图表库](/study/projects/amcharts5/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
@@ -669,6 +670,7 @@ sidebar:
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
+| `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) |
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) |
@@ -754,6 +756,7 @@ sidebar:
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
+| `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
@@ -881,7 +884,7 @@ sidebar:
 
 ---
 
-## 全部 585 个（字母序）
+## 全部 588 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -894,6 +897,7 @@ sidebar:
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) | 其他 |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | 其他 |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | 其他 |
+| `altair` | [Altair — Python 上的 Vega-Lite 绑定](/study/projects/altair/) | 其他 |
 | `amcharts5` | [amCharts 5 — TypeScript 重写的商业级图表库](/study/projects/amcharts5/) | 其他 |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
 | `anime` | [anime.js — 一行 JS 让网页元素按时间线动起来](/study/projects/anime/) | 动画 |
@@ -1114,6 +1118,7 @@ sidebar:
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) | 其他 |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | 其他 |
+| `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) | 其他 |
 | `jest` | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) | 其他 |
@@ -1259,6 +1264,7 @@ sidebar:
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | 其他 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
+| `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) | 其他 |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | 其他 |
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |

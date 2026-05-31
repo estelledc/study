@@ -139,6 +139,7 @@ ddpm
 debugging-dichotomy
 deepseek-r1
 deepspeed-zero
+deering-1988-triangle-processor
 desbrun-1999-implicit-fairing
 dewitt-gray-1992
 differential-datalog
@@ -169,6 +170,7 @@ earley-parser
 easycrypt-2011
 ebpf
 effect-handlers
+elmo-2018
 epaxos-2013
 erlang-otp
 eswaran-1976
@@ -268,6 +270,7 @@ kafka-2011
 kahn-natural-semantics
 kajiya-1986-rendering-equation
 kami-2017
+karis-2014-ue4-pbr
 karp-21
 karras-2012-parallel-bvh
 kepler-architecture-2012
@@ -303,6 +306,7 @@ llvm
 lmdb-2011
 local-type-inference
 logoot-2010
+longformer-2020
 loop-1987-subdivision
 lsm-tree-1996
 lstm-1997
@@ -351,6 +355,7 @@ nelson-oppen-1979
 nerf-2020
 netflix-bellkor-2009
 neumann-2015-large-joins
+neumf-2017
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
 nimier-david-2019-mitsuba2
@@ -612,6 +617,7 @@ axelar
 axios
 axolotl
 axum
+badger
 balancer
 bandwhich
 bat
@@ -705,6 +711,7 @@ dragonfly
 dragonflydb
 drizzle
 dropwizard
+druid
 dspy
 dua-cli
 duckdb
@@ -747,6 +754,7 @@ filecoin
 fish
 flask
 flax
+fooocus
 foundry
 framer-motion
 freeswitch
@@ -916,6 +924,7 @@ oclif
 ofetch
 oh-my-posh
 ollama
+open-sora
 openai-agents-sdk
 openmeetings
 opensea-js
@@ -1106,6 +1115,7 @@ valkey
 valtio
 vanilla-extract
 vega
+vega-lite
 vercel-ai
 vertx
 victoriametrics
