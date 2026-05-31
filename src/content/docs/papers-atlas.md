@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 383 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 384 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：383 篇
+- **总数**：384 篇
 - **已分类**：143
-- **未分类**：240（落入"其他 / 待分类"段）
+- **未分类**：241（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 240 |
+| [其他 / 待分类](#其他--待分类) | 241 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 240 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 241 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -458,6 +458,7 @@ sidebar:
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
+| `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) |
 | `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
@@ -551,7 +552,7 @@ sidebar:
 
 ---
 
-## 全部 383 篇（字母序）
+## 全部 384 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -790,6 +791,7 @@ sidebar:
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
 | `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) | 其他 |
+| `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) | 其他 |
 | `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) | 其他 |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | 其他 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |

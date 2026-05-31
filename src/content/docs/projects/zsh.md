@@ -167,3 +167,7 @@ path=(~/bin /usr/local/bin $path)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
+- [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
+

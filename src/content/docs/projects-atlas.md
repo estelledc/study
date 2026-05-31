@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 456 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 461 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：456 个
+- **总数**：461 个
 - **已分类**：207
-- **未分类**：249（落入"其他 / 待分类"段）
+- **未分类**：254（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 249 |
+| [其他 / 待分类](#其他--待分类) | 254 |
 
 ---
 
@@ -496,12 +496,13 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 249 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 254 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) |
 | `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) |
+| `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
@@ -598,6 +599,7 @@ sidebar:
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) |
+| `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) |
@@ -649,6 +651,7 @@ sidebar:
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
+| `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
@@ -686,6 +689,7 @@ sidebar:
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
+| `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
@@ -748,16 +752,18 @@ sidebar:
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
 | `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) |
+| `zsh` | [zsh — 比 bash 更聪明的兼容派 shell](/study/projects/zsh/) |
 | `zulip` | [Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）](/study/projects/zulip/) |
 
 ---
 
-## 全部 456 个（字母序）
+## 全部 461 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) | 其他 |
 | `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) | 其他 |
+| `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) | 其他 |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
@@ -908,6 +914,7 @@ sidebar:
 | `got` | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) | 其他 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
+| `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) | 其他 |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) | 其他 |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | 其他 |
@@ -1015,6 +1022,7 @@ sidebar:
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
+| `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | 其他 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
@@ -1079,6 +1087,7 @@ sidebar:
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
 | `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) | 其他 |
+| `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) | 其他 |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | Drag & Drop / Interaction |
@@ -1210,5 +1219,6 @@ sidebar:
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |
 | `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) | 其他 |
+| `zsh` | [zsh — 比 bash 更聪明的兼容派 shell](/study/projects/zsh/) | 其他 |
 | `zulip` | [Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）](/study/projects/zulip/) | 其他 |
 | `zustand` | [Zustand — 极简 React 状态管理](/study/projects/zustand/) | 状态管理 |

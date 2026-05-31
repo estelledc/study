@@ -258,6 +258,7 @@ percolator-2010
 peyton-jones-stg
 plotkin-sos
 pnueli-temporal-1977
+pnuts-2008
 polar-codes-2009
 pottier-merr
 ppo
@@ -388,6 +389,7 @@ accelerate
 actix-web
 affine
 ag-grid
+airflow
 anchor
 anime
 ann-benchmarks
@@ -408,6 +410,7 @@ astro
 asynq
 auth-js
 automerge
+aws-spot-best-practices
 axelar
 axios
 axolotl
@@ -420,6 +423,7 @@ better-auth
 bigbluebutton
 biome
 bitcoin-core
+botpress
 bottom
 boxen
 broot
@@ -468,6 +472,7 @@ dasel
 dask
 date-fns
 dayjs
+debezium
 deepspeed
 delta
 dendrite
@@ -645,6 +650,7 @@ nx
 observable-plot
 oclif
 ofetch
+oh-my-posh
 ollama
 openai-agents-sdk
 openmeetings
