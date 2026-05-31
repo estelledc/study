@@ -17,6 +17,7 @@ alpa-2022
 alphago
 amdahl-law-1967
 ampere-architecture-2020
+amplification-hell-2014
 ance-2020
 andersen-pointer-analysis
 anh-moffat-2005
@@ -104,6 +105,7 @@ chandy-lamport-1985
 chapar-2016
 cheney-gc
 chinchilla
+chronos-2024
 chubby
 ci-effects
 cimatti-nusmv-2002
@@ -416,6 +418,7 @@ megastore-2011
 megatron-lm
 memcached-fb-2013
 mencius-2008
+mermaid
 metagpt
 metaml-multi-stage
 metcalfe-boggs-1976
@@ -517,6 +520,7 @@ quantum-supremacy-2019
 quic
 quincy-2009
 r-bgp-2007
+rabbitmq-server
 raft
 rag-lewis-2020
 ranknet-2005
@@ -699,6 +703,7 @@ why3-2013
 wide-deep-2016
 williams-1983-mipmap
 word2vec
+xen-2003
 xla-compiler
 xlnet-2019
 xtrace-2007
@@ -780,6 +785,7 @@ broot
 browser-use
 btop
 bubbletea
+buildah
 buildkit
 bullmq
 bun

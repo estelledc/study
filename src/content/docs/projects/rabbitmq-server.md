@@ -153,3 +153,7 @@ ch.queue_declare(queue="payments",
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+

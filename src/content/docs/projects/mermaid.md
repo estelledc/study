@@ -157,3 +157,7 @@ stateDiagram-v2
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[starlight]] —— Starlight — Astro 文档站点主题
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
+

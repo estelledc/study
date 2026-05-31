@@ -1,6 +1,6 @@
 ---
 title: 彩票假设 — 大网里藏着一张能独立训出来的小网
-来源: Frankle & Carbin, "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks", ICLR 2019 (Best Paper)
+来源: 'Frankle & Carbin, "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks", ICLR 2019 (Best Paper)'
 日期: 2026-06-01
 分类: 机器学习
 难度: 中级
@@ -163,3 +163,6 @@ LeNet 大概 26 万参数。论文做完 IMP 后：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

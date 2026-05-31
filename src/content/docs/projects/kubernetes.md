@@ -186,6 +186,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
+- [[vault]] —— Vault — HashiCorp 把"密码本"做成可编程基础设施
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 - [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
