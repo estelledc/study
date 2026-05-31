@@ -205,6 +205,7 @@ entry:
 - [[mcfarling-bp-1993]] —— McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
 - [[mips-1981]] —— MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+- [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路

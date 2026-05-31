@@ -160,6 +160,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[captum]] —— Captum — 给 PyTorch 模型装上 X 光机
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
+- [[coqui-tts]] —— Coqui TTS — 多语种 TTS 工具包
 - [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
@@ -181,6 +182,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[metaflow]] —— Metaflow — Netflix 给数据科学家的 Python 流水线
 - [[mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
+- [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准

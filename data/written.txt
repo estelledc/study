@@ -12,6 +12,7 @@ alpa-2022
 alphago
 amdahl-law-1967
 ampere-architecture-2020
+ance-2020
 andersen-pointer-analysis
 anh-moffat-2005
 anserini-2017
@@ -41,6 +42,7 @@ bernstein-1981-cc
 bert
 bidirectional-typing
 biere-bmc-1999
+big-little-2011
 bigtable
 bigtable-2006
 bitcoin
@@ -148,6 +150,7 @@ dit
 dns
 dpll-1962
 dpo
+dpr-2020
 dqn
 drizzle-2017
 drmm-2016
@@ -179,6 +182,7 @@ flink-snapshots-2015
 flp-1985
 foundationdb
 foundationdb-2021
+fpga-hls-2011
 frama-c-2012
 frank-effects
 fsdp-2023
@@ -329,9 +333,11 @@ mycroft-strictness
 naiad-2013
 narwhal-tusk-2022
 nelson-oppen-1979
+nerf-2020
 neumann-2015-large-joins
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
+nimier-david-2019-mitsuba2
 nix
 no-silver-bullet
 ntp-mills-1991
@@ -538,6 +544,7 @@ actions-runner-controller
 actix-web
 affine
 ag-grid
+aichat
 aiortc
 airflow
 anchor
@@ -694,6 +701,7 @@ fastapi
 fastify
 fd
 feast
+ferretdb
 fiber
 filecoin
 fish
@@ -963,6 +971,7 @@ shadcn-ui
 shap
 sharedb
 sharp
+shell-gpt
 shellcheck
 shfmt
 shiki
@@ -1040,6 +1049,7 @@ uniswap-v3
 universal-ctags
 unsloth
 unstorage
+unstructured
 valibot
 valkey
 valtio
@@ -1067,6 +1077,7 @@ web3-js
 webpack
 webrtc-rs
 wezterm
+whisper
 why-did-you-render
 wormhole
 wretch
