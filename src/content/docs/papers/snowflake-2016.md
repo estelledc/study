@@ -165,5 +165,3 @@ UNDROP TABLE orders_2026;                  -- 误删救回
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账
 
-<!-- 合并自 [[snowflake]] dedup 2026-05-31 -->
-

@@ -136,7 +136,6 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -159,7 +158,6 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
-- [[instant-ngp-2022]] —— Instant-NGP — 把 NeRF 训练从几小时压到几秒
 - [[karis-2014-taa]] —— Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿
 - [[karis-2014-ue4-pbr]] —— Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
@@ -179,7 +177,6 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[neumf-2017]] —— NeuMF — 用神经网络替掉推荐系统的内积
 - [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
-- [[orca-2022]] —— Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场
 - [[orca-continuous-batching]] —— Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
@@ -188,6 +185,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[prototypical-networks-2017]] —— Prototypical Networks — 每类算个均值，比距离就够了
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[resnet]] —— ResNet — 残差连接

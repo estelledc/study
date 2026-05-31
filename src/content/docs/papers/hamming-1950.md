@@ -142,6 +142,7 @@ ECC RAM 每个 64 位 word 加 8 位校验，总共 72 位。任何 1 位翻转�
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aes]] —— AES Rijndael 对称分组密码
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[reed-solomon-1960]] —— Reed-Solomon 编码

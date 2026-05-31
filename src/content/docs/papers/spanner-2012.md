@@ -147,10 +147,8 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
-- [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[cap-12-years-later-2012]] —— CAP 十二年后 — Brewer 自己承认"三选二"是误读
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
@@ -165,7 +163,6 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
-- [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
@@ -186,7 +183,6 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 - [[sinfonia-2007]] —— Sinfonia 2007 — 把分布式协议降级成数据结构操作
-- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL

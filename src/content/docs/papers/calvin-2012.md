@@ -158,5 +158,3 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
 
-<!-- 合并自 [[calvin]] dedup 2026-05-31 -->
-

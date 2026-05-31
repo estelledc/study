@@ -133,7 +133,6 @@ B+Tree 的执行路径：
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库

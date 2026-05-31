@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 734 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 726 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：734 个
-- **已分类**：214
-- **未分类**：520（落入"其他 / 待分类"段）
+- **总数**：726 个
+- **已分类**：213
+- **未分类**：513（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 24 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 23 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 13 |
 | [监控 / 时序](#监控---时序) | 8 |
 | [Web 框架](#web-框架) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 520 |
+| [其他 / 待分类](#其他--待分类) | 513 |
 
 ---
 
@@ -165,7 +165,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 24 个。
+共 23 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -178,7 +178,6 @@ sidebar:
 | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
 | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
 | [LevelDB — Google LSM 库](/study/projects/leveldb/) |  |
-| [LMDB — 内存映射 KV 库](/study/projects/lmdb/) |  |
 | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) |  |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) |  |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
@@ -503,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 520 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 513 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -636,7 +635,6 @@ sidebar:
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
-| `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `drawio` | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) |
 | `drone` | [Drone CI — 容器原生的 YAML 流水线](/study/projects/drone/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
@@ -770,7 +768,6 @@ sidebar:
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
-| `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) |
@@ -804,19 +801,16 @@ sidebar:
 | `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
-| `mongo` | [MongoDB — 文档数据库代表](/study/projects/mongo/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
-| `nats-server` | [NATS Server — 极简云原生消息总线](/study/projects/nats-server/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) |
 | `neovim` | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) |
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) |
-| `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/projects/nix/) |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
@@ -842,7 +836,6 @@ sidebar:
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
-| `optuna` | [Optuna — 把超参搜索写在 Python 函数体里](/study/projects/optuna/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
@@ -989,7 +982,6 @@ sidebar:
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) |
 | `vector` | [Vector — Rust 写的统一可观测性数据管道](/study/projects/vector/) |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
-| `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) |
@@ -1030,7 +1022,7 @@ sidebar:
 
 ---
 
-## 全部 734 个（字母序）
+## 全部 726 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1201,7 +1193,6 @@ sidebar:
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | 其他 |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | 其他 |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | 其他 |
-| `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
 | `drawio` | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `drone` | [Drone CI — 容器原生的 YAML 流水线](/study/projects/drone/) | 其他 |
@@ -1382,10 +1373,8 @@ sidebar:
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | 其他 |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) | 其他 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |
-| `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
-| `lmdb` | [LMDB — 内存映射 KV 库](/study/projects/lmdb/) | 数据库本体 / 存储引擎 |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | 其他 |
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | 监控 / 时序 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | 其他 |
@@ -1434,7 +1423,6 @@ sidebar:
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | 其他 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | 其他 |
-| `mongo` | [MongoDB — 文档数据库代表](/study/projects/mongo/) | 其他 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | 其他 |
@@ -1445,7 +1433,6 @@ sidebar:
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
-| `nats-server` | [NATS Server — 极简云原生消息总线](/study/projects/nats-server/) | 其他 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
@@ -1458,7 +1445,6 @@ sidebar:
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
 | `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) | 其他 |
-| `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/projects/nix/) | 其他 |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | 其他 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | 其他 |
@@ -1491,7 +1477,6 @@ sidebar:
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
-| `optuna` | [Optuna — 把超参搜索写在 Python 函数体里](/study/projects/optuna/) | 其他 |
 | `ora` | [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | 其他 |
@@ -1711,7 +1696,6 @@ sidebar:
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) | 其他 |
 | `vector` | [Vector — Rust 写的统一可观测性数据管道](/study/projects/vector/) | 其他 |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | 其他 |
-| `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) | 其他 |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) | 其他 |
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |

@@ -153,7 +153,6 @@ def reduce(user_id, latencies):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
@@ -174,7 +173,6 @@ def reduce(user_id, latencies):
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[quincy-2009]] —— Quincy — 把"派活给机器"变成一道最小费用流题
 - [[red-1993]] —— RED — 让路由器在队列还没塞满时就提前丢包
-- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来

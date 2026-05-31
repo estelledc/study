@@ -32,7 +32,6 @@ apollo-2014
 apron-2009
 aries-1992
 art-2013
-ast-grep
 asterisk
 astree
 atlas-2022
@@ -64,7 +63,6 @@ biere-bmc-1999
 big-little-2011
 bigbench-2022
 biggan-2018
-bigtable
 bigtable-2006
 bitcoin
 bittorrent-2003
@@ -84,7 +82,6 @@ brewer-cap-2000
 brill-moore-2000
 brook-2004
 btrfs-2013
-buildkit
 burgess-2020-turing-rt
 bvt-1999
 byzantine-generals-1982
@@ -93,7 +90,6 @@ cakeml
 calculus-of-constructions
 calder-2015-anycast-cdn
 call-by-need-1995
-calvin
 calvin-2012
 cap-12-years-later-2012
 cascades-1995
@@ -183,6 +179,7 @@ davis-putnam-1960
 dcn-2017
 ddim-2020
 ddpm
+debate-2018
 deberta-2021
 debevec-1998-rendering-with-natural-light
 debugging-dichotomy
@@ -266,7 +263,6 @@ flexsc-2010
 flink-2015
 flink-snapshots-2015
 flp-1985
-foundationdb
 foundationdb-2021
 fpga-hls-2011
 frama-c-2012
@@ -351,7 +347,6 @@ indri-2005
 induction-heads
 infer-biabduction
 ingres-1976
-instant-ngp-2022
 instructgpt
 io-uring
 ipfs-2014
@@ -380,7 +375,6 @@ karp-21
 karras-2012-parallel-bvh
 kazhdan-2006-poisson-recon
 kepler-architecture-2012
-kepler-gl
 kildall-dataflow
 knrm-2017
 knuth-lr-1965
@@ -485,7 +479,6 @@ moesi-cache-coherence-1986
 mogul-1995-persistent-http
 monaghan-1992-sph
 monetdb-x100-2005
-mongo
 monitors-1974
 ms-marco-2016
 mueller-2007-pbd
@@ -516,7 +509,6 @@ nvlink-nvswitch-2018
 nvm
 nvme-protocol-2017
 oauth-2.1-rfc
-observable-framework
 okapi-bm25-1994
 omega-2013
 opencl-2010
@@ -524,7 +516,6 @@ openflow-2008
 openhands
 opensearch
 optuna
-orca-2022
 orca-continuous-batching
 ot-1989
 owens-2007-gpgpu-survey
@@ -574,7 +565,6 @@ quantum-supremacy-2019
 quic
 quincy-2009
 r-bgp-2007
-rabbitmq-server
 raft
 rag-lewis-2020
 ranknet-2005
@@ -606,6 +596,7 @@ rocksdb-lsm
 ron-2001
 rrf-cormack-2009
 rsa
+rtp-rfc-1889
 rwkv-2023
 sac-2018
 saga-1987
@@ -614,6 +605,7 @@ saito-takahashi-1990-gbuffer
 salsa-adapton
 salton-vsm-1975
 saltzer-1984-e2e
+saltzer-schroeder-1975
 sam
 sarathi-serve
 sasrec-2018
@@ -654,7 +646,6 @@ slim-2011
 smalltalk-80
 smoothquant-2023
 smr-1990
-snowflake
 snowflake-2016
 soft-updates-1999
 soltesz-2007
@@ -736,7 +727,6 @@ tvm
 tvm-2018
 twine-2020
 unified-memory-2014
-universal-ctags
 unix-1974
 v-system-1988
 vamp-verisoft-2006
@@ -896,6 +886,7 @@ clerk
 clickhouse
 cockroach
 cockroachdb
+cocos2d-x
 codemirror
 collabora-online
 colossal-ai
@@ -949,7 +940,6 @@ docusaurus
 doris
 dovecot
 dragonfly
-dragonflydb
 drawio
 drizzle
 drone
@@ -1130,10 +1120,8 @@ litmus
 liveblocks
 livekit-flutter
 llama-cpp
-llama-index
 llamaindex
 lm-evaluation-harness
-lmdb
 locust
 loki
 longhorn
@@ -1164,6 +1152,7 @@ mermaid
 metabase
 metaflow
 metamask
+micro
 micromark
 micronaut
 midscene
@@ -1181,7 +1170,6 @@ moby
 modin
 monaco-editor
 monero
-mongo
 mongodb
 motion-one
 move-language
@@ -1192,7 +1180,6 @@ mysql-server
 nanobrowser
 nanostores
 nats
-nats-server
 ncdu
 nebula
 neo4j
@@ -1205,7 +1192,6 @@ next-js
 nextra
 nginx
 nivo
-nix
 nnn
 nodemailer
 nomad
@@ -1238,7 +1224,6 @@ openzeppelin-contracts
 operator-sdk
 optax
 optimism
-optuna
 ora
 orleans
 otel-collector
@@ -1333,6 +1318,7 @@ rolldown
 rollup
 rook
 rspack
+rt-thread
 runc
 safe-contracts
 salvo
@@ -1457,7 +1443,6 @@ vanilla-extract
 vault
 vector
 vega
-vega-lite
 velero
 vercel-ai
 vertx

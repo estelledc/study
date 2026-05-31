@@ -169,6 +169,5 @@ react-apexcharts 内部就是 `componentDidMount` 时 `new ApexCharts(...).rende
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
-- [[vega-lite]] —— Vega-Lite — 三段式 JSON 把复合图收口
 - [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
 

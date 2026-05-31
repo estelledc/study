@@ -151,7 +151,6 @@ VSR：view + view-change
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
-- [[foundationdb]] —— FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall

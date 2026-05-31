@@ -155,11 +155,10 @@ result = con.execute("""
 - [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
 - [[lance]] —— Lance — AI 数据列存格式
 - [[lightdash]] —— Lightdash — 寄生在 dbt 项目里的开源 BI
-- [[mongo]] —— MongoDB — 文档数据库代表
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
-- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[starrocks]] —— StarRocks — MPP 列存数据库
 

@@ -151,7 +151,6 @@ def upload(key, data):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
@@ -166,8 +165,8 @@ def upload(key, data):
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
+- [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
-- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[soft-updates-1999]] —— Soft Updates — 不写 journal 也能保证文件系统元数据一致
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳

@@ -149,7 +149,6 @@ column families:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-<!-- 合并自 [[bigtable]] dedup 2026-05-31 -->
 
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[akamai-2010]] —— Akamai 2010 — 从内容分发网络长成全球应用平台
@@ -190,7 +189,6 @@ column families:
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
-- [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
