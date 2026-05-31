@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 748 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 751 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：748 篇
+- **总数**：751 篇
 - **已分类**：143
-- **未分类**：605（落入"其他 / 待分类"段）
+- **未分类**：608（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 605 |
+| [其他 / 待分类](#其他--待分类) | 608 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 605 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 608 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -530,6 +530,7 @@ sidebar:
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
 | `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) |
 | `glue-2018` | [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) |
+| `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) |
@@ -701,6 +702,7 @@ sidebar:
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) |
 | `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) |
 | `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) |
+| `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
 | `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) |
 | `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) |
@@ -765,6 +767,7 @@ sidebar:
 | `r-bgp-2007` | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) |
 | `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/papers/rabbitmq-server/) |
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) |
+| `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
 | `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
@@ -916,7 +919,7 @@ sidebar:
 
 ---
 
-## 全部 748 篇（字母序）
+## 全部 751 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1197,6 +1200,7 @@ sidebar:
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | 其他 |
 | `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) | 其他 |
 | `glue-2018` | [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) | 其他 |
+| `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) | 其他 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | 其他 |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | 其他 |
@@ -1398,6 +1402,7 @@ sidebar:
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | 其他 |
 | `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) | 其他 |
 | `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) | 其他 |
+| `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | 其他 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
 | `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) | 其他 |
 | `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | 其他 |
@@ -1474,6 +1479,7 @@ sidebar:
 | `raft` | [Raft — 易理解的共识算法](/study/papers/raft/) | 分布式系统 |
 | `rag-lewis-2020` | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | 智能体与 LLM 系统 |
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) | 其他 |
+| `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) | 其他 |
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | 其他 |
 | `realm` | [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |

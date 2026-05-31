@@ -180,6 +180,7 @@ ORDER BY date;
 - [[redpanda]] —— Redpanda — Kafka 兼容的 C++ 实现
 - [[risingwave]] —— RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
+- [[signoz]] —— SigNoz — 自托管的 OpenTelemetry 一体化可观测平台
 - [[starrocks]] —— StarRocks — MPP 列存数据库
 - [[superset]] —— Apache Superset — 开源 BI 平台
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

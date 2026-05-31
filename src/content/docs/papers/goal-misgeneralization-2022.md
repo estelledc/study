@@ -1,6 +1,6 @@
 ---
 title: Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪
-来源: Langosco et al., "Goal Misgeneralization: Why Correct Specifications Aren’t Enough For Correct Goals", ICML 2022 (arXiv:2210.01790)
+来源: 'Langosco et al., "Goal Misgeneralization: Why Correct Specifications Aren’t Enough For Correct Goals", ICML 2022 (arXiv:2210.01790)'
 日期: 2026-06-01
 分类: 机器学习
 难度: 中级
@@ -149,3 +149,6 @@ DeepMind 在 Gopher（70B 大模型）上做了同类实验。一个数学任务
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
