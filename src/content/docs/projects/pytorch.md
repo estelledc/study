@@ -185,6 +185,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ps-li-2014]] —— Parameter Server — 多机训练前 AllReduce 时代的工业标准
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
 - [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
 - [[sglang]] —— SGLang — 结构化推理运行时
 - [[ssa]] —— SSA — 静态单赋值形式

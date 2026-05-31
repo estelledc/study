@@ -189,12 +189,14 @@ gshard-2020
 hacl-star-2017
 halide
 hamming-1950
+hanrahan-1991-hierarchical-radiosity
 hdfs-2010
 helium-type-errors
 helland-2007
 herlihy-moss-tm
 hewitt-actor-model
 hindley-milner
+hits-1999
 hlc-2014
 hnsw-2018
 hoare-logic
@@ -347,6 +349,7 @@ rest-fielding-2000
 retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
+ring-allreduce-2017
 rlhf-christiano
 rocksdb-2017
 rocksdb-lsm
@@ -514,6 +517,7 @@ axum
 balancer
 bandwhich
 bat
+bentoml
 besu
 better-auth
 bigbluebutton
@@ -880,6 +884,7 @@ shadcn-ui
 sharedb
 sharp
 shellcheck
+shfmt
 shiki
 sia
 sidekiq
@@ -985,6 +990,7 @@ yargs
 yazi
 yjs
 yq
+yugabyte-db
 zcash
 zellij
 zksync-era

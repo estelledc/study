@@ -179,6 +179,7 @@ Unity / Unreal 里的 light probe(光照探针):
 - [[hanrahan-1991-hierarchical-radiosity]] —— Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
+- [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[ward-1992]] —— Ward 1992 — 第一个能落地的各向异性反射模型
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

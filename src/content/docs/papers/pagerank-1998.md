@@ -157,4 +157,5 @@ for _ in range(50):
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[hits-1999]] —— HITS — 给网页同时打两个分：权威页 + 索引页
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
 

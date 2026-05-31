@@ -177,7 +177,6 @@ openllm start meta-llama/Llama-3-8B
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[pytorch]] —— PyTorch — 深度学习主流框架
-- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
-- [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
+- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

@@ -179,4 +179,5 @@ def reduce(user_id, latencies):
 - [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 - [[thrust-2010]] —— Thrust — 让 GPU 编程像写 STL 一样一行调用
+- [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
 

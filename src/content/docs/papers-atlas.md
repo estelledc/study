@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 477 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 480 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：477 篇
+- **总数**：480 篇
 - **已分类**：143
-- **未分类**：334（落入"其他 / 待分类"段）
+- **未分类**：337（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 334 |
+| [其他 / 待分类](#其他--待分类) | 337 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 334 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 337 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -492,6 +492,7 @@ sidebar:
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
+| `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) |
 | `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) |
 | `marques-silva-grasp-1996` | [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) |
 | `martin-lof-itt` | [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) |
@@ -520,6 +521,7 @@ sidebar:
 | `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/papers/nix/) |
 | `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) |
 | `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) |
+| `nvlink-nvswitch-2018` | [NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器](/study/papers/nvlink-nvswitch-2018/) |
 | `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) |
 | `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) |
@@ -612,6 +614,7 @@ sidebar:
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) |
 | `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) |
 | `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) |
+| `trustrank-2004` | [TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来](/study/papers/trustrank-2004/) |
 | `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) |
 | `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) |
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) |
@@ -645,7 +648,7 @@ sidebar:
 
 ---
 
-## 全部 477 篇（字母序）
+## 全部 480 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -913,6 +916,7 @@ sidebar:
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
+| `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) | 其他 |
 | `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) | 其他 |
 | `marques-silva-grasp-1996` | [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) | 其他 |
 | `martin-lof-itt` | [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) | 其他 |
@@ -947,6 +951,7 @@ sidebar:
 | `no-silver-bullet` | [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
 | `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) | 其他 |
 | `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) | 其他 |
+| `nvlink-nvswitch-2018` | [NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器](/study/papers/nvlink-nvswitch-2018/) | 其他 |
 | `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) | 其他 |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | 其他 |
 | `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) | 其他 |
@@ -1087,6 +1092,7 @@ sidebar:
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | 其他 |
 | `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) | 其他 |
 | `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) | 其他 |
+| `trustrank-2004` | [TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来](/study/papers/trustrank-2004/) | 其他 |
 | `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) | 其他 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
 | `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) | 其他 |

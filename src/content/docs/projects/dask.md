@@ -159,6 +159,7 @@ results = compute(*tasks)                 # 8 个文件并行处理
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
+- [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
 

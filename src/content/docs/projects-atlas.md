@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 521 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 524 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：521 个
-- **已分类**：207
-- **未分类**：314（落入"其他 / 待分类"段）
+- **总数**：524 个
+- **已分类**：208
+- **未分类**：316（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 19 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 20 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
 | [监控 / 时序](#监控---时序) | 7 |
 | [Web 框架](#web-框架) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 314 |
+| [其他 / 待分类](#其他--待分类) | 316 |
 
 ---
 
@@ -165,7 +165,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 19 个。
+共 20 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -185,6 +185,7 @@ sidebar:
 | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) |  |
 | [Redis — 内存键值数据库](/study/projects/redis/) |  |
 | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) |  |
+| [TiDB — HTAP 分布式数据库](/study/projects/tidb/) |  |
 | [Typesense — 高性能搜索引擎](/study/projects/typesense/) |  |
 | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) |  |
 | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) |  |
@@ -496,7 +497,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 314 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 316 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -627,6 +628,7 @@ sidebar:
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) |
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) |
+| `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) |
@@ -738,6 +740,7 @@ sidebar:
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) |
+| `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
@@ -817,7 +820,7 @@ sidebar:
 
 ---
 
-## 全部 521 个（字母序）
+## 全部 524 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1003,6 +1006,7 @@ sidebar:
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | 其他 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | 其他 |
+| `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) | 其他 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | 其他 |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | 其他 |
@@ -1196,6 +1200,7 @@ sidebar:
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) | 其他 |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) | 其他 |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | 其他 |
+| `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | Drag & Drop / Interaction |
 | `react-hook-form` | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
@@ -1279,6 +1284,7 @@ sidebar:
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | 其他 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | 其他 |
+| `tidb` | [TiDB — HTAP 分布式数据库](/study/projects/tidb/) | 数据库本体 / 存储引擎 |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
