@@ -8,6 +8,7 @@ agda-norell
 agentless
 akamai-2002
 algol-60
+align-2021
 alpa-2022
 alphago
 amdahl-law-1967
@@ -73,6 +74,7 @@ cap-12-years-later-2012
 cascades-1995
 case-for-risc-1980
 cassandra-2010
+catmull-1974-zbuffer
 catmull-clark-1978
 causal-abstraction
 cell-be-2005
@@ -460,6 +462,7 @@ sarathi-serve
 sasrec-2018
 scala-macros
 scaling-laws
+scann-2020
 scoop
 scott-strachey-denotational
 self-adjusting
@@ -582,6 +585,7 @@ websocket-rfc-6455
 whitted-1980
 why3-2013
 wide-deep-2016
+williams-1983-mipmap
 word2vec
 xla-compiler
 xlnet-2019
@@ -714,6 +718,7 @@ dagger
 dagster
 dasel
 dask
+databend
 datadog
 date-fns
 dayjs
@@ -816,6 +821,7 @@ haystack
 helidon
 helm
 hocuspocus
+holoviews
 homebrew
 hono
 hot-chocolate
@@ -915,6 +921,7 @@ mise
 mlflow
 mlx
 mobx
+moby
 modin
 monaco-editor
 monero
@@ -1018,6 +1025,7 @@ pytorch-lightning
 qdrant
 quarkus
 quart
+questdb
 qwik
 rabby-wallet
 radix-ui
