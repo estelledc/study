@@ -1,6 +1,6 @@
 ---
 title: BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
-来源: 'Yang et al., "BentoML: The Unified Model Serving Framework", 开源项目 2019—'
+来源: Yang et al., "BentoML: The Unified Model Serving Framework", 开源项目 2019—
 日期: 2026-05-31
 分类: MLOps / 模型服务
 难度: 入门
