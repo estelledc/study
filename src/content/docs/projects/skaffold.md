@@ -197,5 +197,9 @@ profiles:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[tilt]] —— Tilt — K8s 微服务本地开发的"文件保存即上线"
 

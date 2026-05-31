@@ -154,6 +154,7 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 
 - [[andromeda-2018]] —— Andromeda — Google Cloud 网络虚拟化的高速通道
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[ghost-2021]] —— ghOSt — 把 Linux 调度策略搬到用户态去写
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

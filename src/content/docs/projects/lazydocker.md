@@ -155,5 +155,6 @@ lazydocker
 - [[delta]] —— delta — git diff 的语法高亮分页器
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
+- [[lima]] —— Lima — macOS 上跑 Linux 虚拟机的轻量 CLI
 - [[prometheus]] —— Prometheus — 时序监控系统
 
