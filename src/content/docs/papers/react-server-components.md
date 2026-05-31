@@ -158,3 +158,6 @@ export default function Layout({ children }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[next-intl]] —— next-intl — Next.js 专用的多语言开关
+

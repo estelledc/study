@@ -150,5 +150,9 @@ OPT-66B 模型：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
+- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

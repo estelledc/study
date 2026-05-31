@@ -158,5 +158,6 @@ ssc.checkpoint("hdfs://...")   // 必须开！否则 driver 重启丢全状态
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[server-sent-events]] —— Server-Sent Events — 服务器单向推送的标准协议
 - [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析
 

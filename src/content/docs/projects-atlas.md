@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 436 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 437 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：436 个
+- **总数**：437 个
 - **已分类**：207
-- **未分类**：229（落入"其他 / 待分类"段）
+- **未分类**：230（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 229 |
+| [其他 / 待分类](#其他--待分类) | 230 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 229 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 230 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -706,6 +706,7 @@ sidebar:
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) |
+| `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
@@ -732,7 +733,7 @@ sidebar:
 
 ---
 
-## 全部 436 个（字母序）
+## 全部 437 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1117,6 +1118,7 @@ sidebar:
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) | 其他 |
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
 | `testing-library` | [Testing Library — 像用户一样测前端，重构不再挂测试](/study/projects/testing-library/) | 测试 / 验证 |
+| `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | 其他 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | 其他 |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |

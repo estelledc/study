@@ -35,6 +35,7 @@ boogie-2005
 borg
 brewer-cap-2000
 brook-2004
+byzantine-generals-1982
 cakeml
 calculus-of-constructions
 call-by-need-1995
@@ -94,6 +95,7 @@ dijkstra-goto
 dijkstra-shortest-path
 dino
 diskann-2019
+distserve
 dit
 dns
 dpll-1962
@@ -230,6 +232,7 @@ ntp-mills-1991
 nuprl-1986
 opencl-2010
 openhands
+orca-continuous-batching
 ot-1989
 pair-programming
 partial-evaluation-jones
@@ -273,6 +276,7 @@ saga-1987
 sagiv-shape-analysis
 salsa-adapton
 sam
+sarathi-serve
 scala-macros
 scaling-laws
 scott-strachey-denotational
@@ -435,6 +439,7 @@ cosmwasm
 curlie
 curve
 d3
+dagster
 dasel
 dask
 date-fns
@@ -663,6 +668,7 @@ qwik
 rabby-wallet
 radix-ui
 rails
+ratatui
 react
 react-dnd
 react-hook-form
