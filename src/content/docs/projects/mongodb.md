@@ -37,7 +37,7 @@ MongoDB 的核心抽象可以拆成 **三层**：
 
 1. **文档 + 集合**：文档是一条 JSON-like 记录，集合是一组文档。没有"表结构"的硬约束——同一个集合里，A 文档可以有 `email` 字段、B 文档可以没有。这叫**无 schema**（schemaless）。
 
-2. **复制集（Replica Set）**：3+ 节点同步一份数据，主节点写、从节点读，主挂了自动选新主。类比：剧组里有主演和替补，主演病了替补立刻顶上，观众感觉不到。
+2. **复制集（Replica Set）**：3+ 节点同步一份数据，主节点写、从节点读，主挂了自动选新主。类比：剧组里有主演和替补，主演病了替补立刻顶上，观众感觉不到。BSON 在 JSON 字段之外还多了 `Date` `ObjectId` `Decimal128` 等内置类型，省去自己 serialize 的麻烦。
 
 3. **分片（Sharding）**：数据按某个 key（比如 `user_id`）分到不同机器。类比：图书馆按书名首字母分到不同楼层，找书时直接去对应楼层，不用全馆扫。
 
@@ -169,4 +169,6 @@ db.orders.aggregate([
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
+
+<!-- 合并自 [[mongo]]（papers + projects 双份）dedup 2026-05-31 -->
 
