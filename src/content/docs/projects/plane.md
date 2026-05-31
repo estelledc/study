@@ -8,6 +8,12 @@ schema_version: zhuangyuan-v1.1
 branch: A
 ---
 
+## 自我分类（self-classify）
+
+- **状元篇 v1.1 / 分支 A**：大型应用 / monorepo
+- 论据：TS frontend + Django backend + Hocuspocus collab 三栈共存于单仓
+- 行数 842（target ≥ 600）符合 branch A 深度
+
 > 状元篇 v1.1 分支 A（大型应用 / monorepo / 工程范式）。
 > 基于 commit `0acb32e6` 的源码精读 + 浅克隆 + 一次"读 Dockerfile + helm chart 看部署形态"hands-on。
 > Plane 是这个站点目前为止结构最复杂的笔记对象——TS 前端 + Django 后端 + Hocuspocus realtime 三轨并存，
