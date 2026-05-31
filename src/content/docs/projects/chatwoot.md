@@ -150,6 +150,7 @@ end
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
+- [[botpress]] —— Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[express]] —— Express — Node.js 最经典的 Web 框架

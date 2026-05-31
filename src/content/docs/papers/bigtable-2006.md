@@ -174,6 +174,7 @@ column families:
 - [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
+- [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验

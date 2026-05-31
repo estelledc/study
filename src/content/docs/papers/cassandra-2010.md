@@ -165,6 +165,7 @@ R+W>N（比如 R=2, W=2, N=3）→ 强一致；R+W≤N → 牺牲一致换延迟
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 451 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 456 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：451 个
+- **总数**：456 个
 - **已分类**：207
-- **未分类**：244（落入"其他 / 待分类"段）
+- **未分类**：249（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 244 |
+| [其他 / 待分类](#其他--待分类) | 249 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 244 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 249 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -504,6 +504,7 @@ sidebar:
 | `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
+| `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
@@ -518,6 +519,7 @@ sidebar:
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) |
+| `aws-spot-best-practices` | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
@@ -527,6 +529,7 @@ sidebar:
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
+| `botpress` | [Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台](/study/projects/botpress/) |
 | `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) |
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) |
 | `btop` | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) |
@@ -554,6 +557,7 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
+| `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
@@ -647,6 +651,7 @@ sidebar:
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
+| `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
@@ -747,7 +752,7 @@ sidebar:
 
 ---
 
-## 全部 451 个（字母序）
+## 全部 456 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -756,6 +761,7 @@ sidebar:
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
+| `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | 其他 |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
 | `anime` | [anime.js — 一行 JS 让网页元素按时间线动起来](/study/projects/anime/) | 动画 |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) | 其他 |
@@ -776,6 +782,7 @@ sidebar:
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | 其他 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) | 其他 |
+| `aws-spot-best-practices` | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) | 其他 |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) | 其他 |
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) | 其他 |
@@ -788,6 +795,7 @@ sidebar:
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | 其他 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
+| `botpress` | [Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台](/study/projects/botpress/) | 其他 |
 | `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) | 其他 |
 | `boxen` | [boxen — 给终端文本套个边框的事](/study/projects/boxen/) | Terminal / 终端 |
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) | 其他 |
@@ -836,6 +844,7 @@ sidebar:
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) | 其他 |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
+| `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | 其他 |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) | 其他 |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | 其他 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
@@ -1013,6 +1022,7 @@ sidebar:
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | CLI / 命令行工具 |
 | `ofetch` | [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
+| `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) | 其他 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |

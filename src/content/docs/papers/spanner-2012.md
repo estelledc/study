@@ -183,6 +183,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - [[ntp-mills-1991]] —— NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
+- [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准

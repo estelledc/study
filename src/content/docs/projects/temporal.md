@@ -163,8 +163,10 @@ export async function bookTrip(tripId: string) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[airflow]] —— Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
+- [[botpress]] —— Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
