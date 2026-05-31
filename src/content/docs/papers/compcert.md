@@ -164,6 +164,7 @@ INRIA 这股"理论 + 实现一起做"的工程文化，从 OCaml 到 Coq 到 Co
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[vamp-verisoft-2006]] —— VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
 - [[verisoft-2008]] —— Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完
 - [[vst-2014]] —— VST — 把 C 程序的数学证明一路带到机器码

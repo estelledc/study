@@ -154,6 +154,7 @@ nix-build
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
+- [[earthly]] —— Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
 - [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半

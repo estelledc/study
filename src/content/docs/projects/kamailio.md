@@ -159,5 +159,6 @@ def ksr_request_route(msg):
 
 - [[freeswitch]] —— FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
+- [[jitsi-videobridge]] —— Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器
 - [[nginx]] —— nginx — 高性能 Web 服务器
 

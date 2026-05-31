@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 457 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 460 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：457 篇
+- **总数**：460 篇
 - **已分类**：143
-- **未分类**：314（落入"其他 / 待分类"段）
+- **未分类**：317（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 314 |
+| [其他 / 待分类](#其他--待分类) | 317 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 314 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 317 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -379,6 +379,7 @@ sidebar:
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) |
 | `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) |
+| `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
@@ -600,7 +601,9 @@ sidebar:
 | `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) |
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) |
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |
+| `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
+| `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
@@ -625,7 +628,7 @@ sidebar:
 
 ---
 
-## 全部 457 篇（字母序）
+## 全部 460 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -733,6 +736,7 @@ sidebar:
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 其他 |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) | 其他 |
 | `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) | 其他 |
+| `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) | 其他 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | 其他 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | 其他 |
@@ -1056,7 +1060,9 @@ sidebar:
 | `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) | 其他 |
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) | 其他 |
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 其他 |
+| `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | 其他 |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
+| `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 其他 |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 其他 |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
