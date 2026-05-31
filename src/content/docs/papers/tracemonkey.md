@@ -175,4 +175,5 @@ for (let i = 0; i < n; i++) {
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
+- [[tomasulo-1967]] —— Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序
 

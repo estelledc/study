@@ -155,5 +155,5 @@ BIM 词权重是 `log((p_i (1-u_i)) / (u_i (1-p_i)))`。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 

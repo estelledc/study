@@ -153,6 +153,7 @@ DELETE /users/42
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[couchdb]] —— CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

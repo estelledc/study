@@ -152,5 +152,6 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
 
