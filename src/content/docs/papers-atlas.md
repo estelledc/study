@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 561 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 566 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：561 篇
+- **总数**：566 篇
 - **已分类**：143
-- **未分类**：418（落入"其他 / 待分类"段）
+- **未分类**：423（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 418 |
+| [其他 / 待分类](#其他--待分类) | 423 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 418 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 423 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -332,6 +332,8 @@ sidebar:
 | `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) |
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
+| `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) |
+| `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) |
 | `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |
@@ -619,6 +621,7 @@ sidebar:
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
+| `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
@@ -650,6 +653,7 @@ sidebar:
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |
 | `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) |
 | `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) |
+| `slim-2011` | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) |
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) |
@@ -703,6 +707,7 @@ sidebar:
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |
 | `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) |
+| `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
@@ -729,7 +734,7 @@ sidebar:
 
 ---
 
-## 全部 561 篇（字母序）
+## 全部 566 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -768,6 +773,8 @@ sidebar:
 | `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) | 其他 |
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) | 其他 |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 其他 |
+| `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) | 其他 |
+| `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) | 其他 |
 | `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | 其他 |
 | `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | 其他 |
@@ -1145,6 +1152,7 @@ sidebar:
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 其他 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
+| `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | 其他 |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 其他 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) | 其他 |
@@ -1191,6 +1199,7 @@ sidebar:
 | `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) | 其他 |
 | `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) | 其他 |
 | `sleeper-agents` | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
+| `slim-2011` | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) | 其他 |
 | `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) | 其他 |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | 其他 |
@@ -1263,6 +1272,7 @@ sidebar:
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 其他 |
 | `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) | 其他 |
+| `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) | 其他 |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 其他 |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |

@@ -151,6 +151,7 @@ Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[badger]] —— BadgerDB — 把键和值分开存的 Go 原生 KV 库
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有

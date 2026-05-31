@@ -157,6 +157,7 @@ lambda_ij = (sigmoid(s_i - s_j) - P*) * |Delta_NDCG|
 - [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
+- [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
 - [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
 - [[word2vec]] —— Word2Vec — 词向量奠基
 

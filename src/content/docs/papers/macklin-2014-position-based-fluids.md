@@ -150,5 +150,5 @@ PBF 有四个参数最折磨人：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[mueller-2007-pbd]] —— Position Based Dynamics — 跳过力，直接挪位置
 

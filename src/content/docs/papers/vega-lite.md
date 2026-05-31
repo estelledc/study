@@ -1,6 +1,6 @@
 ---
 title: Vega-Lite — 用 JSON 三段式画复合图
-来源: Satyanarayan, Moritz, Wongsuphasawat, Heer, "Vega-Lite: A Grammar of Interactive Graphics", IEEE TVCG / InfoVis 2017
+来源: 'Satyanarayan, Moritz, Wongsuphasawat, Heer, "Vega-Lite: A Grammar of Interactive Graphics", IEEE TVCG / InfoVis 2017'
 日期: 2026-05-31
 分类: 数据可视化
 难度: 入门到中级
@@ -160,3 +160,6 @@ Vega-Lite 是一种**用 JSON 描述图表**的小语言。日常类比：像点
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
