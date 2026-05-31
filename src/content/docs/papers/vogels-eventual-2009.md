@@ -161,5 +161,6 @@ Vogels 这篇默认结论是"全球部署 → 必须放弃 C"。[[spanner-2012]]
 - [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
+- [[server-sent-events]] —— Server-Sent Events — 服务器单向推送的标准协议
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 

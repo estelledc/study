@@ -219,6 +219,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树

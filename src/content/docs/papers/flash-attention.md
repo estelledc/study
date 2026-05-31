@@ -154,6 +154,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
+- [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相

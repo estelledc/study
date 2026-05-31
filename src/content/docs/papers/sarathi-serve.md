@@ -151,5 +151,7 @@ llm = LLM(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

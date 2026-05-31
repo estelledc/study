@@ -165,5 +165,6 @@ test('counter increments', () => {
 - [[ratatui]] —— ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
 - [[react]] —— React UI 组件库
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
+- [[textual]] —— Textual — 用 CSS 写终端界面的 Python 框架
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
 
