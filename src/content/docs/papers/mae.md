@@ -134,6 +134,7 @@ MAE 是这条线上"视觉 BERT 终于跑通"的那篇。
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
+- [[electra-2020]] —— ELECTRA — 把猜词题改成判真假题，训练效率 4 倍
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
 - [[vit]] —— ViT — Vision Transformer

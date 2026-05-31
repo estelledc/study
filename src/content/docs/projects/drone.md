@@ -175,5 +175,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
 

@@ -154,4 +154,5 @@ task "legacy-app" {
 
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[raft]] —— Raft — 易理解的共识算法
+- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
 

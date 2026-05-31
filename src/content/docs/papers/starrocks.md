@@ -1,6 +1,6 @@
 ---
 title: StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP
-来源: Lin et al., "StarRocks: A Modern OLAP Database for Real-Time Analytics", VLDB 2024
+来源: 'Lin et al., "StarRocks: A Modern OLAP Database for Real-Time Analytics", VLDB 2024'
 日期: 2026-05-31
 分类: infrastructure
 难度: 中级
@@ -149,3 +149,6 @@ SELECT count(*) FROM iceberg_catalog.db.events;
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

@@ -169,4 +169,5 @@ root-app.yaml  # source 指向 infra-apps/
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[temporal]] —— Temporal — 持久化工作流引擎
+- [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
 

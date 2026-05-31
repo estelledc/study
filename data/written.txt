@@ -135,6 +135,7 @@ dapper-2010
 dash-numa-1992
 dataflow-model-2015
 davis-putnam-1960
+dcn-2017
 ddpm
 debugging-dichotomy
 deepseek-r1
@@ -270,6 +271,7 @@ kafka-2011
 kahn-natural-semantics
 kajiya-1986-rendering-equation
 kami-2017
+karis-2014-taa
 karis-2014-ue4-pbr
 karp-21
 karras-2012-parallel-bvh
@@ -299,6 +301,7 @@ linear-scan-reg-alloc
 linear-types
 linearizability-1990
 liquid-types
+liu-2020-dlss
 llama
 llava
 llm-int8-2022
@@ -430,6 +433,7 @@ reynolds-separation-logic
 ring-allreduce-2017
 risc-i-1981
 rlhf-christiano
+roberta-2019
 rocketqa-2021
 rocksdb-2017
 rocksdb-lsm
@@ -564,8 +568,10 @@ ward-1992
 websocket-rfc-6455
 whitted-1980
 why3-2013
+wide-deep-2016
 word2vec
 xla-compiler
+xlnet-2019
 xtrace-2007
 youtube-two-tower-2019
 z3-2008
@@ -584,6 +590,7 @@ ag-grid
 aichat
 aiortc
 airflow
+altair
 amcharts5
 anchor
 anime
@@ -710,6 +717,7 @@ dovecot
 dragonfly
 dragonflydb
 drizzle
+drone
 dropwizard
 druid
 dspy
@@ -804,6 +812,7 @@ ipfs
 jaeger
 jax
 jc
+jenkins
 jest
 jimp
 jitsi-videobridge
@@ -949,11 +958,13 @@ pg-boss-readme
 pgvector
 phoenix
 pino
+pinot
 piper
 pixi
 plane
 playwright
 plotly-js
+plotnine
 plug
 pnpm
 pocketbase

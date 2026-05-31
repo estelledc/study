@@ -184,6 +184,7 @@ Vega-Lite 自己不渲染——它把 spec **编译成底层 [[vega]] spec**，�
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[altair]] —— Altair — Python 上的 Vega-Lite 绑定
+- [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
