@@ -178,6 +178,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[mine-octagon-2006]] —— Miné 八边形抽象域 — 在区间和多面体之间的甜点
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[naiad-2013]] —— Naiad — 一套引擎同时跑批处理、流处理和迭代计算
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快

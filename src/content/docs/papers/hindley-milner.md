@@ -211,6 +211,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
 - [[move-language]] —— Move — 资源型智能合约语言
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快

@@ -154,5 +154,6 @@ for g in gaussians:
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dit]] —— DiT — Diffusion Transformer
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[vit]] —— ViT — Vision Transformer
 
