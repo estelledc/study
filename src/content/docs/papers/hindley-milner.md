@@ -153,7 +153,6 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
-- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
@@ -163,6 +162,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[coeffect-petricek]] —— Coeffects — 让类型系统追踪「需要多少上下文」
 - [[cognitive-load-theory]] —— Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
+- [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[coqui-tts]] —— Coqui TTS — 多语种 TTS 工具包

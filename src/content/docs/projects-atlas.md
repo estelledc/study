@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 572 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 575 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：572 个
-- **已分类**：211
-- **未分类**：361（落入"其他 / 待分类"段）
+- **总数**：575 个
+- **已分类**：212
+- **未分类**：363（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 23 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 24 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
 | [监控 / 时序](#监控---时序) | 7 |
 | [Web 框架](#web-框架) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 361 |
+| [其他 / 待分类](#其他--待分类) | 363 |
 
 ---
 
@@ -165,7 +165,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 23 个。
+共 24 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -178,6 +178,7 @@ sidebar:
 | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
 | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
 | [LevelDB — Google LSM 库](/study/projects/leveldb/) |  |
+| [LMDB — 内存映射 KV 库](/study/projects/lmdb/) |  |
 | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) |  |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) |  |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
@@ -500,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 361 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 363 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -512,6 +513,7 @@ sidebar:
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
+| `amcharts5` | [amCharts 5 — TypeScript 重写的商业级图表库](/study/projects/amcharts5/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
@@ -566,6 +568,7 @@ sidebar:
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
+| `comfyui` | [ComfyUI — 节点式扩散模型 GUI](/study/projects/comfyui/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
 | `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) |
 | `conform` | [Conform — 让浏览器原生 form 也能 type-safe 校验](/study/projects/conform/) |
@@ -868,7 +871,7 @@ sidebar:
 
 ---
 
-## 全部 572 个（字母序）
+## 全部 575 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -881,6 +884,7 @@ sidebar:
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) | 其他 |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | 其他 |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | 其他 |
+| `amcharts5` | [amCharts 5 — TypeScript 重写的商业级图表库](/study/projects/amcharts5/) | 其他 |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
 | `anime` | [anime.js — 一行 JS 让网页元素按时间线动起来](/study/projects/anime/) | 动画 |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) | 其他 |
@@ -961,6 +965,7 @@ sidebar:
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | 其他 |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) | 其他 |
+| `comfyui` | [ComfyUI — 节点式扩散模型 GUI](/study/projects/comfyui/) | 其他 |
 | `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | CLI / 命令行工具 |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | 其他 |
 | `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) | 其他 |
@@ -1143,6 +1148,7 @@ sidebar:
 | `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
+| `lmdb` | [LMDB — 内存映射 KV 库](/study/projects/lmdb/) | 数据库本体 / 存储引擎 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |

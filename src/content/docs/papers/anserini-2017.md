@@ -163,6 +163,7 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 - [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
 - [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
+- [[ms-marco-2016]] —— MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
 - [[rocketqa-2021]] —— RocketQA — 把稠密检索的训练拧到工业级
 - [[splade-2021]] —— SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
