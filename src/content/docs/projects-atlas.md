@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 577 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 580 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：577 个
+- **总数**：580 个
 - **已分类**：212
-- **未分类**：365（落入"其他 / 待分类"段）
+- **未分类**：368（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 365 |
+| [其他 / 待分类](#其他--待分类) | 368 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 365 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 368 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -662,6 +662,7 @@ sidebar:
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) |
+| `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
@@ -835,6 +836,7 @@ sidebar:
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) |
+| `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) |
 | `triton-inference-server` | [Triton Inference Server — NVIDIA 多框架推理服务化标杆](/study/projects/triton-inference-server/) |
@@ -845,6 +847,7 @@ sidebar:
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
+| `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
@@ -873,7 +876,7 @@ sidebar:
 
 ---
 
-## 全部 577 个（字母序）
+## 全部 580 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1098,6 +1101,7 @@ sidebar:
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
 | `ink` | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | CLI / 命令行工具 |
 | `inngest` | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | 其他基础设施 |
+| `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) | 其他 |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | 其他 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) | 其他 |
@@ -1387,6 +1391,7 @@ sidebar:
 | `tidb` | [TiDB — HTAP 分布式数据库](/study/projects/tidb/) | 数据库本体 / 存储引擎 |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | 其他 |
+| `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) | 其他 |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) | 其他 |
@@ -1410,6 +1415,7 @@ sidebar:
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时](/study/projects/vanilla-extract/) | CSS / 样式 |
+| `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | 其他 |
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |

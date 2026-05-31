@@ -240,6 +240,7 @@ hotspot-server-compiler
 hotstuff-2019
 hott-book-2013
 http-2
+hu-2018-mls-mpm
 huffman-1952
 hughes-fp-matters
 hyperkernel-2017
@@ -334,6 +335,8 @@ moesi-cache-coherence-1986
 monaghan-1992-sph
 monetdb-x100-2005
 mongo
+ms-marco-2016
+mueller-2007-pbd
 mueller-2022-instant-ngp
 muzero
 mycroft-strictness
@@ -341,6 +344,7 @@ naiad-2013
 narwhal-tusk-2022
 nelson-oppen-1979
 nerf-2020
+netflix-bellkor-2009
 neumann-2015-large-joins
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
@@ -433,6 +437,7 @@ self-adjusting
 self-customization
 self-pic
 selinger-1979
+seq2seq-2014
 sequel-1974
 sequential-consistency-1979
 server-sent-events
@@ -504,6 +509,7 @@ tomita-glr
 toolformer
 toy-models-superposition
 tracemonkey
+transformer-xl-2019
 trees-that-grow
 trill-2014
 triton-2019
@@ -562,6 +568,7 @@ ag-grid
 aichat
 aiortc
 airflow
+amcharts5
 anchor
 anime
 ann-benchmarks
@@ -601,6 +608,7 @@ bentoml
 besu
 better-auth
 bigbluebutton
+billboard-js
 biome
 bitcoin-core
 botbuilder-js
@@ -642,6 +650,7 @@ cockroachdb
 codemirror
 collabora-online
 colossal-ai
+comfyui
 commander
 compound-v3
 conduit
@@ -824,6 +833,7 @@ llama-cpp
 llama-index
 llamaindex
 lm-evaluation-harness
+lmdb
 lottie
 lsd
 lucia
@@ -1019,6 +1029,7 @@ sortablejs
 spin
 spring-boot
 sqlite
+stable-diffusion-webui
 stagehand
 starlette
 starlight
