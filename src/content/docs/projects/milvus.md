@@ -187,6 +187,7 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 - [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

@@ -165,6 +165,7 @@ for g in gaussians:
 - [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[meagher-1982-octree]] —— Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界
+- [[monaghan-1992-sph]] —— SPH — 把流体拆成一群带核的粒子
 - [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版

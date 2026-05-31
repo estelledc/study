@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 546 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 549 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：546 篇
+- **总数**：549 篇
 - **已分类**：143
-- **未分类**：403（落入"其他 / 待分类"段）
+- **未分类**：406（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 403 |
+| [其他 / 待分类](#其他--待分类) | 406 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 403 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 406 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -436,6 +436,7 @@ sidebar:
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
 | `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) |
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) |
+| `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |
 | `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) |
@@ -530,6 +531,7 @@ sidebar:
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
+| `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) |
 | `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) |
 | `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) |
 | `marques-silva-grasp-1996` | [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) |
@@ -553,6 +555,7 @@ sidebar:
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
 | `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) |
+| `monaghan-1992-sph` | [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
 | `mongo` | [MongoDB — 把 JSON 直接当数据库存](/study/papers/mongo/) |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) |
@@ -714,7 +717,7 @@ sidebar:
 
 ---
 
-## 全部 546 篇（字母序）
+## 全部 549 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -896,6 +899,7 @@ sidebar:
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
 | `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) | 其他 |
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) | 其他 |
+| `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) | 其他 |
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) | 其他 |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | 其他 |
@@ -1017,6 +1021,7 @@ sidebar:
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) | 其他 |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) | 其他 |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 其他 |
+| `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
@@ -1047,6 +1052,7 @@ sidebar:
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 其他 |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |
 | `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) | 其他 |
+| `monaghan-1992-sph` | [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) | 其他 |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
 | `mongo` | [MongoDB — 把 JSON 直接当数据库存](/study/papers/mongo/) | 其他 |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) | 其他 |
