@@ -174,6 +174,7 @@ queens(N, Qs) :-
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[proverif-2001]] —— ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
 
