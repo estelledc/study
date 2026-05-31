@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 780 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 783 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：780 篇
+- **总数**：783 篇
 - **已分类**：143
-- **未分类**：637（落入"其他 / 待分类"段）
+- **未分类**：640（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 637 |
+| [其他 / 待分类](#其他--待分类) | 640 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 637 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 640 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -476,6 +476,7 @@ sidebar:
 | `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) |
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) |
 | `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) |
+| `donar-2010` | [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) |
 | `dot-doh-perf-2020` | [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) |
 | `double-descent-2019` | [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) |
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
@@ -771,6 +772,7 @@ sidebar:
 | `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) |
 | `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) |
 | `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) |
+| `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) |
 | `plenoxels-2022` | [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
@@ -824,6 +826,7 @@ sidebar:
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
+| `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) |
@@ -948,7 +951,7 @@ sidebar:
 
 ---
 
-## 全部 780 篇（字母序）
+## 全部 783 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1164,6 +1167,7 @@ sidebar:
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) | 其他 |
 | `dns` | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) | 网络协议 |
 | `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) | 其他 |
+| `donar-2010` | [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) | 其他 |
 | `dot-doh-perf-2020` | [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) | 其他 |
 | `double-descent-2019` | [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) | 其他 |
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) | 其他 |
@@ -1504,6 +1508,7 @@ sidebar:
 | `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) | 其他 |
 | `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) | 其他 |
 | `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) | 其他 |
+| `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) | 其他 |
 | `plenoxels-2022` | [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) | 其他 |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) | 其他 |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | 其他 |
@@ -1579,6 +1584,7 @@ sidebar:
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 其他 |
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 其他 |
+| `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | 其他 |
 | `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | 其他 |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 其他 |

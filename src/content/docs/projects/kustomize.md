@@ -202,6 +202,7 @@ images:
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[k3s]] —— k3s — 把完整 K8s 塞进一个 60 MB 的二进制
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 - [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
 - [[tilt]] —— Tilt — K8s 微服务本地开发的"文件保存即上线"
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移

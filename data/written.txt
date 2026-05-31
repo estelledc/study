@@ -18,6 +18,7 @@ align-2021
 alpa-2022
 alphago
 amdahl-law-1967
+amoeba-1990
 ampere-architecture-2020
 amplification-hell-2014
 ance-2020
@@ -90,6 +91,7 @@ byzantine-generals-1982
 caesar-rexford-2005
 cakeml
 calculus-of-constructions
+calder-2015-anycast-cdn
 call-by-need-1995
 calvin
 calvin-2012
@@ -599,6 +601,7 @@ roberta-2019
 rocketqa-2021
 rocksdb-2017
 rocksdb-lsm
+ron-2001
 rrf-cormack-2009
 rsa
 rwkv-2023
@@ -619,6 +622,7 @@ scoop
 scott-strachey-denotational
 sel4-2009
 self-adjusting
+self-consistency-2022
 self-customization
 self-pic
 self-rag-2023
@@ -662,6 +666,7 @@ sparse-autoencoders
 sparsegpt-2023
 specinfer-2023
 splade-2021
+sprite-1988
 sqlite-2022
 ssa
 stable-diffusion
@@ -715,6 +720,7 @@ toolformer
 toy-models-superposition
 tracemonkey
 transformer-xl-2019
+tree-of-thoughts-2023
 trees-that-grow
 trill-2014
 triton-2019
@@ -800,6 +806,7 @@ antv-g2
 antv-g6
 antv-x6
 ape-framework
+apexcharts
 apollo-server
 appwrite
 aptos-core
@@ -996,6 +1003,7 @@ fooocus
 foundry
 framer-motion
 frappe-gantt
+freertos
 freeswitch
 fx
 fzf
@@ -1107,6 +1115,7 @@ libsignal
 lightdash
 lighthouse
 lightningcss
+lima
 lingui
 linkerd2
 listr2
@@ -1351,6 +1360,7 @@ signoz
 silero-vad
 simple-peer
 sinatra
+skaffold
 sled
 slim-framework
 snapshot
@@ -1488,6 +1498,7 @@ yjs
 yq
 yugabyte-db
 zcash
+zed
 zellij
 zincsearch
 zksync-era

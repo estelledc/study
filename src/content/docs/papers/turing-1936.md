@@ -165,6 +165,7 @@ D(M):
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
 - [[dijkstra-1965]] —— Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[donar-2010]] —— DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题
 - [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hamming-1950]] —— Hamming 纠错码
