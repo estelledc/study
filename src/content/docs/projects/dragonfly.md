@@ -149,3 +149,5 @@ redis-cli GET foo
 - [[redis]] —— Dragonfly 协议兼容的对象，单线程的祖师爷
 - [[valkey]] —— 同样从 Redis 衍生，但走「保持单线程 + 社区治理」路线，和 Dragonfly 是同赛道不同思路
 - [[seastar]] —— shared-nothing 多线程框架的代表作，Dragonfly 架构思想的近亲
+
+<!-- 合并自 [[dragonflydb]] dedup 2026-05-31 -->
