@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 734 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 736 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：734 篇
+- **总数**：736 篇
 - **已分类**：143
-- **未分类**：591（落入"其他 / 待分类"段）
+- **未分类**：593（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 591 |
+| [其他 / 待分类](#其他--待分类) | 593 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 591 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 593 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -322,6 +322,7 @@ sidebar:
 | `amplification-hell-2014` | [Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击](/study/papers/amplification-hell-2014/) |
 | `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
+| `andromeda-2018` | [Andromeda — Google Cloud 网络虚拟化的高速通道](/study/papers/andromeda-2018/) |
 | `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) |
 | `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) |
 | `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |
@@ -673,6 +674,7 @@ sidebar:
 | `mixup-2018` | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
+| `mmlu-2021` | [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) |
 | `mockapetris-1988-dns` | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) |
 | `mode-connectivity-2018` | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) |
 | `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) |
@@ -902,7 +904,7 @@ sidebar:
 
 ---
 
-## 全部 734 篇（字母序）
+## 全部 736 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -927,6 +929,7 @@ sidebar:
 | `amplification-hell-2014` | [Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击](/study/papers/amplification-hell-2014/) | 其他 |
 | `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) | 其他 |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 其他 |
+| `andromeda-2018` | [Andromeda — Google Cloud 网络虚拟化的高速通道](/study/papers/andromeda-2018/) | 其他 |
 | `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) | 其他 |
 | `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) | 其他 |
 | `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
@@ -1355,6 +1358,7 @@ sidebar:
 | `mixup-2018` | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) | 其他 |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 其他 |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |
+| `mmlu-2021` | [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) | 其他 |
 | `mockapetris-1988-dns` | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) | 其他 |
 | `mode-connectivity-2018` | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) | 其他 |
 | `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) | 其他 |
