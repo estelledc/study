@@ -119,7 +119,7 @@ Percolator 流程：
 - **2010**：Peng & Dabek 在 OSDI 发表 Percolator，Caffeine 系统已上线，索引延迟从 3 天降到几分钟。
 - **2012**：Spanner 论文，明确批评 TSO 单点，用 TrueTime 接班。
 - **2015 后**：PingCAP 创立 TiKV，事务层完全照搬 Percolator，让这个模型在开源世界活了下来。
-- **今天**：TiDB / TiKV / HBase Phoenix / 字节内部多个 KV 都用 Percolator 模型。
+- **今天**：TiDB / TiKV / HBase Phoenix / ByteDance内部多个 KV 都用 Percolator 模型。
 
 ## 学到什么
 

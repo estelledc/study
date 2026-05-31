@@ -26,7 +26,7 @@ Jaeger 就是来拼这个的。
 - **微服务排错刚需**——单体应用 print 日志就行；微服务下"哪个服务慢"看不出来，必须要追踪
 - **OpenTracing / OpenTelemetry 标准支持**——Jaeger 是这两个标准的早期实现者，跨语言（Go / Java / Python / Node / Rust）通吃
 - **CNCF 毕业项目**——2019 年从 CNCF 孵化器毕业，等于拿到了"云原生事实标准"的徽章
-- **大厂背书**——Uber / Lyft / Red Hat / 字节 / 阿里都在用；不是玩具
+- **大厂背书**——Uber / Lyft / Red Hat / ByteDance / 阿里都在用；不是玩具
 
 ## 核心要点
 
