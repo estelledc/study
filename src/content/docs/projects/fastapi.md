@@ -211,6 +211,7 @@ def me(user: dict = Depends(current_user)):
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[rasa]] —— Rasa — 自己造一个能记住上下文的对话机器人
+- [[redash]] —— Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI
 - [[redis]] —— Redis — 内存键值数据库
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架

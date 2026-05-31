@@ -207,6 +207,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
+- [[signoz]] —— SigNoz — 自托管的 OpenTelemetry 一体化可观测平台
 - [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端
 - [[terraform]] —— Terraform — 基础设施即代码

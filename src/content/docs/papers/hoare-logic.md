@@ -209,6 +209,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[monitors-1974]] —— Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[nelson-oppen-1979]] —— Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"
+- [[netkat-2014]] —— NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式
 - [[nieuwenhuis-dpll-t-2006]] —— Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书
 - [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
