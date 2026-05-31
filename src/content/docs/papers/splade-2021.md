@@ -153,6 +153,7 @@ L = L_contrastive(query, doc+, doc-) + λ_q * FLOPS(q) + λ_d * FLOPS(d)
 - [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 - [[cocondenser-2021]] —— coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
+- [[doc2query-2019]] —— doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[ms-marco-2016]] —— MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集

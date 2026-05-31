@@ -156,6 +156,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 - [[bpr-2009]] —— BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』
 - [[cocondenser-2021]] —— coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
+- [[doc2query-2019]] —— doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
