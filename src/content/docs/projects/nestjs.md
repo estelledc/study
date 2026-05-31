@@ -143,21 +143,18 @@ class UsersController {
 
 ## 历史小故事（可跳过）
 
-- **2017-05**：Kamil Mysliwiec 发布 v1.0，Angular 2 思想搬到 Node.js，TypeScript-first
-- **2018 v5**：稳定 GraphQL / Microservice / WebSocket 三个传输层
-- **2020 v7**：Fastify adapter 进 stable，性能优先项目可选
-- **2022 v9**：Standalone application（不只 HTTP），custom decorator 简化
-- **2024 v10**：移除废弃 API，Node 16+ 起步
+- **2017-05** v1：Kamil Mysliwiec 发布，Angular 2 思想搬到 Node.js，TypeScript-first
+- **2018-2020 v5-7**：稳定 GraphQL/Microservice/WebSocket 三传输层；Fastify adapter stable
+- **2022-2024 v9-10**：Standalone application、custom decorator 简化、Node 16+ 起步
 - **2025 v11**：原生 ESM，Node 20+，开始迁移到 stage 3 decorator
 
-之后 8 年，NestJS 从 0 长到 5M weekly downloads，成为 Node 后端的"企业级范本"。
+8 年从 0 长到 5M weekly downloads，成为 Node 后端的"企业级范本"。
 
 ## 学到什么
 
-1. **decorator + Reflect.metadata 是 NestJS 一切的根**——TS 编译 emit metadata 才让 DI 自动化成立
-2. **module 是依赖图的打包单元**，import / providers / controllers / exports 四元组决定可见性
-3. **adapter 模式让框架和 HTTP 层解耦**——同一套上层代码可切 Express / Fastify / Kafka / gRPC
-4. **企业级 = 学习曲线陡** 不是必然——FastAPI 同思路但简单一半，区别在抽象数量
+1. **decorator + Reflect.metadata 是 NestJS 一切的根**：TS 编译 emit metadata 才让 DI 自动化成立
+2. **module 是依赖图打包单元**：四元组（imports/providers/controllers/exports）决定可见性
+3. **adapter 模式解耦 HTTP 层**——同一套上层代码可切 Express/Fastify/Kafka/gRPC
 
 ## 延伸阅读
 
@@ -204,4 +201,3 @@ class UsersController {
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[zod]] —— Zod — TypeScript-first schema 验证
-
