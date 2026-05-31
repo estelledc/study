@@ -107,6 +107,13 @@ DiT 论文从挂 arXiv 到工业全面接受，花了一年半。架构革命从
 2. **Zero-init 是稳定深网的通用法宝**——AdaLN-Zero 让每个 block 初始等于 identity。这条思想跟 ResNet 残差、ControlNet zero conv、LoRA 的 B 矩阵零初始化是一条线。**让模型从 do-nothing 起步，比从随机起步稳得多**
 3. **scaling law 不是 NLP 专利**——DiT 把这条规律从语言搬到生图，证明它是普适的。后续 Sora、SD3、FLUX 都遵循这条规律砸算力
 4. **解耦 backbone 和任务有红利**——LDM 解耦了"diffusion 跟空间"（latent vs pixel），DiT 解耦了"diffusion 跟 backbone"。每解耦一次工程灵活性翻倍
+5. **架构革命的工业接受滞后期**：DiT 2022-12 挂 arXiv，到 2024-02 Sora 才让它出圈，工业接受花了 14 个月——架构论文在没有"震撼级 demo"之前很难被信任，这是新架构的常态而非例外。
+6. **patchify 是视觉 Transformer 的通用胶水**：ViT 把图分 patch 喂 Transformer 做判别，DiT 复用同一手法做生成；这条工程规律告诉你"哪里要把图变成序列，patchify 都是默认选" 比花式 hybrid 更稳。
+7. **Sora 出圈靠论文背书**：Sora 报告反复 cite DiT 而非把架构当黑盒，这种"论文 → 工业 → 出圈" 的反向引用让 academia 与 industry 之间有了一条可验证的传承链。
+8. **AdaLN-Zero 是稳定深网的法宝**：每个 block 初始 = identity，从 do-nothing 起步比从随机起步稳得多——这条思想跟 ResNet 残差、ControlNet zero conv、LoRA B 矩阵零初始化是一条线。
+9. **MMDiT（SD3）的双流注意力是延伸**：把文本和图像 token 分双流走 attention，再融合——延续 DiT 解耦思路，把"backbone 解耦" 推进到"模态解耦"。
+10. **scaling law 跨任务普适**：DiT 把语言里的 scaling law 搬到图像生成，证明它不是 NLP 专利；后续 Sora（视频）、AlphaFold（结构）都遵循同一规律。
+11. **理论简洁不等于工程接受**：DiT 在 2022 论文里就量化了 U-Net 不必要，但工业界等到 SD 3 / Sora 2024 才切——纸面证据 vs 工业证据是两条曲线，前者快后者慢。
 
 ## 延伸阅读
 
