@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 622 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 624 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：622 个
+- **总数**：624 个
 - **已分类**：213
-- **未分类**：409（落入"其他 / 待分类"段）
+- **未分类**：411（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 409 |
+| [其他 / 待分类](#其他--待分类) | 411 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 409 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 411 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -735,6 +735,7 @@ sidebar:
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
+| `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
@@ -860,6 +861,7 @@ sidebar:
 | `stern` | [stern — 多 pod 多 container 日志聚合 tail](/study/projects/stern/) |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
+| `streamlit` | [Streamlit — Python 几行写 Web 应用](/study/projects/streamlit/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
@@ -918,7 +920,7 @@ sidebar:
 
 ---
 
-## 全部 622 个（字母序）
+## 全部 624 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1249,6 +1251,7 @@ sidebar:
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | 其他 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
+| `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) | 其他 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | 其他 |
@@ -1441,6 +1444,7 @@ sidebar:
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) | 其他 |
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | 其他 |
+| `streamlit` | [Streamlit — Python 几行写 Web 应用](/study/projects/streamlit/) | 其他 |
 | `styled-components` | [styled-components — React 生态最早的 CSS-in-JS 库](/study/projects/styled-components/) | CSS / 样式 |
 | `stylex` | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | 其他 |

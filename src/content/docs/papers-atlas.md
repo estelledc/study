@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 640 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 643 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：640 篇
+- **总数**：643 篇
 - **已分类**：143
-- **未分类**：497（落入"其他 / 待分类"段）
+- **未分类**：500（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 497 |
+| [其他 / 待分类](#其他--待分类) | 500 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 497 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 500 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -390,6 +390,7 @@ sidebar:
 | `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
+| `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) |
 | `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) |
@@ -702,6 +703,7 @@ sidebar:
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
+| `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
@@ -749,6 +751,7 @@ sidebar:
 | `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) |
 | `taso-2019` | [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) |
 | `taubin-1995-mesh-smoothing` | [Taubin 1995 — 把网格平滑当成低通滤波](/study/papers/taubin-1995-mesh-smoothing/) |
+| `tcp-vegas-1995` | [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) |
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) |
 | `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) |
 | `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) |
@@ -808,7 +811,7 @@ sidebar:
 
 ---
 
-## 全部 640 篇（字母序）
+## 全部 643 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -920,6 +923,7 @@ sidebar:
 | `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) | 其他 |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
+| `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) | 其他 |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 其他 |
 | `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | 其他 |
@@ -1315,6 +1319,7 @@ sidebar:
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) | 其他 |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | 其他 |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | 其他 |
+| `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) | 其他 |
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 其他 |
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
@@ -1380,6 +1385,7 @@ sidebar:
 | `taso-2019` | [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) | 其他 |
 | `taubin-1995-mesh-smoothing` | [Taubin 1995 — 把网格平滑当成低通滤波](/study/papers/taubin-1995-mesh-smoothing/) | 其他 |
 | `tcp` | [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) | 网络协议 |
+| `tcp-vegas-1995` | [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) | 其他 |
 | `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) | 其他 |
 | `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) | 其他 |
 | `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) | 其他 |

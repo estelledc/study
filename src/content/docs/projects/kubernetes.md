@@ -155,6 +155,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
 - [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI

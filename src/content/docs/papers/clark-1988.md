@@ -156,4 +156,5 @@ Clark 的七条目标里**没有「安全」**。这不是疏忽，是因为 ARP
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tcp-vegas-1995]] —— TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
 

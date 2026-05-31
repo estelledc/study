@@ -135,6 +135,7 @@ Assistant: 秋叶飘零落，金风送暮凉。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[codex-2021]] —— Codex — 让 GPT 学会写 Python，并造一把尺子量它
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[dpo]] —— DPO — Direct Preference Optimization

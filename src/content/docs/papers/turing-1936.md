@@ -178,6 +178,7 @@ D(M):
 - [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
 - [[rsa]] —— RSA 公钥密码
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[sel4-2009]] —— seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simhash-charikar-2002]] —— SimHash — 用随机超平面把余弦相似度变成汉明距离
 - [[smalltalk-80]] —— Smalltalk-80
