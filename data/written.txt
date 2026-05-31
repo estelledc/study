@@ -368,6 +368,7 @@ kafka-2011
 kahn-natural-semantics
 kajiya-1986-rendering-equation
 kami-2017
+karger-1997-consistent-hashing
 karis-2014-taa
 karis-2014-ue4-pbr
 karp-21
@@ -417,6 +418,7 @@ llm-int8-2022
 llvm
 lmdb-2011
 local-type-inference
+locus-1980
 logjam-2015
 logoot-2010
 longformer-2020
@@ -689,6 +691,7 @@ taso-2019
 taubin-1995-mesh-smoothing
 tcp
 tcp-vegas-1995
+td3-2018
 template-haskell
 tendermint-2016
 tensorflow-osdi-2016
@@ -789,6 +792,7 @@ ann-benchmarks
 annoy
 ansible
 anthropic-cookbook
+antv-f2
 antv-g2
 antv-g6
 ape-framework
@@ -1088,6 +1092,7 @@ lazydocker
 lazygit
 leaflet
 ledger-app-sdk
+lens
 lerna
 leveldb
 lexical
@@ -1172,6 +1177,7 @@ nats-server
 ncdu
 nebula
 neo4j
+neovim
 nerdctl
 nestjs
 nethermind

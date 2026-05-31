@@ -138,6 +138,7 @@ Assistant: 秋叶飘零落，金风送暮凉。
 - [[chatbot-arena-2024]] —— Chatbot Arena — 让真人盲投，给 LLM 排出公允座次
 - [[codex-2021]] —— Codex — 让 GPT 学会写 Python，并造一把尺子量它
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
+- [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"

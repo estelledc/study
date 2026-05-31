@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 720 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 723 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：720 个
+- **总数**：723 个
 - **已分类**：214
-- **未分类**：506（落入"其他 / 待分类"段）
+- **未分类**：509（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 506 |
+| [其他 / 待分类](#其他--待分类) | 509 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 506 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 509 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -527,6 +527,7 @@ sidebar:
 | `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) |
+| `antv-x6` | [AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript](/study/projects/antv-x6/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) |
@@ -705,6 +706,7 @@ sidebar:
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
+| `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) |
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) |
@@ -962,6 +964,7 @@ sidebar:
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) |
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) |
+| `tilt` | [Tilt — K8s 微服务本地开发的"文件保存即上线"](/study/projects/tilt/) |
 | `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) |
 | `tldraw` | [tldraw — 把白板做成可嵌入的 SDK](/study/projects/tldraw/) |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) |
@@ -1016,7 +1019,7 @@ sidebar:
 
 ---
 
-## 全部 720 个（字母序）
+## 全部 723 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1043,6 +1046,7 @@ sidebar:
 | `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) | 其他 |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | 其他 |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) | 其他 |
+| `antv-x6` | [AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript](/study/projects/antv-x6/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
@@ -1275,6 +1279,7 @@ sidebar:
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) | 其他 |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
+| `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) | 其他 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
@@ -1657,6 +1662,7 @@ sidebar:
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | 其他 |
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) | 其他 |
+| `tilt` | [Tilt — K8s 微服务本地开发的"文件保存即上线"](/study/projects/tilt/) | 其他 |
 | `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
 | `tldraw` | [tldraw — 把白板做成可嵌入的 SDK](/study/projects/tldraw/) | 其他 |

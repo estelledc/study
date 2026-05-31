@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 771 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 774 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：771 篇
+- **总数**：774 篇
 - **已分类**：143
-- **未分类**：628（落入"其他 / 待分类"段）
+- **未分类**：631（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 628 |
+| [其他 / 待分类](#其他--待分类) | 631 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 628 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 631 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -316,6 +316,7 @@ sidebar:
 | `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
+| `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) |
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) |
@@ -456,6 +457,7 @@ sidebar:
 | `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
+| `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) |
 | `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |
 | `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) |
@@ -901,6 +903,7 @@ sidebar:
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |
 | `universal-ctags` | [Universal Ctags — 给源码做一本"卡片目录"，编辑器一秒跳到定义](/study/papers/universal-ctags/) |
 | `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) |
+| `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) |
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |
@@ -939,7 +942,7 @@ sidebar:
 
 ---
 
-## 全部 771 篇（字母序）
+## 全部 774 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -956,6 +959,7 @@ sidebar:
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 其他 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | 其他 |
+| `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) | 其他 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) | 其他 |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | 其他 |
@@ -1127,6 +1131,7 @@ sidebar:
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 其他 |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) | 其他 |
 | `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
+| `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) | 其他 |
 | `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) | 其他 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
@@ -1671,6 +1676,7 @@ sidebar:
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 其他 |
 | `universal-ctags` | [Universal Ctags — 给源码做一本"卡片目录"，编辑器一秒跳到定义](/study/papers/universal-ctags/) | 其他 |
 | `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) | 其他 |
+| `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) | 其他 |
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | 其他 |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 其他 |
