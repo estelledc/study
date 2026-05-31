@@ -1,6 +1,6 @@
 ---
 title: TabPFN — 一秒解决小表格分类的 Transformer
-来源: Hollmann, Müller, Eggensperger, Hutter, "TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second", ICLR 2023
+来源: 'Hollmann, Müller, Eggensperger, Hutter, "TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second", ICLR 2023'
 日期: 2026-06-01
 分类: 机器学习
 难度: 中级
@@ -150,3 +150,6 @@ OpenML-CC18 基准（30 个小型分类数据集）上：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

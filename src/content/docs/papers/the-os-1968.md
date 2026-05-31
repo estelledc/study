@@ -163,6 +163,7 @@ def consumer():
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
+- [[denali-2002]] —— Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[exokernel-1995]] —— Exokernel — 把抽象推到用户态的极致设计

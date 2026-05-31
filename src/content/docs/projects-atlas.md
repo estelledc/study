@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 668 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 670 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：668 个
+- **总数**：670 个
 - **已分类**：213
-- **未分类**：455（落入"其他 / 待分类"段）
+- **未分类**：457（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 455 |
+| [其他 / 待分类](#其他--待分类) | 457 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 455 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 457 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -774,6 +774,7 @@ sidebar:
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
+| `nats-server` | [NATS Server — 极简云原生消息总线](/study/projects/nats-server/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) |
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) |
@@ -917,6 +918,7 @@ sidebar:
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) |
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) |
+| `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) |
 | `triton-inference-server` | [Triton Inference Server — NVIDIA 多框架推理服务化标杆](/study/projects/triton-inference-server/) |
@@ -964,7 +966,7 @@ sidebar:
 
 ---
 
-## 全部 668 个（字母序）
+## 全部 670 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1344,6 +1346,7 @@ sidebar:
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
+| `nats-server` | [NATS Server — 极简云原生消息总线](/study/projects/nats-server/) | 其他 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
@@ -1560,6 +1563,7 @@ sidebar:
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | 其他 |
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) | 其他 |
+| `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) | 其他 |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) | 其他 |

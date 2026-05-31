@@ -161,5 +161,6 @@ bin/pulsar-admin namespaces set-backlog-quota \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[nats-server]] —— NATS Server — 极简云原生消息总线
 - [[redis]] —— Redis — 内存键值数据库
 
