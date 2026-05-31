@@ -162,5 +162,6 @@ GPU 优势：几千个核，做"简单逻辑大批量重复"快。
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
+- [[scann-2020]] —— ScaNN — 让向量量化只精修「客户会看到的那一面」
 - [[youtube-two-tower-2019]] —— YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
 

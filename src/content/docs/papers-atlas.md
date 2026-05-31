@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 594 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 597 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：594 篇
+- **总数**：597 篇
 - **已分类**：143
-- **未分类**：451（落入"其他 / 待分类"段）
+- **未分类**：454（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 451 |
+| [其他 / 待分类](#其他--待分类) | 454 |
 
 ---
 
@@ -304,13 +304,14 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 451 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 454 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
+| `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
@@ -661,6 +662,7 @@ sidebar:
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
+| `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
@@ -752,6 +754,7 @@ sidebar:
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) |
+| `williams-1983-mipmap` | [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |
 | `xlnet-2019` | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) |
 | `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) |
@@ -762,7 +765,7 @@ sidebar:
 
 ---
 
-## 全部 594 篇（字母序）
+## 全部 597 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -775,6 +778,7 @@ sidebar:
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | 其他 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
+| `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) | 其他 |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | 其他 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | 其他 |
@@ -1228,6 +1232,7 @@ sidebar:
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) | 其他 |
 | `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
+| `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) | 其他 |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | 其他 |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | 其他 |
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
@@ -1350,6 +1355,7 @@ sidebar:
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) | 其他 |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) | 其他 |
+| `williams-1983-mipmap` | [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) | 其他 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) | 其他 |
 | `xlnet-2019` | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) | 其他 |

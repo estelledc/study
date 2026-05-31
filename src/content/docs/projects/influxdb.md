@@ -154,5 +154,6 @@ from(bucket: "metrics")
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[questdb]] —— QuestDB — 高性能时序库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 

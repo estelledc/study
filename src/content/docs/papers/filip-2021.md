@@ -150,6 +150,7 @@ CLIP 把图文压成一个全局向量做对比；FILIP 保留 token，每个 pa
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[attention]] —— Attention Is All You Need
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
