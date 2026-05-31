@@ -158,4 +158,5 @@ GPipe 论文最响的一击：把 AmoebaNet 从 84M 参数推到 557M，跑 Imag
 - [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
+- [[zero-2020]] —— ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能
 

@@ -164,5 +164,8 @@ parameters:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[mlflow]] —— MLflow — 端到端 ML 生命周期
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 

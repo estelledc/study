@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 425 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 429 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：425 篇
+- **总数**：429 篇
 - **已分类**：143
-- **未分类**：282（落入"其他 / 待分类"段）
+- **未分类**：286（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 282 |
+| [其他 / 待分类](#其他--待分类) | 286 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 282 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 286 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -318,6 +318,7 @@ sidebar:
 | `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |
+| `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) |
 | `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) |
 | `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) |
@@ -362,6 +363,7 @@ sidebar:
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
+| `cousot-halbwachs-polyhedra-1978` | [Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系](/study/papers/cousot-halbwachs-polyhedra-1978/) |
 | `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) |
 | `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) |
 | `crdt-shapiro-2011` | [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) |
@@ -543,6 +545,7 @@ sidebar:
 | `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |
 | `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) |
+| `specinfer-2023` | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) |
 | `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) |
 | `stainless-2017` | [Stainless — 让编译器替你证明 Scala 函数真的满足规约](/study/papers/stainless-2017/) |
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |
@@ -590,10 +593,11 @@ sidebar:
 | `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
+| `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) |
 
 ---
 
-## 全部 425 篇（字母序）
+## 全部 429 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -615,6 +619,7 @@ sidebar:
 | `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | 其他 |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 其他 |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | 其他 |
+| `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) | 其他 |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | 其他 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
@@ -683,6 +688,7 @@ sidebar:
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) | 其他 |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) | 其他 |
+| `cousot-halbwachs-polyhedra-1978` | [Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系](/study/papers/cousot-halbwachs-polyhedra-1978/) | 其他 |
 | `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) | 其他 |
 | `crdt-json` | [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
 | `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) | 其他 |
@@ -952,6 +958,7 @@ sidebar:
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | 其他 |
 | `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) | 其他 |
 | `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
+| `specinfer-2023` | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) | 其他 |
 | `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) | 其他 |
 | `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
 | `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
@@ -1020,5 +1027,6 @@ sidebar:
 | `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) | 其他 |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | 其他 |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | 其他 |
+| `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) | 其他 |
 | `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | GC / 内存管理 |
 | `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |

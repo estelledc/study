@@ -151,5 +151,6 @@ LLaMA2-Chat 70B + 单 GPU 输出场景（论文 Table 2）：
 
 - [[attention]] —— Attention Is All You Need
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

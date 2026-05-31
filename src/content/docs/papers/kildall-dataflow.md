@@ -166,6 +166,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
 - [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
