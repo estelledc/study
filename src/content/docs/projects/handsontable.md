@@ -149,7 +149,7 @@ const hot = new Handsontable(container, {
 - **2012 年**：波兰开发者 Marcin Warpechowski 在 GitHub 开源 Handsontable，初版只有几百行，因为 jQuery 时代缺一个像 Excel 的表格组件，迅速火起来
 - **2014 年前后**：成立 Handsoncode 公司商业化运营，社区版仍 MIT
 - **2019 年（7.0 版本）**：从 MIT 改为非商业许可后又调整到 AGPL v3。社区一度炸锅，竞争对手 AG Grid 借机吸纳了一批用户
-- **2020 年**：把内部公式引擎拆成独立项目 **HyperFormula**，BSD-3 许可，反而比主仓库还活跃
+- **2020 年**：把内部公式引擎拆成独立项目 **HyperFormula**，同样 GPLv3 + 商业双许可，反而成为开源 spreadsheet 公式引擎里最完整的一个
 - **如今**：商业版稳定盈利，是 JS 生态里少数靠 license 卖钱活下来的开源项目之一
 
 ## 学到什么
