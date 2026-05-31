@@ -149,5 +149,7 @@ cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
+- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
+- [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 

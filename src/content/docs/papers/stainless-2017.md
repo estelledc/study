@@ -1,6 +1,6 @@
 ---
 title: Stainless — 让编译器替你证明 Scala 函数真的满足规约
-来源: Hamza, Voirol & Kunčak, "System FR: Formal Foundations for Stainless", OOPSLA 2019
+来源: 'Hamza, Voirol & Kunčak, "System FR: Formal Foundations for Stainless", OOPSLA 2019'
 日期: 2026-05-31
 分类: 编程语言
 难度: 中级
@@ -149,3 +149,6 @@ Leon（2013-2017）只支持纯函数子集；遇到 `var x = 0; x = x + 1` 直�
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

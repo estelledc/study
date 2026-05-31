@@ -208,6 +208,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+- [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义

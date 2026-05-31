@@ -163,6 +163,7 @@ insertList x (y:ys)
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
+- [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 
