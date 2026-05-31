@@ -155,6 +155,7 @@ hash(k) % 4 → [0,1,2,3,0,1,2,3]
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
+- [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
 - [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层

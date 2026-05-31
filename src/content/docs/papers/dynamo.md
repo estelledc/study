@@ -177,6 +177,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[pastry-2001]] —— Pastry — 用 nodeId 的前缀一位一位逼近目标

@@ -50,6 +50,7 @@ batchnorm-2015
 bayou-1995
 bbr-2017
 beck-tdd
+belady-1966
 bentley-1975-kdtree
 bentoml
 bernstein-1981-cc
@@ -117,6 +118,7 @@ cimatti-nusmv-2002
 clark-1988
 clarke-cegar-2003
 clarke-emerson-1981
+classifier-free-guidance-2022
 clearml
 clickhouse
 clip
@@ -519,6 +521,7 @@ park-2019-deepsdf
 parti-2022
 partial-evaluation-jones
 pascal-architecture-2016
+pastry-2001
 paxos
 paxos-1998
 paxos-simple-2001
@@ -810,6 +813,7 @@ badger
 balancer
 bandwhich
 bat
+bbolt
 bentoml
 besu
 better-auth
@@ -947,6 +951,7 @@ errbot
 esbuild
 etcd
 ethers-js
+evidence
 excalidraw
 express
 eza
@@ -1083,6 +1088,7 @@ linkerd2
 listr2
 litellm-proxy
 litestar
+litmus
 liveblocks
 livekit-flutter
 llama-cpp
