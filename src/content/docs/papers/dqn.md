@@ -101,6 +101,12 @@ DQN 的训练循环可以拆成 **三步**：
 - **2016 年**：[[alphago]] 用 DQN 思想 + MCTS 打败李世石。
 - **2017 年**：[[ppo]] 出来后逐步取代 DQN 成 RL 主流，但「value/policy/reward」三件套范式是 DQN 时代奠定的。
 
+## 案例补充：Rainbow 的"叠加技"教训
+
+DeepMind 2017 发表 Rainbow——把 DQN 之后 5 项改进（Double DQN / Dueling / Prioritized Replay / Multi-step / Distributional / Noisy Net）全叠在一起，跑 57 个 Atari 平均得分提升 200%。
+
+但消融实验显示：**Prioritized Replay 和 Multi-step 贡献最大**，Dueling 在很多游戏上几乎没用。这给后续 RL 研究的教训是——堆模块很容易，但拆出每个模块的边际贡献才是真功夫。Rainbow 也是 RL 工程化的分水岭：之后的研究开始更注重消融而非"再多叠一层"。
+
 ## 学到什么
 
 1. **工程改造能解决理论上的不可能**——replay + target net 没改 Q-learning 一个字，只加了两个外挂，就把「理论上发散」变成「实践上稳定」
@@ -108,6 +114,9 @@ DQN 的训练循环可以拆成 **三步**：
 3. **失败案例比成功案例信息量更大**——Breakout 13 倍人类很 impressive，但真正推动后续 5 年研究的是 Montezuma 拿 0 分这件事
 4. **同一架构跑所有任务**是衡量通用性的硬指标——DQN 49 游戏不调超参，启发了后来 GPT-3 的 zero-shot benchmark 思路
 5. **看 paper 学算法只是入门**——同一份伪代码不同实现性能能差 2-3 倍，真正读懂 = 能复现到匹配论文数字
+6. **bootstrapping 的双刃剑**：用估计去更新估计能极大提速学习，但也是发散的根源；理解为什么"去 bootstrapping"（Monte Carlo）稳但慢，"用 bootstrapping"（TD）快但不稳，是 RL 入门必修
+7. **生物学启发不是必要条件**：Experience Replay 灵感来自人脑海马体的"经验回放"，但论文真正成功靠的是工程稳定性，不是生物似然性。算法工程领域许多"灵感故事"是叙事工具而非因果链
+8. **复现成本是论文的隐藏成本**：Atari 5000 万帧训练在当时要 1-2 周 GPU 时间，复现门槛被低估。RL 比 supervised learning 工程预算大 5-10 倍
 
 ## 延伸阅读
 
@@ -117,6 +126,8 @@ DQN 的训练循环可以拆成 **三步**：
 - [[ppo]] —— 现代 RL 主流，DQN 在 policy gradient 路线上的接班人
 - [[alphago]] —— DQN 思想 + MCTS 在围棋的延伸
 - [[muzero]] —— 不要环境模型，自己学 latent dynamics，DQN 家族最远的孩子
+- 改进综述：Rainbow 论文（Hessel et al. 2017）做的 6 项叠加 + 消融
+- Sutton & Barto《Reinforcement Learning: An Introduction》第二版，章节 Tabular Q-learning → DQN 是教科书级路径
 
 ## 关联
 
