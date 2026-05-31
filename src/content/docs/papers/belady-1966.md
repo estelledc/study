@@ -152,5 +152,7 @@ LRU 之所以在工程里好使，**不是因为它聪明**，而是因为大多
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[turing-1936]] —— Turing 1936 可计算性
 

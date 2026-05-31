@@ -146,4 +146,5 @@ PRAGMA journal_mode=WAL;
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
+- [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
 

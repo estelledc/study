@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 706 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 708 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：706 个
+- **总数**：708 个
 - **已分类**：214
-- **未分类**：492（落入"其他 / 待分类"段）
+- **未分类**：494（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 492 |
+| [其他 / 待分类](#其他--待分类) | 494 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 492 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 494 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -834,6 +834,7 @@ sidebar:
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
+| `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
@@ -912,6 +913,7 @@ sidebar:
 | `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
+| `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) |
@@ -1002,7 +1004,7 @@ sidebar:
 
 ---
 
-## 全部 706 个（字母序）
+## 全部 708 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1458,6 +1460,7 @@ sidebar:
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) | 其他 |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | 其他 |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
+| `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | 其他 |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) | 其他 |
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) | 其他 |
@@ -1570,6 +1573,7 @@ sidebar:
 | `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) | 其他 |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
+| `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) | 其他 |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) | 其他 |

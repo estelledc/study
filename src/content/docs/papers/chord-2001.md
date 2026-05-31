@@ -157,6 +157,7 @@ N1 的 finger table（简化版）：
 - [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
 - [[pastry-2001]] —— Pastry — 用 nodeId 的前缀一位一位逼近目标
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法

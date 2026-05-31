@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 757 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 760 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：757 篇
+- **总数**：760 篇
 - **已分类**：143
-- **未分类**：614（落入"其他 / 待分类"段）
+- **未分类**：617（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 614 |
+| [其他 / 待分类](#其他--待分类) | 617 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 614 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 617 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -485,6 +485,7 @@ sidebar:
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
 | `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) |
+| `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) |
@@ -597,6 +598,7 @@ sidebar:
 | `jupiter-2015` | [Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍](/study/papers/jupiter-2015/) |
 | `jwt-rfc-7519` | [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) |
 | `k3s` | [k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制](/study/papers/k3s/) |
+| `kademlia-2002` | [Kademlia — 用 XOR 当距离的 P2P 路由表](/study/papers/kademlia-2002/) |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
 | `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) |
@@ -652,6 +654,7 @@ sidebar:
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) |
 | `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) |
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) |
+| `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
 | `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) |
@@ -925,7 +928,7 @@ sidebar:
 
 ---
 
-## 全部 757 篇（字母序）
+## 全部 760 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1154,6 +1157,7 @@ sidebar:
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) | 其他 |
 | `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) | 其他 |
 | `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
+| `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) | 其他 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 其他 |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
@@ -1285,6 +1289,7 @@ sidebar:
 | `jupiter-2015` | [Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍](/study/papers/jupiter-2015/) | 其他 |
 | `jwt-rfc-7519` | [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) | 其他 |
 | `k3s` | [k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制](/study/papers/k3s/) | 其他 |
+| `kademlia-2002` | [Kademlia — 用 XOR 当距离的 P2P 路由表](/study/papers/kademlia-2002/) | 其他 |
 | `kafka` | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) | 其他 |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | 其他 |
@@ -1350,6 +1355,7 @@ sidebar:
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | 其他 |
 | `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) | 其他 |
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) | 其他 |
+| `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | 其他 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 其他 |
