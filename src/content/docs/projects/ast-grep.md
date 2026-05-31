@@ -176,3 +176,5 @@ sg --pattern 'request($URL, $OPTS)' \
 - [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 
+<!-- 合并自 [[ast-grep]]（papers，工具误归类）dedup 2026-05-31 -->
+
