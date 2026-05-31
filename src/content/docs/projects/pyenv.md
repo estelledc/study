@@ -165,5 +165,5 @@ pyenv shell 3.10.13 && python script.py
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 

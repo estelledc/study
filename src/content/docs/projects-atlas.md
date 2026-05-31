@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 539 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 542 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：539 个
+- **总数**：542 个
 - **已分类**：209
-- **未分类**：330（落入"其他 / 待分类"段）
+- **未分类**：333（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 330 |
+| [其他 / 待分类](#其他--待分类) | 333 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 330 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 333 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -549,6 +549,7 @@ sidebar:
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
+| `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
@@ -788,6 +789,7 @@ sidebar:
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
+| `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) |
@@ -813,6 +815,7 @@ sidebar:
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
+| `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
@@ -835,7 +838,7 @@ sidebar:
 
 ---
 
-## 全部 539 个（字母序）
+## 全部 542 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -902,6 +905,7 @@ sidebar:
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) | 其他 |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
+| `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) | 其他 |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | 其他 |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | 其他 |
@@ -1290,6 +1294,7 @@ sidebar:
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | 其他 |
 | `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | 数据应用 / SaaS |
 | `supertokens` | [SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe](/study/projects/supertokens/) | Auth 认证 |
+| `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) | 其他 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
 | `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | Meta 框架 / 全栈 |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
@@ -1347,6 +1352,7 @@ sidebar:
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |
 | `vllm` | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) | AI 应用 / Agent 平台 |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) | 其他 |
+| `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) | 其他 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |

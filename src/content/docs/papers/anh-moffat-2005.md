@@ -155,6 +155,7 @@ Lucene 现代版本用的是 **PForDelta**（Zukowski 2006）—— Simple-9 的
 - [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
 - [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 - [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
+- [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度

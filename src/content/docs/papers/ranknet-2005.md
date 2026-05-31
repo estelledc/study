@@ -151,6 +151,7 @@ lambda_ij = (sigmoid(s_i - s_j) - P*) * |Delta_NDCG|
 
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
+- [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
 - [[lambdarank-2006]] —— LambdaRank — 跳过定义损失函数，直接把梯度写出来
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名

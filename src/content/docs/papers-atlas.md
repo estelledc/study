@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 513 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 516 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：513 篇
+- **总数**：516 篇
 - **已分类**：143
-- **未分类**：370（落入"其他 / 待分类"段）
+- **未分类**：373（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 370 |
+| [其他 / 待分类](#其他--待分类) | 373 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 370 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 373 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -437,6 +437,7 @@ sidebar:
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) |
+| `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) |
@@ -489,6 +490,7 @@ sidebar:
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
 | `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) |
 | `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) |
+| `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
@@ -530,6 +532,7 @@ sidebar:
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) |
+| `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
@@ -681,7 +684,7 @@ sidebar:
 
 ---
 
-## 全部 513 篇（字母序）
+## 全部 516 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -867,6 +870,7 @@ sidebar:
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | 其他 |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | 其他 |
 | `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) | 其他 |
+| `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) | 其他 |
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | OS / 集群管理 / 系统 |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | 其他 |
@@ -935,6 +939,7 @@ sidebar:
 | `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) | 其他 |
 | `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) | 其他 |
 | `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
+| `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) | 其他 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 其他 |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | 其他 |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) | 其他 |
@@ -990,6 +995,7 @@ sidebar:
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) | 其他 |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) | 其他 |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | 其他 |
+| `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | 其他 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 其他 |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |

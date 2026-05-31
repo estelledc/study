@@ -163,6 +163,7 @@ db.orders.aggregate([
 - [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
+- [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
 

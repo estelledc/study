@@ -186,6 +186,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
+- [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[token-bucket-stripe]] —— Stripe Rate Limiters — 工业级令牌桶长什么样

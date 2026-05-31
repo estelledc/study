@@ -157,6 +157,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
 - [[bentoml]] —— BentoML — 模型打包部署
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
+- [[captum]] —— Captum — 给 PyTorch 模型装上 X 光机
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
