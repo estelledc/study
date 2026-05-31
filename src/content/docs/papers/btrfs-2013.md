@@ -1,6 +1,6 @@
 ---
-title: Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统
-来源: Ohad Rodeh et al., "BTRFS: The Linux B-Tree Filesystem", ACM TOS 2013
+title: 'Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统'
+来源: 'Ohad Rodeh et al., "BTRFS: The Linux B-Tree Filesystem", ACM TOS 2013'
 日期: 2026-06-01
 分类: 存储系统
 难度: 中级
@@ -171,3 +171,6 @@ btrfs send -p /mnt/data-snap-monday /mnt/data-snap-tuesday | \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

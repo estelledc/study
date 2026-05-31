@@ -143,5 +143,6 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[redis]] —— Redis — 内存键值数据库
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 - [[tikv]] —— TiKV — 分布式事务 KV
+- [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
 
