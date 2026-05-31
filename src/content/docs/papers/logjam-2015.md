@@ -148,5 +148,6 @@ Adrian 等人扫了 Alexa Top 100 万 HTTPS / 全网 SMTP / IPsec / SSH，得到
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿
 

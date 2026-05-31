@@ -151,5 +151,6 @@ Shenango 是**跨应用**调度：决定每个进程总共能拿几个核。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 

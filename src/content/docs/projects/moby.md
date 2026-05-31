@@ -150,7 +150,6 @@ make binary
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[buildkit]] —— BuildKit — Docker 构建从串行手工艺到并发流水线
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[runc]] —— runc — Linux 容器最底层那个真正在 fork 进程的 CLI
 

@@ -1,6 +1,6 @@
 ---
 title: Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
-来源: Bhargavan, Delignat-Lavaud, Fournet, Pironti, Strub. "Triple Handshakes and Cookie Cutters: Breaking and Fixing Authentication over TLS." IEEE S&P 2014
+来源: 'Bhargavan, Delignat-Lavaud, Fournet, Pironti, Strub. "Triple Handshakes and Cookie Cutters: Breaking and Fixing Authentication over TLS." IEEE S&P 2014'
 日期: 2026-06-01
 分类: 网络协议
 难度: 高级
@@ -165,3 +165,6 @@ miTLS 团队的形式化方法是这个发现的核心 —— 不靠 fuzz 不靠
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

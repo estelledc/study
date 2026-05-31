@@ -152,6 +152,7 @@ cache_v: [layer, max_seq_len, n_head, head_dim]
 - [[attention]] —— Attention Is All You Need
 - [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[graphormer-2021]] —— Graphormer — 标准 Transformer 直接刷爆 GNN
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
 - [[lstm-1997]] —— LSTM — 用门控让神经网络记得住上一段话
 - [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
