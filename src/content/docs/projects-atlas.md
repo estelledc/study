@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 660 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 662 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：660 个
+- **总数**：662 个
 - **已分类**：213
-- **未分类**：447（落入"其他 / 待分类"段）
+- **未分类**：449（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 447 |
+| [其他 / 待分类](#其他--待分类) | 449 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 447 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 449 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -640,6 +640,7 @@ sidebar:
 | `errbot` | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
+| `faiss` | [FAISS — 向量检索的标准件库](/study/projects/faiss/) |
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `faster-whisper` | [faster-whisper — Whisper 的 4× 加速重写版](/study/projects/faster-whisper/) |
@@ -927,6 +928,7 @@ sidebar:
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) |
+| `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) |
@@ -956,7 +958,7 @@ sidebar:
 
 ---
 
-## 全部 660 个（字母序）
+## 全部 662 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1146,6 +1148,7 @@ sidebar:
 | `express` | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | Web 框架 |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | 其他 |
 | `fabric-js` | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) | 图像处理 / Canvas |
+| `faiss` | [FAISS — 向量检索的标准件库](/study/projects/faiss/) | 其他 |
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) | 其他 |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
 | `faster-whisper` | [faster-whisper — Whisper 的 4× 加速重写版](/study/projects/faster-whisper/) | 其他 |
@@ -1577,6 +1580,7 @@ sidebar:
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | 其他 |
+| `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) | 其他 |
 | `visx` | [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue 团队用 Vite 写的静态文档站点生成器](/study/projects/vitepress/) | 文档站点 |

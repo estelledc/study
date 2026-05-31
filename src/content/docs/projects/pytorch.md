@@ -174,6 +174,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[flax]] —— Flax — JAX 上的神经网络库
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
 - [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
+- [[graphsage-2017]] —— GraphSAGE 2017 — 给没见过的节点也能算嵌入
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[instant-ngp-2022]] —— Instant-NGP — 把 NeRF 训练从几小时压到几秒
 - [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具

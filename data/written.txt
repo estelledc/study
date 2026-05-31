@@ -76,6 +76,7 @@ brill-moore-2000
 brook-2004
 btrfs-2013
 burgess-2020-turing-rt
+bvt-1999
 byzantine-generals-1982
 caesar-rexford-2005
 cakeml
@@ -247,6 +248,7 @@ gadt-pjones
 game-semantics-pcf
 gao-2001-as-relations
 garland-heckbert-1997-qem
+gat-2018
 gbrank-2007
 gcn-2017
 generational-gc
@@ -278,6 +280,7 @@ halide
 hamming-1950
 hanrahan-1991-hierarchical-radiosity
 hdfs-2010
+heartbleed-2014
 heckbert-1986-texture-survey
 helium-type-errors
 helland-2007
@@ -710,6 +713,7 @@ ann-benchmarks
 ansible
 anthropic-cookbook
 antv-g2
+antv-g6
 ape-framework
 apollo-server
 appwrite
@@ -1149,6 +1153,7 @@ prosemirror
 prosody
 prysm
 pulsar
+pulumi
 pyarrow
 pyenv
 pyth
@@ -1302,6 +1307,7 @@ vega-lite
 velero
 vercel-ai
 vertx
+vespa
 victoriametrics
 viem
 vis-network

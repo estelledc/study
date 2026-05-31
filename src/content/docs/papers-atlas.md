@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 693 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 697 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：693 篇
+- **总数**：697 篇
 - **已分类**：143
-- **未分类**：550（落入"其他 / 待分类"段）
+- **未分类**：554（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 550 |
+| [其他 / 待分类](#其他--待分类) | 554 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 550 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 554 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -366,6 +366,7 @@ sidebar:
 | `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
 | `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) |
+| `buildkit` | [BuildKit — Docker 构建从串行手工艺到并发流水线](/study/papers/buildkit/) |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
 | `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
@@ -489,6 +490,7 @@ sidebar:
 | `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) |
 | `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) |
+| `flexsc-2010` | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |
 | `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) |
@@ -521,6 +523,7 @@ sidebar:
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
 | `graf-saidi-1997` | [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) |
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) |
+| `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) |
 | `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
 | `gru-2014` | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) |
@@ -614,6 +617,7 @@ sidebar:
 | `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) |
+| `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) |
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
@@ -861,7 +865,7 @@ sidebar:
 
 ---
 
-## 全部 693 篇（字母序）
+## 全部 697 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -941,6 +945,7 @@ sidebar:
 | `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) | 其他 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
 | `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | 其他 |
+| `buildkit` | [BuildKit — Docker 构建从串行手工艺到并发流水线](/study/papers/buildkit/) | 其他 |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
 | `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
@@ -1097,6 +1102,7 @@ sidebar:
 | `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) | 其他 |
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) | 其他 |
+| `flexsc-2010` | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) | 其他 |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | 其他 |
 | `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) | 其他 |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | 其他 |
@@ -1136,6 +1142,7 @@ sidebar:
 | `graf-saidi-1997` | [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) | 其他 |
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) | 其他 |
 | `graphrag` | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | 智能体与 LLM 系统 |
+| `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) | 其他 |
 | `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) | 其他 |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 其他 |
 | `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | HCI / 软件工程研究 |
@@ -1248,6 +1255,7 @@ sidebar:
 | `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) | 其他 |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 其他 |
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | 其他 |
+| `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) | 其他 |
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) | 其他 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
