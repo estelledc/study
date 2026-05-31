@@ -150,6 +150,7 @@ WHERE dt = '2026-05-30' LIMIT 100;
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[databend]] —— Databend — Rust 写的存算分离云数仓
 - [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎

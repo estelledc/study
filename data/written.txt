@@ -42,6 +42,7 @@ bentley-1975-kdtree
 bentoml
 bernstein-1981-cc
 bert
+bert4rec-2019
 bidirectional-typing
 biere-bmc-1999
 big-little-2011
@@ -388,6 +389,7 @@ ot-1989
 owens-2007-gpgpu-survey
 pagerank-1998
 pair-programming
+park-2019-deepsdf
 partial-evaluation-jones
 pascal-architecture-2016
 paxos
@@ -513,6 +515,7 @@ swe-bench
 sycl-cpp-2020
 system-f-reynolds-1974
 system-r-1976
+t0-2021
 t5
 tachyon-2014
 tamarin-2012
@@ -707,6 +710,7 @@ curlie
 curve
 cvat
 d3
+dagger
 dagster
 dasel
 dask
@@ -798,6 +802,7 @@ grafana
 grafana-tempo
 grape
 graphql-yoga
+greenplum-db
 gron
 grpc-go
 gsap
@@ -980,6 +985,7 @@ pixi
 plane
 playwright
 plotly-js
+plotly-py
 plotnine
 plug
 pnpm

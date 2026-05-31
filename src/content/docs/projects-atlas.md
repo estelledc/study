@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 603 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 605 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：603 个
+- **总数**：605 个
 - **已分类**：212
-- **未分类**：391（落入"其他 / 待分类"段）
+- **未分类**：393（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 391 |
+| [其他 / 待分类](#其他--待分类) | 393 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 391 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 393 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -595,6 +595,7 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
+| `databend` | [Databend — Rust 写的存算分离云数仓](/study/projects/databend/) |
 | `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) |
 | `dbt-core` | [dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来](/study/projects/dbt-core/) |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) |
@@ -726,6 +727,7 @@ sidebar:
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
+| `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `mongo` | [MongoDB — 文档数据库代表](/study/projects/mongo/) |
@@ -899,7 +901,7 @@ sidebar:
 
 ---
 
-## 全部 603 个（字母序）
+## 全部 605 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1023,6 +1025,7 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) | 其他 |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | 其他 |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) | 其他 |
+| `databend` | [Databend — Rust 写的存算分离云数仓](/study/projects/databend/) | 其他 |
 | `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) | 其他 |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
@@ -1224,6 +1227,7 @@ sidebar:
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) | 其他 |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | 其他 |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
+| `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | 其他 |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | 其他 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | 其他 |
