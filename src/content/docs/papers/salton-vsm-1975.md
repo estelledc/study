@@ -152,6 +152,7 @@ query_vector = model.encode(query)      # 查询 → 384 维向量
 
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
+- [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻

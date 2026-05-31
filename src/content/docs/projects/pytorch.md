@@ -181,7 +181,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[optax]] —— Optax — JAX 优化器组合库
-- [[optuna]] —— Optuna — 让超参搜索像写普通 Python 代码一样自然
+- [[optuna]] —— Optuna — 把超参搜索写在 Python 函数体里
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ps-li-2014]] —— Parameter Server — 多机训练前 AllReduce 时代的工业标准

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 532 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 533 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：532 个
+- **总数**：533 个
 - **已分类**：208
-- **未分类**：324（落入"其他 / 待分类"段）
+- **未分类**：325（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 324 |
+| [其他 / 待分类](#其他--待分类) | 325 |
 
 ---
 
@@ -497,7 +497,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 324 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 325 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -710,6 +710,7 @@ sidebar:
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
+| `optuna` | [Optuna — 把超参搜索写在 Python 函数体里](/study/projects/optuna/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
@@ -828,7 +829,7 @@ sidebar:
 
 ---
 
-## 全部 532 个（字母序）
+## 全部 533 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1158,6 +1159,7 @@ sidebar:
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
+| `optuna` | [Optuna — 把超参搜索写在 Python 函数体里](/study/projects/optuna/) | 其他 |
 | `ora` | [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | 其他 |
