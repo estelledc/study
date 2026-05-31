@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 723 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 726 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：723 个
+- **总数**：726 个
 - **已分类**：214
-- **未分类**：509（落入"其他 / 待分类"段）
+- **未分类**：512（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 509 |
+| [其他 / 待分类](#其他--待分类) | 512 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 509 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 512 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -529,6 +529,7 @@ sidebar:
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) |
 | `antv-x6` | [AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript](/study/projects/antv-x6/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
+| `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
@@ -925,6 +926,7 @@ sidebar:
 | `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
+| `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) |
 | `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) |
@@ -1009,6 +1011,7 @@ sidebar:
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
+| `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) |
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
@@ -1019,7 +1022,7 @@ sidebar:
 
 ---
 
-## 全部 723 个（字母序）
+## 全部 726 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1048,6 +1051,7 @@ sidebar:
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) | 其他 |
 | `antv-x6` | [AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript](/study/projects/antv-x6/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
+| `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
@@ -1600,6 +1604,7 @@ sidebar:
 | `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) | 其他 |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
+| `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) | 其他 |
 | `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) | 其他 |
@@ -1737,6 +1742,7 @@ sidebar:
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | 其他 |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) | 其他 |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | 其他 |
+| `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | 其他 |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) | 其他 |
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) | 其他 |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
