@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 783 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 786 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：783 篇
+- **总数**：786 篇
 - **已分类**：143
-- **未分类**：640（落入"其他 / 待分类"段）
+- **未分类**：643（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 640 |
+| [其他 / 待分类](#其他--待分类) | 643 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 640 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 643 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -457,6 +457,7 @@ sidebar:
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |
 | `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) |
+| `debate-2018` | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
 | `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) |
@@ -809,6 +810,7 @@ sidebar:
 | `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) |
 | `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) |
 | `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) |
+| `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) |
 | `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) |
 | `sac-2018` | [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) |
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) |
@@ -816,6 +818,7 @@ sidebar:
 | `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
 | `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) |
+| `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
@@ -951,7 +954,7 @@ sidebar:
 
 ---
 
-## 全部 783 篇（字母序）
+## 全部 786 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1139,6 +1142,7 @@ sidebar:
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 其他 |
 | `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) | 其他 |
 | `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
+| `debate-2018` | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) | 其他 |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 其他 |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) | 其他 |
 | `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
@@ -1562,6 +1566,7 @@ sidebar:
 | `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) | 其他 |
 | `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) | 其他 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
+| `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) | 其他 |
 | `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) | 其他 |
 | `sac-2018` | [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) | 其他 |
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) | 其他 |
@@ -1570,6 +1575,7 @@ sidebar:
 | `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 其他 |
 | `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | 其他 |
+| `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) | 其他 |
 | `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |

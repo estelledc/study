@@ -151,6 +151,7 @@ fabric 没有官方 React 包装。这件事很反直觉——一个 2008 年起
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板

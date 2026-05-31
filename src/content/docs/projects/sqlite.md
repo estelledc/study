@@ -143,6 +143,7 @@ PRAGMA journal_mode=WAL;
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见

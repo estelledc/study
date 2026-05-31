@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 731 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 734 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：731 个
+- **总数**：734 个
 - **已分类**：214
-- **未分类**：517（落入"其他 / 待分类"段）
+- **未分类**：520（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 517 |
+| [其他 / 待分类](#其他--待分类) | 520 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 517 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 520 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -594,6 +594,7 @@ sidebar:
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) |
+| `cocos2d-x` | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `comfyui` | [ComfyUI — 节点式扩散模型 GUI](/study/projects/comfyui/) |
@@ -793,6 +794,7 @@ sidebar:
 | `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
+| `micro` | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) |
@@ -903,6 +905,7 @@ sidebar:
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) |
 | `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) |
+| `rt-thread` | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) |
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
@@ -1027,7 +1030,7 @@ sidebar:
 
 ---
 
-## 全部 731 个（字母序）
+## 全部 734 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1144,6 +1147,7 @@ sidebar:
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) | 其他 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
+| `cocos2d-x` | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | 其他 |
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | 其他 |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) | 其他 |
@@ -1412,6 +1416,7 @@ sidebar:
 | `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) | 其他 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | 其他 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
+| `micro` | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | 其他 |
 | `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) | 其他 |
 | `midscene` | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) | AI 浏览器自动化 |
@@ -1581,6 +1586,7 @@ sidebar:
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) | 其他 |
 | `rspack` | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | 构建工具 / Bundler |
+| `rt-thread` | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | 其他 |
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) | 其他 |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) | 其他 |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) | 其他 |

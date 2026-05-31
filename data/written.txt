@@ -211,6 +211,7 @@ dit
 dlrm-2019
 dns
 doc2query-2019
+donar-2010
 dot-doh-perf-2020
 double-descent-2019
 dpll-1962
@@ -551,6 +552,7 @@ peyton-jones-stg
 phong-1975
 pipedream-2019
 pivot-tracing-2015
+plan9-1995
 plenoxels-2022
 plotkin-sos
 pnueli-temporal-1977
@@ -626,6 +628,7 @@ self-consistency-2022
 self-customization
 self-pic
 self-rag-2023
+self-refine-2023
 selinger-1979
 seq2seq-2014
 sequel-1974
@@ -941,6 +944,7 @@ dive
 django
 dnd-kit
 docker
+docker-compose
 docusaurus
 doris
 dovecot
@@ -1099,6 +1103,7 @@ lance
 lancedb
 langchain
 langfuse
+lapce
 laravel
 layerzero
 lazydocker
@@ -1500,6 +1505,7 @@ yugabyte-db
 zcash
 zed
 zellij
+zephyr
 zincsearch
 zksync-era
 zod
