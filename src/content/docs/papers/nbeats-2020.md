@@ -1,6 +1,6 @@
 ---
 title: N-BEATS — 纯前馈网络在时序预测上打败统计派
-来源: Oreshkin, Carpov, Chapados, Bengio, "N-BEATS: Neural basis expansion analysis for interpretable time series forecasting", ICLR 2020
+来源: 'Oreshkin, Carpov, Chapados, Bengio, "N-BEATS: Neural basis expansion analysis for interpretable time series forecasting", ICLR 2020'
 日期: 2026-06-01
 分类: 机器学习
 难度: 中级
@@ -148,3 +148,6 @@ backcast = W_b × θ_b       (W_b 形状为 N × dim(θ_b))
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

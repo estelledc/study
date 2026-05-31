@@ -166,6 +166,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
+- [[mockapetris-1988-dns]] —— Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样
 - [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI
 - [[nomad]] —— Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈

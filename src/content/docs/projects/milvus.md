@@ -189,6 +189,7 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[faiss]] —— FAISS — 向量检索的标准件库
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
 - [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉

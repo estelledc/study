@@ -161,6 +161,7 @@ class MyAlgo(BaseANN):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[faiss]] —— FAISS — 向量检索的标准件库
+- [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
 - [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[lm-evaluation-harness]] —— lm-evaluation-harness — LLM 基准评测底座
 - [[milvus]] —— Milvus — 开源向量数据库
