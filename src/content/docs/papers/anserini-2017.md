@@ -152,5 +152,5 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
 

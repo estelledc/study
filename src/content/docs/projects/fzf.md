@@ -181,6 +181,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
+- [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
 - [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd

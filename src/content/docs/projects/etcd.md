@@ -136,6 +136,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[mongo]] —— MongoDB — 文档数据库代表
 - [[nats]] —— NATS — 极简云原生消息系统
 - [[raft]] —— Raft — 易理解的共识算法
 - [[redis]] —— Redis — 内存键值数据库

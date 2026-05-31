@@ -157,5 +157,4 @@ let g:ackprg = 'ag --vimgrep --nocolor --nogroup --column'
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
-- [[universal-ctags]] —— Universal Ctags — 给源码做一本"卡片目录"，编辑器一秒跳到定义
 
