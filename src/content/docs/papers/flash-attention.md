@@ -167,6 +167,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[performer-2020]] —— Performer — 用随机特征把 softmax attention 拉成线性复杂度
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
