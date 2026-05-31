@@ -172,6 +172,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[flax]] —— Flax — JAX 上的神经网络库
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[instant-ngp-2022]] —— Instant-NGP — 把 NeRF 训练从几小时压到几秒
 - [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
 - [[jax]] —— JAX — Google 函数式数值计算
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型

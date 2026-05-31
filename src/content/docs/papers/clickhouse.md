@@ -25,7 +25,7 @@ PostgreSQL 要把每行所有列从磁盘读出来,再丢掉用不到的列;Clic
 不理解 ClickHouse,下面这些事都没法解释:
 
 - 为什么同一份 100 亿行点击流数据,PostgreSQL 跑一个 GROUP BY 要 12 秒,ClickHouse 只要 0.04 秒
-- 为什么 Cloudflare / Uber / 字节跳动 / 阿里巴巴的实时数仓都从 Druid 迁到 ClickHouse
+- 为什么 Cloudflare / Uber / ByteDance / Alibaba 的实时数仓都从 Druid 迁到 ClickHouse
 - 为什么 DuckDB / StarRocks / Databend 这些新引擎设计风格"长得像 ClickHouse"
 - 为什么 OLAP 圈现在不再讨论"用不用列存",而是讨论"列存怎么调到硬件上限"
 

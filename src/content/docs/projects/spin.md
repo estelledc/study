@@ -126,7 +126,7 @@ allowed_outbound_hosts = ["https://api.github.com"]
 - **2021 年**：Matt Butcher、Radu Matei 等前 Deis/Helm（Kubernetes 包管理）核心成员离职创立 Fermyon，定位"专做 wasm serverless 平台"。
 - **2022 年初**：Spin 0.1 开源发布，那时候只有 Rust SDK，trigger 只支持 HTTP。
 - **2023 年**：Spin 2.0 切换到 WASI Preview 2 + 组件模型，第一次能让不同语言写的组件互相调用。
-- **2024-2025 年**：Adobe、字节跳动等大厂在边缘和实验性场景试水，GitHub star 突破 6.5k，进入主流视野。
+- **2024-2025 年**：Adobe、ByteDance 等大厂在边缘和实验性场景试水，GitHub star 突破 6.5k，进入主流视野。
 - **持续演进**：WASI 标准还在迭代，每个 Spin 大版本都会跟着标准更新——这也是 1.x/2.x 不兼容的根因。
 
 ## 学到什么

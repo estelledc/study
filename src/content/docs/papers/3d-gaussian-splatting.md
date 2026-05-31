@@ -163,6 +163,7 @@ for g in gaussians:
 - [[goldsmith-1987-bvh]] —— Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒
 - [[gortler-1996-lumigraph]] —— Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影
 - [[heckbert-1986-texture-survey]] —— Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述
+- [[instant-ngp-2022]] —— Instant-NGP — 把 NeRF 训练从几小时压到几秒
 - [[jensen-1996-photon-mapping]] —— Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[karis-2014-taa]] —— Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿

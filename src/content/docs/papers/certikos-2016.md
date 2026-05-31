@@ -156,4 +156,5 @@ CertiKOS 的端到端定理大致是："如果 Coq 内核没 bug、CompCert 没 
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hyperkernel-2017]] —— Hyperkernel — 让 SMT 求解器一键验证操作系统内核
 - [[iris-2015]] —— Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木
+- [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
 
