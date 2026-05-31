@@ -176,12 +176,11 @@ Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是
 
 ## 关联
 
-- [[gray-1981-transaction]] —— 1981 年把"事务"升华成通用抽象
-- [[aries-1992]] —— ARIES 是 1978 恢复模型的工业级版本
-- [[bernstein-1981-cc]] —— 同年把并发控制做成分类综述
-- [[dewitt-gray-1992]] —— Gray 后期与 DeWitt 合作的并行数据库工作
+- [[gray-1981-transaction]] —— 1981 把"事务"升华成通用抽象
+- [[aries-1992]] —— 1978 恢复模型的工业级版本
+- [[bernstein-1981-cc]] —— 把并发控制做成分类综述
 - [[spanner]] —— Google 把 2PC 跑在全球时钟同步上
-- [[postgresql]] —— BEGIN/COMMIT/ROLLBACK 三动词的现代继承者
+- [[postgresql]] —— BEGIN/COMMIT/ROLLBACK 现代继承者
 
 ## 反向链接
 
