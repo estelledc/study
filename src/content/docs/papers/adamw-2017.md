@@ -169,5 +169,9 @@ param.mul_(1 - lr * weight_decay)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[adafactor-2018]] —— Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 

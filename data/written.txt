@@ -2,6 +2,8 @@
 3d-gaussian-splatting
 acl2-2000
 activation-patching
+adam-2014
+adamw-2017
 adapton
 aes
 agda-norell
@@ -71,6 +73,7 @@ brill-moore-2000
 brook-2004
 burgess-2020-turing-rt
 byzantine-generals-1982
+caesar-rexford-2005
 cakeml
 calculus-of-constructions
 call-by-need-1995
@@ -210,6 +213,7 @@ fast-paxos-2006
 fastertransformer-2021
 feautrier-polyhedral
 fermi-architecture-2010
+ffs-1984
 fidge-1988
 filip-2021
 flamingo-2022
@@ -337,6 +341,7 @@ lean-tactics
 leis-2015-optimizers
 lerner-seminal
 levoy-hanrahan-1996-light-field
+lfs-1991
 li-2018-redner
 lieberman-realtime-gc
 lindholm-2008-tesla
@@ -361,6 +366,7 @@ mach-1986
 macklin-2014-position-based-fluids
 mae
 magic3d-2023
+mahajan-2002-bgp-misconfig
 mamba
 mapreduce
 marching-cubes-1987
@@ -431,6 +437,7 @@ ot-1989
 owens-2007-gpgpu-survey
 pagerank-1998
 pair-programming
+panel
 park-2019-deepsdf
 parti-2022
 partial-evaluation-jones
@@ -898,6 +905,7 @@ invokeai
 ipfs
 istio
 jaeger
+janusgraph
 jax
 jc
 jenkins
@@ -946,6 +954,7 @@ libsignal
 lighthouse
 lightningcss
 lingui
+linkerd2
 listr2
 litellm-proxy
 litestar
@@ -1008,6 +1017,7 @@ nanobrowser
 nanostores
 nats
 ncdu
+nebula
 neo4j
 nerdctl
 nestjs

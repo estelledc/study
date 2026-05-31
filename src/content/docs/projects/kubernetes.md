@@ -155,6 +155,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
+- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
