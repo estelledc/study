@@ -113,7 +113,7 @@ S3 存 state，DynamoDB 做分布式锁（同一时刻只能一人 apply）。
 
 5. **provider 版本锁不住**：升级 AWS provider 后某些资源属性默认值变了，无操作 plan 显示一堆 diff。**修法**：`required_providers` 块里**钉死小版本号**，升级前读 changelog。
 
-## 历史
+## 历史小故事
 
 - **2014**：HashiCorp 创立第三年，Mitchell Hashimoto 发布 Terraform 0.1，开源协议 MPL 2.0
 - **2017**：Terraform 0.10 拆出 provider 独立仓库，生态开始爆发
@@ -124,6 +124,35 @@ S3 存 state，DynamoDB 做分布式锁（同一时刻只能一人 apply）。
 - **2024**：Terraform 1.10，原生 OCI registry 支持 + provider-defined functions
 
 这场分叉把 IaC 圈撕成两半——大企业大多观望，社区项目和创业公司转 OpenTofu。
+
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 多人团队管云资源——所有变更走 PR + plan review，杜绝"谁手滑改了线上"
+- 多云 / 多账号场景——一份 module 抽掉 provider 就能复用
+- 长期运行的稳定基础设施（VPC / IAM / RDS）——state 和真实状态稳定漂移小
+- 跨环境一致性（dev/staging/prod）——同一份代码走不同 tfvars
+
+**不适用**：
+
+- 临时 / 一次性资源——写 .tf 比开个 console 慢
+- 频繁变化的应用层资源（k8s pod、lambda 代码）——交给 Helm / serverless framework 更顺
+- 不能容忍偶发 drift 的强一致场景——Terraform 的 state ≠ 真相，需要监控补全
+
+## 学到什么
+
+1. **声明式 + state diff 是 IaC 的本质**——你写"想要的样子"，工具算"怎么变到那"
+2. **state 是 Terraform 的阿喀琉斯之踵**——丢了 state 等于失忆；锁不住 state 等于互踩
+3. **provider 隔离让"多云"成为可能**——上层 HCL 不变，下层换插件即可
+4. **开源协议是商业护城河**——HashiCorp 改 BSL 是教科书级商业决策案例
+
+## 延伸阅读
+
+- 入门：[Terraform 官方 Tutorial](https://developer.hashicorp.com/terraform/tutorials)（HashiCorp Learn 平台，2-3 天能跑通基本流）
+- 进阶：[Terraform: Up & Running](https://www.terraformupandrunning.com/)（Yevgeniy Brikman，Module + state + 团队协作三本最佳实践）
+- 源码：`internal/terraform/` 看 graph 构建和 plan diff 算法，是 IaC 心脏
+- 替代：[[opentofu]] —— 完全兼容的开源 fork
 
 ## 关联
 

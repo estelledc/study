@@ -95,7 +95,20 @@ LLaMA 2、Mistral、DeepSeek 等开源模型的训练 pipeline 几乎都是 fork
 4. **checkpoint 不能换 TP size**：TP=8 训出来的权重不能直接被 TP=4 加载，要专门写转换工具
 5. **scaling efficiency 的水分**：论文报的 76% 是 weak scaling（卡数翻倍同时模型也翻倍）。如果固定模型只加卡，数字会跌到 50% 以下——读论文时要看清楚是哪一种 scaling
 
-## 历史小故事（可跳过）
+6. **TP × PP 的微批数（micro-batch）选错引发气泡**：流水线层间有空闲气泡，micro-batch 太少气泡占比就大；太多又吃显存。1F1B / interleaved schedule 这些 trick 都是为了压气泡，背后是吞吐率与显存的权衡
+
+7. **混合精度切错维度梯度爆炸**：bf16 + Megatron 在 hidden 维度做 reduce 时数值范围足；但若选错 reduce 维度（比如混到 batch 维），会出现统计偏差。早期 v1 在 fp16 + 大 hidden 上就遇到过
+
+8. **反向传播的通信常被忽略**：列并行 forward 不通信，但 backward 计算输入梯度时要 all-reduce；这些"看不见的通信"是估算扩展性时最容易漏算的部分
+
+## 适用 vs 不适用场景（细分）
+
+- **小集群（<8 卡）**：用 DP / FSDP 更省心，TP 收益不明显
+- **跨节点训练**：优先 PP+DP，TP 跨节点几乎稳定亏损
+- **finetune 而非预训练**：Megatron 是预训练设计，finetune 用 HuggingFace + accelerate 更灵活
+- **MoE 模型**：Megatron 后续加了 Expert Parallel，但 Sparse 路由的负载不均衡问题仍是研究前沿
+
+## 历史小故事
 
 - **2019 年（v1）**：Shoeybi 团队发表论文，提出 TP 列+行串接方案，跑 8.3B GPT-2 验证 76% scaling efficiency
 - **2021 年（v2）**：加 Sequence Parallelism，把 LayerNorm 的盲区补了
@@ -112,12 +125,16 @@ LLaMA 2、Mistral、DeepSeek 等开源模型的训练 pipeline 几乎都是 fork
 2. **算法约束架构选型**：TP 要求维度被 world_size 整除，**逼着 2020 年之后所有大模型的 hidden 都选 2048 / 4096 / 8192 / 12288 这种"漂亮数"**
 3. **承认局限是论文寿命的一部分**：Megatron 主动说自己只适合单节点 TP，反而给后来的 ZeRO / FSDP / Pipeline 方案留了发展空间
 4. **代码 = 论文的另一半**：NVIDIA 把仓库维护得比论文还详细，5000+ 引用里很大一部分来自"我能直接跑通"
+5. **通信模式决定 scaling 上限**：TP forward+backward 各一次 all-reduce，让带宽占比可控；流水线让计算和通信能 overlap——通信账本算清楚才有可能 scale
+6. **2D-mesh / 3D-mesh 通用化**：Megatron 的 TP × PP × DP 三维网格，是后来 GSPMD、Pathways 等通用并行框架的前身——大家都在解同一个 mesh 切分问题
 
 ## 延伸阅读
 
 - 论文：[arxiv.org/abs/1909.08053](https://arxiv.org/abs/1909.08053)（25 页，核心章节是 Tensor Parallel 那部分，其他可跳）
 - 代码：[github.com/NVIDIA/Megatron-LM](https://github.com/NVIDIA/Megatron-LM)（`megatron/model/transformer.py` 是论文核心算法的可执行版本）
 - 后续论文：Megatron-Turing NLG 530B（2021），讲 3D 并行如何扩到 4480 卡
+- 后续工程：[Megatron-Core 文档](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/features/parallelisms.html)（NeMo 用户视角解释三维并行怎么配）
+- 视频：Stanford CS324 Lecture "Distributed Training" 把 TP/PP/DP/ZeRO 四种维度一口气讲完，是入门最快的概念图
 - [[deepspeed-zero]] —— 切优化器状态和梯度的另一条路，和 Megatron 互补
 
 ## 关联

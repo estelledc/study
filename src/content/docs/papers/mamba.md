@@ -102,6 +102,18 @@ Mamba-2.8B 在 Pile 数据集训练 300B token 后，**ppl 略优于 Pythia-2.8B
 
 Mamba 的成功是 **算法 + 工程同等重要** 的典型——光有 selectivity 没有 hardware-aware kernel，速度跑不起来；光有 kernel 没有 selectivity，建模能力不够。
 
+## 案例补充：混合架构（Jamba）的工程经验
+
+AI21 的 Jamba 把 Transformer 和 Mamba 按 1:7 比例混排：每 8 层里 1 层是 attention、7 层是 Mamba。结果是：
+
+- **长上下文 256k**：内存占用比纯 Transformer 低 5x
+- **ICL（in-context learning）保住了**：靠那 1/8 的 attention 层维持精确召回
+- **吞吐量翻倍**：大部分计算量在 Mamba 上，attention 只在关键节点
+
+这是 Mamba 在 2024-2025 年最现实的落地形式——纯 Mamba 替代 Transformer 失败了，但混合架构给两边都留了位置。Codestral Mamba（Mistral）和 Falcon-Mamba（TII）都走了类似路线。
+
+更深的启示：架构竞争往往不是"谁取代谁"，而是"谁补谁"。Mamba 的固定 state 提供 O(N) 推理，attention 提供精确召回；两者都是有价值的能力，混合是利益最大化的选择。这种"打平不是失败，而是各占生态位"的格局，在硬件领域（CPU vs GPU vs ASIC）已经反复出现。
+
 ## 学到什么
 
 1. **Transformer 不是终点，但替代它要同时做对算法、数学、工程三件事**——只做一件不够
