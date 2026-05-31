@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 632 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 635 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：632 个
+- **总数**：635 个
 - **已分类**：213
-- **未分类**：419（落入"其他 / 待分类"段）
+- **未分类**：422（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 419 |
+| [其他 / 待分类](#其他--待分类) | 422 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 419 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 422 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -704,8 +704,10 @@ sidebar:
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
+| `kubebuilder` | [Kubebuilder — 写 K8s Operator 的官方脚手架](/study/projects/kubebuilder/) |
 | `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) |
 | `kustomize` | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) |
+| `kuzu` | [Kùzu — 把图数据库做成 DuckDB](/study/projects/kuzu/) |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
@@ -785,6 +787,7 @@ sidebar:
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
 | `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
+| `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) |
@@ -928,7 +931,7 @@ sidebar:
 
 ---
 
-## 全部 632 个（字母序）
+## 全部 635 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1203,9 +1206,11 @@ sidebar:
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) | 其他 |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | 其他 |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
+| `kubebuilder` | [Kubebuilder — 写 K8s Operator 的官方脚手架](/study/projects/kubebuilder/) | 其他 |
 | `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) | 其他 |
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
 | `kustomize` | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) | 其他 |
+| `kuzu` | [Kùzu — 把图数据库做成 DuckDB](/study/projects/kuzu/) | 其他 |
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) | 其他 |
@@ -1334,6 +1339,7 @@ sidebar:
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) | 其他 |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | 其他 |
+| `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) | 其他 |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | 其他 |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) | 其他 |

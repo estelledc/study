@@ -177,7 +177,6 @@ export default {
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nivo]] —— nivo — React + d3 组件化图表
-- [[panel]] —— Panel — 把 notebook 一键变交互式 web app
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
 - [[shfmt]] —— shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上

@@ -164,6 +164,7 @@ DELETE /users/42
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[skip-locked-postgres-9.5]] —— SKIP LOCKED — 让 Postgres 当任务队列用
+- [[subramanian-2002-internet-hierarchy]] —— Subramanian 2002 — 用多个观察点把互联网切成 5 层
 - [[tao-2013]] —— TAO — Facebook 给十亿人好友列表造的专用图数据库
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[xtrace-2007]] —— X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架

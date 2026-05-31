@@ -167,6 +167,7 @@ ORDER BY score DESC LIMIT 10
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[janusgraph]] —— JanusGraph — 可插拔后端的分布式图数据库
+- [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nebula]] —— NebulaGraph — 国产分布式图数据库
