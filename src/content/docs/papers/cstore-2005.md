@@ -153,6 +153,7 @@ projection P2: (date, region, amount) 按 date 排序
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
+- [[lance]] —— Lance — AI 数据列存格式
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[pandas]] —— pandas — Python 表格数据事实标准
 - [[polars]] —— Polars — Rust 写的列存 DataFrame

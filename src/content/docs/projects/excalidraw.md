@@ -149,6 +149,7 @@ public record(delta: StoreDelta) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
+- [[canvas-datagrid]] —— canvas-datagrid — 整张表只用一块 canvas 画
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[drawio]] —— drawio (diagrams.net) — 离线版 Visio
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖

@@ -203,6 +203,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
+- [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库

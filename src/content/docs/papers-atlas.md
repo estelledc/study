@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 739 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 742 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：739 篇
+- **总数**：742 篇
 - **已分类**：143
-- **未分类**：596（落入"其他 / 待分类"段）
+- **未分类**：599（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 596 |
+| [其他 / 待分类](#其他--待分类) | 599 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 596 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 599 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -395,6 +395,7 @@ sidebar:
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) |
 | `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) |
 | `chapar-2016` | [Chapar — 第一个被机器证明的因果一致 KV 存储](/study/papers/chapar-2016/) |
+| `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) |
 | `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) |
 | `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |
 | `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) |
@@ -455,6 +456,7 @@ sidebar:
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
 | `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) |
 | `diffie-hellman-1976` | [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) |
+| `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) |
 | `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) |
 | `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) |
 | `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) |
@@ -485,6 +487,7 @@ sidebar:
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) |
 | `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
+| `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) |
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |
@@ -907,7 +910,7 @@ sidebar:
 
 ---
 
-## 全部 739 篇（字母序）
+## 全部 742 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1018,6 +1021,7 @@ sidebar:
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | 其他 |
 | `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) | 其他 |
 | `chapar-2016` | [Chapar — 第一个被机器证明的因果一致 KV 存储](/study/papers/chapar-2016/) | 其他 |
+| `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) | 其他 |
 | `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | GC / 内存管理 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
 | `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | 其他 |
@@ -1097,6 +1101,7 @@ sidebar:
 | `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) | 其他 |
 | `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
 | `diffie-hellman-1976` | [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) | 其他 |
+| `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) | 其他 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) | 其他 |
@@ -1138,6 +1143,7 @@ sidebar:
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) | 其他 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
+| `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) | 其他 |
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) | 其他 |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 其他 |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 其他 |

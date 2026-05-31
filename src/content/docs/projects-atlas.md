@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 690 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 693 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：690 个
+- **总数**：693 个
 - **已分类**：214
-- **未分类**：476（落入"其他 / 待分类"段）
+- **未分类**：479（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 476 |
+| [其他 / 待分类](#其他--待分类) | 479 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 476 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 479 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -570,6 +570,7 @@ sidebar:
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) |
+| `canvas-datagrid` | [canvas-datagrid — 整张表只用一块 canvas 画](/study/projects/canvas-datagrid/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) |
@@ -731,6 +732,7 @@ sidebar:
 | `kustomize` | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) |
 | `kuzu` | [Kùzu — 把图数据库做成 DuckDB](/study/projects/kuzu/) |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
+| `lance` | [Lance — AI 数据列存格式](/study/projects/lance/) |
 | `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
@@ -807,6 +809,7 @@ sidebar:
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) |
+| `opentelemetry-collector` | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) |
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
@@ -986,7 +989,7 @@ sidebar:
 
 ---
 
-## 全部 690 个（字母序）
+## 全部 693 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1069,6 +1072,7 @@ sidebar:
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) | 其他 |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) | 其他 |
+| `canvas-datagrid` | [canvas-datagrid — 整张表只用一块 canvas 画](/study/projects/canvas-datagrid/) | 其他 |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) | 其他 |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
@@ -1290,6 +1294,7 @@ sidebar:
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) | 其他 |
+| `lance` | [Lance — AI 数据列存格式](/study/projects/lance/) | 其他 |
 | `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) | 其他 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
 | `langfuse` | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
@@ -1412,6 +1417,7 @@ sidebar:
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
+| `opentelemetry-collector` | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) | 其他 |
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) | 其他 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
