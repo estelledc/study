@@ -153,6 +153,7 @@ DELETE /users/42
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[caesar-rexford-2005]] —— Caesar-Rexford 2005 — 你的包为什么绕了大半个地球
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
 - [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

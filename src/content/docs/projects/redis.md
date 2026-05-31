@@ -177,6 +177,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nats]] —— NATS — 极简云原生消息系统
+- [[nebula]] —— NebulaGraph — 国产分布式图数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[penpot]] —— Penpot — 开源自托管的 Figma 替代

@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 652 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 656 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：652 篇
+- **总数**：656 篇
 - **已分类**：143
-- **未分类**：509（落入"其他 / 待分类"段）
+- **未分类**：513（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 509 |
+| [其他 / 待分类](#其他--待分类) | 513 |
 
 ---
 
@@ -304,11 +304,12 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 509 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 513 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) |
+| `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |
@@ -362,6 +363,7 @@ sidebar:
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
+| `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |
@@ -469,6 +471,7 @@ sidebar:
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
 | `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) |
+| `ffs-1984` | [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) |
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) |
 | `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) |
 | `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) |
@@ -652,6 +655,7 @@ sidebar:
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |
+| `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) |
 | `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) |
 | `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
@@ -820,13 +824,14 @@ sidebar:
 
 ---
 
-## 全部 652 篇（字母序）
+## 全部 656 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
 | `3d-gaussian-splatting` | [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) | 计算机视觉 |
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) | 其他 |
 | `activation-patching` | [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) | AI 安全与可解释性 |
+| `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) | 其他 |
 | `adapton` | [Adapton — 增量计算](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 其他 |
@@ -896,6 +901,7 @@ sidebar:
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
+| `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | 其他 |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | 其他 |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | 其他 |
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | 其他 |
@@ -1035,6 +1041,7 @@ sidebar:
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) | 其他 |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
 | `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) | 其他 |
+| `ffs-1984` | [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) | 其他 |
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) | 其他 |
 | `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) | 其他 |
 | `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) | 其他 |
@@ -1256,6 +1263,7 @@ sidebar:
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | 其他 |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
+| `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) | 其他 |
 | `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) | 其他 |
 | `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) | 其他 |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |

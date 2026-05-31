@@ -149,23 +149,15 @@ metadata:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
-- [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
-- [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
 - [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[mills-ntp-1991]] —— NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
-- [[raft]] —— Raft — 易理解的共识算法
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

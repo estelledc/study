@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 629 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 630 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：629 个
+- **总数**：630 个
 - **已分类**：213
-- **未分类**：416（落入"其他 / 待分类"段）
+- **未分类**：417（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 416 |
+| [其他 / 待分类](#其他--待分类) | 417 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 416 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 417 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -753,6 +753,7 @@ sidebar:
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
+| `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) |
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) |
@@ -925,7 +926,7 @@ sidebar:
 
 ---
 
-## 全部 629 个（字母序）
+## 全部 630 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1284,6 +1285,7 @@ sidebar:
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
+| `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) | 其他 |
 | `nestjs` | [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) | Web 框架 |
