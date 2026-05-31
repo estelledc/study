@@ -142,6 +142,7 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[dpo]] —— DPO — Direct Preference Optimization
+- [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[llava]] —— LLaVA — 开源多模态对话模型
