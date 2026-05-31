@@ -142,5 +142,6 @@ accelerate launch train.py
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 

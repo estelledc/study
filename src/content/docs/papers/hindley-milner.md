@@ -234,6 +234,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性

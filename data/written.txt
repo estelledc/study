@@ -6,6 +6,7 @@ adapton
 aes
 agda-norell
 agentless
+akamai-2002
 algol-60
 alphago
 ampere-architecture-2020
@@ -86,6 +87,7 @@ crdt-sss-2011
 csp-hoare-1978
 cstore-2005
 cubical-type-theory-2018
+cuda-streams-concurrency-2018
 dafny-2010
 dalle-2
 dataflow-model-2015
@@ -380,6 +382,7 @@ volta-architecture-2017
 voyager
 vr-1988
 vr-revisited-2012
+vst-2014
 wadler-prettier
 wam-warren
 websocket-rfc-6455
@@ -432,6 +435,7 @@ better-auth
 bigbluebutton
 biome
 bitcoin-core
+botbuilder-js
 botpress
 bottom
 boxen
@@ -586,6 +590,7 @@ jq
 js-joda
 kafka
 keras
+kitty
 koa
 kong
 konva
@@ -613,6 +618,7 @@ litellm-proxy
 litestar
 liveblocks
 llama-cpp
+llama-index
 llamaindex
 lottie
 lsd

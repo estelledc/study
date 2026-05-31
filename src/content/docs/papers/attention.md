@@ -146,12 +146,14 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[hopper-architecture-2022]] —— NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
@@ -167,7 +169,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[resnet]] —— ResNet — 残差连接
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复

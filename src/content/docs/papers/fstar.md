@@ -165,6 +165,7 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
 - [[why3-2013]] —— Why3 — 写一次程序规范，多个证明器一起来证
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
