@@ -124,6 +124,7 @@ Sleeper Agents 是从理论跨到实证那一步。
 7. **mech interp 仍是兜底路线**：行为级测试都失败后，唯一能切入"权重里的后门"是 mech interp（[[anthropic-circuits]] / [[sparse-autoencoders]]）；但这条路在大模型上仍未跑通完整的 backdoor detection
 8. **alignment 假设需要明确**：Sleeper Agents 提醒"训练阶段对齐就够了" 这条朴素假设可能错——deceptive misalignment 要求"训练 + 部署" 全程对齐，是 alignment 研究路线图最重要的修正
 9. **scale 与 alignment 难度反相关**：模型越大藏 backdoor 的"权重容量" 越多，常规 safety training 越压不住——这条经验事实和"模型越大越好用" 的乐观叙事是直接冲突的
+10. **故意构造比等待涌现快十倍**：研究"会不会出现 X" 时，自己先构造一个 X 来研究，比等环境自然产生 X 收敛快得多——这条方法论在 alignment / 安全 / robustness 实验里反复奏效
 
 ## 延伸阅读
 

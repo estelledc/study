@@ -137,6 +137,7 @@ fd -e py | xargs rg "TODO"
 3. **专做一件事 + 组合**：`fd` 不去抢 `grep` / `xargs` / `rsync` 的活，专心做"找文件名"。和 [[ripgrep]] 组合就覆盖 90% 场景。Unix 哲学的现代演绎。
 4. **Rust + 多线程 = CLI 红利**：rayon 让"加并行"变成几行代码的事。同样的工作量在 C 时代要专门项目，所以 `fd` / [[ripgrep]] / bat / dust / hyperfine 这一批 Rust CLI 集体崛起。
 5. **接力旧工具的 muscle memory**：`fd` 故意不复用 `find` 的 flag 名字（不像 GNU coreutils 那种向后兼容包袱），直接定一套更短的新 flag——切换工具时让用户主动"重学"反而更省事，也避免半新半旧的烂泥。
+6. **gitignore 默认尊重是隐性产品力**：开发场景里 99% 的查询都不想看 `node_modules` / `target`，把"忽略" 内置成默认而不是 flag，等于把整套现代工程目录约定写进 CLI 的世界观。
 
 ## 延伸阅读
 
