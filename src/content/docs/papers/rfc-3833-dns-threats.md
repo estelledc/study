@@ -150,6 +150,7 @@ authoritative server
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[amplification-hell-2014]] —— Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击
+- [[codons-2004]] —— CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dot-doh-perf-2020]] —— DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
 - [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串

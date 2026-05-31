@@ -158,6 +158,5 @@ stateDiagram-v2
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[starlight]] —— Starlight — Astro 文档站点主题
-- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 

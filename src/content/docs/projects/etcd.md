@@ -139,6 +139,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[mongo]] —— MongoDB — 文档数据库代表
 - [[nats]] —— NATS — 极简云原生消息系统
+- [[nsq]] —— NSQ — Go 写的去中心化消息队列
 - [[raft]] —— Raft — 易理解的共识算法
 - [[redis]] —— Redis — 内存键值数据库
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码

@@ -182,6 +182,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[nebula]] —— NebulaGraph — 国产分布式图数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[nsq]] —— NSQ — Go 写的去中心化消息队列
 - [[penpot]] —— Penpot — 开源自托管的 Figma 替代
 - [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端

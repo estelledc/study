@@ -1,6 +1,6 @@
 ---
 title: Grokking — 训练 loss 早归零，几千步后才突然学会
-来源: Power et al., "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets", arXiv 2201.02177, 2022
+来源: 'Power et al., "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets", arXiv 2201.02177, 2022'
 日期: 2026-06-01
 分类: 机器学习
 难度: 中级
@@ -155,3 +155,6 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

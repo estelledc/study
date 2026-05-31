@@ -174,6 +174,7 @@ param.mul_(1 - lr * weight_decay)
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[grokking-2022]] —— Grokking — 训练 loss 早归零，几千步后才突然学会
 - [[lion-2023]] —— Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半
 - [[lottery-ticket-2019]] —— 彩票假设 — 大网里藏着一张能独立训出来的小网
 - [[mixup-2018]] —— mixup — 把两张图按比例叠成一张，标签也一起叠

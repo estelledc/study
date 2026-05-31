@@ -155,6 +155,7 @@ SVCB   # 2023, 服务绑定（HTTP/3 + ECH）
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[amplification-hell-2014]] —— Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
+- [[codons-2004]] —— CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dot-doh-perf-2020]] —— DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
