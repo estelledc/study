@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 566 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 569 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：566 篇
+- **总数**：569 篇
 - **已分类**：143
-- **未分类**：423（落入"其他 / 待分类"段）
+- **未分类**：426（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 423 |
+| [其他 / 待分类](#其他--待分类) | 426 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 423 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 426 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -348,6 +348,7 @@ sidebar:
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
+| `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) |
 | `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
@@ -599,6 +600,7 @@ sidebar:
 | `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) |
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) |
 | `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) |
+| `performer-2020` | [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) |
 | `persistent-memory-2014` | [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) |
 | `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |
@@ -634,6 +636,7 @@ sidebar:
 | `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) |
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
+| `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
@@ -734,7 +737,7 @@ sidebar:
 
 ---
 
-## 全部 566 篇（字母序）
+## 全部 569 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -796,6 +799,7 @@ sidebar:
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | 其他 |
+| `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) | 其他 |
 | `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) | 其他 |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
@@ -1118,6 +1122,7 @@ sidebar:
 | `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) | 其他 |
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) | 其他 |
 | `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) | 其他 |
+| `performer-2020` | [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) | 其他 |
 | `persistent-memory-2014` | [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) | 其他 |
 | `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) | 其他 |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | 其他 |
@@ -1170,6 +1175,7 @@ sidebar:
 | `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) | 其他 |
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) | 其他 |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | 其他 |
+| `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) | 其他 |
 | `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 其他 |
 | `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |

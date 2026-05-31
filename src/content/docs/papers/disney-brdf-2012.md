@@ -164,6 +164,7 @@ vec3 albedo = baseColor * (1.0 - metallic);      // 金属无漫反射
 - [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
+- [[saito-takahashi-1990-gbuffer]] —— Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文
 - [[sulsky-1994-mpm]] —— MPM — 让粒子背着自己的历史，借网格算一遍力
 - [[veach-1995-mis]] —— Veach MIS — 用一行加权公式让多种采样策略各取所长
 
