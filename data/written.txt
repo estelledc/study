@@ -307,6 +307,7 @@ product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
 prolog-colmerauer
+proverif-2001
 ps-li-2014
 push-pull-frp
 pypy-tracing-jit
@@ -346,6 +347,7 @@ selinger-1979
 sequel-1974
 sequential-consistency-1979
 server-sent-events
+sglang-2024
 shannon-1948
 sillito-questions
 silt-2011
@@ -427,6 +429,7 @@ vst-2014
 wadler-prettier
 wam-warren
 wandb
+ward-1992
 websocket-rfc-6455
 why3-2013
 word2vec
@@ -462,6 +465,7 @@ argent-x
 argocd
 arktype
 arweave
+asdf
 aspnetcore
 asterisk
 astro
@@ -510,6 +514,7 @@ chroma
 clack
 claude-agent-sdk
 claude-code
+clearml
 clerk
 clickhouse
 cockroachdb
@@ -643,6 +648,7 @@ jotai
 jq
 js-joda
 kafka
+kamailio
 keras
 kitty
 koa

@@ -153,3 +153,6 @@ vec3 albedo = baseColor * (1.0 - metallic);      // 金属无漫反射
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
