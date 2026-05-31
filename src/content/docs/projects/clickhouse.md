@@ -148,12 +148,12 @@ ORDER BY date;
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
@@ -163,7 +163,9 @@ ORDER BY date;
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[redis]] —— Redis — 内存键值数据库
+- [[risingwave]] —— RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[tidb]] —— TiDB — HTAP 分布式数据库

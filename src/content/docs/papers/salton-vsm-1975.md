@@ -154,6 +154,7 @@ query_vector = model.encode(query)      # 查询 → 384 维向量
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
+- [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[okapi-bm25-1994]] —— Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式
 - [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节

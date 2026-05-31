@@ -179,6 +179,7 @@ gpt-3
 gptq-2023
 gpu-cache-coherence-2013
 gpu-microbenchmarking-2010
+gpudirect-rdma-2014
 graalvm-truffle
 gradual-typing
 graf-saidi-1997
@@ -261,6 +262,7 @@ llvm
 lmdb-2011
 local-type-inference
 logoot-2010
+loop-1987-subdivision
 lsm-tree-1996
 mae
 mamba
@@ -318,6 +320,7 @@ paxos-simple-2001
 pbft-1999
 peg-packrat-ford
 percolator-2010
+personalized-pagerank-2003
 peyton-jones-stg
 phong-1975
 pipedream-2019
@@ -509,6 +512,7 @@ arktype
 arweave
 asdf
 aspnetcore
+ast-grep
 asterisk
 astro
 asynq
@@ -613,6 +617,7 @@ dvc
 earthly
 echarts
 echo
+edgedb
 effect
 ejabberd
 elasticsearch
@@ -951,6 +956,7 @@ timescaledb
 tmux
 torchtune
 traefik
+triton-inference-server
 trl
 trpc
 turbopack

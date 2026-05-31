@@ -161,3 +161,6 @@ V_smooth = igl.taubin_smoothing(V, F, lam=0.5, mu=-0.53, iterations=10)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

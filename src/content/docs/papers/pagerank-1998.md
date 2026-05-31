@@ -155,6 +155,7 @@ for _ in range(50):
 
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
 - [[hits-1999]] —— HITS — 给网页同时打两个分：权威页 + 索引页
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
