@@ -184,6 +184,7 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
+- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
 - [[smalltalk-80]] —— Smalltalk-80
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

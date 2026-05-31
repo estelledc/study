@@ -173,6 +173,7 @@ deepseek-coder-2024
 deepseek-r1
 deepspeed-zero
 deering-1988-triangle-processor
+denali-2002
 desbrun-1999-implicit-fairing
 dewitt-gray-1992
 differential-datalog
@@ -182,6 +183,7 @@ dijkstra-goto
 dijkstra-shortest-path
 din-2018
 dino
+disco-1997
 disel-2018
 diskann-2019
 disney-brdf-2012
@@ -429,6 +431,7 @@ mixture-of-experts
 mixup-2018
 mlflow
 mlir
+mockapetris-1988-dns
 moesi-cache-coherence-1986
 mogul-1995-persistent-http
 monaghan-1992-sph
@@ -442,6 +445,7 @@ muzero
 mycroft-strictness
 naiad-2013
 narwhal-tusk-2022
+nbeats-2020
 nelson-oppen-1979
 nerf-2020
 netflix-bellkor-2009
@@ -531,6 +535,7 @@ rest-fielding-2000
 retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
+rfc-3833-dns-threats
 ring-allreduce-2017
 risc-i-1981
 rlhf-christiano
@@ -621,6 +626,7 @@ system-f-reynolds-1974
 system-r-1976
 t0-2021
 t5
+tabpfn-2023
 tachyon-2014
 tamarin-2012
 tao-2013
@@ -638,6 +644,7 @@ theorems-for-free
 thrust-2010
 tidb-2020
 tigerbeetle
+timelinejs
 tla-yu-tlc-1999
 tls-1.3
 tofte-talpin-regions
@@ -944,6 +951,7 @@ hardhat
 haystack
 helidon
 helm
+hnswlib
 hocuspocus
 holoviews
 homebrew
@@ -976,6 +984,7 @@ k3s
 k9s
 kafka
 kamailio
+kaniko
 kedro
 kepler-gl
 keras
@@ -1078,6 +1087,7 @@ mysql-server
 nanobrowser
 nanostores
 nats
+nats-server
 ncdu
 nebula
 neo4j
@@ -1294,6 +1304,7 @@ tidb
 tide
 tig
 tikv
+timelinejs
 timescaledb
 tmux
 torchtune
