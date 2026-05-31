@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 475 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 478 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：475 个
+- **总数**：478 个
 - **已分类**：207
-- **未分类**：268（落入"其他 / 待分类"段）
+- **未分类**：271（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 268 |
+| [其他 / 待分类](#其他--待分类) | 271 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 268 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 271 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -555,6 +555,7 @@ sidebar:
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
+| `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
@@ -616,6 +617,7 @@ sidebar:
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
+| `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
@@ -700,6 +702,7 @@ sidebar:
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
+| `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
@@ -771,7 +774,7 @@ sidebar:
 
 ---
 
-## 全部 475 个（字母序）
+## 全部 478 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -858,6 +861,7 @@ sidebar:
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | 其他 |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | 其他 |
+| `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | 其他 |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | 其他 |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
@@ -946,6 +950,7 @@ sidebar:
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | 其他 |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | 其他 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
+| `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) | 其他 |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
@@ -1112,6 +1117,7 @@ sidebar:
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
 | `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) | 其他 |
+| `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) | 其他 |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) | 其他 |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |

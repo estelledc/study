@@ -143,6 +143,7 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
+- [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd

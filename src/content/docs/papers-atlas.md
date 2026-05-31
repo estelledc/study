@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 398 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 401 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：398 篇
+- **总数**：401 篇
 - **已分类**：143
-- **未分类**：255（落入"其他 / 待分类"段）
+- **未分类**：258（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 255 |
+| [其他 / 待分类](#其他--待分类) | 258 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 255 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 258 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -328,6 +328,7 @@ sidebar:
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
+| `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
@@ -426,6 +427,7 @@ sidebar:
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
+| `iris-2015` | [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) |
 | `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) |
 | `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) |
 | `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) |
@@ -487,6 +489,7 @@ sidebar:
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) |
 | `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |
+| `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) |
@@ -566,7 +569,7 @@ sidebar:
 
 ---
 
-## 全部 398 篇（字母序）
+## 全部 401 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -608,6 +611,7 @@ sidebar:
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
+| `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | 其他 |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
@@ -755,6 +759,7 @@ sidebar:
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 其他 |
 | `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
+| `iris-2015` | [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) | 其他 |
 | `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) | 其他 |
 | `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) | 其他 |
 | `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) | 其他 |
@@ -838,6 +843,7 @@ sidebar:
 | `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) | 其他 |
 | `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) | 其他 |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | 其他 |
+| `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) | 其他 |
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) | 其他 |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | 其他 |
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) | 其他 |

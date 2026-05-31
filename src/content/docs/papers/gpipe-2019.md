@@ -152,5 +152,7 @@ GPipe 论文最响的一击：把 AmoebaNet 从 84M 参数推到 557M，跑 Imag
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
+- [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 

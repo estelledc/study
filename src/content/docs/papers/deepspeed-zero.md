@@ -143,5 +143,6 @@ accelerate launch train.py
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
+- [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 

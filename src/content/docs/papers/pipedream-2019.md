@@ -160,3 +160,4 @@ PipeDream 论文里其实是**异步 SGD** + weight stashing：相邻 micro-batc
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 （暂无反向链接）
+
