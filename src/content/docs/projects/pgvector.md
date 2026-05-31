@@ -155,6 +155,7 @@ LIMIT 3;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[milvus]] —— Milvus — 开源向量数据库

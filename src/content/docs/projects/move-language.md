@@ -161,6 +161,7 @@ spec increment {
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
 - [[linear-types]] —— 线性类型（Linear Types）
+- [[narwhal-tusk-2022]] —— Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1
 - [[tendermint-2016]] —— Tendermint — 把拜占庭共识塞进开放区块链的工程模板

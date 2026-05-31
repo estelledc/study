@@ -148,5 +148,6 @@ abbr -a gco git checkout
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

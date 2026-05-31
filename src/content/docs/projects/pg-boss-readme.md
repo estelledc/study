@@ -151,5 +151,11 @@ await boss.send('webhook', payload, {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
+- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
+- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
+- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
+- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[temporal]] —— Temporal — 持久化工作流引擎
 

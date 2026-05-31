@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 441 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 443 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：441 个
+- **总数**：443 个
 - **已分类**：207
-- **未分类**：234（落入"其他 / 待分类"段）
+- **未分类**：236（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 234 |
+| [其他 / 待分类](#其他--待分类) | 236 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 234 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 236 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -505,6 +505,7 @@ sidebar:
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
+| `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
@@ -641,6 +642,7 @@ sidebar:
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
+| `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
@@ -737,7 +739,7 @@ sidebar:
 
 ---
 
-## 全部 441 个（字母序）
+## 全部 443 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -748,6 +750,7 @@ sidebar:
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
 | `anime` | [anime.js — 一行 JS 让网页元素按时间线动起来](/study/projects/anime/) | 动画 |
+| `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) | 其他 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
@@ -992,6 +995,7 @@ sidebar:
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
+| `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
 | `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |

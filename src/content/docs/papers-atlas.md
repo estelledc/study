@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 374 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 378 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：374 篇
+- **总数**：378 篇
 - **已分类**：143
-- **未分类**：231（落入"其他 / 待分类"段）
+- **未分类**：235（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 231 |
+| [其他 / 待分类](#其他--待分类) | 235 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 231 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 235 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -324,6 +324,7 @@ sidebar:
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
+| `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
@@ -347,6 +348,7 @@ sidebar:
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
+| `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |
@@ -453,6 +455,7 @@ sidebar:
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
+| `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |
@@ -484,6 +487,7 @@ sidebar:
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
 | `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) |
+| `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) |
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
@@ -542,7 +546,7 @@ sidebar:
 
 ---
 
-## 全部 374 篇（字母序）
+## 全部 378 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -578,6 +582,7 @@ sidebar:
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 其他 |
 | `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 其他 |
+| `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | 其他 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
@@ -612,6 +617,7 @@ sidebar:
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 其他 |
 | `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
+| `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) | 其他 |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 其他 |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 其他 |
 | `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
@@ -776,6 +782,7 @@ sidebar:
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
 | `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) | 其他 |
+| `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) | 其他 |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | 其他 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 其他 |
@@ -827,6 +834,7 @@ sidebar:
 | `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
 | `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) | 其他 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB — 把所有写都变成顺序写](/study/papers/rocksdb-lsm/) | 数据库 |
+| `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) | 其他 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) | 其他 |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | 其他 |
