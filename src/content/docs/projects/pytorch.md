@@ -160,6 +160,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[captum]] —— Captum — 给 PyTorch 模型装上 X 光机
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
+- [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI
 - [[coqui-tts]] —— Coqui TTS — 多语种 TTS 工具包
 - [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库

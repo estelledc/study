@@ -158,5 +158,7 @@ V_hot 的 p_v 大 → 减一个大数 → 抵消"被反复当负样本"的副作
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
+- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
+- [[word2vec]] —— Word2Vec — 词向量奠基
 

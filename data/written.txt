@@ -217,6 +217,7 @@ graphrag
 gray-1978-notes
 gray-1981-transaction
 great-swe
+gru-2014
 gshard-2020
 hacl-star-2017
 halide
@@ -472,6 +473,7 @@ steensgaard-pointer
 stm-shavit-touitou
 stonebraker-2010-sqlnosql
 strongtalk
+sulsky-1994-mpm
 swe-agent
 swe-bench
 sycl-cpp-2020
@@ -543,6 +545,7 @@ why3-2013
 word2vec
 xla-compiler
 xtrace-2007
+youtube-two-tower-2019
 z3-2008
 zab-2011
 zero-2020
@@ -624,6 +627,7 @@ chainlink-ccip
 chalk
 changesets
 chart-js
+chartist
 chatwoot
 chi
 chroma
@@ -803,6 +807,7 @@ lazydocker
 lazygit
 ledger-app-sdk
 lerna
+leveldb
 lexical
 lf
 librechat
@@ -1001,6 +1006,7 @@ sidekiq
 signal-android
 signal-ios
 signal-server
+silero-vad
 simple-peer
 sinatra
 slim-framework

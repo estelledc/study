@@ -160,6 +160,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
+- [[ms-marco-2016]] —— MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
 - [[rocketqa-2021]] —— RocketQA — 把稠密检索的训练拧到工业级
 - [[splade-2021]] —— SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
 

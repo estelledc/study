@@ -154,6 +154,7 @@ cache_v: [layer, max_seq_len, n_head, head_dim]
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
 - [[lstm-1997]] —— LSTM — 用门控让神经网络记得住上一段话
+- [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
 - [[tensorrt-llm-2023]] —— TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

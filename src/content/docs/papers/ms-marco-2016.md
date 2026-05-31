@@ -1,6 +1,6 @@
 ---
 title: MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
-来源: Bajaj 等, "MS MARCO: A Human Generated MAchine Reading COmprehension Dataset", arXiv 1611.09268 / NeurIPS Workshop 2016
+来源: 'Bajaj 等, "MS MARCO: A Human Generated MAchine Reading COmprehension Dataset", arXiv 1611.09268 / NeurIPS Workshop 2016'
 日期: 2026-05-31
 分类: 信息检索
 难度: 入门
@@ -159,3 +159,6 @@ DPR（Karpukhin 2020）的训练循环简化到极致：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[splade-2021]] —— SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
+
