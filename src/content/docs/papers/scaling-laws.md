@@ -104,6 +104,10 @@ Anthropic 公开访谈承认：Claude 1/2/3 每一代的参数量都是按 scali
 
 scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss** 这个范式仍是行业基础。
 
+近期发展：2025 年的"reasoning scaling laws"（OpenAI o1 / DeepSeek R1）把"测试时算力"也纳入变量，证明在固定模型上花更多推理 token 也能提升能力，从而打开了第四维度。
+
+这是 scaling 范式的第三次大修——前两次分别是 Chinchilla 修 D（2022）、Llama-3 修推理成本（2024）。每次大修都伴随旗舰模型训练配方调整。
+
 每一代主流模型（GPT 系列、Claude 系列、Llama 系列）的发布前，团队内部都会先画一张 scaling 曲线，看看"投入这么多资源，期望落在哪条曲线上"。这是 LLM 行业最低成本、最高 ROI 的决策工具。
 
 ## 学到什么
@@ -112,6 +116,8 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 2. **先建模再投资**——LLM 工业化的关键是把"实验科学"变成"工程项目"，scaling laws 是这一步的支点。一旦你能预测，决策从赌博变成算账。
 3. **每一代论文都会被下一代修正**——Kaplan → Chinchilla → 现在的"推理优先"，都是同一套思路在迭代。不要把任何一篇当真理；要看的是"它解决了什么问题、留下了什么坑"。
 4. **理论指导实践，但实践会更新理论**——Llama-3 的训练配方已经超出所有 scaling laws 论文的推荐范围，因为现实里"训练成本 vs 推理成本"的权衡 paper 没考虑。工程师永远在论文之前发现新问题。
+5. **外推有边界**：所有 scaling laws 都是在某个 N、D 区间拟合得到；外推到 10x 区间只是"有根据的猜测"
+6. **scaling laws 是商业谈判工具**：投资人能拿它对账，反过来稳住整个行业的资本流入
 
 ## 延伸阅读
 
@@ -124,6 +130,8 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 - [[gpt-3]] —— OpenAI 用 scaling laws 决定训这个 175B 怪物，是 scaling 第一次实战验证
 - [[chinchilla]] —— 修正 Kaplan 关于 D 的低估，建立 compute-optimal 新共识
 - [[transformer]] —— Kaplan 实验的对象就是 Transformer 自回归语言模型
+- [[megatron-lm]] —— 让 N、D 真正能 scale 的工程基础
+- [[deepspeed-zero]] —— 同上，工程层面解锁 scaling 上限
 
 ## 反向链接
 
