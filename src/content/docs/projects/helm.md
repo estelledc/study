@@ -165,7 +165,7 @@ helm rollback my-nginx 1
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[kustomize]] —— Kustomize — 不写模板也能给 K8s 配置分环境
+- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
 - [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI

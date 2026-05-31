@@ -156,4 +156,5 @@ Tendermint / Cosmos / 早期以太坊 PoS：
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 

@@ -166,5 +166,6 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[turing-1936]] —— Turing 1936 可计算性
 

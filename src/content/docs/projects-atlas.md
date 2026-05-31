@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 618 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 620 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：618 个
+- **总数**：620 个
 - **已分类**：213
-- **未分类**：405（落入"其他 / 待分类"段）
+- **未分类**：407（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 405 |
+| [其他 / 待分类](#其他--待分类) | 407 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 405 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 407 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -566,6 +566,7 @@ sidebar:
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
+| `cesium` | [CesiumJS — 浏览器里的三维地球与时间动画](/study/projects/cesium/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
 | `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) |
@@ -696,6 +697,7 @@ sidebar:
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
 | `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) |
+| `kustomize` | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
@@ -914,7 +916,7 @@ sidebar:
 
 ---
 
-## 全部 618 个（字母序）
+## 全部 620 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -995,6 +997,7 @@ sidebar:
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | 其他 |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) | 其他 |
+| `cesium` | [CesiumJS — 浏览器里的三维地球与时间动画](/study/projects/cesium/) | 其他 |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) | 其他 |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
 | `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
@@ -1182,6 +1185,7 @@ sidebar:
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
 | `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) | 其他 |
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
+| `kustomize` | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) | 其他 |
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) | 其他 |

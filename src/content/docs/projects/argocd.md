@@ -168,7 +168,7 @@ root-app.yaml  # source 指向 infra-apps/
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[kustomize]] —— Kustomize — 不写模板也能给 K8s 配置分环境
+- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[temporal]] —— Temporal — 持久化工作流引擎
 - [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI

@@ -164,13 +164,9 @@ gRPC 选 HTTP/2 不是历史包袱而是设计选择：
 - [[attention]] —— Attention Is All You Need
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[bert]] —— BERT — 双向 Transformer 预训练
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
-- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
@@ -179,13 +175,11 @@ gRPC 选 HTTP/2 不是历史包袱而是设计选择：
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
-- [[raft]] —— Raft — 易理解的共识算法
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[server-sent-events]] —— Server-Sent Events — 服务器单向推送的标准协议
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON

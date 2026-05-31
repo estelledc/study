@@ -158,6 +158,7 @@ for g in gaussians:
 - [[deering-1988-triangle-processor]] —— Deering 1988 Triangle Processor — 现代 GPU 的祖先架构
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dreamfusion-2022]] —— DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
 - [[goldsmith-1987-bvh]] —— Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒

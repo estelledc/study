@@ -218,6 +218,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[tamarin-2012]] —— Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全
+- [[the-os-1968]] —— THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS
 - [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[vamp-verisoft-2006]] —— VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对

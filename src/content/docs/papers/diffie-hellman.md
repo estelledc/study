@@ -152,6 +152,7 @@ openssl pkey -in alice.pem -pubout -out alice.pub
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[rsa]] —— RSA 公钥密码
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 - [[tamarin-2012]] —— Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全

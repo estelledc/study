@@ -151,6 +151,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端

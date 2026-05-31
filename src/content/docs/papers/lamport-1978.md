@@ -199,6 +199,7 @@ class LogEmitter:
 - [[pivot-tracing-2015]] —— Pivot Tracing — 让运维事后想测什么就测什么
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 - [[raft]] —— Raft — 易理解的共识算法
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[sequential-consistency-1979]] —— Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 - [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
