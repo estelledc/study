@@ -1,0 +1,151 @@
+---
+title: Instant-NGP — 把 NeRF 训练从几小时压到几秒
+来源: "Müller, Evans, Schied, Keller, \"Instant Neural Graphics Primitives with a Multiresolution Hash Encoding\", SIGGRAPH 2022"
+日期: 2026-05-31
+分类: 三维视觉
+难度: 中级
+---
+
+## 是什么
+
+Instant-NGP 是 NVIDIA 2022 年的工程奇迹——**把训一个 NeRF 从 3-5 小时压到 5 秒**。日常类比：原版 NeRF 像让一个学生背一整本字典（用一个超大 MLP 把整个 3D 场景塞进权重里），Instant-NGP 改成"小卡片盒"——把空间切成 16 层从粗到细的网格，每层挂一个哈希表（hash table）存 2 维特征，最后只用一个超小 MLP 把这些特征解读成颜色和密度。
+
+一句话总结：**多分辨率哈希编码（multi-resolution hash encoding）+ 极小 MLP（2-3 层、64 维）+ 全融合 CUDA 核（tiny-cuda-nn）**。
+
+效果对比：
+
+- NeRF 原版：3-5 小时 / 场景
+- Instant-NGP：**5 秒看出形状，5 分钟达到甚至超过原版质量**
+
+## 为什么重要
+
+NeRF（[[nerf-2020]]）2020 年震撼业界——一个 MLP 居然能"背下"整个三维场景。但训练慢到工业界用不了。Instant-NGP 把这个门槛踏平：
+
+- 让神经渲染从研究 demo **走进产品**：NVIDIA Omniverse、Luma AI、无人机三维重建直接用它
+- 训练快到能**实时迭代**：拍完照片几分钟看结果，而不是隔夜跑
+- 同一套编码换数据就能跑别的任务：千兆像素图像、SDF（带符号距离场）、神经体渲染都通用
+- 后续工作（Plenoxels、3D Gaussian Splatting、NeRFStudio）几乎都参考它的工程实现
+
+不夸张：**没有 Instant-NGP，神经渲染至今还停在 PhD 论文里**。也是 3D 视觉工程化的关键里程碑。
+
+## 核心要点
+
+整套方法可以拆成 **三块**。
+
+### 1. 多分辨率哈希网格
+
+把 3D 空间切成 **L 层**（论文默认 L=16）从粗到细的网格：
+
+- 第 0 层：粗网格，比如 16 个体素一边
+- 第 L-1 层：细网格，比如 512-2048 个体素一边
+- 每层各有一个**哈希表**，大小 T（默认 2^14 到 2^24），表里每槽存 2 维特征向量
+
+查一个 3D 点 `(x, y, z)` 的特征流程：
+
+1. 在每一层定位它落在哪个体素 → 算 8 个角点的整数坐标
+2. 用一个**空间哈希函数**把整数坐标映射到表里位置
+3. 取出 8 个角的特征 → 三线性插值（trilinear interp）→ 这一层的 2 维特征
+4. 16 层拼起来 → 32 维特征向量送进 MLP
+
+### 2. 故意让哈希冲突，让 MLP 自己消歧
+
+哈希表小于真实体素数（粗层不冲突，细层一定冲突）。**这看起来要命，实际是关键设计**：
+
+- 真正"重要"的位置（比如物体表面）梯度大，会反复更新对应的哈希槽
+- 不重要的空白区域梯度小，被冲突的"重要点"覆盖也无所谓
+- 末端的小 MLP 在 32 维特征上学会"哪些组合代表真实表面、哪些是噪声"
+
+这是把数据结构和机器学习"互相成全"的典型设计——结构提供索引，梯度提供消歧。
+
+### 3. tiny-cuda-nn：全融合 CUDA 核
+
+MLP 只有 2-3 层、64 维宽。这种**超小 MLP** 在 PyTorch / TensorFlow 这类框架里反而慢，因为每层之间要进出显存。tiny-cuda-nn 把整个 MLP **融合成一个 CUDA kernel**，权重全程留在寄存器里，绕开显存带宽瓶颈。
+
+三块合起来：哈希网格记"在哪"，小 MLP 记"是什么"，tiny-cuda-nn 让前两者跑出 GPU 的极限。
+
+## 实践案例
+
+### 案例 1：训一个真实场景到底有多快
+
+论文给的对比（同场景、同一张 RTX 3090）：
+
+| 方法 | 训练时间 | 收敛后 PSNR |
+|------|---------|------------|
+| NeRF 原版 | 约 5 小时 | 31.0 |
+| mip-NeRF | 约 7 小时 | 33.1 |
+| **Instant-NGP** | **5 秒可见 / 5 分钟收敛** | **33.2** |
+
+5 秒能看出形状，5 分钟达到甚至超过原版几小时的质量。
+
+### 案例 2：换数据就能跑别的任务
+
+一份代码不改架构，换输入：
+
+- **NeRF**：输入 (x, y, z, 视角)，输出颜色 + 密度
+- **千兆像素图像**：输入 (x, y)，输出 RGB——拟合一张 100 亿像素的图
+- **SDF**：输入 (x, y, z)，输出到表面的距离——3D 形状重建
+- **神经体渲染**：输入 (x, y, z, t)，输出体积颜色——动态烟雾/云
+
+哈希编码 + 小 MLP 这一套对所有这些任务都好使。
+
+### 案例 3：为什么 PyTorch 复刻不出原版速度
+
+很多人抄了哈希编码但用 PyTorch 写 MLP，发现还是慢 5-10 倍。原因就是 **tiny-cuda-nn 的全融合**：
+
+- PyTorch 每层 `linear + activation` 是两个 kernel，中间要写回显存
+- 64 维宽的 MLP，一次前向 < 1 微秒，**显存读写时间反而是瓶颈**
+- tiny-cuda-nn 把整个 MLP 编译成一个 kernel，权重在寄存器，输入直接流过
+
+## 踩过的坑
+
+1. **哈希表太小 → 细节糊**：T=2^14 对小场景够，大场景需要 2^22 以上，否则细节糊成马赛克
+2. **空白区域出现"漂浮物"（floaters）**：哈希冲突让一些空白格学到错误密度。论文用"密度网格剪枝"+"提前停止采样"缓解
+3. **tiny-cuda-nn 只支持 NVIDIA**：AMD / Apple Silicon 用户基本无解，只能换纯 PyTorch 实现并接受变慢
+4. **学习率不能照抄 NeRF**：哈希编码的梯度分布完全不同，要用 Adam + 较大学习率（1e-2）+ weight decay = 0
+5. **多分辨率层数 L 不要随意调**：默认 16 是细心调过的，砍到 8 会丢细节，加到 32 训练更慢但质量不见涨
+
+## 适用 vs 不适用场景
+
+**适用**：
+
+- NeRF 加速训练 / 推理（最主流用法）
+- 单场景过拟合任务（gigapixel / SDF / 神经体）
+- 有 NVIDIA GPU、追求秒级反馈的工程团队
+
+**不适用**：
+
+- 跨场景泛化（哈希表是单场景过拟合，换场景要重训）
+- 街区级超大场景（哈希冲突会爆炸，需要分块，参考 block-NeRF 思路）
+- AMD / Apple Silicon 平台（tiny-cuda-nn 不支持）
+- 视角外推质量极致要求的场景（原版 NeRF 在难视角上略好）
+
+## 历史小故事（可跳过）
+
+- **2020**：NeRF 论文出来，效果惊艳但训练 hours/scene，业界看完说"等等吧"
+- **2021**：Plenoxels（无 MLP，纯体素）、KiloNeRF（拆 1000 个小 MLP）等方案陆续提速到分钟级
+- **2022 年 1 月**：Müller 等人放出 Instant-NGP，**5 秒**直接破圈，Twitter 疯传
+- **2022 SIGGRAPH**：拿下最佳论文奖
+- **2023-2024**：3D Gaussian Splatting（[[3d-gaussian-splatting]]）登场，但 Instant-NGP 仍是 NeRF 类方法的工业基线
+
+## 学到什么
+
+1. **数据结构 + 小模型 > 单一大模型**：把"记忆"外包给可索引的结构（哈希表），让小 MLP 只做"解读"
+2. **故意制造冲突 + 让梯度自己解决**——这是机器学习思维取代纯算法思维的典型案例
+3. **算法和硬件绑死**：tiny-cuda-nn 的全融合是论文"快"的另一半，论文不可分割
+4. **同一编码通吃多任务**——好的表示（representation）跨问题迁移，比单点优化更值钱
+5. **从 demo 到产品，常缺的不是"更好的算法"，而是"工程极限的实现"**
+
+## 延伸阅读
+
+- 项目主页 + 代码：[NVlabs/instant-ngp](https://github.com/NVlabs/instant-ngp)（C++ + CUDA，含交互式 GUI）
+- 论文 PDF：[Instant Neural Graphics Primitives](https://nvlabs.github.io/instant-ngp/assets/mueller2022instant.pdf)
+- tiny-cuda-nn 仓库：[NVlabs/tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn)（独立的全融合 MLP 库）
+- NeRFStudio：[nerfstudio-project/nerfstudio](https://github.com/nerfstudio-project/nerfstudio)（把 Instant-NGP 等多个 NeRF 变体打包的研究框架）
+
+## 关联
+
+- [[nerf-2020]] —— Instant-NGP 是给 NeRF 提速的工程方案，原理仍是体渲染
+- [[3d-gaussian-splatting]] —— 同样追求实时神经渲染，但放弃了 MLP，用显式高斯
+- [[ampere-architecture-2020]] —— 全融合 CUDA 核充分利用 Ampere 的寄存器和共享内存
+- [[attention]] —— 哈希编码本质是"多分辨率位置编码"，与 Transformer 的位置编码哲学相通
+- [[pytorch]] —— 主流复刻基于 PyTorch，但全融合内核仍依赖 tiny-cuda-nn
