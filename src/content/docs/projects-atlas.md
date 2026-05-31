@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 592 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 595 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：592 个
+- **总数**：595 个
 - **已分类**：212
-- **未分类**：380（落入"其他 / 待分类"段）
+- **未分类**：383（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 380 |
+| [其他 / 待分类](#其他--待分类) | 383 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 380 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 383 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -527,6 +527,7 @@ sidebar:
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) |
+| `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
@@ -707,6 +708,7 @@ sidebar:
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) |
+| `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
@@ -828,6 +830,7 @@ sidebar:
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
+| `starrocks` | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) |
 | `starship` | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) |
 | `stern` | [stern — 多 pod 多 container 日志聚合 tail](/study/projects/stern/) |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
@@ -888,7 +891,7 @@ sidebar:
 
 ---
 
-## 全部 592 个（字母序）
+## 全部 595 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -918,6 +921,7 @@ sidebar:
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) | 其他 |
+| `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) | 其他 |
@@ -1185,6 +1189,7 @@ sidebar:
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 其他 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
+| `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) | 其他 |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) | 其他 |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | 其他 |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | 其他 |
@@ -1377,6 +1382,7 @@ sidebar:
 | `stagehand` | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | 其他 |
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |
+| `starrocks` | [StarRocks — MPP 列存数据库](/study/projects/starrocks/) | 其他 |
 | `starship` | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) | 其他 |
 | `steel-browser` | [Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务](/study/projects/steel-browser/) | AI 浏览器自动化 |
 | `stern` | [stern — 多 pod 多 container 日志聚合 tail](/study/projects/stern/) | 其他 |

@@ -164,6 +164,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[coqui-tts]] —— Coqui TTS — 多语种 TTS 工具包
 - [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
+- [[dlrm-2019]] —— DLRM — Meta 把工业推荐模型拆成 4 个标准积木
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[faster-whisper]] —— faster-whisper — Whisper 的 4× 加速重写版

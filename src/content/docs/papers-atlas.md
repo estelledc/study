@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 584 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 587 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：584 篇
+- **总数**：587 篇
 - **已分类**：143
-- **未分类**：441（落入"其他 / 待分类"段）
+- **未分类**：444（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 441 |
+| [其他 / 待分类](#其他--待分类) | 444 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 441 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 444 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -412,6 +412,7 @@ sidebar:
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |
+| `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |
 | `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
@@ -421,6 +422,7 @@ sidebar:
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |
 | `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) |
 | `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) |
+| `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) |
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
 | `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
@@ -518,6 +520,7 @@ sidebar:
 | `karis-2014-taa` | [Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿](/study/papers/karis-2014-taa/) |
 | `karis-2014-ue4-pbr` | [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) |
 | `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) |
+| `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) |
@@ -752,7 +755,7 @@ sidebar:
 
 ---
 
-## 全部 584 篇（字母序）
+## 全部 587 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -895,6 +898,7 @@ sidebar:
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) | 其他 |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 其他 |
 | `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
+| `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 其他 |
 | `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
@@ -912,6 +916,7 @@ sidebar:
 | `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) | 其他 |
 | `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) | 其他 |
 | `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
+| `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) | 其他 |
 | `dns` | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) | 网络协议 |
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) | 其他 |
 | `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
@@ -1035,6 +1040,7 @@ sidebar:
 | `karis-2014-ue4-pbr` | [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) | 其他 |
 | `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
 | `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) | 其他 |
+| `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) | 其他 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 其他 |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | 其他 |
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | 其他 |

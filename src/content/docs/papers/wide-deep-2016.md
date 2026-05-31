@@ -155,5 +155,6 @@ model = tf.estimator.DNNLinearCombinedClassifier(
 - [[dcn-2017]] —— DCN — 在 DNN 旁边并联一条专门学特征交叉的网络
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
+- [[dlrm-2019]] —— DLRM — Meta 把工业推荐模型拆成 4 个标准积木
 - [[youtube-two-tower-2019]] —— YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
 

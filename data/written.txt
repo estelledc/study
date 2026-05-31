@@ -128,6 +128,7 @@ cstore-2005
 cubical-type-theory-2018
 cuda-streams-concurrency-2018
 cudnn-2014
+curless-levoy-1996-tsdf
 cutlass-2020
 dafny-2010
 dalle-2
@@ -147,6 +148,7 @@ differential-datalog
 diffie-hellman
 dijkstra-goto
 dijkstra-shortest-path
+din-2018
 dino
 disel-2018
 diskann-2019
@@ -171,6 +173,7 @@ earley-parser
 easycrypt-2011
 ebpf
 effect-handlers
+electra-2020
 elmo-2018
 epaxos-2013
 erlang-otp
@@ -493,6 +496,7 @@ stable-diffusion
 stainless-2017
 stam-1999-stable-fluids
 standard-ml
+starrocks
 steensgaard-pointer
 stm-shavit-touitou
 stonebraker-2010-sqlnosql
@@ -597,6 +601,7 @@ anime
 ann-benchmarks
 ansible
 anthropic-cookbook
+antv-g2
 ape-framework
 apollo-server
 appwrite
@@ -1152,6 +1157,7 @@ webrtc-rs
 wezterm
 whisper
 why-did-you-render
+woodpecker
 wormhole
 wretch
 xh

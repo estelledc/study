@@ -154,3 +154,6 @@ Screened: min ‖∇χ - V‖² + λ Σᵢ |χ(pᵢ) - 0.5|²
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
