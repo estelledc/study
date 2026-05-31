@@ -162,4 +162,5 @@ INRIA 这股"理论 + 实现一起做"的工程文化，从 OCaml 到 Coq 到 Co
 - [[reynolds-separation-logic]] —— Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
+- [[vst-2014]] —— VST — 把 C 程序的数学证明一路带到机器码
 

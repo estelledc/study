@@ -161,4 +161,5 @@ let r2 = &mut v;    // ❌ 编译失败
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
+- [[vst-2014]] —— VST — 把 C 程序的数学证明一路带到机器码
 

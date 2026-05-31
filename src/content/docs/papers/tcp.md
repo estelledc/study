@@ -151,13 +151,12 @@ OSError: [Errno 99] Cannot assign requested address
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
+- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
-- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
@@ -167,7 +166,6 @@ OSError: [Errno 99] Cannot assign requested address
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[raft]] —— Raft — 易理解的共识算法
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
 
