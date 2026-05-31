@@ -154,6 +154,7 @@ DELETE /users/42
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
+- [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
