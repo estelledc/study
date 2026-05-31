@@ -178,7 +178,6 @@ entry:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
-- [[badger]] —— BadgerDB — 把键和值分开存的 Go 原生 KV 库
 - [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命

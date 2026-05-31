@@ -187,7 +187,9 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
 - [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[neumf-2017]] —— NeuMF — 用神经网络替掉推荐系统的内积
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+- [[open-sora]] —— Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[optuna]] —— Optuna — 把超参搜索写在 Python 函数体里

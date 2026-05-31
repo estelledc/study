@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 580 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 583 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：580 个
+- **总数**：583 个
 - **已分类**：212
-- **未分类**：368（落入"其他 / 待分类"段）
+- **未分类**：371（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 368 |
+| [其他 / 待分类](#其他--待分类) | 371 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 368 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 371 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -538,6 +538,7 @@ sidebar:
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
+| `badger` | [Badger — Go 写的键值分离 LSM](/study/projects/badger/) |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
@@ -732,6 +733,7 @@ sidebar:
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
+| `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
@@ -848,6 +850,7 @@ sidebar:
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
+| `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
@@ -876,7 +879,7 @@ sidebar:
 
 ---
 
-## 全部 580 个（字母序）
+## 全部 583 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -922,6 +925,7 @@ sidebar:
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) | 其他 |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 其他 |
+| `badger` | [Badger — Go 写的键值分离 LSM](/study/projects/badger/) | 其他 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) | 其他 |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) | 其他 |
@@ -1226,6 +1230,7 @@ sidebar:
 | `ofetch` | [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) | HTTP 客户端 |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) | 其他 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
+| `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) | 其他 |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
@@ -1416,6 +1421,7 @@ sidebar:
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时](/study/projects/vanilla-extract/) | CSS / 样式 |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | 其他 |
+| `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) | 其他 |
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |

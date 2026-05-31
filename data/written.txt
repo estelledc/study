@@ -34,6 +34,8 @@ awq
 awq-2023
 azure-storage-2011
 b-tree-1972
+badger
+baraff-witkin-1998-cloth
 bayou-1995
 beck-tdd
 bentley-1975-kdtree
@@ -55,6 +57,7 @@ boehm-gc
 boogie-2005
 borg
 borg-omega-kube-2016
+bpr-2009
 branch-prediction-yeh-patt-1991
 brewer-cap-2000
 brook-2004
@@ -377,6 +380,7 @@ paxos-simple-2001
 pbft-1999
 peg-packrat-ford
 percolator-2010
+performer-2020
 persistent-memory-2014
 personalized-pagerank-2003
 peyton-jones-stg
@@ -411,6 +415,7 @@ realm
 reed-solomon-1960
 refinement-types-1991
 reflexion
+reformer-2020
 reps-ifds
 resnet
 rest-fielding-2000
@@ -428,6 +433,7 @@ rsa
 rwkv-2023
 saga-1987
 sagiv-shape-analysis
+saito-takahashi-1990-gbuffer
 salsa-adapton
 salton-vsm-1975
 sam
@@ -457,6 +463,7 @@ skip-list-1990
 skip-locked-postgres-9.5
 slam-microsoft
 sleeper-agents
+slim-2011
 smalltalk-80
 smoothquant-2023
 smr-1990
@@ -529,6 +536,7 @@ vamp-verisoft-2006
 vcc-2009
 veach-1995-mis
 veach-1997-mlt
+vega-lite
 vellvm
 verdi-2015
 verisoft-2008
