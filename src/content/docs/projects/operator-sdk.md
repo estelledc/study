@@ -166,5 +166,6 @@ make bundle-push
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 

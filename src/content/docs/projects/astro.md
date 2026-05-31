@@ -210,6 +210,7 @@ export const collections = { blog }
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[preact]] —— Preact — 3KB React 替代
 - [[react]] —— React UI 组件库

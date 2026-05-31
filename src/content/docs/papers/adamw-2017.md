@@ -175,4 +175,5 @@ param.mul_(1 - lr * weight_decay)
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[lion-2023]] —— Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半
 - [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[sophia-2023]] —— Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动
 
