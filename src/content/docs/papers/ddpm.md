@@ -136,6 +136,7 @@ GAN 的 loss 曲线经常上下震荡甚至崩塌，需要无数 trick（label s
 - [[dit]] —— DiT — Diffusion Transformer
 - [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
 - [[mae]] —— MAE — Masked Autoencoders
+- [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[resnet]] —— ResNet — 残差连接
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
 - [[vit]] —— ViT — Vision Transformer

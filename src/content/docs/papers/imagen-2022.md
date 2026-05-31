@@ -158,5 +158,8 @@ Imagen 没赢市场（闭源），但**赢了思想**——后来所有人都改
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 

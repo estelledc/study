@@ -163,7 +163,6 @@ nix-build
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
-- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 - [[scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

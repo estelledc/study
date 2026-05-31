@@ -155,6 +155,7 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 - [[ance-2020]] —— ANCE — 让模型自己挖训练负例，对比学习的"自给自足"
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
+- [[brill-moore-2000]] —— Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
 - [[doc2query-2019]] —— doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
