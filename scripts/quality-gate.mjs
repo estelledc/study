@@ -39,9 +39,20 @@ function validateZhuangyuanV11(content, frontmatter) {
   if (lineCount < minLines) {
     return { ok: false, reason: 'zy-v1.1 branch ' + branch + ' needs >= ' + minLines + ' lines, got ' + lineCount };
   }
-  // Figure check：正文含 ≥ 1 个 Figure 标题或 ## 图 / ### 图
-  const figureCount = (content.match(/^#{2,3}\s+(Figure|图)/gm) || []).length;
-  if (figureCount < 1) return { ok: false, reason: 'zy-v1.1 needs >= 1 Figure section' };
+  // Figure check：H2/H3 标题 或 inline（粗体/斜体/image alt/blockquote）Figure / 图 标记，命中任一即算
+  const figurePatterns = [
+    /^#{2,3}\s+(Figure|图)/gm,    // H2/H3
+    /\*\*Figure\s+\d+/g,           // **Figure 1**
+    /\*Figure\s+\d+/g,             // *Figure 1
+    /\*图\s*\d+/g,                 // *图 1
+    /^图\s*\d+/m,                  // 行首 图 1
+    /!\[Figure\s+\d+/g,            // ![Figure 1. ...] image alt
+    /!\[图\s*\d+/g,                // ![图 1 ...] image alt
+    /^>\s*Figure\s+\d+/m,          // > Figure 1：blockquote
+    /^>\s*图\s*\d+/m,              // > 图 1：blockquote
+  ];
+  const hasFigure = figurePatterns.some(re => re.test(content));
+  if (!hasFigure) return { ok: false, reason: 'zy-v1.1 needs >= 1 Figure marker (H2/H3 or inline)' };
   // Self-classify 段
   if (!content.match(/^##\s+(自我分级|自我分类|self-classify|self_classify)/im)) {
     return { ok: false, reason: 'zy-v1.1 needs self-classify section' };
@@ -161,14 +172,14 @@ export async function validate(filePath, opts = {}) {
   // 分发：schema_version=zhuangyuan-v1.1 走专用 validator，否则走默认 150-200 检查
   const fm = parseFrontmatter(text);
   if (fm && fm.schema_version === 'zhuangyuan-v1.1') {
-    // path / red-line / academic 仍要跑；行数 / h2 / permalink 由 zhuangyuan validator 接管
+    // path / red-line 仍要跑；academic-h2 在 zy-v1.1 下豁免（Layer N 等学术分层是合法结构）
+    // 行数 / h2 / permalink / Figure / self-classify 由 zhuangyuan validator 接管
     const pathR = checkPath(filePath);
     const fmR = checkFrontmatter(text);
     const redR = checkRedLine(text, filePath);
-    const acaR = checkAcademic(text);
     const zyR = validateZhuangyuanV11(text, fm);
-    const details = { path: pathR, frontmatter: fmR, 'red-line': redR, academic: acaR, zhuangyuan: zyR };
-    for (const r of [pathR, fmR, redR, acaR, zyR]) if (!r.ok) reasons.push(r.reason);
+    const details = { path: pathR, frontmatter: fmR, 'red-line': redR, zhuangyuan: zyR };
+    for (const r of [pathR, fmR, redR, zyR]) if (!r.ok) reasons.push(r.reason);
     return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'zhuangyuan-v1.1' };
   }
 
