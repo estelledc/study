@@ -88,6 +88,7 @@ llm = LLM(model="...", gpu_memory_utilization=0.99, max_num_seqs=512)
 2. **block_size 不要瞎调**：默认 16 是 ShareGPT trace 上 sweep 出来的，调小（如 8）CoW 单次便宜但 kernel launch overhead 高，调大（如 64）单步省事但内部碎片翻倍——除非有自己的 trace + 完整 sweep。
 3. **PagedAttention kernel 单步比连续 KV 慢 20-26%**：间接寻址要多一次 int load + 乘法，单条请求 / 极致低延迟场景会感受到这个开销，只在多并发下才回本。
 4. **parallel sampling 第一步会触发 N-1 次 copy-on-write**：N=4 时第一步要拷 3 个 block，约 7.5MB GPU memcpy，HBM 上几微秒但 kernel launch 有可见 latency 尖峰，写 latency-敏感的应用要心里有数。
+5. **block_table 自身的显存开销也不是零**：每条 sequence 一张表，长 prompt + 大并发下集合也能吃掉几十 MB，容量规划时要把这部分 metadata 算进去。
 
 ## 适用 vs 不适用场景
 
