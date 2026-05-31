@@ -166,6 +166,7 @@ for g in gaussians:
 - [[karis-2014-taa]] —— Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿
 - [[karis-2014-ue4-pbr]] —— Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒
 - [[kazhdan-2006-poisson-recon]] —— Poisson Surface Reconstruction — 把点云变成水密网格的全局解法
+- [[levoy-hanrahan-1996-light-field]] —— Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表
 - [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
 - [[liu-2020-dlss]] —— DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
 - [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分

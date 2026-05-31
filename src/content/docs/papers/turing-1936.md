@@ -179,6 +179,7 @@ D(M):
 - [[rsa]] —— RSA 公钥密码
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[simhash-charikar-2002]] —— SimHash — 用随机超平面把余弦相似度变成汉明距离
 - [[smalltalk-80]] —— Smalltalk-80
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 - [[zk-snark]] —— zk-SNARK 零知识证明
