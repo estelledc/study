@@ -149,5 +149,5 @@ backcast = W_b × θ_b       (W_b 形状为 N × dim(θ_b))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[resnet]] —— ResNet — 残差连接
 

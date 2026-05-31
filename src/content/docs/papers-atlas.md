@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 707 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 710 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：707 篇
+- **总数**：710 篇
 - **已分类**：143
-- **未分类**：564（落入"其他 / 待分类"段）
+- **未分类**：567（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 564 |
+| [其他 / 待分类](#其他--待分类) | 567 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 564 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 567 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -444,6 +444,7 @@ sidebar:
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
 | `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |
+| `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) |
 | `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
 | `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) |
@@ -740,6 +741,7 @@ sidebar:
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
+| `rfc-3833-dns-threats` | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) |
 | `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) |
 | `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) |
 | `rm3-2001` | [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) |
@@ -807,6 +809,7 @@ sidebar:
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 | `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) |
+| `tabpfn-2023` | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) |
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
 | `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) |
 | `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) |
@@ -875,7 +878,7 @@ sidebar:
 
 ---
 
-## 全部 707 篇（字母序）
+## 全部 710 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1053,6 +1056,7 @@ sidebar:
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) | 其他 |
+| `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) | 其他 |
 | `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) | 其他 |
 | `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) | 其他 |
 | `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) | 其他 |
@@ -1414,6 +1418,7 @@ sidebar:
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 其他 |
+| `rfc-3833-dns-threats` | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) | 其他 |
 | `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) | 其他 |
 | `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) | 其他 |
 | `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
@@ -1504,6 +1509,7 @@ sidebar:
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
 | `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | 其他 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
+| `tabpfn-2023` | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) | 其他 |
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | 其他 |
 | `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) | 其他 |
 | `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) | 其他 |

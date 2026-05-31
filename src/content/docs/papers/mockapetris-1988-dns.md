@@ -152,5 +152,12 @@ SVCB   # 2023, 服务绑定（HTTP/3 + ECH）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
+- [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
+- [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[paxos]] —— Paxos — 分布式共识算法
+- [[rfc-3833-dns-threats]] —— RFC 3833 — IETF 第一次正式承认 DNS 不安全
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

@@ -178,6 +178,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nats]] —— NATS — 极简云原生消息系统
+- [[nats-server]] —— NATS Server — 极简云原生消息总线
 - [[nebula]] —— NebulaGraph — 国产分布式图数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器

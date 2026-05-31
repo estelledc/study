@@ -148,4 +148,5 @@ IN/OUT（端口）  → vmm_io     （明确的 I/O 调用）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- 暂无：等待 regen-backlinks 脚本扫到引用本文的页面后回填 -->
+（暂无反向链接）
+
