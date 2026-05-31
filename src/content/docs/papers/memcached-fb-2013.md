@@ -23,7 +23,7 @@ title: Scaling Memcache at Facebook — 万台缓存怎么不被踩塌
 - 写完 DB 立刻读，读到的是旧 cache（**stale read**）
 - 给 cache 加可靠协议（要 ack、要重试），结果延迟翻 10 倍
 
-Facebook 这篇说："这些都遇到过，下面是我们的招"。后来 Twitter、字节跳动、美团做大规模缓存，写的方案大多是这篇的变体。
+Facebook 这篇说："这些都遇到过，下面是我们的招"。后来 Twitter、ByteDance、Meituan 做大规模缓存，写的方案大多是这篇的变体。
 
 ## 核心要点
 
@@ -117,8 +117,8 @@ Facebook 的招：在 MySQL 的 commit log 里**寄生一个守护进程**叫 mc
 - **2003 年**：Brad Fitzpatrick 在 LiveJournal 写了 memcached，几百行 C，给自己博客挡 MySQL
 - **2008 年**：Facebook 全面用 memcached，但很快撞到几百台规模的故障
 - **2013 年**：这篇 NSDI 论文发表，把"几千台规模怎么不挂"的招式系统化
-- **2014 年起**：mcrouter 开源，成为字节、美团等公司缓存代理的参考实现
-- **2020 年代**：Twitter Pelikan、字节 ByteCache 都借鉴了 lease + gutter 的思路
+- **2014 年起**：mcrouter 开源，成为 ByteDance、Meituan 等公司缓存代理的参考实现
+- **2020 年代**：Twitter Pelikan、ByteDance ByteCache 都借鉴了 lease + gutter 的思路
 
 memcached 本身只是 KV 存储；真正难的是**周围的协议、代理、广播**——这篇论文的真正贡献是这一圈"看不见的脚手架"。
 

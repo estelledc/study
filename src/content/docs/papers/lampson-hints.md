@@ -170,6 +170,7 @@ POST 不 idempotent——重复发 5 次会创建 5 个订单。所以 Stripe / 
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 
