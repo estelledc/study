@@ -178,5 +178,7 @@ Cholesky 分解一次可缓存，后续多步重复使用同一个 A。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
+- [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
+- [[taubin-1995-mesh-smoothing]] —— Taubin 1995 — 把网格平滑当成低通滤波
 

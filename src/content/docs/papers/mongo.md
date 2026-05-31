@@ -162,5 +162,6 @@ MongoDB 做法——下单时把要展示的字段**嵌进订单文档**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
 
