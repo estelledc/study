@@ -151,3 +151,5 @@ nix-shell -p python3 nodejs ffmpeg
 
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
 
+<!-- 合并自 [[nix]]（projects）dedup 2026-05-31 -->
+
