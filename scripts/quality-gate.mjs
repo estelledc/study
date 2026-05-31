@@ -13,6 +13,42 @@ import path from 'node:path';
 
 const RED_LINE = /blindbox|quanzhiping|video-eval-agent|sankuai|friday|cagent|aigc\.sankuai|美团|mis\.sankuai|cagent_fe_h5_blindbox|LongCat|6 件套/i;
 
+// 解析 frontmatter 为对象（仅取顶层 key:value，忽略嵌套）
+function parseFrontmatter(text) {
+  const m = text.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!m) return null;
+  const obj = {};
+  for (const line of m[1].split('\n')) {
+    if (line === '' || /^\s+/.test(line)) continue;
+    const km = line.match(/^([\w一-鿿]+):\s*(.*)$/u);
+    if (km) {
+      let v = km[2].trim();
+      if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+        v = v.slice(1, -1);
+      }
+      obj[km[1]] = v;
+    }
+  }
+  return obj;
+}
+
+function validateZhuangyuanV11(content, frontmatter) {
+  const branch = frontmatter.branch;
+  const minLines = { A: 600, B: 400, C: 300, D: 500 }[branch] || 400;
+  const lineCount = content.split('\n').length;
+  if (lineCount < minLines) {
+    return { ok: false, reason: 'zy-v1.1 branch ' + branch + ' needs >= ' + minLines + ' lines, got ' + lineCount };
+  }
+  // Figure check：正文含 ≥ 1 个 Figure 标题或 ## 图 / ### 图
+  const figureCount = (content.match(/^#{2,3}\s+(Figure|图)/gm) || []).length;
+  if (figureCount < 1) return { ok: false, reason: 'zy-v1.1 needs >= 1 Figure section' };
+  // Self-classify 段
+  if (!content.match(/^##\s+(自我分级|自我分类|self-classify|self_classify)/im)) {
+    return { ok: false, reason: 'zy-v1.1 needs self-classify section' };
+  }
+  return { ok: true };
+}
+
 const STD_H2 = [
   '是什么', '为什么重要', '核心要点', '实践案例',
   '踩过的坑', '适用', '历史小故事', '学到什么',
@@ -120,6 +156,20 @@ export async function validate(filePath, opts = {}) {
     text = await fs.readFile(filePath, 'utf8');
   } catch (err) {
     return { pass: false, reasons: [`read-fail: ${err.message}`], file: filePath };
+  }
+
+  // 分发：schema_version=zhuangyuan-v1.1 走专用 validator，否则走默认 150-200 检查
+  const fm = parseFrontmatter(text);
+  if (fm && fm.schema_version === 'zhuangyuan-v1.1') {
+    // path / red-line / academic 仍要跑；行数 / h2 / permalink 由 zhuangyuan validator 接管
+    const pathR = checkPath(filePath);
+    const fmR = checkFrontmatter(text);
+    const redR = checkRedLine(text, filePath);
+    const acaR = checkAcademic(text);
+    const zyR = validateZhuangyuanV11(text, fm);
+    const details = { path: pathR, frontmatter: fmR, 'red-line': redR, academic: acaR, zhuangyuan: zyR };
+    for (const r of [pathR, fmR, redR, acaR, zyR]) if (!r.ok) reasons.push(r.reason);
+    return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'zhuangyuan-v1.1' };
   }
 
   const checks = [
