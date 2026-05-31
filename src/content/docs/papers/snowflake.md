@@ -159,6 +159,7 @@ UNDROP TABLE orders_2026;                  -- 误删后救回来
 - [[monetdb-x100-2005]] —— MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[starrocks]] —— StarRocks — MPP 列存数据库
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[vertica-2012]] —— Vertica 2012 — C-Store 论文走向产品的七年改造账

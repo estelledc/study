@@ -149,5 +149,8 @@ authoritative server
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[amplification-hell-2014]] —— Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
+- [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
+- [[mockapetris-1988-dns]] —— Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样
 
