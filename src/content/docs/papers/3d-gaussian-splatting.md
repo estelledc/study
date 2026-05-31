@@ -162,6 +162,7 @@ for g in gaussians:
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
+- [[meagher-1982-octree]] —— Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[vit]] —— ViT — Vision Transformer
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线

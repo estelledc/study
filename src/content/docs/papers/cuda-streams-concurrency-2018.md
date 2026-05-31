@@ -149,6 +149,7 @@ cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
 - [[aurora-exascale-2024]] —— Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎

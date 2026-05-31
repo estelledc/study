@@ -150,5 +150,7 @@ nvm alias default lts/*
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
+- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
+- [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
 

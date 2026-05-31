@@ -12,6 +12,8 @@ alpa-2022
 alphago
 ampere-architecture-2020
 andersen-pointer-analysis
+anh-moffat-2005
+anserini-2017
 anthropic-circuits
 anthropic-prompt-caching
 apollo-2014
@@ -23,6 +25,7 @@ asterisk
 astree
 attention
 aurora
+aurora-exascale-2024
 autogen
 awodey-warren-2009
 awq
@@ -31,6 +34,7 @@ azure-storage-2011
 b-tree-1972
 bayou-1995
 beck-tdd
+bentley-1975-kdtree
 bentoml
 bernstein-1981-cc
 bert
@@ -40,6 +44,7 @@ bigtable
 bigtable-2006
 bitcoin
 blackwell-architecture-2024
+blink-2020
 blinn-1977
 bm25-okapi
 boehm-gc
@@ -95,6 +100,7 @@ copilot-rct
 cops-2011
 cot
 coturn
+couchdb
 cousot-abstract-interpretation
 cousot-halbwachs-polyhedra-1978
 craq-2009
@@ -102,6 +108,7 @@ crdt-json
 crdt-json-2017
 crdt-shapiro-2011
 crdt-sss-2011
+croft-harper-1979
 cryptoverif-2008
 csp-hoare-1978
 cstore-2005
@@ -118,6 +125,7 @@ ddpm
 debugging-dichotomy
 deepseek-r1
 deepspeed-zero
+desbrun-1999-implicit-fairing
 dewitt-gray-1992
 differential-datalog
 diffie-hellman
@@ -169,10 +177,12 @@ fstar
 g1-collector
 gadt-pjones
 game-semantics-pcf
+garland-heckbert-1997-qem
 generational-gc
 gfs
 gilbert-lynch-2002
 godel-1931
+google-1998
 goral-1984-radiosity
 gpipe-2019
 gpt-3
@@ -215,6 +225,7 @@ hughes-fp-matters
 hyperkernel-2017
 idris-brady
 immix-mark-region
+indri-2005
 induction-heads
 infer-biabduction
 ingres-1976
@@ -291,6 +302,7 @@ mixture-of-experts
 mlflow
 mlir
 monetdb-x100-2005
+mongo
 muzero
 mycroft-strictness
 naiad-2013
@@ -303,10 +315,12 @@ no-silver-bullet
 ntp-mills-1991
 nuprl-1986
 nvlink-nvswitch-2018
+nvm
 oauth-2.1-rfc
 okapi-bm25-1994
 opencl-2010
 openhands
+optuna
 orca-2022
 orca-continuous-batching
 ot-1989
@@ -397,6 +411,7 @@ smoothquant-2023
 smr-1990
 snowflake
 snowflake-2016
+sorkine-2004-laplacian-editing
 souffle-datalog
 spanner
 spanner-2012
@@ -423,6 +438,7 @@ tachyon-2014
 tamarin-2012
 tao-2013
 taso-2019
+taubin-1995-mesh-smoothing
 tcp
 template-haskell
 tendermint-2016
@@ -437,6 +453,7 @@ tla-yu-tlc-1999
 tls-1.3
 tofte-talpin-regions
 token-bucket-stripe
+tomasulo-1967
 tomita-glr
 toolformer
 toy-models-superposition
@@ -452,6 +469,7 @@ turing-architecture-2018
 tvm
 tvm-2018
 unified-memory-2014
+universal-ctags
 vamp-verisoft-2006
 vcc-2009
 veach-1995-mis
@@ -771,6 +789,7 @@ mobx
 modin
 monaco-editor
 monero
+mongo
 mongodb
 motion-one
 move-language
@@ -877,6 +896,7 @@ remix
 remix-ide
 reservoir-sdk
 ripgrep
+risingwave
 rocket
 rocket-chat
 rolldown
@@ -947,6 +967,7 @@ tensorflow
 terraform
 testing-library
 textual
+the-silver-searcher
 thirdweb-sdk
 thrift
 tidb
@@ -967,6 +988,7 @@ typeorm
 typesense
 unified
 uniswap-v3
+universal-ctags
 unsloth
 unstorage
 valibot

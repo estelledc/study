@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 504 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 507 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：504 篇
+- **总数**：507 篇
 - **已分类**：143
-- **未分类**：361（落入"其他 / 待分类"段）
+- **未分类**：364（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 361 |
+| [其他 / 待分类](#其他--待分类) | 364 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 361 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 364 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -312,6 +312,7 @@ sidebar:
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |
+| `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
 | `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) |
@@ -339,6 +340,7 @@ sidebar:
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
 | `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) |
 | `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) |
+| `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
@@ -515,6 +517,7 @@ sidebar:
 | `maxwell-architecture-2014` | [NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍](/study/papers/maxwell-architecture-2014/) |
 | `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) |
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) |
+| `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) |
 | `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) |
@@ -672,7 +675,7 @@ sidebar:
 
 ---
 
-## 全部 504 篇（字母序）
+## 全部 507 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -687,6 +690,7 @@ sidebar:
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | 其他 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
+| `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | 其他 |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 其他 |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 其他 |
 | `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) | 其他 |
@@ -723,6 +727,7 @@ sidebar:
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 其他 |
 | `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) | 其他 |
 | `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) | 其他 |
+| `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) | 其他 |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | 其他 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
@@ -964,6 +969,7 @@ sidebar:
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | 其他 |
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | 其他 |
+| `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) | 其他 |
 | `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) | 其他 |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) | 其他 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
