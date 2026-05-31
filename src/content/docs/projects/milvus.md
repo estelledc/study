@@ -187,6 +187,7 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 - [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[faiss]] —— FAISS — 向量检索的标准件库
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[langchain]] —— LangChain — LLM 应用开发框架
