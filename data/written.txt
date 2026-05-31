@@ -258,6 +258,7 @@ fpga-hls-2011
 frama-c-2012
 frangipani-1997
 frank-effects
+frenetic-2011
 fsdp-2023
 fsrs-spaced-repetition
 fstar
@@ -430,6 +431,7 @@ mccarthy-lisp
 mcfarling-bp-1993
 mcmillan-smv-1993
 mcp-spec
+mcs-locks-1991
 meagher-1982-octree
 medusa-2024
 megastore-2011
@@ -437,6 +439,7 @@ megatron-lm
 memcached-fb-2013
 mencius-2008
 mermaid
+mesa-optimization-2019
 mesos-2011
 metagpt
 metaml-multi-stage
@@ -1105,6 +1108,7 @@ meilisearch
 memcached
 memgraph
 mermaid
+metabase
 metaflow
 metamask
 micromark
@@ -1388,6 +1392,7 @@ valkey
 valtio
 vanilla-extract
 vault
+vector
 vega
 vega-lite
 velero
