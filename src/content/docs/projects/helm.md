@@ -172,6 +172,7 @@ helm rollback my-nginx 1
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+- [[sops]] —— SOPS — 让密码也能放心进 Git
 - [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI

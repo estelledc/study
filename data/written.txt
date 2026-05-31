@@ -194,6 +194,7 @@ dit
 dlrm-2019
 dns
 doc2query-2019
+dot-doh-perf-2020
 dpll-1962
 dpo
 dpr-2020
@@ -353,6 +354,7 @@ kokkos-2014
 koren-mf-2009
 krishnamurthy-1999-http11
 kustomize
+kvm-2007
 l4-1995
 label-smoothing-2016
 lafortune-1993-bdpt
@@ -390,6 +392,7 @@ logoot-2010
 longformer-2020
 loop-1987-subdivision
 lottery-1994
+lottery-ticket-2019
 lsh-indyk-1998
 lsm-tree-1996
 lstm-1997
@@ -1063,6 +1066,7 @@ megatron-lm
 meilisearch
 memcached
 memgraph
+mermaid
 metaflow
 metamask
 micromark
@@ -1195,6 +1199,7 @@ quarkus
 quart
 questdb
 qwik
+rabbitmq-server
 rabby-wallet
 radix-ui
 rails
@@ -1334,6 +1339,7 @@ valibot
 valkey
 valtio
 vanilla-extract
+vault
 vega
 vega-lite
 velero

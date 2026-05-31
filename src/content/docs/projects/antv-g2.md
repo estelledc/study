@@ -171,6 +171,7 @@ export function Sales({ data }) {
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[frappe-gantt]] —— Frappe Gantt — 200 行 SVG 写出的甘特图
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
+- [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[sigma-js]] —— Sigma.js — 上万节点仍流畅的 WebGL 图渲染器
 - [[vega-lite]] —— Vega-Lite — 三段式 JSON 把复合图收口

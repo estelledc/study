@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 718 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 721 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：718 篇
+- **总数**：721 篇
 - **已分类**：143
-- **未分类**：575（落入"其他 / 待分类"段）
+- **未分类**：578（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 575 |
+| [其他 / 待分类](#其他--待分类) | 578 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 575 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 578 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -406,6 +406,7 @@ sidebar:
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
 | `codellama-2023` | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) |
 | `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) |
+| `codons-2004` | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) |
 | `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) |
@@ -492,6 +493,7 @@ sidebar:
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) |
 | `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) |
 | `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) |
+| `firecracker-2020` | [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) |
 | `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) |
 | `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) |
@@ -534,6 +536,7 @@ sidebar:
 | `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) |
 | `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
+| `grokking-2022` | [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) |
 | `gru-2014` | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) |
 | `gshard-2020` | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) |
 | `hacl-star-2017` | [HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里](/study/papers/hacl-star-2017/) |
@@ -886,7 +889,7 @@ sidebar:
 
 ---
 
-## 全部 718 篇（字母序）
+## 全部 721 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1014,6 +1017,7 @@ sidebar:
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
 | `codellama-2023` | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) | 其他 |
 | `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) | 其他 |
+| `codons-2004` | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) | 其他 |
 | `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 其他 |
 | `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | 其他 |
@@ -1124,6 +1128,7 @@ sidebar:
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) | 其他 |
 | `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) | 其他 |
 | `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) | 其他 |
+| `firecracker-2020` | [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) | 其他 |
 | `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) | 其他 |
 | `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) | 其他 |
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
@@ -1175,6 +1180,7 @@ sidebar:
 | `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) | 其他 |
 | `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 其他 |
 | `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | HCI / 软件工程研究 |
+| `grokking-2022` | [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) | 其他 |
 | `gru-2014` | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) | 其他 |
 | `gshard-2020` | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) | 其他 |
 | `hacl-star-2017` | [HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里](/study/papers/hacl-star-2017/) | 其他 |

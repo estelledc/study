@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 674 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 677 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：674 个
+- **总数**：677 个
 - **已分类**：213
-- **未分类**：461（落入"其他 / 待分类"段）
+- **未分类**：464（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 461 |
+| [其他 / 待分类](#其他--待分类) | 464 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 461 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 464 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -786,6 +786,7 @@ sidebar:
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
+| `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) |
@@ -854,6 +855,7 @@ sidebar:
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) |
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
+| `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) |
@@ -893,6 +895,7 @@ sidebar:
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) |
+| `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) |
@@ -970,7 +973,7 @@ sidebar:
 
 ---
 
-## 全部 674 个（字母序）
+## 全部 677 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1368,6 +1371,7 @@ sidebar:
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | 其他 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | 其他 |
+| `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) | 其他 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
@@ -1465,6 +1469,7 @@ sidebar:
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | Drag & Drop / Interaction |
+| `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | 其他 |
 | `react-hook-form` | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
 | `react-intl` | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | i18n 国际化 |
 | `react-spring` | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | 动画 |
@@ -1520,6 +1525,7 @@ sidebar:
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) | 其他 |
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
 | `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) | 其他 |
+| `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) | 其他 |
 | `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | 其他 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
