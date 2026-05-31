@@ -174,5 +174,8 @@ model = AutoModelForCausalLM.from_pretrained(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[awq]] —— AWQ — 看激活脸色给权重打折
+- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 

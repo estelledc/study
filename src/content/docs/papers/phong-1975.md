@@ -160,4 +160,5 @@ I = (0.74, 0.25, 0.25)  # 偏红+一点白
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[ward-1992]] —— Ward 1992 — 第一个能落地的各向异性反射模型
+- [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

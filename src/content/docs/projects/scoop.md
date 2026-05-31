@@ -172,3 +172,6 @@ manifest 就是一个 JSON：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
+

@@ -165,5 +165,6 @@ find ~/.pnpm-store/v3/files -inum 1234567
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
+- [[scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 

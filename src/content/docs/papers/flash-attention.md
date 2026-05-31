@@ -165,6 +165,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
+- [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel

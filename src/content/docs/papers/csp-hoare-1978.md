@@ -154,6 +154,7 @@ case v := <-chB: handleB(v)
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
+- [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"

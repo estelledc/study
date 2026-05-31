@@ -117,6 +117,7 @@ dijkstra-shortest-path
 dino
 disel-2018
 diskann-2019
+disney-brdf-2012
 distserve
 dit
 dns
@@ -236,6 +237,7 @@ linearizability-1990
 liquid-types
 llama
 llava
+llm-int8-2022
 llvm
 lmdb-2011
 local-type-inference
@@ -339,6 +341,7 @@ sam
 sarathi-serve
 scala-macros
 scaling-laws
+scoop
 scott-strachey-denotational
 self-adjusting
 self-customization
@@ -384,6 +387,7 @@ system-f-reynolds-1974
 system-r-1976
 t5
 tachyon-2014
+tamarin-2012
 tao-2013
 tcp
 template-haskell
@@ -695,6 +699,7 @@ mattermost
 mcp-ts-sdk
 megatron-lm
 meilisearch
+metaflow
 metamask
 micromark
 micronaut

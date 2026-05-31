@@ -146,6 +146,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
@@ -173,11 +174,11 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[resnet]] —— ResNet — 残差连接
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
