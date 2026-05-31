@@ -150,6 +150,7 @@ query_vector = model.encode(query)      # 查询 → 384 维向量
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 - [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）

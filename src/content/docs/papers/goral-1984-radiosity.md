@@ -174,6 +174,7 @@ Unity / Unreal 里的 light probe(光照探针):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bentley-1975-kdtree]] —— k-d 树 — 多维空间里的二叉搜索树
 - [[cohen-1985-hemicube]] —— Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[hanrahan-1991-hierarchical-radiosity]] —— Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)
