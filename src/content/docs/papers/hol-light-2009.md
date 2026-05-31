@@ -162,5 +162,6 @@ No subgoals
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
+- [[vamp-verisoft-2006]] —— VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认
 

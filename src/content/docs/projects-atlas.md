@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 512 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 514 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：512 个
+- **总数**：514 个
 - **已分类**：207
-- **未分类**：305（落入"其他 / 待分类"段）
+- **未分类**：307（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 305 |
+| [其他 / 待分类](#其他--待分类) | 307 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 305 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 307 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -585,6 +585,7 @@ sidebar:
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) |
 | `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) |
 | `dvc` | [DVC — 数据版本管理](/study/projects/dvc/) |
+| `earthly` | [Earthly — 把 Make 和 Dockerfile 揉一起的构建工具](/study/projects/earthly/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
@@ -638,6 +639,7 @@ sidebar:
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
+| `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
@@ -808,7 +810,7 @@ sidebar:
 
 ---
 
-## 全部 512 个（字母序）
+## 全部 514 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -936,6 +938,7 @@ sidebar:
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | 其他 |
 | `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | 其他 |
 | `dvc` | [DVC — 数据版本管理](/study/projects/dvc/) | 其他 |
+| `earthly` | [Earthly — 把 Make 和 Dockerfile 揉一起的构建工具](/study/projects/earthly/) | 其他 |
 | `echarts` | [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) | 数据可视化 |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | 其他 |
 | `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
@@ -1016,6 +1019,7 @@ sidebar:
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | 其他 |
 | `jest` | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
+| `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) | 其他 |
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) | 其他 |
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |

@@ -158,6 +158,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
+- [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[fastai]] —— fastai — 三行代码做迁移学习

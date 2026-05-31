@@ -159,4 +159,5 @@ vec3 albedo = baseColor * (1.0 - metallic);      // 金属无漫反射
 - [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
+- [[veach-1995-mis]] —— Veach MIS — 用一行加权公式让多种采样策略各取所长
 

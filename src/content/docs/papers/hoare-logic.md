@@ -219,6 +219,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[tamarin-2012]] —— Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全
 - [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
+- [[vamp-verisoft-2006]] —— VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
 - [[verisoft-2008]] —— Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完

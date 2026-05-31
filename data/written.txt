@@ -221,12 +221,14 @@ kafka
 kafka-2011
 kahn-natural-semantics
 kajiya-1986-rendering-equation
+kami-2017
 karp-21
 kepler-architecture-2012
 kildall-dataflow
 knuth-lr-1965
 knuth-taocp
 kokkos-2014
+lafortune-1993-bdpt
 lalr-deremer
 lambda-calculus
 lamport-1978
@@ -369,6 +371,7 @@ skip-locked-postgres-9.5
 slam-microsoft
 sleeper-agents
 smalltalk-80
+smoothquant-2023
 smr-1990
 snowflake
 snowflake-2016
@@ -604,6 +607,7 @@ fastai
 fastapi
 fastify
 fd
+feast
 fiber
 filecoin
 fish
@@ -702,6 +706,7 @@ lottie
 lsd
 lucia
 luxon
+mage
 mailcow
 makerdao
 markdown-it
