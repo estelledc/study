@@ -102,7 +102,22 @@ rm -rf -- *
 
 短短两个字符救你一条命。
 
-### 案例 4：在 CI 里跑
+### 案例 4：SC2155 — declare 和赋值分开
+
+```bash
+local x=$(some_cmd)        # 警告 SC2155
+```
+
+**为什么错**：`local` 本身有自己的退出码，会**吞掉** `some_cmd` 的失败状态——你以为脚本在 `set -e` 下能捕获错误，其实悄悄漏过。
+
+**怎么改**：
+
+```bash
+local x
+x=$(some_cmd)
+```
+
+### 案例 5：在 CI 里跑
 
 ```yaml
 # .github/workflows/lint.yml
@@ -111,7 +126,7 @@ rm -rf -- *
     find scripts -name '*.sh' -print0 | xargs -0 shellcheck
 ```
 
-合并 PR 前自动跑一遍，新增脚本带坑就拦下来。
+`-print0` / `-0` 配对的意思是"用空字节而不是换行分隔文件名"——这样含空格 / 换行的文件名也不会被切错。合并 PR 前自动跑一遍，新增脚本带坑就拦下来。
 
 ## 踩过的坑
 
@@ -119,7 +134,7 @@ rm -rf -- *
 
 2. **静态分析有边界**：ShellCheck 不会真的跑你的脚本，所以"运行时才出现的 bug"它抓不到。比如 API 返回值变化、文件权限问题，仍要靠测试。
 
-3. **source 动态路径它跟不进去**：`source "$config_dir/x.sh"` 这种 ShellCheck 不知道里面是啥，会给 SC1090/SC1091。可以加 `# shellcheck source=./x.sh` 提示路径。
+3. **source 动态路径它跟不进去**：`source "$config_dir/x.sh"` 这种 ShellCheck 不知道里面是啥，会给 SC1090/SC1091。可以加 `# shellcheck source=./x.sh` 注释手动指路（这是 ShellCheck 自家的指令注释，不是 bash 语法）。
 
 4. **它不管 zsh / fish**：只覆盖 POSIX shell 家族（sh / bash / dash / ksh）。zsh 用户得另外找工具。
 
