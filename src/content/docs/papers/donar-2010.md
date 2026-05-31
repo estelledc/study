@@ -1,6 +1,6 @@
 ---
 title: DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题
-来源: Wendell, Jiang, Freedman, Rexford, "DONAR: Decentralized Server Selection for Cloud Services", SIGCOMM 2010
+来源: 'Wendell, Jiang, Freedman, Rexford, "DONAR: Decentralized Server Selection for Cloud Services", SIGCOMM 2010'
 日期: 2026-06-01
 分类: 分布式系统
 难度: 中级

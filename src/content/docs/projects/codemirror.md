@@ -157,6 +157,7 @@ const logUpdates = ViewPlugin.fromClass(class {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[react]] —— React UI 组件库

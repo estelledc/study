@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 728 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 731 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：728 个
+- **总数**：731 个
 - **已分类**：214
-- **未分类**：514（落入"其他 / 待分类"段）
+- **未分类**：517（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 514 |
+| [其他 / 待分类](#其他--待分类) | 517 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 514 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 517 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -631,6 +631,7 @@ sidebar:
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
 | `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
+| `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
@@ -748,6 +749,7 @@ sidebar:
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
 | `lance` | [Lance — AI 数据列存格式](/study/projects/lance/) |
 | `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) |
+| `lapce` | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) |
@@ -1015,6 +1017,7 @@ sidebar:
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
 | `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) |
+| `zephyr` | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) |
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
 | `zookeeper` | [Apache ZooKeeper — 给一群机器装一个共同的小脑](/study/projects/zookeeper/) |
@@ -1024,7 +1027,7 @@ sidebar:
 
 ---
 
-## 全部 728 个（字母序）
+## 全部 731 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1189,6 +1192,7 @@ sidebar:
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
+| `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) | 其他 |
 | `docusaurus` | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) | 文档站点 |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | 其他 |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | 其他 |
@@ -1347,6 +1351,7 @@ sidebar:
 | `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) | 其他 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
 | `langfuse` | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
+| `lapce` | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) | 其他 |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) | 其他 |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) | 其他 |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | 其他 |
@@ -1748,6 +1753,7 @@ sidebar:
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | 其他 |
 | `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | 其他 |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) | 其他 |
+| `zephyr` | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | 其他 |
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) | 其他 |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |

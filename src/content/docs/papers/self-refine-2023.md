@@ -1,6 +1,6 @@
 ---
 title: Self-Refine — 让同一个模型自己改自己写的东西
-来源: Madaan et al., "Self-Refine: Iterative Refinement with Self-Feedback", NeurIPS 2023 (arXiv:2303.17651)
+来源: 'Madaan et al., "Self-Refine: Iterative Refinement with Self-Feedback", NeurIPS 2023 (arXiv:2303.17651)'
 日期: 2026-06-01
 分类: 机器学习
 难度: 入门
@@ -159,3 +159,6 @@ Refiner："这家餐厅菜品丰富，下次希望上菜更快、温度更理想
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
