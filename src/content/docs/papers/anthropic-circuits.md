@@ -130,6 +130,7 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
+- [[anthropic-prompt-caching]] —— Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
 - [[attention]] —— Attention Is All You Need
 - [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU

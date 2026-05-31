@@ -149,5 +149,7 @@ ColBERTv2 是当时**唯一兼具高精度 + 可索引**的方案。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 

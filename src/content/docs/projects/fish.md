@@ -150,4 +150,5 @@ abbr -a gco git checkout
 
 - [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
+- [[xonsh]] —— xonsh — 在同一行里同时写 bash 命令和 Python 代码
 

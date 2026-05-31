@@ -156,6 +156,7 @@ Signal 做法：
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
+- [[haraka]] —— Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
 - [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
 - [[mailcow]] —— mailcow — Docker compose 一键起一整套邮件服务
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"

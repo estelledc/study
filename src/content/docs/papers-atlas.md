@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 378 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 380 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：378 篇
+- **总数**：380 篇
 - **已分类**：143
-- **未分类**：235（落入"其他 / 待分类"段）
+- **未分类**：237（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 235 |
+| [其他 / 待分类](#其他--待分类) | 237 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 235 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 237 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -312,6 +312,7 @@ sidebar:
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
+| `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) |
@@ -374,6 +375,7 @@ sidebar:
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
+| `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
@@ -546,7 +548,7 @@ sidebar:
 
 ---
 
-## 全部 378 篇（字母序）
+## 全部 380 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -562,6 +564,7 @@ sidebar:
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 其他 |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 其他 |
 | `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
+| `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | 其他 |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 其他 |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | 其他 |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | 其他 |
@@ -666,6 +669,7 @@ sidebar:
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 其他 |
+| `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 其他 |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | 其他 |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) | 其他 |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
