@@ -160,6 +160,7 @@ ALTER TABLE users CONFIGURE ZONE USING
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[leveldb]] —— LevelDB — Google LSM 库
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[pebble]] —— Pebble — CockroachDB 自研 LSM
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[raft]] —— Raft — 易理解的共识算法
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎

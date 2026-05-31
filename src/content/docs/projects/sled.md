@@ -151,5 +151,8 @@ sled 的源码相对 [[rocksdb]] 友好——纯 Rust、模块清晰、有大量
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[badger]] —— Badger — Go 写的键值分离 LSM
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

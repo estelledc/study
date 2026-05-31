@@ -141,6 +141,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[grafana-tempo]] —— Grafana Tempo — 用对象存储装下你所有的 trace
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[jaeger]] —— Jaeger — 分布式追踪系统
+- [[k6]] —— k6 — 用 JS 写脚本的现代负载测试器
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
 - [[m3]] —— M3 — Uber 的分布式 TSDB

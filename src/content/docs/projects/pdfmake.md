@@ -175,5 +175,7 @@ node node_modules/pdfmake/build-vfs.js ./fonts > vfs_fonts.js
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
+- [[pdfkit]] —— PDFKit — 用画笔在 PDF 上一笔一笔画
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
 

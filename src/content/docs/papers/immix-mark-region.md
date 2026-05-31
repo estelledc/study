@@ -168,5 +168,6 @@ JikesRVM（一个研究用的 JVM）在 2008 年实测：
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[shenango-2019]] —— Shenango — 每 5 微秒重新分一次核的中央调度器
+- [[slab-1994]] —— Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切
 - [[ssa]] —— SSA — 静态单赋值形式
 
