@@ -146,6 +146,7 @@ bat 不像 [[ripgrep]] 一样替代了一类核心命令（grep），它是**给
 - [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
+- [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 - [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

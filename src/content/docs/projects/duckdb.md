@@ -149,6 +149,7 @@ result = con.execute("""
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
+- [[mongo]] —— MongoDB — 文档数据库代表
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半

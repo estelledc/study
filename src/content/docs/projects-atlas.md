@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 530 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 532 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：530 个
+- **总数**：532 个
 - **已分类**：208
-- **未分类**：322（落入"其他 / 待分类"段）
+- **未分类**：324（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 322 |
+| [其他 / 待分类](#其他--待分类) | 324 |
 
 ---
 
@@ -497,7 +497,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 322 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 324 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -687,6 +687,7 @@ sidebar:
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
+| `mongo` | [MongoDB — 文档数据库代表](/study/projects/mongo/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
@@ -799,6 +800,7 @@ sidebar:
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) |
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
+| `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
@@ -826,7 +828,7 @@ sidebar:
 
 ---
 
-## 全部 530 个（字母序）
+## 全部 532 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1114,6 +1116,7 @@ sidebar:
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | 其他 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | 其他 |
+| `mongo` | [MongoDB — 文档数据库代表](/study/projects/mongo/) | 其他 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | 其他 |
@@ -1312,6 +1315,7 @@ sidebar:
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
 | `unified` | [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) | Markdown / 解析 |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) | 其他 |
+| `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) | 其他 |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) | 其他 |
 | `unstorage` | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `valibot` | [Valibot — 拆成乐高的 TypeScript 校验库](/study/projects/valibot/) | 表单 / Schema 校验 |

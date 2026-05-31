@@ -166,7 +166,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[minio]] —— MinIO — S3 兼容对象存储
-- [[mongo]] —— MongoDB — 把 JSON 直接当数据库存
+- [[mongo]] —— MongoDB — 文档数据库代表
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nats]] —— NATS — 极简云原生消息系统

@@ -191,7 +191,7 @@ LIMIT 5;
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
 - [[milvus]] —— Milvus — 开源向量数据库
-- [[mongo]] —— MongoDB — 把 JSON 直接当数据库存
+- [[mongo]] —— MongoDB — 文档数据库代表
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
