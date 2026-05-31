@@ -10,6 +10,7 @@ akamai-2002
 algol-60
 alpa-2022
 alphago
+amdahl-law-1967
 ampere-architecture-2020
 andersen-pointer-analysis
 anh-moffat-2005
@@ -46,6 +47,7 @@ bitcoin
 blackwell-architecture-2024
 blink-2020
 blinn-1977
+block-max-wand-2011
 bm25-okapi
 boehm-gc
 boogie-2005
@@ -287,6 +289,7 @@ maxwell-architecture-2014
 mccarthy-lisp
 mcmillan-smv-1993
 mcp-spec
+meagher-1982-octree
 medusa-2024
 megastore-2011
 megatron-lm
@@ -831,6 +834,7 @@ openvidu
 openzeppelin-contracts
 optax
 optimism
+optuna
 ora
 orleans
 otel-collector

@@ -158,6 +158,7 @@ for g in gaussians:
 - [[dit]] —— DiT — Diffusion Transformer
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
+- [[goldsmith-1987-bvh]] —— Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒
 - [[jensen-1996-photon-mapping]] —— Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
