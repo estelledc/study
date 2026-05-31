@@ -2,6 +2,30 @@
  * 仅覆写 Starlight 暴露的 --sl-* 变量，禁动 layout
  */
 
+/* Jason DS → Starlight bridge */
+:root {
+  --sl-color-bg: var(--jx-paper);
+  --sl-color-text: var(--jx-ink);
+  --sl-color-text-accent: var(--jx-accent);
+  --sl-color-accent: var(--jx-accent);
+  --sl-color-accent-low: var(--jx-accent-tint);
+  --sl-color-accent-high: var(--jx-accent-hover);
+  --sl-color-bg-nav: var(--jx-surface-sunk);
+  --sl-color-bg-sidebar: var(--jx-paper);
+  --sl-color-hairline: var(--jx-rule);
+  --sl-color-hairline-light: var(--jx-rule-soft);
+  --sl-color-bg-inline-code: var(--jx-surface-sunk);
+  --sl-font: var(--jx-font-display);
+  --sl-font-system: var(--jx-font-sans-zh);
+  --sl-font-system-mono: var(--jx-font-mono);
+}
+
+/* dark mirror via Starlight data-theme */
+:root[data-theme="dark"] {
+  --sl-color-bg: var(--jx-paper);
+  --sl-color-text: var(--jx-ink);
+}
+
 :root {
   --sl-color-bg: #faf6f0;
   --sl-color-text: #1a1a1a;
