@@ -115,6 +115,10 @@ Assistant: 秋叶飘零落，金风送暮凉。
 2. **三阶段 SFT → RM → PPO 是行业标配**——所有大模型厂商今天还在用这套，区别只在数据来源和细节。
 3. **小模型 + 好对齐 > 大模型 + 没对齐**——这是 InstructGPT 最有冲击力的发现，直接催生了 ChatGPT 的商业化。
 4. **对齐不免费**——RLHF 让模型听话，但通用能力会轻微下滑，需要混 pretraining loss 修复。
+5. **labeler 选择决定模型 personality**：OpenAI 找的 40 个 labeler 多是英语母语 / 大学教育水平偏高，最终模型的"语气" 就长这样。换一拨人标，模型 personality 会明显不同——RLHF 把 labeler 团队的偏好烙进了模型。
+6. **数据量比想象的小**：标注数据只有几万条，比 pretraining 的几千亿 token 少 7 个数量级，却撬动了模型最终行为——好的对齐数据"杠杆率" 远超 pretraining。
+7. **PPO 的 KL 惩罚是隐性的稳定器**：没有这个约束 RL 会把模型拉得离 SFT 太远进入"reward hacking" 区域；DPO 把这条 KL 约束直接闭式解出来，省掉显式 RL 训练但仍尊重同一条物理约束。
+8. **三阶段范式跨任务可迁移**：SFT → RM → PPO 与 AlphaGo 的"模仿 → 评估 → 强化"几乎同构；说明这不是 LLM 专属配方，而是任何"难定义直接 reward" 的对齐问题的通用 recipe。
 
 ## 延伸阅读
 

@@ -135,6 +135,10 @@ retriever = QueryFusionRetriever(
 2. **生态护城河**——200+ data loader（LlamaHub）和重排器集成，是新框架最难复制的部分
 3. **从开源到商业化的常见路径**——开源框架免费 + 云上 managed 服务收费（LlamaCloud），和 Vercel / Supabase / Datadog 同一套打法
 4. **API 稳定性很贵**——0.x → 1.x 拆包带来的迁移痛，是社区给出的"成长税"
+5. **RAG 框架的真正壁垒不是算法，是 connector**：200+ data loader 让 LlamaIndex 能直连 Confluence / Notion / 公司 Wiki，新框架想抄都得重造一遍生态——平台型工具的护城河 90% 在集成数量
+6. **改名能救命**：原名 GPT Index 被 OpenAI 法务函逼改成 LlamaIndex，结果蹭上 Meta LLaMA 的流量反而更火——一个不利的法务事件被反向利用成营销机会
+7. **chunking 不是 framework 的事**：LlamaIndex 提供 SentenceSplitter / SemanticSplitter / Markdown-aware 多种切片，但最终质量取决于业务文档结构——框架能给工具，调参仍要人懂自己的语料
+8. **embedding 重建是 RAG 的迁移税**：换 embedding 模型 = 全量重建索引；这条规则让"换更好模型" 在大规模知识库上变得很贵，是 RAG 系统的隐藏成本项
 
 ## 关联
 
