@@ -174,3 +174,5 @@ simulation 模式启动：
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 
+<!-- 合并自 [[foundationdb]] dedup 2026-05-31 -->
+
