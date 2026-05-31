@@ -149,5 +149,11 @@ RoBERTa 全文最值得学的不是任何单点改动，而是**"控制变量做
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[electra-2020]] —— ELECTRA — 把猜词题改成判真假题，训练效率 4 倍
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
+- [[xlnet-2019]] —— XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向
 
