@@ -130,6 +130,7 @@ img.save("cat.png")
 7. **license 决定生态命运**：CreativeML Open RAIL-M 许可允许商用又限制有害用途，这条法律条款决定了 SD 能被 ComfyUI / WebUI / Civitai 等社区无障碍接力——生态不是技术决定，是合同决定
 8. **VAE 编码再 diffuse 才是 LDM 真正的 trick**：原 DDPM 跑像素 512×512=26 万维空间，LDM 先压到 64×64×4=1.6 万维再 diffuse，省 16 倍计算的同时几乎不损质量——选好压缩空间是工程艺术
 9. **prompt 是 cross-attention 的 K/V**：文本通过 CLIP 编码后做 cross-attention 注入图像 latent；这种"另一个模态当 attention K/V" 的接入方式后来被多模态 LLM 普遍复用
+10. **采样步数是工程旋钮不是模型属性**：DDIM / DPM-Solver 等采样器把 1000 步压到 20-50 步，质量几乎不损——同一个权重换采样器就 30 倍速，提醒"训练" 与"推理" 是两个独立优化空间
 
 ## 延伸阅读
 

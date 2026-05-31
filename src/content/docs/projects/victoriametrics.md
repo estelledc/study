@@ -128,6 +128,7 @@ VM 团队规模一直很小（< 20 人），但每月稳定发版，issue 响应
 3. **单 binary 多角色** 是简化运维的好设计——开发期一个进程跑，生产期分四个进程跑，代码不变
 4. **小团队 + 高频迭代** 也能做基础设施级开源——不是只有 Google / Facebook 才能做监控
 5. **历史 series 高基数是真敌人**：标签维度爆炸（pod_name + container_id + request_id 三件套）会让任何时序库爆掉，VM 的"Inverted Index 按 label 分桶"是缓解办法但不解决根因，业务侧仍要约束高基数 label
+6. **写入路径与查询路径分离**：vminsert / vmstorage / vmselect 拆三角色，让"高吞吐写入" 与"复杂查询" 可以独立 scale——这种"按 IO pattern 切角色" 的设计在所有时序库（InfluxDB / Prometheus / TimescaleDB）都看得到
 
 ## 延伸阅读
 
