@@ -54,8 +54,16 @@ function validateZhuangyuanV11(content, frontmatter) {
   const hasFigure = figurePatterns.some(re => re.test(content));
   if (!hasFigure) return { ok: false, reason: 'zy-v1.1 needs >= 1 Figure marker (H2/H3 or inline)' };
   // Self-classify 段
-  if (!content.match(/^##\s+(自我分级|自我分类|self-classify|self_classify)/im)) {
-    return { ok: false, reason: 'zy-v1.1 needs self-classify section' };
+  const selfClassifyOk = (
+    // 严格 H2/H3：## self-classify
+    /^#{2,3}\s+(self-classify|self_classify|自我分级|自我分类)\b/im.test(content) ||
+    // 宽容 H2/H3：## 项目类型 self-classify
+    /^#{2,3}\s+.*?(self-classify|self_classify|自我分级|自我分类)/im.test(content) ||
+    // Inline blockquote：> 项目类型 self-classify
+    /^>.*?(self-classify|self_classify|自我分级|自我分类)/im.test(content)
+  )
+  if (!selfClassifyOk) {
+    return { ok: false, reason: 'zy-v1.1 needs self-classify section (## H2 / blockquote inline allowed)' }
   }
   return { ok: true };
 }
