@@ -166,6 +166,7 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器

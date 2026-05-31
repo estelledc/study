@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 656 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 659 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：656 篇
+- **总数**：659 篇
 - **已分类**：143
-- **未分类**：513（落入"其他 / 待分类"段）
+- **未分类**：516（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 513 |
+| [其他 / 待分类](#其他--待分类) | 516 |
 
 ---
 
@@ -304,12 +304,13 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 513 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 516 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) |
 | `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) |
+| `adamw-2017` | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |
@@ -576,6 +577,7 @@ sidebar:
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) |
+| `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) |
 | `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
 | `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) |
@@ -595,6 +597,7 @@ sidebar:
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
+| `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) |
 | `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) |
 | `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) |
 | `marques-silva-grasp-1996` | [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) |
@@ -824,7 +827,7 @@ sidebar:
 
 ---
 
-## 全部 656 篇（字母序）
+## 全部 659 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -832,6 +835,7 @@ sidebar:
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) | 其他 |
 | `activation-patching` | [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) | AI 安全与可解释性 |
 | `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) | 其他 |
+| `adamw-2017` | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) | 其他 |
 | `adapton` | [Adapton — 增量计算](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 其他 |
@@ -1169,6 +1173,7 @@ sidebar:
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | 其他 |
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | 其他 |
+| `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) | 其他 |
 | `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) | 其他 |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
 | `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) | 其他 |
@@ -1193,6 +1198,7 @@ sidebar:
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 其他 |
+| `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) | 其他 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
 | `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) | 其他 |
