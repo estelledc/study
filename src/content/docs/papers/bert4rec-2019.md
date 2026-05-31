@@ -155,3 +155,5 @@ loss = - sum_{t in masked} log P(i_t | i_{<t}, i_{>t}, theta)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+（暂无反向链接）
+

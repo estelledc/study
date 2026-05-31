@@ -152,6 +152,7 @@ model = tf.estimator.DNNLinearCombinedClassifier(
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[attention]] —— Attention Is All You Need
+- [[bert4rec-2019]] —— BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模
 - [[dcn-2017]] —— DCN — 在 DNN 旁边并联一条专门学特征交叉的网络
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史

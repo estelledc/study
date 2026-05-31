@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 600 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 603 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：600 个
+- **总数**：603 个
 - **已分类**：212
-- **未分类**：388（落入"其他 / 待分类"段）
+- **未分类**：391（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 388 |
+| [其他 / 待分类](#其他--待分类) | 391 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 388 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 391 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -591,6 +591,7 @@ sidebar:
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
 | `cvat` | [CVAT — 视频帧标注与半自动追踪的开源王者](/study/projects/cvat/) |
+| `dagger` | [Dagger — 用真正的编程语言写 CI pipeline](/study/projects/dagger/) |
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
@@ -657,6 +658,7 @@ sidebar:
 | `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) |
+| `greenplum-db` | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) |
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) |
@@ -766,6 +768,7 @@ sidebar:
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) |
+| `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) |
 | `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) |
@@ -896,7 +899,7 @@ sidebar:
 
 ---
 
-## 全部 600 个（字母序）
+## 全部 603 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1016,6 +1019,7 @@ sidebar:
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `cvat` | [CVAT — 视频帧标注与半自动追踪的开源王者](/study/projects/cvat/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
+| `dagger` | [Dagger — 用真正的编程语言写 CI pipeline](/study/projects/dagger/) | 其他 |
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) | 其他 |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | 其他 |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) | 其他 |
@@ -1107,6 +1111,7 @@ sidebar:
 | `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) | 其他 |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) | 其他 |
+| `greenplum-db` | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) | 其他 |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | 其他 |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | 其他 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
@@ -1289,6 +1294,7 @@ sidebar:
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | 其他 |
+| `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | 其他 |
 | `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) | 其他 |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) | 其他 |
 | `pnpm` | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) | Monorepo / 包管理 |
