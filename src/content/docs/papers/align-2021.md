@@ -147,5 +147,5 @@ results = nearest_neighbors(query_vec, gallery_vecs)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clip]] —— 同期 CLIP 笔记会反向引到这里做对比
-- [[filip-2021]] —— FILIP 论文以 ALIGN 为基线
+（暂无反向链接）
+

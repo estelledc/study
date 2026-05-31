@@ -182,4 +182,5 @@ for g in gaussians:
 - [[stam-1999-stable-fluids]] —— Stable Fluids — 让流体模拟时间步随便给都不爆
 - [[vit]] —— ViT — Vision Transformer
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
+- [[williams-1983-mipmap]] —— Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)
 

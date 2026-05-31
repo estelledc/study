@@ -130,6 +130,7 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成

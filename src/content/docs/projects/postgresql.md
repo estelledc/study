@@ -206,6 +206,7 @@ LIMIT 5;
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
+- [[questdb]] —— QuestDB — 高性能时序库
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
 - [[redis]] —— Redis — 内存键值数据库

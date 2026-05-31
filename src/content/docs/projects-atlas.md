@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 605 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 607 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：605 个
+- **总数**：607 个
 - **已分类**：212
-- **未分类**：393（落入"其他 / 待分类"段）
+- **未分类**：395（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 393 |
+| [其他 / 待分类](#其他--待分类) | 395 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 393 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 395 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -671,6 +671,7 @@ sidebar:
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
+| `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) |
 | `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
@@ -793,6 +794,7 @@ sidebar:
 | `pytorch-lightning` | [PyTorch Lightning — PyTorch 训练循环抽象](/study/projects/pytorch-lightning/) |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
+| `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) |
@@ -901,7 +903,7 @@ sidebar:
 
 ---
 
-## 全部 605 个（字母序）
+## 全部 607 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1128,6 +1130,7 @@ sidebar:
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
+| `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) | 其他 |
 | `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | 其他 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | 其他 |
@@ -1331,6 +1334,7 @@ sidebar:
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) | 其他 |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
+| `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) | 其他 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
 | `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
