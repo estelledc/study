@@ -156,6 +156,7 @@ public record(delta: StoreDelta) {
 - [[flowchart-js]] —— flowchart.js — 文本生成流程图
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[pdfme]] —— pdfme — TypeScript 模板化 PDF
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[tldraw]] —— tldraw — 把白板做成可嵌入的 SDK
