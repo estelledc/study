@@ -216,6 +216,7 @@ exokernel-1995
 f1-2013
 f4-2014
 faiss-2017
+farsite-2002
 fast-paxos-2006
 fastertransformer-2021
 feautrier-polyhedral
@@ -235,6 +236,7 @@ foundationdb
 foundationdb-2021
 fpga-hls-2011
 frama-c-2012
+frangipani-1997
 frank-effects
 fsdp-2023
 fsrs-spaced-repetition
@@ -334,6 +336,7 @@ knuth-lr-1965
 knuth-taocp
 kokkos-2014
 koren-mf-2009
+krishnamurthy-1999-http11
 kustomize
 l4-1995
 label-smoothing-2016
@@ -379,6 +382,7 @@ mae
 magic3d-2023
 mahajan-2002-bgp-misconfig
 mamba
+maml-2017
 mapreduce
 marching-cubes-1987
 maron-kuhns-1960
@@ -485,6 +489,7 @@ product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
 prolog-colmerauer
+prototypical-networks-2017
 proverif-2001
 ps-li-2014
 push-pull-frp
@@ -663,6 +668,7 @@ wadler-prettier
 wald-2007-sah-bvh
 wam-warren
 wandb
+wang-2014-spdy
 ward-1992
 websocket-rfc-6455
 whitted-1980
@@ -900,6 +906,7 @@ gradio
 grafana
 grafana-tempo
 grape
+graphology
 graphql-yoga
 greenplum-db
 gron
@@ -993,6 +1000,7 @@ llama-index
 llamaindex
 lm-evaluation-harness
 lmdb
+longhorn
 lottie
 lsd
 lucia
@@ -1001,6 +1009,7 @@ m3
 mage
 mailcow
 makerdao
+manticoresearch
 mapbox-gl-js
 maplibre-gl
 mariadb-server
@@ -1195,6 +1204,7 @@ shfmt
 shiki
 sia
 sidekiq
+sigma-js
 signal-android
 signal-ios
 signal-server
@@ -1325,6 +1335,7 @@ yq
 yugabyte-db
 zcash
 zellij
+zincsearch
 zksync-era
 zod
 zoxide

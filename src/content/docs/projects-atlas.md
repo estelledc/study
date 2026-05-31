@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 654 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 657 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：654 个
+- **总数**：657 个
 - **已分类**：213
-- **未分类**：441（落入"其他 / 待分类"段）
+- **未分类**：444（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 441 |
+| [其他 / 待分类](#其他--待分类) | 444 |
 
 ---
 
@@ -502,10 +502,11 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 441 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 444 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
+| `3d-force-graph` | [3d-force-graph — 把网络拓扑搬进三维空间](/study/projects/3d-force-graph/) |
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) |
 | `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) |
 | `act` | [act — 在本地用 Docker 跑 GitHub Actions](/study/projects/act/) |
@@ -714,6 +715,7 @@ sidebar:
 | `kustomize` | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) |
 | `kuzu` | [Kùzu — 把图数据库做成 DuckDB](/study/projects/kuzu/) |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
+| `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) |
@@ -786,6 +788,7 @@ sidebar:
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) |
+| `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
@@ -950,10 +953,11 @@ sidebar:
 
 ---
 
-## 全部 654 个（字母序）
+## 全部 657 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
+| `3d-force-graph` | [3d-force-graph — 把网络拓扑搬进三维空间](/study/projects/3d-force-graph/) | 其他 |
 | `aave-v3` | [Aave V3 — 借贷协议旗舰](/study/projects/aave-v3/) | 其他 |
 | `accelerate` | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) | 其他 |
 | `act` | [act — 在本地用 Docker 跑 GitHub Actions](/study/projects/act/) | 其他 |
@@ -1238,6 +1242,7 @@ sidebar:
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) | 其他 |
+| `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) | 其他 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
 | `langfuse` | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) | 其他 |
@@ -1355,6 +1360,7 @@ sidebar:
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
+| `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) | 其他 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
