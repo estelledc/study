@@ -163,6 +163,7 @@ function Greeting({ name }) {
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
 - [[cot]] —— Chain-of-Thought Prompting
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架

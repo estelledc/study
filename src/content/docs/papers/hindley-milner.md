@@ -221,6 +221,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块

@@ -173,6 +173,7 @@ D(M):
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 - [[prolog-colmerauer]] —— Prolog 的诞生 — 让逻辑式子直接当程序跑
+- [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
 - [[rsa]] —— RSA 公钥密码
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生

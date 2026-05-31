@@ -152,7 +152,7 @@ const next = Temporal.PlainDate
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
+- [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 
