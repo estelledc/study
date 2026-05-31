@@ -164,6 +164,7 @@ client.on("Room.timeline", async (event, room) => {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[botbuilder-js]] —— Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）

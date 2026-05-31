@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 391 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 394 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：391 篇
+- **总数**：394 篇
 - **已分类**：143
-- **未分类**：248（落入"其他 / 待分类"段）
+- **未分类**：251（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 248 |
+| [其他 / 待分类](#其他--待分类) | 251 |
 
 ---
 
@@ -304,12 +304,13 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 248 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 251 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
+| `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
 | `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |
@@ -362,6 +363,7 @@ sidebar:
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) |
+| `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
@@ -550,6 +552,7 @@ sidebar:
 | `volta-architecture-2017` | [NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍](/study/papers/volta-architecture-2017/) |
 | `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) |
 | `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) |
+| `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
@@ -559,7 +562,7 @@ sidebar:
 
 ---
 
-## 全部 391 篇（字母序）
+## 全部 394 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -570,6 +573,7 @@ sidebar:
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 其他 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
+| `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | 其他 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 其他 |
@@ -650,6 +654,7 @@ sidebar:
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | 其他 |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 其他 |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) | 其他 |
+| `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) | 其他 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | 其他 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | 其他 |
@@ -944,6 +949,7 @@ sidebar:
 | `voyager` | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | 智能体与 LLM 系统 |
 | `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) | 其他 |
 | `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) | 其他 |
+| `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) | 其他 |
 | `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
 | `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 其他 |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |

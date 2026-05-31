@@ -71,6 +71,7 @@ colbert-v2
 comer-1979-btree
 compcert
 compiler-errors
+consistent-hashing-1997
 constitutional-ai
 cook-levin
 copilot-rct
@@ -143,6 +144,7 @@ gfs
 gilbert-lynch-2002
 godel-1931
 gpt-3
+gpu-cache-coherence-2013
 gpu-microbenchmarking-2010
 graalvm-truffle
 gradual-typing
@@ -366,6 +368,7 @@ turing-1936
 turing-architecture-2018
 tvm
 unified-memory-2014
+vcc-2009
 vellvm
 vertica-2012
 vit
@@ -471,6 +474,7 @@ continue
 conversations
 cosmos-sdk
 cosmwasm
+ctranslate2
 curlie
 curve
 d3
@@ -486,6 +490,7 @@ delta
 dendrite
 dgraph
 dify
+discord-js
 discord-py
 django
 dnd-kit
@@ -841,6 +846,7 @@ weaviate
 web-vitals
 web3-js
 webpack
+wezterm
 why-did-you-render
 wormhole
 wretch

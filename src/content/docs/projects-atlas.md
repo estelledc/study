@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 472 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 475 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：472 个
+- **总数**：475 个
 - **已分类**：207
-- **未分类**：265（落入"其他 / 待分类"段）
+- **未分类**：268（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 265 |
+| [其他 / 待分类](#其他--待分类) | 268 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 265 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 268 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -530,6 +530,7 @@ sidebar:
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
+| `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) |
 | `botpress` | [Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台](/study/projects/botpress/) |
 | `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) |
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) |
@@ -625,6 +626,7 @@ sidebar:
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) |
+| `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
@@ -639,6 +641,7 @@ sidebar:
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
+| `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
 | `makerdao` | [MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI](/study/projects/makerdao/) |
@@ -768,7 +771,7 @@ sidebar:
 
 ---
 
-## 全部 472 个（字母序）
+## 全部 475 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -812,6 +815,7 @@ sidebar:
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | 其他 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
+| `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) | 其他 |
 | `botpress` | [Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台](/study/projects/botpress/) | 其他 |
 | `bottom` | [bottom — Rust 写的跨平台终端进程监控（widget 自由拼）](/study/projects/bottom/) | 其他 |
 | `boxen` | [boxen — 给终端文本套个边框的事](/study/projects/boxen/) | Terminal / 终端 |
@@ -966,6 +970,7 @@ sidebar:
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) | 其他 |
+| `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) | 其他 |
 | `koa` | [Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架](/study/projects/koa/) | Web 框架 |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) | 其他 |
 | `konva` | [Konva — 给 HTML5 Canvas 装一棵会响应的节点树](/study/projects/konva/) | 图像处理 / Canvas |
@@ -993,6 +998,7 @@ sidebar:
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | 其他 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |
+| `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |

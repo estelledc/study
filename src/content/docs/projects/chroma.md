@@ -138,6 +138,7 @@ col = client.create_collection("docs", embedding_function=ef)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dgraph]] —— Dgraph — 分布式图数据库
+- [[llama-index]] —— LlamaIndex — RAG 四件套数据框架
 - [[llamaindex]] —— LlamaIndex — LLM 数据框架
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[milvus]] —— Milvus — 开源向量数据库

@@ -152,6 +152,7 @@ else                work_B();
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cuda-streams-concurrency-2018]] —— CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
 
