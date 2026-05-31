@@ -158,5 +158,6 @@ LinkedIn、Uber、Stripe、Walmart、Slack、Confluent 都是已知大用户。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[druid]] —— Apache Druid — 流批一体的实时分析数据库
 

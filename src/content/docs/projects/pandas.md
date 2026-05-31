@@ -165,6 +165,7 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）
 - [[numpy]] —— NumPy — Python 科学计算基石
+- [[plotnine]] —— plotnine — Python 复刻 R 的 ggplot2
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库

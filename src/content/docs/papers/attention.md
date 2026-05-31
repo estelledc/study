@@ -146,8 +146,10 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
+- [[dcn-2017]] —— DCN — 在 DNN 旁边并联一条专门学特征交叉的网络
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -169,6 +171,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[karis-2014-ue4-pbr]] —— Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 - [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
+- [[liu-2020-dlss]] —— DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
 - [[longformer-2020]] —— Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
 - [[mae]] —— MAE — Masked Autoencoders
@@ -189,7 +192,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[resnet]] —— ResNet — 残差连接
