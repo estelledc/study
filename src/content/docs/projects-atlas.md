@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 461 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 466 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：461 个
+- **总数**：466 个
 - **已分类**：207
-- **未分类**：254（落入"其他 / 待分类"段）
+- **未分类**：259（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 254 |
+| [其他 / 待分类](#其他--待分类) | 259 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 254 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 259 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -558,6 +558,7 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
+| `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
@@ -576,6 +577,7 @@ sidebar:
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
+| `errbot` | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) |
@@ -654,6 +656,8 @@ sidebar:
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
+| `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) |
+| `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
@@ -733,6 +737,7 @@ sidebar:
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) |
+| `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) |
 | `trl` | [TRL — RLHF / DPO / GRPO 训练库](/study/projects/trl/) |
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) |
@@ -757,7 +762,7 @@ sidebar:
 
 ---
 
-## 全部 461 个（字母序）
+## 全部 466 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -848,6 +853,7 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) | 其他 |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | 其他 |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) | 其他 |
+| `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) | 其他 |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | 其他 |
@@ -882,6 +888,7 @@ sidebar:
 | `enquirer` | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) | Terminal / 终端 |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) | 其他 |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) | 其他 |
+| `errbot` | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) | 其他 |
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | 其他 |
@@ -1026,6 +1033,8 @@ sidebar:
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
+| `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) | 其他 |
+| `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | 其他 |
 | `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | CLI / 命令行工具 |
@@ -1170,6 +1179,7 @@ sidebar:
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
+| `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) | 其他 |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) | 其他 |
 | `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | DevOps / 容器 / 运维 |
 | `trl` | [TRL — RLHF / DPO / GRPO 训练库](/study/projects/trl/) | 其他 |

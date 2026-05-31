@@ -162,6 +162,7 @@ def reduce(user_id, latencies):
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+- [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

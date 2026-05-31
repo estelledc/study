@@ -172,6 +172,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
+- [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

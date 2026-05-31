@@ -179,6 +179,7 @@ def me(user: dict = Depends(current_user)):
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
+- [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架

@@ -170,4 +170,6 @@ path=(~/bin /usr/local/bin $path)
 
 - [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
+- [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

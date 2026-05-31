@@ -161,4 +161,5 @@ helm rollback my-nginx 1
 
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 
