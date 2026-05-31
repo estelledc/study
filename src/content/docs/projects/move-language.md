@@ -159,6 +159,7 @@ spec increment {
 - [[anchor]] —— Anchor — Solana 合约开发框架
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 - [[sui]] —— Sui — 把链上资产拆成一个个独立对象的 L1

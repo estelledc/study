@@ -172,4 +172,5 @@ export async function bookTrip(tripId: string) {
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
+- [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 

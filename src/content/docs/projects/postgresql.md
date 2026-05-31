@@ -192,6 +192,7 @@ LIMIT 5;
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
+- [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
