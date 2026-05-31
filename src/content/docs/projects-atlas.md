@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 487 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 490 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：487 个
+- **总数**：490 个
 - **已分类**：207
-- **未分类**：280（落入"其他 / 待分类"段）
+- **未分类**：283（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 280 |
+| [其他 / 待分类](#其他--待分类) | 283 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 280 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 283 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -505,6 +505,7 @@ sidebar:
 | `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
+| `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
@@ -658,6 +659,7 @@ sidebar:
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
+| `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
@@ -773,6 +775,7 @@ sidebar:
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
 | `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) |
+| `yazi` | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) |
@@ -783,7 +786,7 @@ sidebar:
 
 ---
 
-## 全部 487 个（字母序）
+## 全部 490 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -793,6 +796,7 @@ sidebar:
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
+| `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | 其他 |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | 其他 |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
 | `anime` | [anime.js — 一行 JS 让网页元素按时间线动起来](/study/projects/anime/) | 动画 |
@@ -1041,6 +1045,7 @@ sidebar:
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
+| `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) | 其他 |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | 其他 |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | 其他 |
@@ -1264,6 +1269,7 @@ sidebar:
 | `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) | 其他 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | CLI / 命令行工具 |
+| `yazi` | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) | 其他 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | 其他 |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | 其他 |

@@ -156,6 +156,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
+- [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相

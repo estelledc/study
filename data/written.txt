@@ -108,6 +108,7 @@ diffie-hellman
 dijkstra-goto
 dijkstra-shortest-path
 dino
+disel-2018
 diskann-2019
 distserve
 dit
@@ -251,6 +252,7 @@ millwheel-2013
 milner-pi-calculus
 minisat-2003
 mixture-of-experts
+mlflow
 mlir
 monetdb-x100-2005
 muzero
@@ -266,6 +268,7 @@ nuprl-1986
 oauth-2.1-rfc
 opencl-2010
 openhands
+orca-2022
 orca-continuous-batching
 ot-1989
 pair-programming
@@ -279,6 +282,7 @@ peg-packrat-ford
 percolator-2010
 peyton-jones-stg
 pipedream-2019
+pivot-tracing-2015
 plotkin-sos
 pnueli-temporal-1977
 pnuts-2008
@@ -720,6 +724,7 @@ oxc
 pandas
 partykit
 patchright
+peerjs-server
 penpot
 pg-boss-readme
 pgvector
