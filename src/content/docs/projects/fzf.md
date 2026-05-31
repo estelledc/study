@@ -180,5 +180,6 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
+- [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd
 

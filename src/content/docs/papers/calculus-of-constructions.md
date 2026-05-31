@@ -168,5 +168,6 @@ Qed.
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理
+- [[verdi-2015]] —— Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
 - [[vst-2014]] —— VST — 把 C 程序的数学证明一路带到机器码
 

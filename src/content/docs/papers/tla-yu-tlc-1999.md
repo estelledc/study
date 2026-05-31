@@ -165,4 +165,5 @@ Manolios 后来去了 Northeastern，做 ACL2 定理证明；Yu 在 Microsoft Re
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[verdi-2015]] —— Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
 

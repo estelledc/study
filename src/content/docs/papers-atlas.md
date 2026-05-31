@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 413 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 415 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：413 篇
+- **总数**：415 篇
 - **已分类**：143
-- **未分类**：270（落入"其他 / 待分类"段）
+- **未分类**：272（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 270 |
+| [其他 / 待分类](#其他--待分类) | 272 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 270 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 272 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -564,6 +564,7 @@ sidebar:
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |
+| `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) |
 | `vogels-eventual-2009` | [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) |
@@ -576,12 +577,13 @@ sidebar:
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |
+| `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 
 ---
 
-## 全部 413 篇（字母序）
+## 全部 415 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -976,6 +978,7 @@ sidebar:
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 其他 |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 其他 |
+| `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | 其他 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
@@ -994,6 +997,7 @@ sidebar:
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) | 其他 |
+| `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) | 其他 |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | 其他 |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | 其他 |
 | `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | GC / 内存管理 |

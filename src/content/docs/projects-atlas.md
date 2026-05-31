@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 483 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 486 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：483 个
+- **总数**：486 个
 - **已分类**：207
-- **未分类**：276（落入"其他 / 待分类"段）
+- **未分类**：279（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 276 |
+| [其他 / 待分类](#其他--待分类) | 279 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 276 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 279 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -575,6 +575,7 @@ sidebar:
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
+| `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/projects/dspy/) |
 | `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) |
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) |
 | `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) |
@@ -728,6 +729,7 @@ sidebar:
 | `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) |
 | `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) |
+| `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) |
@@ -769,6 +771,7 @@ sidebar:
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
+| `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) |
@@ -779,7 +782,7 @@ sidebar:
 
 ---
 
-## 全部 483 个（字母序）
+## 全部 486 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -895,6 +898,7 @@ sidebar:
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | 其他 |
+| `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/projects/dspy/) | 其他 |
 | `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) | 其他 |
 | `duckdb` | [DuckDB — 嵌入式列存 OLAP](/study/projects/duckdb/) | 数据库本体 / 存储引擎 |
 | `duckdb-wasm` | [duckdb-wasm — 把分析数据库塞进浏览器标签页](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
@@ -1164,6 +1168,7 @@ sidebar:
 | `signal-android` | [Signal Android — 让 Android 上的每条消息都只有两端能看见](/study/projects/signal-android/) | 其他 |
 | `signal-ios` | [Signal iOS — 让 iPhone 上的每条消息都只有两端能看见](/study/projects/signal-ios/) | 其他 |
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) | 其他 |
+| `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) | 其他 |
@@ -1254,6 +1259,7 @@ sidebar:
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | 其他 |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | 其他 |
+| `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) | 其他 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
