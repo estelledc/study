@@ -105,7 +105,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - **备份恢复双轨**：etcd 用 snapshot（某时刻全量）+ WAL（之后的写日志）两层保护。单恢复 snapshot 会丢最新数据；只看 WAL 又重放慢；正确做法是"snapshot 兜底 + WAL 追到最新"
 - **不能存大 value**：单 value 默认上限 1MB，接近这个值性能急剧下降。要存大文件（镜像、二进制）请用 S3 / MinIO 等对象存储，etcd 只存它们的 URL
 
-## 历史
+## 历史小故事（可跳过）
 
 - **2013 年**：CoreOS 创立，做最小化 Linux 镜像跑容器。需要一个分布式配置存储——市面上 ZooKeeper 太重（Java + 复杂运维），自己用 Go 写了 etcd
 - **2014 年**：etcd 0.x 发布，HTTP + JSON API，简单但性能一般
@@ -119,6 +119,10 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - **共识算法可以工业化**：Raft 论文 2014 发表，几年后 etcd / TiKV / Consul 全跑起来——理论到落地不一定要等几十年，关键看有没有清晰的工程参考实现
 - **协议演进的代价**：v2 → v3 等于全量数据重写，K8s 升级花了大约 2 年才做完。基础设施升级的复杂度远超应用层，向后兼容是基础设施第一原则
 - **限制就是边界**：1MB value / 1-2k QPS 这些不是 bug，是分布式一致性的物理代价。理解了边界才用得对——别拿 etcd 当 [[redis]] 跑高频读写
+- **奇数节点不是约定，是数学约束**：3 节点容忍 1 故障 / 5 节点容忍 2 故障——加偶数节点反而降低容灾能力。
+- **watch 是 etcd 的灵魂**：K8s 控制平面所有 controller 都在 watch etcd，事件触发式调和；理解 watch 的"流式 + revision 顺序" 是看懂 K8s 调度的前提。
+- **MVCC 而非锁**：etcd v3 用 multi-version 让读不阻塞写——这条选择决定了 K8s 控制平面"高读低写" 的访问模式能跑得动。
+- **Compact 不是可选**：MVCC 历史版本不清理会一直膨胀，etcd 必须周期 compact 才不会耗光磁盘——RocksDB / TiKV 都有同款问题。
 
 ## 关联
 
