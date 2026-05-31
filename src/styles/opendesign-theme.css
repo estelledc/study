@@ -24,8 +24,12 @@
   --sl-color-text: #faf6f0;
   --sl-color-text-accent: #e88a73;
   --sl-color-accent: #e88a73;
+  --sl-color-accent-low: rgba(232, 138, 115, 0.18);
+  --sl-color-accent-high: #f5a890;
   --sl-color-bg-nav: #2a2825;
   --sl-color-bg-sidebar: #1a1a1a;
+  --sl-color-hairline: rgba(250, 246, 240, 0.14);
+  --sl-color-hairline-light: rgba(250, 246, 240, 0.08);
   --sl-color-bg-inline-code: #2a2825;
 }
 
