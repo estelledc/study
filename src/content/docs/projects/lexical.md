@@ -4,6 +4,8 @@ description: Lexical 用 native browser selection + immutable EditorState + dirt
 sidebar:
   label: lexical
   order: 65
+schema_version: zhuangyuan-v1.1
+branch: D
 ---
 
 > 项目类型 self-classify：**框架/SDK**（v1.1 分支 D）。

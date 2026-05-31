@@ -4,6 +4,8 @@ description: 大型应用范例——49.9k stars 的开源 Linear/Jira 替代，
 sidebar:
   order: 28
   label: "makeplane/plane"
+schema_version: zhuangyuan-v1.1
+branch: A
 ---
 
 > 状元篇 v1.1 分支 A（大型应用 / monorepo / 工程范式）。
