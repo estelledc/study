@@ -156,4 +156,5 @@ WHERE dt = '2026-05-30' LIMIT 100;
 - [[questdb]] —— QuestDB — 高性能时序库
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[starrocks]] —— StarRocks — MPP 列存数据库
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 

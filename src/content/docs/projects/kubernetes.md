@@ -141,6 +141,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
+- [[cri-o]] —— CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程

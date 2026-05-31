@@ -176,6 +176,7 @@ ORDER BY date;
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[starrocks]] —— StarRocks — MPP 列存数据库
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[tidb]] —— TiDB — HTAP 分布式数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[trill-2014]] —— Trill — 一个引擎同时跑流、批、交互三种分析

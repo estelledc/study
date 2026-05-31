@@ -134,6 +134,7 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[coca-2022]] —— CoCa — 把对比和生成两种多模态训练目标合到一个模型里
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer

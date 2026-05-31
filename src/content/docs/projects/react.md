@@ -179,6 +179,7 @@ function Greeting({ name }) {
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
+- [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架

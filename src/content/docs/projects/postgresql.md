@@ -219,6 +219,7 @@ LIMIT 5;
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层

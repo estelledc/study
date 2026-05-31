@@ -156,5 +156,6 @@ from(bucket: "metrics")
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[questdb]] —— QuestDB — 高性能时序库
+- [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 

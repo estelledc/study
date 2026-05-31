@@ -146,6 +146,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[causal-abstraction]] —— Causal Abstraction — 神经网络与算法的因果对齐
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[coca-2022]] —— CoCa — 把对比和生成两种多模态训练目标合到一个模型里
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[dcn-2017]] —— DCN — 在 DNN 旁边并联一条专门学特征交叉的网络
