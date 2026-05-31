@@ -202,6 +202,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[sglang]] —— SGLang — 结构化推理运行时
 - [[shap]] —— SHAP — 用博弈论给每个特征发工资
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[stable-diffusion-webui]] —— AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器
 - [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则
 - [[tensorflow]] —— TensorFlow — Google 端到端 DL 平台
 - [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
