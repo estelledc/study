@@ -179,6 +179,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
@@ -198,6 +199,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[m3]] —— M3 — Uber 的分布式 TSDB
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站

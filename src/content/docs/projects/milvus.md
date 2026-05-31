@@ -189,6 +189,7 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[langchain]] —— LangChain — LLM 应用开发框架
+- [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[qdrant]] —— Qdrant — Rust 向量数据库
