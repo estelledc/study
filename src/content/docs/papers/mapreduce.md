@@ -170,6 +170,7 @@ def reduce(user_id, latencies):
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[quincy-2009]] —— Quincy — 把"派活给机器"变成一道最小费用流题
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 481 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 483 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：481 个
+- **总数**：483 个
 - **已分类**：207
-- **未分类**：274（落入"其他 / 待分类"段）
+- **未分类**：276（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 274 |
+| [其他 / 待分类](#其他--待分类) | 276 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 274 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 276 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -557,6 +557,7 @@ sidebar:
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) |
+| `crewai` | [CrewAI — 把多 Agent 编排做成"组团队"](/study/projects/crewai/) |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
@@ -638,6 +639,7 @@ sidebar:
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
+| `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
@@ -777,7 +779,7 @@ sidebar:
 
 ---
 
-## 全部 481 个（字母序）
+## 全部 483 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -866,6 +868,7 @@ sidebar:
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | 其他 |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | 其他 |
+| `crewai` | [CrewAI — 把多 Agent 编排做成"组团队"](/study/projects/crewai/) | 其他 |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | 其他 |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
@@ -997,6 +1000,7 @@ sidebar:
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | 其他 |
 | `lerna` | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) | Monorepo / 包管理 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
+| `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | 其他 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) | 其他 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |

@@ -189,6 +189,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
+- [[hyperkernel-2017]] —— Hyperkernel — 让 SMT 求解器一键验证操作系统内核
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 - [[iris-2015]] —— Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木
 - [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读

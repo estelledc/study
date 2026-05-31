@@ -158,6 +158,7 @@ f(jnp.ones(5))   # ⚠️ 又重新编译
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[attention]] —— Attention Is All You Need
 - [[gshard-2020]] —— GShard — 用注解让 600B 模型自动跨设备切片
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
