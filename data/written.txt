@@ -175,6 +175,7 @@ desbrun-1999-implicit-fairing
 dewitt-gray-1992
 differential-datalog
 diffie-hellman
+diffie-hellman-1976
 dijkstra-goto
 dijkstra-shortest-path
 din-2018
@@ -247,6 +248,7 @@ game-semantics-pcf
 gao-2001-as-relations
 garland-heckbert-1997-qem
 gbrank-2007
+gcn-2017
 generational-gc
 gfs
 gilbert-lynch-2002
@@ -373,6 +375,7 @@ local-type-inference
 logoot-2010
 longformer-2020
 loop-1987-subdivision
+lottery-1994
 lsh-indyk-1998
 lsm-tree-1996
 lstm-1997
@@ -688,6 +691,7 @@ zgc
 zk-snark
 
 # projects
+3d-force-graph
 aave-v3
 accelerate
 act
@@ -972,6 +976,7 @@ kuzu
 ky
 kysely
 label-studio
+lancedb
 langchain
 langfuse
 laravel
@@ -1089,6 +1094,7 @@ openmeetings
 opensea-js
 opensearch
 opentelemetry
+opentofu
 opentsdb
 openvidu
 openzeppelin-contracts

@@ -159,6 +159,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+- [[gat-2018]] —— GAT — 让图神经网络的邻居自带权重
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用

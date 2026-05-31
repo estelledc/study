@@ -149,6 +149,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[heartbleed-2014]] —— Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
