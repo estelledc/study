@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 443 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 447 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：443 个
+- **总数**：447 个
 - **已分类**：207
-- **未分类**：236（落入"其他 / 待分类"段）
+- **未分类**：240（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 236 |
+| [其他 / 待分类](#其他--待分类) | 240 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 236 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 240 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -600,6 +600,7 @@ sidebar:
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
+| `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
@@ -621,6 +622,7 @@ sidebar:
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
+| `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
@@ -664,6 +666,7 @@ sidebar:
 | `postal` | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) |
 | `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
+| `promptfoo` | [promptfoo — 给 prompt 写单元测试的 CLI](/study/projects/promptfoo/) |
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
@@ -731,6 +734,7 @@ sidebar:
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
+| `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
@@ -739,7 +743,7 @@ sidebar:
 
 ---
 
-## 全部 443 个（字母序）
+## 全部 447 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -898,6 +902,7 @@ sidebar:
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | 其他 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | 其他 |
+| `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | 其他 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
@@ -946,6 +951,7 @@ sidebar:
 | `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | 构建工具 / Bundler |
 | `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | i18n 国际化 |
 | `listr2` | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | Terminal / 终端 |
+| `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | 其他 |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | 其他 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |
@@ -1040,6 +1046,7 @@ sidebar:
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) | 其他 |
 | `prom-client` | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
+| `promptfoo` | [promptfoo — 给 prompt 写单元测试的 CLI](/study/projects/promptfoo/) | 其他 |
 | `prosemirror` | [ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架](/study/projects/prosemirror/) | 编辑器 / 富文本 |
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) | 其他 |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) | 其他 |
@@ -1176,6 +1183,7 @@ sidebar:
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | 其他 |
+| `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | 其他 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
