@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 533 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 536 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：533 个
+- **总数**：536 个
 - **已分类**：208
-- **未分类**：325（落入"其他 / 待分类"段）
+- **未分类**：328（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 325 |
+| [其他 / 待分类](#其他--待分类) | 328 |
 
 ---
 
@@ -497,7 +497,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 325 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 328 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -525,6 +525,7 @@ sidebar:
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) |
+| `autogluon` | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) |
 | `aws-spot-best-practices` | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
@@ -565,6 +566,7 @@ sidebar:
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) |
+| `couchdb` | [Apache CouchDB — Erlang 写的文档数据库](/study/projects/couchdb/) |
 | `crewai` | [CrewAI — 把多 Agent 编排做成"组团队"](/study/projects/crewai/) |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
@@ -702,6 +704,7 @@ sidebar:
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) |
+| `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
@@ -829,7 +832,7 @@ sidebar:
 
 ---
 
-## 全部 533 个（字母序）
+## 全部 536 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -864,6 +867,7 @@ sidebar:
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | 其他 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) | 其他 |
+| `autogluon` | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) | 其他 |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) | 其他 |
 | `aws-spot-best-practices` | [AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回](/study/projects/aws-spot-best-practices/) | 其他 |
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) | 其他 |
@@ -925,6 +929,7 @@ sidebar:
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | 其他 |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | 其他 |
+| `couchdb` | [Apache CouchDB — Erlang 写的文档数据库](/study/projects/couchdb/) | 其他 |
 | `crewai` | [CrewAI — 把多 Agent 编排做成"组团队"](/study/projects/crewai/) | 其他 |
 | `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | 其他 |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
@@ -1145,6 +1150,7 @@ sidebar:
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) | 其他 |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | 其他 |
+| `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | 其他 |
 | `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | Monorepo / 包管理 |
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | CLI / 命令行工具 |

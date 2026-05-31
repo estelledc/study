@@ -160,6 +160,7 @@ for _ in range(50):
 - [[hits-1999]] —— HITS — 给网页同时打两个分：权威页 + 索引页
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
+- [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
 - [[simrank-2002]] —— SimRank — 两个节点相似当且仅当它们的邻居相似
 - [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
 

@@ -173,5 +173,7 @@ union(A, B):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[goral-1984-radiosity]] —— Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
+- [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
 

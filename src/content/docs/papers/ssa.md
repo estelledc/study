@@ -202,6 +202,7 @@ entry:
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
+- [[risc-i-1981]] —— RISC I — 砍掉 90% 指令反而让 CPU 跑得更快
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
