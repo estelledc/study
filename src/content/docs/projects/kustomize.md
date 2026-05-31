@@ -200,5 +200,4 @@ images:
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 

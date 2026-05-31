@@ -202,4 +202,5 @@ Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是
 - [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
 - [[saga-1987]] —— Sagas — 长事务拆成一串能"反向走回去"的小事务
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
+- [[unix-1974]] —— UNIX 1974 — 用极小内核做出能用的分时系统
 

@@ -1,6 +1,6 @@
 ---
 title: kepler.gl — 把百万点 GIS 数据拖进浏览器就出图
-来源: Uber Open Source, "kepler.gl: a powerful open source geospatial analysis tool", 2018
+来源: 'Uber Open Source, "kepler.gl: a powerful open source geospatial analysis tool", 2018'
 日期: 2026-05-31
 分类: 基础设施
 难度: 中级

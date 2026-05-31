@@ -174,6 +174,7 @@ for g in gaussians:
 - [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
 - [[liu-2020-dlss]] —— DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
 - [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
+- [[magic3d-2023]] —— Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[meagher-1982-octree]] —— Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界
 - [[monaghan-1992-sph]] —— SPH — 把流体拆成一群带核的粒子
