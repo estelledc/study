@@ -114,6 +114,9 @@ const tag = c.getAuthTag()             // 别忘了存 tag
 - **2001 年 11 月**：FIPS-197 标准化，正式改名叫 AES
 - **2008-2010 年**：Intel Westmere 处理器加 **AES-NI** 硬件指令，单核吞吐从 200 MB/s 跳到 5 GB/s
 - **2018 年**：TLS 1.3 把 AES-GCM 列为强制 ciphersuite
+- **2020 年代**：ARMv8.4 处理器加 AES 指令；移动设备性能差距收窄
+- **2022 年**：NIST 后量子项目重选公钥算法，AES 这条线被认为继续留用，只升级到 256 bit
+- **2024 年**：FIPS-203/204/205 后量子算法出炉，但对称密码部分仍保留 AES——一个标准能扛 23 年是工程上罕见的稳定
 - **至今**：24 年来无实质性数学破解，已知最佳攻击 Biclique 仅把 AES-128 暴力 2^128 优化到 2^126.1（4 倍提速，工程上仍不可破）
 
 ## 学到什么
@@ -123,6 +126,9 @@ const tag = c.getAuthTag()             // 别忘了存 tag
 3. **算法正确 ≠ 系统安全**——24 年来"AES 被破"新闻几乎全是侧信道 / IV 重用 / padding oracle 等**实现 bug**，算法本身扛住了
 4. **硬件加速改变密码格局**——AES-NI 让 AES 几乎免费，但移动端早期没硬件加速时 ChaCha20 反而更快
 5. **后量子时代对称密码不会死**——Grover 算法把 AES-128 等效降到 2^64（不安全），但 AES-256 仍是 2^128（安全）；只需加 bit 数，不像 RSA / ECDH 必须整体替换
+6. **标准化流程比标准本身重要**：NIST 用 3 年公开 + 全球密码学家审计选出 AES，比闭门钦定的 DES 多了一层信用——好标准是社区参与的产物
+7. **API 设计藏陷阱**：`createCipheriv` 默认不强制认证；标准库给"原始"模式留一道口子是为了灵活，但绝大多数误用都从这里来——库设计要更"难错"
+8. **量纲与单位概念**：bit 和 byte、key length 和 block size、nonce 和 iv，每一对在密码学里都有严格区别。混用是工程 bug 的最大来源
 
 ## 延伸阅读
 
@@ -130,6 +136,8 @@ const tag = c.getAuthTag()             // 别忘了存 tag
 - 视频：[Computerphile — AES Explained](https://www.youtube.com/watch?v=O4xNJsjtN6E)（10 分钟把 4 步动画演一遍）
 - 经典书：Daemen & Rijmen, *The Design of Rijndael*（Springer 2002）—— 作者亲笔讲设计 rationale，密度高但权威
 - 标准原文：[FIPS-197 PDF](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197-upd1.pdf)（NIST 官方）
+- 模式选择指南：[Cryptography Stack Exchange — choosing AES mode](https://crypto.stackexchange.com/q/202)（社区共识级答案，决策树）
+- 漏洞案例库：[CVE Mitre — AES related issues](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=AES)（历年实现 bug 反面教材）
 
 ## 关联
 
@@ -137,3 +145,5 @@ const tag = c.getAuthTag()             // 别忘了存 tag
 - [[tls-1.3]] —— AES-GCM 是 TLS 1.3 的强制 ciphersuite
 - [[diffie-hellman]] —— 解决"如何安全分发 AES 密钥"的配套技术
 - [[quic]] —— HTTP/3 底层传输层，数据加密就用 AES-GCM 或 ChaCha20-Poly1305
+- [[shannon-1948]] —— Shannon 的香农秘密系统理论给 AES 一类对称密码画了边界
+- [[hamming-1950]] —— 同时代密码 vs 纠错码两条路，前者抗主动攻击，后者抗噪声
