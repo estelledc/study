@@ -163,6 +163,7 @@ prediction = model.predict(input_df)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clearml]] —— ClearML — 实验跟踪 + 远程执行 + 数据管理三合一
 - [[dvc]] —— DVC — 数据版本管理
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象

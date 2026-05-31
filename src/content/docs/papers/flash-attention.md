@@ -163,6 +163,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mamba]] —— Mamba — 选择性状态空间模型
+- [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机

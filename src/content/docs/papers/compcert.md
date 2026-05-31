@@ -150,6 +150,7 @@ INRIA 这股"理论 + 实现一起做"的工程文化，从 OCaml 到 Coq 到 Co
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apron-2009]] —— Apron — 把区间/八边形/多面体塞进同一个插槽
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过

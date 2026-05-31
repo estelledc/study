@@ -156,5 +156,6 @@ I = (0.74, 0.25, 0.25)  # 偏红+一点白
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
+- [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[ssa]] —— SSA — 静态单赋值形式
 

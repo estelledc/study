@@ -154,5 +154,7 @@ Blinn: shininess = 128 →  视觉效果接近 A
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
+- [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 

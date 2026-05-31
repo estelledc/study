@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 495 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 497 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：495 个
+- **总数**：497 个
 - **已分类**：207
-- **未分类**：288（落入"其他 / 待分类"段）
+- **未分类**：290（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 288 |
+| [其他 / 待分类](#其他--待分类) | 290 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 288 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 290 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -601,6 +601,7 @@ sidebar:
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
+| `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) |
@@ -662,6 +663,7 @@ sidebar:
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
+| `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
@@ -791,7 +793,7 @@ sidebar:
 
 ---
 
-## 全部 495 个（字母序）
+## 全部 497 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -948,6 +950,7 @@ sidebar:
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
+| `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | 其他 |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | 其他 |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | 其他 |
@@ -1053,6 +1056,7 @@ sidebar:
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
+| `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | 其他 |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) | 其他 |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | 其他 |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |

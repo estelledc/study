@@ -157,5 +157,6 @@ nix-build
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

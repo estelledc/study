@@ -17,6 +17,7 @@ anthropic-prompt-caching
 apollo-2014
 aries-1992
 art-2013
+asterisk
 astree
 attention
 aurora
@@ -35,6 +36,7 @@ bigtable
 bigtable-2006
 bitcoin
 blackwell-architecture-2024
+blinn-1977
 bm25-okapi
 boehm-gc
 boogie-2005
@@ -85,6 +87,7 @@ cops-2011
 cot
 coturn
 cousot-abstract-interpretation
+cousot-halbwachs-polyhedra-1978
 craq-2009
 crdt-json
 crdt-json-2017
@@ -162,6 +165,7 @@ gpu-cache-coherence-2013
 gpu-microbenchmarking-2010
 graalvm-truffle
 gradual-typing
+graf-saidi-1997
 granule
 graphrag
 gray-1978-notes
@@ -252,6 +256,7 @@ metagpt
 metaml-multi-stage
 millwheel-2013
 milner-pi-calculus
+mine-octagon-2006
 minisat-2003
 mixture-of-experts
 mlflow
@@ -264,6 +269,7 @@ narwhal-tusk-2022
 nelson-oppen-1979
 neumann-2015-large-joins
 nieuwenhuis-dpll-t-2006
+nix
 no-silver-bullet
 ntp-mills-1991
 nuprl-1986
@@ -283,6 +289,7 @@ pbft-1999
 peg-packrat-ford
 percolator-2010
 peyton-jones-stg
+phong-1975
 pipedream-2019
 pivot-tracing-2015
 plotkin-sos
@@ -354,6 +361,7 @@ spanner
 spanner-2012
 sparrow-2013
 sparse-autoencoders
+specinfer-2023
 sqlite-2022
 ssa
 stable-diffusion
@@ -374,6 +382,8 @@ tao-2013
 tcp
 template-haskell
 tendermint-2016
+tensorflow-osdi-2016
+tensorrt-llm-2023
 tesla-architecture-2008
 theorems-for-free
 thrust-2010
@@ -412,6 +422,7 @@ vr-revisited-2012
 vst-2014
 wadler-prettier
 wam-warren
+wandb
 websocket-rfc-6455
 why3-2013
 word2vec
@@ -419,6 +430,7 @@ xla-compiler
 xtrace-2007
 z3-2008
 zab-2011
+zero-2020
 zgc
 zk-snark
 
@@ -447,6 +459,7 @@ argocd
 arktype
 arweave
 aspnetcore
+asterisk
 astro
 asynq
 auth-js
@@ -542,6 +555,7 @@ duckdb
 duckdb-wasm
 duf
 dust
+dvc
 echarts
 echo
 effect
@@ -603,6 +617,7 @@ haystack
 helidon
 helm
 hocuspocus
+homebrew
 hono
 hot-chocolate
 htop
@@ -700,6 +715,7 @@ next-intl
 next-js
 nextra
 nginx
+nix
 nnn
 nodemailer
 nomad
@@ -887,6 +903,7 @@ vodozemac
 vue
 vue-i18n
 walletconnect
+wandb
 warp
 weaviate
 web-vitals

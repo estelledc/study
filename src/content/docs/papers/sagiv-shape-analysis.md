@@ -150,6 +150,7 @@ sorted_upto(x) := ∀y.(y reachable_from list_head ∧ y ≠ x) ⇒ data(y) ≤ 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[apron-2009]] —— Apron — 把区间/八边形/多面体塞进同一个插槽
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系

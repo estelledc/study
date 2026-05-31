@@ -154,6 +154,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
