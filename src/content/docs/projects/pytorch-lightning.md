@@ -167,6 +167,7 @@ trainer = pl.Trainer(callbacks=[
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
+- [[bentoml]] —— BentoML — 模型打包部署
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统

@@ -175,6 +175,7 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
+- [[shfmt]] —— shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
 - [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[task]] —— Task — 用 YAML 写一份跨平台的 ‘项目命令清单’

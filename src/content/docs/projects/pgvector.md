@@ -161,4 +161,5 @@ LIMIT 3;
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[qdrant]] —— Qdrant — Rust 向量数据库
+- [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
 
