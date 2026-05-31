@@ -125,6 +125,11 @@ img.save("cat.png")
 2. **frozen 预训练编码器 + 可训轻量 decoder** 是低成本接入大模型的通用模式。SD 用 frozen CLIP / frozen VAE，只训 U-Net；现代 LoRA / Adapter 都是同思路
 3. **开源生态 > 单点最优**——[[dalle-2]] 效果其实更好但闭源；SD 中等但开源，三年后回头看，**开源完胜**
 4. **理论 → 算法 → 工程 → 生态**，每一步都是放大器。LDM 论文 11 页，但放权重那一刻才真正引爆
+5. **CFG 是廉价的杠杆**：classifier-free guidance 不改架构、不加参数，只在采样时同时跑一次有 prompt + 一次无 prompt 然后做差分——这种"零结构成本的引导技巧"成了所有扩散模型的事实标配
+6. **U-Net 是过渡架构**：原版 SD 用 U-Net，因为 CV 那一拨人对它最熟；2024 SD 3 / FLUX 切到 DiT 后才发现 U-Net 不是 latent diffusion 的必要条件，工程惯性比技术判断更慢
+7. **license 决定生态命运**：CreativeML Open RAIL-M 许可允许商用又限制有害用途，这条法律条款决定了 SD 能被 ComfyUI / WebUI / Civitai 等社区无障碍接力——生态不是技术决定，是合同决定
+8. **VAE 编码再 diffuse 才是 LDM 真正的 trick**：原 DDPM 跑像素 512×512=26 万维空间，LDM 先压到 64×64×4=1.6 万维再 diffuse，省 16 倍计算的同时几乎不损质量——选好压缩空间是工程艺术
+9. **prompt 是 cross-attention 的 K/V**：文本通过 CLIP 编码后做 cross-attention 注入图像 latent；这种"另一个模态当 attention K/V" 的接入方式后来被多模态 LLM 普遍复用
 
 ## 延伸阅读
 

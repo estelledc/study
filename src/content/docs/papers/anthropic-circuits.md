@@ -110,6 +110,12 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 
 4. **vocab 比公式更持久**："residual stream" / "QK circuit" 这些词比论文具体公式传播得远——好的命名让后人 5 句话能讲清楚思路，差的命名再正确也传不开。
 
+5. **mech interp 是 alignment 的工具栈**：Anthropic 把可解释性当作 alignment 的根基——只有看到模型怎么算，才能保证它怎么对齐。这条路线和"对齐靠 RLHF + 红队评测" 的 OpenAI 路线分道扬镳，是 2 大顶级实验室战略差别的核心。
+
+6. **从 toy 到 production 是 5 年**：2021 框架 → 2022 induction head → 2023 superposition → 2024 SAE 上 Claude Sonnet。每一步都解决前一步的限制；这种"小步慢跑 + 工具迭代" 的研究节奏比"一篇大论文" 走得远。
+
+7. **W_QK / W_OV 是不显式构造的"思想物体"**：研究允许用"理想化但不实例化" 的对象当推理工具，写代码时再换工程实现——数学家 / 物理学家常用的招数被借进了 ML interp。
+
 ## 延伸阅读
 
 - 论文主页：[Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)（blog 形式，无 PDF）
