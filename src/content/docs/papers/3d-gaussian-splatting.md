@@ -156,6 +156,7 @@ for g in gaussians:
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[dit]] —— DiT — Diffusion Transformer
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[jensen-1996-photon-mapping]] —— Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[vit]] —— ViT — Vision Transformer

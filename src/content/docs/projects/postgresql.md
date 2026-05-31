@@ -191,6 +191,7 @@ LIMIT 5;
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展

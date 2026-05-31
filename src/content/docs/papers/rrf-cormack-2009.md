@@ -152,5 +152,6 @@ POST /my-index/_search
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[okapi-bm25-1994]] —— Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 

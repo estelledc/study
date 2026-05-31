@@ -150,5 +150,12 @@ query_vector = model.encode(query)      # 查询 → 384 维向量
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
+- [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
+- [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
+- [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
+- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
+- [[okapi-bm25-1994]] —— Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式
+- [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
+- [[rrf-cormack-2009]] —— RRF — 把多个搜索结果列表合并成一个的最简单办法
 

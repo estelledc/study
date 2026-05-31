@@ -347,6 +347,7 @@ rsa
 saga-1987
 sagiv-shape-analysis
 salsa-adapton
+salton-vsm-1975
 sam
 sarathi-serve
 scala-macros
@@ -421,6 +422,7 @@ toy-models-superposition
 tracemonkey
 trees-that-grow
 trill-2014
+triton-2019
 triton-llm
 turchin-supercompilation
 turing-1936
@@ -430,6 +432,7 @@ unified-memory-2014
 vamp-verisoft-2006
 vcc-2009
 veach-1995-mis
+veach-1997-mlt
 vellvm
 verdi-2015
 verisoft-2008

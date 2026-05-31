@@ -163,6 +163,7 @@ prediction = model.predict(input_df)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[dvc]] —— DVC — 数据版本管理
 - [[feast]] —— Feast — 让训练和上线用同一份特征定义的开源 Feature Store
