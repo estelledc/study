@@ -163,6 +163,7 @@ POST 不 idempotent——重复发 5 次会创建 5 个订单。所以 Stripe / 
 
 - [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
+- [[eros-1999]] —— EROS — 让 capability 内核跑得跟 Linux 一样快
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning

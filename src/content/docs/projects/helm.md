@@ -165,6 +165,7 @@ helm rollback my-nginx 1
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[k3s]] —— k3s — 把完整 K8s 塞进一个 60 MB 的二进制
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
+- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群

@@ -153,5 +153,9 @@ Diff     = (6 - 2) * 10 = 40 个包
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
+- [[cubic-2008]] —— CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
+- [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

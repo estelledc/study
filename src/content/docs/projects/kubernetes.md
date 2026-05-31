@@ -151,6 +151,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[k3s]] —— k3s — 把完整 K8s 塞进一个 60 MB 的二进制
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
+- [[kind]] —— kind — 用 Docker 容器当 K8s 节点的本地集群
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器

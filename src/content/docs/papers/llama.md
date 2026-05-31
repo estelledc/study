@@ -141,6 +141,7 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[codellama-2023]] —— Code Llama — 开源代码模型的完整训练配方
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"

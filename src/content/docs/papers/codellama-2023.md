@@ -1,6 +1,6 @@
 ---
 title: Code Llama — 开源代码模型的完整训练配方
-来源: Rozière et al. (Meta AI), "Code Llama: Open Foundation Models for Code", arXiv:2308.12950 (2023)
+来源: 'Rozière et al. (Meta AI), "Code Llama: Open Foundation Models for Code", arXiv:2308.12950 (2023)'
 日期: 2026-06-01
 分类: 机器学习
 难度: 中级
@@ -153,3 +153,6 @@ Code Llama 是开源代码模型生态的"奠基性配方书"。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

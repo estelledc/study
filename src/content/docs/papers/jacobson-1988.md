@@ -155,6 +155,7 @@ t=2.6s  cwnd=360 ← 砍半，重新线性爬
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
+- [[cubic-2008]] —— CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
 - [[metcalfe-boggs-1976]] —— Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[red-1993]] —— RED — 让路由器在队列还没塞满时就提前丢包
