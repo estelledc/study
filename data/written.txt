@@ -78,6 +78,7 @@ cook-levin
 copilot-rct
 cops-2011
 cot
+coturn
 cousot-abstract-interpretation
 craq-2009
 crdt-json
@@ -145,6 +146,7 @@ generational-gc
 gfs
 gilbert-lynch-2002
 godel-1931
+gpipe-2019
 gpt-3
 gpu-cache-coherence-2013
 gpu-microbenchmarking-2010
@@ -230,6 +232,7 @@ mcmillan-smv-1993
 mcp-spec
 megastore-2011
 megatron-lm
+memcached-fb-2013
 mencius-2008
 metagpt
 metaml-multi-stage
@@ -333,6 +336,7 @@ sparse-autoencoders
 sqlite-2022
 ssa
 stable-diffusion
+stainless-2017
 standard-ml
 steensgaard-pointer
 stm-shavit-touitou

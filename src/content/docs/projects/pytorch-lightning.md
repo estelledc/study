@@ -172,6 +172,7 @@ trainer = pl.Trainer(callbacks=[
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[fastai]] —— fastai — 三行代码做迁移学习
 - [[flax]] —— Flax — JAX 上的神经网络库
+- [[haystack]] —— Haystack — 企业 NLP / RAG 流水线
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
