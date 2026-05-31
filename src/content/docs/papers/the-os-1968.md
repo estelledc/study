@@ -165,6 +165,7 @@ def consumer():
 - [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[exokernel-1995]] —— Exokernel — 把抽象推到用户态的极致设计
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
 

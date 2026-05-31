@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 625 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 627 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：625 个
+- **总数**：627 个
 - **已分类**：213
-- **未分类**：412（落入"其他 / 待分类"段）
+- **未分类**：414（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 412 |
+| [其他 / 待分类](#其他--待分类) | 414 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 412 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 414 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -644,6 +644,7 @@ sidebar:
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) |
+| `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) |
@@ -659,6 +660,7 @@ sidebar:
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) |
+| `gradio` | [Gradio — ML 模型 demo 框架](/study/projects/gradio/) |
 | `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) |
@@ -921,7 +923,7 @@ sidebar:
 
 ---
 
-## 全部 625 个（字母序）
+## 全部 627 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1116,6 +1118,7 @@ sidebar:
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 其他 |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | 其他 |
+| `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | 其他 |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
@@ -1133,6 +1136,7 @@ sidebar:
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
 | `got` | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) | 其他 |
+| `gradio` | [Gradio — ML 模型 demo 框架](/study/projects/gradio/) | 其他 |
 | `grafana` | [Grafana — 监控可视化看板](/study/projects/grafana/) | 监控 / 时序 |
 | `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) | 其他 |
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
