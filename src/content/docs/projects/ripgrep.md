@@ -169,6 +169,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
+- [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）

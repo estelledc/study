@@ -11,6 +11,7 @@ alphago
 ampere-architecture-2020
 andersen-pointer-analysis
 anthropic-circuits
+anthropic-prompt-caching
 aries-1992
 art-2013
 astree
@@ -31,6 +32,7 @@ bigtable
 bigtable-2006
 bitcoin
 blackwell-architecture-2024
+bm25-okapi
 boehm-gc
 boogie-2005
 borg
@@ -65,6 +67,7 @@ codd-1970
 codd-1979-extending
 coeffect-petricek
 cognitive-load-theory
+colbert-v2
 comer-1979-btree
 compcert
 compiler-errors
@@ -113,6 +116,7 @@ epaxos-2013
 erlang-otp
 eswaran-1976
 f1-2013
+f4-2014
 faiss-2017
 fast-paxos-2006
 feautrier-polyhedral
@@ -229,6 +233,7 @@ mlir
 monetdb-x100-2005
 muzero
 mycroft-strictness
+narwhal-tusk-2022
 nelson-oppen-1979
 neumann-2015-large-joins
 nieuwenhuis-dpll-t-2006
@@ -280,6 +285,7 @@ reynolds-separation-logic
 rlhf-christiano
 rocksdb-2017
 rocksdb-lsm
+rrf-cormack-2009
 rsa
 saga-1987
 sagiv-shape-analysis
@@ -382,6 +388,7 @@ affine
 ag-grid
 anchor
 anime
+ann-benchmarks
 ansible
 anthropic-cookbook
 ape-framework
@@ -529,6 +536,7 @@ gsap
 gum
 hanami
 haproxy
+haraka
 hardhat
 helidon
 helm
@@ -577,6 +585,7 @@ lighthouse
 lightningcss
 lingui
 listr2
+litellm-proxy
 litestar
 liveblocks
 llama-cpp
@@ -626,6 +635,7 @@ next-js
 nextra
 nginx
 numpy
+nushell
 nuxt
 nx
 observable-plot
@@ -670,6 +680,7 @@ prisma
 procs
 prom-client
 prometheus
+promptfoo
 prosemirror
 prosody
 prysm
@@ -806,6 +817,7 @@ why-did-you-render
 wormhole
 wretch
 xh
+xonsh
 xstate
 yargs
 yjs

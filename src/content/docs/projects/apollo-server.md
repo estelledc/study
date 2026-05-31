@@ -176,6 +176,7 @@ const server = new ApolloServer({ schema: buildSubgraphSchema({ typeDefs, resolv
 - [[haraka]] —— Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
 - [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
+- [[nodemailer]] —— Nodemailer — Node.js 发邮件的事实标准
 - [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC

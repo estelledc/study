@@ -163,5 +163,7 @@ curl -X POST http://localhost:4000/key/generate \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 
