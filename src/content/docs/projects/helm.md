@@ -175,6 +175,7 @@ helm rollback my-nginx 1
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+- [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
 - [[sops]] —— SOPS — 让密码也能放心进 Git
 - [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
 - [[tilt]] —— Tilt — K8s 微服务本地开发的"文件保存即上线"

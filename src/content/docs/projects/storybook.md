@@ -157,6 +157,7 @@ export const Clicked: StoryObj<typeof Button> = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
@@ -167,6 +168,5 @@ export const Clicked: StoryObj<typeof Button> = {
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

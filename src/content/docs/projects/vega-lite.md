@@ -185,6 +185,7 @@ Vega-Lite 自己不渲染——它把 spec **编译成底层 [[vega]] spec**，�
 
 - [[altair]] —— Altair — Python 上的 Vega-Lite 绑定
 - [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
+- [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[leaflet]] —— Leaflet — 轻量交互式地图

@@ -12,6 +12,7 @@ afs-1988
 agda-norell
 agentless
 akamai-2002
+akamai-2010
 algol-60
 align-2021
 alpa-2022
@@ -183,6 +184,7 @@ ddpm
 deberta-2021
 debevec-1998-rendering-with-natural-light
 debugging-dichotomy
+decision-transformer-2021
 deepseek-coder-2024
 deepseek-r1
 deepspeed-zero
@@ -727,6 +729,7 @@ twine-2020
 unified-memory-2014
 universal-ctags
 unix-1974
+v-system-1988
 vamp-verisoft-2006
 vcc-2009
 veach-1995-mis
@@ -795,6 +798,7 @@ anthropic-cookbook
 antv-f2
 antv-g2
 antv-g6
+antv-x6
 ape-framework
 apollo-server
 appwrite
@@ -1026,6 +1030,7 @@ haraka
 hardhat
 haystack
 helidon
+helix
 helm
 hnswlib
 hocuspocus
@@ -1408,6 +1413,7 @@ tidb
 tide
 tig
 tikv
+tilt
 timelinejs
 timescaledb
 tldraw
