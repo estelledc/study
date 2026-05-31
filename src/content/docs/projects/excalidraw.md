@@ -156,5 +156,6 @@ public record(delta: StoreDelta) {
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[tldraw]] —— tldraw — 把白板做成可嵌入的 SDK
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

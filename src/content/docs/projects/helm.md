@@ -159,6 +159,7 @@ helm rollback my-nginx 1
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线

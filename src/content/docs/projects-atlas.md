@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 680 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 682 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：680 个
+- **总数**：682 个
 - **已分类**：213
-- **未分类**：467（落入"其他 / 待分类"段）
+- **未分类**：469（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 467 |
+| [其他 / 待分类](#其他--待分类) | 469 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 467 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 469 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -513,6 +513,7 @@ sidebar:
 | `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
+| `age` | [age — 把"用 GPG 加密一个文件"重新做对](/study/projects/age/) |
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
@@ -928,6 +929,7 @@ sidebar:
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) |
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) |
 | `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) |
+| `tldraw` | [tldraw — 把白板做成可嵌入的 SDK](/study/projects/tldraw/) |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) |
 | `triton-inference-server` | [Triton Inference Server — NVIDIA 多框架推理服务化标杆](/study/projects/triton-inference-server/) |
@@ -976,7 +978,7 @@ sidebar:
 
 ---
 
-## 全部 680 个（字母序）
+## 全部 682 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -988,6 +990,7 @@ sidebar:
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
+| `age` | [age — 把"用 GPG 加密一个文件"重新做对](/study/projects/age/) | 其他 |
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) | 其他 |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | 其他 |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | 其他 |
@@ -1584,6 +1587,7 @@ sidebar:
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) | 其他 |
 | `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
+| `tldraw` | [tldraw — 把白板做成可嵌入的 SDK](/study/projects/tldraw/) | 其他 |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) | 其他 |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) | 其他 |
 | `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | DevOps / 容器 / 运维 |
