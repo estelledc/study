@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 751 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 754 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：751 篇
+- **总数**：754 篇
 - **已分类**：143
-- **未分类**：608（落入"其他 / 待分类"段）
+- **未分类**：611（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 608 |
+| [其他 / 待分类](#其他--待分类) | 611 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 608 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 611 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -396,6 +396,7 @@ sidebar:
 | `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) |
 | `chapar-2016` | [Chapar — 第一个被机器证明的因果一致 KV 存储](/study/papers/chapar-2016/) |
 | `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) |
+| `chord-2001` | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) |
 | `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) |
 | `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |
 | `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) |
@@ -447,6 +448,7 @@ sidebar:
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |
+| `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
 | `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) |
@@ -554,6 +556,7 @@ sidebar:
 | `hacl-star-2017` | [HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里](/study/papers/hacl-star-2017/) |
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) |
+| `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
 | `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) |
 | `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) |
@@ -919,7 +922,7 @@ sidebar:
 
 ---
 
-## 全部 751 篇（字母序）
+## 全部 754 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1033,6 +1036,7 @@ sidebar:
 | `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) | 其他 |
 | `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | GC / 内存管理 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
+| `chord-2001` | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) | 其他 |
 | `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | 其他 |
 | `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
 | `ci-effects` | [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
@@ -1096,6 +1100,7 @@ sidebar:
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | 其他 |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) | 其他 |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 其他 |
+| `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) | 其他 |
 | `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 其他 |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) | 其他 |
@@ -1229,6 +1234,7 @@ sidebar:
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) | 其他 |
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | 其他 |
+| `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | 其他 |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 其他 |
 | `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) | 其他 |
 | `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) | 其他 |

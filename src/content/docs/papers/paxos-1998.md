@@ -173,6 +173,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chain-replication-2004]] —— Chain Replication — 把多副本排成流水线，简单且强一致
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
+- [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构

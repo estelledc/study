@@ -159,6 +159,7 @@ R+W>N（比如 R=2, W=2, N=3）→ 强一致；R+W≤N → 牺牲一致换延迟
 
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言

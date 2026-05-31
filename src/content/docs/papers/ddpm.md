@@ -133,6 +133,7 @@ GAN 的 loss 曲线经常上下震荡甚至崩塌，需要无数 trick（label s
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
+- [[ddim-2020]] —— DDIM — 把扩散模型 1000 步采样压到 50 步
 - [[dit]] —— DiT — Diffusion Transformer
 - [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
 - [[mae]] —— MAE — Masked Autoencoders
