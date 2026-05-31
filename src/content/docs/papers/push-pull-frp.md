@@ -143,6 +143,7 @@ SolidJS 的 `createSignal` 接近 Push-Pull 的 Behavior（pull-when-read），`
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[frenetic-2011]] —— Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS

@@ -178,6 +178,7 @@ entry:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
@@ -204,6 +205,7 @@ entry:
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mcfarling-bp-1993]] —— McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
+- [[mcs-locks-1991]] —— MCS 锁 — 让每个线程自旋在自己的缓存行上
 - [[mips-1981]] —— MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议

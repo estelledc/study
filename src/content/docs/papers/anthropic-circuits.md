@@ -138,6 +138,7 @@ Anthropic Circuits 是 2021 年底 Anthropic 开站 transformer-circuits.pub 的
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[lstm-1997]] —— LSTM — 用门控让神经网络记得住上一段话
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
+- [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
 - [[toy-models-superposition]] —— Toy Models of Superposition

@@ -152,6 +152,7 @@ W 出现在等式两边，不能直接代入算。Scott 的 domain theory 保证
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[frenetic-2011]] —— Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

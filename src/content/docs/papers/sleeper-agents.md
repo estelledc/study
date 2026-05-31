@@ -141,4 +141,5 @@ Sleeper Agents 是从理论跨到实证那一步。
 
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
+- [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
 

@@ -147,6 +147,7 @@ result = con.execute("""
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arrow]] —— Apache Arrow — 内存列式标准
+- [[arrow-rs]] —— arrow-rs — Apache Arrow / Parquet 的 Rust 参考实现
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
@@ -159,5 +160,4 @@ result = con.execute("""
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-- [[starrocks]] —— StarRocks — MPP 列存数据库
 

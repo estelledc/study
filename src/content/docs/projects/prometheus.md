@@ -210,5 +210,6 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端
 - [[terraform]] —— Terraform — 基础设施即代码
+- [[vector]] —— Vector — Rust 写的统一可观测性数据管道
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代
 

@@ -143,6 +143,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
 - [[m3]] —— M3 — Uber 的分布式 TSDB
+- [[metabase]] —— Metabase — 让非技术人查数
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
@@ -155,5 +156,6 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[superset]] —— Apache Superset — 开源 BI 平台
 - [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端
 - [[terraform]] —— Terraform — 基础设施即代码
+- [[vector]] —— Vector — Rust 写的统一可观测性数据管道
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代
 

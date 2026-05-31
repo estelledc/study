@@ -152,4 +152,5 @@ agent → intake API → Kafka 总线 → 三个独立后端：
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[vector]] —— Vector — Rust 写的统一可观测性数据管道
 
