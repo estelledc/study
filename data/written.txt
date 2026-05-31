@@ -1,5 +1,6 @@
 # papers
 3d-gaussian-splatting
+a3c-2016
 acl2-2000
 activation-patching
 adafactor-2018
@@ -235,6 +236,7 @@ epaxos-2013
 erlang-otp
 eros-1999
 eswaran-1976
+esx-memory-2002
 ethane-2007
 exokernel-1995
 f1-2013
@@ -347,6 +349,7 @@ ingres-1976
 instant-ngp-2022
 instructgpt
 io-uring
+ipfs-2014
 iris-2015
 ironfleet-2015
 isabelle-hol-2002
@@ -1045,6 +1048,7 @@ jitsi-videobridge
 jotai
 jq
 js-joda
+jspdf
 just
 k3s
 k6
@@ -1103,6 +1107,7 @@ llama-index
 llamaindex
 lm-evaluation-harness
 lmdb
+locust
 loki
 longhorn
 lottie
@@ -1439,6 +1444,7 @@ vllm
 vodozemac
 voila
 volta
+vscode
 vue
 vue-i18n
 walletconnect

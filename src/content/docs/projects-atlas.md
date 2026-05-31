@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 714 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 717 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：714 个
+- **总数**：717 个
 - **已分类**：214
-- **未分类**：500（落入"其他 / 待分类"段）
+- **未分类**：503（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 500 |
+| [其他 / 待分类](#其他--待分类) | 503 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 500 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 503 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -550,6 +550,7 @@ sidebar:
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
+| `backstage` | [Backstage — 把公司散在各处的开发工具拼成一个门户](/study/projects/backstage/) |
 | `badger` | [Badger — Go 写的键值分离 LSM](/study/projects/badger/) |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) |
@@ -839,6 +840,7 @@ sidebar:
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
 | `pdfkit` | [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) |
 | `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) |
+| `pdfme` | [pdfme — TypeScript 模板化 PDF](/study/projects/pdfme/) |
 | `pebble` | [Pebble — CockroachDB 自研 LSM](/study/projects/pebble/) |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) |
@@ -984,6 +986,7 @@ sidebar:
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) |
 | `vscode` | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) |
+| `vscodium` | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
@@ -1010,7 +1013,7 @@ sidebar:
 
 ---
 
-## 全部 714 个（字母序）
+## 全部 717 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1066,6 +1069,7 @@ sidebar:
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) | 其他 |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 其他 |
+| `backstage` | [Backstage — 把公司散在各处的开发工具拼成一个门户](/study/projects/backstage/) | 其他 |
 | `badger` | [Badger — Go 写的键值分离 LSM](/study/projects/badger/) | 其他 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) | 其他 |
@@ -1471,6 +1475,7 @@ sidebar:
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
 | `pdfkit` | [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) | 其他 |
 | `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | 其他 |
+| `pdfme` | [pdfme — TypeScript 模板化 PDF](/study/projects/pdfme/) | 其他 |
 | `pebble` | [Pebble — CockroachDB 自研 LSM](/study/projects/pebble/) | 其他 |
 | `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) | 其他 |
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
@@ -1693,6 +1698,7 @@ sidebar:
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) | 其他 |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) | 其他 |
 | `vscode` | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | 其他 |
+| `vscodium` | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | 其他 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |

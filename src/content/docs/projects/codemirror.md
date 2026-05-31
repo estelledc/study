@@ -163,5 +163,6 @@ const logUpdates = ViewPlugin.fromClass(class {
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
+- [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

@@ -162,6 +162,7 @@ helm rollback my-nginx 1
 - [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器

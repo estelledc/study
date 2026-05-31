@@ -155,5 +155,7 @@ ESX 在内存吃紧时按以下顺序逐步加压（论文里叫 reclamation hie
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[kvm-2007]] —— KVM 2007 — 把 Linux 内核本身变成 hypervisor
+- [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
+- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 
