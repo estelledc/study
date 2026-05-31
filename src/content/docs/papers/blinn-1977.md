@@ -154,4 +154,5 @@ Blinn: shininess = 128 →  视觉效果接近 A
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
+（暂无反向链接）
+

@@ -156,6 +156,7 @@ CEGAR 第一轮抽象不知道 `error_condition` 何时为真，过近似认为"
 - [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
+- [[graf-saidi-1997]] —— Graf-Saïdi — 用谓词把无限状态压成有限抽象
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"

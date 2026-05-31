@@ -152,3 +152,10 @@ nix-build
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+

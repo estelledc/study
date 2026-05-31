@@ -153,6 +153,7 @@ sorted_upto(x) := ∀y.(y reachable_from list_head ∧ y ≠ x) ⇒ data(y) ≤ 
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
+- [[graf-saidi-1997]] —— Graf-Saïdi — 用谓词把无限状态压成有限抽象
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
