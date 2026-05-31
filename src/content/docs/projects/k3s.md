@@ -158,4 +158,7 @@ curl -sfL https://get.k3s.io | sh -s - server \
 
 - [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
 - [[etcd]] —— etcd — 分布式键值数据库
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 

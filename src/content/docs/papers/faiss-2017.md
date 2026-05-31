@@ -161,6 +161,7 @@ GPU 优势：几千个核，做"简单逻辑大批量重复"快。
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[numpy]] —— NumPy — Python 科学计算基石
+- [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 - [[scann-2020]] —— ScaNN — 让向量量化只精修「客户会看到的那一面」
 - [[spann-2021]] —— SPANN — 内存放中心、SSD 放向量的十亿级近邻检索

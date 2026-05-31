@@ -151,5 +151,10 @@ Wulf 后来当了 ACM 主席、美国国家工程院院士。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
+- [[certikos-2016]] —— CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
+- [[dash-numa-1992]] —— Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器
+- [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[simula-67]] —— SIMULA 67 — 面向对象的诞生
+- [[smalltalk-80]] —— Smalltalk-80
 
