@@ -1,6 +1,6 @@
 ---
 title: Deering 1988 Triangle Processor — 现代 GPU 的祖先架构
-来源: Deering, Winner, Schediwy, Duffy, Hunt, "The Triangle Processor and Normal Vector Shader: A VLSI System for High Performance Graphics", SIGGRAPH 1988
+来源: 'Deering, Winner, Schediwy, Duffy, Hunt, "The Triangle Processor and Normal Vector Shader: A VLSI System for High Performance Graphics", SIGGRAPH 1988'
 日期: 2026-05-31
 分类: 图形学
 难度: 中级
@@ -149,3 +149,6 @@ Normal Vector Shader 把"插值法线"和"算光照"全做进硬件——前者�
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

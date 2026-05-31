@@ -154,6 +154,7 @@ for g in gaussians:
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[deering-1988-triangle-processor]] —— Deering 1988 Triangle Processor — 现代 GPU 的祖先架构
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[dit]] —— DiT — Diffusion Transformer
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU

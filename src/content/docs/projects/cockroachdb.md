@@ -151,6 +151,7 @@ ALTER TABLE users CONFIGURE ZONE USING
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基

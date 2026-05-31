@@ -1,6 +1,6 @@
 ---
 title: Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
-来源: Beltagy, Peters, Cohan, "Longformer: The Long-Document Transformer", arXiv 2004.05150 (2020)
+来源: 'Beltagy, Peters, Cohan, "Longformer: The Long-Document Transformer", arXiv 2004.05150 (2020)'
 日期: 2026-05-31
 分类: 深度学习 / NLP
 难度: 中级
@@ -149,3 +149,6 @@ attention_mask[:, question_length:] = 1  # context 走 local
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

@@ -164,6 +164,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 - [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[longformer-2020]] —— Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
