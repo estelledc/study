@@ -154,5 +154,7 @@ I = (0.74, 0.25, 0.25)  # 偏红+一点白
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
+- [[ssa]] —— SSA — 静态单赋值形式
 

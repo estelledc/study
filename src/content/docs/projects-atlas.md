@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 492 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 495 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：492 个
+- **总数**：495 个
 - **已分类**：207
-- **未分类**：285（落入"其他 / 待分类"段）
+- **未分类**：288（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 285 |
+| [其他 / 待分类](#其他--待分类) | 288 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 285 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 288 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -519,6 +519,7 @@ sidebar:
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
+| `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) |
@@ -580,6 +581,7 @@ sidebar:
 | `dua-cli` | [dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓](/study/projects/dua-cli/) |
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) |
 | `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) |
+| `dvc` | [DVC — 数据版本管理](/study/projects/dvc/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
@@ -668,6 +670,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
+| `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/projects/nix/) |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
@@ -788,7 +791,7 @@ sidebar:
 
 ---
 
-## 全部 492 个（字母序）
+## 全部 495 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -816,6 +819,7 @@ sidebar:
 | `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) | 其他 |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | 其他 |
+| `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | 其他 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | 其他 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
@@ -911,6 +915,7 @@ sidebar:
 | `duckdb-wasm` | [duckdb-wasm — 把分析数据库塞进浏览器标签页](/study/projects/duckdb-wasm/) | ORM / DB 客户端 |
 | `duf` | [duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统](/study/projects/duf/) | 其他 |
 | `dust` | [dust — du 的可视化替代，按目录大小排树状条形图](/study/projects/dust/) | 其他 |
+| `dvc` | [DVC — 数据版本管理](/study/projects/dvc/) | 其他 |
 | `echarts` | [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) | 数据可视化 |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | 其他 |
 | `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
@@ -1070,6 +1075,7 @@ sidebar:
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
+| `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/projects/nix/) | 其他 |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | 其他 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | 其他 |

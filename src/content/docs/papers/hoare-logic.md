@@ -188,6 +188,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
+- [[graf-saidi-1997]] —— Graf-Saïdi — 用谓词把无限状态压成有限抽象
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
 - [[hyperkernel-2017]] —— Hyperkernel — 让 SMT 求解器一键验证操作系统内核
