@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 590 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 593 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：590 篇
+- **总数**：593 篇
 - **已分类**：143
-- **未分类**：447（落入"其他 / 待分类"段）
+- **未分类**：450（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 447 |
+| [其他 / 待分类](#其他--待分类) | 450 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 447 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 450 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -338,6 +338,7 @@ sidebar:
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
+| `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
 | `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
@@ -609,6 +610,7 @@ sidebar:
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |
+| `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
 | `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) |
@@ -697,6 +699,7 @@ sidebar:
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
+| `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) |
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
 | `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) |
 | `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) |
@@ -758,7 +761,7 @@ sidebar:
 
 ---
 
-## 全部 590 篇（字母序）
+## 全部 593 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -805,6 +808,7 @@ sidebar:
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | 其他 |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | 其他 |
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
+| `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) | 其他 |
 | `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) | 其他 |
 | `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) | 其他 |
@@ -1151,6 +1155,7 @@ sidebar:
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | 其他 |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
+| `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) | 其他 |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) | 其他 |
 | `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |
@@ -1276,6 +1281,7 @@ sidebar:
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) | 其他 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
+| `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | 其他 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | 其他 |
 | `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) | 其他 |

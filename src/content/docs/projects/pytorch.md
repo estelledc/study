@@ -195,6 +195,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[optuna]] —— Optuna — 把超参搜索写在 Python 函数体里
 - [[paddleocr]] —— PaddleOCR — 中文 OCR 最强开源方案
+- [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[piper]] —— Piper — 端侧低延迟 TTS

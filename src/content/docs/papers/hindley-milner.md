@@ -153,6 +153,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
+- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
@@ -184,6 +185,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
+- [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手

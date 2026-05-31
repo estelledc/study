@@ -166,6 +166,7 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）
 - [[numpy]] —— NumPy — Python 科学计算基石
+- [[plotly-py]] —— Plotly.py — DataFrame 一行变交互图表
 - [[plotnine]] —— plotnine — Python 复刻 R 的 ggplot2
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存

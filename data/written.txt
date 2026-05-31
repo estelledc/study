@@ -138,6 +138,7 @@ dataflow-model-2015
 davis-putnam-1960
 dcn-2017
 ddpm
+deberta-2021
 debugging-dichotomy
 deepseek-r1
 deepspeed-zero
@@ -155,6 +156,7 @@ diskann-2019
 disney-brdf-2012
 distserve
 dit
+dlrm-2019
 dns
 dpll-1962
 dpo
@@ -187,6 +189,7 @@ feautrier-polyhedral
 fermi-architecture-2010
 fidge-1988
 filip-2021
+flan-2021
 flash-attention
 flexible-paxos-2016
 flink-2015
@@ -278,6 +281,7 @@ karis-2014-taa
 karis-2014-ue4-pbr
 karp-21
 karras-2012-parallel-bvh
+kazhdan-2006-poisson-recon
 kepler-architecture-2012
 kildall-dataflow
 knrm-2017
@@ -362,6 +366,7 @@ nerf-2020
 netflix-bellkor-2009
 neumann-2015-large-joins
 neumf-2017
+newcombe-2011-kinectfusion
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
 nimier-david-2019-mitsuba2
@@ -450,6 +455,7 @@ salsa-adapton
 salton-vsm-1975
 sam
 sarathi-serve
+sasrec-2018
 scala-macros
 scaling-laws
 scoop
@@ -587,6 +593,7 @@ zk-snark
 # projects
 aave-v3
 accelerate
+act
 actions-runner-controller
 actix-web
 affine
@@ -611,6 +618,7 @@ arangodb
 arbitrum
 argent-x
 argilla
+argo-workflows
 argocd
 arktype
 arweave
@@ -640,6 +648,7 @@ bigbluebutton
 billboard-js
 biome
 bitcoin-core
+bokeh
 botbuilder-js
 botpress
 bottom
@@ -718,6 +727,7 @@ django
 dnd-kit
 docker
 docusaurus
+doris
 dovecot
 dragonfly
 dragonflydb
@@ -878,6 +888,7 @@ makerdao
 mariadb-server
 markdown-it
 marked
+matplotlib
 matrix-js-sdk
 matrix-rust-sdk
 mattermost
@@ -1037,6 +1048,7 @@ scipy
 scoop
 scroll
 sd
+seaborn
 sentry
 sequelize
 sglang
@@ -1070,6 +1082,7 @@ stable-diffusion-webui
 stagehand
 starlette
 starlight
+starrocks
 starship
 steel-browser
 stern
@@ -1093,6 +1106,7 @@ tanstack-form
 tanstack-query
 tanstack-router
 task
+tekton
 teku
 temporal
 temporal-polyfill
