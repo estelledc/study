@@ -153,3 +153,6 @@ score(i, t) = e_i . SelfAttn(causal_mask, e_{i_1}+p_1, ..., e_{i_t}+p_t)[t]
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

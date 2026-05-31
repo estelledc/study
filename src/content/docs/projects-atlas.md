@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 595 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 597 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：595 个
+- **总数**：597 个
 - **已分类**：212
-- **未分类**：383（落入"其他 / 待分类"段）
+- **未分类**：385（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 383 |
+| [其他 / 待分类](#其他--待分类) | 385 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 383 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 385 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -807,6 +807,7 @@ sidebar:
 | `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
+| `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
@@ -840,6 +841,7 @@ sidebar:
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) |
+| `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) |
@@ -891,7 +893,7 @@ sidebar:
 
 ---
 
-## 全部 595 个（字母序）
+## 全部 597 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1349,6 +1351,7 @@ sidebar:
 | `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) | 其他 |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | 其他 |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
+| `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) | 其他 |
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) | 其他 |
@@ -1406,6 +1409,7 @@ sidebar:
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) | 其他 |
+| `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | 其他 |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) | 其他 |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) | 其他 |
 | `temporal-polyfill` | [temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎](/study/projects/temporal-polyfill/) | 日期时间 |

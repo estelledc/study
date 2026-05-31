@@ -153,5 +153,6 @@ DeBERTa 是编码器路线最后的高峰之一——之后大家都在卷生成
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
 
