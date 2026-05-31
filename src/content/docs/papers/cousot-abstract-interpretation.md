@@ -173,6 +173,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
+- [[mine-octagon-2006]] —— Miné 八边形抽象域 — 在区间和多面体之间的甜点
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路

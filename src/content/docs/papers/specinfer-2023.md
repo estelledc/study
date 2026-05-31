@@ -150,5 +150,8 @@ prefix = prefix + accepted
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

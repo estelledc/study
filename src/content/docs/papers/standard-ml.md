@@ -163,6 +163,7 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"

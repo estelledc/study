@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 491 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 492 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：491 个
+- **总数**：492 个
 - **已分类**：207
-- **未分类**：284（落入"其他 / 待分类"段）
+- **未分类**：285（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 284 |
+| [其他 / 待分类](#其他--待分类) | 285 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 284 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 285 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -768,6 +768,7 @@ sidebar:
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
+| `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
 | `webrtc-rs` | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) |
@@ -787,7 +788,7 @@ sidebar:
 
 ---
 
-## 全部 491 个（字母序）
+## 全部 492 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1256,6 +1257,7 @@ sidebar:
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |
+| `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) | 其他 |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | 其他 |
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | 可观测 / 性能 |

@@ -198,6 +198,7 @@ entry:
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+- [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块

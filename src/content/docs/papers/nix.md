@@ -148,3 +148,6 @@ nix-shell -p python3 nodejs ffmpeg
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
+
