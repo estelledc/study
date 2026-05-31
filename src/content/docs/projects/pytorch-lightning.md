@@ -180,6 +180,7 @@ trainer = pl.Trainer(callbacks=[
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
 - [[mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[optax]] —— Optax — JAX 优化器组合库
+- [[piper]] —— Piper — 端侧低延迟 TTS
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库

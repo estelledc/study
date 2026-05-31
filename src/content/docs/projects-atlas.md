@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 563 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 566 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：563 个
+- **总数**：566 个
 - **已分类**：209
-- **未分类**：354（落入"其他 / 待分类"段）
+- **未分类**：357（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 354 |
+| [其他 / 待分类](#其他--待分类) | 357 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 354 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 357 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -556,6 +556,7 @@ sidebar:
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
 | `chainlink` | [Chainlink — 智能合约的"感官系统"](/study/projects/chainlink/) |
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) |
+| `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
@@ -694,6 +695,7 @@ sidebar:
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
+| `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
@@ -738,6 +740,7 @@ sidebar:
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
+| `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) |
@@ -859,7 +862,7 @@ sidebar:
 
 ---
 
-## 全部 563 个（字母序）
+## 全部 566 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -936,6 +939,7 @@ sidebar:
 | `chainlink-ccip` | [Chainlink CCIP — 让两条链像两个银行那样互转钱](/study/projects/chainlink-ccip/) | 其他 |
 | `chalk` | [chalk — 让 console.log 输出彩色字符串的 Node 库](/study/projects/chalk/) | Terminal / 终端 |
 | `changesets` | [changesets — 让每个 PR 自带版本号 bump 声明](/study/projects/changesets/) | Monorepo / 包管理 |
+| `chart-js` | [Chart.js — Canvas 渲染入门级图表](/study/projects/chart-js/) | 其他 |
 | `chatwoot` | [chatwoot — 把 11 种外部聊天渠道归一到同一张消息表](/study/projects/chatwoot/) | 数据应用 / SaaS |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | 其他 |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
@@ -1146,6 +1150,7 @@ sidebar:
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) | 其他 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
+| `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) | 其他 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | 其他 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
 | `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
@@ -1222,6 +1227,7 @@ sidebar:
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | 其他 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
+| `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | 其他 |
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |

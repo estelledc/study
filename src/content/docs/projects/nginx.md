@@ -182,6 +182,7 @@ location /static/ {
 - [[kamailio]] —— Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
+- [[memcached]] —— Memcached — 经典内存缓存
 - [[next-js]] —— Next.js — React 全栈框架
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
 - [[pino]] —— pino — 日志不该阻塞热路径

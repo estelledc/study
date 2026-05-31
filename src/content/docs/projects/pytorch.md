@@ -191,6 +191,8 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[paddleocr]] —— PaddleOCR — 中文 OCR 最强开源方案
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
+- [[piper]] —— Piper — 端侧低延迟 TTS
+- [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场
 - [[ps-li-2014]] —— Parameter Server — 多机训练前 AllReduce 时代的工业标准
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群

@@ -328,6 +328,7 @@ mlir
 moesi-cache-coherence-1986
 monetdb-x100-2005
 mongo
+mueller-2022-instant-ngp
 muzero
 mycroft-strictness
 naiad-2013
@@ -344,6 +345,7 @@ ntp-mills-1991
 nuprl-1986
 nvlink-nvswitch-2018
 nvm
+nvme-protocol-2017
 oauth-2.1-rfc
 okapi-bm25-1994
 opencl-2010
@@ -403,6 +405,7 @@ reynolds-separation-logic
 ring-allreduce-2017
 risc-i-1981
 rlhf-christiano
+rocketqa-2021
 rocksdb-2017
 rocksdb-lsm
 rrf-cormack-2009
@@ -632,6 +635,7 @@ conform
 connect-rpc
 continue
 conversations
+coqui-tts
 cosmos-sdk
 cosmwasm
 coturn
@@ -663,6 +667,7 @@ dnd-kit
 docker
 docusaurus
 dovecot
+dragonfly
 dragonflydb
 drizzle
 dropwizard
@@ -898,6 +903,7 @@ pino
 pixi
 plane
 playwright
+plotly-js
 plug
 pnpm
 pocketbase

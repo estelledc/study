@@ -170,6 +170,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+- [[memcached]] —— Memcached — 经典内存缓存
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[mongo]] —— MongoDB — 文档数据库代表
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
