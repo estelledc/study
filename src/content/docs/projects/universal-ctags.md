@@ -148,3 +148,5 @@ ctags --_interactive
 - [[bat]] —— 高亮 cat；ctags + fzf + bat 是经典三件套
 - [[helix]] —— 现代终端编辑器，原生集成 ctags 和 LSP 双轨跳转
 - [[broot]] —— Rust 交互式目录浏览；和 ctags 同属"轻量 CLI 替代 IDE"潮流
+
+<!-- 合并自 [[universal-ctags]]（papers，工具误归类）dedup 2026-05-31 -->
