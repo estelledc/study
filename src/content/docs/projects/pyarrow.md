@@ -155,6 +155,7 @@ table = dataset.to_table(
 
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[lance]] —— Lance — AI 数据列存格式
 - [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pandas]] —— pandas — Python 表格数据事实标准

@@ -159,6 +159,7 @@ LIMIT 3;
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[faiss]] —— FAISS — 向量检索的标准件库
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[lance]] —— Lance — AI 数据列存格式
 - [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

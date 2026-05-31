@@ -166,5 +166,6 @@ $share/billing/car/+/payment
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
 - [[redis]] —— Redis — 内存键值数据库
 

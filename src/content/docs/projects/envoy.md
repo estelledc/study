@@ -170,6 +170,7 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
 - [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工

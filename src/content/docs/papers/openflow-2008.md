@@ -153,4 +153,6 @@ Google 在数据中心之间的广域网用 OpenFlow 替换了传统 BGP/OSPF。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[b4-2013]] —— B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+
+- [[ethane-2007]] —— Ethane 2007 — 把企业网安全策略集中到一台中央电脑上
+- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 

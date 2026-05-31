@@ -152,6 +152,7 @@ Vandal 把以太坊字节码反编译成关系式 fact（`def(var, bytecode_pos)
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
+- [[ethane-2007]] —— Ethane 2007 — 把企业网安全策略集中到一台中央电脑上
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[wam-warren]] —— WAM — 让 Prolog 跑得像编译型语言的抽象机器
 

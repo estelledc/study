@@ -179,5 +179,8 @@ new Tabulator('#table', {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ag-grid]] —— AG Grid — 企业级数据表格
+- [[glide-data-grid]] —— glide-data-grid — Canvas 画出来的百万行表格
+- [[handsontable]] —— Handsontable — 浏览器里的 Excel
+- [[react]] —— React UI 组件库
 
