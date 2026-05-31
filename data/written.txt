@@ -119,6 +119,7 @@ flink-2015
 flp-1985
 foundationdb
 foundationdb-2021
+frama-c-2012
 frank-effects
 fsrs-spaced-repetition
 fstar
@@ -130,6 +131,7 @@ gfs
 gilbert-lynch-2002
 godel-1931
 gpt-3
+gpu-microbenchmarking-2010
 graalvm-truffle
 gradual-typing
 granule
@@ -141,6 +143,7 @@ halide
 hamming-1950
 hdfs-2010
 helium-type-errors
+helland-2007
 herlihy-moss-tm
 hewitt-actor-model
 hindley-milner
@@ -487,6 +490,7 @@ gdu
 gh
 gin
 gitui
+glab
 glances
 go-ethereum
 go-zero
@@ -575,6 +579,7 @@ miller
 milvus
 minio
 minisearch
+mlx
 mobx
 modin
 monaco-editor
@@ -628,6 +633,7 @@ podman
 poem
 polars
 polygon-zkevm
+postal
 postfix
 postgres-js
 postgresql

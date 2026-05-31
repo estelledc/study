@@ -193,6 +193,8 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[langfuse]] —— Langfuse — LLM 应用可观测性
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
+- [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代
 

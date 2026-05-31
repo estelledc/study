@@ -162,6 +162,7 @@ root-app.yaml  # source 指向 infra-apps/
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
+- [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[temporal]] —— Temporal — 持久化工作流引擎
