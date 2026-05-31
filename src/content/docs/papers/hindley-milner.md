@@ -167,6 +167,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
+- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计

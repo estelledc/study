@@ -153,5 +153,6 @@ map x extract
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fzf]] —— fzf — 命令行模糊查找
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 

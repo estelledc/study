@@ -150,5 +150,6 @@ Quincy 的核心不是"用了什么图算法"，而是**先把问题翻译成图
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 
