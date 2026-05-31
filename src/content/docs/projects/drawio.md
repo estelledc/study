@@ -172,5 +172,6 @@ docker run -it --rm \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[mermaid]] —— Mermaid — 用文本写图，code review 友好的图表语言
 

@@ -1,6 +1,6 @@
 ---
 title: Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑
-来源: Hindman et al., "Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center", NSDI 2011
+来源: 'Hindman et al., "Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center", NSDI 2011'
 日期: 2026-06-01
 分类: 操作系统
 难度: 中级

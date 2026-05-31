@@ -156,7 +156,6 @@ ch.queue_declare(queue="payments",
 
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[nsq]] —— NSQ — Go 写的去中心化消息队列
 - [[redis]] —— Redis — 内存键值数据库
 
