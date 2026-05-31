@@ -153,4 +153,5 @@ cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 - [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
+- [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
 

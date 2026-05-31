@@ -155,7 +155,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
-- [[bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
+- [[bentoml]] —— BentoML — 模型打包部署
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
@@ -185,6 +185,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ps-li-2014]] —— Parameter Server — 多机训练前 AllReduce 时代的工业标准
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
 - [[sglang]] —— SGLang — 结构化推理运行时
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则

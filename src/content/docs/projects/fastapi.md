@@ -173,7 +173,7 @@ def me(user: dict = Depends(current_user)):
 - [[aiortc]] —— aiortc — 让 Python 服务端像浏览器一样讲 WebRTC
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
+- [[bentoml]] —— BentoML — 模型打包部署
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口

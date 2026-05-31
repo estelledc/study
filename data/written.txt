@@ -30,6 +30,7 @@ azure-storage-2011
 b-tree-1972
 bayou-1995
 beck-tdd
+bentoml
 bernstein-1981-cc
 bert
 bidirectional-typing
@@ -78,6 +79,7 @@ codd-1970
 codd-1979-extending
 coeffect-petricek
 cognitive-load-theory
+cohen-1985-hemicube
 colbert-v2
 comer-1979-btree
 compcert
@@ -104,6 +106,7 @@ cstore-2005
 cubical-type-theory-2018
 cuda-streams-concurrency-2018
 cudnn-2014
+cutlass-2020
 dafny-2010
 dalle-2
 dapper-2010
@@ -168,6 +171,7 @@ generational-gc
 gfs
 gilbert-lynch-2002
 godel-1931
+goral-1984-radiosity
 gpipe-2019
 gpt-3
 gptq-2023
@@ -216,6 +220,7 @@ ironfleet-2015
 isabelle-hol-2002
 islands-architecture
 janus-2016
+jensen-1996-photon-mapping
 jupiter-1995
 jwt-rfc-7519
 kafka
@@ -256,6 +261,7 @@ lsm-tree-1996
 mae
 mamba
 mapreduce
+maron-kuhns-1960
 marques-silva-grasp-1996
 martin-lof-itt
 mattern-1989
@@ -290,11 +296,13 @@ no-silver-bullet
 ntp-mills-1991
 nuprl-1986
 oauth-2.1-rfc
+okapi-bm25-1994
 opencl-2010
 openhands
 orca-2022
 orca-continuous-batching
 ot-1989
+pagerank-1998
 pair-programming
 partial-evaluation-jones
 pascal-architecture-2016
@@ -363,6 +371,7 @@ sequential-consistency-1979
 server-sent-events
 sglang-2024
 shannon-1948
+shellcheck
 sillito-questions
 silt-2011
 simula-67
@@ -402,6 +411,7 @@ t5
 tachyon-2014
 tamarin-2012
 tao-2013
+taso-2019
 tcp
 template-haskell
 tendermint-2016
@@ -428,6 +438,7 @@ turchin-supercompilation
 turing-1936
 turing-architecture-2018
 tvm
+tvm-2018
 unified-memory-2014
 vamp-verisoft-2006
 vcc-2009
@@ -539,6 +550,7 @@ claude-code
 clearml
 clerk
 clickhouse
+cockroach
 cockroachdb
 codemirror
 collabora-online
@@ -717,6 +729,7 @@ luxon
 mage
 mailcow
 makerdao
+mariadb-server
 markdown-it
 marked
 matrix-js-sdk
@@ -748,6 +761,7 @@ move-language
 msw
 mumble
 mysql
+mysql-server
 nanobrowser
 nanostores
 nats
@@ -865,6 +879,7 @@ sglang
 shadcn-ui
 sharedb
 sharp
+shellcheck
 shiki
 sia
 sidekiq
