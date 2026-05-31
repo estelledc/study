@@ -181,6 +181,7 @@ Unity / Unreal 里的 light probe(光照探针):
 - [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
 - [[loop-1987-subdivision]] —— Loop 1987 — 三角形网格的递归光滑细分
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
+- [[taubin-1995-mesh-smoothing]] —— Taubin 1995 — 把网格平滑当成低通滤波
 - [[ward-1992]] —— Ward 1992 — 第一个能落地的各向异性反射模型
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

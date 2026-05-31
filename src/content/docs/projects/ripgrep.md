@@ -174,6 +174,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器

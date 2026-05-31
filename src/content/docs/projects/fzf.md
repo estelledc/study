@@ -178,6 +178,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[nnn]] —— nnn — 50KB 内存就能跑的极简终端文件管理器
 - [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
