@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 558 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 560 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：558 个
+- **总数**：560 个
 - **已分类**：209
-- **未分类**：349（落入"其他 / 待分类"段）
+- **未分类**：351（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 349 |
+| [其他 / 待分类](#其他--待分类) | 351 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 349 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 351 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -782,6 +782,7 @@ sidebar:
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
+| `shell-gpt` | [shell-gpt — 把 LLM 接进 shell 当命令行助理](/study/projects/shell-gpt/) |
 | `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) |
 | `shfmt` | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
@@ -838,6 +839,7 @@ sidebar:
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
 | `webrtc-rs` | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) |
 | `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) |
+| `whisper` | [Whisper — OpenAI 多语言 ASR](/study/projects/whisper/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
@@ -854,7 +856,7 @@ sidebar:
 
 ---
 
-## 全部 558 个（字母序）
+## 全部 560 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1291,6 +1293,7 @@ sidebar:
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) | 其他 |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
+| `shell-gpt` | [shell-gpt — 把 LLM 接进 shell 当命令行助理](/study/projects/shell-gpt/) | 其他 |
 | `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | 其他 |
 | `shfmt` | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) | 其他 |
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
@@ -1396,6 +1399,7 @@ sidebar:
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
 | `webrtc-rs` | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) | 其他 |
 | `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) | 其他 |
+| `whisper` | [Whisper — OpenAI 多语言 ASR](/study/projects/whisper/) | 其他 |
 | `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |

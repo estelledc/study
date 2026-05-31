@@ -136,6 +136,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[ampere-architecture-2020]] —— NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设
+- [[ance-2020]] —— ANCE — 让模型自己挖训练负例，对比学习的"自给自足"
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[anthropic-prompt-caching]] —— Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
 - [[bert]] —— BERT — 双向 Transformer 预训练
@@ -147,6 +148,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -171,6 +173,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[muzero]] —— MuZero — 不用规则也能下棋
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
 - [[orca-2022]] —— Orca 2022 — 让 LLM 推理一步一调度，短请求随时退场
 - [[orca-continuous-batching]] —— Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
@@ -178,7 +181,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[resnet]] —— ResNet — 残差连接
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复

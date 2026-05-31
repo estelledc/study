@@ -149,5 +149,6 @@ Spectrum L = throughput * emission;  // throughput / emission 是 Enoki 模板�
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[jax]] —— JAX — Google 函数式数值计算
 

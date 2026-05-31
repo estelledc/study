@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 534 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 537 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：534 篇
+- **总数**：537 篇
 - **已分类**：143
-- **未分类**：391（落入"其他 / 待分类"段）
+- **未分类**：394（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 391 |
+| [其他 / 待分类](#其他--待分类) | 394 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 391 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 394 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -314,6 +314,7 @@ sidebar:
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
+| `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
 | `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) |
 | `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) |
@@ -438,6 +439,7 @@ sidebar:
 | `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) |
+| `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) |
 | `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) |
 | `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) |
 | `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) |
@@ -555,6 +557,7 @@ sidebar:
 | `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) |
 | `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) |
+| `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |
@@ -702,7 +705,7 @@ sidebar:
 
 ---
 
-## 全部 534 篇（字母序）
+## 全部 537 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -719,6 +722,7 @@ sidebar:
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | 其他 |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 其他 |
+| `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) | 其他 |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 其他 |
 | `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) | 其他 |
 | `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) | 其他 |
@@ -888,6 +892,7 @@ sidebar:
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | 其他 |
 | `foundationdb` | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) | 数据库 |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | 其他 |
+| `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) | 其他 |
 | `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) | 其他 |
 | `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) | 其他 |
 | `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) | 其他 |
@@ -1038,6 +1043,7 @@ sidebar:
 | `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) | 其他 |
 | `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) | 其他 |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | 其他 |
+| `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) | 其他 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) | 其他 |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 其他 |
