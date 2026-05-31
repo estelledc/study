@@ -137,4 +137,5 @@ vector RAG 在同一题上**只能找出几段最像"主线"字面的句子**，
 - [[react]] —— React UI 组件库
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
+- [[self-rag-2023]] —— Self-RAG — 让模型自己决定何时该查资料
 

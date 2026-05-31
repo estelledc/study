@@ -166,4 +166,5 @@ def consumer():
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
 

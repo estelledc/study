@@ -144,4 +144,5 @@ answer = llama.generate(prompt)
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
+- [[self-rag-2023]] —— Self-RAG — 让模型自己决定何时该查资料
 

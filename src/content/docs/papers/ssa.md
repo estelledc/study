@@ -178,7 +178,6 @@ entry:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
-- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
@@ -198,6 +197,7 @@ entry:
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[jax]] —— JAX — Google 函数式数值计算
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
+- [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招

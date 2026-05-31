@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 637 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 640 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：637 篇
+- **总数**：640 篇
 - **已分类**：143
-- **未分类**：494（落入"其他 / 待分类"段）
+- **未分类**：497（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 494 |
+| [其他 / 待分类](#其他--待分类) | 497 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 494 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 497 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -553,6 +553,7 @@ sidebar:
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) |
 | `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) |
+| `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |
 | `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) |
@@ -674,6 +675,7 @@ sidebar:
 | `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) |
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
+| `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) |
 | `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) |
@@ -701,6 +703,7 @@ sidebar:
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
+| `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) |
@@ -805,7 +808,7 @@ sidebar:
 
 ---
 
-## 全部 637 篇（字母序）
+## 全部 640 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1124,6 +1127,7 @@ sidebar:
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | 其他 |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) | 其他 |
 | `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) | 其他 |
+| `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | 其他 |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) | 其他 |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | 其他 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
@@ -1274,6 +1278,7 @@ sidebar:
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | 其他 |
 | `realm` | [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
+| `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) | 其他 |
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 其他 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
@@ -1313,6 +1318,7 @@ sidebar:
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 其他 |
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
+| `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 其他 |
 | `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | 其他 |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 其他 |

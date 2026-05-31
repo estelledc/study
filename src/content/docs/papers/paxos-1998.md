@@ -194,6 +194,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[janus-2016]] —— Janus 2016 — 把并发控制和共识捏成一个协议
 - [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+- [[l4-1995]] —— L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
