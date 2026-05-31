@@ -188,6 +188,7 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展

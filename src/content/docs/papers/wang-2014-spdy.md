@@ -152,5 +152,6 @@ SPDY    ：3.4s（单连接复用，握手只付一次）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 
