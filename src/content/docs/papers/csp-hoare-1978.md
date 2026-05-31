@@ -162,6 +162,7 @@ case v := <-chB: handleB(v)
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[monitors-1974]] —— Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数
 - [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 - [[stm-shavit-touitou]] —— STM Shavit-Touitou — 把"加锁"改成"事务"的源头

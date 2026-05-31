@@ -185,6 +185,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务

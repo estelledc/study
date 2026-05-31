@@ -165,6 +165,7 @@ job.apply_async()
 - [[prefect]] —— Prefect — Python 原生编排，让数据流水线像写普通函数一样自然
 - [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
 - [[redis]] —— Redis — 内存键值数据库
+- [[superset]] —— Apache Superset — 开源 BI 平台
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[temporal]] —— Temporal — 持久化工作流引擎
 

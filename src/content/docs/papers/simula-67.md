@@ -198,6 +198,7 @@ end;
 - [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
+- [[monitors-1974]] —— Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[smalltalk-80]] —— Smalltalk-80
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统

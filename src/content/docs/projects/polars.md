@@ -173,6 +173,7 @@ result = (
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arrow]] —— Apache Arrow — 内存列式标准
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上

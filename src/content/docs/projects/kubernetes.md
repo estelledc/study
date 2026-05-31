@@ -148,6 +148,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[etcd]] —— etcd — 分布式键值数据库
+- [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[helm]] —— Helm — Kubernetes 包管理器

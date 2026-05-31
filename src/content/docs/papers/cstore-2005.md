@@ -149,6 +149,7 @@ projection P2: (date, region, amount) 按 date 排序
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[arrow]] —— Apache Arrow — 内存列式标准
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基

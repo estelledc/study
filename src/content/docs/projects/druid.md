@@ -152,4 +152,5 @@ Druid 内部：
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[pinot]] —— Apache Pinot — LinkedIn 起家的实时 OLAP
+- [[superset]] —— Apache Superset — 开源 BI 平台
 

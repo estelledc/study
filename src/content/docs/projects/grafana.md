@@ -135,6 +135,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[grafana-tempo]] —— Grafana Tempo — 用对象存储装下你所有的 trace
 - [[influxdb]] —— InfluxDB — 专用时序数据库
@@ -151,6 +152,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[questdb]] —— QuestDB — 高性能时序库
+- [[superset]] —— Apache Superset — 开源 BI 平台
 - [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[victoriametrics]] —— VictoriaMetrics — 高性能 Prometheus 替代

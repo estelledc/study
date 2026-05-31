@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 693 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 696 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：693 个
+- **总数**：696 个
 - **已分类**：214
-- **未分类**：479（落入"其他 / 待分类"段）
+- **未分类**：482（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 479 |
+| [其他 / 待分类](#其他--待分类) | 482 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 479 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 482 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -535,6 +535,7 @@ sidebar:
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) |
 | `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) |
+| `arrow` | [Apache Arrow — 内存列式标准](/study/projects/arrow/) |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
@@ -662,6 +663,7 @@ sidebar:
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) |
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) |
+| `fluent-bit` | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
@@ -919,6 +921,7 @@ sidebar:
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `streamlit` | [Streamlit — Python 几行写 Web 应用](/study/projects/streamlit/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
+| `superset` | [Apache Superset — 开源 BI 平台](/study/projects/superset/) |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
@@ -989,7 +992,7 @@ sidebar:
 
 ---
 
-## 全部 693 个（字母序）
+## 全部 696 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1027,6 +1030,7 @@ sidebar:
 | `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
 | `arktype` | [arktype — schema 长得像 TypeScript 类型本身](/study/projects/arktype/) | 表单 / Schema 校验 |
+| `arrow` | [Apache Arrow — 内存列式标准](/study/projects/arrow/) | 其他 |
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) | 其他 |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | 其他 |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | 其他 |
@@ -1201,6 +1205,7 @@ sidebar:
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 其他 |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | 其他 |
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | 其他 |
+| `fluent-bit` | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) | 其他 |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | 其他 |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
@@ -1574,6 +1579,7 @@ sidebar:
 | `stylex` | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | 其他 |
 | `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | 数据应用 / SaaS |
+| `superset` | [Apache Superset — 开源 BI 平台](/study/projects/superset/) | 其他 |
 | `supertokens` | [SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe](/study/projects/supertokens/) | Auth 认证 |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) | 其他 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |

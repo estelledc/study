@@ -161,6 +161,7 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
+- [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用

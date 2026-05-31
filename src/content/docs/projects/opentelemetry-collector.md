@@ -149,5 +149,6 @@ type Factory interface {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
+- [[prometheus]] —— Prometheus — 时序监控系统
 

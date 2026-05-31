@@ -106,6 +106,7 @@ chain-replication-2004
 chaitin-graph-coloring
 chandy-lamport-1985
 chapar-2016
+chatbot-arena-2024
 cheney-gc
 chinchilla
 chronos-2024
@@ -185,6 +186,7 @@ dewitt-gray-1992
 differential-datalog
 diffie-hellman
 diffie-hellman-1976
+dijkstra-1965
 dijkstra-goto
 dijkstra-shortest-path
 din-2018
@@ -226,6 +228,7 @@ epaxos-2013
 erlang-otp
 eros-1999
 eswaran-1976
+ethane-2007
 exokernel-1995
 f1-2013
 f4-2014
@@ -819,6 +822,7 @@ cairo-lang
 cal-com
 calico
 candle
+canvas-datagrid
 capnproto
 captum
 cassandra
@@ -1040,6 +1044,7 @@ kuzu
 ky
 kysely
 label-studio
+lance
 lancedb
 langchain
 langfuse
@@ -1162,6 +1167,7 @@ openmeetings
 opensea-js
 opensearch
 opentelemetry
+opentelemetry-collector
 opentofu
 opentsdb
 openvidu
