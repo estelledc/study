@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 677 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 680 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：677 个
+- **总数**：680 个
 - **已分类**：213
-- **未分类**：464（落入"其他 / 待分类"段）
+- **未分类**：467（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 464 |
+| [其他 / 待分类](#其他--待分类) | 467 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 464 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 467 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -624,6 +624,7 @@ sidebar:
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
+| `drawio` | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) |
 | `drone` | [Drone CI — 容器原生的 YAML 流水线](/study/projects/drone/) |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) |
 | `druid` | [Apache Druid — 流批一体的实时分析数据库](/study/projects/druid/) |
@@ -856,6 +857,7 @@ sidebar:
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) |
+| `redpanda` | [Redpanda — Kafka 兼容的 C++ 实现](/study/projects/redpanda/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) |
@@ -874,6 +876,7 @@ sidebar:
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) |
+| `sealed-secrets` | [Sealed Secrets — 把加密后的 Secret 安全提交到 Git](/study/projects/sealed-secrets/) |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
@@ -973,7 +976,7 @@ sidebar:
 
 ---
 
-## 全部 677 个（字母序）
+## 全部 680 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1133,6 +1136,7 @@ sidebar:
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | 其他 |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | 其他 |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) | 其他 |
+| `drawio` | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
 | `drone` | [Drone CI — 容器原生的 YAML 流水线](/study/projects/drone/) | 其他 |
 | `dropwizard` | [Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"](/study/projects/dropwizard/) | 其他 |
@@ -1475,6 +1479,7 @@ sidebar:
 | `react-spring` | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | 动画 |
 | `recharts` | [Recharts — 用 JSX 直接拼出图表的 React 组件库](/study/projects/recharts/) | 数据可视化 |
 | `redis` | [Redis — 内存键值数据库](/study/projects/redis/) | 数据库本体 / 存储引擎 |
+| `redpanda` | [Redpanda — Kafka 兼容的 C++ 实现](/study/projects/redpanda/) | 其他 |
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | 其他 |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) | 其他 |
@@ -1498,6 +1503,7 @@ sidebar:
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | 其他 |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
 | `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) | 其他 |
+| `sealed-secrets` | [Sealed Secrets — 把加密后的 Secret 安全提交到 Git](/study/projects/sealed-secrets/) | 其他 |
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) | 其他 |

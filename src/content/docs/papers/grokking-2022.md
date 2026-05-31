@@ -156,5 +156,10 @@ Nanda 还给出了一个**进度度量**（progress measure）——一个能在
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
+- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
+- [[attention]] —— Attention Is All You Need
+- [[double-descent-2019]] —— Double Descent — 模型越大越准，过参数化时代的反常识曲线
+- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 

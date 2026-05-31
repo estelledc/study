@@ -154,3 +154,6 @@ S1 (pod 0) → S2 (pod 3) 有 4 条等价路径（经核心 C1/C2/C3/C4）
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

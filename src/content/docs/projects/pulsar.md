@@ -163,4 +163,5 @@ bin/pulsar-admin namespaces set-backlog-quota \
 
 - [[nats-server]] —— NATS Server — 极简云原生消息总线
 - [[redis]] —— Redis — 内存键值数据库
+- [[redpanda]] —— Redpanda — Kafka 兼容的 C++ 实现
 

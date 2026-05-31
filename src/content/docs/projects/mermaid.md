@@ -159,4 +159,7 @@ stateDiagram-v2
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[drawio]] —— drawio (diagrams.net) — 离线版 Visio
+- [[starlight]] —— Starlight — Astro 文档站点主题
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 

@@ -123,6 +123,7 @@ codd-1970
 codd-1979-extending
 codellama-2023
 codex-2021
+codons-2004
 coeffect-petricek
 cognitive-load-theory
 cohen-1985-hemicube
@@ -233,6 +234,7 @@ ffs-1984
 fidge-1988
 fielding-rest-2000
 filip-2021
+firecracker-2020
 flamingo-2022
 flan-2021
 flash-attention
@@ -284,6 +286,7 @@ graphsage-2017
 gray-1978-notes
 gray-1981-transaction
 great-swe
+grokking-2022
 gru-2014
 gshard-2020
 hacl-star-2017
@@ -1113,6 +1116,7 @@ nix
 nnn
 nodemailer
 nomad
+nsq
 numpy
 nushell
 nuxt
@@ -1210,6 +1214,7 @@ ravendb
 ray
 react
 react-dnd
+react-flow
 react-hook-form
 react-intl
 react-spring
@@ -1265,6 +1270,7 @@ soketi
 solana
 solid
 sonic
+sops
 sortablejs
 spin
 spring-boot

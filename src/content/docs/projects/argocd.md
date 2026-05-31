@@ -173,6 +173,7 @@ root-app.yaml  # source 指向 infra-apps/
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+- [[sealed-secrets]] —— Sealed Secrets — 把加密后的 Secret 安全提交到 Git
 - [[temporal]] —— Temporal — 持久化工作流引擎
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
