@@ -163,6 +163,7 @@ job.apply_async()
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[prefect]] —— Prefect — Python 原生编排，让数据流水线像写普通函数一样自然
+- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
 - [[redis]] —— Redis — 内存键值数据库
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[temporal]] —— Temporal — 持久化工作流引擎

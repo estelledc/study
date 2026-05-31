@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 671 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 674 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：671 个
+- **总数**：674 个
 - **已分类**：213
-- **未分类**：458（落入"其他 / 待分类"段）
+- **未分类**：461（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 458 |
+| [其他 / 待分类](#其他--待分类) | 461 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 458 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 461 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -759,6 +759,7 @@ sidebar:
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) |
+| `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
@@ -845,6 +846,7 @@ sidebar:
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) |
+| `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/projects/rabbitmq-server/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) |
@@ -930,6 +932,7 @@ sidebar:
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
+| `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
 | `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
@@ -967,7 +970,7 @@ sidebar:
 
 ---
 
-## 全部 671 个（字母序）
+## 全部 674 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1318,6 +1321,7 @@ sidebar:
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) | 其他 |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) | 其他 |
+| `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) | 其他 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | 其他 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
 | `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
@@ -1450,6 +1454,7 @@ sidebar:
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) | 其他 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
+| `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/projects/rabbitmq-server/) | 其他 |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
 | `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) | 其他 |
@@ -1589,6 +1594,7 @@ sidebar:
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
 | `vanilla-extract` | [vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时](/study/projects/vanilla-extract/) | CSS / 样式 |
+| `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) | 其他 |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | 其他 |
 | `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) | 其他 |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) | 其他 |

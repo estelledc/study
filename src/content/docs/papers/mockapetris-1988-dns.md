@@ -156,6 +156,7 @@ SVCB   # 2023, 服务绑定（HTTP/3 + ECH）
 - [[amplification-hell-2014]] —— Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
+- [[dot-doh-perf-2020]] —— DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[paxos]] —— Paxos — 分布式共识算法

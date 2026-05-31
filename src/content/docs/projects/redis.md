@@ -188,6 +188,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[pulsar]] —— Apache Pulsar — 云原生消息队列
+- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准
 - [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
