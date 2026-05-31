@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 600 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 603 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：600 篇
+- **总数**：603 篇
 - **已分类**：143
-- **未分类**：457（落入"其他 / 待分类"段）
+- **未分类**：460（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 457 |
+| [其他 / 待分类](#其他--待分类) | 460 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 457 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 460 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -346,6 +346,7 @@ sidebar:
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
 | `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) |
 | `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) |
+| `blip2-2023` | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) |
 | `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
@@ -390,6 +391,7 @@ sidebar:
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) |
 | `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) |
+| `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) |
 | `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) |
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) |
@@ -554,6 +556,7 @@ sidebar:
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) |
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) |
+| `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
@@ -768,7 +771,7 @@ sidebar:
 
 ---
 
-## 全部 600 篇（字母序）
+## 全部 603 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -826,6 +829,7 @@ sidebar:
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 其他 |
 | `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) | 其他 |
 | `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) | 其他 |
+| `blip2-2023` | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) | 其他 |
 | `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) | 其他 |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | 其他 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
@@ -883,6 +887,7 @@ sidebar:
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | 其他 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) | 其他 |
+| `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) | 其他 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
 | `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) | 其他 |
 | `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
@@ -1095,6 +1100,7 @@ sidebar:
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) | 其他 |
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | 其他 |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) | 其他 |
+| `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) | 其他 |
 | `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 其他 |
 | `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | 其他 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
