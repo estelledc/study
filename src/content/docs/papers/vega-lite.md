@@ -8,7 +8,7 @@ title: Vega-Lite — 用 JSON 三段式画复合图
 
 ## 是什么
 
-Vega-Lite 是一种**用 JSON 描述图表**的小语言。日常类比：像点奶茶——你只需要勾"杯型 / 加料 / 甜度"三栏，店员自动补默认；不像让你手画一杯奶茶。
+Vega-Lite 是一种**用 JSON 描述图表**的小语言，由 University of Washington 的 Interactive Data Lab（IDL，Jeffrey Heer 组）维护。日常类比：像点奶茶——你只需要勾"杯型 / 加料 / 甜度"三栏，店员自动补默认；不像让你手画一杯奶茶。
 
 写一张柱状图就这几行：
 
@@ -162,4 +162,6 @@ Vega-Lite 是一种**用 JSON 描述图表**的小语言。日常类比：像点
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+
+<!-- 合并自 [[vega-lite]]（projects）dedup 2026-05-31 -->
 
