@@ -189,6 +189,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
 - [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
 - [[sglang]] —— SGLang — 结构化推理运行时
+- [[shap]] —— SHAP — 用博弈论给每个特征发工资
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则
 - [[tensorflow]] —— TensorFlow — Google 端到端 DL 平台

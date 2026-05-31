@@ -163,6 +163,7 @@ LIMIT 5;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
 - [[cassandra]] —— Apache Cassandra — 分布式宽列数据库
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库

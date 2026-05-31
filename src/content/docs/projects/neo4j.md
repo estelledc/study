@@ -162,6 +162,7 @@ ORDER BY score DESC LIMIT 10
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎

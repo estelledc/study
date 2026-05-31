@@ -151,7 +151,9 @@ model.wv.most_similar('cat')
 
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
+- [[t5]] —— T5 — Text-to-Text Transfer Transformer
 

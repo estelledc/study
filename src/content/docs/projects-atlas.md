@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 536 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 539 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：536 个
-- **已分类**：208
-- **未分类**：328（落入"其他 / 待分类"段）
+- **总数**：539 个
+- **已分类**：209
+- **未分类**：330（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 20 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 21 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
 | [监控 / 时序](#监控---时序) | 7 |
 | [Web 框架](#web-框架) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 328 |
+| [其他 / 待分类](#其他--待分类) | 330 |
 
 ---
 
@@ -165,10 +165,11 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 20 个。
+共 21 个。
 
 | 项目 | 描述 |
 |---|---|
+| [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) |  |
 | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) |  |
 | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) |  |
 | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) |  |
@@ -497,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 328 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 330 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -737,6 +738,7 @@ sidebar:
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) |
+| `pyenv` | [pyenv — 用 shim 把 python 命令拦截后路由到指定版本](/study/projects/pyenv/) |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) |
 | `pytorch` | [PyTorch — 深度学习主流框架](/study/projects/pytorch/) |
 | `pytorch-lightning` | [PyTorch Lightning — PyTorch 训练循环抽象](/study/projects/pytorch-lightning/) |
@@ -763,6 +765,7 @@ sidebar:
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
+| `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
 | `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) |
 | `shfmt` | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) |
@@ -832,7 +835,7 @@ sidebar:
 
 ---
 
-## 全部 536 个（字母序）
+## 全部 539 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -854,6 +857,7 @@ sidebar:
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | 其他 |
+| `arangodb` | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | 数据库本体 / 存储引擎 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argocd` | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) | DevOps / 容器 / 运维 |
@@ -1206,6 +1210,7 @@ sidebar:
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) | 其他 |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) | 其他 |
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) | 其他 |
+| `pyenv` | [pyenv — 用 shim 把 python 命令拦截后路由到指定版本](/study/projects/pyenv/) | 其他 |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) | 其他 |
 | `pytorch` | [PyTorch — 深度学习主流框架](/study/projects/pytorch/) | 其他 |
 | `pytorch-lightning` | [PyTorch Lightning — PyTorch 训练循环抽象](/study/projects/pytorch-lightning/) | 其他 |
@@ -1249,6 +1254,7 @@ sidebar:
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) | 其他 |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
+| `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) | 其他 |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
 | `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | 其他 |

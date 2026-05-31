@@ -161,4 +161,5 @@ pipe.score(X_test, y_test)
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
+- [[shap]] —— SHAP — 用博弈论给每个特征发工资
 

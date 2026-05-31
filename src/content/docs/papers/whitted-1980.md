@@ -181,4 +181,5 @@ NVIDIA Turing 2018 的 RT Core 加速两件事：
 - [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
+- [[wald-2007-sah-bvh]] —— Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法
 

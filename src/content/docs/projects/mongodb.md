@@ -153,6 +153,7 @@ db.orders.aggregate([
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
