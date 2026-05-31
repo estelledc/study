@@ -184,6 +184,7 @@ def me(user: dict = Depends(current_user)):
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
 - [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[faster-whisper]] —— faster-whisper — Whisper 的 4× 加速重写版
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架

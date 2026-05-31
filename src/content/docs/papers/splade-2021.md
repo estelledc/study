@@ -154,4 +154,5 @@ L = L_contrastive(query, doc+, doc-) + λ_q * FLOPS(q) + λ_d * FLOPS(d)
 - [[cocondenser-2021]] —— coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
+- [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 

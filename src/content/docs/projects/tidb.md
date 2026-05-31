@@ -170,5 +170,6 @@ SELECT user_id, SUM(amount) FROM orders GROUP BY user_id;
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[raft]] —— Raft — 易理解的共识算法
+- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

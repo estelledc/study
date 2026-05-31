@@ -90,6 +90,7 @@ clearml
 clickhouse
 clip
 cockroachdb-2020
+cocondenser-2021
 codd-1970
 codd-1979-extending
 coeffect-petricek
@@ -365,11 +366,13 @@ paxos-simple-2001
 pbft-1999
 peg-packrat-ford
 percolator-2010
+persistent-memory-2014
 personalized-pagerank-2003
 peyton-jones-stg
 phong-1975
 pipedream-2019
 pivot-tracing-2015
+plenoxels-2022
 plotkin-sos
 pnueli-temporal-1977
 pnuts-2008
@@ -614,6 +617,7 @@ chainlink
 chainlink-ccip
 chalk
 changesets
+chart-js
 chatwoot
 chi
 chroma
@@ -824,6 +828,7 @@ mattermost
 mcp-ts-sdk
 megatron-lm
 meilisearch
+memcached
 metaflow
 metamask
 micromark
@@ -900,6 +905,7 @@ pg-boss-readme
 pgvector
 phoenix
 pino
+piper
 pixi
 plane
 playwright
