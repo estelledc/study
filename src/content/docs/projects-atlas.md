@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 542 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 545 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：542 个
+- **总数**：545 个
 - **已分类**：209
-- **未分类**：333（落入"其他 / 待分类"段）
+- **未分类**：336（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 333 |
+| [其他 / 待分类](#其他--待分类) | 336 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 333 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 336 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -584,6 +584,7 @@ sidebar:
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
 | `discord-js` | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) |
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
+| `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
@@ -673,6 +674,7 @@ sidebar:
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
 | `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) |
+| `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
@@ -732,6 +734,7 @@ sidebar:
 | `polygon-zkevm` | [Polygon zkEVM — 用零知识证明给以太坊扩容](/study/projects/polygon-zkevm/) |
 | `postal` | [Postal — 自托管的 Mailgun / SendGrid 替代](/study/projects/postal/) |
 | `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) |
+| `pouchdb` | [PouchDB — 浏览器里的 CouchDB](/study/projects/pouchdb/) |
 | `prefect` | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
 | `promptfoo` | [promptfoo — 给 prompt 写单元测试的 CLI](/study/projects/promptfoo/) |
@@ -838,7 +841,7 @@ sidebar:
 
 ---
 
-## 全部 542 个（字母序）
+## 全部 545 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -958,6 +961,7 @@ sidebar:
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `discord-js` | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) | 其他 |
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) | 其他 |
+| `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) | 其他 |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
@@ -1097,6 +1101,7 @@ sidebar:
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |
 | `llama-index` | [LlamaIndex — RAG 四件套数据框架](/study/projects/llama-index/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
+| `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |
@@ -1202,6 +1207,7 @@ sidebar:
 | `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) | 其他 |
 | `postgres-js` | [postgres.js — 写 SQL 但语法层就防注入的 Node 客户端](/study/projects/postgres-js/) | ORM / DB 客户端 |
 | `postgresql` | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) | 数据库本体 / 存储引擎 |
+| `pouchdb` | [PouchDB — 浏览器里的 CouchDB](/study/projects/pouchdb/) | 其他 |
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
 | `prefect` | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) | 其他 |
 | `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ORM / DB 客户端 |

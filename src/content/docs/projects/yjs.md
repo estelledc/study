@@ -166,6 +166,7 @@ notes.set('note-1', { title: '...', body: '...' })
 - [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[partykit]] —— PartyKit — Cloudflare Durable Objects 上的实时协作 framework
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[sharedb]] —— ShareDB — 基于 OT 的实时数据库
 

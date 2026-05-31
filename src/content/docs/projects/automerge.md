@@ -158,6 +158,7 @@ handle.change(d => d.todos.push('first'))   // 自动落盘 + 自动同步
 - [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"
 - [[partykit]] —— PartyKit — Cloudflare Durable Objects 上的实时协作 framework
+- [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[sharedb]] —— ShareDB — 基于 OT 的实时数据库
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

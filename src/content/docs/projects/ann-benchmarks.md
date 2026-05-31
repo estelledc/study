@@ -160,6 +160,7 @@ class MyAlgo(BaseANN):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[lm-evaluation-harness]] —— lm-evaluation-harness — LLM 基准评测底座
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[qdrant]] —— Qdrant — Rust 向量数据库
