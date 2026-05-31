@@ -1,6 +1,6 @@
 ---
 title: Twine — Facebook 把整个数据中心当一台机器调度
-来源: Tang et al., "Twine: A Unified Cluster Management System for Shared Infrastructure", OSDI 2020
+来源: 'Tang et al., "Twine: A Unified Cluster Management System for Shared Infrastructure", OSDI 2020'
 日期: 2026-06-01
 分类: 操作系统
 难度: 中级
@@ -151,3 +151,6 @@ Twine: 开始重启
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

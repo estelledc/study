@@ -1,6 +1,6 @@
 ---
 title: OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
-来源: McKeown 等, "OpenFlow: Enabling Innovation in Campus Networks", ACM SIGCOMM CCR, April 2008
+来源: 'McKeown 等, "OpenFlow: Enabling Innovation in Campus Networks", ACM SIGCOMM CCR, April 2008'
 日期: 2026-06-01
 分类: 网络协议
 难度: 入门
@@ -151,3 +151,6 @@ Google 在数据中心之间的广域网用 OpenFlow 替换了传统 BGP/OSPF。
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[b4-2013]] —— B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+
+

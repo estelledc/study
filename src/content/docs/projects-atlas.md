@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 687 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 690 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：687 个
+- **总数**：690 个
 - **已分类**：214
-- **未分类**：473（落入"其他 / 待分类"段）
+- **未分类**：476（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 473 |
+| [其他 / 待分类](#其他--待分类) | 476 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 473 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 476 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -641,6 +641,7 @@ sidebar:
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) |
+| `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
@@ -918,11 +919,13 @@ sidebar:
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
+| `tabulator` | [Tabulator — 纯 JS 交互式表格](/study/projects/tabulator/) |
 | `tantivy` | [Tantivy — Rust 版 Lucene](/study/projects/tantivy/) |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) |
 | `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
+| `tempo` | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) |
@@ -983,7 +986,7 @@ sidebar:
 
 ---
 
-## 全部 687 个（字母序）
+## 全部 690 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1167,6 +1170,7 @@ sidebar:
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | 其他 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | Web 框架 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
+| `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) | 其他 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
 | `enquirer` | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) | Terminal / 终端 |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) | 其他 |
@@ -1572,6 +1576,7 @@ sidebar:
 | `swr` | [SWR — React 远程数据 hook 的极简流派](/study/projects/swr/) | 数据获取 / 路由 |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | 其他 |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) | 其他 |
+| `tabulator` | [Tabulator — 纯 JS 交互式表格](/study/projects/tabulator/) | 其他 |
 | `tailwind` | [Tailwind CSS — 工具类优先样式框架](/study/projects/tailwind/) | CSS / 样式 |
 | `tanstack-form` | [TanStack Form — 跨框架共享一份表单校验逻辑](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
@@ -1581,6 +1586,7 @@ sidebar:
 | `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) | 其他 |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | 其他 |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) | 其他 |
+| `tempo` | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) | 其他 |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) | 其他 |
 | `temporal-polyfill` | [temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎](/study/projects/temporal-polyfill/) | 日期时间 |
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) | 其他 |

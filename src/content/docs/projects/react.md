@@ -209,6 +209,7 @@ function Greeting({ name }) {
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派
+- [[tabulator]] —— Tabulator — 纯 JS 交互式表格
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
