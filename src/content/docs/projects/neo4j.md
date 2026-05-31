@@ -169,6 +169,7 @@ ORDER BY score DESC LIMIT 10
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 

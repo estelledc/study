@@ -160,6 +160,7 @@ db.orders.aggregate([
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库

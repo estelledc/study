@@ -172,6 +172,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
 - [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 - [[llama-cpp]] —— llama.cpp — 让 LLM 在你电脑里直接跑
 - [[llvm]] —— LLVM — 模块化编译器框架
@@ -184,6 +185,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[optuna]] —— Optuna — 把超参搜索写在 Python 函数体里
+- [[paddleocr]] —— PaddleOCR — 中文 OCR 最强开源方案
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ps-li-2014]] —— Parameter Server — 多机训练前 AllReduce 时代的工业标准

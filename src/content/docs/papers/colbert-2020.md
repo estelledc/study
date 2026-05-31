@@ -149,5 +149,11 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
+- [[attention]] —— Attention Is All You Need
+- [[bert]] —— BERT — 双向 Transformer 预训练
+- [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
+- [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
+- [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
+- [[splade-2021]] —— SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
 
