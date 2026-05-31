@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 620 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 621 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：620 个
+- **总数**：621 个
 - **已分类**：213
-- **未分类**：407（落入"其他 / 待分类"段）
+- **未分类**：408（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 407 |
+| [其他 / 待分类](#其他--待分类) | 408 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 407 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 408 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -687,6 +687,7 @@ sidebar:
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) |
+| `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) |
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) |
@@ -916,7 +917,7 @@ sidebar:
 
 ---
 
-## 全部 620 个（字母序）
+## 全部 621 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1171,6 +1172,7 @@ sidebar:
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) | 其他 |
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | 其他 |
+| `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) | 其他 |
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) | 其他 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |

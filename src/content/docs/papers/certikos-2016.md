@@ -154,6 +154,7 @@ CertiKOS 的端到端定理大致是："如果 Coq 内核没 bug、CompCert 没 
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据
 - [[hyperkernel-2017]] —— Hyperkernel — 让 SMT 求解器一键验证操作系统内核
 - [[iris-2015]] —— Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木
 - [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务

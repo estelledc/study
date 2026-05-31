@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 631 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 634 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：631 篇
+- **总数**：634 篇
 - **已分类**：143
-- **未分类**：488（落入"其他 / 待分类"段）
+- **未分类**：491（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 488 |
+| [其他 / 待分类](#其他--待分类) | 491 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 488 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 491 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -327,6 +327,7 @@ sidebar:
 | `ast-grep` | [ast-grep — 用 AST 结构而不是正则去搜代码](/study/papers/ast-grep/) |
 | `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) |
+| `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) |
 | `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) |
 | `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) |
@@ -517,6 +518,7 @@ sidebar:
 | `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) |
 | `hu-2018-mls-mpm` | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
+| `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
 | `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) |
@@ -594,6 +596,7 @@ sidebar:
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) |
 | `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) |
 | `metcalfe-boggs-1976` | [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) |
+| `mills-ntp-1991` | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) |
 | `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) |
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) |
@@ -799,7 +802,7 @@ sidebar:
 
 ---
 
-## 全部 631 篇（字母序）
+## 全部 634 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -830,6 +833,7 @@ sidebar:
 | `ast-grep` | [ast-grep — 用 AST 结构而不是正则去搜代码](/study/papers/ast-grep/) | 其他 |
 | `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) | 其他 |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | 其他 |
+| `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) | 其他 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
 | `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | 其他 |
@@ -1076,6 +1080,7 @@ sidebar:
 | `hu-2018-mls-mpm` | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) | 其他 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
+| `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | 其他 |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 其他 |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
 | `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | 其他 |
@@ -1172,6 +1177,7 @@ sidebar:
 | `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) | 其他 |
 | `metcalfe-boggs-1976` | [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) | 其他 |
+| `mills-ntp-1991` | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) | 其他 |
 | `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) | 其他 |
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) | 其他 |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) | 其他 |

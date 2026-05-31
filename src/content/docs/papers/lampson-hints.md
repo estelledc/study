@@ -167,6 +167,7 @@ POST 不 idempotent——重复发 5 次会创建 5 个订单。所以 Stripe / 
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[great-swe]] —— Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
