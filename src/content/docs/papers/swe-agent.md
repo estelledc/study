@@ -133,6 +133,7 @@ SWE-Agent 的动作序列：
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
+- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[react]] —— React UI 组件库
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测

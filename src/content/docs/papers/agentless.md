@@ -152,6 +152,7 @@ Agentless 的处理流程：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
+- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[react]] —— React UI 组件库
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法

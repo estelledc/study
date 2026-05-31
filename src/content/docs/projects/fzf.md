@@ -171,6 +171,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[jq]] —— jq — JSON 的 sed/awk
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
+- [[lf]] —— lf — 终端里像 vim 一样翻文件
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件

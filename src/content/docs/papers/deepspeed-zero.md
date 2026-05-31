@@ -142,6 +142,7 @@ accelerate launch train.py
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
 - [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等

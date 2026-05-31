@@ -163,6 +163,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
 - [[jq]] —— jq — JSON 的 sed/awk
+- [[lf]] —— lf — 终端里像 vim 一样翻文件
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件

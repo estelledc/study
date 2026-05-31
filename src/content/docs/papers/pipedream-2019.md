@@ -159,6 +159,7 @@ PipeDream 论文里其实是**异步 SGD** + weight stashing：相邻 micro-batc
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[attention]] —— Attention Is All You Need
 - [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡

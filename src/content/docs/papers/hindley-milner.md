@@ -151,6 +151,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[agda-norell]] —— Agda — 让你写代码的同时把数学也证明了
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进

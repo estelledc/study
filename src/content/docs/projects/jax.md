@@ -156,6 +156,7 @@ def step(params, x, y):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[flax]] —— Flax — JAX 上的神经网络库

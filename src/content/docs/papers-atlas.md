@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 407 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 410 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：407 篇
+- **总数**：410 篇
 - **已分类**：143
-- **未分类**：264（落入"其他 / 待分类"段）
+- **未分类**：267（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 264 |
+| [其他 / 待分类](#其他--待分类) | 267 |
 
 ---
 
@@ -304,13 +304,14 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 264 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 267 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
+| `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
 | `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |
@@ -427,6 +428,7 @@ sidebar:
 | `hotstuff-2019` | [HotStuff — 让换领导也只花线性消息的 BFT 共识](/study/papers/hotstuff-2019/) |
 | `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
+| `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
@@ -502,6 +504,7 @@ sidebar:
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) |
+| `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
@@ -575,7 +578,7 @@ sidebar:
 
 ---
 
-## 全部 407 篇（字母序）
+## 全部 410 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -588,6 +591,7 @@ sidebar:
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | 其他 |
 | `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
+| `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | 其他 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 其他 |
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 其他 |
@@ -762,6 +766,7 @@ sidebar:
 | `http-2` | [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) | 网络协议 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
+| `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 其他 |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 其他 |
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
@@ -868,6 +873,7 @@ sidebar:
 | `push-pull-frp` | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) | 编译器 / 编程语言理论 |
 | `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) | 其他 |
 | `quic` | [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) | 网络协议 |
+| `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) | 其他 |
 | `raft` | [Raft — 易理解的共识算法](/study/papers/raft/) | 分布式系统 |
 | `rag-lewis-2020` | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | 智能体与 LLM 系统 |
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |

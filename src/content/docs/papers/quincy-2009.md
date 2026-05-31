@@ -1,6 +1,6 @@
 ---
-title: Quincy — 把"派活给机器"变成一道最小费用流题
-来源: Isard et al., "Quincy: Fair Scheduling for Distributed Computing Clusters", SOSP 2009
+title: 'Quincy — 把"派活给机器"变成一道最小费用流题'
+来源: 'Isard et al., "Quincy: Fair Scheduling for Distributed Computing Clusters", SOSP 2009'
 日期: 2026-05-31
 分类: 分布式系统
 难度: 中级
@@ -149,3 +149,6 @@ Quincy 的核心不是"用了什么图算法"，而是**先把问题翻译成图
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
