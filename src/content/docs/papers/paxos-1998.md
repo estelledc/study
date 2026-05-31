@@ -201,6 +201,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
 - [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[moesi-cache-coherence-1986]] —— Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则
 - [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 - [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
