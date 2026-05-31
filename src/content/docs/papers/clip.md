@@ -136,6 +136,7 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
 - [[dit]] —— DiT — Diffusion Transformer
+- [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[llava]] —— LLaVA — 开源多模态对话模型
 - [[mae]] —— MAE — Masked Autoencoders

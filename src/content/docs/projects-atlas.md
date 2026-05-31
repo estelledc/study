@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 566 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 569 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：566 个
-- **已分类**：209
-- **未分类**：357（落入"其他 / 待分类"段）
+- **总数**：569 个
+- **已分类**：210
+- **未分类**：359（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 21 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 22 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
 | [监控 / 时序](#监控---时序) | 7 |
 | [Web 框架](#web-框架) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 357 |
+| [其他 / 待分类](#其他--待分类) | 359 |
 
 ---
 
@@ -165,7 +165,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 21 个。
+共 22 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -185,6 +185,7 @@ sidebar:
 | [PostgreSQL — 工业级关系数据库](/study/projects/postgresql/) |  |
 | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) |  |
 | [Redis — 内存键值数据库](/study/projects/redis/) |  |
+| [RocksDB — 嵌入式 LSM 引擎](/study/projects/rocksdb/) |  |
 | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) |  |
 | [TiDB — HTAP 分布式数据库](/study/projects/tidb/) |  |
 | [Typesense — 高性能搜索引擎](/study/projects/typesense/) |  |
@@ -498,7 +499,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 357 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 359 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -614,6 +615,7 @@ sidebar:
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
+| `faster-whisper` | [faster-whisper — Whisper 的 4× 加速重写版](/study/projects/faster-whisper/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) |
@@ -712,6 +714,7 @@ sidebar:
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
+| `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) |
 | `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/projects/nix/) |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
@@ -862,7 +865,7 @@ sidebar:
 
 ---
 
-## 全部 566 个（字母序）
+## 全部 569 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1029,6 +1032,7 @@ sidebar:
 | `fabric-js` | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) | 图像处理 / Canvas |
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) | 其他 |
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) | 其他 |
+| `faster-whisper` | [faster-whisper — Whisper 的 4× 加速重写版](/study/projects/faster-whisper/) | 其他 |
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | Web 框架 |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | 其他 |
@@ -1187,6 +1191,7 @@ sidebar:
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | DevOps / 容器 / 运维 |
+| `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) | 其他 |
 | `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/projects/nix/) | 其他 |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | 其他 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
@@ -1287,6 +1292,7 @@ sidebar:
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) | 其他 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) | 其他 |
+| `rocksdb` | [RocksDB — 嵌入式 LSM 引擎](/study/projects/rocksdb/) | 数据库本体 / 存储引擎 |
 | `rolldown` | [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `rspack` | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | 构建工具 / Bundler |

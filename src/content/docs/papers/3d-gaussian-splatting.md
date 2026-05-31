@@ -170,6 +170,7 @@ for g in gaussians:
 - [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场
+- [[stam-1999-stable-fluids]] —— Stable Fluids — 让流体模拟时间步随便给都不爆
 - [[vit]] —— ViT — Vision Transformer
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

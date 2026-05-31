@@ -165,6 +165,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[fastai]] —— fastai — 三行代码做迁移学习
+- [[faster-whisper]] —— faster-whisper — Whisper 的 4× 加速重写版
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[flax]] —— Flax — JAX 上的神经网络库
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡

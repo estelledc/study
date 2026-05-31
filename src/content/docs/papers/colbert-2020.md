@@ -157,6 +157,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
+- [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
 - [[rocketqa-2021]] —— RocketQA — 把稠密检索的训练拧到工业级
 - [[splade-2021]] —— SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
