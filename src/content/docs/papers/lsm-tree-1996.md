@@ -156,5 +156,6 @@ client read key="foo"
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tidb]] —— TiDB — HTAP 分布式数据库
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 

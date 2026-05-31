@@ -152,6 +152,7 @@ for each pixel (x, y):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[catmull-clark-1978]] —— Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
 - [[lafortune-1993-bdpt]] —— Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

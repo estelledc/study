@@ -263,6 +263,7 @@ lsm-tree-1996
 mae
 mamba
 mapreduce
+marching-cubes-1987
 maron-kuhns-1960
 marques-silva-grasp-1996
 martin-lof-itt
@@ -297,6 +298,7 @@ nix
 no-silver-bullet
 ntp-mills-1991
 nuprl-1986
+nvlink-nvswitch-2018
 oauth-2.1-rfc
 okapi-bm25-1994
 opencl-2010
@@ -437,6 +439,7 @@ trees-that-grow
 trill-2014
 triton-2019
 triton-llm
+trustrank-2004
 turchin-supercompilation
 turing-1936
 turing-architecture-2018
@@ -660,6 +663,7 @@ gron
 grpc-go
 gsap
 gum
+hadolint
 hanami
 haproxy
 haraka
@@ -853,6 +857,7 @@ rails
 ranger
 rasa
 ratatui
+ray
 react
 react-dnd
 react-hook-form
@@ -936,6 +941,7 @@ testing-library
 textual
 thirdweb-sdk
 thrift
+tidb
 tide
 tig
 timescaledb
