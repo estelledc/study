@@ -174,6 +174,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
 - [[podman]] —— Podman — 无 daemon 容器引擎
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[pulumi]] —— Pulumi — 用真正的编程语言写云资源清单
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
 - [[rook]] —— Rook — 把 Ceph 装进 K8s 的 CRD 里

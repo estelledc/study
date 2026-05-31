@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 690 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 693 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：690 篇
+- **总数**：693 篇
 - **已分类**：143
-- **未分类**：547（落入"其他 / 待分类"段）
+- **未分类**：550（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 547 |
+| [其他 / 待分类](#其他--待分类) | 550 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 547 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 550 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -367,6 +367,7 @@ sidebar:
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
 | `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
+| `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |
@@ -503,6 +504,7 @@ sidebar:
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) |
 | `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) |
+| `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) |
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
@@ -527,6 +529,7 @@ sidebar:
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
+| `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) |
 | `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) |
 | `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) |
@@ -858,7 +861,7 @@ sidebar:
 
 ---
 
-## 全部 690 篇（字母序）
+## 全部 693 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -939,6 +942,7 @@ sidebar:
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
 | `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | 其他 |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
+| `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | 其他 |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | 其他 |
@@ -1110,6 +1114,7 @@ sidebar:
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | 其他 |
 | `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) | 其他 |
 | `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) | 其他 |
+| `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) | 其他 |
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) | 其他 |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) | 其他 |
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
@@ -1141,6 +1146,7 @@ sidebar:
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | 其他 |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 其他 |
+| `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) | 其他 |
 | `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) | 其他 |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | 其他 |
 | `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) | 其他 |

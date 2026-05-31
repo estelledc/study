@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 657 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 660 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：657 个
+- **总数**：660 个
 - **已分类**：213
-- **未分类**：444（落入"其他 / 待分类"段）
+- **未分类**：447（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 444 |
+| [其他 / 待分类](#其他--待分类) | 447 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 444 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 447 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -522,6 +522,7 @@ sidebar:
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) |
+| `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) |
@@ -826,6 +827,7 @@ sidebar:
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) |
+| `pulumi` | [Pulumi — 用真正的编程语言写云资源清单](/study/projects/pulumi/) |
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) |
 | `pyenv` | [pyenv — 用 shim 把 python 命令拦截后路由到指定版本](/study/projects/pyenv/) |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) |
@@ -922,6 +924,7 @@ sidebar:
 | `vega-lite` | [Vega-Lite — 三段式 JSON 把复合图收口](/study/projects/vega-lite/) |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
+| `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
@@ -953,7 +956,7 @@ sidebar:
 
 ---
 
-## 全部 657 个（字母序）
+## 全部 660 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -976,6 +979,7 @@ sidebar:
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | 其他 |
+| `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
@@ -1415,6 +1419,7 @@ sidebar:
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) | 其他 |
 | `prysm` | [prysm — 用 Go 写的 Ethereum 共识层客户端](/study/projects/prysm/) | 其他 |
 | `pulsar` | [Apache Pulsar — 云原生消息队列](/study/projects/pulsar/) | 其他 |
+| `pulumi` | [Pulumi — 用真正的编程语言写云资源清单](/study/projects/pulumi/) | 其他 |
 | `pyarrow` | [PyArrow — 让所有数据系统共用一块内存](/study/projects/pyarrow/) | 其他 |
 | `pyenv` | [pyenv — 用 shim 把 python 命令拦截后路由到指定版本](/study/projects/pyenv/) | 其他 |
 | `pyth` | [Pyth Network — 一手数据上链的低延迟预言机](/study/projects/pyth/) | 其他 |
@@ -1568,6 +1573,7 @@ sidebar:
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) | 其他 |
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
+| `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | 其他 |

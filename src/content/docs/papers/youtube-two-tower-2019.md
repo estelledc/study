@@ -165,6 +165,7 @@ V_hot 的 p_v 大 → 减一个大数 → 抵消"被反复当负样本"的副作
 - [[koren-mf-2009]] —— Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书
 - [[sasrec-2018]] —— SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
 - [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
+- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
 - [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"
 - [[word2vec]] —— Word2Vec — 词向量奠基
 

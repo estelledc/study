@@ -164,6 +164,7 @@ export function Sales({ data }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[antv-g6]] —— AntV G6 — 把"关系数据"画成会自己摆位置的图
 - [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
