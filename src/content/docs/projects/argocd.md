@@ -166,5 +166,6 @@ root-app.yaml  # source 指向 infra-apps/
 - [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[temporal]] —— Temporal — 持久化工作流引擎
 

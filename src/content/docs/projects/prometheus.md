@@ -180,6 +180,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架

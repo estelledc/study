@@ -172,5 +172,6 @@ Rasa 跑一个独立的 **Action Server**（默认 5055 端口），主进程通
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 

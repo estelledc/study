@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 384 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 385 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：384 篇
+- **总数**：385 篇
 - **已分类**：143
-- **未分类**：241（落入"其他 / 待分类"段）
+- **未分类**：242（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 241 |
+| [其他 / 待分类](#其他--待分类) | 242 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 241 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 242 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -383,6 +383,7 @@ sidebar:
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |
+| `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) |
 | `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) |
@@ -552,7 +553,7 @@ sidebar:
 
 ---
 
-## 全部 384 篇（字母序）
+## 全部 385 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -682,6 +683,7 @@ sidebar:
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) | 其他 |
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | 其他 |
+| `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) | 其他 |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | 其他 |
 | `foundationdb` | [FoundationDB — 把数据库拆成 5 个独立角色，再用确定性仿真烧 10 年 bug](/study/papers/foundationdb/) | 数据库 |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | 其他 |

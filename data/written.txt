@@ -234,6 +234,7 @@ mlir
 monetdb-x100-2005
 muzero
 mycroft-strictness
+naiad-2013
 narwhal-tusk-2022
 nelson-oppen-1979
 neumann-2015-large-joins
@@ -386,6 +387,7 @@ zk-snark
 # projects
 aave-v3
 accelerate
+actions-runner-controller
 actix-web
 affine
 ag-grid
@@ -536,6 +538,7 @@ go-zero
 got
 gqlgen
 grafana
+grafana-tempo
 grape
 graphql-yoga
 gron
@@ -643,6 +646,7 @@ next-js
 nextra
 nginx
 nodemailer
+nomad
 numpy
 nushell
 nuxt
@@ -707,6 +711,7 @@ qwik
 rabby-wallet
 radix-ui
 rails
+rasa
 ratatui
 react
 react-dnd
@@ -838,5 +843,6 @@ zcash
 zksync-era
 zod
 zoxide
+zsh
 zulip
 zustand
