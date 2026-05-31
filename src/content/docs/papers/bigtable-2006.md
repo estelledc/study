@@ -160,6 +160,7 @@ column families:
 - [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
 - [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
 - [[dataflow-model-2015]] —— Dataflow Model — 流处理的四问框架
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）

@@ -158,6 +158,7 @@ def reduce(user_id, latencies):
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
