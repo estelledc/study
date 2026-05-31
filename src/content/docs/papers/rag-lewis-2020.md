@@ -116,6 +116,10 @@ answer = llama.generate(prompt)
 2. **联合训练让 retriever 学到任务特定的相关性**——"字面相似"和"对生成有用"是两件事
 3. **方法论 → 工程取舍 → 产品化** 走了 4 年：2020 论文 → 2022 大规模化 → 2023 LangChain 工程化
 4. **Hot-swap 索引**是 RAG 最酷的能力——换文档库 = 换知识，不需要重训模型
+5. **chunking 策略决定 80% 检索质量**：太短切丢上下文，太长里塞噪声；现代 RAG 系统的 retriever 调到 95 分都没用，如果 chunking 还停在"500 字硬切"的水位
+6. **检索结果不一定是答案**：RAG 假设"检索到的 top-k 包含真相"，但实际生产里 top-k 经常都对不上问题——这时候 generator 会编。RAG 系统的 hallucination 主要不是 generator 的错，是 retriever 的失败被 generator 兜了。
+7. **联合训练 vs 冻结向量**：原版 RAG 让 retriever 跟着 generator 一起反向传播，所以 retriever 学到的"相关性" 是和最终生成对齐的；现代工程为了简单大多冻 retriever，相当于退化成"靠运气" 的版本。
+8. **626M 打 11B 的工程意义**：模型 + 外部记忆 比"更大的模型" 经常更划算；这给了"小模型 + 大检索库" 一条独立路线，不需要每次都堆参数。
 
 ## 延伸阅读
 
