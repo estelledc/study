@@ -390,6 +390,7 @@ tvm
 unified-memory-2014
 vcc-2009
 vellvm
+verdi-2015
 verisoft-2008
 vertica-2012
 vit
@@ -408,6 +409,7 @@ websocket-rfc-6455
 why3-2013
 word2vec
 xla-compiler
+xtrace-2007
 z3-2008
 zab-2011
 zgc
@@ -526,6 +528,7 @@ dovecot
 dragonflydb
 drizzle
 dropwizard
+dspy
 dua-cli
 duckdb
 duckdb-wasm
@@ -795,6 +798,7 @@ sidekiq
 signal-android
 signal-ios
 signal-server
+simple-peer
 sinatra
 slim-framework
 snapshot
@@ -885,6 +889,7 @@ wormhole
 wretch
 xh
 xonsh
+xplr
 xstate
 yargs
 yjs

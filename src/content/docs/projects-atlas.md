@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 486 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 487 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：486 个
+- **总数**：487 个
 - **已分类**：207
-- **未分类**：279（落入"其他 / 待分类"段）
+- **未分类**：280（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 279 |
+| [其他 / 待分类](#其他--待分类) | 280 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 279 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 280 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -684,6 +684,7 @@ sidebar:
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
+| `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
@@ -782,7 +783,7 @@ sidebar:
 
 ---
 
-## 全部 486 个（字母序）
+## 全部 487 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1090,6 +1091,7 @@ sidebar:
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | 其他 |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | 其他 |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
+| `peerjs-server` | [peerjs-server — 只管握手不管传话的 WebRTC 信令服务器](/study/projects/peerjs-server/) | 其他 |
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | 数据应用 / SaaS |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) | 其他 |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
