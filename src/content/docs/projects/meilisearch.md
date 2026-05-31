@@ -167,4 +167,5 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 - [[sonic]] —— Sonic — 极简前缀搜索引擎
 - [[supabase]] —— Supabase — Firebase 的开源替代
 - [[tantivy]] —— Tantivy — Rust 版 Lucene
+- [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代
 

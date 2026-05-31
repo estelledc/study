@@ -1,6 +1,6 @@
 ---
 title: Frangipani — 把分布式文件系统盖在共享虚拟磁盘上
-来源: Thekkath, Mann, Lee, "Frangipani: A Scalable Distributed File System", SOSP 1997
+来源: 'Thekkath, Mann, Lee, "Frangipani: A Scalable Distributed File System", SOSP 1997'
 日期: 2026-06-01
 分类: 操作系统
 难度: 中级

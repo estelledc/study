@@ -156,5 +156,7 @@ const options = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
 

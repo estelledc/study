@@ -165,5 +165,9 @@ PPL 反直觉地"变差"了——因为 LS 让模型不再对正确 token 输出
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
+- [[attention]] —— Attention Is All You Need
+- [[batchnorm-2015]] —— Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14
+- [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
+- [[resnet]] —— ResNet — 残差连接
 

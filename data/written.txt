@@ -114,6 +114,7 @@ clip
 coca-2022
 cockroachdb-2020
 cocondenser-2021
+coda-1990
 codd-1970
 codd-1979-extending
 codellama-2023
@@ -335,6 +336,7 @@ kokkos-2014
 koren-mf-2009
 kustomize
 l4-1995
+label-smoothing-2016
 lafortune-1993-bdpt
 lalr-deremer
 lambda-calculus
@@ -449,6 +451,7 @@ orca-2022
 orca-continuous-batching
 ot-1989
 owens-2007-gpgpu-survey
+padmanabhan-1995-http-latency
 pagerank-1998
 pair-programming
 panel
@@ -1167,6 +1170,7 @@ rocket-chat
 rocksdb
 rolldown
 rollup
+rook
 rspack
 runc
 safe-contracts
@@ -1236,6 +1240,7 @@ tailwind
 tanstack-form
 tanstack-query
 tanstack-router
+tantivy
 task
 tdengine
 tekton
@@ -1283,6 +1288,7 @@ vercel-ai
 vertx
 victoriametrics
 viem
+vis-network
 visx
 vite
 vitepress

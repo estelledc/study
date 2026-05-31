@@ -165,3 +165,7 @@ new Sigma(graph, container, {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
+- [[vis-network]] —— vis-network — barnesHut 物理引擎驱动的网络图
+
