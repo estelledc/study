@@ -126,6 +126,7 @@ cutlass-2020
 dafny-2010
 dalle-2
 dapper-2010
+dash-numa-1992
 dataflow-model-2015
 davis-putnam-1960
 ddpm
@@ -275,6 +276,7 @@ lean-prover
 lean-tactics
 leis-2015-optimizers
 lerner-seminal
+li-2018-redner
 lieberman-realtime-gc
 lindholm-2008-tesla
 linear-scan-reg-alloc
@@ -442,6 +444,7 @@ sparrow-2013
 sparse-autoencoders
 sparsegpt-2023
 specinfer-2023
+splade-2021
 sqlite-2022
 ssa
 stable-diffusion
@@ -874,6 +877,7 @@ orleans
 otel-collector
 ovenmediaengine
 oxc
+paddleocr
 pandas
 partykit
 patchright
@@ -924,6 +928,7 @@ rails
 ranger
 rasa
 ratatui
+ravendb
 ray
 react
 react-dnd
@@ -983,6 +988,7 @@ starlette
 starlight
 starship
 steel-browser
+stern
 storj
 storybook
 strawberry

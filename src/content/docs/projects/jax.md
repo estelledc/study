@@ -169,6 +169,7 @@ def step(params, x, y):
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
+- [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[ssa]] —— SSA — 静态单赋值形式

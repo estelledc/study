@@ -181,6 +181,7 @@ LIMIT 5;
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完

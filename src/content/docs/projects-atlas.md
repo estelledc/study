@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 555 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 558 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：555 个
+- **总数**：558 个
 - **已分类**：209
-- **未分类**：346（落入"其他 / 待分类"段）
+- **未分类**：349（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 346 |
+| [其他 / 待分类](#其他--待分类) | 349 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 346 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 349 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -507,6 +507,7 @@ sidebar:
 | `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
+| `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
@@ -612,6 +613,7 @@ sidebar:
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) |
+| `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
@@ -824,6 +826,7 @@ sidebar:
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
+| `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
@@ -851,7 +854,7 @@ sidebar:
 
 ---
 
-## 全部 555 个（字母序）
+## 全部 558 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -861,6 +864,7 @@ sidebar:
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
+| `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) | 其他 |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | 其他 |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | 其他 |
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) | 其他 |
@@ -1017,6 +1021,7 @@ sidebar:
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | Web 框架 |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | 其他 |
+| `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) | 其他 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | 其他 |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | 其他 |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
@@ -1363,6 +1368,7 @@ sidebar:
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) | 其他 |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) | 其他 |
 | `unstorage` | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | 其他基础设施 |
+| `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) | 其他 |
 | `valibot` | [Valibot — 拆成乐高的 TypeScript 校验库](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |

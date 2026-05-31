@@ -150,5 +150,6 @@ L = L_contrastive(query, doc+, doc-) + λ_q * FLOPS(q) + λ_d * FLOPS(d)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anserini-2017]] —— Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
+- [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 

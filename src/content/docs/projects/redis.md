@@ -157,6 +157,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[feast]] —— Feast — 让训练和上线用同一份特征定义的开源 Feature Store
+- [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
