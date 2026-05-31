@@ -158,5 +158,6 @@ START SLAVE;
 - [[redis]] —— Redis — 内存键值数据库
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
+- [[tidb]] —— TiDB — HTAP 分布式数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 
