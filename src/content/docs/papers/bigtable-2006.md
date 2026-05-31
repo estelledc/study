@@ -28,6 +28,7 @@ Put("com.cnn.www", "contents:html", t=20060815, "<html>...</html>")
 - 为什么"列族"（column family）这个怪词在 HBase / Cassandra 里到处都是
 - 为什么 LSM-tree（写到内存 + 后台合并）成了今天 OLTP 内核的默认选择
 - 为什么"计算和存储分离"不是云时代的新发明，2006 年 Bigtable + GFS 就在干
+- 为什么 [[spanner-2012]] 被官方描述为"Bigtable 局限的回应"——单行原子和缺二级索引把开发者逼疯了
 
 ## 核心要点
 
@@ -148,6 +149,7 @@ column families:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+<!-- 合并自 [[bigtable]] dedup 2026-05-31 -->
 
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[akamai-2010]] —— Akamai 2010 — 从内容分发网络长成全球应用平台
