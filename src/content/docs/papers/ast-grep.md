@@ -48,15 +48,15 @@ ast-grep 的全部能力可以拆成 **三个概念**：
 
 ### 案例 1：API 迁移
 
-把项目里 `_.get(obj, path, def)` 全部换成原生 `obj?.path ?? def` 风格的等价写法（示意）：
+把项目里旧的 `request(url, opts)` 全部换成新签名 `httpClient.send({ url, ...opts })`：
 
 ```bash
-sg --pattern '_.get($OBJ, $PATH, $DEF)' \
-   --rewrite '$OBJ?.$PATH ?? $DEF' \
+sg --pattern 'request($URL, $OPTS)' \
+   --rewrite 'httpClient.send({ url: $URL, ...$OPTS })' \
    --lang ts -i
 ```
 
-`-i` 是交互模式——每个匹配点都让你按 y/n 确认。比直接全量 sed 安全得多。
+`-i` 是交互模式——每个匹配点都让你按 y/n 确认。比直接全量 sed 安全得多：注释里、字符串里、变量名包含 `request` 的位置不会被改。
 
 ### 案例 2：写一条团队 lint 规则
 
