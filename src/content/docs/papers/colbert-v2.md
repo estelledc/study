@@ -152,4 +152,5 @@ ColBERTv2 是当时**唯一兼具高精度 + 可索引**的方案。
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 

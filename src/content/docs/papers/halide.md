@@ -159,6 +159,7 @@ bx.compute_at(by,x); // 在 by 的某层循环内现算现用——内存小，b
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流

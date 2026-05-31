@@ -149,5 +149,7 @@ torch.backends.cudnn.benchmark = False
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
+- [[jax]] —— JAX — Google 函数式数值计算
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 

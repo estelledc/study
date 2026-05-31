@@ -103,6 +103,7 @@ csp-hoare-1978
 cstore-2005
 cubical-type-theory-2018
 cuda-streams-concurrency-2018
+cudnn-2014
 dafny-2010
 dalle-2
 dapper-2010
@@ -426,7 +427,9 @@ turing-1936
 turing-architecture-2018
 tvm
 unified-memory-2014
+vamp-verisoft-2006
 vcc-2009
+veach-1995-mis
 vellvm
 verdi-2015
 verisoft-2008
@@ -582,6 +585,7 @@ duckdb-wasm
 duf
 dust
 dvc
+earthly
 echarts
 echo
 effect
@@ -662,6 +666,7 @@ jax
 jc
 jest
 jimp
+jitsi-videobridge
 jotai
 jq
 js-joda

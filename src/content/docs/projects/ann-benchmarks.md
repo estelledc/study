@@ -163,4 +163,5 @@ class MyAlgo(BaseANN):
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[qdrant]] —— Qdrant — Rust 向量数据库
+- [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 

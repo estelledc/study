@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 460 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 463 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：460 篇
+- **总数**：463 篇
 - **已分类**：143
-- **未分类**：317（落入"其他 / 待分类"段）
+- **未分类**：320（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 317 |
+| [其他 / 待分类](#其他--待分类) | 320 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 317 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 320 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -549,6 +549,7 @@ sidebar:
 | `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) |
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
+| `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
@@ -596,6 +597,7 @@ sidebar:
 | `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) |
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) |
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) |
+| `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) |
 | `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) |
 | `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) |
 | `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) |
@@ -604,6 +606,7 @@ sidebar:
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |
+| `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
@@ -628,7 +631,7 @@ sidebar:
 
 ---
 
-## 全部 460 篇（字母序）
+## 全部 463 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -980,6 +983,7 @@ sidebar:
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) | 其他 |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | 其他 |
 | `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
+| `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 其他 |
 | `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) | 其他 |
@@ -1054,6 +1058,7 @@ sidebar:
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) | 其他 |
 | `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | 其他 |
+| `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) | 其他 |
 | `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) | 其他 |
 | `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) | 其他 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
@@ -1063,6 +1068,7 @@ sidebar:
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | 其他 |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 其他 |
+| `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) | 其他 |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 其他 |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
