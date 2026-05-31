@@ -152,6 +152,7 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
 - [[docker]] —— Docker — 容器化平台
 - [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
+- [[dragonfly]] —— Dragonfly — 多线程 Redis 替代
 - [[dragonflydb]] —— Dragonfly — 多线程 Redis 替代
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[etcd]] —— etcd — 分布式键值数据库

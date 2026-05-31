@@ -152,6 +152,7 @@ CQE 带 `IORING_CQE_F_MORE` 标记表示"还会有更多 CQE 来"。比 epoll + 
 
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
