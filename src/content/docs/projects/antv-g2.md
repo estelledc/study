@@ -167,6 +167,7 @@ export function Sales({ data }) {
 - [[antv-g6]] —— AntV G6 — 把"关系数据"画成会自己摆位置的图
 - [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[dhtmlx-gantt]] —— DHTMLX Gantt — 给企业级排期用的全功能甘特组件
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[frappe-gantt]] —— Frappe Gantt — 200 行 SVG 写出的甘特图
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图

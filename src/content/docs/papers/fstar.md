@@ -167,6 +167,7 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
+- [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对

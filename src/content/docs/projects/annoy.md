@@ -160,5 +160,6 @@ mmap 在这里的价值：**几十个 worker 进程共享一份索引**，每个
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
+- [[faiss]] —— FAISS — 向量检索的标准件库
 

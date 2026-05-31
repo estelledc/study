@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 664 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 666 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：664 个
+- **总数**：666 个
 - **已分类**：213
-- **未分类**：451（落入"其他 / 待分类"段）
+- **未分类**：453（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 451 |
+| [其他 / 待分类](#其他--待分类) | 453 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 451 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 453 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -562,6 +562,7 @@ sidebar:
 | `broot` | [broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树](/study/projects/broot/) |
 | `btop` | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) |
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) |
+| `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) |
@@ -613,6 +614,7 @@ sidebar:
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
+| `dhtmlx-gantt` | [DHTMLX Gantt — 给企业级排期用的全功能甘特组件](/study/projects/dhtmlx-gantt/) |
 | `discord-js` | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) |
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
 | `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) |
@@ -960,7 +962,7 @@ sidebar:
 
 ---
 
-## 全部 664 个（字母序）
+## 全部 666 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1033,6 +1035,7 @@ sidebar:
 | `browser-use` | [browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架](/study/projects/browser-use/) | AI 浏览器自动化 |
 | `btop` | [btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器](/study/projects/btop/) | 其他 |
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | 其他 |
+| `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) | 其他 |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | 其他 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
@@ -1105,6 +1108,7 @@ sidebar:
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | 其他 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
+| `dhtmlx-gantt` | [DHTMLX Gantt — 给企业级排期用的全功能甘特组件](/study/projects/dhtmlx-gantt/) | 其他 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
 | `discord-js` | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) | 其他 |
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) | 其他 |
