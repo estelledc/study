@@ -161,6 +161,7 @@ FOR friend IN 1..2 OUTBOUND @userId friendOf
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[memgraph]] —— Memgraph — 内存图数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

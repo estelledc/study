@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 666 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 668 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：666 篇
+- **总数**：668 篇
 - **已分类**：143
-- **未分类**：523（落入"其他 / 待分类"段）
+- **未分类**：525（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 523 |
+| [其他 / 待分类](#其他--待分类) | 525 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 523 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 525 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -452,6 +452,7 @@ sidebar:
 | `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) |
+| `dropout-2014` | [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
@@ -831,10 +832,11 @@ sidebar:
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 | `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) |
+| `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) |
 
 ---
 
-## 全部 666 篇（字母序）
+## 全部 668 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1028,6 +1030,7 @@ sidebar:
 | `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) | 其他 |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) | 其他 |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) | 其他 |
+| `dropout-2014` | [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) | 其他 |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | 其他 |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 其他 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
@@ -1502,5 +1505,6 @@ sidebar:
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | 其他 |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | 其他 |
 | `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) | 其他 |
+| `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) | 其他 |
 | `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | GC / 内存管理 |
 | `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |

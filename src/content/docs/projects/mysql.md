@@ -153,6 +153,7 @@ START SLAVE;
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
 - [[memcached]] —— Memcached — 经典内存缓存
+- [[memgraph]] —— Memgraph — 内存图数据库
 - [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

@@ -162,6 +162,7 @@ export default defineConfig({
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具
+- [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库

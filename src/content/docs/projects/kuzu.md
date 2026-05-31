@@ -157,5 +157,6 @@ conn.execute("""
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[janusgraph]] —— JanusGraph — 可插拔后端的分布式图数据库
+- [[memgraph]] —— Memgraph — 内存图数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 

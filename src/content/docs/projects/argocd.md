@@ -163,6 +163,7 @@ root-app.yaml  # source 指向 infra-apps/
 
 - [[actions-runner-controller]] —— Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
+- [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线

@@ -177,7 +177,6 @@ export default {
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nivo]] —— nivo — React + d3 组件化图表
-- [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
 - [[shfmt]] —— shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
