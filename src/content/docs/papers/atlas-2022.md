@@ -159,5 +159,6 @@ k=60 : 26.5  ← 收益封顶
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
+- [[self-rag-2023]] —— Self-RAG — 让模型自己决定何时该查资料
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
 

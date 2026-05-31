@@ -176,6 +176,7 @@ function Greeting({ name }) {
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
+- [[kepler-gl]] —— kepler.gl — 拖拽式百万点 GIS 探索界面
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid

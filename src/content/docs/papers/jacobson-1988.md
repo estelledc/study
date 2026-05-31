@@ -154,5 +154,10 @@ t=2.6s  cwnd=360 ← 砍半，重新线性爬
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
+- [[metcalfe-boggs-1976]] —— Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
+- [[red-1993]] —— RED — 让路由器在队列还没塞满时就提前丢包
+- [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

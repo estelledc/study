@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 621 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 622 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：621 个
+- **总数**：622 个
 - **已分类**：213
-- **未分类**：408（落入"其他 / 待分类"段）
+- **未分类**：409（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 408 |
+| [其他 / 待分类](#其他--待分类) | 409 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 408 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 409 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -691,6 +691,7 @@ sidebar:
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) |
+| `kepler-gl` | [kepler.gl — 拖拽式百万点 GIS 探索界面](/study/projects/kepler-gl/) |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) |
 | `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
@@ -917,7 +918,7 @@ sidebar:
 
 ---
 
-## 全部 621 个（字母序）
+## 全部 622 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1177,6 +1178,7 @@ sidebar:
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) | 其他 |
+| `kepler-gl` | [kepler.gl — 拖拽式百万点 GIS 探索界面](/study/projects/kepler-gl/) | 其他 |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) | 其他 |
 | `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) | 其他 |
 | `koa` | [Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架](/study/projects/koa/) | Web 框架 |

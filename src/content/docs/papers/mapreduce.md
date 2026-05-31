@@ -173,6 +173,7 @@ def reduce(user_id, latencies):
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[quincy-2009]] —— Quincy — 把"派活给机器"变成一道最小费用流题
+- [[red-1993]] —— RED — 让路由器在队列还没塞满时就提前丢包
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
