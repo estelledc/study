@@ -155,4 +155,5 @@ hubble observe --from-pod default/web --to-pod default/user
 - [[istio]] —— Istio — 给微服务装一层透明的网络治理面
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[prometheus]] —— Prometheus — 时序监控系统
+- [[rook]] —— Rook — 把 Ceph 装进 K8s 的 CRD 里
 

@@ -166,4 +166,5 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[sonic]] —— Sonic — 极简前缀搜索引擎
 - [[supabase]] —— Supabase — Firebase 的开源替代
+- [[tantivy]] —— Tantivy — Rust 版 Lucene
 

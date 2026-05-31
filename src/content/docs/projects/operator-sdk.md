@@ -168,4 +168,5 @@ make bundle-push
 
 - [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[rook]] —— Rook — 把 Ceph 装进 K8s 的 CRD 里
 

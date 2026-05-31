@@ -166,5 +166,8 @@ consolidate_after = 60  # 60 秒攒一次
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+- [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
+- [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 

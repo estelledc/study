@@ -158,4 +158,5 @@ let g:ackprg = 'ag --vimgrep --nocolor --nogroup --column'
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[sonic]] —— Sonic — 极简前缀搜索引擎
+- [[tantivy]] —— Tantivy — Rust 版 Lucene
 

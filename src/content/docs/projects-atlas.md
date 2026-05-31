@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 646 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 649 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：646 个
+- **总数**：649 个
 - **已分类**：213
-- **未分类**：433（落入"其他 / 待分类"段）
+- **未分类**：436（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 433 |
+| [其他 / 待分类](#其他--待分类) | 436 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 433 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 436 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -842,6 +842,7 @@ sidebar:
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) |
+| `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) |
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
@@ -886,6 +887,7 @@ sidebar:
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
+| `tantivy` | [Tantivy — Rust 版 Lucene](/study/projects/tantivy/) |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) |
 | `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) |
@@ -914,6 +916,7 @@ sidebar:
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
+| `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) |
@@ -942,7 +945,7 @@ sidebar:
 
 ---
 
-## 全部 646 个（字母序）
+## 全部 649 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1434,6 +1437,7 @@ sidebar:
 | `rocksdb` | [RocksDB — 嵌入式 LSM 引擎](/study/projects/rocksdb/) | 数据库本体 / 存储引擎 |
 | `rolldown` | [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
+| `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) | 其他 |
 | `rspack` | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | 构建工具 / Bundler |
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) | 其他 |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) | 其他 |
@@ -1503,6 +1507,7 @@ sidebar:
 | `tanstack-form` | [TanStack Form — 跨框架共享一份表单校验逻辑](/study/projects/tanstack-form/) | 表单 / Schema 校验 |
 | `tanstack-query` | [TanStack Query — 数据获取与缓存库](/study/projects/tanstack-query/) | 数据获取 / 路由 |
 | `tanstack-router` | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | 数据获取 / 路由 |
+| `tantivy` | [Tantivy — Rust 版 Lucene](/study/projects/tantivy/) | 其他 |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) | 其他 |
 | `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) | 其他 |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | 其他 |
@@ -1550,6 +1555,7 @@ sidebar:
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
+| `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | 其他 |
 | `visx` | [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | 数据可视化 |
 | `vite` | [Vite — 浏览器自己加载源码的构建工具](/study/projects/vite/) | 构建工具 / Bundler |
 | `vitepress` | [VitePress — Vue 团队用 Vite 写的静态文档站点生成器](/study/projects/vitepress/) | 文档站点 |

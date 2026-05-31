@@ -7,6 +7,7 @@ adam-2014
 adamw-2017
 adapton
 aes
+afs-1988
 agda-norell
 agentless
 akamai-2002
@@ -404,9 +405,11 @@ minhash-broder-1997
 minisat-2003
 mips-1981
 mixture-of-experts
+mixup-2018
 mlflow
 mlir
 moesi-cache-coherence-1986
+mogul-1995-persistent-http
 monaghan-1992-sph
 monetdb-x100-2005
 mongo
@@ -747,6 +750,7 @@ bun
 caddy
 cairo-lang
 cal-com
+calico
 candle
 capnproto
 captum
@@ -796,6 +800,7 @@ ctranslate2
 curlie
 curve
 cvat
+cytoscape-js
 d3
 dagger
 dagster
@@ -1198,6 +1203,7 @@ socket-io
 soketi
 solana
 solid
+sonic
 sortablejs
 spin
 spring-boot
