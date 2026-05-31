@@ -167,6 +167,7 @@ f(jnp.ones(5))   # ⚠️ 又重新编译
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快

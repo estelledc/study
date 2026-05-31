@@ -150,5 +150,6 @@ LLM 的 RAG（检索增强生成）流程：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 

@@ -170,6 +170,7 @@ def reduce(user_id, latencies):
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
 - [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
+- [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[quincy-2009]] —— Quincy — 把"派活给机器"变成一道最小费用流题
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半

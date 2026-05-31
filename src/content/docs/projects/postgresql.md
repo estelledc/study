@@ -166,6 +166,7 @@ LIMIT 5;
 - [[cassandra]] —— Apache Cassandra — 分布式宽列数据库
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[cockroach]] —— CockroachDB — 全球分布式 SQL
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"

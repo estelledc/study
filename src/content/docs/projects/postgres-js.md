@@ -152,6 +152,7 @@ await sql.notify('order_created', JSON.stringify({ id: 42 }))
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bun]] —— Bun — JS 全能运行时
+- [[cockroach]] —— CockroachDB — 全球分布式 SQL
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall

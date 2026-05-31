@@ -187,6 +187,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[sglang]] —— SGLang — 结构化推理运行时
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则
 - [[tensorflow]] —— TensorFlow — Google 端到端 DL 平台
 - [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
