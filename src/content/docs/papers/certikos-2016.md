@@ -157,4 +157,5 @@ CertiKOS 的端到端定理大致是："如果 Coq 内核没 bug、CompCert 没 
 - [[hyperkernel-2017]] —— Hyperkernel — 让 SMT 求解器一键验证操作系统内核
 - [[iris-2015]] —— Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木
 - [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
+- [[the-os-1968]] —— THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS
 

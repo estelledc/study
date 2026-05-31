@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 623 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 626 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：623 篇
+- **总数**：626 篇
 - **已分类**：143
-- **未分类**：480（落入"其他 / 待分类"段）
+- **未分类**：483（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 480 |
+| [其他 / 待分类](#其他--待分类) | 483 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 480 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 483 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -437,6 +437,7 @@ sidebar:
 | `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) |
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
 | `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) |
+| `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) |
@@ -682,6 +683,7 @@ sidebar:
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
 | `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
+| `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
@@ -739,6 +741,7 @@ sidebar:
 | `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) |
 | `tensorrt-llm-2023` | [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) |
 | `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) |
+| `the-os-1968` | [THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS](/study/papers/the-os-1968/) |
 | `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) |
 | `tla-yu-tlc-1999` | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) |
@@ -791,7 +794,7 @@ sidebar:
 
 ---
 
-## 全部 623 篇（字母序）
+## 全部 626 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -970,6 +973,7 @@ sidebar:
 | `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
 | `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) | 其他 |
 | `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
+| `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) | 其他 |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) | 其他 |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) | 其他 |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | 其他 |
@@ -1276,6 +1280,7 @@ sidebar:
 | `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) | 其他 |
 | `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 其他 |
+| `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | 其他 |
 | `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |
@@ -1353,6 +1358,7 @@ sidebar:
 | `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) | 其他 |
 | `tensorrt-llm-2023` | [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) | 其他 |
 | `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) | 其他 |
+| `the-os-1968` | [THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS](/study/papers/the-os-1968/) | 其他 |
 | `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
 | `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) | 其他 |
 | `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) | 其他 |

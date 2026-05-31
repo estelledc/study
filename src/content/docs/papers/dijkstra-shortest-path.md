@@ -165,5 +165,6 @@ h(v) 必须不高估真实剩余距离（admissible）才保证最优。Hart-Nil
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[the-os-1968]] —— THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS
 - [[turing-1936]] —— Turing 1936 可计算性
 

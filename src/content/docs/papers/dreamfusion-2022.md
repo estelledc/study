@@ -1,6 +1,6 @@
 ---
 title: DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
-来源: Poole, Jain, Barron, Mildenhall, "DreamFusion: Text-to-3D using 2D Diffusion", ICLR 2023
+来源: 'Poole, Jain, Barron, Mildenhall, "DreamFusion: Text-to-3D using 2D Diffusion", ICLR 2023'
 日期: 2026-05-31
 分类: 生成式 AI
 难度: 中级
@@ -149,3 +149,6 @@ Imagen 的 base 是 64×64。DreamFusion 选择只在 64×64 渲染 NeRF 并算 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
