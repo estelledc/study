@@ -157,5 +157,6 @@ lambda_ij = -sigmoid(s_j - s_i) * |Delta_NDCG_ij|
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
 - [[personalized-pagerank-2003]] —— Personalized PageRank — 给每个人一份属于自己的网页排名
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
+- [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
 - [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
 

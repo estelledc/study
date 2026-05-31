@@ -163,4 +163,5 @@ query_vector = model.encode(query)      # 查询 → 384 维向量
 - [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
 - [[rrf-cormack-2009]] —— RRF — 把多个搜索结果列表合并成一个的最简单办法
 - [[simrank-2002]] —— SimRank — 两个节点相似当且仅当它们的邻居相似
+- [[slim-2011]] —— SLIM — 让数据自己学一张稀疏的"看了又看"权重表
 

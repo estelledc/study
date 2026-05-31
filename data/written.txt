@@ -273,6 +273,7 @@ knrm-2017
 knuth-lr-1965
 knuth-taocp
 kokkos-2014
+koren-mf-2009
 lafortune-1993-bdpt
 lalr-deremer
 lambda-calculus
@@ -302,6 +303,7 @@ logoot-2010
 loop-1987-subdivision
 lsm-tree-1996
 lstm-1997
+macklin-2014-position-based-fluids
 mae
 mamba
 mapreduce
@@ -423,6 +425,7 @@ rocksdb-2017
 rocksdb-lsm
 rrf-cormack-2009
 rsa
+rwkv-2023
 saga-1987
 sagiv-shape-analysis
 salsa-adapton
@@ -780,6 +783,7 @@ immich
 influxdb
 ink
 inngest
+invokeai
 ipfs
 jaeger
 jax
@@ -1069,6 +1073,7 @@ thrift
 tidb
 tide
 tig
+tikv
 timescaledb
 tmux
 torchtune
@@ -1092,6 +1097,7 @@ valibot
 valkey
 valtio
 vanilla-extract
+vega
 vercel-ai
 vertx
 victoriametrics
