@@ -150,3 +150,8 @@ TiKV = Rust 写的"分片 + Multi-Raft + Percolator 事务"分布式 KV，靠一
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[leveldb]] —— LevelDB — Google LSM 库
+- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
+- [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
+

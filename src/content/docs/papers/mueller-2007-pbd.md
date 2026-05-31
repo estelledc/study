@@ -155,5 +155,8 @@ C(p1,p2,p3,p4) = (1/6)·((p2-p1) × (p3-p1)) · (p4-p1) − V_rest = 0
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[macklin-2014-position-based-fluids]] —— Position Based Fluids — 把水也塞进 PBD 同一套框架
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 

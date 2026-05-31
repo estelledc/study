@@ -167,6 +167,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
 - [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
