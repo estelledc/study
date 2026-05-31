@@ -154,5 +154,6 @@ view := style.Render(ti.View())  // 圆角边框包住一个输入框
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[ratatui]] —— ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
 

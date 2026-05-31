@@ -160,6 +160,7 @@ class LogEmitter:
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
 - [[calvin]] —— Calvin — 不要每次都协商，先排好顺序大家照做
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福

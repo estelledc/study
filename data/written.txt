@@ -40,6 +40,7 @@ calculus-of-constructions
 call-by-need-1995
 calvin
 calvin-2012
+cap-12-years-later-2012
 cascades-1995
 cassandra-2010
 causal-abstraction
@@ -323,6 +324,7 @@ tigerbeetle
 tla-yu-tlc-1999
 tls-1.3
 tofte-talpin-regions
+token-bucket-stripe
 tomita-glr
 toolformer
 toy-models-superposition
@@ -397,6 +399,7 @@ boxen
 broot
 browser-use
 btop
+bubbletea
 bullmq
 bun
 caddy
@@ -489,6 +492,7 @@ fzf
 gdu
 gh
 gin
+github-actions
 gitui
 glab
 glances
@@ -609,11 +613,13 @@ ofetch
 ollama
 openmeetings
 opensea-js
+opentelemetry
 openzeppelin-contracts
 optax
 optimism
 ora
 orleans
+otel-collector
 ovenmediaengine
 oxc
 pandas

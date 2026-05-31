@@ -154,5 +154,6 @@ sudo bandwhich --total-utilization
 - [[duf]] —— duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
+- [[ratatui]] —— ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 
