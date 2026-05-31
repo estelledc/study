@@ -165,6 +165,7 @@ pnpm turbo run build
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
+- [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nx]] —— Nx — 一个仓库装几十个项目时帮你少跑活的工具

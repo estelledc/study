@@ -156,6 +156,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
+- [[clearml]] —— ClearML — 实验跟踪 + 远程执行 + 数据管理三合一
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调

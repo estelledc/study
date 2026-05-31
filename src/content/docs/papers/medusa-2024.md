@@ -1,6 +1,6 @@
 ---
 title: Medusa — 让大模型自己同时猜好几个 token
-来源: Cai et al., "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads", arXiv 2401.10774 / ICML 2024
+来源: 'Cai et al., "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads", arXiv 2401.10774 / ICML 2024'
 日期: 2026-05-31
 分类: 系统
 难度: 中级
@@ -151,3 +151,6 @@ attention mask 是一个三角下三角 + 自定义遮挡的矩阵，让 X 只�
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

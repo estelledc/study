@@ -156,6 +156,7 @@ while (cond) i = i + 1;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[apron-2009]] —— Apron — 把区间/八边形/多面体塞进同一个插槽
 - [[astree]] —— ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程

@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 434 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 438 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：434 篇
+- **总数**：438 篇
 - **已分类**：143
-- **未分类**：291（落入"其他 / 待分类"段）
+- **未分类**：295（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 291 |
+| [其他 / 待分类](#其他--待分类) | 295 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 291 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 295 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -316,6 +316,7 @@ sidebar:
 | `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
 | `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |
 | `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) |
+| `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |
 | `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) |
@@ -353,6 +354,7 @@ sidebar:
 | `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
+| `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
@@ -361,6 +363,7 @@ sidebar:
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) |
+| `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) |
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
@@ -476,6 +479,7 @@ sidebar:
 | `maxwell-architecture-2014` | [NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍](/study/papers/maxwell-architecture-2014/) |
 | `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) |
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) |
+| `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) |
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) |
@@ -602,7 +606,7 @@ sidebar:
 
 ---
 
-## 全部 434 篇（字母序）
+## 全部 438 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -622,6 +626,7 @@ sidebar:
 | `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | 其他 |
 | `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | 其他 |
+| `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) | 其他 |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 其他 |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | 其他 |
 | `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) | 其他 |
@@ -675,6 +680,7 @@ sidebar:
 | `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) | 其他 |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) | 其他 |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) | 其他 |
+| `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | 其他 |
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) | 其他 |
@@ -689,6 +695,7 @@ sidebar:
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | 其他 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
+| `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) | 其他 |
 | `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) | 其他 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
@@ -855,6 +862,7 @@ sidebar:
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
 | `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | 其他 |
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | 其他 |
+| `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) | 其他 |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) | 其他 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) | 其他 |
