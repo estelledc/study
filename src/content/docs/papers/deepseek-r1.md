@@ -151,6 +151,7 @@ R1 推理时输出长这样：
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[cot]] —— Chain-of-Thought Prompting
+- [[deepseek-coder-2024]] —— DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)

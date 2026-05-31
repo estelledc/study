@@ -162,6 +162,7 @@ helm rollback my-nginx 1
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[k3s]] —— k3s — 把完整 K8s 塞进一个 60 MB 的二进制
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI

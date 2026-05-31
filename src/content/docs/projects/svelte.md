@@ -158,6 +158,7 @@ Svelte 学习曲线可以拆成 **三块**：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[gradio]] —— Gradio — ML 模型 demo 框架
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库
 - [[next-js]] —— Next.js — React 全栈框架

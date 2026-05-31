@@ -153,6 +153,7 @@ Diff     = (6 - 2) * 10 = 40 个包
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bbr-2017]] —— BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
 - [[cubic-2008]] —— CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死

@@ -154,6 +154,7 @@ t=2.6s  cwnd=360 ← 砍半，重新线性爬
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bbr-2017]] —— BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号
 - [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
 - [[cubic-2008]] —— CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
 - [[metcalfe-boggs-1976]] —— Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架

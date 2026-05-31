@@ -152,6 +152,7 @@ CertiKOS 的端到端定理大致是："如果 Coq 内核没 bug、CompCert 没 
 - [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
+- [[exokernel-1995]] —— Exokernel — 把抽象推到用户态的极致设计
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据

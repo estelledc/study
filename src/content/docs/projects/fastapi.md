@@ -189,6 +189,7 @@ def me(user: dict = Depends(current_user)):
 - [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[gradio]] —— Gradio — ML 模型 demo 框架
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
