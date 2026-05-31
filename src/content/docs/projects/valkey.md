@@ -145,7 +145,6 @@ io-threads-do-reads yes
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dragonfly]] —— Dragonfly — 多线程 Redis 替代
-- [[dragonflydb]] —— Dragonfly — 多线程 Redis 替代
 - [[redis]] —— Redis — 内存键值数据库
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 

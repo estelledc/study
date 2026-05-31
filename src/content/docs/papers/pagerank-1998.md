@@ -154,7 +154,6 @@ for _ in range(50):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anh-moffat-2005]] —— Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到

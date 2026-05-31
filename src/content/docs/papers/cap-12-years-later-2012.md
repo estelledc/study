@@ -160,7 +160,6 @@ Brewer 提出处理分区的工程模板：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 

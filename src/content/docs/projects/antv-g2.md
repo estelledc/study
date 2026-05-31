@@ -177,5 +177,4 @@ export function Sales({ data }) {
 - [[react-flow]] —— React Flow / xyflow — 节点编辑器框架
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[sigma-js]] —— Sigma.js — 上万节点仍流畅的 WebGL 图渲染器
-- [[vega-lite]] —— Vega-Lite — 三段式 JSON 把复合图收口
 
