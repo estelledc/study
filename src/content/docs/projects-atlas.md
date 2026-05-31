@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 635 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 637 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：635 个
+- **总数**：637 个
 - **已分类**：213
-- **未分类**：422（落入"其他 / 待分类"段）
+- **未分类**：424（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 422 |
+| [其他 / 待分类](#其他--待分类) | 424 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 422 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 424 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -779,6 +779,7 @@ sidebar:
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
+| `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `optuna` | [Optuna — 把超参搜索写在 Python 函数体里](/study/projects/optuna/) |
@@ -906,6 +907,7 @@ sidebar:
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
+| `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
@@ -931,7 +933,7 @@ sidebar:
 
 ---
 
-## 全部 635 个（字母序）
+## 全部 637 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1329,6 +1331,7 @@ sidebar:
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
+| `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
 | `optuna` | [Optuna — 把超参搜索写在 Python 函数体里](/study/projects/optuna/) | 其他 |
@@ -1536,6 +1539,7 @@ sidebar:
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |
 | `vllm` | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) | AI 应用 / Agent 平台 |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) | 其他 |
+| `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) | 其他 |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) | 其他 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |

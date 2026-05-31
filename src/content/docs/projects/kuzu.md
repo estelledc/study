@@ -153,5 +153,9 @@ conn.execute("""
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[dgraph]] —— Dgraph — 分布式图数据库
+- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
+- [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
+- [[janusgraph]] —— JanusGraph — 可插拔后端的分布式图数据库
+- [[neo4j]] —— Neo4j — 主流图数据库
 
