@@ -146,6 +146,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[minio]] —— MinIO — S3 兼容对象存储
+- [[nomad]] —— Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
 - [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
 - [[podman]] —— Podman — 无 daemon 容器引擎
 - [[prometheus]] —— Prometheus — 时序监控系统

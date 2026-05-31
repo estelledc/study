@@ -186,6 +186,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grafana]] —— Grafana — 监控可视化看板
+- [[grafana-tempo]] —— Grafana Tempo — 用对象存储装下你所有的 trace
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[jaeger]] —— Jaeger — 分布式追踪系统
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务

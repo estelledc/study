@@ -172,4 +172,5 @@ let ws = warp::path("ws")
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
+- [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell
 
