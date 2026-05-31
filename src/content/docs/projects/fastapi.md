@@ -176,6 +176,7 @@ def me(user: dict = Depends(current_user)):
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
 - [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
+- [[discord-py]] —— discord.py — 用 Python 写 Discord 机器人的事实标准
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎

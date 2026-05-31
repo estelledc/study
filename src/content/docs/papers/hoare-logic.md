@@ -179,6 +179,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
+- [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
 - [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯

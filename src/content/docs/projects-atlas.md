@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 466 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 469 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：466 个
+- **总数**：469 个
 - **已分类**：207
-- **未分类**：259（落入"其他 / 待分类"段）
+- **未分类**：262（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 259 |
+| [其他 / 待分类](#其他--待分类) | 262 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 259 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 262 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -537,6 +537,7 @@ sidebar:
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
+| `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) |
 | `centrifugo` | [Centrifugo — Go 写的开源实时消息服务器](/study/projects/centrifugo/) |
@@ -563,6 +564,7 @@ sidebar:
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
+| `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonflydb` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonflydb/) |
@@ -755,6 +757,7 @@ sidebar:
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
+| `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
 | `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) |
 | `zsh` | [zsh — 比 bash 更聪明的兼容派 shell](/study/projects/zsh/) |
@@ -762,7 +765,7 @@ sidebar:
 
 ---
 
-## 全部 466 个（字母序）
+## 全部 469 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -818,6 +821,7 @@ sidebar:
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | 其他 |
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
+| `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) | 其他 |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) | 其他 |
@@ -862,6 +866,7 @@ sidebar:
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
+| `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) | 其他 |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
@@ -1226,6 +1231,7 @@ sidebar:
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | 其他 |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | 其他 |
+| `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) | 其他 |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |
 | `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) | 其他 |

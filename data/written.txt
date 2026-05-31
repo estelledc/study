@@ -125,6 +125,7 @@ fidge-1988
 flash-attention
 flexible-paxos-2016
 flink-2015
+flink-snapshots-2015
 flp-1985
 foundationdb
 foundationdb-2021
@@ -472,6 +473,7 @@ d3
 dagster
 dasel
 dask
+datadog
 date-fns
 dayjs
 debezium
@@ -506,6 +508,7 @@ encore
 enquirer
 envoy
 erigon
+errbot
 esbuild
 etcd
 ethers-js
@@ -650,6 +653,8 @@ nomad
 numpy
 nushell
 nuxt
+nvidia-gpu-operator
+nvidia-mig
 nx
 observable-plot
 oclif
@@ -794,6 +799,7 @@ thrift
 tide
 tig
 timescaledb
+tmux
 torchtune
 traefik
 trl
