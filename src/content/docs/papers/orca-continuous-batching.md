@@ -148,3 +148,5 @@ vLLM (SOSP 2023) 直接采纳了 Orca 的两个设计，但加了一层：**Page
 - [[attention]] —— attention 的 KV cache 是 selective batching 必须单独处理的原因
 - [[transformer]] —— 自回归 decoder 的结构造就了 iteration-level 调度的可行性
 - [[triton-llm]] —— 同时代的 NVIDIA 商业方案，后来也加入了类似调度
+
+<!-- 合并自 [[orca-2022]] dedup 2026-05-31 -->
