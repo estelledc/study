@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 469 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 472 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：469 个
+- **总数**：472 个
 - **已分类**：207
-- **未分类**：262（落入"其他 / 待分类"段）
+- **未分类**：265（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 262 |
+| [其他 / 待分类](#其他--待分类) | 265 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 262 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 265 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -554,6 +554,7 @@ sidebar:
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
+| `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
@@ -564,6 +565,7 @@ sidebar:
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
+| `discord-js` | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) |
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
@@ -752,6 +754,7 @@ sidebar:
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
+| `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
@@ -765,7 +768,7 @@ sidebar:
 
 ---
 
-## 全部 469 个（字母序）
+## 全部 472 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -851,6 +854,7 @@ sidebar:
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | 其他 |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | 其他 |
+| `ctranslate2` | [CTranslate2 — Transformer 模型推理的 C++ 加速引擎](/study/projects/ctranslate2/) | 其他 |
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
@@ -866,6 +870,7 @@ sidebar:
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
+| `discord-js` | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) | 其他 |
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) | 其他 |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
@@ -1221,6 +1226,7 @@ sidebar:
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | 可观测 / 性能 |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) | 其他 |
 | `webpack` | [webpack 模块打包](/study/projects/webpack/) | 构建工具 / Bundler |
+| `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) | 其他 |
 | `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |

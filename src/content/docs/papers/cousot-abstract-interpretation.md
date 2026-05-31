@@ -181,4 +181,5 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[slam-microsoft]] —— SLAM — 让 Windows 驱动 bug 自己撞到工具上
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
+- [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
 
