@@ -165,6 +165,7 @@ prediction = model.predict(input_df)
 
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[dvc]] —— DVC — 数据版本管理
+- [[kedro]] —— Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库

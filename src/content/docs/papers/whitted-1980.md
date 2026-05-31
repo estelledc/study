@@ -172,6 +172,7 @@ NVIDIA Turing 2018 的 RT Core 加速两件事：
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
+- [[cook-1984-distributed-ray-tracing]] —— Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样
 - [[cook-torrance-1982]] —— Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 
