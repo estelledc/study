@@ -159,6 +159,7 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arrow]] —— Apache Arrow — 内存列式标准
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍

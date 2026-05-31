@@ -161,5 +161,9 @@ allow(usrc="cfo", hdst="finance_db") # CFO 例外
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
+- [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
+- [[openflow-2008]] —— OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
+- [[p4-2014]] —— P4 — 让交换机的转发逻辑像写代码一样改
+- [[souffle-datalog]] —— Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动
 
