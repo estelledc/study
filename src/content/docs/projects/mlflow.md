@@ -165,6 +165,7 @@ prediction = model.predict(input_df)
 
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[dvc]] —— DVC — 数据版本管理
+- [[feast]] —— Feast — 让训练和上线用同一份特征定义的开源 Feature Store
 - [[kedro]] —— Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
