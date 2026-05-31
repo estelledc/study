@@ -188,6 +188,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
 - [[janus-2016]] —— Janus 2016 — 把并发控制和共识捏成一个协议
 - [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"

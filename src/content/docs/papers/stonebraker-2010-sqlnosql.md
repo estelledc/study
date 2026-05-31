@@ -158,6 +158,7 @@ NoSQL 论点 C：扩展更容易
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[duckdb-2019]] —— DuckDB — 把 OLAP 数据库塞进你的 Python 进程
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[skip-locked-postgres-9.5]] —— SKIP LOCKED — 让 Postgres 当任务队列用
 - [[snowflake]] —— Snowflake — 把数仓的存储和计算撕成两半
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的

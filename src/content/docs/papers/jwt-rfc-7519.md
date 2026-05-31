@@ -148,3 +148,6 @@ echo 'eyJzdWIiOiIxMjMiLCJleHAiOjE3MDB9' | base64 -d
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[oauth-2.1-rfc]] —— OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范
+

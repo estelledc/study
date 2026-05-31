@@ -156,6 +156,7 @@ inngest.createFunction(
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
+- [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库
 - [[temporal]] —— Temporal — 持久化工作流引擎

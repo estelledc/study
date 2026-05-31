@@ -171,6 +171,7 @@ ingres-1976
 instructgpt
 io-uring
 isabelle-hol-2002
+islands-architecture
 janus-2016
 jupiter-1995
 kafka
@@ -269,6 +270,7 @@ refinement-types-1991
 reflexion
 reps-ifds
 resnet
+rest-fielding-2000
 retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
@@ -325,6 +327,7 @@ t5
 tachyon-2014
 tcp
 template-haskell
+tendermint-2016
 tesla-architecture-2008
 theorems-for-free
 thrust-2010
@@ -358,6 +361,7 @@ vr-1988
 vr-revisited-2012
 wadler-prettier
 wam-warren
+websocket-rfc-6455
 why3-2013
 word2vec
 xla-compiler
@@ -436,6 +440,7 @@ colossal-ai
 commander
 compound-v3
 conduit
+conform
 connect-rpc
 continue
 conversations
@@ -516,6 +521,7 @@ graphql-yoga
 gron
 grpc-go
 gsap
+gum
 hanami
 haproxy
 hardhat
