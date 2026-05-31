@@ -166,6 +166,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
+- [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 - [[sd]] —— sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器

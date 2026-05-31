@@ -159,6 +159,7 @@ hol-light-2009
 holzmann-spin-1997
 hopper-architecture-2022
 hotspot-server-compiler
+hotstuff-2019
 hott-book-2013
 http-2
 huffman-1952
@@ -174,6 +175,7 @@ isabelle-hol-2002
 islands-architecture
 janus-2016
 jupiter-1995
+jwt-rfc-7519
 kafka
 kafka-2011
 kahn-natural-semantics
@@ -233,6 +235,7 @@ nieuwenhuis-dpll-t-2006
 no-silver-bullet
 ntp-mills-1991
 nuprl-1986
+oauth-2.1-rfc
 opencl-2010
 openhands
 orca-continuous-batching
@@ -300,6 +303,7 @@ simula-67
 sinfonia-2007
 skeen-3pc-1981
 skip-list-1990
+skip-locked-postgres-9.5
 slam-microsoft
 sleeper-agents
 smalltalk-80
@@ -498,6 +502,7 @@ fastify
 fd
 fiber
 filecoin
+fish
 flask
 flax
 foundry
@@ -642,6 +647,7 @@ pandas
 partykit
 patchright
 penpot
+pg-boss-readme
 pgvector
 phoenix
 pino
