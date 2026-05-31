@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 609 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 613 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：609 篇
+- **总数**：613 篇
 - **已分类**：143
-- **未分类**：466（落入"其他 / 待分类"段）
+- **未分类**：470（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 466 |
+| [其他 / 待分类](#其他--待分类) | 470 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 466 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 470 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -371,6 +371,7 @@ sidebar:
 | `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
 | `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) |
+| `cesium` | [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) |
@@ -430,6 +431,7 @@ sidebar:
 | `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) |
 | `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) |
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) |
+| `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) |
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
 | `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
@@ -476,6 +478,7 @@ sidebar:
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) |
+| `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) |
 | `gpipe-2019` | [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) |
 | `gptq-2023` | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) |
 | `gpu-cache-coherence-2013` | [GPU 缓存一致性 — 用时戳代替失效消息](/study/papers/gpu-cache-coherence-2013/) |
@@ -710,6 +713,7 @@ sidebar:
 | `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) |
 | `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) |
 | `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) |
+| `stylegan2-2020` | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) |
 | `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) |
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
@@ -777,7 +781,7 @@ sidebar:
 
 ---
 
-## 全部 609 篇（字母序）
+## 全部 613 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -864,6 +868,7 @@ sidebar:
 | `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) | 其他 |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | 其他 |
 | `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) | 其他 |
+| `cesium` | [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) | 其他 |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) | 其他 |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) | 其他 |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | 其他 |
@@ -947,6 +952,7 @@ sidebar:
 | `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) | 其他 |
 | `dns` | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) | 网络协议 |
+| `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) | 其他 |
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) | 其他 |
 | `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
 | `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) | 其他 |
@@ -1005,6 +1011,7 @@ sidebar:
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | 其他 |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | 其他 |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) | 其他 |
+| `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) | 其他 |
 | `gpipe-2019` | [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) | 其他 |
 | `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
 | `gptq-2023` | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) | 其他 |
@@ -1306,6 +1313,7 @@ sidebar:
 | `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) | 其他 |
 | `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) | 其他 |
 | `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) | 其他 |
+| `stylegan2-2020` | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) | 其他 |
 | `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) | 其他 |
 | `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
