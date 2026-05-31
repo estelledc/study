@@ -154,6 +154,7 @@ hash(k) % 4 → [0,1,2,3,0,1,2,3]
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
 

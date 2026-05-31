@@ -168,6 +168,7 @@ F = 0.02 + (1 - 0.02) · (1 - 0.05)^5 ≈ 0.02 + 0.76 ≈ 0.78
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
 - [[catmull-clark-1978]] —— Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
+- [[cook-1986-stochastic-sampling]] —— Cook 1986 — 用噪声换掉锯齿
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[saito-takahashi-1990-gbuffer]] —— Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文

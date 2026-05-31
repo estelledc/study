@@ -192,6 +192,7 @@ feautrier-polyhedral
 fermi-architecture-2010
 fidge-1988
 filip-2021
+flamingo-2022
 flan-2021
 flash-attention
 flexible-paxos-2016
@@ -401,6 +402,7 @@ pbft-1999
 peg-packrat-ford
 percolator-2010
 performer-2020
+perlin-1985-noise
 persistent-memory-2014
 personalized-pagerank-2003
 peyton-jones-stg
@@ -494,6 +496,7 @@ snowflake
 snowflake-2016
 sorkine-2004-laplacian-editing
 souffle-datalog
+spann-2021
 spanner
 spanner-2012
 sparrow-2013
@@ -701,6 +704,7 @@ compound-v3
 conduit
 conform
 connect-rpc
+containerd
 continue
 conversations
 coqui-tts
@@ -869,6 +873,7 @@ laravel
 layerzero
 lazydocker
 lazygit
+leaflet
 ledger-app-sdk
 lerna
 leveldb
@@ -966,6 +971,7 @@ openai-agents-sdk
 openmeetings
 opensea-js
 opentelemetry
+opentsdb
 openvidu
 openzeppelin-contracts
 optax
