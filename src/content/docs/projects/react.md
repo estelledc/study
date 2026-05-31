@@ -176,6 +176,7 @@ function Greeting({ name }) {
 - [[gradio]] —— Gradio — ML 模型 demo 框架
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[handsontable]] —— Handsontable — 浏览器里的 Excel
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[ink]] —— ink — 用 React 组件树写终端 CLI

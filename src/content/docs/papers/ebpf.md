@@ -152,6 +152,7 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[andromeda-2018]] —— Andromeda — Google Cloud 网络虚拟化的高速通道
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[ghost-2021]] —— ghOSt — 把 Linux 调度策略搬到用户态去写
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall

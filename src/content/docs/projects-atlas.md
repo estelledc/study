@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 686 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 687 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：686 个
+- **总数**：687 个
 - **已分类**：214
-- **未分类**：472（落入"其他 / 待分类"段）
+- **未分类**：473（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 472 |
+| [其他 / 待分类](#其他--待分类) | 473 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 472 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 473 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -689,6 +689,7 @@ sidebar:
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) |
 | `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
+| `handsontable` | [Handsontable — 浏览器里的 Excel](/study/projects/handsontable/) |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
@@ -982,7 +983,7 @@ sidebar:
 
 ---
 
-## 全部 686 个（字母序）
+## 全部 687 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1225,6 +1226,7 @@ sidebar:
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | 其他 |
 | `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) | 其他 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
+| `handsontable` | [Handsontable — 浏览器里的 Excel](/study/projects/handsontable/) | 其他 |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | 其他 |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | 其他 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |

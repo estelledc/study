@@ -149,5 +149,6 @@ MQTT 从"省卫星带宽"诞生，30 年后变成 IoT 默认协议。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
+- [[redis]] —— Redis — 内存键值数据库
 
