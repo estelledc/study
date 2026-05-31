@@ -157,6 +157,7 @@ db.orders.aggregate([
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

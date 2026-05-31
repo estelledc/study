@@ -156,6 +156,7 @@ BERT 重排序论文常见做法：BM25 召回 1000 → BERT 精排前 100。Ans
 - [[block-max-wand-2011]] —— Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[croft-harper-1979]] —— Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
+- [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[dssm-2013]] —— DSSM — 把 query 和文档各编码成 128 维向量再算余弦
 - [[gbrank-2007]] —— GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
