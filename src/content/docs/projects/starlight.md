@@ -171,6 +171,7 @@ export default {
 - [[gh]] —— gh — GitHub 官方命令行
 - [[glab]] —— glab — GitLab 官方命令行
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎

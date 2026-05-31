@@ -18,6 +18,7 @@ attention
 aurora
 autogen
 awodey-warren-2009
+awq
 azure-storage-2011
 b-tree-1972
 bayou-1995
@@ -104,6 +105,7 @@ dqn
 dstreams-2013
 duckdb-2019
 dynamo
+eagle
 earley-parser
 ebpf
 effect-handlers
@@ -240,6 +242,7 @@ pascal-architecture-2016
 paxos
 paxos-1998
 paxos-simple-2001
+pbft-1999
 peg-packrat-ford
 percolator-2010
 peyton-jones-stg
@@ -259,6 +262,7 @@ quic
 raft
 rag-lewis-2020
 react
+react-server-components
 realm
 reed-solomon-1960
 refinement-types-1991
@@ -286,6 +290,7 @@ self-pic
 selinger-1979
 sequel-1974
 sequential-consistency-1979
+server-sent-events
 shannon-1948
 sillito-questions
 silt-2011
@@ -743,6 +748,7 @@ temporal-polyfill
 tensorflow
 terraform
 testing-library
+textual
 thirdweb-sdk
 thrift
 tide

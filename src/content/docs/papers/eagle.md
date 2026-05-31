@@ -149,5 +149,7 @@ LLaMA2-Chat 70B + 单 GPU 输出场景（论文 Table 2）：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

@@ -145,6 +145,7 @@ SolidJS 的 `createSignal` 接近 Push-Pull 的 Behavior（pull-when-read），`
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
+- [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 437 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 439 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：437 个
+- **总数**：439 个
 - **已分类**：207
-- **未分类**：230（落入"其他 / 待分类"段）
+- **未分类**：232（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 230 |
+| [其他 / 待分类](#其他--待分类) | 232 |
 
 ---
 
@@ -496,7 +496,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 230 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 232 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -542,6 +542,7 @@ sidebar:
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
 | `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) |
+| `conform` | [Conform — 让浏览器原生 form 也能 type-safe 校验](/study/projects/conform/) |
 | `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) |
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
@@ -594,6 +595,7 @@ sidebar:
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) |
+| `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
@@ -733,7 +735,7 @@ sidebar:
 
 ---
 
-## 全部 437 个（字母序）
+## 全部 439 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -806,6 +808,7 @@ sidebar:
 | `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | CLI / 命令行工具 |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) | 其他 |
 | `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) | 其他 |
+| `conform` | [Conform — 让浏览器原生 form 也能 type-safe 校验](/study/projects/conform/) | 其他 |
 | `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) | 其他 |
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | 其他 |
@@ -886,6 +889,7 @@ sidebar:
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | 其他 |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | 其他 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
+| `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | 其他 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | 其他 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
