@@ -188,6 +188,7 @@ LIMIT 5;
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库

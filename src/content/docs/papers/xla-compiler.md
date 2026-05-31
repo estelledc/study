@@ -170,4 +170,5 @@ f(jnp.ones(5))   # ⚠️ 又重新编译
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
 
