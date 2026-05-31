@@ -214,6 +214,7 @@ function Greeting({ name }) {
 - [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
 - [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么

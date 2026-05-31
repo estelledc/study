@@ -149,5 +149,6 @@ spec:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
 

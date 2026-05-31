@@ -168,6 +168,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[nvidia-mig]] —— NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡
 - [[opentelemetry]] —— OpenTelemetry — 让所有应用用同一种语言吐监控数据
+- [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
 - [[podman]] —— Podman — 无 daemon 容器引擎
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架

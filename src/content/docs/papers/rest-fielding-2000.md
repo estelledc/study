@@ -162,6 +162,7 @@ DELETE /users/42
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 - [[oauth-2.1-rfc]] —— OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
+- [[r-bgp-2007]] —— R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[skip-locked-postgres-9.5]] —— SKIP LOCKED — 让 Postgres 当任务队列用
 - [[subramanian-2002-internet-hierarchy]] —— Subramanian 2002 — 用多个观察点把互联网切成 5 层

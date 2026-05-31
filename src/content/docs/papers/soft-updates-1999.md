@@ -154,5 +154,8 @@ Buffer cache 里每个脏块都挂一张依赖单——记录"这个块写盘前
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
+- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
 
