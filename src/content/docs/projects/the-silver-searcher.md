@@ -157,4 +157,5 @@ let g:ackprg = 'ag --vimgrep --nocolor --nogroup --column'
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[sonic]] —— Sonic — 极简前缀搜索引擎
 

@@ -155,6 +155,7 @@ function App() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[react]] —— React UI 组件库
 

@@ -1,6 +1,6 @@
 ---
 title: mixup — 把两张图按比例叠成一张，标签也一起叠
-来源: Zhang et al., "mixup: Beyond Empirical Risk Minimization", ICLR 2018
+来源: 'Zhang et al., "mixup: Beyond Empirical Risk Minimization", ICLR 2018'
 日期: 2026-06-01
 分类: 机器学习
 难度: 入门
@@ -148,3 +148,6 @@ mixup 之所以能立刻流行，三个原因：**实现简单到一行、算力
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

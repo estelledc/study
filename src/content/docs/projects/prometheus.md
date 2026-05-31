@@ -179,6 +179,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆

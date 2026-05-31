@@ -157,6 +157,7 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
 - [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器

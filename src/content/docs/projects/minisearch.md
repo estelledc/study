@@ -153,5 +153,6 @@ ms.autoSuggest('cat fo', { fuzzy: 0.2 })
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+- [[sonic]] —— Sonic — 极简前缀搜索引擎
 - [[starlight]] —— Starlight — Astro 文档站点主题
 
