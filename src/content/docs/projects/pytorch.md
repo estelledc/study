@@ -184,7 +184,9 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[sglang]] —— SGLang — 结构化推理运行时
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tensorflow]] —— TensorFlow — Google 端到端 DL 平台
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 - [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
+- [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
 

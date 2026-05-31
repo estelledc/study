@@ -58,6 +58,7 @@ chaff-2001
 chain-replication-2004
 chaitin-graph-coloring
 chandy-lamport-1985
+chapar-2016
 cheney-gc
 chinchilla
 chubby
@@ -132,6 +133,7 @@ f1-2013
 f4-2014
 faiss-2017
 fast-paxos-2006
+fastertransformer-2021
 feautrier-polyhedral
 fermi-architecture-2010
 fidge-1988
@@ -294,6 +296,7 @@ product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
 prolog-colmerauer
+ps-li-2014
 push-pull-frp
 pypy-tracing-jit
 quic
@@ -426,6 +429,7 @@ actions-runner-controller
 actix-web
 affine
 ag-grid
+aiortc
 airflow
 anchor
 anime
@@ -674,6 +678,7 @@ miller
 milvus
 minio
 minisearch
+mlflow
 mlx
 mobx
 modin
@@ -897,6 +902,7 @@ xonsh
 xplr
 xstate
 yargs
+yazi
 yjs
 yq
 zcash

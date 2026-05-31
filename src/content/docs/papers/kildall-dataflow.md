@@ -184,6 +184,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
