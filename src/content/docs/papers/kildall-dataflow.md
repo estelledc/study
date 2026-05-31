@@ -188,6 +188,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
 - [[vellvm]] —— Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

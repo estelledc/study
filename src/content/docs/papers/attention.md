@@ -146,7 +146,6 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dqn]] —— DQN — Deep Q-Network
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
@@ -164,6 +163,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
 - [[mae]] —— MAE — Masked Autoencoders
 - [[mamba]] —— Mamba — 选择性状态空间模型
+- [[maron-kuhns-1960]] —— Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
@@ -174,6 +174,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[resnet]] —— ResNet — 残差连接
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
@@ -185,6 +186,7 @@ base 模型用 8 个头，每个头独立学。常见现象：
 - [[toy-models-superposition]] —— Toy Models of Superposition
 - [[turing-architecture-2018]] —— NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8
 - [[tvm]] —— TVM — 让一份模型能在所有硬件上跑得快
+- [[tvm-2018]] —— TVM OSDI 2018 — 把 Halide 思想搬到深度学习
 - [[vit]] —— ViT — Vision Transformer
 - [[volta-architecture-2017]] —— NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍
 - [[word2vec]] —— Word2Vec — 词向量奠基

@@ -170,6 +170,7 @@ opts.compaction_style = rocksdb.kCompactionStyleLevel    # 写多读少
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
+- [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
