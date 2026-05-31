@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 607 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 610 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：607 个
-- **已分类**：212
-- **未分类**：395（落入"其他 / 待分类"段）
+- **总数**：610 个
+- **已分类**：213
+- **未分类**：397（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -28,7 +28,7 @@ sidebar:
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 24 |
-| [DevOps / 容器 / 运维](#devops---容器---运维) | 12 |
+| [DevOps / 容器 / 运维](#devops---容器---运维) | 13 |
 | [监控 / 时序](#监控---时序) | 7 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 395 |
+| [其他 / 待分类](#其他--待分类) | 397 |
 
 ---
 
@@ -196,13 +196,14 @@ sidebar:
 
 ## DevOps / 容器 / 运维
 
-共 12 个。
+共 13 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Ansible — 无 agent 配置管理](/study/projects/ansible/) |  |
 | [Argo CD — Kubernetes GitOps 工具](/study/projects/argocd/) |  |
 | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) |  |
+| [containerd — Docker 和 Kubernetes 共用的那台容器运行机](/study/projects/containerd/) |  |
 | [Docker — 容器化平台](/study/projects/docker/) |  |
 | [etcd — 分布式键值数据库](/study/projects/etcd/) |  |
 | [Helm — Kubernetes 包管理器](/study/projects/helm/) |  |
@@ -501,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 395 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 397 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -699,6 +700,7 @@ sidebar:
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) |
+| `leaflet` | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
@@ -753,6 +755,7 @@ sidebar:
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
+| `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
@@ -903,7 +906,7 @@ sidebar:
 
 ---
 
-## 全部 607 个（字母序）
+## 全部 610 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1010,6 +1013,7 @@ sidebar:
 | `conduit` | [Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库](/study/projects/conduit/) | 其他 |
 | `conform` | [Conform — 让浏览器原生 form 也能 type-safe 校验](/study/projects/conform/) | 其他 |
 | `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) | 其他 |
+| `containerd` | [containerd — Docker 和 Kubernetes 共用的那台容器运行机](/study/projects/containerd/) | DevOps / 容器 / 运维 |
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | 其他 |
 | `coqui-tts` | [Coqui TTS — 多语种 TTS 工具包](/study/projects/coqui-tts/) | 其他 |
@@ -1178,6 +1182,7 @@ sidebar:
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) | 其他 |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | 其他 |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | 其他 |
+| `leaflet` | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) | 其他 |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | 其他 |
 | `lerna` | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) | Monorepo / 包管理 |
 | `leveldb` | [LevelDB — Google LSM 库](/study/projects/leveldb/) | 数据库本体 / 存储引擎 |
@@ -1275,6 +1280,7 @@ sidebar:
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
+| `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |

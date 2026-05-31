@@ -147,5 +147,9 @@ results = nearest_neighbors(query_vec, gallery_vecs)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[resnet]] —— ResNet — 残差连接
+- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 
