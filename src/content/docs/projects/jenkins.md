@@ -151,4 +151,5 @@ dev 自动部、staging 等一人审、prod 等双人审 + 工作时间窗口—
 
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[tekton]] —— Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
 

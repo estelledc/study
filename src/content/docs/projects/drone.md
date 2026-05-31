@@ -177,5 +177,6 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[tekton]] —— Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
 - [[woodpecker]] —— Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
 

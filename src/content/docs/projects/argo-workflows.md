@@ -165,4 +165,8 @@ templates:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[airflow]] —— Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[helm]] —— Helm — Kubernetes 包管理器
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[tekton]] —— Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
 

@@ -171,5 +171,6 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
 - [[scipy]] —— SciPy — NumPy 之上的科学计算工具箱
+- [[seaborn]] —— seaborn — matplotlib 之上的一行统计图
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

@@ -174,6 +174,7 @@ for g in gaussians:
 - [[mueller-2007-pbd]] —— Position Based Dynamics — 跳过力，直接挪位置
 - [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[newcombe-2011-kinectfusion]] —— KinectFusion — 用消费级深度相机实时重建三维世界
 - [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场

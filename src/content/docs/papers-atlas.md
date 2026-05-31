@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 587 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 589 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：587 篇
+- **总数**：589 篇
 - **已分类**：143
-- **未分类**：444（落入"其他 / 待分类"段）
+- **未分类**：446（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 444 |
+| [其他 / 待分类](#其他--待分类) | 446 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 444 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 446 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -589,6 +589,7 @@ sidebar:
 | `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
 | `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) |
+| `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |
 | `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) |
@@ -654,6 +655,7 @@ sidebar:
 | `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
+| `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
@@ -755,7 +757,7 @@ sidebar:
 
 ---
 
-## 全部 587 篇（字母序）
+## 全部 589 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1125,6 +1127,7 @@ sidebar:
 | `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) | 其他 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
 | `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) | 其他 |
+| `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | 其他 |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) | 其他 |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 其他 |
 | `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) | 其他 |
@@ -1213,6 +1216,7 @@ sidebar:
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 其他 |
 | `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
+| `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) | 其他 |
 | `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | 其他 |
