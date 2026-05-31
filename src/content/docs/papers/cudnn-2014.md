@@ -150,6 +150,7 @@ torch.backends.cudnn.benchmark = False
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
+- [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
 - [[jax]] —— JAX — Google 函数式数值计算
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 

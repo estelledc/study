@@ -166,6 +166,7 @@ tuner.tune(n_trial=1000, ...)
 
 - [[attention]] —— Attention Is All You Need
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
+- [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化

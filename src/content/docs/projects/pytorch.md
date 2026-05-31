@@ -155,6 +155,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
+- [[bentoml]] —— BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
 - [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
 - [[clearml]] —— ClearML — 自托管 MLOps 套件
 - [[colossal-ai]] —— Colossal-AI — 大模型训练系统
