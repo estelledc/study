@@ -146,6 +146,7 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[arweave]] —— Arweave — 一次付费、永远存着的区块链
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端

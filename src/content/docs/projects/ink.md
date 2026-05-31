@@ -162,6 +162,7 @@ test('counter increments', () => {
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
+- [[ratatui]] —— ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
 - [[react]] —— React UI 组件库
 - [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
