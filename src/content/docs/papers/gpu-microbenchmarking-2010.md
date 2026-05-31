@@ -153,4 +153,5 @@ else                work_B();
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
 

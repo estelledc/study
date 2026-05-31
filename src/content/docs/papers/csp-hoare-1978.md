@@ -164,4 +164,5 @@ case v := <-chB: handleB(v)
 - [[pnueli-temporal-1977]] —— Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 - [[stm-shavit-touitou]] —— STM Shavit-Touitou — 把"加锁"改成"事务"的源头
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
 

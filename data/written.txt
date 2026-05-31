@@ -85,6 +85,7 @@ crdt-sss-2011
 csp-hoare-1978
 cstore-2005
 cubical-type-theory-2018
+dafny-2010
 dalle-2
 dataflow-model-2015
 davis-putnam-1960
@@ -105,6 +106,7 @@ dns
 dpll-1962
 dpo
 dqn
+drizzle-2017
 dstreams-2013
 duckdb-2019
 dynamo
@@ -363,6 +365,7 @@ turchin-supercompilation
 turing-1936
 turing-architecture-2018
 tvm
+unified-memory-2014
 vellvm
 vertica-2012
 vit
@@ -438,6 +441,7 @@ bun
 caddy
 cairo-lang
 cal-com
+candle
 capnproto
 cassandra
 celery
@@ -482,6 +486,7 @@ delta
 dendrite
 dgraph
 dify
+discord-py
 django
 dnd-kit
 docker
@@ -846,6 +851,7 @@ yargs
 yjs
 yq
 zcash
+zellij
 zksync-era
 zod
 zoxide
