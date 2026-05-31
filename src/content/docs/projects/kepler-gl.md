@@ -155,5 +155,6 @@ function App() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[react]] —— React UI 组件库
 

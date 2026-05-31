@@ -161,4 +161,5 @@ curl -sfL https://get.k3s.io | sh -s - server \
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
+- [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 

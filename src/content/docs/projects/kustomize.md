@@ -201,5 +201,4 @@ images:
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[k3s]] —— k3s — 把完整 K8s 塞进一个 60 MB 的二进制
 - [[kubernetes]] —— Kubernetes — 容器编排平台
-- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 
