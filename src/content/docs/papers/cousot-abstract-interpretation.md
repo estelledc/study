@@ -163,6 +163,7 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
+- [[cousot-halbwachs-polyhedra-1978]] —— Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
