@@ -171,6 +171,7 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
+- [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[vit]] —— ViT — Vision Transformer

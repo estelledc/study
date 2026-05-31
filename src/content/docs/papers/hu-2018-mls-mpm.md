@@ -158,5 +158,6 @@ DiffTaichi（Hu 2020）、ChainQueen（Hu 2019）、DiffMPM 这一系列**让仿
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
+- [[sulsky-1994-mpm]] —— MPM — 让粒子背着自己的历史，借网格算一遍力
 

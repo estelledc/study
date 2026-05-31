@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 575 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 577 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：575 个
+- **总数**：577 个
 - **已分类**：212
-- **未分类**：363（落入"其他 / 待分类"段）
+- **未分类**：365（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 363 |
+| [其他 / 待分类](#其他--待分类) | 365 |
 
 ---
 
@@ -501,7 +501,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 363 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 365 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -544,6 +544,7 @@ sidebar:
 | `bentoml` | [BentoML — 模型打包部署](/study/projects/bentoml/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) |
+| `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) |
 | `botpress` | [Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台](/study/projects/botpress/) |
@@ -814,6 +815,7 @@ sidebar:
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
+| `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
 | `starship` | [Starship — 一份配置点亮所有 shell 的 prompt](/study/projects/starship/) |
 | `stern` | [stern — 多 pod 多 container 日志聚合 tail](/study/projects/stern/) |
@@ -871,7 +873,7 @@ sidebar:
 
 ---
 
-## 全部 575 个（字母序）
+## 全部 577 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -924,6 +926,7 @@ sidebar:
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) | 其他 |
 | `better-auth` | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) | Auth 认证 |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | 其他 |
+| `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) | 其他 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) | 其他 |
@@ -1344,6 +1347,7 @@ sidebar:
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | 其他 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | 数据库本体 / 存储引擎 |
+| `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) | 其他 |
 | `stagehand` | [stagehand — Playwright 加 LLM 的混血框架](/study/projects/stagehand/) | AI 浏览器自动化 |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) | 其他 |
 | `starlight` | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | 文档站点 |

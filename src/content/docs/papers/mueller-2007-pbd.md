@@ -154,3 +154,6 @@ C(p1,p2,p3,p4) = (1/6)·((p2-p1) × (p3-p1)) · (p4-p1) − V_rest = 0
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
