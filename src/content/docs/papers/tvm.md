@@ -173,6 +173,7 @@ tuner.tune(n_trial=1000, ...)
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[ssa]] —— SSA — 静态单赋值形式
+- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[xla-compiler]] —— XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 

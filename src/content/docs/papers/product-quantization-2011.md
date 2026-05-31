@@ -159,4 +159,5 @@ D, I = index.search(query, k=10)                 # 毫秒级
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
+- [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 
