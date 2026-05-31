@@ -178,4 +178,5 @@ model = AutoModelForCausalLM.from_pretrained(
 - [[awq]] —— AWQ — 看激活脸色给权重打折
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
 

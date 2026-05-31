@@ -147,6 +147,7 @@ result = con.execute("""
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
+- [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存

@@ -164,6 +164,7 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 - [[gh]] —— gh — GitHub 官方命令行
 - [[glab]] —— glab — GitLab 官方命令行
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[nanostores]] —— nanostores — 不到 1 KB 的"框架无关"状态库

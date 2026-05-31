@@ -154,6 +154,7 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
+- [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
 - [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
 - [[easycrypt-2011]] —— EasyCrypt — 让密码学家的安全证明能被机器自动检查
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）

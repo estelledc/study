@@ -161,6 +161,7 @@ Spell 通过 `pause.plot(spell, sig, data, eta)` 排进 GSM（Governance Securit
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+- [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[safe-contracts]] —— Safe — 多签智能账户合约
 - [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端

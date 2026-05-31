@@ -159,6 +159,7 @@ h(v) 必须不高估真实剩余距离（admissible）才保证最优。Hart-Nil
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
+- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术

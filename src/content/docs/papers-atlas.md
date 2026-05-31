@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 448 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 451 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：448 篇
+- **总数**：451 篇
 - **已分类**：143
-- **未分类**：305（落入"其他 / 待分类"段）
+- **未分类**：308（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 305 |
+| [其他 / 待分类](#其他--待分类) | 308 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 305 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 308 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -372,6 +372,7 @@ sidebar:
 | `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) |
 | `crdt-shapiro-2011` | [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) |
 | `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) |
+| `cryptoverif-2008` | [CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全](/study/papers/cryptoverif-2008/) |
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) |
@@ -418,6 +419,7 @@ sidebar:
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
 | `gpipe-2019` | [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) |
+| `gptq-2023` | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) |
 | `gpu-cache-coherence-2013` | [GPU 缓存一致性 — 用时戳代替失效消息](/study/papers/gpu-cache-coherence-2013/) |
 | `gpu-microbenchmarking-2010` | [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) |
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) |
@@ -456,6 +458,7 @@ sidebar:
 | `jwt-rfc-7519` | [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
+| `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
@@ -616,7 +619,7 @@ sidebar:
 
 ---
 
-## 全部 448 篇（字母序）
+## 全部 451 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -717,6 +720,7 @@ sidebar:
 | `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) | 其他 |
 | `crdt-shapiro-2011` | [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) | 其他 |
 | `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) | 其他 |
+| `cryptoverif-2008` | [CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全](/study/papers/cryptoverif-2008/) | 其他 |
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | 其他 |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 其他 |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) | 其他 |
@@ -787,6 +791,7 @@ sidebar:
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `gpipe-2019` | [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) | 其他 |
 | `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
+| `gptq-2023` | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) | 其他 |
 | `gpu-cache-coherence-2013` | [GPU 缓存一致性 — 用时戳代替失效消息](/study/papers/gpu-cache-coherence-2013/) | 其他 |
 | `gpu-microbenchmarking-2010` | [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) | 其他 |
 | `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) | 其他 |
@@ -836,6 +841,7 @@ sidebar:
 | `kafka` | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) | 数据库 |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) | 其他 |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | 其他 |
+| `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) | 其他 |
 | `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 其他 |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | 其他 |

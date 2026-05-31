@@ -156,6 +156,7 @@ nix-build
 - [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
+- [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本

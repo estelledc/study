@@ -151,6 +151,7 @@ UNDROP TABLE orders_2026;                  -- 误删后救回来
 - [[bigtable]] —— Bigtable — Google 把行级随机读写做到 PB 级的存储
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
+- [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[gfs]] —— GFS — 编译器决定不做哪些事
