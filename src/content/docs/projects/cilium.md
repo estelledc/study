@@ -154,6 +154,7 @@ hubble observe --from-pod default/web --to-pod default/user
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[istio]] —— Istio — 给微服务装一层透明的网络治理面
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[rook]] —— Rook — 把 Ceph 装进 K8s 的 CRD 里
 

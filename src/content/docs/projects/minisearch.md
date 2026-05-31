@@ -155,4 +155,5 @@ ms.autoSuggest('cat fo', { fuzzy: 0.2 })
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[sonic]] —— Sonic — 极简前缀搜索引擎
 - [[starlight]] —— Starlight — Astro 文档站点主题
+- [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代
 

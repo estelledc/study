@@ -192,4 +192,5 @@ docker run -d \
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[traefik]] —— Traefik — 现代云原生反向代理
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
+- [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代
 
