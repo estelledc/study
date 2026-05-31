@@ -159,6 +159,7 @@ N1 的 finger table（简化版）：
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
 - [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
+- [[karger-1997-consistent-hashing]] —— Karger 1997 一致性哈希 — 加机器不用全员搬家
 - [[pastry-2001]] —— Pastry — 用 nodeId 的前缀一位一位逼近目标
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法

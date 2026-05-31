@@ -164,6 +164,7 @@ R+W>N（比如 R=2, W=2, N=3）→ 强一致；R+W≤N → 牺牲一致换延迟
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
+- [[karger-1997-consistent-hashing]] —— Karger 1997 一致性哈希 — 加机器不用全员搬家
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 717 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 720 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：717 个
+- **总数**：720 个
 - **已分类**：214
-- **未分类**：503（落入"其他 / 待分类"段）
+- **未分类**：506（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 503 |
+| [其他 / 待分类](#其他--待分类) | 506 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 503 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 506 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -524,6 +524,7 @@ sidebar:
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
 | `annoy` | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
+| `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
@@ -749,6 +750,7 @@ sidebar:
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) |
 | `leaflet` | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
+| `lens` | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
 | `lightdash` | [Lightdash — 寄生在 dbt 项目里的开源 BI](/study/projects/lightdash/) |
@@ -801,6 +803,7 @@ sidebar:
 | `nats-server` | [NATS Server — 极简云原生消息总线](/study/projects/nats-server/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) |
+| `neovim` | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) |
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
 | `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) |
@@ -1013,7 +1016,7 @@ sidebar:
 
 ---
 
-## 全部 717 个（字母序）
+## 全部 720 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1037,6 +1040,7 @@ sidebar:
 | `annoy` | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) | 其他 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
+| `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) | 其他 |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | 其他 |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
@@ -1337,6 +1341,7 @@ sidebar:
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | 其他 |
 | `leaflet` | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) | 其他 |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | 其他 |
+| `lens` | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | 其他 |
 | `lerna` | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) | Monorepo / 包管理 |
 | `leveldb` | [LevelDB — Google LSM 库](/study/projects/leveldb/) | 数据库本体 / 存储引擎 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
@@ -1421,6 +1426,7 @@ sidebar:
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) | 其他 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | 数据库本体 / 存储引擎 |
+| `neovim` | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | 其他 |
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) | 其他 |
 | `nestjs` | [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) | Web 框架 |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | 其他 |

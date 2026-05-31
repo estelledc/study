@@ -163,6 +163,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[kubectx]] —— kubectx — kubectl 切换 context 和 namespace 的两行命令
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[litmus]] —— LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
 - [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容

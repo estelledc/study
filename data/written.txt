@@ -356,6 +356,7 @@ isabelle-hol-2002
 islands-architecture
 jacobson-1988
 janus-2016
+jemalloc-2006
 jensen-1996-photon-mapping
 jupiter-1995
 jupiter-2015
@@ -597,6 +598,7 @@ rocksdb-lsm
 rrf-cormack-2009
 rsa
 rwkv-2023
+sac-2018
 saga-1987
 sagiv-shape-analysis
 saito-takahashi-1990-gbuffer
@@ -818,6 +820,7 @@ axelar
 axios
 axolotl
 axum
+backstage
 badger
 balancer
 bandwhich
@@ -1223,6 +1226,7 @@ partykit
 patchright
 pdfkit
 pdfmake
+pdfme
 pebble
 peerjs-server
 penpot
@@ -1445,6 +1449,7 @@ vodozemac
 voila
 volta
 vscode
+vscodium
 vue
 vue-i18n
 walletconnect
