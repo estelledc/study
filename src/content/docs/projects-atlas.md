@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 682 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 685 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：682 个
-- **已分类**：213
-- **未分类**：469（落入"其他 / 待分类"段）
+- **总数**：685 个
+- **已分类**：214
+- **未分类**：471（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -29,7 +29,7 @@ sidebar:
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
 | [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 24 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 13 |
-| [监控 / 时序](#监控---时序) | 7 |
+| [监控 / 时序](#监控---时序) | 8 |
 | [Web 框架](#web-框架) | 6 |
 | [UI 框架 / Frontend Framework](#ui-框架---frontend-framework) | 6 |
 | [Meta 框架 / 全栈](#meta-框架---全栈) | 5 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 469 |
+| [其他 / 待分类](#其他--待分类) | 471 |
 
 ---
 
@@ -216,13 +216,14 @@ sidebar:
 
 ## 监控 / 时序
 
-共 7 个。
+共 8 个。
 
 | 项目 | 描述 |
 |---|---|
 | [Grafana — 监控可视化看板](/study/projects/grafana/) |  |
 | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) |  |
 | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) |  |
+| [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) |  |
 | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) |  |
 | [Prometheus — 时序监控系统](/study/projects/prometheus/) |  |
 | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) |  |
@@ -502,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 469 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 471 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -658,6 +659,7 @@ sidebar:
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) |
+| `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
@@ -972,13 +974,14 @@ sidebar:
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) |
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
+| `zookeeper` | [Apache ZooKeeper — 给一群机器装一个共同的小脑](/study/projects/zookeeper/) |
 | `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) |
 | `zsh` | [zsh — 比 bash 更聪明的兼容派 shell](/study/projects/zsh/) |
 | `zulip` | [Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）](/study/projects/zulip/) |
 
 ---
 
-## 全部 682 个（字母序）
+## 全部 685 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1187,6 +1190,7 @@ sidebar:
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 其他 |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | 其他 |
+| `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | 其他 |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | 其他 |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
@@ -1307,6 +1311,7 @@ sidebar:
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
 | `lmdb` | [LMDB — 内存映射 KV 库](/study/projects/lmdb/) | 数据库本体 / 存储引擎 |
+| `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | 监控 / 时序 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | 其他 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
@@ -1660,6 +1665,7 @@ sidebar:
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) | 其他 |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |
+| `zookeeper` | [Apache ZooKeeper — 给一群机器装一个共同的小脑](/study/projects/zookeeper/) | 其他 |
 | `zoxide` | [zoxide — 学会你常去哪的智能 cd](/study/projects/zoxide/) | 其他 |
 | `zsh` | [zsh — 比 bash 更聪明的兼容派 shell](/study/projects/zsh/) | 其他 |
 | `zulip` | [Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）](/study/projects/zulip/) | 其他 |

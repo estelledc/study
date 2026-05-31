@@ -196,6 +196,7 @@ dlrm-2019
 dns
 doc2query-2019
 dot-doh-perf-2020
+double-descent-2019
 dpll-1962
 dpo
 dpr-2020
@@ -228,6 +229,7 @@ faiss-2017
 farsite-2002
 fast-paxos-2006
 fastertransformer-2021
+fat-tree-2008
 feautrier-polyhedral
 fermi-architecture-2010
 ffs-1984
@@ -425,6 +427,7 @@ megatron-lm
 memcached-fb-2013
 mencius-2008
 mermaid
+mesos-2011
 metagpt
 metaml-multi-stage
 metcalfe-boggs-1976
@@ -467,6 +470,7 @@ nieuwenhuis-dpll-t-2006
 nimier-david-2019-mitsuba2
 nix
 no-silver-bullet
+ntk-2018
 ntp-mills-1991
 nuprl-1986
 nvlink-nvswitch-2018
@@ -603,6 +607,7 @@ smr-1990
 snowflake
 snowflake-2016
 soft-updates-1999
+soltesz-2007
 sophia-2023
 sorkine-2004-laplacian-editing
 souffle-datalog
@@ -688,6 +693,7 @@ verdi-2015
 verisoft-2008
 vertica-2012
 vit
+vl2-2009
 vllm
 vogels-eventual-2009
 volcano
@@ -730,6 +736,7 @@ actions-runner-controller
 actix-web
 affine
 ag-grid
+age
 aichat
 aiortc
 airflow
@@ -878,6 +885,7 @@ doris
 dovecot
 dragonfly
 dragonflydb
+drawio
 drizzle
 drone
 dropwizard
@@ -1220,6 +1228,7 @@ react-intl
 react-spring
 recharts
 redis
+redpanda
 remix
 remix-ide
 reservoir-sdk
@@ -1243,6 +1252,7 @@ scoop
 scroll
 sd
 seaborn
+sealed-secrets
 sentry
 sequelize
 sglang
@@ -1323,6 +1333,7 @@ tig
 tikv
 timelinejs
 timescaledb
+tldraw
 tmux
 torchtune
 traefik
