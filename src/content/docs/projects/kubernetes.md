@@ -163,6 +163,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[kustomize]] —— Kustomize — 不动原 YAML 的 K8s 配置叠加器
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
+- [[litmus]] —— LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
 - [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
 - [[longhorn]] —— Longhorn — K8s 原生的轻量分布式块存储
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群

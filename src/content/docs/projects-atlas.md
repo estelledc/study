@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 703 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 706 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：703 个
+- **总数**：706 个
 - **已分类**：214
-- **未分类**：489（落入"其他 / 待分类"段）
+- **未分类**：492（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 489 |
+| [其他 / 待分类](#其他--待分类) | 492 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 489 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 492 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -554,6 +554,7 @@ sidebar:
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) |
+| `bbolt` | [bbolt — Go 嵌入式 B+ 树 KV](/study/projects/bbolt/) |
 | `bentoml` | [BentoML — 模型打包部署](/study/projects/bentoml/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) |
@@ -651,6 +652,7 @@ sidebar:
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
 | `errbot` | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
+| `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
 | `faiss` | [FAISS — 向量检索的标准件库](/study/projects/faiss/) |
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) |
@@ -751,6 +753,7 @@ sidebar:
 | `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
+| `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
@@ -999,7 +1002,7 @@ sidebar:
 
 ---
 
-## 全部 703 个（字母序）
+## 全部 706 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1059,6 +1062,7 @@ sidebar:
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
 | `bandwhich` | [bandwhich — 按进程实时显示带宽占用的跨平台 TUI](/study/projects/bandwhich/) | 其他 |
 | `bat` | [bat — 现代 cat 替代](/study/projects/bat/) | 其他 |
+| `bbolt` | [bbolt — Go 嵌入式 B+ 树 KV](/study/projects/bbolt/) | 其他 |
 | `bentoml` | [BentoML — 模型打包部署](/study/projects/bentoml/) | 其他 |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) | 其他 |
 | `better-auth` | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) | Auth 认证 |
@@ -1196,6 +1200,7 @@ sidebar:
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | 其他 |
+| `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) | 其他 |
 | `excalidraw` | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) | 数据应用 / SaaS |
 | `express` | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | Web 框架 |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | 其他 |
@@ -1332,6 +1337,7 @@ sidebar:
 | `listr2` | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | Terminal / 终端 |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | 其他 |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
+| `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | 其他 |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | 其他 |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) | 其他 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |

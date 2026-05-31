@@ -130,6 +130,7 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grpc-go]] —— gRPC-Go — Google RPC 框架的官方 Go 实现
