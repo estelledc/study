@@ -161,3 +161,8 @@ cy.layout({ name: 'fcose', quality: 'default' }).run()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+

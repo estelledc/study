@@ -175,6 +175,7 @@ param.mul_(1 - lr * weight_decay)
 - [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[lion-2023]] —— Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半
+- [[mixup-2018]] —— mixup — 把两张图按比例叠成一张，标签也一起叠
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[sophia-2023]] —— Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动
 

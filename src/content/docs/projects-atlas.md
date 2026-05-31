@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 643 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 646 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：643 个
+- **总数**：646 个
 - **已分类**：213
-- **未分类**：430（落入"其他 / 待分类"段）
+- **未分类**：433（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 430 |
+| [其他 / 待分类](#其他--待分类) | 433 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 430 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 433 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -561,6 +561,7 @@ sidebar:
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
+| `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) |
@@ -596,6 +597,7 @@ sidebar:
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) |
 | `cvat` | [CVAT — 视频帧标注与半自动追踪的开源王者](/study/projects/cvat/) |
+| `cytoscape-js` | [Cytoscape.js — 浏览器里画图（节点 + 边）的图论库](/study/projects/cytoscape-js/) |
 | `dagger` | [Dagger — 用真正的编程语言写 CI pipeline](/study/projects/dagger/) |
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
@@ -869,6 +871,7 @@ sidebar:
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) |
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
+| `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) |
@@ -939,7 +942,7 @@ sidebar:
 
 ---
 
-## 全部 643 个（字母序）
+## 全部 646 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1014,6 +1017,7 @@ sidebar:
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) | 其他 |
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
+| `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) | 其他 |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) | 其他 |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) | 其他 |
@@ -1063,6 +1067,7 @@ sidebar:
 | `curlie` | [curlie — curl 的能力 + HTTPie 的语法](/study/projects/curlie/) | 其他 |
 | `curve` | [Curve — 稳定币低滑点兑换协议](/study/projects/curve/) | 其他 |
 | `cvat` | [CVAT — 视频帧标注与半自动追踪的开源王者](/study/projects/cvat/) | 其他 |
+| `cytoscape-js` | [Cytoscape.js — 浏览器里画图（节点 + 边）的图论库](/study/projects/cytoscape-js/) | 其他 |
 | `d3` | [D3.js — 不是图表库，是写图表库的乐高](/study/projects/d3/) | 数据可视化 |
 | `dagger` | [Dagger — 用真正的编程语言写 CI pipeline](/study/projects/dagger/) | 其他 |
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) | 其他 |
@@ -1465,6 +1470,7 @@ sidebar:
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) | 其他 |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) | 其他 |
 | `solid` | [SolidJS — 细粒度响应式 UI 框架](/study/projects/solid/) | UI 框架 / Frontend Framework |
+| `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) | 其他 |
 | `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | Drag & Drop / Interaction |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | 其他 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |

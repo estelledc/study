@@ -42,6 +42,7 @@ b-tree-1972
 badger
 baraff-witkin-1998-cloth
 barrelfish-2009
+batchnorm-2015
 bayou-1995
 bbr-2017
 beck-tdd
@@ -72,6 +73,7 @@ branch-prediction-yeh-patt-1991
 brewer-cap-2000
 brill-moore-2000
 brook-2004
+btrfs-2013
 burgess-2020-turing-rt
 byzantine-generals-1982
 caesar-rexford-2005
@@ -151,6 +153,7 @@ cuda-streams-concurrency-2018
 cudnn-2014
 curless-levoy-1996-tsdf
 cutlass-2020
+cytoscape-js
 dafny-2010
 dalle-2
 dapper-2010
@@ -217,6 +220,7 @@ feautrier-polyhedral
 fermi-architecture-2010
 ffs-1984
 fidge-1988
+fielding-rest-2000
 filip-2021
 flamingo-2022
 flan-2021
@@ -338,6 +342,7 @@ lamport-1978
 lamport-tla-1994
 lampson-hints
 landin-secd
+layernorm-2016
 lean-prover
 lean-tactics
 leis-2015-optimizers
@@ -419,6 +424,7 @@ netflix-bellkor-2009
 neumann-2015-large-joins
 neumf-2017
 newcombe-2011-kinectfusion
+nfs-1985
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
 nimier-david-2019-mitsuba2
@@ -434,6 +440,7 @@ observable-framework
 okapi-bm25-1994
 opencl-2010
 openhands
+opensearch
 optuna
 orca-2022
 orca-continuous-batching
@@ -757,6 +764,7 @@ chartist
 chatwoot
 chi
 chroma
+cilium
 clack
 claude-agent-sdk
 claude-code
@@ -1062,6 +1070,7 @@ openai-agents-sdk
 openlayers
 openmeetings
 opensea-js
+opensearch
 opentelemetry
 opentsdb
 openvidu
@@ -1263,6 +1272,7 @@ valtio
 vanilla-extract
 vega
 vega-lite
+velero
 vercel-ai
 vertx
 victoriametrics
