@@ -215,6 +215,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 - [[tla-yu-tlc-1999]] —— TLC — 让 TLA+ 规范可以一键机检的模型检查器
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约
+- [[verdi-2015]] —— Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
 - [[vr-1988]] —— VR 1988 — 用"主备 + 换届"做共识的另一脉
 - [[vr-revisited-2012]] —— VR Revisited 2012 — VR 协议的"工程化重写版"
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核

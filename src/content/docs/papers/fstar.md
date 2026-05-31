@@ -167,6 +167,7 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[stainless-2017]] —— Stainless — 让编译器替你证明 Scala 函数真的满足规约
 - [[vcc-2009]] —— VCC — 给并发 C 加注解，让 SMT 自动证它对
+- [[verdi-2015]] —— Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
 - [[verisoft-2008]] —— Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完
 - [[why3-2013]] —— Why3 — 写一次程序规范，多个证明器一起来证
 - [[z3-2008]] —— Z3 2008 — 把 SMT 工程化到工业默认

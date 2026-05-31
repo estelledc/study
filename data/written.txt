@@ -8,11 +8,13 @@ agda-norell
 agentless
 akamai-2002
 algol-60
+alpa-2022
 alphago
 ampere-architecture-2020
 andersen-pointer-analysis
 anthropic-circuits
 anthropic-prompt-caching
+apollo-2014
 aries-1992
 art-2013
 astree
@@ -93,6 +95,7 @@ cubical-type-theory-2018
 cuda-streams-concurrency-2018
 dafny-2010
 dalle-2
+dapper-2010
 dataflow-model-2015
 davis-putnam-1960
 ddpm
@@ -113,6 +116,7 @@ dpll-1962
 dpo
 dqn
 drizzle-2017
+dspy
 dstreams-2013
 duckdb-2019
 dynamo
@@ -139,6 +143,7 @@ foundationdb
 foundationdb-2021
 frama-c-2012
 frank-effects
+fsdp-2023
 fsrs-spaced-repetition
 fstar
 g1-collector
@@ -180,6 +185,7 @@ hott-book-2013
 http-2
 huffman-1952
 hughes-fp-matters
+hyperkernel-2017
 idris-brady
 immix-mark-region
 induction-heads
@@ -188,6 +194,7 @@ ingres-1976
 instructgpt
 io-uring
 iris-2015
+ironfleet-2015
 isabelle-hol-2002
 islands-architecture
 janus-2016
@@ -286,6 +293,7 @@ prolog-colmerauer
 push-pull-frp
 pypy-tracing-jit
 quic
+quincy-2009
 raft
 rag-lewis-2020
 react
@@ -382,6 +390,7 @@ tvm
 unified-memory-2014
 vcc-2009
 vellvm
+verisoft-2008
 vertica-2012
 vit
 vllm
@@ -431,6 +440,7 @@ aspnetcore
 astro
 asynq
 auth-js
+autogen
 automerge
 aws-spot-best-practices
 axelar
@@ -489,6 +499,7 @@ conversations
 cosmos-sdk
 cosmwasm
 coturn
+crewai
 ctranslate2
 curlie
 curve
@@ -620,6 +631,7 @@ lazygit
 ledger-app-sdk
 lerna
 lexical
+lf
 librechat
 libsignal
 lighthouse
@@ -676,6 +688,7 @@ next-intl
 next-js
 nextra
 nginx
+nnn
 nodemailer
 nomad
 numpy
@@ -865,6 +878,7 @@ weaviate
 web-vitals
 web3-js
 webpack
+webrtc-rs
 wezterm
 why-did-you-render
 wormhole
