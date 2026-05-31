@@ -200,6 +200,7 @@ entry:
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[mcfarling-bp-1993]] —— McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
 - [[mips-1981]] —— MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项

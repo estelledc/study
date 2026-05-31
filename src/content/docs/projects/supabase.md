@@ -187,6 +187,7 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[edgedb]] —— EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM
+- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 545 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 547 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：545 个
+- **总数**：547 个
 - **已分类**：209
-- **未分类**：336（落入"其他 / 待分类"段）
+- **未分类**：338（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 336 |
+| [其他 / 待分类](#其他--待分类) | 338 |
 
 ---
 
@@ -498,7 +498,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 336 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 338 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -661,8 +661,10 @@ sidebar:
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
+| `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
+| `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
@@ -841,7 +843,7 @@ sidebar:
 
 ---
 
-## 全部 545 个（字母序）
+## 全部 547 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1079,10 +1081,12 @@ sidebar:
 | `kubernetes` | [Kubernetes — 容器编排平台](/study/projects/kubernetes/) | DevOps / 容器 / 运维 |
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
+| `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) | 其他 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
 | `langfuse` | [Langfuse — LLM 应用可观测性](/study/projects/langfuse/) | AI 应用 / Agent 平台 |
 | `laravel` | [Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套](/study/projects/laravel/) | 其他 |
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) | 其他 |
+| `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | 其他 |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | 其他 |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | 其他 |
 | `lerna` | [lerna — 一个仓库发几十个 npm 包的祖宗工具](/study/projects/lerna/) | Monorepo / 包管理 |
