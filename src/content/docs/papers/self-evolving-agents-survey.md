@@ -149,3 +149,10 @@ A-MEM、MemGPT、Generative Agents 都改 **Agent System 的记忆模块**：把
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
+- [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
+- [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
+- [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
+- [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
+

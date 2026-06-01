@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 773 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 779 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：773 篇
+- **总数**：779 篇
 - **已分类**：139
-- **未分类**：634（落入"其他 / 待分类"段）
+- **未分类**：640（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 634 |
+| [其他 / 待分类](#其他--待分类) | 640 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 634 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 640 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -325,6 +325,7 @@ sidebar:
 | `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) |
 | `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) |
 | `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |
+| `apex-policy-exploration` | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) |
 | `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) |
 | `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |
@@ -410,6 +411,7 @@ sidebar:
 | `coda-1990` | [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
+| `code-as-agent-harness` | [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) |
 | `codellama-2023` | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) |
 | `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) |
 | `codons-2004` | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) |
@@ -497,6 +499,8 @@ sidebar:
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
 | `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) |
 | `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) |
+| `evo-memory-2511` | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) |
+| `exg-experience-graphs` | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) |
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |
@@ -692,6 +696,7 @@ sidebar:
 | `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) |
+| `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) |
 | `mitls-2014-triple-handshake` | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) |
 | `mixup-2018` | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) |
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
@@ -816,6 +821,7 @@ sidebar:
 | `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) |
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
+| `self-evolving-agents-survey` | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
@@ -941,7 +947,7 @@ sidebar:
 
 ---
 
-## 全部 773 篇（字母序）
+## 全部 779 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -974,6 +980,7 @@ sidebar:
 | `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) | 其他 |
 | `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
 | `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | 其他 |
+| `apex-policy-exploration` | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) | 其他 |
 | `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | 其他 |
 | `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) | 其他 |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 其他 |
@@ -1075,6 +1082,7 @@ sidebar:
 | `coda-1990` | [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) | 其他 |
 | `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
 | `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
+| `code-as-agent-harness` | [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) | 其他 |
 | `codellama-2023` | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) | 其他 |
 | `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) | 其他 |
 | `codons-2004` | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) | 其他 |
@@ -1186,6 +1194,8 @@ sidebar:
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
 | `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) | 其他 |
 | `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) | 其他 |
+| `evo-memory-2511` | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) | 其他 |
+| `exg-experience-graphs` | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) | 其他 |
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) | 其他 |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 其他 |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 其他 |
@@ -1413,6 +1423,7 @@ sidebar:
 | `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) | 其他 |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | 其他 |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | 其他 |
+| `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | 其他 |
 | `mitls-2014-triple-handshake` | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) | 其他 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
 | `mixup-2018` | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) | 其他 |
@@ -1564,6 +1575,7 @@ sidebar:
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | 其他 |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 其他 |
+| `self-evolving-agents-survey` | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) | 其他 |
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 其他 |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | 其他 |

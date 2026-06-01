@@ -149,3 +149,9 @@ agent 在线 fine-tune 时，reward signal 来自用户点赞/点踩。如果点
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
+- [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
+- [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
+- [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
+

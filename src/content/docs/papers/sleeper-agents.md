@@ -145,7 +145,11 @@ Sleeper Agents 是从理论跨到实证那一步。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 - [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
+- [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
+- [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
+- [[sparse-autoencoders]] —— Sparse Autoencoders — 把 superposition 解出来
 

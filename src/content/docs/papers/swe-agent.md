@@ -131,10 +131,14 @@ SWE-Agent 的动作序列：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
+- [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
+- [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[react]] —— React UI 组件库
+- [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 
