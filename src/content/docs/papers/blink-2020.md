@@ -146,6 +146,6 @@ large messages (> 4 MB)    →  Blink 大幅领先
 - [[nvlink-nvswitch-2018]] —— Blink 的优化对象就是 NVLink + PCIe 混合拓扑
 - [[gpipe-2019]] —— 流水并行；与 Blink 的数据并行通信优化是正交问题
 - [[alpa-2022]] —— Alpa 的并行策略搜索把 Blink 这类通信方案当一个候选项
-- [[ring-allreduce]] —— Blink 替代的旧算法
+- [[ring-allreduce-2017]] —— Blink 替代的旧算法
 - [[horovod]] —— Uber 早期跨框架 all-reduce 库；Blink 思想可作为它的后端
 - [[byteps-2020]] —— 同时期参数服务器风格的另一条路；与 Blink 形成对照

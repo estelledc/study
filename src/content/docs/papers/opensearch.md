@@ -142,7 +142,7 @@ OpenSearch + OpenSearch Dashboards + Data Prepper（替代 Logstash）/ Fluent B
 - [[lucene]] —— OpenSearch 底层倒排索引引擎，ES 也用它
 - [[elasticsearch]] —— OpenSearch 的源头，2021 年改许可证后双方分家
 - [[faiss]] —— OpenSearch k-NN 插件可选后端之一
-- [[hnsw]] —— OpenSearch 向量检索默认算法
+- [[hnsw-2018]] —— OpenSearch 向量检索默认算法
 - [[apache-2]] —— OpenSearch 许可证；理解为什么"宽松开源"对云厂商重要
 
 ## 反向链接

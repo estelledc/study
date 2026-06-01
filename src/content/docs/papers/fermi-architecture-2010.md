@@ -148,4 +148,4 @@ Tesla 上这一行**慢 8 倍**于 FP32，几乎没人用。Fermi 之后只**慢
 - [[flash-attention]] —— 显式管理 shared memory，间接利用 Fermi 引入的 L2
 - [[mapreduce]] —— 同时代的"切大计算成小块"另一条路（集群方向），Fermi 走单卡 HPC 方向
 - [[attention]] —— Transformer 的核心算子，矩阵乘吃满 Fermi 引入的 L2 共享
-- [[bigtable]] —— 同时代 Google 的大数据系统；和 Fermi 代表"集群 vs 单卡"两条放大计算的路线
+- [[bigtable-2006]] —— 同时代 Google 的大数据系统；和 Fermi 代表"集群 vs 单卡"两条放大计算的路线

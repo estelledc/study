@@ -144,7 +144,7 @@ class MyTask(Task):
 ## 关联
 
 - [[lm-evaluation-harness]] —— 任务格式直接借鉴 BIG-bench JSON schema
-- [[helm-2022]] —— 同期更系统化的评测，强调多维度报告
-- [[scaling-laws-2020]] —— BIG-bench 提供了规模 vs 能力的大量经验数据点
+- [[helm]] —— 同期更系统化的评测，强调多维度报告
+- [[scaling-laws]] —— BIG-bench 提供了规模 vs 能力的大量经验数据点
 - [[chain-of-thought-2022]] —— CoT 提升的也大多是 BIG-bench 里的多步推理题
 - [[grokking-2022]] —— "突然学会"的另一个数据点，与涌现讨论相关

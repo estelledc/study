@@ -129,7 +129,7 @@ GROUP BY 1;
 - 论文 PDF：[CACM 1992 全文](https://dl.acm.org/doi/10.1145/129888.129894)（14 页，结论先行很好读）
 - 视频讲解：[CMU 15-445 Parallel Execution 讲座](https://www.youtube.com/watch?v=lxOR0qMfvNY)（Andy Pavlo 把这篇精神讲透）
 - 后续奠基：[[volcano-1994]] —— Goetz Graefe 给并行查询加了"exchange 算子"统一抽象
-- 现代云仓回响：[[snowflake]] —— shared-nothing + 计算存储分离的当代版本
+- 现代云仓回响：[[snowflake-2016]] —— shared-nothing + 计算存储分离的当代版本
 - 历史回顾：[Margo Seltzer 访谈 Jim Gray](https://www.microsoft.com/en-us/research/people/gray/) （Gray 自述并行数据库与事务的几十年）
 - [[cassandra-2010]] —— shared-nothing 思想在 NoSQL 的延伸
 

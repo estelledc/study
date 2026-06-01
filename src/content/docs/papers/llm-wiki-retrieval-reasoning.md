@@ -122,7 +122,7 @@ AuthTrace 是论文自己提出的 benchmark，专测"答案需要跨多个 doc 
 ## 延伸阅读
 
 - arXiv 2605.25480 — LLM-Wiki 原论文
-- [[graphrag-2024]] — GraphRAG 论文，对照 community summary
+- [[graphrag]] — GraphRAG 论文，对照 community summary
 - [[hipporag]] — HippoRAG，PageRank 检索的前身
 - [[evo-memory-2511]] — long-term memory 的另一形态
 - [[self-evolving-agents-survey]] — self-evolving 综述里 LLM-Wiki 章节
@@ -130,7 +130,7 @@ AuthTrace 是论文自己提出的 benchmark，专测"答案需要跨多个 doc 
 
 ## 关联
 
-- [[graphrag-2024]] —— 同样想把"图结构"接入 RAG，但 LLM-Wiki 把动作显式化
+- [[graphrag]] —— 同样想把"图结构"接入 RAG，但 LLM-Wiki 把动作显式化
 - [[hipporag]] —— PageRank-style 记忆检索的前身
 - [[evo-memory-2511]] —— Error Book 思路类似 long-term memory 的演化
 - [[self-evolving-agents-survey]] —— 综述里把 LLM-Wiki 列为"agent-native retrieval"代表

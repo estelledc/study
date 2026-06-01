@@ -155,5 +155,5 @@ models:
 
 - [[airflow]] —— 最常见的 dbt-core 调度上游：Airflow 触发 `dbt run`
 - [[duckdb]] —— dbt-duckdb adapter 让本地笔记本就能跑 dbt 学习
-- [[snowflake]] —— dbt 和 Snowflake 在 2019-2024 是最常见的搭配
+- [[snowflake-2016]] —— dbt 和 Snowflake 在 2019-2024 是最常见的搭配
 - [[great-expectations]] —— 数据质量框架，和 dbt 测试是互补关系（GE 更通用、dbt test 更轻）

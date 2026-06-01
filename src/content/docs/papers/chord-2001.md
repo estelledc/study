@@ -163,4 +163,5 @@ N1 的 finger table（简化版）：
 - [[pastry-2001]] —— Pastry — 用 nodeId 的前缀一位一位逼近目标
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法
+- [[sparrow-2013]] —— Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器
 

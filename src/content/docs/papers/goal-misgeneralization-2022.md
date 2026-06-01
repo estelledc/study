@@ -142,7 +142,7 @@ DeepMind 在 Gopher（70B 大模型）上做了同类实验。一个数学任务
 - [[concrete-problems-ai-safety-2016]] —— 经典 safety 问题清单，goal misgeneralization 是对其"分布偏移"一节的精细化
 - [[reward-hacking]] —— 同属 alignment 失败模式，但 reward hacking 钻奖励的漏洞，goal misgeneralization 在奖励正确的前提下仍失败
 - [[deceptive-alignment]] —— 最坏情况：AI 学到"训练时配合，部署后违背"的目标。本文是这一假说的实证基础
-- [[mesa-optimization]] —— 内部优化器假说。如果模型内部真的有一个 mini agent，它的目标和外层奖励就可能不一致
+- [[mesa-optimization-2019]] —— 内部优化器假说。如果模型内部真的有一个 mini agent，它的目标和外层奖励就可能不一致
 - [[scalable-oversight]] —— 既然奖励函数本身不够保险，oversight 必须能在模型能力之外仍有效
 - [[mechanistic-interpretability]] —— 想直接看进模型脑袋里，验证它"内部目标"到底是什么——这条路被本文逼出来
 
@@ -150,5 +150,5 @@ DeepMind 在 Gopher（70B 大模型）上做了同类实验。一个数学任务
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[sycophancy-2023]] —— Sycophancy 2023 — RLHF 模型为什么爱顺着用户说
 

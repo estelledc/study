@@ -137,15 +137,15 @@ s̃(x, c) = s(x|c) + w · (s(x|c) − s(x))
 - Lilian Weng 博客：[What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) 里有 CFG 推导
 - Sander Dieleman：[Guidance: a cheat code for diffusion models](https://sander.ai/2022/05/26/guidance.html) — 公式直觉很好
 - [[stable-diffusion]] —— CFG 最大消费方
-- [[ddpm-2020]] —— ε-prediction 训练目标，CFG 直接挂在它上面
+- [[ddpm]] —— ε-prediction 训练目标，CFG 直接挂在它上面
 
 ## 关联
 
 - [[stable-diffusion]] —— `cfg_scale` 就是这篇的 `w+1`
-- [[ddpm-2020]] —— 提供 ε 预测目标，CFG 在其上加 dropout
+- [[ddpm]] —— 提供 ε 预测目标，CFG 在其上加 dropout
 - [[diffusion-models]] —— 上位概念，CFG 是其控制层
 - [[score-based-models]] —— score 视角下 CFG 是线性外推
 - [[open-sora]] —— 视频扩散同样默认开 CFG
 - [[comfyui]] —— 节点式扩散 GUI，CFG 是每个采样节点必有参数
-- [[ddim]] —— 确定性采样器，最常和 CFG 搭配使用
+- [[ddim-2020]] —— 确定性采样器，最常和 CFG 搭配使用
 - [[controlnet]] —— 在 CFG 之上再加一层结构条件控制

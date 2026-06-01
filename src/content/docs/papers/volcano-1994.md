@@ -145,7 +145,7 @@ virtual OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
 - [[aries-1992]] —— 同年代的恢复算法：Volcano 管"读"，ARIES 管"写后崩溃恢复"
 - [[bernstein-1981-cc]] —— 并发控制：Volcano 在事务上层跑，并发控制管事务之间互不踩
 - [[spanner]] —— 现代分布式数据库执行器，仍是迭代器 + Exchange 的变体（跨数据中心）
-- [[bigtable]] —— 列式存储 + 迭代器接口，证明 Volcano 模式不限于关系型
+- [[bigtable-2006]] —— 列式存储 + 迭代器接口，证明 Volcano 模式不限于关系型
 
 ## 反向链接
 

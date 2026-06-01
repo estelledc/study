@@ -150,7 +150,7 @@ static slabclass_t slabclass[MAX_NUMBER_OF_SLAB_CLASSES];
 - [[libevent]] —— C 语言事件循环库，Memcached 的并发骨架
 - [[mysql]] —— Memcached 最常被部署在它前面挡读流量
 - [[nginx]] —— 同时代的 C 高性能服务器，事件驱动思路相通
-- [[consistent-hashing]] —— 客户端分片的算法基础
+- [[consistent-hashing-1997]] —— 客户端分片的算法基础
 - [[lru-cache]] —— 淘汰策略，Memcached 在每个 slab class 内独立维护
 
 ## 反向链接

@@ -151,7 +151,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[chubby]] —— Google 第一个公开的 Paxos 工业实现，给凡人用的分布式锁
 - [[lamport-1978]] —— Lamport 自己 11 年前写的逻辑时钟，奠定异步消息推理范式
 - [[bernstein-1981-cc]] —— 单机并发控制的并行经典；Paxos 是它的多副本对照
-- [[bigtable]] —— Chubby 之上构建的列式存储，证明 Paxos 抽象足以承载 PB 级业务
+- [[bigtable-2006]] —— Chubby 之上构建的列式存储，证明 Paxos 抽象足以承载 PB 级业务
 - [[tigerbeetle]] —— 现代记账数据库，把 Multi-Paxos 派生协议做成产品级共识
 - [[gray-1981-transaction]] —— 事务抽象的源头；Paxos 是把它扩到多副本的桥梁
 - [[aries-1992]] —— 单机崩溃恢复的工业骨架；和 Paxos 拼起来才是完整的复制日志体系

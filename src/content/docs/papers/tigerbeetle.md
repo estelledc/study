@@ -142,7 +142,7 @@ VSR：view + view-change
 - [[lsm-tree-1996]] —— TigerBeetle 不用 RocksDB，自己实现 LSM forest 以保证 deterministic
 - [[rocksdb-lsm]] —— RocksDB 是被 TigerBeetle 拒绝的对照——后台线程不确定无法做 DST
 - [[aries-1992]] —— ARIES 是通用 OLTP recovery 经典，TigerBeetle 选了完全不同的副本恢复路径
-- [[foundationdb]] —— FoundationDB 最早把 deterministic simulation 做成工程方法，TigerBeetle 推到极致
+- [[foundationdb-2021]] —— FoundationDB 最早把 deterministic simulation 做成工程方法，TigerBeetle 推到极致
 - [[io-uring]] —— TigerBeetle 所有 I/O 走 io_uring，这是它能跑那么快的硬件层基础
 
 ## 反向链接

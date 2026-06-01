@@ -135,13 +135,13 @@ Apollo 不回滚，**server 自己处理**：
 - 论文 PDF：[Apollo OSDI 2014](https://www.usenix.org/conference/osdi14/technical-sessions/presentation/boutin)（17 页，第 3-5 节是核心机制）
 - 视频：[OSDI 2014 Apollo Talk](https://www.usenix.org/conference/osdi14/technical-sessions/presentation/boutin)（USENIX 官方视频，Boutin 本人讲）
 - 对比阅读：[Mesos NSDI 2011](https://www.usenix.org/conference/nsdi11/mesos-platform-fine-grained-resource-sharing-data-center) + [Omega EuroSys 2013](https://research.google/pubs/pub41684/)——三篇连起来读完整理解集群调度演化
-- [[mesos]] —— 两层调度的经典反面教材：framework 视野受限
-- [[borg-2015]] —— Google 同期产品，单点 + 高度优化的对照组
+- [[mesos-2011]] —— 两层调度的经典反面教材：framework 视野受限
+- [[borg]] —— Google 同期产品，单点 + 高度优化的对照组
 
 ## 关联
 
-- [[mesos]] —— Apollo 用 wait-time matrix 直接回应了 Mesos resource offer 的视野局限
-- [[borg-2015]] —— 同样大规模，但走单点 + 高度优化路线；Apollo 走分布式 + 估算
+- [[mesos-2011]] —— Apollo 用 wait-time matrix 直接回应了 Mesos resource offer 的视野局限
+- [[borg]] —— 同样大规模，但走单点 + 高度优化路线；Apollo 走分布式 + 估算
 - [[mapreduce]] —— Apollo 调度的就是这类 map-reduce 风格的批任务
 - [[raft]] —— Apollo 内部的元数据存储用 Paxos 类协议；分布式决策不等于不需要一致性
 - [[kubernetes]] —— 现代继承者，但默认 scheduler 还是单点，规模上限远不如 Apollo

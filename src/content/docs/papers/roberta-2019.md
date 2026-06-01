@@ -151,6 +151,7 @@ RoBERTa 全文最值得学的不是任何单点改动，而是**"控制变量做
 
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
+- [[deberta-2021]] —— DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT
 - [[electra-2020]] —— ELECTRA — 把猜词题改成判真假题，训练效率 4 倍
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[llama]] —— LLaMA — Meta 开源大语言模型

@@ -194,6 +194,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[tekton]] —— Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
+- [[twine-2020]] —— Twine — Facebook 把整个数据中心当一台机器调度
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 - [[vault]] —— Vault — HashiCorp 把"密码本"做成可编程基础设施
 - [[vector]] —— Vector — Rust 写的统一可观测性数据管道

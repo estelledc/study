@@ -141,7 +141,7 @@ A: "blue"  / "red" / "green" / "purple" / "yellow" ...
 - 视频讲解：[Yannic Kilcher — Self-Consistency](https://www.youtube.com/watch?v=zKzQXmOK-rQ)（30 分钟逐图解释）
 - [[cot]] —— Self-Consistency 的前置；只采一条 CoT
 - [[tree-of-thoughts-2023]] —— SC 的扩展：从"投票"升级到"树搜索 + 评估"
-- [[react-2022]] —— 推理 + 行动结合的另一种 CoT 增强
+- [[react]] —— 推理 + 行动结合的另一种 CoT 增强
 
 ## 关联
 

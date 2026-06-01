@@ -137,14 +137,14 @@ Twine: 开始重启
 ## 延伸阅读
 
 - 论文 PDF：[Twine OSDI 2020](https://www.usenix.org/system/files/osdi20-tang.pdf)（18 页，可读）
-- [[borg-2015]] —— Borg — Google 2015 公开的集群管理原型，K8s 的爹
-- [[kubernetes-2014]] —— Kubernetes — Borg 简化版 + 开源
+- [[borg]] —— Borg — Google 2015 公开的集群管理原型，K8s 的爹
+- [[kubernetes]] —— Kubernetes — Borg 简化版 + 开源
 - [[mesos-2011]] —— Mesos — 双层调度的另一种解法
 
 ## 关联
 
-- [[borg-2015]] —— Borg 提供了基本概念（cell/job/task），Twine 把 cell 边界打开
-- [[kubernetes-2014]] —— K8s 是 Borg 简化版给外部，Twine 是 Borg 进化版留给内部
+- [[borg]] —— Borg 提供了基本概念（cell/job/task），Twine 把 cell 边界打开
+- [[kubernetes]] —— K8s 是 Borg 简化版给外部，Twine 是 Borg 进化版留给内部
 - [[mesos-2011]] —— Mesos 的双层调度思路在 Twine 里以 entitlement 形式回归
 - [[firmament-2016]] —— Firmament — 把调度建模成最小费用流的另一种思路
 

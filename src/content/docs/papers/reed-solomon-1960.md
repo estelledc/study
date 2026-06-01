@@ -152,4 +152,5 @@ QR 码强制带 RS 冗余。四个等级对应不同的冗余比例：
 - [[hamming-1950]] —— Hamming 纠错码
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[sia]] —— Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
+- [[storj]] —— Storj — S3 兼容的去中心化对象存储
 

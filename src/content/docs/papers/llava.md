@@ -185,7 +185,11 @@ class MinimalLLaVA(nn.Module):
 
 ## 反向链接
 
-被以下笔记引用：
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clip]] —— 在"下游应用"段提到 LLaVA 是 CLIP 视觉编码器最知名的下游消费者
-- [[llama]] —— 多模态延伸里 LLaVA 是 LLaMA 接眼睛的标准模板
+- [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
+- [[llama]] —— LLaMA — Meta 开源大语言模型
+

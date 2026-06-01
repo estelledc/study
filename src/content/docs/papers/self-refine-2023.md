@@ -145,14 +145,14 @@ Refiner："这家餐厅菜品丰富，下次希望上菜更快、温度更理想
 
 - 论文 PDF：[Self-Refine arXiv 2303.17651](https://arxiv.org/abs/2303.17651)（28 页，正文核心 10 页内）
 - 官方代码与 prompt：[github.com/madaan/self-refine](https://github.com/madaan/self-refine)（看 prompt 怎么写比看模型怎么调更重要）
-- 后续工作：[[reflexion-2023]] —— 给 Self-Refine 加长期记忆
+- 后续工作：[[reflexion]] —— 给 Self-Refine 加长期记忆
 - 上一代思路：[[tree-of-thoughts-2023]] —— 把单线迭代扩成搜索树
 - 实战框架：[[dspy]] —— 把 prompt 模板化、自动调参的工程化方案
 
 ## 关联
 
 - [[tree-of-thoughts-2023]] —— 搜索维度的扩展，Self-Refine 是其退化为"线性单路"的特例
-- [[react-2022]] —— 引入外部工具的 agent loop，Self-Refine 是去掉工具的纯内省版
+- [[react]] —— 引入外部工具的 agent loop，Self-Refine 是去掉工具的纯内省版
 - [[chain-of-thought]] —— 单次推理的"想清楚再回答"，Self-Refine 把它扩成多轮
 - [[dspy]] —— 把这种 loop 写成可优化的 program 而不是手写 prompt
 

@@ -148,5 +148,14 @@ agent 不是越反思越聪明——是越反思越**自圆其说**。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[agent-r1-2511]] —— Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
+- [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
+- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
+- [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
+- [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
+- [[react]] —— React UI 组件库
+- [[reflexion]] —— Reflexion — 让 LLM 自我反思
+- [[skcc-skill-compiler]] —— SkCC — 给 LLM agent 写一个真正的 skill 编译器
+- [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
+- [[voyager]] —— Voyager — LLM 终身学习智能体
 

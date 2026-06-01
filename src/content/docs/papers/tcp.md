@@ -135,12 +135,12 @@ OSError: [Errno 99] Cannot assign requested address
 - 标准：[RFC 9293](https://www.rfc-editor.org/rfc/rfc9293)（2022 把 TCP 散落在多个 RFC 的修订重整成一份）
 - 视频：[Computerphile — TCP Congestion Control](https://www.youtube.com/watch?v=TWzvXaxR6us)（25 分钟把 slow start 与 CUBIC 讲完）
 - [[quic]] —— TCP 的现代替代品，HTTP/3 底层
-- [[http2]] —— 暴露 TCP HoL blocking 限制的应用层多路复用
+- [[http-2]] —— 暴露 TCP HoL blocking 限制的应用层多路复用
 
 ## 关联
 
 - [[quic]] —— 把可靠传输从 kernel 搬到 userspace 的 TCP 替代品
-- [[http2]] —— 多路复用揭露 TCP head-of-line blocking 的限制
+- [[http-2]] —— 多路复用揭露 TCP head-of-line blocking 的限制
 - [[paxos]] —— 共识算法默认底下有 reliable transport，多半就是 TCP
 - [[raft]] —— Raft 论文的 RPC 通道默认 TCP，不再操心丢包
 - [[kafka]] —— broker 与 consumer 的长连接全部走 TCP，靠 keep-alive 避免握手成本
@@ -159,11 +159,13 @@ OSError: [Errno 99] Cannot assign requested address
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[cubic-2008]] —— CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
+- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
@@ -182,6 +184,7 @@ OSError: [Errno 99] Cannot assign requested address
 - [[red-1993]] —— RED — 让路由器在队列还没塞满时就提前丢包
 - [[rtp-rfc-1889]] —— RTP RFC 1889 — 让 UDP 也能跑实时音视频
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tcp-vegas-1995]] —— TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

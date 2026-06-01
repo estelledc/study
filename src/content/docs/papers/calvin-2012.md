@@ -148,6 +148,7 @@ TPC-C 的 NewOrder 事务：先读 customer 类型，再决定写哪些表。这
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎

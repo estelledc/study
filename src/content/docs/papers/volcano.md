@@ -145,7 +145,7 @@ Apache Flink 的 source / transform / sink 算子链 = Volcano 的算子树；Fl
 - [[volcano-1994]] —— 1994 TKDE 期刊版的细读：三函数迭代器协议本身
 - [[selinger-1979]] —— System R 优化器，Volcano Section 6 的直接前作
 - [[cascades-1995]] —— Graefe 自己的优化器后续：top-down memo + branch-and-bound
-- [[bigtable]] —— 大规模分布式存储，与 Volcano 的'算子正交'思想一脉相承
+- [[bigtable-2006]] —— 大规模分布式存储，与 Volcano 的'算子正交'思想一脉相承
 - [[bernstein-1981-cc]] —— 并发控制经典，与 Volcano 的执行模型形成数据库内核两条主线
 - [[aries-1992]] —— 恢复算法经典，Volcano 没解的容错维度的工业答卷
 

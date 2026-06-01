@@ -137,12 +137,12 @@ R2 提议 c2: PUT x=2（认为 deps={}）
 - 论文 PDF：[EPaxos SOSP 2013](https://www.cs.cmu.edu/~dga/papers/epaxos-sosp2013.pdf)（16 页，前 6 页足够理解核心）
 - 工业落地：[CockroachDB Accord](https://www.cockroachlabs.com/blog/) / [Cassandra Accord CEP-15](https://cwiki.apache.org/confluence/display/CASSANDRA/CEP-15)
 - 改进版：[Tempo](https://www.usenix.org/conference/atc21/presentation/enes) / [Atlas](https://arxiv.org/abs/2003.11789)
-- 对比阅读：[[raft-2014]] —— Raft 把 Multi-Paxos 工程化清晰化的另一条路
+- 对比阅读：[[raft]] —— Raft 把 Multi-Paxos 工程化清晰化的另一条路
 - 视频：Iulian Moraru SOSP 2013 现场演讲（YouTube 搜 "EPaxos SOSP"）
 
 ## 关联
 
-- [[raft-2014]] —— 同年问世的另一条路：保留 leader 但简化协议
+- [[raft]] —— 同年问世的另一条路：保留 leader 但简化协议
 - [[paxos-1998]] —— EPaxos 的祖宗，所有 quorum 思想的源头
 - [[spanner-2012]] —— Google 全球强一致 DB，用 Multi-Paxos + TrueTime；EPaxos 是不依赖时钟的另一种解法
 - [[crdt]] —— 同样用"冲突感知"思想，但走最终一致而非强一致路线

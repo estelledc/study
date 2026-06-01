@@ -150,4 +150,4 @@ retriever = QueryFusionRetriever(
 - [[chroma]] —— 默认推荐的开源向量数据库之一
 - [[ollama]] —— 想本地化跑 LLM + embedding 时常配的运行时
 
-<!-- 合并自 [[llama-index]] dedup 2026-05-31 -->
+<!-- 合并自 [[llamaindex]] dedup 2026-05-31 -->

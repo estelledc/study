@@ -173,6 +173,7 @@ Trial 2:
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
 - [[react]] —— React UI 组件库
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
+- [[self-refine-2023]] —— Self-Refine — 让同一个模型自己改自己写的东西
 - [[swe-bench]] —— SWE-bench — 真实 GitHub Issue 评测
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
 

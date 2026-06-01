@@ -147,7 +147,7 @@ map.firstKey();   // O(log n) 有序查询
 - [[lsm-tree-1996]] —— LSM-Tree 的 MemTable 层基本都用 skip list
 - [[redis]] —— Redis 把 skip list 用到极致，zset 命令族全靠它
 - [[rocksdb-lsm]] —— RocksDB 沿用 LevelDB 的 skip list MemTable
-- [[bigtable]] —— Google Bigtable MemTable 也是 skip list 思路
+- [[bigtable-2006]] —— Google Bigtable MemTable 也是 skip list 思路
 
 ## 反向链接
 

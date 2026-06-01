@@ -145,7 +145,7 @@ module.exports = {
 ## 关联
 
 - [[react]] —— shadcn/ui 把 Tailwind 推到 utility-first 的 React 组件标杆
-- [[nextjs]] —— Next.js `create-next-app` 默认问你要不要 Tailwind，是它最大的入口
+- [[next-js]] —— Next.js `create-next-app` 默认问你要不要 Tailwind，是它最大的入口
 - [[vite]] —— Tailwind 在 Vite 里一行配置，开发体验流畅
 
 ## 反向链接

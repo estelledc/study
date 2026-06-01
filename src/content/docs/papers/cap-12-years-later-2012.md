@@ -154,7 +154,7 @@ Brewer 提出处理分区的工程模板：
 - [[gilbert-lynch-cap]] — 2002 形式化证明，把 CAP 从猜想升级为定理
 - [[spanner-2012]] — Google 用 TrueTime 把分区窗口压到毫秒级
 - [[dynamo]] — Amazon 极致 AP 选型的代表作
-- [[bigtable]] — Google 早期一致性强的存储，可与 Spanner 对照
+- [[bigtable-2006]] — Google 早期一致性强的存储，可与 Spanner 对照
 
 ## 反向链接
 

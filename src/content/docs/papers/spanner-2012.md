@@ -105,13 +105,13 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 **不适用**：
 
 - 单数据中心、毫秒延迟敏感的小型 OLTP → 用 [[aurora]] / PostgreSQL
-- 写多读少的 KV 场景，不需要跨行事务 → 用 [[bigtable]] / [[dynamo]]
-- 没法部署 GPS+原子钟的私有云 → 用 [[foundationdb]]（不依赖物理时钟）/ [[calvin]]（确定性事务）
+- 写多读少的 KV 场景，不需要跨行事务 → 用 [[bigtable-2006]] / [[dynamo]]
+- 没法部署 GPS+原子钟的私有云 → 用 [[foundationdb-2021]]（不依赖物理时钟）/ [[calvin-2012]]（确定性事务）
 - 分析型查询为主、强一致不重要 → 用 ClickHouse / BigQuery
 
 ## 历史小故事（可跳过）
 
-- **2006 年**：[[bigtable]] 论文发表，证明 KV 大表能扩到 PB 级但**不支持跨行事务**
+- **2006 年**：[[bigtable-2006]] 论文发表，证明 KV 大表能扩到 PB 级但**不支持跨行事务**
 - **2008-2011 年**：Google 内部 Megastore 给 BigTable 加 Paxos 同步多副本+跨行事务但写延迟 100-400ms；F1 团队（AdWords）把 MySQL 后端迁到 Spanner，倒逼 Spanner 加 SQL 接口
 - **2012-2013 年起**：OSDI 论文 Best Paper，Spanner 公开 TrueTime + 全球外部一致性；CockroachDB（2014）、YugabyteDB（2017）、TiDB（2016）相继开源，几乎都是 Spanner 的开源克隆
 
@@ -127,19 +127,19 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 - 视频：[Designing Data-Intensive Applications — Spanner 章节](https://www.youtube.com/results?search_query=spanner+truetime)（Martin Kleppmann 讲解 TrueTime）
 - 论文：F1 SIGMOD 2013（Spanner 的第一个真实业务，AdWords 后端）
 - [[paxos-1998]] —— Spanner 单 group 内的复制协议
-- [[bigtable]] —— Spanner 的前身，相同 sharding 思路但无事务
+- [[bigtable-2006]] —— Spanner 的前身，相同 sharding 思路但无事务
 - [[chubby]] —— Spanner 内部用它做配置和锁服务
 
 ## 关联
 
-- [[bigtable]] —— Spanner 的直接前身，把 KV 大表扩展到事务 + SQL
+- [[bigtable-2006]] —— Spanner 的直接前身，把 KV 大表扩展到事务 + SQL
 - [[paxos-1998]] —— Spanner 每个 tablet group 内部跑 Paxos 选 leader 复制日志
 - [[lamport-1978]] —— 全局事件偏序的奠基论文，Spanner 用物理时钟把它换成全序
 - [[chubby]] —— Spanner 用它存元数据和分布式锁
 - [[gfs]] —— Google 文件系统，Spanner 的 tablet 数据存在它上面（后来换成 Colossus）
 - [[aurora]] —— AWS 的对照系——单 region 优化、不做全球 TrueTime
-- [[foundationdb]] —— 另一种 NewSQL 路线：不依赖物理时钟，用 deterministic transaction
-- [[calvin]] —— 第三种思路：先排定全局事务顺序，再各副本本地执行
+- [[foundationdb-2021]] —— 另一种 NewSQL 路线：不依赖物理时钟，用 deterministic transaction
+- [[calvin-2012]] —— 第三种思路：先排定全局事务顺序，再各副本本地执行
 
 ## 反向链接
 

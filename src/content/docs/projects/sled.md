@@ -12,7 +12,7 @@ sled 是一个**纯 Rust 写的嵌入式键值数据库**——和 [[bbolt]] / [
 
 日常类比：sled 像一本**带活页夹的笔记本**——平时翻页（读）极快，因为页都是连续装订；写新页时不撕旧页，先在末尾草稿区写好，再把目录指过去（log-structured）；想把哪段抽出来重抄一份（compaction）随时可以。
 
-核心创新点是**B+ 树 + log-structured 存储混合**——上层逻辑像 [[bbolt]] / [[lmdb]] 那样按 B+ 树组织索引，但底层物理存储是**追加日志 + 后台 GC**（像 LSM）。设计目标：拿 B+ 树的读延迟，配 LSM 的写吞吐。
+核心创新点是**B+ 树 + log-structured 存储混合**——上层逻辑像 [[bbolt]] / [[lmdb-2011]] 那样按 B+ 树组织索引，但底层物理存储是**追加日志 + 后台 GC**（像 LSM）。设计目标：拿 B+ 树的读延迟，配 LSM 的写吞吐。
 
 作者 Tyler Neely（spacejam）从 2017 年开始独立开发，目标是替代 Rust 生态里 [[rocksdb]] FFI 绑定那条 cgo 路线。约 8k stars，至今仍是 **0.34 beta**——作者明确说"格式还可能变"，正式 1.0 没发布。
 
@@ -31,7 +31,7 @@ sled 的工作模型可以拆成 **四点**：
 
 1. **API 像 BTreeMap**——`db.insert(k, v)` / `db.get(k)` / `db.range(..)`，几乎是标准库 `BTreeMap` 的持久化版。Rust 工程师零学习成本上手。
 
-2. **逻辑层是 B+ 树**——所有键按 B+ 树组织，点查 log(N) 跳转到叶子，范围扫描沿叶子链顺序前进。这部分和 [[bbolt]] / [[lmdb]] 思路一致。
+2. **逻辑层是 B+ 树**——所有键按 B+ 树组织，点查 log(N) 跳转到叶子，范围扫描沿叶子链顺序前进。这部分和 [[bbolt]] / [[lmdb-2011]] 思路一致。
 
 3. **物理层是 log-structured**——B+ 树的页**不原地改**，所有写都追加到日志末尾；老页通过后台线程 GC 回收。这部分像 [[leveldb]] / [[rocksdb]]。
 
@@ -137,7 +137,7 @@ sled 的源码相对 [[rocksdb]] 友好——纯 Rust、模块清晰、有大量
 - [[badger]] —— Go 生态 LSM 嵌入式 KV，sled 的 LSM 版精神同行
 - [[rocksdb]] —— 工业 LSM 标杆，sled 想用纯 Rust 替代的目标
 - [[leveldb]] —— LSM 思想工业起点，sled 的物理层灵感来源之一
-- [[lmdb]] —— mmap + COW + B+ 树的精神祖宗，sled 的逻辑层灵感来源之一
+- [[lmdb-2011]] —— mmap + COW + B+ 树的精神祖宗，sled 的逻辑层灵感来源之一
 
 ## 关联
 
@@ -145,7 +145,7 @@ sled 的源码相对 [[rocksdb]] 友好——纯 Rust、模块清晰、有大量
 - [[badger]] —— Go 嵌入式 LSM KV，sled 的"写优先"路线对照
 - [[rocksdb]] —— LSM 工业标杆，sled 想替代的 cgo 依赖
 - [[leveldb]] —— LSM 思想工业起点
-- [[lmdb]] —— B+ 树 + mmap + COW 的祖宗
+- [[lmdb-2011]] —— B+ 树 + mmap + COW 的祖宗
 
 ## 反向链接
 

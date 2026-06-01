@@ -152,6 +152,7 @@ Shenango 是**跨应用**调度：决定每个进程总共能拿几个核。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[ghost-2021]] —— ghOSt — 把 Linux 调度策略搬到用户态去写
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

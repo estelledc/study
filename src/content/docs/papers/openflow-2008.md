@@ -139,11 +139,11 @@ Google 在数据中心之间的广域网用 OpenFlow 替换了传统 BGP/OSPF。
 - 论文 PDF（6 页）：[OpenFlow Whitepaper](https://archive.openflow.org/documents/openflow-wp-latest.pdf)
 - 后续工业胜利：[Google B4 — SIGCOMM 2013](https://research.google/pubs/pub41761/)（OpenFlow 在 WAN 上的真实部署）
 - 思想前身：[Ethane — SIGCOMM 2007](https://yuba.stanford.edu/~casado/ethane-sigcomm07.pdf)（『所有决策都问中央』的更激进版本）
-- 思想后裔：[[p4]] —— 让用户自定义 match/action，不再受 12 元组限制
+- 思想后裔：[[p4-2014]] —— 让用户自定义 match/action，不再受 12 元组限制
 
 ## 关联
 
-- [[p4]] —— OpenFlow 的『精神继承者』，把可编程性从 action 推到 parser
+- [[p4-2014]] —— OpenFlow 的『精神继承者』，把可编程性从 action 推到 parser
 - [[fielding-rest-2000]] —— 同样是『写一篇论文定义一个产业 API』的范式
 - [[lamport-tla-1994]] —— 控制器集群一致性的理论基础
 - [[ethernet-1976]] —— OpenFlow 接管的『分组交换』物理底座
@@ -152,6 +152,7 @@ Google 在数据中心之间的广域网用 OpenFlow 替换了传统 BGP/OSPF。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[andromeda-2018]] —— Andromeda — Google Cloud 网络虚拟化的高速通道
 - [[b4-2013]] —— B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+
 - [[ethane-2007]] —— Ethane 2007 — 把企业网安全策略集中到一台中央电脑上
 - [[frenetic-2011]] —— Frenetic 2011 — 把 OpenFlow 流表换成函数式程序

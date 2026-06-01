@@ -153,6 +153,7 @@ Tendermint / Cosmos / 早期以太坊 PoS：
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
 - [[farsite-2002]] —— Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器
+- [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
 - [[ironfleet-2015]] —— IronFleet — 把分布式协议证到一行 bug 都没有
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[mills-ntp-1991]] —— NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒

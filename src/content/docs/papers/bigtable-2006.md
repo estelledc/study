@@ -154,7 +154,9 @@ column families:
 - [[akamai-2010]] —— Akamai 2010 — 从内容分发网络长成全球应用平台
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
+- [[cap-12-years-later-2012]] —— CAP 十二年后 — Brewer 自己承认"三选二"是误读
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[ceph-2006]] —— Ceph — 让分布式文件系统不靠中心查表
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
@@ -169,31 +171,47 @@ column families:
 - [[drizzle-2017]] —— Drizzle — 让 micro-batch 也能跑出 100ms 延迟
 - [[dstreams-2013]] —— D-Streams — 把流处理伪装成一串很小的批
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[f1-2013]] —— F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单
 - [[faiss-2017]] —— FAISS 2017 — 用 GPU 在十亿向量里找最近邻
+- [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
 - [[foundationdb-2021]] —— FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[google-1998]] —— Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
+- [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[karger-1997-consistent-hashing]] —— Karger 1997 一致性哈希 — 加机器不用全员搬家
+- [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[leveldb]] —— LevelDB — Google LSM 库
+- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[megastore-2011]] —— Megastore — 把数据切成"小数据库"换跨地域同步复制
 - [[millwheel-2013]] —— MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+- [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
+- [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 - [[percolator-2010]] —— Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
 - [[pnuts-2008]] —— PNUTS — 介于强一致与最终一致之间的实用一致性
 - [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
+- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
+- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[sqlite-2022]] —— SQLite — 嵌入式数据库 30 年怎么活下来的
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
+- [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[tachyon-2014]] —— Tachyon — 把集群存储推到内存速度，丢了再算回来
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
+- [[trustrank-2004]] —— TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
 - [[unix-1974]] —— UNIX 1974 — 用极小内核做出能用的分时系统
+- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
+- [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

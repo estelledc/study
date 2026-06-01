@@ -141,7 +141,7 @@ hash(k) % 4 → [0,1,2,3,0,1,2,3]
 ## 关联
 
 - [[bigtable-2006]] —— BigTable 选 range partition；同期 DynamoDB 选哈希环，两条路线分叉
-- [[dynamo-2007]] —— Dynamo 把这篇 1997 年的算法第一次推向工业 KV 存储
+- [[dynamo]] —— Dynamo 把这篇 1997 年的算法第一次推向工业 KV 存储
 - [[cassandra]] —— Cassandra 几乎逐字实现 Dynamo 的 token ring
 - [[paxos]] —— 一致性哈希解决数据放哪里，Paxos 解决多副本怎么达成一致
 - [[brewer-cap-2000]] —— CAP 定理；一致性哈希的系统通常选 AP（Dynamo 系）
@@ -159,6 +159,7 @@ hash(k) % 4 → [0,1,2,3,0,1,2,3]
 - [[donar-2010]] —— DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题
 - [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
 - [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
+- [[memcached]] —— Memcached — 经典内存缓存
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[vitess]] —— Vitess — 给 MySQL 装上水平分片的代理层
 

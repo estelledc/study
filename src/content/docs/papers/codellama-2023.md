@@ -143,7 +143,7 @@ Code Llama 是开源代码模型生态的"奠基性配方书"。
 ## 关联
 
 - [[attention]] —— Transformer 是 Code Llama 的骨架
-- [[deepseek-coder]] —— 直接继承 Code Llama 训练配方并超越它
+- [[deepseek-coder-2024]] —— 直接继承 Code Llama 训练配方并超越它
 - [[starcoder2]] —— 同期另一条开源代码模型路线
 - [[rope-position]] —— Code Llama 长上下文靠改 RoPE θ 实现
 - [[self-instruct]] —— Code Llama Instruct 数据来源

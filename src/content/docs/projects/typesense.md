@@ -185,7 +185,10 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient })
 
 ## 反向链接
 
-被以下笔记引用：
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[elasticsearch]] —— 在"轻量替代"段落点名 Typesense 是开箱即用的小型方案
-- [[postgresql]] —— CDC 同步到搜索引擎的章节以 Typesense 为示例
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
+

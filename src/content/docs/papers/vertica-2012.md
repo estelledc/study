@@ -131,13 +131,13 @@ COPY fact_sales FROM '/data/sales_2026_05_30.csv'
 - 论文 PDF：[Lamb 2012 VLDB](http://vldb.org/pvldb/vol5/p1790_andrewlamb_vldb2012.pdf)（12 页，工程细节密度高）
 - [[cstore-2005]] —— 这篇论文的"上一集"，理论原型
 - [[monetdb-x100-2005]] —— 同时代另一条列存路线，强调向量化执行
-- [[snowflake]] —— 列存 + 自动物理设计在云时代的演进版
+- [[snowflake-2016]] —— 列存 + 自动物理设计在云时代的演进版
 
 ## 关联
 
 - [[cstore-2005]] —— 直接前作，本论文是它的工业续集
 - [[monetdb-x100-2005]] —— 平行的列存学派，更偏向 CPU 缓存友好
-- [[snowflake]] —— 云原生列存数仓，把 Vertica 思路搬到 S3 + 计算存储分离
+- [[snowflake-2016]] —— 云原生列存数仓，把 Vertica 思路搬到 S3 + 计算存储分离
 - [[system-r-1976]] —— 关系型数据库工程化的鼻祖，奠定查询优化器框架
 - [[dewitt-gray-1992]] —— 并行数据库经验论，K-safety 副本恢复的思想源头
 - [[stonebraker-2010-sqlnosql]] —— Stonebraker 同年的"OLTP/OLAP 分家"宣言

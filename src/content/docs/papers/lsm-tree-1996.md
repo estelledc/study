@@ -107,7 +107,7 @@ client read key="foo"
 ## 历史小故事（可跳过）
 
 - **1996 年**：Patrick O'Neil 等四人在 Acta Informatica 发表 LSM-Tree 论文。当时几乎没人注意——磁盘还便宜，B+树够用。
-- **2006 年**：Google 发表 [[bigtable]] 论文，第一次把 LSM 思路用在工业级超大规模系统上，处理 web 索引数据。LSM 一夜成名。
+- **2006 年**：Google 发表 [[bigtable-2006]] 论文，第一次把 LSM 思路用在工业级超大规模系统上，处理 web 索引数据。LSM 一夜成名。
 - **2007 年**：Google 把 BigTable 的存储层抽出来开源，叫 LevelDB——单机版 LSM，500 行 C++，至今是教学范本。
 - **2012 年**：Facebook 把 LevelDB fork 成 RocksDB，加多线程 Compaction、可调策略、写优先优化，成为最广泛使用的 LSM 引擎。
 - **2010s 后**：[[cassandra]] / HBase / [[tidb]] / [[cockroachdb]] / [[clickhouse]] / Kafka / Pulsar / InfluxDB 等几乎所有现代分布式存储系统都用 LSM 或 LSM 变体作为底层。
@@ -128,7 +128,7 @@ client read key="foo"
 
 ## 关联
 
-- [[bigtable]] —— 第一个工业级 LSM 系统，2006 年让 LSM 走出论文
+- [[bigtable-2006]] —— 第一个工业级 LSM 系统，2006 年让 LSM 走出论文
 - [[cassandra]] —— Tiered Compaction 的代表，写优化的极致
 - [[clickhouse]] —— LSM 思路用于列存 OLAP，写吞吐与压缩比兼得
 - [[tidb]] —— NewSQL 用 RocksDB（LSM）做单机存储 + Raft 做分布式
@@ -154,9 +154,11 @@ client read key="foo"
 - [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
+- [[sonic]] —— Sonic — 极简前缀搜索引擎
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库
 - [[tidb]] —— TiDB — HTAP 分布式数据库
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库

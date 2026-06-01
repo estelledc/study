@@ -131,6 +131,7 @@ GAN 的 loss 曲线经常上下震荡甚至崩塌，需要无数 trick（label s
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[classifier-free-guidance-2022]] —— Classifier-Free Guidance — 让扩散模型自己听懂条件
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddim-2020]] —— DDIM — 把扩散模型 1000 步采样压到 50 步

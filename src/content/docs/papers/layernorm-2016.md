@@ -158,4 +158,4 @@ Pre-LN（GPT-2 之后）：
 - [[batchnorm-2015]] —— LN 的直接前辈，BN 在序列任务上失效正是 LN 诞生的动机
 - [[transformer-2017]] —— LN 的最大用户，每个 sublayer 后必接
 - [[adam-2014]] —— LN 配合 Adam 几乎是 Transformer 训练的事实组合
-- [[resnet-2015]] —— 残差结构和 LN 一起，构成现代深度模型的两大稳定器
+- [[resnet]] —— 残差结构和 LN 一起，构成现代深度模型的两大稳定器

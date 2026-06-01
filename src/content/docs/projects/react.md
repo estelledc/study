@@ -204,6 +204,8 @@ function Greeting({ name }) {
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
+- [[self-consistency-2022]] —— Self-Consistency — 让模型把同一道题做 40 遍再投票
+- [[self-refine-2023]] —— Self-Refine — 让同一个模型自己改自己写的东西
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[skcc-skill-compiler]] —— SkCC — 给 LLM agent 写一个真正的 skill 编译器

@@ -160,6 +160,7 @@ notes.set('note-1', { title: '...', body: '...' })
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[collabora-online]] —— Collabora Online — 浏览器里直接编辑 Office 文档的开源后端
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
+- [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

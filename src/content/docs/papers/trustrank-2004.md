@@ -150,7 +150,7 @@ spam_candidates = np.where(t < threshold)[0]
 - [[pagerank-1998]] —— 数学骨架同源，差异只在 d 向量
 - [[hits-1999]] —— Kleinberg HITS，同期 Web 图算法
 - [[mapreduce]] —— 大规模跑 TrustRank 的分布式底座
-- [[bigtable]] —— 存 Web 图和信任分的存储
+- [[bigtable-2006]] —— 存 Web 图和信任分的存储
 
 ## 反向链接
 

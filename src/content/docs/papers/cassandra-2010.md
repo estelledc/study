@@ -144,12 +144,12 @@ R+W>N（比如 R=2, W=2, N=3）→ 强一致；R+W≤N → 牺牲一致换延迟
 - 入门书：《Cassandra: The Definitive Guide》Jeff Carpenter（O'Reilly，第 3 版覆盖到 4.x）
 - 视频：[ScyllaDB Summit — Cassandra Internals](https://www.youtube.com/results?search_query=cassandra+internals+scylla)（C++ 重写者讲底层）
 - [[bigtable-2006]] —— Cassandra 数据模型来源
-- [[dynamo-2007]] —— Cassandra 分布式骨架来源（同作者）
+- [[dynamo]] —— Cassandra 分布式骨架来源（同作者）
 
 ## 关联
 
 - [[bigtable-2006]] —— 列族 + memtable + SSTable 全是从这继承
-- [[dynamo-2007]] —— 一致性哈希、quorum、gossip 全是从这继承
+- [[dynamo]] —— 一致性哈希、quorum、gossip 全是从这继承
 - [[chord-2001]] —— 一致性哈希环最早系统化的论文
 - [[paxos-1998]] —— 强一致的另一条路；Cassandra 后来加了 lightweight transaction（基于 Paxos）补这一块
 

@@ -154,5 +154,6 @@ loss = LPIPS(student(x_i, sigma_i), student_ema(x_i1, sigma_{i+1}).detach())
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ddim-2020]] —— DDIM — 把扩散模型 1000 步采样压到 50 步
+- [[edm-2022]] —— EDM — 把扩散模型的训练配方一次拆清楚
 

@@ -145,12 +145,12 @@ mmap 在这里的价值：**几十个 worker 进程共享一份索引**，每个
 - 官方仓库：[spotify/annoy](https://github.com/spotify/annoy)（C++ 实现 + 多语言绑定）
 - 作者博客系列：[Nearest Neighbors and Vector Models, Part 2](https://erikbern.com/2015/10/01/nearest-neighbors-and-vector-models-part-2-how-to-search-in-high-dimensional-spaces.html)（讲随机投影直觉）
 - ANN 基准：[ann-benchmarks.com](https://ann-benchmarks.com/)（各家 ANN 库召回-延迟曲线，Erik 自己维护）
-- [[hnsw]] —— 当前主流 ANN 算法，Annoy 的常见替代
+- [[hnsw-2018]] —— 当前主流 ANN 算法，Annoy 的常见替代
 - [[faiss]] —— Facebook 的 ANN 库，IVF / PQ / HNSW 全家桶
 
 ## 关联
 
-- [[hnsw]] —— 分层小世界图，召回-延迟通常领先 Annoy
+- [[hnsw-2018]] —— 分层小世界图，召回-延迟通常领先 Annoy
 - [[faiss]] —— 内核选择多、支持 GPU，但部署复杂度更高
 - [[bentley-1975-kdtree]] —— k-d 树，低维场景的精确最近邻；Annoy 是它在高维下的近似版本
 - [[ance-2020]] —— 用近似最近邻做大规模检索训练

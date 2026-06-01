@@ -172,7 +172,7 @@ runc 不知道镜像是什么（那是 containerd 的事），也不配网络（
 - [[kubernetes]] —— Pod 里每个容器最终落到 runc
 - [[docker]] —— 历史源头，runc 是从 Docker libcontainer 拆出来的
 - [[gvisor]] —— 同位置的替代品，用 Go 实现的用户态内核做更强隔离
-- [[firecracker]] —— microVM 路线的替代隔离，AWS Lambda 在用
+- [[firecracker-2020]] —— microVM 路线的替代隔离，AWS Lambda 在用
 - [[cgroups-v2]] —— runc 用来限速限内存的内核机制
 - [[linux-namespaces]] —— runc 用来做隔离的内核机制
 

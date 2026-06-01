@@ -144,7 +144,7 @@ Cassandra、Riak、Voldemort 都是同样的招式。
 
 - [[akamai-2002]] —— 论文作者的公司，把这套理论商用化
 - [[chord-2001]] —— DHT 协议，一致性哈希的 P2P 版
-- [[dynamo-2007]] —— Amazon 把它推上工业界主舞台
+- [[dynamo]] —— Amazon 把它推上工业界主舞台
 - [[cassandra-2010]] —— 开源 Dynamo 复刻，默认 partitioner 就是它
 - [[bigtable-2006]] —— Google 的对比方案（用 range 分片而非 hash 环）
 

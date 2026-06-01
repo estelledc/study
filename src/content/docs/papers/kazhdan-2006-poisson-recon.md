@@ -148,7 +148,7 @@ Screened: min ‖∇χ - V‖² + λ Σᵢ |χ(pᵢ) - 0.5|²
 ## 关联
 
 - [[3d-gaussian-splatting]] —— 同样从点云出发，但放弃网格、用高斯椭球渲染
-- [[marching-cubes]] —— Poisson 第三步抽等值面就靠它（如未来收录）
+- [[marching-cubes-1987]] —— Poisson 第三步抽等值面就靠它（如未来收录）
 - [[multigrid-solver]] —— Poisson 方程离散后用多重网格高效解（如未来收录）
 
 ## 反向链接

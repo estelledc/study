@@ -27,7 +27,7 @@ Shapiro 等人在这篇 INRIA 长报告里做了三件事：
 - 为什么 **Riak 2.0** 直接给出 counter / set / map 这些"分布式数据类型"，让你不用自己写合并
 - 为什么 **Yjs / Automerge** 这些协同库底层算法名字都是 OR-Set / RGA / LWW——全是这篇论文里的设计
 
-也是后续所有 CRDT 论文的母体：[[crdt-json]]（Kleppmann 2017）把这套推广到嵌套 JSON，[[automerge-2016]] 是工程实现，[[yjs-2020]] 是 web 落地。
+也是后续所有 CRDT 论文的母体：[[crdt-json]]（Kleppmann 2017）把这套推广到嵌套 JSON，[[automerge]] 是工程实现，[[yjs]] 是 web 落地。
 
 ## 核心要点
 
@@ -135,8 +135,8 @@ Cassandra / DynamoDB 的单字段冲突解决就是 LWW。
 - 工程入门：[Riak Data Types 文档](https://docs.riak.com/riak/kv/latest/developing/data-types/)（第一个把 CRDT 商业化的数据库）
 - 互动可视化：[CRDT.tech](https://crdt.tech/)（社区维护的 CRDT 索引 + demo）
 - [[crdt-json]] —— 这篇论文 6 年后被推广到嵌套 JSON 文档
-- [[automerge-2016]] —— Kleppmann 团队的 JS 实现
-- [[yjs-2020]] —— web 上跑得最快的 CRDT 引擎
+- [[automerge]] —— Kleppmann 团队的 JS 实现
+- [[yjs]] —— web 上跑得最快的 CRDT 引擎
 
 ## 关联
 

@@ -160,6 +160,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 - [[doc2query-2019]] —— doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
+- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号

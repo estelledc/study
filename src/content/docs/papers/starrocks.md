@@ -141,7 +141,7 @@ SELECT count(*) FROM iceberg_catalog.db.events;
 ## 关联
 
 - [[clickhouse]] —— OLAP 老牌选手，StarRocks 主要对标对象，单表场景下仍各有千秋
-- [[snowflake]] —— 商业云原生 OLAP，StarRocks 3.x 存算分离架构的对照参考
+- [[snowflake-2016]] —— 商业云原生 OLAP，StarRocks 3.x 存算分离架构的对照参考
 - [[duckdb]] —— 嵌入式单机 OLAP，互补不冲突——单机用 DuckDB，分布式用 StarRocks
 - [[apache-iceberg]] —— Lakehouse 表格式，StarRocks 通过 External Catalog 直读
 - [[apache-doris]] —— StarRocks 的上游父亲，分叉超过四年仍在两条路并行演化

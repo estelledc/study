@@ -157,6 +157,7 @@ class WordCounter:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[unstructured]] —— Unstructured — 把任意文档解析成 LLM 能吃的元素列表
 

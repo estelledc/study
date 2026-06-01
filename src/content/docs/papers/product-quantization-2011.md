@@ -148,7 +148,7 @@ D, I = index.search(query, k=10)                 # 毫秒级
 
 - [[hnsw-2018]] —— HNSW 图索引；和 PQ 互补，常组合成 HNSW-PQ
 - [[bigtable-2006]] —— 大规模存储系统的设计权衡参考
-- [[lsm-tree]] —— 另一种"分层 + 压缩"的存储思路
+- [[lsm-tree-1996]] —— 另一种"分层 + 压缩"的存储思路
 
 ## 反向链接
 
@@ -157,6 +157,7 @@ D, I = index.search(query, k=10)                 # 毫秒级
 - [[awq]] —— AWQ — 看激活脸色给权重打折
 - [[awq-2023]] —— AWQ 2023 — 让 70B 大模型住进 RTX 4090
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度

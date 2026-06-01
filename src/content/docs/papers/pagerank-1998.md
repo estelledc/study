@@ -145,7 +145,7 @@ for _ in range(50):
 
 - [[hits-kleinberg]] —— Kleinberg 同年提出的对手算法，HITS 拆 Hub 和 Authority
 - [[mapreduce]] —— Google 后来发明的分布式计算框架，最初目的就是大规模跑 PageRank
-- [[bigtable]] —— Google 存 Web 索引的数据库，PageRank 分数也存在里面
+- [[bigtable-2006]] —— Google 存 Web 索引的数据库，PageRank 分数也存在里面
 - [[gfs]] —— Google File System，Web 爬虫数据的底层存储
 - [[graph-neural-networks]] —— GNN 的"邻居聚合"思想与 PageRank 同源
 

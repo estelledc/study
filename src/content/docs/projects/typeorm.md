@@ -18,13 +18,13 @@ TypeORM 是 **Node.js 上的一种 ORM**（对象关系映射器）——你用 
 - TypeORM 像"在 class 旁边贴便利贴，每张便利贴说一件事——`这是表`、`这是主键`、`这一列对外键`"
 - [[drizzle]] / [[kysely]] 像"我直接拼 SQL，但拼得有类型保护"
 
-四种风格各有粉丝。TypeORM 的便利贴风格在 [[nest]] 早期是默认搭档，写起来像 Java 的 JPA / Hibernate。
+四种风格各有粉丝。TypeORM 的便利贴风格在 [[nestjs]] 早期是默认搭档，写起来像 Java 的 JPA / Hibernate。
 
 ## 为什么重要
 
 不了解 TypeORM，下面这些事不太好理解：
 
-- 为什么 [[nest]] 教程里 entity 都长成 `@Entity() class User { ... }` 的样子——那是 TypeORM 风格
+- 为什么 [[nestjs]] 教程里 entity 都长成 `@Entity() class User { ... }` 的样子——那是 TypeORM 风格
 - 为什么从 Java 转 Node 的工程师特别喜欢它——它和 Hibernate / Spring Data JPA 几乎一个气味
 - 为什么同一个 ORM 既能写 `repo.find()`（Data Mapper）又能写 `user.save()`（Active Record）——它两种范式都收
 - 为什么它支持那么多数据库（PostgreSQL / MySQL / SQLite / MS SQL / MongoDB 等 10+）——driver 是抽出来的，换 DB 只换 type 字段
@@ -133,7 +133,7 @@ export class AddEmailToUser1700000000000 implements MigrationInterface {
 
 **适用**：
 
-- [[nest]] 项目（社区集成最成熟）
+- [[nestjs]] 项目（社区集成最成熟）
 - 需要支持多种数据库的项目（10+ driver 是 TypeORM 强项）
 - 团队从 Java Hibernate / Spring Data JPA 迁移过来，找熟悉的写法
 - 老项目（2018-2022 起家的 Node 后端，很多用 TypeORM）
@@ -148,7 +148,7 @@ export class AddEmailToUser1700000000000 implements MigrationInterface {
 ## 学到什么
 
 1. **ORM 的两种范式**：Data Mapper（仓库 + 纯数据）和 Active Record（entity 自带 CRUD），TypeORM 都收，是优点也是缺点——灵活但容易学乱
-2. **装饰器 + 反射元数据** 是 TypeScript 装饰器风格 ORM 的核心机制，理解 `reflect-metadata` 是理解 [[nest]] / TypeORM 的钥匙
+2. **装饰器 + 反射元数据** 是 TypeScript 装饰器风格 ORM 的核心机制，理解 `reflect-metadata` 是理解 [[nestjs]] / TypeORM 的钥匙
 3. **Migrations 是生产必备**：`synchronize: true` 只能在开发用，生产必须靠 migrations 控制 schema 变更
 4. **多 DB 抽象的代价**：driver 抽象层让 TypeORM 支持 10+ 数据库，但每个 driver 行为有微妙差异（如 SQLite 没有真正的 timestamp with timezone），跨 DB 不能完全无感切换
 5. **生态会演进**：TypeORM 在 NestJS 早期是默认，但现在 [[prisma]] / [[drizzle]] 抢走新项目份额——选 ORM 时既要看现状也要看趋势
@@ -167,5 +167,5 @@ export class AddEmailToUser1700000000000 implements MigrationInterface {
 - [[prisma]] —— 同领域，schema.prisma 文件 vs class 装饰器风格的对比
 - [[drizzle]] —— 同领域，schema-as-code + 极小 bundle，Edge 场景首选
 - [[kysely]] —— 同领域，但定位是 SQL builder 而非 ORM
-- [[nest]] —— TypeORM 在 [[nest]] 生态里通过 `@nestjs/typeorm` 深度集成
+- [[nestjs]] —— TypeORM 在 [[nestjs]] 生态里通过 `@nestjs/typeorm` 深度集成
 - [[zod]] —— 配 class-validator 用，给 entity 做输入校验

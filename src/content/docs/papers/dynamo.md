@@ -148,7 +148,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 
 - [[lamport-1978]] —— Lamport 的逻辑时钟是 vector clock 的祖先；Dynamo 引用了 Mattern/Fidge 的扩展但跳过 Lamport
 - [[gfs]] —— Google File System，CP 路线的同时代典型；和 Dynamo 形成"两种哲学"对照
-- [[bigtable]] —— GFS 之上的键值存储，走 CP 路线（Chubby 协调）；Cassandra 是"Dynamo + Bigtable"的杂交
+- [[bigtable-2006]] —— GFS 之上的键值存储，走 CP 路线（Chubby 协调）；Cassandra 是"Dynamo + Bigtable"的杂交
 - [[paxos]] —— 强一致共识协议；Dynamo 显式选择不用，因为它要 AP
 - [[chubby]] —— Google 的分布式锁服务，Bigtable 用它，Dynamo 不用——是 AP/CP 分歧的具体体现
 - [[crdt-json]] —— 把"应用层做冲突合并"这件事数学化，是对 Dynamo 第 4 件套坑的正面回答
@@ -164,9 +164,11 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cap-12-years-later-2012]] —— CAP 十二年后 — Brewer 自己承认"三选二"是误读
+- [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
+- [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
 - [[cops-2011]] —— COPS — 大规模跨地域存储如何用得起的代价拿到因果一致
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[crdt-json-2017]] —— CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法
@@ -175,7 +177,9 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
+- [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
 - [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
+- [[karger-1997-consistent-hashing]] —— Karger 1997 一致性哈希 — 加机器不用全员搬家
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[pastry-2001]] —— Pastry — 用 nodeId 的前缀一位一位逼近目标

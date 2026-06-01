@@ -106,7 +106,7 @@ INGRES 把它**拆**成两步：先扫 MANAGER 把每个部门的 manager.salary
 
 - 大型企业生产环境——用 IBM System R / SQL/DS / DB2
 - 需要严格事务的金融系统——锁和恢复机制 1976 版本太弱
-- 需要分布式 / 多机扩展——要等到 1986 年的 Postgres 或更晚的 [[bigtable]] / [[dynamo]]
+- 需要分布式 / 多机扩展——要等到 1986 年的 Postgres 或更晚的 [[bigtable-2006]] / [[dynamo]]
 
 ## 历史小故事（可跳过）
 
@@ -141,7 +141,7 @@ INGRES 把它**拆**成两步：先扫 MANAGER 把每个部门的 manager.salary
 - [[b-tree-1972]] —— INGRES 后期用 B-tree 做索引，所有现代关系库的标准索引结构
 - [[selinger-1979]] —— System R 的代价模型查询优化器，反超 INGRES 查询分解
 - [[sqlite]] —— 单机关系库现代继承者，架构层面同样四块（解析 / 优化 / 计划 / 存储）
-- [[bigtable]] —— 后来 NoSQL 派的代表，对关系派的反叛但仍受其影响
+- [[bigtable-2006]] —— 后来 NoSQL 派的代表，对关系派的反叛但仍受其影响
 - [[lamport-1978]] —— 分布式数据库的逻辑时间起点，INGRES/STAR 后期想做但没做完的方向
 
 ## 反向链接

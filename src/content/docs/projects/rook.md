@@ -8,7 +8,7 @@ title: Rook — 把 Ceph 装进 K8s 的 CRD 里
 
 ## 是什么
 
-Rook 是一个 **Kubernetes Operator**，它把 [[ceph]]（一个老牌分布式存储系统）变成几张 **CRD（自定义资源）**——你写一份 YAML，它替你把 Ceph 的全部组件（mon/mgr/osd/mds）部署成 Pod，并在节点宕机时自动恢复。
+Rook 是一个 **Kubernetes Operator**，它把 [[ceph-2006]]（一个老牌分布式存储系统）变成几张 **CRD（自定义资源）**——你写一份 YAML，它替你把 Ceph 的全部组件（mon/mgr/osd/mds）部署成 Pod，并在节点宕机时自动恢复。
 
 日常类比：
 
@@ -149,13 +149,13 @@ spec:
 - CNCF 毕业公告：[Rook becomes the first CNCF storage project to graduate](https://www.cncf.io/announcements/2020/10/07/cloud-native-computing-foundation-announces-rook-graduation/)
 - 视频：[Sage Weil — Ceph and Rook at KubeCon 2019](https://www.youtube.com/watch?v=KqaTYepbCEY)（Ceph 创始人讲为何选 Rook）
 - 反面教材：[Why we moved off Rook](https://news.ycombinator.com/item?id=27858501)（HN 讨论，了解局限）
-- [[ceph]] —— Rook 管的就是 Ceph
+- [[ceph-2006]] —— Rook 管的就是 Ceph
 - [[kubernetes]] —— Rook 跑在 K8s 之上
 - [[operator-sdk]] —— Rook 自身就是用 Operator 模式写的
 
 ## 关联
 
-- [[ceph]] —— Rook 是 Ceph 的「K8s 包装纸」，不理解 Ceph 就不理解 Rook 在调什么
+- [[ceph-2006]] —— Rook 是 Ceph 的「K8s 包装纸」，不理解 Ceph 就不理解 Rook 在调什么
 - [[kubernetes]] —— CRD / Operator / CSI 三个概念都来自 K8s
 - [[operator-sdk]] —— 写 Operator 的脚手架，Rook 是 Operator 模式的范例之一
 - [[longhorn]] —— Rook 的「轻量竞品」，只做块存储不做对象/文件

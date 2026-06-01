@@ -150,7 +150,7 @@ conn = psycopg2.connect("postgresql://crdb-cluster:26257/mydb")
 - [[paxos-1998]] —— 共识协议的祖宗，Raft 是它的简化版
 - [[f1-2013]] —— Google 内部建在 Spanner 上的 SQL 层，对应 CRDB 的 SQL 层
 - [[aurora]] —— AWS 的另一种 cloud-native SQL，但是单 region 共享存储路线
-- [[calvin]] —— 另一种"先排序再执行"的分布式事务方案，CRDB 没走这条路
+- [[calvin-2012]] —— 另一种"先排序再执行"的分布式事务方案，CRDB 没走这条路
 - [[bernstein-1981-cc]] —— 并发控制理论祖文，2PC + 时间戳排序的源头
 
 ## 反向链接

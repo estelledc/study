@@ -146,7 +146,7 @@ def predict(text):
 
 - [[maml-2017]] —— 同年 few-shot 论文，MAML 学初始化、ProtoNet 学 embedding 空间
 - [[attention]] —— Matching Networks 用 attention，ProtoNet 用均值，是更简单的"加权聚合"
-- [[clip-2021]] —— CLIP 的 zero-shot 分类把文本 prompt 当原型，是 ProtoNet 思路的跨模态延伸
+- [[clip]] —— CLIP 的 zero-shot 分类把文本 prompt 当原型，是 ProtoNet 思路的跨模态延伸
 - [[sentence-bert]] —— SentenceBERT + 类原型 = 现代文本 few-shot 分类的工程标配
 
 ## 反向链接

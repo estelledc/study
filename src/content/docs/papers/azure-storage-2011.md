@@ -132,12 +132,12 @@ acct/cont/file | { size, etag, blocks=[...] }
 - 论文 PDF：[Calder et al. SOSP 2011](https://sigops.org/s/conferences/sosp/2011/current/2011-Cascais/printable/11-calder.pdf)（24 页，结构清晰）
 - 视频：[Brad Calder SOSP 2011 talk](https://www.youtube.com/results?search_query=brad+calder+azure+storage+sosp+2011)（论文配套报告）
 - 配套读：[GFS 2003](https://research.google/pubs/the-google-file-system/)、[Spanner 2012](https://research.google/pubs/spanner-googles-globally-distributed-database-2/)
-- [[gfs-2003]] —— WAS 的 Stream Layer 思路源头
+- [[gfs]] —— WAS 的 Stream Layer 思路源头
 - [[bigtable-2006]] —— Partition Layer 的范围分片来自这里
 
 ## 关联
 
-- [[gfs-2003]] —— Stream Layer 类比 GFS 的 chunk server，但 metadata 用 Paxos 强一致
+- [[gfs]] —— Stream Layer 类比 GFS 的 chunk server，但 metadata 用 Paxos 强一致
 - [[bigtable-2006]] —— Partition Layer 像 Bigtable 但加了更强 schema 与事务
 - [[spanner-2012]] —— 同样追求强一致+大规模，再加 TrueTime 做跨地域事务
 - [[aurora]] —— Aurora 把"日志下沉到存储"做成商用，思路与 WAS 同源

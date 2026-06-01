@@ -156,4 +156,5 @@ rarest first 强迫大家**优先抢稀缺块**，于是稀缺块迅速被复制
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
+- [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
 

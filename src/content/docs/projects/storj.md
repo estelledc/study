@@ -140,7 +140,7 @@ rclone sync ./local-dir storj:my-bucket --progress
 - [[filecoin]] —— 同样做"激励陌生人存数据"，但 Filecoin 用链 + PoSt 证明，Storj 用 Satellite + 审计；前者强、后者快
 - [[sia]] —— 都用纠删码 + 经济激励，但 Sia 把账本上链，Storj 留在链下；Sia 更去中心、Storj 更易用
 - [[arweave]] —— 走相反路：Arweave 一次付费永久存，Storj 按月计费可删；典型的"永久 vs 按用付费"二选一
-- [[reed-solomon]] —— Storj 纠删码核心算法，所有"丢一半还能恢复"的故事都建立在这上面
+- [[reed-solomon-1960]] —— Storj 纠删码核心算法，所有"丢一半还能恢复"的故事都建立在这上面
 - [[s3-api]] —— Storj 兼容的协议层；让旧代码零成本迁移，是商业落地的关键支点
 - [[libp2p]] —— Storj 自研了类似的 P2P 层（叫 storj/drpc），刻意没用 libp2p，因为不想引入额外依赖
 

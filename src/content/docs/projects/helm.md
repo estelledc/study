@@ -153,7 +153,7 @@ helm rollback my-nginx 1
 
 - [[kubernetes]] —— Helm 部署的目标平台
 - [[cncf]] —— Helm 是 CNCF 毕业项目之一
-- [[argo-cd]] —— GitOps 工具，可以管 Helm release，是另一层抽象
+- [[argocd]] —— GitOps 工具，可以管 Helm release，是另一层抽象
 
 ## 反向链接
 
@@ -163,6 +163,7 @@ helm rollback my-nginx 1
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
+- [[bigbench-2022]] —— BIG-bench — 204 道题给大模型出考卷
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
@@ -174,6 +175,7 @@ helm rollback my-nginx 1
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
 - [[linkerd2]] —— Linkerd 2 — 用 Rust 写的轻量服务网格
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
+- [[mmlu-2021]] —— MMLU — 用 57 个学科的多选题考一考语言模型
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
 - [[skaffold]] —— Skaffold — K8s 本地开发的 build-deploy 自动循环
 - [[sops]] —— SOPS — 让密码也能放心进 Git

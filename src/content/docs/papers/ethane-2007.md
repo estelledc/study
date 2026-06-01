@@ -152,7 +152,7 @@ allow(usrc="cfo", hdst="finance_db") # CFO 例外
 ## 关联
 
 - [[openflow-2008]] —— 直接继承者，把 Ethane 的『交换机 + 流表』标准化成跨厂商协议
-- [[p4]] —— 后续把可编程性从 action 推到 parser，是 OpenFlow 的精神延续
+- [[p4-2014]] —— 后续把可编程性从 action 推到 parser，是 OpenFlow 的精神延续
 - [[differential-datalog]] —— Pol-Eth 是 Datalog 用于网络策略的典型案例
 - [[souffle-datalog]] —— 同源的 Datalog 工程化方向，给企业策略类问题提供工具
 - [[lamport-tla-1994]] —— 控制器集群一致性的理论基础（Ethane 单机版还没遇到，OpenFlow 时代必修）

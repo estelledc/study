@@ -141,7 +141,7 @@ WMT-14 英→法翻译任务，那年的成绩单：
 - [[attention]] —— 直接后继，给 Seq2Seq 装上「直达源词的捷径」
 - [[lstm-1997]] —— 编码器/解码器的内部零件
 - [[transformer]] —— 范式继承者，把 RNN 换成 self-attention
-- [[bert-2019]] —— 借用 encoder 那一半，丢掉 decoder
+- [[bert]] —— 借用 encoder 那一半，丢掉 decoder
 - [[gpt]] —— 借用 decoder 那一半，丢掉 encoder
 - [[fastertransformer-2021]] —— Seq2Seq 后裔的工业级推理优化
 
@@ -151,4 +151,5 @@ WMT-14 英→法翻译任务，那年的成绩单：
 
 - [[attention]] —— Attention Is All You Need
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+- [[gru-2014]] —— GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场
 

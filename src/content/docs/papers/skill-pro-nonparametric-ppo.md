@@ -138,7 +138,7 @@ PPO 思想越过参数边界进入文本空间，是当下 RL 研究最反直觉
 - [[mind-skill]] —— 同期工作；优化 skill 内容质量
 - [[skill-as-pseudocode]] —— 同期工作；优化 skill 表示形式
 - [[effiskill]] —— 同期工作；代码效率场景
-- [[ppo-2017]] —— Skill-Pro 算法思想直接来源
+- [[ppo]] —— Skill-Pro 算法思想直接来源
 - [[textgrad]] —— 语义梯度的基础设施
 - [[react]] —— agent 标准循环；Skill-Pro 在 think 阶段插入选择门
 - [[dpo-2023]] —— preference-based RL；与 Skill-Pro 共享"不动权重"思想

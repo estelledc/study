@@ -147,9 +147,9 @@ class LogEmitter:
 - [[raft]] —— Paxos 简化版，log index 是稳定化的 Lamport 时间戳
 - [[spanner]] —— 用原子钟 + GPS 做 TrueTime，是"逻辑时钟"的反命题
 - [[kafka]] —— 单 partition offset 就是退化版 Lamport 时间戳
-- [[bigtable]] —— 用 Chubby 造分布式锁，依赖 Paxos 的 ordering
+- [[bigtable-2006]] —— 用 Chubby 造分布式锁，依赖 Paxos 的 ordering
 - [[chubby]] —— 分布式锁服务，session ID 用作稳定 process id
-- [[calvin]] —— 确定性事务也要先排全序，思想同源
+- [[calvin-2012]] —— 确定性事务也要先排全序，思想同源
 
 ## 反向链接
 

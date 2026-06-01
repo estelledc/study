@@ -131,12 +131,12 @@ projection P2: (date, region, amount) 按 date 排序
 - Daniel Abadi 博客：[The Design and Implementation of Modern Column-Oriented Database Systems](https://www.cs.umd.edu/~abadi/papers/abadi-column-stores.pdf)（2013 综述，比论文更系统）
 - ClickHouse 文档：[ClickHouse Architecture](https://clickhouse.com/docs/en/development/architecture)（看 C-Store 思想怎么落到现代系统）
 - DuckDB In-Process OLAP：[DuckDB 论文](https://duckdb.org/docs/internals/overview)（嵌入式列存的新代表）
-- [[snowflake]] —— 云原生列存数仓，存算分离
+- [[snowflake-2016]] —— 云原生列存数仓，存算分离
 - [[stonebraker-2010-sqlnosql]] —— 同作者后来反思 SQL/NoSQL 之争
 
 ## 关联
 
-- [[snowflake]] —— Snowflake — 把 C-Store 思想搬到云端 + 存算分离
+- [[snowflake-2016]] —— Snowflake — 把 C-Store 思想搬到云端 + 存算分离
 - [[clickhouse]] —— ClickHouse — 单机极致列存，C-Store 思想的现代直系
 - [[system-r-1976]] —— System R — 行存 OLTP 的奠基，C-Store 的对照面
 - [[aries-1992]] —— ARIES — 行存恢复算法，列存的 WS 也借了 WAL 思想

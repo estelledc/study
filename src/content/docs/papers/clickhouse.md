@@ -149,7 +149,7 @@ t-digest 是分布式聚合友好的近似分位结构,每个 shard 算自己的
 - [[cascades-1995]] —— 查询优化器框架,ClickHouse 24.x 才开始引入对应思想的 CBO
 - [[duckdb]] —— 同源思路推到嵌入式单机场景,跟 ClickHouse 互补
 - [[kafka]] —— 实时数仓里最常见的上游,Kafka 引擎表是 ClickHouse 直连消费的快捷方式
-- [[snowflake]] —— 云数仓存算分离路线,跟 ClickHouse 的裸机极限路线哲学相左
+- [[snowflake-2016]] —— 云数仓存算分离路线,跟 ClickHouse 的裸机极限路线哲学相左
 - [[leis-2015-optimizers]] —— JOIN 顺序选择研究,正面解决 ClickHouse 长期短板
 - [[neumann-2015-large-joins]] —— 大表 JOIN 的算法基础,ClickHouse 24.x grace hash join 的来源
 

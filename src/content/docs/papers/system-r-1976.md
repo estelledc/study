@@ -103,8 +103,8 @@ System R 的处理：
 - 通用 SQL 接口——SQL 不是凭空冒出来的，是 System R 团队磨出来的
 
 **不适用**：
-- 大规模分析（OLAP）—— [[clickhouse]] / [[snowflake]] 用列存 + 向量化代替了行存 + 单元组遍历
-- KV / NoSQL 场景 —— [[dynamo]] / [[bigtable]] 砍掉 SQL 和事务换可用性
+- 大规模分析（OLAP）—— [[clickhouse]] / [[snowflake-2016]] 用列存 + 向量化代替了行存 + 单元组遍历
+- KV / NoSQL 场景 —— [[dynamo]] / [[bigtable-2006]] 砍掉 SQL 和事务换可用性
 - 流式数据处理 —— [[kafka]] / Flink 是另一套数据流模型，不是关系模型
 - 嵌入式 / 单文件场景 —— SQLite 借鉴了 SQL 但把锁 / 事务大幅简化，不走 System R 的多层架构
 

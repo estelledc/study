@@ -141,7 +141,7 @@ Get("k1")         // 读到墓碑 → 返回 NotFound
 
 - 论文：[[lsm-tree-1996]] —— 1996 O Neil 论文，LSM 思想原点
 - 项目：[[rocksdb]] —— Facebook fork，多线程 compaction
-- 项目：[[bigtable]] / [[bigtable-2006]] —— SSTable 的源头
+- 项目：[[bigtable-2006]] / [[bigtable-2006]] —— SSTable 的源头
 - 学习路径：先读 `db/memtable.h` → `db/log_writer.cc` → `table/block_builder.cc` → `db/version_set.cc`，4 个文件覆盖核心
 - 论文：[[comer-1979-btree]] —— B 树（LSM 的对照面）
 
@@ -149,7 +149,7 @@ Get("k1")         // 读到墓碑 → 返回 NotFound
 
 - [[rocksdb]] —— Facebook 从它 fork，多线程 + column family
 - [[lsm-tree-1996]] —— LevelDB 实现的理论基础
-- [[bigtable]] —— SSTable 概念的源头（同一批 Google 作者）
+- [[bigtable-2006]] —— SSTable 概念的源头（同一批 Google 作者）
 - [[sqlite]] —— 嵌入式数据库的 B 树派代表，对照面
 - [[cassandra]] —— 分布式 LSM 数据库，思想同源
 - [[tikv]] —— 用 RocksDB（LevelDB 后裔）做底层的分布式 KV

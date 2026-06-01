@@ -148,6 +148,7 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[mae]] —— MAE — Masked Autoencoders
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
+- [[prototypical-networks-2017]] —— Prototypical Networks — 每类算个均值，比距离就够了
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆

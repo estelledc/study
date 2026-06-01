@@ -150,4 +150,5 @@ Assistant: 秋叶飘零落，金风送暮凉。
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
+- [[t0-2021]] —— T0 — 让 50 个人各写各的提示词，模型反而更会听新指令
 
