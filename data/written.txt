@@ -28,6 +28,7 @@ anh-moffat-2005
 anserini-2017
 anthropic-circuits
 anthropic-prompt-caching
+apex-policy-exploration
 apollo-2014
 apron-2009
 aries-1992
@@ -129,6 +130,7 @@ cocondenser-2021
 coda-1990
 codd-1970
 codd-1979-extending
+code-as-agent-harness
 codellama-2023
 codex-2021
 codons-2004
@@ -240,6 +242,8 @@ eros-1999
 eswaran-1976
 esx-memory-2002
 ethane-2007
+evo-memory-2511
+exg-experience-graphs
 exokernel-1995
 f1-2013
 f4-2014
@@ -467,6 +471,7 @@ mine-octagon-2006
 minhash-broder-1997
 minisat-2003
 mips-1981
+misevolution-2509
 mitls-2014-triple-handshake
 mixture-of-experts
 mixup-2018
@@ -618,6 +623,7 @@ sel4-2009
 self-adjusting
 self-consistency-2022
 self-customization
+self-evolving-agents-survey
 self-pic
 self-rag-2023
 self-refine-2023
@@ -812,6 +818,7 @@ argo-workflows
 argocd
 arktype
 arrow
+arrow-rs
 arweave
 asdf
 aspnetcore

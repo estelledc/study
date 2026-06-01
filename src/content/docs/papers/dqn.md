@@ -144,13 +144,9 @@ DeepMind 2017 发表 Rainbow——把 DQN 之后 5 项改进（Double DQN / Duel
 - [[a3c-2016]] —— A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
-- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
-- [[mamba]] —— Mamba — 选择性状态空间模型
 - [[muzero]] —— MuZero — 不用规则也能下棋
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[td3-2018]] —— TD3 — 给 DDPG 装两副刹车，连续控制终于稳了
 

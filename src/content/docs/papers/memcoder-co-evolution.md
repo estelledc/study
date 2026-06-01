@@ -137,13 +137,8 @@ RAG 是 lookup 一段代码，MemCoder 是 lookup 一段"为什么这么改"。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- placeholder: 待 regen-backlinks 填充本笔记被哪些文档引用 -->
-<!-- 当前已知反向引用：self-evolving-agents-survey, evo-memory-2511 -->
-<!-- 反向链接刷新由 finalize-round 自动触发 -->
-<!-- co-evolution 是该论文的核心隐喻 -->
-<!-- SWE-bench Verified 上 +9.4pp over DeepSeek-V3.2 是关键实证 -->
-<!-- 三阶段：intent-distillation / self-refinement / experience-internalization -->
-<!-- 时间衰减是处理 deprecated 经验的关键设计 -->
-<!-- commit message 质量决定蒸馏上限，是工程瓶颈 -->
-<!-- 长期看可期待和 git hooks 集成的 IDE 工具链 -->
+- [[agent-r1-2511]] —— Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
+- [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
+- [[self-evolving-recsys-2602]] —— Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线
+- [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
 
