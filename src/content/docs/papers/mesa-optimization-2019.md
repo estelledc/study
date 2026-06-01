@@ -150,5 +150,9 @@ mesa objective（网络内部"想"达成的东西）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
+- [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
+- [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
+- [[sleeper-agents]] —— Sleeper Agents — 故意藏后门的 LLM
 
