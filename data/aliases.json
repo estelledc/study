@@ -1,0 +1,127 @@
+[
+  {
+    "canonical": "kubernetes",
+    "aliases": ["k8s", "kube"],
+    "reason": "common abbreviation for kubernetes (8 letters between k and s)"
+  },
+  {
+    "canonical": "mongodb",
+    "aliases": ["mongo"],
+    "reason": "informal short form widely used in docs and CLI"
+  },
+  {
+    "canonical": "scikit-learn",
+    "aliases": ["sklearn", "scikit"],
+    "reason": "sklearn is the import name; scikit is informal short form"
+  },
+  {
+    "canonical": "tensorflow",
+    "aliases": ["tf"],
+    "reason": "tf is the canonical Python import alias for TensorFlow"
+  },
+  {
+    "canonical": "pytorch",
+    "aliases": ["torch"],
+    "reason": "torch is the actual Python package name"
+  },
+  {
+    "canonical": "neovim",
+    "aliases": ["nvim"],
+    "reason": "nvim is the binary name and common short form"
+  },
+  {
+    "canonical": "vscode",
+    "aliases": ["vs-code"],
+    "reason": "hyphenated variant of the same product"
+  },
+  {
+    "canonical": "github-actions",
+    "aliases": ["gh-actions", "ghactions"],
+    "reason": "common short forms in CI/CD discussions"
+  },
+  {
+    "canonical": "argocd",
+    "aliases": ["argo-cd"],
+    "reason": "hyphenated variant; project name is sometimes spelled both ways"
+  },
+  {
+    "canonical": "opentelemetry",
+    "aliases": ["otel"],
+    "reason": "otel is the official short form used in package names"
+  },
+  {
+    "canonical": "tailwind",
+    "aliases": ["tailwindcss", "tailwind-css"],
+    "reason": "tailwindcss is the npm package name; same product"
+  },
+  {
+    "canonical": "nestjs",
+    "aliases": ["nest", "nest-js"],
+    "reason": "nest is the brand short form; nest-js is hyphenated variant"
+  },
+  {
+    "canonical": "next-js",
+    "aliases": ["nextjs", "next"],
+    "reason": "nextjs is the unhyphenated form; next is the npm package name"
+  },
+  {
+    "canonical": "nuxt",
+    "aliases": ["nuxtjs", "nuxt-js"],
+    "reason": "nuxtjs and nuxt-js are common spellings of the same framework"
+  },
+  {
+    "canonical": "sveltekit",
+    "aliases": ["svelte-kit"],
+    "reason": "hyphenated variant of the same framework"
+  },
+  {
+    "canonical": "elasticsearch",
+    "aliases": ["elastic", "elastic-search", "es"],
+    "reason": "elastic is the company/short form; es is the universal abbreviation"
+  },
+  {
+    "canonical": "prometheus",
+    "aliases": ["prom"],
+    "reason": "prom is the binary/import prefix and common short form"
+  },
+  {
+    "canonical": "llama-cpp",
+    "aliases": ["llamacpp", "llama-cpp-python"],
+    "reason": "llamacpp is unhyphenated; -python suffix is the binding wrapper but routes to same project"
+  },
+  {
+    "canonical": "llamaindex",
+    "aliases": ["llama-index"],
+    "reason": "rebranded from llama-index to llamaindex"
+  },
+  {
+    "canonical": "fastapi",
+    "aliases": ["fast-api"],
+    "reason": "hyphenated variant of the same framework"
+  },
+  {
+    "canonical": "spring-boot",
+    "aliases": ["springboot", "spring"],
+    "reason": "springboot is unhyphenated; spring is umbrella short form"
+  },
+  {
+    "canonical": "bottom",
+    "aliases": ["btm"],
+    "reason": "btm is the binary name for the bottom CLI tool"
+  },
+  {
+    "canonical": "ripgrep",
+    "aliases": ["rg"],
+    "reason": "rg is the binary name and ubiquitous short form"
+  },
+  {
+    "canonical": "eza",
+    "aliases": ["exa"],
+    "reason": "eza is the maintained fork of the original exa tool"
+  },
+  {
+    "canonical": "ollama",
+    "aliases": ["olama"],
+    "reason": "common typo / misspelling of ollama"
+  }
+]
