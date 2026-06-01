@@ -234,6 +234,7 @@ easycrypt-2011
 ebpf
 edm-2022
 effect-handlers
+effiskill
 electra-2020
 elmo-2018
 emqx
@@ -471,6 +472,7 @@ metcalfe-boggs-1976
 mills-ntp-1991
 millwheel-2013
 milner-pi-calculus
+mind-skill
 mine-octagon-2006
 minhash-broder-1997
 minisat-2003
@@ -649,6 +651,9 @@ simrank-2002
 simula-67
 sinfonia-2007
 skeen-3pc-1981
+skill-as-pseudocode
+skill-pro-nonparametric-ppo
+skill-sd-self-distillation
 skip-list-1990
 skip-locked-postgres-9.5
 slab-1994
@@ -768,6 +773,7 @@ wandb
 wang-2014-spdy
 ward-1992
 websocket-rfc-6455
+webxskill
 whitted-1980
 why3-2013
 wide-deep-2016

@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 791 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 795 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：791 篇
+- **总数**：795 篇
 - **已分类**：139
-- **未分类**：652（落入"其他 / 待分类"段）
+- **未分类**：656（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 652 |
+| [其他 / 待分类](#其他--待分类) | 656 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 652 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 656 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -405,6 +405,7 @@ sidebar:
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
 | `classifier-free-guidance-2022` | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) |
+| `clawtrace-cost-aware` | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) |
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) |
 | `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) |
 | `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
@@ -708,6 +709,7 @@ sidebar:
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
 | `mmlu-2021` | [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) |
+| `mmskills-multimodal` | [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) |
 | `mockapetris-1988-dns` | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) |
 | `mode-connectivity-2018` | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) |
 | `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) |
@@ -843,6 +845,7 @@ sidebar:
 | `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) |
 | `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) |
 | `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) |
+| `skcc-skill-compiler` | [SkCC — 给 LLM agent 写一个真正的 skill 编译器](/study/papers/skcc-skill-compiler/) |
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |
 | `skill-as-pseudocode` | [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) |
 | `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) |
@@ -956,10 +959,11 @@ sidebar:
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
 | `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) |
 | `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) |
+| `zombie-agents-2602` | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) |
 
 ---
 
-## 全部 791 篇（字母序）
+## 全部 795 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1086,6 +1090,7 @@ sidebar:
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) | 其他 |
 | `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) | 其他 |
 | `classifier-free-guidance-2022` | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) | 其他 |
+| `clawtrace-cost-aware` | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) | 其他 |
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | 其他 |
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
@@ -1448,6 +1453,7 @@ sidebar:
 | `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 其他 |
 | `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |
 | `mmlu-2021` | [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) | 其他 |
+| `mmskills-multimodal` | [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) | 其他 |
 | `mockapetris-1988-dns` | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) | 其他 |
 | `mode-connectivity-2018` | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) | 其他 |
 | `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) | 其他 |
@@ -1614,6 +1620,7 @@ sidebar:
 | `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) | 其他 |
 | `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
 | `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) | 其他 |
+| `skcc-skill-compiler` | [SkCC — 给 LLM agent 写一个真正的 skill 编译器](/study/papers/skcc-skill-compiler/) | 其他 |
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) | 其他 |
 | `skill-as-pseudocode` | [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) | 其他 |
 | `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) | 其他 |
@@ -1754,3 +1761,4 @@ sidebar:
 | `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) | 其他 |
 | `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | GC / 内存管理 |
 | `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |
+| `zombie-agents-2602` | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) | 其他 |

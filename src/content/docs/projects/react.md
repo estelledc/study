@@ -161,6 +161,7 @@ function Greeting({ name }) {
 - [[ag-grid]] —— AG Grid — 企业级数据表格
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
@@ -189,6 +190,7 @@ function Greeting({ name }) {
 - [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
+- [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
@@ -204,6 +206,7 @@ function Greeting({ name }) {
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
+- [[skcc-skill-compiler]] —— SkCC — 给 LLM agent 写一个真正的 skill 编译器
 - [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
 - [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
@@ -229,5 +232,6 @@ function Greeting({ name }) {
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 - [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
+- [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
 - [[zustand]] —— Zustand — 极简 React 状态管理
 
