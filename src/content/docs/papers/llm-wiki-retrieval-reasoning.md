@@ -143,7 +143,6 @@ AuthTrace 是论文自己提出的 benchmark，专测"答案需要跨多个 doc 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- placeholder: 待 regen-backlinks 填充本笔记被哪些文档引用 -->
-<!-- 当前已知反向引用：self-evolving-agents-survey, eve-agent-evidence -->
-<!-- 反向链接刷新由 finalize-round 自动触发 -->
-<!-- 注：bidirectional link 在 wiki 内部、反向链接在仓库层是同构概念 -->
+- [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
+- [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
+

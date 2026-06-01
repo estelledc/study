@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 779 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 785 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：779 篇
+- **总数**：785 篇
 - **已分类**：139
-- **未分类**：640（落入"其他 / 待分类"段）
+- **未分类**：646（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 640 |
+| [其他 / 待分类](#其他--待分类) | 646 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 640 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 646 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -311,6 +311,7 @@ sidebar:
 | `adamw-2017` | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) |
 | `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
+| `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
 | `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) |
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |
@@ -499,6 +500,7 @@ sidebar:
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
 | `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) |
 | `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) |
+| `eve-agent-evidence` | [EVE-Agent — 自我训练前先把证据钉在桌上](/study/papers/eve-agent-evidence/) |
 | `evo-memory-2511` | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) |
 | `exg-experience-graphs` | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) |
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) |
@@ -650,6 +652,7 @@ sidebar:
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
 | `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) |
 | `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) |
+| `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `locus-1980` | [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) |
@@ -683,6 +686,7 @@ sidebar:
 | `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) |
+| `memcoder-co-evolution` | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) |
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) |
 | `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) |
 | `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) |
@@ -822,6 +826,8 @@ sidebar:
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
 | `self-evolving-agents-survey` | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) |
+| `self-evolving-recsys-2602` | [Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线](/study/papers/self-evolving-recsys-2602/) |
+| `self-evolving-software-agents` | [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
@@ -947,7 +953,7 @@ sidebar:
 
 ---
 
-## 全部 779 篇（字母序）
+## 全部 785 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -962,6 +968,7 @@ sidebar:
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) | 其他 |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 其他 |
+| `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | 其他 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | 其他 |
 | `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) | 其他 |
@@ -1194,6 +1201,7 @@ sidebar:
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
 | `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) | 其他 |
 | `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) | 其他 |
+| `eve-agent-evidence` | [EVE-Agent — 自我训练前先把证据钉在桌上](/study/papers/eve-agent-evidence/) | 其他 |
 | `evo-memory-2511` | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) | 其他 |
 | `exg-experience-graphs` | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) | 其他 |
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) | 其他 |
@@ -1370,6 +1378,7 @@ sidebar:
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | 其他 |
+| `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | 其他 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) | 其他 |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) | 其他 |
@@ -1409,6 +1418,7 @@ sidebar:
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) | 其他 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) | 其他 |
+| `memcoder-co-evolution` | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) | 其他 |
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) | 其他 |
 | `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) | 其他 |
 | `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) | 其他 |
@@ -1576,6 +1586,8 @@ sidebar:
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | 其他 |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 其他 |
 | `self-evolving-agents-survey` | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) | 其他 |
+| `self-evolving-recsys-2602` | [Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线](/study/papers/self-evolving-recsys-2602/) | 其他 |
+| `self-evolving-software-agents` | [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) | 其他 |
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 其他 |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | 其他 |

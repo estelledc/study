@@ -145,6 +145,9 @@ RLHF 的 reward 来自人类偏好，**单一标量信号**，无法追溯具体
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- placeholder: 待 regen-backlinks 填充本笔记被哪些文档引用 -->
-<!-- 当前已知反向引用：self-evolving-agents-survey, apex-policy-exploration -->
-<!-- 反向链接刷新由 finalize-round 自动触发 -->
+- [[agent-r1-2511]] —— Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
+- [[llm-wiki-retrieval-reasoning]] —— LLM-Wiki — 把外部知识编译成 agent 自己的"维基"
+- [[memcoder-co-evolution]] —— MemCoder — code agent 跟着你 git commit 一起成长
+- [[self-evolving-recsys-2602]] —— Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线
+- [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
+
