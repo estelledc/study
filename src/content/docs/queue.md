@@ -1,121 +1,205 @@
 ---
 title: 推荐队列
-description: 围绕"未来工程师"7 条信念精选的 20 个项目——按季度展开
+description: 按主题分组的 pillar 项目推荐——726 篇项目笔记的导航起点
 sidebar:
   order: 2
 ---
 
-> **20 不是 100**。100 是凑数，凑数学不到判断力。每个项目都满足
-> [立场宣言](/study/about/) 里的 5 条挑选标准，并且能展开**横向对比**——
-> "为什么是它而不是它的同类"才是这个站点的核心产出。
+> 不是"读哪 20 个"的清单，是"先读哪 5 个就能撑起一个领域"的导航。
+> 当前站点 726 篇项目笔记 + 785 篇论文笔记，凑数没有意义，**取舍**才有。
+> 每个主题给 3-5 个 pillar：反向链接最多、跨主题被引最广、读完能形成判断。
 
-## 进行中
+## 怎么用这页
 
-**全部完成 ✅**——20 个项目研究笔记已发布。后续转向"主题导览"长文，串联多个项目的判断。
-
----
-
-## 五个季度（约 8-10 个月慢笔记）
-
-### Season 1 · 状态与心智模型（3 / 4 完成）
-
-| # | 项目 | 关键判断 |
-|---|------|---------|
-| 1 | [shadcn/ui](/study/projects/shadcn-ui/) ✅ | 不是组件库，是代码分发协议 |
-| 2 | [TanStack Query](/study/projects/tanstack-query/) ✅ | 服务端状态是独立物种，不是 Redux 的子集 |
-| 3 | [zustand](/study/projects/zustand/) ✅ | 101 行核心 + 反 Provider 派的极简心智 |
-| 4 | [vercel/swr](/study/projects/swr/) ✅ | 同问题的另一种回答：全局事件广播 vs Query Observer |
-
-**这一季回答的问题**：状态管理这件事，前端社区在 2024-2026 收敛到了什么共识？哪些"看起来必须"的复杂度其实可以删掉？
+- 想入门某个领域 → 看对应主题的"先读这几个"
+- 想看全景 → 跳到文末 [全景 atlas](#全景-atlas)
+- 想读论文枢纽 → 走 [[papers-queue]] / [[papers-atlas]]
+- 想看挑选标准 → 看 [立场宣言](/study/about/)
 
 ---
 
-### Season 2 · 类型当设计工具（验证 + 判断力）
+## 前端与全栈
 
-| # | 项目 | 关键判断 |
-|---|------|---------|
-| 5 | [colinhacks/zod](/study/projects/zod/) ✅ | schema-first：编译期类型 + 运行时校验同源 |
-| 6 | [statelyai/xstate](/study/projects/xstate/) ✅ | 把"看起来简单的状态"画成图——很多 bug 是状态机没画 |
-| 7 | [TanStack/router](/study/projects/tanstack-router/) ✅ | 类型系统当 UX 工具：路由、loader、search params 全都类型推断 |
-| 8 | [trpc/trpc](/study/projects/trpc/) ✅ | 协议消失：函数即 API，类型从 server 流到 client |
+承上 React 生态、向下到运行时与构建。这条线**反向链接最密**：
+[[react]] 一篇被 68 篇引用，是站点的前端枢纽。
 
-**这一季回答的问题**：类型不只是防御工具，是**设计工具**——不是写完代码再加类型，而是通过类型先把约束讲清楚。
+- [[react]] — 前端枢纽。Lexical / Next / Radix / shadcn 全部反向汇聚到这
+- [[shadcn-ui]] — 不是组件库，是代码分发协议
+- [[tanstack-query]] — 服务端状态是独立物种，不是 Redux 的子集
+- [[zustand]] — 101 行核心 + 反 Provider 派的极简心智
+- [[radix-ui]] — 无样式 primitive 的工程化范式
 
----
-
-### Season 3 · 下钻：构建与运行时（抽象下钻）
-
-| # | 项目 | 关键判断 |
-|---|------|---------|
-| 9 | [evanw/esbuild](/study/projects/esbuild/) ✅ | 为什么这么快：一个人写的 Go 工程美学 |
-| 10 | [vitejs/vite](/study/projects/vite/) ✅ | dev / build 不对称——现代构建工具的胜出范式 |
-| 11 | [oven-sh/bun](/study/projects/bun/) ✅ | 全栈运行时的另一条路：性能优先 vs 兼容优先 |
-| 12 | [biomejs/biome](/study/projects/biome/) ✅ | 一个工具替代 ESLint + Prettier 的勇气和判断力 |
-
-**这一季回答的问题**：你天天用的 `npm run dev` 背后到底在做什么？为什么 esbuild 比 webpack 快两个数量级？AI 时代的工程师如何下钻到工具链底层？
+横向对比已写：[[swr]] 与 [[tanstack-query]] 的"全局事件广播 vs Query Observer"对照。
 
 ---
 
-### Season 4 · AI 协作（元学习）
+## 类型系统与设计工具
 
-| # | 项目 | 关键判断 |
-|---|------|---------|
-| 13 | [anthropics/claude-code](/study/projects/claude-code/) ✅ | 你天天用的工具自己怎么写的——元学习 |
-| 14 | [modelcontextprotocol/typescript-sdk](/study/projects/mcp-ts-sdk/) ✅ | MCP 协议设计：让 AI 调用外部世界的最小契约 |
-| 15 | [vercel/ai](/study/projects/vercel-ai/) ✅ | Stream / structured / multimodal 的产品化范式 |
-| 16 | [continuedev/continue](/study/projects/continue/) ✅ | IDE 内 AI 助手的另一种实现路径 |
+类型不是"写完代码再加"，是**先把约束讲清楚再写**。
+理论根在论文侧 [[hindley-milner]]（126 反向链接，全站最高）和 [[lambda-calculus]]。
 
-**这一季回答的问题**：和 AI 协作不是"按一个按钮"，是一套**新的协议、状态机、产品形态**。当代码生成变便宜，**编辑、审阅、整合**的能力反而稀缺。
-
----
-
-### Season 5 · 系统编辑 + 验证（真实产品味道）
-
-| # | 项目 | 关键判断 |
-|---|------|---------|
-| 17 | [excalidraw/excalidraw](/study/projects/excalidraw/) ✅ | canvas + 协同的最小心脏，怎么把"画图"做成产品 |
-| 18 | [honojs/hono](/study/projects/hono/) ✅ | 极简边缘后端：API 设计取舍如何影响开发体验 |
-| 19 | [microsoft/playwright](/study/projects/playwright/) ✅ | 浏览器自动化的工程艺术：跨进程、跨语言的契约设计 |
-| 20 | [Effect-TS/effect](/study/projects/effect/) ✅ | 函数式错误 + 资源管理——TS 生态的"另一个未来" |
-
-**这一季回答的问题**：当代码生成变便宜，"如何确信这段代码真的对"和"如何把代码组织得能读"会变成区分线。
+- [[zod]] — schema-first：编译期类型 + 运行时校验同源
+- [[trpc]] — 协议消失：函数即 API，类型从 server 流到 client
+- [[tanstack-router]] — 类型当 UX 工具：路由、loader、search params 全推断
+- [[xstate]] — 把"看起来简单的状态"画成图
+- [[effect]] — 函数式错误 + 资源管理，TS 生态的另一个未来
 
 ---
 
-## 已消化
+## 构建与运行时
 
-- [shadcn/ui](/study/projects/shadcn-ui/)（2026-05-27）
-- [TanStack Query](/study/projects/tanstack-query/)（2026-05-27）
-- [zustand](/study/projects/zustand/)（2026-05-27）
-- [vercel/swr](/study/projects/swr/)（2026-05-27）— Season 1 完成
-- [colinhacks/zod](/study/projects/zod/)（2026-05-27）— Season 2 开篇
-- [statelyai/xstate](/study/projects/xstate/)（2026-05-27）
-- [TanStack/router](/study/projects/tanstack-router/)（2026-05-27）
-- [trpc/trpc](/study/projects/trpc/)（2026-05-27）— Season 2 完成
-- [evanw/esbuild](/study/projects/esbuild/)（2026-05-27）— S3 开篇
-- [vitejs/vite](/study/projects/vite/)（2026-05-27）
-- [oven-sh/bun](/study/projects/bun/)（2026-05-27）
-- [biomejs/biome](/study/projects/biome/)（2026-05-27）— Season 3 完成
-- [anthropics/claude-code](/study/projects/claude-code/)（2026-05-27）— S4 开篇
-- [modelcontextprotocol/typescript-sdk](/study/projects/mcp-ts-sdk/)（2026-05-27）
-- [vercel/ai](/study/projects/vercel-ai/)（2026-05-27）
-- [continuedev/continue](/study/projects/continue/)（2026-05-27）— Season 4 完成
-- [excalidraw/excalidraw](/study/projects/excalidraw/)（2026-05-28）— S5 开篇
-- [honojs/hono](/study/projects/hono/)（2026-05-28）
-- [microsoft/playwright](/study/projects/playwright/)（2026-05-28）
-- [Effect-TS/effect](/study/projects/effect/)（2026-05-28）— Season 5 完成 / 全队列完成
+`npm run dev` 背后到底在做什么。这条线适合下钻一层、补"看不见的速度差异"。
+
+- [[esbuild]] — 一个人写的 Go 工程美学，比 webpack 快两个数量级的源头
+- [[vite]] — dev / build 不对称，现代构建工具的胜出范式
+- [[bun]] — 全栈运行时另一条路：性能优先 vs 兼容优先
+- [[biome]] — 一个工具替代 ESLint + Prettier 的勇气与判断
+- [[turborepo]] / [[nx]] — monorepo 缓存与任务图
 
 ---
 
-## 关于"为什么是这 20 个，不是别的"
+## 分布式系统
 
-这个清单的偏见：
+这条线在站点里**论文反向链接最浓**：[[paxos-1998]] (67) / [[raft]] (63) /
+[[lamport-1978]] (56) 三篇构成共识与时序的地基。项目侧映射工程化形态。
 
-- **不收"功能强大但读不出取舍"的项目**——比如 Material UI 的源码读到累，但学不到判断力
-- **不收同类竞品并列**——比如 Mantine 是 shadcn 的同类，已经收了 shadcn，Mantine 进不来
-- **不收维护停滞或商业模式扭曲的项目**——比如 Redux 在原帖（TanStack Query 笔记）里已经做过对照，单独写笔记意义不大
-- **优先收"心脏代码能在 1-2 个文件里读完"的项目**——zustand vanilla.ts (101 行) 是范例
-- **优先收"展示了清晰判断"的项目**——biome 拿掉 ESLint + Prettier 是判断力，不是工具
+- [[etcd]] — Raft 的工业级实现，Kubernetes 的状态心脏
+- [[tikv]] / [[tidb]] — Raft + Percolator 在生产规模的开源演进
+- [[cockroachdb]] — Spanner 思路的开源化（对应论文 [[spanner-2012]]）
+- [[temporal]] — 工作流编排：把"长任务 + 重试 + 状态"变成可写的代码
+- [[kafka]] — 事件日志的事实标准；[[pulsar]] 是同问题的另一种回答
 
-如果你觉得某个项目应该进来或出去，可以提"X 应该进，因为 Y"——
-反例能改我的判断。
+---
+
+## 数据库
+
+[[postgresql]] 一个项目笔记被 66 篇反向引用——drizzle / prisma / postgres-js
+全汇到这里。论文根 [[bigtable-2006]] / [[aries-1992]] / [[spanner-2012]]。
+
+- [[postgresql]] — 关系数据库的工程枢纽
+- [[sqlite]] — 嵌入式 + WAL，单文件数据库的极简哲学
+- [[clickhouse]] — 列式 OLAP 的开源王者
+- [[duckdb]] — 进程内 OLAP，"SQLite for analytics"
+- [[mongodb]] / [[cassandra]] — 文档与宽列两条非关系路线
+
+---
+
+## 基础设施与编排
+
+[[kubernetes]] 项目笔记被 66 篇反向引用，跨容器/调度/网络多主题。
+近 30 天 444 commits 集中在这条线，是站点最热的写作区。
+
+- [[kubernetes]] — 基础设施门面
+- [[terraform]] / [[pulumi]] — 声明式基础设施的两种世界观
+- [[helm]] — Kubernetes 包管理的 de facto
+- [[istio]] / [[envoy]] — 服务网格 + L7 代理
+- [[prometheus]] / [[grafana]] — 监控的事实组合
+
+---
+
+## 机器学习与 AI 框架
+
+[[pytorch]] 项目笔记被 67 篇反向引用，是 ML 框架枢纽。
+论文根 [[attention]] (103) / [[bert]] (42)。
+
+- [[pytorch]] — 动态图 + autograd，论文实现侧的反向引最多
+- [[vllm]] / [[sglang]] — LLM 推理引擎，PagedAttention 与 RadixAttention 两路
+- [[ray]] — 分布式 Python 的统一抽象
+- [[ollama]] — 本地 LLM 跑起来的最低门槛
+- [[comfyui]] — 节点式工作流，AI 图像生产的可编排心智
+
+---
+
+## AI Agent
+
+近 30 天新建 10+ 篇 self-evolving / agent 笔记，是站点正在长出的新主题。
+工程焦点：协议、状态机、工具契约。
+
+- [[claude-code]] — 你天天用的工具自己怎么写的，元学习
+- [[mcp-ts-sdk]] — MCP 协议设计：让 AI 调用外部世界的最小契约
+- [[langchain]] / [[llamaindex]] — 早期 agent 框架的两种取舍
+- [[autogen]] / [[crewai]] — 多 agent 协作的两条路
+- [[anthropic-cookbook]] — 一线工程范式的样本库
+
+---
+
+## 编译器与编程语言
+
+PL 理论在论文侧根扎得最深：[[hindley-milner]] / [[lambda-calculus]] /
+[[hoare-logic]] 三篇加起来 253 反向链接。项目侧覆盖 IR 与现代实现。
+
+- [[ast-grep]] — 结构化代码搜索，CST 层的 grep
+- [[neovim]] / [[helix]] — 编辑器即编译期前端，模态编辑两条路线
+- [[turborepo]] — task graph + 远程缓存，是构建系统也是 PL 思维
+- [[arrow-rs]] — 列式内存格式的 Rust 实现，跨语言 IR
+
+---
+
+## 信息检索与向量库
+
+- [[meilisearch]] / [[typesense]] — 全文检索的开发者友好两路
+- [[elasticsearch]] — Lucene 之上的事实标准
+- [[weaviate]] / [[qdrant]] / [[milvus]] — 向量库三家的取舍
+- [[faiss]] — 向量检索的底层算法库
+- [[ann-benchmarks]] — 横向 benchmark 的事实参考
+
+---
+
+## 数据可视化
+
+- [[d3]] — SVG 操控的祖宗
+- [[echarts]] — 工业级开箱可视化
+- [[antv-g2]] / [[antv-g6]] — 语法图 + 关系图两条路
+- [[visx]] — D3 + React 的工程化整合
+- [[3d-force-graph]] — 三维关系图的现成方案
+
+---
+
+## CLI 与开发者体验
+
+- [[ripgrep]] — grep 替代品，Rust 工程美学样本
+- [[fzf]] / [[zoxide]] — 模糊匹配重塑命令行交互
+- [[lazygit]] — TUI git 客户端的事实标准
+- [[bat]] / [[starship]] — cat 与 prompt 的现代化重写
+- [[ast-grep]] — 结构化搜索，比正则准
+
+---
+
+## 区块链
+
+近 30 天 44 篇集中写作。论文根侧侧重共识，项目侧侧重 EVM 与替代 L1。
+
+- [[solana]] — 单链高性能的工程取舍
+- [[aptos-core]] — Move 语言 + 并行执行
+- [[hardhat]] / [[foundry]] — Solidity 开发框架两路
+- [[arbitrum]] — Optimistic Rollup 的代表实现
+
+---
+
+## 图形学与画布
+
+- [[konva]] — 2D canvas 的封装事实标准
+- [[excalidraw]] — canvas + 协同的最小心脏
+- [[3d-force-graph]] — 三维关系图运行时
+
+论文侧 pillar：[[3d-gaussian-splatting]] (41 反向链接) 是近年 3D 渲染拐点。
+
+---
+
+## 全景 atlas
+
+- 项目全景（726 篇按主题分组、反向链接热度、消化状态）：[[projects-atlas]]
+- 论文全景（785 篇按子领域、pillar 标记、未消化队列）：[[papers-atlas]]
+- 论文推荐入口（与本页平行的论文版导航）：[[papers-queue]]
+- 方法论与挑选标准：[[about]] / [[method]] / [[papers-method]]
+
+## 这页的偏见
+
+- 不收"功能强大但读不出取舍"的项目——读到累但学不到判断力
+- 不收同类竞品并列——已收 [[shadcn-ui]] 就不再单独写 Mantine
+- 不收维护停滞或商业模式扭曲的项目
+- 优先收"心脏代码能在 1-2 个文件读完"的项目——[[zustand]] vanilla.ts 是范例
+- 优先收"展示了清晰判断"的项目——[[biome]] 拿掉 ESLint+Prettier 是判断力
+
+如果你觉得某个项目应该进 pillar 或被替换，提"X 应该进，因为 Y"。
+反例能改判断；凑数不行。
