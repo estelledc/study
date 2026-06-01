@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 785 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 791 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：785 篇
+- **总数**：791 篇
 - **已分类**：139
-- **未分类**：646（落入"其他 / 待分类"段）
+- **未分类**：652（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 646 |
+| [其他 / 待分类](#其他--待分类) | 652 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 646 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 652 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -492,6 +492,7 @@ sidebar:
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
 | `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) |
 | `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) |
+| `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) |
@@ -696,6 +697,7 @@ sidebar:
 | `mills-ntp-1991` | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) |
 | `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) |
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) |
+| `mind-skill` | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) |
 | `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) |
@@ -842,6 +844,9 @@ sidebar:
 | `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) |
 | `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) |
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |
+| `skill-as-pseudocode` | [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) |
+| `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) |
+| `skill-sd-self-distillation` | [Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏](/study/papers/skill-sd-self-distillation/) |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |
 | `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) |
 | `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) |
@@ -937,6 +942,7 @@ sidebar:
 | `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) |
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
+| `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) |
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) |
@@ -953,7 +959,7 @@ sidebar:
 
 ---
 
-## 全部 785 篇（字母序）
+## 全部 791 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1192,6 +1198,7 @@ sidebar:
 | `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) | 其他 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
+| `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) | 其他 |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 其他 |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) | 其他 |
@@ -1429,6 +1436,7 @@ sidebar:
 | `mills-ntp-1991` | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) | 其他 |
 | `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) | 其他 |
 | `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) | 其他 |
+| `mind-skill` | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | 其他 |
 | `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) | 其他 |
 | `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) | 其他 |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | 其他 |
@@ -1607,6 +1615,9 @@ sidebar:
 | `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
 | `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) | 其他 |
 | `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) | 其他 |
+| `skill-as-pseudocode` | [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) | 其他 |
+| `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) | 其他 |
+| `skill-sd-self-distillation` | [Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏](/study/papers/skill-sd-self-distillation/) | 其他 |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) | 其他 |
 | `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) | 其他 |
 | `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | 其他 |
@@ -1726,6 +1737,7 @@ sidebar:
 | `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) | 其他 |
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) | 其他 |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |
+| `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | 其他 |
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) | 其他 |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) | 其他 |

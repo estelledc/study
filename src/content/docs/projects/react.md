@@ -169,6 +169,7 @@ function Greeting({ name }) {
 - [[dash]] —— Dash — Plotly 的 Python 仪表板框架
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
+- [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
 - [[framer-motion]] —— Framer Motion — React 声明式动画
@@ -187,6 +188,7 @@ function Greeting({ name }) {
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
+- [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
@@ -202,6 +204,8 @@ function Greeting({ name }) {
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
+- [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
+- [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[streamlit]] —— Streamlit — Python 几行写 Web 应用
 - [[stylex]] —— StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS
@@ -222,6 +226,7 @@ function Greeting({ name }) {
 - [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 - [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zustand]] —— Zustand — 极简 React 状态管理

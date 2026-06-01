@@ -145,6 +145,7 @@ prompt → CLIP text encoder → text emb → prior → image emb → decoder �
 
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
+- [[dit]] —— DiT — Diffusion Transformer
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆

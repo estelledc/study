@@ -144,7 +144,13 @@ Voyager 论文不是终点，它是一条路线的发车站。
 
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[cot]] —— Chain-of-Thought Prompting
+- [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
+- [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[react]] —— React UI 组件库
+- [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
+- [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
+- [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
+- [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 

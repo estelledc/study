@@ -167,6 +167,7 @@ Trial 2:
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法
 - [[cot]] —— Chain-of-Thought Prompting
+- [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 - [[react]] —— React UI 组件库
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
