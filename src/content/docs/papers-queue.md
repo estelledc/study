@@ -1,129 +1,250 @@
 ---
 title: 论文队列
-description: 围绕"未来工程师"4 个学科方向精选的 20 篇论文——按季度展开
+description: 按 topic 分组的 pillar 推荐 —— 站内 785 篇论文笔记里，每条主线挑 3-5 篇代表作做切入点
 sidebar:
   order: 4
 ---
 
-> **20 不是 200**。200 是凑数，凑数学不到判断力。每篇严格按 [8 层方法](/study/papers-method/)
-> 走完 Layer 4 复现——复述 200 篇 abstract 不如复现 20 篇 figure。
+> 站内累计 785 篇论文笔记，跨 14 个主题。这页不是"待读清单"，是
+> **入门指引** —— 每个 topic 给 3-5 篇 pillar 论文 + 一行说明它
+> 为什么是该 topic 的支点。看完一条主线的 pillar，你就拿到了
+> 该 topic 整张反向链接图的入口。
 
-## 选篇标准（5 条硬门槛）
+## 怎么用这页
 
-每篇必须同时满足：
+- 不知道某个 topic 从哪读 → 来这里挑该主题 3-5 篇 pillar
+- 想看完整 785 篇分布与主题地图 → [papers-atlas](/study/papers-atlas/)
+- 想要"如何精读一篇论文"的方法 → [papers-method](/study/papers-method/)
+- 想看跨论文 + 项目的混合阅读节奏 → [queue](/study/queue/)
 
-1. **有官方 repo / 第三方实现 / 能手算 toy** —— L4 复现是硬门槛
-2. **2026 视角下"为什么仍然该读"理由清楚** —— 奠基 / 当前 SOTA 的"敌人" / 被超越但思路仍活
-3. **能找到至少 1 篇前作 + 1 篇后作** —— 单点论文写不出 Layer 5
-4. **和你正在做的项目 / 学习实践能连得上** —— L6 不能空着
-5. **PDF 篇幅 ≤ 30 页**（综述类除外）
-
-## 进行中
-
-**🎉 全部 20 篇完成 ✅（2026-05-28）**
-
----
-
-## 4 季度（约 20 篇慢笔记）
-
-### Season A · AI Agent / LLM 系统（5 / 5 完成 ✅）
-
-| # | 论文 | 关键判断 |
-|---|------|---------|
-| 1 | [**ReAct: Synergizing Reasoning and Acting**](/study/papers/react/) (Yao et al., NeurIPS 2022) ✅ | "think-act-observe" 循环的祖宗——直接对应 Claude Code agent loop |
-| 2 | [**Chain-of-Thought Prompting Elicits Reasoning**](/study/papers/cot/) (Wei et al., NeurIPS 2022) ✅ | reasoning trace 为什么有用——ReAct 的根，emergent ability 的支点 |
-| 3 | [**Reflexion: Language Agents with Verbal RL**](/study/papers/reflexion/) (Shinn et al., NeurIPS 2023) ✅ | ReAct 没 retry 的硬伤怎么补——加自我反思层 |
-| 4 | [**Toolformer: LLM Can Teach Themselves to Use Tools**](/study/papers/toolformer/) (Schick et al., 2023) ✅ | 工具调用从 prompt 路线到 self-supervised 微调路线的分叉 |
-| 5 | [**SWE-bench: Can LLMs Resolve Real GitHub Issues?**](/study/papers/swe-bench/) (Jimenez et al., ICLR 2024) ✅ | 把 agent 思路从 demo 推到真工程任务的基准 |
-
-**这一季回答的问题**：从 ReAct 到 SWE-bench 这 2 年，agent 范式经历了什么取舍？
-chain-of-thought / acting / reflection / tools 这 4 件事是怎么从分散的 paper 拼成今天的产品形态的？
+每条 pillar 都给了 `[[slug]]` 双向链接，点进去就是该论文的笔记主页。
+backlinks 数字是"站内有多少篇笔记反向引用过它"，是"该论文在这个图里有多核心"
+的最直接指标。
 
 ---
 
-### Season B · 经典 CS / 系统设计（5 / 5 完成 ✅）
+## 全站 pillar TOP 10（先看这十篇，跨 topic 都受用）
 
-| # | 论文 | 关键判断 |
-|---|------|---------|
-| 6 | [**In Search of an Understandable Consensus Algorithm (Raft)**](/study/papers/raft/) (Ongaro & Ousterhout, USENIX 2014) ✅ | 把"可读性"当成研究贡献——共识协议从 Paxos 的天书走到能教学的版本 |
-| 7 | [**The Google File System**](/study/papers/gfs/) (Ghemawat et al., SOSP 2003) ✅ | 大文件 + 顺序读 + 节点频繁失败的工程现实如何反向定义文件系统接口 |
-| 8 | [**MapReduce: Simplified Data Processing on Large Clusters**](/study/papers/mapreduce/) (Dean & Ghemawat, OSDI 2004) ✅ | "限制表达能力换可扩展性"的范式典范——和 LangGraph 现在做的事是一脉 |
-| 9 | [**Time, Clocks, and the Ordering of Events**](/study/papers/lamport-1978/) (Lamport, 1978) ✅ | 分布式系统的"时间"为什么不是物理时钟——逻辑时钟与因果序的奠基 |
-| 10 | [**Dynamo: Amazon's Highly Available Key-value Store**](/study/papers/dynamo/) (DeCandia et al., SOSP 2007) ✅ | NoSQL 的源头——把 CAP 里的 AP 路线推到生产边界 |
+不挑 topic，按"反向链接最多 + 跨主题枢纽"排：
 
-**这一季回答的问题**：当代 AI / 应用工程师为什么还要读 70-00 年代的系统论文？
-答：你今天在 LangGraph / Temporal / Cloudflare Durable Objects 里遇到的所有"分布式问题"，
-源头都在这 5 篇。
+1. [[hindley-milner]] — PL 类型推断祖宗（126 backlinks）。TS / Rust / Swift /
+   Haskell 类型系统笔记最终都汇到这。读完它，"为什么 `let x = 1` 不用写
+   `: number`" 这个问题就闭合了。
+2. [[attention]] — Transformer 起点（103 backlinks）。所有 LLM / NLP / agents
+   笔记的根。零基础友好版已写，从"键值匹配"类比讲起。
+3. [[paxos-1998]] — 分布式共识地基（67 backlinks）。Raft / Spanner / Chubby /
+   etcd 全部反向引。读起来痛，但后面所有分布式论文都假设你懂它。
+4. [[lambda-calculus]] — PL 理论起点（64 backlinks）。Hindley-Milner / Hoare
+   逻辑 / 类型系统 / 求值策略全部依赖。
+5. [[raft]] — 可工程化共识（63 backlinks）。Paxos 的"教学版"，etcd / TiKV /
+   CockroachDB 反向引。零基础最常被问的就是这篇。
+6. [[hoare-logic]] — 形式化方法门面（63 backlinks）。跨 PL + 验证两条线，
+   程序正确性证明的基础语法。
+7. [[lamport-1978]] — 分布式时序奠基（56 backlinks）。逻辑时钟、happens-before、
+   因果序的祖宗，2025 年 CRDT / 向量时钟还在引。
+8. [[llvm]] — 编译器 / IR 范式（50 backlinks）。Rust / Swift / Julia / Clang
+   全部基于它的 IR + Pass 设计。
+9. [[spanner-2012]] — 全球分布数据库（48 backlinks）。TrueTime + 外部一致性
+   写进了所有现代分布式 DB 的设计文档。
+10. [[bigtable-2006]] — 列式存储起点（46 backlinks）。HBase / Cassandra /
+    DynamoDB / 各类 wide-column store 的源头设计。
 
----
-
-### Season C · 前端 / 编译器 / 工具链（5 / 5 完成 ✅）
-
-| # | 论文 | 关键判断 |
-|---|------|---------|
-| 11 | [**A Prettier Printer**](/study/papers/wadler-prettier/) (Wadler, 1998) ✅ | esbuild / biome / Prettier 的 IR 思路源头——一个 16 页论文定义了一代 formatter 的设计语言 |
-| 12 | [**Adaptive Functional Programming / Self-Adjusting Computation**](/study/papers/self-adjusting/) (Acar et al., POPL 2002) ✅ | Solid / Svelte 5 runes / Jotai 的祖宗——"细粒度响应式"的理论根 |
-| 13 | [**Trees that Grow**](/study/papers/trees-that-grow/) (Najd & Peyton Jones, JFP 2017) ✅ | TypeScript / Babel / SWC 的 AST 设计典范——"扩展点 + 类型安全"如何同时拿到 |
-| 14 | [**Push-Pull Functional Reactive Programming**](/study/papers/push-pull-frp/) (Elliott, ICFP 2009) ✅ | RxJS / SolidJS / Effect 的反应式编程理论——push 和 pull 不是二选一 |
-| 15 | [**Adapton: Composable, Demand-Driven Incremental Computation**](/study/papers/adapton/) (Hammer et al., PLDI 2014) ✅ | "增量计算"在编译器与 IDE 工具链的工程实现——rust-analyzer / Salsa 的源头 |
-
-**这一季回答的问题**：你日常用的"快"工具（esbuild / Vite / rust-analyzer）背后，
-快的不是工程优化，是 80-10 年代 PL 研究奠定的算法。
-
----
-
-### Season D · DX 实证研究（5 / 5 完成 ✅）
-
-| # | 论文 | 关键判断 |
-|---|------|---------|
-| 16 | [**The Impact of AI on Developer Productivity (GitHub Copilot RCT)**](/study/papers/copilot-rct/) (Peng et al., 2023) ✅ | AI 协作时代第一篇严肃 RCT——"Copilot 让你快了 X%"这种数字方法学上稳吗 |
-| 17 | [**What Makes a Great Software Engineer?**](/study/papers/great-swe/) (Li et al., ICSE 2015) ✅ | "工程师素质"用人类学方法访谈 59 个 Microsoft 资深工程师后归纳出的 53 条 |
-| 18 | [**Do Developers Read Compiler Error Messages?**](/study/papers/compiler-errors/) (Barik et al., ICSE 2017) ✅ | 眼动追踪 + 调查：工程师其实不看错误信息——这事直接改变了 Rust / Elm / Svelte 的 error UX |
-| 19 | [**Empirical Studies of Pair Programming**](/study/papers/pair-programming/) (Hannay et al., IST 2009) ✅ | 18 个 RCT 元分析——pair programming 真的"两倍人力换 1.5 倍质量"吗？ |
-| 20 | [**The Effects of CI on Software Development**](/study/papers/ci-effects/) (Ståhl & Bosch, JSS 2014) ✅ | CI 这件事的实证基础——你信奉的"快速反馈循环"有多硬的数据 |
-
-**这一季回答的问题**：编程是工程也是人类活动。"AI 让工程师更快"/"pair programming 更好"
-这些经验之谈，谁真的做过 RCT？看完这 5 篇你会对"软件开发是不是科学"有更冷静的判断。
+读完这 10 篇，你就拿到了站内 80% 反向链接图的根节点。
 
 ---
 
-## 已消化
+## 按 topic 分组的 pillar 推荐
 
-- [ReAct (Yao et al., NeurIPS 2022)](/study/papers/react/)（2026-05-28）— L4 用 Claude 跑了 1 题完整 trajectory；与 Brittle Foundations 2024 一并读
-- [A Prettier Printer (Wadler, 1998)](/study/papers/wadler-prettier/)（2026-05-28）— L4 100 行 Python 复现，width=30 输出与论文逐字一致；S3 季节开篇
-- [Chain-of-Thought (Wei et al., NeurIPS 2022)](/study/papers/cot/)（2026-05-28）— L4 跑同一道 GSM8K 风格题在 standard / CoT 两种 prompt 下对照
-- [ReAct (Yao et al., 2022)](/study/papers/react/) **重构版**（2026-05-28）— 用 deep-paper-note 15 步结构 + paper-comic 3 张 sketchnote 图（codex imagegen 生成 + webp 压缩）+ phd-skills 7 阶段复现，作为后续 18 篇的"状元篇"模板
-- [Reflexion (Shinn et al., NeurIPS 2023)](/study/papers/reflexion/)（2026-05-28）— L4 跑了一题 trial-error-reflect 完整循环，用 sr_0 反思修正 trial 2 答案；含 2 张 figure（架构 + Algorithm 1）
-- [Toolformer (Schick et al., 2023)](/study/papers/toolformer/)（2026-05-28）— L4 手算 self-supervised filter（Calculator vs Calendar 反例）；含 2 张 figure（pipeline + 两条路线对比）
-- [SWE-bench (Jimenez et al., ICLR 2024)](/study/papers/swe-bench/)（2026-05-28）— L4 读源码确认 F2P/P2P grading 协议；含 2 张 figure（评测流程 + 3-stage 数据 pipeline）。**Season A 完结篇**
-- [Raft (Ongaro & Ousterhout, USENIX 2014)](/study/papers/raft/)（2026-05-28）— L4 5 节点 toy 选举/故障/split vote 三场景手算；含 2 张 figure（状态机 + vs Paxos）。**Season B 开篇**
-- [GFS (Ghemawat et al., SOSP 2003)](/study/papers/gfs/)（2026-05-28）— L4 read/write/atomic-append 三场景手算；含 2 张 figure（架构 + 不做 vs 才做）
-- [MapReduce (Dean & Ghemawat, OSDI 2004)](/study/papers/mapreduce/)（2026-05-28）— L4 4 节点 WordCount toy + 故障注入手算；含 2 张 figure（执行模型 + 取舍）
-- [Lamport Time-Clocks (1978)](/study/papers/lamport-1978/)（2026-05-28）— L4 3 节点 logical clock + 互斥锁算法手算；含 1 张 figure（影响力地图）
-- [Dynamo (DeCandia et al., SOSP 2007)](/study/papers/dynamo/)（2026-05-28）— L4 5 节点 ring + sloppy quorum + concurrent update 三场景手算；含 1 张 figure（4 大技术四象限）。**Season B 完结篇**
-- [Adaptive Functional Programming (Acar et al., POPL 2002)](/study/papers/self-adjusting/)（2026-05-28）— L4 z=x+y 两阶段（initial + change propagation）手算；含 1 张 figure（mechanism）
-- [Trees that Grow (Najd & Peyton Jones, JFP 2017)](/study/papers/trees-that-grow/)（2026-05-28）— L4 Mini AST 4 phase 共享 traversal 手算；含 1 张 figure（extension fields）
-- [Push-Pull FRP (Elliott, ICFP 2009)](/study/papers/push-pull-frp/)（2026-05-28）— L4 mouse click + position 跟踪场景手算；含 1 张 figure（events vs signals）
-- [Adapton (Hammer et al., PLDI 2014)](/study/papers/adapton/)（2026-05-28）— L4 lazy demand-driven 三 phase 演示（change 不读 0 cost）；含 1 张 figure（SAC→Adapton→Salsa 演化）。**Season C 完结篇**
-- [Copilot RCT (Peng et al. 2023)](/study/papers/copilot-rct/)（2026-05-28）— L4 4 阶段方法学批判（任务/测量/selection/effect size）；含 1 张 figure（实验设计 + 主结果 + heterogeneity）。**Season D 启动**
-- [Great SWE (Li et al., ICSE 2015)](/study/papers/great-swe/)（2026-05-28）— L4 访谈协议复用 ("我团队 great engineer" 小研究)；含 1 张 figure（8 大类别）
-- [Compiler Errors (Barik et al., ICSE 2017)](/study/papers/compiler-errors/)（2026-05-28）— L4 个人 fixation 观察（17/83 比论文 30/70 更极端）；含 1 张 figure（眼动 setup + 4 findings）
-- [Pair Programming Meta-Analysis (Hannay et al., IST 2009)](/study/papers/pair-programming/)（2026-05-28）— L4 团队 PP pilot 设计；含 1 张 figure（forest plot + 3 outcomes）
-- [CI Effects (Ståhl & Bosch, JSS 2014)](/study/papers/ci-effects/)（2026-05-28）— L4 5 问 CI ROI 诊断；含 1 张 figure（pipeline + benefits/costs）。**🎉 第 20 篇 = 全部完成！**
+### 分布式系统（76 篇）
+
+四大支柱，缺一篇就讲不清后面的论文：
+
+1. [[paxos-1998]] —— 共识协议的"难懂祖宗"。所有"我们用 Paxos / Raft" 的
+   工程文档都默认你读过它。
+2. [[raft]] —— Paxos 的"可读版"，把"可教学性"列为研究贡献本身。
+3. [[lamport-1978]] —— 没有物理时钟的分布式系统怎么定义"先后"。
+4. [[dynamo]] —— NoSQL / 最终一致性的源头，把 CAP 里 AP 路线推到生产边界。
+5. [[gfs]] —— 大文件 + 顺序读 + 节点频繁失败的工程现实如何反向定义文件系统。
+
+衍生阅读路径：Paxos → Raft → Multi-Paxos → Spanner → CockroachDB / TiKV
+是分布式数据库共识的经典 5 站。
 
 ---
 
-## 关于"为什么是这 20 篇，不是别的"
+### 编程语言（76 篇）
 
-候选偏见：
+PL 是站内反向链接密度最高的 topic，pillar 都是"奠基级"：
 
-- **不收纯 survey** — survey 是别人嚼过的二手知识，对培养判断力价值低
-- **不收无 repo 的大规模训练论文** — L4 跑不了，进不了队列
-- **不收 venue 影响力存疑的论文**（除非作者本人值得追） — workshop / 会议 short paper 慎选
-- **优先收"和站点已有项目笔记能交叉引用的"** — Wadler 入选因为 esbuild + biome 笔记都引用过它
-- **优先收"前后作清晰的"** — 单点论文写不出 Layer 5
-- **AI Agent 季节多收近 2 年的** — 这是动态最快的领域，2024-2026 视角必读
-- **经典系统季节优先读 70-00 年代** — 当代系统论文质量参差，但经典论文经过时间筛选
+1. [[lambda-calculus]] —— PL 的"算术"。后面所有论文都假设你能读 λ 表达式。
+2. [[hindley-milner]] —— 类型推断的祖宗。OCaml / TS / Rust / Swift 都在变体。
+3. [[hoare-logic]] —— 程序正确性证明的基础语法，跨 PL + 形式化方法两线。
+4. [[wadler-prettier]] —— Prettier / esbuild / biome 的格式化 IR 思路源头。
+5. [[trees-that-grow]] —— TypeScript / Babel / SWC 的 AST 设计典范。
 
-如果你觉得某篇该进或该出，可以提"X 应该进，因为 Y"——
-反例能改我的判断。
+零基础读这条线建议顺序：lambda-calculus → hindley-milner → hoare-logic
+（前两篇先粗读，hoare 是分水岭）。
+
+---
+
+### 数据库（47 篇）
+
+经典 4 篇 + 现代 2 篇，覆盖 OLTP / OLAP / 全球分布：
+
+1. [[spanner-2012]] —— TrueTime + 外部一致性，定义了现代全球分布 DB 的语言。
+2. [[bigtable-2006]] —— 列式 / wide-column 设计起点。
+3. [[aries-1992]] —— 数据库恢复算法（WAL + redo/undo）的工程标准。
+4. [[dynamo]] —— AP 路线的 NoSQL 源头（也算分布式 pillar）。
+5. [[calvin-2012]] —— 确定性事务调度的另类路线，TiDB / FaunaDB 的影子。
+
+读完这 5 篇，你能解释为什么 Postgres / MySQL / Spanner / Cassandra 的事务模型
+长得不一样。
+
+---
+
+### 操作系统（46 篇）
+
+经典系统论文的"必读三件套"：
+
+1. [[unix-1974]] —— UNIX 哲学的源头文档（管道 / 一切皆文件 / 小工具组合）。
+2. [[lions-commentary]] —— V6 内核逐行讲解，OS 教学的开山之作。
+3. [[exokernel-1995]] —— 反"抽象"的极端思路，影响了 Unikernel / 现代容器
+   的设计哲学。
+4. [[mach-1986]] —— 微内核 + 消息传递，macOS / iOS 内核的祖先。
+5. [[xen-2003]] —— paravirtualization，云计算 hypervisor 时代的开端。
+
+---
+
+### 机器学习 / Transformer（44 篇）
+
+LLM 时代的"根 5 篇"：
+
+1. [[attention]] —— Transformer 起点，2017 之后所有 LLM 论文的祖宗。
+2. [[bert]] —— 预训练 + 双向 encoder 的范式典型。
+3. [[gpt-3]] —— "scale 是不是答案" 这个问题被推到极致的论文。
+4. [[chinchilla]] —— scaling law 的"修正版"，训练算力分配的标准引用。
+5. [[lora]] —— 大模型微调的工程标杆，几乎所有 PEFT 笔记都反向引。
+
+---
+
+### Agents / AI Agent（24 篇）
+
+2022-2026 年最快迭代的子领域，pillar 都是近 4 年的：
+
+1. [[react]]（论文，不是前端框架）—— "think-act-observe" 循环的祖宗，对应
+   今天 Claude Code / Cursor agent loop。
+2. [[cot]] —— Chain-of-Thought，reasoning trace 为什么有用，ReAct 的根。
+3. [[reflexion]] —— ReAct 没 retry 的硬伤怎么补：加自我反思层。
+4. [[toolformer]] —— 工具调用从 prompt 路线到 self-supervised 微调路线的分叉。
+5. [[swe-bench]] —— 把 agent 思路从 demo 推到真工程任务的基准。
+
+读完这 5 篇你就能看懂当前所有 agent 框架（LangGraph / AutoGen /
+crewAI / OpenHands）在抢什么空间。
+
+---
+
+### 形式化方法（27 篇）
+
+跨 PL + 验证两线，pillar 全部是"理论分水岭"：
+
+1. [[hoare-logic]] —— 前条件 / 后条件 / 不变量这套语法的源头。
+2. [[separation-logic]] —— 处理指针 + 堆的扩展，Rust borrow checker 的
+   远房亲戚。
+3. [[curry-howard]] —— 命题 = 类型，证明 = 程序的对应关系。
+4. [[tla-plus]] —— Lamport 的工程化形式化方法，AWS / MongoDB 实战引用最多。
+
+---
+
+### 编译器（11 篇）
+
+数量不多但全是支柱：
+
+1. [[llvm]] —— 现代编译器 IR + Pass 框架的事实标准。
+2. [[ssa-form]] —— 静态单赋值，几乎所有现代编译器优化的 IR 基础。
+3. [[lattice-dataflow]] —— 数据流分析的格论基础。
+4. [[graph-coloring-regalloc]] —— 寄存器分配的经典图染色路线。
+
+---
+
+### 图形学（36 篇）
+
+近 2 年 3D / 渲染领域被 NeRF 与 Gaussian Splatting 重新洗了一遍：
+
+1. [[3d-gaussian-splatting]] —— 2023-2024 实时 3D 渲染的"新祖宗"。
+2. [[nerf]] —— Neural Radiance Field，3D 重建被神经网络重写的起点。
+3. [[ray-tracing-1980]] —— Whitted ray tracing，路径追踪的奠基。
+4. [[reyes-1987]] —— Pixar 的 Reyes 架构，offline 渲染的经典思路。
+
+---
+
+### 网络协议（37 篇）
+
+Internet 协议栈的 pillar 通常 1980s-1990s，QUIC 是新一代：
+
+1. [[tcp-1981]] —— RFC 793，TCP 的源头规格。
+2. [[bgp-rfc1771]] —— Internet 路由的脊梁。
+3. [[end-to-end-1984]] —— "End-to-End Arguments in System Design"，
+   网络分层哲学的政治宣言。
+4. [[quic-2017]] —— TCP/TLS 替代路线的工程总结，HTTP/3 的基础。
+
+---
+
+### 信息检索（25 篇）
+
+从经典 IR 到向量检索：
+
+1. [[bm25]] —— TF-IDF 的工程标准变体，2025 年依然是"baseline 的 baseline"。
+2. [[pagerank]] —— Google 起家算法，图算法 + IR 的交叉点。
+3. [[hnsw]] —— 向量检索的现代支柱，Faiss / Milvus / pgvector 都基于它。
+4. [[colbert]] —— late-interaction retrieval，RAG 时代的 reranker 路线。
+
+---
+
+### Blockchain（44 篇）
+
+数量大但 pillar 集中：
+
+1. [[bitcoin-2008]] —— 中本聪白皮书，PoW + UTXO 模型的奠基。
+2. [[ethereum-yellowpaper]] —— 智能合约 + EVM 的形式化规范。
+3. [[pbft-1999]] —— 拜占庭容错的工程化版本，联盟链 / Tendermint 的根。
+4. [[zk-snarks]] —— 零知识证明在区块链落地的关键。
+
+---
+
+## 候选偏见（这页不收什么）
+
+- **不收无 repo / 无可复现实验的论文** —— 笔记里 L4 跑不了等于半成品
+- **不收纯 survey** —— survey 是别人嚼过的二手知识，培养判断力价值低
+- **不收 venue 影响力存疑的 short paper** —— workshop 论文除非作者本人值得追
+- **优先收反向链接 ≥ 30 的** —— pillar 的定义就是被反复引用
+- **优先收"前后作清晰、能跨 topic 串联的"** —— 单点论文写不出 Layer 5
+
+---
+
+## 各 topic 完整地图入口
+
+| Topic | 篇数 | atlas 入口 |
+|------|-----|-----------|
+| 分布式系统 | 76 | [papers-atlas#分布式系统](/study/papers-atlas/) |
+| 编程语言 | 76 | [papers-atlas#编程语言](/study/papers-atlas/) |
+| 数据库 | 47 | [papers-atlas#数据库](/study/papers-atlas/) |
+| 操作系统 | 46 | [papers-atlas#操作系统](/study/papers-atlas/) |
+| 机器学习 | 44 | [papers-atlas#机器学习](/study/papers-atlas/) |
+| Blockchain | 44 | [papers-atlas#blockchain](/study/papers-atlas/) |
+| 网络协议 | 37 | [papers-atlas#网络协议](/study/papers-atlas/) |
+| 图形学 | 36 | [papers-atlas#图形学](/study/papers-atlas/) |
+| 形式化方法 | 27 | [papers-atlas#形式化方法](/study/papers-atlas/) |
+| 通信 | 27 | [papers-atlas#通信](/study/papers-atlas/) |
+| 信息检索 | 25 | [papers-atlas#信息检索](/study/papers-atlas/) |
+| Agents / AI Agent | 24 | [papers-atlas#agents](/study/papers-atlas/) |
+| 编译器 | 11 | [papers-atlas#编译器](/study/papers-atlas/) |
+| NLP | 11 | [papers-atlas#NLP](/study/papers-atlas/) |
+
+总计 785 篇笔记。这页只是"切入点"，真要展开请走对应 topic 的 atlas
+分支。
+
+---
+
+## 反例改判
+
+如果你觉得某篇 pillar 该换 / 某 topic 漏了支柱，提"X 应该进，因为 Y"。
+反例能改我的判断 —— pillar 列表本身也是被反向链接和阅读频次动态调的。
