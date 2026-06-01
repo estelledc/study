@@ -139,6 +139,20 @@ class MinimalLLaVA(nn.Module):
 
 4. **会编**：LLaVA 继承了 LLM 的幻觉——会说"图里有一只猫"，但其实没有。POPE benchmark 专测这个，LLaVA-1.5 拿 85.9，比早期好但远没解决。
 
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 自然图像问答 / 图像描述（COCO 风格、生活照、网页截图）
+- 多模态指令跟随的快速原型——8 张 A100 一天能跑通完整 recipe
+- 学术 baseline——所有后续多模态 LLM 论文几乎都要和 LLaVA 系列对比
+
+**不适用**：
+
+- 高分辨率细节场景（医学影像、遥感、CAD 图纸）——CLIP 冻住限制视觉表征
+- 长视频理解——LLaVA 是单帧模型，多帧处理要靠 LLaVA-NeXT-Video / Video-LLaVA
+- OCR 密集场景（票据、长文档）——336 分辨率不够，要 LLaVA-1.6 切片或换 InternVL
+
 ## 历史小故事（可跳过）
 
 - **2021-02**：[[clip]] 发布，证明 "图像编码器 + 文本编码器对比学习" 能学到视觉-语言共享语义。但 CLIP 只能算相似度，不会对话。
@@ -161,3 +175,17 @@ class MinimalLLaVA(nn.Module):
 - [[clip]] —— LLaVA 的眼睛。理解 LLaVA 必先理解 CLIP 把图像-文本对齐到共享空间
 - [[llama]] —— LLaVA 的嘴和脑。LLaVA 用的是 LLaMA 的 instruction-tuned 版本 Vicuna
 - [[transformer]] —— CLIP-ViT 和 LLaMA 都基于 transformer；理解 patch token + attention 才能读懂 projector 为什么是 per-token 线性映射
+
+## 延伸阅读
+
+- LLaVA 原始论文：Liu et al. "Visual Instruction Tuning"（NeurIPS 2023）
+- LLaVA-1.5 改进：Liu et al. "Improved Baselines with Visual Instruction Tuning"（2023）
+- LLaVA-NeXT 博客：动态分辨率 + OCR 增强的工程细节
+- POPE benchmark 论文：专门测多模态 LLM 幻觉的标准评测
+
+## 反向链接
+
+被以下笔记引用：
+
+- [[clip]] —— 在"下游应用"段提到 LLaVA 是 CLIP 视觉编码器最知名的下游消费者
+- [[llama]] —— 多模态延伸里 LLaVA 是 LLaMA 接眼睛的标准模板

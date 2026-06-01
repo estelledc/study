@@ -139,6 +139,22 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient })
 
 前端用的搜索 key 必须用 `scoped api key` 派生（限定 collection / 限定 filter），不能直接把管理员 key 塞前端。漏配过这一步的项目很多——结果用户能用浏览器开发者工具拿到管理员 key 直接删库。
 
+## 适用 vs 不适用场景
+
+**适用**：
+
+- 中小数据集（千万级文档以下）的全文搜索，要求 P99 < 50ms 体验
+- Algolia 替代场景——已有 instant-search 前端，想自托管控制成本
+- 需要混合检索（关键词 + 向量）的 RAG 应用——一份数据库搞定
+- 小团队 / 创业公司——配置简单，单人运维就能撑起生产
+
+**不适用**：
+
+- 亿级以上文档、PB 级日志检索——Elasticsearch / OpenSearch 更适合
+- 需要复杂聚合 / 数据分析（Kibana 那种 dashboard）——Typesense 不是 OLAP
+- 强结构化复杂查询（多层嵌套 join、地理 + 时间范围多维交叉）——专用引擎更稳
+- 数据热更新极频繁的场景——内存索引重建有 IO 抖动
+
 ## 历史小故事
 
 - **2015 年**：Jason Bosco（创始人）和 Kishore Nallan 在做电商项目时，被 Algolia 月费几千美元劝退，开始研究自建搜索引擎
@@ -160,3 +176,16 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient })
 - [[redis]] —— 同样内存数据库；Redis 是 KV，Typesense 是搜索；常一起用做缓存+检索分层
 - [[postgresql]] —— 主存储常用关系库；CDC 同步到 Typesense 做搜索是常见架构
 - [[mongodb]] —— 文档库；和 Typesense 都是"以 JSON 文档为单位"思考
+
+## 延伸阅读
+
+- 官方 typesense.org/docs ——API 参考、HA 部署、向量检索都在这一站
+- "Typesense vs MeiliSearch vs Algolia" 对比博客——三家定位差异理得最清楚的一篇
+- RAFT 共识论文（[[raft]]）——理解 Typesense 集群选主和写入路径的底层机制
+
+## 反向链接
+
+被以下笔记引用：
+
+- [[elasticsearch]] —— 在"轻量替代"段落点名 Typesense 是开箱即用的小型方案
+- [[postgresql]] —— CDC 同步到搜索引擎的章节以 Typesense 为示例

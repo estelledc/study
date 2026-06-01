@@ -132,7 +132,7 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 - 大规模容器编排 → 用 [[kubernetes]]，Ansible 部署 k8s 集群可以，但管运行中的容器不合适
 - Windows 大规模管理 → 能管，但 WinRM 比 SSH 麻烦得多，不如用 Windows 原生的 DSC
 
-## 历史
+## 历史小故事
 
 - **2012 年**：Michael DeHaan 写出 Ansible（之前他是 Puppet 早期员工，对 agent 模型不满意）
 - **2013 年**：Ansible Inc. 成立，融资做商业化
@@ -156,3 +156,17 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 - [[docker]] —— 容器化后 Ansible 用得少了，但部署 Docker 本身仍常用
 - [[kubernetes]] —— k8s 集群初装常用 Ansible（kubespray 项目就是 ansible playbook）
 - [[nginx]] —— Ansible playbook 最常见的部署对象之一
+
+## 延伸阅读
+
+- 官方 docs.ansible.com 的"Getting Started"——半小时跑通第一个 playbook
+- "Ansible: Up and Running"（O'Reilly）——讲清 module / role / handler 的设计意图
+- kubespray 项目源码——大型 ansible 工程的范本，role 结构 / inventory 分层值得参考
+
+## 反向链接
+
+被以下笔记引用：
+
+- [[terraform]] —— "搭档"段落点名 Ansible 是装修阶段的标配
+- [[kubernetes]] —— 集群引导章节提到 kubespray 这类 ansible 方案
+- [[nginx]] —— 部署示例里多次以 ansible playbook 形式给出
