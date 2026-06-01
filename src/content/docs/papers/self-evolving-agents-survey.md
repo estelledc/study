@@ -159,6 +159,7 @@ A-MEM、MemGPT、Generative Agents 都改 **Agent System 的记忆模块**：把
 - [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
 - [[llm-wiki-retrieval-reasoning]] —— LLM-Wiki — 把外部知识编译成 agent 自己的"维基"
 - [[memcoder-co-evolution]] —— MemCoder — code agent 跟着你 git commit 一起成长
+- [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
 - [[self-evolving-recsys-2602]] —— Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线

@@ -160,5 +160,4 @@ result = con.execute("""
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-- [[starrocks]] —— StarRocks — MPP 列存数据库
 

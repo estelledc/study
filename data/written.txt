@@ -10,6 +10,7 @@ adapton
 aes
 afs-1988
 agda-norell
+agent-r1-2511
 agentless
 akamai-2002
 akamai-2010
@@ -242,6 +243,7 @@ eros-1999
 eswaran-1976
 esx-memory-2002
 ethane-2007
+eve-agent-evidence
 evo-memory-2511
 exg-experience-graphs
 exokernel-1995
@@ -418,6 +420,7 @@ liu-2020-dlss
 llama
 llava
 llm-int8-2022
+llm-wiki-retrieval-reasoning
 llvm
 lmdb-2011
 local-type-inference
@@ -457,6 +460,7 @@ medusa-2024
 megastore-2011
 megatron-lm
 memcached-fb-2013
+memcoder-co-evolution
 mencius-2008
 mermaid
 mesa-optimization-2019
@@ -624,6 +628,8 @@ self-adjusting
 self-consistency-2022
 self-customization
 self-evolving-agents-survey
+self-evolving-recsys-2602
+self-evolving-software-agents
 self-pic
 self-rag-2023
 self-refine-2023

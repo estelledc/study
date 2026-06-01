@@ -141,7 +141,6 @@ DiT 论文从挂 arXiv 到工业全面接受，花了一年半。架构革命从
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[attention]] —— Attention Is All You Need
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddim-2020]] —— DDIM — 把扩散模型 1000 步采样压到 50 步
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
