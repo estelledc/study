@@ -76,3 +76,27 @@ h1, h2, h3 {
 .return-to-hub:hover {
   border-bottom-color: var(--sl-color-text-accent);
 }
+
+/* sidebar active/hover 可读性修复
+ * Starlight 默认 [aria-current="page"] 用纯 accent 当背景，导致橙底吞文字。
+ * 改用 tint 背景 + 正常字色 + 左 accent border 做"被选中"信号。
+ */
+.sidebar-content a[aria-current="page"],
+.sidebar-content a[aria-current="page"]:hover,
+.sidebar-content a[aria-current="page"]:focus {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-text);
+  border-left: 3px solid var(--sl-color-text-accent);
+  padding-left: calc(var(--sl-sidebar-pad-x, 0.5rem) - 3px);
+  font-weight: 600;
+}
+
+.sidebar-content a:hover:not([aria-current="page"]) {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-text);
+}
+
+/* dark mode 提高 tint 对比度（覆盖默认 0.18 → 0.28） */
+:root[data-theme="dark"] {
+  --sl-color-accent-low: rgba(232, 138, 115, 0.28);
+}
