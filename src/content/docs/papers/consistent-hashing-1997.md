@@ -157,6 +157,7 @@ hash(k) % 4 → [0,1,2,3,0,1,2,3]
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[chord-2001]] —— Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 - [[donar-2010]] —— DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题
+- [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
 - [[lsh-indyk-1998]] —— LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
 - [[memcached]] —— Memcached — 经典内存缓存

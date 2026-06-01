@@ -150,6 +150,7 @@ Apollo 不回滚，**server 自己处理**：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[raft]] —— Raft — 易理解的共识算法

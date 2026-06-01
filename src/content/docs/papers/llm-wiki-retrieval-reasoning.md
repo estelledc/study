@@ -148,6 +148,7 @@ AuthTrace 是论文自己提出的 benchmark，专测"答案需要跨多个 doc 
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
 - [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
 - [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
+- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 - [[self-evolving-software-agents]] —— BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
 

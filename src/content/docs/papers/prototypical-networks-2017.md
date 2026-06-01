@@ -154,5 +154,6 @@ def predict(text):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[attention]] —— Attention Is All You Need
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[maml-2017]] —— MAML — 学一个"好起点"，几步就能学会新任务
 

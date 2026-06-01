@@ -160,6 +160,7 @@ D, I = index.search(query, k=10)                 # 毫秒级
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
 - [[gptq-2023]] —— GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[salton-vsm-1975]] —— Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 - [[scann-2020]] —— ScaNN — 让向量量化只精修「客户会看到的那一面」
 

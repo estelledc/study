@@ -152,5 +152,6 @@ Twine: 开始重启
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 

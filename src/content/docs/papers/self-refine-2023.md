@@ -161,4 +161,6 @@ Refiner："这家餐厅菜品丰富，下次希望上菜更快、温度更理想
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
+- [[react]] —— React UI 组件库
+- [[reflexion]] —— Reflexion — 让 LLM 自我反思
 

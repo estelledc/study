@@ -144,6 +144,7 @@ client read key="foo"
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[badger]] —— Badger — Go 写的键值分离 LSM
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库

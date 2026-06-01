@@ -156,4 +156,5 @@ Screened: min ‖∇χ - V‖² + λ Σᵢ |χ(pᵢ) - 0.5|²
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 

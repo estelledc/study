@@ -151,6 +151,7 @@ PPO 思想越过参数边界进入文本空间，是当下 RL 研究最反直觉
 - [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
+- [[ppo]] —— PPO — Proximal Policy Optimization
 - [[react]] —— React UI 组件库
 - [[skill-as-pseudocode]] —— Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
 - [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏

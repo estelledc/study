@@ -190,5 +190,6 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient })
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[raft]] —— Raft — 易理解的共识算法
 - [[redis]] —— Redis — 内存键值数据库
 

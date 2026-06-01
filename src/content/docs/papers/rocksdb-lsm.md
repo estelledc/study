@@ -165,7 +165,6 @@ opts.compaction_style = rocksdb.kCompactionStyleLevel    # 写多读少
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库

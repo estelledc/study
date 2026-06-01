@@ -156,6 +156,7 @@ map.firstKey();   // O(log n) 有序查询
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)

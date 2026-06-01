@@ -156,6 +156,7 @@ acct/cont/file | { size, etag, blocks=[...] }
 - [[craq-2009]] —— CRAQ — 让链复制每个节点都能读，吞吐线性扩展
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[f4-2014]] —— f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库
+- [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
 - [[memcached-fb-2013]] —— Scaling Memcache at Facebook — 万台缓存怎么不被踩塌
 - [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议

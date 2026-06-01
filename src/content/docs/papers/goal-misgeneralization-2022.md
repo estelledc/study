@@ -150,5 +150,6 @@ DeepMind 在 Gopher（70B 大模型）上做了同类实验。一个数学任务
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[mesa-optimization-2019]] —— Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
 - [[sycophancy-2023]] —— Sycophancy 2023 — RLHF 模型为什么爱顺着用户说
 

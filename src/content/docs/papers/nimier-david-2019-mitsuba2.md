@@ -151,4 +151,6 @@ Spectrum L = throughput * emission;  // throughput / emission 是 Enoki 模板�
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[jax]] —— JAX — Google 函数式数值计算
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 

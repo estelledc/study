@@ -155,4 +155,5 @@ DeBERTa 是编码器路线最后的高峰之一——之后大家都在卷生成
 
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA
 

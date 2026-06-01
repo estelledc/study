@@ -162,5 +162,6 @@ mmap 在这里的价值：**几十个 worker 进程共享一份索引**，每个
 
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
 - [[faiss]] —— FAISS — 向量检索的标准件库
+- [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
 

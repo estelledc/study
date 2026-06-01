@@ -157,6 +157,7 @@ static slabclass_t slabclass[MAX_NUMBER_OF_SLAB_CLASSES];
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[consistent-hashing-1997]] —— Consistent Hashing — 加机器只搬一小部分数据的哈希环
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[redis]] —— Redis — 内存键值数据库
