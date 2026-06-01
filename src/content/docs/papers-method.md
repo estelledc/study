@@ -1,23 +1,38 @@
 ---
 title: 怎么消化一篇论文
-description: 8 层论文阅读方法论——把 PDF 变成你能转述、复现、批判的判断力
+description: 8 层论文方法论——把 PDF 变成你能转述、复现、批判的判断力
 sidebar:
   order: 3
 ---
 
-> 这是这个站点所有论文笔记遵循的方法论。
+> 这是站点所有论文笔记的共同骨架。
 > 项目笔记（[7 层](/study/method/)）回答"代码是怎么写的"；论文笔记回答"想法是怎么验证的"。
 > 两边的硬底线相同：**不读源 / 原文，不写笔记**。
+
+## 站点的论文体量
+
+截至 2026-06，论文目录共 785 篇笔记，覆盖：
+
+- 分布式系统 76 篇（[[paxos-1998]] / [[raft]] / [[lamport-1978]] / [[spanner-2012]]）
+- 编程语言 + 类型论 76 篇（[[hindley-milner]] / [[lambda-calculus]] / [[hoare-logic]]）
+- 数据库 47 篇（[[bigtable-2006]] / [[aries-1992]]）
+- 机器学习 / NLP 55 篇（[[attention]] / [[bert]]）
+- 图形学 36 篇（[[3d-gaussian-splatting]]）
+- 编译器 + 形式化方法 38 篇（[[llvm]] / [[hoare-logic]]）
+
+旗舰反向链接最多的 4 篇是 [[hindley-milner]]（126）、[[attention]]（103）、[[paxos-1998]]（67）、[[raft]]（63）——
+所有同方向后续笔记都汇到这几篇。**新写的论文笔记应主动 link 回这些根**，不要让节点孤立。
 
 ## 失败模式（先看这个）
 
 不及格的论文笔记：
 
 - abstract + contributions 翻译，没读过任何引用论文
-- "方法"段照抄公式没解释**为什么这么定义**
+- "方法"段照抄公式，没解释**为什么这么定义**
 - 没碰过代码 / 没看过 figure 的原始坐标
 - "局限性"段抄作者的 limitations 章节，没加自己的怀疑
 - 没有"敌人"——看不出这篇论文的前作是谁、被什么后作超越
+- 没复现任何东西（连最弱的降级路径都没走）
 
 任意一条 → 不及格，要重做。
 
@@ -38,12 +53,8 @@ sidebar:
 抓硬指标，建立尺度感。命令：
 
 ```bash
-# 用 LightRead CLI
 lr search "<title>" --limit 3 --format json | jq '.[] | {title, year, authors, citations}'
-
-# 看是否有官方 repo（论文页面 / arXiv abs 页面通常有 link）
 lr graph build "<arxiv-id>"  # 引用图谱
-
 # 历年版本（v1 到 v3 的差别经常很大）
 # 在 arxiv.org/abs/<id> 看 [v1] [v2] [v3]
 ```
@@ -60,7 +71,7 @@ lr graph build "<arxiv-id>"  # 引用图谱
 
 判断：
 
-- 引用 < 50 且 > 1 年 → 影响力存疑，记笔记时标"小众但有意思" / 直接降级
+- 引用 < 50 且 > 1 年 → 影响力存疑，标"小众但有意思" / 直接降级
 - 一作是博士生 → 看导师是谁，能解释立场
 - v3 大改过 → 在笔记里专门写"v1 vs v3 改了什么"，这往往就是审稿意见
 
@@ -84,11 +95,10 @@ lr graph build "<arxiv-id>"  # 引用图谱
 操作：
 
 ```bash
-# 把 PDF 大纲列出来，标注每段角色
 lr pdf outline "<paper.pdf>"  # 或手工读目录
 ```
 
-输出："章节角色注释表"——每个 section 写一句它的角色：
+输出"章节角色注释表"——每个 section 写一句它的角色：
 
 ```
 1. Introduction      ← motivation + contribution 列表
@@ -130,20 +140,76 @@ lr pdf outline "<paper.pdf>"  # 或手工读目录
 
 **禁止**：贴一张图就放那里不解释——读者自己去 arXiv 也能看到同样的图。
 
-### Layer 4 · 复现一处（15 分钟）
+### Layer 4 · 复现一处（15-30 分钟）
 
-**这一层是论文笔记的核心，不能跳。**
+**论文笔记的核心**。这一层下面整理了完整的降级清单，按论文类型选路径。
 
-操作（按优先级降级）：
+#### 4.0 · 总原则
 
-1. **有官方 repo**：clone，跑 README 给的 quick start，跑出 paper 里的 1 个数字
-2. **只有第三方复现**：用第三方 repo，记下与原文数字的差距
-3. **LLM 调用类论文（ReAct / Voyager / Reflexion 等）**：允许降级到"用 OpenAI / Claude API 跑 1 个完整 trajectory"——不一定能对齐论文 score（论文用的是 PaLM / GPT-3 时代的模型），但必须把 think-act-observe 循环里的每一步真的打印出来
-4. **没 repo**：手算 toy 例子——找方法里的最小可执行单元，在 1-10 个数据点上算出来
-5. **完全无法复现**（纯理论 / 大规模训练 → 任何路径都不可行）：**降级或换论文**——这个站点不收"只能纸面读"的论文
+- 带不上数字的复现 = 没复现
+- 数字可以小（5 题 / 1 trajectory / 1 个 toy 推导），但必须**比论文少**且**和论文同维度**
+- 复现差距要写成"我跑了 X，得到 Y，论文是 Z，差距来自 W"——四个量都不能省
 
-输出：1 个具体的"我跑了 X，得到 Y，和论文里的 Z 差了 W"。
-带不上数字的复现 = 没复现。
+下面分四类降级清单。先按论文类型选大类，再按可用资源选具体路径。
+
+#### 4.1 · LLM / Agent / NLP 论文（如 [[attention]] / [[bert]] / ReAct / Voyager）
+
+| 路径 | 触发 | 怎么做 | 数字怎么对 |
+|---|---|---|---|
+| A. 跑官方 repo | 有 repo + GPU 够 | 跑 README quick start，复现 1 个数字 | 直接对 paper Table |
+| B. 跑第三方复现 | 官方无 repo / 跑不动 | huggingface / labml.ai / annotated 系列 | 标"vs 原文差 X%" |
+| C. 换 backend 跑 1 trajectory | 论文用 PaLM / GPT-3 时代模型 | 用 Claude / Llama 替代，**完整打印** think-act-observe 三元组 | 数字必然对不上，但流程必须能走通 |
+| D. Toy 数据集 self-replicate | 没法跑全 benchmark | 在 5-10 题 dev split 上跑，记 EM / F1 / step count | 5 题对 paper 的 100 题，标"小样本 vs 全集" |
+| E. 手画 attention map | 纯架构论文（attention 类） | 取 1 个句子，手算 / 跑代码画 attention 权重热图 | 与论文 figure 同位置对照 |
+
+**禁止降级到**：只读 README 不跑 / 只贴 paper 数字不打印自己的 trajectory。
+
+#### 4.2 · 经典 algorithm 论文（如 [[paxos-1998]] / [[raft]] / [[hindley-milner]] / [[lambda-calculus]] / [[aries-1992]]）
+
+| 路径 | 触发 | 怎么做 | 验证形式 |
+|---|---|---|---|
+| A. 写 ≤ 200 行实现 | 算法可压缩 | Raft leader election / HM 推断 / Paxos single-decree | 用 paper 的"trace example"作单测 |
+| B. 跑 reference impl | 有教学版（mit-6.824 / labml.ai） | 跑作业代码 / lab solution | 通过 paper 描述的 invariant 检查 |
+| C. 手推 trace | 纯算法 / 协议描述 | 在 3-5 个节点的小例子上手画状态序列 | 复现 paper 的 Figure / Example N |
+| D. 形式化模型 | 协议论文 | TLA+ / Alloy / Coq 写关键 invariant | 跑 model checker 验证 1 个安全性属性 |
+| E. 反例构造 | 找 paper 假设的边界 | 改一个假设，看算法什么时候挂 | 写出"如果去掉 quorum，会发生 X" |
+
+**经典算法的硬底线**：路径 C 是最低降级。即使是 80 年代纯理论论文，
+"在 3 节点小例子上手推一遍 [[paxos-1998]] 的 prepare/promise/accept"也必须做。
+
+#### 4.3 · 系统论文（如 [[spanner-2012]] / [[bigtable-2006]] / GFS / Dynamo / [[llvm]]）
+
+系统论文通常没有可复现的"数字"——你拿不到 Google 的机房。降级目标变成
+"找一个**可观测的等价物**"。
+
+| 路径 | 触发 | 怎么做 | 替代数字 |
+|---|---|---|---|
+| A. 跑开源克隆 | 有公认开源对应物 | Spanner→CockroachDB / Bigtable→HBase / GFS→HDFS / Dynamo→Cassandra | 在小规模上跑 paper 关键 workload，记 latency / throughput |
+| B. 文档对照 | 闭源系统 | 把 paper 的架构图 vs 开源克隆 README 的架构图，列差异表 | "克隆比 paper 多/少了什么组件" |
+| C. 单组件 demo | 关键技术可隔离 | 只复现 Spanner 的 TrueTime 思想（用 NTP 模拟）/ Bigtable 的 SSTable 写一个 mini 版 | 在 100 行内打印 1 个 read/write |
+| D. failure 注入 | 容错论文 | 杀 leader / 断网 / 时钟漂移，看系统行为是否符合 paper claim | 复现 paper 的"failure scenario N" |
+| E. 体量对照 | 实在跑不动 | 列 paper 的体量数字（节点数 / QPS / 数据量）vs 你能跑的体量，明确比例 | "我 3 节点 100 QPS vs paper 万节点百万 QPS，比例 1:33000" |
+
+**禁止降级到**：抄 paper 的架构图当自己的复现。架构图只是输入，复现要有可观测变化。
+
+#### 4.4 · 纯理论 / 形式化论文（如 [[hoare-logic]] / [[lambda-calculus]]）
+
+| 路径 | 触发 | 怎么做 | 验证形式 |
+|---|---|---|---|
+| A. 手算 toy 实例 | 任何定理 | ≥ 3 个不同实例（小数 / corner case / 极限情况） | 推导步骤完整写出 |
+| B. 反例构造 | 寻找定理边界 | 打破 1 个假设，看结论失效在哪 | 写出"如果去掉前提 X，反例是 Y" |
+| C. 形式化助手 | 有现成 Coq / Lean 库 | 跑 software-foundations / mathlib 对应章节 | 让 type checker 通过 |
+| D. 关联到工程 | 纯抽象的论文 | 找现实里的实现（[[hoare-logic]] → Dafny / SPARK / Frama-C） | "工程实现把这条 rule 写成代码 Y" |
+
+#### 4.5 · 任何类型都通用的"撞墙清单"
+
+如果以上路径全都跑不通，**不要硬写笔记**。考虑：
+
+- 换论文（这个站点宁缺勿滥，已经 785 篇够多了）
+- 标"待复现"放进 inbox，等条件成熟再做
+- 退到"读后感"格式（明确不是论文笔记，不放进 papers/ 目录）
+
+记住：站点的论文笔记的价值在于"我真的碰过它"。**不能复现的论文 → 不进 papers/**。
 
 ### Layer 5 · 谱系对比（15 分钟）
 
@@ -152,9 +218,10 @@ lr pdf outline "<paper.pdf>"  # 或手工读目录
 例：
 
 - ReAct → 前作 Chain-of-Thought（只 think 不 act）→ 后作 Reflexion（act 后还能反思）
-- Raft → 前作 Paxos（不可读）→ 后作 Multi-Paxos / EPaxos
-- A Prettier Printer → 前作 Hughes 的 functional pretty printing → 后作 Wadler-Leijen 修正版
-- Copilot RCT (Peng 2023) → 前作 Xu et al. 2022 (in-IDE study) → 后作 SWE-bench / GAIA 评测
+- [[raft]] → 前作 [[paxos-1998]]（不可读）→ 后作 Multi-Paxos / EPaxos
+- [[attention]] → 前作 RNN seq2seq + content-based attention → 后作 Flash-Attention / Linear Attention
+- [[hindley-milner]] → 前作 Curry simple types → 后作 System F / 多态类约束系统
+- [[bigtable-2006]] → 前作 GFS（无结构化）→ 后作 [[spanner-2012]]（强一致性 + SQL）
 
 输出：对比表（不只是数字差异，还有**问题定义本身的差异**），加一句
 "什么场景这篇仍然有价值，什么场景已经被超越"。
@@ -173,14 +240,14 @@ lr pdf outline "<paper.pdf>"  # 或手工读目录
 
 **3 件你最不信的事**：
 
-不是"这个工作的 limitation 是什么"——这是空话。
-要像：
+不是"这个工作的 limitation 是什么"——这是空话。要像：
 
 - "Table 2 的 baseline 没有控制 prompt 长度变量，差距可能来自 prompt 工程而不是 method"
 - "Section 4.3 的 ablation 只在 7B 上做，但 main results 用 70B——scale 上结论是否还成立？"
 - "Limitations 段说 'we don't compare with X'，X 恰好是这条路线最强的对手"
 
 **延伸阅读**：精读完这篇后，下一步该读哪 2-3 篇，按什么顺序，回答什么问题。
+**优先选站点已有笔记**——能链回旗舰节点（[[paxos-1998]] / [[attention]] / [[hindley-milner]]）的链接最有价值。
 
 ## 笔记输出结构（按层映射）
 
@@ -210,10 +277,10 @@ sidebar:
 （Layer 3 输出：2-3 张 figure / algorithm 精读，每段含原图 + 旁注 + 怀疑）
 
 ## 复现一处
-（Layer 4 输出：跑了什么，得到什么数字，与论文差距）
+（Layer 4 输出：跑了什么，得到什么数字，与论文差距；类型选 4.1-4.4 一类）
 
 ## 谱系对比
-（Layer 5 输出：前作 + 后作 + 选型建议）
+（Layer 5 输出：前作 + 后作 + 选型建议；尽量 link 旗舰）
 
 ## 与你当前工作的连接
 （Layer 6 输出：今天/下月/不要 三段）
@@ -222,12 +289,39 @@ sidebar:
 （Layer 7 输出）
 ```
 
+## 旗舰参考（写新论文笔记前先读）
+
+按方向找一篇高质量笔记当尺子：
+
+| 方向 | 参考 | 反向链接 | 当尺子的理由 |
+|---|---|---|---|
+| Transformer / NLP | [[attention]] | 103 | 零基础友好 + 已写完整 8 层 |
+| 类型论 / PL | [[hindley-milner]] | 126 | 全站 PL 链都汇到这 |
+| 分布式共识 | [[paxos-1998]] | 67 | 后续 [[raft]] / spanner / chubby 全反向引 |
+| 工程化共识 | [[raft]] | 63 | 复现路径写得最完整 |
+| PL 理论 | [[lambda-calculus]] | 64 | 与 [[hindley-milner]] / [[hoare-logic]] 三角支撑 |
+| 形式化方法 | [[hoare-logic]] | 63 | 跨 PL + 验证两条线 |
+| 分布式时序 | [[lamport-1978]] | 56 | 时钟和因果关系所有讨论的根 |
+| 编译器 / IR | [[llvm]] | 50 | 工业基础设施门面 |
+| 数据库 / 全球分布 | [[spanner-2012]] | 48 | 强一致 + 时钟 |
+| 数据库 / 列式存储 | [[bigtable-2006]] | 46 | 后续 KV / 列存全反向引 |
+| NLP 预训练 | [[bert]] | 42 | 与 [[attention]] 一起读 |
+| 图形学 / 3D | [[3d-gaussian-splatting]] | 41 | 近 2 年最大冲击的渲染论文 |
+
+写新笔记前对照这些尺度——如果你的论文笔记结构、复现深度、链接密度都比这些差不少，
+要么是论文确实小众（在 Layer 0 就该标），要么是笔记没写到位。
+
 ## 时间分配的取舍
 
 完整 8 层做完约 90 分钟，对应一篇 500-800 行 markdown。
 
-如果时间紧（45 分钟轻量版）：跳 Layer 5 后作（只找前作），但**绝不跳 Layer 4**。
-不复现的论文笔记没有价值——这是这个站点的硬底线。
+如果时间紧（45 分钟轻量版）：
+
+- 跳 Layer 5 后作（只找前作）
+- Layer 7 减到 2 个怀疑
+- **绝不跳 Layer 4**
+
+不复现的论文笔记没有价值——这是站点的硬底线。
 
 ## 工具栈
 
@@ -239,262 +333,24 @@ sidebar:
 | 提 PDF 里的图 | `lr pdf image "<paper.pdf>" -p <page>` |
 | Agent 综述（多轮检索） | `lr agent "<topic>"` |
 
+## 质量门：状元篇 Checklist
+
+8 层是底线骨架；状元篇 Checklist 是高水位标准。完整版按论文类型分四个分支：
+
+- **method / algorithm paper**（如 [[attention]] / [[raft]]）→ phd-skills 7 阶段全走 + GitHub permalink
+- **empirical study paper** → stimuli inventory + self-replication + N=1 声明
+- **benchmark paper** → 在 dev split 子集上跑现成 model + 对照 baseline
+- **theory paper**（如 [[hoare-logic]] / [[lambda-calculus]]）→ ≥ 3 toy 推导 + 反例构造
+
+每类的具体 P0 条目（行数底线 / Figure 数 / 锚定数 / 怀疑数）见 [状元篇 Checklist v1.1](#)（待迁移到独立页）。
+站点 785 篇论文里目前满足完整状元标准的不到 5%——大部分仍在向状元篇加固的路上，这是正常进度。
+
 ## 这套方法的来源
 
 不是凭空发明，参考了：
 
-- "How to read a paper" by Srinivasan Keshav (three-pass 法)
+- "How to read a paper" by Srinivasan Keshav（three-pass 法）
 - Andrew Ng 的"读 5 篇 vs 读 50 篇"建议
 - Karpathy 的"读论文先复现关键 figure"实践
 - 项目笔记 7 层方法论的迁移与改造
-
----
-
-## 状元篇 Checklist v1
-
-> "状元篇"是这个站点对论文笔记的高水位标准——参考样本 [ReAct](/study/papers/react/)
-> （1100 行 + 3 张 sketchnote + 完整 7 阶段 reproduce）。
-> 这是 8 层方法论之上的可量化加固层，按层挂钩。
-> 对齐项目版 [状元篇 Checklist](/study/method/) 但有论文专属条目。
-
-### 严格度分级
-
-- **P0 必填**：缺则不及格，状元篇必须全部满足
-- **P1 推荐**：影响"状元"评级，应该满足
-- **P2 加分**：高阶项，做到额外加分
-
-### Frontmatter (P0)
-
-- [ ] `title` 含一句话定位（如 "ReAct — agent loop 的祖宗：think × act 的最小可执行三元组"）
-- [ ] `description` 1 行实质性叙事，禁 abstract 翻译
-- [ ] `sidebar.label` ≤ 25 字符 + 含 Venue/年（如 "ReAct (NeurIPS 2022)"）
-
-### Layer 0 · 核心信息表 (P0：≥ 9 字段)
-
-- [ ] 标题（英文）+ 标题翻译（中文）
-- [ ] 作者列表
-- [ ] 一作机构（含"当时 → 现在"，如 "Princeton NLP（Yao 时为博士生 → 现 OpenAI）"）
-- [ ] 发表时间 + 渠道
-- [ ] arXiv ID + 终版号（v1/v3）
-- [ ] 代码 repo + commit hash + star 数 + 读时日期
-- [ ] 数据 / 资源
-- [ ] 论文类型（method / benchmark / theory / survey）
-
-### 创新点段 (P0：method 里没要求，状元加的)
-
-- [ ] 3-5 个 numbered 创新点，每点粗体小标题 + 1-2 段解释
-- [ ] 至少 1 处 `path:line` 锚定（如 `wikienv.py:153-154`）
-- [ ] 至少 1 处指出"工程上最被低估的细节"
-
-### 一句话总结 + Hero figure (P0)
-
-- [ ] 醒目加粗的核心总结句
-- [ ] 视觉冲击式总结句（"你今天用的每一个 X 背后都是这个论文画的回路"）
-- [ ] Hero 位置嵌入 ≥ 1 张 sketchnote 风 figure（webp，13-15× 压缩，路径 `/papers/<slug>/01-*.webp`）
-- [ ] caption 标注图中元素 + 关键 hyperparameter + 画风注明
-
-### Layer 1 · Why 段 (P0)
-
-- [ ] 3-5 句话用自己的话总结"前世界缺什么"
-- [ ] 把对手分成两堆（如 reasoning 派 vs acting 派）
-- [ ] 至少 1 处 `path:line` 引用关键代码细节
-
-### Layer 2 · 论文地形 (P0)
-
-- [ ] 三列表：`Section / 角色 / 你该花多少时间`
-- [ ] 阅读策略动词（读 / 精读 / 看 Table X / 跳 / 必看）
-- [ ] "心脏物 N 个"清单（通常 2-3 项）
-
-### 机制流程段 (P1：method paper 必须，theory paper 可省)
-
-- [ ] 把方法压缩成 N 步（通常 3-5 步）
-- [ ] 配 figure 解释关键接口或路径
-
-### Layer 3 · 核心机制 (P0：≥ 3 段独立小节)
-
-- [ ] 每段 GitHub 永久链接（commit hash 锚定）
-- [ ] 每段 ≥ 20 行真实代码片段（不是伪代码）
-- [ ] 每段 ≥ 5 个旁注子弹
-- [ ] 每段尾 ≥ 1 个 "怀疑 N: ..." 显式段
-
-### Layer 4 · 复现 (P0：phd-skills 7 阶段全走)
-
-- [ ] 阶段 1 论文获取（命令 + arxiv id）
-- [ ] 阶段 2 代码盘点 inventory 表（文件 / 角色 / 是否齐全）
-- [ ] 阶段 3 Gap 分析表（论文版 vs 代码 / 推测）
-- [ ] 阶段 4 实现/替换说明（用什么 backend 替换原 LLM 或参考实现）
-- [ ] 阶段 5 数据集（≥ 5 题 toy 或真 dev split 子集）
-- [ ] 阶段 6 Smoke run（≥ 1 条完整 trajectory 打印）
-- [ ] 阶段 7 跑结果对照表（n_steps / EM / label 等，≥ 5 行）
-- [ ] 阶段 7 补 results.md（TL;DR / 分布 / Limitations）
-- [ ] 显式给出"绝对差异 vs 论文数字"的解释
-
-### Layer 5 · 谱系对比 (P0 + figure P1)
-
-- [ ] ≥ 1 篇前作 + ≥ 1 篇后作
-- [ ] ≥ 1 篇"反对者"（同期 critique 论文，如有）
-- [ ] 选型建议表：场景 → 选谁
-- [ ] (P1) 1 张演化树 sketchnote（figure 3）
-
-### Layer 6 · 与当前工作连接 (P0)
-
-- [ ] "今天就能用" / "下个月能用" / "不要用的部分" 三段，每段 ≥ 4 子弹
-
-### Layer 7 · 怀疑 + 延伸 (P0)
-
-- [ ] 3-5 件具体怀疑，每件锚定 paper 位置（Table X / Section Y）
-- [ ] "接下来读哪 N 篇"表
-
-### 限制段 (P0：DeepPaperNote 风格)
-
-- [ ] ≥ 4 条独立限制，禁抄 paper limitations
-
-### 附录：叙事错位清单 (P2 加分)
-
-- [ ] 论文宣称 vs 代码现实对比表，≥ 4 行
-
-### 结尾元数据 (P1)
-
-- [ ] 标记重构日期 + 总行数 + 启用 skill / 工具
-
-### 量化总指标
-
-| 维度 | 底线 | 标杆（ReAct） |
-|---|---|---|
-| 行数 | 500 | 1100 |
-| Figure 数（webp） | 2（hero + 演化树） | 3 |
-| GitHub 永久链接 | 3 | 5+ |
-| 显式怀疑 | 4 | 7+ |
-| `path:line` 引用 | 1 | 多处 |
-
-### 版本
-
-- **v1** (2026-05-28) — 基于 ReAct 反推首版 checklist
-- **v1.1** (2026-05-28) — 加论文类型分支（见下），解决 v1 默认 method paper、empirical / benchmark / theory paper 套不上的问题
-- 修订规则：未来加新条目升 v2，原 v1 条目不删，只标 deprecated
-
----
-
-## 状元篇 Checklist v1.1：论文类型分支
-
-> v1 默认是 method/algorithm paper（参考 ReAct）。
-> empirical / benchmark / theory paper 没有 GitHub repo 或没有 20 行算法代码——硬套 v1 会逼笔记作者造代码。
-> v1.1 引入"论文类型 self-classify"，每类有专属的 Layer 3 / Layer 4 / 锚定形式。
-
-### Step 1：先 self-classify
-
-写笔记前先在草稿顶部标论文类型（4 选 1）：
-
-| 类型 | 判定 | 例子 |
-|---|---|---|
-| **method / algorithm** | 提出一个新方法或算法，通常有 prototype repo | ReAct, Toolformer, Reflexion, Wadler-Prettier, Adapton |
-| **empirical study** | 测人/系统的行为，有 stimuli + 数据 + 统计 | Compiler Errors, Copilot RCT, Great SWE, Pair Programming, CI Effects |
-| **benchmark** | 提出评测数据集 + 协议 + baseline 分数 | SWE-bench |
-| **theory** | 数学形式化 + 定理 + 证明，无原型代码或代码次要 | Lamport Time-Clocks, Trees that Grow, Push-Pull FRP |
-| system paper（含 Raft / GFS / MapReduce / Dynamo） | 描述大型工程系统，按"心脏算法"在哪决定 | 算法重 → method 类；架构重 → 走 method 类 + 强调 architecture 图 |
-
-### Step 2：按类型套对应 Layer 3 / Layer 4 模板
-
-通用条目（所有类型共享，不变）：
-- Frontmatter / Layer 0 ≥ 9 字段 / 创新点 / 一句话总结 + Hero figure
-- Layer 1 Why / Layer 2 论文地形 / Layer 5 谱系对比 / Layer 6 三段 / Layer 7 怀疑
-- 限制段 / 叙事错位附录 / 结尾元数据
-
-差异条目（按类型分支）：
-
-#### 分支 A · method / algorithm paper（v1 默认，不变）
-
-**Layer 3** ≥ 3 段独立小节：
-- 每段 GitHub 永久链接（commit hash 锚定）
-- 每段 ≥ 20 行真实代码片段（不是伪代码）
-- 每段 ≥ 5 个旁注子弹
-- 每段尾 ≥ 1 个"怀疑 N"段
-
-**Layer 4** phd-skills 7 阶段全走，跑 repo → 1 个数字（LLM 类允许降级到 1 完整 trajectory）
-
-**主锚定形式**：`path:line`（带 commit hash）
-
-#### 分支 B · empirical study paper
-
-**Layer 0 增项 (P0)**：
-- [ ] 数据 / 资源字段必填具体规模（如 "Tobii X120 + 56 NCSU 学生"）
-- [ ] 测量工具年代（"Tobii X120 是 2017 技术，2026 已有 250 Hz / 0.3° 替代品"）
-
-**Layer 3** ≥ 3 段独立小节：
-- 第一段必须含 **stimuli inventory 表**（论文用了什么任务/材料/数据）
-- 每段 primary source URL（figshare / OSF / dryad / supplementary materials），不要求 GitHub
-- 每段 ≥ 20 行 stimuli 引用 / 数据 trajectory / Table 还原（ASCII 可）
-- 每段 ≥ 5 个旁注子弹
-- 每段尾 ≥ 1 个"怀疑 N"段
-
-**Layer 4** phd-skills 7 阶段降级版（self-replication 路径）：
-- 阶段 1-3 同 method 类
-- 阶段 4：替换矩阵（论文工具 → 我的替代 + 损失什么）
-- 阶段 5：自出 ≥ 5 题（控制论文同样的变量轴）
-- 阶段 6-7：self-observation 完整 trajectory + 5 题对照表 + 显式声明 N=1 / 录屏分辨率 / 主观打标
-- 阶段 7 results.md 必须含 "Limitations: N=1 / 工具精度损失 / 我有先验" 段
-
-**主锚定形式**：`Section X.Y` / `Table N` / `Figure N`
-
-**限制段必填三类**：sample size + 任务边界 + 测量工具时代
-
-#### 分支 C · benchmark paper
-
-**Layer 0 增项 (P0)**：
-- [ ] leaderboard 当前 SOTA + 提交时间（截至读时）
-- [ ] 数据集大小 / split / 是否有 contamination 警告
-
-**Layer 3** ≥ 3 段独立小节：
-- 第一段必须画 **task structure**（至少 1 个完整 task 跑通：input → expected output → scoring）
-- 每段 dataset URL / scoring code 引用
-- 每段 ≥ 20 行 schema / example / scoring rubric
-- 每段尾 ≥ 1 个"怀疑 N"段
-
-**Layer 4** 在 dev split 子集上跑现成 model（≥ 5 samples）：
-- 阶段 5 数据集 = dev split 随机抽 5-10 题
-- 阶段 6-7：每题完整 model output + 论文 baseline 数字对比
-- 显式给出 "我跑出来 X，论文 baseline Y，差距来自 Z" 的解释
-
-**主锚定形式**：dataset card / leaderboard URL / scoring rubric Section
-
-**限制段必填三类**：contamination + ceiling effect + 任务 narrow 度
-
-#### 分支 D · theory paper
-
-**Layer 0 增项 (P0)**：
-- [ ] Notation 速记表（论文里关键符号表）
-
-**Layer 3** ≥ 3 段独立小节：
-- 至少 1 段是 **反例构造**（找到定理边界 / 假设打破时发生什么）
-- 每段重述 1 个 Definition / Theorem / Lemma
-- 每段 ≥ 20 行 LaTeX 或 pseudo-code（重述 + 你的注释）
-- 每段尾 ≥ 1 个"怀疑 N"段
-
-**Layer 4** 手算 toy 验证：
-- ≥ 3 个不同实例验证定理（小数 / corner case / 极限情况各一）
-- 阶段 5-7：每个 toy 的完整推导 + 与定理对照
-
-**主锚定形式**：`Theorem N` / `Lemma N` / `Definition N`
-
-**限制段必填三类**：假设强度 + 实际系统差距 + 复杂度边界
-
-### Step 3：量化指标按类型差异化
-
-| 类型 | 行数底线 | Figure 数 | 一级锚定数 ≥ | 显式怀疑 ≥ |
-|---|---|---|---|---|
-| method | 500 | 2 | 3（GitHub permalink） | 4 |
-| empirical | 500 | 2 | 3（primary source + Section/Figure） | 4 |
-| benchmark | 500 | 2 | 3（dataset / leaderboard / rubric） | 4 |
-| theory | 400 | 1 | 5（Definition / Theorem / Lemma） | 4 |
-
-> 行数底线说明：theory paper 单页定理密度高，500 行底线偏松——400 行 + 5 个一级锚定才是真正的"信息密度足够"标准。
-
-### Step 4：自检流程
-
-写完笔记后按以下顺序自检：
-1. 论文类型 self-classify 标对了吗（看心脏物：是 algorithm / data / dataset / theorem 哪个？）
-2. 通用条目全过了吗（Frontmatter / Layer 0-2 / Layer 5-7 / 限制 / 附录 / 元数据）
-3. 类型专属条目全过了吗（参照上面分支 A/B/C/D）
-4. 量化指标全过了吗（行数 / figure / 锚定 / 怀疑）
-
-任意一项 P0 缺失 → 不及格，要补。
+- DeepPaperNote 的"显式怀疑 + 限制段"风格
