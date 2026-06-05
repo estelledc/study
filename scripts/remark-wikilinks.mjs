@@ -6,6 +6,7 @@
 import { readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { visit } from 'unist-util-visit';
+import { slugForUrl } from './slug-for-url.mjs';
 
 const ROOTS = {
   papers: join(process.cwd(), 'src/content/docs/papers'),
@@ -55,7 +56,7 @@ export default function remarkWikilinks() {
           // 解析得到 → 真链接
           newChildren.push({
             type: 'link',
-            url: `/study/${area}/${slug}/`,
+            url: `/study/${area}/${slugForUrl(slug)}/`,
             title: null,
             children: [{ type: 'text', value: display }],
           });

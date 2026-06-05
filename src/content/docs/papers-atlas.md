@@ -611,9 +611,9 @@ sidebar:
 | 论文 | 描述 |
 |---|---|
 | [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) |  |
-| [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) |  |
+| [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-21-rfc/) |  |
 | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |  |
-| [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) |  |
+| [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-95/) |  |
 
 ### 其他子类
 
@@ -715,7 +715,7 @@ sidebar:
 | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) |  |
 | [Subramanian 2002 — 用多个观察点把互联网切成 5 层](/study/papers/subramanian-2002-internet-hierarchy/) |  |
 | [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) |  |
-| [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) |  |
+| [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-13/) |  |
 | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) |  |
 | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) |  |
 | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |  |
@@ -1665,7 +1665,7 @@ sidebar:
 | `nvlink-nvswitch-2018` | [NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器](/study/papers/nvlink-nvswitch-2018/) | 图形学 | GPU 架构 |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) | 后端 API | 前端工具链 |
 | `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) | 图形学 | GPU 架构 |
-| `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) | 后端 API | 后端 |
+| `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-21-rfc/) | 后端 API | 后端 |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | 信息检索 | 检索与排序 |
 | `omega-2013` | [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) | 操作系统 | 内核与虚拟化 |
 | `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) | 图形学 | GPU 架构 |
@@ -1802,7 +1802,7 @@ sidebar:
 | `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) | Agent | 智能体与 LLM |
 | `skill-sd-self-distillation` | [Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏](/study/papers/skill-sd-self-distillation/) | Agent | 智能体与 LLM |
 | `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) | 数据库 | 存储与查询 |
-| `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) | 后端 API | 后端 |
+| `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-95/) | 后端 API | 后端 |
 | `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | 操作系统 | 内核与虚拟化 |
 | `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) | 编程语言 | 类型与 PL 理论 |
 | `sleeper-agents` | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) | 机器学习 | AI 安全 |
@@ -1869,7 +1869,7 @@ sidebar:
 | `tigerbeetle` | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) | 数据库 | 数据库 |
 | `timelinejs` | [TimelineJS — 一张 Google Sheet 直接变成交互时间轴](/study/papers/timelinejs/) | 基础设施 | 基础设施 |
 | `tla-yu-tlc-1999` | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) | 形式化方法 | 形式化验证 |
-| `tls-1.3` | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) | 网络协议 | 网络协议 |
+| `tls-1.3` | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-13/) | 网络协议 | 网络协议 |
 | `tofte-talpin-regions` | [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) | 编程语言 | 编程语言 |
 | `token-bucket-stripe` | [Stripe Rate Limiters — 工业级令牌桶长什么样](/study/papers/token-bucket-stripe/) | 后端 API | 后端工程 |
 | `tomasulo-1967` | [Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序](/study/papers/tomasulo-1967/) | 图形学 | GPU 架构 |

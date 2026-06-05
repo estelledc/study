@@ -5,6 +5,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { loadTaxonomy, parseFrontmatter, ROOT } from './taxonomy-lib.mjs';
+import { slugForUrl } from './slug-for-url.mjs';
 
 const MIN_SUBSECTION = 3;
 /** 子类条目不足 MIN_SUBSECTION 时仍单独成节（避免重要主题被埋进「其他子类」） */
@@ -158,7 +159,7 @@ function renderAtlas(notes, kind, taxonomy) {
       lines.push('|---|---|');
       for (const it of items) {
         const desc = firstSentence(it.description);
-        lines.push(`| [${escapeMd(it.title)}](/study/${pathSeg}/${it.slug}/) | ${escapeMd(desc)} |`);
+        lines.push(`| [${escapeMd(it.title)}](/study/${pathSeg}/${slugForUrl(it.slug)}/) | ${escapeMd(desc)} |`);
       }
       lines.push('');
     }
@@ -173,7 +174,7 @@ function renderAtlas(notes, kind, taxonomy) {
     lines.push(`| Slug | ${titleZh} |`);
     lines.push('|---|---|');
     for (const it of unclassified) {
-      lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${pathSeg}/${it.slug}/) |`);
+      lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${pathSeg}/${slugForUrl(it.slug)}/) |`);
     }
     lines.push('');
   }
@@ -187,7 +188,7 @@ function renderAtlas(notes, kind, taxonomy) {
   const sorted = [...notes].sort((a, b) => a.slug.localeCompare(b.slug));
   for (const it of sorted) {
     const theme = it.theme ?? FALLBACK_THEME;
-    lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${pathSeg}/${it.slug}/) | ${theme} | ${it.subcategory} |`);
+    lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${pathSeg}/${slugForUrl(it.slug)}/) | ${theme} | ${it.subcategory} |`);
   }
   lines.push('');
 
