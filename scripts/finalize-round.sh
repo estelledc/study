@@ -31,10 +31,11 @@ emit() {
 emit "{\"event\":\"round-finalize-start\",\"prev_head\":\"$PREV_HEAD\"}"
 
 # 1. Regen
-echo "[finalize-round] regen-atlas + regen-backlinks + fix-frontmatter"
+echo "[finalize-round] classify-notes + regen-atlas + regen-backlinks + fix-frontmatter"
 if [[ "$DRY_RUN" -eq 1 ]]; then
-  echo "  [DRY] node scripts/regen-atlas.mjs && regen-backlinks.mjs && fix-frontmatter.mjs"
+  echo "  [DRY] classify-notes --apply && regen-atlas && regen-backlinks && fix-frontmatter"
 else
+  node "$ROOT/scripts/classify-notes.mjs" --apply
   node "$ROOT/scripts/regen-atlas.mjs"
   node "$ROOT/scripts/regen-backlinks.mjs"
   node "$ROOT/scripts/fix-frontmatter.mjs" 2>/dev/null || echo "  WARN: fix-frontmatter non-fatal"

@@ -27,10 +27,16 @@ src/content/docs/
 ├── career-plan.md       ← 培养路线
 ├── method.md            ← 项目消化方法论（7 层）
 ├── queue.md             ← 项目推荐队列
-├── projects/            ← 项目研究笔记（20 篇）
+├── projects/            ← 项目研究笔记（726 篇）
+├── projects-atlas.md    ← 项目全景索引（按 分类/子分类 自动生成）
 ├── papers-method.md     ← 论文消化方法论（8 层）
-├── papers-queue.md      ← 论文推荐队列（20 篇 / 4 季度）
-└── papers/              ← 论文研究笔记（进行中）
+├── papers-queue.md      ← 论文推荐队列
+├── papers/              ← 论文研究笔记（796 篇）
+└── papers-atlas.md      ← 论文全景索引（按 分类/子分类 自动生成）
+
+data/taxonomy.json       ← 分类 SSOT（一级主题 + topic 映射）
+scripts/classify-notes.mjs  ← 批量归一化 分类/子分类
+scripts/regen-atlas.mjs     ← build 前重生成 atlas
 
 public/papers/<paper-slug>/   ← 每篇论文的 figure（webp 格式）
 ```
@@ -40,7 +46,11 @@ public/papers/<paper-slug>/   ← 每篇论文的 figure（webp 格式）
 ```bash
 npm install
 npm run dev    # http://localhost:4321/study/
-npm run build  # 输出到 dist/
+npm run build  # prebuild 会跑 regen-atlas，输出到 dist/
+
+# 批量更新全库分类（改 taxonomy 后）
+node scripts/classify-notes.mjs --apply
+node scripts/regen-atlas.mjs
 ```
 
 ## 部署

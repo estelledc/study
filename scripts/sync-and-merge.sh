@@ -133,10 +133,11 @@ if [[ "$PICKED_COUNT" -eq 0 ]]; then
 fi
 
 # 2. Regen + fix-frontmatter
-echo "[sync-and-merge] regen-atlas + regen-backlinks + fix-frontmatter"
+echo "[sync-and-merge] classify-notes + regen-atlas + regen-backlinks + fix-frontmatter"
 if [[ "$DRY_RUN" -eq 1 ]]; then
-  echo "  [DRY] node scripts/regen-atlas.mjs && node scripts/regen-backlinks.mjs && node scripts/fix-frontmatter.mjs"
+  echo "  [DRY] classify-notes --apply && regen-atlas && regen-backlinks && fix-frontmatter"
 else
+  node scripts/classify-notes.mjs --apply
   node scripts/regen-atlas.mjs
   node scripts/regen-backlinks.mjs
   node scripts/fix-frontmatter.mjs 2>/dev/null || echo "  WARN: fix-frontmatter.mjs missing or failed (non-fatal)"

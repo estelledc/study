@@ -44,10 +44,13 @@
 title: <slug 中文标题> — <一句话定位>
 来源: <作者. "标题". 期刊/会议 年份>
 日期: 2026-05-29
-分类: <主题>
+分类: <一级主题，必须来自 data/taxonomy.json themes.label>
+子分类: <二级子类，来自 research.json canonical_subcategory 或 topicLabels>
 难度: <初级|中级|高级>
 ---
 ```
+
+**分类禁止自由发挥**：一级 `分类` 只能是 taxonomy 里 20 个 `themes.label` 之一（如 `分布式系统`、`机器学习`）。`子分类` 用中文短标签（如 `共识与复制`）。不确定时读 `/Users/jason/study/data/taxonomy.json` 的 `topicToTheme` + `topicLabels`。
 
 **禁用**老格式：`description:` `sidebar:` `season:` `version:` `branch:`（这些是 legacy，要被 rewrite 掉）。
 

@@ -82,10 +82,14 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
   "key_pitfalls": ["1. ...", "2. ...", "3. ...", "4. ..."],
   "use_case_seeds": ["案例 1 思路", "案例 2 思路", "案例 3 思路"],
   "history_note": "<一两句历史背景>",
+  "canonical_theme": "<一级主题中文，如 分布式系统；查 data/taxonomy.json topicToTheme[topic] → themes.label>",
+  "canonical_subcategory": "<二级子类中文，如 共识与复制；查 topicLabels[topic]>",
   "status": "ok|partial|failed",
   "fallback_used": null
 }
 ```
+
+写 `canonical_theme` / `canonical_subcategory` 时：用输入 `{{topic}}` 查 `/Users/jason/study/data/taxonomy.json` 的 `topicToTheme` 与 `topicLabels`。若无映射，用 `themeFromCategoryRules` 推断，禁止发明 taxonomy 外的一级名。
 
 `status` 规则：
 - `ok` — Step 1-4 至少跑完 3 步且 abstract / core_qa 都有内容

@@ -93,7 +93,8 @@ title: <slug 中文标题> — <一句话定位>
 # 或
 来源: 'https://github.com/...'  # projects
 日期: 2026-05-30
-分类: {{topic}} / 中文
+分类: <research.json canonical_theme，taxonomy 一级主题>
+子分类: <research.json canonical_subcategory>
 难度: 初级|中级|高级
 ---
 ```

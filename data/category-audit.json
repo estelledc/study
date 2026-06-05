@@ -1,0 +1,1262 @@
+{
+  "generated": "2026-06-05T01:36:12.678Z",
+  "unique": 314,
+  "values": [
+    {
+      "raw": "编程语言",
+      "count": 76
+    },
+    {
+      "raw": "分布式系统",
+      "count": 76
+    },
+    {
+      "raw": "数据库",
+      "count": 47
+    },
+    {
+      "raw": "操作系统",
+      "count": 46
+    },
+    {
+      "raw": "blockchain",
+      "count": 44
+    },
+    {
+      "raw": "机器学习",
+      "count": 44
+    },
+    {
+      "raw": "backend-api",
+      "count": 40
+    },
+    {
+      "raw": "基础设施",
+      "count": 38
+    },
+    {
+      "raw": "网络协议",
+      "count": 37
+    },
+    {
+      "raw": "图形学",
+      "count": 36
+    },
+    {
+      "raw": "projects",
+      "count": 29
+    },
+    {
+      "raw": "projects / 数据可视化",
+      "count": 28
+    },
+    {
+      "raw": "系统",
+      "count": 28
+    },
+    {
+      "raw": "形式化方法",
+      "count": 27
+    },
+    {
+      "raw": "'数据科学与 AI'",
+      "count": 26
+    },
+    {
+      "raw": "cli",
+      "count": 25
+    },
+    {
+      "raw": "信息检索",
+      "count": 25
+    },
+    {
+      "raw": "数据可视化",
+      "count": 24
+    },
+    {
+      "raw": "CLI",
+      "count": 23
+    },
+    {
+      "raw": "agents",
+      "count": 22
+    },
+    {
+      "raw": "communication",
+      "count": 16
+    },
+    {
+      "raw": "数据检索",
+      "count": 16
+    },
+    {
+      "raw": "DevOps",
+      "count": 15
+    },
+    {
+      "raw": "AI / Agent",
+      "count": 12
+    },
+    {
+      "raw": "databases",
+      "count": 12
+    },
+    {
+      "raw": "通信",
+      "count": 11
+    },
+    {
+      "raw": "data-science-ai",
+      "count": 11
+    },
+    {
+      "raw": "命令行工具",
+      "count": 11
+    },
+    {
+      "raw": "NLP",
+      "count": 11
+    },
+    {
+      "raw": "编译器",
+      "count": 11
+    },
+    {
+      "raw": "工具库",
+      "count": 9
+    },
+    {
+      "raw": "infrastructure",
+      "count": 9
+    },
+    {
+      "raw": "GPU 架构",
+      "count": 9
+    },
+    {
+      "raw": "papers / 分布式系统",
+      "count": 9
+    },
+    {
+      "raw": "后端开发",
+      "count": 8
+    },
+    {
+      "raw": "项目",
+      "count": 8
+    },
+    {
+      "raw": "数据库 / 搜索",
+      "count": 8
+    },
+    {
+      "raw": "构建工具",
+      "count": 8
+    },
+    {
+      "raw": "LLM 推理",
+      "count": 8
+    },
+    {
+      "raw": "网络",
+      "count": 8
+    },
+    {
+      "raw": "推荐系统",
+      "count": 8
+    },
+    {
+      "raw": "编译器 / 形式方法",
+      "count": 8
+    },
+    {
+      "raw": "区块链工具",
+      "count": 7
+    },
+    {
+      "raw": "数据库 / 分布式",
+      "count": 7
+    },
+    {
+      "raw": "DevOps / Kubernetes",
+      "count": 7
+    },
+    {
+      "raw": "前端工程",
+      "count": 7
+    },
+    {
+      "raw": "前端工具",
+      "count": 7
+    },
+    {
+      "raw": "编程语言 / 形式化方法",
+      "count": 7
+    },
+    {
+      "raw": "计算机图形学",
+      "count": 7
+    },
+    {
+      "raw": "软件工程",
+      "count": 7
+    },
+    {
+      "raw": "编译器与编程语言",
+      "count": 7
+    },
+    {
+      "raw": "区块链",
+      "count": 6
+    },
+    {
+      "raw": "前端",
+      "count": 6
+    },
+    {
+      "raw": "后端 API",
+      "count": 6
+    },
+    {
+      "raw": "backend-framework",
+      "count": 6
+    },
+    {
+      "raw": "数据库 / 存储引擎",
+      "count": 6
+    },
+    {
+      "raw": "projects / 前端",
+      "count": 6
+    },
+    {
+      "raw": "数据库 / 消息队列",
+      "count": 6
+    },
+    {
+      "raw": "UI 框架",
+      "count": 6
+    },
+    {
+      "raw": "计算机图形 / 三维重建",
+      "count": 6
+    },
+    {
+      "raw": "AI 可解释性",
+      "count": 6
+    },
+    {
+      "raw": "AI / NLP",
+      "count": 6
+    },
+    {
+      "raw": "深度学习 / NLP",
+      "count": 6
+    },
+    {
+      "raw": "AI",
+      "count": 5
+    },
+    {
+      "raw": "数据库 / 向量",
+      "count": 5
+    },
+    {
+      "raw": "AI 工程",
+      "count": 5
+    },
+    {
+      "raw": "数据库 / 图",
+      "count": 5
+    },
+    {
+      "raw": "ORM",
+      "count": 5
+    },
+    {
+      "raw": "DevOps / 容器",
+      "count": 5
+    },
+    {
+      "raw": "数据库 / 时序",
+      "count": 5
+    },
+    {
+      "raw": "通信基础设施",
+      "count": 5
+    },
+    {
+      "raw": "强化学习",
+      "count": 5
+    },
+    {
+      "raw": "密码学",
+      "count": 5
+    },
+    {
+      "raw": "计算机体系结构",
+      "count": 5
+    },
+    {
+      "raw": "compilers-pl",
+      "count": 5
+    },
+    {
+      "raw": "生成模型",
+      "count": 5
+    },
+    {
+      "raw": "协同编辑",
+      "count": 4
+    },
+    {
+      "raw": "编辑器",
+      "count": 4
+    },
+    {
+      "raw": "(none)",
+      "count": 4
+    },
+    {
+      "raw": "AI / 推理",
+      "count": 4
+    },
+    {
+      "raw": "深度学习",
+      "count": 4
+    },
+    {
+      "raw": "分布式训练",
+      "count": 4
+    },
+    {
+      "raw": "信息论",
+      "count": 4
+    },
+    {
+      "raw": "后端",
+      "count": 4
+    },
+    {
+      "raw": "计算机网络",
+      "count": 4
+    },
+    {
+      "raw": "开源工具",
+      "count": 3
+    },
+    {
+      "raw": "前端工具链",
+      "count": 3
+    },
+    {
+      "raw": "DevOps / 网络",
+      "count": 3
+    },
+    {
+      "raw": "数据基础设施",
+      "count": 3
+    },
+    {
+      "raw": "数据库 / 缓存",
+      "count": 3
+    },
+    {
+      "raw": "DevOps / CI/CD",
+      "count": 3
+    },
+    {
+      "raw": "数据可视化 / BI",
+      "count": 3
+    },
+    {
+      "raw": "可观测性 / 日志",
+      "count": 3
+    },
+    {
+      "raw": "CLI 工具",
+      "count": 3
+    },
+    {
+      "raw": "基础设施 / 容器编排",
+      "count": 3
+    },
+    {
+      "raw": "监控 / 时序数据库",
+      "count": 3
+    },
+    {
+      "raw": "前端框架",
+      "count": 3
+    },
+    {
+      "raw": "Meta 框架",
+      "count": 3
+    },
+    {
+      "raw": "前端工程化",
+      "count": 3
+    },
+    {
+      "raw": "DevOps / IaC",
+      "count": 3
+    },
+    {
+      "raw": "命令行基础设施",
+      "count": 3
+    },
+    {
+      "raw": "网络系统",
+      "count": 3
+    },
+    {
+      "raw": "存储系统",
+      "count": 3
+    },
+    {
+      "raw": "多模态 / 计算机视觉",
+      "count": 3
+    },
+    {
+      "raw": "计算理论",
+      "count": 3
+    },
+    {
+      "raw": "AI / LLM",
+      "count": 3
+    },
+    {
+      "raw": "NLP / 深度学习",
+      "count": 3
+    },
+    {
+      "raw": "DevOps / CI 基建",
+      "count": 2
+    },
+    {
+      "raw": "AI / CLI",
+      "count": 2
+    },
+    {
+      "raw": "数据检索 / 基础设施",
+      "count": 2
+    },
+    {
+      "raw": "信息检索 / 向量索引",
+      "count": 2
+    },
+    {
+      "raw": "数据库 / 多模型",
+      "count": 2
+    },
+    {
+      "raw": "框架与 SDK",
+      "count": 2
+    },
+    {
+      "raw": "基础设施 / 实时协作",
+      "count": 2
+    },
+    {
+      "raw": "对话式 AI",
+      "count": 2
+    },
+    {
+      "raw": "cloud-native-networking",
+      "count": 2
+    },
+    {
+      "raw": "数据库 / OLAP",
+      "count": 2
+    },
+    {
+      "raw": "后端 / RPC 框架",
+      "count": 2
+    },
+    {
+      "raw": "projects / 工具库",
+      "count": 2
+    },
+    {
+      "raw": "实时分析数据库",
+      "count": 2
+    },
+    {
+      "raw": "协作工具",
+      "count": 2
+    },
+    {
+      "raw": "数据库 / NoSQL",
+      "count": 2
+    },
+    {
+      "raw": "动画",
+      "count": 2
+    },
+    {
+      "raw": "开发工具",
+      "count": 2
+    },
+    {
+      "raw": "状态管理",
+      "count": 2
+    },
+    {
+      "raw": "projects / 前端工具链",
+      "count": 2
+    },
+    {
+      "raw": "projects / 前端动画",
+      "count": 2
+    },
+    {
+      "raw": "后端框架",
+      "count": 2
+    },
+    {
+      "raw": "基础设施 / 可观测性",
+      "count": 2
+    },
+    {
+      "raw": "测试",
+      "count": 2
+    },
+    {
+      "raw": "projects / 前端样式",
+      "count": 2
+    },
+    {
+      "raw": "projects / 编辑器",
+      "count": 2
+    },
+    {
+      "raw": "AI / 软件工程",
+      "count": 2
+    },
+    {
+      "raw": "数据库 / 数据结构",
+      "count": 2
+    },
+    {
+      "raw": "体系结构",
+      "count": 2
+    },
+    {
+      "raw": "CPU 微架构",
+      "count": 2
+    },
+    {
+      "raw": "可视化",
+      "count": 2
+    },
+    {
+      "raw": "软件工程实证",
+      "count": 2
+    },
+    {
+      "raw": "计算机图形",
+      "count": 2
+    },
+    {
+      "raw": "生成模型 / 计算机视觉",
+      "count": 2
+    },
+    {
+      "raw": "NLP / 分布式训练",
+      "count": 2
+    },
+    {
+      "raw": "算法",
+      "count": 2
+    },
+    {
+      "raw": "生成式 AI",
+      "count": 2
+    },
+    {
+      "raw": "评测基准",
+      "count": 2
+    },
+    {
+      "raw": "databases / 分布式系统",
+      "count": 2
+    },
+    {
+      "raw": "分布式系统 / 形式化方法",
+      "count": 2
+    },
+    {
+      "raw": "编程语言 / 类型理论",
+      "count": 2
+    },
+    {
+      "raw": "计算机图形 / 物理仿真",
+      "count": 2
+    },
+    {
+      "raw": "工具与基础设施",
+      "count": 2
+    },
+    {
+      "raw": "distributed-systems",
+      "count": 2
+    },
+    {
+      "raw": "硬件/异构计算",
+      "count": 2
+    },
+    {
+      "raw": "计算机视觉",
+      "count": 2
+    },
+    {
+      "raw": "DevOps / 文件加密",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / 配置管理",
+      "count": 1
+    },
+    {
+      "raw": "数据标注 / LLM 工具链",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / 工作流引擎",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / GitOps",
+      "count": 1
+    },
+    {
+      "raw": "UI 框架 / 静态站点",
+      "count": 1
+    },
+    {
+      "raw": "数据科学 / AI 基建",
+      "count": 1
+    },
+    {
+      "raw": "AI agent infra",
+      "count": 1
+    },
+    {
+      "raw": "devops / 容器构建",
+      "count": 1
+    },
+    {
+      "raw": "运行时 / 构建工具",
+      "count": 1
+    },
+    {
+      "raw": "SaaS 应用",
+      "count": 1
+    },
+    {
+      "raw": "数据科学与 AI",
+      "count": 1
+    },
+    {
+      "raw": "客服平台",
+      "count": 1
+    },
+    {
+      "raw": "projects / Web 框架",
+      "count": 1
+    },
+    {
+      "raw": "图形引擎",
+      "count": 1
+    },
+    {
+      "raw": "AI 编码工具",
+      "count": 1
+    },
+    {
+      "raw": "AI 框架",
+      "count": 1
+    },
+    {
+      "raw": "数据基础设施 / 计算机视觉标注",
+      "count": 1
+    },
+    {
+      "raw": "可观测性 / DevOps",
+      "count": 1
+    },
+    {
+      "raw": "数据基建 / CDC",
+      "count": 1
+    },
+    {
+      "raw": "文档工具",
+      "count": 1
+    },
+    {
+      "raw": "ML 基建",
+      "count": 1
+    },
+    {
+      "raw": "TypeScript 运行时",
+      "count": 1
+    },
+    {
+      "raw": "web 框架",
+      "count": 1
+    },
+    {
+      "raw": "后端 / 框架",
+      "count": 1
+    },
+    {
+      "raw": "projects / 命令行",
+      "count": 1
+    },
+    {
+      "raw": "前端 / Canvas",
+      "count": 1
+    },
+    {
+      "raw": "基础设施 / 向量检索",
+      "count": 1
+    },
+    {
+      "raw": "web-frameworks",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / CI-CD",
+      "count": 1
+    },
+    {
+      "raw": "监控 / 可视化",
+      "count": 1
+    },
+    {
+      "raw": "通信基建",
+      "count": 1
+    },
+    {
+      "raw": "协同编辑后端",
+      "count": 1
+    },
+    {
+      "raw": "Web 框架",
+      "count": 1
+    },
+    {
+      "raw": "前端国际化",
+      "count": 1
+    },
+    {
+      "raw": "自托管应用",
+      "count": 1
+    },
+    {
+      "raw": "监控 / 分布式追踪",
+      "count": 1
+    },
+    {
+      "raw": "测试框架",
+      "count": 1
+    },
+    {
+      "raw": "projects / 前端导出",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / 性能测试",
+      "count": 1
+    },
+    {
+      "raw": "数据科学",
+      "count": 1
+    },
+    {
+      "raw": "前端图形 / Canvas 2D",
+      "count": 1
+    },
+    {
+      "raw": "ORM / 查询构建器",
+      "count": 1
+    },
+    {
+      "raw": "数据基础设施 / 标注工具",
+      "count": 1
+    },
+    {
+      "raw": "数据基础设施 / 列存格式",
+      "count": 1
+    },
+    {
+      "raw": "工具链",
+      "count": 1
+    },
+    {
+      "raw": "projects / 前端国际化",
+      "count": 1
+    },
+    {
+      "raw": "基础设施 / 服务网格",
+      "count": 1
+    },
+    {
+      "raw": "ai-eng",
+      "count": 1
+    },
+    {
+      "raw": "云原生",
+      "count": 1
+    },
+    {
+      "raw": "AI / RAG",
+      "count": 1
+    },
+    {
+      "raw": "projects / 前端工具库",
+      "count": 1
+    },
+    {
+      "raw": "终端工具",
+      "count": 1
+    },
+    {
+      "raw": "前端 / UI 自动化",
+      "count": 1
+    },
+    {
+      "raw": "数据库 / 存储",
+      "count": 1
+    },
+    {
+      "raw": "projects / 测试工具",
+      "count": 1
+    },
+    {
+      "raw": "AI agent",
+      "count": 1
+    },
+    {
+      "raw": "消息队列",
+      "count": 1
+    },
+    {
+      "raw": "UI 框架 / 全栈",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / 编排",
+      "count": 1
+    },
+    {
+      "raw": "基础设施 / 流媒体",
+      "count": 1
+    },
+    {
+      "raw": "projects / 编译器",
+      "count": 1
+    },
+    {
+      "raw": "数据科学与 AI / 计算机视觉",
+      "count": 1
+    },
+    {
+      "raw": "projects / 设计工具",
+      "count": 1
+    },
+    {
+      "raw": "projects / Node.js",
+      "count": 1
+    },
+    {
+      "raw": "projects / 图形渲染",
+      "count": 1
+    },
+    {
+      "raw": "projects / 工具",
+      "count": 1
+    },
+    {
+      "raw": "基础设施 / 通信",
+      "count": 1
+    },
+    {
+      "raw": "数据库 / 离线优先",
+      "count": 1
+    },
+    {
+      "raw": "AI 工程基建",
+      "count": 1
+    },
+    {
+      "raw": "前端组件库",
+      "count": 1
+    },
+    {
+      "raw": "对话系统",
+      "count": 1
+    },
+    {
+      "raw": "数据库 / 文档存储",
+      "count": 1
+    },
+    {
+      "raw": "projects / 前端 / dataviz",
+      "count": 1
+    },
+    {
+      "raw": "projects / 前端 i18n",
+      "count": 1
+    },
+    {
+      "raw": "嵌入式",
+      "count": 1
+    },
+    {
+      "raw": "observability",
+      "count": 1
+    },
+    {
+      "raw": "前端 / 组件库",
+      "count": 1
+    },
+    {
+      "raw": "projects / 图像处理",
+      "count": 1
+    },
+    {
+      "raw": "blockchain / 中文",
+      "count": 1
+    },
+    {
+      "raw": "后端基建",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / 配置加密",
+      "count": 1
+    },
+    {
+      "raw": "浏览器自动化",
+      "count": 1
+    },
+    {
+      "raw": "文档站点",
+      "count": 1
+    },
+    {
+      "raw": "后端 / BaaS",
+      "count": 1
+    },
+    {
+      "raw": "projects / 认证",
+      "count": 1
+    },
+    {
+      "raw": "CSS",
+      "count": 1
+    },
+    {
+      "raw": "数据获取",
+      "count": 1
+    },
+    {
+      "raw": "后端 / 工作流",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / 本地开发",
+      "count": 1
+    },
+    {
+      "raw": "API / 类型安全",
+      "count": 1
+    },
+    {
+      "raw": "数据科学AI",
+      "count": 1
+    },
+    {
+      "raw": "AI / RAG / Document Parsing",
+      "count": 1
+    },
+    {
+      "raw": "projects / 前端状态",
+      "count": 1
+    },
+    {
+      "raw": "DevOps / 安全",
+      "count": 1
+    },
+    {
+      "raw": "数据库 / 搜索 / 推荐",
+      "count": 1
+    },
+    {
+      "raw": "工具基建",
+      "count": 1
+    },
+    {
+      "raw": "嵌入式系统",
+      "count": 1
+    },
+    {
+      "raw": "验证 / 类型",
+      "count": 1
+    },
+    {
+      "raw": "分布式协调服务",
+      "count": 1
+    },
+    {
+      "raw": "编译器 / 形式化方法",
+      "count": 1
+    },
+    {
+      "raw": "强化学习 / AI",
+      "count": 1
+    },
+    {
+      "raw": "并行计算",
+      "count": 1
+    },
+    {
+      "raw": "通信 / 开源 PBX",
+      "count": 1
+    },
+    {
+      "raw": "数据库系统",
+      "count": 1
+    },
+    {
+      "raw": "数据结构",
+      "count": 1
+    },
+    {
+      "raw": "MLOps / 模型服务",
+      "count": 1
+    },
+    {
+      "raw": "评测",
+      "count": 1
+    },
+    {
+      "raw": "分布式系统 / 密码学",
+      "count": 1
+    },
+    {
+      "raw": "papers / 内存管理",
+      "count": 1
+    },
+    {
+      "raw": "时序基础模型",
+      "count": 1
+    },
+    {
+      "raw": "MLOps",
+      "count": 1
+    },
+    {
+      "raw": "认知科学",
+      "count": 1
+    },
+    {
+      "raw": "编程语言 / 编译器",
+      "count": 1
+    },
+    {
+      "raw": "AI 安全 / NLP",
+      "count": 1
+    },
+    {
+      "raw": "GPU 加速",
+      "count": 1
+    },
+    {
+      "raw": "高性能计算与编译器",
+      "count": 1
+    },
+    {
+      "raw": "NLP / 推理",
+      "count": 1
+    },
+    {
+      "raw": "软件工程 / 控制流理论",
+      "count": 1
+    },
+    {
+      "raw": "编译器与语言",
+      "count": 1
+    },
+    {
+      "raw": "编程语言 / 分布式系统",
+      "count": 1
+    },
+    {
+      "raw": "GPU 与系统",
+      "count": 1
+    },
+    {
+      "raw": "gpu-architecture",
+      "count": 1
+    },
+    {
+      "raw": "学习与认知",
+      "count": 1
+    },
+    {
+      "raw": "图神经网络",
+      "count": 1
+    },
+    {
+      "raw": "数学逻辑 / 计算理论",
+      "count": 1
+    },
+    {
+      "raw": "深度学习 / 系统",
+      "count": 1
+    },
+    {
+      "raw": "并发",
+      "count": 1
+    },
+    {
+      "raw": "databases / 数据库索引",
+      "count": 1
+    },
+    {
+      "raw": "信息论 / 算法",
+      "count": 1
+    },
+    {
+      "raw": "functional-programming",
+      "count": 1
+    },
+    {
+      "raw": "垃圾回收",
+      "count": 1
+    },
+    {
+      "raw": "网络与分布式",
+      "count": 1
+    },
+    {
+      "raw": "图形",
+      "count": 1
+    },
+    {
+      "raw": "编程语言 / 计算理论",
+      "count": 1
+    },
+    {
+      "raw": "系统设计",
+      "count": 1
+    },
+    {
+      "raw": "databases / 数据库",
+      "count": 1
+    },
+    {
+      "raw": "图形/AI",
+      "count": 1
+    },
+    {
+      "raw": "NLP / LLM",
+      "count": 1
+    },
+    {
+      "raw": "多模态 / NLP",
+      "count": 1
+    },
+    {
+      "raw": "计算机视觉 / 自监督",
+      "count": 1
+    },
+    {
+      "raw": "AI 安全 / 对齐理论",
+      "count": 1
+    },
+    {
+      "raw": "MLOps / ML 平台",
+      "count": 1
+    },
+    {
+      "raw": "包管理 / 系统",
+      "count": 1
+    },
+    {
+      "raw": "机器学习 / 超参优化",
+      "count": 1
+    },
+    {
+      "raw": "系统/LLM 推理",
+      "count": 1
+    },
+    {
+      "raw": "计算机图形 / 神经场",
+      "count": 1
+    },
+    {
+      "raw": "形式方法",
+      "count": 1
+    },
+    {
+      "raw": "软件工程认知科学",
+      "count": 1
+    },
+    {
+      "raw": "自然语言处理",
+      "count": 1
+    },
+    {
+      "raw": "计算机视觉 / 深度学习",
+      "count": 1
+    },
+    {
+      "raw": "强化学习 / AI 安全",
+      "count": 1
+    },
+    {
+      "raw": "大模型服务",
+      "count": 1
+    },
+    {
+      "raw": "GPU 推理",
+      "count": 1
+    },
+    {
+      "raw": "AI 安全",
+      "count": 1
+    },
+    {
+      "raw": "编译器与程序分析",
+      "count": 1
+    },
+    {
+      "raw": "分布式系统 / 数据库",
+      "count": 1
+    },
+    {
+      "raw": "机器学习系统",
+      "count": 1
+    },
+    {
+      "raw": "GPU 与并行",
+      "count": 1
+    },
+    {
+      "raw": "后端工程",
+      "count": 1
+    },
+    {
+      "raw": "编译器与程序设计语言",
+      "count": 1
+    },
+    {
+      "raw": "分布式训练 / 显存优化",
+      "count": 1
+    }
+  ]
+}
