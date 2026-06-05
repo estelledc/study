@@ -6,6 +6,7 @@ title: Slim — PHP 圈最轻的 web 框架，专给小 API 用
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

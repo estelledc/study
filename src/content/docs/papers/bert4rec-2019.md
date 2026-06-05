@@ -6,6 +6,7 @@ title: BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

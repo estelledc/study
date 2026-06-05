@@ -5,6 +5,7 @@ title: Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

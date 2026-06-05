@@ -5,6 +5,7 @@ title: Gödel 1931 — 不完备性定理
 子分类: 数学逻辑 / 计算理论
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

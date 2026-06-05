@@ -5,6 +5,7 @@ title: Chain Replication — 把多副本排成流水线，简单且强一致
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

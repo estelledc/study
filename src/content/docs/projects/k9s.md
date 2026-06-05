@@ -6,6 +6,7 @@ title: k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

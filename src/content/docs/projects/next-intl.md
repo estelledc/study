@@ -5,6 +5,7 @@ title: next-intl — Next.js 专用的多语言开关
 子分类: 前端框架
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

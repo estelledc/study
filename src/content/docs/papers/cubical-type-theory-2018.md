@@ -6,6 +6,7 @@ title: Cubical Type Theory — 让 Univalence 公理真的能算出结果
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

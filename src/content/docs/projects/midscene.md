@@ -5,6 +5,7 @@ title: midscene — 用自然语言代替 selector 的浏览器自动化框架
 子分类: 前端 / UI 自动化
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

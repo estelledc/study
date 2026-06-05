@@ -5,6 +5,7 @@ title: Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
 子分类: DevOps / 编排
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

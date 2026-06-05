@@ -5,6 +5,7 @@ title: Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

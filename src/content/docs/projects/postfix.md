@@ -6,6 +6,7 @@ title: Postfix — 把 sendmail 拆成一群最小权限的小工
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

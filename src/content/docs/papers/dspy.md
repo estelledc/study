@@ -5,6 +5,7 @@ title: DSPy — 把 prompt 写成签名，让编译器替你调
 子分类: 编程语言
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

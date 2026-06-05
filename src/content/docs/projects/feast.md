@@ -6,6 +6,7 @@ title: Feast — 让训练和上线用同一份特征定义的开源 Feature Sto
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: SimRank — 两个节点相似当且仅当它们的邻居相似
 子分类: 检索与排序
 分类: 信息检索
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

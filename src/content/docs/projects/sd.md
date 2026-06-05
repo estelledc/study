@@ -6,6 +6,7 @@ title: sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

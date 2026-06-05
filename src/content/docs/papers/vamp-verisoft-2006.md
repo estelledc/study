@@ -5,6 +5,7 @@ title: VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

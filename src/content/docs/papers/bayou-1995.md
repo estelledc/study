@@ -5,6 +5,7 @@ title: Bayou — 离线先改本地，再回来和别人合并
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

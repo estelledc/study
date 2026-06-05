@@ -5,6 +5,7 @@ title: Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

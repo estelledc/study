@@ -5,6 +5,7 @@ title: Apache ECharts — 给一个 JSON 就能画图的可视化库
 子分类: projects / 数据可视化
 分类: 数据可视化
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

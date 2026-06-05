@@ -5,6 +5,7 @@ title: ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
 子分类: 编程语言
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

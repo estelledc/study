@@ -5,6 +5,7 @@ title: Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
 子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

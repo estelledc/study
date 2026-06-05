@@ -5,6 +5,7 @@ title: Vitest — Vite 原生测试框架
 子分类: 测试
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: listr2 — 把 CLI 任务跑成一棵会自己画进度的树
 子分类: 工具库
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

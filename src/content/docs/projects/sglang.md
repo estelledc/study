@@ -6,6 +6,7 @@ title: SGLang — 结构化推理运行时
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

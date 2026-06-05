@@ -5,6 +5,7 @@ title: chalk — 让 console.log 输出彩色字符串的 Node 库
 子分类: projects
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

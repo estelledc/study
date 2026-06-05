@@ -6,6 +6,7 @@ title: B-Tree 1972 — 磁盘友好的索引结构
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

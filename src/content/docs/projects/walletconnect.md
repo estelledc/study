@@ -6,6 +6,7 @@ title: WalletConnect — dApp 与钱包之间的加密对讲机
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

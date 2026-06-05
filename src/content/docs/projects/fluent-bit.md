@@ -6,6 +6,7 @@ title: Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

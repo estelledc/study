@@ -5,6 +5,7 @@ title: Veach MIS — 用一行加权公式让多种采样策略各取所长
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

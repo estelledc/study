@@ -6,6 +6,7 @@ title: WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL �
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

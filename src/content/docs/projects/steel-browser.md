@@ -5,6 +5,7 @@ title: Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
 子分类: projects
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

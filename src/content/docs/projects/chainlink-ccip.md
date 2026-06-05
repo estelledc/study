@@ -6,6 +6,7 @@ title: Chainlink CCIP — 让两条链像两个银行那样互转钱
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

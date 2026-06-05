@@ -5,6 +5,7 @@ title: MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 子分类: AI 工程
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: FlexSC — 把系统调用从同步陷入改成异步队列
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

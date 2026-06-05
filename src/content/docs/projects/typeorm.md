@@ -5,6 +5,7 @@ title: TypeORM — Decorator-based ORM
 子分类: ORM
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

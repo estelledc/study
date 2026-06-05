@@ -6,6 +6,7 @@ title: D-Streams — 把流处理伪装成一串很小的批
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

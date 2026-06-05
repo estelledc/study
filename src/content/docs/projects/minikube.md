@@ -6,6 +6,7 @@ title: minikube — 一条命令在笔记本上起一个真 K8s 集群
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: PipeDream — 1F1B 调度让流水线工位别空等
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

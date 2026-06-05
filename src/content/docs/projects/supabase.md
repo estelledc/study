@@ -5,6 +5,7 @@ title: Supabase — Firebase 的开源替代
 子分类: 后端 / BaaS
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

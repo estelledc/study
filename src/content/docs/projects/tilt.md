@@ -6,6 +6,7 @@ title: Tilt — K8s 微服务本地开发的"文件保存即上线"
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

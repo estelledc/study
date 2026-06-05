@@ -6,6 +6,7 @@ title: Bun — JS 全能运行时
 子分类: 语言运行时
 分类: 编译器
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

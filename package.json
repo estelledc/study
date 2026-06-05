@@ -10,7 +10,15 @@
     "preview": "astro preview",
     "astro": "astro",
     "atlas": "node scripts/regen-atlas.mjs",
-    "prebuild": "node scripts/regen-atlas.mjs"
+    "prebuild": "node scripts/regen-atlas.mjs",
+    "test": "node --test tests/**/*.test.mjs",
+    "test:ci": "node --test tests/**/*.test.mjs && node scripts/quality-gate-all.mjs --self-test",
+    "verify:gate": "node scripts/quality-gate-all.mjs",
+    "verify:gate:changed": "node scripts/quality-gate-all.mjs --changed-only",
+    "verify:build": "npm run build",
+    "verify:links": "node scripts/check-links.mjs",
+    "verify:status": "node scripts/sync-status.mjs --check",
+    "verify": "npm run test:ci && npm run verify:gate && npm run verify:status && npm run verify:build && npm run verify:links"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.30.3",

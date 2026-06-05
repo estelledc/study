@@ -5,6 +5,7 @@ title: HotStuff — 让换领导也只花线性消息的 BFT 共识
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

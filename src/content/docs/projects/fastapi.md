@@ -6,6 +6,8 @@ title: FastAPI — 用 Python 类型注解写 API
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

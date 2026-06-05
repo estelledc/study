@@ -6,6 +6,7 @@ title: MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Gray 1981 — 把"事务"提升为通用抽象
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

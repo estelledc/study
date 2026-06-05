@@ -6,6 +6,7 @@ title: OpenTSDB — HBase 上的第一代分布式 TSDB
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

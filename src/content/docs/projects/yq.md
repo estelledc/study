@@ -5,6 +5,7 @@ title: yq — YAML 的 jq（也吃 XML/TOML/properties）
 子分类: 命令行工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

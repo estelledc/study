@@ -6,6 +6,7 @@ title: Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 子分类: 检索与排序
 分类: 信息检索
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: duckdb-wasm — 把分析数据库塞进浏览器标签页
 子分类: 数据库
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

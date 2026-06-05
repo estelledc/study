@@ -5,6 +5,7 @@ title: OpenTelemetry Collector — 可观测性数据的统一中转站
 子分类: 基础设施 / 可观测性
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

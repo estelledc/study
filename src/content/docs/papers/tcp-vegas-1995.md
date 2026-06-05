@@ -6,6 +6,7 @@ title: TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

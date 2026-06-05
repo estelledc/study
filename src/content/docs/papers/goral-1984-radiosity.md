@@ -5,6 +5,7 @@ title: Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图
 子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

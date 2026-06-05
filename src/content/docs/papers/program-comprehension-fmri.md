@@ -5,6 +5,7 @@ title: Program Comprehension fMRI — 程序员读代码时大脑亮的是语言
 子分类: 软件工程认知科学
 分类: 其他
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

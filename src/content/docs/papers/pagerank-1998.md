@@ -5,6 +5,7 @@ title: PageRank — 用随机游走给整个网络的页面打分
 子分类: 检索与排序
 分类: 信息检索
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

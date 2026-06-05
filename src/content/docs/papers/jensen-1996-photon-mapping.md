@@ -5,6 +5,7 @@ title: Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

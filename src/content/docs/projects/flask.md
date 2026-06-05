@@ -6,6 +6,8 @@ title: Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

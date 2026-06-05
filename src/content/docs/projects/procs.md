@@ -6,6 +6,7 @@ title: procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: EVE-Agent — 自我训练前先把证据钉在桌上
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

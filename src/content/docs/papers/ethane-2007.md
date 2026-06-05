@@ -5,6 +5,7 @@ title: Ethane 2007 — 把企业网安全策略集中到一台中央电脑上
 子分类: 网络协议
 分类: 网络协议
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

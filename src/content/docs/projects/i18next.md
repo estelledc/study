@@ -5,6 +5,7 @@ title: i18next — 让一份 JS 代码同时讲几十种语言
 子分类: 前端国际化
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

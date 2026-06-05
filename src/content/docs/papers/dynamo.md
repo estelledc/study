@@ -5,6 +5,7 @@ title: Dynamo — 让购物车永远能写入的分布式存储
 子分类: 分布式系统
 分类: 分布式系统
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

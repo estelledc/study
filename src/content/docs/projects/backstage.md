@@ -6,6 +6,7 @@ title: Backstage — 把公司散在各处的开发工具拼成一个门户
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Homebrew — macOS 上一行命令装好软件的包管理器
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

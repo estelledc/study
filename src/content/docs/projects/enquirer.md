@@ -5,6 +5,7 @@ title: enquirer — 让 CLI 工具会问问题的轻量库
 子分类: projects / 命令行
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

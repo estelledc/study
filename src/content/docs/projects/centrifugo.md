@@ -6,6 +6,7 @@ title: Centrifugo — Go 写的开源实时消息服务器
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

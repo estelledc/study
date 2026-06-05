@@ -6,6 +6,7 @@ title: Prefect — Python 原生编排，让数据流水线像写普通函数一
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

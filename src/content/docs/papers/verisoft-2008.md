@@ -5,6 +5,7 @@ title: Verisoft — 把整台计算机从晶体管到邮件客户端全部用数
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

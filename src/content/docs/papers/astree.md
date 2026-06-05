@@ -5,6 +5,7 @@ title: ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

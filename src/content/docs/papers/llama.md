@@ -5,6 +5,7 @@ title: LLaMA — Meta 开源大语言模型
 子分类: NLP / LLM
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

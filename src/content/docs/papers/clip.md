@@ -5,6 +5,7 @@ title: CLIP — Contrastive Language-Image Pre-training
 子分类: 多模态 / 计算机视觉
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

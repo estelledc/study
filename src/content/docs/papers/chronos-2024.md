@@ -6,6 +6,7 @@ title: Chronos — 把时间序列当语言来训练大模型
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

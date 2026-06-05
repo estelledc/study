@@ -5,6 +5,7 @@ title: ky — 把浏览器自带的 fetch 包成顺手工具
 子分类: projects
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

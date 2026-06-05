@@ -5,6 +5,7 @@ title: FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
 子分类: 学习与认知
 分类: 其他
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

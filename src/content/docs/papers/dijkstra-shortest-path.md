@@ -5,6 +5,7 @@ title: Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 子分类: 算法
 分类: 编程语言
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

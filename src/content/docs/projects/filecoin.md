@@ -6,6 +6,7 @@ title: Filecoin / Lotus — IPFS 之上的去中心化存储市场
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

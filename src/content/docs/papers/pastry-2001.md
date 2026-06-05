@@ -5,6 +5,7 @@ title: Pastry — 用 nodeId 的前缀一位一位逼近目标
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

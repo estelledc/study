@@ -5,6 +5,7 @@ title: Chain-of-Thought Prompting
 子分类: AI / LLM
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

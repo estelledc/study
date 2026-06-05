@@ -5,6 +5,7 @@ title: SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 子分类: 存储与查询
 分类: 数据库
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

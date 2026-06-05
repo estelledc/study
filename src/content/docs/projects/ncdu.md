@@ -6,6 +6,7 @@ title: ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

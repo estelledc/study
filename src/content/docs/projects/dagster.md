@@ -6,6 +6,7 @@ title: Dagster — 把流水线想成数据资产图，不是任务序列
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

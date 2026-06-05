@@ -6,6 +6,7 @@ title: TDengine — 一个设备一张表的国产 IoT 时序库
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

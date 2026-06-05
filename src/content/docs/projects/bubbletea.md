@@ -5,6 +5,7 @@ title: Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架
 子分类: 命令行工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

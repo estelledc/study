@@ -5,6 +5,7 @@ title: CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 子分类: 前端
 分类: 后端 API
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

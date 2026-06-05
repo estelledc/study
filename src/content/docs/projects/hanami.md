@@ -6,6 +6,8 @@ title: Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
+schema_version: legacy-long
 ---
 
 ## 是什么

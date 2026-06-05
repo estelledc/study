@@ -5,6 +5,7 @@ title: Docusaurus — 一组 plugin 协作出来的文档站框架
 子分类: 文档工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

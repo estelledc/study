@@ -5,6 +5,7 @@ title: wretch — 把 fetch 写成一条链
 子分类: 前端工具
 分类: 后端 API
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

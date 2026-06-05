@@ -5,6 +5,7 @@ title: Activation Patching — 因果干预可解释性方法
 子分类: AI 可解释性
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

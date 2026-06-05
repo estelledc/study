@@ -6,6 +6,7 @@ title: MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

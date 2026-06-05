@@ -5,6 +5,7 @@ title: Karger 1997 一致性哈希 — 加机器不用全员搬家
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

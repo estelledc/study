@@ -6,6 +6,7 @@ title: NVIDIA Tesla — 把显卡改造成通用并行计算机
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

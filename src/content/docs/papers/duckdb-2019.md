@@ -5,6 +5,7 @@ title: DuckDB — 把 OLAP 数据库塞进你的 Python 进程
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

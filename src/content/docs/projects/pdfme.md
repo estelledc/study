@@ -5,6 +5,7 @@ title: pdfme — TypeScript 模板化 PDF
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

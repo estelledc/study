@@ -6,6 +6,7 @@ title: BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Apache ZooKeeper — 给一群机器装一个共同的小脑
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

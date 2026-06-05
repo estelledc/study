@@ -5,6 +5,7 @@ title: Graf-Saïdi — 用谓词把无限状态压成有限抽象
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

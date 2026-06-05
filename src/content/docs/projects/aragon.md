@@ -6,6 +6,7 @@ title: Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

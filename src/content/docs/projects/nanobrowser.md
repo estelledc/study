@@ -5,6 +5,7 @@ title: nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
 子分类: AI agent
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

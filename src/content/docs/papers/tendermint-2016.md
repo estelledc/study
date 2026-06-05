@@ -5,6 +5,7 @@ title: Tendermint — 把拜占庭共识塞进开放区块链的工程模板
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

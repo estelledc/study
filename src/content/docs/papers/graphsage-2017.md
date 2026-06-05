@@ -5,6 +5,7 @@ title: GraphSAGE 2017 — 给没见过的节点也能算嵌入
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

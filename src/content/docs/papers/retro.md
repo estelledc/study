@@ -5,6 +5,7 @@ title: RETRO — DeepMind 的检索增强 LLM
 子分类: AI / NLP
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

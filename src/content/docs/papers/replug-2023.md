@@ -6,6 +6,7 @@ title: REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

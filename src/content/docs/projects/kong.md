@@ -6,6 +6,7 @@ title: Kong — 基于 nginx + Lua 的云原生 API 网关
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

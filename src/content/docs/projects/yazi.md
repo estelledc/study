@@ -5,6 +5,7 @@ title: yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
 子分类: 命令行工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

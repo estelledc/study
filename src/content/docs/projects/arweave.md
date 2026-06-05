@@ -6,6 +6,7 @@ title: Arweave — 一次付费、永远存着的区块链
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

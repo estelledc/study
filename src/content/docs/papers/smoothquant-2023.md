@@ -6,6 +6,7 @@ title: SmoothQuant 2023 — 把激活的烫手山芋扔给权重
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

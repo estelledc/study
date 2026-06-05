@@ -5,6 +5,7 @@ title: REALM — 把检索器和 BERT 一起预训练的第一篇论文
 子分类: 自然语言处理
 分类: NLP
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

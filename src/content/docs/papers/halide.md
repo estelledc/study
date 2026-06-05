@@ -5,6 +5,7 @@ title: Halide — 把"算什么"和"怎么算"分开写
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

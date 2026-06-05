@@ -5,6 +5,7 @@ title: Constitutional AI — Anthropic 的对齐方法
 子分类: AI 安全 / NLP
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

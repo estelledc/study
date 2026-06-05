@@ -5,6 +5,7 @@ title: Personalized PageRank — 给每个人一份属于自己的网页排名
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

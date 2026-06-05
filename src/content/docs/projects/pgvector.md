@@ -5,6 +5,7 @@ title: pgvector — PostgreSQL 向量扩展
 子分类: 数据库 / 向量
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

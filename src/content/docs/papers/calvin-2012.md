@@ -5,6 +5,7 @@ title: Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2P
 子分类: 存储与查询
 分类: 数据库
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

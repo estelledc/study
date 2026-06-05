@@ -6,6 +6,7 @@ title: Weights & Biases — 几行 init 把指标系统代码自动入库
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

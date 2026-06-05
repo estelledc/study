@@ -5,6 +5,7 @@ title: AlphaGo — 击败围棋世界冠军
 子分类: 强化学习 / AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

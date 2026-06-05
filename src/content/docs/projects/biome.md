@@ -5,6 +5,7 @@ title: Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 子分类: 前端工具链
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Borg — Google 把一万台机器假装成一台
 子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

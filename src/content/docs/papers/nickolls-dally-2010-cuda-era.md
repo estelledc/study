@@ -6,6 +6,7 @@ title: Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

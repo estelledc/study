@@ -6,6 +6,7 @@ title: Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
 子分类: 命令行工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

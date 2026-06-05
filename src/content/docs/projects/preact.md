@@ -5,6 +5,7 @@ title: Preact — 3KB React 替代
 子分类: UI 框架
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

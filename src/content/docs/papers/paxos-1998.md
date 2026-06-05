@@ -6,6 +6,8 @@ title: Paxos 1998 — 古希腊议会寓言里藏的共识协议
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

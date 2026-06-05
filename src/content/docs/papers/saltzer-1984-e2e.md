@@ -5,6 +5,7 @@ title: End-to-End Arguments — 把功能尽量推到端上做
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

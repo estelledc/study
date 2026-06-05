@@ -6,6 +6,7 @@ title: PocketBase — 一个 Go 二进制就是完整的后端
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 子分类: 链与合约
 分类: 区块链
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

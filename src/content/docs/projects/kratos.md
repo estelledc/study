@@ -6,6 +6,7 @@ title: kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

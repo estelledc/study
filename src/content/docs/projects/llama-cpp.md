@@ -6,6 +6,7 @@ title: llama.cpp — 让 LLM 在你电脑里直接跑
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

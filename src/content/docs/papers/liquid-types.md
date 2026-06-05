@@ -5,6 +5,7 @@ title: Liquid Types — 让编译器自己推导出"哪些值才合法"
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

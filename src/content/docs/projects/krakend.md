@@ -6,6 +6,7 @@ title: KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

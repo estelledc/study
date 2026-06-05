@@ -6,6 +6,7 @@ title: Chainlink — 智能合约的"感官系统"
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

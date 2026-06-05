@@ -6,6 +6,7 @@ title: eza — 现代 ls 替代（exa 的社区接管 fork）
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

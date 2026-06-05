@@ -6,6 +6,7 @@ title: ClickHouse — 把列存 OLAP 推到硬件极限
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

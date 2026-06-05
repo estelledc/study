@@ -5,6 +5,7 @@ title: MinHash — 用最小哈希值估算两个集合的重叠度
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

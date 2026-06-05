@@ -5,6 +5,7 @@ title: mixup — 把两张图按比例叠成一张，标签也一起叠
 子分类: 模型与训练
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

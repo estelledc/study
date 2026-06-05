@@ -6,6 +6,7 @@ title: SpecInfer — 让大模型一次"猜一棵树"再并行验证
 子分类: GPU 架构
 分类: 图形学
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
 子分类: 检索与排序
 分类: 信息检索
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

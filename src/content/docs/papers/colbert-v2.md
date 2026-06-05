@@ -5,6 +5,7 @@ title: ColBERTv2 — 让向量检索既精又能扛百万文档
 子分类: 数据检索
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

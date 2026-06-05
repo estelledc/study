@@ -6,6 +6,7 @@ title: tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

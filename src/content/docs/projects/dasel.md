@@ -5,6 +5,7 @@ title: dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

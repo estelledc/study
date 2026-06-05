@@ -6,6 +6,7 @@ title: Lance — AI 数据列存格式
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

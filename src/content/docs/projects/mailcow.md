@@ -6,6 +6,7 @@ title: mailcow — Docker compose 一键起一整套邮件服务
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

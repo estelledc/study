@@ -5,6 +5,7 @@ title: ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
 子分类: infrastructure
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

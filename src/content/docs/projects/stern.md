@@ -6,6 +6,7 @@ title: stern — 多 pod 多 container 日志聚合 tail
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

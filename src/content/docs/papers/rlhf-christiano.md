@@ -5,6 +5,7 @@ title: RLHF Christiano 2017 — 人类偏好做奖励
 子分类: 强化学习 / AI 安全
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

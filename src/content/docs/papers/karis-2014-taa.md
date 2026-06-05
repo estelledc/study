@@ -5,6 +5,7 @@ title: Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

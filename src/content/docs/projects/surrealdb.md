@@ -6,6 +6,7 @@ title: SurrealDB — 一种语法吃下 SQL 图 文档 向量
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

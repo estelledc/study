@@ -5,6 +5,8 @@ title: Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 子分类: web-frameworks
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

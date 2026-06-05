@@ -5,6 +5,7 @@ title: MLflow — 给机器学习实验装上"记账本和身份证"
 子分类: MLOps / ML 平台
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

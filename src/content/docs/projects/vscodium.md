@@ -6,6 +6,7 @@ title: VSCodium — 去微软遥测的 VS Code 干净构建
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

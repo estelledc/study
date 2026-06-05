@@ -6,6 +6,7 @@ title: Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架
 子分类: 网络协议
 分类: 网络协议
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

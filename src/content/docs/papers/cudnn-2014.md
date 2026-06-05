@@ -6,6 +6,7 @@ title: cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

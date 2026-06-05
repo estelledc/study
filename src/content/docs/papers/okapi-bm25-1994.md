@@ -6,6 +6,7 @@ title: Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

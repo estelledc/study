@@ -6,6 +6,7 @@ title: Curve — 稳定币低滑点兑换协议
 子分类: 链与合约
 分类: 区块链
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

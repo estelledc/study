@@ -5,6 +5,7 @@ title: browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Pytho
 子分类: AI agent infra
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

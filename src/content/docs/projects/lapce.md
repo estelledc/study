@@ -6,6 +6,7 @@ title: Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

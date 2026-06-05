@@ -6,6 +6,7 @@ title: ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

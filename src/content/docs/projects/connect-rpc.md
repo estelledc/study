@@ -6,6 +6,7 @@ title: ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

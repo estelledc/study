@@ -5,6 +5,7 @@ title: 'Silero VAD — 轻量语音活动检测'
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: '入门'
+provenance: pipeline-v3
 ---
 
 ## 是什么

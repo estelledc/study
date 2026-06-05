@@ -6,6 +6,7 @@ title: Position Based Dynamics — 跳过力，直接挪位置
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

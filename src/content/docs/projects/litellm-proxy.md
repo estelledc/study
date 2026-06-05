@@ -5,6 +5,7 @@ title: LiteLLM Proxy — 自托管的 LLM 统一网关
 子分类: ai-eng
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

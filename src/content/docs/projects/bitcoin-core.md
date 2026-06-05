@@ -6,6 +6,7 @@ title: Bitcoin Core — 比特币参考实现
 子分类: 链与合约
 分类: 区块链
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

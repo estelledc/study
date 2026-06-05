@@ -5,6 +5,7 @@ title: RAG (Lewis 2020) — 检索增强生成奠基
 子分类: AI / NLP
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

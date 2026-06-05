@@ -6,6 +6,7 @@ title: Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

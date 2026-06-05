@@ -6,6 +6,7 @@ title: SPANN — 内存放中心、SSD 放向量的十亿级近邻检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

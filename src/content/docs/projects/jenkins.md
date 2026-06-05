@@ -6,6 +6,7 @@ title: Jenkins — 老牌开源 CI 服务器
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

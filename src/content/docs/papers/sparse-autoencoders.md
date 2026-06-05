@@ -5,6 +5,8 @@ title: Sparse Autoencoders — 把 superposition 解出来
 子分类: AI 可解释性
 分类: 机器学习
 难度: 中级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

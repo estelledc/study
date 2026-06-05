@@ -6,6 +6,7 @@ title: CesiumJS — 浏览器里的三维地球与时间动画
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

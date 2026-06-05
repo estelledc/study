@@ -6,6 +6,7 @@ title: DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

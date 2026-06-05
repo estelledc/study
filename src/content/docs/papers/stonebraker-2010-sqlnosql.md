@@ -6,6 +6,7 @@ title: Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL
 子分类: 存储与查询
 分类: 数据库
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

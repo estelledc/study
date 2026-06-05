@@ -6,6 +6,7 @@ title: Claude Code — Anthropic 终端编程助手
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

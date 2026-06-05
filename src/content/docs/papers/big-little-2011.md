@@ -6,6 +6,7 @@ title: big.LITTLE — 让一颗芯片同时装快核和省电核
 子分类: GPU 架构
 分类: 图形学
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

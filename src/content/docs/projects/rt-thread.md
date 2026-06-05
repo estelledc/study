@@ -5,6 +5,7 @@ title: RT-Thread — 中文社区主导的物联网 RTOS
 子分类: 嵌入式
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

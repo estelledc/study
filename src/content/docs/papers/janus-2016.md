@@ -5,6 +5,7 @@ title: Janus 2016 — 把并发控制和共识捏成一个协议
 子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

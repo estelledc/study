@@ -5,6 +5,7 @@ title: Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

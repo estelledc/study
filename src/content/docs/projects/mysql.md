@@ -5,6 +5,7 @@ title: MySQL — 全球最流行关系数据库
 子分类: 数据库
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

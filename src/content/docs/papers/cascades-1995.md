@@ -5,6 +5,7 @@ title: Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
 子分类: 存储与查询
 分类: 数据库
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

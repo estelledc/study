@@ -5,6 +5,7 @@ title: Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

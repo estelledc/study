@@ -5,6 +5,7 @@ title: CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

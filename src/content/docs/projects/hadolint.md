@@ -6,6 +6,7 @@ title: hadolint — 给 Dockerfile 做体检的小工具
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

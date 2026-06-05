@@ -6,6 +6,7 @@ title: SGLang — 把 LLM 程序当成共享前缀的树来跑
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: nvm — 在同一台机器上轻松切换 Node 版本
 子分类: 前端工具链
 分类: 后端 API
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

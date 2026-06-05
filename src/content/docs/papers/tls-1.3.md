@@ -5,6 +5,7 @@ title: TLS 1.3 — 把 HTTPS 握手砍到一个来回
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

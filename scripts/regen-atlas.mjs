@@ -27,6 +27,8 @@ async function loadAll(dir) {
       description: fm.description ?? '',
       theme: (fm['分类'] || '').trim() || null,
       subcategory: (fm['子分类'] || '').trim() || FALLBACK_SUB,
+      provenance: fm.provenance ?? 'pipeline-v3',
+      schema: fm.schema_version ?? 'default',
     });
   }
   return notes;
@@ -41,6 +43,14 @@ function firstSentence(desc, max = 110) {
   if (!desc) return '';
   const t = String(desc).split(/[。.；;]/)[0].trim();
   return t.length > max ? t.slice(0, max - 1) + '…' : t;
+}
+
+function provenanceBadge(provenance, schema) {
+  if (provenance === 'curated-season') return '⭐ Season';
+  if (schema === 'zhuangyuan-v1.1') return '⭐ Season';
+  if (schema === 'template-reference') return '📐 模板';
+  if (provenance === 'legacy-migrated') return '🗄 存量';
+  return '✅ v3';
 }
 
 function slugify(s) {
@@ -155,11 +165,12 @@ function renderAtlas(notes, kind, taxonomy) {
         lines.push(`### ${sub}`);
         lines.push('');
       }
-      lines.push(`| ${titleZh} | 描述 |`);
-      lines.push('|---|---|');
+      lines.push(`| ${titleZh} | 质量 | 描述 |`);
+      lines.push('|---|:---:|---|');
       for (const it of items) {
         const desc = firstSentence(it.description);
-        lines.push(`| [${escapeMd(it.title)}](/study/${pathSeg}/${slugForUrl(it.slug)}/) | ${escapeMd(desc)} |`);
+        const badge = provenanceBadge(it.provenance, it.schema);
+        lines.push(`| [${escapeMd(it.title)}](/study/${pathSeg}/${slugForUrl(it.slug)}/) | ${badge} | ${escapeMd(desc)} |`);
       }
       lines.push('');
     }
@@ -183,12 +194,13 @@ function renderAtlas(notes, kind, taxonomy) {
   lines.push('');
   lines.push(`## 全部 ${total} ${unit}（字母序）`);
   lines.push('');
-  lines.push(`| Slug | ${titleZh} | 一级 | 子分类 |`);
-  lines.push('|---|---|---|---|');
+  lines.push(`| Slug | ${titleZh} | 质量 | 一级 | 子分类 |`);
+  lines.push('|---|---|:---:|---|---|');
   const sorted = [...notes].sort((a, b) => a.slug.localeCompare(b.slug));
   for (const it of sorted) {
     const theme = it.theme ?? FALLBACK_THEME;
-    lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${pathSeg}/${slugForUrl(it.slug)}/) | ${theme} | ${it.subcategory} |`);
+    const badge = provenanceBadge(it.provenance, it.schema);
+    lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${pathSeg}/${slugForUrl(it.slug)}/) | ${badge} | ${theme} | ${it.subcategory} |`);
   }
   lines.push('');
 

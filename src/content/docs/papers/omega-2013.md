@@ -6,6 +6,7 @@ title: Omega 2013 — 让多个调度器同时改一份 cluster 状态
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

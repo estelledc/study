@@ -5,6 +5,7 @@ title: Graphormer — 标准 Transformer 直接刷爆 GNN
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

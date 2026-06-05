@@ -6,6 +6,7 @@ title: Self-Consistency — 让模型把同一道题做 40 遍再投票
 子分类: 模型与训练
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

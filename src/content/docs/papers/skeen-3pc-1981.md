@@ -6,6 +6,7 @@ title: Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

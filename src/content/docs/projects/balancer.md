@@ -5,6 +5,7 @@ title: Balancer V2 — 通用 AMM 与权重池
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

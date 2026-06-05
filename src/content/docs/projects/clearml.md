@@ -6,6 +6,7 @@ title: ClearML — 自托管 MLOps 套件
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

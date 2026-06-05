@@ -6,6 +6,7 @@ title: RethinkDB — 让数据库自己把更新推给客户端的先驱
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

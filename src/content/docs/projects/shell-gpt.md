@@ -6,6 +6,7 @@ title: shell-gpt — 把 LLM 接进 shell 当命令行助理
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

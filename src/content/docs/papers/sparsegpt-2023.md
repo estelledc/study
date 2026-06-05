@@ -6,6 +6,7 @@ title: SparseGPT — 175B 大模型一次过剪 50%，不重训
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

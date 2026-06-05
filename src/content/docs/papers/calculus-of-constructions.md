@@ -5,6 +5,7 @@ title: Calculus of Constructions — 让程序和数学证明共用一种语言
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

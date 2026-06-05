@@ -5,6 +5,7 @@ title: Vertica 2012 — C-Store 论文走向产品的七年改造账
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

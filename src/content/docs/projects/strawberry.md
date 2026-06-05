@@ -6,6 +6,7 @@ title: Strawberry — 用 Python 类型注解直接生成 GraphQL schema
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

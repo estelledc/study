@@ -6,6 +6,7 @@ title: Ansible — 无 agent 配置管理
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么
@@ -158,3 +159,14 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 - [[docker]] —— 容器化后 Ansible 用得少了，但部署 Docker 本身仍常用
 - [[kubernetes]] —— k8s 集群初装常用 Ansible（kubespray 项目就是 ansible playbook）
 - [[nginx]] —— Ansible playbook 最常见的部署对象之一
+
+## 延伸阅读
+
+- [Ansible 官方文档](https://docs.ansible.com/) — 快速上手 playbook、role 的权威入口
+- [Ansible for DevOps（Jeff Geerling）](https://www.ansiblefordevops.com/) — 最被推荐的 Ansible 实战书
+- [[terraform]] — 与 Ansible 互补的基础设施声明工具
+- [[docker]] — 容器化时代 Ansible 的定位演变
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

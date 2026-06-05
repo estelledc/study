@@ -5,6 +5,7 @@ title: jemalloc — 多 arena 让多线程 malloc 不再互相等
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

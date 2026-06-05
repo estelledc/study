@@ -6,6 +6,7 @@ title: Isabelle/HOL — 让程序证明像写数学论文一样可读
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

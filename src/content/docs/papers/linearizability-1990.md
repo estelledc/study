@@ -6,6 +6,7 @@ title: Linearizability 1990 — 让并发对象看起来像一次只执行一个
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

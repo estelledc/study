@@ -6,6 +6,7 @@ title: pyenv — 用 shim 把 python 命令拦截后路由到指定版本
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

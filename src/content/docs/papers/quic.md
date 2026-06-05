@@ -5,6 +5,7 @@ title: QUIC — 把可靠传输从内核搬到用户空间
 子分类: 计算机网络
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

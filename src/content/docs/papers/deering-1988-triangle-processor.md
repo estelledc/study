@@ -5,6 +5,7 @@ title: Deering 1988 Triangle Processor — 现代 GPU 的祖先架构
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

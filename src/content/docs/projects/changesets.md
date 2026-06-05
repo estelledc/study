@@ -5,6 +5,7 @@ title: changesets — 让每个 PR 自带版本号 bump 声明
 子分类: 工具库
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

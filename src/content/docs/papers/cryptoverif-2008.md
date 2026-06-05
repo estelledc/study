@@ -5,6 +5,7 @@ title: CryptoVerif — 让计算机直接证密码协议在真实计算模型下
 子分类: 形式化验证
 分类: 形式化方法
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

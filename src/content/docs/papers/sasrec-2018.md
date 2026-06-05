@@ -6,6 +6,7 @@ title: SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

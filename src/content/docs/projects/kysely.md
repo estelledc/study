@@ -5,6 +5,7 @@ title: Kysely — TypeScript SQL 查询构建器
 子分类: ORM / 查询构建器
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

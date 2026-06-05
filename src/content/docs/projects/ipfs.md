@@ -6,6 +6,7 @@ title: IPFS / Kubo — 按内容哈希定位的去中心化文件系统
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

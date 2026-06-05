@@ -6,6 +6,7 @@ title: Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
 子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

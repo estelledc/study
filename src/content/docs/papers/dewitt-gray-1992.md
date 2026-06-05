@@ -6,6 +6,7 @@ title: DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Taubin 1995 — 把网格平滑当成低通滤波
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

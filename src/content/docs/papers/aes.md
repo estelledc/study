@@ -5,6 +5,7 @@ title: AES Rijndael 对称分组密码
 子分类: 密码学
 分类: 安全与隐私
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

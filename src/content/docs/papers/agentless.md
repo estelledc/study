@@ -5,6 +5,7 @@ title: Agentless — 反 Agent 派的 SWE-bench 解法
 子分类: AI / 软件工程
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

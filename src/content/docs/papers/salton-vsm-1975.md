@@ -5,6 +5,7 @@ title: Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 子分类: 检索与排序
 分类: 信息检索
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

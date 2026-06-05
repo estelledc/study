@@ -6,6 +6,7 @@ title: CosmWasm — Cosmos 上的 wasm 智能合约
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

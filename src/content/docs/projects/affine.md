@@ -5,6 +5,7 @@ title: AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 子分类: 开源工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

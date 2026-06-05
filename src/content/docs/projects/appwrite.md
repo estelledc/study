@@ -6,6 +6,7 @@ title: Appwrite — 自己能装一遍的开源 Firebase
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

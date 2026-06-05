@@ -5,6 +5,7 @@ title: SQLite — 嵌入式数据库 30 年怎么活下来的
 子分类: 存储与查询
 分类: 数据库
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

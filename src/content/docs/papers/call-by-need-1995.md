@@ -5,6 +5,7 @@ title: Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

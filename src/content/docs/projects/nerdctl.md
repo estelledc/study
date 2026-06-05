@@ -6,6 +6,7 @@ title: nerdctl — containerd 官方的 Docker 兼容 CLI
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

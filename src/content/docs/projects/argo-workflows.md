@@ -6,6 +6,7 @@ title: Argo Workflows — Kubernetes 原生工作流引擎
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

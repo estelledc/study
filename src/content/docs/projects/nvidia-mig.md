@@ -5,6 +5,7 @@ title: NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡
 子分类: infrastructure
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

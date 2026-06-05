@@ -6,6 +6,7 @@ title: XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

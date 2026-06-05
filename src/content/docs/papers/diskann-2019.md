@@ -5,6 +5,7 @@ title: DiskANN — 单机十亿向量近邻检索（图存 SSD）
 子分类: 存储与查询
 分类: 数据库
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

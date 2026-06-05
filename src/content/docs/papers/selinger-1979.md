@@ -5,6 +5,7 @@ title: Selinger 1979 — 基于代价的查询优化
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议
 子分类: 形式化验证
 分类: 形式化方法
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: OpenZeppelin Contracts — 以太坊智能合约的事实标准库
 子分类: 链与合约
 分类: 区块链
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

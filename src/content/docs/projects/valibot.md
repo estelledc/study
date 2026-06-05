@@ -5,6 +5,7 @@ title: Valibot — 拆成乐高的 TypeScript 校验库
 子分类: 前端工程
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

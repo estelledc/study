@@ -5,6 +5,7 @@ title: GitHub Actions — 仓库自带的 CI/CD 流水线
 子分类: DevOps / CI-CD
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

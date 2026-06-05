@@ -6,6 +6,7 @@ title: LLM-Wiki — 把外部知识编译成 agent 自己的"维基"
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

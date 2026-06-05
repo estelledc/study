@@ -6,6 +6,7 @@ title: gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

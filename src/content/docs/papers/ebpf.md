@@ -5,6 +5,7 @@ title: eBPF — 用户写小程序，内核证明安全后再跑
 子分类: 操作系统
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

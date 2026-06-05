@@ -5,6 +5,7 @@ title: X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Nix — 把每个软件包当成纯函数的输出
 子分类: 包管理 / 系统
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

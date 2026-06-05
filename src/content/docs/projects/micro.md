@@ -6,6 +6,7 @@ title: micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

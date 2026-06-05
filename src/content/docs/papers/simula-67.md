@@ -5,6 +5,8 @@ title: SIMULA 67 — 面向对象的诞生
 子分类: 编程语言
 分类: 编程语言
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

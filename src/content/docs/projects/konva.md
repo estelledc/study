@@ -5,6 +5,7 @@ title: Konva — 给 HTML5 Canvas 装一棵会响应的节点树
 子分类: 前端图形 / Canvas 2D
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

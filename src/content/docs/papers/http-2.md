@@ -5,6 +5,7 @@ title: HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

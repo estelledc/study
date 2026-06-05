@@ -5,6 +5,7 @@ title: Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引
 子分类: TypeScript 运行时
 分类: 编译器
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

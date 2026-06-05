@@ -5,6 +5,7 @@ title: Dapper — Google 大规模分布式系统链路追踪基础设施
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

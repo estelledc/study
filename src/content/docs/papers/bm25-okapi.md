@@ -5,6 +5,7 @@ title: BM25 — 给文档打分的"老配方"
 子分类: 数据检索
 分类: 信息检索
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

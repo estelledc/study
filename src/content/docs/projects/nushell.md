@@ -5,6 +5,7 @@ title: nushell — 让命令之间传 Excel 表而不是传纸条
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: go-zero — 一份契约文件生成整套 Go 微服务
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

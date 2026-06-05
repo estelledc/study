@@ -5,6 +5,7 @@ title: Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

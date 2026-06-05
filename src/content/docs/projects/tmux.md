@@ -6,6 +6,7 @@ title: tmux — 一个终端窗口里跑多个会话还能脱离重连
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

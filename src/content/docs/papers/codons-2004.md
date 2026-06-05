@@ -5,6 +5,7 @@ title: CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

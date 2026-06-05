@@ -6,6 +6,7 @@ title: Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

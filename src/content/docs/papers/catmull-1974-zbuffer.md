@@ -5,6 +5,7 @@ title: Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
 子分类: 渲染与图形
 分类: 图形学
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

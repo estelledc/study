@@ -5,6 +5,7 @@ title: FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 
 子分类: 存储与查询
 分类: 数据库
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

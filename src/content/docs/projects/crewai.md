@@ -6,6 +6,7 @@ title: 'CrewAI — 把多 Agent 编排做成"组团队"'
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

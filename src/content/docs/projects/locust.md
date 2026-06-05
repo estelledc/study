@@ -6,6 +6,7 @@ title: Locust — 用 Python 写压测脚本的分布式负载工具
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

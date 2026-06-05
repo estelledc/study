@@ -6,6 +6,7 @@ title: GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

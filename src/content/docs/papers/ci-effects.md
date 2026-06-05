@@ -5,6 +5,7 @@ title: CI Effects — 持续集成不是免费午餐，价值看实现细节
 子分类: 软件工程
 分类: 其他
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

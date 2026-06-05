@@ -6,6 +6,7 @@ title: Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

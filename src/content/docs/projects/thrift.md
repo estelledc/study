@@ -6,6 +6,7 @@ title: Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

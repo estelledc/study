@@ -5,6 +5,7 @@ title: THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

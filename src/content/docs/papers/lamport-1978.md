@@ -5,6 +5,8 @@ title: Lamport 1978 — 分布式系统里没有"绝对的同时"
 子分类: papers / 分布式系统
 分类: 分布式系统
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

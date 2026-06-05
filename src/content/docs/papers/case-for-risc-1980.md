@@ -6,6 +6,7 @@ title: Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

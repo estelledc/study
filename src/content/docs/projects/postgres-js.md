@@ -5,6 +5,7 @@ title: postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 子分类: 数据库
 分类: 数据库
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

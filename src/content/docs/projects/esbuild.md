@@ -5,6 +5,7 @@ title: esbuild — 用 Go 写的极速 JS bundler
 子分类: 构建工具
 分类: 编译器
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

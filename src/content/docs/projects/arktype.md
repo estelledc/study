@@ -5,6 +5,7 @@ title: arktype — schema 长得像 TypeScript 类型本身
 子分类: 工具库
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

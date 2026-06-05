@@ -5,6 +5,7 @@ title: Vercel AI SDK — 多 LLM Provider 统一 SDK
 子分类: AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

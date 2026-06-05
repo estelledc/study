@@ -5,6 +5,7 @@ title: Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 子分类: 系统设计
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

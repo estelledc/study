@@ -5,6 +5,7 @@ title: Whitted 1980 — 让光线在场景里递归跑三种次级射线
 子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

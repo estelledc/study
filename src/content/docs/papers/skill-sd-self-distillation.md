@@ -6,6 +6,7 @@ title: Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸�
 子分类: 智能体与 LLM
 分类: Agent
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

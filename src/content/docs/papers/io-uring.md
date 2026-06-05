@@ -5,6 +5,7 @@ title: io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 子分类: 操作系统
 分类: 操作系统
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

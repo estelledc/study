@@ -5,6 +5,7 @@ title: Starship — 一份配置点亮所有 shell 的 prompt
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

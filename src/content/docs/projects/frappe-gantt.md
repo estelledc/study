@@ -5,6 +5,7 @@ title: Frappe Gantt — 200 行 SVG 写出的甘特图
 子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

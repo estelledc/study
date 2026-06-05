@@ -5,6 +5,7 @@ title: Drizzle ORM — 轻量 SQL-like ORM
 子分类: ORM
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10
 子分类: AI 工程
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

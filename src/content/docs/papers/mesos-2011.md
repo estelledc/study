@@ -5,6 +5,7 @@ title: Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

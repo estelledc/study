@@ -5,6 +5,7 @@ title: CockroachDB — 分布式 SQL 数据库
 子分类: 数据库 / 分布式
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

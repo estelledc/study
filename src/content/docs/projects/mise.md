@@ -6,6 +6,7 @@ title: mise — 一条命令切换项目用的 Node/Python/Go 版本
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

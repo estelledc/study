@@ -5,6 +5,7 @@ title: FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

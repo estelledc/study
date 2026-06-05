@@ -6,6 +6,7 @@ title: GShard — 用注解让 600B 模型自动跨设备切片
 子分类: GPU 架构
 分类: 图形学
 难度: 中级到高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

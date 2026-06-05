@@ -5,6 +5,7 @@ title: Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

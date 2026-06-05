@@ -6,6 +6,8 @@ title: Kubernetes — 容器编排平台
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

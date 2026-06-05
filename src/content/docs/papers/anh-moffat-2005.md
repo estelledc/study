@@ -6,6 +6,7 @@ title: Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

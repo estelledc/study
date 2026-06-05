@@ -5,6 +5,7 @@ title: promptfoo — 给 prompt 写单元测试的 CLI
 子分类: AI 工程基建
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

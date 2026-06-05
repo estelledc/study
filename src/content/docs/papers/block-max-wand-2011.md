@@ -6,6 +6,7 @@ title: Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

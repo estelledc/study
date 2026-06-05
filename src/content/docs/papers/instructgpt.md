@@ -5,6 +5,7 @@ title: InstructGPT — RLHF 让 LLM 听话
 子分类: NLP
 分类: NLP
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

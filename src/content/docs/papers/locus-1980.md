@@ -5,6 +5,7 @@ title: LOCUS 1980 — 让一群机器看起来像同一台机器
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

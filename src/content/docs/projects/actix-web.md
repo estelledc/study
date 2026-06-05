@@ -6,6 +6,8 @@ title: Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

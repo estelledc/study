@@ -5,6 +5,7 @@ title: SWR — React 远程数据 hook 的极简流派
 子分类: 前端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

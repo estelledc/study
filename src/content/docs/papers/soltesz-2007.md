@@ -5,6 +5,7 @@ title: Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

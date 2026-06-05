@@ -5,6 +5,8 @@ title: SSA — 静态单赋值形式
 子分类: 编译器
 分类: 编译器
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

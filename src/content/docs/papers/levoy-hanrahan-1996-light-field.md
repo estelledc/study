@@ -6,6 +6,7 @@ title: Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

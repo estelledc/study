@@ -5,6 +5,7 @@ title: Causal Abstraction — 神经网络与算法的因果对齐
 子分类: AI 可解释性
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

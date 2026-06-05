@@ -6,6 +6,7 @@ title: Element Android — Matrix 协议官方 Android 客户端（Kotlin + Real
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

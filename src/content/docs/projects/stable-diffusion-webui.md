@@ -5,6 +5,7 @@ title: 'AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器'
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: '入门'
+provenance: pipeline-v3
 ---
 
 ## 是什么

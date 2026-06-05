@@ -5,6 +5,7 @@ title: Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

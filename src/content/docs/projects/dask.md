@@ -6,6 +6,7 @@ title: Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

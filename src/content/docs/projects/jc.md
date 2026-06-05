@@ -5,6 +5,7 @@ title: jc — 把 100+ Unix 命令的输出一键 JSON 化
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

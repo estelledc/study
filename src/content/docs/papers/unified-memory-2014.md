@@ -6,6 +6,7 @@ title: CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

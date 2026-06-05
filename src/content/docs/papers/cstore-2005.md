@@ -5,6 +5,7 @@ title: C-Store — 把数据按列存，分析查询直接快十倍
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

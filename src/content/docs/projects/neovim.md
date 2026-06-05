@@ -6,6 +6,7 @@ title: Neovim — Lua 可扩展 vim 现代分叉
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

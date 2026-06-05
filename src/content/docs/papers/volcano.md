@@ -5,6 +5,7 @@ title: Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
 子分类: 数据库
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

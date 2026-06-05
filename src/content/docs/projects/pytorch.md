@@ -5,6 +5,8 @@ title: 'PyTorch — 深度学习主流框架'
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: '中级'
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 子分类: AI 编码工具
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Debezium — 把数据库的"刚刚改了"变成消息流
 子分类: 数据基建 / CDC
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

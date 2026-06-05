@@ -5,6 +5,7 @@ title: pino — 日志不该阻塞热路径
 子分类: projects / Node.js
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

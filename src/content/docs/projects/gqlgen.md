@@ -5,6 +5,7 @@ title: gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

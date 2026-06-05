@@ -5,6 +5,7 @@ title: FlashAttention — 不改算法，只改数据怎么进 GPU
 子分类: GPU 与系统
 分类: 图形学
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

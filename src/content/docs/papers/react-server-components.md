@@ -5,6 +5,7 @@ title: React Server Components — 让组件自己决定在哪台机器跑
 子分类: 前端框架
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

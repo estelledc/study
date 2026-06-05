@@ -5,6 +5,7 @@ title: Chubby — 给凡人用的分布式锁服务
 子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

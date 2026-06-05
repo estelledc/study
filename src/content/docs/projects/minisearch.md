@@ -5,6 +5,7 @@ title: minisearch — 浏览器里的小型全文搜索引擎
 子分类: projects
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

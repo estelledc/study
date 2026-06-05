@@ -5,6 +5,7 @@ title: Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
 子分类: 大模型服务
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

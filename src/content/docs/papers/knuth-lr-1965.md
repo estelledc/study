@@ -6,6 +6,7 @@ title: Knuth LR(k) — 编译器自己读懂语法的算法
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

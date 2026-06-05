@@ -5,6 +5,7 @@ title: pnpm — 全机器只存一份的 Node 包管理器
 子分类: projects / 工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

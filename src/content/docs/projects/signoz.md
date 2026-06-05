@@ -5,6 +5,7 @@ title: SigNoz — 自托管的 OpenTelemetry 一体化可观测平台
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

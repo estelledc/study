@@ -5,6 +5,7 @@ title: NATS — 极简云原生消息系统
 子分类: 消息队列
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: CVAT — 视频帧标注与半自动追踪的开源王者
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

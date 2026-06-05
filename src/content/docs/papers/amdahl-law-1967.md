@@ -6,6 +6,7 @@ title: Amdahl 定律 — 串行比例决定并行加速比的上界
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

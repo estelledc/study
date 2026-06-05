@@ -5,6 +5,7 @@ title: Great SWE — 资深工程师"伟大"的标准是 humble + always learnin
 子分类: 软件工程
 分类: 其他
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

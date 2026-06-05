@@ -5,6 +5,7 @@ title: the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜�
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

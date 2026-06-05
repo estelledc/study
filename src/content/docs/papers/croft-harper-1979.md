@@ -6,6 +6,7 @@ title: Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

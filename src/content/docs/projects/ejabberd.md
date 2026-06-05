@@ -6,6 +6,7 @@ title: ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
 子分类: 实时通信
 分类: 通信
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

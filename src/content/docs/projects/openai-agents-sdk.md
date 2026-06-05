@@ -5,6 +5,7 @@ title: OpenAI Agents SDK — 让多个 agent 协作的轻量框架
 子分类: AI 工程
 分类: 机器学习
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

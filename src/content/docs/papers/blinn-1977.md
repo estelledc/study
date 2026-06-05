@@ -5,6 +5,7 @@ title: Blinn 1977 — 用半角向量 H 把高光算量减半
 子分类: 渲染与图形
 分类: 图形学
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

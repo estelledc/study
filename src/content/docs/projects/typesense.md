@@ -6,6 +6,7 @@ title: Typesense — 高性能搜索引擎
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么
@@ -162,3 +163,22 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient })
 - [[redis]] —— 同样内存数据库；Redis 是 KV，Typesense 是搜索；常一起用做缓存+检索分层
 - [[postgresql]] —— 主存储常用关系库；CDC 同步到 Typesense 做搜索是常见架构
 - [[mongodb]] —— 文档库；和 Typesense 都是"以 JSON 文档为单位"思考
+
+## 适用
+
+**适合**
+- 需要快速搜索且要容错（typo-tolerance）的内容站、电商商品检索
+- 团队规模小，不想维护 Elasticsearch 集群
+
+**不适合**
+- 数据量超过亿级、或需要复杂聚合分析（用 Elasticsearch / OpenSearch）
+
+## 延伸阅读
+
+- [Typesense 官方文档](https://typesense.org/docs/) — API 参考 + 快速上手
+- [[elasticsearch]] — 了解对比有助于技术选型
+- [[meilisearch]] — 同类竞品，各有侧重
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -6,6 +6,7 @@ title: 'Immix — 把"扫"和"搬"两种垃圾回收揉成一个'
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

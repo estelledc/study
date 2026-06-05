@@ -6,6 +6,7 @@ title: Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 子分类: 智能体与 LLM
 分类: Agent
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

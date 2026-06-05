@@ -5,6 +5,7 @@ title: fish — 装好就比 bash 加插件好用的交互 shell
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

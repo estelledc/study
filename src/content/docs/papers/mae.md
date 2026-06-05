@@ -5,6 +5,8 @@ title: MAE — Masked Autoencoders
 子分类: 计算机视觉 / 自监督
 分类: 机器学习
 难度: 中级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

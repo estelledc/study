@@ -5,6 +5,7 @@ title: PNUTS — 介于强一致与最终一致之间的实用一致性
 子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

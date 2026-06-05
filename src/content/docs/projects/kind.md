@@ -6,6 +6,7 @@ title: kind — 用 Docker 容器当 K8s 节点的本地集群
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

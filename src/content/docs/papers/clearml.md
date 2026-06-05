@@ -5,6 +5,7 @@ title: ClearML — 实验跟踪 + 远程执行 + 数据管理三合一
 子分类: MLOps
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

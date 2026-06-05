@@ -6,6 +6,7 @@ title: Stable Fluids — 让流体模拟时间步随便给都不爆
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

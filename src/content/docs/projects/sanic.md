@@ -6,6 +6,7 @@ title: Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

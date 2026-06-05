@@ -6,6 +6,7 @@ title: Sui — 把链上资产拆成一个个独立对象的 L1
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

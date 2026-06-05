@@ -6,6 +6,8 @@ title: Rocket — 用 Rust attribute macro 把路由当函数签名写的 web �
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

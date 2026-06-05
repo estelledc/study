@@ -6,6 +6,7 @@ title: SELF Customization — 给每种"调用者类型"现场打一份方法
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

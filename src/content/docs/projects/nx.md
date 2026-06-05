@@ -5,6 +5,7 @@ title: Nx — 一个仓库装几十个项目时帮你少跑活的工具
 子分类: 前端工程化
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

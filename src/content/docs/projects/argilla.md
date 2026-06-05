@@ -6,6 +6,7 @@ title: Argilla — 给 LLM 训练数据做人工反馈的开源标注平台
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

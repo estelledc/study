@@ -5,6 +5,7 @@ title: Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人
 子分类: 网络协议
 分类: 网络协议
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

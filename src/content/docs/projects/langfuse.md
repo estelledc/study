@@ -5,6 +5,8 @@ title: Langfuse — LLM 应用可观测性
 子分类: AI
 分类: 机器学习
 难度: 中级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

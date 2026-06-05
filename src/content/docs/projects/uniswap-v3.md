@@ -6,6 +6,7 @@ title: Uniswap V3 — 集中流动性 AMM 核心合约
 子分类: 链与合约
 分类: 区块链
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

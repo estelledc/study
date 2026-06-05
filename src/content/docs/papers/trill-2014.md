@@ -6,6 +6,7 @@ title: Trill — 一个引擎同时跑流、批、交互三种分析
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

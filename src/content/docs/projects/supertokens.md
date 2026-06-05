@@ -5,6 +5,7 @@ title: SuperTokens — 自托管认证框架，把登录方式做成可拼装的
 子分类: projects / 认证
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

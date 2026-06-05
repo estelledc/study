@@ -5,6 +5,7 @@ title: anime.js — 一行 JS 让网页元素按时间线动起来
 子分类: 前端
 分类: 后端 API
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

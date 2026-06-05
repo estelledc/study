@@ -6,6 +6,8 @@ title: Zod — TypeScript-first schema 验证
 子分类: 表单与校验
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

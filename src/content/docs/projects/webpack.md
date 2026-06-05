@@ -5,6 +5,8 @@ title: webpack 模块打包
 子分类: 构建工具
 分类: 编译器
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Andromeda — Google Cloud 网络虚拟化的高速通道
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

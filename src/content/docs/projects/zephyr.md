@@ -6,6 +6,7 @@ title: Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 子分类: 嵌入式
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

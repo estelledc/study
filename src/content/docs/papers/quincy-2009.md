@@ -5,6 +5,7 @@ title: 'Quincy — 把"派活给机器"变成一道最小费用流题'
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

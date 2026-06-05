@@ -6,6 +6,7 @@ title: AutoGen — 微软多 Agent 对话框架
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

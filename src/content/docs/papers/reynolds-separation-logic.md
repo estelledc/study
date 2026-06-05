@@ -5,6 +5,7 @@ title: Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

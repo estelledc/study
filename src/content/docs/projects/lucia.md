@@ -5,6 +5,7 @@ title: Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 子分类: 工具库
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

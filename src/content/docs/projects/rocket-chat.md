@@ -6,6 +6,7 @@ title: Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

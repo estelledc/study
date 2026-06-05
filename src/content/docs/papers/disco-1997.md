@@ -5,6 +5,7 @@ title: Disco — 让没改过的商用 OS 在 64 核大机器上一起跑
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

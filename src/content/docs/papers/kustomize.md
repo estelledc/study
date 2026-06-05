@@ -5,6 +5,8 @@ title: Kustomize — 不写模板也能给 K8s 配置分环境
 子分类: 基础设施
 分类: 基础设施
 难度: 入门
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Brewer CAP — 网络一断电，一致性和可用性只能留一个
 子分类: 存储与查询
 分类: 数据库
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

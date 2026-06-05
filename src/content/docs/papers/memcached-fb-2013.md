@@ -5,6 +5,7 @@ title: Scaling Memcache at Facebook — 万台缓存怎么不被踩塌
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

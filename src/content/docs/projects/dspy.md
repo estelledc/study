@@ -6,6 +6,7 @@ title: DSPy — 把 prompt 写成签名，让编译器替你调
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

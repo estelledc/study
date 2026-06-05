@@ -5,6 +5,7 @@ title: dive — 看清 Docker 镜像每一层加了什么文件的 TUI
 子分类: 命令行工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

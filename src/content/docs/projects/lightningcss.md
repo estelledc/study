@@ -5,6 +5,7 @@ title: lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 子分类: projects / 前端工具链
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

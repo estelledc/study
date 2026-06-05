@@ -5,6 +5,7 @@ title: containerd — Docker 和 Kubernetes 共用的那台容器运行机
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

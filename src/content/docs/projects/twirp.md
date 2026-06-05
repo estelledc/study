@@ -6,6 +6,7 @@ title: Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

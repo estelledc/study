@@ -6,6 +6,7 @@ title: BIG-bench — 204 道题给大模型出考卷
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

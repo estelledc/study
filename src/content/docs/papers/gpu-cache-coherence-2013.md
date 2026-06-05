@@ -6,6 +6,7 @@ title: GPU 缓存一致性 — 用时戳代替失效消息
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

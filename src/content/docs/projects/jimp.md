@@ -5,6 +5,7 @@ title: jimp — 哪都能跑的纯 JS 图像处理库
 子分类: 工具库
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

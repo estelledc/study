@@ -6,6 +6,8 @@ title: 'SWE-Agent — Princeton SWE-bench 解法'
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

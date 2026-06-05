@@ -6,6 +6,7 @@ title: LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

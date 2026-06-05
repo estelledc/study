@@ -5,6 +5,7 @@ title: stagehand — Playwright 加 LLM 的混血框架
 子分类: 浏览器自动化
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

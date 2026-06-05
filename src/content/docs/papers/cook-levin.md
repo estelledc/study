@@ -5,6 +5,7 @@ title: Cook-Levin 定理 — NP-完全性的诞生
 子分类: 计算理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

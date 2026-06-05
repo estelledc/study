@@ -5,6 +5,7 @@ title: SWC — Rust 写的 TS/JS 编译器
 子分类: 构建工具
 分类: 编译器
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

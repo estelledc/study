@@ -5,6 +5,7 @@ title: Soft Updates — 不写 journal 也能保证文件系统元数据一致
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 子分类: 模型与训练
 分类: 机器学习
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

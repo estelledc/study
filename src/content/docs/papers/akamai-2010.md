@@ -6,6 +6,7 @@ title: Akamai 2010 — 从内容分发网络长成全球应用平台
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

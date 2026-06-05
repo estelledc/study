@@ -5,6 +5,7 @@ title: SKIP LOCKED — 让 Postgres 当任务队列用
 子分类: 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

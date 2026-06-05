@@ -5,6 +5,7 @@ title: PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 子分类: projects / 图形渲染
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

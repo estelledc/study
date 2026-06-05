@@ -6,6 +6,7 @@ title: act — 在本地用 Docker 跑 GitHub Actions
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

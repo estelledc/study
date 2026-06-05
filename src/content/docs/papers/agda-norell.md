@@ -5,6 +5,7 @@ title: Agda — 让你写代码的同时把数学也证明了
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

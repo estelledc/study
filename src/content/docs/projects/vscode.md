@@ -6,6 +6,7 @@ title: VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

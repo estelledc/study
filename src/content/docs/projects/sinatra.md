@@ -6,6 +6,7 @@ title: Sinatra — 用 Ruby 三行代码起一个 web 服务
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

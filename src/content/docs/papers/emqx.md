@@ -5,6 +5,7 @@ title: EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接
 子分类: infrastructure
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

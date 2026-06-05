@@ -113,7 +113,7 @@ function checkFrontmatter(text) {
   for (const line of body.split('\n')) {
     if (line === '') continue;
     if (/^\s+/.test(line)) continue; // 缩进行（嵌套字段）
-    if (!/^(\w+|[一-鿿]+):\s*/u.test(line)) {
+    if (!/^([\w一-鿿]+):\s*/u.test(line)) {
       return { ok: false, reason: `frontmatter line not key:value → ${line.slice(0, 60)}` };
     }
   }
@@ -177,11 +177,12 @@ export async function validate(filePath, opts = {}) {
     return { pass: false, reasons: [`read-fail: ${err.message}`], file: filePath };
   }
 
-  // 分发：schema_version=zhuangyuan-v1.1 走专用 validator，否则走默认 150-200 检查
+  // 分发：schema_version 决定验证路径
   const fm = parseFrontmatter(text);
-  if (fm && fm.schema_version === 'zhuangyuan-v1.1') {
-    // path / red-line 仍要跑；academic-h2 在 zy-v1.1 下豁免（Layer N 等学术分层是合法结构）
-    // 行数 / h2 / permalink / Figure / self-classify 由 zhuangyuan validator 接管
+  const schema = fm?.schema_version;
+
+  if (schema === 'zhuangyuan-v1.1') {
+    // path / red-line 仍要跑；academic-h2 在 zy-v1.1 下豁免
     const pathR = checkPath(filePath);
     const fmR = checkFrontmatter(text);
     const redR = checkRedLine(text, filePath);
@@ -191,6 +192,57 @@ export async function validate(filePath, opts = {}) {
     return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'zhuangyuan-v1.1' };
   }
 
+  if (schema === 'legacy-long') {
+    // 旗舰/早期长文：放宽行数到 140-280
+    const checks = [
+      ['path', () => checkPath(filePath)],
+      ['lines', () => checkLines(text, opts.linesMin || 140, opts.linesMax || 280)],
+      ['frontmatter', () => checkFrontmatter(text)],
+      ['red-line', () => checkRedLine(text, filePath)],
+      ['h2', () => checkH2(text, opts.h2Threshold || 9)],
+      ['permalink', () => checkPermalink(text, opts.permalinkMax || 3)],
+      ['academic', () => checkAcademic(text)],
+    ];
+    const details = {};
+    for (const [name, fn] of checks) {
+      const r = fn();
+      details[name] = r;
+      if (!r.ok) reasons.push(r.reason);
+    }
+    return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'legacy-long' };
+  }
+
+  if (schema === 'legacy-short') {
+    // 行数略短的存量笔记：下限放宽到 140
+    const checks = [
+      ['path', () => checkPath(filePath)],
+      ['lines', () => checkLines(text, opts.linesMin || 140, opts.linesMax || 200)],
+      ['frontmatter', () => checkFrontmatter(text)],
+      ['red-line', () => checkRedLine(text, filePath)],
+      ['h2', () => checkH2(text, opts.h2Threshold || 9)],
+      ['permalink', () => checkPermalink(text, opts.permalinkMax || 3)],
+      ['academic', () => checkAcademic(text)],
+    ];
+    const details = {};
+    for (const [name, fn] of checks) {
+      const r = fn();
+      details[name] = r;
+      if (!r.ok) reasons.push(r.reason);
+    }
+    return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'legacy-short' };
+  }
+
+  if (schema === 'template-reference') {
+    // 纯结构模板：仅校验路径、红线词、frontmatter 格式
+    const pathR = checkPath(filePath);
+    const fmR = checkFrontmatter(text);
+    const redR = checkRedLine(text, filePath);
+    const details = { path: pathR, frontmatter: fmR, 'red-line': redR };
+    for (const r of [pathR, fmR, redR]) if (!r.ok) reasons.push(r.reason);
+    return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'template-reference' };
+  }
+
+  // 默认：v3 零基础流水线 150-200 行
   const checks = [
     ['path', () => checkPath(filePath)],
     ['lines', () => checkLines(text, opts.linesMin || 150, opts.linesMax || 200)],

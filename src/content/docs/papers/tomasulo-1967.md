@@ -6,6 +6,7 @@ title: Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

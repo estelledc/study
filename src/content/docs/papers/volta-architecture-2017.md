@@ -6,6 +6,7 @@ title: NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

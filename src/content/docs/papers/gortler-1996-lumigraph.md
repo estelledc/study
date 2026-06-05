@@ -6,6 +6,7 @@ title: Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

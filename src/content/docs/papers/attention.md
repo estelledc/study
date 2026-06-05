@@ -5,6 +5,8 @@ title: Attention Is All You Need
 子分类: 深度学习 / NLP
 分类: 机器学习
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

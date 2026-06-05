@@ -5,6 +5,7 @@ title: react-intl — 让 React 应用按 ICU 标准说人话
 子分类: projects / 前端 i18n
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

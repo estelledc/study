@@ -6,6 +6,7 @@ title: Unstructured — 把任意文档解析成 LLM 能吃的元素列表
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

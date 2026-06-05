@@ -6,6 +6,7 @@ title: Shenango — 每 5 微秒重新分一次核的中央调度器
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

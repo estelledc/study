@@ -6,6 +6,7 @@ title: redner — 让光线追踪能反向传播过几何边缘
 子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

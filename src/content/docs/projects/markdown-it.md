@@ -5,6 +5,7 @@ title: markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 子分类: projects / 前端工具链
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

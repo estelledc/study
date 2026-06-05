@@ -5,6 +5,7 @@ title: GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

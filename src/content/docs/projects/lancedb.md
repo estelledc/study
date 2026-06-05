@@ -6,6 +6,7 @@ title: LanceDB — 嵌入式向量库（进程内 + 对象存储）
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,8 @@ title: Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 子分类: 编程语言 / 形式化方法
 分类: 编程语言
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

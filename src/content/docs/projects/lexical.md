@@ -8,6 +8,7 @@ schema_version: zhuangyuan-v1.1
 branch: D
 分类: 后端 API
 子分类: 编辑器与 IDE
+provenance: curated-season
 ---
 
 > 项目类型 self-classify：**框架/SDK**（v1.1 分支 D）。

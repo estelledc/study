@@ -6,6 +6,7 @@ title: NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

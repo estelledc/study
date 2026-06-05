@@ -6,6 +6,7 @@ title: zoxide — 学会你常去哪的智能 cd
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

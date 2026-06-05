@@ -5,6 +5,7 @@ title: coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器
 子分类: 基础设施
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

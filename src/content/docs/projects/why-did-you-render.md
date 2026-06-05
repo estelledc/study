@@ -5,6 +5,7 @@ title: why-did-you-render — 让 React 告诉你这次渲染到底为什么
 子分类: 前端工具
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

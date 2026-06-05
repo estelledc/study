@@ -6,6 +6,7 @@ title: LLM.int8() — 大模型激活值里藏着几个超大异常通道
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

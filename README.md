@@ -57,7 +57,25 @@ node scripts/regen-atlas.mjs
 
 已通过 GitHub Pages 部署在 <https://estelledc.github.io/study/>。
 
-`.github/workflows/deploy.yml` 监听 main 分支，每次 push 自动 build + deploy。
+`.github/workflows/deploy.yml` 监听 main 分支，每次 push 自动 build + deploy（需通过 `verify` job：quality-gate 全绿 + test:ci + 链接检查）。
+
+## 搜索说明（Pagefind 局限）
+
+站点使用 **Pagefind** 做全文搜索（Cmd-K）。注意：**Pagefind 不支持中文 stemming**（词干归并），搜「分布式」不会自动命中「分布式的」。使用建议：
+
+- 搜英文关键词（如 `raft`、`attention`）效果最好
+- 搜中文时用完整词语而非缩写
+- 用 [论文全景索引](/study/papers-atlas/) / [项目全景索引](/study/projects-atlas/) 按分类浏览
+
+## 笔记质量标记
+
+atlas 索引表有「质量」列，含义：
+
+| 标记 | 说明 |
+|------|------|
+| ⭐ Season | 人工深度研读，8 层完整流程，含 L4 复现 |
+| ✅ v3 | 零基础流水线 12 段模板，150–200 行，L4 待填充 |
+| 🗄 存量 | 早期长文迁移，结构完整但 L4 不保证 |
 
 ## 项目研究方法论速记（7 层，~75 分钟一篇）
 

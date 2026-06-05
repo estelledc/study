@@ -5,6 +5,8 @@ title: GraphRAG — 微软的知识图谱 + RAG
 子分类: AI / NLP
 分类: 机器学习
 难度: 中级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

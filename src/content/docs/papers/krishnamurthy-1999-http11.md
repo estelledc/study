@@ -5,6 +5,7 @@ title: Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么
 子分类: 网络协议
 分类: 网络协议
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

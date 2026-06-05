@@ -6,6 +6,7 @@ title: Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 子分类: 内存管理
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

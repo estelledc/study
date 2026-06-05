@@ -5,6 +5,7 @@ title: Stable Diffusion — 开源文生图引爆
 子分类: 生成模型
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

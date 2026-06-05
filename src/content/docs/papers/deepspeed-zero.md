@@ -6,6 +6,7 @@ title: DeepSpeed ZeRO — 微软优化大模型训练显存
 子分类: 模型与训练
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

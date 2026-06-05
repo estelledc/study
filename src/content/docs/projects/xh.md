@@ -5,6 +5,7 @@ title: 'xh — HTTPie 的 Rust 重写版'
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

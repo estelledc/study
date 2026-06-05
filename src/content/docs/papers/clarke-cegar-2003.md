@@ -5,6 +5,7 @@ title: CEGAR — 用反例自动改进抽象，让大软件能被验证
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Chatbot Arena — 让真人盲投，给 LLM 排出公允座次
 子分类: 模型与训练
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

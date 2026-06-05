@@ -5,6 +5,7 @@ title: Huffman 编码
 子分类: 信息论 / 算法
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

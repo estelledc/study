@@ -5,6 +5,7 @@ title: CRDT JSON — 协同编辑 JSON 数据结构
 子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

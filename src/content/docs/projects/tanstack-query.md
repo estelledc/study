@@ -5,6 +5,7 @@ title: TanStack Query — 数据获取与缓存库
 子分类: 数据获取
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

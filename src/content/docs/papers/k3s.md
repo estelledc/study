@@ -5,6 +5,7 @@ title: k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制
 子分类: 基础设施
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

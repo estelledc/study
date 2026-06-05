@@ -5,6 +5,7 @@ title: EasyCrypt — 让密码学家的安全证明能被机器自动检查
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Mage — 用 Go 写 build 脚本，告别 Makefile
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

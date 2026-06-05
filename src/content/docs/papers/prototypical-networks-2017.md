@@ -5,6 +5,7 @@ title: Prototypical Networks — 每类算个均值，比距离就够了
 子分类: 模型与训练
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

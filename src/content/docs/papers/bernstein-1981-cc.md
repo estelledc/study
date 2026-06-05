@@ -6,6 +6,7 @@ title: Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

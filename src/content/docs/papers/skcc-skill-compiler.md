@@ -6,6 +6,7 @@ title: SkCC — 给 LLM agent 写一个真正的 skill 编译器
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

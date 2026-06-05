@@ -5,6 +5,7 @@ title: Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 子分类: 编程语言
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

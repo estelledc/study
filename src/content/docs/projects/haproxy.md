@@ -6,6 +6,7 @@ title: HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

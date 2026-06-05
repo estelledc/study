@@ -6,6 +6,7 @@ title: lf — 终端里像 vim 一样翻文件
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

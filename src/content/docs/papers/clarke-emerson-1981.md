@@ -5,6 +5,7 @@ title: Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

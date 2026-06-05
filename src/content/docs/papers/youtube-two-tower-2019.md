@@ -5,6 +5,7 @@ title: YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

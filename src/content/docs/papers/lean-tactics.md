@@ -5,6 +5,7 @@ title: Lean Tactics — 让证明助手把"写证明"当成写程序
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

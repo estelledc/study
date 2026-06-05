@@ -5,6 +5,7 @@ title: Lingui — 写自然字符串，编译期自动提取 i18n msgid
 子分类: projects / 前端国际化
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

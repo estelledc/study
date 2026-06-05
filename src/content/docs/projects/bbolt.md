@@ -6,6 +6,7 @@ title: bbolt — Go 嵌入式 B+ 树 KV
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

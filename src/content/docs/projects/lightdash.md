@@ -6,6 +6,7 @@ title: Lightdash — 寄生在 dbt 项目里的开源 BI
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

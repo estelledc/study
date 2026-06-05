@@ -6,6 +6,7 @@ title: tRPC — TS 端到端类型安全 RPC
 子分类: 类型与 PL 理论
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,8 @@ title: Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线
 子分类: 智能体与 LLM
 分类: Agent
 难度: 高级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

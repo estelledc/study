@@ -5,6 +5,7 @@ title: JWT RFC 7519 — 把身份证装进一段可校验的字符串
 子分类: 后端
 分类: 后端 API
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Li
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

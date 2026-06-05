@@ -5,6 +5,7 @@ title: rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生
 子分类: 构建工具
 分类: 编译器
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

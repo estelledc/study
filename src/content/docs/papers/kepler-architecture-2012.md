@@ -6,6 +6,7 @@ title: NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

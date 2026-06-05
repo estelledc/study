@@ -5,6 +5,7 @@ title: Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

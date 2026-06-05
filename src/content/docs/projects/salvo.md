@@ -6,6 +6,7 @@ title: Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust 
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

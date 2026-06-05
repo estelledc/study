@@ -6,6 +6,7 @@ title: DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

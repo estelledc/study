@@ -5,6 +5,7 @@ title: Starlight — Astro 文档站点主题
 子分类: 文档站点
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

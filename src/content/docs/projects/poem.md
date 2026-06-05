@@ -6,6 +6,7 @@ title: poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust �
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

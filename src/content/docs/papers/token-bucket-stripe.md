@@ -5,6 +5,7 @@ title: Stripe Rate Limiters — 工业级令牌桶长什么样
 子分类: 后端工程
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

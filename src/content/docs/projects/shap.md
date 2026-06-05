@@ -6,6 +6,7 @@ title: SHAP — 用博弈论给每个特征发工资
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: LLaVA — 开源多模态对话模型
 子分类: 多模态 / NLP
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么
@@ -162,3 +163,22 @@ class MinimalLLaVA(nn.Module):
 - [[clip]] —— LLaVA 的眼睛。理解 LLaVA 必先理解 CLIP 把图像-文本对齐到共享空间
 - [[llama]] —— LLaVA 的嘴和脑。LLaVA 用的是 LLaMA 的 instruction-tuned 版本 Vicuna
 - [[transformer]] —— CLIP-ViT 和 LLaMA 都基于 transformer；理解 patch token + attention 才能读懂 projector 为什么是 per-token 线性映射
+
+## 适用
+
+**适合**
+- 在本地部署开源多模态 LLM（图文理解、VQA、OCR 辅助）
+- 学习多模态对齐架构（结构简单、代码开放，是很好的入门实现）
+
+**不适合**
+- 生产级高精度多模态任务（优先看 GPT-4V、Qwen2-VL 等后续工作）
+
+## 延伸阅读
+
+- [LLaVA 项目主页](https://llava-vl.github.io/) — 含代码、demo、模型下载
+- [[clip]] — 图文对齐的核心前置知识
+- [[attention]] — patch token 如何流经注意力层的基础
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

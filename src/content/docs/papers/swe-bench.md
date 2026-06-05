@@ -5,6 +5,7 @@ title: SWE-bench — 真实 GitHub Issue 评测
 子分类: AI / 软件工程
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

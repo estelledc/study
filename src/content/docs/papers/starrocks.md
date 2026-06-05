@@ -5,6 +5,7 @@ title: StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP
 子分类: infrastructure
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

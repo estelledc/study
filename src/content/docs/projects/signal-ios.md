@@ -6,6 +6,7 @@ title: Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 子分类: 实时通信
 分类: 通信
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

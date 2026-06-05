@@ -5,6 +5,7 @@ title: Kafka — 把消息系统降维成只追加的日志文件
 子分类: databases / 分布式系统
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: aiortc — 让 Python 服务端像浏览器一样讲 WebRTC
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

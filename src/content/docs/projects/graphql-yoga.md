@@ -5,6 +5,7 @@ title: GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

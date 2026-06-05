@@ -6,6 +6,7 @@ title: Signal-Server — 服务端看不到任何明文的即时通信后端
 子分类: 实时通信
 分类: 通信
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

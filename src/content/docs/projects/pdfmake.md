@@ -6,6 +6,7 @@ title: pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

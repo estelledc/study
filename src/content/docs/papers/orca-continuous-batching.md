@@ -6,6 +6,7 @@ title: Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

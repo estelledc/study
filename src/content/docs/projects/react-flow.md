@@ -6,6 +6,7 @@ title: React Flow / xyflow — 节点编辑器框架
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

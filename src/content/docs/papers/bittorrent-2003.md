@@ -5,6 +5,7 @@ title: BitTorrent — 用"以牙还牙"逼大家都上传
 子分类: 网络协议
 分类: 网络协议
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

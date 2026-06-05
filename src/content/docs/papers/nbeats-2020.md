@@ -5,6 +5,7 @@ title: N-BEATS — 纯前馈网络在时序预测上打败统计派
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

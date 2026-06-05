@@ -6,6 +6,7 @@ title: Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

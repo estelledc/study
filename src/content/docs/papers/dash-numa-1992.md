@@ -6,6 +6,7 @@ title: Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

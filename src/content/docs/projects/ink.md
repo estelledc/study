@@ -5,6 +5,7 @@ title: ink — 用 React 组件树写终端 CLI
 子分类: 命令行工具
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

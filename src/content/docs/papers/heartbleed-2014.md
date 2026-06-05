@@ -5,6 +5,7 @@ title: Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS
 子分类: 网络协议
 分类: 网络协议
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

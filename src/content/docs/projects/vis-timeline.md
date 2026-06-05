@@ -6,6 +6,7 @@ title: vis-timeline — 时间轴 / 日程 / 历史事件三合一组件
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

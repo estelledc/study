@@ -5,6 +5,7 @@ title: Word2Vec — 词向量奠基
 子分类: NLP
 分类: NLP
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

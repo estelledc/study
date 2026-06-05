@@ -6,6 +6,8 @@ title: Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

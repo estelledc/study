@@ -5,6 +5,7 @@ title: 'Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目'
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: '高级'
+provenance: pipeline-v3
 ---
 
 ## 是什么

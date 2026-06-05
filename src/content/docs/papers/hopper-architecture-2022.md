@@ -6,6 +6,7 @@ title: NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster �
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

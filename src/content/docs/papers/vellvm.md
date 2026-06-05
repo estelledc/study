@@ -6,6 +6,7 @@ title: Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

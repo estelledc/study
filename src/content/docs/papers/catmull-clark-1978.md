@@ -5,6 +5,7 @@ title: Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

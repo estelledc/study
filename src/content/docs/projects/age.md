@@ -6,6 +6,7 @@ title: age — 把"用 GPG 加密一个文件"重新做对
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

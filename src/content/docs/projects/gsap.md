@@ -5,6 +5,7 @@ title: GSAP — GreenSock 高性能动画
 子分类: 动画
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

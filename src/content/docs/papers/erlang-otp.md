@@ -5,6 +5,7 @@ title: Erlang OTP — 容错并发系统设计
 子分类: 编程语言 / 分布式系统
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

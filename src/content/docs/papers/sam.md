@@ -5,6 +5,7 @@ title: SAM — Segment Anything
 子分类: 计算机视觉
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

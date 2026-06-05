@@ -6,6 +6,7 @@ title: Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

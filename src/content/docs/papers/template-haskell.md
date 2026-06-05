@@ -5,6 +5,7 @@ title: Template Haskell — 让 Haskell 在编译期把代码当数据玩
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级偏上
+provenance: pipeline-v3
 ---
 
 ## 是什么

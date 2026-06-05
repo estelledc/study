@@ -5,6 +5,7 @@ title: Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
 子分类: 渲染与图形
 分类: 图形学
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

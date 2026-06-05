@@ -5,6 +5,7 @@ title: Kademlia — 用 XOR 当距离的 P2P 路由表
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

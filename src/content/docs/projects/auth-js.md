@@ -5,6 +5,7 @@ title: Auth.js — 让 OAuth 登录和会话存储变成两个抽象
 子分类: projects
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

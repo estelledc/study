@@ -6,6 +6,7 @@ title: RisingWave — Postgres 兼容的流式数据库，用物化视图替代 
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Compound III (Comet) — 单抵押借贷重构
 子分类: 链与合约
 分类: 区块链
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

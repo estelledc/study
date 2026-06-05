@@ -5,6 +5,7 @@ title: Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

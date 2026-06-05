@@ -5,6 +5,7 @@ title: Cheney 1970 — 把活对象复制走，原地丢弃整片堆
 子分类: 系统
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

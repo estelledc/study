@@ -6,6 +6,7 @@ title: Windows Azure Storage 2011 — 云对象存储第一次在工业界做到
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

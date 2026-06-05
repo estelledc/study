@@ -5,6 +5,7 @@ title: DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: HoloViews — 一份声明 ⇄ 多后端自动绘图
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Hardhat — Nomic Foundation 的 JS 合约框架
 子分类: 链与合约
 分类: 区块链
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

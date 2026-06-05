@@ -5,6 +5,7 @@ title: ANN-Benchmarks — 近似最近邻算法的统一擂台
 子分类: 数据检索 / 基础设施
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

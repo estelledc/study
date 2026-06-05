@@ -6,6 +6,7 @@ title: Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

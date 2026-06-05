@@ -6,6 +6,7 @@ title: Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

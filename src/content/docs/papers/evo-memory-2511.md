@@ -6,6 +6,7 @@ title: Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

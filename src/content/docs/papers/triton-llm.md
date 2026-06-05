@@ -6,6 +6,7 @@ title: Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: No Silver Bullet — 软件难度的二分手术刀
 子分类: 软件工程
 分类: 其他
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × 
 子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
+provenance: pipeline-v3
 ---
 
 ## 是什么

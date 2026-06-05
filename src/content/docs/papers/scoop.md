@@ -5,6 +5,7 @@ title: Scoop — Windows 上像 Homebrew 一样装命令行工具
 子分类: 工具与基础设施
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

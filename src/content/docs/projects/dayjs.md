@@ -5,6 +5,7 @@ title: Day.js — 用 2 KB 复刻 Moment 的极简日期库
 子分类: 工具库
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

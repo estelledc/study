@@ -5,6 +5,7 @@ title: BadgerDB — 把键和值分开存的 Go 原生 KV 库
 子分类: 存储系统
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

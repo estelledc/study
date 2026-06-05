@@ -6,6 +6,7 @@ title: NVMe — 为 SSD 重写的存储协议
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

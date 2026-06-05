@@ -5,6 +5,7 @@ title: prysm — 用 Go 写的 Ethereum 共识层客户端
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Copilot RCT — AI 编程助手的第一个严格随机对照实验
 子分类: 软件工程实证
 分类: 其他
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

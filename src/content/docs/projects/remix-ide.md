@@ -6,6 +6,7 @@ title: Remix IDE — 浏览器内 Solidity IDE
 子分类: 链与合约
 分类: 区块链
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

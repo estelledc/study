@@ -5,6 +5,7 @@ title: LlamaIndex — LLM 数据框架
 子分类: AI / RAG
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

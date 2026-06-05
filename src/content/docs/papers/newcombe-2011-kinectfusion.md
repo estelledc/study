@@ -5,6 +5,7 @@ title: KinectFusion — 用消费级深度相机实时重建三维世界
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

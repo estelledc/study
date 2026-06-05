@@ -5,6 +5,7 @@ title: monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 子分类: projects / 前端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

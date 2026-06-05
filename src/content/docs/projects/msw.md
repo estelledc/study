@@ -5,6 +5,7 @@ title: MSW — 让 mock 不改业务代码，在网络层透明拦截
 子分类: projects / 测试工具
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

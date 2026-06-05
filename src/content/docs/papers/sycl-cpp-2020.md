@@ -5,6 +5,7 @@ title: SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

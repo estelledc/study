@@ -6,6 +6,7 @@ title: Observable Framework — 编译期跑数据，浏览器只看结果
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门到中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: TanStack Router — 把 URL 当类型，编译器替你守路由
 子分类: projects
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

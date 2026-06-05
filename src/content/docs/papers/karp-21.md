@@ -5,6 +5,7 @@ title: Karp 21 — 21 个 NP-完全问题
 子分类: 计算理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: New Directions 1976 — 给协议世界写下公钥宪法
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: cert-manager — K8s 自动签发与续期 TLS 证书
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

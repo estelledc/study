@@ -6,6 +6,7 @@ title: Zcash — 让转账在链上"既能被验证，又看不见内容"
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

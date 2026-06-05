@@ -6,6 +6,7 @@ title: MCP TS SDK — Model Context Protocol TypeScript 实现
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

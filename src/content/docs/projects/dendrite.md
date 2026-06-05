@@ -6,6 +6,7 @@ title: Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

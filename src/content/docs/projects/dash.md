@@ -6,6 +6,7 @@ title: Dash — Plotly 的 Python 仪表板框架
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

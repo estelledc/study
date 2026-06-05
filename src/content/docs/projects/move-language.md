@@ -5,6 +5,7 @@ title: Move — 资源型智能合约语言
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

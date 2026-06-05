@@ -5,6 +5,7 @@ title: Anthropic Cookbook — Claude API 实战示例
 子分类: AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

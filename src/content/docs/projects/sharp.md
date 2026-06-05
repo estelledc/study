@@ -5,6 +5,7 @@ title: sharp — 让 Node.js 处理图像快到不像 JS
 子分类: projects / 图像处理
 分类: 图形学
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

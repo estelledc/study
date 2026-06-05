@@ -6,6 +6,7 @@ title: Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Helidon — 让 Java 微服务用同步代码写出反应式性能
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

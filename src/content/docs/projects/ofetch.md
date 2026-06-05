@@ -5,6 +5,7 @@ title: ofetch — Nuxt 默认的现代 fetch 包装
 子分类: 前端工程化
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

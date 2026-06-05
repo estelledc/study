@@ -6,6 +6,7 @@ title: GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

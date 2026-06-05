@@ -6,6 +6,7 @@ title: dust — du 的可视化替代，按目录大小排树状条形图
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

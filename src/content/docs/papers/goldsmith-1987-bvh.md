@@ -5,6 +5,7 @@ title: Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

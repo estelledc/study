@@ -6,6 +6,7 @@ title: Ray — 把单机 Python 函数和类无缝扩展到整个集群
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: REST — Fielding 2000 给 Web API 写下的设计宪法
 子分类: 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

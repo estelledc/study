@@ -5,6 +5,7 @@ title: TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

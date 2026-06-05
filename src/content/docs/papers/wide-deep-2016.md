@@ -6,6 +6,7 @@ title: Wide & Deep — 让模型同时学会"记住"和"举一反三"
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

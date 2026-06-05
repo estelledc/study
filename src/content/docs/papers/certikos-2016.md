@@ -5,6 +5,7 @@ title: CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

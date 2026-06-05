@@ -6,6 +6,7 @@ title: Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

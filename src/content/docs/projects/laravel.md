@@ -6,6 +6,7 @@ title: Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件�
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

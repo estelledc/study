@@ -5,6 +5,7 @@ title: cal.com — 自己能托管的开源 Calendly
 子分类: SaaS 应用
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

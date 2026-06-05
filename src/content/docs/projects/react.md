@@ -5,6 +5,8 @@ title: React UI 组件库
 子分类: UI 框架
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

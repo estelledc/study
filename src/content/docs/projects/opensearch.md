@@ -6,6 +6,7 @@ title: OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

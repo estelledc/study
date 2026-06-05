@@ -6,6 +6,7 @@ title: coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

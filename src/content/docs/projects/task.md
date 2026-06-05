@@ -5,6 +5,7 @@ title: Task — 用 YAML 写一份跨平台的 ‘项目命令清单’
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

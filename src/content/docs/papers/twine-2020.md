@@ -5,6 +5,7 @@ title: Twine — Facebook 把整个数据中心当一台机器调度
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

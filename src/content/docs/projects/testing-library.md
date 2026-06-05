@@ -5,6 +5,7 @@ title: Testing Library — 像用户一样测前端，重构不再挂测试
 子分类: 工具库
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

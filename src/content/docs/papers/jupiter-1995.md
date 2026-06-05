@@ -5,6 +5,7 @@ title: Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

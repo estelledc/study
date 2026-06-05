@@ -5,6 +5,7 @@ title: Server-Sent Events — 服务器单向推送的标准协议
 子分类: 前端
 分类: 后端 API
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

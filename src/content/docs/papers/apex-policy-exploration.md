@@ -6,6 +6,7 @@ title: APEX — 给自进化 agent 配一张"策略图"防止它走老路
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

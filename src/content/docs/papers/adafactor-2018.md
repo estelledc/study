@@ -5,6 +5,7 @@ title: Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

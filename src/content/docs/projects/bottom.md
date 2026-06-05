@@ -6,6 +6,7 @@ title: bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

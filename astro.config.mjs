@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkWikilinks from './scripts/remark-wikilinks.mjs';
+import remarkSearchAliases from './scripts/remark-search-aliases.mjs';
 
 export default defineConfig({
   site: 'https://estelledc.github.io',
   base: '/study',
   markdown: {
-    remarkPlugins: [remarkWikilinks],
+    remarkPlugins: [remarkWikilinks, remarkSearchAliases],
   },
   integrations: [
     starlight({

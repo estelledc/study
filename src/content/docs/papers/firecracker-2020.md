@@ -5,6 +5,7 @@ title: Firecracker 2020 — 给 serverless 量身定做的极简 microVM
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

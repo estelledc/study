@@ -6,6 +6,8 @@ title: BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
 子分类: 智能体与 LLM
 分类: Agent
 难度: 高级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

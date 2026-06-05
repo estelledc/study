@@ -6,6 +6,7 @@ title: Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 子分类: 渲染与图形
 分类: 图形学
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

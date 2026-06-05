@@ -5,6 +5,7 @@ title: Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

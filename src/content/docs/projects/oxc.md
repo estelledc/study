@@ -5,6 +5,7 @@ title: oxc — Rust 写一整套 JS/TS 工具链的勇气
 子分类: projects / 编译器
 分类: 编译器
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

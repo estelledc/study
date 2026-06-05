@@ -5,6 +5,7 @@ title: vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 子分类: projects
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

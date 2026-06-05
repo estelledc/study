@@ -6,6 +6,7 @@ title: Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
 子分类: 实时通信
 分类: 通信
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

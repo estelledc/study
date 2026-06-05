@@ -6,6 +6,7 @@ title: Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 子分类: 存储与查询
 分类: 数据库
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

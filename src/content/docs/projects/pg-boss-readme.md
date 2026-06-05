@@ -6,6 +6,7 @@ title: pg-boss — 只用 Postgres 就能跑的任务队列
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

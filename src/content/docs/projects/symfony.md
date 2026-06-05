@@ -6,6 +6,7 @@ title: Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

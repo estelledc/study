@@ -5,6 +5,7 @@ title: Weights & Biases — 几行 init 把指标系统代码自动入库
 子分类: 基础设施
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

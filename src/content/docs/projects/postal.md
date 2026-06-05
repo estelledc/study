@@ -6,6 +6,7 @@ title: Postal — 自托管的 Mailgun / SendGrid 替代
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

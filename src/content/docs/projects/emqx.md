@@ -6,6 +6,7 @@ title: EMQX — 单集群千万连接的 MQTT 物联网消息总线
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

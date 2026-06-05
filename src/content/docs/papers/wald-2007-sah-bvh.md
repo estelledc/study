@@ -5,6 +5,7 @@ title: Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

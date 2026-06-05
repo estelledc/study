@@ -5,6 +5,7 @@ title: Asterisk — 把企业总机做成一台 Linux 服务器
 子分类: 通信 / 开源 PBX
 分类: 通信
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

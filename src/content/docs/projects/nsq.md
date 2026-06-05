@@ -6,6 +6,7 @@ title: NSQ — Go 写的去中心化消息队列
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

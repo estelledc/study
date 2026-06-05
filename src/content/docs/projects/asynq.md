@@ -5,6 +5,7 @@ title: Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Bitcoin 白皮书
 子分类: 分布式系统 / 密码学
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

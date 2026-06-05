@@ -5,6 +5,7 @@ title: Calder 2015 — Anycast CDN 在生产环境真的能用吗
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

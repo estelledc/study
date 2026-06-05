@@ -5,6 +5,7 @@ title: Vite — 浏览器自己加载源码的构建工具
 子分类: 构建工具
 分类: 编译器
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

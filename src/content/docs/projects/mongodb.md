@@ -5,6 +5,7 @@ title: MongoDB — 文档型 NoSQL 数据库
 子分类: 数据库 / NoSQL
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

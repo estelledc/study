@@ -5,6 +5,8 @@ title: Hindley-Milner — 编译器自己猜变量类型
 子分类: 编程语言
 分类: 编程语言
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

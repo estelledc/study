@@ -5,6 +5,7 @@ title: Fast Paxos — 给 Paxos 加一条乐观快车道
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

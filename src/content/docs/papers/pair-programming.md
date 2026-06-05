@@ -5,6 +5,7 @@ title: Pair Programming — 两个人共用一台机器写代码
 子分类: 软件工程
 分类: 其他
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

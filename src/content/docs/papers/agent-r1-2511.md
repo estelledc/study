@@ -6,6 +6,7 @@ title: Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

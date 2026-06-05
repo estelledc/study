@@ -5,6 +5,7 @@ title: Tabulator — 纯 JS 交互式表格
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

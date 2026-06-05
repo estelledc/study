@@ -5,6 +5,8 @@ title: boxen — 给终端文本套个边框的事
 子分类: 工具库
 分类: CLI
 难度: 初级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

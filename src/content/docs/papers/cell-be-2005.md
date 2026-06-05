@@ -6,6 +6,7 @@ title: Cell BE — 一颗 CPU 里塞 8 个加速核
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

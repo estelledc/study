@@ -6,6 +6,7 @@ title: Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: PDFKit — 用画笔在 PDF 上一笔一笔画
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

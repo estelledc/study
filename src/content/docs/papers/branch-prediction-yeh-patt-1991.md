@@ -6,6 +6,7 @@ title: Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

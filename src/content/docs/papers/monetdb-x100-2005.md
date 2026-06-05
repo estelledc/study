@@ -5,6 +5,7 @@ title: MonetDB/X100 — 让数据库一次处理一向量行而不是一行
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

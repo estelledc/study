@@ -6,6 +6,7 @@ title: Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

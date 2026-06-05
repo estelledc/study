@@ -6,6 +6,7 @@ title: lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / ch
 子分类: 命令行工具
 分类: CLI
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

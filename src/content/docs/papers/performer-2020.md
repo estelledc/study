@@ -6,6 +6,7 @@ title: Performer — 用随机特征把 softmax attention 拉成线性复杂度
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 
 子分类: projects
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

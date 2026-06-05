@@ -5,6 +5,7 @@ title: billboard.js — c3.js 的 TypeScript 继任者
 子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

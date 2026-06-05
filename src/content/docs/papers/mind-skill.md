@@ -6,6 +6,7 @@ title: MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

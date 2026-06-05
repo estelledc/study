@@ -5,6 +5,8 @@ title: NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 子分类: 后端框架
 分类: 后端 API
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

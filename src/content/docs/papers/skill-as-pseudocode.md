@@ -6,6 +6,7 @@ title: Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

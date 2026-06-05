@@ -5,6 +5,7 @@ title: Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

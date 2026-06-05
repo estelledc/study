@@ -6,6 +6,7 @@ title: Moby — Docker 把引擎拆开后的开源上游
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

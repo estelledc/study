@@ -5,6 +5,7 @@ title: NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

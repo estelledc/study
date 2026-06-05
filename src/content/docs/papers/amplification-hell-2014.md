@@ -5,6 +5,7 @@ title: Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

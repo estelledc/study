@@ -6,6 +6,7 @@ title: Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

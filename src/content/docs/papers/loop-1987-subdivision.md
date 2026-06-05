@@ -5,6 +5,7 @@ title: Loop 1987 — 三角形网格的递归光滑细分
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

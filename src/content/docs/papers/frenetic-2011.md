@@ -5,6 +5,7 @@ title: Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

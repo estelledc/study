@@ -5,6 +5,7 @@ title: 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 子分类: 计算机图形 / 三维重建
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

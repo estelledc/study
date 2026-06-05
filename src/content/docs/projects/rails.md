@@ -6,6 +6,7 @@ title: Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

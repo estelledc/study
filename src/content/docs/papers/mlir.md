@@ -6,6 +6,7 @@ title: MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

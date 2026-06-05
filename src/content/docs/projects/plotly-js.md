@@ -6,6 +6,7 @@ title: Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

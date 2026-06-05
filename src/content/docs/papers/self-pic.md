@@ -5,6 +5,7 @@ title: Self / PIC — 内联缓存的诞生
 子分类: 编译器
 分类: 编译器
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

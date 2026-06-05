@@ -6,6 +6,7 @@ title: Orleans — 让分布式服务写起来像单机对象
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

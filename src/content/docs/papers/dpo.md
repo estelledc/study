@@ -5,6 +5,8 @@ title: 'DPO — Direct Preference Optimization'
 子分类: NLP
 分类: NLP
 难度: 中级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

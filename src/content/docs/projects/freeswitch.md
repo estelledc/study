@@ -5,6 +5,7 @@ title: FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

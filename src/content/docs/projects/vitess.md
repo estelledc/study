@@ -5,6 +5,7 @@ title: Vitess — 给 MySQL 装上水平分片的代理层
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

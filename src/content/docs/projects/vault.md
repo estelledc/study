@@ -6,6 +6,7 @@ title: Vault — HashiCorp 把"密码本"做成可编程基础设施
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -6,6 +6,7 @@ title: FILIP — 把 CLIP 的图文对齐细化到 token 级
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

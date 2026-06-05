@@ -6,6 +6,7 @@ title: 'gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

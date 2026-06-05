@@ -5,6 +5,7 @@ title: Recharts — 用 JSX 直接拼出图表的 React 组件库
 子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

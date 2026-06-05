@@ -5,6 +5,7 @@ title: chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 子分类: 客服平台
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

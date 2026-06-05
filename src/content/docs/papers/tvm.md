@@ -5,6 +5,7 @@ title: TVM — 让一份模型能在所有硬件上跑得快
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

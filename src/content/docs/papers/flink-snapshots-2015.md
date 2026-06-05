@@ -5,6 +5,7 @@ title: Flink 异步快照 — 不停机给流处理拍一致照片
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

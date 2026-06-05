@@ -6,6 +6,8 @@ title: Toolformer — 教 LLM 自主调用 API
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级
+schema_version: legacy-short
+provenance: legacy-migrated
 ---
 
 ## 是什么

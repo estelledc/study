@@ -6,6 +6,7 @@ title: Seq2Seq — 把翻译变成端到端神经网络
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

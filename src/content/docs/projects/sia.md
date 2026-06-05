@@ -6,6 +6,7 @@ title: Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
 子分类: 链与合约
 分类: 区块链
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

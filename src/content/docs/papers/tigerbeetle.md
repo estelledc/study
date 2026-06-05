@@ -5,6 +5,7 @@ title: TigerBeetle — 只能记账但把记账做到极致的金融数据库
 子分类: 数据库
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

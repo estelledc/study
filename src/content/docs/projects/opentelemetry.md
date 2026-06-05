@@ -5,6 +5,7 @@ title: OpenTelemetry — 让所有应用用同一种语言吐监控数据
 子分类: 基础设施
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

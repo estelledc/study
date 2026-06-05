@@ -1,0 +1,43 @@
+name: Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Quality gate (full on main, changed-only on PR)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            npm run verify:gate:changed
+          else
+            npm run verify:gate
+          fi
+
+      - name: Check STATUS files are up to date
+        run: npm run verify:status
+
+      - name: Build site
+        run: npm run verify:build
+
+      - name: Check links
+        run: npm run verify:links

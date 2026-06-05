@@ -5,6 +5,7 @@ title: Jest — 一个包就能跑 JS 测试的全家桶
 子分类: 测试框架
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

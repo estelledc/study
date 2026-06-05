@@ -5,6 +5,7 @@ title: Boogie — 写一次验证后端，多种证明语言复用
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

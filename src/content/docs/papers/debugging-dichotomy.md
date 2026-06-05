@@ -5,6 +5,7 @@ title: Debugging Dichotomy — 程序员真实 debug 行为分两轨
 子分类: 软件工程实证
 分类: 其他
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

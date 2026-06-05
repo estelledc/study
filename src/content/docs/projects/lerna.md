@@ -5,6 +5,7 @@ title: lerna — 一个仓库发几十个 npm 包的祖宗工具
 子分类: 前端工程
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

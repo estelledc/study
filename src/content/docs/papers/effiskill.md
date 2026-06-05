@@ -6,6 +6,7 @@ title: EffiSkill — 把代码效率优化经验抽成两层 skill 库
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

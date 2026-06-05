@@ -5,6 +5,7 @@ title: Grafana Tempo — 用对象存储装下你所有的 trace
 子分类: 基础设施
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

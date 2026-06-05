@@ -6,6 +6,7 @@ title: discord.js — Node.js Discord API 客户端事实标准
 子分类: 实时通信
 分类: 通信
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

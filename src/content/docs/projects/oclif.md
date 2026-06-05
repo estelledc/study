@@ -5,6 +5,7 @@ title: oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架
 子分类: projects
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

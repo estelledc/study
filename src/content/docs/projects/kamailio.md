@@ -5,6 +5,7 @@ title: Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

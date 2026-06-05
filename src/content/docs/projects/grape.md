@@ -6,6 +6,7 @@ title: Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

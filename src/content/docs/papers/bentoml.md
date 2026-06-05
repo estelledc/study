@@ -5,6 +5,7 @@ title: BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子
 子分类: MLOps / 模型服务
 分类: 机器学习
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

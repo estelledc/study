@@ -5,6 +5,7 @@ title: Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
 子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

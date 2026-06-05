@@ -6,6 +6,7 @@ title: RISC I — 砍掉 90% 指令反而让 CPU 跑得更快
 子分类: GPU 架构
 分类: 图形学
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

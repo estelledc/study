@@ -5,6 +5,7 @@ title: Mumble — 游戏圈用了 20 年的低延迟开源语音
 子分类: 实时通信
 分类: 通信
 难度: 入门
+provenance: pipeline-v3
 ---
 
 ## 是什么

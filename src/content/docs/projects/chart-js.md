@@ -5,6 +5,7 @@ title: Chart.js — Canvas 渲染入门级图表
 子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

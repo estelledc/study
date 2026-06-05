@@ -5,6 +5,7 @@ title: Chinchilla — 训练大模型的数据/参数最优比
 子分类: NLP
 分类: NLP
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

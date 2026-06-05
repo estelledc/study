@@ -5,6 +5,8 @@ title: λ-演算 — 用三条规则表达所有可计算函数
 子分类: 编程语言 / 计算理论
 分类: 编程语言
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

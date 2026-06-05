@@ -6,6 +6,7 @@ title: broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 gi
 子分类: 命令行工具
 分类: CLI
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

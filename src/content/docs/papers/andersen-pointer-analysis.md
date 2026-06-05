@@ -5,6 +5,7 @@ title: Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

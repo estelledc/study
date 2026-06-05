@@ -6,6 +6,7 @@ title: TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

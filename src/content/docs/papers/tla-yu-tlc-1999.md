@@ -6,6 +6,7 @@ title: TLC — 让 TLA+ 规范可以一键机检的模型检查器
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

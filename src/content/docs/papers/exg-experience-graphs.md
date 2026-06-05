@@ -6,6 +6,7 @@ title: EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

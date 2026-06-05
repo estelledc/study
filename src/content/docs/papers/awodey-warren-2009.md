@@ -6,6 +6,7 @@ title: Awodey-Warren — 把『相等的证明』看成两点之间的路径
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

@@ -5,6 +5,7 @@ title: Tempo — 把分布式追踪扔进 S3 的开源后端
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

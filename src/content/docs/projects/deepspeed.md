@@ -5,6 +5,7 @@ title: 'DeepSpeed — 微软分布式训练库'
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: '高级'
+provenance: pipeline-v3
 ---
 
 ## 是什么

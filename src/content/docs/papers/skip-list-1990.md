@@ -5,6 +5,7 @@ title: Skip List — 用抛硬币代替平衡树
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

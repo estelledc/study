@@ -5,6 +5,7 @@ title: OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS
 子分类: 实时通信
 分类: 通信
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

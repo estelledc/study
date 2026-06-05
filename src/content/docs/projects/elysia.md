@@ -5,6 +5,7 @@ title: Elysia — 长在 Bun 上的极致类型安全 Web 框架
 子分类: web 框架
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

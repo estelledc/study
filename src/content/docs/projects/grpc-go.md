@@ -6,6 +6,7 @@ title: gRPC-Go — Google RPC 框架的官方 Go 实现
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

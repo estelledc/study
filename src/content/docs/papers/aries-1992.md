@@ -6,6 +6,7 @@ title: ARIES 1992 — 数据库崩溃后怎么把账目对回来
 子分类: 存储与查询
 分类: 数据库
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

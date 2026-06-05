@@ -5,6 +5,7 @@ title: XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向
 子分类: 模型与训练
 分类: 机器学习
 难度: 高级
+provenance: pipeline-v3
 ---
 
 ## 是什么

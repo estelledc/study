@@ -5,6 +5,7 @@ title: Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

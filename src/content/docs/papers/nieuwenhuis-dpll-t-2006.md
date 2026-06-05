@@ -6,6 +6,8 @@ title: Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
+schema_version: legacy-long
+provenance: legacy-migrated
 ---
 
 ## 是什么

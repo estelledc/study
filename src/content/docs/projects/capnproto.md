@@ -6,6 +6,7 @@ title: Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

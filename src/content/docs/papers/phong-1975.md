@@ -5,6 +5,7 @@ title: Phong 1975 — 把光照拆成环境+漫反射+高光三项
 子分类: 渲染与图形
 分类: 图形学
 难度: 初级
+provenance: pipeline-v3
 ---
 
 ## 是什么

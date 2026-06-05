@@ -6,6 +6,7 @@ title: Apache Druid — 流批一体的实时分析数据库
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

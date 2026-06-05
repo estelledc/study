@@ -6,6 +6,7 @@ title: Jacobson 1988 — 让互联网不再被自己塞死
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么

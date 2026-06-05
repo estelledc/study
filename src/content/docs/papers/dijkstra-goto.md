@@ -13,6 +13,7 @@ tags:
   - 软件工程史
   - 形式化证明
 子分类: 软件工程 / 控制流理论
+provenance: pipeline-v3
 ---
 
 # Dijkstra 1968: Go To Statement Considered Harmful
