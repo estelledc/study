@@ -2,6 +2,7 @@
 title: yq — YAML 的 jq（也吃 XML/TOML/properties）
 来源: https://github.com/mikefarah/yq
 日期: 2026-05-30
+子分类: 命令行工具
 分类: CLI
 难度: 中级
 ---

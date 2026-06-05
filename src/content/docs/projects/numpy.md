@@ -2,7 +2,9 @@
 title: NumPy — Python 科学计算基石
 来源: 'https://github.com/numpy/numpy'
 日期: 2026-05-30
-分类: data-science-ai
+分类_原始: data-science-ai
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: 初级
 ---
 

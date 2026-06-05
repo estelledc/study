@@ -2,7 +2,8 @@
 title: NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 来源: 'https://github.com/nestjs/nest + https://docs.nestjs.com'
 日期: 2026-05-30
-分类: 后端框架
+子分类: 后端框架
+分类: 后端 API
 难度: 中级
 ---
 

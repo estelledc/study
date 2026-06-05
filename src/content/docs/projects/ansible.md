@@ -2,7 +2,9 @@
 title: Ansible — 无 agent 配置管理
 来源: https://github.com/ansible/ansible
 日期: 2026-05-29
-分类: DevOps / 配置管理
+分类_原始: DevOps / 配置管理
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 中级
 ---
 

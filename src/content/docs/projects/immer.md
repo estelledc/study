@@ -2,7 +2,8 @@
 title: Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 来源: 'https://github.com/immerjs/immer'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 初级
 ---
 

@@ -2,7 +2,8 @@
 title: cal.com — 自己能托管的开源 Calendly
 来源: calcom/cal.com（GitHub，AGPL-3.0，v6.2.0）
 日期: 2026-05-29
-分类: SaaS 应用
+子分类: SaaS 应用
+分类: 后端 API
 难度: 中级
 ---
 

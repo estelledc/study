@@ -2,7 +2,8 @@
 title: CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 来源: 'Marijn Haverbeke, "The Architecture of CodeMirror 6", marijnhaverbeke.nl 2018'
 日期: 2026-05-29
-分类: 前端
+子分类: 前端
+分类: 后端 API
 难度: 高级
 ---
 

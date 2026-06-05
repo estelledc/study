@@ -2,7 +2,8 @@
 title: pino — 日志不该阻塞热路径
 来源: 'https://github.com/pinojs/pino'
 日期: 2026-05-30
-分类: projects / Node.js
+子分类: projects / Node.js
+分类: 后端 API
 难度: 中级
 ---
 

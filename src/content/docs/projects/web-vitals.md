@@ -2,7 +2,8 @@
 title: web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 来源: 'https://github.com/GoogleChrome/web-vitals'
 日期: 2026-05-30
-分类: projects / 前端
+子分类: projects / 前端
+分类: 后端 API
 难度: 中级
 ---
 

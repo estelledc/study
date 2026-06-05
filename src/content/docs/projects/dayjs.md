@@ -2,7 +2,8 @@
 title: Day.js — 用 2 KB 复刻 Moment 的极简日期库
 来源: 'iamkun (Wang Wei), Day.js 1.11.x, https://github.com/iamkun/dayjs'
 日期: 2026-05-30
-分类: 工具库
+子分类: 工具库
+分类: CLI
 难度: 初级
 ---
 

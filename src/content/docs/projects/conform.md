@@ -2,7 +2,8 @@
 title: Conform — 让浏览器原生 form 也能 type-safe 校验
 来源: 'https://github.com/edmundhung/conform'
 日期: 2026-05-31
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

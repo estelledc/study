@@ -2,7 +2,9 @@
 title: RocksDB — 嵌入式 LSM 引擎
 来源: https://github.com/facebook/rocksdb
 日期: 2026-05-31
-分类: 数据库 / 存储引擎
+分类_原始: 数据库 / 存储引擎
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

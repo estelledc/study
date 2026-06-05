@@ -2,7 +2,8 @@
 title: boxen — 给终端文本套个边框的事
 来源: 'https://github.com/sindresorhus/boxen'
 日期: 2026-05-30
-分类: 工具库
+子分类: 工具库
+分类: CLI
 难度: 初级
 ---
 

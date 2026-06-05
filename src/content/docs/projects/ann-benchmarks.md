@@ -2,7 +2,8 @@
 title: ANN-Benchmarks — 近似最近邻算法的统一擂台
 来源: https://github.com/erikbern/ann-benchmarks
 日期: 2026-05-31
-分类: 数据检索 / 基础设施
+子分类: 数据检索 / 基础设施
+分类: 基础设施
 难度: 中级
 ---
 

@@ -2,7 +2,9 @@
 title: StarRocks — MPP 列存数据库
 来源: https://github.com/StarRocks/starrocks
 日期: 2026-05-31
-分类: 基础设施
+分类_原始: 基础设施
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

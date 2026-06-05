@@ -2,7 +2,8 @@
 title: Vercel AI SDK — 多 LLM Provider 统一 SDK
 来源: https://github.com/vercel/ai
 日期: 2026-05-29
-分类: AI
+子分类: AI
+分类: 机器学习
 难度: 中级
 ---
 

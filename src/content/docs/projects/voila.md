@@ -2,7 +2,9 @@
 title: Voilà — 把 Jupyter Notebook 变成只显示输出的网页
 来源: 'https://github.com/voila-dashboards/voila'
 日期: 2026-06-01
-分类: projects / 数据可视化
+分类_原始: projects / 数据可视化
+子分类: 数据可视化
+分类: 数据可视化
 难度: 入门
 ---
 

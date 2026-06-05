@@ -2,7 +2,8 @@
 title: XState — 把状态画成图，让矛盾写不出来
 来源: 'https://github.com/statelyai/xstate'
 日期: 2026-05-30
-分类: 前端
+子分类: 前端
+分类: 后端 API
 难度: 中级
 ---
 

@@ -2,7 +2,9 @@
 title: tRPC — TS 端到端类型安全 RPC
 来源: https://github.com/trpc/trpc
 日期: 2026-05-29
-分类: API / 类型安全
+分类_原始: API / 类型安全
+子分类: 类型与 PL 理论
+分类: 后端 API
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 来源: https://github.com/biomejs/biome
 日期: 2026-05-29
-分类: 前端工具链
+子分类: 前端工具链
+分类: 后端 API
 难度: 中级
 ---
 

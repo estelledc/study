@@ -2,7 +2,8 @@
 title: SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
 来源: 'https://github.com/supertokens/supertokens-core'
 日期: 2026-05-30
-分类: projects / 认证
+子分类: projects / 认证
+分类: 后端 API
 难度: 中级
 ---
 

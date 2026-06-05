@@ -2,7 +2,8 @@
 title: 'PyTorch Lightning — PyTorch 训练循环抽象'
 来源: 'https://github.com/Lightning-AI/pytorch-lightning'
 日期: '2026-05-30'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '中级'
 ---
 

@@ -2,7 +2,9 @@
 title: TimescaleDB — PostgreSQL 时序扩展
 来源: https://github.com/timescale/timescaledb
 日期: 2026-05-29
-分类: 数据库 / 时序
+分类_原始: 数据库 / 时序
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

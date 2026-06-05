@@ -2,6 +2,7 @@
 title: Mumble — 游戏圈用了 20 年的低延迟开源语音
 来源: 'https://github.com/mumble-voip/mumble'
 日期: 2026-05-31
+子分类: 实时通信
 分类: 通信
 难度: 入门
 ---

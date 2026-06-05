@@ -2,7 +2,8 @@
 title: Elysia — 长在 Bun 上的极致类型安全 Web 框架
 来源: 'https://github.com/elysiajs/elysia + elysiajs.com 官方文档'
 日期: 2026-05-30
-分类: web 框架
+子分类: web 框架
+分类: 后端 API
 难度: 中级
 ---
 

@@ -2,7 +2,9 @@
 title: Zod — TypeScript-first schema 验证
 来源: https://github.com/colinhacks/zod
 日期: 2026-05-29
-分类: 验证 / 类型
+分类_原始: 验证 / 类型
+子分类: 表单与校验
+分类: 后端 API
 难度: 中级
 ---
 

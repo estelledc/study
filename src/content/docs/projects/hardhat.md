@@ -2,7 +2,9 @@
 title: Hardhat — Nomic Foundation 的 JS 合约框架
 来源: 'https://github.com/NomicFoundation/hardhat'
 日期: 2026-05-30
-分类: blockchain
+分类_原始: blockchain
+子分类: 链与合约
+分类: 区块链
 难度: 初级
 ---
 

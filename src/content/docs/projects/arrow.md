@@ -2,6 +2,7 @@
 title: Apache Arrow — 内存列式标准
 来源: 'https://github.com/apache/arrow'
 日期: 2026-06-01
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

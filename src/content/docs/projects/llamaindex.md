@@ -2,7 +2,8 @@
 title: LlamaIndex — LLM 数据框架
 来源: https://github.com/run-llama/llama_index
 日期: 2026-05-29
-分类: AI / RAG
+子分类: AI / RAG
+分类: 机器学习
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: 'TRL — RLHF / DPO / GRPO 训练库'
 来源: 'https://github.com/huggingface/trl'
 日期: '2026-05-30'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '中级'
 ---
 

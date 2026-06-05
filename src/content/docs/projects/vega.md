@@ -2,6 +2,7 @@
 title: Vega — 整张图就是一棵 JSON
 来源: 'https://github.com/vega/vega'
 日期: 2026-05-31
+子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
 ---

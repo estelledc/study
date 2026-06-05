@@ -2,7 +2,8 @@
 title: i18next — 让一份 JS 代码同时讲几十种语言
 来源: 'https://github.com/i18next/i18next + https://www.i18next.com'
 日期: 2026-05-30
-分类: 前端国际化
+子分类: 前端国际化
+分类: 后端 API
 难度: 初级
 ---
 

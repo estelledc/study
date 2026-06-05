@@ -2,7 +2,8 @@
 title: 'PyTorch — 深度学习主流框架'
 来源: 'https://github.com/pytorch/pytorch'
 日期: '2026-05-30'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '中级'
 ---
 

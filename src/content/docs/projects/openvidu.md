@@ -2,6 +2,7 @@
 title: OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS
 来源: 'https://github.com/OpenVidu/openvidu'
 日期: 2026-05-31
+子分类: 实时通信
 分类: 通信
 难度: 中级
 ---

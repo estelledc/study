@@ -2,6 +2,7 @@
 title: Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 来源: 'https://github.com/cytoscape/cytoscape.js'
 日期: 2026-06-01
+子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
 ---

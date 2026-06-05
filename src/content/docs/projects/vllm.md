@@ -2,7 +2,9 @@
 title: vLLM — 高吞吐 LLM 推理引擎
 来源: https://github.com/vllm-project/vllm
 日期: 2026-05-29
-分类: AI / 推理
+分类_原始: AI / 推理
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: 中级
 ---
 

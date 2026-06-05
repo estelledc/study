@@ -2,6 +2,7 @@
 title: aiortc — 让 Python 服务端像浏览器一样讲 WebRTC
 来源: 'https://github.com/aiortc/aiortc'
 日期: 2026-05-31
+子分类: 实时通信
 分类: 通信
 难度: 中级
 ---

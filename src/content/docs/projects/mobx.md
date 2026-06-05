@@ -2,7 +2,8 @@
 title: MobX — 让 state 像电子表格一样自动重算
 来源: 'https://mobx.js.org + https://github.com/mobxjs/mobx 仓库 + Weststrate "The fundamental principles behind MobX" 博客'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

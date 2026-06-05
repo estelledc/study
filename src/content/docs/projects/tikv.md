@@ -2,6 +2,7 @@
 title: TiKV — 分布式事务 KV
 来源: https://github.com/tikv/tikv
 日期: 2026-05-31
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

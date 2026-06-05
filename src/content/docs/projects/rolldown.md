@@ -2,7 +2,8 @@
 title: rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 来源: 'https://github.com/rolldown/rolldown'
 日期: 2026-05-30
-分类: 构建工具
+子分类: 构建工具
+分类: 编译器
 难度: 中级
 ---
 

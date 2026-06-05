@@ -2,7 +2,8 @@
 title: date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
 来源: 'https://github.com/date-fns/date-fns'
 日期: 2026-05-30
-分类: projects / 工具库
+子分类: projects / 工具库
+分类: CLI
 难度: 初级
 ---
 

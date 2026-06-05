@@ -2,7 +2,8 @@
 title: jimp — 哪都能跑的纯 JS 图像处理库
 来源: 'https://github.com/jimp-dev/jimp'
 日期: 2026-05-30
-分类: 工具库
+子分类: 工具库
+分类: CLI
 难度: 中级
 ---
 

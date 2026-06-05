@@ -2,7 +2,9 @@
 title: FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 来源: https://github.com/FreeRTOS/FreeRTOS-Kernel
 日期: 2026-06-01
-分类: 基础设施
+分类_原始: 基础设施
+子分类: 嵌入式
+分类: 操作系统
 难度: 中级
 ---
 

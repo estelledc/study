@@ -2,7 +2,8 @@
 title: Nextra — 在 Next.js 上盖一层文档站脚手架
 来源: 'https://github.com/shuding/nextra'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

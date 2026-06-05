@@ -2,7 +2,8 @@
 title: next-intl — Next.js 专用的多语言开关
 来源: amannn/next-intl GitHub 仓库 + next-intl-docs.vercel.app 官方文档
 日期: 2026-05-30
-分类: 前端框架
+子分类: 前端框架
+分类: 后端 API
 难度: 中级
 ---
 

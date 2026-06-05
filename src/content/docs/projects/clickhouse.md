@@ -2,7 +2,9 @@
 title: ClickHouse — 列式 OLAP 数据库
 来源: https://github.com/ClickHouse/ClickHouse
 日期: 2026-05-29
-分类: 数据库 / OLAP
+分类_原始: 数据库 / OLAP
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

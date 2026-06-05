@@ -2,6 +2,7 @@
 title: LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频
 来源: 'https://github.com/livekit/client-sdk-flutter'
 日期: 2026-05-31
+子分类: 实时通信
 分类: 通信
 难度: 中级
 ---

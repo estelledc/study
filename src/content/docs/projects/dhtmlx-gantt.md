@@ -2,6 +2,7 @@
 title: DHTMLX Gantt — 给企业级排期用的全功能甘特组件
 来源: 'https://github.com/DHTMLX/gantt'
 日期: 2026-06-01
+子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
 ---

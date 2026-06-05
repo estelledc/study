@@ -2,7 +2,8 @@
 title: Storybook — 给 UI 组件的独立工作台
 来源: https://github.com/storybookjs/storybook
 日期: 2026-05-30
-分类: 前端工具
+子分类: 前端工具
+分类: 后端 API
 难度: 中级
 ---
 

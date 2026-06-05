@@ -2,6 +2,7 @@
 title: fx — JSON 的交互式查看器（jq 的 TUI 表亲）
 来源: https://github.com/antonmedv/fx
 日期: 2026-05-30
+子分类: 命令行工具
 分类: CLI
 难度: 入门
 ---

@@ -1,1764 +1,1941 @@
 ---
 title: 论文全景索引
-description: 795 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 796 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
 ---
 
 > 本页由 `scripts/regen-atlas.mjs` 自动生成（每次 build 前重跑）。
-> 调整分类：编辑脚本里的 `THEMES_PAPERS` 字典。
+> 分类 SSOT：`data/taxonomy.json` + 各笔记 frontmatter `分类` / `子分类`。批量更新：`node scripts/classify-notes.mjs --apply`
 
 ## 总览
 
-- **总数**：795 篇
-- **已分类**：139
-- **未分类**：656（落入"其他 / 待分类"段）
+- **总数**：796 篇
+- **已分类**：796
 
-### 按主题分布
+### 按一级主题分布
 
 | 主题 | 数量 |
 |---|---:|
-| [智能体与 LLM 系统](#智能体与-llm-系统) | 15 |
-| [NLP 基础与 Scaling](#nlp-基础与-scaling) | 11 |
-| [计算机视觉](#计算机视觉) | 7 |
-| [生成模型 / 扩散](#生成模型---扩散) | 5 |
-| [强化学习](#强化学习) | 6 |
-| [AI 安全与可解释性](#ai-安全与可解释性) | 8 |
-| [分布式系统](#分布式系统) | 5 |
-| [数据库](#数据库) | 8 |
-| [分布式训练 / GPU](#分布式训练---gpu) | 4 |
-| [网络协议](#网络协议) | 5 |
-| [OS / 集群管理 / 系统](#os---集群管理---系统) | 5 |
-| [GC / 内存管理](#gc---内存管理) | 5 |
-| [编译器 / 编程语言理论](#编译器---编程语言理论) | 24 |
-| [计算理论 / 数学基础](#计算理论---数学基础) | 7 |
-| [信息论 / 编码理论](#信息论---编码理论) | 5 |
-| [密码学 / 安全](#密码学---安全) | 5 |
-| [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 656 |
+| [编程语言](#编程语言) | 107 |
+| [分布式系统](#分布式系统) | 75 |
+| [数据库](#数据库) | 64 |
+| [操作系统](#操作系统) | 54 |
+| [机器学习](#机器学习) | 137 |
+| [后端 API](#后端-api) | 9 |
+| [基础设施](#基础设施) | 12 |
+| [网络协议](#网络协议) | 57 |
+| [图形学](#图形学) | 121 |
+| [形式化方法](#形式化方法) | 51 |
+| [通信](#通信) | 1 |
+| [信息检索](#信息检索) | 52 |
+| [Agent](#agent) | 22 |
+| [CLI](#cli) | 1 |
+| [NLP](#nlp) | 9 |
+| [编译器](#编译器) | 3 |
+| [数据可视化](#数据可视化) | 4 |
+| [安全与隐私](#安全与隐私) | 4 |
+| [其他](#其他) | 13 |
 
 ---
 
-## 智能体与 LLM 系统
+## 编程语言
 
-共 15 篇。
+共 107 篇。
 
-| 论文 | 描述 |
-|---|---|
-| [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) |  |
-| [AutoGen — 多智能体对话框架](/study/papers/autogen/) |  |
-| [Chain-of-Thought Prompting](/study/papers/cot/) |  |
-| [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) |  |
-| [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) |  |
-| [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) |  |
-| [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) |  |
-| [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) |  |
-| [ReAct — Reasoning and Acting](/study/papers/react/) |  |
-| [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) |  |
-| [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) |  |
-| [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) |  |
-| [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) |  |
-| [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) |  |
-| [Voyager — LLM 终身学习智能体](/study/papers/voyager/) |  |
-
-## NLP 基础与 Scaling
-
-共 11 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [Attention Is All You Need](/study/papers/attention/) |  |
-| [BERT — 双向 Transformer 预训练](/study/papers/bert/) |  |
-| [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) |  |
-| [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) |  |
-| [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) |  |
-| [LLaMA — Meta 开源大语言模型](/study/papers/llama/) |  |
-| [Mamba — 选择性状态空间模型](/study/papers/mamba/) |  |
-| [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) |  |
-| [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) |  |
-| [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) |  |
-| [Word2Vec — 词向量奠基](/study/papers/word2vec/) |  |
-
-## 计算机视觉
-
-共 7 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) |  |
-| [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) |  |
-| [DINO 自监督视觉 transformer](/study/papers/dino/) |  |
-| [MAE — Masked Autoencoders](/study/papers/mae/) |  |
-| [ResNet — 残差连接](/study/papers/resnet/) |  |
-| [SAM — Segment Anything](/study/papers/sam/) |  |
-| [ViT — Vision Transformer](/study/papers/vit/) |  |
-
-## 生成模型 / 扩散
-
-共 5 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) |  |
-| [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) |  |
-| [DiT — Diffusion Transformer](/study/papers/dit/) |  |
-| [LLaVA — 开源多模态对话模型](/study/papers/llava/) |  |
-| [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) |  |
-
-## 强化学习
-
-共 6 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) |  |
-| [DPO — Direct Preference Optimization](/study/papers/dpo/) |  |
-| [DQN — Deep Q-Network](/study/papers/dqn/) |  |
-| [MuZero — 不用规则也能下棋](/study/papers/muzero/) |  |
-| [PPO — Proximal Policy Optimization](/study/papers/ppo/) |  |
-| [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) |  |
-
-## AI 安全与可解释性
-
-共 8 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) |  |
-| [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) |  |
-| [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) |  |
-| [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) |  |
-| [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) |  |
-| [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) |  |
-| [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) |  |
-| [Toy Models of Superposition](/study/papers/toy-models-superposition/) |  |
-
-## 分布式系统
-
-共 5 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) |  |
-| [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) |  |
-| [Paxos — 分布式共识算法](/study/papers/paxos/) |  |
-| [Raft — 易理解的共识算法](/study/papers/raft/) |  |
-| [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) |  |
-
-## 数据库
-
-共 8 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) |  |
-| [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) |  |
-| [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) |  |
-| [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) |  |
-| [LSM-tree 与 RocksDB — 把所有写都变成顺序写](/study/papers/rocksdb-lsm/) |  |
-| [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) |  |
-| [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) |  |
-| [Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式](/study/papers/volcano/) |  |
-
-## 分布式训练 / GPU
-
-共 4 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) |  |
-| [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) |  |
-| [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) |  |
-| [vLLM — 把操作系统的分页搬进 GPU KV cache](/study/papers/vllm/) |  |
-
-## 网络协议
-
-共 5 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) |  |
-| [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) |  |
-| [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) |  |
-| [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) |  |
-| [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) |  |
-
-## OS / 集群管理 / 系统
-
-共 5 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) |  |
-| [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) |  |
-| [GFS — 编译器决定不做哪些事](/study/papers/gfs/) |  |
-| [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) |  |
-| [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) |  |
-
-## GC / 内存管理
-
-共 5 篇。
-
-| 论文 | 描述 |
-|---|---|
-| [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) |  |
-| [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) |  |
-| [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) |  |
-| [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) |  |
-| [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) |  |
-
-## 编译器 / 编程语言理论
-
-共 24 篇。
+### 编程语言
 
 | 论文 | 描述 |
 |---|---|
 | [Adapton — 增量计算](/study/papers/adapton/) |  |
 | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) |  |
 | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) |  |
-| [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) |  |
-| [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) |  |
-| [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) |  |
+| [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) |  |
 | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) |  |
-| [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) |  |
+| [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) |  |
 | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) |  |
-| [线性类型（Linear Types）](/study/papers/linear-types/) |  |
-| [LLVM — 模块化编译器框架](/study/papers/llvm/) |  |
 | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) |  |
 | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) |  |
-| [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) |  |
 | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) |  |
 | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) |  |
-| [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) |  |
 | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) |  |
 | [Smalltalk-80](/study/papers/smalltalk-80/) |  |
-| [SSA — 静态单赋值形式](/study/papers/ssa/) |  |
 | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) |  |
-| [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) |  |
+| [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) |  |
 | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) |  |
 | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) |  |
+| [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) |  |
 
-## 计算理论 / 数学基础
-
-共 7 篇。
+### 计算理论
 
 | 论文 | 描述 |
 |---|---|
 | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) |  |
-| [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) |  |
-| [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) |  |
 | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) |  |
-| [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) |  |
-| [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) |  |
 | [Turing 1936 可计算性](/study/papers/turing-1936/) |  |
 
-## 信息论 / 编码理论
+### 类型与 PL 理论
 
-共 5 篇。
+| 论文 | 描述 |
+|---|---|
+| [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |  |
+| [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |  |
+| [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) |  |
+| [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |  |
+| [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |  |
+| [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |  |
+| [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) |  |
+| [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |  |
+| [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |  |
+| [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |  |
+| [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) |  |
+| [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) |  |
+| [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |  |
+| [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |  |
+| [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) |  |
+| [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) |  |
+| [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) |  |
+| [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |  |
+| [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |  |
+| [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) |  |
+| [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |  |
+| [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) |  |
+| [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |  |
+| [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) |  |
+| [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) |  |
+| [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) |  |
+| [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) |  |
+| [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |  |
+| [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |  |
+| [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |  |
+| [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |  |
+| [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |  |
+| [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |  |
+| [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |  |
+| [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |  |
+| [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) |  |
+| [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) |  |
+| [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) |  |
+| [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |  |
+| [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |  |
+| [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |  |
+| [线性类型（Linear Types）](/study/papers/linear-types/) |  |
+| [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |  |
+| [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |  |
+| [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) |  |
+| [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) |  |
+| [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) |  |
+| [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |  |
+| [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |  |
+| [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |  |
+| [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) |  |
+| [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |  |
+| [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |  |
+| [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |  |
+| [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |  |
+| [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) |  |
+| [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |  |
+| [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |  |
+| [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |  |
+| [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |  |
+| [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |  |
+| [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |  |
+| [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |  |
+| [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |  |
+| [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) |  |
+| [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) |  |
+| [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |  |
+| [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) |  |
+| [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) |  |
+| [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |  |
+| [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) |  |
+| [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) |  |
+| [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) |  |
+| [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) |  |
+| [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) |  |
+| [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) |  |
+| [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) |  |
+| [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |  |
+| [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |  |
+| [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) |  |
+| [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) |  |
+| [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) |  |
+| [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) |  |
+| [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) |  |
+| [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) |  |
+
+## 分布式系统
+
+共 75 篇。
+
+### 分布式系统
+
+| 论文 | 描述 |
+|---|---|
+| [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) |  |
+| [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) |  |
+| [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) |  |
+| [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) |  |
+| [GFS — 编译器决定不做哪些事](/study/papers/gfs/) |  |
+| [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) |  |
+| [Paxos — 分布式共识算法](/study/papers/paxos/) |  |
+| [Raft — 易理解的共识算法](/study/papers/raft/) |  |
+
+### 共识与复制
+
+| 论文 | 描述 |
+|---|---|
+| [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |  |
+| [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) |  |
+| [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) |  |
+| [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |  |
+| [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |  |
+| [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) |  |
+| [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |  |
+| [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) |  |
+| [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) |  |
+| [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |  |
+| [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) |  |
+| [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) |  |
+| [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) |  |
+| [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) |  |
+| [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |  |
+| [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |  |
+| [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) |  |
+| [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |  |
+| [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) |  |
+| [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) |  |
+| [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) |  |
+| [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) |  |
+| [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) |  |
+| [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |  |
+| [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) |  |
+| [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) |  |
+| [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) |  |
+| [HotStuff — 让换领导也只花线性消息的 BFT 共识](/study/papers/hotstuff-2019/) |  |
+| [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) |  |
+| [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) |  |
+| [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) |  |
+| [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) |  |
+| [Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积](/study/papers/mattern-1989/) |  |
+| [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) |  |
+| [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) |  |
+| [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) |  |
+| [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) |  |
+| [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) |  |
+| [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) |  |
+| [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |  |
+| [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) |  |
+| [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) |  |
+| [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) |  |
+| [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) |  |
+| [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |  |
+| [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) |  |
+| [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) |  |
+| [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) |  |
+| [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) |  |
+| [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) |  |
+| [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |  |
+| [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) |  |
+| [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) |  |
+| [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) |  |
+| [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) |  |
+| [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) |  |
+| [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) |  |
+| [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) |  |
+| [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) |  |
+| [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Bitcoin 白皮书](/study/papers/bitcoin/) |  |
+| [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) |  |
+| [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) |  |
+| [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) |  |
+| [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) |  |
+| [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) |  |
+| [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) |  |
+
+## 数据库
+
+共 64 篇。
+
+### 存储与查询
+
+| 论文 | 描述 |
+|---|---|
+| [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |  |
+| [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |  |
+| [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) |  |
+| [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |  |
+| [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |  |
+| [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |  |
+| [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |  |
+| [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) |  |
+| [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |  |
+| [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |  |
+| [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |  |
+| [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) |  |
+| [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |  |
+| [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |  |
+| [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |  |
+| [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |  |
+| [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |  |
+| [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |  |
+| [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |  |
+| [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |  |
+| [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |  |
+| [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |  |
+| [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |  |
+| [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |  |
+| [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |  |
+| [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |  |
+| [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) |  |
+| [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |  |
+| [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |  |
+| [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) |  |
+| [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |  |
+| [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) |  |
+| [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |  |
+| [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) |  |
+| [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |  |
+| [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) |  |
+| [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |  |
+| [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |  |
+| [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) |  |
+| [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) |  |
+| [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |  |
+| [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) |  |
+| [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) |  |
+| [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |  |
+| [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) |  |
+| [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |  |
+| [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |  |
+| [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) |  |
+| [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |  |
+| [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) |  |
+| [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) |  |
+| [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |  |
+| [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |  |
+| [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) |  |
+| [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) |  |
+| [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) |  |
+| [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) |  |
+| [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |  |
+
+### 数据库
+
+| 论文 | 描述 |
+|---|---|
+| [CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库](/study/papers/couchdb/) |  |
+| [LSM-tree 与 RocksDB — 把所有写都变成顺序写](/study/papers/rocksdb-lsm/) |  |
+| [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) |  |
+| [Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式](/study/papers/volcano/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) |  |
+| [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) |  |
+
+## 操作系统
+
+共 54 篇。
+
+### 内核与虚拟化
+
+| 论文 | 描述 |
+|---|---|
+| [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) |  |
+| [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) |  |
+| [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) |  |
+| [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) |  |
+| [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) |  |
+| [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) |  |
+| [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) |  |
+| [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) |  |
+| [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) |  |
+| [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) |  |
+| [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) |  |
+| [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) |  |
+| [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) |  |
+| [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) |  |
+| [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) |  |
+| [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) |  |
+| [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) |  |
+| [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) |  |
+| [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) |  |
+| [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) |  |
+| [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) |  |
+| [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) |  |
+| [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) |  |
+| [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) |  |
+| [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) |  |
+| [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) |  |
+| [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) |  |
+| [彩票调度 — 用抽奖代替优先级的资源分配](/study/papers/lottery-1994/) |  |
+| [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) |  |
+| [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) |  |
+| [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) |  |
+| [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) |  |
+| [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) |  |
+| [MULTICS 1965 — 把计算机做成像电力一样的公共服务](/study/papers/multics-1965/) |  |
+| [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) |  |
+| [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) |  |
+| [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) |  |
+| [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) |  |
+| [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) |  |
+| [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) |  |
+| [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) |  |
+| [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) |  |
+| [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) |  |
+| [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) |  |
+| [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) |  |
+| [THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS](/study/papers/the-os-1968/) |  |
+| [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) |  |
+| [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) |  |
+| [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) |  |
+| [Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生](/study/papers/xen-2003/) |  |
+| [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) |  |
+| [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) |  |
+| [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) |  |
+
+## 机器学习
+
+共 137 篇。
+
+### 机器人与 VLA
+
+| 论文 | 描述 |
+|---|---|
+| [机器人世界模型综述 — 预测未来再动手](/study/papers/world-model-robot-learning-2026/) |  |
+
+### 模型与训练
+
+| 论文 | 描述 |
+|---|---|
+| [A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU](/study/papers/a3c-2016/) |  |
+| [Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)](/study/papers/adafactor-2018/) |  |
+| [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) |  |
+| [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) |  |
+| [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |  |
+| [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) |  |
+| [AWQ — 看激活脸色给权重打折](/study/papers/awq/) |  |
+| [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) |  |
+| [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) |  |
+| [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) |  |
+| [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) |  |
+| [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) |  |
+| [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) |  |
+| [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) |  |
+| [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) |  |
+| [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) |  |
+| [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) |  |
+| [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) |  |
+| [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) |  |
+| [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) |  |
+| [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |  |
+| [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) |  |
+| [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) |  |
+| [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) |  |
+| [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) |  |
+| [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) |  |
+| [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) |  |
+| [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |  |
+| [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) |  |
+| [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |  |
+| [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |  |
+| [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) |  |
+| [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) |  |
+| [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) |  |
+| [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) |  |
+| [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) |  |
+| [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) |  |
+| [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) |  |
+| [Graphormer — 标准 Transformer 直接刷爆 GNN](/study/papers/graphormer-2021/) |  |
+| [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) |  |
+| [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) |  |
+| [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) |  |
+| [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) |  |
+| [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) |  |
+| [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) |  |
+| [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) |  |
+| [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) |  |
+| [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) |  |
+| [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) |  |
+| [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |  |
+| [MAML — 学一个"好起点"，几步就能学会新任务](/study/papers/maml-2017/) |  |
+| [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) |  |
+| [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) |  |
+| [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) |  |
+| [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) |  |
+| [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) |  |
+| [NTK — 把无限宽的神经网络变成一个可解的核方法](/study/papers/ntk-2018/) |  |
+| [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) |  |
+| [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) |  |
+| [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) |  |
+| [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) |  |
+| [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) |  |
+| [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) |  |
+| [RoBERTa — 把 BERT 重训一遍就能拿 SOTA](/study/papers/roberta-2019/) |  |
+| [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) |  |
+| [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) |  |
+| [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) |  |
+| [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |  |
+| [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) |  |
+| [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |  |
+| [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) |  |
+| [StarCoder — 把训练数据完整公开的 15B 代码模型](/study/papers/starcoder-2023/) |  |
+| [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) |  |
+| [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) |  |
+| [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) |  |
+| [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) |  |
+| [TD3 — 给 DDPG 装两副刹车，连续控制终于稳了](/study/papers/td3-2018/) |  |
+| [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) |  |
+| [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) |  |
+| [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) |  |
+
+### 强化学习
+
+| 论文 | 描述 |
+|---|---|
+| [DQN — Deep Q-Network](/study/papers/dqn/) |  |
+| [MuZero — 不用规则也能下棋](/study/papers/muzero/) |  |
+| [PPO — Proximal Policy Optimization](/study/papers/ppo/) |  |
+
+### 生成模型
+
+| 论文 | 描述 |
+|---|---|
+| [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) |  |
+| [DiT — Diffusion Transformer](/study/papers/dit/) |  |
+| [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) |  |
+
+### 信息论
 
 | 论文 | 描述 |
 |---|---|
 | [Hamming 纠错码](/study/papers/hamming-1950/) |  |
-| [Huffman 编码](/study/papers/huffman-1952/) |  |
 | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) |  |
 | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) |  |
 | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) |  |
 
-## 密码学 / 安全
+### 智能体与 LLM
 
-共 5 篇。
+| 论文 | 描述 |
+|---|---|
+| [AutoGen — 多智能体对话框架](/study/papers/autogen/) |  |
+| [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) |  |
+| [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) |  |
+| [ReAct — Reasoning and Acting](/study/papers/react/) |  |
+| [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) |  |
+| [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) |  |
+| [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) |  |
+| [Voyager — LLM 终身学习智能体](/study/papers/voyager/) |  |
+
+### AI / NLP
+
+| 论文 | 描述 |
+|---|---|
+| [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) |  |
+| [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) |  |
+| [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) |  |
+
+### AI 可解释性
+
+| 论文 | 描述 |
+|---|---|
+| [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) |  |
+| [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) |  |
+| [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) |  |
+| [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) |  |
+| [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) |  |
+| [Toy Models of Superposition](/study/papers/toy-models-superposition/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) |  |
+| [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) |  |
+| [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |  |
+| [Attention Is All You Need](/study/papers/attention/) |  |
+| [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |  |
+| [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) |  |
+| [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) |  |
+| [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) |  |
+| [Chain-of-Thought Prompting](/study/papers/cot/) |  |
+| [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) |  |
+| [DINO 自监督视觉 transformer](/study/papers/dino/) |  |
+| [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) |  |
+| [Huffman 编码](/study/papers/huffman-1952/) |  |
+| [LLaMA — Meta 开源大语言模型](/study/papers/llama/) |  |
+| [LLaVA — 开源多模态对话模型](/study/papers/llava/) |  |
+| [MAE — Masked Autoencoders](/study/papers/mae/) |  |
+| [Mamba — 选择性状态空间模型](/study/papers/mamba/) |  |
+| [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) |  |
+| [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) |  |
+| [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |  |
+| [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) |  |
+| [ResNet — 残差连接](/study/papers/resnet/) |  |
+| [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) |  |
+| [SAM — Segment Anything](/study/papers/sam/) |  |
+| [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |  |
+| [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) |  |
+| [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) |  |
+| [ViT — Vision Transformer](/study/papers/vit/) |  |
+| [vLLM — 把操作系统的分页搬进 GPU KV cache](/study/papers/vllm/) |  |
+
+## 后端 API
+
+共 9 篇。
+
+### 后端
+
+| 论文 | 描述 |
+|---|---|
+| [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) |  |
+| [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) |  |
+| [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |  |
+| [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) |  |
+| [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) |  |
+| [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |  |
+| [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) |  |
+| [Stripe Rate Limiters — 工业级令牌桶长什么样](/study/papers/token-bucket-stripe/) |  |
+
+## 基础设施
+
+共 12 篇。
+
+### 基础设施
+
+| 论文 | 描述 |
+|---|---|
+| [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) |  |
+| [k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制](/study/papers/k3s/) |  |
+| [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) |  |
+| [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) |  |
+| [TimelineJS — 一张 Google Sheet 直接变成交互时间轴](/study/papers/timelinejs/) |  |
+| [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) |  |
+
+### infrastructure
+
+| 论文 | 描述 |
+|---|---|
+| [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) |  |
+| [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) |  |
+| [StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP](/study/papers/starrocks/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) |  |
+| [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) |  |
+| [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |  |
+
+## 网络协议
+
+共 57 篇。
+
+### 网络协议
+
+| 论文 | 描述 |
+|---|---|
+| [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) |  |
+| [Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击](/study/papers/amplification-hell-2014/) |  |
+| [Andromeda — Google Cloud 网络虚拟化的高速通道](/study/papers/andromeda-2018/) |  |
+| [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) |  |
+| [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) |  |
+| [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) |  |
+| [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) |  |
+| [Calder 2015 — Anycast CDN 在生产环境真的能用吗](/study/papers/calder-2015-anycast-cdn/) |  |
+| [Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网](/study/papers/cerf-kahn-1974/) |  |
+| [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) |  |
+| [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) |  |
+| [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) |  |
+| [CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱](/study/papers/cubic-2008/) |  |
+| [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) |  |
+| [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) |  |
+| [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) |  |
+| [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) |  |
+| [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) |  |
+| [Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心](/study/papers/fat-tree-2008/) |  |
+| [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) |  |
+| [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) |  |
+| [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) |  |
+| [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) |  |
+| [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) |  |
+| [IPFS — 把"地址"换成"内容本身"的 P2P 文件系统](/study/papers/ipfs-2014/) |  |
+| [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) |  |
+| [Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍](/study/papers/jupiter-2015/) |  |
+| [Kademlia — 用 XOR 当距离的 P2P 路由表](/study/papers/kademlia-2002/) |  |
+| [Karger 1997 一致性哈希 — 加机器不用全员搬家](/study/papers/karger-1997-consistent-hashing/) |  |
+| [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) |  |
+| [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) |  |
+| [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) |  |
+| [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) |  |
+| [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) |  |
+| [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) |  |
+| [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) |  |
+| [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) |  |
+| [Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"](/study/papers/mogul-1995-persistent-http/) |  |
+| [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) |  |
+| [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) |  |
+| [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) |  |
+| [Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快](/study/papers/padmanabhan-1995-http-latency/) |  |
+| [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) |  |
+| [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) |  |
+| [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |  |
+| [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) |  |
+| [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) |  |
+| [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) |  |
+| [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) |  |
+| [Subramanian 2002 — 用多个观察点把互联网切成 5 层](/study/papers/subramanian-2002-internet-hierarchy/) |  |
+| [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) |  |
+| [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) |  |
+| [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) |  |
+| [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) |  |
+| [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) |  |
+| [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) |  |
+
+## 图形学
+
+共 121 篇。
+
+### 渲染与图形
+
+| 论文 | 描述 |
+|---|---|
+| [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) |  |
+| [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |  |
+| [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) |  |
+| [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |  |
+| [Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题](/study/papers/catmull-1974-zbuffer/) |  |
+| [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) |  |
+| [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) |  |
+| [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) |  |
+| [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) |  |
+| [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) |  |
+| [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) |  |
+| [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |  |
+| [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |  |
+| [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) |  |
+| [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) |  |
+| [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) |  |
+| [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) |  |
+| [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) |  |
+| [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) |  |
+| [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) |  |
+| [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) |  |
+| [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) |  |
+| [Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照](/study/papers/jensen-1996-photon-mapping/) |  |
+| [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) |  |
+| [Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿](/study/papers/karis-2014-taa/) |  |
+| [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) |  |
+| [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) |  |
+| [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) |  |
+| [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) |  |
+| [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) |  |
+| [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) |  |
+| [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) |  |
+| [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) |  |
+| [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) |  |
+| [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |  |
+| [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) |  |
+| [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) |  |
+| [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) |  |
+| [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) |  |
+| [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) |  |
+| [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) |  |
+| [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) |  |
+| [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) |  |
+| [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) |  |
+| [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) |  |
+| [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) |  |
+| [Perlin Noise — 让计算机生成的图像不再有"机器味"](/study/papers/perlin-1985-noise/) |  |
+| [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) |  |
+| [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) |  |
+| [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) |  |
+| [Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节](/study/papers/sorkine-2004-laplacian-editing/) |  |
+| [Stable Fluids — 让流体模拟时间步随便给都不爆](/study/papers/stam-1999-stable-fluids/) |  |
+| [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) |  |
+| [Taubin 1995 — 把网格平滑当成低通滤波](/study/papers/taubin-1995-mesh-smoothing/) |  |
+| [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |  |
+| [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) |  |
+| [Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法](/study/papers/wald-2007-sah-bvh/) |  |
+| [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) |  |
+| [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) |  |
+| [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) |  |
+
+### GPU 架构
+
+| 论文 | 描述 |
+|---|---|
+| [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |  |
+| [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) |  |
+| [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |  |
+| [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) |  |
+| [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) |  |
+| [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) |  |
+| [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |  |
+| [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) |  |
+| [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) |  |
+| [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |  |
+| [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) |  |
+| [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) |  |
+| [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) |  |
+| [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) |  |
+| [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) |  |
+| [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) |  |
+| [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) |  |
+| [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) |  |
+| [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) |  |
+| [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) |  |
+| [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) |  |
+| [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) |  |
+| [GPU 缓存一致性 — 用时戳代替失效消息](/study/papers/gpu-cache-coherence-2013/) |  |
+| [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) |  |
+| [GPUDirect RDMA — 让网卡直接读写 GPU 显存](/study/papers/gpudirect-rdma-2014/) |  |
+| [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) |  |
+| [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) |  |
+| [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |  |
+| [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) |  |
+| [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) |  |
+| [NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍](/study/papers/maxwell-architecture-2014/) |  |
+| [McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台](/study/papers/mcfarling-bp-1993/) |  |
+| [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) |  |
+| [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) |  |
+| [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) |  |
+| [NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器](/study/papers/nvlink-nvswitch-2018/) |  |
+| [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) |  |
+| [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) |  |
+| [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |  |
+| [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) |  |
+| [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) |  |
+| [Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事](/study/papers/quantum-supremacy-2019/) |  |
+| [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) |  |
+| [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) |  |
+| [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) |  |
+| [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) |  |
+| [SparseGPT — 175B 大模型一次过剪 50%，不重训](/study/papers/sparsegpt-2023/) |  |
+| [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) |  |
+| [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) |  |
+| [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) |  |
+| [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) |  |
+| [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) |  |
+| [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) |  |
+| [Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序](/study/papers/tomasulo-1967/) |  |
+| [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) |  |
+| [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) |  |
+| [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) |  |
+| [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |  |
+| [NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍](/study/papers/volta-architecture-2017/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) |  |
+| [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) |  |
+
+## 形式化方法
+
+共 51 篇。
+
+### 形式化验证
+
+| 论文 | 描述 |
+|---|---|
+| [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) |  |
+| [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) |  |
+| [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) |  |
+| [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |  |
+| [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |  |
+| [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) |  |
+| [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) |  |
+| [Chapar — 第一个被机器证明的因果一致 KV 存储](/study/papers/chapar-2016/) |  |
+| [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |  |
+| [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |  |
+| [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |  |
+| [Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系](/study/papers/cousot-halbwachs-polyhedra-1978/) |  |
+| [CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全](/study/papers/cryptoverif-2008/) |  |
+| [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) |  |
+| [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) |  |
+| [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |  |
+| [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) |  |
+| [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |  |
+| [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) |  |
+| [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) |  |
+| [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) |  |
+| [HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里](/study/papers/hacl-star-2017/) |  |
+| [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) |  |
+| [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) |  |
+| [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) |  |
+| [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |  |
+| [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) |  |
+| [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) |  |
+| [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) |  |
+| [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) |  |
+| [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) |  |
+| [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) |  |
+| [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) |  |
+| [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) |  |
+| [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) |  |
+| [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) |  |
+| [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |  |
+| [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) |  |
+| [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |  |
+| [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) |  |
+| [Stainless — 让编译器替你证明 Scala 函数真的满足规约](/study/papers/stainless-2017/) |  |
+| [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) |  |
+| [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) |  |
+| [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) |  |
+| [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |  |
+| [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |  |
+| [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |  |
+| [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) |  |
+| [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |  |
+| [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) |  |
+
+## 通信
+
+共 1 篇。
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) |  |
+
+## 信息检索
+
+共 52 篇。
+
+### 检索与排序
+
+| 论文 | 描述 |
+|---|---|
+| [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) |  |
+| [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) |  |
+| [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) |  |
+| [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) |  |
+| [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) |  |
+| [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) |  |
+| [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) |  |
+| [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) |  |
+| [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) |  |
+| [Croft-Harper 1979 — 没有相关性反馈也能跑概率检索](/study/papers/croft-harper-1979/) |  |
+| [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |  |
+| [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) |  |
+| [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) |  |
+| [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) |  |
+| [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) |  |
+| [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) |  |
+| [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |  |
+| [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) |  |
+| [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) |  |
+| [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) |  |
+| [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) |  |
+| [HITS — 给网页同时打两个分：权威页 + 索引页](/study/papers/hits-1999/) |  |
+| [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) |  |
+| [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) |  |
+| [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) |  |
+| [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) |  |
+| [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) |  |
+| [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) |  |
+| [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) |  |
+| [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) |  |
+| [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) |  |
+| [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) |  |
+| [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) |  |
+| [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |  |
+| [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) |  |
+| [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) |  |
+| [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) |  |
+| [RocketQA — 把稠密检索的训练拧到工业级](/study/papers/rocketqa-2021/) |  |
+| [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |  |
+| [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |  |
+| [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) |  |
+| [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) |  |
+| [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) |  |
+| [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) |  |
+| [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) |  |
+| [SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引](/study/papers/splade-2021/) |  |
+| [TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来](/study/papers/trustrank-2004/) |  |
+| [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) |  |
+| [YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键](/study/papers/youtube-two-tower-2019/) |  |
+
+### 数据检索
+
+| 论文 | 描述 |
+|---|---|
+| [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |  |
+| [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) |  |
+| [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) |  |
+
+## Agent
+
+共 22 篇。
+
+### 智能体与 LLM
+
+| 论文 | 描述 |
+|---|---|
+| [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) |  |
+| [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) |  |
+| [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) |  |
+| [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) |  |
+| [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) |  |
+| [EVE-Agent — 自我训练前先把证据钉在桌上](/study/papers/eve-agent-evidence/) |  |
+| [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) |  |
+| [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) |  |
+| [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) |  |
+| [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) |  |
+| [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) |  |
+| [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) |  |
+| [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) |  |
+| [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) |  |
+| [Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线](/study/papers/self-evolving-recsys-2602/) |  |
+| [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) |  |
+| [SkCC — 给 LLM agent 写一个真正的 skill 编译器](/study/papers/skcc-skill-compiler/) |  |
+| [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) |  |
+| [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) |  |
+| [Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏](/study/papers/skill-sd-self-distillation/) |  |
+| [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) |  |
+| [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) |  |
+
+## CLI
+
+共 1 篇。
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [Nix — 把每个软件包当成纯函数的输出](/study/papers/nix/) |  |
+
+## NLP
+
+共 9 篇。
+
+### NLP
+
+| 论文 | 描述 |
+|---|---|
+| [BERT — 双向 Transformer 预训练](/study/papers/bert/) |  |
+| [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) |  |
+| [DPO — Direct Preference Optimization](/study/papers/dpo/) |  |
+| [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) |  |
+| [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) |  |
+| [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) |  |
+| [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) |  |
+| [Word2Vec — 词向量奠基](/study/papers/word2vec/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) |  |
+
+## 编译器
+
+共 3 篇。
+
+### 编译器
+
+| 论文 | 描述 |
+|---|---|
+| [LLVM — 模块化编译器框架](/study/papers/llvm/) |  |
+| [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) |  |
+| [SSA — 静态单赋值形式](/study/papers/ssa/) |  |
+
+## 数据可视化
+
+共 4 篇。
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
+| [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) |  |
+| [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) |  |
+| [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) |  |
+| [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) |  |
+
+## 安全与隐私
+
+共 4 篇。
+
+### 密码学
 
 | 论文 | 描述 |
 |---|---|
 | [AES Rijndael 对称分组密码](/study/papers/aes/) |  |
-| [Bitcoin 白皮书](/study/papers/bitcoin/) |  |
 | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) |  |
 | [RSA 公钥密码](/study/papers/rsa/) |  |
 | [zk-SNARK 零知识证明](/study/papers/zk-snark/) |  |
 
-## HCI / 软件工程研究
+## 其他
 
-共 14 篇。
+共 13 篇。
+
+### 软件工程
 
 | 论文 | 描述 |
 |---|---|
 | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) |  |
+| [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) |  |
+| [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) |  |
+| [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) |  |
+| [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) |  |
+| [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) |  |
+| [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) |  |
+
+### 其他子类
+
+| 论文 | 描述 |
+|---|---|
 | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) |  |
 | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) |  |
 | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) |  |
 | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 1968 年 3 月 Dijkstra 写给 CACM 的不到 1000 字 letter，论证 goto 让源代码的静态文本顺序与运行时执行顺序错位、状态难以推理 |
 | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) |  |
-| [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) |  |
-| [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) |  |
-| [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) |  |
-| [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) |  |
-| [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) |  |
 | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) |  |
-| [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) |  |
-| [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) |  |
-
-## 其他 / 待分类
-
-共 656 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
-
-| Slug | 论文 |
-|---|---|
-| `a3c-2016` | [A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU](/study/papers/a3c-2016/) |
-| `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) |
-| `adafactor-2018` | [Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)](/study/papers/adafactor-2018/) |
-| `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) |
-| `adamw-2017` | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) |
-| `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) |
-| `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
-| `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) |
-| `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) |
-| `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) |
-| `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |
-| `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |
-| `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) |
-| `amoeba-1990` | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) |
-| `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
-| `amplification-hell-2014` | [Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击](/study/papers/amplification-hell-2014/) |
-| `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) |
-| `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) |
-| `andromeda-2018` | [Andromeda — Google Cloud 网络虚拟化的高速通道](/study/papers/andromeda-2018/) |
-| `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) |
-| `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) |
-| `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) |
-| `apex-policy-exploration` | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) |
-| `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) |
-| `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) |
-| `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) |
-| `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) |
-| `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) |
-| `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) |
-| `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) |
-| `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) |
-| `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) |
-| `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) |
-| `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) |
-| `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) |
-| `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
-| `b4-2013` | [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) |
-| `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) |
-| `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) |
-| `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) |
-| `batchnorm-2015` | [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) |
-| `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) |
-| `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) |
-| `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) |
-| `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |
-| `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |
-| `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
-| `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) |
-| `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
-| `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) |
-| `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) |
-| `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) |
-| `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) |
-| `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) |
-| `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
-| `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) |
-| `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) |
-| `blip2-2023` | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) |
-| `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) |
-| `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
-| `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
-| `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
-| `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) |
-| `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) |
-| `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
-| `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) |
-| `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
-| `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) |
-| `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
-| `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) |
-| `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
-| `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) |
-| `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |
-| `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
-| `calder-2015-anycast-cdn` | [Calder 2015 — Anycast CDN 在生产环境真的能用吗](/study/papers/calder-2015-anycast-cdn/) |
-| `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |
-| `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) |
-| `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) |
-| `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
-| `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) |
-| `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
-| `catmull-1974-zbuffer` | [Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题](/study/papers/catmull-1974-zbuffer/) |
-| `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) |
-| `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) |
-| `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) |
-| `cerf-kahn-1974` | [Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网](/study/papers/cerf-kahn-1974/) |
-| `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) |
-| `cesium` | [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) |
-| `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) |
-| `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |
-| `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) |
-| `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) |
-| `chapar-2016` | [Chapar — 第一个被机器证明的因果一致 KV 存储](/study/papers/chapar-2016/) |
-| `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) |
-| `chord-2001` | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) |
-| `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) |
-| `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |
-| `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) |
-| `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
-| `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) |
-| `classifier-free-guidance-2022` | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) |
-| `clawtrace-cost-aware` | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) |
-| `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) |
-| `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) |
-| `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) |
-| `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) |
-| `coda-1990` | [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) |
-| `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) |
-| `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) |
-| `code-as-agent-harness` | [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) |
-| `codellama-2023` | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) |
-| `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) |
-| `codons-2004` | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) |
-| `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) |
-| `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) |
-| `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) |
-| `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) |
-| `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
-| `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
-| `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) |
-| `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) |
-| `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) |
-| `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) |
-| `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) |
-| `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |
-| `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) |
-| `couchdb` | [CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库](/study/papers/couchdb/) |
-| `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
-| `cousot-halbwachs-polyhedra-1978` | [Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系](/study/papers/cousot-halbwachs-polyhedra-1978/) |
-| `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) |
-| `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) |
-| `crdt-shapiro-2011` | [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) |
-| `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) |
-| `croft-harper-1979` | [Croft-Harper 1979 — 没有相关性反馈也能跑概率检索](/study/papers/croft-harper-1979/) |
-| `cryptoverif-2008` | [CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全](/study/papers/cryptoverif-2008/) |
-| `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) |
-| `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
-| `cubic-2008` | [CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱](/study/papers/cubic-2008/) |
-| `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) |
-| `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) |
-| `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) |
-| `curless-levoy-1996-tsdf` | [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) |
-| `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) |
-| `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) |
-| `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) |
-| `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |
-| `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) |
-| `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
-| `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
-| `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |
-| `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) |
-| `debate-2018` | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) |
-| `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
-| `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
-| `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) |
-| `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) |
-| `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |
-| `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) |
-| `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) |
-| `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) |
-| `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) |
-| `diffie-hellman-1976` | [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) |
-| `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) |
-| `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) |
-| `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) |
-| `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) |
-| `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |
-| `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) |
-| `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) |
-| `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) |
-| `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) |
-| `donar-2010` | [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) |
-| `dot-doh-perf-2020` | [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) |
-| `double-descent-2019` | [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) |
-| `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
-| `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) |
-| `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) |
-| `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
-| `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) |
-| `dropout-2014` | [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) |
-| `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) |
-| `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |
-| `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
-| `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
-| `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) |
-| `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |
-| `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
-| `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) |
-| `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) |
-| `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) |
-| `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |
-| `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
-| `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) |
-| `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) |
-| `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) |
-| `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) |
-| `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) |
-| `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) |
-| `eve-agent-evidence` | [EVE-Agent — 自我训练前先把证据钉在桌上](/study/papers/eve-agent-evidence/) |
-| `evo-memory-2511` | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) |
-| `exg-experience-graphs` | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) |
-| `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) |
-| `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
-| `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |
-| `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |
-| `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) |
-| `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) |
-| `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) |
-| `fat-tree-2008` | [Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心](/study/papers/fat-tree-2008/) |
-| `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
-| `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) |
-| `ffs-1984` | [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) |
-| `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) |
-| `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) |
-| `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) |
-| `firecracker-2020` | [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) |
-| `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) |
-| `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) |
-| `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) |
-| `flexsc-2010` | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) |
-| `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |
-| `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) |
-| `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) |
-| `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) |
-| `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) |
-| `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) |
-| `frangipani-1997` | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) |
-| `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) |
-| `frenetic-2011` | [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) |
-| `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) |
-| `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) |
-| `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) |
-| `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
-| `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
-| `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) |
-| `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) |
-| `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) |
-| `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) |
-| `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) |
-| `ghost-2021` | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) |
-| `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
-| `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) |
-| `glue-2018` | [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) |
-| `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) |
-| `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) |
-| `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) |
-| `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) |
-| `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) |
-| `gpipe-2019` | [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) |
-| `gptq-2023` | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) |
-| `gpu-cache-coherence-2013` | [GPU 缓存一致性 — 用时戳代替失效消息](/study/papers/gpu-cache-coherence-2013/) |
-| `gpu-microbenchmarking-2010` | [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) |
-| `gpudirect-rdma-2014` | [GPUDirect RDMA — 让网卡直接读写 GPU 显存](/study/papers/gpudirect-rdma-2014/) |
-| `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) |
-| `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
-| `graf-saidi-1997` | [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) |
-| `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) |
-| `graphormer-2021` | [Graphormer — 标准 Transformer 直接刷爆 GNN](/study/papers/graphormer-2021/) |
-| `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) |
-| `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) |
-| `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) |
-| `grokking-2022` | [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) |
-| `gru-2014` | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) |
-| `gshard-2020` | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) |
-| `hacl-star-2017` | [HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里](/study/papers/hacl-star-2017/) |
-| `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
-| `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) |
-| `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) |
-| `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
-| `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) |
-| `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) |
-| `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) |
-| `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) |
-| `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) |
-| `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) |
-| `hits-1999` | [HITS — 给网页同时打两个分：权威页 + 索引页](/study/papers/hits-1999/) |
-| `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) |
-| `hnsw-2018` | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) |
-| `hol-light-2009` | [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) |
-| `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) |
-| `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) |
-| `hotspot-server-compiler` | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) |
-| `hotstuff-2019` | [HotStuff — 让换领导也只花线性消息的 BFT 共识](/study/papers/hotstuff-2019/) |
-| `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) |
-| `hu-2018-mls-mpm` | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) |
-| `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
-| `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) |
-| `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |
-| `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
-| `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) |
-| `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
-| `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) |
-| `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
-| `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
-| `ipfs-2014` | [IPFS — 把"地址"换成"内容本身"的 P2P 文件系统](/study/papers/ipfs-2014/) |
-| `iris-2015` | [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) |
-| `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) |
-| `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) |
-| `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) |
-| `jacobson-1988` | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) |
-| `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) |
-| `jemalloc-2006` | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) |
-| `jensen-1996-photon-mapping` | [Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照](/study/papers/jensen-1996-photon-mapping/) |
-| `jupiter-1995` | [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) |
-| `jupiter-2015` | [Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍](/study/papers/jupiter-2015/) |
-| `jwt-rfc-7519` | [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) |
-| `k3s` | [k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制](/study/papers/k3s/) |
-| `kademlia-2002` | [Kademlia — 用 XOR 当距离的 P2P 路由表](/study/papers/kademlia-2002/) |
-| `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) |
-| `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) |
-| `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) |
-| `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) |
-| `karger-1997-consistent-hashing` | [Karger 1997 一致性哈希 — 加机器不用全员搬家](/study/papers/karger-1997-consistent-hashing/) |
-| `karis-2014-taa` | [Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿](/study/papers/karis-2014-taa/) |
-| `karis-2014-ue4-pbr` | [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) |
-| `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) |
-| `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) |
-| `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |
-| `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
-| `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) |
-| `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
-| `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) |
-| `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) |
-| `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) |
-| `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) |
-| `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) |
-| `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) |
-| `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) |
-| `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) |
-| `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) |
-| `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |
-| `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) |
-| `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) |
-| `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) |
-| `layernorm-2016` | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) |
-| `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) |
-| `lean-tactics` | [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) |
-| `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
-| `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |
-| `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) |
-| `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) |
-| `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) |
-| `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
-| `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) |
-| `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |
-| `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) |
-| `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) |
-| `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
-| `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) |
-| `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) |
-| `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) |
-| `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) |
-| `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
-| `locus-1980` | [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) |
-| `logjam-2015` | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) |
-| `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) |
-| `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) |
-| `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) |
-| `lottery-1994` | [彩票调度 — 用抽奖代替优先级的资源分配](/study/papers/lottery-1994/) |
-| `lottery-ticket-2019` | [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) |
-| `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) |
-| `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) |
-| `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) |
-| `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) |
-| `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) |
-| `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) |
-| `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
-| `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
-| `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) |
-| `maml-2017` | [MAML — 学一个"好起点"，几步就能学会新任务](/study/papers/maml-2017/) |
-| `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) |
-| `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) |
-| `marques-silva-grasp-1996` | [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) |
-| `martin-lof-itt` | [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) |
-| `mattern-1989` | [Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积](/study/papers/mattern-1989/) |
-| `maxwell-architecture-2014` | [NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍](/study/papers/maxwell-architecture-2014/) |
-| `mcfarling-bp-1993` | [McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台](/study/papers/mcfarling-bp-1993/) |
-| `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) |
-| `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) |
-| `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) |
-| `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) |
-| `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) |
-| `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) |
-| `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) |
-| `memcoder-co-evolution` | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) |
-| `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) |
-| `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) |
-| `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) |
-| `mesos-2011` | [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) |
-| `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) |
-| `metcalfe-boggs-1976` | [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) |
-| `mills-ntp-1991` | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) |
-| `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) |
-| `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) |
-| `mind-skill` | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) |
-| `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) |
-| `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) |
-| `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) |
-| `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) |
-| `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) |
-| `mitls-2014-triple-handshake` | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) |
-| `mixup-2018` | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) |
-| `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) |
-| `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) |
-| `mmlu-2021` | [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) |
-| `mmskills-multimodal` | [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) |
-| `mockapetris-1988-dns` | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) |
-| `mode-connectivity-2018` | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) |
-| `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) |
-| `mogul-1995-persistent-http` | [Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"](/study/papers/mogul-1995-persistent-http/) |
-| `monaghan-1992-sph` | [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) |
-| `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
-| `monitors-1974` | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) |
-| `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) |
-| `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) |
-| `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) |
-| `multics-1965` | [MULTICS 1965 — 把计算机做成像电力一样的公共服务](/study/papers/multics-1965/) |
-| `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
-| `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) |
-| `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) |
-| `nbeats-2020` | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) |
-| `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) |
-| `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) |
-| `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) |
-| `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) |
-| `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
-| `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) |
-| `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) |
-| `nfs-1985` | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) |
-| `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) |
-| `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |
-| `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) |
-| `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/papers/nix/) |
-| `ntk-2018` | [NTK — 把无限宽的神经网络变成一个可解的核方法](/study/papers/ntk-2018/) |
-| `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) |
-| `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) |
-| `nvlink-nvswitch-2018` | [NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器](/study/papers/nvlink-nvswitch-2018/) |
-| `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) |
-| `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) |
-| `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) |
-| `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) |
-| `omega-2013` | [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) |
-| `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) |
-| `openflow-2008` | [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) |
-| `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) |
-| `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) |
-| `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) |
-| `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
-| `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) |
-| `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) |
-| `padmanabhan-1995-http-latency` | [Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快](/study/papers/padmanabhan-1995-http-latency/) |
-| `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |
-| `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) |
-| `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) |
-| `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) |
-| `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
-| `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
-| `pastry-2001` | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) |
-| `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) |
-| `paxos-simple-2001` | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) |
-| `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) |
-| `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) |
-| `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) |
-| `performer-2020` | [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) |
-| `perlin-1985-noise` | [Perlin Noise — 让计算机生成的图像不再有"机器味"](/study/papers/perlin-1985-noise/) |
-| `persistent-memory-2014` | [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) |
-| `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) |
-| `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |
-| `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) |
-| `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) |
-| `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) |
-| `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) |
-| `plenoxels-2022` | [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) |
-| `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
-| `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
-| `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) |
-| `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |
-| `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |
-| `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
-| `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
-| `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) |
-| `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) |
-| `ps-li-2014` | [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) |
-| `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) |
-| `quantum-supremacy-2019` | [Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事](/study/papers/quantum-supremacy-2019/) |
-| `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) |
-| `r-bgp-2007` | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) |
-| `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) |
-| `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) |
-| `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
-| `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |
-| `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
-| `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) |
-| `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) |
-| `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
-| `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
-| `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
-| `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
-| `rfc-3833-dns-threats` | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) |
-| `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) |
-| `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) |
-| `rm3-2001` | [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) |
-| `roberta-2019` | [RoBERTa — 把 BERT 重训一遍就能拿 SOTA](/study/papers/roberta-2019/) |
-| `rocketqa-2021` | [RocketQA — 把稠密检索的训练拧到工业级](/study/papers/rocketqa-2021/) |
-| `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) |
-| `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) |
-| `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) |
-| `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) |
-| `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) |
-| `sac-2018` | [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) |
-| `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) |
-| `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
-| `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) |
-| `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
-| `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) |
-| `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) |
-| `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
-| `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
-| `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
-| `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) |
-| `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
-| `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
-| `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) |
-| `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) |
-| `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
-| `self-evolving-agents-survey` | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) |
-| `self-evolving-recsys-2602` | [Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线](/study/papers/self-evolving-recsys-2602/) |
-| `self-evolving-software-agents` | [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) |
-| `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
-| `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) |
-| `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
-| `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
-| `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) |
-| `server-sent-events` | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) |
-| `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) |
-| `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) |
-| `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) |
-| `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) |
-| `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) |
-| `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) |
-| `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) |
-| `skcc-skill-compiler` | [SkCC — 给 LLM agent 写一个真正的 skill 编译器](/study/papers/skcc-skill-compiler/) |
-| `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) |
-| `skill-as-pseudocode` | [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) |
-| `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) |
-| `skill-sd-self-distillation` | [Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏](/study/papers/skill-sd-self-distillation/) |
-| `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) |
-| `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) |
-| `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) |
-| `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) |
-| `slim-2011` | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) |
-| `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) |
-| `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |
-| `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) |
-| `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) |
-| `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) |
-| `sophia-2023` | [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) |
-| `sorkine-2004-laplacian-editing` | [Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节](/study/papers/sorkine-2004-laplacian-editing/) |
-| `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) |
-| `spann-2021` | [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) |
-| `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |
-| `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) |
-| `sparsegpt-2023` | [SparseGPT — 175B 大模型一次过剪 50%，不重训](/study/papers/sparsegpt-2023/) |
-| `specinfer-2023` | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) |
-| `splade-2021` | [SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引](/study/papers/splade-2021/) |
-| `sprite-1988` | [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) |
-| `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) |
-| `stainless-2017` | [Stainless — 让编译器替你证明 Scala 函数真的满足规约](/study/papers/stainless-2017/) |
-| `stam-1999-stable-fluids` | [Stable Fluids — 让流体模拟时间步随便给都不爆](/study/papers/stam-1999-stable-fluids/) |
-| `starcoder-2023` | [StarCoder — 把训练数据完整公开的 15B 代码模型](/study/papers/starcoder-2023/) |
-| `starrocks` | [StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP](/study/papers/starrocks/) |
-| `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) |
-| `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) |
-| `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) |
-| `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) |
-| `stylegan2-2020` | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) |
-| `subramanian-2002-internet-hierarchy` | [Subramanian 2002 — 用多个观察点把互联网切成 5 层](/study/papers/subramanian-2002-internet-hierarchy/) |
-| `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) |
-| `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) |
-| `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) |
-| `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
-| `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
-| `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) |
-| `tabpfn-2023` | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) |
-| `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
-| `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) |
-| `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) |
-| `taso-2019` | [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) |
-| `taubin-1995-mesh-smoothing` | [Taubin 1995 — 把网格平滑当成低通滤波](/study/papers/taubin-1995-mesh-smoothing/) |
-| `tcp-vegas-1995` | [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) |
-| `td3-2018` | [TD3 — 给 DDPG 装两副刹车，连续控制终于稳了](/study/papers/td3-2018/) |
-| `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) |
-| `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) |
-| `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) |
-| `tensorrt-llm-2023` | [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) |
-| `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) |
-| `the-os-1968` | [THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS](/study/papers/the-os-1968/) |
-| `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) |
-| `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) |
-| `timelinejs` | [TimelineJS — 一张 Google Sheet 直接变成交互时间轴](/study/papers/timelinejs/) |
-| `tla-yu-tlc-1999` | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) |
-| `token-bucket-stripe` | [Stripe Rate Limiters — 工业级令牌桶长什么样](/study/papers/token-bucket-stripe/) |
-| `tomasulo-1967` | [Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序](/study/papers/tomasulo-1967/) |
-| `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) |
-| `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) |
-| `transformer-xl-2019` | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) |
-| `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) |
-| `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) |
-| `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) |
-| `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) |
-| `trustrank-2004` | [TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来](/study/papers/trustrank-2004/) |
-| `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) |
-| `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) |
-| `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) |
-| `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) |
-| `twine-2020` | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) |
-| `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |
-| `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) |
-| `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) |
-| `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) |
-| `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
-| `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |
-| `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) |
-| `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) |
-| `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |
-| `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
-| `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
-| `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) |
-| `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) |
-| `vogels-eventual-2009` | [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) |
-| `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) |
-| `volta-architecture-2017` | [NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍](/study/papers/volta-architecture-2017/) |
-| `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) |
-| `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) |
-| `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) |
-| `wald-2007-sah-bvh` | [Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法](/study/papers/wald-2007-sah-bvh/) |
-| `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) |
-| `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) |
-| `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) |
-| `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) |
-| `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
-| `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) |
-| `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) |
-| `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
-| `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) |
-| `williams-1983-mipmap` | [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) |
-| `xen-2003` | [Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生](/study/papers/xen-2003/) |
-| `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) |
-| `xlnet-2019` | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) |
-| `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) |
-| `youtube-two-tower-2019` | [YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键](/study/papers/youtube-two-tower-2019/) |
-| `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) |
-| `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) |
-| `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) |
-| `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) |
-| `zombie-agents-2602` | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) |
 
 ---
 
-## 全部 795 篇（字母序）
+## 全部 796 篇（字母序）
 
-| Slug | 论文 | 主题 |
-|---|---|---|
-| `3d-gaussian-splatting` | [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) | 计算机视觉 |
-| `a3c-2016` | [A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU](/study/papers/a3c-2016/) | 其他 |
-| `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) | 其他 |
-| `activation-patching` | [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) | AI 安全与可解释性 |
-| `adafactor-2018` | [Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)](/study/papers/adafactor-2018/) | 其他 |
-| `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) | 其他 |
-| `adamw-2017` | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) | 其他 |
-| `adapton` | [Adapton — 增量计算](/study/papers/adapton/) | 编译器 / 编程语言理论 |
-| `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
-| `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) | 其他 |
-| `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 其他 |
-| `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | 其他 |
-| `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 智能体与 LLM 系统 |
-| `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | 其他 |
-| `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) | 其他 |
-| `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编译器 / 编程语言理论 |
-| `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) | 其他 |
-| `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | 其他 |
-| `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
-| `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | 其他 |
-| `amoeba-1990` | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) | 其他 |
-| `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 其他 |
-| `amplification-hell-2014` | [Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击](/study/papers/amplification-hell-2014/) | 其他 |
-| `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) | 其他 |
-| `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 其他 |
-| `andromeda-2018` | [Andromeda — Google Cloud 网络虚拟化的高速通道](/study/papers/andromeda-2018/) | 其他 |
-| `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) | 其他 |
-| `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) | 其他 |
-| `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | AI 安全与可解释性 |
-| `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | 其他 |
-| `apex-policy-exploration` | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) | 其他 |
-| `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | 其他 |
-| `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) | 其他 |
-| `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 其他 |
-| `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | 其他 |
-| `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) | 其他 |
-| `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | 其他 |
-| `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) | 其他 |
-| `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
-| `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
-| `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | 其他 |
-| `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
-| `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) | 其他 |
-| `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | 其他 |
-| `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) | 其他 |
-| `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) | 其他 |
-| `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 其他 |
-| `b4-2013` | [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) | 其他 |
-| `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) | 其他 |
-| `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) | 其他 |
-| `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) | 其他 |
-| `batchnorm-2015` | [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) | 其他 |
-| `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | 其他 |
-| `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) | 其他 |
-| `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
-| `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | 其他 |
-| `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | 其他 |
-| `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | 其他 |
-| `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | 其他 |
-| `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
-| `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) | 其他 |
-| `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
-| `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) | 其他 |
-| `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) | 其他 |
-| `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) | 其他 |
-| `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) | 其他 |
-| `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 其他 |
-| `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
-| `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) | 其他 |
-| `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 其他 |
-| `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) | 其他 |
-| `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) | 其他 |
-| `blip2-2023` | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) | 其他 |
-| `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) | 其他 |
-| `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | 其他 |
-| `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
-| `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
-| `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
-| `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | 其他 |
-| `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) | 其他 |
-| `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) | 其他 |
-| `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
-| `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) | 其他 |
-| `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
-| `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | 其他 |
-| `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
-| `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | 其他 |
-| `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
-| `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | 其他 |
-| `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | 其他 |
-| `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | 其他 |
-| `calder-2015-anycast-cdn` | [Calder 2015 — Anycast CDN 在生产环境真的能用吗](/study/papers/calder-2015-anycast-cdn/) | 其他 |
-| `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | 其他 |
-| `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) | 其他 |
-| `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) | 其他 |
-| `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
-| `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) | 其他 |
-| `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
-| `catmull-1974-zbuffer` | [Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题](/study/papers/catmull-1974-zbuffer/) | 其他 |
-| `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) | 其他 |
-| `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
-| `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) | 其他 |
-| `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | 其他 |
-| `cerf-kahn-1974` | [Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网](/study/papers/cerf-kahn-1974/) | 其他 |
-| `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) | 其他 |
-| `cesium` | [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) | 其他 |
-| `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) | 其他 |
-| `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) | 其他 |
-| `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | 其他 |
-| `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) | 其他 |
-| `chapar-2016` | [Chapar — 第一个被机器证明的因果一致 KV 存储](/study/papers/chapar-2016/) | 其他 |
-| `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) | 其他 |
-| `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | GC / 内存管理 |
-| `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP 基础与 Scaling |
-| `chord-2001` | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) | 其他 |
-| `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | 其他 |
-| `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
-| `ci-effects` | [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
-| `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) | 其他 |
-| `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) | 其他 |
-| `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) | 其他 |
-| `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) | 其他 |
-| `classifier-free-guidance-2022` | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) | 其他 |
-| `clawtrace-cost-aware` | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) | 其他 |
-| `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | 其他 |
-| `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 |
-| `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 计算机视觉 |
-| `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) | 其他 |
-| `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) | 其他 |
-| `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) | 其他 |
-| `coda-1990` | [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) | 其他 |
-| `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 其他 |
-| `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 其他 |
-| `code-as-agent-harness` | [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) | 其他 |
-| `codellama-2023` | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) | 其他 |
-| `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) | 其他 |
-| `codons-2004` | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) | 其他 |
-| `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 其他 |
-| `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | HCI / 软件工程研究 |
-| `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | 其他 |
-| `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) | 其他 |
-| `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) | 其他 |
-| `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 其他 |
-| `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 其他 |
-| `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
-| `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | 其他 |
-| `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | 其他 |
-| `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
-| `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) | 其他 |
-| `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) | 其他 |
-| `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
-| `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) | 其他 |
-| `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
-| `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) | 其他 |
-| `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
-| `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) | 其他 |
-| `couchdb` | [CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库](/study/papers/couchdb/) | 其他 |
-| `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) | 其他 |
-| `cousot-halbwachs-polyhedra-1978` | [Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系](/study/papers/cousot-halbwachs-polyhedra-1978/) | 其他 |
-| `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) | 其他 |
-| `crdt-json` | [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) | 编译器 / 编程语言理论 |
-| `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) | 其他 |
-| `crdt-shapiro-2011` | [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) | 其他 |
-| `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) | 其他 |
-| `croft-harper-1979` | [Croft-Harper 1979 — 没有相关性反馈也能跑概率检索](/study/papers/croft-harper-1979/) | 其他 |
-| `cryptoverif-2008` | [CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全](/study/papers/cryptoverif-2008/) | 其他 |
-| `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | 其他 |
-| `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 其他 |
-| `cubic-2008` | [CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱](/study/papers/cubic-2008/) | 其他 |
-| `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) | 其他 |
-| `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) | 其他 |
-| `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) | 其他 |
-| `curless-levoy-1996-tsdf` | [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) | 其他 |
-| `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) | 其他 |
-| `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | 其他 |
-| `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | 其他 |
-| `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
-| `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | 其他 |
-| `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) | 其他 |
-| `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | 其他 |
-| `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) | 其他 |
-| `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 其他 |
-| `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) | 其他 |
-| `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
-| `debate-2018` | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) | 其他 |
-| `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 其他 |
-| `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) | 其他 |
-| `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
-| `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) | 其他 |
-| `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) | 其他 |
-| `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
-| `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
-| `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) | 其他 |
-| `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) | 其他 |
-| `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) | 其他 |
-| `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) | 其他 |
-| `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) | 其他 |
-| `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 密码学 / 安全 |
-| `diffie-hellman-1976` | [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) | 其他 |
-| `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) | 其他 |
-| `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
-| `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
-| `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) | 其他 |
-| `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
-| `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) | 其他 |
-| `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) | 其他 |
-| `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) | 其他 |
-| `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) | 其他 |
-| `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) | 其他 |
-| `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
-| `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) | 其他 |
-| `dns` | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) | 网络协议 |
-| `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) | 其他 |
-| `donar-2010` | [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) | 其他 |
-| `dot-doh-perf-2020` | [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) | 其他 |
-| `double-descent-2019` | [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) | 其他 |
-| `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) | 其他 |
-| `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | 强化学习 |
-| `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) | 其他 |
-| `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
-| `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) | 其他 |
-| `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) | 其他 |
-| `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) | 其他 |
-| `dropout-2014` | [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) | 其他 |
-| `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | 其他 |
-| `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 其他 |
-| `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
-| `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 其他 |
-| `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
-| `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) | 其他 |
-| `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) | 其他 |
-| `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) | 其他 |
-| `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) | 其他 |
-| `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
-| `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) | 其他 |
-| `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
-| `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) | 其他 |
-| `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 其他 |
-| `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
-| `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) | 其他 |
-| `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) | 其他 |
-| `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
-| `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) | 其他 |
-| `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 其他 |
-| `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) | 其他 |
-| `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) | 其他 |
-| `eve-agent-evidence` | [EVE-Agent — 自我训练前先把证据钉在桌上](/study/papers/eve-agent-evidence/) | 其他 |
-| `evo-memory-2511` | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) | 其他 |
-| `exg-experience-graphs` | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) | 其他 |
-| `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) | 其他 |
-| `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 其他 |
-| `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 其他 |
-| `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | 其他 |
-| `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) | 其他 |
-| `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) | 其他 |
-| `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) | 其他 |
-| `fat-tree-2008` | [Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心](/study/papers/fat-tree-2008/) | 其他 |
-| `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
-| `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) | 其他 |
-| `ffs-1984` | [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) | 其他 |
-| `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) | 其他 |
-| `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) | 其他 |
-| `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) | 其他 |
-| `firecracker-2020` | [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) | 其他 |
-| `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) | 其他 |
-| `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) | 其他 |
-| `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
-| `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) | 其他 |
-| `flexsc-2010` | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) | 其他 |
-| `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | 其他 |
-| `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) | 其他 |
-| `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | 其他 |
-| `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | 其他 |
-| `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) | 其他 |
-| `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) | 其他 |
-| `frangipani-1997` | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) | 其他 |
-| `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) | 其他 |
-| `frenetic-2011` | [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) | 其他 |
-| `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) | 其他 |
-| `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
-| `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) | 其他 |
-| `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) | 其他 |
-| `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | 其他 |
-| `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | 其他 |
-| `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) | 其他 |
-| `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) | 其他 |
-| `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) | 其他 |
-| `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) | 其他 |
-| `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) | 其他 |
-| `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
-| `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | OS / 集群管理 / 系统 |
-| `ghost-2021` | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) | 其他 |
-| `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | 其他 |
-| `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) | 其他 |
-| `glue-2018` | [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) | 其他 |
-| `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) | 其他 |
-| `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
-| `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | 其他 |
-| `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | 其他 |
-| `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) | 其他 |
-| `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) | 其他 |
-| `gpipe-2019` | [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) | 其他 |
-| `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP 基础与 Scaling |
-| `gptq-2023` | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) | 其他 |
-| `gpu-cache-coherence-2013` | [GPU 缓存一致性 — 用时戳代替失效消息](/study/papers/gpu-cache-coherence-2013/) | 其他 |
-| `gpu-microbenchmarking-2010` | [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) | 其他 |
-| `gpudirect-rdma-2014` | [GPUDirect RDMA — 让网卡直接读写 GPU 显存](/study/papers/gpudirect-rdma-2014/) | 其他 |
-| `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) | 其他 |
-| `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) | 其他 |
-| `graf-saidi-1997` | [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) | 其他 |
-| `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) | 其他 |
-| `graphormer-2021` | [Graphormer — 标准 Transformer 直接刷爆 GNN](/study/papers/graphormer-2021/) | 其他 |
-| `graphrag` | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | 智能体与 LLM 系统 |
-| `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) | 其他 |
-| `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) | 其他 |
-| `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 其他 |
-| `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | HCI / 软件工程研究 |
-| `grokking-2022` | [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) | 其他 |
-| `gru-2014` | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) | 其他 |
-| `gshard-2020` | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) | 其他 |
-| `hacl-star-2017` | [HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里](/study/papers/hacl-star-2017/) | 其他 |
-| `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) | 其他 |
-| `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
-| `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | 其他 |
-| `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | 其他 |
-| `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 其他 |
-| `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) | 其他 |
-| `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) | 其他 |
-| `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | 其他 |
-| `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) | 其他 |
-| `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | 其他 |
-| `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) | 其他 |
-| `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
-| `hits-1999` | [HITS — 给网页同时打两个分：权威页 + 索引页](/study/papers/hits-1999/) | 其他 |
-| `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) | 其他 |
-| `hnsw-2018` | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) | 其他 |
-| `hoare-logic` | [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
-| `hol-light-2009` | [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) | 其他 |
-| `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) | 其他 |
-| `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) | 其他 |
-| `hotspot-server-compiler` | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) | 其他 |
-| `hotstuff-2019` | [HotStuff — 让换领导也只花线性消息的 BFT 共识](/study/papers/hotstuff-2019/) | 其他 |
-| `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) | 其他 |
-| `http-2` | [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) | 网络协议 |
-| `hu-2018-mls-mpm` | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) | 其他 |
-| `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
-| `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
-| `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | 其他 |
-| `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 其他 |
-| `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
-| `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | 其他 |
-| `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 其他 |
-| `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) | 其他 |
-| `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
-| `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) | 其他 |
-| `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 其他 |
-| `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
-| `io-uring` | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
-| `ipfs-2014` | [IPFS — 把"地址"换成"内容本身"的 P2P 文件系统](/study/papers/ipfs-2014/) | 其他 |
-| `iris-2015` | [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) | 其他 |
-| `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) | 其他 |
-| `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) | 其他 |
-| `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) | 其他 |
-| `jacobson-1988` | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) | 其他 |
-| `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) | 其他 |
-| `jemalloc-2006` | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) | 其他 |
-| `jensen-1996-photon-mapping` | [Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照](/study/papers/jensen-1996-photon-mapping/) | 其他 |
-| `jupiter-1995` | [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) | 其他 |
-| `jupiter-2015` | [Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍](/study/papers/jupiter-2015/) | 其他 |
-| `jwt-rfc-7519` | [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) | 其他 |
-| `k3s` | [k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制](/study/papers/k3s/) | 其他 |
-| `kademlia-2002` | [Kademlia — 用 XOR 当距离的 P2P 路由表](/study/papers/kademlia-2002/) | 其他 |
-| `kafka` | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) | 数据库 |
-| `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) | 其他 |
-| `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | 其他 |
-| `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) | 其他 |
-| `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) | 其他 |
-| `karger-1997-consistent-hashing` | [Karger 1997 一致性哈希 — 加机器不用全员搬家](/study/papers/karger-1997-consistent-hashing/) | 其他 |
-| `karis-2014-taa` | [Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿](/study/papers/karis-2014-taa/) | 其他 |
-| `karis-2014-ue4-pbr` | [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) | 其他 |
-| `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 计算理论 / 数学基础 |
-| `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) | 其他 |
-| `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) | 其他 |
-| `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 其他 |
-| `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | 其他 |
-| `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | 其他 |
-| `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) | 其他 |
-| `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
-| `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | 其他 |
-| `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) | 其他 |
-| `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) | 其他 |
-| `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) | 其他 |
-| `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) | 其他 |
-| `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | 其他 |
-| `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | 其他 |
-| `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | 其他 |
-| `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) | 其他 |
-| `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | 其他 |
-| `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
-| `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) | 其他 |
-| `lamport-1978` | [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
-| `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) | 其他 |
-| `lampson-hints` | [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
-| `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) | 其他 |
-| `layernorm-2016` | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | 其他 |
-| `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) | 其他 |
-| `lean-tactics` | [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) | 其他 |
-| `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
-| `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | 其他 |
-| `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | 其他 |
-| `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) | 其他 |
-| `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) | 其他 |
-| `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
-| `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) | 其他 |
-| `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 其他 |
-| `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
-| `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) | 其他 |
-| `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) | 其他 |
-| `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
-| `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) | 其他 |
-| `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
-| `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |
-| `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | 其他 |
-| `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | 其他 |
-| `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
-| `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) | 其他 |
-| `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) | 其他 |
-| `locus-1980` | [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) | 其他 |
-| `logjam-2015` | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) | 其他 |
-| `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) | 其他 |
-| `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | 其他 |
-| `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) | 其他 |
-| `lottery-1994` | [彩票调度 — 用抽奖代替优先级的资源分配](/study/papers/lottery-1994/) | 其他 |
-| `lottery-ticket-2019` | [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) | 其他 |
-| `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) | 其他 |
-| `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 其他 |
-| `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | 其他 |
-| `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) | 其他 |
-| `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) | 其他 |
-| `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | 其他 |
-| `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
-| `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
-| `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 其他 |
-| `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) | 其他 |
-| `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
-| `maml-2017` | [MAML — 学一个"好起点"，几步就能学会新任务](/study/papers/maml-2017/) | 其他 |
-| `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
-| `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) | 其他 |
-| `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) | 其他 |
-| `marques-silva-grasp-1996` | [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) | 其他 |
-| `martin-lof-itt` | [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) | 其他 |
-| `mattern-1989` | [Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积](/study/papers/mattern-1989/) | 其他 |
-| `maxwell-architecture-2014` | [NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍](/study/papers/maxwell-architecture-2014/) | 其他 |
-| `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编译器 / 编程语言理论 |
-| `mcfarling-bp-1993` | [McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台](/study/papers/mcfarling-bp-1993/) | 其他 |
-| `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | 其他 |
-| `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | 其他 |
-| `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | 其他 |
-| `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) | 其他 |
-| `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) | 其他 |
-| `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) | 其他 |
-| `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
-| `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) | 其他 |
-| `memcoder-co-evolution` | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) | 其他 |
-| `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) | 其他 |
-| `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) | 其他 |
-| `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) | 其他 |
-| `mesos-2011` | [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) | 其他 |
-| `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
-| `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) | 其他 |
-| `metcalfe-boggs-1976` | [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) | 其他 |
-| `mills-ntp-1991` | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) | 其他 |
-| `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) | 其他 |
-| `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) | 其他 |
-| `mind-skill` | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | 其他 |
-| `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) | 其他 |
-| `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) | 其他 |
-| `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | 其他 |
-| `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | 其他 |
-| `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | 其他 |
-| `mitls-2014-triple-handshake` | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) | 其他 |
-| `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | NLP 基础与 Scaling |
-| `mixup-2018` | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) | 其他 |
-| `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 其他 |
-| `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 其他 |
-| `mmlu-2021` | [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) | 其他 |
-| `mmskills-multimodal` | [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) | 其他 |
-| `mockapetris-1988-dns` | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) | 其他 |
-| `mode-connectivity-2018` | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) | 其他 |
-| `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) | 其他 |
-| `mogul-1995-persistent-http` | [Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"](/study/papers/mogul-1995-persistent-http/) | 其他 |
-| `monaghan-1992-sph` | [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) | 其他 |
-| `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
-| `monitors-1974` | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) | 其他 |
-| `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | 其他 |
-| `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) | 其他 |
-| `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) | 其他 |
-| `multics-1965` | [MULTICS 1965 — 把计算机做成像电力一样的公共服务](/study/papers/multics-1965/) | 其他 |
-| `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
-| `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) | 其他 |
-| `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) | 其他 |
-| `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) | 其他 |
-| `nbeats-2020` | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) | 其他 |
-| `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | 其他 |
-| `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) | 其他 |
-| `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) | 其他 |
-| `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | 其他 |
-| `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
-| `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) | 其他 |
-| `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | 其他 |
-| `nfs-1985` | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) | 其他 |
-| `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) | 其他 |
-| `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 其他 |
-| `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) | 其他 |
-| `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/papers/nix/) | 其他 |
-| `no-silver-bullet` | [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) | HCI / 软件工程研究 |
-| `ntk-2018` | [NTK — 把无限宽的神经网络变成一个可解的核方法](/study/papers/ntk-2018/) | 其他 |
-| `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) | 其他 |
-| `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) | 其他 |
-| `nvlink-nvswitch-2018` | [NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器](/study/papers/nvlink-nvswitch-2018/) | 其他 |
-| `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) | 其他 |
-| `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) | 其他 |
-| `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) | 其他 |
-| `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | 其他 |
-| `omega-2013` | [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) | 其他 |
-| `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) | 其他 |
-| `openflow-2008` | [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) | 其他 |
-| `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
-| `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) | 其他 |
-| `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) | 其他 |
-| `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | 其他 |
-| `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
-| `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | 其他 |
-| `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | 其他 |
-| `padmanabhan-1995-http-latency` | [Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快](/study/papers/padmanabhan-1995-http-latency/) | 其他 |
-| `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 其他 |
-| `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
-| `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) | 其他 |
-| `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) | 其他 |
-| `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) | 其他 |
-| `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |
-| `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) | 其他 |
-| `pastry-2001` | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) | 其他 |
-| `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |
-| `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) | 其他 |
-| `paxos-simple-2001` | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) | 其他 |
-| `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) | 其他 |
-| `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) | 其他 |
-| `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) | 其他 |
-| `performer-2020` | [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) | 其他 |
-| `perlin-1985-noise` | [Perlin Noise — 让计算机生成的图像不再有"机器味"](/study/papers/perlin-1985-noise/) | 其他 |
-| `persistent-memory-2014` | [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) | 其他 |
-| `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) | 其他 |
-| `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | 其他 |
-| `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) | 其他 |
-| `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) | 其他 |
-| `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) | 其他 |
-| `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) | 其他 |
-| `plenoxels-2022` | [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) | 其他 |
-| `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) | 其他 |
-| `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | 其他 |
-| `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) | 其他 |
-| `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
-| `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) | 其他 |
-| `ppo` | [PPO — Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
-| `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) | 其他 |
-| `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | 其他 |
-| `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
-| `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
-| `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) | 其他 |
-| `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) | 其他 |
-| `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) | 其他 |
-| `ps-li-2014` | [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) | 其他 |
-| `push-pull-frp` | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) | 编译器 / 编程语言理论 |
-| `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) | 其他 |
-| `quantum-supremacy-2019` | [Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事](/study/papers/quantum-supremacy-2019/) | 其他 |
-| `quic` | [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) | 网络协议 |
-| `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) | 其他 |
-| `r-bgp-2007` | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) | 其他 |
-| `raft` | [Raft — 易理解的共识算法](/study/papers/raft/) | 分布式系统 |
-| `rag-lewis-2020` | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | 智能体与 LLM 系统 |
-| `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) | 其他 |
-| `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) | 其他 |
-| `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
-| `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | 其他 |
-| `realm` | [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
-| `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) | 其他 |
-| `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
-| `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 其他 |
-| `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
-| `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | 其他 |
-| `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | 其他 |
-| `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 其他 |
-| `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
-| `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) | 其他 |
-| `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
-| `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
-| `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 其他 |
-| `rfc-3833-dns-threats` | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) | 其他 |
-| `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) | 其他 |
-| `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) | 其他 |
-| `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
-| `rm3-2001` | [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) | 其他 |
-| `roberta-2019` | [RoBERTa — 把 BERT 重训一遍就能拿 SOTA](/study/papers/roberta-2019/) | 其他 |
-| `rocketqa-2021` | [RocketQA — 把稠密检索的训练拧到工业级](/study/papers/rocketqa-2021/) | 其他 |
-| `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) | 其他 |
-| `rocksdb-lsm` | [LSM-tree 与 RocksDB — 把所有写都变成顺序写](/study/papers/rocksdb-lsm/) | 数据库 |
-| `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) | 其他 |
-| `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) | 其他 |
-| `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
-| `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) | 其他 |
-| `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) | 其他 |
-| `sac-2018` | [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) | 其他 |
-| `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) | 其他 |
-| `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | 其他 |
-| `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) | 其他 |
-| `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
-| `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 其他 |
-| `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | 其他 |
-| `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) | 其他 |
-| `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
-| `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
-| `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |
-| `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) | 其他 |
-| `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
-| `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) | 其他 |
-| `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | 其他 |
-| `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | 其他 |
-| `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) | 其他 |
-| `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
-| `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | 其他 |
-| `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 其他 |
-| `self-evolving-agents-survey` | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) | 其他 |
-| `self-evolving-recsys-2602` | [Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线](/study/papers/self-evolving-recsys-2602/) | 其他 |
-| `self-evolving-software-agents` | [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) | 其他 |
-| `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
-| `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 其他 |
-| `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | 其他 |
-| `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
-| `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | 其他 |
-| `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 其他 |
-| `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) | 其他 |
-| `server-sent-events` | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) | 其他 |
-| `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) | 其他 |
-| `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 信息论 / 编码理论 |
-| `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) | 其他 |
-| `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) | 其他 |
-| `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
-| `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | 其他 |
-| `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) | 其他 |
-| `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) | 其他 |
-| `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编译器 / 编程语言理论 |
-| `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) | 其他 |
-| `skcc-skill-compiler` | [SkCC — 给 LLM agent 写一个真正的 skill 编译器](/study/papers/skcc-skill-compiler/) | 其他 |
-| `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) | 其他 |
-| `skill-as-pseudocode` | [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) | 其他 |
-| `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) | 其他 |
-| `skill-sd-self-distillation` | [Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏](/study/papers/skill-sd-self-distillation/) | 其他 |
-| `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) | 其他 |
-| `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) | 其他 |
-| `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | 其他 |
-| `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) | 其他 |
-| `sleeper-agents` | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) | AI 安全与可解释性 |
-| `slim-2011` | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) | 其他 |
-| `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编译器 / 编程语言理论 |
-| `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) | 其他 |
-| `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | 其他 |
-| `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | 其他 |
-| `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | 其他 |
-| `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | 其他 |
-| `sophia-2023` | [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) | 其他 |
-| `sorkine-2004-laplacian-editing` | [Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节](/study/papers/sorkine-2004-laplacian-editing/) | 其他 |
-| `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) | 其他 |
-| `spann-2021` | [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) | 其他 |
-| `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
-| `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | 其他 |
-| `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) | 其他 |
-| `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
-| `sparsegpt-2023` | [SparseGPT — 175B 大模型一次过剪 50%，不重训](/study/papers/sparsegpt-2023/) | 其他 |
-| `specinfer-2023` | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) | 其他 |
-| `splade-2021` | [SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引](/study/papers/splade-2021/) | 其他 |
-| `sprite-1988` | [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) | 其他 |
-| `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) | 其他 |
-| `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 / 编程语言理论 |
-| `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | 生成模型 / 扩散 |
-| `stainless-2017` | [Stainless — 让编译器替你证明 Scala 函数真的满足规约](/study/papers/stainless-2017/) | 其他 |
-| `stam-1999-stable-fluids` | [Stable Fluids — 让流体模拟时间步随便给都不爆](/study/papers/stam-1999-stable-fluids/) | 其他 |
-| `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编译器 / 编程语言理论 |
-| `starcoder-2023` | [StarCoder — 把训练数据完整公开的 15B 代码模型](/study/papers/starcoder-2023/) | 其他 |
-| `starrocks` | [StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP](/study/papers/starrocks/) | 其他 |
-| `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) | 其他 |
-| `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) | 其他 |
-| `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) | 其他 |
-| `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) | 其他 |
-| `stylegan2-2020` | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) | 其他 |
-| `subramanian-2002-internet-hierarchy` | [Subramanian 2002 — 用多个观察点把互联网切成 5 层](/study/papers/subramanian-2002-internet-hierarchy/) | 其他 |
-| `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) | 其他 |
-| `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
-| `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
-| `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) | 其他 |
-| `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | 其他 |
-| `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
-| `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
-| `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | 其他 |
-| `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
-| `tabpfn-2023` | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) | 其他 |
-| `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | 其他 |
-| `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) | 其他 |
-| `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) | 其他 |
-| `taso-2019` | [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) | 其他 |
-| `taubin-1995-mesh-smoothing` | [Taubin 1995 — 把网格平滑当成低通滤波](/study/papers/taubin-1995-mesh-smoothing/) | 其他 |
-| `tcp` | [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) | 网络协议 |
-| `tcp-vegas-1995` | [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) | 其他 |
-| `td3-2018` | [TD3 — 给 DDPG 装两副刹车，连续控制终于稳了](/study/papers/td3-2018/) | 其他 |
-| `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) | 其他 |
-| `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) | 其他 |
-| `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) | 其他 |
-| `tensorrt-llm-2023` | [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) | 其他 |
-| `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) | 其他 |
-| `the-os-1968` | [THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS](/study/papers/the-os-1968/) | 其他 |
-| `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编译器 / 编程语言理论 |
-| `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) | 其他 |
-| `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) | 其他 |
-| `tigerbeetle` | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) | 数据库 |
-| `timelinejs` | [TimelineJS — 一张 Google Sheet 直接变成交互时间轴](/study/papers/timelinejs/) | 其他 |
-| `tla-yu-tlc-1999` | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) | 其他 |
-| `tls-1.3` | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) | 网络协议 |
-| `tofte-talpin-regions` | [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) | GC / 内存管理 |
-| `token-bucket-stripe` | [Stripe Rate Limiters — 工业级令牌桶长什么样](/study/papers/token-bucket-stripe/) | 其他 |
-| `tomasulo-1967` | [Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序](/study/papers/tomasulo-1967/) | 其他 |
-| `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) | 其他 |
-| `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 智能体与 LLM 系统 |
-| `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
-| `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) | 其他 |
-| `transformer-xl-2019` | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) | 其他 |
-| `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | 其他 |
-| `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
-| `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | 其他 |
-| `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) | 其他 |
-| `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) | 其他 |
-| `trustrank-2004` | [TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来](/study/papers/trustrank-2004/) | 其他 |
-| `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) | 其他 |
-| `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 计算理论 / 数学基础 |
-| `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) | 其他 |
-| `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) | 其他 |
-| `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) | 其他 |
-| `twine-2020` | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) | 其他 |
-| `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 其他 |
-| `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) | 其他 |
-| `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) | 其他 |
-| `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | 其他 |
-| `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
-| `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 其他 |
-| `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) | 其他 |
-| `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) | 其他 |
-| `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 其他 |
-| `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
-| `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
-| `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | 其他 |
-| `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
-| `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) | 其他 |
-| `vllm` | [vLLM — 把操作系统的分页搬进 GPU KV cache](/study/papers/vllm/) | 分布式训练 / GPU |
-| `vogels-eventual-2009` | [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) | 其他 |
-| `volcano` | [Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式](/study/papers/volcano/) | 数据库 |
-| `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) | 其他 |
-| `volta-architecture-2017` | [NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍](/study/papers/volta-architecture-2017/) | 其他 |
-| `voyager` | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | 智能体与 LLM 系统 |
-| `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) | 其他 |
-| `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) | 其他 |
-| `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) | 其他 |
-| `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编译器 / 编程语言理论 |
-| `wald-2007-sah-bvh` | [Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法](/study/papers/wald-2007-sah-bvh/) | 其他 |
-| `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 其他 |
-| `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) | 其他 |
-| `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) | 其他 |
-| `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) | 其他 |
-| `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |
-| `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | 其他 |
-| `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) | 其他 |
-| `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
-| `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) | 其他 |
-| `williams-1983-mipmap` | [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) | 其他 |
-| `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP 基础与 Scaling |
-| `xen-2003` | [Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生](/study/papers/xen-2003/) | 其他 |
-| `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) | 其他 |
-| `xlnet-2019` | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) | 其他 |
-| `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) | 其他 |
-| `youtube-two-tower-2019` | [YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键](/study/papers/youtube-two-tower-2019/) | 其他 |
-| `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | 其他 |
-| `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | 其他 |
-| `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) | 其他 |
-| `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) | 其他 |
-| `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | GC / 内存管理 |
-| `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |
-| `zombie-agents-2602` | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) | 其他 |
+| Slug | 论文 | 一级 | 子分类 |
+|---|---|---|---|
+| `3d-gaussian-splatting` | [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) | 图形学 | 计算机图形 / 三维重建 |
+| `a3c-2016` | [A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU](/study/papers/a3c-2016/) | 机器学习 | 模型与训练 |
+| `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) | 形式化方法 | 形式化验证 |
+| `activation-patching` | [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) | 机器学习 | AI 可解释性 |
+| `adafactor-2018` | [Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)](/study/papers/adafactor-2018/) | 机器学习 | 模型与训练 |
+| `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) | 机器学习 | 模型与训练 |
+| `adamw-2017` | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) | 机器学习 | 模型与训练 |
+| `adapton` | [Adapton — 增量计算](/study/papers/adapton/) | 编程语言 | 编程语言 |
+| `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 安全与隐私 | 密码学 |
+| `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) | 操作系统 | 内核与虚拟化 |
+| `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 编程语言 | 类型与 PL 理论 |
+| `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | Agent | 智能体与 LLM |
+| `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | 机器学习 | AI / 软件工程 |
+| `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | 分布式系统 | 共识与复制 |
+| `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) | 网络协议 | 网络协议 |
+| `algol-60` | [ALGOL 60 — BNF 与块结构](/study/papers/algol-60/) | 编程语言 | 编程语言 |
+| `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) | 机器学习 | 模型与训练 |
+| `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | 图形学 | GPU 架构 |
+| `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 机器学习 | 强化学习 / AI |
+| `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | 图形学 | GPU 架构 |
+| `amoeba-1990` | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) | 操作系统 | 内核与虚拟化 |
+| `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 图形学 | GPU 架构 |
+| `amplification-hell-2014` | [Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击](/study/papers/amplification-hell-2014/) | 网络协议 | 网络协议 |
+| `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) | 信息检索 | 检索与排序 |
+| `andersen-pointer-analysis` | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | 编程语言 | 类型与 PL 理论 |
+| `andromeda-2018` | [Andromeda — Google Cloud 网络虚拟化的高速通道](/study/papers/andromeda-2018/) | 网络协议 | 网络协议 |
+| `anh-moffat-2005` | [Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码](/study/papers/anh-moffat-2005/) | 信息检索 | 检索与排序 |
+| `anserini-2017` | [Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台](/study/papers/anserini-2017/) | 信息检索 | 检索与排序 |
+| `anthropic-circuits` | [Anthropic Circuits — 把 Transformer 当电路逆向](/study/papers/anthropic-circuits/) | 机器学习 | AI 可解释性 |
+| `anthropic-prompt-caching` | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | 机器学习 | AI 工程 |
+| `apex-policy-exploration` | [APEX — 给自进化 agent 配一张"策略图"防止它走老路](/study/papers/apex-policy-exploration/) | Agent | 智能体与 LLM |
+| `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | 分布式系统 | 共识与复制 |
+| `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) | 形式化方法 | 形式化验证 |
+| `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | 数据库 | 存储与查询 |
+| `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | 数据库 | 存储与查询 |
+| `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) | 通信 | 通信 / 开源 PBX |
+| `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | 编程语言 | 类型与 PL 理论 |
+| `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) | 机器学习 | 模型与训练 |
+| `attention` | [Attention Is All You Need](/study/papers/attention/) | 机器学习 | 深度学习 / NLP |
+| `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 | 数据库系统 |
+| `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | 图形学 | GPU 架构 |
+| `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 机器学习 | 智能体与 LLM |
+| `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) | 形式化方法 | 形式化验证 |
+| `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | 机器学习 | 模型与训练 |
+| `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) | 图形学 | GPU 架构 |
+| `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) | 数据库 | 存储与查询 |
+| `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 数据库 | 存储与查询 |
+| `b4-2013` | [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) | 网络协议 | 网络协议 |
+| `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) | 数据库 | 存储系统 |
+| `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) | 图形学 | 渲染与图形 |
+| `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) | 操作系统 | 内核与虚拟化 |
+| `batchnorm-2015` | [Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14](/study/papers/batchnorm-2015/) | 机器学习 | 模型与训练 |
+| `bayou-1995` | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | 分布式系统 | 共识与复制 |
+| `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) | 网络协议 | 网络协议 |
+| `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | 其他 | 软件工程 |
+| `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | 操作系统 | 内核与虚拟化 |
+| `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | 图形学 | 渲染与图形 |
+| `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | 机器学习 | MLOps / 模型服务 |
+| `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | 数据库 | 存储与查询 |
+| `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP | NLP |
+| `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) | 信息检索 | 检索与排序 |
+| `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编程语言 | 编程语言 |
+| `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) | 形式化方法 | 形式化验证 |
+| `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) | 图形学 | GPU 架构 |
+| `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) | 机器学习 | 模型与训练 |
+| `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) | 机器学习 | 模型与训练 |
+| `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 数据库 | 存储与查询 |
+| `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 分布式系统 | 分布式系统 / 密码学 |
+| `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) | 网络协议 | 网络协议 |
+| `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 图形学 | GPU 架构 |
+| `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) | 图形学 | GPU 架构 |
+| `blinn-1977` | [Blinn 1977 — 用半角向量 H 把高光算量减半](/study/papers/blinn-1977/) | 图形学 | 渲染与图形 |
+| `blip2-2023` | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) | 机器学习 | 模型与训练 |
+| `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) | 信息检索 | 检索与排序 |
+| `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | 信息检索 | 数据检索 |
+| `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | 操作系统 | 内存管理 |
+| `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 形式化方法 | 形式化验证 |
+| `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | 分布式系统 | 分布式系统 |
+| `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | 分布式系统 | 共识与复制 |
+| `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) | 信息检索 | 检索与排序 |
+| `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) | 图形学 | GPU 架构 |
+| `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 数据库 | 存储与查询 |
+| `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) | 信息检索 | 检索与排序 |
+| `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 图形学 | GPU 架构 |
+| `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | 操作系统 | 内核与虚拟化 |
+| `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 图形学 | 渲染与图形 |
+| `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | 操作系统 | 内核与虚拟化 |
+| `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 分布式系统 | 共识与复制 |
+| `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | 网络协议 | 网络协议 |
+| `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | 编程语言 | 类型与 PL 理论 |
+| `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | 编程语言 | 类型与 PL 理论 |
+| `calder-2015-anycast-cdn` | [Calder 2015 — Anycast CDN 在生产环境真的能用吗](/study/papers/calder-2015-anycast-cdn/) | 网络协议 | 网络协议 |
+| `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | 编程语言 | 类型与 PL 理论 |
+| `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) | 数据库 | 存储与查询 |
+| `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) | 分布式系统 | 共识与复制 |
+| `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 数据库 | 存储与查询 |
+| `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) | 图形学 | GPU 架构 |
+| `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 数据库 | 存储与查询 |
+| `catmull-1974-zbuffer` | [Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题](/study/papers/catmull-1974-zbuffer/) | 图形学 | 渲染与图形 |
+| `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) | 图形学 | 渲染与图形 |
+| `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | 机器学习 | AI 可解释性 |
+| `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) | 图形学 | GPU 架构 |
+| `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | 数据库 | 存储与查询 |
+| `cerf-kahn-1974` | [Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网](/study/papers/cerf-kahn-1974/) | 网络协议 | 网络协议 |
+| `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) | 形式化方法 | 形式化验证 |
+| `cesium` | [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) | 数据可视化 | 可视化 |
+| `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) | 形式化方法 | 形式化验证 |
+| `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) | 分布式系统 | 共识与复制 |
+| `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | 编程语言 | 类型与 PL 理论 |
+| `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) | 分布式系统 | 共识与复制 |
+| `chapar-2016` | [Chapar — 第一个被机器证明的因果一致 KV 存储](/study/papers/chapar-2016/) | 形式化方法 | 形式化验证 |
+| `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) | 机器学习 | 模型与训练 |
+| `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | 基础设施 | 系统 |
+| `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | NLP | NLP |
+| `chord-2001` | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) | 网络协议 | 网络协议 |
+| `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | 机器学习 | 模型与训练 |
+| `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 | 分布式系统 |
+| `ci-effects` | [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) | 其他 | 软件工程 |
+| `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) | 形式化方法 | 形式化验证 |
+| `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) | 网络协议 | 网络协议 |
+| `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) | 形式化方法 | 形式化验证 |
+| `clarke-emerson-1981` | [Clarke-Emerson 1981 — 让机器自己检查并发程序对不对](/study/papers/clarke-emerson-1981/) | 形式化方法 | 形式化验证 |
+| `classifier-free-guidance-2022` | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) | 机器学习 | 模型与训练 |
+| `clawtrace-cost-aware` | [ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏](/study/papers/clawtrace-cost-aware/) | Agent | 智能体与 LLM |
+| `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | 机器学习 | MLOps |
+| `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | 数据库 | 存储与查询 |
+| `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | 机器学习 | 多模态 / 计算机视觉 |
+| `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) | 机器学习 | 模型与训练 |
+| `cockroachdb-2020` | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) | 数据库 | 存储与查询 |
+| `cocondenser-2021` | [coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"](/study/papers/cocondenser-2021/) | 信息检索 | 检索与排序 |
+| `coda-1990` | [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) | 操作系统 | 内核与虚拟化 |
+| `codd-1970` | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | 数据库 | 存储与查询 |
+| `codd-1979-extending` | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | 数据库 | 存储与查询 |
+| `code-as-agent-harness` | [Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI](/study/papers/code-as-agent-harness/) | Agent | 智能体与 LLM |
+| `codellama-2023` | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) | 机器学习 | 模型与训练 |
+| `codex-2021` | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) | 机器学习 | 模型与训练 |
+| `codons-2004` | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) | 网络协议 | 网络协议 |
+| `coeffect-petricek` | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | 编程语言 | 类型与 PL 理论 |
+| `cognitive-load-theory` | [Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下](/study/papers/cognitive-load-theory/) | 其他 | 认知科学 |
+| `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | 图形学 | 渲染与图形 |
+| `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) | 信息检索 | 检索与排序 |
+| `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) | 信息检索 | 数据检索 |
+| `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 数据库 | 存储与查询 |
+| `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 编程语言 | 类型与 PL 理论 |
+| `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编程语言 | 编程语言 / 编译器 |
+| `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | 机器学习 | 模型与训练 |
+| `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | 分布式系统 | 共识与复制 |
+| `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | 机器学习 | AI 安全 / NLP |
+| `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) | 图形学 | 渲染与图形 |
+| `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) | 图形学 | 渲染与图形 |
+| `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 编程语言 | 计算理论 |
+| `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) | 图形学 | 渲染与图形 |
+| `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | 其他 | 软件工程实证 |
+| `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) | 分布式系统 | 共识与复制 |
+| `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 机器学习 | AI / LLM |
+| `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) | 基础设施 | 基础设施 |
+| `couchdb` | [CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库](/study/papers/couchdb/) | 数据库 | 数据库 |
+| `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) | 编程语言 | 类型与 PL 理论 |
+| `cousot-halbwachs-polyhedra-1978` | [Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系](/study/papers/cousot-halbwachs-polyhedra-1978/) | 形式化方法 | 形式化验证 |
+| `craq-2009` | [CRAQ — 让链复制每个节点都能读，吞吐线性扩展](/study/papers/craq-2009/) | 分布式系统 | 共识与复制 |
+| `crdt-json` | [CRDT JSON — 协同编辑 JSON 数据结构](/study/papers/crdt-json/) | 分布式系统 | 分布式系统 |
+| `crdt-json-2017` | [CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法](/study/papers/crdt-json-2017/) | 分布式系统 | 共识与复制 |
+| `crdt-shapiro-2011` | [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) | 分布式系统 | 共识与复制 |
+| `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) | 分布式系统 | 共识与复制 |
+| `croft-harper-1979` | [Croft-Harper 1979 — 没有相关性反馈也能跑概率检索](/study/papers/croft-harper-1979/) | 信息检索 | 检索与排序 |
+| `cryptoverif-2008` | [CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全](/study/papers/cryptoverif-2008/) | 形式化方法 | 形式化验证 |
+| `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | 编程语言 | 类型与 PL 理论 |
+| `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 数据库 | 存储与查询 |
+| `cubic-2008` | [CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱](/study/papers/cubic-2008/) | 网络协议 | 网络协议 |
+| `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) | 形式化方法 | 形式化验证 |
+| `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) | 图形学 | GPU 架构 |
+| `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) | 图形学 | GPU 架构 |
+| `curless-levoy-1996-tsdf` | [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) | 图形学 | 渲染与图形 |
+| `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) | 图形学 | GPU 架构 |
+| `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | 数据可视化 | 可视化 |
+| `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | 形式化方法 | 形式化验证 |
+| `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 机器学习 | 生成模型 / 计算机视觉 |
+| `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | 分布式系统 | 共识与复制 |
+| `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) | 图形学 | GPU 架构 |
+| `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | 数据库 | 存储与查询 |
+| `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) | 形式化方法 | 形式化验证 |
+| `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 信息检索 | 检索与排序 |
+| `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) | 机器学习 | 模型与训练 |
+| `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 机器学习 | 生成模型 |
+| `debate-2018` | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) | 机器学习 | 模型与训练 |
+| `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 机器学习 | 模型与训练 |
+| `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) | 图形学 | 渲染与图形 |
+| `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | 其他 | 软件工程实证 |
+| `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) | 机器学习 | 模型与训练 |
+| `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) | 机器学习 | 模型与训练 |
+| `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | 机器学习 | 模型与训练 |
+| `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式系统 | 模型与训练 |
+| `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) | 图形学 | 渲染与图形 |
+| `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) | 操作系统 | 内核与虚拟化 |
+| `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) | 图形学 | 渲染与图形 |
+| `dewitt-gray-1992` | [DeWitt-Gray 1992 — 并行数据库取代专用机的宣言](/study/papers/dewitt-gray-1992/) | 数据库 | 存储与查询 |
+| `differential-datalog` | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) | 编程语言 | 类型与 PL 理论 |
+| `diffie-hellman` | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | 安全与隐私 | 密码学 |
+| `diffie-hellman-1976` | [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) | 网络协议 | 网络协议 |
+| `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) | 操作系统 | 内核与虚拟化 |
+| `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | 其他 | 软件工程 / 控制流理论 |
+| `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 编程语言 | 算法 |
+| `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) | 信息检索 | 检索与排序 |
+| `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 机器学习 | 自监督视觉 |
+| `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) | 操作系统 | 内核与虚拟化 |
+| `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) | 形式化方法 | 形式化验证 |
+| `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) | 数据库 | 存储与查询 |
+| `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) | 图形学 | 渲染与图形 |
+| `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) | 机器学习 | 数据科学与 AI |
+| `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 机器学习 | 生成模型 |
+| `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) | 信息检索 | 检索与排序 |
+| `dns` | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) | 网络协议 | 网络协议 |
+| `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) | 信息检索 | 检索与排序 |
+| `donar-2010` | [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) | 网络协议 | 网络协议 |
+| `dot-doh-perf-2020` | [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) | 网络协议 | 网络协议 |
+| `double-descent-2019` | [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) | 机器学习 | 模型与训练 |
+| `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) | 形式化方法 | 形式化验证 |
+| `dpo` | [DPO — Direct Preference Optimization](/study/papers/dpo/) | NLP | NLP |
+| `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) | 信息检索 | 检索与排序 |
+| `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 机器学习 | 强化学习 |
+| `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) | 机器学习 | 模型与训练 |
+| `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) | 分布式系统 | 共识与复制 |
+| `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) | 信息检索 | 检索与排序 |
+| `dropout-2014` | [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) | 机器学习 | 模型与训练 |
+| `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | 编程语言 | 编程语言 |
+| `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 信息检索 | 检索与排序 |
+| `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 数据库 | 存储与查询 |
+| `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 数据库 | 存储与查询 |
+| `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 分布式系统 | 分布式系统 |
+| `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) | 信息检索 | 检索与排序 |
+| `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) | 机器学习 | 模型与训练 |
+| `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) | 编程语言 | 类型与 PL 理论 |
+| `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) | 形式化方法 | 形式化验证 |
+| `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | 操作系统 | 操作系统 |
+| `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) | 机器学习 | 模型与训练 |
+| `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编程语言 | 编程语言 |
+| `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) | Agent | 智能体与 LLM |
+| `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 机器学习 | 模型与训练 |
+| `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 机器学习 | 模型与训练 |
+| `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) | 基础设施 | infrastructure |
+| `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) | 分布式系统 | 共识与复制 |
+| `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编程语言 | 编程语言 / 分布式系统 |
+| `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) | 操作系统 | 内核与虚拟化 |
+| `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | 数据库 | 存储与查询 |
+| `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) | 操作系统 | 内核与虚拟化 |
+| `ethane-2007` | [Ethane 2007 — 把企业网安全策略集中到一台中央电脑上](/study/papers/ethane-2007/) | 网络协议 | 网络协议 |
+| `eve-agent-evidence` | [EVE-Agent — 自我训练前先把证据钉在桌上](/study/papers/eve-agent-evidence/) | Agent | 智能体与 LLM |
+| `evo-memory-2511` | [Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷](/study/papers/evo-memory-2511/) | Agent | 智能体与 LLM |
+| `exg-experience-graphs` | [EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图](/study/papers/exg-experience-graphs/) | Agent | 智能体与 LLM |
+| `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) | 操作系统 | 内核与虚拟化 |
+| `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 数据库 | 存储与查询 |
+| `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 分布式系统 | 共识与复制 |
+| `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | 数据库 | 存储与查询 |
+| `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) | 操作系统 | 内核与虚拟化 |
+| `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) | 分布式系统 | 共识与复制 |
+| `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) | 图形学 | GPU 架构 |
+| `fat-tree-2008` | [Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心](/study/papers/fat-tree-2008/) | 网络协议 | 网络协议 |
+| `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 编程语言 | 类型与 PL 理论 |
+| `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) | 图形学 | GPU 架构 |
+| `ffs-1984` | [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) | 操作系统 | 内核与虚拟化 |
+| `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) | 分布式系统 | 共识与复制 |
+| `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) | 网络协议 | 网络协议 |
+| `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) | 信息检索 | 检索与排序 |
+| `firecracker-2020` | [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) | 操作系统 | 内核与虚拟化 |
+| `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) | 机器学习 | 模型与训练 |
+| `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) | 机器学习 | 模型与训练 |
+| `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 图形学 | GPU 与系统 |
+| `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) | 分布式系统 | 共识与复制 |
+| `flexsc-2010` | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) | 操作系统 | 内核与虚拟化 |
+| `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | 数据库 | 存储与查询 |
+| `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) | 分布式系统 | 共识与复制 |
+| `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | 分布式系统 | 共识与复制 |
+| `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | 数据库 | 存储与查询 |
+| `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) | 图形学 | GPU 架构 |
+| `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) | 形式化方法 | 形式化验证 |
+| `frangipani-1997` | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) | 操作系统 | 内核与虚拟化 |
+| `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) | 编程语言 | 类型与 PL 理论 |
+| `frenetic-2011` | [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) | 网络协议 | 网络协议 |
+| `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) | 图形学 | GPU 架构 |
+| `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | 其他 | 学习与认知 |
+| `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) | 编程语言 | 类型与 PL 理论 |
+| `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) | 编程语言 | 类型与 PL 理论 |
+| `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | 编程语言 | 类型与 PL 理论 |
+| `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | 编程语言 | 类型与 PL 理论 |
+| `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) | 网络协议 | 网络协议 |
+| `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) | 图形学 | 渲染与图形 |
+| `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) | 机器学习 | 模型与训练 |
+| `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) | 信息检索 | 检索与排序 |
+| `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) | 机器学习 | 模型与训练 |
+| `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | 编程语言 | 编程语言 |
+| `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | 分布式系统 | 分布式系统 |
+| `ghost-2021` | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) | 操作系统 | 内核与虚拟化 |
+| `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | 分布式系统 | 共识与复制 |
+| `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) | 机器学习 | 模型与训练 |
+| `glue-2018` | [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) | 机器学习 | 模型与训练 |
+| `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) | 机器学习 | 模型与训练 |
+| `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 形式化方法 | 数学逻辑 / 计算理论 |
+| `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | 图形学 | 渲染与图形 |
+| `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | 信息检索 | 检索与排序 |
+| `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) | 图形学 | 渲染与图形 |
+| `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) | 图形学 | 渲染与图形 |
+| `gpipe-2019` | [GPipe — micro-batch 流水线让 GPU 排成生产线](/study/papers/gpipe-2019/) | 图形学 | GPU 架构 |
+| `gpt-3` | [GPT-3 — Language Models are Few-Shot Learners](/study/papers/gpt-3/) | NLP | NLP |
+| `gptq-2023` | [GPTQ — 把 175B 大模型压成 4-bit 还几乎不掉点](/study/papers/gptq-2023/) | 图形学 | GPU 架构 |
+| `gpu-cache-coherence-2013` | [GPU 缓存一致性 — 用时戳代替失效消息](/study/papers/gpu-cache-coherence-2013/) | 图形学 | GPU 架构 |
+| `gpu-microbenchmarking-2010` | [GPU 微基准 — 用秒表把闭源芯片"戳"出真相](/study/papers/gpu-microbenchmarking-2010/) | 图形学 | GPU 架构 |
+| `gpudirect-rdma-2014` | [GPUDirect RDMA — 让网卡直接读写 GPU 显存](/study/papers/gpudirect-rdma-2014/) | 图形学 | GPU 架构 |
+| `graalvm-truffle` | [GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT](/study/papers/graalvm-truffle/) | 编程语言 | 类型与 PL 理论 |
+| `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) | 编程语言 | 类型与 PL 理论 |
+| `graf-saidi-1997` | [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) | 形式化方法 | 形式化验证 |
+| `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) | 编程语言 | 类型与 PL 理论 |
+| `graphormer-2021` | [Graphormer — 标准 Transformer 直接刷爆 GNN](/study/papers/graphormer-2021/) | 机器学习 | 模型与训练 |
+| `graphrag` | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | 机器学习 | AI / NLP |
+| `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) | 机器学习 | 模型与训练 |
+| `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) | 分布式系统 | 共识与复制 |
+| `gray-1981-transaction` | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | 数据库 | 存储与查询 |
+| `great-swe` | [Great SWE — 资深工程师"伟大"的标准是 humble + always learning](/study/papers/great-swe/) | 其他 | 软件工程 |
+| `grokking-2022` | [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) | 机器学习 | 模型与训练 |
+| `gru-2014` | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) | 机器学习 | 模型与训练 |
+| `gshard-2020` | [GShard — 用注解让 600B 模型自动跨设备切片](/study/papers/gshard-2020/) | 图形学 | GPU 架构 |
+| `hacl-star-2017` | [HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里](/study/papers/hacl-star-2017/) | 形式化方法 | 形式化验证 |
+| `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) | 编程语言 | 类型与 PL 理论 |
+| `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 机器学习 | 信息论 |
+| `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | 图形学 | 渲染与图形 |
+| `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | 操作系统 | 内核与虚拟化 |
+| `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 数据库 | 存储与查询 |
+| `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) | 网络协议 | 网络协议 |
+| `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) | 图形学 | 渲染与图形 |
+| `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | 编程语言 | 类型与 PL 理论 |
+| `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) | 分布式系统 | 共识与复制 |
+| `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | 编程语言 | 类型与 PL 理论 |
+| `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) | 编程语言 | 类型与 PL 理论 |
+| `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编程语言 | 编程语言 |
+| `hits-1999` | [HITS — 给网页同时打两个分：权威页 + 索引页](/study/papers/hits-1999/) | 信息检索 | 检索与排序 |
+| `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) | 分布式系统 | 共识与复制 |
+| `hnsw-2018` | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) | 数据库 | 存储与查询 |
+| `hoare-logic` | [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) | 编程语言 | 编程语言 / 形式化方法 |
+| `hol-light-2009` | [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) | 形式化方法 | 形式化验证 |
+| `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) | 形式化方法 | 形式化验证 |
+| `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) | 图形学 | GPU 架构 |
+| `hotspot-server-compiler` | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) | 编程语言 | 类型与 PL 理论 |
+| `hotstuff-2019` | [HotStuff — 让换领导也只花线性消息的 BFT 共识](/study/papers/hotstuff-2019/) | 分布式系统 | 共识与复制 |
+| `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) | 形式化方法 | 形式化验证 |
+| `http-2` | [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) | 网络协议 | 网络协议 |
+| `hu-2018-mls-mpm` | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) | 图形学 | 渲染与图形 |
+| `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 机器学习 | 信息论 / 算法 |
+| `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 编程语言 | 类型与 PL 理论 |
+| `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | 操作系统 | 内核与虚拟化 |
+| `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 形式化方法 | 形式化验证 |
+| `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 编程语言 | 类型与 PL 理论 |
+| `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | 机器学习 | 模型与训练 |
+| `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 编程语言 | 类型与 PL 理论 |
+| `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) | 信息检索 | 检索与排序 |
+| `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | 机器学习 | AI 可解释性 |
+| `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) | 编程语言 | 类型与 PL 理论 |
+| `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 数据库 | 存储与查询 |
+| `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | NLP | NLP |
+| `io-uring` | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | 操作系统 | 操作系统 |
+| `ipfs-2014` | [IPFS — 把"地址"换成"内容本身"的 P2P 文件系统](/study/papers/ipfs-2014/) | 网络协议 | 网络协议 |
+| `iris-2015` | [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) | 形式化方法 | 形式化验证 |
+| `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) | 形式化方法 | 形式化验证 |
+| `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) | 形式化方法 | 形式化验证 |
+| `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) | 后端 API | 前端框架 |
+| `jacobson-1988` | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) | 网络协议 | 网络协议 |
+| `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) | 分布式系统 | 共识与复制 |
+| `jemalloc-2006` | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) | 操作系统 | 内核与虚拟化 |
+| `jensen-1996-photon-mapping` | [Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照](/study/papers/jensen-1996-photon-mapping/) | 图形学 | 渲染与图形 |
+| `jupiter-1995` | [Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业](/study/papers/jupiter-1995/) | 分布式系统 | 共识与复制 |
+| `jupiter-2015` | [Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍](/study/papers/jupiter-2015/) | 网络协议 | 网络协议 |
+| `jwt-rfc-7519` | [JWT RFC 7519 — 把身份证装进一段可校验的字符串](/study/papers/jwt-rfc-7519/) | 后端 API | 后端 |
+| `k3s` | [k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制](/study/papers/k3s/) | 基础设施 | 基础设施 |
+| `kademlia-2002` | [Kademlia — 用 XOR 当距离的 P2P 路由表](/study/papers/kademlia-2002/) | 网络协议 | 网络协议 |
+| `kafka` | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) | 分布式系统 | databases / 分布式系统 |
+| `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) | 数据库 | 存储与查询 |
+| `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | 编程语言 | 类型与 PL 理论 |
+| `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) | 图形学 | 渲染与图形 |
+| `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) | 形式化方法 | 形式化验证 |
+| `karger-1997-consistent-hashing` | [Karger 1997 一致性哈希 — 加机器不用全员搬家](/study/papers/karger-1997-consistent-hashing/) | 网络协议 | 网络协议 |
+| `karis-2014-taa` | [Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿](/study/papers/karis-2014-taa/) | 图形学 | 渲染与图形 |
+| `karis-2014-ue4-pbr` | [Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒](/study/papers/karis-2014-ue4-pbr/) | 图形学 | 渲染与图形 |
+| `karp-21` | [Karp 21 — 21 个 NP-完全问题](/study/papers/karp-21/) | 编程语言 | 计算理论 |
+| `karras-2012-parallel-bvh` | [Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）](/study/papers/karras-2012-parallel-bvh/) | 图形学 | 渲染与图形 |
+| `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) | 图形学 | 渲染与图形 |
+| `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 图形学 | GPU 架构 |
+| `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | 编程语言 | 类型与 PL 理论 |
+| `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | 信息检索 | 检索与排序 |
+| `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) | 编程语言 | 类型与 PL 理论 |
+| `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 编程语言 | 算法 |
+| `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | 图形学 | GPU 架构 |
+| `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) | 信息检索 | 检索与排序 |
+| `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) | 网络协议 | 网络协议 |
+| `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) | 操作系统 | 内核与虚拟化 |
+| `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) | 基础设施 | 基础设施 |
+| `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | 操作系统 | 内核与虚拟化 |
+| `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | 操作系统 | 内核与虚拟化 |
+| `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | 机器学习 | 模型与训练 |
+| `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) | 图形学 | 渲染与图形 |
+| `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | 编程语言 | 类型与 PL 理论 |
+| `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 编程语言 | 编程语言 / 计算理论 |
+| `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) | 信息检索 | 检索与排序 |
+| `lamport-1978` | [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 | papers / 分布式系统 |
+| `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) | 形式化方法 | 形式化验证 |
+| `lampson-hints` | [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) | 分布式系统 | 系统设计 |
+| `landin-secd` | [Landin SECD — 第一台机械求值 lambda 表达式的抽象机器](/study/papers/landin-secd/) | 编程语言 | 类型与 PL 理论 |
+| `layernorm-2016` | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | 机器学习 | 模型与训练 |
+| `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) | 编程语言 | 类型与 PL 理论 |
+| `lean-tactics` | [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) | 编程语言 | 类型与 PL 理论 |
+| `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 数据库 | 存储与查询 |
+| `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | 编程语言 | 类型与 PL 理论 |
+| `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | 图形学 | 渲染与图形 |
+| `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) | 操作系统 | 内核与虚拟化 |
+| `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) | 图形学 | 渲染与图形 |
+| `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 编程语言 | 类型与 PL 理论 |
+| `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) | 图形学 | 渲染与图形 |
+| `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 编程语言 | 类型与 PL 理论 |
+| `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编程语言 | 类型与 PL 理论 |
+| `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) | 分布式系统 | 共识与复制 |
+| `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) | 机器学习 | 模型与训练 |
+| `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 编程语言 | 类型与 PL 理论 |
+| `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) | 图形学 | 渲染与图形 |
+| `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | 机器学习 | NLP / LLM |
+| `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 机器学习 | 多模态 / NLP |
+| `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | 图形学 | GPU 架构 |
+| `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | Agent | 智能体与 LLM |
+| `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 | 编译器 |
+| `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) | 数据库 | 存储与查询 |
+| `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) | 编程语言 | 类型与 PL 理论 |
+| `locus-1980` | [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) | 操作系统 | 内核与虚拟化 |
+| `logjam-2015` | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) | 网络协议 | 网络协议 |
+| `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) | 分布式系统 | 共识与复制 |
+| `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | 机器学习 | 模型与训练 |
+| `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) | 图形学 | 渲染与图形 |
+| `lottery-1994` | [彩票调度 — 用抽奖代替优先级的资源分配](/study/papers/lottery-1994/) | 操作系统 | 内核与虚拟化 |
+| `lottery-ticket-2019` | [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) | 机器学习 | 模型与训练 |
+| `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) | 信息检索 | 检索与排序 |
+| `lsm-tree-1996` | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | 数据库 | 存储与查询 |
+| `lstm-1997` | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | 机器学习 | 模型与训练 |
+| `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) | 网络协议 | 网络协议 |
+| `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) | 操作系统 | 内核与虚拟化 |
+| `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | 操作系统 | 内核与虚拟化 |
+| `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 图形学 | 渲染与图形 |
+| `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 机器学习 | 计算机视觉 / 自监督 |
+| `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 机器学习 | 模型与训练 |
+| `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) | 网络协议 | 网络协议 |
+| `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | 机器学习 | NLP / 深度学习 |
+| `maml-2017` | [MAML — 学一个"好起点"，几步就能学会新任务](/study/papers/maml-2017/) | 机器学习 | 模型与训练 |
+| `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | 分布式系统 | 分布式系统 |
+| `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) | 图形学 | 渲染与图形 |
+| `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) | 信息检索 | 检索与排序 |
+| `marques-silva-grasp-1996` | [GRASP 1996 — 让 SAT 求解器从冲突里学到东西](/study/papers/marques-silva-grasp-1996/) | 形式化方法 | 形式化验证 |
+| `martin-lof-itt` | [Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事](/study/papers/martin-lof-itt/) | 编程语言 | 类型与 PL 理论 |
+| `mattern-1989` | [Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积](/study/papers/mattern-1989/) | 分布式系统 | 共识与复制 |
+| `maxwell-architecture-2014` | [NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍](/study/papers/maxwell-architecture-2014/) | 图形学 | GPU 架构 |
+| `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | 编程语言 | 编程语言 |
+| `mcfarling-bp-1993` | [McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台](/study/papers/mcfarling-bp-1993/) | 图形学 | GPU 架构 |
+| `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | 形式化方法 | 形式化验证 |
+| `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | 机器学习 | AI 工程 |
+| `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | 操作系统 | 内核与虚拟化 |
+| `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) | 图形学 | 渲染与图形 |
+| `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) | 图形学 | GPU 架构 |
+| `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) | 分布式系统 | 共识与复制 |
+| `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式系统 | 模型与训练 |
+| `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) | 分布式系统 | 共识与复制 |
+| `memcoder-co-evolution` | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) | Agent | 智能体与 LLM |
+| `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) | 分布式系统 | 共识与复制 |
+| `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) | 基础设施 | 工具与基础设施 |
+| `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) | 机器学习 | 模型与训练 |
+| `mesos-2011` | [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) | 操作系统 | 内核与虚拟化 |
+| `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 机器学习 | 智能体与 LLM |
+| `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) | 编程语言 | 类型与 PL 理论 |
+| `metcalfe-boggs-1976` | [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) | 网络协议 | 网络协议 |
+| `mills-ntp-1991` | [NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒](/study/papers/mills-ntp-1991/) | 网络协议 | 网络协议 |
+| `millwheel-2013` | [MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机](/study/papers/millwheel-2013/) | 数据库 | 存储与查询 |
+| `milner-pi-calculus` | [π-演算 — 让通道名本身能在通道里流动](/study/papers/milner-pi-calculus/) | 编程语言 | 类型与 PL 理论 |
+| `mind-skill` | [MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量](/study/papers/mind-skill/) | Agent | 智能体与 LLM |
+| `mine-octagon-2006` | [Miné 八边形抽象域 — 在区间和多面体之间的甜点](/study/papers/mine-octagon-2006/) | 形式化方法 | 形式化验证 |
+| `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) | 信息检索 | 检索与排序 |
+| `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | 形式化方法 | 形式化验证 |
+| `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | 图形学 | GPU 架构 |
+| `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | Agent | 智能体与 LLM |
+| `mitls-2014-triple-handshake` | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) | 网络协议 | 网络协议 |
+| `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | 机器学习 | NLP / 深度学习 |
+| `mixup-2018` | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) | 机器学习 | 模型与训练 |
+| `mlflow` | [MLflow — 给机器学习实验装上"记账本和身份证"](/study/papers/mlflow/) | 机器学习 | MLOps / ML 平台 |
+| `mlir` | [MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言](/study/papers/mlir/) | 编程语言 | 类型与 PL 理论 |
+| `mmlu-2021` | [MMLU — 用 57 个学科的多选题考一考语言模型](/study/papers/mmlu-2021/) | 机器学习 | 模型与训练 |
+| `mmskills-multimodal` | [MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片](/study/papers/mmskills-multimodal/) | Agent | 智能体与 LLM |
+| `mockapetris-1988-dns` | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) | 网络协议 | 网络协议 |
+| `mode-connectivity-2018` | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) | 机器学习 | 模型与训练 |
+| `moesi-cache-coherence-1986` | [Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则](/study/papers/moesi-cache-coherence-1986/) | 图形学 | GPU 架构 |
+| `mogul-1995-persistent-http` | [Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"](/study/papers/mogul-1995-persistent-http/) | 网络协议 | 网络协议 |
+| `monaghan-1992-sph` | [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) | 图形学 | 渲染与图形 |
+| `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 数据库 | 存储与查询 |
+| `monitors-1974` | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) | 操作系统 | 内核与虚拟化 |
+| `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | 信息检索 | 检索与排序 |
+| `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) | 图形学 | 渲染与图形 |
+| `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) | 图形学 | 渲染与图形 |
+| `multics-1965` | [MULTICS 1965 — 把计算机做成像电力一样的公共服务](/study/papers/multics-1965/) | 操作系统 | 内核与虚拟化 |
+| `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 机器学习 | 强化学习 |
+| `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) | 编程语言 | 类型与 PL 理论 |
+| `naiad-2013` | [Naiad — 一套引擎同时跑批处理、流处理和迭代计算](/study/papers/naiad-2013/) | 分布式系统 | 共识与复制 |
+| `narwhal-tusk-2022` | [Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事](/study/papers/narwhal-tusk-2022/) | 分布式系统 | 共识与复制 |
+| `nbeats-2020` | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) | 机器学习 | 模型与训练 |
+| `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | 形式化方法 | 形式化验证 |
+| `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) | 图形学 | 渲染与图形 |
+| `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) | 信息检索 | 检索与排序 |
+| `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | 网络协议 | 网络协议 |
+| `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 数据库 | 存储与查询 |
+| `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) | 信息检索 | 检索与排序 |
+| `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | 图形学 | 渲染与图形 |
+| `nfs-1985` | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) | 操作系统 | 内核与虚拟化 |
+| `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) | 图形学 | 渲染与图形 |
+| `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 形式化方法 | 形式化验证 |
+| `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) | 图形学 | 渲染与图形 |
+| `nix` | [Nix — 把每个软件包当成纯函数的输出](/study/papers/nix/) | CLI | 包管理 / 系统 |
+| `no-silver-bullet` | [No Silver Bullet — 软件难度的二分手术刀](/study/papers/no-silver-bullet/) | 其他 | 软件工程 |
+| `ntk-2018` | [NTK — 把无限宽的神经网络变成一个可解的核方法](/study/papers/ntk-2018/) | 机器学习 | 模型与训练 |
+| `ntp-mills-1991` | [NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒](/study/papers/ntp-mills-1991/) | 分布式系统 | 共识与复制 |
+| `nuprl-1986` | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) | 形式化方法 | 形式化验证 |
+| `nvlink-nvswitch-2018` | [NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器](/study/papers/nvlink-nvswitch-2018/) | 图形学 | GPU 架构 |
+| `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) | 后端 API | 前端工具链 |
+| `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) | 图形学 | GPU 架构 |
+| `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) | 后端 API | 后端 |
+| `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | 信息检索 | 检索与排序 |
+| `omega-2013` | [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) | 操作系统 | 内核与虚拟化 |
+| `opencl-2010` | [OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准](/study/papers/opencl-2010/) | 图形学 | GPU 架构 |
+| `openflow-2008` | [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) | 网络协议 | 网络协议 |
+| `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 机器学习 | 智能体与 LLM |
+| `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) | 基础设施 | 基础设施 |
+| `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) | 机器学习 | 机器学习 / 超参优化 |
+| `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | 机器学习 | 模型与训练 |
+| `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 分布式系统 | 共识与复制 |
+| `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | 图形学 | 渲染与图形 |
+| `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | 网络协议 | 网络协议 |
+| `padmanabhan-1995-http-latency` | [Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快](/study/papers/padmanabhan-1995-http-latency/) | 网络协议 | 网络协议 |
+| `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 信息检索 | 检索与排序 |
+| `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | 其他 | 软件工程 |
+| `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) | 数据可视化 | 数据可视化 |
+| `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) | 图形学 | 渲染与图形 |
+| `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) | 机器学习 | 模型与训练 |
+| `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 编程语言 | 类型与 PL 理论 |
+| `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) | 图形学 | GPU 架构 |
+| `pastry-2001` | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) | 网络协议 | 网络协议 |
+| `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 | 分布式系统 |
+| `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) | 数据库 | 存储与查询 |
+| `paxos-simple-2001` | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) | 数据库 | 存储与查询 |
+| `pbft-1999` | [PBFT — 让拜占庭容错从理论变成能跑的工程](/study/papers/pbft-1999/) | 分布式系统 | 共识与复制 |
+| `peg-packrat-ford` | [PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器](/study/papers/peg-packrat-ford/) | 编程语言 | 类型与 PL 理论 |
+| `percolator-2010` | [Percolator 2010 — 给 Bigtable 加分布式事务的客户端库](/study/papers/percolator-2010/) | 分布式系统 | 共识与复制 |
+| `performer-2020` | [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) | 机器学习 | 模型与训练 |
+| `perlin-1985-noise` | [Perlin Noise — 让计算机生成的图像不再有"机器味"](/study/papers/perlin-1985-noise/) | 图形学 | 渲染与图形 |
+| `persistent-memory-2014` | [PMFS — 第一个为字节寻址持久内存设计的文件系统](/study/papers/persistent-memory-2014/) | 图形学 | GPU 架构 |
+| `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) | 信息检索 | 检索与排序 |
+| `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | 编程语言 | 类型与 PL 理论 |
+| `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) | 图形学 | 渲染与图形 |
+| `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) | 图形学 | GPU 架构 |
+| `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) | 分布式系统 | 共识与复制 |
+| `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) | 操作系统 | 内核与虚拟化 |
+| `plenoxels-2022` | [Plenoxels — 不要神经网络也能渲染辐射场](/study/papers/plenoxels-2022/) | 图形学 | 渲染与图形 |
+| `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) | 编程语言 | 类型与 PL 理论 |
+| `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | 形式化方法 | 形式化验证 |
+| `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) | 分布式系统 | 共识与复制 |
+| `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 机器学习 | 信息论 |
+| `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) | 编程语言 | 类型与 PL 理论 |
+| `ppo` | [PPO — Proximal Policy Optimization](/study/papers/ppo/) | 机器学习 | 强化学习 |
+| `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) | 分布式系统 | 共识与复制 |
+| `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | 数据库 | 存储与查询 |
+| `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | 其他 | 软件工程认知科学 |
+| `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | 其他 | 软件工程 |
+| `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) | 编程语言 | 类型与 PL 理论 |
+| `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) | 机器学习 | 模型与训练 |
+| `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) | 形式化方法 | 形式化验证 |
+| `ps-li-2014` | [Parameter Server — 多机训练前 AllReduce 时代的工业标准](/study/papers/ps-li-2014/) | 分布式系统 | 共识与复制 |
+| `push-pull-frp` | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) | 编程语言 | 编程语言 |
+| `pypy-tracing-jit` | [PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速](/study/papers/pypy-tracing-jit/) | 编程语言 | 类型与 PL 理论 |
+| `quantum-supremacy-2019` | [Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事](/study/papers/quantum-supremacy-2019/) | 图形学 | GPU 架构 |
+| `quic` | [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) | 网络协议 | 计算机网络 |
+| `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) | 分布式系统 | 共识与复制 |
+| `r-bgp-2007` | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) | 网络协议 | 网络协议 |
+| `raft` | [Raft — 易理解的共识算法](/study/papers/raft/) | 分布式系统 | 分布式系统 |
+| `rag-lewis-2020` | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | 机器学习 | AI / NLP |
+| `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) | 信息检索 | 检索与排序 |
+| `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) | 操作系统 | 内核与虚拟化 |
+| `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 机器学习 | 智能体与 LLM |
+| `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | 后端 API | 前端框架 |
+| `realm` | [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) | NLP | 自然语言处理 |
+| `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) | 网络协议 | 网络协议 |
+| `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 机器学习 | 信息论 |
+| `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 编程语言 | 类型与 PL 理论 |
+| `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 机器学习 | 智能体与 LLM |
+| `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | 机器学习 | 模型与训练 |
+| `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | 机器学习 | 模型与训练 |
+| `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 编程语言 | 类型与 PL 理论 |
+| `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 机器学习 | 计算机视觉 / 深度学习 |
+| `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) | 后端 API | 后端 |
+| `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 机器学习 | AI / NLP |
+| `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 编程语言 | 类型与 PL 理论 |
+| `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 编程语言 | 类型与 PL 理论 |
+| `rfc-3833-dns-threats` | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) | 网络协议 | 网络协议 |
+| `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) | 图形学 | GPU 架构 |
+| `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) | 图形学 | GPU 架构 |
+| `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 机器学习 | 强化学习 / AI 安全 |
+| `rm3-2001` | [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) | 信息检索 | 检索与排序 |
+| `roberta-2019` | [RoBERTa — 把 BERT 重训一遍就能拿 SOTA](/study/papers/roberta-2019/) | 机器学习 | 模型与训练 |
+| `rocketqa-2021` | [RocketQA — 把稠密检索的训练拧到工业级](/study/papers/rocketqa-2021/) | 信息检索 | 检索与排序 |
+| `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) | 数据库 | 存储与查询 |
+| `rocksdb-lsm` | [LSM-tree 与 RocksDB — 把所有写都变成顺序写](/study/papers/rocksdb-lsm/) | 数据库 | 数据库 |
+| `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) | 网络协议 | 网络协议 |
+| `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) | 信息检索 | 数据检索 |
+| `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 安全与隐私 | 密码学 |
+| `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) | 网络协议 | 网络协议 |
+| `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) | 机器学习 | 模型与训练 |
+| `sac-2018` | [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) | 机器学习 | 模型与训练 |
+| `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) | 分布式系统 | 共识与复制 |
+| `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | 编程语言 | 类型与 PL 理论 |
+| `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) | 图形学 | 渲染与图形 |
+| `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | 编程语言 | 编程语言 |
+| `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 信息检索 | 检索与排序 |
+| `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | 网络协议 | 网络协议 |
+| `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) | 操作系统 | 内核与虚拟化 |
+| `sam` | [SAM — Segment Anything](/study/papers/sam/) | 机器学习 | 计算机视觉 |
+| `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 机器学习 | 大模型服务 |
+| `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 信息检索 | 检索与排序 |
+| `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) | 编程语言 | 类型与 PL 理论 |
+| `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP | NLP |
+| `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) | 信息检索 | 检索与排序 |
+| `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | 基础设施 | 工具与基础设施 |
+| `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | 编程语言 | 类型与 PL 理论 |
+| `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) | 操作系统 | 内核与虚拟化 |
+| `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编程语言 | 编程语言 |
+| `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | 机器学习 | 模型与训练 |
+| `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) | 编程语言 | 类型与 PL 理论 |
+| `self-evolving-agents-survey` | [自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图](/study/papers/self-evolving-agents-survey/) | Agent | 智能体与 LLM |
+| `self-evolving-recsys-2602` | [Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线](/study/papers/self-evolving-recsys-2602/) | Agent | 智能体与 LLM |
+| `self-evolving-software-agents` | [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) | Agent | 智能体与 LLM |
+| `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 | 编译器 |
+| `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 机器学习 | 模型与训练 |
+| `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | 机器学习 | 模型与训练 |
+| `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 | 存储与查询 |
+| `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | 机器学习 | 模型与训练 |
+| `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 数据库 | 存储与查询 |
+| `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) | 分布式系统 | 共识与复制 |
+| `server-sent-events` | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) | 后端 API | 前端 |
+| `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) | 图形学 | GPU 架构 |
+| `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | 机器学习 | 信息论 |
+| `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) | 基础设施 | infrastructure |
+| `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) | 操作系统 | 内核与虚拟化 |
+| `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | 其他 | 软件工程 |
+| `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | 数据库 | 存储与查询 |
+| `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) | 信息检索 | 检索与排序 |
+| `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) | 信息检索 | 检索与排序 |
+| `simula-67` | [SIMULA 67 — 面向对象的诞生](/study/papers/simula-67/) | 编程语言 | 编程语言 |
+| `sinfonia-2007` | [Sinfonia 2007 — 把分布式协议降级成数据结构操作](/study/papers/sinfonia-2007/) | 分布式系统 | 共识与复制 |
+| `skcc-skill-compiler` | [SkCC — 给 LLM agent 写一个真正的 skill 编译器](/study/papers/skcc-skill-compiler/) | Agent | 智能体与 LLM |
+| `skeen-3pc-1981` | [Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁](/study/papers/skeen-3pc-1981/) | 分布式系统 | 共识与复制 |
+| `skill-as-pseudocode` | [Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码](/study/papers/skill-as-pseudocode/) | Agent | 智能体与 LLM |
+| `skill-pro-nonparametric-ppo` | [Skill-Pro — 不动权重学可复用 skill 的非参数 PPO](/study/papers/skill-pro-nonparametric-ppo/) | Agent | 智能体与 LLM |
+| `skill-sd-self-distillation` | [Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏](/study/papers/skill-sd-self-distillation/) | Agent | 智能体与 LLM |
+| `skip-list-1990` | [Skip List — 用抛硬币代替平衡树](/study/papers/skip-list-1990/) | 数据库 | 存储与查询 |
+| `skip-locked-postgres-9.5` | [SKIP LOCKED — 让 Postgres 当任务队列用](/study/papers/skip-locked-postgres-9.5/) | 后端 API | 后端 |
+| `slab-1994` | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | 操作系统 | 内核与虚拟化 |
+| `slam-microsoft` | [SLAM — 让 Windows 驱动 bug 自己撞到工具上](/study/papers/slam-microsoft/) | 编程语言 | 类型与 PL 理论 |
+| `sleeper-agents` | [Sleeper Agents — 故意藏后门的 LLM](/study/papers/sleeper-agents/) | 机器学习 | AI 安全 |
+| `slim-2011` | [SLIM — 让数据自己学一张稀疏的"看了又看"权重表](/study/papers/slim-2011/) | 信息检索 | 检索与排序 |
+| `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | 编程语言 | 编程语言 |
+| `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) | 图形学 | GPU 架构 |
+| `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | 数据库 | 存储与查询 |
+| `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | 数据库 | 存储与查询 |
+| `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | 操作系统 | 内核与虚拟化 |
+| `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | 操作系统 | 内核与虚拟化 |
+| `sophia-2023` | [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) | 机器学习 | 模型与训练 |
+| `sorkine-2004-laplacian-editing` | [Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节](/study/papers/sorkine-2004-laplacian-editing/) | 图形学 | 渲染与图形 |
+| `souffle-datalog` | [Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动](/study/papers/souffle-datalog/) | 编程语言 | 类型与 PL 理论 |
+| `spann-2021` | [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) | 信息检索 | 检索与排序 |
+| `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 | 分布式系统 / 数据库 |
+| `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | 数据库 | 存储与查询 |
+| `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) | 分布式系统 | 共识与复制 |
+| `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | 机器学习 | AI 可解释性 |
+| `sparsegpt-2023` | [SparseGPT — 175B 大模型一次过剪 50%，不重训](/study/papers/sparsegpt-2023/) | 图形学 | GPU 架构 |
+| `specinfer-2023` | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) | 图形学 | GPU 架构 |
+| `splade-2021` | [SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引](/study/papers/splade-2021/) | 信息检索 | 检索与排序 |
+| `sprite-1988` | [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) | 操作系统 | 内核与虚拟化 |
+| `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) | 数据库 | 存储与查询 |
+| `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 编译器 | 编译器 |
+| `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | 机器学习 | 生成模型 |
+| `stainless-2017` | [Stainless — 让编译器替你证明 Scala 函数真的满足规约](/study/papers/stainless-2017/) | 形式化方法 | 形式化验证 |
+| `stam-1999-stable-fluids` | [Stable Fluids — 让流体模拟时间步随便给都不爆](/study/papers/stam-1999-stable-fluids/) | 图形学 | 渲染与图形 |
+| `standard-ml` | [Standard ML — 让编译器替你把类型补完](/study/papers/standard-ml/) | 编程语言 | 编程语言 |
+| `starcoder-2023` | [StarCoder — 把训练数据完整公开的 15B 代码模型](/study/papers/starcoder-2023/) | 机器学习 | 模型与训练 |
+| `starrocks` | [StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP](/study/papers/starrocks/) | 基础设施 | infrastructure |
+| `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) | 编程语言 | 类型与 PL 理论 |
+| `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) | 编程语言 | 类型与 PL 理论 |
+| `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) | 数据库 | 存储与查询 |
+| `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) | 编程语言 | 类型与 PL 理论 |
+| `stylegan2-2020` | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) | 机器学习 | 模型与训练 |
+| `subramanian-2002-internet-hierarchy` | [Subramanian 2002 — 用多个观察点把互联网切成 5 层](/study/papers/subramanian-2002-internet-hierarchy/) | 网络协议 | 网络协议 |
+| `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) | 图形学 | 渲染与图形 |
+| `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 机器学习 | 智能体与 LLM |
+| `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 机器学习 | AI / 软件工程 |
+| `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) | 图形学 | GPU 架构 |
+| `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | 机器学习 | 模型与训练 |
+| `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 编程语言 | 类型与 PL 理论 |
+| `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 数据库 | 存储与查询 |
+| `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | 机器学习 | 模型与训练 |
+| `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP | NLP |
+| `tabpfn-2023` | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) | 机器学习 | 模型与训练 |
+| `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | 数据库 | 存储与查询 |
+| `tamarin-2012` | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) | 形式化方法 | 形式化验证 |
+| `tao-2013` | [TAO — Facebook 给十亿人好友列表造的专用图数据库](/study/papers/tao-2013/) | 分布式系统 | 共识与复制 |
+| `taso-2019` | [TASO — 让机器自己发现深度学习图重写规则](/study/papers/taso-2019/) | 图形学 | GPU 架构 |
+| `taubin-1995-mesh-smoothing` | [Taubin 1995 — 把网格平滑当成低通滤波](/study/papers/taubin-1995-mesh-smoothing/) | 图形学 | 渲染与图形 |
+| `tcp` | [TCP — 在不可靠的 IP 上凿出一条 reliable 字节流](/study/papers/tcp/) | 网络协议 | 网络 |
+| `tcp-vegas-1995` | [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) | 网络协议 | 网络协议 |
+| `td3-2018` | [TD3 — 给 DDPG 装两副刹车，连续控制终于稳了](/study/papers/td3-2018/) | 机器学习 | 模型与训练 |
+| `template-haskell` | [Template Haskell — 让 Haskell 在编译期把代码当数据玩](/study/papers/template-haskell/) | 编程语言 | 类型与 PL 理论 |
+| `tendermint-2016` | [Tendermint — 把拜占庭共识塞进开放区块链的工程模板](/study/papers/tendermint-2016/) | 分布式系统 | 共识与复制 |
+| `tensorflow-osdi-2016` | [TensorFlow — 把神经网络拆成数据流图再跑到任何机器上](/study/papers/tensorflow-osdi-2016/) | 分布式系统 | 共识与复制 |
+| `tensorrt-llm-2023` | [TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈](/study/papers/tensorrt-llm-2023/) | 图形学 | GPU 架构 |
+| `tesla-architecture-2008` | [NVIDIA Tesla — 把显卡改造成通用并行计算机](/study/papers/tesla-architecture-2008/) | 图形学 | GPU 架构 |
+| `the-os-1968` | [THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS](/study/papers/the-os-1968/) | 操作系统 | 内核与虚拟化 |
+| `theorems-for-free` | [Theorems for Free — 类型签名直接给定理](/study/papers/theorems-for-free/) | 编程语言 | 类型与 PL 理论 |
+| `thrust-2010` | [Thrust — 让 GPU 编程像写 STL 一样一行调用](/study/papers/thrust-2010/) | 图形学 | GPU 架构 |
+| `tidb-2020` | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) | 数据库 | 存储与查询 |
+| `tigerbeetle` | [TigerBeetle — 只能记账但把记账做到极致的金融数据库](/study/papers/tigerbeetle/) | 数据库 | 数据库 |
+| `timelinejs` | [TimelineJS — 一张 Google Sheet 直接变成交互时间轴](/study/papers/timelinejs/) | 基础设施 | 基础设施 |
+| `tla-yu-tlc-1999` | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) | 形式化方法 | 形式化验证 |
+| `tls-1.3` | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-1.3/) | 网络协议 | 网络协议 |
+| `tofte-talpin-regions` | [Tofte-Talpin Regions — 让类型系统替你管内存生命周期](/study/papers/tofte-talpin-regions/) | 编程语言 | 编程语言 |
+| `token-bucket-stripe` | [Stripe Rate Limiters — 工业级令牌桶长什么样](/study/papers/token-bucket-stripe/) | 后端 API | 后端工程 |
+| `tomasulo-1967` | [Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序](/study/papers/tomasulo-1967/) | 图形学 | GPU 架构 |
+| `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) | 编程语言 | 类型与 PL 理论 |
+| `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 机器学习 | 智能体与 LLM |
+| `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | 机器学习 | AI 可解释性 |
+| `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) | 编程语言 | 类型与 PL 理论 |
+| `transformer-xl-2019` | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) | 机器学习 | 模型与训练 |
+| `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | 机器学习 | 模型与训练 |
+| `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编程语言 | 编程语言 |
+| `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | 数据库 | 存储与查询 |
+| `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) | 图形学 | GPU 架构 |
+| `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) | 编程语言 | 类型与 PL 理论 |
+| `trustrank-2004` | [TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来](/study/papers/trustrank-2004/) | 信息检索 | 检索与排序 |
+| `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) | 编程语言 | 类型与 PL 理论 |
+| `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | 编程语言 | 计算理论 |
+| `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) | 图形学 | GPU 架构 |
+| `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) | 编程语言 | 类型与 PL 理论 |
+| `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) | 图形学 | GPU 架构 |
+| `twine-2020` | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) | 操作系统 | 内核与虚拟化 |
+| `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 图形学 | GPU 架构 |
+| `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) | 操作系统 | 内核与虚拟化 |
+| `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) | 操作系统 | 内核与虚拟化 |
+| `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | 形式化方法 | 形式化验证 |
+| `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 形式化方法 | 形式化验证 |
+| `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 图形学 | 渲染与图形 |
+| `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) | 图形学 | 渲染与图形 |
+| `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) | 数据可视化 | 数据可视化 |
+| `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 编程语言 | 类型与 PL 理论 |
+| `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 形式化方法 | 形式化验证 |
+| `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 形式化方法 | 形式化验证 |
+| `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | 数据库 | 存储与查询 |
+| `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 机器学习 | 计算机视觉 |
+| `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) | 网络协议 | 网络协议 |
+| `vllm` | [vLLM — 把操作系统的分页搬进 GPU KV cache](/study/papers/vllm/) | 机器学习 | 数据科学与 AI |
+| `vogels-eventual-2009` | [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) | 分布式系统 | 共识与复制 |
+| `volcano` | [Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式](/study/papers/volcano/) | 数据库 | 数据库 |
+| `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) | 数据库 | 存储与查询 |
+| `volta-architecture-2017` | [NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍](/study/papers/volta-architecture-2017/) | 图形学 | GPU 架构 |
+| `voyager` | [Voyager — LLM 终身学习智能体](/study/papers/voyager/) | 机器学习 | 智能体与 LLM |
+| `vr-1988` | [VR 1988 — 用"主备 + 换届"做共识的另一脉](/study/papers/vr-1988/) | 分布式系统 | 共识与复制 |
+| `vr-revisited-2012` | [VR Revisited 2012 — VR 协议的"工程化重写版"](/study/papers/vr-revisited-2012/) | 分布式系统 | 共识与复制 |
+| `vst-2014` | [VST — 把 C 程序的数学证明一路带到机器码](/study/papers/vst-2014/) | 形式化方法 | 形式化验证 |
+| `wadler-prettier` | [Wadler Prettier — 函数式优雅打印器](/study/papers/wadler-prettier/) | 编程语言 | 编程语言 |
+| `wald-2007-sah-bvh` | [Wald 2007 — 把 SAH BVH 构建从分钟级砍到秒级的 binned 近似法](/study/papers/wald-2007-sah-bvh/) | 图形学 | 渲染与图形 |
+| `wam-warren` | [WAM — 让 Prolog 跑得像编译型语言的抽象机器](/study/papers/wam-warren/) | 编程语言 | 类型与 PL 理论 |
+| `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) | 基础设施 | 基础设施 |
+| `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) | 网络协议 | 网络协议 |
+| `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) | 图形学 | 渲染与图形 |
+| `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 网络协议 | 网络协议 |
+| `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | Agent | 智能体与 LLM |
+| `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) | 图形学 | 渲染与图形 |
+| `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 形式化方法 | 形式化验证 |
+| `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) | 信息检索 | 检索与排序 |
+| `williams-1983-mipmap` | [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) | 图形学 | 渲染与图形 |
+| `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | NLP | NLP |
+| `world-model-robot-learning-2026` | [机器人世界模型综述 — 预测未来再动手](/study/papers/world-model-robot-learning-2026/) | 机器学习 | 机器人与 VLA |
+| `xen-2003` | [Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生](/study/papers/xen-2003/) | 操作系统 | 内核与虚拟化 |
+| `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) | 编程语言 | 类型与 PL 理论 |
+| `xlnet-2019` | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) | 机器学习 | 模型与训练 |
+| `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) | 分布式系统 | 共识与复制 |
+| `youtube-two-tower-2019` | [YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键](/study/papers/youtube-two-tower-2019/) | 信息检索 | 检索与排序 |
+| `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | 形式化方法 | 形式化验证 |
+| `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | 数据库 | 存储与查询 |
+| `zero-2020` | [ZeRO 2020 — 把训练状态切成 N 份让万亿参数成为可能](/study/papers/zero-2020/) | 分布式系统 | 共识与复制 |
+| `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) | 操作系统 | 内核与虚拟化 |
+| `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | 编程语言 | 编程语言 |
+| `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 安全与隐私 | 密码学 |
+| `zombie-agents-2602` | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) | Agent | 智能体与 LLM |

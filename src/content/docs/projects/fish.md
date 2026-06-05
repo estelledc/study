@@ -2,7 +2,8 @@
 title: fish — 装好就比 bash 加插件好用的交互 shell
 来源: https://github.com/fish-shell/fish-shell
 日期: 2026-05-31
-分类: 命令行工具
+子分类: 命令行工具
+分类: CLI
 难度: 入门
 ---
 

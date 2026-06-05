@@ -2,6 +2,7 @@
 title: PostgreSQL — 工业级关系数据库
 来源: https://github.com/postgres/postgres
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

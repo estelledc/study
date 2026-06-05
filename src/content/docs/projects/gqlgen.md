@@ -2,6 +2,7 @@
 title: gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server
 来源: 'https://github.com/99designs/gqlgen'
 日期: 2026-05-30
+子分类: Web 后端
 分类: 后端 API
 难度: 中级
 ---

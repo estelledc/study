@@ -2,7 +2,9 @@
 title: Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 来源: 'https://github.com/snapshot-labs/snapshot'
 日期: 2026-05-30
-分类: blockchain
+分类_原始: blockchain
+子分类: 链与合约
+分类: 区块链
 难度: 初级
 ---
 

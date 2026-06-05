@@ -2,7 +2,8 @@
 title: Vitest — Vite 原生测试框架
 来源: https://github.com/vitest-dev/vitest
 日期: 2026-05-29
-分类: 测试
+子分类: 测试
+分类: 后端 API
 难度: 中级
 ---
 

@@ -2,6 +2,7 @@
 title: Databend — Rust 写的存算分离云数仓
 来源: https://github.com/databendlabs/databend
 日期: 2026-05-31
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

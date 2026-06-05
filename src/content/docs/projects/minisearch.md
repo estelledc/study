@@ -2,7 +2,8 @@
 title: minisearch — 浏览器里的小型全文搜索引擎
 来源: 'https://github.com/lucaong/minisearch'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

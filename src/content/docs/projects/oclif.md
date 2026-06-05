@@ -2,7 +2,8 @@
 title: oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架
 来源: 'https://github.com/oclif/oclif'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

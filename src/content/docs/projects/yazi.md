@@ -2,6 +2,7 @@
 title: yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
 来源: https://github.com/sxyazi/yazi
 日期: 2026-05-31
+子分类: 命令行工具
 分类: CLI
 难度: 中级
 ---

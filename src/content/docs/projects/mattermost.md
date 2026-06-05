@@ -2,7 +2,9 @@
 title: Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
 来源: 'https://github.com/mattermost/mattermost'
 日期: 2026-05-30
-分类: communication
+分类_原始: communication
+子分类: 实时通信
+分类: 通信
 难度: 中级
 ---
 

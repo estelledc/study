@@ -2,7 +2,8 @@
 title: temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
 来源: 'https://github.com/fullcalendar/temporal-polyfill'
 日期: 2026-05-30
-分类: projects / 工具库
+子分类: projects / 工具库
+分类: CLI
 难度: 中级
 ---
 

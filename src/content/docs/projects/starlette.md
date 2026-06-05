@@ -2,7 +2,9 @@
 title: Starlette — FastAPI 底下那台轻量 ASGI 引擎
 来源: 'https://github.com/encode/starlette'
 日期: 2026-05-29
-分类: backend-api
+分类_原始: backend-api
+子分类: Web 后端
+分类: 后端 API
 难度: 中级
 ---
 

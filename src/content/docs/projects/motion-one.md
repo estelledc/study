@@ -2,7 +2,8 @@
 title: Motion One — 把动画交给浏览器自己跑
 来源: 'https://github.com/motiondivision/motion'
 日期: 2026-05-30
-分类: projects / 前端动画
+子分类: projects / 前端动画
+分类: 后端 API
 难度: 初级
 ---
 

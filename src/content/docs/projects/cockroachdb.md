@@ -2,7 +2,8 @@
 title: CockroachDB — 分布式 SQL 数据库
 来源: https://github.com/cockroachdb/cockroach
 日期: 2026-05-29
-分类: 数据库 / 分布式
+子分类: 数据库 / 分布式
+分类: 分布式系统
 难度: 中级
 ---
 

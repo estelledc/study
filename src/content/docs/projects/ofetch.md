@@ -2,7 +2,8 @@
 title: ofetch — Nuxt 默认的现代 fetch 包装
 来源: https://github.com/unjs/ofetch
 日期: 2026-05-30
-分类: 前端工程化
+子分类: 前端工程化
+分类: 后端 API
 难度: 中级
 ---
 

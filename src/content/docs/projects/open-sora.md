@@ -2,7 +2,8 @@
 title: 'Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目'
 来源: 'https://github.com/hpcaitech/Open-Sora'
 日期: '2026-05-31'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '高级'
 ---
 

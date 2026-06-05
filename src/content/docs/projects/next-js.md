@@ -2,7 +2,8 @@
 title: Next.js — React 全栈框架
 来源: https://github.com/vercel/next.js
 日期: 2026-05-29
-分类: UI 框架 / 全栈
+子分类: UI 框架 / 全栈
+分类: 后端 API
 难度: 中级
 ---
 

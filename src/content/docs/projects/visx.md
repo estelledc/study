@@ -2,7 +2,8 @@
 title: visx — 把 d3 拆成 30 块乐高的 React 可视化原语
 来源: 'https://github.com/airbnb/visx + Airbnb Engineering 2018 "vx, an alternative to traditional chart libraries"'
 日期: 2026-05-30
-分类: 前端工程
+子分类: 前端工程
+分类: 后端 API
 难度: 中级
 ---
 

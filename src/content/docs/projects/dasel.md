@@ -2,6 +2,7 @@
 title: dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV
 来源: https://github.com/TomWright/dasel
 日期: 2026-05-30
+子分类: 命令行工具
 分类: CLI
 难度: 入门
 ---

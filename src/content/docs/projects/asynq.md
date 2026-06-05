@@ -2,6 +2,7 @@
 title: Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
 来源: 'https://github.com/hibiken/asynq'
 日期: 2026-05-30
+子分类: Web 后端
 分类: 后端 API
 难度: 中级
 ---

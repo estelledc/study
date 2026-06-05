@@ -2,7 +2,8 @@
 title: Chroma — Python 优先的向量数据库
 来源: https://github.com/chroma-core/chroma
 日期: 2026-05-29
-分类: 数据库 / 向量
+子分类: 数据库 / 向量
+分类: 数据库
 难度: 中级
 ---
 

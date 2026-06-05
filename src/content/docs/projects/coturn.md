@@ -2,7 +2,9 @@
 title: coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
 来源: coturn/coturn GitHub README + RFC 5766 / RFC 8656
 日期: 2026-05-31
-分类: 基础设施
+分类_原始: 基础设施
+子分类: 实时通信
+分类: 通信
 难度: 中级
 ---
 

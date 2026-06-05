@@ -2,6 +2,7 @@
 title: Move — 资源型智能合约语言
 来源: 'https://github.com/move-language/move'
 日期: 2026-05-30
+子分类: 链与合约
 分类: 区块链
 难度: 中级
 ---

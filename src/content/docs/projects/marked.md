@@ -2,7 +2,8 @@
 title: marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 来源: 'https://github.com/markedjs/marked + https://marked.js.org 官方文档'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

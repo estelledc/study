@@ -2,6 +2,7 @@
 title: Balancer V2 — 通用 AMM 与权重池
 来源: 'https://github.com/balancer/balancer-v2-monorepo'
 日期: 2026-05-30
+子分类: 链与合约
 分类: 区块链
 难度: 中级
 ---

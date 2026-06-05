@@ -2,7 +2,8 @@
 title: esbuild — 用 Go 写的极速 JS bundler
 来源: https://github.com/evanw/esbuild
 日期: 2026-05-29
-分类: 构建工具
+子分类: 构建工具
+分类: 编译器
 难度: 中级
 ---
 

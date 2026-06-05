@@ -2,6 +2,7 @@
 title: fzf — 命令行模糊查找
 来源: https://github.com/junegunn/fzf
 日期: 2026-05-29
+子分类: 命令行工具
 分类: CLI
 难度: 中级
 ---

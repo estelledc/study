@@ -2,7 +2,8 @@
 title: 'Megatron-LM — NVIDIA 张量并行库'
 来源: 'https://github.com/NVIDIA/Megatron-LM'
 日期: '2026-05-30'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '高级'
 ---
 

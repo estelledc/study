@@ -2,7 +2,8 @@
 title: dnd-kit — React 现代拖拽 toolkit
 来源: 'https://github.com/clauderic/dnd-kit'
 日期: 2026-05-30
-分类: projects / 前端
+子分类: projects / 前端
+分类: 后端 API
 难度: 中级
 ---
 

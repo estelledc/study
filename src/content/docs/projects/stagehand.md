@@ -2,7 +2,8 @@
 title: stagehand — Playwright 加 LLM 的混血框架
 来源: 'https://github.com/browserbase/stagehand'
 日期: 2026-05-30
-分类: 浏览器自动化
+子分类: 浏览器自动化
+分类: Agent
 难度: 中级
 ---
 

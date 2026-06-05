@@ -2,6 +2,7 @@
 title: warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 来源: 'https://github.com/seanmonstar/warp'
 日期: 2026-05-30
+子分类: Web 后端
 分类: 后端 API
 难度: 中级
 ---

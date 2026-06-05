@@ -2,7 +2,9 @@
 title: Argo CD — Kubernetes GitOps 工具
 来源: https://github.com/argoproj/argo-cd
 日期: 2026-05-29
-分类: DevOps / GitOps
+分类_原始: DevOps / GitOps
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
 来源: https://github.com/browser-use/browser-use
 日期: 2026-05-29
-分类: AI agent infra
+子分类: AI agent infra
+分类: 机器学习
 难度: 中级
 ---
 

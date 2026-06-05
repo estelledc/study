@@ -2,7 +2,8 @@
 title: Jaeger — 分布式追踪系统
 来源: https://github.com/jaegertracing/jaeger
 日期: 2026-05-29
-分类: 监控 / 分布式追踪
+子分类: 监控 / 分布式追踪
+分类: 分布式系统
 难度: 中级
 ---
 

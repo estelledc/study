@@ -2,7 +2,9 @@
 title: Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 来源: 'https://github.com/socketio/socket.io'
 日期: 2026-05-30
-分类: backend-api
+分类_原始: backend-api
+子分类: Web 后端
+分类: 后端 API
 难度: 初级
 ---
 

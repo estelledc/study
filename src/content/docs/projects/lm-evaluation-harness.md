@@ -2,7 +2,8 @@
 title: 'lm-evaluation-harness — LLM 基准评测底座'
 来源: 'https://github.com/EleutherAI/lm-evaluation-harness'
 日期: '2026-05-31'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '中级'
 ---
 

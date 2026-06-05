@@ -2,7 +2,8 @@
 title: RT-Thread — 中文社区主导的物联网 RTOS
 来源: https://github.com/RT-Thread/rt-thread
 日期: 2026-06-01
-分类: 嵌入式
+子分类: 嵌入式
+分类: 操作系统
 难度: 中级
 ---
 

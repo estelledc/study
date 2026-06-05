@@ -2,7 +2,8 @@
 title: Starlight — Astro 文档站点主题
 来源: https://github.com/withastro/starlight
 日期: 2026-05-29
-分类: 文档站点
+子分类: 文档站点
+分类: CLI
 难度: 中级
 ---
 

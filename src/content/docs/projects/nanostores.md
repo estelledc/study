@@ -2,7 +2,8 @@
 title: nanostores — 不到 1 KB 的"框架无关"状态库
 来源: 'https://github.com/nanostores/nanostores'
 日期: 2026-05-30
-分类: projects / 前端
+子分类: projects / 前端
+分类: 后端 API
 难度: 初级
 ---
 

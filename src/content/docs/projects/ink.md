@@ -2,7 +2,8 @@
 title: ink — 用 React 组件树写终端 CLI
 来源: 'https://github.com/vadimdemedes/ink'
 日期: 2026-05-30
-分类: 命令行工具
+子分类: 命令行工具
+分类: CLI
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: GSAP — GreenSock 高性能动画
 来源: https://github.com/greensock/GSAP
 日期: 2026-05-29
-分类: 动画
+子分类: 动画
+分类: 数据可视化
 难度: 中级
 ---
 

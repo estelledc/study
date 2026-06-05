@@ -2,7 +2,9 @@
 title: discord.js — Node.js Discord API 客户端事实标准
 来源: 'https://github.com/discordjs/discord.js'
 日期: 2026-05-31
-分类: communication
+分类_原始: communication
+子分类: 实时通信
+分类: 通信
 难度: 初级
 ---
 

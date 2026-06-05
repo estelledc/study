@@ -2,7 +2,9 @@
 title: BentoML — 模型打包部署
 来源: https://github.com/bentoml/BentoML
 日期: 2026-05-31
-分类: 项目
+分类_原始: 项目
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: 中级
 ---
 

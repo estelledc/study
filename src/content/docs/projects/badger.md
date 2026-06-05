@@ -2,7 +2,9 @@
 title: Badger — Go 写的键值分离 LSM
 来源: https://github.com/dgraph-io/badger
 日期: 2026-05-31
-分类: 数据库 / 存储引擎
+分类_原始: 数据库 / 存储引擎
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

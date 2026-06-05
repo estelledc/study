@@ -2,7 +2,8 @@
 title: Remix — 拥抱 Web 标准的 React 全栈框架
 来源: https://github.com/remix-run/remix
 日期: 2026-05-29
-分类: Meta 框架
+子分类: Meta 框架
+分类: 后端 API
 难度: 中级
 ---
 

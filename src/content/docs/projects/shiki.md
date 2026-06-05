@@ -2,7 +2,8 @@
 title: shiki — 把 VS Code 那套染色搬到网页上
 来源: 'https://github.com/shikijs/shiki'
 日期: 2026-05-30
-分类: 前端工具
+子分类: 前端工具
+分类: 后端 API
 难度: 初级
 ---
 

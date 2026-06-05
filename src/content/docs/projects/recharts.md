@@ -2,6 +2,7 @@
 title: Recharts — 用 JSX 直接拼出图表的 React 组件库
 来源: 'https://github.com/recharts/recharts'
 日期: 2026-05-30
+子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
 ---

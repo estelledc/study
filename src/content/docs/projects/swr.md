@@ -2,7 +2,8 @@
 title: SWR — React 远程数据 hook 的极简流派
 来源: 'https://github.com/vercel/swr'
 日期: 2026-05-30
-分类: 前端
+子分类: 前端
+分类: 后端 API
 难度: 初级
 ---
 

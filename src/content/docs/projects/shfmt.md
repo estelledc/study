@@ -2,7 +2,8 @@
 title: shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）
 来源: https://github.com/mvdan/sh
 日期: 2026-05-31
-分类: 命令行工具
+子分类: 命令行工具
+分类: CLI
 难度: 中级
 ---
 

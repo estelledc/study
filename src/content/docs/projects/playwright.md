@@ -2,7 +2,8 @@
 title: Playwright — 跨浏览器自动化测试
 来源: https://github.com/microsoft/playwright
 日期: 2026-05-29
-分类: 测试
+子分类: 测试
+分类: 后端 API
 难度: 中级
 ---
 

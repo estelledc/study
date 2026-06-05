@@ -2,7 +2,8 @@
 title: markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 来源: 'https://github.com/markdown-it/markdown-it'
 日期: 2026-05-30
-分类: projects / 前端工具链
+子分类: projects / 前端工具链
+分类: 后端 API
 难度: 中级
 ---
 

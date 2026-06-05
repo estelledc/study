@@ -2,7 +2,8 @@
 title: sharp — 让 Node.js 处理图像快到不像 JS
 来源: 'https://github.com/lovell/sharp'
 日期: 2026-05-30
-分类: projects / 图像处理
+子分类: projects / 图像处理
+分类: 图形学
 难度: 初级
 ---
 

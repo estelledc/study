@@ -2,7 +2,8 @@
 title: commander.js — Node.js CLI 解析的声明式标准
 来源: 'https://github.com/tj/commander.js'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 初级
 ---
 

@@ -2,7 +2,9 @@
 title: Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 来源: https://github.com/zephyrproject-rtos/zephyr
 日期: 2026-06-01
-分类: 嵌入式系统
+分类_原始: 嵌入式系统
+子分类: 嵌入式
+分类: 操作系统
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: Docusaurus — 一组 plugin 协作出来的文档站框架
 来源: 'Meta Open Source, "Docusaurus: Easy to Maintain Open Source Documentation Websites", 2017–2026'
 日期: 2026-05-29
-分类: 文档工具
+子分类: 文档工具
+分类: CLI
 难度: 中级
 ---
 

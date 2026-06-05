@@ -2,7 +2,9 @@
 title: Mermaid — 用文本写图，code review 友好的图表语言
 来源: https://github.com/mermaid-js/mermaid + Knut Sveidqvist 2014
 日期: 2026-06-01
-分类: projects / 数据可视化
+分类_原始: projects / 数据可视化
+子分类: 数据可视化
+分类: 数据可视化
 难度: 入门
 ---
 

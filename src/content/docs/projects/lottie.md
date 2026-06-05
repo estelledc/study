@@ -6,6 +6,8 @@ sidebar:
   label: airbnb/lottie-web
 schema_version: zhuangyuan-v1.1
 branch: B
+分类: 数据可视化
+子分类: 动画
 ---
 
 > airbnb/lottie-web（commit `bede03d25d232826e0c9dca1733d542d8a7754fb`，最近一次 master 提交 2024-11-19），截至 2026-05 GitHub > 31.9k stars / 2.9k forks / MIT。

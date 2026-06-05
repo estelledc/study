@@ -2,7 +2,8 @@
 title: vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 来源: 'https://github.com/intlify/vue-i18n-next'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 初级
 ---
 

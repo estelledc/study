@@ -2,7 +2,8 @@
 title: NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡
 来源: NVIDIA Multi-Instance GPU User Guide
 日期: 2026-05-31
-分类: infrastructure
+子分类: infrastructure
+分类: 基础设施
 难度: 中级
 ---
 

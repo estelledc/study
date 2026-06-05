@@ -2,6 +2,7 @@
 title: ranger — Python 写的 vim 风格三栏文件管理器
 来源: https://github.com/ranger/ranger
 日期: 2026-05-31
+子分类: 命令行工具
 分类: CLI
 难度: 中级
 ---

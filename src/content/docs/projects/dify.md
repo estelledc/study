@@ -2,7 +2,8 @@
 title: Dify — LLM 应用开发平台
 来源: https://github.com/langgenius/dify
 日期: 2026-05-29
-分类: AI
+子分类: AI
+分类: 机器学习
 难度: 中级
 ---
 

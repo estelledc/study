@@ -2,7 +2,8 @@
 title: wretch — 把 fetch 写成一条链
 来源: https://github.com/elbywan/wretch
 日期: 2026-05-30
-分类: 前端工具
+子分类: 前端工具
+分类: 后端 API
 难度: 入门
 ---
 

@@ -2,7 +2,8 @@
 title: Inngest — 让 async 函数自动从断点恢复的工作流引擎
 来源: 'https://github.com/inngest/inngest'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

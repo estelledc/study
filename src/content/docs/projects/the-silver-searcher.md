@@ -2,7 +2,8 @@
 title: the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 来源: 'https://github.com/ggreer/the_silver_searcher'
 日期: 2026-05-31
-分类: 命令行工具
+子分类: 命令行工具
+分类: CLI
 难度: 初级
 ---
 

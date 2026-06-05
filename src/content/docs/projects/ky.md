@@ -2,7 +2,8 @@
 title: ky — 把浏览器自带的 fetch 包成顺手工具
 来源: 'https://github.com/sindresorhus/ky'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 初级
 ---
 

@@ -2,7 +2,8 @@
 title: MinIO — S3 兼容对象存储
 来源: https://github.com/minio/minio
 日期: 2026-05-29
-分类: 数据库 / 存储
+子分类: 数据库 / 存储
+分类: 数据库
 难度: 中级
 ---
 

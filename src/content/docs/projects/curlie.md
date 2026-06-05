@@ -2,6 +2,7 @@
 title: 'curlie — curl 的能力 + HTTPie 的语法'
 来源: https://github.com/rs/curlie
 日期: 2026-05-30
+子分类: 命令行工具
 分类: CLI
 难度: 入门
 ---

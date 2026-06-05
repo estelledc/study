@@ -2,7 +2,8 @@
 title: Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 来源: 'https://github.com/fastify/fastify'
 日期: 2026-05-30
-分类: web-frameworks
+子分类: web-frameworks
+分类: 后端 API
 难度: 中级
 ---
 

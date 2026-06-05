@@ -2,7 +2,8 @@
 title: shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 来源: 'https://github.com/shadcn-ui/ui'
 日期: 2026-05-30
-分类: 前端 / 组件库
+子分类: 前端 / 组件库
+分类: 后端 API
 难度: 初级
 ---
 

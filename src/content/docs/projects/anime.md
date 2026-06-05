@@ -2,7 +2,8 @@
 title: anime.js — 一行 JS 让网页元素按时间线动起来
 来源: 'https://github.com/juliangarnier/anime'
 日期: 2026-05-30
-分类: 前端
+子分类: 前端
+分类: 后端 API
 难度: 入门
 ---
 

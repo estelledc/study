@@ -2,7 +2,8 @@
 title: TanStack Query — 数据获取与缓存库
 来源: https://github.com/TanStack/query
 日期: 2026-05-29
-分类: 数据获取
+子分类: 数据获取
+分类: 后端 API
 难度: 中级
 ---
 

@@ -2,7 +2,9 @@
 title: RabbitMQ — 用 Erlang 写的多协议消息总线
 来源: https://github.com/rabbitmq/rabbitmq-server
 日期: 2026-06-01
-分类: 数据库 / 消息队列
+分类_原始: 数据库 / 消息队列
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

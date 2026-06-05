@@ -2,7 +2,8 @@
 title: 'Coqui TTS — 多语种 TTS 工具包'
 来源: 'https://github.com/coqui-ai/TTS'
 日期: '2026-05-31'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '中级'
 ---
 

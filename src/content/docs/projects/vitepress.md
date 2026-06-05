@@ -2,7 +2,8 @@
 title: VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 来源: 'https://github.com/vuejs/vitepress'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

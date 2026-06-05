@@ -2,7 +2,8 @@
 title: react-intl — 让 React 应用按 ICU 标准说人话
 来源: 'https://github.com/formatjs/formatjs'
 日期: 2026-05-30
-分类: projects / 前端 i18n
+子分类: projects / 前端 i18n
+分类: 后端 API
 难度: 中级
 ---
 

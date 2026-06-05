@@ -2,7 +2,8 @@
 title: Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 来源: https://github.com/fabricjs/fabric.js
 日期: 2026-05-30
-分类: 前端 / Canvas
+子分类: 前端 / Canvas
+分类: 后端 API
 难度: 中级
 ---
 

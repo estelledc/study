@@ -2,7 +2,8 @@
 title: react-hook-form — input 不进 React state 也能写表单
 来源: 'https://github.com/react-hook-form/react-hook-form'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

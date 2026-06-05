@@ -2,6 +2,7 @@
 title: Chart.js — Canvas 渲染入门级图表
 来源: 'https://github.com/chartjs/Chart.js'
 日期: 2026-05-31
+子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
 ---

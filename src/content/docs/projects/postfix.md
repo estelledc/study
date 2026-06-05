@@ -2,7 +2,9 @@
 title: Postfix — 把 sendmail 拆成一群最小权限的小工
 来源: https://github.com/vdukhovni/postfix
 日期: 2026-05-31
-分类: 基础设施 / 通信
+分类_原始: 基础设施 / 通信
+子分类: 实时通信
+分类: 通信
 难度: 中级
 ---
 

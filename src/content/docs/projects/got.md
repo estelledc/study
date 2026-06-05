@@ -2,7 +2,8 @@
 title: got — Node 端 HTTP 客户端的瑞士军刀
 来源: 'https://github.com/sindresorhus/got'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

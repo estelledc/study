@@ -2,7 +2,8 @@
 title: unified — 把文档处理拆成 AST + plugin 流水线
 来源: 'https://github.com/unifiedjs/unified'
 日期: 2026-05-30
-分类: projects
+子分类: projects
+分类: 后端 API
 难度: 中级
 ---
 

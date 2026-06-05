@@ -2,7 +2,8 @@
 title: arktype — schema 长得像 TypeScript 类型本身
 来源: 'https://github.com/arktypeio/arktype'
 日期: 2026-05-30
-分类: 工具库
+子分类: 工具库
+分类: CLI
 难度: 中级
 ---
 

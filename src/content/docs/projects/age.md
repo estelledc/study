@@ -2,7 +2,9 @@
 title: age — 把"用 GPG 加密一个文件"重新做对
 来源: https://github.com/FiloSottile/age
 日期: 2026-06-01
-分类: DevOps / 文件加密
+分类_原始: DevOps / 文件加密
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: Apache ECharts — 给一个 JSON 就能画图的可视化库
 来源: 'Apache ECharts 官网与仓库, https://echarts.apache.org/ + https://github.com/apache/echarts'
 日期: 2026-05-30
-分类: projects / 数据可视化
+子分类: projects / 数据可视化
+分类: 数据可视化
 难度: 初级
 ---
 

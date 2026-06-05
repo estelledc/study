@@ -2,6 +2,7 @@
 title: Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 来源: https://github.com/universal-ctags/ctags
 日期: 2026-05-31
+子分类: 命令行工具
 分类: CLI
 难度: 入门
 ---

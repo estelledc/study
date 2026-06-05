@@ -2,7 +2,9 @@
 title: Weights & Biases — 几行 init 把指标系统代码自动入库
 来源: https://github.com/wandb/wandb
 日期: 2026-05-31
-分类: 项目
+分类_原始: 项目
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: 入门
 ---
 

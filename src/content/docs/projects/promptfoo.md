@@ -2,7 +2,8 @@
 title: promptfoo — 给 prompt 写单元测试的 CLI
 来源: promptfoo 官方文档 https://www.promptfoo.dev/docs/
 日期: 2026-05-31
-分类: AI 工程基建
+子分类: AI 工程基建
+分类: 机器学习
 难度: 入门
 ---
 

@@ -2,6 +2,7 @@
 title: 'xh — HTTPie 的 Rust 重写版'
 来源: https://github.com/ducaale/xh
 日期: 2026-05-30
+子分类: 命令行工具
 分类: CLI
 难度: 入门
 ---

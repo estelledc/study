@@ -2,7 +2,8 @@
 title: 'Silero VAD — 轻量语音活动检测'
 来源: 'https://github.com/snakers4/silero-vad'
 日期: '2026-05-31'
-分类: '数据科学与 AI'
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: '入门'
 ---
 

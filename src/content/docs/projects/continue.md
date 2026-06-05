@@ -2,7 +2,8 @@
 title: Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 来源: continuedev/continue Apache-2.0
 日期: 2026-05-29
-分类: AI 编码工具
+子分类: AI 编码工具
+分类: 机器学习
 难度: 中级
 ---
 

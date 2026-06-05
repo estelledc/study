@@ -2,7 +2,9 @@
 title: Apache Pulsar — 云原生消息队列
 来源: https://github.com/apache/pulsar
 日期: 2026-05-29
-分类: 数据库 / 消息队列
+分类_原始: 数据库 / 消息队列
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

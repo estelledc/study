@@ -2,6 +2,7 @@
 title: delta — git diff 的语法高亮分页器
 来源: https://github.com/dandavison/delta
 日期: 2026-05-31
+子分类: 命令行工具
 分类: CLI
 难度: 中级
 ---

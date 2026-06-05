@@ -2,7 +2,8 @@
 title: listr2 — 把 CLI 任务跑成一棵会自己画进度的树
 来源: 'https://github.com/listr2/listr2'
 日期: 2026-05-30
-分类: 工具库
+子分类: 工具库
+分类: CLI
 难度: 中级
 ---
 

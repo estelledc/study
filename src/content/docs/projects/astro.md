@@ -2,7 +2,8 @@
 title: Astro — 内容站点优先的 Web 框架
 来源: https://github.com/withastro/astro
 日期: 2026-05-29
-分类: UI 框架 / 静态站点
+子分类: UI 框架 / 静态站点
+分类: 后端 API
 难度: 中级
 ---
 

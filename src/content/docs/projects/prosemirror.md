@@ -2,7 +2,8 @@
 title: ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 来源: 'https://github.com/ProseMirror/prosemirror'
 日期: 2026-05-30
-分类: 编辑器
+子分类: 编辑器
+分类: CLI
 难度: 高级
 ---
 

@@ -2,7 +2,8 @@
 title: AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
 来源: toeverything/AFFiNE GitHub README
 日期: 2026-05-29
-分类: 开源工具
+子分类: 开源工具
+分类: CLI
 难度: 中级
 ---
 

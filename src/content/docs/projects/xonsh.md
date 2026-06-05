@@ -2,7 +2,8 @@
 title: xonsh — 在同一行里同时写 bash 命令和 Python 代码
 来源: https://github.com/xonsh/xonsh
 日期: 2026-05-31
-分类: 命令行工具
+子分类: 命令行工具
+分类: CLI
 难度: 入门
 ---
 

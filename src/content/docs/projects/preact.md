@@ -2,7 +2,8 @@
 title: Preact — 3KB React 替代
 来源: https://github.com/preactjs/preact
 日期: 2026-05-29
-分类: UI 框架
+子分类: UI 框架
+分类: 后端 API
 难度: 中级
 ---
 

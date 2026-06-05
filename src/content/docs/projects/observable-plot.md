@@ -2,6 +2,7 @@
 title: Observable Plot — 你说想看哪两列的关系，库自己画图
 来源: 'https://github.com/observablehq/plot'
 日期: 2026-05-30
+子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
 ---

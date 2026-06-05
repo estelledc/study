@@ -2,7 +2,8 @@
 title: MikroORM — Data Mapper Identity Map ORM
 来源: https://github.com/mikro-orm/mikro-orm
 日期: 2026-05-29
-分类: ORM
+子分类: ORM
+分类: 数据库
 难度: 中级
 ---
 

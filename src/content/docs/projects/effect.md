@@ -2,7 +2,8 @@
 title: Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 来源: 'Effect-TS/effect, MIT, v3.21+, github.com/Effect-TS/effect'
 日期: 2026-05-29
-分类: TypeScript 运行时
+子分类: TypeScript 运行时
+分类: 编译器
 难度: 高级
 ---
 

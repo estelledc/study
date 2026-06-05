@@ -2,6 +2,7 @@
 title: Chartist — 极简 SVG 图表
 来源: 'https://github.com/chartist-js/chartist'
 日期: 2026-05-31
+子分类: 数据可视化
 分类: 数据可视化
 难度: 初级
 ---

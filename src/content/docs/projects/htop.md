@@ -2,6 +2,7 @@
 title: htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 来源: https://github.com/htop-dev/htop
 日期: 2026-05-30
+子分类: 命令行工具
 分类: CLI
 难度: 入门
 ---

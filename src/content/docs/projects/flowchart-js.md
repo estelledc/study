@@ -2,6 +2,7 @@
 title: flowchart.js — 文本生成流程图
 来源: https://github.com/adrai/flowchart.js
 日期: 2026-06-01
+子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
 ---

@@ -2,7 +2,8 @@
 title: Penpot — 开源自托管的 Figma 替代
 来源: 'https://github.com/penpot/penpot'
 日期: 2026-05-30
-分类: projects / 设计工具
+子分类: projects / 设计工具
+分类: 后端 API
 难度: 中级
 ---
 

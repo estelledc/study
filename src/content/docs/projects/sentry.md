@@ -2,7 +2,9 @@
 title: Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 来源: 'https://github.com/getsentry/sentry'
 日期: 2026-05-30
-分类: observability
+分类_原始: observability
+子分类: 可观测性
+分类: 基础设施
 难度: 中级
 ---
 

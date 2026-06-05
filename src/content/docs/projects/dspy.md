@@ -2,7 +2,9 @@
 title: DSPy — 把 prompt 写成签名，让编译器替你调
 来源: 'Stanford NLP / Khattab 等, "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines", arXiv:2310.03714, 2023'
 日期: 2026-05-31
-分类: AI 工程
+分类_原始: AI 工程
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: 中级
 ---
 

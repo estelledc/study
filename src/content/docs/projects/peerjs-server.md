@@ -2,6 +2,7 @@
 title: peerjs-server — 只管握手不管传话的 WebRTC 信令服务器
 来源: https://github.com/peers/peerjs-server
 日期: 2026-05-31
+子分类: 实时通信
 分类: 通信
 难度: 入门
 ---

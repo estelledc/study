@@ -2,7 +2,8 @@
 title: micromark — markdown 解析器里那台一个字一个字读的状态机
 来源: Titus Wormer, micromark, 2020 起；https://github.com/micromark/micromark
 日期: 2026-05-30
-分类: 前端工程
+子分类: 前端工程
+分类: 后端 API
 难度: 中级
 ---
 

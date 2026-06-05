@@ -2,6 +2,7 @@
 title: Handsontable — 浏览器里的 Excel
 来源: https://github.com/handsontable/handsontable
 日期: 2026-06-01
+子分类: 数据可视化
 分类: 数据可视化
 难度: 中级
 ---

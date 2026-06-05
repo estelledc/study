@@ -2,6 +2,7 @@
 title: jq — JSON 的 sed/awk
 来源: https://github.com/jqlang/jq
 日期: 2026-05-30
+子分类: 命令行工具
 分类: CLI
 难度: 中级
 ---

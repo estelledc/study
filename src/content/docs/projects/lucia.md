@@ -2,7 +2,8 @@
 title: Lucia — 主动把自己降级为"学习资源"的 TS 认证库
 来源: 'https://github.com/lucia-auth/lucia'
 日期: 2026-05-30
-分类: 工具库
+子分类: 工具库
+分类: CLI
 难度: 中级
 ---
 

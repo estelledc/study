@@ -2,7 +2,8 @@
 title: Debezium — 把数据库的"刚刚改了"变成消息流
 来源: https://debezium.io/documentation/
 日期: 2026-05-31
-分类: 数据基建 / CDC
+子分类: 数据基建 / CDC
+分类: 数据库
 难度: 中级
 ---
 

@@ -2,6 +2,7 @@
 title: AWS Spot Instance Advisor — 看一眼就知道哪个机器不容易被收回
 来源: AWS Spot Instance Advisor (aws.amazon.com/ec2/spot/instance-advisor)
 日期: 2026-05-31
+子分类: 基础设施
 分类: 基础设施
 难度: 中级
 ---
