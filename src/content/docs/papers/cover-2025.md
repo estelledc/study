@@ -108,6 +108,11 @@ for item in cover_dataset:
 - **子问题 = 可解释评分尺**，适合 CI 回归与训练课程设计。
 - **与 Vinoground 叠加**才能覆盖时序与假设两类失败。
 - **开源与闭源模型都未饱和**，推理链仍是 2025 frontier。
+- **子问题链适合教课程学习**：先训邻接子问题，再训完整反事实主问题。
+
+论文强调「Reasoning is All You Need for Video Generalization」——若你的模型在 COVER 子问题全对、主问题仍错，优先查答案融合逻辑而非视觉编码器。
+
+官方仓库 COVER-Benchmark 提供分象限 leaderboard 模板；复现时请一并上传子问题分项 JSON，便于与论文相关系数对照。发版视频 MLLM 时建议固定 COVER 子集规模以便横向对比历史曲线。
 
 ## 延伸阅读
 
@@ -126,6 +131,18 @@ for item in cover_dataset:
 - [[qwen2-vl-2024]] —— 工业 MLLM 基线对照
 - [[videollama2-2024]] —— 开源视频模型对照
 - [[lmms-eval]] —— 潜在统一跑分
+
+> 维护提示：
+> - 反事实评测应与 [[vinoground-2024]]、[[countervqa-2025]] 三角对照，勿只报 COVER 总分。
+> - 子问题准确率与主问题相关系数是论文核心指标，复现时必须输出。
+> - 四象限分表报告：抽象/具体 × 感知/认知，禁止只给一个 accuracy。
+> - 候选队列见 `research/papers-video-understanding.md`；地图 [[vid-llm-survey-2023]]。
+> - 采帧协议、温度、模型版本需与 COVER 官方 release 对齐。
+> - 与 [[tempcompass-2024]] 时序探针组合，覆盖概念词与反事实两层。
+> - 关联 `[[slug]]` 由 regen-backlinks 维护；勿手工改 written 计数。
+> - 训练侧可读 [[countervqa-2025]] CFGPT 作为反事实增强对照。
+> - 专题阅读站 [[video-understanding]] 分阶段表含 COVER 节点。
+> - 发版回归建议 Vinoground + COVER 双探针，各 20 分钟内可跑完子集。
 
 ## 反向链接
 
