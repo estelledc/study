@@ -2,6 +2,7 @@
 title: π-演算 — 让通道名本身能在通道里流动
 来源: Milner, Parrow, Walker, "A Calculus of Mobile Processes I+II", Information and Computation 1992
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

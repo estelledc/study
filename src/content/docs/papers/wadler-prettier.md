@@ -2,6 +2,7 @@
 title: Wadler Prettier — 函数式优雅打印器
 来源: 'Wadler, "A prettier printer", 2003'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

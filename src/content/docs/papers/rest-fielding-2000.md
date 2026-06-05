@@ -2,7 +2,8 @@
 title: REST — Fielding 2000 给 Web API 写下的设计宪法
 来源: Roy T. Fielding, Architectural Styles and the Design of Network-based Software Architectures, UC Irvine PhD Dissertation, 2000
 日期: 2026-05-31
-分类: 后端
+子分类: 后端
+分类: 后端 API
 难度: 中级
 ---
 

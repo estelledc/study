@@ -2,6 +2,7 @@
 title: Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
 来源: Pat Helland, Life Beyond Distributed Transactions — An Apostate Opinion, CIDR 2007
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

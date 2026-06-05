@@ -2,7 +2,8 @@
 title: SKIP LOCKED — 让 Postgres 当任务队列用
 来源: PostgreSQL 9.5 Release Notes, 2016-01-07
 日期: 2026-05-31
-分类: 后端
+子分类: 后端
+分类: 后端 API
 难度: 中级
 ---
 

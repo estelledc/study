@@ -2,7 +2,9 @@
 title: 'Immix — 把"扫"和"搬"两种垃圾回收揉成一个'
 来源: 'Blackburn & McKinley, "Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance", PLDI 2008'
 日期: 2026-05-30
-分类: 垃圾回收
+分类_原始: 垃圾回收
+子分类: 类型与 PL 理论
+分类: 编程语言
 难度: 中级
 ---
 

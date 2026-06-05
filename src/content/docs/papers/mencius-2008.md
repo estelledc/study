@@ -2,6 +2,7 @@
 title: Mencius — 让多台服务器轮流当 Paxos 的 leader
 来源: 'Mao, Junqueira, Marzullo, "Mencius: Building Efficient Replicated State Machines for WANs", OSDI 2008'
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

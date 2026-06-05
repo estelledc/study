@@ -2,7 +2,8 @@
 title: Sillito 44 问题 — 程序员改代码时到底在问什么
 来源: 'Sillito, Murphy, De Volder. "Asking and Answering Questions during a Programming Change Task". IEEE TSE 2008'
 日期: 2026-05-30
-分类: 软件工程
+子分类: 软件工程
+分类: 其他
 难度: 中级
 ---
 

@@ -2,6 +2,7 @@
 title: Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 来源: 'Niko Matsakis et al., "Salsa: A Generic Framework for On-Demand, Incrementalized Computation", salsa-rs/salsa book + RustConf 2019; Adapton (Hammer et al., PLDI 2014) 是直接前作'
 日期: 2026-05-30
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

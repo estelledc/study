@@ -2,6 +2,7 @@
 title: Local Type Inference — 编译器只看相邻节点也能推出类型
 来源: 'Pierce & Turner, "Local Type Inference", TOPLAS 2000'
 日期: 2026-05-29
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Adapton — 增量计算
 来源: 'Hammer et al., "Adapton: Composable, Demand-Driven Incremental Computation", PLDI 2014'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

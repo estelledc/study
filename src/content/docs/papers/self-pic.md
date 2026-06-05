@@ -2,6 +2,7 @@
 title: Self / PIC — 内联缓存的诞生
 来源: 'Chambers, Ungar et al., "An Efficient Implementation of SELF, a Dynamically-Typed OO Language", OOPSLA 1989'
 日期: 2026-05-29
+子分类: 编译器
 分类: 编译器
 难度: 中级
 ---

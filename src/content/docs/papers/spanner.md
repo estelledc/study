@@ -2,7 +2,8 @@
 title: Spanner — 全球分布式 SQL 数据库
 来源: 'Corbett et al., "Spanner: Google''s Globally Distributed Database", OSDI 2012'
 日期: 2026-05-29
-分类: 分布式系统 / 数据库
+子分类: 分布式系统 / 数据库
+分类: 分布式系统
 难度: 中级
 ---
 

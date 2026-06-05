@@ -2,7 +2,8 @@
 title: LLaMA — Meta 开源大语言模型
 来源: 'Touvron et al., "LLaMA: Open and Efficient Foundation Language Models", 2023 / LLaMA 2 / LLaMA 3'
 日期: 2026-05-29
-分类: NLP / LLM
+子分类: NLP / LLM
+分类: 机器学习
 难度: 中级
 ---
 

@@ -2,6 +2,7 @@
 title: Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
 来源: Dilley et al., "Globally Distributed Content Delivery", IEEE Internet Computing, Sep/Oct 2002
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

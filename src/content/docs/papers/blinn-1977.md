@@ -2,6 +2,7 @@
 title: Blinn 1977 — 用半角向量 H 把高光算量减半
 来源: James F. Blinn, "Models of Light Reflection for Computer Synthesized Pictures", SIGGRAPH 1977 (Computer Graphics Vol.11 No.2)
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 初级
 ---

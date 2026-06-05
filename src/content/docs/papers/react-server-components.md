@@ -2,7 +2,8 @@
 title: React Server Components — 让组件自己决定在哪台机器跑
 来源: React RFC 0188, "Server Components", 2020
 日期: 2026-05-31
-分类: 前端框架
+子分类: 前端框架
+分类: 后端 API
 难度: 中级
 ---
 

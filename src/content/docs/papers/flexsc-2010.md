@@ -2,6 +2,7 @@
 title: FlexSC — 把系统调用从同步陷入改成异步队列
 来源: 'Livio Soares & Michael Stumm, "FlexSC: Flexible System Call Scheduling with Exception-Less System Calls", OSDI 2010'
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 高级
 ---

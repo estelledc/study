@@ -2,6 +2,7 @@
 title: Apollo — 让两万台机器自己决定谁跑哪个任务
 来源: 'Boutin et al., "Apollo: Scalable and Coordinated Scheduling for Cloud-Scale Computing", OSDI 2014'
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

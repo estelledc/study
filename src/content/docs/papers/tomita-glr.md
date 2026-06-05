@@ -2,6 +2,7 @@
 title: Tomita GLR — 让 LR 解析器扛得住歧义文法
 来源: Masaru Tomita, "An Efficient Augmented-Context-Free Parsing Algorithm", Computational Linguistics 1987（J87-1004，扩自 1985 CMU 博士论文）
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

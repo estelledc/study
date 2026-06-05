@@ -2,6 +2,7 @@
 title: Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 来源: 'Cuoq, Kirchner, Kosmatov, Prevosto, Signoles, Yakobowski, "Frama-C: A Software Analysis Perspective", SEFM 2012'
 日期: 2026-05-31
+子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
 ---

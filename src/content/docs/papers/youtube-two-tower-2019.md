@@ -2,6 +2,7 @@
 title: YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
 来源: Yi et al., "Sampling-Bias-Corrected Neural Modeling for Large Corpus Item Recommendations", RecSys 2019
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 中级
 ---

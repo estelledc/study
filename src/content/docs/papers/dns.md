@@ -2,6 +2,7 @@
 title: DNS — 把全球域名解析切成一棵可分布维护的树
 来源: 'Paul Mockapetris, "Domain Names - Concepts and Facilities / Implementation and Specification", RFC 1034 + RFC 1035, 1987'
 日期: 2026-05-30
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

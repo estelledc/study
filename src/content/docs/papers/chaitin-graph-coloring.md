@@ -2,7 +2,9 @@
 title: Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
 来源: Chaitin, "Register Allocation & Spilling via Graph Coloring", SIGPLAN 1982
 日期: 2026-05-30
-分类: 编译器
+分类_原始: 编译器
+子分类: 类型与 PL 理论
+分类: 编程语言
 难度: 中级
 ---
 

@@ -2,6 +2,7 @@
 title: Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
 来源: 'Baumann et al., "The Multikernel: A new OS architecture for scalable multicore systems", SOSP 2009'
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

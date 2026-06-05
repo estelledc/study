@@ -2,6 +2,7 @@
 title: NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 来源: 'Cimatti, Clarke, Giunchiglia et al., "NuSMV 2: An OpenSource Tool for Symbolic Model Checking", CAV 2002'
 日期: 2026-05-30
+子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
 ---

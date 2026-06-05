@@ -2,6 +2,7 @@
 title: LLVM — 模块化编译器框架
 来源: 'Lattner & Adve, "LLVM: A Compilation Framework for Lifelong Program Analysis & Transformation", CGO 2004'
 日期: 2026-05-29
+子分类: 编译器
 分类: 编译器
 难度: 中级
 ---

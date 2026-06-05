@@ -2,6 +2,7 @@
 title: TimelineJS — 一张 Google Sheet 直接变成交互时间轴
 来源: NUKnightLab/TimelineJS3 (GitHub, 10k+ stars), Zach Wise 2012
 日期: 2026-06-01
+子分类: 基础设施
 分类: 基础设施
 难度: 入门
 ---

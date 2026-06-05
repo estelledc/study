@@ -2,6 +2,7 @@
 title: MinHash — 用最小哈希值估算两个集合的重叠度
 来源: 'Broder, "On the Resemblance and Containment of Documents", SEQUENCES 1997'
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿
 来源: Karis (Epic), "High Quality Temporal Anti-Aliasing", SIGGRAPH 2014 Advances Course
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

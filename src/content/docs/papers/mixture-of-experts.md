@@ -2,7 +2,8 @@
 title: Mixture of Experts (MoE)
 来源: 'Shazeer et al., "Outrageously Large Neural Networks: The Sparsely-Gated MoE Layer", 2017 / Switch Transformer 2021 / Mixtral 2024'
 日期: 2026-05-29
-分类: NLP / 深度学习
+子分类: NLP / 深度学习
+分类: 机器学习
 难度: 中级
 ---
 

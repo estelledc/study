@@ -2,6 +2,7 @@
 title: FAISS 2017 — 用 GPU 在十亿向量里找最近邻
 来源: Johnson, Douze & Jégou, "Billion-scale Similarity Search with GPUs", arXiv 1702.08734 (2017)
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

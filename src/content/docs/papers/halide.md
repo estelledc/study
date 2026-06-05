@@ -2,6 +2,7 @@
 title: Halide — 把"算什么"和"怎么算"分开写
 来源: 'Ragan-Kelley et al., "Halide: A Language and Compiler for Optimizing Parallelism, Locality, and Recomputation in Image Processing Pipelines", PLDI 2013'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

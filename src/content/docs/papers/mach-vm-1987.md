@@ -2,6 +2,7 @@
 title: Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦
 来源: 'Rashid et al., "Machine-Independent Virtual Memory Management for Paged Uniprocessor and Multiprocessor Architectures", IEEE TC, Aug 1988'
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

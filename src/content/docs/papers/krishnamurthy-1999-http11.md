@@ -2,6 +2,7 @@
 title: Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么
 来源: Krishnamurthy, Mogul, Kristol, "Key Differences between HTTP/1.0 and HTTP/1.1", WWW8 1999
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 入门
 ---

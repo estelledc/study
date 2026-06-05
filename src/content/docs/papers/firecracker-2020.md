@@ -2,6 +2,7 @@
 title: Firecracker 2020 — 给 serverless 量身定做的极简 microVM
 来源: 'Agache et al., "Firecracker: Lightweight Virtualization for Serverless Applications", NSDI 2020'
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

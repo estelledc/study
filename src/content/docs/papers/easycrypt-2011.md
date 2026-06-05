@@ -2,6 +2,7 @@
 title: EasyCrypt — 让密码学家的安全证明能被机器自动检查
 来源: Barthe, Grégoire, Heraud & Zanella-Béguelin, "Computer-Aided Security Proofs for the Working Cryptographer", CRYPTO 2011
 日期: 2026-05-31
+子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
 ---

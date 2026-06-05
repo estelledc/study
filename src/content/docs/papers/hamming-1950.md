@@ -2,7 +2,8 @@
 title: Hamming 纠错码
 来源: 'Richard Hamming, "Error Detecting and Error Correcting Codes", Bell System Technical Journal, 1950'
 日期: 2026-05-29
-分类: 信息论
+子分类: 信息论
+分类: 机器学习
 难度: 中级
 ---
 

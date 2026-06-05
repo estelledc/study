@@ -2,6 +2,7 @@
 title: Product Quantization — 把向量切碎再压成几个字节
 来源: Jégou, Douze, Schmid, "Product Quantization for Nearest Neighbor Search", IEEE TPAMI 2011
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

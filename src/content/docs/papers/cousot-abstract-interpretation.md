@@ -2,6 +2,7 @@
 title: Cousot 抽象解释 — 给静态分析一套统一数学框架
 来源: 'Cousot & Cousot, "Abstract Interpretation: A Unified Lattice Model for Static Analysis of Programs by Construction or Approximation of Fixpoints", POPL 1977'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

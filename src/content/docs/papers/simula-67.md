@@ -2,6 +2,7 @@
 title: SIMULA 67 — 面向对象的诞生
 来源: Dahl & Nygaard, "SIMULA 67 Common Base Language", 1968
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

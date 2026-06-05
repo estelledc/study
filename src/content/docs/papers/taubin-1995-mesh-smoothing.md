@@ -2,6 +2,7 @@
 title: Taubin 1995 — 把网格平滑当成低通滤波
 来源: Gabriel Taubin, "A Signal Processing Approach To Fair Surface Design", SIGGRAPH 1995
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

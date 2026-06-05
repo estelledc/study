@@ -2,6 +2,7 @@
 title: LSM-tree 与 RocksDB — 把所有写都变成顺序写
 来源: 'O''Neil et al., "The Log-Structured Merge-Tree", Acta Informatica 1996; Dong et al., "Optimizing Space Amplification in RocksDB", CIDR 2017'
 日期: 2026-05-30
+子分类: 数据库
 分类: 数据库
 难度: 中级
 ---

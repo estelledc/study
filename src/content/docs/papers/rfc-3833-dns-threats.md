@@ -2,6 +2,7 @@
 title: RFC 3833 — IETF 第一次正式承认 DNS 不安全
 来源: 'Derek Atkins and Rob Austein, "Threat Analysis of the Domain Name System (DNS)", IETF RFC 3833, 2004-08'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

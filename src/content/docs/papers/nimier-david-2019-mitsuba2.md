@@ -2,6 +2,7 @@
 title: Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
 来源: 'Nimier-David, Vicini, Zeltner, Jakob, "Mitsuba 2: A Retargetable Forward and Inverse Renderer", SIGGRAPH Asia 2019'
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 高级
 ---

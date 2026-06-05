@@ -2,6 +2,7 @@
 title: McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
 来源: 'Kenneth L. McMillan, "Symbolic Model Checking", PhD Thesis, Carnegie Mellon University 1993'
 日期: 2026-05-30
+子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
 ---

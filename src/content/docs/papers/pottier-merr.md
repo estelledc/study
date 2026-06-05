@@ -2,6 +2,7 @@
 title: Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 来源: 'François Pottier, "Reachability and Error Diagnosis in LR(1) Parsers", CC 2016'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

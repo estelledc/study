@@ -2,6 +2,7 @@
 title: Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 来源: 'Neil D. Jones, Carsten K. Gomard, Peter Sestoft, "Partial Evaluation and Automatic Program Generation", Prentice Hall, 1993'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

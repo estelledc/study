@@ -2,7 +2,8 @@
 title: REALM — 把检索器和 BERT 一起预训练的第一篇论文
 来源: 'Guu et al. "REALM: Retrieval-Augmented Language Model Pre-Training". ICML 2020'
 日期: 2026-05-30
-分类: 自然语言处理
+子分类: 自然语言处理
+分类: NLP
 难度: 中级
 ---
 

@@ -2,6 +2,7 @@
 title: Eswaran 1976 — 串行化与谓词锁的源头
 来源: 'Eswaran, Gray, Lorie, Traiger, "The Notions of Consistency and Predicate Locks in a Database System", CACM 1976'
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

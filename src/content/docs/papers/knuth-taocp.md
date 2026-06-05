@@ -2,7 +2,8 @@
 title: Knuth TAOCP — 计算机程序设计艺术
 来源: 'Donald Knuth, "The Art of Computer Programming", 1968-（持续撰写中）'
 日期: 2026-05-29
-分类: 算法
+子分类: 算法
+分类: 编程语言
 难度: 中级
 ---
 

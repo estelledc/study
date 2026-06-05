@@ -2,6 +2,7 @@
 title: Kademlia — 用 XOR 当距离的 P2P 路由表
 来源: 'Maymounkov & Mazières, "Kademlia: A Peer-to-peer Information System Based on the XOR Metric", IPTPS 2002'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

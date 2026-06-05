@@ -2,7 +2,8 @@
 title: MLflow — 给机器学习实验装上"记账本和身份证"
 来源: Zaharia et al., "Accelerating the Machine Learning Lifecycle with MLflow", Databricks 2018
 日期: 2026-05-31
-分类: MLOps / ML 平台
+子分类: MLOps / ML 平台
+分类: 机器学习
 难度: 中级
 ---
 

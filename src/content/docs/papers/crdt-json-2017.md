@@ -2,6 +2,7 @@
 title: 'CRDT JSON 2017 — 给嵌套 JSON 一套有数学证明的合并算法'
 来源: 'Kleppmann & Beresford, "A Conflict-Free Replicated JSON Datatype", IEEE TPDS 2017'
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

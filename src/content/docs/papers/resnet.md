@@ -2,7 +2,8 @@
 title: ResNet — 残差连接
 来源: 'He et al., "Deep Residual Learning for Image Recognition", CVPR 2016'
 日期: 2026-05-29
-分类: 计算机视觉 / 深度学习
+子分类: 计算机视觉 / 深度学习
+分类: 机器学习
 难度: 中级
 ---
 

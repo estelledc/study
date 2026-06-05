@@ -2,7 +2,8 @@
 title: Kafka — 把消息系统降维成只追加的日志文件
 来源: 'Kreps, Narkhede, Rao. "Kafka: a Distributed Messaging System for Log Processing", NetDB 2011'
 日期: 2026-05-30
-分类: databases / 分布式系统
+子分类: databases / 分布式系统
+分类: 分布式系统
 难度: 中级
 ---
 

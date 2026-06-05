@@ -2,6 +2,7 @@
 title: Separation Logic — 把 Hoare 逻辑扩到带指针的程序
 来源: 'John C. Reynolds, "Separation Logic: A Logic for Shared Mutable Data Structures", LICS 2002'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

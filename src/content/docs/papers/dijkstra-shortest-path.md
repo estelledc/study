@@ -2,7 +2,8 @@
 title: Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 来源: 'Edsger W. Dijkstra, "A Note on Two Problems in Connexion with Graphs", Numerische Mathematik 1, 1959'
 日期: 2026-05-30
-分类: 算法
+子分类: 算法
+分类: 编程语言
 难度: 初级
 ---
 

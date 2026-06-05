@@ -2,6 +2,7 @@
 title: Borg — Google 把一万台机器假装成一台
 来源: 'Verma et al., "Large-scale cluster management at Google with Borg", EuroSys 2015'
 日期: 2026-05-30
+子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
 ---

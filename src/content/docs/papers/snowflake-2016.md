@@ -2,6 +2,7 @@
 title: Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 来源: 'Dageville et al., "The Snowflake Elastic Data Warehouse", SIGMOD 2016'
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

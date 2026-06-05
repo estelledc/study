@@ -2,6 +2,7 @@
 title: Standard ML — 让编译器替你把类型补完
 来源: Milner, Tofte, Harper, "The Definition of Standard ML", MIT Press 1990
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

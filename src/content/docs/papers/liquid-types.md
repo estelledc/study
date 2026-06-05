@@ -2,6 +2,7 @@
 title: Liquid Types — 让编译器自己推导出"哪些值才合法"
 来源: 'Rondon, Kawaguchi, Jhala, "Liquid Types", PLDI 2008'
 日期: 2026-05-29
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

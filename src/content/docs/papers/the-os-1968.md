@@ -2,6 +2,7 @@
 title: THE 1968 — Dijkstra 用分层 + 信号量造出第一个可证明的 OS
 来源: Dijkstra, "The Structure of the THE-Multiprogramming System", CACM 1968
 日期: 2026-05-31
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

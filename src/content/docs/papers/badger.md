@@ -2,7 +2,8 @@
 title: BadgerDB — 把键和值分开存的 Go 原生 KV 库
 来源: 'Lu et al., "WiscKey: Separating Keys from Values in SSD-Conscious Storage", FAST 2016 / Dgraph Labs Badger 实现'
 日期: 2026-05-31
-分类: 存储系统
+子分类: 存储系统
+分类: 数据库
 难度: 中级
 ---
 

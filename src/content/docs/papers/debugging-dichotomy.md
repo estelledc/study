@@ -2,7 +2,8 @@
 title: Debugging Dichotomy — 程序员真实 debug 行为分两轨
 来源: 'Beller, Spruit, Spinellis, Zaidman, "On the Dichotomy of Debugging Behavior Among Programmers", ICSE 2018'
 日期: 2026-05-29
-分类: 软件工程实证
+子分类: 软件工程实证
+分类: 其他
 难度: 中级
 ---
 

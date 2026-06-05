@@ -2,6 +2,7 @@
 title: Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 来源: 'Acar, Blelloch & Harper, "Adaptive Functional Programming", POPL 2002'
 日期: 2026-05-30
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

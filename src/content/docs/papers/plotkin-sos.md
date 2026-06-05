@@ -2,6 +2,7 @@
 title: Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 来源: 'Gordon D. Plotkin, "A Structural Approach to Operational Semantics", DAIMI FN-19, Aarhus University 1981 (JLAP 2004)'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

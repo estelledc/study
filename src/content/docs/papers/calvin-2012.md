@@ -2,6 +2,7 @@
 title: Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 来源: 'Thomson et al., "Calvin: Fast Distributed Transactions for Partitioned Database Systems", SIGMOD 2012'
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 高级
 ---

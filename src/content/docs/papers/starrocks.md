@@ -2,7 +2,8 @@
 title: StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP
 来源: 'Lin et al., "StarRocks: A Modern OLAP Database for Real-Time Analytics", VLDB 2024'
 日期: 2026-05-31
-分类: infrastructure
+子分类: infrastructure
+分类: 基础设施
 难度: 中级
 ---
 

@@ -2,6 +2,7 @@
 title: Bayou — 离线先改本地，再回来和别人合并
 来源: Terry et al., "Managing Update Conflicts in Bayou", SOSP 1995
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

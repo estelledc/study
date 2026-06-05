@@ -2,6 +2,7 @@
 title: McCarthy LISP 1960
 来源: 'John McCarthy, "Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I", Communications of the ACM, 1960'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

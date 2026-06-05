@@ -2,6 +2,7 @@
 title: Karger 1997 一致性哈希 — 加机器不用全员搬家
 来源: Karger et al., "Consistent Hashing and Random Trees", STOC 1997
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

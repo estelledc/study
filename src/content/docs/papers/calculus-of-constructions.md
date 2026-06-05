@@ -2,6 +2,7 @@
 title: Calculus of Constructions — 让程序和数学证明共用一种语言
 来源: 'Thierry Coquand & Gérard Huet, "The Calculus of Constructions", Information and Computation 1988'
 日期: 2026-05-29
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

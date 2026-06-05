@@ -2,6 +2,7 @@
 title: Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 来源: 'Dana Scott, Christopher Strachey. "Toward a Mathematical Semantics for Computer Languages". Oxford PRG-6, 1971'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

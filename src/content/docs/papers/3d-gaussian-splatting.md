@@ -2,7 +2,8 @@
 title: 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 来源: 'Kerbl, Kopanas, Leimkühler & Drettakis, "3D Gaussian Splatting for Real-Time Radiance Field Rendering", SIGGRAPH 2023'
 日期: 2026-05-29
-分类: 计算机图形 / 三维重建
+子分类: 计算机图形 / 三维重建
+分类: 图形学
 难度: 中级
 ---
 

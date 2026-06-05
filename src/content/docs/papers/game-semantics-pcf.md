@@ -2,6 +2,7 @@
 title: 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 来源: 'Abramsky, Jagadeesan & Malacaria, "Full Abstraction for PCF", Information and Computation 163, 2000'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

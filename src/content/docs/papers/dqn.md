@@ -2,7 +2,8 @@
 title: DQN — Deep Q-Network
 来源: 'Mnih et al., "Human-level Control through Deep Reinforcement Learning", Nature 2015'
 日期: 2026-05-29
-分类: 强化学习
+子分类: 强化学习
+分类: 机器学习
 难度: 中级
 ---
 

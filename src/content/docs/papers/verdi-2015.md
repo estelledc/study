@@ -2,6 +2,7 @@
 title: Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架
 来源: 'Wilcox, Woos, Panchekha, Tatlock, Wang, Ernst, Anderson, "Verdi: A Framework for Implementing and Formally Verifying Distributed Systems", PLDI 2015'
 日期: 2026-05-31
+子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
 ---

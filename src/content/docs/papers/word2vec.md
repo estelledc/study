@@ -2,6 +2,7 @@
 title: Word2Vec — 词向量奠基
 来源: 'Mikolov et al., "Efficient Estimation of Word Representations in Vector Space", 2013'
 日期: 2026-05-29
+子分类: NLP
 分类: NLP
 难度: 中级
 ---

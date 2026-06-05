@@ -2,6 +2,7 @@
 title: Fast Paxos — 给 Paxos 加一条乐观快车道
 来源: Leslie Lamport, "Fast Paxos", Distributed Computing (Springer), 2006（MSR-TR-2005-112）
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

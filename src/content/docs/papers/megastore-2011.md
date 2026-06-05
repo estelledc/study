@@ -2,6 +2,7 @@
 title: Megastore — 把数据切成"小数据库"换跨地域同步复制
 来源: 'Baker et al., "Megastore: Providing Scalable, Highly Available Storage for Interactive Services", CIDR 2011'
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

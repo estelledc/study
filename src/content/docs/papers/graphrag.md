@@ -2,7 +2,8 @@
 title: GraphRAG — 微软的知识图谱 + RAG
 来源: 'Edge et al., "From Local to Global: A Graph RAG Approach to Query-Focused Summarization", Microsoft 2024'
 日期: 2026-05-29
-分类: AI / NLP
+子分类: AI / NLP
+分类: 机器学习
 难度: 中级
 ---
 

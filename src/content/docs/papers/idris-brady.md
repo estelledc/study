@@ -2,6 +2,7 @@
 title: Idris — 让依赖类型从证明助理变成通用编程语言
 来源: 'Edwin Brady, "Idris, a General-Purpose Dependently Typed Programming Language: Design and Implementation", JFP 2013'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

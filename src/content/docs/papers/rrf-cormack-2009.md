@@ -2,7 +2,8 @@
 title: RRF — 把多个搜索结果列表合并成一个的最简单办法
 来源: Cormack, Clarke & Buettcher, "Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods", SIGIR 2009
 日期: 2026-05-31
-分类: 数据检索
+子分类: 数据检索
+分类: 信息检索
 难度: 入门
 ---
 

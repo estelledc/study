@@ -2,6 +2,7 @@
 title: HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 来源: 'RFC 7540, "Hypertext Transfer Protocol Version 2 (HTTP/2)", IETF HTTPbis Working Group, 2015-05；RFC 9113 修订, 2022-06'
 日期: 2026-05-30
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快
 来源: 'Venkata N. Padmanabhan, Jeffrey C. Mogul, "Improving HTTP Latency", Computer Networks and ISDN Systems Vol.28, Dec 1995（同名早期版 WWW 1994 大会）'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 入门
 ---

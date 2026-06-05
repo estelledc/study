@@ -2,7 +2,8 @@
 title: QUIC — 把可靠传输从内核搬到用户空间
 来源: 'Iyengar & Thomson, "QUIC: A UDP-Based Multiplexed and Secure Transport", RFC 9000, IETF 2021'
 日期: 2026-05-30
-分类: 计算机网络
+子分类: 计算机网络
+分类: 网络协议
 难度: 中级
 ---
 

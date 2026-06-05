@@ -2,7 +2,8 @@
 title: SWE-bench — 真实 GitHub Issue 评测
 来源: 'Jimenez et al., "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?", ICLR 2024'
 日期: 2026-05-29
-分类: AI / 软件工程
+子分类: AI / 软件工程
+分类: 机器学习
 难度: 中级
 ---
 

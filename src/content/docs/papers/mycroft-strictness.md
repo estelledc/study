@@ -2,6 +2,7 @@
 title: Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 来源: 'Alan Mycroft, "The Theory and Practice of Transforming Call-by-need into Call-by-value", 4th International Symposium on Programming, LNCS 83, Springer 1980'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

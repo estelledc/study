@@ -2,7 +2,8 @@
 title: Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
 来源: 'Parnin & Rugaber, "Resumption Strategies for Interrupted Programming Tasks", ICPC 2009'
 日期: 2026-05-30
-分类: 软件工程
+子分类: 软件工程
+分类: 其他
 难度: 中级
 ---
 

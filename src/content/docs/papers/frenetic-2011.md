@@ -2,6 +2,7 @@
 title: Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 来源: 'Foster 等, "Frenetic: A Network Programming Language", ICFP 2011'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

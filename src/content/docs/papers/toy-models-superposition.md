@@ -2,7 +2,8 @@
 title: 'Toy Models of Superposition'
 来源: 'Elhage et al., "Toy Models of Superposition", Anthropic Transformer Circuits 2022'
 日期: 2026-05-29
-分类: AI 可解释性
+子分类: AI 可解释性
+分类: 机器学习
 难度: 中级
 ---
 

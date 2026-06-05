@@ -2,7 +2,8 @@
 title: Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组
 来源: Erdal Arıkan, "Channel Polarization", IEEE TIT 2009
 日期: 2026-05-29
-分类: 信息论
+子分类: 信息论
+分类: 机器学习
 难度: 中级
 ---
 

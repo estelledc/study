@@ -2,6 +2,7 @@
 title: Perlin Noise — 让计算机生成的图像不再有"机器味"
 来源: Ken Perlin, "An Image Synthesizer", SIGGRAPH 1985
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

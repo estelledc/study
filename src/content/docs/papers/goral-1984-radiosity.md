@@ -2,6 +2,7 @@
 title: Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学
 来源: Cindy M. Goral, Kenneth E. Torrance, Donald P. Greenberg, Bennett Battaile, "Modeling the Interaction of Light Between Diffuse Surfaces", SIGGRAPH 1984
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
 ---

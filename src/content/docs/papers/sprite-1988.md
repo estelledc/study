@@ -2,6 +2,7 @@
 title: Sprite 1988 — 把一屋子工作站伪装成一台大主机
 来源: Ousterhout et al., "The Sprite Network Operating System", IEEE Computer, Feb 1988
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

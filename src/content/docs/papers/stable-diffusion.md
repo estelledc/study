@@ -2,7 +2,8 @@
 title: Stable Diffusion — 开源文生图引爆
 来源: 'Rombach et al., "High-Resolution Image Synthesis with Latent Diffusion Models", CVPR 2022'
 日期: 2026-05-29
-分类: 生成模型
+子分类: 生成模型
+分类: 机器学习
 难度: 中级
 ---
 

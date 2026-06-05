@@ -2,6 +2,7 @@
 title: 代数效应（Algebraic Effects）
 来源: 'Plotkin & Pretnar, "Handlers of Algebraic Effects", ESOP 2009'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

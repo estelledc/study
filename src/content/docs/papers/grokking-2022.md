@@ -2,6 +2,7 @@
 title: Grokking — 训练 loss 早归零，几千步后才突然学会
 来源: 'Power et al., "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets", arXiv 2201.02177, 2022'
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

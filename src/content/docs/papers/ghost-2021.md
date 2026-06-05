@@ -2,6 +2,7 @@
 title: ghOSt — 把 Linux 调度策略搬到用户态去写
 来源: 'Humphries et al., "ghOSt: Fast & Flexible User-Space Delegation of Linux Scheduling", SOSP 2021'
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

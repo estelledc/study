@@ -2,6 +2,7 @@
 title: Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)
 来源: 'Shazeer & Stern, "Adafactor: Adaptive Learning Rates with Sublinear Memory Cost", ICML 2018'
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

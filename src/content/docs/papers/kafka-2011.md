@@ -2,7 +2,9 @@
 title: Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 来源: 'Kreps, Narkhede, Rao. "Kafka: a Distributed Messaging System for Log Processing", NetDB 2011'
 日期: 2026-05-30
-分类: databases / 分布式系统
+分类_原始: databases / 分布式系统
+子分类: 存储与查询
+分类: 数据库
 难度: 中级
 ---
 

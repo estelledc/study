@@ -2,6 +2,7 @@
 title: MapReduce — 用户只写两个函数，框架替你扛千节点
 来源: 'Jeffrey Dean, Sanjay Ghemawat, "MapReduce: Simplified Data Processing on Large Clusters", OSDI 2004'
 日期: 2026-05-30
+子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
 ---

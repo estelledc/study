@@ -2,7 +2,8 @@
 title: MAE — Masked Autoencoders
 来源: 'He et al., "Masked Autoencoders Are Scalable Vision Learners", CVPR 2022'
 日期: 2026-05-29
-分类: 计算机视觉 / 自监督
+子分类: 计算机视觉 / 自监督
+分类: 机器学习
 难度: 中级
 ---
 

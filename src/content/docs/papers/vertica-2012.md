@@ -2,6 +2,7 @@
 title: Vertica 2012 — C-Store 论文走向产品的七年改造账
 来源: 'Lamb, Fuller, Varadarajan, et al. "The Vertica Analytic Database: C-Store 7 Years Later", VLDB 2012'
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

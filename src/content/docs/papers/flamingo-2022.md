@@ -2,6 +2,7 @@
 title: Flamingo — 让冻结的大模型学会看图，几张样例就上手
 来源: 'Alayrac et al., "Flamingo: a Visual Language Model for Few-Shot Learning", NeurIPS 2022'
 日期: 2026-05-31
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

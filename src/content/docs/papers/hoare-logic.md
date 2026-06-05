@@ -2,7 +2,8 @@
 title: Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 来源: 'C.A.R. Hoare, "An Axiomatic Basis for Computer Programming", CACM 1969'
 日期: 2026-05-30
-分类: 编程语言 / 形式化方法
+子分类: 编程语言 / 形式化方法
+分类: 编程语言
 难度: 中级
 ---
 

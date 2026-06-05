@@ -2,6 +2,7 @@
 title: Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完
 来源: 'Adrian et al., "Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice", CCS 2015'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

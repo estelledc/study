@@ -2,7 +2,8 @@
 title: Asterisk — 把企业总机做成一台 Linux 服务器
 来源: Asterisk 开源项目 (https://github.com/asterisk/asterisk)，Mark Spencer 1999 起
 日期: 2026-05-31
-分类: 通信 / 开源 PBX
+子分类: 通信 / 开源 PBX
+分类: 通信
 难度: 入门
 ---
 

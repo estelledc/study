@@ -2,7 +2,9 @@
 title: Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
 来源: 'Anonymous, "Zombie Agents: Persistent Control of Self-Evolving LLM Agents via Self-Reinforcing Injections", arXiv 2026'
 日期: 2026-06-01
-分类: agents
+分类_原始: agents
+子分类: 智能体与 LLM
+分类: Agent
 难度: 中级
 ---
 

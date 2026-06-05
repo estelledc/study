@@ -2,6 +2,7 @@
 title: Dynamo — 让购物车永远能写入的分布式存储
 来源: 'DeCandia et al., "Dynamo: Amazon''s Highly Available Key-value Store", SOSP 2007'
 日期: 2026-05-29
+子分类: 分布式系统
 分类: 分布式系统
 难度: 高级
 ---

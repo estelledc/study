@@ -2,6 +2,7 @@
 title: PageRank — 用随机游走给整个网络的页面打分
 来源: 'Page, Brin, Motwani, Winograd, "The PageRank Citation Ranking: Bringing Order to the Web", Stanford Tech Report, 1998'
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 入门
 ---

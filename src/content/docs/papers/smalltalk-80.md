@@ -2,6 +2,7 @@
 title: Smalltalk-80
 来源: 'Adele Goldberg & David Robson, "Smalltalk-80: The Language and its Implementation", Xerox PARC 1983'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

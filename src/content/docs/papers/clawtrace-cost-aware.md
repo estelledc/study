@@ -2,7 +2,9 @@
 title: ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
 来源: 'Anonymous, "ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation", arXiv 2026'
 日期: 2026-06-01
-分类: agents
+分类_原始: agents
+子分类: 智能体与 LLM
+分类: Agent
 难度: 中级
 ---
 

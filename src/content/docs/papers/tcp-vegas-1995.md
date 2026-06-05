@@ -2,7 +2,9 @@
 title: TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
 来源: 'Brakmo & Peterson, "TCP Vegas: New Techniques for Congestion Detection and Avoidance", IEEE JSAC, Feb 1995'
 日期: 2026-06-01
-分类: 网络
+分类_原始: 网络
+子分类: 网络协议
+分类: 网络协议
 难度: 中级
 ---
 

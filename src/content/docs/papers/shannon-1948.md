@@ -2,7 +2,8 @@
 title: Shannon 1948 — 信息论的诞生
 来源: 'Claude Shannon, "A Mathematical Theory of Communication", Bell System Technical Journal, 1948'
 日期: 2026-05-29
-分类: 信息论
+子分类: 信息论
+分类: 机器学习
 难度: 中级
 ---
 

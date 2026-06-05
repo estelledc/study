@@ -2,7 +2,8 @@
 title: Optuna — 让超参搜索像写普通 Python 代码一样自然
 来源: 'Akiba et al., "Optuna: A Next-generation Hyperparameter Optimization Framework", KDD 2019'
 日期: 2026-05-31
-分类: 机器学习 / 超参优化
+子分类: 机器学习 / 超参优化
+分类: 机器学习
 难度: 中级
 ---
 

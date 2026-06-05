@@ -2,6 +2,7 @@
 title: Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 来源: 'Lieberman & Hewitt, "A Real-Time Garbage Collector Based on the Lifetimes of Objects", CACM 1983'
 日期: 2026-05-30
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

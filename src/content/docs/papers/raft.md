@@ -2,6 +2,7 @@
 title: Raft — 易理解的共识算法
 来源: 'Ongaro & Ousterhout, "In Search of an Understandable Consensus Algorithm", USENIX ATC 2014'
 日期: 2026-05-29
+子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
 ---

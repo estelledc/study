@@ -2,6 +2,7 @@
 title: Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 来源: 'John C. Reynolds, "Definitional Interpreters for Higher-Order Programming Languages", ACM National Conf. 1972 / HOSC 1998'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: End-to-End Arguments — 把功能尽量推到端上做
 来源: Saltzer / Reed / Clark, "End-to-End Arguments in System Design", ACM TOCS 1984
 日期: 2026-05-31
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动
 来源: 'Liu, Li, Hall, Liang, Ma, "Sophia: A Scalable Stochastic Second-order Optimizer for Language Model Pre-training", arXiv 2305.14342 / ICLR 2024'
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

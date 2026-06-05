@@ -2,6 +2,7 @@
 title: Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 来源: Roy T. Fielding, Architectural Styles and the Design of Network-based Software Architectures, UC Irvine PhD Dissertation, 2000
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

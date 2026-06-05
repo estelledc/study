@@ -2,6 +2,7 @@
 title: WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话
 来源: Fette & Melnikov, "The WebSocket Protocol", IETF RFC 6455, 2011
 日期: 2026-05-31
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

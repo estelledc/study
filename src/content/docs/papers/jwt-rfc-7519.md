@@ -2,7 +2,8 @@
 title: JWT RFC 7519 — 把身份证装进一段可校验的字符串
 来源: M. Jones, J. Bradley, N. Sakimura, "RFC 7519 JSON Web Token", IETF, 2015
 日期: 2026-05-31
-分类: 后端
+子分类: 后端
+分类: 后端 API
 难度: 入门
 ---
 

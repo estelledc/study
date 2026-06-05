@@ -2,7 +2,8 @@
 title: Stripe Rate Limiters — 工业级令牌桶长什么样
 来源: Paul Tarjan, Stripe Engineering Blog, 2017（持续更新）
 日期: 2026-05-31
-分类: 后端工程
+子分类: 后端工程
+分类: 后端 API
 难度: 中级
 ---
 

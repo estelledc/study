@@ -2,7 +2,8 @@
 title: AES Rijndael 对称分组密码
 来源: 'Daemen & Rijmen, "AES Proposal: Rijndael", NIST AES competition 1998 → FIPS-197 (2001)'
 日期: 2026-05-29
-分类: 密码学
+子分类: 密码学
+分类: 安全与隐私
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: λ-演算 — 用三条规则表达所有可计算函数
 来源: Alonzo Church, "An Unsolvable Problem of Elementary Number Theory", American Journal of Mathematics, 1936
 日期: 2026-05-29
-分类: 编程语言 / 计算理论
+子分类: 编程语言 / 计算理论
+分类: 编程语言
 难度: 中级
 ---
 

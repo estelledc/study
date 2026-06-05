@@ -2,6 +2,7 @@
 title: Selinger 1979 — 基于代价的查询优化
 来源: 'Selinger et al., "Access Path Selection in a Relational Database Management System", SIGMOD 1979'
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

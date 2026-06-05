@@ -2,6 +2,7 @@
 title: Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 来源: 'Biere, Cimatti, Clarke, Zhu, "Symbolic Model Checking without BDDs", TACAS 1999'
 日期: 2026-05-30
+子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
 ---

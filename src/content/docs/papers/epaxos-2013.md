@@ -2,6 +2,7 @@
 title: EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐
 来源: Moraru, Andersen, Kaminsky, "There Is More Consensus in Egalitarian Parliaments", SOSP 2013
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
 ---

@@ -2,6 +2,7 @@
 title: Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"
 来源: Maron & Kuhns, "On Relevance, Probabilistic Indexing and Information Retrieval", JACM 1960
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 中级
 ---

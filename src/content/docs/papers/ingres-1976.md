@@ -2,6 +2,7 @@
 title: INGRES 1976 — Berkeley 平行实现的关系数据库
 来源: 'Stonebraker, Wong, Kreps, Held, "The Design and Implementation of INGRES", ACM TODS 1976'
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

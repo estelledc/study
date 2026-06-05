@@ -2,6 +2,7 @@
 title: Double Descent — 模型越大越准，过参数化时代的反常识曲线
 来源: 'Belkin, Hsu, Ma, Mandal, "Reconciling modern machine-learning practice and the classical bias-variance trade-off", PNAS 2019 (arXiv 1812.11118)'
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

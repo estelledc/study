@@ -2,6 +2,7 @@
 title: RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
 来源: 'Dong et al., "Optimizing Space Amplification in RocksDB", CIDR 2017'
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

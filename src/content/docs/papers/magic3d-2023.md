@@ -2,7 +2,9 @@
 title: Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
 来源: 'Lin, Gao, Tang et al., "Magic3D: High-Resolution Text-to-3D Content Creation", CVPR 2023'
 日期: 2026-05-31
-分类: 生成式 AI
+分类_原始: 生成式 AI
+子分类: 模型与训练
+分类: 机器学习
 难度: 中级
 ---
 

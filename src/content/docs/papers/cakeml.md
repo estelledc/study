@@ -2,6 +2,7 @@
 title: CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 来源: 'Kumar, Myreen, Norrish & Owens, "CakeML: A Verified Implementation of ML", POPL 2014'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

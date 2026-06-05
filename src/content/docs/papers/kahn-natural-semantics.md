@@ -2,6 +2,7 @@
 title: Kahn 自然语义 — 用一棵推理树说清楚程序求值
 来源: 'Gilles Kahn, "Natural Semantics", STACS 1987'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

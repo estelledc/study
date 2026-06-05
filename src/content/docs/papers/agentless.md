@@ -2,7 +2,8 @@
 title: Agentless — 反 Agent 派的 SWE-bench 解法
 来源: 'Xia et al., "Agentless: Demystifying LLM-based Software Engineering Agents", 2024'
 日期: 2026-05-29
-分类: AI / 软件工程
+子分类: AI / 软件工程
+分类: 机器学习
 难度: 中级
 ---
 

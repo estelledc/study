@@ -2,7 +2,8 @@
 title: zk-SNARK 零知识证明
 来源: 'Groth, "On the Size of Pairing-Based Non-interactive Arguments", Eurocrypt 2016'
 日期: 2026-05-29
-分类: 密码学
+子分类: 密码学
+分类: 安全与隐私
 难度: 中级
 ---
 

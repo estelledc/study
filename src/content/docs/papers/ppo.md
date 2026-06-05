@@ -2,7 +2,8 @@
 title: PPO — Proximal Policy Optimization
 来源: 'Schulman et al., "Proximal Policy Optimization Algorithms", OpenAI 2017'
 日期: 2026-05-29
-分类: 强化学习
+子分类: 强化学习
+分类: 机器学习
 难度: 中级
 ---
 

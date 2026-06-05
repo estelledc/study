@@ -2,7 +2,8 @@
 title: Great SWE — 资深工程师"伟大"的标准是 humble + always learning
 来源: 'Li, Ko, Zhu. "What Makes a Great Software Engineer?". ICSE 2015'
 日期: 2026-05-30
-分类: 软件工程
+子分类: 软件工程
+分类: 其他
 难度: 初级
 ---
 

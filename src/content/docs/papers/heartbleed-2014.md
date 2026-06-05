@@ -2,6 +2,7 @@
 title: Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存
 来源: Durumeric et al., "The Matter of Heartbleed", IMC 2014（最佳论文）
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 入门
 ---

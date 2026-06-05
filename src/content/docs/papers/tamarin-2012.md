@@ -2,6 +2,7 @@
 title: Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全
 来源: Schmidt, Meier, Cremers, Basin, "Automated Analysis of Diffie-Hellman Protocols and Advanced Security Properties", CSF 2012
 日期: 2026-05-31
+子分类: 形式化验证
 分类: 形式化方法
 难度: 进阶
 ---

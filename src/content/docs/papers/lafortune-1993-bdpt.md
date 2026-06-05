@@ -2,6 +2,7 @@
 title: Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"
 来源: Eric P. Lafortune, Yves D. Willems, "Bi-Directional Path Tracing", CompuGraphics 1993
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
 ---

@@ -2,6 +2,7 @@
 title: Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 来源: Brent Burley, "Physically-Based Shading at Disney", SIGGRAPH 2012 Course Notes
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
 ---

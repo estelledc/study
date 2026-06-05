@@ -2,6 +2,7 @@
 title: Kustomize — 不写模板也能给 K8s 配置分环境
 来源: Brian Grant et al., kustomize SIG-CLI 项目，并入 kubectl 1.14（2019）
 日期: 2026-05-31
+子分类: 基础设施
 分类: 基础设施
 难度: 入门
 ---

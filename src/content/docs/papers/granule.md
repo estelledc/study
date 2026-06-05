@@ -2,6 +2,7 @@
 title: Granule — 让类型系统同时数次数、看安全级、追副作用
 来源: 'Orchard, Liepelt & Eades III, "Quantitative Program Reasoning with Graded Modal Types", ICFP 2019'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

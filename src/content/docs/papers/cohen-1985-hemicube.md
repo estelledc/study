@@ -2,6 +2,7 @@
 title: Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分
 来源: 'Michael F. Cohen, Donald P. Greenberg, "The Hemi-cube: A Radiosity Solution for Complex Environments", SIGGRAPH 1985'
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
 ---

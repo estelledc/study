@@ -2,6 +2,7 @@
 title: Template Haskell — 让 Haskell 在编译期把代码当数据玩
 来源: Sheard & Peyton Jones, "Template Meta-programming for Haskell", Haskell Workshop 2002
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级偏上
 ---

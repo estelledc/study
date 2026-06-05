@@ -2,6 +2,7 @@
 title: Hindley-Milner — 编译器自己猜变量类型
 来源: Damas & Milner, "Principal Type-schemes for Functional Programs", POPL 1982
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

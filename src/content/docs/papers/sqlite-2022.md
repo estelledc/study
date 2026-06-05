@@ -2,6 +2,7 @@
 title: SQLite — 嵌入式数据库 30 年怎么活下来的
 来源: 'Gaffney, Prammer, Brasfield, Hipp, Kennedy, Patel, "SQLite: Past, Present, and Future", VLDB 2022'
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 入门
 ---

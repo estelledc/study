@@ -2,6 +2,7 @@
 title: Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 来源: 'de Moura & Ullrich, "The Lean 4 Theorem Prover and Programming Language", CADE 2021'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

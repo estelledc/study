@@ -2,6 +2,7 @@
 title: MCS 锁 — 让每个线程自旋在自己的缓存行上
 来源: Mellor-Crummey & Scott, "Algorithms for Scalable Synchronization on Shared-Memory Multiprocessors", ACM TOCS 1991
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

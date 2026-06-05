@@ -2,6 +2,7 @@
 title: Desbrun 1999 — 把热扩散方程隐式离散到三角网
 来源: Mathieu Desbrun, Mark Meyer, Peter Schröder, Alan H. Barr, "Implicit Fairing of Irregular Meshes using Diffusion and Curvature Flow", SIGGRAPH 1999
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

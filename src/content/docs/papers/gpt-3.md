@@ -2,6 +2,7 @@
 title: GPT-3 — Language Models are Few-Shot Learners
 来源: 'Brown et al., "Language Models are Few-Shot Learners", NeurIPS 2020'
 日期: 2026-05-29
+子分类: NLP
 分类: NLP
 难度: 中级
 ---

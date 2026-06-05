@@ -2,6 +2,7 @@
 title: Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 来源: Gilbert & Lynch, "Brewer’s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services", SIGACT News 2002
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

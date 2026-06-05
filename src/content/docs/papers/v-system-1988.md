@@ -2,6 +2,7 @@
 title: V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC
 来源: David R. Cheriton, "The V Distributed System", CACM 1988
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

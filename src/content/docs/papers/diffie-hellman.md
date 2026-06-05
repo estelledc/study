@@ -2,7 +2,8 @@
 title: Diffie-Hellman 密钥交换
 来源: 'Diffie & Hellman, "New Directions in Cryptography", IEEE TIT 1976'
 日期: 2026-05-29
-分类: 密码学
+子分类: 密码学
+分类: 安全与隐私
 难度: 中级
 ---
 

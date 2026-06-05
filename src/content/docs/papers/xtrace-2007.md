@@ -2,6 +2,7 @@
 title: X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架
 来源: 'Fonseca, Porter, Katz, Shenker, Stoica, "X-Trace: A Pervasive Network Tracing Framework", NSDI 2007'
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

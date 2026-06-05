@@ -2,7 +2,8 @@
 title: DALL-E 2 — 基于 CLIP + 扩散的图像生成
 来源: 'Ramesh et al., "Hierarchical Text-Conditional Image Generation with CLIP Latents", 2022'
 日期: 2026-05-29
-分类: 生成模型 / 计算机视觉
+子分类: 生成模型 / 计算机视觉
+分类: 机器学习
 难度: 中级
 ---
 

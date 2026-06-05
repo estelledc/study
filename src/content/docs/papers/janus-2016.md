@@ -2,6 +2,7 @@
 title: Janus 2016 — 把并发控制和共识捏成一个协议
 来源: 'Mu, Nelson, Lloyd & Li, "Consolidating Concurrency Control and Consensus for Commits under Conflicts", OSDI 2016'
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
 ---

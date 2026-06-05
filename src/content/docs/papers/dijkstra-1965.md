@@ -2,6 +2,7 @@
 title: Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死
 来源: Edsger W. Dijkstra, "Solution of a Problem in Concurrent Programming Control", CACM 8(9):569, 1965
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

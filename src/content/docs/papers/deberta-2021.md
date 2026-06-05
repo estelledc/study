@@ -2,6 +2,7 @@
 title: 'DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT'
 来源: 'He et al., "DeBERTa: Decoding-enhanced BERT with Disentangled Attention", ICLR 2021'
 日期: 2026-05-31
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

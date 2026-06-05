@@ -2,6 +2,7 @@
 title: Lean Tactics — 让证明助手把"写证明"当成写程序
 来源: de Moura et al., "The Lean Theorem Prover (System Description)", CADE-25 2015
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

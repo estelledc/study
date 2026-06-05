@@ -2,6 +2,7 @@
 title: Turchin Supercompilation — 让编译器把程序模拟一遍再写回去
 来源: 'Valentin Turchin, "The Concept of a Supercompiler", ACM TOPLAS 1986'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

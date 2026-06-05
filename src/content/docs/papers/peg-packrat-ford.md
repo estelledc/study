@@ -2,6 +2,7 @@
 title: PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
 来源: 'Bryan Ford, "Parsing Expression Grammars: A Recognition-Based Syntactic Foundation", POPL 2004'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

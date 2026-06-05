@@ -2,6 +2,7 @@
 title: 渐进类型 — 让动态和静态类型在同一份代码里共存
 来源: 'Jeremy G. Siek, Walid Taha, "Gradual Typing for Functional Languages", Scheme Workshop 2006'
 日期: 2026-05-29
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

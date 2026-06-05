@@ -2,7 +2,8 @@
 title: Bitcoin 白皮书
 来源: 'Satoshi Nakamoto, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008-10-31'
 日期: 2026-05-29
-分类: 分布式系统 / 密码学
+子分类: 分布式系统 / 密码学
+分类: 分布式系统
 难度: 中级
 ---
 

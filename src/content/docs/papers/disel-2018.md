@@ -2,6 +2,7 @@
 title: Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块
 来源: 'Sergey, Wilcox, Tatlock, "Programming and Proving with Distributed Protocols", POPL 2018'
 日期: 2026-05-31
+子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
 ---

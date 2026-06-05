@@ -2,6 +2,7 @@
 title: 'Logoot — 给每个字符发一张"永不过期的座位号"'
 来源: 'Weiss, Urso, Molli, ''Logoot: A Scalable Optimistic Replication Algorithm for Collaborative Editing on P2P Networks'', IEEE TPDS 2010'
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 来源: 'Clarke & Emerson, "Design and Synthesis of Synchronization Skeletons Using Branching-Time Temporal Logic", Logic of Programs Workshop 1981'
 日期: 2026-05-30
+子分类: 形式化验证
 分类: 形式化方法
 难度: 高级
 ---

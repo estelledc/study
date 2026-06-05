@@ -2,6 +2,7 @@
 title: BERT — 双向 Transformer 预训练
 来源: 'Devlin et al., "BERT: Pre-training of Deep Bidirectional Transformers", NAACL 2019'
 日期: 2026-05-29
+子分类: NLP
 分类: NLP
 难度: 中级
 ---

@@ -2,7 +2,8 @@
 title: FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
 来源: 'Ye et al., "A Stochastic Shortest Path Algorithm for Optimizing Spaced Repetition Scheduling", KDD Workshop 2022'
 日期: 2026-05-29
-分类: 学习与认知
+子分类: 学习与认知
+分类: 其他
 难度: 中级
 ---
 

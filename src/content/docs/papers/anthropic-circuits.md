@@ -2,7 +2,8 @@
 title: Anthropic Circuits — 把 Transformer 当电路逆向
 来源: 'Elhage et al., "A Mathematical Framework for Transformer Circuits", Anthropic 2021'
 日期: 2026-05-29
-分类: AI 可解释性
+子分类: AI 可解释性
+分类: 机器学习
 难度: 中级
 ---
 

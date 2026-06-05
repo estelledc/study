@@ -2,6 +2,7 @@
 title: Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 来源: 'Gary Kildall, "A Unified Approach to Global Program Optimization", POPL 1973'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

@@ -2,7 +2,8 @@
 title: Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
 来源: Anthropic Docs, "Prompt caching", https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching
 日期: 2026-05-31
-分类: AI 工程
+子分类: AI 工程
+分类: 机器学习
 难度: 入门
 ---
 

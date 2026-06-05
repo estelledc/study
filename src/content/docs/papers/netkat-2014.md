@@ -2,6 +2,7 @@
 title: NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式
 来源: 'Anderson 等, "NetKAT: Semantic Foundations for Networks", POPL 2014'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: SimHash — 用随机超平面把余弦相似度变成汉明距离
 来源: 'Charikar, "Similarity Estimation Techniques from Rounding Algorithms", STOC 2002'
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 中级
 ---

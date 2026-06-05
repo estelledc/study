@@ -2,6 +2,7 @@
 title: Flexible Paxos — 两阶段不一定都要多数派
 来源: 'Heidi Howard, Dahlia Malkhi, Alexander Spiegelman, "Flexible Paxos: Quorum Intersection Revisited", arXiv 2016'
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

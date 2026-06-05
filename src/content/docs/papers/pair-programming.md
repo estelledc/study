@@ -2,7 +2,8 @@
 title: Pair Programming — 两个人共用一台机器写代码
 来源: 'Hannay, Dybå, Arisholm, Sjøberg. "The Effectiveness of Pair Programming: A Meta-Analysis". Information and Software Technology 51(7), 2009'
 日期: 2026-05-30
-分类: 软件工程
+子分类: 软件工程
+分类: 其他
 难度: 初级
 ---
 

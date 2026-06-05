@@ -2,6 +2,7 @@
 title: Salton VSM 1975 — 把文档变成向量再用余弦比相似度
 来源: Salton, Wong & Yang, "A Vector Space Model for Automatic Indexing", CACM 18(11) 1975
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 入门
 ---

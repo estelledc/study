@@ -2,7 +2,8 @@
 title: Attention Is All You Need
 来源: 'Vaswani et al., "Attention Is All You Need", NeurIPS 2017'
 日期: 2026-05-29
-分类: 深度学习 / NLP
+子分类: 深度学习 / NLP
+分类: 机器学习
 难度: 中级
 ---
 

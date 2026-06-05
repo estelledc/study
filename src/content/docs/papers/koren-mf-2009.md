@@ -2,6 +2,7 @@
 title: Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书
 来源: Koren, Bell, Volinsky, "Matrix Factorization Techniques for Recommender Systems", IEEE Computer, Vol. 42, No. 8, 2009, pp. 30-37
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 中级
 ---

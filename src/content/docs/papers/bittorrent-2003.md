@@ -2,6 +2,7 @@
 title: BitTorrent — 用"以牙还牙"逼大家都上传
 来源: Bram Cohen, "Incentives Build Robustness in BitTorrent", Workshop on Economics of P2P Systems, 2003
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 入门
 ---

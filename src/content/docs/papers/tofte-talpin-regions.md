@@ -2,6 +2,7 @@
 title: Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 来源: 'Mads Tofte & Jean-Pierre Talpin, "Region-Based Memory Management", Information and Computation 132(2):109-176, 1997'
 日期: 2026-05-30
+子分类: 编程语言
 分类: 编程语言
 难度: 高级
 ---

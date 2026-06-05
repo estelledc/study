@@ -2,6 +2,7 @@
 title: Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒
 来源: Goldsmith & Salmon, "Automatic Creation of Object Hierarchies for Ray Tracing", IEEE CG&A 1987
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

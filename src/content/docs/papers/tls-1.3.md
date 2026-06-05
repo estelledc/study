@@ -2,6 +2,7 @@
 title: TLS 1.3 — 把 HTTPS 握手砍到一个来回
 来源: 'Eric Rescorla, "The Transport Layer Security (TLS) Protocol Version 1.3", RFC 8446, IETF TLS Working Group, 2018'
 日期: 2026-05-30
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

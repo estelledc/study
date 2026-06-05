@@ -2,6 +2,7 @@
 title: CRDT — 让多副本各改各的，最终自动合一
 来源: Shapiro, Preguiça, Baquero, Zawirski, "A Comprehensive Study of Convergent and Commutative Replicated Data Types", INRIA RR-7506, 2011
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

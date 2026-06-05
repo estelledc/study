@@ -2,6 +2,7 @@
 title: Codd 1979 — 给关系模型补上"语义"
 来源: 'Edgar F. Codd, "Extending the Database Relational Model to Capture More Meaning", ACM TODS 1979'
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

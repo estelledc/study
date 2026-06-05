@@ -2,7 +2,9 @@
 title: Megatron-LM — NVIDIA 大规模训练框架
 来源: 'Shoeybi et al., "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism", 2019'
 日期: 2026-05-29
-分类: NLP / 分布式训练
+分类_原始: NLP / 分布式训练
+子分类: 模型与训练
+分类: 分布式系统
 难度: 中级
 ---
 

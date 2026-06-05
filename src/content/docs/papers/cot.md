@@ -2,7 +2,8 @@
 title: Chain-of-Thought Prompting
 来源: 'Wei et al., "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models", NeurIPS 2022'
 日期: 2026-05-29
-分类: AI / LLM
+子分类: AI / LLM
+分类: 机器学习
 难度: 中级
 ---
 

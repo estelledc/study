@@ -2,7 +2,8 @@
 title: AlphaGo — 击败围棋世界冠军
 来源: 'Silver et al., "Mastering the Game of Go with Deep Neural Networks and Tree Search", Nature 2016'
 日期: 2026-05-29
-分类: 强化学习 / AI
+子分类: 强化学习 / AI
+分类: 机器学习
 难度: 中级
 ---
 

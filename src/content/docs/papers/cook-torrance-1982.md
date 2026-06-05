@@ -2,6 +2,7 @@
 title: Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel
 来源: Robert L. Cook & Kenneth E. Torrance, "A Reflectance Model for Computer Graphics", ACM TOG Vol.1 No.1, January 1982
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
 ---

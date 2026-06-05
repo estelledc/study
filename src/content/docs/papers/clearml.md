@@ -2,7 +2,8 @@
 title: ClearML — 实验跟踪 + 远程执行 + 数据管理三合一
 来源: Allegro AI, ClearML (前身 Trains, 2019 开源), Apache 2.0
 日期: 2026-05-31
-分类: MLOps
+子分类: MLOps
+分类: 机器学习
 难度: 中级
 ---
 

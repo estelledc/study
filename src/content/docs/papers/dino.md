@@ -2,6 +2,8 @@
 title: 'DINO 自监督视觉 transformer'
 来源: 'Caron et al., Emerging Properties in Self-Supervised Vision Transformers, ICCV 2021'
 arxiv: '2104.14294'
+分类: 机器学习
+子分类: 自监督视觉
 ---
 
 ## 是什么

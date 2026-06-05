@@ -2,6 +2,7 @@
 title: Gray 1981 — 把"事务"提升为通用抽象
 来源: 'Jim Gray, "The Transaction Concept: Virtues and Limitations", VLDB 1981'
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

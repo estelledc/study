@@ -2,6 +2,7 @@
 title: Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 来源: 'Bjarne Steensgaard, "Points-to Analysis in Almost Linear Time", POPL 1996'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

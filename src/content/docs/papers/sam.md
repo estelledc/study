@@ -2,7 +2,8 @@
 title: SAM — Segment Anything
 来源: 'Kirillov et al., "Segment Anything", Meta 2023'
 日期: 2026-05-29
-分类: 计算机视觉
+子分类: 计算机视觉
+分类: 机器学习
 难度: 中级
 ---
 

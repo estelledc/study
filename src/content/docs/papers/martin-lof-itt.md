@@ -2,6 +2,7 @@
 title: Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 来源: Per Martin-Löf, "Intuitionistic Type Theory", Bibliopolis 1984（1972 初稿）
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

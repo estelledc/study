@@ -2,7 +2,8 @@
 title: Turing 1936 可计算性
 来源: 'Alan Turing, "On Computable Numbers, with an Application to the Entscheidungsproblem", Proc. London Math. Soc. 1936'
 日期: 2026-05-29
-分类: 计算理论
+子分类: 计算理论
+分类: 编程语言
 难度: 中级
 ---
 

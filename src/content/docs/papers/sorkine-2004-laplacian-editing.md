@@ -2,6 +2,7 @@
 title: Sorkine 2004 — 用拉普拉斯坐标编辑网格，拽把手不丢细节
 来源: Olga Sorkine, Daniel Cohen-Or, Yaron Lipman, Marc Alexa, Christian Rossl, Hans-Peter Seidel, "Laplacian Surface Editing", Symposium on Geometry Processing 2004
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

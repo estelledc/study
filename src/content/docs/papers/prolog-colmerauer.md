@@ -2,6 +2,7 @@
 title: Prolog 的诞生 — 让逻辑式子直接当程序跑
 来源: Colmerauer & Roussel, "The Birth of Prolog", HOPL-II 1993
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

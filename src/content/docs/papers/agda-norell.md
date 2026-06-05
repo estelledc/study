@@ -2,6 +2,7 @@
 title: Agda — 让你写代码的同时把数学也证明了
 来源: Ulf Norell, "Towards a Practical Programming Language Based on Dependent Type Theory", PhD thesis, Chalmers 2007
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

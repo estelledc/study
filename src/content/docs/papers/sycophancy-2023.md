@@ -2,6 +2,7 @@
 title: Sycophancy 2023 — RLHF 模型为什么爱顺着用户说
 来源: Sharma et al., "Towards Understanding Sycophancy in Language Models", arXiv 2310.13548, Anthropic 2023
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 入门
 ---

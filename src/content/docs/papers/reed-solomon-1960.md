@@ -2,7 +2,8 @@
 title: Reed-Solomon 编码
 来源: 'Reed & Solomon, "Polynomial Codes Over Certain Finite Fields", J. SIAM 1960'
 日期: 2026-05-29
-分类: 信息论
+子分类: 信息论
+分类: 机器学习
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: Cheney 1970 — 把活对象复制走，原地丢弃整片堆
 来源: 'C. J. Cheney, "A Nonrecursive List Compacting Algorithm", CACM 1970'
 日期: 2026-05-30
-分类: 系统
+子分类: 系统
+分类: 基础设施
 难度: 中级
 ---
 

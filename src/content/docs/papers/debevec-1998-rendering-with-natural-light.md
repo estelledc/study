@@ -2,6 +2,7 @@
 title: Debevec 1998 — 用真实世界的光照亮 CG 物体
 来源: Paul Debevec, "Rendering Synthetic Objects into Real Scenes", SIGGRAPH 1998
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

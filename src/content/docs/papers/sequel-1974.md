@@ -2,6 +2,7 @@
 title: SEQUEL 1974 — 让数据库"听懂"近似英语的查询
 来源: 'Donald D. Chamberlin, Raymond F. Boyce, "SEQUEL: A Structured English Query Language", SIGMOD 1974'
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 初级
 ---

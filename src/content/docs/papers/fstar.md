@@ -2,6 +2,7 @@
 title: F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 来源: 'Swamy et al., "Dependent Types and Multi-Monadic Effects in F*", POPL 2016'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

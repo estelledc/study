@@ -2,7 +2,8 @@
 title: FlashAttention — 不改算法，只改数据怎么进 GPU
 来源: 'Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré, "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness", NeurIPS 2022 (arXiv 2205.14135)'
 日期: 2026-05-30
-分类: GPU 与系统
+子分类: GPU 与系统
+分类: 图形学
 难度: 高级
 ---
 

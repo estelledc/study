@@ -2,7 +2,8 @@
 title: RSA 公钥密码
 来源: 'Rivest, Shamir, Adleman, "A Method for Obtaining Digital Signatures and Public-Key Cryptosystems", CACM 1978'
 日期: 2026-05-29
-分类: 密码学
+子分类: 密码学
+分类: 安全与隐私
 难度: 中级
 ---
 

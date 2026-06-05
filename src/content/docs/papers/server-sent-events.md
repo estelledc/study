@@ -2,7 +2,8 @@
 title: Server-Sent Events — 服务器单向推送的标准协议
 来源: WHATWG, HTML Living Standard §7.5 Server-Sent Events
 日期: 2026-05-31
-分类: 前端
+子分类: 前端
+分类: 后端 API
 难度: 入门
 ---
 

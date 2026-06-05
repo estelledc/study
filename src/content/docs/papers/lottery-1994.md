@@ -2,6 +2,7 @@
 title: 彩票调度 — 用抽奖代替优先级的资源分配
 来源: 'Waldspurger & Weihl, "Lottery Scheduling: Flexible Proportional-Share Resource Management", OSDI 1994'
 日期: 2026-06-01
+子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级
 ---

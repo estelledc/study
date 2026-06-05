@@ -2,6 +2,7 @@
 title: 'CAP 十二年后 — Brewer 自己承认"三选二"是误读'
 来源: 'Eric Brewer, "CAP Twelve Years Later: How the Rules Have Changed", IEEE Computer 45(2), 2012'
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

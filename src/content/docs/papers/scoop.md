@@ -2,7 +2,8 @@
 title: Scoop — Windows 上像 Homebrew 一样装命令行工具
 来源: Luke Sampson, https://github.com/ScoopInstaller/Scoop, 2013
 日期: 2026-05-31
-分类: 工具与基础设施
+子分类: 工具与基础设施
+分类: 基础设施
 难度: 入门
 ---
 

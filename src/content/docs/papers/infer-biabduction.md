@@ -2,6 +2,7 @@
 title: Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 来源: Calcagno, Distefano, O’Hearn, Yang, "Compositional Shape Analysis by Means of Bi-Abduction", POPL 2009
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

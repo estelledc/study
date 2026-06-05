@@ -2,6 +2,7 @@
 title: KinectFusion — 用消费级深度相机实时重建三维世界
 来源: 'Newcombe et al., "KinectFusion: Real-Time Dense Surface Mapping and Tracking", ISMAR 2011'
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

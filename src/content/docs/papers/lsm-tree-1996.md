@@ -2,6 +2,7 @@
 title: LSM-Tree 1996 — 写优化存储引擎
 来源: 'O''Neil et al., "The Log-Structured Merge-Tree (LSM-Tree)", Acta Informatica 1996'
 日期: 2026-05-29
+子分类: 存储与查询
 分类: 数据库
 难度: 中级
 ---

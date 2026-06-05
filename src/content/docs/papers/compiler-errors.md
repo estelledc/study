@@ -2,7 +2,8 @@
 title: Compiler Error Messages — 让编译报错有用
 来源: 'Marceau et al., "Mind your language: on novices'' interactions with error messages", Onward! 2011 / Becker et al., "Compiler error messages considered unhelpful", ITiCSE 2019'
 日期: 2026-05-29
-分类: 编程语言 / 编译器
+子分类: 编程语言 / 编译器
+分类: 编程语言
 难度: 中级
 ---
 

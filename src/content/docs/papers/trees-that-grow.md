@@ -2,6 +2,7 @@
 title: Trees that Grow — 可扩展的语法树设计
 来源: 'Najd & Peyton Jones, "Trees that Grow", J. of Universal Computer Science 2017'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

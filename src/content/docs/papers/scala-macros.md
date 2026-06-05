@@ -2,6 +2,7 @@
 title: Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 来源: 'Eugene Burmako, "Scala Macros: Let Our Powers Combine!", Scala Workshop 2013'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Classifier-Free Guidance — 让扩散模型自己听懂条件
 来源: Ho & Salimans, "Classifier-Free Diffusion Guidance", arXiv 2207.12598 (NeurIPS 2021 DGMs Workshop)
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

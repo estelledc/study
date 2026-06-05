@@ -2,6 +2,7 @@
 title: Phong 1975 — 把光照拆成环境+漫反射+高光三项
 来源: Bui Tuong Phong, "Illumination for Computer Generated Pictures", CACM Vol.18 No.6, June 1975
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 初级
 ---

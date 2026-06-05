@@ -2,7 +2,9 @@
 title: Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 来源: 'Philippe Tillet, H.T. Kung, David Cox, "Triton: An Intermediate Language and Compiler for Tiled Neural Network Computations", MAPL 2019'
 日期: 2026-05-30
-分类: 编译器与编程语言
+分类_原始: 编译器与编程语言
+子分类: 类型与 PL 理论
+分类: 编程语言
 难度: 中级
 ---
 

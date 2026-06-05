@@ -2,6 +2,7 @@
 title: Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样
 来源: Cook, Porter, Carpenter, "Distributed Ray Tracing", SIGGRAPH 1984
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

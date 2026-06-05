@@ -2,6 +2,7 @@
 title: Paxos — 分布式共识算法
 来源: 'Leslie Lamport, "The Part-Time Parliament", TOCS 1998（1989 草稿）'
 日期: 2026-05-29
+子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: 拜占庭将军问题 — 节点能撒谎时怎么达成一致
 来源: Lamport, Shostak, Pease, "The Byzantine Generals Problem", TOPLAS 1982
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 中级
 ---

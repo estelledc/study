@@ -2,7 +2,8 @@
 title: Beck TDD — 用红绿重构循环让设计自己长出来
 来源: 'Kent Beck, "Test-Driven Development: By Example", Addison-Wesley 2002'
 日期: 2026-05-30
-分类: 软件工程
+子分类: 软件工程
+分类: 其他
 难度: 初级
 ---
 

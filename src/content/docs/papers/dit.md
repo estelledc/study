@@ -2,7 +2,8 @@
 title: DiT — Diffusion Transformer
 来源: 'Peebles & Xie, "Scalable Diffusion Models with Transformers", ICCV 2023'
 日期: 2026-05-29
-分类: 生成模型
+子分类: 生成模型
+分类: 机器学习
 难度: 中级
 ---
 

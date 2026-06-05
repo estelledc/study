@@ -2,6 +2,7 @@
 title: Graf-Saïdi — 用谓词把无限状态压成有限抽象
 来源: Graf & Saïdi, "Construction of Abstract State Graphs with PVS", CAV 1997
 日期: 2026-05-31
+子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Prototypical Networks — 每类算个均值，比距离就够了
 来源: Snell, Swersky, Zemel, "Prototypical Networks for Few-shot Learning", NeurIPS 2017
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 入门
 ---

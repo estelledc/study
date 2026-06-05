@@ -2,6 +2,7 @@
 title: RankNet — 让搜索引擎学会比较两个结果谁更好
 来源: Burges 等, "Learning to Rank using Gradient Descent", ICML 2005
 日期: 2026-05-31
+子分类: 检索与排序
 分类: 信息检索
 难度: 中级
 ---

@@ -2,7 +2,8 @@
 title: OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范
 来源: IETF OAuth WG, "The OAuth 2.1 Authorization Framework", draft-ietf-oauth-v2-1
 日期: 2026-05-31
-分类: 后端
+子分类: 后端
+分类: 后端 API
 难度: 中级
 ---
 

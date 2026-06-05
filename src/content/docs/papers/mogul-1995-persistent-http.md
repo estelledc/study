@@ -2,6 +2,7 @@
 title: Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"
 来源: 'Jeffrey C. Mogul, "The Case for Persistent Connections in HTTP", DEC WRL Research Report 95/4, May 1995'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 入门
 ---

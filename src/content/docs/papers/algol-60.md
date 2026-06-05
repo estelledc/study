@@ -2,6 +2,7 @@
 title: ALGOL 60 — BNF 与块结构
 来源: 'Naur et al., "Report on the Algorithmic Language ALGOL 60", 1960'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

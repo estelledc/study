@@ -2,7 +2,8 @@
 title: Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算
 来源: Argonne Leadership Computing Facility, "The Aurora Exascale System", ALCF/Intel/HPE technical briefings, 2024
 日期: 2026-05-31
-分类: GPU 架构
+子分类: GPU 架构
+分类: 图形学
 难度: 中级
 ---
 

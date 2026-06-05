@@ -2,6 +2,7 @@
 title: DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA
 来源: 'Guo, Zhu, Yang et al. (DeepSeek-AI), "DeepSeek-Coder: When the Large Language Model Meets Programming", arXiv:2401.14196 (2024)'
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

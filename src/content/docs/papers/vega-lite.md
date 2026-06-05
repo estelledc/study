@@ -2,6 +2,7 @@
 title: Vega-Lite — 用 JSON 三段式画复合图
 来源: 'Satyanarayan, Moritz, Wongsuphasawat, Heer, "Vega-Lite: A Grammar of Interactive Graphics", IEEE TVCG / InfoVis 2017'
 日期: 2026-05-31
+子分类: 数据可视化
 分类: 数据可视化
 难度: 入门到中级
 ---

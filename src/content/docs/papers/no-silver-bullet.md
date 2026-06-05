@@ -2,7 +2,8 @@
 title: No Silver Bullet — 软件难度的二分手术刀
 来源: 'Brooks, "No Silver Bullet — Essence and Accidents of Software Engineering", IEEE Computer 1987'
 日期: 2026-05-30
-分类: 软件工程
+子分类: 软件工程
+分类: 其他
 难度: 中级
 ---
 

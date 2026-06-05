@@ -2,6 +2,7 @@
 title: Scaling Laws — 神经语言模型的缩放规律
 来源: 'Kaplan et al., "Scaling Laws for Neural Language Models", 2020'
 日期: 2026-05-29
+子分类: NLP
 分类: NLP
 难度: 中级
 ---

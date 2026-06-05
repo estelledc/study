@@ -2,7 +2,8 @@
 title: ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑
 来源: Vidar Holen, ShellCheck 项目，2012 年起，GitHub koalaman/shellcheck
 日期: 2026-05-31
-分类: infrastructure
+子分类: infrastructure
+分类: 基础设施
 难度: 入门
 ---
 

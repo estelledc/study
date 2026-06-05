@@ -2,7 +2,8 @@
 title: Aurora — 把数据库的下半身换成日志机
 来源: 'Verbitski et al., "Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases", SIGMOD 2017'
 日期: 2026-05-29
-分类: 数据库系统
+子分类: 数据库系统
+分类: 数据库
 难度: 高级
 ---
 

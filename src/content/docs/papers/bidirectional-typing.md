@@ -2,6 +2,7 @@
 title: 双向类型检查 — 推断和检查两个方向交替前进
 来源: 'Pierce & Turner, "Local Type Inference", TOPLAS 2000 / Dunfield & Krishnaswami survey 2021'
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 来源: 'Detlefs, Flood, Heller, Printezis. "Garbage-First Garbage Collection". ISMM 2004'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

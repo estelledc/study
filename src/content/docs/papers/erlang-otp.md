@@ -2,7 +2,8 @@
 title: Erlang OTP — 容错并发系统设计
 来源: 'Joe Armstrong, "Making Reliable Distributed Systems in the Presence of Software Errors", PhD thesis 2003'
 日期: 2026-05-29
-分类: 编程语言 / 分布式系统
+子分类: 编程语言 / 分布式系统
+分类: 编程语言
 难度: 中级
 ---
 

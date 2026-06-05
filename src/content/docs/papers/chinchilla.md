@@ -2,6 +2,7 @@
 title: Chinchilla — 训练大模型的数据/参数最优比
 来源: Hoffmann et al., "Training Compute-Optimal Large Language Models", 2022
 日期: 2026-05-29
+子分类: NLP
 分类: NLP
 难度: 中级
 ---

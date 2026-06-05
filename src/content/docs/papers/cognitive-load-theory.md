@@ -2,7 +2,8 @@
 title: Cognitive Load Theory — 学不会不是不努力，是工作记忆装不下
 来源: 'John Sweller, "Cognitive Load During Problem Solving: Effects on Learning", Cognitive Science 1988'
 日期: 2026-05-29
-分类: 认知科学
+子分类: 认知科学
+分类: 其他
 难度: 初级
 ---
 

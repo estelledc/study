@@ -2,6 +2,7 @@
 title: Chubby — 给凡人用的分布式锁服务
 来源: 'Mike Burrows, "The Chubby Lock Service for Loosely-Coupled Distributed Systems", OSDI 2006'
 日期: 2026-05-29
+子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
 ---

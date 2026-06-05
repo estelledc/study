@@ -2,7 +2,8 @@
 title: MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 来源: Model Context Protocol Specification, modelcontextprotocol.io（2024-11 初版，2025-06-18 最新稳定版）
 日期: 2026-05-31
-分类: AI 工程
+子分类: AI 工程
+分类: 机器学习
 难度: 中级
 ---
 

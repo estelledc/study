@@ -2,6 +2,7 @@
 title: Sinfonia 2007 — 把分布式协议降级成数据结构操作
 来源: 'Aguilera et al., "Sinfonia: A New Paradigm for Building Scalable Distributed Systems", SOSP 2007'
 日期: 2026-05-30
+子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
 ---

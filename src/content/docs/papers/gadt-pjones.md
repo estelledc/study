@@ -2,6 +2,7 @@
 title: GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 来源: 'Vytiniotis, Weirich, Peyton Jones, Washburn. "Simple Unification-based Type Inference for GADTs". ICFP 2006'
 日期: 2026-05-29
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

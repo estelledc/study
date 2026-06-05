@@ -2,6 +2,7 @@
 title: Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 来源: James T. Kajiya, "The Rendering Equation", SIGGRAPH 1986
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

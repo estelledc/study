@@ -2,6 +2,7 @@
 title: Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 来源: 'P. J. Landin, "The Mechanical Evaluation of Expressions", The Computer Journal 1964'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

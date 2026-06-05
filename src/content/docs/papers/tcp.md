@@ -2,7 +2,8 @@
 title: TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 来源: 'Jon Postel (ed.), "Transmission Control Protocol", RFC 793, DARPA, Sep 1981'
 日期: 2026-05-30
-分类: 网络
+子分类: 网络
+分类: 网络协议
 难度: 中级
 ---
 

@@ -2,7 +2,8 @@
 title: BM25 — 给文档打分的"老配方"
 来源: Robertson & Walker, "Some Simple Effective Approximations to the 2-Poisson Model for Probabilistic Weighted Retrieval", SIGIR 1994
 日期: 2026-05-31
-分类: 数据检索
+子分类: 数据检索
+分类: 信息检索
 难度: 入门
 ---
 

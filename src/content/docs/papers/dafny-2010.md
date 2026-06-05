@@ -2,6 +2,7 @@
 title: Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
 来源: 'Leino, "Dafny: An Automatic Program Verifier for Functional Correctness", LPAR-16, LNCS 6355, Springer 2010'
 日期: 2026-05-31
+子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Mode Connectivity — 神经网络的两个最优解之间有低洼走廊
 来源: Garipov, Izmailov, Podoprikhin, Vetrov, Wilson, "Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs", NeurIPS 2018
 日期: 2026-06-01
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 ---

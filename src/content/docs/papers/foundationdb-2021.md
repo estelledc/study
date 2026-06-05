@@ -2,6 +2,7 @@
 title: FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug
 来源: 'Zhou et al., "FoundationDB: A Distributed Unbundled Transactional Key Value Store", SIGMOD 2021'
 日期: 2026-05-30
+子分类: 存储与查询
 分类: 数据库
 难度: 高级
 ---

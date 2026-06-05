@@ -2,6 +2,7 @@
 title: Push-Pull FRP — Functional Reactive Programming 实用化
 来源: Elliott, "Push-pull functional reactive programming", Haskell 2009
 日期: 2026-05-29
+子分类: 编程语言
 分类: 编程语言
 难度: 中级
 ---

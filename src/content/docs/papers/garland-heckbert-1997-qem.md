@@ -2,7 +2,9 @@
 title: QEM — 给三角网格『瘦身』时算每一刀的代价
 来源: Garland & Heckbert, "Surface Simplification Using Quadric Error Metrics", SIGGRAPH 1997
 日期: 2026-05-31
-分类: 计算机图形学
+分类_原始: 计算机图形学
+子分类: 渲染与图形
+分类: 图形学
 难度: 中级
 ---
 

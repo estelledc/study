@@ -2,7 +2,8 @@
 title: Nix — 把每个软件包当成纯函数的输出
 来源: Dolstra, "The Purely Functional Software Deployment Model", PhD thesis, Utrecht University, 2006
 日期: 2026-05-31
-分类: 包管理 / 系统
+子分类: 包管理 / 系统
+分类: CLI
 难度: 中级
 ---
 

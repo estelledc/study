@@ -2,6 +2,7 @@
 title: Coeffects — 让类型系统追踪「需要多少上下文」
 来源: 'Petricek, Orchard, Mycroft, "Coeffects: Unified Static Analysis of Context-Dependence", ICALP 2013（ICFP 2014 扩展）'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

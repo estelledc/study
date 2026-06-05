@@ -2,6 +2,7 @@
 title: GFS — 编译器决定不做哪些事
 来源: 'Ghemawat, Gobioff, Leung. "The Google File System". SOSP 2003'
 日期: 2026-05-30
+子分类: 分布式系统
 分类: 分布式系统
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
 来源: 'Lars Ole Andersen, "Program Analysis and Specialization for the C Programming Language", DIKU PhD Thesis 1994'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

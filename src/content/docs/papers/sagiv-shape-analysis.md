@@ -2,6 +2,7 @@
 title: Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 来源: 'Sagiv, Reps & Wilhelm, "Parametric Shape Analysis via 3-Valued Logic", TOPLAS 2002'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 ---

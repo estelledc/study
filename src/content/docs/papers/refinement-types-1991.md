@@ -2,6 +2,7 @@
 title: Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 来源: 'Tim Freeman, Frank Pfenning, "Refinement Types for ML", PLDI 1991'
 日期: 2026-05-29
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

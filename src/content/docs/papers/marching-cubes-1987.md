@@ -2,6 +2,7 @@
 title: Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 来源: 'William E. Lorensen, Harvey E. Cline, "Marching Cubes: A High Resolution 3D Surface Construction Algorithm", SIGGRAPH 1987'
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 中级
 ---

@@ -2,6 +2,7 @@
 title: Pastry — 用 nodeId 的前缀一位一位逼近目标
 来源: 'Rowstron & Druschel, "Pastry: Scalable, Decentralized Object Location and Routing for Large-Scale Peer-to-Peer Systems", Middleware 2001'
 日期: 2026-06-01
+子分类: 网络协议
 分类: 网络协议
 难度: 中级
 ---

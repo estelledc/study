@@ -2,6 +2,7 @@
 title: Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)
 来源: Pat Hanrahan, David Salzman, Larry Aupperle, "A Rapid Hierarchical Radiosity Algorithm", SIGGRAPH 1991
 日期: 2026-05-31
+子分类: 渲染与图形
 分类: 图形学
 难度: 进阶
 ---

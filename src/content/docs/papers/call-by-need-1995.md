@@ -2,6 +2,7 @@
 title: Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 来源: 'Ariola, Felleisen, Maraist, Odersky, Wadler, "The Call-by-Need Lambda Calculus", POPL 1995'
 日期: 2026-05-30
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
 ---

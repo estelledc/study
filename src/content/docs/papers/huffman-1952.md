@@ -2,7 +2,8 @@
 title: Huffman 编码
 来源: 'David Huffman, "A Method for the Construction of Minimum-Redundancy Codes", Proc. IRE 1952'
 日期: 2026-05-29
-分类: 信息论 / 算法
+子分类: 信息论 / 算法
+分类: 机器学习
 难度: 中级
 ---
 

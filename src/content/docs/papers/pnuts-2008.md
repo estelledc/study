@@ -2,6 +2,7 @@
 title: PNUTS — 介于强一致与最终一致之间的实用一致性
 来源: 'Cooper et al., "PNUTS: Yahoo!''s Hosted Data Serving Platform", VLDB 2008'
 日期: 2026-05-31
+子分类: 共识与复制
 分类: 分布式系统
 难度: 高级
 ---
