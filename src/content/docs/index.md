@@ -7,14 +7,14 @@ hero:
   tagline: 1500+ 篇笔记，每篇 150-200 行，每篇 30 分钟读完。从日常类比起步，零术语假设。给同样想从零基础长出工程判断力的人。
   actions:
     - text: 项目研究
-      link: /projects/
+      link: /study/projects-atlas/
       icon: right-arrow
     - text: 论文研究
-      link: /papers/
+      link: /study/papers-atlas/
       icon: open-book
       variant: minimal
     - text: 方法论
-      link: /method/
+      link: /study/method/
       icon: setting
       variant: minimal
 ---
