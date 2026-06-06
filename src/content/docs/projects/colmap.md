@@ -94,6 +94,84 @@ cd colmap
 - 配置即架构，改一个 flag 可能换一条数据路径。
 - 关联笔记要优先链到 `written.txt` 已有 slug。
 
+## 核心架构
+
+COLMAP 实现完整的 **SfM（Structure from Motion）+ MVS（Multi-View Stereo）** 管线：
+
+### SfM 阶段
+
+1. **特征提取**：对每张图像运行 SIFT；支持 CPU 和 CUDA GPU 加速；输出关键点和 128 维描述子，存入 SQLite 数据库。
+2. **特征匹配**：默认穷举匹配（Exhaustive）；大规模场景用**词袋模型（Vocabulary Tree）**检索加速，复杂度从 O(N²) 降到 O(N log N)。
+3. **几何验证**：对匹配对用 RANSAC 估计基础矩阵，过滤外点，保留内点数 > 阈值的图像对。
+4. **增量 SfM**：从最优图像对初始化→三角化→PnP 注册新图像→Bundle Adjustment（Ceres Solver）循环。
+
+### MVS 阶段
+
+5. **图像去畸变**：用标定参数去畸变，输出到 `dense/` 目录。
+6. **PatchMatchStereo**：基于 PatchMatch 算法估计深度图，CUDA 加速；每像素输出深度+法向量。
+7. **Stereo Fusion**：多视图深度图融合成稠密点云（`.ply`）。
+
+## 性能与规格
+
+| 场景 | 典型耗时（8 核 CPU + RTX 3080）|
+|------|-------------------------------|
+| 100 张图像 SfM（穷举匹配） | 5–15 分钟 |
+| 100 张图像 MVS | 10–30 分钟 |
+| 1000 张图像 SfM（VocabTree） | 30–90 分钟 |
+| GPU 特征提取加速比 | 5–10× vs CPU SIFT |
+
+Bundle Adjustment 收敛条件：Ceres 默认 `max_num_iterations=100`，残差下降 < `function_tolerance=1e-6` 即停止。
+
+## 代码示例
+
+### 完整三维重建命令（CLI 模式）
+
+```bash
+# 特征提取（GPU 加速）
+colmap feature_extractor \
+  --database_path ./database.db \
+  --image_path ./images \
+  --SiftExtraction.use_gpu 1
+
+# 穷举特征匹配
+colmap exhaustive_matcher \
+  --database_path ./database.db \
+  --SiftMatching.use_gpu 1
+
+# 增量 SfM 重建
+colmap mapper \
+  --database_path ./database.db \
+  --image_path ./images \
+  --output_path ./sparse
+
+# 去畸变
+colmap image_undistorter \
+  --image_path ./images \
+  --input_path ./sparse/0 \
+  --output_path ./dense
+
+# MVS 稠密重建
+colmap patch_match_stereo \
+  --workspace_path ./dense \
+  --PatchMatchStereo.gpu_index 0
+
+# 融合点云
+colmap stereo_fusion \
+  --workspace_path ./dense \
+  --output_path ./dense/fused.ply
+```
+
+### VocabTree 加速匹配（大数据集）
+
+```bash
+# 下载预训练词袋树
+wget https://demuc.de/colmap/vocab_tree_flickr100K_words4K.bin
+
+colmap vocab_tree_matcher \
+  --database_path ./database.db \
+  --VocabTreeMatching.vocab_tree_path vocab_tree_flickr100K_words4K.bin
+```
+
 ## 延伸阅读
 
 - 官方仓库：https://github.com/colmap/colmap

@@ -31,6 +31,87 @@ provenance: pipeline-v3
 4. **工程映射**：开源库与 RFC 如何落地论文思想。
 5. **局限**：已知攻击面、参数选取、未来工作。
 
+## 核心算法细节
+
+### 污点标记与传播规则
+
+TaintCheck 为每个内存字节和寄存器关联一个"污点影子"（taint shadow），初始为 0（未污染）。当数据从网络、文件等外部输入读入时，对应影子设为 1（污染）。
+
+**算术/逻辑操作传播**：
+```
+dst = src1 op src2
+taint(dst) = taint(src1) | taint(src2)
+```
+只要任一操作数被污染，结果即被污染（过污染，overtainting）。
+
+**内存操作传播**：
+```
+LOAD:  taint(reg) = taint(mem[addr])
+STORE: taint(mem[addr]) = taint(reg)
+```
+若地址寄存器本身被污染（即"污染地址跳转"），也会触发额外告警。
+
+### 隐式流问题（Implicit Flow）
+
+```c
+if (tainted_val == 0) safe_var = 1; else safe_var = 0;
+```
+
+此处 `safe_var` 逻辑上依赖 `tainted_val` 但不经过数据流操作，TaintCheck 无法检测。处理隐式流需要额外的信息流跟踪（IFC），开销大幅上升，TaintCheck 显式放弃了这一能力，换取更低的运行时开销。
+
+### Valgrind 插桩框架
+
+TaintCheck 作为 Valgrind 的 plugin（tool）实现，运行于 VEX IR 层：
+
+1. Valgrind 将 x86 指令解码为 VEX IR（RISC 风格中间表示）。
+2. TaintCheck 在每条 VEX 语句后插入影子传播逻辑。
+3. 在函数调用/跳转前检查控制流目标是否被污染（检测 code injection/ROP 返回地址覆盖）。
+4. 整体运行开销：被分析程序放慢 **30-50x**（比 Memcheck 重约 2x）。
+
+### 自动签名生成
+
+TaintCheck 不仅检测攻击，还能在检测到漏洞利用时自动提取特征：
+
+- 记录所有污点数据在攻击时的字节序列
+- 识别必须出现在 exploit 中的不变字节（"必要内容"）
+- 输出为 NIDS 签名（可导入 Snort）
+
+实验表明对 8 种真实 exploit（包括 CodeRed、Slammer）可 100% 检测，误报率极低。
+
+### 检测精度与性能权衡
+
+| 策略 | 误报率 | 漏报率 | 开销 |
+|------|--------|--------|------|
+| 过污染（只传播，不净化） | 较高 | 低 | 低 |
+| 精确净化（sanitization 感知） | 低 | 低 | 高 |
+| 隐式流跟踪 | 极低 | 极低 | 极高 |
+
+TaintCheck 选择过污染策略：宁可误报也不漏报，适合漏洞检测场景；而精度优先的系统更适合数据流追踪研究。
+
+### 与后续工作对比
+
+- **libdft（2012）**：Pin 插桩框架，比 Valgrind 快 2-3x，支持 tag propagation API，可扩展自定义分析。
+- **QEMU-taint**：在 QEMU full-system 仿真层实现，可分析 OS kernel，但开销更大（100x+）。
+- **DataFlowSanitizer（DFSan）**：LLVM 静态插桩，编译期添加影子，运行时开销降到 3-5x，但不适用于二进制场景。
+
+### 污点源与汇（Source & Sink）
+
+TaintCheck 的污点源（taint source）：`recv`、`read`、`fread`、`getenv` 等返回外部数据的系统调用。
+
+污点汇（taint sink）：
+
+- **控制流汇**：`jmp reg`、`call reg`、`ret`——检测跳转劫持（栈溢出、格式化字符串）
+- **内存写汇**：任意内存写目标地址被污染时——检测堆越界写
+
+用户可通过配置文件扩展自定义 source/sink，这一模式被 Frida 的 Stalker API 和 Pin 的 taint 框架继承。
+
+## 工程实现要点
+
+- **影子内存布局**：每字节 1 bit 影子可用 bitmap；精细分析用 8 bit/byte 存储 tag ID，内存开销 1/8 至 1x。
+- **系统调用边界**：`recv`/`read` 系统调用是默认污点源；需手动添加 `getenv`、`argv` 等其他入口。
+- **净化函数（sanitizer）**：`strlen`、`strcmp` 等函数返回值通常不应传播污点，需要白名单净化，否则 False Positive 激增。
+- **多线程支持**：Valgrind 版本不支持真正并行执行（串行化线程），分析多线程程序时需特别注意。
+
 ## 实践案例
 
 ### 案例 1：画威胁模型表

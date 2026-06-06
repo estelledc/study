@@ -32,6 +32,129 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+Jitsi Meet 由多个独立服务组成，各司其职：
+
+### 核心组件
+
+- **Prosody（XMPP 服务器）**：信令层，负责房间管理、参与者列表、聊天消息；使用 XMPP 协议（BOSH/WebSocket）；Jicofo 和客户端均通过 Prosody 交换信令。
+- **Jicofo（Jitsi Conference Focus）**：会议焦点组件，Java 实现；负责 SDP offer/answer 协调、媒体桥选择、参与者踢出/静音等会议控制逻辑；每个会议一个 Jicofo 实例。
+- **Jitsi Videobridge（JVB）**：SFU（Selective Forwarding Unit），Java 实现；不混流，只转发 RTP 包；支持 Simulcast（多分辨率流）和 **Last-N**（只转发最近 N 个发言者的视频流，节省带宽）；支持多节点水平扩展。
+- **Jitsi Meet（前端）**：React 应用；基于 `lib-jitsi-meet` WebRTC SDK；内置聊天、屏幕共享、虚拟背景（MediaPipe）、举手、字幕等功能。
+- **Jibri**（可选）：浏览器实例录制/推流组件；启动 Chrome 无头浏览器入会并录制为 MP4 或推流至 RTMP。
+
+### 自适应码率策略
+
+JVB 实现 **BWE（Bandwidth Estimation）+ Simulcast + Last-N**：
+- 发送端发布 3 层 Simulcast（720p/360p/180p）
+- JVB 根据接收端带宽估算自动切层（`BitrateController`）
+- Last-N 机制确保大房间下主讲人视频不被丢弃
+
+```
+浏览器 A（发布者）
+  │ WebRTC（SRTP + SCTP）
+  ▼
+Jitsi Videobridge（SFU）
+  ├── Simulcast Layer 选择
+  ├── Last-N 过滤
+  └── 转发 RTP 包
+  │
+  ├── → 浏览器 B
+  ├── → 浏览器 C
+  └── → 浏览器 D ...
+
+信令路径：浏览器 ↔ Prosody（XMPP）↔ Jicofo
+```
+
+## 性能与规格
+
+| 指标 | 参考值 |
+|------|--------|
+| JVB 单节点并发参与者 | ~500 路（纯转发，4 核 8G）|
+| 端到端延迟 | 150–300 ms（公网）|
+| Simulcast 层数 | 3 层（高/中/低分辨率）|
+| Last-N 默认值 | 20（超出只保留发言者）|
+| 录制格式（Jibri） | MP4 / RTMP 推流 |
+
+## 代码示例
+
+### Docker Compose 快速启动
+
+```yaml
+# docker-compose.yml（官方 docker-jitsi-meet）
+version: "3"
+services:
+  web:
+    image: jitsi/web:latest
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ${CONFIG}/web:/config
+    environment:
+      - ENABLE_LETSENCRYPT=1
+      - LETSENCRYPT_DOMAIN=meet.yourdomain.com
+      - PUBLIC_URL=https://meet.yourdomain.com
+
+  prosody:
+    image: jitsi/prosody:latest
+    volumes:
+      - ${CONFIG}/prosody/config:/config
+      - ${CONFIG}/prosody/prosody-plugins-custom:/prosody-plugins-custom
+
+  jicofo:
+    image: jitsi/jicofo:latest
+    volumes:
+      - ${CONFIG}/jicofo:/config
+    environment:
+      - XMPP_SERVER=prosody
+
+  jvb:
+    image: jitsi/jvb:latest
+    ports:
+      - "10000:10000/udp"
+    volumes:
+      - ${CONFIG}/jvb:/config
+    environment:
+      - DOCKER_HOST_ADDRESS=YOUR_PUBLIC_IP
+      - XMPP_SERVER=prosody
+```
+
+```bash
+# 生成配置并启动
+cp env.example .env
+# 编辑 .env 设置域名和密码
+docker-compose up -d
+```
+
+### 使用 Jitsi Meet API 嵌入到自己的页面
+
+```html
+<div id="meet"></div>
+<script src="https://meet.jit.si/external_api.js"></script>
+<script>
+const api = new JitsiMeetExternalAPI("meet.jit.si", {
+  roomName: "MyMeetingRoom",
+  parentNode: document.getElementById("meet"),
+  width: 800,
+  height: 600,
+  configOverwrite: {
+    startWithAudioMuted: true,
+    startWithVideoMuted: false,
+  },
+  interfaceConfigOverwrite: {
+    SHOW_JITSI_WATERMARK: false,
+  },
+});
+
+// 监听事件
+api.addEventListener("videoConferenceJoined", () => {
+  console.log("加入会议成功");
+});
+</script>
+```
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -50,23 +173,29 @@ cd jitsi-meet
 
 ### 案例 3：与邻居项目对照
 
-对照 [[livekit]] 的实现差异：协议、语言、部署形态各写一条笔记。
+对照 [[livekit]] 的实现差异：LiveKit 用 Go 实现、单服务部署、SDK 生态丰富、更适合开发者集成；Jitsi Meet 是完整的开箱即用会议系统，适合直接部署给用户使用。
 
-### 案例 4：接入自己的管线
+### 案例 4：大规模会议优化
+
+对于 50+ 人的会议，调整 Last-N 为 5-10，并启用 Octo（JVB 级联）将负载分散到多台 JVB；单台 JVB 可处理约 500 路并发，多台通过 Octo 路由形成集群。
+
+### 案例 5：接入自己的管线
 
 把输出接到下游（播放器、训练 DataLoader、会议客户端），记录延迟与格式约束。
 
-### 案例 5：与双千 atlas 交叉阅读
+### 案例 6：与双千 atlas 交叉阅读
 
 写完本篇后，在 `projects-atlas` 打开同子类邻居 1 篇，检查实践案例是否覆盖安装/命令/排障。
 
 ## 踩过的坑
 
 1. **依赖版本漂移**：按文档锁版本，否则编译失败难定位。
-2. **硬编解码路径**：GPU/驱动差异导致黑屏或崩溃，准备软解回退。
-3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
+2. **PUBLIC_URL 未正确配置**：JVB 需要知道自身公网 IP（`DOCKER_HOST_ADDRESS`），配置错误导致 ICE candidate 无效，无法建连。
+3. **UDP 10000 端口未开放**：JVB 媒体走 UDP 10000，只开 TCP 443 无法正常视频通话。
 4. **路径写死**：示例用绝对路径，换机器必挂。
-5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+5. **Jibri 录制 Chrome 版本依赖**：Jibri 启动无头 Chrome，Chrome 版本与 Jibri 版本不匹配会导致录制启动失败；建议 Docker 锁定版本。
+6. **XMPP 域名配置**：Prosody 的 `VirtualHost` 和 Jicofo/JVB 的 `XMPP_DOMAIN` 必须一致，任何一处错误导致会议无法创建。
+7. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
 
 ## 适用 vs 不适用场景
 

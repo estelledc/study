@@ -162,3 +162,7 @@ def pq_verify_artifact(artifact_path: str, sig: bytes, pk_bytes: bytes) -> bool:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bos-kyber-2018]] —— CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
+- [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography
+

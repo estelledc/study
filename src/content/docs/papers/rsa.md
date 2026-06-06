@@ -170,6 +170,7 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
+- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 格上的后量子数字签名
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[turing-1936]] —— Turing 1936 可计算性

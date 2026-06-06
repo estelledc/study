@@ -94,6 +94,76 @@ cd dlib
 - 配置即架构，改一个 flag 可能换一条数据路径。
 - 关联笔记要优先链到 `written.txt` 已有 slug。
 
+## 核心架构
+
+dlib 以 **Header-Only 模板库** 为核心设计哲学，主要模块如下：
+
+- **HOG + 滑动窗口 SVM**：`frontal_face_detector` 使用方向梯度直方图（HOG）特征 + 线性 SVM 分类器；速度快，CPU 即可实时处理 VGA 图像（~30 fps）。
+- **CNN 人脸检测（MMOD）**：`cnn_face_detection_model_v1` 基于最大边缘目标检测；精度更高，支持侧脸，需 GPU 或较慢 CPU。
+- **68 点关键点（Landmark）**：`shape_predictor_68_face_landmarks.dat`；基于级联回归树（Ensemble of Regression Trees）；也有轻量版 5 点模型。
+- **人脸识别 ResNet**：`dlib_face_recognition_resnet_model_v1.dat`；ResNet-34 变体，输出 **128 维归一化人脸描述子**；LFW 准确率约 99.38%。
+- **线性代数模块**：自实现矩阵库 `matrix<>`，支持 BLAS/LAPACK 后端，表达式模板避免临时对象。
+- **优化算法**：L-BFGS、共轭梯度、BOBYQA（无导数优化）。
+
+## 性能与规格
+
+| 指标 | 参考值 |
+|------|--------|
+| HOG 人脸检测（VGA，i7） | ~30 fps |
+| CNN 人脸检测（GPU RTX 3080） | ~60 fps |
+| 68 点关键点预测（单脸） | ~1 ms |
+| 128 维描述子提取（GPU） | ~5 ms/张 |
+| LFW 准确率（ResNet 模型） | 99.38% |
+| 比对阈值（欧氏距离） | < 0.6 视为同一人 |
+
+## 代码示例
+
+### Python：5 行人脸识别
+
+```python
+import dlib
+import numpy as np
+
+detector = dlib.get_frontal_face_detector()
+sp = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+facerec = dlib.face_recognition_model_v1("dlib_face_recognition_resnet_model_v1.dat")
+
+img = dlib.load_rgb_image("person.jpg")
+dets = detector(img, 1)                          # 检测人脸框
+shape = sp(img, dets[0])                         # 68 个关键点
+descriptor = facerec.compute_face_descriptor(img, shape)  # 128 维描述子
+print(np.array(descriptor).shape)               # (128,)
+```
+
+### 两张人脸相似度比对
+
+```python
+from numpy.linalg import norm
+import numpy as np
+
+def is_same_person(desc1, desc2, threshold=0.6):
+    dist = norm(np.array(desc1) - np.array(desc2))
+    return dist < threshold, dist
+
+same, dist = is_same_person(descriptor_a, descriptor_b)
+print(f"Same person: {same}, Distance: {dist:.4f}")
+```
+
+### 安装与编译（含 CUDA）
+
+```bash
+pip install cmake
+# 启用 CUDA 支持（需先安装 CUDA 工具链）
+pip install dlib --global-option="--yes" \
+  --global-option="DLIB_USE_CUDA=1"
+
+# 或从源码编译
+git clone https://github.com/davisking/dlib
+cd dlib && mkdir build && cd build
+cmake .. -DDLIB_USE_CUDA=ON -DUSE_AVX_INSTRUCTIONS=ON
+cmake --build . --config Release
+```
+
 ## 延伸阅读
 
 - 官方仓库：https://github.com/davisking/dlib

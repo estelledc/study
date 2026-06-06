@@ -94,6 +94,55 @@ cd audacity
 - 配置即架构，改一个 flag 可能换一条数据路径。
 - 关联笔记要优先链到 `written.txt` 已有 slug。
 
+## 核心架构
+
+Audacity 采用经典 **MVC + 插件宿主** 架构，主要组件如下：
+
+- **wxWidgets GUI**：跨平台（Linux/macOS/Windows）UI 框架；波形视图（WaveTrack）、时间轴（RulerPanel）、工具栏均基于 wxWidget 自绘控件实现。
+- **PortAudio**：跨平台音频 I/O 抽象层，统一封装 ALSA、CoreAudio、WASAPI、ASIO 等后端；录放音回调均通过 `Pa_OpenStream` 接口。
+- **libsndfile / FFmpeg 桥**：音频文件解码，支持 WAV/AIFF/FLAC/MP3/Ogg；FFmpeg 桥可选装，支持更多格式（AC3、AAC、WMA 等）。
+- **效果链框架（Effects）**：每个效果实现 `EffectBase` 接口；执行时按顺序对选区样本块做变换；支持实时预览。
+- **Nyquist 脚本引擎**：内嵌 Lisp 方言 Nyquist，可用脚本编写自定义效果；`Plug-Ins/` 目录下 `.ny` 文件启动时自动加载。
+
+## 生态工具
+
+| 插件类型 | 说明 |
+|----------|------|
+| **Nyquist**（内置） | `.ny` 脚本，可实现噪声门、音调分析等自定义效果 |
+| **LADSPA** | Linux 音频插件标准；`swh-plugins` 包含 100+ 效果器 |
+| **VST2**（需启用） | Windows/macOS 商业插件；需在偏好设置中指定扫描路径 |
+| **LV2**（实验性） | 现代 Linux 插件标准，稳定性优于 LADSPA |
+| **Noise Reduction** | 内置降噪：先采集噪声轮廓（Profile），再全局降噪 |
+| **Compressor** | 动态压缩：阈值/比率/起音/释放均可调 |
+
+自动化脚本：Audacity 3.x 支持 **Macros**（宏录制），可批量对多个文件执行降噪→标准化→导出 MP3 的工作流。
+
+## 代码示例
+
+### Nyquist 脚本：生成 440 Hz 正弦波（1 秒）
+
+```lisp
+;nyquist plug-in
+;version 4
+;type generate
+;name "Sine 440Hz"
+(osc 69 1.0)  ; MIDI note 69 = A4 = 440 Hz，时长 1 秒
+```
+
+将上述内容保存为 `sine440.ny`，放入 `Plug-Ins/` 目录，重启 Audacity 后在「效果」菜单可调用。
+
+### 播客后期一键降噪流程
+
+```
+1. 录制 WAV（24bit/48kHz）
+2. 选中纯噪声段（2 秒以上）
+3. Effect → Noise Reduction → Get Profile（采集噪声特征）
+4. 全选（Ctrl+A）
+5. Effect → Noise Reduction → OK（Sensitivity=12, Smoothing=3）
+6. Effect → Normalize（-3 dBFS）
+7. File → Export → MP3（320 kbps）
+```
+
 ## 延伸阅读
 
 - 官方仓库：https://github.com/audacity/audacity

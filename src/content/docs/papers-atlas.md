@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 916 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 920 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：916 篇
-- **已分类**：916
+- **总数**：920 篇
+- **已分类**：920
 
 ### 按一级主题分布
 
@@ -21,11 +21,11 @@ sidebar:
 | [编程语言](#编程语言) | 109 |
 | [分布式系统](#分布式系统) | 75 |
 | [数据库](#数据库) | 67 |
-| [操作系统](#操作系统) | 58 |
+| [操作系统](#操作系统) | 59 |
 | [机器学习](#机器学习) | 215 |
 | [后端 API](#后端-api) | 9 |
 | [基础设施](#基础设施) | 12 |
-| [网络协议](#网络协议) | 65 |
+| [网络协议](#网络协议) | 66 |
 | [图形学](#图形学) | 122 |
 | [形式化方法](#形式化方法) | 51 |
 | [通信](#通信) | 1 |
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 28 |
+| [安全与隐私](#安全与隐私) | 30 |
 | [其他](#其他) | 13 |
 
 ---
@@ -355,7 +355,7 @@ sidebar:
 
 ## 操作系统
 
-共 58 篇。
+共 59 篇。
 
 ### 内核与虚拟化
 
@@ -395,6 +395,7 @@ sidebar:
 | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | ✅ v3 |  |
 | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | ✅ v3 |  |
 | [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) | ✅ v3 |  |
+| [MirageOS Unikernels — 应用即内核，把操作系统编译掉](/study/papers/mirage-2013/) | ✅ v3 |  |
 | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) | ✅ v3 |  |
 | [MULTICS 1965 — 把计算机做成像电力一样的公共服务](/study/papers/multics-1965/) | ✅ v3 |  |
 | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) | ✅ v3 |  |
@@ -755,7 +756,7 @@ sidebar:
 
 ## 网络协议
 
-共 65 篇。
+共 66 篇。
 
 ### 网络协议
 
@@ -803,6 +804,7 @@ sidebar:
 | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) | ✅ v3 |  |
 | [Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"](/study/papers/mogul-1995-persistent-http/) | ✅ v3 |  |
 | [MPTCP 2012 — 把一根 TCP 管道变成多条并行水管](/study/papers/mptcp-2012/) | ✅ v3 |  |
+| [MQTT-S 2008 — 把发布/订阅消息机制装进传感器芯片](/study/papers/mqtt-s-2008/) | ✅ v3 |  |
 | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | ✅ v3 |  |
 | [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) | ✅ v3 |  |
 | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | ✅ v3 |  |
@@ -1205,7 +1207,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 28 篇。
+共 30 篇。
 
 ### 安全与隐私
 
@@ -1215,6 +1217,7 @@ sidebar:
 | [QL: Object-Oriented Queries on Relational Data](/study/papers/avgustinov-codeql-2016/) | ✅ v3 |  |
 | [Scalable, Transparent, and Post-Quantum Secure Computational Integrity](/study/papers/ben-sasson-stark-2018/) | ✅ v3 |  |
 | [AFLFast — 灰盒 Fuzz 的马尔可夫调度](/study/papers/bohme-aflfast-2016/) | ✅ v3 |  |
+| [Bonawitz FL System 2019 — Google 工业级联邦学习系统设计](/study/papers/bonawitz-fl-system-2019/) | ✅ v3 |  |
 | [CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM](/study/papers/bos-kyber-2018/) | ✅ v3 |  |
 | [Halo: Recursive Proof Composition without a Trusted Setup](/study/papers/bowe-halo-2019/) | ✅ v3 |  |
 | [Fully Homomorphic Encryption without Bootstrapping](/study/papers/brakerski-bgv-2012/) | ✅ v3 |  |
@@ -1222,6 +1225,7 @@ sidebar:
 | [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 |  |
 | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
 | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
+| [CRYSTALS-Dilithium — 格上的后量子数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 |  |
 | [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 |  |
 | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 |  |
 | [差分隐私 — ε 与邻接数据集不可区分](/study/papers/dwork-dp-icalp-2006/) | ✅ v3 |  |
@@ -1274,7 +1278,7 @@ sidebar:
 
 ---
 
-## 全部 916 篇（字母序）
+## 全部 920 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1360,6 +1364,7 @@ sidebar:
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | ✅ v3 | 信息检索 | 数据检索 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | ✅ v3 | 操作系统 | 内存管理 |
 | `bohme-aflfast-2016` | [AFLFast — 灰盒 Fuzz 的马尔可夫调度](/study/papers/bohme-aflfast-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `bonawitz-fl-system-2019` | [Bonawitz FL System 2019 — Google 工业级联邦学习系统设计](/study/papers/bonawitz-fl-system-2019/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | ✅ v3 | 分布式系统 | 分布式系统 |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | ✅ v3 | 分布式系统 | 共识与复制 |
@@ -1526,6 +1531,7 @@ sidebar:
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | ✅ v3 | 编程语言 | 编程语言 |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | ✅ v3 | 数据库 | 存储与查询 |
+| `ducas-dilithium-2018` | [CRYSTALS-Dilithium — 格上的后量子数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `duchi-local-dp-2013` | [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | ✅ v3 | 数据库 | 存储与查询 |
 | `dwork-calibrating-noise-2006` | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
@@ -1814,6 +1820,7 @@ sidebar:
 | `minicpm-v-2024` | [MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型](/study/papers/minicpm-v-2024/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | ✅ v3 | 图形学 | GPU 架构 |
+| `mirage-2013` | [MirageOS Unikernels — 应用即内核，把操作系统编译掉](/study/papers/mirage-2013/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `mironov-renyi-dp-2017` | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | ✅ v3 | Agent | 智能体与 LLM |
 | `mitls-2014-triple-handshake` | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -1839,6 +1846,7 @@ sidebar:
 | `moviechat-2024` | [MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊](/study/papers/moviechat-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `mplug-owl-2023` | [mPLUG-Owl — 模块化拼装多模态大模型](/study/papers/mplug-owl-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `mptcp-2012` | [MPTCP 2012 — 把一根 TCP 管道变成多条并行水管](/study/papers/mptcp-2012/) | ✅ v3 | 网络协议 | 网络协议 |
+| `mqtt-s-2008` | [MQTT-S 2008 — 把发布/订阅消息机制装进传感器芯片](/study/papers/mqtt-s-2008/) | ✅ v3 | 网络协议 | 网络协议 |
 | `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) | ✅ v3 | 图形学 | 渲染与图形 |

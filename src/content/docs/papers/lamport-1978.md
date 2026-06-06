@@ -191,6 +191,7 @@ class LogEmitter:
 - [[mencius-2008]] —— Mencius — 让多台服务器轮流当 Paxos 的 leader
 - [[mills-ntp-1991]] —— NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[mqtt-s-2008]] —— MQTT-S 2008 — 把发布/订阅消息机制装进传感器芯片
 - [[ntp-mills-1991]] —— NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标

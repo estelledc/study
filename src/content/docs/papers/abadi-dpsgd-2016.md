@@ -148,6 +148,7 @@ for x, y in loader:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bohme-aflfast-2016]] —— AFLFast — 灰盒 Fuzz 的马尔可夫调度
+- [[bonawitz-fl-system-2019]] —— Bonawitz FL System 2019 — Google 工业级联邦学习系统设计
 - [[cheon-ckks-2017]] —— Homomorphic Encryption for Arithmetic of Approximate Numbers
 - [[duchi-local-dp-2013]] —— Local Privacy and Statistical Minimax Rates
 - [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基

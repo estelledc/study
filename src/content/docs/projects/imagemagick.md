@@ -94,6 +94,74 @@ cd imagemagick
 - 配置即架构，改一个 flag 可能换一条数据路径。
 - 关联笔记要优先链到 `written.txt` 已有 slug。
 
+## 核心架构
+
+ImageMagick 采用**三层 API + 编解码插件（Coders）**架构：
+
+- **MagickCore**：C 底层 API；像素操作、色彩空间转换、几何变换、滤波器均在此层实现。
+- **MagickWand**：C 高层 API，对 MagickCore 进行面向对象封装；Python/Ruby/PHP 绑定均基于 MagickWand。
+- **Magick++**：C++ 封装，提供 `Magick::Image` 类；RAII 资源管理。
+- **Coders（编解码插件）**：每种图像格式对应一个 Coder 模块（动态 `.so` 或静态编译）；PNG（libpng）、JPEG（libjpeg-turbo）、WebP（libwebp）、HEIC（libheif）、PDF（Ghostscript）等 100+ 格式支持。
+- **Pixel Cache**：大图处理时像素数据可分块缓存到磁盘（`/tmp`），避免 OOM；通过 `-limit memory 512MB` 控制内存上限。
+
+## 性能与规格
+
+| 操作 | 典型速度（AMD Ryzen 9）|
+|------|------------------------|
+| JPEG 4K→1080p resize | ~50 ms |
+| PNG 批量 resize 100 张（mogrify） | ~3 s |
+| WebP 转 JPEG（质量 85）| ~30 ms/张 |
+| PDF 第一页转 PNG（300 dpi）| ~200 ms |
+
+资源限制参数：`-limit memory 1GB`（内存上限）、`-limit disk 10GB`（磁盘缓存上限）、`-limit thread 4`（线程数）。
+
+## 代码示例
+
+### 批量调整大小与格式转换
+
+```bash
+# 将所有 JPEG 缩放到宽度 800，保持比例
+mogrify -resize 800x -quality 85 *.jpg
+
+# 批量转换为 WebP（节省带宽约 30%）
+mogrify -format webp -quality 80 *.jpg
+
+# 批量生成缩略图，输出到 thumbnails/ 目录
+mkdir thumbnails
+mogrify -resize 200x200 -path thumbnails/ *.png
+```
+
+### 水印与合成
+
+```bash
+# 添加文字水印（右下角，半透明白色）
+convert input.jpg \
+  -gravity SouthEast \
+  -fill "rgba(255,255,255,0.6)" \
+  -pointsize 36 \
+  -annotate +10+10 "© 2026 MyBrand" \
+  output_watermarked.jpg
+
+# 图片横向拼接
+convert +append left.jpg right.jpg combined.jpg
+
+# 生成 GIF 动画（帧间隔 50ms）
+convert -delay 50 -loop 0 frame*.png animation.gif
+```
+
+### 色彩空间处理
+
+```bash
+# 去除 Alpha 通道（填充白色背景），PNG 转 JPEG
+convert input.png -background white -flatten output.jpg
+
+# sRGB 转 CMYK（印刷准备）
+convert input.jpg -colorspace CMYK output_cmyk.tiff
+
+# 查看图像元信息
+identify -verbose input.png | grep -E "Type|Colorspace|Geometry"
+```
+
 ## 延伸阅读
 
 - 官方仓库：https://github.com/ImageMagick/ImageMagick

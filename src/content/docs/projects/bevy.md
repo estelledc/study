@@ -236,6 +236,7 @@ fn main() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[minetest]] —— Minetest / Luanti — 开源体素游戏引擎
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

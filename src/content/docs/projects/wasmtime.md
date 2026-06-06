@@ -32,6 +32,97 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+Wasmtime 是 Bytecode Alliance 的旗舰 WebAssembly 运行时，以安全性和规范合规性为核心设计目标：
+
+**Cranelift JIT 编译器**：
+- Wasmtime 默认使用 **Cranelift** 作为 JIT 后端，将 WebAssembly 指令编译为本地机器码（x86-64、ARM64、RISC-V、s390x）
+- 编译分两阶段：wasm → Cranelift IR → 机器码，IR 层支持优化 pass（常量折叠、死代码消除、内联等）
+- 相比解释执行，Cranelift JIT 通常可达原生代码 70~90% 速度
+
+**对象模型**：
+
+```
+Engine（全局配置，单例）
+  └── Store（执行状态容器，持有所有 wasm 对象）
+        ├── Module（已编译的 wasm 模块，可缓存和共享）
+        ├── Instance（模块实例，持有独立内存/表）
+        ├── Func（导出函数句柄）
+        └── Memory / Table / Global（线性内存/函数表/全局变量）
+```
+
+- **Engine**：全局编译和运行时配置（优化级别、fuel 限制、epoch 中断等），通常进程内单例
+- **Store**：单次执行的状态容器，每个 Store 持有独立的 GC 根和主机数据，不可跨线程共享
+- **Module**：编译后的字节码，线程安全，可在多个 Store 中实例化
+
+**WASI（WebAssembly System Interface）实现**：
+- Wasmtime 实现 WASI Preview 1（`wasi_snapshot_preview1`）和 Preview 2（基于 Component Model）
+- 提供文件系统（`wasi:filesystem`）、时钟（`wasi:clocks`）、随机数、套接字等系统接口的沙箱实现
+- 能力基础安全：默认无任何主机访问权限，需显式调用 `WasiCtxBuilder` 授权目录/文件/环境变量
+
+**AOT 预编译（`.cwasm`）**：
+- `wasmtime compile input.wasm -o output.cwasm` 将模块提前编译为机器码，避免运行时 JIT 开销
+- `.cwasm` 文件格式包含 ELF-like 头部和编译后的代码段，加载时直接 mmap，冷启动极快（< 1ms）
+
+**Fuel 指令计量**：
+- `Engine::config().consume_fuel(true)` 开启燃料模式，每条 wasm 指令消耗 1 单位燃料
+- 燃料耗尽时执行暂停（返回 `Err(Trap::OutOfFuel)`），可重新注入后继续
+- 适合限制不信任代码执行时间，防止无限循环
+
+## 性能与规格
+
+| 场景 | 延迟/性能 | 说明 |
+|------|---------|------|
+| JIT 冷启动（小模块） | 5~50ms | 含编译时间，受模块大小影响 |
+| AOT `.cwasm` 冷启动 | < 1ms | 直接 mmap，无编译 |
+| 执行效率（Cranelift） | 原生的 70~90% | 视工作负载类型而异 |
+| 内存隔离开销 | < 5% | 线性内存边界检查（可用 MPK 硬件加速） |
+
+- Wasmtime 的内存安全边界检查在 x86-64 上可利用 **MPK（Memory Protection Keys）** 实现接近零开销的内存隔离
+
+## 代码示例
+
+**Rust 嵌入 Wasmtime**：
+
+```rust
+use wasmtime::*;
+
+fn main() -> anyhow::Result<()> {
+    let engine = Engine::default();
+    let wat = r#"
+        (module
+            (func $add (export "add") (param i32 i32) (result i32)
+                local.get 0
+                local.get 1
+                i32.add))
+    "#;
+    let module = Module::new(&engine, wat)?;
+    let mut store = Store::new(&engine, ());
+    let instance = Instance::new(&mut store, &module, &[])?;
+    let add = instance.get_typed_func::<(i32, i32), i32>(&mut store, "add")?;
+    println!("1 + 2 = {}", add.call(&mut store, (1, 2))?);
+    Ok(())
+}
+```
+
+**CLI 运行 WASI 模块**：
+
+```bash
+# 安装
+cargo install wasmtime-cli
+
+# 运行带文件系统权限的 WASI 程序
+wasmtime run --dir=. myprogram.wasm -- arg1 arg2
+
+# AOT 预编译
+wasmtime compile myprogram.wasm -o myprogram.cwasm
+wasmtime run myprogram.cwasm
+
+# 限制执行燃料（防止无限循环）
+wasmtime run --fuel 1000000 script.wasm
+```
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -67,6 +158,8 @@ cd wasmtime
 3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
 4. **路径写死**：示例用绝对路径，换机器必挂。
 5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+6. **Store 不可多线程共享**：`Store` 对象未实现 `Send/Sync`，跨线程执行需为每个线程创建独立 Store，或使用 `wasmtime::Engine` + `Arc<Module>` 的多实例模式。
+7. **WASI Preview 1/2 接口不兼容**：用旧工具链（如 `wasi-sdk` 17 以下）编译的模块使用 Preview 1 接口，与 Wasmtime 的 Component Model（Preview 2）适配器需显式桥接；混用会报"missing host function"。
 
 ## 适用 vs 不适用场景
 
@@ -117,6 +210,7 @@ cd wasmtime
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[minetest]] —— Minetest / Luanti — 开源体素游戏引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[zed]] —— Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
 - [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件

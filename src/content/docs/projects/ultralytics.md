@@ -32,6 +32,77 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+YOLOv8/v11 的网络结构遵循经典的检测器三段式设计，并进行了系列现代化改进：
+
+**Backbone（骨干网络）**：
+- 基于 **CSPDarknet** 改进，引入 **C2f（Cross Stage Partial with 2 fusions）** 模块替代原版 CSP 层，更好融合浅层与深层梯度流
+- v11 进一步引入 **C3k2** 和 **SPPELAN**（空间金字塔池化增强）提升多尺度特征提取能力
+
+**Neck（特征融合颈部）**：
+- **PAFPN（Path Aggregation Feature Pyramid Network）**：自顶向下 FPN + 自底向上 PAN 双向特征融合，增强小目标检测能力
+
+**Head（检测头）**：
+- **Decoupled Head（解耦头）**：分类分支和回归分支分离，消除两者优化目标冲突
+- 使用 **DFL（Distribution Focal Loss）** 建模边界框坐标分布，提升定位精度
+- 锚点自由（Anchor-Free）设计，简化训练配置
+
+**Task 类型**：
+
+| Task | 输入 | 输出 | 说明 |
+|------|------|------|------|
+| detect | 图像 | 边界框 + 类别 + 置信度 | 目标检测（80类 COCO） |
+| segment | 图像 | 边界框 + 实例掩码 | 实例分割 |
+| classify | 图像 | 类别概率 | 图像分类 |
+| pose | 图像 | 边界框 + 关键点（17点） | 人体姿态估计 |
+| obb | 图像 | 旋转边界框 | 旋转目标检测（如卫星图） |
+
+**Export 多格式支持**：
+- PyTorch → ONNX → TensorRT（TRT）、CoreML（iOS）、TFLite、OpenVINO、PaddlePaddle
+- 量化支持：FP32 / FP16 / INT8（需校准数据集）
+
+## 性能与规格
+
+**COCO val 2017 目标检测 mAP（box，640×640 输入）**：
+
+| 模型 | 参数量 | FLOPs | mAP50-95 | TRT 延迟（T4） |
+|------|-------|-------|---------|-------------|
+| YOLOv8n | 3.2M | 8.7G | 37.3 | 0.99ms |
+| YOLOv8s | 11.2M | 28.6G | 44.9 | 1.20ms |
+| YOLOv8m | 25.9M | 78.9G | 50.2 | 1.83ms |
+| YOLOv8l | 43.7M | 165.2G | 52.9 | 2.39ms |
+| YOLOv8x | 68.2M | 257.8G | 53.9 | 3.53ms |
+
+- TensorRT FP16 推理可进一步将延迟降低约 30~50%
+- YOLOv11 系列在相同参数量下 mAP 提升约 1~2 个点
+
+## Python 代码示例
+
+```python
+from ultralytics import YOLO
+
+# 训练：3 行代码从头训练
+model = YOLO("yolov8n.yaml")   # 从配置文件构建
+model = YOLO("yolov8n.pt")     # 加载预训练权重（推荐）
+results = model.train(data="coco128.yaml", epochs=100, imgsz=640)
+
+# 推理：图像/视频/摄像头均可
+model = YOLO("yolov8n.pt")
+results = model("image.jpg")    # 单张图片
+results = model(0)              # 摄像头实时推理
+for r in results:
+    print(r.boxes.xyxy)         # 边界框坐标
+    print(r.boxes.cls)          # 类别 ID
+
+# 导出为 TensorRT（FP16）
+model.export(format="engine", half=True, device=0)
+
+# 评测 COCO val
+metrics = model.val(data="coco.yaml", split="val")
+print(metrics.box.map)  # mAP50-95
+```
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -67,6 +138,8 @@ cd ultralytics
 3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
 4. **路径写死**：示例用绝对路径，换机器必挂。
 5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+6. **TRT 序列化版本绑定**：TensorRT 导出的 `.engine` 文件与具体的 CUDA/TRT 版本强绑定，换机器或升级驱动后需重新导出。
+7. **自定义数据集格式**：Ultralytics 要求 YOLO 格式标注（每行 `class cx cy w h` 归一化），COCO JSON 需用内置转换工具预处理，混用两种格式会导致静默的训练精度下降。
 
 ## 适用 vs 不适用场景
 

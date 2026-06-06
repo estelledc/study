@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 804 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 808 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：804 个
-- **已分类**：804
+- **总数**：808 个
+- **已分类**：808
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 7 |
+| [操作系统](#操作系统) | 8 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 179 |
+| [后端 API](#后端-api) | 180 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 5 |
+| [图形学](#图形学) | 6 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 109 |
+| [CLI](#cli) | 110 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,12 +168,13 @@ sidebar:
 
 ## 操作系统
 
-共 7 个。
+共 8 个。
 
 ### 嵌入式
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [Buildroot — 用 Make 生成定制嵌入式 Linux 镜像](/study/projects/buildroot/) | ✅ v3 |  |
 | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
@@ -371,7 +372,7 @@ sidebar:
 
 ## 后端 API
 
-共 179 个。
+共 180 个。
 
 ### 前端
 
@@ -409,6 +410,14 @@ sidebar:
 | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | ✅ v3 |  |
 | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | ✅ v3 |  |
 | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | ✅ v3 |  |
+
+### 移动端
+
+| 项目 | 质量 | 描述 |
+|---|:---:|---|
+| [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
+| [Ionic Framework — 用 Web 技术写一套代码发布 iOS/Android/PWA](/study/projects/ionic-framework/) | ✅ v3 |  |
+| [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 
 ### Meta 框架
 
@@ -563,7 +572,6 @@ sidebar:
 | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | ✅ v3 |  |
 | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) | ✅ v3 |  |
 | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | 🗄 存量 |  |
-| [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Hono — 多运行时 Web 框架](/study/projects/hono/) | ✅ v3 |  |
 | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | ✅ v3 |  |
 | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | ✅ v3 |  |
@@ -587,7 +595,6 @@ sidebar:
 | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 🗄 存量 |  |
 | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | ✅ v3 |  |
 | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | ✅ v3 |  |
-| [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | ✅ v3 |  |
 | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | ✅ v3 |  |
 | [styled-components — React 生态最早的 CSS-in-JS 库](/study/projects/styled-components/) | ✅ v3 |  |
@@ -695,7 +702,7 @@ sidebar:
 
 ## 图形学
 
-共 5 个。
+共 6 个。
 
 ### 渲染与图形
 
@@ -703,6 +710,7 @@ sidebar:
 |---|:---:|---|
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
+| [Minetest / Luanti — 开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 
 ### 其他子类
@@ -843,7 +851,7 @@ sidebar:
 
 ## CLI
 
-共 109 个。
+共 110 个。
 
 ### 编辑器与 IDE
 
@@ -855,6 +863,7 @@ sidebar:
 | [Lite XL — 用 Lua 驱动一切的极简文本编辑器](/study/projects/lite-xl/) | ✅ v3 |  |
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
 | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | ✅ v3 |  |
+| [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 |  |
 | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | ✅ v3 |  |
 | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | ✅ v3 |  |
 | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | ✅ v3 |  |
@@ -1092,7 +1101,7 @@ sidebar:
 
 ---
 
-## 全部 804 个（字母序）
+## 全部 808 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1180,6 +1189,7 @@ sidebar:
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | ✅ v3 | CLI | 命令行工具 |
 | `buildah` | [Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工](/study/projects/buildah/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) | ✅ v3 | 基础设施 | DevOps 与运维 |
+| `buildroot` | [Buildroot — 用 Make 生成定制嵌入式 Linux 镜像](/study/projects/buildroot/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | ✅ v3 | 后端 API | Web 后端 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | ✅ v3 | 编译器 | 语言运行时 |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | ✅ v3 | 后端 API | Web 后端 |
@@ -1395,6 +1405,7 @@ sidebar:
 | `insightface` | [InsightFace — 人脸识别 / 检测 SOTA](/study/projects/insightface/) | ✅ v3 | 通信 | 音视频媒体 |
 | `internvideo` | [InternVideo — 上海 AI Lab 视频基础模型套件](/study/projects/internvideo/) | ✅ v3 | 机器学习 | 视频理解 |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `ionic-framework` | [Ionic Framework — 用 Web 技术写一套代码发布 iOS/Android/PWA](/study/projects/ionic-framework/) | ✅ v3 | 后端 API | 移动端 |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | ✅ v3 | 区块链 | 链与合约 |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | ✅ v3 | 分布式系统 | 监控 / 分布式追踪 |
@@ -1523,6 +1534,7 @@ sidebar:
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ✅ v3 | 数据库 | ORM |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | ✅ v3 | CLI | 命令行工具 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 🗄 存量 | 数据库 | 存储与查询 |
+| `minetest` | [Minetest / Luanti — 开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | ✅ v3 | 数据库 | 数据库 / 存储 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | ✅ v3 | 后端 API | projects |
@@ -1565,6 +1577,7 @@ sidebar:
 | `node-js` | [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) | ✅ v3 | 编译器 | 语言运行时 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | ✅ v3 | 通信 | 实时通信 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | ✅ v3 | 基础设施 | DevOps / 编排 |
+| `notepad-plus-plus` | [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) | ✅ v3 | 数据库 | 存储与查询 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | ✅ v3 | CLI | 命令行工具 |
