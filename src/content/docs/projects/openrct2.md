@@ -168,3 +168,9 @@ openrct2 --network-log-level=verbose 2>&1 | grep "hash"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
+- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
+- [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
+

@@ -152,7 +152,6 @@ Seq Scan on orders  (cost=0.00..1234.56 rows=5000 width=64)
 
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
-- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"
 - [[comer-1979-btree]] —— Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库

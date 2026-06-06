@@ -153,3 +153,9 @@ for core_id in range(N):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[mach-1986]] —— Mach — 把内核拆成消息互通的小服务
+- [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
+- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
+

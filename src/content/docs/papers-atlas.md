@@ -385,7 +385,7 @@ sidebar:
 | [Haven — 把整个应用装进 CPU 黑盒，让云服务商也看不见](/study/papers/haven-2014/) | ✅ v3 |  |
 | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | ✅ v3 |  |
 | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | ✅ v3 |  |
-| [IX — 把网络栈装进受保护的数据面 OS](/study/papers/ix-2014/) | ✅ v3 |  |
+| [IX 数据面操作系统 — 用虚拟化把高吞吐和低延迟同时塞进内核](/study/papers/ix-2014/) | ✅ v3 |  |
 | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) | ✅ v3 |  |
 | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) | ✅ v3 |  |
 | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | ✅ v3 |  |
@@ -1696,7 +1696,7 @@ sidebar:
 | `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) | ✅ v3 | 后端 API | 前端框架 |
-| `ix-2014` | [IX — 把网络栈装进受保护的数据面 OS](/study/papers/ix-2014/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
+| `ix-2014` | [IX 数据面操作系统 — 用虚拟化把高吞吐和低延迟同时塞进内核](/study/papers/ix-2014/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `jacobson-1988` | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) | ✅ v3 | 网络协议 | 网络协议 |
 | `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `jemalloc-2006` | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) | ✅ v3 | 操作系统 | 内核与虚拟化 |

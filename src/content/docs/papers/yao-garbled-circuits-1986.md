@@ -167,3 +167,10 @@ result = evaluate(gc, a_labels.alice_side(alice_price=350), b_labels)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
+- [[bunz-bulletproofs-2018]] —— Bulletproofs: Short Proofs for Confidential Transactions and More
+- [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
+- [[rsa]] —— RSA 公钥密码
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+

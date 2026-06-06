@@ -196,6 +196,7 @@ VideoLLaMA2 强项：**音视频联合（2.1-AV）** + **VideoLLaVA 数据即插
 - [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
 - [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
 - [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出

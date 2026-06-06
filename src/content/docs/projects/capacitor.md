@@ -214,5 +214,7 @@ async function checkUpdate(currentVersion: string) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
+- [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 

@@ -177,3 +177,9 @@ class TimestampContract:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[bos-kyber-2018]] —— CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
+- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名
+- [[hacl-star-2017]] —— HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里
+

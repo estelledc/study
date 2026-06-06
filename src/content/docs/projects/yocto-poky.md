@@ -169,3 +169,7 @@ SSTATE_MIRRORS = "file://.* http://ci-server/sstate-cache/PATH;downloadfilename=
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+

@@ -35,6 +35,7 @@ apex-policy-exploration
 apollo-2014
 apron-2009
 aries-1992
+arrakis-2014
 art-2013
 asterisk
 astree
@@ -63,6 +64,7 @@ bentley-1975-kdtree
 bentoml
 berenson-1995-isolation
 bernstein-1981-cc
+bernstein-sphincs-2015
 bert
 bert4rec-2019
 bidirectional-typing
@@ -407,6 +409,7 @@ iris-2015
 ironfleet-2015
 isabelle-hol-2002
 islands-architecture
+ix-2014
 jacobson-1988
 janus-2016
 jemalloc-2006
@@ -911,6 +914,7 @@ xen-2003
 xla-compiler
 xlnet-2019
 xtrace-2007
+yao-garbled-circuits-1986
 youtube-two-tower-2019
 z3-2008
 zab-2011
@@ -1014,6 +1018,7 @@ cal-com
 calico
 candle
 canvas-datagrid
+capacitor
 capnproto
 captum
 cassandra
@@ -1415,6 +1420,7 @@ openai-agents-sdk
 opencv
 openlayers
 openmeetings
+openrct2
 opensea-js
 opensearch
 opentelemetry
@@ -1673,6 +1679,7 @@ videochat2
 videollama2
 videollama3
 viem
+vim
 vips
 vis-network
 vis-timeline
@@ -1714,6 +1721,7 @@ xstate
 yargs
 yazi
 yjs
+yocto-poky
 yq
 yt-dlp
 yugabyte-db

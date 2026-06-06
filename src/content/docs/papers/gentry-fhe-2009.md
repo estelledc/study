@@ -150,4 +150,5 @@ Gentry → BGV/BFV（整数）→ CKKS（近似浮点 ML 推理）。
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[fan-vercauteren-bfv-2012]] —— Somewhat Practical Fully Homomorphic Encryption
 - [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography
+- [[yao-garbled-circuits-1986]] —— Yao 混淆电路 — 让两人合算函数却互不泄密
 
