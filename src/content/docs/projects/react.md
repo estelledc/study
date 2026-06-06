@@ -201,6 +201,7 @@ function Greeting({ name }) {
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[penpot]] —— Penpot — 开源自托管的 Figma 替代
+- [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架

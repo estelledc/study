@@ -185,10 +185,10 @@ make BR2_EXTERNAL=/path/to/my-product-layer
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
+- [[openwrt]] —— OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版
 - [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
 - [[yocto-poky]] —— Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS

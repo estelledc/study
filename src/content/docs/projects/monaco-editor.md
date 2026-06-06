@@ -156,6 +156,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[emacs]] —— GNU Emacs — Lisp 自文档编辑器
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验

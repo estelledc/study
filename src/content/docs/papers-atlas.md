@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 924 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 928 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：924 篇
-- **已分类**：924
+- **总数**：928 篇
+- **已分类**：928
 
 ### 按一级主题分布
 
@@ -21,7 +21,7 @@ sidebar:
 | [编程语言](#编程语言) | 109 |
 | [分布式系统](#分布式系统) | 75 |
 | [数据库](#数据库) | 67 |
-| [操作系统](#操作系统) | 61 |
+| [操作系统](#操作系统) | 63 |
 | [机器学习](#机器学习) | 215 |
 | [后端 API](#后端-api) | 9 |
 | [基础设施](#基础设施) | 12 |
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 32 |
+| [安全与隐私](#安全与隐私) | 34 |
 | [其他](#其他) | 13 |
 
 ---
@@ -355,7 +355,7 @@ sidebar:
 
 ## 操作系统
 
-共 61 篇。
+共 63 篇。
 
 ### 内核与虚拟化
 
@@ -370,6 +370,7 @@ sidebar:
 | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | ✅ v3 |  |
 | [Capsicum: Practical Capabilities for UNIX](/study/papers/capsicum-2010/) | ✅ v3 |  |
 | [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) | ✅ v3 |  |
+| [Demikernel — 微秒级数据中心的 datapath OS 架构](/study/papers/demikernel-2021/) | ✅ v3 |  |
 | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) | ✅ v3 |  |
 | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) | ✅ v3 |  |
 | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) | ✅ v3 |  |
@@ -410,6 +411,7 @@ sidebar:
 | [Innovative Instructions and Software Model for Isolated Execution](/study/papers/sgx-2013/) | ✅ v3 |  |
 | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) | ✅ v3 |  |
 | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | ✅ v3 |  |
+| [Snap 2019 — Google 把网络栈搬进用户空间的微内核实践](/study/papers/snap-2019/) | ✅ v3 |  |
 | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | ✅ v3 |  |
 | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | ✅ v3 |  |
 | [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) | ✅ v3 |  |
@@ -1209,7 +1211,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 32 篇。
+共 34 篇。
 
 ### 安全与隐私
 
@@ -1237,10 +1239,12 @@ sidebar:
 | [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 |  |
 | [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 |  |
 | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
+| [GMW 1987 — 任何函数都能让多方安全地一起算](/study/papers/gmw-mental-game-1987/) | ✅ v3 |  |
 | [联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题](/study/papers/kairouz-advances-fl-2019/) | ✅ v3 |  |
 | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
 | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
+| [Rabin 遗忘传输 — 发送方永远不知道你收到了什么](/study/papers/rabin-ot-1981/) | ✅ v3 |  |
 | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 |  |
 | [Yao 混淆电路 — 让两人合算函数却互不泄密](/study/papers/yao-garbled-circuits-1986/) | ✅ v3 |  |
 
@@ -1282,7 +1286,7 @@ sidebar:
 
 ---
 
-## 全部 924 篇（字母序）
+## 全部 928 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1501,6 +1505,7 @@ sidebar:
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | ✅ v3 | 分布式系统 | 模型与训练 |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `demikernel-2021` | [Demikernel — 微秒级数据中心的 datapath OS 架构](/study/papers/demikernel-2021/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `dense360-2025` | [Dense360 — 全景 ERP 密集理解与 ERP-RoPE](/study/papers/dense360-2025/) | ✅ v3 | 机器学习 | 视频理解 |
 | `desbrun-1999-implicit-fairing` | [Desbrun 1999 — 把热扩散方程隐式离散到三角网](/study/papers/desbrun-1999-implicit-fairing/) | ✅ v3 | 图形学 | 渲染与图形 |
@@ -1618,6 +1623,7 @@ sidebar:
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `gin-2019` | [GIN — 把图神经网络的表达力顶到理论天花板](/study/papers/gin-2019/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `glue-2018` | [GLUE — 给 NLU 模型出一张包含 9 道题的统考卷](/study/papers/glue-2018/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `gmw-mental-game-1987` | [GMW 1987 — 任何函数都能让多方安全地一起算](/study/papers/gmw-mental-game-1987/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | ✅ v3 | 形式化方法 | 数学逻辑 / 计算理论 |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | ✅ v3 | 图形学 | 渲染与图形 |
@@ -1949,6 +1955,7 @@ sidebar:
 | `qwen2-5-vl-2025` | [Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解](/study/papers/qwen2-5-vl-2025/) | ✅ v3 | 机器学习 | 视频理解 |
 | `qwen2-vl-2024` | [Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑](/study/papers/qwen2-vl-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `r-bgp-2007` | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) | ✅ v3 | 网络协议 | 网络协议 |
+| `rabin-ot-1981` | [Rabin 遗忘传输 — 发送方永远不知道你收到了什么](/study/papers/rabin-ot-1981/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `raft` | [Raft — 易理解的共识算法](/study/papers/raft/) | 🗄 存量 | 分布式系统 | 分布式系统 |
 | `rag-lewis-2020` | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | ✅ v3 | 机器学习 | AI / NLP |
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) | ✅ v3 | 信息检索 | 检索与排序 |
@@ -2045,6 +2052,7 @@ sidebar:
 | `smalltalk-80` | [Smalltalk-80](/study/papers/smalltalk-80/) | ✅ v3 | 编程语言 | 编程语言 |
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) | ✅ v3 | 图形学 | GPU 架构 |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | ✅ v3 | 数据库 | 存储与查询 |
+| `snap-2019` | [Snap 2019 — Google 把网络栈搬进用户空间的微内核实践](/study/papers/snap-2019/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | ✅ v3 | 数据库 | 存储与查询 |
 | `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | ✅ v3 | 操作系统 | 内核与虚拟化 |

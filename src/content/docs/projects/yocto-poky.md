@@ -172,4 +172,5 @@ SSTATE_MIRRORS = "file://.* http://ci-server/sstate-cache/PATH;downloadfilename=
 
 - [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[openwrt]] —— OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版
 

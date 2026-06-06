@@ -164,6 +164,7 @@ Groth 2016 把证明压到极致：
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
+- [[gmw-mental-game-1987]] —— GMW 1987 — 任何函数都能让多方安全地一起算
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[scroll]] —— Scroll — 字节码级 zkEVM

@@ -155,7 +155,9 @@ for core_id in range(N):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[demikernel-2021]] —— Demikernel — 微秒级数据中心的 datapath OS 架构
 - [[mach-1986]] —— Mach — 把内核拆成消息互通的小服务
 - [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
+- [[snap-2019]] —— Snap 2019 — Google 把网络栈搬进用户空间的微内核实践
 - [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

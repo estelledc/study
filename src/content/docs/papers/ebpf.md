@@ -163,6 +163,7 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[pivot-tracing-2015]] —— Pivot Tracing — 让运维事后想测什么就测什么
 - [[shenango-2019]] —— Shenango — 每 5 微秒重新分一次核的中央调度器
+- [[snap-2019]] —— Snap 2019 — Google 把网络栈搬进用户空间的微内核实践
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

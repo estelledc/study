@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 812 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 816 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：812 个
-- **已分类**：812
+- **总数**：816 个
+- **已分类**：816
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 9 |
+| [操作系统](#操作系统) | 10 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 181 |
+| [后端 API](#后端-api) | 182 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 7 |
+| [图形学](#图形学) | 8 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 111 |
+| [CLI](#cli) | 112 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 9 个。
+共 10 个。
 
 ### 嵌入式
 
@@ -180,6 +180,7 @@ sidebar:
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
 | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 |  |
+| [OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版](/study/projects/openwrt/) | ✅ v3 |  |
 | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | ✅ v3 |  |
 | [Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统](/study/projects/yocto-poky/) | ✅ v3 |  |
 | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | ✅ v3 |  |
@@ -373,7 +374,7 @@ sidebar:
 
 ## 后端 API
 
-共 181 个。
+共 182 个。
 
 ### 前端
 
@@ -417,6 +418,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用](/study/projects/capacitor/) | ✅ v3 |  |
+| [Apache Cordova — 用网页技术写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
@@ -704,7 +706,7 @@ sidebar:
 
 ## 图形学
 
-共 7 个。
+共 8 个。
 
 ### 渲染与图形
 
@@ -715,6 +717,7 @@ sidebar:
 | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
+| [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 |  |
 
 ### 其他子类
 
@@ -854,12 +857,13 @@ sidebar:
 
 ## CLI
 
-共 111 个。
+共 112 个。
 
 ### 编辑器与 IDE
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 |  |
 | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 |  |
 | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | ✅ v3 |  |
 | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) | ✅ v3 |  |
@@ -1105,7 +1109,7 @@ sidebar:
 
 ---
 
-## 全部 812 个（字母序）
+## 全部 816 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1244,6 +1248,7 @@ sidebar:
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | ✅ v3 | 机器学习 | AI 编码工具 |
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | ✅ v3 | 通信 | 实时通信 |
 | `coqui-tts` | [Coqui TTS — 多语种 TTS 工具包](/study/projects/coqui-tts/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `cordova` | [Apache Cordova — 用网页技术写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 | 后端 API | 移动端 |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | ✅ v3 | 区块链 | 链与合约 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | ✅ v3 | 区块链 | 链与合约 |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | ✅ v3 | 通信 | 实时通信 |
@@ -1310,6 +1315,7 @@ sidebar:
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | ✅ v3 | 通信 | 实时通信 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | ✅ v3 | 通信 | 实时通信 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | ✅ v3 | 后端 API | web 框架 |
+| `emacs` | [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `embassy` | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | ✅ v3 | 后端 API | projects |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1612,6 +1618,7 @@ sidebar:
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | ✅ v3 | 通信 | 实时通信 |
+| `openwrt` | [OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版](/study/projects/openwrt/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | ✅ v3 | 区块链 | 链与合约 |
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | ✅ v3 | 机器学习 | 数据科学与 AI |
@@ -1636,6 +1643,7 @@ sidebar:
 | `penpot` | [Penpot — 开源自托管的 Figma 替代](/study/projects/penpot/) | ✅ v3 | 后端 API | projects / 设计工具 |
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) | ✅ v3 | 后端 API | Web 后端 |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | ✅ v3 | 数据库 | 数据库 / 向量 |
+| `phaser` | [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | ✅ v3 | 后端 API | Web 后端 |
 | `pillow` | [Pillow — Python 图像处理库与 PIL 现代继任者](/study/projects/pillow/) | ✅ v3 | 通信 | 音视频媒体 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | ✅ v3 | 后端 API | projects / Node.js |

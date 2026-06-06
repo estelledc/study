@@ -153,6 +153,7 @@ Shenango 是**跨应用**调度：决定每个进程总共能拿几个核。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[demikernel-2021]] —— Demikernel — 微秒级数据中心的 datapath OS 架构
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[ix-2014]] —— IX 数据面操作系统 — 用虚拟化把高吞吐和低延迟同时塞进内核
