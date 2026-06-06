@@ -171,3 +171,6 @@ int secure_boot_verify(const uint8_t *firmware, size_t fw_len,
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

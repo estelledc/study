@@ -226,5 +226,10 @@ hero.effects.push(new ShaderEffect({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
+- [[catmull-1974-zbuffer]] —— Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
+- [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
+- [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 

@@ -164,6 +164,7 @@ allowed_outbound_hosts = ["https://api.github.com"]
 - [[bun]] —— Bun — JS 全能运行时
 - [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
+- [[embedded-hal]] —— embedded-hal — 让同一份驱动代码跑在任意芯片上
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[hono]] —— Hono — 多运行时 Web 框架

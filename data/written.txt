@@ -173,6 +173,7 @@ cook-levin
 cook-torrance-1982
 copilot-rct
 cops-2011
+costan-sgx-explained-2016
 cot
 coturn
 couchdb
@@ -339,6 +340,7 @@ gmw-mental-game-1987
 goal-misgeneralization-2022
 godel-1931
 goldsmith-1987-bvh
+goodfellow-fgsm-2014
 google-1998
 goral-1984-radiosity
 gortler-1996-lumigraph
@@ -438,9 +440,11 @@ karras-2012-parallel-bvh
 kazhdan-2006-poisson-recon
 kepler-architecture-2012
 kildall-dataflow
+kim-rowhammer-2014
 knrm-2017
 knuth-lr-1965
 knuth-taocp
+kocher-spectre-2019
 kokkos-2014
 koren-mf-2009
 krishnamurthy-1999-http11
@@ -472,6 +476,7 @@ linear-scan-reg-alloc
 linear-types
 linearizability-1990
 lion-2023
+lipp-meltdown-2018
 liquid-types
 liu-2020-dlss
 livevlm-2025
@@ -506,6 +511,7 @@ mach-1986
 mach-vm-1987
 machanavajjhala-l-diversity-2007
 macklin-2014-position-based-fluids
+madry-pgd-2017
 mae
 magic3d-2023
 mahajan-2002-bgp-misconfig
@@ -747,6 +753,7 @@ shannon-1948
 sharegpt4video-2024
 shellcheck
 shenango-2019
+shokri-mia-2017
 siglip-2023
 sillito-questions
 silt-2011
@@ -809,6 +816,7 @@ sycl-cpp-2020
 sycophancy-2023
 system-f-reynolds-1974
 system-r-1976
+szegedy-adversarial-2013
 t0-2021
 t5
 ta-stvg-2025
@@ -1051,6 +1059,7 @@ chatwoot
 chi
 chroma
 cilium
+circuitpython
 clack
 claude-agent-sdk
 claude-code
@@ -1139,6 +1148,7 @@ edgedb
 effect
 ejabberd
 elasticsearch
+electron
 element-android
 element-web
 elysia
@@ -1157,6 +1167,7 @@ etcd
 ethers-js
 evidence
 excalidraw
+expo
 express
 eza
 fabric-js
@@ -1190,6 +1201,7 @@ freeswitch
 fx
 fzf
 gdu
+geany
 gh
 gin
 github-actions
@@ -1221,6 +1233,7 @@ haproxy
 haraka
 hardhat
 haystack
+heaps
 helidon
 helix
 helm
@@ -1359,6 +1372,7 @@ mediapipe
 mediasoup
 megatron-lm
 meilisearch
+melonjs
 memcached
 memgraph
 mermaid
@@ -1369,6 +1383,7 @@ metamask
 micro
 micromark
 micronaut
+micropython
 midscene
 mikro-orm
 miller
@@ -1652,6 +1667,7 @@ temporal-polyfill
 tensorflow
 terraform
 testing-library
+textmate
 textual
 the-silver-searcher
 thirdweb-sdk

@@ -260,5 +260,13 @@ app.whenReady().then(() => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[react]] —— React UI 组件库
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 

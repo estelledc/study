@@ -184,5 +184,10 @@ sensor.read()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
+- [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

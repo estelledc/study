@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 944 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 948 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：944 篇
-- **已分类**：944
+- **总数**：948 篇
+- **已分类**：948
 
 ### 按一级主题分布
 
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 50 |
+| [安全与隐私](#安全与隐私) | 54 |
 | [其他](#其他) | 13 |
 
 ---
@@ -1211,13 +1211,14 @@ sidebar:
 
 ## 安全与隐私
 
-共 50 篇。
+共 54 篇。
 
 ### 安全与隐私
 
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [DP-SGD — 深度学习差分隐私训练](/study/papers/abadi-dpsgd-2016/) | ✅ v3 |  |
+| [以太坊智能合约攻击综述 — 12 类漏洞的首次系统分类](/study/papers/atzei-eth-attacks-2017/) | ✅ v3 |  |
 | [QL: Object-Oriented Queries on Relational Data](/study/papers/avgustinov-codeql-2016/) | ✅ v3 |  |
 | [Scalable, Transparent, and Post-Quantum Secure Computational Integrity](/study/papers/ben-sasson-stark-2018/) | ✅ v3 |  |
 | [SPHINCS — 无状态哈希签名，后量子密码的"保险"](/study/papers/bernstein-sphincs-2015/) | ✅ v3 |  |
@@ -1231,6 +1232,7 @@ sidebar:
 | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
 | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
 | [Intel SGX 详解 — 在不可信云里圈一块硬件保险箱](/study/papers/costan-sgx-explained-2016/) | ✅ v3 |  |
+| [Flash Boys 2.0 — MEV、抢跑与共识不稳定性](/study/papers/daian-flash-boys-2020/) | ✅ v3 |  |
 | [Sphinx — mix 网络最紧凑的可证安全消息格式](/study/papers/danezis-sphinx-2009/) | ✅ v3 |  |
 | [Mixminion 2003 — 让回复消息和发送消息共享同一张匿名面罩](/study/papers/dingledine-mixminion-2003/) | ✅ v3 |  |
 | [CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 |  |
@@ -1248,6 +1250,7 @@ sidebar:
 | [联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题](/study/papers/kairouz-advances-fl-2019/) | ✅ v3 |  |
 | [RowHammer — 只读内存也能把邻居的 bit 敲 flip](/study/papers/kim-rowhammer-2014/) | ✅ v3 |  |
 | [Spectre 攻击 — 推测执行偷看别人的内存](/study/papers/kocher-spectre-2019/) | ✅ v3 |  |
+| [Keystone — 开源可定制 RISC-V TEE 框架](/study/papers/lee-keystone-2020/) | ✅ v3 |  |
 | [t-Closeness — 用"分布距离"堵住匿名化的最后漏洞](/study/papers/li-t-closeness-2007/) | ✅ v3 |  |
 | [Meltdown — 乱序执行偷读内核内存](/study/papers/lipp-meltdown-2018/) | ✅ v3 |  |
 | [l-多样性 — k-匿名之后的隐私保护](/study/papers/machanavajjhala-l-diversity-2007/) | ✅ v3 |  |
@@ -1255,6 +1258,7 @@ sidebar:
 | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
 | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
+| [TrustZone — ARM 给 CPU 装上"双重人格"隔离安全世界](/study/papers/ngabonziza-trustzone-2016/) | ✅ v3 |  |
 | [Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名](/study/papers/piotrowska-loopix-2017/) | ✅ v3 |  |
 | [Rabin 遗忘传输 — 发送方永远不知道你收到了什么](/study/papers/rabin-ot-1981/) | ✅ v3 |  |
 | [洋葱路由 1998 — 把匿名通信从理论搬进真实互联网](/study/papers/reed-onion-routing-1998/) | ✅ v3 |  |
@@ -1302,7 +1306,7 @@ sidebar:
 
 ---
 
-## 全部 944 篇（字母序）
+## 全部 948 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1348,6 +1352,7 @@ sidebar:
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | 🗄 存量 | 机器学习 | 深度学习 / NLP |
+| `atzei-eth-attacks-2017` | [以太坊智能合约攻击综述 — 12 类漏洞的首次系统分类](/study/papers/atzei-eth-attacks-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | ✅ v3 | 数据库 | 数据库系统 |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | ✅ v3 | 图形学 | GPU 架构 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | ✅ v3 | 机器学习 | 智能体与 LLM |
@@ -1505,6 +1510,7 @@ sidebar:
 | `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) | ✅ v3 | 图形学 | GPU 架构 |
 | `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | ✅ v3 | 数据可视化 | 可视化 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | ✅ v3 | 形式化方法 | 形式化验证 |
+| `daian-flash-boys-2020` | [Flash Boys 2.0 — MEV、抢跑与共识不稳定性](/study/papers/daian-flash-boys-2020/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | ✅ v3 | 机器学习 | 生成模型 / 计算机视觉 |
 | `danezis-sphinx-2009` | [Sphinx — mix 网络最紧凑的可证安全消息格式](/study/papers/danezis-sphinx-2009/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | ✅ v3 | 分布式系统 | 共识与复制 |
@@ -1771,6 +1777,7 @@ sidebar:
 | `layernorm-2016` | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `lean-tactics` | [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
+| `lee-keystone-2020` | [Keystone — 开源可定制 RISC-V TEE 框架](/study/papers/lee-keystone-2020/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | ✅ v3 | 数据库 | 存储与查询 |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | ✅ v3 | 图形学 | 渲染与图形 |
@@ -1906,6 +1913,7 @@ sidebar:
 | `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `newsome-taintcheck-2005` | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `nfs-1985` | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
+| `ngabonziza-trustzone-2016` | [TrustZone — ARM 给 CPU 装上"双重人格"隔离安全世界](/study/papers/ngabonziza-trustzone-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 🗄 存量 | 形式化方法 | 形式化验证 |
 | `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) | ✅ v3 | 图形学 | 渲染与图形 |

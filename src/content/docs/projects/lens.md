@@ -162,6 +162,7 @@ brew install k9s
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[k9s]] —— k9s — 让 kubectl 长出眼睛和键盘的终端 UI
 - [[kubernetes]] —— Kubernetes — 容器编排平台

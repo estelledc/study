@@ -195,6 +195,7 @@ chmod +x rename-prefix.el
 
 - [[geany]] —— Geany — GTK 轻量 IDE
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs
 - [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
 - [[vim]] —— Vim — 模态编辑器之父
 

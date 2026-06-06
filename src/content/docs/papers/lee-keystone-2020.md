@@ -227,3 +227,6 @@ SGX        Intel CPU       多个         U-mode only   否
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ngabonziza-trustzone-2016]] —— TrustZone — ARM 给 CPU 装上"双重人格"隔离安全世界
+

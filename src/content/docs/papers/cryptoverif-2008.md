@@ -154,6 +154,7 @@ CryptoVerif 证的是"**协议**用法对不对"，不是"**原语**安不安全
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atzei-eth-attacks-2017]] —— 以太坊智能合约攻击综述 — 12 类漏洞的首次系统分类
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[kim-rowhammer-2014]] —— RowHammer — 只读内存也能把邻居的 bit 敲 flip

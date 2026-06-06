@@ -2,7 +2,6 @@
 title: Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 来源: 'https://github.com/expo/expo'
 日期: 2026-06-06
-分类_原始: 其他
 分类: 后端 API
 子分类: 移动端
 难度: 中级
@@ -188,7 +187,6 @@ export default function ProductDetail() {
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑

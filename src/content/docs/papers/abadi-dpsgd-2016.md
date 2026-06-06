@@ -158,6 +158,7 @@ for x, y in loader:
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[goodfellow-fgsm-2014]] —— FGSM — 用一行梯度让神经网络看错图片
 - [[kairouz-advances-fl-2019]] —— 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
+- [[lee-keystone-2020]] —— Keystone — 开源可定制 RISC-V TEE 框架
 - [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
 - [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法

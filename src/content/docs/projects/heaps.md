@@ -197,5 +197,9 @@ override function update(dt: Float) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[love2d]] —— LÖVE — Lua 2D 游戏框架
 - [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
+- [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 

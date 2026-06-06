@@ -173,10 +173,8 @@ Plot.plot({
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
+- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
-- [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
-- [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
 - [[vega]] —— Vega — 整张图就是一棵 JSON
-- [[vega-lite]] —— Vega-Lite — 用 JSON 三段式画复合图
 - [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
 

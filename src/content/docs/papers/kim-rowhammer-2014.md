@@ -149,5 +149,9 @@ code1a:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
+- [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
 

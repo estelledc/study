@@ -162,6 +162,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 - [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
+- [[ngabonziza-trustzone-2016]] —— TrustZone — ARM 给 CPU 装上"双重人格"隔离安全世界
 - [[piotrowska-loopix-2017]] —— Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名
 - [[reed-onion-routing-1998]] —— 洋葱路由 1998 — 把匿名通信从理论搬进真实互联网
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做

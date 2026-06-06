@@ -165,5 +165,6 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 - [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
+- [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs
 - [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
 

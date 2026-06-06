@@ -219,4 +219,5 @@ async function checkUpdate(currentVersion: string) {
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
 

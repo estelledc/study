@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 832 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 836 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：832 个
-- **已分类**：832
+- **总数**：836 个
+- **已分类**：836
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 14 |
+| [操作系统](#操作系统) | 15 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 186 |
+| [后端 API](#后端-api) | 187 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 12 |
+| [图形学](#图形学) | 13 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 116 |
+| [CLI](#cli) | 117 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 14 个。
+共 15 个。
 
 ### 嵌入式
 
@@ -178,6 +178,7 @@ sidebar:
 | [Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像](/study/projects/buildroot/) | ✅ v3 |  |
 | [CircuitPython — 插上 USB 就能写 Python 的微控制器运行时](/study/projects/circuitpython/) | ✅ v3 |  |
 | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
+| [embedded-hal — 让同一份驱动代码跑在任意芯片上](/study/projects/embedded-hal/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
@@ -378,7 +379,7 @@ sidebar:
 
 ## 后端 API
 
-共 186 个。
+共 187 个。
 
 ### 前端
 
@@ -430,6 +431,7 @@ sidebar:
 | [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 |  |
 | [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
+| [Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用](/study/projects/tauri/) | ✅ v3 |  |
 
 ### Meta 框架
 
@@ -714,7 +716,7 @@ sidebar:
 
 ## 图形学
 
-共 12 个。
+共 13 个。
 
 ### 渲染与图形
 
@@ -730,6 +732,7 @@ sidebar:
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 | [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 |  |
+| [raylib — 极简 C 游戏库](/study/projects/raylib/) | ✅ v3 |  |
 
 ### 其他子类
 
@@ -869,7 +872,7 @@ sidebar:
 
 ## CLI
 
-共 116 个。
+共 117 个。
 
 ### 编辑器与 IDE
 
@@ -885,6 +888,7 @@ sidebar:
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
 | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | ✅ v3 |  |
 | [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 |  |
+| [Spacemacs — Space 键统一 Vim 与 Emacs](/study/projects/spacemacs/) | ✅ v3 |  |
 | [TextMate — macOS 经典编辑器，语法格式影响了所有人](/study/projects/textmate/) | ✅ v3 |  |
 | [Vim — 模态编辑器之父](/study/projects/vim/) | ✅ v3 |  |
 | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | ✅ v3 |  |
@@ -1125,7 +1129,7 @@ sidebar:
 
 ---
 
-## 全部 832 个（字母序）
+## 全部 836 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1338,6 +1342,7 @@ sidebar:
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | ✅ v3 | 后端 API | web 框架 |
 | `emacs` | [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `embassy` | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 | 操作系统 | 嵌入式 |
+| `embedded-hal` | [embedded-hal — 让同一份驱动代码跑在任意芯片上](/study/projects/embedded-hal/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | ✅ v3 | 后端 API | projects |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) | ✅ v3 | 数据库 | 存储与查询 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | ✅ v3 | 后端 API | Web 后端 |
@@ -1729,6 +1734,7 @@ sidebar:
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | ✅ v3 | CLI | 命令行工具 |
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `raylib` | [raylib — 极简 C 游戏库](/study/projects/raylib/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `react` | [React UI 组件库](/study/projects/react/) | 🗄 存量 | 后端 API | UI 框架 |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | ✅ v3 | 后端 API | projects / 前端 |
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1804,6 +1810,7 @@ sidebar:
 | `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | ✅ v3 | 后端 API | projects |
 | `sox` | [SoX — 命令行音频处理瑞士军刀](/study/projects/sox/) | ✅ v3 | 通信 | 音视频媒体 |
+| `spacemacs` | [Spacemacs — Space 键统一 Vim 与 Emacs](/study/projects/spacemacs/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | ✅ v3 | 后端 API | Web 后端 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 🗄 存量 | 后端 API | Web 后端 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1842,6 +1849,7 @@ sidebar:
 | `tanstack-router` | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | ✅ v3 | 后端 API | projects |
 | `tantivy` | [Tantivy — Rust 版 Lucene](/study/projects/tantivy/) | ✅ v3 | 数据库 | 存储与查询 |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) | ✅ v3 | CLI | 命令行工具 |
+| `tauri` | [Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用](/study/projects/tauri/) | ✅ v3 | 后端 API | 移动端 |
 | `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) | ✅ v3 | 数据库 | 存储与查询 |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) | ✅ v3 | 区块链 | 链与合约 |

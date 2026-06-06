@@ -3,7 +3,7 @@ title: Flash Boys 2.0 — MEV、抢跑与共识不稳定性
 来源: 'Daian et al., "Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges", IEEE S&P 2020'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 区块链安全
+子分类: 安全与隐私
 难度: 高级
 provenance: pipeline-v3
 ---
@@ -160,3 +160,6 @@ FREE ──[Trade #2 on TokenStore @ 1.67e8 FREE/ETH]──► ETH (更多)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

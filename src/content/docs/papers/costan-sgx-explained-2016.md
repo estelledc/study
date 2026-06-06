@@ -161,5 +161,9 @@ Client                          Enclave (EPC)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[rsa]] —— RSA 公钥密码
+- [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

@@ -212,8 +212,8 @@ cd wasmtime
 
 - [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
-- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
 - [[zed]] —— Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
 - [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件
 

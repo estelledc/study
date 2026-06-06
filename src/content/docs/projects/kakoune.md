@@ -156,4 +156,5 @@ tmux new-window "kak -c $(kak -l | head -1)"
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
+- [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs
 
