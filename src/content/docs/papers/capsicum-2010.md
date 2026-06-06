@@ -110,6 +110,7 @@ provenance: pipeline-v3
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[haven-2014]] —— Haven — 把整个应用装进 CPU 黑盒，让云服务商也看不见
 - [[selinux-2001]] —— SELinux 2001 — 给每扇门都装上门卫，而不是给管理员一把万能钥匙
 - [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
 

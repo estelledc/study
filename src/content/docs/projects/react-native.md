@@ -230,5 +230,11 @@ const styles = StyleSheet.create({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
+- [[react]] —— React UI 组件库
+- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
+- [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
+- [[zustand]] —— Zustand — 极简 React 状态管理
 

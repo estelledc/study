@@ -166,6 +166,10 @@ Haven 线程模型：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
 - [[capsicum-2010]] —— Capsicum: Practical Capabilities for UNIX
+- [[kvm-2007]] —— KVM 2007 — 把 Linux 内核本身变成 hypervisor
+- [[sel4-2009]] —— seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核
 - [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
+- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

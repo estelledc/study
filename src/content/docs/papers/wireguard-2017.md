@@ -31,6 +31,86 @@ provenance: pipeline-v3
 4. **工程映射**：开源库与 RFC 如何落地论文思想。
 5. **局限**：已知攻击面、参数选取、未来工作。
 
+## 核心算法细节
+
+### Noise 协议框架（IKpsk2 握手）
+
+WireGuard 使用 Noise 协议框架的 **IKpsk2** 握手模式（Initiator Known，带预共享密钥 PSK）。握手只有两条消息：
+
+**消息 1（发起方 → 响应方）**：
+```
+msg1 = (ephemeral_pub_i, AEAD(h, static_pub_i), AEAD(h, timestamp))
+```
+1. 生成临时密钥对 `(e_priv, e_pub)`
+2. DH(e_priv, responder_static_pub) → 混入链式密钥 CK
+3. 加密发起方静态公钥，防止主动攻击者识别发起方身份
+4. 加密时间戳，防止重放攻击
+
+**消息 2（响应方 → 发起方）**：
+```
+msg2 = (ephemeral_pub_r, AEAD(h, empty), cookie?)
+```
+1. 响应方验证发起方身份（从 static pub 推导）
+2. 混入 PSK（可选），提供后量子保护层（抗 harvest-now-decrypt-later）
+3. 双方派生 `(T_send, T_recv)` 两条对称会话密钥
+
+完成握手后不再有协商消息，立即进入数据传输阶段，实现 **1-RTT 建立**（相比 TLS 1.3 的 1-RTT 或 IKEv2 的 4 消息）。
+
+### ChaCha20-Poly1305 数据加密
+
+每个 WireGuard 数据包格式：
+```
+| Type (4B) | Reserved (4B) | Receiver Index (4B) | Counter (8B) | Encrypted Data + Tag (16B) |
+```
+
+- **ChaCha20**：流密码，由 256-bit key + 64-bit nonce（即 Counter）生成密钥流
+- **Poly1305**：MAC，认证加密数据和包头，防止篡改
+- **AEAD 组合（RFC 8439）**：抗重放（counter 单调递增），硬件无加速也比 AES-GCM 快（ARM 低端设备）
+
+### BLAKE2s 哈希与混合密钥派生
+
+Noise 握手期间用 **BLAKE2s**（256-bit 输出）混合各阶段 DH 结果：
+```
+(CK', key) = HKDF-BLAKE2s(CK, DH_result)
+```
+
+BLAKE2s 相比 SHA-256 在软件上快 ~3×，无需 SHA-NI 指令即可高效运行，适合嵌入式和内核实现。
+
+### 静默握手（Silent Handshake）与 Cookie 机制
+
+**静默特性**：WireGuard 响应方在收到非认证握手时不回应任何错误（直接丢弃），使端口扫描无法确认 WireGuard 服务存在，减少攻击面。
+
+**Cookie 反 DoS 机制**（类似 DTLS cookie）：
+1. 服务器负载过高时，停止处理新握手，改为向发起方发送加密 Cookie
+2. Cookie = XCHACHA20_MAC(server_secret, time_window, client_ip)，时效 2 分钟
+3. 发起方在下次握手消息中附带 Cookie，服务器可快速验证，防止 IP 伪造的握手洪水攻击
+
+### 密钥轮换与会话超时
+
+- 每条 session key 最多加密 **2^64 包**或使用 **3 分钟**（先到者）后轮换
+- 180 秒无数据传输则静默重握手（keepalive 包触发）
+- 每 180 秒发一次 keepalive 以维持 NAT 映射（与 ICE 的 STUN keepalive 类似）
+
+### 与 IPsec/OpenVPN 对比
+
+| 维度 | WireGuard | IPsec (IKEv2) | OpenVPN |
+|------|-----------|---------------|---------|
+| 代码行数 | ~4000 | ~400000 | ~100000 |
+| 握手 RTT | 1 | 2 (4 消息) | 2 (TLS 1.2) |
+| 密钥协商算法 | 固定（Curve25519） | 可协商（弱算法可开启） | 可协商（历史包袱重） |
+| 内核集成 | Linux 5.6+ 原生 | 原生 | 用户空间 tun |
+| 吞吐量 | ~10 Gbps（内核路径） | ~5 Gbps | ~1 Gbps（用户空间） |
+| 配置复杂度 | 极低（peer 公钥 + AllowedIPs） | 高（IKE 策略、SA 配置） | 中（证书 + 配置文件） |
+
+WireGuard 的"密码学意见态度"（cryptographic opinionated）——不提供算法协商——是其安全优势也是局限：无法使用国密算法（SM4/SM3），部分合规场景不适用。
+
+## 工程实现要点
+
+- **内核模块 vs 用户空间（wireguard-go）**：内核模块（`wireguard.ko`）吞吐量是 wireguard-go 的 2–3×；在不支持模块的平台（如 Android、iOS）用 userspace 实现。
+- **AllowedIPs 路由表**：基于 IP trie 实现，每个 peer 有独立 IP 范围；错误配置（重叠范围）会导致路由不确定。
+- **MTU 设置**：WireGuard 封装开销 60 bytes（IPv4）/80 bytes（IPv6），需将接口 MTU 设为 `物理MTU - 60`（如 1420）。
+- **预共享密钥（PSK）**：可选添加，提供额外的对称密钥层，抵御未来量子计算机破解 Curve25519 的风险，建议在高安全场景启用。
+
 ## 实践案例
 
 ### 案例 1：画威胁模型表

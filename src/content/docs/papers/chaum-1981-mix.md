@@ -154,5 +154,8 @@ ballot = [K, K⁻¹(C, vote)]  # C 是防伪常量
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[rsa]] —— RSA 公钥密码
+- [[tor-2004]] —— Tor 洋葱路由 — 让你的网络请求穿上三层马甲
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

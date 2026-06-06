@@ -155,7 +155,6 @@ OpenAI Five 用 PPO 训练，128000 CPU + 256 GPU 跑了 10 个月。2019 年 4 
 
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[attention]] —— Attention Is All You Need
-- [[bert]] —— BERT — 双向 Transformer 预训练
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
 - [[deepseek-r1]] —— DeepSeek R1 — 强化学习推理模型
@@ -163,9 +162,7 @@ OpenAI Five 用 PPO 训练，128000 CPU + 256 GPU 跑了 10 个月。2019 年 4 
 - [[dqn]] —— DQN — Deep Q-Network
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
-- [[mamba]] —— Mamba — 选择性状态空间模型
 - [[muzero]] —— MuZero — 不用规则也能下棋
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[td3-2018]] —— TD3 — 给 DDPG 装两副刹车，连续控制终于稳了
 - [[world-model-robot-learning-2026]] —— 机器人世界模型综述 — 预测未来再动手
 

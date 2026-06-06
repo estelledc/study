@@ -31,6 +31,75 @@ provenance: pipeline-v3
 4. **工程映射**：开源库与 RFC 如何落地论文思想。
 5. **局限**：已知攻击面、参数选取、未来工作。
 
+## 核心算法细节
+
+### 候选地址收集
+
+ICE Agent 在建连前收集三类候选（candidate）：
+
+1. **Host candidate**：本地网卡 IP:port，可能有多个（以太网、Wi-Fi、VPN 各一个）。
+2. **Server Reflexive (srflx) candidate**：向 STUN 服务器发 Binding Request，服务器回应中携带 NAT 映射后的外部 IP:port。
+3. **Relayed (relay) candidate**：向 TURN 服务器申请 Allocation，得到中继地址；对称型 NAT 或防火墙严格拦截时的最后手段，带宽经 TURN 中转，成本最高。
+
+### STUN Binding 请求流程
+
+```
+Client → STUN Server:  Binding Request (Transaction ID=X)
+STUN Server → Client:  Binding Success Response
+                         XOR-MAPPED-ADDRESS = 203.0.113.45:54321
+```
+
+XOR-MAPPED-ADDRESS 用事务 ID 对 IP 和 port 做异或，防止 ALG（应用层网关）修改地址字段。
+
+### 候选对优先级计算
+
+ICE 将本地候选和远端候选两两组合为"候选对"（candidate pair），按优先级公式排序：
+
+```
+priority(pair) = 2^32 * min(G, D) + 2 * max(G, D) + (G > D ? 1 : 0)
+```
+
+其中 G = 控制方候选优先级，D = 被控方候选优先级。Host > srflx > relay，同类型中 IPv6 > IPv4。
+
+### Connectivity Check 状态机
+
+每个候选对在"Check List"中经历以下状态：
+
+```
+Frozen → Waiting → In-Progress → Succeeded / Failed
+```
+
+控制方（Controlling）发送 STUN Binding Request 给候选对中的远端地址，附带 USE-CANDIDATE 属性；被控方回应 Success Response。双方均 Succeeded 且控制方发送 USE-CANDIDATE 后，该对进入 Selected 状态，ICE 完成。
+
+### Trickle ICE（RFC 8838）
+
+原始 ICE 需要等候所有候选收集完毕再做 SDP Offer/Answer 交换，延迟可达 1-3 秒。Trickle ICE 允许候选边收集边通过信令通道（如 WebSocket）逐条发送：
+
+- `trickle` SDP 属性标记支持增量候选
+- 候选到达即加入 Check List 并立即触发 connectivity check
+- P2P 路径通常在 200-500 ms 内建立，TURN fallback 在 1-2 s
+
+### ICE Restart 场景
+
+网络切换（Wi-Fi → 4G）时，ICE Agent 触发 Restart：重新生成 ice-ufrag/ice-pwd，收集新候选，重新完整运行 ICE 协商。应用层通过监听 `iceconnectionstatechange` 事件感知，通常 3-5 s 内重建媒体路径，期间通过 TURN relay 保持音频连续。
+
+### TURN Allocation 机制
+
+TURN 分配流程（RFC 5766）：
+1. 客户端发 Allocate Request（含 REQUESTED-TRANSPORT = UDP）
+2. 服务器返回 401 Unauthorized 附带 realm 和 nonce（长期凭据质询）
+3. 客户端用 HMAC-SHA1 重新发带凭据的 Allocate Request
+4. 服务器分配中继端口，返回 RELAYED-ADDRESS + XOR-MAPPED-ADDRESS
+5. 后续数据通过 Send Indication 或 ChannelData 发送，每 10 分钟刷新 allocation
+
+## 工程实现要点
+
+- **STUN 服务器**：Google 提供 `stun.l.google.com:19302`；生产环境应自建或使用 Coturn，避免依赖第三方。
+- **TURN 认证**：使用 HMAC-SHA1 的时间窗口凭证（RFC 8489 Long-Term Credential），防止 relay 被滥用。
+- **对称 NAT**：约 15-20% 的企业网络使用对称 NAT，P2P 打洞失败率高，须保证 TURN 可用性（带宽预算按 100% relay 估算）。
+- **ICE Lite**：服务端（SFU、TURN 服务器）实现 ICE Lite 只响应 connectivity check，无需主动发包，大幅降低实现复杂度。
+- **pion/ice（Go）**：纯 Go 实现，支持 Trickle ICE、mDNS candidate、TCP candidate，可内嵌进 SFU 服务。
+
 ## 实践案例
 
 ### 案例 1：画威胁模型表
@@ -114,4 +183,3 @@ provenance: pipeline-v3
 - [[livekit]] —— LiveKit — 开源实时多媒体 SFU
 - [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
 - [[wireguard-2017]] —— WireGuard: Next Generation Kernel Network Tunnel
-

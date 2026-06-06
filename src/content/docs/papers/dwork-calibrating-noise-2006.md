@@ -152,6 +152,7 @@ print(int(true_count + noise))
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
+- [[kairouz-advances-fl-2019]] —— 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
 

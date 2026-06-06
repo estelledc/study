@@ -188,5 +188,7 @@ async fn main(_spawner: embassy_executor::Spawner) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

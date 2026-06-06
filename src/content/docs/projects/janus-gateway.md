@@ -32,6 +32,108 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+Janus 采用**核心 + 动态插件**架构，核心层处理 WebRTC 协议栈，插件层实现业务逻辑：
+
+### 核心层
+
+- **ICE 代理（libnice）**：负责 NAT 穿透；Janus 为每个 WebRTC 连接创建独立 ICE agent；STUN/TURN 配置在 `janus.cfg` 的 `[nat]` 节。
+- **DTLS-SRTP**：媒体加密，每条 PeerConnection 独立密钥协商；基于 OpenSSL/BoringSSL 实现。
+- **信令与媒体分离**：信令走 HTTP REST / WebSocket / RabbitMQ 等传输层（可选），媒体走 UDP（SRTP）；两者完全解耦。
+- **事件循环**：基于 GLib 的 `GMainLoop`；媒体线程与信令线程分离，保证实时性。
+
+### 插件架构
+
+每个插件是一个 `.so` 共享库，实现 `janus_plugin` 接口：
+
+| 插件 | 功能 |
+|------|------|
+| **janus_videoroom** | 多人视频会议 SFU；支持 Simulcast、SVC |
+| **janus_streaming** | RTSP/RTP 流转 WebRTC；接入监控摄像头 |
+| **janus_sip** | SIP 网关；WebRTC ↔ SIP 电话互通 |
+| **janus_recordplay** | 录制 WebRTC 流并回放 |
+| **janus_audiobridge** | 纯音频混音桥（MCU 模式）|
+| **janus_textroom** | 数据通道文字聊天室 |
+
+### Lua/JavaScript 插件开发
+
+Janus 支持用 **Lua** 或 **Duktape JavaScript** 编写插件逻辑（`lua_plugin`/`duktape_plugin`），无需重新编译 C 代码即可自定义事件处理逻辑，适合快速原型。
+
+```
+浏览器 WebRTC Client
+      │ ICE/DTLS-SRTP (UDP)
+      ▼
+Janus Core（ICE Agent + DTLS + RTP 路由）
+      │ plugin API（C 函数调用）
+      ▼
+janus_videoroom.so / janus_streaming.so / ...
+      │ 信令事件
+      ▼
+HTTP REST / WebSocket 信令接口
+      │
+      ▼
+前端 JavaScript SDK（janus.js）
+```
+
+## 性能与规格
+
+| 指标 | 参考值 |
+|------|--------|
+| 单节点并发 PeerConnection（4 核 8G） | ~500 路（纯转发，无转码）|
+| WebRTC 端到端延迟 | < 200 ms（局域网）|
+| Simulcast 层数 | 最多 3 层（h/m/l 分辨率）|
+| 录制格式 | MKV（mjr 中间格式，后转 MP4）|
+| 信令传输 | HTTP REST、WebSocket、RabbitMQ、MQTT |
+
+## 代码示例
+
+### 通过 HTTP API 创建 VideoRoom
+
+```bash
+# 创建一个视频会议室（房间号 1234）
+curl -X POST http://localhost:8088/janus \
+  -H "Content-Type: application/json" \
+  -d '{
+    "janus": "create",
+    "transaction": "abc123"
+  }'
+# 返回 session_id，后续请求携带此 id
+
+# 在 session 上挂载 videoroom 插件
+curl -X POST http://localhost:8088/janus/{session_id} \
+  -H "Content-Type: application/json" \
+  -d '{
+    "janus": "attach",
+    "plugin": "janus.plugin.videoroom",
+    "transaction": "def456"
+  }'
+
+# 创建房间
+curl -X POST http://localhost:8088/janus/{session_id}/{handle_id} \
+  -H "Content-Type: application/json" \
+  -d '{
+    "janus": "message",
+    "body": {
+      "request": "create",
+      "room": 1234,
+      "description": "My Meeting Room",
+      "publishers": 6,
+      "bitrate": 512000
+    },
+    "transaction": "ghi789"
+  }'
+```
+
+### Docker 快速启动
+
+```bash
+docker run -d --name janus \
+  -p 8088:8088 -p 8188:8188 \
+  -p 10000-10200:10000-10200/udp \
+  canyan/janus-gateway:latest
+```
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -50,23 +152,29 @@ cd janus-gateway
 
 ### 案例 3：与邻居项目对照
 
-对照 [[livekit]] 的实现差异：协议、语言、部署形态各写一条笔记。
+对照 [[livekit]] 的实现差异：LiveKit 用 Go 实现、内置 Redis 集群协调、API 更现代；Janus 用 C 实现、资源占用更低、插件生态更灵活，适合嵌入式或定制化场景。
 
-### 案例 4：接入自己的管线
+### 案例 4：RTSP 摄像头接入 WebRTC
+
+用 `janus_streaming` 插件将 RTSP 流（如 IP 摄像头）转为 WebRTC 播放；配置 `mount point` 指定 RTSP URL，浏览器无需安装插件即可查看监控画面，延迟约 300-500 ms。
+
+### 案例 5：接入自己的管线
 
 把输出接到下游（播放器、训练 DataLoader、会议客户端），记录延迟与格式约束。
 
-### 案例 5：与双千 atlas 交叉阅读
+### 案例 6：与双千 atlas 交叉阅读
 
 写完本篇后，在 `projects-atlas` 打开同子类邻居 1 篇，检查实践案例是否覆盖安装/命令/排障。
 
 ## 踩过的坑
 
 1. **依赖版本漂移**：按文档锁版本，否则编译失败难定位。
-2. **硬编解码路径**：GPU/驱动差异导致黑屏或崩溃，准备软解回退。
-3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
+2. **UDP 端口范围未开放**：WebRTC 媒体走 UDP，需在防火墙开放 10000-10200/udp（或自定义范围），只开 TCP 8088/8188 不够。
+3. **TURN 服务器配置错误**：`turn_server` 与 `turn_user/password` 必须匹配，填错导致客户端在 relay 候选上建连失败。
 4. **路径写死**：示例用绝对路径，换机器必挂。
-5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+5. **Simulcast 需客户端支持**：Firefox/Chrome 实现有差异，需测试不同浏览器的 Simulcast 兼容性。
+6. **录制 mjr 文件转换**：录制生成 `.mjr` 格式，需用 `janus-pp-rec` 工具后处理转成 `.opus`/`.h264` 再封装 MP4。
+7. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
 
 ## 适用 vs 不适用场景
 
