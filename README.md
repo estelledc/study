@@ -15,9 +15,9 @@ Astro + Starlight 构建，已发布到 GitHub Pages，每次推 main 自动 red
 
 | 维度 | 已写 | 双千目标 | 完成率 |
 |---|---:|---:|---:|
-| 论文 papers | **908** | 10,000 | 9.08% |
-| 项目 projects | **796** | 10,000 | 7.96% |
-| **合计** | **1,704** | 20,000 | 8.52% |
+| 论文 papers | **908** | 1,000 | 90.8% |
+| 项目 projects | **796** | 1,000 | 79.6% |
+| **合计** | **1,704** | 2,000 | 85.2% |
 
 - **专题闭环**：视频论文 65/65 · 媒体项目 50/50 · [阅读站 3 hub](https://estelledc.github.io/study/reading-stations/)
 - **项目现状快照**：[`research/project-status-2026-06.md`](./research/project-status-2026-06.md)
