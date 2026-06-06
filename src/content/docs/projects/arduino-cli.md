@@ -11,15 +11,15 @@ title: Arduino CLI — 命令行驱动嵌入式全流程工具链
 
 Arduino CLI 是 Arduino 官方用 Go 编写的**全功能命令行工具**，一个可执行文件覆盖从"检测开发板"到"上传固件"的完整嵌入式开发流程——无需打开 GUI 界面。
 
-日常类比：像一个"多功能瑞士军刀"。以前 Arduino 开发必须打开图形 IDE，鼠标点击"编译"再点击"上传"；arduino-cli 把这些操作变成一条条命令，可以串进脚本、CI/CD 管道、批处理任务。
+日常类比：想象你有一台洗衣机，以前只能按面板上的实体按钮；arduino-cli 就是把这些按钮全部变成"可以写进剧本的文字命令"——同样的操作，现在可以记进文件、定时自动跑、串到一长串任务里。以前 Arduino 开发必须打开图形 IDE，用鼠标点"编译"再点"上传"；arduino-cli 把这些操作变成终端命令，可以串进 CI/CD 管道和批处理脚本。
 
 核心能力四件套：
 - **Board Manager**：安装/更新开发板核心包（支持官方 AVR、ARM 及第三方 ESP8266、NRF52 等）
 - **Library Manager**：搜索、安装、更新 Arduino 库
-- **编译器（compile）**：调用底层 avr-gcc / arm-gcc 工具链，产出可上传的固件
-- **上传器（upload）**：通过 avrdude / bossac 等工具把固件写入板子
+- **编译器（compile）**：调用底层 avr-gcc / arm-gcc（GCC 系列 C/C++ 编译器，专门针对嵌入式芯片）工具链，产出可上传的固件
+- **上传器（upload）**：通过 avrdude / bossac（专门向单片机烧录固件的工具）把固件写入板子
 
-最关键的是它还支持 **gRPC daemon 模式**——以后台服务形式运行，让 VSCode 插件、IDE、自动化脚本通过 gRPC 调用，免去每次都冷启动进程的开销。
+最关键的是它还支持 **gRPC daemon 模式**——gRPC 是一种让两个程序之间"远程互相调用功能"的协议（类比：打电话给一个服务台，对方帮你执行操作）。arduino-cli 以后台服务形式运行，让 VSCode 插件、IDE、自动化脚本通过这个协议调用，免去每次都冷启动进程的开销。
 
 ## 为什么重要
 
@@ -42,7 +42,7 @@ Arduino CLI 是 Arduino 官方用 Go 编写的**全功能命令行工具**，一
 
 3. **两种运行模式：CLI vs daemon**
 
-   普通用法是每次调一条命令（`arduino-cli compile ...`），适合脚本和 CI。daemon 模式下，`arduino-cli daemon` 以 gRPC 服务常驻后台，客户端（如 VSCode 插件）复用同一进程，避免重复加载索引、重复启动工具链——平均加速 2–3 倍。这两种模式共享同一套配置文件（`~/.arduino15/arduino-cli.yaml`），切换零成本。
+   普通用法是每次调一条命令（`arduino-cli compile ...`），适合脚本和 CI。daemon 模式下，`arduino-cli daemon` 以 gRPC 服务常驻后台，客户端（如 VSCode 插件）复用同一进程，避免重复加载索引、重复启动工具链，显著减少冷启动开销。这两种模式共享同一套配置文件（`~/.arduino15/arduino-cli.yaml`），切换零成本。
 
 ## 实践案例
 
@@ -100,8 +100,8 @@ SKETCH="./sketch/blink"
 # 先编译一次，产出 .hex
 arduino-cli compile --fqbn "$FQBN" --output-dir ./build "$SKETCH"
 
-# 列出所有匹配的串口
-arduino-cli board list --fqbn "$FQBN" | awk 'NR>1 {print $1}' | while read PORT; do
+# board list 列出所有连接的板，grep 过滤特定 FQBN，awk 取第一列（串口路径）
+arduino-cli board list | grep "$FQBN" | awk '{print $1}' | while read PORT; do
   echo "Uploading to $PORT ..."
   arduino-cli upload \
     --fqbn "$FQBN" \
@@ -113,7 +113,7 @@ done
 ```
 
 **逐部分解释**：
-- `board list --fqbn` 过滤出特定型号的所有连接板，避免误上传到不同类型的板子
+- `board list` 列出所有当前连接的开发板及对应串口；`board list` 命令本身不支持 `--fqbn` 过滤，需借助 `grep` 筛出目标型号
 - 编译只跑一次，上传复用同一份 `.hex`，效率更高
 - `&&` / `||` 分支让每块板的结果独立报告，不因一块失败而中断整个流程
 
