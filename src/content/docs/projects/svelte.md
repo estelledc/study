@@ -171,5 +171,6 @@ Svelte 学习曲线可以拆成 **三块**：
 - [[sveltekit]] —— SvelteKit — Svelte 全栈框架
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

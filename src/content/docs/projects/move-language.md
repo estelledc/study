@@ -160,6 +160,7 @@ spec increment {
 
 - [[anchor]] —— Anchor — Solana 合约开发框架
 - [[aptos-core]] —— Aptos — Move 系高性能 L1
+- [[daian-flash-boys-2020]] —— Flash Boys 2.0 — 区块链上的抢跑者和共识危机
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
 - [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统

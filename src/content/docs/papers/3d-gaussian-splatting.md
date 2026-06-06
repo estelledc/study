@@ -178,6 +178,7 @@ for g in gaussians:
 - [[magic3d-2023]] —— Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[meagher-1982-octree]] —— Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界
+- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[mode-connectivity-2018]] —— Mode Connectivity — 神经网络的两个最优解之间有低洼走廊
 - [[monaghan-1992-sph]] —— SPH — 把流体拆成一群带核的粒子
 - [[mueller-2007-pbd]] —— Position Based Dynamics — 跳过力，直接挪位置
@@ -189,7 +190,7 @@ for g in gaussians:
 - [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场
-- [[raylib]] —— raylib — 极简 C 游戏库
+- [[raylib]] —— raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
 - [[stam-1999-stable-fluids]] —— Stable Fluids — 让流体模拟时间步随便给都不爆
 - [[vit]] —— ViT — Vision Transformer
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线

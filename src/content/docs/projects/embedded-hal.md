@@ -204,5 +204,10 @@ let mut sdcard  = SdCard::new(sdcard_spi, delay);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
+- [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
+- [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 

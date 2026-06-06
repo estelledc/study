@@ -167,5 +167,9 @@ dotspacemacs-editing-style 'hybrid
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[doom-emacs]] —— Doom Emacs — 极简风 Emacs 配置框架
+- [[emacs]] —— GNU Emacs — Lisp 自文档编辑器
+- [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[vim]] —— Vim — 模态编辑器之父
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 

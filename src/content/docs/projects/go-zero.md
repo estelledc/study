@@ -164,4 +164,5 @@ func NewServiceContext(c config.Config) *ServiceContext {
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[redis]] —— Redis — 内存键值数据库
+- [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
 

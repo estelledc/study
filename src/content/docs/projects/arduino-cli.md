@@ -201,4 +201,5 @@ grpcurl -plaintext \
 - [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
+- [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
 

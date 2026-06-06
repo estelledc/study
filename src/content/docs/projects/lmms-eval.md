@@ -216,7 +216,6 @@ python -m lmms_eval \
 - [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
 - [[omnidirectional-mllm-2025]] —— 全景空间推理 — MLLM 准备好面对 360° 了吗
 - [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
-- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
@@ -243,6 +242,7 @@ python -m lmms_eval \
 - [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
 - [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
 - [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
 - [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 - [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
 - [[vsi-bench-2024]] —— VSI-Bench — 用室内漫游视频考视频大模型的空间智商

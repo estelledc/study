@@ -164,5 +164,6 @@ west flash                               # 烧录
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
+- [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

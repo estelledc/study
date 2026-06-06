@@ -196,4 +196,5 @@ MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.example/battery")
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+- [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
 

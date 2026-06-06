@@ -155,5 +155,7 @@ oyente -s MyContract.sol
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
+- [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
 

@@ -157,4 +157,5 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 - [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
 - [[perlin-1985-noise]] —— Perlin Noise — 让计算机生成的图像不再有"机器味"
 - [[saito-takahashi-1990-gbuffer]] —— Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文
+- [[threejs]] —— three.js — Web 3D 事实标准
 

@@ -240,5 +240,7 @@ fn main() {
 - [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[openrct2]] —— OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写
+- [[raylib]] —— raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
+- [[threejs]] —— three.js — Web 3D 事实标准
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

@@ -163,5 +163,6 @@ Blinn: shininess = 128 →  视觉效果接近 A
 - [[monaghan-1992-sph]] —— SPH — 把流体拆成一群带核的粒子
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[stam-1999-stable-fluids]] —— Stable Fluids — 让流体模拟时间步随便给都不爆
+- [[threejs]] —— three.js — Web 3D 事实标准
 - [[whitted-1980]] —— Whitted 1980 — 让光线在场景里递归跑三种次级射线
 

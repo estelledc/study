@@ -193,6 +193,7 @@ chmod +x rename-prefix.el
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[doom-emacs]] —— Doom Emacs — 极简风 Emacs 配置框架
 - [[geany]] —— Geany — GTK 轻量 IDE
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs

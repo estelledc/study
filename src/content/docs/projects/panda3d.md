@@ -252,4 +252,5 @@ void main() {
 - [[magic3d-2023]] —— Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
 - [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[openrct2]] —— OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写
+- [[threejs]] —— three.js — Web 3D 事实标准
 

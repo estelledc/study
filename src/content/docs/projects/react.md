@@ -237,6 +237,7 @@ function Greeting({ name }) {
 - [[voila]] —— Voilà — 把 Jupyter Notebook 变成只显示输出的网页
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[vue]] —— Vue.js — 渐进式 UI 框架
+- [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 - [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
 - [[world-model-robot-learning-2026]] —— 机器人世界模型综述 — 预测未来再动手

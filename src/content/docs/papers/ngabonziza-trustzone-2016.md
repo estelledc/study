@@ -172,5 +172,8 @@ int secure_boot_verify(const uint8_t *firmware, size_t fw_len,
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[lee-keystone-2020]] —— Keystone — 开源可定制 RISC-V TEE 框架
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
+- [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
 

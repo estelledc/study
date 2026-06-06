@@ -188,6 +188,7 @@ int main() { UNITY_BEGIN(); RUN_TEST(test_crc16); return UNITY_END(); }
 - [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

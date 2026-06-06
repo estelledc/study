@@ -269,4 +269,5 @@ app.whenReady().then(() => {
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
+- [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
 

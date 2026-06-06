@@ -154,6 +154,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
 - [[delta]] —— delta — git diff 的语法高亮分页器
+- [[doom-emacs]] —— Doom Emacs — 极简风 Emacs 配置框架
 - [[dua-cli]] —— dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[eza]] —— eza — 现代 ls 替代（exa 的社区接管 fork）

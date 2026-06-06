@@ -433,7 +433,7 @@ sidebar:
 | [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 | [Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用](/study/projects/tauri/) | ✅ v3 |  |
-| [Wails — Go 写的轻量桌面壳，用系统 WebView 包 Web 前端](/study/projects/wails/) | ✅ v3 |  |
+| [Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架](/study/projects/wails/) | ✅ v3 |  |
 
 ### Meta 框架
 
@@ -882,7 +882,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 |  |
-| [Doom Emacs — 极简风 Emacs 发行](/study/projects/doom-emacs/) | ✅ v3 |  |
+| [Doom Emacs — 极简风 Emacs 配置框架](/study/projects/doom-emacs/) | ✅ v3 |  |
 | [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 |  |
 | [Geany — GTK 轻量 IDE](/study/projects/geany/) | ✅ v3 |  |
 | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 |  |
@@ -1318,7 +1318,7 @@ sidebar:
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | ✅ v3 | 基础设施 | DevOps |
 | `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `docusaurus` | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) | ✅ v3 | CLI | 文档工具 |
-| `doom-emacs` | [Doom Emacs — 极简风 Emacs 发行](/study/projects/doom-emacs/) | ✅ v3 | CLI | 编辑器与 IDE |
+| `doom-emacs` | [Doom Emacs — 极简风 Emacs 配置框架](/study/projects/doom-emacs/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | ✅ v3 | 数据库 | 存储与查询 |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | ✅ v3 | 通信 | 实时通信 |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1935,7 +1935,7 @@ sidebar:
 | `vscodium` | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | ✅ v3 | 后端 API | UI 框架 |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | ✅ v3 | 后端 API | projects |
-| `wails` | [Wails — Go 写的轻量桌面壳，用系统 WebView 包 Web 前端](/study/projects/wails/) | ✅ v3 | 后端 API | 移动端 |
+| `wails` | [Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架](/study/projects/wails/) | ✅ v3 | 后端 API | 移动端 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | ✅ v3 | 区块链 | 链与合约 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | ✅ v3 | 后端 API | Web 后端 |

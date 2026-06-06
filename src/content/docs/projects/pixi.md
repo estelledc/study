@@ -170,4 +170,5 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 - [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 - [[react]] —— React UI 组件库
+- [[threejs]] —— three.js — Web 3D 事实标准
 
