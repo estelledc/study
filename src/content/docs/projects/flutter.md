@@ -185,6 +185,7 @@ MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.example/battery")
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[livekit-flutter]] —— LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频
 - [[react]] —— React UI 组件库

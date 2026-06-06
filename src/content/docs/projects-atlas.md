@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 808 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 812 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：808 个
-- **已分类**：808
+- **总数**：812 个
+- **已分类**：812
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 8 |
+| [操作系统](#操作系统) | 9 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 180 |
+| [后端 API](#后端-api) | 181 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 6 |
+| [图形学](#图形学) | 7 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 110 |
+| [CLI](#cli) | 111 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 8 个。
+共 9 个。
 
 ### 嵌入式
 
@@ -181,6 +181,7 @@ sidebar:
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
 | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 |  |
 | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | ✅ v3 |  |
+| [Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统](/study/projects/yocto-poky/) | ✅ v3 |  |
 | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | ✅ v3 |  |
 
 ## 机器学习
@@ -372,7 +373,7 @@ sidebar:
 
 ## 后端 API
 
-共 180 个。
+共 181 个。
 
 ### 前端
 
@@ -415,6 +416,7 @@ sidebar:
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用](/study/projects/capacitor/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
@@ -702,7 +704,7 @@ sidebar:
 
 ## 图形学
 
-共 6 个。
+共 7 个。
 
 ### 渲染与图形
 
@@ -711,6 +713,7 @@ sidebar:
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
 | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
+| [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 
 ### 其他子类
@@ -851,7 +854,7 @@ sidebar:
 
 ## CLI
 
-共 110 个。
+共 111 个。
 
 ### 编辑器与 IDE
 
@@ -864,6 +867,7 @@ sidebar:
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
 | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | ✅ v3 |  |
 | [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 |  |
+| [Vim — 模态编辑器之父](/study/projects/vim/) | ✅ v3 |  |
 | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | ✅ v3 |  |
 | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | ✅ v3 |  |
 | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | ✅ v3 |  |
@@ -1101,7 +1105,7 @@ sidebar:
 
 ---
 
-## 全部 808 个（字母序）
+## 全部 812 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1198,6 +1202,7 @@ sidebar:
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `canvas-datagrid` | [canvas-datagrid — 整张表只用一块 canvas 画](/study/projects/canvas-datagrid/) | ✅ v3 | 数据可视化 | 数据可视化 |
+| `capacitor` | [Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用](/study/projects/capacitor/) | ✅ v3 | 后端 API | 移动端 |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | ✅ v3 | 后端 API | Web 后端 |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | ✅ v3 | 分布式系统 | 数据库 / 分布式 |
@@ -1599,6 +1604,7 @@ sidebar:
 | `opencv` | [OpenCV — 开源计算机视觉库与跨平台图像视频处理](/study/projects/opencv/) | ✅ v3 | 通信 | 音视频媒体 |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | ✅ v3 | 通信 | 实时通信 |
+| `openrct2` | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | ✅ v3 | 区块链 | 链与合约 |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | ✅ v3 | 数据库 | 存储与查询 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | ✅ v3 | 基础设施 | 基础设施 |
@@ -1857,6 +1863,7 @@ sidebar:
 | `videollama2` | [VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现](/study/projects/videollama2/) | ✅ v3 | 机器学习 | 视频理解 |
 | `videollama3` | [VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座](/study/projects/videollama3/) | ✅ v3 | 机器学习 | 视频理解 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | ✅ v3 | 区块链 | 链与合约 |
+| `vim` | [Vim — 模态编辑器之父](/study/projects/vim/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `vips` | [libvips — 流式低内存图像库](/study/projects/vips/) | ✅ v3 | 通信 | 音视频媒体 |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1898,6 +1905,7 @@ sidebar:
 | `yargs` | [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | ✅ v3 | 后端 API | projects |
 | `yazi` | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) | ✅ v3 | CLI | 命令行工具 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | ✅ v3 | 分布式系统 | 协同编辑 |
+| `yocto-poky` | [Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统](/study/projects/yocto-poky/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | ✅ v3 | CLI | 命令行工具 |
 | `yt-dlp` | [yt-dlp — youtube-dl 活跃分支与万能站点视频下载器](/study/projects/yt-dlp/) | ✅ v3 | 通信 | 音视频媒体 |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) | ✅ v3 | 数据库 | 存储与查询 |

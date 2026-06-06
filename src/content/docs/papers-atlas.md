@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 920 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 924 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：920 篇
-- **已分类**：920
+- **总数**：924 篇
+- **已分类**：924
 
 ### 按一级主题分布
 
@@ -21,7 +21,7 @@ sidebar:
 | [编程语言](#编程语言) | 109 |
 | [分布式系统](#分布式系统) | 75 |
 | [数据库](#数据库) | 67 |
-| [操作系统](#操作系统) | 59 |
+| [操作系统](#操作系统) | 61 |
 | [机器学习](#机器学习) | 215 |
 | [后端 API](#后端-api) | 9 |
 | [基础设施](#基础设施) | 12 |
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 30 |
+| [安全与隐私](#安全与隐私) | 32 |
 | [其他](#其他) | 13 |
 
 ---
@@ -355,7 +355,7 @@ sidebar:
 
 ## 操作系统
 
-共 59 篇。
+共 61 篇。
 
 ### 内核与虚拟化
 
@@ -363,6 +363,7 @@ sidebar:
 |---|:---:|---|
 | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) | ✅ v3 |  |
 | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) | ✅ v3 |  |
+| [Arrakis 2014 — 让操作系统只管规则、硬件直接服务应用](/study/papers/arrakis-2014/) | ✅ v3 |  |
 | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) | ✅ v3 |  |
 | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | ✅ v3 |  |
 | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | ✅ v3 |  |
@@ -384,6 +385,7 @@ sidebar:
 | [Haven — 把整个应用装进 CPU 黑盒，让云服务商也看不见](/study/papers/haven-2014/) | ✅ v3 |  |
 | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | ✅ v3 |  |
 | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | ✅ v3 |  |
+| [IX — 把网络栈装进受保护的数据面 OS](/study/papers/ix-2014/) | ✅ v3 |  |
 | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) | ✅ v3 |  |
 | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) | ✅ v3 |  |
 | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | ✅ v3 |  |
@@ -1207,7 +1209,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 30 篇。
+共 32 篇。
 
 ### 安全与隐私
 
@@ -1216,6 +1218,7 @@ sidebar:
 | [DP-SGD — 深度学习差分隐私训练](/study/papers/abadi-dpsgd-2016/) | ✅ v3 |  |
 | [QL: Object-Oriented Queries on Relational Data](/study/papers/avgustinov-codeql-2016/) | ✅ v3 |  |
 | [Scalable, Transparent, and Post-Quantum Secure Computational Integrity](/study/papers/ben-sasson-stark-2018/) | ✅ v3 |  |
+| [SPHINCS — 无状态哈希签名，后量子密码的"保险"](/study/papers/bernstein-sphincs-2015/) | ✅ v3 |  |
 | [AFLFast — 灰盒 Fuzz 的马尔可夫调度](/study/papers/bohme-aflfast-2016/) | ✅ v3 |  |
 | [Bonawitz FL System 2019 — Google 工业级联邦学习系统设计](/study/papers/bonawitz-fl-system-2019/) | ✅ v3 |  |
 | [CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM](/study/papers/bos-kyber-2018/) | ✅ v3 |  |
@@ -1239,6 +1242,7 @@ sidebar:
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
 | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
 | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 |  |
+| [Yao 混淆电路 — 让两人合算函数却互不泄密](/study/papers/yao-garbled-circuits-1986/) | ✅ v3 |  |
 
 ### 密码学
 
@@ -1278,7 +1282,7 @@ sidebar:
 
 ---
 
-## 全部 920 篇（字母序）
+## 全部 924 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1318,6 +1322,7 @@ sidebar:
 | `apollo-2014` | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `apron-2009` | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `aries-1992` | [ARIES 1992 — 数据库崩溃后怎么把账目对回来](/study/papers/aries-1992/) | ✅ v3 | 数据库 | 存储与查询 |
+| `arrakis-2014` | [Arrakis 2014 — 让操作系统只管规则、硬件直接服务应用](/study/papers/arrakis-2014/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `art-2013` | [ART 自适应基数树 — 内存数据库为主索引重新选材](/study/papers/art-2013/) | ✅ v3 | 数据库 | 存储与查询 |
 | `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) | ✅ v3 | 通信 | 通信 / 开源 PBX |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
@@ -1346,6 +1351,7 @@ sidebar:
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | ✅ v3 | 机器学习 | MLOps / 模型服务 |
 | `berenson-1995-isolation` | [Berenson 1995 — ANSI SQL 隔离级别的漏洞与快照隔离](/study/papers/berenson-1995-isolation/) | ✅ v3 | 数据库 | 存储与查询 |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | ✅ v3 | 数据库 | 存储与查询 |
+| `bernstein-sphincs-2015` | [SPHINCS — 无状态哈希签名，后量子密码的"保险"](/study/papers/bernstein-sphincs-2015/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | ✅ v3 | NLP | NLP |
 | `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | ✅ v3 | 编程语言 | 编程语言 |
@@ -1690,6 +1696,7 @@ sidebar:
 | `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `isabelle-hol-2002` | [Isabelle/HOL — 让程序证明像写数学论文一样可读](/study/papers/isabelle-hol-2002/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `islands-architecture` | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) | ✅ v3 | 后端 API | 前端框架 |
+| `ix-2014` | [IX — 把网络栈装进受保护的数据面 OS](/study/papers/ix-2014/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `jacobson-1988` | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) | ✅ v3 | 网络协议 | 网络协议 |
 | `janus-2016` | [Janus 2016 — 把并发控制和共识捏成一个协议](/study/papers/janus-2016/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `jemalloc-2006` | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -2194,6 +2201,7 @@ sidebar:
 | `xla-compiler` | [XLA — 给 TensorFlow / JAX 装一台真正的张量编译器](/study/papers/xla-compiler/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `xlnet-2019` | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) | ✅ v3 | 分布式系统 | 共识与复制 |
+| `yao-garbled-circuits-1986` | [Yao 混淆电路 — 让两人合算函数却互不泄密](/study/papers/yao-garbled-circuits-1986/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `youtube-two-tower-2019` | [YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键](/study/papers/youtube-two-tower-2019/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | ✅ v3 | 数据库 | 存储与查询 |

@@ -158,4 +158,5 @@ Bulletproofs 建立在 Pedersen 向量承诺上：`C = <a,G> + <b,H> + r·Q`。
 
 - [[bowe-halo-2019]] —— Halo: Recursive Proof Composition without a Trusted Setup
 - [[gabizon-plonk-2019]] —— PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge
+- [[yao-garbled-circuits-1986]] —— Yao 混淆电路 — 让两人合算函数却互不泄密
 

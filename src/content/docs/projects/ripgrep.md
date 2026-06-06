@@ -182,6 +182,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
+- [[vim]] —— Vim — 模态编辑器之父
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd

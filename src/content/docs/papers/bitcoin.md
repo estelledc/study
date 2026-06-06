@@ -147,6 +147,7 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[aave-v3]] —— Aave V3 — 借贷协议旗舰
 - [[ape-framework]] —— Ape Framework — Python 智能合约开发一条龙
 - [[arweave]] —— Arweave — 一次付费、永远存着的区块链
+- [[bernstein-sphincs-2015]] —— SPHINCS — 无状态哈希签名，后量子密码的"保险"
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程

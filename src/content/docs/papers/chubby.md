@@ -156,12 +156,12 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
-- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
@@ -169,9 +169,7 @@ client → Chubby (读 small file: /ls/global/bigtable/root-tablet-loc)
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[paxos-simple-2001]] —— Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[raft]] —— Raft — 易理解的共识算法
-- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳

@@ -157,7 +157,6 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
-- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
@@ -183,7 +182,6 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[netkat-2014]] —— NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式
-- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[plan9-1995]] —— Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX
@@ -199,6 +197,7 @@ Y = λf. (λx. f (x x)) (λx. f (x x))
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[scott-strachey-denotational]] —— Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[simula-67]] —— SIMULA 67 — 面向对象的诞生
 - [[smalltalk-80]] —— Smalltalk-80
 - [[ssa]] —— SSA — 静态单赋值形式

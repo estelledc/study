@@ -34,6 +34,7 @@
 {"slug":"apollo-2014","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"apron-2009","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"aries-1992","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
+{"slug":"arrakis-2014","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"art-2013","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"asterisk","area":"papers","theme":"通信","themeId":"communication","subcategory":"通信 / 开源 PBX","source":"category","confidence":"high","rawCategory":"通信"}
 {"slug":"astree","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
@@ -62,6 +63,7 @@
 {"slug":"bentoml","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"MLOps / 模型服务","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"berenson-1995-isolation","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"bernstein-1981-cc","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
+{"slug":"bernstein-sphincs-2015","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"bert","area":"papers","theme":"NLP","themeId":"nlp","subcategory":"NLP","source":"category","confidence":"high","rawCategory":"NLP"}
 {"slug":"bert4rec-2019","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"bidirectional-typing","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"编程语言","source":"category","confidence":"high","rawCategory":"编程语言"}
@@ -406,6 +408,7 @@
 {"slug":"ironfleet-2015","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"isabelle-hol-2002","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"islands-architecture","area":"papers","theme":"后端 API","themeId":"backend-api","subcategory":"前端框架","source":"category","confidence":"high","rawCategory":"后端 API"}
+{"slug":"ix-2014","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"jacobson-1988","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
 {"slug":"janus-2016","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"jemalloc-2006","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
@@ -910,6 +913,7 @@
 {"slug":"xla-compiler","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"xlnet-2019","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"xtrace-2007","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
+{"slug":"yao-garbled-circuits-1986","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"youtube-two-tower-2019","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"z3-2008","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"zab-2011","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
@@ -1011,6 +1015,7 @@
 {"slug":"calico","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"candle","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"canvas-datagrid","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
+{"slug":"capacitor","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"移动端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"capnproto","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"captum","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"cassandra","area":"projects","theme":"分布式系统","themeId":"distributed-systems","subcategory":"数据库 / 分布式","source":"category","confidence":"high","rawCategory":"分布式系统"}
@@ -1412,6 +1417,7 @@
 {"slug":"opencv","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"openlayers","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"openmeetings","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
+{"slug":"openrct2","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"opensea-js","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"opensearch","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"opentelemetry-collector","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
@@ -1670,6 +1676,7 @@
 {"slug":"videollama2","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"videollama3","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"viem","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
+{"slug":"vim","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"vips","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"vis-network","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"vis-timeline","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
@@ -1711,6 +1718,7 @@
 {"slug":"yargs","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"yazi","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"yjs","area":"projects","theme":"分布式系统","themeId":"distributed-systems","subcategory":"协同编辑","source":"category","confidence":"high","rawCategory":"分布式系统"}
+{"slug":"yocto-poky","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"yq","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"yt-dlp","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"yugabyte-db","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}

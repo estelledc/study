@@ -153,5 +153,6 @@ starship init fish | source
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
+- [[vim]] —— Vim — 模态编辑器之父
 - [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell
 
