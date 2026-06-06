@@ -127,6 +127,23 @@ for item in cover_dataset:
 - [[videollama2-2024]] —— 开源视频模型对照
 - [[lmms-eval]] —— 潜在统一跑分
 
+> 维护提示：
+- 双千进度以 `data/written.txt` 与 atlas 为准，勿手工改计数。
+- 反事实评测建议与 [[vinoground-2024]] 组合跑，覆盖像素时序与多象限推理两层。
+- 报分请锁采帧数、温度与子问题协议；COVER 对采样抖动敏感。
+- 子问题链准确率是主问题的领先指标，勿只看四象限总分。
+- 候选队列见 `research/papers-video-understanding.md`，站内 slug 以 atlas 为准。
+- 长视频子题见专题站 `/stations/video-understanding/` 分阶段表。
+- 工程对照见 [[lmms-eval]]、[[decord]] 等笔记，复现数字以官方脚本为准。
+- 关联条目使用 `[[slug]]` 格式，build 时由 backlink 脚本补全反向链。
+- 与 [[countervqa-2025]] 因果图路线对照，避免孤立记 benchmark 名。
+- 开源/闭源模型均未饱和，推理链仍是 2025 frontier。
+- 人类子问题基线显著高于主问题，模型掉分多发生在中间步。
+- 四象限表要分格汇报，总分掩盖「感知高、认知低」假象。
+- 发版前用 [[lmms-eval]] 或 COVER 官方仓库脚本复现文中数字。
+- pinned 依赖以各仓库 README 为准，勿混用不同 checkpoint 协议。
+- 与专题阅读站 [[video-understanding]] 路线图对照，避免候选表脱节。
+
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

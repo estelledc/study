@@ -176,8 +176,6 @@ Stage2 接 LLM 做 Chat 时，同一 decord 采样策略延续到 [[videochat-20
 - [[llava]] —— 图像 LLaVA 范式；InternVideo2 Stage2 嫁接 LLM 同源
 - [[clip]] —— 视觉对比学习先驱；InternVideo Stage1 与之同族
 - [[blip2-2023]] —— 两阶段预训练范式先驱
-- [[long-video-retrieval-2023]] —— 长视频下游任务对照
-- [[tempcompass-2024]] —— 下游时序评测可接 InternVideo2-Chat
 - [[llava-onevision-2024]] —— 统一 image/video 竞品论文
 - [[videochat2]] —— VideoChat2 官方仓（笔记待写，Ask-Anything）
 - [[video-understanding]] —— 专题枢纽

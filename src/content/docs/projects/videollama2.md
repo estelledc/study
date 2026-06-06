@@ -197,4 +197,3 @@ VideoLLaMA2 强项：**音视频联合（2.1-AV）** + **VideoLLaVA 数据即插
 - [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 - [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
-

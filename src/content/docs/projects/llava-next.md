@@ -175,15 +175,7 @@ def load_video_for_llava(path, sample_fps=1, max_frames=32):
 - [[llava-video-2024]] —— LLaVA-Video-178K 数据配方
 - [[videollama2]] —— 国内 Video-LLM 对照
 - [[internvideo]] —— 视频 encoder 预训练对照
-- [[videoprism-2024]] —— 冻结 encoder 范式对照
-- [[tempcompass-2024]] —— 时序探针
-- [[long-video-retrieval-2023]] —— 长视频另一条技术路线对照
-- [[vid-llm-survey-2023]] —— 综述地图
 - [[decord]] —— 视频数据加载
-- [[blip2-2023]] —— 两阶段 MLLM 范式先驱
-- [[flamingo-2022]] —— 冻结视觉 encoder 范式的历史先驱
-- [[videochat2]] —— VideoChat2 三阶段 + MVBench 代码仓（待写）
-- [[vllm-multimodal]] —— 视频 serving 加速分支对照（待写）
 - [[video-understanding]] —— 专题枢纽
 
 ## 反向链接

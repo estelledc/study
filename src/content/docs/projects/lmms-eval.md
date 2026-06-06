@@ -173,19 +173,9 @@ python -m lmms_eval \
 - [[videochat-2023]] —— VideoChat 系 benchmark 对照基线
 - [[videomme-2024]] —— 2024+ Video-LLM 事实标准高考卷
 - [[mvbench-2023]] —— 20 纯时序任务 + VideoChat2 三阶段对照
-- [[egoschema-2023]] —— 3min egocentric 长视频诊断
-- [[mlvu-2024]] —— 多层级时长 + 9 任务类型评测
 - [[internvideo]] —— InternVideo2 下游 benchmark 评测
 - [[decord]] —— 视频帧 I/O（lmms-eval v0.7 亦支持 TorchCodec）
-- [[long-video-retrieval-2023]] —— 论文用的 ActivityNet-QA / EgoSchema 均可在此框架跑
-- [[videoprism-2024]] —— 冻结 encoder 下游评测可接同一套 task
-- [[vid-llm-survey-2023]] —— benchmark 全景地图
-- [[llava]] —— 图像侧 LLaVA 评测 task 同源
-- [[clip]] —— 视觉 encoder 类模型的 zero-shot 评测亦在此框架
 - [[internvideo2-2024]] —— InternVideo2 下游 task 复现
-- [[llava-onevision-2024]] —— OneVision 统一评测入口
-- [[torchcodec]] —— v0.7+ 可选视频 I/O 后端（笔记待写）
-- [[videochat2]] —— MVBench 官方训练代码仓（待写）
 - [[video-understanding]] —— 专题枢纽
 
 ## 反向链接

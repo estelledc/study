@@ -172,7 +172,6 @@ Video-LLM 管线：**训练用 decord 采帧 → 模型 checkpoint → [[lmms-ev
 - Issue #102：NVDEC `libnvcuvid` 链接排错
 - Jupyter 示例：`examples/` 目录下的 notebook
 - [[videollama2]] —— 推理管线里常见的 decord 采帧前置步骤
-- [[internvideo]] —— 预训练数据管线同样依赖高效解码
 
 ## 关联
 
@@ -180,24 +179,6 @@ Video-LLM 管线：**训练用 decord 采帧 → 模型 checkpoint → [[lmms-ev
 - [[llava-next]] —— LLaVA-Video 数据加载
 - [[internvideo]] —— InternVideo 预训练 I/O
 - [[lmms-eval]] —— 评测时视频帧读取（v0.7+ TorchCodec 是另一条路，decord 仍常见）
-- [[video-llava-2024]] —— 论文实验侧的采帧基础设施
-- [[video-llama-2023]] —— 音视频模型同样依赖高效帧/音频切片
-- [[videochat-2023]] —— 早期 Video-LLM 采帧管线普遍迁移到 decord
-- [[videomme-2024]] —— 短/中/长多档 benchmark 采帧负载对照
-- [[mvbench-2023]] —— static-to-dynamic 评测数据加载
-- [[video-chatgpt-2023]] —— 指令微调开山实验采帧基线
-- [[qwen2-vl-2024]] —— 工业 Video-LLM 训练侧 decord 引用率极高
-- [[internvideo2-2024]] —— InternVideo2 工业栈采帧与预训练 I/O
-- [[llava-onevision-2024]] —— OneVision 视频 branch 数据加载对照
-- [[long-video-retrieval-2023]] —— 长视频 chunk 切分前的解码层
-- [[tempcompass-2024]] —— 时序 benchmark 对固定帧采样策略敏感
-- [[videoprism-2024]] —— 预训练数据管线同样走 decord 类 I/O
-- [[vid-llm-survey-2023]] —— 综述：Video-LLM 数据管线术语表
-- [视频理解阅读站](/study/stations/video-understanding/) — batch1/batch2 论文路线图 + 5 工程对照项目
-- [[llava]] —— 图像侧 LLaVA 训练；视频 branch 继承同一 DataLoader 模式
-- [[clip]] —— 视觉 encoder 输入前的帧预处理层
-- [[blip2-2023]] —— 两阶段 MLLM 范式；视频版同样先解帧再送 encoder
-- [[ffmpeg]] —— Decord 底层编解码依赖 FFmpeg/LibAV
 - [[video-understanding]] —— 专题枢纽
 
 ## 反向链接
@@ -215,4 +196,3 @@ Video-LLM 管线：**训练用 decord 采帧 → 模型 checkpoint → [[lmms-ev
 - [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 - [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
-
