@@ -1,168 +1,169 @@
 ---
-title: Doom Emacs — 极简风 Emacs 发行
+title: Doom Emacs — 极简风 Emacs 配置框架
 来源: 'https://github.com/doomemacs/doomemacs'
-日期: 2026-05-30
+日期: 2026-06-06
 分类: CLI
 子分类: 编辑器与 IDE
-难度: 初级
+难度: 中级
 ---
 
 ## 是什么
 
-**Doom Emacs** 是一套给 **GNU Emacs** 用的「预制装修方案」：你不用从零写几千行配置，clone 下来、勾选模块、改自己的私人目录，就能拥有一台启动快、键位统一、包可复现的编辑器。
+Doom Emacs 是一个**为有经验的 Emacs 用户量身设计的配置框架**，让你在原生 Emacs 基础上一键获得模块化配置、< 1 秒启动、vim 键绑定和声明式包管理。
 
-日常类比：Emacs 本身是毛坯房；Doom 是宜家样板间——墙漆、插座、橱柜布局都帮你选好，但你想换沙发（主题）、加书房（Rust module）仍在你自己的 `private` 目录里改。
+日常类比：就像一台**出厂已调好的赛车底盘**——你不必从头拧螺丝，但每颗螺丝仍在你够得到的地方，随时可以替换或去掉。
 
-它面向「Emacs 破产老兵」：曾折腾过配置、被包更新搞崩过的人。口号之一是 **Gotta go fast**——启动和运行都要快；另一个是 **Close to metal**——尽量贴近 vanilla Emacs，少一层神秘黑盒，方便你读源码、自己改。
+Doom 与 Spacemacs 是 Emacs 两大主流发行版，但哲学不同：Spacemacs 追求"开箱即用、隐藏细节"，Doom 追求"合理默认、接近原生"。Doom 的设计口号是"给从 Vim 叛逃来的人"——它内置 evil-mode，让你用 `hjkl` 和 SPC 键驱动整个编辑器，同时不牺牲 Emacs 的可扩展性。
 
-## 为什么重要
-
-不理解 Doom，下面这些事都没法解释：
-
-- 为什么有人放弃 Spacemacs 却还在 Emacs 阵营——Doom 用更少框架层换更快的启动
-- 为什么 `bin/doom sync` 和 `doom doctor` 会出现在 Emacs 教程里——Doom 把包管理做成了声明式 CLI
-- 为什么 evil 用户按 **SPC** 能弹出整棵命令树——Doom 默认 Spacemacs 风格的 leader / localleader 键位
-- 为什么重装电脑后有人能十分钟恢复同一套编辑环境——module + straight.el + Git 让配置可 pin、可回滚
-
-## 核心要点
-
-Doom 可以拆成 **三块** 来记：
-
-1. **模块开关（init.el）**：像手机设置里的「功能列表」。`:editor evil` 开 Vim 键位，`:lang/python` 开 Python 语法与工具，`:tools magit` 开 Git 界面。类比：你只勾选需要的 App，没勾的不会拖慢启动。
-
-2. **声明式包管理（packages.el + straight.el）**：额外要的包写进 `packages.el`，用 `bin/doom sync` 安装、删孤儿包、重建缓存。类比：购物清单交给仓库管理员，而不是每次开机现去应用商店搜。
-
-3. **bin/doom 命令行**：`install` 首次安装，`sync` 改配置后同步，`upgrade` 升 Doom 与包，`doctor` 查缺依赖，`env` 把 shell 的 PATH 导出给 Emacs。类比：给编辑器配了一个运维脚本，不用进 Emacs 也能修环境。
-
-## 实践案例
-
-### 案例 1：第一次安装，只开最小心跳
-
-终端执行（路径可按习惯改）：
-
-```sh
+```bash
+# 安装只需两条命令
 git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ~/.config/emacs/bin/doom install
 ```
 
-安装向导会问一些问题；装完后编辑 `~/.config/emacs/init.el`，确保类似片段存在：
+## 为什么重要
+
+不理解 Doom Emacs，下面这些事都没法解释：
+
+- 为什么许多 Emacs 老手放弃手写 init.el，转投 Doom 后启动时间从 10 秒降到 0.5 秒
+- 为什么 Vim 用户能在不放弃 hjkl 的前提下无缝迁移到 Emacs 生态（org-mode、Magit、LSP）
+- 为什么"Emacs 破产"（Emacs bankruptcy：配置腐烂到无法维护）能被模块化架构系统性解决
+- 为什么声明式包管理 + `doom sync` 能让 Emacs 配置像 Nix 一样可重现、可回滚
+
+## 核心要点
+
+Doom 的架构可以拆成 **三层**：
+
+1. **模块系统（Modules）**：Doom 提供 ~150 个可选模块，在 `init.el` 里用关键字开关：`:editor evil`（vim 仿真）、`:tools lsp`（LSP）、`:lang python`（Python 支持）。每个模块封装了包安装、键绑定、hook 配置，互相隔离。类比：像乐高积木——你在 init.el 里声明要哪些块，Doom 负责拼装和连线。
+
+2. **延迟加载（Lazy Loading）**：Doom 大量使用 `use-package` 的 `:defer` 和自定义 autoload 机制，让包只在第一次用到时才加载。这是启动速度 < 1 秒的核心秘密。类比：机场候机厅——航班不出发时，乘客（包）安静待在休息区，不堵大厅（启动时间）。
+
+3. **CLI 运维体系（bin/doom）**：`doom sync`（同步配置）、`doom upgrade`（升级 Doom + 包）、`doom doctor`（诊断环境）、`doom env`（快照 shell 环境变量）。这四条命令构成了 Doom 的"包管理 + 运维"闭环，解决了原生 Emacs 包管理的不确定性。
+
+## 实践案例
+
+### 案例 1：Vim 用户迁移到 Emacs 生态
+
+你是 Neovim 重度用户，想用 org-mode 做知识管理但不想重学键位。
+
+在 `~/.doom.d/init.el` 里保留 `:editor evil`，这会装 evil-mode 并配好所有 Vim 兼容层：
 
 ```elisp
-(doom! :completion ivy
-       :editor evil
-       :ui doom
-       :config default)
+;; ~/.doom.d/init.el 片段
+(doom! :editor
+       (evil +everywhere)  ; 所有 buffer 都用 vim 键位
+       :lang
+       (org +roam2)        ; org-mode + org-roam 双链笔记
+       :tools
+       magit               ; Git TUI，Vim 里没有这么好的对等物
+       )
 ```
 
-**逐部分解释**：
+运行 `doom sync` 后，你得到：SPC 作 Leader、SPC g g 打开 Magit、SPC n r f 打开 org-roam 笔记——全部 vim 风格操作，零额外配置。
 
-- `doom!` 是 Doom 的「总开关」宏，后面列的都是 module 关键字
-- `:completion ivy` 用 ivy 做模糊搜索补全（也可换 vertico）
-- `:editor evil` 打开 Vim 式移动与模式（normal / insert）
-- 保存后运行 `~/.config/emacs/bin/doom sync`，再启动 `emacs`，按 **SPC** 应弹出 leader 菜单
+### 案例 2：多语言 LSP 开发环境
 
-### 案例 2：自己加一个包并同步
-
-在私人目录 `~/.config/emacs/modules/` 旁的 `packages.el`（或 `config.el` 按文档约定）里声明：
+你需要在同一个 Emacs 里调试 Python 服务端和 TypeScript 前端，同时要代码补全和诊断。
 
 ```elisp
-(package! magit)  ; Git 图形界面
+;; init.el
+(doom! :tools
+       lsp                 ; 启用 lsp-mode（或 :tools (lsp +eglot) 用 eglot）
+       :lang
+       (python +lsp +pyright)
+       (javascript +lsp)
+       (typescript +lsp)
+       )
 ```
 
-然后：
-
-```sh
-~/.config/emacs/bin/doom sync
+```bash
+doom sync        # 安装 lsp-mode, pyright, typescript-language-server 等
+doom doctor      # 检查 node/python/pyright 是否在 PATH
 ```
 
-**逐部分解释**：
+打开 .py 文件时 LSP 自动启动，`gd`（go to definition）、`K`（hover doc）、`SPC c a`（code action）全部就位，与 Neovim + nvim-lspconfig 体验对等。
 
-- `package!` 告诉 Doom「我要这个包」，版本可由 straight  pin 到某次 commit
-- `sync` 会装新包、卸你删掉声明的孤儿包、刷新 autoload 缓存
-- 若忘了 `sync`，Emacs 里会表现为「包找不到」或旧键位——这是新人最高频失误之一
+### 案例 3：org-mode 知识管理 + GTD 工作流
 
-### 案例 3：写 Rust 并开 LSP
-
-在 `init.el` 增加语言与检查 module：
+用 Doom 打造"第二大脑"：双链笔记 + 任务管理 + 日程视图。
 
 ```elisp
-(doom! :completion ivy
-       :editor evil
-       :lang rust
-       :tools lsp
-       :checkers spell
-       :config default)
+;; init.el
+(doom! :lang
+       (org +roam2 +pretty +present)
+       :tools
+       deft                ; 全文搜索笔记
+       )
 ```
 
-终端检查环境：
+```elisp
+;; ~/.doom.d/config.el
+(setq org-directory "~/org/"
+      org-roam-directory "~/org/roam/")
 
-```sh
-~/.config/emacs/bin/doom doctor
-which rustc ripgrep
+;; GTD capture template
+(setq org-capture-templates
+      '(("t" "Task" entry (file+headline "inbox.org" "Tasks")
+         "* TODO %?\n  %U\n  %a")))
 ```
 
-**逐部分解释**：
-
-- `:lang rust` 拉进 rust-mode、相关键位与（若启用）tree-sitter 等集成
-- `:tools lsp` 用 lsp-mode 或 eglot 连 `rust-analyzer`，需在系统里已安装 LSP 二进制
-- `doom doctor` 列出缺失的系统依赖——Doom **不会**悄悄替你 `apt install`，避免「装了一堆你不知道的东西」
+`SPC n r f`（打开/创建 roam 笔记）、`SPC X`（快速 capture）、`SPC o a`（org-agenda）三键驱动整个工作流，笔记文件纯文本、Git 可追踪。
 
 ## 踩过的坑
 
-1. **不稳定 Emacs 构建**：版本号带 `.50`、`.91` 的预发布版常让 module 随机炸——应用稳定版 30.x 或文档推荐区间，并用 `doom doctor` 验证。
+1. **忘跑 `doom sync`**：修改 `init.el` 或 `packages.el`（添加/禁用模块、固定包版本）后，必须运行 `doom sync`，否则新包不安装、孤立包不清除，配置与实际状态脱节。这是新手最高频的困惑来源。
 
-2. **改配置不 sync**：动了 `init.el` / `packages.el` 却直接重启 Emacs，包和 autoload 仍是旧的——养成「改完就 `doom sync`」的肌肉记忆。
+2. **系统依赖漏装**：Doom 不自动安装 ripgrep、fd、node、python 等 CLI 工具，但它的很多功能依赖它们。装完 Doom 第一件事：跑 `doom doctor`，它会列出所有缺失的依赖和修复建议。
 
-3. **没开 module 却期待全能 IDE**：只开 `:editor evil` 就想写 Python + LSP + Docker——要在 `doom!` 里显式启用 `:lang/*`、`:tools/*`，并自己装 ripgrep、语言服务器等系统工具。
+3. **使用不稳定 Emacs 版本**：Emacs 版本号末尾是 `.50/.60/.9X` 的是预发布版，Doom 官方警告避免使用。推荐 Emacs 30.2（目前最新稳定）；macOS 用户建议 `brew install emacs-plus@30`。
 
-4. **键位脑裂**：从 [[vim]] / [[spacemacs]] 迁来仍按旧 leader，与 Doom 默认 **SPC** / **SPC m**（localleader）打架——先读 `:lang` 文档里的 evil 绑定，短期放慢速度换长期一致。
+4. **直接修改 Doom 核心目录**：用户配置应放在 `~/.doom.d`（或 `~/.config/doom`），绝对不要改 `~/.config/emacs`（Doom 源码目录）。`doom upgrade` 会覆盖核心目录，你在那里的改动会丢失。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-
-- 想要 **Emacs 生态**（org-mode、magit、elfeed 等）又嫌自写配置太累
-- 需要 **模块化开关**：机器慢就关动画 module，写单一语言就只开对应 `:lang`
-- 接受 **evil/Vim 键位** 或愿意学 Doom 的 leader 体系
-- 重视 **可复现**：配置进 Git，`doom sync` / pin 包版本，换机可快速恢复
+- 从 Vim/Neovim 迁移，想保留 vim 键位但探索 Emacs 生态（org-mode、Magit、TRAMP）
+- 受够了手写 `init.el` 腐烂，想要模块化、可重现的配置基础
+- 需要多语言 LSP 支持，又不想为每种语言手动配置 lsp-mode
+- macOS/Linux 桌面开发，把 Emacs 当 IDE + 笔记 + Git TUI 的一体化工作站
 
 **不适用**：
-
-- 只想「装个 VS Code 替代品」、完全不想学 Emacs 概念（buffer、mode、elisp）——学习曲线仍陡
-- 必须坚持 **默认 GNU 键位** 且讨厌前缀键——可能要大量自改 `+evil-bindings.el` 或选其他发行
-- 需要 **GUI 开箱即用 IDE**（断点调试 UI、重构菜单一应俱全）——Emacs 往往要叠 module 与插件
-- 团队统一 **Neovim/LazyVim** 工具链——选 [[neovim]] 更省事，除非你就是 Emacs 派
+- 刚接触 Emacs 的零基础新手——Doom 假设你理解 Emacs 基础概念（buffer、window、major-mode）
+- 只需轻量级编辑器，不想学 Emacs 生态——用 Helix 或 Neovim 更省力
+- 需要极度定制化配置，不想受任何框架约束——直接用手写 `init.el`（Crafted Emacs 等更薄的框架）
+- Windows 主力用户——Doom 在 Windows 上可用但体验明显不如 Linux/macOS
 
 ## 历史小故事（可跳过）
 
-- **叙事起源**：官方 README 写了一个「shell 住客 vimmer」投奔 Emacs 黑暗面的小故事——点明用户画像：要快、要 Vim 手感、又怕配置地狱。
-- **相对 Spacemacs**：Doom 刻意减少框架厚度，用 straight.el 做可 pin 的包管理，并把性能优化写进 mantra（懒加载、改包默认）。
-- **社区规模**：GitHub 约 **22k** star，Discord 活跃；文档在仓库 `docs/getting_started.org`，`bin/doom` 是日常运维入口。
-- **持续演进**：roadmap 公开在 doomemacs.org；大版本升级前看 #announcements，避免 breaking 键位或 module 改名踩雷。
+- **2014 年**：Henrik Lissner 从 Vim 叛逃到 Emacs，写下第一版私人配置，放在 GitHub。同年，Spacemacs 诞生，走的是另一条路：更重的 Layers 框架 + 更强的开箱即用。
+- **2016–2018 年**：Doom 逐渐从个人配置进化为可供他人使用的框架，引入模块系统和 `bin/doom` CLI。
+- **2019 年**：Doom v3 重写，架构更稳定，社区从零星贡献者发展到数千 Discord 成员。
+- **2023–2026 年**：~22k stars，支持 Emacs 27.1–30.2，与 Spacemacs 并列 Emacs 生态最具影响力的发行版；hlissner 本人仍是主要维护者，项目由社区 PR 维持活跃度。
 
 ## 学到什么
 
-1. **编辑器发行版** 解决的是「配置工程」问题，不是换了一个 exe——Doom 的价值在 module 边界与运维命令。
-2. **声明式 + sync** 把「我装了啥包」变成可 diff 的文本，比纯 `package-install` 随机装更利于复现。
-3. **Leader 键体系** 是 Spacemacs/Doom 类产品的 UX 核心——先接受前缀键，再谈效率。
-4. **doctor / env** 体现「你的系统你负责」哲学：Emacs 不偷偷改系统，但会给你体检清单。
+1. **框架 vs 原生的本质取舍**：Doom 选择"合理默认 + 暴露接口"而非"隐藏一切"，让你能 debug 自己的配置，而不是绕过框架的黑盒。
+2. **延迟加载是性能银弹**：在 Lisp 解释器环境里，懒加载比任何"优化包"更有效——只加载当前真正用到的代码。
+3. **CLI 运维降低维护焦虑**：`doom sync/upgrade/doctor` 把"Emacs 破产"的风险从不可控变成可管理，声明式配置 + 可回滚是现代包管理的核心范式（参见 [[nix]]）。
+4. **从现有工具生态迁移要保留肌肉记忆**：evil-mode 的成功证明——工具迁移的最大摩擦不是功能缺失，而是键位记忆；保留键位，新功能才有机会被探索。
 
 ## 延伸阅读
 
-- 官方入门：[Getting Started](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org)
-- 模块列表：[modules.org](https://github.com/doomemacs/doomemacs/blob/master/docs/modules.org)（~150 个可选 module）
-- 视频：System Crafters 等频道的 Doom Emacs 系列（安装与 module 导览）
-- FAQ：[docs/faq.org](https://github.com/doomemacs/doomemacs/blob/master/docs/faq.org)（改主题、字体、常见误配置）
-- [[spacemacs]] —— 同类 Emacs 发行，键位理念相近但框架更重
-- [[emacs]] —— Doom 所依附的 GNU Emacs 本体
+- 官方文档：[Doom Emacs Getting Started](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org)（安装、配置、常见问题一站式）
+- 视频：[System Crafters — Doom Emacs 入门系列](https://www.youtube.com/playlist?list=PLEoMzSkcN8oPH1au7H6B7bqloSOPpi9Wl)（YouTube，逐模块讲解，适合边看边配）
+- 对比：[[spacemacs]] —— 同为 Emacs 发行版，理解 Doom vs Spacemacs 设计哲学差异
+- 相关工具：[[ripgrep]] —— Doom 内置项目搜索依赖 ripgrep，理解它能更好排查性能问题
+- 编辑器谱系：[[neovim]] —— 理解 Doom 吸引 Vim 用户的原因需要了解 Neovim 生态的边界
 
 ## 关联
 
-- [[emacs]] —— Doom 是 Emacs 上的配置框架，不是独立编辑器
-- [[spacemacs]] —— 键位与 module 理念的近亲，常被拿来对比启动速度与复杂度
-- [[vim]] —— evil-mode 要模拟的键位来源；Doom 默认面向 evil 用户
-- [[neovim]] —— 另一支「可扩展编辑器」路线；与 Doom 争的是「谁更值得学」而非同一安装包
-- [[nix]] —— README 称赞声明式可复现环境；可与 Doom 配置一起进版本管理
+- [[spacemacs]] —— Emacs 另一大发行版，与 Doom 同年诞生，Layers 体系 vs Modules 体系的不同取舍
+- [[neovim]] —— Doom 吸引的主要目标用户群，evil-mode 让两者键位兼容
+- [[vim]] —— evil-mode 的模仿对象，Doom 的 vim 兼容层从 vim 汲取大量设计
+- [[emacs]] —— Doom 的基础运行时，理解 Emacs 核心概念（buffer/window/major-mode）是使用 Doom 的前提
+- [[nix]] —— 声明式包管理理念的另一实践者，与 doom sync 的哲学高度相似
+- [[ripgrep]] —— Doom 项目搜索（SPC s p）的底层引擎，也是 Doom 安装的硬依赖
+- [[helix]] —— 现代模态编辑器，Doom 的轻量级替代者，适合不想学 Emacs 生态的用户
 
 ## 反向链接
 
