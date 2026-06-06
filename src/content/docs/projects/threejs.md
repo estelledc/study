@@ -121,11 +121,7 @@ function animate() {
 renderer.setAnimationLoop(animate);
 ```
 
-**逐部分解释**：
-
-- glTF（`.glb`）是 Web 3D 的"JPEG"——几何、材质、骨骼动画打包在一个文件里
-- `OrbitControls` 让鼠标拖拽旋转、滚轮缩放，产品展示页标配
-- 没加灯光的话 `MeshStandardMaterial` 会全黑——所以案例 1 用 `MeshNormalMaterial` 偷懒
+关键点：`enableDamping = true` 之后**必须**在每帧调用 `controls.update()`，阻尼才会生效；忘了写这行是拖拽感觉没有惯性的最常见原因。
 
 ### 案例 3：挂进 Vite + 处理 resize 与清理
 
@@ -176,7 +172,7 @@ export function dispose() {
 
 ## 踩过的坑
 
-1. **动画里忘记 `renderer.render`**：改了 rotation 但画面不动——每帧末尾必须 render，否则 GPU 不知道要画什么。
+1. **忘设 devicePixelRatio**：`renderer.setPixelRatio(window.devicePixelRatio)` 不写，Retina/HiDPI 屏下渲染分辨率只有显示分辨率的一半，边缘锯齿、文字发虚。这行几乎零成本，但忘了视觉折损显著——Retina Mac 和 iPhone 都是高 DPI 设备。
 
 2. **不 dispose 资源**：反复进入/离开 3D 页面，GPU 内存泄漏直到 tab 崩溃。geometry、material、texture、renderer 都要 dispose。
 
