@@ -3,7 +3,7 @@ title: Filament — Google 跨平台 PBR 渲染引擎
 来源: 'https://github.com/google/filament'
 日期: 2026-06-06
 分类: 图形学
-子分类: 实时渲染
+子分类: 渲染与图形
 难度: 高级
 ---
 
@@ -30,7 +30,7 @@ Filament 是 Google 开源的**跨平台实时物理渲染引擎**（PBR，Physi
 
 2. **IBL 流水线 = 把环境预积分两次**：直接用 HDR 全景图做环境光，每帧计算代价太高。Filament 的工具 `cmgen` 把 HDR 贴图拆成两张：辐射度立方贴图（高光用，按粗糙度分 mip 级）和 irradiance 球谐系数（漫反射用）。运行时查表而非积分，同样效果、百倍加速。类比：提前把菜谱里所有材料切好备好，炒菜时直接下锅，而不是临时去超市买。
 
-3. **Clustered Forward Renderer = 把灯光分格子**：传统 Forward 渲染每个像素对所有光源循环；Deferred 渲染需要大 GBuffer。Clustered Forward 把视锥切成 3D 格子，预计算每个格子包含哪些光源，像素着色时只查自己格子的列表。结果：支持数百个实时光源，GBuffer 内存开销为零，对半透明物体友好。
+3. **Clustered Forward Renderer = 把灯光分格子**：传统 Forward 渲染每个像素对所有光源循环，100 个光源 = 100 次着色计算；Deferred 渲染把几何信息写入 G-Buffer（多张大纹理），移动 GPU 带宽吃不消。Clustered Forward 把视锥切成 3D 格子，**预计算**每个格子包含哪些光源，像素着色时只查自己格子的列表——通常每格只有个位数光源。结果：支持数百个实时光源的同时，G-Buffer 内存开销为零，对半透明物体友好（半透明物体无法写入 G-Buffer）。
 
 ## 实践案例
 
