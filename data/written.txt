@@ -997,6 +997,7 @@ aspnetcore
 ast-grep
 asterisk
 astro
+astronvim
 asynq
 atom
 aubio
@@ -1206,6 +1207,7 @@ fooocus
 foundry
 framer-motion
 frappe-gantt
+freemodbus
 freertos
 freeswitch
 fx
@@ -1464,6 +1466,7 @@ observable-framework
 observable-plot
 oclif
 ofetch
+ogre
 oh-my-posh
 ollama
 open-sora
@@ -1554,6 +1557,7 @@ quarkus
 quart
 quasar
 questdb
+quickjs
 qwik
 rabbitmq-server
 rabby-wallet

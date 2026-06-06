@@ -173,5 +173,10 @@ elbowNode->setOrientation(newElbowQuat);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[babylonjs]] —— Babylon.js — 微软开源的企业级 Web 3D 引擎
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
+- [[threejs]] —— three.js — Web 3D 事实标准
 

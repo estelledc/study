@@ -165,3 +165,8 @@ return {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+

@@ -164,7 +164,7 @@ require("lazy").setup({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 一键 IDE
+- [[astronvim]] —— AstroNvim — 社区驱动 Neovim 配置框架
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[lunarvim]] —— LunarVim — 一体化 Neovim IDE 层
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK

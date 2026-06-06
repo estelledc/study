@@ -166,7 +166,7 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 - [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
 - [[embedded-hal]] —— embedded-hal — 让同一份驱动代码跑在任意芯片上
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[freemodbus]] —— FreeModbus — 嵌入式工业总线从机协议栈 C 实现
+- [[freemodbus]] —— FreeModbus — 嵌入式 Modbus RTU/TCP 从机协议栈
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库

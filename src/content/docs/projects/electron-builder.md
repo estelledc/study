@@ -212,6 +212,7 @@ jobs:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
+- [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建与发布工具链
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

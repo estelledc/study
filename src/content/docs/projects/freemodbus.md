@@ -215,3 +215,9 @@ eMBErrorCode eMBRegInputCB(UCHAR *pucRegBuffer, USHORT usAddress, USHORT usNRegs
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[embedded-hal]] —— embedded-hal — 让同一份驱动代码跑在任意芯片上
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
+- [[mqtt-s-2008]] —— MQTT-S 2008 — 把发布/订阅消息机制装进传感器芯片
+

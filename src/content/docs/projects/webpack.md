@@ -186,6 +186,7 @@ webpack 没"死"——npm 周下载量截至 2026 初仍 30M+，超过所有替�
 - [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[electron-builder]] —— electron-builder — 一条命令把 Electron 应用打包发布到全平台
+- [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建与发布工具链
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具

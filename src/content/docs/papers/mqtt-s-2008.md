@@ -163,7 +163,7 @@ broker_client.publish(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[freemodbus]] —— FreeModbus — 嵌入式工业总线从机协议栈 C 实现
+- [[freemodbus]] —— FreeModbus — 嵌入式 Modbus RTU/TCP 从机协议栈
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

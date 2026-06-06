@@ -204,7 +204,7 @@ void tcp_echo_init(void) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[freemodbus]] —— FreeModbus — 嵌入式工业总线从机协议栈 C 实现
+- [[freemodbus]] —— FreeModbus — 嵌入式 Modbus RTU/TCP 从机协议栈
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库
 - [[mptcp-2012]] —— MPTCP 2012 — 把一根 TCP 管道变成多条并行水管

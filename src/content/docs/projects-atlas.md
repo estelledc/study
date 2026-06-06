@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 857 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 858 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：857 个
-- **已分类**：857
+- **总数**：858 个
+- **已分类**：858
 
 ### 按一级主题分布
 
@@ -23,7 +23,7 @@ sidebar:
 | [操作系统](#操作系统) | 20 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 191 |
+| [后端 API](#后端-api) | 192 |
 | [基础设施](#基础设施) | 72 |
 | [图形学](#图形学) | 18 |
 | [通信](#通信) | 100 |
@@ -179,7 +179,7 @@ sidebar:
 | [CircuitPython — 插上 USB 就能写 Python 的微控制器运行时](/study/projects/circuitpython/) | ✅ v3 |  |
 | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
 | [embedded-hal — 让同一份驱动代码跑在任意芯片上](/study/projects/embedded-hal/) | ✅ v3 |  |
-| [FreeModbus — 嵌入式工业总线从机协议栈 C 实现](/study/projects/freemodbus/) | ✅ v3 |  |
+| [FreeModbus — 嵌入式 Modbus RTU/TCP 从机协议栈](/study/projects/freemodbus/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
@@ -384,7 +384,7 @@ sidebar:
 
 ## 后端 API
 
-共 191 个。
+共 192 个。
 
 ### 前端
 
@@ -431,6 +431,7 @@ sidebar:
 | [Cordova — 用 HTML/JS 写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
 | [Electron — Chromium + Node.js 跨平台桌面应用框架](/study/projects/electron/) | ✅ v3 |  |
 | [electron-builder — 一条命令把 Electron 应用打包发布到全平台](/study/projects/electron-builder/) | ✅ v3 |  |
+| [Electron Forge — 官方一体化桌面应用构建与发布工具链](/study/projects/electron-forge/) | ✅ v3 |  |
 | [Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新](/study/projects/expo/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
@@ -892,7 +893,7 @@ sidebar:
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
-| [AstroNvim — 社区驱动的 Neovim 一键 IDE](/study/projects/astronvim/) | ✅ v3 |  |
+| [AstroNvim — 社区驱动 Neovim 配置框架](/study/projects/astronvim/) | ✅ v3 |  |
 | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 |  |
 | [Doom Emacs — 极简风 Emacs 配置框架](/study/projects/doom-emacs/) | ✅ v3 |  |
 | [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 |  |
@@ -1150,7 +1151,7 @@ sidebar:
 
 ---
 
-## 全部 857 个（字母序）
+## 全部 858 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1202,7 +1203,7 @@ sidebar:
 | `ast-grep` | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) | ✅ v3 | CLI | 命令行工具 |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | ✅ v3 | 通信 | 实时通信 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | 🗄 存量 | 后端 API | UI 框架 / 静态站点 |
-| `astronvim` | [AstroNvim — 社区驱动的 Neovim 一键 IDE](/study/projects/astronvim/) | ✅ v3 | CLI | 编辑器与 IDE |
+| `astronvim` | [AstroNvim — 社区驱动 Neovim 配置框架](/study/projects/astronvim/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | ✅ v3 | 后端 API | Web 后端 |
 | `atom` | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `aubio` | [aubio — 实时音频事件检测库](/study/projects/aubio/) | ✅ v3 | 通信 | 音视频媒体 |
@@ -1363,6 +1364,7 @@ sidebar:
 | `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | ✅ v3 | 数据库 | 存储与查询 |
 | `electron` | [Electron — Chromium + Node.js 跨平台桌面应用框架](/study/projects/electron/) | ✅ v3 | 后端 API | 移动端 |
 | `electron-builder` | [electron-builder — 一条命令把 Electron 应用打包发布到全平台](/study/projects/electron-builder/) | ✅ v3 | 后端 API | 移动端 |
+| `electron-forge` | [Electron Forge — 官方一体化桌面应用构建与发布工具链](/study/projects/electron-forge/) | ✅ v3 | 后端 API | 移动端 |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | ✅ v3 | 通信 | 实时通信 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | ✅ v3 | 通信 | 实时通信 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | ✅ v3 | 后端 API | web 框架 |
@@ -1412,7 +1414,7 @@ sidebar:
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | ✅ v3 | 区块链 | 链与合约 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | ✅ v3 | 数据可视化 | 动画 |
 | `frappe-gantt` | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) | ✅ v3 | 数据可视化 | 数据可视化 |
-| `freemodbus` | [FreeModbus — 嵌入式工业总线从机协议栈 C 实现](/study/projects/freemodbus/) | ✅ v3 | 操作系统 | 嵌入式 |
+| `freemodbus` | [FreeModbus — 嵌入式 Modbus RTU/TCP 从机协议栈](/study/projects/freemodbus/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `freertos` | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | ✅ v3 | 通信 | 实时通信 |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | ✅ v3 | CLI | 命令行工具 |
