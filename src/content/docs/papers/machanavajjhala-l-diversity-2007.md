@@ -178,6 +178,3 @@ def anonymize_census(records, sensitive="income_bracket", l=3, max_rounds=6):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-（暂无反向链接）
-
