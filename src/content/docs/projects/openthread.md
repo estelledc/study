@@ -64,10 +64,11 @@ Thread 网络本身是一个 IPv6 孤岛，Border Router（OTBR）负责在 Thre
 
 ```bash
 # 1. 树莓派安装 OTBR（Docker 最简方式）
-docker run --sysctl "net.ipv6.conf.all.disable_ipv6=0 \
+# nRF52840 USB 适配器接到 /dev/ttyACM0
+docker run -d --sysctl "net.ipv6.conf.all.disable_ipv6=0 \
   net.ipv4.conf.all.forwarding=1 net.ipv6.conf.all.forwarding=1" \
-  -p 8080:80 --dns=127.0.0.1 -it \
-  nRF52840-usb 挂为 /dev/ttyACM0 \
+  -p 8080:80 --dns=127.0.0.1 \
+  --device /dev/ttyACM0:/dev/ttyACM0 \
   openthread/otbr --radio-url spinel+hdlc+uart:///dev/ttyACM0
 
 # 2. 访问 OTBR Web UI：http://raspberrypi:8080
