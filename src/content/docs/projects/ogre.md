@@ -34,7 +34,7 @@ node->attachObject(ent);
 
 ## 核心要点
 
-1. **场景图（SceneGraph）**：场景里的每个物体挂在 SceneNode 树节点上，节点有位置/旋转/缩放，子节点自动继承父节点变换。类比：坐标系的俄罗斯套娃——机械臂的"手腕"节点动了，"手指"节点跟着动，不需要手动算矩阵累乘。每帧渲染时 SceneManager 遍历节点树做视锥裁剪（Frustum Culling），只提交可见对象给 GPU。
+1. **场景图（SceneGraph）**：场景里的每个物体挂在 SceneNode 树节点上，节点有位置/旋转/缩放，子节点自动继承父节点变换。类比：坐标系的俄罗斯套娃——机械臂的"手腕"节点动了，"手指"节点跟着动，不需要手动算矩阵累乘。每帧渲染时 SceneManager 遍历节点树做**视锥裁剪**（Frustum Culling）——像手电筒照不到的地方不需要渲染，相机"锥形视野"之外的对象直接跳过，只提交可见对象给 GPU。
 
 2. **插件式 RenderSystem**：Vulkan、OpenGL、Direct3D 各自是一个动态库插件，在 `plugins.cfg` 里指定加载哪个。切换只需改配置文件，业务代码不动。OGRE 的 MaterialManager 和 GpuProgramManager 负责把 HLSL/GLSL/SPIRV 着色器文件翻译为各后端对应的格式。
 
@@ -45,23 +45,32 @@ node->attachObject(ent);
 ### 案例 1：Python 十行出 PBR 场景（快速原型）
 
 ```python
-# pip install ogre-python
-import Ogre.HighPy as ohi
+# pip install ogre-python  （需 Python 3.8+）
+# 以下为 ogre-python HighPy 风格的示意代码，实际方法名请以官方文档为准
+import Ogre.Bites as OgreBites
+import Ogre
 
-ohi.window_create("Demo", window_size=(1280, 720))
-ohi.mesh_show("Demo", "DamagedHelmet.glb", position=(0, 0, -3))
-ohi.point_light("Demo", position=(0, 10, 0))
+ctx = OgreBites.ApplicationContext("Demo")
+ctx.initApp()
+scn_mgr = ctx.getRoot().createSceneManager()
 
-while ohi.window_draw("Demo") != 27:  # ESC 退出
-    pass
+# 加载 glTF 模型并附加到场景
+ent = scn_mgr.createEntity("DamagedHelmet.mesh")
+node = scn_mgr.getRootSceneNode().createChildSceneNode()
+node.attachObject(ent)
+
+light = scn_mgr.createLight("MainLight")
+scn_mgr.getRootSceneNode().createChildSceneNode().attachObject(light)
+ctx.getRoot().startRendering()
 ```
 
 **逐部分解释**：
-- `window_create` 内部完成 OGRE Root 初始化、RenderSystem 选择、RenderWindow 创建——三步合一
-- `mesh_show` 触发 glTF 2.0 解析并自动上传纹理到 GPU，材质走 PBR Metallic-Roughness 流程
-- `window_draw` 每帧调用 SceneManager 渲染一帧，返回值是最后一次按键的 ASCII 码
+- `ApplicationContext` 封装了 Root 初始化、RenderSystem 选择、窗口创建——三步合一
+- `createSceneManager` 创建场景图管理器，之后的物体都挂在它管理的节点树上
+- `createEntity` + `attachObject` 把 Mesh 加入场景，材质自动读取 PBR 配置
+- `startRendering` 进入主循环，每帧渲染一次直到窗口关闭
 
-适合快速验证 3D 资产、教学演示，不需要配置任何 CMake 工程。
+适合快速验证 3D 资产、教学演示，不需要手动配置着色器管线。
 
 ### 案例 2：C++ 嵌入 Qt 实现工业 CAD 视口
 
@@ -95,7 +104,8 @@ SceneNode* baseNode     = mSceneMgr->getRootSceneNode()
 SceneNode* shoulderNode = baseNode->createChildSceneNode("shoulder");
 SceneNode* elbowNode    = shoulderNode->createChildSceneNode("elbow");
 
-// 仿真循环：只需更新关节四元数
+// 仿真循环：只需更新关节旋转
+// 四元数（Quaternion）是描述旋转角度的数学表示，避免万向节死锁
 shoulderNode->setOrientation(newShoulderQuat);
 elbowNode->setOrientation(newElbowQuat);
 // OGRE 自动计算级联变换，不需要手动乘矩阵链
@@ -131,7 +141,7 @@ elbowNode->setOrientation(newElbowQuat);
 
 - **2001 年**：Steve Streeting 在个人博客宣布 OGRE 项目，目标是"写一个跨平台渲染引擎而不绑死任何 SDK"，以 LGPL 发布在 SourceForge。
 - **2005-2010 年**：Torchlight 系列、Battlezone 98 Redux 等商业项目相继采用，验证了插件式渲染后端的工业可用性。
-- **2008 年**：Gazebo 机器人仿真器选 OGRE 作可视化后端——这让 OGRE 进入了和游戏引擎完全不同的"工业/机器人"赛道，影响了 RViz 等 ROS 生态工具。
+- **2007-2010 年间**：Gazebo 机器人仿真器选 OGRE 作可视化后端——这让 OGRE 进入了和游戏引擎完全不同的"工业/机器人"赛道，影响了 RViz 等 ROS 生态工具。
 - **2015 年**：原维护者精力转移，社区在 GitHub 成立 OGRECave 组织接管，重构出不兼容 1.x 的 OGRE Next（2.x）分支，引入 Hlms 系统支持现代 PBR 工作流。
 - **2024 年**：4500+ GitHub stars，仍在活跃维护，Python 绑定（ogre-python）让非 C++ 用户也能十行出 3D 场景。
 
