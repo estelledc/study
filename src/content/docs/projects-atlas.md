@@ -716,7 +716,7 @@ sidebar:
 |---|:---:|---|
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
-| [LÖVE — 五分钟让 Lua 游戏跑起来的 2D 框架](/study/projects/love2d/) | ✅ v3 |  |
+| [LÖVE — Lua 2D 游戏框架](/study/projects/love2d/) | ✅ v3 |  |
 | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
@@ -1515,7 +1515,7 @@ sidebar:
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | ⭐ Season | 数据可视化 | 动画 |
-| `love2d` | [LÖVE — 五分钟让 Lua 游戏跑起来的 2D 框架](/study/projects/love2d/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `love2d` | [LÖVE — Lua 2D 游戏框架](/study/projects/love2d/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | ✅ v3 | CLI | 命令行工具 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | ✅ v3 | CLI | 工具库 |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | ✅ v3 | 后端 API | projects / 前端工具库 |

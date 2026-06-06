@@ -675,7 +675,7 @@
 {"slug":"react","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"智能体与 LLM","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"realm","area":"papers","theme":"NLP","themeId":"nlp","subcategory":"自然语言处理","source":"category","confidence":"high","rawCategory":"NLP"}
 {"slug":"red-1993","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
-{"slug":"reed-onion-routing-1998","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"security-privacy"}
+{"slug":"reed-onion-routing-1998","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"reed-solomon-1960","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"信息论","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"refinement-types-1991","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"reflexion","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"智能体与 LLM","source":"category","confidence":"high","rawCategory":"机器学习"}

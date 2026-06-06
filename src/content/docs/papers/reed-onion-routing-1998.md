@@ -2,7 +2,6 @@
 title: 洋葱路由 1998 — 把匿名通信从理论搬进真实互联网
 来源: 'Reed, Syverson & Goldschlag. "Anonymous Connections and Onion Routing". IEEE JSAC 1998'
 日期: 2026-06-06
-分类_原始: security-privacy
 分类: 安全与隐私
 子分类: 安全与隐私
 难度: 中级
@@ -168,5 +167,7 @@ assert onion_data == plaintext
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[tor-2004]] —— Tor 洋葱路由 — 让你的网络请求穿上三层马甲
 

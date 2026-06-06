@@ -198,6 +198,7 @@ cutlass-2020
 cytoscape-js
 dafny-2010
 dalle-2
+danezis-sphinx-2009
 dapper-2010
 dash-numa-1992
 dataflow-model-2015
@@ -226,6 +227,7 @@ dijkstra-1965
 dijkstra-goto
 dijkstra-shortest-path
 din-2018
+dingledine-mixminion-2003
 dino
 disco-1997
 disel-2018
@@ -310,6 +312,7 @@ fpga-hls-2011
 frama-c-2012
 frangipani-1997
 frank-effects
+freedman-psi-2004
 frenetic-2011
 fsdp-2023
 fsrs-spaced-repetition
@@ -673,6 +676,7 @@ react
 react-server-components
 realm
 red-1993
+reed-onion-routing-1998
 reed-solomon-1960
 refinement-types-1991
 reflexion
@@ -963,6 +967,7 @@ aragon
 arangodb
 arbitrum
 ardour
+arduino-cli
 argent-x
 argilla
 argo-workflows
@@ -977,6 +982,7 @@ ast-grep
 asterisk
 astro
 asynq
+atom
 aubio
 audacity
 auth-js
@@ -1325,6 +1331,7 @@ lodestar
 loki
 longhorn
 lottie
+love2d
 lsd
 lucia
 luxon
@@ -1384,6 +1391,7 @@ mysql
 mysql-server
 nanobrowser
 nanostores
+nativescript
 nats
 nats-server
 ncdu

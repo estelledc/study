@@ -175,5 +175,8 @@ FROM psi_intersection_result
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[gmw-mental-game-1987]] —— GMW 1987 — 任何函数都能让多方安全地一起算
+- [[rabin-ot-1981]] —— Rabin 遗忘传输 — 发送方永远不知道你收到了什么
+- [[rsa]] —— RSA 公钥密码
+- [[yao-garbled-circuits-1986]] —— Yao 混淆电路 — 让两人合算函数却互不泄密
 

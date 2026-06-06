@@ -195,5 +195,7 @@ grpcurl -plaintext \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[act]] —— act — 在本地用 Docker 跑 GitHub Actions
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 

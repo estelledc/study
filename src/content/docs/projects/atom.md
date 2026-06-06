@@ -170,5 +170,8 @@ apm install teletype
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[vim]] —— Vim — 模态编辑器之父
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 
