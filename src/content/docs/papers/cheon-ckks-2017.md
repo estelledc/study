@@ -89,6 +89,51 @@ provenance: pipeline-v3
 - 论文链式阅读比单篇精读更高效。
 - 与站内 neighbors 互链能形成可复习的知识图。
 
+## 核心算法细节
+
+### CKKS 编码与近似算术
+
+CKKS（Cheon-Kim-Kim-Song）的核心创新是允许**近似算术**，用消息精度换取效率：
+
+1. **复数打包**：将 N/2 个复数编码到一个多项式密文（通过 FFT-like 嵌入），实现 SIMD 并行计算
+2. **Rescaling 操作**：乘法后密文模数增大，通过除以缩放因子 Δ 保持精度，类似浮点的规格化
+3. **近似误差分析**：每次运算引入 O(1/Δ) 级别误差，需在应用层预估误差累积
+4. **参数选取**：缩放因子 Δ ≈ 2^40-2^60，模数链深度决定支持的乘法次数
+
+```python
+import tenseal as ts
+
+# 创建 CKKS 上下文
+context = ts.context(
+    ts.SCHEME_TYPE.CKKS,
+    poly_modulus_degree=8192,
+    coeff_mod_bit_sizes=[60, 40, 40, 60]
+)
+context.generate_galois_keys()
+context.global_scale = 2**40
+
+# 加密向量并计算
+plain = [1.1, 2.2, 3.3, 4.4]
+enc = ts.ckks_vector(context, plain)
+result = enc * enc + enc   # 同态计算 x^2 + x（近似）
+print(result.decrypt())    # 输出近似结果
+```
+
+### Bootstrapping 思路
+
+CKKS bootstrapping 将噪声密文"刷新"到高模数：
+- 通过同态计算 Mod 函数（用多项式近似）恢复消息
+- 每次 bootstrap 消耗约 16-20 层乘法深度，提供无限乘法深度支持
+
+## 工程实现要点
+
+- **Microsoft SEAL**：微软开源 C++ 库，对 CKKS 支持最成熟，有向量化和 AVX512 优化
+- **OpenFHE**：继承 PALISADE，支持 CKKS + bootstrapping，学术首选
+- **TenSEAL**：Python 封装 SEAL，适合隐私 ML 原型开发
+- **HEaaN**：韩国 CryptoLab 商业实现，性能最优，用于实际部署
+- **精度陷阱**：CKKS 是近似加密，不适合需要精确整数计算的场景（改用 BFV/BGV）
+- **Bootstrapping 开销**：单次 bootstrap 在当前硬件约 1-10 秒，生产部署需评估可行性
+
 ## 延伸阅读
 
 - 原文：https://eprint.iacr.org/2016/421

@@ -89,6 +89,43 @@ provenance: pipeline-v3
 - 论文链式阅读比单篇精读更高效。
 - 与站内 neighbors 互链能形成可复习的知识图。
 
+## 核心算法细节
+
+### Capability 的传播规则
+
+Capsicum 的核心是 **文件描述符即能力（fd-as-capability）**：
+
+1. **能力描述符**：通过 `cap_new(fd, rights)` 将普通 fd 包装为受限能力，`rights` 是位掩码（如 `CAP_READ | CAP_WRITE`），只能减少不能增加
+2. **沙箱模式**：`cap_enter()` 让进程进入 capability 模式，此后禁止一切全局命名空间访问（`open("/etc/passwd")` 会返回 `ECAPMODE`）
+3. **权限传播**：父进程只能把自己拥有的 capability 子集传给子进程，防止权限提升
+4. **ambient authority 消除**：普通 UNIX 依赖隐式环境权限（UID 0、文件路径），Capsicum 强制显式传递能力句柄
+
+```c
+/* 在进入沙箱前预先打开所需资源 */
+int fd = open("/var/db/data.db", O_RDWR);
+cap_rights_t rights;
+cap_rights_init(&rights, CAP_READ, CAP_WRITE, CAP_SEEK);
+cap_rights_limit(fd, &rights);   /* 限制 fd 只有读写权限 */
+cap_enter();                      /* 进入沙箱 —— 之后无法 open 新路径 */
+```
+
+### 与 Linux 安全模型对比
+
+| 机制 | 粒度 | 传播 | 内核改动 |
+|------|------|------|---------|
+| Capsicum | fd 级能力 | 显式继承 | 小（~10K 行） |
+| SELinux | 进程/文件 label | 策略规则 | 大（百万行策略） |
+| Seccomp-BPF | 系统调用过滤 | 不传播 | 中 |
+| pledge (OpenBSD) | 系统调用组 | 子进程继承 | 中 |
+
+## 工程实现要点
+
+- **FreeBSD 默认集成**：FreeBSD 10+ 内核原生支持，`/usr/include/sys/capsicum.h` 直接使用
+- **Chromium 沙箱**：Chrome 在 FreeBSD 上用 Capsicum 替代 Linux Seccomp 实现渲染进程沙箱
+- **capsicum-go**：Go 语言绑定，支持在 FreeBSD Go 程序中使用 `cap_enter()`
+- **移植注意**：Linux 无原生 Capsicum，需用 `capsicum-linux` 内核补丁或改用 Seccomp + Landlock 替代
+- **预打开模式**：沙箱化前必须预先打开所有需要的文件/socket，常用 `openat()` + 目录 fd 代替绝对路径
+
 ## 延伸阅读
 
 - 原文：https://www.cl.cam.ac.uk/research/security/capsicum/papers/2010usenix-security-capsicum-website.pdf

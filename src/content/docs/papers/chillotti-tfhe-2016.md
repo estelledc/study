@@ -89,6 +89,54 @@ provenance: pipeline-v3
 - 论文链式阅读比单篇精读更高效。
 - 与站内 neighbors 互链能形成可复习的知识图。
 
+## 核心算法细节
+
+### TFHE 三层抽象体系
+
+TFHE 构建在三种密文格式上，自底向上提升表达能力：
+
+| 层级 | 名称 | 用途 |
+|------|------|------|
+| 底层 | TLWE（Torus LWE） | 单 bit 加密，支持加法 |
+| 中层 | TRLWE（Ring LWE） | 多项式密文，bootstrapping 载体 |
+| 顶层 | TRGSW | 外积密文，控制 CMUX 选择 |
+
+### Gate Bootstrapping 机制
+
+TFHE 最大创新是**每次逻辑门操作后立即 bootstrapping**，无需积累噪声：
+
+1. **门计算**：AND/OR/XOR/NAND 等逻辑门用 TLWE 线性组合表示
+2. **同步刷新**：每个门运算结束调用一次 PBS（Programmable Bootstrapping），噪声归零
+3. **PBS 实现**：通过 TRLWE Sample Extraction + Blind Rotation（TRGSW 控制的多项式旋转）实现
+4. **延迟**：原始论文单门 ~13ms（2016 年 CPU），TFHE-rs 优化后 GPU 可达 ~0.1ms
+
+```rust
+// TFHE-rs 示例：加密布尔值并计算 NAND
+use tfhe::boolean::prelude::*;
+
+let (client_key, server_key) = gen_keys();
+let a = client_key.encrypt(true);
+let b = client_key.encrypt(false);
+let result = server_key.nand(&a, &b);  // 同态 NAND，自动 bootstrapping
+assert!(client_key.decrypt(&result));  // true NAND false = true
+```
+
+### PBS（Programmable Bootstrapping）
+
+PBS 是 TFHE 独特优势——bootstrapping 可同时计算任意单变量函数：
+- 将查找表（LUT）编码到 TRLWE 多项式系数中
+- bootstrapping 旋转相当于执行 LUT 查询
+- 支持 4-bit、8-bit 等精度的查找表计算
+
+## 工程实现要点
+
+- **TFHE-rs**（Zama）：Rust 实现，支持 GPU 加速，生产级 FHE 库首选
+- **Concrete**：Zama 的高级编译器，可将 Python 函数编译成 TFHE 电路
+- **OpenFHE**：也包含 TFHE 方案，适合学术对比
+- **GPU 加速**：TFHE 门间无数据依赖，天然适合 CUDA 并行；单 A100 可 >1000 门/秒
+- **与 CKKS/BFV 选型**：TFHE 适合通用布尔电路（任意函数），CKKS 适合近似浮点运算，BFV 适合精确整数运算
+- **密钥大小**：bootstrapping 密钥（EK）约 100MB-1GB，内存瓶颈需注意
+
 ## 延伸阅读
 
 - 原文：https://eprint.iacr.org/2016/870

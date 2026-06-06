@@ -32,6 +32,68 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+scrcpy 分为设备侧（Java）和主机侧（C）两部分，通过 ADB 通道连接：
+
+**设备侧（scrcpy-server.jar）**：
+- 通过 `adb push` 推送至手机 /data/local/tmp/，再通过 `adb shell` 以 app_process 方式启动
+- 调用 Android MediaProjection API 捕获屏幕帧（需 Android 5.0+，Android 10+ 需二次确认）
+- 使用设备硬件编码器（MediaCodec）将帧编码为 H.264 或 H.265/AV1（H.265/AV1 需 Android 10+）
+- 通过 `adb forward`（USB）或 TCP（无线）将编码后的 NAL 单元流式传输到主机
+
+**主机侧（C + SDL2）**：
+- scrcpy 主进程建立 adb socket 连接，接收视频/音频编码流
+- FFmpeg（libavcodec）解码 H.264/H.265/AV1 帧为 YUV 格式
+- SDL2 将解码帧上传 GPU 纹理并渲染到窗口（支持 OpenGL / Direct3D / Metal 等后端）
+- 键盘鼠标事件反向通过同一 ADB socket 发送至设备（模拟 MotionEvent 和 KeyEvent）
+
+**音频转发（Android 11+）**：AudioPlaybackCapture API 捕获设备音频，编码为 Opus/AAC 后与视频流复用，主机侧解码后通过 SDL2 音频子系统播放。
+
+**零延迟模式**：`--no-playback-buffer` 关闭解码缓冲区，以偶尔画面撕裂换取最低延迟，适合游戏场景。
+
+## 性能与规格
+
+| 传输方式 | 典型延迟 | 说明 |
+|---------|---------|------|
+| USB 有线 | 15~35ms | 取决于设备编码器和 USB 速度 |
+| Wi-Fi 5GHz | 40~80ms | 受 AP 距离和干扰影响 |
+| Wi-Fi 2.4GHz | 80~150ms | 延迟较高，不推荐实时操作 |
+
+- `--max-size 1080`：限制最大边长，降低编码/解码负担
+- `--video-bit-rate 4M`：控制码率（默认 8Mbps），弱网场景建议 2~4M
+- `--max-fps 30`：限制帧率，降低 CPU/GPU 占用
+- 音频延迟约 50~100ms，Opus 编码码率约 64~128kbps
+
+## CLI 常用命令示例
+
+```bash
+# 基本镜像（USB 连接）
+scrcpy
+
+# 无线投屏（先 adb connect）
+adb connect 192.168.1.100:5555
+scrcpy --tcpip=192.168.1.100:5555
+
+# 录制到本地文件（MP4）
+scrcpy --record screen.mp4
+
+# 仅录制，不显示窗口（适合 CI 自动化）
+scrcpy --no-display --record output.mkv
+
+# 限制分辨率 + 码率 + 帧率（弱性能机场景）
+scrcpy --max-size 720 --video-bit-rate 2M --max-fps 24
+
+# OTG 模式（模拟物理键盘鼠标，需设备支持）
+scrcpy --otg
+
+# 关闭设备屏幕（省电）同时保持镜像
+scrcpy --turn-screen-off
+
+# 截图保存到桌面
+scrcpy --screenshot-to screenshot.png
+```
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -56,7 +118,23 @@ cd scrcpy
 
 把输出接到下游（播放器、训练 DataLoader、会议客户端），记录延迟与格式约束。
 
-### 案例 5：与双千 atlas 交叉阅读
+### 案例 5：移动端 UI 自动化录屏
+
+将 scrcpy 录制与 Android UIAutomator 测试框架结合：
+
+```bash
+# 后台录制
+scrcpy --no-display --record test_session.mp4 &
+SCRCPY_PID=$!
+# 执行自动化测试脚本
+adb shell am instrument -w com.example/.TestRunner
+# 停止录制
+kill $SCRCPY_PID
+```
+
+录制文件可用于测试回放、Bug 复现报告和性能分析。
+
+### 案例 6：与双千 atlas 交叉阅读
 
 写完本篇后，在 `projects-atlas` 打开同子类邻居 1 篇，检查实践案例是否覆盖安装/命令/排障。
 
@@ -67,6 +145,9 @@ cd scrcpy
 3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
 4. **路径写死**：示例用绝对路径，换机器必挂。
 5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+6. **MediaProjection 权限弹窗**：Android 10+ 每次启动 server 需要用户确认权限弹窗，自动化场景下弹窗会中断流程，需提前手动授权或通过 adb 命令模拟点击确认。
+7. **H.265/AV1 编码器不存在**：部分 Android 设备不支持 H.265 硬编码，--video-codec=h265 会报错；回退到 h264 即可；可用 `adb shell cmd media.codec list` 确认设备支持的编码器列表。
+8. **无线连接不稳定**：Wi-Fi 下 adb 连接容易断开，建议先 USB 连接后执行 `adb tcpip 5555` 切换到无线模式，保持 USB 调试功能开启。
 
 ## 适用 vs 不适用场景
 
@@ -124,4 +205,3 @@ cd scrcpy
 - [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
 - [[obs-studio]] —— OBS Studio — 开源直播录制与推流
 - [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
-

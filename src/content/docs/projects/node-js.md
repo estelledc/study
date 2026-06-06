@@ -32,6 +32,69 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+Node.js 的核心由三层构成，层层协作支撑非阻塞 I/O：
+
+**V8 JavaScript 引擎**：Google 开源的 JIT 编译 JS 引擎，将 JS 代码编译成机器码执行。Node.js 内嵌 V8 并通过 C++ 层（node_binding）暴露文件系统、网络等系统 API 给 JS 层。V8 提供垃圾回收（Scavenger + Mark-Compact）、内联缓存（IC）和隐藏类优化（Hidden Class）。
+
+**libuv 事件循环**：libuv 是跨平台异步 I/O 库，实现 Node 的事件循环（Event Loop）核心：
+
+- 六个阶段依次执行：timers → pending callbacks → idle/prepare → poll → check → close callbacks
+- I/O 操作（磁盘读写）委托给线程池（默认 4 线程，UV_THREADPOOL_SIZE 可调）
+- 网络操作在 Linux 使用 epoll，macOS 使用 kqueue，Windows 使用 IOCP
+- `process.nextTick` 队列和 Promise microtask 队列在每个阶段切换时优先清空
+
+**Node API（N-API）**：稳定的 C/C++ 原生扩展接口，使 native addon 跨 Node 版本兼容，无需重新编译。
+
+**关键并发模式**：
+
+- **EventEmitter**：发布/订阅模式基础，`events.EventEmitter` 贯穿 Stream、HTTP、fs 等核心模块。
+- **Stream API**：基于 EventEmitter 的流式数据处理抽象（Readable/Writable/Duplex/Transform），内置背压（backpressure）控制，防止快速生产者压垮慢速消费者。
+- **Worker Threads**：Node v10.5+ 引入，通过 SharedArrayBuffer 和 MessageChannel 实现多线程共享内存，适合 CPU 密集型任务（图像处理、加解密）。
+- **Cluster**：多进程 Fork 模式，每个 Worker 监听同一端口，内核轮询分配连接，利用多核 CPU。
+
+## 性能与规格
+
+**HTTP 吞吐量对比**（4 核机器，wrk 基准，Keep-Alive 连接）：
+
+| 框架 | QPS（参考值） | 延迟 P99 |
+|------|------------|---------|
+| 原生 http 模块 | ~65,000 | ~8ms |
+| Fastify | ~75,000 | ~7ms |
+| Express | ~40,000 | ~12ms |
+| Hono（v4） | ~80,000 | ~6ms |
+
+- **内存**：典型空 Node 进程启动约 35~50MB RSS；每个活跃 HTTP 连接约增加 1~2KB。
+- **冷启动时间**：`node index.js` 冷启动约 30~80ms（视模块数量），适合长驻进程，不适合高频冷启动（参考 Deno 或 Bun）。
+
+## 代码示例
+
+**事件循环阶段演示**：
+
+```js
+// macrotask（setTimeout）vs microtask（Promise）优先级
+setTimeout(() => console.log('setTimeout'), 0);
+Promise.resolve().then(() => console.log('Promise microtask'));
+process.nextTick(() => console.log('nextTick'));
+// 输出顺序: nextTick → Promise microtask → setTimeout
+```
+
+**Stream pipe 示例（文件压缩）**：
+
+```js
+import { createReadStream, createWriteStream } from 'fs';
+import { createGzip } from 'zlib';
+import { pipeline } from 'stream/promises';
+
+// pipeline 自动处理背压与错误传播，替代手动 .pipe()
+await pipeline(
+  createReadStream('input.log'),
+  createGzip(),
+  createWriteStream('output.log.gz')
+);
+```
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -56,7 +119,22 @@ cd node-js
 
 把输出接到下游（播放器、训练 DataLoader、会议客户端），记录延迟与格式约束。
 
-### 案例 5：与双千 atlas 交叉阅读
+### 案例 5：Worker Threads 加速 CPU 密集任务
+
+将大文件 MD5 计算从主线程移到 Worker Threads：
+
+```js
+// worker.js
+import { workerData, parentPort } from 'worker_threads';
+import { createHash } from 'crypto';
+import { readFileSync } from 'fs';
+const hash = createHash('md5').update(readFileSync(workerData.path)).digest('hex');
+parentPort.postMessage(hash);
+```
+
+对比单线程与 4 Worker 并行处理 100 个大文件的耗时差异，理解线程通信开销与并行收益的平衡点。
+
+### 案例 6：与双千 atlas 交叉阅读
 
 写完本篇后，在 `projects-atlas` 打开同子类邻居 1 篇，检查实践案例是否覆盖安装/命令/排障。
 
@@ -67,6 +145,8 @@ cd node-js
 3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
 4. **路径写死**：示例用绝对路径，换机器必挂。
 5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+6. **事件循环阻塞**：在主线程执行大量同步 CPU 运算（如 JSON 解析超大文件）会阻塞所有 I/O，应移至 Worker Threads 或使用流式解析器。
+7. **内存泄漏排查**：EventEmitter 未移除监听器、全局缓存无界增长是常见泄漏来源；使用 --inspect 加 Chrome DevTools 的 Heap Snapshot 定位根因。
 
 ## 适用 vs 不适用场景
 
@@ -119,4 +199,3 @@ cd node-js
 
 - [[volta]] —— Volta — cd 进项目就自动换 Node 版本的工具链管理器
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
-

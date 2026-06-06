@@ -89,6 +89,57 @@ provenance: pipeline-v3
 - 论文链式阅读比单篇精读更高效。
 - 与站内 neighbors 互链能形成可复习的知识图。
 
+## 核心算法细节
+
+### 本地差分隐私机制
+
+本地 DP（LDP）与中心 DP 的关键区别：数据在**离开用户设备前**就已被扰动，服务器永远看不到原始数据。
+
+**随机响应机制（Randomized Response）**：
+- 用户报告真实值 v 时，以概率 e^ε/(e^ε + 1) 报告真实值，否则报告随机值
+- ε 隐私预算：ε 越小，随机性越强，隐私保护越强，但统计精度越低
+
+```python
+import numpy as np
+
+def local_dp_report(true_value: int, epsilon: float) -> int:
+    """二元值的随机响应 LDP 机制"""
+    p = np.exp(epsilon) / (np.exp(epsilon) + 1)
+    return true_value if np.random.random() < p else (1 - true_value)
+
+def estimate_frequency(reports, epsilon: float) -> float:
+    """从扰动报告中恢复频率估计"""
+    p = np.exp(epsilon) / (np.exp(epsilon) + 1)
+    noisy_freq = sum(reports) / len(reports)
+    # 去偏估计
+    return (noisy_freq - (1 - p)) / (2 * p - 1)
+```
+
+### 统计极小极大率
+
+论文的核心理论贡献是证明了 LDP 下统计估计的**下界**：
+- 均值估计：MSE 至少为 O(d/(n·ε²))，其中 d 是维度，n 是用户数
+- 频率估计：误差至少为 O(√(k/(n·ε²)))，k 为类别数
+- 这些下界揭示 LDP 比中心 DP 需要 **√n 倍更多用户**才能达到相同精度
+
+### 工业应用案例
+
+| 公司 | 场景 | 机制 | ε 值 |
+|------|------|------|------|
+| Apple | iOS 键盘词频统计 | Count Mean Sketch | 1-4 |
+| Google | Chrome 崩溃报告（RAPPOR） | Bloom Filter + RR | 2-8 |
+| Microsoft | Windows 诊断数据 | 直方图估计 | 1-2 |
+| Meta | 广告度量聚合 | 本地 + 中心混合 | 可变 |
+
+## 工程实现要点
+
+- **Google RAPPOR**：开源 LDP 实现，用 Bloom Filter 编码字符串后再随机响应
+- **Apple DP**：苹果在 macOS/iOS 中的 LDP 框架，用于表情符号、新词使用统计
+- **OpenDP**：哈佛/微软联合开源库，包含 LDP 机制实现
+- **隐私预算管理**：多次收集时用组合定理（序列组合 ε 累加，并行组合取最大 ε）
+- **实践 ε 选取**：工业界通常 ε ∈ [1, 10]，学术界理论分析常用 ε ≤ 1
+- **高维问题**：LDP 在高维下噪声过大，需用 RAPPOR 或 LDP with Amplification 优化
+
 ## 延伸阅读
 
 - 原文：https://arxiv.org/abs/1302.3203

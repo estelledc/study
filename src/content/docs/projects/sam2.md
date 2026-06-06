@@ -32,6 +32,70 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+SAM 2 在 SAM 1 图像分割基础上引入视频时序建模，核心模块如下：
+
+**Hiera 图像编码器**：基于 Hierarchical ViT（Hiera）的图像特征提取骨干，输入为单帧图像，输出多尺度特征图。相比 SAM 1 使用的 ViT-H，Hiera 在保持精度的同时速度更快，tiny/small 变体速度提升 2~6 倍。
+
+**提示编码器（Prompt Encoder）**：支持三类提示输入：
+- 点击点（foreground/background 各标 1 或 0）
+- 矩形框（bounding box，左上角+右下角坐标）
+- 粗掩码（mask input，上一帧输出可直接作为下一帧提示）
+
+提示经位置编码后与图像特征融合，送入掩码解码器进行细化。
+
+**掩码解码器（Mask Decoder）**：基于 Transformer 的轻量解码器，同时预测多个候选掩码及置信度分数，用户可选择最优结果或提供更多提示进行细化。
+
+**Memory Attention（视频记忆注意力）**：SAM 2 的核心创新，通过流式记忆库（Streaming Memory Bank）保存历史帧的掩码特征：
+- 条件帧（Conditioning Frames）：存放用户提示所在帧的编码
+- 非条件帧（Non-conditioning Frames）：最近 N 帧的输出掩码特征（循环队列，默认 N=6）
+- Memory Attention 模块对当前帧特征与记忆库做交叉注意力，实现时序一致的目标跟踪
+
+## 性能与规格
+
+**SA-V 数据集评测（J&F 分数，越高越好）**：
+
+| 模型 | 参数量 | SA-V J&F | 推理速度（A100） |
+|------|-------|---------|--------------|
+| SAM 2 tiny | 38M | 75.0 | 约 50 FPS |
+| SAM 2 small | 46M | 78.4 | 约 43 FPS |
+| SAM 2 base+ | 80M | 81.9 | 约 34 FPS |
+| SAM 2 large | 224M | 84.6 | 约 24 FPS |
+
+- 图像分割模式（无记忆）：SAM 2 large 在 COCO 上达到 SAM 1 相当精度，速度快约 6 倍
+- 视频模式首帧处理（含提示编码）：约 80~150ms；后续帧（Memory Attention）：约 20~40ms
+
+## Python 推理代码示例
+
+```python
+import torch
+import numpy as np
+from PIL import Image
+from sam2.build_sam import build_sam2
+from sam2.sam2_image_predictor import SAM2ImagePredictor
+
+# 加载模型
+checkpoint = "checkpoints/sam2_hiera_large.pt"
+model_cfg = "sam2_hiera_l.yaml"
+predictor = SAM2ImagePredictor(build_sam2(model_cfg, checkpoint))
+
+# 图像分割（点提示）
+image = np.array(Image.open("image.jpg"))
+predictor.set_image(image)
+
+# 前景点坐标 (x, y)，标签 1=前景
+input_points = np.array([[500, 375]])
+input_labels = np.array([1])
+
+masks, scores, logits = predictor.predict(
+    point_coords=input_points,
+    point_labels=input_labels,
+    multimask_output=True,
+)
+best_mask = masks[np.argmax(scores)]
+```
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -56,7 +120,21 @@ cd sam2
 
 把输出接到下游（播放器、训练 DataLoader、会议客户端），记录延迟与格式约束。
 
-### 案例 5：与双千 atlas 交叉阅读
+### 案例 5：视频自动标注流水线
+
+结合 SAM 2 视频模式构建半自动标注系统：
+
+```
+第 1 帧：用户在 UI 上点击目标物体
+→ SAM 2 video predictor 初始化 memory bank
+→ 逐帧自动传播掩码（支持 1000+ 帧）
+→ 关键帧人工校正（添加正负点提示修正错误）
+→ 导出 COCO 格式 JSON 标注文件
+```
+
+与纯手工标注相比，标注速度可提升 5~10 倍。
+
+### 案例 6：与双千 atlas 交叉阅读
 
 写完本篇后，在 `projects-atlas` 打开同子类邻居 1 篇，检查实践案例是否覆盖安装/命令/排障。
 
@@ -67,6 +145,8 @@ cd sam2
 3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
 4. **路径写死**：示例用绝对路径，换机器必挂。
 5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+6. **视频模式 OOM**：长视频逐帧推理时记忆库无限增长，导致显存耗尽；应设置 max_obj_ptrs_in_encoder 参数或定期调用 reset_state 清空记忆。
+7. **提示坐标系混淆**：set_image 后点击坐标以原始图像像素为单位，而非缩放后的内部尺寸；混淆会导致掩码严重偏移，需仔细对齐坐标系。
 
 ## 适用 vs 不适用场景
 
@@ -121,4 +201,3 @@ cd sam2
 - [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
 - [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[ultralytics]] —— Ultralytics — YOLOv8/v11 实现
-
