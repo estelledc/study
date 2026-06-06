@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 726 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 796 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,28 +11,40 @@ sidebar:
 
 ## 总览
 
-- **总数**：726 个
-- **已分类**：726
+- **总数**：796 个
+- **已分类**：796
 
 ### 按一级主题分布
 
 | 主题 | 数量 |
 |---|---:|
+| [编程语言](#编程语言) | 2 |
 | [分布式系统](#分布式系统) | 5 |
-| [数据库](#数据库) | 91 |
+| [数据库](#数据库) | 94 |
 | [操作系统](#操作系统) | 3 |
-| [机器学习](#机器学习) | 83 |
-| [区块链](#区块链) | 59 |
-| [后端 API](#后端-api) | 176 |
+| [机器学习](#机器学习) | 94 |
+| [区块链](#区块链) | 60 |
+| [后端 API](#后端-api) | 177 |
 | [基础设施](#基础设施) | 72 |
 | [图形学](#图形学) | 3 |
-| [通信](#通信) | 52 |
+| [通信](#通信) | 84 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 105 |
+| [CLI](#cli) | 107 |
 | [编译器](#编译器) | 10 |
 | [数据可视化](#数据可视化) | 66 |
 
 ---
+
+## 编程语言
+
+共 2 个。
+
+### 其他子类
+
+| 项目 | 质量 | 描述 |
+|---|:---:|---|
+| [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) | ✅ v3 | V8 上的 JavaScript 服务端运行时，事件循环 + libuv |
+| [Wasmtime — Bytecode Alliance 标准 wasm runtime](/study/projects/wasmtime/) | ✅ v3 | Bytecode Alliance 的 WebAssembly 运行时，WASI 支持 |
 
 ## 分布式系统
 
@@ -50,7 +62,7 @@ sidebar:
 
 ## 数据库
 
-共 91 个。
+共 94 个。
 
 ### 存储与查询
 
@@ -86,6 +98,7 @@ sidebar:
 | [Lance — AI 数据列存格式](/study/projects/lance/) | ✅ v3 |  |
 | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) | ✅ v3 |  |
 | [LevelDB — Google LSM 库](/study/projects/leveldb/) | ✅ v3 |  |
+| [LMDB — 闪电内存映射嵌入式 KV 库](/study/projects/lmdb/) | ✅ v3 |  |
 | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) | ✅ v3 |  |
 | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) | ✅ v3 |  |
 | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | ✅ v3 |  |
@@ -94,6 +107,7 @@ sidebar:
 | [Memgraph — 内存图数据库](/study/projects/memgraph/) | ✅ v3 |  |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) | 🗄 存量 |  |
 | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) | ✅ v3 |  |
+| [NATS Server — 极简云原生消息中间件](/study/projects/nats-server/) | ✅ v3 |  |
 | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) | ✅ v3 |  |
 | [Neo4j — 主流图数据库](/study/projects/neo4j/) | ✅ v3 |  |
 | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) | ✅ v3 |  |
@@ -160,6 +174,7 @@ sidebar:
 | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | ✅ v3 |  |
 | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ✅ v3 |  |
 | [MinIO — S3 兼容对象存储](/study/projects/minio/) | ✅ v3 |  |
+| [MongoDB — 文档数据库服务端开源实现](/study/projects/mongo/) | ✅ v3 | mongod 单节点与 mongos 分片路由 |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | ✅ v3 |  |
 | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | ✅ v3 |  |
 
@@ -177,7 +192,22 @@ sidebar:
 
 ## 机器学习
 
-共 83 个。
+共 94 个。
+
+### 视频理解
+
+| 项目 | 质量 | 描述 |
+|---|:---:|---|
+| [Decord — Video-LLM 数据管线的高效视频解码库](/study/projects/decord/) | ✅ v3 | DMLC 出品的按帧随机 seek 视频解码库 |
+| [InternVideo — 上海 AI Lab 视频基础模型套件](/study/projects/internvideo/) | ✅ v3 | OpenGVLab 视频基础模型全栈——InternVideo2 Chat、InternVid 230M 语料、16 个下游 benchmark |
+| [LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库](/study/projects/llava-next/) | ✅ v3 | LLaVA 系列主线仓库 |
+| [LMMs-Eval — 多模态大模型统一评测框架](/study/projects/lmms-eval/) | ✅ v3 | LMMs-Lab 维护的多模态统一评测 CLI |
+| [TorchCodec — PyTorch 原生 GPU 视频解码与张量输出](/study/projects/torchcodec/) | ✅ v3 | Meta/PyTorch 出品的 FFmpeg 绑定解码库 |
+| [Transformers Video — HuggingFace 视频处理器与多模态输入管线](/study/projects/transformers-video/) | ✅ v3 | Qwen2VLVideoProcessor、AutoVideoProcessor 与 decord/pyav 后端 |
+| [VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现](/study/projects/videochat2/) | ✅ v3 | Ask-Anything 仓库的 VideoChat2 主线 |
+| [VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现](/study/projects/videollama2/) | ✅ v3 | Video-LLaMA 论文的可运行实现 |
+| [VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座](/study/projects/videollama3/) | ✅ v3 | 动态分辨率 NaViT 视觉编码 + Qwen2 |
+| [vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务](/study/projects/vllm-multimodal/) | ✅ v3 | vLLM 0 |
 
 ### 数据科学与 AI
 
@@ -270,6 +300,7 @@ sidebar:
 | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | ✅ v3 |  |
 | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | ✅ v3 |  |
 | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | ✅ v3 |  |
+| [LlamaIndex — LLM 数据框架与 RAG 四件套](/study/projects/llama-index/) | ✅ v3 | Loader / Index / Retriever / QueryEngine |
 | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | ✅ v3 |  |
 | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | ✅ v3 |  |
 | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | ✅ v3 |  |
@@ -279,7 +310,7 @@ sidebar:
 
 ## 区块链
 
-共 59 个。
+共 60 个。
 
 ### 链与合约
 
@@ -345,9 +376,15 @@ sidebar:
 | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | ✅ v3 |  |
 | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | ✅ v3 |  |
 
+### 其他子类
+
+| 项目 | 质量 | 描述 |
+|---|:---:|---|
+| [Lodestar — ChainSafe 的 TypeScript 以太坊共识层客户端](/study/projects/lodestar/) | ✅ v3 | 唯一主流 TS 实现的 beacon node + validator |
+
 ## 后端 API
 
-共 176 个。
+共 177 个。
 
 ### 前端
 
@@ -562,6 +599,7 @@ sidebar:
 | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | ✅ v3 |  |
 | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | ✅ v3 |  |
 | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | ✅ v3 |  |
+| [Robyn — Rust 运行时的高性能 Python Web 框架](/study/projects/robyn/) | ✅ v3 | PyO3 多进程 actor 模型 |
 | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | ✅ v3 |  |
 | [styled-components — React 生态最早的 CSS-in-JS 库](/study/projects/styled-components/) | ✅ v3 |  |
 | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | ✅ v3 |  |
@@ -680,7 +718,7 @@ sidebar:
 
 ## 通信
 
-共 52 个。
+共 84 个。
 
 ### 实时通信
 
@@ -706,6 +744,7 @@ sidebar:
 | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) | ✅ v3 |  |
 | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | ✅ v3 |  |
 | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | ✅ v3 |  |
+| [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
 | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) | ✅ v3 |  |
 | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | ✅ v3 |  |
 | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) | ✅ v3 |  |
@@ -737,6 +776,42 @@ sidebar:
 | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) | ✅ v3 |  |
 | [Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）](/study/projects/zulip/) | ✅ v3 |  |
 
+### 音视频媒体
+
+| 项目 | 质量 | 描述 |
+|---|:---:|---|
+| [Ant Media Server — WebRTC / CMAF 直播服务](/study/projects/ant-media-server/) | ✅ v3 | WebRTC/CMAF 低延迟直播服务器，录制与集群 |
+| [Ardour — 专业级 DAW](/study/projects/ardour/) | ✅ v3 | 专业级开源 DAW，实时录音、混音与母带处理 |
+| [aubio — 实时音频事件检测库](/study/projects/aubio/) | ✅ v3 |  |
+| [Audacity — 开源音频编辑器](/study/projects/audacity/) | ✅ v3 | 跨平台开源音频编辑器，多轨录音、效果链与插件生态 |
+| [COLMAP — 多视图 SfM/MVS 重建](/study/projects/colmap/) | ✅ v3 | Structure-from-Motion / MVS 三维重建学术基线 |
+| [dash.js — 浏览器 MPEG-DASH 参考播放器](/study/projects/dashjs/) | ✅ v3 |  |
+| [dlib — C++ 机器学习 / CV 工具箱](/study/projects/dlib/) | ✅ v3 | C++ ML/CV 工具箱，人脸 landmark、SVM、跟踪 |
+| [FLAC — 无损音频压缩格式与参考实现](/study/projects/flac/) | ✅ v3 |  |
+| [hls.js — 浏览器里播放 HLS 直播](/study/projects/hlsjs/) | ✅ v3 |  |
+| [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) | ✅ v3 | 命令行图像处理瑞士军刀：convert/mogrify/identify |
+| [InsightFace — 人脸识别 / 检测 SOTA](/study/projects/insightface/) | ✅ v3 | 人脸检测识别工具链：RetinaFace、ArcFace 等 |
+| [Jellyfin — 自托管媒体服务器](/study/projects/jellyfin/) | ✅ v3 | 自托管媒体服务器，转码、元数据刮削与多客户端同步 |
+| [Jitsi Meet — 开源视频会议](/study/projects/jitsi-meet/) | ✅ v3 | 开源视频会议：Jitsi Videobridge SFU + Web 客户端 |
+| [LiveKit — 开源实时多媒体 SFU](/study/projects/livekit/) | ✅ v3 | Go 写的开源 WebRTC SFU，房间、录制与 Egress 一体 |
+| [LMMS — Linux 多媒体工作站](/study/projects/lmms/) | ✅ v3 | Linux 多媒体工作站，节拍机、钢琴卷帘与软合成器 |
+| [MediaPipe — Google ML 多模态流水线](/study/projects/mediapipe/) | ✅ v3 | Google 端侧 ML 流水线：姿态、手势、人脸等 Graph 计算 |
+| [mediasoup — WebRTC 选择性转发 SFU](/study/projects/mediasoup/) | ✅ v3 |  |
+| [Meshroom — AliceVision 节点式 GUI](/study/projects/meshroom/) | ✅ v3 | AliceVision 节点式摄影测量 GUI，端到端 3D 重建 |
+| [nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务](/study/projects/nginx-rtmp-module/) | ✅ v3 |  |
+| [OBS Studio — 开源直播录制与推流](/study/projects/obs-studio/) | ✅ v3 |  |
+| [Pion — 纯 Go 实现的 WebRTC 协议栈](/study/projects/pion/) | ✅ v3 |  |
+| [SAM 2 — Segment Anything Model 2](/study/projects/sam2/) | ✅ v3 | Meta SAM 2：图像与视频通用分割模型 |
+| [scrcpy — Android 屏幕镜像 / 录制](/study/projects/scrcpy/) | ✅ v3 | Android 屏幕镜像与录屏，adb 拉 H |
+| [Shaka Packager — 流媒体打包工具](/study/projects/shaka-packager/) | ✅ v3 | DASH/HLS 打包工具，切片 mp4 并加 DRM |
+| [Shaka Player — Google 自适应流媒体播放器](/study/projects/shaka-player/) | ✅ v3 |  |
+| [SoX — 命令行音频处理瑞士军刀](/study/projects/sox/) | ✅ v3 |  |
+| [Streamlink — 把网页直播流接到本地播放器](/study/projects/streamlink/) | ✅ v3 |  |
+| [SuperCollider — 实时音频合成环境](/study/projects/supercollider/) | ✅ v3 | 实时音频合成环境：sclang 语言 + scsynth 服务器 |
+| [Ultralytics — YOLOv8/v11 实现](/study/projects/ultralytics/) | ✅ v3 | YOLOv8/v11 官方 SDK，检测/分割/姿态/OBB 一体 |
+| [Video.js — Web 视频播放器框架](/study/projects/videojs/) | ✅ v3 |  |
+| [libvips — 流式低内存图像库](/study/projects/vips/) | ✅ v3 | libvips 流式低内存图像库，demand-driven 管道 |
+
 ### 其他子类
 
 | 项目 | 质量 | 描述 |
@@ -756,7 +831,7 @@ sidebar:
 
 ## CLI
 
-共 105 个。
+共 107 个。
 
 ### 编辑器与 IDE
 
@@ -878,6 +953,8 @@ sidebar:
 | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | ✅ v3 |  |
 | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) | ✅ v3 |  |
 | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) | ✅ v3 |  |
+| [fish-shell — 友好交互式命令行 Shell](/study/projects/fish-shell/) | ✅ v3 | 语法高亮、自动建议与智能补全开箱即用 |
+| [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | ✅ v3 | 纯函数式部署模型 |
 | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) | ✅ v3 |  |
 | [ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架](/study/projects/prosemirror/) | ✅ v3 |  |
 | [Starlight — Astro 文档站点主题](/study/projects/starlight/) | ✅ v3 |  |
@@ -994,7 +1071,7 @@ sidebar:
 
 ---
 
-## 全部 726 个（字母序）
+## 全部 796 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1017,6 +1094,7 @@ sidebar:
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) | ✅ v3 | 基础设施 | 数据检索 / 基础设施 |
 | `annoy` | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | ✅ v3 | 基础设施 | DevOps 与运维 |
+| `ant-media-server` | [Ant Media Server — WebRTC / CMAF 直播服务](/study/projects/ant-media-server/) | ✅ v3 | 通信 | 音视频媒体 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | ✅ v3 | 机器学习 | AI |
 | `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1030,6 +1108,7 @@ sidebar:
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | ✅ v3 | 区块链 | 链与合约 |
 | `arangodb` | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | ✅ v3 | 区块链 | 链与合约 |
+| `ardour` | [Ardour — 专业级 DAW](/study/projects/ardour/) | ✅ v3 | 通信 | 音视频媒体 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | ✅ v3 | 区块链 | 链与合约 |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) | ✅ v3 | 基础设施 | DevOps 与运维 |
@@ -1044,6 +1123,8 @@ sidebar:
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | ✅ v3 | 通信 | 实时通信 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | 🗄 存量 | 后端 API | UI 框架 / 静态站点 |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | ✅ v3 | 后端 API | Web 后端 |
+| `aubio` | [aubio — 实时音频事件检测库](/study/projects/aubio/) | ✅ v3 | 通信 | 音视频媒体 |
+| `audacity` | [Audacity — 开源音频编辑器](/study/projects/audacity/) | ✅ v3 | 通信 | 音视频媒体 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | ✅ v3 | 后端 API | projects |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `autogluon` | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) | ✅ v3 | 机器学习 | 数据科学与 AI |
@@ -1114,6 +1195,7 @@ sidebar:
 | `cocos2d-x` | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | ✅ v3 | 后端 API | 前端 |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | ✅ v3 | 通信 | 实时通信 |
+| `colmap` | [COLMAP — 多视图 SfM/MVS 重建](/study/projects/colmap/) | ✅ v3 | 通信 | 音视频媒体 |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `comfyui` | [ComfyUI — 节点式扩散模型 GUI](/study/projects/comfyui/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | ✅ v3 | 后端 API | projects |
@@ -1141,13 +1223,16 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | ✅ v3 | CLI | 命令行工具 |
 | `dash` | [Dash — Plotly 的 Python 仪表板框架](/study/projects/dash/) | ✅ v3 | 数据可视化 | 数据可视化 |
+| `dash.js` | [dash.js — 浏览器 MPEG-DASH 参考播放器](/study/projects/dashjs/) | ✅ v3 | 通信 | 音视频媒体 |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `databend` | [Databend — Rust 写的存算分离云数仓](/study/projects/databend/) | ✅ v3 | 数据库 | 存储与查询 |
 | `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) | ✅ v3 | 基础设施 | 可观测性 / DevOps |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | ✅ v3 | CLI | projects / 工具库 |
+| `dav1d` | [dav1d — 速度优先的 AV1 解码器](/study/projects/dav1d/) | ✅ v3 | 媒体 | 视频编解码 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | ✅ v3 | CLI | 工具库 |
 | `dbt-core` | [dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来](/study/projects/dbt-core/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | ✅ v3 | 数据库 | 数据基建 / CDC |
+| `decord` | [Decord — Video-LLM 数据管线的高效视频解码库](/study/projects/decord/) | ✅ v3 | 机器学习 | 视频理解 |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | ✅ v3 | CLI | 命令行工具 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | ✅ v3 | 通信 | 实时通信 |
@@ -1158,6 +1243,7 @@ sidebar:
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) | ✅ v3 | 通信 | 实时通信 |
 | `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) | ✅ v3 | CLI | 命令行工具 |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 🗄 存量 | 后端 API | Web 后端 |
+| `dlib` | [dlib — C++ 机器学习 / CV 工具箱](/study/projects/dlib/) | ✅ v3 | 通信 | 音视频媒体 |
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | ✅ v3 | 后端 API | projects / 前端 |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | ✅ v3 | 基础设施 | DevOps |
 | `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) | ✅ v3 | 基础设施 | DevOps 与运维 |
@@ -1195,6 +1281,7 @@ sidebar:
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) | ✅ v3 | 区块链 | 链与合约 |
 | `errbot` | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) | ✅ v3 | 通信 | 实时通信 |
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | ✅ v3 | 编译器 | 构建工具 |
+| `essentia` | [Essentia — 音乐信息检索工具箱](/study/projects/essentia/) | ✅ v3 | 媒体 | 音频处理 |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | ✅ v3 | 区块链 | 链与合约 |
 | `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1208,11 +1295,15 @@ sidebar:
 | `faster-whisper` | [faster-whisper — Whisper 的 4× 加速重写版](/study/projects/faster-whisper/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | 🗄 存量 | 后端 API | web-frameworks |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | ✅ v3 | CLI | 命令行工具 |
+| `fdk-aac` | [fdk-aac — Fraunhofer AAC 编解码库](/study/projects/fdk-aac/) | ✅ v3 | 媒体 | 音频编解码 |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) | ✅ v3 | 数据库 | 存储与查询 |
+| `ffmpeg` | [FFmpeg — 多媒体转码与封装瑞士军刀](/study/projects/ffmpeg/) | ✅ v3 | 媒体 | 视频转码 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | ✅ v3 | 后端 API | Web 后端 |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | ✅ v3 | 区块链 | 链与合约 |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | ✅ v3 | CLI | 命令行工具 |
+| `fish-shell` | [fish-shell — 友好交互式命令行 Shell](/study/projects/fish-shell/) | ✅ v3 | CLI | Shell |
+| `flac` | [FLAC — 无损音频压缩格式与参考实现](/study/projects/flac/) | ✅ v3 | 通信 | 音视频媒体 |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 🗄 存量 | 后端 API | Web 后端 |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1248,9 +1339,11 @@ sidebar:
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | ✅ v3 | CLI | 命令行工具 |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | ✅ v3 | 后端 API | Web 后端 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | ✅ v3 | 数据可视化 | 动画 |
+| `gstreamer` | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | 媒体 | 视频转码 |
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | ✅ v3 | CLI | 命令行工具 |
 | `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) | ✅ v3 | CLI | 命令行工具 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | ✅ v3 | 后端 API | Web 后端 |
+| `handbrake` | [HandBrake — FFmpeg 上的 GUI 转码器](/study/projects/handbrake/) | ✅ v3 | 媒体 | 视频转码 |
 | `handsontable` | [Handsontable — 浏览器里的 Excel](/study/projects/handsontable/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | ✅ v3 | 后端 API | Web 后端 |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | ✅ v3 | 通信 | 实时通信 |
@@ -1259,6 +1352,7 @@ sidebar:
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | ✅ v3 | 后端 API | Web 后端 |
 | `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | ✅ v3 | 基础设施 | DevOps 与运维 |
+| `hls.js` | [hls.js — 浏览器里播放 HLS 直播](/study/projects/hlsjs/) | ✅ v3 | 通信 | 音视频媒体 |
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) | ✅ v3 | 数据库 | 存储与查询 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | ✅ v3 | 后端 API | Web 后端 |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1268,21 +1362,27 @@ sidebar:
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) | ✅ v3 | CLI | 命令行工具 |
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) | ✅ v3 | CLI | 命令行工具 |
 | `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | ✅ v3 | 后端 API | 前端国际化 |
+| `imagemagick` | [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) | ✅ v3 | 通信 | 音视频媒体 |
 | `immer` | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | ✅ v3 | 后端 API | projects |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | ✅ v3 | 后端 API | 自托管应用 |
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ink` | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | ✅ v3 | CLI | 命令行工具 |
 | `inngest` | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | ✅ v3 | 后端 API | projects |
+| `insightface` | [InsightFace — 人脸识别 / 检测 SOTA](/study/projects/insightface/) | ✅ v3 | 通信 | 音视频媒体 |
+| `internvideo` | [InternVideo — 上海 AI Lab 视频基础模型套件](/study/projects/internvideo/) | ✅ v3 | 机器学习 | 视频理解 |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | ✅ v3 | 区块链 | 链与合约 |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | ✅ v3 | 分布式系统 | 监控 / 分布式追踪 |
+| `janus-gateway` | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | 通信 | 实时通信 |
 | `janusgraph` | [JanusGraph — 可插拔后端的分布式图数据库](/study/projects/janusgraph/) | ✅ v3 | 数据库 | 存储与查询 |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | ✅ v3 | CLI | 命令行工具 |
+| `jellyfin` | [Jellyfin — 自托管媒体服务器](/study/projects/jellyfin/) | ✅ v3 | 通信 | 音视频媒体 |
 | `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `jest` | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) | ✅ v3 | 后端 API | 测试框架 |
 | `jimp` | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | ✅ v3 | CLI | 工具库 |
+| `jitsi-meet` | [Jitsi Meet — 开源视频会议](/study/projects/jitsi-meet/) | ✅ v3 | 通信 | 音视频媒体 |
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) | ✅ v3 | 通信 | 实时通信 |
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | ✅ v3 | 后端 API | 状态管理 |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) | ✅ v3 | CLI | 命令行工具 |
@@ -1314,6 +1414,7 @@ sidebar:
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | ✅ v3 | 后端 API | projects |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ✅ v3 | 数据库 | ORM / 查询构建器 |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `lame` | [LAME — MP3 编码开源参考实现](/study/projects/lame/) | ✅ v3 | 媒体 | 音频编解码 |
 | `lance` | [Lance — AI 数据列存格式](/study/projects/lance/) | ✅ v3 | 数据库 | 存储与查询 |
 | `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | ✅ v3 | 机器学习 | 数据科学与 AI |
@@ -1331,7 +1432,9 @@ sidebar:
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | ⭐ Season | 后端 API | 编辑器与 IDE |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | ✅ v3 | CLI | 命令行工具 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | ✅ v3 | 后端 API | projects |
+| `librosa` | [librosa — Python 音频分析库与 MFCC/STFT 事实标准](/study/projects/librosa/) | ✅ v3 | 多媒体 | 音频分析 |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) | ✅ v3 | 通信 | 实时通信 |
+| `libvpx` | [libvpx — VP8/VP9 开源视频编解码](/study/projects/libvpx/) | ✅ v3 | 媒体 | 视频编解码 |
 | `lightdash` | [Lightdash — 寄生在 dbt 项目里的开源 BI](/study/projects/lightdash/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | ✅ v3 | 区块链 | 链与合约 |
 | `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | ✅ v3 | 后端 API | projects / 前端工具链 |
@@ -1343,11 +1446,18 @@ sidebar:
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | ✅ v3 | 后端 API | Web 后端 |
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | ✅ v3 | 通信 | 实时通信 |
+| `livekit` | [LiveKit — 开源实时多媒体 SFU](/study/projects/livekit/) | ✅ v3 | 通信 | 音视频媒体 |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) | ✅ v3 | 通信 | 实时通信 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `llama-index` | [LlamaIndex — LLM 数据框架与 RAG 四件套](/study/projects/llama-index/) | ✅ v3 | 机器学习 | RAG |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | ✅ v3 | 机器学习 | AI / RAG |
+| `llava-next` | [LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库](/study/projects/llava-next/) | ✅ v3 | 机器学习 | 视频理解 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `lmdb` | [LMDB — 闪电内存映射嵌入式 KV 库](/study/projects/lmdb/) | ✅ v3 | 数据库 | 存储与查询 |
+| `lmms` | [LMMS — Linux 多媒体工作站](/study/projects/lmms/) | ✅ v3 | 通信 | 音视频媒体 |
+| `lmms-eval` | [LMMs-Eval — 多模态大模型统一评测框架](/study/projects/lmms-eval/) | ✅ v3 | 机器学习 | 视频理解 |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | ✅ v3 | 基础设施 | DevOps 与运维 |
+| `lodestar` | [Lodestar — ChainSafe 的 TypeScript 以太坊共识层客户端](/study/projects/lodestar/) | ✅ v3 | 区块链 | 共识客户端 |
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | ⭐ Season | 数据可视化 | 动画 |
@@ -1369,11 +1479,14 @@ sidebar:
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | ✅ v3 | 通信 | 实时通信 |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | ✅ v3 | 通信 | 实时通信 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | ✅ v3 | 机器学习 | 智能体与 LLM |
+| `mediapipe` | [MediaPipe — Google ML 多模态流水线](/study/projects/mediapipe/) | ✅ v3 | 通信 | 音视频媒体 |
+| `mediasoup` | [mediasoup — WebRTC 选择性转发 SFU](/study/projects/mediasoup/) | ✅ v3 | 通信 | 音视频媒体 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | ✅ v3 | 数据库 | 存储与查询 |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) | ✅ v3 | 数据库 | 存储与查询 |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) | ✅ v3 | 数据库 | 存储与查询 |
 | `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) | ✅ v3 | 数据可视化 | 数据可视化 |
+| `meshroom` | [Meshroom — AliceVision 节点式 GUI](/study/projects/meshroom/) | ✅ v3 | 通信 | 音视频媒体 |
 | `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | ✅ v3 | 区块链 | 链与合约 |
@@ -1389,12 +1502,14 @@ sidebar:
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | ✅ v3 | 后端 API | projects |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | ✅ v3 | CLI | 命令行工具 |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `mlt` | [MLT — 多媒体编辑框架](/study/projects/mlt/) | ✅ v3 | 媒体 | 视频转码 |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | ✅ v3 | 后端 API | projects |
 | `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | ✅ v3 | 后端 API | projects / 前端 |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | ✅ v3 | 区块链 | 链与合约 |
+| `mongo` | [MongoDB — 文档数据库服务端开源实现](/study/projects/mongo/) | ✅ v3 | 数据库 | 文档存储 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | ✅ v3 | 数据库 | 数据库 / NoSQL |
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | ✅ v3 | 后端 API | projects / 前端动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | ✅ v3 | 区块链 | 链与合约 |
@@ -1405,6 +1520,7 @@ sidebar:
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | ✅ v3 | 机器学习 | AI agent |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | ✅ v3 | 后端 API | projects / 前端 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | ✅ v3 | 分布式系统 | 消息队列 |
+| `nats-server` | [NATS Server — 极简云原生消息中间件](/study/projects/nats-server/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | ✅ v3 | CLI | 命令行工具 |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) | ✅ v3 | 数据库 | 存储与查询 |
 | `neo4j` | [Neo4j — 主流图数据库](/study/projects/neo4j/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1416,8 +1532,11 @@ sidebar:
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | ✅ v3 | 后端 API | UI 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | ✅ v3 | 后端 API | projects |
 | `nginx` | [nginx — 高性能 Web 服务器](/study/projects/nginx/) | 🗄 存量 | 后端 API | Web 后端 |
+| `nginx-rtmp-module` | [nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务](/study/projects/nginx-rtmp-module/) | ✅ v3 | 通信 | 音视频媒体 |
 | `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) | ✅ v3 | 数据可视化 | 数据可视化 |
+| `nix` | [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | ✅ v3 | CLI | 包管理 |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | ✅ v3 | CLI | 命令行工具 |
+| `node-js` | [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) | ✅ v3 | 编程语言 | 运行时 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | ✅ v3 | 通信 | 实时通信 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | ✅ v3 | 基础设施 | DevOps / 编排 |
 | `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1428,6 +1547,7 @@ sidebar:
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | ✅ v3 | 基础设施 | infrastructure |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | ✅ v3 | CLI | 命令行工具 |
 | `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | ✅ v3 | 后端 API | 前端工程化 |
+| `obs-studio` | [OBS Studio — 开源直播录制与推流](/study/projects/obs-studio/) | ✅ v3 | 通信 | 音视频媒体 |
 | `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/projects/observable-framework/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | ✅ v3 | 后端 API | projects |
@@ -1436,6 +1556,7 @@ sidebar:
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | ✅ v3 | 机器学习 | AI 工程 |
+| `opencv` | [OpenCV — 开源计算机视觉库与跨平台图像视频处理](/study/projects/opencv/) | ✅ v3 | 多媒体 | 图像处理 |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | ✅ v3 | 通信 | 实时通信 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | ✅ v3 | 区块链 | 链与合约 |
@@ -1449,6 +1570,7 @@ sidebar:
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | ✅ v3 | 区块链 | 链与合约 |
+| `opus` | [Opus — 低延迟全频带音频编解码](/study/projects/opus/) | ✅ v3 | 媒体 | 音频编解码 |
 | `ora` | [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | ✅ v3 | CLI | 命令行工具 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | ✅ v3 | 后端 API | Web 后端 |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | ✅ v3 | 基础设施 | 基础设施 / 可观测性 |
@@ -1468,8 +1590,10 @@ sidebar:
 | `pg-boss-readme` | [pg-boss — 只用 Postgres 就能跑的任务队列](/study/projects/pg-boss-readme/) | ✅ v3 | 后端 API | Web 后端 |
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | ✅ v3 | 数据库 | 数据库 / 向量 |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | ✅ v3 | 后端 API | Web 后端 |
+| `pillow` | [Pillow — Python 图像处理库与 PIL 现代继任者](/study/projects/pillow/) | ✅ v3 | 多媒体 | 图像处理 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | ✅ v3 | 后端 API | projects / Node.js |
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) | ✅ v3 | 数据库 | 存储与查询 |
+| `pion` | [Pion — 纯 Go 实现的 WebRTC 协议栈](/study/projects/pion/) | ✅ v3 | 通信 | 音视频媒体 |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | ✅ v3 | 图形学 | projects / 图形渲染 |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | ⭐ Season | 后端 API | SaaS 应用 |
@@ -1536,6 +1660,7 @@ sidebar:
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | ✅ v3 | CLI | 命令行工具 |
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) | ✅ v3 | 数据库 | 存储与查询 |
+| `robyn` | [Robyn — Rust 运行时的高性能 Python Web 框架](/study/projects/robyn/) | ✅ v3 | 后端 API | Web 框架 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 🗄 存量 | 后端 API | Web 后端 |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) | ✅ v3 | 通信 | 实时通信 |
 | `rocksdb` | [RocksDB — 嵌入式 LSM 引擎](/study/projects/rocksdb/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1547,10 +1672,12 @@ sidebar:
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) | ✅ v3 | 区块链 | 链与合约 |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) | ✅ v3 | 后端 API | Web 后端 |
+| `sam2` | [SAM 2 — Segment Anything Model 2](/study/projects/sam2/) | ✅ v3 | 通信 | 音视频媒体 |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | ✅ v3 | 后端 API | Web 后端 |
 | `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) | ✅ v3 | CLI | 命令行工具 |
+| `scrcpy` | [scrcpy — Android 屏幕镜像 / 录制](/study/projects/scrcpy/) | ✅ v3 | 通信 | 音视频媒体 |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | ✅ v3 | 区块链 | 链与合约 |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | ✅ v3 | CLI | 命令行工具 |
 | `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1559,6 +1686,8 @@ sidebar:
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ✅ v3 | 数据库 | ORM |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | ✅ v3 | 后端 API | 前端 / 组件库 |
+| `shaka-packager` | [Shaka Packager — 流媒体打包工具](/study/projects/shaka-packager/) | ✅ v3 | 通信 | 音视频媒体 |
+| `shaka-player` | [Shaka Player — Google 自适应流媒体播放器](/study/projects/shaka-player/) | ✅ v3 | 通信 | 音视频媒体 |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | ✅ v3 | 通信 | 实时通信 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | ✅ v3 | 图形学 | projects / 图像处理 |
@@ -1566,6 +1695,7 @@ sidebar:
 | `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | ✅ v3 | CLI | 命令行工具 |
 | `shfmt` | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) | ✅ v3 | CLI | 命令行工具 |
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | ✅ v3 | 后端 API | 前端工具 |
+| `shotcut` | [Shotcut — 基于 MLT 的开源非线性编辑器](/study/projects/shotcut/) | ✅ v3 | 媒体 | 视频转码 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | ✅ v3 | 区块链 | 链与合约 |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | ✅ v3 | 后端 API | Web 后端 |
 | `sigma-js` | [Sigma.js — 上万节点仍流畅的 WebGL 图渲染器](/study/projects/sigma-js/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1587,6 +1717,7 @@ sidebar:
 | `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) | ✅ v3 | 数据库 | 存储与查询 |
 | `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | ✅ v3 | 后端 API | projects |
+| `sox` | [SoX — 命令行音频处理瑞士军刀](/study/projects/sox/) | ✅ v3 | 通信 | 音视频媒体 |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | ✅ v3 | 后端 API | Web 后端 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 🗄 存量 | 后端 API | Web 后端 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1601,16 +1732,19 @@ sidebar:
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) | ✅ v3 | 区块链 | 链与合约 |
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | ✅ v3 | 后端 API | 前端工具 |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | ✅ v3 | 后端 API | Web 后端 |
+| `streamlink` | [Streamlink — 把网页直播流接到本地播放器](/study/projects/streamlink/) | ✅ v3 | 通信 | 音视频媒体 |
 | `streamlit` | [Streamlit — Python 几行写 Web 应用](/study/projects/streamlit/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `styled-components` | [styled-components — React 生态最早的 CSS-in-JS 库](/study/projects/styled-components/) | ✅ v3 | 后端 API | projects / 前端样式 |
 | `stylex` | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) | ✅ v3 | 后端 API | 前端 |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | ✅ v3 | 区块链 | 链与合约 |
 | `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | ✅ v3 | 后端 API | 后端 / BaaS |
+| `supercollider` | [SuperCollider — 实时音频合成环境](/study/projects/supercollider/) | ✅ v3 | 通信 | 音视频媒体 |
 | `superset` | [Apache Superset — 开源 BI 平台](/study/projects/superset/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `supertokens` | [SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe](/study/projects/supertokens/) | ✅ v3 | 后端 API | projects / 认证 |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | ✅ v3 | 后端 API | UI 框架 |
 | `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | ✅ v3 | 后端 API | Meta 框架 |
+| `svt-av1` | [SVT-AV1 — 可扩展 AV1 软件编码器](/study/projects/svt-av1/) | ✅ v3 | 媒体 | 视频编解码 |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | ✅ v3 | 编译器 | 构建工具 |
 | `swr` | [SWR — React 远程数据 hook 的极简流派](/study/projects/swr/) | ✅ v3 | 后端 API | 前端 |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | ✅ v3 | 后端 API | Web 后端 |
@@ -1644,8 +1778,10 @@ sidebar:
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `tldraw` | [tldraw — 把白板做成可嵌入的 SDK](/study/projects/tldraw/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `tmux` | [tmux — 一个终端窗口里跑多个会话还能脱离重连](/study/projects/tmux/) | ✅ v3 | CLI | 命令行工具 |
+| `torchcodec` | [TorchCodec — PyTorch 原生 GPU 视频解码与张量输出](/study/projects/torchcodec/) | ✅ v3 | 机器学习 | 视频理解 |
 | `torchtune` | [torchtune — PyTorch 官方 LLM 微调库](/study/projects/torchtune/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `traefik` | [Traefik — 现代云原生反向代理](/study/projects/traefik/) | ✅ v3 | 后端 API | Web 后端 |
+| `transformers-video` | [Transformers Video — HuggingFace 视频处理器与多模态输入管线](/study/projects/transformers-video/) | ✅ v3 | 机器学习 | 视频理解 |
 | `triton-inference-server` | [Triton Inference Server — NVIDIA 多框架推理服务化标杆](/study/projects/triton-inference-server/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `trl` | [TRL — RLHF / DPO / GRPO 训练库](/study/projects/trl/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | ✅ v3 | 后端 API | 类型与 PL 理论 |
@@ -1655,6 +1791,7 @@ sidebar:
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) | ✅ v3 | 后端 API | Web 后端 |
 | `typeorm` | [TypeORM — Decorator-based ORM](/study/projects/typeorm/) | ✅ v3 | 数据库 | ORM |
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | ✅ v3 | 数据库 | 存储与查询 |
+| `ultralytics` | [Ultralytics — YOLOv8/v11 实现](/study/projects/ultralytics/) | ✅ v3 | 通信 | 音视频媒体 |
 | `unified` | [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) | ✅ v3 | 后端 API | projects |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) | ✅ v3 | 区块链 | 链与合约 |
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) | ✅ v3 | CLI | 命令行工具 |
@@ -1673,7 +1810,12 @@ sidebar:
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | ✅ v3 | 后端 API | Web 后端 |
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) | ✅ v3 | 数据库 | 存储与查询 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | ✅ v3 | 数据库 | 存储与查询 |
+| `video.js` | [Video.js — Web 视频播放器框架](/study/projects/videojs/) | ✅ v3 | 通信 | 音视频媒体 |
+| `videochat2` | [VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现](/study/projects/videochat2/) | ✅ v3 | 机器学习 | 视频理解 |
+| `videollama2` | [VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现](/study/projects/videollama2/) | ✅ v3 | 机器学习 | 视频理解 |
+| `videollama3` | [VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座](/study/projects/videollama3/) | ✅ v3 | 机器学习 | 视频理解 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | ✅ v3 | 区块链 | 链与合约 |
+| `vips` | [libvips — 流式低内存图像库](/study/projects/vips/) | ✅ v3 | 通信 | 音视频媒体 |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `visx` | [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | ✅ v3 | 后端 API | 前端工程 |
@@ -1682,6 +1824,7 @@ sidebar:
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) | ✅ v3 | 数据库 | 存储与查询 |
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | ✅ v3 | 后端 API | 测试 |
 | `vllm` | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `vllm-multimodal` | [vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务](/study/projects/vllm-multimodal/) | ✅ v3 | 机器学习 | 视频理解 |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) | ✅ v3 | 通信 | 实时通信 |
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) | ✅ v3 | CLI | 命令行工具 |
@@ -1692,6 +1835,7 @@ sidebar:
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | ✅ v3 | 区块链 | 链与合约 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | ✅ v3 | 后端 API | Web 后端 |
+| `wasmtime` | [Wasmtime — Bytecode Alliance 标准 wasm runtime](/study/projects/wasmtime/) | ✅ v3 | 编程语言 | 运行时 |
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | ✅ v3 | 数据库 | 存储与查询 |
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | ✅ v3 | 后端 API | projects / 前端 |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) | ✅ v3 | 区块链 | 链与合约 |
@@ -1703,6 +1847,8 @@ sidebar:
 | `woodpecker` | [Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI](/study/projects/woodpecker/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | ✅ v3 | 区块链 | 链与合约 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | ✅ v3 | 后端 API | 前端工具 |
+| `x264` | [x264 — 开源 H.264/AVC 软件编码器](/study/projects/x264/) | ✅ v3 | 媒体 | 视频编解码 |
+| `x265` | [x265 — 开源 HEVC/H.265 编码器](/study/projects/x265/) | ✅ v3 | 媒体 | 视频编解码 |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | ✅ v3 | CLI | 命令行工具 |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | ✅ v3 | CLI | 命令行工具 |
 | `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) | ✅ v3 | CLI | 命令行工具 |
@@ -1711,6 +1857,7 @@ sidebar:
 | `yazi` | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) | ✅ v3 | CLI | 命令行工具 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | ✅ v3 | 分布式系统 | 协同编辑 |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | ✅ v3 | CLI | 命令行工具 |
+| `yt-dlp` | [yt-dlp — youtube-dl 活跃分支与万能站点视频下载器](/study/projects/yt-dlp/) | ✅ v3 | 多媒体 | 下载工具 |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) | ✅ v3 | 数据库 | 存储与查询 |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | ✅ v3 | 区块链 | 链与合约 |
 | `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | ✅ v3 | CLI | 编辑器与 IDE |
