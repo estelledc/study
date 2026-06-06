@@ -109,6 +109,8 @@ received = oblivious_transfer(msg0, msg1, choice=bit_b)  # B 得到 msg_{bit_b}
 
 ### 案例 3：分布式机器学习中的安全梯度聚合
 
+名词先解释：**梯度**是机器学习模型训练时每次迭代产生的"调参方向"——可以理解为一组描述"参数应该往哪儿移动"的数字向量。多家公司联合训练模型时，每方需要上传自己数据计算出的梯度，但上传原始梯度可能泄露各自的私有数据。
+
 场景：多个设备（手机/机构）参与联邦学习，服务器要聚合梯度但不能看到任何设备的原始梯度。
 
 ```python
@@ -158,7 +160,8 @@ aggregated_gradient = shamir_reconstruct(agg_shares_from_all_parties)
 
 - **1982 年**：姚期智（Andrew Yao）在 FOCS 1982 提出"百万富翁问题"：两个富翁想知道谁更富有但都不愿透露财富，这是两方安全计算的第一次形式化表达。
 - **1986 年**：Yao 在 FOCS 1986 给出第一个通用方案——乱码电路（Garbled Circuit），解决了任意两方安全计算问题，但只限于两方。
-- **1987 年**：Goldreich、Micali、Wigderson 在 STOC 1987 把这个框架推广到任意 n 方，以"任何智力游戏都能玩"（How to Play any Mental Game）为标题，首次证明通用多方安全计算在诚实多数下可行。同年 Ben-Or、Goldwasser、Wigderson（BGW）独立给出信息论安全版本——不依赖计算复杂度假设，只要 n > 3t（t 为恶意方数量）。
+- **1987 年**：Goldreich、Micali、Wigderson 在 STOC 1987 把这个框架推广到任意 n 方，以"任何智力游戏都能玩"（How to Play any Mental Game）为标题，首次证明通用多方安全计算在诚实多数下可行。
+- **1988 年**：Ben-Or、Goldwasser、Wigderson（BGW）在 STOC 1988 独立给出信息论安全版本——不依赖任何计算复杂度假设，只要诚实方超过 2/3（n > 3t），即便密码学假设被打破也仍然安全；代价是安全阈值更严格。
 - **2003 年**：Ishai 等提出 OT Extension（IKNP），把 GMW 中每个 AND 门的通信从"一次完整 OT"压缩到"几乎零成本"，使实用 MPC 成为可能。
 - **2010 年代至今**：GMW 框架被 SPDZ、ABY、MP-SPDZ 等工程框架继承，隐私计算、联邦学习等工业应用都建在这条理论脉络上。
 
