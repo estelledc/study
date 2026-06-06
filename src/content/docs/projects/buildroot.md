@@ -1,5 +1,5 @@
 ---
-title: Buildroot — 用 Make 生成定制嵌入式 Linux 镜像
+title: Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 来源: 'https://github.com/buildroot/buildroot'
 日期: 2026-06-06
 分类: 操作系统
@@ -9,165 +9,178 @@ title: Buildroot — 用 Make 生成定制嵌入式 Linux 镜像
 
 ## 是什么
 
-Buildroot 是一个**用 Make 驱动的嵌入式 Linux 镜像构建框架**：你通过 Kconfig 菜单勾选想要的工具链、C 库、内核版本和用户态软件包，它替你把整套东西从源码编译出来，最终产出一个可以直接烧录到芯片的镜像文件。
+Buildroot 是一套**用 Make 驱动的嵌入式 Linux 交叉编译框架**，能在约 30 分钟内从源码生成一张可以烧进板子的完整 Linux 镜像。
 
-日常类比：就像一个超级自动化的厨房备餐流水线——你在菜单上勾选"嵌入式 ARM 路由器需要 WiFi + BusyBox + nginx"，流水线自己去采购食材（下载源码）、按顺序烹饪（交叉编译），端出来的就是一盘可以直接上桌的成品（烧录镜像）。
+日常类比：就像去面包房订一个定制蛋糕——你告诉师傅"我要 ARM 架构、要 Python、要 busybox、不要 GUI"，师傅按单采购原料、烤好、打包，你拿走一个完整的成品。Buildroot 就是那个面包师：你用 menuconfig 下单，它去网上抓源码、交叉编译、拼成一张镜像。
 
-展开说：嵌入式设备的 CPU 架构（ARM、MIPS、RISC-V）与你开发用的 x86 PC 完全不同，所以需要"交叉编译器"——在 x86 上生成 ARM 能跑的代码。手工搭一套交叉编译工具链 + rootfs（根文件系统，设备启动后能看到的所有文件和目录）+ 内核 + bootloader（引导程序，负责上电后把内核加载进内存并移交控制权）极其繁琐，一般人搭一周还踩一堆坑。Buildroot 把这套流程全部自动化，一个 `make` 命令搞定，典型构建时间约 30 分钟。
+**为什么需要"交叉编译"**：嵌入式开发板（树莓派、路由器芯片、工业控制板）通常跑 ARM 或 RISC-V，算力远低于你的笔记本。在板子上直接编译 Linux 可能要几小时甚至跑不完，所以要在 x86 笔记本上用"交叉工具链"编译出能跑在 ARM 上的二进制文件——这叫**交叉编译**。Buildroot 把这整套流程自动化了。
 
-仓库收录了超过 5 万个开源软件包的 `.mk` 配方，覆盖从 BusyBox（把 100+ 个常用 Linux 命令打包成一个极小二进制，是嵌入式设备的"瑞士军刀"工具箱）、Python、OpenSSL 到 Qt、Node.js 的几乎所有常见需求。
+Buildroot 内置 5 万+ 软件包，支持 ARM/MIPS/RISC-V/x86 等主流架构，并为数百款开发板提供 `defconfig` 开箱配置，一条命令就能生成能跑的镜像。
 
 ## 为什么重要
 
-不理解 Buildroot，下面这些事情都没法解释：
+不理解 Buildroot，这些事情都没法解释：
 
-- 为什么路由器、工业网关、车载设备里跑的 Linux 系统只有几十 MB，却功能齐全——Buildroot 精准裁剪，只编译你勾选的组件
-- 为什么修改工具链配置后整个项目要重新编译数小时——交叉编译工具链的 ABI 与所有用户态包强依赖，一变全变
-- 为什么嵌入式开发者不直接用 Yocto/OpenEmbedded——Buildroot 以"简单、可预期"著称，Yocto 更强大但学习曲线陡峭数倍
-- 为什么"在目标机上 apt install"不可行——嵌入式设备存储和内存极小，必须在主机上预先裁剪好整套系统
+- 为什么路由器固件 / 摄像头系统 / 工业 PLC 里的 Linux 只有几 MB，却能自启动、联网、跑业务逻辑——Buildroot 裁剪掉了一切不必要的东西
+- 为什么嵌入式开发者能在 x86 笔记本上写代码、一键生成 ARM 镜像——交叉工具链的自动管理是 Buildroot 的核心能力
+- 为什么物联网设备能在 5 秒内启动进入业务进程——Buildroot 生成的只读 squashfs rootfs 比通用发行版轻了一到两个数量级
+- 为什么企业可以在不 fork Buildroot 主树的情况下维护私有驱动——BR2_EXTERNAL 机制让自定义包以独立仓库形式挂载进来
 
 ## 核心要点
 
-1. **Kconfig 驱动选择**：Buildroot 的配置系统与 Linux 内核完全相同，用 `make menuconfig` 打开交互式菜单，一条条勾选。每个选项都有依赖关系图，勾选 A 会自动标记 A 的依赖 B、C。就像 Excel 表格里的公式联动——改一格，所有引用它的格子同步更新。配置完成后生成 `.config` 文件，这份文件就是"复现这个构建"的完整配方。
+1. **Kconfig 下单，Make 执行**：Buildroot 沿用 Linux 内核同款配置系统 Kconfig——运行 `make menuconfig` 弹出一个文字界面，像点菜单一样勾选目标架构、软件包、文件系统格式。配置保存成 `.config` 文件，再 `make` 就开始下载、编译、打包。整个过程不需要 root 权限，也不会污染主机系统。
 
-2. **交叉编译工具链两种模式**：Buildroot 支持"内置工具链"（自己从源码编译 GCC + binutils + libc）和"外部工具链"（直接导入预编译好的工具链，如 Linaro 或 crosstool-NG 生成的）。内置工具链高度集成但每次 `make clean` 后要重建（耗时）；外部工具链省去重建时间，适合 CI 流程。类比：内置像在厨房自己磨刀，外部像直接买把现成的菜刀。
+2. **包描述即 Makefile 片段**：每个包在 `package/<name>/` 目录下有两个核心文件：`Config.in`（Kconfig 可见性规则）和 `<name>.mk`（download / configure / build / install 四步骤描述）。Buildroot 读这些描述，对每个包按固定六步骤串行执行：*下载 → 解压 → 打补丁 → 配置 → 编译 → 安装*。所有产物落在 `output/` 目录，主机和目标完全隔离。
 
-3. **构建输出目录结构**：`make` 完成后，所有产物在 `output/` 下四个子目录各司其职：
-   - `images/`：最终镜像（kernel + rootfs + bootloader），**这是唯一要烧录的东西**
-   - `build/`：每个包的编译中间产物，可查每个包的编译日志
-   - `host/`：宿主机工具 + 目标 sysroot（开发文件、未 strip 的库）
-   - `target/`：目标 rootfs 的展开目录——但**不能直接用**，缺少设备节点和正确权限
+3. **输出四件套，按需组合**：Buildroot 可以生成四种产物，你可以全要也可以只要部分：**交叉工具链**（`output/host/`，可单独给其他项目用）、**根文件系统镜像**（ext4/squashfs/cpio，`output/images/rootfs.*`）、**Linux 内核镜像**（`output/images/zImage`）、**引导程序**（U-Boot，`output/images/u-boot.bin`）。在只需要 rootfs 的场景，可以接入已有工具链，只让 Buildroot 管包管理。
 
 ## 实践案例
 
-### 案例 1：为 MIPS 路由器构建最小 SquashFS 镜像
+### 案例 1：为树莓派 4 生成最小化只读 squashfs 根文件系统
 
-目标：生成一个刷入 Flash 的只读压缩 rootfs，只需 BusyBox + 基本网络工具。
+最典型的起步姿势：用官方 defconfig 做基础，关掉不需要的包，生成 squashfs 镜像：
 
 ```bash
-# 从 Buildroot 内置 defconfig 开始
-make list-defconfigs | grep -i mips   # 找合适的板级配置
-make malta_mips32r2_defconfig          # 加载 MIPS Malta 模拟器配置
-
-# 精调：只保留网络工具包
+git clone https://github.com/buildroot/buildroot.git
+cd buildroot
+# 用官方 raspberrypi4_64 defconfig 作为起点
+make raspberrypi4_64_defconfig
+# 进入菜单进一步裁剪（可选）
 make menuconfig
-# → Target packages → Networking applications → 勾 dropbear（SSH）、iptables
-# → Filesystem images → SquashFS root filesystem → 勾选
-
-make              # 开始构建（默认单线程，安全可靠；想并行见踩坑第 3 条）
-ls output/images/ # 查看生成的 rootfs.squashfs 和 vmlinux
+# 开始编译（首次约 30 分钟）
+make -j$(nproc)
+# 产物：output/images/rootfs.ext4  output/images/Image
 ```
 
-逐步解释：
-- `make list-defconfigs` 列出所有板级预置配置，是快速起点
-- `make menuconfig` 在已有配置上叠加修改，不会从头来
-- `output/images/rootfs.squashfs` 就是可以写入 Flash 分区的成品
+**逐部分解释**：
 
-### 案例 2：用 QEMU 在 x86 主机上仿真 ARM 镜像
+- `make raspberrypi4_64_defconfig`：把官方预设配置写入 `.config`，包含 ARM64 工具链、BusyBox、内核配置等
+- `make menuconfig`：可选步骤，在文字菜单里取消勾选不需要的包（如 GUI、Python）
+- `make -j$(nproc)`：并行编译，`$(nproc)` 是 CPU 核数；注意 Buildroot 自身是串行的，`-j` 只作用于各包内部的 `make`
+- 生成的 `rootfs.ext4` 可以直接用 `dd` 烧进 SD 卡第二分区
 
-不需要真实硬件，在 x86 Linux 上直接验证 rootfs：
+### 案例 2：在 CI 里用 QEMU 跑嵌入式集成测试
+
+Buildroot 生成镜像后可以喂给 QEMU，实现不需要真实硬件的端到端测试：
 
 ```bash
-# 使用 Buildroot 内置的 QEMU ARM vexpress 配置
-make qemu_arm_vexpress_defconfig
+# 生成 QEMU ARM virt 镜像
+make qemu_arm_virt_defconfig
+make -j$(nproc)
 
-# 构建（约 20-30 分钟首次构建）
-make
+# 用 QEMU 启动镜像，执行测试脚本
+qemu-system-arm \
+  -machine virt \
+  -kernel output/images/zImage \
+  -initrd output/images/rootfs.cpio.gz \
+  -append "console=ttyAMA0 rdinit=/bin/sh" \
+  -serial stdio \
+  -nographic \
+  -no-reboot
 
-# 用 Buildroot 附带的 QEMU 启动脚本直接跑
-./output/images/start-qemu.sh
-
-# 在 QEMU 里你就能看到 Buildroot 的 login prompt：
-# Welcome to Buildroot
-# buildroot login: root
+# 若需要自动化测试，可用 expect 脚本检测串口输出
 ```
 
-这个流程让你在 CI 服务器上测试嵌入式镜像，不需要任何物理板卡。`start-qemu.sh` 是 Buildroot 在 `board/qemu/` 里随镜像生成的便捷脚本，封装了 QEMU 的复杂参数。
+**逐部分解释**：
 
-### 案例 3：生成 SDK 分发给应用开发团队
+- `qemu_arm_virt_defconfig`：QEMU ARM 虚拟机配置，无需真实硬件
+- `-initrd rootfs.cpio.gz`：把根文件系统打包成 initramfs 格式，内存里直接运行
+- `-serial stdio`：串口重定向到标准输入输出，方便 CI 读取日志
+- 这套流程让 CI 每次 PR 都能跑一遍嵌入式集成测试，比"烧卡测试"节省 95% 的时间
 
-硬件团队用 Buildroot 生成工具链后，打包成 SDK tarball，应用团队拿去统一 CI 环境：
+### 案例 3：用 BR2_EXTERNAL 维护公司私有包层
+
+公司产品通常有专有驱动或 SDK，不能提交进 Buildroot 主树。`BR2_EXTERNAL` 允许把私有包放在独立 git 仓库，以覆盖或新增的方式挂载进 Buildroot：
+
+```
+my-product-layer/          ← 独立 git 仓库，不修改 Buildroot
+├── external.desc          ← 声明 layer 名称
+├── Config.in              ← 引用私有包的 Kconfig 入口
+├── packages/
+│   ├── my-driver/
+│   │   ├── Config.in      ← menuconfig 可见性规则
+│   │   └── my-driver.mk   ← 构建描述
+│   └── proprietary-sdk/
+│       ├── Config.in
+│       └── proprietary-sdk.mk
+└── configs/
+    └── my_board_defconfig ← 板子专属 defconfig
+```
+
+使用时只需：
 
 ```bash
-# 先配置一个只含工具链（不含应用）的最小 Buildroot
-make menuconfig
-# → System configuration → Init system → None
-# → Target packages → BusyBox → 取消勾选
-# → Filesystem images → 取消所有镜像
-
-# 生成 SDK tarball
-make sdk
-# 产物：output/images/arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
-
-# 应用团队用这个 SDK 编译自己的代码：
-tar xf arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
-./arm-buildroot-linux-gnueabihf_sdk-buildroot/relocate-sdk.sh
-export PATH=$PWD/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin:$PATH
-arm-buildroot-linux-gnueabihf-gcc -o hello hello.c
+# 让 Buildroot 知道外部层的位置
+make BR2_EXTERNAL=/path/to/my-product-layer menuconfig
+make BR2_EXTERNAL=/path/to/my-product-layer
 ```
 
-这个模式保证整个团队用完全相同的工具链版本，消除"在我机器上能编"的问题。
+**逐部分解释**：
+
+- `external.desc`：一个两行文件，声明 layer 名称和描述，Buildroot 用它识别外部层
+- `BR2_EXTERNAL` 可以是多个路径（冒号分隔），支持层叠覆盖
+- 私有包用完全相同的 `.mk` 语法，只是物理上不在 Buildroot 主树里
 
 ## 踩过的坑
 
-1. **改工具链配置必须 `make clean` 完全重建**：切换 libc（如从 uClibc 换 glibc）或 GCC 版本后，增量构建不可靠——所有包的 `.so` 依赖了旧版 ABI，会导致运行时崩溃，必须删掉 `output/` 整目录重来。
+1. **忘记 dirclean 导致旧产物复用**：改了某个包的配置但没有运行 `make <pkg>-dirclean`，Buildroot 认为该包已经构建完毕，跳过重新编译，最终镜像里是旧版本——必须对修改过的包显式清理构建目录。
 
-2. **`output/target/` 不能直接烧录**：这个目录缺少 `/dev` 设备节点，且 BusyBox 的 setuid 位不正确，直接烧录后系统会无法启动。始终使用 `output/images/` 里打包好的镜像文件。
+2. **主机库污染目标编译**：在 Ubuntu 上 apt 安装了 libssl-dev，某些包在 configure 阶段找到了主机的 SSL 头文件并链接，生成的二进制在目标板上找不到库路径，运行时报 `not found`——解决方法是始终让 Buildroot 自己构建依赖，或在隔离的 Docker 容器里编译。
 
-3. **顶层并行构建 `make -jN` 默认不安全**：Buildroot 的顶层 Make 没有对所有包的并行进行完整的依赖守护，直接加 `-j8` 可能导致某个包在依赖未就绪时开始编译，偶发构建失败且难以复现。要安全并行，需在 menuconfig 中启用"Per-package directories"实验性选项（`BR2_PER_PACKAGE_DIRECTORIES`）。
+3. **时间戳陷阱全量重编**：下载的源码包解压后时间戳比构建缓存新，Make 误判需要重构建，触发不必要的全量 rebuild；在持续集成里尤其痛苦——可以用 `make source` 提前下载所有源码，并配置 `BR2_DL_DIR` 指向持久化的下载目录。
 
-4. **外部工具链不支持 Yocto/OpenEmbedded 生成的 SDK**：这类 SDK 里包含大量预编译库，Buildroot 无法正确导入其 sysroot。必须用 crosstool-NG 或 Buildroot 自身的内置工具链模式生成的"纯工具链"。
+4. **BR2_EXTERNAL 路径写错**：把外部层路径写成相对路径，换个目录 cd 进去再 make 时找不到，需要始终使用**绝对路径**，或者在 `.br-external.mk` 里固化（`make BR2_EXTERNAL=$(pwd)/../my-layer`）。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 需要高度定制最小化 Linux 镜像的嵌入式产品（路由器、工控机、摄像头、医疗设备）
-- 团队需要统一交叉编译工具链，用 SDK 模式分发
-- 快速验证新板卡的 BSP，从 Buildroot 内置 defconfig 改起
-- 资源受限设备（< 64MB Flash，< 128MB RAM），需要 musl + BusyBox 的极小配置
-- 学习嵌入式 Linux 全栈（工具链 → 内核 → rootfs → bootloader）的教学环境
+
+- 内存 / 存储受限的嵌入式设备（路由器、工业控制器、IoT 传感器网关），需要裁剪到最小体积
+- 需要完全可复现构建的产品开发：指定每个包的精确版本，保证不同工程师、CI 环境出同一张镜像
+- 快速验证原型：使用官方 defconfig，30 分钟内拿到能在真实硬件或 QEMU 上运行的完整系统
+- 需要 BR2_EXTERNAL 机制管理私有包层，同时追踪上游 Buildroot 更新的产品团队
 
 **不适用**：
-- 需要频繁迭代软件包版本的桌面/服务器场景（每次改配置都要重建镜像）
-- 已经深度投入 Yocto 生态的团队（Yocto 的 layer 体系更灵活，适合大型 BSP 供应链）
-- 需要运行时动态安装软件包（嵌入式设备一般只读 rootfs，不支持 apt/yum）
-- 构建基于 Android 或 RTOS（如 FreeRTOS、Zephyr）的系统——Buildroot 只针对 Linux
+
+- 服务器 / 云端环境（用 Debian/Alpine/Fedora，有包管理器，不需要交叉编译整个系统）
+- 需要运行时动态安装 / 更新软件包（Buildroot 生成的是只读镜像，没有运行时包管理器；此场景选 Yocto 或完整发行版）
+- 项目复杂度很高、需要强大的层（layer）和配方（recipe）继承体系时（Yocto/OpenEmbedded 的设计更适合）
+- 开发团队没有 Make / Kconfig / 嵌入式 Linux 基础，学习曲线会很陡
 
 ## 历史小故事（可跳过）
 
-- **2001 年**：Buildroot 作为 uClinux 项目的辅助工具诞生，最初只是一组 shell 脚本，用于为嵌入式设备生成最小 rootfs
-- **2009 年**：引入与 Linux 内核相同的 Kconfig 配置系统，极大降低了使用门槛，用户增长开始加速
-- **2010-2015 年**：软件包数量从数百增长到数千，引入 `br2-external` 机制允许厂商维护专有包而不 fork 主仓库
-- **2016 年至今**：支持包数持续增长突破数千（当前超 5 万），新增对 meson/cmake 构建系统的支持，每季度一个稳定版（YYYY.MM 格式，如 `2026.02`），官方仓库迁移至 GitLab（GitHub 只是镜像）
-- **设计哲学**：始终坚持"简单优先"——拒绝 Yocto 式的复杂 layer 体系，用一个大 Makefile 统治所有，让初学者 30 分钟内跑出第一个镜像
+- **2001 年**：Erik Andersen 为 uClinux 项目创建 Buildroot，最初只是几十行 Makefile，目标是给没有 MMU 的微控制器生成 Linux 根文件系统。
+- **2006–2009 年**：项目沉寂一段时间，Peter Korsgaard 等人重新活跃起来维护，引入了现代化的包管理框架、Kconfig 集成和每季度发版节奏（YYYY.MM 格式）。
+- **2011 年**：引入 BR2_EXTERNAL 机制，允许企业在不 fork 主树的情况下维护私有包层——这是 Buildroot 走向工业界的关键设计。
+- **2014 年**：推出运行时测试框架（`make tests`），用 QEMU 对生成的镜像做自动化集成测试，嵌入式 CI 成为可能。
+- **2024 年**：社区已有 2500+ 贡献者，每季度发版，与 Yocto/OpenEmbedded 形成嵌入式 Linux 构建系统双雄格局；Buildroot 以简单、快速著称，Yocto 以灵活、可扩展著称。
 
 ## 学到什么
 
-1. **构建系统就是"可重复的配方"**：Buildroot 的 `.config` + 版本号完整描述了一次构建，任何人在任何机器上跑出的镜像字节一致——这是嵌入式量产的核心需求
-2. **简单性是功能**：Buildroot 故意不支持 Yocto 的高级特性（共享状态缓存、多 layer 继承），换来的是"让初级工程师也能维护"的可操作性
-3. **工具链是地基**：改工具链 = 推倒重建，这个"重"不是 Buildroot 的缺陷，而是交叉编译 ABI 的物理约束
-4. **out-of-tree 扩展**：`br2-external` 机制让厂商私有包与上游完全分离，这是开源项目商业化的正确姿势——不改主仓库，自己维护扩展层
+1. **裁剪是嵌入式的核心竞争力**——一个只包含业务逻辑所需组件的根文件系统，比通用发行版快启动数倍、攻击面小一个数量级；Buildroot 把"裁剪"工程化了
+2. **可复现构建的价值在嵌入式里远大于服务端**——版本固定、环境隔离、输出确定，是产品量产的前提；Buildroot 的设计从第一天就为此服务
+3. **分层外挂（BR2_EXTERNAL）是开源工具落地企业的标准姿势**——既能追踪上游更新，又能隔离私有代码，不用维护一个永远 merge 不完的 fork
+4. **Make + Kconfig 这套 1990s 工具链为何仍在 2024 年主导嵌入式构建**——稳定、可预期、几乎零依赖，对资源受限的嵌入式环境来说比现代构建系统（Bazel/Nix）更实用
 
 ## 延伸阅读
 
-- 官方手册（含完整配置参考）：[Buildroot User Manual](https://buildroot.org/downloads/manual/manual.html)
-- 系统学习路径：[Bootlin 嵌入式 Linux 培训材料](https://bootlin.com/training/embedded-linux/)（含 Buildroot 专题，免费 PDF）
-- 对比 Yocto：[Buildroot vs Yocto 官方比较](https://buildroot.org/downloads/manual/manual.html#yocto-compared)
-- [[nix]] —— 同样追求可重复构建，但走纯函数式包管理路线，适合服务器端
-- [[docker]] —— 容器镜像与嵌入式镜像的构建哲学对比：都是"定制最小运行环境"
+- 官方手册：[Buildroot User Manual](https://buildroot.org/downloads/manual/manual.html)（完整参考，从 menuconfig 到自定义包都有）
+- 视频入门：[Bootlin — Buildroot Training](https://bootlin.com/training/buildroot/)（法国嵌入式培训公司，材料开源，质量极高）
+- 与 Yocto 对比：[Buildroot vs Yocto: Differences for Your Embedded Linux Project](https://www.linuxlinks.com/buildroot-vs-yocto/)（选型必读）
+- [[freertos]] —— 与 Buildroot 生成的 Linux 互补的实时操作系统，常见于同一产品的不同核
+- [[zephyr]] —— 面向 MCU 的 RTOS，代表 Linux 之外嵌入式操作系统另一条路线
+- [[nix]] —— 同样强调可复现构建，面向服务端，设计哲学与 Buildroot 有交汇之处
 
 ## 关联
 
-- [[docker]] —— 同样是"构建最小化运行环境"，Docker 面向容器，Buildroot 面向裸机嵌入式
-- [[nix]] —— 可重复构建的另一路线：Nix 用函数式表达式描述构建，Buildroot 用 Kconfig + Make
-- [[buildkit]] —— Docker 的新一代构建后端，与 Buildroot 都处理"从源到镜像"的流水线问题
-- [[buildah]] —— 无守护进程的容器镜像构建工具，与 Buildroot 思路对比：OCI 镜像 vs 裸机镜像
-- [[ansible]] —— 配置管理工具，常与 Buildroot SDK 配合用于部署阶段的自动化
-- [[docker]] —— 嵌入式设备也可运行轻量容器（如 balena），Buildroot 可作为容器宿主的基础系统
+- [[freertos]] —— Buildroot 管 Linux 世界，FreeRTOS 管实时微控制器，两者经常共存于同一产品的不同处理器核
+- [[zephyr]] —— 现代 RTOS，面向 MCU 的场景，与 Buildroot 定位互补
+- [[nuttx]] —— 另一款嵌入式 RTOS，小体积 Linux 替代，有时与 Buildroot 生成的系统配合部署
+- [[nix]] —— 同样以函数式可复现构建为核心理念，Buildroot 的服务端精神近亲
+- [[buildah]] —— 容器镜像构建工具，与 Buildroot 的嵌入式镜像构建理念异曲同工：从 scratch 精准组装
+- [[docker]] —— 容器化技术，让嵌入式构建环境本身可复现：在 Docker 里跑 Buildroot 是隔离主机污染的最简单方法
+- [[rt-thread]] —— 国内主流嵌入式 RTOS，与 Buildroot 覆盖的 Linux 嵌入式场景在工业界并存
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-（暂无反向链接）
-
