@@ -48,7 +48,7 @@ cat {{research_json}}
 { "slug": "{{slug}}", "status": "failed", "reason": "research-failed" }
 ```
 
-### Step 2 — 写 12 段 150-200 行（目标 170±10）
+### Step 2 — 写 12 段 ≥150 行（目标 170±10，无上限）
 
 **行数预算建议**（hindley-milner.md 实际 176 行参考）：
 - frontmatter：6 行

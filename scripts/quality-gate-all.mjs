@@ -57,11 +57,8 @@ title: Self-test fixture — test fixture
   ];
   const body = sections.join('\n\n');
   let goodContent = frontmatter + '\n\n' + body;
-  // Pad to 150+ lines
+  // Pad to 150+ lines (no upper limit)
   while (goodContent.split('\n').length < 150) goodContent += '\n';
-  // Trim if over 200
-  const lines = goodContent.split('\n');
-  if (lines.length > 200) goodContent = lines.slice(0, 200).join('\n');
 
   await fs.writeFile(goodPath, goodContent);
 

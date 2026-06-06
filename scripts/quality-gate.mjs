@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // 7 项 quality gate：
 // 1. 路径合法（papers/projects 下、kebab-case slug）
-// 2. 行数 150-200
+// 2. 行数 ≥150（无上限；legacy-short/long 下限 140）
 // 3. frontmatter YAML 子集严格 parse（引号配对 / 必含 title）
 // 4. 红线词扫（正文 + 路径）
 // 5. 12 段 H2 命中 ≥ 9/11
@@ -92,10 +92,10 @@ function checkPath(filePath) {
   return { ok: true };
 }
 
-function checkLines(text, min = 150, max = 200) {
+function checkLines(text, min = 150, max = null) {
   const lines = text.split('\n').length;
   if (lines < min) return { ok: false, reason: `lines:${lines}<${min}`, lines };
-  if (lines > max) return { ok: false, reason: `lines:${lines}>${max}`, lines };
+  if (max != null && lines > max) return { ok: false, reason: `lines:${lines}>${max}`, lines };
   return { ok: true, lines };
 }
 
@@ -193,10 +193,10 @@ export async function validate(filePath, opts = {}) {
   }
 
   if (schema === 'legacy-long') {
-    // 旗舰/早期长文：放宽行数到 140-280
+    // 旗舰/早期长文：下限 140，无上限（schema 保留兼容存量 frontmatter）
     const checks = [
       ['path', () => checkPath(filePath)],
-      ['lines', () => checkLines(text, opts.linesMin || 140, opts.linesMax || 280)],
+      ['lines', () => checkLines(text, opts.linesMin || 140, opts.linesMax ?? null)],
       ['frontmatter', () => checkFrontmatter(text)],
       ['red-line', () => checkRedLine(text, filePath)],
       ['h2', () => checkH2(text, opts.h2Threshold || 9)],
@@ -213,10 +213,10 @@ export async function validate(filePath, opts = {}) {
   }
 
   if (schema === 'legacy-short') {
-    // 行数略短的存量笔记：下限放宽到 140
+    // 行数略短的存量笔记：下限放宽到 140，无上限
     const checks = [
       ['path', () => checkPath(filePath)],
-      ['lines', () => checkLines(text, opts.linesMin || 140, opts.linesMax || 200)],
+      ['lines', () => checkLines(text, opts.linesMin || 140, opts.linesMax ?? null)],
       ['frontmatter', () => checkFrontmatter(text)],
       ['red-line', () => checkRedLine(text, filePath)],
       ['h2', () => checkH2(text, opts.h2Threshold || 9)],
@@ -242,10 +242,10 @@ export async function validate(filePath, opts = {}) {
     return { pass: reasons.length === 0, reasons, details, file: filePath, schema: 'template-reference' };
   }
 
-  // 默认：v3 零基础流水线 150-200 行
+  // 默认：v3 零基础流水线 ≥150 行，无上限
   const checks = [
     ['path', () => checkPath(filePath)],
-    ['lines', () => checkLines(text, opts.linesMin || 150, opts.linesMax || 200)],
+    ['lines', () => checkLines(text, opts.linesMin || 150, opts.linesMax ?? null)],
     ['frontmatter', () => checkFrontmatter(text)],
     ['red-line', () => checkRedLine(text, filePath)],
     ['h2', () => checkH2(text, opts.h2Threshold || 9)],

@@ -45,7 +45,7 @@ await test('good project fixture passes gate', async () => {
   assert.equal(r.pass, true, `expected pass, got: ${JSON.stringify(r.reasons)}`);
 });
 
-await test('schema_version legacy-short allows lines 140-200', async () => {
+await test('schema_version legacy-short allows lines 140+ with no upper limit', async () => {
   const tmp = await fs.mkdtemp('/tmp/gate-test-');
   const dir = path.join(tmp, 'src/content/docs/papers');
   await fs.mkdir(dir, { recursive: true });
@@ -67,6 +67,29 @@ await test('schema_version legacy-short allows lines 140-200', async () => {
 
   assert.equal(r.schema, 'legacy-short');
   assert.ok(r.pass, `legacy-short 145 lines should pass, got: ${JSON.stringify(r.reasons)}`);
+});
+
+await test('default v3 allows lines > 200', async () => {
+  const tmp = await fs.mkdtemp('/tmp/gate-test-');
+  const dir = path.join(tmp, 'src/content/docs/papers');
+  await fs.mkdir(dir, { recursive: true });
+  const fp = path.join(dir, 'long-test.md');
+
+  const fm = `---\ntitle: Long Test\n日期: 2026-01-01\n分类: 其他\n子分类: 测试\n难度: 初级\n---`;
+  const sections = ['## 是什么','## 为什么重要','## 核心要点','## 实践案例',
+    '## 踩过的坑','## 适用','## 历史小故事（可跳过）','## 学到什么',
+    '## 延伸阅读','## 关联','## 反向链接\n<!-- auto -->'];
+  let content = fm + '\n\n' + sections.join('\n\n内容。\n\n') + '\n';
+  const linesArr = content.split('\n');
+  while (linesArr.length < 250) linesArr.push('extra line');
+  content = linesArr.join('\n');
+
+  await fs.writeFile(fp, content);
+  const r = await validate(fp);
+  await fs.rm(tmp, { recursive: true });
+
+  assert.ok(r.pass, `250 lines should pass default v3, got: ${JSON.stringify(r.reasons)}`);
+  assert.equal(r.details?.lines?.lines, 250);
 });
 
 await test('template-reference schema is exempt from line/H2 checks', async () => {

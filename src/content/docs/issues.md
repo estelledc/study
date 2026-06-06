@@ -13,7 +13,7 @@ sidebar:
 
 ## 内容深度
 
-- 批量笔记为 150–200 行零基础模板；枢纽篇需按 [方法论](/study/method/) 补 L3 源码 + L4 改一处
+- 批量笔记为 ≥150 行零基础模板（无上限）；枢纽篇需按 [方法论](/study/method/) 补 L3 源码 + L4 改一处
 - `data/rewrite-pool.jsonl` 记录待重写为深读模板的 legacy 长文
 
 ## 队列

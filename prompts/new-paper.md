@@ -54,7 +54,7 @@ lr graph {{slug}} -f json 2>/dev/null || arxiv MCP citation_graph
 打开模板：`/Users/jason/study/src/content/docs/papers/hindley-milner.md`，对照它的结构与口吻写 `{{output_path}}`。
 
 **关键提醒**：
-- 行数 150-200，越界 fail
+- 行数 ≥150，无上限；低于 150 fail
 - 每段 H2 标题必须包含 `base-rules.md` 里的关键词
 - "是什么" 段必须有日常类比开头
 - "踩过的坑" 4 条，每条说清原因
@@ -103,7 +103,7 @@ git commit -m "feat: {{slug}} 新建零基础笔记（{{topic}}）"
 {
   "slug": "{{slug}}",
   "status": "failed",
-  "reason": "<short reason, 例如 lines:218>200 / red-line / arxiv unreachable>",
+  "reason": "<short reason, 例如 lines:120<150 / red-line / arxiv unreachable>",
   "attempt": <1|2>
 }
 ```

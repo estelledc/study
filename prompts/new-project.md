@@ -51,7 +51,7 @@
 | 关联 | 5-7 条 [[slug]] —— 关联说明 |
 | 反向链接 | 注释占位 |
 
-行数 150-200。frontmatter 用新格式（title / 来源 / 日期 / 分类 / 难度），`来源:` 字段写 GitHub URL，例如：
+行数 ≥150（无上限，目标 170±10 仍推荐）。frontmatter 用新格式（title / 来源 / 日期 / 分类 / 难度），`来源:` 字段写 GitHub URL，例如：
 ```yaml
 来源: 'https://github.com/BurntSushi/ripgrep'
 ```

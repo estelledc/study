@@ -94,7 +94,7 @@ done < /tmp/round-${ROUND_N}/items.jsonl
 M{N} pipeline subagent。读 /tmp/round-{ROUND_N}/ctx-{SLUG}.json 拿 ctx，按其中字段顺序跑 5 stage：
 
 1. Researcher: 读 /tmp/pipeline-{SLUG}/researcher.prompt.md 按 5 步流程，写 research.json
-2. Writer: 读 /tmp/pipeline-{SLUG}/writer.prompt.md + research.json + /Users/jason/study/src/content/docs/papers/hindley-milner.md 模板，写 ctx.output_path（150-200 行 目标 170±10），quality-gate 通过后在 worktree commit `feat: {SLUG} 新建零基础笔记（{TOPIC}）` 或 `rewrite: {SLUG} 用零基础模板重写`
+2. Writer: 读 /tmp/pipeline-{SLUG}/writer.prompt.md + research.json + /Users/jason/study/src/content/docs/papers/hindley-milner.md 模板，写 ctx.output_path（≥150 行，目标 170±10，无上限），quality-gate 通过后在 worktree commit `feat: {SLUG} 新建零基础笔记（{TOPIC}）` 或 `rewrite: {SLUG} 用零基础模板重写`
 3. Reviewer panel: 顺序跑 zero-base / academic / engineer，各写独立 review JSON
 4. 聚合: ≥2 reject → graveyard；0 reject + 平均 ≥4 + 全 pass → 通过；其他走 Refiner
 5. Refiner（条件）: 定向修 ≤2 段，新 commit `refine: {SLUG} 第 1 轮（refiner 定向修复）`，needs-refine reviewer 复审

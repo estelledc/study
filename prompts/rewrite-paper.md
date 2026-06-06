@@ -37,14 +37,14 @@ cat {{existing_path}}
 
 如果现有 frontmatter 有 `来源:` 字段，可以直接复用为 lr search 的查询字符串。
 
-### Step 4：重写为 12 段零基础笔记（150-200 行）
+### Step 4：重写为 12 段零基础笔记（≥150 行，无上限）
 
 对照 `/Users/jason/study/src/content/docs/papers/hindley-milner.md`，用 Step 0 提炼的好类比 + Step 1-3 拉的新内容，**完全重写** `{{output_path}}`（不是 patch / 不是 diff，是覆盖）。
 
 **关键**：
 - frontmatter 切到新格式（title / 来源 / 日期 / 分类 / 难度），删掉 description / sidebar / season / version / branch
 - 12 段 H2 必须命中 base-rules 关键词，删除所有 Layer 0/1/.. 标题
-- 行数 150-200
+- 行数 ≥150，无上限
 - "关联" 5-7 条 `[[slug]]`，优先链已写笔记（参考 `/Users/jason/study/data/written.txt`）
 
 ### Step 5：自检 + commit
@@ -67,5 +67,5 @@ git commit -m "rewrite: {{slug}} 用零基础模板重写"
 ## 特别提醒
 
 - **不要**留残余的 Layer 标题、不要保留怀疑段、不要 academic 编号
-- 现有笔记可能很长（>500 行），别被它的篇幅误导，新版必须 150-200 行
+- 现有笔记可能很长（>500 行），新版至少 150 行即可，不必刻意压缩到 200 以内
 - 现有笔记里的 GitHub permalink ≥ 4 → 砍到 ≤ 3，质量门会拦

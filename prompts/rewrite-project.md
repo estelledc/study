@@ -41,7 +41,7 @@ cat {{existing_path}}
 
 **切 frontmatter 到新格式**（删除 description / sidebar / season 等 legacy 字段）。
 
-行数 150-200。
+行数 ≥150，无上限。
 
 ### Step 3：自检 + commit
 

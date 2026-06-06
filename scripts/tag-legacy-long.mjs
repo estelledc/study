@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// 自动为「仅因行数 > 200 失败」且 H2 结构完整的旗舰长文打上 schema_version: legacy-long
-// 同时为行数 < 150 的文件输出 queue（不自动修改内容）
+// 历史脚本：曾为「仅因行数 > 200 失败」的笔记打 legacy-long 标签。
+// 自 2026-06 起默认 schema 无行数上限；本脚本仅用于存量排查。
 //
 // 用法：
 //   node scripts/tag-legacy-long.mjs           # dry-run

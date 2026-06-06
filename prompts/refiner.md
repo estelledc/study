@@ -65,7 +65,7 @@ cat {{output_path}}
 - zero-base 修复：在术语首次出现处加 1 句话桥接 / 改难类比为日常类比 / 拆案例为更小步骤
 - engineer 修复：修代码 bug / 重写踩坑为具体场景 / 适用场景加量化界限
 
-修完整篇行数仍要 150-200。
+修完整篇行数仍须 ≥150（无上限）。
 
 ### Step 3 — Layer 1 self-check
 
@@ -114,5 +114,5 @@ git commit -m "refine: {{slug}} 第 {{round}} 轮（refiner 定向修复）"
 
 - 不要全篇重写（那是 writer 的事，refiner 应该只动 ≤2 段）
 - 不要忽视 reviewer 的 fix_hints（要逐条对应）
-- 不要把笔记越改越长（行数仍 150-200）
+- 内容需要时可写长；quality gate 仅拦截低于 150 行
 - 不要假装修了实际没修（diff 必须真的有内容变化）
