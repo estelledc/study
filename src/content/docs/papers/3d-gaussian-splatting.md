@@ -178,7 +178,6 @@ for g in gaussians:
 - [[magic3d-2023]] —— Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
 - [[marching-cubes-1987]] —— Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格
 - [[meagher-1982-octree]] —— Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界
-- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[mode-connectivity-2018]] —— Mode Connectivity — 神经网络的两个最优解之间有低洼走廊
 - [[monaghan-1992-sph]] —— SPH — 把流体拆成一群带核的粒子
 - [[mueller-2007-pbd]] —— Position Based Dynamics — 跳过力，直接挪位置
@@ -186,6 +185,7 @@ for g in gaussians:
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[newcombe-2011-kinectfusion]] —— KinectFusion — 用消费级深度相机实时重建三维世界
 - [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎，把 GPU API 差异藏进场景图
 - [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
 - [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项

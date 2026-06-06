@@ -176,6 +176,7 @@ for (let i = 0; i < n; i++) {
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
+- [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统
 - [[tomasulo-1967]] —— Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序

@@ -1156,6 +1156,7 @@ effect
 ejabberd
 elasticsearch
 electron
+electron-builder
 element-android
 element-web
 elysia
@@ -1190,6 +1191,7 @@ feast
 ferretdb
 ffmpeg
 fiber
+filament
 filecoin
 fish
 fish-shell
@@ -1378,6 +1380,7 @@ matplotlib
 matrix-js-sdk
 matrix-rust-sdk
 mattermost
+mbedtls
 mcp-ts-sdk
 mediapipe
 mediasoup
@@ -1451,6 +1454,7 @@ numpy
 nushell
 nuttx
 nuxt
+nvchad
 nvidia-gpu-operator
 nvidia-mig
 nvm

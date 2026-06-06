@@ -211,5 +211,9 @@ jobs:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[webpack]] —— webpack 模块打包
 

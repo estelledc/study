@@ -236,6 +236,7 @@ export function dispose() {
 - [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
 - [[catmull-1974-zbuffer]] —— Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
 - [[filament]] —— Filament — Google 跨平台 PBR 渲染引擎
+- [[ogre]] —— OGRE — 老牌 C++ 3D 渲染引擎，把 GPU API 差异藏进场景图
 - [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎

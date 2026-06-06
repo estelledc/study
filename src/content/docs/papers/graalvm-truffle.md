@@ -156,6 +156,7 @@ console.log(py(21));  // 42
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
+- [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生

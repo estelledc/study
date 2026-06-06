@@ -170,5 +170,10 @@ nvim --startuptime /tmp/nvim_startup.log
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
+- [[doom-emacs]] —— Doom Emacs — 极简风 Emacs 配置框架
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
+- [[lunarvim]] —— LunarVim — 一体化 Neovim IDE 层
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[vim]] —— Vim — 模态编辑器之父
 

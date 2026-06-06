@@ -156,6 +156,7 @@ PyPy 项目里至少有这些 RPython 解释器：
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
+- [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 - [[turchin-supercompilation]] —— Turchin Supercompilation — 让编译器把程序模拟一遍再写回去

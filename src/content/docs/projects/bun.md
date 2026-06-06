@@ -193,6 +193,7 @@ Bun.serve({
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+- [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[vitest]] —— Vitest — Vite 原生测试框架

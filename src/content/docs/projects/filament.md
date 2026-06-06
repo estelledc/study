@@ -170,5 +170,10 @@ cmgen -x ./ibl_output --format=ktx --size=256 my_environment.hdr
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[babylonjs]] —— Babylon.js — 微软开源的企业级 Web 3D 引擎
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[raylib]] —— raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
+- [[threejs]] —— three.js — Web 3D 事实标准
 

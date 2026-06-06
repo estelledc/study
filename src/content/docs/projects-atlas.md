@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 853 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 857 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：853 个
-- **已分类**：853
+- **总数**：857 个
+- **已分类**：857
 
 ### 按一级主题分布
 
@@ -20,16 +20,16 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 19 |
+| [操作系统](#操作系统) | 20 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
 | [后端 API](#后端-api) | 191 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 17 |
+| [图形学](#图形学) | 18 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 121 |
-| [编译器](#编译器) | 13 |
+| [CLI](#cli) | 122 |
+| [编译器](#编译器) | 14 |
 | [数据可视化](#数据可视化) | 66 |
 
 ---
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 19 个。
+共 20 个。
 
 ### 嵌入式
 
@@ -179,6 +179,7 @@ sidebar:
 | [CircuitPython — 插上 USB 就能写 Python 的微控制器运行时](/study/projects/circuitpython/) | ✅ v3 |  |
 | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
 | [embedded-hal — 让同一份驱动代码跑在任意芯片上](/study/projects/embedded-hal/) | ✅ v3 |  |
+| [FreeModbus — 嵌入式工业总线从机协议栈 C 实现](/study/projects/freemodbus/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
@@ -724,7 +725,7 @@ sidebar:
 
 ## 图形学
 
-共 17 个。
+共 18 个。
 
 ### 渲染与图形
 
@@ -739,6 +740,7 @@ sidebar:
 | [LÖVE — Lua 2D 游戏框架](/study/projects/love2d/) | ✅ v3 |  |
 | [melonJS — 轻量 JS 2D 引擎](/study/projects/melonjs/) | ✅ v3 |  |
 | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
+| [OGRE — 老牌 C++ 3D 渲染引擎，把 GPU API 差异藏进场景图](/study/projects/ogre/) | ✅ v3 |  |
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 | [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 |  |
@@ -884,12 +886,13 @@ sidebar:
 
 ## CLI
 
-共 121 个。
+共 122 个。
 
 ### 编辑器与 IDE
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [AstroNvim — 社区驱动的 Neovim 一键 IDE](/study/projects/astronvim/) | ✅ v3 |  |
 | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 |  |
 | [Doom Emacs — 极简风 Emacs 配置框架](/study/projects/doom-emacs/) | ✅ v3 |  |
 | [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 |  |
@@ -1029,7 +1032,7 @@ sidebar:
 
 ## 编译器
 
-共 13 个。
+共 14 个。
 
 ### 构建工具
 
@@ -1050,6 +1053,7 @@ sidebar:
 | [Bun — JS 全能运行时](/study/projects/bun/) | ✅ v3 |  |
 | [Deno — 安全优先的 JS/TS 运行时](/study/projects/deno/) | ✅ v3 |  |
 | [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) | ✅ v3 | V8 上的 JavaScript 服务端运行时，事件循环 + libuv |
+| [QuickJS — 装进口袋的 JavaScript 引擎](/study/projects/quickjs/) | ✅ v3 |  |
 | [Wasmtime — Bytecode Alliance 标准 wasm runtime](/study/projects/wasmtime/) | ✅ v3 | Bytecode Alliance 的 WebAssembly 运行时，WASI 支持 |
 
 ### 其他子类
@@ -1146,7 +1150,7 @@ sidebar:
 
 ---
 
-## 全部 853 个（字母序）
+## 全部 857 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1198,6 +1202,7 @@ sidebar:
 | `ast-grep` | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) | ✅ v3 | CLI | 命令行工具 |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | ✅ v3 | 通信 | 实时通信 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | 🗄 存量 | 后端 API | UI 框架 / 静态站点 |
+| `astronvim` | [AstroNvim — 社区驱动的 Neovim 一键 IDE](/study/projects/astronvim/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | ✅ v3 | 后端 API | Web 后端 |
 | `atom` | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `aubio` | [aubio — 实时音频事件检测库](/study/projects/aubio/) | ✅ v3 | 通信 | 音视频媒体 |
@@ -1407,6 +1412,7 @@ sidebar:
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | ✅ v3 | 区块链 | 链与合约 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | ✅ v3 | 数据可视化 | 动画 |
 | `frappe-gantt` | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) | ✅ v3 | 数据可视化 | 数据可视化 |
+| `freemodbus` | [FreeModbus — 嵌入式工业总线从机协议栈 C 实现](/study/projects/freemodbus/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `freertos` | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | ✅ v3 | 通信 | 实时通信 |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | ✅ v3 | CLI | 命令行工具 |
@@ -1665,6 +1671,7 @@ sidebar:
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | ✅ v3 | 后端 API | projects |
 | `ofetch` | [ofetch — Nuxt 默认的现代 fetch 包装](/study/projects/ofetch/) | ✅ v3 | 后端 API | 前端工程化 |
+| `ogre` | [OGRE — 老牌 C++ 3D 渲染引擎，把 GPU API 差异藏进场景图](/study/projects/ogre/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) | ✅ v3 | CLI | 命令行工具 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) | ✅ v3 | 机器学习 | 数据科学与 AI |
@@ -1755,6 +1762,7 @@ sidebar:
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 🗄 存量 | 后端 API | Web 后端 |
 | `quasar` | [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 | 后端 API | 移动端 |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) | ✅ v3 | 数据库 | 存储与查询 |
+| `quickjs` | [QuickJS — 装进口袋的 JavaScript 引擎](/study/projects/quickjs/) | ✅ v3 | 编译器 | 语言运行时 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | ✅ v3 | 后端 API | UI 框架 |
 | `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/projects/rabbitmq-server/) | ✅ v3 | 数据库 | 存储与查询 |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | ✅ v3 | 区块链 | 链与合约 |

@@ -182,3 +182,6 @@ eMBErrorCode eMBRegCoilsCB(UINT8 *pucRegBuffer, USHORT usAddress,
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

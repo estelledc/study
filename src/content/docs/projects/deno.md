@@ -191,5 +191,6 @@ deno compile --target x86_64-pc-windows-msvc --output cli.exe cli.ts
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
+- [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

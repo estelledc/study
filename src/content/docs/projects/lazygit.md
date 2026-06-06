@@ -153,6 +153,7 @@ customCommands:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 一键 IDE
 - [[bat]] —— bat — 现代 cat 替代
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
