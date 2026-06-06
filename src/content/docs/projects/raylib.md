@@ -1,119 +1,54 @@
 ---
-title: raylib — 极简 C 游戏库
-来源: https://github.com/raysan5/raylib
+title: raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
+来源: 'https://github.com/raysan5/raylib'
 日期: 2026-06-06
-子分类: 渲染与图形
 分类: 图形学
+子分类: 渲染与图形
 难度: 初级
-provenance: pipeline-v3
 ---
 
 ## 是什么
 
-**raylib** 是一个用纯 C99 写成的游戏/图形编程库，口号是"just coding in the most pure spartan-programmers way"——没有可视化编辑器、没有 GUI 工具，只有一个头文件和一批函数。
+raylib 是一个用纯 C99 写成的游戏/图形库，让你只需 10 行代码就能打开一个窗口、画东西、播音效——不用提前搞懂 OpenGL 上下文、着色器编译或链接器玄学。
 
-日常类比：SDL2 相当于给你一块空地 + 铲子，OpenGL 相当于给你一座矿山，而 raylib 相当于给你一套预装好的乐高积木——窗口、键盘输入、图片加载、声音播放、3D 模型渲染，全都是现成的砖块，按说明书拼就行。
+日常类比：raylib 就像乐高积木里的"基础入门套件"——每块积木（DrawText、DrawCircle、PlaySound）都是独立的小功能，你按说明书拼几块就能跑起来，不需要先自己造轮子。区别在于乐高拼完是静态的展示品，raylib 的每帧循环是动态更新的——每次屏幕刷新，你告诉它画什么，它就画什么。
 
-底层基石：
-
-- **rlgl**：raylib 自研的 OpenGL 抽象层，统一支持 OpenGL 1.1 / 2.1 / 3.3 / 4.3 / ES 2.0 / ES 3.0，还有一个纯软件渲染后端（rlsw）
-- **GLFW**（内嵌版）：跨平台窗口 + 输入管理
-- **miniaudio / stb** 等第三方库：全部内嵌在 `src/external`，**不需要额外安装任何依赖**
-
-发布于 2013 年，作者是西班牙程序员 Ramon Sanchez（raysan5）；灵感来自 Borland BGI 和微软 XNA，最初目标是让编程课的学生不用装任何 IDE 就能跑起图形程序。截至 2026 年，GitHub Stars 超过 33k，拥有 70+ 语言绑定。
+在 raylib 之前，想做图形编程通常要先过三关：用 GLFW/SDL2 开窗口、写顶点缓冲对象初始化代码、配置 GLSL 着色器——光这些样板就能吓退初学者。raylib 把这三关全部内嵌到一个单头文件里，整个库只有约 1.8 万行 C 代码，所有第三方依赖（glfw、miniaudio、stb 系列）都已打包在 `src/external`，克隆仓库后直接 `gcc main.c -lraylib -lm` 就能跑。
 
 ## 为什么重要
 
-学图形编程的人通常遇到几个经典障碍：
+不理解 raylib，下面这些事都没法解释：
 
-- **OpenGL 入门壁垒高**：光初始化上下文就要写 200+ 行 boilerplate，还没开始画任何东西
-- **SDL2 功能碎片**：本体只管窗口和输入，图片要 SDL_image，字体要 SDL_ttf，音频要 SDL_mixer，各自安装链接
-- **游戏框架太重**：Unity / Godot 功能强大，但学它本身就是另一门课，遮住了底层发生的事
-
-raylib 解决这三个问题：
-
-- 一行 `InitWindow(800, 450, "hello")` 窗口就出来了，没有 boilerplate
-- 字体、纹理、音频、3D 全在同一个库里，一次链接搞定
-- API 足够薄，你依然能感受到帧循环、纹理上传、着色器绑定这些图形编程本质，学完可以无缝迁移到更底层的 OpenGL 或 Vulkan
-
-另一个维度：**教育场景**。raylib 的 140+ 官方示例覆盖从"画个彩色正方形"到"PBR 材质 + 骨骼动画"，几乎是一本活的图形编程课本。西班牙、法国、美国的多所大学已把它作为图形课入门工具。
+- 为什么 C/C++ 游戏编程教程大多从 SDL2 开始——raylib 是比 SDL2 更薄的替代品，证明门槛可以更低
+- 为什么"多平台"对 C 项目来说不再是噩梦——同一份源码在 Windows/Linux/macOS/Android/HTML5 上能无改动跑通
+- 为什么 60 多种语言都有 raylib 绑定（Python pyray、Go raylib-go、Rust raylib-rs）——极简 C API 是"各语言 FFI 绑定的最小公约数"
+- 为什么初学者用 raylib 写完第一个游戏后，再去学 OpenGL 会容易很多——先用黑盒理解"渲染循环"的概念，再拆开看实现
 
 ## 核心要点
 
-### 模块划分
+1. **渲染循环是唯一的节奏**：raylib 程序的骨架永远是 `InitWindow → while(!WindowShouldClose()) { BeginDrawing ... EndDrawing } → CloseWindow`。类比：就像电影胶片——每帧都是独立的一张画，你在 BeginDrawing 和 EndDrawing 之间决定"这一帧画什么"。忘记这个结构，屏幕就永远只显示第一帧。
 
-raylib 核心拆成 7 个模块，每个可以单独编译使用：
+2. **7 个模块各自独立**：核心模块分 core（窗口、时钟、输入）/ shapes（几何图形）/ textures（图片与精灵）/ text（字体渲染）/ models（3D 网格）/ audio（音效）/ rlgl（OpenGL 抽象层）。类比：像瑞士军刀——每把刀刃都能单独用，不用全部展开。rlgl 是最底层的那把，可以直接调用来绕过高层封装。
 
-| 模块 | 职责 |
-|------|------|
-| `core` | 窗口、输入（键盘/鼠标/手柄）、时间、帧循环 |
-| `shapes` | 2D 基本形状（矩形、圆、三角、多边形） |
-| `textures` | 图片加载（PNG/JPG/BMP/DDS…）、纹理操作 |
-| `text` | TTF/OTF/BMFont 字体加载、文字绘制 |
-| `models` | 3D 网格、模型加载（OBJ/glTF/IQM）、骨骼动画 |
-| `audio` | 声音加载（WAV/MP3/OGG）、音效 / 流媒体播放 |
-| `rlgl` | OpenGL 抽象层，可单独作为轻量级渲染后端 |
-
-### 游戏循环心智模型
-
-raylib 的帧循环只有四步：
-
-```c
-InitWindow(width, height, "title");   // 1. 创窗口
-while (!WindowShouldClose()) {        // 2. 每帧循环
-    // 更新游戏逻辑
-    BeginDrawing();                   // 3. 开始绘制
-        ClearBackground(RAYWHITE);
-        // 画各种东西
-    EndDrawing();                     // 4. 提交帧
-}
-CloseWindow();                        // 5. 清理
-```
-
-`BeginDrawing()` 绑定帧缓冲，`EndDrawing()` 交换缓冲区并处理事件，所有 Draw* 调用必须在这对括号里。
-
-### API 命名规范
-
-全库统一 PascalCase 动词前缀命名，看名字就知道做什么：
-
-- `Init*` / `Close*`：初始化和清理（InitWindow / CloseWindow）
-- `Load*` / `Unload*`：资源上传 GPU / 释放（LoadTexture / UnloadTexture）
-- `Begin*` / `End*`：状态对（BeginDrawing / EndDrawing、BeginMode3D / EndMode3D）
-- `Draw*`：绘制（DrawText / DrawTexture / DrawSphere）
-- `Is*` / `Get*`：查询（IsKeyDown / GetMousePosition）
-
-### 着色器支持
-
-raylib 支持自定义 GLSL 着色器，内置后处理链：
-
-```c
-Shader shader = LoadShader(0, "bloom.frag");  // 只需片元着色器
-BeginShaderMode(shader);
-    DrawTexture(tex, 0, 0, WHITE);
-EndShaderMode();
-UnloadShader(shader);
-```
-
-`LoadShaderFromMemory` 可以直接传字符串，方便内嵌在代码里。
+3. **PascalCase 动词 API 是语义规范**：所有公开函数名遵循 `动词+名词` 规则（InitWindow、DrawText、LoadTexture、PlaySound），读函数名就知道它做了什么、在哪个生命周期调用。类比：像做菜食谱——先 Load（备料）、再 Draw/Play（烹调）、最后 Unload（洗锅）。Load 系列分配 GPU 资源，必须对应 Unload，否则内存泄漏。
 
 ## 实践案例
 
-### 案例 1：10 行 Hello World
+### 案例 1：10 行 Hello World——验证环境
 
-最小可运行程序，验证环境搭建：
+最小可运行程序，确认安装无误：
 
 ```c
 #include "raylib.h"
 
-int main(void)
-{
-    InitWindow(800, 450, "raylib — Hello World");
+int main(void) {
+    InitWindow(800, 450, "Hello raylib");   // 开窗口，宽 800 高 450
+    SetTargetFPS(60);                       // 目标帧率 60fps
 
-    while (!WindowShouldClose())
-    {
+    while (!WindowShouldClose()) {          // 点关闭按钮或按 ESC 退出
         BeginDrawing();
-            ClearBackground(RAYWHITE);
-            DrawText("Hello, raylib!", 190, 200, 20, DARKGRAY);
+        ClearBackground(RAYWHITE);          // 每帧先清成白色
+        DrawText("Hello, World!", 190, 200, 20, LIGHTGRAY);  // 文字
         EndDrawing();
     }
 
@@ -122,163 +57,171 @@ int main(void)
 }
 ```
 
-编译（Linux/macOS）：
+逐部分解释：
 
-```bash
-gcc hello.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 -o hello
-# macOS 换成：
-gcc hello.c -lraylib -framework OpenGL -framework Cocoa -framework IOKit -o hello
-```
+- `InitWindow(800, 450, "Hello raylib")` — 在 800×450 像素的地方开一个窗口，第三个参数是标题栏文字
+- `SetTargetFPS(60)` — 告诉 raylib 每秒最多刷 60 帧（不设的话会跑满 CPU）
+- `ClearBackground(RAYWHITE)` — 每帧开始先把画布涂成近白色；不写这行，上一帧的内容会残留
+- `DrawText("Hello, World!", 190, 200, 20, LIGHTGRAY)` — 在坐标 (190, 200) 画字号 20 的浅灰色文字
 
-运行后窗口中央显示文字，ESC 或点关闭按钮退出。
+编译命令（macOS/Linux）：`gcc main.c -lraylib -lm -o hello && ./hello`
 
-### 案例 2：精灵动画 + 键盘输入（2D 像素游戏骨架）
+### 案例 2：2D 精灵动画——角色移动
+
+用图片实现一个可以用方向键控制的角色：
 
 ```c
 #include "raylib.h"
 
-int main(void)
-{
-    InitWindow(640, 480, "Sprite Demo");
+int main(void) {
+    InitWindow(800, 600, "2D Sprite");
     SetTargetFPS(60);
 
-    Texture2D spriteSheet = LoadTexture("character.png");
-    // 假设 sprite 每帧 48x48，横排 8 帧
-    int frameWidth  = 48;
-    int frameCount  = 8;
-    int currentFrame = 0;
-    float frameTimer = 0.0f;
-    float frameSpeed = 0.1f;  // 每 0.1 秒换一帧
+    // 读者需要准备一张精灵图（如 character.png），放到和可执行文件同目录
+    Texture2D sprite = LoadTexture("character.png");
 
-    Vector2 pos = {320, 240};
+    Vector2 pos = { 400, 300 };   // 角色初始位置（屏幕中心）
+    float speed = 200.0f;         // 每秒移动像素数
 
-    while (!WindowShouldClose())
-    {
-        // 更新
-        float dt = GetFrameTime();
-        frameTimer += dt;
-        if (frameTimer >= frameSpeed) {
-            currentFrame = (currentFrame + 1) % frameCount;
-            frameTimer = 0.0f;
-        }
+    while (!WindowShouldClose()) {
+        float dt = GetFrameTime();  // 上一帧耗时（秒），用于帧率无关移动
 
-        if (IsKeyDown(KEY_RIGHT)) pos.x += 150 * dt;
-        if (IsKeyDown(KEY_LEFT))  pos.x -= 150 * dt;
-        if (IsKeyDown(KEY_UP))    pos.y -= 150 * dt;
-        if (IsKeyDown(KEY_DOWN))  pos.y += 150 * dt;
-
-        // 绘制
-        Rectangle srcRect = { (float)(currentFrame * frameWidth), 0,
-                               (float)frameWidth, (float)spriteSheet.height };
-        Rectangle dstRect = { pos.x, pos.y, frameWidth * 2.0f,
-                               (float)spriteSheet.height * 2.0f };
+        // 方向键控制
+        if (IsKeyDown(KEY_RIGHT)) pos.x += speed * dt;
+        if (IsKeyDown(KEY_LEFT))  pos.x -= speed * dt;
+        if (IsKeyDown(KEY_DOWN))  pos.y += speed * dt;
+        if (IsKeyDown(KEY_UP))    pos.y -= speed * dt;
 
         BeginDrawing();
-            ClearBackground(BLACK);
-            DrawTexturePro(spriteSheet, srcRect, dstRect,
-                           (Vector2){0,0}, 0.0f, WHITE);
-            DrawFPS(10, 10);
+        ClearBackground(DARKGRAY);
+        DrawTextureV(sprite, pos, WHITE);  // 在 pos 处画精灵图
         EndDrawing();
     }
 
-    UnloadTexture(spriteSheet);
+    UnloadTexture(sprite);  // 释放 GPU 纹理，与 LoadTexture 配对
     CloseWindow();
     return 0;
 }
 ```
 
-关键点：`DrawTexturePro` 允许指定源矩形（切哪一帧）和目标矩形（画在哪、放大多少），是精灵动画的标准接口。
+关键点：
 
-### 案例 3：编译到 Web（HTML5 / WebAssembly）
+- `GetFrameTime()` 返回上一帧的真实耗时（秒），乘以 speed 才能让移动速度与帧率无关——如果机器跑 30fps，每帧移动距离是 60fps 机器的 2 倍，最终速度相同
+- `LoadTexture` 把图片上传到 GPU 显存；`UnloadTexture` 释放它——漏写会泄漏显存
+- `DrawTextureV` 中的 `V` 代表用 Vector2 指定坐标，比 `DrawTexture(sprite, (int)pos.x, (int)pos.y, WHITE)` 更简洁
 
-同一份 C 代码可以用 Emscripten 编译成 WASM 跑在浏览器里，但游戏循环必须改写：
+### 案例 3：编译到 Web（HTML5）——浏览器运行
+
+同一份 C 代码，用 Emscripten 工具链输出 WebAssembly，让别人在浏览器里玩你的游戏：
 
 ```c
 #include "raylib.h"
-#include <emscripten/emscripten.h>
 
-void GameLoop(void)
-{
-    BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawText("Running in Browser!", 120, 200, 20, DARKGRAY);
-    EndDrawing();
+#ifdef PLATFORM_WEB
+#include <emscripten/emscripten.h>
+#endif
+
+void GameLoop(void);  // 前向声明
+
+int main(void) {
+    InitWindow(800, 450, "Web Game");
+    SetTargetFPS(60);
+
+#ifdef PLATFORM_WEB
+    // 浏览器不允许阻塞主线程，必须用回调式循环
+    emscripten_set_main_loop(GameLoop, 0, 1);
+#else
+    while (!WindowShouldClose()) GameLoop();
+#endif
+
+    CloseWindow();
+    return 0;
 }
 
-int main(void)
-{
-    InitWindow(800, 450, "raylib Web");
-    emscripten_set_main_loop(GameLoop, 0, 1);
-    // CloseWindow() 不需要——浏览器关标签页就结束
-    return 0;
+void GameLoop(void) {
+    BeginDrawing();
+    ClearBackground(RAYWHITE);
+    DrawText("Running in browser!", 200, 200, 20, DARKBLUE);
+    EndDrawing();
 }
 ```
 
 编译命令：
 
 ```bash
-emcc hello_web.c -o hello.html \
-  -I/path/to/raylib/src \
-  /path/to/raylib/src/web/libraylib.a \
+emcc main.c -o index.html \
+  -I raylib/src \
+  -L raylib/src/web -l raylib \
   -s USE_GLFW=3 -s ASYNCIFY \
-  --shell-file /path/to/raylib/src/shell.html
+  --shell-file raylib/src/minshell.html
 ```
 
-官方提供现成的 `shell.html` 模板，包含 canvas 和加载动画。编译成功后得到 `.html` + `.js` + `.wasm` 三件套，本地用 `python3 -m http.server` 起静态服务器就能访问（不能直接双击 .html，浏览器有跨域限制）。
+这会生成 `index.html` + `index.js` + `index.wasm`，用任意 HTTP 服务器托管后即可在浏览器运行——与桌面版完全相同的逻辑。
 
 ## 踩过的坑
 
-1. **屏幕不刷新，看起来像卡死**：`BeginDrawing()` / `EndDrawing()` 必须在 while 循环体内，放在循环外只画一帧，之后窗口冻住不动。新手最常见的错误。
+1. **BeginDrawing/EndDrawing 忘写进循环体**：如果把它们放在 `while` 外面，首帧渲染后屏幕不再刷新，看起来像卡死——实际上程序在正常运行，只是每帧没在绘制。
 
-2. **macOS 链接失败，报错信息莫名其妙**：静态链接需要 `-framework IOKit -framework Cocoa -framework OpenGL`，漏掉任意一个会出现 `_CGMainDisplayID referenced from...` 之类的符号找不到错误。用 `pkg-config --libs raylib` 省心。
+2. **macOS 静态链接漏传 Framework**：`gcc main.c -lraylib -lm` 在 macOS 上报链接错误，必须加 `-framework IOKit -framework Cocoa -framework OpenGL`；缺少任意一个的报错信息都不直接，容易让新人找半小时。
 
-3. **多线程调 Draw* 崩溃**：OpenGL 上下文绑定在主线程，任何 `DrawText`、`LoadTexture`、`GetTexture` 等涉及 GPU 的调用必须在主线程执行。想在子线程加载资源，只能先把文件读进内存（纯 CPU），再回主线程上传 GPU。
+3. **多线程里调用 Draw\* 或 Load\*——OpenGL 上下文不共享**：raylib 所有涉及 GPU 的操作（DrawText、LoadTexture、PlaySound 等）必须在创建 OpenGL 上下文的**主线程**调用；在子线程调用会静默崩溃或产生 GL Error，原因是 OpenGL 上下文默认不跨线程共享。
 
-4. **Emscripten 构建用 while 循环阻塞浏览器**：浏览器的 JS 单线程模型不允许同步死循环，必须用 `emscripten_set_main_loop(GameLoop, 0, 1)` 替代 `while(!WindowShouldClose())`，否则 tab 无响应或直接崩溃。
+4. **HTML5 用 while 阻塞主线程**：浏览器 JS 引擎是单线程的，用 `while(!WindowShouldClose())` 阻塞主线程会让页面卡死、标签页无响应；必须改成 `emscripten_set_main_loop` 把游戏循环改成由浏览器每帧调用的回调。
 
-5. **Android 构建需要 NDK r21+，r25 以上更稳**：官方模板在 `projects/Android` 目录，必须用 Gradle + NDK，直接 CMake 跨编译会因为找不到 Android 系统库而失败。
-
-6. **加载大量纹理忘记 Unload 内存泄漏**：`LoadTexture` 每次都向 GPU 申请显存，不 `UnloadTexture` 会慢慢耗尽 VRAM。场景切换时记得 unload 上一场景的所有资源。
-
-## 适用 vs 不适用
+## 适用 vs 不适用场景
 
 **适用**：
 
-- 图形编程入门——从零学 2D/3D 渲染逻辑，raylib 的薄封装让你能看到每一步在做什么
-- 快速原型——Game Jam、48 小时竞赛，一套 API 覆盖所有需求，不用研究框架配置
-- 嵌入式 / 树莓派——支持 OpenGL ES，资源占用极低，适合跑在 ARM 板子上
-- 教学工具——用 Python 绑定 `pyray` 给学生降低门槛，底层还是高性能 C
+- 完全零基础入门图形/游戏编程——从 "Hello Window" 到第一个可玩游戏只需几百行
+- 教学场景——课堂示例用 10-20 行就能演示物理模拟、碰撞检测等概念
+- 原型快速验证——游戏玩法原型、算法可视化、工具开发
+- 多平台发布——同一份代码跑 Windows/Linux/macOS/Web/Android，无需修改游戏逻辑
 
 **不适用**：
 
-- 大型商业游戏——没有资产管线、场景编辑器、物理引擎集成；上 Godot / Unity
-- 复杂物理模拟——需要自行集成 Box2D / Bullet，raylib 只有基础碰撞检测
-- Vulkan / Metal 渲染——raylib 默认走 OpenGL，要用下一代 API 需要换底层
-- 需要热重载 / 可视化脚本的工作流——这些 raylib 都没有
+- 生产级 AAA 游戏开发——缺乏场景编辑器、资产管线、大规模渲染优化（用 Unity/Godot）
+- 需要高级渲染特性——PBR 材质管线、光线追踪、Vulkan/Metal 底层控制（用 bgfx 或直接写 API）
+- 需要复杂 ECS 架构——raylib 没有实体组件系统，大型项目需要自行搭架构（用 [[bevy]]）
+- 已有成熟 C++ 项目——如果团队已经在用 SDL2 + OpenGL，迁移成本高于收益
+
+## 历史小故事（可跳过）
+
+- **2013 年**：西班牙程序员 Ramon Sanchez（GitHub：raysan5）在 Bournemouth 大学任教时，发现学生进图形编程课第一关就被 GLUT/SDL2 的初始化代码劝退，决定自己写一个教学用库，发布 raylib 1.0。
+
+- **2015-2018 年**：逐步加入音频（miniaudio）、物理（physac）、字体渲染（stb_truetype）模块；单头文件策略吸引了大量 C 爱好者，GitHub Star 从几百增长到 8000+。
+
+- **2019 年**：加入 Raspberry Pi 和 Android 支持，同年首次出现社区维护的 60+ 语言绑定列表；raylib 从"教学库"变成了真实项目使用的库。
+
+- **2023 年**：发布 5.0，引入 rlgl 软件渲染后端，正式支持在无 GPU 环境中纯 CPU 渲染；同年 GitHub Star 突破 22k，成为 C 生态里最受欢迎的游戏库之一。
+
+- **设计哲学**：raysan5 至今坚持"单文件、零外部依赖、纯 C99"原则，拒绝引入 C++ 特性或复杂构建系统——这让 raylib 成为最容易被 AI 辅助初学者理解的图形库。
 
 ## 学到什么
 
-1. **帧循环是图形编程的心脏**：`while (!WindowShouldClose())` 里面：更新状态 → 清屏 → 绘制 → 呈现，这个四步模式在 OpenGL、Vulkan、Metal、WebGPU 里完全一样，学 raylib 等于建立了可迁移的直觉
+1. **渲染循环是图形编程的核心抽象**——所有实时渲染系统（游戏引擎、浏览器渲染器、VR 运行时）底层都是"清屏→绘制→交换缓冲"的无限循环，raylib 把这个结构裸露给你，让你从第一行代码就理解它
 
-2. **无外部依赖是一种设计哲学**：把依赖内嵌（而非用包管理器拉取）让库可以一次性 vendor 进项目，适合要求可重复构建的游戏和嵌入式场景；代价是库体积更大、更新依赖需要手动 merge
+2. **零依赖不是原则，是教育策略**——把所有第三方打包进去，消除"配环境"这一障碍，让学习者把精力放在概念理解而非工具链调试上
 
-3. **API 命名即文档**：`BeginMode3D(camera)` / `EndMode3D()`、`BeginShaderMode(shader)` / `EndShaderMode()` 这种"成对动词"模式让状态机变得显式可读，代码即伪码
+3. **API 命名是文档**——PascalCase 动词+名词的规范让你读函数名就能猜对用法，这是"零认知摩擦"设计的典型实现
 
-4. **同一份 C 代码可以跑在 8 个平台**：raylib 展示了 C99 + 条件编译 + 平台抽象层的威力；它的跨平台策略比"一次编写到处运行"更务实——同一套代码，各平台独立编译，平台差异封装在 core 模块内部
-
-5. **语言绑定放大价值**：70+ 绑定意味着 Python / Rust / Go / Lua 程序员都能受益，核心用 C 写一次，生态用绑定层横向扩展，是开源库的经典扩散路径
+4. **平台抽象不等于性能损失**——raylib 的 rlgl 层把 OpenGL 1.1/3.3/4.3/ES2/ES3 统一成同一套调用接口，桌面和 Web 共用一份代码，证明抽象层可以极薄
 
 ## 延伸阅读
 
-- 官方 GitHub 仓库：[raysan5/raylib](https://github.com/raysan5/raylib)（含 140+ 示例）
-- 官方文档 Cheatsheet：[raylib.com/cheatsheet](https://www.raylib.com/cheatsheet/cheatsheet.html)
-- 官方架构文档：[raylib architecture (Wiki)](https://github.com/raysan5/raylib/wiki/raylib-architecture)
-- Python 绑定：[pyray / raylib-python-cffi](https://github.com/electronstudio/raylib-python-cffi)
-- Rust 绑定：[raylib-rs](https://github.com/deltaphc/raylib-rs)
-- Game Jam 模板：[raylib-game-template](https://github.com/raysan5/raylib-game-template)
+- 官方文档与 Cheatsheet：[raylib.com/cheatsheet](https://www.raylib.com/cheatsheet/cheatsheet.html)（所有 API 一页总览，初学者必收藏）
+- 官方 140+ 示例：[github.com/raysan5/raylib/tree/master/examples](https://github.com/raysan5/raylib/tree/master/examples)（按主题分类，每个不超过 100 行）
+- Emscripten Web 构建指南：[raylib Web Builds](https://github.com/raysan5/raylib/wiki/Working-for-Web-(HTML5))（官方 Wiki，含 Makefile 模板）
+- [[kajiya-1986-rendering-equation]] —— 理解"光是怎么在场景里传播的"理论基础
+- [[3d-gaussian-splatting]] —— 基于点云的新型渲染方法，了解 raylib DrawModel 背后的渲染演进
 
 ## 关联
 
-- [[kajiya-1986-rendering-equation]] —— 理解 raylib PBR 材质背后的光照方程
-- [[3d-gaussian-splatting]] —— 与 raylib 同属图形渲染生态，代表神经辐射场渲染方向
-- [[debevec-1998-rendering-with-natural-light]] —— 图形学基础文献，HDR / IBL 在 raylib models 模块中有简化实现
+- [[bevy]] —— Rust 写的 ECS 游戏引擎；当 raylib 项目复杂度增长、需要实体组件系统时的下一站
+- [[love2d]] —— Lua 版同类极简游戏库；API 设计哲学与 raylib 高度相似，适合对比学习
+- [[kajiya-1986-rendering-equation]] —— 渲染方程是所有实时渲染的数学起点，raylib 的 DrawModel 最终基于此
+- [[3d-gaussian-splatting]] —— 了解渲染技术的前沿演进，与 raylib 当前光栅化管线形成对比
+- [[debevec-1998-rendering-with-natural-light]] —— 基于图像的光照（IBL）；raylib 5.0 的 PBR 材质功能以此为理论背景
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
