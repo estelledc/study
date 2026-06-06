@@ -162,6 +162,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 - [[geany]] —— Geany — GTK 轻量 IDE
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上

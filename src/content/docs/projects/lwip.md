@@ -204,5 +204,10 @@ void tcp_echo_init(void) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[mptcp-2012]] —— MPTCP 2012 — 把一根 TCP 管道变成多条并行水管
+- [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tcp-vegas-1995]] —— TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

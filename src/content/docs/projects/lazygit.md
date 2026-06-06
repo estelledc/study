@@ -161,6 +161,7 @@ customCommands:
 - [[gitui]] —— gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
 - [[glances]] —— Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 - [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[lunarvim]] —— LunarVim — 一体化 Neovim IDE 层
 - [[neovim]] —— Neovim — Lua 可扩展 vim 现代分叉
 - [[procs]] —— procs — ps 的现代替代，彩色 + 树视图 + 多列搜索

@@ -186,6 +186,10 @@ deno compile --target x86_64-pc-windows-msvc --output cli.exe cli.ts
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[bun]] —— Bun — JS 全能运行时
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

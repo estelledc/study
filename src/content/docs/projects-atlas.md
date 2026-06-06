@@ -739,7 +739,7 @@ sidebar:
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 | [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 |  |
-| [PlayCanvas — 浏览器里跑得动的 3D 游戏引擎](/study/projects/playcanvas/) | ✅ v3 |  |
+| [PlayCanvas — 浏览器里跑的 3D 游戏引擎](/study/projects/playcanvas/) | ✅ v3 |  |
 | [raylib — 极简 C 游戏库，10 行代码跑起带窗口动画](/study/projects/raylib/) | ✅ v3 |  |
 | [three.js — Web 3D 事实标准](/study/projects/threejs/) | ✅ v3 |  |
 
@@ -1707,7 +1707,7 @@ sidebar:
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | ✅ v3 | 图形学 | projects / 图形渲染 |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | ⭐ Season | 后端 API | SaaS 应用 |
 | `platformio-core` | [PlatformIO Core — 一套命令行，统管千块嵌入式开发板](/study/projects/platformio-core/) | ✅ v3 | 操作系统 | 嵌入式 |
-| `playcanvas` | [PlayCanvas — 浏览器里跑得动的 3D 游戏引擎](/study/projects/playcanvas/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `playcanvas` | [PlayCanvas — 浏览器里跑的 3D 游戏引擎](/study/projects/playcanvas/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 🗄 存量 | 后端 API | 测试 |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | ✅ v3 | 数据可视化 | 数据可视化 |

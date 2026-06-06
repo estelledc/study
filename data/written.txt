@@ -1119,6 +1119,7 @@ deepspeed
 defold
 delta
 dendrite
+deno
 dgraph
 dhtmlx-gantt
 dify
@@ -1318,6 +1319,7 @@ laravel
 layerzero
 lazydocker
 lazygit
+lazyvim
 leaflet
 ledger-app-sdk
 lens
@@ -1361,6 +1363,7 @@ lsd
 lucia
 lunarvim
 luxon
+lwip
 m3
 mage
 mailcow
@@ -1429,6 +1432,7 @@ neovim
 nerdctl
 nestjs
 nethermind
+neutralinojs
 next-intl
 next-js
 nextra
@@ -1506,6 +1510,7 @@ piper
 pixi
 plane
 platformio-core
+playcanvas
 playwright
 plotly-js
 plotly-py

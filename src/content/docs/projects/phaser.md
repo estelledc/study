@@ -244,6 +244,7 @@ class WorldScene extends Phaser.Scene {
 - [[love2d]] —— LÖVE — Lua 2D 游戏框架
 - [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[playcanvas]] —— PlayCanvas — 浏览器里跑的 3D 游戏引擎
 - [[react]] —— React UI 组件库
 - [[threejs]] —— three.js — Web 3D 事实标准
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

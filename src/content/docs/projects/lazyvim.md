@@ -163,3 +163,7 @@ require("lazy").setup({
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lunarvim]] —— LunarVim — 一体化 Neovim IDE 层
+- [[vim]] —— Vim — 模态编辑器之父
+
