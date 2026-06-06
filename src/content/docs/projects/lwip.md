@@ -11,7 +11,9 @@ title: lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
 
 lwIP（Lightweight IP）是一个**专为内存极度受限的嵌入式系统设计的 TCP/IP 协议栈**。日常类比：普通路由器是一栋写字楼——每个协议住独立楼层、有宽敞走廊；lwIP 是同一家公司搬进的集装箱——功能一个不少，占地只剩二十分之一。
 
-具体数字：约 40KB 代码 ROM、几十 KB RAM，就能跑完整的 IPv4/IPv6 + TCP + UDP + DHCP + DNS + ARP。这让一块只有 256KB Flash 的 STM32 或 ESP32 也能成为真正的网络节点。
+先解释两个词：**IP**（网际协议）相当于网络世界的地址门牌号，让数据包知道该送到哪台设备；**TCP**（传输控制协议）相当于一个负责任的快递员，保证数据包不丢、不乱序。我们每天用的网页、聊天、视频背后都跑着 TCP/IP。
+
+日常类比：想象你要在一辆共享单车的锁控板（RAM 不超过 64 KB）上接入互联网——不是做个玩具 ping，而是真正跑 TCP、拿 IP、解 DNS、甚至跑 MQTT 和 HTTPS。这件事在 2001 年前没有一个可用的开源方案。lwIP 就是为了填这个洞而生的。
 
 lwIP 由瑞典计算机科学研究所（SICS）的 Adam Dunkels 于 2001 年创作，以 BSD 协议开源，现为 FreeRTOS、Zephyr、ESP-IDF 等主流嵌入式生态的默认网络栈。它既可以跑在有 RTOS 的环境里，也可以完全裸机运行。
 
@@ -47,9 +49,19 @@ lwIP 由瑞典计算机科学研究所（SICS）的 Adam Dunkels 于 2001 年创
 struct netconn *conn = netconn_new(NETCONN_TCP);
 netconn_connect(conn, &server_ip, 80);
 
-// 发送 HTTP GET 请求
-const char *req = "GET /firmware.bin HTTP/1.0\r\nHost: ota.example.com\r\n\r\n";
-netconn_write(conn, req, strlen(req), NETCONN_COPY);
+void http_get_task(void *pvParam) {
+    // 1. 解析域名 → IP（DNS）
+    struct hostent *host = gethostbyname("example.com");
+    if (!host) {               // DNS 失败（网络未通/DNS 未配）→ 直接返回
+        printf("DNS failed\n");
+        vTaskDelete(NULL);
+        return;
+    }
+    struct sockaddr_in addr = {
+        .sin_family = AF_INET,
+        .sin_port   = htons(80),
+        .sin_addr   = *(struct in_addr *)host->h_addr
+    };
 
 // 循环读取响应
 struct netbuf *buf;
@@ -112,9 +124,17 @@ static err_t ethernetif_output(struct netif *netif,
     return ERR_OK;
 }
 
-// 注册到 lwIP
-netif_add(&my_netif, &ip_addr, &netmask, &gw,
-          NULL, ethernetif_init, tcpip_input);
+void tcp_echo_init(void) {
+    struct tcp_pcb *pcb = tcp_new();
+    if (!pcb) return;                // 内存池耗尽时返回 NULL
+    tcp_bind(pcb, IP_ADDR_ANY, 7);   // 绑定端口 7（echo）
+    pcb = tcp_listen(pcb);
+    tcp_accept(pcb, accept_cb);
+}
+
+// 主循环里每次调用：
+// sys_check_timeouts();  // 驱动 lwIP 内部定时器
+// ethernetif_input(netif); // 把网卡收到的帧喂给 lwIP
 ```
 
 **逐部分解释**：
