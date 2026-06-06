@@ -1,198 +1,197 @@
 ---
-title: Heaps — Haxe 跨平台游戏引擎
+title: Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 来源: 'https://github.com/HeapsIO/heaps'
 日期: 2026-06-06
 分类: 图形学
-子分类: 渲染与图形
+子分类: 游戏引擎
 难度: 中级
 ---
 
 ## 是什么
 
-Heaps 是一个用 Haxe 语言编写的**跨平台高性能游戏引擎**，由 Haxe 语言原作者 Nicolas Cannasse 创建。日常类比：像一家可以同时出产中文版、英文版、日文版书籍的出版社——作者写一份稿子，出版社自动排成不同格式；Heaps 里你写一份 Haxe 代码，引擎自动编译出 Web / 桌面 / 手机 / 游戏主机四个版本。
+Heaps 是一个用 Haxe 语言编写的**跨平台高性能游戏引擎**，由 Haxe 语言的原始作者 Nicolas Cannasse 创建并开源。日常类比：像一个能把同一份手稿自动翻译成中、英、日、法四种语言印刷的出版社——你只写一次 Haxe 代码，它帮你"翻译"成 WebGL、原生桌面、iOS/Android 甚至游戏主机。
 
-Heaps 的核心由四个包组成：**h2d**（2D 渲染与 UI）、**h3d**（3D 模型渲染）、**hxd**（跨平台资源管理）和 **hxsl**（着色器语言）。配合 HashLink 虚拟机，Haxe 代码可以编译成高效的原生机器码。Dead Cells（Motion Twin）和 Northgard、Wartales（Shiro Games）等商业成功大作均以此为基础构建，GitHub 约 3.6k stars。
+Heaps 的结构分为四个核心包：
 
-这和 Unity / Godot 最大的不同在于：Heaps 没有编辑器，它是**纯代码驱动**的引擎——如果你喜欢用代码精确控制每一帧发生了什么，它是一个极为干净的选择。
+- **h2d**：2D 渲染、精灵、动画、UI
+- **h3d**：3D 模型加载与渲染、光照
+- **hxd**：跨平台资源管理（图片、音频、字体……）
+- **hxsl**：Heaps Shader Language——写一次着色器，自动翻译为 WebGL GLSL 或 DirectX HLSL
+
+配合 **HashLink** 虚拟机，Haxe 代码编译后在桌面上的性能接近 C++，而同一份代码也可直接跑在浏览器里。Dead Cells（Motion Twin）、Northgard、Darksburg（Shiro Games）等销量破百万的商业游戏都以此为基础构建。
 
 ## 为什么重要
 
 不理解 Heaps，下面这些事都没法解释：
 
-- 为什么 Dead Cells 在 Switch 和 PC 上表现如此一致——一份 Haxe 代码同时编译到 HashLink 和 C，性能和逻辑完全对齐
-- 为什么 hxsl 着色器可以既在浏览器里跑 WebGL GLSL、又在 DirectX 上跑 HLSL，而开发者只写一份
-- 为什么 Northgard 一款 3D 策略游戏能把内存控制在 500MB 以内——HashLink VM 的浮点和面向对象优化
-- 为什么小团队能用 Haxe 做跨平台独立游戏而不需要引擎授权费——Heaps 完全开源，无版税
+- 为什么 Dead Cells 这款帧动画极度流畅的横版动作游戏能同时在 Switch 和浏览器里以 60fps 运行——背后是 Haxe 编译到不同目标的机制
+- 为什么 Northgard 这款实时策略游戏在运行数百个单位时内存占用仍低于 500MB——HashLink VM 对 GC 开销的极度克制
+- 为什么 Unity/Godot 之外还存在生产可用的引擎——Heaps 证明小型团队用自研引擎也能做商业 AAA 品质的游戏
+- 为什么游戏引擎要抽象"渲染管线"——Heaps 的架构让你完全替换渲染器，无需改业务逻辑
 
 ## 核心要点
 
-1. **Haxe 编译多目标：一份代码发布所有平台**
+1. **Haxe 多目标编译**：Haxe 编译器把同一份代码编译为 JavaScript（浏览器）、HashLink 字节码（桌面/移动）或 C（主机）。这像是一个通才翻译官——你说中文，它根据听众自动切换语言。不同目标共享相同的游戏逻辑，只有底层渲染和 IO 层会换掉。
 
-   Haxe 编译器是 Heaps 跨平台的核心。同一份 `Game.hx` 可以被编译成 JavaScript（浏览器 WebGL）、HashLink 字节码（桌面/移动原生）、C 代码（游戏主机 Switch/PS4/Xbox）。类比：这就像 Java 的"Write Once, Run Anywhere"，但不是靠 JVM 抹平差异，而是直接输出目标平台的原生代码，性能上限更高。
+2. **场景图架构（Scene Graph）**：所有可渲染的对象（精灵、模型、UI）都是节点，挂在一棵树上。父节点的变换会自动传递给子节点——就像现实里移动一辆车，车上的乘客自然跟着动。渲染管线和光照系统完全可替换，Shiro Games 为每款游戏定制了专属的渲染效果。
 
-2. **HashLink VM：游戏性能的秘密武器**
-
-   HashLink 是专为 Haxe 设计的高性能虚拟机，类似 .NET CLR，但针对游戏场景（大量浮点运算、深度继承树）做了优化。HashLink 字节码还能进一步编译成 C 代码来支持游戏主机平台。它让 Haxe 代码的运行速度接近原生，是 Northgard 3D 实时策略游戏能流畅运行的关键。
-
-3. **场景图架构 + hxsl 统一着色器**
-
-   Heaps 基于**场景图（Scene Graph）**架构：所有可渲染的东西都是 `h2d.Object` 或 `h3d.Object`，挂在一棵树上，父节点变换会自动传递到子节点。渲染管线完全可替换——可以为特定游戏写全自定义渲染器。hxsl 着色器语言在编译期自动翻译为目标平台的 GLSL（WebGL）或 HLSL（DirectX），开发者无需维护两份 shader 代码。
+3. **hxsl 跨平台着色器**：你用一种统一语法写 shader，编译时自动翻译为目标平台的原生着色器语言（WebGL 用 GLSL，DirectX 用 HLSL）。这解决了跨平台游戏开发中"一份 shader 代码维护两套"的痛点。类比：就像 TypeScript 被 Babel 编译成不同版本的 JavaScript，hxsl 被 Heaps 翻译成不同的 GPU 语言。
 
 ## 实践案例
 
-### 案例 1：2D 精灵游戏——Dead Cells 风格横版动作
+### 案例 1：最小 2D 精灵程序
 
 ```haxe
 class Main extends hxd.App {
-    var hero : h2d.Bitmap;
-    var anim : h2d.Anim;
+    var bmp: h2d.Bitmap;
 
     override function init() {
-        // 加载精灵图集
-        var tile = hxd.Res.sprites.hero.toTile();
-        // 静态图片
-        hero = new h2d.Bitmap(tile, s2d);
-        hero.x = 100; hero.y = 200;
-
-        // 帧动画：切割图集中的帧
-        var frames = [for (i in 0...8) tile.sub(i * 64, 0, 64, 64)];
-        anim = new h2d.Anim(frames, 12, s2d); // 12 fps
+        // 加载图片资源（hxd 统一管理，路径在 res/ 目录下）
+        var tile = hxd.Res.mySprite.toTile();
+        bmp = new h2d.Bitmap(tile, s2d);  // s2d 是当前 2D 场景根节点
+        bmp.x = 100;
+        bmp.y = 80;
     }
 
-    override function update(dt : Float) {
-        // 响应键盘输入
-        if (hxd.Key.isDown(hxd.Key.RIGHT)) hero.x += 200 * dt;
+    override function update(dt: Float) {
+        bmp.rotation += dt * 0.5;  // 每帧旋转，dt 是帧间隔秒数
     }
 
-    static function main() new Main();
+    static function main() hxd.App.run(Main);  // 启动入口
 }
 ```
 
 **逐部分解释**：
-- `hxd.App` 是所有 Heaps 程序的入口，`init()` 初始化场景，`update(dt)` 每帧调用
-- `s2d` 是内置的 2D 场景根节点，所有 2D 对象挂上去就能渲染
-- `h2d.Anim` 接收帧数组和帧率，自动处理帧切换，不需要手写计时器
+- `hxd.App` 是所有 Heaps 应用的基类，提供 `init()`（初始化）和 `update(dt)`（每帧回调）
+- `s2d` 是 Heaps 自动创建的 2D 根场景，把 `bmp` 挂上去就能渲染
+- `hxd.Res` 是跨平台资源管理器，同一行代码在 HTML5 和桌面上都能正确加载图片
+- `dt`（delta time）是两帧之间的时间差，用它做运动保证帧率无关
 
-### 案例 2：3D 策略游戏——Northgard 风格地图渲染
-
-```haxe
-class Map3D extends hxd.App {
-    override function init() {
-        // 加载 FBX 格式的地形模型
-        var res = hxd.Res.models.terrain;
-        var obj = res.toHmd().makeObject(s3d);
-
-        // PBR 材质
-        var mat = obj.getMaterials()[0];
-        mat.mainPass.setPassName("pbr");
-
-        // 添加平行光（太阳光）
-        var dir = new h3d.scene.DirLight(
-            new h3d.Vector(1, -2, -1), s3d
-        );
-        dir.color.set(1, 0.9, 0.7);
-
-        // 相机定位
-        s3d.camera.pos.set(0, -10, 8);
-        s3d.camera.target.set(0, 0, 0);
-    }
-    static function main() new Map3D();
-}
-```
-
-**逐部分解释**：
-- `toHmd()` 把 FBX 转为 Heaps 的内部格式 HMD，包含几何体、骨骼和动画
-- `setPassName("pbr")` 开启 PBR（基于物理的渲染），配合 `DirLight` 实现真实感光照
-- HashLink 编译后这段代码在桌面以原生速度运行，内存占用通常低于同类 Unity 场景
-
-### 案例 3：自定义着色器——hxsl 跨平台发光效果
+### 案例 2：用 h2d.Interactive 响应鼠标点击
 
 ```haxe
-class GlowShader extends hxsl.Shader {
-    static var SRC = {
-        @param var glowColor : Vec3;
-        @param var intensity : Float;
+override function init() {
+    var tile = h2d.Tile.fromColor(0xFF5500, 80, 80);  // 创建纯色矩形 tile
+    var bmp = new h2d.Bitmap(tile, s2d);
+    bmp.x = 200; bmp.y = 150;
 
-        var pixelColor : Vec4;
-
-        function fragment() {
-            // 叠加发光颜色
-            pixelColor.rgb += glowColor * intensity;
-        }
+    // 创建交互区域，宽高匹配 tile
+    var interact = new h2d.Interactive(80, 80, bmp);
+    interact.onClick = function(e) {
+        bmp.alpha = (bmp.alpha < 1) ? 1.0 : 0.3;  // 点击切换透明度
     };
+    interact.onOver = function(e) {
+        bmp.setScale(1.1);  // 鼠标悬停放大
+    };
+    interact.onOut = function(e) {
+        bmp.setScale(1.0);
+    };
+}
+```
+
+**逐部分解释**：
+- `h2d.Tile.fromColor` 动态创建纯色矩形，无需外部图片文件——开发初期快速原型的利器
+- `h2d.Interactive` 是 Heaps 的事件层，它挂在普通的 h2d.Object 上，不侵入渲染逻辑
+- `onClick / onOver / onOut` 是函数属性，直接赋值即可，这是 Haxe 的函数式风格
+- 这套机制在 HTML5 和 HashLink 桌面版行为完全一致，无需平台判断
+
+### 案例 3：hxsl 自定义着色器
+
+```haxe
+class WaveShader extends hxsl.Shader {
+    // uniform 变量：从 CPU 侧传入 GPU
+    @param var time: Float;
+    @param var amplitude: Float;
+
+    // vertex 着色器：修改顶点位置实现波浪效果
+    var output: { position: Vec4, uv: Vec2 };
+
+    function vertex() {
+        // 根据 x 坐标和时间计算 y 偏移
+        output.position = vec4(
+            input.position.x,
+            input.position.y + amplitude * Math.sin(input.position.x * 0.1 + time),
+            0, 1
+        );
+        output.uv = input.uv;
+    }
 }
 
 // 使用时：
-var shader = new GlowShader();
-shader.glowColor.set(0, 0.8, 1); // 青色发光
-shader.intensity = 0.5;
-sprite.addShader(shader);
+var shader = new WaveShader();
+shader.time = 0.0;
+shader.amplitude = 10.0;
+myBitmap.addShader(shader);
+
+// 每帧更新：
+override function update(dt: Float) {
+    shader.time += dt;
+}
 ```
 
 **逐部分解释**：
-- `hxsl.Shader` 的 `SRC` 静态块是跨平台 shader 的定义，编译器自动翻译为 GLSL/HLSL
-- `@param` 标记的字段暴露给 Haxe 代码控制，不需要手动绑定 uniform
-- `addShader()` 支持多个 shader 叠加，渲染管线按顺序组合所有效果
+- `hxsl.Shader` 是 Heaps 的跨平台着色器基类，这份代码会自动编译到 WebGL GLSL 或 DirectX HLSL
+- `@param` 标记的变量是从 CPU 侧更新的参数，Heaps 自动处理 uniform 上传
+- `Math.sin` 在 hxsl 里被翻译为各平台对应的 `sin()` 函数
+- 整个着色器用类型安全的 Haxe 语法写，比手写 GLSL 字符串更不容易出错
 
 ## 踩过的坑
 
-1. **Haxe 生态远小于 Unity/Godot**：Haxe 社区活跃但规模有限，可用的现成资产包（角色模型、音效、UI 组件）比主流引擎少很多，招聘有 Haxe 经验的开发者也更难。
+1. **Haxe 学习曲线陡峭**：Haxe 语法介于 Java、TypeScript 和 ActionScript 之间，有自己的宏系统和抽象类型，已知 JS/Python 的开发者需要额外 2-4 周适应期，不要低估这个成本。
 
-2. **HashLink 调试工具链不成熟**：HashLink 没有像 Unity 那样的可视化 Profiler，崩溃时调用栈有时显示为内部字节码而非 Haxe 源码行号，排查困难。
+2. **资源路径在 HashLink 和 HTML5 不同**：`hxd.Res` 加载本地文件时，HashLink 直接读文件系统，HTML5 需要额外的打包步骤。刚开始跨平台测试时很容易遇到"桌面 OK，浏览器 404"的问题。
 
-3. **游戏主机发布门槛高**：编译到 Switch/PS4/Xbox 需要先通过官方注册成为授权开发者，申请流程耗时数月，对独立开发者不友好。
+3. **hxsl 类型错误信息难读**：着色器里类型不匹配时，报错信息来自编译后的 GLSL/HLSL，行号和变量名已被混淆，几乎无法直接定位问题。调试着色器时要善用"注释掉一半代码"的二分法。
 
-4. **文档和代码不同步**：官方 API 文档和 wiki 更新速度落后于代码库，尤其是 h3d 渲染管线部分，新手容易踩到已废弃的 API 或过时示例。
+4. **主机编译需要特殊授权**：Nintendo Switch / PS4 / Xbox 的编译目标需要先向任天堂/索尼/微软申请开发者资质，整个流程可能需要数周甚至更长时间，不要等到项目后期才考虑主机发布。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 需要**真正跨平台**（Web + 桌面 + 主机）且不想维护多套代码库的独立游戏团队
-- **代码驱动**偏好者：不想要拖拽式编辑器，希望用代码精确控制渲染管线的开发者
-- **高性能 2D 游戏**：横版动作、策略、Rogue-like——Dead Cells 是最好的参考基准
-- 对引擎授权费敏感的小团队（Heaps 完全免费，无版税）
+- 需要同时发布 Web + 桌面 + 移动 + 主机的小型独立游戏团队
+- 希望对渲染管线有极细粒度控制（如自定义光照、后处理）的项目
+- 愿意学习 Haxe 并享受其语言特性（宏、抽象类型）的开发者
+- 对性能要求高但不想用 C++ 的 2D/3D 游戏
 
 **不适用**：
-- 依赖**大量现成资产市场**的项目（Unity Asset Store 有数万资产，Heaps 生态暂无）
-- 需要**可视化关卡编辑器**的设计师主导工作流（Heaps 没有内置编辑器）
-- 大型 AAA 工作室——无官方商业支持，社区文档深度不够
-- 移动端超休闲游戏——React Native Game Engine / Godot Mobile 生态更成熟
+- 需要大量第三方资产、插件生态的项目——Unity/Godot 社区资产多出几个数量级
+- 团队成员已有 GDScript/C# 或 Blueprints 经验，切换到 Haxe 成本太高
+- 需要成熟 IDE 集成、可视化场景编辑器的项目——Heaps 的编辑器工具较为简陋
+- VR/AR 游戏——Heaps 对 VR 设备的支持几乎为零
 
 ## 历史小故事（可跳过）
 
-- **2002 年前后**：Nicolas Cannasse 在游戏公司 Motion Twin 工作时，因需要高效跨平台开发，创建了 Haxe 语言（从早期的 MTASC 工具演化而来）
-- **2012 年**：Cannasse 离开 Motion Twin 创立 Shiro Games，将 Heaps 引擎开源，并用它制作第一款作品 Evoland
-- **2014—2018 年**：Motion Twin 用 Haxe/Heaps 开发 Dead Cells，2018 年正式发售，销量突破 500 万份，让这个小众引擎进入大众视野
-- **2017—2022 年**：Shiro Games 相继发布 Northgard（2017）、Darksburg（2020）、Wartales（2022），三款产品均基于 Heaps，证明引擎在 3D 策略场景的商业可行性
-- **2022 年**：GitHub 上关于 Heaps 的讨论引发 Hacker News 热议，社区重新发现这个被多款商业大作验证的小众引擎
+- **2002 年前后**：Nicolas Cannasse 在法国游戏公司 Motion Twin 工作，为了解决跨平台开发痛点，开始研发 Haxe 语言（当时叫 haXe）。
+- **2012 年**：Cannasse 离开 Motion Twin 创立 Shiro Games，将游戏引擎 Heaps 开源，并用它制作了像素风 RPG Evoland。
+- **2014–2018 年**：留在 Motion Twin 的团队用 Haxe + Heaps 开发 Dead Cells，2018 年正式发售后销量超 500 万份，成为 Heaps 最有力的"活广告"。
+- **2017–至今**：Shiro Games 相继用 Heaps 发布 Northgard（实时策略，百万销量）、Darksburg（2020）、Wartales（2022），证明引擎能撑起长线运营的商业项目。
+- **2022 年**：Heaps 在 Hacker News 被重新发现，开发者惊讶地发现"我玩了几百小时的游戏原来是这个写的"——对一个只有 3.6k star 的引擎而言，这是极不寻常的认可。
 
 ## 学到什么
 
-1. **"一次编写，多平台发布"不只是 Java 的口号**——Haxe 编译到原生代码的方案证明，跨平台和高性能可以兼得，关键在于编译器目标而非运行时抽象层
-2. **小生态 + 高质量验证 > 大生态 + 普通验证**：Heaps 用户少，但 Dead Cells 这样的案例比任何文档都有说服力；选技术栈时，已有的生产验证比 stars 数更重要
-3. **场景图是游戏渲染的通用抽象**：不论 Unity 的 GameObject、Godot 的 Node 还是 Heaps 的 Object，树形结构 + 变换传递是游戏渲染的基础设计，理解它能迁移到任何引擎
-4. **着色器跨平台的本质是编译期翻译**：hxsl 的思路（用一种 DSL 描述意图，编译器负责翻译到 GLSL/HLSL）与 SPIR-V（Vulkan 的中间表示）异曲同工，是现代图形编程的主流方向
+1. **编译目标 ≠ 运行时**：Haxe 的设计哲学是"语言只负责逻辑，目标平台只负责执行"，这让 Heaps 在多平台之间的移植成本极低——改平台时基本不改游戏代码
+2. **场景图是渲染的通用语言**：无论 2D 还是 3D，把"可见物体挂到树上"的抽象足够通用，Heaps、Three.js、Cocos2d-x 都在用同一套心智模型
+3. **小生态 ≠ 不成熟**：Heaps 社区比 Unity 小得多，但背后有多个百万销量游戏验证——选择工具时，"有没有大项目落地"比 GitHub star 数更重要
+4. **自研引擎的代价是工具链**：Heaps 在渲染性能和跨平台上无可挑剔，但可视化编辑器、调试工具、IDE 集成明显弱于 Unity/Godot——自研意味着你要自己补这些"配套"
 
 ## 延伸阅读
 
-- 官方文档：[Heaps.io Getting Started](https://heaps.io/documentation/home.html)（涵盖 h2d/h3d/hxd/hxsl 四个包的入门教程）
-- 视频教程：[Heaps Tutorial Series — YT](https://www.youtube.com/results?search_query=heaps.io+tutorial)（社区出品，涵盖从 Hello World 到完整游戏循环）
-- Dead Cells 技术分享：[Haxe Summit 2018 — Motion Twin](https://haxe.org/videos/conferences/haxe-summit-us-2018/)（开发团队讲 Dead Cells 跨平台实战）
-- HashLink 设计文档：[HashLink VM](https://hashlink.haxe.org/)（了解 VM 架构和 HL/C 编译流程）
-- [[three-js]] —— 同样基于 WebGL 的 3D 渲染库，偏 Web 端，无原生编译能力
-- [[wgpu]] —— Rust 的现代 GPU API 抽象，与 hxsl 的跨后端目标相似
+- 官方文档：[Heaps.io Documentation](https://heaps.io/documentation/home.html)（API 参考 + 入门指南）
+- 官方样例：[Heaps Live Samples](https://heaps.io/samples/)（可直接在浏览器跑的代码示例）
+- Shiro Games 技术栈介绍：[Full Stack — Heaps.io](https://heaps.io/documentation/fullstack.html)（Dead Cells / Northgard 背后的完整技术架构）
+- HashLink VM：[hashlink.haxe.org](https://hashlink.haxe.org/)（Heaps 的原生运行时，JIT + GC 细节）
+- [[bevy]] —— Rust 写的 ECS 架构游戏引擎，与 Heaps 的场景图架构是两种不同哲学
+- [[phaser]] —— 纯 HTML5/JS 的 2D 游戏框架，Heaps 的 h2d 在浏览器端是它的竞品
 
 ## 关联
 
-- [[three-js]] —— 同样做跨平台 WebGL 渲染，但局限于 Web；Heaps 多出了原生编译路径
-- [[wgpu]] —— Rust 版 GPU 抽象层，hxsl 的跨 GLSL/HLSL 编译与 wgpu 跨后端的思路一脉相承
-- [[opengl]] —— Heaps 在桌面端的底层渲染后端之一，理解 OpenGL 有助于调试 h3d 场景
-- [[anime]] —— 同样服务于实时视觉效果，anime.js 处理 DOM 动画，h2d.Anim 处理游戏帧动画
-- [[hashlink]] —— Heaps 的原生运行时 VM，Dead Cells / Northgard 性能的直接来源
+- [[phaser]] —— 同为跨平台 2D 游戏框架，Phaser 锁定 Web，Heaps 多目标编译走得更远
+- [[pixi]] —— PixiJS 专注浏览器 2D 渲染，Heaps 的 h2d/WebGL 目标与它重叠
+- [[bevy]] —— Bevy 用 ECS 数据驱动架构，Heaps 用传统场景图，两种引擎设计哲学的典型对比
+- [[love2d]] —— LÖVE 用 Lua 做跨平台 2D，Heaps 用 Haxe，相似的"轻量但强大"定位
+- [[cocos2d-x]] —— Cocos2d-x 也走跨平台路线，主攻移动端；Heaps 更偏桌面和主机
+- [[anime]] —— Anime.js 处理 Web 动画，Heaps 的 h2d.Anim 是游戏帧动画的对应物
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
-
