@@ -164,6 +164,7 @@ const obj = { foo: 1, bar: 2, baz: [1, 2, 3 /* ... */], nested: { a: 1, b: 2 } }
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[geany]] —— Geany — GTK 轻量 IDE
 - [[gh]] —— gh — GitHub 官方命令行
 - [[glab]] —— glab — GitLab 官方命令行
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

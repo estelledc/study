@@ -160,6 +160,7 @@ west flash                               # 烧录
 - [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 - [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板

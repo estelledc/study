@@ -187,6 +187,7 @@ MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.example/battery")
 
 - [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
 - [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[livekit-flutter]] —— LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频
 - [[nativescript]] —— NativeScript — JS/TS 直接调原生 API，无 WebView

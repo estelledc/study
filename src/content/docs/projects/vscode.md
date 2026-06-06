@@ -158,10 +158,12 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
+- [[geany]] —— Geany — GTK 轻量 IDE
 - [[lite-xl]] —— Lite XL — 用 Lua 驱动一切的极简文本编辑器
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
-- [[textmate]] —— TextMate — macOS 经典编辑器与语法定义的缔造者
+- [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
 

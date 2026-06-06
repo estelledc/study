@@ -162,3 +162,11 @@ python3 -m json.tool
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[atom]] —— Atom — 已归档的 Web 编辑器先驱
+- [[emacs]] —— GNU Emacs — Lisp 自文档编辑器
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[vim]] —— Vim — 模态编辑器之父
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
+- [[xi-editor]] —— xi-editor — Rope + CRDT 驱动的实验性编辑器
+

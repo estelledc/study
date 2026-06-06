@@ -156,6 +156,7 @@ ReMem           48%        66%        81%
 - [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
 - [[exg-experience-graphs]] —— EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
+- [[kim-rowhammer-2014]] —— RowHammer — 只读内存也能把邻居的 bit 敲 flip
 - [[llm-wiki-retrieval-reasoning]] —— LLM-Wiki — 把外部知识编译成 agent 自己的"维基"
 - [[memcoder-co-evolution]] —— MemCoder — code agent 跟着你 git commit 一起成长
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过

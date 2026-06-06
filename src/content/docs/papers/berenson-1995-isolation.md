@@ -152,6 +152,7 @@ UPDATE stock SET qty = qty - 1 WHERE sku='X';   -- 仍 COMMIT 前
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+- [[lipp-meltdown-2018]] —— Meltdown — 乱序执行偷读内核内存
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[raft]] —— Raft — 易理解的共识算法

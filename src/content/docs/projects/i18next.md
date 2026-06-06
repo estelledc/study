@@ -165,6 +165,10 @@ React 适配里，`useTranslation` 会订阅这个事件，**让所有用到 t()
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
+- [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[next-intl]] —— next-intl — Next.js 专用的多语言开关

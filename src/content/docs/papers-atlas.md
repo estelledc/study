@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 940 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 944 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：940 篇
-- **已分类**：940
+- **总数**：944 篇
+- **已分类**：944
 
 ### 按一级主题分布
 
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 46 |
+| [安全与隐私](#安全与隐私) | 50 |
 | [其他](#其他) | 13 |
 
 ---
@@ -1211,7 +1211,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 46 篇。
+共 50 篇。
 
 ### 安全与隐私
 
@@ -1230,6 +1230,7 @@ sidebar:
 | [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 |  |
 | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
 | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
+| [Intel SGX 详解 — 在不可信云里圈一块硬件保险箱](/study/papers/costan-sgx-explained-2016/) | ✅ v3 |  |
 | [Sphinx — mix 网络最紧凑的可证安全消息格式](/study/papers/danezis-sphinx-2009/) | ✅ v3 |  |
 | [Mixminion 2003 — 让回复消息和发送消息共享同一张匿名面罩](/study/papers/dingledine-mixminion-2003/) | ✅ v3 |  |
 | [CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 |  |
@@ -1243,9 +1244,12 @@ sidebar:
 | [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 |  |
 | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
 | [GMW 1987 — 任何函数都能让多方安全地一起算](/study/papers/gmw-mental-game-1987/) | ✅ v3 |  |
-| [FGSM — 对抗样本的快速生成与线性假设](/study/papers/goodfellow-fgsm-2014/) | ✅ v3 |  |
+| [FGSM — 用一行梯度让神经网络看错图片](/study/papers/goodfellow-fgsm-2014/) | ✅ v3 |  |
 | [联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题](/study/papers/kairouz-advances-fl-2019/) | ✅ v3 |  |
+| [RowHammer — 只读内存也能把邻居的 bit 敲 flip](/study/papers/kim-rowhammer-2014/) | ✅ v3 |  |
+| [Spectre 攻击 — 推测执行偷看别人的内存](/study/papers/kocher-spectre-2019/) | ✅ v3 |  |
 | [t-Closeness — 用"分布距离"堵住匿名化的最后漏洞](/study/papers/li-t-closeness-2007/) | ✅ v3 |  |
+| [Meltdown — 乱序执行偷读内核内存](/study/papers/lipp-meltdown-2018/) | ✅ v3 |  |
 | [l-多样性 — k-匿名之后的隐私保护](/study/papers/machanavajjhala-l-diversity-2007/) | ✅ v3 |  |
 | [Madry PGD 2017 — 用最强对手训练最强防御](/study/papers/madry-pgd-2017/) | ✅ v3 |  |
 | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
@@ -1298,7 +1302,7 @@ sidebar:
 
 ---
 
-## 全部 940 篇（字母序）
+## 全部 944 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1476,6 +1480,7 @@ sidebar:
 | `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | ✅ v3 | 其他 | 软件工程实证 |
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) | ✅ v3 | 分布式系统 | 共识与复制 |
+| `costan-sgx-explained-2016` | [Intel SGX 详解 — 在不可信云里圈一块硬件保险箱](/study/papers/costan-sgx-explained-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | ✅ v3 | 机器学习 | AI / LLM |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) | ✅ v3 | 基础设施 | 基础设施 |
 | `couchdb` | [CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库](/study/papers/couchdb/) | ✅ v3 | 数据库 | 数据库 |
@@ -1642,7 +1647,7 @@ sidebar:
 | `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | ✅ v3 | 形式化方法 | 数学逻辑 / 计算理论 |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | ✅ v3 | 图形学 | 渲染与图形 |
-| `goodfellow-fgsm-2014` | [FGSM — 对抗样本的快速生成与线性假设](/study/papers/goodfellow-fgsm-2014/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `goodfellow-fgsm-2014` | [FGSM — 用一行梯度让神经网络看错图片](/study/papers/goodfellow-fgsm-2014/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) | ✅ v3 | 图形学 | 渲染与图形 |
@@ -1742,9 +1747,11 @@ sidebar:
 | `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | ✅ v3 | 图形学 | GPU 架构 |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
+| `kim-rowhammer-2014` | [RowHammer — 只读内存也能把邻居的 bit 敲 flip](/study/papers/kim-rowhammer-2014/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | ✅ v3 | 编程语言 | 算法 |
+| `kocher-spectre-2019` | [Spectre 攻击 — 推测执行偷看别人的内存](/study/papers/kocher-spectre-2019/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | ✅ v3 | 图形学 | GPU 架构 |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -1776,6 +1783,7 @@ sidebar:
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `lipp-meltdown-2018` | [Meltdown — 乱序执行偷读内核内存](/study/papers/lipp-meltdown-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `livevlm-2025` | [LiveVLM — 免训练流式视觉 token 压缩](/study/papers/livevlm-2025/) | ✅ v3 | 机器学习 | 视频理解 |

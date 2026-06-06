@@ -174,6 +174,7 @@ function Greeting({ name }) {
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
 - [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架

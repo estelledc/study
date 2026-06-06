@@ -181,6 +181,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
+- [[lipp-meltdown-2018]] —— Meltdown — 乱序执行偷读内核内存
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mine-octagon-2006]] —— Miné 八边形抽象域 — 在区间和多面体之间的甜点
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"

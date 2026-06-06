@@ -2,6 +2,7 @@
 title: Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 来源: 'https://github.com/expo/expo'
 日期: 2026-06-06
+分类_原始: 其他
 分类: 后端 API
 子分类: 移动端
 难度: 中级
@@ -9,199 +10,184 @@ title: Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 
 ## 是什么
 
-Expo 是一个开源平台，让你用 React 和 JavaScript 写出能在 Android、iOS 和 Web 上**原生运行**的应用。日常类比：它像一个「全套婚宴服务商」——你只需要决定婚礼风格，场地、装饰、餐饮、主持、摄影全包，你不用搞清楚搭台子的铆钉规格。
+Expo 是 React Native 的"现代入口"：一套把本地开发环境、云端编译、OTA 热更新、应用市场上架打包进同一工具链的开源平台，让你用 JavaScript / TypeScript 写一套代码，同时跑在 Android、iOS 和 Web 上。
 
-具体来说，Expo 提供三层东西：**Expo SDK**（一套版本统一管理的 TypeScript 原生模块，比如相机、GPS、推送通知）；**EAS**（Expo Application Services，云端编译 + OTA 热更新 + 应用商店提交）；以及 **CNG**（持续原生生成，`npx expo prebuild` 自动从 `app.json` 生成 `android/` 和 `ios/` 目录，用 Config Plugin 机制扩展原生配置）。
+日常类比：Expo 就像给汽车预装了自动变速箱、倒车雷达和导航——原本需要你分别搭配采购（Xcode、Android Studio、Metro、CodePush……），Expo 把它们全插好，钥匙一拧就走。
 
-开发者每天用 Expo 的姿势很具体：在本地跑 `npx expo start`，手机上装 Expo Go 扫二维码，热重载直接在设备上看效果；要发布就 `eas build`，不需要本地 Xcode 或 Android Studio，云端的 Mac 机器帮你编译出 `.ipa`。
+React Native 给你"跑起来"的能力，Expo 给你"发出去"的全套流程：
+
+```bash
+# 创建项目
+npx create-expo-app@latest my-app
+
+# 在设备上预览（扫码即开）
+npx expo start
+
+# 云端构建 iOS 包（无需 Mac 本地环境）
+eas build --platform ios
+
+# OTA 热更新，绕过 App Store 审核等待
+eas update --branch production --message 'fix: payment crash'
+```
+
+核心由三部分构成：**Expo SDK**（统一版本管理的原生模块库）、**EAS**（云端构建/发布服务）、**Expo Router**（文件路由系统，类比 Next.js 的 pages/ 目录）。
 
 ## 为什么重要
 
-不理解 Expo，下面这些事都没法解释：
+不理解 Expo，以下问题都没法说清楚：
 
-- 为什么 Windows 开发者也能发布 iOS 应用——EAS Build 在云端 Mac 上跑 Xcode，本地不需要 Apple 硬件
-- 为什么 React Native 应用能"秒级修 bug"——EAS Update 把新 JS bundle 推送给已安装用户，绕过应用商店审核周期
-- 为什么 `expo eject` 在 2022 年彻底消失——CNG 的"持续原生生成"思路让你不再需要永久 eject
-- 为什么 React Native 生态以 Expo SDK 版本号为协调点——它锁定了 RN 版本 + 原生模块的兼容矩阵
+- 为什么 Windows 开发者也能构建 iOS 包——EAS Build 在云端 Mac 上跑 Xcode，开发者不需要 macOS 本地环境
+- 为什么线上 crash 可以不等 App Store 审核（1-3 天）就修好——EAS Update OTA 推 JS bundle，用户重启自动生效
+- 为什么 React Native 社区推荐"用 Expo 起步"而不是裸用 React Native CLI——环境搭建、原生依赖升级、config plugin 生态少走大量坑
+- 为什么"eject"（弹射）这个词在 RN 社区消失了——Expo 用 CNG（持续原生生成）取代一次性 eject，原生目录随时可重新生成
 
 ## 核心要点
 
-**1. EAS Build — 云端编译机**
+Expo 的核心机制可以拆成三块：
 
-本地运行 `eas build --platform ios` 后，代码 push 到 EAS 服务器，云端的 Mac 机器（Apple Silicon）跑完整 Xcode 编译，10-20 分钟后你拿到 `.ipa` 或 `.apk`。整个过程不需要本地 Xcode，也不需要 Apple 开发者账号配好的 provisioning profile——EAS 帮你自动管理签名证书。
+1. **Expo SDK + Modules API**：一套经统一版本锁定的 TypeScript 原生模块库（Camera、Location、Notifications 等）。每个 SDK 版本和固定的 React Native 版本绑定，解决了 RN 社区里"库版本互相打架"的痛点。类比：SDK 是预购的零件套装，所有零件保证互相兼容，不用自己找配件。
 
-类比：就像 GitHub Actions，但专门为 iOS/Android 构建优化，证书管理是内置服务而不是你自己写 CI yaml 搞的。
+2. **EAS（Expo Application Services）**：三个主力云服务——`eas build` 在云端编译（Android APK/AAB + iOS IPA，支持自定义原生代码）；`eas update` 推 OTA 热更新 JS bundle；`eas submit` 自动上传到 Google Play 和 App Store。类比：EAS 是你的"外包运维团队"，本地写完代码，剩下的交给云。
 
-**2. EAS Update — OTA 热更新**
-
-JavaScript bundle 是"可更新层"，原生二进制是"稳定层"。EAS Update 只推送新的 JS bundle，用户下次打开 app 自动静默下载并生效（或在后台预加载，下次冷启动生效）。这个机制绕过了 App Store 审核（通常 1-3 天），适合紧急 bug 修复。
-
-```bash
-eas update --branch production --message "fix: payment crash"
-```
-
-**3. Expo Router — 文件即路由**
-
-类比 Next.js 的 `app/` 目录：在 `app/` 下放 `.tsx` 文件，Expo Router 自动生成对应的 React Navigation 路由，同时生成 Web 版路由（通过 Expo Web 支持）。
-
-```tsx
-// app/(tabs)/profile.tsx  → /profile 路由（Tab 里）
-// app/post/[id].tsx       → /post/:id 动态路由
-// app/_layout.tsx         → 整个 app 的根 Layout
-```
-
-这三层加起来构成 Expo 的核心价值主张：**写一次代码，从本地开发到云端构建到 OTA 推送，全流程不需要打开 Xcode 或 Android Studio**。
+3. **CNG（Continuous Native Generation）与 Config Plugin**：`npx expo prebuild` 读取 `app.json` 和已安装的库，**自动生成** `android/` 和 `ios/` 目录，无需手动维护原生工程文件。Config Plugin 是一种在 prebuild 阶段修改原生配置的钩子（如修改 `AndroidManifest.xml`、`Info.plist`），无需直接写原生代码。类比：prebuild 是自动画图纸，config plugin 是"我要在这面墙开一扇窗"的批注。
 
 ## 实践案例
 
-### 案例 1：Windows 开发者构建 iOS 包
+### 案例 1：在 Windows 上构建并发布 iOS 应用
 
-场景：你的团队用 Windows 工作站，没有 Mac，但需要发布 iOS 应用。
+传统路线需要 Mac + Xcode，EAS Build 把这一步搬到云端：
 
 ```bash
-# 安装 EAS CLI
-npm install -g eas-cli
+# 初始化 EAS 配置
+eas init
 
-# 登录 Expo 账号
-eas login
+# eas.json 指定构建档案
+# {
+#   "build": {
+#     "production": {
+#       "ios": { "simulator": false }
+#     }
+#   }
+# }
 
-# 初始化 EAS 配置（生成 eas.json）
-eas build:configure
-
-# 云端构建 iOS（不需要本地 Mac）
+# 在云端构建 iOS production 包
 eas build --platform ios --profile production
+
+# 构建完成后直接提交到 TestFlight
+eas submit --platform ios --latest
 ```
 
-构建完成后，EAS 在控制台显示下载链接，你直接把 `.ipa` 上传到 TestFlight 或通过 `eas submit` 自动提交到 App Store Connect。整个过程发生在 EAS 的 Mac 构建机上，本地只需要 Node.js 环境。
+EAS Build 在托管的 Mac 机器上运行 Xcode 和代码签名，开发者只需配置 Apple 开发者账号密钥，整个编译过程约 10-20 分钟。
 
-关键洞察：证书管理也被 EAS 接管——`eas credentials` 命令可以让 EAS 自动生成、更新 Apple Distribution Certificate 和 Provisioning Profile，彻底告别 Apple Developer Portal 的证书噩梦。
+### 案例 2：OTA 热更新修复线上 Bug
 
-### 案例 2：OTA 热更新修复线上崩溃
-
-场景：生产环境用户反馈支付页面崩溃，需要在 30 分钟内修复推出，不能等 App Store 审核。
+App Store 审核通常需要 1-3 天，EAS Update 可以绕过等待：
 
 ```bash
-# 修复代码后
-git add . && git commit -m "fix: null check in payment handler"
+# 修复 bug 后，发布更新到 production 分支
+eas update --branch production --message 'fix: checkout crash on iOS 17'
 
-# 推送 OTA 更新到 production 分支
-eas update --branch production --message "fix: payment crash hotfix"
-# → 约 2-3 分钟后，已安装用户在下次打开 app 时自动获得修复
+# 检查各渠道更新状态
+eas update:list --branch production
 ```
 
-`eas.json` 里的 channel 配置让你可以精确控制哪个构建包接收哪个分支的更新：
+工作原理：EAS Update 把新的 JavaScript bundle 上传到 CDN，App 启动时检查当前 runtimeVersion 是否匹配，有更新则下载并在下次启动时生效。
 
-```json
-{
-  "build": {
-    "production": {
-      "channel": "production"
-    },
-    "preview": {
-      "channel": "preview"
-    }
-  }
-}
-```
+**注意**：只能更新 JavaScript 层，不能更改原生模块——如果加了新的原生依赖（如 `expo-camera`），必须重新走 EAS Build 全量编译。
 
-关键洞察：OTA 更新只影响 JS 层——如果修复需要改原生代码（比如添加新的原生模块），仍然需要走完整构建和应用商店审核流程。
+### 案例 3：Expo Router 实现文件路由
 
-### 案例 3：用 Expo Router 构建 Tab + 嵌套路由
-
-场景：构建一个有底部 Tab、个人页有嵌套路由的 App。
+Expo Router 是 React Navigation 的上层封装，让路由结构和文件目录一一对应：
 
 ```
 app/
-├── _layout.tsx          ← 根 Layout（Stack 或 Tabs）
-├── (tabs)/
-│   ├── _layout.tsx      ← Tab 配置（图标、label）
-│   ├── index.tsx        ← 首页 Tab
-│   ├── explore.tsx      ← 探索 Tab
-│   └── profile/
-│       ├── index.tsx    ← 个人主页
-│       └── [userId].tsx ← 动态路由：/profile/123
-└── modal.tsx            ← 全局 Modal（在根 Stack 外）
+  _layout.tsx        → 根布局（导航容器）
+  index.tsx          → 首页 /
+  (tabs)/
+    _layout.tsx      → Tab 导航布局
+    home.tsx         → /home（Tab 1）
+    profile.tsx      → /profile（Tab 2）
+  product/
+    [id].tsx         → /product/:id（动态路由）
 ```
 
 ```tsx
-// app/(tabs)/_layout.tsx
-import { Tabs } from 'expo-router';
+// app/product/[id].tsx
+import { useLocalSearchParams } from 'expo-router';
 
-export default function TabLayout() {
-  return (
-    <Tabs>
-      <Tabs.Screen name="index" options={{ title: '首页', tabBarIcon: ... }} />
-      <Tabs.Screen name="explore" options={{ title: '探索' }} />
-      <Tabs.Screen name="profile" options={{ title: '我的' }} />
-    </Tabs>
-  );
+export default function ProductDetail() {
+  const { id } = useLocalSearchParams<{ id: string }>();
+  return <Text>商品 ID：{id}</Text>;
 }
 ```
 
-关键洞察：括号目录 `(tabs)/` 是"路由组"——它给路由分组但不影响 URL 路径。文件里的 `href` 属性可以用字符串路径（`/profile/123`）或类型化对象（`{ pathname: '/profile/[userId]', params: { userId: '123' } }`），后者有 TypeScript 类型补全。
+同样的文件结构同时生成原生 App 路由和 Web 路由（通过 Expo for Web），一套代码覆盖三端。
 
 ## 踩过的坑
 
-1. **Expo Go ≠ 生产环境**：Expo Go 是沙箱应用，只能运行 Expo SDK 内置的原生模块。任何需要自定义原生代码的第三方库（比如 `react-native-vision-camera`、`react-native-maps` 的某些功能）在 Expo Go 里完全无法使用，必须改用 Development Build（`eas build --profile development`）。
+1. **把 Expo Go 当生产环境用**：Expo Go 是学习沙箱，不能加载自定义原生代码。任何用了第三方原生 SDK（如地图、蓝牙、推送）的真实项目必须用 `Development Build`——它是针对你项目定制的"自己的 Expo Go"。
 
-2. **OTA 更新违规风险**：App Store 条款 3.3.1(a) 禁止用 OTA 大幅改变应用的主要功能或引入新的 native 能力。用 EAS Update 修 bug、调 UI、换文案完全合规；用它推一个"全新功能的大更新"则有被下架的风险。
+2. **OTA 更新触发 App Store 违规**：EAS Update 只能推送"修复和内容更新"，不能借此大幅改变 App 主要功能，否则违反苹果 3.3.1(a) 条款。用于 A/B 测试新功能时需谨慎。
 
-3. **`prebuild` 会覆盖手改的原生文件**：如果你曾经手动改过 `android/` 或 `ios/` 目录（比如加了一段 Java 代码），再跑 `npx expo prebuild` 会根据 Config Plugin 重新生成这两个目录，手改会被覆盖。正确做法：把所有原生修改封装成 Config Plugin，而不是直接改原生文件。
+3. **prebuild 覆盖手动改动**：一旦手动修改了 `android/` 或 `ios/` 目录，下次 `npx expo prebuild --clean` 会重置这些改动。正确做法是把所有原生配置写进 config plugin，让 prebuild 幂等地生成。
 
-4. **SDK 版本锁定链**：Expo SDK 版本和 React Native 版本一一对应（如 SDK 52 对应 RN 0.76），不能跳版本升级，也不能单独升 RN。升级时必须查 Expo 官方升级文档，因为每次升级都有一批 breaking changes 和需要手动迁移的 API。
+4. **SDK 版本锁定不能乱升**：Expo SDK 版本和 React Native 版本强绑定（如 SDK 51 对应 RN 0.74），不能只升 RN 不升 SDK，需对照官方兼容表一起升，否则原生模块类型不匹配。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 中小团队或独立开发者，没有专职 iOS / Android 工程师，需要快速上线 React Native 应用
-- 需要 OTA 热更新能力（bug 修复、文案更新、A/B 测试）
-- 跨平台应用（iOS + Android + Web 同一套代码）
-- 原型和 MVP 阶段，需要快速迭代验证
+
+- 中小型团队想快速把 React 技能迁移到移动端，不想维护双端原生工程
+- 需要 OTA 更新频繁推送内容型 App（新闻、电商、活动页）
+- Windows 开发者需要构建 iOS 应用（EAS Build 云编译）
+- 全栈团队希望一套代码同时覆盖 Web + iOS + Android
 
 **不适用**：
-- 应用里大量依赖尚未有 Config Plugin 支持的原生 SDK（如特定硬件 SDK、银行级安全模块）
-- 需要深度定制 iOS 或 Android 原生层，且不愿意维护 Config Plugin
-- 对应用包体积极致优化（Expo SDK 带了一组基础原生模块，哪怕没用到也会占体积）
-- 游戏类应用（RN 本身不适合，Expo 也不例外）
+
+- 对原生性能极度敏感的场景（高频游戏引擎、实时视频处理）——Expo 抽象层带来少量额外开销
+- 已有成熟的纯原生 Swift / Kotlin 代码库，迁移成本远大于收益
+- 需要深度定制 Build 系统（自定义 Gradle 插件、Xcode Build Phase 脚本复杂度高）
+- 团队对 Expo SDK 版本锁定感到束缚，倾向于随时升最新 RN
 
 ## 历史小故事（可跳过）
 
-- **2013 年**：Charlie Cheever 和 James Ide 在 React Native 对外发布之前开始构建 Expo，当时 RN 连第三方包生态都没有，他们自己造 SDK。
-- **2015 年**：React Native 正式发布，Expo 随之进入大众视野，定位为「React Native 的开箱即用工具链」。
-- **2020 年 12 月**：EAS Build 发布，第一次让 Windows 开发者也能云端构建 iOS 包，「必须有 Mac 才能做 iOS 开发」成为历史。
-- **2021 年 4 月（SDK 41）**：`npx expo prebuild` 取代 `expo eject`，「持续原生生成」（CNG）理念确立——你可以随时 prebuild 而不是永久 eject，原生目录变成了可以重新生成的产物。
-- **2022 年 8 月（SDK 46）**：`expo eject` 命令彻底废弃，CNG 成为官方唯一推荐的原生自定义路径。「eject 就回不去了」的时代结束。
-- **2023 年起**：Expo Router 推出，React Native 有了类 Next.js 的文件路由系统，统一 Web 和 Native 的路由层，同时带来了 Server Components on Native 的实验性支持。
+- **2013 年**：Charlie Cheever 和 James Ide 在 React Native 公开发布前就开始构建 Expo，彼时 React Native 生态几乎没有第三方包，他们自己造了 SDK 零件库。
+- **2015 年**：React Native 正式公开，Expo 随之进入大众视野，定位为"RN 的开箱即用工具链"。
+- **2020 年 12 月**：EAS Build 发布，首次让 Windows 和 Linux 开发者也能在云端构建 iOS 包——"没有 Mac 做不了 iOS App"成了历史。
+- **2021 年 4 月（SDK 41）**：`npx expo prebuild` 取代 `expo eject`，"持续原生生成"（CNG）理念正式确立：不再是一次性弹射，而是随时可重新生成。
+- **2022 年 8 月（SDK 46）**：`expo eject` 命令彻底废弃，CNG 成为官方唯一推荐的原生自定义路径。
+- **2023 年起**：Expo Router 推出并迭代至 v3+，React Native 有了类 Next.js 的文件路由系统，统一了 Web 和 Native 的路由层。
 
 ## 学到什么
 
-1. **工具链的价值在于决策数量**：Expo 的核心竞争力不是技术，而是帮你减少了几十个"怎么配置原生环境"的决策，换来了更快的第一天上手速度
-2. **OTA 更新是双刃剑**：能绕过审核周期快速推修复，但要清楚哪类改动合规、哪类有风险，以及 native 层的改动始终需要走完整发布流程
-3. **CNG 思路值得学习**：把原生目录当成"可重新生成的构建产物"而不是"手工维护的源文件"，这个架构决策让配置可组合、可覆盖、可版本化
-4. **生态绑定有代价**：用 Expo SDK 换来的便利，是 SDK 版本升级节奏由 Expo 团队控制，RN 社区的最新特性可能要等 Expo 支持才能用
+1. **工具链整合本身就是生产力**——Expo 的价值不在于某一个技术创新，而在于把分散的 RN 生态（Metro、Xcode、Android Studio、CodePush、Fastlane）整合成单一命令行接口
+2. **OTA 更新是双刃剑**——绕过审核可以快速修复，但必须理解平台政策边界，功能变更依然需要走全量发布
+3. **CNG 取代 eject 是架构思维的胜利**——从"一次性手术"到"随时可再生"，让原生层从"不敢动"的禁区变成可维护的配置
+4. **SDK 版本锁定是取舍**——统一版本保证兼容性，代价是比裸 RN 慢半步跟进最新特性
 
 ## 延伸阅读
 
-- 官方文档：[Expo Docs — Get Started](https://docs.expo.dev/)（从零到运行的最权威指南）
-- EAS 文档：[Expo Application Services](https://docs.expo.dev/eas/)（云构建 + OTA 更新完整说明）
-- Expo Router 文档：[Expo Router Introduction](https://docs.expo.dev/router/introduction/)（文件路由 + Web 支持详解）
-- 视频：[Simon Grimm — Expo Router v3 Full Course](https://www.youtube.com/watch?v=rIYzLhkG9TA)（2 小时实战，含 Tab + Stack + Modal）
-- Config Plugin 开发：[Creating a Config Plugin](https://docs.expo.dev/config-plugins/development-and-debugging/)
+- [Expo 官方文档](https://docs.expo.dev/) — 入门到发布的完整路径，包含 EAS 配置指南
+- [EAS Build 文档](https://docs.expo.dev/build/introduction/) — 云端构建详细配置，包含 secrets 管理和 build profile
+- [Expo Router 文档](https://docs.expo.dev/router/introduction/) — 文件路由系统完整 API
+- [App.js Conf 2025 Keynote](https://www.youtube.com/watch?v=Kqd6VX6s3k4) — Expo 团队年度技术方向分享
+- [[react-native]] — Expo 的运行基础，两者关系和选型对比
+- [[tanstack-router]] — Web 侧的文件路由对标，理解 Expo Router 设计可类比参考
 
 ## 关联
 
-- [[react-native]] —— Expo 的运行时基础，Expo SDK 是对 RN 原生模块的统一封装
-- [[react-server-components]] —— Expo Router 正在引入 Server Components on Native，同一个 RSC 思路延伸到移动端
-- [[tanstack-router]] —— 同为文件路由思路，TanStack Router 在 Web 端做了类似的 URL → 类型系统打通
-- [[playwright]] —— Web 端自动化测试，Expo Web 应用可用 Playwright 做 E2E；移动端对应 Detox
-- [[fastapi]] —— Expo 应用的常见后端选择，FastAPI 提供快速搭建的 REST API 层
-- [[ansible]] —— 基础设施自动化，与 EAS 的"声明式配置驱动构建"有异曲同工之妙
+- [[react-native]] —— Expo 构建于 RN 之上，是事实上的现代入口；裸 RN vs Expo 是常见选型决策
+- [[react-server-components]] —— Expo Router API Routes 借鉴了 RSC 思路，Web 端组件可在服务器渲染
+- [[tanstack-router]] —— 文件路由理念的 Web 侧对标，两者设计哲学（类型安全路由）可对比学习
+- [[ansible]] —— CNG（持续原生生成）与 Ansible 幂等运维理念相通：描述目标态，工具保证达到
+- [[playwright]] —— EAS 可与 Playwright 结合做 Web 端 E2E 测试，覆盖 Expo Web 分支
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App

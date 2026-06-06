@@ -139,6 +139,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -152,6 +153,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gat-2018]] —— GAT — 让图神经网络的邻居自带权重
 - [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
+- [[goodfellow-fgsm-2014]] —— FGSM — 用一行梯度让神经网络看错图片
 - [[gpipe-2019]] —— GPipe — micro-batch 流水线让 GPU 排成生产线
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[grokking-2022]] —— Grokking — 训练 loss 早归零，几千步后才突然学会
@@ -189,7 +191,6 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[prototypical-networks-2017]] —— Prototypical Networks — 每类算个均值，比距离就够了
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[resnet]] —— ResNet — 残差连接

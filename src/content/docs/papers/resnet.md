@@ -168,16 +168,20 @@ def residual_block(x):
 - [[attention]] —— Attention Is All You Need
 - [[batchnorm-2015]] —— Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14
 - [[bert]] —— BERT — 双向 Transformer 预训练
+- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
 - [[dino]] —— DINO 自监督视觉 transformer
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
+- [[goodfellow-fgsm-2014]] —— FGSM — 用一行梯度让神经网络看错图片
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[label-smoothing-2016]] —— Label Smoothing — 别让模型对正确答案过度自信
 - [[liu-2020-dlss]] —— DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
 - [[mae]] —— MAE — Masked Autoencoders
+- [[mamba]] —— Mamba — 选择性状态空间模型
 - [[nbeats-2020]] —— N-BEATS — 纯前馈网络在时序预测上打败统计派
+- [[paxos]] —— Paxos — 分布式共识算法
 - [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 2013 — 一张图片骗过神经网络的开山之作
 - [[vit]] —— ViT — Vision Transformer
 

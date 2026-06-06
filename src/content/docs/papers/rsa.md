@@ -168,6 +168,7 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
+- [[costan-sgx-explained-2016]] —— Intel SGX 详解 — 在不可信云里圈一块硬件保险箱
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
 - [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名

@@ -3,7 +3,7 @@ title: Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 来源: 'https://github.com/HeapsIO/heaps'
 日期: 2026-06-06
 分类: 图形学
-子分类: 游戏引擎
+子分类: 渲染与图形
 难度: 中级
 ---
 
@@ -195,3 +195,7 @@ override function update(dt: Float) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
+

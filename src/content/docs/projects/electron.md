@@ -259,3 +259,6 @@ app.whenReady().then(() => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
+

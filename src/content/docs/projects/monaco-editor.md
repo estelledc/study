@@ -159,12 +159,13 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[emacs]] —— GNU Emacs — Lisp 自文档编辑器
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[geany]] —— Geany — GTK 轻量 IDE
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
-- [[textmate]] —— TextMate — macOS 经典编辑器与语法定义的缔造者
+- [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
 - [[vim]] —— Vim — 模态编辑器之父
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建

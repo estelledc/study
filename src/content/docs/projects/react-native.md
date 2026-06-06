@@ -232,6 +232,7 @@ const styles = StyleSheet.create({
 
 - [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
 - [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App

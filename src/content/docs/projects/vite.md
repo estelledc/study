@@ -157,6 +157,7 @@ export default defineConfig({
 - [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App

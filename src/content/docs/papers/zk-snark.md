@@ -163,6 +163,7 @@ Groth 2016 把证明压到极致：
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[costan-sgx-explained-2016]] —— Intel SGX 详解 — 在不可信云里圈一块硬件保险箱
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[gmw-mental-game-1987]] —— GMW 1987 — 任何函数都能让多方安全地一起算
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理

@@ -156,7 +156,7 @@ for x, y in loader:
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
-- [[goodfellow-fgsm-2014]] —— FGSM — 对抗样本的快速生成与线性假设
+- [[goodfellow-fgsm-2014]] —— FGSM — 用一行梯度让神经网络看错图片
 - [[kairouz-advances-fl-2019]] —— 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
 - [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
 - [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御

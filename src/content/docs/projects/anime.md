@@ -171,8 +171,9 @@ io.observe(document.querySelector('.hero-title'))
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
-- [[heaps]] —— Heaps — Haxe 跨平台游戏引擎
+- [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 - [[playwright]] —— Playwright — 跨浏览器自动化测试

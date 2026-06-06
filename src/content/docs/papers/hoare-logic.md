@@ -182,6 +182,7 @@ method Sum(a: array<int>) returns (s: int)
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
+- [[costan-sgx-explained-2016]] —— Intel SGX 详解 — 在不可信云里圈一块硬件保险箱
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[dafny-2010]] —— Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明
@@ -201,9 +202,11 @@ method Sum(a: array<int>) returns (s: int)
 - [[iris-2015]] —— Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木
 - [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
+- [[kim-rowhammer-2014]] —— RowHammer — 只读内存也能把邻居的 bit 敲 flip
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
+- [[lipp-meltdown-2018]] —— Meltdown — 乱序执行偷读内核内存
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
