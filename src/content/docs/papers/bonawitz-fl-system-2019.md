@@ -34,28 +34,43 @@ title: Bonawitz FL System 2019 — Google 工业级联邦学习系统设计
 
 ## 实践案例
 
-### 案例 1：Gboard 下一词预测
+### 案例 1：Gboard 键盘下一词预测
+
+Gboard 是 Google 的 Android 键盘。用户打字记录属于高度敏感的个人数据，绝不能上传到服务器。FL 的做法（以 PyTorch 风格写出最小可运行版本）：
 
 ```python
-# 设备端（伪代码）：FL runtime 在手机空闲充电时被唤醒
-def on_device_training(fl_plan, example_store):
-    # fl_plan 是服务器下发的 TensorFlow 图 + 超参
-    model = fl_plan.load_model()
-    local_data = example_store.query(fl_plan.data_selector)
+import copy, torch, torch.nn as nn
 
-    # 本地训练多个 epoch（数据从不离开设备）
-    for batch in local_data.batches(fl_plan.batch_size):
-        model.train_step(batch)
+def fl_task(local_dataset, global_model: nn.Module, lr=0.01, steps=5):
+    """
+    local_dataset: 设备上的打字记录（torch.utils.data.Dataset）
+    global_model:  服务器下发的全局模型权重
+    返回: delta（本地更新量，只发这个，不发原始数据）
+    """
+    local_model = copy.deepcopy(global_model)        # 本地副本，不改原始全局模型
+    optimizer = torch.optim.SGD(local_model.parameters(), lr=lr)
+    criterion = nn.CrossEntropyLoss()
+    loader = torch.utils.data.DataLoader(local_dataset, batch_size=32)
 
-    # 只上报权重增量（delta），不上报原始数据
-    delta = model.weights - fl_plan.global_weights
-    return delta  # 经 Secure Aggregation 加密后上传
+    for step, (inputs, labels) in enumerate(loader):
+        if step >= steps:
+            break
+        optimizer.zero_grad()
+        loss = criterion(local_model(inputs), labels)
+        loss.backward()
+        optimizer.step()
+
+    # 返回"增量"= 更新后权重 - 原始权重，不返回任何输入数据
+    delta = {k: local_model.state_dict()[k] - global_model.state_dict()[k]
+             for k in global_model.state_dict()}
+    return delta
 ```
 
 **逐部分解释**：
-- `example_store`：设备本地存储的用户输入历史（如打字记录），只供 FL runtime 访问
-- `fl_plan`：由服务器编译生成的训练配置，包含 TensorFlow 计算图
-- `delta`：梯度增量，而非原始数据；配合 Secure Aggregation 在聚合前无法被服务器单独读取
+- `copy.deepcopy`：在本地克隆一份全局模型，设备训练不影响服务器原始权重
+- `steps=5`：对应 FedAvg 里的本地 epoch 数（E），控制"每轮在设备上跑多少步"
+- `delta`：发回的是权重变化量（梯度的积分），不包含任何 `local_dataset` 中的原始打字内容
+- 服务器用 FedAvg 把数百台手机的 delta 加权平均，更新全局模型
 
 Gboard 用 FL 训练了一个含 140 万参数的 RNN 做次词预测，历经 3000 轮、1.5M 用户、5 天收敛，A/B 实验优于服务端训练的同款模型。
 
@@ -67,36 +82,26 @@ Gboard 用 FL 训练了一个含 140 万参数的 RNN 做次词预测，历经 3
 没有 Pace Steering → 服务器被 1000 万并发请求击垮
 有 Pace Steering   → 服务器告诉设备"你在 2:00~2:07 之间随机重连"
 
-算法（无状态，服务器不保存每台设备状态）：
-  p = target_devices / total_eligible_devices
-  device.next_checkin = now + random_delay(p)
+### 案例 3：Secure Aggregation 下的设备失联恢复
+
+Secure Aggregation（SecAgg）解决的问题：服务器技术上能看到每台设备的梯度更新，这是隐私漏洞。SecAgg 用**遮蔽密钥（masking key）**技术来挡住这个漏洞——类比是"每个设备在自己的答案上加一层只有自己知道的随机扰动（mask），而这些扰动在相加时神奇地互相抵消，服务器只看到原始答案的总和，看不到任何单人的答案"。
+
+```
+Round 流程（含 SecAgg，以下为简化描述）：
+  Phase 1 - 交换公钥:   每台设备生成 Diffie-Hellman 密钥对，互相分享公钥，
+                        借此与每一对设备协商出一个共享随机种子（即"mask 来源"）
+  Phase 2 - 分发碎片:   把自己的私钥碎片（Shamir 秘密分享）发给"备份设备"，
+                        即使自己掉线，别人也能帮服务器还原自己的 mask
+  Phase 3 - 提交带噪梯度: 提交 gradient + sum(所有与自己相关的 mask)
+                        （所有设备的 mask 两两对消，只剩纯净的梯度总和）
+  Phase 4 - 去遮蔽:    服务器用掉线设备的碎片还原其 mask，从聚合值里扣除
+  → 服务器最终只得到 sum(updates)，无法推断任何单设备的 update
 ```
 
 **逐部分解释**：
-- Pace Steering 让"雷鸣羊群"变成"均匀涓流"——服务器无需维护每台设备的状态
-- 日常类比：演唱会散场不让所有人同时出门，而是按区域分批放行
-- 兼顾时区日照周期：晚间设备可用率是白天的 4 倍，pace steering 动态调窗口
-
-### 案例 3：版本化 FL Plan——应对 TensorFlow 算子碎片化
-
-```
-问题：设备 A 运行 TF 2.3，设备 B 运行 TF 2.6，模型引用了 TF 2.5 才有的算子
-
-解法：
-  fl_plan_v2.3 = graph_transform(fl_plan_default, target_version="2.3")
-  fl_plan_v2.5 = fl_plan_default
-
-部署检查（必须全过才能上线）：
-  1. 代码已通过 peer review
-  2. fl_plan 在模拟器上通过 unit test
-  3. 资源消耗在安全范围内（RAM / CPU）
-  4. 每个声明支持的 TF 版本都在 Android 模拟器上通过测试
-```
-
-**逐部分解释**：
-- 约每 3 个月出现一次不兼容算子变更，系统通过图变换自动兜底
-- 服务器根据设备上报的 TF 版本号下发对应版本化 plan
-- 版本化 plan 与默认 plan 必须语义等价，通过同一套测试
+- Phase 2 里的"碎片"来自 Shamir 秘密分享：把密钥切成 n 份，任意 k 份可还原，少于 k 份则无法还原——这样设计保证了抗掉线
+- 若掉线设备数 > 阈值（可配置的 `min_fraction`），无法收集足够碎片，本轮失败，Coordinator 重启
+- 这就是为什么 Secure Aggregation **必须同步**：异步模式下无法维持两两 mask 对消的数学关系
 
 ## 踩过的坑
 
@@ -124,10 +129,11 @@ Gboard 用 FL 训练了一个含 140 万参数的 RNN 做次词预测，历经 3
 
 ## 历史小故事（可跳过）
 
-- **2017 年**：McMahan 等人发表 FedAvg 算法，提出"设备本地跑多步 SGD、只上传模型增量"，首次让分布式训练在高延迟低带宽网络上可行。
-- **2017 年**：Bonawitz 等人同年发表 Secure Aggregation 协议（CCS 2017），解决"服务器如何在看不到单台梯度的情况下聚合所有梯度"。
-- **2019 年**：本文在 SysML（现 MLSys）发表，是前两篇论文的工程结合：将 FedAvg + Secure Aggregation 真正在 1000 万台 Android 设备上跑通。同年 Kairouz 等人发布长达 100 页的综述"Advances and Open Problems in FL"，与本文共同定义了 FL 领域。
-- **2020 年后**：本文描述的"Federated Computation"愿景延伸为 Federated Analytics，允许在不上传原始日志的情况下统计设备端指标，Google 将其用于 Chrome 和 Android 的匿名遥测。
+- **2017 年**：McMahan 等人在 Google 发表 FedAvg（[[mcmahan-fedavg-2017]]），提出"在设备上跑多步 SGD 再聚合"的算法框架，但没有系统层实现细节。
+- **2017 年（同年）**：Bonawitz 等人发表 Secure Aggregation 协议，解决了"服务器如何在不看单设备更新的情况下聚合所有设备"的密码学问题——这是本文系统集成的核心安全原语。
+- **2018 年**：Google 把 DP-SGD（[[abadi-dpsgd-2016]]）集成进 FL pipeline，形成"SecAgg + DP"双层保护架构，此后逐步在 Gboard 等产品上线（确切时间线未在论文中公开）。
+- **2019 年**：本文在 MLSys 2019 发表，首次公开 Google 生产级 FL 系统的完整架构——包括 Coordinator/Selector/MasterAggregator 的分层设计、Pace Steering 流控、多租户支持，以及开放问题（选择偏差、数据投毒、通信压缩）。
+- **2019 年（同年）**：[[kairouz-advances-fl-2019]] 发布，梳理联邦学习全领域开放问题，被视为 FL 学术方向的路线图，大量引用本文的工程实践。
 
 ## 学到什么
 
