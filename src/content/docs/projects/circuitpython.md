@@ -1,5 +1,5 @@
 ---
-title: CircuitPython — 保存即重载的微控制器 Python 运行时
+title: CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 来源: 'https://github.com/adafruit/circuitpython'
 日期: 2026-06-06
 分类: 操作系统
@@ -9,210 +9,164 @@ title: CircuitPython — 保存即重载的微控制器 Python 运行时
 
 ## 是什么
 
-CircuitPython 是 **Adafruit 定制的面向微控制器的 Python 运行时**，最大卖点是"把开发板插入 USB → 电脑出现一个叫 CIRCUITPY 的磁盘 → 修改 `code.py` → 保存 → 代码立刻重跑"，全程不需要安装任何工具链。
+CircuitPython 是 Adafruit 基于 MicroPython 定制的 Python 运行时，专为廉价微控制器设计。你插上 USB，电脑出现一个叫 **CIRCUITPY** 的磁盘，打开里面的 `code.py`，改一行，保存——代码立刻重新跑。不需要 IDE、不需要烧录工具链、不需要学 Makefile。
 
-日常类比：传统嵌入式开发像修古董车——要先买专用工具箱、学几种驾驶证、等待下载固件，才能让引擎点火；CircuitPython 像玩乐高——拆开盒子就能拼，改一块就立刻看结果。
+这有点像把 Python REPL 刻进了 U 盘：板子本身就是"开发环境"，插哪台电脑都能工作。
 
-具体说，你拿到一块支持 CircuitPython 的开发板（比如 Adafruit Feather M4），插入 USB 后：
-
-1. 电脑认出一个名为 `CIRCUITPY` 的 U 盘
-2. 打开里面的 `code.py`，用任意文本编辑器写 Python 代码
-3. 按 Ctrl+S 保存
-4. 开发板上的 `supervisor` 模块检测到文件写入 → 自动重启 Python VM → 新代码运行
-
-**这个"保存即重载"的交互范式**让完全没有嵌入式经验的人，也能在几分钟内让传感器、LED、蜂鸣器响应 Python 代码。
+核心设计决定：代码保存即重载（autoreload）。`supervisor` 模块监听 CIRCUITPY 分区的文件写入事件，一检测到改动就把 Python VM 整体重初始化再跑一遍——没有"打包""上传"这些步骤，反馈闭环缩到 1 秒以内。Adafruit 还配套了 300+ 个开箱即用的硬件驱动库，覆盖 LED 灯带、温湿度传感器、e-ink 屏、蓝牙等，从零到点灯平均不超过 5 分钟。
 
 ## 为什么重要
 
-不理解 CircuitPython，下面这些事都没法解释：
+不理解 CircuitPython，下面这些事没法解释：
 
-- 为什么 Adafruit 的入门教程可以告诉初学者"直接保存文件就行"——背后是 FAT 文件系统写入监听 + VM 热重载这套机制在支撑
-- 为什么 CircuitPython 的模块叫 `os`、`time`、`random` 而不是自创命名——它故意与 CPython 标准库对齐，让 PC 上写的代码几乎不用改就能放到板子上跑
-- 为什么"微控制器 + Python"不能直接用标准 Python——板子只有几十 KB RAM，需要定制裁剪版运行时 + 预编译字节码才能塞进去
-- 为什么 BLE Workflow（蓝牙无线工作流）能让没有 USB 端口的手机也能修改开发板代码——CircuitPython 9.0 把"USB 磁盘"的交互范式搬进了蓝牙协议
+- 为什么同一份 MicroPython 代码在 CircuitPython 上跑会报 `AttributeError: 'module' object has no attribute 'Thread'`——CircuitPython 刻意禁用了 threading
+- 为什么 `code.py` 跑完再按 REPL 看不到之前定义的变量——每次 reload VM 都从零开始
+- 为什么 `import` 一个稍大的库会触发 `MemoryError`——微控制器只有几十 KB RAM，全功能 .py 文件放不下
+- 为什么官方推荐 `.mpy` 文件而不是 `.py`——字节码体积小 10 倍，能装进去
 
 ## 核心要点
 
-CircuitPython 的核心设计可以拆成 **三块**：
+CircuitPython 执行模型可以拆成 **三层文件**：
 
-1. **USB 自动挂载 + 文件保存即重载**：开发板枚举为 USB CDC（串口调试）+ USB MSC（大容量存储）双设备。`supervisor` 模块在主循环里轮询 FAT 文件系统写标志位，检测到 `code.py` 被修改后立即软复位 Python VM。这就是"不用按任何按钮"的秘密——整个过程在硬件层面发生，不需要任何 IDE 插件。
+1. **`boot.py`**（上电只跑一次）：配置 USB 设备描述符，决定板子挂载为 CIRCUITPY 磁盘还是 HID 键盘还是 MIDI 设备。这一步 serial 不可用，输出写到 `boot_out.txt`。类比：像是设置"进门规矩"，等门开了就不能再改了。
 
-2. **分层执行模型**：CircuitPython 区分三种入口文件：`boot.py`（上电一次，用来配置 USB 设备、读写权限）、`code.py`（主逻辑，保存即重载）、`safemode.py`（崩溃或 Safe Mode 时运行，用来报错提示）。类比：`boot.py` 是厨房装修（只做一次），`code.py` 是每天做菜（反复改），`safemode.py` 是厨房着火时的灭火器。
+2. **`code.py`**（每次 reload 都重跑）：用户主逻辑。跑完后 VM 和硬件都重初始化——pin 脚回到初始状态，变量全清。想"保留状态跨 reload"只有写文件或用 `microcontroller.nvm`（非易失内存）这两条路。
 
-3. **300+ 官方硬件驱动库（CircuitPython Libraries）**：Adafruit 维护超过 300 个开箱即用的库，覆盖温湿度传感器、OLED 显示屏、NeoPixel LED、电容触摸、电机驱动等几乎所有常见硬件外设。这些库都以 `.mpy` 预编译字节码分发，可直接复制到 `CIRCUITPY/lib/` 目录使用，不需要 `pip install`，也不需要构建环境。
+3. **`safemode.py`**（崩溃后触发）：如果 `code.py` 导致硬故障或掉电，下次上电进入安全模式，跑 `safemode.py` 决定是自动重启还是休眠等待充电。这让板子在出错时仍然可控。
+
+三层加起来：上电 → boot.py → 等 workflow（USB/BLE/WiFi 挂载）→ 循环跑 code.py。每层职责清晰，debug 范围缩小 3 倍。
 
 ## 实践案例
 
-### 案例 1：NeoPixel LED 灯带控制
+### 案例 1：点亮 NeoPixel LED 灯带
 
-用 Adafruit Feather M4 + 8 颗 NeoPixel 灯带：
+NeoPixel 是 WS2812B 协议的 LED 灯条，每颗灯独立可控 RGB。
 
 ```python
 import board
 import neopixel
-import time
 
-pixels = neopixel.NeoPixel(board.D6, 8, brightness=0.3)
+# board.NEOPIXEL 是板载灯的 pin 脚；10 是灯数；brightness 0.2 避免刺眼
+pixels = neopixel.NeoPixel(board.NEOPIXEL, 10, brightness=0.2)
 
-while True:
-    pixels.fill((255, 0, 0))   # 全红
-    time.sleep(0.5)
-    pixels.fill((0, 255, 0))   # 全绿
-    time.sleep(0.5)
-    pixels.fill((0, 0, 255))   # 全蓝
-    time.sleep(0.5)
+# 把所有灯设成红色 (R, G, B)
+pixels.fill((255, 0, 0))
 ```
 
-把这段代码保存到 `code.py` 后：
+保存后板子立刻亮红光，不需要任何额外步骤。`neopixel` 库处理了时序精确的位拆解，你只管传 RGB 元组。改成 `(0, 255, 0)` 再保存——绿光。这就是 CircuitPython 的「代码→现实」闭环，改一行 1 秒内有物理反馈。
 
-- 灯带立即开始红绿蓝交替闪烁
-- 修改任意颜色值 → 保存 → 灯光立刻变化，**零延迟看到结果**
-- `board.D6` 是引脚名，CircuitPython 把硬件引脚包装成 Python 常量，不需要记忆 GPIO 编号
+### 案例 2：用 async/await 同时读传感器 + 刷新显示
 
-这个案例的价值在于展示了"代码 → 物理反馈"的完整闭环，无需 IDE、无需编译、无需烧录步骤。
-
-### 案例 2：电容触摸钢琴
-
-用导电胶带贴在纸板上做钢琴键，不需要焊接：
-
-```python
-import board
-import touchio
-import audioio
-import audiocore
-
-# 定义 8 个触摸引脚
-touch_pins = [
-    touchio.TouchIn(board.A1),
-    touchio.TouchIn(board.A2),
-    touchio.TouchIn(board.A3),
-    touchio.TouchIn(board.A4),
-]
-
-while True:
-    for i, touch in enumerate(touch_pins):
-        if touch.value:
-            print(f"Key {i} touched!")
-            # 这里可接音频播放库播放对应音符
-```
-
-**逐部分解释**：
-
-- `touchio.TouchIn` 把引脚变成电容触摸传感器，不需要任何电阻或外部硬件
-- `touch.value` 直接返回 `True/False`，碰到胶带就触发
-- 导电胶带 → 引脚 → Python 对象，整条链路 3 步搞定
-- 加上 `audioio` 库可以播放 WAV 音频，做出能发声的乐器原型
-
-这个案例展示了 CircuitPython 最核心的设计哲学：**把硬件外设包装成熟悉的 Python 对象**，降低从"想法"到"原型"之间的门槛。
-
-### 案例 3：async/await 协作式多任务
-
-在单个 RP2040 芯片上同时读温湿度传感器 + 刷新 e-ink 屏幕：
+微控制器没有多线程，但 CircuitPython 支持 `async/await` 协作式多任务：
 
 ```python
 import asyncio
 import board
-import adafruit_sht4x
-import adafruit_il0373
+import adafruit_ahtx0
+import adafruit_display_text.label as label
 
-sensor = adafruit_sht4x.SHT4x(board.I2C())
-display = adafruit_il0373.IL0373(...)
+sensor = adafruit_ahtx0.AHTx0(board.I2C())
 
 async def read_sensor():
     while True:
-        temp, humidity = sensor.measurements
-        print(f"{temp:.1f}°C  {humidity:.1f}%")
-        await asyncio.sleep(2)
+        temp = sensor.temperature
+        print(f"温度: {temp:.1f}°C")
+        await asyncio.sleep(2)   # 挂起 2 秒，让其他 task 跑
 
-async def refresh_display():
+async def blink_led():
+    import digitalio
+    led = digitalio.DigitalInOut(board.LED)
+    led.direction = digitalio.Direction.OUTPUT
     while True:
-        # 刷新 e-ink 屏（慢操作，约 2 秒）
-        display.refresh()
-        await asyncio.sleep(30)
+        led.value = not led.value
+        await asyncio.sleep(0.5)
 
-async def main():
-    await asyncio.gather(
-        read_sensor(),
-        refresh_display(),
-    )
-
-asyncio.run(main())
+asyncio.run(asyncio.gather(read_sensor(), blink_led()))
 ```
 
-**关键点**：
+**逐步拆解**：`asyncio.gather` 把两个协程合并成"并发"——每当一个 `await asyncio.sleep(...)` 挂起，另一个立刻接着跑。没有线程竞争，没有锁，可预测。这是 CircuitPython 推荐的单板"并发"模式。
 
-- CircuitPython 禁用了 `threading`，用协作式多任务（`asyncio`）代替
-- `await asyncio.sleep(N)` 挂起当前任务 → 让出 CPU → 其他任务运行，所有切换在用户代码层发生
-- 相比 threading，不会有锁竞争、不会有不可预测的抢占，适合资源极其有限的微控制器
-- 把 MicroPython 的线程代码直接搬过来会**静默失败**，这是最常见的踩坑
+### 案例 3：把导电胶带变成钢琴键
+
+CircuitPython 内置 `touchio` 模块，可以把任意导电物体（铝箔、导电漆、导电布）当电容触摸传感器：
+
+```python
+import board
+import touchio
+import audiocore
+import audiopwmio
+
+# 把三段铝箔胶带贴到纸板上，连接到 A0/A1/A2
+keys = [touchio.TouchIn(getattr(board, f"A{i}")) for i in range(3)]
+notes = ["do.wav", "re.wav", "mi.wav"]  # 预先录好的音频文件
+
+audio = audiopwmio.PWMAudioOut(board.A3)
+
+while True:
+    for i, key in enumerate(keys):
+        if key.value:
+            wave = audiocore.WaveFile(open(notes[i], "rb"))
+            audio.play(wave)
+```
+
+不需要焊接，不需要额外芯片，胶带就是钢琴键。这个例子展示了 CircuitPython"硬件抽象层统一"的优势——`touchio`/`audiocore`/`audiopwmio` 背后是 C 写的驱动，你在 Python 层感知不到差异。
 
 ## 踩过的坑
 
-1. **REPL 与 `code.py` 状态完全隔离**：每次 `code.py` 跑完，Python VM 重初始化，在串口 REPL 里读不到 `code.py` 定义的变量。初学者常以为"变量消失了"，实际是两个独立的执行环境。
+1. **REPL 看不到 code.py 的变量**：`code.py` 跑完 VM 整体重初始化，REPL 是全新环境。想保留数据只能写文件（`open("state.json","w")`）或用 `microcontroller.nvm`，别指望全局变量穿越 reload。
 
-2. **禁用 `threading` 导致 MicroPython 代码不兼容**：CircuitPython 去掉了 `_thread` 模块和硬件中断回调，换来更易预测的执行模型。把 MicroPython 的 `_thread.start_new_thread(...)` 搬过来会直接报 `ImportError`，且没有任何警告提示。
+2. **threading 静默失效**：从 MicroPython 或 CPython 搬来的 `threading.Thread(...)` 代码，在 CircuitPython 里导入就报 `ImportError`；换成 `asyncio` 协作式任务，心智模型完全不同，需要重写。
 
-3. **USB 弹出时机导致文件系统损坏**：在 `CIRCUITPY` 磁盘上写文件后**立即拔线**，可能导致 FAT 文件系统损坏（因为写操作尚未 flush）。需等 `code.py` 自动重载完成（板子上的 LED 恢复常亮）再拔线。低版本固件对此没有任何警告。
+3. **FAT 文件系统损坏**：保存 `code.py` 后 autoreload 触发的那一秒内强行拔线，CIRCUITPY 分区可能变成只读（Windows 会弹"需要格式化"对话框）。解决：等状态 LED 亮绿灯（code 跑完）再拔，或者直接在 `code.py` 里处理好退出逻辑。
 
-4. **内存限制触发 `MemoryError`**：微控制器只有几十 KB RAM，`import` 大型库（如完整的 USB-HID 库）可能直接报 `MemoryError`。解决方法是用 `mpy-cross` 工具把 `.py` 预编译成 `.mpy` 字节码（更紧凑），再放到 `lib/` 目录，可节省 40-60% 内存占用。
+4. **MemoryError 来自大 .py 文件**：CircuitPython 在运行时编译 .py 到字节码，编译过程本身也耗 RAM。解决方案：用 `mpy-cross` 预编译成 `.mpy` 放到 `lib/` 文件夹，体积小 10 倍，import 速度也快 3 倍。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-
-- 零基础的硬件入门学习——从"代码 → 物理反馈"闭环中建立直觉
-- 快速硬件原型——有想法到能演示通常只需几十分钟
-- 教育场景：中学 / 大学创客课，不需要讲解工具链和编译流程
-- 需要大量现成传感器驱动的项目（官方库 300+，覆盖大多数常见外设）
-- 需要 BLE / WiFi 无线工作流的无 USB 场景（CircuitPython 9.0+）
+- 教学和原型：从零到「灯亮」5 分钟，无需工具链
+- 硬件驱动调试：改一行 Python 立刻看效果，比重烧固件快 10 倍
+- 低并发传感器采集：单任务或 async 协作式多任务，逻辑简单可预测
+- Adafruit 生态板（Feather、ItsyBitsy、CircuitPlayground、QT Py）
 
 **不适用**：
-
-- 对实时性有严格要求的控制系统（协作式调度有延迟抖动，不能保证硬实时）
-- 需要多线程并发的场景（`threading` 模块被禁用）
-- 超低功耗设备（CircuitPython 运行时开销比裸机 C 高一个数量级）
-- 大型复杂固件（内存太小，超过几十 KB 的程序需要仔细优化）
-- 生产级产品固件（Adafruit 自己建议复杂产品用 C/C++ 重写）
+- 实时性要求严格的场景（电机 PID 控制、高频中断）——CircuitPython 禁用 interrupt，GC 暂停不可控
+- 大量数值计算——RAM 只有几十 KB，NumPy 不可用，换 MicroPython 的 `ulab`
+- 需要线程并发的场景——只有协作式 async，不是抢占式多线程
+- 生产部署（非教育用途）——没有 OTA 更新机制、没有 watchdog 保障
 
 ## 历史小故事（可跳过）
 
-- **2014 年**：Damien George 发布 MicroPython，证明 Python 可以在微控制器上运行，开创了"MCU + Python"这条路
-- **2017 年**：Adafruit 员工 Scott Shawcroft 从 MicroPython 0.10 fork 出 CircuitPython，目标是让 Circuit Playground Express 这块板子"买来就能用 Python"，去掉 threading、加入 USB 自动挂载
-- **2019 年**：CircuitPython 4.0 扩展到 atmel-samd 之外的多个平台（ESP32S2、nRF52840），官方库数量突破 100 个
-- **2022 年**：8.0 引入 WiFi Workflow，板子接入同一局域网后可以通过浏览器直接编辑 `code.py`，消除了对 USB 线的依赖
-- **2023 年**：9.0 引入 BLE Workflow + USB Host 支持，进化成多通道无线工作流运行时，Discord 社区活跃用户超过 5 万人
+- **2017 年**：Adafruit 工程师 Scott Shawcroft 从 MicroPython 0.10 fork，最初目标是让 Circuit Playground Express（ATSAMD21 板）「买来即能写 Python」，核心突破是把 USB 大容量存储设备与自动重载结合在一起。
+- **2019 年（v4）**：引入 `asyncio` 支持，解决了"单线程如何同时做两件事"的教学难题。
+- **2021 年（v7）**：引入 BLE Workflow，无 USB 接口的蓝牙板子可以通过手机 App `code.circuitpython.org` 直接编辑代码，彻底去掉 USB 线。
+- **2022 年（v8）**：引入 WiFi Workflow，ESP32-S2/S3 系列可以通过局域网 Web 界面编辑文件，真正"无线编程"。
+
+从一块板子的专属运行时，演变成「多通道无线工作流」平台——每一步都保持零工具链安装的核心承诺不变。
 
 ## 学到什么
 
-1. **工具链是最大的门槛，消除它就能打开一个全新的用户群**——CircuitPython 用"U 盘 + 文本编辑器"替代了 IDE + 工具链，让嵌入式开发的起点降到了零
-2. **与标准库对齐比性能优先更重要（在教育场景里）**——模块名与 CPython 保持一致，让初学者在 PC 上学到的知识可以直接迁移到硬件上
-3. **裁剪不是妥协，是设计选择**——去掉 threading 换来可预测的执行模型，在资源受限的硬件上这是正确的取舍
-4. **官方维护的"胶水层"（驱动库）往往比运行时本身更重要**——300+ 官方库意味着用户很少需要自己写底层驱动，这才是生态真正的护城河
+1. **去掉摩擦才是教育设计**——「插上 USB 即可编程」不是技术噱头，而是刻意砍掉了"装驱动/烧录/连接 COM 口"三道门槛，降低了 3 倍入门难度
+2. **受限换可预测**——禁用 threading 和 interrupt 看似退步，实则让初学者永远不会踩竞态条件；生产工具和教学工具的优化目标不同
+3. **文件系统即 API**——用 CIRCUITPY 磁盘做"上传通道"，把编辑器、终端、IDE 全部绕过，任何能写文件的工具都能部署代码
+4. **分层执行（boot→code→safemode）比单一入口更健壮**——每层职责清晰，出问题时能快速定位是"上电配置错"还是"用户逻辑错"
 
 ## 延伸阅读
 
-- 官方文档：[circuitpython.org/libraries](https://circuitpython.org/libraries)（所有官方库列表 + 安装方法）
-- 视频教程：[Adafruit — CircuitPython School](https://www.youtube.com/playlist?list=PLjF7R1fz_OOWFqZfqW9jlvQSIUmwn9lWr)（系列教程，从点灯到 BLE 全覆盖）
-- 固件下载：[circuitpython.org/downloads](https://circuitpython.org/downloads)（按板子型号找对应固件）
-- 工具：[mpy-cross](https://pypi.org/project/mpy-cross/)（`.py` → `.mpy` 预编译工具，节省内存）
-- [[arduino-cli]] —— 同是嵌入式开发工具，但走 C++ 编译路线
-- [[llvm]] —— `mpy-cross` 字节码编译背后依赖的编译基础设施思路
+- 官方入门指南：[Welcome to CircuitPython](https://learn.adafruit.com/welcome-to-circuitpython)（建议作为第一本教程）
+- 硬件驱动库总览：[CircuitPython Libraries](https://circuitpython.org/libraries)（300+ 驱动，按品类分组）
+- 与 MicroPython 差异对照：[Differences from MicroPython](https://github.com/adafruit/circuitpython#differences-from-micropython)
+- [[arduino-cli]] —— 嵌入式开发的另一条路：C++ + 命令行工具链
+- [[wasmtime]] —— 同样聚焦「运行时安全隔离」，但目标是服务端 WASM
+- [[llvm]] —— mpy-cross 字节码编译器的底层工具链基础
 
 ## 关联
 
-- [[arduino-cli]] —— 同类嵌入式开发工具链，CircuitPython 的 Python 方案 vs Arduino 的 C++ 方案
-- [[llvm]] —— 编译器基础设施，`mpy-cross` 字节码优化背后的相似思路
-- [[wasmtime]] —— 同为"把运行时嵌入受限环境"的实践，一个面向微控制器，一个面向 WebAssembly 沙箱
-- [[nix]] —— 同样致力于消除"环境配置门槛"，方向不同但设计哲学共鸣
-- [[dspy]] —— 同样试图让非专家用声明式接口驱动复杂系统（AI vs 硬件外设）
+- [[arduino-cli]] —— 同为面向创客的嵌入式开发工具，Arduino 走 C++ 工具链路线，CircuitPython 走「磁盘即接口」路线
+- [[wasmtime]] —— 都是「把某种高级语言运行时塞进受限环境」的思路，一个面向微控制器，一个面向服务端沙箱
+- [[llvm]] —— mpy-cross 把 .py 预编译成 .mpy 字节码，背后依赖 LLVM 工具链
+- [[pyth]] —— CircuitPython 是 CPython 的精简子集，模块命名故意与 CPython 对齐，代码可双向移植
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
-- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
-- [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
-
