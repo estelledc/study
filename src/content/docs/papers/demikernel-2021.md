@@ -11,7 +11,9 @@ title: Demikernel — 微秒级数据中心的 datapath OS 架构
 
 Demikernel 是一套**把不同 kernel-bypass I/O 硬件统一成同一套接口的 datapath OS 库**。日常类比：就像旅行用的万能电源转接头——不管是英式插座、美式插座还是欧式插座，你的设备只插一个接口，转接头在中间帮你搞定一切。
 
-在微秒（µs）级别的数据中心里，Linux 内核的 I/O 路径太慢了：一次 `read()` / `write()` 系统调用加上上下文切换，轻轻松松耗掉 5–50µs，把整个 RPC 延迟拉高到毫秒级。RDMA 和 DPDK 等 kernel-bypass 技术可以绕过内核、把延迟压到 1–10µs，但它们各有私有 API，DPDK 写的代码换 RDMA 网卡就得重写。
+在微秒（µs，1µs = 百万分之一秒）级别的数据中心里，Linux 内核的 I/O 路径太慢了：一次 `read()` / `write()` 系统调用加上上下文切换（即操作系统暂停当前程序、切换到另一个程序再切回来），轻轻松松耗掉 5–50µs，把整个 RPC 延迟拉高到毫秒级。
+
+**RDMA**（远程直接内存访问：一台机器直接读写另一台机器的内存，不经过对方的 CPU 或操作系统）和 **DPDK**（Data Plane Development Kit：在用户态直接操控网卡驱动，完全绕过 Linux 内核的网络协议栈）等 kernel-bypass 技术可以把延迟压到 1–10µs，但它们各有私有 API，DPDK 写的代码换 RDMA 网卡就得全部重写。**io_uring** 则是 Linux 5.1 引入的高性能异步 I/O 接口，虽然还经过内核，但比传统 `read`/`write` 快得多。
 
 Demikernel 的解法：在用户态实现多套 **LibOS**（Catnip = DPDK、Catnap = io_uring、Catpowder = raw sockets、Catcollar = Linux TCP），全部暴露同一组 `demi_*` 函数。应用只要链接不同的 LibOS 动态库，就能在不改一行代码的情况下切换底层 I/O 硬件。
 
@@ -46,25 +48,28 @@ Demikernel 的三个设计支柱：
 
 ### 案例 1：把现有 Redis 迁移到 kernel-bypass
 
-Redis 是一个高度 I/O-bound 的 key-value store，原始版本用 Linux TCP，尾延迟通常在 200–500µs。
+Redis 是一个高度 I/O-bound 的 key-value store，原始版本用 Linux TCP，尾延迟受内核 I/O 路径拖慢。论文用 Redis 作为真实应用的迁移案例之一。
 
 迁移步骤：
 1. 将网络调用（`read` / `write`）替换为 `demi_push` / `demi_pop`
 2. 把主事件循环改为调用 `demi_wait_any` 轮询多个队列令牌
 3. 编译时链接 `catnip.so`（DPDK LibOS）
 
+下方为示意代码（接口细节以 [Demikernel GitHub](https://github.com/microsoft/demikernel) 实际 API 为准）：
+
 ```c
-// 原来
+// 原来的阻塞读
 ssize_t n = read(fd, buf, len);
 
-// 迁移后
+// 迁移后：异步 push/pop + wait
 demi_qresult_t qr;
-demi_sgarray_t sga = demi_sgaalloc(len);
+demi_sgarray_t sga = demi_sgaalloc(1, len);  // 分配 scatter-gather 内存
 demi_push(qd, &sga, &token);
-demi_wait(&qr, token, NULL);  // 事件循环轮询
+demi_wait(&qr, token, NULL);  // 非阻塞轮询，直到操作完成
+demi_sgafree(sga);            // 发送完成后必须手动释放
 ```
 
-实验结果：同一台机器、同一份 Redis 业务逻辑，迁移后 99th 百分位延迟从 ~300µs 降到 ~30µs，吞吐提升约 3x。应用代码改动只有几百行（约 10% 的 I/O 路径）。
+实验结果：论文报告迁移后延迟与手写 DPDK 代码相当（端到端 RPC P99 在 20–40µs 量级），相比 Linux TCP 有数倍改善。应用代码改动集中在 I/O 路径，业务逻辑不变。
 
 ### 案例 2：跨 I/O 硬件的 apples-to-apples 延迟对比
 
