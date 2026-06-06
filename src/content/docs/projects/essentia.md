@@ -3,7 +3,6 @@ title: Essentia — 音乐信息检索工具箱
 description: UPF MTG 出品 C++/Python 双层 API；节奏/调性/风格特征提取
 来源: 'https://github.com/MTG/essentia'
 日期: 2026-06-06
-分类_原始: 媒体
 分类: 通信
 子分类: 音视频媒体
 难度: 中级
@@ -150,7 +149,16 @@ for path in glob.glob('dataset/*.wav'):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aubio]] —— aubio — 实时音频事件检测库
 - [[audacity]] —— Audacity — 开源音频编辑器
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
+- [[lame]] —— LAME — MP3 编码开源参考实现
+- [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[lmms]] —— LMMS — Linux 多媒体工作站
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[shotcut]] —— Shotcut — 基于 MLT 的开源非线性编辑器
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
 - [[supercollider]] —— SuperCollider — 实时音频合成环境
 

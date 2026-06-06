@@ -149,5 +149,10 @@ nats consumer add ORDERS shipper --filter "orders.ship" --ack explicit
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[etcd]] —— etcd — 分布式键值数据库
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
+- [[pulsar]] —— Apache Pulsar — 云原生消息队列
+- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
+- [[redis]] —— Redis — 内存键值数据库
 

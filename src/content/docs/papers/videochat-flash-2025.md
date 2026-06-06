@@ -148,10 +148,19 @@ Q2 = "needle 画面里的人在做什么？"  # 需要 Q1 找对才能答
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[timechat-2024]] —— TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
 - [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
 

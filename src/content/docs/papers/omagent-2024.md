@@ -149,5 +149,14 @@ Step 4 Conclusive Synthesis 合并子答案
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 

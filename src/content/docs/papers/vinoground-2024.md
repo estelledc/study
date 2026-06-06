@@ -150,7 +150,19 @@ for pair in vinoground_pairs:
 
 - [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
 - [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
 - [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vtimellm-2023]] —— VTimeLLM — 让 Video LLM 学会标出事件起止时间
 - [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
 

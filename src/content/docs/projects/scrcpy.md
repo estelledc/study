@@ -119,4 +119,9 @@ cd scrcpy
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+

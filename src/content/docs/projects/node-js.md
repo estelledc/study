@@ -3,7 +3,6 @@ title: Node.js — 服务端 JS 运行时之父
 description: V8 上的 JavaScript 服务端运行时，事件循环 + libuv
 来源: 'https://github.com/nodejs/node'
 日期: 2026-06-06
-分类_原始: 编程语言
 分类: 编译器
 子分类: 语言运行时
 难度: 中级
@@ -120,3 +119,4 @@ cd node-js
 
 - [[volta]] —— Volta — cd 进项目就自动换 Node 版本的工具链管理器
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
+

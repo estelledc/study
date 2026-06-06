@@ -118,4 +118,7 @@ cd lmms
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ardour]] —— Ardour — 专业级 DAW
+- [[audacity]] —— Audacity — 开源音频编辑器
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
 - [[supercollider]] —— SuperCollider — 实时音频合成环境
+

@@ -156,5 +156,14 @@ VideoChatGPT-Bench 生成式五维均分:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
+- [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
+- [[timechat-2024]] —— TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
+- [[vit]] —— ViT — Vision Transformer
 

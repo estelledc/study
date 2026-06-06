@@ -150,5 +150,7 @@ CI 里把 `./storage` 当 artifact 或挂对象存储，避免每次重建 embed
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[haystack]] —— Haystack — 企业 NLP / RAG 流水线
 - [[llamaindex]] —— LlamaIndex — LLM 数据框架
+- [[qdrant]] —— Qdrant — Rust 向量数据库
 

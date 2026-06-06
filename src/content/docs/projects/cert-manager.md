@@ -157,6 +157,7 @@ cert-manager 看到 annotation，自动建 Certificate → 找 ClusterIssuer →
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[chaos-mesh]] —— Chaos Mesh — K8s 原生混沌工程平台
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

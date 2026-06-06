@@ -150,12 +150,24 @@ print(output)
 
 - [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
 - [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
 - [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
 - [[omnidirectional-mllm-2025]] —— 全景空间推理 — MLLM 准备好面对 360° 了吗
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 - [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
+- [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
 - [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
 

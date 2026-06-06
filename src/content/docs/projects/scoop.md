@@ -175,5 +175,6 @@ manifest 就是一个 JSON：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 

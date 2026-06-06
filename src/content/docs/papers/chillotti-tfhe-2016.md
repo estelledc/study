@@ -108,4 +108,6 @@ provenance: pipeline-v3
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
+

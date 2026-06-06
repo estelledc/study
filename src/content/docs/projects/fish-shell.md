@@ -148,6 +148,10 @@ starship init fish | source
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[fzf]] —— fzf — 命令行模糊查找
 - [[gum]] —— gum — 把 TUI 组件搬进 shell 脚本
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
+- [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell
 

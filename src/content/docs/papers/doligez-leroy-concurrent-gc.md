@@ -149,5 +149,7 @@ JS V8 Orinoco       → 并发标记，主线程 barrier
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

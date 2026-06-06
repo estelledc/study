@@ -117,4 +117,6 @@ cd shaka-packager
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[shaka-player]] —— Shaka Player — Google 自适应流媒体播放器
+

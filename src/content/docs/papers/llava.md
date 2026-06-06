@@ -184,6 +184,7 @@ class MinimalLLaVA(nn.Module):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
+- [[attention]] —— Attention Is All You Need
 - [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级

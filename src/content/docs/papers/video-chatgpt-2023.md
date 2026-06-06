@@ -149,10 +149,19 @@ Video-ChatGPT 在 Temporal / Consistency 上优于同期 VideoChat，
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
 - [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
 - [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 - [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
 - [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
 

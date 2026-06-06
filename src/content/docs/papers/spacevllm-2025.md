@@ -160,7 +160,12 @@ SpaceVLLM-7B vs CG-STVG（专用 DETR 类）：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[omnistvg-2025]] —— OmniSTVG — 按句子把视频里所有相关物体都框出来
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
 - [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
 - [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
+- [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
 

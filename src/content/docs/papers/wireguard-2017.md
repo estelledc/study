@@ -111,3 +111,6 @@ provenance: pipeline-v3
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bos-kyber-2018]] —— CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
+- [[ice-rfc-5245]] —— Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal
+- [[tor-2004]] —— Tor 洋葱路由 — 让你的网络请求穿上三层马甲
+

@@ -150,9 +150,20 @@ python -m lmms_eval \
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[llmvs-2025]] —— LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
 - [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
 - [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
 - [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 

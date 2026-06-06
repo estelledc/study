@@ -111,3 +111,4 @@ provenance: pipeline-v3
 - [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
 - [[bunz-bulletproofs-2018]] —— Bulletproofs: Short Proofs for Confidential Transactions and More
 - [[gabizon-plonk-2019]] —— PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge
+

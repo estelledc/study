@@ -170,8 +170,15 @@ python -m lmms_eval \
 
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
 - [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 

@@ -155,16 +155,24 @@ Highlight Det.    HL-mAP           按 saliency 排序后的平均精度
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[hawkeye-2024]] —— HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
 - [[hour-llava-2025]] —— Hour-LLaVA — 记忆增强，让 LLaVA 读懂一小时视频
+- [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mlvtg-2025]] —— MLVTG — MambaAligner + 冻结 LLM 提纯的多模态视频时序定位
 - [[omnistvg-2025]] —— OmniSTVG — 按句子把视频里所有相关物体都框出来
 - [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
 - [[ta-stvg-2025]] —— TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[timemarker-2024]] —— TimeMarker — 时间分隔符 + 任意长度采帧的视频定位大模型
 - [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
 - [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
 - [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 - [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
 - [[vslnet-2020]] —— VSLNet — 用 span-based QA 做自然语言视频定位
 - [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻

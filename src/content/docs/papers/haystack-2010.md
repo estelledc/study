@@ -153,6 +153,8 @@ Haystack 对删除采用逻辑删除 + 后台 compaction，类似日志结构存
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[haystack]] —— Haystack — 企业 NLP / RAG 流水线
 - [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
+- [[milvus]] —— Milvus — 开源向量数据库
 - [[milvus-2021]] —— Milvus — 为向量检索而生的数据库
 

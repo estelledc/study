@@ -149,11 +149,14 @@ except streamlink.exceptions.NoPluginError:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[hls.js]] —— hls.js — 浏览器里播放 HLS 直播
 - [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[nginx]] —— nginx — 高性能 Web 服务器
 - [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
 - [[obs-studio]] —— OBS Studio — 开源直播录制与推流
 - [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
 - [[shaka-player]] —— Shaka Player — Google 自适应流媒体播放器
 - [[video.js]] —— Video.js — Web 视频播放器框架
+- [[webrtc-rs]] —— webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion
 

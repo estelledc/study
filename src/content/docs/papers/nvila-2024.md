@@ -148,6 +148,12 @@ cost_ratio = raw_tokens / nvila_tokens    # ~500× 视觉侧差距
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
+- [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
 - [[minicpm-v-2024]] —— MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型
 - [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 

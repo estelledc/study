@@ -140,10 +140,14 @@ Gentry → BGV/BFV（整数）→ CKKS（近似浮点 ML 推理）。
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
 - [[bohme-aflfast-2016]] —— AFLFast — 灰盒 Fuzz 的马尔可夫调度
 - [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
 - [[cadar-klee-2008]] —— KLEE — 符号执行自动生成高覆盖测试
+- [[cheon-ckks-2017]] —— Homomorphic Encryption for Arithmetic of Approximate Numbers
 - [[chillotti-tfhe-2016]] —— Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds
 - [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[fan-vercauteren-bfv-2012]] —— Somewhat Practical Fully Homomorphic Encryption
+- [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography
 

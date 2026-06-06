@@ -3,7 +3,6 @@ title: OpenCV — 开源计算机视觉库与跨平台图像视频处理
 description: cv::Mat 核心数据结构；VideoCapture 读流、图像滤波、特征检测与 DNN 模块，多媒体与 ML 管线的经典 CV 底座
 来源: 'https://github.com/opencv/opencv'
 日期: 2026-06-05
-分类_原始: 多媒体
 分类: 通信
 子分类: 音视频媒体
 难度: 初级
@@ -190,11 +189,16 @@ PY
 - [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
 - [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA
 - [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
 - [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
 - [[mlt]] —— MLT — 多媒体编辑框架
+- [[numpy]] —— NumPy — Python 科学计算基石
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[sam2]] —— SAM 2 — Segment Anything Model 2
 - [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
 - [[ultralytics]] —— Ultralytics — YOLOv8/v11 实现
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[vips]] —— libvips — 流式低内存图像库
 

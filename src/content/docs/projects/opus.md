@@ -3,7 +3,6 @@ title: Opus — 低延迟全频带音频编解码
 description: RFC 6716；WebRTC/视频会议默认音频；与 WebM/MP4 伴音的开源首选
 来源: 'https://github.com/xiph/opus'
 日期: 2026-06-06
-分类_原始: 媒体
 分类: 通信
 子分类: 音视频媒体
 难度: 中级
@@ -156,7 +155,13 @@ ffmpeg -i clip.mp4 -vn -ar 48000 -ac 1 -c:a libopus -b:a 64k clip.opus
 - [[audacity]] —— Audacity — 开源音频编辑器
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
 - [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
 - [[lame]] —— LAME — MP3 编码开源参考实现
 - [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
+- [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
 - [[svt-av1]] —— SVT-AV1 — 可扩展 AV1 软件编码器
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
 

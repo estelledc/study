@@ -161,10 +161,19 @@ followup = model.chat(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[hawkeye-2024]] —— HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[timemarker-2024]] —— TimeMarker — 时间分隔符 + 任意长度采帧的视频定位大模型
 - [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
 - [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
 

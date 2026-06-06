@@ -154,6 +154,16 @@ Highlight Detection  QVHighlights mAP          26.8        16.5         —
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
 - [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
+- [[vtimellm-2023]] —— VTimeLLM — 让 Video LLM 学会标出事件起止时间
 

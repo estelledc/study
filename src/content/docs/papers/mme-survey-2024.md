@@ -148,6 +148,9 @@ python -m lmms_eval --model qwen2_vl --tasks mme,mmmu --batch_size 1
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
 - [[mme-benchmark-2023]] —— MME Benchmark — 开源 MLLM 评测的事实起点
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 

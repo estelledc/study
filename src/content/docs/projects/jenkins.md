@@ -151,6 +151,7 @@ dev 自动部、staging 等一人审、prod 等双人审 + 工作时间窗口—
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
 - [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
 - [[helm]] —— Helm — Kubernetes 包管理器

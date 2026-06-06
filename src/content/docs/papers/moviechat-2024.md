@@ -158,7 +158,17 @@ MovieChat               >10,000 帧       ~21 KB / 帧
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
+- [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
 

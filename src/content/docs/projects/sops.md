@@ -158,6 +158,7 @@ Flux 的 SOPS controller 流程：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
+- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 

@@ -150,5 +150,15 @@ print(mean_relative_accuracy(18.0, 20.0))  # > 0，比 exact match 合理
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[longva-2024]] —— LongVA — 把语言模型的长上下文能力「搬」到视频上
+- [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
 - [[omnidirectional-mllm-2025]] —— 全景空间推理 — MLLM 准备好面对 360° 了吗
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 

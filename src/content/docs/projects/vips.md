@@ -116,3 +116,6 @@ cd vips
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
+

@@ -148,11 +148,20 @@ python inference.py \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
+- [[moviechat-2024]] —— MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊
 - [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
 - [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
 - [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
 - [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 - [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
 - [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
 - [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻

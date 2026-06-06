@@ -150,5 +150,9 @@ because label y present in both but conflict...
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
+- [[trees-that-grow]] —— Trees that Grow — 可扩展的语法树设计
 

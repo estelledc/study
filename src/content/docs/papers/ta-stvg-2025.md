@@ -154,5 +154,12 @@ Oracle 实验（用 GT 特征初始化 query）m_IoU 49.9→68.9，说明 TA-STV
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
 

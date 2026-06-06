@@ -3,7 +3,6 @@ title: Wasmtime — Bytecode Alliance 标准 wasm runtime
 description: Bytecode Alliance 的 WebAssembly 运行时，WASI 支持
 来源: 'https://github.com/bytecodealliance/wasmtime'
 日期: 2026-06-06
-分类_原始: 编程语言
 分类: 编译器
 子分类: 语言运行时
 难度: 中级
@@ -121,3 +120,4 @@ cd wasmtime
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[zed]] —— Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
 - [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件
+

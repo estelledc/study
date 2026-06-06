@@ -149,5 +149,12 @@ OSR 数据集基于高保真室内 3D layout；户外全景或动态场景超出
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[vsi-bench-2024]] —— VSI-Bench — 用室内漫游视频考视频大模型的空间智商
 

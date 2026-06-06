@@ -144,6 +144,12 @@ afl-fuzz -i in/ -o out/ -- ./parse @@
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[avgustinov-codeql-2016]] —— QL: Object-Oriented Queries on Relational Data
+- [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
 - [[cadar-klee-2008]] —— KLEE — 符号执行自动生成高覆盖测试
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
+- [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[newsome-taintcheck-2005]] —— Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software
+- [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography
 

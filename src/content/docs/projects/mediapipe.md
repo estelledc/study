@@ -121,6 +121,8 @@ cd mediapipe
 
 - [[dlib]] —— dlib — C++ 机器学习 / CV 工具箱
 - [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[sam2]] —— SAM 2 — Segment Anything Model 2
 - [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
 - [[ultralytics]] —— Ultralytics — YOLOv8/v11 实现
+

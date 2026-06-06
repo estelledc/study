@@ -117,4 +117,7 @@ cd ant-media-server
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+

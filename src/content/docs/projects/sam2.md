@@ -117,5 +117,8 @@ cd sam2
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[ultralytics]] —— Ultralytics — YOLOv8/v11 实现
+

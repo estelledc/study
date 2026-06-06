@@ -148,11 +148,20 @@ Stage2 后 Reuse 旧 LoRA           26.6%            Stage3 应「换新 LoRA」
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[hawkeye-2024]] —— HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[timemarker-2024]] —— TimeMarker — 时间分隔符 + 任意长度采帧的视频定位大模型
 - [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
 - [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
 - [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 - [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 - [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
 

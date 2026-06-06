@@ -149,8 +149,12 @@ tiles=9   latency ~600ms   复杂海报/多栏 PDF
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[mmmu-2023]] —— MMMU — 大学级多学科多模态推理基准
 - [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
 - [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 

@@ -111,4 +111,6 @@ provenance: pipeline-v3
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ice-rfc-5245]] —— Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
 - [[salsify-2018]] —— Salsify: Low-Latency Network Video Through Tighter Integration Between a Video Codec and a Transport Protocol
+

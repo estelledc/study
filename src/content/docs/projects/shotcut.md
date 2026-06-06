@@ -3,7 +3,6 @@ title: Shotcut — 基于 MLT 的开源非线性编辑器
 description: Qt 跨平台 NLE；Producer/Filter/Consumer 的可视化时间线；开源剪辑教学样本
 来源: 'https://github.com/mltframework/shotcut'
 日期: 2026-06-06
-分类_原始: 媒体
 分类: 通信
 子分类: 音视频媒体
 难度: 初级
@@ -143,8 +142,15 @@ File → Export → MLT XML，对照 [[mlt]] `melt` 命令理解转场语法。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[gstreamer]] —— GStreamer — 流水线式多媒体框架
 - [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mlt]] —— MLT — 多媒体编辑框架
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
+- [[x264]] —— x264 — 开源 H.264/AVC 软件编码器
+- [[x265]] —— x265 — 开源 HEVC/H.265 编码器
 

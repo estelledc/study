@@ -158,6 +158,7 @@ Magic3D 还顺手做了一个 bonus：把 textual inversion 套上 SDS。给一�
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[dreamfusion-2022]] —— DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
+- [[instant-ngp-2022]] —— Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
 

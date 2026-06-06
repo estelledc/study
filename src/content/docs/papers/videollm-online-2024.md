@@ -150,12 +150,20 @@ LIVE 样本 = 视频流片段 + 多时间点提问 + 应对答案
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
 - [[llmvs-2025]] —— LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
 - [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
 - [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
 - [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
 

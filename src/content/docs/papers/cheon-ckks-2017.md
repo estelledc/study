@@ -110,7 +110,9 @@ provenance: pipeline-v3
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
 - [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
 - [[fan-vercauteren-bfv-2012]] —— Somewhat Practical Fully Homomorphic Encryption
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
+

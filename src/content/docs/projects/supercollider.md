@@ -118,4 +118,7 @@ cd supercollider
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ardour]] —— Ardour — 专业级 DAW
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
 - [[lmms]] —— LMMS — Linux 多媒体工作站
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+

@@ -164,5 +164,12 @@ UniTime（论文 arXiv 2506.18883，项目页 [UniTime](https://lzq5.github.io/U
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
+- [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
+- [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
+- [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
+- [[vtimellm-2023]] —— VTimeLLM — 让 Video LLM 学会标出事件起止时间
 

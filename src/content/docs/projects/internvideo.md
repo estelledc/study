@@ -184,6 +184,8 @@ Stage2 接 LLM 做 Chat 时，同一 decord 采样策略延续到 [[videochat-20
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
 - [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
@@ -191,9 +193,12 @@ Stage2 接 LLM 做 Chat 时，同一 decord 采样策略延续到 [[videochat-20
 - [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
 - [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出

@@ -149,6 +149,13 @@ TraveLER 更「审讯式」，VideoAgent 更「检索式」。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
 - [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
 

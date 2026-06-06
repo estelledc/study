@@ -150,12 +150,22 @@ VSB 2K + PaR       ~88%                    -60% latency
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[llmvs-2025]] —— LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
 - [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+- [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
 - [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
 

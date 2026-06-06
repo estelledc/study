@@ -119,7 +119,11 @@ cd ultralytics
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[dlib]] —— dlib — C++ 机器学习 / CV 工具箱
 - [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[sam2]] —— SAM 2 — Segment Anything Model 2
+

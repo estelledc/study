@@ -183,6 +183,7 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient })
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[redis]] —— Redis — 内存键值数据库

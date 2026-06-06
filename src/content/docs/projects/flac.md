@@ -154,6 +154,7 @@ cmp input.wav roundtrip.wav && echo "bit-identical"
 - [[aubio]] —— aubio — 实时音频事件检测库
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
 - [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[lame]] —— LAME — MP3 编码开源参考实现
 - [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
 - [[obs-studio]] —— OBS Studio — 开源直播录制与推流

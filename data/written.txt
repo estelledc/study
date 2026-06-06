@@ -250,6 +250,7 @@ duchi-local-dp-2013
 duckdb-2019
 dwork-calibrating-noise-2006
 dwork-dp-icalp-2006
+dwork-our-data-ourselves-2006
 dynamo
 e5-2022
 eagle
@@ -702,6 +703,7 @@ scaling-laws
 scann-2020
 scoop
 scott-strachey-denotational
+sctp-multipath-2006
 sel4-2009
 self-adjusting
 self-consistency-2022
@@ -713,6 +715,7 @@ self-pic
 self-rag-2023
 self-refine-2023
 selinger-1979
+selinux-2001
 seq2seq-2014
 sequel-1974
 sequential-consistency-1979
@@ -816,6 +819,7 @@ token-bucket-stripe
 tomasulo-1967
 tomita-glr
 toolformer
+tor-2004
 toy-models-superposition
 trace-2024
 tracemonkey
@@ -1142,6 +1146,7 @@ flask
 flax
 flowchart-js
 fluent-bit
+flutter
 flux
 fooocus
 foundry
@@ -1227,6 +1232,7 @@ k3s
 k6
 k9s
 kafka
+kakoune
 kamailio
 kaniko
 kedro
@@ -1376,6 +1382,7 @@ nomad
 nsq
 numpy
 nushell
+nuttx
 nuxt
 nvidia-gpu-operator
 nvidia-mig
@@ -1411,6 +1418,7 @@ otel-collector
 ovenmediaengine
 oxc
 paddleocr
+panda3d
 pandas
 panel
 partykit

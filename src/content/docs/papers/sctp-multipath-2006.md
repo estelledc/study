@@ -171,3 +171,10 @@ def should_fast_retransmit(sack, htna):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[afs-1988]] —— AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展
+- [[akamai-2002]] —— Akamai 2002 — 把网站搬到离用户 10 毫秒的地方
+- [[amplification-hell-2014]] —— Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tcp-vegas-1995]] —— TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
+

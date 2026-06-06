@@ -391,7 +391,7 @@
 {"slug":"induction-heads","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"AI 可解释性","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"infer-biabduction","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"ingres-1976","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
-{"slug":"instant-ngp-2022","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"instant-ngp-2022","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"instructgpt","area":"papers","theme":"NLP","themeId":"nlp","subcategory":"NLP","source":"category","confidence":"high","rawCategory":"NLP"}
 {"slug":"internvideo2-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"internvideo2-5-2025","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
@@ -1063,7 +1063,7 @@
 {"slug":"databend","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"datadog","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"可观测性 / DevOps","source":"category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"date-fns","area":"projects","theme":"CLI","themeId":"cli","subcategory":"projects / 工具库","source":"category","confidence":"high","rawCategory":"CLI"}
-{"slug":"dav1d","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"dav1d","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"dayjs","area":"projects","theme":"CLI","themeId":"cli","subcategory":"工具库","source":"category","confidence":"high","rawCategory":"CLI"}
 {"slug":"dbt-core","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"debezium","area":"projects","theme":"数据库","themeId":"databases","subcategory":"数据基建 / CDC","source":"category","confidence":"high","rawCategory":"数据库"}
@@ -1116,7 +1116,7 @@
 {"slug":"erigon","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"errbot","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"esbuild","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"构建工具","source":"category","confidence":"high","rawCategory":"编译器"}
-{"slug":"essentia","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"essentia","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"etcd","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"ethers-js","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"evidence","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
@@ -1130,10 +1130,10 @@
 {"slug":"faster-whisper","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"fastify","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"web-frameworks","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"fd","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
-{"slug":"fdk-aac","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"fdk-aac","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"feast","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"ferretdb","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
-{"slug":"ffmpeg","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"ffmpeg","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"fiber","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"filecoin","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"fish-shell","area":"projects","theme":"CLI","themeId":"cli","subcategory":"Shell","source":"category","confidence":"high","rawCategory":"CLI"}
@@ -1175,11 +1175,11 @@
 {"slug":"gron","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"grpc-go","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"gsap","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"动画","source":"category","confidence":"high","rawCategory":"数据可视化"}
-{"slug":"gstreamer","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"gstreamer","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"gum","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"hadolint","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"hanami","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
-{"slug":"handbrake","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"handbrake","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"handsontable","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"haproxy","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"haraka","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
@@ -1210,7 +1210,7 @@
 {"slug":"ipfs","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"istio","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"jaeger","area":"projects","theme":"分布式系统","themeId":"distributed-systems","subcategory":"监控 / 分布式追踪","source":"category","confidence":"high","rawCategory":"分布式系统"}
-{"slug":"janus-gateway","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
+{"slug":"janus-gateway","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"janusgraph","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"jax","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"jc","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
@@ -1251,7 +1251,7 @@
 {"slug":"ky","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"kysely","area":"projects","theme":"数据库","themeId":"databases","subcategory":"ORM / 查询构建器","source":"category","confidence":"high","rawCategory":"数据库"}
 {"slug":"label-studio","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
-{"slug":"lame","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"lame","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"lance","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"lancedb","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"langchain","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
@@ -1269,9 +1269,9 @@
 {"slug":"lexical","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"编辑器与 IDE","source":"slugOverrides","confidence":"high","rawCategory":"后端 API"}
 {"slug":"lf","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"librechat","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
-{"slug":"librosa","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"多媒体"}
+{"slug":"librosa","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"libsignal","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
-{"slug":"libvpx","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"libvpx","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"lightdash","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"lighthouse","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"lightningcss","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端工具链","source":"category","confidence":"high","rawCategory":"后端 API"}
@@ -1339,7 +1339,7 @@
 {"slug":"minisearch","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"mise","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"mlflow","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
-{"slug":"mlt","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"mlt","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"mlx","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"mobx","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"moby","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
@@ -1373,7 +1373,7 @@
 {"slug":"nivo","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"nix","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"nnn","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
-{"slug":"node-js","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"语言运行时","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"node-js","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"语言运行时","source":"candidates.topic","confidence":"high","rawCategory":"编译器"}
 {"slug":"nodemailer","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"nomad","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps / 编排","source":"category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"nsq","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
@@ -1394,7 +1394,7 @@
 {"slug":"ollama","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"open-sora","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"openai-agents-sdk","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"AI 工程","source":"category","confidence":"high","rawCategory":"机器学习"}
-{"slug":"opencv","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"多媒体"}
+{"slug":"opencv","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"openlayers","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"openmeetings","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"opensea-js","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
@@ -1408,7 +1408,7 @@
 {"slug":"operator-sdk","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"optax","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"optimism","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
-{"slug":"opus","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"opus","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"ora","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"category","confidence":"high","rawCategory":"CLI"}
 {"slug":"orleans","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"otel-collector","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"基础设施 / 可观测性","source":"category","confidence":"high","rawCategory":"基础设施"}
@@ -1429,7 +1429,7 @@
 {"slug":"pg-boss-readme","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"pgvector","area":"projects","theme":"数据库","themeId":"databases","subcategory":"数据库 / 向量","source":"category","confidence":"high","rawCategory":"数据库"}
 {"slug":"phoenix","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
-{"slug":"pillow","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"多媒体"}
+{"slug":"pillow","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"pino","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / Node.js","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"pinot","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"pion","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
@@ -1534,7 +1534,7 @@
 {"slug":"shellcheck","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"shfmt","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"shiki","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"前端工具","source":"category","confidence":"high","rawCategory":"后端 API"}
-{"slug":"shotcut","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"shotcut","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"sia","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"sidekiq","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"sigma-js","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
@@ -1583,7 +1583,7 @@
 {"slug":"surrealdb","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"svelte","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"UI 框架","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"sveltekit","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Meta 框架","source":"category","confidence":"high","rawCategory":"后端 API"}
-{"slug":"svt-av1","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"svt-av1","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"swc","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"构建工具","source":"category","confidence":"high","rawCategory":"编译器"}
 {"slug":"swr","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"前端","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"symfony","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
@@ -1674,7 +1674,7 @@
 {"slug":"walletconnect","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"wandb","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"warp","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
-{"slug":"wasmtime","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"语言运行时","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"wasmtime","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"语言运行时","source":"candidates.topic","confidence":"high","rawCategory":"编译器"}
 {"slug":"weaviate","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"web-vitals","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"web3-js","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
@@ -1686,8 +1686,8 @@
 {"slug":"woodpecker","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"wormhole","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"wretch","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"前端工具","source":"category","confidence":"high","rawCategory":"后端 API"}
-{"slug":"x264","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
-{"slug":"x265","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"媒体"}
+{"slug":"x264","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
+{"slug":"x265","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"xh","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"xonsh","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"xplr","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
@@ -1696,7 +1696,7 @@
 {"slug":"yazi","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"yjs","area":"projects","theme":"分布式系统","themeId":"distributed-systems","subcategory":"协同编辑","source":"category","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"yq","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
-{"slug":"yt-dlp","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"多媒体"}
+{"slug":"yt-dlp","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"yugabyte-db","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"zcash","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"zed","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}

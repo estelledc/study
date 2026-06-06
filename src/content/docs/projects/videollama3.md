@@ -157,14 +157,21 @@ bash scripts/eval/eval_video.sh weights/videollama3_7b_local "videomme mvbench" 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[lame]] —— LAME — MP3 编码开源参考实现
 - [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[shotcut]] —— Shotcut — 基于 MLT 的开源非线性编辑器
 - [[svt-av1]] —— SVT-AV1 — 可扩展 AV1 软件编码器
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
 - [[x264]] —— x264 — 开源 H.264/AVC 软件编码器

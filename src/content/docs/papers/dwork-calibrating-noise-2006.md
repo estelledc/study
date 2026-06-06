@@ -148,8 +148,10 @@ print(int(true_count + noise))
 
 - [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
 - [[duchi-local-dp-2013]] —— Local Privacy and Statistical Minimax Rates
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
+- [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
 

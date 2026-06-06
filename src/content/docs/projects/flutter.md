@@ -186,4 +186,6 @@ MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.example/battery")
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[livekit-flutter]] —— LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频
+- [[react]] —— React UI 组件库
+- [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
 

@@ -155,9 +155,11 @@ sox -n silence.wav trim 0.0 2.0
 - [[aubio]] —— aubio — 实时音频事件检测库
 - [[audacity]] —— Audacity — 开源音频编辑器
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[flac]] —— FLAC — 无损音频压缩格式与参考实现
 - [[lame]] —— LAME — MP3 编码开源参考实现
 - [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
 - [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
 - [[supercollider]] —— SuperCollider — 实时音频合成环境
 

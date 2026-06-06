@@ -156,6 +156,7 @@ CLIP 把图文压成一个全局向量做对比；FILIP 保留 token，每个 pa
 - [[attention]] —— Attention Is All You Need
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[sam]] —— SAM — Segment Anything
 - [[vit]] —— ViT — Vision Transformer

@@ -3,7 +3,6 @@ title: Janus WebRTC Gateway
 description: C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推
 来源: 'https://github.com/meetecho/janus-gateway'
 日期: 2026-06-06
-分类_原始: 通信
 分类: 操作系统
 子分类: 嵌入式
 难度: 中级
@@ -122,3 +121,8 @@ cd janus-gateway
 
 - [[jitsi-meet]] —— Jitsi Meet — 开源视频会议
 - [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
+

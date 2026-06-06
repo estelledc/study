@@ -156,6 +156,7 @@ bucket.id.apply(id => console.log(`Bucket: ${id}`));  // 对
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[opentofu]] —— OpenTofu — 社区接手的 Terraform
 

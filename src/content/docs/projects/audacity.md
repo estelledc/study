@@ -121,5 +121,11 @@ cd audacity
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ardour]] —— Ardour — 专业级 DAW
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[lame]] —— LAME — MP3 编码开源参考实现
+- [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[lmms]] —— LMMS — Linux 多媒体工作站
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+

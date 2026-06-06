@@ -155,6 +155,7 @@ sled 的源码相对 [[rocksdb]] 友好——纯 Rust、模块清晰、有大量
 
 - [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
 - [[mongo]] —— MongoDB — 文档数据库服务端开源实现
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库

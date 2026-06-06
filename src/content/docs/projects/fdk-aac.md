@@ -3,7 +3,6 @@ title: fdk-aac — Fraunhofer AAC 编解码库
 description: HE-AAC v1/v2 高质量实现；Android/广播底层；FFmpeg 非 GPL AAC 选项
 来源: 'https://github.com/mstorsjo/fdk-aac'
 日期: 2026-06-06
-分类_原始: 媒体
 分类: 通信
 子分类: 音视频媒体
 难度: 中级
@@ -150,6 +149,11 @@ AB 测 `libfdk_aac` vs `aac`（FFmpeg native）同码率失真，定团队默认
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
+- [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
 - [[lame]] —— LAME — MP3 编码开源参考实现
 - [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[shaka-player]] —— Shaka Player — Google 自适应流媒体播放器
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
 

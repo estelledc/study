@@ -151,5 +151,10 @@ UPDATE stock SET qty = qty - 1 WHERE sku='X';   -- 仍 COMMIT 前
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
+- [[mysql]] —— MySQL — 全球最流行关系数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[raft]] —— Raft — 易理解的共识算法
+- [[snapshot]] —— Snapshot — DAO 不花 Gas 也能投票的链下治理前端
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 

@@ -156,13 +156,16 @@ for batch in dataloader:  # 视频-图像-音频-深度-热成像 五元组
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
 - [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
 - [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[llava-video-2024]] —— LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧
@@ -176,6 +179,7 @@ for batch in dataloader:  # 视频-图像-音频-深度-热成像 五元组
 - [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
 - [[moviechat-2024]] —— MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊
 - [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成

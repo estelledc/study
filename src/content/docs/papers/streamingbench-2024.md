@@ -151,6 +151,15 @@ python evaluate.py \
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
+- [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
+- [[moviechat-2024]] —— MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
 - [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
 

@@ -148,6 +148,15 @@ VideoAgent 平均 8.4 帧 → 适合「按次计费」云 API
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
+- [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
 - [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
 

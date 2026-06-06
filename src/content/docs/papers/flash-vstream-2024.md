@@ -148,8 +148,18 @@ STAR + 大 Memory     ~4s             数小时（内存线性涨）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 

@@ -151,11 +151,17 @@ lmms_eval --model video_llava \
 - [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
 - [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
 - [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
 - [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
 - [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
 - [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解

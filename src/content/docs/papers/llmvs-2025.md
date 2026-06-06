@@ -150,4 +150,13 @@ LLM 局部打分的 prompt 分三块—— instructions 定义「你是视频摘
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
 

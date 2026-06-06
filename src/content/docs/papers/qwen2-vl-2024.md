@@ -164,8 +164,10 @@ def get_position_ids(input_type, seq_len, frame_ids=None, row_ids=None, col_ids=
 - [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
 - [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
 - [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
 - [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
 - [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
@@ -176,6 +178,7 @@ def get_position_ids(input_type, seq_len, frame_ids=None, row_ids=None, col_ids=
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
 - [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[llava-video-2024]] —— LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧

@@ -147,5 +147,11 @@ MDB_MAPASYNC   异步刷盘（性能↑ 崩溃窗口↑）
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[etcd]] —— etcd — 分布式键值数据库
+- [[nats-server]] —— NATS Server — 极简云原生消息中间件
+- [[redis]] —— Redis — 内存键值数据库
+- [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

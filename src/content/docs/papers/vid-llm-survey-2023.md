@@ -154,10 +154,13 @@ response = llm(prompt)  # 不需要 LLM 看任何视频帧
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
+- [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
 - [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
 - [[hawkeye-2024]] —— HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
@@ -165,6 +168,7 @@ response = llm(prompt)  # 不需要 LLM 看任何视频帧
 - [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架

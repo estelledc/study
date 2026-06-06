@@ -179,11 +179,19 @@ TorchCodec 强项：**tensor 原生、与 torch 版本协同**；弱项：生态
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[numpy]] —— NumPy — Python 科学计算基石
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 - [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
 

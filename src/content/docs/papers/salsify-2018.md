@@ -110,4 +110,7 @@ provenance: pipeline-v3
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[gcc-webrtc-2016]] —— Analysis and Design of the Google Congestion Control for Web Real-time Communication (WebRTC)
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+

@@ -149,7 +149,16 @@ modalities = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[vsi-bench-2024]] —— VSI-Bench — 用室内漫游视频考视频大模型的空间智商
 

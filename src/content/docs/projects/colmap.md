@@ -115,4 +115,7 @@ cd colmap
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+

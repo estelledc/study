@@ -149,9 +149,12 @@ Perception 子项里 OCR 与 color 对视觉塔分辨率敏感；换 [[siglip-20
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态长上下文
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
 - [[mme-survey-2024]] —— MME-Survey — 多模态 LLM 怎么评才靠谱
 - [[mmmu-2023]] —— MMMU — 大学级多学科多模态推理基准
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[siglip-2023]] —— SigLIP — 用 Sigmoid 损失训练图文对齐
 

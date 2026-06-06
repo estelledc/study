@@ -150,16 +150,20 @@ DataChannel 与媒体轨独立，聊天信令可不走 SCTP 大包媒体。
 
 - [[aubio]] —— aubio — 实时音频事件检测库
 - [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
 - [[gstreamer]] —— GStreamer — 流水线式多媒体框架
 - [[ice-rfc-5245]] —— Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal
 - [[janus-gateway]] —— Janus WebRTC Gateway
 - [[jitsi-meet]] —— Jitsi Meet — 开源视频会议
 - [[livekit]] —— LiveKit — 开源实时多媒体 SFU
 - [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
 - [[obs-studio]] —— OBS Studio — 开源直播录制与推流
 - [[opus]] —— Opus — 低延迟全频带音频编解码
 - [[shaka-player]] —— Shaka Player — Google 自适应流媒体播放器
 - [[sox]] —— SoX — 命令行音频处理瑞士军刀
+- [[streamlink]] —— Streamlink — 把网页直播流接到本地播放器
 - [[video.js]] —— Video.js — Web 视频播放器框架
 - [[webrtc-rs]] —— webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion
 

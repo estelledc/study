@@ -124,3 +124,7 @@ cd livekit
 - [[ice-rfc-5245]] —— Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal
 - [[janus-gateway]] —— Janus WebRTC Gateway
 - [[jitsi-meet]] —— Jitsi Meet — 开源视频会议
+- [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
+

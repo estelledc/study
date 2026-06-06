@@ -150,6 +150,8 @@ Consumer `preferredLayers` 可在弱网时只订小层，节省下行带宽。
 
 - [[aubio]] —— aubio — 实时音频事件检测库
 - [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
 - [[janus-gateway]] —— Janus WebRTC Gateway
 - [[jitsi-meet]] —— Jitsi Meet — 开源视频会议
 - [[livekit]] —— LiveKit — 开源实时多媒体 SFU
@@ -159,5 +161,7 @@ Consumer `preferredLayers` 可在弱网时只订小层，节省下行带宽。
 - [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
 - [[shaka-player]] —— Shaka Player — Google 自适应流媒体播放器
 - [[sox]] —— SoX — 命令行音频处理瑞士军刀
+- [[streamlink]] —— Streamlink — 把网页直播流接到本地播放器
 - [[video.js]] —— Video.js — Web 视频播放器框架
+- [[webrtc-rs]] —— webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion
 

@@ -168,5 +168,13 @@ for video in internvid_sample_100k:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[omnistvg-2025]] —— OmniSTVG — 按句子把视频里所有相关物体都框出来
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[timechat-2024]] —— TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位
+- [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[vtimellm-2023]] —— VTimeLLM — 让 Video LLM 学会标出事件起止时间
 

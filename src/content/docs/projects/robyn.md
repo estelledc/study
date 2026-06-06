@@ -148,5 +148,9 @@ python app.py --dev
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
+- [[prometheus]] —— Prometheus — 时序监控系统
+- [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
+- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 

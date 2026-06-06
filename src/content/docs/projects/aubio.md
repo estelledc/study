@@ -151,6 +151,7 @@ aubiotrack audio.wav
 
 - [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[flac]] —— FLAC — 无损音频压缩格式与参考实现
 - [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
 - [[obs-studio]] —— OBS Studio — 开源直播录制与推流

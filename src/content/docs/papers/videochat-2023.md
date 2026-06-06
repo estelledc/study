@@ -156,11 +156,14 @@ conversation = openai.chat.completions.create(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段

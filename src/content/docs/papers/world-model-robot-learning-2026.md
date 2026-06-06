@@ -178,5 +178,10 @@ action = idm_policy(future_video)  # 从「预期画面」反推动作
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[muzero]] —— MuZero — 不用规则也能下棋
+- [[ppo]] —— PPO — Proximal Policy Optimization
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[react]] —— React UI 组件库
+- [[voyager]] —— Voyager — LLM 终身学习智能体
 

@@ -150,3 +150,9 @@ tmux new-window "kak -c $(kak -l | head -1)"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
+- [[micro]] —— micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+

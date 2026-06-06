@@ -157,6 +157,7 @@ cache_v: [layer, max_seq_len, n_head, head_dim]
 - [[graphormer-2021]] —— Graphormer — 标准 Transformer 直接刷爆 GNN
 - [[llm-int8-2022]] —— LLM.int8() — 大模型激活值里藏着几个超大异常通道
 - [[lstm-1997]] —— LSTM — 用门控让神经网络记得住上一段话
+- [[orca-2022]] —— Orca — Transformer 生成模型的分布式推理调度
 - [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
 - [[tensorrt-llm-2023]] —— TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去

@@ -116,3 +116,6 @@ cd meshroom
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+

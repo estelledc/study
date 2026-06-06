@@ -113,3 +113,4 @@ provenance: pipeline-v3
 - [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
 - [[bowe-halo-2019]] —— Halo: Recursive Proof Composition without a Trusted Setup
 - [[bunz-bulletproofs-2018]] —— Bulletproofs: Short Proofs for Confidential Transactions and More
+

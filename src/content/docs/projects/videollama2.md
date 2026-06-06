@@ -183,16 +183,20 @@ VideoLLaMA2 强项：**音视频联合（2.1-AV）** + **VideoLLaVA 数据即插
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
 - [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出

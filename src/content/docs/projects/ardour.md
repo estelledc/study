@@ -121,4 +121,7 @@ cd ardour
 
 - [[audacity]] —— Audacity — 开源音频编辑器
 - [[lmms]] —— LMMS — Linux 多媒体工作站
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
 - [[supercollider]] —— SuperCollider — 实时音频合成环境
+

@@ -166,5 +166,11 @@ BOSTVG_Tst-Full   1–10          9.47%             7.52%
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[hawkeye-2024]] —— HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
+- [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
 

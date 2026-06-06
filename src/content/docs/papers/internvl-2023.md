@@ -149,6 +149,13 @@ Week 5+:   加指令数据，LoRA 微调 LLM 顶层
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+- [[minicpm-v-2024]] —— MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型
+- [[mmmu-2023]] —— MMMU — 大学级多学科多模态推理基准
 - [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
 - [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 

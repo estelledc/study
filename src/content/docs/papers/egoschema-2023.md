@@ -159,10 +159,19 @@ InternVideo (90 frames) ~32.1%
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[llmvs-2025]] —— LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 - [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
 - [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[vsi-bench-2024]] —— VSI-Bench — 用室内漫游视频考视频大模型的空间智商
 

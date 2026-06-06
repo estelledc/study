@@ -149,5 +149,14 @@ Stage 5  长视频 SFT     → 长片 QA、摘要、定位；帧数逐步 64→2
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
 - [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[timechat-2024]] —— TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
 

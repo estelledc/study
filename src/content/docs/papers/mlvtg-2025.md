@@ -150,5 +150,12 @@ MambaAligner + LLMRefiner  50.5                 38.7              65.2
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[mamba]] —— Mamba — 选择性状态空间模型
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
 

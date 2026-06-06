@@ -149,4 +149,13 @@ for item in cover_dataset:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 

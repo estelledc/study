@@ -108,4 +108,6 @@ provenance: pipeline-v3
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bowe-halo-2019]] —— Halo: Recursive Proof Composition without a Trusted Setup
 - [[gabizon-plonk-2019]] —— PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge
+

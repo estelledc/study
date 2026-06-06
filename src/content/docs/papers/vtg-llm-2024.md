@@ -152,8 +152,17 @@ python inference.py \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mlvtg-2025]] —— MLVTG — MambaAligner + 冻结 LLM 提纯的多模态视频时序定位
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
 - [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
 - [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[vtimellm-2023]] —— VTimeLLM — 让 Video LLM 学会标出事件起止时间
 

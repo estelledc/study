@@ -3,7 +3,6 @@ title: SVT-AV1 — 可扩展 AV1 软件编码器
 description: Intel/AOMedia 出品；多核分块编码；FFmpeg libsvtav1 是开源 AV1 量产路径
 来源: 'https://github.com/AOMediaCodec/SVT-AV1'
 日期: 2026-06-06
-分类_原始: 媒体
 分类: 通信
 子分类: 音视频媒体
 难度: 中级
@@ -150,9 +149,13 @@ AV1 训练解码仍少；多数团队转 H.264 再 [[decord]]——此处记录 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dav1d]] —— dav1d — 速度优先的 AV1 解码器
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
 - [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[shaka-player]] —— Shaka Player — Google 自适应流媒体播放器
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
 - [[x264]] —— x264 — 开源 H.264/AVC 软件编码器
 - [[x265]] —— x265 — 开源 HEVC/H.265 编码器
 

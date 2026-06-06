@@ -117,4 +117,8 @@ cd jitsi-meet
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[janus-gateway]] —— Janus WebRTC Gateway
 - [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
+

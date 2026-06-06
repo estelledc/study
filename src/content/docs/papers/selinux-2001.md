@@ -181,3 +181,9 @@ adb shell ps -Z | grep com.example.myapp
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[capsicum-2010]] —— Capsicum: Practical Capabilities for UNIX
+- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+- [[mach-1986]] —— Mach — 把内核拆成消息互通的小服务
+- [[vodozemac]] —— vodozemac — Matrix 端到端加密的 Rust 内核
+

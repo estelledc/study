@@ -149,4 +149,13 @@ rl_update(vlm, reward)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 

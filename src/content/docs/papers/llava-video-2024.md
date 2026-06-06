@@ -150,5 +150,12 @@ fast 组：其余 8 帧       → 每帧 144/16 = 9 tokens（看得广）
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[hour-llava-2025]] —— Hour-LLaVA — 记忆增强，让 LLaVA 读懂一小时视频
+- [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[llama-vid-2023]] —— LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 

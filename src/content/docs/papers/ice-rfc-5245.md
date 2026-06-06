@@ -111,4 +111,7 @@ provenance: pipeline-v3
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[gcc-webrtc-2016]] —— Analysis and Design of the Google Congestion Control for Web Real-time Communication (WebRTC)
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
 - [[wireguard-2017]] —— WireGuard: Next Generation Kernel Network Tunnel
+

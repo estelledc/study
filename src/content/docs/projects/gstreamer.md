@@ -3,7 +3,6 @@ title: GStreamer — 流水线式多媒体框架
 description: element/pad/caps 模型；GNOME/Linux 多媒体栈基石；与 FFmpeg 对照的图式架构
 来源: 'https://github.com/GStreamer/gstreamer'
 日期: 2026-06-06
-分类_原始: 媒体
 分类: 操作系统
 子分类: 嵌入式
 难度: 中级
@@ -154,7 +153,13 @@ pipeline.set_state(Gst.State.PLAYING)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
 - [[mlt]] —— MLT — 多媒体编辑框架
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
+- [[shotcut]] —— Shotcut — 基于 MLT 的开源非线性编辑器
+- [[x264]] —— x264 — 开源 H.264/AVC 软件编码器
 

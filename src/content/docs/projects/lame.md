@@ -3,7 +3,6 @@ title: LAME — MP3 编码开源参考实现
 description: 心理声学模型与比特率分配教科书；legacy 分发与播客仍大量 MP3
 来源: 'https://github.com/rbrito/lame'
 日期: 2026-06-06
-分类_原始: 媒体
 分类: 通信
 子分类: 音视频媒体
 难度: 初级
@@ -152,7 +151,13 @@ ASR 训练常要 16k mono，需另 `-ar 16000 -ac 1`。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[audacity]] —— Audacity — 开源音频编辑器
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
 - [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
+- [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
 

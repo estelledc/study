@@ -155,8 +155,15 @@ python eval.py --split val --checkpoint best.pth
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
 - [[omnistvg-2025]] —— OmniSTVG — 按句子把视频里所有相关物体都框出来
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
 - [[ta-stvg-2025]] —— TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位
 - [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
 

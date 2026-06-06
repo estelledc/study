@@ -148,13 +148,27 @@ MVBench 题目按「时序推理 / 目标关系」等维度拆分；结果可与
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
 - [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
 - [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
+- [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
 - [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
 

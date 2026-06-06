@@ -167,7 +167,17 @@ vllm serve Qwen/Qwen2.5-VL-7B-Instruct \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
 - [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

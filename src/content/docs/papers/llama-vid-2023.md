@@ -151,6 +151,13 @@ output = model.generate(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
 - [[hour-llava-2025]] —— Hour-LLaVA — 记忆增强，让 LLaVA 读懂一小时视频
+- [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[llava]] —— LLaVA — 开源多模态对话模型
 - [[llava-video-2024]] —— LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[vit]] —— ViT — Vision Transformer
 

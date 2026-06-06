@@ -112,5 +112,7 @@ provenance: pipeline-v3
 
 - [[bohme-aflfast-2016]] —— AFLFast — 灰盒 Fuzz 的马尔可夫调度
 - [[bos-kyber-2018]] —— CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
+- [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
 - [[cadar-klee-2008]] —— KLEE — 符号执行自动生成高覆盖测试
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
+

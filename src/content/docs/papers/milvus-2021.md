@@ -148,6 +148,9 @@ RAG 场景典型参数：`nprobe=16`（IVF）、`ef=64`（HNSW）只是起点；
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[haystack]] —— Haystack — 企业 NLP / RAG 流水线
 - [[haystack-2010]] —— Haystack — Facebook 十亿张照片怎么存
+- [[milvus]] —— Milvus — 开源向量数据库
 - [[siglip-2023]] —— SigLIP — 用 Sigmoid 损失训练图文对齐
 

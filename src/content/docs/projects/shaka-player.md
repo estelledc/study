@@ -153,11 +153,13 @@ player.configure({ abr: { restrictions: { maxHeight: 720 } } });
 - [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
 - [[dav1d]] —— dav1d — 速度优先的 AV1 解码器
 - [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[hls.js]] —— hls.js — 浏览器里播放 HLS 直播
 - [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
 - [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
 - [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
 - [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
 - [[shaka-packager]] —— Shaka Packager — 流媒体打包工具
 - [[streamlink]] —— Streamlink — 把网页直播流接到本地播放器
 - [[svt-av1]] —— SVT-AV1 — 可扩展 AV1 软件编码器

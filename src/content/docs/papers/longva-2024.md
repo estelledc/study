@@ -151,5 +151,16 @@ score = vniah_eval(model, haystack, needle_frame, question)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
+- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
 - [[vsi-bench-2024]] —— VSI-Bench — 用室内漫游视频考视频大模型的空间智商
 

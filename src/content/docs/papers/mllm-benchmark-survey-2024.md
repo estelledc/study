@@ -150,8 +150,12 @@ VideoMME、MVBench 等视频榜在综述「其他模态」类；做 [[videollama
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态长上下文
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mme-benchmark-2023]] —— MME Benchmark — 开源 MLLM 评测的事实起点
 - [[mme-survey-2024]] —— MME-Survey — 多模态 LLM 怎么评才靠谱
 - [[mmmu-2023]] —— MMMU — 大学级多学科多模态推理基准
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
 
