@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 836 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 840 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：836 个
-- **已分类**：836
+- **总数**：840 个
+- **已分类**：840
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 15 |
+| [操作系统](#操作系统) | 16 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 187 |
+| [后端 API](#后端-api) | 188 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 13 |
+| [图形学](#图形学) | 14 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 117 |
+| [CLI](#cli) | 118 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 15 个。
+共 16 个。
 
 ### 嵌入式
 
@@ -186,6 +186,7 @@ sidebar:
 | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 |  |
 | [OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版](/study/projects/openwrt/) | ✅ v3 |  |
 | [PlatformIO Core — 一套命令行，统管千块嵌入式开发板](/study/projects/platformio-core/) | ✅ v3 |  |
+| [probe-rs — Rust 写的嵌入式烧录与调试工具](/study/projects/probe-rs/) | ✅ v3 |  |
 | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | ✅ v3 |  |
 | [Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统](/study/projects/yocto-poky/) | ✅ v3 |  |
 | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | ✅ v3 |  |
@@ -379,7 +380,7 @@ sidebar:
 
 ## 后端 API
 
-共 187 个。
+共 188 个。
 
 ### 前端
 
@@ -432,6 +433,7 @@ sidebar:
 | [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 | [Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用](/study/projects/tauri/) | ✅ v3 |  |
+| [Wails — Go 写的轻量桌面壳，用系统 WebView 包 Web 前端](/study/projects/wails/) | ✅ v3 |  |
 
 ### Meta 框架
 
@@ -716,7 +718,7 @@ sidebar:
 
 ## 图形学
 
-共 13 个。
+共 14 个。
 
 ### 渲染与图形
 
@@ -732,7 +734,8 @@ sidebar:
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 | [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 |  |
-| [raylib — 极简 C 游戏库](/study/projects/raylib/) | ✅ v3 |  |
+| [raylib — 极简 C 游戏库，10 行代码跑起带窗口动画](/study/projects/raylib/) | ✅ v3 |  |
+| [three.js — Web 3D 事实标准](/study/projects/threejs/) | ✅ v3 |  |
 
 ### 其他子类
 
@@ -872,13 +875,14 @@ sidebar:
 
 ## CLI
 
-共 117 个。
+共 118 个。
 
 ### 编辑器与 IDE
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 |  |
+| [Doom Emacs — 极简风 Emacs 发行](/study/projects/doom-emacs/) | ✅ v3 |  |
 | [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 |  |
 | [Geany — GTK 轻量 IDE](/study/projects/geany/) | ✅ v3 |  |
 | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 |  |
@@ -1129,7 +1133,7 @@ sidebar:
 
 ---
 
-## 全部 836 个（字母序）
+## 全部 840 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1314,6 +1318,7 @@ sidebar:
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | ✅ v3 | 基础设施 | DevOps |
 | `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `docusaurus` | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) | ✅ v3 | CLI | 文档工具 |
+| `doom-emacs` | [Doom Emacs — 极简风 Emacs 发行](/study/projects/doom-emacs/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | ✅ v3 | 数据库 | 存储与查询 |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | ✅ v3 | 通信 | 实时通信 |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1705,6 +1710,7 @@ sidebar:
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | ✅ v3 | 后端 API | UI 框架 |
 | `prefect` | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ✅ v3 | 数据库 | ORM |
+| `probe-rs` | [probe-rs — Rust 写的嵌入式烧录与调试工具](/study/projects/probe-rs/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) | ✅ v3 | CLI | 命令行工具 |
 | `prom-client` | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) | ✅ v3 | 后端 API | projects |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 🗄 存量 | 数据库 | 存储与查询 |
@@ -1734,7 +1740,7 @@ sidebar:
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | ✅ v3 | CLI | 命令行工具 |
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | ✅ v3 | 机器学习 | 数据科学与 AI |
-| `raylib` | [raylib — 极简 C 游戏库](/study/projects/raylib/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `raylib` | [raylib — 极简 C 游戏库，10 行代码跑起带窗口动画](/study/projects/raylib/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `react` | [React UI 组件库](/study/projects/react/) | 🗄 存量 | 后端 API | UI 框架 |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | ✅ v3 | 后端 API | projects / 前端 |
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1863,6 +1869,7 @@ sidebar:
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | ✅ v3 | CLI | 命令行工具 |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | ✅ v3 | CLI | 命令行工具 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | ✅ v3 | 区块链 | 链与合约 |
+| `threejs` | [three.js — Web 3D 事实标准](/study/projects/threejs/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | ✅ v3 | 后端 API | Web 后端 |
 | `tidb` | [TiDB — HTAP 分布式数据库](/study/projects/tidb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | ✅ v3 | 后端 API | Web 后端 |
@@ -1928,6 +1935,7 @@ sidebar:
 | `vscodium` | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | ✅ v3 | 后端 API | UI 框架 |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | ✅ v3 | 后端 API | projects |
+| `wails` | [Wails — Go 写的轻量桌面壳，用系统 WebView 包 Web 前端](/study/projects/wails/) | ✅ v3 | 后端 API | 移动端 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | ✅ v3 | 区块链 | 链与合约 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | ✅ v3 | 后端 API | Web 后端 |

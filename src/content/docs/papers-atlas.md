@@ -1232,7 +1232,7 @@ sidebar:
 | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
 | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
 | [Intel SGX 详解 — 在不可信云里圈一块硬件保险箱](/study/papers/costan-sgx-explained-2016/) | ✅ v3 |  |
-| [Flash Boys 2.0 — MEV、抢跑与共识不稳定性](/study/papers/daian-flash-boys-2020/) | ✅ v3 |  |
+| [Flash Boys 2.0 — 区块链上的抢跑者和共识危机](/study/papers/daian-flash-boys-2020/) | ✅ v3 |  |
 | [Sphinx — mix 网络最紧凑的可证安全消息格式](/study/papers/danezis-sphinx-2009/) | ✅ v3 |  |
 | [Mixminion 2003 — 让回复消息和发送消息共享同一张匿名面罩](/study/papers/dingledine-mixminion-2003/) | ✅ v3 |  |
 | [CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 |  |
@@ -1510,7 +1510,7 @@ sidebar:
 | `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) | ✅ v3 | 图形学 | GPU 架构 |
 | `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | ✅ v3 | 数据可视化 | 可视化 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | ✅ v3 | 形式化方法 | 形式化验证 |
-| `daian-flash-boys-2020` | [Flash Boys 2.0 — MEV、抢跑与共识不稳定性](/study/papers/daian-flash-boys-2020/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `daian-flash-boys-2020` | [Flash Boys 2.0 — 区块链上的抢跑者和共识危机](/study/papers/daian-flash-boys-2020/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | ✅ v3 | 机器学习 | 生成模型 / 计算机视觉 |
 | `danezis-sphinx-2009` | [Sphinx — mix 网络最紧凑的可证安全消息格式](/study/papers/danezis-sphinx-2009/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | ✅ v3 | 分布式系统 | 共识与复制 |

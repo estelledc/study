@@ -41,6 +41,7 @@ asterisk
 astree
 atlas-2022
 attention
+atzei-eth-attacks-2017
 aurora
 aurora-exascale-2024
 autogen
@@ -198,6 +199,7 @@ curless-levoy-1996-tsdf
 cutlass-2020
 cytoscape-js
 dafny-2010
+daian-flash-boys-2020
 dalle-2
 danezis-sphinx-2009
 dapper-2010
@@ -464,6 +466,7 @@ landin-secd
 layernorm-2016
 lean-prover
 lean-tactics
+lee-keystone-2020
 leis-2015-optimizers
 lerner-seminal
 levoy-hanrahan-1996-light-field
@@ -599,6 +602,7 @@ neumf-2017
 newcombe-2011-kinectfusion
 newsome-taintcheck-2005
 nfs-1985
+ngabonziza-trustzone-2016
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
 nimier-david-2019-mitsuba2
@@ -1126,6 +1130,7 @@ dnd-kit
 docker
 docker-compose
 docusaurus
+doom-emacs
 doris
 dovecot
 dragonfly
@@ -1154,6 +1159,7 @@ element-web
 elysia
 emacs
 embassy
+embedded-hal
 emotion
 emqx
 encore
@@ -1516,6 +1522,7 @@ pouchdb
 preact
 prefect
 prisma
+probe-rs
 procs
 prom-client
 prometheus
@@ -1545,6 +1552,7 @@ rasa
 ratatui
 ravendb
 ray
+raylib
 react
 react-dnd
 react-flow
@@ -1620,6 +1628,7 @@ sonic
 sops
 sortablejs
 sox
+spacemacs
 spin
 spring-boot
 sqlite
@@ -1658,6 +1667,7 @@ tanstack-query
 tanstack-router
 tantivy
 task
+tauri
 tdengine
 tekton
 teku
@@ -1671,6 +1681,7 @@ textmate
 textual
 the-silver-searcher
 thirdweb-sdk
+threejs
 thrift
 tidb
 tide
@@ -1736,6 +1747,7 @@ vscode
 vscodium
 vue
 vue-i18n
+wails
 walletconnect
 wandb
 warp
