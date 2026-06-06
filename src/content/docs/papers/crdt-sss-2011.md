@@ -163,4 +163,5 @@ Riak 2.0 的 `riak-dt` 库：
 - [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
 - [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
+- [[xi-editor]] —— xi-editor — Rope + CRDT 驱动的实验性编辑器
 

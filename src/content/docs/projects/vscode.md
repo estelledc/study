@@ -161,5 +161,6 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 - [[lite-xl]] —— Lite XL — 用 Lua 驱动一切的极简文本编辑器
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
+- [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 

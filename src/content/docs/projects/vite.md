@@ -168,6 +168,7 @@ export default defineConfig({
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 - [[preact]] —— Preact — 3KB React 替代
+- [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App

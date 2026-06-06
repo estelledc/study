@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 932 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 936 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：932 篇
-- **已分类**：932
+- **总数**：936 篇
+- **已分类**：936
 
 ### 按一级主题分布
 
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 38 |
+| [安全与隐私](#安全与隐私) | 42 |
 | [其他](#其他) | 13 |
 
 ---
@@ -1211,7 +1211,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 38 篇。
+共 42 篇。
 
 ### 安全与隐私
 
@@ -1244,12 +1244,16 @@ sidebar:
 | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
 | [GMW 1987 — 任何函数都能让多方安全地一起算](/study/papers/gmw-mental-game-1987/) | ✅ v3 |  |
 | [联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题](/study/papers/kairouz-advances-fl-2019/) | ✅ v3 |  |
+| [t-Closeness — 用"分布距离"堵住匿名化的最后漏洞](/study/papers/li-t-closeness-2007/) | ✅ v3 |  |
+| [l-多样性 — k-匿名之后的隐私保护](/study/papers/machanavajjhala-l-diversity-2007/) | ✅ v3 |  |
 | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
 | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
+| [Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名](/study/papers/piotrowska-loopix-2017/) | ✅ v3 |  |
 | [Rabin 遗忘传输 — 发送方永远不知道你收到了什么](/study/papers/rabin-ot-1981/) | ✅ v3 |  |
 | [洋葱路由 1998 — 把匿名通信从理论搬进真实互联网](/study/papers/reed-onion-routing-1998/) | ✅ v3 |  |
 | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 |  |
+| [k-匿名 — 发布数据时让攻击者无法锁定你是谁](/study/papers/sweeney-k-anonymity-2002/) | ✅ v3 |  |
 | [Yao 混淆电路 — 让两人合算函数却互不泄密](/study/papers/yao-garbled-circuits-1986/) | ✅ v3 |  |
 
 ### 密码学
@@ -1290,7 +1294,7 @@ sidebar:
 
 ---
 
-## 全部 932 篇（字母序）
+## 全部 936 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1760,6 +1764,7 @@ sidebar:
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `li-t-closeness-2007` | [t-Closeness — 用"分布距离"堵住匿名化的最后漏洞](/study/papers/li-t-closeness-2007/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
@@ -1798,6 +1803,7 @@ sidebar:
 | `lvbench-2024` | [LVBench — 平均 68 分钟、六维能力的长视频极限考](/study/papers/lvbench-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
+| `machanavajjhala-l-diversity-2007` | [l-多样性 — k-匿名之后的隐私保护](/study/papers/machanavajjhala-l-diversity-2007/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 🗄 存量 | 机器学习 | 计算机视觉 / 自监督 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -1935,6 +1941,7 @@ sidebar:
 | `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `piotrowska-loopix-2017` | [Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名](/study/papers/piotrowska-loopix-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) | ✅ v3 | 图形学 | GPU 架构 |
 | `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -2096,6 +2103,7 @@ sidebar:
 | `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 🗄 存量 | 机器学习 | 智能体与 LLM |
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | ✅ v3 | 机器学习 | AI / 软件工程 |
+| `sweeney-k-anonymity-2002` | [k-匿名 — 发布数据时让攻击者无法锁定你是谁](/study/papers/sweeney-k-anonymity-2002/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) | ✅ v3 | 图形学 | GPU 架构 |
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |

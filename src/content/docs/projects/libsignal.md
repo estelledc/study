@@ -154,9 +154,11 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 - [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
 - [[heartbleed-2014]] —— Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
 - [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
+- [[piotrowska-loopix-2017]] —— Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名
 - [[reed-onion-routing-1998]] —— 洋葱路由 1998 — 把匿名通信从理论搬进真实互联网
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见

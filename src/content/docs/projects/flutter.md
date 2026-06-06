@@ -190,6 +190,7 @@ MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "com.example/battery")
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[livekit-flutter]] —— LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频
 - [[nativescript]] —— NativeScript — JS/TS 直接调原生 API，无 WebView
+- [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[react]] —— React UI 组件库
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑

@@ -157,6 +157,8 @@ for x, y in loader:
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[kairouz-advances-fl-2019]] —— 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
+- [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
+- [[sweeney-k-anonymity-2002]] —— k-匿名 — 发布数据时让攻击者无法锁定你是谁
 

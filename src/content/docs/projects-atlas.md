@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 820 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 824 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：820 个
-- **已分类**：820
+- **总数**：824 个
+- **已分类**：824
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 11 |
+| [操作系统](#操作系统) | 12 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 183 |
+| [后端 API](#后端-api) | 184 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 9 |
+| [图形学](#图形学) | 10 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 113 |
+| [CLI](#cli) | 114 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 11 个。
+共 12 个。
 
 ### 嵌入式
 
@@ -182,6 +182,7 @@ sidebar:
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
 | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 |  |
 | [OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版](/study/projects/openwrt/) | ✅ v3 |  |
+| [PlatformIO Core — 一套命令行，统管千块嵌入式开发板](/study/projects/platformio-core/) | ✅ v3 |  |
 | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | ✅ v3 |  |
 | [Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统](/study/projects/yocto-poky/) | ✅ v3 |  |
 | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | ✅ v3 |  |
@@ -375,7 +376,7 @@ sidebar:
 
 ## 后端 API
 
-共 183 个。
+共 184 个。
 
 ### 前端
 
@@ -423,6 +424,7 @@ sidebar:
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 |  |
+| [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 
 ### Meta 框架
@@ -708,7 +710,7 @@ sidebar:
 
 ## 图形学
 
-共 9 个。
+共 10 个。
 
 ### 渲染与图形
 
@@ -716,6 +718,7 @@ sidebar:
 |---|:---:|---|
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
+| [Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包](/study/projects/defold/) | ✅ v3 |  |
 | [LÖVE — Lua 2D 游戏框架](/study/projects/love2d/) | ✅ v3 |  |
 | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
@@ -860,7 +863,7 @@ sidebar:
 
 ## CLI
 
-共 113 个。
+共 114 个。
 
 ### 编辑器与 IDE
 
@@ -878,6 +881,7 @@ sidebar:
 | [Vim — 模态编辑器之父](/study/projects/vim/) | ✅ v3 |  |
 | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | ✅ v3 |  |
 | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | ✅ v3 |  |
+| [xi-editor — Rope + CRDT 驱动的实验性编辑器](/study/projects/xi-editor/) | ✅ v3 |  |
 | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | ✅ v3 |  |
 
 ### 工具库
@@ -1113,7 +1117,7 @@ sidebar:
 
 ---
 
-## 全部 820 个（字母序）
+## 全部 824 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1282,6 +1286,7 @@ sidebar:
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | ✅ v3 | 数据库 | 数据基建 / CDC |
 | `decord` | [Decord — Video-LLM 数据管线的高效视频解码库](/study/projects/decord/) | ✅ v3 | 机器学习 | 视频理解 |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `defold` | [Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包](/study/projects/defold/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | ✅ v3 | CLI | 命令行工具 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | ✅ v3 | 通信 | 实时通信 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 🗄 存量 | 数据库 | 存储与查询 |
@@ -1660,6 +1665,7 @@ sidebar:
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | ✅ v3 | 图形学 | projects / 图形渲染 |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | ⭐ Season | 后端 API | SaaS 应用 |
+| `platformio-core` | [PlatformIO Core — 一套命令行，统管千块嵌入式开发板](/study/projects/platformio-core/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 🗄 存量 | 后端 API | 测试 |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | ✅ v3 | 数据可视化 | 数据可视化 |
@@ -1696,6 +1702,7 @@ sidebar:
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | ✅ v3 | 数据库 | 存储与查询 |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) | ✅ v3 | 后端 API | Web 后端 |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 🗄 存量 | 后端 API | Web 后端 |
+| `quasar` | [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 | 后端 API | 移动端 |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | ✅ v3 | 后端 API | UI 框架 |
 | `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/projects/rabbitmq-server/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1915,6 +1922,7 @@ sidebar:
 | `x264` | [x264 — 开源 H.264/AVC 软件编码器](/study/projects/x264/) | ✅ v3 | 通信 | 音视频媒体 |
 | `x265` | [x265 — 开源 HEVC/H.265 编码器](/study/projects/x265/) | ✅ v3 | 通信 | 音视频媒体 |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | ✅ v3 | CLI | 命令行工具 |
+| `xi-editor` | [xi-editor — Rope + CRDT 驱动的实验性编辑器](/study/projects/xi-editor/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | ✅ v3 | CLI | 命令行工具 |
 | `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) | ✅ v3 | CLI | 命令行工具 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | ✅ v3 | 后端 API | 前端 |

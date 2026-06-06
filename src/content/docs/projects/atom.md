@@ -174,4 +174,5 @@ apm install teletype
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[vim]] —— Vim — 模态编辑器之父
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
+- [[xi-editor]] —— xi-editor — Rope + CRDT 驱动的实验性编辑器
 

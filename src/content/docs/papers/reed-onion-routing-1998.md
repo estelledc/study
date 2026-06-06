@@ -169,5 +169,6 @@ assert onion_data == plaintext
 
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
 - [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[piotrowska-loopix-2017]] —— Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名
 - [[tor-2004]] —— Tor 洋葱路由 — 让你的网络请求穿上三层马甲
 

@@ -175,6 +175,7 @@ export function useMouse() {
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[react]] —— React UI 组件库
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架

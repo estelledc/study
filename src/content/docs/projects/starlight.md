@@ -176,7 +176,6 @@ export default {
 - [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
-- [[mermaid]] —— Mermaid — 用文本写图，code review 友好的图表语言
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nivo]] —— nivo — React + d3 组件化图表

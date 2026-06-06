@@ -2,8 +2,9 @@
 title: Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包
 来源: 'https://github.com/defold/defold'
 日期: 2026-06-06
-子分类: 游戏引擎
-分类: 工具
+分类_原始: 工具
+子分类: 渲染与图形
+分类: 图形学
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -257,3 +258,6 @@ end
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

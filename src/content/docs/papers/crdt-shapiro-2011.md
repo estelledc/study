@@ -167,4 +167,5 @@ Cassandra / DynamoDB 的单字段冲突解决就是 LWW。
 - [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法
+- [[xi-editor]] —— xi-editor — Rope + CRDT 驱动的实验性编辑器
 

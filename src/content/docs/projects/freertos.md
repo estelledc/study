@@ -167,5 +167,6 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
+- [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

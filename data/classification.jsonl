@@ -464,6 +464,7 @@
 {"slug":"levoy-hanrahan-1996-light-field","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"lfs-1991","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"li-2018-redner","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"li-t-closeness-2007","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"lieberman-realtime-gc","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"lindholm-2008-tesla","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"linear-scan-reg-alloc","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
@@ -502,6 +503,7 @@
 {"slug":"lvbench-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"mach-1986","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"mach-vm-1987","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
+{"slug":"machanavajjhala-l-diversity-2007","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"macklin-2014-position-based-fluids","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"mae","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"计算机视觉 / 自监督","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"magic3d-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
@@ -639,6 +641,7 @@
 {"slug":"personalized-pagerank-2003","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"peyton-jones-stg","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"phong-1975","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"piotrowska-loopix-2017","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"pipedream-2019","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"pivot-tracing-2015","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"plan9-1995","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
@@ -800,6 +803,7 @@
 {"slug":"sulsky-1994-mpm","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"swe-agent","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"智能体与 LLM","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"swe-bench","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"AI / 软件工程","source":"category","confidence":"high","rawCategory":"机器学习"}
+{"slug":"sweeney-k-anonymity-2002","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"sycl-cpp-2020","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"sycophancy-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"system-f-reynolds-1974","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
@@ -1095,6 +1099,7 @@
 {"slug":"debezium","area":"projects","theme":"数据库","themeId":"databases","subcategory":"数据基建 / CDC","source":"category","confidence":"high","rawCategory":"数据库"}
 {"slug":"decord","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"deepspeed","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
+{"slug":"defold","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"工具"}
 {"slug":"delta","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"dendrite","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"dgraph","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
@@ -1473,6 +1478,7 @@
 {"slug":"piper","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"pixi","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"projects / 图形渲染","source":"category","confidence":"high","rawCategory":"图形学"}
 {"slug":"plane","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"SaaS 应用","source":"slugOverrides","confidence":"high","rawCategory":"后端 API"}
+{"slug":"platformio-core","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"playwright","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"测试","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"plotly-js","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"plotly-py","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
@@ -1509,6 +1515,7 @@
 {"slug":"qdrant","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"quarkus","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"quart","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
+{"slug":"quasar","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"移动端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"questdb","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"qwik","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"UI 框架","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"rabbitmq-server","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
@@ -1728,6 +1735,7 @@
 {"slug":"x264","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"x265","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"xh","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
+{"slug":"xi-editor","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"xonsh","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"xplr","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"xstate","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"前端","source":"category","confidence":"high","rawCategory":"后端 API"}

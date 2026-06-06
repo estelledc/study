@@ -156,6 +156,7 @@ CryptoVerif 证的是"**协议**用法对不对"，不是"**原语**安不安全
 
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
+- [[machanavajjhala-l-diversity-2007]] —— l-多样性 — k-匿名之后的隐私保护
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[proverif-2001]] —— ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
 - [[tor-2004]] —— Tor 洋葱路由 — 让你的网络请求穿上三层马甲
