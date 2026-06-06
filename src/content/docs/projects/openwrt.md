@@ -230,5 +230,6 @@ make package/my-daemon/compile V=sc
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
+- [[yocto-poky]] —— Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统
 

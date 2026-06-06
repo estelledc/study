@@ -166,6 +166,5 @@ export default function Layout({ children }) {
 - [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[next-intl]] —— next-intl — Next.js 专用的多语言开关
 - [[nivo]] —— nivo — React + d3 组件化图表
-- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 

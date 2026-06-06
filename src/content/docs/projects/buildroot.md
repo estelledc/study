@@ -185,6 +185,7 @@ make BR2_EXTERNAL=/path/to/my-product-layer
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统

@@ -239,5 +239,7 @@ class WorldScene extends Phaser.Scene {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[react]] —— React UI 组件库
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

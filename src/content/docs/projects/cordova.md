@@ -1,193 +1,206 @@
 ---
-title: Apache Cordova — 用网页技术写手机 App 的 WebView 桥
+title: Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
 来源: 'https://github.com/apache/cordova'
 日期: 2026-06-06
 分类: 后端 API
 子分类: 移动端
-难度: 初级
+难度: 中级
 ---
 
 ## 是什么
 
-Apache Cordova 是一个**让 Web 开发者用 HTML/CSS/JavaScript 写出能上架 App Store 的手机 App** 的开源框架。日常类比：像一个"翻译官"——你只会说普通话（JavaScript），它帮你翻译成当地语言（iOS 或 Android 的原生 API），双方就能顺畅沟通。
+Apache Cordova 是一个**让 Web 开发者用 HTML、CSS、JavaScript 写手机 App 的跨平台框架**。日常类比：像给 Web 页面套了一件"原生外衣"——穿上这件外衣，你的网页就能出现在 App Store / Google Play，还能读摄像头、取 GPS。
 
-核心机制叫 **WebView 桥（JavaScript Bridge）**：你写的 Web 代码运行在手机壳子里内嵌的一个迷你浏览器（WebView）里，当你调用 `navigator.camera.getPicture()` 时，Cordova 把这个调用序列化成消息，穿过桥传给原生层，原生层打开摄像头、拍完照片，再把结果序列化成 JSON 传回来。整个过程是异步的，对你来说就像调了一个普通的回调函数。
+核心思路只有三层：
 
-Cordova 由 PhoneGap 演变而来，是混合 App（Hybrid App）这种开发模式的鼻祖。如今的 Ionic Framework、Capacitor 等框架，本质上都是站在 Cordova 的肩膀上演进的。
+```
+Web 代码 (HTML/JS/CSS)
+    ↓ 跑在
+WebView（系统内置浏览器引擎）
+    ↓ 通过 JS Bridge 调
+原生层（摄像头 / GPS / 文件系统 / 蓝牙……）
+```
+
+最小 Cordova 应用只需要两个文件：一个 `index.html` 和一个 `config.xml`。CLI 用 `cordova platform add android` 把这两个文件"塞进"Android 项目，再 `cordova run android` 就能在手机上跑起来。
+
+```bash
+npm install -g cordova
+cordova create MyApp
+cd MyApp
+cordova platform add android
+cordova plugin add cordova-plugin-camera
+cordova run android
+```
+
+Cordova 不提供 UI 组件，它只是**运行时桥**——你的 HTML 负责界面，Cordova 负责打通设备能力。
 
 ## 为什么重要
 
-不理解 Cordova，这些事你没法解释：
+不理解 Cordova，下面这些事很难说清楚：
 
-- 为什么早期 Ionic App 在安卓低端机上"看起来像 H5 不像原生"——它们本质上就是运行在 WebView 里的 H5，性能瓶颈来自 WebView 而非业务代码
-- 为什么 Capacitor（Ionic 团队出品）要和 Cordova 兼容插件生态，又为什么要彻底重写桥接层——WebView Bridge 的设计缺陷是推动力
-- 为什么 React Native 选择"不用 WebView"而是独立 JS 线程 + 原生组件——这是对 Cordova 架构的明确反驳
-- 为什么"一套代码跑多平台"是一个持续 15 年的核心诉求，至今还在 Flutter / Capacitor / Expo 上轮回
+- 为什么 Ionic 早期几乎 100% 依赖 Cordova，而 Capacitor 出现后才得以脱钩
+- 为什么"JS Bridge 性能瓶颈"是所有 WebView 系方案共同的原罪，React Native 不得不走 JSI/新架构
+- 为什么手机 App 可以"仅用 Web 技术"发布到应用商店，背后是什么机制在支撑
+- 为什么 Adobe PhoneGap 和 Apache Cordova 是同一个东西，却又不完全是
 
 ## 核心要点
 
-Cordova 的架构可以拆成 **三层**：
+Cordova 架构可以拆成 **三个关键机制**：
 
-1. **Web 层（你的代码住在这里）**：你的 HTML/CSS/JS 运行在 WebView 里，就像一个普通网页。类比：这是"驾驶员座位"，你坐在里面握方向盘，不需要了解发动机工作原理。
+1. **WebView 容器**：每个平台（iOS/Android）都有系统级 WebView——iOS 用 WKWebView，Android 用 Chromium WebView。Cordova 的"原生壳"就是一个空 Activity/ViewController，主内容全是 WebView 渲染的 HTML。类比：像一个只有透明玻璃、没有墙壁的建筑，玻璃里面展示的是你自己的 Web 页面。
 
-2. **JavaScript Bridge（消息通道）**：当 JS 需要访问设备能力时，Cordova 会把调用信息**序列化**（即把 JavaScript 对象转成字符串，方便跨层传输）后送给原生层。早期用 URL Scheme，后来用 `promptNative()`，WKWebView 时代（iOS 14 后稳定）改用 message handlers，结果再异步回传给 JS 层。类比：像工厂里传递生产指令的传送带——一次传一个盒子，两端各自拆包/打包。
+2. **JS Bridge（消息协议）**：WebView 里的 JS 不能直接调原生 API，两侧需要"翻译官"。旧版 Bridge 用 URL Scheme 劫持（iOS `iframe.src = "gap://camera/take"`）或 `prompt()` 拦截传消息，新版用 `WKScriptMessageHandler`。原生侧收到消息后调实际 API，把结果序列化成 JSON 回传给 JS callback。
 
-3. **插件层（原生能力按需挂载）**：每种设备能力（摄像头、GPS、文件系统）对应一个 Cordova 插件，插件包含 JS 接口定义 + iOS/Android 的原生实现。类比：乐高积木——主框架提供底板，每块能力是独立积木，需要什么就插什么。
+3. **插件系统**：每个设备能力（摄像头、GPS、振动……）封装成一个独立插件，包含 JS 接口 + 各平台原生实现。通过 `cordova plugin add <plugin-name>` 安装，本质是把原生代码注入到平台项目里并注册到 Bridge。核心插件由 Apache 维护（cordova-plugin-camera、cordova-plugin-geolocation 等），第三方插件通过 npm 分发。
 
 ## 实践案例
 
-### 案例 1：企业内部工具快速 App 化
+### 案例 1：访问摄像头扫二维码
 
-某公司已有一套 Web 后台，销售人员需要在手机上扫条码入库。用 Cordova 两天内就能交付：
+企业内部工具场景：已有 Web 管理后台，需要让仓库人员扫码录入库存。
 
 ```bash
-# 安装 Cordova CLI
-npm install -g cordova
-
-# 创建项目
-cordova create warehouse-app com.example.warehouse WarehouseApp
-cd warehouse-app
-
-# 加平台
-cordova platform add android
-cordova platform add ios
-
-# 加摄像头/扫码插件
 cordova plugin add cordova-plugin-camera
 cordova plugin add phonegap-plugin-barcodescanner
 ```
 
-`www/js/index.js` 里调用摄像头：
-
 ```javascript
-document.getElementById('scan-btn').addEventListener('click', () => {
+// 调用摄像头扫码
+function scanBarcode() {
   cordova.plugins.barcodeScanner.scan(
-    (result) => {
+    function(result) {
       if (!result.cancelled) {
-        console.log('条码：', result.text);
-        // 调接口入库
-        fetch('/api/warehouse/in', {
-          method: 'POST',
-          body: JSON.stringify({ barcode: result.text })
-        });
+        document.getElementById('sku').value = result.text;
+        submitInventory(result.text);
       }
     },
-    (err) => console.error('扫码失败', err)
-  );
-});
-```
-
-**要点**：你只写 JS，扫码的原生实现（Android 用 ZXing，iOS 用 AVFoundation）全封装在插件里。
-
-### 案例 2：验证 MVP——用 Cordova + Ionic 快速跑通 App 交互
-
-产品 MVP 阶段不确定是否值得投入原生开发，用 Cordova 作为底座：
-
-```bash
-# Ionic 早期版本就是 Cordova + Angular/UI 组件
-npm install -g @ionic/cli
-
-ionic start my-app tabs --type=angular
-cd my-app
-ionic cordova platform add ios
-
-# 开发时本地预览
-ionic serve
-
-# 真机构建
-ionic cordova build ios --prod
-```
-
-这套组合让团队在 1 周内拿到可以给投资人演示的 App 包，比原生开发快 3-5 倍。**验证 PMF 之后，再评估是否迁移到 React Native 或全原生**，这是合理的技术路径。
-
-### 案例 3：H5 页面打包进壳获取原生权限
-
-有时候你有一个很好的移动端 H5，但需要 GPS 后台追踪这种 H5 无法直接做到的能力：
-
-```javascript
-// www/js/location.js
-document.addEventListener('deviceready', () => {
-  // deviceready 是 Cordova 初始化完成的事件，必须等它才能调插件
-  const watchId = navigator.geolocation.watchPosition(
-    (position) => {
-      const { latitude, longitude } = position.coords;
-      // 把坐标上报给服务器
-      syncLocationToServer(latitude, longitude);
+    function(error) {
+      alert('扫码失败: ' + error);
     },
-    (err) => console.error(err),
-    {
-      enableHighAccuracy: true,
-      maximumAge: 0,
-      timeout: 5000
-    }
+    { preferFrontCamera: false, showFlipCameraButton: true }
   );
+}
+
+// 等 Cordova 初始化完成再绑定
+document.addEventListener('deviceready', function() {
+  document.getElementById('scan-btn').addEventListener('click', scanBarcode);
 }, false);
 ```
 
-**关键点**：`deviceready` 事件是 Cordova 特有的——所有插件 API 必须等这个事件触发后才可调用，忘了这一点是最常见的新手错误。
+关键点：`deviceready` 事件是 Cordova 特有的——在 DOM ready 之后、Bridge 初始化完成之后才触发，必须等它才能调插件。常见新手坑是把插件调用写在 `DOMContentLoaded` 里，导致 Bridge 还没就绪就报错。
+
+### 案例 2：把 H5 页面 AppStore 化并获取 GPS
+
+产品想把已有移动端 H5 加上后台定位功能（H5 在浏览器里无法后台访问 GPS）：
+
+```xml
+<!-- config.xml 关键配置 -->
+<widget id="com.company.tracker" version="1.0.0">
+  <name>货运追踪</name>
+  <content src="index.html" />
+  <access origin="https://api.company.com" />
+  <plugin name="cordova-plugin-geolocation" />
+  <preference name="BackgroundMode" value="true" />
+</widget>
+```
+
+```javascript
+// 持续监听位置变化
+const watchId = navigator.geolocation.watchPosition(
+  function(position) {
+    const { latitude, longitude, accuracy } = position.coords;
+    // 通过 Cordova WebView，这里的 geolocation 走的是原生 GPS API
+    // 精度和功耗都比浏览器 H5 的实现好得多
+    reportLocation(latitude, longitude);
+  },
+  function(err) { console.error(err); },
+  { enableHighAccuracy: true, maximumAge: 5000 }
+);
+```
+
+Cordova 的 `cordova-plugin-geolocation` 把 W3C Geolocation API 代理到原生，代码和在浏览器里写的完全一样，但实际走的是原生 GPS 栈。
+
+### 案例 3：混合 App——原生 + WebView 并存
+
+某些场景需要在原生导航栏下嵌入 Cordova WebView，而不是让 WebView 占满全屏：
+
+```java
+// Android 原生代码里嵌入 Cordova WebView
+public class MainActivity extends CordovaActivity {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // 加载本地 HTML 资源
+    loadUrl(launchUrl);
+  }
+}
+```
+
+这种"Platform-centered 工作流"让你能在同一个 App 里混用原生组件（如地图 SDK 的 Native View）和 Web 组件（如复杂表单页面），是 Cordova 官方文档明确支持的场景，也是它区别于纯 H5 套壳工具的核心能力。
 
 ## 踩过的坑
 
-1. **忘了等 `deviceready`**：在 `document.ready` 里直接调 `cordova.plugins.xxx`，得到 `undefined`，以为插件没装好，其实是 Cordova 原生层还没初始化完。必须把所有插件调用包在 `document.addEventListener('deviceready', fn)` 里。
+1. **忘记等 `deviceready`**：把 `cordova.plugins.*` 调用放在 `$(document).ready()` 或 `DOMContentLoaded` 里——此时 Bridge 还没初始化，全部报 `undefined`。必须用 `document.addEventListener('deviceready', callback, false)`。
 
-2. **JS Bridge 传大 payload 卡顿**：Bridge 是消息序列化传输，把整张图片的 base64（几 MB）通过 Bridge 回传时，会阻塞 UI 线程，出现 App 短暂无响应。正确做法：调 `getPicture` 时设 `destinationType: Camera.DestinationType.FILE_URI`（返回本地文件路径），而不是默认的 `DATA_URL`（返回 base64 字符串），让原生层存本地文件，JS 只拿路径，传输量从几 MB 降到几十字节。
+2. **iOS WKWebView 迁移后 cookie/localStorage 失效**：旧版 Cordova 用 UIWebView，Apple 强制迁移到 WKWebView 后，`localStorage` 数据在进程重启后有时会丢失（WKWebView 的存储进程与主进程隔离）。解决：用 `cordova-plugin-wkwebview-engine` 配套的 `cordova-sqlite-storage` 替代 localStorage。
 
-3. **插件版本锁死升不了**：`cordova-plugin-camera@2.x` 和 `cordova-plugin-camera@4.x` 的接口有破坏性变更，而项目同时依赖另一个插件只支持 2.x。这种"插件版本地狱"是 Cordova 项目维护期的噩梦，建议 `package.json` 锁死插件版本并单独维护升级文档。
+3. **JS Bridge 传大文件卡死**：通过 Bridge 传图片 Base64 或音频 Buffer 时，旧版序列化会阻塞 UI 线程。图片应改用文件路径传递，原生侧存文件、JS 侧拿路径，避免把二进制数据直接跨 Bridge 传输。
 
-4. **UIWebView 被 Apple 强制下架**：2020 年起 App Store 拒绝使用 UIWebView 的 App。Cordova 老项目必须迁移到 WKWebView（需更新 `cordova-ios` 平台版本 + 替换插件），但 WKWebView 的 cookie、localStorage 行为与 UIWebView 有差异，迁移后有隐性 Bug。
+4. **插件版本地狱**：Cordova CLI 12 和 CLI 9 之间有多个破坏性变更，某些插件（特别是老的蓝牙/NFC 插件）只兼容旧 CLI。升级 CLI 后需逐个检查每个插件的 `engines.cordova` 字段，并在 `package.json` 锁版本，避免 `npm install` 时静默升级导致构建崩溃。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 已有 Web 前端团队，需要快速交付 App 但不想学原生开发
-- 企业内部工具 App（对性能要求不极致，功能覆盖优先）
-- MVP 阶段快速验证产品方向，之后可按需迁移
-- 主要交互是表单、列表、简单的设备 API（摄像头、GPS）
+- 已有 Web 技术团队，需要快速交付移动 App，不想维护 iOS/Android 双份原生代码
+- 企业内部工具、ToB App，对 UI 动效要求不高但需要访问摄像头/GPS/推送等设备能力
+- 需要发布到应用商店但预算有限，MVP 阶段快速验证产品方向
+- 遗留 H5 应用需要原生能力增强（如后台定位、本地文件访问）
 
 **不适用**：
-- 需要流畅 60fps 动画和复杂手势（游戏、直播、视频编辑）——WebView 渲染跟不上原生
-- 大量原生 UI 组件（UICollectionView、RecyclerView 深度定制）
-- 低端安卓设备性能敏感场景——WebView 比原生 View 更耗内存
-- 团队已有原生开发能力，不需要跨平台代码共享的项目
+- 消费级 App，需要丝滑的原生动效（过渡动画、复杂手势、长列表回收）——WebView 渲染存在天花板
+- 高性能实时场景（游戏、AR/VR、音视频处理）——WebView 无法满足延迟要求
+- 已有 React/Vue 团队且目标是长期维护的产品——直接选 Capacitor（Cordova 精神继承者 + 现代架构）或 React Native
 
 ## 历史小故事（可跳过）
 
-- **2009 年**：Nitobi 公司工程师参加黑客马拉松，发现可以用 UIWebView 包裹 Web 代码并调用原生 API，诞生了 PhoneGap。当时的口号是"Write Once, Run Everywhere"。
-- **2011 年**：Adobe 收购 Nitobi。随后 Adobe 把框架核心捐献给 Apache 软件基金会，更名为 Apache Cordova。PhoneGap 作为 Adobe 基于 Cordova 的商业版本继续发布。
-- **2013-2015 年**：Cordova 生态爆发，npm 上 Cordova 插件数量破千，Ionic Framework v1 以 Cordova 为底座横空出世，混合 App 开发在创业公司中风行。
-- **2016 年**：React Native 发布并快速流行，以"原生组件 + JS 逻辑"替代"WebView + JS 全包"，被业界视为对 Cordova 架构的颠覆。
-- **2020 年**：Adobe 停止维护 PhoneGap；Ionic 团队发布 Capacitor 作为 Cordova 的现代替代品，重写了桥接层，解决了 WKWebView 兼容性和 Bridge 性能问题。Cordova 本体进入"维护模式"。
+- **2009 年**：Nitobi 公司在旧金山黑客马拉松创建 PhoneGap，首次提出"Web 开发者也能写手机 App"。当时 iPhone 刚发布两年，原生开发壁垒极高，PhoneGap 一夜爆红。
+- **2011 年**：Adobe 收购 Nitobi，同年把框架核心捐给 Apache 软件基金会，更名 Cordova（源自 Nitobi 公司所在地 Vancouver 的一条街道名）。PhoneGap 保留为 Adobe 的商业发行版，本质上是 Cordova 的下游。
+- **2013-2015 年**：Ionic Framework 基于 Cordova 崛起，带来了完整的 UI 组件库，让 Web 工程师无需学习原生就能交付"看起来不太差"的 App。Cordova 生态达到鼎盛。
+- **2019 年**：Capacitor 作为 Ionic 团队重写的 Cordova 替代者发布，插件 API 现代化，支持渐进式迁移。Adobe 宣布 PhoneGap 服务关闭（2020 年停止维护）。
+- **至今**：Cordova 本身进入维护模式，活跃开发减少，但存量企业 App 数量巨大；Capacitor 已成为新项目首选。Cordova 的遗产是证明了 JS Bridge 模式的可行性，并为 React Native（独立线程模型）、Flutter（自绘引擎）等后来者提供了反面教材和正面经验。
 
 ## 学到什么
 
-1. **WebView 桥的代价是有形的**：序列化/反序列化、异步延迟、内存复制——每次 Bridge 调用都有成本。设计插件时要批量传数据而不是频繁小量传，大文件传路径而不是传内容。
-
-2. **"一套代码"的代价是最低公分母**：为了跨平台，Cordova 不能使用任何平台特有的 API 和渲染特性，最终 UI 体验被 WebView 的性能上限锁死。
-
-3. **插件生态是护城河也是绑架**：Cordova 能跑 15 年，很大程度上是因为插件生态庞大；但生态分裂（维护者失联、版本不兼容）也是项目被迫锁定老版本的主要原因。
-
-4. **理解前辈框架的设计决策，是理解后继者为何这样设计的最短路径**：看懂 Cordova 的桥为什么慢，就自然理解了 Capacitor 为何改用 WKWebView message handlers，React Native 为何完全绕开 WebView。
+1. **WebView 桥是性能天花板而非无限扩展**——JS 和原生之间的序列化开销是结构性问题，不是调参能解决的，理解这一点才能判断何时该放弃 WebView 方案
+2. **插件=平台能力的抽象边界**——Cordova 用插件把"平台差异"封装起来，这个设计思路在 Capacitor、Expo Modules 里延续，是跨平台框架的通用模式
+3. **`deviceready` 告诉你"异步初始化"无处不在**——移动端开发中，资源就绪时间不等于代码执行时间，防御性编程（等待明确信号再操作）是基本功
+4. **框架的生命周期决定维护成本**——Cordova 进入维护模式后，存量项目的真实成本大幅上升；选型时评估框架活跃度和退出路径和评估技术能力同等重要
 
 ## 延伸阅读
 
-- 官方文档：[Apache Cordova Docs](https://cordova.apache.org/docs/en/latest/)（插件开发指南和平台 API 参考）
-- PhoneGap 创始人回顾：[Brian LeRoux — The History of PhoneGap](https://brian.io/phonegap-history/)（一手历史）
-- [[capacitor]] —— Ionic 团队重写 Cordova 桥接层的现代替代品
-- [[react-native]] —— 用原生组件替代 WebView 的另一条跨平台路径
-- [[ionic-framework]] —— 最早以 Cordova 为底座的 UI 组件框架
+- 官方文档：[Apache Cordova 架构概览](https://cordova.apache.org/docs/en/12.x/guide/overview/)（读完就理解 WebView/Bridge/Plugin 三层）
+- 迁移指南：[Cordova → Capacitor 官方迁移文档](https://capacitorjs.com/docs/cordova/migrating-from-cordova-to-capacitor)（新项目应优先选 Capacitor）
+- [[capacitor]] —— Ionic 团队重写的 Cordova 继任者，现代架构 + 原生层更轻量
+- [[ionic-framework]] —— 建在 Cordova/Capacitor 之上的 UI 组件库，把"够用的原生感"带给 Web 开发者
+- [[react-native]] —— 走了另一条路：抛弃 WebView，用 JS 线程驱动原生组件渲染
 
 ## 关联
 
-- [[capacitor]] —— Cordova 的现代继承者，解决了 WKWebView 兼容和 Bridge 性能问题
-- [[react-native]] —— 绕开 WebView、用原生组件的跨平台框架，是对 Cordova 架构的反驳
-- [[ionic-framework]] —— 早期以 Cordova 为底座的 UI 框架，后迁移到 Capacitor
-- [[flutter]] —— Google 用自绘引擎替代 WebView/原生组件的第三条跨平台路径
-- [[node-js]] —— Cordova CLI 和插件生态都运行在 Node.js 上
-- [[webpack]] —— Cordova 项目的 Web 资源打包工具，`www/` 目录的内容通常由 webpack 构建产出
+- [[capacitor]] —— Cordova 的精神继承者，解决了 Bridge 架构的核心限制，新项目首选
+- [[ionic-framework]] —— 长期与 Cordova 绑定的 UI 框架，Cordova 兴衰直接影响 Ionic 路线图
+- [[react-native]] —— 同为"一套代码多平台"，但选择了 JS 线程 + 原生渲染而非 WebView，是 Cordova 的最大替代方向
+- [[flutter]] —— 更激进：完全抛弃平台 UI 组件，自己用 Skia/Impeller 绘制，彻底消除 WebView 和 Bridge
+- [[node-js]] —— Cordova CLI 运行在 Node.js 上，`cordova` 命令本质是 Node 脚本协调各平台 SDK 的构建流程
+- [[webpack]] —— Cordova App 的前端资源打包通常由 Webpack 完成，输出的 dist/ 目录就是 WebView 加载的 index.html
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
+- [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
+- [[webpack]] —— webpack 模块打包
 

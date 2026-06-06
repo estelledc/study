@@ -418,7 +418,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用](/study/projects/capacitor/) | ✅ v3 |  |
-| [Apache Cordova — 用网页技术写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
+| [Cordova — 用 HTML/JS 写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
@@ -1248,7 +1248,7 @@ sidebar:
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | ✅ v3 | 机器学习 | AI 编码工具 |
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | ✅ v3 | 通信 | 实时通信 |
 | `coqui-tts` | [Coqui TTS — 多语种 TTS 工具包](/study/projects/coqui-tts/) | ✅ v3 | 机器学习 | 数据科学与 AI |
-| `cordova` | [Apache Cordova — 用网页技术写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 | 后端 API | 移动端 |
+| `cordova` | [Cordova — 用 HTML/JS 写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 | 后端 API | 移动端 |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | ✅ v3 | 区块链 | 链与合约 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | ✅ v3 | 区块链 | 链与合约 |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | ✅ v3 | 通信 | 实时通信 |

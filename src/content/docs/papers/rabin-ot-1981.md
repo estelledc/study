@@ -156,5 +156,7 @@ PSI 需要对百万级元素集合做 OT，直接跑 RSA 协议代价太高。IK
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[chillotti-tfhe-2016]] —— Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds
+- [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
+- [[hotstuff-2019]] —— HotStuff — 让换领导也只花线性消息的 BFT 共识
 

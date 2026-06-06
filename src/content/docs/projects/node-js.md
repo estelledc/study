@@ -197,7 +197,7 @@ parentPort.postMessage(hash);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cordova]] —— Apache Cordova — 用网页技术写手机 App 的 WebView 桥
+- [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
 - [[volta]] —— Volta — cd 进项目就自动换 Node 版本的工具链管理器
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

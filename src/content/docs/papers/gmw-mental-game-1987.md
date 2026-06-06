@@ -195,5 +195,8 @@ aggregated_gradient = shamir_reconstruct(agg_shares_from_all_parties)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
+- [[rsa]] —— RSA 公钥密码
+- [[yao-garbled-circuits-1986]] —— Yao 混淆电路 — 让两人合算函数却互不泄密
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

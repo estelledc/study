@@ -206,7 +206,7 @@ export function PhotoCapture() {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
-- [[cordova]] —— Apache Cordova — 用网页技术写手机 App 的 WebView 桥
+- [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react]] —— React UI 组件库
