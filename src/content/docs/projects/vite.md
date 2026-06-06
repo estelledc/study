@@ -168,6 +168,7 @@ export default defineConfig({
 - [[preact]] —— Preact — 3KB React 替代
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态

@@ -147,5 +147,6 @@ w_new = sum(n_k * w_k for k in clients) / sum(n_k for k in clients)
 - [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
+- [[kairouz-advances-fl-2019]] —— 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
 

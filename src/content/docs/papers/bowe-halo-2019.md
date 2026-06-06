@@ -88,6 +88,49 @@ provenance: pipeline-v3
 - 工程落地看常量与实现漏洞，不只看渐近复杂度。
 - 论文链式阅读比单篇精读更高效。
 - 与站内 neighbors 互链能形成可复习的知识图。
+- Halo 证明：trusted setup 不是 SNARK 的本质需求，而是早期构造的工程取舍。
+- Accumulation scheme 将验证器工作批量化，是递归证明链实用化的关键抽象。
+
+## 核心算法细节
+
+### Inner Product Argument（IPA）
+
+Halo 的核心原语是 Bulletproofs 中的内积论证（IPA），但在椭圆曲线 Pasta（Pallas/Vesta）上实现：
+
+给定向量 **a**、**b** 和承诺 `C = <a,G> + <b,H> + <a,b>·Q`，IPA 在不透露 **a**、**b** 的情况下证明内积 `<a,b> = z`：
+
+1. 证明者与验证者交互 `log n` 轮，每轮将向量折半
+2. 最终只需发送 2 个域元素，验证者工作量 O(n)
+3. 无需可信设置：生成元 G、H、Q 可公开推导（hash-to-curve）
+
+### Accumulation Scheme（累积方案）
+
+传统递归 SNARK 要求在电路内验证一个 SNARK，电路开销极大。Halo 引入 accumulation scheme：
+
+- **Accumulate**：将多个 IPA 实例合并为一个 "累积器"，暂缓昂贵的最终验证
+- **Decide**：只在链的终点（或批量点）调用一次完整 IPA 验证
+- 每个证明步骤只需验证 accumulator 更新的正确性，成本远低于完整验证
+
+### 双曲线配对与 Pasta 曲线族
+
+Halo 使用 Pallas/Vesta 两条曲线互为对方的基域：
+- Pallas 的标量域 = Vesta 的基域
+- 交替在两条曲线上证明，避免配对开销
+- Halo 2（升级版）用此实现深度无限的递归
+
+### 为何不需要 Trusted Setup
+
+PLONK/Groth16 依赖 KZG 多项式承诺，需要"有毒废料"（structured reference string）。Halo 用 IPA 替代 KZG：
+- IPA 承诺的安全性仅依赖椭圆曲线离散对数
+- 生成元可从公开字符串 hash 得到，任何人可验证
+
+## 工程实现要点
+
+- **halo2 库**：Zcash 基金会开源的 Halo 2 实现（Rust），已用于 Orchard shielded 协议
+- **Pasta 曲线**：`pasta_curves` crate 提供高性能实现，Pallas 在 M1 上约 80µs/scalar mul
+- **电路约束系统**：halo2 采用 PLONKish 算术化，自定义门（custom gate）可大幅减少约束数量
+- **proof aggregation**：可将数千个独立证明聚合成一个，轻客户端只需验证聚合证明
+- **Zcash Orchard**：2021 年 NU5 升级引入 Halo 2，消除了 Sapling 时期的 Groth16 可信初始化依赖
 
 ## 延伸阅读
 

@@ -31,6 +31,58 @@ provenance: pipeline-v3
 4. **工程映射**：开源库与 RFC 如何落地论文思想。
 5. **局限**：已知攻击面、参数选取、未来工作。
 
+## 核心算法细节
+
+### BFV vs BGV：噪声管理策略对比
+
+BGV 方案通过"模数切换"（modulus switching）将噪声量级降低来控制增长；BFV 则采用"消息缩放"策略——在加密时将明文乘以 `⌊q/t⌋`，解密时再除回，把噪声"挤压"到不影响低 t 位的区域。这一差别使 BFV 无需在每一层乘法后切换模数，电路深度更易配置。
+
+### 整数明文空间与批量编码
+
+BFV 的明文空间为 `Z_t[x]/(x^n+1)`，其中 t 为明文模数，n 为多项式次数（通常取 2 的幂：2048/4096/8192）。利用中国剩余定理（CRT），当 `t` 分解为多个素数乘积时，多项式可被分解为若干"槽"（slot），每个槽独立存放一个整数明文，实现 SIMD 批量操作：
+
+```
+n = 4096, t = 65537（素数）
+明文向量 [v0, v1, ..., v4095] 一次加密进同一密文
+同态加法/乘法对所有槽同步执行，吞吐量提升 ~4096 倍
+```
+
+### 噪声增长分析
+
+每次同态乘法后噪声约增长 `O(n · t · B^2)` 倍，其中 B 为密钥分布的界。论文给出精确的噪声上界公式，并据此推导出满足 128 位安全的参数组合：`n=4096, q≈2^109, t<2^20`。超出参数会导致解密失败，因此实现时须在加密前估算电路深度。
+
+### Microsoft SEAL 示例（BFV 模式）
+
+```cpp
+#include "seal/seal.h"
+using namespace seal;
+
+EncryptionParameters parms(scheme_type::bfv);
+parms.set_poly_modulus_degree(4096);
+parms.set_coeff_modulus(CoeffModulus::BFVDefault(4096));
+parms.set_plain_modulus(PlainModulus::Batching(4096, 20));
+
+SEALContext context(parms);
+BatchEncoder encoder(context);
+KeyGenerator keygen(context);
+Encryptor encryptor(context, keygen.public_key());
+Evaluator evaluator(context);
+Decryptor decryptor(context, keygen.secret_key());
+
+// 编码 4096 个整数，加密后同态相加
+vector<uint64_t> a(4096, 3), b(4096, 7);
+Plaintext pa, pb; encoder.encode(a, pa); encoder.encode(b, pb);
+Ciphertext ca, cb; encryptor.encrypt(pa, ca); encryptor.encrypt(pb, cb);
+evaluator.add_inplace(ca, cb);  // 每槽结果 = 10
+```
+
+## 工程实现要点
+
+- **参数选取**：优先用库提供的 `BFVDefault` 参数集；自定义时须通过噪声估算器验证深度够用。
+- **重线性化密钥**：每次密文乘法后调用 `relinearize`，否则密文尺寸平方增长，操作延迟爆炸。
+- **批量 vs 非批量**：明文模数不是素数或不满足 NTT 友好条件时无法批量编码，需改用多项式编码模式。
+- **内存布局**：n=8192 的密文占 ~0.5 MB，批量处理时须考虑 LLC 容量压力。
+
 ## 实践案例
 
 ### 案例 1：画威胁模型表

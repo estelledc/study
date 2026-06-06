@@ -162,6 +162,7 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统

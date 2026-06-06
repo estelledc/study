@@ -88,6 +88,59 @@ provenance: pipeline-v3
 - 工程落地看常量与实现漏洞，不只看渐近复杂度。
 - 论文链式阅读比单篇精读更高效。
 - 与站内 neighbors 互链能形成可复习的知识图。
+- 模数切换（modulus switching）是 BGV 区别于 Gentry FHE 的核心创新：将噪声控制从昂贵的 bootstrapping 转化为廉价的参数缩放。
+- 层级 FHE（Leveled FHE）在实际应用中往往足够：固定乘法深度的电路不需要 bootstrapping，直接按层分配模数。
+
+## 核心算法细节
+
+### RLWE 问题与密文结构
+
+BGV 基于 Ring-LWE：在多项式环 R_q = Z_q[X]/(X^n+1) 上，密文是一对多项式 (a, b)，其中 b = a·s + 2e + m，s 是私钥，e 是小噪声，m 是明文。
+
+- **加法**：(a₁+a₂, b₁+b₂)，噪声线性增加
+- **乘法**：密文张量积后 relinearization，噪声平方增长
+
+### 模数切换（Modulus Switching）
+
+这是 BGV 的核心贡献。将密文从模数 q 切换到较小模数 q'：
+
+```
+ct' = round(q'/q · ct) mod q'
+```
+
+切换后密文噪声从 B 降至约 B·q'/q + 小量。通过在每次乘法后缩小模数，将噪声增长从指数级压制到线性级，支持 L 层乘法的层级 FHE 只需模数链 q_0 > q_1 > ... > q_L。
+
+### 密钥切换（Key Switching）
+
+乘法后密文变为 s² 的函数，需切换回线性密文。密钥切换矩阵（relinearization key）预计算并公开：
+
+- 计算开销：O(n log q) 次环运算
+- 存储开销：每级需要一个切换密钥，约几 MB
+
+### 噪声增长分析
+
+| 操作 | 噪声上界 |
+|------|---------|
+| 加密 | B |
+| 加法 | 2B |
+| 乘法 + relinearization | B² + poly(n)·B |
+| 模数切换后 | B·(q'/q) + small |
+
+### 性能数据（HElib 参考实现）
+
+| 操作 | 延迟（单核） | 批处理数量 |
+|------|------------|-----------|
+| 加法 | ~10µs | n/2 个槽 |
+| 乘法 | ~10ms（无 amortize） | n/2 个槽 |
+| 乘法（SIMD batching） | ~0.1ms/op | n/2 ≈ 16384 |
+
+## 工程实现要点
+
+- **参数选取**：乘法深度 L 决定最大模数 q，需用安全估计工具（如 `lattice-estimator`）确认参数安全
+- **批处理 (SIMD)**：BGV 支持将 n/2 个明文值打包进一个密文（CRT packing），吞吐量提升数千倍
+- **HElib**：IBM 研究院的 C++ 实现，支持 BGV 和 CKKS，适合研究原型
+- **Microsoft SEAL**：商业级 C++ 库，提供 BGV/BFV/CKKS，API 更友好
+- **模数链设计**：选择素数链使每个 q_i 支持 NTT（q_i ≡ 1 mod 2n），避免手动 CRT 分解
 
 ## 延伸阅读
 

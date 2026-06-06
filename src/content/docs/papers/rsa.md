@@ -167,6 +167,7 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bitcoin]] —— Bitcoin 白皮书
+- [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分

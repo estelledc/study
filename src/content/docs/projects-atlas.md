@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 800 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 804 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：800 个
-- **已分类**：800
+- **总数**：804 个
+- **已分类**：804
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 6 |
+| [操作系统](#操作系统) | 7 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 178 |
+| [后端 API](#后端-api) | 179 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 4 |
+| [图形学](#图形学) | 5 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 108 |
+| [CLI](#cli) | 109 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,12 +168,13 @@ sidebar:
 
 ## 操作系统
 
-共 6 个。
+共 7 个。
 
 ### 嵌入式
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
@@ -370,7 +371,7 @@ sidebar:
 
 ## 后端 API
 
-共 178 个。
+共 179 个。
 
 ### 前端
 
@@ -586,6 +587,7 @@ sidebar:
 | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 🗄 存量 |  |
 | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | ✅ v3 |  |
 | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | ✅ v3 |  |
+| [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | ✅ v3 |  |
 | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | ✅ v3 |  |
 | [styled-components — React 生态最早的 CSS-in-JS 库](/study/projects/styled-components/) | ✅ v3 |  |
@@ -693,14 +695,20 @@ sidebar:
 
 ## 图形学
 
-共 4 个。
+共 5 个。
+
+### 渲染与图形
+
+| 项目 | 质量 | 描述 |
+|---|:---:|---|
+| [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
+| [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
+| [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 
 ### 其他子类
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
-| [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
-| [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | ✅ v3 |  |
 | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | ✅ v3 |  |
 
@@ -835,7 +843,7 @@ sidebar:
 
 ## CLI
 
-共 108 个。
+共 109 个。
 
 ### 编辑器与 IDE
 
@@ -844,6 +852,7 @@ sidebar:
 | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 |  |
 | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | ✅ v3 |  |
 | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) | ✅ v3 |  |
+| [Lite XL — 用 Lua 驱动一切的极简文本编辑器](/study/projects/lite-xl/) | ✅ v3 |  |
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
 | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | ✅ v3 |  |
 | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | ✅ v3 |  |
@@ -1083,7 +1092,7 @@ sidebar:
 
 ---
 
-## 全部 800 个（字母序）
+## 全部 804 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1155,6 +1164,7 @@ sidebar:
 | `bentoml` | [BentoML — 模型打包部署](/study/projects/bentoml/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) | ✅ v3 | 区块链 | 链与合约 |
 | `better-auth` | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) | ✅ v3 | 后端 API | 框架与 SDK |
+| `bevy` | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | ✅ v3 | 通信 | 实时通信 |
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | ✅ v3 | 后端 API | 前端工具链 |
@@ -1285,6 +1295,7 @@ sidebar:
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | ✅ v3 | 通信 | 实时通信 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | ✅ v3 | 通信 | 实时通信 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | ✅ v3 | 后端 API | web 框架 |
+| `embassy` | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | ✅ v3 | 后端 API | projects |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) | ✅ v3 | 数据库 | 存储与查询 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | ✅ v3 | 后端 API | Web 后端 |
@@ -1456,6 +1467,7 @@ sidebar:
 | `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | ✅ v3 | 后端 API | projects / 前端国际化 |
 | `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `listr2` | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | ✅ v3 | CLI | 工具库 |
+| `lite-xl` | [Lite XL — 用 Lua 驱动一切的极简文本编辑器](/study/projects/lite-xl/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | ✅ v3 | 机器学习 | ai-eng |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | ✅ v3 | 后端 API | Web 后端 |
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | ✅ v3 | 基础设施 | DevOps 与运维 |
@@ -1665,6 +1677,7 @@ sidebar:
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `react-hook-form` | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) | ✅ v3 | 后端 API | projects |
 | `react-intl` | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | ✅ v3 | 后端 API | projects / 前端 i18n |
+| `react-native` | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 | 后端 API | 移动端 |
 | `react-spring` | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | ✅ v3 | 后端 API | projects / 前端动画 |
 | `recharts` | [Recharts — 用 JSX 直接拼出图表的 React 组件库](/study/projects/recharts/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `redash` | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) | ✅ v3 | 数据可视化 | 数据可视化 |

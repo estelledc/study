@@ -32,6 +32,30 @@ provenance: pipeline-v3
 4. **扩展点**：插件、配置、钩子在哪里暴露。
 5. **运维**：日志、指标、崩溃复现路径。
 
+## 核心架构
+
+LMMS 采用三层编辑器结构，彼此配合完成完整的创作流程：
+
+- **Song Editor（歌曲编辑器）**：最顶层视图，管理曲目轨道与时间线排列。每条轨道可放置 Beat+Bassline 块或 BB 步进序列，支持拖拽重排与循环区域标记。
+- **Beat+Bassline Editor（节拍编辑器）**：16/32 步步进序列机，对应鼓机使用场景。每行绑定一个乐器（插件或采样），列为时间格，点亮即触发。可调节每格 velocity、音高微调。
+- **Piano Roll（钢琴卷帘）**：类 MIDI 编辑视图，支持量化吸附、力度编辑、弯音曲线绘制。键盘轴在左，时间轴在上，可绘制任意旋律与和弦。
+
+**插件体系**：
+
+- VST/LADSPA 插件通过统一的 `InstrumentPlugin` 接口接入，支持 Windows VST2（Wine 转发）和原生 Linux LADSPA。
+- 内置合成器包括 **ZynAddSubFX**（加法/减法/FM 合成三合一）和 **BitInvader**（波形绘制合成器），均以插件形式挂载。
+- FX Chain 提供均衡器、压限器、混响等效果链，每个乐器轨独立设置。
+
+**MIDI 时序引擎**：基于 `MidiEventProcessor` 发送/接收 MIDI 事件，支持外接键盘实时演奏与录制。导出支持 WAV/OGG/FLAC，后端通过 ALSA/PulseAudio/SDL 驱动音频输出。
+
+## 生态工具
+
+- **ZynAddSubFX**：LMMS 内置最强大的软合成器，支持加法合成（Additive）、减法合成（Subtractive）与 FM 合成，可导入 .xiz 预设包。
+- **BitInvader**：轻量波形绘制合成器，适合制作 8-bit 风格音色和短促打击音效。
+- **社区 Preset 包**：LMMS 社区维护大量免费预设（.xpf/.mmp 格式），涵盖电子、合成波形、鼓组等风格。
+- **与 Ardour 集成**：LMMS 导出 MIDI 文件后可导入 Ardour 进一步录制真实乐器，形成「软合成打板 → 真乐器补录」的混合工作流。
+- **MMP/MMPZ 格式**：LMMS 原生工程格式，MMPZ 为压缩版，版本控制友好，易于 diff 查看修改。
+
 ## 实践案例
 
 ### 案例 1：最小可运行
@@ -56,7 +80,18 @@ cd lmms
 
 把输出接到下游（播放器、训练 DataLoader、会议客户端），记录延迟与格式约束。
 
-### 案例 5：与双千 atlas 交叉阅读
+### 案例 5：制作 8-bit 风格节拍
+
+```
+1. 在 Song Editor 新建 Beat+Bassline 轨道
+2. 添加 BitInvader 插件，手绘方波波形（占空比 50%）
+3. 在 Beat+Bassline 设置 16 步节拍型：1、5、9、13 格点亮作底鼓
+4. 添加 ZynAddSubFX 选 Square Synth 预设作旋律层
+5. 在 Piano Roll 画 C 大调 8 小节旋律，量化到 1/8 note
+6. 导出 WAV：File → Export → 44100Hz 16-bit
+```
+
+### 案例 6：与双千 atlas 交叉阅读
 
 写完本篇后，在 `projects-atlas` 打开同子类邻居 1 篇，检查实践案例是否覆盖安装/命令/排障。
 
@@ -67,6 +102,8 @@ cd lmms
 3. **权限与端口**：服务器组件忘开端口或 HTTPS 证书，客户端连不上。
 4. **路径写死**：示例用绝对路径，换机器必挂。
 5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
+6. **VST 兼容性**：Wine 转发 Windows VST2 在不同发行版 Wine 版本下行为差异大，建议优先使用原生 LADSPA 插件。
+7. **音频延迟调优**：默认 ALSA 缓冲区较大（256 帧以上），实时演奏感明显，需在设置中降至 64~128 帧并测试稳定性。
 
 ## 适用 vs 不适用场景
 
@@ -121,4 +158,3 @@ cd lmms
 - [[audacity]] —— Audacity — 开源音频编辑器
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
 - [[supercollider]] —— SuperCollider — 实时音频合成环境
-

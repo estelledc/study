@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 912 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 916 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：912 篇
-- **已分类**：912
+- **总数**：916 篇
+- **已分类**：916
 
 ### 按一级主题分布
 
@@ -21,11 +21,11 @@ sidebar:
 | [编程语言](#编程语言) | 109 |
 | [分布式系统](#分布式系统) | 75 |
 | [数据库](#数据库) | 67 |
-| [操作系统](#操作系统) | 57 |
+| [操作系统](#操作系统) | 58 |
 | [机器学习](#机器学习) | 215 |
 | [后端 API](#后端-api) | 9 |
 | [基础设施](#基础设施) | 12 |
-| [网络协议](#网络协议) | 63 |
+| [网络协议](#网络协议) | 65 |
 | [图形学](#图形学) | 122 |
 | [形式化方法](#形式化方法) | 51 |
 | [通信](#通信) | 1 |
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 27 |
+| [安全与隐私](#安全与隐私) | 28 |
 | [其他](#其他) | 13 |
 
 ---
@@ -355,7 +355,7 @@ sidebar:
 
 ## 操作系统
 
-共 57 篇。
+共 58 篇。
 
 ### 内核与虚拟化
 
@@ -381,6 +381,7 @@ sidebar:
 | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) | ✅ v3 |  |
 | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) | ✅ v3 |  |
 | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) | ✅ v3 |  |
+| [Haven — 把整个应用装进 CPU 黑盒，让云服务商也看不见](/study/papers/haven-2014/) | ✅ v3 |  |
 | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | ✅ v3 |  |
 | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | ✅ v3 |  |
 | [jemalloc — 多 arena 让多线程 malloc 不再互相等](/study/papers/jemalloc-2006/) | ✅ v3 |  |
@@ -754,7 +755,7 @@ sidebar:
 
 ## 网络协议
 
-共 63 篇。
+共 65 篇。
 
 ### 网络协议
 
@@ -769,6 +770,7 @@ sidebar:
 | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | ✅ v3 |  |
 | [Calder 2015 — Anycast CDN 在生产环境真的能用吗](/study/papers/calder-2015-anycast-cdn/) | ✅ v3 |  |
 | [Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网](/study/papers/cerf-kahn-1974/) | ✅ v3 |  |
+| [Chaum Mix Network — 把匿名通信从理论变成工程](/study/papers/chaum-1981-mix/) | ✅ v3 |  |
 | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) | ✅ v3 |  |
 | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) | ✅ v3 |  |
 | [CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验](/study/papers/codons-2004/) | ✅ v3 |  |
@@ -800,6 +802,7 @@ sidebar:
 | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) | ✅ v3 |  |
 | [Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样](/study/papers/mockapetris-1988-dns/) | ✅ v3 |  |
 | [Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"](/study/papers/mogul-1995-persistent-http/) | ✅ v3 |  |
+| [MPTCP 2012 — 把一根 TCP 管道变成多条并行水管](/study/papers/mptcp-2012/) | ✅ v3 |  |
 | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | ✅ v3 |  |
 | [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) | ✅ v3 |  |
 | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | ✅ v3 |  |
@@ -1202,7 +1205,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 27 篇。
+共 28 篇。
 
 ### 安全与隐私
 
@@ -1227,6 +1230,7 @@ sidebar:
 | [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 |  |
 | [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 |  |
 | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
+| [联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题](/study/papers/kairouz-advances-fl-2019/) | ✅ v3 |  |
 | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
 | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
@@ -1270,7 +1274,7 @@ sidebar:
 
 ---
 
-## 全部 912 篇（字母序）
+## 全部 916 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1400,6 +1404,7 @@ sidebar:
 | `chapter-llama-2025` | [Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节](/study/papers/chapter-llama-2025/) | ✅ v3 | 机器学习 | 视频理解 |
 | `chat-univi-2023` | [Chat-UniVi — 动态视觉 token 统一图像与视频对话](/study/papers/chat-univi-2023/) | ✅ v3 | 机器学习 | 视频理解 |
 | `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `chaum-1981-mix` | [Chaum Mix Network — 把匿名通信从理论变成工程](/study/papers/chaum-1981-mix/) | ✅ v3 | 网络协议 | 网络协议 |
 | `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | ✅ v3 | 基础设施 | 系统 |
 | `cheon-ckks-2017` | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `chillotti-tfhe-2016` | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
@@ -1631,6 +1636,7 @@ sidebar:
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | ✅ v3 | 机器学习 | 信息论 |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `haven-2014` | [Haven — 把整个应用装进 CPU 黑盒，让云服务商也看不见](/study/papers/haven-2014/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `hawkeye-2024` | [HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上](/study/papers/hawkeye-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `haystack-2010` | [Haystack — Facebook 十亿张照片怎么存](/study/papers/haystack-2010/) | ✅ v3 | 数据库 | 存储与查询 |
 | `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -1690,6 +1696,7 @@ sidebar:
 | `kafka` | [Kafka — 把消息系统降维成只追加的日志文件](/study/papers/kafka/) | ✅ v3 | 分布式系统 | databases / 分布式系统 |
 | `kafka-2011` | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) | ✅ v3 | 数据库 | 存储与查询 |
 | `kahn-natural-semantics` | [Kahn 自然语义 — 用一棵推理树说清楚程序求值](/study/papers/kahn-natural-semantics/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
+| `kairouz-advances-fl-2019` | [联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题](/study/papers/kairouz-advances-fl-2019/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `kajiya-1986-rendering-equation` | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `kami-2017` | [Kami — 在 Coq 里造硬件并自动编译到 Verilog](/study/papers/kami-2017/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `karger-1997-consistent-hashing` | [Karger 1997 一致性哈希 — 加机器不用全员搬家](/study/papers/karger-1997-consistent-hashing/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -1831,6 +1838,7 @@ sidebar:
 | `monitors-1974` | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `moviechat-2024` | [MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊](/study/papers/moviechat-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `mplug-owl-2023` | [mPLUG-Owl — 模块化拼装多模态大模型](/study/papers/mplug-owl-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `mptcp-2012` | [MPTCP 2012 — 把一根 TCP 管道变成多条并行水管](/study/papers/mptcp-2012/) | ✅ v3 | 网络协议 | 网络协议 |
 | `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) | ✅ v3 | 图形学 | 渲染与图形 |

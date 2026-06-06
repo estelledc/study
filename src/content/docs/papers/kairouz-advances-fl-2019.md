@@ -168,3 +168,10 @@ def dp_clip_and_noise(gradient, clip_norm=1.0, noise_multiplier=1.0):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+- [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
+- [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
+

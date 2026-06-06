@@ -206,6 +206,7 @@ function Greeting({ name }) {
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
 - [[reflexion]] —— Reflexion — 让 LLM 自我反思
 - [[sentry]] —— Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台

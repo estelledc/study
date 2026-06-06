@@ -165,3 +165,7 @@ Haven 线程模型：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[capsicum-2010]] —— Capsicum: Practical Capabilities for UNIX
+- [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
+

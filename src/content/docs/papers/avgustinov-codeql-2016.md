@@ -88,6 +88,71 @@ provenance: pipeline-v3
 - 工程落地看常量与实现漏洞，不只看渐近复杂度。
 - 论文链式阅读比单篇精读更高效。
 - 与站内 neighbors 互链能形成可复习的知识图。
+- QL 的谓词系统让数据流分析可组合：一个库查询可复用于多个规则。
+- 静态分析的假阳性不可避免，关键是把误报率控制在工程团队可接受范围。
+
+## 核心算法细节
+
+### QL 谓词系统与关系型 OOP
+
+QL 是一种面向对象的查询语言，底层编译为 Datalog 风格的关系型求值。每个类 (class) 对应一个谓词集合，继承意味着子类谓词对父类成立。例如：
+
+```ql
+class SqlQuery extends MethodAccess {
+  SqlQuery() {
+    this.getMethod().getName() = "query"
+  }
+  Expr getArgument() { result = this.getArgument(0) }
+}
+```
+
+### 数据流追踪：source-sink 分析
+
+CodeQL 的污点追踪 (`TaintTracking`) 分三步：
+1. **定义 source**：用户可控输入点（HTTP 参数、文件读取等）
+2. **定义 sink**：危险操作点（SQL 执行、命令拼接等）
+3. **追踪路径**：通过局部数据流 + 跨函数摘要推断中间传播链
+
+```ql
+import semmle.code.java.dataflow.TaintTracking
+import DataFlow::PathGraph
+
+class SqlInjectionConfig extends TaintTracking::Configuration {
+  SqlInjectionConfig() { this = "SqlInjectionConfig" }
+  override predicate isSource(DataFlow::Node src) {
+    src instanceof RemoteFlowSource
+  }
+  override predicate isSink(DataFlow::Node sink) {
+    sink.asExpr() instanceof SqlQuery
+  }
+}
+
+from SqlInjectionConfig cfg, DataFlow::PathNode src, DataFlow::PathNode sink
+where cfg.hasFlowPath(src, sink)
+select sink, src, sink, "SQL injection via $@.", src, "user input"
+```
+
+### 控制流图与调用图构建
+
+QL 在代码提取阶段（`codeql database create`）将源代码解析为关系型快照，包含：
+- **AST 关系**：语句、表达式、类型层次
+- **CFG 关系**：`ControlFlow::Node` 边及 `BasicBlock`
+- **调用图**：虚拟调用（virtual dispatch）通过类型分析解析
+
+### 复杂度分析
+
+Datalog 求值的时间复杂度与关系大小正相关。对大型项目（百万行代码）：
+- 提取阶段：与编译时间相当（1–10 分钟）
+- 查询阶段：简单谓词 <1 分钟，全程序流分析 5–30 分钟
+- 增量分析：仅重算受修改影响的关系，CI 中常用
+
+## 工程实现要点
+
+- **数据库版本锁定**：CodeQL 数据库与 CLI 版本须匹配，升级 CLI 须重建数据库
+- **查询包管理**：用 `qlpack.yml` 声明依赖，避免手动拷贝查询文件
+- **CI 集成**：`codeql-action` 支持 PR 审查自动扫描，结果以 SARIF 格式上传
+- **自定义规则发布**：将查询打包为 `CodeQL pack` 推送到 GitHub Packages 供团队复用
+- **性能调优**：对慢查询用 `--evaluator-log` 分析求值热点，必要时加 `pragma[noinline]`
 
 ## 延伸阅读
 

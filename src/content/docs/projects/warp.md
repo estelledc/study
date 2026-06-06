@@ -162,6 +162,8 @@ let ws = warp::path("ws")
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell

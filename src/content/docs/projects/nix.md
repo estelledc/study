@@ -152,15 +152,20 @@ nix run nixpkgs#jq -- '.name' package.json
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
 - [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[earthly]] —— Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[fish-shell]] —— fish-shell — 友好交互式命令行 Shell
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
 - [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
 - [[scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

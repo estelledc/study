@@ -31,6 +31,49 @@ provenance: pipeline-v3
 4. **工程映射**：开源库与 RFC 如何落地论文思想。
 5. **局限**：已知攻击面、参数选取、未来工作。
 
+## 核心算法细节
+
+### 置换论证（Permutation Argument）
+
+PLONK 的核心是用多项式编码电路线值的"拷贝约束"：同一信号出现在不同门的不同位置时，需证明这些值相等。PLONK 将此转化为置换检查：
+
+1. 构造置换 σ，将线连接关系编码为对 domain H = {ω^0, ..., ω^{n-1}} 的置换。
+2. 用"grand product argument"：证明 `∏(f_i / g_σ(i)) = 1`，等价于多项式 Z(X) 满足 `Z(ωX) · (f(X) + β·id(X) + γ) = Z(X) · (f(X) + β·σ(X) + γ)`。
+3. 将此约束折叠进单一多项式等式，用 KZG 承诺一次性验证。
+
+### 门约束多项式
+
+PLONK 使用算术化门约束 `q_L · a + q_R · b + q_O · c + q_M · a·b + q_C = 0`，其中 a, b, c 为左、右、输出线值，q 系数向量由电路编译器确定。相比 R1CS 每行只有一次乘法，PLONK 允许更丰富的门（UltraPLONK 引入自定义门和查找表 plookup）。
+
+### KZG 多项式承诺
+
+PLONK 依赖 Kate-Zaverucha-Goldberg（KZG）承诺：
+- **Commit**: `com(f) = f(τ)·G₁`（τ 为 SRS 中隐藏的有毒废料）
+- **Open**: 证明者提供商 `π = (f(x) - f(z))/(X - z)` 的承诺
+- **Verify**: 用配对检查 `e(com(f) - f(z)·G₁, G₂) = e(π, (τ-z)·G₂)`
+
+单次验证只需 2 次配对（约 3 ms），证明大小 ~400 字节，远小于 Groth16 的 200 字节但通用性远强于它。
+
+### 通用可更新 SRS
+
+PLONK 只需一次 SRS 生成仪式，所有不同大小的电路都可以复用，无需电路特定的 trusted setup。SRS 可以安全地增量更新（updatable）：任意新参与者加入后，只需其中一人诚实，SRS 就仍是安全的。
+
+### zkEVM 中的 PLONK 变体
+
+| 变体 | 特性 | 代表项目 |
+|------|------|---------|
+| TurboPLONK | 自定义门，支持高效哈希 | Aztec |
+| UltraPLONK | plookup 查找表 | Aztec Connect |
+| Halo2 | 递归无 trusted setup | Zcash, Scroll |
+| Boojum | GPU 友好，支持 zkEVM | zkSync Era |
+
+## 工程实现要点
+
+- **域选取**：BN254 曲线的标量域大小 ~254 位，既支持 KZG 配对又满足 NTT 友好（对 2^28 次根存在）。
+- **FFT 瓶颈**：证明生成 80% 时间在 FFT/iFFT，建议用 GPU 加速（cuFFT 或 Icicle 库）。
+- **plookup 优化**：将范围检查、位运算、SHA256 等非算术操作转化为表查找，可将门数降低 10-100×。
+- **递归证明**：Halo2 去掉配对改用 inner product argument，可在 enclave 或合约内验证递归证明。
+
 ## 实践案例
 
 ### 案例 1：画威胁模型表

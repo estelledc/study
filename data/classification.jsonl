@@ -124,6 +124,7 @@
 {"slug":"chapter-llama-2025","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"chat-univi-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"chatbot-arena-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
+{"slug":"chaum-1981-mix","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
 {"slug":"cheney-gc","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"系统","source":"category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"cheon-ckks-2017","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"chillotti-tfhe-2016","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
@@ -355,6 +356,7 @@
 {"slug":"halide","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"hamming-1950","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"信息论","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"hanrahan-1991-hierarchical-radiosity","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"haven-2014","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"hawkeye-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"haystack-2010","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"hazard-pointers-2004","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
@@ -414,6 +416,7 @@
 {"slug":"kafka-2011","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"kafka","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"databases / 分布式系统","source":"category","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"kahn-natural-semantics","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"kairouz-advances-fl-2019","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"kajiya-1986-rendering-equation","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"kami-2017","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"karger-1997-consistent-hashing","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
@@ -555,6 +558,7 @@
 {"slug":"monitors-1974","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"moviechat-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"mplug-owl-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"category","confidence":"high","rawCategory":"机器学习"}
+{"slug":"mptcp-2012","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
 {"slug":"ms-marco-2016","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"mueller-2007-pbd","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"mueller-2022-instant-ngp","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
@@ -978,6 +982,7 @@
 {"slug":"bentoml","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"besu","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"better-auth","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"框架与 SDK","source":"category","confidence":"high","rawCategory":"后端 API"}
+{"slug":"bevy","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"bigbluebutton","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"billboard-js","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"biome","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"前端工具链","source":"category","confidence":"high","rawCategory":"后端 API"}
@@ -1108,6 +1113,7 @@
 {"slug":"element-android","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"element-web","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"elysia","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"web 框架","source":"category","confidence":"high","rawCategory":"后端 API"}
+{"slug":"embassy","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"emotion","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"emqx","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"encore","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
@@ -1279,6 +1285,7 @@
 {"slug":"lingui","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端国际化","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"linkerd2","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"listr2","area":"projects","theme":"CLI","themeId":"cli","subcategory":"工具库","source":"category","confidence":"high","rawCategory":"CLI"}
+{"slug":"lite-xl","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"litellm-proxy","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"ai-eng","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"litestar","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"litmus","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
@@ -1487,6 +1494,7 @@
 {"slug":"react-flow","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"react-hook-form","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"react-intl","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端 i18n","source":"category","confidence":"high","rawCategory":"后端 API"}
+{"slug":"react-native","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"移动端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"react-spring","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端动画","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"react","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"UI 框架","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"recharts","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"category","confidence":"high","rawCategory":"数据可视化"}
