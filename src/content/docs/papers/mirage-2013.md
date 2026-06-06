@@ -105,10 +105,10 @@ let handle_packet_in sw evt =
 
 **适用**：
 
-- 高安全性要求的网络服务：DNS、TLS 终止、防火墙，攻击面极小
-- 需要快速弹性扩容的无状态微服务：启动 <50 ms，镜像几百 kB，云成本低
-- 网络功能虚拟化（NFV）：OpenFlow 控制器、负载均衡器、中间盒
-- 研究实验：验证新的 OS 结构、网络协议、安全模型，无遗留代码干扰
+- 云上高密度部署的单一功能服务（DNS、TLS 代理、静态网站、密钥服务）
+- 安全敏感场景——攻击面最小化、没有多余的 syscall 入口
+- 嵌入式 / IoT 设备，内存和存储极度受限（200 KB 的完整网络栈）——但需注意此路径依赖 OCaml 工具链，主流 IoT 固件仍以 C/Rust 为主
+- 学术研究：测量 OS 各层开销，理解协议栈性能上界
 
 **不适用**：
 
@@ -119,11 +119,13 @@ let handle_packet_in sw evt =
 
 ## 历史小故事（可跳过）
 
-- **1995 年**：MIT 的 [[exokernel-1995]] 提出 libOS 思想——把内核功能暴露为库，让应用自己管资源。理念超前，但因为驱动要从头写，没有用户敢上生产。
-- **2003 年**：[[xen-2003]] 发布，虚拟化变成主流。Xen 的 paravirt 接口成了天然的"统一硬件"——libOS 不再需要对着真实硬件写驱动，只需对着 Xen 写。
-- **2010 年**：Madhavapeddy 等人在 USENIX HotCloud 发表 "Turning down the LAMP"，第一次提出在 OCaml 里把 OS 组件当库来链接的设想。
-- **2013 年**：ASPLOS 论文正式发表，MirageOS 在 Amazon EC2 上实际运行，自己的网站（wiki、blog、DNS）全部跑在 unikernel 上。
-- **2016 年以后**：IncludeOS（C++）、OSv（Java）、Unikraft（模块化 C）相继出现，把 unikernel 思想扩展到更多语言；HaLVM（Haskell）、MirageOS 持续演进，影响了 AWS Lambda、Firecracker 等 serverless 基础设施的微 VM 设计。
+- **1995 年**：MIT 的 Exokernel 论文首次提出"让应用直接管硬件资源，OS 只做隔离"，这是 library OS 的精神祖先。当时没有高层语言和 hypervisor，工程化极难，停留在学术原型。
+- **1997 年**：剑桥大学的 Nemesis OS 把 library OS 思路落地，用于多媒体应用。这是 Madhavapeddy 团队的直接学术背景。
+- **2006 年**：AWS EC2 第一代基于 Xen，证明了 Xen hypervisor 可以做稳定的运行环境。这给 unikernel 提供了"稳定硬件抽象"。
+- **2012-2013 年**：OPAM 包管理器开发完成，1.0 于 2013 年 3 月正式发布（论文原文："Since releasing 1.0 in March 2013 ... the community has leapt in to contribute over 1800 packages"），Mirage 的 50+ 库终于能用标准工具分发和构建。
+- **2013 年 ASPLOS**：剑桥团队发表 MirageOS 论文，"unikernel"这个词开始在工业界流传。论文当年获得最佳论文提名。
+- **2014 年**：Xen 项目把 MirageOS 纳入孵化器项目，Docker 生态同期爆发，两者形成对比讨论热潮。
+- **2018 年后**：AWS Firecracker（Lambda 底层）、gVisor（Google）、Kata Containers 走了不同路线——用微 VM 或沙箱而非 unikernel；MirageOS 则继续在安全研究和嵌入式领域深耕。
 
 ## 学到什么
 
