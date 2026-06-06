@@ -3,7 +3,7 @@ title: Flash Boys 2.0 — 区块链上的抢跑者和共识危机
 来源: 'Daian et al., "Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges", IEEE S&P 2020'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 区块链安全
+子分类: 安全与隐私
 难度: 高级
 ---
 
@@ -162,3 +162,6 @@ def pure_arb(dex_a_price, dex_b_price, amount):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+
