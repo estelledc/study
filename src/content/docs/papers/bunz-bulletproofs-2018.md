@@ -1,5 +1,5 @@
 ---
-title: Bulletproofs: Short Proofs for Confidential Transactions and More
+title: "Bulletproofs: Short Proofs for Confidential Transactions and More"
 来源: 'Bulletproofs: Short Proofs for Confidential Transactions and More'
 日期: 2026-06-06
 分类: 安全与隐私

@@ -1,5 +1,5 @@
 ---
-title: WireGuard: Next Generation Kernel Network Tunnel
+title: "WireGuard: Next Generation Kernel Network Tunnel"
 来源: 'WireGuard: Next Generation Kernel Network Tunnel'
 日期: 2026-06-06
 分类: 网络协议

@@ -1,5 +1,5 @@
 ---
-title: QL: Object-Oriented Queries on Relational Data
+title: "QL: Object-Oriented Queries on Relational Data"
 来源: 'QL: Object-Oriented Queries on Relational Data'
 日期: 2026-06-06
 分类: 安全与隐私

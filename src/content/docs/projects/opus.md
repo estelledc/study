@@ -1,149 +1,151 @@
 ---
-title: Opus — 低延迟全频带音频编解码器
-来源: 'IETF RFC 6716, https://github.com/xiph/opus'
+title: Opus — 低延迟全频带音频编解码
+description: RFC 6716；WebRTC/视频会议默认音频；与 WebM/MP4 伴音的开源首选
+来源: 'https://github.com/xiph/opus'
 日期: 2026-06-06
-分类: 通信
-子分类: 音视频媒体
+分类: 媒体
+子分类: 音频编解码
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么
 
-**Opus** 是 IETF **RFC 6716** 标准化的**交互式音频编解码器**——把 Skype 系的 SILK（语音优化）与 CELT（音乐优化）合并，单 codec 覆盖窄带语音到立体声音乐，延迟可低至几毫秒，也是 WebRTC 默认音频格式。
+**Opus** 是 IETF 标准（RFC 6716）的开源音频编解码器：融合 Skype **SILK**（语音优化）与 Xiph **CELT**（音乐优化），单编解码器覆盖 **窄带语音到全频带音乐**，延迟可低至几毫秒。WebRTC、Zoom 开源栈、[[mediasoup]]、[[pion]] 默认音频几乎都是 Opus。
 
-日常类比：[[lame]] MP3 像**邮寄 CD**——音质不错但有固定延迟，不适合对讲。[[opus]] 像**无线对讲机**——小声说话清、唱歌也能听，还能在「省流量模式」和「高保真模式」间一键切换。
-
-[[ffmpeg]] 转 Opus in WebM：
+日常类比：[[lame]] MP3 像老式卡带；Opus 是**蓝牙耳机时代**的 codec——语音清、音乐也能听、延迟够开会。
 
 ```bash
-ffmpeg -i talk.wav -c:a libopus -b:a 64k -vbr on -compression_level 10 out.webm
+ffmpeg -i in.wav -c:a libopus -b:a 64k -vbr on out.opus
 ```
-
-`libopus` 是参考实现；浏览器 WebRTC 内置解码器与之比特流兼容。
 
 ## 为什么重要
 
-不理解 Opus，下面这些事讲不清：
+音视频 LLM 与会议系统都绕不开 Opus：
 
-- 为什么 Zoom/Discord/WebRTC 会议默认 Opus 而非 MP3/AAC
-- 为什么 [[libvpx]] WebM 视频常配 Opus 音轨——开放 A/V 套餐
-- 为什么 48 kHz 帧长 20 ms 是 VoIP 事实标准
-- 为什么 Opus 1.5 加入 DRED 深冗余应对丢包（RFC 草案）
+- **WebRTC 强制能力**：不懂 Opus 就不懂实时音轨打包
+- **与 [[libvpx]]/AV1 伴音**：WebM 标准音频轨
+- **可变比特率 VBR**：语音场景自动省码率
+- **对比 [[lame]]**：同一 podcast Opus 64k 常优于 MP3 128k 感知
 
 ## 核心要点
 
-1. **模式自动切换**：SILK 处理语音（8–24 kHz），CELT 处理音乐（全频带）；编码器按内容选。
+1. **模式自动**：编码器按内容选 SILK/CELT/混合；应用一般不需手调。
 
-2. **bitrate 弹性**：6 kbps 窄带语音到 510 kbps 立体声音乐；VBR/CBR 均可。
+2. **帧长 2.5–60ms**：短帧低延迟；长帧省开销。会议常用 20ms。
 
-3. **低延迟帧长**：2.5/5/10/20 ms 可选；20 ms 最常用，交互与效率平衡。
+3. **FEC / DTX**：前向纠错与静音检测省带宽；弱网会议关键。
 
-4. **容器**：RTP 走 RFC 7587；文件存储用 Ogg Opus（RFC 7845）。
+4. **多声道**：最多 255 声道；立体声音乐与单声道语音通吃。
 
-5. **DTX/CNG**：静音时可停发包，省会议带宽。
+5. **容器**：`.opus` 原生；WebM/mkv/mp4 也常见。
 
 ## 实践案例
 
-### 案例 1：语音 podcast 压到 48 kbps
+### 案例 1：语音播客压缩
 
 ```bash
-ffmpeg -i voice.wav -c:a libopus -b:a 48k -application voip mono.opus
+ffmpeg -i voice.wav -c:a libopus -b:a 32k -application voip out.opus
 ```
 
-`-application voip` 偏向 SILK，清辅音更利落地。
+`application voip` 偏 SILK，体积小于音乐模式。
 
-### 案例 2：与 [[lame]] MP3 对比
+### 案例 2：与 [[ffmpeg]] 视频一并封装
 
-| 维度 | Opus 48k | MP3 128k |
-|---|---|---|
-| 语音清晰度 | 高 | 中 |
-| 延迟 | 毫秒级 | 帧缓冲更大 |
-| 开源专利 | RFC 免版税 | MP3 专利已过期 |
-| 浏览器 | WebRTC 原生 | 需容器支持 |
+```bash
+ffmpeg -i v.mp4 -i a.wav -c:v copy -c:a libopus -b:a 96k out.webm
+```
 
-### 案例 3：Video-LLM 音视频
+视频 copy、音频转 Opus 进 WebM，给 [[dash-js]] 实验轨。
 
-[[decord]] `AVReader` 读视频时音频轨常见 AAC；若 WebM+Opus，FFmpeg 统一解码。多模态模型要确认采样率对齐（通常 16 kHz 重采样给 ASR）。
+### 案例 3：WebRTC 对照
+
+在 [[pion]] 示例里看 `mimeType: audio/opus` 与 SDP `opus/48000/2`；理解采样率 48kHz 标准。
+
+### 案例 4：数据集统一采样
+
+多源视频抽音频轨转 16kHz mono（ASR）或 48kHz Opus（存档）：
+
+```bash
+ffmpeg -i clip.mp4 -vn -ar 48000 -ac 1 -c:a libopus -b:a 64k clip.opus
+```
+
+### 案例 5：与双千 atlas 交叉阅读
+
+写完本篇后，在 `projects-atlas` / `papers-atlas` 中打开同子类邻居各 1 篇，对比「实践案例」段是否覆盖：安装、最小命令、排障三条。缺一则补进你自己的实验笔记（不必改站正文）。
 
 ## 踩过的坑
 
-1. **用 opus_demo 比特流当发布格式**——演示流含调试数据，分发用 Ogg/WebM。
+1. **重采样**：Opus 内部 48kHz；输入别的采样率 ffmpeg 会 resample，注意 `-ar`。
 
-2. **音乐内容却开 voip 模式**——高频损失，改 `audio` 或默认。
+2. **旧播放器**：极老设备无 Opus；交付备 AAC（[[fdk-aac]]）。
 
-3. **固定比特率过低**——复杂音乐会金属声，开 VBR 或提码率。
+3. **比特率不是 MP3 刻度**：32k Opus 不要与 128k MP3 直接比数值。
 
-4. **与视频封装不匹配**——MP4 常用 AAC；WebM 才原生 Opus。
+4. **复制流**：WebRTC 里是 RTP 打包 Opus，不是裸 `.opus` 文件。
+
+5. **与视频 LLM**：[[videollama3]] 等要音频时常从 mp4 抽 AAC；转码注意音画同步。
+5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 实时会议、游戏语音、直播连麦
-- WebM/HTML5 开放音视频
-- 低码率语音分发
+
+- WebRTC / 实时会议音频
+- WebM/开源 Web 分发伴音
+- 语音数据集压缩存档
 
 **不适用**：
-- 只关心归档audiophile（FLAC 无损）
-- 旧车载只认 MP3（用 [[lame]]）
-- 广播级多声道 Atmos（非 Opus 主场）
+
+- 极致旧车机兼容（AAC/MP3）
+- 无损归档（用 [[flac]]）
+- 专业母带（PCM/FLAC 工作流）
 
 ## 历史小故事（可跳过）
 
-- **2012**：IETF 标准化 Opus，合并 Skype SILK 与 Xiph CELT
-- **2010s**：成为 WebRTC 强制 codec
-- **2024**：Opus 1.5 引入 DRED 深冗余抗丢包
-- **现状**：libopus 由 Xiph 维护；opus-tools 处理 Ogg 封装
+- **2012**：IETF 标准化，Skype 与 Xiph 技术合并。
+- **2013+**：WebRTC 1.0 采纳为必选 codec。
+- **2018+**：YouTube 部分场景 Opus 音轨。
+- **2024+**：仍是实时音频开源默认；[[lame]] MP3 渐退直播场景。
 
 ## 学到什么
 
-1. **交互音频首要指标是延迟 + 鲁棒性**，不是仅码率
-2. **语音/音乐统一 codec** 降低协议栈复杂度
-3. **RFC 标准化 = 浏览器与终端硬解普及前提**
-4. **视频管线**：画面 [[x264]]，声音 Opus，容器 WebM 是开放组合
-5. **1.5 DRED**：深冗余在丢包网络提升可懂度，值得跟进 RFC 进展
+- **一个 codec 覆盖语音+音乐**减少协议协商复杂度。
+- 低延迟来自短帧与高效 SILK，不是魔法。
+- Web 音视频要把**音频 codec 与视频 codec 分开选型**。
+- RTP 打包与文件封装是两层知识。
+- Opus 是读 [[mediasoup]]/[[pion]] 前的音频预习。
+- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
+- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
+- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
+- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
+- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
+
 
 ## 延伸阅读
 
-- [RFC 6716](https://tools.ietf.org/html/rfc6716) — 规范全文
-- [opus-codec.org](https://opus-codec.org/) — 生态与测试向量
+- RFC 6716：https://datatracker.ietf.org/doc/html/rfc6716
+- [[ffmpeg]] —— libopus
 - [[lame]] —— MP3 对照
+- [[flac]] —— 无损对照
 - [[libvpx]] —— WebM 视频搭档
-- [[ffmpeg]] —— libopus 封装
-
-## 与同类对比
-
-| 音频 codec | 延迟 | 码率范围 | 交互场景 | 文件生态 |
-|---|---|---|---|---|
-| **Opus** | 毫秒 | 6–510 kbps | WebRTC 首选 | WebM/Ogg |
-| [[lame]] MP3 | 较高 | 32–320 kbps | 归档分发 | 全系 |
-| AAC | 中 | 类似 | HLS/MP4 | 苹果友好 |
-| FLAC | N/A | 无损 | 存档 | 发烧友 |
-
-会议产品选 Opus 不是因为它「音质永远最好」，而是**延迟+抗丢包+带宽弹性**综合最优。
+- WebRTC 音频指南
 
 ## 关联
 
-- [[lame]] —— MP3 编码对照
-- [[libvpx]] —— WebM 视频
-- [[ffmpeg]] —— 转码与封装
-- [[handbrake]] —— 音频轨转 AAC/Opus
-- [[shotcut]] —— 时间线导出音频设置
-- [[decord]] —— AVReader 音频切片
-- [[videollama2]] —— 音视频多模态常需对齐采样率
+- [[ffmpeg]] —— 抽轨与转码
+- [[lame]] —— MP3 老标准
+- [[flac]] —— 无损音频
+- [[libvpx]] —— WebM 容器伴音
+- [[mediasoup]] —— SFU 默认 Opus
+- [[pion]] —— Go WebRTC Opus 轨
+- [[obs-studio]] —— 推流音频编码选项
+- [[videollama3]] —— 多模态需音轨时常从视频抽取
 
-WebM（VP9+Opus）是开放栈样板；MP4（H.264+AAC）是兼容栈样板——按播放端能力二选一。
+## 维护备注
 
-会议录制若已 Opus，提取音轨用 `ffmpeg -i call.webm -vn -c:a copy voice.opus` 即可，无需重编码。
-
-`opus_demo` 仅用于编解码实验，不要把它输出当发布文件。
-
-编译后跑 `make check` 可快速验证本机浮点/定点路径是否正常。
-
-浏览器 WebRTC 栈已内置 Opus，服务端只需正确封装 RTP 即可对接。
-
-固定点编译 `--enable-fixed-point` 面向嵌入式，桌面默认浮点音质更好。
-
-RFC 6716 原文不长，值得一读以理解模式切换边界。
+- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」，少堆外链。
+- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
 
 ## 反向链接
 

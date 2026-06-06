@@ -1,5 +1,5 @@
 ---
-title: CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
+title: "CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM"
 来源: 'CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM'
 日期: 2026-06-06
 分类: 安全与隐私

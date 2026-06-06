@@ -11,6 +11,18 @@
 围绕"AI 时代产品工程师"成长路径，深度研究 **GitHub 开源项目** + **学术论文** 并写笔记的站点。
 Astro + Starlight 构建，已发布到 GitHub Pages，每次推 main 自动 redeploy。
 
+## 当前规模（2026-06-06）
+
+| 维度 | 已写 | 双千目标 | 完成率 |
+|---|---:|---:|---:|
+| 论文 papers | **908** | 10,000 | 9.08% |
+| 项目 projects | **796** | 10,000 | 7.96% |
+| **合计** | **1,704** | 20,000 | 8.52% |
+
+- **专题闭环**：视频论文 65/65 · 媒体项目 50/50 · [阅读站 3 hub](https://estelledc.github.io/study/reading-stations/)
+- **项目现状快照**：[`research/project-status-2026-06.md`](./research/project-status-2026-06.md)
+- **流水线**：治理期 `data/STOP_SIGNAL` 存在，auto-push 暂停；续跑见 project-status §已知问题
+
 两条平行学习线（状态独立维护，避免 worktree 间冲突）：
 
 | 线 | 当前状态 | 方法论 | 队列 |
@@ -27,12 +39,14 @@ src/content/docs/
 ├── career-plan.md       ← 培养路线
 ├── method.md            ← 项目消化方法论（7 层）
 ├── queue.md             ← 项目推荐队列
-├── projects/            ← 项目研究笔记（726 篇）
+├── projects/            ← 项目研究笔记（796 篇）
 ├── projects-atlas.md    ← 项目全景索引（按 分类/子分类 自动生成）
 ├── papers-method.md     ← 论文消化方法论（8 层）
 ├── papers-queue.md      ← 论文推荐队列
-├── papers/              ← 论文研究笔记（796 篇）
-└── papers-atlas.md      ← 论文全景索引（按 分类/子分类 自动生成）
+├── papers/              ← 论文研究笔记（908 篇）
+├── papers-atlas.md      ← 论文全景索引（按 分类/子分类 自动生成）
+├── reading-stations.md  ← 专题阅读站入口（3 hub 已上线）
+└── stations/            ← 各专题 hub（video-understanding / mllm / distributed-systems）
 
 data/taxonomy.json       ← 分类 SSOT（一级主题 + topic 映射）
 scripts/classify-notes.mjs  ← 批量归一化 分类/子分类

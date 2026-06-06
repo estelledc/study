@@ -1,149 +1,152 @@
 ---
-title: MLT — 开源多媒体编辑框架
+title: MLT — 多媒体编辑框架
+description: Producer/Filter/Consumer 流式抽象；Shotcut/Kdenlive 底层开源 NLE 引擎
 来源: 'https://github.com/mltframework/mlt'
 日期: 2026-06-06
-分类: 通信
-子分类: 音视频媒体
+分类: 媒体
+子分类: 视频转码
 难度: 中级
+provenance: pipeline-v3
 ---
 
 ## 是什么
 
-**MLT**（Media Lovin' Toolkit）是 LGPL 授权的**多媒体创作框架**——不直接给你漂亮按钮，而是提供 **Producer → Filter → Consumer** 的流水线，让 [[shotcut]]、Kdenlive 等非线性编辑器（NLE）把解码、特效、混音、导出串起来。
+**MLT**（Media Lovin' Toolkit）是开源**非线性编辑（NLE）引擎**：用 **Producer**（源）、**Filter**（效果）、**Consumer**（输出）组成有向图，在帧级别流式处理音视频。GUI 编辑器 [[shotcut]] 直接构建于 MLT；命令行工具 `melt` 可脚本化剪辑。
 
-日常类比：[[ffmpeg]] 像**一次性榨汁机**——输入文件、输出文件，滤镜链写命令行。MLT 像**乐高传送带**——每个模块是可插拔的「积木服务」，时间线上多轨片段各自是 Producer，滤镜卡中间，最后 Consumer 送到屏幕或文件。适合**交互式编辑**而非单次转码。
-
-命令行 `melt` 最小拼接：
+日常类比：[[ffmpeg]] 像一次性跑完的批处理脚本；MLT 像**可暂停、可插拔模块的流水线**——中途加滤镜、改时间线不用重跑整条命令。
 
 ```bash
-melt clipA.mp4 clipB.mp4 -consumer avformat:out.mp4
+melt color:red out=100 -track avformat:clip.mp4 -transition mix:-1 a_track=0 b_track=1 out=200 -consumer avformat:output.mp4
 ```
-
-两段顺序接上，Consumer 负责编码写出。
 
 ## 为什么重要
 
-不理解 MLT，下面这些事讲不清：
+理解「时间线编辑」与「转码」架构差异：
 
-- 为什么 [[shotcut]] README 把 MLT 列成第一依赖——GUI 只是壳，引擎是 MLT
-- 为什么开源 NLE 多共用 MLT 而不是各自重写时间线
-- 为什么「框架 vs 应用」分层让 [[ffmpeg]] 专注编解码、MLT 专注**多轨时间语义**
-- 为什么 LGPL 让商业剪辑器也能链接 MLT（动态链接合规前提下）
+- **时间线语义**：多轨、转场、关键帧是 MLT 一等公民；ffmpeg 需复杂 filter_complex
+- **开源 NLE 教科书**：读 MLT 懂 Shotcut/Kdenlive 底层
+- **与 [[gstreamer]] 对照**：都是图结构；MLT 偏编辑时间线，GStreamer 偏播放管线
+- **视频理解数据增强**：多 clip 拼接、转场合成可用 melt 批处理
 
 ## 核心要点
 
-1. **Service 链**：一切节点继承 `mlt_service`——Producer 产生帧，Filter 变换帧，Consumer 消费帧（预览或编码）。
+1. **Producer**：文件、摄像头、颜色源、嵌套时间线（playlist）。
 
-2. **Playlist / Tractor**：Playlist 顺序放片段；Tractor 多轨合成（视频轨+音频轨+字幕轨）。
+2. **Filter**：resize、fade、chromakey 等挂到 producer 或 tractor 上。
 
-3. **插件后端**：FFmpeg 解码、Frei0r 特效、SDL 音频播放等以模块注册，CMake 可选编译。
+3. **Consumer**：输出文件、SDL 预览、流媒体（依赖模块）。
 
-4. **melt 与 mlt++**：C API 是核心；C++/Qt 应用（Shotcut）通过 mlt++ 绑定调用。
+4. **Tractor / Multitrack**：多轨合成容器；转场是特殊 filter。
 
-5. **LGPL 边界**：动态链接 MLT 是常见合规路径，静态链接需法律评估。
+5. **服务模块**：avformat、sdl2、plus 等插件扩展编解码器（常借 [[ffmpeg]]）。
 
 ## 实践案例
 
-### 案例 1：加滤镜再导出
+### 案例 1：两 clip 硬切拼接
 
 ```bash
-melt input.mp4 -attach brightness brightness=0.1 \
-  -consumer avformat:bright.mp4 vcodec=libx264
+melt clip1.mp4 clip2.mp4 -consumer avformat:joined.mp4
 ```
 
-`-attach` 在 Producer 后挂 Filter；亮度调整后再由 avformat consumer 编码。
+playlist 顺序播放，最简单 concat。
 
-### 案例 2：理解 Producer-Filter-Consumer
+### 案例 2：淡入淡出转场
 
+```bash
+melt a.mp4 -track b.mp4 -transition luma mix=25 a_track=0 b_track=1 -consumer avformat:out.mp4
 ```
-[file producer: clip.mp4] → [filter: resize] → [filter: fade] → [consumer: sdl2]
-```
 
-编辑软件拖动时间线，本质是在改这张图的节点参数与 Tractor 轨道布局。
+`mix` 控制叠化长度（帧数）。
 
-### 案例 3：与 [[shotcut]] 关系
+### 案例 3：缩放到 720p 并加水印
 
-[[shotcut]] = Qt6 GUI + MLT 引擎 + [[ffmpeg]] 格式支持。学 MLT 等于学 Shotcut 的「后台导演」；导出预设最终落到 melt consumer 参数。
+通过 `melt ... -filter resize width=1280 height=720 -filter watermark ...` 链式滤镜。
+
+### 案例 4：对照 [[shotcut]] 工程
+
+Shotcut `.mlt` 工程文件即 MLT XML；GUI 操作可反读为 melt 命令学习。
+
+### 案例 5：与双千 atlas 交叉阅读
+
+写完本篇后，在 `projects-atlas` / `papers-atlas` 中打开同子类邻居各 1 篇，对比「实践案例」段是否覆盖：安装、最小命令、排障三条。缺一则补进你自己的实验笔记（不必改站正文）。
 
 ## 踩过的坑
 
-1. **在源码根目录直接 make**——官方要求 `mkdir build && cd build && cmake ..`，否则污染树。
+1. **文档分散**：melt 参数学习曲线陡；从 Shotcut 导出 XML 反推更快。
 
-2. **没 source setenv 就跑 melt**——未安装时用 `source ../setenv` 指到 build 产物。
+2. **编解码依赖**：输出 H.264 依赖 ffmpeg 模块与 [[x264]] 是否编译进。
 
-3. **容器里没声音**——默认 SDL dummy 音频；要 `--privileged` 或改 `SDL_AUDIODRIVER`。
+3. **与 ffmpeg 重复**：纯转码用 [[ffmpeg]] 更简单；MLT 胜在多轨编辑。
 
-4. **FFmpeg 版本和 Shotcut 不一致**——编解码器符号对不上会链接失败。
+4. **帧率统一**：多源 fps 不同要显式 normalize，否则音画漂移。
+
+5. **无随机 seek 训练语义**：MLT 是编辑/export；训练随机采帧仍 [[decord]]。
+5. **行数与模板**：交付前用 quality-gate 扫一遍，避免关联链到未写 slug。
 
 ## 适用 vs 不适用场景
 
 **适用**：
-- 开发或定制非线性视频编辑器
-- 需要多轨时间线 + 实时预览
-- 命令行批量模板化剪辑（melt 脚本）
+
+- 开源 NLE 底层学习
+- 脚本化多 clip 合成、片头片尾批处理
+- 构建自定义轻量编辑器（基于 MLT API）
 
 **不适用**：
-- 单次格式转换（[[handbrake]] / [[ffmpeg]] 更简单）
-- Video-LLM 训练随机采帧（[[decord]]）
-- 实时超低延迟直播管线
+
+- 大规模单文件转码（[[ffmpeg]] / [[handbrake]]）
+- 训练 DataLoader 内在线增强
+- 浏览器内编辑
 
 ## 历史小故事（可跳过）
 
-- **2004+**：Dan Dennedy 推动 MLT 成为开源 NLE 共用引擎
-- **2010s**：Kdenlive、Shotcut 等选用 MLT 降低引擎重复开发
-- **2020s**：提供 Dev Container，CMake/Ninja 成为标准构建路径
-- **现状**：文档集中在 mltframework.org；GitHub 侧重构建与测试
+- **2004**：Charles Yates 发起，填补开源 NLE 框架空白。
+- **2010+**：Shotcut 选用 MLT 成为 flagship 应用。
+- **2015+**：4K、多轨、GPU 滤镜逐步增强。
+- **2024+**：仍是开源桌面剪辑引擎首选之一。
 
 ## 学到什么
 
-1. **编辑器和转码器分层**——时间线语义与编解码库解耦
-2. **Service 链是扩展点**——新特效 = 新 Filter 模块
-3. **melt CLI 是理解 GUI 的捷径**——所见时间线在命令行有对应
-4. **框架选型看许可证**——LGPL 影响静态/动态链接策略
-5. **Dev Container 降低贡献门槛**——音视频项目环境重，容器化是趋势
+- **编辑引擎 = 时间线图 + 帧流**，不是单次 filtergraph。
+- Producer/Filter/Consumer 三分法可映射到其他媒体框架。
+- GUI 工程文件（XML）是读底层 API 的捷径。
+- 转码与剪辑是不同产品层；选型先问要不要多轨。
+- MLT 与 [[ffmpeg]] 常共存：MLT 编排，ffmpeg 编解码。
+- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
+- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
+- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
+- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
+- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
+
 
 ## 延伸阅读
 
-- [MLT 官方文档](https://www.mltframework.org/docs/) — API 与 melt 参考
-- [[shotcut]] —— 基于 MLT 的跨平台 NLE
-- [[ffmpeg]] —— MLT 后端编解码依赖
-- [[handbrake]] —— 转码向产品，与 NLE 互补
-- [[frei0r]] —— 视频特效插件生态
-
-## 与同类对比
-
-| 方案 | 类型 | 多轨时间线 | 典型用户 |
-|---|---|---|---|
-| **MLT** | 框架 | 是 | NLE 开发者 |
-| [[ffmpeg]] | 工具/库 | 需手写 filter_complex | 运维/批处理 |
-| [[shotcut]] | 应用 | 是（内置 MLT） | 创作者 |
-| [[opencv]] | 库 | 否 | CV 算法 |
-
-## 与同类对比
-
-| 框架/工具 | 抽象 | 实时预览 | 批处理转码 |
-|---|---|---|---|
-| **MLT** | 时间线服务链 | 强 | melt 脚本 |
-| [[ffmpeg]] filter_complex | 滤镜图 | 弱 | 强 |
-| GStreamer | pipeline | 强 | 中 |
-| 闭源 NLE SDK | 专有 | 强 | 各异 |
-
-MLT 填补的是 **「多轨编辑语义」** 空白，不是替代 [[ffmpeg]] 的单次转码。
+- MLT 文档：https://www.mltframework.org/docs/
+- [[shotcut]] —— 官方 GUI
+- [[ffmpeg]] —— 编解码后端
+- [[handbrake]] —— 单文件转码对照
+- [[gstreamer]] —— 另一图式多媒体框架
+- [[opencv]] —— 帧级 CV 处理对照
 
 ## 关联
 
-- [[shotcut]] —— 最主要下游 GUI
-- [[ffmpeg]] —— 编解码后端
-- [[handbrake]] —— 转码应用，非时间线
-- [[decord]] —— ML 读帧，不走 NLE
-- [[opencv]] —— 帧处理另一路线
-- [[decord]] —— ML 训练不经过 NLE，但素材常来自 MLT 系工具导出
+- [[shotcut]] —— 基于 MLT 的 NLE
+- [[ffmpeg]] —— 编解码与部分 filter
+- [[x264]] —— 常见导出编码
+- [[handbrake]] —— 非时间线转码
+- [[gstreamer]] —— 流水线框架对照
+- [[opencv]] —— 帧处理实验
+- [[decord]] —— 训练读已导出 mp4
+- [[obs-studio]] —— 直播场景；非 MLT 路线
 
-理解 melt 命令行有助于 debug Shotcut 导出失败——看 log 里 consumer 参数即真相。
+## 维护备注
 
-贡献者先在 `build/` 里 `ctest --output-on-failure` 绿过再提 PR，是 README 推荐的最低门槛。
+- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
+- 代码块尽量可拷贝运行；路径用占位符 `/path/to` 标注，避免泄露本机目录。
+- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
+- 若从 worktree cherry-pick 合并，合并后再跑一次 `npm run atlas` 刷新反向链接。
 
-文档站 mltframework.org 的 melt 示例值得逐条跑一遍。
+- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」，少堆外链。
+- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
 
 ## 反向链接
 

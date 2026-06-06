@@ -1,5 +1,5 @@
 ---
-title: Capsicum: Practical Capabilities for UNIX
+title: "Capsicum: Practical Capabilities for UNIX"
 来源: 'Capsicum: Practical Capabilities for UNIX'
 日期: 2026-06-06
 分类: 操作系统

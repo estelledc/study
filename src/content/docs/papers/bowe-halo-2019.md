@@ -1,5 +1,5 @@
 ---
-title: Halo: Recursive Proof Composition without a Trusted Setup
+title: "Halo: Recursive Proof Composition without a Trusted Setup"
 来源: 'Halo: Recursive Proof Composition without a Trusted Setup'
 日期: 2026-06-06
 分类: 安全与隐私

@@ -1,5 +1,5 @@
 ---
-title: Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds
+title: "Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds"
 来源: 'Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds'
 日期: 2026-06-06
 分类: 安全与隐私
