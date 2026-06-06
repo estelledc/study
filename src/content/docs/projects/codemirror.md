@@ -165,6 +165,7 @@ const logUpdates = ViewPlugin.fromClass(class {
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[react]] —— React UI 组件库
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
+- [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建

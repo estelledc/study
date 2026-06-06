@@ -260,7 +260,7 @@ app.whenReady().then(() => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建与发布工具链
+- [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建流水线
 - [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
@@ -270,6 +270,7 @@ app.whenReady().then(() => {
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react]] —— React UI 组件库
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
+- [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架

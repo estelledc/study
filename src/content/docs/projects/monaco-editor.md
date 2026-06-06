@@ -167,6 +167,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
+- [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座
 - [[vim]] —— Vim — 模态编辑器之父
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建

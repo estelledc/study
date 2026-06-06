@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 858 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 862 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：858 个
-- **已分类**：858
+- **总数**：862 个
+- **已分类**：862
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 20 |
+| [操作系统](#操作系统) | 21 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 192 |
+| [后端 API](#后端-api) | 193 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 18 |
+| [图形学](#图形学) | 19 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 122 |
+| [CLI](#cli) | 123 |
 | [编译器](#编译器) | 14 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 20 个。
+共 21 个。
 
 ### 嵌入式
 
@@ -187,6 +187,7 @@ sidebar:
 | [Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库](/study/projects/mbedtls/) | ✅ v3 |  |
 | [MicroPython — 在 MCU 上跑 Python 3 的精简实现](/study/projects/micropython/) | ✅ v3 |  |
 | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 |  |
+| [OpenThread — Google 开源的 Thread mesh 网络协议栈](/study/projects/openthread/) | ✅ v3 |  |
 | [OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版](/study/projects/openwrt/) | ✅ v3 |  |
 | [PlatformIO Core — 一套命令行，统管千块嵌入式开发板](/study/projects/platformio-core/) | ✅ v3 |  |
 | [probe-rs — Rust 写的嵌入式烧录与调试工具](/study/projects/probe-rs/) | ✅ v3 |  |
@@ -384,7 +385,7 @@ sidebar:
 
 ## 后端 API
 
-共 192 个。
+共 193 个。
 
 ### 前端
 
@@ -431,9 +432,10 @@ sidebar:
 | [Cordova — 用 HTML/JS 写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
 | [Electron — Chromium + Node.js 跨平台桌面应用框架](/study/projects/electron/) | ✅ v3 |  |
 | [electron-builder — 一条命令把 Electron 应用打包发布到全平台](/study/projects/electron-builder/) | ✅ v3 |  |
-| [Electron Forge — 官方一体化桌面应用构建与发布工具链](/study/projects/electron-forge/) | ✅ v3 |  |
+| [Electron Forge — 官方一体化桌面应用构建流水线](/study/projects/electron-forge/) | ✅ v3 |  |
 | [Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新](/study/projects/expo/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
+| [flutter-rust-bridge — Dart 调 Rust 像调本地函数](/study/projects/flutter-rust-bridge/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 |  |
 | [Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定](/study/projects/neutralinojs/) | ✅ v3 |  |
@@ -726,7 +728,7 @@ sidebar:
 
 ## 图形学
 
-共 18 个。
+共 19 个。
 
 ### 渲染与图形
 
@@ -747,6 +749,7 @@ sidebar:
 | [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 |  |
 | [PlayCanvas — 浏览器里跑的 3D 游戏引擎](/study/projects/playcanvas/) | ✅ v3 |  |
 | [raylib — 极简 C 游戏库，10 行代码跑起带窗口动画](/study/projects/raylib/) | ✅ v3 |  |
+| [regl — 函数式 WebGL 封装](/study/projects/regl/) | ✅ v3 |  |
 | [three.js — Web 3D 事实标准](/study/projects/threejs/) | ✅ v3 |  |
 
 ### 其他子类
@@ -887,7 +890,7 @@ sidebar:
 
 ## CLI
 
-共 122 个。
+共 123 个。
 
 ### 编辑器与 IDE
 
@@ -910,6 +913,7 @@ sidebar:
 | [NvChad — 极致美观的 Neovim 配置框架](/study/projects/nvchad/) | ✅ v3 |  |
 | [Spacemacs — Space 键统一 Vim 与 Emacs](/study/projects/spacemacs/) | ✅ v3 |  |
 | [TextMate — macOS 经典编辑器，语法格式影响了所有人](/study/projects/textmate/) | ✅ v3 |  |
+| [Eclipse Theia — 云原生 IDE 框架基座](/study/projects/theia/) | ✅ v3 |  |
 | [Vim — 模态编辑器之父](/study/projects/vim/) | ✅ v3 |  |
 | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | ✅ v3 |  |
 | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | ✅ v3 |  |
@@ -1151,7 +1155,7 @@ sidebar:
 
 ---
 
-## 全部 858 个（字母序）
+## 全部 862 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1364,7 +1368,7 @@ sidebar:
 | `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | ✅ v3 | 数据库 | 存储与查询 |
 | `electron` | [Electron — Chromium + Node.js 跨平台桌面应用框架](/study/projects/electron/) | ✅ v3 | 后端 API | 移动端 |
 | `electron-builder` | [electron-builder — 一条命令把 Electron 应用打包发布到全平台](/study/projects/electron-builder/) | ✅ v3 | 后端 API | 移动端 |
-| `electron-forge` | [Electron Forge — 官方一体化桌面应用构建与发布工具链](/study/projects/electron-forge/) | ✅ v3 | 后端 API | 移动端 |
+| `electron-forge` | [Electron Forge — 官方一体化桌面应用构建流水线](/study/projects/electron-forge/) | ✅ v3 | 后端 API | 移动端 |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | ✅ v3 | 通信 | 实时通信 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | ✅ v3 | 通信 | 实时通信 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | ✅ v3 | 后端 API | web 框架 |
@@ -1409,6 +1413,7 @@ sidebar:
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `fluent-bit` | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `flutter` | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 | 后端 API | 移动端 |
+| `flutter-rust-bridge` | [flutter-rust-bridge — Dart 调 Rust 像调本地函数](/study/projects/flutter-rust-bridge/) | ✅ v3 | 后端 API | 移动端 |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | ✅ v3 | 区块链 | 链与合约 |
@@ -1686,6 +1691,7 @@ sidebar:
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | ✅ v3 | 数据库 | 存储与查询 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | ✅ v3 | 基础设施 | 基础设施 |
 | `opentelemetry-collector` | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) | ✅ v3 | 基础设施 | DevOps 与运维 |
+| `openthread` | [OpenThread — Google 开源的 Thread mesh 网络协议栈](/study/projects/openthread/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | ✅ v3 | 通信 | 实时通信 |
@@ -1787,6 +1793,7 @@ sidebar:
 | `redash` | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `redis` | [Redis — 内存键值数据库](/study/projects/redis/) | 🗄 存量 | 数据库 | 存储与查询 |
 | `redpanda` | [Redpanda — Kafka 兼容的 C++ 实现](/study/projects/redpanda/) | ✅ v3 | 数据库 | 存储与查询 |
+| `regl` | [regl — 函数式 WebGL 封装](/study/projects/regl/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | ✅ v3 | 后端 API | Meta 框架 |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | ✅ v3 | 区块链 | 链与合约 |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) | ✅ v3 | 区块链 | 链与合约 |
@@ -1904,6 +1911,7 @@ sidebar:
 | `textmate` | [TextMate — macOS 经典编辑器，语法格式影响了所有人](/study/projects/textmate/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | ✅ v3 | CLI | 命令行工具 |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | ✅ v3 | CLI | 命令行工具 |
+| `theia` | [Eclipse Theia — 云原生 IDE 框架基座](/study/projects/theia/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | ✅ v3 | 区块链 | 链与合约 |
 | `threejs` | [three.js — Web 3D 事实标准](/study/projects/threejs/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | ✅ v3 | 后端 API | Web 后端 |

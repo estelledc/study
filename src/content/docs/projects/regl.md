@@ -3,7 +3,7 @@ title: regl — 函数式 WebGL 封装
 来源: 'https://github.com/regl-project/regl'
 日期: 2026-06-06
 分类: 图形学
-子分类: WebGL 图形渲染
+子分类: 渲染与图形
 难度: 中级
 ---
 
@@ -221,3 +221,6 @@ regl.frame(() => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

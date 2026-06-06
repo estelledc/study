@@ -187,7 +187,6 @@ export default function ProductDetail() {
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑

@@ -161,4 +161,5 @@ spec:
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
 - [[istio]] —— Istio — 给微服务装一层透明的网络治理面
+- [[openthread]] —— OpenThread — Google 开源的 Thread mesh 网络协议栈
 

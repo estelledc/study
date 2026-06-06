@@ -167,4 +167,5 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs
 - [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
+- [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座
 

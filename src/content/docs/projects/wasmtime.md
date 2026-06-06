@@ -213,7 +213,6 @@ cd wasmtime
 - [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 - [[deno]] —— Deno — 安全优先的 JS/TS 运行时
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
-- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用

@@ -165,6 +165,7 @@ west flash                               # 烧录
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
+- [[openthread]] —— OpenThread — Google 开源的 Thread mesh 网络协议栈
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流

@@ -171,6 +171,7 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 - [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
+- [[openthread]] —— OpenThread — Google 开源的 Thread mesh 网络协议栈
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
 - [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
