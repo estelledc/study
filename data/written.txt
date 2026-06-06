@@ -81,6 +81,7 @@ block-max-wand-2011
 bm25-okapi
 boehm-gc
 bohme-aflfast-2016
+bonawitz-fl-system-2019
 boogie-2005
 borg
 borg-omega-kube-2016
@@ -125,6 +126,7 @@ chapar-2016
 chapter-llama-2025
 chat-univi-2023
 chatbot-arena-2024
+chaum-1981-mix
 cheney-gc
 cheon-ckks-2017
 chillotti-tfhe-2016
@@ -246,6 +248,7 @@ dropout-2014
 dspy
 dssm-2013
 dstreams-2013
+ducas-dilithium-2018
 duchi-local-dp-2013
 duckdb-2019
 dwork-calibrating-noise-2006
@@ -356,6 +359,7 @@ hacl-star-2017
 halide
 hamming-1950
 hanrahan-1991-hierarchical-radiosity
+haven-2014
 hawkeye-2024
 haystack-2010
 hazard-pointers-2004
@@ -415,6 +419,7 @@ kademlia-2002
 kafka
 kafka-2011
 kahn-natural-semantics
+kairouz-advances-fl-2019
 kajiya-1986-rendering-equation
 kami-2017
 karger-1997-consistent-hashing
@@ -532,6 +537,7 @@ minhash-broder-1997
 minicpm-v-2024
 minisat-2003
 mips-1981
+mirage-2013
 mironov-renyi-dp-2017
 misevolution-2509
 mitls-2014-triple-handshake
@@ -556,6 +562,8 @@ monetdb-x100-2005
 monitors-1974
 moviechat-2024
 mplug-owl-2023
+mptcp-2012
+mqtt-s-2008
 ms-marco-2016
 mueller-2007-pbd
 mueller-2022-instant-ngp
@@ -981,6 +989,7 @@ bbolt
 bentoml
 besu
 better-auth
+bevy
 bigbluebutton
 billboard-js
 biome
@@ -996,6 +1005,7 @@ btop
 bubbletea
 buildah
 buildkit
+buildroot
 bullmq
 bun
 caddy
@@ -1111,6 +1121,7 @@ elasticsearch
 element-android
 element-web
 elysia
+embassy
 emotion
 emqx
 encore
@@ -1210,6 +1221,7 @@ inngest
 insightface
 internvideo
 invokeai
+ionic-framework
 ipfs
 istio
 jaeger
@@ -1282,6 +1294,7 @@ lima
 lingui
 linkerd2
 listr2
+lite-xl
 litellm-proxy
 litestar
 litmus
@@ -1337,6 +1350,7 @@ midscene
 mikro-orm
 miller
 milvus
+minetest
 minikube
 minio
 minisearch
@@ -1379,6 +1393,7 @@ nnn
 node-js
 nodemailer
 nomad
+notepad-plus-plus
 nsq
 numpy
 nushell
@@ -1491,6 +1506,7 @@ react-dnd
 react-flow
 react-hook-form
 react-intl
+react-native
 react-spring
 recharts
 redash

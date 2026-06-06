@@ -174,7 +174,7 @@ sidebar:
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
-| [Buildroot — 用 Make 生成定制嵌入式 Linux 镜像](/study/projects/buildroot/) | ✅ v3 |  |
+| [Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像](/study/projects/buildroot/) | ✅ v3 |  |
 | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
@@ -416,7 +416,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
-| [Ionic Framework — 用 Web 技术写一套代码发布 iOS/Android/PWA](/study/projects/ionic-framework/) | ✅ v3 |  |
+| [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 
 ### Meta 框架
@@ -710,7 +710,7 @@ sidebar:
 |---|:---:|---|
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
-| [Minetest / Luanti — 开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
+| [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 
 ### 其他子类
@@ -1189,7 +1189,7 @@ sidebar:
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | ✅ v3 | CLI | 命令行工具 |
 | `buildah` | [Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工](/study/projects/buildah/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) | ✅ v3 | 基础设施 | DevOps 与运维 |
-| `buildroot` | [Buildroot — 用 Make 生成定制嵌入式 Linux 镜像](/study/projects/buildroot/) | ✅ v3 | 操作系统 | 嵌入式 |
+| `buildroot` | [Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像](/study/projects/buildroot/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | ✅ v3 | 后端 API | Web 后端 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | ✅ v3 | 编译器 | 语言运行时 |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | ✅ v3 | 后端 API | Web 后端 |
@@ -1405,7 +1405,7 @@ sidebar:
 | `insightface` | [InsightFace — 人脸识别 / 检测 SOTA](/study/projects/insightface/) | ✅ v3 | 通信 | 音视频媒体 |
 | `internvideo` | [InternVideo — 上海 AI Lab 视频基础模型套件](/study/projects/internvideo/) | ✅ v3 | 机器学习 | 视频理解 |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) | ✅ v3 | 机器学习 | 数据科学与 AI |
-| `ionic-framework` | [Ionic Framework — 用 Web 技术写一套代码发布 iOS/Android/PWA](/study/projects/ionic-framework/) | ✅ v3 | 后端 API | 移动端 |
+| `ionic-framework` | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 | 后端 API | 移动端 |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | ✅ v3 | 区块链 | 链与合约 |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | ✅ v3 | 分布式系统 | 监控 / 分布式追踪 |
@@ -1534,7 +1534,7 @@ sidebar:
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ✅ v3 | 数据库 | ORM |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | ✅ v3 | CLI | 命令行工具 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 🗄 存量 | 数据库 | 存储与查询 |
-| `minetest` | [Minetest / Luanti — 开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `minetest` | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | ✅ v3 | 数据库 | 数据库 / 存储 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | ✅ v3 | 后端 API | projects |

@@ -192,6 +192,7 @@ task_create("safety_mon", 200, 2048, safety_task, NULL);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

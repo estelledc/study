@@ -155,4 +155,5 @@ tmux new-window "kak -c $(kak -l | head -1)"
 - [[micro]] —— micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
 

@@ -147,6 +147,7 @@ def rappor_bit(true_bit, p=0.5, q=0.75):
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[bonawitz-fl-system-2019]] —— Bonawitz FL System 2019 — Google 工业级联邦学习系统设计
 - [[duchi-local-dp-2013]] —— Local Privacy and Statistical Minimax Rates
 - [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分

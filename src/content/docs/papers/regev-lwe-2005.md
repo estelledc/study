@@ -189,6 +189,6 @@ CRYSTALS-Kyber（NIST PQC 标准 KEM）和 CRYSTALS-Dilithium（签名）均基�
 - [[bos-kyber-2018]] —— CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
 - [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
 - [[cadar-klee-2008]] —— KLEE — 符号执行自动生成高覆盖测试
-- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 格上的后量子数字签名
+- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 

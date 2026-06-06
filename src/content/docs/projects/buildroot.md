@@ -184,3 +184,7 @@ make BR2_EXTERNAL=/path/to/my-product-layer
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+

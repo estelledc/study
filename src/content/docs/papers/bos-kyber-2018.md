@@ -157,7 +157,7 @@ Kyber 速度与 ECDH 相近，但密钥尺寸较大是主要代价。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 格上的后量子数字签名
+- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名
 - [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography
 - [[wireguard-2017]] —— WireGuard: Next Generation Kernel Network Tunnel
 

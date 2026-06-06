@@ -151,7 +151,6 @@ ORDER BY date;
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[databend]] —— Databend — Rust 写的存算分离云数仓
 - [[datadog]] —— Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库
 - [[druid]] —— Apache Druid — 流批一体的实时分析数据库
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
@@ -160,6 +159,7 @@ ORDER BY date;
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
+- [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
 - [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
@@ -178,6 +178,7 @@ ORDER BY date;
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[questdb]] —— QuestDB — 高性能时序库
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[redis]] —— Redis — 内存键值数据库
 - [[redpanda]] —— Redpanda — Kafka 兼容的 C++ 实现
 - [[risingwave]] —— RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合

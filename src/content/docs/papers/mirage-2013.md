@@ -155,5 +155,8 @@ let handle_packet_in sw evt =
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[openflow-2008]] —— OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
+- [[sel4-2009]] —— seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核
+- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

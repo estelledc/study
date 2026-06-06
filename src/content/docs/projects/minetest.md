@@ -224,3 +224,10 @@ end)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
+- [[perlin-1985-noise]] —— Perlin Noise — 让计算机生成的图像不再有"机器味"
+- [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
+

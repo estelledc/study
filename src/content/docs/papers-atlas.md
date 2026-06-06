@@ -1225,7 +1225,7 @@ sidebar:
 | [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 |  |
 | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
 | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
-| [CRYSTALS-Dilithium — 格上的后量子数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 |  |
+| [CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 |  |
 | [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 |  |
 | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 |  |
 | [差分隐私 — ε 与邻接数据集不可区分](/study/papers/dwork-dp-icalp-2006/) | ✅ v3 |  |
@@ -1531,7 +1531,7 @@ sidebar:
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | ✅ v3 | 编程语言 | 编程语言 |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | ✅ v3 | 数据库 | 存储与查询 |
-| `ducas-dilithium-2018` | [CRYSTALS-Dilithium — 格上的后量子数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `ducas-dilithium-2018` | [CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `duchi-local-dp-2013` | [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | ✅ v3 | 数据库 | 存储与查询 |
 | `dwork-calibrating-noise-2006` | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 | 安全与隐私 | 安全与隐私 |

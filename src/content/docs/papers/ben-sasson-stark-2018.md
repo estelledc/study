@@ -155,7 +155,6 @@ STARK 用 Merkle 树承诺多项式求值：
 - [[bohme-aflfast-2016]] —— AFLFast — 灰盒 Fuzz 的马尔可夫调度
 - [[bowe-halo-2019]] —— Halo: Recursive Proof Composition without a Trusted Setup
 - [[cadar-klee-2008]] —— KLEE — 符号执行自动生成高覆盖测试
-- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 格上的后量子数字签名
 - [[gabizon-plonk-2019]] —— PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 

@@ -168,7 +168,6 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI
 - [[coqui-tts]] —— Coqui TTS — 多语种 TTS 工具包
 - [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
-- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[dlrm-2019]] —— DLRM — Meta 把工业推荐模型拆成 4 个标准积木
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
@@ -180,7 +179,6 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
 - [[graphsage-2017]] —— GraphSAGE 2017 — 给没见过的节点也能算嵌入
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
 - [[jax]] —— JAX — Google 函数式数值计算
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
@@ -190,9 +188,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 - [[llama-cpp]] —— llama.cpp — 让 LLM 在你电脑里直接跑
-- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[llvm]] —— LLVM — 模块化编译器框架
-- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
 - [[metaflow]] —— Metaflow — Netflix 给数据科学家的 Python 流水线
@@ -230,9 +226,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 - [[transformers-video]] —— Transformers Video — HuggingFace 视频处理器与多模态输入管线
 - [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
-- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 - [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
-- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
 - [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
 - [[whisper]] —— Whisper — OpenAI 多语言 ASR

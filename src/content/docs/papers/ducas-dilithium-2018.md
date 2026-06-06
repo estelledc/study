@@ -179,3 +179,10 @@ sign_with_rejection(secret, gamma1=100, beta=10)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
+- [[bos-kyber-2018]] —— CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
+- [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
+- [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography
+- [[rsa]] —— RSA 公钥密码
+

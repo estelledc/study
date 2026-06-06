@@ -165,7 +165,11 @@ Round 流程（含 SecAgg，以下为简化描述）：
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
+- [[kairouz-advances-fl-2019]] —— 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
 

@@ -171,7 +171,6 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[actions-runner-controller]] —— Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑
-- [[buildroot]] —— Buildroot — 用 Make 生成定制嵌入式 Linux 镜像
 - [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
 - [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器

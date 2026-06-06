@@ -159,6 +159,7 @@ export default defineConfig({
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
+- [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
