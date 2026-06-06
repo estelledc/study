@@ -207,5 +207,8 @@ def adversarial_training_step(model, optimizer, x, y, attack_fn):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
+- [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
+- [[resnet]] —— ResNet — 残差连接
 

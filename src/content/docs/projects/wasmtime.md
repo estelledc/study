@@ -211,7 +211,6 @@ cd wasmtime
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[circuitpython]] —— CircuitPython — 保存即重载的微控制器 Python 运行时
-- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[zed]] —— Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
 - [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件

@@ -165,6 +165,8 @@ const { data, error } = await api.users({ id: '123' }).get()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[bun]] —— Bun — JS 全能运行时
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
@@ -173,4 +175,5 @@ const { data, error } = await api.users({ id: '123' }).get()
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

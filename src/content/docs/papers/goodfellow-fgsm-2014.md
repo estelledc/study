@@ -183,5 +183,8 @@ saliency = x.grad.abs()       # 每个像素对输出的影响
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[batchnorm-2015]] —— Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14
+- [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
+- [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御
 

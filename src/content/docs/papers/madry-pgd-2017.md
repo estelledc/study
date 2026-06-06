@@ -213,5 +213,9 @@ def diagnose_gradient_masking(model, x, y, epsilon=8/255):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[goodfellow-fgsm-2014]] —— FGSM — 对抗样本的快速生成与线性假设
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
 

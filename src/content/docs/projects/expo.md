@@ -201,5 +201,10 @@ export default function TabLayout() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ansible]] —— Ansible — 无 agent 配置管理
+- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
+- [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
+- [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
+- [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 

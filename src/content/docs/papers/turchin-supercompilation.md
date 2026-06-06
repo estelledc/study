@@ -152,6 +152,7 @@ factI n = go 1 1 where
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
+- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

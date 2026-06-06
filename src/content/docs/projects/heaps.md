@@ -194,5 +194,5 @@ sprite.addShader(shader);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 
