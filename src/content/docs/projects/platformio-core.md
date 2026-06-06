@@ -183,3 +183,11 @@ int main() { UNITY_BEGIN(); RUN_TEST(test_crc16); return UNITY_END(); }
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
+- [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
+

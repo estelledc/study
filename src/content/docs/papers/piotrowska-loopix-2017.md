@@ -196,3 +196,10 @@ nym-client receive
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
+- [[danezis-sphinx-2009]] —— Sphinx — mix 网络最紧凑的可证安全消息格式
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[reed-onion-routing-1998]] —— 洋葱路由 1998 — 把匿名通信从理论搬进真实互联网
+- [[tor-2004]] —— Tor 洋葱路由 — 让你的网络请求穿上三层马甲
+

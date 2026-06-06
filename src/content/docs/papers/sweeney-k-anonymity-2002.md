@@ -177,3 +177,9 @@ def assess_re_identification_risk(df, qi_cols, k_threshold=5):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[codd-1970]] —— Codd 1970 — 关系模型奠基
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+

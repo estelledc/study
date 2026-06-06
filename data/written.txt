@@ -465,6 +465,7 @@ lerner-seminal
 levoy-hanrahan-1996-light-field
 lfs-1991
 li-2018-redner
+li-t-closeness-2007
 lieberman-realtime-gc
 lindholm-2008-tesla
 linear-scan-reg-alloc
@@ -503,6 +504,7 @@ lucky13-2013
 lvbench-2024
 mach-1986
 mach-vm-1987
+machanavajjhala-l-diversity-2007
 macklin-2014-position-based-fluids
 mae
 magic3d-2023
@@ -640,6 +642,7 @@ persistent-memory-2014
 personalized-pagerank-2003
 peyton-jones-stg
 phong-1975
+piotrowska-loopix-2017
 pipedream-2019
 pivot-tracing-2015
 plan9-1995
@@ -801,6 +804,7 @@ subramanian-2002-internet-hierarchy
 sulsky-1994-mpm
 swe-agent
 swe-bench
+sweeney-k-anonymity-2002
 sycl-cpp-2020
 sycophancy-2023
 system-f-reynolds-1974
@@ -1098,6 +1102,7 @@ dbt-core
 debezium
 decord
 deepspeed
+defold
 delta
 dendrite
 dgraph
@@ -1476,6 +1481,7 @@ pion
 piper
 pixi
 plane
+platformio-core
 playwright
 plotly-js
 plotly-py
@@ -1512,6 +1518,7 @@ pytorch-lightning
 qdrant
 quarkus
 quart
+quasar
 questdb
 qwik
 rabbitmq-server
@@ -1731,6 +1738,7 @@ wretch
 x264
 x265
 xh
+xi-editor
 xonsh
 xplr
 xstate

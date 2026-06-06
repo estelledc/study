@@ -162,5 +162,4 @@ start2.plus(d).toISODate(); // '2026-05-30'
 - [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
 - [[temporal]] —— Temporal — 持久化工作流引擎
 - [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

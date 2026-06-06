@@ -169,3 +169,9 @@ def check_t_closeness(equivalence_classes, global_dist, t, attr_type="numerical"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+

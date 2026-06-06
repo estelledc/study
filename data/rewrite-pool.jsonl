@@ -1,7 +1,9 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":3,"reasons":["lines:685>250","h2-hits:1/11"],"lines":685,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":3,"reasons":["lines:464>250","h2-hits:1/11"],"lines":464,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":3,"reasons":["lines:854>250","h2-hits:1/11"],"lines":854,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"hindley-milner","area":"papers","path":"src/content/docs/papers/hindley-milner.md","score":2,"reasons":["lines:281>250"],"lines":281,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
+{"slug":"decord","area":"projects","path":"src/content/docs/projects/decord.md","score":2,"reasons":["lines:251>250"],"lines":251,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
+{"slug":"defold","area":"projects","path":"src/content/docs/projects/defold.md","score":2,"reasons":["lines:264>250"],"lines":264,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
+{"slug":"hindley-milner","area":"papers","path":"src/content/docs/papers/hindley-milner.md","score":2,"reasons":["lines:279>250"],"lines":279,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"jitsi-meet","area":"projects","path":"src/content/docs/projects/jitsi-meet.md","score":2,"reasons":["lines:254>250"],"lines":254,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"livekit","area":"projects","path":"src/content/docs/projects/livekit.md","score":2,"reasons":["lines:268>250"],"lines":268,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lmms-eval","area":"projects","path":"src/content/docs/projects/lmms-eval.md","score":2,"reasons":["lines:255>250"],"lines":255,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}

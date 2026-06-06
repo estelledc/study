@@ -213,8 +213,8 @@ Video-LLM 管线：**训练用 decord 采帧 → 模型 checkpoint → [[lmms-ev
 - [[omnidirectional-mllm-2025]] —— 全景空间推理 — MLLM 准备好面对 360° 了吗
 - [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
-- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[sam2]] —— SAM 2 — Segment Anything Model 2
 - [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
 - [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
@@ -229,7 +229,6 @@ Video-LLM 管线：**训练用 decord 采帧 → 模型 checkpoint → [[lmms-ev
 - [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
 - [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
-- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 - [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
 - [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
@@ -238,7 +237,6 @@ Video-LLM 管线：**训练用 decord 采帧 → 模型 checkpoint → [[lmms-ev
 - [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
 - [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
 - [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
-- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
 - [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
 - [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
 - [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
