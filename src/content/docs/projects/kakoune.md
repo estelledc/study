@@ -150,6 +150,3 @@ tmux new-window "kak -c $(kak -l | head -1)"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[micro]] —— micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器
-
