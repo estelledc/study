@@ -3,7 +3,7 @@ title: 分布式噪声生成 — 去掉可信管理员也能保护隐私
 来源: 'Dwork, Kenthapadi, McSherry, Mironov, Naor. "Our Data, Ourselves: Privacy via Distributed Noise Generation". EUROCRYPT 2006'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 安全与隐私
+子分类: 差分隐私
 难度: 高级
 provenance: pipeline-v3
 ---
@@ -184,7 +184,3 @@ def federated_aggregate_with_distributed_noise(
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
-- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
-
