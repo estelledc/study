@@ -2,7 +2,6 @@
 title: Altair — Python 上的 Vega-Lite 绑定
 来源: 'https://github.com/vega/altair'
 日期: 2026-05-31
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门到中级

@@ -2,7 +2,6 @@
 title: NebulaGraph — 国产分布式图数据库
 来源: https://github.com/vesoft-inc/nebula
 日期: 2026-06-01
-分类_原始: 数据库 / 图
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

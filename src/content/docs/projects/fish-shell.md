@@ -147,3 +147,7 @@ starship init fish | source
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gum]] —— gum — 把 TUI 组件搬进 shell 脚本
+- [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
+

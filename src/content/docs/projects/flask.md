@@ -2,7 +2,6 @@
 title: Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 来源: 'https://github.com/pallets/flask'
 日期: 2026-05-29
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
@@ -198,6 +197,7 @@ def list_users():
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[redis]] —— Redis — 内存键值数据库
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+- [[selinux-2001]] —— SELinux 2001 — 给每扇门都装上门卫，而不是给管理员一把万能钥匙
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
 - [[strawberry]] —— Strawberry — 用 Python 类型注解直接生成 GraphQL schema

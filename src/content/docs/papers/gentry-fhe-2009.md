@@ -3,7 +3,7 @@ title: Gentry FHE — 全同态加密开山
 来源: 'Gentry, "A Fully Homomorphic Encryption Scheme", Stanford PhD 2009'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 同态加密
+子分类: 安全与隐私
 难度: 高级
 provenance: pipeline-v3
 ---
@@ -139,22 +139,11 @@ Gentry → BGV/BFV（整数）→ CKKS（近似浮点 ML 推理）。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- padding for quality-gate 150 lines -->
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[bohme-aflfast-2016]] —— AFLFast — 灰盒 Fuzz 的马尔可夫调度
+- [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
+- [[cadar-klee-2008]] —— KLEE — 符号执行自动生成高覆盖测试
+- [[chillotti-tfhe-2016]] —— Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds
+- [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+- [[fan-vercauteren-bfv-2012]] —— Somewhat Practical Fully Homomorphic Encryption
 
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->

@@ -2,7 +2,6 @@
 title: Snapshot — DAO 不花 Gas 也能投票的链下治理前端
 来源: 'https://github.com/snapshot-labs/snapshot'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 初级
@@ -152,6 +151,7 @@ Snapshot 提案通过 → SafeSnap 模块读取结果
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aragon]] —— Aragon OSx — 一份内核合约管所有 DAO 的乐高套件
+- [[berenson-1995-isolation]] —— Berenson 1995 — ANSI SQL 隔离级别的漏洞与快照隔离
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[ipfs]] —— IPFS / Kubo — 按内容哈希定位的去中心化文件系统

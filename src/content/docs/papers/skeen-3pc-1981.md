@@ -2,7 +2,6 @@
 title: Skeen 1981 三阶段提交 — 给 2PC 的阻塞缺陷打补丁
 来源: 'Dale Skeen, "Nonblocking Commit Protocols", SIGMOD 1981'
 日期: 2026-05-30
-分类_原始: distributed-systems
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级

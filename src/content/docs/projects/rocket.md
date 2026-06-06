@@ -2,7 +2,6 @@
 title: Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 来源: 'https://github.com/rwf2/Rocket'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

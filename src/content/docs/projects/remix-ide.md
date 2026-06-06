@@ -2,7 +2,6 @@
 title: Remix IDE — 浏览器内 Solidity IDE
 来源: 'https://github.com/ethereum/remix-project'
 日期: 2026-05-30
-分类_原始: 区块链工具
 子分类: 链与合约
 分类: 区块链
 难度: 初级

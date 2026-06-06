@@ -2,7 +2,6 @@
 title: Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）
 来源: 'https://github.com/nicolargo/glances'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

@@ -2,7 +2,6 @@
 title: Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 来源: 'Constable et al., "Implementing Mathematics with the Nuprl Proof Development System", Prentice-Hall 1986'
 日期: 2026-05-30
-分类_原始: 编程语言 / 形式化方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级

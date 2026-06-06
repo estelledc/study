@@ -2,7 +2,6 @@
 title: EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 来源: Li, Wei, Zhang, Zhang, "EAGLE — Speculative Sampling Requires Rethinking Feature Uncertainty", ICML 2024 / arXiv 2401.15077
 日期: 2026-05-31
-分类_原始: LLM 推理
 子分类: 模型与训练
 分类: 机器学习
 难度: 进阶

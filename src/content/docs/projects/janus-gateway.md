@@ -3,8 +3,9 @@ title: Janus WebRTC Gateway
 description: C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推
 来源: 'https://github.com/meetecho/janus-gateway'
 日期: 2026-06-06
-分类: 通信
-子分类: 实时通信
+分类_原始: 通信
+分类: 操作系统
+子分类: 嵌入式
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -119,43 +120,5 @@ cd janus-gateway
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
+- [[jitsi-meet]] —— Jitsi Meet — 开源视频会议
+- [[livekit]] —— LiveKit — 开源实时多媒体 SFU

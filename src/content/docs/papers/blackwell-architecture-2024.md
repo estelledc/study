@@ -2,7 +2,6 @@
 title: NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化
 来源: 'NVIDIA, "NVIDIA Blackwell Architecture Technical Brief", Whitepaper, 2024'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

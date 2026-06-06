@@ -2,7 +2,6 @@
 title: Milvus — 开源向量数据库
 来源: https://github.com/milvus-io/milvus
 日期: 2026-05-29
-分类_原始: 数据库 / 向量
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -193,9 +192,12 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[faiss]] —— FAISS — 向量检索的标准件库
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[haystack-2010]] —— Haystack — Facebook 十亿张照片怎么存
 - [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
 - [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
 - [[langchain]] —— LangChain — LLM 应用开发框架
+- [[milvus-2021]] —— Milvus — 为向量检索而生的数据库
+- [[mongo]] —— MongoDB — 文档数据库服务端开源实现
 - [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

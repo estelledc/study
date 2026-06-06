@@ -2,7 +2,6 @@
 title: 'Automerge — 让两份 JSON 自动合并的 CRDT 库'
 来源: 'https://github.com/automerge/automerge'
 日期: 2026-05-30
-分类_原始: 协同编辑
 子分类: 实时通信
 分类: 通信
 难度: 中级

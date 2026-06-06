@@ -147,3 +147,8 @@ Codec token 帧率与比特率影响音质与速度：EnCodec 多层码本串联
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态长上下文
+- [[vall-e-2023]] —— VALL-E — 3 秒样本零样本语音克隆
+- [[whisper-2022]] —— Whisper — 68 万小时弱监督训出的语音识别
+

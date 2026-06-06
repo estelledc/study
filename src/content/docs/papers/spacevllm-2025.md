@@ -159,3 +159,8 @@ SpaceVLLM-7B vs CG-STVG（专用 DETR 类）：
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[omnistvg-2025]] —— OmniSTVG — 按句子把视频里所有相关物体都框出来
+- [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
+- [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
+

@@ -2,7 +2,6 @@
 title: Terraform — 基础设施即代码
 来源: https://github.com/hashicorp/terraform
 日期: 2026-05-29
-分类_原始: DevOps / IaC
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

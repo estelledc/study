@@ -2,7 +2,6 @@
 title: Triton Inference Server — NVIDIA 多框架推理服务化标杆
 来源: https://github.com/triton-inference-server/server
 日期: 2026-05-31
-分类_原始: 项目
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

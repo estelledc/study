@@ -2,7 +2,6 @@
 title: Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
 来源: 'Vint Cerf & Bob Kahn, "A Protocol for Packet Network Intercommunication", IEEE Transactions on Communications, May 1974'
 日期: 2026-05-31
-分类_原始: 网络
 子分类: 网络协议
 分类: 网络协议
 难度: 中级

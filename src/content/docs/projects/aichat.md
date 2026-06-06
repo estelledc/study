@@ -2,7 +2,6 @@
 title: AIChat — 终端里的多模型 LLM 客户端
 来源: https://github.com/sigoden/aichat
 日期: 2026-05-31
-分类_原始: AI / CLI
 子分类: 命令行工具
 分类: CLI
 难度: 入门

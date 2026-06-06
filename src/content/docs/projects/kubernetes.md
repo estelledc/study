@@ -2,7 +2,6 @@
 title: Kubernetes — 容器编排平台
 来源: https://github.com/kubernetes/kubernetes
 日期: 2026-05-29
-分类_原始: DevOps
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
@@ -177,6 +176,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[minio]] —— MinIO — S3 兼容对象存储
 - [[moby]] —— Moby — Docker 把引擎拆开后的开源上游
 - [[mockapetris-1988-dns]] —— Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样
+- [[nats-server]] —— NATS Server — 极简云原生消息中间件
 - [[nerdctl]] —— nerdctl — containerd 官方的 Docker 兼容 CLI
 - [[nomad]] —— Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈

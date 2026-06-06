@@ -2,7 +2,6 @@
 title: Sonic — 极简前缀搜索引擎
 来源: https://github.com/valeriansaliou/sonic
 日期: 2026-06-01
-分类_原始: 数据库 / 搜索
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

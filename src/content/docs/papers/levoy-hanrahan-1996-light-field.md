@@ -2,7 +2,6 @@
 title: Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表
 来源: 'Levoy, Hanrahan, "Light Field Rendering", SIGGRAPH 1996'
 日期: 2026-05-31
-分类_原始: 计算机图形 / 三维重建
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

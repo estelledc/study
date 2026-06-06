@@ -3,7 +3,7 @@ title: 校准噪声与敏感度 — Laplace 机制奠基
 来源: 'Dwork, McSherry, Nissim, Smith, "Calibrating Noise to Sensitivity in Private Data Analysis", TCC 2006'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 差分隐私
+子分类: 安全与隐私
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -146,22 +146,10 @@ print(int(true_count + noise))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- padding for quality-gate 150 lines -->
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[duchi-local-dp-2013]] —— Local Privacy and Statistical Minimax Rates
+- [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
+- [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
+- [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
 
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->

@@ -2,7 +2,6 @@
 title: AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript
 来源: 'AntV 团队（蚂蚁集团）官网与仓库, https://x6.antv.antgroup.com/ + https://github.com/antvis/X6'
 日期: 2026-06-01
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

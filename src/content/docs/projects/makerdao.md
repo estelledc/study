@@ -2,7 +2,6 @@
 title: MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 来源: 'https://github.com/makerdao/dss'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 中级

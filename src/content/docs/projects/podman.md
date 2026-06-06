@@ -2,7 +2,6 @@
 title: Podman — 无 daemon 容器引擎
 来源: https://github.com/containers/podman
 日期: 2026-05-29
-分类_原始: DevOps / 容器
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

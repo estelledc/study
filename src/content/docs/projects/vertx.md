@@ -2,7 +2,6 @@
 title: Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 来源: 'https://github.com/eclipse-vertx/vert.x'
 日期: 2026-05-30
-分类_原始: 后端开发
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

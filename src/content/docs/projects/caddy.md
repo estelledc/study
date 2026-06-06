@@ -2,7 +2,6 @@
 title: Caddy — 自动 HTTPS Web 服务器
 来源: https://github.com/caddyserver/caddy
 日期: 2026-05-29
-分类_原始: DevOps / 网络
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

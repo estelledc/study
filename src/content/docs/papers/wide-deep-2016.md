@@ -2,7 +2,6 @@
 title: Wide & Deep — 让模型同时学会"记住"和"举一反三"
 来源: Cheng et al., "Wide & Deep Learning for Recommender Systems", DLRS @ RecSys 2016
 日期: 2026-05-31
-分类_原始: 推荐系统
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级

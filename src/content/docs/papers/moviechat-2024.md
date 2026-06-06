@@ -157,3 +157,8 @@ MovieChat               >10,000 帧       ~21 KB / 帧
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+- [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
+- [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+

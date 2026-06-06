@@ -2,7 +2,6 @@
 title: Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 来源: 'Simon Peyton Jones, "Implementing Lazy Functional Languages on Stock Hardware: The Spineless Tagless G-machine", JFP 1992'
 日期: 2026-05-30
-分类_原始: 编译器
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级

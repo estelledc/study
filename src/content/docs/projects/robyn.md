@@ -4,7 +4,7 @@ description: PyO3 多进程 actor 模型；TechEmpower plaintext 榜单常客，
 来源: 'https://github.com/sparckles/Robyn'
 日期: 2026-06-05
 分类: 后端 API
-子分类: Web 框架
+子分类: Web 后端
 难度: 中级
 provenance: manual-read
 ---
@@ -147,3 +147,6 @@ python app.py --dev
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

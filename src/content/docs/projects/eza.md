@@ -2,7 +2,6 @@
 title: eza — 现代 ls 替代（exa 的社区接管 fork）
 来源: 'https://github.com/eza-community/eza'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

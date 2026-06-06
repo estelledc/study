@@ -2,7 +2,6 @@
 title: Sidekiq — Ruby 后台任务的事实标准
 来源: https://github.com/sidekiq/sidekiq
 日期: 2026-05-30
-分类_原始: 后端基建
 子分类: Web 后端
 分类: 后端 API
 难度: 入门

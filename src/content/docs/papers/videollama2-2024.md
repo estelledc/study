@@ -147,3 +147,15 @@ print(output)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
+- [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
+- [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[omnidirectional-mllm-2025]] —— 全景空间推理 — MLLM 准备好面对 360° 了吗
+- [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
+- [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
+

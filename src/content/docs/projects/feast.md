@@ -2,7 +2,6 @@
 title: Feast — 让训练和上线用同一份特征定义的开源 Feature Store
 来源: Feast Documentation, https://docs.feast.dev/
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

@@ -2,7 +2,6 @@
 title: ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 来源: 'https://github.com/ethers-io/ethers.js'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 初级

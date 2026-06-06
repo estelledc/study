@@ -2,7 +2,6 @@
 title: NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
 来源: 'NVIDIA, "GeForce GTX 980 Maxwell GM204 Whitepaper", 2014'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

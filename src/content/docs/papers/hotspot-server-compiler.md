@@ -2,7 +2,6 @@
 title: HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 来源: 'Paleczny, Vick, Click. "The Java HotSpot Server Compiler". Sun JVM Symposium 2001'
 日期: 2026-05-30
-分类_原始: compilers-pl
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

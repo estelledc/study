@@ -2,7 +2,6 @@
 title: SGLang — 结构化推理运行时
 来源: https://github.com/sgl-project/sglang
 日期: 2026-05-31
-分类_原始: AI / 推理
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

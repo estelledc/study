@@ -2,7 +2,6 @@
 title: PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 来源: Bolz, Cuni, Fijalkowski, Rigo, "Tracing the Meta-Level — PyPy Tracing JIT Compiler", ICOOOLPS 2009
 日期: 2026-05-30
-分类_原始: 编译器与编程语言
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

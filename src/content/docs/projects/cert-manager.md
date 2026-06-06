@@ -2,7 +2,6 @@
 title: cert-manager — K8s 自动签发与续期 TLS 证书
 来源: https://github.com/cert-manager/cert-manager
 日期: 2026-06-01
-分类_原始: DevOps / Kubernetes
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

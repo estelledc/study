@@ -2,7 +2,6 @@
 title: Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命
 来源: 'Patterson, D. A., Ditzel, D. R., The Case for the Reduced Instruction Set Computer, ACM SIGARCH Computer Architecture News, Vol. 8, Issue 6, October 1980'
 日期: 2026-05-31
-分类_原始: 计算机体系结构
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

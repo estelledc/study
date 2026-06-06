@@ -2,7 +2,6 @@
 title: Zcash — 让转账在链上"既能被验证，又看不见内容"
 来源: https://github.com/zcash/zcash
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 中级

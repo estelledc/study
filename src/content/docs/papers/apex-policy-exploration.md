@@ -2,7 +2,6 @@
 title: APEX — 给自进化 agent 配一张"策略图"防止它走老路
 来源: 'Li et al., "APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents", arXiv:2605.21240, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级

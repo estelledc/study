@@ -2,7 +2,6 @@
 title: CSP — 进程之间只许喊话不许共用内存
 来源: 'C.A.R. Hoare, "Communicating Sequential Processes", CACM 1978'
 日期: 2026-05-30
-分类_原始: compilers-pl
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

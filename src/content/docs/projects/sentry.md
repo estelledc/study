@@ -2,7 +2,6 @@
 title: Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台
 来源: 'https://github.com/getsentry/sentry'
 日期: 2026-05-30
-分类_原始: observability
 子分类: 可观测性
 分类: 基础设施
 难度: 中级
@@ -181,4 +180,5 @@ Sentry.init({
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[react]] —— React UI 组件库
+- [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
 

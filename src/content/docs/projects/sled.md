@@ -2,7 +2,6 @@
 title: sled — Rust 现代 BTree + LSM 混合嵌入式 KV
 来源: https://github.com/spacejam/sled
 日期: 2026-06-01
-分类_原始: 数据库 / 存储引擎
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -156,6 +155,7 @@ sled 的源码相对 [[rocksdb]] 友好——纯 Rust、模块清晰、有大量
 
 - [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[mongo]] —— MongoDB — 文档数据库服务端开源实现
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

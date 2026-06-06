@@ -2,7 +2,6 @@
 title: Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
 来源: 'https://github.com/mapbox/mapbox-gl-js'
 日期: 2026-05-31
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

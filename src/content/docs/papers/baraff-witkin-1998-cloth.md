@@ -2,7 +2,6 @@
 title: Baraff-Witkin 1998 — 让布料模拟敢走大时间步
 来源: Baraff & Witkin, "Large Steps in Cloth Simulation", SIGGRAPH 1998
 日期: 2026-05-31
-分类_原始: 计算机图形学
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

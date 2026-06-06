@@ -2,7 +2,6 @@
 title: Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 来源: https://github.com/zephyrproject-rtos/zephyr
 日期: 2026-06-01
-分类_原始: 嵌入式系统
 子分类: 嵌入式
 分类: 操作系统
 难度: 中级
@@ -159,6 +158,6 @@ west flash                               # 烧录
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
-- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
+- [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

@@ -2,7 +2,6 @@
 title: TLA — 把状态机和时序逻辑捏成一个公式
 来源: Leslie Lamport, 'The Temporal Logic of Actions', ACM TOPLAS, Vol. 16, No. 3, May 1994
 日期: 2026-05-30
-分类_原始: 分布式系统 / 形式化方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级

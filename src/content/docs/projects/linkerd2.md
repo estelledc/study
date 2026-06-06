@@ -2,7 +2,6 @@
 title: Linkerd 2 — 用 Rust 写的轻量服务网格
 来源: https://github.com/linkerd/linkerd2
 日期: 2026-06-01
-分类_原始: 基础设施 / 服务网格
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

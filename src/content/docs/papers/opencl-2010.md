@@ -2,7 +2,6 @@
 title: OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
 来源: 'Stone, Gohara, Shi, "OpenCL: A Parallel Programming Standard for Heterogeneous Computing Systems", IEEE CiSE 2010'
 日期: 2026-05-31
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

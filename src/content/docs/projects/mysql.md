@@ -147,6 +147,7 @@ START SLAVE;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[berenson-1995-isolation]] —— Berenson 1995 — ANSI SQL 隔离级别的漏洞与快照隔离
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[codd-1979-extending]] —— Codd 1979 — 给关系模型补上"语义"

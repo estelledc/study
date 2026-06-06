@@ -149,3 +149,11 @@ python eval_mvbench.py --checkpoint path/to/internvideo2_chat.pth
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[hour-llava-2025]] —— Hour-LLaVA — 记忆增强，让 LLaVA 读懂一小时视频
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[llava-video-2024]] —— LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧
+- [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[ta-stvg-2025]] —— TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位
+

@@ -2,7 +2,6 @@
 title: Bitcoin Core — 比特币参考实现
 来源: 'https://github.com/bitcoin/bitcoin'
 日期: 2026-05-29
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 高级

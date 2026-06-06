@@ -183,17 +183,29 @@ VideoLLaMA2 强项：**音视频联合（2.1-AV）** + **VideoLLaVA 数据即插
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
-- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
+- [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
-- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
+- [[transformers-video]] —— Transformers Video — HuggingFace 视频处理器与多模态输入管线
 - [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
 - [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
+- [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
+- [[yt-dlp]] —— yt-dlp — youtube-dl 活跃分支与万能站点视频下载器
+

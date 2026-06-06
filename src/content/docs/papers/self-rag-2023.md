@@ -2,7 +2,6 @@
 title: Self-RAG — 让模型自己决定何时该查资料
 来源: 'Asai et al., "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection", ICLR 2024 / arXiv 2310.11511'
 日期: 2026-06-01
-分类_原始: AI / NLP
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

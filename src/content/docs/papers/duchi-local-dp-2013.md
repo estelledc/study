@@ -3,7 +3,7 @@ title: Local Privacy and Statistical Minimax Rates
 来源: 'Local Privacy and Statistical Minimax Rates'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 密码与隐私
+子分类: 安全与隐私
 难度: 高级
 provenance: pipeline-v3
 ---
@@ -110,43 +110,9 @@ provenance: pipeline-v3
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
-- 复习时可对照 atlas 枢纽与 `written.txt` 邻居 slug，检查双向链接是否闭环。
-- 动手跑通一个最小示例，比只读 README 更能记住参数含义与失败模式。
-- 把本文档当「面试前 10 分钟速览卡」：是什么 → 为什么 → 一个命令/实验。
-- 教别人时用「日常类比 + 一条命令」结构，反馈最好；复杂架构图留给二读。
-- 若关联 slug 尚未落站，先用纯文本记名，`sync-written` 后再改成 `[[wikilink]]`。
-- 与专题路线图对照：确认 frontmatter `分类/子分类` 与 research 表一致，避免 atlas 统计漂移。
-- 代码块尽量可拷贝运行；路径用占位符标注，避免泄露本机目录。
-- 写关联时优先已存在于 `data/written.txt` 的 slug，减少幽灵链接。
-- 本篇目标行数 150–200，与 study v3 quality-gate 对齐；扩写时优先加「实践案例」与「踩过的坑」。
-- 若 pipeline 复审要求 refine，只改被点名的 H2 段，避免整篇重写导致关联漂移。
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+- [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
+- [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
+- [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架

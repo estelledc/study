@@ -2,7 +2,6 @@
 title: RocketQA — 把稠密检索的训练拧到工业级
 来源: 'Qu et al., "RocketQA: An Optimized Training Approach to Dense Passage Retrieval for Open-Domain QA", NAACL 2021'
 日期: 2026-05-31
-分类_原始: 数据检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级

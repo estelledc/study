@@ -148,3 +148,7 @@ Week 5+:   加指令数据，LoRA 微调 LLM 顶层
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
+- [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+

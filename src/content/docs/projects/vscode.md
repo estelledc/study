@@ -2,7 +2,6 @@
 title: VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 来源: 'Microsoft, "Visual Studio Code", https://github.com/microsoft/vscode'
 日期: 2026-06-01
-分类_原始: projects / 编辑器
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级

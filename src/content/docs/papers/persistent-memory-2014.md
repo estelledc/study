@@ -2,7 +2,6 @@
 title: PMFS — 第一个为字节寻址持久内存设计的文件系统
 来源: Dulloor 等, "System Software for Persistent Memory", EuroSys 2014
 日期: 2026-05-31
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

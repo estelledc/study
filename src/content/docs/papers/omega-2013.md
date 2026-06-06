@@ -2,7 +2,6 @@
 title: Omega 2013 — 让多个调度器同时改一份 cluster 状态
 来源: 'Schwarzkopf, Konwinski, Abd-El-Malek, Wilkes, "Omega: flexible, scalable schedulers for large compute clusters", EuroSys 2013'
 日期: 2026-06-01
-分类_原始: 分布式系统
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级

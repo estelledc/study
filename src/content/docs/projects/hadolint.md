@@ -2,7 +2,6 @@
 title: hadolint — 给 Dockerfile 做体检的小工具
 来源: https://github.com/hadolint/hadolint
 日期: 2026-05-31
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 入门

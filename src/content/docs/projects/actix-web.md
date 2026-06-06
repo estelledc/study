@@ -2,7 +2,6 @@
 title: Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 来源: 'https://github.com/actix/actix-web'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
@@ -194,6 +193,7 @@ async fn signup(form: web::Json<Signup>) -> String {
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
+- [[robyn]] —— Robyn — Rust 运行时的高性能 Python Web 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用

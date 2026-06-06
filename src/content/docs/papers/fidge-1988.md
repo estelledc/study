@@ -2,7 +2,6 @@
 title: Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
 来源: 'Colin J. Fidge, "Timestamps in Message-Passing Systems That Preserve the Partial Ordering", ACSC 11, 1988'
 日期: 2026-05-30
-分类_原始: papers / 分布式系统
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级

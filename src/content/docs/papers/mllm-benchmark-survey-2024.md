@@ -149,3 +149,9 @@ VideoMME、MVBench 等视频榜在综述「其他模态」类；做 [[videollama
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态长上下文
+- [[mme-benchmark-2023]] —— MME Benchmark — 开源 MLLM 评测的事实起点
+- [[mme-survey-2024]] —— MME-Survey — 多模态 LLM 怎么评才靠谱
+- [[mmmu-2023]] —— MMMU — 大学级多学科多模态推理基准
+

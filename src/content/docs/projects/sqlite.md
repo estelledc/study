@@ -143,6 +143,7 @@ PRAGMA journal_mode=WAL;
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[leveldb]] —— LevelDB — Google LSM 库
+- [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

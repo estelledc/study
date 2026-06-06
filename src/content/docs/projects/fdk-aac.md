@@ -3,8 +3,9 @@ title: fdk-aac — Fraunhofer AAC 编解码库
 description: HE-AAC v1/v2 高质量实现；Android/广播底层；FFmpeg 非 GPL AAC 选项
 来源: 'https://github.com/mstorsjo/fdk-aac'
 日期: 2026-06-06
-分类: 媒体
-子分类: 音频编解码
+分类_原始: 媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -148,3 +149,7 @@ AB 测 `libfdk_aac` vs `aac`（FFmpeg native）同码率失真，定团队默认
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lame]] —— LAME — MP3 编码开源参考实现
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+

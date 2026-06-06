@@ -166,3 +166,8 @@ vllm serve Qwen/Qwen2.5-VL-7B-Instruct \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+

@@ -170,7 +170,6 @@ app.addHook('preHandler', async (req) => {
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
 - [[haraka]] —— Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[hono]] —— Hono — 多运行时 Web 框架
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
@@ -186,6 +185,7 @@ app.addHook('preHandler', async (req) => {
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
+- [[robyn]] —— Robyn — Rust 运行时的高性能 Python Web 框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[sharp]] —— sharp — 让 Node.js 处理图像快到不像 JS
 - [[simple-peer]] —— simple-peer — 三行代码把两个浏览器直接连起来
@@ -194,9 +194,7 @@ app.addHook('preHandler', async (req) => {
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[twirp]] —— Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
-- [[zod]] —— Zod — TypeScript-first schema 验证
 

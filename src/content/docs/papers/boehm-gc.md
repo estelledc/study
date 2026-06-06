@@ -2,7 +2,6 @@
 title: Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 来源: 'Hans-Juergen Boehm & Mark Weiser, "Garbage Collection in an Uncooperative Environment", Software: Practice and Experience, Vol. 18(9), 807-820, 1988'
 日期: 2026-05-30
-分类_原始: papers / 内存管理
 子分类: 内存管理
 分类: 操作系统
 难度: 中级

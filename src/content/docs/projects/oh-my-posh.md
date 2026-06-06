@@ -2,7 +2,6 @@
 title: oh-my-posh — 一份配置让所有 shell 都长一个样
 来源: https://github.com/JanDeDobbeleer/oh-my-posh
 日期: 2026-05-31
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 入门

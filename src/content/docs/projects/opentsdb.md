@@ -2,7 +2,6 @@
 title: OpenTSDB — HBase 上的第一代分布式 TSDB
 来源: https://github.com/OpenTSDB/opentsdb
 日期: 2026-05-31
-分类_原始: 数据库 / 时序
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

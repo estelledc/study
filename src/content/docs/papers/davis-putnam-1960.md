@@ -2,7 +2,6 @@
 title: Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 来源: Davis & Putnam, 'A Computing Procedure for Quantification Theory', JACM 1960
 日期: 2026-05-30
-分类_原始: 编译器 / 形式方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级

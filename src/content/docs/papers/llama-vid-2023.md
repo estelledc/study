@@ -151,10 +151,6 @@ output = model.generate(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[blip2-2023]] —— BLIP-2 — 用查询 Transformer 把冻结视觉模型桥接到 LLM
-- [[clip]] —— CLIP — 图文对比学习奠基多模态对齐
-- [[flamingo-2022]] —— Flamingo — 少样本视觉语言模型接大语言模型
-- [[llama]] —— LLaMA — Meta 开源大语言模型基座
-- [[llava]] —— LLaVA — 开源多模态对话模型
-- [[videomme-2024]] —— Video-MME — 视频多模态大模型综合评测基准
-- [[vit]] —— ViT — 把图像切成 patch 用 Transformer 编码
+- [[hour-llava-2025]] —— Hour-LLaVA — 记忆增强，让 LLaVA 读懂一小时视频
+- [[llava-video-2024]] —— LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧
+

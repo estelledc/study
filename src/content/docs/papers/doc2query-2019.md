@@ -2,7 +2,6 @@
 title: doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表
 来源: 'Nogueira, Yang, Lin & Cho, "Document Expansion by Query Prediction", arXiv:1904.08375, 2019'
 日期: 2026-05-31
-分类_原始: 数据检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 入门

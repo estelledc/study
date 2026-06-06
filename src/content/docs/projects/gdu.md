@@ -2,7 +2,6 @@
 title: 'gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI'
 来源: 'https://github.com/dundee/gdu'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

@@ -2,7 +2,6 @@
 title: dua-cli — Rust 写的并发 du 替代，按 i 进交互模式当场把大文件扔进废纸篓
 来源: 'https://github.com/Byron/dua-cli'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

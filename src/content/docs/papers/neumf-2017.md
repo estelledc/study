@@ -2,7 +2,6 @@
 title: NeuMF — 用神经网络替掉推荐系统的内积
 来源: He et al., "Neural Collaborative Filtering", WWW 2017
 日期: 2026-05-31
-分类_原始: 推荐系统
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级

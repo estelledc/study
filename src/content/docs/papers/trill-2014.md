@@ -2,7 +2,6 @@
 title: Trill — 一个引擎同时跑流、批、交互三种分析
 来源: 'Chandramouli et al., "Trill: A High-Performance Incremental Query Processor for Diverse Analytics", VLDB 2014/2015'
 日期: 2026-05-30
-分类_原始: 分布式系统
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

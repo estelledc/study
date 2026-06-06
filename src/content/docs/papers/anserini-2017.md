@@ -2,7 +2,6 @@
 title: Anserini — 把工业搜索引擎 Lucene 改造成学术 IR 实验台
 来源: 'Yang, Fang & Lin, "Anserini: Enabling the Use of Lucene for Information Retrieval Research", SIGIR 2017'
 日期: 2026-05-31
-分类_原始: 数据检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 入门

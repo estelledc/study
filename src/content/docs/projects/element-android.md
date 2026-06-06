@@ -2,7 +2,6 @@
 title: Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 来源: 'https://github.com/element-hq/element-android'
 日期: 2026-05-30
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 中级

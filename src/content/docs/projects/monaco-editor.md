@@ -157,6 +157,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[kakoune]] —— Kakoune — 多光标优先模态编辑器
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架

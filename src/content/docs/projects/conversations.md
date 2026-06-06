@@ -2,7 +2,6 @@
 title: Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端
 来源: 'https://github.com/iNPUTmice/Conversations'
 日期: 2026-05-30
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 中级

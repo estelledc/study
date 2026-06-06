@@ -2,7 +2,6 @@
 title: TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
 来源: 'Brakmo & Peterson, "TCP Vegas: New Techniques for Congestion Detection and Avoidance", IEEE JSAC, Feb 1995'
 日期: 2026-06-01
-分类_原始: 网络
 子分类: 网络协议
 分类: 网络协议
 难度: 中级
@@ -162,5 +161,6 @@ Diff     = (6 - 2) * 10 = 40 个包
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
 - [[mogul-1995-persistent-http]] —— Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[sctp-multipath-2006]] —— CMT-SCTP 2006 — 让两条网络路径同时干活而不打架
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

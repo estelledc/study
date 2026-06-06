@@ -2,7 +2,6 @@
 title: D-Streams — 把流处理伪装成一串很小的批
 来源: 'Zaharia et al., "Discretized Streams: Fault-Tolerant Streaming Computation at Scale", SOSP 2013'
 日期: 2026-05-30
-分类_原始: 分布式系统
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

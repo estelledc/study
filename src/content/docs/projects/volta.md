@@ -2,7 +2,6 @@
 title: Volta — cd 进项目就自动换 Node 版本的工具链管理器
 来源: https://github.com/volta-cli/volta
 日期: 2026-05-31
-分类_原始: 工具基建
 子分类: 命令行工具
 分类: CLI
 难度: 入门

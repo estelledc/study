@@ -2,7 +2,6 @@
 title: Apache ZooKeeper — 给一群机器装一个共同的小脑
 来源: Apache ZooKeeper Documentation, https://zookeeper.apache.org/doc/current/
 日期: 2026-06-01
-分类_原始: 分布式协调服务
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

@@ -2,7 +2,6 @@
 title: PipeDream — 1F1B 调度让流水线工位别空等
 来源: 'Narayanan et al., "PipeDream: Generalized Pipeline Parallelism for DNN Training", SOSP 2019'
 日期: 2026-05-31
-分类_原始: 分布式训练
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

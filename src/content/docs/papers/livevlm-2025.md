@@ -148,3 +148,14 @@ VSB 2K + PaR       ~88%                    -60% latency
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[llmvs-2025]] —— LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
+- [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
+- [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
+- [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+- [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+

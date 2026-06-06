@@ -2,7 +2,6 @@
 title: FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式
 来源: 'Jason Cong et al., "High-Level Synthesis for FPGAs: From Prototyping to Deployment", IEEE TCAD 2011'
 日期: 2026-05-31
-分类_原始: gpu-architecture
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

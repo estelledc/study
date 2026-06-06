@@ -2,7 +2,6 @@
 title: Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 来源: 'https://github.com/soketi/soketi'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

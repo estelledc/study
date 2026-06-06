@@ -2,7 +2,6 @@
 title: Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
 来源: 'Skill-SD: Skill-Conditioned Self-Distillation for Multi-turn LLM Agents, arXiv:2604.10674, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 高级

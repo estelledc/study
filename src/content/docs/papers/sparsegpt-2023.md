@@ -2,7 +2,6 @@
 title: SparseGPT — 175B 大模型一次过剪 50%，不重训
 来源: 'Frantar & Alistarh, "SparseGPT: Massive Language Models Can Be Accurately Pruned in One-Shot", ICML 2023 (arXiv 2301.00774)'
 日期: 2026-05-31
-分类_原始: LLM 推理
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

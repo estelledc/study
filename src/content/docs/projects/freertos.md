@@ -2,7 +2,6 @@
 title: FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 来源: https://github.com/FreeRTOS/FreeRTOS-Kernel
 日期: 2026-06-01
-分类_原始: 基础设施
 子分类: 嵌入式
 分类: 操作系统
 难度: 中级
@@ -165,5 +164,6 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
+- [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

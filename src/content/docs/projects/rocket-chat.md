@@ -2,7 +2,6 @@
 title: Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 来源: 'https://github.com/RocketChat/Rocket.Chat'
 日期: 2026-05-30
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 中级

@@ -2,7 +2,6 @@
 title: Chronos — 把时间序列当语言来训练大模型
 来源: 'Ansari et al. (Amazon AWS AI Labs), "Chronos: Learning the Language of Time Series", TMLR 2024 / arXiv:2403.07815'
 日期: 2026-06-01
-分类_原始: 时序基础模型
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

@@ -2,7 +2,6 @@
 title: Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
 来源: 'Ning et al., "Code as Agent Harness", arXiv:2605.18747, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 初级

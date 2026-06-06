@@ -2,7 +2,6 @@
 title: Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 来源: 'https://github.com/socketio/socket.io'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
@@ -168,6 +167,7 @@ socket.on('save', async (data, cb) => {
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[redis]] —— Redis — 内存键值数据库
+- [[robyn]] —— Robyn — Rust 运行时的高性能 Python Web 框架
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 

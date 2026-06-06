@@ -140,5 +140,6 @@ MAE 是这条线上"视觉 BERT 终于跑通"的那篇。
 - [[electra-2020]] —— ELECTRA — 把猜词题改成判真假题，训练效率 4 倍
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
+- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
 - [[vit]] —— ViT — Vision Transformer
 

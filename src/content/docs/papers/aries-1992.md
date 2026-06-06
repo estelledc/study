@@ -2,7 +2,6 @@
 title: ARIES 1992 — 数据库崩溃后怎么把账目对回来
 来源: 'C. Mohan et al., "ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging", ACM TODS 1992'
 日期: 2026-05-30
-分类_原始: databases
 子分类: 存储与查询
 分类: 数据库
 难度: 高级

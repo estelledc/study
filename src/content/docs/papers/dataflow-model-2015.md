@@ -2,7 +2,6 @@
 title: Dataflow Model — 流处理的四问框架
 来源: 'Akidau et al., "The Dataflow Model", VLDB 2015 (Google)'
 日期: 2026-05-30
-分类_原始: 分布式系统
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

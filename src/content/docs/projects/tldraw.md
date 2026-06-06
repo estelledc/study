@@ -2,7 +2,6 @@
 title: tldraw — 把白板做成可嵌入的 SDK
 来源: 'tldraw/tldraw v2, 2026-05 读, tldraw license'
 日期: 2026-06-01
-分类_原始: 协作工具
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

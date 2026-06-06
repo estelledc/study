@@ -2,7 +2,6 @@
 title: AutoGluon — AWS AutoML 套件
 来源: https://github.com/autogluon/autogluon
 日期: 2026-05-31
-分类_原始: data-science-ai
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

@@ -176,6 +176,7 @@ function Greeting({ name }) {
 - [[effiskill]] —— EffiSkill — 把代码效率优化经验抽成两层 skill 库
 - [[element-web]] —— Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
 - [[emotion]] —— Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[glide-data-grid]] —— glide-data-grid — Canvas 画出来的百万行表格
 - [[gradio]] —— Gradio — ML 模型 demo 框架
@@ -234,6 +235,7 @@ function Greeting({ name }) {
 - [[vue]] —— Vue.js — 渐进式 UI 框架
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 - [[why-did-you-render]] —— why-did-you-render — 让 React 告诉你这次渲染到底为什么
+- [[world-model-robot-learning-2026]] —— 机器人世界模型综述 — 预测未来再动手
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
 - [[zustand]] —— Zustand — 极简 React 状态管理

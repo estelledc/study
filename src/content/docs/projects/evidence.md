@@ -2,7 +2,6 @@
 title: Evidence — 把 Markdown + SQL 编译成静态报告站
 来源: https://github.com/evidence-dev/evidence
 日期: 2026-06-01
-分类_原始: 数据可视化 / BI
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门到中级

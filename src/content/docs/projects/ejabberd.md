@@ -2,7 +2,6 @@
 title: ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器
 来源: 'https://github.com/processone/ejabberd'
 日期: 2026-05-30
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 高级

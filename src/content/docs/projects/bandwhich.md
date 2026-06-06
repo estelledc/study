@@ -2,7 +2,6 @@
 title: bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 来源: 'https://github.com/imsnif/bandwhich'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

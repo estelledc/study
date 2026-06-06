@@ -148,3 +148,8 @@ print(result["text"])
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态长上下文
+- [[orca-2022]] —— Orca — Transformer 生成模型的分布式推理调度
+- [[vall-e-2023]] —— VALL-E — 3 秒样本零样本语音克隆
+

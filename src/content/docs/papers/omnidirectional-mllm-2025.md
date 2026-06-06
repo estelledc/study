@@ -148,3 +148,6 @@ OSR 数据集基于高保真室内 3D layout；户外全景或动态场景超出
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
+

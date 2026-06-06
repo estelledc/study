@@ -2,7 +2,6 @@
 title: minikube — 一条命令在笔记本上起一个真 K8s 集群
 来源: https://github.com/kubernetes/minikube
 日期: 2026-06-01
-分类_原始: 基础设施 / 容器编排
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 入门

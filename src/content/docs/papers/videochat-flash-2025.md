@@ -147,3 +147,11 @@ Q2 = "needle 画面里的人在做什么？"  # 需要 Q1 找对才能答
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+- [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+

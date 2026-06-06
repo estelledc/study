@@ -2,8 +2,9 @@
 title: Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码
 来源: 'Müller et al. "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding". arXiv 2022'
 日期: 2026-06-06
-分类: 图形学
-子分类: 渲染与图形
+分类_原始: 图形学
+分类: 机器学习
+子分类: 模型与训练
 难度: 高级
 ---
 
@@ -147,3 +148,7 @@ Instant-NGP:      训练 ~5-15秒，渲染 ~10ms@1080p（单 GPU）
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[instant-ngp-2022]] —— Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码
+- [[magic3d-2023]] —— Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段
+

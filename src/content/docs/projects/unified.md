@@ -170,14 +170,10 @@ unified().use(remarkParse).use(remarkRehype).use(rehypeExternalLinks).use(rehype
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
-- [[next-js]] —— Next.js — React 全栈框架
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[starlight]] —— Starlight — Astro 文档站点主题
-- [[storybook]] —— Storybook — 给 UI 组件的独立工作台
 - [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 

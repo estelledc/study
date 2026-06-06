@@ -2,7 +2,6 @@
 title: Badger — Go 写的键值分离 LSM
 来源: https://github.com/dgraph-io/badger
 日期: 2026-05-31
-分类_原始: 数据库 / 存储引擎
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -157,8 +156,5 @@ LSM 调优永远在三个放大之间挪动，Badger 把曲线移到了和 [[roc
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
 - [[pebble]] —— Pebble — CockroachDB 自研 LSM
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
-- [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
-- [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
-- [[ssa]] —— SSA — 静态单赋值形式
 

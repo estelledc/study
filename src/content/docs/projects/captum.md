@@ -2,7 +2,6 @@
 title: Captum — 给 PyTorch 模型装上 X 光机
 来源: https://github.com/pytorch/captum
 日期: 2026-05-31
-分类_原始: 项目
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

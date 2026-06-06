@@ -2,7 +2,6 @@
 title: Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 来源: Lindholm, Nickolls, Oberman, Montrym, "NVIDIA Tesla — A Unified Graphics and Computing Architecture", IEEE Micro 2008
 日期: 2026-05-31
-分类_原始: 系统
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

@@ -2,7 +2,6 @@
 title: Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
 来源: 'Lieberman & Hewitt, "A Real-Time Garbage Collector Based on the Lifetimes of Objects", CACM 1983'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

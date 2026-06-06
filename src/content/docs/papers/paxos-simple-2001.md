@@ -2,7 +2,6 @@
 title: Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
 来源: 'Leslie Lamport, "Paxos Made Simple", ACM SIGACT News 2001'
 日期: 2026-05-30
-分类_原始: 分布式系统
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

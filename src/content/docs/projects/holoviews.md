@@ -2,7 +2,6 @@
 title: HoloViews — 一份声明 ⇄ 多后端自动绘图
 来源: 'https://github.com/holoviz/holoviews'
 日期: 2026-05-31
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

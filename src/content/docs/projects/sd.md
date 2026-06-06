@@ -2,7 +2,6 @@
 title: sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）
 来源: 'https://github.com/chmln/sd'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

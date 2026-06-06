@@ -2,7 +2,6 @@
 title: big.LITTLE — 让一颗芯片同时装快核和省电核
 来源: Peter Greenhalgh, "big.LITTLE Processing with ARM Cortex-A15 & Cortex-A7", ARM White Paper, September 2011
 日期: 2026-05-31
-分类_原始: 体系结构
 子分类: GPU 架构
 分类: 图形学
 难度: 入门

@@ -2,7 +2,6 @@
 title: Drone CI — 容器原生的 YAML 流水线
 来源: https://github.com/harness/drone
 日期: 2026-05-31
-分类_原始: DevOps / CI/CD
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

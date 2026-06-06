@@ -2,7 +2,6 @@
 title: MPM — 让粒子背着自己的历史，借网格算一遍力
 来源: Sulsky, Chen, Schreyer, "A Particle Method for History-Dependent Materials", Computer Methods in Applied Mechanics and Engineering, 1994
 日期: 2026-05-31
-分类_原始: 计算机图形学
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

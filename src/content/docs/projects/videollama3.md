@@ -156,3 +156,17 @@ bash scripts/eval/eval_video.sh weights/videollama3_7b_local "videomme mvbench" 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[lame]] —— LAME — MP3 编码开源参考实现
+- [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[shotcut]] —— Shotcut — 基于 MLT 的开源非线性编辑器
+- [[svt-av1]] —— SVT-AV1 — 可扩展 AV1 软件编码器
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
+- [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+- [[x264]] —— x264 — 开源 H.264/AVC 软件编码器
+- [[x265]] —— x265 — 开源 HEVC/H.265 编码器
+

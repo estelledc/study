@@ -2,7 +2,6 @@
 title: nerdctl — containerd 官方的 Docker 兼容 CLI
 来源: https://github.com/containerd/nerdctl
 日期: 2026-05-31
-分类_原始: DevOps / 容器
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

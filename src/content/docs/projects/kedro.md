@@ -2,7 +2,6 @@
 title: Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline
 来源: Kedro Documentation, https://docs.kedro.org/
 日期: 2026-05-31
-分类_原始: 数据科学
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

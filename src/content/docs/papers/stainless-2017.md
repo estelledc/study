@@ -2,7 +2,6 @@
 title: Stainless — 让编译器替你证明 Scala 函数真的满足规约
 来源: 'Hamza, Voirol & Kunčak, "System FR: Formal Foundations for Stainless", OOPSLA 2019'
 日期: 2026-05-31
-分类_原始: 编程语言
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级

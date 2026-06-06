@@ -2,7 +2,6 @@
 title: BIG-bench — 204 道题给大模型出考卷
 来源: Srivastava et al., "Beyond the Imitation Game", arXiv 2206.04615 (TMLR 2023)
 日期: 2026-06-01
-分类_原始: 评测
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

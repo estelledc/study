@@ -2,7 +2,6 @@
 title: vis-network — barnesHut 物理引擎驱动的网络图
 来源: 'https://github.com/visjs/vis-network + Barnes & Hut 1986 "A hierarchical O(N log N) force-calculation algorithm" Nature 324'
 日期: 2026-06-01
-分类_原始: 前端工程
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

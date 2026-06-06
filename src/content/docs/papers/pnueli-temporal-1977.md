@@ -2,7 +2,6 @@
 title: Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言
 来源: 'Amir Pnueli, "The Temporal Logic of Programs", FOCS 1977'
 日期: 2026-05-30
-分类_原始: 形式方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级

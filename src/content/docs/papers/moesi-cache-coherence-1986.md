@@ -2,7 +2,6 @@
 title: Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则
 来源: Sweazey & Smith, "A Class of Compatible Cache Consistency Protocols and their Support by the IEEE Futurebus", ISCA 1986
 日期: 2026-05-31
-分类_原始: 体系结构
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

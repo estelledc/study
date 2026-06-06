@@ -2,7 +2,6 @@
 title: MULTICS 1965 — 把计算机做成像电力一样的公共服务
 来源: Corbató & Vyssotsky, "Introduction and Overview of the MULTICS System", AFIPS FJCC 1965
 日期: 2026-05-31
-分类_原始: 系统
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级

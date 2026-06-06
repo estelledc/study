@@ -2,7 +2,6 @@
 title: Kong — 基于 nginx + Lua 的云原生 API 网关
 来源: 'https://github.com/Kong/kong'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

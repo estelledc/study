@@ -171,6 +171,7 @@ path=(~/bin /usr/local/bin $path)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
+- [[fish-shell]] —— fish-shell — 友好交互式命令行 Shell
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架

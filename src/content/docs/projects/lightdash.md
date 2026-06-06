@@ -2,7 +2,6 @@
 title: Lightdash — 寄生在 dbt 项目里的开源 BI
 来源: Lightdash Documentation, https://docs.lightdash.com/
 日期: 2026-06-01
-分类_原始: 数据基础设施
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

@@ -2,7 +2,6 @@
 title: DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络
 来源: 'Edward Liu (NVIDIA), "DLSS 2.0: Image Reconstruction for Real-time Rendering with Deep Learning", GTC 2020'
 日期: 2026-05-31
-分类_原始: 图形/AI
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

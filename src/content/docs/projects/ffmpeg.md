@@ -3,8 +3,9 @@ title: FFmpeg — 多媒体转码与封装瑞士军刀
 description: libavcodec/libavformat/libavfilter 三件套是视频工具链底层；抽帧、转码、封装几乎所有媒体管线都绕不开它
 来源: 'https://github.com/FFmpeg/FFmpeg'
 日期: 2026-06-05
-分类: 媒体
-子分类: 视频转码
+分类_原始: 媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -147,3 +148,49 @@ ffmpeg -i input.mp4 -codec: copy -start_number 0 -hls_time 6 -hls_list_size 0 ou
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aubio]] —— aubio — 实时音频事件检测库
+- [[audacity]] —— Audacity — 开源音频编辑器
+- [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
+- [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
+- [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
+- [[dav1d]] —— dav1d — 速度优先的 AV1 解码器
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
+- [[gstreamer]] —— GStreamer — 流水线式多媒体框架
+- [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[hls.js]] —— hls.js — 浏览器里播放 HLS 直播
+- [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[lame]] —— LAME — MP3 编码开源参考实现
+- [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
+- [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
+- [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[mlt]] —— MLT — 多媒体编辑框架
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
+- [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
+- [[salsify-2018]] —— Salsify: Low-Latency Network Video Through Tighter Integration Between a Video Codec and a Transport Protocol
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[shaka-packager]] —— Shaka Packager — 流媒体打包工具
+- [[shaka-player]] —— Shaka Player — Google 自适应流媒体播放器
+- [[shotcut]] —— Shotcut — 基于 MLT 的开源非线性编辑器
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+- [[streamlink]] —— Streamlink — 把网页直播流接到本地播放器
+- [[svt-av1]] —— SVT-AV1 — 可扩展 AV1 软件编码器
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
+- [[transformers-video]] —— Transformers Video — HuggingFace 视频处理器与多模态输入管线
+- [[video.js]] —— Video.js — Web 视频播放器框架
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+- [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
+- [[x264]] —— x264 — 开源 H.264/AVC 软件编码器
+- [[x265]] —— x265 — 开源 HEVC/H.265 编码器
+- [[yt-dlp]] —— yt-dlp — youtube-dl 活跃分支与万能站点视频下载器
+

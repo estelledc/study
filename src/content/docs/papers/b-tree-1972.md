@@ -2,7 +2,6 @@
 title: B-Tree 1972 — 磁盘友好的索引结构
 来源: Bayer & McCreight, "Organization and Maintenance of Large Ordered Indexes", Acta Informatica 1972
 日期: 2026-05-29
-分类_原始: 数据库 / 数据结构
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

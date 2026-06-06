@@ -2,7 +2,6 @@
 title: Apache Kafka — 分布式流处理平台
 来源: https://github.com/apache/kafka
 日期: 2026-05-29
-分类_原始: 数据库 / 消息队列
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

@@ -2,7 +2,6 @@
 title: Modin — pandas 的分布式 drop-in（一行 import 自动并行）
 来源: 'https://github.com/modin-project/modin'
 日期: 2026-05-30
-分类_原始: data-science-ai
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

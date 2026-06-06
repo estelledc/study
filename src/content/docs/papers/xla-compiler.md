@@ -2,7 +2,6 @@
 title: XLA — 给 TensorFlow / JAX 装一台真正的张量编译器
 来源: 'Google. "XLA: Optimizing Compiler for TensorFlow". 2017'
 日期: 2026-05-30
-分类_原始: 编译器
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

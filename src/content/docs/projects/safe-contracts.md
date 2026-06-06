@@ -2,7 +2,6 @@
 title: Safe — 多签智能账户合约
 来源: 'https://github.com/safe-global/safe-smart-account'
 日期: 2026-05-30
-分类_原始: 区块链工具
 子分类: 链与合约
 分类: 区块链
 难度: 中级

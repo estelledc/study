@@ -2,7 +2,6 @@
 title: AdamW — 把 weight decay 从梯度里拆出来
 来源: 'Loshchilov & Hutter, "Decoupled Weight Decay Regularization", ICLR 2019 (arXiv 1711.05101, 2017.11)'
 日期: 2026-06-01
-分类_原始: 深度学习
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

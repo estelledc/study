@@ -2,7 +2,6 @@
 title: dust — du 的可视化替代，按目录大小排树状条形图
 来源: 'https://github.com/bootandy/dust'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

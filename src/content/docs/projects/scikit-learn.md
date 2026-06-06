@@ -2,7 +2,6 @@
 title: scikit-learn — 经典 ML 库
 来源: 'https://github.com/scikit-learn/scikit-learn'
 日期: 2026-05-30
-分类_原始: data-science-ai
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 初级
@@ -158,6 +157,7 @@ pipe.score(X_test, y_test)
 
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[fastai]] —— fastai — 三行代码做迁移学习
+- [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pandas]] —— pandas — Python 表格数据事实标准

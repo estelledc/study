@@ -2,7 +2,6 @@
 title: Andromeda — Google Cloud 网络虚拟化的高速通道
 来源: 'Dalton et al., "Andromeda: Performance, Isolation, and Velocity at Scale in Cloud Network Virtualization", NSDI 2018'
 日期: 2026-06-01
-分类_原始: 网络系统
 子分类: 网络协议
 分类: 网络协议
 难度: 中级

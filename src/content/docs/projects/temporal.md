@@ -2,7 +2,6 @@
 title: Temporal — 持久化工作流引擎
 来源: https://github.com/temporalio/temporal
 日期: 2026-05-29
-分类_原始: 后端 / 工作流
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

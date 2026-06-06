@@ -2,7 +2,6 @@
 title: Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包
 来源: 'https://github.com/RabbyHub/Rabby'
 日期: 2026-05-30
-分类_原始: 区块链工具
 子分类: 链与合约
 分类: 区块链
 难度: 初级

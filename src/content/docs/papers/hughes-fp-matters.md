@@ -2,7 +2,6 @@
 title: Why FP Matters — 函数式真正赢在能拆能粘
 来源: 'John Hughes, "Why Functional Programming Matters", The Computer Journal 1989'
 日期: 2026-05-30
-分类_原始: functional-programming
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 初级

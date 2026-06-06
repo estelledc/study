@@ -167,6 +167,7 @@ async function optimizeImage(buffer, { width, format, quality }) {
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由

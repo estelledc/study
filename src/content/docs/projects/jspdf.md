@@ -2,7 +2,6 @@
 title: jsPDF — 浏览器里直接生成 PDF
 来源: 'https://github.com/parallax/jsPDF'
 日期: 2026-06-01
-分类_原始: projects / 前端导出
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门到中级

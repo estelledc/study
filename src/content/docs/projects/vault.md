@@ -2,7 +2,6 @@
 title: Vault — HashiCorp 把"密码本"做成可编程基础设施
 来源: https://developer.hashicorp.com/vault/docs
 日期: 2026-06-01
-分类_原始: DevOps / 安全
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

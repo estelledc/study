@@ -131,11 +131,13 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
+- [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
 - [[coca-2022]] —— CoCa — 把对比和生成两种多模态训练目标合到一个模型里
 - [[dalle-2]] —— DALL-E 2 — 基于 CLIP + 扩散的图像生成
 - [[ddpm]] —— DDPM — Denoising Diffusion Probabilistic Models
@@ -144,15 +146,42 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
+- [[hawkeye-2024]] —— HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
 - [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
+- [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+- [[llama-vid-2023]] —— LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM
 - [[llava]] —— LLaVA — 开源多模态对话模型
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
 - [[mae]] —— MAE — Masked Autoencoders
 - [[milvus]] —— Milvus — 开源向量数据库
+- [[milvus-2021]] —— Milvus — 为向量检索而生的数据库
+- [[minicpm-v-2024]] —— MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型
+- [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
+- [[mlvtg-2025]] —— MLVTG — MambaAligner + 冻结 LLM 提纯的多模态视频时序定位
+- [[mme-benchmark-2023]] —— MME Benchmark — 开源 MLLM 评测的事实起点
+- [[mme-survey-2024]] —— MME-Survey — 多模态 LLM 怎么评才靠谱
+- [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
+- [[omnistvg-2025]] —— OmniSTVG — 按句子把视频里所有相关物体都框出来
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
+- [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
+- [[qvhighlights-2021]] —— QVHighlights — 用自然语言查询在视频里找精彩瞬间
+- [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
+- [[siglip-2023]] —— SigLIP — 用 Sigmoid 损失训练图文对齐
+- [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
+- [[ta-stvg-2025]] —— TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
+- [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
+- [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
+- [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
+- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
 - [[vit]] —— ViT — Vision Transformer
+- [[vtimellm-2023]] —— VTimeLLM — 让 Video LLM 学会标出事件起止时间
 - [[word2vec]] —— Word2Vec — 词向量奠基
 

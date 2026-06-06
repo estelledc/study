@@ -2,7 +2,6 @@
 title: Theorems for Free — 类型签名直接给定理
 来源: Wadler, "Theorems for free!", FPCA 1989
 日期: 2026-05-29
-分类_原始: 编程语言 / 类型理论
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

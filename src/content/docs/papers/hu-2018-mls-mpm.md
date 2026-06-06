@@ -2,7 +2,6 @@
 title: MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本
 来源: Hu, Fang, Ge, Qu, Zhu, Pradhana, Jiang, "A Moving Least Squares Material Point Method with Displacement Discontinuity", SIGGRAPH 2018
 日期: 2026-05-31
-分类_原始: 计算机图形学
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

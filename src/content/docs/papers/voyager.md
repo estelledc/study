@@ -2,7 +2,6 @@
 title: Voyager — LLM 终身学习智能体
 来源: 'Wang et al., "Voyager: An Open-Ended Embodied Agent with LLMs", 2023'
 日期: 2026-05-29
-分类_原始: AI / Agent
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级
@@ -159,5 +158,6 @@ Voyager 论文不是终点，它是一条路线的发车站。
 - [[skill-pro-nonparametric-ppo]] —— Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 - [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
+- [[world-model-robot-learning-2026]] —— 机器人世界模型综述 — 预测未来再动手
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
 

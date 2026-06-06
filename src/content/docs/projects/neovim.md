@@ -2,7 +2,6 @@
 title: Neovim — Lua 可扩展 vim 现代分叉
 来源: https://github.com/neovim/neovim
 日期: 2026-06-01
-分类_原始: 编辑器
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级

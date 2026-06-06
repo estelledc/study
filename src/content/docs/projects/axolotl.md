@@ -2,7 +2,6 @@
 title: Axolotl — YAML 驱动 LLM 微调
 来源: https://github.com/axolotl-ai-cloud/axolotl
 日期: 2026-05-31
-分类_原始: 数据科学 / AI 基建
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

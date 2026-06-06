@@ -2,7 +2,6 @@
 title: Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎
 来源: https://github.com/manticoresoftware/manticoresearch
 日期: 2026-06-01
-分类_原始: 数据库 / 搜索
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

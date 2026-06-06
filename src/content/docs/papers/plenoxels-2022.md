@@ -2,7 +2,6 @@
 title: Plenoxels — 不要神经网络也能渲染辐射场
 来源: 'Fridovich-Keil, Yu, Tancik, Chen, Recht, Kanazawa, "Plenoxels: Radiance Fields without Neural Networks", CVPR 2022'
 日期: 2026-05-31
-分类_原始: 计算机图形 / 三维重建
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

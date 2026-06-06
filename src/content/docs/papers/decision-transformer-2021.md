@@ -2,7 +2,6 @@
 title: Decision Transformer — 把强化学习当成"文字接龙"
 来源: 'Chen et al., "Decision Transformer: Reinforcement Learning via Sequence Modeling", NeurIPS 2021'
 日期: 2026-06-01
-分类_原始: 强化学习
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

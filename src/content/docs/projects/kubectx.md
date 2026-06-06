@@ -2,7 +2,6 @@
 title: kubectx — kubectl 切换 context 和 namespace 的两行命令
 来源: https://github.com/ahmetb/kubectx
 日期: 2026-05-31
-分类_原始: DevOps / Kubernetes
 子分类: 命令行工具
 分类: CLI
 难度: 入门

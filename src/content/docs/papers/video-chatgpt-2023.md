@@ -147,3 +147,12 @@ Video-ChatGPT 在 Temporal / Consistency 上优于同期 VideoChat，
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
+- [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
+- [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
+

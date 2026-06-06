@@ -2,7 +2,6 @@
 title: REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 来源: 'Shi et al., "REPLUG: Retrieval-Augmented Black-Box Language Models", arXiv 2301.12652, 2023 (NAACL 2024)'
 日期: 2026-05-31
-分类_原始: AI / NLP
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

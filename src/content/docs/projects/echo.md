@@ -2,7 +2,6 @@
 title: Echo — 极简高性能 Go 框架，5 行起服务
 来源: 'https://github.com/labstack/echo'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

@@ -2,7 +2,6 @@
 title: zoxide — 学会你常去哪的智能 cd
 来源: 'https://github.com/ajeetdsouza/zoxide'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

@@ -2,7 +2,6 @@
 title: mailcow — Docker compose 一键起一整套邮件服务
 来源: https://github.com/mailcow/mailcow-dockerized
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 实时通信
 分类: 通信
 难度: 中级

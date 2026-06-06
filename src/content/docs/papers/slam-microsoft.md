@@ -2,7 +2,6 @@
 title: SLAM — 让 Windows 驱动 bug 自己撞到工具上
 来源: 'Ball & Rajamani, "The SLAM Project: Debugging System Software via Static Analysis", POPL 2002'
 日期: 2026-05-30
-分类_原始: 形式化方法
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

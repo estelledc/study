@@ -2,7 +2,6 @@
 title: gh — GitHub 官方命令行
 来源: https://github.com/cli/cli
 日期: 2026-05-31
-分类_原始: 开发工具
 子分类: 命令行工具
 分类: CLI
 难度: 入门

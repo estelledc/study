@@ -2,7 +2,6 @@
 title: Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影
 来源: 'Gortler, Grzeszczuk, Szeliski, Cohen, "The Lumigraph", SIGGRAPH 1996'
 日期: 2026-05-31
-分类_原始: 计算机图形 / 三维重建
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

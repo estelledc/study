@@ -2,7 +2,6 @@
 title: Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块
 来源: Ding & Suel, "Faster Top-k Document Retrieval Using Block-Max Indexes", SIGIR 2011
 日期: 2026-05-31
-分类_原始: 数据检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级

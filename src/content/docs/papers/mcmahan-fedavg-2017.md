@@ -3,7 +3,7 @@ title: FedAvg — 联邦学习奠基算法
 来源: 'McMahan et al., "Communication-Efficient Learning of Deep Networks from Decentralized Data", AISTATS 2017'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 联邦学习
+子分类: 安全与隐私
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -142,22 +142,8 @@ w_new = sum(n_k * w_k for k in clients) / sum(n_k for k in clients)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- padding for quality-gate 150 lines -->
+- [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
+- [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+- [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
 
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->

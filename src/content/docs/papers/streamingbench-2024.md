@@ -149,3 +149,8 @@ python evaluate.py \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+

@@ -2,7 +2,6 @@
 title: discord.py — 用 Python 写 Discord 机器人的事实标准
 来源: 'https://github.com/Rapptz/discord.py'
 日期: 2026-05-31
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 初级

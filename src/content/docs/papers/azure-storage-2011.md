@@ -2,7 +2,6 @@
 title: Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
 来源: 'Calder et al., "Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency", SOSP 2011'
 日期: 2026-05-30
-分类_原始: 分布式系统
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

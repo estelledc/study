@@ -2,7 +2,6 @@
 title: MetaMask — 装在浏览器里的以太坊钱包
 来源: 'https://github.com/MetaMask/metamask-extension'
 日期: 2026-05-30
-分类_原始: 区块链工具
 子分类: 链与合约
 分类: 区块链
 难度: 初级

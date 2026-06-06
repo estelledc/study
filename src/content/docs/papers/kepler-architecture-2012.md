@@ -2,7 +2,6 @@
 title: NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 来源: 'NVIDIA, "Kepler GK110/GK210 Architecture Whitepaper", 2012'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

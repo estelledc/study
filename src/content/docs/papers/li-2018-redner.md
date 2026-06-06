@@ -2,7 +2,6 @@
 title: redner — 让光线追踪能反向传播过几何边缘
 来源: Li, Aittala, Durand, Lehtinen, "Differentiable Monte Carlo Ray Tracing through Edge Sampling", SIGGRAPH Asia 2018
 日期: 2026-05-31
-分类_原始: 计算机图形学
 子分类: 渲染与图形
 分类: 图形学
 难度: 进阶

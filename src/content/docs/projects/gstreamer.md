@@ -3,8 +3,9 @@ title: GStreamer — 流水线式多媒体框架
 description: element/pad/caps 模型；GNOME/Linux 多媒体栈基石；与 FFmpeg 对照的图式架构
 来源: 'https://github.com/GStreamer/gstreamer'
 日期: 2026-06-06
-分类: 媒体
-子分类: 视频转码
+分类_原始: 媒体
+分类: 操作系统
+子分类: 嵌入式
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -152,3 +153,8 @@ pipeline.set_state(Gst.State.PLAYING)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[mlt]] —— MLT — 多媒体编辑框架
+

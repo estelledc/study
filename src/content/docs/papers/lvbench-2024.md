@@ -147,3 +147,11 @@ scores = {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+- [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
+

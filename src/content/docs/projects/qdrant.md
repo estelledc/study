@@ -2,7 +2,6 @@
 title: Qdrant — Rust 向量数据库
 来源: https://github.com/qdrant/qdrant
 日期: 2026-05-29
-分类_原始: 数据库 / 向量
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -161,6 +160,7 @@ results = client.search(
 - [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
 - [[chroma]] —— Chroma — Python 优先的向量数据库
 - [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
+- [[llama-index]] —— LlamaIndex — LLM 数据框架与 RAG 四件套
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎

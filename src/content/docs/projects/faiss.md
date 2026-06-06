@@ -2,7 +2,6 @@
 title: FAISS — 向量检索的标准件库
 来源: https://github.com/facebookresearch/faiss
 日期: 2026-06-01
-分类_原始: 基础设施 / 向量检索
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

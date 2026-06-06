@@ -2,7 +2,6 @@
 title: Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
 来源: 'Wei et al., "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory", arXiv:2511.20857, 2025'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级

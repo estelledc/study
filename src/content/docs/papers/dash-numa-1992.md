@@ -2,7 +2,6 @@
 title: Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器
 来源: 'Lenoski, Laudon, Gharachorloo, Weber, Gupta, Hennessy, Horowitz, Lam, "The Stanford Dash Multiprocessor", IEEE Computer Vol. 25 No. 3, March 1992'
 日期: 2026-05-31
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

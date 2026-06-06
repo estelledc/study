@@ -3,8 +3,9 @@ title: Essentia — 音乐信息检索工具箱
 description: UPF MTG 出品 C++/Python 双层 API；节奏/调性/风格特征提取
 来源: 'https://github.com/MTG/essentia'
 日期: 2026-06-06
-分类: 媒体
-子分类: 音频处理
+分类_原始: 媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -148,3 +149,8 @@ for path in glob.glob('dataset/*.wav'):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[audacity]] —— Audacity — 开源音频编辑器
+- [[lmms]] —— LMMS — Linux 多媒体工作站
+- [[supercollider]] —— SuperCollider — 实时音频合成环境
+

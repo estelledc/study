@@ -162,6 +162,7 @@ Groth 2016 把证明压到极致：
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[scroll]] —— Scroll — 字节码级 zkEVM

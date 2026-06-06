@@ -2,7 +2,6 @@
 title: Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"
 来源: Nelson & Oppen, 'Simplification by Cooperating Decision Procedures', ACM TOPLAS 1979
 日期: 2026-05-30
-分类_原始: 编译器 / 形式方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级

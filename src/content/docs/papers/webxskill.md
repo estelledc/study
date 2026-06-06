@@ -2,7 +2,6 @@
 title: WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 来源: 'WebXSkill: Skill Learning for Autonomous Web Agents, arXiv:2604.13318, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级

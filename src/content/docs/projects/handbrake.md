@@ -3,8 +3,9 @@ title: HandBrake — FFmpeg 上的 GUI 转码器
 description: 在 ffmpeg/x264 上做产品化封装；预设、队列、滤镜面板把命令行参数变成可点选的转码工作流
 来源: 'https://github.com/HandBrake/HandBrake'
 日期: 2026-06-06
-分类: 媒体
-子分类: 视频转码
+分类_原始: 媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 初级
 provenance: pipeline-v3
 ---
@@ -148,3 +149,16 @@ ffmpeg -i input.mkv -vf scale=1920:1080 -c:v libx264 -preset fast -crf 22 -c:a a
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dav1d]] —— dav1d — 速度优先的 AV1 解码器
+- [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[gstreamer]] —— GStreamer — 流水线式多媒体框架
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
+- [[mlt]] —— MLT — 多媒体编辑框架
+- [[shotcut]] —— Shotcut — 基于 MLT 的开源非线性编辑器
+- [[svt-av1]] —— SVT-AV1 — 可扩展 AV1 软件编码器
+- [[x264]] —— x264 — 开源 H.264/AVC 软件编码器
+- [[x265]] —— x265 — 开源 HEVC/H.265 编码器
+

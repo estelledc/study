@@ -2,7 +2,6 @@
 title: TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
 来源: 'Abadi et al., "TensorFlow: A System for Large-Scale Machine Learning", OSDI 2016'
 日期: 2026-05-31
-分类_原始: 机器学习系统
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级

@@ -161,7 +161,9 @@ ViT 是 2020 年代视觉的 ResNet 时刻——架构转折点。
 - [[dit]] —— DiT — Diffusion Transformer
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[llama-vid-2023]] —— LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM
 - [[mae]] —— MAE — Masked Autoencoders
 - [[resnet]] —— ResNet — 残差连接
 - [[sam]] —— SAM — Segment Anything
+- [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
 

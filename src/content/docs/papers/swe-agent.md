@@ -2,7 +2,6 @@
 title: 'SWE-Agent — Princeton SWE-bench 解法'
 来源: 'Yang et al., "SWE-agent: Agent Computer Interfaces Enable Software Engineering Language Models", NeurIPS 2024'
 日期: 2026-05-29
-分类_原始: AI / Agent
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级

@@ -2,7 +2,6 @@
 title: Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统
 来源: 'https://github.com/apache/openmeetings'
 日期: 2026-05-30
-分类_原始: 基础设施 / 实时协作
 子分类: 实时通信
 分类: 通信
 难度: 中级

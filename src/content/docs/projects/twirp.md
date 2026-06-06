@@ -2,7 +2,6 @@
 title: Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON
 来源: 'https://github.com/twitchtv/twirp'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

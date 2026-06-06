@@ -2,7 +2,6 @@
 title: Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 来源: 'https://github.com/salvo-rs/salvo'
 日期: 2026-05-30
-分类_原始: 后端开发
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

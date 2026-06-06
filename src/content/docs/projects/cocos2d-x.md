@@ -2,7 +2,6 @@
 title: Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 来源: 'https://github.com/cocos2d/cocos2d-x'
 日期: 2026-06-01
-分类_原始: 图形引擎
 子分类: 渲染与图形
 分类: 图形学
 难度: 入门

@@ -156,22 +156,45 @@ for batch in dataloader:  # 视频-图像-音频-深度-热成像 五元组
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
+- [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
+- [[grounded-videollm-2024]] —— Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
-- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
-- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
+- [[llava-video-2024]] —— LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧
+- [[llmvs-2025]] —— LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
-- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[longva-2024]] —— LongVA — 把语言模型的长上下文能力「搬」到视频上
+- [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+- [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
+- [[mlvtg-2025]] —— MLVTG — MambaAligner + 冻结 LLM 提纯的多模态视频时序定位
+- [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
+- [[moviechat-2024]] —— MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊
+- [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
+- [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
 - [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[timechat-2024]] —— TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位
+- [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
+- [[transformers-video]] —— Transformers Video — HuggingFace 视频处理器与多模态输入管线
+- [[univtg-2023]] —— UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
 - [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-chatgpt-2023]] —— Video-ChatGPT — 让大语言模型看懂视频并聊起来
 - [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
 - [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
+- [[vsi-bench-2024]] —— VSI-Bench — 用室内漫游视频考视频大模型的空间智商
+- [[vtg-llm-2024]] —— VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
+- [[vtimellm-2023]] —— VTimeLLM — 让 Video LLM 学会标出事件起止时间
 

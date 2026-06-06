@@ -2,7 +2,6 @@
 title: Tilt — K8s 微服务本地开发的"文件保存即上线"
 来源: https://github.com/tilt-dev/tilt
 日期: 2026-06-01
-分类_原始: DevOps / 本地开发
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

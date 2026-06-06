@@ -150,3 +150,14 @@ cmp input.wav roundtrip.wav && echo "bit-identical"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[aubio]] —— aubio — 实时音频事件检测库
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[lame]] —— LAME — MP3 编码开源参考实现
+- [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+

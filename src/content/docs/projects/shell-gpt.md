@@ -2,7 +2,6 @@
 title: shell-gpt — 把 LLM 接进 shell 当命令行助理
 来源: https://github.com/TheR1D/shell_gpt
 日期: 2026-05-31
-分类_原始: AI / CLI
 子分类: 命令行工具
 分类: CLI
 难度: 入门

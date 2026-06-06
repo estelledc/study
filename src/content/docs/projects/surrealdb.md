@@ -2,7 +2,6 @@
 title: SurrealDB — 一种语法吃下 SQL 图 文档 向量
 来源: https://github.com/surrealdb/surrealdb
 日期: 2026-05-31
-分类_原始: 数据库 / 多模型
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

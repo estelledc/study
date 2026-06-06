@@ -2,7 +2,6 @@
 title: BentoML — 模型打包部署
 来源: https://github.com/bentoml/BentoML
 日期: 2026-05-31
-分类_原始: 项目
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
@@ -181,8 +180,6 @@ openllm start meta-llama/Llama-3-8B
 - [[mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
-- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
 - [[triton-inference-server]] —— Triton Inference Server — NVIDIA 多框架推理服务化标杆
-- [[triton-llm]] —— Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

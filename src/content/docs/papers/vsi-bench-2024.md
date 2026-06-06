@@ -148,3 +148,7 @@ print(mean_relative_accuracy(18.0, 20.0))  # > 0，比 exact match 合理
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
+- [[omnidirectional-mllm-2025]] —— 全景空间推理 — MLLM 准备好面对 360° 了吗
+

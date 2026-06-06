@@ -157,3 +157,6 @@ clip_caption = captioner.summarize_clip(
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[streamingbench-2024]] —— StreamingBench — 流式视频理解的 18 任务在线大考
+

@@ -2,7 +2,6 @@
 title: LLM-Wiki — 把外部知识编译成 agent 自己的"维基"
 来源: 'Haoliang Ming et al., "Retrieval as Reasoning: Self-Evolving Agent-Native Retrieval via LLM-Wiki", arXiv:2605.25480, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级

@@ -2,7 +2,6 @@
 title: ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住
 来源: https://github.com/ratatui-org/ratatui
 日期: 2026-05-31
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 入门

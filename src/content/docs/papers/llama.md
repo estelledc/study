@@ -150,6 +150,7 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[llama-vid-2023]] —— LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM
 - [[llava]] —— LLaVA — 开源多模态对话模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[roberta-2019]] —— RoBERTa — 把 BERT 重训一遍就能拿 SOTA

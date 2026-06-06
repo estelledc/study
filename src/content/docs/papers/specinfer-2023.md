@@ -2,7 +2,6 @@
 title: SpecInfer — 让大模型一次"猜一棵树"再并行验证
 来源: Miao 等, "SpecInfer — Accelerating Generative LLM Serving with Tree-based Speculative Inference and Verification", arXiv 2305.09781 / ASPLOS 2024
 日期: 2026-05-31
-分类_原始: LLM 推理
 子分类: GPU 架构
 分类: 图形学
 难度: 进阶

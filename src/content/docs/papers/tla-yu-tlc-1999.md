@@ -2,7 +2,6 @@
 title: TLC — 让 TLA+ 规范可以一键机检的模型检查器
 来源: Yuan Yu, Panagiotis Manolios, Leslie Lamport, 'Model Checking TLA+ Specifications', CHARME 1999
 日期: 2026-05-30
-分类_原始: 分布式系统 / 形式化方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 中级

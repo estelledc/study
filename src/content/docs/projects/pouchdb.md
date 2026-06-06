@@ -2,7 +2,6 @@
 title: PouchDB — 浏览器里的 CouchDB
 来源: https://github.com/pouchdb/pouchdb
 日期: 2026-05-31
-分类_原始: 数据库 / 离线优先
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

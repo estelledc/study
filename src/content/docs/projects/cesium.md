@@ -2,7 +2,6 @@
 title: CesiumJS — 浏览器里的三维地球与时间动画
 来源: 'https://github.com/CesiumGS/cesium'
 日期: 2026-05-31
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

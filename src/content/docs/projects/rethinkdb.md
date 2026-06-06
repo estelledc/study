@@ -2,7 +2,6 @@
 title: RethinkDB — 让数据库自己把更新推给客户端的先驱
 来源: Slava Akhmechet 等, RethinkDB 项目（2009–2016, Linux Foundation 接管）
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -155,6 +154,7 @@ ReQL changefeed 有 `includeInitial` 和 `squash` 参数。客户端断线重连
 
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[mongo]] —— MongoDB — 文档数据库服务端开源实现
 - [[raft]] —— Raft — 易理解的共识算法
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

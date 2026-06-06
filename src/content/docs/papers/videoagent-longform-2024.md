@@ -148,4 +148,6 @@ VideoAgent 平均 8.4 帧 → 适合「按次计费」云 API
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- end -->
+- [[traveler-2024]] —— TraveLER — 四段式多 Agent，帧级问答看懂长视频
+- [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+

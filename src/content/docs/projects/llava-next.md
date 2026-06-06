@@ -182,18 +182,29 @@ def load_video_for_llava(path, sample_fps=1, max_frames=32):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
-- [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
-- [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
-- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
-- [[pytorch]] —— PyTorch — 深度学习主流框架
+- [[longva-2024]] —— LongVA — 把语言模型的长上下文能力「搬」到视频上
+- [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+- [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
+- [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
+- [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
+- [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
 - [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
+- [[transformers-video]] —— Transformers Video — HuggingFace 视频处理器与多模态输入管线
 - [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
+- [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
+- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
 

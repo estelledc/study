@@ -2,7 +2,6 @@
 title: Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)
 来源: Lance Williams, "Pyramidal Parametrics", SIGGRAPH 83
 日期: 2026-05-31
-分类_原始: 计算机图形
 子分类: 渲染与图形
 分类: 图形学
 难度: 入门

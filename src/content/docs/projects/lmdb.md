@@ -146,4 +146,6 @@ MDB_MAPASYNC   异步刷盘（性能↑ 崩溃窗口↑）
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- lmdb v3 refined -->
+- [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
+- [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
+

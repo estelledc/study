@@ -2,7 +2,6 @@
 title: TDengine — 一个设备一张表的国产 IoT 时序库
 来源: https://github.com/taosdata/TDengine
 日期: 2026-05-31
-分类_原始: 数据库 / 时序
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

@@ -3,8 +3,9 @@ title: libvpx — VP8/VP9 开源视频编解码
 description: WebM 核心；YouTube 转码后端；与 H.264 对照理解 Web 开源编码栈
 来源: 'https://github.com/webmproject/libvpx'
 日期: 2026-06-06
-分类: 媒体
-子分类: 视频编解码
+分类_原始: 媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -151,3 +152,11 @@ ABR 播放器按带宽切换不同档位；对照 [[dash-js]] / [[shaka-player]]
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dav1d]] —— dav1d — 速度优先的 AV1 解码器
+- [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[opus]] —— Opus — 低延迟全频带音频编解码
+- [[svt-av1]] —— SVT-AV1 — 可扩展 AV1 软件编码器
+- [[x264]] —— x264 — 开源 H.264/AVC 软件编码器
+- [[x265]] —— x265 — 开源 HEVC/H.265 编码器
+

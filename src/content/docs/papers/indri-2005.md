@@ -2,7 +2,6 @@
 title: Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎
 来源: 'Strohman, Metzler, Turtle, Croft, "Indri: A Language Model-based Search Engine for Complex Queries", IA Workshop 2005'
 日期: 2026-05-31
-分类_原始: 数据检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级

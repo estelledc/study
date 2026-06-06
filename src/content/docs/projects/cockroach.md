@@ -2,7 +2,6 @@
 title: CockroachDB — 全球分布式 SQL
 来源: https://github.com/cockroachdb/cockroach
 日期: 2026-05-31
-分类_原始: 数据库 / 分布式
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

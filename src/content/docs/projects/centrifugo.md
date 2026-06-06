@@ -2,7 +2,6 @@
 title: Centrifugo — Go 写的开源实时消息服务器
 来源: 'https://github.com/centrifugal/centrifugo'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

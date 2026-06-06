@@ -2,7 +2,6 @@
 title: EXG 经验图 — 把 agent 的成败拼成一张可复用的关系图
 来源: 'Jin et al., "EXG: Self-Evolving Agents with Experience Graphs", arXiv:2605.17721, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级

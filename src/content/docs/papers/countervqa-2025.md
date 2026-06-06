@@ -147,3 +147,6 @@ rl_update(vlm, reward)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+

@@ -2,7 +2,6 @@
 title: Akamai 2010 — 从内容分发网络长成全球应用平台
 来源: 'Nygren, Sitaraman, Sun, "The Akamai Network: A Platform for High-Performance Internet Applications", ACM SIGOPS OSR 44(3), July 2010'
 日期: 2026-06-01
-分类_原始: 分布式系统
 子分类: 网络协议
 分类: 网络协议
 难度: 中级

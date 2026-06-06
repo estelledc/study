@@ -2,7 +2,6 @@
 title: Blink — 按拓扑动态拼生成树替代 NCCL ring
 来源: 'Wang et al., "Blink: Fast and Generic Collectives for Distributed ML", MLSys 2020'
 日期: 2026-05-31
-分类_原始: 分布式训练
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

@@ -2,7 +2,6 @@
 title: Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
 来源: 'Yu et al., "Orca: A Distributed Serving System for Transformer-Based Generative Models", OSDI 2022'
 日期: 2026-05-31
-分类_原始: 系统/LLM 推理
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

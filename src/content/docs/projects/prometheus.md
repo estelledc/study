@@ -2,7 +2,6 @@
 title: Prometheus — 时序监控系统
 来源: https://github.com/prometheus/prometheus
 日期: 2026-05-29
-分类_原始: 监控 / 时序数据库
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -201,6 +200,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
 - [[loki]] —— Loki — 给日志做 Prometheus，只索引标签不索引内容
 - [[m3]] —— M3 — Uber 的分布式 TSDB
+- [[mongo]] —— MongoDB — 文档数据库服务端开源实现
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
@@ -208,6 +208,7 @@ rate(http_requests_total{status=~"5.."}[5m])
 - [[opentelemetry-collector]] —— opentelemetry-collector — OTel 官方核心仓库与组件模型
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站
+- [[robyn]] —— Robyn — Rust 运行时的高性能 Python Web 框架
 - [[signoz]] —— SigNoz — 自托管的 OpenTelemetry 一体化可观测平台
 - [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[tempo]] —— Tempo — 把分布式追踪扔进 S3 的开源后端

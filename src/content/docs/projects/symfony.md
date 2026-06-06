@@ -2,7 +2,6 @@
 title: Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 来源: 'https://github.com/symfony/symfony'
 日期: 2026-05-30
-分类_原始: 后端开发
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

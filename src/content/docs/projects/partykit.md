@@ -2,7 +2,6 @@
 title: 'PartyKit — Cloudflare Durable Objects 上的实时协作 framework'
 来源: 'https://github.com/partykit/partykit'
 日期: 2026-05-30
-分类_原始: 基础设施
 子分类: 实时通信
 分类: 通信
 难度: 中级

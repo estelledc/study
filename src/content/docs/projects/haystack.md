@@ -2,7 +2,6 @@
 title: Haystack — 企业 NLP / RAG 流水线
 来源: https://github.com/deepset-ai/haystack
 日期: 2026-05-31
-分类_原始: AI / Agent
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
@@ -160,6 +159,9 @@ class WordCounter:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[haystack-2010]] —— Haystack — Facebook 十亿张照片怎么存
+- [[llama-index]] —— LlamaIndex — LLM 数据框架与 RAG 四件套
+- [[milvus-2021]] —— Milvus — 为向量检索而生的数据库
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
 - [[unstructured]] —— Unstructured — 把任意文档解析成 LLM 能吃的元素列表
 

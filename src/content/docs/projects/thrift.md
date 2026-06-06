@@ -2,7 +2,6 @@
 title: Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 来源: 'https://github.com/apache/thrift'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

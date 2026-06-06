@@ -2,7 +2,6 @@
 title: LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习
 来源: https://github.com/litmuschaos/litmus
 日期: 2026-06-01
-分类_原始: 云原生
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

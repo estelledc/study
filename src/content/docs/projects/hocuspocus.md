@@ -2,7 +2,6 @@
 title: Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 来源: 'https://github.com/ueberdosis/hocuspocus'
 日期: 2026-05-30
-分类_原始: 协同编辑后端
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

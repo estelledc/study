@@ -2,7 +2,6 @@
 title: coCondenser — 让 BERT 的 [CLS] 在预训练就学会"代表整段话"
 来源: 'Gao & Callan, "Unsupervised Corpus-Aware Language Model Pre-training for Dense Passage Retrieval", ACL 2022 (arXiv 2108.05540, 2021)'
 日期: 2026-05-31
-分类_原始: 数据检索
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级

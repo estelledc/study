@@ -2,7 +2,6 @@
 title: Jacobson 1988 — 让互联网不再被自己塞死
 来源: 'Van Jacobson, "Congestion Avoidance and Control", SIGCOMM 1988'
 日期: 2026-05-31
-分类_原始: 网络
 子分类: 网络协议
 分类: 网络协议
 难度: 中级

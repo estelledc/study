@@ -2,7 +2,6 @@
 title: Feautrier 多面体调度 — 把循环并行化变成解几何方程
 来源: Feautrier, "Some Efficient Solutions to the Affine Scheduling Problem", IJPP 1992
 日期: 2026-05-30
-分类_原始: 编译器
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级

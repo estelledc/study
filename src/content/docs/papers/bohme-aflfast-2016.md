@@ -3,7 +3,7 @@ title: AFLFast — 灰盒 Fuzz 的马尔可夫调度
 来源: 'Böhme, Pham, Roychoudhury, "Coverage-based Greybox Fuzzing as Markov Chain", CCS 2016'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 模糊测试
+子分类: 安全与隐私
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -144,22 +144,6 @@ afl-fuzz -i in/ -o out/ -- ./parse @@
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- padding for quality-gate 150 lines -->
+- [[cadar-klee-2008]] —— KLEE — 符号执行自动生成高覆盖测试
+- [[newsome-taintcheck-2005]] —— Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software
 
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->

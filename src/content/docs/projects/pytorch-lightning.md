@@ -185,6 +185,7 @@ trainer = pl.Trainer(callbacks=[
 - [[piper]] —— Piper — 端侧低延迟 TTS
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[scikit-learn]] —— scikit-learn — 经典 ML 库
+- [[torchcodec]] —— TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
 - [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
 - [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
 - [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库

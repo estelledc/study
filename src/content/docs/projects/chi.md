@@ -2,7 +2,6 @@
 title: chi — Go 标准库友好的轻量 HTTP router
 来源: 'https://github.com/go-chi/chi'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

@@ -147,3 +147,6 @@ for item in cover_dataset:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
+

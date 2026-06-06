@@ -2,7 +2,6 @@
 title: Orleans — 让分布式服务写起来像单机对象
 来源: 'https://github.com/dotnet/orleans'
 日期: 2026-05-30
-分类_原始: 后端框架
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

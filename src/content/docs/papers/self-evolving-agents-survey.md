@@ -2,7 +2,6 @@
 title: 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 来源: 'Fang et al., "A Comprehensive Survey of Self-Evolving AI Agents", arXiv:2508.07407, 2025'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 初级

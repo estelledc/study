@@ -151,3 +151,9 @@ python inference.py \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mlvtg-2025]] —— MLVTG — MambaAligner + 冻结 LLM 提纯的多模态视频时序定位
+- [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
+- [[trace-2024]] —— TRACE — 用因果事件链同时输出时间、精彩度与描述
+- [[uvtg-mllm-2025]] —— UniTime — 生成式 MLLM 做通用视频时序定位
+

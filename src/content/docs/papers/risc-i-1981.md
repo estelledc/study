@@ -2,7 +2,6 @@
 title: RISC I — 砍掉 90% 指令反而让 CPU 跑得更快
 来源: 'Patterson, D. A., Séquin, C. H., RISC I: A Reduced Instruction Set VLSI Computer, ISCA 1981 (8th Annual Symposium on Computer Architecture)'
 日期: 2026-05-31
-分类_原始: 计算机体系结构
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

@@ -2,7 +2,6 @@
 title: Collabora Online — 浏览器里直接编辑 Office 文档的开源后端
 来源: CollaboraOnline/online GitHub README
 日期: 2026-05-31
-分类_原始: infrastructure
 子分类: 实时通信
 分类: 通信
 难度: 中级

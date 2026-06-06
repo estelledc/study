@@ -2,7 +2,6 @@
 title: bbolt — Go 嵌入式 B+ 树 KV
 来源: https://github.com/etcd-io/bbolt
 日期: 2026-06-01
-分类_原始: 数据库 / 存储引擎
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

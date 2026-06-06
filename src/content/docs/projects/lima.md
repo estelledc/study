@@ -2,7 +2,6 @@
 title: Lima — macOS 上跑 Linux 虚拟机的轻量 CLI
 来源: https://github.com/lima-vm/lima
 日期: 2026-06-01
-分类_原始: DevOps
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 入门

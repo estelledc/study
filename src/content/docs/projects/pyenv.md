@@ -2,7 +2,6 @@
 title: pyenv — 用 shim 把 python 命令拦截后路由到指定版本
 来源: 'https://github.com/pyenv/pyenv'
 日期: 2026-05-31
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

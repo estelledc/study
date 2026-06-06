@@ -152,6 +152,7 @@ openssl pkey -in alice.pem -pubout -out alice.pub
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[logjam-2015]] —— Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"

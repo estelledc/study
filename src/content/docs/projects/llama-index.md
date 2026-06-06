@@ -4,7 +4,7 @@ description: Loader / Index / Retriever / QueryEngine；300+ 集成包与 llama-
 来源: 'https://github.com/run-llama/llama_index'
 日期: 2026-06-05
 分类: 机器学习
-子分类: RAG
+子分类: 数据科学与 AI
 难度: 中级
 provenance: manual-read
 ---
@@ -149,3 +149,6 @@ CI 里把 `./storage` 当 artifact 或挂对象存储，避免每次重建 embed
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[llamaindex]] —— LlamaIndex — LLM 数据框架
+

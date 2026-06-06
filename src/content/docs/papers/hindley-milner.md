@@ -156,7 +156,6 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
-- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
@@ -175,6 +174,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
 - [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
+- [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy GC — OCaml 多线程并发垃圾回收
 - [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库
 - [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
@@ -223,7 +223,6 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
 - [[move-language]] —— Move — 资源型智能合约语言
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
-- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[open-sora]] —— Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
@@ -240,6 +239,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
+- [[row-polymorphism-remy]] —— Row Polymorphism — 让记录类型可扩展又不丢类型安全
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码

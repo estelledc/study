@@ -2,7 +2,6 @@
 title: lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
 来源: https://github.com/jesseduffield/lazydocker
 日期: 2026-05-31
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 入门

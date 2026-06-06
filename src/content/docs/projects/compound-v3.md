@@ -2,7 +2,6 @@
 title: Compound III (Comet) — 单抵押借贷重构
 来源: 'https://github.com/compound-finance/comet'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 高级

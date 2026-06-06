@@ -2,7 +2,6 @@
 title: ZincSearch — 单二进制 Go 写的 ES 替代
 来源: https://github.com/zincsearch/zincsearch
 日期: 2026-06-01
-分类_原始: 数据库 / 搜索
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

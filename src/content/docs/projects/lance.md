@@ -2,7 +2,6 @@
 title: Lance — AI 数据列存格式
 来源: https://github.com/lancedb/lance
 日期: 2026-06-01
-分类_原始: 数据基础设施 / 列存格式
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

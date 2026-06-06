@@ -2,7 +2,6 @@
 title: axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 来源: 'https://github.com/tokio-rs/axum'
 日期: 2026-05-30
-分类_原始: 后端开发
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

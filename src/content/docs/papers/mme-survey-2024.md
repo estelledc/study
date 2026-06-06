@@ -147,3 +147,7 @@ python -m lmms_eval --model qwen2_vl --tasks mme,mmmu --batch_size 1
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
+- [[mme-benchmark-2023]] —— MME Benchmark — 开源 MLLM 评测的事实起点
+

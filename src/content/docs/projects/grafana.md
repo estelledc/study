@@ -2,7 +2,6 @@
 title: Grafana — 监控可视化看板
 来源: https://github.com/grafana/grafana
 日期: 2026-05-29
-分类_原始: 监控 / 可视化
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

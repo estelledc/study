@@ -2,7 +2,6 @@
 title: BuildKit — Docker 下一代镜像构建后端
 来源: https://github.com/moby/buildkit
 日期: 2026-06-01
-分类_原始: devops / 容器构建
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

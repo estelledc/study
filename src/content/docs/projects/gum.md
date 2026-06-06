@@ -2,7 +2,6 @@
 title: gum — 把 TUI 组件搬进 shell 脚本
 来源: charmbracelet/gum v0.17.0
 日期: 2026-05-31
-分类_原始: CLI 工具
 子分类: 命令行工具
 分类: CLI
 难度: 入门

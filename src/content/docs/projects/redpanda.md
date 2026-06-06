@@ -2,7 +2,6 @@
 title: Redpanda — Kafka 兼容的 C++ 实现
 来源: https://github.com/redpanda-data/redpanda
 日期: 2026-06-01
-分类_原始: 数据库 / 消息队列
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

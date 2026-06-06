@@ -2,7 +2,6 @@
 title: Typesense — 高性能搜索引擎
 来源: https://github.com/typesense/typesense
 日期: 2026-05-29
-分类_原始: 数据库 / 搜索
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -182,3 +181,9 @@ instantsearch({ indexName: 'books', searchClient: adapter.searchClient })
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
+- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[redis]] —— Redis — 内存键值数据库
+

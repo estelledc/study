@@ -2,7 +2,6 @@
 title: TraceMonkey — 只编"真的走过的那一条路"
 来源: Gal et al., "Trace-based Just-in-Time Type Specialization for Dynamic Languages", PLDI 2009
 日期: 2026-05-30
-分类_原始: 编译器与程序设计语言
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

@@ -3,8 +3,9 @@ title: OpenCV — 开源计算机视觉库与跨平台图像视频处理
 description: cv::Mat 核心数据结构；VideoCapture 读流、图像滤波、特征检测与 DNN 模块，多媒体与 ML 管线的经典 CV 底座
 来源: 'https://github.com/opencv/opencv'
 日期: 2026-06-05
-分类: 多媒体
-子分类: 图像处理
+分类_原始: 多媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 初级
 provenance: manual-read
 ---
@@ -177,3 +178,23 @@ PY
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
+- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[dlib]] —— dlib — C++ 机器学习 / CV 工具箱
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[gstreamer]] —— GStreamer — 流水线式多媒体框架
+- [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[insightface]] —— InsightFace — 人脸识别 / 检测 SOTA
+- [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
+- [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
+- [[mlt]] —— MLT — 多媒体编辑框架
+- [[sam2]] —— SAM 2 — Segment Anything Model 2
+- [[scrcpy]] —— scrcpy — Android 屏幕镜像 / 录制
+- [[ultralytics]] —— Ultralytics — YOLOv8/v11 实现
+- [[vips]] —— libvips — 流式低内存图像库
+

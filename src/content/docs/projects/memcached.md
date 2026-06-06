@@ -2,7 +2,6 @@
 title: Memcached — 经典内存缓存
 来源: https://github.com/memcached/memcached
 日期: 2026-05-31
-分类_原始: databases
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

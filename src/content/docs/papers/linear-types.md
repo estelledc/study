@@ -2,7 +2,6 @@
 title: 线性类型（Linear Types）
 来源: 'Wadler, "Linear Types Can Change the World!", IFIP 1990'
 日期: 2026-05-29
-分类_原始: 编程语言 / 类型理论
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

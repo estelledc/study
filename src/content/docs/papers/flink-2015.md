@@ -2,7 +2,6 @@
 title: Apache Flink — 流批一体的单引擎
 来源: 'Carbone et al., "Apache Flink: Stream and Batch Processing in a Single Engine", IEEE Data Eng. Bull. 2015'
 日期: 2026-05-30
-分类_原始: 分布式系统
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

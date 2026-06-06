@@ -2,7 +2,6 @@
 title: Position Based Fluids — 把水也塞进 PBD 同一套框架
 来源: 'Macklin, Müller, "Position Based Fluids", SIGGRAPH 2013（预印本年份 2014）'
 日期: 2026-05-31
-分类_原始: 计算机图形 / 物理仿真
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

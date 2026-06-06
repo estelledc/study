@@ -171,6 +171,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
+- [[row-polymorphism-remy]] —— Row Polymorphism — 让记录类型可扩展又不丢类型安全
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[strongtalk]] —— Strongtalk — 可以装可以卸的 Smalltalk 类型系统

@@ -2,7 +2,6 @@
 title: Valkey — Redis 7.4 的开源 fork
 来源: https://github.com/valkey-io/valkey
 日期: 2026-05-29
-分类_原始: 数据库 / 缓存
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

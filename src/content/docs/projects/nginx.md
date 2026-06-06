@@ -2,7 +2,6 @@
 title: nginx — 高性能 Web 服务器
 来源: https://github.com/nginx/nginx
 日期: 2026-05-29
-分类_原始: DevOps / 网络
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
@@ -182,6 +181,7 @@ location /static/ {
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[istio]] —— Istio — 给微服务装一层透明的网络治理面
@@ -190,6 +190,7 @@ location /static/ {
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[memcached]] —— Memcached — 经典内存缓存
 - [[next-js]] —— Next.js — React 全栈框架
+- [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
 - [[pino]] —— pino — 日志不该阻塞热路径
 - [[postal]] —— Postal — 自托管的 Mailgun / SendGrid 替代
@@ -199,8 +200,11 @@ location /static/ {
 - [[redis]] —— Redis — 内存键值数据库
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
+- [[streamlink]] —— Streamlink — 把网页直播流接到本地播放器
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
+- [[video.js]] —— Video.js — Web 视频播放器框架
+- [[yt-dlp]] —— yt-dlp — youtube-dl 活跃分支与万能站点视频下载器
 

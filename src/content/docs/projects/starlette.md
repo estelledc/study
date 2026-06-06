@@ -2,7 +2,6 @@
 title: Starlette — FastAPI 底下那台轻量 ASGI 引擎
 来源: 'https://github.com/encode/starlette'
 日期: 2026-05-29
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级
@@ -181,6 +180,7 @@ stars 量级 11k+，依赖只有 `anyio`，依赖图极简。
 - [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
+- [[robyn]] —— Robyn — Rust 运行时的高性能 Python Web 框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
 

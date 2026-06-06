@@ -2,7 +2,6 @@
 title: GPUDirect RDMA — 让网卡直接读写 GPU 显存
 来源: 'Wang, Potluri, Bureddy, Rosales, Panda, "GPU-Aware MPI on RDMA-Enabled Clusters", IEEE TPDS 2014 + NVIDIA/Mellanox 2014 工业落地'
 日期: 2026-05-31
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

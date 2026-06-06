@@ -2,7 +2,6 @@
 title: Strawberry — 用 Python 类型注解直接生成 GraphQL schema
 来源: 'https://github.com/strawberry-graphql/strawberry'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

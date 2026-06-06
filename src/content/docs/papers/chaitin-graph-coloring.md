@@ -2,7 +2,6 @@
 title: Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
 来源: Chaitin, "Register Allocation & Spilling via Graph Coloring", SIGPLAN 1982
 日期: 2026-05-30
-分类_原始: 编译器
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
@@ -164,7 +163,6 @@ for (int i = 0; i < N; i++) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
-- [[cytoscape-js]] —— Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
 - [[kildall-dataflow]] —— Kildall 数据流框架 — 用一套格论统一所有全局编译优化
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
 - [[llvm]] —— LLVM — 模块化编译器框架

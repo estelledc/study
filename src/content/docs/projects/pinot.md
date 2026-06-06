@@ -2,7 +2,6 @@
 title: Apache Pinot — LinkedIn 起家的实时 OLAP
 来源: https://github.com/apache/pinot
 日期: 2026-05-31
-分类_原始: 实时分析数据库
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

@@ -2,7 +2,6 @@
 title: pg-boss — 只用 Postgres 就能跑的任务队列
 来源: 'https://github.com/timgit/pg-boss'
 日期: 2026-05-31
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

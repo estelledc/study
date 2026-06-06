@@ -2,7 +2,6 @@
 title: MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 来源: 'MIND-Skill: Quality-Guaranteed Skill Generation via Multi-Agent Induction and Deduction, arXiv:2605.08670, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 中级

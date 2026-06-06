@@ -2,7 +2,6 @@
 title: Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 来源: 'Philip A. Bernstein, Nathan Goodman, "Concurrency Control in Distributed Database Systems", ACM Computing Surveys 13(2), 1981'
 日期: 2026-05-30
-分类_原始: databases
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

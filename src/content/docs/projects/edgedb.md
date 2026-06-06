@@ -2,7 +2,6 @@
 title: EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM
 来源: EdgeDB Documentation, https://docs.edgedb.com/ ；项目主页 https://geldata.com/
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

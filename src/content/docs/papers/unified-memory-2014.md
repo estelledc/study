@@ -2,7 +2,6 @@
 title: CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图
 来源: 'NVIDIA, "Unified Memory in CUDA 6 / Beyond GPU Memory Limits with Unified Memory on Pascal", Developer Blog 2014–2016'
 日期: 2026-05-31
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

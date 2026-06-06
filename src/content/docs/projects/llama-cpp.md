@@ -2,7 +2,6 @@
 title: llama.cpp — 让 LLM 在你电脑里直接跑
 来源: https://github.com/ggml-org/llama.cpp
 日期: 2026-05-31
-分类_原始: AI / 推理
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级

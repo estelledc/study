@@ -2,7 +2,6 @@
 title: Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 来源: 'Shao et al., "Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents", arXiv:2509.26354, 2025'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 初级

@@ -2,7 +2,6 @@
 title: nvm — 在同一台机器上轻松切换 Node 版本
 来源: https://github.com/nvm-sh/nvm
 日期: 2026-05-31
-分类_原始: 前端工具链
 子分类: 命令行工具
 分类: CLI
 难度: 入门
@@ -156,5 +155,4 @@ nvm exec 16 npm test     # 当前 shell 不切，用 16 跑一次 test
 - [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 - [[pyenv]] —— pyenv — 用 shim 把 python 命令拦截后路由到指定版本
-- [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑
 

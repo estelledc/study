@@ -2,7 +2,6 @@
 title: MapLibre GL JS — Mapbox v1 时代的社区分叉
 来源: 'https://github.com/maplibre/maplibre-gl-js'
 日期: 2026-05-31
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

@@ -2,7 +2,6 @@
 title: STM Shavit-Touitou — 把"加锁"改成"事务"的源头
 来源: 'Nir Shavit & Dan Touitou, "Software Transactional Memory", PODC 1995'
 日期: 2026-05-30
-分类_原始: compilers-pl
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

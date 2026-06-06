@@ -185,6 +185,7 @@ for g in gaussians:
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[newcombe-2011-kinectfusion]] —— KinectFusion — 用消费级深度相机实时重建三维世界
 - [[nimier-david-2019-mitsuba2]] —— Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版
+- [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
 - [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 - [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场

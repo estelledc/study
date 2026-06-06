@@ -2,7 +2,6 @@
 title: Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
 来源: Nickolls & Dally, "The GPU Computing Era", IEEE Micro 30(2), 2010
 日期: 2026-05-31
-分类_原始: 硬件/异构计算
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

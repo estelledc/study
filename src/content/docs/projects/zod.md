@@ -2,7 +2,6 @@
 title: Zod — TypeScript-first schema 验证
 来源: https://github.com/colinhacks/zod
 日期: 2026-05-29
-分类_原始: 验证 / 类型
 子分类: 表单与校验
 分类: 后端 API
 难度: 中级
@@ -192,15 +191,18 @@ function LoginForm() {
 - [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
-- [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
+- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
+- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[mcp-ts-sdk]] —— MCP TS SDK — Model Context Protocol TypeScript 实现
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
 - [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
+- [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
+- [[sequelize]] —— Sequelize — 老牌 Node ORM
+- [[sortablejs]] —— SortableJS — 一行代码让任何列表能用手拖排序
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
@@ -208,5 +210,6 @@ function LoginForm() {
 - [[typeorm]] —— TypeORM — Decorator-based ORM
 - [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
 - [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 - [[wretch]] —— wretch — 把 fetch 写成一条链
 

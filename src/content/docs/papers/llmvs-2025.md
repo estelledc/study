@@ -148,3 +148,6 @@ LLM 局部打分的 prompt 分三块—— instructions 定义「你是视频摘
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+

@@ -147,3 +147,9 @@ STAR + 大 Memory     ~4s             数小时（内存线性涨）
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+

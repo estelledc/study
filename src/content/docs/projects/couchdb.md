@@ -2,7 +2,6 @@
 title: Apache CouchDB — Erlang 写的文档数据库
 来源: https://github.com/apache/couchdb
 日期: 2026-05-31
-分类_原始: 数据库 / 分布式
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

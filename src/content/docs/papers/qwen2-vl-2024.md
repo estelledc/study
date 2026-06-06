@@ -161,18 +161,65 @@ def get_position_ids(input_type, seq_len, frame_ids=None, row_ids=None, col_ids=
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[2d-tan-2019]] —— 2D-TAN — 用二维时间图做自然语言时刻检索
+- [[chapter-llama-2025]] —— Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+- [[chat-univi-2023]] —— Chat-UniVi — 动态视觉 token 统一图像与视频对话
+- [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
+- [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
+- [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
+- [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态长上下文
+- [[instant-ngp-2022]] —— Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
-- [[llava]] —— LLaVA — 开源多模态对话模型
+- [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
 - [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[llava-onevision-2024]] —— LLaVA-OneVision — 单图、多图、视频一个模型全搞定
+- [[llava-video-2024]] —— LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧
+- [[llmvs-2025]] —— LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[long-video-retrieval-2023]] —— R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+- [[longva-2024]] —— LongVA — 把语言模型的长上下文能力「搬」到视频上
+- [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+- [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+- [[lvbench-2024]] —— LVBench — 平均 68 分钟、六维能力的长视频极限考
+- [[minicpm-v-2024]] —— MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型
+- [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
+- [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
+- [[mme-benchmark-2023]] —— MME Benchmark — 开源 MLLM 评测的事实起点
+- [[mme-survey-2024]] —— MME-Survey — 多模态 LLM 怎么评才靠谱
+- [[moviechat-2024]] —— MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊
+- [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
+- [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+- [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[omnidirectional-mllm-2025]] —— 全景空间推理 — MLLM 准备好面对 360° 了吗
+- [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
+- [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
+- [[siglip-2023]] —— SigLIP — 用 Sigmoid 损失训练图文对齐
+- [[ta-stvg-2025]] —— TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位
 - [[tempcompass-2024]] —— TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+- [[timechat-2024]] —— TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位
+- [[transformers-video]] —— Transformers Video — HuggingFace 视频处理器与多模态输入管线
 - [[vid-llm-survey-2023]] —— Vid-LLM Survey — 用大语言模型理解视频的全景地图
 - [[video-llama-2023]] —— Video-LLaMA — 把音频和视频同时塞进大语言模型
 - [[video-llava-2024]] —— Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+- [[videoagent-longform-2024]] —— VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
+- [[videoagent-memory-2024]] —— VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
 - [[videochat-2023]] —— VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+- [[videochat-flash-2025]] —— VideoChat-Flash — 分层压缩，让长视频理解又快又准
+- [[videochat2]] —— VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
+- [[videollama2-2024]] —— VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+- [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
+- [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
 - [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
+- [[vidstg-2020]] —— VidSTG — 用自然语言在长视频里框出「谁在何时何地」
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
+- [[vllm-multimodal]] —— vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
+- [[vsi-bench-2024]] —— VSI-Bench — 用室内漫游视频考视频大模型的空间智商
 

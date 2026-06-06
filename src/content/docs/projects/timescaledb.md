@@ -2,7 +2,6 @@
 title: TimescaleDB — PostgreSQL 时序扩展
 来源: https://github.com/timescale/timescaledb
 日期: 2026-05-29
-分类_原始: 数据库 / 时序
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -162,6 +161,7 @@ SELECT add_continuous_aggregate_policy('hourly_avg',
 
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[influxdb]] —— InfluxDB — 专用时序数据库
+- [[mongo]] —— MongoDB — 文档数据库服务端开源实现
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

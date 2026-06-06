@@ -2,7 +2,6 @@
 title: NTP 1991 — 用四个时间戳和一组滤波器，让全网服务器的钟差几毫秒
 来源: 'David L. Mills, "Internet Time Synchronization: The Network Time Protocol", IEEE Transactions on Communications 39(10), 1991'
 日期: 2026-05-30
-分类_原始: papers / 分布式系统
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级

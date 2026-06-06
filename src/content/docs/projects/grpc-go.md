@@ -2,7 +2,6 @@
 title: gRPC-Go — Google RPC 框架的官方 Go 实现
 来源: 'https://github.com/grpc/grpc-go'
 日期: 2026-05-30
-分类_原始: 后端 / RPC 框架
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

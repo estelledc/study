@@ -2,7 +2,6 @@
 title: Tree of Thoughts — 让 LLM 像下棋一样多想几步再答
 来源: 'Yao et al., "Tree of Thoughts: Deliberate Problem Solving with Large Language Models", NeurIPS 2023'
 日期: 2026-06-01
-分类_原始: AI / LLM
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

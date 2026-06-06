@@ -2,7 +2,6 @@
 title: BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 来源: 'https://github.com/bigbluebutton/bigbluebutton'
 日期: 2026-05-30
-分类_原始: 基础设施 / 实时协作
 子分类: 实时通信
 分类: 通信
 难度: 中级

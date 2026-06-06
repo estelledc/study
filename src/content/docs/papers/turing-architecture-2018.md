@@ -2,7 +2,6 @@
 title: NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8
 来源: 'NVIDIA, "NVIDIA Turing GPU Architecture — Graphics Reinvented", Whitepaper WP-09183-001_v01, 2018'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

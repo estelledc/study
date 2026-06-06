@@ -2,7 +2,6 @@
 title: Burgess 2020 RTX ON — Turing 把光线追踪做进硅片
 来源: 'Burgess, J., RTX ON – The NVIDIA TURING GPU, IEEE Micro vol. 40 no. 2, pp. 36-44, Mar/Apr 2020. DOI 10.1109/MM.2020.2971677'
 日期: 2026-05-31
-分类_原始: 系统
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

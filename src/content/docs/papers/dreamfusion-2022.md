@@ -2,7 +2,6 @@
 title: DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D
 来源: 'Poole, Jain, Barron, Mildenhall, "DreamFusion: Text-to-3D using 2D Diffusion", ICLR 2023'
 日期: 2026-05-31
-分类_原始: 生成式 AI
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

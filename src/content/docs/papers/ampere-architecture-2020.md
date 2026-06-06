@@ -2,7 +2,6 @@
 title: NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设
 来源: 'NVIDIA, "NVIDIA A100 Tensor Core GPU Architecture", Whitepaper v1.0, 2020'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

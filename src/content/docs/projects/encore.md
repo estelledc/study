@@ -2,7 +2,6 @@
 title: Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 来源: https://github.com/encoredev/encore
 日期: 2026-05-30
-分类_原始: 后端 / 框架
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

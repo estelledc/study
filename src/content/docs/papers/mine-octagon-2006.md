@@ -2,7 +2,6 @@
 title: Miné 八边形抽象域 — 在区间和多面体之间的甜点
 来源: 'Miné, "The Octagon Abstract Domain", Higher-Order and Symbolic Computation 19:31-100, 2006'
 日期: 2026-05-31
-分类_原始: 编程语言
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级

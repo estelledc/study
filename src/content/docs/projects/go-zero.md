@@ -2,7 +2,6 @@
 title: go-zero — 一份契约文件生成整套 Go 微服务
 来源: 'https://github.com/zeromicro/go-zero'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

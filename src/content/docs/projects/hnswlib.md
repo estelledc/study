@@ -2,7 +2,6 @@
 title: hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
 来源: 'Yury Malkov & Dmitry Yashunin（HNSW 论文原作者），开源 https://github.com/nmslib/hnswlib'
 日期: 2026-06-01
-分类_原始: 信息检索 / 向量索引
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

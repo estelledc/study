@@ -2,7 +2,6 @@
 title: NVLink 2.0 + NVSwitch — 把 16 块 GPU 拼成一台机器
 来源: 'NVIDIA, "NVIDIA NVSwitch Technical Overview" + "NVLink Fabric for HPC", 2018'
 日期: 2026-05-31
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

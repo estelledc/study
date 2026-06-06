@@ -2,7 +2,6 @@
 title: Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 来源: 'https://github.com/signalapp/Signal-iOS'
 日期: 2026-05-30
-分类_原始: 通信基础设施
 子分类: 实时通信
 分类: 通信
 难度: 高级

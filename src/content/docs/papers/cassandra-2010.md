@@ -2,7 +2,6 @@
 title: Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 来源: 'Lakshman & Malik, "Cassandra: A Decentralized Structured Storage System", ACM SIGOPS OSR 44(2), 2010'
 日期: 2026-05-30
-分类_原始: databases
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

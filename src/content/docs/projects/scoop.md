@@ -2,7 +2,6 @@
 title: Scoop — Windows 上的 Homebrew 风格命令行包管理器
 来源: https://github.com/ScoopInstaller/Scoop
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 命令行工具
 分类: CLI
 难度: 入门
@@ -176,6 +175,5 @@ manifest 就是一个 JSON：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
 

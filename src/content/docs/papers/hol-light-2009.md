@@ -2,7 +2,6 @@
 title: HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
 来源: 'Harrison, "HOL Light: An Overview", TPHOLs 2009'
 日期: 2026-05-30
-分类_原始: 编程语言 / 形式化方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级

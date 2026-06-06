@@ -151,12 +151,14 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
+- [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法

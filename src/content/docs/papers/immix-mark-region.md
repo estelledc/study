@@ -2,7 +2,6 @@
 title: 'Immix — 把"扫"和"搬"两种垃圾回收揉成一个'
 来源: 'Blackburn & McKinley, "Immix: A Mark-Region Garbage Collector with Space Efficiency, Fast Collection, and Mutator Performance", PLDI 2008'
 日期: 2026-05-30
-分类_原始: 垃圾回收
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级
@@ -164,6 +163,7 @@ JikesRVM（一个研究用的 JVM）在 2008 年实测：
 
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
+- [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy GC — OCaml 多线程并发垃圾回收
 - [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"

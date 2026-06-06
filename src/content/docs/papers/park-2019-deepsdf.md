@@ -2,7 +2,6 @@
 title: DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 来源: 'Park, Florence, Straub, Newcombe, Lovegrove, "DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation", CVPR 2019'
 日期: 2026-05-31
-分类_原始: 计算机图形 / 神经场
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

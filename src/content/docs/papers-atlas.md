@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 908 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 912 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：908 篇
-- **已分类**：908
+- **总数**：912 篇
+- **已分类**：912
 
 ### 按一级主题分布
 
@@ -21,12 +21,12 @@ sidebar:
 | [编程语言](#编程语言) | 109 |
 | [分布式系统](#分布式系统) | 75 |
 | [数据库](#数据库) | 67 |
-| [操作系统](#操作系统) | 56 |
-| [机器学习](#机器学习) | 214 |
+| [操作系统](#操作系统) | 57 |
+| [机器学习](#机器学习) | 215 |
 | [后端 API](#后端-api) | 9 |
 | [基础设施](#基础设施) | 12 |
-| [网络协议](#网络协议) | 61 |
-| [图形学](#图形学) | 123 |
+| [网络协议](#网络协议) | 63 |
+| [图形学](#图形学) | 122 |
 | [形式化方法](#形式化方法) | 51 |
 | [通信](#通信) | 1 |
 | [信息检索](#信息检索) | 52 |
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 26 |
+| [安全与隐私](#安全与隐私) | 27 |
 | [其他](#其他) | 13 |
 
 ---
@@ -355,7 +355,7 @@ sidebar:
 
 ## 操作系统
 
-共 56 篇。
+共 57 篇。
 
 ### 内核与虚拟化
 
@@ -367,6 +367,7 @@ sidebar:
 | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | ✅ v3 |  |
 | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | ✅ v3 |  |
 | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | ✅ v3 |  |
+| [Capsicum: Practical Capabilities for UNIX](/study/papers/capsicum-2010/) | ✅ v3 |  |
 | [Coda 1990 — 笔记本拔网线照样写文件，重连后自动合并](/study/papers/coda-1990/) | ✅ v3 |  |
 | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) | ✅ v3 |  |
 | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) | ✅ v3 |  |
@@ -401,6 +402,8 @@ sidebar:
 | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) | ✅ v3 |  |
 | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) | ✅ v3 |  |
 | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) | ✅ v3 |  |
+| [SELinux 2001 — 给每扇门都装上门卫，而不是给管理员一把万能钥匙](/study/papers/selinux-2001/) | ✅ v3 |  |
+| [Innovative Instructions and Software Model for Isolated Execution](/study/papers/sgx-2013/) | ✅ v3 |  |
 | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) | ✅ v3 |  |
 | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | ✅ v3 |  |
 | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | ✅ v3 |  |
@@ -418,14 +421,12 @@ sidebar:
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | ✅ v3 |  |
-| [Capsicum: Practical Capabilities for UNIX](/study/papers/capsicum-2010/) | ✅ v3 |  |
 | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | ✅ v3 |  |
 | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | ✅ v3 |  |
-| [Innovative Instructions and Software Model for Isolated Execution](/study/papers/sgx-2013/) | ✅ v3 |  |
 
 ## 机器学习
 
-共 214 篇。
+共 215 篇。
 
 ### 多模态 LLM
 
@@ -490,6 +491,7 @@ sidebar:
 | [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) | ✅ v3 |  |
 | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) | ✅ v3 |  |
 | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | ✅ v3 |  |
+| [Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码](/study/papers/instant-ngp-2022/) | ✅ v3 |  |
 | [InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态](/study/papers/internvl-2023/) | ✅ v3 |  |
 | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | ✅ v3 |  |
 | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | ✅ v3 |  |
@@ -752,16 +754,7 @@ sidebar:
 
 ## 网络协议
 
-共 61 篇。
-
-### 传输与安全
-
-| 论文 | 质量 | 描述 |
-|---|:---:|---|
-| [Analysis and Design of the Google Congestion Control for Web Real-time Communication (WebRTC)](/study/papers/gcc-webrtc-2016/) | ✅ v3 |  |
-| [Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal](/study/papers/ice-rfc-5245/) | ✅ v3 |  |
-| [Salsify: Low-Latency Network Video Through Tighter Integration Between a Video Codec and a Transport Protocol](/study/papers/salsify-2018/) | ✅ v3 |  |
-| [WireGuard: Next Generation Kernel Network Tunnel](/study/papers/wireguard-2017/) | ✅ v3 |  |
+共 63 篇。
 
 ### 网络协议
 
@@ -789,8 +782,10 @@ sidebar:
 | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) | ✅ v3 |  |
 | [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) | ✅ v3 |  |
 | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) | ✅ v3 |  |
+| [Analysis and Design of the Google Congestion Control for Web Real-time Communication (WebRTC)](/study/papers/gcc-webrtc-2016/) | ✅ v3 |  |
 | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) | ✅ v3 |  |
 | [HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用](/study/papers/http-2/) | ✅ v3 |  |
+| [Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal](/study/papers/ice-rfc-5245/) | ✅ v3 |  |
 | [IPFS — 把"地址"换成"内容本身"的 P2P 文件系统](/study/papers/ipfs-2014/) | ✅ v3 |  |
 | [Jacobson 1988 — 让互联网不再被自己塞死](/study/papers/jacobson-1988/) | ✅ v3 |  |
 | [Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍](/study/papers/jupiter-2015/) | ✅ v3 |  |
@@ -815,13 +810,17 @@ sidebar:
 | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) | ✅ v3 |  |
 | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) | ✅ v3 |  |
 | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) | ✅ v3 |  |
+| [Salsify: Low-Latency Network Video Through Tighter Integration Between a Video Codec and a Transport Protocol](/study/papers/salsify-2018/) | ✅ v3 |  |
 | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | ✅ v3 |  |
+| [CMT-SCTP 2006 — 让两条网络路径同时干活而不打架](/study/papers/sctp-multipath-2006/) | ✅ v3 |  |
 | [Subramanian 2002 — 用多个观察点把互联网切成 5 层](/study/papers/subramanian-2002-internet-hierarchy/) | ✅ v3 |  |
 | [TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞](/study/papers/tcp-vegas-1995/) | ✅ v3 |  |
 | [TLS 1.3 — 把 HTTPS 握手砍到一个来回](/study/papers/tls-13/) | ✅ v3 |  |
+| [Tor 洋葱路由 — 让你的网络请求穿上三层马甲](/study/papers/tor-2004/) | ✅ v3 |  |
 | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) | ✅ v3 |  |
 | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) | ✅ v3 |  |
 | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | ✅ v3 |  |
+| [WireGuard: Next Generation Kernel Network Tunnel](/study/papers/wireguard-2017/) | ✅ v3 |  |
 
 ### 其他子类
 
@@ -832,7 +831,7 @@ sidebar:
 
 ## 图形学
 
-共 123 篇。
+共 122 篇。
 
 ### 渲染与图形
 
@@ -860,7 +859,6 @@ sidebar:
 | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | ✅ v3 |  |
 | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) | ✅ v3 |  |
 | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) | ✅ v3 |  |
-| [Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码](/study/papers/instant-ngp-2022/) | ✅ v3 |  |
 | [Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照](/study/papers/jensen-1996-photon-mapping/) | ✅ v3 |  |
 | [Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程](/study/papers/kajiya-1986-rendering-equation/) | ✅ v3 |  |
 | [Karis 2014 TAA — 让游戏每帧只采一次也能 4K 不锯齿](/study/papers/karis-2014-taa/) | ✅ v3 |  |
@@ -1204,16 +1202,35 @@ sidebar:
 
 ## 安全与隐私
 
-共 26 篇。
+共 27 篇。
 
-### 差分隐私
+### 安全与隐私
 
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [DP-SGD — 深度学习差分隐私训练](/study/papers/abadi-dpsgd-2016/) | ✅ v3 |  |
+| [QL: Object-Oriented Queries on Relational Data](/study/papers/avgustinov-codeql-2016/) | ✅ v3 |  |
+| [Scalable, Transparent, and Post-Quantum Secure Computational Integrity](/study/papers/ben-sasson-stark-2018/) | ✅ v3 |  |
+| [AFLFast — 灰盒 Fuzz 的马尔可夫调度](/study/papers/bohme-aflfast-2016/) | ✅ v3 |  |
+| [CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM](/study/papers/bos-kyber-2018/) | ✅ v3 |  |
+| [Halo: Recursive Proof Composition without a Trusted Setup](/study/papers/bowe-halo-2019/) | ✅ v3 |  |
+| [Fully Homomorphic Encryption without Bootstrapping](/study/papers/brakerski-bgv-2012/) | ✅ v3 |  |
+| [Bulletproofs: Short Proofs for Confidential Transactions and More](/study/papers/bunz-bulletproofs-2018/) | ✅ v3 |  |
+| [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 |  |
+| [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
+| [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
+| [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 |  |
 | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 |  |
 | [差分隐私 — ε 与邻接数据集不可区分](/study/papers/dwork-dp-icalp-2006/) | ✅ v3 |  |
+| [分布式噪声生成 — 去掉可信管理员也能保护隐私](/study/papers/dwork-our-data-ourselves-2006/) | ✅ v3 |  |
+| [RAPPOR — 本地差分隐私随机响应采集](/study/papers/erlingsson-rappor-2014/) | ✅ v3 |  |
+| [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 |  |
+| [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 |  |
+| [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
+| [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
+| [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
+| [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 |  |
 
 ### 密码学
 
@@ -1223,34 +1240,6 @@ sidebar:
 | [Diffie-Hellman 密钥交换](/study/papers/diffie-hellman/) | ✅ v3 |  |
 | [RSA 公钥密码](/study/papers/rsa/) | ✅ v3 |  |
 | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | ✅ v3 |  |
-
-### 密码与隐私
-
-| 论文 | 质量 | 描述 |
-|---|:---:|---|
-| [QL: Object-Oriented Queries on Relational Data](/study/papers/avgustinov-codeql-2016/) | ✅ v3 |  |
-| [Scalable, Transparent, and Post-Quantum Secure Computational Integrity](/study/papers/ben-sasson-stark-2018/) | ✅ v3 |  |
-| [CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM](/study/papers/bos-kyber-2018/) | ✅ v3 |  |
-| [Halo: Recursive Proof Composition without a Trusted Setup](/study/papers/bowe-halo-2019/) | ✅ v3 |  |
-| [Fully Homomorphic Encryption without Bootstrapping](/study/papers/brakerski-bgv-2012/) | ✅ v3 |  |
-| [Bulletproofs: Short Proofs for Confidential Transactions and More](/study/papers/bunz-bulletproofs-2018/) | ✅ v3 |  |
-| [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
-| [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
-| [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 |  |
-| [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 |  |
-| [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 |  |
-| [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
-| [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 |  |
-
-### 其他子类
-
-| 论文 | 质量 | 描述 |
-|---|:---:|---|
-| [AFLFast — 灰盒 Fuzz 的马尔可夫调度](/study/papers/bohme-aflfast-2016/) | ✅ v3 |  |
-| [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 |  |
-| [RAPPOR — 本地差分隐私随机响应采集](/study/papers/erlingsson-rappor-2014/) | ✅ v3 |  |
-| [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
-| [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
 
 ## 其他
 
@@ -1281,14 +1270,14 @@ sidebar:
 
 ---
 
-## 全部 908 篇（字母序）
+## 全部 912 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
 | `2d-tan-2019` | [2D-TAN — 用二维时间图做自然语言时刻检索](/study/papers/2d-tan-2019/) | ✅ v3 | 机器学习 | 视频理解 |
 | `3d-gaussian-splatting` | [3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景](/study/papers/3d-gaussian-splatting/) | ✅ v3 | 图形学 | 计算机图形 / 三维重建 |
 | `a3c-2016` | [A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU](/study/papers/a3c-2016/) | ✅ v3 | 机器学习 | 模型与训练 |
-| `abadi-dpsgd-2016` | [DP-SGD — 深度学习差分隐私训练](/study/papers/abadi-dpsgd-2016/) | ✅ v3 | 安全与隐私 | 差分隐私 |
+| `abadi-dpsgd-2016` | [DP-SGD — 深度学习差分隐私训练](/study/papers/abadi-dpsgd-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `acl2-2000` | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `activation-patching` | [Activation Patching — 因果干预可解释性方法](/study/papers/activation-patching/) | ✅ v3 | 机器学习 | AI 可解释性 |
 | `adafactor-2018` | [Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)](/study/papers/adafactor-2018/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -1329,7 +1318,7 @@ sidebar:
 | `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | ✅ v3 | 数据库 | 数据库系统 |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | ✅ v3 | 图形学 | GPU 架构 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | ✅ v3 | 机器学习 | 智能体与 LLM |
-| `avgustinov-codeql-2016` | [QL: Object-Oriented Queries on Relational Data](/study/papers/avgustinov-codeql-2016/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `avgustinov-codeql-2016` | [QL: Object-Oriented Queries on Relational Data](/study/papers/avgustinov-codeql-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) | ✅ v3 | 图形学 | GPU 架构 |
@@ -1344,7 +1333,7 @@ sidebar:
 | `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) | ✅ v3 | 网络协议 | 网络协议 |
 | `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | ✅ v3 | 其他 | 软件工程 |
 | `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
-| `ben-sasson-stark-2018` | [Scalable, Transparent, and Post-Quantum Secure Computational Integrity](/study/papers/ben-sasson-stark-2018/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `ben-sasson-stark-2018` | [Scalable, Transparent, and Post-Quantum Secure Computational Integrity](/study/papers/ben-sasson-stark-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | ✅ v3 | 机器学习 | MLOps / 模型服务 |
 | `berenson-1995-isolation` | [Berenson 1995 — ANSI SQL 隔离级别的漏洞与快照隔离](/study/papers/berenson-1995-isolation/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1366,24 +1355,24 @@ sidebar:
 | `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | ✅ v3 | 信息检索 | 数据检索 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | ✅ v3 | 操作系统 | 内存管理 |
-| `bohme-aflfast-2016` | [AFLFast — 灰盒 Fuzz 的马尔可夫调度](/study/papers/bohme-aflfast-2016/) | ✅ v3 | 安全与隐私 | 模糊测试 |
+| `bohme-aflfast-2016` | [AFLFast — 灰盒 Fuzz 的马尔可夫调度](/study/papers/bohme-aflfast-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | ✅ v3 | 分布式系统 | 分布式系统 |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | ✅ v3 | 分布式系统 | 共识与复制 |
-| `bos-kyber-2018` | [CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM](/study/papers/bos-kyber-2018/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
-| `bowe-halo-2019` | [Halo: Recursive Proof Composition without a Trusted Setup](/study/papers/bowe-halo-2019/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `bos-kyber-2018` | [CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM](/study/papers/bos-kyber-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `bowe-halo-2019` | [Halo: Recursive Proof Composition without a Trusted Setup](/study/papers/bowe-halo-2019/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) | ✅ v3 | 信息检索 | 检索与排序 |
-| `brakerski-bgv-2012` | [Fully Homomorphic Encryption without Bootstrapping](/study/papers/brakerski-bgv-2012/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `brakerski-bgv-2012` | [Fully Homomorphic Encryption without Bootstrapping](/study/papers/brakerski-bgv-2012/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) | ✅ v3 | 图形学 | GPU 架构 |
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | ✅ v3 | 数据库 | 存储与查询 |
 | `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | ✅ v3 | 图形学 | GPU 架构 |
 | `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
-| `bunz-bulletproofs-2018` | [Bulletproofs: Short Proofs for Confidential Transactions and More](/study/papers/bunz-bulletproofs-2018/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `bunz-bulletproofs-2018` | [Bulletproofs: Short Proofs for Confidential Transactions and More](/study/papers/bunz-bulletproofs-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | ✅ v3 | 分布式系统 | 共识与复制 |
-| `cadar-klee-2008` | [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 | 安全与隐私 | 程序分析 |
+| `cadar-klee-2008` | [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | ✅ v3 | 网络协议 | 网络协议 |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
@@ -1391,7 +1380,7 @@ sidebar:
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) | ✅ v3 | 数据库 | 存储与查询 |
 | `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) | ✅ v3 | 分布式系统 | 共识与复制 |
-| `capsicum-2010` | [Capsicum: Practical Capabilities for UNIX](/study/papers/capsicum-2010/) | ✅ v3 | 操作系统 | 沙箱与隔离 |
+| `capsicum-2010` | [Capsicum: Practical Capabilities for UNIX](/study/papers/capsicum-2010/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | ✅ v3 | 数据库 | 存储与查询 |
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) | ✅ v3 | 图形学 | GPU 架构 |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1412,8 +1401,8 @@ sidebar:
 | `chat-univi-2023` | [Chat-UniVi — 动态视觉 token 统一图像与视频对话](/study/papers/chat-univi-2023/) | ✅ v3 | 机器学习 | 视频理解 |
 | `chatbot-arena-2024` | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `cheney-gc` | [Cheney 1970 — 把活对象复制走，原地丢弃整片堆](/study/papers/cheney-gc/) | ✅ v3 | 基础设施 | 系统 |
-| `cheon-ckks-2017` | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
-| `chillotti-tfhe-2016` | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `cheon-ckks-2017` | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `chillotti-tfhe-2016` | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `chinchilla` | [Chinchilla — 训练大模型的数据/参数最优比](/study/papers/chinchilla/) | ✅ v3 | NLP | NLP |
 | `chord-2001` | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) | ✅ v3 | 网络协议 | 网络协议 |
 | `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -1532,10 +1521,11 @@ sidebar:
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | ✅ v3 | 编程语言 | 编程语言 |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | ✅ v3 | 数据库 | 存储与查询 |
-| `duchi-local-dp-2013` | [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `duchi-local-dp-2013` | [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | ✅ v3 | 数据库 | 存储与查询 |
-| `dwork-calibrating-noise-2006` | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 | 安全与隐私 | 差分隐私 |
-| `dwork-dp-icalp-2006` | [差分隐私 — ε 与邻接数据集不可区分](/study/papers/dwork-dp-icalp-2006/) | ✅ v3 | 安全与隐私 | 差分隐私 |
+| `dwork-calibrating-noise-2006` | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `dwork-dp-icalp-2006` | [差分隐私 — ε 与邻接数据集不可区分](/study/papers/dwork-dp-icalp-2006/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `dwork-our-data-ourselves-2006` | [分布式噪声生成 — 去掉可信管理员也能保护隐私](/study/papers/dwork-our-data-ourselves-2006/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | ✅ v3 | 分布式系统 | 分布式系统 |
 | `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -1551,7 +1541,7 @@ sidebar:
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) | ✅ v3 | 基础设施 | infrastructure |
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | ✅ v3 | 编程语言 | 编程语言 / 分布式系统 |
-| `erlingsson-rappor-2014` | [RAPPOR — 本地差分隐私随机响应采集](/study/papers/erlingsson-rappor-2014/) | ✅ v3 | 安全与隐私 | 本地差分隐私 |
+| `erlingsson-rappor-2014` | [RAPPOR — 本地差分隐私随机响应采集](/study/papers/erlingsson-rappor-2014/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `eswaran-1976` | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | ✅ v3 | 数据库 | 存储与查询 |
 | `esx-memory-2002` | [ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术](/study/papers/esx-memory-2002/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -1563,7 +1553,7 @@ sidebar:
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | ✅ v3 | 数据库 | 存储与查询 |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | ✅ v3 | 数据库 | 存储与查询 |
-| `fan-vercauteren-bfv-2012` | [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `fan-vercauteren-bfv-2012` | [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) | ✅ v3 | 图形学 | GPU 架构 |
@@ -1594,18 +1584,18 @@ sidebar:
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | ✅ v3 | 其他 | 学习与认知 |
 | `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
-| `gabizon-plonk-2019` | [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `gabizon-plonk-2019` | [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) | ✅ v3 | 网络协议 | 网络协议 |
 | `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) | ✅ v3 | 信息检索 | 检索与排序 |
-| `gcc-webrtc-2016` | [Analysis and Design of the Google Congestion Control for Web Real-time Communication (WebRTC)](/study/papers/gcc-webrtc-2016/) | ✅ v3 | 网络协议 | 传输与安全 |
+| `gcc-webrtc-2016` | [Analysis and Design of the Google Congestion Control for Web Real-time Communication (WebRTC)](/study/papers/gcc-webrtc-2016/) | ✅ v3 | 网络协议 | 网络协议 |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `gemini-1.5-2024` | [Gemini 1.5 — 百万 token 多模态长上下文](/study/papers/gemini-15-2024/) | ✅ v3 | 机器学习 | 多模态 LLM |
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | ✅ v3 | 编程语言 | 编程语言 |
-| `gentry-fhe-2009` | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 | 安全与隐私 | 同态加密 |
+| `gentry-fhe-2009` | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | ✅ v3 | 分布式系统 | 分布式系统 |
 | `ghost-2021` | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) | ✅ v3 | 分布式系统 | 共识与复制 |
@@ -1669,7 +1659,7 @@ sidebar:
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | ✅ v3 | 形式化方法 | 形式化验证 |
-| `ice-rfc-5245` | [Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal](/study/papers/ice-rfc-5245/) | ✅ v3 | 网络协议 | 传输与安全 |
+| `ice-rfc-5245` | [Interactive Connectivity Establishment (ICE): A Protocol for Network Address Translator (NAT) Traversal](/study/papers/ice-rfc-5245/) | ✅ v3 | 网络协议 | 网络协议 |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
@@ -1677,7 +1667,7 @@ sidebar:
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | ✅ v3 | 机器学习 | AI 可解释性 |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | ✅ v3 | 数据库 | 存储与查询 |
-| `instant-ngp-2022` | [Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码](/study/papers/instant-ngp-2022/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `instant-ngp-2022` | [Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码](/study/papers/instant-ngp-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | ✅ v3 | NLP | NLP |
 | `internvideo2-2024` | [InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B](/study/papers/internvideo2-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `internvideo2-5-2025` | [InternVideo2.5 — 长富上下文 + HiCo 层次压缩](/study/papers/internvideo2-5-2025/) | ✅ v3 | 机器学习 | 视频理解 |
@@ -1790,7 +1780,7 @@ sidebar:
 | `maxwell-architecture-2014` | [NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍](/study/papers/maxwell-architecture-2014/) | ✅ v3 | 图形学 | GPU 架构 |
 | `mccarthy-lisp` | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | ✅ v3 | 编程语言 | 编程语言 |
 | `mcfarling-bp-1993` | [McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台](/study/papers/mcfarling-bp-1993/) | ✅ v3 | 图形学 | GPU 架构 |
-| `mcmahan-fedavg-2017` | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 | 安全与隐私 | 联邦学习 |
+| `mcmahan-fedavg-2017` | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | ✅ v3 | 机器学习 | AI 工程 |
 | `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -1817,7 +1807,7 @@ sidebar:
 | `minicpm-v-2024` | [MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型](/study/papers/minicpm-v-2024/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | ✅ v3 | 图形学 | GPU 架构 |
-| `mironov-renyi-dp-2017` | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 | 安全与隐私 | 差分隐私 |
+| `mironov-renyi-dp-2017` | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | ✅ v3 | Agent | 智能体与 LLM |
 | `mitls-2014-triple-handshake` | [Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁](/study/papers/mitls-2014-triple-handshake/) | ✅ v3 | 网络协议 | 网络协议 |
 | `mixture-of-experts` | [Mixture of Experts (MoE)](/study/papers/mixture-of-experts/) | ✅ v3 | 机器学习 | NLP / 深度学习 |
@@ -1858,7 +1848,7 @@ sidebar:
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | ✅ v3 | 数据库 | 存储与查询 |
 | `neumf-2017` | [NeuMF — 用神经网络替掉推荐系统的内积](/study/papers/neumf-2017/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | ✅ v3 | 图形学 | 渲染与图形 |
-| `newsome-taintcheck-2005` | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `newsome-taintcheck-2005` | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `nfs-1985` | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 🗄 存量 | 形式化方法 | 形式化验证 |
@@ -1948,7 +1938,7 @@ sidebar:
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | ✅ v3 | 机器学习 | 智能体与 LLM |
 | `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | ✅ v3 | 机器学习 | 模型与训练 |
-| `regev-lwe-2005` | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 | 安全与隐私 | 密码与隐私 |
+| `regev-lwe-2005` | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | ✅ v3 | 机器学习 | 计算机视觉 / 深度学习 |
@@ -1976,7 +1966,7 @@ sidebar:
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | ✅ v3 | 编程语言 | 编程语言 |
-| `salsify-2018` | [Salsify: Low-Latency Network Video Through Tighter Integration Between a Video Codec and a Transport Protocol](/study/papers/salsify-2018/) | ✅ v3 | 网络协议 | 传输与安全 |
+| `salsify-2018` | [Salsify: Low-Latency Network Video Through Tighter Integration Between a Video Codec and a Transport Protocol](/study/papers/salsify-2018/) | ✅ v3 | 网络协议 | 网络协议 |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | ✅ v3 | 网络协议 | 网络协议 |
 | `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -1988,6 +1978,7 @@ sidebar:
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | ✅ v3 | 基础设施 | 工具与基础设施 |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
+| `sctp-multipath-2006` | [CMT-SCTP 2006 — 让两条网络路径同时干活而不打架](/study/papers/sctp-multipath-2006/) | ✅ v3 | 网络协议 | 网络协议 |
 | `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | ✅ v3 | 编程语言 | 编程语言 |
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -1999,12 +1990,13 @@ sidebar:
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | ✅ v3 | 数据库 | 存储与查询 |
+| `selinux-2001` | [SELinux 2001 — 给每扇门都装上门卫，而不是给管理员一把万能钥匙](/study/papers/selinux-2001/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | ✅ v3 | 数据库 | 存储与查询 |
 | `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `server-sent-events` | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) | ✅ v3 | 后端 API | 前端 |
 | `sglang-2024` | [SGLang — 把 LLM 程序当成共享前缀的树来跑](/study/papers/sglang-2024/) | ✅ v3 | 图形学 | GPU 架构 |
-| `sgx-2013` | [Innovative Instructions and Software Model for Isolated Execution](/study/papers/sgx-2013/) | ✅ v3 | 操作系统 | 沙箱与隔离 |
+| `sgx-2013` | [Innovative Instructions and Software Model for Isolated Execution](/study/papers/sgx-2013/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `shannon-1948` | [Shannon 1948 — 信息论的诞生](/study/papers/shannon-1948/) | ✅ v3 | 机器学习 | 信息论 |
 | `sharegpt4video-2024` | [ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成](/study/papers/sharegpt4video-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) | ✅ v3 | 基础设施 | infrastructure |
@@ -2102,6 +2094,7 @@ sidebar:
 | `tomasulo-1967` | [Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序](/study/papers/tomasulo-1967/) | ✅ v3 | 图形学 | GPU 架构 |
 | `tomita-glr` | [Tomita GLR — 让 LR 解析器扛得住歧义文法](/study/papers/tomita-glr/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `toolformer` | [Toolformer — 教 LLM 自主调用 API](/study/papers/toolformer/) | 🗄 存量 | 机器学习 | 智能体与 LLM |
+| `tor-2004` | [Tor 洋葱路由 — 让你的网络请求穿上三层马甲](/study/papers/tor-2004/) | ✅ v3 | 网络协议 | 网络协议 |
 | `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | ✅ v3 | 机器学习 | AI 可解释性 |
 | `trace-2024` | [TRACE — 用因果事件链同时输出时间、精彩度与描述](/study/papers/trace-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
@@ -2177,7 +2170,7 @@ sidebar:
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `williams-1983-mipmap` | [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) | ✅ v3 | 图形学 | 渲染与图形 |
-| `wireguard-2017` | [WireGuard: Next Generation Kernel Network Tunnel](/study/papers/wireguard-2017/) | ✅ v3 | 网络协议 | 传输与安全 |
+| `wireguard-2017` | [WireGuard: Next Generation Kernel Network Tunnel](/study/papers/wireguard-2017/) | ✅ v3 | 网络协议 | 网络协议 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | ✅ v3 | NLP | NLP |
 | `world-model-robot-learning-2026` | [机器人世界模型综述 — 预测未来再动手](/study/papers/world-model-robot-learning-2026/) | ✅ v3 | 机器学习 | 机器人与 VLA |
 | `worldsense-2025` | [WorldSense — 真实世界同步音视频理解 benchmark](/study/papers/worldsense-2025/) | ✅ v3 | 机器学习 | 视频理解 |

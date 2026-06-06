@@ -2,7 +2,6 @@
 title: Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机
 来源: https://github.com/helix-editor/helix
 日期: 2026-06-01
-分类_原始: 编辑器
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级

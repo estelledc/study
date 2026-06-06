@@ -2,7 +2,6 @@
 title: Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 来源: 'https://github.com/ethereum/go-ethereum'
 日期: 2026-05-29
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 高级
@@ -161,6 +160,7 @@ JSON-RPC 是所有 DApp 前端 / MetaMask / Etherscan 跟链通信的协议。Ge
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[ledger-app-sdk]] —— Ledger App SDK — 在硬件钱包里写应用的 C 框架
+- [[lodestar]] —— Lodestar — ChainSafe 的 TypeScript 以太坊共识层客户端
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
 - [[monero]] —— Monero — 默认隐私的 PoW 加密货币
 - [[nethermind]] —— Nethermind — .NET 写的高性能以太坊客户端

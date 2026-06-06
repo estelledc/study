@@ -2,7 +2,6 @@
 title: drawio (diagrams.net) — 离线版 Visio
 来源: jgraph/drawio GitHub README + diagrams.net 官方文档
 日期: 2026-06-01
-分类_原始: 开源工具
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门

@@ -2,7 +2,6 @@
 title: Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶
 来源: 'https://github.com/plotly/plotly.js + Plotly Inc. 2015 开源'
 日期: 2026-05-31
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门

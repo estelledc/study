@@ -2,7 +2,6 @@
 title: Self-Evolving RecSys — 让 LLM agent 自己跑超参实验上线
 来源: 'Haochen Wang et al., "Self-Evolving Recommendation System: End-To-End Autonomous Model Optimization With LLM Agents", arXiv:2602.10226, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 高级

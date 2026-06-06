@@ -2,7 +2,6 @@
 title: Nethermind — .NET 写的高性能以太坊客户端
 来源: 'https://github.com/NethermindEth/nethermind'
 日期: 2026-05-29
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 中级
@@ -165,6 +164,7 @@ sedge cli \
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[grafana]] —— Grafana — 监控可视化看板
+- [[lodestar]] —— Lodestar — ChainSafe 的 TypeScript 以太坊共识层客户端
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[teku]] —— Teku — 用 Java 写的以太坊共识层客户端

@@ -2,7 +2,6 @@
 title: Mermaid — 用文本写图，code review 友好的图表语言
 来源: https://github.com/mermaid-js/mermaid + Knut Sveidqvist 2014
 日期: 2026-06-01
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门
@@ -164,4 +163,6 @@ stateDiagram-v2
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[drawio]] —— drawio (diagrams.net) — 离线版 Visio
 - [[flowchart-js]] —— flowchart.js — 文本生成流程图
+- [[starlight]] —— Starlight — Astro 文档站点主题
+- [[wadler-prettier]] —— Wadler Prettier — 函数式优雅打印器
 

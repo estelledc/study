@@ -2,7 +2,6 @@
 title: Panel — 多绘图后端的 Python dashboard
 来源: 'https://github.com/holoviz/panel'
 日期: 2026-06-01
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门

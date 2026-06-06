@@ -147,3 +147,7 @@ RAG 场景典型参数：`nprobe=16`（IVF）、`ef=64`（HNSW）只是起点；
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[haystack-2010]] —— Haystack — Facebook 十亿张照片怎么存
+- [[siglip-2023]] —— SigLIP — 用 Sigmoid 损失训练图文对齐
+

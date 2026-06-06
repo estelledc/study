@@ -2,7 +2,6 @@
 title: lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 来源: 'https://github.com/jesseduffield/lazygit'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 入门

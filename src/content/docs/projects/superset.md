@@ -2,7 +2,6 @@
 title: Apache Superset — 开源 BI 平台
 来源: https://github.com/apache/superset
 日期: 2026-06-01
-分类_原始: 数据可视化 / BI
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

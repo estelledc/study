@@ -148,3 +148,10 @@ Perception 子项里 OCR 与 color 对视觉塔分辨率敏感；换 [[siglip-20
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[gemini-1.5-2024]] —— Gemini 1.5 — 百万 token 多模态长上下文
+- [[mllm-benchmark-survey-2024]] —— MLLM Benchmark Survey — 200+ 多模态评测基准地图
+- [[mme-survey-2024]] —— MME-Survey — 多模态 LLM 怎么评才靠谱
+- [[mmmu-2023]] —— MMMU — 大学级多学科多模态推理基准
+- [[siglip-2023]] —— SigLIP — 用 Sigmoid 损失训练图文对齐
+

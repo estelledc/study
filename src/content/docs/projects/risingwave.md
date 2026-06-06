@@ -2,7 +2,6 @@
 title: RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合
 来源: RisingWave 官方文档, https://docs.risingwave.com/ ；项目主页 https://risingwave.com/
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

@@ -147,3 +147,10 @@ for pair in vinoground_pairs:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
+- [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[omagent-2024]] —— OmAgent — 长视频分治 Agent 与回退检索
+- [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
+

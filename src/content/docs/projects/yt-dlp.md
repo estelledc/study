@@ -3,8 +3,9 @@ title: yt-dlp — youtube-dl 活跃分支与万能站点视频下载器
 description: 维护活跃的 youtube-dl fork；支持 YouTube/Bilibili/千站 extractor、格式选择、Cookie 登录与 FFmpeg 后处理
 来源: 'https://github.com/yt-dlp/yt-dlp'
 日期: 2026-06-05
-分类: 多媒体
-子分类: 下载工具
+分类_原始: 多媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 初级
 provenance: manual-read
 ---
@@ -159,3 +160,6 @@ yt-dlp 强项：**修复快、选项多、社区 PR 频繁**；弱项：依赖 P
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

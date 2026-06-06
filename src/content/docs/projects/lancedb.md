@@ -2,7 +2,6 @@
 title: LanceDB — 嵌入式向量库（进程内 + 对象存储）
 来源: https://github.com/lancedb/lancedb
 日期: 2026-06-01
-分类_原始: 数据检索 / 基础设施
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

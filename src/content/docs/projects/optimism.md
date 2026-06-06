@@ -2,7 +2,6 @@
 title: Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算
 来源: 'https://github.com/ethereum-optimism/optimism'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 中级

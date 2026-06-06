@@ -2,7 +2,6 @@
 title: DeepSeek R1 — 强化学习推理模型
 来源: 'DeepSeek AI, "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning", 2025-01'
 日期: 2026-05-29
-分类_原始: NLP / 推理
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

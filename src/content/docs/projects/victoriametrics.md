@@ -2,7 +2,6 @@
 title: VictoriaMetrics — 高性能 Prometheus 替代
 来源: https://github.com/VictoriaMetrics/VictoriaMetrics
 日期: 2026-05-29
-分类_原始: 监控 / 时序数据库
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

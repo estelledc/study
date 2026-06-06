@@ -167,3 +167,11 @@ python -m lmms_eval \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[llava-next]] —— LLaVA-NeXT — 图像/视频/交织统一多模态主线仓库
+- [[longvila-2024]] —— LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+- [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+- [[st-llm-2024]] —— ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
+

@@ -2,7 +2,6 @@
 title: Redis — 内存键值数据库
 来源: https://github.com/redis/redis
 日期: 2026-05-29
-分类_原始: 数据库 / 缓存
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -170,12 +169,15 @@ SET lock:order123 "uuid-abc" NX EX 10
 - [[langchain]] —— LangChain — LLM 应用开发框架
 - [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+- [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
 - [[memcached]] —— Memcached — 经典内存缓存
 - [[memgraph]] —— Memgraph — 内存图数据库
 - [[minio]] —— MinIO — S3 兼容对象存储
+- [[mongo]] —— MongoDB — 文档数据库服务端开源实现
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[nats]] —— NATS — 极简云原生消息系统
+- [[nats-server]] —— NATS Server — 极简云原生消息中间件
 - [[nebula]] —— NebulaGraph — 国产分布式图数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[nginx]] —— nginx — 高性能 Web 服务器

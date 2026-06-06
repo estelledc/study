@@ -2,7 +2,6 @@
 title: Brook for GPUs — 让显卡第一次能用人话编程
 来源: 'Buck, Foley, Horn, Sugerman, Fatahalian, Houston, Hanrahan, "Brook for GPUs: Stream Computing on Graphics Hardware", SIGGRAPH 2004'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

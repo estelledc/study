@@ -2,7 +2,6 @@
 title: IronFleet — 把分布式协议证到一行 bug 都没有
 来源: Hawblitzel et al., "IronFleet — Proving Practical Distributed Systems Correct", SOSP 2015
 日期: 2026-05-31
-分类_原始: 分布式系统
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级

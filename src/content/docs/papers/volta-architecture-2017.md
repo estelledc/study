@@ -2,7 +2,6 @@
 title: NVIDIA Volta V100 — 第一代 Tensor Core 把 AI 训练算力一夜抬 6 倍
 来源: 'NVIDIA, "Tesla V100 GPU Architecture — The Worlds Most Advanced Data Center GPU", 2017'
 日期: 2026-05-30
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

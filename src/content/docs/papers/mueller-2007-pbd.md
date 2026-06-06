@@ -2,7 +2,6 @@
 title: Position Based Dynamics — 跳过力，直接挪位置
 来源: 'Müller, Heidelberger, Hennix, Ratcliff, "Position Based Dynamics", J. Visual Communication and Image Representation, 2007'
 日期: 2026-05-31
-分类_原始: 计算机图形 / 物理仿真
 子分类: 渲染与图形
 分类: 图形学
 难度: 中级

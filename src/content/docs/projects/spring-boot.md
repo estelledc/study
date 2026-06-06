@@ -2,7 +2,6 @@
 title: Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 来源: 'https://github.com/spring-projects/spring-boot'
 日期: 2026-05-30
-分类_原始: 后端开发
 子分类: Web 后端
 分类: 后端 API
 难度: 中级

@@ -147,3 +147,7 @@ cost_ratio = raw_tokens / nvila_tokens    # ~500× 视觉侧差距
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[minicpm-v-2024]] —— MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型
+- [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
+

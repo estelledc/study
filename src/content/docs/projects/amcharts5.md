@@ -2,7 +2,6 @@
 title: amCharts 5 — TypeScript 重写的商业级图表库
 来源: 'amCharts 官网与 GitHub 仓库, https://www.amcharts.com/ + https://github.com/amcharts/amcharts5'
 日期: 2026-05-31
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

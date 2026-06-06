@@ -148,3 +148,13 @@ aubiotrack audio.wav
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[flac]] —— FLAC — 无损音频压缩格式与参考实现
+- [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
+- [[obs-studio]] —— OBS Studio — 开源直播录制与推流
+- [[pion]] —— Pion — 纯 Go 实现的 WebRTC 协议栈
+- [[sox]] —— SoX — 命令行音频处理瑞士军刀
+- [[video.js]] —— Video.js — Web 视频播放器框架
+

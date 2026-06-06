@@ -2,7 +2,6 @@
 title: FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
 来源: https://github.com/FerretDB/FerretDB
 日期: 2026-05-31
-分类_原始: 数据库 / NoSQL
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

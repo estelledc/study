@@ -2,7 +2,6 @@
 title: Appwrite — 自己能装一遍的开源 Firebase
 来源: 'https://github.com/appwrite/appwrite'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

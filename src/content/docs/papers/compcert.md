@@ -2,7 +2,6 @@
 title: CompCert — 每条优化都被数学证明保持语义的 C 编译器
 来源: 'Xavier Leroy, "Formal Verification of a Realistic Compiler", CACM 2009'
 日期: 2026-05-30
-分类_原始: compilers-pl
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级

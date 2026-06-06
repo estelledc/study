@@ -2,7 +2,6 @@
 title: OpenHands — 开源 AI 软件工程师
 来源: 'Wang et al., "OpenHands: An Open Platform for AI Software Developers as Generalist Agents", 2024'
 日期: 2026-05-29
-分类_原始: AI / Agent
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级

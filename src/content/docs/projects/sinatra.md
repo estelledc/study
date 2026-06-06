@@ -2,7 +2,6 @@
 title: Sinatra — 用 Ruby 三行代码起一个 web 服务
 来源: 'https://github.com/sinatra/sinatra'
 日期: 2026-05-30
-分类_原始: backend-framework
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

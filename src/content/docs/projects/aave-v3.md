@@ -2,7 +2,6 @@
 title: Aave V3 — 借贷协议旗舰
 来源: 'https://github.com/aave/aave-v3-core'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 高级

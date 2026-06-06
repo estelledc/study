@@ -3,7 +3,7 @@ title: KLEE — 符号执行自动生成高覆盖测试
 来源: 'Cadar, Dunbar, Engler, "KLEE", OSDI 2008'
 日期: 2026-06-06
 分类: 安全与隐私
-子分类: 程序分析
+子分类: 安全与隐私
 难度: 高级
 provenance: pipeline-v3
 ---
@@ -144,22 +144,7 @@ klee --libc=uclibc --posix-hdrs sort.bc
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- padding for quality-gate 150 lines -->
+- [[avgustinov-codeql-2016]] —— QL: Object-Oriented Queries on Relational Data
+- [[bohme-aflfast-2016]] —— AFLFast — 灰盒 Fuzz 的马尔可夫调度
+- [[newsome-taintcheck-2005]] —— Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software
 
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->

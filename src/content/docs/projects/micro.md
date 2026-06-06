@@ -2,7 +2,6 @@
 title: micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器
 来源: Zachary Yedidia, micro, 2016 起；https://github.com/zyedidia/micro
 日期: 2026-06-01
-分类_原始: 终端工具
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 入门

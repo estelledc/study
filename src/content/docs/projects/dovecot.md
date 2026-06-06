@@ -2,7 +2,6 @@
 title: Dovecot — 主流 IMAP/POP3 服务器
 来源: https://github.com/dovecot/core
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 实时通信
 分类: 通信
 难度: 中级

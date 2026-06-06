@@ -142,4 +142,5 @@ DeepMind 2022 报告，把 MuZero 用在 YouTube 视频编码器（VP9）的 RD�
 - [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[ppo]] —— PPO — Proximal Policy Optimization
+- [[world-model-robot-learning-2026]] —— 机器人世界模型综述 — 预测未来再动手
 

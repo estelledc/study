@@ -2,7 +2,6 @@
 title: Comer 1979 — B-Tree 综述：为什么这棵树到处都有
 来源: 'Douglas Comer, "The Ubiquitous B-Tree", ACM Computing Surveys 1979'
 日期: 2026-05-30
-分类_原始: 数据库 / 数据结构
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

@@ -2,7 +2,6 @@
 title: Leis 2015 — 用真实数据打脸所有数据库的查询优化器
 来源: 'Leis, Gubichev, Mirchev, Boncz, Kemper, Neumann. "How Good Are Query Optimizers, Really?". PVLDB 2015'
 日期: 2026-05-30
-分类_原始: databases / 数据库
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

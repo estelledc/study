@@ -2,7 +2,6 @@
 title: ScaNN — 让向量量化只精修「客户会看到的那一面」
 来源: Guo, Sun, Lindgren, Geng, Simcha, Chern, Kumar, "Accelerating Large-Scale Inference with Anisotropic Vector Quantization", ICML 2020
 日期: 2026-05-31
-分类_原始: 数据库
 子分类: 检索与排序
 分类: 信息检索
 难度: 中级

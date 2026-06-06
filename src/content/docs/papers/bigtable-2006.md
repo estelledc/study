@@ -2,7 +2,6 @@
 title: Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 来源: 'Chang et al., "Bigtable: A Distributed Storage System for Structured Data", OSDI 2006'
 日期: 2026-05-30
-分类_原始: databases
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

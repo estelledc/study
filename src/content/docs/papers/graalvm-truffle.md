@@ -2,7 +2,6 @@
 title: GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 来源: 'Würthinger et al., "One VM to Rule Them All", Onward! 2013'
 日期: 2026-05-30
-分类_原始: 编译器与编程语言
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级

@@ -2,7 +2,6 @@
 title: Lerner 组合数据流 — 让小优化互相喂招
 来源: Lerner, Grove, Chambers, "Composing Dataflow Analyses and Transformations", POPL 2002
 日期: 2026-05-30
-分类_原始: 编译器
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

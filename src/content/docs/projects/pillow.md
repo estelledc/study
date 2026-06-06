@@ -3,8 +3,9 @@ title: Pillow — Python 图像处理库与 PIL 现代继任者
 description: PIL 友好分支；打开/保存/缩放/裁剪/滤镜/EXIF，与 NumPy 互转，是多模态数据管线图像 I/O 默认选择
 来源: 'https://github.com/python-pillow/Pillow'
 日期: 2026-06-05
-分类: 多媒体
-子分类: 图像处理
+分类_原始: 多媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 初级
 provenance: manual-read
 ---
@@ -173,3 +174,7 @@ Pillow 强项：**读盘 + 轻量几何 + 保存**；弱项：不做检测分割
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
+- [[vips]] —— libvips — 流式低内存图像库
+

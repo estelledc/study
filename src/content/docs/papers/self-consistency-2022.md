@@ -2,7 +2,6 @@
 title: Self-Consistency — 让模型把同一道题做 40 遍再投票
 来源: 'Wang et al., "Self-Consistency Improves Chain of Thought Reasoning in Language Models", ICLR 2023 (arXiv:2203.11171)'
 日期: 2026-06-01
-分类_原始: AI / LLM
 子分类: 模型与训练
 分类: 机器学习
 难度: 入门

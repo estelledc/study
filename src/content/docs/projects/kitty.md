@@ -2,7 +2,6 @@
 title: kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里
 来源: https://github.com/kovidgoyal/kitty
 日期: 2026-05-31
-分类_原始: CLI 工具
 子分类: 命令行工具
 分类: CLI
 难度: 入门

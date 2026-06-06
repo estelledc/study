@@ -2,7 +2,6 @@
 title: Medusa — 让大模型自己同时猜好几个 token
 来源: 'Cai et al., "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads", arXiv 2401.10774 / ICML 2024'
 日期: 2026-05-31
-分类_原始: 系统
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

@@ -2,7 +2,6 @@
 title: Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
 来源: 'https://github.com/gofiber/fiber'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

@@ -2,7 +2,6 @@
 title: Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
 来源: 'Jim Gray, "Notes on Data Base Operating Systems", in Operating Systems: An Advanced Course, LNCS 60, 1978'
 日期: 2026-05-30
-分类_原始: databases
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级

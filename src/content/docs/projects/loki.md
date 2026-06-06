@@ -2,7 +2,6 @@
 title: Loki — 给日志做 Prometheus，只索引标签不索引内容
 来源: https://github.com/grafana/loki
 日期: 2026-06-01
-分类_原始: 可观测性 / 日志
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

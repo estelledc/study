@@ -2,7 +2,6 @@
 title: Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
 来源: 'Maurice P. Herlihy & Jeannette M. Wing, "Linearizability: A Correctness Condition for Concurrent Objects", ACM TOPLAS Vol. 12 No. 3, July 1990'
 日期: 2026-05-30
-分类_原始: papers / 分布式系统
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级

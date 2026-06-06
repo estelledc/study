@@ -2,7 +2,6 @@
 title: OpenTofu — 社区接手的 Terraform
 来源: https://github.com/opentofu/opentofu
 日期: 2026-06-01
-分类_原始: DevOps / IaC
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

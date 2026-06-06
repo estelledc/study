@@ -2,7 +2,6 @@
 title: MeiliSearch — 开发者友好的搜索引擎
 来源: https://github.com/meilisearch/meilisearch
 日期: 2026-05-29
-分类_原始: 数据库 / 搜索
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -171,5 +170,6 @@ curl -X PATCH 'http://localhost:7700/indexes/movies/settings' \
 - [[sonic]] —— Sonic — 极简前缀搜索引擎
 - [[supabase]] —— Supabase — Firebase 的开源替代
 - [[tantivy]] —— Tantivy — Rust 版 Lucene
+- [[typesense]] —— Typesense — 高性能搜索引擎
 - [[zincsearch]] —— ZincSearch — 单二进制 Go 写的 ES 替代
 

@@ -148,3 +148,9 @@ tiles=9   latency ~600ms   复杂海报/多栏 PDF
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+- [[mmmu-2023]] —— MMMU — 大学级多学科多模态推理基准
+- [[mplug-owl-2023]] —— mPLUG-Owl — 模块化拼装多模态大模型
+- [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+

@@ -178,3 +178,12 @@ TorchCodec 强项：**tensor 原生、与 torch 版本协同**；弱项：生态
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
+- [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
+

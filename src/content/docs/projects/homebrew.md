@@ -2,7 +2,6 @@
 title: Homebrew — macOS 上一行命令装好软件的包管理器
 来源: https://github.com/Homebrew/brew
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 命令行工具
 分类: CLI
 难度: 入门

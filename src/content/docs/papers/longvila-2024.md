@@ -147,3 +147,7 @@ Stage 5  长视频 SFT     → 长片 QA、摘要、定位；帧数逐步 64→2
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+- [[nvila-2024]] —— NVILA — 先放大分辨率再压缩 token 的高效 VLM
+

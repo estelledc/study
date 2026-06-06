@@ -2,7 +2,6 @@
 title: Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
 来源: 'https://github.com/laravel/laravel'
 日期: 2026-05-30
-分类_原始: backend-framework
 子分类: Web 后端
 分类: 后端 API
 难度: 初级

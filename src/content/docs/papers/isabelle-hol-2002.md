@@ -2,7 +2,6 @@
 title: Isabelle/HOL — 让程序证明像写数学论文一样可读
 来源: 'Nipkow, Paulson, Wenzel, "Isabelle/HOL: A Proof Assistant for Higher-Order Logic", Springer LNCS 2283, 2002'
 日期: 2026-05-30
-分类_原始: 编程语言 / 形式化方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级

@@ -2,7 +2,6 @@
 title: Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 来源: 'https://github.com/element-hq/synapse'
 日期: 2026-05-30
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 中级

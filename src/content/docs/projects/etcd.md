@@ -2,7 +2,6 @@
 title: etcd — 分布式键值数据库
 来源: https://github.com/etcd-io/etcd
 日期: 2026-05-29
-分类_原始: 数据库 / 分布式
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -145,7 +144,9 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
 - [[nats]] —— NATS — 极简云原生消息系统
+- [[nats-server]] —— NATS Server — 极简云原生消息中间件
 - [[nsq]] —— NSQ — Go 写的去中心化消息队列
 - [[pebble]] —— Pebble — CockroachDB 自研 LSM
 - [[raft]] —— Raft — 易理解的共识算法

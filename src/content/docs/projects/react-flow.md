@@ -2,7 +2,6 @@
 title: React Flow / xyflow — 节点编辑器框架
 来源: "https://github.com/xyflow/xyflow"
 日期: 2026-06-01
-分类_原始: projects / 前端 / dataviz
 子分类: 数据可视化
 分类: 数据可视化
 难度: 中级

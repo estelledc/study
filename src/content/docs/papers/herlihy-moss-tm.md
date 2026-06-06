@@ -2,7 +2,6 @@
 title: Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU
 来源: 'Herlihy & Moss, "Transactional Memory: Architectural Support for Lock-Free Data Structures", ISCA 1993'
 日期: 2026-05-30
-分类_原始: 并发
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

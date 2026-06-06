@@ -2,7 +2,6 @@
 title: 'Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统'
 来源: 'Ohad Rodeh et al., "BTRFS: The Linux B-Tree Filesystem", ACM TOS 2013'
 日期: 2026-06-01
-分类_原始: 存储系统
 子分类: 内核与虚拟化
 分类: 操作系统
 难度: 中级

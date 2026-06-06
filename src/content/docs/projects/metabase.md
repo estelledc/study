@@ -2,7 +2,6 @@
 title: Metabase — 让非技术人查数
 来源: https://github.com/metabase/metabase
 日期: 2026-06-01
-分类_原始: 数据可视化 / BI
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门

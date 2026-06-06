@@ -2,7 +2,6 @@
 title: Chainlink — 智能合约的"感官系统"
 来源: 'https://github.com/smartcontractkit/chainlink'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 中级

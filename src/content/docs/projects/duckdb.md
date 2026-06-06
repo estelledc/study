@@ -2,7 +2,6 @@
 title: DuckDB — 嵌入式列存 OLAP
 来源: https://github.com/duckdb/duckdb
 日期: 2026-05-29
-分类_原始: 数据库 / OLAP
 子分类: 存储与查询
 分类: 数据库
 难度: 中级
@@ -163,5 +162,4 @@ result = con.execute("""
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
-- [[starrocks]] —— StarRocks — MPP 列存数据库
 

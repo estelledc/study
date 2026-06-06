@@ -2,7 +2,6 @@
 title: Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准
 来源: 'Leslie Lamport, "How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs", IEEE Transactions on Computers, Vol. C-28 No. 9, Sep 1979'
 日期: 2026-05-30
-分类_原始: papers / 分布式系统
 子分类: 共识与复制
 分类: 分布式系统
 难度: 中级

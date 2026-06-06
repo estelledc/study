@@ -2,7 +2,6 @@
 title: Cubical Type Theory — 让 Univalence 公理真的能算出结果
 来源: 'Cohen, Coquand, Huber, Mörtberg, "Cubical Type Theory: A Constructive Interpretation of the Univalence Axiom", TYPES 2015 post-proceedings 2018（arXiv:1611.02108）'
 日期: 2026-05-31
-分类_原始: 编程语言 / 形式化方法
 子分类: 形式化验证
 分类: 形式化方法
 难度: 高级

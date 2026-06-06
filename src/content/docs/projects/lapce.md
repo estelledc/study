@@ -2,7 +2,6 @@
 title: Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 来源: 'lapce/lapce GitHub README + Lapce 官方博客 lap.dev'
 日期: 2026-06-01
-分类_原始: 工具链
 子分类: 编辑器与 IDE
 分类: CLI
 难度: 中级

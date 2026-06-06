@@ -2,7 +2,6 @@
 title: Toolformer — 教 LLM 自主调用 API
 来源: 'Schick et al., "Toolformer: Language Models Can Teach Themselves to Use Tools", NeurIPS 2023'
 日期: 2026-05-29
-分类_原始: AI / Agent
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级

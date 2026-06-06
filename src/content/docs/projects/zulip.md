@@ -2,7 +2,6 @@
 title: Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
 来源: 'https://github.com/zulip/zulip'
 日期: 2026-05-30
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 中级

@@ -2,7 +2,6 @@
 title: matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK
 来源: 'https://github.com/matrix-org/matrix-js-sdk'
 日期: 2026-05-30
-分类_原始: communication
 子分类: 实时通信
 分类: 通信
 难度: 中级

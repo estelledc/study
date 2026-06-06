@@ -2,7 +2,6 @@
 title: Elasticsearch — 分布式搜索引擎
 来源: https://github.com/elastic/elasticsearch
 日期: 2026-05-29
-分类_原始: 数据库 / 搜索
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

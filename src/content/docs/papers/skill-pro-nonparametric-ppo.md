@@ -2,7 +2,6 @@
 title: Skill-Pro — 不动权重学可复用 skill 的非参数 PPO
 来源: 'Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO, arXiv:2602.01869, 2026'
 日期: 2026-06-01
-分类_原始: agents
 子分类: 智能体与 LLM
 分类: Agent
 难度: 高级

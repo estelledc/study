@@ -2,7 +2,6 @@
 title: Hardhat — Nomic Foundation 的 JS 合约框架
 来源: 'https://github.com/NomicFoundation/hardhat'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 初级
@@ -175,6 +174,7 @@ networks: {
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
+- [[lodestar]] —— Lodestar — ChainSafe 的 TypeScript 以太坊共识层客户端
 - [[metamask]] —— MetaMask — 装在浏览器里的以太坊钱包
 - [[opensea-js]] —— opensea-js — NFT 二级市场的官方 SDK
 - [[openzeppelin-contracts]] —— OpenZeppelin Contracts — 以太坊智能合约的事实标准库

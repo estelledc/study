@@ -2,7 +2,6 @@
 title: Observable Framework — 编译期跑数据，浏览器只看结果
 来源: 'https://github.com/observablehq/framework'
 日期: 2026-06-01
-分类_原始: projects / 数据可视化
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门到中级

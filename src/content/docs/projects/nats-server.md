@@ -148,3 +148,6 @@ nats consumer add ORDERS shipper --filter "orders.ship" --ack explicit
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
+

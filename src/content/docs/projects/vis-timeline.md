@@ -2,7 +2,6 @@
 title: vis-timeline — 时间轴 / 日程 / 历史事件三合一组件
 来源: 'https://github.com/visjs/vis-timeline + visjs 社区文档 https://visjs.github.io/vis-timeline/docs/timeline/'
 日期: 2026-06-01
-分类_原始: 前端工程
 子分类: 数据可视化
 分类: 数据可视化
 难度: 入门

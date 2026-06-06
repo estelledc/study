@@ -2,7 +2,6 @@
 title: Ollama — 本地跑 LLM 的工具
 来源: https://github.com/ollama/ollama
 日期: 2026-05-29
-分类_原始: AI / 推理
 子分类: 模型与训练
 分类: 机器学习
 难度: 中级

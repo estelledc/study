@@ -2,7 +2,6 @@
 title: ReAct — Reasoning and Acting
 来源: 'Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models", ICLR 2023'
 日期: 2026-05-29
-分类_原始: AI / Agent
 子分类: 智能体与 LLM
 分类: 机器学习
 难度: 中级

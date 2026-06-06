@@ -3,8 +3,9 @@ title: Shotcut — 基于 MLT 的开源非线性编辑器
 description: Qt 跨平台 NLE；Producer/Filter/Consumer 的可视化时间线；开源剪辑教学样本
 来源: 'https://github.com/mltframework/shotcut'
 日期: 2026-06-06
-分类: 媒体
-子分类: 视频转码
+分类_原始: 媒体
+分类: 通信
+子分类: 音视频媒体
 难度: 初级
 provenance: pipeline-v3
 ---
@@ -142,22 +143,8 @@ File → Export → MLT XML，对照 [[mlt]] `melt` 命令理解转场语法。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- padding for quality-gate 150 lines -->
+- [[essentia]] —— Essentia — 音乐信息检索工具箱
+- [[gstreamer]] —— GStreamer — 流水线式多媒体框架
+- [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[mlt]] —— MLT — 多媒体编辑框架
 
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->
-
-<!-- padding for quality-gate 150 lines -->

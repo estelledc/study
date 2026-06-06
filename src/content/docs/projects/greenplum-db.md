@@ -2,7 +2,6 @@
 title: Greenplum — Postgres 改的 MPP 数仓
 来源: https://github.com/greenplum-db/gpdb
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

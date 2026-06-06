@@ -2,7 +2,6 @@
 title: Lens — Kubernetes 集群的桌面 IDE
 来源: lensapp/lens GitHub README
 日期: 2026-06-01
-分类_原始: 开源工具
 子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级

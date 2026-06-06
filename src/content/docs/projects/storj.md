@@ -2,7 +2,6 @@
 title: Storj — S3 兼容的去中心化对象存储
 来源: 'https://github.com/storj/storj'
 日期: 2026-05-30
-分类_原始: blockchain
 子分类: 链与合约
 分类: 区块链
 难度: 中级

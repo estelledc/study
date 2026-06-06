@@ -167,3 +167,6 @@ for video in internvid_sample_100k:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[omnistvg-2025]] —— OmniSTVG — 按句子把视频里所有相关物体都框出来
+

@@ -2,7 +2,6 @@
 title: GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 来源: Wong, Papadopoulou, Sadooghi-Alvandi, Moshovos, "Demystifying GPU Microarchitecture through Microbenchmarking", ISPASS 2010
 日期: 2026-05-31
-分类_原始: 计算机体系结构
 子分类: GPU 架构
 分类: 图形学
 难度: 中级

@@ -2,7 +2,6 @@
 title: Earley Parser — 一个表能解析任何 CFG 的通用解析器
 来源: 'Jay Earley, "An Efficient Context-Free Parsing Algorithm", CACM 1970'
 日期: 2026-05-30
-分类_原始: 编译器与语言
 子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 中级

@@ -185,7 +185,7 @@ analyze-py:
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[mage]] —— Mage — 用 Go 写 build 脚本，告别 Makefile
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI
-- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[task]] —— Task — 用 YAML 写一份跨平台的 ‘项目命令清单’
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 

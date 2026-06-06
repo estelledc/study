@@ -2,7 +2,6 @@
 title: Weaviate — 模块化向量数据库
 来源: https://github.com/weaviate/weaviate
 日期: 2026-05-29
-分类_原始: 数据库 / 向量
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

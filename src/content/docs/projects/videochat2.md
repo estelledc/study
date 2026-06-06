@@ -147,3 +147,14 @@ MVBench 题目按「时序推理 / 目标关系」等维度拆分；结果可与
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解
+- [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
+- [[internvideo2-5-2025]] —— InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+- [[livevlm-2025]] —— LiveVLM — 免训练流式视觉 token 压缩
+- [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
+- [[videollama3-2025]] —— VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+- [[videollm-online-2024]] —— VideoLLM-online — 流式视频对话的 LIVE 框架
+- [[vinoground-2024]] —— Vinoground — 时序反事实短视频探针
+- [[worldsense-2025]] —— WorldSense — 真实世界同步音视频理解 benchmark
+

@@ -2,7 +2,6 @@
 title: duf — df 的彩色表格替代，按设备分组自动忽略伪文件系统
 来源: 'https://github.com/muesli/duf'
 日期: 2026-05-30
-分类_原始: cli
 子分类: 命令行工具
 分类: CLI
 难度: 初级

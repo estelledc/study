@@ -2,7 +2,6 @@
 title: Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 来源: 'https://github.com/dropwizard/dropwizard'
 日期: 2026-05-30
-分类_原始: backend-api
 子分类: Web 后端
 分类: 后端 API
 难度: 初级
