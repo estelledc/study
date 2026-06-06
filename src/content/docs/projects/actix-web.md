@@ -181,6 +181,7 @@ async fn signup(form: web::Json<Signup>) -> String {
 
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
+- [[deno]] —— Deno — 安全优先的 JS/TS 运行时
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[express]] —— Express — Node.js 最经典的 Web 框架

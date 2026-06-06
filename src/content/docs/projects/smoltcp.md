@@ -216,5 +216,12 @@ loop {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
+- [[embedded-hal]] —— embedded-hal — 让同一份驱动代码跑在任意芯片上
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
+- [[mptcp-2012]] —— MPTCP 2012 — 把一根 TCP 管道变成多条并行水管
+- [[mqtt-s-2008]] —— MQTT-S 2008 — 把发布/订阅消息机制装进传感器芯片
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

@@ -238,4 +238,5 @@ export function dispose() {
 - [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[playcanvas]] —— PlayCanvas — 浏览器里跑得动的 3D 游戏引擎
 

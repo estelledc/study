@@ -167,6 +167,7 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 - [[embedded-hal]] —— embedded-hal — 让同一份驱动代码跑在任意芯片上
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
+- [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具

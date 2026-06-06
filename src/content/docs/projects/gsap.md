@@ -172,7 +172,6 @@ gsap.to(".box", {
 - [[bubbletea]] —— Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架
 - [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图

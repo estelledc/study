@@ -161,17 +161,20 @@ OSError: [Errno 99] Cannot assign requested address
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
+- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[cubic-2008]] —— CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
+- [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
 - [[mahajan-2002-bgp-misconfig]] —— Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑
 - [[metcalfe-boggs-1976]] —— Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架
 - [[mills-ntp-1991]] —— NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒
@@ -188,6 +191,7 @@ OSError: [Errno 99] Cannot assign requested address
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[sctp-multipath-2006]] —— CMT-SCTP 2006 — 让两条网络路径同时干活而不打架
 - [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[tcp-vegas-1995]] —— TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞
 - [[tls-1.3]] —— TLS 1.3 — 把 HTTPS 握手砍到一个来回
 - [[uniswap-v3]] —— Uniswap V3 — 集中流动性 AMM 核心合约

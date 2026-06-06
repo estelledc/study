@@ -185,3 +185,7 @@ deno compile --target x86_64-pc-windows-msvc --output cli.exe cli.ts
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
+

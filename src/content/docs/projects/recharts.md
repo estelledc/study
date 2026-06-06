@@ -183,6 +183,10 @@ function CustomTooltip({ active, payload, label }) {
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[plotly-js]] —— Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶
 - [[react-spring]] —— react-spring — 用真实弹簧的物理写网页动画
+- [[sortablejs]] —— SortableJS — 一行代码让任何列表能用手拖排序
+- [[tanstack-form]] —— TanStack Form — 跨框架共享一份表单校验逻辑
+- [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
 - [[vega]] —— Vega — 整张图就是一棵 JSON
 - [[visx]] —— visx — 把 d3 拆成 30 块乐高的 React 可视化原语
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

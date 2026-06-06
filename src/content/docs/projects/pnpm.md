@@ -162,6 +162,7 @@ find ~/.pnpm-store/v3/files -inum 1234567
 - [[bun]] —— Bun — JS 全能运行时
 - [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
+- [[deno]] —— Deno — 安全优先的 JS/TS 运行时
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本

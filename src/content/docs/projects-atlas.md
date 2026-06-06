@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 844 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 849 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：844 个
-- **已分类**：844
+- **总数**：849 个
+- **已分类**：849
 
 ### 按一级主题分布
 
@@ -20,16 +20,16 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 17 |
+| [操作系统](#操作系统) | 18 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 189 |
+| [后端 API](#后端-api) | 190 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 15 |
+| [图形学](#图形学) | 16 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 119 |
-| [编译器](#编译器) | 12 |
+| [CLI](#cli) | 120 |
+| [编译器](#编译器) | 13 |
 | [数据可视化](#数据可视化) | 66 |
 
 ---
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 17 个。
+共 18 个。
 
 ### 嵌入式
 
@@ -182,6 +182,7 @@ sidebar:
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
+| [lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈](/study/projects/lwip/) | ✅ v3 |  |
 | [MicroPython — 在 MCU 上跑 Python 3 的精简实现](/study/projects/micropython/) | ✅ v3 |  |
 | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 |  |
 | [OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版](/study/projects/openwrt/) | ✅ v3 |  |
@@ -381,7 +382,7 @@ sidebar:
 
 ## 后端 API
 
-共 189 个。
+共 190 个。
 
 ### 前端
 
@@ -431,6 +432,7 @@ sidebar:
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 |  |
+| [Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定](/study/projects/neutralinojs/) | ✅ v3 |  |
 | [NodeGUI — Qt6 驱动的零 WebView 桌面框架](/study/projects/nodegui/) | ✅ v3 |  |
 | [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
@@ -720,7 +722,7 @@ sidebar:
 
 ## 图形学
 
-共 15 个。
+共 16 个。
 
 ### 渲染与图形
 
@@ -737,6 +739,7 @@ sidebar:
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
 | [Phaser — 在浏览器里写 2D 游戏的完整工具箱](/study/projects/phaser/) | ✅ v3 |  |
+| [PlayCanvas — 浏览器里跑得动的 3D 游戏引擎](/study/projects/playcanvas/) | ✅ v3 |  |
 | [raylib — 极简 C 游戏库，10 行代码跑起带窗口动画](/study/projects/raylib/) | ✅ v3 |  |
 | [three.js — Web 3D 事实标准](/study/projects/threejs/) | ✅ v3 |  |
 
@@ -878,7 +881,7 @@ sidebar:
 
 ## CLI
 
-共 119 个。
+共 120 个。
 
 ### 编辑器与 IDE
 
@@ -891,6 +894,7 @@ sidebar:
 | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 |  |
 | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | ✅ v3 |  |
 | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) | ✅ v3 |  |
+| [LazyVim — lazy.nvim 驱动的 Neovim 发行版](/study/projects/lazyvim/) | ✅ v3 |  |
 | [Lite XL — 用 Lua 驱动一切的极简文本编辑器](/study/projects/lite-xl/) | ✅ v3 |  |
 | [LunarVim — 一体化 Neovim IDE 层](/study/projects/lunarvim/) | ✅ v3 |  |
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
@@ -1021,7 +1025,7 @@ sidebar:
 
 ## 编译器
 
-共 12 个。
+共 13 个。
 
 ### 构建工具
 
@@ -1040,6 +1044,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Bun — JS 全能运行时](/study/projects/bun/) | ✅ v3 |  |
+| [Deno — 安全优先的 JS/TS 运行时](/study/projects/deno/) | ✅ v3 |  |
 | [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) | ✅ v3 | V8 上的 JavaScript 服务端运行时，事件循环 + libuv |
 | [Wasmtime — Bytecode Alliance 标准 wasm runtime](/study/projects/wasmtime/) | ✅ v3 | Bytecode Alliance 的 WebAssembly 运行时，WASI 支持 |
 
@@ -1137,7 +1142,7 @@ sidebar:
 
 ---
 
-## 全部 844 个（字母序）
+## 全部 849 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1311,6 +1316,7 @@ sidebar:
 | `defold` | [Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包](/study/projects/defold/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | ✅ v3 | CLI | 命令行工具 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | ✅ v3 | 通信 | 实时通信 |
+| `deno` | [Deno — 安全优先的 JS/TS 运行时](/study/projects/deno/) | ✅ v3 | 编译器 | 语言运行时 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 🗄 存量 | 数据库 | 存储与查询 |
 | `dhtmlx-gantt` | [DHTMLX Gantt — 给企业级排期用的全功能甘特组件](/study/projects/dhtmlx-gantt/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | ✅ v3 | 机器学习 | AI |
@@ -1510,6 +1516,7 @@ sidebar:
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) | ✅ v3 | 区块链 | 链与合约 |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | ✅ v3 | CLI | 命令行工具 |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | ✅ v3 | CLI | 命令行工具 |
+| `lazyvim` | [LazyVim — lazy.nvim 驱动的 Neovim 发行版](/study/projects/lazyvim/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `leaflet` | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | ✅ v3 | 区块链 | 链与合约 |
 | `lens` | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | ✅ v3 | 基础设施 | DevOps 与运维 |
@@ -1553,6 +1560,7 @@ sidebar:
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | ✅ v3 | CLI | 工具库 |
 | `lunarvim` | [LunarVim — 一体化 Neovim IDE 层](/study/projects/lunarvim/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | ✅ v3 | 后端 API | projects / 前端工具库 |
+| `lwip` | [lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈](/study/projects/lwip/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) | ✅ v3 | 数据库 | 存储与查询 |
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | ✅ v3 | CLI | 命令行工具 |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | ✅ v3 | 通信 | 实时通信 |
@@ -1621,6 +1629,7 @@ sidebar:
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `nestjs` | [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) | 🗄 存量 | 后端 API | 后端框架 |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | ✅ v3 | 区块链 | 链与合约 |
+| `neutralinojs` | [Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定](/study/projects/neutralinojs/) | ✅ v3 | 后端 API | 移动端 |
 | `next-intl` | [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) | ✅ v3 | 后端 API | 前端框架 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | ✅ v3 | 后端 API | UI 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | ✅ v3 | 后端 API | projects |
@@ -1698,6 +1707,7 @@ sidebar:
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | ✅ v3 | 图形学 | projects / 图形渲染 |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | ⭐ Season | 后端 API | SaaS 应用 |
 | `platformio-core` | [PlatformIO Core — 一套命令行，统管千块嵌入式开发板](/study/projects/platformio-core/) | ✅ v3 | 操作系统 | 嵌入式 |
+| `playcanvas` | [PlayCanvas — 浏览器里跑得动的 3D 游戏引擎](/study/projects/playcanvas/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 🗄 存量 | 后端 API | 测试 |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | ✅ v3 | 数据可视化 | 数据可视化 |

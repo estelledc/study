@@ -2,7 +2,6 @@
 title: NodeGUI — Qt6 驱动的零 WebView 桌面框架
 来源: 'https://github.com/nodegui/nodegui'
 日期: 2026-06-06
-分类_原始: 其他
 分类: 后端 API
 子分类: 移动端
 难度: 中级
@@ -208,5 +207,11 @@ sudo apt-get install mesa-common-dev libglu1-mesa-dev
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
+- [[neutralinojs]] —— Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定
+- [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[react]] —— React UI 组件库
+- [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
 

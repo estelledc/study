@@ -1010,6 +1010,7 @@ axelar
 axios
 axolotl
 axum
+babylonjs
 backstage
 badger
 balancer
@@ -1358,6 +1359,7 @@ lottie
 love2d
 lsd
 lucia
+lunarvim
 luxon
 m3
 mage
@@ -1436,6 +1438,7 @@ nivo
 nix
 nnn
 node-js
+nodegui
 nodemailer
 nomad
 notepad-plus-plus
@@ -1619,6 +1622,7 @@ sinatra
 skaffold
 sled
 slim-framework
+smoltcp
 snapshot
 socket-io
 soketi

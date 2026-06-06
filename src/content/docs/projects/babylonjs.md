@@ -201,5 +201,9 @@ setInterval(async () => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[playcanvas]] —— PlayCanvas — 浏览器里跑得动的 3D 游戏引擎
+- [[threejs]] —— three.js — Web 3D 事实标准
 

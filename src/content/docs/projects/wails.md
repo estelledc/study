@@ -234,6 +234,7 @@ func (a *App) StartMonitor(ctx context.Context) {
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
+- [[neutralinojs]] —— Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定
 - [[react]] —— React UI 组件库
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用

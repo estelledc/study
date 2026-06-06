@@ -184,6 +184,7 @@ Bun.serve({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[deno]] —— Deno — 安全优先的 JS/TS 运行时
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hono]] —— Hono — 多运行时 Web 框架

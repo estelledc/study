@@ -1116,6 +1116,7 @@
 {"slug":"defold","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"delta","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"dendrite","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
+{"slug":"deno","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"语言运行时","source":"candidates.topic","confidence":"high","rawCategory":"编译器"}
 {"slug":"dgraph","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"dhtmlx-gantt","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"dify","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"AI","source":"category","confidence":"high","rawCategory":"机器学习"}
@@ -1315,6 +1316,7 @@
 {"slug":"layerzero","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"lazydocker","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"lazygit","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
+{"slug":"lazyvim","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"leaflet","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"ledger-app-sdk","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"lens","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
@@ -1358,6 +1360,7 @@
 {"slug":"lucia","area":"projects","theme":"CLI","themeId":"cli","subcategory":"工具库","source":"category","confidence":"high","rawCategory":"CLI"}
 {"slug":"lunarvim","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"luxon","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端工具库","source":"category","confidence":"high","rawCategory":"后端 API"}
+{"slug":"lwip","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"m3","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"mage","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"mailcow","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
@@ -1426,6 +1429,7 @@
 {"slug":"nerdctl","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"nestjs","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"后端框架","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"nethermind","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
+{"slug":"neutralinojs","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"移动端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"next-intl","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"前端框架","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"next-js","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"UI 框架 / 全栈","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"nextra","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
@@ -1435,7 +1439,7 @@
 {"slug":"nix","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"nnn","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"node-js","area":"projects","theme":"编译器","themeId":"compilers","subcategory":"语言运行时","source":"candidates.topic","confidence":"high","rawCategory":"编译器"}
-{"slug":"nodegui","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"移动端","source":"candidates.topic","confidence":"high","rawCategory":"其他"}
+{"slug":"nodegui","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"移动端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"nodemailer","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"nomad","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps / 编排","source":"category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"notepad-plus-plus","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
@@ -1503,6 +1507,7 @@
 {"slug":"pixi","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"projects / 图形渲染","source":"category","confidence":"high","rawCategory":"图形学"}
 {"slug":"plane","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"SaaS 应用","source":"slugOverrides","confidence":"high","rawCategory":"后端 API"}
 {"slug":"platformio-core","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
+{"slug":"playcanvas","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"playwright","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"测试","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"plotly-js","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"plotly-py","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"数据可视化","source":"candidates.topic","confidence":"high","rawCategory":"数据可视化"}
