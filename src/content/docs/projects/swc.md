@@ -178,6 +178,7 @@ pub fn process(mut program: Program, _: ()) -> Program {
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
+- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器

@@ -154,6 +154,7 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atom]] —— Atom — 已归档的 Web 编辑器先驱
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check

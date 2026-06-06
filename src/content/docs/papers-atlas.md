@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 928 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 932 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：928 篇
-- **已分类**：928
+- **总数**：932 篇
+- **已分类**：932
 
 ### 按一级主题分布
 
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 34 |
+| [安全与隐私](#安全与隐私) | 38 |
 | [其他](#其他) | 13 |
 
 ---
@@ -1211,7 +1211,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 34 篇。
+共 38 篇。
 
 ### 安全与隐私
 
@@ -1230,6 +1230,8 @@ sidebar:
 | [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 |  |
 | [Homomorphic Encryption for Arithmetic of Approximate Numbers](/study/papers/cheon-ckks-2017/) | ✅ v3 |  |
 | [Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds](/study/papers/chillotti-tfhe-2016/) | ✅ v3 |  |
+| [Sphinx — mix 网络最紧凑的可证安全消息格式](/study/papers/danezis-sphinx-2009/) | ✅ v3 |  |
+| [Mixminion 2003 — 让回复消息和发送消息共享同一张匿名面罩](/study/papers/dingledine-mixminion-2003/) | ✅ v3 |  |
 | [CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名](/study/papers/ducas-dilithium-2018/) | ✅ v3 |  |
 | [Local Privacy and Statistical Minimax Rates](/study/papers/duchi-local-dp-2013/) | ✅ v3 |  |
 | [校准噪声与敏感度 — Laplace 机制奠基](/study/papers/dwork-calibrating-noise-2006/) | ✅ v3 |  |
@@ -1237,6 +1239,7 @@ sidebar:
 | [分布式噪声生成 — 去掉可信管理员也能保护隐私](/study/papers/dwork-our-data-ourselves-2006/) | ✅ v3 |  |
 | [RAPPOR — 本地差分隐私随机响应采集](/study/papers/erlingsson-rappor-2014/) | ✅ v3 |  |
 | [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 |  |
+| [Freedman-Nissim-Pinkas PSI 2004 — 两个人怎么找共同好友而不暴露各自通讯录](/study/papers/freedman-psi-2004/) | ✅ v3 |  |
 | [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 |  |
 | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
 | [GMW 1987 — 任何函数都能让多方安全地一起算](/study/papers/gmw-mental-game-1987/) | ✅ v3 |  |
@@ -1245,6 +1248,7 @@ sidebar:
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
 | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
 | [Rabin 遗忘传输 — 发送方永远不知道你收到了什么](/study/papers/rabin-ot-1981/) | ✅ v3 |  |
+| [洋葱路由 1998 — 把匿名通信从理论搬进真实互联网](/study/papers/reed-onion-routing-1998/) | ✅ v3 |  |
 | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 |  |
 | [Yao 混淆电路 — 让两人合算函数却互不泄密](/study/papers/yao-garbled-circuits-1986/) | ✅ v3 |  |
 
@@ -1286,7 +1290,7 @@ sidebar:
 
 ---
 
-## 全部 928 篇（字母序）
+## 全部 932 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1489,6 +1493,7 @@ sidebar:
 | `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | ✅ v3 | 数据可视化 | 可视化 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | ✅ v3 | 机器学习 | 生成模型 / 计算机视觉 |
+| `danezis-sphinx-2009` | [Sphinx — mix 网络最紧凑的可证安全消息格式](/study/papers/danezis-sphinx-2009/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) | ✅ v3 | 图形学 | GPU 架构 |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1517,6 +1522,7 @@ sidebar:
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | ✅ v3 | 其他 | 软件工程 / 控制流理论 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | ✅ v3 | 编程语言 | 算法 |
 | `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) | ✅ v3 | 信息检索 | 检索与排序 |
+| `dingledine-mixminion-2003` | [Mixminion 2003 — 让回复消息和发送消息共享同一张匿名面罩](/study/papers/dingledine-mixminion-2003/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | ✅ v3 | 机器学习 | 自监督视觉 |
 | `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) | ✅ v3 | 形式化方法 | 形式化验证 |
@@ -1601,6 +1607,7 @@ sidebar:
 | `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `frangipani-1997` | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
+| `freedman-psi-2004` | [Freedman-Nissim-Pinkas PSI 2004 — 两个人怎么找共同好友而不暴露各自通讯录](/study/papers/freedman-psi-2004/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `frenetic-2011` | [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) | ✅ v3 | 网络协议 | 网络协议 |
 | `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) | ✅ v3 | 图形学 | GPU 架构 |
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | ✅ v3 | 其他 | 学习与认知 |
@@ -1964,6 +1971,7 @@ sidebar:
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | ✅ v3 | 后端 API | 前端框架 |
 | `realm` | [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) | ✅ v3 | NLP | 自然语言处理 |
 | `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) | ✅ v3 | 网络协议 | 网络协议 |
+| `reed-onion-routing-1998` | [洋葱路由 1998 — 把匿名通信从理论搬进真实互联网](/study/papers/reed-onion-routing-1998/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | ✅ v3 | 机器学习 | 信息论 |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | ✅ v3 | 机器学习 | 智能体与 LLM |

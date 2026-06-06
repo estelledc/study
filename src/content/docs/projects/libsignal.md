@@ -157,6 +157,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 - [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
+- [[reed-onion-routing-1998]] —— 洋葱路由 1998 — 把匿名通信从理论搬进真实互联网
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见

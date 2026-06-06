@@ -157,5 +157,5 @@ QEMU 模拟会慢一点（50%-70% 原速），但能跑通。等 act 官方出 a
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
 

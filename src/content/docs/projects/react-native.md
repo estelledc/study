@@ -234,6 +234,7 @@ const styles = StyleSheet.create({
 - [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
+- [[nativescript]] —— NativeScript — JS/TS 直接调原生 API，无 WebView
 - [[react]] —— React UI 组件库
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[react-server-components]] —— React Server Components — 让组件自己决定在哪台机器跑

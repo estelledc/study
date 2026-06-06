@@ -170,6 +170,7 @@ result = evaluate(gc, a_labels.alice_side(alice_price=350), b_labels)
 
 - [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
 - [[bunz-bulletproofs-2018]] —— Bulletproofs: Short Proofs for Confidential Transactions and More
+- [[freedman-psi-2004]] —— Freedman-Nissim-Pinkas PSI 2004 — 两个人怎么找共同好友而不暴露各自通讯录
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[gmw-mental-game-1987]] —— GMW 1987 — 任何函数都能让多方安全地一起算
 - [[rsa]] —— RSA 公钥密码

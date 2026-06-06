@@ -197,6 +197,7 @@
 {"slug":"cytoscape-js","area":"papers","theme":"数据可视化","themeId":"dataviz","subcategory":"可视化","source":"category","confidence":"high","rawCategory":"数据可视化"}
 {"slug":"dafny-2010","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"dalle-2","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"生成模型 / 计算机视觉","source":"category","confidence":"high","rawCategory":"机器学习"}
+{"slug":"danezis-sphinx-2009","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"dapper-2010","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"dash-numa-1992","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"dataflow-model-2015","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
@@ -225,6 +226,7 @@
 {"slug":"dijkstra-goto","area":"papers","theme":"其他","themeId":"other","subcategory":"软件工程 / 控制流理论","source":"category","confidence":"high","rawCategory":"其他"}
 {"slug":"dijkstra-shortest-path","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"算法","source":"category","confidence":"high","rawCategory":"编程语言"}
 {"slug":"din-2018","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
+{"slug":"dingledine-mixminion-2003","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"dino","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"自监督视觉","source":"slugOverrides","confidence":"high","rawCategory":"机器学习"}
 {"slug":"disco-1997","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"disel-2018","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
@@ -309,6 +311,7 @@
 {"slug":"frama-c-2012","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"frangipani-1997","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"frank-effects","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"freedman-psi-2004","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"frenetic-2011","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
 {"slug":"fsdp-2023","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"fsrs-spaced-repetition","area":"papers","theme":"其他","themeId":"other","subcategory":"学习与认知","source":"category","confidence":"high","rawCategory":"其他"}
@@ -672,6 +675,7 @@
 {"slug":"react","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"智能体与 LLM","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"realm","area":"papers","theme":"NLP","themeId":"nlp","subcategory":"自然语言处理","source":"category","confidence":"high","rawCategory":"NLP"}
 {"slug":"red-1993","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
+{"slug":"reed-onion-routing-1998","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"security-privacy"}
 {"slug":"reed-solomon-1960","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"信息论","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"refinement-types-1991","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"reflexion","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"智能体与 LLM","source":"category","confidence":"high","rawCategory":"机器学习"}
@@ -960,6 +964,7 @@
 {"slug":"arangodb","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"arbitrum","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"ardour","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
+{"slug":"arduino-cli","area":"projects","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"argent-x","area":"projects","theme":"区块链","themeId":"blockchain","subcategory":"链与合约","source":"candidates.topic","confidence":"high","rawCategory":"区块链"}
 {"slug":"argilla","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"数据科学与 AI","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"argo-workflows","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
@@ -974,6 +979,7 @@
 {"slug":"asterisk","area":"projects","theme":"通信","themeId":"communication","subcategory":"实时通信","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"astro","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"UI 框架 / 静态站点","source":"category","confidence":"high","rawCategory":"后端 API"}
 {"slug":"asynq","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
+{"slug":"atom","area":"projects","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"aubio","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"audacity","area":"projects","theme":"通信","themeId":"communication","subcategory":"音视频媒体","source":"candidates.topic","confidence":"high","rawCategory":"通信"}
 {"slug":"auth-js","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects","source":"category","confidence":"high","rawCategory":"后端 API"}
@@ -1322,6 +1328,7 @@
 {"slug":"loki","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"longhorn","area":"projects","theme":"基础设施","themeId":"infrastructure","subcategory":"DevOps 与运维","source":"candidates.topic","confidence":"high","rawCategory":"基础设施"}
 {"slug":"lottie","area":"projects","theme":"数据可视化","themeId":"dataviz","subcategory":"动画","source":"slugOverrides","confidence":"high","rawCategory":"数据可视化"}
+{"slug":"love2d","area":"projects","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"lsd","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"lucia","area":"projects","theme":"CLI","themeId":"cli","subcategory":"工具库","source":"category","confidence":"high","rawCategory":"CLI"}
 {"slug":"luxon","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端工具库","source":"category","confidence":"high","rawCategory":"后端 API"}
@@ -1381,6 +1388,7 @@
 {"slug":"mysql","area":"projects","theme":"数据库","themeId":"databases","subcategory":"数据库","source":"category","confidence":"high","rawCategory":"数据库"}
 {"slug":"nanobrowser","area":"projects","theme":"机器学习","themeId":"machine-learning","subcategory":"AI agent","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"nanostores","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"projects / 前端","source":"category","confidence":"high","rawCategory":"后端 API"}
+{"slug":"nativescript","area":"projects","theme":"后端 API","themeId":"backend-api","subcategory":"移动端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"nats-server","area":"projects","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"nats","area":"projects","theme":"分布式系统","themeId":"distributed-systems","subcategory":"消息队列","source":"category","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"ncdu","area":"projects","theme":"CLI","themeId":"cli","subcategory":"命令行工具","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}

@@ -155,6 +155,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atom]] —— Atom — 已归档的 Web 编辑器先驱
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[emacs]] —— GNU Emacs — Lisp 自文档编辑器
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板

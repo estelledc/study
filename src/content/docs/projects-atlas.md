@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 816 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 820 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：816 个
-- **已分类**：816
+- **总数**：820 个
+- **已分类**：820
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 10 |
+| [操作系统](#操作系统) | 11 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 182 |
+| [后端 API](#后端-api) | 183 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 8 |
+| [图形学](#图形学) | 9 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 112 |
+| [CLI](#cli) | 113 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,12 +168,13 @@ sidebar:
 
 ## 操作系统
 
-共 10 个。
+共 11 个。
 
 ### 嵌入式
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [Arduino CLI — 命令行驱动嵌入式全流程工具链](/study/projects/arduino-cli/) | ✅ v3 |  |
 | [Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像](/study/projects/buildroot/) | ✅ v3 |  |
 | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
@@ -374,7 +375,7 @@ sidebar:
 
 ## 后端 API
 
-共 182 个。
+共 183 个。
 
 ### 前端
 
@@ -421,6 +422,7 @@ sidebar:
 | [Cordova — 用 HTML/JS 写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
+| [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 
 ### Meta 框架
@@ -706,7 +708,7 @@ sidebar:
 
 ## 图形学
 
-共 8 个。
+共 9 个。
 
 ### 渲染与图形
 
@@ -714,6 +716,7 @@ sidebar:
 |---|:---:|---|
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
+| [LÖVE — 五分钟让 Lua 游戏跑起来的 2D 框架](/study/projects/love2d/) | ✅ v3 |  |
 | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
 | [Panda3D — Disney/CMU 出品的开源 3D 游戏引擎](/study/projects/panda3d/) | ✅ v3 |  |
@@ -857,12 +860,13 @@ sidebar:
 
 ## CLI
 
-共 112 个。
+共 113 个。
 
 ### 编辑器与 IDE
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 |  |
 | [GNU Emacs — Lisp 自文档编辑器](/study/projects/emacs/) | ✅ v3 |  |
 | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 |  |
 | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | ✅ v3 |  |
@@ -1109,7 +1113,7 @@ sidebar:
 
 ---
 
-## 全部 816 个（字母序）
+## 全部 820 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1147,6 +1151,7 @@ sidebar:
 | `arangodb` | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | ✅ v3 | 区块链 | 链与合约 |
 | `ardour` | [Ardour — 专业级 DAW](/study/projects/ardour/) | ✅ v3 | 通信 | 音视频媒体 |
+| `arduino-cli` | [Arduino CLI — 命令行驱动嵌入式全流程工具链](/study/projects/arduino-cli/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | ✅ v3 | 区块链 | 链与合约 |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) | ✅ v3 | 基础设施 | DevOps 与运维 |
@@ -1161,6 +1166,7 @@ sidebar:
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | ✅ v3 | 通信 | 实时通信 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | 🗄 存量 | 后端 API | UI 框架 / 静态站点 |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | ✅ v3 | 后端 API | Web 后端 |
+| `atom` | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `aubio` | [aubio — 实时音频事件检测库](/study/projects/aubio/) | ✅ v3 | 通信 | 音视频媒体 |
 | `audacity` | [Audacity — 开源音频编辑器](/study/projects/audacity/) | ✅ v3 | 通信 | 音视频媒体 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | ✅ v3 | 后端 API | projects |
@@ -1509,6 +1515,7 @@ sidebar:
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | ⭐ Season | 数据可视化 | 动画 |
+| `love2d` | [LÖVE — 五分钟让 Lua 游戏跑起来的 2D 框架](/study/projects/love2d/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | ✅ v3 | CLI | 命令行工具 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | ✅ v3 | CLI | 工具库 |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | ✅ v3 | 后端 API | projects / 前端工具库 |
@@ -1568,6 +1575,7 @@ sidebar:
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) | ✅ v3 | 数据库 | 存储与查询 |
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | ✅ v3 | 机器学习 | AI agent |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | ✅ v3 | 后端 API | projects / 前端 |
+| `nativescript` | [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 | 后端 API | 移动端 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | ✅ v3 | 分布式系统 | 消息队列 |
 | `nats-server` | [NATS Server — 极简云原生消息中间件](/study/projects/nats-server/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | ✅ v3 | CLI | 命令行工具 |

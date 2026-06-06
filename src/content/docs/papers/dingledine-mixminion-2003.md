@@ -171,10 +171,5 @@ def pool_fire(pool: list, threshold: int = 10, fraction: float = 0.6) -> list:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!--
-相关论文还未写入 written.txt，待后续补充：
-- mixmaster-cottrell-1994：Type II 重邮件协议，Mixminion 的直接前代
-- babel-gulcu-tsudik-1996：最早引入 reply block 的 mix-net 方案
-- loopix-2017：将 Mixminion 批处理思路现代化的继承者
-- sphinx-danezis-2009：定义了紧凑可证安全的 mix 包格式
--->
+（暂无反向链接）
+

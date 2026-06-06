@@ -172,6 +172,7 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
 - [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
+- [[freedman-psi-2004]] —— Freedman-Nissim-Pinkas PSI 2004 — 两个人怎么找共同好友而不暴露各自通讯录
 - [[gmw-mental-game-1987]] —— GMW 1987 — 任何函数都能让多方安全地一起算
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[turing-1936]] —— Turing 1936 可计算性

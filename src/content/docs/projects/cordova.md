@@ -200,6 +200,7 @@ public class MainActivity extends CordovaActivity {
 - [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
+- [[nativescript]] —— NativeScript — JS/TS 直接调原生 API，无 WebView
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[webpack]] —— webpack 模块打包
