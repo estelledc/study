@@ -181,6 +181,3 @@ adb shell ps -Z | grep com.example.myapp
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[capsicum-2010]] —— Capsicum: Practical Capabilities for UNIX
-
