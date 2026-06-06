@@ -264,6 +264,7 @@ app.whenReady().then(() => {
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
+- [[nodegui]] —— NodeGUI — Qt6 驱动的零 WebView 桌面框架
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react]] —— React UI 组件库
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App

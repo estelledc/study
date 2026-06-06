@@ -199,6 +199,7 @@ parentPort.postMessage(hash);
 
 - [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
+- [[nodegui]] —— NodeGUI — Qt6 驱动的零 WebView 桌面框架
 - [[volta]] —— Volta — cd 进项目就自动换 Node 版本的工具链管理器
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

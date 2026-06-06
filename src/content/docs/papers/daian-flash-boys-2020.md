@@ -163,5 +163,5 @@ def pure_arb(dex_a_price, dex_b_price, amount):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[move-language]] —— Move — 资源型智能合约语言
 

@@ -170,6 +170,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[jq]] —— jq — JSON 的 sed/awk
 - [[lf]] —— lf — 终端里像 vim 一样翻文件
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
+- [[lunarvim]] —— LunarVim — 一体化 Neovim IDE 层
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
 - [[neovim]] —— Neovim — Lua 可扩展 vim 现代分叉

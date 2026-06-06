@@ -169,5 +169,9 @@ doom doctor      # 检查 node/python/pyright 是否在 PATH
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[emacs]] —— GNU Emacs — Lisp 自文档编辑器
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs
+- [[vim]] —— Vim — 模态编辑器之父
 

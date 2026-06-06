@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 840 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 844 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：840 个
-- **已分类**：840
+- **总数**：844 个
+- **已分类**：844
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 16 |
+| [操作系统](#操作系统) | 17 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 188 |
+| [后端 API](#后端-api) | 189 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 14 |
+| [图形学](#图形学) | 15 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 118 |
+| [CLI](#cli) | 119 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 16 个。
+共 17 个。
 
 ### 嵌入式
 
@@ -188,6 +188,7 @@ sidebar:
 | [PlatformIO Core — 一套命令行，统管千块嵌入式开发板](/study/projects/platformio-core/) | ✅ v3 |  |
 | [probe-rs — Rust 写的嵌入式烧录与调试工具](/study/projects/probe-rs/) | ✅ v3 |  |
 | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | ✅ v3 |  |
+| [smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈](/study/projects/smoltcp/) | ✅ v3 |  |
 | [Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统](/study/projects/yocto-poky/) | ✅ v3 |  |
 | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | ✅ v3 |  |
 
@@ -380,7 +381,7 @@ sidebar:
 
 ## 后端 API
 
-共 188 个。
+共 189 个。
 
 ### 前端
 
@@ -430,6 +431,7 @@ sidebar:
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 |  |
+| [NodeGUI — Qt6 驱动的零 WebView 桌面框架](/study/projects/nodegui/) | ✅ v3 |  |
 | [Quasar — 一套 Vue 代码，七种平台产物](/study/projects/quasar/) | ✅ v3 |  |
 | [React Native — 用 React 写、编译成真正的原生 App](/study/projects/react-native/) | ✅ v3 |  |
 | [Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用](/study/projects/tauri/) | ✅ v3 |  |
@@ -718,12 +720,13 @@ sidebar:
 
 ## 图形学
 
-共 14 个。
+共 15 个。
 
 ### 渲染与图形
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [Babylon.js — 微软开源的企业级 Web 3D 引擎](/study/projects/babylonjs/) | ✅ v3 |  |
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
 | [Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包](/study/projects/defold/) | ✅ v3 |  |
@@ -875,7 +878,7 @@ sidebar:
 
 ## CLI
 
-共 118 个。
+共 119 个。
 
 ### 编辑器与 IDE
 
@@ -889,6 +892,7 @@ sidebar:
 | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | ✅ v3 |  |
 | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) | ✅ v3 |  |
 | [Lite XL — 用 Lua 驱动一切的极简文本编辑器](/study/projects/lite-xl/) | ✅ v3 |  |
+| [LunarVim — 一体化 Neovim IDE 层](/study/projects/lunarvim/) | ✅ v3 |  |
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
 | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | ✅ v3 |  |
 | [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 |  |
@@ -1133,7 +1137,7 @@ sidebar:
 
 ---
 
-## 全部 840 个（字母序）
+## 全部 844 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1198,6 +1202,7 @@ sidebar:
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | ✅ v3 | 后端 API | projects |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 🗄 存量 | 后端 API | Web 后端 |
+| `babylonjs` | [Babylon.js — 微软开源的企业级 Web 3D 引擎](/study/projects/babylonjs/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `backstage` | [Backstage — 把公司散在各处的开发工具拼成一个门户](/study/projects/backstage/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `badger` | [Badger — Go 写的键值分离 LSM](/study/projects/badger/) | ✅ v3 | 数据库 | 存储与查询 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | ✅ v3 | 区块链 | 链与合约 |
@@ -1546,6 +1551,7 @@ sidebar:
 | `love2d` | [LÖVE — Lua 2D 游戏框架](/study/projects/love2d/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | ✅ v3 | CLI | 命令行工具 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | ✅ v3 | CLI | 工具库 |
+| `lunarvim` | [LunarVim — 一体化 Neovim IDE 层](/study/projects/lunarvim/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | ✅ v3 | 后端 API | projects / 前端工具库 |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) | ✅ v3 | 数据库 | 存储与查询 |
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | ✅ v3 | CLI | 命令行工具 |
@@ -1624,6 +1630,7 @@ sidebar:
 | `nix` | [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | ✅ v3 | CLI | 命令行工具 |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | ✅ v3 | CLI | 命令行工具 |
 | `node-js` | [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) | ✅ v3 | 编译器 | 语言运行时 |
+| `nodegui` | [NodeGUI — Qt6 驱动的零 WebView 桌面框架](/study/projects/nodegui/) | ✅ v3 | 后端 API | 移动端 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | ✅ v3 | 通信 | 实时通信 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | ✅ v3 | 基础设施 | DevOps / 编排 |
 | `notepad-plus-plus` | [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 | CLI | 编辑器与 IDE |
@@ -1807,6 +1814,7 @@ sidebar:
 | `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) | 🗄 存量 | 基础设施 | DevOps 与运维 |
 | `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) | ✅ v3 | 数据库 | 存储与查询 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | ✅ v3 | 后端 API | Web 后端 |
+| `smoltcp` | [smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈](/study/projects/smoltcp/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) | ✅ v3 | 区块链 | 链与合约 |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) | ✅ v3 | 后端 API | Web 后端 |
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) | ✅ v3 | 后端 API | Web 后端 |

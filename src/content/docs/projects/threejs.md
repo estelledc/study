@@ -231,5 +231,11 @@ export function dispose() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[babylonjs]] —— Babylon.js — 微软开源的企业级 Web 3D 引擎
+- [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[blinn-1977]] —— Blinn 1977 — 用半角向量 H 把高光算量减半
+- [[catmull-1974-zbuffer]] —— Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
+- [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
+- [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 

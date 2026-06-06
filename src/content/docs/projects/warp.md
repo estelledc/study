@@ -175,6 +175,7 @@ let ws = warp::path("ws")
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
+- [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
 - [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell

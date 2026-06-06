@@ -164,5 +164,11 @@ probe-rs 实现了 Microsoft DAP，VS Code 安装对应扩展后，`.vscode/laun
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
+- [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
+- [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
+- [[embedded-hal]] —— embedded-hal — 让同一份驱动代码跑在任意芯片上
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

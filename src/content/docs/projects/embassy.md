@@ -191,6 +191,7 @@ async fn main(_spawner: embassy_executor::Spawner) {
 - [[embedded-hal]] —— embedded-hal — 让同一份驱动代码跑在任意芯片上
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
+- [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

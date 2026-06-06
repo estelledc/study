@@ -209,5 +209,6 @@ let mut sdcard  = SdCard::new(sdcard_spi, delay);
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
+- [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
 - [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 

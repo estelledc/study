@@ -166,6 +166,7 @@ broker_client.publish(
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[websocket-rfc-6455]] —— WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话
 

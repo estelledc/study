@@ -199,6 +199,7 @@ function Greeting({ name }) {
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
+- [[nodegui]] —— NodeGUI — Qt6 驱动的零 WebView 桌面框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[penpot]] —— Penpot — 开源自托管的 Figma 替代

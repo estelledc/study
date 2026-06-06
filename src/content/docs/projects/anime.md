@@ -167,6 +167,7 @@ io.observe(document.querySelector('.hero-title'))
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[babylonjs]] —— Babylon.js — 微软开源的企业级 Web 3D 引擎
 - [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[framer-motion]] —— Framer Motion — React 声明式动画
