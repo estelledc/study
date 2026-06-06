@@ -154,19 +154,24 @@ nix run nixpkgs#jq -- '.name' package.json
 - [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
 - [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
 - [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
-- [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 - [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[doom-emacs]] —— Doom Emacs — 极简风 Emacs 配置框架
 - [[earthly]] —— Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[fish-shell]] —— fish-shell — 友好交互式命令行 Shell
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
 - [[just]] —— just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
+- [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
 - [[mise]] —— mise — 一条命令切换项目用的 Node/Python/Go 版本
+- [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置框架
 - [[scoop]] —— Scoop — Windows 上的 Homebrew 风格命令行包管理器
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[yocto-poky]] —— Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

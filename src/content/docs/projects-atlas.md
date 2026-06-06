@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 849 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 853 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：849 个
-- **已分类**：849
+- **总数**：853 个
+- **已分类**：853
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 18 |
+| [操作系统](#操作系统) | 19 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 190 |
+| [后端 API](#后端-api) | 191 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 16 |
+| [图形学](#图形学) | 17 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 120 |
+| [CLI](#cli) | 121 |
 | [编译器](#编译器) | 13 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 18 个。
+共 19 个。
 
 ### 嵌入式
 
@@ -183,6 +183,7 @@ sidebar:
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
 | [Janus WebRTC Gateway](/study/projects/janus-gateway/) | ✅ v3 | C 语言 WebRTC 网关，插件架构支持 SFU/录制/流转推 |
 | [lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈](/study/projects/lwip/) | ✅ v3 |  |
+| [Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库](/study/projects/mbedtls/) | ✅ v3 |  |
 | [MicroPython — 在 MCU 上跑 Python 3 的精简实现](/study/projects/micropython/) | ✅ v3 |  |
 | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 |  |
 | [OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版](/study/projects/openwrt/) | ✅ v3 |  |
@@ -382,7 +383,7 @@ sidebar:
 
 ## 后端 API
 
-共 190 个。
+共 191 个。
 
 ### 前端
 
@@ -428,6 +429,7 @@ sidebar:
 | [Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用](/study/projects/capacitor/) | ✅ v3 |  |
 | [Cordova — 用 HTML/JS 写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
 | [Electron — Chromium + Node.js 跨平台桌面应用框架](/study/projects/electron/) | ✅ v3 |  |
+| [electron-builder — 一条命令把 Electron 应用打包发布到全平台](/study/projects/electron-builder/) | ✅ v3 |  |
 | [Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新](/study/projects/expo/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
@@ -722,7 +724,7 @@ sidebar:
 
 ## 图形学
 
-共 16 个。
+共 17 个。
 
 ### 渲染与图形
 
@@ -732,6 +734,7 @@ sidebar:
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
 | [Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包](/study/projects/defold/) | ✅ v3 |  |
+| [Filament — Google 跨平台 PBR 渲染引擎](/study/projects/filament/) | ✅ v3 |  |
 | [Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎](/study/projects/heaps/) | ✅ v3 |  |
 | [LÖVE — Lua 2D 游戏框架](/study/projects/love2d/) | ✅ v3 |  |
 | [melonJS — 轻量 JS 2D 引擎](/study/projects/melonjs/) | ✅ v3 |  |
@@ -881,7 +884,7 @@ sidebar:
 
 ## CLI
 
-共 120 个。
+共 121 个。
 
 ### 编辑器与 IDE
 
@@ -900,6 +903,7 @@ sidebar:
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
 | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | ✅ v3 |  |
 | [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 |  |
+| [NvChad — 极致美观的 Neovim 配置框架](/study/projects/nvchad/) | ✅ v3 |  |
 | [Spacemacs — Space 键统一 Vim 与 Emacs](/study/projects/spacemacs/) | ✅ v3 |  |
 | [TextMate — macOS 经典编辑器，语法格式影响了所有人](/study/projects/textmate/) | ✅ v3 |  |
 | [Vim — 模态编辑器之父](/study/projects/vim/) | ✅ v3 |  |
@@ -1142,7 +1146,7 @@ sidebar:
 
 ---
 
-## 全部 849 个（字母序）
+## 全部 853 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1353,6 +1357,7 @@ sidebar:
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) | ✅ v3 | 通信 | 实时通信 |
 | `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | ✅ v3 | 数据库 | 存储与查询 |
 | `electron` | [Electron — Chromium + Node.js 跨平台桌面应用框架](/study/projects/electron/) | ✅ v3 | 后端 API | 移动端 |
+| `electron-builder` | [electron-builder — 一条命令把 Electron 应用打包发布到全平台](/study/projects/electron-builder/) | ✅ v3 | 后端 API | 移动端 |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | ✅ v3 | 通信 | 实时通信 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | ✅ v3 | 通信 | 实时通信 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | ✅ v3 | 后端 API | web 框架 |
@@ -1387,6 +1392,7 @@ sidebar:
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ffmpeg` | [FFmpeg — 多媒体转码与封装瑞士军刀](/study/projects/ffmpeg/) | ✅ v3 | 通信 | 音视频媒体 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | ✅ v3 | 后端 API | Web 后端 |
+| `filament` | [Filament — Google 跨平台 PBR 渲染引擎](/study/projects/filament/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | ✅ v3 | 区块链 | 链与合约 |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | ✅ v3 | CLI | 命令行工具 |
 | `fish-shell` | [fish-shell — 友好交互式命令行 Shell](/study/projects/fish-shell/) | ✅ v3 | CLI | Shell |
@@ -1575,6 +1581,7 @@ sidebar:
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) | ✅ v3 | 通信 | 实时通信 |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | ✅ v3 | 通信 | 实时通信 |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | ✅ v3 | 通信 | 实时通信 |
+| `mbedtls` | [Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库](/study/projects/mbedtls/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | ✅ v3 | 机器学习 | 智能体与 LLM |
 | `mediapipe` | [MediaPipe — Google ML 多模态流水线](/study/projects/mediapipe/) | ✅ v3 | 通信 | 音视频媒体 |
 | `mediasoup` | [mediasoup — WebRTC 选择性转发 SFU](/study/projects/mediasoup/) | ✅ v3 | 通信 | 音视频媒体 |
@@ -1648,6 +1655,7 @@ sidebar:
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | ✅ v3 | CLI | 命令行工具 |
 | `nuttx` | [Apache NuttX — POSIX 接近完整的小型实时操作系统](/study/projects/nuttx/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | ✅ v3 | 后端 API | Meta 框架 |
+| `nvchad` | [NvChad — 极致美观的 Neovim 配置框架](/study/projects/nvchad/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) | ✅ v3 | 基础设施 | DevOps |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | ✅ v3 | 基础设施 | infrastructure |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | ✅ v3 | CLI | 命令行工具 |

@@ -211,5 +211,6 @@ saliency_adv = get_saliency(model, F.cross_entropy, img_adv, label_adv)
 - [[attention]] —— Attention Is All You Need
 - [[batchnorm-2015]] —— Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14
 - [[dropout-2014]] —— Dropout — 训练时随机关掉一半神经元，反而学得更好
+- [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御
 - [[resnet]] —— ResNet — 残差连接
 

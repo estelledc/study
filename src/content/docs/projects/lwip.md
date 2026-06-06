@@ -205,6 +205,7 @@ void tcp_echo_init(void) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库
 - [[mptcp-2012]] —— MPTCP 2012 — 把一根 TCP 管道变成多条并行水管
 - [[smoltcp]] —— smoltcp — 不依赖操作系统的 Rust TCP/IP 协议栈
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流

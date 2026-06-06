@@ -99,6 +99,7 @@ npx electron-builder
 **第二步**：在主进程里接入 `electron-updater`：
 
 ```js
+const { app } = require('electron')
 const { autoUpdater } = require('electron-updater')
 
 app.on('ready', () => {
@@ -179,7 +180,7 @@ jobs:
 - **2015 年**：`electron-packager` 出现，解决了"把应用资源打进一个目录"的问题，但签名、更新、多格式 installer 全靠手工。
 - **2015 年**：develar（Vladislav Yudintsev）发起 electron-builder，目标是「一行命令，全平台发布」。
 - **2016 年**：1.0 正式版发布，加入内置 `electron-updater`，配合 GitHub Releases 实现了开箱即用的自动更新——这一功能让它迅速取代 electron-packager 成为社区首选。
-- **2017 年至今**：VS Code、Slack、Discord、WhatsApp Desktop 等主流 Electron 应用陆续使用或参考了 electron-builder 的打包方案；项目在 GitHub 积累超过 14k Stars，npm 月下载量长期超千万。
+- **2017 年至今**：Slack、Discord、WhatsApp Desktop 等主流 Electron 应用直接采用 electron-builder 作为发布流水线；项目在 GitHub 积累超过 14k Stars，npm 月下载量长期超千万。（VS Code 使用自研构建脚本而非 electron-builder，但两者在架构上有相似之处。）
 
 ## 学到什么
 
@@ -209,3 +210,6 @@ jobs:
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

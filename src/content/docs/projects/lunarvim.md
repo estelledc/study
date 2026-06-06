@@ -162,6 +162,7 @@ Telescope 是 LunarVim 内置的模糊查找器，底层调用 ripgrep：
 - [[fzf]] —— fzf — 命令行模糊查找
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置框架
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[vim]] —— Vim — 模态编辑器之父
 

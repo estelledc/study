@@ -169,4 +169,5 @@ Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[vega]] —— Vega — 整张图就是一棵 JSON
 - [[vis-network]] —— vis-network — barnesHut 物理引擎驱动的网络图
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

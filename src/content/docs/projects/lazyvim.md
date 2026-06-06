@@ -164,6 +164,9 @@ require("lazy").setup({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[lunarvim]] —— LunarVim — 一体化 Neovim IDE 层
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置框架
 - [[vim]] —— Vim — 模态编辑器之父
 

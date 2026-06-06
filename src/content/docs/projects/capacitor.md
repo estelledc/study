@@ -215,6 +215,7 @@ async function checkUpdate(currentVersion: string) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
+- [[electron-builder]] —— electron-builder — 一条命令把 Electron 应用打包发布到全平台
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物

@@ -171,6 +171,7 @@ doom doctor      # 检查 node/python/pyright 是否在 PATH
 
 - [[emacs]] —— GNU Emacs — Lisp 自文档编辑器
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置框架
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs
 - [[vim]] —— Vim — 模态编辑器之父

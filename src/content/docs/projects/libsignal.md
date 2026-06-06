@@ -160,6 +160,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 - [[lipp-meltdown-2018]] —— Meltdown — 乱序执行偷读内核内存
 - [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿
 - [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
 - [[ngabonziza-trustzone-2016]] —— TrustZone — ARM 给 CPU 装上"双重人格"隔离安全世界

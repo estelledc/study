@@ -162,6 +162,7 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
+- [[filament]] —— Filament — Google 跨平台 PBR 渲染引擎
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库

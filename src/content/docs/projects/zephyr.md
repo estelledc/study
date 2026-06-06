@@ -161,6 +161,7 @@ west flash                               # 烧录
 - [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统

@@ -204,6 +204,7 @@ setInterval(async () => {
 - [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[filament]] —— Filament — Google 跨平台 PBR 渲染引擎
 - [[playcanvas]] —— PlayCanvas — 浏览器里跑的 3D 游戏引擎
 - [[threejs]] —— three.js — Web 3D 事实标准
 
