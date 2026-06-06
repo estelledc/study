@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 936 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 940 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：936 篇
-- **已分类**：936
+- **总数**：940 篇
+- **已分类**：940
 
 ### 按一级主题分布
 
@@ -35,7 +35,7 @@ sidebar:
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
-| [安全与隐私](#安全与隐私) | 42 |
+| [安全与隐私](#安全与隐私) | 46 |
 | [其他](#其他) | 13 |
 
 ---
@@ -1211,7 +1211,7 @@ sidebar:
 
 ## 安全与隐私
 
-共 42 篇。
+共 46 篇。
 
 ### 安全与隐私
 
@@ -1243,9 +1243,11 @@ sidebar:
 | [PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge](/study/papers/gabizon-plonk-2019/) | ✅ v3 |  |
 | [Gentry FHE — 全同态加密开山](/study/papers/gentry-fhe-2009/) | ✅ v3 |  |
 | [GMW 1987 — 任何函数都能让多方安全地一起算](/study/papers/gmw-mental-game-1987/) | ✅ v3 |  |
+| [FGSM — 对抗样本的快速生成与线性假设](/study/papers/goodfellow-fgsm-2014/) | ✅ v3 |  |
 | [联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题](/study/papers/kairouz-advances-fl-2019/) | ✅ v3 |  |
 | [t-Closeness — 用"分布距离"堵住匿名化的最后漏洞](/study/papers/li-t-closeness-2007/) | ✅ v3 |  |
 | [l-多样性 — k-匿名之后的隐私保护](/study/papers/machanavajjhala-l-diversity-2007/) | ✅ v3 |  |
+| [Madry PGD 2017 — 用最强对手训练最强防御](/study/papers/madry-pgd-2017/) | ✅ v3 |  |
 | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 |  |
 | [Rényi 差分隐私 — 隐私会计统一框架](/study/papers/mironov-renyi-dp-2017/) | ✅ v3 |  |
 | [Dynamic Taint Analysis for Automatic Detection, Analysis, and Signature Generation of Exploits on Commodity Software](/study/papers/newsome-taintcheck-2005/) | ✅ v3 |  |
@@ -1253,7 +1255,9 @@ sidebar:
 | [Rabin 遗忘传输 — 发送方永远不知道你收到了什么](/study/papers/rabin-ot-1981/) | ✅ v3 |  |
 | [洋葱路由 1998 — 把匿名通信从理论搬进真实互联网](/study/papers/reed-onion-routing-1998/) | ✅ v3 |  |
 | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 |  |
+| [MIA 成员推断攻击 — 黑盒 API 能猜出你是不是训练数据](/study/papers/shokri-mia-2017/) | ✅ v3 |  |
 | [k-匿名 — 发布数据时让攻击者无法锁定你是谁](/study/papers/sweeney-k-anonymity-2002/) | ✅ v3 |  |
+| [Szegedy 对抗样本 2013 — 一张图片骗过神经网络的开山之作](/study/papers/szegedy-adversarial-2013/) | ✅ v3 |  |
 | [Yao 混淆电路 — 让两人合算函数却互不泄密](/study/papers/yao-garbled-circuits-1986/) | ✅ v3 |  |
 
 ### 密码学
@@ -1294,7 +1298,7 @@ sidebar:
 
 ---
 
-## 全部 936 篇（字母序）
+## 全部 940 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1638,6 +1642,7 @@ sidebar:
 | `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | ✅ v3 | 形式化方法 | 数学逻辑 / 计算理论 |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `goodfellow-fgsm-2014` | [FGSM — 对抗样本的快速生成与线性假设](/study/papers/goodfellow-fgsm-2014/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) | ✅ v3 | 图形学 | 渲染与图形 |
@@ -1805,6 +1810,7 @@ sidebar:
 | `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `machanavajjhala-l-diversity-2007` | [l-多样性 — k-匿名之后的隐私保护](/study/papers/machanavajjhala-l-diversity-2007/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `madry-pgd-2017` | [Madry PGD 2017 — 用最强对手训练最强防御](/study/papers/madry-pgd-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 🗄 存量 | 机器学习 | 计算机视觉 / 自监督 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -2046,6 +2052,7 @@ sidebar:
 | `sharegpt4video-2024` | [ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成](/study/papers/sharegpt4video-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) | ✅ v3 | 基础设施 | infrastructure |
 | `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
+| `shokri-mia-2017` | [MIA 成员推断攻击 — 黑盒 API 能猜出你是不是训练数据](/study/papers/shokri-mia-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `siglip-2023` | [SigLIP — 用 Sigmoid 损失训练图文对齐](/study/papers/siglip-2023/) | ✅ v3 | 机器学习 | 多模态 LLM |
 | `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | ✅ v3 | 其他 | 软件工程 |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -2108,6 +2115,7 @@ sidebar:
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | ✅ v3 | 数据库 | 存储与查询 |
+| `szegedy-adversarial-2013` | [Szegedy 对抗样本 2013 — 一张图片骗过神经网络的开山之作](/study/papers/szegedy-adversarial-2013/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | ✅ v3 | NLP | NLP |
 | `ta-stvg-2025` | [TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位](/study/papers/ta-stvg-2025/) | ✅ v3 | 机器学习 | 视频理解 |

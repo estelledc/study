@@ -156,6 +156,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
 - [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿
+- [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[mumble]] —— Mumble — 游戏圈用了 20 年的低延迟开源语音
 - [[piotrowska-loopix-2017]] —— Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名

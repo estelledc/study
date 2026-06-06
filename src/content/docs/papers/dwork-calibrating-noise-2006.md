@@ -157,5 +157,6 @@ print(int(true_count + noise))
 - [[machanavajjhala-l-diversity-2007]] —— l-多样性 — k-匿名之后的隐私保护
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
+- [[shokri-mia-2017]] —— MIA 成员推断攻击 — 黑盒 API 能猜出你是不是训练数据
 - [[sweeney-k-anonymity-2002]] —— k-匿名 — 发布数据时让攻击者无法锁定你是谁
 

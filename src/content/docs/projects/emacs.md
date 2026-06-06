@@ -194,5 +194,6 @@ chmod +x rename-prefix.el
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[textmate]] —— TextMate — macOS 经典编辑器与语法定义的缔造者
 - [[vim]] —— Vim — 模态编辑器之父
 

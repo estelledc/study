@@ -203,7 +203,6 @@ end
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[debevec-1998-rendering-with-natural-light]] —— Debevec 1998 — 用真实世界的光照亮 CG 物体
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 

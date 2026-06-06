@@ -161,10 +161,12 @@ export default function Layout({ children }) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[islands-architecture]] —— Islands Architecture — 静态页面里只让需要交互的小块加载 JS
 - [[next-intl]] —— next-intl — Next.js 专用的多语言开关
 - [[nivo]] —— nivo — React + d3 组件化图表
+- [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 

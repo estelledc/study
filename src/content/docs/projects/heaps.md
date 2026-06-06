@@ -3,7 +3,7 @@ title: Heaps — Haxe 跨平台游戏引擎
 来源: 'https://github.com/HeapsIO/heaps'
 日期: 2026-06-06
 分类: 图形学
-子分类: 游戏引擎
+子分类: 渲染与图形
 难度: 中级
 ---
 
@@ -193,3 +193,6 @@ sprite.addShader(shader);
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

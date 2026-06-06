@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 824 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 828 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：824 个
-- **已分类**：824
+- **总数**：828 个
+- **已分类**：828
 
 ### 按一级主题分布
 
@@ -20,15 +20,15 @@ sidebar:
 |---|---:|
 | [分布式系统](#分布式系统) | 5 |
 | [数据库](#数据库) | 94 |
-| [操作系统](#操作系统) | 12 |
+| [操作系统](#操作系统) | 13 |
 | [机器学习](#机器学习) | 94 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 184 |
+| [后端 API](#后端-api) | 185 |
 | [基础设施](#基础设施) | 72 |
-| [图形学](#图形学) | 10 |
+| [图形学](#图形学) | 11 |
 | [通信](#通信) | 100 |
 | [Agent](#agent) | 1 |
-| [CLI](#cli) | 114 |
+| [CLI](#cli) | 115 |
 | [编译器](#编译器) | 12 |
 | [数据可视化](#数据可视化) | 66 |
 
@@ -168,7 +168,7 @@ sidebar:
 
 ## 操作系统
 
-共 12 个。
+共 13 个。
 
 ### 嵌入式
 
@@ -176,6 +176,7 @@ sidebar:
 |---|:---:|---|
 | [Arduino CLI — 命令行驱动嵌入式全流程工具链](/study/projects/arduino-cli/) | ✅ v3 |  |
 | [Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像](/study/projects/buildroot/) | ✅ v3 |  |
+| [CircuitPython — 保存即重载的微控制器 Python 运行时](/study/projects/circuitpython/) | ✅ v3 |  |
 | [Embassy — 嵌入式 Rust 的 async/await 运行时](/study/projects/embassy/) | ✅ v3 |  |
 | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | ✅ v3 |  |
 | [GStreamer — 流水线式多媒体框架](/study/projects/gstreamer/) | ✅ v3 | element/pad/caps 模型 |
@@ -376,7 +377,7 @@ sidebar:
 
 ## 后端 API
 
-共 184 个。
+共 185 个。
 
 ### 前端
 
@@ -421,6 +422,7 @@ sidebar:
 |---|:---:|---|
 | [Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用](/study/projects/capacitor/) | ✅ v3 |  |
 | [Cordova — 用 HTML/JS 写手机 App 的 WebView 桥](/study/projects/cordova/) | ✅ v3 |  |
+| [Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新](/study/projects/expo/) | ✅ v3 |  |
 | [Flutter — Google 自绘像素的跨平台 UI 框架](/study/projects/flutter/) | ✅ v3 |  |
 | [Ionic Framework — 用 Web 技术打包原生移动 App](/study/projects/ionic-framework/) | ✅ v3 |  |
 | [NativeScript — JS/TS 直接调原生 API，无 WebView](/study/projects/nativescript/) | ✅ v3 |  |
@@ -710,7 +712,7 @@ sidebar:
 
 ## 图形学
 
-共 10 个。
+共 11 个。
 
 ### 渲染与图形
 
@@ -719,6 +721,7 @@ sidebar:
 | [Bevy — Rust 数据驱动 ECS 游戏引擎](/study/projects/bevy/) | ✅ v3 |  |
 | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | ✅ v3 |  |
 | [Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包](/study/projects/defold/) | ✅ v3 |  |
+| [Heaps — Haxe 跨平台游戏引擎](/study/projects/heaps/) | ✅ v3 |  |
 | [LÖVE — Lua 2D 游戏框架](/study/projects/love2d/) | ✅ v3 |  |
 | [Luanti / Minetest — 给自己造一个开源体素游戏引擎](/study/projects/minetest/) | ✅ v3 |  |
 | [OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写](/study/projects/openrct2/) | ✅ v3 |  |
@@ -863,7 +866,7 @@ sidebar:
 
 ## CLI
 
-共 114 个。
+共 115 个。
 
 ### 编辑器与 IDE
 
@@ -878,6 +881,7 @@ sidebar:
 | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | ✅ v3 |  |
 | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) | ✅ v3 |  |
 | [Notepad++ — Windows 国民文本编辑器](/study/projects/notepad-plus-plus/) | ✅ v3 |  |
+| [TextMate — macOS 经典编辑器与语法定义的缔造者](/study/projects/textmate/) | ✅ v3 |  |
 | [Vim — 模态编辑器之父](/study/projects/vim/) | ✅ v3 |  |
 | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | ✅ v3 |  |
 | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | ✅ v3 |  |
@@ -1117,7 +1121,7 @@ sidebar:
 
 ---
 
-## 全部 824 个（字母序）
+## 全部 828 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1235,6 +1239,7 @@ sidebar:
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | ✅ v3 | 后端 API | Web 后端 |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | ✅ v3 | 数据库 | 数据库 / 向量 |
 | `cilium` | [Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来](/study/projects/cilium/) | ✅ v3 | 基础设施 | DevOps 与运维 |
+| `circuitpython` | [CircuitPython — 保存即重载的微控制器 Python 运行时](/study/projects/circuitpython/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `clack` | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | ✅ v3 | 后端 API | projects / Web 框架 |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) | ✅ v3 | 机器学习 | AI 工程 |
 | `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | ✅ v3 | 机器学习 | 智能体与 LLM |
@@ -1341,6 +1346,7 @@ sidebar:
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | ✅ v3 | 区块链 | 链与合约 |
 | `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `excalidraw` | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) | ✅ v3 | 通信 | 协作工具 |
+| `expo` | [Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新](/study/projects/expo/) | ✅ v3 | 后端 API | 移动端 |
 | `express` | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | 🗄 存量 | 后端 API | projects |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | ✅ v3 | CLI | 命令行工具 |
 | `fabric-js` | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) | ✅ v3 | 后端 API | 前端 / Canvas |
@@ -1405,6 +1411,7 @@ sidebar:
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | ✅ v3 | 通信 | 实时通信 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | ✅ v3 | 区块链 | 链与合约 |
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `heaps` | [Heaps — Haxe 跨平台游戏引擎](/study/projects/heaps/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | ✅ v3 | 后端 API | Web 后端 |
 | `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | ✅ v3 | 基础设施 | DevOps 与运维 |
@@ -1836,6 +1843,7 @@ sidebar:
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `testing-library` | [Testing Library — 像用户一样测前端，重构不再挂测试](/study/projects/testing-library/) | ✅ v3 | CLI | 工具库 |
+| `textmate` | [TextMate — macOS 经典编辑器与语法定义的缔造者](/study/projects/textmate/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | ✅ v3 | CLI | 命令行工具 |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | ✅ v3 | CLI | 命令行工具 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | ✅ v3 | 区块链 | 链与合约 |

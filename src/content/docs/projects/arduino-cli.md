@@ -198,5 +198,6 @@ grpcurl -plaintext \
 - [[act]] —— act — 在本地用 Docker 跑 GitHub Actions
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
+- [[circuitpython]] —— CircuitPython — 保存即重载的微控制器 Python 运行时
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 

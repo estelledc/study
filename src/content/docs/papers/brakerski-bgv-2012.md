@@ -165,6 +165,7 @@ ct' = round(q'/q · ct) mod q'
 
 - [[cheon-ckks-2017]] —— Homomorphic Encryption for Arithmetic of Approximate Numbers
 - [[chillotti-tfhe-2016]] —— Faster Fully Homomorphic Encryption: Bootstrapping in Less Than 0.1 Seconds
+- [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名
 - [[fan-vercauteren-bfv-2012]] —— Somewhat Practical Fully Homomorphic Encryption
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography

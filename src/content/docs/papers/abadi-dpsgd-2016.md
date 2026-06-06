@@ -156,9 +156,13 @@ for x, y in loader:
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
+- [[goodfellow-fgsm-2014]] —— FGSM — 对抗样本的快速生成与线性假设
 - [[kairouz-advances-fl-2019]] —— 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
 - [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
+- [[madry-pgd-2017]] —— Madry PGD 2017 — 用最强对手训练最强防御
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架
+- [[shokri-mia-2017]] —— MIA 成员推断攻击 — 黑盒 API 能猜出你是不是训练数据
 - [[sweeney-k-anonymity-2002]] —— k-匿名 — 发布数据时让攻击者无法锁定你是谁
+- [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 2013 — 一张图片骗过神经网络的开山之作
 

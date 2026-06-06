@@ -212,3 +212,6 @@ def diagnose_gradient_masking(model, x, y, epsilon=8/255):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[goodfellow-fgsm-2014]] —— FGSM — 对抗样本的快速生成与线性假设
+
