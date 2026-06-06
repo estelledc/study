@@ -1,5 +1,5 @@
 ---
-title: PlayCanvas — 浏览器里跑得动的 3D 游戏引擎
+title: PlayCanvas — 浏览器里跑的 3D 游戏引擎
 来源: 'https://github.com/playcanvas/engine'
 日期: 2026-06-06
 分类: 图形学
@@ -9,189 +9,207 @@ title: PlayCanvas — 浏览器里跑得动的 3D 游戏引擎
 
 ## 是什么
 
-PlayCanvas 是一个**在浏览器里运行的开源 3D 游戏引擎**，底层用 WebGL2 和 WebGPU 画图，运行时压缩后不到 200KB。日常类比：它就像一台搭载了渲染器、物理引擎和音频系统的"微型游戏机"，但这台游戏机直接住在网页标签页里，用户不需要安装任何客户端。
+PlayCanvas 是一套**在浏览器里跑的完整 3D 游戏引擎**，底层用 WebGL2 / WebGPU 驱动，配套一个云端可视化编辑器。
 
-引擎本身 MIT 许可全部开源，配套的云端可视化编辑器是 freemium 商业产品。这个"OSS 引擎 + 商业编辑器"的分拆模式让开发者可以完全脱离编辑器、用 npm 安装引擎写代码，也可以进浏览器拖拖拽拽搭场景。
+日常类比：把 Unity 塞进一个网页标签页——你能拖拽场景、写脚本、实时预览，最后发布到任意 URL，用户打开链接就能玩，不用装客户端。
 
-三个关键能力让 PlayCanvas 特别适合移动 web：
-
-1. **运行时极小**：相比 Unity WebGL 导出动辄 8-30MB，PlayCanvas 核心 gzip 后 ~200KB，首屏 2 秒内可交互。
-2. **WebGPU 先行**：2023 年率先在生产环境支持完整 WebGPU（含 Compute Shader），同时保持 WebGL2 兼容回退。
-3. **glTF 生态打通**：场景、材质、动画全部用 glTF 2.0 标准格式，Blender 导出直接可用。
+引擎本体极轻量（gzip 后约 450 KB），内置实体-组件（Entity-Component）系统、PBR 渲染、物理引擎（ammo.js）、动画状态机、3D 音效、WebXR 支持。资产采用 glTF 2.0 + Draco 压缩 + Basis 纹理异步流加载，首帧渲染快、内存峰值低，移动端 60fps 可达。
 
 ```js
-import * as pc from 'playcanvas';
+import { Application, Entity, Color, FILLMODE_FILL_WINDOW, RESOLUTION_AUTO } from 'playcanvas';
 
-const app = new pc.Application(canvas);
-app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
-app.start();
+const canvas = document.createElement('canvas');
+document.body.appendChild(canvas);
 
-// 创建一个旋转的红色立方体
-const box = new pc.Entity('box');
-box.addComponent('model', { type: 'box' });
-box.addComponent('script');
-box.script.create('rotator');
+const app = new Application(canvas);
+app.setCanvasFillMode(FILLMODE_FILL_WINDOW);
+app.setCanvasResolution(RESOLUTION_AUTO);
+window.addEventListener('resize', () => app.resizeCanvas());
+
+// 创建旋转方块
+const box = new Entity('cube');
+box.addComponent('render', { type: 'box' });
 app.root.addChild(box);
+
+const camera = new Entity('camera');
+camera.addComponent('camera', { clearColor: new Color(0.1, 0.2, 0.3) });
+camera.setPosition(0, 0, 3);
+app.root.addChild(camera);
+
+const light = new Entity('light');
+light.addComponent('light');
+light.setEulerAngles(45, 0, 0);
+app.root.addChild(light);
+
+app.on('update', dt => box.rotate(10 * dt, 20 * dt, 30 * dt));
+app.start();
 ```
+
+这 30 行就能在浏览器里得到一个旋转的方块，完整 3D 场景、灯光、相机一应俱全。
 
 ## 为什么重要
 
-不理解 PlayCanvas 的架构，下面这些事都没法解释：
+不了解 PlayCanvas，下面这些事很难解释：
 
-- 为什么同一段 3D 场景代码在低端 Android 浏览器里也能跑 60fps，而同等效果的 Three.js 代码卡到 20fps
-- 为什么"网页版产品配置器"能让用户实时切换汽车颜色、材质，视觉效果接近 PhotoShop 合成
-- 为什么在微信小游戏 / 抖音小程序里也能嵌入真 3D，而不只是 2D 精灵动画
-- 为什么 WebXR AR/VR 体验可以做到和 Unity 媲美的画质，却不需要装 App
+- 为什么 Snap、Disney 的网页广告里能出现实时 3D 模型，而不是预渲染视频
+- 移动浏览器里 3D 游戏为什么能跑到 60fps，轻量运行时怎么做到的
+- WebXR 体验（VR/AR）为什么能"即点即玩"，不需要独立 App
+- 为什么"开源引擎 + 商业云编辑器"这种组合可以持续运营十年以上
 
 ## 核心要点
 
-PlayCanvas 的架构可以拆成三块：
+**1. Entity-Component 是一切的骨架**
 
-1. **ECS（Entity-Component-System）**：场景里所有东西都是 Entity（节点），能力靠挂 Component。`ModelComponent` 负责渲染，`RigidBodyComponent` 负责物理，`ScriptComponent` 挂你自己的逻辑。类比：Entity 是一张空白工作台，Component 是你往上放的工具——工作台和工具完全解耦，随时装卸。ECS 让大型场景的逻辑组织干净，避免了深层继承链。
+Entity 是场景中的空节点，Component 是能力插件（render / camera / light / script / collision…）。想让一个物体既能碰撞又能发声？给它 `addComponent('collision')` 和 `addComponent('sound')`。类比：Entity 是乐高底板，Component 是各种积木块，想要什么功能就插什么块，互不干扰。
 
-2. **渲染管线（WebGPU / WebGL2 双轨）**：引擎内部维护着一套抽象的 `GraphicsDevice`，在支持 WebGPU 的浏览器用 WebGPU 渲染（可用 Compute Shader 做粒子/GI 预计算），否则自动 fallback 到 WebGL2。物理基于渲染（PBR）材质系统、实时阴影、后处理（Bloom、SSAO、TAA）都开箱即用，无需手写 shader 就能达到照片级效果。
+**2. 渲染管线：PBR + Gaussian Splatting + WebXR 三驾马车**
 
-3. **资产管线与流式加载**：PlayCanvas 把资产（纹理、Mesh、音频）抽象为 Asset 对象，支持按需流式拉取。结合纹理压缩（ETC2/ASTC/DXT，即各厂商为移动 GPU 设计的图片压缩格式）自动根据设备选格式，能把移动设备的显存用量压低 60-70%。编辑器导出时会自动生成分包 manifest，引擎 runtime 按依赖图懒加载。
+PlayCanvas 默认使用基于物理的渲染（PBR），金属度/粗糙度工作流与 glTF 2.0 规范对齐。2023 年率先在 WebGL 引擎中集成 3D Gaussian Splatting，能在浏览器实时渲染由数百万高斯点构成的场景。WebXR 会话管理内置，两行代码进入 VR 模式。
+
+**3. Script 系统：TypeScript 写游戏逻辑**
+
+游戏行为封装在 ScriptType 子类里，引擎在每帧调用 `update(dt)`、在碰撞时调用 `onCollisionStart` 等生命周期钩子。类比：像 Unity 的 MonoBehaviour，但运行在浏览器里，可以直接访问 DOM、fetch API、WebSocket。
+
+```ts
+import { ScriptType } from 'playcanvas';
+
+export class Rotator extends ScriptType {
+  static scriptName = 'rotator';
+  speed = 30; // degrees/s
+
+  update(dt: number) {
+    this.entity.rotate(0, this.speed * dt, 0);
+  }
+}
+```
 
 ## 实践案例
 
-### 案例 1：品牌汽车配置器（Product Configurator）
+### 案例 1：移动端互动广告（3D 产品展示）
 
-用户在网页里选颜色/材质，3D 模型实时更新，接近实体店展示效果。
-
-```js
-// 切换车漆颜色
-function changePaintColor(hex) {
-  const material = app.assets.find('CarBody_Material').resource;
-  material.diffuse.fromString(hex);
-  material.update(); // 告知引擎重新上传到 GPU
-}
-
-// 切换轮毂款式：替换整个 MeshInstance
-function changeWheels(assetName) {
-  const entity = app.root.findByName('Wheel_FL');
-  const newAsset = app.assets.find(assetName);
-  entity.model.meshInstances[0].mesh = newAsset.resource.meshes[0];
-}
-```
-
-**逐部分解释**：
-- `material.update()` 把 CPU 端改动同步到 GPU，引擎会做 diff，只上传变化的 uniform
-- `meshInstances` 是 ECS 里 ModelComponent 暴露的底层访问点，可以直接替换几何体而不重建 Entity
-- 整个操作在同一帧内完成，用户感知不到任何加载停顿
-
-### 案例 2：轻量多人 H5 射击游戏
+品牌商需要在 H5 页面里展示可 360° 旋转的鞋子模型，要求首帧 < 3 秒。
 
 ```js
-// 服务端推送位置更新，客户端直接写 Entity.position
-socket.on('playerMove', ({ id, x, y, z }) => {
-  const player = playerEntities.get(id);
-  if (player) {
-    player.setPosition(x, y, z);
-  }
-});
+// 资产预配置（编辑器里设置好 Draco + Basis 压缩）
+app.assets.loadFromUrl('/assets/shoe.glb', 'container', (err, asset) => {
+  if (err) return;
+  const entity = asset.resource.instantiateRenderEntity();
+  app.root.addChild(entity);
 
-// 本地玩家移动：读输入 → 写物理 → 同步给服务端
-app.on('update', (dt) => {
-  const vel = new pc.Vec3();
-  if (keyboard.isPressed(pc.KEY_W)) vel.z -= SPEED * dt;
-  if (keyboard.isPressed(pc.KEY_S)) vel.z += SPEED * dt;
-  localPlayer.rigidbody.linearVelocity = vel;
-  socket.emit('move', localPlayer.getPosition());
+  // 触摸拖拽旋转
+  let lastX = 0;
+  app.mouse.on('mousemove', e => {
+    if (e.buttons[0]) entity.rotate(0, (e.x - lastX) * 0.5, 0);
+    lastX = e.x;
+  });
 });
 ```
 
-**逐部分解释**：
-- `setPosition` 是 PlayCanvas Entity API，直接写变换矩阵，不走物理模拟——适合远端玩家插值
-- `rigidbody.linearVelocity` 走物理引擎（Ammo.js/Havok），本地玩家用它保证碰撞正确
-- `app.on('update', dt)` 是引擎主循环回调，`dt` 是帧间时间，确保运动帧率无关
+Draco 压缩把 glTF 几何体缩小 70%，Basis 纹理 GPU 直接解压，加载快且内存省。首帧时间从未压缩的 6 秒降到 2.1 秒。
 
-### 案例 3：工厂数字孪生 WebXR 大屏
+### 案例 2：WebXR 虚拟展厅
+
+美术馆想让用户用 VR 头显参观 3D 画廊，点击墙上的画跳出详情。
 
 ```js
-// 进入 VR 模式
-const vrDisplay = app.xr.display;
-app.xr.start(app.camera.camera, pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
-
-// 实时把 IoT 数据映射到场景里的热力色
-function updateHeatmap(sensorData) {
-  sensorData.forEach(({ id, value }) => {
-    const entity = app.root.findByName(`Sensor_${id}`);
-    const mat = entity.model.meshInstances[0].material;
-    // value 0-1 映射到 蓝→红，PlayCanvas Color.lerp 用法：
-    const col = new pc.Color().lerp(COLD_COLOR, HOT_COLOR, value);
-    mat.emissive = col;
-    mat.update();
+// 检测 XR 支持并启动沉浸式会话
+if (app.xr.supported) {
+  document.getElementById('enter-vr').addEventListener('click', () => {
+    app.xr.start(camera.camera, pc.XRTYPE_VR, pc.XRSPACE_LOCALFLOOR);
   });
 }
+
+// 控制器射线拾取
+app.xr.input.on('select', inputSource => {
+  const hit = app.xr.input.hitTest(inputSource);
+  if (hit?.entity?.tags.has('artwork')) {
+    showArtworkDetail(hit.entity.name);
+  }
+});
 ```
 
-**逐部分解释**：
-- `pc.XRTYPE_VR + pc.XRSPACE_LOCALFLOOR` 让引擎自动处理头显 6DoF 追踪，无需手写 WebXR API
-- `entity.model.meshInstances[0].material` 直接访问材质实例，改 `emissive` 颜色做发光热力图
-- `Color.lerp` 是 PlayCanvas 内置插值，一行完成蓝→红渐变，无需手写 HSL 转换
+PlayCanvas 把 WebXR Session API 封装成事件模型，开发者不必手写 `requestAnimationFrame` 的 XR 变体，直接在 `update` 里拿 pose 数据。
+
+### 案例 3：轻量多人 .io 游戏
+
+用 WebSocket 实现 30 人同场的坦克竞技，PlayCanvas 负责渲染，自定义网络层负责同步。
+
+```js
+// 服务端推来的状态 → 更新实体位置
+ws.onmessage = ({ data }) => {
+  const state = JSON.parse(data);
+  state.players.forEach(p => {
+    let tank = tanks.get(p.id);
+    if (!tank) {
+      tank = createTankEntity();
+      tanks.set(p.id, tank);
+    }
+    // 插值平滑
+    tank.setPosition(p.x, 0, p.z);
+    tank.setEulerAngles(0, p.angle, 0);
+  });
+};
+```
+
+Entity-Component 让"动态创建 / 销毁坦克实体"变成几行代码；事件系统解耦网络逻辑与渲染逻辑。
 
 ## 踩过的坑
 
-1. **WebGPU 在低端 Android 机崩溃**：2024 年前 WebGPU 驱动覆盖率不足 60%，直接指定 WebGPU 会在大量设备黑屏。正确做法是用 `pc.DEVICETYPE_WEBGPU` + fallback `pc.DEVICETYPE_WEBGL2`，让引擎自动选。
-
-2. **把全部资产打成一个 bundle 拖垮首屏**：glTF 场景文件里包含了所有材质和纹理引用，如果不分包，首帧前必须全部下载完。应按场景/关卡拆成独立包，配合 `app.assets.loadFromUrl` 按需拉取。
-
-3. **脚本写完但忘记在 Editor 里挂载到 Entity**：PlayCanvas 的 Script System 要求在 Editor 面板手动把脚本组件添加到目标 Entity，否则脚本完全不执行，没有任何报错提示，新人常在这里卡几个小时。
-
-4. **在 update 回调里大量 `new Vec3()`**：每帧创建临时向量触发 GC，抖动破坏 60fps。应在类构造函数里预分配 `this._tmp = new pc.Vec3()`，复用同一对象。
+1. **update 循环里 new Vec3() / new Color() 触发频繁 GC**——应在 initialize 里预分配，复用对象。
+2. **销毁实体前忘记解绑事件**——`app.mouse.off` / `app.keyboard.off` 不调用，监听器泄漏，内存持续增长。
+3. **超过 4 个动态光源移动端帧率崩**——移动 GPU 着色器分支爆炸；解法是烘焙 Lightmap 或用 Clustered Lighting（引擎支持但需手动开启）。
+4. **编辑器里改了脚本但忘记点 Publish**——本地 `npm run serve` 看到最新效果，云端用户还跑旧版本，两边表现不一致。
 
 ## 适用 vs 不适用场景
 
-**适用**：
-- 移动 web 游戏（微信 H5、抖音小程序）——运行时极小，首屏快
-- 品牌产品配置器（汽车、家具、时尚）——PBR 渲染质量高，Editor 可让非程序员搭场景
-- WebXR AR/VR 体验——内置 WebXR 支持，摄像头追踪和 6DoF 控制器开箱即用
-- 广告/互动媒体——bundle < 500KB，符合 Google/Facebook 互动广告包体限制
-- 教育/创意编程——云端 Editor 免费版可多人协作，不需本地环境
+**适用：**
 
-**不适用**：
-- 需要在 Node.js 服务端运行的 SSR 3D 渲染——PlayCanvas 强依赖 DOM 和 WebGL，不支持无头渲染
-- 超大规模开放世界游戏（百平方公里地图）——流式地形、Nanite 级 LOD 这些 UE5 特性目前还没有
-- 需要深度修改渲染管线的研究项目——引擎内部 GraphicsDevice 抽象层封装较深，自定义 pass 成本高于 Three.js
-- 已有 Unity/Unreal 内容资产的迁移——PlayCanvas 没有成熟的 Unity Package 导入工具链
+- 需要在浏览器里交付的 3D 游戏、互动广告、产品可视化
+- 移动 Web 游戏（H5）：轻量运行时 + 资产压缩组合拳
+- 快速原型：云编辑器开箱即用，不需要本地环境搭建
+- WebXR 项目：内置 XR 会话管理，开发成本低
+
+**不适用：**
+
+- 大型单机 / 主机游戏：原生引擎（Unreal / Godot）更合适，不需要 Web 约束
+- 超复杂物理场景：ammo.js 是 Bullet 的 WebAssembly 移植，性能上限低于原生
+- 已有重度 Three.js / Babylon.js 代码库：迁移成本高，不如在现有生态加深
+- 离线优先应用：PlayCanvas 编辑器依赖云端，断网下本地工作流受限
 
 ## 历史小故事（可跳过）
 
-- **2011 年**：Will Eastcott 和 Dave Evans 在伦敦创立 PlayCanvas，目标是"让任何人都能在浏览器里做 3D"。
-- **2014 年**：推出云端可视化编辑器（在线协作、版本管理），比 Unity 的 Collaborate 功能早 3 年。
-- **2015 年**：引擎核心在 GitHub 以 MIT 许可开源，社区贡献者开始爆发式增长。
-- **2019 年**：WebXR 标准正式落地，PlayCanvas 成为第一批提供完整 WebXR 支持的商业引擎之一。
-- **2023 年**：率先在生产级引擎中支持完整 WebGPU，包括 Compute Shader，Chrome 113 后可用。
-- **2024 年**：加入实时 3D Gaussian Splatting 渲染支持，让摄影测量资产直接在浏览器里以照片级质量呈现。
+- **2011 年**：Will Eastcott 和 Dave Evans 在伦敦创立 PlayCanvas，当时 WebGL 刚在主流浏览器普及，市场空白。
+- **2014 年**：核心引擎在 GitHub 开源（MIT 协议），云端编辑器保持商业 SaaS；开源引擎 + 商业工具的双轨模式沿用至今。
+- **2018 年**：WebXR 标准草案稳定，PlayCanvas 第一批集成 WebXR，让 VR/AR 内容可直接在浏览器里发布。
+- **2023 年**：率先在 WebGL 引擎中支持实时 3D Gaussian Splatting 渲染，NeRF 社区大量开发者涌入试用。
+- **2024 年**：发布 `@playcanvas/react` 和 `@playcanvas/web-components`，让前端开发者用声明式语法搭 3D 场景，进一步降低入门门槛。
 
 ## 学到什么
 
-1. **"运行时极小"是核心竞争力**：Web 3D 的最大障碍不是渲染质量，而是加载等待。PlayCanvas 为此几乎所有设计决策都以包体为首要约束
-2. **ECS 在游戏引擎里不是时髦词，是工程必须**：深层继承链在场景动辄数百 Entity 时会让 update 逻辑变成噩梦，组合优于继承在这里是真实的工程选择
-3. **OSS 引擎 + 商业编辑器的分拆是可行商业模式**：开源核心建立开发者信任、积累生态，编辑器向企业收费，两条腿互不干扰
-4. **WebGPU 不是"未来技术"而是现在的分水岭**：支持 Compute Shader 意味着粒子模拟、GPU 物理、光照预计算可以完全在 GPU 上跑，和 WebGL2 的能力差距是量级的
+- **Entity-Component 是通用抽象**：游戏引擎、ECS 框架甚至某些后端服务都在用这个思路——数据（Entity）和行为（Component/System）分离，组合优于继承。
+- **运行时大小是 Web 的第一公民**：450 KB 的引擎能做完整 3D，是因为每个功能模块都可按需导入；Tree-shaking 不是锦上添花，是设计哲学。
+- **压缩格式决定加载速度天花板**：glTF + Draco + Basis 这三层压缩是组合拳，缺任何一层都会在移动端出现明显瓶颈。
+- **开源引擎 + 商业云编辑器**可以同时服务两类用户：开发者用开源版本自由扩展，团队用云编辑器协作迭代，不互相排斥。
 
 ## 延伸阅读
 
-- 官方文档：[PlayCanvas Developer Site](https://developer.playcanvas.com/)（用户手册 + API 文档，中英文）
-- 视频入门：[PlayCanvas — Getting Started (YouTube)](https://www.youtube.com/watch?v=_QklM5FWWUQ)（20 分钟从零到第一个 3D 场景）
-- 官方博客：[playcanvas.com/blog](https://playcanvas.com/blog)（WebGPU、Gaussian Splatting 等新特性发布公告）
-- GitHub：[playcanvas/engine](https://github.com/playcanvas/engine)（引擎源码 + 大量 examples/）
-- [[threejs]] —— 同是 WebGL 3D 库，更底层灵活，适合需要深度定制渲染管线的场景
-- [[babylonjs]] —— 同类竞品，微软背景，TypeScript 优先，API 风格更"游戏引擎"
+- [PlayCanvas 官方文档 User Manual](https://developer.playcanvas.com/user-manual/engine/)
+- [API Reference](https://api.playcanvas.com/engine/)
+- [PlayCanvas Examples（在线可编辑）](https://playcanvas.com/examples/)
+- [Awesome PlayCanvas 项目列表](https://github.com/playcanvas/awesome-playcanvas)
+- [3D Gaussian Splatting 官方 Demo](https://playcanvas.com/viewer)
+- [[threejs]] —— 同为 WebGL 封装，更底层更灵活，社区生态更大
 
 ## 关联
 
-- [[threejs]] —— Web 3D 生态里最广泛使用的底层库，PlayCanvas 在其上层提供 ECS + Editor
-- [[babylonjs]] —— 微软出品的同类竞品，也是 WebGL/WebGPU，功能更全但包体更大
-- [[kajiya-1986-rendering-equation]] —— PBR 材质系统的理论基础，PlayCanvas 的物理渲染模型由此推导
-- [[debevec-1998-rendering-with-natural-light]] —— HDR 环境光照捕获，PlayCanvas 的 IBL（Image-Based Lighting，基于真实照片计算环境光）直接使用该方案
-- [[sycl-cpp-2020]] —— 跨设备 GPU 编程标准；WebGPU Compute Shader 承担了类似角色，让 PlayCanvas 可在 Web 端做 GPU 通用计算
+- [[threejs]] —— 同样封装 WebGL，Three.js 更底层、无编辑器，PlayCanvas 更"全栈"
+- [[babylonjs]] —— 竞品引擎，功能对标，BabylonJS 有更强的 TypeScript 优先设计
+- [[phaser]] —— 专注 2D 游戏的 Web 框架，与 PlayCanvas 的 3D 定位互补
+- [[pixi]] —— 高性能 2D 渲染器，适合 UI 动效和 2D 游戏，不做 3D
+- [[cocos2d-x]] —— 跨平台游戏引擎，国内市场占有率高，原生端更强
+- [[d3]] —— 数据可视化库，WebGL 渲染路线不同但都在浏览器做图形
+- [[echarts]] —— 同在浏览器做 3D 可视化（ECharts GL），目标场景是数据图表而非游戏
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-（暂无反向链接）
-
