@@ -2,8 +2,9 @@
 title: Litestream — 把 SQLite 的每一次改动实时流式备份到 S3
 来源: https://github.com/benbjohnson/litestream
 日期: 2026-06-13
-子分类: 数据库工具
-分类: 数据库与存储
+分类_原始: 数据库与存储
+子分类: databases-storage
+分类: 数据库
 难度: 中级
 provenance: pipeline-v3
 ---

@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1311 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1313 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1311 篇
-- **已分类**：1311
+- **总数**：1313 篇
+- **已分类**：1313
 
 ### 按一级主题分布
 
@@ -22,7 +22,7 @@ sidebar:
 | [分布式系统](#分布式系统) | 101 |
 | [数据库](#数据库) | 98 |
 | [操作系统](#操作系统) | 108 |
-| [机器学习](#机器学习) | 354 |
+| [机器学习](#机器学习) | 356 |
 | [后端 API](#后端-api) | 10 |
 | [基础设施](#基础设施) | 17 |
 | [网络协议](#网络协议) | 66 |
@@ -226,7 +226,7 @@ sidebar:
 | [AFD 设计空间探索 — MoE LLM 推理中的 Attention–FFN 解耦](/study/papers/afd-disagg-moe/) | ✅ v3 |  |
 | [Agora — 用 LLM Agent 自主检测共识协议的 Bug](/study/papers/agora-autonomous-bug-detection-in-consensus-protocols-with-llm-agents-arxiv-2605/) | ✅ v3 |  |
 | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | ✅ v3 |  |
-| [AMP Arc Multi-Proposer Protocol with Bounded Inclusion](/study/papers/amp-arc-multi-proposer-protocol-with-bounded-inclusion-arxiv-2605-23677/) | ✅ v3 |  |
+| [AMP 多提议者协议 — 有界包含保证与抗审查交易排序](/study/papers/amp-arc-multi-proposer-protocol-with-bounded-inclusion-arxiv-2605-23677/) | ✅ v3 |  |
 | [Apollo — 让两万台机器自己决定谁跑哪个任务](/study/papers/apollo-2014/) | ✅ v3 |  |
 | [Bayou — 离线先改本地，再回来和别人合并](/study/papers/bayou-1995/) | ✅ v3 |  |
 | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | ✅ v3 |  |
@@ -573,7 +573,7 @@ sidebar:
 
 ## 机器学习
 
-共 354 篇。
+共 356 篇。
 
 ### 多模态
 
@@ -755,6 +755,7 @@ sidebar:
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [DQN — Deep Q-Network](/study/papers/dqn/) | ✅ v3 |  |
+| [FORM — 用一阶逻辑奖励机让 RL 学会"先做什么再做什么"](/study/papers/form-reward-machines/) | ✅ v3 |  |
 | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 🗄 存量 |  |
 | [N-GRPO — 嵌入层邻居混合增强的策略优化](/study/papers/n-grpo/) | ✅ v3 |  |
 | [PPO — Proximal Policy Optimization](/study/papers/ppo/) | ✅ v3 |  |
@@ -957,6 +958,7 @@ sidebar:
 | [Huffman 编码](/study/papers/huffman-1952/) | ✅ v3 |  |
 | [IDEAL: In-DEpth ALignment Makes A Discrete Representation AutoEncoder](/study/papers/ideal-ae/) | ✅ v3 |  |
 | [InterleaveThinker: Reinforcing Agentic Interleaved Generation](/study/papers/interleave-thinker/) | ✅ v3 |  |
+| [KG-CF — LLM 指导的知识图谱补全与上下文过滤](/study/papers/kg-cf/) | ✅ v3 |  |
 | [KAE: Kolmogorov-Arnold Auto-Encoder for Representation Learning](/study/papers/kolmogorov-autoencoder/) | ✅ v3 |  |
 | [LabVLA —— 把视觉-语言-动作模型种进科学实验室](/study/papers/labvla/) | ✅ v3 |  |
 | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | ✅ v3 |  |
@@ -1294,7 +1296,7 @@ sidebar:
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) | ✅ v3 |  |
-| [First Steps Towards Probabilistic Iris (Amaryllis)](/study/papers/amaryllis-probabilistic-iris/) | ✅ v3 |  |
+| [Amaryllis — 在硬币掷出的每条岔路上证明程序正确](/study/papers/amaryllis-probabilistic-iris/) | ✅ v3 |  |
 | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) | ✅ v3 |  |
 | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) | ✅ v3 |  |
 | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) | ✅ v3 |  |
@@ -1734,7 +1736,7 @@ sidebar:
 
 ---
 
-## 全部 1311 篇（字母序）
+## 全部 1313 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1770,11 +1772,11 @@ sidebar:
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | ✅ v3 | 图形学 | GPU 架构 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | ✅ v3 | 机器学习 | 强化学习 / AI |
 | `altgen` | [AltGen: AI-Driven Alt Text Generation for Enhancing EPUB Accessibility](/study/papers/altgen/) | ✅ v3 | 其他 | 无障碍 |
-| `amaryllis-probabilistic-iris` | [First Steps Towards Probabilistic Iris (Amaryllis)](/study/papers/amaryllis-probabilistic-iris/) | ✅ v3 | 形式化方法 | 形式化验证 |
+| `amaryllis-probabilistic-iris` | [Amaryllis — 在硬币掷出的每条岔路上证明程序正确](/study/papers/amaryllis-probabilistic-iris/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `amber-sigmod-2014` | [Amber: Decoupling Access Methods from Stable Storage](/study/papers/amber-sigmod-2014/) | ✅ v3 | 数据库 | 存储与查询 |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | ✅ v3 | 图形学 | arch-hardware |
 | `amoeba-1990` | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
-| `amp-arc-multi-proposer-protocol-with-bounded-inclusion-arxiv-2605-23677` | [AMP Arc Multi-Proposer Protocol with Bounded Inclusion](/study/papers/amp-arc-multi-proposer-protocol-with-bounded-inclusion-arxiv-2605-23677/) | ✅ v3 | 分布式系统 | 共识与复制 |
+| `amp-arc-multi-proposer-protocol-with-bounded-inclusion-arxiv-2605-23677` | [AMP 多提议者协议 — 有界包含保证与抗审查交易排序](/study/papers/amp-arc-multi-proposer-protocol-with-bounded-inclusion-arxiv-2605-23677/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | ✅ v3 | 图形学 | GPU 架构 |
 | `amplification-hell-2014` | [Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击](/study/papers/amplification-hell-2014/) | ✅ v3 | 网络协议 | 网络协议 |
 | `ance-2020` | [ANCE — 让模型自己挖训练负例，对比学习的"自给自足"](/study/papers/ance-2020/) | ✅ v3 | 信息检索 | 检索与排序 |
@@ -2151,6 +2153,7 @@ sidebar:
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | ✅ v3 | 数据库 | 存储与查询 |
 | `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | ✅ v3 | 分布式系统 | 共识与复制 |
+| `form-reward-machines` | [FORM — 用一阶逻辑奖励机让 RL 学会"先做什么再做什么"](/study/papers/form-reward-machines/) | ✅ v3 | 机器学习 | 强化学习 |
 | `fort-searcher` | [FORT-Searcher](/study/papers/fort-searcher/) | ✅ v3 | 机器学习 | 搜索智能体 |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | ✅ v3 | 数据库 | 存储与查询 |
 | `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) | ✅ v3 | 图形学 | GPU 架构 |
@@ -2327,6 +2330,7 @@ sidebar:
 | `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `kelly-criterion-1956` | [Kelly Criterion — 信息率的新解释](/study/papers/kelly-criterion-1956/) | ✅ v3 | 其他 | 量化金融 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | ✅ v3 | 图形学 | GPU 架构 |
+| `kg-cf` | [KG-CF — LLM 指导的知识图谱补全与上下文过滤](/study/papers/kg-cf/) | ✅ v3 | 机器学习 | 知识图谱 |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `kim-rowhammer-2014` | [RowHammer — 只读内存也能把邻居的 bit 敲 flip](/study/papers/kim-rowhammer-2014/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | ✅ v3 | 信息检索 | 检索与排序 |

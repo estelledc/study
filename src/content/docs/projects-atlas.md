@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 1320 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1322 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1320 个
-- **已分类**：1320
+- **总数**：1322 个
+- **已分类**：1322
 
 ### 按一级主题分布
 
@@ -20,7 +20,7 @@ sidebar:
 |---|---:|
 | [编程语言](#编程语言) | 13 |
 | [分布式系统](#分布式系统) | 8 |
-| [数据库](#数据库) | 110 |
+| [数据库](#数据库) | 111 |
 | [操作系统](#操作系统) | 55 |
 | [机器学习](#机器学习) | 168 |
 | [区块链](#区块链) | 60 |
@@ -35,7 +35,7 @@ sidebar:
 | [编译器](#编译器) | 70 |
 | [数据可视化](#数据可视化) | 67 |
 | [安全与隐私](#安全与隐私) | 22 |
-| [其他](#其他) | 38 |
+| [其他](#其他) | 39 |
 
 ---
 
@@ -95,7 +95,7 @@ sidebar:
 
 ## 数据库
 
-共 110 个。
+共 111 个。
 
 ### 存储与查询
 
@@ -216,6 +216,7 @@ sidebar:
 |---|:---:|---|
 | [GreptimeDB — 云原生时序数据库](/study/projects/greptimedb/) | ✅ v3 |  |
 | [immudb — 不可变数据库](/study/projects/immudb/) | ✅ v3 |  |
+| [Litestream — 把 SQLite 的每一次改动实时流式备份到 S3](/study/projects/litestream/) | ✅ v3 |  |
 | [MinIO — S3 兼容对象存储](/study/projects/minio/) | ✅ v3 |  |
 | [RoseDB — Go Bitcask KV 引擎](/study/projects/rosedb/) | ✅ v3 |  |
 | [ScyllaDB — C++ 高性能 NoSQL 数据库学习笔记](/study/projects/scylladb/) | ✅ v3 |  |
@@ -828,7 +829,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 🗄 存量 |  |
-| [Claude for Financial Services — 金融服务工作流插件与 Agent 模板](/study/projects/anthropic-financial-services/) | ✅ v3 |  |
+| [Anthropic Financial Services — 把投行、研究、PE 的工作流做成可复用的 Agent 插件](/study/projects/anthropic-financial-services/) | ✅ v3 |  |
 | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | ✅ v3 |  |
 | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | ✅ v3 |  |
 | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | ✅ v3 |  |
@@ -1328,7 +1329,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Aider — 终端 AI 结对编程 CLI](/study/projects/aider/) | ✅ v3 |  |
-| [Anytype — 本地优先块编辑器](/study/projects/anytype-ts/) | ✅ v3 |  |
+| [Anytype — 本地优先块编辑器桌面客户端](/study/projects/anytype-ts/) | ✅ v3 |  |
 | [AppFlowy — Rust + Flutter 开源 Notion 替代品](/study/projects/appflowy/) | ✅ v3 |  |
 | [AstroNvim — 社区驱动 Neovim 配置框架](/study/projects/astronvim/) | ✅ v3 |  |
 | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 |  |
@@ -1761,7 +1762,7 @@ sidebar:
 
 ## 其他
 
-共 38 个。
+共 39 个。
 
 ### 工程文化
 
@@ -1825,6 +1826,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Binaryen — WASM 编译器基础设施](/study/projects/binaryen/) | ✅ v3 |  |
+| [jco — JS WebAssembly Component 工具链](/study/projects/jco/) | ✅ v3 |  |
 | [WABT — WebAssembly 二进制工具包](/study/projects/wabt/) | ✅ v3 |  |
 | [WASI SDK — 让 C/C++ 跑进 WebAssembly 的桥梁](/study/projects/wasi-sdk/) | ✅ v3 |  |
 
@@ -1838,7 +1840,7 @@ sidebar:
 
 ---
 
-## 全部 1320 个（字母序）
+## 全部 1322 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1880,12 +1882,12 @@ sidebar:
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `ant-media-server` | [Ant Media Server — WebRTC / CMAF 直播服务](/study/projects/ant-media-server/) | ✅ v3 | 通信 | 音视频媒体 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | ✅ v3 | 机器学习 | AI |
-| `anthropic-financial-services` | [Claude for Financial Services — 金融服务工作流插件与 Agent 模板](/study/projects/anthropic-financial-services/) | ✅ v3 | 后端 API | Web 后端 |
+| `anthropic-financial-services` | [Anthropic Financial Services — 把投行、研究、PE 的工作流做成可复用的 Agent 插件](/study/projects/anthropic-financial-services/) | ✅ v3 | 后端 API | Web 后端 |
 | `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `antv-x6` | [AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript](/study/projects/antv-x6/) | ✅ v3 | 数据可视化 | 数据可视化 |
-| `anytype-ts` | [Anytype — 本地优先块编辑器](/study/projects/anytype-ts/) | ✅ v3 | CLI | 编辑器与 IDE |
+| `anytype-ts` | [Anytype — 本地优先块编辑器桌面客户端](/study/projects/anytype-ts/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | ✅ v3 | 区块链 | 链与合约 |
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | ✅ v3 | 后端 API | Web 后端 |
@@ -2351,6 +2353,7 @@ sidebar:
 | `janusgraph` | [JanusGraph — 可插拔后端的分布式图数据库](/study/projects/janusgraph/) | ✅ v3 | 数据库 | 存储与查询 |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) | ✅ v3 | 机器学习 | ai-ml-frameworks |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | ✅ v3 | CLI | 命令行工具 |
+| `jco` | [jco — JS WebAssembly Component 工具链](/study/projects/jco/) | ✅ v3 | 其他 | wasm-toolchain |
 | `jcode-coding` | [jcode - 自动开发型 Coding Agent Harness 零基础学习笔记](/study/projects/jcode-coding/) | ✅ v3 | CLI | 开发者工具 |
 | `jellyfin` | [Jellyfin — 自托管媒体服务器](/study/projects/jellyfin/) | ✅ v3 | 通信 | 音视频媒体 |
 | `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) | ✅ v3 | 基础设施 | DevOps 与运维 |
@@ -2452,6 +2455,7 @@ sidebar:
 | `litellm` | [LiteLLM — 统一 AI 网关，一个接口调用 100+ LLM](/study/projects/litellm/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | ✅ v3 | 机器学习 | ai-eng |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | ✅ v3 | 后端 API | Web 后端 |
+| `litestream` | [Litestream — 把 SQLite 的每一次改动实时流式备份到 S3](/study/projects/litestream/) | ✅ v3 | 数据库 | databases-storage |
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | ✅ v3 | 基础设施 | DevOps 与运维 |
 | `littlefs` | [littlefs — 给 MCU 用的掉电安全小文件系统](/study/projects/littlefs/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | ✅ v3 | 通信 | 实时通信 |

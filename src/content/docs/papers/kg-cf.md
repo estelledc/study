@@ -2,8 +2,9 @@
 title: KG-CF — LLM 指导的知识图谱补全与上下文过滤
 来源: 'Zaiyi Zheng et al., "KG-CF: Knowledge Graph Completion with Context Filtering under the Guidance of Large Language Models", IEEE BigData 2024, arXiv:2501.02711'
 日期: 2026-06-13
-子分类: 知识图谱与 LLM
-分类: 知识图谱 / LLM 应用
+分类_原始: 知识图谱 / LLM 应用
+子分类: 知识图谱
+分类: 机器学习
 难度: 中级
 provenance: pipeline-v3
 ---
