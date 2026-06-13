@@ -2,7 +2,6 @@
 title: awesome-distributed-systems - 零基础学习笔记
 来源: https://github.com/theanalyst/awesome-distributed-systems
 日期: 2026-06-13
-分类_原始: 项目
 分类: 分布式系统
 子分类: 共识与复制
 provenance: pipeline-v3

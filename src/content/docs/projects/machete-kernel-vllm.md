@@ -2,7 +2,6 @@
 title: vLLM Machete W4A16 Kernel 学习笔记
 来源: https://github.com/vllm-project/vllm/blob/main/csrc/quantization/machete/README.md
 日期: 2026-06-13
-分类_原始: AI / 大模型
 分类: 机器学习
 子分类: ML 系统
 provenance: pipeline-v3

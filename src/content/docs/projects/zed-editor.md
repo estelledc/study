@@ -2,7 +2,6 @@
 title: Zed — 高性能多人协作代码编辑器
 来源: https://github.com/zed-industries/zed
 日期: 2026-06-13
-分类_原始: 开发工具
 分类: CLI
 子分类: 编辑器与 IDE
 provenance: pipeline-v3

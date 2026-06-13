@@ -2,7 +2,7 @@
 title: OpenTelemetry — 让所有应用用同一种语言吐监控数据
 来源: OpenTelemetry Specification, https://opentelemetry.io/docs/
 日期: 2026-05-31
-子分类: 基础设施
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
