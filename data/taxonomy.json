@@ -190,7 +190,8 @@
     "projects::lottie": { "themeId": "dataviz", "subcategory": "动画" },
     "projects::plane": { "themeId": "backend-api", "subcategory": "SaaS 应用" },
     "projects::tanstack-query": { "themeId": "backend-api", "subcategory": "数据获取" },
-    "projects::zod": { "themeId": "backend-api", "subcategory": "表单与校验" }
+    "projects::zod": { "themeId": "backend-api", "subcategory": "表单与校验" },
+    "papers::compose-future-theorems": { "themeId": "formal-methods", "subcategory": "定理证明" }
   },
   "subcategoryFromCategory": {
     "共识": "共识与复制",
