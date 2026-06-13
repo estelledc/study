@@ -327,7 +327,18 @@ async function main() {
   while (true) {
     log(`=== Round ${roundNum} ===`);
 
-    // 1. Expand pool every round
+    // 1. Repair JSONL (skip corrupted lines)
+    try {
+      const raw = fs.readFileSync(CANDIDATES, 'utf8');
+      const lines = raw.split('\n').filter(Boolean);
+      const clean = lines.filter(l => { try { JSON.parse(l); return true; } catch { return false; } });
+      if (clean.length < lines.length) {
+        fs.writeFileSync(CANDIDATES, clean.join('\n') + '\n');
+        log(`  Repaired candidates.jsonl: removed ${lines.length - clean.length} corrupted lines`);
+      }
+    } catch {}
+
+    // 2. Expand pool every round
     log('  Launching pool expanders (opencode agnes)...');
     projectsExpander = expandProjects();
     papersExpander = expandPapers();
