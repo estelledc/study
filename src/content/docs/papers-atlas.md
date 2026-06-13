@@ -526,6 +526,7 @@ sidebar:
 | [Singularity — 用安全语言重想整条软件栈](/study/papers/singularity-os-2007/) | ✅ v3 |  |
 | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | ✅ v3 |  |
 | [Snap 2019 — Google 把网络栈搬进用户空间的微内核实践](/study/papers/snap-2019/) | ✅ v3 |  |
+| [snmalloc(2019) — 把释放内存变成寄快递](/study/papers/snmalloc-2019/) | ✅ v3 |  |
 | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | ✅ v3 |  |
 | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | ✅ v3 |  |
 | [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) | ✅ v3 |  |
@@ -566,7 +567,6 @@ sidebar:
 | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | ✅ v3 |  |
 | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | ✅ v3 |  |
 | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | ✅ v3 |  |
-| [snmalloc(2019) — 把释放内存变成寄快递](/study/papers/snmalloc-2019/) | ✅ v3 |  |
 | [You probably don't need Yocto, and that's fine — 嵌入式 Linux 不必默认上 Yocto](/study/papers/yocto-alternatives/) | ✅ v3 |  |
 
 ## 机器学习
@@ -1695,7 +1695,7 @@ sidebar:
 |---|:---:|---|
 | [The MiniMax-M2 Series: Mini Activations Unleashing Max Intelligence](/study/papers/minimax-m2-series/) | ✅ v3 |  |
 | [Nemotron 3 Super — MoE + Hybrid Mamba-Transformer 零基础笔记](/study/papers/nemotron-3-super/) | ✅ v3 |  |
-| [Step 3.5 Flash: 用 11B 活跃参数跑出门槛最低的"前沿智能](/study/papers/step-3-5-flash/) | ✅ v3 |  |
+| [Step 3.5 Flash: 用 11B 活跃参数跑出门槛最低的「前沿智能」](/study/papers/step-3-5-flash/) | ✅ v3 |  |
 | [ZAYA1-8B Technical Report](/study/papers/zaya1-8b/) | ✅ v3 |  |
 
 ### 其他子类
@@ -2791,7 +2791,7 @@ sidebar:
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) | ✅ v3 | 图形学 | GPU 架构 |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | ✅ v3 | 数据库 | 存储与查询 |
 | `snap-2019` | [Snap 2019 — Google 把网络栈搬进用户空间的微内核实践](/study/papers/snap-2019/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
-| `snmalloc-2019` | [snmalloc(2019) — 把释放内存变成寄快递](/study/papers/snmalloc-2019/) | ✅ v3 | 操作系统 | 内存管理 |
+| `snmalloc-2019` | [snmalloc(2019) — 把释放内存变成寄快递](/study/papers/snmalloc-2019/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | ✅ v3 | 数据库 | 存储与查询 |
 | `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -2832,7 +2832,7 @@ sidebar:
 | `starrocks` | [StarRocks — Doris 分叉出来的向量化 CBO 国产 OLAP](/study/papers/starrocks/) | ✅ v3 | 基础设施 | infrastructure |
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `stein-dreamer` | [SteinDreamer: Variance Reduction for Text-to-3D Score Distillation via Stein Identity](/study/papers/stein-dreamer/) | ✅ v3 | 机器学习 | 3D生成 |
-| `step-3-5-flash` | [Step 3.5 Flash: 用 11B 活跃参数跑出门槛最低的"前沿智能](/study/papers/step-3-5-flash/) | ✅ v3 | 其他 | llm |
+| `step-3-5-flash` | [Step 3.5 Flash: 用 11B 活跃参数跑出门槛最低的「前沿智能」](/study/papers/step-3-5-flash/) | ✅ v3 | 其他 | llm |
 | `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) | ✅ v3 | 数据库 | 存储与查询 |
 | `storm-multi-agent-state` | [STORM — 面向多智能体协作的状态导向管理](/study/papers/storm-multi-agent-state/) | ✅ v3 | 机器学习 | 模型与训练 |
