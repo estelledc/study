@@ -126,8 +126,9 @@
 {"slug":"brill-moore-2000","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"brook-2004","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"brooks-no-silver-bullet-1986","area":"papers","theme":"其他","themeId":"other","subcategory":"工程文化","source":"candidates.topic","confidence":"high","rawCategory":"其他"}
+{"slug":"brown-gpt3-2020","area":"papers","theme":"NLP","themeId":"nlp","subcategory":"ml-deep-learning","source":"candidates.topic+category","confidence":"high","rawCategory":"NLP"}
 {"slug":"btrfs-2013","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
-{"slug":"budalloc-usenixsec24","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"系统安全","source":"candidates.topic+category","confidence":"high","rawCategory":"systems"}
+{"slug":"budalloc-usenixsec24","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"系统安全","source":"candidates.topic+category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"bunz-bulletproofs-2018","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"burgess-2020-turing-rt","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"bvt-1999","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
@@ -286,6 +287,7 @@
 {"slug":"denali-2002","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"dense360-2025","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"desbrun-1999-implicit-fairing","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"devlin-bert-2019","area":"papers","theme":"NLP","themeId":"nlp","subcategory":"ml-deep-learning","source":"candidates.topic+category","confidence":"high","rawCategory":"NLP"}
 {"slug":"dewitt-gray-1992","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"differential-datalog","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"diffie-hellman-1976","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"security","source":"candidates.topic+category","confidence":"high","rawCategory":"网络协议"}
@@ -326,7 +328,7 @@
 {"slug":"drizzle-2017","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"drmm-2016","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"dropout-2014","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
-{"slug":"drust-osdi24","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"分布式系统","source":"candidates.topic+category","confidence":"high","rawCategory":"系统"}
+{"slug":"drust-osdi24","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"分布式系统","source":"candidates.topic+category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"ds-zero-pp-comm","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ML 系统","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"dspy","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"编程语言","source":"category","confidence":"high","rawCategory":"编程语言"}
 {"slug":"dssm-2013","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
@@ -402,6 +404,7 @@
 {"slug":"firecracker-2020","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"firecracker-microvm-2020","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"first-class-refinement-scala","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"fisslock-osdi24","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"分布式系统","source":"candidates.topic+category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"flamingo-2022","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"flan-2021","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"flash-attention","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 与系统","source":"category","confidence":"high","rawCategory":"图形学"}
@@ -491,6 +494,7 @@
 {"slug":"halo2-2022","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"密码与零知识","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"hamming-1950","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"信息论","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"hanrahan-1991-hierarchical-radiosity","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"harmony-nsdi24","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"数据中心网络","source":"candidates.topic+category","confidence":"high","rawCategory":"计算机网络"}
 {"slug":"haven-2014","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"hawkeye-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"haystack-2010","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
@@ -542,7 +546,7 @@
 {"slug":"iceberg-2020","area":"papers","theme":"数据库","themeId":"databases","subcategory":"现代数据库","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"ideal-ae","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"表示学习","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"idris-brady","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
-{"slug":"imagen-2022","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
+{"slug":"imagen-2022","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ml","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"immix-mark-region","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"improving-embeddings-llm","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"嵌入","source":"candidates.topic+category","confidence":"high","rawCategory":"信息检索"}
 {"slug":"in-context-reward-adaptation-for-robust-preference-modeling-arxiv-2605-30323","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ML 系统","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
@@ -575,6 +579,7 @@
 {"slug":"jemalloc-2006","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"jemalloc-evans-2006","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"jensen-1996-photon-mapping","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"junction-nsdi24","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"数据中心网络","source":"candidates.topic+category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"jupiter-1995","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"jupiter-2015","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
 {"slug":"jwt-rfc-7519","area":"papers","theme":"后端 API","themeId":"backend-api","subcategory":"后端","source":"category","confidence":"high","rawCategory":"后端 API"}
@@ -947,6 +952,7 @@
 {"slug":"rabin-ot-1981","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
 {"slug":"racket-2018-tour","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"racket-macros-flatt-2016","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"radford-gpt-2019","area":"papers","theme":"NLP","themeId":"nlp","subcategory":"ml-deep-learning","source":"candidates.topic+category","confidence":"high","rawCategory":"NLP"}
 {"slug":"raft","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"分布式系统","source":"category","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"rag-lewis-2020","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"AI / NLP","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"ragtruth","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"RAG","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
@@ -1003,7 +1009,7 @@
 {"slug":"rummy-nsdi24","area":"papers","theme":"其他","themeId":"other","subcategory":"向量搜索","source":"candidates.topic+category","confidence":"high","rawCategory":"其他"}
 {"slug":"rust-analyzer-architecture","area":"papers","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"rustbelt-2018","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
-{"slug":"rwkv-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
+{"slug":"rwkv-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ml","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"sac-2018","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"saga-1987","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"sagiv-shape-analysis","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
@@ -1053,6 +1059,7 @@
 {"slug":"sequel-1974","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"sequential-consistency-1979","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"server-sent-events","area":"papers","theme":"后端 API","themeId":"backend-api","subcategory":"前端","source":"category","confidence":"high","rawCategory":"后端 API"}
+{"slug":"serverlessllm-osdi24","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"服务器less","source":"candidates.topic+category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"sglang-2024","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"ml","source":"candidates.topic+category","confidence":"high","rawCategory":"图形学"}
 {"slug":"sglang-radixattention","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ML 系统","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"sgx-2013","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
@@ -1227,6 +1234,7 @@
 {"slug":"v-system-1988","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"vall-e-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"vamp-verisoft-2006","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
+{"slug":"vaswani-attention-2017","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ml-deep-learning","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"vcc-2009","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"veach-1995-mis","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"veach-1997-mlt","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
@@ -1278,6 +1286,7 @@
 {"slug":"vtg-llm-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"vtimellm-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"wadler-prettier","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"编程语言","source":"category","confidence":"high","rawCategory":"编程语言"}
+{"slug":"wafer-llm-osdi25","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"大规模系统","source":"candidates.topic+category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"wald-2007-sah-bvh","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"wam-warren","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"wandb","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"基础设施","source":"category","confidence":"high","rawCategory":"基础设施"}

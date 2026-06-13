@@ -2,7 +2,6 @@
 title: "BUDAlloc: Defeating Use-After-Free Bugs by Decoupling Virtual Address Management from Kernel"
 来源: https://www.usenix.org/conference/usenixsecurity24/presentation/ahn
 日期: 2026-06-13
-分类_原始: systems
 分类: 基础设施
 子分类: 系统安全
 provenance: pipeline-v3

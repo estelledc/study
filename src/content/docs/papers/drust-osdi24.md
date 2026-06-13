@@ -2,7 +2,6 @@
 title: DRust: Language-Guided Distributed Shared Memory with Fine Granularity, Full Transparency, and Ultra Efficiency
 来源: https://www.usenix.org/conference/osdi24/presentation/ma-haoran
 日期: 2026-06-13
-分类_原始: 系统
 分类: 基础设施
 子分类: 分布式系统
 provenance: pipeline-v3
