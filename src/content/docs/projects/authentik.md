@@ -2,7 +2,7 @@
 title: Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢
 来源: https://github.com/goauthentik/authentik
 日期: 2026-06-13
-子分类: 安全与隐私
+子分类: security
 分类: 安全与隐私
 难度: 中级
 provenance: pipeline-v3

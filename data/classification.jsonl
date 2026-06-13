@@ -355,6 +355,7 @@
 {"slug":"eswaran-1976","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
 {"slug":"esx-memory-2002","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"ethane-2007","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
+{"slug":"eureka-agent","area":"papers","theme":"Agent","themeId":"agents","subcategory":"智能体","source":"candidates.topic+category","confidence":"high","rawCategory":"Agent"}
 {"slug":"eve-agent-evidence","area":"papers","theme":"Agent","themeId":"agents","subcategory":"智能体与 LLM","source":"candidates.topic","confidence":"high","rawCategory":"Agent"}
 {"slug":"evo-memory-2511","area":"papers","theme":"Agent","themeId":"agents","subcategory":"智能体与 LLM","source":"candidates.topic","confidence":"high","rawCategory":"Agent"}
 {"slug":"evorepair-vulnerability-repair-via-self-evolution-arxiv-2605-30105","area":"papers","theme":"安全与隐私","themeId":"security-privacy","subcategory":"安全与隐私","source":"candidates.topic","confidence":"high","rawCategory":"安全与隐私"}
@@ -712,6 +713,7 @@
 {"slug":"minhash-broder-1997","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"mini-max-sparse-attention","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"LLM系统","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"minicpm-v-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"category","confidence":"high","rawCategory":"机器学习"}
+{"slug":"minimax-m2-series","area":"papers","theme":"其他","themeId":"other","subcategory":"llm","source":"candidates.topic+category","confidence":"high","rawCategory":"其他"}
 {"slug":"minimax-sparse-attention","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ML 系统","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"minisat-2003","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"mips-1981","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
@@ -1041,6 +1043,7 @@
 {"slug":"sparrow-2013","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"sparse-autoencoders","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"AI 可解释性","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"sparsegpt-2023","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
+{"slug":"spatialclaw","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"空间推理","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"spec-agent-separation-logic","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"specbench-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ML 系统","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"specinfer-2023","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
@@ -1234,7 +1237,7 @@
 {"slug":"youtube-two-tower-2019","area":"papers","theme":"信息检索","themeId":"info-retrieval","subcategory":"检索与排序","source":"candidates.topic","confidence":"high","rawCategory":"信息检索"}
 {"slug":"z3-2008","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"zab-2011","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
-{"slug":"zaya1-8b","area":"papers","theme":"其他","themeId":"other","subcategory":"llm","source":"candidates.topic","confidence":"low","rawCategory":"大语言模型"}
+{"slug":"zaya1-8b","area":"papers","theme":"其他","themeId":"other","subcategory":"llm","source":"candidates.topic+category","confidence":"high","rawCategory":"其他"}
 {"slug":"zed-editor-collaborative","area":"papers","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"zephyr-rtos-overview","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式与 IoT","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"zero-2020","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}

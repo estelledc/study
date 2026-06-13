@@ -2,7 +2,7 @@
 title: Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器
 来源: https://developer.hashicorp.com/nomad/docs
 日期: 2026-05-31
-子分类: DevOps 与运维
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

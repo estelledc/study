@@ -2,7 +2,7 @@
 title: MLflow — 端到端 ML 生命周期
 来源: https://github.com/mlflow/mlflow
 日期: 2026-05-31
-子分类: 数据科学与 AI
+子分类: ai-infra
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

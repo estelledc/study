@@ -2,7 +2,7 @@
 title: Flux — 让 Git 当 Kubernetes 集群的真理来源
 来源: https://github.com/fluxcd/flux2
 日期: 2026-06-01
-子分类: gitops
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

@@ -2,7 +2,7 @@
 title: 'Accelerate — HuggingFace 设备/分布式抽象'
 来源: 'https://github.com/huggingface/accelerate'
 日期: '2026-05-30'
-子分类: 数据科学与 AI
+子分类: ai-infra
 分类: 机器学习
 难度: '中级'
 provenance: pipeline-v3

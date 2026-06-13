@@ -2,7 +2,7 @@
 title: Pulumi — 用真正的编程语言写云资源清单
 来源: https://github.com/pulumi/pulumi
 日期: 2026-06-01
-子分类: DevOps 与运维
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

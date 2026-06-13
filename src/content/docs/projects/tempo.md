@@ -2,7 +2,7 @@
 title: Tempo — 把分布式追踪扔进 S3 的开源后端
 来源: https://github.com/grafana/tempo
 日期: 2026-06-01
-子分类: DevOps 与运维
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

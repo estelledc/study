@@ -2,7 +2,7 @@
 title: LangChain — LLM 应用开发框架
 来源: https://github.com/langchain-ai/langchain
 日期: 2026-05-29
-子分类: 数据科学与 AI
+子分类: ai-infra
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

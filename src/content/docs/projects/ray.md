@@ -2,7 +2,7 @@
 title: Ray — 把单机 Python 函数和类无缝扩展到整个集群
 来源: Ray Documentation, https://docs.ray.io/
 日期: 2026-05-31
-子分类: 数据科学与 AI
+子分类: ai-infra
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

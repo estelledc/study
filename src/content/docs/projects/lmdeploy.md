@@ -3,7 +3,7 @@ title: LMDeploy — 大模型压缩、部署与推理工具包
 来源: https://github.com/InternLM/lmdeploy
 日期: 2026-06-13
 分类: 机器学习
-子分类: ML 系统
+子分类: ai-infra
 provenance: pipeline-v3
 ---
 

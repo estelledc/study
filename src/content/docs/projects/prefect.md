@@ -2,8 +2,8 @@
 title: Prefect — Python 原生编排，让数据流水线像写普通函数一样自然
 来源: Prefect Documentation, https://docs.prefect.io/v3/
 日期: 2026-05-31
-子分类: 数据科学与 AI
-分类: 机器学习
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
 ---

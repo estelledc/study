@@ -2,7 +2,6 @@
 title: ZAYA1-8B Technical Report
 来源: https://arxiv.org/abs/2605.05365
 日期: 2026-06-13
-分类_原始: 大语言模型
 分类: 其他
 子分类: llm
 provenance: pipeline-v3
