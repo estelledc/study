@@ -1,5 +1,5 @@
 ---
-title: Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流
+title: "Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流"
 来源: 'https://github.com/bokeh/bokeh + Continuum Analytics 2013 开源'
 日期: 2026-05-31
 子分类: 数据可视化

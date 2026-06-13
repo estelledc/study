@@ -1,5 +1,5 @@
 ---
-title: Opus — 低延迟全频带音频编解码
+title: "Opus — 低延迟全频带音频编解码"
 description: RFC 6716；WebRTC/视频会议默认音频；与 WebM/MP4 伴音的开源首选
 来源: 'https://github.com/xiph/opus'
 日期: 2026-06-06

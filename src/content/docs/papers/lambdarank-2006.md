@@ -1,5 +1,5 @@
 ---
-title: LambdaRank — 跳过定义损失函数，直接把梯度写出来
+title: "LambdaRank — 跳过定义损失函数，直接把梯度写出来"
 来源: Burges, Ragno, Le, "Learning to Rank with Nonsmooth Cost Functions", NIPS 2006
 日期: 2026-05-31
 子分类: 检索与排序

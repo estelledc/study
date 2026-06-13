@@ -1,5 +1,5 @@
 ---
-title: GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
+title: "GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT"
 来源: 'Würthinger et al., "One VM to Rule Them All", Onward! 2013'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -153,9 +153,9 @@ console.log(py(21));  // 42
 
 - [[e-path-equality-saturation-for-control-flow-graphs-arxiv-2605-28694]] —— E-Path Equality Saturation for Control-Flow Graphs — 把"改写程序"变成"同时保留所有可能"
 - [[graalvm]] —— GraalVM — 多语言通用 VM
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[llvm]] —— LLVM — 模块化编译器框架
+- [[nuitka]] —— Nuitka — 把 Python 源码编译成 C 再生成原生机器码
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎

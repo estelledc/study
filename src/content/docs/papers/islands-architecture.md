@@ -1,5 +1,5 @@
 ---
-title: Islands Architecture — 静态页面里只让需要交互的小块加载 JS
+title: "Islands Architecture — 静态页面里只让需要交互的小块加载 JS"
 来源: Jason Miller, "Islands Architecture", jasonformat.com, 2020
 日期: 2026-05-31
 子分类: 前端框架

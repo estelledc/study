@@ -1,5 +1,5 @@
 ---
-title: NATS — 极简云原生消息系统
+title: "NATS — 极简云原生消息系统"
 来源: https://github.com/nats-io/nats-server
 日期: 2026-05-29
 子分类: cloud-native

@@ -1,5 +1,5 @@
 ---
-title: TriAxialKV — Agent 推理场景下的极低精度 KV Cache 混合量化
+title: "TriAxialKV — Agent 推理场景下的极低精度 KV Cache 混合量化"
 来源: 'Shen et al., "TriAxialKV: Toward Extreme Low-Precision KV-Cache Quantization for Agentic Inference Tasks", arXiv:2605.17170, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

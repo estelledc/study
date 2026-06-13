@@ -1,5 +1,5 @@
 ---
-title: Ultralytics — YOLOv8/v11 实现
+title: "Ultralytics — YOLOv8/v11 实现"
 description: YOLOv8/v11 官方 SDK，检测/分割/姿态/OBB 一体
 来源: 'https://github.com/ultralytics/ultralytics'
 日期: 2026-06-06

@@ -1,5 +1,5 @@
 ---
-title: ThorVG — 轻量矢量图形引擎
+title: "ThorVG — 轻量矢量图形引擎"
 来源: https://github.com/thorvg/thorvg
 日期: 2026-06-13
 子分类: 渲染与图形

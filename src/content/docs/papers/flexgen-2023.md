@@ -1,5 +1,5 @@
 ---
-title: FlexGen — 把 175B 大模型塞进一张 16GB 显卡
+title: "FlexGen — 把 175B 大模型塞进一张 16GB 显卡"
 来源: https://arxiv.org/abs/2303.06865
 日期: 2026-06-13
 分类: 机器学习
@@ -250,5 +250,6 @@ OPT-30B 上 FlexGen 达到 **7.32 token/s（batch=144）**，加压缩到 **8.38
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel
+- [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

@@ -1,5 +1,5 @@
 ---
-title: GIMP — GNU 图像处理程序
+title: "GIMP — GNU 图像处理程序"
 来源: 'https://github.com/GNOME/gimp'
 日期: 2026-06-13
 子分类: 渲染与图形

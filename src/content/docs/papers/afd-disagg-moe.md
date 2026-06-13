@@ -1,5 +1,5 @@
 ---
-title: AFD 设计空间探索 — MoE LLM 推理中的 Attention–FFN 解耦
+title: "AFD 设计空间探索 — MoE LLM 推理中的 Attention–FFN 解耦"
 来源: https://arxiv.org/abs/2605.28302
 日期: 2026-06-13
 子分类: 共识与复制

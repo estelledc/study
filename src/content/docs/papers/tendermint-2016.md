@@ -1,5 +1,5 @@
 ---
-title: Tendermint — 把拜占庭共识塞进开放区块链的工程模板
+title: "Tendermint — 把拜占庭共识塞进开放区块链的工程模板"
 来源: 'Ethan Buchman, "Tendermint: Byzantine Fault Tolerance in the Age of Blockchains", MSc Thesis, University of Guelph, 2016'
 日期: 2026-05-31
 子分类: 共识与复制

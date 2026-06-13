@@ -1,5 +1,5 @@
 ---
-title: Transformers Video — HuggingFace 视频处理器与多模态输入管线
+title: "Transformers Video — HuggingFace 视频处理器与多模态输入管线"
 description: Qwen2VLVideoProcessor、AutoVideoProcessor 与 decord/pyav 后端；把 mp4 变成模型可吃的 pixel_values 与 video_grid_thw
 来源: 'https://github.com/huggingface/transformers'
 日期: 2026-06-05

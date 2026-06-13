@@ -1,5 +1,5 @@
 ---
-title: NVIDIA Tesla — 把显卡改造成通用并行计算机
+title: "NVIDIA Tesla — 把显卡改造成通用并行计算机"
 来源: 'Lindholm, Nickolls, Oberman, Montrym, "NVIDIA Tesla: A Unified Graphics and Computing Architecture", IEEE Micro 2008'
 日期: 2026-05-30
 子分类: GPU 架构

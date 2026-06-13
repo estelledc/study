@@ -1,5 +1,5 @@
 ---
-title: Chapar — 第一个被机器证明的因果一致 KV 存储
+title: "Chapar — 第一个被机器证明的因果一致 KV 存储"
 来源: 'Lesani, Bell, Chlipala, "Chapar: Certified Causally Consistent Distributed Key-Value Stores", POPL 2016'
 日期: 2026-05-31
 子分类: 形式化验证

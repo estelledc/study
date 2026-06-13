@@ -1,5 +1,5 @@
 ---
-title: TimeMarker — 时间分隔符 + 任意长度采帧的视频定位大模型
+title: "TimeMarker — 时间分隔符 + 任意长度采帧的视频定位大模型"
 来源: 'Chen et al., "TimeMarker: A Versatile Video-LLM for Long and Short Video Understanding with Superior Temporal Localization Ability", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

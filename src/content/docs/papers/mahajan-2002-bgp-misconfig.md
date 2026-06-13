@@ -1,5 +1,5 @@
 ---
-title: Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑
+title: "Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑"
 来源: Mahajan, Wetherall, Anderson, "Understanding BGP Misconfiguration", SIGCOMM 2002
 日期: 2026-06-01
 子分类: 网络协议

@@ -1,5 +1,5 @@
 ---
-title: visx — 把 d3 拆成 30 块乐高的 React 可视化原语
+title: "visx — 把 d3 拆成 30 块乐高的 React 可视化原语"
 来源: 'https://github.com/airbnb/visx + Airbnb Engineering 2018 "vx, an alternative to traditional chart libraries"'
 日期: 2026-05-30
 子分类: 前端工程
@@ -170,5 +170,4 @@ Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY
 - [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[vega]] —— Vega — 整张图就是一棵 JSON
 - [[vis-network]] —— vis-network — barnesHut 物理引擎驱动的网络图
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

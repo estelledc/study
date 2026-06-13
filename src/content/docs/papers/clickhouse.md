@@ -1,5 +1,5 @@
 ---
-title: ClickHouse — 把列存 OLAP 推到硬件极限
+title: "ClickHouse — 把列存 OLAP 推到硬件极限"
 来源: 'Schulze, Schreiber, Yatsishin, Dahimene, Milovidov. "ClickHouse - Lightning Fast Analytics for Everyone". VLDB 2024'
 日期: 2026-05-30
 子分类: 存储与查询

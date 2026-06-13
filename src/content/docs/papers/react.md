@@ -1,5 +1,5 @@
 ---
-title: ReAct — Reasoning and Acting
+title: "ReAct — Reasoning and Acting"
 来源: 'Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models", ICLR 2023'
 日期: 2026-05-29
 子分类: 智能体与 LLM

@@ -1,5 +1,5 @@
 ---
-title: PCL — Point Cloud Library 点云处理经典库
+title: "PCL — Point Cloud Library 点云处理经典库"
 description: 模块化 C++ 点云 I/O、滤波、特征、配准、分割与可视化；ROS/激光雷达/三维重建管线的工业级算法底座
 来源: 'https://github.com/PointCloudLibrary/pcl'
 日期: 2026-06-13

@@ -1,5 +1,5 @@
 ---
-title: Gradio — ML 模型 demo 框架
+title: "Gradio — ML 模型 demo 框架"
 来源: 'https://github.com/gradio-app/gradio'
 日期: 2026-06-01
 子分类: ai-agent-frameworks

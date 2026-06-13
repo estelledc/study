@@ -1,5 +1,5 @@
 ---
-title: 机械表——从零理解精密齿轮系统
+title: "机械表——从零理解精密齿轮系统"
 来源: https://ciechanow.ski/mechanical-watch/
 日期: 2026-06-13
 分类: CLI

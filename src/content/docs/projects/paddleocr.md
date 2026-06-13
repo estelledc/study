@@ -1,5 +1,5 @@
 ---
-title: PaddleOCR — 中文 OCR 最强开源方案
+title: "PaddleOCR — 中文 OCR 最强开源方案"
 来源: https://github.com/PaddlePaddle/PaddleOCR
 日期: 2026-05-31
 子分类: 数据科学与 AI

@@ -1,5 +1,5 @@
 ---
-title: Elasticsearch — 分布式搜索引擎
+title: "Elasticsearch — 分布式搜索引擎"
 来源: https://github.com/elastic/elasticsearch
 日期: 2026-05-29
 子分类: 存储与查询

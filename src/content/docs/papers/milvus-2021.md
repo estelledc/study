@@ -1,5 +1,5 @@
 ---
-title: Milvus — 为向量检索而生的数据库
+title: "Milvus — 为向量检索而生的数据库"
 来源: 'Wang et al. "Milvus: A Purpose-Built Vector Data Management System". SIGMOD 2021'
 日期: 2026-06-06
 分类: 数据库

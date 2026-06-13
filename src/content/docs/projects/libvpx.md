@@ -1,5 +1,5 @@
 ---
-title: libvpx — VP8/VP9 开源视频编解码
+title: "libvpx — VP8/VP9 开源视频编解码"
 description: WebM 核心；YouTube 转码后端；与 H.264 对照理解 Web 开源编码栈
 来源: 'https://github.com/webmproject/libvpx'
 日期: 2026-06-06

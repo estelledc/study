@@ -1,5 +1,5 @@
 ---
-title: Theorems for Free — 类型签名直接给定理
+title: "Theorems for Free — 类型签名直接给定理"
 来源: Wadler, "Theorems for free!", FPCA 1989
 日期: 2026-05-29
 子分类: 类型与 PL 理论
@@ -169,7 +169,7 @@ map f (map g xs) = map (f . g) xs
 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架

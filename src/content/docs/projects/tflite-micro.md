@@ -1,5 +1,5 @@
 ---
-title: TensorFlow Lite Micro — 把神经网络塞进几 KB RAM 的「袖珍推理引擎」
+title: "TensorFlow Lite Micro — 把神经网络塞进几 KB RAM 的「袖珍推理引擎」"
 来源: 'https://github.com/tensorflow/tflite-micro'
 日期: '2026-06-13'
 子分类: 嵌入式

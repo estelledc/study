@@ -1,5 +1,5 @@
 ---
-title: Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
+title: "Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架"
 来源: 'Mingyue Cheng et al., "Agent-R1: Training Powerful LLM Agents with End-to-End Reinforcement Learning", arXiv:2511.14460, 2025'
 日期: 2026-06-01
 子分类: 智能体与 LLM

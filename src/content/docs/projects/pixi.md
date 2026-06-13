@@ -1,5 +1,5 @@
 ---
-title: PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+title: "PixiJS — 浏览器里画 2D 的高性能 GPU 引擎"
 来源: 'https://github.com/pixijs/pixijs'
 日期: 2026-05-30
 子分类: projects / 图形渲染

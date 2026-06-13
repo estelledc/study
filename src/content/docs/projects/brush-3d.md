@@ -1,5 +1,5 @@
 ---
-title: Brush — 用 Rust + WebGPU 把 3D 重建跑在任意设备上的开源引擎
+title: "Brush — 用 Rust + WebGPU 把 3D 重建跑在任意设备上的开源引擎"
 来源: 'https://github.com/ArthurBrussee/brush'
 日期: 2026-06-13
 分类: 图形学

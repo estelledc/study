@@ -1,5 +1,5 @@
 ---
-title: Gleam — 静态类型 BEAM 语言
+title: "Gleam — 静态类型 BEAM 语言"
 来源: https://github.com/gleam-lang/gleam
 日期: 2026-06-13
 分类: 编译器

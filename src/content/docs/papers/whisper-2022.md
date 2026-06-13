@@ -1,5 +1,5 @@
 ---
-title: Whisper — 68 万小时弱监督训出的语音识别
+title: "Whisper — 68 万小时弱监督训出的语音识别"
 来源: 'Radford et al. "Robust Speech Recognition via Large-Scale Weak Supervision". arXiv 2022'
 日期: 2026-06-06
 分类: 机器学习

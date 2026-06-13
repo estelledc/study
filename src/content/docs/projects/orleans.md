@@ -1,5 +1,5 @@
 ---
-title: Orleans — 让分布式服务写起来像单机对象
+title: "Orleans — 让分布式服务写起来像单机对象"
 来源: 'https://github.com/dotnet/orleans'
 日期: 2026-05-30
 子分类: Web 后端

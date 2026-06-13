@@ -1,5 +1,5 @@
 ---
-title: Qlib — 微软开源的 AI 量化投资平台
+title: "Qlib — 微软开源的 AI 量化投资平台"
 来源: https://github.com/microsoft/qlib
 日期: 2026-06-13
 分类: 其他

@@ -1,5 +1,5 @@
 ---
-title: Tutti — 让 SSD 上的 KV Cache 真正可用于长上下文 LLM 推理
+title: "Tutti — 让 SSD 上的 KV Cache 真正可用于长上下文 LLM 推理"
 来源: 'Qiu et al., "Tutti: Making SSD-Backed KV Cache Practical for Long-Context LLM Serving", arXiv:2605.03375, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

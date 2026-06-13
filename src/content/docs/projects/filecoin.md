@@ -1,5 +1,5 @@
 ---
-title: Filecoin / Lotus — IPFS 之上的去中心化存储市场
+title: "Filecoin / Lotus — IPFS 之上的去中心化存储市场"
 来源: 'https://github.com/filecoin-project/lotus'
 日期: 2026-05-30
 子分类: 链与合约

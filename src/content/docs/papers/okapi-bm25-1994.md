@@ -1,5 +1,5 @@
 ---
-title: Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式
+title: "Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式"
 来源: Robertson & Walker, "Some Simple Effective Approximations to the 2-Poisson Model for Probabilistic Weighted Retrieval", SIGIR 1994
 日期: 2026-05-31
 子分类: 检索与排序

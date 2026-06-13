@@ -1,5 +1,5 @@
 ---
-title: OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
+title: "OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉"
 来源: https://github.com/opensearch-project/OpenSearch
 日期: 2026-06-01
 子分类: 存储与查询

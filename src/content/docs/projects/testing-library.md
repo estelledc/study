@@ -1,5 +1,5 @@
 ---
-title: Testing Library — 像用户一样测前端，重构不再挂测试
+title: "Testing Library — 像用户一样测前端，重构不再挂测试"
 来源: 'https://github.com/testing-library/dom-testing-library'
 日期: 2026-05-30
 子分类: 工具库

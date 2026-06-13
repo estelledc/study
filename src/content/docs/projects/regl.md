@@ -1,5 +1,5 @@
 ---
-title: regl — 函数式 WebGL 封装
+title: "regl — 函数式 WebGL 封装"
 来源: 'https://github.com/regl-project/regl'
 日期: 2026-06-06
 分类: 图形学

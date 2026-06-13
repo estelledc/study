@@ -1,5 +1,5 @@
 ---
-title: NeuMF — 用神经网络替掉推荐系统的内积
+title: "NeuMF — 用神经网络替掉推荐系统的内积"
 来源: He et al., "Neural Collaborative Filtering", WWW 2017
 日期: 2026-05-31
 子分类: 检索与排序

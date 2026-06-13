@@ -1,5 +1,5 @@
 ---
-title: pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑
+title: "pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑"
 来源: https://github.com/bpampuch/pdfmake
 日期: 2026-06-01
 子分类: 数据可视化

@@ -1,5 +1,5 @@
 ---
-title: Flash Boys 2.0 — 区块链上的抢跑者和共识危机
+title: "Flash Boys 2.0 — 区块链上的抢跑者和共识危机"
 来源: 'Daian et al., "Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability in Decentralized Exchanges", IEEE S&P 2020'
 日期: 2026-06-06
 分类: 安全与隐私

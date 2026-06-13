@@ -1,5 +1,5 @@
 ---
-title: Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架
+title: "Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架"
 来源: https://github.com/charmbracelet/bubbletea
 日期: 2026-05-31
 子分类: 命令行工具

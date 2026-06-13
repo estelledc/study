@@ -1,5 +1,5 @@
 ---
-title: Arweave — 一次付费、永远存着的区块链
+title: "Arweave — 一次付费、永远存着的区块链"
 来源: 'https://github.com/ArweaveTeam/arweave'
 日期: 2026-05-30
 子分类: 链与合约

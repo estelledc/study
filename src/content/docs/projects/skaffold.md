@@ -1,5 +1,5 @@
 ---
-title: Skaffold — K8s 本地开发的 build-deploy 自动循环
+title: "Skaffold — K8s 本地开发的 build-deploy 自动循环"
 来源: https://github.com/GoogleContainerTools/skaffold
 日期: 2026-06-01
 子分类: DevOps 与运维

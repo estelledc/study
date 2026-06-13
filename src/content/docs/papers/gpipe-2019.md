@@ -1,5 +1,5 @@
 ---
-title: GPipe — micro-batch 流水线让 GPU 排成生产线
+title: "GPipe — micro-batch 流水线让 GPU 排成生产线"
 来源: 'Huang et al., "GPipe: Efficient Training of Giant Neural Networks using Pipeline Parallelism", NeurIPS 2019'
 日期: 2026-05-31
 子分类: GPU 架构

@@ -1,5 +1,5 @@
 ---
-title: VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频
+title: "VideoAgent (Wang) — LLM Agent 迭代选帧理解长视频"
 来源: 'Wang et al., "VideoAgent: Long-form Video Understanding with Large Language Model as Agent", 2024'
 日期: 2026-06-06
 分类: 机器学习

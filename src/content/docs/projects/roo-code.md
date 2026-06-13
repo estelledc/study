@@ -1,5 +1,5 @@
 ---
-title: Roo Code — 多模式 VS Code AI 助手
+title: "Roo Code — 多模式 VS Code AI 助手"
 来源: https://github.com/RooCodeInc/Roo-Code
 日期: 2026-06-13
 子分类: 编辑器与 IDE

@@ -1,5 +1,5 @@
 ---
-title: DP-SGD — 深度学习差分隐私训练
+title: "DP-SGD — 深度学习差分隐私训练"
 来源: 'Abadi et al., "Deep Learning with Differential Privacy", CCS 2016'
 日期: 2026-06-06
 分类: 安全与隐私

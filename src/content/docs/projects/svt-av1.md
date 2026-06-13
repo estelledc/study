@@ -1,5 +1,5 @@
 ---
-title: SVT-AV1 — 可扩展 AV1 软件编码器
+title: "SVT-AV1 — 可扩展 AV1 软件编码器"
 description: Intel/AOMedia 出品；多核分块编码；FFmpeg libsvtav1 是开源 AV1 量产路径
 来源: 'https://github.com/AOMediaCodec/SVT-AV1'
 日期: 2026-06-06

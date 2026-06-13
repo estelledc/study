@@ -1,5 +1,5 @@
 ---
-title: UI-TARS Desktop — 让 AI 像人一样操作电脑
+title: "UI-TARS Desktop — 让 AI 像人一样操作电脑"
 来源: https://github.com/bytedance/UI-TARS-desktop
 日期: 2026-06-13
 分类: 机器学习

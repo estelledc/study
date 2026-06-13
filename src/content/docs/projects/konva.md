@@ -1,5 +1,5 @@
 ---
-title: Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+title: "Konva — 给 HTML5 Canvas 装一棵会响应的节点树"
 来源: 'https://github.com/konvajs/konva'
 日期: 2026-05-30
 子分类: 前端图形 / Canvas 2D

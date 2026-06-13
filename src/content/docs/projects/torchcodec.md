@@ -1,5 +1,5 @@
 ---
-title: TorchCodec — PyTorch 原生 GPU 视频解码与张量输出
+title: "TorchCodec — PyTorch 原生 GPU 视频解码与张量输出"
 description: Meta/PyTorch 出品的 FFmpeg 绑定解码库；帧直接进 torch.Tensor，面向训练 DataLoader 与 TorchVision 视频管线
 来源: 'https://github.com/pytorch/torchcodec'
 日期: 2026-06-05

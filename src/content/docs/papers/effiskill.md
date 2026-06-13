@@ -1,5 +1,5 @@
 ---
-title: EffiSkill — 把代码效率优化经验抽成两层 skill 库
+title: "EffiSkill — 把代码效率优化经验抽成两层 skill 库"
 来源: 'EffiSkill: Agent Skill Based Automated Code Efficiency Optimization, arXiv:2603.27850, 2026'
 日期: 2026-06-01
 子分类: 智能体与 LLM

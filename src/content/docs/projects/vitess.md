@@ -1,5 +1,5 @@
 ---
-title: Vitess — 给 MySQL 装上水平分片的代理层
+title: "Vitess — 给 MySQL 装上水平分片的代理层"
 来源: 'https://github.com/vitessio/vitess'
 日期: 2026-05-31
 子分类: 存储与查询

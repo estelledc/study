@@ -1,5 +1,5 @@
 ---
-title: Embassy — 嵌入式 Rust 的 async/await 运行时
+title: "Embassy — 嵌入式 Rust 的 async/await 运行时"
 来源: 'https://github.com/embassy-rs/embassy'
 日期: 2026-06-06
 分类: 操作系统

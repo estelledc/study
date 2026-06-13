@@ -1,5 +1,5 @@
 ---
-title: Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM
+title: "Grounded-VideoLLM — 双流编码 + 时间 token，把「何时发生」写进 Video LLM"
 来源: 'Wang et al., "Grounded-VideoLLM: Sharpening Fine-grained Temporal Grounding in Video Large Language Models", EMNLP 2025 Findings'
 日期: 2026-06-05
 分类: 机器学习

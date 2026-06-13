@@ -1,5 +1,5 @@
 ---
-title: Data Plane Development Kit (DPDK) Architecture — 用户态线速网络栈零基础导读
+title: "Data Plane Development Kit (DPDK) Architecture — 用户态线速网络栈零基础导读"
 来源: https://www.dpdk.org/wp-content/uploads/sites/35/2014/09/DPDK-SFSummit2014-HighPerformanceNetworkingLeveragingDPDK-Brief.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化

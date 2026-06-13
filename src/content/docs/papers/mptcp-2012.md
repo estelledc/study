@@ -1,5 +1,5 @@
 ---
-title: MPTCP 2012 — 把一根 TCP 管道变成多条并行水管
+title: "MPTCP 2012 — 把一根 TCP 管道变成多条并行水管"
 来源: 'Costin Raiciu et al., "How Hard Can It Be? Designing and Implementing a Deployable Multipath TCP", NSDI 2012'
 日期: 2026-06-06
 分类: 网络协议

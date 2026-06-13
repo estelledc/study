@@ -161,6 +161,7 @@ const back = applyPatches(next, inverse)  // back deepEquals base
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[jotai]] —— Jotai — 原子化 React 状态管理
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[mobx]] —— MobX — 让 state 像电子表格一样自动重算
 - [[react]] —— React UI 组件库

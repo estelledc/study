@@ -1,5 +1,5 @@
 ---
-title: Locally Coherent, Globally Incoherent — 多组件 LLM Agent 的组合不一致性
+title: "Locally Coherent, Globally Incoherent — 多组件 LLM Agent 的组合不一致性"
 来源: https://arxiv.org/abs/2605.30335
 日期: 2026-06-13
 子分类: 模型与训练

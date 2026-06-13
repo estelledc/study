@@ -1,5 +1,5 @@
 ---
-title: Remix IDE — 浏览器内 Solidity IDE
+title: "Remix IDE — 浏览器内 Solidity IDE"
 来源: 'https://github.com/ethereum/remix-project'
 日期: 2026-05-30
 子分类: 链与合约

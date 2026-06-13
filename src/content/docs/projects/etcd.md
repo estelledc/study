@@ -1,8 +1,8 @@
 ---
-title: etcd — 分布式键值数据库
+title: "etcd — 分布式键值数据库"
 来源: https://github.com/etcd-io/etcd
 日期: 2026-05-29
-子分类: 存储与查询
+子分类: databases-and-storage
 分类: 数据库
 难度: 中级
 provenance: pipeline-v3
@@ -156,5 +156,6 @@ etcdctl lock /lock/job-runner -- ./run-job.sh
 - [[tikv]] —— TiKV — 分布式事务 KV
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 - [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
+- [[yugabytedb]] —— YugabyteDB — 零基础入门分布式 SQL
 - [[zookeeper]] —— Apache ZooKeeper — 给一群机器装一个共同的小脑
 

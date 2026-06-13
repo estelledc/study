@@ -1,5 +1,5 @@
 ---
-title: GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
+title: "GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器"
 来源: 'https://github.com/dotansimha/graphql-yoga'
 日期: 2026-05-30
 子分类: Web 后端

@@ -1,5 +1,5 @@
 ---
-title: Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工
+title: "Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工"
 来源: https://github.com/containers/buildah
 日期: 2026-06-01
 子分类: DevOps 与运维

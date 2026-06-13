@@ -1,5 +1,5 @@
 ---
-title: MME-Survey — 多模态 LLM 怎么评才靠谱
+title: "MME-Survey — 多模态 LLM 怎么评才靠谱"
 来源: 'Fu et al. "MME-Survey: A Comprehensive Survey on Evaluation of Multimodal LLMs". arXiv 2024'
 日期: 2026-06-06
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: AdamW — 把 weight decay 从梯度里拆出来
+title: "AdamW — 把 weight decay 从梯度里拆出来"
 来源: 'Loshchilov & Hutter, "Decoupled Weight Decay Regularization", ICLR 2019 (arXiv 1711.05101, 2017.11)'
 日期: 2026-06-01
 子分类: 模型与训练

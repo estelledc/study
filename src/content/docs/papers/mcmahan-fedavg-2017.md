@@ -1,5 +1,5 @@
 ---
-title: FedAvg — 联邦学习奠基算法
+title: "FedAvg — 联邦学习奠基算法"
 来源: 'McMahan et al., "Communication-Efficient Learning of Deep Networks from Decentralized Data", AISTATS 2017'
 日期: 2026-06-06
 分类: 安全与隐私

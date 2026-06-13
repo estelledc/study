@@ -1,5 +1,5 @@
 ---
-title: Pivot Tracing — 让运维事后想测什么就测什么
+title: "Pivot Tracing — 让运维事后想测什么就测什么"
 来源: 'Mace, Roscoe, Fonseca, "Pivot Tracing: Dynamic Causal Monitoring for Distributed Systems", SOSP 2015 (Best Paper)'
 日期: 2026-05-31
 子分类: 共识与复制

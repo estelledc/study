@@ -1,5 +1,5 @@
 ---
-title: Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI
+title: "Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI"
 来源: getredash/redash GitHub, https://github.com/getredash/redash
 日期: 2026-06-01
 子分类: 数据可视化

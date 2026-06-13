@@ -1,5 +1,5 @@
 ---
-title: DORA State of DevOps Report 2023 — 用「餐厅经营」读懂软件交付科学
+title: "DORA State of DevOps Report 2023 — 用「餐厅经营」读懂软件交付科学"
 来源: https://services.google.com/fh/files/misc/2023_state_of_devops_report.pdf
 日期: 2026-06-13
 分类: 其他

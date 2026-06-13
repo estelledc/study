@@ -1,5 +1,5 @@
 ---
-title: LLaVA — 开源多模态对话模型
+title: "LLaVA — 开源多模态对话模型"
 来源: 'Liu et al., "Visual Instruction Tuning", NeurIPS 2023'
 日期: 2026-05-29
 子分类: 多模态 / NLP

@@ -1,5 +1,5 @@
 ---
-title: HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
+title: "HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡"
 来源: 'https://github.com/haproxy/haproxy'
 日期: 2026-05-30
 子分类: Web 后端

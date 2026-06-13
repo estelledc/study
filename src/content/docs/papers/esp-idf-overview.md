@@ -1,5 +1,5 @@
 ---
-title: ESP-IDF — Espressif IoT Development Framework 零基础学习笔记
+title: "ESP-IDF — Espressif IoT Development Framework 零基础学习笔记"
 来源: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

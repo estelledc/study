@@ -1,5 +1,5 @@
 ---
-title: Kakoune — 面向对象的模态编辑器：先圈地，再动刀
+title: "Kakoune — 面向对象的模态编辑器：先圈地，再动刀"
 来源: https://kakoune.org/why-kakoune/why-kakoune.html
 日期: 2026-06-13
 子分类: 编辑器与 IDE

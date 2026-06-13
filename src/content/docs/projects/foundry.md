@@ -1,5 +1,5 @@
 ---
-title: Foundry — Paradigm 出品的 Rust 合约工具链
+title: "Foundry — Paradigm 出品的 Rust 合约工具链"
 来源: 'https://github.com/foundry-rs/foundry'
 日期: 2026-05-30
 子分类: 链与合约

@@ -1,5 +1,5 @@
 ---
-title: B-Tree 1972 — 磁盘友好的索引结构
+title: "B-Tree 1972 — 磁盘友好的索引结构"
 来源: Bayer & McCreight, "Organization and Maintenance of Large Ordered Indexes", Acta Informatica 1972
 日期: 2026-05-29
 子分类: 存储与查询
@@ -141,6 +141,7 @@ B+Tree 的执行路径：
 - [[knuth-taocp]] —— Knuth TAOCP — 计算机程序设计艺术
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
+- [[rocksdb-evolution-2021]] —— RocksDB 优先级演化 — 八年大规模存储引擎的工程决策复盘
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
 - [[sequel-1974]] —— SEQUEL 1974 — 让数据库"听懂"近似英语的查询

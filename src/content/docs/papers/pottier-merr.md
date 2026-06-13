@@ -1,5 +1,5 @@
 ---
-title: Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
+title: "Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整"
 来源: 'François Pottier, "Reachability and Error Diagnosis in LR(1) Parsers", CC 2016'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -175,7 +175,6 @@ expr: i = INT { i } | LPAREN e = expr RPAREN { e } | a = expr PLUS b = expr { a 
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[earley-parser]] —— Earley Parser — 一个表能解析任何 CFG 的通用解析器
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
 - [[lalr-deremer]] —— DeRemer LALR(1) — 把 LR 表压到能用大小

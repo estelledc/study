@@ -1,5 +1,5 @@
 ---
-title: AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集
+title: "AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集"
 来源: AntV 团队（Ant Group）F2 官网与仓库, https://f2.antv.antgroup.com/ + https://github.com/antvis/F2
 日期: 2026-06-01
 子分类: 数据可视化

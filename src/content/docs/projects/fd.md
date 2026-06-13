@@ -1,5 +1,5 @@
 ---
-title: fd — Rust 写的现代 find
+title: "fd — Rust 写的现代 find"
 来源: https://github.com/sharkdp/fd
 日期: 2026-05-29
 子分类: 命令行工具

@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core — 微软跨平台 web 框架
+title: "ASP.NET Core — 微软跨平台 web 框架"
 来源: 'https://github.com/dotnet/aspnetcore'
 日期: 2026-05-30
 子分类: Web 后端

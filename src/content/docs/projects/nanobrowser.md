@@ -1,5 +1,5 @@
 ---
-title: nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
+title: "nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱"
 来源: 'https://github.com/nanobrowser/nanobrowser'
 日期: 2026-05-30
 子分类: AI agent

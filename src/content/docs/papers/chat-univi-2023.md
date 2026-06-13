@@ -1,5 +1,5 @@
 ---
-title: Chat-UniVi — 动态视觉 token 统一图像与视频对话
+title: "Chat-UniVi — 动态视觉 token 统一图像与视频对话"
 来源: 'Jin et al., "Chat-UniVi: Unified Visual Representation Empowers Large Language Models with Image and Video Understanding", CVPR 2024'
 日期: 2026-06-05
 分类: 机器学习

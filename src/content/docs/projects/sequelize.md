@@ -1,5 +1,5 @@
 ---
-title: Sequelize — 老牌 Node ORM
+title: "Sequelize — 老牌 Node ORM"
 来源: https://github.com/sequelize/sequelize
 日期: 2026-05-29
 子分类: ORM
@@ -162,4 +162,5 @@ module.exports = {
 - [[mikro-orm]] —— MikroORM — Data Mapper Identity Map ORM
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prisma]] —— Prisma — 类型安全 ORM
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

@@ -1,5 +1,5 @@
 ---
-title: gron — 把 JSON 拍平成 grep 能吃的赋值行
+title: "gron — 把 JSON 拍平成 grep 能吃的赋值行"
 来源: https://github.com/tomnomnom/gron
 日期: 2026-05-30
 子分类: 命令行工具

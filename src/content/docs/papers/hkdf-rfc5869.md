@@ -1,5 +1,5 @@
 ---
-title: HKDF (RFC 5869) — 从「不太均匀的原料」榨出多把互不串味的密钥
+title: "HKDF (RFC 5869) — 从「不太均匀的原料」榨出多把互不串味的密钥"
 来源: https://www.rfc-editor.org/rfc/rfc5869
 日期: 2026-06-13
 分类: 安全与隐私

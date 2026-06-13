@@ -1,5 +1,5 @@
 ---
-title: VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻
+title: "VTG-LLM — 绝对时间 token + VTG-IT-120K，让 Video LLM 精确定位时刻"
 来源: 'Guo et al., "VTG-LLM: Integrating Timestamp Knowledge into Video LLMs for Enhanced Video Temporal Grounding", AAAI 2025'
 日期: 2026-06-05
 分类: 机器学习

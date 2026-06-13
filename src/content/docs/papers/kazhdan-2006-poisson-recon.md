@@ -1,5 +1,5 @@
 ---
-title: Poisson Surface Reconstruction — 把点云变成水密网格的全局解法
+title: "Poisson Surface Reconstruction — 把点云变成水密网格的全局解法"
 来源: Kazhdan, Bolitho, Hoppe, "Poisson Surface Reconstruction", SGP 2006
 日期: 2026-05-31
 子分类: 渲染与图形

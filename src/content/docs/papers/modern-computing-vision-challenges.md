@@ -1,5 +1,5 @@
 ---
-title: Modern Computing — 从大型机到量子计算，计算机是怎么变成今天的样子的
+title: "Modern Computing — 从大型机到量子计算，计算机是怎么变成今天的样子的"
 来源: 'https://arxiv.org/abs/2401.02469'
 日期: 2026-06-13
 分类: 其他

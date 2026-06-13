@@ -1,5 +1,5 @@
 ---
-title: VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩
+title: "VideoLLaMA 3 — 动态分辨率视觉编码 + 视频 token 压缩"
 来源: 'Zhang et al., "VideoLLaMA 3: Vision-centric Multimodal Large Language Model", arXiv 2025'
 日期: 2026-06-05
 分类: 机器学习

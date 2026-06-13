@@ -1,5 +1,5 @@
 ---
-title: LiveKit — 开源实时多媒体 SFU
+title: "LiveKit — 开源实时多媒体 SFU"
 description: Go 写的开源 WebRTC SFU，房间、录制与 Egress 一体
 来源: 'https://github.com/livekit/livekit'
 日期: 2026-06-06

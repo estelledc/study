@@ -1,5 +1,5 @@
 ---
-title: InternVideo2.5 — 长富上下文 + HiCo 层次压缩
+title: "InternVideo2.5 — 长富上下文 + HiCo 层次压缩"
 来源: 'Wang et al., "InternVideo2.5: Empowering Video MLLMs with Long and Rich Context Modeling", arXiv 2025'
 日期: 2026-06-05
 分类: 机器学习

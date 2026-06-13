@@ -1,5 +1,5 @@
 ---
-title: Postal — 自托管的 Mailgun / SendGrid 替代
+title: "Postal — 自托管的 Mailgun / SendGrid 替代"
 来源: https://github.com/postalserver/postal
 日期: 2026-05-31
 子分类: 实时通信

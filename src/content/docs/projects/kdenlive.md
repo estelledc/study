@@ -1,5 +1,5 @@
 ---
-title: Kdenlive — KDE 非线性视频剪辑
+title: "Kdenlive — KDE 非线性视频剪辑"
 来源: 'https://github.com/KDE/kdenlive'
 日期: 2026-06-13
 子分类: 渲染与图形

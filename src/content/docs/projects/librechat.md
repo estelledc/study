@@ -1,5 +1,5 @@
 ---
-title: LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+title: "LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器"
 来源: 'https://github.com/danny-avila/LibreChat'
 日期: 2026-05-30
 子分类: projects

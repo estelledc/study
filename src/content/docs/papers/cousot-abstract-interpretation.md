@@ -1,5 +1,5 @@
 ---
-title: Cousot 抽象解释 — 给静态分析一套统一数学框架
+title: "Cousot 抽象解释 — 给静态分析一套统一数学框架"
 来源: 'Cousot & Cousot, "Abstract Interpretation: A Unified Lattice Model for Static Analysis of Programs by Construction or Approximation of Fixpoints", POPL 1977'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -170,7 +170,6 @@ s.length();              // 出 if 后 → 重新 nullable，警告 NPE 风险
 - [[dijkstra-goto]] —— Dijkstra 1968 — Go To Statement Considered Harmful
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[graf-saidi-1997]] —— Graf-Saïdi — 用谓词把无限状态压成有限抽象
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[infer-biabduction]] —— Bi-Abduction — 让静态分析自动猜出函数缺什么前提
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

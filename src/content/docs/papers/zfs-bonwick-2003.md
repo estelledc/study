@@ -1,5 +1,5 @@
 ---
-title: ZFS — 不信任硬盘的「水池式」文件系统
+title: "ZFS — 不信任硬盘的「水池式」文件系统"
 来源: https://www.cs.hmc.edu/~rhodes/courses/cs134/papers/zfs.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化
@@ -297,5 +297,8 @@ COW 听起来像「随机写变慢」，但 ZFS 用几招抵消：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[hdfs-2010]] —— HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB
+- [[lfs-1991]] —— LFS 1991 — 把整个磁盘当日志写
+- [[zfs-2003]] —— ZFS — 把磁盘当成水池，每滴水都贴标签
 

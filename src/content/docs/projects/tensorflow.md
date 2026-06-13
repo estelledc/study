@@ -2,7 +2,7 @@
 title: 'TensorFlow — Google 端到端 DL 平台'
 来源: 'https://github.com/tensorflow/tensorflow'
 日期: '2026-05-30'
-子分类: 数据科学与 AI
+子分类: ai-ml-frameworks
 分类: 机器学习
 难度: '中级'
 provenance: pipeline-v3

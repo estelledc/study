@@ -1,5 +1,5 @@
 ---
-title: Ionic Framework — 用 Web 技术打包原生移动 App
+title: "Ionic Framework — 用 Web 技术打包原生移动 App"
 来源: 'https://github.com/ionic-team/ionic-framework'
 日期: 2026-06-06
 分类: 后端 API
@@ -209,7 +209,9 @@ export function PhotoCapture() {
 - [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[nativescript]] —— NativeScript — JS/TS 直接调原生 API，无 WebView
+- [[onsen-ui]] —— Onsen UI — 用一套 HTML 同时搞定 iOS 和 Android 原生风格界面
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[pwa-builder]] —— PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具
 - [[react]] —— React UI 组件库
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架

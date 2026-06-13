@@ -1,5 +1,5 @@
 ---
-title: Paperless-ngx — 自托管无纸化文档管理系统
+title: "Paperless-ngx — 自托管无纸化文档管理系统"
 来源: https://github.com/paperless-ngx/paperless-ngx
 日期: 2026-06-13
 子分类: Web 后端

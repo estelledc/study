@@ -1,5 +1,5 @@
 ---
-title: Prometheus — 时序监控系统
+title: "Prometheus — 时序监控系统"
 来源: https://github.com/prometheus/prometheus
 日期: 2026-05-29
 子分类: 存储与查询

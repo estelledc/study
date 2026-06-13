@@ -1,5 +1,5 @@
 ---
-title: ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
+title: "ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器"
 来源: 'Per Liden et al., "JEP 333: ZGC A Scalable Low-Latency Garbage Collector", OpenJDK 2018+'
 日期: 2026-05-30
 子分类: 编程语言

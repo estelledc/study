@@ -1,5 +1,5 @@
 ---
-title: ESPHome — 用 YAML 给 ESP 芯片写「说明书」的固件工厂
+title: "ESPHome — 用 YAML 给 ESP 芯片写「说明书」的固件工厂"
 来源: 'https://github.com/esphome/esphome'
 日期: '2026-06-13'
 子分类: 嵌入式

@@ -1,5 +1,5 @@
 ---
-title: DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
+title: "DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块"
 来源: 'Ryzhyk, Budiu, et al. "Differential Datalog". Datalog 2.0 Workshop 2019'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

@@ -1,5 +1,5 @@
 ---
-title: Doom Emacs — 极简风 Emacs 配置框架
+title: "Doom Emacs — 极简风 Emacs 配置框架"
 来源: 'https://github.com/doomemacs/doomemacs'
 日期: 2026-06-06
 分类: CLI

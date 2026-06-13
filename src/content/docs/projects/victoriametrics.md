@@ -1,5 +1,5 @@
 ---
-title: VictoriaMetrics — 高性能 Prometheus 替代
+title: "VictoriaMetrics — 高性能 Prometheus 替代"
 来源: https://github.com/VictoriaMetrics/VictoriaMetrics
 日期: 2026-05-29
 子分类: 存储与查询

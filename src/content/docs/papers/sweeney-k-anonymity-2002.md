@@ -1,5 +1,5 @@
 ---
-title: k-匿名 — 发布数据时让攻击者无法锁定你是谁
+title: "k-匿名 — 发布数据时让攻击者无法锁定你是谁"
 来源: 'Latanya Sweeney, "k-Anonymity: A Model for Protecting Privacy", IJUFKS 2002'
 日期: 2026-06-06
 分类: 安全与隐私

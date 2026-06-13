@@ -1,5 +1,5 @@
 ---
-title: Tabulator — 纯 JS 交互式表格
+title: "Tabulator — 纯 JS 交互式表格"
 来源: https://github.com/olifolkerd/tabulator
 日期: 2026-06-01
 子分类: 数据可视化

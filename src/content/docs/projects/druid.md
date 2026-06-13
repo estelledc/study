@@ -1,5 +1,5 @@
 ---
-title: Apache Druid — 流批一体的实时分析数据库
+title: "Apache Druid — 流批一体的实时分析数据库"
 来源: https://github.com/apache/druid
 日期: 2026-05-31
 子分类: 存储与查询

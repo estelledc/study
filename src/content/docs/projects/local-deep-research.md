@@ -1,5 +1,5 @@
 ---
-title: Local Deep Research — 本地运行的大模型研究 Agent
+title: "Local Deep Research — 本地运行的大模型研究 Agent"
 来源: https://github.com/LearningCircuit/local-deep-research
 日期: 2026-06-13
 分类: 机器学习

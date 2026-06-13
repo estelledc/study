@@ -1,5 +1,5 @@
 ---
-title: Argilla — 给 LLM 训练数据做人工反馈的开源标注平台
+title: "Argilla — 给 LLM 训练数据做人工反馈的开源标注平台"
 来源: https://github.com/argilla-io/argilla
 日期: 2026-05-31
 子分类: 数据科学与 AI

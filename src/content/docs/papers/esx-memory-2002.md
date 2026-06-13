@@ -1,5 +1,5 @@
 ---
-title: ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术
+title: "ESX Memory 2002 — 让一台机器假装比自己更大的四个魔术"
 来源: Carl A. Waldspurger, "Memory Resource Management in VMware ESX Server", OSDI 2002
 日期: 2026-06-01
 子分类: 内核与虚拟化

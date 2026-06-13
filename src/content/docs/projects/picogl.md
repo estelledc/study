@@ -1,5 +1,5 @@
 ---
-title: PicoGL.js — 极简 WebGL2 包装
+title: "PicoGL.js — 极简 WebGL2 包装"
 来源: 'https://github.com/tsherif/picogl.js'
 日期: 2026-06-13
 子分类: 渲染与图形

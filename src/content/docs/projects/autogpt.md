@@ -1,5 +1,5 @@
 ---
-title: AutoGPT 学习笔记 —— 让 AI 自己干活
+title: "AutoGPT 学习笔记 —— 让 AI 自己干活"
 来源: https://github.com/Significant-Gravitas/AutoGPT
 日期: 2026-06-13
 分类: 机器学习

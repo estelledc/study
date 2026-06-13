@@ -1,5 +1,5 @@
 ---
-title: ProseMirror — 构建富文本编辑器的工具箱
+title: "ProseMirror — 构建富文本编辑器的工具箱"
 来源: https://prosemirror.net/docs/guide/
 日期: 2026-06-13
 分类: CLI

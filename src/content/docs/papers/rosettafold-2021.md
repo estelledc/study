@@ -1,5 +1,5 @@
 ---
-title: RoseTTAFold — 三轨神经网络预测蛋白质结构与相互作用
+title: "RoseTTAFold — 三轨神经网络预测蛋白质结构与相互作用"
 来源: https://www.science.org/doi/10.1126/science.abj8754
 日期: 2026-06-13
 子分类: 生物信息

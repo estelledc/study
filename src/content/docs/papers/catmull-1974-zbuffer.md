@@ -1,5 +1,5 @@
 ---
-title: Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
+title: "Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题"
 来源: Catmull, "A Subdivision Algorithm for Computer Display of Curved Surfaces", PhD Thesis, University of Utah, 1974
 日期: 2026-05-31
 子分类: 渲染与图形

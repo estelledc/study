@@ -1,5 +1,5 @@
 ---
-title: Teku — 用 Java 写的以太坊共识层客户端
+title: "Teku — 用 Java 写的以太坊共识层客户端"
 来源: 'https://github.com/Consensys/teku'
 日期: 2026-05-30
 子分类: 链与合约

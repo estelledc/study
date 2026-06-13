@@ -1,5 +1,5 @@
 ---
-title: Apache ZooKeeper — 给一群机器装一个共同的小脑
+title: "Apache ZooKeeper — 给一群机器装一个共同的小脑"
 来源: Apache ZooKeeper Documentation, https://zookeeper.apache.org/doc/current/
 日期: 2026-06-01
 子分类: 存储与查询

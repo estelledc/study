@@ -1,5 +1,5 @@
 ---
-title: Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码
+title: "Skill-as-Pseudocode — 把 agent 笔记本写成可校验的伪代码"
 来源: 'Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode, arXiv:2605.27955, 2026'
 日期: 2026-06-01
 子分类: 智能体与 LLM

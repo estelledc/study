@@ -1,5 +1,5 @@
 ---
-title: Tree-sitter — 增量式解析系统
+title: "Tree-sitter — 增量式解析系统"
 来源: https://tree-sitter.github.io/tree-sitter/
 日期: 2026-06-13
 子分类: 编辑器与 IDE

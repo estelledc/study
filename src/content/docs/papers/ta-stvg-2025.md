@@ -1,5 +1,5 @@
 ---
-title: TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位
+title: "TA-STVG — 解耦「找谁 / 何时 / 何地」的时空视频定位"
 来源: 'Gu et al., "Knowing Your Target: Target-Aware Transformer Makes Better Spatio-Temporal Video Grounding", ICLR 2025'
 日期: 2026-06-05
 分类: 机器学习

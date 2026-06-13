@@ -1,5 +1,5 @@
 ---
-title: Sphinx — mix 网络最紧凑的可证安全消息格式
+title: "Sphinx — mix 网络最紧凑的可证安全消息格式"
 来源: 'George Danezis & Ian Goldberg, "Sphinx: A Compact and Provably Secure Mix Format", IEEE S&P 2009'
 日期: 2026-06-06
 分类: 安全与隐私

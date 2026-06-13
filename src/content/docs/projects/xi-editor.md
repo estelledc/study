@@ -1,5 +1,5 @@
 ---
-title: xi-editor — Rope + CRDT 驱动的实验性编辑器
+title: "xi-editor — Rope + CRDT 驱动的实验性编辑器"
 来源: 'https://github.com/xi-editor/xi-editor'
 日期: 2026-06-06
 分类: CLI

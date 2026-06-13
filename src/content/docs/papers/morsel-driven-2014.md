@@ -1,5 +1,5 @@
 ---
-title: Morsel-Driven Parallelism — 面向 NUMA 的查询并行执行框架
+title: "Morsel-Driven Parallelism — 面向 NUMA 的查询并行执行框架"
 来源: https://db.in.tum.de/~leis/papers/morsels.pdf
 日期: 2026-06-13
 子分类: 存储与查询

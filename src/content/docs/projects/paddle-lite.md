@@ -1,5 +1,5 @@
 ---
-title: Paddle Lite — 把飞桨模型装进手机里的「端侧放映机」
+title: "Paddle Lite — 把飞桨模型装进手机里的「端侧放映机」"
 来源: https://github.com/PaddlePaddle/Paddle-Lite
 日期: 2026-06-13
 分类: 操作系统

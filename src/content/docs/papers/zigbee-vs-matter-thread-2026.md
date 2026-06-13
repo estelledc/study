@@ -1,5 +1,5 @@
 ---
-title: Zigbee vs. Matter over Thread — 智能家居协议性能的实测权衡
+title: "Zigbee vs. Matter over Thread — 智能家居协议性能的实测权衡"
 来源: https://arxiv.org/abs/2603.04221
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

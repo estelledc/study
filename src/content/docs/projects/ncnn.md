@@ -1,5 +1,5 @@
 ---
-title: ncnn — 手机上的「无依赖神经网络放映机」
+title: "ncnn — 手机上的「无依赖神经网络放映机」"
 来源: https://github.com/Tencent/ncnn
 日期: 2026-06-13
 子分类: 嵌入式

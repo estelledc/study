@@ -1,5 +1,5 @@
 ---
-title: CodeGraph — 面向 AI 编程代理的预索引代码知识图谱
+title: "CodeGraph — 面向 AI 编程代理的预索引代码知识图谱"
 来源: https://github.com/colbymchenry/codegraph
 日期: 2026-06-13
 子分类: 开发者工具

@@ -1,5 +1,5 @@
 ---
-title: Mage — 用 Go 写 build 脚本，告别 Makefile
+title: "Mage — 用 Go 写 build 脚本，告别 Makefile"
 来源: magefile/mage, https://github.com/magefile/mage
 日期: 2026-05-31
 子分类: 命令行工具

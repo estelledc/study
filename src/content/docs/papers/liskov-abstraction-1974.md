@@ -1,5 +1,5 @@
 ---
-title: Programming with Abstract Data Types — Liskov & Zilles 1974 抽象数据类型宣言
+title: "Programming with Abstract Data Types — Liskov & Zilles 1974 抽象数据类型宣言"
 来源: https://en.wikipedia.org/wiki/Abstract_data_type
 日期: 2026-06-13
 分类: 编程语言

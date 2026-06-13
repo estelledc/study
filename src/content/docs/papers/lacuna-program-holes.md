@@ -1,5 +1,5 @@
 ---
-title: LACUNA — 把 LLM Agent 写成「可递归的类型化程序洞」
+title: "LACUNA — 把 LLM Agent 写成「可递归的类型化程序洞」"
 来源: https://arxiv.org/abs/2605.28617
 日期: 2026-06-13
 子分类: 类型与 PL 理论

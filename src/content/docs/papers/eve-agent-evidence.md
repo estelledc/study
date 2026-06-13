@@ -1,5 +1,5 @@
 ---
-title: EVE-Agent — 自我训练前先把证据钉在桌上
+title: "EVE-Agent — 自我训练前先把证据钉在桌上"
 来源: 'Yamato Arai, Yuma Ichikawa, "EVE-Agent: Evidence-Verifiable Self-Evolving Agents", arXiv:2605.22905, 2026'
 日期: 2026-06-01
 子分类: 智能体与 LLM

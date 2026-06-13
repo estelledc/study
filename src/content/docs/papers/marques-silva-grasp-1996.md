@@ -1,5 +1,5 @@
 ---
-title: GRASP 1996 — 让 SAT 求解器从冲突里学到东西
+title: "GRASP 1996 — 让 SAT 求解器从冲突里学到东西"
 来源: 'Marques-Silva & Sakallah, "GRASP: A Search Algorithm for Propositional Satisfiability", ICCAD 1996'
 日期: 2026-05-30
 子分类: 形式化验证

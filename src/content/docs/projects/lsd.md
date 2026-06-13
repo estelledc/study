@@ -1,5 +1,5 @@
 ---
-title: lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
+title: "lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）"
 来源: 'https://github.com/lsd-rs/lsd'
 日期: 2026-05-30
 子分类: 命令行工具

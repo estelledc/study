@@ -1,5 +1,5 @@
 ---
-title: Shaka Packager — 流媒体打包工具
+title: "Shaka Packager — 流媒体打包工具"
 description: DASH/HLS 打包工具，切片 mp4 并加 DRM
 来源: 'https://github.com/shaka-project/shaka-packager'
 日期: 2026-06-06

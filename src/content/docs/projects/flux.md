@@ -1,5 +1,5 @@
 ---
-title: Flux — 让 Git 当 Kubernetes 集群的真理来源
+title: "Flux — 让 Git 当 Kubernetes 集群的真理来源"
 来源: https://github.com/fluxcd/flux2
 日期: 2026-06-01
 子分类: DevOps 与运维

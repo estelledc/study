@@ -1,5 +1,5 @@
 ---
-title: sqlx — 编译期校验 SQL 工具包
+title: "sqlx — 编译期校验 SQL 工具包"
 来源: https://github.com/launchbadge/sqlx
 日期: 2026-06-13
 分类: 其他

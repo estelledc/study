@@ -1,5 +1,5 @@
 ---
-title: Argent X — 让账户本身就是一个合约的 Starknet 钱包
+title: "Argent X — 让账户本身就是一个合约的 Starknet 钱包"
 来源: 'https://github.com/argentlabs/argent-x'
 日期: 2026-05-30
 子分类: 链与合约

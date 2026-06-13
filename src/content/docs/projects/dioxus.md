@@ -1,9 +1,9 @@
 ---
-title: Dioxus — React 风格的 Rust UI 框架
+title: "Dioxus — React 风格的 Rust UI 框架"
 来源: https://github.com/DioxusLabs/dioxus
 日期: 2026-06-13
 分类: 后端 API
-子分类: frontend-frameworks
+子分类: rust-ecosystem
 provenance: pipeline-v3
 ---
 

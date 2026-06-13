@@ -1,5 +1,5 @@
 ---
-title: LeRobot — Hugging Face 开源机器人学习库
+title: "LeRobot — Hugging Face 开源机器人学习库"
 来源: https://github.com/huggingface/lerobot
 日期: 2026-06-13
 分类: 机器学习

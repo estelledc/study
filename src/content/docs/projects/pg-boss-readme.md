@@ -1,5 +1,5 @@
 ---
-title: pg-boss — 只用 Postgres 就能跑的任务队列
+title: "pg-boss — 只用 Postgres 就能跑的任务队列"
 来源: 'https://github.com/timgit/pg-boss'
 日期: 2026-05-31
 子分类: Web 后端

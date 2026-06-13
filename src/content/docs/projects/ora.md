@@ -1,5 +1,5 @@
 ---
-title: ora — 终端 spinner 用 ANSI 反复擦写同一行
+title: "ora — 终端 spinner 用 ANSI 反复擦写同一行"
 来源: 'https://github.com/sindresorhus/ora'
 日期: 2026-05-30
 子分类: 命令行工具

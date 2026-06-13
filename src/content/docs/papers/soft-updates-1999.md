@@ -1,5 +1,5 @@
 ---
-title: Soft Updates — 不写 journal 也能保证文件系统元数据一致
+title: "Soft Updates — 不写 journal 也能保证文件系统元数据一致"
 来源: 'Ganger, McKusick, Soules, Patt, "Soft Updates: A Solution to the Metadata Update Problem in File Systems", ACM TOCS, Feb 2000（SOSP 1994 短文延伸）'
 日期: 2026-06-01
 子分类: 内核与虚拟化

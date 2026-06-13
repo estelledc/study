@@ -1,5 +1,5 @@
 ---
-title: Dynamo — 让购物车永远能写入的分布式存储
+title: "Dynamo — 让购物车永远能写入的分布式存储"
 来源: 'DeCandia et al., "Dynamo: Amazon''s Highly Available Key-value Store", SOSP 2007'
 日期: 2026-05-29
 子分类: 分布式系统
@@ -176,6 +176,7 @@ Client Y 同时通过节点 Sy 加 "香蕉"（没看见 X 的写）：
 - [[gfs]] —— GFS — 编译器决定不做哪些事
 - [[gilbert-lynch-2002]] —— Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理
 - [[helland-2007]] —— Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言
+- [[incident-command-system-2022]] —— 事故指挥系统 — 让线上事故响应从"救火"变成"流水线"
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[kademlia-2002]] —— Kademlia — 用 XOR 当距离的 P2P 路由表
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

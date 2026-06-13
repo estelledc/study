@@ -1,5 +1,5 @@
 ---
-title: ethers.js — 浏览器和 Node 都能用的以太坊客户端库
+title: "ethers.js — 浏览器和 Node 都能用的以太坊客户端库"
 来源: 'https://github.com/ethers-io/ethers.js'
 日期: 2026-05-30
 子分类: 链与合约

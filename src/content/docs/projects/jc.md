@@ -1,5 +1,5 @@
 ---
-title: jc — 把 100+ Unix 命令的输出一键 JSON 化
+title: "jc — 把 100+ Unix 命令的输出一键 JSON 化"
 来源: https://github.com/kellyjonbrazil/jc
 日期: 2026-05-30
 子分类: 命令行工具

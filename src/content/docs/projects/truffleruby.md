@@ -1,5 +1,5 @@
 ---
-title: TruffleRuby — GraalVM 上的 Ruby
+title: "TruffleRuby — GraalVM 上的 Ruby"
 来源: https://github.com/oracle/truffleruby
 日期: 2026-06-13
 分类: 编译器

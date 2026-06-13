@@ -1,5 +1,5 @@
 ---
-title: Arrakis 2014 — 让操作系统只管规则、硬件直接服务应用
+title: "Arrakis 2014 — 让操作系统只管规则、硬件直接服务应用"
 来源: 'Simon Peter et al., "Arrakis: The Operating System is the Control Plane", OSDI 2014'
 日期: 2026-06-06
 分类: 操作系统

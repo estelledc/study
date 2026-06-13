@@ -1,5 +1,5 @@
 ---
-title: duckdb-wasm — 把分析数据库塞进浏览器标签页
+title: "duckdb-wasm — 把分析数据库塞进浏览器标签页"
 来源: 'duckdb/duckdb-wasm v1.33.0, 2025-12 读, MIT'
 日期: 2026-05-29
 子分类: 数据库

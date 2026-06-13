@@ -1,5 +1,5 @@
 ---
-title: Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系
+title: "Cousot-Halbwachs 凸多面体域 — 让分析器自己发现变量间的线性关系"
 来源: 'Cousot & Halbwachs, "Automatic Discovery of Linear Restraints Among Variables of a Program", POPL 1978'
 日期: 2026-05-31
 子分类: 形式化验证

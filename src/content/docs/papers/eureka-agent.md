@@ -1,5 +1,5 @@
 ---
-title: EurekAgent — 环境工程才是自主科学发现的胜负手
+title: "EurekAgent — 环境工程才是自主科学发现的胜负手"
 来源: 'Amy Xin et al., "EurekAgent: Agent Environment Engineering is All You Need For Autonomous Scientific Discovery", arXiv:2606.13662, 2026'
 日期: 2026-06-13
 子分类: 智能体

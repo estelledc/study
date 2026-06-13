@@ -1,5 +1,5 @@
 ---
-title: AutoGPT — 自主 Agent 先驱
+title: "AutoGPT — 自主 Agent 先驱"
 来源: https://github.com/Significant-Gravitas/AutoGPT
 日期: 2026-06-13
 子分类: ai-agent-infra
@@ -217,5 +217,5 @@ class TrendingVideoBlock(Block):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 

@@ -1,5 +1,5 @@
 ---
-title: GShard — 用注解让 600B 模型自动跨设备切片
+title: "GShard — 用注解让 600B 模型自动跨设备切片"
 来源: 'Lepikhin et al., "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding", arXiv 2006.16668 / ICLR 2021'
 日期: 2026-05-31
 子分类: GPU 架构

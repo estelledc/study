@@ -1,5 +1,5 @@
 ---
-title: Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
+title: "Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算"
 来源: 'Ariola, Felleisen, Maraist, Odersky, Wadler, "The Call-by-Need Lambda Calculus", POPL 1995'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -152,7 +152,6 @@ sumGood = foldl' (+) 0     -- 严格版 foldl，每步立即算，不堆 thunk
 
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"

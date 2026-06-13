@@ -1,5 +1,5 @@
 ---
-title: What is RCU, Fundamentally? — Linux 内核「读端几乎免费」的同步范式
+title: "What is RCU, Fundamentally? — Linux 内核「读端几乎免费」的同步范式"
 来源: https://lwn.net/Articles/262464/
 日期: 2026-06-13
 子分类: 内核与虚拟化

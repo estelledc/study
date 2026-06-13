@@ -1,5 +1,5 @@
 ---
-title: CRDT 形式定义 — SSS 2011 八页浓缩版
+title: "CRDT 形式定义 — SSS 2011 八页浓缩版"
 来源: Shapiro, Preguiça, Baquero, Zawirski, "Conflict-Free Replicated Data Types", SSS 2011
 日期: 2026-05-30
 子分类: 共识与复制

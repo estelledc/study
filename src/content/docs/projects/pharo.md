@@ -1,5 +1,5 @@
 ---
-title: Pharo — 现代 Smalltalk 环境
+title: "Pharo — 现代 Smalltalk 环境"
 来源: https://github.com/pharo-project/pharo
 日期: 2026-06-13
 分类: 编译器

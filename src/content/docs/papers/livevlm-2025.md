@@ -1,5 +1,5 @@
 ---
-title: LiveVLM — 免训练流式视觉 token 压缩
+title: "LiveVLM — 免训练流式视觉 token 压缩"
 来源: 'Li et al., "LiveVLM: Efficient Online Video Understanding via Streaming Visual Token Compression", arXiv 2025'
 日期: 2026-06-05
 分类: 机器学习

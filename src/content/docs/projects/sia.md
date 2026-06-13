@@ -1,5 +1,5 @@
 ---
-title: Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储
+title: "Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储"
 来源: 'https://github.com/SiaFoundation/renterd'
 日期: 2026-05-30
 子分类: 链与合约

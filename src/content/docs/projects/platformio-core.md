@@ -1,5 +1,5 @@
 ---
-title: PlatformIO Core — 一套命令行，统管千块嵌入式开发板
+title: "PlatformIO Core — 一套命令行，统管千块嵌入式开发板"
 来源: 'https://github.com/platformio/platformio-core'
 日期: 2026-06-06
 分类: 操作系统

@@ -1,5 +1,5 @@
 ---
-title: Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
+title: "Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS"
 来源: https://github.com/zephyrproject-rtos/zephyr
 日期: 2026-06-01
 子分类: 嵌入式

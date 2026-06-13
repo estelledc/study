@@ -1,5 +1,5 @@
 ---
-title: PGlite — 浏览器里的 PostgreSQL：零基础学习笔记
+title: "PGlite — 浏览器里的 PostgreSQL：零基础学习笔记"
 来源: https://github.com/electric-sql/pglite
 日期: 2026-06-13
 分类: 数据库

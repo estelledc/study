@@ -1,5 +1,5 @@
 ---
-title: LuaJIT — Mike Pall 的极致优化 JIT
+title: "LuaJIT — Mike Pall 的极致优化 JIT"
 来源: https://github.com/LuaJIT/LuaJIT
 日期: 2026-06-13
 分类: 编译器

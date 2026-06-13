@@ -1,5 +1,5 @@
 ---
-title: RowHammer — 只读内存也能把邻居的 bit 敲 flip
+title: "RowHammer — 只读内存也能把邻居的 bit 敲 flip"
 来源: 'Yoongu Kim et al., "Flipping Bits in Memory Without Accessing Them: An Experimental Study of DRAM Disturbance Errors", ISCA 2014'
 日期: 2026-05-30
 分类: 安全与隐私

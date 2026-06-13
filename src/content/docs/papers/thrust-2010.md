@@ -1,5 +1,5 @@
 ---
-title: Thrust — 让 GPU 编程像写 STL 一样一行调用
+title: "Thrust — 让 GPU 编程像写 STL 一样一行调用"
 来源: 'Hoberock & Bell, "Thrust: A Productivity-Oriented Library for CUDA", NVIDIA 2010'
 日期: 2026-05-31
 子分类: GPU 架构

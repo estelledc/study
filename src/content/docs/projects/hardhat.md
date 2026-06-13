@@ -1,5 +1,5 @@
 ---
-title: Hardhat — Nomic Foundation 的 JS 合约框架
+title: "Hardhat — Nomic Foundation 的 JS 合约框架"
 来源: 'https://github.com/NomicFoundation/hardhat'
 日期: 2026-05-30
 子分类: 链与合约

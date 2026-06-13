@@ -1,5 +1,5 @@
 ---
-title: mimalloc — Microsoft 的小对象分配器
+title: "mimalloc — Microsoft 的小对象分配器"
 来源: https://github.com/microsoft/mimalloc
 日期: 2026-06-13
 分类: 编译器

@@ -1,5 +1,5 @@
 ---
-title: Claude for Financial Services — 金融服务工作流插件与 Agent 模板
+title: "Claude for Financial Services — 金融服务工作流插件与 Agent 模板"
 日期: 2026-06-13
 分类: 后端 API
 来源: https://github.com/anthropics/financial-services

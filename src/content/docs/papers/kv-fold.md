@@ -1,5 +1,5 @@
 ---
-title: KV-Fold — 一步 KV 缓存递推实现长上下文推理
+title: "KV-Fold — 一步 KV 缓存递推实现长上下文推理"
 来源: 'Nadali et al., "KV-Fold: One-Step KV-Cache Recurrence for Long-Context Inference", arXiv:2605.12471, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

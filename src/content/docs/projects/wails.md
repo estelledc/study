@@ -1,5 +1,5 @@
 ---
-title: Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
+title: "Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架"
 来源: 'https://github.com/wailsapp/wails'
 日期: 2026-06-06
 分类: 后端 API

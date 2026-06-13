@@ -1,5 +1,5 @@
 ---
-title: SkCC — 给 LLM agent 写一个真正的 skill 编译器
+title: "SkCC — 给 LLM agent 写一个真正的 skill 编译器"
 来源: 'Anonymous, "SkCC: Portable and Secure Skill Compilation for Cross-Framework LLM Agents", arXiv 2026'
 日期: 2026-06-01
 子分类: 智能体与 LLM

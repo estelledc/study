@@ -1,5 +1,5 @@
 ---
-title: Observable Framework — 编译期跑数据，浏览器只看结果
+title: "Observable Framework — 编译期跑数据，浏览器只看结果"
 来源: 'https://github.com/observablehq/framework'
 日期: 2026-06-01
 子分类: 数据可视化

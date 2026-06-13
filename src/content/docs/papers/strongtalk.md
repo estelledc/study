@@ -1,5 +1,5 @@
 ---
-title: Strongtalk — 可以装可以卸的 Smalltalk 类型系统
+title: "Strongtalk — 可以装可以卸的 Smalltalk 类型系统"
 来源: 'Bracha & Griswold, "Strongtalk: Typechecking Smalltalk in a Production Environment", OOPSLA 1993'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -171,7 +171,6 @@ function add(x, y) {
 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生

@@ -1,5 +1,5 @@
 ---
-title: Hyperledger Besu — 用 Java 写的以太坊客户端
+title: "Hyperledger Besu — 用 Java 写的以太坊客户端"
 来源: 'https://github.com/hyperledger/besu'
 日期: 2026-05-29
 子分类: 链与合约

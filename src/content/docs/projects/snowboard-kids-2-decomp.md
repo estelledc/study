@@ -1,5 +1,5 @@
 ---
-title: Snowboard Kids 2 100% 反编译 — 把 N64 卡带「翻译」成可读 C 代码
+title: "Snowboard Kids 2 100% 反编译 — 把 N64 卡带「翻译」成可读 C 代码"
 来源: 'https://github.com/cdlewis/snowboardkids2-decomp'
 日期: 2026-06-13
 子分类: 类型与 PL 理论

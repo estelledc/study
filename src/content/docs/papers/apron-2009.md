@@ -1,5 +1,5 @@
 ---
-title: Apron — 把区间/八边形/多面体塞进同一个插槽
+title: "Apron — 把区间/八边形/多面体塞进同一个插槽"
 来源: 'Jeannet & Miné, "Apron: A Library of Numerical Abstract Domains for Static Analysis", CAV 2009'
 日期: 2026-05-31
 子分类: 形式化验证

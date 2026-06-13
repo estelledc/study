@@ -1,5 +1,5 @@
 ---
-title: nnn — 50KB 内存就能跑的极简终端文件管理器
+title: "nnn — 50KB 内存就能跑的极简终端文件管理器"
 来源: 'https://github.com/jarun/nnn'
 日期: 2026-05-31
 子分类: 命令行工具

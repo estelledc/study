@@ -1,5 +1,5 @@
 ---
-title: PDFKit — 用画笔在 PDF 上一笔一笔画
+title: "PDFKit — 用画笔在 PDF 上一笔一笔画"
 来源: https://github.com/foliojs/pdfkit
 日期: 2026-06-01
 子分类: 数据可视化

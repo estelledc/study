@@ -1,5 +1,5 @@
 ---
-title: Spector.js — WebGL/WebGPU 调试器
+title: "Spector.js — WebGL/WebGPU 调试器"
 来源: 'https://github.com/BabylonJS/Spector.js'
 日期: 2026-06-13
 子分类: 渲染与图形

@@ -1,5 +1,5 @@
 ---
-title: pdfme — TypeScript 模板化 PDF
+title: "pdfme — TypeScript 模板化 PDF"
 来源: 'pdfme/pdfme v5.x, 2026-06 读, MIT'
 日期: 2026-06-01
 子分类: 数据可视化

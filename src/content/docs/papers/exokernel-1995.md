@@ -1,5 +1,5 @@
 ---
-title: Exokernel — 把抽象推到用户态的极致设计
+title: "Exokernel — 把抽象推到用户态的极致设计"
 来源: 'Engler, Kaashoek, O’Toole, "Exokernel: An Operating System Architecture for Application-Level Resource Management", SOSP 1995'
 日期: 2026-06-01
 子分类: 内核与虚拟化

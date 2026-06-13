@@ -1,5 +1,5 @@
 ---
-title: Matter 1.0 — 智能家居设备的「通用语言 + 入职流程」
+title: "Matter 1.0 — 智能家居设备的「通用语言 + 入职流程」"
 来源: 'CSA (Connectivity Standards Alliance), "Matter 1.0 Core Specification", 2022'
 日期: 2026-06-13
 分类: 操作系统
@@ -174,3 +174,6 @@ bool emberAfOnOffClusterToggleCallback(EndpointId endpoint)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[coap-rfc7252]] —— CoAP RFC 7252 — 给传感器用的「超短明信片 HTTP」
+

@@ -1,5 +1,5 @@
 ---
-title: Phaser — 在浏览器里写 2D 游戏的完整工具箱
+title: "Phaser — 在浏览器里写 2D 游戏的完整工具箱"
 来源: 'https://github.com/phaserjs/phaser'
 日期: 2026-06-06
 分类: 图形学

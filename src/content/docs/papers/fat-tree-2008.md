@@ -1,5 +1,5 @@
 ---
-title: Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心
+title: "Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心"
 来源: Al-Fares, Loukissas, Vahdat, "A Scalable, Commodity Data Center Network Architecture", SIGCOMM 2008
 日期: 2026-06-01
 子分类: 网络协议

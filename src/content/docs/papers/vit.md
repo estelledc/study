@@ -1,5 +1,5 @@
 ---
-title: ViT — Vision Transformer
+title: "ViT — Vision Transformer"
 来源: 'Dosovitskiy et al., "An Image is Worth 16x16 Words", ICLR 2021'
 日期: 2026-05-29
 子分类: 计算机视觉

@@ -1,5 +1,5 @@
 ---
-title: lerna — 一个仓库发几十个 npm 包的祖宗工具
+title: "lerna — 一个仓库发几十个 npm 包的祖宗工具"
 来源: 'https://github.com/lerna/lerna'
 日期: 2026-05-30
 子分类: 前端工程

@@ -1,5 +1,5 @@
 ---
-title: Chaum Mix Network — 把匿名通信从理论变成工程
+title: "Chaum Mix Network — 把匿名通信从理论变成工程"
 来源: 'David L. Chaum, "Untraceable Electronic Mail, Return Addresses, and Digital Pseudonyms", Communications of the ACM 1981'
 日期: 2026-06-06
 分类: 网络协议

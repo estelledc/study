@@ -1,5 +1,5 @@
 ---
-title: wretch — 把 fetch 写成一条链
+title: "wretch — 把 fetch 写成一条链"
 来源: https://github.com/elbywan/wretch
 日期: 2026-05-30
 子分类: 前端工具

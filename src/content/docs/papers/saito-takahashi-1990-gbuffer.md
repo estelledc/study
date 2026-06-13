@@ -1,5 +1,5 @@
 ---
-title: Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文
+title: "Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文"
 来源: Saito & Takahashi, "Comprehensible Rendering of 3-D Shapes", SIGGRAPH 1990
 日期: 2026-05-31
 子分类: 渲染与图形

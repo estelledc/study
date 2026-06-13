@@ -1,5 +1,5 @@
 ---
-title: Foam — VS Code 上的 Roam-like 知识库
+title: "Foam — VS Code 上的 Roam-like 知识库"
 来源: https://github.com/foambubble/foam
 日期: 2026-06-13
 子分类: 编辑器与 IDE

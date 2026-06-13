@@ -1,5 +1,5 @@
 ---
-title: TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来
+title: "TrustRank — 用一小撮可信种子把整张 Web 的信誉算出来"
 来源: 'Gyöngyi, Garcia-Molina, Pedersen, "Combating Web Spam with TrustRank", VLDB 2004'
 日期: 2026-05-31
 子分类: 检索与排序

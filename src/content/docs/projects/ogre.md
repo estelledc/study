@@ -1,5 +1,5 @@
 ---
-title: OGRE — 老牌 C++ 3D 渲染引擎，把 GPU API 差异藏进场景图
+title: "OGRE — 老牌 C++ 3D 渲染引擎，把 GPU API 差异藏进场景图"
 来源: 'https://github.com/OGRECave/ogre'
 日期: 2026-06-06
 分类: 图形学

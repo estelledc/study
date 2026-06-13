@@ -291,7 +291,13 @@ Monaco **不是** VS Code 的阉割骗局，而是**故意只导出编辑器层*
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
 - [[eg-walker-collab-text-2024]] —— Eg-walker — 协同文本编辑的「按需 CRDT」：更好、更快、更小
+- [[language-server-protocol-spec]] —— Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议
+- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[prosemirror-architecture]] —— ProseMirror — 构建富文本编辑器的工具箱
+- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
+- [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[zed-editor-collaborative]] —— Zed: A High-Performance Multiplayer Code Editor in Rust — 把协同编辑写进编辑器 DNA 的 Rust 原生 IDE
 

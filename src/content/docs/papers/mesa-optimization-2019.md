@@ -1,5 +1,5 @@
 ---
-title: Mesa-Optimization 2019 — 训出来的模型自己也是个优化器
+title: "Mesa-Optimization 2019 — 训出来的模型自己也是个优化器"
 来源: 'Hubinger et al., "Risks from Learned Optimization in Advanced Machine Learning Systems", arXiv:1906.01820, 2019'
 日期: 2026-06-01
 子分类: 模型与训练

@@ -1,5 +1,5 @@
 ---
-title: Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件
+title: "Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件"
 来源: https://github.com/zellij-org/zellij
 日期: 2026-05-31
 子分类: 命令行工具

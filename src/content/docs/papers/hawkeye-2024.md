@@ -1,5 +1,5 @@
 ---
-title: HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
+title: "HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上"
 来源: 'Wang et al., "HawkEye: Training Video-Text LLMs for Grounding Text in Videos", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

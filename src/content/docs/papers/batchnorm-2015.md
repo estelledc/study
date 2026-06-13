@@ -1,5 +1,5 @@
 ---
-title: Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14
+title: "Batch Normalization — 把每层激活值规整到 0 均值 1 方差，深网训练时间砍成 1/14"
 来源: 'Ioffe & Szegedy, "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift", ICML 2015'
 日期: 2026-06-01
 子分类: 模型与训练

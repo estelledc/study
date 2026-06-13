@@ -1,5 +1,5 @@
 ---
-title: l-多样性 — k-匿名之后的隐私保护
+title: "l-多样性 — k-匿名之后的隐私保护"
 来源: 'Machanavajjhala et al., "l-Diversity: Privacy Beyond k-Anonymity", ACM TKDD 2007'
 日期: 2026-06-06
 分类: 安全与隐私

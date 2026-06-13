@@ -1,5 +1,5 @@
 ---
-title: NvChad — 极致美观的 Neovim 配置框架
+title: "NvChad — 极致美观的 Neovim 配置框架"
 来源: 'https://github.com/NvChad/NvChad'
 日期: 2026-06-06
 分类: CLI

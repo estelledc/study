@@ -1,5 +1,5 @@
 ---
-title: Harness — Agent 团队架构工厂
+title: "Harness — Agent 团队架构工厂"
 来源: https://github.com/revfactory/harness
 日期: 2026-06-13
 分类: 机器学习

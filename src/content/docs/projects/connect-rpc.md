@@ -1,5 +1,5 @@
 ---
-title: ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
+title: "ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议"
 来源: 'https://github.com/connectrpc/connect-go'
 日期: 2026-05-30
 子分类: Web 后端

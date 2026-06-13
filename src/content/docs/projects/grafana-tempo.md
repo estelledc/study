@@ -1,5 +1,5 @@
 ---
-title: Grafana Tempo — 用对象存储装下你所有的 trace
+title: "Grafana Tempo — 用对象存储装下你所有的 trace"
 来源: https://grafana.com/docs/tempo/latest/
 日期: 2026-05-31
 子分类: 基础设施

@@ -1,5 +1,5 @@
 ---
-title: CEGAR — 用反例自动改进抽象，让大软件能被验证
+title: "CEGAR — 用反例自动改进抽象，让大软件能被验证"
 来源: Clarke, Grumberg, Jha, Lu, Veith, "Counterexample-Guided Abstraction Refinement for Symbolic Model Checking", JACM 2003
 日期: 2026-05-30
 子分类: 形式化验证

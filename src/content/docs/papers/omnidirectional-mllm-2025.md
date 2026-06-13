@@ -1,5 +1,5 @@
 ---
-title: 全景空间推理 — MLLM 准备好面对 360° 了吗
+title: "全景空间推理 — MLLM 准备好面对 360° 了吗"
 来源: 'Dongfang et al., "Are Multimodal Large Language Models Ready for Omnidirectional Spatial Reasoning?", arXiv 2025'
 日期: 2026-06-06
 分类: 机器学习

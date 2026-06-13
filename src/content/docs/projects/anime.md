@@ -1,5 +1,5 @@
 ---
-title: anime.js — 一行 JS 让网页元素按时间线动起来
+title: "anime.js — 一行 JS 让网页元素按时间线动起来"
 来源: 'https://github.com/juliangarnier/anime'
 日期: 2026-05-30
 子分类: 前端

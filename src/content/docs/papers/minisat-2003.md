@@ -1,5 +1,5 @@
 ---
-title: MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
+title: "MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书"
 来源: 'Eén & Sörensson, "An Extensible SAT-solver", SAT 2003 (LNCS 2919)'
 日期: 2026-05-30
 子分类: 形式化验证

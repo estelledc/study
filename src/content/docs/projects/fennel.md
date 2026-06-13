@@ -1,5 +1,5 @@
 ---
-title: Fennel — 编译到 Lua 的 Lisp
+title: "Fennel — 编译到 Lua 的 Lisp"
 来源: https://github.com/bakpakin/Fennel
 日期: 2026-06-13
 分类: 编译器

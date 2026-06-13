@@ -1,5 +1,5 @@
 ---
-title: lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
+title: "lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器"
 来源: 'https://github.com/parcel-bundler/lightningcss'
 日期: 2026-05-30
 子分类: projects / 前端工具链

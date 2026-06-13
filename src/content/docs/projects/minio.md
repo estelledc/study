@@ -1,5 +1,5 @@
 ---
-title: MinIO — S3 兼容对象存储
+title: "MinIO — S3 兼容对象存储"
 来源: https://github.com/minio/minio
 日期: 2026-05-29
 子分类: databases-storage

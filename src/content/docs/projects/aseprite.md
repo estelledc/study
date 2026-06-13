@@ -1,5 +1,5 @@
 ---
-title: Aseprite — 像素艺术 / 动画编辑器
+title: "Aseprite — 像素艺术 / 动画编辑器"
 来源: 'https://github.com/aseprite/aseprite'
 日期: 2026-06-13
 分类: 图形学

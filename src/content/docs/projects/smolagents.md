@@ -1,5 +1,5 @@
 ---
-title: smolagents — HuggingFace 极简 Agent 框架
+title: "smolagents — HuggingFace 极简 Agent 框架"
 来源: https://github.com/huggingface/smolagents
 日期: 2026-06-13
 分类: 机器学习

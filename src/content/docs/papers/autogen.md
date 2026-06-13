@@ -1,5 +1,5 @@
 ---
-title: AutoGen — 多智能体对话框架
+title: "AutoGen — 多智能体对话框架"
 来源: 'Wu et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation", 2023'
 日期: 2026-05-29
 子分类: 智能体与 LLM

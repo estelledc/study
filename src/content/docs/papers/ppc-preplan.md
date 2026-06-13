@@ -1,5 +1,5 @@
 ---
-title: Knowing What to Solve Before How — Preplan-Plan-CoT 数学推理零基础学习笔记
+title: "Knowing What to Solve Before How — Preplan-Plan-CoT 数学推理零基础学习笔记"
 来源: https://arxiv.org/abs/2605.30245
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: VideoChat-Flash — 分层压缩，让长视频理解又快又准
+title: "VideoChat-Flash — 分层压缩，让长视频理解又快又准"
 来源: 'Li et al., "VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling", arXiv 2025'
 日期: 2026-06-05
 分类: 机器学习

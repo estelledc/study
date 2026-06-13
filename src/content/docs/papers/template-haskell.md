@@ -1,5 +1,5 @@
 ---
-title: Template Haskell — 让 Haskell 在编译期把代码当数据玩
+title: "Template Haskell — 让 Haskell 在编译期把代码当数据玩"
 来源: Sheard & Peyton Jones, "Template Meta-programming for Haskell", Haskell Workshop 2002
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -156,7 +156,6 @@ cube = $( [| \x -> $(power 3) |] )
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成

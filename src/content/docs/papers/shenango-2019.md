@@ -1,5 +1,5 @@
 ---
-title: Shenango — 每 5 微秒重新分一次核的中央调度器
+title: "Shenango — 每 5 微秒重新分一次核的中央调度器"
 来源: 'Ousterhout et al., "Shenango: Achieving High CPU Efficiency for Latency-sensitive Datacenter Workloads", NSDI 2019'
 日期: 2026-06-01
 子分类: 内核与虚拟化

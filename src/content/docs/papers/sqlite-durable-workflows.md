@@ -1,5 +1,5 @@
 ---
-title: SQLite is All You Need for Durable Workflows — 用单文件数据库做持久化工作流
+title: "SQLite is All You Need for Durable Workflows — 用单文件数据库做持久化工作流"
 来源: 'Obelisk Blog, "SQLite is All You Need for Durable Workflows", https://obeli.sk/blog/sqlite-is-all-you-need-for-durable-workflows/, 2026-05-29（延伸 DBOS「Postgres is all you need for durable execution」论点）'
 日期: 2026-06-13
 子分类: 存储与查询

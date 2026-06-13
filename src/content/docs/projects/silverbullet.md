@@ -1,5 +1,5 @@
 ---
-title: SilverBullet — 可编程的自托管 Markdown 知识库
+title: "SilverBullet — 可编程的自托管 Markdown 知识库"
 来源: https://github.com/silverbulletmd/silverbullet
 日期: 2026-06-13
 子分类: 编辑器与 IDE

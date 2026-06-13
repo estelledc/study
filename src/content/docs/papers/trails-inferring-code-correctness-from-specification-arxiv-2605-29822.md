@@ -1,5 +1,5 @@
 ---
-title: TRAILS — 从规格推断代码正确性
+title: "TRAILS — 从规格推断代码正确性"
 来源: https://arxiv.org/abs/2605.29822
 日期: 2026-06-13
 分类: 编程语言

@@ -1,5 +1,5 @@
 ---
-title: Lakehouse — 用开放格式统一数据仓库与高级分析
+title: "Lakehouse — 用开放格式统一数据仓库与高级分析"
 来源: https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf
 日期: 2026-06-13
 子分类: 存储与查询

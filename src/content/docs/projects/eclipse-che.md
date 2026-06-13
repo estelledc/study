@@ -1,5 +1,5 @@
 ---
-title: Eclipse Che — Kubernetes 原生云 IDE
+title: "Eclipse Che — Kubernetes 原生云 IDE"
 来源: https://github.com/eclipse/che
 日期: 2026-06-13
 子分类: 编辑器与 IDE

@@ -1,5 +1,5 @@
 ---
-title: Odin — Pascal 风系统语言
+title: "Odin — Pascal 风系统语言"
 来源: https://github.com/odin-lang/Odin
 日期: 2026-06-13
 分类: 编译器

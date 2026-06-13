@@ -1,5 +1,5 @@
 ---
-title: ARM TrustZone Technology Overview — 一颗 CPU 上的双世界安全隔离
+title: "ARM TrustZone Technology Overview — 一颗 CPU 上的双世界安全隔离"
 来源: https://developer.arm.com/documentation/PRD29-GENC-009492/c/
 日期: 2026-06-13
 分类: 操作系统

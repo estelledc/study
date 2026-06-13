@@ -1,5 +1,5 @@
 ---
-title: Rapier — Rust 现代物理引擎
+title: "Rapier — Rust 现代物理引擎"
 来源: 'https://github.com/dimforge/rapier'
 日期: 2026-06-13
 分类: 图形学

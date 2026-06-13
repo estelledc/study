@@ -1,5 +1,5 @@
 ---
-title: LLM.int8() — 大模型激活值里藏着几个超大异常通道
+title: "LLM.int8() — 大模型激活值里藏着几个超大异常通道"
 来源: Dettmers et al., LLM.int8() 8-bit Matrix Multiplication for Transformers at Scale, NeurIPS 2022
 日期: 2026-05-31
 子分类: GPU 架构

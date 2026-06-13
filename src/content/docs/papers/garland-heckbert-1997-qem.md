@@ -1,5 +1,5 @@
 ---
-title: QEM — 给三角网格『瘦身』时算每一刀的代价
+title: "QEM — 给三角网格『瘦身』时算每一刀的代价"
 来源: Garland & Heckbert, "Surface Simplification Using Quadric Error Metrics", SIGGRAPH 1997
 日期: 2026-05-31
 子分类: 渲染与图形

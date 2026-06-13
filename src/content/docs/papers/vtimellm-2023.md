@@ -1,5 +1,5 @@
 ---
-title: VTimeLLM — 让 Video LLM 学会标出事件起止时间
+title: "VTimeLLM — 让 Video LLM 学会标出事件起止时间"
 来源: 'Huang et al., "VTimeLLM: Empower LLM to Grasp Video Moments", arXiv 2023'
 日期: 2026-06-05
 分类: 机器学习

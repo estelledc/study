@@ -1,5 +1,5 @@
 ---
-title: Mender — 嵌入式 Linux 的 OTA 空中升级管家
+title: "Mender — 嵌入式 Linux 的 OTA 空中升级管家"
 来源: https://github.com/mendersoftware/mender
 日期: 2026-06-13
 分类: 操作系统

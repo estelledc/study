@@ -1,5 +1,5 @@
 ---
-title: A Conflict-Free Replicated JSON Datatype — 零基础学习笔记
+title: "A Conflict-Free Replicated JSON Datatype — 零基础学习笔记"
 来源: https://arxiv.org/abs/1608.03960
 日期: 2026-06-13
 子分类: 编辑器与 IDE

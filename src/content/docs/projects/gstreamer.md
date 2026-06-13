@@ -1,5 +1,5 @@
 ---
-title: GStreamer — 流水线式多媒体框架
+title: "GStreamer — 流水线式多媒体框架"
 description: element/pad/caps 模型；GNOME/Linux 多媒体栈基石；与 FFmpeg 对照的图式架构
 来源: 'https://github.com/GStreamer/gstreamer'
 日期: 2026-06-06

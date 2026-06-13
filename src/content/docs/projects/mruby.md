@@ -1,5 +1,5 @@
 ---
-title: mruby — 嵌入式 Ruby 解释器
+title: "mruby — 嵌入式 Ruby 解释器"
 description: 轻量级 Ruby 实现，可嵌入 C/C++ 固件与游戏引擎
 来源: 'https://github.com/mruby/mruby'
 日期: 2026-06-13

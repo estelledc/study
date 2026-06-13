@@ -1,5 +1,5 @@
 ---
-title: Borg / Omega / Kubernetes — Google 调度器三代同源
+title: "Borg / Omega / Kubernetes — Google 调度器三代同源"
 来源: 'Burns, Grant, Oppenheimer, Brewer, Wilkes, "Borg, Omega, and Kubernetes", ACM Queue 2016'
 日期: 2026-05-31
 子分类: 共识与复制

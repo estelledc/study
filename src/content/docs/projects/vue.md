@@ -1,8 +1,8 @@
 ---
-title: Vue.js — 渐进式 UI 框架
+title: "Vue.js — 渐进式 UI 框架"
 来源: https://github.com/vuejs/core
 日期: 2026-05-29
-子分类: UI 框架
+子分类: frontend-frameworks
 分类: 后端 API
 难度: 中级
 provenance: pipeline-v3
@@ -175,6 +175,7 @@ export function useMouse() {
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[onsen-ui]] —— Onsen UI — 用一套 HTML 同时搞定 iOS 和 Android 原生风格界面
 - [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[react]] —— React UI 组件库
 - [[rollup]] —— Rollup — ESM 优先的打包器

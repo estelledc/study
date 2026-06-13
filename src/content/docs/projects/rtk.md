@@ -1,5 +1,5 @@
 ---
-title: RTK — Agent 命令输出压缩
+title: "RTK — Agent 命令输出压缩"
 来源: https://github.com/rtk-ai/rtk
 日期: 2026-06-13
 分类: 其他

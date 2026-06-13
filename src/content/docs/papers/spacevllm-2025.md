@@ -1,5 +1,5 @@
 ---
-title: SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
+title: "SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位"
 来源: 'Wang et al., "SpaceVLLM: Endowing Multimodal Large Language Model with Spatio-Temporal Video Grounding Capability", arXiv 2025'
 日期: 2026-06-05
 分类: 机器学习

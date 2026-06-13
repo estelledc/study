@@ -1,5 +1,5 @@
 ---
-title: chalk — 让 console.log 输出彩色字符串的 Node 库
+title: "chalk — 让 console.log 输出彩色字符串的 Node 库"
 来源: 'https://github.com/chalk/chalk'
 日期: 2026-05-30
 子分类: projects

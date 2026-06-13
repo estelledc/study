@@ -1,5 +1,5 @@
 ---
-title: ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
+title: "ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声"
 来源: 'Jia et al., "Scaling Up Visual and Vision-Language Representation Learning With Noisy Text Supervision", ICML 2021'
 日期: 2026-05-31
 子分类: 模型与训练

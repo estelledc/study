@@ -1,5 +1,5 @@
 ---
-title: Erlang OTP — 容错并发系统设计
+title: "Erlang OTP — 容错并发系统设计"
 来源: 'Joe Armstrong, "Making Reliable Distributed Systems in the Presence of Software Errors", PhD thesis 2003'
 日期: 2026-05-29
 子分类: 编程语言 / 分布式系统
@@ -182,7 +182,6 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 - [[emqx]] —— EMQX — 单集群千万连接的 MQTT 物联网消息总线
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象

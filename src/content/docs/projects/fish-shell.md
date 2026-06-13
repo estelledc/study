@@ -1,5 +1,5 @@
 ---
-title: fish-shell — 友好交互式命令行 Shell
+title: "fish-shell — 友好交互式命令行 Shell"
 description: 语法高亮、自动建议与智能补全开箱即用；Rust 核心，macOS/Linux 默认体验优于 bash/zsh 配置成本
 来源: 'https://github.com/fish-shell/fish-shell'
 日期: 2026-06-05

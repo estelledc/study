@@ -1,5 +1,5 @@
 ---
-title: Wazuh — 开源安全监控的瑞士军刀
+title: "Wazuh — 开源安全监控的瑞士军刀"
 来源: https://github.com/wazuh/wazuh
 日期: 2026-06-13
 分类: 安全与隐私

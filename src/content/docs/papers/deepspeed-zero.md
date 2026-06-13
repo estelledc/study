@@ -1,5 +1,5 @@
 ---
-title: DeepSpeed ZeRO — 微软优化大模型训练显存
+title: "DeepSpeed ZeRO — 微软优化大模型训练显存"
 来源: 'Rajbhandari et al., "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models", SC 2020'
 日期: 2026-05-29
 子分类: 模型与训练

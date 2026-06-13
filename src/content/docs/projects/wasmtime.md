@@ -1,5 +1,5 @@
 ---
-title: Wasmtime — Bytecode Alliance 标准 wasm runtime
+title: "Wasmtime — Bytecode Alliance 标准 wasm runtime"
 description: Bytecode Alliance 的 WebAssembly 运行时，WASI 支持
 来源: 'https://github.com/bytecodealliance/wasmtime'
 日期: 2026-06-06
@@ -333,12 +333,12 @@ wasmtime run --fuel 1000000 risky.wasm
 - [[deno]] —— Deno — 安全优先的 JS/TS 运行时
 - [[graalvm]] —— GraalVM — 多语言通用 VM
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
-- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[rustpython]] —— RustPython — Rust 写的 Python 解释器
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
 - [[tinygo]] —— TinyGo — 把 Go 编译进微控制器和 WebAssembly 的「袖珍版编译器」
+- [[trunk]] —— Trunk — Rust WASM 零配置构建与打包工具
 - [[wamr]] —— WAMR — wasm 微运行时（嵌入式）
 - [[wasm-pack]] —— wasm-pack — 把 Rust 编译成浏览器能跑的代码
 - [[wasmedge]] —— WasmEdge — 云原生 wasm 运行时

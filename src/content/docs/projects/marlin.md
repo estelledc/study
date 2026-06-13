@@ -1,5 +1,5 @@
 ---
-title: Marlin Firmware — 3D 打印机的「一体式管家固件」
+title: "Marlin Firmware — 3D 打印机的「一体式管家固件」"
 来源: 'https://github.com/MarlinFirmware/Marlin'
 日期: '2026-06-13'
 子分类: 嵌入式

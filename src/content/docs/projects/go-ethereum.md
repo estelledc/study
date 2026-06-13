@@ -1,5 +1,5 @@
 ---
-title: Go-Ethereum (Geth) — 以太坊主流 Go 客户端
+title: "Go-Ethereum (Geth) — 以太坊主流 Go 客户端"
 来源: 'https://github.com/ethereum/go-ethereum'
 日期: 2026-05-29
 子分类: 链与合约

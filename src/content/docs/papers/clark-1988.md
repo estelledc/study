@@ -1,5 +1,5 @@
 ---
-title: Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
+title: "Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样"
 来源: Clark, "The Design Philosophy of the DARPA Internet Protocols", SIGCOMM 1988
 日期: 2026-05-31
 子分类: 网络协议

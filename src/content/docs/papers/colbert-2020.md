@@ -1,5 +1,5 @@
 ---
-title: ColBERT — 让 BERT 检索既准又能扛大规模
+title: "ColBERT — 让 BERT 检索既准又能扛大规模"
 来源: 'Khattab & Zaharia, "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT", SIGIR 2020'
 日期: 2026-05-31
 子分类: 检索与排序

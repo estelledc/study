@@ -1,5 +1,5 @@
 ---
-title: Feast — 让训练和上线用同一份特征定义的开源 Feature Store
+title: "Feast — 让训练和上线用同一份特征定义的开源 Feature Store"
 来源: Feast Documentation, https://docs.feast.dev/
 日期: 2026-05-31
 子分类: 数据科学与 AI

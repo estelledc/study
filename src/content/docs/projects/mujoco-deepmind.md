@@ -1,5 +1,5 @@
 ---
-title: MuJoCo 学习笔记 —— 从零理解物理仿真引擎
+title: "MuJoCo 学习笔记 —— 从零理解物理仿真引擎"
 来源: https://github.com/google-deepmind/mujoco
 日期: 2026-06-13
 分类: 机器学习

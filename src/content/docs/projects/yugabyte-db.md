@@ -1,5 +1,5 @@
 ---
-title: YugabyteDB — 复用 Postgres 源码的分布式 SQL
+title: "YugabyteDB — 复用 Postgres 源码的分布式 SQL"
 来源: https://github.com/yugabyte/yugabyte-db
 日期: 2026-05-31
 子分类: 存储与查询

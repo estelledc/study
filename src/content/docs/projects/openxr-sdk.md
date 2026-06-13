@@ -1,5 +1,5 @@
 ---
-title: OpenXR SDK — Khronos VR/AR 标准
+title: "OpenXR SDK — Khronos VR/AR 标准"
 来源: 'https://github.com/KhronosGroup/OpenXR-SDK-Source'
 日期: 2026-06-13
 子分类: 渲染与图形

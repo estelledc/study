@@ -1,5 +1,5 @@
 ---
-title: FFmpegKit — 在 App 里跑 FFmpeg 的「随身剪辑台」
+title: "FFmpegKit — 在 App 里跑 FFmpeg 的「随身剪辑台」"
 来源: https://github.com/arthenica/ffmpeg-kit
 日期: 2026-06-13
 子分类: 嵌入式

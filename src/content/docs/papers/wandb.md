@@ -1,5 +1,5 @@
 ---
-title: Weights & Biases — 几行 init 把指标系统代码自动入库
+title: "Weights & Biases — 几行 init 把指标系统代码自动入库"
 来源: Lukas Biewald 等创办，wandb 官方文档 + Tracking ML Experiments 系列博客
 日期: 2026-05-31
 子分类: 基础设施

@@ -1,5 +1,5 @@
 ---
-title: CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
+title: "CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级"
 来源: 'Andrew Kerr et al., "CUTLASS: CUDA Templates for Linear Algebra Subroutines", NVIDIA, GTC 2020 / CUTLASS 2.x'
 日期: 2026-05-31
 子分类: GPU 架构

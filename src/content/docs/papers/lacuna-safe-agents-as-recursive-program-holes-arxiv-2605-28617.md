@@ -1,5 +1,5 @@
 ---
-title: LACUNA —— 把 AI Agent 写成「递归的程序孔洞」
+title: "LACUNA —— 把 AI Agent 写成「递归的程序孔洞」"
 来源: https://arxiv.org/abs/2605-28617
 日期: 2026-06-13
 分类: 编程语言

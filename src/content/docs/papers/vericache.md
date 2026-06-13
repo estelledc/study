@@ -1,5 +1,5 @@
 ---
-title: VeriCache — 把有损 KV Cache 变成无损 LLM 推理
+title: "VeriCache — 把有损 KV Cache 变成无损 LLM 推理"
 来源: 'Jiayi Yao et al., "VeriCache: Turning Lossy KV Cache into Lossless LLM Inference", arXiv:2605.17613, Microsoft Research / University of Chicago / Tensormesh, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

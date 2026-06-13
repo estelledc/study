@@ -1,5 +1,5 @@
 ---
-title: Langfuse — LLM 应用可观测性
+title: "Langfuse — LLM 应用可观测性"
 来源: https://github.com/langfuse/langfuse
 日期: 2026-05-29
 子分类: AI

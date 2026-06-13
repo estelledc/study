@@ -1,5 +1,5 @@
 ---
-title: Chatbot Arena — 让真人盲投，给 LLM 排出公允座次
+title: "Chatbot Arena — 让真人盲投，给 LLM 排出公允座次"
 来源: 'Chiang et al., "Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference", arXiv 2403.04132 / ICML 2024'
 日期: 2026-06-01
 子分类: 模型与训练

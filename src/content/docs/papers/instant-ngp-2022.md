@@ -1,5 +1,5 @@
 ---
-title: Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码
+title: "Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码"
 来源: 'Müller et al. "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding". arXiv 2022'
 日期: 2026-06-06
 分类: 机器学习

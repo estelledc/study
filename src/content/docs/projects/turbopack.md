@@ -1,5 +1,5 @@
 ---
-title: Turbopack — 把 bundler 重做成增量计算应用
+title: "Turbopack — 把 bundler 重做成增量计算应用"
 来源: 'https://github.com/vercel/next.js/tree/main/turbopack'
 日期: 2026-05-30
 子分类: 前端工具

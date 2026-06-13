@@ -1,5 +1,5 @@
 ---
-title: opentelemetry-collector — OTel 官方核心仓库与组件模型
+title: "opentelemetry-collector — OTel 官方核心仓库与组件模型"
 来源: https://github.com/open-telemetry/opentelemetry-collector
 日期: 2026-06-01
 子分类: DevOps 与运维

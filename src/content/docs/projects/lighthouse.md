@@ -1,5 +1,5 @@
 ---
-title: Lighthouse — Google 出品的网页质量审计工具
+title: "Lighthouse — Google 出品的网页质量审计工具"
 来源: 'https://github.com/GoogleChrome/lighthouse'
 日期: 2026-05-29
 子分类: 链与合约

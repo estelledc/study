@@ -1,5 +1,5 @@
 ---
-title: Vinoground — 时序反事实短视频探针
+title: "Vinoground — 时序反事实短视频探针"
 来源: 'Li et al., "Vinoground: Scrutinizing Temporal Understanding in Video-Language Models", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

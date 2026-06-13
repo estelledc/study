@@ -1,5 +1,5 @@
 ---
-title: Dagger — 用真正的编程语言写 CI pipeline
+title: "Dagger — 用真正的编程语言写 CI pipeline"
 来源: https://github.com/dagger/dagger
 日期: 2026-05-31
 子分类: DevOps 与运维

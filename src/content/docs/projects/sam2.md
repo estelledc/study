@@ -1,5 +1,5 @@
 ---
-title: SAM 2 — Segment Anything Model 2
+title: "SAM 2 — Segment Anything Model 2"
 description: Meta SAM 2：图像与视频通用分割模型
 来源: 'https://github.com/facebookresearch/sam2'
 日期: 2026-06-06

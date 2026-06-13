@@ -1,5 +1,5 @@
 ---
-title: AI-Trader 学习笔记 —— 让 AI Agent 自己炒股
+title: "AI-Trader 学习笔记 —— 让 AI Agent 自己炒股"
 来源: https://github.com/HKUDS/AI-Trader
 日期: 2026-06-13
 分类: 机器学习

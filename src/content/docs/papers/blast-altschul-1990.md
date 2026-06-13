@@ -1,5 +1,5 @@
 ---
-title: BLAST — 序列比对的「搜索引擎」
+title: "BLAST — 序列比对的「搜索引擎」"
 来源: https://www.sciencedirect.com/science/article/abs/pii/S0022283605803602
 日期: 2026-06-13
 子分类: 生物信息

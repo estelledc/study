@@ -1,5 +1,5 @@
 ---
-title: How LoRA Remembers? — 参数记忆定律与 MemFT 零基础学习笔记
+title: "How LoRA Remembers? — 参数记忆定律与 MemFT 零基础学习笔记"
 来源: https://arxiv.org/abs/2605.30260
 日期: 2026-06-13
 子分类: 模型与训练

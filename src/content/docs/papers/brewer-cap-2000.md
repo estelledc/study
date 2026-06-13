@@ -1,5 +1,5 @@
 ---
-title: Brewer CAP — 网络一断电，一致性和可用性只能留一个
+title: "Brewer CAP — 网络一断电，一致性和可用性只能留一个"
 来源: 'Eric Brewer, "Towards Robust Distributed Systems", PODC keynote 2000'
 日期: 2026-05-30
 子分类: 存储与查询

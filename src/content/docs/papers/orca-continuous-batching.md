@@ -1,5 +1,5 @@
 ---
-title: Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
+title: "Orca — 让一批 LLM 请求随到随走，不再排队等最长那个"
 来源: 'Yu et al., "Orca: A Distributed Serving System for Transformer-Based Generative Models", OSDI 2022'
 日期: 2026-05-31
 子分类: 模型与训练

@@ -1,5 +1,5 @@
 ---
-title: Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
+title: "Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立"
 来源: Davis & Putnam, 'A Computing Procedure for Quantification Theory', JACM 1960
 日期: 2026-05-30
 子分类: 形式化验证
@@ -158,7 +158,6 @@ DP 把上面这堆**反复施三条规则**化简，直到要么得出"显然可
 - [[chaff-2001]] —— Chaff 2001 — 把 CDCL 工程化的两个杀手锏
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞

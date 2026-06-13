@@ -1,5 +1,5 @@
 ---
-title: Hermes Agent Web/Mobile UI — 零基础学习笔记
+title: "Hermes Agent Web/Mobile UI — 零基础学习笔记"
 来源: https://github.com/nesquena/hermes-webui
 日期: 2026-06-13
 分类: CLI

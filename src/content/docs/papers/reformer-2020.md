@@ -1,5 +1,5 @@
 ---
-title: Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
+title: "Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)"
 来源: 'Kitaev, Kaiser, Levskaya, "Reformer: The Efficient Transformer", ICLR 2020'
 日期: 2026-05-31
 子分类: 模型与训练

@@ -1,5 +1,5 @@
 ---
-title: Chain Replication — 把多副本排成流水线，简单且强一致
+title: "Chain Replication — 把多副本排成流水线，简单且强一致"
 来源: van Renesse & Schneider, "Chain Replication for Supporting High Throughput and Availability", OSDI 2004
 日期: 2026-05-30
 子分类: 共识与复制

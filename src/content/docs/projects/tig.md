@@ -1,5 +1,5 @@
 ---
-title: tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
+title: "tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里"
 来源: https://github.com/jonas/tig
 日期: 2026-05-31
 子分类: 命令行工具

@@ -1,5 +1,5 @@
 ---
-title: Wren — Bob Nystrom 的小型类语言
+title: "Wren — Bob Nystrom 的小型类语言"
 来源: https://github.com/wren-lang/wren
 日期: 2026-06-13
 分类: 编译器

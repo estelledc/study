@@ -1,5 +1,5 @@
 ---
-title: NanoMQ — 面向 IoT 边缘的超轻量 MQTT Broker
+title: "NanoMQ — 面向 IoT 边缘的超轻量 MQTT Broker"
 来源: 'https://github.com/nanomq/nanomq'
 日期: '2026-06-13'
 子分类: 嵌入式

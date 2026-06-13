@@ -1,5 +1,5 @@
 ---
-title: MQTT Version 5.0 — 物联网里的「小区广播站 + 信箱系统」
+title: "MQTT Version 5.0 — 物联网里的「小区广播站 + 信箱系统」"
 来源: https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

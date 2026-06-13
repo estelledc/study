@@ -1,5 +1,5 @@
 ---
-title: Typesense — 高性能搜索引擎
+title: "Typesense — 高性能搜索引擎"
 来源: https://github.com/typesense/typesense
 日期: 2026-05-29
 子分类: 存储与查询

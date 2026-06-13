@@ -1,5 +1,5 @@
 ---
-title: MME Benchmark — 开源 MLLM 评测的事实起点
+title: "MME Benchmark — 开源 MLLM 评测的事实起点"
 来源: 'Fu et al. "MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models". arXiv 2023'
 日期: 2026-06-06
 分类: 机器学习

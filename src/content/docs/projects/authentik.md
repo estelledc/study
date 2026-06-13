@@ -1,5 +1,5 @@
 ---
-title: Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢
+title: "Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢"
 来源: https://github.com/goauthentik/authentik
 日期: 2026-06-13
 子分类: 安全与隐私
@@ -275,5 +275,10 @@ curl -s -H "Authorization: Bearer ${AUTHENTIK_TOKEN}" \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
+- [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nango]] —— Nango — 产品集成的托管 OAuth 与函数运行时
+- [[nginx]] —— nginx — 高性能 Web 服务器
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
 

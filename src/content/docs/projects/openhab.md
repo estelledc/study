@@ -1,5 +1,5 @@
 ---
-title: openHAB Core — Java OSGi 智能家居的「标准化物业中枢」
+title: "openHAB Core — Java OSGi 智能家居的「标准化物业中枢」"
 来源: 'https://github.com/openhab/openhab-core'
 日期: '2026-06-13'
 分类: 操作系统

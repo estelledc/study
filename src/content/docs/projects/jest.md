@@ -1,5 +1,5 @@
 ---
-title: Jest — 一个包就能跑 JS 测试的全家桶
+title: "Jest — 一个包就能跑 JS 测试的全家桶"
 来源: 'https://github.com/jestjs/jest'
 日期: 2026-05-30
 子分类: 测试框架

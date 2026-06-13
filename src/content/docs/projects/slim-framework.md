@@ -1,5 +1,5 @@
 ---
-title: Slim — PHP 圈最轻的 web 框架，专给小 API 用
+title: "Slim — PHP 圈最轻的 web 框架，专给小 API 用"
 来源: 'https://github.com/slimphp/Slim'
 日期: 2026-05-30
 子分类: Web 后端

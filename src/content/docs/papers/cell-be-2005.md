@@ -1,5 +1,5 @@
 ---
-title: Cell BE — 一颗 CPU 里塞 8 个加速核
+title: "Cell BE — 一颗 CPU 里塞 8 个加速核"
 来源: Pham et al., "The Design and Implementation of a First-Generation CELL Processor", ISSCC 2005
 日期: 2026-05-31
 子分类: GPU 架构

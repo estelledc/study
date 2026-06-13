@@ -1,5 +1,5 @@
 ---
-title: Ente — 端到端加密云相册与零知识备份
+title: "Ente — 端到端加密云相册与零知识备份"
 来源: https://github.com/ente-io/ente
 日期: 2026-06-13
 子分类: 安全与隐私
@@ -309,5 +309,7 @@ Authy 停服或闭源后，Ente Auth 提供带云备份的开源 2FA。扫码添
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[minio]] —— MinIO — S3 兼容对象存储
+- [[nginx]] —— nginx — 高性能 Web 服务器
 

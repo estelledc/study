@@ -1,5 +1,5 @@
 ---
-title: Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+title: "Lampson Hints — 把做系统的隐式品味写成 27 条经验法则"
 来源: 'Butler W. Lampson, "Hints for Computer System Design", ACM SIGOPS Operating Systems Review 17(5): 33-48, October 1983 (SOSP keynote)'
 日期: 2026-05-30
 子分类: 系统设计

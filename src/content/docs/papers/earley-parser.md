@@ -1,5 +1,5 @@
 ---
-title: Earley Parser — 一个表能解析任何 CFG 的通用解析器
+title: "Earley Parser — 一个表能解析任何 CFG 的通用解析器"
 来源: 'Jay Earley, "An Efficient Context-Free Parsing Algorithm", CACM 1970'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

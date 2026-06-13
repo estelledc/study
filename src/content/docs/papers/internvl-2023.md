@@ -1,5 +1,5 @@
 ---
-title: InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
+title: "InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态"
 来源: 'Chen et al., "InternVL: Scaling up Vision Foundation Models and Aligning for Generic Visual-Linguistic Tasks", arXiv 2023'
 日期: 2026-06-06
 分类: 机器学习

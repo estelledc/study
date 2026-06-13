@@ -1,5 +1,5 @@
 ---
-title: RAUC — 嵌入式 Linux 的稳健自动更新控制器
+title: "RAUC — 嵌入式 Linux 的稳健自动更新控制器"
 来源: https://github.com/rauc/rauc
 日期: 2026-06-13
 子分类: 嵌入式

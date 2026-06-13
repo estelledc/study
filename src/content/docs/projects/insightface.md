@@ -1,5 +1,5 @@
 ---
-title: InsightFace — 人脸识别 / 检测 SOTA
+title: "InsightFace — 人脸识别 / 检测 SOTA"
 description: 人脸检测识别工具链：RetinaFace、ArcFace 等
 来源: 'https://github.com/deepinsight/insightface'
 日期: 2026-06-06

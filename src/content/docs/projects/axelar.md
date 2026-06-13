@@ -1,5 +1,5 @@
 ---
-title: Axelar — 通用跨链 gateway
+title: "Axelar — 通用跨链 gateway"
 来源: 'https://github.com/axelarnetwork/axelar-cgp-solidity'
 日期: 2026-05-30
 子分类: 链与合约

@@ -1,5 +1,5 @@
 ---
-title: TiKV — 分布式事务 KV
+title: "TiKV — 分布式事务 KV"
 来源: https://github.com/tikv/tikv
 日期: 2026-05-31
 子分类: 存储与查询
@@ -157,6 +157,7 @@ TiKV = Rust 写的"分片 + Multi-Raft + Percolator 事务"分布式 KV，靠一
 - [[leveldb]] —— LevelDB — Google LSM 库
 - [[pebble]] —— Pebble — CockroachDB 自研 LSM
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
+- [[rocksdb-evolution-2021]] —— RocksDB 优先级演化 — 八年大规模存储引擎的工程决策复盘
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 

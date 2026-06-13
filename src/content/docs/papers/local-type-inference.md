@@ -1,5 +1,5 @@
 ---
-title: Local Type Inference — 编译器只看相邻节点也能推出类型
+title: "Local Type Inference — 编译器只看相邻节点也能推出类型"
 来源: 'Pierce & Turner, "Local Type Inference", TOPLAS 2000'
 日期: 2026-05-29
 子分类: 类型与 PL 理论
@@ -161,7 +161,6 @@ TypeScript 拿 `pipe` 的签名 + 两个实参的类型，**只看一层**就推
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"

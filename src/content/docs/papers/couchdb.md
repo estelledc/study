@@ -1,5 +1,5 @@
 ---
-title: CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库
+title: "CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库"
 来源: Anderson, Lehnardt, Slater, "CouchDB The Definitive Guide" (OReilly 2010); Apache CouchDB 项目 2005-
 日期: 2026-05-31
 子分类: 数据库

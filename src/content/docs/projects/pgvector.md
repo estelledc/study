@@ -1,5 +1,5 @@
 ---
-title: pgvector — PostgreSQL 向量扩展
+title: "pgvector — PostgreSQL 向量扩展"
 来源: https://github.com/pgvector/pgvector
 日期: 2026-05-29
 子分类: 数据库 / 向量

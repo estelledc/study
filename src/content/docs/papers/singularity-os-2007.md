@@ -1,5 +1,5 @@
 ---
-title: Singularity — 用安全语言重想整条软件栈
+title: "Singularity — 用安全语言重想整条软件栈"
 来源: https://www.microsoft.com/en-us/research/wp-content/uploads/2007/04/osr2007_rethinkingsoftwarestack.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化

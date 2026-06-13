@@ -1,5 +1,5 @@
 ---
-title: Lua — 极简嵌入式语言
+title: "Lua — 极简嵌入式语言"
 来源: 'https://github.com/lua/lua'
 日期: 2026-06-13
 子分类: 语言运行时

@@ -1,5 +1,5 @@
 ---
-title: ColBERTv2 — 让向量检索既精又能扛百万文档
+title: "ColBERTv2 — 让向量检索既精又能扛百万文档"
 来源: 'Santhanam 等, "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction", NAACL 2022'
 日期: 2026-05-31
 子分类: 数据检索

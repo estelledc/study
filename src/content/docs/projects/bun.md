@@ -1,5 +1,5 @@
 ---
-title: Bun — JS 全能运行时
+title: "Bun — JS 全能运行时"
 来源: https://github.com/oven-sh/bun
 日期: 2026-05-29
 子分类: 语言运行时

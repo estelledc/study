@@ -1,5 +1,5 @@
 ---
-title: Diesel — Rust ORM 与查询构建器
+title: "Diesel — Rust ORM 与查询构建器"
 来源: https://github.com/diesel-rs/diesel
 日期: 2026-06-13
 分类: 编程语言

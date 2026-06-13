@@ -1,5 +1,5 @@
 ---
-title: librosa — Python 音频分析库与 MFCC/STFT 事实标准
+title: "librosa — Python 音频分析库与 MFCC/STFT 事实标准"
 description: 面向音乐信息检索与语音前处理的 NumPy 生态音频库；STFT、梅尔谱、MFCC、节拍追踪与 onset 检测的一站式 API
 来源: 'https://github.com/librosa/librosa'
 日期: 2026-06-05

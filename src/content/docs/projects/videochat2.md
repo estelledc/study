@@ -1,5 +1,5 @@
 ---
-title: VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现
+title: "VideoChat2 — OpenGVLab 三阶段训练 Video-LLM 官方实现"
 description: Ask-Anything 仓库的 VideoChat2 主线；UMT 视觉编码 + Mistral/Vicuna LLM、三阶段训练与 MVBench 官方评测脚本
 来源: 'https://github.com/OpenGVLab/Ask-Anything'
 日期: 2026-06-05

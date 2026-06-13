@@ -1,5 +1,5 @@
 ---
-title: Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
+title: "Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务"
 来源: 'https://github.com/steel-dev/steel-browser'
 日期: 2026-05-30
 子分类: projects

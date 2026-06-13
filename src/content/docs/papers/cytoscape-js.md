@@ -1,5 +1,5 @@
 ---
-title: Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库
+title: "Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库"
 来源: 'Franz et al., "Cytoscape.js: a graph theory library for visualisation and analysis", Bioinformatics 2016'
 日期: 2026-06-01
 子分类: 可视化

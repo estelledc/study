@@ -1,5 +1,5 @@
 ---
-title: VideoLLM-online — 流式视频对话的 LIVE 框架
+title: "VideoLLM-online — 流式视频对话的 LIVE 框架"
 来源: 'Chen et al., "VideoLLM-online: Online Video Large Language Model for Streaming Video", CVPR 2024'
 日期: 2026-06-05
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL — 工业级关系数据库
+title: "PostgreSQL — 工业级关系数据库"
 来源: https://github.com/postgres/postgres
 日期: 2026-05-29
 子分类: 存储与查询
@@ -213,5 +213,6 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 - [[vapor]] —— Vapor — 用 Swift 写后端 API 的 Web 框架
 - [[weaviate]] —— Weaviate — 模块化向量数据库
 - [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
+- [[yugabytedb]] —— YugabyteDB — 零基础入门分布式 SQL
 - [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）
 

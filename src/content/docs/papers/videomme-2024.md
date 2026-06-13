@@ -1,5 +1,5 @@
 ---
-title: Video-MME — 视频多模态大模型的「高考卷」
+title: "Video-MME — 视频多模态大模型的「高考卷」"
 来源: 'Fu et al., "Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis", CVPR 2025'
 日期: 2026-06-05
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: TimelineJS — 把 Google Sheet 一键变成新闻时间线
+title: "TimelineJS — 把 Google Sheet 一键变成新闻时间线"
 来源: 'https://github.com/NUKnightLab/TimelineJS3 + Knight Lab 官方文档 https://timeline.knightlab.com/docs/'
 日期: 2026-06-01
 子分类: 数据可视化

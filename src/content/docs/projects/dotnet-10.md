@@ -1,5 +1,5 @@
 ---
-title: .NET 10 发布详解 — 零基础学习笔记
+title: ".NET 10 发布详解 — 零基础学习笔记"
 来源: https://devblogs.microsoft.com/dotnet/announcing-dotnet-10/
 日期: 2026-06-13
 分类: 编程语言

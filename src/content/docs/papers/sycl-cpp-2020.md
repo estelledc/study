@@ -1,5 +1,5 @@
 ---
-title: SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑
+title: "SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑"
 来源: Khronos Group, "SYCL 2020 Specification", 2020（IWOCL/SYCLcon 系列）
 日期: 2026-05-31
 子分类: GPU 架构

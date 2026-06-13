@@ -1,5 +1,5 @@
 ---
-title: probe-rs — Rust 写的嵌入式烧录与调试工具
+title: "probe-rs — Rust 写的嵌入式烧录与调试工具"
 来源: 'https://github.com/probe-rs/probe-rs'
 日期: 2026-06-06
 分类: 操作系统

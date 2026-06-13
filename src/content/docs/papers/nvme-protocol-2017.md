@@ -1,5 +1,5 @@
 ---
-title: NVMe — 为 SSD 重写的存储协议
+title: "NVMe — 为 SSD 重写的存储协议"
 来源: NVMe and PCIe SSDs — A Modern Look at Storage Performance, USENIX ATC 2017
 日期: 2026-05-31
 子分类: GPU 架构

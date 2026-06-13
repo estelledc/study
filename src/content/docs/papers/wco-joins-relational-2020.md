@@ -1,5 +1,5 @@
 ---
-title: Adopting Worst-Case Optimal Joins in Relational Database Systems — 把 WCO Join 搬进通用 RDBMS
+title: "Adopting Worst-Case Optimal Joins in Relational Database Systems — 把 WCO Join 搬进通用 RDBMS"
 来源: https://www.vldb.org/pvldb/vol13/p1891-freitag.pdf
 日期: 2026-06-13
 子分类: 存储与查询

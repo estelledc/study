@@ -1,5 +1,5 @@
 ---
-title: FreeRTOS Reference Manual — 嵌入式实时内核零基础导读
+title: "FreeRTOS Reference Manual — 嵌入式实时内核零基础导读"
 来源: https://www.freertos.org/Documentation/RTOS_book.html
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

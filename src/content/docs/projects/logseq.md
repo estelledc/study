@@ -1,5 +1,5 @@
 ---
-title: Logseq — 块结构离线知识库
+title: "Logseq — 块结构离线知识库"
 来源: https://github.com/logseq/logseq
 日期: 2026-06-13
 子分类: 编辑器与 IDE

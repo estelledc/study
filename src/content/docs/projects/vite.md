@@ -1,8 +1,8 @@
 ---
-title: Vite — 浏览器自己加载源码的构建工具
+title: "Vite — 浏览器自己加载源码的构建工具"
 来源: https://github.com/vitejs/vite
 日期: 2026-05-29
-子分类: 构建工具
+子分类: frontend-frameworks
 分类: 编译器
 难度: 中级
 provenance: pipeline-v3
@@ -159,7 +159,6 @@ export default defineConfig({
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[electron-builder]] —— electron-builder — 一条命令把 Electron 应用打包发布到全平台
-- [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建流水线
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
@@ -171,6 +170,7 @@ export default defineConfig({
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 - [[preact]] —— Preact — 3KB React 替代
+- [[pwa-builder]] —— PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具
 - [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[qwik]] —— Qwik — Resumable UI 框架
 - [[react]] —— React UI 组件库
@@ -183,6 +183,7 @@ export default defineConfig({
 - [[svelte]] —— Svelte — 编译时 UI 框架
 - [[tailwind]] —— Tailwind CSS — 工具类优先样式框架
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
+- [[trunk]] —— Trunk — Rust WASM 零配置构建与打包工具
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时

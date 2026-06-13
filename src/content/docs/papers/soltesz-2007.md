@@ -1,5 +1,5 @@
 ---
-title: Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案
+title: "Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案"
 来源: Soltesz et al., "Container-based Operating System Virtualization", EuroSys 2007
 日期: 2026-06-01
 子分类: 内核与虚拟化

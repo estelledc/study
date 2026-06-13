@@ -1,5 +1,5 @@
 ---
-title: TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位
+title: "TimeChat — 带时间戳的多轮视频助手，长视频也能精确定位"
 来源: 'Ren et al., "TimeChat: A Time-sensitive Multimodal Large Language Model for Long Video Understanding", CVPR 2024'
 日期: 2026-06-05
 分类: 机器学习

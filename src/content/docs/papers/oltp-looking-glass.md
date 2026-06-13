@@ -1,5 +1,5 @@
 ---
-title: OLTP Through the Looking Glass — 传统数据库的 20 倍开销从哪来
+title: "OLTP Through the Looking Glass — 传统数据库的 20 倍开销从哪来"
 来源: 'Harizopoulos et al., "OLTP Through the Looking Glass, and What We Found There", SIGMOD 2008'
 日期: 2026-06-13
 子分类: 存储与查询

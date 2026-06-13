@@ -1,5 +1,5 @@
 ---
-title: SPIN — 让计算机帮你穷举并发程序的所有可能执行
+title: "SPIN — 让计算机帮你穷举并发程序的所有可能执行"
 来源: Gerard J. Holzmann, "The Model Checker SPIN", IEEE Transactions on Software Engineering, 1997
 日期: 2026-05-30
 子分类: 形式化验证

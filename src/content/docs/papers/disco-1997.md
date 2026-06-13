@@ -1,5 +1,5 @@
 ---
-title: Disco — 让没改过的商用 OS 在 64 核大机器上一起跑
+title: "Disco — 让没改过的商用 OS 在 64 核大机器上一起跑"
 来源: 'Bugnion, Devine, Govil, Rosenblum, "Disco: Running Commodity Operating Systems on Scalable Multiprocessors", SOSP 1997'
 日期: 2026-06-01
 子分类: 内核与虚拟化

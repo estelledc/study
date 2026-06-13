@@ -1,5 +1,5 @@
 ---
-title: smol — 小而美的 async runtime
+title: "smol — 小而美的 async runtime"
 来源: https://github.com/smol-rs/smol
 日期: 2026-06-13
 分类: 编译器

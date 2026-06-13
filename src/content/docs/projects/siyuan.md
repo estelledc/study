@@ -1,5 +1,5 @@
 ---
-title: SiYuan — 国产块结构笔记
+title: "SiYuan — 国产块结构笔记"
 来源: https://github.com/siyuan-note/siyuan
 日期: 2026-06-13
 分类: CLI

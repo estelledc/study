@@ -1,5 +1,5 @@
 ---
-title: FlashAttention-2 — 更快的 Attention 与更好的并行
+title: "FlashAttention-2 — 更快的 Attention 与更好的并行"
 来源: https://arxiv.org/abs/2307.08691
 日期: 2026-06-13
 子分类: ML 系统

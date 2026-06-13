@@ -1,5 +1,5 @@
 ---
-title: Black-Scholes 1973 — 用「对冲复制」给期权和公司债定价
+title: "Black-Scholes 1973 — 用「对冲复制」给期权和公司债定价"
 来源: https://www.cs.princeton.edu/courses/archive/fall09/cos323/papers/black_scholes73.pdf
 日期: 2026-06-13
 分类: 其他

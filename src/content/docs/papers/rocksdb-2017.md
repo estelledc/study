@@ -153,7 +153,6 @@ Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
-- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[btrfs-2013]] —— Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
@@ -161,6 +160,7 @@ Facebook UDB（社交图谱的 MySQL 集群）原用 InnoDB B-Tree。B-Tree 有 
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[rocksdb-evolution-2021]] —— RocksDB 优先级演化 — 八年大规模存储引擎的工程决策复盘
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 

@@ -1,5 +1,5 @@
 ---
-title: btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
+title: "btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器"
 来源: https://github.com/aristocratos/btop
 日期: 2026-05-30
 子分类: 命令行工具

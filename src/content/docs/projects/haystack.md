@@ -1,5 +1,5 @@
 ---
-title: Haystack — 企业 NLP / RAG 流水线
+title: "Haystack — 企业 NLP / RAG 流水线"
 来源: https://github.com/deepset-ai/haystack
 日期: 2026-05-31
 子分类: 数据科学与 AI

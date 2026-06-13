@@ -1,5 +1,5 @@
 ---
-title: io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+title: "io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall"
 来源: 'Jens Axboe, "Efficient IO with io_uring", kernel.dk 白皮书 2019; Linux 5.1 mainline 2019-05'
 日期: 2026-05-30
 子分类: 操作系统

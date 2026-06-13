@@ -1,9 +1,9 @@
 ---
-title: Serde — Rust 序列化框架
+title: "Serde — Rust 序列化框架"
 来源: 'https://github.com/serde-rs/serde'
 日期: 2026-06-13
 分类: 其他
-子分类: rust-tools
+子分类: rust-ecosystem
 provenance: pipeline-v3
 ---
 

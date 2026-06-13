@@ -1,5 +1,5 @@
 ---
-title: VideoMLA — 低秩潜变量 KV Cache 与分钟级自回归视频扩散
+title: "VideoMLA — 低秩潜变量 KV Cache 与分钟级自回归视频扩散"
 来源: https://arxiv.org/abs/2605.30351
 日期: 2026-06-13
 分类: 机器学习

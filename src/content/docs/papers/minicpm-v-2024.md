@@ -1,5 +1,5 @@
 ---
-title: MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型
+title: "MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型"
 来源: 'Yao et al., "MiniCPM-V: A GPT-4V Level MLLM on Your Phone", arXiv 2024'
 日期: 2026-06-06
 分类: 机器学习

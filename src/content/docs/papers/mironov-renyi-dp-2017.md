@@ -1,5 +1,5 @@
 ---
-title: Rényi 差分隐私 — 隐私会计统一框架
+title: "Rényi 差分隐私 — 隐私会计统一框架"
 来源: 'Mironov, "Rényi Differential Privacy", arXiv 2017'
 日期: 2026-06-06
 分类: 安全与隐私

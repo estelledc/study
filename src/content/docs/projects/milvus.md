@@ -1,5 +1,5 @@
 ---
-title: Milvus — 开源向量数据库
+title: "Milvus — 开源向量数据库"
 来源: https://github.com/milvus-io/milvus
 日期: 2026-05-29
 子分类: 存储与查询

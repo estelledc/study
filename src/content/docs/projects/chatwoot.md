@@ -1,5 +1,5 @@
 ---
-title: chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
+title: "chatwoot — 把 11 种外部聊天渠道归一到同一张消息表"
 来源: 'chatwoot/chatwoot, MIT License, v4.14.1 (2026-05)'
 日期: 2026-05-29
 子分类: 客服平台

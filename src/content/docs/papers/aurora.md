@@ -1,5 +1,5 @@
 ---
-title: Aurora — 把数据库的下半身换成日志机
+title: "Aurora — 把数据库的下半身换成日志机"
 来源: 'Verbitski et al., "Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases", SIGMOD 2017'
 日期: 2026-05-29
 子分类: 数据库系统

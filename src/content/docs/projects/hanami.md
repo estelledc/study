@@ -1,5 +1,5 @@
 ---
-title: Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
+title: "Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择"
 来源: 'https://github.com/hanami/hanami'
 日期: 2026-05-30
 子分类: Web 后端

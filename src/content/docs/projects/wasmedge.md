@@ -1,5 +1,5 @@
 ---
-title: WasmEdge — 云原生 wasm 运行时
+title: "WasmEdge — 云原生 wasm 运行时"
 description: CNCF 沙盒项目，面向边缘与 Kubernetes 的轻量 WebAssembly 运行时，扩展网络、AI 推理与数据库等云原生能力
 来源: 'https://github.com/WasmEdge/WasmEdge'
 日期: 2026-06-13

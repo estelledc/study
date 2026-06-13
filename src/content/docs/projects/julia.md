@@ -3,7 +3,7 @@ title: "Julia — 数值计算专用语言"
 来源: https://github.com/JuliaLang/julia
 日期: 2026-06-13
 分类: 编译器
-子分类: 语言运行时
+子分类: bioinformatics-and-scientific
 provenance: pipeline-v3
 ---
 

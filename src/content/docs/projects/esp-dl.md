@@ -1,5 +1,5 @@
 ---
-title: ESP-DL — 乐鑫芯片上的「袖珍 AI 放映机」
+title: "ESP-DL — 乐鑫芯片上的「袖珍 AI 放映机」"
 来源: 'https://github.com/espressif/esp-dl'
 日期: '2026-06-13'
 子分类: 嵌入式

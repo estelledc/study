@@ -1,5 +1,5 @@
 ---
-title: AiToEarn — 让 AI 帮你写内容、发平台、赚佣金
+title: "AiToEarn — 让 AI 帮你写内容、发平台、赚佣金"
 来源: https://github.com/yikart/AiToEarn
 日期: 2026-06-13
 分类: 其他

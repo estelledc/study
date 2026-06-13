@@ -1,5 +1,5 @@
 ---
-title: SpatialClaw — 让 AI 用 Python 代码做空间推理
+title: "SpatialClaw — 让 AI 用 Python 代码做空间推理"
 来源: 'https://arxiv.org/abs/2606.13673'
 日期: 2026-06-13
 分类: 机器学习

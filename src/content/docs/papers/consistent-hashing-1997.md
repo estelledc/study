@@ -1,5 +1,5 @@
 ---
-title: Consistent Hashing — 加机器只搬一小部分数据的哈希环
+title: "Consistent Hashing — 加机器只搬一小部分数据的哈希环"
 来源: Karger et al., "Consistent Hashing and Random Trees", STOC 1997
 日期: 2026-05-31
 子分类: 共识与复制

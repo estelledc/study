@@ -1,5 +1,5 @@
 ---
-title: Reasoning in Memory — 解锁 LLM 的工作记忆做隐式推理
+title: "Reasoning in Memory — 解锁 LLM 的工作记忆做隐式推理"
 来源: https://arxiv.org/abs/2605.30343
 日期: 2026-06-13
 分类: 机器学习

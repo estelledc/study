@@ -1,5 +1,5 @@
 ---
-title: Various LLM Smells — 零基础学习笔记
+title: "Various LLM Smells — 零基础学习笔记"
 来源: https://shvbsle.in/various-llm-smells/
 日期: 2026-06-13
 分类: 机器学习

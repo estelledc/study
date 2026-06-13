@@ -1,5 +1,5 @@
 ---
-title: Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU
+title: "Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU"
 来源: 'Herlihy & Moss, "Transactional Memory: Architectural Support for Lock-Free Data Structures", ISCA 1993'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

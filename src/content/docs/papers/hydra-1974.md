@@ -1,5 +1,5 @@
 ---
-title: HYDRA — 用 capability 把整个内核重做成对象 + 票据
+title: "HYDRA — 用 capability 把整个内核重做成对象 + 票据"
 来源: 'Wulf, Cohen, Corwin, Jones, Levin, Pierson, Pollack, "HYDRA: The Kernel of a Multiprocessor Operating System", CACM 17(6): 337-345, June 1974'
 日期: 2026-05-31
 子分类: 内核与虚拟化

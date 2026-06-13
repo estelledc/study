@@ -1,5 +1,5 @@
 ---
-title: kind — 用 Docker 容器当 K8s 节点的本地集群
+title: "kind — 用 Docker 容器当 K8s 节点的本地集群"
 来源: https://github.com/kubernetes-sigs/kind
 日期: 2026-06-01
 子分类: DevOps 与运维

@@ -1,5 +1,5 @@
 ---
-title: MetaMask — 装在浏览器里的以太坊钱包
+title: "MetaMask — 装在浏览器里的以太坊钱包"
 来源: 'https://github.com/MetaMask/metamask-extension'
 日期: 2026-05-30
 子分类: 链与合约

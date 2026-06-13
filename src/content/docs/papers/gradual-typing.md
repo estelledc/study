@@ -1,5 +1,5 @@
 ---
-title: 渐进类型 — 让动态和静态类型在同一份代码里共存
+title: "渐进类型 — 让动态和静态类型在同一份代码里共存"
 来源: 'Jeremy G. Siek, Walid Taha, "Gradual Typing for Functional Languages", Scheme Workshop 2006'
 日期: 2026-05-29
 子分类: 类型与 PL 理论
@@ -152,7 +152,7 @@ let apply (f: ? -> ?) (x: int) =
 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型

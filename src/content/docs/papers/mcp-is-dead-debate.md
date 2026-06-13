@@ -1,5 +1,5 @@
 ---
-title: MCP Is Dead? — 2026 年协议存废之争零基础笔记
+title: "MCP Is Dead? — 2026 年协议存废之争零基础笔记"
 来源: 'Quandri Engineering「MCP is dead」(2026); Charles Chen「MCP is Dead; Long Live MCP!」(2026); Anthropic「Code execution with MCP」; MCP Blog「2026-07-28 Release Candidate」(2026); Hacker News / DEV Community 社区讨论'
 日期: 2026-06-13
 子分类: Web 后端

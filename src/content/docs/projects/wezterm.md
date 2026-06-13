@@ -1,5 +1,5 @@
 ---
-title: WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用
+title: "WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用"
 来源: https://github.com/wez/wezterm
 日期: 2026-05-31
 子分类: 命令行工具

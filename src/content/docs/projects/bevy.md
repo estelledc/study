@@ -1,9 +1,9 @@
 ---
-title: Bevy — Rust 数据驱动 ECS 游戏引擎
+title: "Bevy — Rust 数据驱动 ECS 游戏引擎"
 来源: 'https://github.com/bevyengine/bevy'
 日期: 2026-06-06
 分类: 图形学
-子分类: 前端框架
+子分类: game-engines-and-graphics
 难度: 中级
 ---
 

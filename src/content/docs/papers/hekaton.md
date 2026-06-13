@@ -1,5 +1,5 @@
 ---
-title: Hekaton — SQL Server 内存优化 OLTP 引擎
+title: "Hekaton — SQL Server 内存优化 OLTP 引擎"
 来源: 'Diaconu et al., "Hekaton: SQL Server''s Memory-Optimized OLTP Engine", SIGMOD 2013'
 日期: 2026-06-13
 子分类: 存储与查询

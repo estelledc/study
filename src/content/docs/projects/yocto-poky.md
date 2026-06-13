@@ -1,5 +1,5 @@
 ---
-title: Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统
+title: "Yocto Project (poky) — 工业级嵌入式 Linux 定制构建系统"
 来源: 'https://github.com/yoctoproject/poky'
 日期: 2026-06-06
 分类: 操作系统

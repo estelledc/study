@@ -1,5 +1,5 @@
 ---
-title: Cosmos SDK — 应用链开发框架
+title: "Cosmos SDK — 应用链开发框架"
 来源: 'https://github.com/cosmos/cosmos-sdk'
 日期: 2026-05-30
 子分类: 链与合约

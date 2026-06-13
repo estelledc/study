@@ -1,5 +1,5 @@
 ---
-title: Consistency Models — 把 50 步扩散压成 1 步出图
+title: "Consistency Models — 把 50 步扩散压成 1 步出图"
 来源: Song, Dhariwal, Chen, Sutskever, "Consistency Models", ICML 2023
 日期: 2026-06-01
 子分类: 模型与训练

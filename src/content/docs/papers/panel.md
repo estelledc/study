@@ -1,5 +1,5 @@
 ---
-title: Panel — 把 notebook 一键变交互式 web app
+title: "Panel — 把 notebook 一键变交互式 web app"
 来源: 'Rudiger 等, "Panel: A High-Level App and Dashboarding Framework", HoloViz / Anaconda 2019, 1.0 GA 2023-06'
 日期: 2026-06-01
 子分类: 数据可视化

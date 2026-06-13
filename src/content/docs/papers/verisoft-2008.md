@@ -1,5 +1,5 @@
 ---
-title: Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完
+title: "Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完"
 来源: Alkassar, Hillebrand, Leinenbach, Paul, "The Verisoft Approach to Systems Verification", VSTTE 2008
 日期: 2026-05-31
 子分类: 形式化验证

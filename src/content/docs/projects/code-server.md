@@ -1,5 +1,5 @@
 ---
-title: code-server — 在浏览器里跑完整 VS Code
+title: "code-server — 在浏览器里跑完整 VS Code"
 来源: 'https://github.com/coder/code-server'
 日期: 2026-06-13
 子分类: 编辑器与 IDE

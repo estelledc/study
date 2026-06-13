@@ -1,5 +1,5 @@
 ---
-title: The Racket Manifesto — 零基础学习笔记
+title: "The Racket Manifesto — 零基础学习笔记"
 来源: https://www.cs.utah.edu/plt/publications/snapl15-fffkbmt.pdf
 日期: 2026-06-13
 分类: 编程语言

@@ -1,5 +1,5 @@
 ---
-title: torchtitan — PyTorch 原生的大模型分布式训练平台
+title: "torchtitan — PyTorch 原生的大模型分布式训练平台"
 来源: https://github.com/pytorch/torchtitan
 日期: 2026-06-13
 分类: 机器学习

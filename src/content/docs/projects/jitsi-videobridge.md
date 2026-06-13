@@ -1,5 +1,5 @@
 ---
-title: Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器
+title: "Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器"
 来源: 'https://github.com/jitsi/jitsi-videobridge'
 日期: 2026-05-31
 子分类: 实时通信

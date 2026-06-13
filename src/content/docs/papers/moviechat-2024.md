@@ -1,5 +1,5 @@
 ---
-title: MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊
+title: "MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊"
 来源: 'Song et al., "MovieChat: From Dense Token to Sparse Memory for Long Video Understanding", CVPR 2024'
 日期: 2026-06-05
 分类: 机器学习

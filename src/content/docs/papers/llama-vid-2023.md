@@ -1,5 +1,5 @@
 ---
-title: LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM
+title: "LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM"
 来源: 'Li et al., "LLaMA-VID: An Image is Worth 2 Tokens in Large Language Models", arXiv 2023'
 日期: 2026-06-05
 分类: 机器学习

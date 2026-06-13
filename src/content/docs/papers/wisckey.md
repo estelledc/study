@@ -1,5 +1,5 @@
 ---
-title: WiscKey — 把 Key 和 Value 拆开，让 SSD 上的 LSM 树少干冤枉活
+title: "WiscKey — 把 Key 和 Value 拆开，让 SSD 上的 LSM 树少干冤枉活"
 来源: 'Lu et al., "WiscKey: Separating Keys from Values in SSD-conscious Storage", FAST 2016 / ACM TOS 2017'
 日期: 2026-06-13
 子分类: 存储与查询

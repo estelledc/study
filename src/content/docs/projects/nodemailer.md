@@ -1,5 +1,5 @@
 ---
-title: Nodemailer — Node.js 发邮件的事实标准
+title: "Nodemailer — Node.js 发邮件的事实标准"
 来源: https://github.com/nodemailer/nodemailer
 日期: 2026-05-31
 子分类: 实时通信

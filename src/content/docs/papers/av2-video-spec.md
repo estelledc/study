@@ -1,5 +1,5 @@
 ---
-title: AV2 Video Standard v1.0 — 下一代免版税视频编码零基础学习笔记
+title: "AV2 Video Standard v1.0 — 下一代免版税视频编码零基础学习笔记"
 来源: https://en.wikipedia.org/wiki/AV2
 日期: 2026-06-13
 子分类: 音视频媒体

@@ -1,5 +1,5 @@
 ---
-title: Video-ChatGPT — 让大语言模型看懂视频并聊起来
+title: "Video-ChatGPT — 让大语言模型看懂视频并聊起来"
 来源: 'Maaz et al., "Video-ChatGPT: Towards Detailed Video Understanding via Large Vision and Language Models", arXiv 2023'
 日期: 2026-06-05
 分类: 机器学习

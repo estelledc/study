@@ -1,5 +1,5 @@
 ---
-title: Nethermind — .NET 写的高性能以太坊客户端
+title: "Nethermind — .NET 写的高性能以太坊客户端"
 来源: 'https://github.com/NethermindEth/nethermind'
 日期: 2026-05-29
 子分类: 链与合约

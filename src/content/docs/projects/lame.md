@@ -1,5 +1,5 @@
 ---
-title: LAME — MP3 编码开源参考实现
+title: "LAME — MP3 编码开源参考实现"
 description: 心理声学模型与比特率分配教科书；legacy 分发与播客仍大量 MP3
 来源: 'https://github.com/rbrito/lame'
 日期: 2026-06-06

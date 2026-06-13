@@ -1,5 +1,5 @@
 ---
-title: TeXstudio — LaTeX 集成写作环境
+title: "TeXstudio — LaTeX 集成写作环境"
 来源: https://github.com/texstudio-org/texstudio
 日期: 2026-06-13
 子分类: 编辑器与 IDE

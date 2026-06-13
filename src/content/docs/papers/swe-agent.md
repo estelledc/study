@@ -133,6 +133,7 @@ SWE-Agent 的动作序列：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[academic-research-skills]] —— Academic Research Skills — Claude Code 学术研究全流程自动化技能包
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
 - [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI

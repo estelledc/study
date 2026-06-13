@@ -1,5 +1,5 @@
 ---
-title: Claude Agent SDK — 把 Claude Code 装进 npm 包
+title: "Claude Agent SDK — 把 Claude Code 装进 npm 包"
 来源: https://docs.claude.com/en/api/agent-sdk
 日期: 2026-05-31
 子分类: AI 工程

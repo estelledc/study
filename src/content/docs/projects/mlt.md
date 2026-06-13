@@ -1,5 +1,5 @@
 ---
-title: MLT — 多媒体编辑框架
+title: "MLT — 多媒体编辑框架"
 description: Producer/Filter/Consumer 流式抽象；Shotcut/Kdenlive 底层开源 NLE 引擎
 来源: 'https://github.com/mltframework/mlt'
 日期: 2026-06-06

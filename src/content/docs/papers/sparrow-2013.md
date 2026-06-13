@@ -1,5 +1,5 @@
 ---
-title: Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器
+title: "Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器"
 来源: 'Ousterhout, Wendell, Zaharia, Stoica, "Sparrow: Distributed, Low Latency Scheduling", SOSP 2013'
 日期: 2026-05-31
 子分类: 共识与复制

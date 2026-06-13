@@ -1,5 +1,5 @@
 ---
-title: MIRA — 中期训练中的来源感知 Rubric 锚定数据筛选
+title: "MIRA — 中期训练中的来源感知 Rubric 锚定数据筛选"
 来源: https://arxiv.org/abs/2605.30288
 日期: 2026-06-13
 子分类: 模型与训练

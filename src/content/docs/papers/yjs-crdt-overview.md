@@ -1,5 +1,5 @@
 ---
-title: Yjs — 用 CRDT 做共享编辑：零基础学习笔记
+title: "Yjs — 用 CRDT 做共享编辑：零基础学习笔记"
 来源: https://docs.yjs.dev/
 日期: 2026-06-13
 子分类: 编辑器与 IDE

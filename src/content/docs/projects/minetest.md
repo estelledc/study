@@ -1,5 +1,5 @@
 ---
-title: Luanti / Minetest — 给自己造一个开源体素游戏引擎
+title: "Luanti / Minetest — 给自己造一个开源体素游戏引擎"
 来源: 'https://github.com/minetest/minetest'
 日期: 2026-06-06
 分类: 图形学
@@ -225,9 +225,12 @@ end)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
 - [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
 - [[openrct2]] —— OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写
 - [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
+- [[perlin-1985-noise]] —— Perlin Noise — 让计算机生成的图像不再有"机器味"
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

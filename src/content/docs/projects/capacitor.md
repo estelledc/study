@@ -1,5 +1,5 @@
 ---
-title: Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
+title: "Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用"
 来源: 'https://github.com/ionic-team/capacitor'
 日期: 2026-06-06
 分类: 后端 API
@@ -218,6 +218,8 @@ async function checkUpdate(currentVersion: string) {
 - [[electron-builder]] —— electron-builder — 一条命令把 Electron 应用打包发布到全平台
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
+- [[onsen-ui]] —— Onsen UI — 用一套 HTML 同时搞定 iOS 和 Android 原生风格界面
+- [[pwa-builder]] —— PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具
 - [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用

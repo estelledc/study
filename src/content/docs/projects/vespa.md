@@ -1,5 +1,5 @@
 ---
-title: Vespa — Yahoo 检索 + 排序引擎
+title: "Vespa — Yahoo 检索 + 排序引擎"
 来源: https://github.com/vespa-engine/vespa
 日期: 2026-06-01
 子分类: 存储与查询

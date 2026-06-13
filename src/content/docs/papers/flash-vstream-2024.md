@@ -1,5 +1,5 @@
 ---
-title: Flash-VStream — STAR 双进程记忆的低延迟长流理解
+title: "Flash-VStream — STAR 双进程记忆的低延迟长流理解"
 来源: 'Zhang et al., "Flash-VStream: Memory-Based Real-Time Understanding for Long Video Streams", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

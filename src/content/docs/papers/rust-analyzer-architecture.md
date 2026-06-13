@@ -1,5 +1,5 @@
 ---
-title: Rust Analyzer Architecture — 从源码到 IDE 功能的增量语言服务架构
+title: "Rust Analyzer Architecture — 从源码到 IDE 功能的增量语言服务架构"
 来源: https://github.com/rust-lang/rust-analyzer/blob/master/docs/dev/architecture.md
 日期: 2026-06-13
 子分类: 编辑器与 IDE

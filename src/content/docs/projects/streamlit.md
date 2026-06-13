@@ -1,5 +1,5 @@
 ---
-title: Streamlit — Python 几行写 Web 应用
+title: "Streamlit — Python 几行写 Web 应用"
 来源: 'https://github.com/streamlit/streamlit'
 日期: 2026-06-01
 子分类: 数据可视化

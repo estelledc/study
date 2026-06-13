@@ -1,5 +1,5 @@
 ---
-title: OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版
+title: "OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版"
 来源: 'https://github.com/openwrt/openwrt'
 日期: 2026-06-06
 分类: 操作系统

@@ -1,5 +1,5 @@
 ---
-title: Iced — Rust 原生 GUI 框架
+title: "Iced — Rust 原生 GUI 框架"
 来源: https://github.com/iced-rs/iced
 日期: 2026-06-13
 分类: 后端 API

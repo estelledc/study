@@ -1,5 +1,5 @@
 ---
-title: Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
+title: "Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来"
 来源: 'https://github.com/symfony/symfony'
 日期: 2026-05-30
 子分类: Web 后端

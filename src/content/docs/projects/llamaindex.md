@@ -1,5 +1,5 @@
 ---
-title: LlamaIndex — LLM 数据框架
+title: "LlamaIndex — LLM 数据框架"
 来源: https://github.com/run-llama/llama_index
 日期: 2026-05-29
 子分类: AI / RAG

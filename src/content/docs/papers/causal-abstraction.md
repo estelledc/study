@@ -1,5 +1,5 @@
 ---
-title: Causal Abstraction — 神经网络与算法的因果对齐
+title: "Causal Abstraction — 神经网络与算法的因果对齐"
 来源: 'Geiger et al., "Causal Abstractions of Neural Networks", NeurIPS 2021'
 日期: 2026-05-29
 子分类: AI 可解释性

@@ -1,5 +1,5 @@
 ---
-title: Sidekiq — Ruby 后台任务的事实标准
+title: "Sidekiq — Ruby 后台任务的事实标准"
 来源: https://github.com/sidekiq/sidekiq
 日期: 2026-05-30
 子分类: Web 后端

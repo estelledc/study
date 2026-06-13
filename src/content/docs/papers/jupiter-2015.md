@@ -1,5 +1,5 @@
 ---
-title: Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍
+title: "Jupiter Rising — Google 数据中心网络十年怎么做到带宽涨百倍"
 来源: 'Singh et al., "Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google Datacenter Network", SIGCOMM 2015'
 日期: 2026-06-01
 子分类: 网络协议

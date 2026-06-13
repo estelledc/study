@@ -1,5 +1,5 @@
 ---
-title: OpenTelemetry — 让所有应用用同一种语言吐监控数据
+title: "OpenTelemetry — 让所有应用用同一种语言吐监控数据"
 来源: OpenTelemetry Specification, https://opentelemetry.io/docs/
 日期: 2026-05-31
 子分类: cloud-native

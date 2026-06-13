@@ -1,5 +1,5 @@
 ---
-title: Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
+title: "Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命"
 来源: Tse-Yu Yeh and Yale N. Patt, "Two-Level Adaptive Training Branch Prediction", MICRO-24, Albuquerque, November 1991
 日期: 2026-05-31
 子分类: GPU 架构

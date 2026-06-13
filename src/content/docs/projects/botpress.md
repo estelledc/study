@@ -1,5 +1,5 @@
 ---
-title: Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台
+title: "Botpress — 把对话画成流程图加 LLM 节点的开源 chatbot 平台"
 来源: botpress/botpress GitHub 仓库（MIT，legacy v12 维护中；新版 Cloud Studio 走 SaaS）
 日期: 2026-05-31
 子分类: 实时通信

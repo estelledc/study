@@ -1,5 +1,5 @@
 ---
-title: SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引
+title: "SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引"
 来源: 'Formal, Piwowarski, Clinchant, "SPLADE: Sparse Lexical and Expansion Model for First Stage Ranking", SIGIR 2021'
 日期: 2026-05-31
 子分类: 检索与排序

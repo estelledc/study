@@ -1,5 +1,5 @@
 ---
-title: HTTPie — curl 的人话版本
+title: "HTTPie — curl 的人话版本"
 来源: https://github.com/httpie/cli
 日期: 2026-05-30
 子分类: 命令行工具

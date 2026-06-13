@@ -1,5 +1,5 @@
 ---
-title: StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉
+title: "StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉"
 来源: Karras et al., "Analyzing and Improving the Image Quality of StyleGAN", CVPR 2020 (arXiv:1912.04958)
 日期: 2026-05-31
 子分类: 模型与训练

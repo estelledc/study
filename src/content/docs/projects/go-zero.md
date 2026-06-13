@@ -1,5 +1,5 @@
 ---
-title: go-zero — 一份契约文件生成整套 Go 微服务
+title: "go-zero — 一份契约文件生成整套 Go 微服务"
 来源: 'https://github.com/zeromicro/go-zero'
 日期: 2026-05-30
 子分类: Web 后端

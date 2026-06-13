@@ -1,5 +1,5 @@
 ---
-title: STORM — 面向多智能体协作的状态导向管理
+title: "STORM — 面向多智能体协作的状态导向管理"
 来源: 'Mengyang Liu et al., "Multi-agent Collaboration with State Management", arXiv:2605.20563, 2026; 代码 https://github.com/dreamyang-liu/STORM'
 日期: 2026-06-13
 子分类: 模型与训练

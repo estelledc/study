@@ -1,5 +1,5 @@
 ---
-title: ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告
+title: "ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告"
 来源: Cousot 等, "The ASTRÉE Analyser", ESOP 2005
 日期: 2026-05-30
 子分类: 类型与 PL 理论

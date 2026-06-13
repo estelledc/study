@@ -1,5 +1,5 @@
 ---
-title: PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具
+title: "PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具"
 来源: 'https://github.com/pwa-builder/PWABuilder'
 日期: 2026-06-13
 分类: 后端 API
@@ -167,3 +167,6 @@ PWABuilder 在生成 APK 时会提示你填写 `package_name` 和证书指纹，
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

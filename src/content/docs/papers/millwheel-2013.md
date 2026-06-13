@@ -1,5 +1,5 @@
 ---
-title: MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机
+title: "MillWheel 2013 — Google 给互联网级流处理装上不漏不重的发动机"
 来源: 'Akidau, Balikov, Bekiroğlu et al., "MillWheel: Fault-Tolerant Stream Processing at Internet Scale", VLDB 2013'
 日期: 2026-05-30
 子分类: 存储与查询

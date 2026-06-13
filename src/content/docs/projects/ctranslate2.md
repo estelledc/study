@@ -1,5 +1,5 @@
 ---
-title: CTranslate2 — Transformer 模型推理的 C++ 加速引擎
+title: "CTranslate2 — Transformer 模型推理的 C++ 加速引擎"
 来源: https://github.com/OpenNMT/CTranslate2
 日期: 2026-05-31
 子分类: 数据科学与 AI

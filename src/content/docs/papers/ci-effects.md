@@ -1,5 +1,5 @@
 ---
-title: CI Effects — 持续集成不是免费午餐，价值看实现细节
+title: "CI Effects — 持续集成不是免费午餐，价值看实现细节"
 来源: 'Ståhl & Bosch, "Modeling Continuous Integration Practice Differences in Industry Software Development", JSS 2014'
 日期: 2026-05-29
 子分类: 软件工程

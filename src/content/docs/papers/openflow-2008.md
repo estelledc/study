@@ -1,5 +1,5 @@
 ---
-title: OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
+title: "OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上"
 来源: 'McKeown 等, "OpenFlow: Enabling Innovation in Campus Networks", ACM SIGCOMM CCR, April 2008'
 日期: 2026-06-01
 子分类: 网络协议

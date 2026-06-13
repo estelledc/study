@@ -1,5 +1,5 @@
 ---
-title: AI safety via debate — 让两个 AI 互辩，人类只当评委
+title: "AI safety via debate — 让两个 AI 互辩，人类只当评委"
 来源: Irving, Christiano, Amodei, "AI safety via debate", arXiv 1805.00899 (OpenAI), 2018
 日期: 2026-06-01
 子分类: 模型与训练

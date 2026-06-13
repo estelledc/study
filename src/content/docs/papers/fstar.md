@@ -1,5 +1,5 @@
 ---
-title: F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
+title: "F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里"
 来源: 'Swamy et al., "Dependent Types and Multi-Monadic Effects in F*", POPL 2016'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -162,7 +162,6 @@ HACL* 用 F* 的 Low* 子集（限制到不需要 GC 的部分）写完，再用
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[frama-c-2012]] —— Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起
 - [[hacl-star-2017]] —— HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[idris-brady]] —— Idris — 让依赖类型从证明助理变成通用编程语言
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言

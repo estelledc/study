@@ -1,5 +1,5 @@
 ---
-title: Lingui — 写自然字符串，编译期自动提取 i18n msgid
+title: "Lingui — 写自然字符串，编译期自动提取 i18n msgid"
 来源: 'https://github.com/lingui/js-lingui + lingui.dev'
 日期: 2026-05-30
 子分类: projects / 前端国际化

@@ -1,5 +1,5 @@
 ---
-title: FlashInfer — LLM 推理的 GPU 内核引擎
+title: "FlashInfer — LLM 推理的 GPU 内核引擎"
 来源: https://github.com/flashinfer-ai/flashinfer
 日期: 2026-06-13
 分类: 机器学习

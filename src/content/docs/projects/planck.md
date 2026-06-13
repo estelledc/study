@@ -1,5 +1,5 @@
 ---
-title: Planck.js — Box2D 纯 JS 移植
+title: "Planck.js — Box2D 纯 JS 移植"
 来源: 'https://github.com/piqnt/planck.js'
 日期: 2026-06-13
 子分类: 渲染与图形

@@ -1,5 +1,5 @@
 ---
-title: BigGAN — 把 GAN 暴力放大到 ImageNet 512×512
+title: "BigGAN — 把 GAN 暴力放大到 ImageNet 512×512"
 来源: Brock, Donahue, Simonyan, "Large Scale GAN Training for High Fidelity Natural Image Synthesis", ICLR 2019 (arXiv:1809.11096)
 日期: 2026-05-31
 子分类: 模型与训练

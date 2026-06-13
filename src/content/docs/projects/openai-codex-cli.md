@@ -1,5 +1,5 @@
 ---
-title: OpenAI Codex CLI — 终端里的本地编程代理
+title: "OpenAI Codex CLI — 终端里的本地编程代理"
 来源: 'OpenAI, "Codex CLI", https://developers.openai.com/codex/cli'
 日期: 2026-06-13
 分类: CLI

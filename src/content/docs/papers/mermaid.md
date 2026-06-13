@@ -1,5 +1,5 @@
 ---
-title: Mermaid — 用文本写图，让代码评审能 diff 流程图
+title: "Mermaid — 用文本写图，让代码评审能 diff 流程图"
 来源: Knut Sveidqvist, mermaid-js GitHub repo, 2014 至今
 日期: 2026-06-01
 子分类: 工具与基础设施

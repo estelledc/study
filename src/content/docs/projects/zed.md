@@ -1,5 +1,5 @@
 ---
-title: Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
+title: "Zed — Atom 团队 Rust 重写的 GPU 协作编辑器"
 来源: https://github.com/zed-industries/zed
 日期: 2026-06-01
 子分类: 编辑器与 IDE

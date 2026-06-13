@@ -1,5 +1,5 @@
 ---
-title: JRuby — JVM 上的 Ruby
+title: "JRuby — JVM 上的 Ruby"
 description: 在 Java 虚拟机上运行 Ruby，与 Java 互操作、真并行线程与 JVM 生态
 来源: 'https://github.com/jruby/jruby'
 日期: 2026-06-13

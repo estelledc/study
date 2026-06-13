@@ -1,5 +1,5 @@
 ---
-title: Qt — C++ 跨平台应用框架
+title: "Qt — C++ 跨平台应用框架"
 来源: https://github.com/qt/qtbase
 日期: 2026-06-13
 分类: 其他

@@ -1,5 +1,5 @@
 ---
-title: Agora — 用 LLM Agent 自主检测共识协议的 Bug
+title: "Agora — 用 LLM Agent 自主检测共识协议的 Bug"
 来源: 'https://arxiv.org/abs/2605.29910'
 日期: 2026-06-13
 分类: 分布式系统

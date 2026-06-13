@@ -1,5 +1,5 @@
 ---
-title: Velox — Meta 的统一执行引擎
+title: "Velox — Meta 的统一执行引擎"
 来源: https://www.vldb.org/pvldb/vol15/p3372-pedreira.pdf
 日期: 2026-06-13
 分类: 数据库

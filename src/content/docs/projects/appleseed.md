@@ -1,5 +1,5 @@
 ---
-title: appleseed — 物理渲染器
+title: "appleseed — 物理渲染器"
 来源: https://github.com/appleseedhq/appleseed
 日期: 2026-06-13
 子分类: 渲染与图形

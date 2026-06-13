@@ -1,5 +1,5 @@
 ---
-title: compressed-tensors — vLLM 的量化模型格式
+title: "compressed-tensors — vLLM 的量化模型格式"
 来源: https://github.com/neuralmagic/compressed-tensors
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
+title: "NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈"
 来源: https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/
 日期: 2026-05-31
 子分类: DevOps

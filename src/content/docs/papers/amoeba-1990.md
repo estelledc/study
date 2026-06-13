@@ -1,5 +1,5 @@
 ---
-title: Amoeba — 把整个机房当一台操作系统
+title: "Amoeba — 把整个机房当一台操作系统"
 来源: Tanenbaum et al., "Experiences with the Amoeba Distributed Operating System", CACM 33(12), 1990
 日期: 2026-06-01
 子分类: 内核与虚拟化

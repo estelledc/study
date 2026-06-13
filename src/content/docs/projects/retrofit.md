@@ -1,5 +1,5 @@
 ---
-title: Retrofit — 把 HTTP API 变成 Java/Kotlin 接口的类型安全客户端
+title: "Retrofit — 把 HTTP API 变成 Java/Kotlin 接口的类型安全客户端"
 来源: 'https://github.com/square/retrofit'
 日期: 2026-06-13
 子分类: 移动端
@@ -281,6 +281,9 @@ Retrofit **离不开** OkHttp；axios 在概念上接近「Retrofit + Gson + 拦
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[accompanist]] —— Accompanist — Jetpack Compose 的「补丁工具箱」
+- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[glide]] —— Glide — Android 上专注流畅滚动的图片加载库
+- [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
 - [[okhttp]] —— OkHttp — JVM/Android 上的高效 HTTP 客户端
 

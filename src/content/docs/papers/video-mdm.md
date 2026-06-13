@@ -1,5 +1,5 @@
 ---
-title: VideoMDM — 从 2D 监督学 3D 人体运动生成的扩散模型
+title: "VideoMDM — 从 2D 监督学 3D 人体运动生成的扩散模型"
 来源: 'https://arxiv.org/abs/2606.13364'
 日期: 2026-06-13
 分类: 机器学习

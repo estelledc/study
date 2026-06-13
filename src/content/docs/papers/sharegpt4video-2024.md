@@ -1,5 +1,5 @@
 ---
-title: ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
+title: "ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成"
 来源: 'Chen et al., "ShareGPT4Video: Improving Video Understanding and Generation with Better Captions", NeurIPS 2024 Datasets and Benchmarks'
 日期: 2026-06-05
 分类: 机器学习

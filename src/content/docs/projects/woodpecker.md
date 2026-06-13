@@ -1,5 +1,5 @@
 ---
-title: Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI
+title: "Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI"
 来源: https://github.com/woodpecker-ci/woodpecker
 日期: 2026-05-31
 子分类: DevOps 与运维

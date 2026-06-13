@@ -1,5 +1,5 @@
 ---
-title: Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器
+title: "Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器"
 来源: https://github.com/haraka/Haraka
 日期: 2026-05-31
 子分类: 实时通信

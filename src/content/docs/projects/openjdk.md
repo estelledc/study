@@ -1,5 +1,5 @@
 ---
-title: OpenJDK — Java 标准实现
+title: "OpenJDK — Java 标准实现"
 来源: https://github.com/openjdk/jdk
 日期: 2026-06-13
 子分类: 语言运行时

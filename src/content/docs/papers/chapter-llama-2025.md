@@ -1,5 +1,5 @@
 ---
-title: Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节
+title: "Chapter-Llama — 语音引导采帧，一小时视频一次前向切章节"
 来源: 'Ventura et al., "Chapter-Llama: Efficient Chaptering in Hour-Long Videos with LLMs", CVPR 2025'
 日期: 2026-06-06
 分类: 机器学习

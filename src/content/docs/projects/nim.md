@@ -1,5 +1,5 @@
 ---
-title: Nim — Python 风的系统语言
+title: "Nim — Python 风的系统语言"
 来源: https://github.com/nim-lang/Nim
 日期: 2026-06-13
 分类: 编译器

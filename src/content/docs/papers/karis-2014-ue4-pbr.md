@@ -1,5 +1,5 @@
 ---
-title: Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒
+title: "Karis UE4 PBR — 把电影质感塞进游戏的 33 毫秒"
 来源: Brian Karis (Epic), "Real Shading in Unreal Engine 4", SIGGRAPH 2013 Course Notes
 日期: 2026-05-31
 子分类: 渲染与图形

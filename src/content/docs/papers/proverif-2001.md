@@ -1,5 +1,5 @@
 ---
-title: ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
+title: "ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全"
 来源: Bruno Blanchet, "An Efficient Cryptographic Protocol Verifier Based on Prolog Rules", CSFW 2001
 日期: 2026-05-31
 子分类: 形式化验证

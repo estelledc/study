@@ -1,5 +1,5 @@
 ---
-title: OSCAR — 面向 2-bit KV Cache 的离线谱协方差感知旋转
+title: "OSCAR — 面向 2-bit KV Cache 的离线谱协方差感知旋转"
 来源: 'Zhou et al., "OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization", arXiv:2605.17757, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

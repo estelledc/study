@@ -1,5 +1,5 @@
 ---
-title: Apache Cassandra — 分布式宽列数据库
+title: "Apache Cassandra — 分布式宽列数据库"
 来源: https://github.com/apache/cassandra
 日期: 2026-05-29
 子分类: 数据库 / 分布式

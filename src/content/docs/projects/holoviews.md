@@ -1,5 +1,5 @@
 ---
-title: HoloViews — 一份声明 ⇄ 多后端自动绘图
+title: "HoloViews — 一份声明 ⇄ 多后端自动绘图"
 来源: 'https://github.com/holoviz/holoviews'
 日期: 2026-05-31
 子分类: 数据可视化

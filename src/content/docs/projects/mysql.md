@@ -1,5 +1,5 @@
 ---
-title: MySQL — 全球最流行关系数据库
+title: "MySQL — 全球最流行关系数据库"
 来源: https://github.com/mysql/mysql-server
 日期: 2026-05-29
 子分类: 数据库

@@ -1,5 +1,5 @@
 ---
-title: DuckDB — 把 OLAP 数据库塞进你的 Python 进程
+title: "DuckDB — 把 OLAP 数据库塞进你的 Python 进程"
 来源: 'Raasveldt & Mühleisen, "DuckDB: an Embeddable Analytical Database", SIGMOD 2019 demo'
 日期: 2026-05-30
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: Eclipse Mosquitto — 轻量级 MQTT 消息代理，物联网的「社区广播站」
+title: "Eclipse Mosquitto — 轻量级 MQTT 消息代理，物联网的「社区广播站」"
 来源: 'https://github.com/eclipse-mosquitto/mosquitto'
 日期: '2026-06-13'
 子分类: 嵌入式

@@ -1,5 +1,5 @@
 ---
-title: Jupyter Notebook — 经典数据科学笔记本
+title: "Jupyter Notebook — 经典数据科学笔记本"
 来源: https://github.com/jupyter/notebook
 日期: 2026-06-13
 子分类: 编辑器与 IDE

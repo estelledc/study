@@ -1,5 +1,5 @@
 ---
-title: Stable Fluids — 让流体模拟时间步随便给都不爆
+title: "Stable Fluids — 让流体模拟时间步随便给都不爆"
 来源: Stam, "Stable Fluids", SIGGRAPH 1999
 日期: 2026-05-31
 子分类: 渲染与图形

@@ -1,5 +1,5 @@
 ---
-title: Self-Trained Verification — 用「参考答案」教会模型当阅卷老师
+title: "Self-Trained Verification — 用「参考答案」教会模型当阅卷老师"
 来源: https://arxiv.org/abs/2605.30290
 日期: 2026-06-13
 分类: 机器学习

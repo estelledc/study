@@ -1,5 +1,5 @@
 ---
-title: mPLUG-Owl — 模块化拼装多模态大模型
+title: "mPLUG-Owl — 模块化拼装多模态大模型"
 来源: 'Ye et al., "mPLUG-Owl: Modularization Empowers Large Language Models with Multimodality", arXiv 2023'
 日期: 2026-06-06
 分类: 机器学习

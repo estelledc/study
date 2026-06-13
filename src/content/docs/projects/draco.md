@@ -1,5 +1,5 @@
 ---
-title: Draco — Google 3D 网格与点云压缩
+title: "Draco — Google 3D 网格与点云压缩"
 description: 专为 3D 几何设计的压缩库，用 EdgeBreaker 拓扑编码与属性预测把 mesh/点云体积压到 gzip 无法企及的比例，WebGL 与 glTF 管线标配
 来源: 'https://github.com/google/draco'
 日期: 2026-06-13

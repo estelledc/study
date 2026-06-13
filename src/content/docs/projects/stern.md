@@ -1,5 +1,5 @@
 ---
-title: stern — 多 pod 多 container 日志聚合 tail
+title: "stern — 多 pod 多 container 日志聚合 tail"
 来源: https://github.com/stern/stern
 日期: 2026-05-31
 子分类: 命令行工具

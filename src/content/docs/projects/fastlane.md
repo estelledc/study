@@ -1,5 +1,5 @@
 ---
-title: fastlane — iOS / Android 移动应用发布自动化
+title: "fastlane — iOS / Android 移动应用发布自动化"
 来源: https://github.com/fastlane/fastlane
 日期: 2026-06-13
 子分类: 移动端

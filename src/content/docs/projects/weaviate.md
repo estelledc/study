@@ -1,5 +1,5 @@
 ---
-title: Weaviate — 模块化向量数据库
+title: "Weaviate — 模块化向量数据库"
 来源: https://github.com/weaviate/weaviate
 日期: 2026-05-29
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步
+title: "Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步"
 来源: 'Stoica et al., "Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications", SIGCOMM 2001'
 日期: 2026-06-01
 子分类: 网络协议

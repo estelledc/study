@@ -2,7 +2,7 @@
 title: React UI 组件库
 来源: https://github.com/facebook/react
 日期: 2026-05-29
-子分类: UI 框架
+子分类: frontend-frameworks
 分类: 后端 API
 难度: 中级
 schema_version: legacy-long
@@ -192,8 +192,10 @@ function Greeting({ name }) {
 - [[kepler-gl]] —— kepler.gl — 拖拽式百万点 GIS 探索界面
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[lens]] —— Lens — Kubernetes 集群的桌面 IDE
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
 - [[lingui]] —— Lingui — 写自然字符串，编译期自动提取 i18n msgid
+- [[lottie]] —— Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放
 - [[mapbox-gl-js]] —— Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
@@ -202,6 +204,7 @@ function Greeting({ name }) {
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[nodegui]] —— NodeGUI — Qt6 驱动的零 WebView 桌面框架
 - [[nuxt]] —— Nuxt — Vue 全栈框架
+- [[onsen-ui]] —— Onsen UI — 用一套 HTML 同时搞定 iOS 和 Android 原生风格界面
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[penpot]] —— Penpot — 开源自托管的 Figma 替代
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱

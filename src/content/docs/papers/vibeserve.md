@@ -1,5 +1,5 @@
 ---
-title: VibeServe — 零基础学习笔记
+title: "VibeServe — 零基础学习笔记"
 来源: 'Keisuke Kamahori et al., "VibeServe: Can AI Agents Build Bespoke LLM Serving Systems?", arXiv:2605.06068, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

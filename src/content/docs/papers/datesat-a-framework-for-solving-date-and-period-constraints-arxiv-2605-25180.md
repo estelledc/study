@@ -1,5 +1,5 @@
 ---
-title: DateSAT — 用逻辑求解日期与时间段约束
+title: "DateSAT — 用逻辑求解日期与时间段约束"
 来源: https://arxiv.org/abs/2605.25180
 日期: 2026-06-13
 分类: 编程语言

@@ -1,9 +1,9 @@
 ---
-title: Trunk — Rust WASM 零配置构建与打包工具
+title: "Trunk — Rust WASM 零配置构建与打包工具"
 来源: 'https://github.com/trunk-rs/trunk'
 日期: 2026-06-13
 分类: 编译器
-子分类: 构建工具与打包器
+子分类: rust-tools
 难度: 初级
 provenance: pipeline-v3
 ---
@@ -235,3 +235,6 @@ backend = "http://localhost:3000/api/"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

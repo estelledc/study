@@ -1,5 +1,5 @@
 ---
-title: 单处理器垃圾回收技术——一篇经典综述的零基础解读
+title: "单处理器垃圾回收技术——一篇经典综述的零基础解读"
 来源: https://www.cs.cmu.edu/~fp/courses/15411-f09/misc/wilson92survey.pdf
 日期: 2026-06-13
 分类: 编程语言

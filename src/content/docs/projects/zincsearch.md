@@ -1,5 +1,5 @@
 ---
-title: ZincSearch — 单二进制 Go 写的 ES 替代
+title: "ZincSearch — 单二进制 Go 写的 ES 替代"
 来源: https://github.com/zincsearch/zincsearch
 日期: 2026-06-01
 子分类: 存储与查询

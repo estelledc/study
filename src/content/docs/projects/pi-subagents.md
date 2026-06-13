@@ -191,5 +191,6 @@ subagent({ action: "status" })
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 

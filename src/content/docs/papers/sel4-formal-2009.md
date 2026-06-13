@@ -1,5 +1,5 @@
 ---
-title: seL4 — 第一个被机器证明「没写错」的通用 OS 内核
+title: "seL4 — 第一个被机器证明「没写错」的通用 OS 内核"
 来源: https://sel4.systems/Info/Docs/seL4-paper-CACM.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化

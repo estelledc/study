@@ -1,5 +1,5 @@
 ---
-title: SPH — 把流体拆成一群带核的粒子
+title: "SPH — 把流体拆成一群带核的粒子"
 来源: Monaghan, "Smoothed Particle Hydrodynamics", Annual Review of Astronomy and Astrophysics, 1992
 日期: 2026-05-31
 子分类: 渲染与图形

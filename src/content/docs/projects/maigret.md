@@ -1,5 +1,5 @@
 ---
-title: Maigret — 仅凭用户名跨站 OSINT 画像收集
+title: "Maigret — 仅凭用户名跨站 OSINT 画像收集"
 来源: https://github.com/soxoj/maigret
 日期: 2026-06-13
 子分类: 安全与隐私

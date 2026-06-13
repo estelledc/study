@@ -1,5 +1,5 @@
 ---
-title: The State of Rust 2026 — 零基础学习笔记
+title: "The State of Rust 2026 — 零基础学习笔记"
 来源: https://blog.rust-lang.org/2026/03/02/2025-State-Of-Rust-Survey-results/
 日期: 2026-06-13
 分类: 编程语言

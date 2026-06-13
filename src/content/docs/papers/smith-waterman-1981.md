@@ -1,5 +1,5 @@
 ---
-title: Smith–Waterman — 在两条长序列里找「最像的那一段」
+title: "Smith–Waterman — 在两条长序列里找「最像的那一段」"
 来源: https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
 日期: 2026-06-13
 子分类: 生物信息

@@ -1,5 +1,5 @@
 ---
-title: 3d-force-graph — 把网络拓扑搬进三维空间
+title: "3d-force-graph — 把网络拓扑搬进三维空间"
 来源: https://github.com/vasturiano/3d-force-graph
 日期: 2026-06-01
 子分类: 数据可视化

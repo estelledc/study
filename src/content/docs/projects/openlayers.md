@@ -1,5 +1,5 @@
 ---
-title: OpenLayers — 全功能 GIS 前端
+title: "OpenLayers — 全功能 GIS 前端"
 来源: 'https://github.com/openlayers/openlayers'
 日期: 2026-05-31
 子分类: 数据可视化

@@ -1,5 +1,5 @@
 ---
-title: pyenv — 用 shim 把 python 命令拦截后路由到指定版本
+title: "pyenv — 用 shim 把 python 命令拦截后路由到指定版本"
 来源: 'https://github.com/pyenv/pyenv'
 日期: 2026-05-31
 子分类: 命令行工具
@@ -168,5 +168,6 @@ pyenv shell 3.10.13 && python script.py
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[fvm]] —— FVM — 按项目锁定 Flutter SDK 版本
+- [[nuitka]] —— Nuitka — 把 Python 源码编译成 C 再生成原生机器码
 - [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 

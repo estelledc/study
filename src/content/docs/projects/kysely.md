@@ -1,5 +1,5 @@
 ---
-title: Kysely — TypeScript SQL 查询构建器
+title: "Kysely — TypeScript SQL 查询构建器"
 来源: https://github.com/kysely-org/kysely
 日期: 2026-05-29
 子分类: ORM / 查询构建器

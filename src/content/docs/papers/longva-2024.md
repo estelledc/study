@@ -1,5 +1,5 @@
 ---
-title: LongVA — 把语言模型的长上下文能力「搬」到视频上
+title: "LongVA — 把语言模型的长上下文能力「搬」到视频上"
 来源: 'Zhang et al., "Long Context Transfer from Language to Vision", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

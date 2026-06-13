@@ -1,5 +1,5 @@
 ---
-title: canvas-datagrid — 整张表只用一块 canvas 画
+title: "canvas-datagrid — 整张表只用一块 canvas 画"
 来源: https://github.com/TonyGermaneri/canvas-datagrid
 日期: 2026-06-01
 子分类: 数据可视化

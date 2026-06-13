@@ -1,5 +1,5 @@
 ---
-title: Gazebo Classic — 机器人仿真零基础入门
+title: "Gazebo Classic — 机器人仿真零基础入门"
 来源: 'https://github.com/osrf/gazebo'
 日期: 2026-06-13
 子分类: 嵌入式

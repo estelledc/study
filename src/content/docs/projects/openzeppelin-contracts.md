@@ -1,5 +1,5 @@
 ---
-title: OpenZeppelin Contracts — 以太坊智能合约的事实标准库
+title: "OpenZeppelin Contracts — 以太坊智能合约的事实标准库"
 来源: 'https://github.com/OpenZeppelin/openzeppelin-contracts'
 日期: 2026-05-30
 子分类: 链与合约

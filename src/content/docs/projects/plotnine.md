@@ -1,5 +1,5 @@
 ---
-title: plotnine — Python 复刻 R 的 ggplot2
+title: "plotnine — Python 复刻 R 的 ggplot2"
 来源: 'https://github.com/has2k1/plotnine'
 日期: 2026-05-31
 子分类: 数据可视化

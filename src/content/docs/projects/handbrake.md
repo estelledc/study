@@ -1,5 +1,5 @@
 ---
-title: HandBrake — FFmpeg 上的 GUI 转码器
+title: "HandBrake — FFmpeg 上的 GUI 转码器"
 description: 在 ffmpeg/x264 上做产品化封装；预设、队列、滤镜面板把命令行参数变成可点选的转码工作流
 来源: 'https://github.com/HandBrake/HandBrake'
 日期: 2026-06-06

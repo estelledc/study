@@ -1,5 +1,5 @@
 ---
-title: Grbl — 让 Arduino 听懂 G-code 的 CNC「翻译官」
+title: "Grbl — 让 Arduino 听懂 G-code 的 CNC「翻译官」"
 来源: 'https://github.com/gnea/grbl'
 日期: '2026-06-13'
 子分类: 嵌入式

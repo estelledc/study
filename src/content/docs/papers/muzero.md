@@ -1,5 +1,5 @@
 ---
-title: MuZero — 不用规则也能下棋
+title: "MuZero — 不用规则也能下棋"
 来源: 'Schrittwieser et al., "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model", Nature 2020'
 日期: 2026-05-29
 子分类: 强化学习

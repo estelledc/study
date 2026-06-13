@@ -1,5 +1,5 @@
 ---
-title: Jellyfin — 自托管媒体服务器
+title: "Jellyfin — 自托管媒体服务器"
 description: 自托管媒体服务器，转码、元数据刮削与多客户端同步
 来源: 'https://github.com/jellyfin/jellyfin'
 日期: 2026-06-06

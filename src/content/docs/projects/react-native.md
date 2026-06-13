@@ -1,9 +1,9 @@
 ---
-title: React Native — 用 React 写、编译成真正的原生 App
+title: "React Native — 用 React 写、编译成真正的原生 App"
 来源: 'https://github.com/facebook/react-native'
 日期: 2026-06-06
 分类: 后端 API
-子分类: 移动端
+子分类: mobile-and-cross-platform
 难度: 中级
 ---
 
@@ -240,6 +240,7 @@ const styles = StyleSheet.create({
 - [[nativescript]] —— NativeScript — JS/TS 直接调原生 API，无 WebView
 - [[neutralinojs]] —— Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定
 - [[nodegui]] —— NodeGUI — Qt6 驱动的零 WebView 桌面框架
+- [[onsen-ui]] —— Onsen UI — 用一套 HTML 同时搞定 iOS 和 Android 原生风格界面
 - [[quasar]] —— Quasar — 一套 Vue 代码，七种平台产物
 - [[react]] —— React UI 组件库
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单

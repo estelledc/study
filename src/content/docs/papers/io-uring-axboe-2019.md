@@ -1,5 +1,5 @@
 ---
-title: Efficient IO with io_uring — Linux 异步 IO 的环形队列革命
+title: "Efficient IO with io_uring — Linux 异步 IO 的环形队列革命"
 来源: 'https://kernel.dk/io_uring.pdf'
 日期: 2026-06-13
 分类: 操作系统
@@ -287,5 +287,10 @@ void read_file_batch(struct io_uring *ring, int fd, char *bufs[BATCH], off_t bas
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
+- [[flexsc-2010]] —— FlexSC — 把系统调用从同步陷入改成异步队列
+- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
+- [[postgresql]] —— PostgreSQL — 工业级关系数据库
+- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 

@@ -1,5 +1,5 @@
 ---
-title: Spanner — Google 的全球分布式数据库
+title: "Spanner — Google 的全球分布式数据库"
 来源: https://research.google/pubs/pub39966/
 日期: 2026-06-13
 分类: 分布式系统

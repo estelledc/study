@@ -1,5 +1,5 @@
 ---
-title: Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义
+title: "Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义"
 来源: 'Dana Scott, Christopher Strachey. "Toward a Mathematical Semantics for Computer Languages". Oxford PRG-6, 1971'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -157,7 +157,6 @@ W 出现在等式两边，不能直接代入算。Scott 的 domain theory 保证
 - [[frenetic-2011]] —— Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
 - [[game-semantics-pcf]] —— 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

@@ -1,5 +1,5 @@
 ---
-title: SuperPlane — 开源控制面，让平台工程不再散落
+title: "SuperPlane — 开源控制面，让平台工程不再散落"
 来源: https://github.com/superplanehq/superplane
 日期: 2026-06-13
 分类: 基础设施

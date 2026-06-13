@@ -1,5 +1,5 @@
 ---
-title: MIA 成员推断攻击 — 黑盒 API 能猜出你是不是训练数据
+title: "MIA 成员推断攻击 — 黑盒 API 能猜出你是不是训练数据"
 来源: 'Shokri et al., "Membership Inference Attacks Against Machine Learning Models", IEEE S&P 2017'
 日期: 2026-06-06
 分类: 安全与隐私

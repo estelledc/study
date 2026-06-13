@@ -1,8 +1,8 @@
 ---
-title: Docker — 容器化平台
+title: "Docker — 容器化平台"
 来源: https://github.com/docker/docker-ce
 日期: 2026-05-29
-子分类: cloud-native
+子分类: devops-and-cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

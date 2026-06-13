@@ -1,5 +1,5 @@
 ---
-title: Beyond LRU — Prefix-Cache Policies for LLM Serving
+title: "Beyond LRU — Prefix-Cache Policies for LLM Serving"
 来源: 'https://arxiv.org/abs/2605.30654'
 日期: 2026-06-13
 分类: 机器学习

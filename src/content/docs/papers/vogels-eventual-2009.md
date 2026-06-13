@@ -1,5 +1,5 @@
 ---
-title: Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇
+title: "Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇"
 来源: 'Werner Vogels, "Eventually Consistent", ACM Queue Vol. 6 No. 6 (Dec 2008) / CACM Vol. 52 No. 1 (Jan 2009)'
 日期: 2026-05-30
 子分类: 共识与复制

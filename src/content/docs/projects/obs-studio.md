@@ -1,5 +1,5 @@
 ---
-title: OBS Studio — 开源直播录制与推流
+title: "OBS Studio — 开源直播录制与推流"
 来源: 'https://github.com/obsproject/obs-studio'
 日期: 2026-06-06
 分类: 通信

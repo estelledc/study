@@ -1,5 +1,5 @@
 ---
-title: Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验
+title: "Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验"
 来源: 'Whitaker, Shaw, Gribble, "Scale and Performance in the Denali Isolation Kernel", OSDI 2002'
 日期: 2026-06-01
 子分类: 内核与虚拟化

@@ -1,5 +1,5 @@
 ---
-title: AES-GCM — 一次加密，同时保证机密性与完整性
+title: "AES-GCM — 一次加密，同时保证机密性与完整性"
 来源: https://csrc.nist.gov/csrc/media/projects/block-cipher-techniques/documents/bcm/proposed-modes/gcm/gcm-spec.pdf
 日期: 2026-06-13
 子分类: 安全与隐私

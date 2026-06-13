@@ -1,5 +1,5 @@
 ---
-title: Kùzu — 把图数据库做成 DuckDB
+title: "Kùzu — 把图数据库做成 DuckDB"
 来源: https://github.com/kuzudb/kuzu
 日期: 2026-06-01
 子分类: 存储与查询

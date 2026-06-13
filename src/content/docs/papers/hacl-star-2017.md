@@ -1,5 +1,5 @@
 ---
-title: HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里
+title: "HACL* — 用数学证明过的 C 加密代码，跑在你 Firefox 和 Linux 内核里"
 来源: 'Zinzindohoué, Bhargavan, Protzenko, Beurdouche, "HACL*: A Verified Modern Cryptographic Library", ACM CCS 2017'
 日期: 2026-05-31
 子分类: 形式化验证

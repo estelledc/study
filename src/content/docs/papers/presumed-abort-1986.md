@@ -1,5 +1,5 @@
 ---
-title: Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
+title: "Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识"
 来源: 'Mohan, Lindsay, Obermarck. "Transaction Management in the R* Distributed Database Management System". ACM TODS 1986'
 日期: 2026-05-30
 子分类: 共识与复制

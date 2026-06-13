@@ -1,5 +1,5 @@
 ---
-title: 彩票假设 — 大网里藏着一张能独立训出来的小网
+title: "彩票假设 — 大网里藏着一张能独立训出来的小网"
 来源: 'Frankle & Carbin, "The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks", ICLR 2019 (Best Paper)'
 日期: 2026-06-01
 子分类: 模型与训练

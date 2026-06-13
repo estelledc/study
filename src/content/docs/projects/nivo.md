@@ -1,5 +1,5 @@
 ---
-title: nivo — React + d3 组件化图表
+title: "nivo — React + d3 组件化图表"
 来源: https://github.com/plouc/nivo
 日期: 2026-05-31
 子分类: 数据可视化

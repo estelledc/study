@@ -1,5 +1,5 @@
 ---
-title: Salsa — 按需增量计算框架（rust-analyzer 的「只重算变了的那块」引擎）
+title: "Salsa — 按需增量计算框架（rust-analyzer 的「只重算变了的那块」引擎）"
 来源: https://github.com/salsa-rs/salsa
 日期: 2026-06-13
 分类: CLI
@@ -238,5 +238,9 @@ Salsa **不是** rust-analyzer 独有的私有代码——它是独立 crate [`s
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[language-server-protocol-spec]] —— Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议
+- [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
 - [[salsa-incremental-2019]] —— Salsa — 增量计算框架（零基础：把程序写成可缓存的查询图）
+- [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
+- [[ssa]] —— SSA — 静态单赋值形式
 

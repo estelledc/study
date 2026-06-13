@@ -1,5 +1,5 @@
 ---
-title: zizmor — GitHub Actions 工作流静态安全分析
+title: "zizmor — GitHub Actions 工作流静态安全分析"
 来源: https://github.com/zizmorcore/zizmor
 日期: 2026-06-13
 分类: 安全与隐私

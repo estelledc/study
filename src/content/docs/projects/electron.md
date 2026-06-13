@@ -1,9 +1,9 @@
 ---
-title: Electron — Chromium + Node.js 跨平台桌面应用框架
+title: "Electron — Chromium + Node.js 跨平台桌面应用框架"
 来源: 'https://github.com/electron/electron'
 日期: 2026-06-06
 分类: 后端 API
-子分类: 移动端
+子分类: mobile-and-cross-platform
 难度: 中级
 ---
 
@@ -269,6 +269,7 @@ app.whenReady().then(() => {
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[nodegui]] —— NodeGUI — Qt6 驱动的零 WebView 桌面框架
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
+- [[pwa-builder]] —— PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具
 - [[react]] —— React UI 组件库
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座

@@ -1,5 +1,5 @@
 ---
-title: Ledger App SDK — 在硬件钱包里写应用的 C 框架
+title: "Ledger App SDK — 在硬件钱包里写应用的 C 框架"
 来源: 'https://github.com/LedgerHQ/ledger-secure-sdk'
 日期: 2026-05-30
 子分类: 链与合约

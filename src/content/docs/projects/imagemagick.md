@@ -1,5 +1,5 @@
 ---
-title: ImageMagick — 图像处理瑞士军刀
+title: "ImageMagick — 图像处理瑞士军刀"
 description: 命令行图像处理瑞士军刀：convert/mogrify/identify
 来源: 'https://github.com/ImageMagick/ImageMagick'
 日期: 2026-06-06

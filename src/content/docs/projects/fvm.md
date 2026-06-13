@@ -1,5 +1,5 @@
 ---
-title: FVM — 按项目锁定 Flutter SDK 版本
+title: "FVM — 按项目锁定 Flutter SDK 版本"
 来源: https://github.com/leoafarias/fvm
 日期: 2026-06-13
 子分类: 移动端

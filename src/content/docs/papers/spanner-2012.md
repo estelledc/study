@@ -1,8 +1,8 @@
 ---
-title: Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+title: "Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳"
 来源: 'Corbett et al., "Spanner: Google''s Globally-Distributed Database", OSDI 2012'
 日期: 2026-05-30
-子分类: 存储与查询
+子分类: systems-dist
 分类: 数据库
 难度: 高级
 provenance: pipeline-v3

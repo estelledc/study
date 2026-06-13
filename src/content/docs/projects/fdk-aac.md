@@ -1,5 +1,5 @@
 ---
-title: fdk-aac — Fraunhofer AAC 编解码库
+title: "fdk-aac — Fraunhofer AAC 编解码库"
 description: HE-AAC v1/v2 高质量实现；Android/广播底层；FFmpeg 非 GPL AAC 选项
 来源: 'https://github.com/mstorsjo/fdk-aac'
 日期: 2026-06-06

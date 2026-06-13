@@ -1,5 +1,5 @@
 ---
-title: Nuxt — Vue 全栈框架
+title: "Nuxt — Vue 全栈框架"
 来源: https://github.com/nuxt/nuxt
 日期: 2026-05-29
 子分类: Meta 框架

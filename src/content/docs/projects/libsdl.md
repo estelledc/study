@@ -1,5 +1,5 @@
 ---
-title: SDL — Simple DirectMedia Layer 跨平台多媒体底层库
+title: "SDL — Simple DirectMedia Layer 跨平台多媒体底层库"
 来源: 'https://github.com/libsdl-org/SDL'
 日期: 2026-06-13
 分类: 图形学

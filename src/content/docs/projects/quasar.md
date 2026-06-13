@@ -1,5 +1,5 @@
 ---
-title: Quasar — 一套 Vue 代码，七种平台产物
+title: "Quasar — 一套 Vue 代码，七种平台产物"
 来源: 'https://github.com/quasarframework/quasar'
 日期: 2026-06-06
 分类: 后端 API

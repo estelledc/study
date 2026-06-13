@@ -1,5 +1,5 @@
 ---
-title: Nova — Recursive Zero-Knowledge Arguments from Folding Schemes
+title: "Nova — Recursive Zero-Knowledge Arguments from Folding Schemes"
 来源: 'https://eprint.iacr.org/2021/370'
 日期: 2026-06-13
 分类: 安全与隐私

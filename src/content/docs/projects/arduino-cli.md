@@ -1,5 +1,5 @@
 ---
-title: Arduino CLI — 命令行驱动嵌入式全流程工具链
+title: "Arduino CLI — 命令行驱动嵌入式全流程工具链"
 来源: 'https://github.com/arduino/arduino-cli'
 日期: 2026-06-06
 分类: 操作系统

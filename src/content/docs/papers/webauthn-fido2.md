@@ -1,5 +1,5 @@
 ---
-title: WebAuthn Level 2 — 用公钥凭证替代密码的 Web 标准
+title: "WebAuthn Level 2 — 用公钥凭证替代密码的 Web 标准"
 来源: 'https://www.w3.org/TR/webauthn-2/'
 日期: 2026-06-13
 子分类: 安全与隐私

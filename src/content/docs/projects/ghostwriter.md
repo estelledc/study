@@ -1,5 +1,5 @@
 ---
-title: ghostwriter — Qt 干净 Markdown 写作器
+title: "ghostwriter — Qt 干净 Markdown 写作器"
 来源: https://github.com/wereturtle/ghostwriter
 日期: 2026-06-13
 子分类: 编辑器与 IDE

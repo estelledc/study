@@ -1,5 +1,5 @@
 ---
-title: On Micro-Kernel Construction (L4) — 微内核该怎么「造」
+title: "On Micro-Kernel Construction (L4) — 微内核该怎么「造」"
 来源: https://os.itec.kit.edu/downloads/sosp95-mkernel-construction.pdf
 日期: 2026-06-13
 分类: 操作系统

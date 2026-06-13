@@ -1,5 +1,5 @@
 ---
-title: AppFlowy — Rust + Flutter 开源 Notion 替代品
+title: "AppFlowy — Rust + Flutter 开源 Notion 替代品"
 来源: https://github.com/AppFlowy-IO/AppFlowy
 日期: 2026-06-13
 子分类: 编辑器与 IDE

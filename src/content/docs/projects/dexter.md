@@ -1,5 +1,5 @@
 ---
-title: Dexter — 自主金融研究 AI Agent
+title: "Dexter — 自主金融研究 AI Agent"
 来源: https://github.com/virattt/dexter
 日期: 2026-06-13
 分类: 机器学习

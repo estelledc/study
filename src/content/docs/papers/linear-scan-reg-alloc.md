@@ -1,5 +1,5 @@
 ---
-title: Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用
+title: "Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用"
 来源: Poletto & Sarkar, 'Linear Scan Register Allocation', ACM TOPLAS 21(5), 1999
 日期: 2026-05-30
 子分类: 类型与 PL 理论

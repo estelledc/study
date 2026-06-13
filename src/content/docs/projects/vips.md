@@ -1,5 +1,5 @@
 ---
-title: libvips — 流式低内存图像库
+title: "libvips — 流式低内存图像库"
 description: libvips 流式低内存图像库，demand-driven 管道
 来源: 'https://github.com/libvips/libvips'
 日期: 2026-06-06

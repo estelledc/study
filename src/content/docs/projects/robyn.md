@@ -1,5 +1,5 @@
 ---
-title: Robyn — Rust 运行时的高性能 Python Web 框架
+title: "Robyn — Rust 运行时的高性能 Python Web 框架"
 description: PyO3 多进程 actor 模型；TechEmpower plaintext 榜单常客，内置 OpenAPI/WebSocket/SSE
 来源: 'https://github.com/sparckles/Robyn'
 日期: 2026-06-05

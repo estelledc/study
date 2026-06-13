@@ -1,5 +1,5 @@
 ---
-title: Low-Rank Adaptation for Foundation Models — 一篇读懂 LoRA 全景
+title: "Low-Rank Adaptation for Foundation Models — 一篇读懂 LoRA 全景"
 来源: 'https://arxiv.org/abs/2501.00365'
 日期: 2026-06-13
 分类: 机器学习

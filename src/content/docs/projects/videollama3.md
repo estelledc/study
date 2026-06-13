@@ -1,5 +1,5 @@
 ---
-title: VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
+title: "VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座"
 description: 动态分辨率 NaViT 视觉编码 + Qwen2.5 后端；7B/2B checkpoint、Gradio demo、VideoMME/LVBench SOTA 评测脚本
 来源: 'https://github.com/DAMO-NLP-SG/VideoLLaMA3'
 日期: 2026-06-05

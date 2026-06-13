@@ -1,5 +1,5 @@
 ---
-title: Google 1998 — 把整个网络爬下来、压扁、再用一秒查到
+title: "Google 1998 — 把整个网络爬下来、压扁、再用一秒查到"
 来源: 'Brin, Page, "The Anatomy of a Large-Scale Hypertextual Web Search Engine", WWW7, 1998'
 日期: 2026-05-31
 子分类: 检索与排序

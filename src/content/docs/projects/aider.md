@@ -1,5 +1,5 @@
 ---
-title: Aider — 终端 AI 结对编程 CLI
+title: "Aider — 终端 AI 结对编程 CLI"
 来源: https://github.com/Aider-AI/aider
 日期: 2026-06-13
 子分类: 编辑器与 IDE

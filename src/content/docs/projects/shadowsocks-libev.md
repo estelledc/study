@@ -1,5 +1,5 @@
 ---
-title: shadowsocks-libev — 用 C 与 libev 实现的高性能 Shadowsocks 代理
+title: "shadowsocks-libev — 用 C 与 libev 实现的高性能 Shadowsocks 代理"
 来源: https://github.com/shadowsocks/shadowsocks-libev
 日期: 2026-06-13
 子分类: 嵌入式

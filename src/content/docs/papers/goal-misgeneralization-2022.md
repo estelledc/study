@@ -1,5 +1,5 @@
 ---
-title: Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪
+title: "Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪"
 来源: 'Langosco et al., "Goal Misgeneralization: Why Correct Specifications Aren’t Enough For Correct Goals", ICML 2022 (arXiv:2210.01790)'
 日期: 2026-06-01
 子分类: 模型与训练

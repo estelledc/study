@@ -1,5 +1,5 @@
 ---
-title: Spec-Bench — Speculative Decoding 的综合评测基准
+title: "Spec-Bench — Speculative Decoding 的综合评测基准"
 来源: https://arxiv.org/abs/2401.07851
 日期: 2026-06-13
 分类: 机器学习

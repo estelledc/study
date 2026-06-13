@@ -1,5 +1,5 @@
 ---
-title: Sigstore — 让每个人都能给软件「盖公证章」
+title: "Sigstore — 让每个人都能给软件「盖公证章」"
 来源: https://www.usenix.org/conference/usenixsecurity22/presentation/newman
 日期: 2026-06-13
 分类: 安全与隐私

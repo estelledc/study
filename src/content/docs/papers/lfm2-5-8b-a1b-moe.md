@@ -1,5 +1,5 @@
 ---
-title: LFM2.5-8B-A1B — 38T 预训练的边缘 MoE 个人助手
+title: "LFM2.5-8B-A1B — 38T 预训练的边缘 MoE 个人助手"
 来源: 'Liquid AI, "LFM2.5-8B-A1B: An Even Better On-Device Mixture of Experts", Liquid AI Blog, 2026; LFM2 Technical Report, arXiv:2511.23404'
 日期: 2026-06-13
 子分类: 模型与训练

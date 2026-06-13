@@ -1,5 +1,5 @@
 ---
-title: OP-TEE — Open Portable Trusted Execution Environment 零基础学习笔记
+title: "OP-TEE — Open Portable Trusted Execution Environment 零基础学习笔记"
 来源: https://optee.readthedocs.io/en/latest/
 日期: 2026-06-13
 分类: 操作系统

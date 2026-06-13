@@ -1,5 +1,5 @@
 ---
-title: On-demand Container Loading — Lambda 如何在 10GiB 镜像下保持冷启动
+title: "On-demand Container Loading — Lambda 如何在 10GiB 镜像下保持冷启动"
 来源: https://www.usenix.org/conference/atc23/presentation/brooker
 日期: 2026-06-13
 子分类: 共识与复制

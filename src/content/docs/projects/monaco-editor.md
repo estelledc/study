@@ -1,5 +1,5 @@
 ---
-title: monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+title: "monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK"
 来源: 'Microsoft, "monaco-editor", https://github.com/microsoft/monaco-editor'
 日期: 2026-05-30
 子分类: projects / 前端

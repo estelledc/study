@@ -1,5 +1,5 @@
 ---
-title: pino — 日志不该阻塞热路径
+title: "pino — 日志不该阻塞热路径"
 来源: 'https://github.com/pinojs/pino'
 日期: 2026-05-30
 子分类: projects / Node.js

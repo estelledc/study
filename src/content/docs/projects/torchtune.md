@@ -154,7 +154,6 @@ DPO（Direct Preference Optimization）需要"chosen / rejected"成对数据，l
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象

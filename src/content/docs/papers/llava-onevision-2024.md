@@ -1,5 +1,5 @@
 ---
-title: LLaVA-OneVision — 单图、多图、视频一个模型全搞定
+title: "LLaVA-OneVision — 单图、多图、视频一个模型全搞定"
 来源: 'Li et al., "LLaVA-OneVision: Easy Visual Task Transfer", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

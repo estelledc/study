@@ -1,5 +1,5 @@
 ---
-title: How LoRA Remembers? — LLM 微调中的参数记忆定律
+title: "How LoRA Remembers? — LLM 微调中的参数记忆定律"
 来源: 'https://arxiv.org/abs/2605.30260'
 日期: 2026-06-13
 分类: 机器学习
@@ -256,5 +256,5 @@ for i in range(4):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[maml-2017]] —— MAML — 学一个"好起点"，几步就能学会新任务
 

@@ -1,5 +1,5 @@
 ---
-title: Vim — 模态编辑器之父
+title: "Vim — 模态编辑器之父"
 来源: 'https://github.com/vim/vim'
 日期: 2026-06-06
 分类: CLI

@@ -1,5 +1,5 @@
 ---
-title: Rust for Linux — 零基础学习笔记
+title: "Rust for Linux — 零基础学习笔记"
 来源: https://github.com/Rust-for-Linux/linux
 日期: 2026-06-13
 分类: 操作系统

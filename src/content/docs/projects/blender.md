@@ -1,5 +1,5 @@
 ---
-title: Blender — 全流程 3D 创作套件
+title: "Blender — 全流程 3D 创作套件"
 来源: https://github.com/blender/blender
 日期: 2026-06-13
 子分类: 编辑器与 IDE

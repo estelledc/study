@@ -1,5 +1,5 @@
 ---
-title: Mitsuba 3 — 研究向可微渲染器
+title: "Mitsuba 3 — 研究向可微渲染器"
 来源: https://github.com/mitsuba-renderer/mitsuba3
 日期: 2026-06-13
 子分类: 渲染与图形

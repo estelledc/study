@@ -1,5 +1,5 @@
 ---
-title: k-d 树 — 多维空间里的二叉搜索树
+title: "k-d 树 — 多维空间里的二叉搜索树"
 来源: Bentley, J. L., "Multidimensional Binary Search Trees Used for Associative Searching", CACM 18(9), 1975
 日期: 2026-05-31
 子分类: 渲染与图形

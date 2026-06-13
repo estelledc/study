@@ -1,5 +1,5 @@
 ---
-title: Hour-LLaVA — 记忆增强，让 LLaVA 读懂一小时视频
+title: "Hour-LLaVA — 记忆增强，让 LLaVA 读懂一小时视频"
 来源: 'Lin et al., "Unleashing Hour-Scale Video Training for Long Video-Language Understanding", arXiv 2506.05332'
 日期: 2026-06-05
 分类: 机器学习

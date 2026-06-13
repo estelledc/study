@@ -1,5 +1,5 @@
 ---
-title: Pinocchio 2013 — 首个「近乎实用」的可验证计算与 zk-SNARK 工程系统
+title: "Pinocchio 2013 — 首个「近乎实用」的可验证计算与 zk-SNARK 工程系统"
 来源: https://eprint.iacr.org/2013/279
 日期: 2026-06-13
 分类: 安全与隐私

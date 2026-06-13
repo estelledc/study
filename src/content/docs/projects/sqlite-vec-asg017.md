@@ -1,5 +1,5 @@
 ---
-title: sqlite-vec — 在 SQLite 里做向量相似度搜索
+title: "sqlite-vec — 在 SQLite 里做向量相似度搜索"
 来源: https://github.com/asg017/sqlite-vec
 日期: 2026-06-13
 分类: 数据库

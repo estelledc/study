@@ -1,5 +1,5 @@
 ---
-title: Seq2Seq — 把翻译变成端到端神经网络
+title: "Seq2Seq — 把翻译变成端到端神经网络"
 来源: 'Sutskever, Vinyals, Le, "Sequence to Sequence Learning with Neural Networks", NeurIPS 2014'
 日期: 2026-05-31
 子分类: 模型与训练

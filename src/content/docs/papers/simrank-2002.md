@@ -1,5 +1,5 @@
 ---
-title: SimRank — 两个节点相似当且仅当它们的邻居相似
+title: "SimRank — 两个节点相似当且仅当它们的邻居相似"
 来源: 'Jeh & Widom, "SimRank: A Measure of Structural-Context Similarity", KDD 2002'
 日期: 2026-05-31
 子分类: 检索与排序

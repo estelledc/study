@@ -1,5 +1,5 @@
 ---
-title: glslCanvas — Book of Shaders 配套库
+title: "glslCanvas — Book of Shaders 配套库"
 来源: 'https://github.com/patriciogonzalezvivo/glslCanvas'
 日期: 2026-06-13
 分类: 图形学

@@ -1,5 +1,5 @@
 ---
-title: broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
+title: "broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树"
 来源: 'https://github.com/Canop/broot'
 日期: 2026-05-30
 子分类: 命令行工具

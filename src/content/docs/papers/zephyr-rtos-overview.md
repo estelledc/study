@@ -1,5 +1,5 @@
 ---
-title: Zephyr Project — Linux Foundation RTOS 零基础学习笔记
+title: "Zephyr Project — Linux Foundation RTOS 零基础学习笔记"
 来源: https://docs.zephyrproject.org/latest/introduction/index.html
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

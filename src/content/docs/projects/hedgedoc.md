@@ -1,5 +1,5 @@
 ---
-title: HedgeDoc — 协作 Markdown 编辑
+title: "HedgeDoc — 协作 Markdown 编辑"
 来源: https://github.com/hedgedoc/hedgedoc
 日期: 2026-06-13
 子分类: 编辑器与 IDE

@@ -1,5 +1,5 @@
 ---
-title: Aptos — Move 系高性能 L1
+title: "Aptos — Move 系高性能 L1"
 来源: 'https://github.com/aptos-labs/aptos-core'
 日期: 2026-05-30
 子分类: 链与合约

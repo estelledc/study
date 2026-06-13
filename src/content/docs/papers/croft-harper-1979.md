@@ -1,5 +1,5 @@
 ---
-title: Croft-Harper 1979 — 没有相关性反馈也能跑概率检索
+title: "Croft-Harper 1979 — 没有相关性反馈也能跑概率检索"
 来源: W. B. Croft & D. J. Harper, "Using Probabilistic Models of Document Retrieval Without Relevance Information", Journal of Documentation 35(4), 285-295, 1979
 日期: 2026-05-31
 子分类: 检索与排序

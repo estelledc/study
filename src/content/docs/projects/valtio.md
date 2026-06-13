@@ -1,5 +1,5 @@
 ---
-title: valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库
+title: "valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库"
 来源: 'https://github.com/pmndrs/valtio'
 日期: 2026-05-30
 子分类: projects / 前端状态

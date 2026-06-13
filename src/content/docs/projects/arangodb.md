@@ -1,5 +1,5 @@
 ---
-title: ArangoDB — 文档+图+KV 三合一的多模型数据库
+title: "ArangoDB — 文档+图+KV 三合一的多模型数据库"
 来源: https://github.com/arangodb/arangodb
 日期: 2026-05-31
 子分类: 存储与查询

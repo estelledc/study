@@ -1,5 +1,5 @@
 ---
-title: ESPurna — 给 Sonoff 等 ESP8266 插座换「本地大脑」的固件
+title: "ESPurna — 给 Sonoff 等 ESP8266 插座换「本地大脑」的固件"
 来源: 'https://github.com/xoseperez/espurna'
 日期: '2026-06-13'
 分类: 操作系统

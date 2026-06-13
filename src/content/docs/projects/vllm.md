@@ -1,5 +1,5 @@
 ---
-title: vLLM — 高吞吐 LLM 推理引擎
+title: "vLLM — 高吞吐 LLM 推理引擎"
 来源: https://github.com/vllm-project/vllm
 日期: 2026-05-29
 子分类: 数据科学与 AI

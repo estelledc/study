@@ -1,5 +1,5 @@
 ---
-title: Asterisk — 把企业总机变成一台 Linux 服务器
+title: "Asterisk — 把企业总机变成一台 Linux 服务器"
 来源: 'https://github.com/asterisk/asterisk'
 日期: 2026-05-31
 子分类: 实时通信

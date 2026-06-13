@@ -1,5 +1,5 @@
 ---
-title: Annoy — Spotify 的随机森林近似最近邻索引
+title: "Annoy — Spotify 的随机森林近似最近邻索引"
 来源: Erik Bernhardsson, Spotify, 2013（开源 https://github.com/spotify/annoy）
 日期: 2026-06-01
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）
+title: "Karras 2012 — 让每个 BVH 内部节点独立算自己（O(N) 全并行 GPU 构建）"
 来源: Tero Karras, "Maximizing Parallelism in the Construction of BVHs, Octrees, and k-d Trees", High-Performance Graphics (HPG) 2012
 日期: 2026-05-31
 子分类: 渲染与图形

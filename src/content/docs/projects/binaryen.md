@@ -1,5 +1,5 @@
 ---
-title: Binaryen — WASM 编译器基础设施
+title: "Binaryen — WASM 编译器基础设施"
 来源: https://github.com/WebAssembly/binaryen
 日期: 2026-06-13
 分类: 其他

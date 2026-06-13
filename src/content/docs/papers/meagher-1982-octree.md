@@ -1,5 +1,5 @@
 ---
-title: Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界
+title: "Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界"
 来源: Meagher, D., "Geometric Modeling Using Octree Encoding", Computer Graphics and Image Processing, 1982
 日期: 2026-05-31
 子分类: 渲染与图形

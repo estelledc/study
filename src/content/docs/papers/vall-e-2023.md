@@ -1,5 +1,5 @@
 ---
-title: VALL-E — 3 秒样本零样本语音克隆
+title: "VALL-E — 3 秒样本零样本语音克隆"
 来源: 'Wang et al. "Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers". arXiv 2023'
 日期: 2026-06-06
 分类: 机器学习

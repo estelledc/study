@@ -1,5 +1,5 @@
 ---
-title: High-Latency, Low-Bandwidth Windowing in the Jupiter Collaboration System — 零基础学习笔记
+title: "High-Latency, Low-Bandwidth Windowing in the Jupiter Collaboration System — 零基础学习笔记"
 来源: https://dl.acm.org/doi/10.1145/215585.215706
 日期: 2026-06-13
 子分类: 编辑器与 IDE

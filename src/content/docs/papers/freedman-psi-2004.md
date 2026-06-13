@@ -1,5 +1,5 @@
 ---
-title: Freedman-Nissim-Pinkas PSI 2004 — 两个人怎么找共同好友而不暴露各自通讯录
+title: "Freedman-Nissim-Pinkas PSI 2004 — 两个人怎么找共同好友而不暴露各自通讯录"
 来源: 'Freedman, Nissim & Pinkas, "Efficient Private Matching and Set Intersection", Eurocrypt 2004'
 日期: 2026-06-06
 分类: 安全与隐私

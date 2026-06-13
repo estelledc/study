@@ -1,5 +1,5 @@
 ---
-title: Sinatra — 用 Ruby 三行代码起一个 web 服务
+title: "Sinatra — 用 Ruby 三行代码起一个 web 服务"
 来源: 'https://github.com/sinatra/sinatra'
 日期: 2026-05-30
 子分类: Web 后端

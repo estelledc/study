@@ -1,5 +1,5 @@
 ---
-title: Skills Manager — 一个桌面 App，统一管理 15+ AI 编程工具的 Skills
+title: "Skills Manager — 一个桌面 App，统一管理 15+ AI 编程工具的 Skills"
 来源: https://github.com/xingkongliang/skills-manager
 日期: 2026-06-13
 分类: CLI

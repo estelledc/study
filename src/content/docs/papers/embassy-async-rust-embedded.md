@@ -1,5 +1,5 @@
 ---
-title: Embassy — Modern Async Rust for Embedded Systems 零基础学习笔记
+title: "Embassy — Modern Async Rust for Embedded Systems 零基础学习笔记"
 来源: https://embassy.dev/book/
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

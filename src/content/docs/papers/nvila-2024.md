@@ -1,5 +1,5 @@
 ---
-title: NVILA — 先放大分辨率再压缩 token 的高效 VLM
+title: "NVILA — 先放大分辨率再压缩 token 的高效 VLM"
 来源: 'Liu et al., "NVILA: Efficient Frontier Visual Language Models", arXiv 2024'
 日期: 2026-06-06
 分类: 机器学习

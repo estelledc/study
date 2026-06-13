@@ -1,5 +1,5 @@
 ---
-title: Eclipse Theia — 云原生 IDE 框架基座
+title: "Eclipse Theia — 云原生 IDE 框架基座"
 来源: 'https://github.com/eclipse-theia/theia'
 日期: 2026-06-06
 分类: CLI

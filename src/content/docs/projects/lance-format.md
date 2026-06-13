@@ -1,5 +1,5 @@
 ---
-title: Lance — 零基础学习笔记
+title: "Lance — 零基础学习笔记"
 来源: https://github.com/lancedb/lance
 日期: 2026-06-13
 分类: 数据库

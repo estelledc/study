@@ -1,5 +1,5 @@
 ---
-title: Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+title: "Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统"
 来源: 'Chang et al., "Bigtable: A Distributed Storage System for Structured Data", OSDI 2006'
 日期: 2026-05-30
 子分类: 存储与查询
@@ -157,6 +157,7 @@ column families:
 - [[akamai-2010]] —— Akamai 2010 — 从内容分发网络长成全球应用平台
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
+- [[bigtable-revisit-2024]] —— Bigtable 回顾 — 一个分布式数据库 18 年生产经验的全盘复盘
 - [[bonawitz-fl-system-2019]] —— Bonawitz FL System 2019 — Google 工业级联邦学习系统设计
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
@@ -191,6 +192,7 @@ column families:
 - [[product-quantization-2011]] —— Product Quantization — 把向量切碎再压成几个字节
 - [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
+- [[rocksdb-evolution-2021]] —— RocksDB 优先级演化 — 八年大规模存储引擎的工程决策复盘
 - [[rocksdb-lsm]] —— LSM-tree 与 RocksDB — 把所有写都变成顺序写
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层

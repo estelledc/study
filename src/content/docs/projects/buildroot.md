@@ -1,5 +1,5 @@
 ---
-title: Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
+title: "Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像"
 来源: 'https://github.com/buildroot/buildroot'
 日期: 2026-06-06
 分类: 操作系统
@@ -185,6 +185,7 @@ make BR2_EXTERNAL=/path/to/my-product-layer
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
 - [[freecad]] —— FreeCAD — 参数化 CAD
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核

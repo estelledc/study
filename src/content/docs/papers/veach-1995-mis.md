@@ -1,5 +1,5 @@
 ---
-title: Veach MIS — 用一行加权公式让多种采样策略各取所长
+title: "Veach MIS — 用一行加权公式让多种采样策略各取所长"
 来源: Eric Veach & Leonidas J. Guibas, "Optimally Combining Sampling Techniques for Monte Carlo Rendering", SIGGRAPH 1995
 日期: 2026-05-31
 子分类: 渲染与图形

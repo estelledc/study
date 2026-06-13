@@ -1,5 +1,5 @@
 ---
-title: Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
+title: "Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积"
 来源: 'Friedemann Mattern, "Virtual Time and Global States of Distributed Systems", Parallel and Distributed Algorithms (North-Holland), 1989'
 日期: 2026-05-30
 子分类: 共识与复制

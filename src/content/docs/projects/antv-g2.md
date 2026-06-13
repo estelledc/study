@@ -1,5 +1,5 @@
 ---
-title: AntV G2 — 把 Grammar of Graphics 写成 JavaScript
+title: "AntV G2 — 把 Grammar of Graphics 写成 JavaScript"
 来源: 'AntV 团队（蚂蚁集团）官网与仓库, https://g2.antv.antgroup.com/ + https://github.com/antvis/G2'
 日期: 2026-05-31
 子分类: 数据可视化

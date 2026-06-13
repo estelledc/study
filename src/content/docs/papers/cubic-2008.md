@@ -1,5 +1,5 @@
 ---
-title: CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
+title: "CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱"
 来源: 'Ha, Rhee, Xu, "CUBIC: A New TCP-Friendly High-Speed TCP Variant", ACM SIGOPS Operating Systems Review, July 2008'
 日期: 2026-06-01
 子分类: 网络协议

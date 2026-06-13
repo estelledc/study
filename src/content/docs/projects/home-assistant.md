@@ -1,9 +1,9 @@
 ---
-title: Home Assistant Core — 开源智能家居的「中央调度台」
+title: "Home Assistant Core — 开源智能家居的「中央调度台」"
 来源: 'https://github.com/home-assistant/core'
 日期: '2026-06-13'
 分类: 操作系统
-子分类: 嵌入式
+子分类: embedded-and-iot
 难度: 初级
 provenance: pipeline-v3
 ---

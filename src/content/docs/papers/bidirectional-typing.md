@@ -1,5 +1,5 @@
 ---
-title: 双向类型检查 — 推断和检查两个方向交替前进
+title: "双向类型检查 — 推断和检查两个方向交替前进"
 来源: 'Pierce & Turner, "Local Type Inference", TOPLAS 2000 / Dunfield & Krishnaswami survey 2021'
 日期: 2026-05-29
 子分类: 编程语言
@@ -163,7 +163,7 @@ HM 那套全自动推断在这里直接卡死，因为 `α = β` 这种类型层
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"

@@ -1,5 +1,5 @@
 ---
-title: cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
+title: "cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速"
 来源: 'Chetlur et al., "cuDNN: Efficient Primitives for Deep Learning", arXiv:1410.0759, 2014'
 日期: 2026-05-31
 子分类: GPU 架构

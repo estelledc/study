@@ -1,5 +1,5 @@
 ---
-title: Trilium — 树形层级笔记系统
+title: "Trilium — 树形层级笔记系统"
 来源: https://github.com/zadam/trilium
 日期: 2026-06-13
 分类: CLI

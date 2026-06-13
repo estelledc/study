@@ -1,8 +1,8 @@
 ---
-title: Gin — Go 写 web API 的事实标准框架
+title: "Gin — Go 写 web API 的事实标准框架"
 来源: 'https://github.com/gin-gonic/gin'
 日期: 2026-05-30
-子分类: Web 后端
+子分类: backend-and-api
 分类: 后端 API
 难度: 初级
 provenance: pipeline-v3

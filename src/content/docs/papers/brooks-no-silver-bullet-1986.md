@@ -1,5 +1,5 @@
 ---
-title: No Silver Bullet — Essence and Accident in Software Engineering（Brooks, 1986）
+title: "No Silver Bullet — Essence and Accident in Software Engineering（Brooks, 1986）"
 来源: http://worrydream.com/refs/Brooks-NoSilverBullet.pdf
 日期: 2026-06-13
 分类: 其他

@@ -1,5 +1,5 @@
 ---
-title: flutter-quill — Flutter 跨平台富文本编辑器
+title: "flutter-quill — Flutter 跨平台富文本编辑器"
 来源: 'https://github.com/singerdmx/flutter-quill'
 日期: 2026-06-13
 分类: 后端 API

@@ -1,5 +1,5 @@
 ---
-title: Atlas — 把检索器和生成器一起训练，11B 打 540B
+title: "Atlas — 把检索器和生成器一起训练，11B 打 540B"
 来源: 'Izacard et al., "Atlas: Few-shot Learning with Retrieval Augmented Language Models", JMLR 2023 (arXiv 2208.03299)'
 日期: 2026-05-31
 子分类: 模型与训练

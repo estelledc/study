@@ -1,5 +1,5 @@
 ---
-title: TensorFlow Lite Micro — 把深度学习塞进微控制器的推理框架（论文笔记）
+title: "TensorFlow Lite Micro — 把深度学习塞进微控制器的推理框架（论文笔记）"
 来源: https://arxiv.org/abs/2010.08678
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

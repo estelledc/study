@@ -1,5 +1,5 @@
 ---
-title: Can Programming Be Liberated from the von Neumann Style? — Backus 1978 函数式编程宣言
+title: "Can Programming Be Liberated from the von Neumann Style? — Backus 1978 函数式编程宣言"
 来源: https://www.cs.cmu.edu/~crary/819-f09/Backus78.pdf
 日期: 2026-06-13
 子分类: 类型与 PL 理论

@@ -1,5 +1,5 @@
 ---
-title: MicroPython — 在 MCU 上跑 Python 3 的精简实现
+title: "MicroPython — 在 MCU 上跑 Python 3 的精简实现"
 来源: 'https://github.com/micropython/micropython'
 日期: 2026-06-06
 分类: 操作系统
@@ -188,6 +188,7 @@ sensor.read()
 - [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
+- [[nuitka]] —— Nuitka — 把 Python 源码编译成 C 再生成原生机器码
 - [[rustpython]] —— RustPython — Rust 写的 Python 解释器
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS

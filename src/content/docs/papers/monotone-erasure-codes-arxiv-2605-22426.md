@@ -1,5 +1,5 @@
 ---
-title: Monotone Erasure Codes — 零基础学习笔记
+title: "Monotone Erasure Codes — 零基础学习笔记"
 来源: https://arxiv.org/abs/2605.22426
 日期: 2026-06-13
 分类: 分布式系统

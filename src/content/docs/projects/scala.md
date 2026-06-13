@@ -1,5 +1,5 @@
 ---
-title: Scala — 函数式 + OO 的 JVM 语言
+title: "Scala — 函数式 + OO 的 JVM 语言"
 来源: https://github.com/scala/scala
 日期: 2026-06-13
 子分类: 语言运行时

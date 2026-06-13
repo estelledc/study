@@ -1,5 +1,5 @@
 ---
-title: DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
+title: "DeWitt-Gray 1992 — 并行数据库取代专用机的宣言"
 来源: 'David DeWitt & Jim Gray, "Parallel Database Systems: The Future of High Performance Database Systems", CACM 1992'
 日期: 2026-05-30
 子分类: 存储与查询

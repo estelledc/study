@@ -1,5 +1,5 @@
 ---
-title: 以太坊智能合约攻击综述 — 12 类漏洞的首次系统分类
+title: "以太坊智能合约攻击综述 — 12 类漏洞的首次系统分类"
 来源: 'Atzei, Bartoletti & Cimoli, "A Survey of Attacks on Ethereum Smart Contracts", POST 2017'
 日期: 2026-06-06
 分类: 安全与隐私

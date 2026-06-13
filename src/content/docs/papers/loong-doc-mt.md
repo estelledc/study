@@ -1,5 +1,5 @@
 ---
-title: Loong — 类人长文档翻译 Agent 与自适应上下文选择
+title: "Loong — 类人长文档翻译 Agent 与自适应上下文选择"
 来源: https://arxiv.org/abs/2605.30274
 日期: 2026-06-13
 子分类: 模型与训练

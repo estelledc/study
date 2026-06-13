@@ -1,5 +1,5 @@
 ---
-title: aubio — 实时音频事件检测库
+title: "aubio — 实时音频事件检测库"
 来源: 'https://github.com/aubio/aubio'
 日期: 2026-06-06
 分类: 通信

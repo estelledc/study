@@ -1,5 +1,5 @@
 ---
-title: FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架
+title: "FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架"
 来源: https://github.com/signalwire/freeswitch
 日期: 2026-05-31
 子分类: 实时通信

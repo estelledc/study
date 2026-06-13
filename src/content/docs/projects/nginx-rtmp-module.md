@@ -1,5 +1,5 @@
 ---
-title: nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
+title: "nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务"
 来源: 'https://github.com/arut/nginx-rtmp-module'
 日期: 2026-06-06
 分类: 通信

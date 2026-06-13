@@ -1,5 +1,5 @@
 ---
-title: Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
+title: "Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合"
 来源: 'https://github.com/element-hq/dendrite'
 日期: 2026-05-30
 子分类: 实时通信

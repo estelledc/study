@@ -1,5 +1,5 @@
 ---
-title: Backstage — Spotify 的内部开发者门户如何变成开源的「开发工具前台」
+title: "Backstage — Spotify 的内部开发者门户如何变成开源的「开发工具前台」"
 来源: https://backstage.io/blog/2020/03/16/announcing-backstage/
 日期: 2026-06-13
 子分类: 工程文化
@@ -316,5 +316,8 @@ export const CiStatusCard = () => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[grafana]] —— Grafana — 监控可视化看板
+- [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
+- [[kubernetes]] —— Kubernetes — 容器编排平台
 

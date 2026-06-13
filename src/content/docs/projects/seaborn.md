@@ -1,5 +1,5 @@
 ---
-title: seaborn — matplotlib 之上的一行统计图
+title: "seaborn — matplotlib 之上的一行统计图"
 来源: 'https://github.com/mwaskom/seaborn'
 日期: 2026-05-31
 子分类: 数据可视化

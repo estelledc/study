@@ -1,5 +1,5 @@
 ---
-title: ROS 2 — 机器人操作系统零基础入门
+title: "ROS 2 — 机器人操作系统零基础入门"
 来源: 'https://github.com/ros2/ros2'
 日期: 2026-06-13
 子分类: 嵌入式

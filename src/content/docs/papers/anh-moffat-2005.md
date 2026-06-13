@@ -1,5 +1,5 @@
 ---
-title: Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码
+title: "Anh-Moffat 2005 — 让倒排表压到接近熵下限还能 SIMD 解码"
 来源: Anh & Moffat, "Inverted Index Compression Using Word-Aligned Binary Codes", Information Retrieval 2005
 日期: 2026-05-31
 子分类: 检索与排序

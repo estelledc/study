@@ -1,5 +1,5 @@
 ---
-title: SciPy — NumPy 之上的科学计算工具箱
+title: "SciPy — NumPy 之上的科学计算工具箱"
 来源: 'https://github.com/scipy/scipy'
 日期: 2026-05-30
 子分类: 数据科学与 AI

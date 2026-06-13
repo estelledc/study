@@ -1,5 +1,5 @@
 ---
-title: web3.js — 老牌 EVM JavaScript 客户端库
+title: "web3.js — 老牌 EVM JavaScript 客户端库"
 来源: 'https://github.com/web3/web3.js'
 日期: 2026-05-30
 子分类: 链与合约

@@ -1,5 +1,5 @@
 ---
-title: FastLanes 压缩布局 — 用标量代码每秒解码超过 1000 亿整数
+title: "FastLanes 压缩布局 — 用标量代码每秒解码超过 1000 亿整数"
 来源: https://www.vldb.org/pvldb/vol16/p2132-afroozeh.pdf
 日期: 2026-06-13
 子分类: 存储与查询

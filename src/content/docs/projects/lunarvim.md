@@ -1,5 +1,5 @@
 ---
-title: LunarVim — 一体化 Neovim IDE 层
+title: "LunarVim — 一体化 Neovim IDE 层"
 来源: 'https://github.com/LunarVim/LunarVim'
 日期: 2026-06-06
 分类: CLI

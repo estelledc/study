@@ -1,5 +1,5 @@
 ---
-title: Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className
+title: "Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className"
 来源: 'https://github.com/emotion-js/emotion'
 日期: 2026-05-30
 子分类: projects

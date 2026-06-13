@@ -1,5 +1,5 @@
 ---
-title: OpenBMB/VoxCPM — 零基础学习笔记
+title: "OpenBMB/VoxCPM — 零基础学习笔记"
 来源: https://github.com/OpenBMB/VoxCPM
 日期: 2026-06-13
 分类: 机器学习

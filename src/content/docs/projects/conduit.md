@@ -1,5 +1,5 @@
 ---
-title: Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
+title: "Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库"
 来源: 'https://github.com/famedly/conduit'
 日期: 2026-05-30
 子分类: 实时通信

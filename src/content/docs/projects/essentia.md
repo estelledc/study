@@ -1,5 +1,5 @@
 ---
-title: Essentia — 音乐信息检索工具箱
+title: "Essentia — 音乐信息检索工具箱"
 description: UPF MTG 出品 C++/Python 双层 API；节奏/调性/风格特征提取
 来源: 'https://github.com/MTG/essentia'
 日期: 2026-06-06

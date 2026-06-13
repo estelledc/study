@@ -1,5 +1,5 @@
 ---
-title: Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
+title: "Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套"
 来源: 'https://github.com/laravel/laravel'
 日期: 2026-05-30
 子分类: Web 后端

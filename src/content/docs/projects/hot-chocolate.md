@@ -1,5 +1,5 @@
 ---
-title: Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
+title: "Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器"
 来源: 'https://github.com/ChilliCream/graphql-platform'
 日期: 2026-05-30
 子分类: Web 后端

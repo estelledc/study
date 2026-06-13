@@ -1,5 +1,5 @@
 ---
-title: Standard ML — 让编译器替你把类型补完
+title: "Standard ML — 让编译器替你把类型补完"
 来源: Milner, Tofte, Harper, "The Definition of Standard ML", MIT Press 1990
 日期: 2026-05-29
 子分类: 编程语言
@@ -154,7 +154,7 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy GC — OCaml 多线程并发垃圾回收
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[knuth-lr-1965]] —— Knuth LR(k) — 编译器自己读懂语法的算法
@@ -168,6 +168,7 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"

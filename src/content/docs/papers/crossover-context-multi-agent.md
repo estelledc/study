@@ -1,5 +1,5 @@
 ---
-title: When Context Hurts — 知识迁移在多智能体设计中的交叉效应
+title: "When Context Hurts — 知识迁移在多智能体设计中的交叉效应"
 来源: 'Saranyan Vigraham, "When Context Hurts: The Crossover Effect of Knowledge Transfer on Multi-Agent Design Exploration", arXiv:2605.04361, Meta, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

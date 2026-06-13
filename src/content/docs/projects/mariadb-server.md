@@ -1,5 +1,5 @@
 ---
-title: mariadb-server — MySQL 原作者带走的那一支
+title: "mariadb-server — MySQL 原作者带走的那一支"
 来源: https://github.com/MariaDB/server
 日期: 2026-05-31
 子分类: 存储与查询

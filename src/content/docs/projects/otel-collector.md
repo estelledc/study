@@ -1,5 +1,5 @@
 ---
-title: OpenTelemetry Collector — 可观测性数据的统一中转站
+title: "OpenTelemetry Collector — 可观测性数据的统一中转站"
 来源: https://opentelemetry.io/docs/collector/
 日期: 2026-05-31
 子分类: 可观测性

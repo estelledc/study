@@ -1,5 +1,5 @@
 ---
-title: Etherpad — 经典协作文本编辑器
+title: "Etherpad — 经典协作文本编辑器"
 来源: https://github.com/ether/etherpad-lite
 日期: 2026-06-13
 子分类: 编辑器与 IDE

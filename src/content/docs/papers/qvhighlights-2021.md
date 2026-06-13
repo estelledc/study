@@ -1,5 +1,5 @@
 ---
-title: QVHighlights — 用自然语言查询在视频里找精彩瞬间
+title: "QVHighlights — 用自然语言查询在视频里找精彩瞬间"
 来源: 'Lei et al., "QVHighlights: Detecting Moments and Highlights in Videos via Natural Language Queries", NeurIPS 2021'
 日期: 2026-06-05
 分类: 机器学习

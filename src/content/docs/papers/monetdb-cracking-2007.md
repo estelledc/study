@@ -1,5 +1,5 @@
 ---
-title: Database Cracking — 不用建索引，让查询自己塑造数据
+title: "Database Cracking — 不用建索引，让查询自己塑造数据"
 来源: https://stratos.seas.harvard.edu/files/IKM_CIDR07.pdf
 日期: 2026-06-13
 分类: 数据库

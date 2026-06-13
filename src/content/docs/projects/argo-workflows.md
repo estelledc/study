@@ -1,5 +1,5 @@
 ---
-title: Argo Workflows — Kubernetes 原生工作流引擎
+title: "Argo Workflows — Kubernetes 原生工作流引擎"
 来源: https://github.com/argoproj/argo-workflows
 日期: 2026-05-31
 子分类: DevOps 与运维

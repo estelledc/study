@@ -1,9 +1,9 @@
 ---
-title: 现代计算全景（Modern Computing: Vision and Challenges）— 六十年计算范式演化地图
+title: "现代计算全景（Modern Computing: Vision and Challenges）— 六十年计算范式演化地图"
 来源: 'Sukhpal Singh Gill et al., "Modern Computing: Vision and Challenges", Telematics and Informatics Reports 2024'
 日期: 2026-06-13
 分类: 基础设施
-子分类: 系统综合
+子分类: 系统
 难度: 初级
 provenance: pipeline-v3
 ---
@@ -160,3 +160,6 @@ def process_image(event, context):
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

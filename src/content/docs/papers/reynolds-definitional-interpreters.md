@@ -1,5 +1,5 @@
 ---
-title: Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
+title: "Reynolds Definitional Interpreters — 用一种语言去定义另一种语言"
 来源: 'John C. Reynolds, "Definitional Interpreters for Higher-Order Programming Languages", ACM National Conf. 1972 / HOSC 1998'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -166,7 +166,6 @@ let run e = eval e [] (fun v -> v)
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960

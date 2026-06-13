@@ -1,5 +1,5 @@
 ---
-title: Dify — LLM 应用开发平台
+title: "Dify — LLM 应用开发平台"
 来源: https://github.com/langgenius/dify
 日期: 2026-05-29
 子分类: 数据科学与 AI

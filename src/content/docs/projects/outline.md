@@ -1,5 +1,5 @@
 ---
-title: Outline — 团队 Wiki 协作平台
+title: "Outline — 团队 Wiki 协作平台"
 来源: https://github.com/outline/outline
 日期: 2026-06-13
 子分类: 编辑器与 IDE

@@ -1,5 +1,5 @@
 ---
-title: Monitors — Hoare 1974 操作系统结构化概念（零基础学习笔记）
+title: "Monitors — Hoare 1974 操作系统结构化概念（零基础学习笔记）"
 来源: https://en.wikipedia.org/wiki/Monitor_(synchronization)
 日期: 2026-06-13
 分类: 操作系统

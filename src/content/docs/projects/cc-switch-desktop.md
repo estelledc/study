@@ -1,5 +1,5 @@
 ---
-title: CC Switch — 一个按钮切换所有 AI coding agent 的桌面助手
+title: "CC Switch — 一个按钮切换所有 AI coding agent 的桌面助手"
 来源: 'https://github.com/farion1231/cc-switch'
 日期: 2026-06-13
 分类: CLI

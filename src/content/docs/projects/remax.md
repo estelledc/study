@@ -1,5 +1,5 @@
 ---
-title: Remax — 用真正的 React 构建跨平台小程序
+title: "Remax — 用真正的 React 构建跨平台小程序"
 来源: https://github.com/remaxjs/remax
 日期: 2026-06-13
 子分类: 移动端

@@ -1,5 +1,5 @@
 ---
-title: TRACE — 用因果事件链同时输出时间、精彩度与描述
+title: "TRACE — 用因果事件链同时输出时间、精彩度与描述"
 来源: 'Guo et al., "TRACE: Temporal Grounding Video LLM via Causal Event Modeling", ICLR 2025'
 日期: 2026-06-05
 分类: 机器学习

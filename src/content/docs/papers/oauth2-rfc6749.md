@@ -1,5 +1,5 @@
 ---
-title: OAuth 2.0 Authorization Framework (RFC 6749) — 不用把密码交给第三方，也能授权访问
+title: "OAuth 2.0 Authorization Framework (RFC 6749) — 不用把密码交给第三方，也能授权访问"
 来源: https://datatracker.ietf.org/doc/html/rfc6749
 日期: 2026-06-13
 子分类: 安全与隐私

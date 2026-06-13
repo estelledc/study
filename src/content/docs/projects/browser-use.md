@@ -1,5 +1,5 @@
 ---
-title: browser-use — 用自然语言让 AI Agent 操控浏览器
+title: "browser-use — 用自然语言让 AI Agent 操控浏览器"
 来源: 'https://github.com/browser-use/browser-use'
 日期: 2026-06-13
 子分类: ai-agent-infra

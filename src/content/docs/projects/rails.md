@@ -1,8 +1,8 @@
 ---
-title: Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+title: "Ruby on Rails — 约定大于配置的全栈 Web 框架教科书"
 来源: 'https://github.com/rails/rails'
 日期: 2026-05-30
-子分类: Web 后端
+子分类: backend-and-api
 分类: 后端 API
 难度: 初级
 provenance: pipeline-v3

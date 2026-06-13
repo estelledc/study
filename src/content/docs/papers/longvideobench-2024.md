@@ -1,5 +1,5 @@
 ---
-title: LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
+title: "LongVideoBench — 一小时交织字幕视频的长上下文理解考卷"
 来源: 'Wu et al., "LongVideoBench: A Benchmark for Long-context Interleaved Video-Language Understanding", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

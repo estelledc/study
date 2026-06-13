@@ -1,5 +1,5 @@
 ---
-title: Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
+title: "Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器"
 来源: 'https://github.com/projectcalico/calico'
 日期: 2026-06-01
 子分类: DevOps 与运维

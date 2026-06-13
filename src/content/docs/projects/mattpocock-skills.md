@@ -1,5 +1,5 @@
 ---
-title: Matt Pocock 的 Skills — 给真实工程师的 AI 协作技能集
+title: "Matt Pocock 的 Skills — 给真实工程师的 AI 协作技能集"
 来源: https://github.com/mattpocock/skills
 日期: 2026-06-13
 分类: CLI

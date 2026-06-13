@@ -1,5 +1,5 @@
 ---
-title: nvm — 在同一台机器上轻松切换 Node 版本
+title: "nvm — 在同一台机器上轻松切换 Node 版本"
 来源: nvm-sh/nvm GitHub 仓库（Tim Caswell 2010 首发，OpenJS Foundation 维护）
 日期: 2026-05-31
 子分类: 前端工具链

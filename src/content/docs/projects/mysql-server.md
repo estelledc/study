@@ -1,5 +1,5 @@
 ---
-title: mysql-server — 一个仓库装下整套 OLTP 引擎
+title: "mysql-server — 一个仓库装下整套 OLTP 引擎"
 来源: https://github.com/mysql/mysql-server
 日期: 2026-05-31
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: LuxCoreRender — 物理光线追踪
+title: "LuxCoreRender — 物理光线追踪"
 来源: https://github.com/LuxCoreRender/LuxCore
 日期: 2026-06-13
 子分类: 渲染与图形

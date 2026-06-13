@@ -1,5 +1,5 @@
 ---
-title: NATS Server — 极简云原生消息中间件
+title: "NATS Server — 极简云原生消息中间件"
 来源: 'https://github.com/nats-io/nats-server'
 日期: 2026-06-06
 分类: 数据库

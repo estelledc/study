@@ -1,5 +1,5 @@
 ---
-title: Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放
+title: "Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放"
 来源: 'https://github.com/airbnb/lottie-web'
 日期: 2026-06-13
 分类: 数据可视化
@@ -179,3 +179,14 @@ const anims = ['deco1', 'deco2', 'deco3', 'deco4', 'deco5'].map((id, i) => {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[accompanist]] —— Accompanist — Jetpack Compose 的「补丁工具箱」
+- [[anime]] —— anime.js — 一行 JS 让网页元素按时间线动起来
+- [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[defold]] —— Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
+- [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+

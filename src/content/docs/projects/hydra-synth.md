@@ -1,5 +1,5 @@
 ---
-title: Hydra — 实时视觉合成 Livecoding
+title: "Hydra — 实时视觉合成 Livecoding"
 来源: 'https://github.com/ojack/hydra'
 日期: 2026-06-13
 子分类: 渲染与图形

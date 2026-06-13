@@ -1,5 +1,5 @@
 ---
-title: Phoenix — Elixir/OTP 上的实时 web 框架
+title: "Phoenix — Elixir/OTP 上的实时 web 框架"
 来源: 'https://github.com/phoenixframework/phoenix'
 日期: 2026-05-30
 子分类: Web 后端

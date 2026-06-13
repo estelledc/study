@@ -1,5 +1,5 @@
 ---
-title: browser-use — 给 AI 装上眼睛和手
+title: "browser-use — 给 AI 装上眼睛和手"
 来源: https://github.com/browser-use/browser-use
 日期: 2026-06-13
 子分类: 智能体与 LLM

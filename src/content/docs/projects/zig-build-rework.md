@@ -1,5 +1,5 @@
 ---
-title: Zig Build System Reworked — 配置与执行分离的两段式构建
+title: "Zig Build System Reworked — 配置与执行分离的两段式构建"
 description: Zig 0.17 将 build.zig 配置阶段与构建图执行拆成 configurer/maker 双进程，缓存序列化构建图并显著降低 zig build 开销
 来源: 'https://ziglang.org/learn/build-system/'
 日期: 2026-06-13

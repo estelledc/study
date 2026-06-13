@@ -1,5 +1,5 @@
 ---
-title: eBPF — 用户写小程序，内核证明安全后再跑
+title: "eBPF — 用户写小程序，内核证明安全后再跑"
 来源: 'McCanne & Jacobson, "The BSD Packet Filter: A New Architecture for User-level Packet Capture", USENIX Winter 1993; Starovoitov 2014 起在 Linux 主线扩成 eBPF'
 日期: 2026-05-30
 子分类: 操作系统

@@ -1,5 +1,5 @@
 ---
-title: Django — 全功能 batteries-included 的 Python web 框架
+title: "Django — 全功能 batteries-included 的 Python web 框架"
 来源: 'https://github.com/django/django'
 日期: 2026-05-29
 子分类: Web 后端

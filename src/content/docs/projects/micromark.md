@@ -1,5 +1,5 @@
 ---
-title: micromark — markdown 解析器里那台一个字一个字读的状态机
+title: "micromark — markdown 解析器里那台一个字一个字读的状态机"
 来源: Titus Wormer, micromark, 2020 起；https://github.com/micromark/micromark
 日期: 2026-05-30
 子分类: 前端工程

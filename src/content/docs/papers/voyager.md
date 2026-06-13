@@ -1,5 +1,5 @@
 ---
-title: Voyager — LLM 终身学习智能体
+title: "Voyager — LLM 终身学习智能体"
 来源: 'Wang et al., "Voyager: An Open-Ended Embodied Agent with LLMs", 2023'
 日期: 2026-05-29
 子分类: 智能体与 LLM

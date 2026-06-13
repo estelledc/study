@@ -1,5 +1,5 @@
 ---
-title: 联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题
+title: "联邦学习综述 — 60+ 作者合写的联邦学习百科与 58 道开放题"
 来源: 'Kairouz et al., "Advances and Open Problems in Federated Learning", Foundations and Trends in Machine Learning 2021'
 日期: 2026-06-06
 分类: 安全与隐私

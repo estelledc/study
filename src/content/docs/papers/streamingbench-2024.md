@@ -1,5 +1,5 @@
 ---
-title: StreamingBench — 流式视频理解的 18 任务在线大考
+title: "StreamingBench — 流式视频理解的 18 任务在线大考"
 来源: 'Lin et al., "StreamingBench: Assessing the Gap for MLLMs to Achieve Streaming Video Understanding", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

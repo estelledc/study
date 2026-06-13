@@ -1,5 +1,5 @@
 ---
-title: CSP — 进程之间只许喊话不许共用内存
+title: "CSP — 进程之间只许喊话不许共用内存"
 来源: 'C.A.R. Hoare, "Communicating Sequential Processes", CACM 1978'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

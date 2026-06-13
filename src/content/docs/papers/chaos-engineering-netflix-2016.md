@@ -1,5 +1,5 @@
 ---
-title: Chaos Engineering — Netflix 如何把「故意搞破坏」变成可靠性学科
+title: "Chaos Engineering — Netflix 如何把「故意搞破坏」变成可靠性学科"
 来源: https://arxiv.org/abs/1702.05843
 日期: 2026-06-13
 分类: 其他

@@ -1,5 +1,5 @@
 ---
-title: Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
+title: "Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器"
 来源: 'https://github.com/kamailio/kamailio'
 日期: 2026-05-31
 子分类: 实时通信

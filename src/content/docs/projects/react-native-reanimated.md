@@ -1,5 +1,5 @@
 ---
-title: React Native Reanimated — 高性能动画库
+title: "React Native Reanimated — 高性能动画库"
 来源: https://github.com/software-mansion/react-native-reanimated
 日期: 2026-06-13
 分类: 后端 API

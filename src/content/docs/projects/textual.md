@@ -1,5 +1,5 @@
 ---
-title: Textual — 用 CSS 写终端界面的 Python 框架
+title: "Textual — 用 CSS 写终端界面的 Python 框架"
 来源: https://github.com/Textualize/textual
 日期: 2026-05-31
 子分类: 命令行工具

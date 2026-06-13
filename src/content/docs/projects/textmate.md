@@ -1,5 +1,5 @@
 ---
-title: TextMate — macOS 经典编辑器，语法格式影响了所有人
+title: "TextMate — macOS 经典编辑器，语法格式影响了所有人"
 来源: 'https://github.com/textmate/textmate'
 日期: 2026-06-06
 分类: CLI

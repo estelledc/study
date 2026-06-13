@@ -1,5 +1,5 @@
 ---
-title: ProjectionBench — 渐进披露下，LLM 能「猜对」科学结论吗？
+title: "ProjectionBench — 渐进披露下，LLM 能「猜对」科学结论吗？"
 来源: https://arxiv.org/abs/2605.30284
 日期: 2026-06-13
 子分类: 模型与训练

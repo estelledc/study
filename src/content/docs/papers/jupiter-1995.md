@@ -1,5 +1,5 @@
 ---
-title: Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
+title: "Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业"
 来源: Nichols, Curtis, Dixon, Lamping, "High-Latency, Low-Bandwidth Windowing in the Jupiter Collaboration System", UIST 1995
 日期: 2026-05-30
 子分类: 共识与复制

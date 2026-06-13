@@ -1,5 +1,5 @@
 ---
-title: GPT-4 发布 —— 多模态大模型的时代
+title: "GPT-4 发布 —— 多模态大模型的时代"
 来源: https://openai.com/research/gpt-4
 日期: 2026-06-13
 分类: 机器学习

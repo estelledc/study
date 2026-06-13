@@ -1,5 +1,5 @@
 ---
-title: Kelly Criterion — 信息率的新解释
+title: "Kelly Criterion — 信息率的新解释"
 来源: https://www.princeton.edu/~wbialek/rome/refs/kelly_56.pdf
 日期: 2026-06-13
 子分类: 量化金融

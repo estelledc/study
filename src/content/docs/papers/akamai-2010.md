@@ -1,5 +1,5 @@
 ---
-title: Akamai 2010 — 从内容分发网络长成全球应用平台
+title: "Akamai 2010 — 从内容分发网络长成全球应用平台"
 来源: 'Nygren, Sitaraman, Sun, "The Akamai Network: A Platform for High-Performance Internet Applications", ACM SIGOPS OSR 44(3), July 2010'
 日期: 2026-06-01
 子分类: 网络协议

@@ -1,5 +1,5 @@
 ---
-title: Belady 1966 — 缓存替换的理论最优与 FIFO 异常
+title: "Belady 1966 — 缓存替换的理论最优与 FIFO 异常"
 来源: Belady, "A Study of Replacement Algorithms for a Virtual-Storage Computer", IBM Systems Journal 5(2), 1966
 日期: 2026-06-01
 子分类: 内核与虚拟化

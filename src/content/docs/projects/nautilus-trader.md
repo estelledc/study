@@ -1,5 +1,5 @@
 ---
-title: Nautilus Trader —— 用 Rust 写的量化交易引擎，Python 当遥控器
+title: "Nautilus Trader —— 用 Rust 写的量化交易引擎，Python 当遥控器"
 来源: https://github.com/nautechsystems/nautilus_trader
 日期: 2026-06-13
 分类: 其他

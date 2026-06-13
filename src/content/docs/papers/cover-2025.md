@@ -1,5 +1,5 @@
 ---
-title: COVER — 四象限反事实视频推理 benchmark
+title: "COVER — 四象限反事实视频推理 benchmark"
 来源: 'Zhou et al., "Reasoning is All You Need for Video Generalization: A Counterfactual Benchmark with Sub-question Evaluation", arXiv 2025'
 日期: 2026-06-06
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解
+title: "VideoLLaMA 2 — 时空卷积连接器 + 音视频联合理解"
 来源: 'Cheng et al., "VideoLLaMA 2: Advancing Spatial-Temporal Modeling and Audio Understanding in Video-LLMs", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: Personalized PageRank — 给每个人一份属于自己的网页排名
+title: "Personalized PageRank — 给每个人一份属于自己的网页排名"
 来源: 'Jeh & Widom, "Scaling Personalized Web Search", WWW 2003'
 日期: 2026-05-31
 子分类: 检索与排序

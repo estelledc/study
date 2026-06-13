@@ -1,5 +1,5 @@
 ---
-title: OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写
+title: "OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写"
 来源: 'https://github.com/OpenRCT2/OpenRCT2'
 日期: 2026-06-06
 分类: 图形学

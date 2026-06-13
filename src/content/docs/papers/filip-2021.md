@@ -1,5 +1,5 @@
 ---
-title: FILIP — 把 CLIP 的图文对齐细化到 token 级
+title: "FILIP — 把 CLIP 的图文对齐细化到 token 级"
 来源: Yao et al., "FILIP — Fine-grained Interactive Language-Image Pre-Training", ICLR 2022 (arXiv:2111.07783)
 日期: 2026-05-31
 子分类: 检索与排序

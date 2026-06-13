@@ -1,5 +1,5 @@
 ---
-title: Gentry FHE — 全同态加密开山
+title: "Gentry FHE — 全同态加密开山"
 来源: 'Gentry, "A Fully Homomorphic Encryption Scheme", Stanford PhD 2009'
 日期: 2026-06-06
 分类: 安全与隐私

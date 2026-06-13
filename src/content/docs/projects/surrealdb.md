@@ -1,8 +1,8 @@
 ---
-title: SurrealDB — 一种语法吃下 SQL 图 文档 向量
+title: "SurrealDB — 一种语法吃下 SQL 图 文档 向量"
 来源: https://github.com/surrealdb/surrealdb
 日期: 2026-05-31
-子分类: 存储与查询
+子分类: databases-and-storage
 分类: 数据库
 难度: 中级
 provenance: pipeline-v3

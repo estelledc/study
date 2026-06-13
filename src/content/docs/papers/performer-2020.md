@@ -1,5 +1,5 @@
 ---
-title: Performer — 用随机特征把 softmax attention 拉成线性复杂度
+title: "Performer — 用随机特征把 softmax attention 拉成线性复杂度"
 来源: 'Choromanski et al., "Rethinking Attention with Performers", ICLR 2021 (arXiv:2009.14794)'
 日期: 2026-05-31
 子分类: 模型与训练

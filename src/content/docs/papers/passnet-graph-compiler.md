@@ -1,5 +1,5 @@
 ---
-title: PassNet — 用 LLM 生成图编译器 Pass 的零基础学习笔记
+title: "PassNet — 用 LLM 生成图编译器 Pass 的零基础学习笔记"
 来源: https://arxiv.org/abs/2605.29357
 日期: 2026-06-13
 子分类: 类型与 PL 理论

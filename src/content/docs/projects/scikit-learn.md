@@ -1,8 +1,8 @@
 ---
-title: scikit-learn — 经典 ML 库
+title: "scikit-learn — 经典 ML 库"
 来源: 'https://github.com/scikit-learn/scikit-learn'
 日期: 2026-05-30
-子分类: 数据科学与 AI
+子分类: bioinformatics-and-scientific
 分类: 机器学习
 难度: 初级
 provenance: pipeline-v3

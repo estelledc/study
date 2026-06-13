@@ -1,5 +1,5 @@
 ---
-title: FoundationDB — Apple 分布式 KV 数据库零基础笔记
+title: "FoundationDB — Apple 分布式 KV 数据库零基础笔记"
 来源: https://github.com/apple/foundationdb
 日期: 2026-06-13
 分类: 分布式系统

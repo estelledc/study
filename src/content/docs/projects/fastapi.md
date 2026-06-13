@@ -1,8 +1,8 @@
 ---
-title: FastAPI — 用 Python 类型注解写 API
+title: "FastAPI — 用 Python 类型注解写 API"
 来源: 'https://github.com/fastapi/fastapi'
 日期: 2026-05-29
-子分类: Web 后端
+子分类: backend-and-api
 分类: 后端 API
 难度: 中级
 schema_version: legacy-long
@@ -186,6 +186,7 @@ def me(user: dict = Depends(current_user)):
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
+- [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[faster-whisper]] —— faster-whisper — Whisper 的 4× 加速重写版
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
@@ -196,7 +197,6 @@ def me(user: dict = Depends(current_user)):
 - [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
 - [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具

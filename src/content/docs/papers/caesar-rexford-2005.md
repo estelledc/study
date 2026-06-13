@@ -1,5 +1,5 @@
 ---
-title: Caesar-Rexford 2005 — 你的包为什么绕了大半个地球
+title: "Caesar-Rexford 2005 — 你的包为什么绕了大半个地球"
 来源: Matthew Caesar & Jennifer Rexford, "BGP Routing Policies in ISP Networks", IEEE Network Magazine 19(6), 2005
 日期: 2026-06-01
 子分类: 网络协议

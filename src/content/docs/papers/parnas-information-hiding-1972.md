@@ -1,5 +1,5 @@
 ---
-title: On the Criteria To Be Used in Decomposing Systems into Modules — Parnas 1972 信息隐藏与模块化准则
+title: "On the Criteria To Be Used in Decomposing Systems into Modules — Parnas 1972 信息隐藏与模块化准则"
 来源: https://www.win.tue.nl/~wstomv/edu/2ip30/references/criteria_for_modularization.pdf
 日期: 2026-06-13
 子分类: 工程文化

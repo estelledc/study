@@ -1,5 +1,5 @@
 ---
-title: FAISS — 向量检索的标准件库
+title: "FAISS — 向量检索的标准件库"
 来源: https://github.com/facebookresearch/faiss
 日期: 2026-06-01
 子分类: 存储与查询

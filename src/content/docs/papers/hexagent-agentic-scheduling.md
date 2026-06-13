@@ -1,5 +1,5 @@
 ---
-title: HexAGenT — 面向 Agentic LLM 的工作流与异构感知调度
+title: "HexAGenT — 面向 Agentic LLM 的工作流与异构感知调度"
 来源: 'You Peng et al., "HexAGenT: Efficient Agentic LLM Serving via Workflow- and Heterogeneity-Aware Scheduling", arXiv:2605.16637, 2026; https://arxiv.org/abs/2605.16637'
 日期: 2026-06-13
 子分类: 模型与训练

@@ -1,5 +1,5 @@
 ---
-title: Pluto.jl — Julia 反应式笔记本
+title: "Pluto.jl — Julia 反应式笔记本"
 来源: https://github.com/fonsp/Pluto.jl
 日期: 2026-06-13
 子分类: 编辑器与 IDE

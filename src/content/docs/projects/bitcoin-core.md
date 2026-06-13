@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Core — 比特币参考实现
+title: "Bitcoin Core — 比特币参考实现"
 来源: 'https://github.com/bitcoin/bitcoin'
 日期: 2026-05-29
 子分类: 链与合约

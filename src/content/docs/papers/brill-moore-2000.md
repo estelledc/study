@@ -1,5 +1,5 @@
 ---
-title: Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串
+title: "Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串"
 来源: Eric Brill & Robert C. Moore, "An Improved Error Model for Noisy Channel Spelling Correction", ACL 2000
 日期: 2026-05-31
 子分类: 检索与排序

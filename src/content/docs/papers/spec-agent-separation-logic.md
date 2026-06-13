@@ -1,5 +1,5 @@
 ---
-title: Spec-Agent — 用 Agent + 分离逻辑 + Fuzz 自动写 C++ 合约
+title: "Spec-Agent — 用 Agent + 分离逻辑 + Fuzz 自动写 C++ 合约"
 来源: 'Tarun Suresh, David Korczynski, Julien Vanegue, "Agentic Separation Logic Specification Synthesis", arXiv:2605.27531, Bloomberg, 2026'
 日期: 2026-06-13
 子分类: 形式化验证

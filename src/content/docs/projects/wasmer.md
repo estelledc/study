@@ -1,5 +1,5 @@
 ---
-title: Wasmer — 跨平台 WebAssembly 运行时
+title: "Wasmer — 跨平台 WebAssembly 运行时"
 description: 多后端 JIT/AOT、WASIX 与 WebC 打包的 wasm 运行时，面向边缘与容器场景
 来源: 'https://github.com/wasmerio/wasmer'
 日期: 2026-06-13
@@ -276,7 +276,10 @@ wasmer run python/python@3.12 -- -c "import json; print(json.dumps({'ok': True})
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[graalvm]] —— GraalVM — 多语言通用 VM
+- [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[rustpython]] —— RustPython — Rust 写的 Python 解释器
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+- [[trunk]] —— Trunk — Rust WASM 零配置构建与打包工具
 - [[wamr]] —— WAMR — wasm 微运行时（嵌入式）
 - [[wasmedge]] —— WasmEdge — 云原生 wasm 运行时
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime

@@ -1,5 +1,5 @@
 ---
-title: CocoIndex — AI 增量数据转换与索引框架
+title: "CocoIndex — AI 增量数据转换与索引框架"
 来源: https://github.com/cocoindex-io/cocoindex
 日期: 2026-06-13
 子分类: 模型与训练

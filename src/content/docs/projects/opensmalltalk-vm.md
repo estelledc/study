@@ -1,5 +1,5 @@
 ---
-title: OpenSmalltalk VM (Cog) — Cog VM 的现代继承
+title: "OpenSmalltalk VM (Cog) — Cog VM 的现代继承"
 来源: https://github.com/OpenSmalltalk/opensmalltalk-vm
 日期: 2026-06-13
 分类: 编译器

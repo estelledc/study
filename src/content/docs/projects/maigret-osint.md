@@ -1,5 +1,5 @@
 ---
-title: Maigret 零基础入门 — 凭用户名跨 3000+ 站点做 OSINT
+title: "Maigret 零基础入门 — 凭用户名跨 3000+ 站点做 OSINT"
 来源: https://github.com/soxoj/maigret
 日期: 2026-06-13
 子分类: 安全与隐私

@@ -1,5 +1,5 @@
 ---
-title: Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击
+title: "Amplification Hell 2014 — 把家用宽带放大成几百 Gbps 的反射攻击"
 来源: 'Christian Rossow, "Amplification Hell: Revisiting Network Protocols for DDoS Abuse", NDSS 2014'
 日期: 2026-06-01
 子分类: 网络协议

@@ -1,5 +1,5 @@
 ---
-title: sled — Rust 现代 BTree + LSM 混合嵌入式 KV
+title: "sled — Rust 现代 BTree + LSM 混合嵌入式 KV"
 来源: https://github.com/spacejam/sled
 日期: 2026-06-01
 子分类: 存储与查询

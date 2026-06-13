@@ -1,5 +1,5 @@
 ---
-title: Do Language Models Track Entities Across State Changes? — 零基础学习笔记
+title: "Do Language Models Track Entities Across State Changes? — 零基础学习笔记"
 来源: https://arxiv.org/abs/2605.30233
 日期: 2026-06-13
 分类: 机器学习

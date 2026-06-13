@@ -1,5 +1,5 @@
 ---
-title: UniTime — 生成式 MLLM 做通用视频时序定位
+title: "UniTime — 生成式 MLLM 做通用视频时序定位"
 来源: 'Li et al., "Universal Video Temporal Grounding with Generative Multi-modal Large Language Models", NeurIPS 2025'
 日期: 2026-06-05
 分类: 机器学习

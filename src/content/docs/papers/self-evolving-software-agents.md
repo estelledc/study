@@ -1,5 +1,5 @@
 ---
-title: BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码
+title: "BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码"
 来源: 'Marco Robol, Paolo Giorgini, "Self-Evolving Software Agents", arXiv:2604.27264, 2026'
 日期: 2026-06-01
 子分类: 智能体与 LLM

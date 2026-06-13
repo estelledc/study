@@ -1,5 +1,5 @@
 ---
-title: Sealed Secrets — 把加密后的 Secret 安全提交到 Git
+title: "Sealed Secrets — 把加密后的 Secret 安全提交到 Git"
 来源: https://github.com/bitnami-labs/sealed-secrets
 日期: 2026-06-01
 子分类: DevOps 与运维

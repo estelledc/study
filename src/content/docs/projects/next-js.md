@@ -1,5 +1,5 @@
 ---
-title: Next.js — React 全栈框架
+title: "Next.js — React 全栈框架"
 来源: https://github.com/vercel/next.js
 日期: 2026-05-29
 子分类: UI 框架 / 全栈
@@ -172,7 +172,6 @@ export default Page
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 - [[webpack]] —— webpack 模块打包
 - [[zod]] —— Zod — TypeScript-first schema 验证

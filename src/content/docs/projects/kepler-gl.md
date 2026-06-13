@@ -1,5 +1,5 @@
 ---
-title: kepler.gl — 拖拽式百万点 GIS 探索界面
+title: "kepler.gl — 拖拽式百万点 GIS 探索界面"
 来源: https://github.com/keplergl/kepler.gl
 日期: 2026-06-01
 子分类: 数据可视化

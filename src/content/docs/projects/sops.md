@@ -1,5 +1,5 @@
 ---
-title: SOPS — 让密码也能放心进 Git
+title: "SOPS — 让密码也能放心进 Git"
 来源: https://github.com/getsops/sops
 日期: 2026-06-01
 子分类: DevOps 与运维

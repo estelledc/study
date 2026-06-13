@@ -1,5 +1,5 @@
 ---
-title: SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
+title: "SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐"
 来源: 'Kang & McAuley, "Self-Attentive Sequential Recommendation", ICDM 2018'
 日期: 2026-05-31
 子分类: 检索与排序

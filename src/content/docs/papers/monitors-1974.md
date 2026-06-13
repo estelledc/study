@@ -1,5 +1,5 @@
 ---
-title: Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数
+title: "Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数"
 来源: 'C.A.R. Hoare, "Monitors: An Operating System Structuring Concept", CACM 17(10):549-557, 1974'
 日期: 2026-06-01
 子分类: 内核与虚拟化

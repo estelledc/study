@@ -1,5 +1,5 @@
 ---
-title: LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧
+title: "LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧"
 来源: 'Zhang et al., "LLaVA-Video: Video Instruction Tuning with Synthetic Data", arXiv 2410.02713'
 日期: 2026-06-05
 分类: 机器学习

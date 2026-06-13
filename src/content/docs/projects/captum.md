@@ -1,5 +1,5 @@
 ---
-title: Captum — 给 PyTorch 模型装上 X 光机
+title: "Captum — 给 PyTorch 模型装上 X 光机"
 来源: https://github.com/pytorch/captum
 日期: 2026-05-31
 子分类: 数据科学与 AI

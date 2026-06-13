@@ -1,5 +1,5 @@
 ---
-title: JupyterLab — 下一代 Jupyter IDE
+title: "JupyterLab — 下一代 Jupyter IDE"
 来源: https://github.com/jupyterlab/jupyterlab
 日期: 2026-06-13
 子分类: 编辑器与 IDE

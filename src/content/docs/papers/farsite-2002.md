@@ -1,5 +1,5 @@
 ---
-title: Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器
+title: "Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器"
 来源: Adya et al., "FARSITE — Federated, Available, and Reliable Storage for an Incompletely Trusted Environment", OSDI 2002
 日期: 2026-06-01
 子分类: 内核与虚拟化

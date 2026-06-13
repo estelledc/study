@@ -1,5 +1,5 @@
 ---
-title: NestedKV — 嵌套内存路由实现长上下文 KV Cache 压缩
+title: "NestedKV — 嵌套内存路由实现长上下文 KV Cache 压缩"
 来源: 'Chen et al., "NestedKV: Nested Memory Routing for Long-Context KV Cache Compression", arXiv:2605.26678, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

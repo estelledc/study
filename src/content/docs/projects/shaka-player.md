@@ -1,5 +1,5 @@
 ---
-title: Shaka Player — Google 自适应流媒体播放器
+title: "Shaka Player — Google 自适应流媒体播放器"
 来源: 'https://github.com/shaka-project/shaka-player'
 日期: 2026-06-06
 分类: 通信

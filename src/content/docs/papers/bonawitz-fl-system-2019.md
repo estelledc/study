@@ -1,5 +1,5 @@
 ---
-title: Bonawitz FL System 2019 — Google 工业级联邦学习系统设计
+title: "Bonawitz FL System 2019 — Google 工业级联邦学习系统设计"
 来源: 'Bonawitz et al., "Towards Federated Learning at Scale: System Design", MLSys 2019'
 日期: 2026-06-06
 分类: 安全与隐私

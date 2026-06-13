@@ -1,5 +1,5 @@
 ---
-title: Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
+title: "Soketi — 自己跑一台 Pusher，把实时通信费砍到零头"
 来源: 'https://github.com/soketi/soketi'
 日期: 2026-05-30
 子分类: Web 后端

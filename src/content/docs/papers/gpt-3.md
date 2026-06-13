@@ -1,5 +1,5 @@
 ---
-title: GPT-3 — Language Models are Few-Shot Learners
+title: "GPT-3 — Language Models are Few-Shot Learners"
 来源: 'Brown et al., "Language Models are Few-Shot Learners", NeurIPS 2020'
 日期: 2026-05-29
 子分类: NLP
@@ -155,6 +155,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO — Direct Preference Optimization
+- [[dqn]] —— DQN — Deep Q-Network
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[flashattention-2]] —— FlashAttention-2 — 更快的 Attention 与更好的并行

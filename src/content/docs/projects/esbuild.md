@@ -1,8 +1,8 @@
 ---
-title: esbuild — 用 Go 写的极速 JS bundler
+title: "esbuild — 用 Go 写的极速 JS bundler"
 来源: https://github.com/evanw/esbuild
 日期: 2026-05-29
-子分类: 构建工具
+子分类: frontend-frameworks
 分类: 编译器
 难度: 中级
 provenance: pipeline-v3
@@ -176,12 +176,12 @@ const svgInline: Plugin = {
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器
-- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[rolldown]] —— rolldown — 用 Rust 给 Vite 当统一引擎的打包器
 - [[rollup]] —— Rollup — ESM 优先的打包器
 - [[rspack]] —— rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
+- [[trunk]] —— Trunk — Rust WASM 零配置构建与打包工具
 - [[turbopack]] —— Turbopack — 把 bundler 重做成增量计算应用
 - [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
 - [[vite]] —— Vite — 浏览器自己加载源码的构建工具

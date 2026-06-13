@@ -1,5 +1,5 @@
 ---
-title: SILO — 多核内存数据库的快速事务
+title: "SILO — 多核内存数据库的快速事务"
 来源: https://www.cs.cmu.edu/~pavlo/courses/fall2013/static/papers/silo.pdf
 日期: 2026-06-13
 子分类: 存储与查询

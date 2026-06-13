@@ -1,5 +1,5 @@
 ---
-title: KiCad — 电子电路 CAD
+title: "KiCad — 电子电路 CAD"
 来源: https://github.com/KiCad/kicad-source-mirror
 日期: 2026-06-13
 分类: 图形学

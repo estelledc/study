@@ -1,5 +1,5 @@
 ---
-title: Longhorn — K8s 原生的轻量分布式块存储
+title: "Longhorn — K8s 原生的轻量分布式块存储"
 来源: https://github.com/longhorn/longhorn
 日期: 2026-06-01
 子分类: DevOps 与运维

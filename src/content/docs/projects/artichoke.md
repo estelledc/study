@@ -1,5 +1,5 @@
 ---
-title: Artichoke — 用 Rust 写的 Ruby 实现
+title: "Artichoke — 用 Rust 写的 Ruby 实现"
 来源: https://github.com/artichoke/artichoke
 日期: 2026-06-13
 分类: 编译器

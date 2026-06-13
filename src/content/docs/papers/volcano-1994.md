@@ -1,5 +1,5 @@
 ---
-title: Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
+title: "Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流"
 来源: 'Goetz Graefe, "Volcano—An Extensible and Parallel Query Evaluation System", IEEE TKDE 6(1) 1994'
 日期: 2026-05-30
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序
+title: "Tomasulo 算法 — 让 CPU 自己决定指令的执行顺序"
 来源: 'Tomasulo, R. M., An Efficient Algorithm for Exploiting Multiple Arithmetic Units, IBM Journal of Research and Development, Vol. 11 No. 1, Jan 1967'
 日期: 2026-05-31
 子分类: GPU 架构

@@ -1,5 +1,5 @@
 ---
-title: Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
+title: "Earthly — 把 Make 和 Dockerfile 揉一起的构建工具"
 来源: https://github.com/earthly/earthly
 日期: 2026-05-31
 子分类: 命令行工具

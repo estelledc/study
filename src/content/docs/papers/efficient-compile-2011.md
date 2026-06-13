@@ -1,5 +1,5 @@
 ---
-title: Efficiently Compiling Efficient Query Plans for Modern Hardware — 面向现代 CPU 的查询编译
+title: "Efficiently Compiling Efficient Query Plans for Modern Hardware — 面向现代 CPU 的查询编译"
 来源: https://www.vldb.org/pvldb/vol4/p539-neumann.pdf
 日期: 2026-06-13
 分类: 数据库

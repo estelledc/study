@@ -1,5 +1,5 @@
 ---
-title: Windmill — 把脚本变成 API、工作流和 UI 的开发平台
+title: "Windmill — 把脚本变成 API、工作流和 UI 的开发平台"
 来源: https://github.com/windmill-labs/windmill
 日期: 2026-06-13
 分类: 基础设施

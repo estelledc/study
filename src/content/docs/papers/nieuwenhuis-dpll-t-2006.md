@@ -1,5 +1,5 @@
 ---
-title: Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书
+title: "Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书"
 来源: 'Nieuwenhuis, Oliveras & Tinelli, "Solving SAT and SAT Modulo Theories: From an Abstract Davis-Putnam-Logemann-Loveland Procedure to DPLL(T)", JACM 2006'
 日期: 2026-05-30
 子分类: 形式化验证

@@ -1,5 +1,5 @@
 ---
-title: Hyperkernel — 让 SMT 求解器一键验证操作系统内核
+title: "Hyperkernel — 让 SMT 求解器一键验证操作系统内核"
 来源: 'Nelson, Sigurbjarnarson, Zhang, Johnson, Bornholt, Bornholt, Torlak, Wang, "Hyperkernel: Push-Button Verification of an OS Kernel", SOSP 2017'
 日期: 2026-05-31
 子分类: 形式化验证

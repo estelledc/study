@@ -1,5 +1,5 @@
 ---
-title: Bijou64 — 结构式规范化的变长整数编码
+title: "Bijou64 — 结构式规范化的变长整数编码"
 来源: 'Brooklyn Zelenka / Ink & Switch, "Bijou64: A variable-length integer encoding", tangent 文章 + bijou64/SPEC.md (Subduction CRDT 同步协议), 2026'
 日期: 2026-06-13
 子分类: 类型与 PL 理论

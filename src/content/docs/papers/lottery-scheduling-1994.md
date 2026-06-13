@@ -1,5 +1,5 @@
 ---
-title: Lottery Scheduling 1994 — 用「彩票」做按比例公平分配 CPU
+title: "Lottery Scheduling 1994 — 用「彩票」做按比例公平分配 CPU"
 来源: https://www.usenix.org/legacy/publications/library/proceedings/osdi/full_papers/waldspurger.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化

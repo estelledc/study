@@ -1,5 +1,5 @@
 ---
-title: HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
+title: "HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手"
 来源: 'Harrison, "HOL Light: An Overview", TPHOLs 2009'
 日期: 2026-05-30
 子分类: 形式化验证
@@ -161,7 +161,6 @@ No subgoals
 - [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[nuprl-1986]] —— Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手
 - [[vamp-verisoft-2006]] —— VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集

@@ -1,5 +1,5 @@
 ---
-title: Apache Zeppelin — JVM 多语言笔记本
+title: "Apache Zeppelin — JVM 多语言笔记本"
 来源: https://github.com/apache/zeppelin
 日期: 2026-06-13
 子分类: 编辑器与 IDE

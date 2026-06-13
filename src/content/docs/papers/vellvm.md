@@ -1,5 +1,5 @@
 ---
-title: Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义
+title: "Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义"
 来源: 'Zhao, Nagarakatte, Martin, Zdancewic, "Formalizing the LLVM Intermediate Representation for Verified Program Transformations", POPL 2012'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

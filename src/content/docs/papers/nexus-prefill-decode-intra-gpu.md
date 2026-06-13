@@ -1,5 +1,5 @@
 ---
-title: Nexus — 单 GPU 内主动式 Prefill/Decode 分离
+title: "Nexus — 单 GPU 内主动式 Prefill/Decode 分离"
 来源: https://arxiv.org/abs/2507.06608
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: CosmWasm — Cosmos 上的 wasm 智能合约
+title: "CosmWasm — Cosmos 上的 wasm 智能合约"
 来源: 'https://github.com/CosmWasm/cosmwasm'
 日期: 2026-05-30
 子分类: 链与合约

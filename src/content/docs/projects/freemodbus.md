@@ -1,5 +1,5 @@
 ---
-title: FreeModbus — 嵌入式 Modbus RTU/TCP 从机协议栈
+title: "FreeModbus — 嵌入式 Modbus RTU/TCP 从机协议栈"
 来源: 'https://github.com/cwalter-at/freemodbus'
 日期: 2026-06-06
 分类: 操作系统

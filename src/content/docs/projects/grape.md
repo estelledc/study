@@ -1,5 +1,5 @@
 ---
-title: Grape — 用 Ruby DSL 专写 REST API 的轻量框架
+title: "Grape — 用 Ruby DSL 专写 REST API 的轻量框架"
 来源: 'https://github.com/ruby-grape/grape'
 日期: 2026-05-30
 子分类: Web 后端

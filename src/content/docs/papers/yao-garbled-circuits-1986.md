@@ -1,5 +1,5 @@
 ---
-title: Yao 混淆电路 — 让两人合算函数却互不泄密
+title: "Yao 混淆电路 — 让两人合算函数却互不泄密"
 来源: 'Andrew C. Yao, "How to Generate and Exchange Secrets", FOCS 1986'
 日期: 2026-06-06
 分类: 安全与隐私

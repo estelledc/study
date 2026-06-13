@@ -1,5 +1,5 @@
 ---
-title: VidSTG — 用自然语言在长视频里框出「谁在何时何地」
+title: "VidSTG — 用自然语言在长视频里框出「谁在何时何地」"
 来源: 'Zhang et al., "Where Does It Exist: Spatio-Temporal Video Grounding for Multi-Form Sentences", CVPR 2020'
 日期: 2026-06-05
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: Piskel — Web 像素艺术编辑器
+title: "Piskel — Web 像素艺术编辑器"
 来源: 'https://github.com/piskelapp/piskel'
 日期: 2026-06-13
 子分类: 渲染与图形

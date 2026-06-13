@@ -1,5 +1,5 @@
 ---
-title: GreptimeDB — 云原生时序数据库
+title: "GreptimeDB — 云原生时序数据库"
 来源: https://github.com/GreptimeTeam/greptimedb
 日期: 2026-06-13
 分类: 数据库

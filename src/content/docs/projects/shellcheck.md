@@ -1,5 +1,5 @@
 ---
-title: ShellCheck — shell 脚本的静态体检医生
+title: "ShellCheck — shell 脚本的静态体检医生"
 来源: https://github.com/koalaman/shellcheck
 日期: 2026-05-31
 子分类: 命令行工具

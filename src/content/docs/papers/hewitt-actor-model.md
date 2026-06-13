@@ -1,5 +1,5 @@
 ---
-title: Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
+title: "Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒"
 来源: 'Hewitt, Bishop, Steiger. "A Universal Modular ACTOR Formalism for Artificial Intelligence", IJCAI 1973'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

@@ -1,5 +1,5 @@
 ---
-title: CesiumJS — 浏览器里的三维地球与时间动画
+title: "CesiumJS — 浏览器里的三维地球与时间动画"
 来源: 'https://github.com/CesiumGS/cesium'
 日期: 2026-05-31
 子分类: 前端框架

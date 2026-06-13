@@ -1,5 +1,5 @@
 ---
-title: wazero — 纯 Go 实现的 WebAssembly 运行时
+title: "wazero — 纯 Go 实现的 WebAssembly 运行时"
 description: 零依赖、无 CGO 的 Wasm 嵌入运行时，支持 Compiler/Interpreter 双引擎与 WASI
 来源: 'https://github.com/tetratelabs/wazero'
 日期: 2026-06-13

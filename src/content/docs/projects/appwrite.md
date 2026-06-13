@@ -1,5 +1,5 @@
 ---
-title: Appwrite — 自己能装一遍的开源 Firebase
+title: "Appwrite — 自己能装一遍的开源 Firebase"
 来源: 'https://github.com/appwrite/appwrite'
 日期: 2026-05-30
 子分类: Web 后端

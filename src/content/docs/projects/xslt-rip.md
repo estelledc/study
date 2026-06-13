@@ -1,5 +1,5 @@
 ---
-title: XSLT RIP — Google 要杀死一个 Web 标准
+title: "XSLT RIP — Google 要杀死一个 Web 标准"
 来源: https://xslt.rip/
 日期: 2026-06-13
 分类: 其他

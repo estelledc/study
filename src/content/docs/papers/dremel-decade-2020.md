@@ -1,5 +1,5 @@
 ---
-title: Dremel 十年回顾 — Web 规模交互式 SQL 分析如何演化为 BigQuery
+title: "Dremel 十年回顾 — Web 规模交互式 SQL 分析如何演化为 BigQuery"
 来源: https://research.google/pubs/dremel-a-decade-of-interactive-sql-analysis-at-web-scale/
 日期: 2026-06-13
 子分类: 存储与查询

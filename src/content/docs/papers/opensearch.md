@@ -1,5 +1,5 @@
 ---
-title: OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
+title: "OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉"
 来源: AWS 公告 2021-04-12 "Stepping up for a truly open source Elasticsearch"
 日期: 2026-06-01
 子分类: 基础设施

@@ -1,5 +1,5 @@
 ---
-title: dash.js — 浏览器 MPEG-DASH 参考播放器
+title: "dash.js — 浏览器 MPEG-DASH 参考播放器"
 来源: 'https://github.com/Dash-Industry-Forum/dash.js'
 日期: 2026-06-06
 分类: 通信

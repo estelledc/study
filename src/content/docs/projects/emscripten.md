@@ -1,5 +1,5 @@
 ---
-title: Emscripten — LLVM 到 WebAssembly 编译器
+title: "Emscripten — LLVM 到 WebAssembly 编译器"
 来源: https://github.com/emscripten-core/emscripten
 日期: 2026-06-13
 分类: 编译器

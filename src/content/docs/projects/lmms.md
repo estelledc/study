@@ -1,5 +1,5 @@
 ---
-title: LMMS — Linux 多媒体工作站
+title: "LMMS — Linux 多媒体工作站"
 description: Linux 多媒体工作站，节拍机、钢琴卷帘与软合成器
 来源: 'https://github.com/LMMS/lmms'
 日期: 2026-06-06

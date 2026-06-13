@@ -1,5 +1,5 @@
 ---
-title: Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动
+title: "Soufflé — 把 Datalog 编译成 C++ 让程序分析跑得动"
 来源: Scholz, Jordan, Subotić, Westmann, "On Fast Large-Scale Program Analysis in Datalog", CC 2016
 日期: 2026-05-30
 子分类: 类型与 PL 理论

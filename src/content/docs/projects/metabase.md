@@ -1,5 +1,5 @@
 ---
-title: Metabase — 让非技术人查数
+title: "Metabase — 让非技术人查数"
 来源: https://github.com/metabase/metabase
 日期: 2026-06-01
 子分类: 数据可视化

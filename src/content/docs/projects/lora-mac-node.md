@@ -1,5 +1,5 @@
 ---
-title: LoRaMac-node — LoRaWAN 终端协议栈参考实现零基础学习笔记
+title: "LoRaMac-node — LoRaWAN 终端协议栈参考实现零基础学习笔记"
 来源: 'https://github.com/Lora-net/LoRaMac-node'
 日期: 2026-06-13
 子分类: 嵌入式

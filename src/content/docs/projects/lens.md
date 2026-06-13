@@ -1,5 +1,5 @@
 ---
-title: Lens — Kubernetes 集群的桌面 IDE
+title: "Lens — Kubernetes 集群的桌面 IDE"
 来源: lensapp/lens GitHub README
 日期: 2026-06-01
 子分类: DevOps 与运维

@@ -1,5 +1,5 @@
 ---
-title: Cook 1986 — 用噪声换掉锯齿
+title: "Cook 1986 — 用噪声换掉锯齿"
 来源: Cook, "Stochastic Sampling in Computer Graphics", ACM TOG 1986
 日期: 2026-05-31
 子分类: 渲染与图形

@@ -1,5 +1,5 @@
 ---
-title: Bw-Tree — 面向新硬件的无锁 B 树索引
+title: "Bw-Tree — 面向新硬件的无锁 B 树索引"
 来源: 'Levandoski, Lomet & Sengupta, "The Bw-Tree: A B-tree for New Hardware Platforms", ICDE 2013'
 日期: 2026-06-13
 子分类: 存储与查询

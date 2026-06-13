@@ -1,5 +1,5 @@
 ---
-title: cert-manager — K8s 自动签发与续期 TLS 证书
+title: "cert-manager — K8s 自动签发与续期 TLS 证书"
 来源: https://github.com/cert-manager/cert-manager
 日期: 2026-06-01
 子分类: DevOps 与运维
@@ -160,7 +160,6 @@ cert-manager 看到 annotation，自动建 Certificate → 找 ClusterIssuer →
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[chaos-mesh]] —— Chaos Mesh — K8s 原生混沌工程平台
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[sealed-secrets]] —— Sealed Secrets — 把加密后的 Secret 安全提交到 Git
 - [[velero]] —— Velero — Kubernetes 集群备份与迁移
 

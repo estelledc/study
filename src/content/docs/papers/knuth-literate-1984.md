@@ -1,5 +1,5 @@
 ---
-title: Literate Programming — Knuth 1984 文学化编程与 WEB 系统
+title: "Literate Programming — Knuth 1984 文学化编程与 WEB 系统"
 来源: http://www.literateprogramming.com/knuthweb.pdf
 日期: 2026-06-13
 分类: 其他

@@ -1,5 +1,5 @@
 ---
-title: Position Based Dynamics — 跳过力，直接挪位置
+title: "Position Based Dynamics — 跳过力，直接挪位置"
 来源: 'Müller, Heidelberger, Hennix, Ratcliff, "Position Based Dynamics", J. Visual Communication and Image Representation, 2007'
 日期: 2026-05-31
 子分类: 渲染与图形

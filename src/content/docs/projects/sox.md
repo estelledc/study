@@ -1,5 +1,5 @@
 ---
-title: SoX — 命令行音频处理瑞士军刀
+title: "SoX — 命令行音频处理瑞士军刀"
 来源: 'https://github.com/chirlu/sox'
 日期: 2026-06-06
 分类: 通信

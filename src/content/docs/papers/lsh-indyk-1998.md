@@ -1,5 +1,5 @@
 ---
-title: LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性
+title: "LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性"
 来源: 'Indyk & Motwani, "Approximate Nearest Neighbors: Towards Removing the Curse of Dimensionality", STOC 1998'
 日期: 2026-05-31
 子分类: 检索与排序

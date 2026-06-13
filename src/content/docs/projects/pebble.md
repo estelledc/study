@@ -1,5 +1,5 @@
 ---
-title: Pebble — CockroachDB 自研 LSM
+title: "Pebble — CockroachDB 自研 LSM"
 来源: https://github.com/cockroachdb/pebble
 日期: 2026-06-01
 子分类: 存储与查询

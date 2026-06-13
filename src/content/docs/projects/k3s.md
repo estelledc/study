@@ -1,5 +1,5 @@
 ---
-title: k3s — 把完整 K8s 塞进一个 60 MB 的二进制
+title: "k3s — 把完整 K8s 塞进一个 60 MB 的二进制"
 来源: https://github.com/k3s-io/k3s
 日期: 2026-05-31
 子分类: DevOps 与运维

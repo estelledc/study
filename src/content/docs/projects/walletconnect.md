@@ -1,5 +1,5 @@
 ---
-title: WalletConnect — dApp 与钱包之间的加密对讲机
+title: "WalletConnect — dApp 与钱包之间的加密对讲机"
 来源: 'https://github.com/WalletConnect/walletconnect-monorepo'
 日期: 2026-05-30
 子分类: 链与合约

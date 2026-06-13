@@ -1,5 +1,5 @@
 ---
-title: Centrifugo — Go 写的开源实时消息服务器
+title: "Centrifugo — Go 写的开源实时消息服务器"
 来源: 'https://github.com/centrifugal/centrifugo'
 日期: 2026-05-30
 子分类: Web 后端

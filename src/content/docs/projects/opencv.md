@@ -1,5 +1,5 @@
 ---
-title: OpenCV — 开源计算机视觉库与跨平台图像视频处理
+title: "OpenCV — 开源计算机视觉库与跨平台图像视频处理"
 description: cv::Mat 核心数据结构；VideoCapture 读流、图像滤波、特征检测与 DNN 模块，多媒体与 ML 管线的经典 CV 底座
 来源: 'https://github.com/opencv/opencv'
 日期: 2026-06-05

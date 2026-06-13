@@ -1,5 +1,5 @@
 ---
-title: glTF Transform — glTF 资产工具链
+title: "glTF Transform — glTF 资产工具链"
 description: JavaScript/TypeScript 的 glTF 2.0 SDK，用 Document 图结构无损编辑 3D 模型，配套 CLI 与 functions 库做批量优化、压缩与管线自动化
 来源: 'https://github.com/donmccurdy/glTF-Transform'
 日期: 2026-06-13

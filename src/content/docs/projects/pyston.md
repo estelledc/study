@@ -1,5 +1,5 @@
 ---
-title: Pyston — 给 CPython 装上「快车道」的 JIT 加速器
+title: "Pyston — 给 CPython 装上「快车道」的 JIT 加速器"
 来源: 'pyston/pyston'
 日期: '2026-06-13'
 子分类: 语言运行时

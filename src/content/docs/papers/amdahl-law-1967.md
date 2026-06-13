@@ -1,8 +1,8 @@
 ---
-title: Amdahl 定律 — 串行比例决定并行加速比的上界
+title: "Amdahl 定律 — 串行比例决定并行加速比的上界"
 来源: Gene M. Amdahl, "Validity of the Single Processor Approach to Achieving Large Scale Computing Capabilities", AFIPS Conference Proceedings, vol. 30, pp. 483-485, 1967
 日期: 2026-05-31
-子分类: GPU 架构
+子分类: arch-hardware
 分类: 图形学
 难度: 中级
 provenance: pipeline-v3

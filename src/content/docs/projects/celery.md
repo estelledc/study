@@ -1,5 +1,5 @@
 ---
-title: Celery — Python 把慢任务搬到后台干的工头
+title: "Celery — Python 把慢任务搬到后台干的工头"
 来源: 'https://github.com/celery/celery'
 日期: 2026-05-30
 子分类: Web 后端

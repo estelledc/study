@@ -1,5 +1,5 @@
 ---
-title: SELinux 2001 — 给每扇门都装上门卫，而不是给管理员一把万能钥匙
+title: "SELinux 2001 — 给每扇门都装上门卫，而不是给管理员一把万能钥匙"
 来源: 'Peter Loscocco & Stephen Smalley, "Integrating Flexible Support for Security Policies into the Linux Operating System", USENIX ATC 2001'
 日期: 2026-06-06
 分类: 操作系统

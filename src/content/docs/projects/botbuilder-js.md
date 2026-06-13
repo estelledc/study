@@ -1,5 +1,5 @@
 ---
-title: Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象
+title: "Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象"
 来源: microsoft/botbuilder-js GitHub 仓库（MIT，最后版本 v4.23.3 2025-09，2026-01 archived）
 日期: 2026-05-31
 子分类: 实时通信

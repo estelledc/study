@@ -1,5 +1,5 @@
 ---
-title: NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒
+title: "NTP 1991 — 用四个时间戳和一棵服务器树，让全互联网的钟差几毫秒"
 来源: 'David L. Mills, "Internet Time Synchronization: The Network Time Protocol", IEEE Transactions on Communications 39(10), 1991'
 日期: 2026-05-31
 子分类: 网络协议

@@ -1,10 +1,10 @@
 ---
-title: Audacity — 开源音频编辑器
+title: "Audacity — 开源音频编辑器"
 description: 跨平台开源音频编辑器，多轨录音、效果链与插件生态
 来源: 'https://github.com/audacity/audacity'
 日期: 2026-06-06
 分类: 通信
-子分类: 音视频媒体
+子分类: audio-video-processing
 难度: 中级
 provenance: pipeline-v3
 ---

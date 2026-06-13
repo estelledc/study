@@ -1,5 +1,5 @@
 ---
-title: NodeGUI — Qt6 驱动的零 WebView 桌面框架
+title: "NodeGUI — Qt6 驱动的零 WebView 桌面框架"
 来源: 'https://github.com/nodegui/nodegui'
 日期: 2026-06-06
 分类: 后端 API

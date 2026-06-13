@@ -1,5 +1,5 @@
 ---
-title: gh — GitHub 官方命令行
+title: "gh — GitHub 官方命令行"
 来源: https://github.com/cli/cli
 日期: 2026-05-31
 子分类: 命令行工具

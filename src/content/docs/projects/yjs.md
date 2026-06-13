@@ -1,5 +1,5 @@
 ---
-title: Yjs — 让任何编辑器都能接的协同编辑内核
+title: "Yjs — 让任何编辑器都能接的协同编辑内核"
 来源: 'https://github.com/yjs/yjs'
 日期: 2026-05-30
 子分类: 协同编辑
@@ -165,6 +165,7 @@ notes.set('note-1', { title: '...', body: '...' })
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[partykit]] —— PartyKit — Cloudflare Durable Objects 上的实时协作 framework
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议

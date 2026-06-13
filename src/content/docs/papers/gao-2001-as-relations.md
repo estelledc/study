@@ -1,5 +1,5 @@
 ---
-title: Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
+title: "Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱"
 来源: Lixin Gao, "On Inferring Autonomous System Relationships in the Internet", IEEE/ACM Transactions on Networking, Dec 2001
 日期: 2026-06-01
 子分类: 网络协议

@@ -1,5 +1,5 @@
 ---
-title: Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型
+title: "Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型"
 来源: Curless & Levoy, "A Volumetric Method for Building Complex Models from Range Images", SIGGRAPH 1996
 日期: 2026-05-31
 子分类: 渲染与图形

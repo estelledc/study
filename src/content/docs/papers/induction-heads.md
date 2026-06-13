@@ -1,5 +1,5 @@
 ---
-title: Induction Heads — Transformer 的 in-context learning 引擎
+title: "Induction Heads — Transformer 的 in-context learning 引擎"
 来源: 'Olsson et al., "In-context Learning and Induction Heads", Anthropic 2022'
 日期: 2026-05-29
 子分类: AI 可解释性

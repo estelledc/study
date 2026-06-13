@@ -1,8 +1,8 @@
 ---
-title: Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事
+title: "Quantum Supremacy 2019 — 量子机用 200 秒做完超算 1 万年的事"
 来源: Arute et al., "Quantum Supremacy Using a Programmable Superconducting Processor", Nature 574, 505-510, 2019
 日期: 2026-05-31
-子分类: GPU 架构
+子分类: quantum
 分类: 图形学
 难度: 高级
 provenance: pipeline-v3

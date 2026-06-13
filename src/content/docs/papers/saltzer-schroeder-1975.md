@@ -1,5 +1,5 @@
 ---
-title: Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则
+title: "Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则"
 来源: Saltzer & Schroeder, "The Protection of Information in Computer Systems", Proceedings of the IEEE, Sept 1975
 日期: 2026-06-01
 子分类: 内核与虚拟化

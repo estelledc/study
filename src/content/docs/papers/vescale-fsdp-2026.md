@@ -1,5 +1,5 @@
 ---
-title: veScale-FSDP — 灵活且高性能的大规模 FSDP
+title: "veScale-FSDP — 灵活且高性能的大规模 FSDP"
 来源: https://arxiv.org/abs/2602.22437
 日期: 2026-06-13
 子分类: ML 系统

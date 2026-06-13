@@ -1,5 +1,5 @@
 ---
-title: Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
+title: "Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式"
 来源: 'Goetz Graefe, Volcano 系统系列工作 1989-1994（博士论文 + IEEE TKDE 1994 期刊版）'
 日期: 2026-05-30
 子分类: 数据库
@@ -163,6 +163,7 @@ Apache Flink 的 source / transform / sink 算子链 = Volcano 的算子树；Fl
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[polars]] —— Polars — Rust 写的列存 DataFrame
 - [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[snmalloc-2019]] —— snmalloc(2019) — 把释放内存变成寄快递
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

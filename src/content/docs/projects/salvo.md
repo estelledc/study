@@ -1,5 +1,5 @@
 ---
-title: Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
+title: "Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架"
 来源: 'https://github.com/salvo-rs/salvo'
 日期: 2026-05-30
 子分类: Web 后端

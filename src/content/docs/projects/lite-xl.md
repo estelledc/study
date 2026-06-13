@@ -1,5 +1,5 @@
 ---
-title: Lite XL — 用 Lua 驱动一切的极简文本编辑器
+title: "Lite XL — 用 Lua 驱动一切的极简文本编辑器"
 来源: 'https://github.com/lite-xl/lite-xl'
 日期: 2026-06-06
 分类: CLI

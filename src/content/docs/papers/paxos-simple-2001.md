@@ -1,5 +1,5 @@
 ---
-title: Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍
+title: "Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍"
 来源: 'Leslie Lamport, "Paxos Made Simple", ACM SIGACT News 2001'
 日期: 2026-05-30
 子分类: 存储与查询

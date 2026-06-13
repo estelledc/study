@@ -1,5 +1,5 @@
 ---
-title: Firecracker — 为 Serverless 量身定制的轻量虚拟化
+title: "Firecracker — 为 Serverless 量身定制的轻量虚拟化"
 来源: https://www.usenix.org/system/files/nsdi20-paper-agache.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化
@@ -335,4 +335,8 @@ vsock 不经过虚拟网卡栈，延迟更低，也减少「从网络面打进 m
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[chaos-engineering-netflix-2016]] —— Chaos Engineering — Netflix 如何把「故意搞破坏」变成可靠性学科
+- [[denali-2002]] —— Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验
+- [[firecracker-2020]] —— Firecracker 2020 — 给 serverless 量身定做的极简 microVM
+- [[kvm-2007]] —— KVM 2007 — 把 Linux 内核本身变成 hypervisor
+- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

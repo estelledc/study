@@ -1,5 +1,5 @@
 ---
-title: DeRemer LALR(1) — 把 LR 表压到能用大小
+title: "DeRemer LALR(1) — 把 LR 表压到能用大小"
 来源: DeRemer, "Practical Translators for LR(k) Languages", MIT PhD Thesis, 1969
 日期: 2026-05-30
 子分类: 类型与 PL 理论

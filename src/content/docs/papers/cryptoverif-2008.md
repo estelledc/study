@@ -1,5 +1,5 @@
 ---
-title: CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
+title: "CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全"
 来源: Bruno Blanchet, "A Computationally Sound Mechanized Prover for Security Protocols", FOSAD 2008
 日期: 2026-05-31
 子分类: 形式化验证

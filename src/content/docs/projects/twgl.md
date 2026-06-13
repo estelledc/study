@@ -1,5 +1,5 @@
 ---
-title: twgl.js — 把 WebGL 样板代码压成几行 helper 的微型工具库
+title: "twgl.js — 把 WebGL 样板代码压成几行 helper 的微型工具库"
 来源: greggman/twgl.js
 日期: 2026-06-13
 子分类: 渲染与图形

@@ -1,5 +1,5 @@
 ---
-title: Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
+title: "Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架"
 来源: 'https://github.com/actix/actix-web'
 日期: 2026-05-30
 子分类: Web 后端

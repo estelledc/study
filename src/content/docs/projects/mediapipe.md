@@ -1,5 +1,5 @@
 ---
-title: MediaPipe — Google ML 多模态流水线
+title: "MediaPipe — Google ML 多模态流水线"
 description: Google 端侧 ML 流水线：姿态、手势、人脸等 Graph 计算
 来源: 'https://github.com/google-ai-edge/mediapipe'
 日期: 2026-06-06

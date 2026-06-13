@@ -1,5 +1,5 @@
 ---
-title: SSA — 静态单赋值形式
+title: "SSA — 静态单赋值形式"
 来源: 'Cytron et al., "Efficiently Computing Static Single Assignment Form and the Control Dependence Graph", TOPLAS 1991'
 日期: 2026-05-29
 子分类: 编译器
@@ -182,7 +182,6 @@ entry:
 
 - [[a3c-2016]] —— A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
-- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
@@ -198,7 +197,6 @@ entry:
 - [[fpga-hls-2011]] —— FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[jax]] —— JAX — Google 函数式数值计算

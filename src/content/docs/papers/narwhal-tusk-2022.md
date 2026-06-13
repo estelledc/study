@@ -1,5 +1,5 @@
 ---
-title: Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事
+title: "Narwhal & Tusk — 把 BFT 共识拆成『谁说过』和『谁先说』两件事"
 来源: 'Danezis et al., "Narwhal and Tusk: A DAG-based Mempool and Efficient BFT Consensus", EuroSys 2022'
 日期: 2026-05-31
 子分类: 共识与复制

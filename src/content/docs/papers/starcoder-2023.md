@@ -1,5 +1,5 @@
 ---
-title: StarCoder — 把训练数据完整公开的 15B 代码模型
+title: "StarCoder — 把训练数据完整公开的 15B 代码模型"
 来源: 'Li et al. (BigCode), "StarCoder: may the source be with you!", arXiv:2305.06161 (2023)'
 日期: 2026-06-01
 子分类: 模型与训练

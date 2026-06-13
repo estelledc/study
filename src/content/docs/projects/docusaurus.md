@@ -1,5 +1,5 @@
 ---
-title: Docusaurus — 一组 plugin 协作出来的文档站框架
+title: "Docusaurus — 一组 plugin 协作出来的文档站框架"
 来源: 'Meta Open Source, "Docusaurus: Easy to Maintain Open Source Documentation Websites", 2017–2026'
 日期: 2026-05-29
 子分类: 文档工具
@@ -153,7 +153,6 @@ npm run docusaurus docs:version 1.0
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[gimp]] —— GIMP — GNU 图像处理程序
 - [[inkscape]] —— Inkscape — 矢量图形编辑器
-- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架

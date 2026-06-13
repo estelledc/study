@@ -1,5 +1,5 @@
 ---
-title: Framer Motion — React 声明式动画
+title: "Framer Motion — React 声明式动画"
 来源: https://github.com/framer/motion
 日期: 2026-05-29
 子分类: 动画
@@ -163,6 +163,7 @@ function Drawer({ isOpen }) {
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[lerna]] —— lerna — 一个仓库发几十个 npm 包的祖宗工具
+- [[lottie]] —— Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[next-js]] —— Next.js — React 全栈框架
 - [[react]] —— React UI 组件库

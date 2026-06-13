@@ -1,5 +1,5 @@
 ---
-title: Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
+title: "Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数"
 来源: 'https://github.com/elixir-plug/plug'
 日期: 2026-05-30
 子分类: Web 后端

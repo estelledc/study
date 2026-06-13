@@ -1,5 +1,5 @@
 ---
-title: ccusage — 本地 Coding CLI 用量与成本「账单解析器」
+title: "ccusage — 本地 Coding CLI 用量与成本「账单解析器」"
 来源: 'ryoppippi, "ccusage", https://github.com/ryoppippi/ccusage'
 日期: 2026-06-13
 子分类: 命令行工具

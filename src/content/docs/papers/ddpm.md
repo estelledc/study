@@ -1,5 +1,5 @@
 ---
-title: DDPM — Denoising Diffusion Probabilistic Models
+title: "DDPM — Denoising Diffusion Probabilistic Models"
 来源: 'Ho et al., "Denoising Diffusion Probabilistic Models", NeurIPS 2020'
 日期: 2026-05-29
 子分类: 生成模型

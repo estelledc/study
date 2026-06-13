@@ -1,5 +1,5 @@
 ---
-title: Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
+title: "Spin — 用 WebAssembly 模块当 serverless handler 的开源框架"
 来源: 'https://github.com/spinframework/spin'
 日期: 2026-05-30
 子分类: Web 后端

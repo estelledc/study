@@ -1,5 +1,5 @@
 ---
-title: Haven — 把整个应用装进 CPU 黑盒，让云服务商也看不见
+title: "Haven — 把整个应用装进 CPU 黑盒，让云服务商也看不见"
 来源: 'Andrew Baumann, Marcus Peinado, Galen Hunt. "Shielding Applications from an Untrusted Cloud with Haven". OSDI 2014'
 日期: 2026-06-06
 分类: 操作系统

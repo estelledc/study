@@ -1,5 +1,5 @@
 ---
-title: On Rendering Diffs — 零空白 Diff 渲染技术详解
+title: "On Rendering Diffs — 零空白 Diff 渲染技术详解"
 来源: https://pierre.computer/writing/on-rendering-diffs
 日期: 2026-06-13
 分类: 数据可视化

@@ -1,5 +1,5 @@
 ---
-title: dlib — C++ 机器学习 / CV 工具箱
+title: "dlib — C++ 机器学习 / CV 工具箱"
 description: C++ ML/CV 工具箱，人脸 landmark、SVM、跟踪
 来源: 'https://github.com/davisking/dlib'
 日期: 2026-06-06

@@ -1,5 +1,5 @@
 ---
-title: RoBERTa — 把 BERT 重训一遍就能拿 SOTA
+title: "RoBERTa — 把 BERT 重训一遍就能拿 SOTA"
 来源: 'Liu et al., "RoBERTa: A Robustly Optimized BERT Pretraining Approach", arXiv:1907.11692, 2019'
 日期: 2026-05-31
 子分类: 模型与训练

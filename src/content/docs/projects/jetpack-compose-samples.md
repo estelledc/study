@@ -1,5 +1,5 @@
 ---
-title: Jetpack Compose Samples — Google 官方 Compose 样例博物馆
+title: "Jetpack Compose Samples — Google 官方 Compose 样例博物馆"
 来源: https://github.com/android/compose-samples
 日期: 2026-06-13
 子分类: 移动端

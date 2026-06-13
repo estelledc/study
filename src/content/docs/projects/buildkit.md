@@ -1,5 +1,5 @@
 ---
-title: BuildKit — Docker 下一代镜像构建后端
+title: "BuildKit — Docker 下一代镜像构建后端"
 来源: https://github.com/moby/buildkit
 日期: 2026-06-01
 子分类: DevOps 与运维

@@ -1,5 +1,5 @@
 ---
-title: Pair Programming — 两个人共用一台机器写代码
+title: "Pair Programming — 两个人共用一台机器写代码"
 来源: 'Hannay, Dybå, Arisholm, Sjøberg. "The Effectiveness of Pair Programming: A Meta-Analysis". Information and Software Technology 51(7), 2009'
 日期: 2026-05-30
 子分类: 软件工程

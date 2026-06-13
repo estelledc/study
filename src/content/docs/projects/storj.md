@@ -1,5 +1,5 @@
 ---
-title: Storj — S3 兼容的去中心化对象存储
+title: "Storj — S3 兼容的去中心化对象存储"
 来源: 'https://github.com/storj/storj'
 日期: 2026-05-30
 子分类: 链与合约

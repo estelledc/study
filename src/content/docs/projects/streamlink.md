@@ -1,5 +1,5 @@
 ---
-title: Streamlink — 把网页直播流接到本地播放器
+title: "Streamlink — 把网页直播流接到本地播放器"
 来源: 'https://github.com/streamlink/streamlink'
 日期: 2026-06-06
 分类: 通信

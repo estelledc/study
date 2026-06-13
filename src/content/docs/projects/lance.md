@@ -1,5 +1,5 @@
 ---
-title: Lance — AI 数据列存格式
+title: "Lance — AI 数据列存格式"
 来源: https://github.com/lancedb/lance
 日期: 2026-06-01
 子分类: 存储与查询

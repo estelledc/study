@@ -1,5 +1,5 @@
 ---
-title: RLHF Christiano 2017 — 人类偏好做奖励
+title: "RLHF Christiano 2017 — 人类偏好做奖励"
 来源: 'Christiano et al., "Deep Reinforcement Learning from Human Preferences", NeurIPS 2017'
 日期: 2026-05-29
 子分类: 强化学习 / AI 安全

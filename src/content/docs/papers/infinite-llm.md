@@ -1,5 +1,5 @@
 ---
-title: Infinite-LLM — 把注意力层拆出去，让 GPU 集群一起扛长上下文
+title: "Infinite-LLM — 把注意力层拆出去，让 GPU 集群一起扛长上下文"
 来源: https://arxiv.org/abs/2401.02669
 日期: 2026-06-13
 分类: 分布式系统

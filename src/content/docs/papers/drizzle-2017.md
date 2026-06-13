@@ -1,5 +1,5 @@
 ---
-title: Drizzle — 让 micro-batch 也能跑出 100ms 延迟
+title: "Drizzle — 让 micro-batch 也能跑出 100ms 延迟"
 来源: 'Venkataraman et al., "Drizzle: Fast and Adaptable Stream Processing at Scale", SOSP 2017'
 日期: 2026-05-31
 子分类: 共识与复制

@@ -1,5 +1,5 @@
 ---
-title: Spectre Attacks — 推测执行如何绕过边界检查偷读内存
+title: "Spectre Attacks — 推测执行如何绕过边界检查偷读内存"
 来源: https://spectreattack.com/spectre.pdf
 日期: 2026-06-13
 分类: 安全与隐私

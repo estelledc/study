@@ -1,5 +1,5 @@
 ---
-title: Hints for Computer System Design — Butler Lampson 的系统设计箴言
+title: "Hints for Computer System Design — Butler Lampson 的系统设计箴言"
 来源: https://bwlampson.site/33-Hints/Acrobat.pdf
 日期: 2026-06-13
 分类: 其他

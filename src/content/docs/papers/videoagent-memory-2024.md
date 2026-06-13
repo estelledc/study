@@ -1,5 +1,5 @@
 ---
-title: VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini
+title: "VideoAgent（Fan）— 双记忆 + 四工具，长视频逼近 Gemini"
 来源: 'Fan et al., "VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding", ECCV 2024'
 日期: 2026-06-06
 分类: 机器学习

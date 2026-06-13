@@ -1,5 +1,5 @@
 ---
-title: JanusGraph — 可插拔后端的分布式图数据库
+title: "JanusGraph — 可插拔后端的分布式图数据库"
 来源: https://github.com/JanusGraph/janusgraph
 日期: 2026-06-01
 子分类: 存储与查询

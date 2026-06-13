@@ -1,5 +1,5 @@
 ---
-title: IPFS / Kubo — 按内容哈希定位的去中心化文件系统
+title: "IPFS / Kubo — 按内容哈希定位的去中心化文件系统"
 来源: 'https://github.com/ipfs/kubo'
 日期: 2026-05-30
 子分类: 链与合约

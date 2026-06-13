@@ -1,5 +1,5 @@
 ---
-title: LanceDB — 嵌入式向量库（进程内 + 对象存储）
+title: "LanceDB — 嵌入式向量库（进程内 + 对象存储）"
 来源: https://github.com/lancedb/lancedb
 日期: 2026-06-01
 子分类: 存储与查询

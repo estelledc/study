@@ -1,5 +1,5 @@
 ---
-title: OmniSTVG — 按句子把视频里所有相关物体都框出来
+title: "OmniSTVG — 按句子把视频里所有相关物体都框出来"
 来源: 'Yao et al., "OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding", arXiv 2025'
 日期: 2026-06-05
 分类: 机器学习

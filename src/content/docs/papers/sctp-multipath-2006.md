@@ -1,5 +1,5 @@
 ---
-title: CMT-SCTP 2006 — 让两条网络路径同时干活而不打架
+title: "CMT-SCTP 2006 — 让两条网络路径同时干活而不打架"
 来源: 'Iyengar, Amer & Stewart, "Concurrent Multipath Transfer Using SCTP Multihoming Over Independent End-to-End Paths", IEEE/ACM ToN 2006'
 日期: 2026-06-06
 分类: 网络协议

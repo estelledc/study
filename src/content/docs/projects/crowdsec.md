@@ -1,5 +1,5 @@
 ---
-title: CrowdSec — 从社区共享中学习如何保护服务器
+title: "CrowdSec — 从社区共享中学习如何保护服务器"
 来源: https://github.com/crowdsecurity/crowdsec
 日期: 2026-06-13
 分类: 安全与隐私

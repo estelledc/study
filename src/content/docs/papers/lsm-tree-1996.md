@@ -1,5 +1,5 @@
 ---
-title: LSM-Tree 1996 — 写优化存储引擎
+title: "LSM-Tree 1996 — 写优化存储引擎"
 来源: 'O''Neil et al., "The Log-Structured Merge-Tree (LSM-Tree)", Acta Informatica 1996'
 日期: 2026-05-29
 子分类: 存储与查询
@@ -146,6 +146,7 @@ client read key="foo"
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
 - [[badger]] —— Badger — Go 写的键值分离 LSM
+- [[bigtable-revisit-2024]] —— Bigtable 回顾 — 一个分布式数据库 18 年生产经验的全盘复盘
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
@@ -157,6 +158,7 @@ client read key="foo"
 - [[lmdb-2011]] —— LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
+- [[rocksdb-evolution-2021]] —— RocksDB 优先级演化 — 八年大规模存储引擎的工程决策复盘
 - [[silt-2011]] —— SILT — 0.7 字节内存索引一条记录的 flash 键值存储
 - [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
 - [[system-r-1976]] —— System R 1976 — 第一个跑起来的关系数据库

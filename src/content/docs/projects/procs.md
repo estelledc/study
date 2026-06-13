@@ -1,5 +1,5 @@
 ---
-title: procs — ps 的现代替代，彩色 + 树视图 + 多列搜索
+title: "procs — ps 的现代替代，彩色 + 树视图 + 多列搜索"
 来源: 'https://github.com/dalance/procs'
 日期: 2026-05-30
 子分类: 命令行工具

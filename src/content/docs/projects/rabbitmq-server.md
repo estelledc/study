@@ -1,5 +1,5 @@
 ---
-title: RabbitMQ — 用 Erlang 写的多协议消息总线
+title: "RabbitMQ — 用 Erlang 写的多协议消息总线"
 来源: https://github.com/rabbitmq/rabbitmq-server
 日期: 2026-06-01
 子分类: 存储与查询
@@ -159,7 +159,6 @@ ch.queue_declare(queue="payments",
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[emqx]] —— EMQX — 单集群千万连接的 MQTT 物联网消息总线
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
-- [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[mosquitto]] —— Eclipse Mosquitto — 轻量级 MQTT 消息代理，物联网的「社区广播站」
 - [[nats-server]] —— NATS Server — 极简云原生消息中间件
 - [[nsq]] —— NSQ — Go 写的去中心化消息队列

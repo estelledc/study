@@ -1,5 +1,5 @@
 ---
-title: The 10 Reasons Most Machine Learning Funds Fail — 金融机器学习十大失败原因
+title: "The 10 Reasons Most Machine Learning Funds Fail — 金融机器学习十大失败原因"
 来源: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3104816
 日期: 2026-06-13
 分类: 其他

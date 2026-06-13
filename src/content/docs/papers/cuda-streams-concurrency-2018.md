@@ -1,5 +1,5 @@
 ---
-title: CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
+title: "CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满"
 来源: "Wang et al., A Quantitative Study of GPU Concurrent Kernel Execution, IEEE 2018"
 日期: 2026-05-31
 子分类: GPU 架构

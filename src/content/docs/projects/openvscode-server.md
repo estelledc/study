@@ -1,5 +1,5 @@
 ---
-title: OpenVSCode Server — VS Code Server 上游
+title: "OpenVSCode Server — VS Code Server 上游"
 来源: 'https://github.com/gitpod-io/openvscode-server'
 日期: 2026-06-13
 子分类: 编辑器与 IDE

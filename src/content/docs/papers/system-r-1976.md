@@ -1,5 +1,5 @@
 ---
-title: System R 1976 — 第一个跑起来的关系数据库
+title: "System R 1976 — 第一个跑起来的关系数据库"
 来源: 'Astrahan et al., "System R: Relational Approach to Database Management", ACM TODS 1976'
 日期: 2026-05-29
 子分类: 存储与查询

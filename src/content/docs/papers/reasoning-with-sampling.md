@@ -1,5 +1,5 @@
 ---
-title: Reasoning with Sampling — 在「决策点」下刀，用熵引导推理采样
+title: "Reasoning with Sampling — 在「决策点」下刀，用熵引导推理采样"
 来源: https://arxiv.org/abs/2605.30327
 日期: 2026-06-13
 子分类: 模型与训练

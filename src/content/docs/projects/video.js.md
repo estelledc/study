@@ -1,5 +1,5 @@
 ---
-title: Video.js — Web 视频播放器框架
+title: "Video.js — Web 视频播放器框架"
 来源: 'https://github.com/videojs/video.js'
 日期: 2026-06-06
 分类: 通信

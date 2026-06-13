@@ -1,5 +1,5 @@
 ---
-title: 机器人世界模型综述 — 预测未来再动手
+title: "机器人世界模型综述 — 预测未来再动手"
 来源: 'Bohan Hou et al., "World Model for Robot Learning: A Comprehensive Survey", arXiv 2026'
 日期: 2026-06-05
 分类: 机器学习

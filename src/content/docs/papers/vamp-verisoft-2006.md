@@ -1,5 +1,5 @@
 ---
-title: VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集
+title: "VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集"
 来源: Beyer, Jacobi, Kröning, Leinenbach, Paul, "Putting It All Together — Formal Verification of the VAMP", Journal of Universal Computer Science 13(5), 2006
 日期: 2026-05-31
 子分类: 形式化验证

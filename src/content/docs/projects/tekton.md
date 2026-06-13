@@ -1,5 +1,5 @@
 ---
-title: Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
+title: "Tekton — 把 CI/CD 流水线当成 K8s 资源来声明"
 来源: https://github.com/tektoncd/pipeline
 日期: 2026-05-31
 子分类: DevOps 与运维

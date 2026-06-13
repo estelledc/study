@@ -1,5 +1,5 @@
 ---
-title: Openrsync — OpenBSD 团队的 rsync 实现
+title: "Openrsync — OpenBSD 团队的 rsync 实现"
 来源: https://github.com/kristapsdz/openrsync
 日期: 2026-06-13
 子分类: 内核与虚拟化
@@ -235,5 +235,5 @@ openrsync -rt \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ansible]] —— Ansible — 无 agent 配置管理
 

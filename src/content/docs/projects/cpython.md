@@ -1,5 +1,5 @@
 ---
-title: CPython — Python 官方实现
+title: "CPython — Python 官方实现"
 来源: https://github.com/python/cpython
 日期: 2026-06-13
 子分类: 语言运行时

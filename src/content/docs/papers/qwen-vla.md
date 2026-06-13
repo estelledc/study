@@ -1,5 +1,5 @@
 ---
-title: Qwen-VLA — 跨任务、环境与具身的统一视觉-语言-动作建模
+title: "Qwen-VLA — 跨任务、环境与具身的统一视觉-语言-动作建模"
 来源: 'Qwen Team, "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments", arXiv:2605.30280, 2026; https://arxiv.org/abs/2605.30280; https://github.com/QwenLM/Qwen-VLA'
 日期: 2026-06-13
 子分类: 模型与训练

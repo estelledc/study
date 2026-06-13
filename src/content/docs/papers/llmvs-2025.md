@@ -1,5 +1,5 @@
 ---
-title: LLMVS — 用 LLM 语义裁判给视频帧打分做摘要
+title: "LLMVS — 用 LLM 语义裁判给视频帧打分做摘要"
 来源: 'Lee et al., "Video Summarization with Large Language Models", arXiv 2025'
 日期: 2026-06-06
 分类: 机器学习

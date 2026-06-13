@@ -1,5 +1,5 @@
 ---
-title: BookStack — 文档型 Wiki 知识库
+title: "BookStack — 文档型 Wiki 知识库"
 来源: https://github.com/BookStackApp/BookStack
 日期: 2026-06-13
 子分类: 编辑器与 IDE

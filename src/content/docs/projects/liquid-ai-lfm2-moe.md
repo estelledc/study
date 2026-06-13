@@ -1,5 +1,5 @@
 ---
-title: Liquid AI LFM2.5-8B-A1B — 8B 参数 / 1B 激活的 MoE 模型，在 38T Token 上训练
+title: "Liquid AI LFM2.5-8B-A1B — 8B 参数 / 1B 激活的 MoE 模型，在 38T Token 上训练"
 来源: https://www.liquid.ai/blog/lfm2-5-8b-a1b
 日期: 2026-06-13
 分类: 机器学习

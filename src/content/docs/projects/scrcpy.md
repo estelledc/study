@@ -1,5 +1,5 @@
 ---
-title: scrcpy — Android 屏幕镜像 / 录制
+title: "scrcpy — Android 屏幕镜像 / 录制"
 description: Android 屏幕镜像与录屏，adb 拉 H.264 流到桌面
 来源: 'https://github.com/Genymobile/scrcpy'
 日期: 2026-06-06

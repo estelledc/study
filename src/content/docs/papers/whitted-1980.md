@@ -1,5 +1,5 @@
 ---
-title: Whitted 1980 — 让光线在场景里递归跑三种次级射线
+title: "Whitted 1980 — 让光线在场景里递归跑三种次级射线"
 来源: Turner Whitted, "An Improved Illumination Model for Shaded Display", CACM Vol.23 No.6, June 1980
 日期: 2026-05-31
 子分类: 渲染与图形

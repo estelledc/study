@@ -1,5 +1,5 @@
 ---
-title: RethinkDB — 让数据库自己把更新推给客户端的先驱
+title: "RethinkDB — 让数据库自己把更新推给客户端的先驱"
 来源: Slava Akhmechet 等, RethinkDB 项目（2009–2016, Linux Foundation 接管）
 日期: 2026-05-31
 子分类: 存储与查询

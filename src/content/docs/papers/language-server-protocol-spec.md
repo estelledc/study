@@ -1,5 +1,5 @@
 ---
-title: Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议
+title: "Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议"
 来源: https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/
 日期: 2026-06-13
 分类: CLI

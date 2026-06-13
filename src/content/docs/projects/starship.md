@@ -1,5 +1,5 @@
 ---
-title: Starship — 一份配置点亮所有 shell 的 prompt
+title: "Starship — 一份配置点亮所有 shell 的 prompt"
 来源: https://github.com/starship/starship
 日期: 2026-05-31
 子分类: 命令行工具

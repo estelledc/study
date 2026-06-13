@@ -1,5 +1,5 @@
 ---
-title: MongoDB — 文档型 NoSQL 数据库
+title: "MongoDB — 文档型 NoSQL 数据库"
 来源: https://github.com/mongodb/mongo
 日期: 2026-05-29
 子分类: 数据库 / NoSQL

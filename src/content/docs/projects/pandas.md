@@ -1,5 +1,5 @@
 ---
-title: pandas — Python 表格数据事实标准
+title: "pandas — Python 表格数据事实标准"
 来源: 'https://github.com/pandas-dev/pandas'
 日期: 2026-05-30
 子分类: 数据科学与 AI

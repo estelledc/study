@@ -1,5 +1,5 @@
 ---
-title: Apache NuttX — POSIX 接近完整的小型实时操作系统
+title: "Apache NuttX — POSIX 接近完整的小型实时操作系统"
 来源: 'https://github.com/apache/nuttx'
 日期: 2026-06-06
 分类: 操作系统

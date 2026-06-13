@@ -1,9 +1,9 @@
 ---
-title: Tower — 异步服务中间件
+title: "Tower — 异步服务中间件"
 来源: https://github.com/tower-rs/tower
 日期: 2026-06-13
 分类: 后端 API
-子分类: rust-tools
+子分类: rust-ecosystem
 provenance: pipeline-v3
 ---
 

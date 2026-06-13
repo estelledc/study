@@ -1,5 +1,5 @@
 ---
-title: The Website Specification — 零基础学习笔记
+title: "The Website Specification — 零基础学习笔记"
 source: https://specification.website/
 date: 2026-06-13
 category: Web 开发

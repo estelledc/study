@@ -1,5 +1,5 @@
 ---
-title: Tabby Terminal — 把终端、SSH 与串口捏进一个可扩展壳
+title: "Tabby Terminal — 把终端、SSH 与串口捏进一个可扩展壳"
 来源: 'Eugeny, "Tabby", https://github.com/Eugeny/tabby'
 日期: 2026-06-13
 子分类: 命令行工具

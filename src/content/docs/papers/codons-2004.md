@@ -1,5 +1,5 @@
 ---
-title: CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验
+title: "CoDoNS — 用 P2P 哈希表替代分层 DNS 的实验"
 来源: Ramasubramanian & Sirer, "The Design and Implementation of a Next Generation Name Service for the Internet", SIGCOMM 2004
 日期: 2026-06-01
 子分类: 网络协议

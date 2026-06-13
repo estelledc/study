@@ -1,5 +1,5 @@
 ---
-title: changesets — 让每个 PR 自带版本号 bump 声明
+title: "changesets — 让每个 PR 自带版本号 bump 声明"
 来源: 'changesets/changesets, GitHub 11.9k stars, MIT 协议'
 日期: 2026-05-29
 子分类: 工具库

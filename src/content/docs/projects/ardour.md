@@ -1,5 +1,5 @@
 ---
-title: Ardour — 专业级 DAW
+title: "Ardour — 专业级 DAW"
 description: 专业级开源 DAW，实时录音、混音与母带处理
 来源: 'https://github.com/Ardour/ardour'
 日期: 2026-06-06

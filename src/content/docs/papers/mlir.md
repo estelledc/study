@@ -1,5 +1,5 @@
 ---
-title: MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
+title: "MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言"
 来源: 'Lattner et al., "MLIR: A Compiler Infrastructure for the End of Moore''s Law", arXiv 2002.11054, 2020'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

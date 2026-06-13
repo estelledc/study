@@ -1,5 +1,5 @@
 ---
-title: Idris — 让依赖类型从证明助理变成通用编程语言
+title: "Idris — 让依赖类型从证明助理变成通用编程语言"
 来源: 'Edwin Brady, "Idris, a General-Purpose Dependently Typed Programming Language: Design and Implementation", JFP 2013'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -161,7 +161,6 @@ select : (col : String) -> Query (Cols cs) -> {auto p : Has col cs} -> ...
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[martin-lof-itt]] —— Martin-Löf 直觉主义类型论 — 让"证明"和"程序"变成同一件事
 

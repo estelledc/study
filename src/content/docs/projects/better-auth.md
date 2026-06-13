@@ -1,5 +1,5 @@
 ---
-title: better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
+title: "better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架"
 来源: 'https://github.com/better-auth/better-auth'
 日期: 2026-05-30
 子分类: 框架与 SDK

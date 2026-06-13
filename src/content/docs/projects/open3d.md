@@ -1,5 +1,5 @@
 ---
-title: Open3D — 现代点云与几何处理库
+title: "Open3D — 现代点云与几何处理库"
 description: C++ 内核 + Python 一等接口，点云/网格读写、体素下采样、法线估计、RANSAC 平面分割与 ICP 配准，激光雷达与 SLAM 工程默认工具
 来源: 'https://github.com/isl-org/Open3D'
 日期: 2026-06-13
@@ -315,6 +315,11 @@ Conda、Docker 与从源码编译（CUDA 模块）见 [Open3D 官方构建文档
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[assimp]] —— Assimp — Open Asset Import Library 统一 3D 模型导入
+- [[filament]] —— Filament — Google 跨平台 PBR 渲染引擎
 - [[freecad]] —— FreeCAD — 参数化 CAD
+- [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[pcl]] —— PCL — Point Cloud Library 点云处理经典库
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 

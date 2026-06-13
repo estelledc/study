@@ -1,5 +1,5 @@
 ---
-title: You probably don't need Yocto, and that's fine — 嵌入式 Linux 不必默认上 Yocto
+title: "You probably don't need Yocto, and that's fine — 嵌入式 Linux 不必默认上 Yocto"
 来源: 'sigma star gmbh, "You probably don''t need Yocto, and that''s fine", https://sigma-star.at/blog/2026/05/you-probably-dont-need-yocto-and-thats-fine/, 2026-05-26'
 日期: 2026-06-13
 子分类: 嵌入式

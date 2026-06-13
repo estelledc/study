@@ -1,5 +1,5 @@
 ---
-title: Noise Explorer — 给 Noise 握手配方装上「自动验房 + 一键施工」
+title: "Noise Explorer — 给 Noise 握手配方装上「自动验房 + 一键施工」"
 来源: https://noiseexplorer.com/
 日期: 2026-06-13
 分类: 安全与隐私

@@ -1,5 +1,5 @@
 ---
-title: SAM — Segment Anything
+title: "SAM — Segment Anything"
 来源: 'Kirillov et al., "Segment Anything", Meta 2023'
 日期: 2026-05-29
 子分类: 计算机视觉

@@ -1,5 +1,5 @@
 ---
-title: Shotcut — 基于 MLT 的开源非线性编辑器
+title: "Shotcut — 基于 MLT 的开源非线性编辑器"
 description: Qt 跨平台 NLE；Producer/Filter/Consumer 的可视化时间线；开源剪辑教学样本
 来源: 'https://github.com/mltframework/shotcut'
 日期: 2026-06-06

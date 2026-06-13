@@ -1,5 +1,5 @@
 ---
-title: Awesome-Generalist-Robots-via-Foundation-Models — 机器人基础模型论文清单
+title: "Awesome-Generalist-Robots-via-Foundation-Models — 机器人基础模型论文清单"
 来源: 'https://github.com/JeffreyYH/Awesome-Generalist-Robots-via-Foundation-Models'
 日期: 2026-06-13
 分类: 机器学习

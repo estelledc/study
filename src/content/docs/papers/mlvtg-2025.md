@@ -1,5 +1,5 @@
 ---
-title: MLVTG — MambaAligner + 冻结 LLM 提纯的多模态视频时序定位
+title: "MLVTG — MambaAligner + 冻结 LLM 提纯的多模态视频时序定位"
 来源: 'Zhu et al., "MLVTG: Mamba-Based Feature Alignment and LLM-Driven Purification for Multi-Modal Video Temporal Grounding", arXiv 2025'
 日期: 2026-06-05
 分类: 机器学习

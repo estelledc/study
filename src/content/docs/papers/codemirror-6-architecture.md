@@ -1,5 +1,5 @@
 ---
-title: CodeMirror 6 Architecture — 函数式内核 + 扩展织网的现代 Web 编辑器
+title: "CodeMirror 6 Architecture — 函数式内核 + 扩展织网的现代 Web 编辑器"
 来源: https://codemirror.net/docs/guide/
 日期: 2026-06-13
 分类: CLI

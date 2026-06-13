@@ -1,5 +1,5 @@
 ---
-title: Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
+title: "Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐"
 来源: 'https://github.com/sanic-org/sanic'
 日期: 2026-05-29
 子分类: Web 后端

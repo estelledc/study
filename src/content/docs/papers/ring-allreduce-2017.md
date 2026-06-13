@@ -1,5 +1,5 @@
 ---
-title: Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
+title: "Ring All-Reduce — 把 HPC 的环形规约搬进深度学习"
 来源: Andrew Gibiansky, "Bringing HPC Techniques to Deep Learning", Baidu SVAIL Blog 2017
 日期: 2026-05-31
 子分类: GPU 架构

@@ -1,5 +1,5 @@
 ---
-title: C-Store — 把数据按列存，分析查询直接快十倍
+title: "C-Store — 把数据按列存，分析查询直接快十倍"
 来源: 'Stonebraker, Abadi, Madden, et al. "C-Store: A Column-oriented DBMS", VLDB 2005'
 日期: 2026-05-30
 子分类: 存储与查询

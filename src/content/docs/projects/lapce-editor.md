@@ -1,5 +1,5 @@
 ---
-title: Lapce — 用 Rust 写的闪电级代码编辑器
+title: "Lapce — 用 Rust 写的闪电级代码编辑器"
 来源: https://github.com/lapce/lapce
 日期: 2026-06-13
 分类: CLI

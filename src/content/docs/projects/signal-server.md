@@ -1,5 +1,5 @@
 ---
-title: Signal-Server — 服务端看不到任何明文的即时通信后端
+title: "Signal-Server — 服务端看不到任何明文的即时通信后端"
 来源: 'https://github.com/signalapp/Signal-Server'
 日期: 2026-05-30
 子分类: 实时通信

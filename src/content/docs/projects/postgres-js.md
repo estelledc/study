@@ -1,5 +1,5 @@
 ---
-title: postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
+title: "postgres.js — 写 SQL 但语法层就防注入的 Node 客户端"
 来源: 'porsager/postgres on GitHub, https://github.com/porsager/postgres'
 日期: 2026-05-30
 子分类: 数据库

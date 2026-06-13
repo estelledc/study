@@ -1,5 +1,5 @@
 ---
-title: Copilot RCT — AI 编程助手的第一个严格随机对照实验
+title: "Copilot RCT — AI 编程助手的第一个严格随机对照实验"
 来源: 'Peng, Kalliamvakou, Cihon, Demirer, "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot", arXiv 2302.06590, 2023'
 日期: 2026-05-29
 子分类: 软件工程实证

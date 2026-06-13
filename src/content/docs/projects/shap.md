@@ -1,5 +1,5 @@
 ---
-title: SHAP — 用博弈论给每个特征发工资
+title: "SHAP — 用博弈论给每个特征发工资"
 来源: https://github.com/shap/shap
 日期: 2026-05-31
 子分类: 数据科学与 AI

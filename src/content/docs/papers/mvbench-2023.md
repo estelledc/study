@@ -1,5 +1,5 @@
 ---
-title: MVBench — 二十道题拆穿视频大模型真懂还是装懂
+title: "MVBench — 二十道题拆穿视频大模型真懂还是装懂"
 来源: 'Li et al., "MVBench: A Comprehensive Multi-modal Video Understanding Benchmark", arXiv 2023'
 日期: 2026-06-05
 分类: 机器学习

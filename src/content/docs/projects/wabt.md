@@ -1,5 +1,5 @@
 ---
-title: WABT — WebAssembly 二进制工具包
+title: "WABT — WebAssembly 二进制工具包"
 来源: https://github.com/WebAssembly/wabt
 日期: 2026-06-13
 分类: 其他

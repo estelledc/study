@@ -1,5 +1,5 @@
 ---
-title: Scaling Memcache at Facebook — 万台缓存怎么不被踩塌
+title: "Scaling Memcache at Facebook — 万台缓存怎么不被踩塌"
 来源: Nishtala et al., "Scaling Memcache at Facebook", NSDI 2013
 日期: 2026-05-31
 子分类: 共识与复制

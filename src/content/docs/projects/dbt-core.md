@@ -1,5 +1,5 @@
 ---
-title: dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
+title: "dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来"
 来源: dbt Labs Documentation, https://docs.getdbt.com/
 日期: 2026-05-31
 子分类: 数据科学与 AI

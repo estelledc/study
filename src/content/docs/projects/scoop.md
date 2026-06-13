@@ -1,5 +1,5 @@
 ---
-title: Scoop — Windows 上的 Homebrew 风格命令行包管理器
+title: "Scoop — Windows 上的 Homebrew 风格命令行包管理器"
 来源: https://github.com/ScoopInstaller/Scoop
 日期: 2026-05-31
 子分类: 命令行工具

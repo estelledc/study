@@ -1,5 +1,5 @@
 ---
-title: Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）
+title: "Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）"
 来源: 'https://github.com/element-hq/element-web'
 日期: 2026-05-30
 子分类: 实时通信

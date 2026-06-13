@@ -1,5 +1,5 @@
 ---
-title: LMDB — 闪电内存映射嵌入式 KV 库
+title: "LMDB — 闪电内存映射嵌入式 KV 库"
 来源: 'https://github.com/LMDB/lmdb — Howard Chu, OpenLDAP'
 日期: 2026-06-06
 分类: 数据库

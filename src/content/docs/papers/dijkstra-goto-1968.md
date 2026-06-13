@@ -1,5 +1,5 @@
 ---
-title: Go To Statement Considered Harmful — Dijkstra 1968 结构化编程宣言
+title: "Go To Statement Considered Harmful — Dijkstra 1968 结构化编程宣言"
 来源: https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf
 日期: 2026-06-13
 分类: 编程语言

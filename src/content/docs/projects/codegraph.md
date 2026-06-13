@@ -1,5 +1,5 @@
 ---
-title: CodeGraph — 从零到一的代码知识图谱
+title: "CodeGraph — 从零到一的代码知识图谱"
 来源: https://github.com/colbymchenry/codegraph
 日期: 2026-06-13
 分类: CLI

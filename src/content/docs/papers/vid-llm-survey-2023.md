@@ -1,5 +1,5 @@
 ---
-title: Vid-LLM Survey — 用大语言模型理解视频的全景地图
+title: "Vid-LLM Survey — 用大语言模型理解视频的全景地图"
 来源: 'Tang et al., "Video Understanding with Large Language Models: A Survey", TCSVT 2025 (arXiv 2023)'
 日期: 2026-06-05
 分类: 机器学习

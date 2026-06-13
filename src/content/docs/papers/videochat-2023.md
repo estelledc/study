@@ -1,5 +1,5 @@
 ---
-title: VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统
+title: "VideoChat — 把视频、指令微调、多轮对话第一次放进同一个系统"
 来源: 'Li et al., "VideoChat: Chat-Centric Video Understanding", arXiv 2023'
 日期: 2026-06-05
 分类: 机器学习

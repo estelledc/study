@@ -1,5 +1,5 @@
 ---
-title: AG2 — AutoGen 社区演进
+title: "AG2 — AutoGen 社区演进"
 来源: https://github.com/ag2ai/ag2
 日期: 2026-06-13
 分类: 机器学习

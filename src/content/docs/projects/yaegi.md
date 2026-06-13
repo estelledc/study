@@ -1,5 +1,5 @@
 ---
-title: Yaegi — Traefik 的 Go 解释器
+title: "Yaegi — Traefik 的 Go 解释器"
 来源: https://github.com/traefik/yaegi
 日期: 2026-06-13
 分类: 编译器

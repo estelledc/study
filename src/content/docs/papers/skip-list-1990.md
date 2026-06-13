@@ -1,5 +1,5 @@
 ---
-title: Skip List — 用抛硬币代替平衡树
+title: "Skip List — 用抛硬币代替平衡树"
 来源: 'William Pugh, "Skip Lists: A Probabilistic Alternative to Balanced Trees", CACM 1990'
 日期: 2026-05-30
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: Inkscape — 矢量图形编辑器
+title: "Inkscape — 矢量图形编辑器"
 来源: 'https://github.com/inkscape/inkscape'
 日期: 2026-06-13
 分类: CLI

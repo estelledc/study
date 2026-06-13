@@ -1,5 +1,5 @@
 ---
-title: CounterVQA — 因果图驱动的反事实视频 VQA
+title: "CounterVQA — 因果图驱动的反事实视频 VQA"
 来源: 'Chen et al., "Distilling Counterfactual Reasoning from Language to Vision: Causal Graph Guided Post-Training for Video Understanding", arXiv 2025'
 日期: 2026-06-06
 分类: 机器学习

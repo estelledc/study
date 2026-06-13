@@ -1,5 +1,5 @@
 ---
-title: MapReduce — 用户只写两个函数，框架替你扛千节点
+title: "MapReduce — 用户只写两个函数，框架替你扛千节点"
 来源: 'Jeffrey Dean, Sanjay Ghemawat, "MapReduce: Simplified Data Processing on Large Clusters", OSDI 2004'
 日期: 2026-05-30
 子分类: 分布式系统
@@ -156,7 +156,9 @@ def reduce(user_id, latencies):
 
 - [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[bigtable-revisit-2024]] —— Bigtable 回顾 — 一个分布式数据库 18 年生产经验的全盘复盘
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[cansat-survey]] —— 现代计算全景（Modern Computing: Vision and Challenges）— 六十年计算范式演化地图
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[dapper-2010]] —— Dapper — Google 大规模分布式系统链路追踪基础设施

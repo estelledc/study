@@ -1,5 +1,5 @@
 ---
-title: Photon — Databricks 为 Lakehouse 打造的向量化查询引擎
+title: "Photon — Databricks 为 Lakehouse 打造的向量化查询引擎"
 来源: https://people.eecs.berkeley.edu/~matei/papers/2022/sigmod_photon.pdf
 日期: 2026-06-13
 分类: 数据库

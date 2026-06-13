@@ -1,5 +1,5 @@
 ---
-title: DSPy — 把 prompt 写成签名，让编译器替你调
+title: "DSPy — 把 prompt 写成签名，让编译器替你调"
 来源: 'Khattab et al., "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines", arXiv:2310.03714, 2023'
 日期: 2026-05-31
 子分类: 编程语言

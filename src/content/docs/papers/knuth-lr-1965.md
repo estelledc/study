@@ -1,5 +1,5 @@
 ---
-title: Knuth LR(k) — 编译器自己读懂语法的算法
+title: "Knuth LR(k) — 编译器自己读懂语法的算法"
 来源: Knuth, "On the Translation of Languages from Left to Right", Information and Control 8(6), 1965
 日期: 2026-05-30
 子分类: 类型与 PL 理论

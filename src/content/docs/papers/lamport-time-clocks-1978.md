@@ -1,5 +1,5 @@
 ---
-title: Time, Clocks, and the Ordering of Events in a Distributed System — 零基础学习笔记
+title: "Time, Clocks, and the Ordering of Events in a Distributed System — 零基础学习笔记"
 来源: https://lamport.azurewebsites.net/pubs/time-clocks.pdf
 日期: 2026-06-13
 子分类: 共识与复制

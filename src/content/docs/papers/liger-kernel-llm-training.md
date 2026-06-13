@@ -1,5 +1,5 @@
 ---
-title: Liger Kernel — 面向 LLM 训练的高效 Triton Kernel 套件
+title: "Liger Kernel — 面向 LLM 训练的高效 Triton Kernel 套件"
 来源: https://arxiv.org/abs/2410.10989
 日期: 2026-06-13
 子分类: ML 系统

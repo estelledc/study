@@ -1,5 +1,5 @@
 ---
-title: BullMQ — Node.js 上的 Redis 任务队列
+title: "BullMQ — Node.js 上的 Redis 任务队列"
 来源: 'https://github.com/taskforcesh/bullmq'
 日期: 2026-05-30
 子分类: Web 后端

@@ -1,5 +1,5 @@
 ---
-title: Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
+title: "Landin SECD — 第一台机械求值 lambda 表达式的抽象机器"
 来源: 'P. J. Landin, "The Mechanical Evaluation of Expressions", The Computer Journal 1964'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -173,7 +173,6 @@ def secd_step(s, e, c, d):
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960

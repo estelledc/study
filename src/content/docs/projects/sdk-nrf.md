@@ -1,5 +1,5 @@
 ---
-title: sdk-nrf — Nordic nRF Connect SDK 零基础学习笔记
+title: "sdk-nrf — Nordic nRF Connect SDK 零基础学习笔记"
 来源: nrfconnect/sdk-nrf
 日期: 2026-06-13
 子分类: 嵌入式

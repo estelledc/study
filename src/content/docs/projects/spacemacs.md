@@ -1,5 +1,5 @@
 ---
-title: Spacemacs — Space 键统一 Vim 与 Emacs
+title: "Spacemacs — Space 键统一 Vim 与 Emacs"
 来源: 'https://github.com/syl20bnr/spacemacs'
 日期: 2026-06-06
 分类: CLI

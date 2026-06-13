@@ -1,5 +1,5 @@
 ---
-title: Chaff 2001 — 把 CDCL 工程化的两个杀手锏
+title: "Chaff 2001 — 把 CDCL 工程化的两个杀手锏"
 来源: 'Moskewicz, Madigan, Zhao, Zhang & Malik, "Chaff: Engineering an Efficient SAT Solver", DAC 2001'
 日期: 2026-05-30
 子分类: 形式化验证

@@ -1,5 +1,5 @@
 ---
-title: vLLM — 把操作系统的分页搬进 GPU KV cache
+title: "vLLM — 把操作系统的分页搬进 GPU KV cache"
 来源: 'Kwon et al., "Efficient Memory Management for LLM Serving with PagedAttention", SOSP 2023'
 日期: 2026-05-30
 子分类: 数据科学与 AI

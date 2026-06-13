@@ -1,5 +1,5 @@
 ---
-title: Academic Research Skills — Claude Code 学术研究全流程自动化技能包
+title: "Academic Research Skills — Claude Code 学术研究全流程自动化技能包"
 来源: 'https://github.com/Imbad0202/academic-research-skills'
 日期: 2026-06-13
 分类: CLI
@@ -158,3 +158,6 @@ python -m scripts.validate_schema \
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

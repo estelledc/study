@@ -1,5 +1,5 @@
 ---
-title: DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢
+title: "DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢"
 来源: Hounsel et al., "Comparing the Effects of DNS, DoT, and DoH on Web Performance", PAM 2020
 日期: 2026-06-01
 子分类: 网络协议

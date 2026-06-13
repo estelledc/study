@@ -1,5 +1,5 @@
 ---
-title: Vector — Rust 写的统一可观测性数据管道
+title: "Vector — Rust 写的统一可观测性数据管道"
 来源: https://github.com/vectordotdev/vector
 日期: 2026-06-01
 子分类: DevOps 与运维

@@ -1,5 +1,5 @@
 ---
-title: TVM — 让一份模型能在所有硬件上跑得快
+title: "TVM — 让一份模型能在所有硬件上跑得快"
 来源: 'Chen et al., "TVM: An Automated End-to-End Optimizing Compiler for Deep Learning", OSDI 2018'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

@@ -1,5 +1,5 @@
 ---
-title: lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
+title: "lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架"
 来源: 'https://github.com/facebook/lexical'
 日期: 2026-06-13
 分类: 后端 API
@@ -223,3 +223,12 @@ function SubmitOnEnterPlugin({ onSubmit }: { onSubmit: () => void }) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[excalidraw]] —— Excalidraw — 手绘风协作白板
+- [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
+- [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
+

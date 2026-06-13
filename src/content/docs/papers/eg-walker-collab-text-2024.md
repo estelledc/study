@@ -1,5 +1,5 @@
 ---
-title: Eg-walker — 协同文本编辑的「按需 CRDT」：更好、更快、更小
+title: "Eg-walker — 协同文本编辑的「按需 CRDT」：更好、更快、更小"
 来源: https://arxiv.org/abs/2409.14252
 日期: 2026-06-13
 子分类: 编辑器与 IDE

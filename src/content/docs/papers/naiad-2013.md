@@ -1,5 +1,5 @@
 ---
-title: Naiad — 一套引擎同时跑批处理、流处理和迭代计算
+title: "Naiad — 一套引擎同时跑批处理、流处理和迭代计算"
 来源: 'Murray, McSherry, Isaacs, Isard, Barham, Abadi, "Naiad: A Timely Dataflow System", SOSP 2013'
 日期: 2026-05-31
 子分类: 共识与复制

@@ -1,5 +1,5 @@
 ---
-title: Shader Park — 程序化 SDF 着色器 DSL
+title: "Shader Park — 程序化 SDF 着色器 DSL"
 来源: 'https://github.com/shader-park/shader-park-core'
 日期: 2026-06-13
 子分类: 渲染与图形

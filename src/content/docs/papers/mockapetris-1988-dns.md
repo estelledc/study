@@ -1,5 +1,5 @@
 ---
-title: Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样
+title: "Mockapetris 1988 DNS — 设计者亲口讲为什么 DNS 长这样"
 来源: 'Paul Mockapetris and Kevin Dunlap, "Development of the Domain Name System", SIGCOMM 1988'
 日期: 2026-06-01
 子分类: 网络协议

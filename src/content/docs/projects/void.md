@@ -1,5 +1,5 @@
 ---
-title: Void — 开源 Cursor 替代
+title: "Void — 开源 Cursor 替代"
 来源: https://github.com/voideditor/void
 日期: 2026-06-13
 子分类: 编辑器与 IDE

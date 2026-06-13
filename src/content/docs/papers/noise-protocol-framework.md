@@ -1,5 +1,5 @@
 ---
-title: Noise Protocol Framework — 用「握手配方」拼出端到端加密通道
+title: "Noise Protocol Framework — 用「握手配方」拼出端到端加密通道"
 来源: https://noiseprotocol.org/noise.pdf
 日期: 2026-06-13
 分类: 安全与隐私

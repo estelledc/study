@@ -1,5 +1,5 @@
 ---
-title: Sleeper Agents — 故意藏后门的 LLM
+title: "Sleeper Agents — 故意藏后门的 LLM"
 来源: 'Hubinger et al., "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training", Anthropic 2024'
 日期: 2026-05-29
 子分类: AI 安全

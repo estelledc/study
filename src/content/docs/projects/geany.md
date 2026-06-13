@@ -1,5 +1,5 @@
 ---
-title: Geany — GTK 轻量 IDE
+title: "Geany — GTK 轻量 IDE"
 来源: 'https://github.com/geany/geany'
 日期: 2026-06-06
 分类: CLI

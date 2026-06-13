@@ -1,5 +1,5 @@
 ---
-title: Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC
+title: "Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC"
 来源: 'https://github.com/capnproto/capnproto'
 日期: 2026-05-30
 子分类: Web 后端

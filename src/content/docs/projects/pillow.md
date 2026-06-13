@@ -1,5 +1,5 @@
 ---
-title: Pillow — Python 图像处理库与 PIL 现代继任者
+title: "Pillow — Python 图像处理库与 PIL 现代继任者"
 description: PIL 友好分支；打开/保存/缩放/裁剪/滤镜/EXIF，与 NumPy 互转，是多模态数据管线图像 I/O 默认选择
 来源: 'https://github.com/python-pillow/Pillow'
 日期: 2026-06-05

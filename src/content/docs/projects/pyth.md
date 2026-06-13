@@ -1,5 +1,5 @@
 ---
-title: Pyth Network — 一手数据上链的低延迟预言机
+title: "Pyth Network — 一手数据上链的低延迟预言机"
 来源: 'https://github.com/pyth-network/pyth-client'
 日期: 2026-05-30
 子分类: 链与合约

@@ -1,5 +1,5 @@
 ---
-title: matplotlib — Python 绘图基石
+title: "matplotlib — Python 绘图基石"
 来源: 'https://github.com/matplotlib/matplotlib'
 日期: 2026-05-31
 子分类: 数据可视化

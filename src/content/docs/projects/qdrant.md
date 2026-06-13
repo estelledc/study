@@ -1,8 +1,8 @@
 ---
-title: Qdrant — Rust 向量数据库
+title: "Qdrant — Rust 向量数据库"
 来源: https://github.com/qdrant/qdrant
 日期: 2026-05-29
-子分类: 存储与查询
+子分类: databases-and-storage
 分类: 数据库
 难度: 中级
 provenance: pipeline-v3

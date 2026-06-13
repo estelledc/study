@@ -1,5 +1,5 @@
 ---
-title: Scaling HNSWs（antirez）— 把向量近邻图做成 Redis 级低延迟的工程实践
+title: "Scaling HNSWs（antirez）— 把向量近邻图做成 Redis 级低延迟的工程实践"
 来源: https://antirez.com/news/156
 日期: 2026-06-13
 子分类: 检索与排序

@@ -1,5 +1,5 @@
 ---
-title: Nango — 产品集成的托管 OAuth 与函数运行时
+title: "Nango — 产品集成的托管 OAuth 与函数运行时"
 来源: https://github.com/NangoHQ/nango
 日期: 2026-06-13
 分类: 后端 API

@@ -1,5 +1,5 @@
 ---
-title: Trees that Grow — 可扩展的语法树设计
+title: "Trees that Grow — 可扩展的语法树设计"
 来源: 'Najd & Peyton Jones, "Trees that Grow", J. of Universal Computer Science 2017'
 日期: 2026-05-29
 子分类: 编程语言
@@ -145,7 +145,6 @@ freeVars (App _ a b) = freeVars a <> freeVars b
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[e-path-equality-saturation-for-control-flow-graphs-arxiv-2605-28694]] —— E-Path Equality Saturation for Control-Flow Graphs — 把"改写程序"变成"同时保留所有可能"
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[row-polymorphism-remy]] —— Row Polymorphism — 让记录类型可扩展又不丢类型安全
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码

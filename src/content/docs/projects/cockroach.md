@@ -1,5 +1,5 @@
 ---
-title: CockroachDB — 全球分布式 SQL
+title: "CockroachDB — 全球分布式 SQL"
 来源: https://github.com/cockroachdb/cockroach
 日期: 2026-05-31
 子分类: 存储与查询

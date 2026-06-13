@@ -1,5 +1,5 @@
 ---
-title: Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）
+title: "Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）"
 来源: 'https://github.com/bjc/prosody'
 日期: 2026-05-30
 子分类: 实时通信

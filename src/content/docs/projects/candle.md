@@ -1,5 +1,5 @@
 ---
-title: Candle — HuggingFace 出品的 Rust 推理框架
+title: "Candle — HuggingFace 出品的 Rust 推理框架"
 来源: https://github.com/huggingface/candle
 日期: 2026-05-31
 子分类: 数据科学与 AI

@@ -1,5 +1,5 @@
 ---
-title: EgoSchema — 三分钟第一视角长视频理解的诊断探针
+title: "EgoSchema — 三分钟第一视角长视频理解的诊断探针"
 来源: 'Mangalam et al., "EgoSchema: A Diagnostic Benchmark for Very Long-form Video Language Understanding", NeurIPS 2023 Datasets and Benchmarks'
 日期: 2026-06-05
 分类: 机器学习

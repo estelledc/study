@@ -1,5 +1,5 @@
 ---
-title: Activation Patching — 因果干预可解释性方法
+title: "Activation Patching — 因果干预可解释性方法"
 来源: 'Vig et al., "Causal Mediation Analysis for Interpreting Neural NLP", NeurIPS 2020 / Meng et al., "Locating and Editing Factual Associations", NeurIPS 2022'
 日期: 2026-05-29
 子分类: AI 可解释性

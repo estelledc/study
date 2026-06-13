@@ -1,5 +1,5 @@
 ---
-title: Percolator 2010 — 给 Bigtable 加分布式事务的客户端库
+title: "Percolator 2010 — 给 Bigtable 加分布式事务的客户端库"
 来源: 'Peng & Dabek, "Large-scale Incremental Processing Using Distributed Transactions and Notifications", OSDI 2010'
 日期: 2026-05-30
 子分类: 共识与复制

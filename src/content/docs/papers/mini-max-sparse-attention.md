@@ -1,5 +1,5 @@
 ---
-title: MiniMax Sparse Attention — 用 Top-k 块选择把 1M 上下文塞进 GPU
+title: "MiniMax Sparse Attention — 用 Top-k 块选择把 1M 上下文塞进 GPU"
 来源: 'Lai et al., "MiniMax Sparse Attention," arXiv 2606.13392, 2026'
 日期: 2026-06-13
 分类: 机器学习

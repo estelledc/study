@@ -1,5 +1,5 @@
 ---
-title: asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
+title: "asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本"
 来源: https://github.com/asdf-vm/asdf
 日期: 2026-05-31
 子分类: 命令行工具

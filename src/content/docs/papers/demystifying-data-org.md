@@ -1,5 +1,5 @@
 ---
-title: Demystifying Data Organization for Enhanced LLM Training — 用「排课表」而不是「删题目」提升大模型训练
+title: "Demystifying Data Organization for Enhanced LLM Training — 用「排课表」而不是「删题目」提升大模型训练"
 来源: https://arxiv.org/abs/2605.30334
 日期: 2026-06-13
 子分类: 模型与训练

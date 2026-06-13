@@ -1,5 +1,5 @@
 ---
-title: Safe — 多签智能账户合约
+title: "Safe — 多签智能账户合约"
 来源: 'https://github.com/safe-global/safe-smart-account'
 日期: 2026-05-30
 子分类: 链与合约

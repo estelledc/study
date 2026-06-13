@@ -1,5 +1,5 @@
 ---
-title: Double Ratchet Algorithm — Signal 端到端加密会话的「双棘轮」
+title: "Double Ratchet Algorithm — Signal 端到端加密会话的「双棘轮」"
 来源: https://signal.org/docs/specifications/doubleratchet/doubleratchet.pdf
 日期: 2026-06-13
 子分类: 安全与隐私

@@ -1,5 +1,5 @@
 ---
-title: Accompanist — Jetpack Compose 的「补丁工具箱」
+title: "Accompanist — Jetpack Compose 的「补丁工具箱」"
 来源: 'https://github.com/google/accompanist'
 日期: 2026-06-13
 分类: 后端 API
@@ -198,3 +198,6 @@ fun OnboardingPager(pages: List<@Composable () -> Unit>) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

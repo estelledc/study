@@ -1,5 +1,5 @@
 ---
-title: vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务
+title: "vLLM Multimodal — 多模态与视频 URL 高吞吐推理服务"
 description: vLLM 0.6+ 多模态引擎；Qwen2.5-VL 视频理解、video_url/base64 输入、PagedAttention 复用与 OpenAI 兼容 API
 来源: 'https://github.com/vllm-project/vllm'
 日期: 2026-06-05

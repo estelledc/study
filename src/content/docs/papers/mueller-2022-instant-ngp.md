@@ -1,5 +1,5 @@
 ---
-title: Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
+title: "Instant-NGP — 把 NeRF 训练从几小时压到 5 秒"
 来源: 'Müller, Evans, Schied, Keller, "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding", SIGGRAPH 2022'
 日期: 2026-05-31
 子分类: 渲染与图形

@@ -1,8 +1,8 @@
 ---
-title: Zig — 无隐藏控制流的 C 替代
+title: "Zig — 无隐藏控制流的 C 替代"
 来源: https://github.com/ziglang/zig
 日期: 2026-06-13
-子分类: 语言运行时
+子分类: embedded-and-iot
 分类: 编译器
 难度: 初级
 provenance: pipeline-v3

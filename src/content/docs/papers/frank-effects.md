@@ -1,5 +1,5 @@
 ---
-title: Frank — 让 effect handler 写得就像普通函数
+title: "Frank — 让 effect handler 写得就像普通函数"
 来源: 'Lindley, McBride & McLaughlin, "Do Be Do Be Do", JFP 2017 (arXiv 1611.09259)'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -156,7 +156,6 @@ pipe _              y               = y
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言

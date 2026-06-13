@@ -1,5 +1,5 @@
 ---
-title: flutter-rust-bridge — Dart 调 Rust 像调本地函数
+title: "flutter-rust-bridge — Dart 调 Rust 像调本地函数"
 来源: 'https://github.com/fzyzcjy/flutter_rust_bridge'
 日期: 2026-06-06
 分类: 后端 API

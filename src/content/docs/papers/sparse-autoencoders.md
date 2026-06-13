@@ -1,5 +1,5 @@
 ---
-title: Sparse Autoencoders — 把 superposition 解出来
+title: "Sparse Autoencoders — 把 superposition 解出来"
 来源: 'Bricken et al., "Towards Monosemanticity: Decomposing Language Models with Dictionary Learning", Anthropic 2023; Cunningham et al., arXiv 2309.08600'
 日期: 2026-05-29
 子分类: AI 可解释性

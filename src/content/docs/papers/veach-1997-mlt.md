@@ -1,5 +1,5 @@
 ---
-title: Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景
+title: "Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景"
 来源: Eric Veach & Leonidas J. Guibas, "Metropolis Light Transport", SIGGRAPH 1997
 日期: 2026-05-31
 子分类: 渲染与图形

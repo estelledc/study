@@ -1,5 +1,5 @@
 ---
-title: Uniswap V3 — 集中流动性 AMM 核心合约
+title: "Uniswap V3 — 集中流动性 AMM 核心合约"
 来源: 'https://github.com/Uniswap/v3-core'
 日期: 2026-05-30
 子分类: 链与合约
@@ -167,7 +167,6 @@ int24 avgTick = int24((tickCumulatives[1] - tickCumulatives[0]) / 1800);
 - [[curve]] —— Curve — 稳定币低滑点兑换协议
 - [[ethers-js]] —— ethers.js — 浏览器和 Node 都能用的以太坊客户端库
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[ipfs-2014]] —— IPFS — 把"地址"换成"内容本身"的 P2P 文件系统
 - [[layerzero]] —— LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息
 - [[makerdao]] —— MakerDAO — 用抵押 ETH 铸出锚定美元的 DAI

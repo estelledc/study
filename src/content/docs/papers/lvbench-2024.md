@@ -1,5 +1,5 @@
 ---
-title: LVBench — 平均 68 分钟、六维能力的长视频极限考
+title: "LVBench — 平均 68 分钟、六维能力的长视频极限考"
 来源: 'Wang et al., "LVBench: An Extreme Long Video Understanding Benchmark", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

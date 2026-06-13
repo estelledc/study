@@ -1,5 +1,5 @@
 ---
-title: Materialize — 流式增量更新的实时数据库
+title: "Materialize — 流式增量更新的实时数据库"
 来源: https://github.com/MaterializeInc/materialize
 日期: 2026-06-13
 分类: 数据库

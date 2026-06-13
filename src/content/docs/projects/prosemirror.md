@@ -1,5 +1,5 @@
 ---
-title: ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+title: "ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架"
 来源: 'https://github.com/ProseMirror/prosemirror'
 日期: 2026-05-30
 子分类: 编辑器
@@ -167,6 +167,7 @@ socket.on('message', steps => {
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
 - [[prosemirror-architecture]] —— ProseMirror — 构建富文本编辑器的工具箱

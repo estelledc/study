@@ -1,5 +1,5 @@
 ---
-title: Pulumi — 用真正的编程语言写云资源清单
+title: "Pulumi — 用真正的编程语言写云资源清单"
 来源: https://github.com/pulumi/pulumi
 日期: 2026-06-01
 子分类: DevOps 与运维

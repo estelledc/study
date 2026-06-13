@@ -1,5 +1,5 @@
 ---
-title: MeiliSearch — 开发者友好的搜索引擎
+title: "MeiliSearch — 开发者友好的搜索引擎"
 来源: https://github.com/meilisearch/meilisearch
 日期: 2026-05-29
 子分类: 存储与查询

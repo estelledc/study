@@ -1,5 +1,5 @@
 ---
-title: Doligez-Leroy GC — OCaml 多线程并发垃圾回收
+title: "Doligez-Leroy GC — OCaml 多线程并发垃圾回收"
 来源: 'Doligez & Leroy. "A Concurrent, Generational Garbage Collector for a Multithreaded Implementation of ML". 1993'
 日期: 2026-06-06
 分类: 编程语言
@@ -149,7 +149,7 @@ JS V8 Orinoco       → 并发标记，主线程 barrier
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
+- [[snmalloc-2019]] —— snmalloc(2019) — 把释放内存变成寄快递
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 

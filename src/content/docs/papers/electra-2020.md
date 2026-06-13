@@ -1,5 +1,5 @@
 ---
-title: ELECTRA — 把猜词题改成判真假题，训练效率 4 倍
+title: "ELECTRA — 把猜词题改成判真假题，训练效率 4 倍"
 来源: 'Clark et al., "ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators", ICLR 2020'
 日期: 2026-05-31
 子分类: 模型与训练

@@ -1,5 +1,5 @@
 ---
-title: VSI-Bench — 用室内漫游视频考视频大模型的空间智商
+title: "VSI-Bench — 用室内漫游视频考视频大模型的空间智商"
 来源: 'Yang et al., "Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces", CVPR 2025 / arXiv 2412.14171'
 日期: 2026-06-05
 分类: 机器学习

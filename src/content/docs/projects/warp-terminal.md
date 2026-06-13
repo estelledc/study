@@ -1,5 +1,5 @@
 ---
-title: Warp Terminal — 用 Rust 重写的现代终端，AI 时代的开发环境
+title: "Warp Terminal — 用 Rust 重写的现代终端，AI 时代的开发环境"
 来源: 'https://github.com/warpdotdev/Warp'
 日期: 2026-06-13
 分类: CLI
@@ -208,5 +208,6 @@ Warp 的技术架构有几个值得注意的点：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
+- [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell
 

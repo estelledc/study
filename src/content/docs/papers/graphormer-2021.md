@@ -1,5 +1,5 @@
 ---
-title: Graphormer — 标准 Transformer 直接刷爆 GNN
+title: "Graphormer — 标准 Transformer 直接刷爆 GNN"
 来源: Ying et al., "Do Transformers Really Perform Bad for Graph Representation?", NeurIPS 2021
 日期: 2026-06-01
 子分类: 模型与训练

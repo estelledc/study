@@ -1,5 +1,5 @@
 ---
-title: Flask — 用装饰器把 URL 接到函数上的 Python 微框架
+title: "Flask — 用装饰器把 URL 接到函数上的 Python 微框架"
 来源: 'https://github.com/pallets/flask'
 日期: 2026-05-29
 子分类: Web 后端

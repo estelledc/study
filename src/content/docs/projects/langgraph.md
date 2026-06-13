@@ -1,5 +1,5 @@
 ---
-title: LangGraph — 有状态 Agent 编排
+title: "LangGraph — 有状态 Agent 编排"
 来源: https://github.com/langchain-ai/langgraph
 日期: 2026-06-13
 分类: 机器学习

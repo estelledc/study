@@ -1,5 +1,5 @@
 ---
-title: System F — 让类型也能像参数一样被传递
+title: "System F — 让类型也能像参数一样被传递"
 来源: 'John C. Reynolds, "Towards a Theory of Type Structure", Programming Symposium 1974 (LNCS 19)'
 日期: 2026-05-29
 子分类: 类型与 PL 理论
@@ -156,7 +156,6 @@ succ  = λn:Nat. Λα. λs:α→α. λz:α. s (n [α] s z)
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[isabelle-hol-2002]] —— Isabelle/HOL — 让程序证明像写数学论文一样可读
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）

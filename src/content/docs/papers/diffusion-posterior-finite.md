@@ -1,5 +1,5 @@
 ---
-title: 扩散后验采样何时失败？——有限样本透镜（Finite-Sample Lens）
+title: "扩散后验采样何时失败？——有限样本透镜（Finite-Sample Lens）"
 来源: https://arxiv.org/abs/2605.30330
 日期: 2026-06-13
 分类: 机器学习

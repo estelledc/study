@@ -1,5 +1,5 @@
 ---
-title: xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
+title: "xplr — 用 Lua 当配置语言的可 hack 终端文件管理器"
 来源: 'https://github.com/sayanarijit/xplr'
 日期: 2026-05-31
 子分类: 命令行工具

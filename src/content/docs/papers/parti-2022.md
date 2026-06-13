@@ -1,5 +1,5 @@
 ---
-title: Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
+title: "Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写"
 来源: 'Yu et al., "Scaling Autoregressive Models for Content-Rich Text-to-Image Generation", arXiv 2206.10789, 2022 (Google Research)'
 日期: 2026-05-31
 子分类: 模型与训练

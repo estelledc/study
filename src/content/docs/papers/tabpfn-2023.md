@@ -1,5 +1,5 @@
 ---
-title: TabPFN — 一秒解决小表格分类的 Transformer
+title: "TabPFN — 一秒解决小表格分类的 Transformer"
 来源: 'Hollmann, Müller, Eggensperger, Hutter, "TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second", ICLR 2023'
 日期: 2026-06-01
 子分类: 模型与训练

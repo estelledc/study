@@ -1,5 +1,5 @@
 ---
-title: Almgren–Chriss 2001 — 大单怎么卖才「又快又省、还不赌方向」
+title: "Almgren–Chriss 2001 — 大单怎么卖才「又快又省、还不赌方向」"
 来源: https://www.smallake.kr/wp-content/uploads/2016/03/optliq.pdf
 日期: 2026-06-13
 子分类: 量化金融

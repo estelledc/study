@@ -1,5 +1,5 @@
 ---
-title: CVAT — 视频帧标注与半自动追踪的开源王者
+title: "CVAT — 视频帧标注与半自动追踪的开源王者"
 来源: https://github.com/cvat-ai/cvat
 日期: 2026-05-31
 子分类: 数据科学与 AI

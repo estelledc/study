@@ -1,5 +1,5 @@
 ---
-title: Appium — 跨平台移动 UI 自动化
+title: "Appium — 跨平台移动 UI 自动化"
 来源: https://github.com/appium/appium
 日期: 2026-06-13
 子分类: 移动端

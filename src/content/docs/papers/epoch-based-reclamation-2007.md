@@ -1,5 +1,5 @@
 ---
-title: Practical Lock-Freedom — Epoch-based Reclamation（按「时代」延迟回收共享内存）
+title: "Practical Lock-Freedom — Epoch-based Reclamation（按「时代」延迟回收共享内存）"
 来源: https://www.cl.cam.ac.uk/research/srg/netos/papers/2007-cpwl.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化
@@ -285,5 +285,5 @@ Fraser 的权衡很明确：EBR 换掉了 SMR/HP 在**每条边上**的 `memory 
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[hazard-pointers-2004]] —— Hazard Pointers — 多线程下安全释放共享节点
 

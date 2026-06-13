@@ -1,5 +1,5 @@
 ---
-title: MedCase-Structured — Text-to-FHIR 临床诊断推理数据集（零基础学习笔记）
+title: "MedCase-Structured — Text-to-FHIR 临床诊断推理数据集（零基础学习笔记）"
 来源: https://arxiv.org/abs/2605.30295
 日期: 2026-06-13
 子分类: 模型与训练

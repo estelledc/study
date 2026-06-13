@@ -1,5 +1,5 @@
 ---
-title: Technitium DNS Server — 自托管权威/递归 DNS 与网络过滤
+title: "Technitium DNS Server — 自托管权威/递归 DNS 与网络过滤"
 来源: https://github.com/TechnitiumSoftware/DnsServer
 日期: 2026-06-13
 子分类: 网络协议

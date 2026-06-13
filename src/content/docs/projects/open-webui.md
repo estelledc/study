@@ -1,5 +1,5 @@
 ---
-title: Open WebUI — 在本地搭一个类似 ChatGPT 的网站
+title: "Open WebUI — 在本地搭一个类似 ChatGPT 的网站"
 来源: https://github.com/open-webui/open-webui
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: CesiumJS — 把会动的 3D 地球塞进浏览器
+title: "CesiumJS — 把会动的 3D 地球塞进浏览器"
 来源: AGI / Cesium GS, 开源 2011，Apache 2.0；OGC 3D Tiles 1.0 (2019)
 日期: 2026-05-31
 子分类: 可视化

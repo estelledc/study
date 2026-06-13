@@ -1,5 +1,5 @@
 ---
-title: Intel SGX 详解 — 在不可信云里圈一块硬件保险箱
+title: "Intel SGX 详解 — 在不可信云里圈一块硬件保险箱"
 来源: 'Victor Costan & Srinivas Devadas, "Intel SGX Explained", IACR ePrint 2016/086, 2016'
 日期: 2026-05-30
 分类: 安全与隐私

@@ -1,5 +1,5 @@
 ---
-title: LLM Serving Needs Mathematical Optimization, Not Just Heuristics — 零基础学习笔记
+title: "LLM Serving Needs Mathematical Optimization, Not Just Heuristics — 零基础学习笔记"
 来源: 'Zijie Zhou, "Position: LLM Serving Needs Mathematical Optimization and Algorithmic Foundations, Not Just Heuristics", arXiv:2605.01280, 2026'
 日期: 2026-06-13
 子分类: 模型与训练

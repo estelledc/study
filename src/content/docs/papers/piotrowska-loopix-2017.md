@@ -1,5 +1,5 @@
 ---
-title: Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名
+title: "Loopix — 低延迟 mix 网络实现发送方和接收方双向匿名"
 来源: 'Piotrowska, Hayes, Elahi, Meiser & Danezis, "The Loopix Anonymity System", USENIX Security 2017'
 日期: 2026-06-06
 分类: 安全与隐私

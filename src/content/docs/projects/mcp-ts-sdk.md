@@ -1,5 +1,5 @@
 ---
-title: MCP TS SDK — Model Context Protocol TypeScript 实现
+title: "MCP TS SDK — Model Context Protocol TypeScript 实现"
 来源: https://github.com/modelcontextprotocol/typescript-sdk
 日期: 2026-05-29
 子分类: 智能体与 LLM

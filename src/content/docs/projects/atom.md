@@ -1,5 +1,5 @@
 ---
-title: Atom — 已归档的 Web 编辑器先驱
+title: "Atom — 已归档的 Web 编辑器先驱"
 来源: 'https://github.com/atom/atom'
 日期: 2026-06-06
 分类: CLI

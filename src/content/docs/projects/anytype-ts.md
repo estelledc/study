@@ -1,5 +1,5 @@
 ---
-title: Anytype — 本地优先块编辑器
+title: "Anytype — 本地优先块编辑器"
 来源: https://github.com/anyproto/anytype-ts
 日期: 2026-06-13
 子分类: 编辑器与 IDE

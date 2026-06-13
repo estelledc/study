@@ -1,5 +1,5 @@
 ---
-title: OmAgent — 长视频分治 Agent 与回退检索
+title: "OmAgent — 长视频分治 Agent 与回退检索"
 来源: 'Zhang et al., "OmAgent: A Multi-modal Agent Framework for Complex Video Understanding with Task Divide-and-Conquer", arXiv 2024'
 日期: 2026-06-06
 分类: 机器学习

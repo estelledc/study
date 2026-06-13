@@ -1,5 +1,5 @@
 ---
-title: Modin — pandas 的分布式 drop-in（一行 import 自动并行）
+title: "Modin — pandas 的分布式 drop-in（一行 import 自动并行）"
 来源: 'https://github.com/modin-project/modin'
 日期: 2026-05-30
 子分类: 数据科学与 AI

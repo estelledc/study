@@ -1,5 +1,5 @@
 ---
-title: promptfoo — 给 prompt 写单元测试的 CLI
+title: "promptfoo — 给 prompt 写单元测试的 CLI"
 来源: promptfoo 官方文档 https://www.promptfoo.dev/docs/
 日期: 2026-05-31
 子分类: AI 工程基建

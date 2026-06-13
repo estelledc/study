@@ -1,5 +1,5 @@
 ---
-title: Verus-SpecGym — 规格自动形式化与 Agent 评测环境
+title: "Verus-SpecGym — 规格自动形式化与 Agent 评测环境"
 来源: https://arxiv.org/abs/2605.26457
 日期: 2026-06-13
 子分类: 形式化验证

@@ -1,5 +1,5 @@
 ---
-title: GBRank — 把决策树堆起来学排序，一棵树纠正一处错排
+title: "GBRank — 把决策树堆起来学排序，一棵树纠正一处错排"
 来源: Zheng, Zha, Zhang, Chapelle, Chen, Sun, "A Regression Framework for Learning Ranking Functions Using Relative Relevance Judgments", SIGIR 2007
 日期: 2026-05-31
 子分类: 检索与排序

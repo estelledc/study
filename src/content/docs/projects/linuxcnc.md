@@ -1,5 +1,5 @@
 ---
-title: LinuxCNC — 在 Linux 上跑完整 CNC「机床操作系统」
+title: "LinuxCNC — 在 Linux 上跑完整 CNC「机床操作系统」"
 来源: 'https://github.com/LinuxCNC/linuxcnc'
 日期: '2026-06-13'
 子分类: 嵌入式

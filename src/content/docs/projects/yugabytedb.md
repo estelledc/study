@@ -1,5 +1,5 @@
 ---
-title: YugabyteDB — 零基础入门分布式 SQL
+title: "YugabyteDB — 零基础入门分布式 SQL"
 来源: https://github.com/yugabyte/yugabyte-db
 日期: 2026-06-13
 分类: 数据库

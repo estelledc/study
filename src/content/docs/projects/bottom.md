@@ -1,5 +1,5 @@
 ---
-title: bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
+title: "bottom — Rust 写的跨平台终端进程监控（widget 自由拼）"
 来源: 'https://github.com/ClementTsang/bottom'
 日期: 2026-05-30
 子分类: 命令行工具

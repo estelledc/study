@@ -1,5 +1,5 @@
 ---
-title: SmoothQuant 2023 — 把激活的烫手山芋扔给权重
+title: "SmoothQuant 2023 — 把激活的烫手山芋扔给权重"
 来源: Xiao et al., SmoothQuant Accurate and Efficient Post-Training Quantization for Large Language Models, ICML 2023 (arXiv 2211.10438)
 日期: 2026-05-31
 子分类: GPU 架构

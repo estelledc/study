@@ -1,5 +1,5 @@
 ---
-title: Sigma.js — 上万节点仍流畅的 WebGL 图渲染器
+title: "Sigma.js — 上万节点仍流畅的 WebGL 图渲染器"
 来源: 'https://github.com/jacomyal/sigma.js'
 日期: 2026-06-01
 子分类: 数据可视化

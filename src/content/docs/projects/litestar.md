@@ -1,5 +1,5 @@
 ---
-title: Litestar — 类型驱动的 ASGI 框架（原 Starlite）
+title: "Litestar — 类型驱动的 ASGI 框架（原 Starlite）"
 来源: 'https://github.com/litestar-org/litestar'
 日期: 2026-05-29
 子分类: Web 后端

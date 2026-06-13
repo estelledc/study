@@ -1,5 +1,5 @@
 ---
-title: Position Based Fluids — 把水也塞进 PBD 同一套框架
+title: "Position Based Fluids — 把水也塞进 PBD 同一套框架"
 来源: 'Macklin, Müller, "Position Based Fluids", SIGGRAPH 2013（预印本年份 2014）'
 日期: 2026-05-31
 子分类: 渲染与图形

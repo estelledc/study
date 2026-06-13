@@ -1,5 +1,5 @@
 ---
-title: Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架
+title: "Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架"
 来源: 'Metcalfe & Boggs, "Ethernet: Distributed Packet Switching for Local Computer Networks", CACM 1976'
 日期: 2026-05-31
 子分类: 网络协议

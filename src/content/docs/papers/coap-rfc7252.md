@@ -1,5 +1,5 @@
 ---
-title: CoAP RFC 7252 — 给传感器用的「超短明信片 HTTP」
+title: "CoAP RFC 7252 — 给传感器用的「超短明信片 HTTP」"
 来源: https://datatracker.ietf.org/doc/html/rfc7252
 日期: 2026-06-13
 子分类: 嵌入式与 IoT
@@ -273,5 +273,6 @@ Client  GET /temp  Observe:1  ──>  取消观察
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[matter-protocol-1-0]] —— Matter 1.0 — 智能家居设备的「通用语言 + 入职流程」
+- [[websocket-rfc-6455]] —— WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话
 

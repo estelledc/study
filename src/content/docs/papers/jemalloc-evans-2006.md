@@ -1,5 +1,5 @@
 ---
-title: jemalloc（Evans 2006）— 多 arena 让多线程 malloc 不再抢同一把锁
+title: "jemalloc（Evans 2006）— 多 arena 让多线程 malloc 不再抢同一把锁"
 来源: https://people.freebsd.org/~jasone/jemalloc/bsdcan2006/jemalloc.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化

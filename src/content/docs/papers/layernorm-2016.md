@@ -1,5 +1,5 @@
 ---
-title: Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训
+title: "Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训"
 来源: 'Ba, Kiros & Hinton, "Layer Normalization", arXiv 2016 (1607.06450)'
 日期: 2026-06-01
 子分类: 模型与训练

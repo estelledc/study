@@ -1,5 +1,5 @@
 ---
-title: Electron Forge — 官方一体化桌面应用构建流水线
+title: "Electron Forge — 官方一体化桌面应用构建流水线"
 来源: 'https://github.com/electron/forge'
 日期: 2026-06-06
 分类: 后端 API
@@ -180,4 +180,8 @@ module.exports = {
 
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[electron-builder]] —— electron-builder — 一条命令把 Electron 应用打包发布到全平台
+- [[neutralinojs]] —— Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[webpack]] —— webpack 模块打包
 

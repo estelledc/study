@@ -1,5 +1,5 @@
 ---
-title: embedded-hal — 让同一份驱动代码跑在任意芯片上
+title: "embedded-hal — 让同一份驱动代码跑在任意芯片上"
 来源: 'https://github.com/rust-embedded/embedded-hal'
 日期: 2026-06-06
 分类: 操作系统

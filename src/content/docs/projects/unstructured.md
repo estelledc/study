@@ -1,5 +1,5 @@
 ---
-title: Unstructured — 把任意文档解析成 LLM 能吃的元素列表
+title: "Unstructured — 把任意文档解析成 LLM 能吃的元素列表"
 来源: https://github.com/Unstructured-IO/unstructured
 日期: 2026-05-31
 子分类: 数据科学与 AI

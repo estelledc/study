@@ -1,5 +1,5 @@
 ---
-title: Klipper — 把 3D 打印机的「大脑」和「手脚」拆开的固件架构
+title: "Klipper — 把 3D 打印机的「大脑」和「手脚」拆开的固件架构"
 来源: 'https://github.com/Klipper3d/klipper'
 日期: '2026-06-13'
 子分类: 嵌入式

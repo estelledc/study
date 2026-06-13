@@ -1,5 +1,5 @@
 ---
-title: Cytoscape.js — 浏览器里画图（节点 + 边）的图论库
+title: "Cytoscape.js — 浏览器里画图（节点 + 边）的图论库"
 来源: 'https://github.com/cytoscape/cytoscape.js'
 日期: 2026-06-01
 子分类: 数据可视化
@@ -166,11 +166,9 @@ cy.layout({ name: 'fcose', quality: 'default' }).run()
 
 - [[antv-g2]] —— AntV G2 — 把 Grammar of Graphics 写成 JavaScript
 - [[antv-g6]] —— AntV G6 — 把"关系数据"画成会自己摆位置的图
-- [[chaitin-graph-coloring]] —— Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[graphology]] —— Graphology — 浏览器里的图数据结构与算法库
-- [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[kepler-gl]] —— kepler.gl — 拖拽式百万点 GIS 探索界面
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[sigma-js]] —— Sigma.js — 上万节点仍流畅的 WebGL 图渲染器

@@ -1,5 +1,5 @@
 ---
-title: NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
+title: "NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡"
 来源: 'NVIDIA, "Tesla P100 Whitepaper — The Most Advanced Datacenter GPU Ever Built", 2016'
 日期: 2026-05-30
 子分类: GPU 架构

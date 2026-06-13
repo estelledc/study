@@ -1,5 +1,5 @@
 ---
-title: poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
+title: "poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架"
 来源: 'https://github.com/poem-web/poem'
 日期: 2026-05-30
 子分类: Web 后端

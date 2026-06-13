@@ -1,5 +1,5 @@
 ---
-title: 博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋
+title: "博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋"
 来源: 'Abramsky, Jagadeesan & Malacaria, "Full Abstraction for PCF", Information and Computation 163, 2000'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -160,7 +160,6 @@ g 还没答，但调用了 call/cc
 
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[linear-types]] —— 线性类型（Linear Types）

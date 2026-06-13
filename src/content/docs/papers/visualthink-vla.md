@@ -1,5 +1,5 @@
 ---
-title: VisualThink-VLA — 用「视觉中间推理」做低延迟的机器人策略
+title: "VisualThink-VLA — 用「视觉中间推理」做低延迟的机器人策略"
 来源: 'Mingjian Gao et al., "VisualThink-VLA: Visual Intermediate Reasoning for Effective and Low-Latency Vision-Language-Action Policies", arXiv:2605.30011, 2026; https://arxiv.org/abs/2605.30011; https://github.com/DCDmllm/VisualThink-VLA'
 日期: 2026-06-13
 子分类: 模型与训练

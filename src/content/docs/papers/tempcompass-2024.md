@@ -1,5 +1,5 @@
 ---
-title: TempCompass — 专门拆穿 Video LLM 有没有真懂时间
+title: "TempCompass — 专门拆穿 Video LLM 有没有真懂时间"
 来源: 'Liu et al. TempCompass - Do Video LLMs Really Understand Videos. arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

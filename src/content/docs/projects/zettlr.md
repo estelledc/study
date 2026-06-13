@@ -1,5 +1,5 @@
 ---
-title: Zettlr — 学者向 Markdown 编辑器
+title: "Zettlr — 学者向 Markdown 编辑器"
 来源: https://github.com/Zettlr/Zettlr
 日期: 2026-06-13
 子分类: 编辑器与 IDE

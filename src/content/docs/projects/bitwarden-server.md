@@ -1,5 +1,5 @@
 ---
-title: Bitwarden Server — 密码管理器后端
+title: "Bitwarden Server — 密码管理器后端"
 来源: https://github.com/bitwarden/server
 日期: 2026-06-13
 子分类: 安全与隐私

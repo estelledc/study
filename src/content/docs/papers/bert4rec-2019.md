@@ -1,5 +1,5 @@
 ---
-title: BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模
+title: "BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模"
 来源: 'Sun et al., "BERT4Rec: Sequential Recommendation with Bidirectional Encoder Representations from Transformer", CIKM 2019'
 日期: 2026-05-31
 子分类: 检索与排序

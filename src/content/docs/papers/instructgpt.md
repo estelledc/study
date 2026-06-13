@@ -1,5 +1,5 @@
 ---
-title: InstructGPT — RLHF 让 LLM 听话
+title: "InstructGPT — RLHF 让 LLM 听话"
 来源: 'Ouyang et al., "Training Language Models to Follow Instructions with Human Feedback", NeurIPS 2022'
 日期: 2026-05-29
 子分类: NLP

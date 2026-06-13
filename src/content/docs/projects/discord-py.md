@@ -1,5 +1,5 @@
 ---
-title: discord.py — 用 Python 写 Discord 机器人的事实标准
+title: "discord.py — 用 Python 写 Discord 机器人的事实标准"
 来源: 'https://github.com/Rapptz/discord.py'
 日期: 2026-05-31
 子分类: 实时通信

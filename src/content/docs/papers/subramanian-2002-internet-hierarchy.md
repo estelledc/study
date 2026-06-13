@@ -1,5 +1,5 @@
 ---
-title: Subramanian 2002 — 用多个观察点把互联网切成 5 层
+title: "Subramanian 2002 — 用多个观察点把互联网切成 5 层"
 来源: Subramanian, Agarwal, Rexford, Katz, "Characterizing the Internet Hierarchy from Multiple Vantage Points", IEEE INFOCOM 2002
 日期: 2026-06-01
 子分类: 网络协议

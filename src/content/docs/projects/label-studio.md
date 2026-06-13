@@ -1,5 +1,5 @@
 ---
-title: Label Studio — 文本图像音视频时序通吃的标注王者
+title: "Label Studio — 文本图像音视频时序通吃的标注王者"
 来源: https://github.com/HumanSignal/label-studio
 日期: 2026-05-31
 子分类: 数据科学与 AI

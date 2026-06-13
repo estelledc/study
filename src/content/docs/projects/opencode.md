@@ -1,5 +1,5 @@
 ---
-title: OpenCode — SST 出品的终端 AI IDE
+title: "OpenCode — SST 出品的终端 AI IDE"
 来源: https://github.com/sst/opencode
 日期: 2026-06-13
 子分类: 编辑器与 IDE

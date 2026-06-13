@@ -1,5 +1,5 @@
 ---
-title: Gemini 1.5 — 百万 token 多模态长上下文
+title: "Gemini 1.5 — 百万 token 多模态长上下文"
 来源: 'Gemini Team. "Gemini 1.5: Unlocking Multimodal Understanding across Millions of Tokens of Context". arXiv 2024'
 日期: 2026-06-06
 分类: 机器学习

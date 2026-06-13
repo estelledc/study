@@ -1,5 +1,5 @@
 ---
-title: Self-Refine — 让同一个模型自己改自己写的东西
+title: "Self-Refine — 让同一个模型自己改自己写的东西"
 来源: 'Madaan et al., "Self-Refine: Iterative Refinement with Self-Feedback", NeurIPS 2023 (arXiv:2303.17651)'
 日期: 2026-06-01
 子分类: 模型与训练

@@ -1,5 +1,5 @@
 ---
-title: RAPPOR — 本地差分隐私随机响应采集
+title: "RAPPOR — 本地差分隐私随机响应采集"
 来源: 'Erlingsson, Pihur, Korolova, "RAPPOR", CCS 2014'
 日期: 2026-06-06
 分类: 安全与隐私

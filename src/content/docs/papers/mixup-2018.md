@@ -1,5 +1,5 @@
 ---
-title: mixup — 把两张图按比例叠成一张，标签也一起叠
+title: "mixup — 把两张图按比例叠成一张，标签也一起叠"
 来源: 'Zhang et al., "mixup: Beyond Empirical Risk Minimization", ICLR 2018'
 日期: 2026-06-01
 子分类: 模型与训练

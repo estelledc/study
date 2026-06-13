@@ -1,5 +1,5 @@
 ---
-title: rolldown — 用 Rust 给 Vite 当统一引擎的打包器
+title: "rolldown — 用 Rust 给 Vite 当统一引擎的打包器"
 来源: 'https://github.com/rolldown/rolldown'
 日期: 2026-05-30
 子分类: frontend-frameworks

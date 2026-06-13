@@ -1,5 +1,5 @@
 ---
-title: Seastar — Shared-Nothing 异步框架（每核一线程 + Future 驱动）
+title: "Seastar — Shared-Nothing 异步框架（每核一线程 + Future 驱动）"
 来源: https://seastar.io/shared-nothing/
 日期: 2026-06-13
 分类: 操作系统

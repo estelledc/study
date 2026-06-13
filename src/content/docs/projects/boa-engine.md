@@ -1,5 +1,5 @@
 ---
-title: boa-engine — 用 Rust 写出的可嵌入 JavaScript 引擎
+title: "boa-engine — 用 Rust 写出的可嵌入 JavaScript 引擎"
 来源: 'https://github.com/boa-dev/boa'
 日期: '2026-06-13'
 子分类: 语言运行时

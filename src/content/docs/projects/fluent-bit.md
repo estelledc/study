@@ -1,5 +1,5 @@
 ---
-title: Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
+title: "Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选"
 来源: https://github.com/fluent/fluent-bit
 日期: 2026-06-01
 子分类: DevOps 与运维

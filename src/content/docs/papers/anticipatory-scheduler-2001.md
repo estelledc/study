@@ -1,5 +1,5 @@
 ---
-title: Anticipatory Scheduling — 用「稍等一下」治好磁盘调度的误判空闲
+title: "Anticipatory Scheduling — 用「稍等一下」治好磁盘调度的误判空闲"
 来源: https://www.cs.rice.edu/~druschel/publications/anticipatory.pdf
 日期: 2026-06-13
 分类: 操作系统

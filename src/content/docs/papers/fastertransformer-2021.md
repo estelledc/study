@@ -1,5 +1,5 @@
 ---
-title: FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+title: "FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎"
 来源: NVIDIA, "FasterTransformer", GitHub 开源仓库, 2021
 日期: 2026-05-31
 子分类: GPU 架构

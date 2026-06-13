@@ -1,5 +1,5 @@
 ---
-title: prom-client — Node 服务暴露监控指标的事实标准 SDK
+title: "prom-client — Node 服务暴露监控指标的事实标准 SDK"
 来源: 'https://github.com/siimon/prom-client'
 日期: 2026-05-30
 子分类: projects

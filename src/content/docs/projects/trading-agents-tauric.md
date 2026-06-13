@@ -1,5 +1,5 @@
 ---
-title: TradingAgents — 用一支 AI 投研团队来做决策
+title: "TradingAgents — 用一支 AI 投研团队来做决策"
 来源: https://github.com/TauricResearch/TradingAgents
 日期: 2026-06-13
 分类: 机器学习

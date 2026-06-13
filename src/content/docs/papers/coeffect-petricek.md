@@ -1,5 +1,5 @@
 ---
-title: Coeffects — 让类型系统追踪「需要多少上下文」
+title: "Coeffects — 让类型系统追踪「需要多少上下文」"
 来源: 'Petricek, Orchard, Mycroft, "Coeffects: Unified Static Analysis of Context-Dependence", ICALP 2013（ICFP 2014 扩展）'
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -159,7 +159,6 @@ double x = x * ?factor
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期

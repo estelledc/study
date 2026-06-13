@@ -1,5 +1,5 @@
 ---
-title: TidesDB — C 语言 LSM 存储引擎
+title: "TidesDB — C 语言 LSM 存储引擎"
 来源: https://github.com/tidesdb/tidesdb
 日期: 2026-06-13
 分类: 数据库

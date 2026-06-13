@@ -1,5 +1,5 @@
 ---
-title: XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向
+title: "XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向"
 来源: 'Yang et al., "XLNet: Generalized Autoregressive Pretraining for Language Understanding", NeurIPS 2019'
 日期: 2026-05-31
 子分类: 模型与训练

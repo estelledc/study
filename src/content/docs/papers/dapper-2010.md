@@ -1,5 +1,5 @@
 ---
-title: Dapper — Google 大规模分布式系统链路追踪基础设施
+title: "Dapper — Google 大规模分布式系统链路追踪基础设施"
 来源: Sigelman et al., "Dapper, a Large-Scale Distributed Systems Tracing Infrastructure", Google Technical Report dapper-2010-1, April 2010
 日期: 2026-05-31
 子分类: 共识与复制

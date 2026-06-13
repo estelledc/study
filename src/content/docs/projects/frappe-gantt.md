@@ -1,5 +1,5 @@
 ---
-title: Frappe Gantt — 200 行 SVG 写出的甘特图
+title: "Frappe Gantt — 200 行 SVG 写出的甘特图"
 来源: 'https://github.com/frappe/gantt'
 日期: 2026-06-01
 子分类: 数据可视化

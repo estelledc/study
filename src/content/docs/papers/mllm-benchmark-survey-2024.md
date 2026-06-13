@@ -1,5 +1,5 @@
 ---
-title: MLLM Benchmark Survey — 200+ 多模态评测基准地图
+title: "MLLM Benchmark Survey — 200+ 多模态评测基准地图"
 来源: 'Liu et al. "A Survey on Benchmarks of Multimodal Large Language Models". arXiv 2024'
 日期: 2026-06-06
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: Label Smoothing — 别让模型对正确答案过度自信
+title: "Label Smoothing — 别让模型对正确答案过度自信"
 来源: Szegedy et al., "Rethinking the Inception Architecture for Computer Vision", CVPR 2016
 日期: 2026-06-01
 子分类: 模型与训练

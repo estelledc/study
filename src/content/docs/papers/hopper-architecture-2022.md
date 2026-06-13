@@ -1,5 +1,5 @@
 ---
-title: NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制
+title: "NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制"
 来源: 'NVIDIA, "NVIDIA H100 Tensor Core GPU Architecture", Whitepaper v1.0, 2022'
 日期: 2026-05-30
 子分类: GPU 架构

@@ -1,5 +1,5 @@
 ---
-title: SigLIP — 用 Sigmoid 损失训练图文对齐
+title: "SigLIP — 用 Sigmoid 损失训练图文对齐"
 来源: 'Zhai et al. "Sigmoid Loss for Language Image Pre-Training". arXiv 2023'
 日期: 2026-06-06
 分类: 机器学习

@@ -3,7 +3,7 @@ title: Argo CD 零基础学习笔记
 来源: https://github.com/argoproj/argo-cd
 日期: 2026-06-13
 分类: 基础设施
-子分类: DevOps 与运维
+子分类: devops-and-cloud-native
 provenance: pipeline-v3
 ---
 

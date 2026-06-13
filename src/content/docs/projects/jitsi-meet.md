@@ -1,5 +1,5 @@
 ---
-title: Jitsi Meet — 开源视频会议
+title: "Jitsi Meet — 开源视频会议"
 description: 开源视频会议：Jitsi Videobridge SFU + Web 客户端
 来源: 'https://github.com/jitsi/jitsi-meet'
 日期: 2026-06-06

@@ -1,5 +1,5 @@
 ---
-title: Altair — Python 上的 Vega-Lite 绑定
+title: "Altair — Python 上的 Vega-Lite 绑定"
 来源: 'https://github.com/vega/altair'
 日期: 2026-05-31
 子分类: 数据可视化

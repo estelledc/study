@@ -1,9 +1,9 @@
 ---
-title: raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
+title: "raylib — 极简 C 游戏库，10 行代码跑起带窗口动画"
 来源: 'https://github.com/raysan5/raylib'
 日期: 2026-06-06
 分类: 图形学
-子分类: 渲染与图形
+子分类: game-engines-and-graphics
 难度: 初级
 ---
 

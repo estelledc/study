@@ -1,5 +1,5 @@
 ---
-title: Apache CouchDB — Erlang 写的文档数据库
+title: "Apache CouchDB — Erlang 写的文档数据库"
 来源: https://github.com/apache/couchdb
 日期: 2026-05-31
 子分类: 存储与查询

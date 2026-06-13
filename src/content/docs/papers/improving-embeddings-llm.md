@@ -284,5 +284,10 @@ model.print_trainable_parameters()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[colbert-2020]] —— ColBERT — 让 BERT 检索既准又能扛大规模
+- [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
+- [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
+- [[llama]] —— LLaMA — Meta 开源大语言模型
+- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
 

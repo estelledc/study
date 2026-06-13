@@ -1,5 +1,5 @@
 ---
-title: Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面
+title: "Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面"
 来源: Catmull & Clark, "Recursively Generated B-Spline Surfaces on Arbitrary Topological Meshes", Computer-Aided Design Vol 10 No 6, 1978
 日期: 2026-05-31
 子分类: 渲染与图形

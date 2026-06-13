@@ -1,5 +1,5 @@
 ---
-title: No Silver Bullet — 软件难度的二分手术刀
+title: "No Silver Bullet — 软件难度的二分手术刀"
 来源: 'Brooks, "No Silver Bullet — Essence and Accidents of Software Engineering", IEEE Computer 1987'
 日期: 2026-05-30
 子分类: 软件工程
@@ -161,6 +161,7 @@ def score_candidate(tech):
 - [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
+- [[incident-command-system-2022]] —— 事故指挥系统 — 让线上事故响应从"救火"变成"流水线"
 - [[programmer-interruption]] —— Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
 - [[sillito-questions]] —— Sillito 44 问题 — 程序员改代码时到底在问什么
 

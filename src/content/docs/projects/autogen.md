@@ -1,5 +1,5 @@
 ---
-title: AutoGen — 微软多 Agent 对话框架
+title: "AutoGen — 微软多 Agent 对话框架"
 来源: https://github.com/microsoft/autogen
 日期: 2026-05-31
 子分类: ai-agent-frameworks

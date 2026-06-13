@@ -1,5 +1,5 @@
 ---
-title: jemalloc — 多 arena 让多线程 malloc 不再互相等
+title: "jemalloc — 多 arena 让多线程 malloc 不再互相等"
 来源: Jason Evans, "A Scalable Concurrent malloc(3) Implementation for FreeBSD", BSDCan 2006
 日期: 2026-06-01
 子分类: 内核与虚拟化

@@ -1,5 +1,5 @@
 ---
-title: Krita — 数字绘画专业编辑器
+title: "Krita — 数字绘画专业编辑器"
 来源: 'https://github.com/KDE/krita'
 日期: 2026-06-13
 分类: CLI

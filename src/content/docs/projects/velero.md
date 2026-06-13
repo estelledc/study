@@ -1,5 +1,5 @@
 ---
-title: Velero — Kubernetes 集群备份与迁移
+title: "Velero — Kubernetes 集群备份与迁移"
 来源: https://github.com/vmware-tanzu/velero
 日期: 2026-06-01
 子分类: DevOps 与运维

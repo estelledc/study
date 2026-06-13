@@ -1,5 +1,5 @@
 ---
-title: TinyGo — 把 Go 编译进微控制器和 WebAssembly 的「袖珍版编译器」
+title: "TinyGo — 把 Go 编译进微控制器和 WebAssembly 的「袖珍版编译器」"
 来源: 'https://github.com/tinygo-org/tinygo'
 日期: '2026-06-13'
 子分类: 语言运行时

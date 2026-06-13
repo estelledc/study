@@ -1,5 +1,5 @@
 ---
-title: eza — 现代 ls 替代（exa 的社区接管 fork）
+title: "eza — 现代 ls 替代（exa 的社区接管 fork）"
 来源: 'https://github.com/eza-community/eza'
 日期: 2026-05-30
 子分类: 命令行工具

@@ -1,5 +1,5 @@
 ---
-title: RAG (Lewis 2020) — 检索增强生成奠基
+title: "RAG (Lewis 2020) — 检索增强生成奠基"
 来源: 'Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", NeurIPS 2020'
 日期: 2026-05-29
 子分类: AI / NLP

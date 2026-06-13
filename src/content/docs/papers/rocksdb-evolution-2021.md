@@ -1,5 +1,5 @@
 ---
-title: RocksDB 优先级演化 — 八年大规模存储引擎的工程决策复盘
+title: "RocksDB 优先级演化 — 八年大规模存储引擎的工程决策复盘"
 来源: 'Siying Dong, Andrew Kryczka, Yanqin Jin & Michael Stumm, "RocksDB: Evolution of Development Priorities in a Key-value Store Serving Large-scale Applications", FAST 2021'
 日期: 2026-06-13
 分类: 数据库
@@ -210,3 +210,6 @@ demo_checksum_layers()
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

@@ -1,5 +1,5 @@
 ---
-title: Berenson 1995 — ANSI SQL 隔离级别的漏洞与快照隔离
+title: "Berenson 1995 — ANSI SQL 隔离级别的漏洞与快照隔离"
 来源: 'Berenson et al., "A Critique of ANSI SQL Isolation Levels", Microsoft Research TR 1995'
 日期: 2026-06-06
 分类: 数据库

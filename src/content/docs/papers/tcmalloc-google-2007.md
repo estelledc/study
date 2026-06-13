@@ -1,5 +1,5 @@
 ---
-title: TCMalloc — Thread-Caching Malloc 让多线程 malloc 走「线程私有小抽屉」
+title: "TCMalloc — Thread-Caching Malloc 让多线程 malloc 走「线程私有小抽屉」"
 来源: https://google.github.io/tcmalloc/design.html
 日期: 2026-06-13
 分类: 操作系统

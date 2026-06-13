@@ -1,5 +1,5 @@
 ---
-title: Elixir — BEAM 上的现代语言
+title: "Elixir — BEAM 上的现代语言"
 来源: https://github.com/elixir-lang/elixir
 日期: 2026-06-13
 分类: 编译器

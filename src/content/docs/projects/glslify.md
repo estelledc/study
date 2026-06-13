@@ -1,5 +1,5 @@
 ---
-title: glslify — Browserify 风格 GLSL 模块
+title: "glslify — Browserify 风格 GLSL 模块"
 来源: 'https://github.com/glslify/glslify'
 日期: 2026-06-13
 子分类: 渲染与图形

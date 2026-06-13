@@ -1,5 +1,5 @@
 ---
-title: Clove — Object-Level CXL Memory Management in Managed Runtimes
+title: "Clove — Object-Level CXL Memory Management in Managed Runtimes"
 来源: https://arxiv.org/abs/2605.20370
 日期: 2026-06-13
 分类: 操作系统

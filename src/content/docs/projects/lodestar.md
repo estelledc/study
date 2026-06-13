@@ -1,5 +1,5 @@
 ---
-title: Lodestar — ChainSafe 的 TypeScript 以太坊共识层客户端
+title: "Lodestar — ChainSafe 的 TypeScript 以太坊共识层客户端"
 description: 唯一主流 TS 实现的 beacon node + validator；libp2p 组网、浏览器 light client 与 monorepo 包生态
 来源: 'https://github.com/ChainSafe/lodestar'
 日期: 2026-06-05

@@ -1,5 +1,5 @@
 ---
-title: RoseDB — Go Bitcask KV 引擎
+title: "RoseDB — Go Bitcask KV 引擎"
 来源: https://github.com/rosedblabs/rosedb
 日期: 2026-06-13
 分类: 数据库

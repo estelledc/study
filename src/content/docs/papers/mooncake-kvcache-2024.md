@@ -1,5 +1,5 @@
 ---
-title: Mooncake — 以 KVCache 为中心的分离式 LLM 服务架构（零基础学习笔记）
+title: "Mooncake — 以 KVCache 为中心的分离式 LLM 服务架构（零基础学习笔记）"
 来源: https://arxiv.org/abs/2407.00079
 日期: 2026-06-13
 子分类: ML 系统

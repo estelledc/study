@@ -1,5 +1,5 @@
 ---
-title: bat — 现代 cat 替代
+title: "bat — 现代 cat 替代"
 来源: https://github.com/sharkdp/bat
 日期: 2026-05-29
 子分类: 命令行工具

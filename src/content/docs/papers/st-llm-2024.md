@@ -1,5 +1,5 @@
 ---
-title: ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序
+title: "ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序"
 来源: 'Liu et al., "ST-LLM: Large Language Models Are Effective Temporal Learners", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

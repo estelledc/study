@@ -1,5 +1,5 @@
 ---
-title: Bigtable 回顾 — 一个分布式数据库 18 年生产经验的全盘复盘
+title: "Bigtable 回顾 — 一个分布式数据库 18 年生产经验的全盘复盘"
 来源: 'Steve Yegge, "Bigtable Then and Now", CIDR 2024'
 日期: 2026-06-13
 分类: 数据库
@@ -193,3 +193,6 @@ memtable_limit(service="logs_analytics", max_gb=2)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

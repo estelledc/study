@@ -1,5 +1,5 @@
 ---
-title: CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+title: "CodeMirror — 编辑器不是一个类，是一组扩展的合奏"
 来源: 'Marijn Haverbeke, "The Architecture of CodeMirror 6", marijnhaverbeke.nl 2018'
 日期: 2026-05-29
 子分类: 前端
@@ -162,6 +162,7 @@ const logUpdates = ViewPlugin.fromClass(class {
 - [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[react]] —— React UI 组件库

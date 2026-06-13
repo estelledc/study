@@ -1,5 +1,5 @@
 ---
-title: k9s — 让 kubectl 长出眼睛和键盘的终端 UI
+title: "k9s — 让 kubectl 长出眼睛和键盘的终端 UI"
 来源: https://github.com/derailed/k9s
 日期: 2026-05-31
 子分类: 命令行工具

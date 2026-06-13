@@ -1,5 +1,5 @@
 ---
-title: Kakoune — 多光标优先模态编辑器
+title: "Kakoune — 多光标优先模态编辑器"
 来源: 'https://github.com/mawww/kakoune'
 日期: 2026-06-06
 分类: CLI

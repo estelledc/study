@@ -1,5 +1,5 @@
 ---
-title: Szegedy 对抗样本 2013 — 一张图片骗过神经网络的开山之作
+title: "Szegedy 对抗样本 2013 — 一张图片骗过神经网络的开山之作"
 来源: 'Szegedy et al., "Intriguing Properties of Neural Networks", ICLR 2014'
 日期: 2026-06-06
 分类: 安全与隐私

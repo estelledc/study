@@ -1,5 +1,5 @@
 ---
-title: Immich — 把家庭照片从别人的云里救回自己机器
+title: "Immich — 把家庭照片从别人的云里救回自己机器"
 来源: 'Alex Tran 等. "immich-app/immich". GitHub 2022 至今, AGPL-3.0'
 日期: 2026-05-29
 子分类: 自托管应用

@@ -1,5 +1,5 @@
 ---
-title: PyPy — RPython 写的 Python JIT
+title: "PyPy — RPython 写的 Python JIT"
 来源: https://github.com/pypy/pypy
 日期: 2026-06-13
 子分类: 语言运行时

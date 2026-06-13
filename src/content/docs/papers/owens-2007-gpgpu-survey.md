@@ -1,5 +1,5 @@
 ---
-title: Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代
+title: "Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代"
 来源: Owens et al., "A Survey of General-Purpose Computation on Graphics Hardware", Computer Graphics Forum 26(1), 2007
 日期: 2026-05-31
 子分类: 渲染与图形

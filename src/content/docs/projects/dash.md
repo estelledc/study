@@ -1,5 +1,5 @@
 ---
-title: Dash — Plotly 的 Python 仪表板框架
+title: "Dash — Plotly 的 Python 仪表板框架"
 来源: 'https://github.com/plotly/dash'
 日期: 2026-06-01
 子分类: 数据可视化

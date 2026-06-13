@@ -1,5 +1,5 @@
 ---
-title: Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
+title: "Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架"
 来源: https://github.com/koajs/koa + koajs.com 官方文档
 日期: 2026-05-30
 子分类: 工具库
@@ -163,8 +163,7 @@ router / cors / bodyparser 都是独立 npm 包，自己装自己挂——这就
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[ink]] —— ink — 用 React 组件树写终端 CLI
 - [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
-- [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
 - [[pino]] —— pino — 日志不该阻塞热路径
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
+- [[zod]] —— Zod — TypeScript-first schema 验证
 

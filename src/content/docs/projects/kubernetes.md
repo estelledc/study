@@ -1,8 +1,8 @@
 ---
-title: Kubernetes — 容器编排平台
+title: "Kubernetes — 容器编排平台"
 来源: https://github.com/kubernetes/kubernetes
 日期: 2026-05-29
-子分类: DevOps 与运维
+子分类: devops-and-cloud-native
 分类: 基础设施
 难度: 中级
 schema_version: legacy-long
@@ -148,6 +148,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[backstage-spotify-2020]] —— Backstage — Spotify 的内部开发者门户如何变成开源的「开发工具前台」
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
+- [[cansat-survey]] —— 现代计算全景（Modern Computing: Vision and Challenges）— 六十年计算范式演化地图
 - [[chaos-engineering-netflix-2016]] —— Chaos Engineering — Netflix 如何把「故意搞破坏」变成可靠性学科
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[code-server]] —— code-server — 在浏览器里跑完整 VS Code

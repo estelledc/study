@@ -1,5 +1,5 @@
 ---
-title: rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态
+title: "rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态"
 来源: 'https://github.com/web-infra-dev/rspack'
 日期: 2026-05-30
 子分类: 构建工具

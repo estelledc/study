@@ -1,5 +1,5 @@
 ---
-title: Spectre 攻击 — 推测执行偷看别人的内存
+title: "Spectre 攻击 — 推测执行偷看别人的内存"
 来源: 'Paul Kocher et al., "Spectre Attacks: Exploiting Speculative Execution", IEEE S&P 2019'
 日期: 2026-05-30
 分类: 安全与隐私

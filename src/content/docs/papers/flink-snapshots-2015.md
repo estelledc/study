@@ -1,5 +1,5 @@
 ---
-title: Flink 异步快照 — 不停机给流处理拍一致照片
+title: "Flink 异步快照 — 不停机给流处理拍一致照片"
 来源: Carbone et al., "Lightweight Asynchronous Snapshots for Distributed Dataflows", arXiv:1506.08603, 2015
 日期: 2026-05-31
 子分类: 共识与复制

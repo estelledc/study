@@ -1,5 +1,5 @@
 ---
-title: Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑
+title: "Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑"
 来源: https://github.com/actions/actions-runner-controller
 日期: 2026-05-31
 子分类: DevOps / CI 基建

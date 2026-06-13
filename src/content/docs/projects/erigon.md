@@ -1,5 +1,5 @@
 ---
-title: Erigon — 存储优化型以太坊客户端
+title: "Erigon — 存储优化型以太坊客户端"
 来源: 'https://github.com/ledgerwatch/erigon'
 日期: 2026-05-29
 子分类: 链与合约

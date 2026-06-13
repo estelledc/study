@@ -1,5 +1,5 @@
 ---
-title: mailcow — Docker compose 一键起一整套邮件服务
+title: "mailcow — Docker compose 一键起一整套邮件服务"
 来源: https://github.com/mailcow/mailcow-dockerized
 日期: 2026-05-31
 子分类: 实时通信

@@ -1,5 +1,5 @@
 ---
-title: Demikernel — 微秒级数据中心的 datapath OS 架构
+title: "Demikernel — 微秒级数据中心的 datapath OS 架构"
 来源: 'Zhang et al., "The Demikernel Datapath OS Architecture for Microsecond-scale Datacenter Systems", SOSP 2021'
 日期: 2026-06-06
 分类: 操作系统

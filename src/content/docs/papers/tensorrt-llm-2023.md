@@ -1,5 +1,5 @@
 ---
-title: TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
+title: "TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈"
 来源: NVIDIA, "TensorRT-LLM", GitHub 开源仓库, 2023-10
 日期: 2026-05-31
 子分类: GPU 架构

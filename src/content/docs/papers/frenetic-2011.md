@@ -1,5 +1,5 @@
 ---
-title: Frenetic 2011 — 把 OpenFlow 流表换成函数式程序
+title: "Frenetic 2011 — 把 OpenFlow 流表换成函数式程序"
 来源: 'Foster 等, "Frenetic: A Network Programming Language", ICFP 2011'
 日期: 2026-06-01
 子分类: 网络协议
@@ -169,7 +169,6 @@ let final = route + monitor
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[netkat-2014]] —— NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式
 - [[openflow-2008]] —— OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么

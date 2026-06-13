@@ -1,5 +1,5 @@
 ---
-title: Assimp — Open Asset Import Library 统一 3D 模型导入
+title: "Assimp — Open Asset Import Library 统一 3D 模型导入"
 description: 40+ 种 3D 格式读入统一 aiScene 内存结构，FBX/OBJ/glTF 通吃，引擎与工具链的模型导入标配
 来源: 'https://github.com/assimp/assimp'
 日期: 2026-06-13

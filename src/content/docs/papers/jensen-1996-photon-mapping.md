@@ -1,5 +1,5 @@
 ---
-title: Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照
+title: "Jensen 光子映射 — 先撒光子再查密度的两 pass 全局光照"
 来源: Henrik Wann Jensen, "Global Illumination using Photon Maps", Rendering Techniques 1996
 日期: 2026-05-31
 子分类: 渲染与图形

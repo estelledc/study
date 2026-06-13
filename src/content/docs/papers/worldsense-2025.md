@@ -1,5 +1,5 @@
 ---
-title: WorldSense — 真实世界同步音视频理解 benchmark
+title: "WorldSense — 真实世界同步音视频理解 benchmark"
 来源: 'Guo et al., "WorldSense: Evaluating Real-World Multimodal Understanding", ICLR 2026'
 日期: 2026-06-05
 分类: 机器学习

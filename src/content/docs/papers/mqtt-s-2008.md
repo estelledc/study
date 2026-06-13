@@ -1,5 +1,5 @@
 ---
-title: MQTT-S 2008 — 把发布/订阅消息机制装进传感器芯片
+title: "MQTT-S 2008 — 把发布/订阅消息机制装进传感器芯片"
 来源: 'Hunkeler, Truong & Stanford-Clark, "MQTT-S: A Publish/Subscribe Protocol for Wireless Sensor Networks", COMSWARE 2008'
 日期: 2026-06-06
 分类: 网络协议

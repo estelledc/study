@@ -1,5 +1,5 @@
 ---
-title: k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制
+title: "k3s — 把整个 Kubernetes 装进一个 70 MB 的二进制"
 来源: Rancher Labs 2019, github.com/k3s-io/k3s（CNCF 孵化项目）
 日期: 2026-05-31
 子分类: 基础设施

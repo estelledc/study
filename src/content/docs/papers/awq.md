@@ -1,5 +1,5 @@
 ---
-title: AWQ — 看激活脸色给权重打折
+title: "AWQ — 看激活脸色给权重打折"
 来源: Lin et al., AWQ Activation-aware Weight Quantization, MLSys 2024
 日期: 2026-05-31
 子分类: 模型与训练

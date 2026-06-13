@@ -1,5 +1,5 @@
 ---
-title: Constitutional AI — Anthropic 的对齐方法
+title: "Constitutional AI — Anthropic 的对齐方法"
 来源: 'Bai et al., "Constitutional AI: Harmlessness from AI Feedback", Anthropic 2022'
 日期: 2026-05-29
 子分类: AI 安全 / NLP

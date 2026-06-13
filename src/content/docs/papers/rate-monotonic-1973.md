@@ -1,5 +1,5 @@
 ---
-title: Liu-Layland 1973 — 硬实时单核调度的奠基论文（Rate Monotonic + EDF）
+title: "Liu-Layland 1973 — 硬实时单核调度的奠基论文（Rate Monotonic + EDF）"
 来源: https://dl.acm.org/doi/10.1145/321738.321743
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

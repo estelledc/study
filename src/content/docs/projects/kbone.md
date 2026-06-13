@@ -1,5 +1,5 @@
 ---
-title: kbone — 用浏览器适配层让 Web 代码跑在微信小程序
+title: "kbone — 用浏览器适配层让 Web 代码跑在微信小程序"
 来源: https://github.com/Tencent/kbone
 日期: 2026-06-13
 子分类: 移动端

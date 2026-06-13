@@ -1,5 +1,5 @@
 ---
-title: CompCert — 每条优化都被数学证明保持语义的 C 编译器
+title: "CompCert — 每条优化都被数学证明保持语义的 C 编译器"
 来源: 'Xavier Leroy, "Formal Verification of a Realistic Compiler", CACM 2009'
 日期: 2026-05-30
 子分类: 类型与 PL 理论

@@ -1,5 +1,5 @@
 ---
-title: Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码
+title: "Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码"
 来源: 'Parnin & Rugaber, "Resumption Strategies for Interrupted Programming Tasks", ICPC 2009'
 日期: 2026-05-30
 子分类: 软件工程
@@ -157,6 +157,7 @@ brew install --cask activitywatch
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
+- [[incident-command-system-2022]] —— 事故指挥系统 — 让线上事故响应从"救火"变成"流水线"
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[no-silver-bullet]] —— No Silver Bullet — 软件难度的二分手术刀
 - [[pair-programming]] —— Pair Programming — 两个人共用一台机器写代码

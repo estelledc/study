@@ -1,5 +1,5 @@
 ---
-title: What Really Happened on Mars Pathfinder — 优先级反转与火星探路者重启事故
+title: "What Really Happened on Mars Pathfinder — 优先级反转与火星探路者重启事故"
 来源: https://www.cs.unc.edu/~anderson/teach/comp790/papers/mars_pathfinder_long_version.html
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

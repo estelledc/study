@@ -1,5 +1,5 @@
 ---
-title: TraveLER — 四段式多 Agent，帧级问答看懂长视频
+title: "TraveLER — 四段式多 Agent，帧级问答看懂长视频"
 来源: 'Shang et al., "TraveLER: A Modular Multi-LMM Agent Framework for Video Question-Answering", arXiv 2024'
 日期: 2026-06-06
 分类: 机器学习

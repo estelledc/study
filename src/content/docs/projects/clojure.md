@@ -1,5 +1,5 @@
 ---
-title: Clojure — JVM 上的 Lisp
+title: "Clojure — JVM 上的 Lisp"
 来源: https://github.com/clojure/clojure
 日期: 2026-06-13
 分类: 编译器

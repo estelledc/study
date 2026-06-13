@@ -1,5 +1,5 @@
 ---
-title: Graphology — 浏览器里的图数据结构与算法库
+title: "Graphology — 浏览器里的图数据结构与算法库"
 来源: 'https://github.com/graphology/graphology'
 日期: 2026-06-01
 子分类: 数据可视化

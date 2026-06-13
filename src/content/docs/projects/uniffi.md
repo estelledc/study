@@ -1,5 +1,5 @@
 ---
-title: uniFFI — Rust 跨语言绑定生成器
+title: "uniFFI — Rust 跨语言绑定生成器"
 来源: https://github.com/mozilla/uniffi-rs
 日期: 2026-06-13
 分类: 其他

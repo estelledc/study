@@ -1,5 +1,5 @@
 ---
-title: REST — Fielding 2000 给 Web API 写下的设计宪法
+title: "REST — Fielding 2000 给 Web API 写下的设计宪法"
 来源: Roy T. Fielding, Architectural Styles and the Design of Network-based Software Architectures, UC Irvine PhD Dissertation, 2000
 日期: 2026-05-31
 子分类: 后端
@@ -159,7 +159,6 @@ DELETE /users/42
 - [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
 - [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 - [[gao-2001-as-relations]] —— Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jwt-rfc-7519]] —— JWT RFC 7519 — 把身份证装进一段可校验的字符串
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议

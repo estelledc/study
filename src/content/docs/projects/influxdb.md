@@ -1,5 +1,5 @@
 ---
-title: InfluxDB — 专用时序数据库
+title: "InfluxDB — 专用时序数据库"
 来源: https://github.com/influxdata/influxdb
 日期: 2026-05-29
 子分类: 存储与查询

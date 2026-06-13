@@ -1,5 +1,5 @@
 ---
-title: How Speedy is SPDY — 换协议没让网页变快多少
+title: "How Speedy is SPDY — 换协议没让网页变快多少"
 来源: Wang, Balasubramanian, Krishnamurthy, Wetherall, "How Speedy is SPDY?", NSDI 2014
 日期: 2026-06-01
 子分类: 网络协议

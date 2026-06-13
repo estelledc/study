@@ -1,5 +1,5 @@
 ---
-title: New Directions 1976 — 给协议世界写下公钥宪法
+title: "New Directions 1976 — 给协议世界写下公钥宪法"
 来源: 'Diffie & Hellman, "New Directions in Cryptography", IEEE TIT vol 22, 1976'
 日期: 2026-06-01
 子分类: security

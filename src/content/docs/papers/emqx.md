@@ -1,5 +1,5 @@
 ---
-title: EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接
+title: "EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接"
 来源: EMQX 官方文档与源码（github.com/emqx/emqx）/ MQTT 5.0 标准（OASIS, 2019）
 日期: 2026-06-01
 子分类: infrastructure

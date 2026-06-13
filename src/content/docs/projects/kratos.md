@@ -1,5 +1,5 @@
 ---
-title: kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
+title: "kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务"
 来源: 'https://github.com/go-kratos/kratos'
 日期: 2026-05-30
 子分类: Web 后端

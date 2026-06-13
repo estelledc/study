@@ -1,5 +1,5 @@
 ---
-title: Performance Left on the Table — 编译器自动向量化还剩多少性能没吃到
+title: "Performance Left on the Table — 编译器自动向量化还剩多少性能没吃到"
 来源: 'Neil Adit & Adrian Sampson, "Performance Left on the Table: An Evaluation of Compiler Autovectorization for RISC-V", IEEE Micro, 2022 (DOI: 10.1109/MM.2022.3184867)'
 日期: 2026-06-13
 子分类: 类型与 PL 理论

@@ -1,5 +1,5 @@
 ---
-title: bbolt — Go 嵌入式 B+ 树 KV
+title: "bbolt — Go 嵌入式 B+ 树 KV"
 来源: https://github.com/etcd-io/bbolt
 日期: 2026-06-01
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: MongoDB — 文档数据库服务端开源实现
+title: "MongoDB — 文档数据库服务端开源实现"
 description: mongod 单节点与 mongos 分片路由；BSON 文档模型、副本集与分片定义 NoSQL 文档范式
 来源: 'https://github.com/mongodb/mongo'
 日期: 2026-06-05

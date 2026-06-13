@@ -1,5 +1,5 @@
 ---
-title: SuperCollider — 实时音频合成环境
+title: "SuperCollider — 实时音频合成环境"
 description: 实时音频合成环境：sclang 语言 + scsynth 服务器
 来源: 'https://github.com/supercollider/supercollider'
 日期: 2026-06-06

@@ -1,5 +1,5 @@
 ---
-title: 校准噪声与敏感度 — 差分隐私的 Laplace 机制
+title: "校准噪声与敏感度 — 差分隐私的 Laplace 机制"
 来源: https://link.springer.com/chapter/10.1007/11681878_14
 日期: 2026-06-13
 分类: 安全与隐私

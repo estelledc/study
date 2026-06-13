@@ -1,5 +1,5 @@
 ---
-title: CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
+title: "CircuitPython — 插上 USB 就能写 Python 的微控制器运行时"
 来源: 'https://github.com/adafruit/circuitpython'
 日期: 2026-06-06
 分类: 操作系统
@@ -172,11 +172,9 @@ while True:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
-- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[kicad]] —— KiCad — 电子电路 CAD
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
-- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[pyth]] —— Pyth Network — 一手数据上链的低延迟预言机
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

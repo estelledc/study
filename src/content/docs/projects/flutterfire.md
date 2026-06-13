@@ -1,5 +1,5 @@
 ---
-title: FlutterFire — Flutter 接入 Firebase 的官方插件全家桶
+title: "FlutterFire — Flutter 接入 Firebase 的官方插件全家桶"
 来源: 'https://github.com/firebase/flutterfire'
 日期: 2026-06-13
 分类: 后端 API

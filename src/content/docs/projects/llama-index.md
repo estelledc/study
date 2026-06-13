@@ -1,10 +1,10 @@
 ---
-title: LlamaIndex — LLM 数据框架与 RAG 四件套
+title: "LlamaIndex — LLM 数据框架与 RAG 四件套"
 description: Loader / Index / Retriever / QueryEngine；300+ 集成包与 llama-index-core 插件化架构
 来源: 'https://github.com/run-llama/llama_index'
 日期: 2026-06-05
 分类: 机器学习
-子分类: 数据科学与 AI
+子分类: ai-ml-frameworks
 难度: 中级
 provenance: manual-read
 ---

@@ -1,5 +1,5 @@
 ---
-title: Helium — 让类型错误说人话的教学版 Haskell
+title: "Helium — 让类型错误说人话的教学版 Haskell"
 来源: Heeren, Leijen, van IJzendoorn, "Helium, for Learning Haskell", Haskell Workshop 2003
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -172,7 +172,6 @@ when using lookup with a Maybe context,
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[compiler-errors]] —— Compiler Error Messages — 让编译报错有用
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 

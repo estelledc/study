@@ -1,5 +1,5 @@
 ---
-title: LLMSurgeon — 从生成文本反推大模型预训练数据配比
+title: "LLMSurgeon — 从生成文本反推大模型预训练数据配比"
 来源: 'https://arxiv.org/abs/2605.30348'
 日期: 2026-06-13
 子分类: 模型与训练

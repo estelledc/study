@@ -1,5 +1,5 @@
 ---
-title: FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+title: "FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核"
 来源: https://github.com/FreeRTOS/FreeRTOS-Kernel
 日期: 2026-06-01
 子分类: 嵌入式

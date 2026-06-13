@@ -1,5 +1,5 @@
 ---
-title: Reflexion — 让 LLM 自我反思
+title: "Reflexion — 让 LLM 自我反思"
 来源: 'Shinn et al., "Reflexion: Language Agents with Verbal Reinforcement Learning", NeurIPS 2023'
 日期: 2026-05-29
 子分类: 智能体与 LLM

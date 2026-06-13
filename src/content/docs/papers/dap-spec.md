@@ -1,5 +1,5 @@
 ---
-title: Debug Adapter Protocol Specification — 零基础读懂调试协议规范
+title: "Debug Adapter Protocol Specification — 零基础读懂调试协议规范"
 来源: https://microsoft.github.io/debug-adapter-protocol/specification
 日期: 2026-06-13
 子分类: 编辑器与 IDE

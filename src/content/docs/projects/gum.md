@@ -1,5 +1,5 @@
 ---
-title: gum — 把 TUI 组件搬进 shell 脚本
+title: "gum — 把 TUI 组件搬进 shell 脚本"
 来源: charmbracelet/gum v0.17.0
 日期: 2026-05-31
 子分类: 命令行工具

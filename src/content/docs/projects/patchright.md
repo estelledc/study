@@ -1,5 +1,5 @@
 ---
-title: patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作
+title: "patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作"
 来源: 'https://github.com/Kaliiiiiiiiii-Vinyzu/patchright'
 日期: 2026-05-30
 子分类: projects

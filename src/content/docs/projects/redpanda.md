@@ -1,5 +1,5 @@
 ---
-title: Redpanda — Kafka 兼容的 C++ 实现
+title: "Redpanda — Kafka 兼容的 C++ 实现"
 来源: https://github.com/redpanda-data/redpanda
 日期: 2026-06-01
 子分类: 存储与查询

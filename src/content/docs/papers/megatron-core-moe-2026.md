@@ -1,5 +1,5 @@
 ---
-title: Megatron Core MoE 大规模训练 — 零基础学习笔记
+title: "Megatron Core MoE 大规模训练 — 零基础学习笔记"
 来源: https://arxiv.org/abs/2603.07685
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: wasm-tools — WASM 底层操作 CLI 零基础学习笔记
+title: "wasm-tools — WASM 底层操作 CLI 零基础学习笔记"
 来源: https://github.com/bytecodealliance/wasm-tools
 日期: 2026-06-13
 分类: 基础设施

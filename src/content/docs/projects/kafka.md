@@ -1,5 +1,5 @@
 ---
-title: Apache Kafka — 分布式流处理平台
+title: "Apache Kafka — 分布式流处理平台"
 来源: https://github.com/apache/kafka
 日期: 2026-05-29
 子分类: 存储与查询

@@ -1,5 +1,5 @@
 ---
-title: Strawberry — 用 Python 类型注解直接生成 GraphQL schema
+title: "Strawberry — 用 Python 类型注解直接生成 GraphQL schema"
 来源: 'https://github.com/strawberry-graphql/strawberry'
 日期: 2026-05-30
 子分类: Web 后端
@@ -185,6 +185,5 @@ post_loader = DataLoader(load_fn=load_posts)
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
 - [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
 

@@ -1,10 +1,10 @@
 ---
-title: FFmpeg — 多媒体转码与封装瑞士军刀
+title: "FFmpeg — 多媒体转码与封装瑞士军刀"
 description: libavcodec/libavformat/libavfilter 三件套是视频工具链底层；抽帧、转码、封装几乎所有媒体管线都绕不开它
 来源: 'https://github.com/FFmpeg/FFmpeg'
 日期: 2026-06-05
 分类: 通信
-子分类: 音视频媒体
+子分类: audio-video-processing
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -172,6 +172,7 @@ ffmpeg -i input.mp4 -codec: copy -start_number 0 -hls_time 6 -hls_list_size 0 ou
 - [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
+- [[lottie]] —— Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放
 - [[mediasoup]] —— mediasoup — WebRTC 选择性转发 SFU
 - [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
 - [[mlt]] —— MLT — 多媒体编辑框架

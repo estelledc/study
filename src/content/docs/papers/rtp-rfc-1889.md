@@ -1,5 +1,5 @@
 ---
-title: RTP RFC 1889 — 让 UDP 也能跑实时音视频
+title: "RTP RFC 1889 — 让 UDP 也能跑实时音视频"
 来源: 'Schulzrinne, Casner, Frederick, Jacobson, "RTP: A Transport Protocol for Real-Time Applications", IETF RFC 1889, 1996'
 日期: 2026-06-01
 子分类: 网络协议

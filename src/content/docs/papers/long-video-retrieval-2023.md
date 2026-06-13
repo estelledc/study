@@ -1,5 +1,5 @@
 ---
-title: R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段
+title: "R-VLM — 长视频不靠均匀采帧，靠可学习检索选片段"
 来源: Li et al. "Long Video Understanding with Learnable Retrieval in Video-Language Models". arXiv 2023
 日期: 2026-06-05
 分类: 机器学习

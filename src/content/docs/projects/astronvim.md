@@ -1,5 +1,5 @@
 ---
-title: AstroNvim — 社区驱动 Neovim 配置框架
+title: "AstroNvim — 社区驱动 Neovim 配置框架"
 来源: 'https://github.com/AstroNvim/AstroNvim'
 日期: 2026-06-06
 分类: CLI

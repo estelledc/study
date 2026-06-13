@@ -1,5 +1,5 @@
 ---
-title: LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案
+title: "LongVILA — 把 VILA 从 8 帧扩到 2048 帧的长视频全栈方案"
 来源: 'Chen et al., "LongVILA: Scaling Long-Context Visual Language Models for Long Videos", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

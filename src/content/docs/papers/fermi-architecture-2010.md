@@ -1,5 +1,5 @@
 ---
-title: NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+title: "NVIDIA Fermi — 把 GPU 从游戏卡推上超算"
 来源: 'Wittenbrink, Kilgariff, Prabhu, "Fermi: The First Complete GPU Computing Architecture", IEEE Micro 2011'
 日期: 2026-05-30
 子分类: GPU 架构

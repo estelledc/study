@@ -1,5 +1,5 @@
 ---
-title: CMSIS-NN — Cortex-M 上的「神经网络专用工具箱」
+title: "CMSIS-NN — Cortex-M 上的「神经网络专用工具箱」"
 来源: 'https://github.com/ARM-software/CMSIS-NN'
 日期: '2026-06-13'
 子分类: 嵌入式

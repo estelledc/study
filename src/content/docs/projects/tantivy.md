@@ -1,5 +1,5 @@
 ---
-title: Tantivy — Rust 版 Lucene
+title: "Tantivy — Rust 版 Lucene"
 来源: https://github.com/quickwit-oss/tantivy
 日期: 2026-06-01
 子分类: 存储与查询

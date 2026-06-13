@@ -1,5 +1,5 @@
 ---
-title: GraalVM — 多语言通用 VM
+title: "GraalVM — 多语言通用 VM"
 来源: https://github.com/oracle/graal
 日期: 2026-06-13
 分类: 编译器

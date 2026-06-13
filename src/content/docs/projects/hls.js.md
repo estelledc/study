@@ -1,5 +1,5 @@
 ---
-title: hls.js — 浏览器里播放 HLS 直播
+title: "hls.js — 浏览器里播放 HLS 直播"
 来源: 'https://github.com/video-dev/hls.js'
 日期: 2026-06-06
 分类: 通信

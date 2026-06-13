@@ -1,5 +1,5 @@
 ---
-title: vodozemac — Matrix 端到端加密的 Rust 内核
+title: "vodozemac — Matrix 端到端加密的 Rust 内核"
 来源: 'https://github.com/matrix-org/vodozemac'
 日期: 2026-05-30
 子分类: 实时通信

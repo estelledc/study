@@ -1,5 +1,5 @@
 ---
-title: OpenAI Agents SDK — 让多个 agent 协作的轻量框架
+title: "OpenAI Agents SDK — 让多个 agent 协作的轻量框架"
 来源: OpenAI Agents Python SDK 官方文档 https://openai.github.io/openai-agents-python/
 日期: 2026-05-31
 子分类: ai-agent-infra

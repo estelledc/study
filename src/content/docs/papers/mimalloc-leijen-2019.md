@@ -1,5 +1,5 @@
 ---
-title: Mimalloc（Leijen 2019）— 用「分片空闲链表」让 malloc 又快又稳
+title: "Mimalloc（Leijen 2019）— 用「分片空闲链表」让 malloc 又快又稳"
 来源: https://www.microsoft.com/en-us/research/uploads/prod/2019/06/mimalloc-tr-v1.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化

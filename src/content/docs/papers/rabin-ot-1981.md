@@ -1,5 +1,5 @@
 ---
-title: Rabin 遗忘传输 — 发送方永远不知道你收到了什么
+title: "Rabin 遗忘传输 — 发送方永远不知道你收到了什么"
 来源: 'Michael O. Rabin, "How To Exchange Secrets with Oblivious Transfer", Harvard TR-81, 1981'
 日期: 2026-06-06
 分类: 安全与隐私

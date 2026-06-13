@@ -1,5 +1,5 @@
 ---
-title: First-Class Refinement Types for Scala — 把「带条件的类型」写进 Scala 3 本身
+title: "First-Class Refinement Types for Scala — 把「带条件的类型」写进 Scala 3 本身"
 来源: 'Bovel, Kunčak & Odersky, "First-Class Refinement Types for Scala", arXiv:2605.08369, 2026'
 日期: 2026-06-13
 子分类: 类型与 PL 理论

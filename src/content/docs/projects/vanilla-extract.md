@@ -1,5 +1,5 @@
 ---
-title: vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
+title: "vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时"
 来源: 'https://github.com/vanilla-extract-css/vanilla-extract'
 日期: 2026-05-30
 子分类: projects / 前端样式

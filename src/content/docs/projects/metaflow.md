@@ -1,5 +1,5 @@
 ---
-title: Metaflow — Netflix 给数据科学家的 Python 流水线
+title: "Metaflow — Netflix 给数据科学家的 Python 流水线"
 来源: https://github.com/Netflix/metaflow
 日期: 2026-05-31
 子分类: 数据科学与 AI

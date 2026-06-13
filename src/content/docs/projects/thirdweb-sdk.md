@@ -1,5 +1,5 @@
 ---
-title: thirdweb SDK — 一站式 Web3 全家桶
+title: "thirdweb SDK — 一站式 Web3 全家桶"
 来源: 'https://github.com/thirdweb-dev/js'
 日期: 2026-05-30
 子分类: 链与合约

@@ -1,5 +1,5 @@
 ---
-title: 洋葱路由 1998 — 把匿名通信从理论搬进真实互联网
+title: "洋葱路由 1998 — 把匿名通信从理论搬进真实互联网"
 来源: 'Reed, Syverson & Goldschlag. "Anonymous Connections and Onion Routing". IEEE JSAC 1998'
 日期: 2026-06-06
 分类: 安全与隐私

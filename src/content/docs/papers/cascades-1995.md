@@ -1,5 +1,5 @@
 ---
-title: Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
+title: "Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器"
 来源: 'Goetz Graefe, "The Cascades Framework for Query Optimization", IEEE Data Engineering Bulletin 18(3) 1995'
 日期: 2026-05-30
 子分类: 存储与查询

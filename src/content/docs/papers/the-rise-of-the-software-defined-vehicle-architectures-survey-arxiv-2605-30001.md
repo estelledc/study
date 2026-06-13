@@ -1,5 +1,5 @@
 ---
-title: The Rise of the Software-Defined Vehicle — 零基础学习笔记
+title: "The Rise of the Software-Defined Vehicle — 零基础学习笔记"
 来源: https://arxiv.org/abs/2605-30001
 日期: 2026-06-13
 分类: 操作系统

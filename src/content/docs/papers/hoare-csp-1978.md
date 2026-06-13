@@ -1,5 +1,5 @@
 ---
-title: Communicating Sequential Processes — Hoare 1978 零基础学习笔记
+title: "Communicating Sequential Processes — Hoare 1978 零基础学习笔记"
 来源: https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf
 日期: 2026-06-13
 子分类: 类型与 PL 理论

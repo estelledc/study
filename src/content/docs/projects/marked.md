@@ -1,5 +1,5 @@
 ---
-title: marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
+title: "marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器"
 来源: 'https://github.com/markedjs/marked + https://marked.js.org 官方文档'
 日期: 2026-05-30
 子分类: projects
@@ -171,9 +171,10 @@ marked.use({
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[express]] —— Express — Node.js 最经典的 Web 框架
+- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
-- [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 

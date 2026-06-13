@@ -1,5 +1,5 @@
 ---
-title: 校准噪声与敏感度 — Laplace 机制奠基
+title: "校准噪声与敏感度 — Laplace 机制奠基"
 来源: 'Dwork, McSherry, Nissim, Smith, "Calibrating Noise to Sensitivity in Private Data Analysis", TCC 2006'
 日期: 2026-06-06
 分类: 安全与隐私

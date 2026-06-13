@@ -1,5 +1,5 @@
 ---
-title: oxc — Rust 写一整套 JS/TS 工具链的勇气
+title: "oxc — Rust 写一整套 JS/TS 工具链的勇气"
 来源: 'https://github.com/oxc-project/oxc'
 日期: 2026-05-30
 子分类: projects / 编译器

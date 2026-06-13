@@ -1,5 +1,5 @@
 ---
-title: MindAR — Web 图像/人脸 AR
+title: "MindAR — Web 图像/人脸 AR"
 来源: https://github.com/hiukim/mind-ar-js
 日期: 2026-06-13
 子分类: 渲染与图形

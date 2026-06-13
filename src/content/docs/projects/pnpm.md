@@ -1,5 +1,5 @@
 ---
-title: pnpm — 全机器只存一份的 Node 包管理器
+title: "pnpm — 全机器只存一份的 Node 包管理器"
 来源: 'https://github.com/pnpm/pnpm'
 日期: 2026-05-30
 子分类: projects / 工具

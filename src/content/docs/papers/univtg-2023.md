@@ -1,5 +1,5 @@
 ---
-title: UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架
+title: "UniVTG — 把视频时刻定位、高光检测、摘要合成一套框架"
 来源: 'Lin et al., "UniVTG: Towards Unified Video-Language Temporal Grounding", arXiv 2023'
 日期: 2026-06-05
 分类: 机器学习

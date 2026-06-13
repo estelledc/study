@@ -1,5 +1,5 @@
 ---
-title: dav1d — 速度优先的 AV1 解码器
+title: "dav1d — 速度优先的 AV1 解码器"
 description: VideoLAN 出品；大量汇编优化；FFmpeg/播放器读 AV1 的默认软解路径之一
 来源: 'https://github.com/videolan/dav1d'
 日期: 2026-06-06

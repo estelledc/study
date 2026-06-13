@@ -1,5 +1,5 @@
 ---
-title: Clozure CL — 苹果系 Common Lisp
+title: "Clozure CL — 苹果系 Common Lisp"
 来源: https://github.com/Clozure/ccl
 日期: 2026-06-13
 分类: 编译器

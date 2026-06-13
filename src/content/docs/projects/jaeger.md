@@ -1,5 +1,5 @@
 ---
-title: Jaeger — 分布式追踪系统
+title: "Jaeger — 分布式追踪系统"
 来源: https://github.com/jaegertracing/jaeger
 日期: 2026-05-29
 子分类: cloud-native

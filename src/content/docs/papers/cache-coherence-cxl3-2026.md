@@ -1,5 +1,5 @@
 ---
-title: CXL 3.0 Coherence — Pool-Wide Memory Sharing 零基础学习笔记
+title: "CXL 3.0 Coherence — Pool-Wide Memory Sharing 零基础学习笔记"
 来源: https://arxiv.org/abs/2605.30587
 日期: 2026-06-13
 分类: 基础设施

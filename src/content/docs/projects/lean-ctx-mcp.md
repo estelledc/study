@@ -1,5 +1,5 @@
 ---
-title: LeanCTX — AI Agent 的认知上下文层
+title: "LeanCTX — AI Agent 的认知上下文层"
 来源: https://github.com/yvgude/lean-ctx
 日期: 2026-06-13
 分类: CLI

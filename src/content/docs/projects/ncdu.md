@@ -1,5 +1,5 @@
 ---
-title: ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
+title: "ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件"
 来源: 'https://github.com/rofl0r/ncdu'
 日期: 2026-05-30
 子分类: 命令行工具

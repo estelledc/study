@@ -1,5 +1,5 @@
 ---
-title: CLIP — Contrastive Language-Image Pre-training
+title: "CLIP — Contrastive Language-Image Pre-training"
 来源: 'Radford et al., "Learning Transferable Visual Models From Natural Language Supervision", ICML 2021'
 日期: 2026-05-29
 子分类: 多模态 / 计算机视觉

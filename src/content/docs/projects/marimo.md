@@ -1,5 +1,5 @@
 ---
-title: marimo — 反应式 Python 笔记本
+title: "marimo — 反应式 Python 笔记本"
 来源: https://github.com/marimo-team/marimo
 日期: 2026-06-13
 分类: CLI

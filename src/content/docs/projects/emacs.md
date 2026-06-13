@@ -1,5 +1,5 @@
 ---
-title: GNU Emacs — Lisp 自文档编辑器
+title: "GNU Emacs — Lisp 自文档编辑器"
 来源: 'Richard Stallman, GNU Emacs, GNU Project, 1985–至今, https://www.gnu.org/software/emacs/'
 日期: 2026-06-06
 分类: CLI

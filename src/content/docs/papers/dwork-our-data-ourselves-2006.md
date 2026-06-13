@@ -1,5 +1,5 @@
 ---
-title: 分布式噪声生成 — 去掉可信管理员也能保护隐私
+title: "分布式噪声生成 — 去掉可信管理员也能保护隐私"
 来源: 'Dwork, Kenthapadi, McSherry, Mironov, Naor. "Our Data, Ourselves: Privacy via Distributed Noise Generation". EUROCRYPT 2006'
 日期: 2026-06-06
 分类: 安全与隐私

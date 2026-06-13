@@ -1,5 +1,5 @@
 ---
-title: GPU 缓存一致性 — 用时戳代替失效消息
+title: "GPU 缓存一致性 — 用时戳代替失效消息"
 来源: Singh, Shriraman, Fung, OʼConnor, Aamodt, "Cache Coherence for GPU Architectures", HPCA 2013
 日期: 2026-05-31
 子分类: GPU 架构

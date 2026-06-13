@@ -1,5 +1,5 @@
 ---
-title: CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
+title: "CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库"
 来源: 'Taft 等. "CockroachDB: The Resilient Geo-Distributed SQL Database". SIGMOD 2020'
 日期: 2026-05-30
 子分类: 存储与查询

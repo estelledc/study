@@ -1,5 +1,5 @@
 ---
-title: DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
+title: "DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑"
 来源: 'Zhong et al., "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving", OSDI 2024'
 日期: 2026-05-31
 子分类: 数据科学与 AI

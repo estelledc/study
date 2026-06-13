@@ -1,5 +1,5 @@
 ---
-title: Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM
+title: "Video-LLaVA — 投影之前先对齐，图像和视频共用一个 LLM"
 来源: 'Lin et al., "Video-LLaVA: Learning United Visual Representation by Alignment Before Projection", arXiv 2023'
 日期: 2026-06-05
 分类: 机器学习
@@ -179,6 +179,7 @@ for batch in dataloader:  # 视频-图像-音频-深度-热成像 五元组
 - [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
 - [[moviechat-2024]] —— MovieChat — 从稠密帧到稀疏记忆，小时级电影也能聊
 - [[mvbench-2023]] —— MVBench — 二十道题拆穿视频大模型真懂还是装懂
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qwen2-5-vl-2025]] —— Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成

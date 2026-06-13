@@ -1,5 +1,5 @@
 ---
-title: 列式存储格式实证评估 — Parquet 与 ORC 谁更适合 2020 年代？
+title: "列式存储格式实证评估 — Parquet 与 ORC 谁更适合 2020 年代？"
 来源: https://www.vldb.org/pvldb/vol17/p148-zeng.pdf
 日期: 2026-06-13
 子分类: 存储与查询

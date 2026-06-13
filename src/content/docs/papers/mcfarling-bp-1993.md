@@ -1,5 +1,5 @@
 ---
-title: McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
+title: "McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台"
 来源: Scott McFarling, "Combining Branch Predictors", DEC WRL Technical Note TN-36, June 1993
 日期: 2026-05-31
 子分类: GPU 架构

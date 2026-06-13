@@ -1,5 +1,5 @@
 ---
-title: LazyVim — lazy.nvim 驱动的 Neovim 发行版
+title: "LazyVim — lazy.nvim 驱动的 Neovim 发行版"
 来源: 'https://github.com/LazyVim/LazyVim'
 日期: 2026-06-06
 分类: CLI

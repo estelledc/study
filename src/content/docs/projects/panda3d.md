@@ -1,5 +1,5 @@
 ---
-title: Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
+title: "Panda3D — Disney/CMU 出品的开源 3D 游戏引擎"
 来源: 'https://github.com/panda3d/panda3d'
 日期: 2026-06-06
 分类: 图形学

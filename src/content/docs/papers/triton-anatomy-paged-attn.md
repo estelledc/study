@@ -1,5 +1,5 @@
 ---
-title: The Anatomy of a Triton Attention Kernel — 零基础学习笔记
+title: "The Anatomy of a Triton Attention Kernel — 零基础学习笔记"
 来源: https://arxiv.org/abs/2511.11581
 日期: 2026-06-13
 子分类: ML 系统

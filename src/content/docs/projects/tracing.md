@@ -1,5 +1,5 @@
 ---
-title: Rust Tracing — 结构化日志与追踪入门
+title: "Rust Tracing — 结构化日志与追踪入门"
 来源: https://github.com/tokio-rs/tracing
 日期: 2026-06-13
 分类: 编程语言

@@ -1,5 +1,5 @@
 ---
-title: KLEE — 符号执行自动生成高覆盖测试
+title: "KLEE — 符号执行自动生成高覆盖测试"
 来源: 'Cadar, Dunbar, Engler, "KLEE", OSDI 2008'
 日期: 2026-06-06
 分类: 安全与隐私

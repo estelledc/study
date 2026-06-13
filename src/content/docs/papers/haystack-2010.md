@@ -1,5 +1,5 @@
 ---
-title: Haystack — Facebook 十亿张照片怎么存
+title: "Haystack — Facebook 十亿张照片怎么存"
 来源: 'Beaver et al. "Finding a Needle in Haystack: Facebook Photo Storage". OSDI 2010'
 日期: 2026-06-06
 分类: 数据库

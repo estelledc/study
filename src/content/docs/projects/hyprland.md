@@ -1,5 +1,5 @@
 ---
-title: Hyprland — Wayland 上的动态平铺合成器
+title: "Hyprland — Wayland 上的动态平铺合成器"
 来源: https://github.com/hyprwm/Hyprland
 日期: 2026-06-13
 分类: 操作系统

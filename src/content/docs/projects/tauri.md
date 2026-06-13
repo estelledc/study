@@ -1,9 +1,9 @@
 ---
-title: Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+title: "Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用"
 来源: 'https://github.com/tauri-apps/tauri'
 日期: 2026-06-06
 分类: 后端 API
-子分类: frontend-frameworks
+子分类: mobile-and-cross-platform
 难度: 中级
 ---
 
@@ -182,12 +182,12 @@ Tauri v2 的 capabilities 系统比 v1 的 `allowlist` 更细粒度：每条权�
 
 - [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
 - [[electron-builder]] —— electron-builder — 一条命令把 Electron 应用打包发布到全平台
-- [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建流水线
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
 - [[flutter-rust-bridge]] —— flutter-rust-bridge — Dart 调 Rust 像调本地函数
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[neutralinojs]] —— Neutralinojs — 用系统 webview 写桌面应用，2MB 搞定
 - [[nodegui]] —— NodeGUI — Qt6 驱动的零 WebView 桌面框架
+- [[pwa-builder]] —— PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具
 - [[react-native]] —— React Native — 用 React 写、编译成真正的原生 App
 - [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
 - [[wasmer]] —— Wasmer — 跨平台 WebAssembly 运行时

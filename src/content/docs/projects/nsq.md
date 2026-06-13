@@ -1,5 +1,5 @@
 ---
-title: NSQ — Go 写的去中心化消息队列
+title: "NSQ — Go 写的去中心化消息队列"
 来源: https://github.com/nsqio/nsq
 日期: 2026-06-01
 子分类: 存储与查询

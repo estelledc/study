@@ -1,5 +1,5 @@
 ---
-title: Monero — 默认隐私的 PoW 加密货币
+title: "Monero — 默认隐私的 PoW 加密货币"
 来源: 'https://github.com/monero-project/monero'
 日期: 2026-05-30
 子分类: 链与合约

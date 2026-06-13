@@ -1,5 +1,5 @@
 ---
-title: midscene — 用自然语言代替 selector 的浏览器自动化框架
+title: "midscene — 用自然语言代替 selector 的浏览器自动化框架"
 来源: 'https://github.com/web-infra-dev/midscene'
 日期: 2026-05-30
 子分类: 前端 / UI 自动化

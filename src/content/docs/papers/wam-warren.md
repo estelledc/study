@@ -1,5 +1,5 @@
 ---
-title: WAM — 让 Prolog 跑得像编译型语言的抽象机器
+title: "WAM — 让 Prolog 跑得像编译型语言的抽象机器"
 来源: D.H.D. Warren, "An Abstract Prolog Instruction Set", SRI Technical Note 309, 1983
 日期: 2026-05-30
 子分类: 类型与 PL 理论
@@ -183,7 +183,6 @@ WAM 是"先有工业实践，再回头总结成理论"的典型——和 LLVM IR
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[llvm]] —— LLVM — 模块化编译器框架

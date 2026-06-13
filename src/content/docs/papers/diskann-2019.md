@@ -1,5 +1,5 @@
 ---
-title: DiskANN — 单机十亿向量近邻检索（图存 SSD）
+title: "DiskANN — 单机十亿向量近邻检索（图存 SSD）"
 来源: 'Subramanya et al., "DiskANN: Fast Accurate Billion-point Nearest Neighbor Search on a Single Node", NeurIPS 2019'
 日期: 2026-05-30
 子分类: 存储与查询

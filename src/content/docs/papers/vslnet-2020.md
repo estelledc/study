@@ -1,5 +1,5 @@
 ---
-title: VSLNet — 用 span-based QA 做自然语言视频定位
+title: "VSLNet — 用 span-based QA 做自然语言视频定位"
 来源: 'Zhang et al., "Span-based Localizing Network for Natural Language Video Localization", arXiv 2020'
 日期: 2026-06-05
 分类: 机器学习

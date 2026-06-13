@@ -1,5 +1,5 @@
 ---
-title: Mach 1986 — 给 UNIX 换一块能跨机器生长的内核地基
+title: "Mach 1986 — 给 UNIX 换一块能跨机器生长的内核地基"
 来源: https://www.cs.cmu.edu/afs/cs/project/mach/public/www/doc/publications/usenix86.pdf
 日期: 2026-06-13
 子分类: 内核与虚拟化

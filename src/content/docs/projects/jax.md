@@ -2,7 +2,7 @@
 title: 'JAX — Google 函数式数值计算'
 来源: 'https://github.com/jax-ml/jax'
 日期: '2026-05-30'
-子分类: 数据科学与 AI
+子分类: ai-ml-frameworks
 分类: 机器学习
 难度: '中级'
 provenance: pipeline-v3
@@ -164,7 +164,6 @@ def step(params, x, y):
 - [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
 - [[deepspeed]] —— DeepSpeed — 微软分布式训练库
 - [[flax]] —— Flax — JAX 上的神经网络库
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
 - [[kokkos-2014]] —— Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

@@ -1,5 +1,5 @@
 ---
-title: BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录
+title: "BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录"
 来源: Koren et al., "The BellKor Solution to the Netflix Grand Prize", Netflix Prize 技术报告, 2009
 日期: 2026-05-31
 子分类: 检索与排序

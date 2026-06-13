@@ -1,5 +1,5 @@
 ---
-title: bandwhich — 按进程实时显示带宽占用的跨平台 TUI
+title: "bandwhich — 按进程实时显示带宽占用的跨平台 TUI"
 来源: 'https://github.com/imsnif/bandwhich'
 日期: 2026-05-30
 子分类: DevOps 与运维

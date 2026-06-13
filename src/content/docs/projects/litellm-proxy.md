@@ -1,5 +1,5 @@
 ---
-title: LiteLLM Proxy — 自托管的 LLM 统一网关
+title: "LiteLLM Proxy — 自托管的 LLM 统一网关"
 来源: BerriAI/litellm 官方文档 https://docs.litellm.ai/docs/simple_proxy
 日期: 2026-05-31
 子分类: ai-eng

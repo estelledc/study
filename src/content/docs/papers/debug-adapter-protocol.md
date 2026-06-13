@@ -1,5 +1,5 @@
 ---
-title: Debug Adapter Protocol — 让编辑器共享同一套「调试遥控器」的通用协议
+title: "Debug Adapter Protocol — 让编辑器共享同一套「调试遥控器」的通用协议"
 来源: https://microsoft.github.io/debug-adapter-protocol/
 日期: 2026-06-13
 子分类: 编辑器与 IDE

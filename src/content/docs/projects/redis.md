@@ -1,5 +1,5 @@
 ---
-title: Redis — 内存键值数据库
+title: "Redis — 内存键值数据库"
 来源: https://redis.io/docs/latest/
 日期: 2026-06-13
 子分类: 存储与查询

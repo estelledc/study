@@ -1,5 +1,5 @@
 ---
-title: Sui — 把链上资产拆成一个个独立对象的 L1
+title: "Sui — 把链上资产拆成一个个独立对象的 L1"
 来源: 'https://github.com/MystenLabs/sui'
 日期: 2026-05-30
 子分类: 链与合约

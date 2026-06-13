@@ -1,5 +1,5 @@
 ---
-title: Tailwind CSS — 工具类优先样式框架
+title: "Tailwind CSS — 工具类优先样式框架"
 来源: https://github.com/tailwindlabs/tailwindcss
 日期: 2026-05-29
 子分类: CSS

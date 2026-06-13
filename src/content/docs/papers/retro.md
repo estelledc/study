@@ -1,5 +1,5 @@
 ---
-title: RETRO — DeepMind 的检索增强 LLM
+title: "RETRO — DeepMind 的检索增强 LLM"
 来源: 'Borgeaud et al., "Improving Language Models by Retrieving from Trillions of Tokens", DeepMind 2022'
 日期: 2026-05-29
 子分类: AI / NLP

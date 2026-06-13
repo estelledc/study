@@ -1,5 +1,5 @@
 ---
-title: MoveIt 2 — 机械臂运动规划零基础入门
+title: "MoveIt 2 — 机械臂运动规划零基础入门"
 来源: 'https://github.com/moveit/moveit2'
 日期: 2026-06-13
 子分类: 嵌入式

@@ -1,5 +1,5 @@
 ---
-title: Crush — 终端里的 AI 编程搭档
+title: "Crush — 终端里的 AI 编程搭档"
 来源: https://github.com/charmbracelet/crush
 日期: 2026-06-13
 分类: Agent

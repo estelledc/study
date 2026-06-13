@@ -1,5 +1,5 @@
 ---
-title: Hazard Pointers — 多线程下安全释放共享节点
+title: "Hazard Pointers — 多线程下安全释放共享节点"
 来源: 'Maged M. Michael, "Hazard Pointers: Safe Memory Reclamation for Lock-Free Objects", IEEE TPDS 2004'
 日期: 2026-06-01
 子分类: 内核与虚拟化
@@ -164,4 +164,5 @@ void retire(Node* n) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[epoch-based-reclamation-2007]] —— Practical Lock-Freedom — Epoch-based Reclamation（按「时代」延迟回收共享内存）
+- [[snmalloc-2019]] —— snmalloc(2019) — 把释放内存变成寄快递
 

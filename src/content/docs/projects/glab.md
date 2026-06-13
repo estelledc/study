@@ -1,5 +1,5 @@
 ---
-title: glab — GitLab 官方命令行
+title: "glab — GitLab 官方命令行"
 来源: https://gitlab.com/gitlab-org/cli
 日期: 2026-05-31
 子分类: 命令行工具

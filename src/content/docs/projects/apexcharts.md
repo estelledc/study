@@ -1,5 +1,5 @@
 ---
-title: ApexCharts — 自带响应式与注解的 SVG 图表库
+title: "ApexCharts — 自带响应式与注解的 SVG 图表库"
 来源: 'ApexCharts.js 仓库与官网, https://github.com/apexcharts/apexcharts.js + https://apexcharts.com/'
 日期: 2026-06-01
 子分类: 数据可视化

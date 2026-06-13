@@ -1,5 +1,5 @@
 ---
-title: billboard.js — c3.js 的 TypeScript 继任者
+title: "billboard.js — c3.js 的 TypeScript 继任者"
 来源: 'https://github.com/naver/billboard.js'
 日期: 2026-05-31
 子分类: 数据可视化

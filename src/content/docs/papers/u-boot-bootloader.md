@@ -1,5 +1,5 @@
 ---
-title: Das U-Boot — Universal Bootloader 零基础学习笔记
+title: "Das U-Boot — Universal Bootloader 零基础学习笔记"
 来源: https://docs.u-boot.org/en/latest/
 日期: 2026-06-13
 子分类: 嵌入式与 IoT

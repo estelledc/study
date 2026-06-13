@@ -1,5 +1,5 @@
 ---
-title: gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级
+title: "gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级"
 来源: https://github.com/extrawurst/gitui
 日期: 2026-05-31
 子分类: 命令行工具

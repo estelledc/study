@@ -1,5 +1,5 @@
 ---
-title: Pandoc Templates — 给 Markdown 套上「出版级外壳」的模具
+title: "Pandoc Templates — 给 Markdown 套上「出版级外壳」的模具"
 来源: 'John MacFarlane, "Pandoc User''s Guide", Templates chapter, https://pandoc.org/MANUAL.html; jgm/pandoc doc/customizing-pandoc.md'
 日期: 2026-06-13
 子分类: 编辑器与 IDE

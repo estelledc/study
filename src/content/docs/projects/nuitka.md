@@ -1,5 +1,5 @@
 ---
-title: Nuitka — 把 Python 源码编译成 C 再生成原生机器码
+title: "Nuitka — 把 Python 源码编译成 C 再生成原生机器码"
 来源: 'https://github.com/Nuitka/Nuitka'
 日期: 2026-06-13
 分类: 编译器
@@ -174,3 +174,6 @@ result = process_batch(large_data)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

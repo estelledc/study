@@ -1,5 +1,5 @@
 ---
-title: MirageOS Unikernels — 应用即内核，把操作系统编译掉
+title: "MirageOS Unikernels — 应用即内核，把操作系统编译掉"
 来源: 'Madhavapeddy et al., "Unikernels: Library Operating Systems for the Cloud", ASPLOS 2013'
 日期: 2026-06-06
 分类: 操作系统

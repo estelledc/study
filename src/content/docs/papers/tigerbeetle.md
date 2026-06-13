@@ -1,5 +1,5 @@
 ---
-title: TigerBeetle — 只能记账但把记账做到极致的金融数据库
+title: "TigerBeetle — 只能记账但把记账做到极致的金融数据库"
 来源: 'Joran Greef et al. "TigerBeetle: A Distributed Financial Accounting Database". VLDB 2024 industrial track'
 日期: 2026-05-30
 子分类: 数据库

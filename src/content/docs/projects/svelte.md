@@ -1,8 +1,8 @@
 ---
-title: Svelte — 编译时 UI 框架
+title: "Svelte — 编译时 UI 框架"
 来源: https://github.com/sveltejs/svelte
 日期: 2026-05-29
-子分类: UI 框架
+子分类: frontend-frameworks
 分类: 后端 API
 难度: 中级
 provenance: pipeline-v3

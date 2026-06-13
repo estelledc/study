@@ -1,5 +1,5 @@
 ---
-title: InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
+title: "InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B"
 来源: 'Wang et al., "InternVideo2: Scaling Video Foundation Models for Multimodal Video Understanding", arXiv 2024'
 日期: 2026-06-05
 分类: 机器学习

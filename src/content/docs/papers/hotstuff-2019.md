@@ -1,5 +1,5 @@
 ---
-title: HotStuff — 让换领导也只花线性消息的 BFT 共识
+title: "HotStuff — 让换领导也只花线性消息的 BFT 共识"
 来源: Yin et al., HotStuff BFT Consensus in the Lens of Blockchain, PODC 2019
 日期: 2026-05-31
 子分类: 共识与复制

@@ -1,5 +1,5 @@
 ---
-title: SigNoz — 自托管的 OpenTelemetry 一体化可观测平台
+title: "SigNoz — 自托管的 OpenTelemetry 一体化可观测平台"
 仓库: https://github.com/SigNoz/signoz
 日期: 2026-06-01
 子分类: DevOps 与运维

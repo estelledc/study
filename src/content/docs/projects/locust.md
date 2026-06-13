@@ -1,5 +1,5 @@
 ---
-title: Locust — 用 Python 写压测脚本的分布式负载工具
+title: "Locust — 用 Python 写压测脚本的分布式负载工具"
 来源: https://github.com/locustio/locust
 日期: 2026-06-01
 子分类: DevOps 与运维

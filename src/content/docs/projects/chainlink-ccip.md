@@ -1,5 +1,5 @@
 ---
-title: Chainlink CCIP — 让两条链像两个银行那样互转钱
+title: "Chainlink CCIP — 让两条链像两个银行那样互转钱"
 来源: 'https://github.com/smartcontractkit/ccip'
 日期: 2026-05-30
 子分类: 链与合约

@@ -1,5 +1,5 @@
 ---
-title: On Rendering Diffs — 浏览器里渲染代码 diff 为何比看起来难得多
+title: "On Rendering Diffs — 浏览器里渲染代码 diff 为何比看起来难得多"
 来源: 'Amadeus Pierre, "On Rendering Diffs", Pierre Computer Company, 2026-05-29 — https://pierre.computer/writing/on-rendering-diffs'
 日期: 2026-06-13
 分类: CLI

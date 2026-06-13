@@ -1,5 +1,5 @@
 ---
-title: GMW 1987 — 任何函数都能让多方安全地一起算
+title: "GMW 1987 — 任何函数都能让多方安全地一起算"
 来源: 'Goldreich, Micali & Wigderson, "How to Play any Mental Game or A Completeness Theorem for Protocols with Honest Majority", STOC 1987'
 日期: 2026-06-06
 分类: 安全与隐私

@@ -1,5 +1,5 @@
 ---
-title: Plotly.py — DataFrame 一行变交互图表
+title: "Plotly.py — DataFrame 一行变交互图表"
 来源: 'https://github.com/plotly/plotly.py + Plotly Inc. 2015 开源'
 日期: 2026-05-31
 子分类: 数据可视化

@@ -1,5 +1,5 @@
 ---
-title: VSCodium — 去微软遥测的 VS Code 干净构建
+title: "VSCodium — 去微软遥测的 VS Code 干净构建"
 来源: 'VSCodium contributors, https://github.com/VSCodium/vscodium'
 日期: 2026-06-01
 子分类: 编辑器与 IDE

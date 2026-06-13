@@ -1,5 +1,5 @@
 ---
-title: Scaling Laws — 神经语言模型的缩放规律
+title: "Scaling Laws — 神经语言模型的缩放规律"
 来源: 'Kaplan et al., "Scaling Laws for Neural Language Models", 2020'
 日期: 2026-05-29
 子分类: NLP
@@ -145,6 +145,7 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B
 - [[attention]] —— Attention Is All You Need
+- [[cansat-survey]] —— 现代计算全景（Modern Computing: Vision and Challenges）— 六十年计算范式演化地图
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[cot]] —— Chain-of-Thought Prompting
 - [[deepspeed-zero]] —— DeepSpeed ZeRO — 微软优化大模型训练显存

@@ -1,5 +1,5 @@
 ---
-title: SoundnessBench — AI 科学家能分清好想法与烂想法吗？
+title: "SoundnessBench — AI 科学家能分清好想法与烂想法吗？"
 来源: https://arxiv.org/abs/2605.30329
 日期: 2026-06-13
 子分类: 模型与训练

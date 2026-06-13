@@ -1,5 +1,5 @@
 ---
-title: electron-builder — 一条命令把 Electron 应用打包发布到全平台
+title: "electron-builder — 一条命令把 Electron 应用打包发布到全平台"
 来源: 'https://github.com/electron-userland/electron-builder'
 日期: 2026-06-06
 分类: 后端 API

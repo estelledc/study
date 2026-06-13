@@ -1,5 +1,5 @@
 ---
-title: Speculative Decoding — 用小模型「猜」、大模型「验」，无损加速 Transformer 推理
+title: "Speculative Decoding — 用小模型「猜」、大模型「验」，无损加速 Transformer 推理"
 来源: https://arxiv.org/abs/2211.17192
 日期: 2026-06-13
 分类: 机器学习
