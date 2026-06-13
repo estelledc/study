@@ -1,10 +1,10 @@
 ---
 title: ai-dynamo / Dynamo — 数据中心级分布式 LLM 推理编排
 来源: https://github.com/ai-dynamo/dynamo
-日期:2026-06-13
+日期: 2026-06-13
 子分类: 模型与训练
 分类: 机器学习
-provenance:pipeline-v3
+provenance: pipeline-v3
 ---
 
 ## 是什么
