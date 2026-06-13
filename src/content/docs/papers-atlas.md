@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 948 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 981 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,27 +11,27 @@ sidebar:
 
 ## 总览
 
-- **总数**：948 篇
-- **已分类**：948
+- **总数**：981 篇
+- **已分类**：981
 
 ### 按一级主题分布
 
 | 主题 | 数量 |
 |---|---:|
-| [编程语言](#编程语言) | 109 |
+| [编程语言](#编程语言) | 112 |
 | [分布式系统](#分布式系统) | 75 |
-| [数据库](#数据库) | 67 |
-| [操作系统](#操作系统) | 63 |
-| [机器学习](#机器学习) | 215 |
-| [后端 API](#后端-api) | 9 |
+| [数据库](#数据库) | 75 |
+| [操作系统](#操作系统) | 64 |
+| [机器学习](#机器学习) | 232 |
+| [后端 API](#后端-api) | 10 |
 | [基础设施](#基础设施) | 12 |
 | [网络协议](#网络协议) | 66 |
 | [图形学](#图形学) | 122 |
-| [形式化方法](#形式化方法) | 51 |
+| [形式化方法](#形式化方法) | 53 |
 | [通信](#通信) | 1 |
 | [信息检索](#信息检索) | 52 |
 | [Agent](#agent) | 22 |
-| [CLI](#cli) | 1 |
+| [CLI](#cli) | 2 |
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
@@ -42,7 +42,7 @@ sidebar:
 
 ## 编程语言
 
-共 109 篇。
+共 112 篇。
 
 ### 编程语言
 
@@ -82,18 +82,21 @@ sidebar:
 | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | ✅ v3 |  |
 | [Andersen 指针分析 — 让编译器自己算出 p 可能指向谁](/study/papers/andersen-pointer-analysis/) | ✅ v3 |  |
 | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | ✅ v3 |  |
+| [Bijou64 — 结构式规范化的变长整数编码](/study/papers/bijou64-varint/) | ✅ v3 |  |
 | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | ✅ v3 |  |
 | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | ✅ v3 |  |
 | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | ✅ v3 |  |
 | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | ✅ v3 |  |
 | [Coeffects — 让类型系统追踪「需要多少上下文」](/study/papers/coeffect-petricek/) | ✅ v3 |  |
 | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | ✅ v3 |  |
+| [Performance Left on the Table — 编译器自动向量化还剩多少性能没吃到](/study/papers/compiler-perf-left-on-table/) | ✅ v3 |  |
 | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) | ✅ v3 |  |
 | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | ✅ v3 |  |
 | [DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块](/study/papers/differential-datalog/) | ✅ v3 |  |
 | [Doligez-Leroy GC — OCaml 多线程并发垃圾回收](/study/papers/doligez-leroy-concurrent-gc/) | ✅ v3 |  |
 | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) | ✅ v3 |  |
 | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | ✅ v3 |  |
+| [First-Class Refinement Types for Scala — 把「带条件的类型」写进 Scala 3 本身](/study/papers/first-class-refinement-scala/) | ✅ v3 |  |
 | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) | ✅ v3 |  |
 | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) | ✅ v3 |  |
 | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) | ✅ v3 |  |
@@ -269,7 +272,7 @@ sidebar:
 
 ## 数据库
 
-共 67 篇。
+共 75 篇。
 
 ### 存储与查询
 
@@ -283,6 +286,7 @@ sidebar:
 | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | ✅ v3 |  |
 | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 🗄 存量 |  |
 | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | ✅ v3 |  |
+| [Bw-Tree — 面向新硬件的无锁 B 树索引](/study/papers/bw-tree/) | ✅ v3 |  |
 | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) | ✅ v3 |  |
 | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | ✅ v3 |  |
 | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | ✅ v3 |  |
@@ -291,6 +295,7 @@ sidebar:
 | [CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库](/study/papers/cockroachdb-2020/) | ✅ v3 |  |
 | [Codd 1970 — 关系模型奠基](/study/papers/codd-1970/) | ✅ v3 |  |
 | [Codd 1979 — 给关系模型补上"语义"](/study/papers/codd-1979-extending/) | ✅ v3 |  |
+| [列式存储格式实证评估 — Parquet 与 ORC 谁更适合 2020 年代？](/study/papers/columnar-storage-formats-2023/) | ✅ v3 |  |
 | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | ✅ v3 |  |
 | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | ✅ v3 |  |
 | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | ✅ v3 |  |
@@ -301,14 +306,17 @@ sidebar:
 | [Eswaran 1976 — 串行化与谓词锁的源头](/study/papers/eswaran-1976/) | ✅ v3 |  |
 | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | ✅ v3 |  |
 | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | ✅ v3 |  |
+| [FastLanes 压缩布局 — 用标量代码每秒解码超过 1000 亿整数](/study/papers/fastlanes-compression/) | ✅ v3 |  |
 | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | ✅ v3 |  |
 | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | ✅ v3 |  |
 | [Gray 1981 — 把"事务"提升为通用抽象](/study/papers/gray-1981-transaction/) | ✅ v3 |  |
 | [Haystack — Facebook 十亿张照片怎么存](/study/papers/haystack-2010/) | ✅ v3 |  |
 | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | ✅ v3 |  |
+| [Hekaton — SQL Server 内存优化 OLTP 引擎](/study/papers/hekaton/) | ✅ v3 |  |
 | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) | ✅ v3 |  |
 | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | ✅ v3 |  |
 | [Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"](/study/papers/kafka-2011/) | ✅ v3 |  |
+| [Lakehouse — 用开放格式统一数据仓库与高级分析](/study/papers/lakehouse-2021/) | ✅ v3 |  |
 | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | ✅ v3 |  |
 | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) | ✅ v3 |  |
 | [LSM-Tree 1996 — 写优化存储引擎](/study/papers/lsm-tree-1996/) | ✅ v3 |  |
@@ -316,6 +324,7 @@ sidebar:
 | [Milvus — 为向量检索而生的数据库](/study/papers/milvus-2021/) | ✅ v3 |  |
 | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | ✅ v3 |  |
 | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | ✅ v3 |  |
+| [OLTP Through the Looking Glass — 传统数据库的 20 倍开销从哪来](/study/papers/oltp-looking-glass/) | ✅ v3 |  |
 | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) | 🗄 存量 |  |
 | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) | ✅ v3 |  |
 | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | ✅ v3 |  |
@@ -328,6 +337,7 @@ sidebar:
 | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | ✅ v3 |  |
 | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | ✅ v3 |  |
 | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) | ✅ v3 |  |
+| [SQLite is All You Need for Durable Workflows — 用单文件数据库做持久化工作流](/study/papers/sqlite-durable-workflows/) | ✅ v3 |  |
 | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) | ✅ v3 |  |
 | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | ✅ v3 |  |
 | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | ✅ v3 |  |
@@ -335,6 +345,7 @@ sidebar:
 | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | ✅ v3 |  |
 | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | ✅ v3 |  |
 | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) | ✅ v3 |  |
+| [WiscKey — 把 Key 和 Value 拆开，让 SSD 上的 LSM 树少干冤枉活](/study/papers/wisckey/) | ✅ v3 |  |
 | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | ✅ v3 |  |
 
 ### 数据库
@@ -355,7 +366,7 @@ sidebar:
 
 ## 操作系统
 
-共 63 篇。
+共 64 篇。
 
 ### 内核与虚拟化
 
@@ -429,10 +440,11 @@ sidebar:
 | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | ✅ v3 |  |
 | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | ✅ v3 |  |
 | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | ✅ v3 |  |
+| [You probably don't need Yocto, and that's fine — 嵌入式 Linux 不必默认上 Yocto](/study/papers/yocto-alternatives/) | ✅ v3 |  |
 
 ## 机器学习
 
-共 215 篇。
+共 232 篇。
 
 ### 多模态 LLM
 
@@ -465,6 +477,7 @@ sidebar:
 | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) | ✅ v3 |  |
 | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) | ✅ v3 |  |
 | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) | ✅ v3 |  |
+| [Cross-Component Interference in LLM Agent Scaffolding（LLM Agent 脚手架的跨组件干扰）](/study/papers/cci-agent-scaffolding/) | ✅ v3 |  |
 | [Chatbot Arena — 让真人盲投，给 LLM 排出公允座次](/study/papers/chatbot-arena-2024/) | ✅ v3 |  |
 | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | ✅ v3 |  |
 | [Classifier-Free Guidance — 让扩散模型自己听懂条件](/study/papers/classifier-free-guidance-2022/) | ✅ v3 |  |
@@ -472,6 +485,7 @@ sidebar:
 | [Code Llama — 开源代码模型的完整训练配方](/study/papers/codellama-2023/) | ✅ v3 |  |
 | [Codex — 让 GPT 学会写 Python，并造一把尺子量它](/study/papers/codex-2021/) | ✅ v3 |  |
 | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | ✅ v3 |  |
+| [When Context Hurts — 知识迁移在多智能体设计中的交叉效应](/study/papers/crossover-context-multi-agent/) | ✅ v3 |  |
 | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) | ✅ v3 |  |
 | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) | ✅ v3 |  |
 | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | ✅ v3 |  |
@@ -496,17 +510,23 @@ sidebar:
 | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) | ✅ v3 |  |
 | [Grokking — 训练 loss 早归零，几千步后才突然学会](/study/papers/grokking-2022/) | ✅ v3 |  |
 | [GRU 2014 — 用两个门替代 LSTM 三个门，编码-解码范式登场](/study/papers/gru-2014/) | ✅ v3 |  |
+| [HexAGenT — 面向 Agentic LLM 的工作流与异构感知调度](/study/papers/hexagent-agentic-scheduling/) | ✅ v3 |  |
 | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | ✅ v3 |  |
 | [Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码](/study/papers/instant-ngp-2022/) | ✅ v3 |  |
 | [InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态](/study/papers/internvl-2023/) | ✅ v3 |  |
+| [KV-Fold — 一步 KV 缓存递推实现长上下文推理](/study/papers/kv-fold/) | ✅ v3 |  |
 | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | ✅ v3 |  |
 | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | ✅ v3 |  |
+| [LFM2.5-8B-A1B — 38T 预训练的边缘 MoE 个人助手](/study/papers/lfm2-5-8b-a1b-moe/) | ✅ v3 |  |
 | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) | ✅ v3 |  |
+| [LLM Serving Needs Mathematical Optimization, Not Just Heuristics — 零基础学习笔记](/study/papers/llm-serving-needs-math/) | ✅ v3 |  |
+| [LLMSurgeon — 从生成文本反推大模型预训练数据配比](/study/papers/llmsurgeon-data-mixture/) | ✅ v3 |  |
 | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | ✅ v3 |  |
 | [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) | ✅ v3 |  |
 | [LSTM — 用门控让神经网络记得住上一段话](/study/papers/lstm-1997/) | ✅ v3 |  |
 | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | ✅ v3 |  |
 | [MAML — 学一个"好起点"，几步就能学会新任务](/study/papers/maml-2017/) | ✅ v3 |  |
+| [When Does Memory Help Multi-Trajectory Inference for Tool-Use LLM Agents?](/study/papers/memory-tool-use-agents/) | ✅ v3 |  |
 | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) | ✅ v3 |  |
 | [MiniCPM-V — 手机能跑的 GPT-4V 级多模态模型](/study/papers/minicpm-v-2024/) | ✅ v3 |  |
 | [mixup — 把两张图按比例叠成一张，标签也一起叠](/study/papers/mixup-2018/) | ✅ v3 |  |
@@ -514,12 +534,15 @@ sidebar:
 | [Mode Connectivity — 神经网络的两个最优解之间有低洼走廊](/study/papers/mode-connectivity-2018/) | ✅ v3 |  |
 | [mPLUG-Owl — 模块化拼装多模态大模型](/study/papers/mplug-owl-2023/) | ✅ v3 |  |
 | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) | ✅ v3 |  |
+| [NestedKV — 嵌套内存路由实现长上下文 KV Cache 压缩](/study/papers/nestedkv/) | ✅ v3 |  |
 | [NTK — 把无限宽的神经网络变成一个可解的核方法](/study/papers/ntk-2018/) | ✅ v3 |  |
 | [NVILA — 先放大分辨率再压缩 token 的高效 VLM](/study/papers/nvila-2024/) | ✅ v3 |  |
 | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | ✅ v3 |  |
+| [OSCAR — 面向 2-bit KV Cache 的离线谱协方差感知旋转](/study/papers/oscar-int2-kv/) | ✅ v3 |  |
 | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) | ✅ v3 |  |
 | [Performer — 用随机特征把 softmax attention 拉成线性复杂度](/study/papers/performer-2020/) | ✅ v3 |  |
 | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) | ✅ v3 |  |
+| [Qwen-VLA — 跨任务、环境与具身的统一视觉-语言-动作建模](/study/papers/qwen-vla/) | ✅ v3 |  |
 | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | ✅ v3 |  |
 | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | ✅ v3 |  |
 | [RoBERTa — 把 BERT 重训一遍就能拿 SOTA](/study/papers/roberta-2019/) | ✅ v3 |  |
@@ -531,6 +554,7 @@ sidebar:
 | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | ✅ v3 |  |
 | [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) | ✅ v3 |  |
 | [StarCoder — 把训练数据完整公开的 15B 代码模型](/study/papers/starcoder-2023/) | ✅ v3 |  |
+| [STORM — 面向多智能体协作的状态导向管理](/study/papers/storm-multi-agent-state/) | ✅ v3 |  |
 | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) | ✅ v3 |  |
 | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | ✅ v3 |  |
 | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | ✅ v3 |  |
@@ -538,7 +562,12 @@ sidebar:
 | [TD3 — 给 DDPG 装两副刹车，连续控制终于稳了](/study/papers/td3-2018/) | ✅ v3 |  |
 | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) | ✅ v3 |  |
 | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | ✅ v3 |  |
+| [TriAxialKV — Agent 推理场景下的极低精度 KV Cache 混合量化](/study/papers/triaxialkv/) | ✅ v3 |  |
+| [Tutti — 让 SSD 上的 KV Cache 真正可用于长上下文 LLM 推理](/study/papers/tutti-ssd-kv-cache/) | ✅ v3 |  |
 | [VALL-E — 3 秒样本零样本语音克隆](/study/papers/vall-e-2023/) | ✅ v3 |  |
+| [VeriCache — 把有损 KV Cache 变成无损 LLM 推理](/study/papers/vericache/) | ✅ v3 |  |
+| [VibeServe — 零基础学习笔记](/study/papers/vibeserve/) | ✅ v3 |  |
+| [VisualThink-VLA — 用「视觉中间推理」做低延迟的机器人策略](/study/papers/visualthink-vla/) | ✅ v3 |  |
 | [Whisper — 68 万小时弱监督训出的语音识别](/study/papers/whisper-2022/) | ✅ v3 |  |
 | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) | ✅ v3 |  |
 
@@ -706,7 +735,7 @@ sidebar:
 
 ## 后端 API
 
-共 9 篇。
+共 10 篇。
 
 ### 后端
 
@@ -722,6 +751,7 @@ sidebar:
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [Islands Architecture — 静态页面里只让需要交互的小块加载 JS](/study/papers/islands-architecture/) | ✅ v3 |  |
+| [MCP Is Dead? — 2026 年协议存废之争零基础笔记](/study/papers/mcp-is-dead-debate/) | ✅ v3 |  |
 | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) | ✅ v3 |  |
 | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | ✅ v3 |  |
 | [Server-Sent Events — 服务器单向推送的标准协议](/study/papers/server-sent-events/) | ✅ v3 |  |
@@ -981,13 +1011,14 @@ sidebar:
 
 ## 形式化方法
 
-共 51 篇。
+共 53 篇。
 
 ### 形式化验证
 
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确](/study/papers/acl2-2000/) | ✅ v3 |  |
+| [First Steps Towards Probabilistic Iris (Amaryllis)](/study/papers/amaryllis-probabilistic-iris/) | ✅ v3 |  |
 | [Apron — 把区间/八边形/多面体塞进同一个插槽](/study/papers/apron-2009/) | ✅ v3 |  |
 | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) | ✅ v3 |  |
 | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) | ✅ v3 |  |
@@ -1027,6 +1058,7 @@ sidebar:
 | [Nuprl — 第一个把 Martin-Löf 类型论搬上屏幕的证明助手](/study/papers/nuprl-1986/) | ✅ v3 |  |
 | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | ✅ v3 |  |
 | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) | ✅ v3 |  |
+| [Spec-Agent — 用 Agent + 分离逻辑 + Fuzz 自动写 C++ 合约](/study/papers/spec-agent-separation-logic/) | ✅ v3 |  |
 | [Stainless — 让编译器替你证明 Scala 函数真的满足规约](/study/papers/stainless-2017/) | ✅ v3 |  |
 | [Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全](/study/papers/tamarin-2012/) | ✅ v3 |  |
 | [TLC — 让 TLA+ 规范可以一键机检的模型检查器](/study/papers/tla-yu-tlc-1999/) | ✅ v3 |  |
@@ -1153,13 +1185,14 @@ sidebar:
 
 ## CLI
 
-共 1 篇。
+共 2 篇。
 
 ### 其他子类
 
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [Nix — 把每个软件包当成纯函数的输出](/study/papers/nix/) | ✅ v3 |  |
+| [On Rendering Diffs — 浏览器里渲染代码 diff 为何比看起来难得多](/study/papers/rendering-diffs/) | ✅ v3 |  |
 
 ## NLP
 
@@ -1306,7 +1339,7 @@ sidebar:
 
 ---
 
-## 全部 948 篇（字母序）
+## 全部 981 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1331,6 +1364,7 @@ sidebar:
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | ✅ v3 | 图形学 | GPU 架构 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | ✅ v3 | 机器学习 | 强化学习 / AI |
+| `amaryllis-probabilistic-iris` | [First Steps Towards Probabilistic Iris (Amaryllis)](/study/papers/amaryllis-probabilistic-iris/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | ✅ v3 | 图形学 | GPU 架构 |
 | `amoeba-1990` | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | ✅ v3 | 图形学 | GPU 架构 |
@@ -1385,6 +1419,7 @@ sidebar:
 | `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 🗄 存量 | 数据库 | 存储与查询 |
+| `bijou64-varint` | [Bijou64 — 结构式规范化的变长整数编码](/study/papers/bijou64-varint/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | ✅ v3 | 分布式系统 | 分布式系统 / 密码学 |
 | `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) | ✅ v3 | 网络协议 | 网络协议 |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | ✅ v3 | 图形学 | GPU 架构 |
@@ -1411,6 +1446,7 @@ sidebar:
 | `bunz-bulletproofs-2018` | [Bulletproofs: Short Proofs for Confidential Transactions and More](/study/papers/bunz-bulletproofs-2018/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
+| `bw-tree` | [Bw-Tree — 面向新硬件的无锁 B 树索引](/study/papers/bw-tree/) | ✅ v3 | 数据库 | 存储与查询 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `cadar-klee-2008` | [KLEE — 符号执行自动生成高覆盖测试](/study/papers/cadar-klee-2008/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -1427,6 +1463,7 @@ sidebar:
 | `catmull-1974-zbuffer` | [Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题](/study/papers/catmull-1974-zbuffer/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | ✅ v3 | 机器学习 | AI 可解释性 |
+| `cci-agent-scaffolding` | [Cross-Component Interference in LLM Agent Scaffolding（LLM Agent 脚手架的跨组件干扰）](/study/papers/cci-agent-scaffolding/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `cell-be-2005` | [Cell BE — 一颗 CPU 里塞 8 个加速核](/study/papers/cell-be-2005/) | ✅ v3 | 图形学 | GPU 架构 |
 | `ceph-2006` | [Ceph — 让分布式文件系统不靠中心查表](/study/papers/ceph-2006/) | ✅ v3 | 数据库 | 存储与查询 |
 | `cerf-kahn-1974` | [Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网](/study/papers/cerf-kahn-1974/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -1473,9 +1510,11 @@ sidebar:
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) | ✅ v3 | 信息检索 | 数据检索 |
+| `columnar-storage-formats-2023` | [列式存储格式实证评估 — Parquet 与 ORC 谁更适合 2020 年代？](/study/papers/columnar-storage-formats-2023/) | ✅ v3 | 数据库 | 存储与查询 |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | ✅ v3 | 数据库 | 存储与查询 |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | ✅ v3 | 编程语言 | 编程语言 / 编译器 |
+| `compiler-perf-left-on-table` | [Performance Left on the Table — 编译器自动向量化还剩多少性能没吃到](/study/papers/compiler-perf-left-on-table/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | ✅ v3 | 机器学习 | AI 安全 / NLP |
@@ -1499,6 +1538,7 @@ sidebar:
 | `crdt-shapiro-2011` | [CRDT — 让多副本各改各的，最终自动合一](/study/papers/crdt-shapiro-2011/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `crdt-sss-2011` | [CRDT 形式定义 — SSS 2011 八页浓缩版](/study/papers/crdt-sss-2011/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `croft-harper-1979` | [Croft-Harper 1979 — 没有相关性反馈也能跑概率检索](/study/papers/croft-harper-1979/) | ✅ v3 | 信息检索 | 检索与排序 |
+| `crossover-context-multi-agent` | [When Context Hurts — 知识迁移在多智能体设计中的交叉效应](/study/papers/crossover-context-multi-agent/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `cryptoverif-2008` | [CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全](/study/papers/cryptoverif-2008/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `csp-hoare-1978` | [CSP — 进程之间只许喊话不许共用内存](/study/papers/csp-hoare-1978/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1604,6 +1644,7 @@ sidebar:
 | `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) | ✅ v3 | 图形学 | GPU 架构 |
+| `fastlanes-compression` | [FastLanes 压缩布局 — 用标量代码每秒解码超过 1000 亿整数](/study/papers/fastlanes-compression/) | ✅ v3 | 数据库 | 存储与查询 |
 | `fat-tree-2008` | [Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心](/study/papers/fat-tree-2008/) | ✅ v3 | 网络协议 | 网络协议 |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) | ✅ v3 | 图形学 | GPU 架构 |
@@ -1612,6 +1653,7 @@ sidebar:
 | `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) | ✅ v3 | 网络协议 | 网络协议 |
 | `filip-2021` | [FILIP — 把 CLIP 的图文对齐细化到 token 级](/study/papers/filip-2021/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `firecracker-2020` | [Firecracker 2020 — 给 serverless 量身定做的极简 microVM](/study/papers/firecracker-2020/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
+| `first-class-refinement-scala` | [First-Class Refinement Types for Scala — 把「带条件的类型」写进 Scala 3 本身](/study/papers/first-class-refinement-scala/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | ✅ v3 | 图形学 | GPU 与系统 |
@@ -1688,10 +1730,12 @@ sidebar:
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | ✅ v3 | 数据库 | 存储与查询 |
 | `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) | ✅ v3 | 网络协议 | 网络协议 |
 | `heckbert-1986-texture-survey` | [Heckbert 1986 — 把"贴图"这件事讲清楚的第一篇综述](/study/papers/heckbert-1986-texture-survey/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `hekaton` | [Hekaton — SQL Server 内存优化 OLTP 引擎](/study/papers/hekaton/) | ✅ v3 | 数据库 | 存储与查询 |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
+| `hexagent-agentic-scheduling` | [HexAGenT — 面向 Agentic LLM 的工作流与异构感知调度](/study/papers/hexagent-agentic-scheduling/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 🗄 存量 | 编程语言 | 编程语言 |
 | `hits-1999` | [HITS — 给网页同时打两个分：权威页 + 索引页](/study/papers/hits-1999/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) | ✅ v3 | 分布式系统 | 共识与复制 |
@@ -1763,10 +1807,12 @@ sidebar:
 | `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) | ✅ v3 | 网络协议 | 网络协议 |
 | `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) | 🗄 存量 | 基础设施 | 基础设施 |
+| `kv-fold` | [KV-Fold — 一步 KV 缓存递推实现长上下文推理](/study/papers/kv-fold/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `lakehouse-2021` | [Lakehouse — 用开放格式统一数据仓库与高级分析](/study/papers/lakehouse-2021/) | ✅ v3 | 数据库 | 存储与查询 |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 🗄 存量 | 编程语言 | 编程语言 / 计算理论 |
 | `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) | ✅ v3 | 信息检索 | 检索与排序 |
@@ -1781,6 +1827,7 @@ sidebar:
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | ✅ v3 | 数据库 | 存储与查询 |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `lfm2-5-8b-a1b-moe` | [LFM2.5-8B-A1B — 38T 预训练的边缘 MoE 个人助手](/study/papers/lfm2-5-8b-a1b-moe/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `li-t-closeness-2007` | [t-Closeness — 用"分布距离"堵住匿名化的最后漏洞](/study/papers/li-t-closeness-2007/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
@@ -1800,7 +1847,9 @@ sidebar:
 | `llava-onevision-2024` | [LLaVA-OneVision — 单图、多图、视频一个模型全搞定](/study/papers/llava-onevision-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `llava-video-2024` | [LLaVA-Video — LLaVA-NeXT 视频主线，合成数据 + SlowFast 采帧](/study/papers/llava-video-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | ✅ v3 | 图形学 | GPU 架构 |
+| `llm-serving-needs-math` | [LLM Serving Needs Mathematical Optimization, Not Just Heuristics — 零基础学习笔记](/study/papers/llm-serving-needs-math/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | ✅ v3 | Agent | 智能体与 LLM |
+| `llmsurgeon-data-mixture` | [LLMSurgeon — 从生成文本反推大模型预训练数据配比](/study/papers/llmsurgeon-data-mixture/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `llmvs-2025` | [LLMVS — 用 LLM 语义裁判给视频帧打分做摘要](/study/papers/llmvs-2025/) | ✅ v3 | 机器学习 | 视频理解 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 🗄 存量 | 编译器 | 编译器 |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1842,6 +1891,7 @@ sidebar:
 | `mcfarling-bp-1993` | [McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台](/study/papers/mcfarling-bp-1993/) | ✅ v3 | 图形学 | GPU 架构 |
 | `mcmahan-fedavg-2017` | [FedAvg — 联邦学习奠基算法](/study/papers/mcmahan-fedavg-2017/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | ✅ v3 | 形式化方法 | 形式化验证 |
+| `mcp-is-dead-debate` | [MCP Is Dead? — 2026 年协议存废之争零基础笔记](/study/papers/mcp-is-dead-debate/) | ✅ v3 | 后端 API | Web 后端 |
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | ✅ v3 | 机器学习 | AI 工程 |
 | `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) | ✅ v3 | 图形学 | 渲染与图形 |
@@ -1850,6 +1900,7 @@ sidebar:
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | ✅ v3 | 分布式系统 | 模型与训练 |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `memcoder-co-evolution` | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) | ✅ v3 | Agent | 智能体与 LLM |
+| `memory-tool-use-agents` | [When Does Memory Help Multi-Trajectory Inference for Tool-Use LLM Agents?](/study/papers/memory-tool-use-agents/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) | ✅ v3 | 基础设施 | 工具与基础设施 |
 | `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -1906,6 +1957,7 @@ sidebar:
 | `nbeats-2020` | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `nestedkv` | [NestedKV — 嵌套内存路由实现长上下文 KV Cache 压缩](/study/papers/nestedkv/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | ✅ v3 | 网络协议 | 网络协议 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | ✅ v3 | 数据库 | 存储与查询 |
@@ -1928,6 +1980,7 @@ sidebar:
 | `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) | ✅ v3 | 图形学 | GPU 架构 |
 | `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-21-rfc/) | ✅ v3 | 后端 API | 后端 |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | ✅ v3 | 信息检索 | 检索与排序 |
+| `oltp-looking-glass` | [OLTP Through the Looking Glass — 传统数据库的 20 倍开销从哪来](/study/papers/oltp-looking-glass/) | ✅ v3 | 数据库 | 存储与查询 |
 | `omagent-2024` | [OmAgent — 长视频分治 Agent 与回退检索](/study/papers/omagent-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `omega-2013` | [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `omnidirectional-mllm-2025` | [全景空间推理 — MLLM 准备好面对 360° 了吗](/study/papers/omnidirectional-mllm-2025/) | ✅ v3 | 机器学习 | 视频理解 |
@@ -1939,6 +1992,7 @@ sidebar:
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) | ✅ v3 | 机器学习 | 机器学习 / 超参优化 |
 | `orca-2022` | [Orca — Transformer 生成模型的分布式推理调度](/study/papers/orca-2022/) | ✅ v3 | 图形学 | GPU 架构 |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `oscar-int2-kv` | [OSCAR — 面向 2-bit KV Cache 的离线谱协方差感知旋转](/study/papers/oscar-int2-kv/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -1988,6 +2042,7 @@ sidebar:
 | `quic` | [QUIC — 把可靠传输从内核搬到用户空间](/study/papers/quic/) | ✅ v3 | 网络协议 | 计算机网络 |
 | `quincy-2009` | [Quincy — 把"派活给机器"变成一道最小费用流题](/study/papers/quincy-2009/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `qvhighlights-2021` | [QVHighlights — 用自然语言查询在视频里找精彩瞬间](/study/papers/qvhighlights-2021/) | ✅ v3 | 机器学习 | 视频理解 |
+| `qwen-vla` | [Qwen-VLA — 跨任务、环境与具身的统一视觉-语言-动作建模](/study/papers/qwen-vla/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `qwen2-5-vl-2025` | [Qwen2.5-VL — 绝对时间编码 + 动态分辨率，小时级视频原生理解](/study/papers/qwen2-5-vl-2025/) | ✅ v3 | 机器学习 | 视频理解 |
 | `qwen2-vl-2024` | [Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑](/study/papers/qwen2-vl-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `r-bgp-2007` | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) | ✅ v3 | 网络协议 | 网络协议 |
@@ -2006,6 +2061,7 @@ sidebar:
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | ✅ v3 | 机器学习 | 智能体与 LLM |
 | `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `regev-lwe-2005` | [On Lattices, Learning with Errors, Random Linear Codes, and Cryptography](/study/papers/regev-lwe-2005/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `rendering-diffs` | [On Rendering Diffs — 浏览器里渲染代码 diff 为何比看起来难得多](/study/papers/rendering-diffs/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | ✅ v3 | 机器学习 | 计算机视觉 / 深度学习 |
@@ -2104,10 +2160,12 @@ sidebar:
 | `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | 🗄 存量 | 机器学习 | AI 可解释性 |
 | `sparsegpt-2023` | [SparseGPT — 175B 大模型一次过剪 50%，不重训](/study/papers/sparsegpt-2023/) | ✅ v3 | 图形学 | GPU 架构 |
+| `spec-agent-separation-logic` | [Spec-Agent — 用 Agent + 分离逻辑 + Fuzz 自动写 C++ 合约](/study/papers/spec-agent-separation-logic/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `specinfer-2023` | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) | ✅ v3 | 图形学 | GPU 架构 |
 | `splade-2021` | [SPLADE — 让神经网络学出稀疏向量，直接复用倒排索引](/study/papers/splade-2021/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `sprite-1988` | [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `sqlite-2022` | [SQLite — 嵌入式数据库 30 年怎么活下来的](/study/papers/sqlite-2022/) | ✅ v3 | 数据库 | 存储与查询 |
+| `sqlite-durable-workflows` | [SQLite is All You Need for Durable Workflows — 用单文件数据库做持久化工作流](/study/papers/sqlite-durable-workflows/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ssa` | [SSA — 静态单赋值形式](/study/papers/ssa/) | 🗄 存量 | 编译器 | 编译器 |
 | `st-llm-2024` | [ST-LLM — 把所有时空 token 交给 LLM，让它自己学时序](/study/papers/st-llm-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `stable-diffusion` | [Stable Diffusion — 开源文生图引爆](/study/papers/stable-diffusion/) | ✅ v3 | 机器学习 | 生成模型 |
@@ -2119,6 +2177,7 @@ sidebar:
 | `steensgaard-pointer` | [Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性](/study/papers/steensgaard-pointer/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `stm-shavit-touitou` | [STM Shavit-Touitou — 把"加锁"改成"事务"的源头](/study/papers/stm-shavit-touitou/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `stonebraker-2010-sqlnosql` | [Stonebraker 2010 SQL vs NoSQL — 慢的是老实现，不是 SQL](/study/papers/stonebraker-2010-sqlnosql/) | ✅ v3 | 数据库 | 存储与查询 |
+| `storm-multi-agent-state` | [STORM — 面向多智能体协作的状态导向管理](/study/papers/storm-multi-agent-state/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `streamingbench-2024` | [StreamingBench — 流式视频理解的 18 任务在线大考](/study/papers/streamingbench-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `strongtalk` | [Strongtalk — 可以装可以卸的 Smalltalk 类型系统](/study/papers/strongtalk/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `stylegan2-2020` | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -2173,6 +2232,7 @@ sidebar:
 | `traveler-2024` | [TraveLER — 四段式多 Agent，帧级问答看懂长视频](/study/papers/traveler-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | ✅ v3 | 编程语言 | 编程语言 |
+| `triaxialkv` | [TriAxialKV — Agent 推理场景下的极低精度 KV Cache 混合量化](/study/papers/triaxialkv/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | ✅ v3 | 数据库 | 存储与查询 |
 | `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) | ✅ v3 | 图形学 | GPU 架构 |
 | `triton-llm` | [Triton — 让 Python 程序员也能写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-llm/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
@@ -2180,6 +2240,7 @@ sidebar:
 | `turchin-supercompilation` | [Turchin Supercompilation — 让编译器把程序模拟一遍再写回去](/study/papers/turchin-supercompilation/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `turing-1936` | [Turing 1936 可计算性](/study/papers/turing-1936/) | ✅ v3 | 编程语言 | 计算理论 |
 | `turing-architecture-2018` | [NVIDIA Turing — RT Core 把光追装进消费卡，Tensor Core 第二代下放 INT8](/study/papers/turing-architecture-2018/) | ✅ v3 | 图形学 | GPU 架构 |
+| `tutti-ssd-kv-cache` | [Tutti — 让 SSD 上的 KV Cache 真正可用于长上下文 LLM 推理](/study/papers/tutti-ssd-kv-cache/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) | ✅ v3 | 图形学 | GPU 架构 |
 | `twine-2020` | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -2196,8 +2257,10 @@ sidebar:
 | `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | ✅ v3 | 形式化方法 | 形式化验证 |
+| `vericache` | [VeriCache — 把有损 KV Cache 变成无损 LLM 推理](/study/papers/vericache/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | ✅ v3 | 数据库 | 存储与查询 |
+| `vibeserve` | [VibeServe — 零基础学习笔记](/study/papers/vibeserve/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `vid-llm-survey-2023` | [Vid-LLM Survey — 用大语言模型理解视频的全景地图](/study/papers/vid-llm-survey-2023/) | ✅ v3 | 机器学习 | 视频理解 |
 | `video-chatgpt-2023` | [Video-ChatGPT — 让大语言模型看懂视频并聊起来](/study/papers/video-chatgpt-2023/) | ✅ v3 | 机器学习 | 视频理解 |
 | `video-llama-2023` | [Video-LLaMA — 把音频和视频同时塞进大语言模型](/study/papers/video-llama-2023/) | ✅ v3 | 机器学习 | 视频理解 |
@@ -2213,6 +2276,7 @@ sidebar:
 | `videoprism-2024` | [VideoPrism — 冻结一个模型就能搞定所有视频理解任务](/study/papers/videoprism-2024/) | ✅ v3 | 机器学习 | 视频理解 |
 | `vidstg-2020` | [VidSTG — 用自然语言在长视频里框出「谁在何时何地」](/study/papers/vidstg-2020/) | ✅ v3 | 机器学习 | 视频理解 |
 | `vinoground-2024` | [Vinoground — 时序反事实短视频探针](/study/papers/vinoground-2024/) | ✅ v3 | 机器学习 | 视频理解 |
+| `visualthink-vla` | [VisualThink-VLA — 用「视觉中间推理」做低延迟的机器人策略](/study/papers/visualthink-vla/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | ✅ v3 | 机器学习 | 计算机视觉 |
 | `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) | ✅ v3 | 网络协议 | 网络协议 |
 | `vllm` | [vLLM — 把操作系统的分页搬进 GPU KV cache](/study/papers/vllm/) | ✅ v3 | 机器学习 | 数据科学与 AI |
@@ -2242,6 +2306,7 @@ sidebar:
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `williams-1983-mipmap` | [Williams 1983 mipmap — 提前烤好金字塔，纹理过滤变 O(1)](/study/papers/williams-1983-mipmap/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `wireguard-2017` | [WireGuard: Next Generation Kernel Network Tunnel](/study/papers/wireguard-2017/) | ✅ v3 | 网络协议 | 网络协议 |
+| `wisckey` | [WiscKey — 把 Key 和 Value 拆开，让 SSD 上的 LSM 树少干冤枉活](/study/papers/wisckey/) | ✅ v3 | 数据库 | 存储与查询 |
 | `word2vec` | [Word2Vec — 词向量奠基](/study/papers/word2vec/) | ✅ v3 | NLP | NLP |
 | `world-model-robot-learning-2026` | [机器人世界模型综述 — 预测未来再动手](/study/papers/world-model-robot-learning-2026/) | ✅ v3 | 机器学习 | 机器人与 VLA |
 | `worldsense-2025` | [WorldSense — 真实世界同步音视频理解 benchmark](/study/papers/worldsense-2025/) | ✅ v3 | 机器学习 | 视频理解 |
@@ -2250,6 +2315,7 @@ sidebar:
 | `xlnet-2019` | [XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向](/study/papers/xlnet-2019/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `xtrace-2007` | [X-Trace — 比 Dapper 早 3 年的跨层跨协议追踪框架](/study/papers/xtrace-2007/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `yao-garbled-circuits-1986` | [Yao 混淆电路 — 让两人合算函数却互不泄密](/study/papers/yao-garbled-circuits-1986/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
+| `yocto-alternatives` | [You probably don't need Yocto, and that's fine — 嵌入式 Linux 不必默认上 Yocto](/study/papers/yocto-alternatives/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `youtube-two-tower-2019` | [YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键](/study/papers/youtube-two-tower-2019/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `z3-2008` | [Z3 2008 — 把 SMT 工程化到工业默认](/study/papers/z3-2008/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `zab-2011` | [Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本](/study/papers/zab-2011/) | ✅ v3 | 数据库 | 存储与查询 |

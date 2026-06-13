@@ -20,6 +20,7 @@ algol-60
 align-2021
 alpa-2022
 alphago
+amaryllis-probabilistic-iris
 amdahl-law-1967
 amoeba-1990
 ampere-architecture-2020
@@ -74,6 +75,7 @@ big-little-2011
 bigbench-2022
 biggan-2018
 bigtable-2006
+bijou64-varint
 bitcoin
 bittorrent-2003
 blackwell-architecture-2024
@@ -100,6 +102,7 @@ btrfs-2013
 bunz-bulletproofs-2018
 burgess-2020-turing-rt
 bvt-1999
+bw-tree
 byzantine-generals-1982
 cadar-klee-2008
 caesar-rexford-2005
@@ -116,6 +119,7 @@ cassandra-2010
 catmull-1974-zbuffer
 catmull-clark-1978
 causal-abstraction
+cci-agent-scaffolding
 cell-be-2005
 ceph-2006
 cerf-kahn-1974
@@ -162,9 +166,11 @@ cognitive-load-theory
 cohen-1985-hemicube
 colbert-2020
 colbert-v2
+columnar-storage-formats-2023
 comer-1979-btree
 compcert
 compiler-errors
+compiler-perf-left-on-table
 consistency-models-2023
 consistent-hashing-1997
 constitutional-ai
@@ -188,6 +194,7 @@ crdt-json-2017
 crdt-shapiro-2011
 crdt-sss-2011
 croft-harper-1979
+crossover-context-multi-agent
 cryptoverif-2008
 csp-hoare-1978
 cstore-2005
@@ -293,6 +300,7 @@ fan-vercauteren-bfv-2012
 farsite-2002
 fast-paxos-2006
 fastertransformer-2021
+fastlanes-compression
 fat-tree-2008
 feautrier-polyhedral
 fermi-architecture-2010
@@ -301,6 +309,7 @@ fidge-1988
 fielding-rest-2000
 filip-2021
 firecracker-2020
+first-class-refinement-scala
 flamingo-2022
 flan-2021
 flash-attention
@@ -377,10 +386,12 @@ hazard-pointers-2004
 hdfs-2010
 heartbleed-2014
 heckbert-1986-texture-survey
+hekaton
 helium-type-errors
 helland-2007
 herlihy-moss-tm
 hewitt-actor-model
+hexagent-agentic-scheduling
 hindley-milner
 hits-1999
 hlc-2014
@@ -452,10 +463,12 @@ koren-mf-2009
 krishnamurthy-1999-http11
 kubernetes-2016
 kustomize
+kv-fold
 kvm-2007
 l4-1995
 label-smoothing-2016
 lafortune-1993-bdpt
+lakehouse-2021
 lalr-deremer
 lambda-calculus
 lambdarank-2006
@@ -470,6 +483,7 @@ lee-keystone-2020
 leis-2015-optimizers
 lerner-seminal
 levoy-hanrahan-1996-light-field
+lfm2-5-8b-a1b-moe
 lfs-1991
 li-2018-redner
 li-t-closeness-2007
@@ -489,7 +503,9 @@ llava
 llava-onevision-2024
 llava-video-2024
 llm-int8-2022
+llm-serving-needs-math
 llm-wiki-retrieval-reasoning
+llmsurgeon-data-mixture
 llmvs-2025
 llvm
 lmdb-2011
@@ -531,6 +547,7 @@ mccarthy-lisp
 mcfarling-bp-1993
 mcmahan-fedavg-2017
 mcmillan-smv-1993
+mcp-is-dead-debate
 mcp-spec
 mcs-locks-1991
 meagher-1982-octree
@@ -539,6 +556,7 @@ megastore-2011
 megatron-lm
 memcached-fb-2013
 memcoder-co-evolution
+memory-tool-use-agents
 mencius-2008
 mermaid
 mesa-optimization-2019
@@ -595,6 +613,7 @@ narwhal-tusk-2022
 nbeats-2020
 nelson-oppen-1979
 nerf-2020
+nestedkv
 netflix-bellkor-2009
 netkat-2014
 neumann-2015-large-joins
@@ -617,6 +636,7 @@ nvm
 nvme-protocol-2017
 oauth-2.1-rfc
 okapi-bm25-1994
+oltp-looking-glass
 omagent-2024
 omega-2013
 omnidirectional-mllm-2025
@@ -628,6 +648,7 @@ opensearch
 optuna
 orca-2022
 orca-continuous-batching
+oscar-int2-kv
 ot-1989
 owens-2007-gpgpu-survey
 p4-2014
@@ -677,6 +698,7 @@ quantum-supremacy-2019
 quic
 quincy-2009
 qvhighlights-2021
+qwen-vla
 qwen2-5-vl-2025
 qwen2-vl-2024
 r-bgp-2007
@@ -695,6 +717,7 @@ refinement-types-1991
 reflexion
 reformer-2020
 regev-lwe-2005
+rendering-diffs
 replug-2023
 reps-ifds
 resnet
@@ -793,10 +816,12 @@ spanner-2012
 sparrow-2013
 sparse-autoencoders
 sparsegpt-2023
+spec-agent-separation-logic
 specinfer-2023
 splade-2021
 sprite-1988
 sqlite-2022
+sqlite-durable-workflows
 ssa
 st-llm-2024
 stable-diffusion
@@ -808,6 +833,7 @@ starrocks
 steensgaard-pointer
 stm-shavit-touitou
 stonebraker-2010-sqlnosql
+storm-multi-agent-state
 streamingbench-2024
 strongtalk
 stylegan2-2020
@@ -862,6 +888,7 @@ transformer-xl-2019
 traveler-2024
 tree-of-thoughts-2023
 trees-that-grow
+triaxialkv
 trill-2014
 triton-2019
 triton-llm
@@ -869,6 +896,7 @@ trustrank-2004
 turchin-supercompilation
 turing-1936
 turing-architecture-2018
+tutti-ssd-kv-cache
 tvm
 tvm-2018
 twine-2020
@@ -885,8 +913,10 @@ veach-1997-mlt
 vega-lite
 vellvm
 verdi-2015
+vericache
 verisoft-2008
 vertica-2012
+vibeserve
 vid-llm-survey-2023
 video-chatgpt-2023
 video-llama-2023
@@ -902,6 +932,7 @@ videomme-2024
 videoprism-2024
 vidstg-2020
 vinoground-2024
+visualthink-vla
 vit
 vl2-2009
 vllm
@@ -931,6 +962,7 @@ why3-2013
 wide-deep-2016
 williams-1983-mipmap
 wireguard-2017
+wisckey
 word2vec
 world-model-robot-learning-2026
 worldsense-2025
@@ -939,6 +971,7 @@ xla-compiler
 xlnet-2019
 xtrace-2007
 yao-garbled-circuits-1986
+yocto-alternatives
 youtube-two-tower-2019
 z3-2008
 zab-2011
@@ -959,6 +992,7 @@ affine
 ag-grid
 age
 aichat
+aider
 aiortc
 airflow
 altair
@@ -974,6 +1008,7 @@ antv-f2
 antv-g2
 antv-g6
 antv-x6
+anytype-ts
 ape-framework
 apexcharts
 apollo-server
@@ -1026,6 +1061,7 @@ bigbluebutton
 billboard-js
 biome
 bitcoin-core
+boa-engine
 bokeh
 botbuilder-js
 botpress
@@ -1072,10 +1108,14 @@ claude-code
 clearml
 clerk
 clickhouse
+cline
+cmsis-nn
 cockroach
 cockroachdb
 cocos2d-x
+code-server
 codemirror
+coder
 collabora-online
 colmap
 colossal-ai
@@ -1139,6 +1179,7 @@ dovecot
 dragonfly
 drawio
 drizzle
+drizzle-orm
 drone
 dropwizard
 druid
@@ -1152,12 +1193,14 @@ dvc
 earthly
 echarts
 echo
+eclipse-che
 edgedb
 effect
 ejabberd
 elasticsearch
 electron
 electron-builder
+electron-forge
 element-android
 element-web
 elysia
@@ -1172,6 +1215,7 @@ envoy
 erigon
 errbot
 esbuild
+esp-dl
 essentia
 etcd
 ethers-js
@@ -1197,12 +1241,15 @@ filecoin
 fish
 fish-shell
 flac
+flame
 flask
 flax
 flowchart-js
 fluent-bit
 flutter
+flutter-rust-bridge
 flux
+foam
 fooocus
 foundry
 framer-motion
@@ -1212,11 +1259,14 @@ freertos
 freeswitch
 fx
 fzf
+gazebo-classic
 gdu
 geany
 gh
+ghostwriter
 gin
 github-actions
+gitpod
 gitui
 glab
 glances
@@ -1231,6 +1281,7 @@ grafana-tempo
 grape
 graphology
 graphql-yoga
+grbl
 greenplum-db
 gron
 grpc-go
@@ -1282,6 +1333,7 @@ jest
 jimp
 jitsi-meet
 jitsi-videobridge
+joplin
 jotai
 jq
 js-joda
@@ -1299,6 +1351,7 @@ kepler-gl
 keras
 kind
 kitty
+klipper
 koa
 kong
 konva
@@ -1341,6 +1394,7 @@ lightningcss
 lima
 lingui
 linkerd2
+linuxcnc
 listr2
 lite-xl
 litellm-proxy
@@ -1359,8 +1413,10 @@ lmms
 lmms-eval
 locust
 lodestar
+logseq
 loki
 longhorn
+lora-mac-node
 lottie
 love2d
 lsd
@@ -1378,6 +1434,8 @@ maplibre-gl
 mariadb-server
 markdown-it
 marked
+marktext
+marlin
 matplotlib
 matrix-js-sdk
 matrix-rust-sdk
@@ -1419,18 +1477,23 @@ monaco-editor
 monero
 mongo
 mongodb
+mosquitto
 motion-one
 move-language
+moveit2
 msw
 mumble
 mysql
 mysql-server
 nanobrowser
+nanomq
 nanostores
 nativescript
 nats
 nats-server
+navigation2
 ncdu
+ncnn
 nebula
 neo4j
 neovim
@@ -1471,6 +1534,7 @@ oh-my-posh
 ollama
 open-sora
 openai-agents-sdk
+opencode
 opencv
 openlayers
 openmeetings
@@ -1479,9 +1543,11 @@ opensea-js
 opensearch
 opentelemetry
 opentelemetry-collector
+openthread
 opentofu
 opentsdb
 openvidu
+openvscode-server
 openwrt
 openzeppelin-contracts
 operator-sdk
@@ -1493,6 +1559,7 @@ orleans
 otel-collector
 ovenmediaengine
 oxc
+paddle-lite
 paddleocr
 panda3d
 pandas
@@ -1549,6 +1616,7 @@ pulsar
 pulumi
 pyarrow
 pyenv
+pyston
 pyth
 pytorch
 pytorch-lightning
@@ -1580,6 +1648,7 @@ recharts
 redash
 redis
 redpanda
+regl
 remix
 remix-ide
 reservoir-sdk
@@ -1592,7 +1661,9 @@ rocket-chat
 rocksdb
 rolldown
 rollup
+roo-code
 rook
+ros2
 rspack
 rt-thread
 runc
@@ -1606,6 +1677,7 @@ scoop
 scrcpy
 scroll
 sd
+sdk-nrf
 seaborn
 sealed-secrets
 sentry
@@ -1630,6 +1702,7 @@ signal-ios
 signal-server
 signoz
 silero-vad
+silverbullet
 simple-peer
 sinatra
 skaffold
@@ -1696,7 +1769,9 @@ terraform
 testing-library
 textmate
 textual
+tflite-micro
 the-silver-searcher
+theia
 thirdweb-sdk
 threejs
 thrift
@@ -1707,6 +1782,7 @@ tikv
 tilt
 timelinejs
 timescaledb
+tinygo
 tldraw
 tmux
 torchcodec
@@ -1718,6 +1794,7 @@ trl
 trpc
 turbopack
 turborepo
+twgl
 twirp
 tyk
 typeorm
@@ -1758,6 +1835,7 @@ vitest
 vllm
 vllm-multimodal
 vodozemac
+void
 voila
 volta
 vscode
@@ -1772,6 +1850,7 @@ wasmtime
 weaviate
 web-vitals
 web3-js
+webdriverio
 webpack
 webrtc-rs
 wezterm
@@ -1798,6 +1877,7 @@ zcash
 zed
 zellij
 zephyr
+zettlr
 zincsearch
 zksync-era
 zod
