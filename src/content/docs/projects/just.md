@@ -2,8 +2,8 @@
 title: just — 把 make 拆成两半，只留 ‘命令编排’ 那一半
 来源: https://github.com/casey/just
 日期: 2026-05-31
-子分类: 命令行工具
-分类: CLI
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 入门
 provenance: pipeline-v3
 ---

@@ -2,8 +2,8 @@
 title: Kubernetes — 为什么选声明式 API 加协调环
 来源: Burns, Grant, Oppenheimer, Brewer, Wilkes, Borg Omega and Kubernetes, ACM Queue 2016
 日期: 2026-06-01
-子分类: 内核与虚拟化
-分类: 操作系统
+子分类: 系统综合
+分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
 ---

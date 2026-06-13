@@ -2,7 +2,6 @@
 title: The Rise of the Software-Defined Vehicle — 零基础学习笔记
 来源: https://arxiv.org/abs/2605-30001
 日期: 2026-06-13
-分类_原始: 论文笔记
 分类: 操作系统
 子分类: 嵌入式与 IoT
 provenance: pipeline-v3

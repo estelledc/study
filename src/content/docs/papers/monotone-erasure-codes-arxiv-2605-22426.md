@@ -2,7 +2,6 @@
 title: Monotone Erasure Codes — 零基础学习笔记
 来源: https://arxiv.org/abs/2605.22426
 日期: 2026-06-13
-分类_原始: 密码学 / 分布式系统
 分类: 分布式系统
 子分类: 共识与复制
 provenance: pipeline-v3

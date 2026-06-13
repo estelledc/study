@@ -2,7 +2,7 @@
 title: Prometheus — 时序监控系统
 来源: https://github.com/prometheus/prometheus
 日期: 2026-05-29
-子分类: 存储与查询
+子分类: cloud-native
 分类: 数据库
 难度: 中级
 schema_version: legacy-long

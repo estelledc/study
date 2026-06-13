@@ -2,7 +2,7 @@
 title: etcd — 分布式键值数据库
 来源: https://github.com/etcd-io/etcd
 日期: 2026-05-29
-子分类: 存储与查询
+子分类: cloud-native
 分类: 数据库
 难度: 中级
 provenance: pipeline-v3

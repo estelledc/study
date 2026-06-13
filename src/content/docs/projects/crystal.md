@@ -2,7 +2,6 @@
 title: Crystal 学习笔记 — 拥有 Ruby 语法的静态类型语言
 来源: https://github.com/crystal-lang/crystal
 日期: 2026-06-13
-分类_原始: 编程语言
 分类: 编译器
 子分类: 语言运行时
 provenance: pipeline-v3

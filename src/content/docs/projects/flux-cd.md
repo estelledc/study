@@ -2,7 +2,6 @@
 title: Flux CD 零基础学习笔记
 来源: https://github.com/fluxcd/flux2
 日期: 2026-06-13
-分类_原始: DevOps
 分类: 其他
 子分类: 工程文化
 provenance: pipeline-v3

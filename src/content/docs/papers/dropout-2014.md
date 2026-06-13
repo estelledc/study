@@ -2,7 +2,7 @@
 title: Dropout — 训练时随机关掉一半神经元，反而学得更好
 来源: 'Srivastava, Hinton, Krizhevsky, Sutskever, Salakhutdinov, "Dropout: A Simple Way to Prevent Neural Networks from Overfitting", JMLR 2014'
 日期: 2026-06-01
-子分类: 模型与训练
+子分类: ml
 分类: 机器学习
 难度: 入门
 provenance: pipeline-v3
