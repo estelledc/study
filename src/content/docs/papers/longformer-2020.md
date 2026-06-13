@@ -2,7 +2,7 @@
 title: Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
 来源: 'Beltagy, Peters, Cohan, "Longformer: The Long-Document Transformer", arXiv 2004.05150 (2020)'
 日期: 2026-05-31
-子分类: 模型与训练
+子分类: ml
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

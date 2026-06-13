@@ -189,6 +189,7 @@ def federated_aggregate_with_distributed_noise(
 - [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
 - [[duchi-local-dp-2013]] —— Local Privacy and Statistical Minimax Rates
 - [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+- [[dwork-differential-privacy-2006]] —— 校准噪声与敏感度 — 差分隐私的 Laplace 机制
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
 - [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 隐私会计统一框架

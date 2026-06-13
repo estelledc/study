@@ -157,6 +157,7 @@ GROUP BY customer_id;
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[farm-2015]] —— FaRM — 用 RDMA 把集群内存变成一块「共享白板」
 - [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
 - [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象

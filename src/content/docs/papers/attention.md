@@ -150,6 +150,8 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
 - [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[flashattention-2]] —— FlashAttention-2 — 更快的 Attention 与更好的并行
+- [[flashattention-3-2024]] —— FlashAttention-3 — Hopper 上的异步 Attention 与 FP8 低精度
 - [[gat-2018]] —— GAT — 让图神经网络的邻居自带权重
 - [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
 - [[goodfellow-fgsm-2014]] —— FGSM — 用一行梯度让神经网络看错图片
@@ -183,6 +185,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[neumf-2017]] —— NeuMF — 用神经网络替掉推荐系统的内积
 - [[nickolls-dally-2010-cuda-era]] —— Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI
 - [[orca-continuous-batching]] —— Orca — 让一批 LLM 请求随到随走，不再排队等最长那个
+- [[paged-attention-vllm]] —— PagedAttention 与 vLLM — 零基础学习笔记
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
 - [[performer-2020]] —— Performer — 用随机特征把 softmax attention 拉成线性复杂度

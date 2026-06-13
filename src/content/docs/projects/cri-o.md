@@ -2,7 +2,7 @@
 title: CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
 来源: CRI-O GitHub, https://github.com/cri-o/cri-o
 日期: 2026-05-31
-子分类: DevOps 与运维
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

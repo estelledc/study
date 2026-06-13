@@ -169,5 +169,7 @@ function probe(index) {
 - [[cryptoverif-2008]] —— CryptoVerif — 让计算机直接证密码协议在真实计算模型下安全
 - [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
 - [[moesi-cache-coherence-1986]] —— Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则
+- [[rowhammer-2014]] —— Row Hammer — 不碰邻居也能把邻居的位翻过来
+- [[spectre-attack-2018]] —— Spectre Attacks — 推测执行如何绕过边界检查偷读内存
 - [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

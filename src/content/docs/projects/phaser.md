@@ -240,6 +240,7 @@ class WorldScene extends Phaser.Scene {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[defold]] —— Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包
+- [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
 - [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 - [[love2d]] —— LÖVE — Lua 2D 游戏框架
 - [[melonjs]] —— melonJS — 轻量 JS 2D 引擎

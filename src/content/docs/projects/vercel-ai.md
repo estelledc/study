@@ -2,7 +2,7 @@
 title: Vercel AI SDK — 多 LLM Provider 统一 SDK
 来源: https://github.com/vercel/ai
 日期: 2026-05-29
-子分类: AI
+子分类: frontend-web
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3
@@ -170,7 +170,7 @@ function Chat() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[browser-use]] —— browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
+- [[browser-use]] —— browser-use — 用自然语言让 AI Agent 操控浏览器
 - [[react]] —— React UI 组件库
 - [[zod]] —— Zod — TypeScript-first schema 验证
 

@@ -156,6 +156,7 @@ if (x == 0) log_zero();
 - [[kocher-spectre-2019]] —— Spectre 攻击 — 推测执行偷看别人的内存
 - [[mcfarling-bp-1993]] —— McFarling 1993 — 用 XOR 把全局历史和 PC 拧在一起，再让两个预测器打擂台
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
+- [[spectre-attack-2018]] —— Spectre Attacks — 推测执行如何绕过边界检查偷读内存
 - [[ssa]] —— SSA — 静态单赋值形式
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
 

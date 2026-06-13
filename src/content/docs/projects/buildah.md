@@ -2,7 +2,7 @@
 title: Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工
 来源: https://github.com/containers/buildah
 日期: 2026-06-01
-子分类: DevOps 与运维
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

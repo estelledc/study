@@ -154,9 +154,12 @@ result = con.execute("""
 - [[dbt-core]] —— dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[evidence]] —— Evidence — 把 Markdown + SQL 编译成静态报告站
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
+- [[jupyterlab]] —— JupyterLab — 下一代 Jupyter IDE
 - [[kuzu]] —— Kùzu — 把图数据库做成 DuckDB
 - [[lance]] —— Lance — AI 数据列存格式
 - [[lightdash]] —— Lightdash — 寄生在 dbt 项目里的开源 BI
+- [[marimo]] —— marimo — 反应式 Python 笔记本
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[pyarrow]] —— PyArrow — 让所有数据系统共用一块内存

@@ -151,6 +151,7 @@ nvm exec 16 npm test     # 当前 shell 不切，用 16 跑一次 test
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[fvm]] —— FVM — 按项目锁定 Flutter SDK 版本
 - [[mach-vm-1987]] —— Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦
 - [[openrct2]] —— OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写
 - [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统

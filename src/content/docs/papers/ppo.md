@@ -163,6 +163,7 @@ OpenAI Five 用 PPO 训练，128000 CPU + 256 GPU 跑了 10 个月。2019 年 4 
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[muzero]] —— MuZero — 不用规则也能下棋
+- [[ray-2018]] —— Ray — 面向新兴 AI 应用的分布式框架
 - [[td3-2018]] —— TD3 — 给 DDPG 装两副刹车，连续控制终于稳了
 - [[world-model-robot-learning-2026]] —— 机器人世界模型综述 — 预测未来再动手
 

@@ -148,15 +148,18 @@ ffmpeg -i input.mp4 -codec: copy -start_number 0 -hls_time 6 -hls_list_size 0 ou
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[assimp]] —— Assimp — Open Asset Import Library 统一 3D 模型导入
 - [[aubio]] —— aubio — 实时音频事件检测库
 - [[audacity]] —— Audacity — 开源音频编辑器
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
+- [[blender]] —— Blender — 全流程 3D 创作套件
 - [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
 - [[dash.js]] —— dash.js — 浏览器 MPEG-DASH 参考播放器
 - [[dav1d]] —— dav1d — 速度优先的 AV1 解码器
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[essentia]] —— Essentia — 音乐信息检索工具箱
 - [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
+- [[ffmpeg-kit]] —— FFmpegKit — 在 App 里跑 FFmpeg 的「随身剪辑台」
 - [[flac]] —— FLAC — 无损音频压缩格式与参考实现
 - [[gstreamer]] —— GStreamer — 流水线式多媒体框架
 - [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器

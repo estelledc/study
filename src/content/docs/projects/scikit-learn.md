@@ -157,6 +157,7 @@ pipe.score(X_test, y_test)
 
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
 - [[fastai]] —— fastai — 三行代码做迁移学习
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
 - [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[numpy]] —— NumPy — Python 科学计算基石

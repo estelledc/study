@@ -2,7 +2,7 @@
 title: Gödel 1931 — 不完备性定理
 来源: 'Kurt Gödel, "Über formal unentscheidbare Sätze...", 1931'
 日期: 2026-05-29
-子分类: 数学逻辑 / 计算理论
+子分类: 形式化验证
 分类: 形式化方法
 难度: 中级
 provenance: pipeline-v3

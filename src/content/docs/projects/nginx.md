@@ -174,6 +174,7 @@ location /static/ {
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
+- [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
 - [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
 - [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
 - [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
@@ -189,6 +190,8 @@ location /static/ {
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[memcached]] —— Memcached — 经典内存缓存
+- [[mosquitto]] —— Eclipse Mosquitto — 轻量级 MQTT 消息代理，物联网的「社区广播站」
+- [[nanomq]] —— NanoMQ — 面向 IoT 边缘的超轻量 MQTT Broker
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nginx-rtmp-module]] —— nginx-rtmp-module — 用 nginx 搭 RTMP/HLS 直播服务
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器

@@ -164,4 +164,5 @@ fn parse_with_recovery(tokens):
 - [[pottier-merr]] —— Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[tomita-glr]] —— Tomita GLR — 让 LR 解析器扛得住歧义文法
+- [[tree-sitter-2018]] —— Tree-sitter — 增量式解析系统
 

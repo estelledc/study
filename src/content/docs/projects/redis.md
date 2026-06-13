@@ -1,206 +1,248 @@
 ---
 title: Redis — 内存键值数据库
-来源: https://github.com/redis/redis
-日期: 2026-05-29
+来源: https://redis.io/docs/latest/
+日期: 2026-06-13
 子分类: 存储与查询
 分类: 数据库
-难度: 中级
-schema_version: legacy-long
-provenance: legacy-migrated
+provenance: pipeline-v3
 ---
 
 ## 是什么
 
-Redis（**Re**mote **Di**ctionary **S**erver）是 Salvatore Sanfilippo 2009 年用 C 写的"内存里的字典"——把所有数据全放 RAM，所以读写都是微秒级；服务器重启时再从硬盘文件恢复。
+**Redis**（**Re**mote **Di**ctionary **S**erver，远程字典服务）是把数据主要放在 **内存（RAM）** 里的键值数据库。官方把它定义为 *in-memory data structure store*：不只是「字符串 → 字符串」，还提供列表、集合、哈希、有序集合等**原生数据结构**，在服务端就能完成计数、排行、队列等操作。
 
 日常类比：
 
-- [[postgresql]] 像图书馆按编号查书——慢但精确，断电也不丢
-- Redis 像桌上一摞便签——伸手即查、即写即改，下班前抄一份带回家备份
+- **PostgreSQL** 像图书馆的密集架——按编号精确找书，书永久上架，查一本要走书架（磁盘 I/O），稳但慢。
+- **Redis** 像办公桌上一摞**彩色便利贴**——伸手就能改、就能读，速度是微秒级；下班前把便签**复印一份**锁进抽屉（RDB/AOF 持久化），第二天还能恢复，但抽屉里的副本总比桌面晚半拍。
 
-你写：
+最小交互长这样：
 
+```bash
+redis-cli SET user:1 "Alice"
+redis-cli GET user:1
+# → "Alice"
 ```
-SET user:1 "Alice"
-GET user:1
-```
 
-服务端返回 `"Alice"`，整个往返通常在 0.1 毫秒内完成。Redis 快不是算法神奇，而是**根本没去碰硬盘**。
+一次往返通常在亚毫秒级。快的原因很朴素：**热数据在内存里**，不必每次读盘。
+
+Redis 由 Salvatore Sanfilippo（antirez）于 2009 年用 C 语言编写，MIT 协议开源；GitHub 仓库 [redis/redis](https://github.com/redis/redis) 仍是核心实现。2024 年起上游许可证曾调整为 SSPL，社区 fork 出 [[valkey]] 延续 BSD 路线——选型时要留意「Redis Inc. 发行版」与「Valkey」的治理差异。
 
 ## 为什么重要
 
-不理解 Redis，下面这些场景都没法解释：
+零基础学后端或做全栈，几乎绕不开 Redis，因为：
 
-- 为什么 GitHub / Twitter / Stack Overflow / Pinterest 这些大流量站，几乎都把 Redis 放在数据库前面挡读请求
-- 为什么 5 种数据结构（string / hash / list / set / sorted set）能覆盖 90% 的缓存、计数、排行、消息场景
-- 为什么 Pub/Sub + Stream 让"消息队列"这件事可以不用 Kafka 也能跑
-- 为什么 Lua 脚本能在 Redis 内部"原子执行"——多步操作之间没人插得进来
+- **缓存**：把读多写少的数据挡在 [[postgresql]]、[[mysql]] 前面，减轻数据库压力（GitHub、Twitter、Stack Overflow 等大量站点都这样用）
+- **会话 / 限流 / 计数**：`INCR` 原子自增 + `EXPIRE` 过期，几行命令就能做 API 限流、点赞数、验证码尝试次数
+- **排行榜与延时队列**：有序集合（sorted set）和列表（list）是游戏榜单、任务队列的标配
+- **实时能力**：Pub/Sub、Stream 可做通知、简单消息流，不必一上来就上 [[kafka]]
+- **理解「单线程也能高 QPS」**：和 nginx、Node.js 事件循环同属一类工程直觉——少锁、少切换、把热路径写短
 
-## 核心要点
+## 核心概念
 
-Redis 之所以是 Redis，靠 **三个核心设计**：
+### 1. Key–Value 与命名空间
 
-1. **单线程事件循环**：一个进程一根线程处理所有请求。听起来弱，实际超强——没有锁竞争、没有上下文切换；用 epoll（Linux）一次性盯上百万连接，每次只挑就绪的处理。
+一切皆 **key**。key 是字符串（二进制安全），value 的类型由你创建时决定。习惯用冒号分层，例如 `user:1001:profile`，便于 `SCAN` 按前缀浏览，也避免不同业务撞名。
 
-2. **持久化双轨制**：
-   - **RDB**：按时间间隔拍一张内存快照，写到 `dump.rdb`；恢复快、文件小，但两次快照之间宕机会丢数据
-   - **AOF**：把每条写命令追加到日志文件；恢复慢、文件大，但能精确到秒级甚至每条
-   - 生产通常两个都开
+每个 key 可单独设置 **TTL**（存活时间），到期自动删除——缓存场景的核心机制。
 
-3. **集群分片**：Redis Cluster 把 key 哈希到 **16384 个 slot**，slot 分配给不同节点。客户端算完 hash 直接连对应节点，没有中间代理。
+### 2. 五种经典数据结构（再加扩展）
 
-## 实践案例
+| 类型 | 类比 | 典型命令 | 常见用途 |
+|------|------|----------|----------|
+| **String** | 一张便签上的整段字 | `SET` `GET` `INCR` | 缓存 HTML/JSON、计数器、分布式锁 |
+| **Hash** | 便签上的「字段:值」表 | `HSET` `HGET` `HGETALL` | 用户资料、购物车一行对象 |
+| **List** | 双向排队绳 | `LPUSH` `RPOP` `LRANGE` | 消息队列、最新 N 条动态 |
+| **Set** | 不重复名单袋 | `SADD` `SISMEMBER` `SINTER` | 标签、共同好友、去重 |
+| **Sorted Set** | 带分数的排名榜 | `ZADD` `ZRANGE` `ZREVRANK` | 排行榜、延时任务（按时间戳打分） |
 
-### 案例 1：缓存（最经典用法）
+新版 Redis 还提供 **JSON**、**Stream**、**Time Series**、**Probabilistic**（HyperLogLog、Bloom 等）类型；零基础先把上表五种练熟即可覆盖大部分面试与业务题。
 
+### 3. 单线程命令执行 + 事件循环
+
+Redis 处理命令的**主路径**长期是单线程：一个 `ae` 事件循环（Linux 上基于 epoll）同时盯很多客户端连接，谁有数据可读就解析 RESP 协议、执行命令、写回结果。好处是**不需要给共享数据结构加锁**，实现简单、延迟稳定。
+
+注意区分：
+
+- **命令执行**：默认仍在主线程串行（保证原子语义简单）
+- **持久化 fsync、惰性删除大 key、6.0+ 的 I/O 线程**：可在后台线程或子进程做，避免拖死主循环
+
+因此：**一条很慢的命令**（如对巨大 hash 做 `HGETALL`）会阻塞同一实例上的其他请求——这是架构约束，不是 bug。
+
+### 4. 持久化：RDB 与 AOF
+
+内存再快，重启也会空。Redis 用两种方式把数据落到磁盘：
+
+| 方式 | 做法 | 优点 | 缺点 |
+|------|------|------|------|
+| **RDB** | 间隔拍快照（`dump.rdb`） | 文件紧凑、恢复快 | 两次快照之间可能丢数据 |
+| **AOF** | 追加每条写命令日志 | 可配置为每秒或每次 `fsync`，更耐丢 | 文件大、重写时占 CPU |
+
+生产常见 **两者都开**；Redis 7+ 的 AOF 还可带 **RDB 前缀**（hybrid），兼顾加载速度与增量日志。重启时若两者都在，通常 **优先用更完整的 AOF** 恢复。
+
+### 5. 过期与淘汰
+
+- `EXPIRE key seconds` / `SET key value EX 3600`：key 级 TTL
+- 内存达到 `maxmemory` 时按 **maxmemory-policy** 淘汰（如 `allkeys-lru`）
+
+默认 `noeviction` 会在写满时**拒绝写入**——很多线上故障来自没改这项。
+
+### 6. 集群与高可用（知道名词即可）
+
+- **主从复制**：读扩展、故障切换基础
+- **Redis Sentinel**：监控主节点、自动故障转移
+- **Redis Cluster**：16384 个 hash slot 分片，key 按 slot 落到不同节点；**跨 slot 的多 key 事务受限**
+
+零基础本地开发先用**单实例**；分片与 Sentinel 在流量上来后再学。
+
+## 快速上手
+
+### 安装与启动
+
+```bash
+# macOS
+brew install redis
+brew services start redis
+
+# 或 Docker（适合本机多版本共存）
+docker run -d --name redis -p 6379:6379 redis:7-alpine
+
+# 进入命令行
+redis-cli ping
+# → PONG
 ```
-SET user:1 "{name: Alice, age: 30}"
-EXPIRE user:1 3600
-GET user:1
+
+默认监听 `6379`，无密码（生产必须设 `requirepass` 和网络隔离）。
+
+## 代码示例
+
+### 示例 1：Cache-Aside 缓存用户资料
+
+应用读路径：**先 Redis，未命中再查库，回写并设过期**。这是最常见的缓存模式。
+
+```bash
+# 模拟：库中查到的 JSON（实际由应用写入）
+SET user:42 '{"name":"Bob","plan":"pro"}' EX 3600
+
+GET user:42
+# 命中则直接返回，省一次 SQL
+
+# 更新用户时：先写库，再删缓存（或 SET 新值），避免脏读
+DEL user:42
 ```
 
-应用先查 Redis，命中就返回；没命中再查关系库，结果回填 Redis。这套模式叫 **cache-aside**，几乎是行业默认。`EXPIRE` 让 key 一小时后自动消失，避免缓存堆积。
+对应 Node.js 伪代码逻辑：
 
-### 案例 2：排行榜（sorted set 的招牌场景）
+```javascript
+async function getUser(id) {
+  const key = `user:${id}`;
+  const cached = await redis.get(key);
+  if (cached) return JSON.parse(cached);
 
+  const row = await db.query('SELECT * FROM users WHERE id = $1', [id]);
+  await redis.set(key, JSON.stringify(row), 'EX', 3600);
+  return row;
+}
 ```
-ZADD leaderboard 100 alice
-ZADD leaderboard 200 bob
-ZADD leaderboard 150 carol
+
+要点：`EX 3600` 防止冷数据永久占内存；更新策略要和团队约定一致（删 key vs 更新 key）。
+
+### 示例 2：排行榜（Sorted Set）
+
+游戏或电商秒杀常用 **ZSET**：成员唯一，按 **score** 排序；底层跳跃表 + 哈希，插入与按名次查询约 **O(log N)**。
+
+```bash
+ZADD leaderboard 9850 "alice"
+ZADD leaderboard 12000 "bob"
+ZADD leaderboard 10300 "carol"
+
+# 分数从高到低，取前 10 名并带上分数
 ZREVRANGE leaderboard 0 9 WITHSCORES
+
+# 查某用户名次（0 表示第一名）
+ZREVRANK leaderboard "carol"
 ```
 
-sorted set 内部是 skiplist + hash，插入和查询都是 O(log N)；游戏、电商秒杀榜单都用它。最后那行 `ZREVRANGE` 拿前 10 名，`WITHSCORES` 把分数和名字一起带回。
+若要「每周榜」与「总榜」并存，用不同 key 即可，例如 `leaderboard:2026-W24` 与 `leaderboard:all`。
 
-### 案例 3：分布式锁
+### 示例 3：简单分布式锁（单实例）
 
+多实例部署时，可用 **SET NX EX** 做互斥（更强一致需 Redlock 或 [[etcd]] 等）：
+
+```bash
+# 仅当 key 不存在时设置，10 秒后自动释放，value 用唯一 token
+SET lock:order:8817 "uuid-7f3a" NX EX 10
+
+# 业务完成后，用 Lua 校验 token 再删，避免删掉别人的锁
 ```
-SET lock:order123 "uuid-abc" NX EX 10
+
+`NX` = not exists；`EX` = 秒级 TTL，防止进程崩溃导致死锁。
+
+### 示例 4：用 Hash 存对象字段
+
+比把整个对象塞进一个 JSON 字符串更省内存的场景，是 **Hash**（字段数不多时）：
+
+```bash
+HSET bike:1 model "Deimos" brand "Ergonom" price 4972
+HGET bike:1 model
+# → "Deimos"
+HGETALL bike:1
 ```
 
-- `NX` = 只在 key 不存在时才设
-- `EX 10` = 10 秒后自动过期（防止持锁进程崩了死锁）
-- value 写一个唯一 uuid，释放时校验自己才删，避免删到别人的锁
+官方教程 [Redis as a data store](https://redis.io/docs/latest/develop/get-started/data-store/) 用自行车库存演示这套 API，适合跟着敲一遍。
 
-这是单实例最简单的方案；强一致场景要看 Redlock 或 etcd / zookeeper。
+## 适用与不适用
 
-## 踩过的坑
+**适合：**
 
-1. **大 key 阻塞单线程**：一个 hash 几十万字段，`HGETALL` 一下整个进程被它独占几百毫秒，所有请求排队。教训：拆分大 key、用 `HSCAN` 流式读。
+- 读多写少的缓存、会话存储、验证码、限流计数
+- 排行榜、简单队列、去重集合、实时在线用户集合
+- 需要亚毫秒级读写的热数据（配合过期与容量规划）
 
-2. **OOM 后内存策略选错**：`maxmemory-policy` 默认 `noeviction`——写满直接拒绝写入，应用全报错。生产几乎必改成 `allkeys-lru`（最近最少用淘汰）或 `volatile-lru`。
+**不适合：**
 
-3. **集群跨 slot 事务做不了**：Redis Cluster 下，`MULTI / EXEC` 里的 key 必须落在同一个 slot。要让两个 key 同 slot，得用 hashtag：`{user1}:profile` 和 `{user1}:orders` 都按 `user1` 算 hash。
+- **唯一主库**：内存贵，持久化语义弱于关系库；冷数据应落盘到 PostgreSQL 等
+- **复杂查询 / JOIN / 报表**：没有 SQL；分析型 workload 看 [[clickhouse]] 或数仓
+- **强一致金融账务**：单实例故障切换仍可能丢最后一秒写入，需业务层补偿或换专用方案
+- **超大 value**：单 key 最大约 512MB，且大 key 会阻塞单线程——应拆分或用 `HSCAN` 流式读
 
-4. **许可证改了**：Redis 7.4 起改成 SSPL（不再 OSI 认证开源）。Linux 基金会 2024 年 fork 出 [[valkey]] 接续 BSD 路线，AWS / Google / Oracle 都加入了。生产选型现在多一道题：用 Redis Inc. 还是 Valkey。
+## 常见坑（零基础避雷）
 
-## 适用 vs 不适用场景
+1. **把 Redis 当唯一数据源**：宕机 + 持久化间隙 = 丢数据；它是加速层，不是档案柜。
+2. **缓存穿透 / 击穿 / 雪崩**：穿透用布隆过滤器或空值缓存；击穿用互斥重建；雪崩用随机 TTL、分批过期。
+3. **大 key 与热 key**：`KEYS *` 在生产禁用，用 `SCAN`；热 key 用本地缓存或多副本分散。
+4. **集群里跨 slot 事务**：`MULTI` 里的 key 必须落在同一 slot；可用 `{user1}:profile` 与 `{user1}:orders` 的 **hash tag** 强制同 slot。
+5. **本地 `file://` 打开页面**：浏览器里跑 Redis 客户端连不上 Web Worker 语言服务；和 Monaco 一样要用 `http://` 服务。
+6. **许可证与发行版**：关注 Redis SSPL 与 Valkey fork，合规与长期维护策略要纳入选型。
 
-**适用**：
+## 与周边项目的关系
 
-- 缓存层（cache-aside / read-through / write-back）
-- 计数器、限流（`INCR` 原子自增 + `EXPIRE` 滑动窗口）
-- 排行榜（sorted set）/ 简单消息队列（list / Stream）/ 分布式锁、会话存储、临时去重（set）
+- [[postgresql]] / [[mysql]]：Redis 常坐在前面做缓存，关系库做权威数据
+- [[memcached]]：更单纯的字符串缓存，无持久化、无丰富结构；要数据结构选 Redis
+- [[bullmq]] / [[sidekiq]] / [[celery]]：后台任务队列常把 Redis 当 broker
+- [[dragonfly]]：多线程、Redis 协议兼容的替代实现，高核数机器上可对比测试
+- [[valkey]]：社区 BSD fork，API 高度兼容
 
-**不适用**：
+## 学习路径建议
 
-- 主数据存储——内存贵，且持久化不如关系数据库强
-- 复杂查询、JOIN——没有 SQL，Redis 是 KV 模型
-- 海量冷数据——内存装不下，强行装也很贵
-- 强事务一致性（金融转账）——AOF 能恢复，但故障切换时仍可能丢秒级数据
+1. 本地 `redis-cli` 把五种结构各练 10 条命令（官方 [命令参考](https://redis.io/docs/latest/commands/)）
+2. 读 [Data types 概览](https://redis.io/docs/latest/develop/data-types/)，理解「按访问模式选型」
+3. 在真实项目里实现一个 **带 TTL 的 cache-aside**，观察命中率和内存
+4. 读 [Persistence](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)，弄清 RDB/AOF/`appendfsync` 与你能接受丢多少数据
+5. 有余力再看复制、Sentinel、Cluster 文档与 `redis.conf` 注释
 
-## 历史小故事（可跳过）
+## 小结
 
-- **2009 年**：意大利人 antirez（Salvatore Sanfilippo）做实时分析工具时嫌 MySQL 慢，自己用 C 写了 Redis 第一版
-- **2010 年**：VMware 看上他，把他雇下来全职维护
-- **2015 年**：Redis Labs（现 Redis Inc.）成立，商业化路线启动
-- **2020 年**：antirez 宣布退出核心维护
-- **2024 年 3 月**：Redis Inc. 把许可证改成 SSPL（不再算 OSI 开源），Linux 基金会接手社区诉求，fork 出 Valkey 继续 BSD 路线
+Redis 的核心不是「又一个数据库」，而是：**在内存里用合适的数据结构，以单线程语义简单的方式，极快地完成一小类高频操作**。记住三句话就够入门：
 
-## 学到什么
-
-- **简单 + 单线程**也能扛百万 QPS——架构常被高估、实现质量常被低估
-- **数据结构**不是大学课题，是产品差异——5 种结构让 Redis 在缓存外又吃下队列、排行、限流
-- **持久化是工程权衡 + 开源不是终点**——RDB 快但糙、AOF 慢但准生产同时开；许可证可以变、社区可以 fork，技术栈选型要把"治理"算进去
+- **Model 在内存，key 要会起名、会过期**
+- **String/Hash/List/Set/ZSet 按场景选，别全当字符串硬塞**
+- **它是缓存与加速层，持久化与集群是为了少丢数据、撑规模，不能替代关系库**
 
 ## 延伸阅读
 
-- 官方教程：[redis.io/learn](https://redis.io/learn/)
-- 源码精读起点：`server.c` 里的 `aeMain()`（事件循环主函数，约 80 行能看懂大局）
-- antirez 个人博客：[antirez.com](http://antirez.com/)（设计哲学和复盘文章很值得读）
-- 持久化原理：官方文档 `topics/persistence`（RDB / AOF 的 fsync 时机权衡）
-
-## 关联
-
-- [[postgresql]] —— Redis 通常坐在 PostgreSQL 前面挡读流量，一个稳一个快
-- [[valkey]] —— 2024 年 fork 出来的 BSD 版 Redis
-
-## 反向链接
-
-<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
-- [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
-- [[asynq]] —— Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑
-- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
-- [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
-- [[centrifugo]] —— Centrifugo — Go 写的开源实时消息服务器
-- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
-- [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
-- [[couchdb]] —— Apache CouchDB — Erlang 写的文档数据库
-- [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
-- [[docker]] —— Docker — 容器化平台
-- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
-- [[dragonfly]] —— Dragonfly — 多线程 Redis 替代
-- [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
-- [[emqx]] —— EMQX — 单集群千万连接的 MQTT 物联网消息总线
-- [[etcd]] —— etcd — 分布式键值数据库
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[feast]] —— Feast — 让训练和上线用同一份特征定义的开源 Feature Store
-- [[ferretdb]] —— FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理
-- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
-- [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
-- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
-- [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
-- [[kafka]] —— Apache Kafka — 分布式流处理平台
-- [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
-- [[langchain]] —— LangChain — LLM 应用开发框架
-- [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
-- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
-- [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
-- [[memcached]] —— Memcached — 经典内存缓存
-- [[memgraph]] —— Memgraph — 内存图数据库
-- [[minio]] —— MinIO — S3 兼容对象存储
-- [[mongo]] —— MongoDB — 文档数据库服务端开源实现
-- [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
-- [[mysql]] —— MySQL — 全球最流行关系数据库
-- [[nats]] —— NATS — 极简云原生消息系统
-- [[nats-server]] —— NATS Server — 极简云原生消息中间件
-- [[nebula]] —— NebulaGraph — 国产分布式图数据库
-- [[neo4j]] —— Neo4j — 主流图数据库
-- [[nginx]] —— nginx — 高性能 Web 服务器
-- [[nsq]] —— NSQ — Go 写的去中心化消息队列
-- [[penpot]] —— Penpot — 开源自托管的 Figma 替代
-- [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
-- [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
-- [[pulsar]] —— Apache Pulsar — 云原生消息队列
-- [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
-- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
-- [[sidekiq]] —— Sidekiq — Ruby 后台任务的事实标准
-- [[signal-server]] —— Signal-Server — 服务端看不到任何明文的即时通信后端
-- [[skip-list-1990]] —— Skip List — 用抛硬币代替平衡树
-- [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
-- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
-- [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
-- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
-- [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
-- [[token-bucket-stripe]] —— Stripe Rate Limiters — 工业级令牌桶长什么样
-- [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
-- [[typesense]] —— Typesense — 高性能搜索引擎
-- [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
-- [[valkey]] —— Valkey — Redis 7.4 的开源 fork
-
+- 官方入门：[redis.io/learn](https://redis.io/learn/)
+- 数据结构对比决策树：[Compare data types](https://redis.io/docs/latest/develop/data-types/compare-data-types/)
+- 事件库 internals：[Event library](https://redis.io/docs/latest/operate/oss_and_stack/reference/internals/internals-rediseventlib/)
+- antirez 博客：[antirez.com](http://antirez.com/)（设计复盘可读性很高）
+- 源码入口：`server.c` 中的 `main()` → `aeMain()` 理解事件循环主循环

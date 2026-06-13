@@ -167,5 +167,6 @@ pyenv shell 3.10.13 && python script.py
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[fvm]] —— FVM — 按项目锁定 Flutter SDK 版本
 - [[nvm]] —— nvm — 在同一台机器上轻松切换 Node 版本
 

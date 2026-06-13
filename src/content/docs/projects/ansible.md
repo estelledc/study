@@ -179,6 +179,7 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[mender]] —— Mender — 嵌入式 Linux 的 OTA 空中升级管家
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[opentofu]] —— OpenTofu — 社区接手的 Terraform

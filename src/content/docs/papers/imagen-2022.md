@@ -2,8 +2,8 @@
 title: Imagen — 文生图真正的引擎是语言模型
 来源: Saharia et al., "Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding", NeurIPS 2022 (Google Research)
 日期: 2026-05-31
-子分类: 模型与训练
-分类: 机器学习
+子分类: 系统综合
+分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
 ---

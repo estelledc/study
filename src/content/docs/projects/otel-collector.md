@@ -2,7 +2,7 @@
 title: OpenTelemetry Collector — 可观测性数据的统一中转站
 来源: https://opentelemetry.io/docs/collector/
 日期: 2026-05-31
-子分类: 基础设施 / 可观测性
+子分类: 可观测性
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

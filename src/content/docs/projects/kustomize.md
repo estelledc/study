@@ -2,7 +2,7 @@
 title: Kustomize — 不动原 YAML 的 K8s 配置叠加器
 来源: https://github.com/kubernetes-sigs/kustomize
 日期: 2026-05-31
-子分类: DevOps 与运维
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 schema_version: legacy-long

@@ -178,6 +178,8 @@ PY
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[assimp]] —— Assimp — Open Asset Import Library 统一 3D 模型导入
+- [[blender]] —— Blender — 全流程 3D 创作套件
 - [[colmap]] —— COLMAP — 多视图 SfM/MVS 重建
 - [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
@@ -193,6 +195,7 @@ PY
 - [[mediapipe]] —— MediaPipe — Google ML 多模态流水线
 - [[meshroom]] —— Meshroom — AliceVision 节点式 GUI
 - [[mlt]] —— MLT — 多媒体编辑框架
+- [[ncnn]] —— ncnn — 手机上的「无依赖神经网络放映机」
 - [[numpy]] —— NumPy — Python 科学计算基石
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[sam2]] —— SAM 2 — Segment Anything Model 2

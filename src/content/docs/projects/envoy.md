@@ -2,7 +2,7 @@
 title: Envoy — 把网络通信从业务代码里抠出来的代理进程
 来源: 'https://github.com/envoyproxy/envoy'
 日期: 2026-05-30
-子分类: Web 后端
+子分类: cloud-native
 分类: 后端 API
 难度: 中级
 provenance: pipeline-v3

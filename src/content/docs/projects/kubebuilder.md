@@ -2,7 +2,7 @@
 title: Kubebuilder — 写 K8s Operator 的官方脚手架
 来源: https://github.com/kubernetes-sigs/kubebuilder
 日期: 2026-06-01
-子分类: DevOps 与运维
+子分类: cloud-native
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3

@@ -171,6 +171,7 @@ const html = await codeToHtml(code, {
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[starlight]] —— Starlight — Astro 文档站点主题
+- [[tree-sitter-2018]] —— Tree-sitter — 增量式解析系统
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳

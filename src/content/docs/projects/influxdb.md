@@ -154,6 +154,8 @@ from(bucket: "metrics")
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[grafana]] —— Grafana — 监控可视化看板
+- [[mosquitto]] —— Eclipse Mosquitto — 轻量级 MQTT 消息代理，物联网的「社区广播站」
+- [[nanomq]] —— NanoMQ — 面向 IoT 边缘的超轻量 MQTT Broker
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统

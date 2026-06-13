@@ -238,6 +238,7 @@ await runUserCode('log("用户代码安全运行中")');
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[boa-engine]] —— boa-engine — 用 Rust 写出的可嵌入 JavaScript 引擎
 - [[bun]] —— Bun — JS 全能运行时
 - [[deno]] —— Deno — 安全优先的 JS/TS 运行时
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT

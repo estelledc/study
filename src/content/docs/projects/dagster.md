@@ -2,8 +2,8 @@
 title: Dagster — 把流水线想成数据资产图，不是任务序列
 来源: Dagster Labs, https://docs.dagster.io/
 日期: 2026-05-31
-子分类: 数据科学与 AI
-分类: 机器学习
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
 ---

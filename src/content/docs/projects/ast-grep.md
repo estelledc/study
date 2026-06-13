@@ -173,9 +173,11 @@ sg --pattern 'request($URL, $OPTS)' \
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[dive]] —— dive — 看清 Docker 镜像每一层加了什么文件的 TUI
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[language-server-protocol-spec]] —— Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议
 - [[nvchad]] —— NvChad — 极致美观的 Neovim 配置框架
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
+- [[tree-sitter-2018]] —— Tree-sitter — 增量式解析系统
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
 

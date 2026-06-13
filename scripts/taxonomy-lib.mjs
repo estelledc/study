@@ -12,13 +12,14 @@ export const TAXONOMY_PATH = path.join(ROOT, 'data/taxonomy.json');
 let _cached = null;
 
 export async function loadTaxonomy() {
-  if (_cached) return _cached;
+  if (_cached?.themeById) return _cached;
   const raw = await fs.readFile(TAXONOMY_PATH, 'utf8');
-  _cached = JSON.parse(raw);
-  const themeById = new Map(_cached.themes.map((t) => [t.id, t]));
-  const themeByLabel = new Map(_cached.themes.map((t) => [t.label, t]));
-  const themeOrder = new Map(_cached.themes.map((t) => [t.label, t.order]));
-  return { ..._cached, themeById, themeByLabel, themeOrder };
+  const parsed = JSON.parse(raw);
+  const themeById = new Map(parsed.themes.map((t) => [t.id, t]));
+  const themeByLabel = new Map(parsed.themes.map((t) => [t.label, t]));
+  const themeOrder = new Map(parsed.themes.map((t) => [t.label, t.order]));
+  _cached = { ...parsed, themeById, themeByLabel, themeOrder };
+  return _cached;
 }
 
 export function parseFrontmatter(raw) {
@@ -167,6 +168,10 @@ function inferThemeFromSlug(taxonomy, slug, area) {
     [/^(react|vue|svelte|next-|nuxt|vite|webpack|esbuild)/, 'backend-api'],
     [/^(kubernetes|docker|k8s|helm|terraform|prometheus|grafana)/, 'infrastructure'],
     [/^(tcp|quic|tls|http|dns|bbr)/, 'network-protocols'],
+    [
+      /^(hkdf|hmac|aes-|gcm-|rsa|oauth|zk-|snark|regev|dilithium|sgx|trustzone|spectre|meltdown|rowhammer|ckks|pbkdf|argon|noise-protocol|dwork-|abadi-dpsgd|kdf-|key-deriv|log4shell)/,
+      'security-privacy',
+    ],
     [/^(bert|gpt|llama|transformer|attention|clip|diffusion|lstm)/, 'machine-learning'],
     [/^(bitcoin|ethereum|solidity|zk-)/, 'blockchain'],
     [/^(llvm|wasm|v8|compiler|parser)/, 'compilers'],
@@ -176,6 +181,41 @@ function inferThemeFromSlug(taxonomy, slug, area) {
     if (re.test(s)) return id;
   }
   return null;
+}
+
+/**
+ * Score one note for classification (SDK / pipeline consumer).
+ * Wraps classifySlug with a stable { theme, score, needsReview } shape.
+ *
+ * @param {{ slug: string, area: 'papers'|'projects', fm?: Record<string,string>, candidate?: object|null, title?: string, tags?: string[], snippet?: string }} item
+ * @returns {Promise<{ theme: string, score: number, needsReview: boolean, themeId: string, subcategory: string }>}
+ */
+export async function scoreItem(item) {
+  const taxonomy = await loadTaxonomy();
+  const fm = { ...(item.fm ?? {}) };
+  if (item.title && !fm.title) fm.title = item.title;
+  if (item.tags?.length && !fm.tags) fm.tags = item.tags.join(', ');
+  const snippet = item.snippet ?? '';
+  if (snippet && !fm['分类']) {
+    // Body keywords can reinforce security/crypto notes when slug is ambiguous.
+    if (/hkdf|hmac|key derivation|kdf|密钥派生/i.test(snippet)) {
+      fm['分类'] = fm['分类'] || '安全与隐私';
+    }
+  }
+  const c = classifySlug(taxonomy, {
+    slug: item.slug,
+    area: item.area,
+    fm,
+    candidate: item.candidate ?? null,
+  });
+  const score = c.themeId === 'other' ? 0 : c.confidence === 'high' ? 80 : 45;
+  return {
+    theme: c.theme,
+    themeId: c.themeId,
+    subcategory: c.subcategory,
+    score,
+    needsReview: c.confidence === 'low' || c.themeId === 'other',
+  };
 }
 
 export async function loadCandidates() {

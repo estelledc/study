@@ -160,6 +160,7 @@ let r2 = &mut v;    // ❌ 编译失败
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
 - [[sagiv-shape-analysis]] —— Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树
+- [[spec-agent-separation-logic]] —— Spec-Agent — 用 Agent + 分离逻辑 + Fuzz 自动写 C++ 合约
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期

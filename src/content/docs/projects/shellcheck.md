@@ -2,8 +2,8 @@
 title: ShellCheck — shell 脚本的静态体检医生
 来源: https://github.com/koalaman/shellcheck
 日期: 2026-05-31
-子分类: 命令行工具
-分类: CLI
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 入门
 provenance: pipeline-v3
 ---

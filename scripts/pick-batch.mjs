@@ -45,7 +45,7 @@ function parseArgs() {
 async function readJsonl(p) {
   try {
     const raw = await fs.readFile(p, 'utf8');
-    return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
+    return raw.split('\n').filter(Boolean).map(l => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
   } catch (err) {
     if (err.code === 'ENOENT') return [];
     throw err;

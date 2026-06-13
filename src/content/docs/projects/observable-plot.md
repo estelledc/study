@@ -168,9 +168,11 @@ Plot.plot({
 - [[chart-js]] —— Chart.js — Canvas 渲染入门级图表
 - [[chartist]] —— Chartist — 极简 SVG 图表
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[deck-gl]] —— deck.gl — Uber 大规模数据可视化
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[gsap]] —— GSAP — GreenSock 高性能动画
+- [[luma-gl]] —— luma.gl — vis.gl WebGL2/WebGPU 抽象
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单

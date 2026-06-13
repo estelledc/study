@@ -260,6 +260,7 @@ app.whenReady().then(() => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
 - [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建流水线
 - [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 - [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架

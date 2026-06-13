@@ -13,8 +13,12 @@ import {
   loadCandidates,
   parseFrontmatter,
   classifySlug,
+  scoreItem,
   normalizeRawCategory,
 } from './taxonomy-lib.mjs';
+
+// Re-export for pipeline / test consumers: scoreItem({ slug, area, fm?, candidate? })
+export { scoreItem, classifySlug, loadTaxonomy, parseFrontmatter };
 
 const AREAS = ['papers', 'projects'];
 

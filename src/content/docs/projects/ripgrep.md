@@ -2,8 +2,8 @@
 title: ripgrep — Rust 写的现代 grep
 来源: https://github.com/BurntSushi/ripgrep
 日期: 2026-05-29
-子分类: 命令行工具
-分类: CLI
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
 ---

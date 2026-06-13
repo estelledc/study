@@ -163,7 +163,7 @@ cdpService.pluginManager.register(new MyAuthPlugin());
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[browser-use]] —— browser-use — 让 LLM 用「DOM 索引清单」操作浏览器的 Python agent 框架
+- [[browser-use]] —— browser-use — 用自然语言让 AI Agent 操控浏览器
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[midscene]] —— midscene — 用自然语言代替 selector 的浏览器自动化框架
 - [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱

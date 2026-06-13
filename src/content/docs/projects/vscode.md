@@ -154,18 +154,27 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aider]] —— Aider — 终端 AI 结对编程 CLI
 - [[atom]] —— Atom — 已归档的 Web 编辑器先驱
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[cline]] —— Cline — VS Code 自主编码代理
+- [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[coder]] —— Coder — 自托管开发环境平台
 - [[continue]] —— Continue — 让 AI code review 跑成 git 跟踪的 PR status check
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[geany]] —— Geany — GTK 轻量 IDE
+- [[gitpod]] —— Gitpod — 预构建云开发环境
 - [[lite-xl]] —— Lite XL — 用 Lua 驱动一切的极简文本编辑器
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
+- [[opencode]] —— OpenCode — SST 出品的终端 AI IDE
+- [[openvscode-server]] —— OpenVSCode Server — VS Code Server 上游
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
+- [[roo-code]] —— Roo Code — 多模式 VS Code AI 助手
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[spacemacs]] —— Spacemacs — Space 键统一 Vim 与 Emacs
 - [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
 - [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座
+- [[void]] —— Void — 开源 Cursor 替代
 
