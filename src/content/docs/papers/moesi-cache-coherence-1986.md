@@ -181,4 +181,5 @@ A 改了 line（M），B 来读：
 - [[kocher-spectre-2019]] —— Spectre 攻击 — 推测执行偷看别人的内存
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法
+- [[spectre-attack-2018]] —— Spectre Attacks — 推测执行如何绕过边界检查偷读内存
 

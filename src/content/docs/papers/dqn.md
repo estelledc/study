@@ -149,6 +149,7 @@ DeepMind 2017 发表 Rainbow——把 DQN 之后 5 项改进（Double DQN / Duel
 - [[fsrs-spaced-repetition]] —— FSRS — 让 Anki 知道每张卡什么时候快被你忘掉
 - [[muzero]] —— MuZero — 不用规则也能下棋
 - [[ppo]] —— PPO — Proximal Policy Optimization
+- [[ray-2018]] —— Ray — 面向新兴 AI 应用的分布式框架
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[td3-2018]] —— TD3 — 给 DDPG 装两副刹车，连续控制终于稳了
 

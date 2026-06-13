@@ -153,5 +153,7 @@ Claude Desktop 配一个本地 MCP 服务器，启动时 fork 子进程，stdin/
 
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[anthropic-prompt-caching]] —— Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
+- [[language-server-protocol-spec]] —— Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议
+- [[mcp-is-dead-debate]] —— MCP Is Dead? — 2026 年协议存废之争零基础笔记
 - [[rest-fielding-2000]] —— REST — Fielding 2000 给 Web API 写下的设计宪法
 

@@ -146,11 +146,14 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
+- [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
+- [[coder]] —— Coder — 自托管开发环境平台
 - [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机
 - [[cri-o]] —— CRI-O — 只为 Kubernetes 而生的瘦身版容器运行时
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
 - [[drone]] —— Drone CI — 容器原生的 YAML 流水线
+- [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选

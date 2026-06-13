@@ -227,6 +227,7 @@ end)
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
+- [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
 - [[openrct2]] —— OpenRCT2 — 把一款 x86 汇编游戏彻底用 C++ 重写
 - [[panda3d]] —— Panda3D — Disney/CMU 出品的开源 3D 游戏引擎
 - [[perlin-1985-noise]] —— Perlin Noise — 让计算机生成的图像不再有"机器味"

@@ -158,4 +158,5 @@ STARK 用 Merkle 树承诺多项式求值：
 - [[gabizon-plonk-2019]] —— PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge
 - [[gentry-fhe-2009]] —— Gentry FHE — 全同态加密开山
 - [[yao-garbled-circuits-1986]] —— Yao 混淆电路 — 让两人合算函数却互不泄密
+- [[zk-snark-pinocchio-2013]] —— Pinocchio 2013 — 首个「近乎实用」的可验证计算与 zk-SNARK 工程系统
 

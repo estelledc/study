@@ -185,6 +185,7 @@ class UsersController {
 - [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
 - [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
+- [[drizzle-orm]] —— drizzle-orm
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
 - [[express]] —— Express — Node.js 最经典的 Web 框架

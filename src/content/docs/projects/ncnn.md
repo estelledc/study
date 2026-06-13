@@ -248,3 +248,8 @@ make -j$(nproc)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[paddle-lite]] —— Paddle Lite — 把飞桨模型装进手机里的「端侧放映机」
+- [[pytorch]] —— PyTorch — 深度学习主流框架
+

@@ -172,6 +172,7 @@ const svgInline: Plugin = {
 
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[bun]] —— Bun — JS 全能运行时
+- [[glslify]] —— glslify — Browserify 风格 GLSL 模块
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[jest]] —— Jest — 一个包就能跑 JS 测试的全家桶
 - [[lightningcss]] —— lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器

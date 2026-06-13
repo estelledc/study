@@ -160,6 +160,7 @@ cache_v: [layer, max_seq_len, n_head, head_dim]
 - [[orca-2022]] —— Orca — Transformer 生成模型的分布式推理调度
 - [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络
 - [[tensorrt-llm-2023]] —— TensorRT-LLM — NVIDIA 把 FT 升级成可调度的官方推理栈
+- [[tensorrt-llm-overview]] —— TensorRT-LLM — NVIDIA 开源 LLM 推理优化库零基础笔记
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 

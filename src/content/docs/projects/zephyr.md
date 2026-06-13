@@ -160,13 +160,19 @@ west flash                               # 烧录
 - [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 - [[embassy]] —— Embassy — 嵌入式 Rust 的 async/await 运行时
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[littlefs]] —— littlefs — 给 MCU 用的掉电安全小文件系统
+- [[lora-mac-node]] —— LoRaMac-node — LoRaWAN 终端协议栈参考实现零基础学习笔记
 - [[lwip]] —— lwIP — ~40KB ROM 跑完整 TCP/IP 的嵌入式网络栈
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库
+- [[mender]] —— Mender — 嵌入式 Linux 的 OTA 空中升级管家
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
 - [[openthread]] —— OpenThread — Google 开源的 Thread mesh 网络协议栈
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具
+- [[rauc]] —— RAUC — 嵌入式 Linux 的稳健自动更新控制器
+- [[sdk-nrf]] —— sdk-nrf — Nordic nRF Connect SDK 零基础学习笔记
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[tinygo]] —— TinyGo — 把 Go 编译进微控制器和 WebAssembly 的「袖珍版编译器」
 

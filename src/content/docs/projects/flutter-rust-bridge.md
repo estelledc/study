@@ -196,5 +196,9 @@ await for (final msg in client.subscribe()) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
+- [[fvm]] —— FVM — 按项目锁定 Flutter SDK 版本
+- [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

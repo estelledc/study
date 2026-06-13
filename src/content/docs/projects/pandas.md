@@ -166,6 +166,9 @@ joined = pd.merge(users, orders, on="user_id", how="left")
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[cstore-2005]] —— C-Store — 把数据按列存，分析查询直接快十倍
 - [[dask]] —— Dask — 让 pandas / NumPy 直接跑在比内存大的数据上
+- [[jupyter-notebook]] —— Jupyter Notebook — 经典数据科学笔记本
+- [[jupyterlab]] —— JupyterLab — 下一代 Jupyter IDE
+- [[marimo]] —— marimo — 反应式 Python 笔记本
 - [[matplotlib]] —— matplotlib — Python 绘图基石
 - [[modin]] —— Modin — pandas 的分布式 drop-in（一行 import 自动并行）
 - [[numpy]] —— NumPy — Python 科学计算基石

@@ -143,6 +143,7 @@ provenance: pipeline-v3
 - [[bonawitz-fl-system-2019]] —— Bonawitz FL System 2019 — Google 工业级联邦学习系统设计
 - [[duchi-local-dp-2013]] —— Local Privacy and Statistical Minimax Rates
 - [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
+- [[dwork-differential-privacy-2006]] —— 校准噪声与敏感度 — 差分隐私的 Laplace 机制
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[dwork-our-data-ourselves-2006]] —— 分布式噪声生成 — 去掉可信管理员也能保护隐私
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集

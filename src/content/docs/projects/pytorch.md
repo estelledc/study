@@ -195,6 +195,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[mlflow]] —— MLflow — 端到端 ML 生命周期
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
 - [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
+- [[ncnn]] —— ncnn — 手机上的「无依赖神经网络放映机」
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[neumf-2017]] —— NeuMF — 用神经网络替掉推荐系统的内积
 - [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
@@ -203,6 +204,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[optax]] —— Optax — JAX 优化器组合库
 - [[optuna]] —— Optuna — 让超参搜索像写普通 Python 代码一样自然
+- [[paddle-lite]] —— Paddle Lite — 把飞桨模型装进手机里的「端侧放映机」
 - [[paddleocr]] —— PaddleOCR — 中文 OCR 最强开源方案
 - [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
 - [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡

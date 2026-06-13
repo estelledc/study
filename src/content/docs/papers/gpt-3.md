@@ -158,6 +158,8 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[dqn]] —— DQN — Deep Q-Network
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[flashattention-2]] —— FlashAttention-2 — 更快的 Attention 与更好的并行
+- [[flashattention-3-2024]] —— FlashAttention-3 — Hopper 上的异步 Attention 与 FP8 低精度
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
@@ -167,6 +169,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[mmlu-2021]] —— MMLU — 用 57 个学科的多选题考一考语言模型
 - [[muzero]] —— MuZero — 不用规则也能下棋
+- [[paged-attention-vllm]] —— PagedAttention 与 vLLM — 零基础学习笔记
 - [[parti-2022]] —— Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基

@@ -2,7 +2,7 @@
 title: browser-use — 用自然语言让 AI Agent 操控浏览器
 来源: 'https://github.com/browser-use/browser-use'
 日期: 2026-06-13
-子分类: AI与自动化
+子分类: ai-agent-infra
 分类: 其他
 难度: 高级
 provenance: pipeline-v3

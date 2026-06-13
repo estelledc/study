@@ -4,7 +4,7 @@ description: Bytecode Alliance 的 WebAssembly 运行时，WASI 支持
 来源: 'https://github.com/bytecodealliance/wasmtime'
 日期: 2026-06-06
 分类: 编译器
-子分类: 语言运行时
+子分类: wasm
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -216,6 +216,7 @@ cd wasmtime
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+- [[tinygo]] —— TinyGo — 把 Go 编译进微控制器和 WebAssembly 的「袖珍版编译器」
 - [[zed]] —— Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
 - [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件
 

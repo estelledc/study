@@ -158,13 +158,17 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[colbert-v2]] —— ColBERTv2 — 让向量检索既精又能扛百万文档
 - [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
+- [[ds-zero-pp-comm]] —— ZeRO++ — 巨型模型训练中的极致高效集合通信
 - [[eagle]] —— EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
 - [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
+- [[flashattention-2]] —— FlashAttention-2 — 更快的 Attention 与更好的并行
+- [[flashattention-3-2024]] —— FlashAttention-3 — Hopper 上的异步 Attention 与 FP8 低精度
 - [[gat-2018]] —— GAT — 让图神经网络的邻居自带权重
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[gpu-microbenchmarking-2010]] —— GPU 微基准 — 用秒表把闭源芯片"戳"出真相
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
+- [[liger-kernel-llm-training]] —— Liger Kernel — 面向 LLM 训练的高效 Triton Kernel 套件
 - [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[longformer-2020]] —— Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
@@ -175,9 +179,11 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
+- [[sglang-radixattention]] —— SGLang — 结构化语言模型程序的高效执行（RadixAttention 零基础笔记）
 - [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证
 - [[tabpfn-2023]] —— TabPFN — 一秒解决小表格分类的 Transformer
+- [[tensorrt-llm-overview]] —— TensorRT-LLM — NVIDIA 开源 LLM 推理优化库零基础笔记
 - [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
 - [[triton-2019]] —— Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel

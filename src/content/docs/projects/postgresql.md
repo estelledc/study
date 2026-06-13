@@ -155,6 +155,7 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
 - [[docker]] —— Docker — 容器化平台
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
+- [[drizzle-orm]] —— drizzle-orm
 - [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[elasticsearch]] —— Elasticsearch — 分布式搜索引擎
@@ -180,6 +181,7 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[mysql]] —— MySQL — 全球最流行关系数据库
 - [[mysql-server]] —— mysql-server — 一个仓库装下整套 OLTP 引擎
+- [[nanomq]] —— NanoMQ — 面向 IoT 边缘的超轻量 MQTT Broker
 - [[nebula]] —— NebulaGraph — 国产分布式图数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列

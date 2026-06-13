@@ -170,4 +170,5 @@ Groth 2016 把证明压到极致：
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[turing-1936]] —— Turing 1936 可计算性
+- [[zk-snark-pinocchio-2013]] —— Pinocchio 2013 — 首个「近乎实用」的可验证计算与 zk-SNARK 工程系统
 

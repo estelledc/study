@@ -166,4 +166,5 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 - [[sweeney-k-anonymity-2002]] —— k-匿名 — 发布数据时让攻击者无法锁定你是谁
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明
+- [[zk-snark-pinocchio-2013]] —— Pinocchio 2013 — 首个「近乎实用」的可验证计算与 zk-SNARK 工程系统
 

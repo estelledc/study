@@ -162,6 +162,7 @@ Zoom 内部用 transformMatrix state（scaleX / scaleY / translateX / translateY
 
 - [[apexcharts]] —— ApexCharts — 自带响应式与注解的 SVG 图表库
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[deck-gl]] —— deck.gl — Uber 大规模数据可视化
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图

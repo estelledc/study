@@ -2,7 +2,7 @@
 title: Supabase — Firebase 的开源替代
 来源: https://github.com/supabase/supabase
 日期: 2026-05-29
-子分类: 后端 / BaaS
+子分类: databases-storage
 分类: 后端 API
 难度: 中级
 provenance: pipeline-v3

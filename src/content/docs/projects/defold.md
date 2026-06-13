@@ -258,5 +258,6 @@ end
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
 

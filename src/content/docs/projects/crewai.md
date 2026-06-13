@@ -2,7 +2,7 @@
 title: 'CrewAI — 把多 Agent 编排做成"组团队"'
 来源: 'João Moura, "CrewAI: Framework for orchestrating role-playing, autonomous AI agents", 2023 起开源（GitHub: crewAIInc/crewAI）'
 日期: 2026-05-31
-子分类: 数据科学与 AI
+子分类: ai-agent-frameworks
 分类: 机器学习
 难度: 入门
 provenance: pipeline-v3

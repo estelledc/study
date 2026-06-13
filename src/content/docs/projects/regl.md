@@ -222,5 +222,9 @@ regl.frame(() => {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[glslify]] —— glslify — Browserify 风格 GLSL 模块
+- [[luma-gl]] —— luma.gl — vis.gl WebGL2/WebGPU 抽象
+- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
+- [[picogl]] —— PicoGL.js — 极简 WebGL2 包装
 

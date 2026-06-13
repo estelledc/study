@@ -172,6 +172,7 @@ pub fn process(mut program: Program, _: ()) -> Program {
 
 - [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
+- [[boa-engine]] —— boa-engine — 用 Rust 写出的可嵌入 JavaScript 引擎
 - [[bun]] —— Bun — JS 全能运行时
 - [[dust]] —— dust — du 的可视化替代，按目录大小排树状条形图
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler

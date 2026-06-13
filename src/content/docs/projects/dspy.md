@@ -185,6 +185,7 @@ dspy.configure(lm=dspy.LM("anthropic/claude-sonnet-4-7"))
 
 - [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[jupyterlab]] —— JupyterLab — 下一代 Jupyter IDE
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[self-refine-2023]] —— Self-Refine — 让同一个模型自己改自己写的东西
