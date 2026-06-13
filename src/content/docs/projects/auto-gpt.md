@@ -2,7 +2,6 @@
 title: AutoGPT — 自主 Agent 先驱
 来源: https://github.com/Significant-Gravitas/AutoGPT
 日期: 2026-06-13
-分类_原始: AI Agent 框架
 子分类: ai-agent-infra
 分类: 机器学习
 难度: 入门

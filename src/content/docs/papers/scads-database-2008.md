@@ -2,7 +2,6 @@
 title: SCADS: Scale-Independent Storage
 来源: https://amplab.cs.berkeley.edu/wp-content/uploads/2011/06/SCADS-Berkeley.pdf
 日期: 2026-06-13
-分类_原始: 数据库系统
 分类: 数据库
 子分类: 存储与查询
 provenance: pipeline-v3
