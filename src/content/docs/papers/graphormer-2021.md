@@ -2,7 +2,7 @@
 title: Graphormer — 标准 Transformer 直接刷爆 GNN
 来源: Ying et al., "Do Transformers Really Perform Bad for Graph Representation?", NeurIPS 2021
 日期: 2026-06-01
-子分类: 模型与训练
+子分类: graph-neural-networks
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

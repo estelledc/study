@@ -11,26 +11,58 @@ provenance: pipeline-v3
 
 ## 是什么
 
-**Wasmtime** Bytecode Alliance 的 WebAssembly 运行时，WASI 支持。
+Wasmtime 是 **Bytecode Alliance**（Linux 基金会 + Mozilla + 多家企业联合发起的组织）出品的 **WebAssembly（wasm）运行时**，支持 WASI 系统接口。日常类比：如果把 Linux 比作一个"能跑 .exe 文件的操作系统"，那 Wasmtime 就是一个"能跑 .wasm 文件的迷你操作系统"——`.wasm` 文件不知道自己是跑在 Intel CPU、ARM 芯片还是云端容器里，Wasmtime 替你处理所有差异。
 
-日常类比：像跨平台的 JVM 但跑 wasm：同一份字节码多 OS 执行。
+怎么跑？两行命令就够了：
 
-典型用法：克隆仓库读 README，跑官方最小示例，再对照源码目录理解模块边界。
+```bash
+# 1. 安装（macOS / Linux 通用）
+curl https://wasmtime.com/install.sh -sSf | sh
+
+# 2. 跑一个 wasm 文件（从任何来源下载）
+wasmtime run hello.wasm
+```
+
+或者，在 Rust 或 Python 代码里嵌入 Wasmtime，让用户的 wasm 插件在你的程序里安全执行。典型用法：克隆仓库读 README，跑官方最小示例，再对照源码目录理解模块边界。
 
 ## 为什么重要
 
-- 学 wasm 沙箱执行模型
-- WASI 系统接口
-- 对照 [[wasmer]] 竞品
-- 边缘/serverless 新载体
+不理解 Wasmtime，下面这些事说不清：
+
+- **为什么 2024 年开始"在服务器上跑 wasm"突然热门**——传统 Docker 容器冷启动要几百毫秒，wasm 模块加载只要几毫秒；在同一个进程里跑成千上万个 wasm 实例比 Docker 容器省一个数量级的内存
+- **为什么 Cloudflare / Fastly 开始用 wasm 跑用户代码**——它们把 Wasmtime 嵌入边缘节点，用户写一段 wasm 代码上传到边缘，几毫秒内在全球 300+ 个城市同时执行，比 Lambda 函数冷启动快 10-50 倍
+- **为什么 Rust / Go / Python 开发者都在学 wasm**——wasm 从"浏览器专属"变成了"跨语言、跨平台、可沙箱执行的通用字节码"，和 Java 的 `.class` 文件、.NET 的 `CIL` 类似，但更轻量、更安全、更 portable
+- **为什么 Wasmtime 和 Wasmer 都重要**——两者都是 wasm 运行时，但 Wasmtime 偏"规范合规 + WASI 先行"（更贴近标准），Wasmer 偏"多后端 + 插件生态"（更贴近嵌入场景）
+
+一句话总结：**Wasmtime 是连接"web 时代的字节码"和"云计算时代的安全执行"的桥梁。**
 
 ## 核心要点
 
-1. **架构分层**：先分清 UI/核心库/IO 边界，再读入口 main。
-2. **数据流**：跟踪一份输入如何变成输出（帧、包、tensor）。
-3. **依赖**：看清系统库与第三方，避免装错环境。
-4. **扩展点**：插件、配置、钩子在哪里暴露。
-5. **运维**：日志、指标、崩溃复现路径。
+Wasmtime 的设计可以拆成 **五个核心机制**，理解了它们就理解了整个项目：
+
+1. **Engine — 全局配置单例**
+   类比：像操作系统的内核——编译选项、优化级别、燃料限制、线程池大小都在这配。通常一个进程只创建一次 `Engine`，然后复用。
+   ```rust
+   let engine = Engine::builder().epoch_interruption(true).compile();
+   ```
+
+2. **Store — 执行状态容器**
+   类比：像一台 VM 的内存——所有 wasm 对象（函数、内存、全局变量）都挂在 Store 下面。每个 Store 是隔离的，**不可跨线程共享**。
+   ```rust
+   let mut store = Store::new(&engine, user_data: MyState);
+   ```
+
+3. **Module — 已编译的字节码**
+   类比：像 JVM 的 `.class` 文件或编译好的 `.o` 目标文件——从 `.wasm` 文件验证、解析、编译后得到，线程安全，可被多个 Store 共享实例化。
+   ```rust
+   let module = Module::from_file(&engine, "hello.wasm")?;
+   ```
+
+4. **Instance — 模块的运行时实例**
+   类比：像 `new Object()` 创建出的具体对象——每个实例有独立的内存、函数表、全局变量。一个 Module 可以在不同 Store 中实例化出多个 Instance。
+
+5. **WASI — 系统接口沙箱**
+   类比：像 Linux 的系统调用表，但 wasm 默认什么都没有——没有文件、没有网络、没有环境变量。必须显式通过 `WasiCtxBuilder` 授权，这叫"能力基础安全"（capability-based security）。
 
 ## 核心架构
 
@@ -125,31 +157,118 @@ wasmtime run --fuel 1000000 script.wasm
 
 ## 实践案例
 
-### 案例 1：最小可运行
+### 案例 1：运行第一个 Wasm 程序
+
+先用 WAT（WebAssembly 文本格式）写一个最小函数——它把两个数加起来：
 
 ```bash
-git clone <repo-url>
-cd wasmtime
-# 按官方文档安装依赖后运行 demo
+# 创建一个 WAT 文件（Wasm 的"源代码"）
+cat > add.wat <<'EOF'
+(module
+    (func $add (export "add") (param i32 i32) (result i32)
+        local.get 0      ; 取第一个参数
+        local.get 1      ; 取第二个参数
+        i32.add          ; 相加
+    )
+)
+EOF
+
+# 编译 WAT → WASM
+wasm-tools print add.wat > add.wasm
+
+# 运行！用 -c 调用导出函数
+wasmtime run add.wasm -- --cmd=add --cmd=3 --cmd=4
+# 输出：7
 ```
 
-对照 README 的参数表，改一个选项观察输出变化。
+**逐部分解释**：
+- `.wat` 是 `.wasm` 的文本版，人类可读，编译器读它生成二进制 `.wasm`
+- `wasm-tools` 是 Wasmtime 团队的文本格式工具，`print` 把 WAT 编译成 WASM 二进制
+- `--cmd=add` 告诉 Wasmtime 调 `add` 函数，后面两个 `--cmd=3` 是参数
 
-### 案例 2：读源码入口
+### 案例 2：WASI 程序——带文件系统访问
 
-从 `main` / `CMakeLists.txt` / `package.json` 找模块图；画一张三框数据流草图。
+wasm 默认不能读文件，但 WASI 可以：
 
-### 案例 3：与邻居项目对照
+```bash
+# 写一个 WASI 程序（用 TinyGo 编译）
+cat > hello.go <<'EOF'
+package main
+import "fmt"
+func main() { fmt.Println("Hello from Wasmtime WASI!") }
+EOF
 
-对照 [[wasmer]] 的实现差异：协议、语言、部署形态各写一条笔记。
+tinygo build -o hello.wasm -target=wasi hello.go
 
-### 案例 4：接入自己的管线
+# 运行——WASI 让它能打印到 stdout
+wasmtime run hello.wasm
+# 输出：Hello from Wasmtime WASI!
 
-把输出接到下游（播放器、训练 DataLoader、会议客户端），记录延迟与格式约束。
+# 如果想让它读当前目录的文件：
+wasmtime run --dir=. hello.wasm
+```
 
-### 案例 5：与双千 atlas 交叉阅读
+**逐部分解释**：
+- `--dir=.` 授权 wasm 程序读取当前目录——**不传这个 flag 它就看不到任何文件**
+- 这就是能力基础安全：默认零权限，你需要显式开白名单
 
-写完本篇后，在 `projects-atlas` 打开同子类邻居 1 篇，检查实践案例是否覆盖安装/命令/排障。
+### 案例 3：在 Rust 代码中嵌入 Wasmtime
+
+这是 Wasmtime 最强大的用法——你的 Rust 程序加载外部 `.wasm` 插件：
+
+```rust
+use wasmtime::*;
+
+fn main() -> anyhow::Result<()> {
+    // 1. 创建引擎（全局单例）
+    let engine = Engine::default();
+
+    // 2. 从文件编译 wasm 为 Module
+    let module = Module::from_file(&engine, "plugin.wasm")?;
+
+    // 3. 创建 Store（执行上下文）
+    let mut store = Store::new(&engine, ());
+
+    // 4. 实例化模块
+    let instance = Instance::new(&mut store, &module, &[])?;
+
+    // 5. 获取导出函数并调用
+    let greet = instance.get_typed_func::<(&str,), (&str,)>(&mut store, "greet")?;
+    let (result,) = greet.call(&mut store, ("World",))?;
+    println!("Plugin says: {}", result);
+
+    Ok(())
+}
+```
+
+这段代码里，`plugin.wasm` 可以是任何人写的任何 wasm 代码——你的 Rust 主程序不用信任它、不用编译它、甚至不用知道它做了什么。Wasmtime 的线性内存沙箱保证它不会碰宿主内存。
+
+### 案例 4：AOT 编译——零启动延迟
+
+Wasmtime 的 `.cwasm` 预编译在冷启动敏感的边缘计算场景特别有用：
+
+```bash
+# 把 wasm 提前编译成机器码
+wasmtime compile plugin.wasm -o plugin.cwasm
+
+# 加载 .cwasm 几乎无延迟（< 1ms）
+wasmtime run plugin.cwasm
+```
+
+对比：加载普通 `.wasm` 需要做 JIT 编译（5-50ms），而 `.cwasm` 直接 mmap 机器码，跳过编译阶段。Cloudflare Workers 就是靠这个实现"全球节点毫秒级冷启动"。
+
+### 案例 5：燃料限制——防止无限循环
+
+如果你要执行不信任的 wasm 代码（比如用户提交的脚本），可以用燃料防止它卡死你的进程：
+
+```bash
+# 最多执行 100 万条指令
+wasmtime run --fuel 1000000 risky.wasm
+
+# 如果超出燃料，返回错误而不是永久挂起
+```
+
+类比：就像给一个无限循环的程序设了"电量"——电用完自动停机。这在用户代码沙箱里是标配功能。
 
 ## 踩过的坑
 
