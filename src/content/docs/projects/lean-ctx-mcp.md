@@ -2,7 +2,6 @@
 title: LeanCTX — AI Agent 的认知上下文层
 来源: https://github.com/yvgude/lean-ctx
 日期: 2026-06-13
-分类_原始: AI 工程化
 分类: CLI
 子分类: 开发者工具
 provenance: pipeline-v3

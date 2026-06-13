@@ -2,7 +2,6 @@
 title: Clozure CL — 苹果系 Common Lisp
 来源: https://github.com/Clozure/ccl
 日期: 2026-06-13
-分类_原始: 编程语言
 分类: 编译器
 子分类: 语言运行时
 provenance: pipeline-v3

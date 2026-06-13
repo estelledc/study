@@ -2,7 +2,6 @@
 title: Same Evidence, Different Answers: Canonical-Context On-Policy Distillation
 来源: https://arxiv.org/abs/2605.30251
 日期: 2026-06-13
-分类_原始: 论文笔记
 分类: 机器学习
 子分类: 模型与训练
 provenance: pipeline-v3

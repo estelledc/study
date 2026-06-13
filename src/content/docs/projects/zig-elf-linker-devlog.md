@@ -2,7 +2,6 @@
 title: Zig ELF Linker Improvements Devlog 学习笔记
 来源: https://ziglang.org/devlog/2026/#2026-05-30
 日期: 2026-06-13
-分类_原始: 编译器与构建系统
 分类: 编程语言
 子分类: 类型与 PL 理论
 provenance: pipeline-v3
