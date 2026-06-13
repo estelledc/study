@@ -123,7 +123,7 @@
     { "pattern": "^NLP$|自然语言", "themeId": "nlp" },
     { "pattern": "编译|LLVM|JIT|IR |解析器|lexer|编译器", "themeId": "compilers" },
     { "pattern": "可视化|图表|d3|echarts|Canvas|数据可视化|dataviz", "themeId": "dataviz" },
-    { "pattern": "安全|隐私|密码|crypto|加密|零知识|侧信道", "themeId": "security-privacy" },
+    { "pattern": "安全|隐私|密码|crypto|加密|零知识|侧信道|HKDF|HMAC|KDF|密钥派生|key derivation", "themeId": "security-privacy" },
     { "pattern": "软件工程|HCI|认知|调试|TDD|结对|中断|实证", "themeId": "other" },
     { "pattern": "硬件|体系结构|CPU|微架构|芯片|Arch", "themeId": "graphics" },
     { "pattern": "量化|金融|经济", "themeId": "other" },
