@@ -166,6 +166,7 @@ let run e = eval e [] (fun v -> v)
 - [[effect-handlers]] —— 代数效应（Algebraic Effects）
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960

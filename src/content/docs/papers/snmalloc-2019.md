@@ -219,5 +219,10 @@ fn main() {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
+- [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy GC — OCaml 多线程并发垃圾回收
+- [[hazard-pointers-2004]] —— Hazard Pointers — 多线程下安全释放共享节点
+- [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
+- [[rcu-2001]] —— RCU 2001 — 让"读"的代价归零的并发数据结构
+- [[volcano]] —— Volcano — 把'算子可组合'与'并行可分离'拼成执行器范式
 

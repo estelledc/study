@@ -225,10 +225,13 @@ function SubmitOnEnterPlugin({ onSubmit }: { onSubmit: () => void }) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
+- [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
+- [[react]] —— React UI 组件库
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

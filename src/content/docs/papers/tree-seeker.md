@@ -2,7 +2,6 @@
 title: "TreeSeeker — 树形试探、试错与回溯的深度搜索框架"
 来源: https://arxiv.org/abs/2606.11662
 日期: 2026-06-13
-分类_原始: AI/LLM
 分类: 机器学习
 子分类: 搜索
 provenance: pipeline-v3

@@ -152,6 +152,7 @@ Claude Desktop 配一个本地 MCP 服务器，启动时 fork 子进程，stdin/
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[academic-research-skills]] —— Academic Research Skills — Claude Code 学术研究全流程自动化技能包
+- [[agent-memory]] —— agentmemory — 给 AI 编程助手装上「跨会话长期记忆」
 - [[anthropic-circuits]] —— Anthropic Circuits — 把 Transformer 当电路逆向
 - [[anthropic-prompt-caching]] —— Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%
 - [[language-server-protocol-spec]] —— Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议

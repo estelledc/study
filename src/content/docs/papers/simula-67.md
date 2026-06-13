@@ -190,6 +190,7 @@ end;
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[hydra-1974]] —— HYDRA — 用 capability 把整个内核重做成对象 + 票据
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

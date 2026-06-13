@@ -2,7 +2,6 @@
 title: 微调表示偏移与多模态大模型控制
 来源: https://arxiv.org/abs/2501.03012
 日期: 2026-06-13
-分类_原始: AI / 机器学习
 分类: 机器学习
 子分类: 多模态
 provenance: pipeline-v3

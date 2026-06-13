@@ -168,5 +168,11 @@ PWABuilder 在生成 APK 时会提示你填写 `package_name` 和证书指纹，
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[capacitor]] —— Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用
+- [[cordova]] —— Cordova — 用 HTML/JS 写手机 App 的 WebView 桥
+- [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
+- [[flutter]] —— Flutter — Google 自绘像素的跨平台 UI 框架
+- [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
+- [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
 

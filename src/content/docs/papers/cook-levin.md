@@ -155,6 +155,7 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 - [[davis-putnam-1960]] —— Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[dpll-1962]] —— DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
@@ -162,6 +163,7 @@ Cook-Levin 证明的就是：**SAT 是第一个被发现的 NP-完全问题**。
 - [[marques-silva-grasp-1996]] —— GRASP 1996 — 让 SAT 求解器从冲突里学到东西
 - [[minisat-2003]] —— MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
 - [[neumann-2015-large-joins]] —— Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
 - [[sweeney-k-anonymity-2002]] —— k-匿名 — 发布数据时让攻击者无法锁定你是谁
 - [[turing-1936]] —— Turing 1936 可计算性
 - [[zk-snark]] —— zk-SNARK 零知识证明

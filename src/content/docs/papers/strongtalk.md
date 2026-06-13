@@ -171,6 +171,7 @@ function add(x, y) {
 
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生

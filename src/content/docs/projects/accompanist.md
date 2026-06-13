@@ -199,5 +199,6 @@ fun OnboardingPager(pages: List<@Composable () -> Unit>) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[lottie]] —— Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放
+- [[retrofit]] —— Retrofit — 把 HTTP API 变成 Java/Kotlin 接口的类型安全客户端
 

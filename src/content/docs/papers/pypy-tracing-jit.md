@@ -152,6 +152,7 @@ PyPy 项目里至少有这些 RPython 解释器：
 
 - [[e-path-equality-saturation-for-control-flow-graphs-arxiv-2605-28694]] —— E-Path Equality Saturation for Control-Flow Graphs — 把"改写程序"变成"同时保留所有可能"
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[nuitka]] —— Nuitka — 把 Python 源码编译成 C 再生成原生机器码

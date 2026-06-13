@@ -236,5 +236,9 @@ backend = "http://localhost:3000/api/"
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
+- [[wasm-pack]] —— wasm-pack — 把 Rust 编译成浏览器能跑的代码
+- [[wasmer]] —— Wasmer — 跨平台 WebAssembly 运行时
+- [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

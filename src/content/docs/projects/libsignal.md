@@ -154,6 +154,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 - [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
 - [[costan-sgx-explained-2016]] —— Intel SGX 详解 — 在不可信云里圈一块硬件保险箱
 - [[heartbleed-2014]] —— Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[kim-rowhammer-2014]] —— RowHammer — 只读内存也能把邻居的 bit 敲 flip
 - [[li-t-closeness-2007]] —— t-Closeness — 用"分布距离"堵住匿名化的最后漏洞
 - [[lipp-meltdown-2018]] —— Meltdown — 乱序执行偷读内核内存

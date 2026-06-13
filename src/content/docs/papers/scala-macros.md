@@ -152,6 +152,7 @@ Catalyst 把 SQL 物理计划用 quasiquote 拼成 Scala 源码片段，调 tool
 
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[lean-prover]] —— Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言
 - [[lean-tactics]] —— Lean Tactics — 让证明助手把"写证明"当成写程序
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"

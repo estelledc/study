@@ -134,6 +134,7 @@ PRAGMA journal_mode=WAL;
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agent-memory]] —— agentmemory — 给 AI 编程助手装上「跨会话长期记忆」
 - [[bbolt]] —— bbolt — Go 嵌入式 B+ 树 KV
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[django]] —— Django — 全功能 batteries-included 的 Python web 框架

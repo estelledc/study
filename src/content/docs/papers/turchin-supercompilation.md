@@ -152,9 +152,9 @@ factI n = go 1 1 where
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[cousot-abstract-interpretation]] —— Cousot 抽象解释 — 给静态分析一套统一数学框架
-- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
 - [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成

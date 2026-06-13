@@ -165,6 +165,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 - [[kakoune-vim-philosophy]] —— Kakoune — 面向对象的模态编辑器：先圈地，再动刀
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 - [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[openvscode-server]] —— OpenVSCode Server — VS Code Server 上游
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架

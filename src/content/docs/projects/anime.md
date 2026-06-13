@@ -174,6 +174,7 @@ io.observe(document.querySelector('.hero-title'))
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[lottie]] —— Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放
 - [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎

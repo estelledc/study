@@ -176,4 +176,5 @@ bool emberAfOnOffClusterToggleCallback(EndpointId endpoint)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[coap-rfc7252]] —— CoAP RFC 7252 — 给传感器用的「超短明信片 HTTP」
+- [[openthread]] —— OpenThread — Google 开源的 Thread mesh 网络协议栈
 

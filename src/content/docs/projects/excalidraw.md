@@ -157,6 +157,7 @@ public record(delta: StoreDelta) {
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[flowchart-js]] —— flowchart.js — 文本生成流程图
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[pdfme]] —— pdfme — TypeScript 模板化 PDF
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎

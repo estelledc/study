@@ -153,6 +153,7 @@ console.log(py(21));  // 42
 
 - [[e-path-equality-saturation-for-control-flow-graphs-arxiv-2605-28694]] —— E-Path Equality Saturation for Control-Flow Graphs — 把"改写程序"变成"同时保留所有可能"
 - [[graalvm]] —— GraalVM — 多语言通用 VM
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[nuitka]] —— Nuitka — 把 Python 源码编译成 C 再生成原生机器码

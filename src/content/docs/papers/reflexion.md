@@ -166,6 +166,7 @@ Trial 2:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agentrefine]] —— AgentRefine — 用跑团式训练让 AI 学会从错误中自我纠正
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
 - [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
 - [[constitutional-ai]] —— Constitutional AI — Anthropic 的对齐方法

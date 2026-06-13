@@ -294,6 +294,7 @@ Monaco **不是** VS Code 的阉割骗局，而是**故意只导出编辑器层*
 - [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
 - [[eg-walker-collab-text-2024]] —— Eg-walker — 协同文本编辑的「按需 CRDT」：更好、更快、更小
 - [[language-server-protocol-spec]] —— Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议
+- [[lexical]] —— lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[prosemirror-architecture]] —— ProseMirror — 构建富文本编辑器的工具箱
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上

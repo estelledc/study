@@ -211,5 +211,9 @@ demo_checksum_layers()
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[b-tree-1972]] —— B-Tree 1972 — 磁盘友好的索引结构
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[rocksdb-2017]] —— RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验
+- [[tikv]] —— TiKV — 分布式事务 KV
 

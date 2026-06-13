@@ -2,8 +2,9 @@
 title: gluestack-ui — 跨平台 React 组件库
 来源: https://github.com/gluestack/gluestack-ui
 日期: 2026-06-13
-分类: 项目/前端
-子分类: 移动端跨平台
+分类_原始: 项目/前端
+分类: 后端 API
+子分类: mobile-cross-platform
 provenance: pipeline-v3
 ---
 
@@ -352,4 +353,7 @@ v2 的核心变化：
 
 ## 反向链接
 
-（本页面由 pipeline 自动生成，反向链接将在 /wiki index 后自动填充。）
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

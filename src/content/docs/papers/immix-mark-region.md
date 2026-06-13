@@ -167,6 +167,7 @@ JikesRVM（一个研究用的 JVM）在 2008 年实测：
 - [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[jemalloc-2006]] —— jemalloc — 多 arena 让多线程 malloc 不再互相等
 - [[jemalloc-evans-2006]] —— jemalloc（Evans 2006）— 多 arena 让多线程 malloc 不再抢同一把锁
 - [[llvm]] —— LLVM — 模块化编译器框架

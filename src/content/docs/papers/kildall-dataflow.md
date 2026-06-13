@@ -177,6 +177,7 @@ out(B) = (in(B) − kill_B) ∪ gen_B
 - [[flink-2015]] —— Apache Flink — 流批一体的单引擎
 - [[garland-heckbert-1997-qem]] —— QEM — 给三角网格『瘦身』时算每一刀的代价
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码
 - [[lerner-seminal]] —— Lerner 组合数据流 — 让小优化互相喂招
 - [[linear-scan-reg-alloc]] —— Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用

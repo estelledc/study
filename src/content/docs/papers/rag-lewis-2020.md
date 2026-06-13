@@ -143,6 +143,7 @@ answer = llama.generate(prompt)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agent-memory]] —— agentmemory — 给 AI 编程助手装上「跨会话长期记忆」
 - [[agi-survey]] —— Large language models for artificial general intelligence (AGI): A survey
 - [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B
 - [[bert]] —— BERT — 双向 Transformer 预训练

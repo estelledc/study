@@ -194,5 +194,10 @@ memtable_limit(service="logs_analytics", max_gb=2)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
+- [[chubby]] —— Chubby — 给凡人用的分布式锁服务
+- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[lsm-tree-1996]] —— LSM-Tree 1996 — 写优化存储引擎
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 

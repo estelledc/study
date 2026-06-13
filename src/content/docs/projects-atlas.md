@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 1316 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1318 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1316 个
-- **已分类**：1316
+- **总数**：1318 个
+- **已分类**：1318
 
 ### 按一级主题分布
 
@@ -24,7 +24,7 @@ sidebar:
 | [操作系统](#操作系统) | 55 |
 | [机器学习](#机器学习) | 168 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 257 |
+| [后端 API](#后端-api) | 258 |
 | [基础设施](#基础设施) | 87 |
 | [网络协议](#网络协议) | 2 |
 | [图形学](#图形学) | 62 |
@@ -35,7 +35,7 @@ sidebar:
 | [编译器](#编译器) | 70 |
 | [数据可视化](#数据可视化) | 67 |
 | [安全与隐私](#安全与隐私) | 22 |
-| [其他](#其他) | 37 |
+| [其他](#其他) | 38 |
 
 ---
 
@@ -382,7 +382,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Accelerate — HuggingFace 设备/分布式抽象](/study/projects/accelerate/) | ✅ v3 |  |
-| [Agency Agents — 用 232 个专业角色组建你的 AI 团队](/study/projects/agency-agents/) | ✅ v3 |  |
+| [Agency Agents — 用 197+ 个专业角色组建你的 AI 团队](/study/projects/agency-agents/) | ✅ v3 |  |
 | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | ✅ v3 |  |
 | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) | ✅ v3 |  |
 | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) | ✅ v3 |  |
@@ -613,7 +613,7 @@ sidebar:
 
 ## 后端 API
 
-共 257 个。
+共 258 个。
 
 ### 前端
 
@@ -754,6 +754,7 @@ sidebar:
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [gluestack-ui — 跨平台 React 组件库](/study/projects/gluestack/) | ✅ v3 |  |
 | [Ionic — 混合移动应用框架](/study/projects/ionic/) | ✅ v3 |  |
 | [Onsen UI — 用一套 HTML 同时搞定 iOS 和 Android 原生风格界面](/study/projects/onsen-ui/) | ✅ v3 |  |
 | [React Native Reanimated — 高性能动画库](/study/projects/react-native-reanimated/) | ✅ v3 |  |
@@ -1758,7 +1759,7 @@ sidebar:
 
 ## 其他
 
-共 37 个。
+共 38 个。
 
 ### 工程文化
 
@@ -1811,6 +1812,7 @@ sidebar:
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [cargo-nextest — Rust 并行测试运行器](/study/projects/cargo-nextest/) | ✅ v3 |  |
 | [Mio — Rust 跨平台 I/O 多路复用](/study/projects/mio/) | ✅ v3 |  |
 | [reqwest — Rust HTTP 客户端](/study/projects/reqwest/) | ✅ v3 |  |
 | [sqlx — 编译期校验 SQL 工具包](/study/projects/sqlx/) | ✅ v3 |  |
@@ -1834,7 +1836,7 @@ sidebar:
 
 ---
 
-## 全部 1316 个（字母序）
+## 全部 1318 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1852,7 +1854,7 @@ sidebar:
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `ag2` | [AG2 — AutoGen 社区演进](/study/projects/ag2/) | ✅ v3 | 机器学习 | ai-agent-infra |
 | `age` | [age — 把"用 GPG 加密一个文件"重新做对](/study/projects/age/) | ✅ v3 | 基础设施 | DevOps 与运维 |
-| `agency-agents` | [Agency Agents — 用 232 个专业角色组建你的 AI 团队](/study/projects/agency-agents/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `agency-agents` | [Agency Agents — 用 197+ 个专业角色组建你的 AI 团队](/study/projects/agency-agents/) | ✅ v3 | 机器学习 | 数据科学与 AI |
 | `agent-memory` | [agentmemory — 给 AI 编程助手装上「跨会话长期记忆」](/study/projects/agent-memory/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `agentmemory` | [agentmemory — 让 AI 编码代理拥有持久记忆的引擎](/study/projects/agentmemory/) | ✅ v3 | 机器学习 | ML 系统 |
 | `agno` | [Agno — 多模态 Agent 平台框架](/study/projects/agno/) | ✅ v3 | 机器学习 | ai-agent-infra |
@@ -1995,6 +1997,7 @@ sidebar:
 | `capawesome` | [Capawesome -- Capacitor 插件生态](/study/projects/capawesome/) | ✅ v3 | 其他 | mobile-cross-platform |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | ✅ v3 | 后端 API | Web 后端 |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) | ✅ v3 | 机器学习 | 数据科学与 AI |
+| `cargo-nextest` | [cargo-nextest — Rust 并行测试运行器](/study/projects/cargo-nextest/) | ✅ v3 | 其他 | rust-tools |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | ✅ v3 | 分布式系统 | 数据库 / 分布式 |
 | `cc-switch-desktop` | [CC Switch — 一个按钮切换所有 AI coding agent 的桌面助手](/study/projects/cc-switch-desktop/) | ✅ v3 | CLI | 开发者工具 |
 | `ccusage` | [ccusage — 本地 Coding CLI 用量与成本「账单解析器」](/study/projects/ccusage/) | ✅ v3 | CLI | 命令行工具 |
@@ -2267,6 +2270,7 @@ sidebar:
 | `glsl-canvas` | [glslCanvas — Book of Shaders 配套库](/study/projects/glsl-canvas/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `glslify` | [glslify — Browserify 风格 GLSL 模块](/study/projects/glslify/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `gltf-transform` | [glTF Transform — glTF 资产工具链](/study/projects/gltf-transform/) | ✅ v3 | 图形学 | 渲染与图形 |
+| `gluestack` | [gluestack-ui — 跨平台 React 组件库](/study/projects/gluestack/) | ✅ v3 | 后端 API | mobile-cross-platform |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | ✅ v3 | 区块链 | 链与合约 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | ✅ v3 | 后端 API | Web 后端 |
 | `godot` | [Godot Engine — 开源游戏引擎 + 编辑器](/study/projects/godot/) | ✅ v3 | CLI | game-engines-and-graphics |

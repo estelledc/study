@@ -172,6 +172,7 @@ Nuprl 让"两个证明出相等的东西"和"判断上相等"几乎无缝；Coq 
 - [[acl2-2000]] —— ACL2 — 用纯 Lisp 当数学对象，机器证明工业级硬件正确
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[calculus-of-constructions]] —— Calculus of Constructions — 让程序和数学证明共用一种语言
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hol-light-2009]] —— HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手
 - [[hott-book-2013]] —— HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数

@@ -3,7 +3,7 @@ title: 共形预测 + LLM — 用统计保证让大模型决策更可靠
 来源: "Vishwakarma, Mishler, Cook, Dalmasso, Raman & Ganesh, Prune n Predict: Optimizing LLM Decision-making with Conformal Prediction, ICML 2025"
 日期: 2026-06-13
 分类: 机器学习
-子分类: 共形预测
+子分类: 置信预测
 provenance: pipeline-v3
 ---
 

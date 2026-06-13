@@ -181,3 +181,7 @@ agentmemory connect claude-code --with-hooks
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[domain-expertise-real-moat]] —— Domain expertise has always been the real moat
+- [[pi-subagents]] —— pi-subagents — 给 Pi 装一个"派活"插件
+

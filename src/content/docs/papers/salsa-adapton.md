@@ -152,6 +152,7 @@ file_text(file_id)              # input：你刚改的 .rs 文件文本
 
 - [[adapton]] —— Adapton — 增量计算
 - [[differential-datalog]] —— DDlog (Differential Datalog) — 输入只改一条，引擎只算受影响的那一小块
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器

@@ -169,6 +169,7 @@ let final = route + monitor
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[netkat-2014]] —— NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式
 - [[openflow-2008]] —— OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么

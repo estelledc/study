@@ -159,5 +159,9 @@ python -m scripts.validate_schema \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
+- [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
+- [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法
 

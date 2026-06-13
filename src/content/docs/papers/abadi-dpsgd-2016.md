@@ -167,4 +167,5 @@ for x, y in loader:
 - [[shokri-mia-2017]] —— MIA 成员推断攻击 — 黑盒 API 能猜出你是不是训练数据
 - [[sweeney-k-anonymity-2002]] —— k-匿名 — 发布数据时让攻击者无法锁定你是谁
 - [[szegedy-adversarial-2013]] —— Szegedy 对抗样本 2013 — 一张图片骗过神经网络的开山之作
+- [[ucb-cs186-fa2024]] —— UC Berkeley CS186 — 数据库系统内部原理入门
 

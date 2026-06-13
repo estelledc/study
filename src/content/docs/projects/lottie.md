@@ -186,7 +186,11 @@ const anims = ['deco1', 'deco2', 'deco3', 'deco4', 'deco5'].map((id, i) => {
 - [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[defold]] —— Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包
 - [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[framer-motion]] —— Framer Motion — React 声明式动画
 - [[gsap]] —— GSAP — GreenSock 高性能动画
 - [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
+- [[react]] —— React UI 组件库
+- [[threejs]] —— three.js — Web 3D 事实标准
 

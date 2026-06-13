@@ -185,7 +185,6 @@ make BR2_EXTERNAL=/path/to/my-product-layer
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
 - [[freecad]] —— FreeCAD — 参数化 CAD
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核

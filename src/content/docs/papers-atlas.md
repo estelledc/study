@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1307 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1309 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1307 篇
-- **已分类**：1307
+- **总数**：1309 篇
+- **已分类**：1309
 
 ### 按一级主题分布
 
@@ -20,9 +20,9 @@ sidebar:
 |---|---:|
 | [编程语言](#编程语言) | 143 |
 | [分布式系统](#分布式系统) | 101 |
-| [数据库](#数据库) | 97 |
+| [数据库](#数据库) | 98 |
 | [操作系统](#操作系统) | 108 |
-| [机器学习](#机器学习) | 352 |
+| [机器学习](#机器学习) | 353 |
 | [后端 API](#后端-api) | 10 |
 | [基础设施](#基础设施) | 17 |
 | [网络协议](#网络协议) | 66 |
@@ -324,7 +324,7 @@ sidebar:
 
 ## 数据库
 
-共 97 篇。
+共 98 篇。
 
 ### 存储与查询
 
@@ -409,6 +409,7 @@ sidebar:
 | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) | ✅ v3 |  |
 | [TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析](/study/papers/tidb-2020/) | ✅ v3 |  |
 | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | ✅ v3 |  |
+| [UC Berkeley CS186 — 数据库系统内部原理入门](/study/papers/ucb-cs186-fa2024/) | ✅ v3 |  |
 | [Velox — Meta 的统一执行引擎](/study/papers/velox-meta-2022/) | ✅ v3 |  |
 | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | ✅ v3 |  |
 | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) | ✅ v3 |  |
@@ -572,7 +573,7 @@ sidebar:
 
 ## 机器学习
 
-共 352 篇。
+共 353 篇。
 
 ### 多模态
 
@@ -931,7 +932,7 @@ sidebar:
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | ✅ v3 |  |
-| [AgentRefine 学习笔记：通过修正微调增强智能体泛化能力](/study/papers/agentrefine/) | ✅ v3 |  |
+| [AgentRefine — 用跑团式训练让 AI 学会从错误中自我纠正](/study/papers/agentrefine/) | ✅ v3 |  |
 | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | ✅ v3 |  |
 | [Anthropic Prompt Caching — 让长 prompt 只算一次，后续只付 10%](/study/papers/anthropic-prompt-caching/) | ✅ v3 |  |
 | [Attention Is All You Need](/study/papers/attention/) | 🗄 存量 |  |
@@ -939,6 +940,7 @@ sidebar:
 | [CALM: Curiosity-Driven Auditing for Large Language Models](/study/papers/calm-audit/) | ✅ v3 |  |
 | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | ✅ v3 |  |
 | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | ✅ v3 |  |
+| [共形预测 + LLM — 用统计保证让大模型决策更可靠](/study/papers/conformal-llm/) | ✅ v3 |  |
 | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | ✅ v3 |  |
 | [Chain-of-Thought Prompting](/study/papers/cot/) | ✅ v3 |  |
 | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | ✅ v3 |  |
@@ -1730,7 +1732,7 @@ sidebar:
 
 ---
 
-## 全部 1307 篇（字母序）
+## 全部 1309 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1754,7 +1756,7 @@ sidebar:
 | `agent-skill-protocol-2026` | [VLA 驾驶模型的视觉依赖诊断——用扰动实验回答一个问题：自动驾驶到底在多大程度上真的在「看」？](/study/papers/agent-skill-protocol-2026/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `agentic-proving-for-program-verification-arxiv-2605-23772` | [Agentic Proving for Program Verification](/study/papers/agentic-proving-for-program-verification-arxiv-2605-23772/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | ✅ v3 | 机器学习 | AI / 软件工程 |
-| `agentrefine` | [AgentRefine 学习笔记：通过修正微调增强智能体泛化能力](/study/papers/agentrefine/) | ✅ v3 | 机器学习 | 智能体 |
+| `agentrefine` | [AgentRefine — 用跑团式训练让 AI 学会从错误中自我纠正](/study/papers/agentrefine/) | ✅ v3 | 机器学习 | 智能体 |
 | `agi-survey` | [Large language models for artificial general intelligence (AGI): A survey](/study/papers/agi-survey/) | ✅ v3 | 其他 | AGI |
 | `agora-autonomous-bug-detection-in-consensus-protocols-with-llm-agents-arxiv-2605` | [Agora — 用 LLM Agent 自主检测共识协议的 Bug](/study/papers/agora-autonomous-bug-detection-in-consensus-protocols-with-llm-agents-arxiv-2605/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `akamai-2002` | [Akamai 2002 — 把网站搬到离用户 10 毫秒的地方](/study/papers/akamai-2002/) | ✅ v3 | 分布式系统 | 共识与复制 |
@@ -1949,6 +1951,7 @@ sidebar:
 | `compiler-perf-left-on-table` | [Performance Left on the Table — 编译器自动向量化还剩多少性能没吃到](/study/papers/compiler-perf-left-on-table/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `compose-future-theorems` | [COMPOSE — 从引用与形式结构「合成」未来定理](/study/papers/compose-future-theorems/) | ✅ v3 | 形式化方法 | 定理证明 |
 | `compositional-incoherence` | [Locally Coherent, Globally Incoherent — 多组件 LLM Agent 的组合不一致性](/study/papers/compositional-incoherence/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `conformal-llm` | [共形预测 + LLM — 用统计保证让大模型决策更可靠](/study/papers/conformal-llm/) | ✅ v3 | 机器学习 | 置信预测 |
 | `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | ✅ v3 | 机器学习 | AI 安全 / NLP |
@@ -2933,6 +2936,7 @@ sidebar:
 | `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) | ✅ v3 | 图形学 | GPU 架构 |
 | `twine-2020` | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `u-boot-bootloader` | [Das U-Boot — Universal Bootloader 零基础学习笔记](/study/papers/u-boot-bootloader/) | ✅ v3 | 操作系统 | 嵌入式与 IoT |
+| `ucb-cs186-fa2024` | [UC Berkeley CS186 — 数据库系统内部原理入门](/study/papers/ucb-cs186-fa2024/) | ✅ v3 | 数据库 | 存储与查询 |
 | `umbra-2020` | [Umbra: A Disk-Based System with In-Memory Performance](/study/papers/umbra-2020/) | ✅ v3 | 数据库 | 现代数据库 |
 | `unicron` | [Unicron —— 让大模型训练自己治伤的"自动维修系统"](/study/papers/unicron/) | ✅ v3 | 基础设施 | LLM系统 |
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | ✅ v3 | 图形学 | GPU 架构 |

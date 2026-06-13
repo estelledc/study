@@ -175,5 +175,9 @@ result = process_batch(large_data)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
+- [[llvm]] —— LLVM — 模块化编译器框架
+- [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
+- [[pyenv]] —— pyenv — 用 shim 把 python 命令拦截后路由到指定版本
+- [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 

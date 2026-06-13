@@ -161,5 +161,10 @@ def process_image(event, context):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[firecracker-2020]] —— Firecracker 2020 — 给 serverless 量身定做的极简 microVM
+- [[gfs]] —— GFS — 编译器决定不做哪些事
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
+- [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 

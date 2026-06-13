@@ -168,6 +168,7 @@ let ws = warp::path("ws")
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
 - [[flutter-rust-bridge]] —— flutter-rust-bridge — Dart 调 Rust 像调本地函数
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[kitty]] —— kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里
 - [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数

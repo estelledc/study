@@ -154,6 +154,7 @@ TypeScript 的 control-flow narrowing 做的就是 1991 年抽象解释——一
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型

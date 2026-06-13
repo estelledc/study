@@ -113,6 +113,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[activation-patching]] —— Activation Patching — 因果干预可解释性方法
+- [[agentrefine]] —— AgentRefine — 用跑团式训练让 AI 学会从错误中自我纠正
 - [[align-2021]] —— ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[ampere-architecture-2020]] —— NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设
@@ -139,6 +140,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -194,7 +196,6 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[prototypical-networks-2017]] —— Prototypical Networks — 每类算个均值，比距离就够了
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[resnet]] —— ResNet — 残差连接

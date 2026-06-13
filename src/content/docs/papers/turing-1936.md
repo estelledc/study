@@ -171,6 +171,7 @@ D(M):
 - [[fielding-rest-2000]] —— Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hamming-1950]] —— Hamming 纠错码
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[huffman-1952]] —— Huffman 编码
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[karp-21]] —— Karp 21 — 21 个 NP-完全问题

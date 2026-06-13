@@ -159,6 +159,7 @@ const openLog = Effect.acquireRelease(
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[frank-effects]] —— Frank — 让 effect handler 写得就像普通函数
 - [[granule]] —— Granule — 让类型系统同时数次数、看安全级、追副作用
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[hono]] —— Hono — 多运行时 Web 框架
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎

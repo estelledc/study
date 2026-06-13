@@ -153,6 +153,7 @@ npm run docusaurus docs:version 1.0
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
 - [[gimp]] —— GIMP — GNU 图像处理程序
 - [[inkscape]] —— Inkscape — 矢量图形编辑器
+- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架

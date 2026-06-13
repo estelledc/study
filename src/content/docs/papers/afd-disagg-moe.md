@@ -336,6 +336,7 @@ AFD 最适合以下场景：
 
 ## 反向链接
 
-- 本库相关笔记：[megatron-core-moe-2026](/docs/papers/megatron-core-moe-2026) -- Megatron-Core MoE 并行策略
-- [paged-attention-vllm](/docs/papers/paged-attention-vllm) -- vLLM KV cache 分页管理
-- [expertflow-moe-offload](/docs/papers/expertflow-moe-offload) -- MoE 专家卸载策略
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

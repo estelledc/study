@@ -167,10 +167,8 @@ const html = await codeToHtml(code, {
 
 - [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
-- [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 - [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
-- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[starlight]] —— Starlight — Astro 文档站点主题
 - [[tree-sitter-2018]] —— Tree-sitter — 增量式解析系统
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线

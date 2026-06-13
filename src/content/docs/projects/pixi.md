@@ -167,6 +167,7 @@ app.ticker.add(() => { wheel.rotation += 0.02; });
 - [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 - [[jimp]] —— jimp — 哪都能跑的纯 JS 图像处理库
 - [[konva]] —— Konva — 给 HTML5 Canvas 装一棵会响应的节点树
+- [[lottie]] —— Lottie — 把设计师的 After Effects 动画变成一份 JSON，跨端直接播放
 - [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
 - [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱

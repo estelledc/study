@@ -152,6 +152,7 @@ Taha 2017 年早逝，但这条思想线一直延续。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
