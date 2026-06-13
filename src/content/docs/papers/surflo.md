@@ -2,7 +2,6 @@
 title: "Surflo: Consistent 3D Surface Flow Model with Global State"
 来源: https://arxiv.org/abs/2606.13644
 日期: 2026-06-13
-分类_原始: 计算机视觉
 分类: 机器学习
 子分类: 3D生成
 provenance: pipeline-v3

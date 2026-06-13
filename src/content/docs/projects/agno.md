@@ -2,7 +2,6 @@
 title: Agno — 多模态 Agent 平台框架
 来源: https://github.com/agno-agi/agno
 日期: 2026-06-13
-分类_原始: AI / Agent 框架
 分类: 机器学习
 子分类: ai-agent-infra
 provenance: pipeline-v3

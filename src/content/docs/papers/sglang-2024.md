@@ -2,8 +2,8 @@
 title: SGLang — 把 LLM 程序当成共享前缀的树来跑
 来源: 'Zheng et al., "SGLang: Efficient Execution of Structured Language Model Programs", arXiv 2312.07104 / NeurIPS 2024'
 日期: 2026-05-31
-子分类: GPU 架构
-分类: 图形学
+子分类: ML 系统
+分类: 机器学习
 难度: 中级
 provenance: pipeline-v3
 ---
