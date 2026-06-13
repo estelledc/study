@@ -1,255 +1,160 @@
 ---
-title: Academic Research Skills — Claude Code 学术研究全流程自动化
-来源: https://github.com/Imbad0202/academic-research-skills
+title: Academic Research Skills — Claude Code 学术研究全流程自动化技能包
+来源: 'https://github.com/Imbad0202/academic-research-skills'
 日期: 2026-06-13
 分类: CLI
 子分类: 开发者工具
+难度: 中级
 provenance: pipeline-v3
 ---
 
-## 日常类比：带审稿制度的研究生工作室
+## 是什么
 
-想象你进了一间**配置齐全的研究生工作室**，而不是只有一个会聊天的 ChatGPT 窗口：
+Academic Research Skills（ARS）是一套**把学术研究的脏活累活交给 Claude Code 多 Agent 协作，但保留你在每个关键节点签字权的技能包**。日常类比：带审稿制度的研究生工作室。
 
-- **文献助理**（Deep Research）负责检索、精读、做 annotated bibliography，还能用苏格拉底式提问逼你把研究问题想清楚；
-- **写作教练**（Academic Paper）按大纲搭论证、写初稿、改格式、查引用，但**不会替你拍板「本文主张是什么」**；
-- **模拟审稿人**（Academic Paper Reviewer）扮演主编、三位领域审稿人，外加一位「魔鬼代言人」专门挑刺；
-- **课题秘书**（Academic Pipeline）把上述角色串成一条流水线，在关键节点**强制你点头**，并在送审前后各跑一轮**诚信核查**（Stage 2.5 / 4.5）。
+想象你进了一间配置齐全的工作室：文献助理（deep-research）负责检索、精读、做 annotated bibliography；写作教练（academic-paper）搭大纲、写初稿、查引用；模拟审稿人（academic-paper-reviewer）扮演主编、三位领域审稿人加一位魔鬼代言人挑刺；课题秘书（academic-pipeline）把所有人串成一条流水线，在送审前后各跑一轮诚信核查。**但论文的主张、方法选择、结果解释——永远由你拍板。**
 
-[Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills)（简称 **ARS**，当前 v3.12.0，许可证 CC BY-NC 4.0）就是把这套工作室**写成 Claude Code 的 Skills + 命令 + 多 Agent 编排**。它覆盖「调研 → 写作 → 诚信检查 → 审稿 → 修改 → 再审 → 定稿 → 过程总结」的完整学术生产链，强调 **AI 是副驾驶（copilot），不是飞行员（pilot）**——引用核查、数据溯源、逻辑一致性由工具扛，研究问题、方法选择、结果解释仍须研究者本人负责。
+ARS 由四个可独立调用、也可由编排器串联的 Claude Code Skills 组成，覆盖调研、写作、诚信检查、审稿、修改、再审、定稿、过程总结的完整学术生产链。一句话安装：`/plugin marketplace add Imbad0202/academic-research-skills` + `/plugin install academic-research-skills`。
 
----
+## 为什么重要
 
-## 是什么：四个 Skill 组成的学术流水线
+不理解 ARS 这类工具，下面这些事都没法解释：
 
-ARS 不是单一 Prompt，而是**四个可独立调用、也可由编排器串联的 Claude Code Skills**：
+- 为什么即使用 ChatGPT 写论文，审稿人还是能一眼看出「AI 写的」——ARS 的 Style Calibration 会从你过往论文学习写作节奏，Writing Quality Check 会抓破折号滥用、AI 高频词等机器感
+- 为什么全自动 AI 科学家能发 ICLR workshop 但 Nature 同期论文列出了 7 类失败模式——ARS 把同样的 7 类模式做成了**强制性阻塞闸门**，不是"建议检查"
+- 为什么 arXiv 上 2025 年估计有 14.7 万条幻觉引用——ARS 对 Semantic Scholar / OpenAlex / Crossref / arXiv 做确定性存在性核查，不是你问一句「这个引用存在吗」它就编一个
+- 为什么学术写作最难的环节不是「写」而是「别被自己的假设框住」——ARS 的 Devil's Advocate 有 Concession Threshold Protocol，强制在 1-5 分打分后才让步
 
-| Skill | 目录 | 角色 | Agent 规模（约） |
-|-------|------|------|------------------|
-| **deep-research** | `deep-research/` | 文献调研、RQ 界定、系统综述 | 13 个专职 agent |
-| **academic-paper** | `academic-paper/` | 规划、大纲、起草、修订、格式转换 | 12 个专职 agent |
-| **academic-paper-reviewer** | `academic-paper-reviewer/` | 多视角同行评议、再审、校准 | 7 个专职 agent |
-| **academic-pipeline** | `academic-pipeline/` | 十阶段总编排 + 诚信闸门 | 编排器 + 共享 agent |
+## 核心要点
 
-此外还有：
+ARS 拆成四个 Skill 加一个编排器，每个都能独立用，也能串联：
 
-- **`commands/ars-*.md`**：10 条斜杠命令快捷入口（如 `/ars-plan`、`/ars-lit-review`）；
-- **`shared/`**：Material Passport 模式、跨模型核查、handoff schema、数据访问级别约定；
-- **`scripts/`**：文献库适配（Zotero / Obsidian / 文件夹扫描）、schema 校验、eval harness；
-- **插件清单**：`.claude-plugin/plugin.json`，支持 Claude Code v3.7.0+ 一行安装。
+1. **deep-research（13 个 Agent）**：文献调研引擎。支持 full / quick / socratic / lit-review / fact-check / systematic-review 七种模式。苏格拉底模式用 SCR（State-Challenge-Reflect）协议：展示证据前让你先承诺预测，防止过早收敛和附和。bibliography_agent 优先读你已有的 Zotero/Obsidian 语料（corpus-first），缺的再去 Semantic Scholar 补（search-fills-gap）。类比：一个有自己资料库、会反问你的文献助理，不是 ChatGPT 窗口里搜一下。
 
-官方架构说明见 [docs/ARCHITECTURE.md](https://github.com/Imbad0202/academic-research-skills/blob/main/docs/ARCHITECTURE.md)；安装与 API Key、Pandoc、跨模型核查等见 [docs/SETUP.md](https://github.com/Imbad0202/academic-research-skills/blob/main/docs/SETUP.md)。
+2. **academic-paper（12 个 Agent）**：写作引擎。从大纲、论证图、初稿到格式转换（MD/DOCX/LaTeX/PDF）。Style Calibration 学你的写作风格，anti-leakage protocol 防止「编数据填充空白」——遇到缺数据就写 `[MATERIAL GAP]`，不假装有。类比：一个会模仿你文风、但绝不替你编数据的写作教练。
 
----
+3. **academic-paper-reviewer（7 个 Agent）**：多视角审稿。EIC（主编）+ 三位领域自适应审稿人 + Devil's Advocate，0-100 分 rubric。Devil's Advocate 有 Concession Threshold Protocol——每次反驳必须 1-5 打分，低于 4 分不让步，防止模型一被 push back 就认怂。类比：不是「帮我看看有什么问题」，而是一场有规则的模拟答辩。
 
-## 十阶段 Pipeline（核心流程）
+4. **academic-pipeline（编排器 + 诚信闸门）**：十阶段状态机。Stage 1 RESEARCH → Stage 2 WRITE → Stage 2.5 INTEGRITY（强制诚信闸门，不可跳过）→ Stage 3 REVIEW → Stage 4 REVISE → Stage 3' RE-REVIEW → Stage 4' RE-REVISE → Stage 4.5 FINAL INTEGRITY → Stage 5 FINALIZE → Stage 6 PROCESS SUMMARY。每阶段结束需你确认 checkpoint；诚信闸门检查 7 类 AI 研究失败模式（实现 bug 通过自审、幻觉引用、幻觉实验结果、捷径依赖、把 bug 包装成洞见、方法论编造、frame-lock），任一触发则阻塞流水线，最多 3 次重试。
 
-`academic-pipeline` 把零散技能收成**可审计的十阶段状态机**（每阶段结束需用户确认 checkpoint）：
+贯穿全流程的**Material Passport**（材料护照）是结构化交接账本：每阶段盖章（artifact + 版本），下游 Agent 只消费护照里声明过的字段，减少「模型凭记忆编造引用」的空间。
 
-```text
-Stage 1  RESEARCH          → deep-research（产出 RQ Brief、方法蓝图、文献矩阵）
-Stage 2  WRITE             → academic-paper（大纲 → 论证图 → 初稿）
-Stage 2.5 INTEGRITY        → integrity_verification_agent（送审前诚信闸门，不可跳过）
-Stage 3  REVIEW            → academic-paper-reviewer（主编 + 审稿人 + 魔鬼代言人）
-Stage 4  REVISE            → academic-paper revision 模式（修订稿 + 回复审稿人）
-Stage 3' RE-REVIEW         → 验证修订是否落实
-Stage 4' RE-REVISE         → 必要时第二轮修改
-Stage 4.5 FINAL INTEGRITY  → 终稿前再次诚信核查（须 100% 通过才可定稿）
-Stage 5  FINALIZE          → format-convert（MD → DOCX/PDF/LaTeX 等）
-Stage 6  PROCESS SUMMARY   → 协作质量自评报告（六维度 1–100 分）
-```
+## 实践案例
 
-**中途切入**也支持：若你已有成稿，可从 Stage 2.5 先做诚信核查；若只有审稿意见，可从 Stage 4 进入修订循环。编排器通过 **Material Passport**（Schema 9）在各阶段之间传递结构化产物，避免长对话里上下文腐烂。
+### 案例 1：从零规划一篇论文
 
----
-
-## 核心概念
-
-### 1. Material Passport（材料护照）
-
-贯穿全流程的**结构化交接账本**，记录：研究问题简报、文献语料、大纲、论证图、引用列表、诚信报告、审稿轨迹、`repro_lock`（可选复现配置快照）、`experiment_provenance[]`（外部实验声明）等。  
-作用类似海关护照：**每个阶段盖章（artifact + 版本）**，后续 agent 只消费护照里声明过的字段，减少「模型凭记忆编造引用」的空间。
-
-v3.6.4+ 支持可选的 `literature_corpus[]`：可把 Zotero / Obsidian / 本地 PDF 文件夹扫进护照，文献 agent 走 **corpus-first、检索补缺口** 流程，而不是每次都从零上网搜。
-
-### 2. 诚信闸门（Stage 2.5 / 4.5）
-
-受 Lu et al. (2026, *Nature*) 对全自动 AI 科学家失败模式启发，ARS 在送审前后插入**强制性** `integrity_verification_agent`：
-
-- 七类 AI 研究失败模式清单（实现 bug、幻觉结果、捷径依赖、把 bug 包装成洞见等）；
-- 五类引用幻觉分类（完全捏造、张冠李戴、页码错误等）；
-- 对外部索引（Semantic Scholar、OpenAlex、Crossref、arXiv）做**确定性**存在性核查；
-- v3.8+ 可选 `ARS_CLAIM_AUDIT=1`：按 locator 抓取原文，判断**主张是否被引用真正支持**。
-
-闸门**默认阻塞**流水线，不像普通建议那样可忽略。
-
-### 3. 数据访问级别（data_access_level）
-
-每个 Skill 在 frontmatter 声明 `raw` / `redacted` / `verified_only`，由 `scripts/check_data_access_level.py` 在 CI 中校验——模式借鉴 Anthropic 自动化研究项目，防止「未验证草稿」被下游当成定稿引用。
-
-### 4. 人机协作设计哲学
-
-README 明确反对「humanizer」式掩盖 AI 痕迹；提供的是 **Style Calibration**（从你过往论文学写作节奏）和 **Writing Quality Check**（抓 AI 高频词、破折号滥用等**写作质量问题**）。苏格拉底模式（`/ars-plan`）用 SCR（State–Challenge–Reflect）协议：在展示证据前让你先**承诺预测**，减少过早收敛和附和。
-
-### 5. 斜杠命令与模式注册表
-
-`MODE_REGISTRY.md` 统一登记各 Skill 的模式（如 `full`、`socratic`、`systematic-review`、`revision-coach`）。`commands/ars-*.md` 把常用模式映射为插件命令，并在 frontmatter 固定模型路由（如 `full` 用 Opus，`lit-review` 用 Sonnet）。
-
----
-
-## 安装与验证（零基础第一步）
-
-**前置**：已安装 [Claude Code](https://docs.claude.com/en/docs/claude-code/setup)，并配置 `ANTHROPIC_API_KEY`。可选：Pandoc（DOCX）、tectonic + 思源宋体（APA PDF）。
-
-**推荐：插件市场安装（约 30 秒）**
-
-在 Claude Code 会话内执行：
-
-```text
-/plugin marketplace add Imbad0202/academic-research-skills
-/plugin install academic-research-skills
-```
-
-**验证是否加载成功**
+在 Claude Code 会话里装好插件后，输入 `/ars-plan`，然后描述你在写的论文：
 
 ```text
 /ars-plan
+
+我打算研究"大语言模型对高等教育评价体系的影响"，
+已经读了几篇关于自动化评分的论文，但还没确定具体的研究问题。
 ```
 
-然后用自然语言描述你正在写的论文主题；ARS 应进入苏格拉底式对话，帮你拆章节结构。若想单次测试文献能力，可试：
+ARS 进入苏格拉底模式——不是直接给你一个大纲，而是反问：「你更关心公平性（AI 评分对不同背景学生是否有偏），还是效率（AI 能否替代人工评分的某些环节）？」每轮对话帮你收敛研究问题，最后产出 RQ Brief + 方法论蓝图。
+
+**逐部分解释**：`/ars-plan` 是 academic-paper 的 plan 模式入口；苏格拉底对话的核心是 SCR 协议——先让你说出预测、再展示证据、最后反思差距，防止你过早锁定到一个不够好的研究问题上。
+
+### 案例 2：对已有稿件做模拟审稿
+
+如果你已经写好了一篇草稿，想看看审稿人会怎么说：
 
 ```text
-/ars-lit-review "大语言模型对高等教育评价的影响"
+/ars-reviewer
+
+这是我的论文草稿 [附上全文]，目标投 Nature Human Behaviour，
+请启动完整审稿流程。
 ```
 
-**传统方式**（无插件时）：`git clone` 仓库后，把 `deep-research/`、`academic-paper/`、`academic-paper-reviewer/`、`academic-pipeline/` 软链到项目的 `.claude/skills/` 或全局 `~/.claude/skills/`。详见 SETUP.md 五种安装路径。
+ARS 启动 7 Agent 审稿团队：EIC 先评估整体贡献和创新性；三位领域自适应审稿人分别从方法、领域知识、跨学科角度打分；Devil's Advocate 专门找论证漏洞——但每次反驳必须按 1-5 分打分，低于 4 分不让步。最终产出一份 Editorial Decision（Accept/Minor/Major/Reject）+ 各审稿人的详细 rubric + Revision Roadmap。
 
-**Codex CLI 用户**：姊妹仓库 [academic-research-skills-codex](https://github.com/Imbad0202/academic-research-skills-codex) 提供 `$academic-research-suite` 与 `ars-*` 别名，工作流内容一致。
+**逐部分解释**：`/ars-reviewer` 是 academic-paper-reviewer 的 full 模式入口；Concession Threshold Protocol 是防 sycophancy 的关键——模型被训练成"用户说了算"，很容易你一反驳它就认错，这个协议强制它先量化评估你的反驳力度再决定是否让步。
 
----
+### 案例 3：接 Zotero 文献库做 corpus-first 调研
 
-## 代码示例 1：用环境变量开启跨模型诚信抽检
-
-ARS 默认单模型即可运行；若希望诚信样本由 **GPT 或 Gemini 交叉复核**，可设置 `ARS_CROSS_MODEL`（详见 `shared/cross_model_verification.md`）。
+如果你已经有 Zotero 文献库，不想每次都从零搜索：
 
 ```bash
-# 在启动 Claude Code 前导出（示例：用 OpenAI 做交叉核查）
-export ARS_CROSS_MODEL=1
-export OPENAI_API_KEY="sk-..."
-
-# 可选：开启主张-引用对齐审计（v3.8+，默认关闭，因会增加 API 成本）
-export ARS_CLAIM_AUDIT=1
-
-# 进入你的论文工作目录后启动 Claude Code
-cd ~/papers/llm-education-qa
-claude
-```
-
-在会话中说：「我想走完整 academic pipeline，题目是……」编排器会在 Stage 2.5/4.5 按协议抽样调用外部模型，**不设置上述变量则行为与 v3.7 前兼容**。
-
----
-
-## 代码示例 2：把 Zotero 文献库接入 Material Passport
-
-`scripts/` 提供 `literature_corpus[]` 适配器。扫描本地 Zotero 导出或 SQLite 后，护照里会带上已读文献条目，Phase 1 的 `bibliography_agent` / `literature_strategist_agent` 优先读语料，再决定是否补检索。
-
-```bash
-# 在 ARS 仓库根目录（或已 clone 的路径）
 cd academic-research-skills
-
-# 安装开发依赖（含 schema 校验）
 pip install -r requirements-dev.txt
 
-# 扫描 Zotero 数据目录，输出符合 literature_corpus_entry.schema.json 的 JSON
+# 扫描 Zotero 数据目录
 python -m scripts.literature_corpus_adapters.zotero \
   --zotero-data "$HOME/Zotero" \
   --output ./my-corpus.json
 
-# 校验形状（CI 同款）
+# 校验格式
 python -m scripts.validate_schema \
   --schema shared/literature_corpus_entry.schema.json \
   --instance ./my-corpus.json
 ```
 
-在 Claude Code 里启动 pipeline 时，把 `my-corpus.json` 内容合并进 Material Passport 的 `literature_corpus[]` 字段（或按 SETUP 文档把文件放在项目约定路径），即可触发 **corpus-first** 文献流，减少重复检索与漏引本地已有 PDF 的问题。
+然后在 Claude Code 里启动 pipeline 时把 `my-corpus.json` 放进 Material Passport 的 `literature_corpus[]` 字段。Phase 1 的 bibliography_agent 会先扫你的语料（pre-screen），只对语料覆盖不到的缺口去 Semantic Scholar 补检索。四条铁律：同样标准筛选、不静默跳过、不修改语料、解析失败优雅降级。
 
----
+**逐部分解释**：`corpus-first` 的优势是——已经在你硬盘上的 PDF 不会被 Agent 忽略，也不会被 Semantic Scholar 的检索偏差带着走；`search-fills-gap` 意味着它不是"先上网搜一通再对比"，而是"先看你有什么，缺的再搜"。
 
-## 常用斜杠命令速查
+## 踩过的坑
 
-| 命令 | 用途 |
-|------|------|
-| `/ars-plan` | 苏格拉底式论文结构规划 |
-| `/ars-lit-review "主题"` | 文献综述模式 |
-| `/ars-full` | 启动完整十阶段 pipeline |
-| `/ars-reviewer` | 对已有稿件做模拟审稿 |
-| `/ars-citation-check` | 引用格式与存在性检查 |
-| `/ars-abstract` | 双语摘要 + 关键词 |
-| `/ars-disclosure` | 生成会议/期刊要求的 AI 使用声明 |
+1. **诚信闸门不能保证零幻觉**：官方展示案例中 Stage 2.5 抓到 15 条捏造引用，但事后独立审计（post-publication audit）仍发现 21/68 个漏网问题——三关诚信检查都没抓全。工具降低风险，不消除风险。
+2. **Frame-lock 是隐性杀手**：Devil's Advocate 会攻击你的论点，但可能从未挑战你的前提假设。因为 DA 和你的写作 Agent 共享同一个模型的认知框架——它看不见框架之外的视角。
+3. **Sycophancy under pushback**：你反驳 DA 的攻击时，模型容易过度让步——不是因为你反驳有力，而是训练数据奖励「用户说得对」。Concession Threshold Protocol 是缓解，不是根治。
+4. **非商业许可 + 无实验执行**：CC BY-NC 4.0 意味着不能用于商业代写；ARS 本身不跑实验——如果你需要跑代码实验或收问卷，要用配套的 experiment-agent。
 
-完整列表见仓库 `commands/` 与插件加载时的 SessionStart hook 提示。
+## 适用 vs 不适用场景
 
----
+**适用**：
 
-## 与 Experiment Agent 的配合
+- 需要可重复、有闸门的论文工作流，而非一次性「帮我写一篇」
+- 希望把 Zotero/Obsidian 语料、审稿意见、修订轨迹结构化留存
+- 用 Claude Code 做日常写作环境，愿意在每个 checkpoint 做人工决策
+- 从短综述（3000 词）到完整论文（1.5 万词）都支持，成本约 $4-6
 
-ARS **本身不跑实验**（不写 Python 训练脚本、不替你收问卷）。若研究含实证，官方建议：
+**不适用**：
 
-```text
-ARS Stage 1（研究设计）
-    ↓ 暂停
-experiment-agent（外部仓库，跑代码/人试 + 统计检验）
-    ↓ 带回 experiment_provenance[]
-ARS Stage 2（写作，诚信门会审计主张与实验声明是否对齐）
-```
+- 商业代写或机构售卖——CC BY-NC 4.0 非商业许可，需另议授权
+- 需要 IRB 备案、数据合规审查的场景——ARS 不替代机构审查
+- 全自动端到端发表（像 AI Scientist 那样无人值守）——ARS 的设计前提是人必须在环中
+- 需要跑实验（Python 训练脚本、问卷收集、统计检验）——用配套的 experiment-agent，ARS 只做写作和核查
 
-Stage 1 结束时会 fail-closed 写入 `experiment_intake_declaration`：要么 `experiments_declared` 并列出 `experiment_id`，要么显式 `no_experiments_declared`，防止「忘了声明实验」却写了实验段落。
+## 历史小故事（可跳过）
 
----
+- **2025 年末**：Imbad0202 用 ARS 写一篇关于 AI 与高等教育的反思文章时，发现自己陷入了三个结构性困境：DA 从不挑战前提（frame-lock）、一反驳就认怂（sycophancy）、苏格拉底导师总想提前收工（intent misdetection）。这些不是 prompt engineering 能解决的。
 
-## 成本与性能预期
+- **v3.0（2026 年初）**：受 Lu et al. (2026, Nature) 对全自动 AI 科学家失败模式的剖析启发，ARS 引入 Concession Threshold Protocol、Intent Detection Layer、Dialogue Health Indicator，并首次加入 Stage 2.5/4.5 诚信闸门。
 
-官方 [docs/PERFORMANCE.md](https://github.com/Imbad0202/academic-research-skills/blob/main/docs/PERFORMANCE.md) 估算：一篇约 1.5 万英文词的完整 pipeline 约 **$4–6**（视模型与轮次而定）。长任务可设 `ARS_PASSPORT_RESET=1` 在 FULL checkpoint 重置上下文，凭 Material Passport 在新会话 `resume_from_passport` 续跑。
+- **v3.3**：受 Google 的 PaperOrchestra (Song et al., 2026) 启发，加入 Semantic Scholar API 验证、anti-leakage protocol、VLM 图表验证、score trajectory tracking。
 
----
+- **v3.7-v3.8**：受 Zhao et al. (2026) 大规模引用审计驱动——2.5M 篇论文中估计 2025 年有 14.7 万条幻觉引用。ARS 加入 locator 锚点（每一条引用都有精确到段落的锚点）和可选 claim-audit 通道（`ARS_CLAIM_AUDIT=1`），用 LLM 判断「引用的内容是否真的支持这篇论文的主张」。
 
-## 适用场景与边界
+- **v3.12.0（当前版本）**：四个 Skill 共计 32+ Agent，十阶段状态机，支持 Claude Code 插件市场一键安装。
 
-**适合**
+## 学到什么
 
-- 需要**可重复、有闸门**的论文工作流，而非一次性「帮我写一篇」；
-- 希望把 Zotero/Obsidian 语料、审稿意见、修订轨迹结构化留存；
-- 用 Claude Code 做日常写作环境，愿意在 checkpoint 人工决策。
-
-**不适合 / 需注意**
-
-- **非商业许可**（CC BY-NC 4.0）：商业代写、机构售卖需另议授权；
-- 不能替代 IRB、数据合规、终稿学术责任；
-- showcase 中的事后审计仍发现部分引用问题——工具降低风险，**不保证零幻觉**；
-- 全自动发表（类似 AI Scientist 端到端无人值守）不是 ARS 目标，反而被其引用为反面教材。
-
----
-
-## 学习路径建议（零基础）
-
-1. **只装插件 + 跑 `/ars-plan`**：熟悉苏格拉底规划，不碰全长 pipeline；
-2. **单 Skill 练习**：`/ars-lit-review` → 自己写一节 → `/ars-citation-check`；
-3. **读 ARCHITECTURE.md §3 矩阵**：弄清 Stage 2.5 产出哪些 artifact；
-4. **小规模端到端**：短综述（3000 词）走 `ars-full`，观察 Material Passport 文件树；
-5. **按需开高级开关**：`ARS_CROSS_MODEL`、`ARS_CLAIM_AUDIT`、严格 `terminal_policies`。
-
----
+1. **AI 辅助学术写作的核心矛盾不是「写得不够快」而是「写得不可靠」**——ARS 把精力花在引用核查、诚信闸门、Material Passport 交接上，而不是「生成得更快」。
+2. **人机协作的关键不是「人能做什么」而是「人必须在哪些节点签字」**——ARS 的每阶段 checkpoint 和不可跳过的诚信闸门，是在流程里硬编码了人的决策点。
+3. **AI 的认知局限无法通过 prompt engineering 根除**——frame-lock、sycophancy 这些是模型训练目标的本性，ARS 的做法不是消除它们，而是让它们可见、可管理（Concession Threshold Protocol、Dialogue Health Indicator）。
+4. **工具降低风险，不消除风险**——展示案例中事后审计仍发现 21/68 个漏网问题。学术诚信的最终签字权永遠在研究者手中。
 
 ## 延伸阅读
 
-- 架构总览：[docs/ARCHITECTURE.md](https://github.com/Imbad0202/academic-research-skills/blob/main/docs/ARCHITECTURE.md)
-- 安装详解：[docs/SETUP.md](https://github.com/Imbad0202/academic-research-skills/blob/main/docs/SETUP.md)
-- 真实产物样例：[examples/showcase/](https://github.com/Imbad0202/academic-research-skills/tree/main/examples/showcase)（含 Stage 2.5 抓到 15 条捏造引用等的 PDF 报告）
-- 中文 Substack  walkthrough（作者）：README 内链接「學術寫作不該是一個人的事」
-- 姊妹项目：[experiment-agent](https://github.com/Imbad0202/experiment-agent)、[teaching-skills](https://github.com/YujxZJCN/teaching-skills)（教学侧 Course Passport）
+- 架构总览：[docs/ARCHITECTURE.md](https://github.com/Imbad0202/academic-research-skills/blob/main/docs/ARCHITECTURE.md)（十阶段状态机矩阵、Agent 职责、数据访问流）
+- 安装详解：[docs/SETUP.md](https://github.com/Imbad0202/academic-research-skills/blob/main/docs/SETUP.md)（五种安装路径、API Key 配置、跨模型核查）
+- 真实产出样例：[examples/showcase/](https://github.com/Imbad0202/academic-research-skills/tree/main/examples/showcase)（含诚信报告 PDF、审稿报告、修订轨迹）
+- 配套实验工具：[experiment-agent](https://github.com/Imbad0202/experiment-agent)（跑代码实验、人试、统计检验，ARS 本身不跑实验）
+- [[claude-code]] —— ARS 是 Claude Code 的插件生态产物，理解 Claude Code 的 Skills/Agent 机制再看 ARS 会更轻松
+- [[deep-research-harness-2026]] —— deep-research 模式的泛化版本，独立于学术场景的深度调研框架
 
----
+## 关联
 
-## 小结
+- [[claude-code]] —— ARS 运行在 Claude Code 平台上，四个 Skill 靠 Claude Code 的多 Agent 编排框架调度
+- [[deep-research-harness-2026]] —— ARS 的 deep-research Skill 的泛化灵感来源，两者共享「fan-out 搜索 + 多源验证」思路
+- [[mcp-spec]] —— ARS 的跨模型核查和外部 API 调用依赖 MCP 协议连接外部工具
+- [[dspy]] —— ARS 的 prompt 编排和 Agent 协作可类比 DSPy 的模块化 LLM 编程思路
+- [[swe-agent]] —— 同为 Claude Code 生态的 Agent 工具，SWE-agent 面向代码修复，ARS 面向学术写作，对比看「Agent 编排」的通用模式
+- [[openhands]] —— 另一个多 Agent 协作框架，ARS 的 Material Passport 设计可作为跨 Agent 上下文管理的参考案例
+- [[autogen]] —— 微软的多 Agent 框架，ARS 的 32 Agent 编排思路与 AutoGen 的 group chat 模式有异曲同工之处
 
-Academic Research Skills 把「研究生工作室」拆成**可版本化的 Markdown 技能包 + 十阶段状态机 + Material Passport 合同**，在 Claude Code 里实现调研、写作、审稿、诚信核查的自动化编排。零基础使用者应先掌握 **插件安装、`/ars-plan`、Pipeline 阶段图、诚信闸门为何不可跳过**；再按需接入文献语料、跨模型核查与实验溯源。记住 README 的底线：**它帮你把脏活累活做规范，论证与学术诚信的最终签字权仍在研究者手中。**
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
