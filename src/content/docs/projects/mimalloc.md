@@ -2,7 +2,6 @@
 title: mimalloc — Microsoft 的小对象分配器
 来源: https://github.com/microsoft/mimalloc
 日期: 2026-06-13
-分类_原始: 系统编程
 分类: 编译器
 子分类: 语言运行时
 provenance: pipeline-v3

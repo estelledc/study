@@ -2,7 +2,6 @@
 title: C-Store —— 把数据库"横着切"变成"竖着切"
 来源: https://www.cs.umass.edu/~abadi/papers/abadi-column-stores.pdf
 日期: 2026-06-13
-分类_原始: 数据库系统
 分类: 数据库
 子分类: 存储与查询
 provenance: pipeline-v3

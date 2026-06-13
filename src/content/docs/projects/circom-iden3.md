@@ -2,7 +2,6 @@
 title: Circom 零基础入门——从零知识证明到算术电路
 来源: https://github.com/iden3/circom
 日期: 2026-06-13
-分类_原始: 密码学 / 零知识证明
 分类: 安全与隐私
 子分类: 密码与零知识
 provenance: pipeline-v3

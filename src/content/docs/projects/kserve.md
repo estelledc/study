@@ -2,7 +2,6 @@
 title: KServe - Kubernetes 原生模型服务
 来源: https://github.com/kserve/kserve
 日期: 2026-06-13
-分类_原始: MLOps
 分类: 机器学习
 子分类: ML 系统
 provenance: pipeline-v3
