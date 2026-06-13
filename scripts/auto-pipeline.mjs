@@ -121,23 +121,22 @@ function expandPapers() {
   );
 }
 
-// ── batch writing (cursor-agent) ──
+// ── batch writing (opencode agnes) ──
 
-function dispatchCursorAgent(slug, area, title, url) {
+function dispatchWriter(slug, area, title, url) {
   return new Promise((resolve) => {
     const dir = area === 'papers' ? 'papers' : 'projects';
-    const prompt = `写一篇关于 ${title || slug} 的零基础学习笔记，保存到 src/content/docs/${dir}/${slug}.md。
-格式：frontmatter 必须含 title、来源:${url||''}、日期:2026-06-13、分类、子分类、provenance:pipeline-v3（写完后运行 node scripts/classify-notes.mjs --apply --area=${area} 自动填入分类/子分类）。
+    const outPath = `src/content/docs/${dir}/${slug}.md`;
+    const prompt = `写一篇关于 ${title || slug} 的零基础学习笔记，用 Write 工具保存到 ${outPath}。
+frontmatter 必须含 title、来源:${url||''}、日期:2026-06-13、分类、子分类、provenance:pipeline-v3。
 正文从日常类比开始，必须含核心概念+至少2个代码示例，目标150+行。
-用 web_search 研究后直接写完整笔记，不要只描述计划。`;
+用 web_search 研究后直接用 Write 写完整笔记。不要用 /tmp。`;
 
-    const child = spawn('/Users/jason/.local/bin/cursor-agent', [
-      '--print', '--model', 'composer-2.5',
-      '--workspace', ROOT,
-      '--trust', '--sandbox', 'disabled', '--yolo',
-      prompt
+    const child = spawn('opencode', [
+      'run', '-m', 'agnes/agnes-2.0-flash',
+      '--print-logs', prompt
     ], {
-      env: { ...process.env, NODE_TLS_REJECT_UNAUTHORIZED: '0' },
+      cwd: ROOT,
       stdio: ['ignore', 'pipe', 'pipe'],
       timeout: 300000,
     });
@@ -191,9 +190,9 @@ async function runBatch(batchNum) {
     return 0;
   }
 
-  log(`  Batch ${batchNum}: dispatching ${toWrite.length} cursor-agents...`);
+  log(`  Batch ${batchNum}: dispatching ${toWrite.length} opencode writers...`);
   const results = await Promise.all(toWrite.map(i =>
-    dispatchCursorAgent(i.slug, i.area, i.title || i.slug, i.url || '')
+    dispatchWriter(i.slug, i.area, i.title || i.slug, i.url || '')
   ));
 
   let ok = 0;
