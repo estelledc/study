@@ -2,8 +2,8 @@
 title: Argo CD 零基础学习笔记
 来源: https://github.com/argoproj/argo-cd
 日期: 2026-06-13
-分类: 其他
-子分类: cloud-native
+分类: 基础设施
+子分类: DevOps 与运维
 provenance: pipeline-v3
 ---
 

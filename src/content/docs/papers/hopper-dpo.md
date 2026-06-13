@@ -2,7 +2,6 @@
 title: "SDPO: Segment-Level Direct Preference Optimization for Social Agents"
 来源: https://arxiv.org/abs/2501.01821
 日期: 2026-06-13
-分类_原始: AI/ML
 分类: 其他
 子分类: 对齐
 provenance: pipeline-v3

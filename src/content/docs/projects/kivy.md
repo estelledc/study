@@ -2,7 +2,6 @@
 title: Kivy — Python 跨平台应用框架
 来源: https://github.com/kivy/kivy
 日期: 2026-06-13
-分类_原始: 框架
 分类: 其他
 子分类: mobile-cross-platform
 provenance: pipeline-v3

@@ -504,7 +504,7 @@
 {"slug":"hol-light-2009","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"holzmann-spin-1997","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"hopper-architecture-2022","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
-{"slug":"hopper-dpo","area":"papers","theme":"其他","themeId":"other","subcategory":"对齐","source":"candidates.topic","confidence":"low","rawCategory":"AI/ML"}
+{"slug":"hopper-dpo","area":"papers","theme":"其他","themeId":"other","subcategory":"对齐","source":"candidates.topic+category","confidence":"high","rawCategory":"其他"}
 {"slug":"hotspot-server-compiler","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"hotstuff-2019","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"hott-book-2013","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
@@ -706,6 +706,7 @@
 {"slug":"mcp-is-dead-debate","area":"papers","theme":"后端 API","themeId":"backend-api","subcategory":"Web 后端","source":"candidates.topic","confidence":"high","rawCategory":"后端 API"}
 {"slug":"mcp-solver","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"约束求解","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"mcp-spec","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"AI 工程","source":"category","confidence":"high","rawCategory":"机器学习"}
+{"slug":"mcp-survey","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"LLM架构","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"mcs-locks-1991","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"meagher-1982-octree","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"medcase-fhir","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
@@ -1185,7 +1186,7 @@
 {"slug":"twine-2020","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"u-boot-bootloader","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式与 IoT","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"umbra-2020","area":"papers","theme":"数据库","themeId":"databases","subcategory":"现代数据库","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
-{"slug":"unicron","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"LLM系统","source":"candidates.topic+category","confidence":"high","rawCategory":"系统"}
+{"slug":"unicron","area":"papers","theme":"基础设施","themeId":"infrastructure","subcategory":"LLM系统","source":"candidates.topic+category","confidence":"high","rawCategory":"基础设施"}
 {"slug":"unified-memory-2014","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"GPU 架构","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"univtg-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"unix-1974","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}

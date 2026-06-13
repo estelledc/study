@@ -2,7 +2,6 @@
 title: Unicron —— 让大模型训练自己治伤的"自动维修系统"
 来源: https://arxiv.org/abs/2401.00134
 日期: 2026-06-13
-分类_原始: 系统
 分类: 基础设施
 子分类: LLM系统
 provenance: pipeline-v3
