@@ -120,6 +120,7 @@ catmull-1974-zbuffer
 catmull-clark-1978
 causal-abstraction
 cci-agent-scaffolding
+ccopd-distillation
 cell-be-2005
 ceph-2006
 cerf-kahn-1974
@@ -143,6 +144,7 @@ chronos-2024
 chubby
 ci-effects
 cimatti-nusmv-2002
+ckks-homomorphic-2017
 clark-1988
 clarke-cegar-2003
 clarke-emerson-1981
@@ -171,6 +173,8 @@ comer-1979-btree
 compcert
 compiler-errors
 compiler-perf-left-on-table
+compose-future-theorems
+compositional-incoherence
 consistency-models-2023
 consistent-hashing-1997
 constitutional-ai
@@ -219,6 +223,7 @@ ddpm
 debate-2018
 deberta-2021
 debevec-1998-rendering-with-natural-light
+debug-adapter-protocol
 debugging-dichotomy
 decision-transformer-2021
 deepseek-coder-2024
@@ -226,6 +231,7 @@ deepseek-r1
 deepspeed-zero
 deering-1988-triangle-processor
 demikernel-2021
+demystifying-data-org
 denali-2002
 dense360-2025
 desbrun-1999-implicit-fairing
@@ -257,9 +263,11 @@ dpo
 dpr-2020
 dqn
 dreamfusion-2022
+dremel-decade-2020
 drizzle-2017
 drmm-2016
 dropout-2014
+ds-zero-pp-comm
 dspy
 dssm-2013
 dstreams-2013
@@ -267,6 +275,7 @@ ducas-dilithium-2018
 duchi-local-dp-2013
 duckdb-2019
 dwork-calibrating-noise-2006
+dwork-differential-privacy-2006
 dwork-dp-icalp-2006
 dwork-our-data-ourselves-2006
 dynamo
@@ -277,6 +286,7 @@ easycrypt-2011
 ebpf
 edm-2022
 effect-handlers
+efficient-compile-2011
 effiskill
 egoschema-2023
 electra-2020
@@ -293,10 +303,12 @@ eve-agent-evidence
 evo-memory-2511
 exg-experience-graphs
 exokernel-1995
+expertflow-moe-offload
 f1-2013
 f4-2014
 faiss-2017
 fan-vercauteren-bfv-2012
+farm-2015
 farsite-2002
 fast-paxos-2006
 fastertransformer-2021
@@ -314,6 +326,8 @@ flamingo-2022
 flan-2021
 flash-attention
 flash-vstream-2024
+flashattention-2
+flashattention-3-2024
 flexible-paxos-2016
 flexsc-2010
 flink-2015
@@ -408,6 +422,7 @@ http-2
 hu-2018-mls-mpm
 huffman-1952
 hughes-fp-matters
+hullft-ttft
 hydra-1974
 hyperkernel-2017
 ice-rfc-5245
@@ -476,6 +491,7 @@ lamport-1978
 lamport-tla-1994
 lampson-hints
 landin-secd
+language-server-protocol-spec
 layernorm-2016
 lean-prover
 lean-tactics
@@ -488,6 +504,7 @@ lfs-1991
 li-2018-redner
 li-t-closeness-2007
 lieberman-realtime-gc
+liger-kernel-llm-training
 lindholm-2008-tesla
 linear-scan-reg-alloc
 linear-types
@@ -511,6 +528,7 @@ llvm
 lmdb-2011
 local-type-inference
 locus-1980
+log4shell-cve-2021-44228
 logjam-2015
 logoot-2010
 long-video-retrieval-2023
@@ -518,6 +536,7 @@ longformer-2020
 longva-2024
 longvideobench-2024
 longvila-2024
+loong-doc-mt
 loop-1987-subdivision
 lottery-1994
 lottery-ticket-2019
@@ -527,6 +546,7 @@ lstm-1997
 lucky13-2013
 lvbench-2024
 mach-1986
+mach-rashid-1986
 mach-vm-1987
 machanavajjhala-l-diversity-2007
 macklin-2014-position-based-fluids
@@ -553,7 +573,10 @@ mcs-locks-1991
 meagher-1982-octree
 medusa-2024
 megastore-2011
+megatron-core-moe-2026
 megatron-lm
+meltdown-attack-2018
+mem-ft-lora
 memcached-fb-2013
 memcoder-co-evolution
 memory-tool-use-agents
@@ -574,6 +597,7 @@ minhash-broder-1997
 minicpm-v-2024
 minisat-2003
 mips-1981
+mira-rubric
 mirage-2013
 mironov-renyi-dp-2017
 misevolution-2509
@@ -597,6 +621,7 @@ mogul-1995-persistent-http
 monaghan-1992-sph
 monetdb-x100-2005
 monitors-1974
+morsel-driven-2014
 moviechat-2024
 mplug-owl-2023
 mptcp-2012
@@ -620,6 +645,7 @@ neumann-2015-large-joins
 neumf-2017
 newcombe-2011-kinectfusion
 newsome-taintcheck-2005
+nexus-prefill-decode-intra-gpu
 nfs-1985
 ngabonziza-trustzone-2016
 nickolls-dally-2010-cuda-era
@@ -627,6 +653,7 @@ nieuwenhuis-dpll-t-2006
 nimier-david-2019-mitsuba2
 nix
 no-silver-bullet
+noise-protocol-framework
 ntk-2018
 ntp-mills-1991
 nuprl-1986
@@ -635,12 +662,14 @@ nvlink-nvswitch-2018
 nvm
 nvme-protocol-2017
 oauth-2.1-rfc
+oauth2-rfc6749
 okapi-bm25-1994
 oltp-looking-glass
 omagent-2024
 omega-2013
 omnidirectional-mllm-2025
 omnistvg-2025
+on-demand-container-loading
 opencl-2010
 openflow-2008
 openhands
@@ -653,6 +682,7 @@ ot-1989
 owens-2007-gpgpu-survey
 p4-2014
 padmanabhan-1995-http-latency
+paged-attention-vllm
 pagerank-1998
 pair-programming
 panel
@@ -688,12 +718,14 @@ presumed-abort-1986
 product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
+projection-bench
 prolog-colmerauer
 prototypical-networks-2017
 proverif-2001
 ps-li-2014
 push-pull-frp
 pypy-tracing-jit
+qserve-w4a8kv4-2024
 quantum-supremacy-2019
 quic
 quincy-2009
@@ -706,6 +738,7 @@ rabin-ot-1981
 raft
 rag-lewis-2020
 ranknet-2005
+ray-2018
 rcu-2001
 react
 react-server-components
@@ -721,11 +754,13 @@ rendering-diffs
 replug-2023
 reps-ifds
 resnet
+resolution-diagnostics-llm
 rest-fielding-2000
 retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
 rfc-3833-dns-threats
+rim-latent-reasoning
 ring-allreduce-2017
 risc-i-1981
 rlhf-christiano
@@ -736,8 +771,10 @@ rocksdb-2017
 rocksdb-lsm
 ron-2001
 row-polymorphism-remy
+rowhammer-2014
 rrf-cormack-2009
 rsa
+rsa-1978
 rtp-rfc-1889
 rwkv-2023
 sac-2018
@@ -775,6 +812,7 @@ sequel-1974
 sequential-consistency-1979
 server-sent-events
 sglang-2024
+sglang-radixattention
 sgx-2013
 shannon-1948
 sharegpt4video-2024
@@ -782,6 +820,8 @@ shellcheck
 shenango-2019
 shokri-mia-2017
 siglip-2023
+signal-double-ratchet-2016
+sigstore-cosign-2022
 sillito-questions
 silt-2011
 simhash-charikar-2002
@@ -809,6 +849,7 @@ soltesz-2007
 sophia-2023
 sorkine-2004-laplacian-editing
 souffle-datalog
+soundness-bench
 spacevllm-2025
 spann-2021
 spanner
@@ -818,6 +859,8 @@ sparse-autoencoders
 sparsegpt-2023
 spec-agent-separation-logic
 specinfer-2023
+spectre-attack-2018
+speculative-decoding-leviathan-2023
 splade-2021
 sprite-1988
 sqlite-2022
@@ -864,6 +907,7 @@ template-haskell
 tendermint-2016
 tensorflow-osdi-2016
 tensorrt-llm-2023
+tensorrt-llm-overview
 tesla-architecture-2008
 the-os-1968
 theorems-for-free
@@ -874,6 +918,7 @@ timechat-2024
 timelinejs
 timemarker-2024
 tla-yu-tlc-1999
+tls-1-3-rfc8446
 tls-1.3
 tofte-talpin-regions
 token-bucket-stripe
@@ -887,10 +932,12 @@ tracemonkey
 transformer-xl-2019
 traveler-2024
 tree-of-thoughts-2023
+tree-sitter-2018
 trees-that-grow
 triaxialkv
 trill-2014
 triton-2019
+triton-anatomy-paged-attn
 triton-llm
 trustrank-2004
 turchin-supercompilation
@@ -912,10 +959,12 @@ veach-1995-mis
 veach-1997-mlt
 vega-lite
 vellvm
+velox-meta-2022
 verdi-2015
 vericache
 verisoft-2008
 vertica-2012
+vescale-fsdp-2026
 vibeserve
 vid-llm-survey-2023
 video-chatgpt-2023
@@ -954,6 +1003,8 @@ wam-warren
 wandb
 wang-2014-spdy
 ward-1992
+wco-joins-relational-2020
+webauthn-fido2
 websocket-rfc-6455
 webxskill
 whisper-2022
@@ -979,6 +1030,7 @@ zero-2020
 zfs-2003
 zgc
 zk-snark
+zk-snark-pinocchio-2013
 zombie-agents-2602
 
 # projects
@@ -1012,6 +1064,7 @@ anytype-ts
 ape-framework
 apexcharts
 apollo-server
+appflowy
 appwrite
 aptos-core
 aragon
@@ -1029,6 +1082,7 @@ arrow-rs
 arweave
 asdf
 aspnetcore
+assimp
 ast-grep
 asterisk
 astro
@@ -1061,11 +1115,14 @@ bigbluebutton
 billboard-js
 biome
 bitcoin-core
+blender
 boa-engine
 bokeh
+bookstack
 botbuilder-js
 botpress
 bottom
+box2d
 boxen
 broot
 browser-use
@@ -1074,6 +1131,7 @@ bubbletea
 buildah
 buildkit
 buildroot
+bullet
 bullmq
 bun
 caddy
@@ -1081,6 +1139,7 @@ cairo-lang
 cal-com
 calico
 candle
+cannon-es
 canvas-datagrid
 capacitor
 capnproto
@@ -1155,6 +1214,7 @@ dav1d
 dayjs
 dbt-core
 debezium
+deck-gl
 decord
 deepspeed
 defold
@@ -1176,6 +1236,7 @@ docusaurus
 doom-emacs
 doris
 dovecot
+draco
 dragonfly
 drawio
 drizzle
@@ -1216,8 +1277,11 @@ erigon
 errbot
 esbuild
 esp-dl
+esphome
+espurna
 essentia
 etcd
+etherpad-lite
 ethers-js
 evidence
 excalidraw
@@ -1235,6 +1299,7 @@ fdk-aac
 feast
 ferretdb
 ffmpeg
+ffmpeg-kit
 fiber
 filament
 filecoin
@@ -1247,7 +1312,9 @@ flax
 flowchart-js
 fluent-bit
 flutter
+flutter-quill
 flutter-rust-bridge
+flutterfire
 flux
 foam
 fooocus
@@ -1257,6 +1324,7 @@ frappe-gantt
 freemodbus
 freertos
 freeswitch
+fvm
 fx
 fzf
 gazebo-classic
@@ -1271,8 +1339,12 @@ gitui
 glab
 glances
 glide-data-grid
+glsl-canvas
+glslify
+gltf-transform
 go-ethereum
 go-zero
+godot
 got
 gqlgen
 gradio
@@ -1297,6 +1369,7 @@ haraka
 hardhat
 haystack
 heaps
+hedgedoc
 helidon
 helix
 helm
@@ -1304,17 +1377,20 @@ hls.js
 hnswlib
 hocuspocus
 holoviews
+home-assistant
 homebrew
 hono
 hot-chocolate
 htop
 httpie
+hydra-synth
 i18next
 imagemagick
 immer
 immich
 influxdb
 ink
+inkscape
 inngest
 insightface
 internvideo
@@ -1338,6 +1414,8 @@ jotai
 jq
 js-joda
 jspdf
+jupyter-notebook
+jupyterlab
 just
 k3s
 k6
@@ -1357,6 +1435,7 @@ kong
 konva
 krakend
 kratos
+krita
 ktor
 kubebuilder
 kubectx
@@ -1400,6 +1479,7 @@ lite-xl
 litellm-proxy
 litestar
 litmus
+littlefs
 liveblocks
 livekit
 livekit-flutter
@@ -1421,6 +1501,7 @@ lottie
 love2d
 lsd
 lucia
+luma-gl
 lunarvim
 luxon
 lwip
@@ -1432,6 +1513,7 @@ manticoresearch
 mapbox-gl-js
 maplibre-gl
 mariadb-server
+marimo
 markdown-it
 marked
 marktext
@@ -1439,6 +1521,7 @@ marlin
 matplotlib
 matrix-js-sdk
 matrix-rust-sdk
+matter-js
 mattermost
 mbedtls
 mcp-ts-sdk
@@ -1449,6 +1532,7 @@ meilisearch
 melonjs
 memcached
 memgraph
+mender
 mermaid
 meshroom
 metabase
@@ -1488,7 +1572,9 @@ mysql-server
 nanobrowser
 nanomq
 nanostores
+native-base
 nativescript
+nativewind
 nats
 nats-server
 navigation2
@@ -1536,6 +1622,7 @@ open-sora
 openai-agents-sdk
 opencode
 opencv
+openhab
 openlayers
 openmeetings
 openrct2
@@ -1557,7 +1644,9 @@ opus
 ora
 orleans
 otel-collector
+outline
 ovenmediaengine
+overleaf
 oxc
 paddle-lite
 paddleocr
@@ -1576,12 +1665,14 @@ pg-boss-readme
 pgvector
 phaser
 phoenix
+picogl
 pillow
 pino
 pinot
 pion
 piper
 pixi
+planck
 plane
 platformio-core
 playcanvas
@@ -1590,6 +1681,7 @@ plotly-js
 plotly-py
 plotnine
 plug
+pluto-jl
 pnpm
 pocketbase
 podman
@@ -1632,8 +1724,10 @@ rabby-wallet
 radix-ui
 rails
 ranger
+rapier
 rasa
 ratatui
+rauc
 ravendb
 ray
 raylib
@@ -1643,6 +1737,10 @@ react-flow
 react-hook-form
 react-intl
 react-native
+react-native-macos
+react-native-paper
+react-native-web
+react-native-windows
 react-spring
 recharts
 redash
@@ -1684,6 +1782,8 @@ sentry
 sequelize
 sglang
 shadcn-ui
+shader-park
+shadowsocks-libev
 shaka-packager
 shaka-player
 shap
@@ -1705,6 +1805,7 @@ silero-vad
 silverbullet
 simple-peer
 sinatra
+siyuan
 skaffold
 sled
 slim-framework
@@ -1719,6 +1820,7 @@ sops
 sortablejs
 sox
 spacemacs
+spectorjs
 spin
 spring-boot
 sqlite
@@ -1752,6 +1854,7 @@ symfony
 synapse
 tabulator
 tailwind
+tamagui
 tanstack-form
 tanstack-query
 tanstack-router
@@ -1767,6 +1870,7 @@ temporal-polyfill
 tensorflow
 terraform
 testing-library
+texstudio
 textmate
 textual
 tflite-micro
@@ -1789,6 +1893,7 @@ torchcodec
 torchtune
 traefik
 transformers-video
+trilium
 triton-inference-server
 trl
 trpc
@@ -1803,6 +1908,7 @@ ultralytics
 unified
 uniswap-v3
 universal-ctags
+unqlite
 unsloth
 unstorage
 unstructured
@@ -1856,6 +1962,7 @@ webrtc-rs
 wezterm
 whisper
 why-did-you-render
+wireguard-go
 woodpecker
 wormhole
 wretch
@@ -1877,6 +1984,7 @@ zcash
 zed
 zellij
 zephyr
+zeppelin
 zettlr
 zincsearch
 zksync-era
