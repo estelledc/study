@@ -2,7 +2,6 @@
 title: "零知识证明学习笔记"
 来源: "https://github.com/matter-labs/awesome-zero-knowledge-proofs"
 日期: "2026-06-13"
-分类_原始: 密码学
 分类: 安全与隐私
 子分类: 密码与零知识
 provenance: "pipeline-v3"

@@ -2,7 +2,7 @@
 title: 'DPO — Direct Preference Optimization'
 来源: 'Rafailov et al., "Direct Preference Optimization: Your Language Model is Secretly a Reward Model", NeurIPS 2023'
 日期: 2026-05-29
-子分类: NLP
+子分类: ml
 分类: NLP
 难度: 中级
 schema_version: legacy-short

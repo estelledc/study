@@ -5,7 +5,7 @@ date: 2026-06-13
 分类: CLI
 子分类: 编辑器与 IDE
 provenance: pipeline-v3
-分类_原始: AI 开发工具
+
 ---
 
 # Understand Anything — 把任何代码库变成可交互的知识图谱

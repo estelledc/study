@@ -2,7 +2,6 @@
 title: Arrow Flight SQL: Zero-Copy Federated Query at Scale
 来源: https://arxiv.org/abs/2605.30743
 日期: 2026-06-13
-分类_原始: 数据处理
 分类: 数据库
 子分类: 存储与查询
 provenance: pipeline-v3

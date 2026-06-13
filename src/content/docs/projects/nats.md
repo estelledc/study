@@ -2,7 +2,7 @@
 title: NATS — 极简云原生消息系统
 来源: https://github.com/nats-io/nats-server
 日期: 2026-05-29
-子分类: 消息队列
+子分类: cloud-native
 分类: 分布式系统
 难度: 中级
 provenance: pipeline-v3

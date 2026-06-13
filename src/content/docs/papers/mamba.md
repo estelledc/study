@@ -2,7 +2,7 @@
 title: Mamba — 选择性状态空间模型
 来源: 'Gu & Dao, "Mamba: Linear-Time Sequence Modeling with Selective State Spaces", 2023'
 日期: 2026-05-29
-子分类: NLP / 深度学习
+子分类: ml
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

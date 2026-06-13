@@ -2,7 +2,6 @@
 title: DateSAT — 用逻辑求解日期与时间段约束
 来源: https://arxiv.org/abs/2605.25180
 日期: 2026-06-13
-分类_原始: 形式化方法
 分类: 编程语言
 子分类: 类型与 PL 理论
 provenance: pipeline-v3

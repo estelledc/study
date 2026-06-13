@@ -2,7 +2,6 @@
 title: AiToEarn — 让 AI 帮你写内容、发平台、赚佣金
 来源: https://github.com/yikart/AiToEarn
 日期: 2026-06-13
-分类_原始: 开源项目
 分类: 其他
 子分类: 工程文化
 provenance: pipeline-v3
