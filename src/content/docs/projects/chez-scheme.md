@@ -2,7 +2,6 @@
 title: Chez Scheme — Cisco 开源的高性能 R6RS 实现
 来源: https://github.com/cisco/ChezScheme
 日期: 2026-06-13
-分类_原始: 编程语言
 分类: 编译器
 子分类: 语言运行时
 provenance: pipeline-v3

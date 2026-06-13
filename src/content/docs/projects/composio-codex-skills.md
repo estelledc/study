@@ -2,7 +2,6 @@
 title: Codex Skills 精选 — 让 AI 编程助手长出"专业特长"
 来源: https://github.com/ComposioHQ/awesome-codex-skills
 日期: 2026-06-13
-分类_原始: 项目学习
 分类: CLI
 子分类: 开发者工具
 provenance: pipeline-v3

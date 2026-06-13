@@ -2,7 +2,6 @@
 title: "零门槛自动生成短视频——Pixelle-Video 笔记"
 来源: https://github.com/AIDC-AI/Pixelle-Video
 日期: 2026-06-13
-分类_原始: AI 工具
 分类: 机器学习
 子分类: 模型与训练
 provenance: pipeline-v3

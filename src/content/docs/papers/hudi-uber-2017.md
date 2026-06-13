@@ -2,7 +2,6 @@
 title: Apache Hudi：大数据增量处理
 来源: https://hudi.apache.org/docs/concepts
 日期: 2026-06-13
-分类_原始: 大数据
 子分类: 现代数据库
 分类: 数据库
 难度: 初级
