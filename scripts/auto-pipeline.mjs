@@ -19,7 +19,7 @@ const PROJECTS = path.join(ROOT, 'src', 'content', 'docs', 'projects');
 const PAPERS = path.join(ROOT, 'src', 'content', 'docs', 'papers');
 
 const BATCHES_PER_ROUND = parseInt(process.env.BATCHES_PER_ROUND || '10', 10);
-const BATCH_SIZE = 4;
+const BATCH_SIZE = 40;
 const AUTO_MERGE = process.env.AUTO_MERGE !== 'false';
 const DRY_RUN = process.env.DRY_RUN === 'true';
 
@@ -110,14 +110,14 @@ function spawnExpander(label, prompt) {
 function expandProjects() {
   log('Expanding projects pool (opencode)...');
   return spawnExpander('projects',
-    `扩充候选池。Read data/candidates.jsonl，Edit追加30+热门开源项目（AI infra/云原生/安全/数据库/DevOps方向，star>1000）。JSONL格式追加。不用/tmp。直接执行。`
+    `扩充候选池。Read data/candidates.jsonl，Edit追加50+热门开源项目（AI infra/云原生/安全/数据库/DevOps方向，star>1000）。JSONL格式追加。不用/tmp。直接执行。`
   );
 }
 
 function expandPapers() {
   log('Expanding papers pool (opencode)...');
   return spawnExpander('papers',
-    `扩充论文候选池。Read data/candidates.jsonl，Edit追加30+篇热门论文（ML/系统/分布式/安全方向2024-2026）。JSONL格式追加。不用/tmp。直接执行。`
+    `扩充论文候选池。Read data/candidates.jsonl，Edit追加50+篇热门论文（ML/系统/分布式/安全方向2024-2026）。JSONL格式追加。不用/tmp。直接执行。`
   );
 }
 
@@ -343,13 +343,10 @@ async function main() {
       }
     } catch {}
 
-    // 2. Expand pool — launch 4 expanders per round (2 projects + 2 papers)
-    log('  Launching 4 pool expanders (opencode agnes)...');
-    const expanders = [];
-    expanders.push(expandProjects());
-    expanders.push(expandProjects());
-    expanders.push(expandPapers());
-    expanders.push(expandPapers());
+    // 2. Expand pool — launch 8 expanders per round (4 projects + 4 papers, 50+ each)
+    log('  Launching 8 pool expanders (opencode agnes, 50+ each)...');
+    for (let i = 0; i < 4; i++) expandProjects();
+    for (let i = 0; i < 4; i++) expandPapers();
 
     // 2. Write batches
     let roundWritten = 0;
