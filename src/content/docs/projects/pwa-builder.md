@@ -1,223 +1,169 @@
 ---
-title: PWABuilder — 把网站变成可上架商店的 PWA
-来源: https://github.com/pwa-builder/PWABuilder
+title: PWABuilder — Microsoft 出品 PWA 一键打包成 iOS / Android / Windows 应用的工具
+来源: 'https://github.com/pwa-builder/PWABuilder'
 日期: 2026-06-13
-子分类: 移动端
 分类: 后端 API
+子分类: 移动端
+难度: 初级
 provenance: pipeline-v3
 ---
 
 ## 是什么
 
-PWABuilder 是 Microsoft 开源的 **PWA（Progressive Web App，渐进式 Web 应用）工具家族**，核心站点 [pwabuilder.com](https://www.pwabuilder.com/) 能帮你：诊断现有网站离「合格 PWA」还差什么、在线生成/修补 Web Manifest 与 Service Worker、把 PWA **打包成可提交到应用商店的原生安装包**（Microsoft Store、Google Play、Meta Quest、iOS App Store 等）。日常类比：
+PWABuilder 是 Microsoft 主导开发的一款免费开源工具，一句话：**输入一个网站地址，自动帮你打包成能提交到 App Store、Google Play、Microsoft Store 的原生应用安装包，一行原生代码都不用写。**
 
-> 你开了一家只在浏览器里营业的网店（普通网站）。顾客得先打开浏览器、输入网址才能进来。
-> **PWA** 相当于给网店办了一张「实体会员卡」：顾客可以把图标钉到手机桌面，点开像原生 App 一样全屏打开，断网时还能靠缓存看已访问过的页面。
-> **PWABuilder** 则是这家店的「办证 + 报关一条龙中介」：它检查你的店有没有挂牌（manifest）、有没有夜班保安（service worker）、有没有 HTTPS 门禁；缺什么就帮你生成草稿；最后还能把整家店打成 `.msix` / `.aab` / Xcode 工程，送去各大「商场」（应用商店）上架。
+日常类比：你家开了一家餐厅，只有一个堂食窗口（网站）。PWABuilder 就像一家"外卖包装公司"——你把菜单和菜品（网站内容）给它，它帮你装进不同平台的"外卖盒"（APK / MSIX / iOS Web Clip），贴上对应平台的"标签"（应用名、图标、签名），然后你就能把这盒饭放到不同外卖平台（App Store / Google Play / Microsoft Store）去卖了。饭菜本身没变，但包装方式变了，覆盖的顾客群体翻了好几倍。
 
-一句话：**PWABuilder 把「我会写网页」和「我能上 App Store」之间的鸿沟，收成几次点击 + 少量配置**。
+技术层面，PWABuilder 的核心逻辑分三步：第一步，用一个类似 Lighthouse 的审计引擎检测你的网站是否满足 PWA 标准（有没有 HTTPS、有没有 Web App Manifest、有没有 Service Worker）；第二步，自动补全缺失的 manifest 字段（比如你没有填图标，它帮你生成一套各尺寸的图标）；第三步，调用平台特定的打包流水线——Windows 用 MSIX Packaging Tool 生成 `.msixbundle`，Android 用 Bubblewrap / Trusted Web Activity 生成 APK，iOS 用 WKWebView shell 生成 Web Clip 配置——最终产出各平台可直接提交商店的安装包。
+
+最小的使用方式：访问 pwabuilder.com，输入你的网站 URL，点击 Generate。或者用命令行：
+
+```bash
+npm install -g pwabuilder
+pwabuilder https://example.com -d ./output -p windows10,android,ios
+```
 
 ## 为什么重要
 
-PWA 本身不神秘，难的是把 manifest、Service Worker、图标、商店元数据、各平台签名规则拼成可交付物。PWABuilder 的价值在于：
+不理解 PWABuilder 代表的这套"网站变应用"思路，下面这些事都没法解释：
 
-- **降低入门门槛**：输入 URL 即可得到「成绩单」（Report Card），告诉你 Required / Recommended / Optional 字段缺哪些；不必先读完整本 W3C 规范。
-- **跨商店打包**：同一套 Web 前端，可生成 Windows（MSIX）、Android（Trusted Web Activity / Bubblewrap）、iOS（Swift + WKWebView 壳）、Meta Quest 等包，避免为每个平台从零写壳工程。
-- **与微软生态对齐**：Edge、Windows、Microsoft Learn 培训模块都推荐 PWABuilder 作为 PWA 集成路径；企业内网站点转 Windows 商店应用时常见此工具链。
-- **开源可扩展**：Monorepo 内含网站、VS Code 扩展（PWA Studio）、文档站、manifest 校验库；社区可 PR 修 bug 或接新商店能力。
+- 为什么很多小团队只有一个前端工程师，却能同时维护网站、Android App、iOS App 三个渠道——因为他们用的不是三套原生代码，而是 PWABuilder 或同类工具做"打包分发"
+- 为什么你在 Google Play 搜到的某些 App 打开后跟网页一模一样——因为它就是用 Trusted Web Activity 套壳的 PWA，本质还是网页
+- 为什么 Microsoft 这么积极推 PWA 进 Microsoft Store——因为 PWA 是 Windows 商店应用供给量的低成本来源，不用求开发者专门写 UWP/WinUI
+- 为什么 PWABuilder 和 Capacitor、Tauri、Electron 这些工具经常被放在一起比——它们都在解决"用 Web 技术覆盖多平台"这个问题，但做法、产物和适用场景各不相同
 
-若你已在用 [[workbox]] 或 `vite-plugin-pwa` 手写 Service Worker，PWABuilder 并不替代它们——它更擅长 **评估、脚手架生成、商店打包** 这三段「最后一公里」。
+## 核心要点
 
-## 核心概念
+PWABuilder 的整套流程可以拆成 **三个关键环节**：
 
-### 1. PWA 三要素（PWABuilder 的评分维度）
+1. **Web App Manifest — "产品标签"**：每个 PWA 必须有一个 `manifest.json`，里面写着应用名、短名称、图标路径、主题色、启动 URL 等元数据。类比：就像商品包装上的标签——品名、logo、颜色、净含量。没有这张标签，应用商店不知道该把你的 App 显示成什么样子。PWABuilder 会自动检测并补全这张标签的缺失字段。
 
-| 要素 | 作用 | PWABuilder 中的位置 |
-|------|------|---------------------|
-| **Web App Manifest** | 告诉系统：应用名、图标、启动 URL、显示模式（standalone 等） | Manifest 编辑器 / 自动生成 `manifest.json` |
-| **Service Worker** | 后台脚本：缓存静态资源、离线 fallback、推送等 | 预置 SW 模板（离线、推送、后台同步等） |
-| **HTTPS** | 安全上下文；SW 与部分 PWA API 的硬性前提 | 分析 URL 时校验；本地开发可用 localhost 例外 |
+2. **Service Worker — "离线管家"**：Service Worker 是一段在浏览器后台运行的 JavaScript，可以拦截网络请求、缓存页面资源、在离线时返回缓存内容。类比：就像餐厅的备餐间——客人点单（浏览器请求页面）时，管家（Service Worker）先看看备餐间有没有现成的（缓存），有就直接上菜，没有才去厨房现做（发网络请求）。PWABuilder 的校验引擎会检查你的网站是否有 Service Worker，没有的话会提示你加上。
 
-Microsoft Edge 文档指出：在部分平台上，**没有 Service Worker 也可能可安装**，但强烈建议配备 SW 以提升速度与离线可靠性——PWABuilder 的推荐流程仍会引导你生成 SW。
+3. **平台打包流水线 — "包装产线"**：每个应用商店对安装包的格式要求不同。Windows Store 要 `.msixbundle`，Google Play 要 APK/AAB，App Store 要 Xcode 项目。PWABuilder 针对每个平台维护了一条独立的打包流水线——Android 用 Trusted Web Activity 技术把 Chrome 浏览器的渲染引擎嵌进 APK，iOS 用 WKWebView 系统组件套壳，Windows 用 MSIX 格式打包。你给同一个网站 URL，三条产线跑出三种格式的安装包。
 
-### 2. PWABuilder 工具家族
-
-GitHub Monorepo `pwa-builder/PWABuilder` 不只是一个网站，而是一组工具：
-
-| 工具 | 用途 |
-|------|------|
-| **PWABuilder.com** | 在线分析、编辑 manifest、选 SW、下载基础包、`Package for stores` |
-| **PWA Studio**（VS Code 扩展） | 在编辑器里创建/改进/打包 PWA，减少切浏览器 |
-| **PWA Starter**（独立模板仓库） | 带 manifest + SW 的入门项目，适合从零新建 |
-| **`<pwa-install>`** | Web Component，优化「添加到主屏幕」安装体验 |
-| **docs.pwabuilder.com** | 各商店打包、推送、IAP 等长篇指南 |
-
-### 3. 典型工作流
-
-```text
-已有网站 URL
-    → pwabuilder.com 输入 URL，查看 Report Card
-    → 修补 Manifest（在线编辑或下载后部署）
-    → 选择预置 Service Worker 并下载
-    → 将 manifest / sw / icons 部署到自己的 HTTPS 站点
-    → 再次检测，确认可安装
-    → Package for stores → 选平台 → 填元数据 → 下载包
-    → 用商店后台 / Xcode / Partner Center 提交审核
-```
-
-**注意**：在 pwabuilder.com 在线 Manifest 编辑器里改的字段 **不会自动写回你的服务器**；你必须把生成的 `manifest.json` 部署到自己的域名，否则用户安装的仍是旧元数据。
-
-### 4. Manifest 字段优先级
-
-PWABuilder 与 Microsoft 文档将字段分为：
-
-- **Required**：无 manifest、无 `name` / `short_name` / `start_url`、无图标 → 无法完成打包。
-- **Recommended**：`display`、`theme_color`、`description`、screenshots、maskable icon、shortcuts 等 → 强烈建议补全，影响安装体验与商店审核。
-- **Optional**：年龄分级、`related_applications` 等。
-
-### 5. 商店打包的本质
-
-对多数平台，PWABuilder 生成的是 **原生壳 + WebView 加载你的 PWA URL**（iOS 为 Swift + WKWebView；Android 常为 TWA）。你的业务逻辑仍在 Web 层迭代；壳负责签名、商店清单、部分原生能力（推送、IAP 需额外配置）。
-
-iOS 打包在文档中标注为 **Experimental**：能否过审取决于 PWA 的 UI/UX 与是否使用推送、内购等原生能力，Apple 仍有人工审核裁量权。
+三条加起来，就是"检测标签 -> 确认有离线能力 -> 机器自动分装"的完整流水线。
 
 ## 实践案例
 
-### 案例 1：从零给静态站点补上 Manifest 与 Service Worker 注册
+### 案例 1：把公司内网工具网站打包成 Android APK
 
-假设你有一个部署在 `https://example.com` 的 SPA，尚无 PWA 文件。在 PWABuilder 生成 zip 后，典型集成如下。
+假设你公司有一个内网 OA 系统（React 写的 SPA，跑在 `https://oa.internal.example.com`），现在想让员工在手机上也能用，但不想重新开发一个 Android App。
 
-**`manifest.json`（节选，可按 Report Card 补全 recommended 字段）：**
+用 PWABuilder CLI：
+
+```bash
+# 先确保网站有 manifest.json 和 Service Worker
+# 然后用 CLI 一条命令生成 Android APK
+pwabuilder https://oa.internal.example.com \
+  -d ./oa-android \
+  -p android \
+  --shortName "公司 OA"
+```
+
+**逐部分解释**：
+- `https://oa.internal.example.com` — 你的网站地址，PWABuilder 会先去抓它的 manifest
+- `-d ./oa-android` — 输出到这个目录
+- `-p android` — 只打 Android 包（也可以写 `-p windows10,android,ios` 一次打三个平台）
+- `--shortName "公司 OA"` — 手机上显示的应用短名
+
+运行完后，`./oa-android` 目录里会有一个 APK 文件，可以直接装到 Android 手机上测试，确认没问题后上传到 Google Play Console 发布。
+
+### 案例 2：在 pwabuilder.com 网页端手动打包并上传 Microsoft Store
+
+如果你不习惯命令行，PWABuilder 的 Web 图形界面同样能完成全套流程：
+
+1. 打开 pwabuilder.com，在输入框填你的网站 URL，点 Start
+2. 工具自动扫描网站，给出 PWA 质量评分——如果 manifest 缺字段，页面右侧会提示你补充（比如图标 URL、主题色、scope 范围）
+3. 评分通过后，选择 Windows 平台，点 Generate Package
+4. 这时需要你提供 Microsoft Partner Center 的 Package ID / Publisher ID / Publisher Display Name（去 partner.microsoft.com 注册开发者账号就能拿到）
+5. 填完后 PWABuilder 生成 `.msixbundle` 和 `.classic.appxbundle` 两个文件
+6. 把这两个文件上传到 Partner Center，填应用描述、截图、年龄分级，提交审核即可
+
+整个过程**不需要安装 Visual Studio、不需要写 C#、不需要懂 XAML**，纯网页操作。
+
+### 案例 3：用 Trusted Web Activity 把 PWA 伪装成"真原生"Android App
+
+PWABuilder Android 打包的底层技术叫 **Trusted Web Activity (TWA)**。它的核心思路是：APK 里塞的不是你的网页源码，而是一个 Chrome 浏览器的精简版渲染引擎 + 你的网站 URL。用户打开 App 时，里面跑的就是 Chrome 在显示你的网站。
+
+但 TWA 有一个限制：它需要验证"这个 App 确实属于这个网站的 owner"。验证方式是 **Digital Asset Links**——你在网站的 `/.well-known/assetlinks.json` 路径放一个 JSON 文件，声明"允许包名为 `com.example.app` 的 Android App 用 TWA 方式打开我"。
 
 ```json
-{
-  "name": "示例小店",
-  "short_name": "小店",
-  "description": "我的渐进式 Web 应用",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#0d47a1",
-  "icons": [
-    {
-      "src": "/images/icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/images/icons/icon-512-maskable.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ]
-}
+// 放在 https://你的域名/.well-known/assetlinks.json
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.yourapp",
+    "sha256_cert_fingerprints": ["你的签名证书 SHA-256 指纹"]
+  }
+}]
 ```
 
-**`index.html` 中挂载 manifest 并注册 PWABuilder 提供的 SW：**
+PWABuilder 在生成 APK 时会提示你填写 `package_name` 和证书指纹，你只需把生成的 `assetlinks.json` 放到网站对应路径即可。这个验证是 Google 的要求——防止有人把你的网站打包进一个恶意 App 冒充你。
 
-```html
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#0d47a1" />
-    <title>示例小店</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker
-            .register('/pwabuilder-sw.js', { scope: '/' })
-            .then((reg) => console.log('SW registered', reg.scope))
-            .catch((err) => console.error('SW failed', err));
-        });
-      }
-    </script>
-  </body>
-</html>
-```
+## 踩过的坑
 
-部署后再次把 URL 丢进 PWABuilder，Manifest 与 Service Worker 分数应变绿；Lighthouse PWA 审计也会明显改善。
+1. **iOS OAuth 登录首次必定失败**：打包后的 iOS App 底层是 WKWebView，当第三方登录（Google/Apple/微信 OAuth）发生页面跳转时，WKWebView 的安全策略会拦截第一次重定向，报 `WebKitErrorDomain 102`。用户关掉重试第二次就能成功。目前的 workaround 是在你的登录代码里检测这个错误并自动重试一次。
 
-### 案例 2：用 `<pwa-install>` 改善「安装到桌面」转化
+2. **PWABuilder 的爬虫 UA 被 WAF 拦截**：PWABuilder 用 `PWABuilderHttpAgent` 这个 User-Agent 去探测你的网站。如果你的网站有 Cloudflare、阿里云 WAF 等防护，这个 UA 会被当成爬虫直接拦截，导致 PWABuilder 检测不到 manifest 和 Service Worker。解决方法：在 WAF 规则里把 PWABuilder 的 UA 加入白名单，或者临时关掉 WAF 跑完检测再开。
 
-PWABuilder 生态推荐的安装提示组件（npm 包 `@khmyznikov/pwa-install`）可在支持的浏览器里展示符合平台规范的安装 UI：
+3. **manifest.json 里有注释会导致无限 loading**：标准的 JSON 不支持注释（`// ...` 或 `/* ... */`），但有些开发者习惯在配置文件中写注释。如果 manifest.json 里写了注释，PWABuilder 的解析器不会报错，而是进入无限 loading 状态。排查技巧：把你的 manifest.json 贴到 JSONLint 之类的校验工具里跑一下。
 
-```html
-<head>
-  <script
-    type="module"
-    src="https://cdn.jsdelivr.net/npm/@khmyznikov/pwa-install@latest/dist/pwa-install.bundle.js"
-  ></script>
-</head>
-<body>
-  <pwa-install
-    manifest-url="/manifest.json"
-    install-description="安装到主屏幕，离线也能逛"
-  ></pwa-install>
-  <!-- 你的应用内容 -->
-</body>
-```
+4. **HTTPS 有效但 PWABuilder 仍报 "Not Secure"**：有时候你的 HTTPS 证书本身没问题（Chrome 地址栏显示小锁），但 PWABuilder 的审计引擎会因为页面加载过程中的某个中间跳转（比如 404.html 的重定向）、混合内容（页面里引用了 `http://` 的图片）或者 CDN 配置问题而报不安全。建议在 Chrome DevTools 的 Application > Manifest 面板手动验证一遍，如果 Chrome 认但 PWABuilder 不认，大概率是审计引擎的一过性误判，过几小时重试即可。
 
-逻辑要点：
+## 适用 vs 不适用场景
 
-- 仅当浏览器判定站点 **可安装**（具备 manifest + SW + HTTPS 等）时，组件才应展示安装入口。
-- iOS Safari 的安装路径仍是「分享 → 添加到主屏幕」，组件会做能力检测与文案适配。
-- 与 PWABuilder 生成的 manifest 路径保持一致，避免组件读到的图标/名称与系统安装对话框不一致。
+**适用**：
 
-### 案例 3：命令行侧与 [[workbox]] 的分工（概念对比）
+- 已有成熟的 Web 应用，想低成本覆盖应用商店渠道
+- 内容型/工具型应用（新闻、博客、文档、内部 OA）——对原生 API 需求少，Web 技术栈完全够用
+- 小团队没有原生开发人力，但有前端工程师
+- 想快速验证"这个产品放到应用商店有没有人下载"的 MVP 阶段
+- 已做好 PWA（有 manifest + Service Worker），就差最后一公里分发
 
-若项目已用 Vite + `vite-plugin-pwa` 生成带 precache 的 Service Worker，**不必**再用 PWABuilder 的预置 SW 覆盖生产环境；更合理的分工是：
+**不适用**：
 
-1. 用 **Workbox / vite-plugin-pwa** 维护运行时缓存策略（precache、StaleWhileRevalidate 等）。
-2. 用 **PWABuilder.com** 做 manifest 合规检查、补图标尺寸、生成商店截图清单，并在发布前执行 **Package for stores**。
+- 重度依赖原生 API 的应用（蓝牙、NFC、复杂相机、AR Kit、后台持续定位）——WebView 套壳做不到或体验很差
+- 需要高性能 3D 渲染的游戏——用 Unity/Unreal 等原生引擎更好
+- iOS 上对体验要求高的场景——WKWebView 套壳的流畅度和原生 SwiftUI App 差距明显，尤其手势交互和转场动画
+- 需要深度集成系统级功能（Widget、Siri Shortcuts、Apple Health、Android Work Profile）——PWABuilder 没有这些桥接层
 
-这样避免两套 SW 抢同一 `scope` 注册。
+## 历史小故事（可跳过）
 
-## 各平台打包速览
+- **2015 年**：Microsoft Edge 团队发起 PWABuilder 项目，最早只是一个小工具，帮开发者把网站打包成 Windows Store App（当时的格式叫 `.appx`）。初衷很简单——Windows 商店缺应用，与其求开发者学 UWP，不如让现有网站直接变成 App。
+- **2018 年**：Google 推出 **Trusted Web Activity (TWA)** 技术，让 Android App 可以内嵌 Chrome 渲染引擎来显示 PWA。PWABuilder 第一时间接入，从此不仅能打 Windows 包，还能打 Android APK。
+- **2019-2020 年**：PWA 标准在 W3C 和浏览器厂商推动下趋于成熟——Service Worker、Web App Manifest、Web Push 三大件被 Chrome/Edge/Firefox 完整支持。PWABuilder 升级了审计引擎，加入自动图标生成、Service Worker 模板等功能。
+- **2021 年**：发布 CLI 工具 `pwabuilder`（npm 包），让习惯命令行的开发者不用打开网页也能一条命令完成打包。同年社区达到 3000+ GitHub star。
+- **2023-2024 年**：部分组件进入维护模式（CLI 更新放缓），但核心 Web 版和文档持续更新。项目采用 TypeScript 重写了大部分核心逻辑。至今仍是 Microsoft 开源 PWA 生态的入口项目。
 
-| 平台 | PWABuilder 产出 | 提交前常见额外步骤 |
-|------|-----------------|-------------------|
-| **Microsoft Store** | `.msix` 等 | Partner Center 应用身份、年龄分级 |
-| **Google Play** | Android App Bundle（TWA） | Play Console、数字资产链接（Digital Asset Links）验证域名 |
-| **Apple App Store** | Xcode 工程（Swift 壳） | Apple Developer 账号、证书、Provisioning Profile、`pod install` |
-| **Meta Quest** | 适配 VR 商店的包 | 按文档配置沉浸式/控制器能力 |
+## 学到什么
 
-iOS 路径在 docs.pwabuilder.com 有逐步说明：解压包 → `src` 目录 `pod install` → 打开 **`.xcworkspace`**（不是 `.xcodeproj`）→ Xcode 构建与 Archive 上传。
+1. **PWA 的本质是用 Web 技术做跨平台分发，而不是用 Web 技术替代原生**——PWABuilder 只是帮你打包、上架，不承诺 WebView 套壳能媲美原生体验
+2. **应用商店分发不只是"写代码"的问题，更是一堆元数据的游戏**——manifest.json 里的图标尺寸、应用描述、隐私政策 URL、年龄分级，每一项填错都可能被商店拒审
+3. **Trusted Web Activity 是 Google 给 PWA 的"官方绿卡"**——通过 Digital Asset Links 验证网站和 App 的归属关系，让 PWA 在 Android 上跑得和原生 App 几乎没有区别
+4. **工具链的成熟度直接影响跨平台方案的可行性**——PWABuilder 最大的价值不是那几行打包脚本，而是把"校验 manifest -> 补全缺失字段 -> 生成各平台包 -> 输出商店提交指引"这整个流程做到了一键完成
 
-## 常见问题
+## 延伸阅读
 
-**Q：只有 manifest，没有 Service Worker，算 PWA 吗？**  
-A：部分浏览器仍可能提供「安装」入口，但离线能力与更新策略会受限。PWABuilder 与 Edge 文档均建议两者兼备。
+- 官方文档：[docs.pwabuilder.com](https://docs.pwabuilder.com) — 各平台打包的完整步骤和常见报错解决
+- 在线工具：[pwabuilder.com](https://pwabuilder.com) — 不用装任何东西，直接输入网址体验
+- CLI npm 包：`npm install -g pwabuilder` — 命令行版本，适合集成到 CI/CD
+- Google 官方 TWA 指南：[developer.chrome.com/docs/android/trusted-web-activity](https://developer.chrome.com/docs/android/trusted-web-activity) — TWA 底层原理
+- [[capacitor]] — Ionic 团队的跨平台方案，比 PWABuilder 更底层但需要写原生插件
+- [[tauri]] — Rust 写的轻量级桌面/移动打包方案，产物比 Electron 小很多
+- [[electron]] — 用 Chromium + Node.js 打包桌面应用的鼻祖方案
 
-**Q：在线改的 manifest 为什么没生效？**  
-A：编辑器改动只影响你**下载的包**或本地草稿；必须将 `manifest.json` 部署到线上 HTTPS 路径，并确保 HTML 的 `<link rel="manifest">` 指向正确 URL。
+## 关联
 
-**Q：和 Capacitor / React Native 有何不同？**  
-A：Capacitor 等是把 Web 资产打进原生容器并暴露大量原生插件 API；PWABuilder 更轻，主打 **PWA 标准 + 商店壳**，适合以 Web 为主、原生定制较少的场景。
+- [[capacitor]] — 同样是"Web 技术打包成原生 App"，但 Capacitor 提供 JS-Native 桥接层和插件生态，PWABuilder 更轻量但无原生桥接
+- [[cordova]] — PWABuilder 的前辈，Apache 的 Web-to-Native 打包框架，已逐步被 Capacitor 取代
+- [[tauri]] — 用系统自带 WebView 替代 Chromium 的打包方案，桌面端优势明显，移动端尚在早期
+- [[electron]] — 桌面端的 Web 打包鼻祖，PWABuilder 解决的是移动端 + 应用商店的问题
+- [[ionic-framework]] — Ionic 的 UI 组件库 + Capacitor 打包 = PWABuilder 的"高级替代"，多了整套 UI 跨平台组件
+- [[flutter]] — Google 的跨平台方案，走的是"自己画 UI"路线而非 WebView 套壳，性能和体验更强但需要学 Dart
+- [[vite]] — 现代前端构建工具，很多 PWA 项目用 Vite 构建，搭配 `vite-plugin-pwa` 可以自动生成 manifest 和 Service Worker
 
-**Q：内购和推送能做吗？**  
-A：iOS 上推送需 Firebase Cloud Messaging + 修改 AppDelegate 中 PWABuilder 标记的 TODO；StoreKit 2 内购需参考官方示例仓库与博客，属于「实验性高级话题」，非开箱即用。
+## 反向链接
 
-## 学习路径（零基础）
-
-1. **10 分钟**：读 MDN [Progressive Web Apps](https://developer.mozilla.org/zh-CN/docs/Web/Progressive_web_apps) 概览，建立 manifest / SW / 可安装性概念。
-2. **30 分钟**：拿一个自己的 HTTPS 站点 URL 跑一遍 pwabuilder.com，对照 Report Card 记下缺项。
-3. **1 小时**：按案例 1 部署 manifest + SW，用 Chrome DevTools → Application 面板检查 Manifest 与 Service Worker 状态。
-4. **半天**：跟 Microsoft Learn 模块 [Integrate your project with PWABuilder](https://learn.microsoft.com/en-us/training/modules/integrate-with-pwabuilder/) 做实验。
-5. **按需深入**：选定一个目标商店，精读 docs.pwabuilder.com 对应打包文档；若缓存策略复杂，并行学习 [[workbox]]。
-
-## 相关链接
-
-- 官网与检测入口：[https://www.pwabuilder.com/](https://www.pwabuilder.com/)
-- 源码 Monorepo：[https://github.com/pwa-builder/PWABuilder](https://github.com/pwa-builder/PWABuilder)
-- 文档站：[https://docs.pwabuilder.com/](https://docs.pwabuilder.com/)
-- PWA Starter 模板：[https://github.com/pwa-builder/pwa-starter](https://github.com/pwa-builder/pwa-starter)
-- VS Code 扩展 PWA Studio：[Marketplace 页面](https://marketplace.visualstudio.com/items?itemName=PWABuilder.pwa-studio)
-- 博客（转换指南、IAP 等）：[https://blog.pwabuilder.com/](https://blog.pwabuilder.com/)
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
