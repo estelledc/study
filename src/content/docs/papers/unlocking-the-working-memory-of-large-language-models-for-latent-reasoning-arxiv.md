@@ -2,7 +2,6 @@
 title: Unlocking the Working Memory of Large Language Models for Latent Reasoning
 来源: https://arxiv.org/abs/2605.30343
 日期: 2026-06-13
-分类_原始: AI / 大语言模型
 分类: 机器学习
 子分类: ML 系统
 provenance: pipeline-v3

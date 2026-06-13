@@ -2,7 +2,6 @@
 title: Sandlock — 用非特权 Linux 原语为 AI Agent 代码打造牢笼（Wang & Zheng, 2026）
 来源: https://arxiv.org/abs/2605.26298
 日期: 2026-06-13
-分类_原始: 安全 / 操作系统
 分类: 安全与隐私
 子分类: 安全与隐私
 provenance: pipeline-v3
