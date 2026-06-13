@@ -19,7 +19,7 @@ const PROJECTS = path.join(ROOT, 'src', 'content', 'docs', 'projects');
 const PAPERS = path.join(ROOT, 'src', 'content', 'docs', 'papers');
 
 const BATCHES_PER_ROUND = parseInt(process.env.BATCHES_PER_ROUND || '10', 10);
-const BATCH_SIZE = 8;
+const BATCH_SIZE = 4;
 const AUTO_MERGE = process.env.AUTO_MERGE !== 'false';
 const DRY_RUN = process.env.DRY_RUN === 'true';
 
@@ -343,10 +343,13 @@ async function main() {
       }
     } catch {}
 
-    // 2. Expand pool every round
-    log('  Launching pool expanders (opencode agnes)...');
-    projectsExpander = expandProjects();
-    papersExpander = expandPapers();
+    // 2. Expand pool — launch 4 expanders per round (2 projects + 2 papers)
+    log('  Launching 4 pool expanders (opencode agnes)...');
+    const expanders = [];
+    expanders.push(expandProjects());
+    expanders.push(expandProjects());
+    expanders.push(expandPapers());
+    expanders.push(expandPapers());
 
     // 2. Write batches
     let roundWritten = 0;
