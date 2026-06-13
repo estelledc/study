@@ -151,6 +151,7 @@ LLaMA 论文 14 个作者里有 4-5 人后来离职创办了 Mistral——所以
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[flashattention-2]] —— FlashAttention-2 — 更快的 Attention 与更好的并行
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[improving-embeddings-llm]] —— 用 LLM 生成合成数据来训练文本向量
 - [[llama-vid-2023]] —— LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM
 - [[llava]] —— LLaVA — 开源多模态对话模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)

@@ -159,6 +159,7 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[ghost-2021]] —— ghOSt — 把 Linux 调度策略搬到用户态去写
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[io-uring-axboe-2019]] —— Efficient IO with io_uring — Linux 异步 IO 的环形队列革命
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[pivot-tracing-2015]] —— Pivot Tracing — 让运维事后想测什么就测什么

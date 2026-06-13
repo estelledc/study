@@ -164,7 +164,6 @@ Signal 做法：
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
 - [[prosody]] —— Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见

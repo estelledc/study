@@ -4,7 +4,7 @@ description: Bytecode Alliance 的 WebAssembly 运行时，WASI 支持
 来源: 'https://github.com/bytecodealliance/wasmtime'
 日期: 2026-06-06
 分类: 编译器
-子分类: 语言运行时
+子分类: wasm
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -331,11 +331,19 @@ wasmtime run --fuel 1000000 risky.wasm
 
 - [[circuitpython]] —— CircuitPython — 插上 USB 就能写 Python 的微控制器运行时
 - [[deno]] —— Deno — 安全优先的 JS/TS 运行时
+- [[graalvm]] —— GraalVM — 多语言通用 VM
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
+- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
+- [[rustpython]] —— RustPython — Rust 写的 Python 解释器
 - [[tauri]] —— Tauri — Rust 写的 Electron 替代，用系统 webview 打包桌面/移动端应用
 - [[tinygo]] —— TinyGo — 把 Go 编译进微控制器和 WebAssembly 的「袖珍版编译器」
+- [[wamr]] —— WAMR — wasm 微运行时（嵌入式）
+- [[wasm-pack]] —— wasm-pack — 把 Rust 编译成浏览器能跑的代码
+- [[wasmedge]] —— WasmEdge — 云原生 wasm 运行时
+- [[wasmer]] —— Wasmer — 跨平台 WebAssembly 运行时
+- [[wazero]] —— wazero — 纯 Go 实现的 WebAssembly 运行时
 - [[zed]] —— Zed — Atom 团队 Rust 重写的 GPU 协作编辑器
 - [[zellij]] —— Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件
 

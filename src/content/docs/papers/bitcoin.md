@@ -150,7 +150,7 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[atzei-eth-attacks-2017]] —— 以太坊智能合约攻击综述 — 12 类漏洞的首次系统分类
 - [[bernstein-sphincs-2015]] —— SPHINCS — 无状态哈希签名，后量子密码的"保险"
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[byzantine-generals-1982]] —— 拜占庭分布式快照（2026）— 给会作恶的分布式系统拍"全家福"
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换

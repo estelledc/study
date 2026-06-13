@@ -161,6 +161,5 @@ await sql.notify('order_created', JSON.stringify({ id: 42 }))
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prisma]] —— Prisma — 类型安全 ORM
-- [[redis]] —— Redis — 内存键值数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
 

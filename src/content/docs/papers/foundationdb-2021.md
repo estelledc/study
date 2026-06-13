@@ -174,5 +174,6 @@ simulation 模式启动：
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[spanner-corbett-2012]] —— Spanner — Google 的全球分布式数据库
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 

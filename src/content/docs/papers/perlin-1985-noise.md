@@ -159,5 +159,6 @@ color = lerp(浅黄, 深棕, smoothstep(0, 1, ring - floor(ring)))
 - [[catmull-1974-zbuffer]] —— Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题
 - [[cook-1986-stochastic-sampling]] —— Cook 1986 — 用噪声换掉锯齿
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[phong-1975]] —— Phong 1975 — 把光照拆成环境+漫反射+高光三项
 

@@ -158,13 +158,14 @@ Raft 的快照之所以比 Chandy-Lamport 简单——因为 Raft 已经有单 l
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[byzantine-generals-1982]] —— 拜占庭分布式快照（2026）— 给会作恶的分布式系统拍"全家福"
 - [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定
 - [[flink-snapshots-2015]] —— Flink 异步快照 — 不停机给流处理拍一致照片
 - [[flp-1985]] —— FLP 1985 — 一个坏节点就能让异步共识永不终止
 - [[hlc-2014]] —— HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
+- [[lamport-time-clocks-1978]] —— Time, Clocks, and the Ordering of Events in a Distributed System — 零基础学习笔记
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积

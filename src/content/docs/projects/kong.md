@@ -167,6 +167,5 @@ deck sync --state kong.yaml                # CI 里推回 Kong
 - [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[nginx]] —— nginx — 高性能 Web 服务器
-- [[redis]] —— Redis — 内存键值数据库
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 

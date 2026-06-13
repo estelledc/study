@@ -3,7 +3,7 @@ title: Godot Engine — 开源游戏引擎 + 编辑器
 来源: 'https://github.com/godotengine/godot'
 日期: 2026-06-13
 分类: CLI
-子分类: 编辑器与 IDE
+子分类: 前端框架
 provenance: pipeline-v3
 难度: 初级
 ---
@@ -244,6 +244,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
 - [[assimp]] —— Assimp — Open Asset Import Library 统一 3D 模型导入
 - [[blender]] —— Blender — 全流程 3D 创作套件
 - [[cocos2d-x]] —— Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android
@@ -252,7 +253,9 @@ func _on_body_entered(body: Node2D) -> void:
 - [[krita]] —— Krita — 数字绘画专业编辑器
 - [[love2d]] —— LÖVE — Lua 2D 游戏框架
 - [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
+- [[open3d]] —— Open3D — 现代点云与几何处理库
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
+- [[piskel]] —— Piskel — Web 像素艺术编辑器
 - [[playcanvas]] —— PlayCanvas — 浏览器里跑的 3D 游戏引擎
 - [[raylib]] —— raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
 

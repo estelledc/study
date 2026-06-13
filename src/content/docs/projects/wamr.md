@@ -321,3 +321,7 @@ Wasm 侧声明 `import "env" "read_temp" (func $read_temp (result i32))` 即可�
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[wasmedge]] —— WasmEdge — 云原生 wasm 运行时
+- [[wazero]] —— wazero — 纯 Go 实现的 WebAssembly 运行时
+

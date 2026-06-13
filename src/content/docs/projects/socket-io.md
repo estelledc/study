@@ -166,7 +166,6 @@ socket.on('save', async (data, cb) => {
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[http-2]] —— HTTP/2 — 把 HTTP 从文本协议改造成二进制多路复用
 - [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
-- [[redis]] —— Redis — 内存键值数据库
 - [[robyn]] —— Robyn — Rust 运行时的高性能 Python Web 框架
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC

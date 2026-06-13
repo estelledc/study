@@ -162,7 +162,7 @@ class LogEmitter:
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[byzantine-generals-1982]] —— 拜占庭分布式快照（2026）— 给会作恶的分布式系统拍"全家福"
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
@@ -183,6 +183,7 @@ class LogEmitter:
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[jupiter-1995]] —— Jupiter — 把 OT 简化成 client-server，让协同编辑能上工业
+- [[lamport-time-clocks-1978]] —— Time, Clocks, and the Ordering of Events in a Distributed System — 零基础学习笔记
 - [[lamport-tla-1994]] —— TLA — 把状态机和时序逻辑捏成一个公式
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
 - [[linearizability-1990]] —— Linearizability 1990 — 让并发对象看起来像一次只执行一个操作

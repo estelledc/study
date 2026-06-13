@@ -237,3 +237,6 @@ Salsa **不是** rust-analyzer 独有的私有代码——它是独立 crate [`s
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[salsa-incremental-2019]] —— Salsa — 增量计算框架（零基础：把程序写成可缓存的查询图）
+

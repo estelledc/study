@@ -162,5 +162,4 @@ await prefixStorage(root, 'v1:').clear()
 - [[nuxt]] —— Nuxt — Vue 全栈框架
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prisma]] —— Prisma — 类型安全 ORM
-- [[redis]] —— Redis — 内存键值数据库
 

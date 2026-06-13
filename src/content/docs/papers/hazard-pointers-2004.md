@@ -163,5 +163,5 @@ void retire(Node* n) {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[epoch-based-reclamation-2007]] —— Practical Lock-Freedom — Epoch-based Reclamation（按「时代」延迟回收共享内存）
 

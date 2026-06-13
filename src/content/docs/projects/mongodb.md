@@ -165,7 +165,6 @@ db.orders.aggregate([
 - [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[ravendb]] —— RavenDB — .NET 生态首选的 ACID 文档数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 - [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量

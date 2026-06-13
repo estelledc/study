@@ -143,10 +143,12 @@ answer = llama.generate(prompt)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agi-survey]] —— Large language models for artificial general intelligence (AGI): A survey
 - [[atlas-2022]] —— Atlas — 把检索器和生成器一起训练，11B 打 540B
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[improving-embeddings-llm]] —— 用 LLM 生成合成数据来训练文本向量
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上

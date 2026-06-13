@@ -314,3 +314,7 @@ Conda、Docker 与从源码编译（CUDA 模块）见 [Open3D 官方构建文档
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[freecad]] —— FreeCAD — 参数化 CAD
+- [[pcl]] —— PCL — Point Cloud Library 点云处理经典库
+

@@ -159,5 +159,4 @@ def objective(trial):
 - [[optuna]] —— Optuna — 让超参搜索像写普通 Python 代码一样自然
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[shap]] —— SHAP — 用博弈论给每个特征发工资
-- [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
 

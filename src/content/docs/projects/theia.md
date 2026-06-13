@@ -181,6 +181,7 @@ ls dist/
 - [[eclipse-che]] —— Eclipse Che — Kubernetes 原生云 IDE
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
 - [[openvscode-server]] —— OpenVSCode Server — VS Code Server 上游
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 

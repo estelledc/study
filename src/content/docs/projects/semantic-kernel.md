@@ -6,7 +6,7 @@ category: "AI 框架"
 subcategory: "Agent SDK"
 provenance: "pipeline-v3"
 分类: 其他
-子分类: ai-infra
+子分类: ai-agent-infra
 ---
 
 # Semantic Kernel — 微软企业级 Agent SDK

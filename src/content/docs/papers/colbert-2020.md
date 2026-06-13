@@ -164,6 +164,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 - [[drmm-2016]] —— DRMM — 检索里的匹配是相关性不是语义相似
 - [[e5-2022]] —— E5 — 用海量"自然出现的文本对"训通用 embedding
 - [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
+- [[improving-embeddings-llm]] —— 用 LLM 生成合成数据来训练文本向量
 - [[knrm-2017]] —— K-NRM — 用核函数把交互矩阵变成可微排序信号
 - [[ms-marco-2016]] —— MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上

@@ -164,11 +164,13 @@ flow:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[browser-use]] —— browser-use — 用自然语言让 AI Agent 操控浏览器
+- [[bytedance-ui-tars]] —— bytedance/UI-TARS-desktop — 多模态 AI Agent 栈
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[langfuse]] —— Langfuse — LLM 应用可观测性
 - [[nanobrowser]] —— nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
+- [[ui-tars]] —— UI-TARS — 原生 GUI Agent 视觉语言模型
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

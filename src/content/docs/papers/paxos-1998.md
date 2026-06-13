@@ -170,7 +170,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[byzantine-generals-1982]] —— 拜占庭分布式快照（2026）— 给会作恶的分布式系统拍"全家福"
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC
 - [[cassandra-2010]] —— Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西
 - [[chain-replication-2004]] —— Chain Replication — 把多副本排成流水线，简单且强一致
@@ -220,6 +220,7 @@ Chubby / ZooKeeper / Spanner / etcd 全部是 Multi-Paxos with leader 形态。*
 - [[smr-1990]] —— SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"
 - [[spanner]] —— Spanner — 全球分布式 SQL 数据库
 - [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
+- [[spanner-corbett-2012]] —— Spanner — Google 的全球分布式数据库
 - [[tendermint-2016]] —— Tendermint — 把拜占庭共识塞进开放区块链的工程模板
 - [[tidb-2020]] —— TiDB 2020 — 给 Raft 加一个"旁听生"，让一份数据同时跑事务和分析
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库

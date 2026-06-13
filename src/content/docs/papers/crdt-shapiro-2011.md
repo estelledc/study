@@ -164,6 +164,7 @@ Cassandra / DynamoDB 的单字段冲突解决就是 LWW。
 - [[liveblocks]] —— Liveblocks — 多人协作的托管基础设施
 - [[logoot-2010]] —— Logoot — 给每个字符发一张"永不过期的座位号"
 - [[mattern-1989]] —— Mattern 1989 — 虚拟时间与全局状态：把分布式时钟变成 N 维笛卡尔积
+- [[operational-transform-jupiter-1995]] —— High-Latency, Low-Bandwidth Windowing in the Jupiter Collaboration System — 零基础学习笔记
 - [[ot-1989]] —— OT — 多人同时改一份文档，操作随上下文自动改坐标
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法

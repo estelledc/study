@@ -151,7 +151,7 @@ t3 = 100.030  (客户端收到，本地时钟)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[byzantine-generals-1982]] —— 拜占庭分布式快照（2026）— 给会作恶的分布式系统拍"全家福"
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
 - [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[fidge-1988]] —— Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定

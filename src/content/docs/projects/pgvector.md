@@ -166,5 +166,6 @@ LIMIT 3;
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[qdrant]] —— Qdrant — Rust 向量数据库
+- [[sqlite-vec-asg017]] —— sqlite-vec — 在 SQLite 里做向量相似度搜索
 - [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
 

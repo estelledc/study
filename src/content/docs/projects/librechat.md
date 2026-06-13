@@ -156,5 +156,4 @@ UI 里发 3 条消息：第 1 条用 OpenAI、第 2 条切 Anthropic、第 3 条
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
 - [[mongodb]] —— MongoDB — 文档型 NoSQL 数据库
 - [[react]] —— React UI 组件库
-- [[redis]] —— Redis — 内存键值数据库
 

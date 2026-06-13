@@ -168,10 +168,13 @@ console.log(docB.getMap('root').get('title'))
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
+- [[automerge-json-crdt-2017]] —— A Conflict-Free Replicated JSON Datatype — 零基础学习笔记
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
 - [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
+- [[eg-walker-collab-text-2024]] —— Eg-walker — 协同文本编辑的「按需 CRDT」：更好、更快、更小
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"
@@ -180,4 +183,5 @@ console.log(docB.getMap('root').get('title'))
 - [[paxos]] —— Paxos — 分布式共识算法
 - [[raft]] —— Raft — 易理解的共识算法
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
+- [[yjs-crdt-overview]] —— Yjs — 用 CRDT 做共享编辑：零基础学习笔记
 

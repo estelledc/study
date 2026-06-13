@@ -227,6 +227,7 @@ emcc main.c -o index.html \
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
 - [[assimp]] —— Assimp — Open Asset Import Library 统一 3D 模型导入
 - [[bevy]] —— Bevy — Rust 数据驱动 ECS 游戏引擎
 - [[debevec-1998-rendering-with-natural-light]] —— Debevec 1998 — 用真实世界的光照亮 CG 物体

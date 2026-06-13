@@ -161,11 +161,13 @@ ffmpeg -i input.mp4 -codec: copy -start_number 0 -hls_time 6 -hls_list_size 0 ou
 - [[fdk-aac]] —— fdk-aac — Fraunhofer AAC 编解码库
 - [[ffmpeg-kit]] —— FFmpegKit — 在 App 里跑 FFmpeg 的「随身剪辑台」
 - [[flac]] —— FLAC — 无损音频压缩格式与参考实现
+- [[gimp]] —— GIMP — GNU 图像处理程序
 - [[gstreamer]] —— GStreamer — 流水线式多媒体框架
 - [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
 - [[hls.js]] —— hls.js — 浏览器里播放 HLS 直播
 - [[imagemagick]] —— ImageMagick — 图像处理瑞士军刀
 - [[jellyfin]] —— Jellyfin — 自托管媒体服务器
+- [[kdenlive]] —— Kdenlive — KDE 非线性视频剪辑
 - [[lame]] —— LAME — MP3 编码开源参考实现
 - [[librosa]] —— librosa — Python 音频分析库与 MFCC/STFT 事实标准
 - [[libvpx]] —— libvpx — VP8/VP9 开源视频编解码

@@ -170,5 +170,6 @@ Clack 的设计可以拆成 **三块**：
 - [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[textual]] —— Textual — 用 CSS 写终端界面的 Python 框架
+- [[windmill-platform]] —— Windmill — 把脚本变成 API、工作流和 UI 的开发平台
 - [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
 

@@ -163,11 +163,11 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[landin-secd]] —— Landin SECD — 第一台机械求值 lambda 表达式的抽象机器
 - [[language-server-protocol-spec]] —— Language Server Protocol — 让编辑器共享同一套「语言大脑」的 USB 协议
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
+- [[liskov-abstraction-1974]] —— Programming with Abstract Data Types — Liskov & Zilles 1974 抽象数据类型宣言
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
-- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"

@@ -175,4 +175,5 @@ west flash                               # 烧录
 - [[sdk-nrf]] —— sdk-nrf — Nordic nRF Connect SDK 零基础学习笔记
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tinygo]] —— TinyGo — 把 Go 编译进微控制器和 WebAssembly 的「袖珍版编译器」
+- [[wamr]] —— WAMR — wasm 微运行时（嵌入式）
 

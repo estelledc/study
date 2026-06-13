@@ -2,7 +2,7 @@
 title: MinIO — S3 兼容对象存储
 来源: https://github.com/minio/minio
 日期: 2026-05-29
-子分类: storage
+子分类: databases-storage
 分类: 数据库
 难度: 中级
 provenance: pipeline-v3
@@ -147,8 +147,8 @@ mc mirror ./photos local/photos             # 持续同步整个目录
 
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[cvat]] —— CVAT — 视频帧标注与半自动追踪的开源王者
+- [[ente]] —— Ente — 端到端加密云相册与零知识备份
 - [[kubernetes]] —— Kubernetes — 容器编排平台
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
-- [[redis]] —— Redis — 内存键值数据库
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
 

@@ -297,5 +297,7 @@ Rashid 后创立 Microsoft Research；Tevanian 经 NeXT 到 Apple——影响路
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[kvm-2007]] —— KVM 2007 — 把 Linux 内核本身变成 hypervisor
+- [[sel4-formal-2009]] —— seL4 — 第一个被机器证明「没写错」的通用 OS 内核
+- [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

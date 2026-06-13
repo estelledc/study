@@ -3,7 +3,7 @@ title: smolagents — HuggingFace 极简 Agent 框架
 来源: https://github.com/huggingface/smolagents
 日期: 2026-06-13
 分类: 机器学习
-子分类: ai-agent-infra
+子分类: ai-agent-frameworks
 provenance: pipeline-v3
 ---
 

@@ -3,7 +3,7 @@ title: wasm-pack — 把 Rust 编译成浏览器能跑的代码
 来源: https://github.com/rustwasm/wasm-pack
 日期: 2026-06-13
 分类: 编译器
-子分类: wasm-toolchain
+子分类: wasm
 难度: 入门
 provenance: pipeline-v3
 ---
@@ -263,3 +263,6 @@ wasm-pack publish --registry https://npm.your-company.com
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

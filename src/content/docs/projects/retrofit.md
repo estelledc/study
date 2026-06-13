@@ -280,3 +280,7 @@ Retrofit **离不开** OkHttp；axios 在概念上接近「Retrofit + Gson + 拦
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[glide]] —— Glide — Android 上专注流畅滚动的图片加载库
+- [[okhttp]] —— OkHttp — JVM/Android 上的高效 HTTP 客户端
+

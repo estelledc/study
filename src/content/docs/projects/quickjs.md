@@ -241,10 +241,13 @@ await runUserCode('log("用户代码安全运行中")');
 - [[boa-engine]] —— boa-engine — 用 Rust 写出的可嵌入 JavaScript 引擎
 - [[bun]] —— Bun — JS 全能运行时
 - [[deno]] —— Deno — 安全优先的 JS/TS 运行时
+- [[graalvm]] —— GraalVM — 多语言通用 VM
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[pypy-tracing-jit]] —— PyPy meta-tracing JIT — 给解释器加一次 JIT，所有用它的语言一起加速
 - [[tracemonkey]] —— TraceMonkey — 只编"真的走过的那一条路"
+- [[wamr]] —— WAMR — wasm 微运行时（嵌入式）
+- [[wasmer]] —— Wasmer — 跨平台 WebAssembly 运行时
 - [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
 

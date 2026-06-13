@@ -251,4 +251,5 @@ print(f"程序 {prog2}: {'合法' if verify_instruction_trace(prog2) else '非�
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[hyperplonk-2022]] —— Hyperplonk — 在 Plonk 上做递归证明的高效方案
+（暂无反向链接）
+

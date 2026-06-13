@@ -159,6 +159,5 @@ npx @soketi/soketi start
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[nginx]] —— nginx — 高性能 Web 服务器
-- [[redis]] —— Redis — 内存键值数据库
 - [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
 

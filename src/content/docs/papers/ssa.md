@@ -182,6 +182,7 @@ entry:
 
 - [[a3c-2016]] —— A3C — 多个 CPU 同时跑游戏，让 RL 不再吃 GPU
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
+- [[badger]] —— Badger — Go 写的键值分离 LSM
 - [[big-little-2011]] —— big.LITTLE — 让一颗芯片同时装快核和省电核
 - [[boogie-2005]] —— Boogie — 写一次验证后端，多种证明语言复用
 - [[branch-prediction-yeh-patt-1991]] —— Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命
@@ -191,6 +192,7 @@ entry:
 - [[cimatti-nusmv-2002]] —— NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具
 - [[compcert]] —— CompCert — 每条优化都被数学证明保持语义的 C 编译器
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
+- [[e-path-egraph]] —— E-Path — 控制流图上的等价饱和
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程
 - [[fpga-hls-2011]] —— FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式
@@ -217,6 +219,7 @@ entry:
 - [[reps-ifds]] —— Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路
 - [[risc-i-1981]] —— RISC I — 砍掉 90% 指令反而让 CPU 跑得更快
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
+- [[salsa-incremental-rust-analyzer]] —— Salsa — 按需增量计算框架（rust-analyzer 的「只重算变了的那块」引擎）
 - [[self-customization]] —— SELF Customization — 给每种"调用者类型"现场打一份方法
 - [[self-pic]] —— Self / PIC — 内联缓存的诞生
 - [[steensgaard-pointer]] —— Steensgaard 指针分析 — 用等价合并把指针分析压到几乎线性

@@ -152,15 +152,11 @@ for (let i = 0; i < tokens.length; i++) {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
-- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
-- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
 - [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
-- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
 - [[starlight]] —— Starlight — Astro 文档站点主题
-- [[swc]] —— SWC — Rust 写的 TS/JS 编译器
 - [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
 

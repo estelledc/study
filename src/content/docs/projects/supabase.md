@@ -191,6 +191,7 @@ JWT 里带着用户 ID，Postgres 的 `auth.uid()` 函数自动从 JWT 取出来
 - [[edgedb]] —— EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[meilisearch]] —— MeiliSearch — 开发者友好的搜索引擎
+- [[nango]] —— Nango — 产品集成的托管 OAuth 与函数运行时
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库

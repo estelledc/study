@@ -154,6 +154,7 @@ NVMe 的门铃版本：把命令直接写进 SQ 的内存区域，**写一个 32
 - [[arrakis-2014]] —— Arrakis 2014 — 让操作系统只管规则、硬件直接服务应用
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[io-uring-axboe-2019]] —— Efficient IO with io_uring — Linux 异步 IO 的环形队列革命
 - [[persistent-memory-2014]] —— PMFS — 第一个为字节寻址持久内存设计的文件系统
 - [[rocksdb]] —— RocksDB — 嵌入式 LSM 引擎
 - [[ssa]] —— SSA — 静态单赋值形式

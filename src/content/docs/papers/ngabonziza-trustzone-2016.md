@@ -175,5 +175,7 @@ int secure_boot_verify(const uint8_t *firmware, size_t fw_len,
 - [[lee-keystone-2020]] —— Keystone — 开源可定制 RISC-V TEE 框架
 - [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
+- [[op-tee-tee-2014]] —— OP-TEE — Open Portable Trusted Execution Environment 零基础学习笔记
 - [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
+- [[trustzone-arm-2009]] —— ARM TrustZone Technology Overview — 一颗 CPU 上的双世界安全隔离
 

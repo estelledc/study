@@ -168,5 +168,7 @@ socket.on('message', steps => {
 - [[fabric-js]] —— Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖
 - [[hocuspocus]] —— Hocuspocus — 给 Yjs 配一个能直接上线的协作后端
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
+- [[prosemirror-architecture]] —— ProseMirror — 构建富文本编辑器的工具箱
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

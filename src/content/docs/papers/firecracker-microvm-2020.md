@@ -333,3 +333,6 @@ vsock 不经过虚拟网卡栈，延迟更低，也减少「从网络面打进 m
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chaos-engineering-netflix-2016]] —— Chaos Engineering — Netflix 如何把「故意搞破坏」变成可靠性学科
+

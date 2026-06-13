@@ -290,3 +290,8 @@ Monaco **不是** VS Code 的阉割骗局，而是**故意只导出编辑器层*
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[eg-walker-collab-text-2024]] —— Eg-walker — 协同文本编辑的「按需 CRDT」：更好、更快、更小
+- [[prosemirror-architecture]] —— ProseMirror — 构建富文本编辑器的工具箱
+- [[zed-editor-collaborative]] —— Zed: A High-Performance Multiplayer Code Editor in Rust — 把协同编辑写进编辑器 DNA 的 Rust 原生 IDE
+

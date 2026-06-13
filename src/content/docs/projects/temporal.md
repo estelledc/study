@@ -2,7 +2,7 @@
 title: Temporal — 持久化工作流引擎
 来源: https://github.com/temporalio/temporal
 日期: 2026-05-29
-子分类: cloud-native
+子分类: Web 后端
 分类: 后端 API
 难度: 中级
 provenance: pipeline-v3
@@ -177,4 +177,5 @@ export async function bookTrip(tripId: string) {
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
+- [[windmill-platform]] —— Windmill — 把脚本变成 API、工作流和 UI 的开发平台
 

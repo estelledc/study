@@ -2,7 +2,7 @@
 title: Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
 来源: 'Beltagy, Peters, Cohan, "Longformer: The Long-Document Transformer", arXiv 2004.05150 (2020)'
 日期: 2026-05-31
-子分类: ml
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3
@@ -155,6 +155,7 @@ attention_mask[:, question_length:] = 1  # context 走 local
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
+- [[mini-max-sparse-attention]] —— MiniMax Sparse Attention — 用 Top-k 块选择把 1M 上下文塞进 GPU
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[t5]] —— T5 — Text-to-Text Transfer Transformer
 

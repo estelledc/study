@@ -3,7 +3,7 @@ title: Leptos — Rust 全栈 Web 框架入门
 来源: https://github.com/leptos-rs/leptos
 日期: 2026-06-13
 分类: 后端 API
-子分类: rust-tools
+子分类: frontend-frameworks
 provenance: pipeline-v3
 ---
 

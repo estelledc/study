@@ -239,11 +239,13 @@ class WorldScene extends Phaser.Scene {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
 - [[defold]] —— Defold — King 出品 Lua 引擎，移动优先 + 一键跨平台打包
 - [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
 - [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 - [[love2d]] —— LÖVE — Lua 2D 游戏框架
 - [[melonjs]] —— melonJS — 轻量 JS 2D 引擎
+- [[piskel]] —— Piskel — Web 像素艺术编辑器
 - [[pixi]] —— PixiJS — 浏览器里画 2D 的高性能 GPU 引擎
 - [[playcanvas]] —— PlayCanvas — 浏览器里跑的 3D 游戏引擎
 - [[react]] —— React UI 组件库

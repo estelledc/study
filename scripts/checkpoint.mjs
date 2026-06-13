@@ -53,7 +53,34 @@ async function countMd(dir) {
 async function readJsonlLines(filePath) {
   try {
     const raw = await fs.readFile(filePath, 'utf8');
-    return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
+    const lines = raw.split('\n').filter(Boolean);
+    const parsed = [];
+    let repaired = 0;
+    for (const line of lines) {
+      try {
+        parsed.push(JSON.parse(line));
+      } catch {
+        // Auto-repair: common corruption patterns from expanders
+        // Pattern 1: "col4">value" -> "col4":"value"
+        // Pattern 2: stray unquoted field like "os-pipeline"
+        let fixed = line.replace(/"col4">/g, '"col4":"');
+        // Remove stray bare strings between commas (like ,"os-pipeline",)
+        fixed = fixed.replace(/,"[a-z][a-z0-9-]*",/g, ',');
+        try {
+          parsed.push(JSON.parse(fixed));
+          repaired++;
+        } catch {
+          // Can't fix — skip this line
+        }
+      }
+    }
+    if (repaired > 0) {
+      // Write back repaired version
+      const body = parsed.map(r => JSON.stringify(r)).join('\n') + '\n';
+      await fs.writeFile(filePath, body, 'utf8');
+      console.error(`[checkpoint] repaired ${repaired}/${lines.length} lines in ${path.basename(filePath)}`);
+    }
+    return parsed;
   } catch (err) {
     if (err.code === 'ENOENT') return [];
     throw err;

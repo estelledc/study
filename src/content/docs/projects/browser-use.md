@@ -339,5 +339,6 @@ Cloud 侧另有 profile（持久登录）、代理、stealth、MCP Server（给 
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[stagehand]] —— stagehand — Playwright 加 LLM 的混血框架
 - [[steel-browser]] —— Steel Browser — 把 Chromium 包成 LLM agent 用的远端服务
+- [[ui-tars]] —— UI-TARS — 原生 GUI Agent 视觉语言模型
 - [[vercel-ai]] —— Vercel AI SDK — 多 LLM Provider 统一 SDK
 

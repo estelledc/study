@@ -186,6 +186,7 @@ identify -verbose input.png | grep -E "Type|Colorspace|Geometry"
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[gimp]] —— GIMP — GNU 图像处理程序
 - [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
 - [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
 - [[vips]] —— libvips — 流式低内存图像库

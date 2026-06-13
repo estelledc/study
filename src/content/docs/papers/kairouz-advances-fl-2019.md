@@ -171,7 +171,7 @@ def dp_clip_and_noise(gradient, clip_norm=1.0, noise_multiplier=1.0):
 
 - [[abadi-dpsgd-2016]] —— DP-SGD — 深度学习差分隐私训练
 - [[bonawitz-fl-system-2019]] —— Bonawitz FL System 2019 — Google 工业级联邦学习系统设计
-- [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
+- [[byzantine-generals-1982]] —— 拜占庭分布式快照（2026）— 给会作恶的分布式系统拍"全家福"
 - [[dwork-calibrating-noise-2006]] —— 校准噪声与敏感度 — Laplace 机制奠基
 - [[erlingsson-rappor-2014]] —— RAPPOR — 本地差分隐私随机响应采集
 - [[mcmahan-fedavg-2017]] —— FedAvg — 联邦学习奠基算法

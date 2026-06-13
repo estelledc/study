@@ -3,7 +3,7 @@ title: "OpenClaw 学习笔记 — 你的私人 AI 助手"
 来源: "https://github.com/openclaw/openclaw"
 日期: "2026-06-13"
 分类: 机器学习
-子分类: ai-infra
+子分类: 数据科学与 AI
 provenance: "pipeline-v3"
 ---
 

@@ -157,6 +157,7 @@ public class OrderConsumer {
 - [[dropwizard]] —— Dropwizard — Java 微服务的"开箱即用 12-factor 起步包"
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[gin]] —— Gin — Go 写 web API 的事实标准框架
+- [[graalvm]] —— GraalVM — 多语言通用 VM
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[helidon]] —— Helidon — 让 Java 微服务用同步代码写出反应式性能
 - [[kubernetes]] —— Kubernetes — 容器编排平台

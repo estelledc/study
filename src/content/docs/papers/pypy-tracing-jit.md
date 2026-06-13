@@ -150,6 +150,7 @@ PyPy 项目里至少有这些 RPython 解释器：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[e-path-equality-saturation-for-control-flow-graphs-arxiv-2605-28694]] —— E-Path Equality Saturation for Control-Flow Graphs — 把"改写程序"变成"同时保留所有可能"
 - [[graalvm-truffle]] —— GraalVM Truffle — 写一棵会自我特化的语法树就能自动得到 JIT
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hotspot-server-compiler]] —— HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码

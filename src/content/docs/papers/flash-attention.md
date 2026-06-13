@@ -174,11 +174,14 @@ with sdpa_kernel(SDPBackend.MATH):
 - [[longformer-2020]] —— Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[medusa-2024]] —— Medusa — 让大模型自己同时猜好几个 token
+- [[mooncake-kvcache-2024]] —— Mooncake — 以 KVCache 为中心的分离式 LLM 服务架构（零基础学习笔记）
 - [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
 - [[performer-2020]] —— Performer — 用随机特征把 softmax attention 拉成线性复杂度
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
+- [[rtp-llm-alibaba]] —— RTP-LLM — 阿里巴巴工业级高性能 LLM 推理引擎（零基础笔记）
 - [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
+- [[sarathi-serve-2024]] —— Sarathi-Serve — 驯服 LLM 推理中的吞吐与延迟权衡
 - [[sglang-radixattention]] —— SGLang — 结构化语言模型程序的高效执行（RadixAttention 零基础笔记）
 - [[sparsegpt-2023]] —— SparseGPT — 175B 大模型一次过剪 50%，不重训
 - [[specinfer-2023]] —— SpecInfer — 让大模型一次"猜一棵树"再并行验证

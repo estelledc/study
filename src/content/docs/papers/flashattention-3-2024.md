@@ -2,7 +2,7 @@
 title: FlashAttention-3 — Hopper 上的异步 Attention 与 FP8 低精度
 来源: https://arxiv.org/abs/2407.08608
 日期: 2026-06-13
-子分类: ml
+子分类: ML 系统
 分类: 机器学习
 provenance: pipeline-v3
 ---

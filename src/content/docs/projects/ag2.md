@@ -3,7 +3,7 @@ title: AG2 — AutoGen 社区演进
 来源: https://github.com/ag2ai/ag2
 日期: 2026-06-13
 分类: 机器学习
-子分类: ai-infra
+子分类: ai-agent-infra
 难度: 中级
 provenance: pipeline-v3
 ---

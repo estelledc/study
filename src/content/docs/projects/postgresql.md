@@ -140,7 +140,9 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arangodb]] —— ArangoDB — 文档+图+KV 三合一的多模型数据库
+- [[authentik]] —— Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢
 - [[berenson-1995-isolation]] —— Berenson 1995 — ANSI SQL 隔离级别的漏洞与快照隔离
+- [[bitwarden-server]] —— Bitwarden Server — 密码管理器后端
 - [[cassandra]] —— Apache Cassandra — 分布式宽列数据库
 - [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
@@ -169,6 +171,7 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[io-uring-axboe-2019]] —— Efficient IO with io_uring — Linux 异步 IO 的环形队列革命
 - [[kysely]] —— Kysely — TypeScript SQL 查询构建器
 - [[label-studio]] —— Label Studio — 文本图像音视频时序通吃的标注王者
 - [[langchain]] —— LangChain — LLM 应用开发框架
@@ -184,6 +187,7 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 - [[nanomq]] —— NanoMQ — 面向 IoT 边缘的超轻量 MQTT Broker
 - [[nebula]] —— NebulaGraph — 国产分布式图数据库
 - [[neo4j]] —— Neo4j — 主流图数据库
+- [[paperless-ngx]] —— Paperless-ngx — 自托管无纸化文档管理系统
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端
@@ -206,6 +210,7 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展
 - [[typesense]] —— Typesense — 高性能搜索引擎
 - [[unstorage]] —— unstorage — 让 KV 存储不绑死运行时的统一抽象层
+- [[vapor]] —— Vapor — 用 Swift 写后端 API 的 Web 框架
 - [[weaviate]] —— Weaviate — 模块化向量数据库
 - [[yugabyte-db]] —— YugabyteDB — 复用 Postgres 源码的分布式 SQL
 - [[zulip]] —— Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）

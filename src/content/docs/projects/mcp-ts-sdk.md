@@ -172,6 +172,9 @@ npm install -g @modelcontextprotocol/server-postgres
 - [[browser-use]] —— browser-use — 用自然语言让 AI Agent 操控浏览器
 - [[claude-agent-sdk]] —— Claude Agent SDK — 把 Claude Code 装进 npm 包
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
+- [[codegraph-claude-code]] —— CodeGraph — 面向 AI 编程代理的预索引代码知识图谱
 - [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
+- [[nango]] —— Nango — 产品集成的托管 OAuth 与函数运行时
+- [[opik]] —— Opik — 追踪、评估、提示词与 Agent 守护的 LLMOps 框架
 - [[zod]] —— Zod — TypeScript-first schema 验证
 

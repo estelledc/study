@@ -148,6 +148,7 @@ python inference.py \
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agi-survey]] —— Large language models for artificial general intelligence (AGI): A survey
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[llava]] —— LLaVA — 开源多模态对话模型
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架

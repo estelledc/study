@@ -153,5 +153,6 @@ PRAGMA journal_mode=WAL;
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 - [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
+- [[sqlite-vec-asg017]] —— sqlite-vec — 在 SQLite 里做向量相似度搜索
 - [[unqlite]] —— UnQLite — 嵌入式 NoSQL 数据库
 

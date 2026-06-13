@@ -156,4 +156,5 @@ table.search(query_vec) \
 - [[lance]] —— Lance — AI 数据列存格式
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[pgvector]] —— pgvector — PostgreSQL 向量扩展
+- [[supermemory]] —— Supermemory — AI 的记忆层
 

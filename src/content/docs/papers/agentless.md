@@ -157,6 +157,7 @@ Agentless 的处理流程：
 - [[copilot-rct]] —— Copilot RCT — AI 编程助手的第一个严格随机对照实验
 - [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
+- [[pi-subagents]] —— pi-subagents — 给 Pi 装一个"派活"插件
 - [[react]] —— React UI 组件库
 - [[self-evolving-agents-survey]] —— 自进化 AI agent 综述 — 给"会自己升级"的 agent 画一张统一地图
 - [[swe-agent]] —— SWE-Agent — Princeton SWE-bench 解法

@@ -157,6 +157,7 @@ callbacks: {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[appwrite]] —— Appwrite — 自己能装一遍的开源 Firebase
+- [[authentik]] —— Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢
 - [[better-auth]] —— better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM

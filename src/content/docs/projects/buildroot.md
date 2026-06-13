@@ -185,12 +185,13 @@ make BR2_EXTERNAL=/path/to/my-product-layer
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ansible]] —— Ansible — 无 agent 配置管理
 - [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
+- [[freecad]] —— FreeCAD — 参数化 CAD
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[mender]] —— Mender — 嵌入式 Linux 的 OTA 空中升级管家
 - [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[nuttx]] —— Apache NuttX — POSIX 接近完整的小型实时操作系统
+- [[openscad]] —— OpenSCAD — 脚本式 CAD
 - [[openwrt]] —— OpenWrt — 路由器 / 网关上的可扩展 Linux 发行版
 - [[platformio-core]] —— PlatformIO Core — 一套命令行，统管千块嵌入式开发板
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式烧录与调试工具

@@ -274,3 +274,11 @@ wasmer run python/python@3.12 -- -c "import json; print(json.dumps({'ok': True})
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[graalvm]] —— GraalVM — 多语言通用 VM
+- [[rustpython]] —— RustPython — Rust 写的 Python 解释器
+- [[wamr]] —— WAMR — wasm 微运行时（嵌入式）
+- [[wasmedge]] —— WasmEdge — 云原生 wasm 运行时
+- [[wasmtime]] —— Wasmtime — Bytecode Alliance 标准 wasm runtime
+- [[wazero]] —— wazero — 纯 Go 实现的 WebAssembly 运行时
+

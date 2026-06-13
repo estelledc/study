@@ -162,5 +162,6 @@ handle.change(d => d.todos.push('first'))   // 自动落盘 + 自动同步
 - [[partykit]] —— PartyKit — Cloudflare Durable Objects 上的实时协作 framework
 - [[pouchdb]] —— PouchDB — 浏览器里的 CouchDB
 - [[sharedb]] —— ShareDB — 基于 OT 的实时数据库
+- [[swift-collections]] —— swift-collections — Apple 官方 Swift 数据结构补充包
 - [[yjs]] —— Yjs — 让任何编辑器都能接的协同编辑内核
 

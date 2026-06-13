@@ -10,6 +10,8 @@ import { read as readCheckpoint } from './checkpoint.mjs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
+const LOCK = path.join(ROOT, 'data/round-lock.json');
+const STALE_MS = 90 * 60 * 1000; // 90 min stale threshold
 
 const TARGET = 20000;
 
@@ -17,7 +19,43 @@ async function fileExists(p) {
   try { await fs.access(p); return true; } catch { return false; }
 }
 
+async function checkAndReleaseStaleLock() {
+  try {
+    const raw = await fs.readFile(LOCK, 'utf8');
+    const lock = JSON.parse(raw);
+    const age = Date.now() - new Date(lock.started_at).getTime();
+    if (age >= STALE_MS) {
+      // Stale lock detected — auto-release
+      await fs.unlink(LOCK);
+      return { stale_lock_released: true, stale_round: lock.active_round, stale_age_min: Math.round(age / 60000) };
+    }
+    return { locked: true, active_round: lock.active_round, age_min: Math.round(age / 60000) };
+  } catch (err) {
+    if (err.code === 'ENOENT') return { locked: false };
+    // corrupted lock file — remove it
+    try { await fs.unlink(LOCK); } catch {}
+    return { locked: false, corrupted_lock_cleaned: true };
+  }
+}
+
 async function main() {
+  // 0. Stale lock auto-cleanup (must run before all other checks)
+  const lockState = await checkAndReleaseStaleLock();
+  if (lockState.stale_lock_released) {
+    // Log to stderr for observability
+    console.error(`[exit-conditions] auto-released stale round ${lockState.stale_round} lock (${lockState.stale_age_min} min old)`);
+  }
+  if (lockState.locked && !lockState.stale_lock_released) {
+    // Active lock — another round is running, should not start new one
+    console.log(JSON.stringify({
+      should_exit: true,
+      reason: 'active-lock',
+      active_round: lockState.active_round,
+      lock_age_min: lockState.age_min,
+    }));
+    return;
+  }
+
   const cp = await readCheckpoint();
 
   // 1. target reached
@@ -73,6 +111,7 @@ async function main() {
     rewrite_pool: cp.rewrite_pool_available || 0,
     build_streak: cp.build_streak,
     next_round: (cp.round_n || 0) + 1,
+    stale_lock_released: lockState.stale_lock_released || false,
   }));
 }
 

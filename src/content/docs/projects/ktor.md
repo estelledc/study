@@ -172,6 +172,7 @@ val users: List<User> = client.get("https://api.example.com/users").body()
 - [[hanami]] —— Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择
 - [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
+- [[retrofit]] —— Retrofit — 把 HTTP API 变成 Java/Kotlin 接口的类型安全客户端
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言

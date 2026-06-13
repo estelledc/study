@@ -203,10 +203,11 @@ end
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[debevec-1998-rendering-with-natural-light]] —— Debevec 1998 — 用真实世界的光照亮 CG 物体
+- [[aseprite]] —— Aseprite — 像素艺术 / 动画编辑器
 - [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
 - [[heaps]] —— Heaps — 用 Haxe 一次编写、发布到任何平台的游戏引擎
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
 - [[phaser]] —— Phaser — 在浏览器里写 2D 游戏的完整工具箱
+- [[piskel]] —— Piskel — Web 像素艺术编辑器
 - [[raylib]] —— raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
 

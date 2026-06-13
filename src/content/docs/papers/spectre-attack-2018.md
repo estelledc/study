@@ -289,5 +289,6 @@ if (x < array1_size) {
 - [[moesi-cache-coherence-1986]] —— Sweazey-Smith MOESI 1986 — 给多核 CPU 一份"谁手里有这块内存"的统一规则
 - [[rowhammer-2014]] —— Row Hammer — 不碰邻居也能把邻居的位翻过来
 - [[sgx-2013]] —— Innovative Instructions and Software Model for Isolated Execution
+- [[trustzone-arm-2009]] —— ARM TrustZone Technology Overview — 一颗 CPU 上的双世界安全隔离
 - [[xen-2003]] —— Xen 2003 — 让操作系统配合虚拟化，性能直接接近原生
 

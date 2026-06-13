@@ -160,6 +160,5 @@ inngest.createFunction(
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[temporal]] —— Temporal — 持久化工作流引擎
 

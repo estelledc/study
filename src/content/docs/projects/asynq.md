@@ -156,6 +156,5 @@ worker 每轮按权重随机挑队列拉任务，**不是严格优先级**而是
 - [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[pg-boss-readme]] —— pg-boss — 只用 Postgres 就能跑的任务队列
-- [[redis]] —— Redis — 内存键值数据库
 - [[temporal]] —— Temporal — 持久化工作流引擎
 

@@ -164,6 +164,5 @@ Matrix 的杀手锏是 **bridge**——通过中间程序把 IRC/XMPP/Slack/Disc
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket-chat]] —— Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天
 

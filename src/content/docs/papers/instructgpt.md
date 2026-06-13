@@ -150,6 +150,7 @@ Assistant: 秋叶飘零落，金风送暮凉。
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
+- [[n-grpo]] —— N-GRPO — 嵌入层邻居混合增强的策略优化
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
 

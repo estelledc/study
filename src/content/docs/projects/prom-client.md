@@ -166,5 +166,4 @@ if (cluster.isPrimary) {
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[pino]] —— pino — 日志不该阻塞热路径
-- [[redis]] —— Redis — 内存键值数据库
 

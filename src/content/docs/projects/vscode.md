@@ -165,8 +165,10 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[geany]] —— Geany — GTK 轻量 IDE
 - [[gitpod]] —— Gitpod — 预构建云开发环境
+- [[hyprland]] —— Hyprland — Wayland 上的动态平铺合成器
 - [[lite-xl]] —— Lite XL — 用 Lua 驱动一切的极简文本编辑器
 - [[monaco-editor]] —— monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
+- [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
 - [[notepad-plus-plus]] —— Notepad++ — Windows 国民文本编辑器
 - [[opencode]] —— OpenCode — SST 出品的终端 AI IDE
 - [[openvscode-server]] —— OpenVSCode Server — VS Code Server 上游

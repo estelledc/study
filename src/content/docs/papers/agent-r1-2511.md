@@ -146,8 +146,10 @@ class CodeEnv(BaseEnv):
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
 - [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
 - [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
+- [[eureka-agent]] —— EurekAgent — 环境工程才是自主科学发现的胜负手
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
 - [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷
+- [[glm-5-agentic-engineering]] —— GLM-5: From Vibe Coding to Agentic Engineering
 - [[memcoder-co-evolution]] —— MemCoder — code agent 跟着你 git commit 一起成长
 - [[misevolution-2509]] —— Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片

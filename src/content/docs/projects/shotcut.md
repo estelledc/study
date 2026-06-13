@@ -147,6 +147,7 @@ File → Export → MLT XML，对照 [[mlt]] `melt` 命令理解转场语法。
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
 - [[gstreamer]] —— GStreamer — 流水线式多媒体框架
 - [[handbrake]] —— HandBrake — FFmpeg 上的 GUI 转码器
+- [[kdenlive]] —— Kdenlive — KDE 非线性视频剪辑
 - [[lmms-eval]] —— LMMs-Eval — 多模态大模型统一评测框架
 - [[mlt]] —— MLT — 多媒体编辑框架
 - [[obs-studio]] —— OBS Studio — 开源直播录制与推流

@@ -152,7 +152,6 @@ docker run -d -p 27017:27017 -v mongo_data:/data/db --name mongo mongodb/mongodb
 - [[milvus]] —— Milvus — 开源向量数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[prometheus]] —— Prometheus — 时序监控系统
-- [[redis]] —— Redis — 内存键值数据库
 - [[rethinkdb]] —— RethinkDB — 让数据库自己把更新推给客户端的先驱
 - [[sled]] —— sled — Rust 现代 BTree + LSM 混合嵌入式 KV
 - [[timescaledb]] —— TimescaleDB — PostgreSQL 时序扩展

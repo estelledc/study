@@ -186,7 +186,6 @@ def me(user: dict = Depends(current_user)):
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[effect]] —— Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎
 - [[errbot]] —— Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人
-- [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[faster-whisper]] —— faster-whisper — Whisper 的 4× 加速重写版
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
@@ -217,7 +216,6 @@ def me(user: dict = Depends(current_user)):
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
 - [[rasa]] —— Rasa — 自己造一个能记住上下文的对话机器人
 - [[redash]] —— Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
@@ -232,5 +230,6 @@ def me(user: dict = Depends(current_user)):
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
 - [[triton-inference-server]] —— Triton Inference Server — NVIDIA 多框架推理服务化标杆
 - [[trpc]] —— tRPC — TS 端到端类型安全 RPC
+- [[vapor]] —— Vapor — 用 Swift 写后端 API 的 Web 框架
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 

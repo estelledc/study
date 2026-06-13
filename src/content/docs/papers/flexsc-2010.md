@@ -156,4 +156,5 @@ FlexSC 把这一整列成本压到接近 0——因为**根本不切模式**。
 
 - [[barrelfish-2009]] —— Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS
 - [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
+- [[io-uring-axboe-2019]] —— Efficient IO with io_uring — Linux 异步 IO 的环形队列革命
 

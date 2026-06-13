@@ -2,7 +2,7 @@
 title: Kubernetes — 容器编排平台
 来源: https://github.com/kubernetes/kubernetes
 日期: 2026-05-29
-子分类: cloud-native
+子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
 schema_version: legacy-long
@@ -138,13 +138,17 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ai-dynamo]] —— ai-dynamo / Dynamo — 数据中心级分布式 LLM 推理编排
 - [[ansible]] —— Ansible — 无 agent 配置管理
 - [[apollo-2014]] —— Apollo — 让两万台机器自己决定谁跑哪个任务
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
+- [[authentik]] —— Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
+- [[backstage-spotify-2020]] —— Backstage — Spotify 的内部开发者门户如何变成开源的「开发工具前台」
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
 - [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
+- [[chaos-engineering-netflix-2016]] —— Chaos Engineering — Netflix 如何把「故意搞破坏」变成可靠性学科
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
 - [[coder]] —— Coder — 自托管开发环境平台
@@ -158,6 +162,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[etcd]] —— etcd — 分布式键值数据库
 - [[fluent-bit]] —— Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选
 - [[flux]] —— Flux — 让 Git 当 Kubernetes 集群的真理来源
+- [[gitleaks]] —— Gitleaks — Git 仓库密钥泄露扫描
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
 - [[helm]] —— Helm — Kubernetes 包管理器
 - [[istio]] —— Istio — 给微服务装一层透明的网络治理面
@@ -198,6 +203,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[sops]] —— SOPS — 让密码也能放心进 Git
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[stern]] —— stern — 多 pod 多 container 日志聚合 tail
+- [[technitium-dns-server]] —— Technitium DNS Server — 自托管权威/递归 DNS 与网络过滤
 - [[tekton]] —— Tekton — 把 CI/CD 流水线当成 K8s 资源来声明
 - [[terraform]] —— Terraform — 基础设施即代码
 - [[traefik]] —— Traefik — 现代云原生反向代理

@@ -208,9 +208,5 @@ Warp 的技术架构有几个值得注意的点：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[kitty]] —— kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里
-- [[wezterm]] —— wezterm — 用 Rust 和 Lua 写的跨平台 GPU 终端
-- [[nushell]] —— nushell — 让命令之间传 Excel 表而不是传纸条
-- [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell
-- [[tmux]] —— tmux — 终端复用神器，窗口/面板/会话管理
-- [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
+（暂无反向链接）
+

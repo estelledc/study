@@ -175,6 +175,7 @@ await authClient.organization.inviteMember({ email: "a@b.com", role: "admin" });
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
+- [[authentik]] —— Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢
 - [[clerk]] —— Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK
 - [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
 - [[hono]] —— Hono — 多运行时 Web 框架

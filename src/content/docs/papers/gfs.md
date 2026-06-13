@@ -167,7 +167,6 @@ def upload(key, data):
 - [[kafka-2011]] —— Kafka NetDB 2011 — 把消息中间件砍成"会写文件的水管"
 - [[mapreduce]] —— MapReduce — 用户只写两个函数，框架替你扛千节点
 - [[pagerank-1998]] —— PageRank — 用随机游走给整个网络的页面打分
-- [[paxos]] —— Paxos — 分布式共识算法
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[snowflake-2016]] —— Snowflake 2016 — 把数仓拆成 storage / compute / services 三层
 - [[soft-updates-1999]] —— Soft Updates — 不写 journal 也能保证文件系统元数据一致
@@ -176,4 +175,5 @@ def upload(key, data):
 - [[tigerbeetle]] —— TigerBeetle — 只能记账但把记账做到极致的金融数据库
 - [[zab-2011]] —— Zab — ZooKeeper 怎么把客户端写入按顺序复制到所有副本
 - [[zfs-2003]] —— ZFS — 把磁盘当成水池，每滴水都贴标签
+- [[zfs-bonwick-2003]] —— ZFS — 不信任硬盘的「水池式」文件系统
 

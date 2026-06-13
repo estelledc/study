@@ -168,6 +168,5 @@ FOR friend IN 1..2 OUTBOUND @userId friendOf
 - [[neo4j]] —— Neo4j — 主流图数据库
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[raft]] —— Raft — 易理解的共识算法
-- [[redis]] —— Redis — 内存键值数据库
 - [[surrealdb]] —— SurrealDB — 一种语法吃下 SQL 图 文档 向量
 

@@ -172,7 +172,6 @@ r.POST("/users", func(c *gin.Context) {
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[prometheus]] —— Prometheus — 时序监控系统
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
-- [[redis]] —— Redis — 内存键值数据库
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
 - [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来

@@ -3,7 +3,7 @@ title: Crossplane 学习笔记
 来源: https://github.com/crossplane/crossplane
 日期: 2026-06-13
 分类: 基础设施
-子分类: cloud-native
+子分类: DevOps 与运维
 provenance: pipeline-v3
 ---
 

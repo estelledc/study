@@ -169,6 +169,7 @@ JikesRVM（一个研究用的 JVM）在 2008 年实测：
 - [[generational-gc]] —— Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[jemalloc-2006]] —— jemalloc — 多 arena 让多线程 malloc 不再互相等
+- [[jemalloc-evans-2006]] —— jemalloc（Evans 2006）— 多 arena 让多线程 malloc 不再抢同一把锁
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[partial-evaluation-jones]] —— Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成
 - [[shenango-2019]] —— Shenango — 每 5 微秒重新分一次核的中央调度器

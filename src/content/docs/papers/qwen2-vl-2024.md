@@ -167,7 +167,6 @@ def get_position_ids(input_type, seq_len, frame_ids=None, row_ids=None, col_ids=
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[countervqa-2025]] —— CounterVQA — 因果图驱动的反事实视频 VQA
 - [[cover-2025]] —— COVER — 四象限反事实视频推理 benchmark
-- [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
 - [[dense360-2025]] —— Dense360 — 全景 ERP 密集理解与 ERP-RoPE
 - [[egoschema-2023]] —— EgoSchema — 三分钟第一视角长视频理解的诊断探针
 - [[flash-vstream-2024]] —— Flash-VStream — STAR 双进程记忆的低延迟长流理解

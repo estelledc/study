@@ -2,7 +2,7 @@
 title: Argo CD — Kubernetes GitOps 工具
 来源: https://github.com/argoproj/argo-cd
 日期: 2026-05-29
-子分类: cloud-native
+子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
@@ -166,6 +166,7 @@ root-app.yaml  # source 指向 infra-apps/
 - [[actions-runner-controller]] —— Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑
 - [[argo-workflows]] —— Argo Workflows — Kubernetes 原生工作流引擎
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
+- [[backstage-spotify-2020]] —— Backstage — Spotify 的内部开发者门户如何变成开源的「开发工具前台」
 - [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
 - [[chaos-mesh]] —— Chaos Mesh — K8s 原生混沌工程平台
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码

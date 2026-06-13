@@ -347,4 +347,5 @@ print(f"有效秩（Lambda > 0.1 的数量）: {effective_rank} / {layer.max_ran
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- （暂无）
+（暂无反向链接）
+

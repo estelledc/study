@@ -149,6 +149,7 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[hawkeye-2024]] —— HawkEye — 用递归缩窗把文本查询钉在长视频时间轴上
 - [[imagen-2022]] —— Imagen — 文生图真正的引擎是语言模型
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[improving-embeddings-llm]] —— 用 LLM 生成合成数据来训练文本向量
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvl-2023]] —— InternVL — 6B 视觉基座 + QLLaMA 对齐开源多模态
 - [[llama-vid-2023]] —— LLaMA-VID — 每帧两枚 token，把小时级视频塞进 LLM

@@ -159,6 +159,7 @@ class WordCounter:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[domain-expertise-real-moat]] —— Domain expertise has always been the real moat
 - [[haystack-2010]] —— Haystack — Facebook 十亿张照片怎么存
 - [[llama-index]] —— LlamaIndex — LLM 数据框架与 RAG 四件套
 - [[milvus-2021]] —— Milvus — 为向量检索而生的数据库

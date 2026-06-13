@@ -2,8 +2,9 @@
 title: Prefect — Python 原生编排，让数据流水线像写普通函数一样自然
 来源: Prefect Documentation, https://docs.prefect.io/v3/
 日期: 2026-05-31
-子分类: DevOps 与运维
-分类: 基础设施
+分类_原始: 基础设施
+子分类: 数据科学与 AI
+分类: 机器学习
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -177,4 +178,5 @@ def realtime_fix(): upsert_user(...)
 - [[celery]] —— Celery — Python 把慢任务搬到后台干的工头
 - [[dagster]] —— Dagster — 把流水线想成数据资产图，不是任务序列
 - [[kedro]] —— Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline
+- [[windmill-platform]] —— Windmill — 把脚本变成 API、工作流和 UI 的开发平台
 

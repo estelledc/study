@@ -155,6 +155,7 @@ CQE 带 `IORING_CQE_F_MORE` 标记表示"还会有更多 CQE 来"。比 epoll + 
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑
 - [[ffs-1984]] —— FFS — 把磁盘几何写进文件系统
 - [[flexsc-2010]] —— FlexSC — 把系统调用从同步陷入改成异步队列
+- [[io-uring-axboe-2019]] —— Efficient IO with io_uring — Linux 异步 IO 的环形队列革命
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[nvme-protocol-2017]] —— NVMe — 为 SSD 重写的存储协议
 - [[postgres-js]] —— postgres.js — 写 SQL 但语法层就防注入的 Node 客户端

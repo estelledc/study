@@ -155,5 +155,6 @@ CQL Breakout 得分: 49.0
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
+- [[rt-1-2022]] —— RT-1 — 把机器人控制做成「看图听话」的 Transformer
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
 

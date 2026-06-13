@@ -166,6 +166,7 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[aes-gcm-2003]] —— AES-GCM — 一次加密，同时保证机密性与完整性
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[chaum-1981-mix]] —— Chaum Mix Network — 把匿名通信从理论变成工程
 - [[costan-sgx-explained-2016]] —— Intel SGX 详解 — 在不可信云里圈一块硬件保险箱
@@ -173,6 +174,7 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
 - [[ducas-dilithium-2018]] —— CRYSTALS-Dilithium — 量子计算机来了也签不掉的数字签名
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
+- [[ed25519-2011]] —— Ed25519 (2011) — 高速高安全的椭圆曲线数字签名
 - [[freedman-psi-2004]] —— Freedman-Nissim-Pinkas PSI 2004 — 两个人怎么找共同好友而不暴露各自通讯录
 - [[gmw-mental-game-1987]] —— GMW 1987 — 任何函数都能让多方安全地一起算
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的 TLS 1.3 / X.509 / 加密原语库

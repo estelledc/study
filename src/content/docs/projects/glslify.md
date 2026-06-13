@@ -297,5 +297,9 @@ regl.frame(() => draw())
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
+- [[luma-gl]] —— luma.gl — vis.gl WebGL2/WebGPU 抽象
+- [[regl]] —— regl — 函数式 WebGL 封装
+- [[webpack]] —— webpack 模块打包
 

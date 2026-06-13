@@ -339,5 +339,12 @@ connection.listen();
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
+- [[kakoune-vim-philosophy]] —— Kakoune — 面向对象的模态编辑器：先圈地，再动刀
+- [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
+- [[monaco-editor-2016]] —— Monaco Editor: VS Code's Editor as a Library — 把桌面 IDE 编辑器搬进网页
+- [[salsa-incremental-2019]] —— Salsa — 增量计算框架（零基础：把程序写成可缓存的查询图）
+- [[salsa-incremental-rust-analyzer]] —— Salsa — 按需增量计算框架（rust-analyzer 的「只重算变了的那块」引擎）
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[zed-editor-collaborative]] —— Zed: A High-Performance Multiplayer Code Editor in Rust — 把协同编辑写进编辑器 DNA 的 Rust 原生 IDE
 

@@ -172,16 +172,21 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 
 - [[actions-runner-controller]] —— Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑
 - [[arduino-cli]] —— Arduino CLI — 命令行驱动嵌入式全流程工具链
+- [[buildroot]] —— Buildroot — 用 Make 给嵌入式板子烤一张完整 Linux 镜像
 - [[cert-manager]] —— cert-manager — K8s 自动签发与续期 TLS 证书
 - [[expo]] —— Expo — RN 的"开箱即用"工具链 + 云构建 + OTA 更新
 - [[github-actions]] —— GitHub Actions — 仓库自带的 CI/CD 流水线
+- [[gitleaks]] —— Gitleaks — Git 仓库密钥泄露扫描
 - [[homebrew]] —— Homebrew — macOS 上一行命令装好软件的包管理器
+- [[hyprland]] —— Hyprland — Wayland 上的动态平铺合成器
 - [[jenkins]] —— Jenkins — 老牌开源 CI 服务器
 - [[kubebuilder]] —— Kubebuilder — 写 K8s Operator 的官方脚手架
 - [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[maigret]] —— Maigret — 仅凭用户名跨站 OSINT 画像收集
 - [[mender]] —— Mender — 嵌入式 Linux 的 OTA 空中升级管家
 - [[minikube]] —— minikube — 一条命令在笔记本上起一个真 K8s 集群
 - [[nginx]] —— nginx — 高性能 Web 服务器
+- [[openrsync]] —— Openrsync — OpenBSD 团队的 rsync 实现
 - [[opentofu]] —— OpenTofu — 社区接手的 Terraform
 - [[operator-sdk]] —— Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架
 - [[otel-collector]] —— OpenTelemetry Collector — 可观测性数据的统一中转站

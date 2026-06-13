@@ -178,6 +178,7 @@ A 改了 line（M），B 来读：
 - [[amdahl-law-1967]] —— Amdahl 定律 — 串行比例决定并行加速比的上界
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[gpu-cache-coherence-2013]] —— GPU 缓存一致性 — 用时戳代替失效消息
+- [[jemalloc-evans-2006]] —— jemalloc（Evans 2006）— 多 arena 让多线程 malloc 不再抢同一把锁
 - [[kocher-spectre-2019]] —— Spectre 攻击 — 推测执行偷看别人的内存
 - [[paxos-1998]] —— Paxos 1998 — 古希腊议会寓言里藏的共识协议
 - [[raft]] —— Raft — 易理解的共识算法

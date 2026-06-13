@@ -344,6 +344,15 @@ cmake --build build
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[appleseed]] —— appleseed — 物理渲染器
 - [[draco]] —— Draco — Google 3D 网格与点云压缩
+- [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
+- [[freecad]] —— FreeCAD — 参数化 CAD
 - [[gltf-transform]] —— glTF Transform — glTF 资产工具链
+- [[godot]] —— Godot Engine — 开源游戏引擎 + 编辑器
+- [[open3d]] —— Open3D — 现代点云与几何处理库
+- [[opencv]] —— OpenCV — 开源计算机视觉库与跨平台图像视频处理
+- [[pcl]] —— PCL — Point Cloud Library 点云处理经典库
+- [[playcanvas]] —— PlayCanvas — 浏览器里跑的 3D 游戏引擎
+- [[raylib]] —— raylib — 极简 C 游戏库，10 行代码跑起带窗口动画
 

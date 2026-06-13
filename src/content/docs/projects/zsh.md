@@ -2,8 +2,9 @@
 title: zsh — 比 bash 更聪明的兼容派 shell
 来源: https://github.com/zsh-users/zsh
 日期: 2026-05-31
-子分类: DevOps 与运维
-分类: 基础设施
+分类_原始: 基础设施
+子分类: 命令行工具
+分类: CLI
 难度: 入门
 provenance: pipeline-v3
 ---
@@ -175,4 +176,5 @@ path=(~/bin /usr/local/bin $path)
 - [[starship]] —— Starship — 一份配置点亮所有 shell 的 prompt
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
+- [[warp-terminal]] —— Warp Terminal — 用 Rust 重写的现代终端，AI 时代的开发环境
 

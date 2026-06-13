@@ -158,7 +158,6 @@ end
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[redis]] —— Redis — 内存键值数据库
 - [[supabase]] —— Supabase — Firebase 的开源替代
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
 - [[vue]] —— Vue.js — 渐进式 UI 框架

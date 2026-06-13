@@ -162,12 +162,14 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 - [[excalidraw]] —— Excalidraw — 手绘风协作白板
 - [[geany]] —— Geany — GTK 轻量 IDE
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[kakoune-vim-philosophy]] —— Kakoune — 面向对象的模态编辑器：先圈地，再动刀
 - [[lapce]] —— Lapce — 把编辑器搬到 GPU 上的 Rust 实验
 - [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[openvscode-server]] —— OpenVSCode Server — VS Code Server 上游
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
+- [[swiftui-introspect]] —— swiftui-introspect — 从 SwiftUI 视图「透视」到底层 UIKit / AppKit
 - [[textmate]] —— TextMate — macOS 经典编辑器，语法格式影响了所有人
 - [[theia]] —— Eclipse Theia — 云原生 IDE 框架基座
 - [[vim]] —— Vim — 模态编辑器之父

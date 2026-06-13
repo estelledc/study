@@ -159,7 +159,6 @@ const doc = group(concat([
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[mermaid]] —— Mermaid — 用文本写图，code review 友好的图表语言
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"
 - [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言

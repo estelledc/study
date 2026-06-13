@@ -172,6 +172,7 @@ location /static/ {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ansible]] —— Ansible — 无 agent 配置管理
+- [[authentik]] —— Authentik — 自托管开源 IdP，把 SSO/OAuth/SAML 做成可编排的登录中枢
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
 - [[code-server]] —— code-server — 在浏览器里跑完整 VS Code
@@ -180,6 +181,7 @@ location /static/ {
 - [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
 - [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
 - [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
+- [[ente]] —— Ente — 端到端加密云相册与零知识备份
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[ffmpeg]] —— FFmpeg — 多媒体转码与封装瑞士军刀
@@ -200,14 +202,15 @@ location /static/ {
 - [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
 - [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
 - [[prometheus]] —— Prometheus — 时序监控系统
-- [[redis]] —— Redis — 内存键值数据库
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
 - [[streamlink]] —— Streamlink — 把网页直播流接到本地播放器
 - [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
+- [[technitium-dns-server]] —— Technitium DNS Server — 自托管权威/递归 DNS 与网络过滤
 - [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
 - [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 - [[video.js]] —— Video.js — Web 视频播放器框架
+- [[workbox]] —— Workbox — 给 Service Worker 装上「离线后勤系统」
 - [[yt-dlp]] —— yt-dlp — youtube-dl 活跃分支与万能站点视频下载器
 

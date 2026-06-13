@@ -151,10 +151,13 @@ npm run docusaurus docs:version 1.0
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astro]] —— Astro — 内容站点优先的 Web 框架
+- [[gimp]] —— GIMP — GNU 图像处理程序
 - [[inkscape]] —— Inkscape — 矢量图形编辑器
+- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
 - [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
 - [[next-js]] —— Next.js — React 全栈框架
 - [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
+- [[pandoc-templates]] —— Pandoc Templates — 给 Markdown 套上「出版级外壳」的模具
 - [[react]] —— React UI 组件库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[starlight]] —— Starlight — Astro 文档站点主题

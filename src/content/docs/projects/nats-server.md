@@ -154,5 +154,4 @@ nats consumer add ORDERS shipper --filter "orders.ship" --ack explicit
 - [[lmdb]] —— LMDB — 闪电内存映射嵌入式 KV 库
 - [[pulsar]] —— Apache Pulsar — 云原生消息队列
 - [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
-- [[redis]] —— Redis — 内存键值数据库
 

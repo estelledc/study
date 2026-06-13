@@ -155,6 +155,7 @@ OPT-66B 模型：
 - [[attention]] —— Attention Is All You Need
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[lampson-hints]] —— Lampson Hints — 把做系统的隐式品味写成 27 条经验法则
+- [[mooncake-kvcache-2024]] —— Mooncake — 以 KVCache 为中心的分离式 LLM 服务架构（零基础学习笔记）
 - [[vllm]] —— vLLM — 高吞吐 LLM 推理引擎
 - [[volcano-1994]] —— Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流
 

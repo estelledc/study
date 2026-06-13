@@ -159,6 +159,7 @@ export default defineConfig({
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[electron]] —— Electron — Chromium + Node.js 跨平台桌面应用框架
 - [[electron-builder]] —— electron-builder — 一条命令把 Electron 应用打包发布到全平台
+- [[electron-forge]] —— Electron Forge — 官方一体化桌面应用构建流水线
 - [[esbuild]] —— esbuild — 用 Go 写的极速 JS bundler
 - [[hardhat]] —— Hardhat — Nomic Foundation 的 JS 合约框架
 - [[ionic-framework]] —— Ionic Framework — 用 Web 技术打包原生移动 App
@@ -192,4 +193,5 @@ export default defineConfig({
 - [[wails]] —— Wails — 用 Go 写后端、Web 写 UI 的跨平台桌面框架
 - [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
 - [[webpack]] —— webpack 模块打包
+- [[workbox]] —— Workbox — 给 Service Worker 装上「离线后勤系统」
 

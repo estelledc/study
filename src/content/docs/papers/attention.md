@@ -139,6 +139,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[din-2018]] —— DIN — 让推荐模型按你看的广告决定该激活你哪段历史
 - [[distserve]] —— DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑
 - [[dit]] —— DiT — Diffusion Transformer
+- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dpo]] —— DPO — Direct Preference Optimization
 - [[dpr-2020]] —— DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代
 - [[dqn]] —— DQN — Deep Q-Network
@@ -177,6 +178,7 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[mamba]] —— Mamba — 选择性状态空间模型
 - [[maron-kuhns-1960]] —— Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
+- [[mini-max-sparse-attention]] —— MiniMax Sparse Attention — 用 Top-k 块选择把 1M 上下文塞进 GPU
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
 - [[mlir]] —— MLIR — 给编译器一套乐高，每层抽象都能搭自己的方言
 - [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
@@ -193,12 +195,12 @@ base 模型 8 个头独立学：头 1 学语法（主语↔谓语）、头 2 学
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[prototypical-networks-2017]] —— Prototypical Networks — 每类算个均值，比距离就够了
-- [[quic]] —— QUIC — 把可靠传输从内核搬到用户空间
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[reformer-2020]] —— Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)
 - [[resnet]] —— ResNet — 残差连接
 - [[rwkv-2023]] —— RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券
 - [[sarathi-serve]] —— Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复
+- [[sarathi-serve-2024]] —— Sarathi-Serve — 驯服 LLM 推理中的吞吐与延迟权衡
 - [[sasrec-2018]] —— SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐
 - [[scaling-laws]] —— Scaling Laws — 神经语言模型的缩放规律
 - [[seq2seq-2014]] —— Seq2Seq — 把翻译变成端到端神经网络

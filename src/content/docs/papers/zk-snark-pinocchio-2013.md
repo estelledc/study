@@ -314,5 +314,6 @@ int compute(int x, int y) {
 
 - [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[plookup-2020]] —— plookup — 简化的多项式查找表协议
 - [[zk-snark]] —— zk-SNARK 零知识证明
 

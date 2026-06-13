@@ -2,7 +2,7 @@
 title: Grafana — 监控可视化看板
 来源: https://github.com/grafana/grafana
 日期: 2026-05-29
-子分类: cloud-native
+子分类: DevOps 与运维
 分类: 基础设施
 难度: 中级
 provenance: pipeline-v3
@@ -132,6 +132,7 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
+- [[backstage-spotify-2020]] —— Backstage — Spotify 的内部开发者门户如何变成开源的「开发工具前台」
 - [[besu]] —— Hyperledger Besu — 用 Java 写的以太坊客户端
 - [[btop]] —— btop — bashtop 三代 C++ 版，五面板一屏的彩色资源监控器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来

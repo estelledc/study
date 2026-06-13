@@ -167,6 +167,7 @@ Groth 2016 把证明压到极致：
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — ε 与邻接数据集不可区分
 - [[gmw-mental-game-1987]] —— GMW 1987 — 任何函数都能让多方安全地一起算
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
+- [[plookup-2020]] —— plookup — 简化的多项式查找表协议
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[scroll]] —— Scroll — 字节码级 zkEVM
 - [[turing-1936]] —— Turing 1936 可计算性

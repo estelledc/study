@@ -150,6 +150,7 @@ R1 推理时输出长这样：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agi-survey]] —— Large language models for artificial general intelligence (AGI): A survey
 - [[alphago]] —— AlphaGo — 击败围棋世界冠军
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[cot]] —— Chain-of-Thought Prompting
@@ -157,6 +158,7 @@ R1 推理时输出长这样：
 - [[instructgpt]] —— InstructGPT — RLHF 让 LLM 听话
 - [[llama]] —— LLaMA — Meta 开源大语言模型
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
+- [[n-grpo]] —— N-GRPO — 嵌入层邻居混合增强的策略优化
 - [[ppo]] —— PPO — Proximal Policy Optimization
 - [[rlhf-christiano]] —— RLHF Christiano 2017 — 人类偏好做奖励
 - [[wide-deep-2016]] —— Wide & Deep — 让模型同时学会"记住"和"举一反三"

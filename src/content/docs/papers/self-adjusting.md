@@ -157,6 +157,7 @@ trait Compiler: salsa::Database {
 - [[peg-packrat-ford]] —— PEG / Packrat — 用'有序选择'+'记忆化'写线性时间解析器
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[salsa-adapton]] —— Salsa / Adapton — 让程序只重算"真的变了"的那一小块
+- [[salsa-incremental-rust-analyzer]] —— Salsa — 按需增量计算框架（rust-analyzer 的「只重算变了的那块」引擎）
 - [[solid]] —— SolidJS — 细粒度响应式 UI 框架
 - [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
 - [[svelte]] —— Svelte — 编译时 UI 框架

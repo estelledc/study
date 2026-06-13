@@ -3,7 +3,7 @@ title: Understand Anything — 把任何代码库变成可交互的知识图谱
 来源: https://github.com/Lum1104/Understand-Anything
 date: 2026-06-13
 分类: CLI
-子分类: ai-ml-tools
+子分类: 编辑器与 IDE
 provenance: pipeline-v3
 
 ---

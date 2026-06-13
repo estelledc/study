@@ -166,7 +166,6 @@ SELECT add_continuous_aggregate_policy('hourly_avg',
 - [[opentsdb]] —— OpenTSDB — HBase 上的第一代分布式 TSDB
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[questdb]] —— QuestDB — 高性能时序库
-- [[redis]] —— Redis — 内存键值数据库
 - [[tdengine]] —— TDengine — 一个设备一张表的国产 IoT 时序库
 - [[valkey]] —— Valkey — Redis 7.4 的开源 fork
 
