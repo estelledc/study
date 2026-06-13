@@ -1,219 +1,86 @@
 ---
 title: Matter 1.0 — 智能家居设备的「通用语言 + 入职流程」
-来源: https://csa-iot.org/all-solutions/matter/
+来源: 'CSA (Connectivity Standards Alliance), "Matter 1.0 Core Specification", 2022'
 日期: 2026-06-13
-子分类: 嵌入式与 IoT
 分类: 操作系统
+子分类: 嵌入式与 IoT
+难度: 中级
 provenance: pipeline-v3
 ---
 
-## 先想成什么事
+## 是什么
 
-想象你搬进一栋**智能公寓楼**，楼里住着苹果、谷歌、亚马逊、三星各派来的管家，每家以前只认自家门锁：
+Matter 1.0 是一套**让智能家居设备跨品牌互通的应用层标准**，由 CSA（Connectivity Standards Alliance）于 2022 年 10 月发布。日常类比：给一栋智能公寓楼发一套统一的房卡系统和房间编号规则——灯泡、门锁、传感器都讲同一种"业务语言"，你扫一下设备上的 QR 码，它就自动完成安全的"入职手续"（配网）。之后不管用 Siri、Google Assistant 还是 Alexa，都能控制它。
 
-- 飞利浦灯泡只跟 Hue App 说话，宜家插座只认 HomeKit，用户手机里装了五六个 App，配网时要连不同的 Wi-Fi 热点、扫不同的二维码。
-- **Matter** 想做的事，相当于给整栋楼发一套**统一的房卡系统 + 房间编号规则**：灯泡、门锁、传感器都讲同一种「业务语言」，配网流程也标准化；你仍然可以用 Siri、Google Home 或 Alexa 当管家，但设备端不必为每家各写一套私有协议。
+技术上，Matter 是跑在 IPv6（Wi-Fi、Thread、以太网）之上的应用层协议。它不依赖云——局域网内设备可以直接通信。定义了数据模型（Endpoint/Cluster）、交互模型（Read/Write/Invoke/Subscribe）、安全会话（PASE/CASE）和标准配网流程。开源 SDK 在 GitHub 上维护（project-chip/connectedhomeip），Apache 2.0 许可证。
 
-技术上说：Matter 1.0 Core Specification（Connectivity Standards Alliance，2022 年 10 月发布）在 **IPv6 承载的 IP 网络**（Wi-Fi、Thread、以太网）上，定义了**数据模型、交互模型、安全与会话、配网（Commissioning）** 等完整栈。设备通过 CSA 认证后，可用 QR 码或手动配对码完成入网，并在多个生态的 **Fabric** 上同时工作。
+最核心的特色是 **Multi-Admin（多管理员）**：一台设备可以同时被 Apple Home 和 Google Home 控制，不需要"二选一"。这是 Matter 区别于所有前辈智能家居协议的根本差异。
 
-官方入口：[Matter | CSA-IOT](https://csa-iot.org/all-solutions/matter/)  
-规范全文（1.0）：[Matter 1.0 Core Specification PDF](https://csa-iot.org/wp-content/uploads/2022/11/22-27349-001_Matter-1.0-Core-Specification.pdf)
+## 为什么重要
 
-## 这篇文档在说什么
+不理解 Matter，下面这些事都没法解释：
 
-| 维度 | 内容 |
-|------|------|
-| 发布方 | Connectivity Standards Alliance（CSA），前身 Zigbee Alliance |
-| 版本 | Matter 1.0（2022-10-04 认证启动）；后续有 1.1、1.2 等增量，1.0 是奠基版 |
-| 承载网络 | IPv6 over Wi-Fi / Thread / Ethernet；跨网段经 Border Router |
-| 开源实现 | [connectedhomeip](https://github.com/project-chip/connectedhomeip)（CHIP SDK） |
-| 核心承诺 | 互操作、本地优先、基于证书的强身份、多管理员（多 Fabric） |
-| 与 Zigbee 关系 | 应用层重新设计；集群概念继承自 Zigbee Cluster Library 思路，但协议栈完全不同 |
+- 为什么同一个智能灯泡可以同时被 Apple Home 和 Google Home 控制——Matter 的多 Fabric 机制让一台设备同时属于多个信任圈
+- 为什么嵌入式固件开发者只需写一套代码就能覆盖 Apple/Google/Amazon 三个生态——Matter 统一了应用层，控制器侧的差异由各生态自己消化
+- 为什么 BLE 只在初次配网时使用，日常通信走 Wi-Fi/Thread——BLE 只是"入职通道"，不是运营通道，配完网就断开
+- 为什么 Thread 设备需要一个 Border Router 才能和 Wi-Fi 上的手机 App 通信——Thread 是独立的低功耗 IPv6 mesh 网络，不直接连接 Wi-Fi 路由器
 
-Matter **不是**又一个专有云 API。它规定的是设备与设备、控制器与设备之间**如何在局域网里安全地读写状态、发命令**；云端同步由各生态自行实现，但本地控制路径标准化。
+## 核心要点
 
-## 为什么值得学
+Matter 的设计可以拆成三层来理解：
 
-| 场景 | Matter 提供的价值 |
-|------|-------------------|
-| 做智能硬件固件 | 一套 SDK 覆盖多生态，减少「为 HomeKit 再 port 一遍」 |
-| 做网关 / Hub | 明确 Commissioner、Bridge、Border Router 角色边界 |
-| 做自动化 / 测试 | `chip-tool` 可脚本化配网与控制，适合 CI |
-| 理解智能家居安全 | PASE / CASE、设备认证（Attestation）、Fabric 隔离 |
-| 选型 Thread vs Wi-Fi | Matter 在链路层之上，Thread 常作低功耗设备的 L2 |
+1. **数据模型——给每个功能贴上统一标签**：设备内部按 Node（节点）→ Endpoint（功能实例）→ Cluster（功能规范）→ Attribute/Command/Event 组织。类比：公寓楼里每间房（Endpoint）的开关面板上贴了统一标签名（Cluster），标签上写了可读状态（Attribute）和可操作按钮（Command）。Endpoint 0 是每台设备的"身份证口袋"，里面放了设备信息、配网状态等工具集群，不负责具体业务。
 
-若你之前学过 Zigbee 的 Endpoint / Cluster，Matter 的 **Node → Endpoint → Cluster → Attribute/Command/Event** 层次会似曾相识；但传输、安全、发现机制已全部换成 **IP + TLS 类会话 + DNS-SD**。
+2. **配网流程——一套标准化的"入职手续"**：新设备通过 BLE 广播宣告自己，用户扫码拿配对码，Commissioner（手机 App 或 Hub）通过 PASE（Passcode-Authenticated Session Establishment）建立加密通道，验证设备认证证书（DAC），下发 Wi-Fi/Thread 网络凭证。入网后设备拿到 NOC（节点运营证书），成为 Fabric 正式成员。之后所有业务通信在 CASE（Certificate Authenticated Session Establishment）会话中加密进行。类比：PASE 像临时访客码（只用于入职），CASE 像正式门禁卡（日常进出用）。
 
-## 核心概念一：协议栈分层
+3. **多 Fabric 共存——一张工牌不够，可以多张**：Fabric 是一组共享同一根证书的节点集合。Apple Home、Google Home 各自给灯泡发一张"工牌"（NOC），灯泡同时属于多个 Fabric。同一个灯泡，Siri 说"开灯"、Google Assistant 说"关灯"，都有效——这是 Multi-Admin，也是 Matter 对之前所有智能家居协议的降维打击。
 
-规范第 2 章把 Matter 设备从下到上拆成：
+## 实践案例
 
-```
-┌─────────────────────────────────────────┐
-│  Application（灯亮灭、门锁逻辑等业务）      │
-├─────────────────────────────────────────┤
-│  Data Model（Endpoint / Cluster / 属性） │
-├─────────────────────────────────────────┤
-│  Interaction Model（Read/Write/Invoke/   │
-│                        Subscribe）       │
-├─────────────────────────────────────────┤
-│  Action Framing + Security（消息帧、加密）  │
-├─────────────────────────────────────────┤
-│  Session Management（PASE / CASE 会话）   │
-├─────────────────────────────────────────┤
-│  Transport（TCP / UDP / BLE 等）         │
-├─────────────────────────────────────────┤
-│  Network（IPv6、Thread、Wi-Fi、Ethernet）  │
-└─────────────────────────────────────────┘
-```
+### 案例 1：用 chip-tool 从零配网并控制灯泡
 
-日常类比：**网络层**是公寓楼里的邮政系统（信怎么送到房间）；**会话层**是房卡加密（PASE 像临时访客码，CASE 像正式门禁卡）；**数据模型**是房间里的开关、温湿度计各贴什么标签；**交互模型**是你「读温度」「按开关」「订阅门铃事件」的动作种类。
-
-## 核心概念二：数据模型（Node / Endpoint / Cluster）
-
-Matter 里每台物理设备至少是一个 **Node（节点）**。节点内部再拆：
-
-| 概念 | 含义 | 类比 |
-|------|------|------|
-| **Node** | 网络中可寻址的一台 Matter 设备 | 公寓里的一户人家 |
-| **Endpoint** | 节点上的功能实例；**Endpoint 0** 保留给工具类集群 | 一户里的「客厅灯」「卧室灯」 |
-| **Cluster** | 一组属性、命令、事件的规范（如 On/Off、Level Control） | 每种电器的「操作面板」标准 |
-| **Attribute** | 可读/可写的状态（如 `OnOff` 开或关） | 面板上的指示灯状态 |
-| **Command** | 可调用的动作（如 `Toggle`） | 面板上的按钮 |
-| **Event** | 带来时间戳的历史记录（如 `SwitchLatched`） | 门禁日志 |
-
-每个节点**必须有 Endpoint 0（Root Node）**，上面挂 `Descriptor`、`Basic Information`、`General Commissioning` 等**工具集群**，用于描述设备能力与配网，而不是具体业务。
-
-**Server Cluster** 提供属性/命令；**Client Cluster** 在另一端发起调用。同一 Cluster ID 在客户端与服务端成对出现——类似 gRPC 的 service 定义与 stub。
-
-## 核心概念三：Fabric 与多生态共存
-
-**Fabric** 是一组共享**同一信任根（Root CA）** 的 Matter 节点集合。日常类比：同一家公司发的工牌——Apple Home、Google Home 各自可以给你的灯泡发一张工牌（**多 Fabric**），灯泡同时属于多个「信任圈」，但每个圈里节点 ID 独立分配。
-
-- **Fabric ID**：64 位，在 Root CA 范围内唯一；`Fabric ID 0` 保留不可用。
-- **Node ID**：64 位，在 Fabric 内唯一标识节点。
-- **NOC（Node Operational Certificate）**：配网时 Commissioner 签发，CASE 会话用它证明身份。
-- **Operational Discovery**：入网后通过 DNS-SD 广播，实例名形如 `<FabricId>-<NodeId>.local`。
-
-因此：**配网一次到苹果生态，并不等于锁死在苹果**——同一设备可被第二个 Commissioner 以「多管理员」流程加入 Google Fabric，规范第 12 章专门讲 Multiple Fabrics。
-
-## 核心概念四：配网（Commissioning）全流程
-
-配网 = 把 **Commissionee**（待入网设备）加入 Fabric 的完整仪式，由 **Commissioner**（手机 App、Hub、或 `chip-tool`）主导：
-
-```
-  发现设备          PASE 安全通道        证明是真货
- (BLE / SoftAP      (配对码/QR)         (Attestation)
-  / DNS-SD)              │                    │
-      └──────────────────┴────────────────────┘
-                           │
-              写入监管域、时间、网络凭证
-              (General Commissioning /
-               Network Commissioning Cluster)
-                           │
-              安装 NOC，加入 Fabric
-              (Node Operational Credentials)
-                           │
-              设备连上 Wi-Fi / Thread
-                           │
-              CASE 建立运营会话
-                           │
-              CommissioningComplete
-```
-
-要点摘录（Matter 1.0 Core Spec §2.8、Chapter 5）：
-
-1. **Device Discovery**：未入网设备用 BLE、Wi-Fi Soft AP 或 IP 上的 DNS-SD 宣告自己；用户从 **QR Code / Manual Pairing Code / NFC** 取得 **Passcode**（开箱贴纸上的 11 位码或 QR 里的 `MT:...` 载荷）。
-2. **PASE（Passcode-Authenticated Session Establishment）**：用 Passcode 做 SPAKE2+ 密钥交换，在**配网信道**上加密后续消息；此时还没有 NOC。
-3. **Device Attestation**：Commissioner 验证设备 DAC（Device Attestation Certificate）链，确认是 CSA 认证产品，防山寨设备混入 Fabric。
-4. **Network Commissioning**：对 Wi-Fi/Thread 设备下发 SSID、密钥或 Thread 数据集；以太网设备可能跳过此步。
-5. **Operational Credentials**：CA 签发 NOC，写入 Node ID；设备成为 Fabric 正式成员。
-6. **CASE（Certificate Authenticated Session Establishment）**：运营阶段所有单播业务消息在 CASE 会话中加密；连接断开需重新 CASE。
-
-**并发 vs 非并发配网**：部分设备配网时 BLE 与 Wi-Fi 可同时在线（并发）；另一些在连上运营网络后会断开 BLE 配网信道（非并发）——实现与芯片资源相关，规范均允许。
-
-## 核心概念五：交互模型（Interaction Model）
-
-节点之间建立加密会话后，通过四种**交互类型**操作对方的数据模型（Chapter 8）：
-
-| 交互 | 作用 | 典型用途 |
-|------|------|----------|
-| **Read** | 读一个或多个属性/事件 | 查询灯是否亮 |
-| **Write** | 写属性 | 设定目标亮度 |
-| **Invoke** | 调用命令 | `Off`、`Toggle` |
-| **Subscribe** | 订阅属性/事件变化 | 门磁状态推送 |
-
-每次交互需指定 **Path**，形如：
-
-```
-<node> <endpoint> <cluster> <attribute | command | event>
-```
-
-也支持 **Group ID** 或通配符，一次操作多个端点——类似「广播给全屋所有灯」。
-
-消息在链路上用 **TLV（Tag-Length-Value）** 编码，由 Action Framing 层打包；这与 JSON-RPC 类协议不同，偏向嵌入式紧凑二进制。
-
-## 代码示例一：用 chip-tool 配网并控制 On/Off 灯
-
-[connectedhomeip](https://github.com/project-chip/connectedhomeip) 自带的 **chip-tool** 是最常用的 Matter 控制器 CLI，适合开发调试。编译后（见官方 [First Example](https://project-chip.github.io/connectedhomeip-doc/getting_started/first_example.html)）：
-
-**1. 用 QR 码配网（pairing 为 commissioning 旧称）**
+CHIP Tool 是 Matter SDK 自带的命令行调试工具。假设你有一台 Matter 灯泡，包装上印了 QR 码：
 
 ```bash
-# 0x12344321 = 分配给设备的 Node ID（测试常用默认值）
-# MT:-24J0AFN00KA0648G00 = 示例 QR 载荷（默认 discriminator + passcode 的灯具）
-./out/linux-x64-chip-tool/chip-tool pairing code 0x12344321 MT:-24J0AFN00KA0648G00
+# 1. 扫码配网（pairing 是 commissioning 的旧称）
+# 0x12344321 = 分配给设备的 Node ID
+# MT:... = QR 码载荷，包含 discriminator + passcode
+./chip-tool pairing code 0x12344321 MT:-24J0AFN00KA0648G00
+
+# 2. 读灯泡的开关状态
+./chip-tool onoff read on-off 0x12344321 1
+
+# 3. 开灯
+./chip-tool onoff on 0x12344321 1
+
+# 4. 订阅状态变化（长连接推送，门磁传感器最常用）
+./chip-tool onoff subscribe on-off 1 10 0x12344321 1
 ```
 
-**2. 入网后读 OnOff 属性**
+命令模式始终是 `chip-tool <cluster> <动作> ... <node-id> <endpoint-id>`。即使零基础，三行命令就能完整跑通配网到控制——这就是统一协议的价值：不写 App 也能跟设备对话。
 
-```bash
-# 集群 onoff · 动作 read · 属性 on-off · Node ID · Endpoint 1
-./out/linux-x64-chip-tool/chip-tool onoff read on-off 0x12344321 1
-```
+### 案例 2：设备端声明一个 On/Off 灯（C++ 固件片段）
 
-**3. 发命令开灯**
-
-```bash
-./out/linux-x64-chip-tool/chip-tool onoff on 0x12344321 1
-```
-
-**4. 订阅属性变化（长连接推送）**
-
-```bash
-./out/linux-x64-chip-tool/chip-tool onoff subscribe on-off 1 10 0x12344321 1
-# 参数含义：min-interval=1s, max-interval=10s，超出则服务器主动上报
-```
-
-命令模式始终是：`chip-tool <cluster> <read|write|subscribe|command> ... <node-id> <endpoint-id>`。多 Fabric 场景可加 `--commissioner-name <name>` 指定用哪张「工牌」发令。
-
-## 代码示例二：设备端声明 On/Off Server Cluster（C++ 片段）
-
-固件侧（基于 Matter SDK 的 lighting-app 模式）要在某个 Endpoint 上挂载 **On/Off Server Cluster**，使控制器能 `Invoke` `Toggle`。逻辑上包含三步：定义 Endpoint 配置、注册 Cluster 回调、在属性变化时驱动硬件。
+固件侧要在某个 Endpoint 上挂载 On/Off Cluster，使控制器能发命令。核心是注册属性回调和命令处理函数：
 
 ```cpp
-// 简化示意：在 Endpoint 1 上启用 On/Off Server（ZAP 代码生成会产出大量样板）
 #include <app-common/zap-generated/ids/Clusters.h>
 #include <app-common/zap-generated/attributes/Accessors.h>
 
-using namespace chip;
-using namespace chip::app;
 using namespace chip::app::Clusters::OnOff;
 
-// 属性写入回调：控制器 chip-tool onoff on/off 会走到这里
+// 控制器 chip-tool onoff on/off 最终调用这个回调
 Protocols::InteractionModel::Status emberAfOnOffClusterOnOffAttributeWriteCallback(
     EndpointId endpoint, AttributeId attributeId, uint8_t * value)
 {
     if (attributeId != Attributes::OnOff::Id) {
         return Protocols::InteractionModel::Status::Failure;
     }
-    bool on = *value;
-    // 驱动真实 GPIO / PWM
-    SetPhysicalLight(on);
+    SetPhysicalLight(*value);  // 驱动真实 GPIO / PWM
     return Protocols::InteractionModel::Status::Success;
 }
 
-// 命令处理：chip-tool onoff toggle 触发
+// chip-tool onoff toggle 触发
 bool emberAfOnOffClusterToggleCallback(EndpointId endpoint)
 {
     bool current;
@@ -223,73 +90,87 @@ bool emberAfOnOffClusterToggleCallback(EndpointId endpoint)
 }
 ```
 
-实际工程里，Endpoint 与 Cluster 列表多由 **ZAP（Zigbee Cluster Configurator）** 生成到 `zap-generated/`；开发者主要填 **Device Type**（如 `0x0100` On/Off Light）、厂商 ID、配网参数，并实现上述 Attribute/Command 回调。动态 Endpoint（如 Bridge 在运行时添加子设备）需调用 SDK 的 Dynamic Endpoint API，见 [bridge-app 示例](https://github.com/project-chip/connectedhomeip/tree/master/examples/bridge-app)。
+实际工程里，Endpoint 与 Cluster 列表由 ZAP（Zigbee Cluster Configurator）代码生成工具产出。开发者主要填 Device Type、厂商 ID、配网参数，并实现上述回调。
 
-## 配网载荷：QR 里到底编码了什么
+### 案例 3：QR 码里到底编码了什么
 
-Manual Pairing Code / QR Code 携带 **Onboarding Payload**（§5.1），解码后得到配网所需字段，例如：
+设备包装上的 QR 码不是普通 URL，它携带 **Onboarding Payload**——配网所需的所有种子信息：
 
 | 字段 | 作用 |
 |------|------|
 | Version | 载荷格式版本 |
-| Vendor ID / Product ID | 识别厂商与产品（可选出现在广播里） |
-| Custom Flow | 是否需厂商自定义配网 UI |
-| **Discriminator** | 12 位，区分同时待配的多个相同设备 |
-| **Passcode** | PASE 用的共享秘密（27 位有效位） |
-| Discovery Capabilities | 支持 BLE / Soft AP / On IP |
+| Vendor ID / Product ID | 识别厂商与产品型号 |
+| Discriminator | 12 位，区分同时待配的多个同型号设备 |
+| Passcode | PASE 密钥交换的共享秘密（27 位有效位） |
+| Discovery Capabilities | 标记支持 BLE / Soft AP / On IP 哪种发现方式 |
 
-`chip-tool` 的 `pairing code` 子命令即解析 `MT:...` 字符串并自动走 BLE/IP 发现 + PASE。生产环境 Passcode 必须随机且每机唯一，防止邻居蹭网。
+生产环境 Passcode 必须每台设备随机且唯一——如果所有设备共用同一个 Passcode，邻居扫到你家 QR 码就能把设备偷走。
 
-## 发现机制：Commissionable vs Operational
+## 踩过的坑
 
-| 阶段 | 方式 | 何时用 |
-|------|------|--------|
-| **Commissionable Discovery** | BLE 广播、Wi-Fi Soft AP、有限 DNS-SD | 设备未入网，等待配网 |
-| **Operational Discovery** | 运营网络 DNS-SD（mDNS 等） | 设备已入网，控制器找 `<Fabric>-<Node>.local` |
+1. **平台 Matter 版本不同步**：设备标着"Matter 认证"，但三星 SmartThings 支持 1.5、Amazon Alexa 在 1.4、Google Home 仅约 1.2。某个生态认这个设备、另一个不认——和设备、配网都没关系，纯粹是控制器侧没升级。
 
-若设备**已属于另一个 Fabric** 且占用了 Wi-Fi/Thread，二次配网通常只能走 **On-Network Commissioning**（IP 上 DNS-SD），不能再开 Soft AP——这是多生态共存时的常见坑。
+2. **通过 Bridge 接入会丢功能**：把 Philips Hue 灯泡通过 Bridge 桥接进 Matter 后，Apple Adaptive Lighting 不工作。原因是 Matter 只定义"最小公分母"（开/关/调亮度），任何品牌特有高级功能仍锁在厂商私有 App 里。
 
-## 与 Thread、Wi-Fi、Bridge 的关系
+3. **配网超时是常态**：多管理员加入第二个生态时经常报"Operation timed out"。根因可能是 IPv6 组播被路由器拦截、RF 干扰、或 Thread Border Router 之间互相不协作形成了隔离的 Thread 分区。
 
-```
-        ┌─────────────── Matter 应用层 ───────────────┐
-        │  Data Model / Interaction / Security       │
-        └────────────────────┬────────────────────────┘
-                             │ IPv6
-           ┌─────────────────┼─────────────────┐
-           ▼                 ▼                 ▼
-      Wi-Fi STA          Thread 1.3        Ethernet
-           │                 │
-           └──────── Border Router ────────┘
-                    （跨网段转发）
-```
+4. **电池设备功耗远高于 Zigbee**：Matter-over-Thread 的纽扣电池传感器续航约 18-24 个月，Zigbee 同类设备轻松 3 年。原因是 Matter 要维持多 Fabric 会话，IPv6 协议头开销更大，芯片"醒着"的时间更长。
 
-- **Thread** 设备通过 Border Router 获得与 Wi-Fi 上 Commissioner 的 IPv6 连通。
-- **Bridge** 把 Zigbee/红外等非 Matter 设备映射为 Matter Endpoint，对外仍是一个 Node。
-- **OTA**：`OTA Provider` / `OTA Requestor` 集群负责固件升级，与配网证书体系正交。
+## 适用 vs 不适用场景
 
-## 1.0 之后发生了什么（读笔记时的坐标系）
+**适用**：
 
-Matter 1.0 首发设备类型以灯、插座、门锁、传感器、窗帘、恒温器为主。后续版本增量扩展：**1.1** 改进配网与多管理员；**1.2** 增加机器人吸尘器等；规范以 CSA 发布为准，SDK 在 GitHub 上 `connectedhomeip` 主分支跟进。学 1.0 仍必要——**Fabric、PASE/CASE、Cluster 路径、Commissioning 状态机** 是后续版本的超集基础。
+- 做跨生态智能家居产品——一套固件覆盖 Apple Home / Google Home / Amazon Alexa / Samsung SmartThings
+- 局域网内设备间直接通信——不依赖云，隐私敏感场景（门锁、传感器）
+- 已有 Thread/Wi-Fi 基础设施的住宅——不需要额外布线或新增网关
+- 需要多用户/多生态同时控制的场景——Multi-Admin 允许多个家庭成员用不同的语音助手控制同一台设备
 
-## 常见误区
+**不适用**：
 
-| 误区 | 事实 |
-|------|------|
-| 「Matter = Wi-Fi」 | Matter 运行在 IPv6 上，Wi-Fi / Thread / Ethernet 均可 |
-| 「配网完只能用一个 App」 | 多 Fabric 设计允许多个生态各管一张工牌 |
-| 「Cluster = MQTT Topic」 | Cluster 是强类型 schema，含 Access 权限与 conformance 规则 |
-| 「有开源 SDK 就不用认证」 | 上市销售仍需 CSA 认证与合法 VID/PID、DAC |
-| 「CASE 一次建立永久有效」 | 连接断开后需重新建立 CASE 会话 |
+- 超低功耗纯电池场景（纽扣电池 + 需工作 5 年以上）→ Zigbee 或 BLE Mesh 更合适
+- 需要大量数据带宽（如安防摄像头）→ Matter 1.5 才开始支持摄像头，且视频流仍需 Wi-Fi 直连
+- 已有大量 Zigbee/Z-Wave 设备且不想更换 → 用 Bridge 做映射可行但功能会丢失
+- 完全离线无 IP 网络的环境 → Matter 依赖 IPv6，需要至少局域网 IP 连通
 
-## 进一步阅读
+## 历史小故事（可跳过）
 
-- [Matter 1.0 Core Specification（HTML 镜像）](https://leconiot.com/matter/1.0/index.html) — 全文检索友好
-- [Google Home Matter Primer — Commissioning](https://developers.home.google.com/matter/primer/commissionable-and-operational-discovery)
-- [Matter Handbook — Interaction Model](https://handbook.buildwithmatter.com/how-it-works/interaction-model/)
-- [CHIP Tool 指南](https://project-chip.github.io/connectedhomeip-doc/development_controllers/chip-tool/chip_tool_guide.html)
-- [connectedhomeip 示例索引](https://github.com/project-chip/connectedhomeip/tree/master/examples)
+- **2019 年 12 月**：CSA（当时还叫 Zigbee Alliance）联合 Apple、Google、Amazon 启动 Project CHIP（Connected Home over IP）。取名"CHIP"不是因为半导体芯片，而是"把家连上 IP"。
 
-## 小结
+- **2021 年 5 月**：Project CHIP 更名为 Matter。官方说法是"物质——构建互联世界的基础元素"，但业内更直白的解读是：别再叫 CHIP 了，和芯片行业撞名太尴尬。
 
-Matter 1.0 的本质不是「又一个 App 协议」，而是：**在 IP 网络上用统一数据模型描述设备能力，用 PASE/CASE 解决身份，用标准 Commissioning 把设备拉进 Fabric**。日常类比是「全屋智能的通用工牌 + 房间编号 + 入职流程」；技术上则是 Endpoint/Cluster 数据模型、四种交互、以及 `chip-tool` 里一行 `onoff on` 背后整条协议栈。从零开始，先跑通 lighting-app + `chip-tool pairing code`，再读规范 Chapter 5（Commissioning）与 Chapter 7–8（Data Model / Interaction Model），比从 PDF 第 1 页硬啃高效得多。
+- **2022 年 10 月**：Matter 1.0 正式发布，280+ 成员公司加入，8 个授权测试实验室开张，开源 SDK 在 Apache 2.0 许可证下发布。首批设备类型：灯、插座、门锁、传感器、窗帘、恒温器、电视、Bridge。
+
+- 此后版本节奏：1.1（bug 修复，2023.5）→ 1.2（扫地机器人、空气净化器，2023.10）→ 1.3（EV 充电桩，2024.4）→ 1.4（太阳能、电池，2024.11）→ 1.5（安防摄像头，2025 底）。
+
+## 学到什么
+
+1. **标准化协议的价值不在于技术有多炫，而在于"谁都认"**——Matter 的核心贡献不是发明了新加密算法或传输协议，而是让 280+ 家公司同意用同一套语言说话。这在消费电子行业极为罕见。
+
+2. **多生态共存靠的不是"选一个"，而是"都加入"**——Multi-Admin 机制让设备同时属于 Apple 和 Google 的 Fabric。不是二选一，是我都要。
+
+3. **配网（Commissioning）是一台 IoT 设备最危险的时刻**——Passcode 泄露、DAC 被篡改、网络凭证被截获，全部集中在从开箱到入网的那几分钟。Matter 用 PASE + Attestation + NOC 三道关卡把这个窗口尽可能收窄。
+
+4. **协议好不等于体验好**——Matter 1.0 发布三年后碎片化依然存在。标准的文字是一回事，各厂商实现质量、更新节奏、功能取舍是另一回事。学协议时要区分"规范说了什么"和"市场发生了什么"。
+
+## 延伸阅读
+
+- 规范全文：[Matter 1.0 Core Specification (PDF)](https://csa-iot.org/wp-content/uploads/2022/11/22-27349-001_Matter-1.0-Core-Specification.pdf)
+- 可搜索 HTML 版：[Matter 1.0 HTML 镜像](https://leconiot.com/matter/1.0/index.html) — 全文检索友好
+- 开源 SDK：[project-chip/connectedhomeip](https://github.com/project-chip/connectedhomeip) — 所有示例代码的源头
+- CHIP Tool 指南：[chip-tool 使用文档](https://project-chip.github.io/connectedhomeip-doc/development_controllers/chip-tool/chip_tool_guide.html)
+- [[zigbee-vs-matter-thread-2026]] — Zigbee / Matter / Thread 三大协议对比，各自擅长什么场景
+- [[openthread]] — Thread 协议的开源实现，Matter over Thread 设备的底层 mesh 网络栈
+
+## 关联
+
+- [[zigbee-vs-matter-thread-2026]] —— 把 Zigbee、Matter、Thread 三条线放在一起比较，理解各自的分工和重叠
+- [[openthread]] —— Google 开源的 Thread 协议实现，Matter over Thread 设备的底层网络栈
+- [[mqtt-v5-spec]] —— 另一个 IoT 通信协议，发布/订阅模式 vs Matter 的 Client/Server 模式，设计哲学完全不同
+- [[coap-rfc7252]] —— 受限应用协议（CoAP），Matter 的消息模型参考了 CoAP 的 RESTful 思路但更偏二进制紧凑编码
+- [[tls-1.3]] —— CASE 会话的密码学基础，理解 TLS 握手后更容易理解 PASE/CASE 的密钥协商
+- [[esp-idf-overview]] —— 乐鑫的嵌入式开发框架，大量 Matter 设备在 ESP32 芯片上运行
+- [[freertos-overview]] —— 嵌入式实时操作系统，Matter SDK 底层依赖的 RTOS 之一
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
