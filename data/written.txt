@@ -18,6 +18,7 @@ agda-norell
 agent-r1-2511
 agent-skill-protocol-2026
 agentic-proving-for-program-verification-arxiv-2605-23772
+agentic-rl-survey
 agentless
 agentrefine
 agi-survey
@@ -214,6 +215,7 @@ compiler-errors
 compiler-perf-left-on-table
 compose-future-theorems
 compositional-incoherence
+conformal-llm
 consistency-models-2023
 consistent-hashing-1997
 constitutional-ai
@@ -378,6 +380,7 @@ exokernel-1995
 expertflow-moe-offload
 f1-2013
 f4-2014
+fair-gnn
 faiss-2017
 fan-vercauteren-bfv-2012
 farm-2015
@@ -409,6 +412,7 @@ flexsc-2010
 flink-2015
 flink-snapshots-2015
 flp-1985
+form-reward-machines
 fort-searcher
 foundationdb-2021
 fpga-hls-2011
@@ -585,6 +589,7 @@ karras-2012-parallel-bvh
 kazhdan-2006-poisson-recon
 kelly-criterion-1956
 kepler-architecture-2012
+kg-cf
 kildall-dataflow
 kim-rowhammer-2014
 knrm-2017
@@ -713,6 +718,7 @@ mcmahan-fedavg-2017
 mcmillan-smv-1993
 mcp-is-dead-debate
 mcp-solver
+mcp-solver-cp
 mcp-spec
 mcp-survey
 mcs-locks-1991
@@ -907,6 +913,7 @@ ppo
 prefix-cache-policy-2026
 presumed-abort-1986
 priority-inversion-mars-pathfinder
+prob-mission-uas
 product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
@@ -1198,6 +1205,7 @@ tvm
 tvm-2018
 twine-2020
 u-boot-bootloader
+ucb-cs186-fa2024
 umbra-2020
 unicron
 unified-memory-2014
@@ -1465,6 +1473,7 @@ capacitor
 capawesome
 capnproto
 captum
+cargo-nextest
 cassandra
 cc-switch-desktop
 ccusage
@@ -1716,6 +1725,7 @@ frontend-lost-decade-ai
 fvm
 fx
 fzf
+garage
 gazebo-classic
 gdu
 gea
@@ -1737,6 +1747,7 @@ glommio
 glsl-canvas
 glslify
 gltf-transform
+gluestack
 go-ethereum
 go-zero
 godot
@@ -1797,6 +1808,7 @@ iii-hq-platform
 imagemagick
 immer
 immich
+immudb
 influxdb
 ink
 inkscape
@@ -1814,6 +1826,7 @@ janus-gateway
 janusgraph
 jax
 jc
+jco
 jcode-coding
 jellyfin
 jenkins
@@ -1915,6 +1928,7 @@ lite-xl
 litellm
 litellm-proxy
 litestar
+litestream
 litmus
 littlefs
 liveblocks
@@ -2409,6 +2423,7 @@ superset
 supertokens
 surrealdb
 svelte
+svelte-native
 sveltekit
 svt-av1
 swc
@@ -2559,6 +2574,7 @@ wandb
 warp
 warp-terminal
 wasi-sdk
+wasm-bindgen
 wasm-pack
 wasm-tools
 wasmedge
