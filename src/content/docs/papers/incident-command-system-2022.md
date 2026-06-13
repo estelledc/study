@@ -1,361 +1,219 @@
 ---
-title: Incident Command System for Tech Operations — 技术事故里的「现场总指挥」
-来源: https://response.pagerduty.com/training/incident_commander/
+title: 事故指挥系统 — 让线上事故响应从"救火"变成"流水线"
+来源: 'PagerDuty, "Incident Response Documentation", 2022'
 日期: 2026-06-13
-子分类: 工程文化
 分类: 其他
+子分类: 工程文化
+难度: 初级
 provenance: pipeline-v3
 ---
 
-## 先想成什么事
+## 是什么
 
-想象商场里突然冒烟，警铃大作。这时最怕的不是火本身，而是**二十个人同时喊不同方案**：保安去拉闸、电工查线路、店长打电话、有人在群里发未经证实的照片。
+事故指挥系统（Incident Command System，ICS）是一套**将消防救灾的组织框架移植到软件运维领域**的事故响应方法论。日常类比：一栋大楼发生火灾，如果每个消防员各自拿水龙头往不同方向喷，不但灭不了火，还会互相妨碍。ICS 做的事就是定好"谁当总指挥、谁负责破门、谁负责疏散、谁对外通报"——每个人在踏进火场前就知道自己该做什么、不该做什么。
 
-消防系统里早就有答案：**现场只认一个总指挥（Incident Commander）**。他不必亲自灭火，但要：
+在软件事故中，ICS 同样解决"一群人冲上去各自修自己的"这种混乱。它把响应团队按职能拆成几个固定角色：**总控（IC）**决策不操作，**执行者（SME）**操作不决策，**书记（Scribe）**记录时间线，**联络员（Liaison）**对外对内沟通。这套分工确保事故响应从"靠某个人的直觉和经验"变成"靠组织的流程和肌肉记忆"。
 
-- 问清「烟从哪来、影响多大」；
-- 让专家汇报，**点名**谁去关燃气、谁去疏散；
-- 每隔几分钟对外报平安；
-- 决定「先救人还是先断电」——错了也比没人拍板强。
+PagerDuty 在 2022 年将其事故响应流程完全开源（response.pagerduty.com），Google SRE 团队也在《SRE：Google 运维解密》第 15 章系统阐述了这套方法论。它的核心主张是：**流程不是为了约束人，而是为了在高压环境下解放人**——当你不需要同时操心"我该做什么、别人在做什么、该跟谁说"，你就能把所有精力放在真正需要你做的事上。
 
-PagerDuty 把美国应急体系里的 **Incident Command System（ICS，事故指挥系统）** 改造成适合软件团队的流程，并开源在 [Incident Response Documentation](https://response.pagerduty.com/)。核心文档之一便是 [Incident Commander 培训指南](https://response.pagerduty.com/training/incident_commander/)：教你在数据库宕机、支付超时、区域故障时，如何当那个**不碰键盘、但让整个响应不瘫痪**的人。
+## 为什么重要
 
-日常类比再往前一步：IC 像**电影导演**——自己不上场演戏，但场记、摄影、灯光都向他汇报；剪辑意见可以听，**开机拍哪条镜头由他定**。事故响应里，Subject Matter Expert（SME，领域专家）是演员，IC 是导演。
+不理解 ICS，下面这些事都没法解释：
 
-## 这篇材料在说什么
+- 为什么大厂事故响应从不靠"群聊里喊一声"——而是有固定角色、固定频道、固定汇报格式
+- 为什么事故总结（postmortem）能精准还原"第 17 分钟到底发生了什么"——因为有书记全程记录
+- 为什么 Google SRE 强调"总控绝对不能碰键盘操作系统"——这不是能力问题，是指挥链设计
+- 为什么定期做"事故演习"（Wheel of Misfortune / DiRT）和消防演练是一回事——流程需要肌肉记忆
 
-| 维度 | 内容 |
-|------|------|
-| 名称 | Incident Command System for Tech Operations（PagerDuty 实践版） |
-| 来源 | PagerDuty 开源事故响应手册 + IC 培训页 |
-| 血统 | 源自美国野火/灾害应急 ICS，PagerDuty 按「不涉及人命」场景做了裁剪 |
-| 一句话 | **重大事故期间，用固定角色与固定话术，把混乱的多人调试变成可预测的协同** |
+## 核心要点
 
-与 [[chaos-engineering-netflix-2016]] 的关系：混沌工程回答「我们能不能承受故障」；ICS 回答「故障已经发生时，**谁说话算数、信息往哪流**」。与 [[dora-state-of-devops-2023]] 里的 **MTTR（平均恢复时间）** 也直接相关——恢复快慢往往取决于协调成本，而不只是技术难度。
+ICS 的核心可以拆成**三根柱子**：
 
-## 为什么值得学（零基础图景）
+1. **角色分离（Nested Duty Separation）**：每个人都只做一件事。类比手术室——主刀医生不会跑去调麻醉机，麻醉师不会去拿止血钳，巡回护士不会去缝合。事故响应也一样：总控管决策、Ops 管操作、联络员管沟通、书记管记录。交叉越少，出错越少。
 
-没有 ICS 时，典型反模式是：
+2. **CAN 报告格式**：所有执行者向上汇报的格式只有三个词——**Condition**（现在什么情况）、**Actions**（你在做什么）、**Needs**（你需要什么帮助）。类比急诊室交班："病人血压 80/50（Condition），正在输血（Actions），需要再开一条静脉通路（Needs）"。格式统一，信息不会丢。
 
-1. **最资深的工程师边查日志边指挥**，上下文切换导致修复变慢；
-2. Zoom 里七个人同时改生产；
-3. Slack 线程 200 条，没人知道当前决策是什么；
-4. 高管进来问「还要多久」，团队被迫编 Excel 而不是修服务。
+3. **无责事后总结（Blameless Postmortem）**：事故结束后不追问"谁搞砸的"，而是追问"什么流程允许这件事发生"。类比航空事故调查——NTSB 找到的是"检查清单缺了一项"而不是"机长太蠢"。不追责才能让人敢说实话。
 
-PagerDuty 的论点是：**协调是一种专职工作**。IC 不需要深度懂每个服务，但需要会：
+三根柱子加起来，让事故响应从"个人英雄主义"变成"组织能力"。
 
-- 收集症状与影响面（Size-Up）；
-- 收集方案、评估风险、**拍板**（Stabilize）；
-- 定时播报（Update）；
-- 验证修复或回到上一步（Verify）。
+## 实践案例
 
-培训页明确写：**实习生也可以当 IC**，只要完成 shadow / reverse shadow，并把自己放上值班表。
+### 案例 1：用 CAN 报告格式写状态汇报
 
-## 核心概念
-
-### 1. 角色分工（战时编制）
-
-PagerDuty [Different Roles](https://response.pagerduty.com/before/different_roles/) 把响应拆成可扩展编制。最小可用集通常只有 **IC + 修复者**；成熟团队会补齐下表。
-
-| 角色 | 缩写 | 做什么 | 不做什么 |
-|------|------|--------|----------|
-| **Incident Commander** | IC | 唯一决策源；委派任务；对外口径审批 | 看 Grafana、ssh、改配置 |
-| **Deputy** | 副 IC | 盯遗漏、计时、热备接管 | 与 IC 抢决策权 |
-| **Scribe** | 记录员 | 时间线、决策、链接写入 Slack/文档 | 参与技术争论 |
-| **Subject Matter Expert** | SME | 查因、提方案、**被指派**后执行 | 自行其是改生产 |
-| **Customer Liaison** | 对外联络 | 状态页、客户沟通草稿 | 技术修复 |
-| **Internal Liaison** | 对内联络 | 通知其他部门、收集非技术诉求 | 代替 IC 指挥 |
-
-关键原则：**信息向上汇聚到 IC，指令向下派发**。SME 向 IC 汇报发现与建议；是否回滚、是否公开声明，由 IC 决定。
-
-### 2. IC 的唯一使命
-
-培训页把 IC 的目的浓缩成一句：
-
-> **Keep the incident moving towards resolution.**（让事故持续朝解决方向推进。）
-
-这意味着 IC 要随时想 **Plan B**：如果三分钟后回滚没效果，下一手是什么？宁可选一个「次优但可执行」的方案，也不要全场沉默等完美答案。
-
-### 3. 四阶段循环：Size-Up → Stabilize → Update → Verify
-
-这是每次重大事故的主循环，来自 [Incident Commander 培训](https://response.pagerduty.com/training/incident_commander/#handling-incidents) 的 **Handling Incidents** 章节。
+最核心的日常实践是 CAN 格式。下面是一段模拟的事故 Slack 对话：
 
 ```text
-        ┌──────────┐
-        │ Size-Up  │  什么坏了？影响多大？是否在扩大？
-        └────┬─────┘
-             ▼
-        ┌──────────┐
-        │ Stabilize│  收集方案 → 决策 → 征求强烈反对 → 指派任务
-        └────┬─────┘
-             ▼
-        ┌──────────┐
-        │  Update  │  定期状态播报（内部 + 利益相关方）
-        └────┬─────┘
-             ▼
-        ┌──────────┐
-        │  Verify  │  任务完成了吗？好了就收尾；没好就回到 Size-Up
-        └──────────┘
+[SME - 数据库] @IC CAN:
+  C: 主库 replicaton lag 飙升到 12 分钟，从库已停止同步
+  A: 正在检查主库 binlog 是否有异常写入
+  N: 需要确认有没有人最近跑过批量 DML
+
+[SME - API] @IC CAN:
+  C: API 服务 CPU 88%，但响应正常，QPS 无突增
+  A: 已加两台实例，正在生效（约 2 分钟）
+  N: 暂无
 ```
 
-**Size-Up（研判）** 要问：
+**逐部分解释**：
 
-- 「What's wrong?」——症状是什么？
-- 「Is this affecting multiple services?」——范围、是否在升级？
+- 每条消息开头标注角色（SME-数据库 / SME-API），IC 一眼知道谁在说话
+- C（Condition）只说**事实**，不带猜测："可能有人跑过批量任务"不能写，要写"lag 飙升到 12 分钟"
+- A（Actions）说**正在做的事**，不是计划、不是建议
+- N（Needs）说**自己搞不定的部分**——这是求救信号，IC 看到后会协调资源
 
-**Stabilize（稳住）** 步骤：
+### 案例 2：事故角色配置文件
 
-1. 问专家：有哪些动作？风险各是什么？
-2. IC 说：**「We're proceeding with …」**（我们按某方案执行）
-3. **「Are there any strong objections?」**（有谁强烈反对？）——注意不是「大家都同意吗」，而是只收集**强烈**反对，避免嘈杂与沉默并存
-4. **「Alice, please do X, I'll come back in 3 minutes. Understood?」**——任务必须**指派到具体的人**并**限时**
-
-**Update（同步）** 在等待时填空，避免会议死寂。
-
-**Verify（验证）** 回到被指派的人：完成了吗？没解决则重新 Size-Up。
-
-### 4. 话术与反模式（Lingo）
-
-| 要说 | 不要说 | 原因 |
-|------|--------|------|
-| 「Bob，请在 3 分钟内查 web 延迟，明白吗？」 | 「谁能看一下延迟？」 | 避免 **bystander effect（旁观者效应）** |
-| 「是否有**强烈**反对？」 | 「大家都同意吗？」 | 后者引发叠话或沉默 |
-| 「This is [NAME], I am the **Incident Commander**.」 | 「我是 IC」 | 新人不懂缩写；**commander** 明确权威 |
-| 「Do you wish to take command?」 | 与高管争论 | **Executive swoop** 时把「夺权」显性化 |
-
-[During an Incident](https://response.pagerduty.com/during/during_an_incident/) 还规定：SME **只建议、不擅自执行**；IC 不确定是否对外公告时，原则往往是 **「If in doubt, post it out」**（有疑虑就发状态公告）。
-
-### 5. 复杂事故：子团队与缩小范围
-
-当人数超过 IC 能有效掌控的跨度（通常 ~7 人），可 spin off **Alpha / Bravo / Charlie** 子组：指定组长、限时、**子组只通过组长与 IC 沟通**。
-
-根因明确后，IC 应**缩小会议**：点名「请 Deputy、Scribe、SRE 留下，其他人可退出」——凌晨三点的人性化设计。
-
-### 6. 指挥权交接（Transfer of Command）
-
-疲劳、复杂度变化、私人紧急事务都可以交接。流程：
-
-1. 在 Slack 私聊副 IC 说明上下文；
-2. 在会议上：**「I am handing over command to [X].」**
-3. 新 IC 重新做开场自我介绍。
-
-注意：**更资深的人到场 ≠ 自动换指挥**。职级在和平年代有效，战时只认 IC 角色。
-
-### 7. 培训路径
-
-PagerDuty 建议的训练阶梯（见 IC 培训页）：
-
-1. 阅读角色文档；
-2. 参加 **Failure Friday**（故意演练）：先旁观 → 当 Scribe → 当 IC；
-3. **Shadow** 一周：跟真实 IC，不发言；
-4. **Reverse shadow** 一周：你指挥，导师只在失控时接管；
-5. **毕业**：把自己放上 IC on-call 排班。
-
-游戏 *Keep Talking and Nobody Explodes* 被当作低成本协调练习——信息不完整、一人指挥、多人执行。
-
-## 代码示例一：用 Python 实现「限时任务看板」（IC 的委派追踪器）
-
-IC 的核心负担之一是：**谁在被指派什么、何时该追问**。下面是一个极简的 in-memory 任务看板，可在事故 Slack bot 或 CLI 里使用；体现培训页里的 **assign → time-box → acknowledge** 三步。
-
-```python
-from dataclasses import dataclass, field
-from datetime import datetime, timedelta
-from enum import Enum
-import json
-
-class TaskState(str, Enum):
-    ASSIGNED = "assigned"
-    ACKED = "acked"
-    DONE = "done"
-    OVERDUE = "overdue"
-
-@dataclass
-class IncidentTask:
-    assignee: str
-    instruction: str
-    due_at: datetime
-    state: TaskState = TaskState.ASSIGNED
-    ack_text: str = ""
-
-    def is_overdue(self, now: datetime) -> bool:
-        return self.state not in (TaskState.DONE,) and now >= self.due_at
-
-class IncidentBridge:
-    """模拟事故桥接器：IC 委派、Deputy 可轮询超时"""
-
-    def __init__(self, incident_id: str, commander: str):
-        self.incident_id = incident_id
-        self.commander = commander
-        self.tasks: list[IncidentTask] = []
-
-    def assign(self, assignee: str, instruction: str, minutes: int) -> IncidentTask:
-        task = IncidentTask(
-            assignee=assignee,
-            instruction=instruction,
-            due_at=datetime.utcnow() + timedelta(minutes=minutes),
-        )
-        self.tasks.append(task)
-        return task
-
-    def acknowledge(self, assignee: str, text: str = "Understood") -> None:
-        for t in reversed(self.tasks):
-            if t.assignee == assignee and t.state == TaskState.ASSIGNED:
-                t.state = TaskState.ACKED
-                t.ack_text = text
-                return
-        raise ValueError(f"no open task for {assignee}")
-
-    def complete(self, assignee: str) -> None:
-        for t in reversed(self.tasks):
-            if t.assignee == assignee and t.state != TaskState.DONE:
-                t.state = TaskState.DONE
-                return
-
-    def overdue(self, now: datetime | None = None) -> list[IncidentTask]:
-        now = now or datetime.utcnow()
-        out = []
-        for t in self.tasks:
-            if t.is_overdue(now):
-                t.state = TaskState.OVERDUE
-                out.append(t)
-        return out
-
-    def ic_status_line(self) -> str:
-        """生成 Update 阶段的口播提纲"""
-        parts = [f"INC {self.incident_id} — commander {self.commander}"]
-        for t in self.tasks:
-            parts.append(
-                f"- {t.assignee}: {t.instruction} [{t.state.value}, due {t.due_at.isoformat()}Z]"
-            )
-        return "\n".join(parts)
-
-# --- 模拟一次 Stabilize 阶段的委派 ---
-bridge = IncidentBridge("INC-2026-0412", commander="Alice")
-bridge.assign("Bob", "check p99 latency on checkout-api", minutes=3)
-bridge.assign("Carol", "confirm last deploy hash for payments", minutes=5)
-bridge.acknowledge("Bob")
-
-print(bridge.ic_status_line())
-print("overdue:", [t.assignee for t in bridge.overdue()])
-```
-
-要点：
-
-- 每个任务绑定**一个人 + 截止时间**，对应 IC 话术里的 **「I'll come back to you in X minutes」**；
-- Deputy 可以定时调用 `overdue()` 提醒 IC 追问；
-- `ic_status_line()` 帮助 Scribe 把 Update 口播结构化。
-
-## 代码示例二：事故响应 Runbook 的 YAML + 检查清单生成
-
-把 ICS 流程固化成可版本化的 runbook，便于 onboarding 与演练。下面 YAML 描述角色、阶段检查项与标准口播；用短脚本渲染成值班笔记本。
+很多团队把 ICS 角色写成配置文件，出事故时直接套用。下面是一个 YAML 格式的角色分派模板：
 
 ```yaml
-# incident-runbook.yaml — 与 PagerDuty open-source IR 对齐的骨架
+# incident_roles.yaml — 事故角色分派模板
 incident:
-  severity: SEV-1
-  bridge:
-    zoom: "https://example.com/bridge/rotating"
-    slack: "#inc-sev1"
-  roles:
-    incident_commander: oncall-ic
-    deputy: oncall-ic-shadow
-    scribe: auto-rotate
-    customer_liaison: oncall-support-lead
+  severity: SEV-2
+  declared_at: "2026-06-13T14:32:00Z"
 
-phases:
-  size_up:
-    prompts:
-      - "What's wrong? (symptoms)"
-      - "Is this affecting multiple services?"
-      - "Is impact escalating, flapping, or static?"
-  stabilize:
-    decision_template: "We're proceeding with {action} because {rationale}."
-    objection_poll: "Are there any strong objections to this plan?"
-    assign_template: "{name}, please {task}. I'll come back in {minutes} minutes. Understood?"
-  update:
-    cadence_minutes: 5
-    public_status_if_in_doubt: true
-  verify:
-    follow_up: "Have you finished {task}?"
+roles:
+  ic:            # 总控——不操作系统
+    assignee: "alice"
+    duties:
+      - 收集 CAN 报告，做决策
+      - 授权所有外部沟通
+      - 确保书记在记录
 
-announcements:
-  start: "This is {name}, I am the Incident Commander for this call."
-  handover: "Everyone on the call, be advised, I am handing over command to {name}."
-  end: "We're ending the call at this time. Follow-up in {slack}. Thanks everyone."
+  deputy:        # 副手——IC 的后备
+    assignee: "bob"
+    duties:
+      - 监控事故计时器（30min 无进展即升级）
+      - 接替 IC（若 IC 需要休息）
+
+  scribe:        # 书记——只记录，不操作
+    assignee: "carol"
+    channel: "#incident-20260613-timeline"
+
+  smes:
+    - domain: "database"
+      assignee: "dave"
+    - domain: "api"
+      assignee: "eve"
+
+  customer_liaison:
+    assignee: "frank"
+    duties:
+      - 每 15 分钟更新 status page
+      - 回复客户工单
+
+  internal_liaison:
+    assignee: "grace"
+    channel: "#incident-20260613-stakeholders"
 ```
 
-```python
-#!/usr/bin/env python3
-"""render-runbook.py — 从 YAML 生成 IC 口袋检查清单"""
-import sys
-from pathlib import Path
-import yaml
+**逐部分解释**：
 
-def main(path: Path) -> None:
-    doc = yaml.safe_load(path.read_text())
-    inc = doc["incident"]
-    print(f"# Incident checklist — {inc['severity']}\n")
-    print("## Roles")
-    for role, who in inc["roles"].items():
-        print(f"- {role}: {who}")
-    print("\n## Phases")
-    for phase, body in doc["phases"].items():
-        print(f"\n### {phase}")
-        for key, val in body.items():
-            if isinstance(val, list):
-                for item in val:
-                    print(f"- [ ] {item}")
-            else:
-                print(f"- {key}: {val}")
-    print("\n## Announcements")
-    for name, tmpl in doc["announcements"].items():
-        print(f"- {name}: `{tmpl}`")
+- `ic` 的 `duties` 里没有"登录服务器"或"改代码"——总控只做决策和协调
+- `deputy` 的 `duties` 里有一条"30 分钟无进展即升级"——这是硬性 timer，防止事故无限拖延无人过问
+- `scribe` 单独占一个 Slack 频道，所有时间线记录都发到那里，事后直接导出就是事故时间线
+- `customer_liaison` 的"每 15 分钟更新"是具体可执行的指标——模糊的"保持沟通"在执行中等于没说
 
-if __name__ == "__main__":
-    main(Path(sys.argv[1]))
+### 案例 3：事后总结模板（Blameless Postmortem）
+
+事故解决后的下一步是写总结。下面是一个无责事后总结的 Markdown 模板：
+
+```markdown
+# Postmortem: 2026-06-13 数据库写入延迟事故
+
+## 时间线（来自书记记录）
+| 时间 | 事件 |
+|------|------|
+| 14:32 | 监控告警：写入延迟 > 5s |
+| 14:34 | IC Alice 宣布 SEV-2，角色分派完成 |
+| 14:38 | SME Dave 确认主库有 3 条慢查询堆积 |
+| 14:42 | Dave kill 慢查询，延迟回到 200ms |
+| 14:50 | 持续监控 10 分钟无复发，IC 宣布解决 |
+
+## 根因
+凌晨 2:00 的数据迁移脚本忘记加 LIMIT，在上班高峰期触发了全表扫描。
+
+## 什么做得好
+- CAN 报告格式让 IC 在 4 分钟内定位到具体查询
+- 书记的时间线让事后不需要"回忆"
+
+## 什么可以更好
+- 数据迁移脚本缺少 review 流程
+- 慢查询告警阈值过高（5s），应该降到 1s 并提前预警
+
+## 行动项
+- [ ] 数据迁移脚本纳入 code review 流程（负责人：ops-team，DDL: 6/20）
+- [ ] 慢查询告警阈值降至 1s（负责人：dave，DDL: 6/15）
 ```
 
-运行 `python render-runbook.py incident-runbook.yaml` 会得到可打印的检查清单，适合 **Failure Friday** 或新 IC shadow 时随身携带。
+**逐部分解释**：
 
-## 与「普通 on-call」的差异
+- 每条行动项都带**负责人 + 截止日期**——不写"团队讨论一下"，那样永远不会完成
+- "什么做得好"和"什么可以更好"分开写——前者鼓励继续，后者指向改进
+- 不出现任何人的名字作为追责对象——焦点是"流程缺了什么"，不是"谁犯的错"
 
-| 维度 | 普通 on-call | ICS 重大事故模式 |
-|------|--------------|------------------|
-| 决策 | 谁懂谁上 | **唯一 IC**，职级让位 |
-| 沟通 | Slack 自由讨论 | 口播 + Scribe 时间线 |
-| 修复 | 处理人可能即指挥 | **指挥与执行分离** |
-| 对外 | 临时拼凑公告 | Customer Liaison + IC 审批 |
-| 事后 | 口头吐槽 | 指定 postmortem 负责人 |
+## 踩过的坑
 
-Getting Started 文档建议：**先从 IC 角色起步**，有人够再加 Scribe；用**假事故**练「和平时期到战时」的心态切换。
+1. **IC 忍不住自己去修**：事故响应中最常见的反模式。IC 说"我就改一行配置很快的"——然后 20 分钟后还在看代码，指挥链断了，团队不知道谁在决策。规则是：IC 的手不能碰键盘，唯一例外是打字发消息。
 
-## 常见坑（Incident Response Pitfalls）
+2. **书记被拉去帮忙排查**：书记的唯一工作是记录。一旦书记也被喊去"帮看下日志"，时间线就断了，事后总结只能靠大家回忆，而回忆在高压力下几乎一定不准。
 
-1. **IC 亲自查日志** — 失去全局视角；应立刻委派给 SME。
-2. **「Can someone…」** — 任务悬空；必须点名。
-3. **无限时指派** — 无法 Verify；三分钟、五分钟都要说出来。
-4. **会议不缩小** — 无关人员凌晨耗着，次日二次事故。
-5. **高管夺权但不接班** — 用 **「Do you wish to take command?」** 把权责说清楚。
-6. **只有一位 IC** — 应尽早培养多人并 **daily on-call rotation**（PagerDuty 建议从周排班尽快过渡到日排班）。
+3. **"没有书记也行"的幻想**：小事故确实可以 IC 兼书记。但一旦超过 3 个人同时参与，IC 的注意力就完全不够兼顾记录。判断标准：如果你需要同时跟超过两个人说话——立刻指定一个书记。
 
-## 落地清单（给零基础团队）
+4. **事后总结写成"谁的责任"**：无责文化的最大敌人是管理层的不安全感。如果 postmortem 被用来考核绩效，团队很快就会学会"少说少错"。解决方法是把 postmortem 的受众明确为"工程团队自己"，而不是 HR 或管理层。
 
-1. 定义何为 **major incident**（例如 SEV-1/SEV-2 触发桥接）。
-2. 指定沟通渠道（Zoom/Meet + `#incident` Slack）。
-3. 选 2–3 人训练 IC，建立 shadow 机制。
-4. 写一页纸 runbook：角色表 + 四阶段 + 三条口播模板。
-5. 每月一次演练（Failure Friday 或 game day）。
-6. 每次真实事故后做 **blameless postmortem**，Scribe 的时间线是输入。
+## 适用 vs 不适用场景
 
-## 进一步阅读
+**适用**：
+- 线上事故响应（SEV-1 / SEV-2 / SEV-3）：参与人数 >= 3 人，影响面大，需要多团队协作
+- 跨团队联合排查：涉及数据库、网络、应用多个领域，需要一个总控协调
+- 需要对外沟通的事故：有客户受影响，必须统一对外口径
+- 事后需要审计的事故：安全事件、合规事件，需要完整时间线
 
-- [Incident Commander 培训](https://response.pagerduty.com/training/incident_commander/) — 本文主来源
-- [Different Roles](https://response.pagerduty.com/before/different_roles/) — 角色职责全文
-- [During an Incident](https://response.pagerduty.com/during/during_an_incident/) — IC / Deputy / SME 分步指令
-- [Getting Started](https://response.pagerduty.com/getting_started/) — 最小可行 ICS
-- [Incident Response Training 课程快照](https://response.pagerduty.com/training/courses/incident_response/) — 2018 开源课件
-- 关联笔记：[[chaos-engineering-netflix-2016]]、[[dora-state-of-devops-2023]]
+**不适用**：
+- 单人能解决的 bug：修复时间 < 10 分钟，不需要启动 ICS
+- 日常 on-call 处理：单个告警、单个服务重启，on-call 自己处理即可
+- 计划性维护：有明确操作手册的变更，不需要事故响应流程
+- 初创团队 < 5 人：流程开销大于收益，直接口头沟通即可
 
-## 小结
+## 历史小故事（可跳过）
 
-**Incident Command System for Tech Operations** 不是又一个 on-call 排班表，而是一套**战时宪法**：谁指挥、谁执行、谁记录、谁对外说话，以及决策时用什么句子。PagerDuty 用十年事故经验证明：把 ICS 从火灾现场搬到数据中心，能显著降低「人越多越乱」的协调税。你不必是最强的调试者，但必须能让最强的那几个人**朝同一个方向用力**——这就是 Incident Commander 存在的理由。
+- **1970 年**：南加州发生特大山火，多个消防部门各自为战，指挥混乱导致火势失控。事后调查报告指出核心问题是"没有统一的指挥体系"。这就是 ICS 的起源。
+
+- **2004 年**：FEMA 将 ICS 正式纳入美国国家事故管理体系（NIMS），成为所有应急响应（火灾、飓风、恐怖袭击）的标准框架。此时它还完全是"物理世界"的工具。
+
+- **约 2014-2016 年**：PagerDuty 的工程师发现"消防队用 ICS 管几百人救火，为什么我们不能用它管几十人修服务器？"于是开始了将 ICS 适配到软件运维的实验。
+
+- **2018 年**：SREcon 大会上，Google SRE 发表了题为 "Incident Command for IT — What We've Learned from the Fire Department" 的演讲，标志着 ICS 在技术圈的正式"出圈"。
+
+- **2022 年**：PagerDuty 将其事故响应文档（包括 ICS 角色指南、培训课程、事后总结模板）全部开源到 GitHub，任何人都可以 clone 后修改为自己的版本。
+
+ICS 的独特之处在于：它是**从另一个完全不同的领域（消防救灾）平行移植过来的最佳实践**——不是计算机科学家发明的，而是消防员实战用了几十年后，被工程师发现"原来我们也需要这个"。
+
+## 学到什么
+
+1. **混乱不是人的问题，是结构的问题**——有了明确的角色、固定的汇报格式、统一的信息通道，普通人也能在高压下有序协作
+2. **IC 的操作系统不是服务器，是信息流**——总控的唯一职责是接收 CAN 报告、做决策、协调资源；动手修 bug 是对这个角色的背叛
+3. **无责文化不是"宽容"，而是"实用"**——追责让信息隐藏，坦诚让系统改进。航空业用了几十年证明这一点，软件行业正在追赶
+4. **流程需要肌肉记忆**——和平时期不练，战时就只能靠本能。定期事故演习不是"没事找事"，是让流程在真正需要时自动启动
+
+## 延伸阅读
+
+- PagerDuty 开源事故响应文档：[response.pagerduty.com](https://response.pagerduty.com/)（ICS 角色指南、培训课程、模板全部开源）
+- Google SRE 书籍第 15 章：[Managing Incidents](https://sre.google/sre-book/managing-incidents/)（事故管理完整方法论）
+- SREcon 2018 演讲：[Incident Command for IT — What We've Learned from the Fire Department](https://www.usenix.org/conference/srecon18americas/presentation/chapman)（Brent Chapman 讲述消防队经验如何移植到 IT）
+- 视频教程：[PagerDuty Incident Management Certification](https://university.pagerduty.com/path/incident-management-certification-fast-track/incident-management-systems-definitions)（三课时免费课程）
+- [[no-silver-bullet]] —— Brooks 论软件工程的"没有银弹"，与 ICS 解决"人+流程"问题的思路相通
+- [[cognitive-load-theory]] —— 理解为什么高压事故下角色分离能防止认知过载
+
+## 关联
+
+- [[no-silver-bullet]] —— Brooks 的核心论点"软件工程的本质困难在人不在机器"，ICS 正是用流程解决"人"的问题
+- [[cognitive-load-theory]] —— 事故响应中任何人同时做两件事（决策+操作/记录+排查）就会超载，ICS 的角色分离正是降低认知负荷的工程手段
+- [[programmer-interruption]] —— 程序员被打断后需要 10-15 分钟回到心流；ICS 的联络员角色隔离了外部干扰，保护执行者的专注状态
+- [[borg]] —— Google 的集群管理系统与 SRE 文化一脉相承，ICS 是 SRE 事故管理在组织层面的具体落地
+- [[dynamo]] —— Amazon 分布式存储，线上运维经验直接催生了"有组织的事故响应"需求
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
