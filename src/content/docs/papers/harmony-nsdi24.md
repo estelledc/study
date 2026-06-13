@@ -2,7 +2,6 @@
 title: "Harmony: A Congestion-free Datacenter Architecture"
 来源: 'https://www.usenix.org/conference/nsdi24/presentation/agarwal-saksham'
 日期: 2026-06-13
-分类_原始: 计算机网络
 分类: 网络协议
 子分类: 数据中心网络
 provenance: pipeline-v3

@@ -2,7 +2,6 @@
 title: "OpenStreetMap — 开源世界地图"
 来源: https://github.com/openstreetmap/iD
 日期: 2026-06-13
-分类_原始: 地理信息系统
 子分类: geographic-information-systems
 分类: 其他
 难度: 零基础
