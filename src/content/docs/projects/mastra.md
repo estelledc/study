@@ -2,7 +2,6 @@
 title: Mastra 学习笔记
 来源: https://github.com/mastra-ai/mastra
 日期: 2026-06-13
-分类_原始: AI / Agent Framework
 分类: 机器学习
 子分类: 数据科学与 AI
 provenance: pipeline-v3
