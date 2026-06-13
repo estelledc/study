@@ -2,7 +2,6 @@
 title: AI Engineering from Scratch 学习笔记
 来源: https://github.com/rohitg00/ai-engineering-from-scratch
 日期: 2026-06-13
-分类_原始: AI / 机器学习
 分类: 机器学习
 子分类: ML 系统
 provenance: pipeline-v3

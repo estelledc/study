@@ -2,7 +2,6 @@
 title: Agno (phidata) 零基础入门笔记
 来源: https://github.com/agno-agi/agno
 日期: 2026-06-13
-分类_原始: AI / 大模型应用开发
 分类: Agent
 子分类: 智能体与 LLM
 provenance: pipeline-v3
