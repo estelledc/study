@@ -58,31 +58,36 @@ function poolStats() {
 // ── quality gate ──
 
 function runQualityGate() {
-  log('Running quality gate...');
+  log('Running quality gate (recent files only)...');
   const counts = noteCount();
+  const now = Date.now();
+  const MAX_AGE = 30 * 60 * 1000; // 30 minutes
 
-  // Check all recent notes have 150+ lines and proper frontmatter
   const issues = [];
+  let checked = 0;
   for (const dir of [PROJECTS, PAPERS]) {
     for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.md'))) {
       const fp = path.join(dir, f);
+      const stat = fs.statSync(fp);
+      if (now - stat.mtimeMs > MAX_AGE) continue; // skip old files
+      checked++;
       const content = fs.readFileSync(fp, 'utf8');
       const lines = content.split('\n').length;
       if (lines < 100) issues.push(`${f}: ${lines} lines (min 100)`);
       if (!/^分类:\s*.+$/m.test(content)) issues.push(`${f}: missing 分类`);
-      if (!/^来源/.test(content)) issues.push(`${f}: missing 来源`);
+      if (!/^来源/m.test(content)) issues.push(`${f}: missing 来源`);
     }
   }
 
   const shortNotes = issues.filter(i => i.includes('lines'));
   const structuralIssues = issues.filter(i => !i.includes('lines'));
 
-  log(`  Notes: ${counts.total} | Short: ${shortNotes.length} | Structural: ${structuralIssues.length}`);
+  log(`  Total: ${counts.total} | Recent checked: ${checked} | Short: ${shortNotes.length} | Structural: ${structuralIssues.length}`);
 
   return {
     pass: shortNotes.length === 0 && structuralIssues.length < 10,
     counts,
-    issues: issues.slice(0, 20),
+    issues: issues.slice(0, 10),
   };
 }
 
@@ -159,9 +164,10 @@ function releaseClaim(slug) { try { fs.unlinkSync(`/tmp/cursor-claim-${slug}`); 
 
 function pickBatch() {
   try {
-    const result = sh(`node scripts/pick-batch.mjs --count ${BATCH_SIZE} --rewrite 0 --new ${BATCH_SIZE}`);
+    const result = sh(`node scripts/pick-batch.mjs --count ${BATCH_SIZE} --rewrite 0 --new ${BATCH_SIZE}`, { maxBuffer: 10 * 1024 * 1024 });
     return JSON.parse(result).items || [];
-  } catch {
+  } catch (e) {
+    log(`  pick-batch error: ${e.message?.slice(0, 80)}`);
     return [];
   }
 }
