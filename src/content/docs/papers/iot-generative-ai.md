@@ -2,7 +2,6 @@
 title: The Internet of Things in the Era of Generative AI: Vision and Challenges
 来源: https://arxiv.org/abs/2401.01923
 日期: 2026-06-13
-分类_原始: 论文笔记
 分类: 其他
 子分类: 物联网
 provenance: pipeline-v3

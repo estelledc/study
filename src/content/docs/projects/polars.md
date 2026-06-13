@@ -2,7 +2,6 @@
 title: Polars — Rust 写的列存 DataFrame
 来源: 'https://github.com/pola-rs/polars'
 日期: 2026-05-30
-分类_原始: 机器学习
 子分类: 存储与查询
 分类: 数据库
 难度: 中级

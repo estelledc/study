@@ -2,7 +2,6 @@
 title: "Table as Thought: Exploring Structured Thoughts in LLM Reasoning"
 来源: https://arxiv.org/abs/2501.02152
 日期: 2026-06-13
-分类_原始: AI / 大语言模型
 分类: 机器学习
 子分类: 推理
 provenance: pipeline-v3

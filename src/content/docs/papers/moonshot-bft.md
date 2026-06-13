@@ -2,7 +2,6 @@
 title: Moonshot: Optimizing Chain-Based Rotating Leader BFT via Optimistic Proposals
 来源: https://arxiv.org/abs/2401.01791
 日期: 2026-06-13
-分类_原始: 区块链共识
 分类: 分布式系统
 子分类: 分布式共识
 provenance: pipeline-v3

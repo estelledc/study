@@ -2,7 +2,6 @@
 title: CopilotKit — 前端 Agent UI 组件库
 来源: https://github.com/CopilotKit/CopilotKit
 日期: 2026-06-13
-分类_原始: AI / Agent
 分类: 机器学习
 子分类: ai-agent-frameworks
 provenance: pipeline-v3

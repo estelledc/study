@@ -3,7 +3,7 @@ title: snmalloc(2019) — 把释放内存变成寄快递
 来源: 'Liétar et al., "snmalloc: A Message Passing Allocator", ISMM 2019'
 日期: 2026-06-13
 分类: 操作系统
-子分类: 内存管理
+子分类: 内核与虚拟化
 难度: 中级
 provenance: pipeline-v3
 ---

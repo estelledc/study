@@ -2,7 +2,6 @@
 title: bat — 现代 cat 替代
 来源: https://github.com/sharkdp/bat
 日期: 2026-05-29
-分类_原始: 基础设施
 子分类: 命令行工具
 分类: CLI
 难度: 中级

@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1301 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1302 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,15 +11,15 @@ sidebar:
 
 ## 总览
 
-- **总数**：1301 篇
-- **已分类**：1301
+- **总数**：1302 篇
+- **已分类**：1302
 
 ### 按一级主题分布
 
 | 主题 | 数量 |
 |---|---:|
 | [编程语言](#编程语言) | 143 |
-| [分布式系统](#分布式系统) | 100 |
+| [分布式系统](#分布式系统) | 101 |
 | [数据库](#数据库) | 96 |
 | [操作系统](#操作系统) | 108 |
 | [机器学习](#机器学习) | 349 |
@@ -54,7 +54,6 @@ sidebar:
 | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | ✅ v3 |  |
 | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | ✅ v3 |  |
 | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | ✅ v3 |  |
-| [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 🗄 存量 |  |
 | [McCarthy LISP 1960](/study/papers/mccarthy-lisp/) | ✅ v3 |  |
 | [Push-Pull FRP — Functional Reactive Programming 实用化](/study/papers/push-pull-frp/) | ✅ v3 |  |
 | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | ✅ v3 |  |
@@ -112,6 +111,7 @@ sidebar:
 | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | ✅ v3 |  |
 | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | ✅ v3 |  |
 | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) | ✅ v3 |  |
+| [Hindley-Milner — 编译器自己猜出所有变量的类型](/study/papers/hindley-milner/) | ✅ v3 |  |
 | [Communicating Sequential Processes — Hoare 1978 零基础学习笔记](/study/papers/hoare-csp-1978/) | ✅ v3 |  |
 | [HotSpot Server Compiler — JVM 在运行时把热点 Java 代码翻译成飞快的本地码](/study/papers/hotspot-server-compiler/) | ✅ v3 |  |
 | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | ✅ v3 |  |
@@ -204,7 +204,7 @@ sidebar:
 
 ## 分布式系统
 
-共 100 篇。
+共 101 篇。
 
 ### 分布式系统
 
@@ -312,6 +312,7 @@ sidebar:
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
 | [Bitcoin 白皮书](/study/papers/bitcoin/) | ✅ v3 |  |
+| [Analytically-Driven Resource Management for Cloud-Native Microservices](/study/papers/cloud-native-resource/) | ✅ v3 |  |
 | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | ✅ v3 |  |
 | [Infinite-LLM — 把注意力层拆出去，让 GPU 集群一起扛长上下文](/study/papers/infinite-llm/) | ✅ v3 |  |
 | [Infinite-LLM — 用「分布式注意力」打破长文本的显存墙](/study/papers/infinitts-llm/) | ✅ v3 |  |
@@ -525,7 +526,6 @@ sidebar:
 | [Singularity — 用安全语言重想整条软件栈](/study/papers/singularity-os-2007/) | ✅ v3 |  |
 | [Slab Allocator 1994 — 内核按对象类型开缓存，不是按字节切](/study/papers/slab-1994/) | ✅ v3 |  |
 | [Snap 2019 — Google 把网络栈搬进用户空间的微内核实践](/study/papers/snap-2019/) | ✅ v3 |  |
-| [snmalloc（ISMM 2019）— 用「消息传递」解决谁分配、谁释放不在同一线程](/study/papers/snmalloc-2019/) | ✅ v3 |  |
 | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | ✅ v3 |  |
 | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | ✅ v3 |  |
 | [Sprite 1988 — 把一屋子工作站伪装成一台大主机](/study/papers/sprite-1988/) | ✅ v3 |  |
@@ -566,6 +566,7 @@ sidebar:
 | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | ✅ v3 |  |
 | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | ✅ v3 |  |
 | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | ✅ v3 |  |
+| [snmalloc(2019) — 把释放内存变成寄快递](/study/papers/snmalloc-2019/) | ✅ v3 |  |
 | [You probably don't need Yocto, and that's fine — 嵌入式 Linux 不必默认上 Yocto](/study/papers/yocto-alternatives/) | ✅ v3 |  |
 
 ## 机器学习
@@ -602,7 +603,7 @@ sidebar:
 | [Adafactor — 把 Adam 的优化器内存从 O(d) 压到 O(√d)](/study/papers/adafactor-2018/) | ✅ v3 |  |
 | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) | ✅ v3 |  |
 | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) | ✅ v3 |  |
-| [VLA 驾驶模型的视觉依赖诊断——用扰动实验回答一个问题：自动驾驶到底在多大程度上真的在"看"？](/study/papers/agent-skill-protocol-2026/) | ✅ v3 |  |
+| [VLA 驾驶模型的视觉依赖诊断——用扰动实验回答一个问题：自动驾驶到底在多大程度上真的在「看」？](/study/papers/agent-skill-protocol-2026/) | ✅ v3 |  |
 | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) | ✅ v3 |  |
 | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) | ✅ v3 |  |
 | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | ✅ v3 |  |
@@ -1662,7 +1663,7 @@ sidebar:
 | [No Silver Bullet — Essence and Accident in Software Engineering（Brooks, 1986）](/study/papers/brooks-no-silver-bullet-1986/) | ✅ v3 |  |
 | [Chaos Engineering — Netflix 如何把「故意搞破坏」变成可靠性学科](/study/papers/chaos-engineering-netflix-2016/) | ✅ v3 |  |
 | [DORA State of DevOps Report 2023 — 用「餐厅经营」读懂软件交付科学](/study/papers/dora-state-of-devops-2023/) | ✅ v3 |  |
-| [Incident Command System for Tech Operations — 技术事故里的「现场总指挥」](/study/papers/incident-command-system-2022/) | ✅ v3 |  |
+| [事故指挥系统 — 让线上事故响应从"救火"变成"流水线"](/study/papers/incident-command-system-2022/) | ✅ v3 |  |
 | [Literate Programming — Knuth 1984 文学化编程与 WEB 系统](/study/papers/knuth-literate-1984/) | ✅ v3 |  |
 | [Hints for Computer System Design — Butler Lampson 的系统设计箴言](/study/papers/lampson-hints-1983/) | ✅ v3 |  |
 | [On the Criteria To Be Used in Decomposing Systems into Modules — Parnas 1972 信息隐藏与模块化准则](/study/papers/parnas-information-hiding-1972/) | ✅ v3 |  |
@@ -1719,7 +1720,7 @@ sidebar:
 
 ---
 
-## 全部 1301 篇（字母序）
+## 全部 1302 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1740,7 +1741,7 @@ sidebar:
 | `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | ✅ v3 | Agent | 智能体与 LLM |
-| `agent-skill-protocol-2026` | [VLA 驾驶模型的视觉依赖诊断——用扰动实验回答一个问题：自动驾驶到底在多大程度上真的在"看"？](/study/papers/agent-skill-protocol-2026/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `agent-skill-protocol-2026` | [VLA 驾驶模型的视觉依赖诊断——用扰动实验回答一个问题：自动驾驶到底在多大程度上真的在「看」？](/study/papers/agent-skill-protocol-2026/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `agentic-proving-for-program-verification-arxiv-2605-23772` | [Agentic Proving for Program Verification](/study/papers/agentic-proving-for-program-verification-arxiv-2605-23772/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | ✅ v3 | 机器学习 | AI / 软件工程 |
 | `agentrefine` | [AgentRefine 学习笔记：通过修正微调增强智能体泛化能力](/study/papers/agentrefine/) | ✅ v3 | 机器学习 | 智能体 |
@@ -1909,6 +1910,7 @@ sidebar:
 | `clearml` | [ClearML — 实验跟踪 + 远程执行 + 数据管理三合一](/study/papers/clearml/) | ✅ v3 | 机器学习 | MLOps |
 | `clickhouse` | [ClickHouse — 把列存 OLAP 推到硬件极限](/study/papers/clickhouse/) | ✅ v3 | 数据库 | 存储与查询 |
 | `clip` | [CLIP — Contrastive Language-Image Pre-training](/study/papers/clip/) | ✅ v3 | 机器学习 | 多模态 / 计算机视觉 |
+| `cloud-native-resource` | [Analytically-Driven Resource Management for Cloud-Native Microservices](/study/papers/cloud-native-resource/) | ✅ v3 | 分布式系统 | 云原生 |
 | `clove-object-level-cxl-memory-management-in-managed-runtimes-arxiv-2605-20370` | [Clove — Object-Level CXL Memory Management in Managed Runtimes](/study/papers/clove-object-level-cxl-memory-management-in-managed-runtimes-arxiv-2605-20370/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `coap-rfc7252` | [CoAP RFC 7252 — 给传感器用的「超短明信片 HTTP」](/study/papers/coap-rfc7252/) | ✅ v3 | 操作系统 | 嵌入式与 IoT |
 | `coca-2022` | [CoCa — 把对比和生成两种多模态训练目标合到一个模型里](/study/papers/coca-2022/) | ✅ v3 | 机器学习 | 模型与训练 |
@@ -2219,7 +2221,7 @@ sidebar:
 | `herring-parallel-batch-order-fairness-on-dag-based-blockchain-consensus-arxiv-26` | [Herring：并行批量顺序公平性——在 DAG 区块链共识中对抗 MEV](/study/papers/herring-parallel-batch-order-fairness-on-dag-based-blockchain-consensus-arxiv-26/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `hexagent-agentic-scheduling` | [HexAGenT — 面向 Agentic LLM 的工作流与异构感知调度](/study/papers/hexagent-agentic-scheduling/) | ✅ v3 | 机器学习 | 模型与训练 |
-| `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 🗄 存量 | 编程语言 | 编程语言 |
+| `hindley-milner` | [Hindley-Milner — 编译器自己猜出所有变量的类型](/study/papers/hindley-milner/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `hits-1999` | [HITS — 给网页同时打两个分：权威页 + 索引页](/study/papers/hits-1999/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `hkdf-rfc5869` | [HKDF (RFC 5869) — 从「不太均匀的原料」榨出多把互不串味的密钥](/study/papers/hkdf-rfc5869/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) | ✅ v3 | 分布式系统 | 共识与复制 |
@@ -2256,7 +2258,7 @@ sidebar:
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
 | `improving-embeddings-llm` | [用 LLM 生成合成数据来训练文本向量](/study/papers/improving-embeddings-llm/) | ✅ v3 | 信息检索 | 嵌入 |
 | `in-context-reward-adaptation-for-robust-preference-modeling-arxiv-2605-30323` | [In-Context Reward Adaptation for Robust Preference Modeling](/study/papers/in-context-reward-adaptation-for-robust-preference-modeling-arxiv-2605-30323/) | ✅ v3 | 机器学习 | ML 系统 |
-| `incident-command-system-2022` | [Incident Command System for Tech Operations — 技术事故里的「现场总指挥」](/study/papers/incident-command-system-2022/) | ✅ v3 | 其他 | 工程文化 |
+| `incident-command-system-2022` | [事故指挥系统 — 让线上事故响应从"救火"变成"流水线"](/study/papers/incident-command-system-2022/) | ✅ v3 | 其他 | 工程文化 |
 | `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) | ✅ v3 | 信息检索 | 检索与排序 |
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | ✅ v3 | 机器学习 | AI 可解释性 |
 | `inductive-deductive-synthesis-verified-distributed-systems-arxiv-2605-23109` | [Inductive Deductive Synthesis: Enabling AI to Generate Formally Verified Systems](/study/papers/inductive-deductive-synthesis-verified-distributed-systems-arxiv-2605-23109/) | ✅ v3 | 分布式系统 | 共识与复制 |
@@ -2789,7 +2791,7 @@ sidebar:
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) | ✅ v3 | 图形学 | GPU 架构 |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | ✅ v3 | 数据库 | 存储与查询 |
 | `snap-2019` | [Snap 2019 — Google 把网络栈搬进用户空间的微内核实践](/study/papers/snap-2019/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
-| `snmalloc-2019` | [snmalloc（ISMM 2019）— 用「消息传递」解决谁分配、谁释放不在同一线程](/study/papers/snmalloc-2019/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
+| `snmalloc-2019` | [snmalloc(2019) — 把释放内存变成寄快递](/study/papers/snmalloc-2019/) | ✅ v3 | 操作系统 | 内存管理 |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | ✅ v3 | 数据库 | 存储与查询 |
 | `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
 | `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | ✅ v3 | 操作系统 | 内核与虚拟化 |

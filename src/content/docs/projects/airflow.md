@@ -2,7 +2,6 @@
 title: Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工
 来源: Apache Airflow Documentation, https://airflow.apache.org/docs/
 日期: 2026-05-31
-分类_原始: 基础设施
 子分类: 数据科学与 AI
 分类: 机器学习
 难度: 中级
