@@ -1,337 +1,169 @@
 ---
-title: "Anytype — 本地优先块编辑器"
+title: Anytype — 本地优先块编辑器桌面客户端
 来源: https://github.com/anyproto/anytype-ts
 日期: 2026-06-13
-子分类: 编辑器与 IDE
 分类: CLI
+子分类: 编辑器与 IDE
+难度: 初级
 provenance: pipeline-v3
 ---
 
-## 日常类比：自家抽屉柜 + 乐高积木 + 加密保险箱
+## 是什么
 
-想象你在整理生活：每个抽屉是一个 **Space（空间）**——工作、家庭、读书各一屉；抽屉里不是一叠 Word，而是一排 **可拆装的乐高块**——一段文字、一张图、一张看板、一张表格，每一块都能单独挪动、复制、嵌套。更关键的是：**柜子先放在你家里（本地硬盘）**，联网只是为了和另一台设备上的「同款柜子」对账；即便断网，你照样打开抽屉写笔记。柜子上还有一把只有你知道密码的锁——**端到端加密**，服务商也读不到内容。
+Anytype 是一套**本地优先、端到端加密、可选 P2P 同步**的个人知识操作系统。日常类比：像一个放在你家、只有你知道密码的抽屉柜——每个抽屉是一个 Space（工作、家庭、读书），抽屉里不是一叠 Word 文件，而是一排可拆装的乐高块（文字、图片、看板、表格），每一块都能单独挪动、嵌套、重组。断网照样打开写笔记，联网只是为了和多设备上的"同款柜子"对账。
 
-Anytype 就是这样一套 **本地优先、P2P 可选同步、零知识加密** 的个人知识操作系统。桌面客户端 [anyproto/anytype-ts](https://github.com/anyproto/anytype-ts) 用 Electron + TypeScript/React 画 UI，真正的存储、同步、加密逻辑在 Go 写的中间层 [anytype-heart](https://github.com/anyproto/anytype-heart) 里，两者通过 **gRPC** 对话。零基础路径：**装 App → 建 Space → 写 Page → 用 Type/Relation 给对象贴标签 → 用 Set/Collection 做数据库视图**；想读源码则从 Block 树 + MobX Store 入手。
+桌面客户端仓库 `anytype-ts` 用 Electron + TypeScript/React 画 UI，真正的存储、同步、加密逻辑在 Go 写的中间层 `anytype-heart` 里，两者通过 gRPC 对话。一切内容——一页笔记、一个任务、一张书签——都是 Object（对象），每个 Object 的正文是一棵 Block 树，属性通过 Relation 定义。这和纯 Markdown 文件夹笔记（Obsidian）或大纲笔记（Logseq）的底层模型完全不同：Anytype 更接近"本地加密版 Notion + 对象图数据库"。
 
----
+安装包的实际结构是"Electron 壳 + 内嵌 Go 二进制（anytypeHelper）"。用户打开应用后，Electron 启动 anytypeHelper 进程，React 前端通过 gRPC 和本地 helper 通信。这种"瘦前端 + 胖中间件"的设计把 UI 逻辑和核心引擎清晰分开，也让键盘输入延迟极低——所有操作先写本地 SQLite，不需要等网络。
 
-## 这个项目解决什么问题
+## 为什么重要
 
-### 痛点 1：云端笔记「数据在别人服务器上」
+不理解 Anytype 的本地优先 + 类型化对象图模型，下面这些事都没法解释：
 
-Notion、Evernote 等默认把 canonical 数据放在云端。Anytype 强调 **offline-first**：中间层先把对象图写入本地，同步是附加能力；加密密钥在用户侧，符合「数字大脑应归用户所有」的产品定位。
+- 为什么有的笔记工具断网后只能看、不能写，而 Anytype 断网后新建页面、插入块、改属性全部正常——因为 canonical 数据先落本地 SQLite，同步是附加能力而非前提
+- 为什么 Notion 里一页笔记只能有一个视图，而 Anytype 同一个 Task Type 能同时出现在看板、日历、表格、图谱里——因为 Object + Relation 模型把"数据是什么"和"怎么展示"解耦了
+- 为什么 Logseq 的 `[[wikilink]]` 很难回答"所有 status=进行中且截止日在本周的任务"——纯链接缺少强类型属性，而 Anytype 的 Relation + Set 把链接和数据库查询合为一体
+- 为什么有人愿意用 Electron 应用而不是纯原生 App——因为跨平台 UI 框架让团队能把精力集中在中间件引擎上，同一套 Go 核心同时服务桌面和移动端
+- 为什么 Anytype 的安装包比普通 Electron 应用大——因为它打包了一个完整的 Go 二进制（anytype-helper），这个 helper 才是真正干活的引擎，Electron 壳只是负责画 UI 和发 gRPC 指令
 
-### 痛点 2：块编辑器与结构化数据库割裂
+## 核心要点
 
-很多工具要么是大纲块（Roam/Logseq），要么是表格库（Airtable）。Anytype 用 **同一套 Object + Block + Relation** 模型：一页笔记是块树，一个「任务 Type」可以出现在 Kanban、Calendar、Gallery 等多种 **Dataview** 视图里，无需导出到第二个 App。
+Anytype 的对象图模型可以拆成**四个概念**，从大到小排列：
 
-### 痛点 3：链接/wiki 缺少强类型
+1. **Space（空间）——逻辑隔离单元**：类似"工作区"或"保险柜分区"。每个 Space 有自己的对象图、成员与权限、独立的加密密钥。类比：一栋楼里的不同房间，房间之间有门禁，但每间房的柜子（数据）是独立的。技术上 Space 通过 gRPC 命令在 tech space 里列出，每个 Space 有唯一 ID。
 
-纯 `[[wikilink]]` 难以回答「所有 status=进行中 且 截止日在本周 的任务」。Anytype 的 **Relation（关系/属性）** 给每个 Object 挂上结构化字段（日期、状态、多选标签等），**Set** 按 Type + Filter 动态聚合对象，类似「保存的查询 + 多视图仪表盘」。
+2. **Object + Type + Relation（对象 + 类型模板 + 属性定义）**：一切皆对象——Page、Task、Bookmark、自定义类型都是 Object。Type 是对象的"schema 模板"（定义这类东西有哪些属性），Relation 是属性定义（如 `status`、`dueDate`、`author`）。类比：Object 是填好的表格，Type 是表格模板，Relation 是表头字段名。这是 Anytype 相对纯 wikilink 笔记的核心差异：链接 + 类型系统。
 
-### 痛点 4：去中心化与多设备
+3. **Block 树（块树）——对象的正文**：Object 的内容不是字符串，而是一棵 Block 树。文本、图片、链接、表格、Dataview 每种内容都是带 `type` 与 `content` 的 Block，通过 `parentId` / `childrenIds` 形成父子关系。类比：像写 HTML 的 DOM 树，但每个节点自带类型和渲染规则。`src/ts/store/block.ts` 里的 `BlockStore` 为所有当前打开的对象维护 `blockMap`（rootId -> blockId -> Block 实例）和 `treeMap`（树结构索引）。
 
-基于 **any-sync** 的 P2P 同步可选开启；同一 Any-ID 在多设备间同步 Space，而不必把原始明文交给中心化后端。桌面仓库 `anytype-ts` 是官方 macOS / Linux / Windows 客户端的开源实现（Any Source Available License 1.0）。
+4. **Set / Collection + Dataview（动态聚合 + 多视图）**：Set 按 Type + Filter 动态收集对象（类似智能文件夹），Collection 是手动 curated 的对象集合。二者在 UI 里通过 Dataview 块展示，支持 Grid、List、Gallery、Board、Calendar、Graph 六种视图，每个视图有独立的 filters、sorts、relations（列定义）。类比：Set 是"保存的搜索条件"，Dataview 是"把搜索结果用不同排版画出来"。
 
----
+四层加起来就是 Anytype 的核心公式：**Space 分房间 -> Object 是东西 -> Block 树是正文 -> Set 聚合 + Dataview 展示**。编辑器操作（创建块、拖拽、改属性）本质是 gRPC 命令改这棵对象图，heart 负责持久化，前端只负责画 UI。
 
-## 架构一图（桌面客户端）
+理解这四个概念的关系，就能看懂仓库里的代码分工：`model/block.ts` 定义块结构，`store/block.ts` 维护块树索引，`lib/api/command.ts` 封装 100+ 条 gRPC 命令，`component/block/` 里 19+ 种组件各自对应一种块类型的渲染。前端代码从不直接访问 SQLite——所有读写都通过 gRPC 命令层，heart 是唯一的"数据真相源"。
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│  Electron 主进程 (electron.js) — 窗口、IPC、系统集成      │
-└───────────────────────────┬─────────────────────────────┘
-                            │ IPC
-┌───────────────────────────▼─────────────────────────────┐
-│  React 渲染进程 (src/ts/)                                │
-│  · component/block/*  — 19+ 种块 UI                      │
-│  · component/editor/page.tsx — 块编辑器 (~2600 行)       │
-│  · store/block.ts (MobX) — 块树内存模型                   │
-│  · lib/api/command.ts — gRPC 命令封装                     │
-└───────────────────────────┬─────────────────────────────┘
-                            │ gRPC (+ 事件流)
-┌───────────────────────────▼─────────────────────────────┐
-│  anytype-heart (Go) — 持久化、CRDT/同步、加密、搜索       │
-│  本地 anytypeHelper 二进制 + SQLite/对象图存储            │
-└─────────────────────────────────────────────────────────┘
-```
+这套架构的一个好处是：如果你想给 Anytype 写一个 CLI 工具或自动化脚本，你不需要碰 React 代码。直接通过 gRPC 连本地 heart 就能做所有操作——创建对象、插入块、查询 Set，社区项目 `anytype-cli` 就是这样做的。Rust 生态也有 `anytype-rpc` crate 封装了同一套 protobuf。
 
-**开发栈速览：** Bun 包管理、Vite 打包、TypeScript、React 18、MobX 状态、PixiJS + Web Worker 画关系图谱。改 UI 前先 `./update.sh` 拉取匹配版本的 middleware。
+## 实践案例
 
----
+### 案例 1：按 status 分栏的任务看板（用户视角）
 
-## 核心概念拆解
+新建一个 Task Type，给它加三个 Relation：`status`（单选：To-do/Doing/Done）、`dueDate`（日期）、`priority`（多选：High/Medium/Low）。然后创建一个 Set，筛选 `Type = Task`，视图选 Board，按 `status` 分组。
 
-### 1. Space（空间）
+效果：你的所有任务自动按状态分成三列，每一列里的卡片显示任务标题、截止日和优先级。改一个任务的 status，卡片自动从"待办"列移到"进行中"列——不需要手动拖。
 
-逻辑隔离单元，类似「工作区」或「保险柜分区」。每个 Space 有自己的对象图、成员与权限（共享 Space 时）。CLI/ gRPC 层通过 `ObjectSearch` 在 tech space 里列出可用 Space（见 anytype-cli 的 `ListSpaces` 实现）。
+背后发生了什么：Set 对象里存了一条 Dataview 配置（TypeScript 接口叫 `I.ContentDataview`），包含 `sources`（指向 Set 对象的 ID）、`filters`（筛选条件）、`sorts`（排序规则）、`relations`（显示哪些列）、`groupRelationKey`（Board 视图按哪个属性分栏）。前端 `lib/dataview.ts` 的 `viewGetRelations` 函数把 Type schema 里的 Relation 与 View 可见列合并，`loadData` 拼 filters/sorts 调 `U.Subscription.subscribe` 向后端要行数据，heart 返回结果后 React 渲染。这就是"改 Type 的 Relation 会影响所有 Set 视图列"的原因——因为视图列来自 Type schema + View 配置的并集。
 
-### 2. Object（对象）
+### 案例 2：Block 树的代码视角——编辑器底层
 
-Anytype 里 **一切皆对象**：Page、Task、Bookmark、自定义 Type 都是 Object，有唯一 id、layout（Page/Note/Set/…）、以及一组 **Details**（键值属性，由 Relation 定义语义）。
-
-### 3. Block（块）
-
-Object 的 **正文** 由块树组成。`src/ts/model/block.ts` 注释写得很清楚：文本、图片、链接、表格、Dataview、Chat 等每种内容都是带 `type` 与 `content` 的 Block；块通过 `parentId` / `childrenIds` 形成树，Toggle、分栏（Layout）等容器块可嵌套子块。
-
-### 4. Type 与 Relation
-
-- **Type**：对象的「 schema 模板」，定义这类东西有哪些 Relation、默认布局、推荐块结构。
-- **Relation**：属性定义（如 `status`、`dueDate`、`author`），值存在 Object 的 details 里；Filter/Sort 都针对 Relation 运算。
-
-这是 Anytype 相对纯 wikilink 笔记的核心差异：**链接 + 类型系统**。
-
-### 5. Set / Collection 与 Dataview
-
-- **Set**：按 Type + Filter 动态收集对象（类似智能文件夹）。
-- **Collection**：手动 curated 的对象集合。
-- 二者在 UI 里常通过 **BlockDataview** 块展示，支持 Grid、List、Gallery、Board、Calendar、Graph 等 **View**；每个 View 有自己的 `filters`、`sorts`、`relations`（列定义）。
-
-### 6. 本地优先与同步
-
-编辑操作经 gRPC 发到 heart，**先落本地**；同步引擎在后台与 peer 交换加密 blob。前端通过 **gRPC 事件流** 收增量，MobX store 更新后 React 自动重绘——所以多端同时改同一页时，你会看到实时的块级合并结果（具体 CRDT 细节在 heart 仓库）。
-
-### 7. anytype-ts 在仓库里的职责
-
-| 目录 | 职责 |
-|------|------|
-| `src/ts/component/block/` | 各块类型 React 组件 |
-| `src/ts/component/editor/` | 页面编辑器、选区、拖拽 |
-| `src/ts/store/block.ts` | `blockMap` / `treeMap` 维护打开对象的块树 |
-| `src/ts/lib/api/` | 100+ gRPC 命令与 protobuf mapper |
-| `src/scss/` | 与组件镜像的样式（支持 CSS nesting） |
-
-**它不是** 纯 Markdown 文件夹笔记（不像 Obsidian 直接编辑 .md）；Canonical 数据在中间层对象图里，导出/备份走官方导出或 gRPC API。
-
----
-
-## 安装与第一次使用（用户向）
-
-1. 从 [download.anytype.io](https://download.anytype.io) 或 [GitHub Releases](https://github.com/anyproto/anytype-ts/releases) 安装桌面版。
-2. 创建 **Any-ID**（本地密钥链保存助记词/恢复码——丢失无法找回）。
-3. 新建 **Space**，在 Space 里 `+` 创建 Page 或 Task。
-4. 打开 Page，输入 `/` 插入块类型（文本、待办、分隔线、嵌入 Set 等）。
-5. 在类型库中查看 **Types**，理解 Task 与 Page 的 Relation 差异；建一个 Set，筛选 `Type = Task` 且 `Status = To-do`，切换 Board 视图。
-
-### 从源码跑开发版（开发者向）
-
-```bash
-git clone https://github.com/anyproto/anytype-ts.git && cd anytype-ts
-bun install
-./update.sh macos-latest arm    # 或 ubuntu-latest / windows-latest + arm|amd
-cd .. && git clone https://github.com/anyproto/anytype-heart.git && cd anytype-heart
-make install-dev-js CLIENT_DESKTOP_PATH=../anytype-ts && cd ../anytype-ts
-bun run update:locale
-bun run start:dev               # 热重载 Electron；Web 模式: bun run start:web
-```
-
-环境变量：`SERVER_PORT` 指定 Vite 端口；`ELECTRON_SKIP_NOTARIZE=1` 可在本地跳过 macOS 公证打包。
-
----
-
-## 代码示例 1：Block 模型 — 块树的最小单元
-
-摘自 `src/ts/model/block.ts` 的设计（简化注释，保留结构）。每个块既有通用字段，也有按 `type` 实例化的 `ContentModel`：
+翻开 `src/ts/model/block.ts`，每个 Block 的结构简化如下：
 
 ```typescript
-// src/ts/model/block.ts — 概念简化
-class Block implements I.Block {
-	id = '';
-	parentId = '';
-	type: I.BlockType = I.BlockType.Empty;
-	childrenIds: string[] = [];
-	layout: I.ObjectLayout = I.ObjectLayout.Note;
-	hAlign: I.BlockHAlign = I.BlockHAlign.Left;
-	bgColor = '';
-	fields: any = {};
-	content: any = {};
+class Block {
+  id = '';
+  parentId = '';
+  type: BlockType = BlockType.Empty;
+  childrenIds: string[] = [];
+  content: any = {};
 
-	constructor(props: I.Block) {
-		this.id = String(props.id || '');
-		this.parentId = String(props.parentId || '');
-		this.type = props.type;
-		this.childrenIds = props.childrenIds || [];
-		// 按块类型挂载不同 Content 类（Text、File、Link、Layout…）
-		if (ContentModel[this.type]) {
-			this.content = new ContentModel[this.type](props.content);
-		}
-		makeObservable(this, {
-			bgColor: observable,
-			content: observable,
-			fields: observable,
-		});
-	}
+  constructor(props) {
+    this.id = String(props.id || '');
+    this.parentId = String(props.parentId || '');
+    this.childrenIds = props.childrenIds || [];
+    // 按块类型挂载不同 Content 类（Text、File、Link、Layout…）
+    if (ContentModel[this.type]) {
+      this.content = new ContentModel[this.type](props.content);
+    }
+    makeObservable(this, { content: observable, fields: observable });
+  }
 
-	canHaveChildren(): boolean {
-		return this.isLayout() || this.isTextQuote() /* … */;
-	}
-
-	isText(): boolean {
-		return this.type === I.BlockType.Text;
-	}
+  canHaveChildren(): boolean {
+    return this.isLayout() || this.isTextQuote();
+  }
 }
 ```
 
-**阅读要点：**
+要点：文档不是字符串，是 Block 森林。编辑器操作（Enter 分裂块、`/` 命令菜单、拖拽重排）最终都调用 `lib/api/command.ts` 里的 `C.BlockCreate`、`C.BlockListMove` 等 gRPC 命令，成功后 heart 推事件，`BlockStore` 合并增量，MobX `observable` 让 React 组件自动刷新。改块不要直接 mutate 本地 Map——必须走命令层，否则与 heart 持久化状态不一致。
 
-- 文档不是字符串，而是 **Block 森林**；编辑器操作本质是 `BlockCreate` / `BlockListDelete` 等 gRPC 命令改树。
-- `childrenIds` 决定大纲层级；Layout 块把页面分成多列，类似 Notion 分栏。
-- MobX `observable` 让块内容变化时，对应 `component/block/text.tsx` 等组件自动刷新。
+一个具体的渲染链路：`EditorPage` 组件启动 -> `S.Block.getLeaf(rootId, rootId)` 取根块 -> 递归读 `childrenIds` 渲染子块 -> 每个子块按 `type` 找到对应的 React 组件（文本块用 `component/block/text.tsx`，图片块用 `component/block/file.tsx`）。`rootId` 通常等于 Object id（整页笔记的对象 ID），同一 Space 打开多个页签时 store 按 rootId 分区，避免块 id 冲突。
 
----
+### 案例 3：多端实时同步——前端如何感知 remote 变化
 
-## 代码示例 2：BlockStore — 内存中的块树索引
+同一 Space 在电脑 A 和电脑 B 上同时打开。电脑 A 写了一段文字，电脑 B 看到这段文字几乎实时出现。
 
-`src/ts/store/block.ts` 的 `BlockStore` 为所有「当前打开的对象」维护多块 Map：
+流程：A 编辑 -> gRPC `BlockTextSetText` 命令 -> A 的 heart 先落本地 -> A 的 heart 通过 any-sync 协议把加密 blob 发给 B 的 heart -> B 的 heart 落本地 -> B 的 heart 通过 gRPC 事件流推增量 -> B 的 `BlockStore` 更新 `blockMap` -> MobX 通知 React 组件 -> B 的屏幕上新文字出现。
 
-```typescript
-// src/ts/store/block.ts — 结构摘录
-class BlockStore {
-	/** rootId -> blockId -> Block 实例 */
-	public blockMap: Map<string, Map<string, I.Block>> = new Map();
+关键点：前端不直接做 P2P 通信，只和本地 heart 通过 gRPC 对话。heart 负责持久化 + 加密 + 同步——前端完全不知道"同步"的存在，只管渲染本地数据。这是 Anytype 架构最巧妙的地方：UI 层是"瞎子"，只看见本地状态变化；同步是 heart 的后台任务，对 UI 透明。
 
-	/** rootId -> blockId -> { id, childrenIds, parentId } */
-	public treeMap: Map<string, Map<string, I.BlockStructure>> = new Map();
+## 踩过的坑
 
-	getLeaf(rootId: string, id: string): I.Block | undefined {
-		return this.blockMap.get(rootId)?.get(id);
-	}
+1. **把 Anytype 当 Markdown 文件夹用——发现 Git diff 无效**：canonical 数据在中间层对象图里，不是 .md 文件树。版本历史依赖 Anytype 自身导出功能，需要 Git 管理时定期 Export Markdown 到单独目录才现实。
 
-	// profile / spaceview / widgets 等系统对象 id 也挂在本 store
-}
-```
+2. **改了 Type 的 Relation 后所有 Set 视图列全变**：Type 的 Relation 是 schema 级定义，所有引用该 Type 的 Set 都会受影响。改之前确认"这个属性是所有该类型对象都需要的，还是只这个 Set 临时想展示的"——后者应该只在 View 的 `relations` 配置里加列，不改 Type 定义。
 
-编辑器页 `EditorPage`（`component/editor/page.tsx`）启动时会 `S.Block.getLeaf(rootId, rootId)` 取根块，再递归渲染子块。拖拽、Enter 分裂块、`/命令` 菜单最终都调用 `lib/api/command.ts` 里的 `C.BlockCreate`、`C.BlockListMove` 等，成功后 middleware 推事件，store 合并增量。
+3. **忘记备份恢复码（助记词）后换电脑无法登录**：Any-ID 的加密密钥只存本地，恢复码是唯一的"钥匙"。丢失后服务商也无法恢复数据——E2E 加密的代价。首次创建 Any-ID 时务必把恢复码写在纸上或存在另一个加密工具里。
 
-**阅读要点：**
+4. **开发环境 middleware 版本不匹配导致客户端白屏**：`anytype-ts` 和 `anytype-heart` 的版本强绑定。跑 `bun run start:dev` 前必须先 `./update.sh macos-latest arm` 下载匹配版本的 middleware，否则 gRPC 调用失败，客户端无限 loading。CI 里也有同样问题——`.github/workflows` 里 update 步骤不能省略。
 
-- `rootId` 通常等于 **Object id**（整页/整笔记的对象 id）。
-- 同一 Space 打开多个页签时，store 按 rootId 分区，避免块 id 冲突。
-- 改块不要直接 mutate 本地 Map 绕过命令层，否则与 heart 持久化状态不一致。
+## 适用 vs 不适用场景
 
----
+**适用**：
 
-## 代码示例 3：Dataview 视图配置（概念 JSON）
+- 想要 Notion 式灵活布局（块拖拽、多视图数据库）但坚持数据留在本机的用户
+- 需要把"笔记"和"数据库"合在一起——同一批对象在表格里筛选、看板里拖、图谱里看关系
+- 多设备使用但不想把明文数据交给云服务商——P2P 同步 + E2E 加密
+- 想学习"本地优先应用"的架构模式——Electron + gRPC + Go 中间件 + MobX 状态管理 + CRDT 同步，是一套完整的参考实现
 
-Dataview 块的内容（`ContentDataview`）在 TypeScript 接口里大致如下；实际对象存在 heart，前端通过 subscription 拉记录列表：
+**不适用**：
 
-```typescript
-// 概念结构 — 对应 I.ContentDataview / I.View
-const taskBoardView = {
-	sources: ['<set-or-collection-object-id>'],
-	viewId: 'view-board-1',
-	isCollection: false,
-	views: [
-		{
-			id: 'view-board-1',
-			name: '按状态分栏',
-			type: 'Board', // Grid | List | Gallery | Calendar | Graph
-			groupRelationKey: 'status',
-			filters: [
-				{
-					relationKey: 'type',
-					condition: 'Equal',
-					value: '<task-type-id>',
-				},
-			],
-			sorts: [{ relationKey: 'dueDate', type: 'Asc' }],
-			relations: [
-				{ relationKey: 'name', isVisible: true },
-				{ relationKey: 'status', isVisible: true },
-				{ relationKey: 'dueDate', isVisible: true },
-			],
-		},
-	],
-};
-```
+- 需要纯 Markdown 文件、Git 管理、任何编辑器都能打开的简单笔记流——Obsidian / Logseq 更合适
+- 团队已经深度使用 Notion 且依赖其协作、权限、评论系统——Anytype 的多人协作仍在早期
+- 必须用手机作为主力输入设备——Anytype 移动端功能落后于桌面端
+- 需要公开分享页面给没有 Anytype 的人看——公开分享功能有限，不像 Notion 一键生成网页
 
-`lib/dataview.ts` 的 `viewGetRelations` 会把 Type schema 里的 Relation 与 View 里可见列合并；`loadData` 再拼 filters/sorts 调用 `U.Subscription.subscribe` 向后端要行数据。理解这一点后，就看懂「为什么改 Type 的 Relation 会影响所有 Set 视图列」。
+## 历史小故事（可跳过）
 
----
+- **2019 年**：Anytype 团队成立，核心理念是"数字大脑应归用户所有"。创始团队对现有工具不满——Notion 数据在云端、Obsidian 缺少结构化数据库、Logseq 的大纲模型不适合所有场景。他们决定从零造一套"加密本地 Notion + 对象图 sync"。
 
-## 代码示例 4：gRPC 列出 Space（CLI 侧）
+- **2023 年**：桌面客户端 `anytype-ts` 在 GitHub 开源（Any Source Available License 1.0，非传统开源协议）。同时开源中间件 `anytype-heart` 和同步协议 `any-sync`。技术选型有意思：Electron + React 负责跨平台 UI，Go 写高性能中间件，不走"纯 Electron"或"纯原生"的极端。
 
-第三方集成可走 gRPC（官方未承诺稳定 public API，但桌面与 [anytype-cli](https://github.com/anyproto/anytype-cli) 均依赖此通道）。列出 Space 的核心是对 tech space 做 `ObjectSearch`，过滤 `spaceView` layout：
+- **2024 年**：发布 beta 版，用户量快速增长。社区贡献了大量块类型和集成。`anytype-ts` 仓库形成了一套成熟的开发流程——Bun 包管理、Vite 打包、MobX 状态、PixiJS + Web Worker 画关系图谱，CLAUDE.md 和 AGENTS.md 都在仓库根目录引导开发者。
 
-```go
-// anytype-cli/core/space.go — 思路摘录
-req := &pb.RpcObjectSearchRequest{
-	SpaceId: techSpaceId,
-	Filters: []*model.BlockContentDataviewFilter{
-		{
-			RelationKey: "resolvedLayout",
-			Condition:   model.BlockContentDataviewFilter_Equal,
-			Value:       pbtypes.Int64(int64(model.ObjectType_spaceView)),
-		},
-	},
-	Keys: []string{"targetSpaceId", "name", "spaceLocalStatus"},
-}
-resp, err := client.ObjectSearch(ctx, req)
-```
+- **2025-2026 年**：本地优先（local-first）理念在开发社区逐渐主流化。Anytype 和 Affine、Logseq 一起成为"本地优先知识管理"路线的三个代表——各自选了不同的技术路线和产品哲学。Anytype 选的是"胖中间件 + 瘦前端"：Go 写的 heart 包揽存储/同步/加密，前端只是遥控器；Affine 选的是"纯前端引擎"：Yjs CRDT + 浏览器内索引；Logseq 选的是"文件即真相"：Markdown/Org 文件 + 数据库索引层。三条路线没有对错，取舍不同。
 
-Rust 生态也有 [anytype-rpc](https://docs.rs/anytype-rpc) 封装同一套 proto。若只做只读分析，HTTP API + 导出 JSON 更稳；要做块级自动化、Chat、File 操作，才需要 gRPC + 本地 helper。
+## 学到什么
 
----
+1. **编辑器操作本质是改对象图**——不是改字符串、不是改 DOM，而是发 gRPC 命令改一棵 Block 树。理解了这一点，任何图形编辑器（Figma、Miro、甚至 VS Code 的 AST 改动）都能用同一套心智模型去理解。
 
-## 与相近工具对比（简表）
+2. **本地优先的架构分层**：UI 层只和本地中间件对话，中间件负责持久化 + 同步——前端不知道自己写的东西在"同步"。这种分层让 UI 代码极简（不用处理网络错误、冲突合并），同时中间件可以独立演进。
 
-| 维度 | Anytype | Notion | Logseq | Obsidian |
-|------|---------|--------|--------|----------|
-| 本地优先 | ✅ heart 本地 | ❌ 云端为主 | ✅ 本地 md | ✅ 本地 md |
-| E2E 加密 | ✅ | ❌ | ❌（自行加密盘） | ❌ |
-| 块模型 | ✅ 强类型 Block | ✅ Block | ✅ 大纲块 | ⚠️ 需插件 |
-| 数据库视图 | ✅ Set/Dataview | ✅ Database | ⚠️ query 块 | ⚠️ 插件/Dataview |
-| 开源客户端 | ✅ anytype-ts | ❌ | ✅ | ❌ 闭源免费 |
-| P2P 同步 | ✅ 可选 | ❌ | ❌ | ❌ |
+3. **类型系统 + 链接 = 数据库**：Anytype 证明了给 wikilink 加上 Type/Relation/Filter/Sort，就能在笔记工具里内置一个数据库——不需要单独开 Airtable。这套模式在 Notion、Coda、Fibery 里也在用，但 Anytype 是唯一本地加密的。
 
-Anytype 更接近 **「加密本地 Notion + 对象图 sync」**；若你只想 plain-text Git 友好，Logseq/Obsidian 更轻；若团队已 all-in 云端协作，Notion 仍省心。
+4. **E2E 加密的代价是恢复码不可丢**——安全性和便利性永远在博弈。Anytype 选了安全性的极端（零知识），把"别丢恢复码"的责任完全交还给用户。理解这个 tradeoff 对设计任何带加密的产品都适用。
 
----
+5. **读一个 Electron 项目不必从 main process 开始**——Anytype 的 main process（`electron.js`）只做窗口管理和 IPC 转发，真正的业务逻辑全在渲染进程（React + MobX + gRPC）。多数 Electron 应用都遵循这个模式：main process 越薄越好，渲染进程才是主角。
 
-## 推荐学习路径（7 天）
+## 延伸阅读
 
-| 天 | 动作 | 目标 |
-|----|------|------|
-| 1 | 只用 Page + 文本/待办块 | 熟悉 `/` 命令与块拖拽 |
-| 2 | 创建一个 Task Type，改 Relation | 理解 Type ≠ Template 文件 |
-| 3 | 建 Set，切 Grid / Board | 体验 Dataview 多视图 |
-| 4 | 用 Graph 视图看 Object 关系 | 理解 link 与 relation 混用 |
-| 5 | 读 `model/block.ts` + `store/block.ts` | 对齐源码词汇 |
-| 6 | 跑 `bun run start:dev`，改一处 translate 文案 | 走通 Electron 开发环 |
-| 7 | 读 `docs/src/ts/component/block/README.md` | 掌握 19 种块的分工 |
+- 官方文档：[doc.anytype.io](https://doc.anytype.io)——从安装到进阶的完整指南
+- 中间件引擎：[github.com/anyproto/anytype-heart](https://github.com/anyproto/anytype-heart)——Go 写的核心引擎，持久化/同步/加密全在这里
+- 仓库内架构说明：克隆 `anytype-ts` 后读 `CLAUDE.md` 和 `docs/` 目录，比 README 详细得多
+- 开源社区版 CLI：[anytype-cli](https://github.com/anyproto/anytype-cli)——通过 gRPC 命令行操作 Anytype 的第三方工具
+- 视频教程：[Anytype 入门指南（YouTube）](https://www.youtube.com/@Anytype)——官方频道有安装、Type/Relation/Set 的实操演示
+- [[local-first-2026-revisit]]——本地优先理念的技术综述，理解 Anytype 的架构如何放入更大的本地优先运动
+- [[affine]]——另一个本地优先块编辑器，也是 Block 树 + React，但选了 Yjs CRDT 而非自研同步协议
 
----
+## 关联
 
-## 常见问题
+- [[affine]] —— 同赛道本地优先块编辑器，技术路线不同：Anytype 用 Go 中间件 + gRPC + any-sync，Affine 用纯 TS + Yjs + WebSocket
+- [[logseq]] —— 大纲式本地笔记，Markdown/Org 文件原生，缺少 Anytype 的类型化数据库视图
+- [[automerge]] —— CRDT 库，any-sync 协议的设计参考之一，理解 CRDT 有助于理解 Anytype 的同步模型
+- [[local-first-2026-revisit]] —— 本地优先运动全景，Anytype 是其中"All-in-one 加密工作空间"路线的代表
+- [[saltzer-1984-e2e]] —— 端到端原则的原始论文，Anytype 把 E2E 加密做到了"服务商读不到内容"的极端
+- [[yjs]] —— 另一个 CRDT 库，Affine 用 Yjs 而 Anytype 用 any-sync，两条技术路线的对比很有价值
+- [[electron]] —— Anytype 桌面壳的运行时，跨平台 UI 框架的典型应用案例
+- [[sqlite]] —— Anytype 的本地存储引擎，heart 用 SQLite 存储对象图和块树
 
-**Q：Anytype 和 Anytype-ts 是什么关系？**  
-`anytype-ts` 是桌面 UI 壳；数据与同步在 `anytype-heart`。发布安装包 = 打包好的 helper + Electron 壳。
+## 反向链接
 
-**Q：数据存在哪？**  
-在 OS 用户目录下的 Anytype 数据路径（由 helper 管理 SQLite/对象存储），具体路径因平台而异；备份应使用应用内导出或官方备份流程，不要只拷贝 ts 仓库。
-
-**Q：能否像 Markdown 一样用 Git 管理？**  
-Canonical 不是 .md 文件树；版本历史依赖 Anytype 自身与导出。需要 Git diff 时，定期 Export Markdown 到单独目录更现实。
-
-**Q：gRPC API 能给生产用吗？**  
-社区与 CLI 在用，但官方声明 **未作为稳定第三方 API**；集成前评估版本锁定与 breaking change 风险。
-
-**Q：和 Logseq 块引用有何不同？**  
-Logseq 块引用是 `((uuid))` 指向大纲行；Anytype 块 id 也在树内，但 **Object 级链接 + Relation** 才是跨页聚合的主力（Set 筛选）。
-
----
-
-## 延伸资源
-
-- 官方文档：[doc.anytype.io](https://doc.anytype.io)
-- 社区论坛：[community.anytype.io](https://community.anytype.io)
-- 中间层引擎：[github.com/anyproto/anytype-heart](https://github.com/anyproto/anytype-heart)
-- 仓库内架构说明：[CLAUDE.md](https://github.com/anyproto/anytype-ts/blob/develop/CLAUDE.md)
-- 块系统文档：`docs/src/ts/component/block/README.md`（克隆仓库后本地阅读）
-- AI Agents 扩展：[AGENTS.md](https://github.com/anyproto/anytype-ts/blob/develop/AGENTS.md)
-
----
-
-## 小结
-
-Anytype 把 **块编辑器**、**类型化对象图** 和 **本地加密存储** 绑在同一套引擎上：UI 层（anytype-ts）负责把 Block 树和 Dataview 视图画出来；heart 负责持久化与 P2P 同步。入门先玩 Space/Page/Set 三角；读源码从 `Block` 模型与 `BlockStore` 出发，再追 gRPC 命令与 Dataview subscription。它适合想要 **Notion 式灵活布局**、又坚持 **数据留在本机且加密** 的用户——也是 study 笔记库里「本地优先块编辑器」路线的代表项目。
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
