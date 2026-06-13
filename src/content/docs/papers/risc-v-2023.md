@@ -2,7 +2,6 @@
 title: RISC-V: A Standardized Instruction Set Architecture for the Open Era
 来源: https://riscv.org/technical/
 日期: 2026-06-13
-分类_原始: 计算机体系结构
 分类: 图形学
 子分类: arch-hardware
 provenance: pipeline-v3

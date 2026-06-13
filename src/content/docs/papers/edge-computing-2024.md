@@ -2,8 +2,8 @@
 title: Edge Computing: Architecture, Intelligent Methods and Security
 来源: https://arxiv.org/abs/2401.00003
 日期: 2026-06-13
-分类: 基础设施
-子分类: 系统综合
+分类: 分布式系统
+子分类: 共识与复制
 provenance: pipeline-v3
 ---
 
