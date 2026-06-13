@@ -2,7 +2,6 @@
 title: AltGen: AI-Driven Alt Text Generation for Enhancing EPUB Accessibility
 来源: https://arxiv.org/abs/2501.00113
 日期: 2026-06-13
-分类_原始: cs.AI
 分类: 其他
 子分类: 无障碍
 provenance: pipeline-v3

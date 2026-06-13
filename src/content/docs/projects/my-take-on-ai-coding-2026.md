@@ -2,7 +2,6 @@
 title: My Take on AI Coding (2026)
 来源: https://blog.zhengyi.com/posts/ai-coding-2026.html
 日期: 2026-06-13
-分类_原始: 编程方法论
 分类: 其他
 子分类: 工程文化
 provenance: pipeline-v3
