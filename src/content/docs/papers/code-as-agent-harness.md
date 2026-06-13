@@ -154,6 +154,7 @@ if result.errors:
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agent-r1-2511]] —— Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
+- [[agentic-rl-survey]] —— Agent强化学习综述 — 从 PPO 到 GRPO，从训练时扩展到推理时计算
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上

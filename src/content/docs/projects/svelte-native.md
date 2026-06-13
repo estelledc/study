@@ -3,7 +3,7 @@ title: svelte-native — 用 Svelte 语法写 NativeScript 原生移动 App
 来源: 'https://github.com/halfnelson/svelte-native'
 日期: 2026-06-13
 分类: 后端 API
-子分类: 移动端
+子分类: mobile-cross-platform
 难度: 中级
 provenance: pipeline-v3
 ---
@@ -359,6 +359,7 @@ cd counter-app
 
 ## 反向链接
 
-- 如果你在考虑跨平台移动方案选型，先明确核心需求：要原生性能还是开发生态？svelte-native 在前者接近满分，在后者只有及格分。
-- 如果你想理解"Svelte 为什么能跨端"或"编译时框架的跨平台潜力"，把本文的"三层架构"那段反复读——核心逻辑只有那一句：编译目标是可替换的，只要你能提供一个模拟目标环境的适配层。
-- 如果你已经在用 svelte-native 做实际项目，务必读"踩过的坑"第 5 条：仓库已归档，fork 自维护是你的必经之路。fork 后第一件事：把 NativeScript 版本锁死，以免自动升级导致不可预知的 DOM 仿真层兼容问题。
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

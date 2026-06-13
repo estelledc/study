@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1309 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1311 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1309 篇
-- **已分类**：1309
+- **总数**：1311 篇
+- **已分类**：1311
 
 ### 按一级主题分布
 
@@ -22,7 +22,7 @@ sidebar:
 | [分布式系统](#分布式系统) | 101 |
 | [数据库](#数据库) | 98 |
 | [操作系统](#操作系统) | 108 |
-| [机器学习](#机器学习) | 353 |
+| [机器学习](#机器学习) | 354 |
 | [后端 API](#后端-api) | 10 |
 | [基础设施](#基础设施) | 17 |
 | [网络协议](#网络协议) | 66 |
@@ -30,7 +30,7 @@ sidebar:
 | [形式化方法](#形式化方法) | 55 |
 | [通信](#通信) | 2 |
 | [信息检索](#信息检索) | 54 |
-| [Agent](#agent) | 24 |
+| [Agent](#agent) | 25 |
 | [CLI](#cli) | 19 |
 | [NLP](#nlp) | 9 |
 | [编译器](#编译器) | 3 |
@@ -573,7 +573,7 @@ sidebar:
 
 ## 机器学习
 
-共 353 篇。
+共 354 篇。
 
 ### 多模态
 
@@ -949,6 +949,7 @@ sidebar:
 | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) | ✅ v3 |  |
 | [EMAGE: Towards Unified Holistic Co-Speech Gesture Generation](/study/papers/emage-gesture/) | ✅ v3 |  |
 | [EvoArena — Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments](/study/papers/evidence-memorization/) | ✅ v3 |  |
+| [Fair GNN — 公平性感知图神经网络与去偏学习](/study/papers/fair-gnn/) | ✅ v3 |  |
 | [FlashAttention-3 — Hopper 上的异步 Attention 与 FP8 低精度](/study/papers/flashattention-3-2024/) | ✅ v3 |  |
 | [FORT-Searcher](/study/papers/fort-searcher/) | ✅ v3 |  |
 | [GLM-5: From Vibe Coding to Agentic Engineering](/study/papers/glm-5-agentic-engineering/) | ✅ v3 |  |
@@ -1439,7 +1440,7 @@ sidebar:
 
 ## Agent
 
-共 24 篇。
+共 25 篇。
 
 ### 智能体与 LLM
 
@@ -1473,6 +1474,7 @@ sidebar:
 
 | 论文 | 质量 | 描述 |
 |---|:---:|---|
+| [Agent强化学习综述 — 从 PPO 到 GRPO，从训练时扩展到推理时计算](/study/papers/agentic-rl-survey/) | ✅ v3 |  |
 | [EurekAgent — 环境工程才是自主科学发现的胜负手](/study/papers/eureka-agent/) | ✅ v3 |  |
 
 ## CLI
@@ -1732,7 +1734,7 @@ sidebar:
 
 ---
 
-## 全部 1309 篇（字母序）
+## 全部 1311 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1755,6 +1757,7 @@ sidebar:
 | `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | ✅ v3 | Agent | 智能体与 LLM |
 | `agent-skill-protocol-2026` | [VLA 驾驶模型的视觉依赖诊断——用扰动实验回答一个问题：自动驾驶到底在多大程度上真的在「看」？](/study/papers/agent-skill-protocol-2026/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `agentic-proving-for-program-verification-arxiv-2605-23772` | [Agentic Proving for Program Verification](/study/papers/agentic-proving-for-program-verification-arxiv-2605-23772/) | ✅ v3 | 编程语言 | 类型与 PL 理论 |
+| `agentic-rl-survey` | [Agent强化学习综述 — 从 PPO 到 GRPO，从训练时扩展到推理时计算](/study/papers/agentic-rl-survey/) | ✅ v3 | Agent | 综述 |
 | `agentless` | [Agentless — 反 Agent 派的 SWE-bench 解法](/study/papers/agentless/) | ✅ v3 | 机器学习 | AI / 软件工程 |
 | `agentrefine` | [AgentRefine — 用跑团式训练让 AI 学会从错误中自我纠正](/study/papers/agentrefine/) | ✅ v3 | 机器学习 | 智能体 |
 | `agi-survey` | [Large language models for artificial general intelligence (AGI): A survey](/study/papers/agi-survey/) | ✅ v3 | 其他 | AGI |
@@ -2116,6 +2119,7 @@ sidebar:
 | `expertflow-moe-offload` | [ExpertFlow — MoE 预测式专家缓存与 Token 调度（零基础学习笔记）](/study/papers/expertflow-moe-offload/) | ✅ v3 | 机器学习 | ML 系统 |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | ✅ v3 | 数据库 | 存储与查询 |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | ✅ v3 | 分布式系统 | 共识与复制 |
+| `fair-gnn` | [Fair GNN — 公平性感知图神经网络与去偏学习](/study/papers/fair-gnn/) | ✅ v3 | 机器学习 | 公平性 |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | ✅ v3 | 数据库 | 存储与查询 |
 | `fan-vercauteren-bfv-2012` | [Somewhat Practical Fully Homomorphic Encryption](/study/papers/fan-vercauteren-bfv-2012/) | ✅ v3 | 安全与隐私 | 安全与隐私 |
 | `farm-2015` | [FaRM — 用 RDMA 把集群内存变成一块「共享白板」](/study/papers/farm-2015/) | ✅ v3 | 分布式系统 | 共识与复制 |

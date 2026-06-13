@@ -239,5 +239,6 @@ environment_script = {
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[attention]] —— Attention Is All You Need
+- [[reflexion]] —— Reflexion — 让 LLM 自我反思
 

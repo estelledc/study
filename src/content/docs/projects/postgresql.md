@@ -167,6 +167,7 @@ SELECT id, content FROM items ORDER BY embedding <-> '[0.15, ...]' LIMIT 5;
 - [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
 - [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
+- [[immudb]] —— immudb — 不可变数据库
 - [[influxdb]] —— InfluxDB — 专用时序数据库
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[inngest]] —— Inngest — 让 async 函数自动从断点恢复的工作流引擎

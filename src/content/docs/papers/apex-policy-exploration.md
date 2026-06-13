@@ -152,6 +152,7 @@ baseline           42%
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[agent-r1-2511]] —— Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架
+- [[agentic-rl-survey]] —— Agent强化学习综述 — 从 PPO 到 GRPO，从训练时扩展到推理时计算
 - [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI
 - [[eve-agent-evidence]] —— EVE-Agent — 自我训练前先把证据钉在桌上
 - [[evo-memory-2511]] —— Evo-Memory — 给"会自己长记性"的 agent 出一份统一考卷

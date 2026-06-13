@@ -191,6 +191,7 @@ subagent({ action: "status" })
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agent-memory]] —— agentmemory — 给 AI 编程助手装上「跨会话长期记忆」
 - [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
 - [[crewai]] —— CrewAI — 把多 Agent 编排做成"组团队"
 

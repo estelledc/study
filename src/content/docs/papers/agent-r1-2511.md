@@ -143,6 +143,7 @@ class CodeEnv(BaseEnv):
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[agentic-rl-survey]] —— Agent强化学习综述 — 从 PPO 到 GRPO，从训练时扩展到推理时计算
 - [[apex-policy-exploration]] —— APEX — 给自进化 agent 配一张"策略图"防止它走老路
 - [[clawtrace-cost-aware]] —— ClawTrace — 把 agent 每步操作的"成本账"先算清再蒸馏
 - [[code-as-agent-harness]] —— Code as Agent Harness — 把代码当 agent 的"骨架"来重新看 agentic AI

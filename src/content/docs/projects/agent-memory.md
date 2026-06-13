@@ -182,6 +182,10 @@ agentmemory connect claude-code --with-hooks
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[domain-expertise-real-moat]] —— Domain expertise has always been the real moat
+- [[mcp-spec]] —— MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议
 - [[pi-subagents]] —— pi-subagents — 给 Pi 装一个"派活"插件
+- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

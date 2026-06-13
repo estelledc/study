@@ -184,6 +184,7 @@ def load_video_for_llava(path, sample_fps=1, max_frames=32):
 
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[decord]] —— Decord — Video-LLM 数据管线的高效视频解码库
+- [[flamingo-2022]] —— Flamingo — 让冻结的大模型学会看图，几张样例就上手
 - [[internvideo]] —— InternVideo — 上海 AI Lab 视频基础模型套件
 - [[internvideo2-2024]] —— InternVideo2 — 三阶段渐进训练，把视频基础模型扩到 6B
 - [[llava]] —— LLaVA — 开源多模态对话模型
@@ -195,6 +196,7 @@ def load_video_for_llava(path, sample_fps=1, max_frames=32):
 - [[longvideobench-2024]] —— LongVideoBench — 一小时交织字幕视频的长上下文理解考卷
 - [[mlvu-2024]] —— MLVU — 九类任务、多时长分层的长视频理解大考
 - [[pillow]] —— Pillow — Python 图像处理库与 PIL 现代继任者
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 - [[qwen2-vl-2024]] —— Qwen2-VL — 动态分辨率 + M-RoPE，工业级视频理解的里程碑
 - [[sharegpt4video-2024]] —— ShareGPT4Video — 用 GPT-4V 级密集字幕，喂饱视频理解与生成
 - [[spacevllm-2025]] —— SpaceVLLM — 一个 MLLM 同时做时序定位、图像指代与时空管定位
@@ -209,5 +211,4 @@ def load_video_for_llava(path, sample_fps=1, max_frames=32):
 - [[videollama2]] —— VideoLLaMA2 — 阿里达摩院音视频 Video-LLM 可运行实现
 - [[videollama3]] —— VideoLLaMA3 — 阿里达摩院第三代图像/视频多模态基座
 - [[videomme-2024]] —— Video-MME — 视频多模态大模型的「高考卷」
-- [[videoprism-2024]] —— VideoPrism — 冻结一个模型就能搞定所有视频理解任务
 

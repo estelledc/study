@@ -166,14 +166,10 @@ const api = ky.create({
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
-- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
 - [[got]] —— got — Node 端 HTTP 客户端的瑞士军刀
 - [[ofetch]] —— ofetch — Nuxt 默认的现代 fetch 包装
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
-- [[zod]] —— Zod — TypeScript-first schema 验证
 

@@ -208,5 +208,6 @@ Warp 的技术架构有几个值得注意的点：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[fish]] —— fish — 装好就比 bash 加插件好用的交互 shell
 - [[zsh]] —— zsh — 比 bash 更聪明的兼容派 shell
 

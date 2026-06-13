@@ -142,6 +142,7 @@ PRAGMA journal_mode=WAL;
 - [[duckdb-wasm]] —— duckdb-wasm — 把分析数据库塞进浏览器标签页
 - [[go-ethereum]] —— Go-Ethereum (Geth) — 以太坊主流 Go 客户端
 - [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
+- [[immudb]] —— immudb — 不可变数据库
 - [[ingres-1976]] —— INGRES 1976 — Berkeley 平行实现的关系数据库
 - [[leveldb]] —— LevelDB — Google LSM 库
 - [[littlefs]] —— littlefs — 给 MCU 用的掉电安全小文件系统

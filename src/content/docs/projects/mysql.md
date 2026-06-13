@@ -154,6 +154,7 @@ START SLAVE;
 - [[go-zero]] —— go-zero — 一份契约文件生成整套 Go 微服务
 - [[grafana]] —— Grafana — 监控可视化看板
 - [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[immudb]] —— immudb — 不可变数据库
 - [[mariadb-server]] —— mariadb-server — MySQL 原作者带走的那一支
 - [[memcached]] —— Memcached — 经典内存缓存
 - [[memgraph]] —— Memgraph — 内存图数据库

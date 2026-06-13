@@ -150,5 +150,6 @@ Notepad++ 的能力可以拆成 **三个层次**：
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
 - [[geany]] —— Geany — GTK 轻量 IDE
 - [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[nix]] —— Nix — 函数式声明式包管理与可重复构建
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 

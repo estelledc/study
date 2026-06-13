@@ -2,7 +2,8 @@
 title: "AltGen: AI-Driven Alt Text Generation for Enhancing EPUB Accessibility"
 来源: https://arxiv.org/abs/2501.00113
 日期: 2026-06-13
-分类: 人工智能
+分类_原始: 人工智能
+分类: 其他
 子分类: 无障碍
 provenance: pipeline-v3
 ---
@@ -297,6 +298,7 @@ print(f"错误减少率: {compute_error_reduction(before, after)}%")
 
 ## 反向链接
 
-- `learnings/` 中如有"自然语言生成"或"图像描述"相关页面，可从那里链接到本文
-- `sources/` 中如收录了 arXiv:2501.00113 的来源卡片，可互相引用
-- 如知识库有"无障碍"或"a11y"标签的索引页，本文应该被收录
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

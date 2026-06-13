@@ -180,8 +180,10 @@ sign_with_rejection(secret, gamma1=100, beta=10)
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ben-sasson-stark-2018]] —— Scalable, Transparent, and Post-Quantum Secure Computational Integrity
 - [[bernstein-sphincs-2015]] —— SPHINCS — 无状态哈希签名，后量子密码的"保险"
 - [[bos-kyber-2018]] —— CRYSTALS-Kyber: A CCA-Secure Module-Lattice-Based KEM
+- [[brakerski-bgv-2012]] —— Fully Homomorphic Encryption without Bootstrapping
 - [[ckks-homomorphic-2017]] —— CKKS 同态加密 — 在加密数据上做近似浮点运算
 - [[noise-protocol-framework]] —— Noise Protocol Framework — 用「握手配方」拼出端到端加密通道
 - [[regev-lwe-2005]] —— On Lattices, Learning with Errors, Random Linear Codes, and Cryptography

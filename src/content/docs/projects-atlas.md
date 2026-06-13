@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 1318 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1320 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1318 个
-- **已分类**：1318
+- **总数**：1320 个
+- **已分类**：1320
 
 ### 按一级主题分布
 
@@ -20,11 +20,11 @@ sidebar:
 |---|---:|
 | [编程语言](#编程语言) | 13 |
 | [分布式系统](#分布式系统) | 8 |
-| [数据库](#数据库) | 109 |
+| [数据库](#数据库) | 110 |
 | [操作系统](#操作系统) | 55 |
 | [机器学习](#机器学习) | 168 |
 | [区块链](#区块链) | 60 |
-| [后端 API](#后端-api) | 258 |
+| [后端 API](#后端-api) | 259 |
 | [基础设施](#基础设施) | 87 |
 | [网络协议](#网络协议) | 2 |
 | [图形学](#图形学) | 62 |
@@ -95,7 +95,7 @@ sidebar:
 
 ## 数据库
 
-共 109 个。
+共 110 个。
 
 ### 存储与查询
 
@@ -215,6 +215,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [GreptimeDB — 云原生时序数据库](/study/projects/greptimedb/) | ✅ v3 |  |
+| [immudb — 不可变数据库](/study/projects/immudb/) | ✅ v3 |  |
 | [MinIO — S3 兼容对象存储](/study/projects/minio/) | ✅ v3 |  |
 | [RoseDB — Go Bitcask KV 引擎](/study/projects/rosedb/) | ✅ v3 |  |
 | [ScyllaDB — C++ 高性能 NoSQL 数据库学习笔记](/study/projects/scylladb/) | ✅ v3 |  |
@@ -335,7 +336,7 @@ sidebar:
 | [agentmemory — 给 AI 编程助手装上「跨会话长期记忆」](/study/projects/agent-memory/) | ✅ v3 |  |
 | [ai-dynamo / Dynamo — 数据中心级分布式 LLM 推理编排](/study/projects/ai-dynamo/) | ✅ v3 |  |
 | [从零构建 AI 系统 —— rohitg00/ai-engineering-from-scratch 学习笔记](/study/projects/ai-engineering-scratch/) | ✅ v3 |  |
-| [AI-Trader 学习笔记 —— 让 AI Agent 自己炒股](/study/projects/ai-trader-hkuds/) | ✅ v3 |  |
+| [AI-Trader 学习笔记 —— 让 AI Agent 自己炒股的交易平台](/study/projects/ai-trader-hkuds/) | ✅ v3 |  |
 | [bytedance/UI-TARS-desktop — 多模态 AI Agent 栈](/study/projects/bytedance-ui-tars/) | ✅ v3 |  |
 | [CocoIndex — AI 增量数据转换与索引框架](/study/projects/cocoindex/) | ✅ v3 |  |
 | [ViMax：一个导演+编剧+制片人的AI视频生成系统](/study/projects/hkuds-vimax/) | ✅ v3 |  |
@@ -613,7 +614,7 @@ sidebar:
 
 ## 后端 API
 
-共 258 个。
+共 259 个。
 
 ### 前端
 
@@ -758,6 +759,7 @@ sidebar:
 | [Ionic — 混合移动应用框架](/study/projects/ionic/) | ✅ v3 |  |
 | [Onsen UI — 用一套 HTML 同时搞定 iOS 和 Android 原生风格界面](/study/projects/onsen-ui/) | ✅ v3 |  |
 | [React Native Reanimated — 高性能动画库](/study/projects/react-native-reanimated/) | ✅ v3 |  |
+| [svelte-native — 用 Svelte 语法写 NativeScript 原生移动 App](/study/projects/svelte-native/) | ✅ v3 |  |
 
 ### projects
 
@@ -1836,7 +1838,7 @@ sidebar:
 
 ---
 
-## 全部 1318 个（字母序）
+## 全部 1320 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1862,7 +1864,7 @@ sidebar:
 | `ai-dynamo` | [ai-dynamo / Dynamo — 数据中心级分布式 LLM 推理编排](/study/projects/ai-dynamo/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `ai-engineering-from-scratch` | [AI Engineering from Scratch 学习笔记](/study/projects/ai-engineering-from-scratch/) | ✅ v3 | 机器学习 | ML 系统 |
 | `ai-engineering-scratch` | [从零构建 AI 系统 —— rohitg00/ai-engineering-from-scratch 学习笔记](/study/projects/ai-engineering-scratch/) | ✅ v3 | 机器学习 | 模型与训练 |
-| `ai-trader-hkuds` | [AI-Trader 学习笔记 —— 让 AI Agent 自己炒股](/study/projects/ai-trader-hkuds/) | ✅ v3 | 机器学习 | 模型与训练 |
+| `ai-trader-hkuds` | [AI-Trader 学习笔记 —— 让 AI Agent 自己炒股的交易平台](/study/projects/ai-trader-hkuds/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) | ✅ v3 | CLI | 命令行工具 |
 | `aider` | [Aider — 终端 AI 结对编程 CLI](/study/projects/aider/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | ✅ v3 | 通信 | 实时通信 |
@@ -2331,6 +2333,7 @@ sidebar:
 | `imagemagick` | [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) | ✅ v3 | 通信 | 音视频媒体 |
 | `immer` | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | ✅ v3 | 后端 API | projects |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | ✅ v3 | 后端 API | 自托管应用 |
+| `immudb` | [immudb — 不可变数据库](/study/projects/immudb/) | ✅ v3 | 数据库 | databases-storage |
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | ✅ v3 | 数据库 | 存储与查询 |
 | `ink` | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | ✅ v3 | CLI | 命令行工具 |
 | `inkscape` | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) | ✅ v3 | CLI | 编辑器与 IDE |
@@ -2943,6 +2946,7 @@ sidebar:
 | `supertokens` | [SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe](/study/projects/supertokens/) | ✅ v3 | 后端 API | projects / 认证 |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) | ✅ v3 | 数据库 | databases-and-storage |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | ✅ v3 | 后端 API | frontend-frameworks |
+| `svelte-native` | [svelte-native — 用 Svelte 语法写 NativeScript 原生移动 App](/study/projects/svelte-native/) | ✅ v3 | 后端 API | mobile-cross-platform |
 | `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | ✅ v3 | 后端 API | Meta 框架 |
 | `svt-av1` | [SVT-AV1 — 可扩展 AV1 软件编码器](/study/projects/svt-av1/) | ✅ v3 | 通信 | 音视频媒体 |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | ✅ v3 | 编译器 | 构建工具 |

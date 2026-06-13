@@ -3,7 +3,7 @@ title: Fair GNN — 公平性感知图神经网络与去偏学习
 来源: 'Alchihabi & Guo, "Unbiased GNN Learning via Fairness-Aware Subgraph Diffusion", arXiv:2501.00595, 2024'
 日期: 2026-06-13
 分类: 机器学习
-子分类: 图神经网络
+子分类: 公平性
 provenance: pipeline-v3
 ---
 
@@ -258,4 +258,7 @@ def edits_debias_edge(edge_index, sensitive, threshold=0.5):
 
 ## 反向链接
 
-<!-- 其他笔记中引用本文时，使用 [[fair-gnn]] -->
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[fair-gnn]] —— Fair GNN — 公平性感知图神经网络与去偏学习
+

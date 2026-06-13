@@ -154,7 +154,6 @@ VS Code = Electron 壳 + Monaco 内核 + 扩展宿主进程 + LSP/DAP/Remote 三
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[aider]] —— Aider — 终端 AI 结对编程 CLI
 - [[atom]] —— Atom — 已归档的 Web 编辑器先驱
 - [[claude-code]] —— Claude Code — Anthropic 终端编程助手
 - [[cline]] —— Cline — VS Code 自主编码代理

@@ -2,7 +2,6 @@
 title: cargo-nextest — Rust 并行测试运行器
 来源: https://github.com/nextest-rs/nextest
 日期: 2026-06-13
-分类_原始: Rust 工具链
 子分类: rust-tools
 分类: 其他
 难度: 初级

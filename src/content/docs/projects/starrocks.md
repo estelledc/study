@@ -155,7 +155,6 @@ WHERE dt >= '2026-05-01' GROUP BY dt, city;
 - [[clickhouse]] —— ClickHouse — 列式 OLAP 数据库
 - [[databend]] —— Databend — Rust 写的存算分离云数仓
 - [[doris]] —— Apache Doris — MySQL 协议 MPP OLAP 数据库
-- [[duckdb]] —— DuckDB — 嵌入式列存 OLAP
 - [[greenplum-db]] —— Greenplum — Postgres 改的 MPP 数仓
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜出所有变量的类型
 - [[lakehouse-2021]] —— Lakehouse — 用开放格式统一数据仓库与高级分析

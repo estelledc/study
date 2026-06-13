@@ -2,7 +2,7 @@
 title: immudb — 不可变数据库
 来源: https://github.com/codenotary/immudb
 日期: 2026-06-13
-子分类: 存储与查询
+子分类: databases-storage
 分类: 数据库
 难度: 初级
 provenance: pipeline-v3
@@ -281,3 +281,6 @@ print(f"验证读取: {readback.value.decode()} @ tx={readback.id}")
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

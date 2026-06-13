@@ -333,7 +333,6 @@ wasmtime run --fuel 1000000 risky.wasm
 - [[deno]] —— Deno — 安全优先的 JS/TS 运行时
 - [[graalvm]] —— GraalVM — 多语言通用 VM
 - [[micropython]] —— MicroPython — 在 MCU 上跑 Python 3 的精简实现
-- [[minetest]] —— Luanti / Minetest — 给自己造一个开源体素游戏引擎
 - [[node-js]] —— Node.js — 服务端 JS 运行时之父
 - [[quickjs]] —— QuickJS — 装进口袋的 JavaScript 引擎
 - [[rustpython]] —— RustPython — Rust 写的 Python 解释器
