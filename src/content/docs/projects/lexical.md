@@ -1,684 +1,225 @@
 ---
-title: lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议
-description: Lexical 用 native browser selection + immutable EditorState + dirty-set reconciler，把 contentEditable 从"性能黑盒"压回 React 时代的可调优框架。一个零基础学习者读心脏代码的状元篇笔记。
-sidebar:
-  label: lexical
-  order: 65
-schema_version: zhuangyuan-v1.1
-branch: D
+title: lexical — 把富文本拆成 immutable 快照 + 双缓冲 reconciler 的编辑器框架
+来源: 'https://github.com/facebook/lexical'
+日期: 2026-06-13
 分类: 后端 API
 子分类: 编辑器与 IDE
-provenance: curated-season
+难度: 中级
 ---
 
-> 项目类型 self-classify：**框架/SDK**（v1.1 分支 D）。
-> 不是开箱即用的"组件"，是 Meta 内部从 Draft.js 退役迁移到 Workplace / WhatsApp Web / Facebook composer 的"编辑器底座"——
-> 提供四件抽象：immutable `EditorState`、双缓冲 `commitPendingUpdates`、`LexicalNode` 继承面、React 中性的 plugin 注册器；
-> 上层（rich text、collab、autolink、markdown shortcut）都是 plugin，不在内核。
-> 同年代竞品 Slate / Tiptap / Draft.js / [prosemirror](/projects/prosemirror/) 各走一条路，本篇主要拆 Lexical 的"选择"。
+## 是什么
 
-| 维度 | 数据 |
-|---|---|
-| facebook/lexical star | 23,462（截至 2026-05-29） |
-| fork | 2,170 |
-| 最近活跃 | `2026-05-28 14:11 UTC`（GitHub API 返回，main 仍每日多 commit） |
-| 读时 commit hash | `149c37d42898a50ba094c8e0e3c4949d1cce969c`（lexical core）/ 同 sha 的 `lexical-react` 子包 |
-| 读时日期 | 2026-05-29 |
-| 主语言 | TypeScript（100%） |
-| 维护方 | Meta Platforms（前 Facebook）开源团队，core 在 React 与 Workplace 编辑器组共维护 |
-| 主要贡献者 | trueadm（Dominic Gannaway，~1486 commit / 也是 React Forget / React fast-refresh 作者）/ zurfyx / etrepum / acywatson / fantactuka |
-| License | MIT |
-| 类似项目 | [prosemirror](/projects/prosemirror/)（schema-first / Marijn Haverbeke）/ Slate.js（mutable doc + React-only）/ Tiptap（基于 ProseMirror 的封装）/ Draft.js（已弃，由本项目接班）/ [codemirror](/projects/codemirror/)（同作者风格但走 code 编辑） |
+Lexical 是一个**可扩展的富文本编辑器框架**，由 Meta 开源。它的工作不是给你一个"开箱即用的加粗斜体工具栏"——它给你一套**引擎级抽象**：immutable 文档快照、自写 DOM reconciler、可扩展的 Node/Plugin 体系。上层功能（加粗、列表、协同编辑、Markdown 快捷输入）全部以插件形式加载。
 
-![Figure 1. Lexical 架构总览](/projects/lexical/01-architecture.webp)
+**日常类比**：想象一个共享文档的"版本控制"系统。每次你打字，Lexical 不是直接改 DOM——它先在你自己的草稿本（pending EditorState）上改，改完确认无误，再一次性 commit 到正式版（current EditorState），同时只把真正变动的几个字同步到屏幕 DOM 上。就像 git 的 staging area + commit，而不是每次 keystroke 都直接 `push --force`。
 
-> Figure 1：上排是 `editor.update(fn)` 的生命周期——`$beginUpdate` 把当前 `_editorState` 浅拷贝成 `_pendingEditorState`，
-> 让 fn 在沙箱里改 Node，再 `queueMicrotask` 调度 `$commitPendingUpdates`；中排展开 commit——
-> `$reconcileRoot` 用 `dirtyElements / dirtyLeaves` 做局部 diff，`MutationObserver.disconnect()` 期间把变更 patch 进 contentEditable，
-> 最后 swap `_editorState = pendingEditorState` 并 freeze；下排是扩展面——`LexicalComposer` 把 editor 塞 React Context，
-> 每个 plugin 是个 `useLexicalComposerContext()` 的 React 组件，custom Node 通过继承 + `static getType/clone` + `createDOM/updateDOM`
-> 注册到 `initialConfig.nodes`。底部黑条压住四个非平凡选择：**immutable + 双缓冲、dirty-set 局部 patch、headless、不重写浏览器 IME**。
-
-## 一句话定位
-
-Lexical **不是富文本组件**，是把"在 contentEditable 上做高性能、可扩展的结构化编辑"拆成
-`EditorState`（immutable 快照）+ `LexicalEditor`（可变控制器）+ `reconciler`（dirty-set DOM patch 引擎）+ `Plugin / Node` 的协议。
-Meta 写它来替代 Draft.js（Draft 的"全量 immutable.js record + 全量重渲染"撑不住 Facebook composer 那种实时打字 + IME + AI 自动补全场景）。
-代价：**抽象密度高，写 plugin 要先理解 update / commit / reconcile 三阶段**；回报：60fps 大文档 + 同一份 EditorState 既能 SSR、又能跑 React、又能跑 Vanilla DOM。
-
-## Why（为什么 Season 15 把它收进编辑器线）
-
-读 [trueadm 在 React Conf 2022 的 Lexical 介绍](https://github.com/facebook/lexical#why-lexical) 和官方 docs 顶部段，
-Meta 写 Lexical 想解决三件 Draft.js 解决不了的事：
-
-1. **immutable.js 的 record 模型太重**——Draft 把整篇文档变 immutable record，每键入一个字符就 rebuild 整棵 tree，
-   大文档（Workplace 长帖）打字延迟 > 100ms。
-2. **Draft 强绑 React**——但 Workplace / WhatsApp Web 也有非 React 入口（Vanilla），同一份 model 要求能脱 React 跑。
-3. **Draft 不暴露 reconciler**——所有 DOM 更新走 React diff，IME / 中文输入 / 复杂粘贴的边界 case 没法干预。
-
-Lexical 的核心 inversion：
-
-- 文档模型保持 immutable（`EditorState._readOnly = true` 在 commit 时 freeze），但**只在 commit 边界 immutable**——
-  fn 内部走 `getWritable()` 返回浅拷贝，commit 后才 freeze。这避免了 Draft 那种"每 keystroke rebuild 整树"的代价。
-- DOM 更新由 Lexical 自己的 reconciler 做（不是 React diff），用 `dirtyElements: Map<NodeKey, IntentionallyMarkedAsDirtyElement>`
-  和 `dirtyLeaves: Set<NodeKey>` 把"哪些 node 变了"显式带到 commit，避免全量遍历。
-- React 集成（`@lexical/react`）只是个**很薄的 Context wrapper**——所有真正逻辑在 vanilla `lexical` 包里。
-  这样 Vanilla / SolidJS / Vue 用户也能复用同一份内核。
-- **不重写浏览器 IME / 复制粘贴 / 选区**——这是 Lexical 与 Slate 最大的策略差。Slate 自己实现选区模型；Lexical 用
-  `window.getSelection()` 把 DOM 选区翻译回 NodeKey，IME 期间 disconnect MutationObserver 让浏览器自由发挥，
-  IME 结束再 reconcile。
-
-这条线的副产品是：**plugin 不是配置项，是 React 子组件**——每个 plugin 调 `useLexicalComposerContext()` 拿到 `editor`，
-然后调 `editor.registerCommand` / `registerNodeTransform` / `registerUpdateListener` 注册回调。
-回调在合适的生命周期触发，返回的 unregister 函数被 React unmount 时调用。这个设计让"加一个加粗按钮"和"加一个 Yjs 协同"
-在代码组织上看起来一样——都是个 React 组件 + 几个注册调用。
-
-## 仓库地形（Layer 2）
-
-Lexical 是一个 **monorepo + 多 npm 包**，核心 `lexical` 是 vanilla（不依赖 React），
-`@lexical/react` / `@lexical/rich-text` / `@lexical/markdown` / `@lexical/yjs` 都是 plugin / 集成包。
-读心脏代码必须按"内核 → React 集成 → 插件"的顺序：
-
-```
-packages/
-  lexical/                        ← 内核，0 React 依赖（心脏 1-3）
-    src/
-      LexicalEditor.ts            ← LexicalEditor 主类 + createEditor + 注册器（registerCommand 等）
-      LexicalEditorState.ts       ← EditorState class + cloneEditorState + isEmpty + toJSON  146 行
-      LexicalUpdates.ts           ← $beginUpdate / $commitPendingUpdates / readEditorState  ~1300 行
-      LexicalReconciler.ts        ← $reconcileRoot / $reconcileNode / $reconcileChildren  ~1700 行
-      LexicalNode.ts              ← 抽象基类 LexicalNode（getKey / getParent / getLatest 等）
-      LexicalSelection.ts         ← RangeSelection / NodeSelection / DOM ↔ Lexical 翻译
-      LexicalEvents.ts            ← input / beforeinput / keydown / paste / IME 事件路由
-      LexicalMutations.ts         ← MutationObserver wrapper（reconcile 时 disconnect）
-      nodes/
-        LexicalRootNode.ts        ← 根节点（每个 EditorState 都有一个 'root'）
-        LexicalElementNode.ts     ← 容器节点基类（段落、列表 item 等）
-        LexicalTextNode.ts        ← 文本叶子节点（含 format / mode 位）
-        LexicalParagraphNode.ts   ← 默认段落
-        LexicalLineBreakNode.ts / LexicalTabNode.ts / LexicalDecoratorNode.ts
-
-  lexical-react/                  ← React 集成（心脏 4，但只是 ~150 行的薄壳）
-    src/
-      LexicalComposer.tsx         ← <LexicalComposer initialConfig={...}>  184 行
-      LexicalComposerContext.tsx  ← Context.Provider + useLexicalComposerContext()
-      LexicalRichTextPlugin.tsx   ← Rich text plugin（监听快捷键 / 注册 commands）
-      LexicalContentEditable.tsx  ← <ContentEditable> 包装 <div contenteditable>
-      LexicalHistoryPlugin.tsx / LexicalAutoFocusPlugin.tsx / ...
-
-  lexical-rich-text/              ← Rich text commands & nodes（不依赖 React）
-  lexical-list/ lexical-link/ lexical-table/ lexical-code/ lexical-markdown/  ← 内置插件
-  lexical-yjs/                    ← Yjs 协同集成
-  lexical-history/                ← undo/redo 跑在 EditorState diff 上
-  lexical-utils/ lexical-selection/ ← 工具函数
-```
-
-挑出三个心脏文件，对应 Layer 3 三段精读：
-
-1. **`packages/lexical/src/LexicalEditorState.ts`**（@ `149c37d4`，146 行）——
-   immutable EditorState 的全部定义。读完它就理解了 Lexical 的"快照模型"。
-2. **`packages/lexical/src/LexicalUpdates.ts`**（@ `149c37d4`，~1300 行）——
-   `$beginUpdate` / `$commitPendingUpdates` 是双缓冲 + reconciler 调度的中枢。
-3. **`packages/lexical/src/LexicalReconciler.ts`** 配 **`packages/lexical-react/src/LexicalComposer.tsx`**（@ `149c37d4`）——
-   reconciler 是 dirty-set diff 引擎，Composer 是 React 那侧的"窗口胶水"，加起来代表 Lexical 的"扩展面"。
-
-## 核心机制（Layer 3 · 三段独立小节）
-
-### 段 (a) · EditorState 是 immutable 快照 + lazy clone（不是 immutable.js record）
-
-锚定：[LexicalEditorState.ts#L106-L145 @ 149c37d4](https://github.com/facebook/lexical/blob/149c37d42898a50ba094c8e0e3c4949d1cce969c/packages/lexical/src/LexicalEditorState.ts#L106-L145)
-
-```ts
-// LexicalEditorState.ts :49
-export function cloneEditorState(current: EditorState): EditorState {
-  return new EditorState(cloneMap(current._nodeMap));
-}
-
-// :53
-export function createEmptyEditorState(): EditorState {
-  return new EditorState(new Map([['root', $createRootNode()]]));
-}
-
-// :106
-export class EditorState {
-  _nodeMap: NodeMap;
-  _selection: null | BaseSelection;
-  _flushSync: boolean;
-  _readOnly: boolean;
-
-  constructor(nodeMap: NodeMap, selection?: null | BaseSelection) {
-    this._nodeMap = nodeMap;
-    this._selection = selection || null;
-    this._flushSync = false;
-    this._readOnly = false;
-  }
-
-  isEmpty(): boolean {
-    return this._nodeMap.size === 1 && this._selection === null;
-  }
-
-  read<V>(callbackFn: () => V, options?: EditorStateReadOptions): V {
-    return readEditorState(
-      (options && options.editor) || null,
-      this,
-      callbackFn,
-    );
-  }
-
-  clone(selection?: null | BaseSelection): EditorState {
-    const editorState = new EditorState(
-      this._nodeMap,
-      selection === undefined ? this._selection : selection,
-    );
-    editorState._readOnly = true;          // ← 注意：clone 出来的直接 freeze
-    return editorState;
-  }
-  toJSON(): SerializedEditorState {
-    return readEditorState(null, this, () => ({
-      root: exportNodeToJSON($getRoot()),
-    }));
-  }
-}
-```
-
-**旁注**：
-
-- `_nodeMap` 是 `Map<NodeKey, LexicalNode>`，不是树。**Lexical 的"树"是用 `__parent / __prev / __next` 三个 key
-  在 Map 上虚拟出来的链表 + 父引用**。这是和 ProseMirror（真正的 immutable Node 树）最本质的差异——
-  Lexical 改一个深层节点不需要 rebuild 父链，只要 `getWritable()` 拿到目标 node 的浅拷贝，写到新的 Map 里。
-- `cloneEditorState` 只 `cloneMap(_nodeMap)`——它**不深拷 Node**。Node 自己是 immutable（同一个 NodeKey
-  在两个 EditorState 之间共享），改一个 Node 才会触发 `getWritable()` 浅拷贝。这是 Lexical 性能撑得住大文档的根因：
-  打 100 字符只重建受影响的几个 Node 实例，不动其他 99% 的 Map 项。
-- `_readOnly` 这一位很关键。`commit` 之前 pending state 是 `_readOnly = false`（fn 可以改它），
-  commit 完一翻转就再也没法改——所以"立刻把这个 EditorState 存到 history" 这种操作是安全的。
-  `clone()` 出来的直接是 `_readOnly = true`（你拿到的是只读快照）。
-- `isEmpty()` 极其简洁——`_nodeMap.size === 1` 意味着只有 'root'，没任何子节点。
-  这个判断在 `setEditorState` 里被用作"用户传的 editorState 是不是有效"——
-  Lexical 拒绝把空状态注入 editor（避免 round-trip 后丢内容）。
-- `read` 是入门 API：在组件外读 EditorState 必须包在 `editorState.read(() => $getRoot()...)` 里——
-  因为 `$getRoot` / `$getNodeByKey` 这些 dollar 函数依赖 module-level 的 `activeEditorState`，
-  `read` 设置完再调 callback。这是 Lexical 的隐式上下文（context）机制——同 React hooks 那种"必须在合适调用点"的限制。
-
-**怀疑 1**：`_nodeMap` 用 ES Map 而不用 immutable Map / hash trie——大文档（10 万节点）下 `cloneMap` 是 O(n) 浅拷，
-理论上每次 update 都要复制整个 Map 引用。**但**因为 Node 自己是 immutable + 共享，浅拷只是复制指针，
-实测在 100k 节点下也只 ~5ms。Lexical 是不是赌"99% 用户写 Lexical 的文档不会到 100k"？
-PR [#5743 dirty children optimization](https://github.com/facebook/lexical/pull/5743) 之类的 issue 暗示极大文档的 performance
-是真有人在踩坑——那对 cloneMap 没动，说明它真不是瓶颈。
-
-### 段 (b) · 双缓冲 commit：reconciler 在 MutationObserver 静音的窗口里 diff
-
-锚定：[LexicalUpdates.ts#L595-L756 @ 149c37d4](https://github.com/facebook/lexical/blob/149c37d42898a50ba094c8e0e3c4949d1cce969c/packages/lexical/src/LexicalUpdates.ts#L595-L756)
-
-```ts
-// LexicalUpdates.ts :595
-export function $commitPendingUpdates(
-  editor: LexicalEditor,
-  recoveryEditorState?: EditorState,
-): void {
-  const pendingEditorState = editor._pendingEditorState;
-  const rootElement = editor._rootElement;
-  const shouldSkipDOM = editor._headless || rootElement === null;
-
-  if (pendingEditorState === null) {
-    if (editor._deferred.length > 0) {
-      triggerDeferredUpdateCallbacks(editor, editor._deferred);
-    }
-    return;
-  }
-
-  // ======
-  // Reconciliation has started.
-  // ======
-
-  const currentEditorState = editor._editorState;
-  const currentSelection = currentEditorState._selection;
-  const pendingSelection = pendingEditorState._selection;
-  const needsUpdate = editor._dirtyType !== NO_DIRTY_NODES;
-  const previousActiveEditorState = activeEditorState;
-  const previousReadOnlyMode = isReadOnlyMode;
-  const previousActiveEditor = activeEditor;
-  const previouslyUpdating = editor._updating;
-  const observer = editor._observer;
-  let mutatedNodes = null;
-  editor._pendingEditorState = null;       // ← 关键：先把 pending 拔掉，再 swap
-  editor._editorState = pendingEditorState;
-
-  if (!shouldSkipDOM && needsUpdate && observer !== null) {
-    activeEditor = editor;
-    activeEditorState = pendingEditorState;
-    isReadOnlyMode = false;
-    editor._updating = true;
-    try {
-      const dirtyType = editor._dirtyType;
-      const dirtyElements = editor._dirtyElements;
-      const dirtyLeaves = editor._dirtyLeaves;
-      observer.disconnect();                // ← 静音 MutationObserver
-      mutatedNodes = $reconcileRoot(        // ← 局部 DOM patch
-        currentEditorState,
-        pendingEditorState,
-        editor,
-        dirtyType,
-        dirtyElements,
-        dirtyLeaves,
-      );
-    } catch (error) {
-      if (error instanceof Error) {
-        editor._onError(error);
-      }
-      // 关键：reconcile 异常 → 整体 reset DOM 到 pendingEditorState
-      if (!isAttemptingToRecoverFromReconcilerError) {
-        resetEditor(editor, null, rootElement, pendingEditorState);
-        initMutationObserver(editor);
-        editor._dirtyType = FULL_RECONCILE;
-        isAttemptingToRecoverFromReconcilerError = true;
-        $commitPendingUpdates(editor, currentEditorState);  // ← 一次重试
-        isAttemptingToRecoverFromReconcilerError = false;
-      } else {
-        throw error;
-      }
-      return;
-    } finally {
-      observer.observe(rootElement, observerOptions);  // ← 即使异常也重连观察
-      editor._updating = previouslyUpdating;
-      activeEditorState = previousActiveEditorState;
-      isReadOnlyMode = previousReadOnlyMode;
-      activeEditor = previousActiveEditor;
-    }
-  }
-
-  if (!pendingEditorState._readOnly) {
-    pendingEditorState._readOnly = true;             // ← commit 完冻结
-    if (__DEV__) {
-      handleDEVOnlyPendingUpdateGuarantees(pendingEditorState);
-      if ($isRangeSelection(pendingSelection)) {
-        Object.freeze(pendingSelection.anchor);
-        Object.freeze(pendingSelection.focus);
-      }
-      Object.freeze(pendingSelection);
-    }
-  }
-  // ... 之后是 selection 同步、listener 触发、deferred callback
-```
-
-**旁注**：
-
-- **disconnect → reconcile → observe** 是这段最关键的三行。`MutationObserver` 监听用户输入（IME / 直接 contentEditable 改 DOM），
-  reconcile 自己也会改 DOM——如果不 disconnect，reconciler 改的 DOM 会被 observer 捕获并当成"用户输入"再次跑流程，
-  无限循环。这套和 React 的 `act()` 静音是同一思路。
-- **try / catch / finally 的健壮性**——reconciler 异常会触发"reset 整个 DOM 到 pendingEditorState"+ 一次 `$commitPendingUpdates`
-  重试。重试时 `isAttemptingToRecoverFromReconcilerError = true` 防止无限递归。这暴露了 Lexical 假设 reconciler **可能写崩 DOM**——
-  IME / 浏览器扩展 / Grammarly 都可能在 disconnect 期间往 contentEditable 里塞节点，导致 reconcile 期望的 DOM 状态不存在。
-  reset + retry 是兜底。
-- `editor._pendingEditorState = null;` 在 `_editorState = pendingEditorState;` 之前——这个顺序保证：commit 中途有人调
-  `editor.update(...)` 不会把新的 fn 写到正在被 commit 的 pending 上。Lexical 用 `_pendingEditorState` 字段
-  作为"是否有待 commit"的信号，先拔掉相当于上锁。
-- `_updating = true` 是给 listener 看的——listener 里如果再调 `editor.update`，update 会被排队到下个 microtask 而不是
-  立刻同步执行（避免 listener 嵌套 commit 撕裂）。这一行把 Lexical 的"事务边界"显式化了。
-- `Object.freeze(pendingSelection)` 只在 `__DEV__` 模式做——生产打包不 freeze，省 microsecond 级开销。
-  开发环境捕获到"在 read 阶段写了 selection"会立刻 throw，给作者明确错误。
-- `activeEditorState` / `activeEditor` / `isReadOnlyMode` 是 module-level 全局——这是 Lexical 走 dollar 函数路线
-  （`$getRoot` / `$getNodeByKey`）的代价：**调用上下文必须在 update / read 内**，否则全局是上一次的值。这套和
-  React hooks 的 dispatcher 模式同形——隐式 context + 强位置约束 = API 简洁但跨函数边界容易崩。
-
-**怀疑 2**：reconcile 异常后 `resetEditor` 把整个 DOM 重写。如果 root 里挂着 React decorator 节点（DecoratorNode 的渲染产物
-是 React 子树，被 React Portal 进 contentEditable），reset 会把这些 portal 容器 DOM 节点删掉——但 React 不知道，
-下一次 React render 还是会按原 fiber tree 找老 DOM 节点，可能崩。Lexical 是怎么处理这个的？看
-[LexicalReconciler.ts#L1236-L1293](https://github.com/facebook/lexical/blob/149c37d42898a50ba094c8e0e3c4949d1cce969c/packages/lexical/src/LexicalReconciler.ts#L1236-L1293)
-里有 `$garbageCollectDetachedDecorators` 收尾——但 reset 路径里好像没显式跑这个，怀疑是依赖 React 自己 unmount 时
-会发现 DOM 不在然后重 mount。
-
-### 段 (c) · 扩展面：LexicalComposer 是个 14 行的 useMemo + useLayoutEffect
-
-锚定：[LexicalComposer.tsx#L90-L139 @ 149c37d4](https://github.com/facebook/lexical/blob/149c37d42898a50ba094c8e0e3c4949d1cce969c/packages/lexical-react/src/LexicalComposer.tsx#L90-L139)
+这个"双缓冲"设计是 Lexical 区别于其他编辑器框架的核心。Draft.js 每打一个字重建整棵文档树，Lexical 只重建受影响的几个节点。代价是抽象密度更高——你要理解 update / commit / reconcile 三个阶段才能写出正确的代码。回报是：大文档打字 60fps，同一份 EditorState 既能 SSR、又能跑 React、又能跑 Vanilla DOM。
 
 ```tsx
-// LexicalComposer.tsx :90
-export function LexicalComposer({initialConfig, children}: Props): JSX.Element {
-  const composerContext: [LexicalEditor, LexicalComposerContextType] = useMemo(
-    () => {
-      const {
-        theme,
-        namespace,
-        nodes,
-        onError,
-        editorState: initialEditorState,
-        html,
-      } = initialConfig;
+// 最简例子：10 行代码出一个能打字的编辑器
+import { LexicalComposer } from '@lexical/react/LexicalComposer';
+import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
+import { ContentEditable } from '@lexical/react/LexicalContentEditable';
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 
-      const context: LexicalComposerContextType = createLexicalComposerContext(
-        null,
-        theme,
-      );
-      const editor = createEditor({
-        editable: initialConfig.editable,
-        html,
-        namespace,
-        nodes,
-        onError: error => onError(error, editor),
-        theme,
-      });
-      initializeEditor(editor, initialEditorState);
-      return [editor, context];
-    },
-    // We only do this for init
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
-
-  useLayoutEffect(() => {
-    const isEditable = initialConfig.editable;
-    const [editor] = composerContext;
-    editor.setEditable(isEditable !== undefined ? isEditable : true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+function Editor() {
   return (
-    <LexicalComposerContext.Provider value={composerContext}>
-      {children}
-    </LexicalComposerContext.Provider>
+    <LexicalComposer initialConfig={{ namespace: 'demo', onError: console.error }}>
+      <RichTextPlugin contentEditable={<ContentEditable />} placeholder={<div>开始输入...</div>} />
+      <HistoryPlugin />
+    </LexicalComposer>
   );
 }
 ```
 
+## 为什么重要
+
+不理解 Lexical 的设计思路，下面这些事都解释不清楚：
+
+- 为什么同样是基于浏览器 `contentEditable`，Lexical 能做到大文档不卡、IME 中文输入不乱、粘贴 5 万字不崩——而裸用 `contentEditable` 会出各种诡异 bug
+- 为什么写一个"按 `**` 自动变加粗"的功能在 Lexical 里是一个 `NodeTransform`（几行代码），在其他编辑器里可能要改事件处理、改选区、改 DOM 三步走
+- 为什么元老级的 Draft.js 在 Meta 内部全线退役，被 Lexical 替代——性能、框架无关性、扩展面三方面都不如
+- 为什么同样是"编辑器底座"，ProseMirror 选 schema-first（先定义文档能有什么结构），Lexical 选 Map-first（先定义 Node 怎么存改查）——两条哲学路线决定了各自的适用场景
+
+## 核心要点
+
+Lexical 的心脏只有**四件东西**，理解了它们就理解了整个框架：
+
+**1. EditorState：immutable 文档快照。**和 Draft.js 不同，Lexical 的 EditorState 不是一整棵 immutable 树——它是一个 `Map<NodeKey, LexicalNode>`，Node 之间用 `__parent / __prev / __next` 三个 key 虚拟出链表 + 父引用。类比：不是一棵真树，是一张"谁挨着谁"的索引卡片，改一个节点不需要重建父链，只复制受影响的几张卡片。
+
+**2. 双缓冲 + reconciler：只在 commit 边界变 DOM。**用户打字时，Lexical 在一个"pending EditorState"上改 Node（你的 `editor.update(fn)` 里的 fn 都在 pending 上跑），然后通过 `queueMicrotask` 调度 commit。commit 时 reconciler 对比 current 和 pending 的差异，用 `dirtyElements`（哪些容器节点变了）和 `dirtyLeaves`（哪些文本叶子变了）做局部 diff，只 patch 真的变了的 DOM 部分。类比：不是全屋重新装修，是只换那个坏了的灯泡。
+
+**3. Plugin 即 React 子组件。**在 Lexical 里，"加一个加粗按钮"和"加一个 Yjs 实时协同"在代码组织上看起来一样——都是一个 React 组件，内部调用 `editor.registerCommand()` / `registerNodeTransform()` / `registerUpdateListener()` 注册回调，返回的 unregister 函数被 `useEffect` cleanup 自动调用。这个设计让功能组合像搭积木。
+
+## 实践案例
+
+### 案例 1：最简富文本编辑器
+
 ```tsx
-// LexicalComposer.tsx :141
-function initializeEditor(
-  editor: LexicalEditor,
-  initialEditorState?: InitialEditorStateType,
-): void {
-  if (initialEditorState === null) {
-    return;                              // ← 等 collab plugin 填
-  } else if (initialEditorState === undefined) {
-    editor.update(() => {                // ← 默认：塞一个空 ParagraphNode
-      const root = $getRoot();
-      if (root.isEmpty()) {
-        const paragraph = $createParagraphNode();
-        root.append(paragraph);
-        const activeElement = CAN_USE_DOM ? document.activeElement : null;
-        if (
-          $getSelection() !== null ||
-          (activeElement !== null && activeElement === editor.getRootElement())
-        ) {
-          paragraph.select();
-        }
-      }
-    }, HISTORY_MERGE_OPTIONS);
-  } else if (initialEditorState !== null) {
-    switch (typeof initialEditorState) {
-      case 'string': {
-        const parsedEditorState = editor.parseEditorState(initialEditorState);
-        editor.setEditorState(parsedEditorState, HISTORY_MERGE_OPTIONS);
-        break;
-      }
-      case 'object': {
-        editor.setEditorState(initialEditorState, HISTORY_MERGE_OPTIONS);
-        break;
-      }
-      case 'function': {
-        editor.update(() => {
-          const root = $getRoot();
-          if (root.isEmpty()) {
-            initialEditorState(editor);
-          }
-        }, HISTORY_MERGE_OPTIONS);
-        break;
-      }
-    }
-  }
-}
-```
-
-**旁注**：
-
-- 整个 `LexicalComposer` 只有 14 行 React 代码——`useMemo([])` 创建 editor 一次、`useLayoutEffect` 设可编辑性、
-  Context.Provider 把 `[editor, context]` 透下去。**这是 framework/SDK 设计的精髓**：React 集成只负责"挂 editor 到 React lifecycle"，
-  其他交给 vanilla 内核。对比 [prosemirror](/projects/prosemirror/) 没有官方 React 集成（社区 prosemirror-react）；
-  Slate 把 React render 嵌进 view 层，这两套都不如 Lexical 的"React 是可选适配器"清爽。
-- `useMemo(() => ..., [])` 看起来"违反 React 规范"，但作者特意加了 eslint-disable 注释——editor 必须**只创建一次**，
-  否则后续 plugin 注册的 listener 会丢。这是 React 18 strict mode 双调用 useEffect 的典型陷阱：useMemo 不会双调，
-  所以放在 useMemo 里反而稳。
-- `initialEditorState` 四种形态（`null` / `undefined` / `string` / `object` / `function`）覆盖了所有真实用法——
-  collab 时传 null（让 Yjs 填）、新文档传 undefined、SSR hydrate 传 string（serialized JSON）、
-  从 history 恢复传 EditorState 对象、自定义初始化传 fn。`HISTORY_MERGE_OPTIONS = {tag: HISTORY_MERGE_TAG}`
-  让初始化不进入 undo 栈——避免用户第一次 cmd+z 把内容 undo 没。
-- `setEditable(true / false)` 在 useLayoutEffect 里——layoutEffect 在 DOM mutation 之后但浏览器 paint 之前跑，
-  保证用户看到的第一帧就是"可/不可编辑"状态，不会 flash。
-- plugin 的写法（举例 RichTextPlugin 大致结构）：
-  ```tsx
-  function MyPlugin() {
-    const [editor] = useLexicalComposerContext();
-    useEffect(() => {
-      return mergeRegister(
-        editor.registerCommand(KEY_ENTER_COMMAND, fn, COMMAND_PRIORITY_LOW),
-        editor.registerNodeTransform(TextNode, fn),
-        editor.registerUpdateListener(({editorState}) => { ... }),
-      );
-    }, [editor]);
-    return null;        // 通常 plugin 不渲染 DOM，只挂副作用
-  }
-  ```
-  返回的几个 unregister 用 `mergeRegister` 拼成一个，`useEffect` 的 cleanup 调用——所以 plugin "卸载"等于
-  "这些注册全部撤销"。这套和 zustand 的 subscribe / xstate 的 service.subscribe 同形。
-
-**怀疑 3**：`useMemo([])` 创建 editor，但 React 19 后 `cache(...)` 和 RSC 边界让 SSR 时 useMemo 行为不稳——
-SSR 没有真实 DOM，editor.createEditor 不依赖 DOM 倒还好；但 plugin 的 useEffect 在 SSR 不跑，意味着 SSR 渲染出的 HTML
-**没有任何 plugin 的 transform 应用过**。如果有 plugin 在 update 时把 markdown shortcut 转成 RichText（比如 `**foo**` → 加粗），
-SSR 出的 HTML 会保留原始 markdown 字符串，hydration 后才 transform——视觉上闪一下。
-[issue #5234 SSR markdown flash](https://github.com/facebook/lexical/issues?q=ssr+markdown) 一直有人提，
-但 Lexical 的回应一致是"plugin 是 client-only by design"。这条限制在 docs 顶部应该写但没写。
-
-## Hands-on（Layer 4 · 30 分钟跑通 + 改一处）
-
-环境：Node 20 + pnpm 9，macOS / Linux 都行。
-
-```bash
-# 1. clone（仅 1 commit 深度，省 ~50MB）
-git clone --depth 1 \
-  https://github.com/facebook/lexical.git \
-  ~/code-reading/lexical
-
-cd ~/code-reading/lexical
-git rev-parse HEAD     # 确认在 149c37d4 附近
-
-# 2. 装依赖（monorepo 用 npm，~3 分钟）
-npm install
-
-# 3. 跑 React playground（开发用 demo，含所有官方 plugin）
-npm run start          # → http://localhost:3000
-
-# 4. 跑测试（vitest，约 200 个 unit + e2e 隔离）
-npm run test
-```
-
-如果不想 clone 全仓库，只想嵌一个 PlainText demo 到自己项目：
-
-```bash
-mkdir lexical-poc && cd lexical-poc
-npm init -y
-npm i lexical @lexical/react @lexical/rich-text react react-dom
-
-# src/index.tsx
-cat > src/App.tsx <<'EOF'
-import {LexicalComposer} from '@lexical/react/LexicalComposer';
-import {ContentEditable} from '@lexical/react/LexicalContentEditable';
-import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
-import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin';
-import {LexicalErrorBoundary} from '@lexical/react/LexicalErrorBoundary';
+import { LexicalComposer } from '@lexical/react/LexicalComposer';
+import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
+import { ContentEditable } from '@lexical/react/LexicalContentEditable';
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 
 const config = {
-  namespace: 'poc',
-  onError: (e: Error) => { throw e; },
+  namespace: 'MyEditor',
+  onError: (error: Error) => console.error(error),
 };
 
-export default function App() {
+export default function Editor() {
   return (
     <LexicalComposer initialConfig={config}>
       <RichTextPlugin
-        contentEditable={<ContentEditable className="ce" />}
-        placeholder={<div className="ph">type here…</div>}
-        ErrorBoundary={LexicalErrorBoundary}
+        contentEditable={<ContentEditable className="editor" />}
+        placeholder={<div className="placeholder">写点什么...</div>}
       />
       <HistoryPlugin />
     </LexicalComposer>
   );
 }
-EOF
-
-npm run dev            # vite 起来，浏览器打开就能输入
 ```
 
-**改一处实验**：
+逐部分解释：
+- `LexicalComposer` 只创建一次 editor 实例（用 `useMemo([])` 锁住），不随 React 重渲染重建
+- `RichTextPlugin` 把 `contentEditable` div 和编辑器内核连起来，同时注册加粗/斜体/标题等快捷键
+- `HistoryPlugin` 提供 undo/redo，底层靠 EditorState 快照做时间旅行
+- 四个组件加起来不到 15 行，出来的就是一个能处理 IME、支持快捷键、支持 undo/redo 的编辑器
 
-我把 `LexicalEditorState.ts:120` 的 `isEmpty` 从
+### 案例 2：自定义文本节点——创建一个高亮节点
 
 ```ts
-isEmpty(): boolean {
-  return this._nodeMap.size === 1 && this._selection === null;
+import { TextNode, type SerializedTextNode } from 'lexical';
+
+// 序列化格式（用于 JSON 持久化和协同编辑）
+type SerializedHighlightNode = SerializedTextNode & { type: 'highlight' };
+
+export class HighlightNode extends TextNode {
+  // 每个自定义 Node 必须声明 getType 和 clone
+  static getType(): string {
+    return 'highlight';
+  }
+
+  static clone(node: HighlightNode): HighlightNode {
+    return new HighlightNode(node.__text, node.__key);
+  }
+
+  // 告诉 DOM 怎么渲染这个节点
+  createDOM(): HTMLElement {
+    const element = document.createElement('span');
+    element.style.backgroundColor = '#ffeb3b';
+    element.style.borderRadius = '2px';
+    return element;
+  }
+
+  // 节点数据更新时，告诉 DOM 怎么更新
+  updateDOM(): boolean {
+    return false; // 返回 false 表示不需要更新 DOM
+  }
+
+  // 序列化——支持 JSON 导出和跨端同步
+  exportJSON(): SerializedHighlightNode {
+    return { ...super.exportJSON(), type: 'highlight' };
+  }
 }
 ```
 
-改成（人为触发 setEditorState 拒绝条件）：
+逐部分解释：
+- 自定义节点继承 `TextNode`，等于说"我是一种特殊文本"
+- `getType()` 返回唯一字符串标识——Lexical 靠这个反序列化时找到对应的类
+- `createDOM()` 告诉 Lexical 在浏览器里用什么 HTML 元素渲染它
+- `exportJSON()` 保证节点能被序列化（存数据库 / 发给协同方）
+- 注册方式：把 `HighlightNode` 加到 `LexicalComposer` 的 `initialConfig.nodes` 数组里
+
+### 案例 3：命令系统——按回车提交表单
 
 ```ts
-isEmpty(): boolean {
-  return this._nodeMap.size <= 2 && this._selection === null;  // 故意放宽
+import { KEY_ENTER_COMMAND, COMMAND_PRIORITY_LOW } from 'lexical';
+
+function SubmitOnEnterPlugin({ onSubmit }: { onSubmit: () => void }) {
+  const [editor] = useLexicalComposerContext();
+
+  useEffect(() => {
+    return editor.registerCommand(
+      KEY_ENTER_COMMAND,
+      (event: KeyboardEvent) => {
+        // Shift+Enter 正常换行，单独 Enter 提交
+        if (!event.shiftKey) {
+          event.preventDefault();
+          onSubmit();
+          return true; // true = "我处理了，不要再往上冒泡"
+        }
+        return false; // false = "我没处理，让别人处理"
+      },
+      COMMAND_PRIORITY_LOW,
+    );
+  }, [editor, onSubmit]);
+
+  return null; // plugin 本身不渲染任何 DOM
 }
 ```
 
-然后跑 `npm run test --workspace=lexical -- LexicalEditorState`：
+逐部分解释：
+- `registerCommand` 返回一个 unregister 函数——`useEffect` 的 cleanup 自动调用它，所以组件卸载时命令自动撤销
+- 命令处理器返回 `true` 表示"已处理，停止冒泡"（类似 DOM 事件的 `stopPropagation`）
+- `COMMAND_PRIORITY_LOW` 是优先级——Lexical 的每个命令可以有多个处理器，按优先级依次调用，直到有一个返回 true
+- `return null` 是 Lexical plugin 的惯例——plugin 通常不渲染 DOM，只挂副作用（注册命令/监听器/transform）
 
-- **现象 A**：`createEmptyEditorState + setEditorState` 测试用例之前 throw "EditorState is empty"，
-  改完后**也通过了**——因为 isEmpty 返回 false。但是
-- **现象 B**：playground 启动后第一次输入字符立刻报错 `EditorState is empty`——
-  原因：playground 的 collab 路径走 `editorState === null` → 跳过初始化 → 第一次 keystroke 触发 setEditorState，
-  这时 `_nodeMap.size = 2`（root + paragraph），原版会通过（因为只有 1 个 node 才算 empty）；
-  改成 `<= 2` 之后变成 empty，setEditorState 直接抛。
+## 踩过的坑
 
-学到的：`isEmpty` 不是显示用的"内容是不是空"，是**setEditorState 的守门员**——
-它的 invariant 是"size === 1 等价于只有 root，等价于 round-trip 后没法再注入"。这条 invariant 写在 `LexicalComposer.tsx:55-59`
-的 doc 注释里，但 size 的硬编码 1 在代码里没注释，改一行就破——典型的"隐式 invariant"。
+1. **dollar 函数必须在 update/read 里调**——在 `editor.update()` 或 `editor.read()` 外面调 `$getRoot()` / `$getSelection()` 会直接抛 runtime error。这和 React hooks 的"不能在条件语句里调"一样——隐式上下文 + 强位置约束。
 
-撤销改动：`git checkout packages/lexical/src/LexicalEditorState.ts`。
+2. **自定义 Node 的 `clone()` 写错会导致历史记录混乱**——undo/redo 靠 EditorState 快照做时间旅行，如果你的 `clone()` 没有正确复制关键属性，undo 回来的节点会丢数据。自查方法：`editorState.toJSON()` 看序列化结果是否完整。
 
-## 横向对比（Layer 5）
+3. **SSR 时 plugin transform 不跑**——`lexical` 内核可以在服务端跑（不依赖 DOM），但 plugin 的 `useEffect` 只在客户端执行。如果 plugin 做了 markdown shortcut 转换（`**foo**` 自动变加粗），SSR 出的 HTML 会保留原始 markdown 字符串，hydration 后才变——用户会看到一帧闪烁。
 
-> 找哲学不同的，不是同流派下位替代。富文本 / 编辑器框架的赛道里，Lexical 主要的对手是 ProseMirror、Slate、Draft.js、Tiptap、CodeMirror。
+4. **大粘贴（5 万+ 字符）会卡**——commit 是同步的，`$commitPendingUpdates` 跑 reconcile + listener trigger 全部同步阻塞。Meta 在 Workplace 里用"分块粘贴 + 多次 update"绕开，但内核没暴露异步 commit 选项。如果你的场景有大量一次性插入，建议拆成多次 `editor.update()`。
 
-| 维度 | **Lexical** | [ProseMirror](/projects/prosemirror/) | Slate.js | Draft.js（已弃） | Tiptap | [CodeMirror 6](/projects/codemirror/) |
-|---|---|---|---|---|---|---|
-| **文档模型** | `Map<NodeKey, Node>` + 链表 | immutable Node 树（schema 校验） | 嵌套 JSON object（mutable） | immutable.js Record | 同 ProseMirror（封装） | Text rope + Decoration |
-| **变更模型** | `editor.update(fn)` + dirty set | Step 序列（apply/invert/map） | `Editor.apply(op)`，op 是 path-based | `EditorState.set(...)` | 同 ProseMirror | Transaction（state.update） |
-| **DOM 同步** | 自写 reconciler，不 walk react fiber | 自写 viewdesc + DOMObserver | 走 React render（slate-react） | 走 React render | 走 ProseMirror view | 自写 ViewPlugin |
-| **协同（collab）** | `@lexical/yjs`，把 update 转 Yjs op | `prosemirror-collab` rebase | y-slate（社区，不官方） | 无官方 | y-prosemirror（社区） | y-codemirror.next |
-| **React 强绑** | 否（@lexical/react 是可选） | 否（无官方 react） | 是（slate-react 必须） | 是 | 否（@tiptap/react） | 否（@codemirror/view 是 vanilla） |
-| **核心抽象密度** | 中（4 件：State / Editor / Reconciler / Node） | 高（schema / Step / State / View 五件） | 低（Editor / Operation 两件） | 中（Record / Modifier） | 中（继承 ProseMirror） | 中（State / Transaction / View） |
-| **bus factor** | Meta（团队 ~10 人 + trueadm） | 1（Marijn Haverbeke） | 1-2（Ian Storm Taylor + 社区） | Meta（已停） | 个人 + 商业（HocusPocus） | 1（Marijn） |
-| **License** | MIT | MIT | MIT | MIT | MIT | MIT |
-| **典型用户** | Workplace / WhatsApp Web / Facebook composer | Atlassian / NYT / Notion 早期 | Cambly / Slab | Facebook（旧）/ Reddit（旧） | Linear / GitLab | VS Code Web / Replit |
+## 适用 vs 不适用场景
 
-**选型建议**：
+**适用**：
+- 做一个 Notion 风格 / Workplace 帖编辑器，团队熟悉 React——Lexical 的 reconciler 性能好，plugin 即 React 组件，心智门槛比 ProseMirror 低
+- 需要在 React 和 Vanilla 之间共享编辑器内核——Lexical 内核零依赖，`@lexical/react` 只是薄壳
+- 需要 headless 模式（无 DOM 运行）——比如跑在 Web Worker 里做服务端渲染、或单元测试里验证编辑逻辑
+- 需要自定义块类型（嵌入视频 / 图表 / 公式）——`DecoratorNode` 让你能把任意 React 组件嵌在编辑器文档流里
 
-- **要写一个 Notion-like / Workplace 帖编辑器，且团队懂 React**：选 **Lexical**——
-  reconciler 性能高 + plugin 即 React 子组件，心智门槛比 ProseMirror 低；Meta 在背后撑维护。
-- **要写一个支持复杂 schema 验证的 wiki / CMS（如 Confluence）**：选 **ProseMirror**——
-  schema + ContentMatch DFA 让"段落里不能嵌段落、列表里只能嵌 listItem"这种约束**编译期校验**，
-  Lexical 没有 schema 概念，错误结构得自己在 NodeTransform 里防。
-- **要写一个 Markdown / 代码块为主的轻编辑器，写得快即可**：选 **Slate**——
-  API 最浅、心智模型最直接，但要忍受性能不如前两者。
-- **要写一个代码编辑器（IDE 嵌入式）**：选 **CodeMirror 6**——同作者 ProseMirror 的姊妹项目，
-  专为 token / decoration / 长行优化。
-- **不要选 Draft.js**——Meta 已弃，`UNSAFE_*` lifecycle 在 React 18 strict mode 下报警，迁移到 Lexical 是 Meta 的官方建议。
+**不适用**：
+- 需要 schema 验证（"段落里不能嵌段落""列表里只能嵌 listItem"等结构约束）——选 ProseMirror，它有 ContentMatch DFA 在编译期校验；Lexical 没有 schema 概念，错误结构得在 NodeTransform 里手写守卫
+- 主技术栈是 Vue / Svelte，不想引入 React 依赖——虽然 Lexical 内核不绑 React，但 90% 的官方插件用 React 写的，非 React 用户要么手写胶水、要么找社区替代
+- 需要一个开箱即用的编辑器产品（toolbar、菜单、文件上传都做好）——Lexical 是引擎，不是产品；Tiptap（基于 ProseMirror）有更完整的预置 UI
+- 项目规模很小，只想加个简单 textarea 带一点格式——Lexical 的初始化抽象成本（理解 update/commit/reconcile）不值得；用基础 `contentEditable` 或轻量库就够了
 
-## 与你当前工作的连接（Layer 6）
+## 历史小故事（可跳过）
 
-### 今天就能用的部分
+- **2016 年**：Meta 做 Draft.js，第一个把 React 模型搬进 contentEditable 的开源库。但它的 immutable.js record 模型太重——每键入一个字符就 rebuild 整棵文档树，Workplace 长帖打字延迟超过 100ms
+- **2022 年**：React Forget 作者 Dominic Gannaway (trueadm) 在 React Conf 上公开 Lexical。核心 inversion：文档保持 immutable，但只在 commit 边界 immutable；fn 内部走 `getWritable()` 做浅拷贝。这个设计从 ProseMirror 的 schema-first 路线分道，走 immutable Map + dirty-set 局部 patch 路线
+- **2024 年**：Lexical 成为 Meta 内部全线编辑器底座——Facebook 动态输入框、Instagram 消息、WhatsApp 网页版、Workplace 文档共用同一内核。同时 Figma、Bloomberg 等外部公司开始采用。GitHub stars 突破 17.7k
+- **2025 年**：Lexical 扩展到 iOS 原生平台（Swift/TextKit），共享同一套 EditorState 序列化格式。核心包仍保持 ~22KB gzip，零依赖
 
-- **immutable + 双缓冲 + dirty set** 这套组合在任何"高频小修改 + 偶发全量 commit"的场景都通用。
-  比如做一个 "AI 实时改稿"按钮，按一下让 LLM 流式吐出 diff，每个 chunk 触发一次 `editor.update(() => applyDiffChunk(...))`。
-  Lexical 自动 batch 进同一个 microtask 的 commit，避免每个 chunk 重 paint。
-- **plugin = 注册器返回 unregister**——这个模式适用于任何"可扩展运行时"。我可以把 [某 ML 评估系统](memory/projects/某 ML 评估系统/project_video_eval_agent_overview.md)
-  里 evaluator 的 hook 系统改成同形：`agent.registerObserver(stage, fn)` 返回 unregister，`mergeRegister(...)` 一把撤销。
-  比目前的 list-of-handlers 配置更清晰。
-- **dollar 函数 + 全局 active context** 是 hooks 同形——值得在我自己的 SDK 设计时复用：API 简洁，强位置约束做防呆。
+## 学到什么
 
-### 下个月能用的部分
+1. **immutable 不一定等于"全量重建"**——Draft.js 用 immutable.js 做整棵树不可变，Lexical 把 immutable 限定在 EditorState 边界 + Node 共享 + 浅拷贝。同样是 immutable，实现方式决定了能撑多大的文档
+2. **reconciler 不一定是 React 的专利**——Lexical 自己写 reconciler，用 dirty set 做局部 patch，不 walk React fiber。任何需要高频小修改 + 局部 DOM 同步的场景都能用这套思路
+3. **plugin = 注册器返回 unregister**——这个模式适用于任何可扩展运行时。Lexical 的每个 plugin 都是一个 React 组件，在 `useEffect` 里注册回调、cleanup 里撤销——和 Zustand 的 subscribe / XState 的 service 同形
+4. **框架无关性的代价是生态分裂**——Lexical 内核确实不依赖 React，但官方 plugin 全用 React 写。非 React 用户拿到的是一个引擎加半套生态。设计"框架无关"的库时，生态和内核得一起规划
 
-- 给学习站（study）加一个"所见即所得的笔记编辑器"——用 Lexical + RichTextPlugin + MarkdownPlugin 嵌一个 `<ContentEditable>`，
-  保存时 `editorState.toJSON()` 落库 JSON。比 contenteditable 裸跑或集成 Tiptap 都更可控。
-- 学 trueadm 把 reconciler 的 `dirtyType / dirtyElements / dirtyLeaves` 当一等公民——
-  我自己写 React 组件库时如果有"局部 patch 高频 props"的场景（比如表格的列改宽度），可以学这个 dirty-set 模型，
-  暴露 `markDirty(key)` API 让上层显式标。
-- **MutationObserver disconnect 期间 reconcile**——任何"自己写代码改 DOM 但又不想被自己的 observer 触发"的场景
-  都能套这个三段式（disconnect / mutate / observe），不只编辑器。
+## 延伸阅读
 
-### 不要用的部分
+- [Lexical 官方文档](https://lexical.dev/docs/intro) —— 设计理念 + 完整 API 参考，入门必读
+- [Lexical GitHub 仓库](https://github.com/facebook/lexical) —— 源码 + 示例 playground
+- [Lexical's Design 设计文档](https://lexical.dev/docs/design) —— 双缓冲 / reconciler / 命令系统的最简解释
+- [[prosemirror]] —— schema-first 路线的代表，和 Lexical 形成路线对比
+- [[codemirror]] —— 同赛道但走代码编辑方向，同一作者风格
+- [[yjs]] —— Lexical 的协同编辑插件的后端，通用的 CRDT 实现
 
-- **不要把 Lexical 当通用 immutable model 库用**——`getWritable()` / dollar 函数 / active context 是为编辑器特化的，
-  在普通业务 store（比如 Zustand 替代品）里这套约束是负担。Zustand / Jotai 类的 store 直接用 immer 就够。
-- **不要在 SSR 强依赖 plugin transform**——上面怀疑 3 提到的 markdown shortcut SSR 闪烁，是 Lexical 设计上 plugin client-only 的副作用。
-  有这种需求要么走服务端做 transform，要么忍闪。
-- **不要轻易写 DecoratorNode（嵌 React 子树）**——DecoratorNode 让 Lexical 内核管 EditorState、React 管子树渲染，
-  生命周期边界很多坑（unmount / commit 顺序），普通的 inline icon / mention 用 ElementNode 就行。
+## 关联
 
-## 自检问题 + 延伸阅读（Layer 7）
+- [[prosemirror]] —— 同样做编辑器底座，但走 schema-first 路线；选 Lexical 还是 ProseMirror 取决于你要不要结构校验
+- [[codemirror]] —— 代码编辑器框架，和 Lexical 同属编辑器赛道但方向不同（代码 vs 富文本）
+- [[react]] —— Lexical 的 React 集成只靠一个 14 行的 `LexicalComposer` 组件，是"框架可选适配器"设计的范本
+- [[yjs]] —— Lexical 的协同编辑插件底层用的就是 Yjs，把 EditorState 的 dirty set 映射到 CRDT 操作
+- [[immer]] —— 和 Lexical 的 `getWritable()` 同形——让人用"可变写法"操作不可变数据，底层靠浅拷贝保证 immutability
+- [[dnd-kit]] —— 同样是"引擎级抽象"的项目类笔记：不给你完整的 drag-drop UI，给你可组合的 sensor/modifier/collision 协议
 
-**5 个具体怀疑（追到行号级别）**：
+## 反向链接
 
-1. `editor.update(fn, {discrete: true})` 的 discrete 模式在 [LexicalUpdates.ts#L798](https://github.com/facebook/lexical/blob/149c37d42898a50ba094c8e0e3c4949d1cce969c/packages/lexical/src/LexicalUpdates.ts#L798) 怎么跳过 microtask？
-   它直接同步 commit 还是把 fn push 到 `_pendingUpdates` 队列再立刻 flush？追到具体的 `if (discrete)` 分支，看它和异常恢复路径的交互。
-2. reconciler 异常 → reset → retry 的路径里，第二次跑如果还异常会怎样？
-   [LexicalUpdates.ts#L658-L668](https://github.com/facebook/lexical/blob/149c37d42898a50ba094c8e0e3c4949d1cce969c/packages/lexical/src/LexicalUpdates.ts#L658-L668)
-   的 `isAttemptingToRecoverFromReconcilerError` 是 module-level 全局——多 editor 实例同时崩会不会互相干扰？
-3. `_dirtyElements` 是 `Map<NodeKey, IntentionallyMarkedAsDirtyElement>`——这个 IntentionallyMarkedAsDirtyElement
-   类型表示什么？在 LexicalReconciler.ts 里搜它的使用，看作者用这个 boolean 区分什么。是不是和"用户标 dirty"vs"系统因 child 改而连带 dirty"的区分？
-4. `MutationObserver.disconnect()` 期间，浏览器原生的 IME composition 回调会不会被打断？
-   chinese 输入法 compositionstart → compositionupdate → compositionend 期间如果发生 reconcile，IME panel 会不会消失？
-   `LexicalEvents.ts` 里的 composition 处理是不是延迟了 disconnect 时机？
-5. `LexicalNode.__parent / __prev / __next` 是 NodeKey（string）还是引用？
-   如果是 string，每次 `getParent()` 都要走 `_nodeMap.get(__parent)`——大文档里链表遍历会不会成瓶颈？
-   有没有缓存？看 [LexicalNode.ts#L303-L308](https://github.com/facebook/lexical/blob/149c37d42898a50ba094c8e0e3c4949d1cce969c/packages/lexical/src/LexicalNode.ts#L303-L308) 的 `getParent` 实现。
-
-**接下来读哪几个文件**（按优先级）：
-
-| 顺序 | 文件 | 想搞清的问题 |
-|---|---|---|
-| 1 | `packages/lexical/src/LexicalReconciler.ts`（~1700 行） | dirty set 怎么传播、createDOM/updateDOM 的契约、子树 replace 的边界 |
-| 2 | `packages/lexical/src/LexicalSelection.ts` | RangeSelection 如何用 NodeKey + offset 表达，和 DOM Selection 的双向翻译 |
-| 3 | `packages/lexical/src/LexicalEvents.ts` | beforeinput / input / composition 的事件路由，IME 期间的特殊处理 |
-| 4 | `packages/lexical/src/LexicalMutations.ts` | MutationObserver wrapper，用户改 DOM（粘贴 / Grammarly）怎么反向推导 EditorState |
-| 5 | `packages/lexical-yjs/src/Bindings.ts` | Lexical update ↔ Yjs op 的桥（看 dirty set 模型怎么映射到 CRDT op） |
-
-## 限制（≥ 4 条）
-
-1. **没有 schema** —— Lexical 不像 ProseMirror 那样有 NodeSpec / ContentMatch DFA。
-   "段落里不能嵌段落"这种结构约束得在 NodeTransform 里写守卫代码，写错了运行时也不报错。
-   Meta 内部用 `nodeReplacement` 机制 + lint 规则兜底，外部用户得自己想清楚。
-2. **plugin 强绑 React lifecycle** —— 虽然 vanilla `lexical` 不依赖 React，但 90% 的 plugin（@lexical/react/* 下）
-   的写法都是 "React 组件 + useEffect 注册"。Vue / Svelte 用户要么手写胶水、要么忍受 React 依赖。
-3. **SSR 边界粗糙** —— 见怀疑 3。`renderToString` 出来的 HTML 是初始 EditorState 的渲染结果，
-   client-side hydration 后才跑 plugin（含 markdown transform、autolink 等），用户会看到一帧的"原始字符串"。
-   官方 docs 没把这条写进 SSR 章节，自己踩。
-4. **DecoratorNode 嵌 React 子树是双管理** —— Lexical 管 EditorState 的 lifecycle，React 管子树渲染。
-   reset 异常路径下子树可能被孤立 portal，Hot Module Replacement 时偶发 "找不到 fiber" 错。
-   GitHub issue 里 ~3% 的 bug 来自这条边界。
-5. **commit 是同步的** —— `$commitPendingUpdates` 跑 reconcile + listener trigger 全部同步阻塞。
-   大 dirty set（一次粘贴 5 万字符）会让主线程卡 ~50ms。Meta 在 Workplace 里靠"分块粘贴 + 多次 update"绕开，
-   但内核没暴露异步 commit 选项。
-
-## 宣传 vs 现实附录（≥ 3 行）
-
-| 文档 / 营销说法 | 代码现实 |
-|---|---|
-| "Lexical 是高度可扩展的 framework" | 扩展点确实清晰（plugin / Node / command），但**plugin 90% 走 React**——非 React 用户的扩展面其实只有 vanilla `editor.register*` API |
-| "Performance-first" | 内核确实快（dirty set + 双缓冲），但 commit 同步 + DecoratorNode 嵌 React 让长尾 case（大粘贴 / hot reload）卡顿明显 |
-| "Framework-agnostic" | core 包不依赖 React 是真，但生态（rich-text plugin / collab plugin / markdown）都借 React 写——脱 React 实际是在重写大半生态 |
-| "替代 Draft.js 的最佳路径" | Meta 内部确实迁了，但 Draft 的"全 immutable record"心智 → Lexical 的"map + dirty set + dollar 函数"心智迁移成本不低，docs 里的迁移指南只覆盖 30% case |
-
-## 元数据
-
-- 升级日期：2026-05-29
-- 总行数：~520 行（写完 wc -l 校验）
-- 启用工具：WebFetch（GitHub raw + API）/ Read 本地 method.md / Pillow 生成 figure
-- 项目类型：框架/SDK（v1.1 分支 D）
-- 锚定 commit：`149c37d42898a50ba094c8e0e3c4949d1cce969c` @ 2026-05-28
-- 锚定文件：LexicalEditorState.ts:106 / LexicalUpdates.ts:595 / LexicalComposer.tsx:90 / LexicalNode.ts:303 / LexicalReconciler.ts:1236
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
