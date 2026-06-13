@@ -2,7 +2,6 @@
 title: SPDK 零基础学习笔记
 来源: https://spdk.io/
 日期: 2026-06-13
-分类_原始: 系统编程
 分类: 操作系统
 子分类: 内核与虚拟化
 provenance: pipeline-v3
