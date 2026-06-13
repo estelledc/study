@@ -2,7 +2,7 @@
 title: FlashInfer — LLM 推理的「万能 attention 引擎」零基础笔记
 来源: https://arxiv.org/abs/2501.01005
 日期: 2026-06-13
-子分类: ML 系统
+子分类: ml
 分类: 机器学习
 provenance: pipeline-v3
 ---

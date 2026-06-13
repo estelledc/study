@@ -2,7 +2,6 @@
 title: "Ruflo — 让 Claude Code 拥有神经系统：多智能体编排平台"
 来源: https://github.com/ruvnet/ruflo
 日期: 2026-06-13
-分类_原始: AI 工具
 分类: 机器学习
 子分类: 模型与训练
 provenance: pipeline-v3
