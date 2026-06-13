@@ -2,7 +2,6 @@
 title: Practical Partial Evaluation for High-Performance Dynamic Language Runtimes
 来源: https://chrisseaton.com/truffleruby/pldi17-truffle/pldi17-truffle.pdf
 日期: 2026-06-13
-分类_原始: 编译原理
 分类: 编程语言
 子分类: 类型与 PL 理论
 provenance: pipeline-v3

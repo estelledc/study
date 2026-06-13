@@ -2,7 +2,6 @@
 title: Kakoune 编辑器零基础学习笔记
 来源: https://github.com/mawww/kakoune
 日期: 2026-06-13
-分类_原始: 工具
 分类: CLI
 子分类: 编辑器与 IDE
 provenance: pipeline-v3

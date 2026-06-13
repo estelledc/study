@@ -2,7 +2,6 @@
 title: "Sora：从文字到视频的 AI 生成模型"
 来源: https://openai.com/sora
 日期: 2026-06-13
-分类_原始: AI / 生成式模型
 分类: 机器学习
 子分类: 模型与训练
 provenance: pipeline-v3

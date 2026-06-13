@@ -2,7 +2,6 @@
 title: Goja — 纯 Go 写的 ES5.1 JavaScript 解释器
 来源: https://github.com/dop251/goja
 日期: 2026-06-13
-分类_原始: 编程语言
 分类: 编译器
 子分类: 语言运行时
 provenance: pipeline-v3
