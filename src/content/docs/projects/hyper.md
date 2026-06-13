@@ -2,7 +2,6 @@
 title: hyper — Rust HTTP 实现
 来源: https://github.com/hyperium/hyper
 日期: 2026-06-13
-分类_原始: 后端开发
 分类: 后端 API
 子分类: rust-tools
 provenance: pipeline-v3

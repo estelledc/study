@@ -2,7 +2,6 @@
 title: EvoArena — Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments
 来源: https://arxiv.org/abs/2606.13681
 日期: 2026-06-13
-分类_原始: AI / LLM Agents
 分类: 机器学习
 子分类: LLM记忆
 provenance: pipeline-v3

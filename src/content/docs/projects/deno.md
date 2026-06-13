@@ -3,7 +3,7 @@ title: Deno — 安全优先的 JS/TS 运行时
 来源: 'https://github.com/denoland/deno'
 日期: 2026-06-06
 分类: 编译器
-子分类: 语言运行时
+子分类: ai-infra
 难度: 中级
 ---
 

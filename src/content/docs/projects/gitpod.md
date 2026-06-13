@@ -2,8 +2,8 @@
 title: Gitpod — 预构建云开发环境
 来源: https://github.com/gitpod-io/gitpod
 日期: 2026-06-13
-子分类: 编辑器与 IDE
-分类: CLI
+子分类: DevOps 与运维
+分类: 基础设施
 provenance: pipeline-v3
 ---
 

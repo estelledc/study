@@ -2,8 +2,8 @@
 title: nushell — 让命令之间传 Excel 表而不是传纸条
 来源: https://github.com/nushell/nushell
 日期: 2026-05-31
-子分类: 命令行工具
-分类: CLI
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 入门
 provenance: pipeline-v3
 ---

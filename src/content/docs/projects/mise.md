@@ -2,8 +2,8 @@
 title: mise — 一条命令切换项目用的 Node/Python/Go 版本
 来源: https://github.com/jdx/mise
 日期: 2026-05-31
-子分类: 命令行工具
-分类: CLI
+子分类: DevOps 与运维
+分类: 基础设施
 难度: 入门
 provenance: pipeline-v3
 ---

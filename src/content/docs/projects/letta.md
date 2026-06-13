@@ -2,7 +2,6 @@
 title: Letta — 有状态记忆 Agent
 来源: https://github.com/letta-ai/letta
 日期: 2026-06-13
-分类_原始: AI Agent
 分类: 机器学习
 子分类: ai-agent-infra
 provenance: pipeline-v3

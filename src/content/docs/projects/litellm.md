@@ -3,7 +3,7 @@ title: LiteLLM — 统一 AI 网关，一个接口调用 100+ LLM
 来源: https://github.com/BerriAI/litellm
 日期: 2026-06-13
 分类: 机器学习
-子分类: 数据科学与 AI
+子分类: ai-infra
 provenance: pipeline-v3
 ---
 
