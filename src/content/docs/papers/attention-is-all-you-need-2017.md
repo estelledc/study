@@ -3,7 +3,7 @@ title: "Attention Is All You Need — 零基础学习笔记"
 来源: https://arxiv.org/abs/1706.03762
 日期: 2026-06-13
 分类: 机器学习
-子分类: nlp
+子分类: ml
 provenance: pipeline-v3
 ---
 

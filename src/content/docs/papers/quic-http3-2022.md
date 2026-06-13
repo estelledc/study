@@ -2,7 +2,6 @@
 title: "The QUIC Transport Protocol: Design and Implementation"
 来源: https://arxiv.org/abs/2401.00007
 日期: 2026-06-13
-分类_原始: 计算机网络
 分类: 网络协议
 子分类: networks
 provenance: pipeline-v3

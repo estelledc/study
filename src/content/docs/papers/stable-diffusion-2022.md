@@ -2,9 +2,8 @@
 title: "Stable Diffusion：用潜在空间做高清图像生成"
 来源: https://arXiv.org/abs/2112.10752
 日期: 2026-06-13
-分类_原始: 计算机视觉
 分类: 机器学习
-子分类: cv
+子分类: ml
 provenance: pipeline-v3
 ---
 

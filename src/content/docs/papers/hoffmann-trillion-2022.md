@@ -3,7 +3,7 @@ title: "Chinchilla — 训练大语言模型的算力最优法则"
 来源: 'https://arxiv.org/abs/2203.15556'
 日期: 2026-06-13
 分类: NLP
-子分类: ml-deep-learning
+子分类: ml
 provenance: pipeline-v3
 ---
 

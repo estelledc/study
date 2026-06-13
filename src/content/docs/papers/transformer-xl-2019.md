@@ -2,7 +2,7 @@
 title: "Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去"
 来源: 'Dai et al., "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context", ACL 2019'
 日期: 2026-05-31
-子分类: 模型与训练
+子分类: ml
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

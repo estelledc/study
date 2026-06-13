@@ -2,7 +2,6 @@
 title: Llama 3 基础模型与开放多语言模型学习笔记
 来源: https://arxiv.org/abs/2407.21783
 日期: 2026-06-13
-分类_原始: 人工智能
 分类: 其他
 子分类: ml-deep-learning
 provenance: pipeline-v3
