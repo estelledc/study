@@ -2,7 +2,6 @@
 title: "Compose Multiplatform — 跨平台声明式 UI"
 来源: "https://github.com/JetBrains/compose-multiplatform"
 日期: "2026-06-13"
-分类_原始: 移动端开发
 分类: 其他
 子分类: mobile-cross-platform
 provenance: "pipeline-v3"

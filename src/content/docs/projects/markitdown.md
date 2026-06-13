@@ -3,7 +3,7 @@ title: MarkItDown — 万能文件转 Markdown 工具
 来源: 'https://github.com/microsoft/markitdown'
 日期: 2026-06-13
 分类: 机器学习
-子分类: 数据科学与 AI
+子分类: ai-ml-tools
 难度: 入门
 provenance: pipeline-v3
 ---

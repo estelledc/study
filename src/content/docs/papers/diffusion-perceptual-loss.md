@@ -2,7 +2,6 @@
 title: Diffusion Model with Perceptual Loss
 来源: https://arxiv.org/abs/2401.00110
 日期: 2026-06-13
-分类_原始: AI / 深度学习
 分类: 机器学习
 子分类: 扩散模型
 provenance: pipeline-v3

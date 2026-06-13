@@ -3,7 +3,7 @@ title: CloakBrowser — 源码级隐身 Chromium，Playwright 即插即用
 description: CloakHQ 开源的隐身 Chromium 二进制，58 处 C++ 补丁，可替代 Playwright/Puppeteer 通过常见反爬检测
 来源: 'https://github.com/CloakHQ/CloakBrowser'
 日期: 2026-06-13
-子分类: 安全与隐私
+子分类: ai-ml-tools
 分类: 安全与隐私
 provenance: pipeline-v3
 ---

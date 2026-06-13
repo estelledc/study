@@ -2,7 +2,6 @@
 title: Large language models for artificial general intelligence (AGI): A survey
 来源: 'https://arxiv.org/abs/2501.03151'
 日期: 2026-06-13
-分类_原始: 综述
 分类: 其他
 子分类: AGI
 provenance: pipeline-v3

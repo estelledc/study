@@ -2,7 +2,6 @@
 title: Slint — 声明式跨平台 UI 工具包
 来源: https://github.com/slint-ui/slint
 日期: 2026-06-13
-分类_原始: 前端框架
 分类: 后端 API
 子分类: rust-tools
 provenance: pipeline-v3

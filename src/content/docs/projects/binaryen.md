@@ -2,7 +2,6 @@
 title: Binaryen — WASM 编译器基础设施
 来源: https://github.com/WebAssembly/binaryen
 日期: 2026-06-13
-分类_原始: WebAssembly
 分类: 其他
 子分类: wasm-toolchain
 难度: 中级
