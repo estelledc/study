@@ -2,7 +2,6 @@
 title: Differentiable Rendering: A Comprehensive Survey
 来源: https://arxiv.org/abs/2401.00024
 日期: 2026-06-13
-分类_原始: Computer Graphics
 分类: 图形学
 子分类: 渲染与图形
 provenance: pipeline-v3

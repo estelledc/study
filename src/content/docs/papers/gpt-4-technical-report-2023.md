@@ -3,7 +3,7 @@ title: GPT-4 Technical Report 零基础学习笔记
 来源: https://arxiv.org/abs/2303.08774
 日期: 2026-06-13
 分类: 机器学习
-子分类: ml-deep
+子分类: llm-scaling
 provenance: pipeline-v3
 ---
 
