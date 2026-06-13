@@ -2,7 +2,6 @@
 title: "Model-Native Computing Architecture（模型原生计算架构）"
 来源: https://arxiv.org/abs/2606.00288
 日期: 2026-06-13
-分类_原始: AI Systems
 分类: 基础设施
 子分类: 系统综合
 provenance: pipeline-v3

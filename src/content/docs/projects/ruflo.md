@@ -2,7 +2,6 @@
 title: "Ruflo 零基础入门：让 AI 助手变成一支协作团队"
 来源: https://github.com/ruvnet/ruflo
 日期: 2026-06-13
-分类_原始: AI / 多智能体框架
 分类: 机器学习
 子分类: ML 系统
 provenance: pipeline-v3

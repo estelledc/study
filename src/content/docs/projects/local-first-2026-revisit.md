@@ -2,7 +2,6 @@
 title: Local-First Software 五年回顾：从零开始理解数据归属
 来源: https://www.inkandswitch.com/local-first/2026-revisit/
 日期: 2026-06-13
-分类_原始: 软件架构
 分类: 分布式系统
 子分类: 共识与复制
 provenance: pipeline-v3

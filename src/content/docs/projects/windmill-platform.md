@@ -2,7 +2,6 @@
 title: Windmill — 把脚本变成 API、工作流和 UI 的开发平台
 来源: https://github.com/windmill-labs/windmill
 日期: 2026-06-13
-分类_原始: 后端 / DevOps
 分类: 基础设施
 子分类: DevOps 与运维
 provenance: pipeline-v3

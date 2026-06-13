@@ -2,7 +2,6 @@
 title: Stagehand — 用自然语言控制浏览器的 AI 框架
 来源: https://github.com/browserbase/stagehand
 日期: 2026-06-13
-分类_原始: AI / 自动化
 分类: Agent
 子分类: 智能体与 LLM
 provenance: pipeline-v3
