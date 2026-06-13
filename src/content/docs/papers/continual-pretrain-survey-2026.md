@@ -2,7 +2,6 @@
 title: Continual Pretraining — 让大模型"活到老，学到老"
 来源: https://arxiv.org/abs/2402.01364
 日期: 2026-06-13
-分类_原始: 大语言模型
 分类: 机器学习
 子分类: 模型与训练
 难度: 入门

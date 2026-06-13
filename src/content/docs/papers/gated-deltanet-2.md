@@ -2,7 +2,6 @@
 title: "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention"
 来源: https://arxiv.org/abs/2605.22791
 日期: 2026-06-13
-分类_原始: 深度学习
 分类: 机器学习
 子分类: ML 系统
 provenance: pipeline-v3
