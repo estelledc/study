@@ -3,7 +3,7 @@ title: "MCP-Solver — 让大语言模型学会用计算器做逻辑推理"
 来源: 'Stefan Szeider, "MCP-Solver: Integrating Language Models with Constraint Programming Systems", arXiv 2025'
 日期: 2026-06-13
 分类: 机器学习
-子分类: 约束求解
+子分类: 约束编程
 难度: 初级
 provenance: pipeline-v3
 ---

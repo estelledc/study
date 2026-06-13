@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 1322 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1324 个项目 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1322 个
-- **已分类**：1322
+- **总数**：1324 个
+- **已分类**：1324
 
 ### 按一级主题分布
 
@@ -20,7 +20,7 @@ sidebar:
 |---|---:|
 | [编程语言](#编程语言) | 13 |
 | [分布式系统](#分布式系统) | 8 |
-| [数据库](#数据库) | 111 |
+| [数据库](#数据库) | 112 |
 | [操作系统](#操作系统) | 55 |
 | [机器学习](#机器学习) | 168 |
 | [区块链](#区块链) | 60 |
@@ -32,7 +32,7 @@ sidebar:
 | [信息检索](#信息检索) | 1 |
 | [Agent](#agent) | 8 |
 | [CLI](#cli) | 190 |
-| [编译器](#编译器) | 70 |
+| [编译器](#编译器) | 71 |
 | [数据可视化](#数据可视化) | 67 |
 | [安全与隐私](#安全与隐私) | 22 |
 | [其他](#其他) | 39 |
@@ -95,7 +95,7 @@ sidebar:
 
 ## 数据库
 
-共 111 个。
+共 112 个。
 
 ### 存储与查询
 
@@ -214,6 +214,7 @@ sidebar:
 
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
+| [Garage — 去中心化 S3 兼容对象存储](/study/projects/garage/) | ✅ v3 |  |
 | [GreptimeDB — 云原生时序数据库](/study/projects/greptimedb/) | ✅ v3 |  |
 | [immudb — 不可变数据库](/study/projects/immudb/) | ✅ v3 |  |
 | [Litestream — 把 SQLite 的每一次改动实时流式备份到 S3](/study/projects/litestream/) | ✅ v3 |  |
@@ -668,7 +669,7 @@ sidebar:
 | 项目 | 质量 | 描述 |
 |---|:---:|---|
 | [Accompanist — Jetpack Compose 的「补丁工具箱」](/study/projects/accompanist/) | ✅ v3 |  |
-| [Appium — 跨平台移动 UI 自动化](/study/projects/appium/) | ✅ v3 |  |
+| [Appium — 跨平台移动 UI 自动化框架](/study/projects/appium/) | ✅ v3 |  |
 | [Capacitor — 让 Web 应用直接变成 App Store 上架的原生应用](/study/projects/capacitor/) | ✅ v3 |  |
 | [Chameleon — 滴滴「变色龙」跨端框架，一套 CML 跑遍 Web / 小程序 / Weex](/study/projects/chameleon/) | ✅ v3 |  |
 | [Coil — Kotlin 协程驱动的 Android / Compose 图片加载库](/study/projects/coil/) | ✅ v3 |  |
@@ -1330,7 +1331,7 @@ sidebar:
 |---|:---:|---|
 | [Aider — 终端 AI 结对编程 CLI](/study/projects/aider/) | ✅ v3 |  |
 | [Anytype — 本地优先块编辑器桌面客户端](/study/projects/anytype-ts/) | ✅ v3 |  |
-| [AppFlowy — Rust + Flutter 开源 Notion 替代品](/study/projects/appflowy/) | ✅ v3 |  |
+| [AppFlowy — 用 Rust 做内核、Flutter 做界面的开源 Notion](/study/projects/appflowy/) | ✅ v3 |  |
 | [AstroNvim — 社区驱动 Neovim 配置框架](/study/projects/astronvim/) | ✅ v3 |  |
 | [Atom — 已归档的 Web 编辑器先驱](/study/projects/atom/) | ✅ v3 |  |
 | [Blender — 全流程 3D 创作套件](/study/projects/blender/) | ✅ v3 |  |
@@ -1541,7 +1542,7 @@ sidebar:
 
 ## 编译器
 
-共 70 个。
+共 71 个。
 
 ### 构建工具
 
@@ -1636,6 +1637,7 @@ sidebar:
 | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | ✅ v3 |  |
 | [Tokio — Rust 异步编程的事实标准](/study/projects/tokio/) | ✅ v3 |  |
 | [Trunk — Rust WASM 零配置构建与打包工具](/study/projects/trunk/) | ✅ v3 |  |
+| [wasm-bindgen — Rust 与 JavaScript 的高层互操作桥梁](/study/projects/wasm-bindgen/) | ✅ v3 |  |
 | [Zig — 无隐藏控制流的 C 替代](/study/projects/zig/) | ✅ v3 |  |
 
 ## 数据可视化
@@ -1840,7 +1842,7 @@ sidebar:
 
 ---
 
-## 全部 1322 个（字母序）
+## 全部 1324 个（字母序）
 
 | Slug | 项目 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -1891,8 +1893,8 @@ sidebar:
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | ✅ v3 | 区块链 | 链与合约 |
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) | ✅ v3 | 数据可视化 | 数据可视化 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | ✅ v3 | 后端 API | Web 后端 |
-| `appflowy` | [AppFlowy — Rust + Flutter 开源 Notion 替代品](/study/projects/appflowy/) | ✅ v3 | CLI | 编辑器与 IDE |
-| `appium` | [Appium — 跨平台移动 UI 自动化](/study/projects/appium/) | ✅ v3 | 后端 API | 移动端 |
+| `appflowy` | [AppFlowy — 用 Rust 做内核、Flutter 做界面的开源 Notion](/study/projects/appflowy/) | ✅ v3 | CLI | 编辑器与 IDE |
+| `appium` | [Appium — 跨平台移动 UI 自动化框架](/study/projects/appium/) | ✅ v3 | 后端 API | 移动端 |
 | `appleseed` | [appleseed — 物理渲染器](/study/projects/appleseed/) | ✅ v3 | 图形学 | 渲染与图形 |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | ✅ v3 | 后端 API | Web 后端 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | ✅ v3 | 区块链 | 链与合约 |
@@ -2253,6 +2255,7 @@ sidebar:
 | `fvm` | [FVM — 按项目锁定 Flutter SDK 版本](/study/projects/fvm/) | ✅ v3 | 后端 API | 移动端 |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | ✅ v3 | CLI | 命令行工具 |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | ✅ v3 | CLI | 命令行工具 |
+| `garage` | [Garage — 去中心化 S3 兼容对象存储](/study/projects/garage/) | ✅ v3 | 数据库 | databases-storage |
 | `gazebo-classic` | [Gazebo Classic — 机器人仿真零基础入门](/study/projects/gazebo-classic/) | ✅ v3 | 操作系统 | 嵌入式 |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | ✅ v3 | CLI | 命令行工具 |
 | `gea` | [Gea - 零虚拟 DOM 的响应式 JavaScript UI 框架](/study/projects/gea/) | ✅ v3 | 后端 API | frontend-web |
@@ -3101,6 +3104,7 @@ sidebar:
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | ✅ v3 | 后端 API | Web 后端 |
 | `warp-terminal` | [Warp Terminal — 用 Rust 重写的现代终端，AI 时代的开发环境](/study/projects/warp-terminal/) | ✅ v3 | CLI | 编辑器与 IDE |
 | `wasi-sdk` | [WASI SDK — 让 C/C++ 跑进 WebAssembly 的桥梁](/study/projects/wasi-sdk/) | ✅ v3 | 其他 | wasm-toolchain |
+| `wasm-bindgen` | [wasm-bindgen — Rust 与 JavaScript 的高层互操作桥梁](/study/projects/wasm-bindgen/) | ✅ v3 | 编译器 | wasm-toolchain |
 | `wasm-pack` | [wasm-pack — 把 Rust 编译成浏览器能跑的代码](/study/projects/wasm-pack/) | ✅ v3 | 编译器 | wasm |
 | `wasm-tools` | [wasm-tools — WASM 底层操作 CLI 零基础学习笔记](/study/projects/wasm-tools/) | ✅ v3 | 基础设施 | wasm-toolchain |
 | `wasmedge` | [WasmEdge — 云原生 wasm 运行时](/study/projects/wasmedge/) | ✅ v3 | 编译器 | 语言运行时 |

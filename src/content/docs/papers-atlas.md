@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1313 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
+description: 1315 篇论文 · 按一级主题与子分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,8 +11,8 @@ sidebar:
 
 ## 总览
 
-- **总数**：1313 篇
-- **已分类**：1313
+- **总数**：1315 篇
+- **已分类**：1315
 
 ### 按一级主题分布
 
@@ -22,7 +22,7 @@ sidebar:
 | [分布式系统](#分布式系统) | 101 |
 | [数据库](#数据库) | 98 |
 | [操作系统](#操作系统) | 108 |
-| [机器学习](#机器学习) | 356 |
+| [机器学习](#机器学习) | 357 |
 | [后端 API](#后端-api) | 10 |
 | [基础设施](#基础设施) | 17 |
 | [网络协议](#网络协议) | 66 |
@@ -36,7 +36,7 @@ sidebar:
 | [编译器](#编译器) | 3 |
 | [数据可视化](#数据可视化) | 4 |
 | [安全与隐私](#安全与隐私) | 82 |
-| [其他](#其他) | 39 |
+| [其他](#其他) | 40 |
 
 ---
 
@@ -573,7 +573,7 @@ sidebar:
 
 ## 机器学习
 
-共 356 篇。
+共 357 篇。
 
 ### 多模态
 
@@ -970,6 +970,7 @@ sidebar:
 | [MaskAlign: Token-Subset Representation Alignment for Efficient Diffusion Training](/study/papers/maskalign/) | ✅ v3 |  |
 | [MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling](/study/papers/maxproof/) | ✅ v3 |  |
 | [MCP-Solver: Integrating Language Models with Constraint Programming Systems](/study/papers/mcp-solver/) | ✅ v3 |  |
+| [MCP-Solver — 让大语言模型学会用计算器做逻辑推理](/study/papers/mcp-solver-cp/) | ✅ v3 |  |
 | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | ✅ v3 |  |
 | [From LLMs to MCPs: How Code Empowers Large Language Models to Serve as Intelligent Agents](/study/papers/mcp-survey/) | ✅ v3 |  |
 | [MiniMax Sparse Attention — 用 Top-k 块选择把 1M 上下文塞进 GPU](/study/papers/mini-max-sparse-attention/) | ✅ v3 |  |
@@ -1668,7 +1669,7 @@ sidebar:
 
 ## 其他
 
-共 39 篇。
+共 40 篇。
 
 ### 工程文化
 
@@ -1732,11 +1733,12 @@ sidebar:
 | [The Internet of Things in the Era of Generative AI: Vision and Challenges](/study/papers/iot-generative-ai/) | ✅ v3 |  |
 | [ReasoningLM: Enabling Structural Subgraph Reasoning in Pre-trained Language Models for Question Answering over Knowledge Graph](/study/papers/l3cube-mahasocial/) | ✅ v3 |  |
 | [Modern Computing — 从大型机到量子计算，计算机是怎么变成今天的样子的](/study/papers/modern-computing-vision-challenges/) | ✅ v3 |  |
+| [ProMis — 让无人机在不确定的世界里"合法飞行"的神经符号框架](/study/papers/prob-mission-uas/) | ✅ v3 |  |
 | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | ✅ v3 |  |
 
 ---
 
-## 全部 1313 篇（字母序）
+## 全部 1315 篇（字母序）
 
 | Slug | 论文 | 质量 | 一级 | 子分类 |
 |---|---|:---:|---|---|
@@ -2459,6 +2461,7 @@ sidebar:
 | `mcmillan-smv-1993` | [McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测](/study/papers/mcmillan-smv-1993/) | ✅ v3 | 形式化方法 | 形式化验证 |
 | `mcp-is-dead-debate` | [MCP Is Dead? — 2026 年协议存废之争零基础笔记](/study/papers/mcp-is-dead-debate/) | ✅ v3 | 后端 API | Web 后端 |
 | `mcp-solver` | [MCP-Solver: Integrating Language Models with Constraint Programming Systems](/study/papers/mcp-solver/) | ✅ v3 | 机器学习 | 约束求解 |
+| `mcp-solver-cp` | [MCP-Solver — 让大语言模型学会用计算器做逻辑推理](/study/papers/mcp-solver-cp/) | ✅ v3 | 机器学习 | 约束编程 |
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | ✅ v3 | 机器学习 | AI 工程 |
 | `mcp-survey` | [From LLMs to MCPs: How Code Empowers Large Language Models to Serve as Intelligent Agents](/study/papers/mcp-survey/) | ✅ v3 | 机器学习 | LLM架构 |
 | `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | ✅ v3 | 操作系统 | 内核与虚拟化 |
@@ -2653,6 +2656,7 @@ sidebar:
 | `prefix-cache-policy-2026` | [Beyond LRU — Prefix-Cache Policies for LLM Serving](/study/papers/prefix-cache-policy-2026/) | ✅ v3 | 机器学习 | 模型与训练 |
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) | ✅ v3 | 分布式系统 | 共识与复制 |
 | `priority-inversion-mars-pathfinder` | [What Really Happened on Mars Pathfinder — 优先级反转与火星探路者重启事故](/study/papers/priority-inversion-mars-pathfinder/) | ✅ v3 | 操作系统 | 嵌入式与 IoT |
+| `prob-mission-uas` | [ProMis — 让无人机在不确定的世界里"合法飞行"的神经符号框架](/study/papers/prob-mission-uas/) | ✅ v3 | 其他 | 神经符号 |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | ✅ v3 | 数据库 | 存储与查询 |
 | `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | ✅ v3 | 其他 | 软件工程认知科学 |
 | `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | ✅ v3 | 其他 | 软件工程 |

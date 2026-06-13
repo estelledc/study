@@ -2,8 +2,8 @@
 title: ProMis — 让无人机在不确定的世界里"合法飞行"的神经符号框架
 来源: 'Kohaut, Flade, Ochs, Dhami, Eggert, Kersting, "Probabilistic Mission Design for Neuro-Symbolic Unmanned Aircraft Systems", IEEE T-ITS, Vol. 26, No. 12, pp. 22751–22760, 2025'
 日期: 2026-06-13
-分类: 神经符号
-子分类: 混合概率逻辑编程
+分类: 其他
+子分类: 神经符号
 provenance: pipeline-v3
 ---
 

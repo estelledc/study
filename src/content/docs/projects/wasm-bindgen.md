@@ -3,7 +3,7 @@ title: wasm-bindgen — Rust 与 JavaScript 的高层互操作桥梁
 来源: 'https://github.com/rustwasm/wasm-bindgen'
 日期: 2026-06-13
 分类: 编译器
-子分类: 语言运行时
+子分类: wasm-toolchain
 难度: 初级
 provenance: pipeline-v3
 ---
