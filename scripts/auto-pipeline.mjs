@@ -327,11 +327,10 @@ async function main() {
   while (true) {
     log(`=== Round ${roundNum} ===`);
 
-    // 1. Expand pool every 2 rounds
-    if (roundNum % 2 === 0) {
-      projectsExpander = expandProjects();
-      papersExpander = expandPapers();
-    }
+    // 1. Expand pool every round
+    log('  Launching pool expanders (opencode agnes)...');
+    projectsExpander = expandProjects();
+    papersExpander = expandPapers();
 
     // 2. Write batches
     let roundWritten = 0;
