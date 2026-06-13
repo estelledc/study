@@ -2,7 +2,6 @@
 title: "vectorbt 零基础学习笔记"
 来源: "https://github.com/polakowo/vectorbt"
 日期: 2026-06-13
-分类_原始: 量化交易
 分类: 其他
 子分类: 量化金融
 provenance: pipeline-v3

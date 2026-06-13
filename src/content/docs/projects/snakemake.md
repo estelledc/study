@@ -2,7 +2,6 @@
 title: Snakemake 零基础学习笔记
 来源: https://github.com/snakemake/snakemake
 日期: 2026-06-13
-分类_原始: 数据处理
 分类: 机器学习
 子分类: 生物信息
 provenance: pipeline-v3

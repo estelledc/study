@@ -2,7 +2,6 @@
 title: LeRobot — Hugging Face 开源机器人学习库
 来源: https://github.com/huggingface/lerobot
 日期: 2026-06-13
-分类_原始: AI / 机器人
 分类: 机器学习
 子分类: 机器人与 VLA
 provenance: pipeline-v3
