@@ -1,5 +1,5 @@
 ---
-title: MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold
+title: "MoVerse: Real-Time Video World Modeling with Panoramic Gaussian Scaffold"
 来源: https://arxiv.org/abs/2606.13376
 日期: 2026-06-13
 分类: 机器学习

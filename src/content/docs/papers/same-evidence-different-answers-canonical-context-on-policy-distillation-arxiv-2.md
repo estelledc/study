@@ -1,5 +1,5 @@
 ---
-title: Same Evidence, Different Answers: Canonical-Context On-Policy Distillation
+title: "Same Evidence, Different Answers: Canonical-Context On-Policy Distillation"
 来源: https://arxiv.org/abs/2605.30251
 日期: 2026-06-13
 分类: 机器学习

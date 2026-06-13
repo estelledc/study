@@ -1,5 +1,5 @@
 ---
-title: MCP-Solver: Integrating Language Models with Constraint Programming Systems
+title: "MCP-Solver: Integrating Language Models with Constraint Programming Systems"
 来源: https://arxiv.org/abs/2501.00539
 日期: 2026-06-13
 分类: 机器学习

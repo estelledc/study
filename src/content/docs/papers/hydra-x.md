@@ -1,5 +1,5 @@
 ---
-title: HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers
+title: "HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers"
 来源: 'https://arxiv.org/abs/2606.13289'
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: SteinDreamer: Variance Reduction for Text-to-3D Score Distillation via Stein Identity
+title: "SteinDreamer: Variance Reduction for Text-to-3D Score Distillation via Stein Identity"
 来源: https://arxiv.org/abs/2401.00604
 日期: 2026-06-13
 分类: 机器学习

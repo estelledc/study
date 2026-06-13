@@ -1,5 +1,5 @@
 ---
-title: DeepSpeed-Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale
+title: "DeepSpeed-Inference: Enabling Efficient Inference of Transformer Models at Unprecedented Scale"
 来源: https://arxiv.org/abs/2207.00032
 日期: 2026-06-13
 分类: 机器学习

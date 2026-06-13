@@ -1,5 +1,5 @@
 ---
-title: Build vs Buy: Databases in 2026
+title: "Build vs Buy: Databases in 2026"
 来源: https://blog.danslimmon.com/2026/05/build-vs-buy-db/
 日期: 2026-06-13
 分类: 数据库

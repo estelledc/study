@@ -1,5 +1,5 @@
 ---
-title: MaskAlign: Token-Subset Representation Alignment for Efficient Diffusion Training
+title: "MaskAlign: Token-Subset Representation Alignment for Efficient Diffusion Training"
 来源: https://arxiv.org/abs/2606.08788
 日期: 2026-06-13
 分类: 机器学习

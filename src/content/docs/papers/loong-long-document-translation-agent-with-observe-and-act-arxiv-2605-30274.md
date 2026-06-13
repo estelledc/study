@@ -1,5 +1,5 @@
 ---
-title: Loong: 类人长文档翻译 Agent — Observe-and-Act 自适应上下文选择
+title: "Loong: 类人长文档翻译 Agent — Observe-and-Act 自适应上下文选择"
 来源: https://arxiv.org/abs/2605-30274
 日期: 2026-06-13
 分类: 机器学习

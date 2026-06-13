@@ -1,5 +1,5 @@
 ---
-title: InterleaveThinker: Reinforcing Agentic Interleaved Generation
+title: "InterleaveThinker: Reinforcing Agentic Interleaved Generation"
 来源: https://arxiv.org/abs/2606.13679
 日期: 2026-06-13
 分类: 机器学习

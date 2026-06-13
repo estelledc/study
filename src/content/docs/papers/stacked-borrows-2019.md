@@ -1,5 +1,5 @@
 ---
-title: Stacked Borrows: An Aliasing Model for Rust
+title: "Stacked Borrows: An Aliasing Model for Rust"
 来源: https://plv.mpi-sws.org/rustbelt/stacked-borrows/paper.pdf
 日期: 2026-06-13
 分类: 编程语言

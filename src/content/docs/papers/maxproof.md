@@ -1,5 +1,5 @@
 ---
-title: MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling
+title: "MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling"
 来源: https://arxiv.org/abs/2606.13473
 日期: 2026-06-13
 分类: 机器学习

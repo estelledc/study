@@ -1,5 +1,5 @@
 ---
-title: Linear Attention, Still: Why Mamba-style Models Plateau
+title: "Linear Attention, Still: Why Mamba-style Models Plateau"
 来源: https://arxiv.org/abs/2605.30621
 日期: 2026-06-13
 分类: 机器学习

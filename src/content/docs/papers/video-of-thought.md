@@ -1,5 +1,5 @@
 ---
-title: Video-of-Thought: Step-by-Step Video Reasoning from Perception to Cognition
+title: "Video-of-Thought: Step-by-Step Video Reasoning from Perception to Cognition"
 来源: https://arxiv.org/abs/2501.03230
 日期: 2026-06-13
 分类: 机器学习

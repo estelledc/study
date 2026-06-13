@@ -1,5 +1,5 @@
 ---
-title: Large language models for artificial general intelligence (AGI): A survey
+title: "Large language models for artificial general intelligence (AGI): A survey"
 来源: 'https://arxiv.org/abs/2501.03151'
 日期: 2026-06-13
 分类: 其他

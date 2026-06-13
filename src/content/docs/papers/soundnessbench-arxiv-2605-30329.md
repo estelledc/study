@@ -1,5 +1,5 @@
 ---
-title: SoundnessBench: Can Your AI Scientist Really Tell Good Research Ideas from Bad Ones?
+title: "SoundnessBench: Can Your AI Scientist Really Tell Good Research Ideas from Bad Ones?"
 来源: https://arxiv.org/abs/2605.30329
 日期: 2026-06-13
 分类: 机器学习

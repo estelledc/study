@@ -1,5 +1,5 @@
 ---
-title: π0: A Vision-Language-Action Flow Model for General Robot Control
+title: "π0: A Vision-Language-Action Flow Model for General Robot Control"
 来源: https://arxiv.org/abs/2410.24164
 日期: 2026-06-13
 分类: 机器学习

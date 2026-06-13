@@ -1,5 +1,5 @@
 ---
-title: VIA-SD: Verification via Intra-Model Routing for Speculative Decoding
+title: "VIA-SD: Verification via Intra-Model Routing for Speculative Decoding"
 来源: https://arxiv.org/abs/2606.12243
 日期: 2026-06-13
 分类: 机器学习

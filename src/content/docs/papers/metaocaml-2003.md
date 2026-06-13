@@ -1,5 +1,5 @@
 ---
-title: MetaOCaml: A Compiled, Type-Safe, Multi-Stage Programming Language
+title: "MetaOCaml: A Compiled, Type-Safe, Multi-Stage Programming Language"
 来源: https://okmij.org/ftp/ML/MetaOCaml.html
 日期: 2026-06-13
 分类: 编程语言

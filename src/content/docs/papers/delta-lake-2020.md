@@ -1,5 +1,5 @@
 ---
-title: Delta Lake: 在云对象存储之上实现高性能 ACID 表存储
+title: "Delta Lake: 在云对象存储之上实现高性能 ACID 表存储"
 来源: https://www.vldb.org/pvldb/vol13/p3411-armbrust.pdf
 日期: 2026-06-13
 分类: 数据库

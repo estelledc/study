@@ -1,5 +1,5 @@
 ---
-title: CALM: Curiosity-Driven Auditing for Large Language Models
+title: "CALM: Curiosity-Driven Auditing for Large Language Models"
 来源: 'https://arxiv.org/abs/2501.02997'
 日期: 2026-06-13
 分类: 机器学习

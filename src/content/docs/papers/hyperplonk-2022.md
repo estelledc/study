@@ -1,5 +1,5 @@
 ---
-title: HyperPlonk: PLONK with Linear-time Prover and High-degree Custom Gates
+title: "HyperPlonk: PLONK with Linear-time Prover and High-degree Custom Gates"
 来源: https://eprint.iacr.org/2022/1355
 日期: 2026-06-13
 分类: 安全与隐私

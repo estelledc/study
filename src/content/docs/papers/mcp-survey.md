@@ -1,5 +1,5 @@
 ---
-title: From LLMs to MCPs: How Code Empowers Large Language Models to Serve as Intelligent Agents
+title: "From LLMs to MCPs: How Code Empowers Large Language Models to Serve as Intelligent Agents"
 来源: https://arxiv.org/abs/2401.00812
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: Moonshot: Optimizing Chain-Based Rotating Leader BFT via Optimistic Proposals
+title: "Moonshot: Optimizing Chain-Based Rotating Leader BFT via Optimistic Proposals"
 来源: https://arxiv.org/abs/2401.01791
 日期: 2026-06-13
 分类: 分布式系统

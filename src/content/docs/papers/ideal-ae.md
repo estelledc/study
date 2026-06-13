@@ -1,5 +1,5 @@
 ---
-title: IDEAL: In-DEpth ALignment Makes A Discrete Representation AutoEncoder
+title: "IDEAL: In-DEpth ALignment Makes A Discrete Representation AutoEncoder"
 来源: https://arxiv.org/abs/2606.11096
 日期: 2026-06-13
 分类: 机器学习

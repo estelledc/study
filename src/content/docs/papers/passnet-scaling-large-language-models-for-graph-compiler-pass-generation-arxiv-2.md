@@ -1,5 +1,5 @@
 ---
-title: PassNet: Scaling Large Language Models for Graph Compiler Pass Generation
+title: "PassNet: Scaling Large Language Models for Graph Compiler Pass Generation"
 来源: https://arxiv.org/abs/2605.29357
 日期: 2026-06-13
 分类: 编程语言

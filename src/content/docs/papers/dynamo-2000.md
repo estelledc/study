@@ -1,5 +1,5 @@
 ---
-title: Dynamo: A Transparent Dynamic Optimization System
+title: "Dynamo: A Transparent Dynamic Optimization System"
 来源: https://dl.acm.org/doi/10.1145/349299.349303
 日期: 2026-06-13
 分类: 编程语言

@@ -1,5 +1,5 @@
 ---
-title: WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents
+title: "WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents"
 来源: https://arxiv.org/abs/2606.09426
 日期: 2026-06-13
 分类: 机器学习

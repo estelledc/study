@@ -1,5 +1,5 @@
 ---
-title: GLM-5: From Vibe Coding to Agentic Engineering
+title: "GLM-5: From Vibe Coding to Agentic Engineering"
 来源: https://arxiv.org/abs/2602.15763
 日期: 2026-06-13
 分类: 机器学习

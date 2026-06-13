@@ -1,5 +1,5 @@
 ---
-title: WEAVER: Better, Faster, Longer — An Effective World Model for Robotic Manipulation
+title: "WEAVER: Better, Faster, Longer — An Effective World Model for Robotic Manipulation"
 来源: https://arxiv.org/abs/2606.13672
 日期: 2026-06-13
 分类: 机器学习

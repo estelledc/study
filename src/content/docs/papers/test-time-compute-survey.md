@@ -1,5 +1,5 @@
 ---
-title: A Survey of Test-Time Compute: From Intuitive Inference to Deliberate Reasoning
+title: "A Survey of Test-Time Compute: From Intuitive Inference to Deliberate Reasoning"
 来源: https://arxiv.org/abs/2501.02497
 日期: 2026-06-13
 分类: 机器学习

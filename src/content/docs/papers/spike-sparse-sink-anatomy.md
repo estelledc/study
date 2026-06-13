@@ -1,5 +1,5 @@
 ---
-title: The Spike, the Sparse and the Sink: Anatomy of Massive Activations and Attention Sinks
+title: "The Spike, the Sparse and the Sink: Anatomy of Massive Activations and Attention Sinks"
 来源: 'https://arxiv.org/abs/2603.05498'
 日期: 2026-06-13
 分类: 机器学习

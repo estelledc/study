@@ -1,5 +1,5 @@
 ---
-title: ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs
+title: "ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs"
 来源: https://arxiv.org/abs/2606.12451
 日期: 2026-06-13
 分类: 机器学习

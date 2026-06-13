@@ -1,5 +1,5 @@
 ---
-title: RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models
+title: "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models"
 来源: https://arxiv.org/abs/2401.00396
 日期: 2026-06-13
 分类: 机器学习

@@ -1,5 +1,5 @@
 ---
-title: Umbra: A Disk-Based System with In-Memory Performance
+title: "Umbra: A Disk-Based System with In-Memory Performance"
 来源: https://www.cidrdb.org/cidr2020/papers/p29-neumann-cidr20.pdf
 日期: 2026-06-13
 分类: 数据库

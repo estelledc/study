@@ -1,5 +1,5 @@
 ---
-title: Egglog: Incremental Equality Saturation
+title: "Egglog: Incremental Equality Saturation"
 来源: https://arxiv.org/abs/2605.30717
 日期: 2026-06-13
 分类: 编程语言

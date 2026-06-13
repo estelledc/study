@@ -1,5 +1,5 @@
 ---
-title: Zig: Build System Reworked (devlog 2026-05-26) 学习笔记
+title: "Zig: Build System Reworked (devlog 2026-05-26) 学习笔记"
 来源: https://ziglang.org/devlog/2026/#2026-05-26
 日期: 2026-06-13
 分类: 编程语言

@@ -1,5 +1,5 @@
 ---
-title: diffIRM: A Diffusion-Augmented Invariant Risk Minimization Framework for Spatiotemporal Prediction over Graphs
+title: "diffIRM: A Diffusion-Augmented Invariant Risk Minimization Framework for Spatiotemporal Prediction over Graphs"
 来源: https://arxiv.org/abs/2501.00305
 日期: 2026-06-13
 分类: 机器学习

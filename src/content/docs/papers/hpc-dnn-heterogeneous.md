@@ -1,5 +1,5 @@
 ---
-title: HAP: SPMD DNN Training on Heterogeneous GPU Clusters with Automated Program Synthesis
+title: "HAP: SPMD DNN Training on Heterogeneous GPU Clusters with Automated Program Synthesis"
 来源: https://arxiv.org/abs/2401.05965
 日期: 2026-06-13
 分类: 其他

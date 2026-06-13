@@ -1,5 +1,5 @@
 ---
-title: OpenVLA: An Open-Source Vision-Language-Action Model
+title: "OpenVLA: An Open-Source Vision-Language-Action Model"
 来源: https://arxiv.org/abs/2406.09246
 日期: 2026-06-13
 分类: 机器学习

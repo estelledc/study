@@ -1,5 +1,5 @@
 ---
-title: Marlin: 一个极速的 4-bit GPTQ 风格量化推理 Kernel
+title: "Marlin: 一个极速的 4-bit GPTQ 风格量化推理 Kernel"
 来源: https://github.com/IST-DASLab/marlin
 日期: 2026-06-13
 分类: 机器学习

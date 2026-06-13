@@ -1,5 +1,5 @@
 ---
-title: Naiad: A Timely Dataflow System
+title: "Naiad: A Timely Dataflow System"
 来源: https://www.microsoft.com/en-us/research/wp-content/uploads/2013/11/naiad_sosp2013.pdf
 日期: 2026-06-13
 分类: 分布式系统

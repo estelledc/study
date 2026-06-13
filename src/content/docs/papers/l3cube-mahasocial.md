@@ -1,5 +1,5 @@
 ---
-title: ReasoningLM: Enabling Structural Subgraph Reasoning in Pre-trained Language Models for Question Answering over Knowledge Graph
+title: "ReasoningLM: Enabling Structural Subgraph Reasoning in Pre-trained Language Models for Question Answering over Knowledge Graph"
 来源: https://arxiv.org/abs/2401.00158
 日期: 2026-06-13
 分类: 其他

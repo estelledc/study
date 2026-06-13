@@ -1,5 +1,5 @@
 ---
-title: LLVM: A Compilation Framework for Lifelong Program Analysis & Transformation (Lattner & Adve, CGO 2004)
+title: "LLVM: A Compilation Framework for Lifelong Program Analysis & Transformation (Lattner & Adve, CGO 2004)"
 来源: https://www.aaronbradley.org/cs6235/llvm-cgo04.pdf
 日期: 2026-06-13
 分类: 编程语言
