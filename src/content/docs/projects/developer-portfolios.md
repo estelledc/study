@@ -2,7 +2,6 @@
 title: developer-portfolios — 24000+ 开发者的"求职作品集目录"
 来源: https://github.com/emmabostian/developer-portfolios
 日期: 2026-06-13
-分类_原始: 开源社区
 分类: CLI
 子分类: 编辑器与 IDE
 难度: 入门

@@ -2,7 +2,6 @@
 title: Project N.O.M.A.D. 离线知识服务器
 来源: https://github.com/Crosstalk-Solutions/project-nomad
 日期: 2026-06-13
-分类_原始: 开源项目
 分类: 操作系统
 子分类: 嵌入式与 IoT
 provenance: pipeline-v3

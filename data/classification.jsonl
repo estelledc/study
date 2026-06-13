@@ -693,7 +693,7 @@
 {"slug":"metaocaml-2003","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"metcalfe-boggs-1976","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
 {"slug":"microtvm-2020","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"嵌入式与 IoT","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
-{"slug":"milestone-multi-objective-compiler-phase-ordering-arxiv-2605-23435","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编译器"}
+{"slug":"milestone-multi-objective-compiler-phase-ordering-arxiv-2605-23435","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"milestone-phase-order","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"mills-ntp-1991","area":"papers","theme":"网络协议","themeId":"network-protocols","subcategory":"网络协议","source":"candidates.topic","confidence":"high","rawCategory":"网络协议"}
 {"slug":"millwheel-2013","area":"papers","theme":"数据库","themeId":"databases","subcategory":"存储与查询","source":"candidates.topic","confidence":"high","rawCategory":"数据库"}
@@ -749,11 +749,13 @@
 {"slug":"muzero","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"强化学习","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"mvbench-2023","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"mycroft-strictness","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"naiad-2013-sosp","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"naiad-2013-sosp2013","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"category","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"naiad-2013","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"naiad-murray-2013","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"narwhal-tusk-2022","area":"papers","theme":"分布式系统","themeId":"distributed-systems","subcategory":"共识与复制","source":"candidates.topic","confidence":"high","rawCategory":"分布式系统"}
 {"slug":"nbeats-2020","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
+{"slug":"nee-lv-gta-loading-times","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"性能优化"}
 {"slug":"nelson-oppen-1979","area":"papers","theme":"形式化方法","themeId":"formal-methods","subcategory":"形式化验证","source":"candidates.topic","confidence":"high","rawCategory":"形式化方法"}
 {"slug":"nerf-2020","area":"papers","theme":"图形学","themeId":"graphics","subcategory":"渲染与图形","source":"candidates.topic","confidence":"high","rawCategory":"图形学"}
 {"slug":"nestedkv","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
@@ -854,6 +856,7 @@
 {"slug":"program-comprehension-fmri","area":"papers","theme":"其他","themeId":"other","subcategory":"软件工程认知科学","source":"category","confidence":"high","rawCategory":"其他"}
 {"slug":"programmer-interruption","area":"papers","theme":"其他","themeId":"other","subcategory":"软件工程","source":"category","confidence":"high","rawCategory":"其他"}
 {"slug":"projection-bench","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
+{"slug":"projectional-decoding-semantic-aware-llm-generation-arxiv-2605-30054","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"prolog-colmerauer","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"prosemirror-architecture","area":"papers","theme":"CLI","themeId":"cli","subcategory":"编辑器与 IDE","source":"candidates.topic","confidence":"high","rawCategory":"CLI"}
 {"slug":"prototypical-networks-2017","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
@@ -958,7 +961,7 @@
 {"slug":"sel4-formal-2009","area":"papers","theme":"操作系统","themeId":"operating-systems","subcategory":"内核与虚拟化","source":"candidates.topic","confidence":"high","rawCategory":"操作系统"}
 {"slug":"self-1991-chambers","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"self-adjusting","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"编程语言","source":"category","confidence":"high","rawCategory":"编程语言"}
-{"slug":"self-consistency-2022","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
+{"slug":"self-consistency-2022","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"ml","source":"candidates.topic+category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"self-customization","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"self-evolving-agents-survey","area":"papers","theme":"Agent","themeId":"agents","subcategory":"智能体与 LLM","source":"candidates.topic","confidence":"high","rawCategory":"Agent"}
 {"slug":"self-evolving-recsys-2602","area":"papers","theme":"Agent","themeId":"agents","subcategory":"智能体与 LLM","source":"candidates.topic","confidence":"high","rawCategory":"Agent"}
@@ -1106,6 +1109,7 @@
 {"slug":"toy-models-superposition","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"AI 可解释性","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"trace-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"tracemonkey","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
+{"slug":"trails-inferring-code-correctness-from-specification-arxiv-2605-29822","area":"papers","theme":"编程语言","themeId":"programming-languages","subcategory":"类型与 PL 理论","source":"candidates.topic","confidence":"high","rawCategory":"编程语言"}
 {"slug":"transformer-xl-2019","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}
 {"slug":"traveler-2024","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"视频理解","source":"category","confidence":"high","rawCategory":"机器学习"}
 {"slug":"tree-of-attention-2026","area":"papers","theme":"机器学习","themeId":"machine-learning","subcategory":"模型与训练","source":"candidates.topic","confidence":"high","rawCategory":"机器学习"}

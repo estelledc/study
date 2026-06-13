@@ -2,7 +2,6 @@
 title: "MileStone 学习笔记：用 AI 解决编译器优化排序问题"
 来源: https://arxiv.org/abs/2605-23435
 日期: 2026-06-13
-分类_原始: 编译器
 分类: 编程语言
 子分类: 类型与 PL 理论
 provenance: pipeline-v3
