@@ -2,7 +2,6 @@
 title: Appium — 跨平台移动 UI 自动化框架
 来源: https://github.com/appium/appium
 日期: 2026-06-13
-分类_原始: 测试框架
 分类: 后端 API
 子分类: 移动端
 provenance: pipeline-v3
