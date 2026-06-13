@@ -2,7 +2,7 @@
 title: Codex — 让 GPT 学会写 Python，并造一把尺子量它
 来源: Chen et al., "Evaluating Large Language Models Trained on Code", arXiv 2107.03374, 2021
 日期: 2026-06-01
-子分类: natural-language-processing
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

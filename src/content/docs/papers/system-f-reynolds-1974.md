@@ -2,7 +2,7 @@
 title: System F — 让类型也能像参数一样被传递
 来源: 'John C. Reynolds, "Towards a Theory of Type Structure", Programming Symposium 1974 (LNCS 19)'
 日期: 2026-05-29
-子分类: ml
+子分类: 类型与 PL 理论
 分类: 编程语言
 难度: 高级
 provenance: pipeline-v3

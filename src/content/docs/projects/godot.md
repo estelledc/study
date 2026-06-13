@@ -3,7 +3,7 @@ title: Godot Engine — 开源游戏引擎 + 编辑器
 来源: 'https://github.com/godotengine/godot'
 日期: 2026-06-13
 分类: CLI
-子分类: 前端框架
+子分类: 编辑器与 IDE
 provenance: pipeline-v3
 难度: 初级
 ---

@@ -2,8 +2,8 @@
 title: WireGuard-Go — 用 Go 在用户态实现 WireGuard VPN 隧道
 来源: https://github.com/WireGuard/wireguard-go
 日期: 2026-06-13
-子分类: DevOps 与运维
-分类: 基础设施
+子分类: 嵌入式
+分类: 操作系统
 provenance: pipeline-v3
 ---
 

@@ -2,7 +2,6 @@
 title: "零基础学习笔记：像 1997 年一样编译 Quake"
 来源: "https://fabiensanglard.net/compile_like_1997/"
 日期: 2026-06-13
-分类_原始: 游戏开发
 分类: 编程语言
 子分类: 类型与 PL 理论
 provenance: pipeline-v3

@@ -2,7 +2,7 @@
 title: GraphSAGE 2017 — 给没见过的节点也能算嵌入
 来源: Hamilton, Ying, Leskovec, "Inductive Representation Learning on Large Graphs", NeurIPS 2017
 日期: 2026-06-01
-子分类: graph-neural-networks
+子分类: 模型与训练
 分类: 机器学习
 难度: 中级
 provenance: pipeline-v3

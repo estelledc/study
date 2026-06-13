@@ -2,8 +2,8 @@
 title: Gitleaks — Git 仓库密钥泄露扫描
 来源: https://github.com/gitleaks/gitleaks
 日期: 2026-06-13
-子分类: DevOps 与运维
-分类: 基础设施
+子分类: 安全与隐私
+分类: 安全与隐私
 provenance: pipeline-v3
 ---
 

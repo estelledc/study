@@ -2,7 +2,6 @@
 title: AI 是否正在重演前端的"失落十年"？
 来源: https://mastrojs.github.io/blog/2026-05-23-is-AI-causing-a-repeat-of-frontends-lost-decade/
 日期: 2026-06-13
-分类_原始: 技术趋势
 分类: 其他
 子分类: 工程文化
 provenance: pipeline-v3

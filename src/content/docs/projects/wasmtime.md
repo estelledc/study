@@ -4,7 +4,7 @@ description: Bytecode Alliance 的 WebAssembly 运行时，WASI 支持
 来源: 'https://github.com/bytecodealliance/wasmtime'
 日期: 2026-06-06
 分类: 编译器
-子分类: wasm
+子分类: 语言运行时
 难度: 中级
 provenance: pipeline-v3
 ---

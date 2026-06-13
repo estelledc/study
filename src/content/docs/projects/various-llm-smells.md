@@ -2,7 +2,6 @@
 title: Various LLM Smells — 零基础学习笔记
 来源: https://shvbsle.in/various-llm-smells/
 日期: 2026-06-13
-分类_原始: AI / LLM
 分类: 机器学习
 子分类: 模型与训练
 provenance: pipeline-v3
