@@ -2,7 +2,6 @@
 title: Lance — 零基础学习笔记
 来源: https://github.com/lancedb/lance
 日期: 2026-06-13
-分类_原始: 数据存储
 分类: 数据库
 子分类: 现代数据库
 provenance: pipeline-v3

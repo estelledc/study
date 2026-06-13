@@ -2,7 +2,6 @@
 title: RDKit 零基础入门笔记
 来源: https://github.com/rdkit/rdkit
 日期: 2026-06-13
-分类_原始: 化学信息学
 分类: 机器学习
 子分类: 生物信息
 provenance: pipeline-v3

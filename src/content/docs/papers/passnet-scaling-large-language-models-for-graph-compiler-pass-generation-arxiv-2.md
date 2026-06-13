@@ -2,7 +2,6 @@
 title: PassNet: Scaling Large Language Models for Graph Compiler Pass Generation
 来源: https://arxiv.org/abs/2605.29357
 日期: 2026-06-13
-分类_原始: 编译器
 分类: 编程语言
 子分类: 类型与 PL 理论
 provenance: pipeline-v3
