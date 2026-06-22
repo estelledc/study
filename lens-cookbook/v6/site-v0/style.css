@@ -1,0 +1,190 @@
+/* Lens Cookbook v6 — site v0
+   极简：CSS reset + 中文衬线字体 + 决策表保留 + 左侧 nav。 */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB",
+               "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #222;
+  background: #fafafa;
+}
+
+a {
+  color: #0a58ca;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* layout */
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #f0f0ee;
+  border-right: 1px solid #ddd;
+  padding: 20px 16px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.sidebar h2 {
+  font-size: 15px;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+.sidebar h2 a { color: #222; }
+.sidebar h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888;
+  margin: 16px 0 6px;
+  font-weight: 600;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar li {
+  margin: 2px 0;
+}
+.sidebar a {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #333;
+  font-size: 13.5px;
+}
+.sidebar li.active > a {
+  background: #d8e6ff;
+  color: #0a58ca;
+  font-weight: 600;
+}
+.sidebar li:not(.active) a:hover {
+  background: #e4e4e1;
+  text-decoration: none;
+}
+
+/* main */
+main {
+  padding: 28px 40px 80px;
+  max-width: 920px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 18px;
+}
+.breadcrumb .sep { color: #aaa; margin: 0 4px; }
+.breadcrumb span { color: #333; }
+
+article h1 {
+  font-size: 26px;
+  margin: 0 0 0.6em;
+  border-bottom: 2px solid #222;
+  padding-bottom: 8px;
+}
+article h2 {
+  font-size: 20px;
+  margin: 1.6em 0 0.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 4px;
+}
+article h3 {
+  font-size: 16.5px;
+  margin: 1.4em 0 0.4em;
+}
+article h4 { font-size: 15px; margin: 1.2em 0 0.4em; }
+
+article p { margin: 0.6em 0; }
+article ul, article ol { padding-left: 1.6em; }
+article li { margin: 0.15em 0; }
+
+article code {
+  background: #eee;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+article pre {
+  background: #2b2b2b;
+  color: #f1f1f1;
+  padding: 12px 14px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.5;
+}
+article pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+article blockquote {
+  border-left: 3px solid #c0c0c0;
+  margin: 0.8em 0;
+  padding: 0.2em 1em;
+  color: #555;
+  background: #f4f4f2;
+}
+
+/* tables — 决策表关键 */
+article table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+  font-size: 13.5px;
+  background: #fff;
+  border: 1px solid #d0d0d0;
+}
+article th, article td {
+  border: 1px solid #d8d8d8;
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+article th {
+  background: #ececec;
+  font-weight: 600;
+}
+article tr:nth-child(even) td { background: #fafafa; }
+article tr:hover td { background: #fff8d8; }
+
+article hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2em 0;
+}
+
+footer {
+  margin-top: 60px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  color: #888;
+  font-size: 12px;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+  main { padding: 20px; }
+}

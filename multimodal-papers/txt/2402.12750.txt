@@ -1,0 +1,936 @@
+                                                    Model Composition for Multimodal Large Language Models
+                                                         Chi Chen*,1 , Yiyang Du*,1 , Zheng Fang1 , Ziyue Wang1 , Fuwen Luo1 ,
+                                                 Peng Li B,2,4 , Ming Yan3 , Ji Zhang3 , Fei Huang3 , Maosong Sun1 , Yang LiuB,1,2,4,5
+                                                 1
+                                                   Dept. of Comp. Sci. & Tech., Institute for AI, Tsinghua University, Beijing, China
+                                                     2
+                                                       Institute for AI Industry Research (AIR), Tsinghua University, Beijing, China
+                                                                     3
+                                                                       Institute of Intelligent Computing, Alibaba Group
+                                                               4
+                                                                 Shanghai Artificial Intelligence Laboratory, Shanghai, China
+                                                 5
+                                                   Jiangsu Collaborative Innovation Center for Language Competence, Jiangsu, China
+
+                                                               Abstract                                        Multimodal LLM                         Multimodal LLM
+
+                                             Recent developments in Multimodal Large Lan-
+                                             guage Models (MLLMs) have shown rapid                                                                         +     +
+                                                                                                                 ImageBind
+
+
+
+
+arXiv:2402.12750v2 [cs.CV] 26 Jul 2024
+                                             progress, moving towards the goal of creat-                                                               Joint Training
+
+                                             ing versatile MLLMs that understand inputs
+                                             from various modalities. However, existing
+                                                                                                         Vision LLM                                              Video LLM
+                                             methods typically rely on joint training with
+                                             paired multimodal instruction data, which is                                          Multimodal LLM
+                                             resource-intensive and challenging to extend
+                                             to new modalities. In this paper, we propose a              Audio LLM                                                Point LLM
+                                             new paradigm through the model composition                                      Model Composition for MLLMs
+                                             of existing MLLMs to create a new model that                                              (Ours)
+
+                                             retains the modal understanding capabilities of
+                                             each original model. Our basic implementa-
+                                             tion, NaiveMC, demonstrates the effectiveness            Figure 1: Illustration of various approaches for multi-
+                                             of this paradigm by reusing modality encoders            modal large language models: (a) aligning LLM with a
+                                             and merging LLM parameters. Furthermore,                 multimodal encoder and (b) joint training with multiple
+                                             we introduce DAMC to address parameter inter-            modal encoders and (c) our proposed model composi-
+                                             ference and mismatch issues during the merg-             tion method that creates a versatile model from existing
+                                             ing process, thereby enhancing the model per-            MLLMs through a training-free and extensible process.
+                                             formance. To facilitate research in this area,
+                                             we propose MCUB, a benchmark for assessing
+                                             ability of MLLMs to understand inputs from               has been successfully applied to a wide range of
+                                             diverse modalities. Experiments on this bench-           modalities such as image (Liu et al., 2023b; Dai
+                                             mark and four other multimodal understand-               et al., 2023), audio (Gong et al., 2023; Deshmukh
+                                             ing tasks show significant improvements over             et al., 2023; Tang et al., 2024), video (Zhang et al.,
+                                             baselines, proving that model composition can            2023; Lin et al., 2023), and point cloud (Hong et al.,
+                                             create a versatile model capable of processing
+                                                                                                      2023; Xu et al., 2023), resulting in the emergence
+                                             inputs from multiple modalities.1
+                                                                                                      of a diverse array of MLLMs with unique modal
+                                         1   Introduction                                             capabilities.
+                                                                                                         There are also some efforts to enable a single
+                                         Recent advancements in Multimodal Large                      MLLM to handle multiple modalities. One way
+                                         Language Models (MLLMs) have established                     to achieve this is to align the LLM with a multi-
+                                         them as the forefront of multimodal learning                 modal encoder such as ImageBind (Girdhar et al.,
+                                         paradigms (Liu et al., 2023b,a). The prevalent ap-           2023) with only image-text data (Figure 1(a)) (Su
+                                         proach involves aligning modality encoders with              et al., 2023; Han et al., 2023). This approach lever-
+                                         large language models (LLMs) through extensive               ages the inherent alignment of different modali-
+                                         modality-text paired data and then fine-tuning with          ties within the multimodal encoder, allowing the
+                                         modality-specific instruction data. This paradigm            MLLM to comprehend various modalities to a cer-
+                                             *
+                                               Equal contribution.                                    tain degree. However, the absence of modality-
+                                             B
+                                               Corresponding authors: Peng Li (lipeng@air.tsinghua.   specific instruction data often results in subopti-
+                                         edu.cn) and Yang Liu (liuyang2011@tsinghua.edu.cn).
+                                             1
+                                               Code is available at https://github.com/THUNLP-MT/     mal performance. Another approach entails the
+                                         ModelCompose                                                 concurrent training of the MLLM with multiple
+modality encoders (Figure 1(b)). For example,           tive merging of textual parameters, reducing cross-
+ChatBridge (Zhao et al., 2023) connects image,          modal interference. Moreover, DAMC introduces
+video and audio encoders with the LLM through           an adaptive parameter adjustment mechanism to
+a joint training process with multimodal instruc-       ensure optimal compatibility and effectiveness of
+tion data (i.e., video-audio chats). This kind of       the composite model, achieving a balanced and
+methods show potential but faces two major chal-        efficient multi-modality expansion.
+lenges. First, it is resource-heavy to collect paired      To assess the efficacy of our proposed frame-
+data across multiple modalities. Second, adapting       works, we conduct comprehensive experiments on
+these models to new modalities requires additional      tasks that require an integrated understanding of
+training, adding to the complexity and resource         inputs from diverse combinations of four prevalent
+demands of the development process.                     modalities: image, audio, video, and point cloud.
+   Given the limitations of current approaches, we      To facilitate the research in model composition
+propose and study a more practical setting: model       for MLLMs, we also build MCUB, a benchmark
+composition for MLLMs (Figure 1(c)). Our pri-           specifically designed for evaluating the capability
+mary research question is simple yet fundamental:       to concurrently comprehend multiple modalities
+Can we create a new MLLM by combining existing          by identifying commonalities across inputs from
+MLLMs to inherit their understanding of different       various modalities. Experimental results indicate
+modalities without training? Model composition          that our frameworks enable the composition of ex-
+for MLLMs is advantageous for two key reasons:          isting MLLMs from different modalities without
+(1) it eliminates the need for the resource-heavy       requiring further training, yielding a versatile and
+process of training and gathering multimodal data,      high-performing multimodal model adept at han-
+and (2) it promises enhanced adaptability, facilitat-   dling any combination of these modalities.
+ing seamless incorporation of new modalities.              Our contributions are three-fold:
+   Some recent studies, such as X-InstructBLIP
+                                                            • We propose the concept of model composition
+(Panagopoulou et al., 2023), serve as pioneering
+                                                              for MLLMs, realized through the NaiveMC
+efforts in model composition for MLLMs. These
+                                                              framework, which allows for seamless integra-
+works primarily train projectors to align different
+                                                              tion of different MLLMs without additional
+encoders with a single LLM and demonstrate the
+                                                              training, enabling zero-shot multi-modality
+ability to process multiple modalities concurrently.
+                                                              expansion.
+However, a critical limitation is their applicabil-
+                                                            • We introduce DAMC, an advanced model
+ity only to MLLMs with frozen language model
+                                                              composition framework that employs param-
+weights. This constraint restricts the range of mod-
+                                                              eter decoupling and adaptive adjustment to
+els that can be utilized, and impairs the overall
+                                                              mitigate parameter interference and optimize
+performance of the MLLMs (Zeng et al., 2023).
+                                                              composite model performance across multiple
+   In this paper, we first propose a framework for
+                                                              modalities.
+model composition for MLLMs. Our implementa-
+                                                            • We create MCUB, a benchmark designed to
+tion, named NaiveMC, is elegantly simple: for the
+                                                              evaluate the unified understanding of diverse
+MLLMs to be composed, we directly reuse their
+                                                              modalities, and demonstrate the efficacy of
+modality-specific encoders and merge their LLM
+                                                              our model composition frameworks via ex-
+parameters. We demonstrate that MLLMs, as long
+                                                              tensive experiments on various multimodal
+as initialized from the same LLM, can achieve zero-
+                                                              understanding tasks and MCUB.
+shot multi-modality expansion through this model
+composition framework, regardless of whether the        2     Related Work
+parameters of the LLM have been fine-tuned.
+   Furthermore, to mitigate parameter interfer-         2.1    Multimodal Large Language Models
+ence in the composition process and optimize            Recent advancements have integrated Large Lan-
+the performance of the composite model, we pro-         guage Models (LLMs) with multiple modalities
+pose DAMC, an advanced framework with pa-               such as image, video, audio, and point cloud.
+rameter Decoupling and Adjustment for Model             Approaches like X-LLM (Chen et al., 2023) uti-
+Composition. By separating modality-specific pa-        lize modality-specific adapters, while ChatBridge
+rameters from language model parameters during          (Zhao et al., 2023) employs a Perceiver for each
+initial MLLM training, DAMC allows for the selec-       modality. Macaw-LLM (Lyu et al., 2023) uses a
+unified alignment module, and NeXT-GPT (Wu               specialized MLLMs—a vision LLM and an audio
+et al., 2023) relies on linear projection for multi-     LLM—the resulting composite model should not
+modal integration. However, these methods often          only preserve the individual proficiencies of these
+necessitate joint multimodal dataset training, pos-      models in processing images and audio, respec-
+ing scalability and extension challenges. While          tively, but should also acquire a zero-shot capacity
+PandaGPT (Su et al., 2023) and ImageBind-LLM             for handling inputs that encompass both visual and
+(Han et al., 2023) bypass joint training with Im-        auditory information simultaneously.
+ageBind (Girdhar et al., 2023) as a unified en-
+coder, their performance is limited by a lack of         Algorithm 1 Model Composition for MLLMs
+modality-specific instruction data. In contrast, our     Input: Set of MLLMs {M1 , M2 , . . . , Mn }, each
+approach benefits from instruction-following train-          with a set of parameters Θi
+ing for each MLLM and integrates their capabilities      Output: Integrated parameters Θcompose
+through a training-free process.                          1: Initialize Θcommon and Θcompose as empty sets
+                                                          2: Define a mapping f : θ 7→ G that maps the
+2.2    Model Composition                                     parameter θ to group G based on functionality
+Model composition integrates different models’ ca-        3: for i = 1 to n do
+pabilities, primarily through weight space merging        4:     for each parameter θ in Θi do
+strategies (Ilharco et al., 2022; Matena and Raffel,      5:                        / Θj then
+                                                                      if ∀j ̸= i, θ ∈
+2022; Jin et al., 2023; Huang et al., 2023; Yu et al.,    6:              Add θ to Θcompose
+2024; Wortsman et al., 2022), enhancing fine-tuned        7:          else
+models from the same initialization. However, ex-         8:              Assign θ to group f (θ) in Θcommon
+isting research has not fully explored model com-         9:          end if
+position for multimodal LLMs. Prior works on             10:     end for
+multimodal tasks use linear interpolation for tasks      11: end for
+like speech recognition (Sundar et al., 2023). An-       12: for each group G in Θcommon do
+other work converts model processing images and          13:     θmerge = average(parameters in G)
+text separately into one using same parameters for       14:     Add θmerge to Θcompose
+simultaneous processing (Sung et al., 2023). But         15: end for
+they do not expand the processing modalities of          16: return Θcompose
+the model. X-InstructBlip (Panagopoulou et al.,
+2023) incorporates new modalities by training sep-
+                                                         3.2   A Model Composition Framework
+arate projections for modal encoders and LLM,
+but its performance is limited by the frozen LLM.        When composing models, two critical elements
+Our work advances multimodal capabilities by en-         must be taken into account: the components and
+abling LLM training and applying model compo-            their weights. The prevalent MLLMs typically fea-
+sition techniques to LLM weights, significantly          ture two component types: (1) modal-specific com-
+improving the effect of multimodal integration.          ponents, like modal encoders and projectors, which
+                                                         adapt modality inputs to the language embedding
+3     Methodology                                        space and (2) modal-agnostic components that ex-
+                                                         ist in each MLLM, primarily the underlying LLM
+3.1    Task Definition                                   itself. In our composition framework, we retain
+In this work, we examine the composition of a set        all modal-specific components (and their weights)
+of Multimodal Large Language Models (MLLMs),             from different MLLMs to handle respective modal
+denoted as {M1 , M2 , . . . , Mn }, each capable of      inputs, and connect them to the same LLM. In cases
+responding to textual queries with different modal-      where the LLMs have not been adapted during the
+ities m = {m1 , m2 , . . . , mn }. The core objective    training of MLLMs (as illustrated in Figure 2(a)),
+is to develop a composition method C that effec-         we employ the pre-trained weights of the LLM di-
+tively integrates these MLLMs into a singular, more      rectly. Conversely, if the LLMs have undergone
+versatile model Mcompose = C(M1 , M2 , . . . , Mn ).     adaptation in the MLLM training process (Figure
+This integration aims to enable the model to process     2(b)), we simply average their weights. We name
+and understand inputs from any combination of            this composition framework NaiveMC and provide
+modalities in m. For example, by integrating two         a formal procedure of it in Algorithm 1.
+                                     (a) Proj-only                   (d) Composite Model with Parameter Decoupling
+
+
+
+        Frozen LLM                                                    Image FFN            Audio FFN            Text FFN
+        weights
+
+       Audio-specific
+       weights                                                                    Multi-head Causal Attention
+                                     (b) NaiveMC
+       Image-specific
+       weights
+                                                                    Image QKV Proj.     Audio QKV Proj.     Text QKV Proj.
+
+       Merged weights
+
+                                                                                         Concatenate                         xN
+       Audio inputs
+                               (c) Parameter Decoupling             Image Connector     Audio Connector    Embedding
+
+       Image inputs
+                                                                        Image               Audio
+                                                                                                           Describe the
+                                                                       Encoder             Encoder
+                                                                                                            given image
+                                                                                                             and audio.
+
+
+
+Figure 2: Illustration of the model composition processes with only image and audio modalities are considered for
+simplicity. (a) and (b) show a basic model composition framework as described in Section 3.2, while (c) and (d)
+demonstrate model composition with parameter decoupling, as detailed in Section 3.3.
+
+
+3.3   Parameter Decoupling                                  tual inputs. The attention operation is then applied:
+In the previously described framework, there arises
+                                                                  O
+an unaddressed issue, specifically the potential for            [Xm , XtO ] = split(Attention(Q, K, V ))                          (4)
+parameter interference when merging fine-tuned
+LLM parameters. During the training of MLLMs,               which splits the attention output into modality-
+the LLM parameters are optimized for specific               specific and textual outputs. The final unified out-
+modal inputs. This specialized optimization could           put representation Xo is obtained by:
+lead to variations in the LLM parameters of differ-
+                                                                                 O  O
+ent MLLMs. When these parameters are merged,                              Xo = [Xm Wm , XtO WtO ]                                 (5)
+conflicts may arise, potentially impacting the abil-
+ity of the model to understand modal inputs.                ensuring separate processing streams for each
+   To alleviate the issue of parameter interference         modality within the model. Similarly, given input
+during model composition, we advocate for ini-              X for each feed-forward layer, the output is:
+tially training the MLLMs with a parameter de-
+coupling strategy in the first place. As shown in                 FFN(X) = [FFNm (Xm ), FFNt (Xt )]                               (6)
+Figure 2(c) and Figure 2(d), the main idea is to
+separate the modality processing parameters from            where FFNm and FFNt are feed-forward layers for
+those of the language model within MLLMs. For               modality-specific and text inputs, respectively.
+example, in an MLLM M that processes modality
+                                                               When composing MLLMs that are trained
+m, the input for each attention layer is denoted as
+                                                            through parameter decoupling, we merge only
+X = [Xm , Xt ] where Xm and Xt represent the
+                                                            the text-related parameters, maintaining distinct
+modality-specific and text sequences, respectively.
+                                                            modality-specific parameters as depicted in Figure
+The attention components are computed as follows:
+                                                            2(d). The composite model functions as a natural
+                          Q
+                 Q = [Xm Wm , Xt WtQ ]                (1)   extension of the methodology previously described,
+                        K
+                                                            guaranteeing that inputs from each modality are
+               K = [Xm Wm , Xt WtK ]                  (2)   processed independently with their respective pa-
+                        V
+               V = [Xm Wm , Xt WtV ]                  (3)   rameters. By doing so, it effectively mitigates the
+                                                            risk of interference from other modalities, ensuring
+where Q, K, and V represent the queries, keys,              that the composite model maintains high fidelity
+and values in the attention mechanism, respectively.        in processing multimodal data. Please note that af-
+                                  (·)        (·)
+Note that two sets of weights Wm and Wt are                 ter the MLLMs are trained, the composition phase
+employed, tailored to the modality-specific and tex-        remains emphatically training-free.
+3.4   Adaptive Parameter Adjustment
+                                                                                           Which of these attributes is
+Due to variations in data quality and training strate-                                     common among the inputs?
+gies among different MLLMs, their performance
+                                                                                           A. Presence of a dog
+can significantly differ. Thus, when composing                                             B. Street scenes
+these models, employing a simplistic averaging                                             C. Human-made structures
+strategy often falls short of achieving optimal re-                          [dog barks]   D. Involving a happy atmosphere
+
+sults. To enhance model effectiveness, it is crucial
+to implement adaptive adjustments to the model              Figure 3: An example of MCUB-4, where the objective
+parameters during the composition process, allow-           is to identify common attributes from inputs across four
+                                                            different modalities.
+ing for better compatibility and flexibility among
+the different models. Specifically, for N distinct
+MLLMs {M1 , M2 , . . . , MN } and any parameter
+                                                            ity, and retain the groups with the highest semantic
+θi common across these models, where i = 1...N ,
+                                                            similarity. This similarity is quantified by averag-
+the merged parameter is defined as:
+                                                            ing the similarities of their respective captions. Sub-
+                             N
+                             X                              sequently, GPT-4 is prompted with in-context ex-
+                  θmerge =         λ i θi            (7)    amples to generate questions, options, and correct
+                             i=1                            answers for each group. In this study, we develop
+where λi represents the adjustment coefficient. For         two variants of MCUB: MCUB-3 and MCUB-4.
+simplicity, we adopt a uniform adjustment coeffi-           MCUB-4 comprises data entries that include in-
+cient λi for all θi in Mi . For models trained using        puts from four modalities—image, video, audio,
+parameter decoupling, we can additionally adjust            and point cloud. In contrast, MCUB-3 consists of
+their modality-specific parameters if needed. The           four subsets, each representing combinations of in-
+values of these coefficients can be determined with         puts from any three of these modalities. For more
+a validation set from target tasks requiring vari-          details, please refer to Appendix C.
+ous modal inputs. If such a validation set is not
+available, a practical alternative is to select the coef-   4     Experiments
+ficients based on general performance of the model
+on tasks of each modality. We refer to the updated          4.1    Implementation
+model composition framework with parameter de-
+coupling and adjustment as DAMC.                            In our experimental setup, we explore four modal-
+                                                            ities: image, audio, video and point cloud. To en-
+3.5   Multimodal Commonality Understanding                  sure a comprehensive and comparative analysis, we
+      Benchmark                                             reimplement MLLMs for each modality following
+As previously discussed, DAMC inherently pos-               previous works (Liu et al., 2023a; Lin et al., 2023;
+sesses the advantage of scaling up the number of            Panagopoulou et al., 2023; Xu et al., 2023). For
+modalities. However, there are few benchmarks               each of these modalities, we train three versions of
+available to evaluate the performance across vari-          MLLMs with same data and hyperparameters but
+ous modalities. To demonstrate the effectiveness of         vary the trainablity of LLM parameters: a model
+our approach on tasks involving numerous modal-             with a frozen LLM, a fully trainable LLM, and a
+ities, inspired by Panagopoulou et al. (2023), we           trainable LLM with parameter decoupling, as il-
+introduce a new benchmark called the Multimodal             lustrated in Figure 2. We employ the LoRA (Hu
+Commonality Understanding Benchmark (MCUB).                 et al., 2021) technique for efficient LLM training.
+We provide an example of MCUB in Figure 3.                  All models are based on Vicuna-7B-v1.5 (Zheng
+The task of MCUB is to measure the ability of               et al., 2023). More details for training the MLLMs
+the model to identify commonalities among input             are in Appendix A. We apply parameter adjustment
+entities from diverse modalities and select the most        by conducting a search for the optimal λi values
+appropriate answer from four given candidates.              within the set [1/N, 2/N, . . . , N/N ] for composi-
+   We leverage GPT-4 (Achiam et al., 2023) to cre-          tion of N modalities based on the performance
+ate MCUB from existing captioning datasets across           of the validation set for each corresponding task.
+various modalities. To be specific, we begin by ran-        The results for the best-performing parameters are
+domly selecting groups of inputs from each modal-           documented in Appendix B.
+               Task               Method                 V      V+I     V+A       V+I+A
+                                  ChatBridge-13B         -        -      43.00         -
+                                  OneLLM-7B              -        -      47.60         -
+                                  ImageBind-LLM        37.24    38.76    39.72       38.16
+               MUSIC-AVQA         X-InstructBLIP       45.83    41.23    48.34       47.39
+                                  Proj-only            44.93    46.64    46.17       50.21
+                                  NaiveMC              49.00    52.52    50.66       53.63
+                                  DAMC                 49.09    53.08    50.91       57.32
+                                  ImageBind-LLM        51.77    51.65    55.00       54.26
+                                  X-InstructBLIP       41.91    40.42    44.29       44.23
+               AVQA               Proj-only            67.99    66.65    67.65       66.85
+                                  NaiveMC              79.37    79.74    79.82       80.70
+                                  DAMC                 79.15    80.30    80.40       81.31
+
+Table 1: Experimental results on zero-shot audio-visual question answering tasks with different combinations
+of video (V), image (I) and audio (A) inputs. Methods developed in this study are distinguished with a grey
+background for clarity.
+
+
+4.2   Evaluation                                         Task           Method               Type-I   Type-C
+                                                                        3D-LLM               49.00    41.50
+Datasets and Benchmarks. Our aim is to eval-                            ImageBind-LLM        31.00    26.50
+uate the performace of the composite MLLM to             Objaverse      X-InstructBLIP       50.00    31.50
+process inputs from multiple modalities. In addi-                       Proj-only            48.00    42.50
+tion to the MCUB benchmark described in Section                         NaiveMC              55.00    59.50
+3.5, we also include datasets from two key areas                        DAMC                 60.50    62.00
+for evaluation: (1) audio-visual question answer-                       ImageBind-LLM        42.71    42.46
+ing including MUSIC-AVQA (Li et al., 2022) and                          X-InstructBLIP       61.43    61.14
+AVQA (Yang et al., 2022) where image, video and          ModelNet40     Proj-only            62.88    61.99
+audio inputs are available and (2) 3D object clas-                      NaiveMC              66.00    64.59
+                                                                        DAMC                 70.02    65.24
+sification on ModelNet40 (Wu et al., 2015) and
+Objaverse (Deitke et al., 2023) where image and        Table 2: Experimental results on zero-shot 3D object
+point cloud inputs are considered.                     classification tasks using combined point and image
+                                                       inputs (P + I). Following Xu et al. (2023), two differ-
+                                                       ent types of prompts are considered: Type-I (“What is
+Baselines. Our evaluation strategy involves com-       this?”) and Type-C (“This is an object of”).
+parison with baselines primarily focusing on mod-
+els that do not leverage training data from mul-
+tiple modalities. We consider two representa-           4.3    Main Results
+tive baselines for this purpose: ImageBind-LLM         The main experimental results on audio-visual
+that aligns a multimodal encoder, ImageBind,           question answering, 3D object classification and
+to the LLM with image-text paired data and X-          MCUB are presented in Table 1, Table 2 and Table
+InstructBLIP that aligns individual modal en-          3, respectively. In the tables, the notation “X+Y”
+coders to a frozen LLM using instruction data spe-     represents the combination of different types of
+cific to each modality. Regarding model compo-         modal inputs used in evaluating the models. For ex-
+sition, we further compare our DAMC approach           ample, “V + A” refers to the combination of video
+against two alternative intermediate baselines as      (V) and audio (A) inputs being used together as
+discussed before: Proj-only where the LLM is           part of the input to the model. For model compo-
+frozen and only the modal encoders and connec-         sition, we compose MLLMs based on the specific
+tors are composed and NaiveMC that directly com-       modal inputs required. Generally, our proposed
+poses MLLMs without adopting our proposed pa-          DAMC achieves the highest performance across
+rameter decoupling and adjustment techniques.          all input combinations and tasks, demonstrating
+    Method               MCUB-3       MCUB-4
+                                                                                            Please describe this image.
+    ImageBind-LLM          32.95        32.93
+    X-InstructBLIP         29.30        27.94
+    Proj-only              44.15        43.00                 This is a shelf filled with various teapots and other kitchenware items.
+    NaiveMC                54.70        54.03
+    DAMC                   59.80        60.08                  Should this object be on this shelf and why?
+
+
+
+Table 3: Results on MCUB. MCUB-3 refers to subsets             This object should be on this shelf because it is a teapot, which is a
+                                                               kitchenware item commonly used for making tea. The shelf is designed
+of the data with inputs from three modalities, while           to hold such items, and the teapot fits perfectly on it.
+MCUB-4 includes inputs from four modalities.
+
+
+its effectiveness of adeptly managing inputs from                                                        [Birds are singing]
+multiple modalities even without any training on
+                                                               Write a story given the information of this video and audio.
+these modal combinations. In addition, we make
+the following observations:                                    In a lush green forest, a group of birds are chirping and singing.
+                                                               Suddenly, a pony with a blue mane and purple eyes appears, causing
+                                                               the birds to fly away in fear. The pony looks around, confused and
+Model composition brings performance im-                       scared, before walking away from the scene.
+provements with additional modal inputs. The
+results reveal a generally consistent trend where the   Figure 4: Qualitative examples on multimodal under-
+application of model composition methods leads          standing of a composite model integrating four MLLMs.
+to improved performance as more modal inputs
+are integrated. For example, in Table 1 in the
+MUSIC-AVQA task, the transition from solely             tinction proves the capability of DAMC to miti-
+video (V) inputs to combinations that include im-       gate interference effectively when merging mul-
+age (I) and audio (A) inputs leads to noteworthy        tiple MLLMs, demonstrating its robustness and
+performance boosts. Specifically, when combin-          efficiency for model composition.
+ing these three modalities, the performance for
+our DAMC reaches a peak at 57.32, marking a
+                                                        4.4   Ablation Study
+notable increase compared to V+I/A. In contrast,
+models like ImageBind-LLM and X-InstructBLIP            Our ablation study, summarized in Table 4, eval-
+do not show similar improvements when transi-           uates the effects of parameter decoupling and ad-
+tioning from V+I/A to the V+I+A combination.            justment on DAMC. The findings reveal that em-
+This demonstrates that models developed through         ploying neither strategy yields an average perfor-
+model composition can handle inputs from differ-        mance of 62.79 across benchmarks. Introducing pa-
+ent modalities more effectively, showcasing their       rameter decoupling alone enhances the average to
+ability to improve multimodal understanding.            65.05, while adjustment alone improves it to 63.55.
+DAMC outperforms strong baselines. Com-                 Remarkably, combining both strategies boosts the
+pared to previous methods, DAMC achieves su-            average performance to 66.24, with significant im-
+perior performance, even surpassing methods that        provements noted in all benchmarks. This high-
+utilize paired multimodal data, such as ChatBridge      lights the synergistic impact of parameter decou-
+and 3D-LLM (Hong et al., 2023). When compar-            pling and adjustment in optimizing multimodal
+ing the performance across various model compo-         model composition and achieving superior perfor-
+sition methods, DAMC significantly outperforms          mance across varied tasks involving different types
+Proj-only and NaiveMC, particularly evident in          of modality inputs.
+scenarios involving the integration of more than
+two modalities. On the MCUB benchmark, for in-          4.5   Qualitative Results
+stance, DAMC achieves a significant performance
+enhancement, with an improvement over the sec-          Figure 4 demonstrate the capability of the compo-
+ond best NaiveMC of +5.10 points in scenarios           sition model to understand and reason over multi-
+combining three modalities and +6.05 points in          modality inputs. Additional qualitative results are
+the subset involving four modalities. This dis-         in Appendix F.
+ Decoup.     Adjust.    MUSIC-AVQA      AVQA     MCUB-4       Avg.     Modal      NaiveMC    DAMC        ∆
+    ✗          ✗            53.63        80.70    54.03       62.79    I           1780.32   1772.85   -0.42%
+    ✓          ✗            53.94        81.12    60.08       65.05    A+I         1718.42   1729.72   +0.66%
+    ✗          ✓            55.36        81.27    54.03       63.55    V+I         1780.16   1825.50   +2.55%
+    ✓          ✓            57.32        81.31    60.08       66.24    V+I+A       1709.14   1852.48   +8.39%
+
+Table 4: Ablation study on various components of DAMC. “Decoup.” Table 5: Composite model performance on
+and “Adjust.” denote parameter decoupling and adjustment.        the MME benchmark.
+
+
+    Parameter Decoupling            MUSIC-AVQA            NaiveMC tends to decline, while DAMC consis-
+      V          I                    V+I+A               tently shows improvement. This highlights the
+                                                          capability of our proposed methods to mitigate pa-
+        No             No              55.36              rameter interference effectively when composing
+    Infer.         Train.              56.28              models. Moreover, it is noteworthy that model
+    Train.         Infer.              56.42              composition enhances performance even in tasks
+    Infer.         Infer.              56.16              limited to a single modality. We attribute this to the
+                                                          possibility that our approach could integrate knowl-
+    Train.         Train.              57.32
+                                                          edge from different models during the combination
+Table 6: Results of different parameter decoupling        process, which we will leave for future research.
+strategies. “Infer.” and “Train.” denote parameter de-    Impact of trainable parameters. We investi-
+coupling at inference or training time.
+                                                          gate whether the benefits of parameter decoupling
+                                                          arise from the augmentation of trainable param-
+5   Discussion and Analysis                               eters, given that two distinct sets of parameters
+                                                          are allocated for varying inputs. To this end, we
+Composition of MLLMs with different training              train a new vision LLM without decoupling but in-
+strategies. In Section 3.3, we advocate training          crease the rank of the LoRA modules from 128 to
+MLLMs with parameter decoupling. Intriguingly,            256, which doubles the trainable parameters. The
+this decoupling can also be implemented at infer-         findings, as shown in Table 7, reveal that merely
+ence time, by replicating the parameters to mimick-       expanding the pool of trainable parameters does
+ing identical parameters on modality-specific and         not enhance performance. This suggests that the
+textual inputs. In this way, we can compose models        advantage of parameter decoupling extends beyond
+with different training strategies. We conduct ex-        simple parameter quantity increase, highlighting its
+periments on the MUSIC-AVQA dataset with V +              effectiveness in mitigating parameter interference.
+I + A inputs. We vary the training strategy of video
+and image MLLMs, and compose them with an                     Method              MUSIC-AVQA           AVQA
+audio MLLMs trained with parameter decoupling.
+                                                              DAMC     (r=128)         57.32           81.31
+The results in Table 6 indicate that decoupling at
+inference time is also effective, which is beneficial         NaiveMC (r=128)          53.63           80.70
+when aiming to integrate existing models that were            NaiveMC (r=256)          52.79           80.81
+not trained with parameter decoupling.
+                                                          Table 7: Composite model performance on zero-shot
+Composite model performance on the single-                audio-visual question answering tasks.
+modality task. To explore the effectiveness of
+the composite model on single-modality tasks, we
+                                                          6    Conclusion
+conducted experiments on the vision-language un-
+derstanding evaluation benchmark MME (Fu et al.,          In this paper, we introduce and explore the concept
+2023). The results are shown in Table 5. Each             of model composition for MLLMs, showcasing
+composite model processes only images and tex-            its ability to seamlessly integrate diverse modal
+tual questions. The ∆ values denote the rela-             capabilities without additional training. Initially,
+tive improvements of DAMC over NaiveMC. As                we introduce a foundational model composition
+more models are integrated, the performance of            framework, referred to as NaiveMC. Advancing
+further, we design DAMC that employs param-                 Ali Farhadi. 2023. Objaverse: A universe of anno-
+eter decoupling and adjustment to reduce cross-             tated 3d objects. In Proceedings of the IEEE/CVF
+                                                            Conference on Computer Vision and Pattern Recog-
+modal interference and optimize performance of
+                                                            nition, pages 13142–13153.
+the composite model. In addition, we construct a
+benchmark MCUB for multimodal commonality                 Soham Deshmukh, Benjamin Elizalde, Rita Singh,
+                                                            and Huaming Wang. 2023. Pengi: An audio
+understanding evaluation to facilitate the relative         language model for audio tasks. arXiv preprint
+research. Extensive experiments demonstrate the             arXiv:2305.11834.
+effectiveness of our approaches. We hope that our
+                                                          Chaoyou Fu, Peixian Chen, Yunhang Shen, Yulei Qin,
+work will inspire further exploration into model            Mengdan Zhang, Xu Lin, Jinrui Yang, Xiawu Zheng,
+composition for multimodal models.                          Ke Li, Xing Sun, et al. 2023. Mme: A comprehensive
+                                                            evaluation benchmark for multimodal large language
+Limitations                                                 models. arXiv preprint arXiv:2306.13394.
+
+Our exploration is restricted to four commonly used       Rohit Girdhar, Alaaeldin El-Nouby, Zhuang Liu, Man-
+modalities, omitting a comprehensive examination            nat Singh, Kalyan Vasudev Alwala, Armand Joulin,
+                                                            and Ishan Misra. 2023. Imagebind: One embed-
+across the entire spectrum of potential modalities.         ding space to bind them all. In Proceedings of the
+This limitation may result in missed opportunities          IEEE/CVF Conference on Computer Vision and Pat-
+to identify further benefits or challenges associ-          tern Recognition, pages 15180–15190.
+ated with model composition. Additionally, our            Yuan Gong, Hongyin Luo, Alexander H Liu, Leonid
+proposed approach has been tested on models of              Karlinsky, and James Glass. 2023. Listen, think, and
+specific sizes, leaving the applicability of the meh-       understand. arXiv preprint arXiv:2305.10790.
+ods on larger-scale MLLMs an open question for            Jiaming Han, Renrui Zhang, Wenqi Shao, Peng Gao,
+future research.                                             Peng Xu, Han Xiao, Kaipeng Zhang, Chris Liu,
+                                                             Song Wen, Ziyu Guo, et al. 2023. Imagebind-llm:
+Acknowledgments                                              Multi-modality instruction tuning. arXiv preprint
+                                                             arXiv:2309.03905.
+This work is supported by the National Key R&D
+                                                          Yining Hong, Haoyu Zhen, Peihao Chen, Shuhong
+Program of China (2022ZD0160502) and the Na-                Zheng, Yilun Du, Zhenfang Chen, and Chuang Gan.
+tional Natural Science Foundation of China (No.             2023. 3d-llm: Injecting the 3d world into large lan-
+61925601, 62276152).                                        guage models. arXiv preprint arXiv:2307.12981.
+                                                          Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan
+                                                            Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang,
+References                                                  and Weizhu Chen. 2021. Lora: Low-rank adap-
+Josh Achiam, Steven Adler, Sandhini Agarwal, Lama           tation of large language models. arXiv preprint
+  Ahmad, Ilge Akkaya, Florencia Leoni Aleman,               arXiv:2106.09685.
+  Diogo Almeida, Janko Altenschmidt, Sam Altman,          Chengsong Huang, Qian Liu, Bill Yuchen Lin, Tianyu
+  Shyamal Anadkat, et al. 2023. Gpt-4 technical report.     Pang, Chao Du, and Min Lin. 2023. Lorahub: Effi-
+  arXiv preprint arXiv:2303.08774.                          cient cross-task generalization via dynamic lora com-
+Feilong Chen, Minglun Han, Haozhi Zhao, Qingyang            position. arXiv preprint arXiv:2307.13269.
+  Zhang, Jing Shi, Shuang Xu, and Bo Xu. 2023. X-         Gabriel Ilharco, Marco Tulio Ribeiro, Mitchell Worts-
+  llm: Bootstrapping advanced large language models         man, Ludwig Schmidt, Hannaneh Hajishirzi, and Ali
+  by treating multi-modalities as foreign languages.        Farhadi. 2022. Editing models with task arithmetic.
+                                                            In The Eleventh International Conference on Learn-
+Sanyuan Chen, Yu Wu, Chengyi Wang, Shujie Liu,
+                                                            ing Representations.
+  Daniel Tompkins, Zhuo Chen, and Furu Wei. 2022.
+  Beats: Audio pre-training with acoustic tokenizers.     Xisen Jin, Xiang Ren, Daniel Preotiuc-Pietro, and
+  arXiv preprint arXiv:2212.09058.                          Pengxiang Cheng. 2023. Dataless knowledge fusion
+                                                            by merging weights of language models.
+Wenliang Dai, Junnan Li, Dongxu Li, Anthony Tiong,
+ Junqi Zhao, Weisheng Wang, Boyang Li, Pascale            Chris Dongjoo Kim, Byeongchang Kim, Hyunmin Lee,
+ Fung, and Steven Hoi. 2023. InstructBLIP: Towards          and Gunhee Kim. 2019. Audiocaps: Generating
+ general-purpose vision-language models with instruc-       captions for audios in the wild. In NAACL-HLT.
+ tion tuning. In Thirty-seventh Conference on Neural
+ Information Processing Systems.                          Guangyao Li, Yake Wei, Yapeng Tian, Chenliang Xu,
+                                                            Ji-Rong Wen, and Di Hu. 2022. Learning to answer
+Matt Deitke, Dustin Schwenk, Jordi Salvador, Luca           questions in dynamic audio-visual scenarios. In Pro-
+ Weihs, Oscar Michel, Eli VanderBilt, Ludwig                ceedings of the IEEE/CVF Conference on Computer
+ Schmidt, Kiana Ehsani, Aniruddha Kembhavi, and             Vision and Pattern Recognition, pages 19108–19118.
+Bin Lin, Bin Zhu, Yang Ye, Munan Ning, Peng Jin, and        Phani Sankar Nidadavolu. 2023. Multimodal at-
+  Li Yuan. 2023. Video-llava: Learning united visual        tention merging for improved speech recognition
+  representation by alignment before projection. arXiv      and audio event classification. arXiv preprint
+  preprint arXiv:2311.10122.                                arXiv:2312.14378.
+
+Tsung-Yi Lin, Michael Maire, Serge Belongie, James        Yi-Lin Sung, Linjie Li, Kevin Lin, Zhe Gan, Mo-
+  Hays, Pietro Perona, Deva Ramanan, Piotr Dollár,          hit Bansal, and Lijuan Wang. 2023. An empirical
+  and C Lawrence Zitnick. 2014. Microsoft coco:             study of multimodal model merging. arXiv preprint
+  Common objects in context. In Computer Vision–            arXiv:2304.14933.
+  ECCV 2014: 13th European Conference, Zurich,
+  Switzerland, September 6-12, 2014, Proceedings,         Changli Tang, Wenyi Yu, Guangzhi Sun, Xianzhao
+  Part V 13, pages 740–755. Springer.                       Chen, Tian Tan, Wei Li, Lu Lu, Zejun MA, and Chao
+                                                            Zhang. 2024. SALMONN: Towards generic hearing
+Haotian Liu, Chunyuan Li, Yuheng Li, and Yong Jae           abilities for large language models. In The Twelfth
+  Lee. 2023a. Improved baselines with visual instruc-       International Conference on Learning Representa-
+  tion tuning. arXiv preprint arXiv:2310.03744.             tions.
+
+Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae       Mitchell Wortsman, Gabriel Ilharco, Jong Wook Kim,
+  Lee. 2023b. Visual instruction tuning. arXiv preprint     Mike Li, Simon Kornblith, Rebecca Roelofs, Raphael
+  arXiv:2304.08485.                                         Gontijo-Lopes, Hannaneh Hajishirzi, Ali Farhadi,
+                                                            Hongseok Namkoong, and Ludwig Schmidt. 2022.
+Tiange Luo, Chris Rockwell, Honglak Lee, and Justin         Robust fine-tuning of zero-shot models.
+  Johnson. 2023. Scalable 3d captioning with pre-
+  trained models.                                         Shengqiong Wu, Hao Fei, Leigang Qu, Wei Ji, and Tat-
+                                                            Seng Chua. 2023. Next-gpt: Any-to-any multimodal
+Chenyang Lyu, Minghao Wu, Longyue Wang, Xinting             llm.
+  Huang, Bingshuai Liu, Zefeng Du, Shuming Shi,
+  and Zhaopeng Tu. 2023. Macaw-llm: Multi-modal           Zhirong Wu, Shuran Song, Aditya Khosla, Fisher Yu,
+  language modeling with image, audio, video, and           Linguang Zhang, Xiaoou Tang, and Jianxiong Xiao.
+  text integration. arXiv preprint arXiv:2306.09093.        2015. 3d shapenets: A deep representation for vol-
+                                                            umetric shapes. In Proceedings of the IEEE con-
+Muhammad Maaz, Hanoona Rasheed, Salman Khan,                ference on computer vision and pattern recognition,
+ and Fahad Shahbaz Khan. 2023. Video-chatgpt:               pages 1912–1920.
+ Towards detailed video understanding via large
+ vision and language models.     arXiv preprint           Jun Xu, Tao Mei, Ting Yao, and Yong Rui. 2016. Msr-
+ arXiv:2306.05424.                                          vtt: A large video description dataset for bridging
+                                                            video and language. In 2016 IEEE Conference on
+Michael Matena and Colin Raffel. 2022. Merging mod-         Computer Vision and Pattern Recognition (CVPR),
+  els with fisher-weighted averaging.                       pages 5288–5296.
+
+Xinhao Mei, Chutong Meng, Haohe Liu, Qiuqiang             Runsen Xu, Xiaolong Wang, Tai Wang, Yilun Chen,
+  Kong, Tom Ko, Chengqi Zhao, Mark D Plumbley,              Jiangmiao Pang, and Dahua Lin. 2023. Pointllm:
+  Yuexian Zou, and Wenwu Wang. 2023. Wavcaps:               Empowering large language models to understand
+  A chatgpt-assisted weakly-labelled audio caption-         point clouds. arXiv preprint arXiv:2308.16911.
+  ing dataset for audio-language multimodal research.
+  arXiv preprint arXiv:2303.17395.                        Pinci Yang, Xin Wang, Xuguang Duan, Hong Chen,
+                                                            Runze Hou, Cong Jin, and Wenwu Zhu. 2022. Avqa:
+Artemis Panagopoulou, Le Xue, Ning Yu, Junnan               A dataset for audio-visual question answering on
+  Li, Dongxu Li, Shafiq Joty, Ran Xu, Silvio                videos. In Proceedings of the 30th ACM Interna-
+  Savarese, Caiming Xiong, and Juan Carlos Niebles.         tional Conference on Multimedia, pages 3480–3491.
+  2023. X-instructblip: A framework for aligning
+  x-modal instruction-aware representations to llms       Le Yu, Bowen Yu, Haiyang Yu, Fei Huang, and Yongbin
+  and emergent cross-modal reasoning. arXiv preprint        Li. 2024. Language models are super mario: Absorb-
+  arXiv:2311.18799.                                         ing abilities from homologous models as a free lunch.
+
+Nils Reimers and Iryna Gurevych. 2019. Sentence-bert:     Yan Zeng, Hanbo Zhang, Jiani Zheng, Jiangnan Xia,
+  Sentence embeddings using siamese bert-networks.          Guoqiang Wei, Yang Wei, Yuchen Zhang, and Tao
+                                                            Kong. 2023. What matters in training a gpt4-style
+Yixuan Su, Tian Lan, Huayang Li, Jialu Xu, Yan              language model with multimodal inputs? arXiv
+  Wang, and Deng Cai. 2023. Pandagpt: One                   preprint arXiv:2307.02469.
+  model to instruction-follow them all. arXiv preprint
+  arXiv:2305.16355.                                       Hang Zhang, Xin Li, and Lidong Bing. 2023. Video-
+                                                            llama: An instruction-tuned audio-visual language
+Anirudh S Sundar, Chao-Han Huck Yang, David M               model for video understanding. arXiv preprint
+  Chan, Shalini Ghosh, Venkatesh Ravichandran, and          arXiv:2306.02858.
+Zijia Zhao, Longteng Guo, Tongtian Yue, Sihan Chen,
+   Shuai Shao, Xinxin Zhu, Zehuan Yuan, and Jing
+   Liu. 2023. Chatbridge: Bridging modalities with
+   large language model as a language catalyst. arXiv
+   preprint arXiv:2305.16103.
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan
+  Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin,
+  Zhuohan Li, Dacheng Li, Eric. P Xing, Hao Zhang,
+  Joseph E. Gonzalez, and Ion Stoica. 2023. Judging
+  llm-as-a-judge with mt-bench and chatbot arena.
+Bin Zhu, Bin Lin, Munan Ning, Yang Yan, Jiaxi Cui,
+  HongFa Wang, Yatian Pang, Wenhao Jiang, Junwu
+  Zhang, Zongwei Li, et al. 2023. Languagebind: Ex-
+  tending video-language pretraining to n-modality by
+  language-based semantic alignment. arXiv preprint
+  arXiv:2310.01852.
+A    Implementation Details of Pre-trained                Task                Image    Audio     Video    PC
+     MLLMs
+                                                          MUSIC-AVQA            1        1/3      2/3      -
+Table 9 details the components and training data          AVQA                 1/3       2/3      2/3      -
+of each MLLM across the four modalities, with             MCUB-4               1/4       1/4      1/4     1/4
+specific explanations provided below:
+                                                         Table 8: Parameter adjustment weights for different
+    • Image: We follow LLaVA-1.5 (Liu et al.,            MLLMs.
+      2023a) to use CLIP-ViT-L-336px as the image
+      encoder with an MLP projection as the con-         B   Parameter Adjustment
+      nector. The models are trained in a two-stage
+      manner with LCS 558K (Liu et al., 2023b)           In preliminary experiments, we find that compos-
+      as stage-1 data and LLaVA-mixed 665K (Liu          ing MLLMs rom two modalities typically achieved
+      et al., 2023a) as stage-2 data.                    optimal results through a direct average, specifi-
+                                                         cally a 1/2 + 1/2 combination. Due to time and
+    • Audio: We use BEATs-Iter3+ (Chen et al.,           resource constraints, we only conducted parameter
+      2022) as the audio encoder and a Q-Former          adjustments on three types of tasks. This process
+      with 32 query tokens as the connector fol-         involved conducting a search for the optimal λi
+      lowing X-InstructBLIP (Panagopoulou et al.,        values within the set [1/N, 2/N, . . . , N/N ] for the
+      2023). We use WaveCaps (Mei et al., 2023)          composition of N modalities, based on the valida-
+      for stage-1. For stage-2, we use a filtered ver-   tion set performance for each corresponding task.
+      sion of OpenAQA (Gong et al., 2023) with           The results are showcased in Table 8. We assume
+      350K examples.                                     that the variance in coefficients comes from the dif-
+                                                         fering demands of each task on the understanding
+    • Video: Following Video-LLaVA (Lin et al.,          capabilities across modalities. For MCUB-4, which
+      2023), we use LanguageBind (Zhu et al.,            requires a comprehensive grasp of content from all
+      2023) as the video encoder with an MLP con-        four modalities, an average coefficient emerged as
+      nector. We reuse the stage-1 weights from          the best result. Based on these findings, we also
+      Video-LLaVA for resource saving. The stage-        applied average coefficients for all MCUB-3 tasks.
+      2 data comprises Video-ChatGPT (Maaz et al.,
+      2023) and a subset of LLaVA-mixed 665K in-         C    Details of Multimodal Commonality
+      cluding 100K image-text and 40K text-only               Understanding Benchmark
+      instruction data.
+                                                         Table 11 presents the captioning datasets we use to
+    • Point cloud: We use the pre-trained point          generate MCUB task. For point cloud modality, we
+      encoder and instruction-following data from        reserve 3000 point clouds from Objaverse (Deitke
+      PointLLM (Xu et al., 2023). We use an MLP          et al., 2023) dataset following Xu et al. (2023), and
+      projection as the connector.                       obtain their captions in Cap3D (Luo et al., 2023)
+                                                         dataset. Note that this part of the point clouds are
+   We adopt the same hyperparameters mainly              not used in training and 3D object classification.
+following previous works (Liu et al., 2023a;                The semantic similarity of a group of entities is
+Panagopoulou et al., 2023; Lin et al., 2023; Xu          obtained by averaging the similarities of the cap-
+et al., 2023), as listed in Table 10. For the first      tions of all two-entities combination, which are cal-
+training stage, only the parameters in the connec-       culated by the all-MiniLM-L6-v2 model (Reimers
+tors are trainable. During the second training stage,    and Gurevych, 2019). For example, if a group of
+for DAMC, since we decouple the parameters of            entities with captions pair (A, B, C) is provided,
+modality inputs and text inputs, we additionally ad-     the group similarity of it will be the average of the
+just the learning rate for the text components to 2e-    similarities between (A, B) , (A, C) and (B, C).
+5 for all modalities. We apply the LoRA across all          We report the detailed results on subtasks of
+linear modules within the LLM, setting the LoRA          MCUB-3 benchmark in Table 12. The final result
+rank to 128 and the alpha parameter to 256. For          of MCUB-3 is reported as the average of the four
+efficiency in training, we utilize DeepSpeed Zero        sub-tasks.
+Optimization stage 3.                                       Prompt template for generate questions, options
+ Modal     Modal Encoder            Connector            Stage-1 Data                 Stage-2 Data
+ Image     CLIP-ViT-L-336px         MLP                  LCS 558K                     LLaVA-mixed 665K
+ Audio     BEATs-Iter3+             Q-Former             WaveCaps 400K                OpenAQA filtered 350K
+ Video     LanguageBind             MLP                  LCS 558K,                    Video-ChatGPT 100K,
+                                                         Valley 702K                  LLaVA-mixed sampled 140K
+ Point     Point Encoder            MLP                  PointLLM brief               Point complex instruction
+ Cloud                                                   description 660K             70K
+
+                  Table 9: Components and training data of MLLMs for different modalities.
+
+                   Stage       Hyperparameter        Image          Audio   Video     Point Cloud
+                               Batch size                256        256      256          128
+                               LR                        1e-3       1e-3     1e-3         2e-3
+                   State-1
+                               LR Schedule                             cosine decay
+                               Warmup Ratio                                0.03
+                               Epoch                      1          1        1            3
+                               Batch size                128        128      128           32
+                               LR                        2e-4       1e-4     2e-4         2e-5
+                   Stage-2
+                               LR Schedule                             cosine decay
+                               Warmup Ratio                                0.03
+                               Epoch                      1          1        1            3
+
+                                Table 10: Hyperparameters of different MLLMs.
+
+
+  Modal                  Captioning Dataset
+                                                                    A. Rhythmic ocean waves crashing on
+  Image          COCO2017 (Lin et al., 2014) val set                the shore.        B. Gentle rustling of
+  Video           MSRVTT (Xu et al., 2016) test set                 leaves in a serene garden. C. Audible
+  Audio          AudioCaps (Kim et al., 2019) test set              environmental sounds. D. Soft crackling
+  Point Cloud   Cap3D (Luo et al., 2023) (3000 subset)              of a campfire under a starry sky. Answer:
+                                                                    C. Explanation: The maximum common point
+                                                                    among the four entities is the presence of
+Table 11: Captioning datasets in each modality to gen-              ambient environmental sounds, which can be
+erate MCUB benchmark.                                               perceived audibly.
+                                                                    Generate three such Question, Answer,
+                                                                    Explanation triplets for entity A with
+and correct answers:                                                caption "<Caption A>" and properties
+                                                                    "<Properties A>", entity B with caption
+                                                                    "<Caption B>" and properties "<Properties
+   Prompt Template                                                  B>", entity C with caption "<Caption C>"
+                                                                    and properties "<Properties C>", and entity
+   Given entity A with caption "A cat meowing                       D with caption "<Caption D>" and properties
+   and humans speaking on the background."                          "<Properties D>" Examples:
+   with properties: agile, independent, and
+   domesticated, entity B with caption "Loud
+   barking and traffic" with properties
+   aggressive, loud, and high energy, entity
+   C with caption "Birds chirping in a quiet
+   forest" and properties peaceful, wild,                       D    Prompt for Evaluation
+   and vocal, and entity D with caption "A
+   bustling city street with honking cars" and
+   properties busy, noisy, and chaotic, you
+   can generate a set of instruction answer                     We list the evaluation prompts for each dataset
+   pairs to find the commond point of the                       and modality combination in Table 13. In the
+   entities as follows:                                         prompts, we use “<image>”, “<audio>”, “<video>”
+   Example: Question: Which of the followings
+   are the common point of the four entities.                   and “<point>” to represent image, audio, video and
+                                                                point cloud modality inputs.
+                               MCUB-3
+    Method
+                     V+I+A   V+A+P V+I+P     I+A+P
+    Imagebind-LLM    35.20   31.40   31.80   33.40
+    X-InstructBLIP   41.40   25.20   29.40   21.20
+    Proj-only        47.40   43.80   42.60   42.80
+    NaiveMC          56.00   51.00   53.00   58.80
+    DAMC             56.60   58.80   58.20   65.60
+
+Table 12: Detailed results on sub-tasks of MCUB-3
+involving different modalities combinations.
+
+
+E    Additional Point Cloud Results
+In Table 2, we report exclusively on the zero-shot
+3D object classification performance using P + I
+(Point cloud + Image) inputs, with comprehen-
+sive results detailed in Table 14. We find that
+ImageBind-LLM, X-InstructBLIP, and Proj-only
+struggle with point cloud inputs alone, particularly
+in adhering to open-ended generation instructions,
+leading to poor results. We assume that this issue
+likely stems from the necessity for point MLLM to
+undergo training on point-text instruction data with
+trainable LLM parameters to enhance performance.
+
+F    Additional Qualitative Results
+We provide additional qualitative results about in
+Figure 5-7.
+Dataset       Modal           Prompt Template
+              V               <video>\n{Question} \nAnswer the question using a single
+                              word.
+MUSIC-AVQA    V+I             Based on the video <video> and image <image>\n{Question}
+& AVQA                        \nAnswer the question using a single word.
+              V+A             Based on the video <video> and audio <audio>\n{Question}
+                              \nAnswer the question using a single word.
+              V+I+A           Video: <video>\n Image: <image>\n Audio: <audio>\n
+                              {Question} \nAnswer the question using a single word.
+Objaverse &   P               <point>\nWhat is this? (Type-I) / This is an object of (Type-C)
+ModelNet40
+              P+I             Based on rendered image <image> and point cloud
+                              <point>\nWhat is this? (Type-I) / This is an object of (Type-C)
+              V+I+A           Based on four input entities:\nimage <image>\naudio
+                              <audio>\nvideo <video>\n {Question} {Options} Answer with
+                              the option’s letter from the given choices directly.
+MCUB-3        V+A+P           Based on four input entities:\naudio <audio>\nvideo
+                              <video>\npoint <point>\n {Question} {Options} Answer with
+                              the option’s letter from the given choices directly.
+              V+I+P           Based on four input entities:\nimage <image>\nvideo
+                              <video>\npoint <point>\n {Question} {Options} Answer with
+                              the option’s letter from the given choices directly.
+              I+A+P           Based on three input entities:\nimage <image>\naudio
+                              <audio>\npoint <point>\n {Question} {Options} Answer with
+                              the option’s letter from the given choices directly.
+MCUB-4        V+I+A+P         Based on four input entities:\nimage <image>\naudio
+                              <audio>\nvideo <video>\npoint <point>\n {Question}
+                              {Options} Answer with the option’s letter from the given
+                              choices directly.
+
+              Table 13: Prompt Template for different evaluation benchmarks.
+                                                                          Instruction-type                  Completion-type
+                   Task                          Method
+                                                                            P       P+I                       P      P+I
+                                                 3D-LLM                      -            49.00                -                  41.50
+                                                 Point-LLM                55.00             -               51.00                   -
+                                                 ImageBind-LLM              *             31.00                *                  26.50
+                    Objaverse                    X-InstructBLIP             *             50.00                *                  31.50
+                                                 Proj-only                17.50*          48.00             15.00*                42.50
+                                                 NaiveMC                  56.00           55.00             54.50                 59.50
+                                                 DAMC                     57.00           60.50             56.50                 62.00
+                                                 Point-LLM                 53.44            -                51.82                  -
+                                                 ImageBind-LLM               *            42.71                *                  42.46
+                                                 X-InstructBLIP              *            61.43                *                  61.14
+                    ModelNet40                   Proj-only                 6.52*          62.88              5.92*                61.99
+                                                 NaiveMC                   68.59          66.00              58.79                64.59
+                                                 DAMC                      68.76          70.02              58.71                65.24
+
+Table 14: Experimental results on zero-shot 3D object classification tasks using point (P) and combined point and
+image (P + I) inputs. Following Xu et al. (2023), two different types of prompts are considered: Instruction-type
+(“What is this?”) and Completion-type (“This is an object of”). *: models failed to follow open-ended generation
+instructions, leading to particularly low scores.
+
+
+
+
+                                                                                                              Tell me what is this in the image.
+                                          Describe this image.
+
+
+                                                                               This is a field with a river running through it.
+
+
+          The image is of a small bathroom with a toilet, sink,
+          and mirror. The walls are painted white and
+                                                                               Can this object be in the field?
+          decorated with colorful flowers.                                                                               [The bird is singing]
+
+
+                                                                               Yes. This is a bird. It can be in the field because it is a common
+          According to this sound,
+                                                                               sight in rural areas.
+          what may happen in the
+          scene of the image?
+                                              [A baby is crying]
+                                                                                                          Can this object be in the field? Is it
+                                                                                                          possible that the audio come from this
+          The scene depicts a mother and child in a bathroom,                                             object?
+          with the mother trying to comfort the child who is
+          crying.
+                                                                               Yes, this object can be found in the field, as birds are often seen in
+                                                                               natural environments. The audio can come from this object because
+                                                                               the singing is a common behavior among birds.
+          Can this scene happen in the
+          object displayed by the point
+          cloud?                                                                                      Can this object be in the field? Can the
+                                                                                                      bird live on this object?
+
+
+          Yes, this scene can happen in the object displayed by                Yes, this object can be found in the field, as plants are common in
+          the point cloud, which is a bathroom.                                natural environments. The bird can live on this object, as it is a
+                                                                               natural habitat for the bird.
+
+
+
+
+                                                       Figure 5: Additional qualitative results.
+                                Describe this image in detail.                                             How many whales are in this video?
+
+
+
+The image features a cat lying on a bed, with its head peeking out               There are two whales in this video.
+from under a blanket. The cat has a distinctive orange and white
+fur pattern, and its eyes are wide open, giving it a curious and
+alert appearance. The bed is covered with a blue blanket, which                                                          What are they doing?
+contrasts with the cat's orange and white fur. The cat's posture
+suggests that it is comfortable and relaxed, possibly enjoying the
+warmth and coziness of the bed.                                                  The two whales are swimming and splashing in the water.
+
+
+
+
+  Write a poem from this audio.                                                                                    What is this species?
+                                         [birds squawk]
+
+
+A flock of birds, so many and so bright,                                         This is a dog.
+Chirping and singing, their melodies delight.
+Their wings flutter, their feathers they spread,
+In the sky above, they dance and tread.                                                                          Tell me more about this dog.
+
+Their calls echo, their voices so clear,
+A symphony of nature, so pure and dear. ……                                       This dog is brown in color and has a long tail.
+
+
+
+
+                                                   Figure 6: Additional qualitative results.
+
+
+
+
+                                          [The sound of car]                                                        [The dog is snoring]
+
+
+  Can the object in the point cloud produce the sound in the audio?             Can this sound come from the image? Why?
+
+
+   Yes, the object in the point cloud is a car, and it is                       Yes, the sound of a dog snoring can come from the
+   likely that the sound in the audio is produced by                            image. The dog is shown lying down and snoring,
+   the car.                                                                     which is a common behavior of dogs.
+
+
+
+                                                   Figure 7: Additional qualitative results.
+

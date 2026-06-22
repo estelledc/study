@@ -1,0 +1,17 @@
+# Citation Meter v2 Report — 2026-05-31
+
+## Totals
+- study/written.txt 总数：846
+- lens 累计引用唯一 slug：116
+- 覆盖率：13.71%
+- priority 实际被引用：31 / 39
+
+## Per-lens
+| lens | schema | fm_wiki | fm_in_written | fm_dangling | table 未匹配 | ADR 段 | 唯一 slug |
+|---|---|---|---|---|---|---|---|
+| aieng | vunknown | 9 | 9 | 0 | 13 | context:6,decision:6,alternatives:3,consequences:6,rollback:2,rationale:1 | 14 |
+| backend | vunknown | 21 | 21 | 0 | 2 | context:5,decision:5,alternatives:3,consequences:5,rollback:1,rationale:1 | 28 |
+| data | vunknown | 17 | 17 | 0 | 5 | context:4,decision:4,alternatives:2,consequences:4,rationale:1,rollback:1 | 24 |
+| devops | vunknown | 14 | 14 | 0 | 14 | context:3,decision:3,consequences:3,rollback:2,rationale:1 | 19 |
+| frontend | v6 | 8 | 8 | 0 | 6 | context:3,decision:3,consequences:2,rollback:1,alternatives:1,rationale:1 | 23 |
+| vllm | vunknown | 13 | 13 | 0 | 14 | context:4,decision:4,alternatives:1,consequences:4,rationale:2,rollback:1 | 14 |

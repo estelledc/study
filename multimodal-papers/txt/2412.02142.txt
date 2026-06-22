@@ -1,0 +1,815 @@
+                                                           Personalized Multimodal Large Language Models: A Survey
+                                                      Junda Wu1 Hanjia Lyu2 Yu Xia1 Zhehao Zhang3 Joe Barrow4
+                                                           5
+                                        Ishita Kumar    Mehrnoosh Mirtaheri6 Hongjie Chen7 Ryan A. Rossi4 Franck Dernoncourt4
+                                            Tong Yu4 Ruiyi Zhang4 Jiuxiang Gu4 Nesreen K. Ahmed8 Yu Wang9 Xiang Chen4
+                                          Hanieh Deilamsalehy4 Namyong Park10 Sungchul Kim4 Huanrui Yang11 Subrata Mitra4
+                                         Zhengmian Hu4 Nedim Lipka4 Dang Nguyen12 Yue Zhao6 Jiebo Luo2 Julian McAuley1
+                                           1 University of California, San Diego            2 University of Rochester     3 Dartmouth College      4 Adobe Research
+                                                     5 University of Massachusetts at Amherst            6 University of Southern California    7 Virginia Tech
+                                          8 Cisco Research         9 University of Oregon       10 Meta AI      11 University of Arizona    12 University of Maryland
+
+
+                                                                       Abstract                               models, personalization plays a crucial role, en-
+                                                                                                              abling them to adapt more effectively to a user’s
+                                                     Multimodal Large Language Models (MLLMs)                 specific preferences, context, and needs (Chen
+                                                     have become increasingly important due to                et al., 2024a). Personalization offers an improved
+
+
+
+
+arXiv:2412.02142v1 [cs.CV] 3 Dec 2024
+                                                     their state-of-the-art performance and ability to
+                                                                                                              user experience by saving time and increasing ac-
+                                                     integrate multiple data modalities, such as text,
+                                                     images, and audio, to perform complex tasks              curacy, for instance, by generating content that is
+                                                     with high accuracy. This paper presents a com-           more closely aligned with the user’s interests.
+                                                     prehensive survey on personalized multimodal                Personalization in multimodal large language
+                                                     large language models, focusing on their archi-          models comes with its own set of unique challenges.
+                                                     tecture, training methods, and applications. We          In particular, in order to create personalized expe-
+                                                     propose an intuitive taxonomy for categorizing           riences, it is essential to have individual-level data
+                                                     the techniques used to personalize MLLMs to
+                                                                                                              from users. In multimodal scenarios, this requires
+                                                     individual users, and discuss the techniques ac-
+                                                     cordingly. Furthermore, we discuss how such              data that spans multiple modalities. For instance a
+                                                     techniques can be combined or adapted when               user might generate an image from a text prompt
+                                                     appropriate, highlighting their advantages and           and then provide feedback, such as a thumbs-up
+                                                     underlying rationale. We also provide a suc-             or thumbs-down. In this case, we have two modal-
+                                                     cinct summary of personalization tasks investi-          ities—text and image—along with implicit feed-
+                                                     gated in existing research, along with the eval-         back on the text prompt and explicit feedback on
+                                                     uation metrics commonly used. Additionally,              the generated image in the form of a like or dislike.
+                                                     we summarize the datasets that are useful for
+                                                                                                                 We propose an intuitive and symmetric taxon-
+                                                     benchmarking personalized MLLMs. Finally,
+                                                     we outline critical open challenges. This sur-           omy for the techniques used for personalized mul-
+                                                     vey aims to serve as a valuable resource for             timodal large language models, including text gen-
+                                                     researchers and practitioners seeking to under-          eration (Section 3), image generation (Section 4),
+                                                     stand and advance the development of person-             recommendation (Section 5), and retrieval (Sec-
+                                                     alized multimodal large language models.                 tion 6). Each category classifies techniques based
+                                                                                                              on how they follow multimodal instructions, en-
+                                             1       Introduction                                             able multimodal alignment, generate personalized
+                                            Multimodal Large Language Models (MLLMs)1                         responses, or incorporate personalization through
+                                            have recently become important for generating                     model fine-tuning. We illustrate an overview of
+                                            and reasoning with diverse types of complex data                  techniques for personalized multimodal models in
+                                            such as text, images, and audio (Yang et al., 2023).              Table 1. In parallel to the discussion of techniques,
+                                            These models that process, generate, and combine                  we also summarize various applications in person-
+                                            information across modalities have found many                     alized MLLMs (Appendix B).
+                                            applications such as healthcare (Lu et al., 2024;                 Summary of Main Contributions. The key con-
+                                            AlSaad et al., 2024), recommendation (Lyu et al.,                 tributions of this work are as follows:
+                                            2024b; Tian et al., 2024), autonomous vehicles (Cui                   • A comprehensive survey of existing work
+                                            et al., 2024; Chen et al., 2024b). However, to fur-                     for personalized MLLMs. We also survey
+                                            ther enhance the performance and utility of these                       the problem settings, evaluation metrics, and
+                                                 1
+                                                                                                                    datasets used in the literature.
+                                               Note MLLM is used synonymously with Large Multi-
+                                            modal Model (LMM), and Large Vision Language Model                    • We introduce a few intuitive taxonomies for
+                                            (LVLM).                                                                 personalization in MLLMs and survey exist-
+        Category         General Mechanism         Example Models and Methods
+                          Instruction (Sec. 3.1)   CGSMP (Yong et al., 2023), ModICT (Li et al., 2024c)
+    Personalized MLLM
+                          Alignment (Sec. 3.2)     MPDialog (Agrawal et al., 2023), Athena 3.0 (Fan et al., 2023)
+      Text Generation
+                         Generation (Sec. 3.3)     Wu et al. (2024b), PTSCG (Wang et al., 2024a)
+         (Section 3)
+                         Fine-tuning (Sec. 3.4)    Wang et al. (2023), PVIT (Pi et al., 2024)
+                          Instruction (Sec. 4.1)   MuDI (Jang et al., 2024), Zhong et al. (2024)
+    Personalized MLLM
+                          Alignment (Sec. 4.2)     λ-ECLIPSE (Patel et al., 2024), MoMA (Song et al., 2024)
+     Image Generation
+                         Generation (Sec. 4.3)     Layout-and-Retouch (Kim et al., 2024), Instantbooth (Shi et al., 2024a)
+         (Section 4)
+                         Fine-tuning (Sec. 4.4)    MS-Diffusion (Wang et al., 2024d), UNIMO-G (Li et al., 2024a)
+                          Instruction (Sec. 5.1)   InteraRec (Karra and Tulabandhula, 2024), X-Reflect (Lyu et al., 2024b)
+    Personalized MLLM
+                          Alignment (Sec. 5.2)     PMG (Shen et al., 2024), MMREC (Tian et al., 2024)
+     Recommendation
+                         Generation (Sec. 5.3)     RA-Rec (Yu et al., 2024),Wei et al. (2024a)
+         (Section 5)
+                         Fine-tuning (Sec. 5.4)    GPT4Rec(Zhang et al., 2024),MMSSL (Wei et al., 2023)
+                          Instruction (Sec. 6.1)   ConCon-Chi (Rosasco et al., 2024), Med-PMC (Liu et al., 2024a)
+    Personalized MLLM
+                          Alignment (Sec. 6.2)     AlignBot (Chen et al., 2024c), (Xu et al., 2024)
+          Retrieval
+                         Generation (Sec. 6.3)     Ye et al. (2024a),Yo’LLaVA (Nguyen et al., 2024)
+         (Section 6)
+                         Fine-tuning (Sec. 6.4)    FedPAM (Feng et al., 2024), VITR (Gong et al., 2023)
+
+       Table 1: Overview of Techniques for Personalized Multimodal Large Language Models (Sections 3-6).
+
+
+       ing work using these taxonomies.                         2.1   Integration of Heterogeneous Data
+     • Key open problems and challenges are identi-
+                                                               Multimodal large language models need to com-
+       fied and discussed. These problems are impor-
+                                                               bine information from various modalities, such
+       tant for future work to address in this rapidly
+                                                               as text, images, audio, video, and user engage-
+       growing but vitaly important field.
+                                                               ment (Wei et al., 2024a; Xu et al., 2024). Each
+Scope of the survey. In this survey, we focus en-              modality has distinct characteristics and may con-
+tirely on recent work that leverages multimodal                vey different types of information. For example,
+large language models (MLLMs) to generate per-                 text might describe a product, while an image con-
+sonalized text, images, audio, or other modalities.            veys its visual appearance. Integrating these het-
+We consider techniques for personalization that                erogeneous data types is challenging because they
+elicit and incorporate user preferences when gen-              require different encoding methods, processing
+erating multimodal outputs. To study these tech-               pipelines, and alignment strategies. Misalignment
+niques, we decompose works across the following                or incomplete fusion (Lyu et al., 2024b; Zhou et al.,
+three dimensions:                                              2023) can lead to inconsistent or inaccurate user
+                                                               preferences being captured, thus reducing the effec-
+    • the modality of the content being generated
+                                                               tiveness of personalized recommendations. Multi-
+      (e.g., text, images, audio, or other);
+                                                               modal alignment can help resolve inconsistencies
+    • the personalization technique being employed
+                                                               that may arise from mismatched modalities.
+      (e.g., prompt-based, prefix tuning, finetun-
+      ing/adapters);
+                                                                2.2   Data Noise and Redundancy
+    • the application of the personalized MLLM
+      (e.g., chat/assistant, recommendation systems,           Different modalities often include noisy, redundant,
+      retrieval, classification, image generation, text        or irrelevant information (Liu et al., 2024c; Lyu
+      generation).                                             and Luo, 2022). For example, images of the same
+                                                               product in e-commerce platforms may have vary-
+2     Overview of Challenges and Techniques                    ing quality or redundant features, while textual
+                                                               descriptions might include unnecessary details. Ex-
+Personalization in multimodal large language mod-              tracting meaningful insights from such noisy data
+els presents several significant challenges, due to            is challenging because the model needs to filter out
+the complexity of combining diverse types of data,             irrelevant content without losing important context.
+extracting relevant information, and delivering user-          This process becomes even more difficult when
+specific insights. To tackle these challenges, re-             handling large amounts of data, as the noise accu-
+searchers have introduced techniques such as mul-              mulates and complicates the extraction of relevant
+timodal instruction, alignment, and generation.                user preferences. Multimodal instruction can help
+filter out noisy or redundant data by guiding the        real-time. Additionally, the model needs to con-
+model to focus on the most relevant modalities and       tinuously update its understanding to reflect new
+inputs for each user. By directing the model’s atten-    patterns of user behavior.
+tion to key features in user interactions, this method
+reduces the impact of irrelevant or repetitive infor-    3     Personalized MLLM Text Generation
+mation, ensuring that the generated outputs are
+more meaningful and concise.                             3.1    Personalized Multimodal Instruction
+                                                         Personalized multimodal instruction focuses on
+2.3   Granular Understanding of Multimodal               guiding MLLMs to generate more tailored content
+      Data                                               through structured prompts and contextual signals.
+Text-based LLMs are adept at processing linguis-         For example, CGSMP (Yong et al., 2023) demon-
+tic information such as item descriptions (Lyu           strates controllable text summarization using mul-
+et al., 2024a), and some approaches seek to trans-       timodal prompts based on image entities, reducing
+form non-textual data into the text space (Ye et al.,    hallucinations and improving summarization qual-
+2024b). However, visual inputs often contain nu-         ity. Li et al. (2024c) further propose multimodal
+ances—such as color, texture, and context—that           in-context tuning leveraging in-context learning
+are difficult to capture with language alone (Shen       abilities of MLLMs to dynamically generate prod-
+et al., 2024). For instance, subtle preferences in       uct descriptions based on visual and textual cues.
+fashion, home decor, or art may be driven by visual
+factors that are abstract or subjective. Multimodal      3.2    Personalized Multimodal Alignment
+LLMs may struggle to extract these fine-grained vi-      To better reflect user intents in generated texts,
+sual details and relate them meaningfully to textual     a few works explore aligning multimodal inputs
+descriptions, leading to a loss of personalization       to personalized user preferences. For instance,
+depth. Multimodal alignment facilitates a mre gran-      MPDialog (Agrawal et al., 2023) aligns charac-
+ular understanding by ensuring that the relation-        ter personas and visual scenes to generate context-
+ships between different modalities are preserved.        consistent dialogues. Athena 3.0 (Fan et al., 2023)
+                                                         apply this concept to conversational agents, fus-
+2.4   Scalability and Efficiency                         ing neuro-symbolic strategies with multimodal di-
+As the volume of multimodal engagement grows,            alogue generations, aligning responses with user
+so do the computational demands for processing           preferences in dynamic contexts. In addition, Sugi-
+and personalizing recommendations. Models need           hara et al. (2024) aligns video summarization with
+to handle a large number of user interactions across     user-defined semantics by matching textual and
+various modalities in real-time environments (Ye         visual content, ensuring personalized summaries.
+et al., 2024b; Shen et al., 2023), such as social
+media platforms or e-commerce sites. This neces-         3.3    Personalized Multimodal Generation
+sitates advanced resource allocation strategies, as      To generate text that aligns more closely with
+multimodal large language models often require           user-specific preferences, Wu et al. (2024b) intro-
+significant GPU or TPU resources to process im-          duce a framework for personalized video comment-
+ages, videos, or audio in parallel with text.            ing, where clip selection and text generation pro-
+                                                         cesses are tailored to user preferences. Wang et al.
+2.5   Capturing Diverse and Dynamic User                 (2024a) generate personalized time-synchronized
+      Preferences                                        comments on videos by leveraging a multimodal
+Users interact with multimodal content in di-            transformer to integrate visual elements with user-
+verse ways, and their preferences can evolve over        specific commentary.
+time (Rafailidis et al., 2017). Accurately capturing
+                                                         3.4    Personalized Multimodal Fine-tuning
+these preferences across modalities is challenging
+because different data types might signal conflict-      While prompting and instructions might not always
+ing or evolving interests. For instance, a user’s        achieve satisfying performance, several fine-tuning
+engagement with both product reviews and product         methods have been developed to help better adapt
+images may shift over time, requiring the model          pre-trained MLLMs to specific user contexts and
+to adapt its understanding of their preferences in       tasks. Wang et al. (2023) propose prefix-tuning
+for personalized image captioning, reducing com-         4.4    Personalized Multimodal Fine-tuning
+putation costs while retaining high-quality, user-
+                                                         MS-Diffusion (Wang et al., 2024d) introduces a
+specific outputs. Pi et al. (2024) propose visual
+                                                         zero-shot, layout-guided method for multi-subject
+instruction tuning to address the limitations of
+                                                         image personalization in diffusion models. It in-
+generic MLLMs by enabling them to recognize
+                                                         tegrates a Grounding Resampler to enhance sub-
+individuals in images through visual instructions
+                                                         ject detail extraction and a Multi-Subject Cross-
+and generate personalized dialogues.
+                                                         Attention mechanism to manage conflicts in multi-
+                                                         subject scenarios, ensuring accurate representation
+4     Personalized MLLM Image Generation                 of subjects in specific regions while preserving
+4.1    Personalized Multimodal Instruction               overall image fidelity. UNIMO-G (Li et al., 2024a)
+                                                         unifies the multimodal end-to-end fine-tuning with
+Zhong et al. (2024) propose a novel multimodal           visual and language transformer models.
+prompt to include complex user queries for cus-
+tomized instructions. Gal et al. (2022) enables          5     Personalized MLLM Recommendation
+multimodal input to be tokenized into a lookup
+table, whose indexes are further used for gener-         5.1    Personalized Multimodal Instruction
+ation based on a text transformer. MuDI (Jang            Multimodal instructions in recommendations allow
+et al., 2024) addresses identity mixing in multi-        for the personalization of user intentions and prefer-
+subject text-to-image personalization by leveraging      ences (Ye et al., 2024b; Zhou et al., 2023), rich con-
+segmented subjects using the Segment Anything            texts of item information (Zhou et al., 2023; Lyu
+Model (Kirillov et al., 2023). MuDI employs data         et al., 2024b), and more diverse user-system inter-
+augmentation (Seg-Mix) during training and an            actions (Karra and Tulabandhula, 2024). To better
+innovative inference initialization technique to gen-    express preferences for novel items, the user can
+erate distinct multi-subject images without mixing       provide the reference image as part of the recom-
+identities. Subject-Diffusion (Ma et al., 2024) intro-   mendation instruction (Zhou et al., 2023). Based
+duces an open-domain personalized text-to-image          on the user’s interaction with visual items, the mul-
+generation framework that does not require test-         timodal recommender system could analyze user
+time fine-tuning and relies on a single reference        preferences and intentions (Ye et al., 2024b; Yu
+image for generating personalized images. The            et al., 2024; Liu et al., 2024c). PMG (Shen et al.,
+method combines text and image features using            2024) further transform multimodal user behaviors
+a custom prompt format, integrates fine-grained          into language to model user preferences for a rec-
+object features and location control for enhanced        ommendation task. For items in recommendation
+fidelity, and employs cross-attention map control        tasks, when meta data of a item is lacking, MLLMs
+to handle multiple subjects simultaneously.              are beneficial to extract rich descriptive information
+                                                         of items for better recommendation (Zhou et al.,
+4.2    Personalized Multimodal Alignment
+                                                         2023; Lyu et al., 2024b). On the other hand, many
+MoMA (Song et al., 2024) is a tuning-free, open-         works also encode visual information with textual
+vocabulary model for personalized image genera-          information into latent representations for better
+tion which combines reference image features with        item modeling (Tian et al., 2024; Wei et al., 2024a).
+text prompts, enabling flexible re-contextualization     In addition, multimodal instructions enable interac-
+and texture editing while preserving high detail fi-     tions through screenshots (Karra and Tulabandhula,
+delity and identity. λ-ECLIPSE (Patel et al., 2024)      2024), personalized item design (Wei et al., 2024a),
+leverages CLIP latent space to accelerate and facil-     and conversational recommendations based on ref-
+itate personalized generation.                           erence images (Zhou et al., 2023).
+
+4.3    Personalized Multimodal Generation                5.2    Personalized Multimodal Alignment
+Kim et al. (2024) propose Layout-and-Retouch, an         To unify the understanding and reasoning of multi-
+approach to achieve better diversity in the person-      modal information, MLLMs can serve to transcript
+alization of image generation. Shi et al. (2024a)        visual information into texts (Shen et al., 2024;
+propose Instantbooth for personalized generation         Ye et al., 2024b), enable latent representation fu-
+without test-time fine-tuning.                           sion and alignment (Tian et al., 2024; Xu et al.,
+2024; Hu et al., 2024), and unify multimodal mod-         also propose fine-tuning methods on MLLMs.
+eling (Wei et al., 2024a; Liu et al., 2024c; Yu et al.,   GPT4Rec (Zhang et al., 2024) incorporates graph
+2024). Based on the user’s previous interaction           modality information which enables structure-
+with visual items, the MLLMs can provide expla-           level prompting. Based on the novel prompt de-
+nations on the interacted items’ descriptions (Ye         sign, GPT4Rec performs prompt tuning to bene-
+et al., 2024b), and also the user’s interaction be-       fit streaming recommendations on both the node
+haviors (Shen et al., 2024), which can be further         level and the view level. InstructGraph (Wang
+used as part of textual prompts for further textual-      et al., 2024b) also leverages the graph structure to
+only LLM-based reasoning. On the other hand,              unify NLP, information retrieval, and recommenda-
+other works consider using MLLMs’ abilities in en-        tion tasks, and thus further enables fine-tuning and
+coding multimodal representations, to enable item-        RLHF for alignment. MMSSL (Wei et al., 2023)
+level augmentation (Tian et al., 2024), user-item fu-     is a unified learning framework to first decompose
+sion (Xu et al., 2024), and across-task multimodal        users’ modality-aware preferences, and then col-
+knowledge transferring (Hu et al., 2024). Recent          laboratively learn the inter and inter-dependency
+developments in end-to-end multimodal learning,           and inter-modality preference signals through self-
+where multimodal instructions input as a sequence,        augmentation. Deng et al. (2024) further propose
+enables a novel paradigm of generative recommen-          a unified transformer model that enables inputs of
+dation, which regards recommends as a next-token          multimodal information, and outputs of content
+prediction task. Some preliminary works directly          features which can be used to pair with item repre-
+prompt advanced MLLMs (e.g., GPT-4V) to under-            sentations for direct recommendation tasks.
+stand the multimodal instruction and recommenda-
+tions based on reasoning. Liu et al. (2024c) designs      6     Personalized MLLM Retrieval
+such prompting methods in sequential recommen-
+                                                          6.1    Personalized Multimodal Instruction
+dation tasks, whose recommendation results are
+re-ranked after generation. Some works also en-           Personalized multimodal instruction focuses on im-
+able tokenized items and users (Yu et al., 2024)          proving the ability of MLLMs to tailor their outputs
+with multimodal information, which can directly           based on user-specific needs and preferences. Ex-
+generate items from the model’s embedding space.          isting benchmarks, such as ConCon-Chi (Rosasco
+                                                          et al., 2024), raise challenges in personalized text-
+5.3   Personalized Multimodal Generation                  to-image retrieval by introducing complex and var-
+Generative recommender systems leverage next-             ied contexts and instructions for personalized con-
+token generation as a unified recommendation pol-         cept learning and compositionality assessment. In
+icy. The LLM can directly generate items as lan-          a different direction, the Learnable Agent Collabo-
+guage tokens by further encoding items into the           ration Network (Shi et al., 2024b) proposes a frame-
+LLM’s embedding space. Recent ID-based repre-             work where multiple agents with distinct instruc-
+sentation learning methods encode item IDs into           tions and roles collaborate to deliver user-specific
+language embeddings, learned from multimodal              responses in multimodal search and retrieval en-
+and collaborative knowledge (Yu et al., 2024).            gines. Med-PMC (Liu et al., 2024a) creates a sim-
+In addition, some unified framework (Wei et al.,          ulated clinical environment where MLLMs are in-
+2024a) enables encoding of multi-channel informa-         structed to interact with a patient simulator deco-
+tion, and recommendation generation as well as            rated with personalized actors for multimodal in-
+modified images of the user’s potentially interested      formation retrieval and decision making. These
+items. Such multimodal generation provides better         works highlight the need for MLLMs to effectively
+explanability of the recommended items and better         integrate multimodal information and personalize
+convinces users to accept the items. However, since       their responses across diverse user interactions.
+item re-ranking is one of the essential steps for post-
+                                                          6.2    Personalized Multimodal Alignment
+processing, how to leverage multimodal output for
+item re-ranking can be still under-explored.              To enhance the interaction between MLLMs and
+                                                          user-specific inputs, personalized multimodal align-
+5.4   Personalized Multimodal Fine-tuning                 ment ensures that models can adapt to unique pref-
+To achieve more efficient alignment of person-            erences and contexts. AlignBot (Chen et al., 2024c)
+alized MLLM recommendations, several works                aligns robot task planning with user reminders by
+using a tailored LLaVA-7B model as an adapter           els can be adapted to identify specific user-defined
+for GPT-4o. The alignment translates user instruc-      instances, such as objects or individuals in videos,
+tions into structured prompts enabling a dynamic        by extending the model’s vocabulary with learned
+retrieval mechanism that recalls relevant past expe-    instance-specific features. Additionally, Chen et al.
+riences and improves task execution. In contrast,       (2023) explore task-personalized fine-tuning for
+the Align and Retrieve framework (Xu et al., 2024)      visually-rich document entity retrieval, utilizing
+focuses on image retrieval with text feedback, using    meta-learning to extract unique entity types with
+a composition-and-decomposition learning strategy       few examples. Furthermore, Li et al. (2024b) pro-
+to unify visual and textual inputs. This approach       pose a generative cross-modal retrieval framework
+creates a robust multimodal representation for pre-     that fine-tunes MLLMs to memorize and retrieval
+cise alignment between composed queries and tar-        visual information directly from model parameters,
+get images. Both methods underscore the impor-          offering a novel approach to image retrieval. These
+tance of aligning multimodal inputs for complex         works show great potential of fine-tuning MLLMs
+retrieval tasks with personalized user needs.           to enhance their retrieval performance in personal-
+                                                        ized and diverse multimodal tasks.
+6.3   Personalized Multimodal Generation
+Capturing personalized user intents for more ac-        7   Evaluation
+curate retrieval results is another challenge for
+MLLMs. Ye et al. (2024a) propose an iterative           The evaluation of personalized MLLMs is typically
+user intent expansion framework, demonstrating          categorized based on the target task. UniMP (Wei
+how MLLMs can parse and compose personalized            et al., 2024b) explores various personalized tasks,
+multimodal user inputs. It refines the image search     such as personalized preference prediction, per-
+process through stages of parsing and logic gener-      sonalized explanation generation, and user-guided
+ation, which also allows user to iteratively refine     image generation, among others. Several mod-
+their search queries. Similarly, Wang et al. (2024e)    els focus on personalized recommendation tasks,
+develop a multimodal query suggestion method            as detailed in Section 5 (Karra and Tulabandhula,
+leveraging multi-agent reinforcement learning to        2024; Wei et al., 2023; Zhang et al., 2024; Ye et al.,
+generate more personalized and diverse query sug-       2024b). In the recommendation setting, the goal is
+gestions based on user images, thereby improv-          to rank the true target (e.g., item or movie) high-
+ing the relevance of retrieval results. Additionally,   est on the list relative to other items. Commonly
+Nguyen et al. (2024) present Yo’LLaVA, a per-           used metrics for this task include MRR, Recall@k,
+sonalized assistant that embeds user-specific visual    Hit@k, AUC, HR@k, and NDCG@k, which eval-
+concepts into latent tokens, enabling model tailored    uate how well the model ranks the true target item
+interactions and retrievals. These methods collec-      in comparison to other options.
+tively emphasize the integration of generation tech-       Personalized multimodal generation focuses on
+niques into retrieval systems for more precise and      creating customized content, such as images or
+personalized retrieval outcomes.                        text, by considering user-specific behavior. This
+                                                        includes generating personalized images, posters
+6.4   Personalized Multimodal Fine-tuning               for movies, or emojis, as demonstrated by Shen
+To further improve the retrieval capabilities of        et al. (2024). Shen et al. (2024) utilize various im-
+MLLMs in personalized contexts, various fine-           age similarity techniques to evaluate the similarity
+tuning techniques are developed. FedPAM (Feng           between the generated content and historical or tar-
+et al., 2024) introduces a federated learning           get items, employing metrics like LPIPS (Learned
+approach for fine-tuning text-to-image retrieval        Perceptual Image Patch Similarity) (Zhang et al.,
+models, allowing them to adapt to user-specific         2018) and SSIM (Structural Similarity Index Mea-
+data without sharing confidential information,          sure) (Wang et al., 2004). Additionally, this area
+thereby addressing the data heterogeneity chal-         encompasses personalized chatbots (Nguyen et al.,
+lenge. VITR (Gong et al., 2023) enhances vision         2024; Fei et al., 2024; Abuzuraiq and Pasquier,
+transformers for cross-modal information retrieval      2024), which assess models’ abilities to recognize
+by refining their ability to understand relationships   personalized subjects in images, handle visual and
+between image regions and textual descriptions.         text-based question answering (Alaluf et al., 2024;
+Yeh et al. (2023a) further demonstrate how mod-         Nguyen et al., 2024), and evaluate emotional intel-
+ligence by measuring emotion detection accuracy          Image Retrieval (ZS-CIR) evaluates the model’s
+and response diversity (Fei et al., 2024).               capability to retrieve images based on composi-
+                                                         tional queries, without requiring prior examples for
+   Gal et al. (2022) introduce personalized text-to-
+                                                         new combinations of known concepts. The metrics
+image generation, synthesizing novel scenes based
+                                                         typically used for these tasks include measuring
+on user-provided concepts and natural language
+                                                         the rank of the first ground truth (GT) image using
+instructions. They evaluate the model by calculat-
+                                                         Mean Reciprocal Rank (MRR), Recall@k to deter-
+ing the average pair-wise CLIP-space cosine simi-
+                                                         mine if any GT image appears in the top-k results,
+larity between generated images and the concept-
+                                                         and Mean Average Precision (MAP) to assess the
+specific training set, as well as the editability of
+                                                         ranking of all GT images. Additionally, MAP@k
+prompts by measuring the similarity between the
+                                                         evaluates the precision of GT images up to the top-
+generated images and their textual descriptions
+                                                         k retrieved results. Lastly, personalized semantic
+using CLIP embeddings. Other methods in this
+                                                         segmentation focuses on segmenting an instance of
+domain (Kim et al., 2024; Song et al., 2024) fo-
+                                                         a personalized concept in an image, based on a tex-
+cus on two main aspects: identity preservation,
+                                                         tual query that refers to that concept. Cohen et al.
+which assesses the model’s ability to maintain the
+                                                         (2022) use the intersection-over-union (IoU) metric
+subject’s identity, and prompt fidelity, which en-
+                                                         to evaluate this, reporting the rate of predictions
+sures alignment between the generated images and
+                                                         with IoU above a specified threshold.
+the textual prompts. Identity preservation is typ-
+ically measured by I-CLIP (Radford et al., 2021)         8   Datasets
+and I-DINO (Caron et al., 2021), which compute
+subject similarity using CLIP and DINO as back-
+bones. Prompt fidelity is evaluated through the             In recent years, the field of multimodal and per-
+CLIP-based text-image similarity score (T-CLIP).         sonalized learning has seen an increase in datasets,
+Image diversity is assessed using the Inception          each designed to address specific research chal-
+Score (IS) to capture the variation within gener-        lenges. These datasets span various domains,
+ated sets. Jang et al. (2024) introduce a new met-       including vision-language models, agent collab-
+ric, Detect-and-Compare (D&C), to evaluate multi-        oration networks, fashion retrieval, and cross-
+subject fidelity, addressing the limitations of exist-   modal retrieval tasks. For instance, ConCon-
+ing metrics (like I-CLIP or DINOv2) that do not to       Chi (Rosasco et al., 2024) and MSMTPInfo (Shi
+prevent identity mixing in multi-subject scenarios.      et al., 2024b) provide benchmarks for evaluat-
+Wang et al. (2024d) and others (Ma et al., 2024;         ing complex, dynamic user interactions in mul-
+Li et al., 2024a) focus on multi-subject personal-       timodal contexts, while fashion-focused datasets
+ized text-to-image generation, using M-DINO to           such as FashionIQ (Wu et al., 2021), and Fash-
+capture subject fidelity by avoiding subject neglect,    ion200k (Han et al., 2017) offer rich collections of
+which average fidelity metrics may overlook.             images and triplets for advancing research in fash-
+                                                         ion retrieval and recommendation. UniMP (Wei
+   Other tasks include personalized image retrieval,
+                                                         et al., 2024b) uses Amazon review data including
+where the Vision-Language model is expected to
+                                                         the user-item interactions and the items’ images.
+retrieve a collection of relevant images based on
+                                                         Other datasets like RefCOCOg (Mao et al., 2016)
+a textual query, using personalized context previ-
+                                                         and CLEVR (Johnson et al., 2017) focus on rela-
+ously provided by the user (either in the form of
+                                                         tionships between objects and regions in images,
+images or text). Cohen et al. (2022) first introduce
+                                                         contributing to cross-modal retrieval research. In
+the concept of Personalized Vision and Language,
+                                                         addition, a wide range of datasets in multimodal
+along with a benchmark to evaluate models on tasks
+                                                         recommendation and information retrieval are used
+like personalized image retrieval and personalized
+                                                         in developing and evaluating personalized MLLMs.
+image segmentation. ConCon-Chi (Rosasco et al.,
+                                                         We summarize a series of comprehensive datasets
+2024) further extend this by proposing a new bench-
+                                                         with detailed descriptions in Table 2 (Appendix A).
+mark that evaluates models’ ability to learn new
+meanings and their compositionality with known
+                                                         9   Open Problems & Challenges
+concepts. The setting of personalized retrieval has
+also been expanded to videos in the works of (kor,       In this section, we discuss open problems and high-
+2022; Yeh et al., 2023b). Zero-shot Composed             light important challenges for future work.
+9.1   Benchmark Datasets                                for categorizing the techniques used to personalize
+For developing better personalized MLLMs, there         MLLMs for individual users and provide a detailed
+is a need for more robust and comprehensive bench-      discussion of these approaches. Additionally, we
+mark datasets to improve both training and eval-        explore how these techniques can be combined or
+uation. Currently, there are limited multimodal         adapted when appropriate, highlighting both their
+benchmark datasets with user-specific information.      advantages and underlying principles. We offer a
+                                                        concise summary of the personalization tasks ad-
+9.2   Evaluation Metrics                                dressed in existing research and review the evalua-
+Many works have focused mainly on evaluating            tion metrics used for each task. We also summarize
+downstream tasks such as recommendation, rather         key datasets that are valuable for benchmarking
+than directly assessing the quality of generated out-   personalized MLLMs. Finally, we identify impor-
+puts. However, direct evaluation of generation qual-    tant open challenges that remain to be addressed.
+ity is crucial for improving these models.              This survey serves as a valuable resource for re-
+                                                        searchers and practitioners seeking to understand
+9.3   Multimodality Diversity and Complexity            and advance the development of personalized mul-
+Most existing work leverages only standard modali-      timodal large language models.
+ties such as text and images. Future work should ex-
+                                                        Limitations
+plore other more diverse types of modalities such as
+audio, video, graphs, among others. Furthermore,        In this paper, the extent of personalization in
+there is a need to develop techniques for supporting    MLLMs is inherently limited by the available
+many more modalities all at once, as most work          datasets and applications. Moreover, our focus is
+has focused only on two such modalities.                on MLLMs that incorporate specific personalized
+                                                        multimodal instructions, but we do not address in-
+9.4   Modality Fusion                                   herent model biases that may affect personalization.
+In MLLMs, a common challenge is the dominance           Addressing such biases could be a valuable direc-
+of text during modality fusion. Since these models      tion for future research in MLLM personalization.
+are typically pre-trained on vast amounts of text
+data, they become highly proficient at processing
+and interpreting textual information. Consequently,     References
+when integrating multiple modalities, there is a ten-   2022. Personalised clip or: how to find your vacation
+dency for the model to over-rely on text, which can       videos.
+overshadow other crucial data sources like images       Ahmed M Abuzuraiq and Philippe Pasquier. 2024. To-
+or audio. This text bias often results in suboptimal      wards personalizing generative ai with small data for
+performance in tasks that require a deeper under-         co-creation in the visual arts. In IUI Workshops.
+standing of non-textual information, where visual
+                                                        Harsh Agrawal, Aditya Mishra, Manish Gupta, et al.
+or audio cues are key to provide the full context.        2023. Multimodal persona based generation of comic
+                                                          dialogs. In Proceedings of the 61st Annual Meeting
+9.5   Theoretical Foundations                             of the Association for Computational Linguistics (Vol-
+Developing theoretical foundations for the tech-          ume 1: Long Papers), pages 14150–14164.
+niques behind personalized MLLMs remains an             Yuval Alaluf, Elad Richardson, Sergey Tulyakov, Kfir
+open problem (Wu et al., 2024a). Understand-              Aberman, and Daniel Cohen-Or. 2024. Myvlm:
+ing their theoretical limits and trade-offs is also       Personalizing vlms for user-specific queries. arXiv
+of fundamental importance. In spite of this, under-       preprint arXiv:2403.14599.
+standing the theoretical limits of these techniques     Rawan AlSaad, Alaa Abd-Alrazaq, Sabri Boughorbel,
+remains an open problem for future work.                  Arfan Ahmed, Max-Antoine Renault, Rafat Damseh,
+                                                          and Javaid Sheikh. 2024. Multimodal large language
+10    Conclusion                                          models in health care: Applications, challenges, and
+                                                          future outlook. Journal of Medical Internet Research,
+In this work, we present a comprehensive survey on        26:e59505.
+personalized multimodal large language models, fo-      Tamara L. Berg, Alexander C. Berg, and Jonathan Shih.
+cusing on their architectures, training methods, and      2010. Automatic attribute discovery and charac-
+applications. We introduce an intuitive taxonomy          terization from noisy web data. In Proceedings of
+  the 11th European Conference on Computer Vision:            Winter Conference on Applications of Computer Vi-
+  Part I, ECCV’10, page 663–676, Berlin, Heidelberg.          sion, pages 958–979.
+  Springer-Verlag.
+                                                            Qian Dai, Dong Wei, Hong Liu, Jinghan Sun, Liansheng
+Mathilde Caron, Hugo Touvron, Ishan Misra, Hervé              Wang, and Yefeng Zheng. 2024. Federated modality-
+ Jégou, Julien Mairal, Piotr Bojanowski, and Armand           specific encoders and multimodal anchors for person-
+ Joulin. 2021. Emerging properties in self-supervised         alized brain tumor segmentation. In Proceedings of
+ vision transformers. In Proceedings of the IEEE/CVF          the AAAI Conference on Artificial Intelligence, vol-
+ international conference on computer vision, pages           ume 38, pages 1445–1453.
+ 9650–9660.
+Jiayi Chen, Hanjun Dai, Bo Dai, Aidong Zhang, and           Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li,
+   Wei Wei. 2023. On task-personalized multimodal              and Li Fei-Fei. 2009. Imagenet: A large-scale hier-
+   few-shot learning for visually-rich document entity         archical image database. In 2009 IEEE Conference
+   retrieval. In Findings of the Association for Computa-      on Computer Vision and Pattern Recognition, pages
+   tional Linguistics: EMNLP 2023, pages 9006–9025,            248–255.
+   Singapore. Association for Computational Linguis-
+   tics.                                                    Xiuqi Deng, Lu Xu, Xiyao Li, Jinkai Yu, Erpeng Xue,
+                                                              Zhongyuan Wang, Di Zhang, Zhaojie Liu, Guorui
+Jin Chen, Zheng Liu, Xu Huang, Chenwang Wu, Qi Liu,           Zhou, Yang Song, et al. 2024. End-to-end training of
+   Gangwei Jiang, Yuanhao Pu, Yuxuan Lei, Xiaolong            multimodal model and ranking model. arXiv preprint
+   Chen, Xingmei Wang, et al. 2024a. When large               arXiv:2404.06078.
+   language models meet personalization: Perspectives
+   of challenges and opportunities. World Wide Web,         Yue Fan, Kevin K Bowden, Wen Cui, Winson Chen,
+   27(4):42.                                                  Vrindavan Harrison, Angela Ramirez, Saaket Agashe,
+                                                              Xinyue Gabby Liu, Neha Pullabhotla, NQJ Bhee-
+Long Chen, Oleg Sinavski, Jan Hünermann, Alice Karn-          manpally, et al. 2023. Athena 3.0: personalized
+  sund, Andrew James Willmott, Danny Birch, Daniel            multimodal chatbot with neuro-symbolic dialogue
+  Maund, and Jamie Shotton. 2024b. Driving with               generators. Alexa Prize Soc Bot Grand Challenge, 5.
+  llms: Fusing object-level vector modality for ex-
+  plainable autonomous driving. In 2024 IEEE In-            Hao Fei, Han Zhang, Bin Wang, Lizi Liao, Qian Liu,
+  ternational Conference on Robotics and Automation           and Erik Cambria. 2024. Empathyear: An open-
+  (ICRA), pages 14093–14100. IEEE.                            source avatar multimodal empathetic chatbot. arXiv
+Pengan Chen, Ziniu Wu, Jiawei Sun, Dong Wang, Peng            preprint arXiv:2406.15177.
+  Zhou, Nieqing Cao, Yan Ding, Bin Zhao, Xuelong Li,
+  et al. 2024c. Alignbot: Aligning vlm-powered cus-         Yueying Feng, Fan Ma, Wang Lin, Chang Yao, Jingyuan
+  tomized task planning with user reminders through           Chen, and Yi Yang. 2024. Fedpam: Federated person-
+  fine-tuning for household robots. arXiv preprint            alized augmentation model for text-to-image retrieval.
+  arXiv:2409.11905.                                           In Proceedings of the 2024 International Conference
+                                                              on Multimedia Retrieval, pages 1185–1189.
+Wen Chen, Pipei Huang, Jiaming Xu, Xin Guo, Cheng
+  Guo, Fei Sun, Chao Li, Andreas Pfadler, Huan Zhao,        Rinon Gal, Yuval Alaluf, Yuval Atzmon, Or Patashnik,
+  and Binqiang Zhao. 2019. Pog: personalized outfit           Amit H Bermano, Gal Chechik, and Daniel Cohen-
+  generation for fashion recommendation at alibaba            Or. 2022. An image is worth one word: Personaliz-
+  ifashion. In Proceedings of the 25th ACM SIGKDD             ing text-to-image generation using textual inversion.
+  international conference on knowledge discovery &           arXiv preprint arXiv:2208.01618.
+  data mining, pages 2662–2670.
+                                                            Yan Gong, Georgina Cosma, and Axel Finke. 2023.
+Muntabir Hasan Choudhury, Lamia Salsabil, William A           Vitr: augmenting vision transformers with relation-
+ Ingram, Edward A Fox, and Jian Wu. 2024. Etdpc:              focused learning for cross-modal information re-
+ A multimodality framework for classifying pages in           trieval. ACM Transactions on Knowledge Discovery
+ electronic theses and dissertations. In Proceedings          from Data.
+ of the AAAI Conference on Artificial Intelligence,
+ volume 38, pages 22878–22884.                              Xintong Han, Zuxuan Wu, Phoenix X Huang, Xiao
+Niv Cohen, Rinon Gal, Eli A Meirom, Gal Chechik, and          Zhang, Menglong Zhu, Yuan Li, Yang Zhao, and
+  Yuval Atzmon. 2022. “this is my unicorn, fluffy”:           Larry S Davis. 2017. Automatic spatially-aware fash-
+  Personalizing frozen vision-language representations.       ion concept discovery. In Proceedings of the IEEE
+  In European conference on computer vision, pages            international conference on computer vision, pages
+  558–577. Springer.                                          1463–1471.
+
+Can Cui, Yunsheng Ma, Xu Cao, Wenqian Ye, Yang              Ruining He and Julian McAuley. 2016. Ups and downs:
+  Zhou, Kaizhao Liang, Jintai Chen, Juanwu Lu, Zi-            Modeling the visual evolution of fashion trends with
+  chong Yang, Kuei-Da Liao, et al. 2024. A sur-               one-class collaborative filtering. In proceedings of
+  vey on multimodal large language models for au-             the 25th international conference on world wide web,
+  tonomous driving. In Proceedings of the IEEE/CVF            pages 507–517.
+Hengchang Hu, Qijiong Liu, Chuang Li, and Min-Yen          Med-pmc: Medical personalized multi-modal con-
+  Kan. 2024. Lightweight modality adaptation to se-        sultation with a proactive ask-first-observe-next
+  quential recommendation via correlation supervision.     paradigm. arXiv preprint arXiv:2408.08693.
+  In European Conference on Information Retrieval,
+  pages 123–139. Springer.                               Jingping Liu, Mingchuan Zhang, Weichen Li, Chao
+                                                            Wang, Shuang Li, Haiyun Jiang, Sihang Jiang,
+Sangwon Jang, Jaehyeong Jo, Kimin Lee, and Sung Ju          Yanghua Xiao, and Yunwen Chen. 2024b. Be-
+  Hwang. 2024. Identity decoupling for multi-subject        yond entities: A large-scale multi-modal knowledge
+  personalization of text-to-image models. arXiv            graph with triplet fact grounding. In Proceedings of
+  preprint arXiv:2404.04243.                                the AAAI Conference on Artificial Intelligence, vol-
+                                                            ume 38, pages 18653–18661.
+Justin Johnson, Bharath Hariharan, Laurens Van
+  Der Maaten, Li Fei-Fei, C Lawrence Zitnick, and        Yuqing Liu, Yu Wang, Lichao Sun, and Philip S Yu.
+  Ross Girshick. 2017. Clevr: A diagnostic dataset         2024c. Rec-gpt4v: Multimodal recommendation
+  for compositional language and elementary visual         with large vision-language models. arXiv preprint
+  reasoning. In Proceedings of the IEEE conference         arXiv:2402.08670.
+  on computer vision and pattern recognition, pages
+  2901–2910.                                             Ming Y Lu, Bowen Chen, Drew FK Williamson,
+                                                           Richard J Chen, Melissa Zhao, Aaron K Chow, Kenji
+Saketh Reddy Karra and Theja Tulabandhula. 2024. In-       Ikemura, Ahrong Kim, Dimitra Pouli, Ankush Patel,
+  terarec: Interactive recommendations using multi-        et al. 2024. A multimodal generative ai copilot for
+  modal large language models. In Pacific-Asia Con-        human pathology. Nature, pages 1–3.
+  ference on Knowledge Discovery and Data Mining,
+                                                         Hanjia Lyu, Song Jiang, Hanqing Zeng, Yinglong Xia,
+  pages 32–43. Springer.
+                                                           Qifan Wang, Si Zhang, Ren Chen, Chris Leung, Jiajie
+Kangyeol Kim, Wooseok Seo, Sehyun Nam, Bodam               Tang, and Jiebo Luo. 2024a. Llm-rec: Personalized
+  Kim, Suhyeon Jeong, Wonwoo Cho, Jaegul Choo,             recommendation via prompting large language mod-
+  and Youngjae Yu. 2024. Layout-and-retouch: A             els. In Findings of the Association for Computational
+  dual-stage framework for improving diversity in          Linguistics: NAACL 2024, pages 583–612.
+  personalized image generation. arXiv preprint          Hanjia Lyu and Jiebo Luo. 2022. Understanding po-
+  arXiv:2407.09779.                                        litical polarization via jointly modeling users, con-
+                                                           nections and multimodal contents on heterogeneous
+Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi
+                                                           graphs. In Proceedings of the 30th ACM Interna-
+  Mao, Chloe Rolland, Laura Gustafson, Tete Xiao,
+                                                           tional Conference on Multimedia, pages 4072–4082.
+  Spencer Whitehead, Alexander C Berg, Wan-Yen Lo,
+  et al. 2023. Segment anything. In Proceedings of the   Hanjia Lyu, Ryan Rossi, Xiang Chen, Md Mehrab Tan-
+  IEEE/CVF International Conference on Computer            jim, Stefano Petrangeli, Somdeb Sarkhel, and Jiebo
+  Vision, pages 4015–4026.                                 Luo. 2024b. X-reflect: Cross-reflection prompting
+                                                           for multimodal recommendation. arXiv preprint
+Ishita Kumar, Snigdha Viswanathan, Sushrita Yerra,         arXiv:2408.15172.
+   Alireza Salemi, Ryan A Rossi, Franck Dernoncourt,
+   Hanieh Deilamsalehy, Xiang Chen, Ruiyi Zhang,         Jian Ma, Junhao Liang, Chen Chen, and Haonan Lu.
+   Shubham Agarwal, et al. 2024. Longlamp: A bench-         2024. Subject-diffusion: Open domain personal-
+   mark for personalized long-form text generation.         ized text-to-image generation without test-time fine-
+   arXiv preprint arXiv:2407.11016.                         tuning. In ACM SIGGRAPH 2024 Conference Pa-
+                                                            pers, pages 1–12.
+Wei Li, Xue Xu, Jiachen Liu, and Xinyan Xiao.
+ 2024a. Unimo-g: Unified image generation through        Junhua Mao, Jonathan Huang, Alexander Toshev, Oana
+ multimodal conditional diffusion. arXiv preprint          Camburu, Alan Yuille, and Kevin Murphy. 2016.
+ arXiv:2401.13388.                                         Generation and comprehension of unambiguous ob-
+                                                           ject descriptions. In 2016 IEEE Conference on Com-
+Yongqi Li, Wenjie Wang, Leigang Qu, Liqiang Nie,           puter Vision and Pattern Recognition (CVPR), pages
+  Wenjie Li, and Tat-Seng Chua. 2024b. Generative          11–20.
+  cross-modal retrieval: Memorizing images in mul-
+  timodal language models for retrieval and beyond.      Julian McAuley, Christopher Targett, Qinfeng Shi, and
+  arXiv preprint arXiv:2402.10805.                          Anton Van Den Hengel. 2015. Image-based recom-
+                                                            mendations on styles and substitutes. In Proceedings
+Yunxin Li, Baotian Hu, Wenhan Luo, Lin Ma,                  of the 38th international ACM SIGIR conference on
+  Yuxin Ding, and Min Zhang. 2024c. A multi-                research and development in information retrieval,
+  modal in-context tuning approach for e-commerce           pages 43–52.
+  product description generation. arXiv preprint
+  arXiv:2402.13587.                                      Thao Nguyen, Haotian Liu, Yuheng Li, Mu Cai, Utkarsh
+                                                           Ojha, and Yong Jae Lee. 2024. Yo’llava: Your
+Hongcheng Liu, Yusheng Liao, Siqv Ou, Yuhao Wang,          personalized language and vision assistant. arXiv
+  Heyang Liu, Yanfeng Wang, and Yu Wang. 2024a.            preprint arXiv:2406.09400.
+Yongxin Ni, Yu Cheng, Xiangyan Liu, Junchen Fu,            Tomoya Sugihara, Shuntaro Masuda, Ling Xiao, and
+  Youhua Li, Xiangnan He, Yongfeng Zhang, and                Toshihiko Yamasaki. 2024. Language-guided self-
+  Fajie Yuan. 2023. A content-driven micro-video             supervised video summarization using text seman-
+  recommendation dataset at scale. arXiv preprint            tic matching considering the diversity of the video.
+  arXiv:2309.15379.                                          arXiv preprint arXiv:2405.08890.
+
+Maitreya Patel, Sangmin Jung, Chitta Baral, and Yezhou     Jiahao Tian, Jinman Zhao, Zhenkai Wang, and Zhicheng
+ Yang. 2024. lambda-eclipse: Multi-concept person-            Ding. 2024. Mmrec: Llm based multi-modal recom-
+  alized text-to-image diffusion models by leveraging         mender system. arXiv preprint arXiv:2408.04211.
+  clip latent space. arXiv preprint arXiv:2402.05195.
+                                                           Hei-Chia Wang, Martinus Maslim, and Wei-Ting Hong.
+Renjie Pi, Jianshu Zhang, Tianyang Han, Jipeng Zhang,        2024a. Personalized time-sync comment generation
+  Rui Pan, and Tong Zhang. 2024. Personalized visual         based on a multimodal transformer. Multimedia Sys-
+  instruction tuning. arXiv preprint arXiv:2410.07113.       tems, 30(2):105.
+
+                                                           Jianing Wang, Junda Wu, Yupeng Hou, Yao Liu, Ming
+Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya            Gao, and Julian McAuley. 2024b. Instructgraph:
+  Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sas-          Boosting large language models via graph-centric
+  try, Amanda Askell, Pamela Mishkin, Jack Clark,             instruction tuning and preference alignment. arXiv
+  et al. 2021. Learning transferable visual models from       preprint arXiv:2402.08785.
+  natural language supervision. In International confer-
+  ence on machine learning, pages 8748–8763. PMLR.         Lei Wang, Yi Hu, Jiabang He, Xing Xu, Ning Liu, Hui
+                                                             Liu, and Heng Tao Shen. 2024c. T-sciq: Teaching
+Dimitrios Rafailidis, Pavlos Kefalas, and Yannis             multimodal chain-of-thought reasoning via large lan-
+  Manolopoulos. 2017. Preference dynamics with mul-          guage model signals for science question answering.
+  timodal user-item interactions in social media rec-        In Proceedings of the AAAI Conference on Artificial
+  ommendation. Expert Systems with Applications,             Intelligence, volume 38, pages 19162–19170.
+  74:11–18.
+                                                           X Wang, Siming Fu, Qihan Huang, Wanggui He, and
+Andrea Rosasco, Stefano Berti, Giulia Pasquale, Dami-        Hao Jiang. 2024d. Ms-diffusion: Multi-subject zero-
+  ano Malafronte, Shogo Sato, Hiroyuki Segawa, Tet-          shot image personalization with layout guidance.
+  sugo Inada, and Lorenzo Natale. 2024. Concon-chi:          arXiv preprint arXiv:2406.07209.
+  Concept-context chimera benchmark for personal-
+  ized vision-language tasks. In Proceedings of the        Xuan Wang, Guanhong Wang, Wenhao Chai, Jiayu
+  IEEE/CVF Conference on Computer Vision and Pat-            Zhou, and Gaoang Wang. 2023. User-aware prefix-
+  tern Recognition (CVPR), pages 22239–22248.                tuning is a good learner for personalized image cap-
+                                                             tioning. In Chinese Conference on Pattern Recogni-
+Jialie Shen, Marie Morrison, and Zhu Li. 2023. Scalable      tion and Computer Vision (PRCV), pages 384–395.
+   multimodal learning and multimedia recommenda-            Springer.
+   tion. In 2023 IEEE 9th International Conference on
+   Collaboration and Internet Computing (CIC), pages       Zheng Wang, Bingzheng Gan, and Wei Shi. 2024e. Mul-
+   121–124. IEEE.                                            timodal query suggestion with multi-agent reinforce-
+                                                             ment learning from human feedback. In Proceedings
+Xiaoteng Shen, Rui Zhang, Xiaoyan Zhao, Jieming Zhu,         of the ACM on Web Conference 2024, pages 1374–
+  and Xi Xiao. 2024. Pmg: Personalized multimodal            1385.
+  generation with large language models. In Proceed-
+                                                           Zhou Wang, Alan C Bovik, Hamid R Sheikh, and Eero P
+  ings of the ACM on Web Conference 2024, pages
+                                                             Simoncelli. 2004. Image quality assessment: from
+  3833–3843.
+                                                             error visibility to structural similarity. IEEE transac-
+                                                             tions on image processing, 13(4):600–612.
+Jing Shi, Wei Xiong, Zhe Lin, and Hyun Joon Jung.
+   2024a. Instantbooth: Personalized text-to-image gen-    Tianxin Wei, Bowen Jin, Ruirui Li, Hansi Zeng,
+   eration without test-time finetuning. In Proceedings      Zhengyang Wang, Jianhui Sun, Qingyu Yin, Hanqing
+   of the IEEE/CVF Conference on Computer Vision             Lu, Suhang Wang, Jingrui He, and Xianfeng Tang.
+   and Pattern Recognition, pages 8543–8552.                 2024a. Towards unified multi-modal personalization:
+                                                             Large vision-language models for generative recom-
+Yunxiao Shi, Min Xu, Haimin Zhang, Xing Zi, and              mendation and beyond. In The Twelfth International
+  Qiang Wu. 2024b. A learnable agent collaboration           Conference on Learning Representations.
+  network framework for personalized multimodal ai
+  search engine. arXiv preprint arXiv:2409.00636.          Tianxin Wei, Bowen Jin, Ruirui Li, Hansi Zeng,
+                                                             Zhengyang Wang, Jianhui Sun, Qingyu Yin, Han-
+Kunpeng Song, Yizhe Zhu, Bingchen Liu, Qing Yan,             qing Lu, Suhang Wang, Jingrui He, and Xianfeng
+  Ahmed Elgammal, and Xiao Yang. 2024. Moma:                 Tang. 2024b. Towards unified multi-modal personal-
+  Multimodal llm adapter for fast personalized image         ization: Large vision-language models for generative
+  generation. arXiv preprint arXiv:2404.05674.               recommendation and beyond. In ICLR.
+Wei Wei, Chao Huang, Lianghao Xia, and Chuxu Zhang.       Chun-Hsiao Yeh, Bryan Russell, Josef Sivic,
+  2023. Multi-modal self-supervised learning for rec-       Fabian Caba Heilbron, and Simon Jenni. 2023b.
+  ommendation. In Proceedings of the ACM Web Con-           Meta-personalizing vision-language models to find
+  ference 2023, pages 790–800.                              named instances in video. In Proceedings of the
+                                                            IEEE/CVF Conference on Computer Vision and
+Zhichao Wei, Qingkun Su, Long Qin, and Weizhi Wang.         Pattern Recognition, pages 19123–19132.
+  2024c. Mm-diff: High-fidelity image personalization
+  via multi-modal condition integration. arXiv preprint   Qian Yong, Jueqi Wei, YiRen Zhang, XiLun Zhang,
+  arXiv:2403.15059.                                         Chao Wei, Simiao Chen, Yunhe Li, Cheng Ye, Bing
+                                                            Huang, and Hao Wang. 2023. Cgsmp: Controllable
+Hui Wu, Yupeng Gao, Xiaoxiao Guo, Ziad Al-Halah,            generative summarization via multimodal prompt. In
+  Steven Rennie, Kristen Grauman, and Rogerio Feris.        Proceedings of the 1st Workshop on Large Generative
+  2021. Fashion iq: A new dataset towards retrieving        Models Meet Multimodal Applications, pages 45–50.
+  images by natural language feedback. In Proceedings
+  of the IEEE/CVF Conference on computer vision and       Peter Young, Alice Lai, Micah Hodosh, and Julia Hock-
+  pattern recognition, pages 11307–11317.                   enmaier. 2014. From image descriptions to visual
+                                                            denotations: New similarity metrics for semantic in-
+Junda Wu, Xintong Li, Tong Yu, Yu Wang, Xiang Chen,         ference over event descriptions. Transactions of the
+  Jiuxiang Gu, Lina Yao, Jingbo Shang, and Julian           Association for Computational Linguistics, 2:67–78.
+  McAuley. 2024a. Commit: Coordinated instruction
+  tuning for multimodal large language models. arXiv      Xiaohan Yu, Li Zhang, Xin Zhao, Yue Wang, and Zhon-
+  preprint arXiv:2407.20454.                                grui Ma. 2024. Ra-rec: An efficient id representation
+                                                            alignment framework for llm-based recommendation.
+Yihan Wu, Ruihua Song, Xu Chen, Hao Jiang, Zhao             arXiv preprint arXiv:2402.04527.
+  Cao, and Jin Yu. 2024b. Understanding human pref-
+  erences: Towards more personalized video to text        Peiyan Zhang, Yuchen Yan, Xi Zhang, Liying Kang,
+  generation. In Proceedings of the ACM on Web Con-         Chaozhuo Li, Feiran Huang, Senzhang Wang, and
+  ference 2024, pages 3952–3963.                            Sunghun Kim. 2024. Gpt4rec: Graph prompt tuning
+                                                            for streaming recommendation. In Proceedings of
+Jingyi Xie, Rui Yu, He Zhang, Sooyeon Lee, Syed Ma-         the 47th International ACM SIGIR Conference on
+   sum Billah, and John M Carroll. 2024. Emerging           Research and Development in Information Retrieval,
+   practices for large multimodal model (lmm) assis-        pages 1774–1784.
+   tance for people with visual impairments: Implica-
+                                                          Richard Zhang, Phillip Isola, Alexei A Efros, Eli Shecht-
+   tions for design. arXiv preprint arXiv:2407.08882.
+                                                            man, and Oliver Wang. 2018. The unreasonable ef-
+Yahui Xu, Yi Bin, Jiwei Wei, Yang Yang, Guoqing             fectiveness of deep features as a perceptual metric.
+  Wang, and Heng Tao Shen. 2024. Align and retrieve:        In Proceedings of the IEEE conference on computer
+  Composition and decomposition learning in image           vision and pattern recognition, pages 586–595.
+  retrieval with text feedback. IEEE Transactions on      Linhao Zhong, Yan Hong, Wentao Chen, Binglin Zhou,
+  Multimedia.                                               Yiyi Zhang, Jianfu Zhang, and Liqing Zhang. 2024.
+                                                            User-friendly customized generation with multi-
+Zhengyuan Yang, Linjie Li, Kevin Lin, Jianfeng
+                                                            modal prompts. arXiv preprint arXiv:2405.16501.
+  Wang, Chung-Ching Lin, Zicheng Liu, and Lijuan
+  Wang. 2023. The dawn of lmms: Preliminary               Peilin Zhou, Meng Cao, You-Liang Huang, Qichen Ye,
+  explorations with gpt-4v (ision). arXiv preprint          Peiyan Zhang, Junling Liu, Yueqi Xie, Yining Hua,
+  arXiv:2309.17421, 9(1):1.                                 and Jaeboum Kim. 2023. Exploring recommendation
+                                                            capabilities of gpt-4v (ision): A preliminary case
+Yilin Ye, Qian Zhu, Shishi Xiao, Kang Zhang, and            study. arXiv preprint arXiv:2311.04199.
+  Wei Zeng. 2024a. The contemporary art of image
+  search: Iterative user intent expansion via vision-     A    Summary of Datasets in Personalized
+  language model. Proceedings of the ACM on Human-
+  Computer Interaction, 8(CSCW1):1–31.                         MLLM Recommendation and
+                                                               Retrieval
+Yuyang Ye, Zhi Zheng, Yishan Shen, Tianshu Wang,
+  Hengruo Zhang, Peijun Zhu, Runlong Yu, Kai Zhang,       To tackle these diverse challenges, researchers em-
+  and Hui Xiong. 2024b. Harnessing multimodal large       ploy a wide array of approaches, ranging from the
+  language models for multimodal sequential recom-
+                                                          use of established, large-scale public datasets to
+  mendation. arXiv preprint arXiv:2408.09698.
+                                                          the creation of tailored datasets for specific tasks.
+Chun-Hsiao Yeh, Bryan Russell, Josef Sivic,               For example, studies on multimodal sequential rec-
+  Fabian Caba Heilbron, and Simon Jenni. 2023a.           ommendation often leverage datasets like Amazon-
+  Meta-personalizing vision-language models to find
+  named instances in video. In Proceedings of the
+                                                          Baby (McAuley et al., 2015), Amazon-Game (He
+  IEEE/CVF Conference on Computer Vision and              and McAuley, 2016), and MicroLens (Ni et al.,
+  Pattern Recognition (CVPR), pages 19123–19132.          2023) for evaluation. In contrast, some researchers
+ Dataset Name                           Description                                              Stats
+ ConCon-Chi (Rosasco et al., 2024)      Benchmark for personalized vision-language tasks         4008 images; 20 concepts; 101 contexts
+ MSMTPInfo (Shi et al., 2024b)          Evaluation for Agent Collaboration Network               13 themes; multiple sessions; dynamic user topics
+ Shoes (Berg et al., 2010)              Dataset for interactive fashion image retrieval          8900 training triplets; 1700 test triplets
+ Fashion200k (Han et al., 2017)         Large-scale fashion dataset with over 200K images        172K training images; 33K test queries
+ Business Dataset (Deng et al., 2009)   User query images from a real image search engine        50K images; 5 suggestions per image
+ Yo’LLaVA (Nguyen et al., 2024)         Personalized language and vision assistant dataset       40 subjects; 10-20 images per subject
+ RefCOCOg (Mao et al., 2016)            Images from MS-COCO with relational annotations          21899 train, 1300 val and 2600 test images
+ Flickr30K (Young et al., 2014)         Benchmark for visual-semantic embedding networks         29000 train, 1000 validation and 1000 test images
+ MicroLens (Ni et al., 2023)            Video introductions and cover images                     1 billion user-item interactions; 34 million users
+ Amazon-Baby (McAuley et al., 2015)     Images and product descriptions                          180 million relationships; 6 million objects;
+ interaRec (Karra and Tulabandhula, Screenshot based recommendations using multi- 1,500 sessions; item IDs; screenshots of webpages
+ 2024)                              modal large language models
+ POG (Chen et al., 2019)                Fashion rec by personalized outfit generation            1.43 million outfits; 80 most frequent categories;
+ MovieLens (Ni et al., 2023)            Describes 5-star rating and free-text tagging activity   100K ratings; 3,683 tag applications; 9,742 movies
+
+
+                                                    Table 2: Summary of Datasets.
+
+
+harness the power of Large Language Models                                  B.3      Personalized MLLM Text Generation
+(LLMs) to generate synthetic data, as exempli-                              Wei et al. (2024a) propose a multimodal learning
+fied by the Business Dataset (Deng et al., 2009),                           framework where a vision model extracts features
+which utilizes GPT-generated suggestions for la-                            from images and a language model learns from
+beling. The development of custom datasets also                             texts. The extracted features are jointly modeled to
+plays a crucial role, as seen in POG’s (Chen                                yield personalized product recommendation, pref-
+et al., 2019) adaptation of the iFashion dataset                            erence prediction, explanation generation. Addi-
+for personalized fashion recommendations, Inter-                            tionally, Wang et al. (2024c) leverage multimodal
+aRec’s (Karra and Tulabandhula, 2024) collection                            learning to answer science-related questions using
+of screenshots from Amazon websites to create a                             chain-of-thought reasoning.
+new resource for multimodal recommendation re-
+search, and LongLaMP (Kumar et al., 2024) bench-                            B.4      Personalized MLLM Image Generation
+mark to evaluate long-form personalized text gen-                           Shen et al. (2024) utilize MLLMs to generate
+eration. A summary of these datasets can be found                           movie posters tailored to users’ preferences. Sim-
+in Table 2.                                                                 ilarly, Song et al. (2024) and Wei et al. (2024c)
+                                                                            leverage LLMs to generate images based on visual
+B     Applications                                                          and textual prompts.
+
+                                                                            B.5      Miscellaneous Applications
+Personalized MLLMs have an extensive range of
+applications, targeting various tasks in the textual,                       MLLMs have been applied in various other fields,
+visual, audio, and other domains.                                           such as helping visually impaired individuals
+                                                                            by verifying images and offering outfit sugges-
+                                                                            tions (Xie et al., 2024). Moreover, MLLMs are
+B.1    Personalized MLLM Recommendation                                     used on brain tumor segmentation and tumor iden-
+Liu et al. (2024b) develop a multimodal knowledge                           tification (Dai et al., 2024).
+graph that recommends missing entities in triplet
+structures. Their approach predicts relationships
+between entities (e.g., people) within images.
+
+B.2    Personalized MLLM Retrieval
+
+Choudhury et al. (2024) classify Electronic Theses
+and Dissertations (ETD) through a combination of
+visual and textual learning.
+

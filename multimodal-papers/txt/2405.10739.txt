@@ -1,0 +1,2097 @@
+                                                    Efficient Multimodal Large Language Models:
+                                                                      A Survey
+
+
+                                                   Yizhang Jin1,2,* , Jian Li1,* , Yexin Liu3 , Tianjun Gu4 , Kai Wu1 , Zhengkai Jiang1 ,
+                                                   Muyang He3 , Bo Zhao3 , Xin Tan4 , Zhenye Gan1 , Yabiao Wang1 , Chengjie Wang1 ,
+                                                                                        Lizhuang Ma2
+
+
+
+
+arXiv:2405.10739v3 [cs.CV] 22 Jan 2026
+                                                                           1
+                                                                               Youtu Lab, Tencent, 2 SJTU, 3 BAAI, 4 ECNU
+
+
+
+                                                                                               Abstract
+                                                      In the past year, Multimodal Large Language Models (MLLMs) have demon-
+                                                      strated remarkable performance in tasks such as visual question answering, vi-
+                                                      sual understanding and reasoning. However, the extensive model size and high
+                                                      training and inference costs have hindered the widespread application of MLLMs
+                                                      in academia and industry. Thus, studying efficient and lightweight MLLMs
+                                                      has enormous potential, especially in edge computing scenarios. In this survey,
+                                                      we provide a comprehensive and systematic review of the current state of effi-
+                                                      cient MLLMs. Specifically, we summarize the timeline of representative effi-
+                                                      cient MLLMs, research state of efficient structures and strategies, and the appli-
+                                                      cations. Finally, we discuss the limitations of current efficient MLLM research
+                                                      and promising future directions. Please refer to our GitHub repository for more
+                                                      details: https://github.com/lijiannuist/Efficient-Multimodal-LLMs-Survey.
+
+
+                                         1       Introduction
+                                         Large-scale pretraining, a leading approach in Artificial Intelligence(AI), has seen general-purpose
+                                         models like large language and multimodal models outperform specialized deep learning models
+                                         across many tasks. The remarkable abilities of Large Language Models (LLM) have inspired efforts
+                                         to merge them with other modality-based models to enhance multimodal competencies. This con-
+                                         cept is further supported by the remarkable success of proprietary models like OpenAI’s GPT-4V [1]
+                                         and Google’s Gemini[2]. As a result, Multimodal Large Language Models (MLLMs) have emerged,
+                                         including the mPLUG-Owl series[3, 4], InternVL [5], EMU [6], LLaVA [7], InstructBLIP [8],
+                                         MiniGPT-v2 [9], and MiniGPT-4[10]. These models circumvent the computational cost of train-
+                                         ing from scratch by effectively leveraging the pre-training knowledge of each modality. MLLMs
+                                         inherit the cognitive capabilities of LLMs, showcasing numerous remarkable features such as robust
+                                         language generation and transfer learning abilities. Moreover, by establishing strong representa-
+                                         tional connections and alignments with other modality-based models, MLLMs can process inputs
+                                         from multiple modalities, significantly broadening their application scope.
+                                         The success of MLLMs is largely attributed to the scaling law: the performance of an AI model
+                                         improves as more resources, such as data, computational power, or model size, are invested into it.
+                                         However, scalability comes at the cost of high resource demands, which hinders the development
+                                         and deployment of large models. For example, the training of MiniGPT-v2 necessitates a total of
+                                         over 800 GPU hours, as calculated based on NVIDIA A100 GPUs [9]. This imposes a substantial
+                                         expense that is difficult for researchers outside of major enterprises to bear. Aside from training,
+                                             1
+                                                 * Equal contribution.
+                                             2
+                                                  Yizhang Jin is an intern in Tencent, and Jian Li is the project leader.
+
+
+                                         Preprint. Under review.
+                            Figure 1: The timeline of efficient MLLMs.
+
+
+inference constitutes the major portion of resource consumption in mllm. Consider a typical scenario
+where the model input consists of an image with dimensions of 336 × 336 pixels and a text prompt
+with a length of 40 tokens, performing inference with LLaVA-1.5 and a Vicuna-13B LLM backbone
+requires 18.2T FLOPS and 41.6G of memory usage. The resource-intensive nature of large-scale
+models has also sparked concerns about democratization and privacy protection, considering that the
+current mainstream MLLMs, represented by GPT-4V and Gemini, are controlled by a few dominant
+corporations and operate in the cloud. As demonstrated in the aforementioned experiments, even for
+open-source MLLMs, high requirements for computation resources make it challenging to run them
+on edge devices. This further exacerbates the challenges associated with ensuring equitable access
+and preserving user privacy.
+In light of these challenges, there has been growing attention on the study of efficient MLLMs.
+The primary objective of these endeavors is to decrease the resource consumption of MLLMs
+and broaden their applicability while minimizing performance degradation. Research on efficient
+MLLMs began with replacing large language models with lightweight counterparts and performing
+typical visual instruction tuning. Subsequent studies further enhanced capabilities and expanded
+use cases in the following ways: (1) lighter architectures were introduced with an emphasis on ef-
+ficiency, aiming to reduce the number of parameters or computational complexity[25, 13, 18]; (2)
+more specialized components were developed, focusing on efficiency optimizations tailored to ad-
+vanced architectures or imbuing specific properties, such as locality[19, 17, 12]; and (3) support
+for resource-sensitive tasks was provided, with some works employing visual token compression
+to boost efficiency, enabling the transfer of MLLM capabilities to resource-intensive tasks such as
+high-resolution image and video understanding[35, 39, 14, 40].
+In this survey, we aim to present an exhaustive organization of the recent advancements in the rapidly
+evolving field of efficient MLLMs, as depicted in Figure.2. We organize the literature in a taxonomy
+consisting of six primary categories, encompassing various aspects of efficient MLLMs, including
+architecture, efficient vision, efficient LLMs, training, data and benchmarks, and applications.
+
+       • Architecture focuses on the MLLM framework developed by efficient techniques to reduce
+         the computational cost. The architecture is composed of multiple modality-based funda-
+         mental models, exhibits characteristics distinct from single-modal models, thus promoting
+         the development of novel technologies.
+
+       • Efficient Vision explores optimizing efficient visual fracture extraction strategies, empha-
+         sizing methods that boost efficiency while maintaining accuracy. It addresses integrating
+         high-quality visual data for effective cross-modal understanding.
+
+       • Efficient LLMs explores these strategies of improving the computational efficiency and
+         scalability of language models. It examines the trade-offs between model complexity and
+         performance while suggesting promising avenues for balancing these competing factors.
+
+
+                                                  2
+                                                                               ViTamin [11], BRAVE[12],
+                                                   Vision Encoder(§2.1)
+                                                                               Cobra[13], SPHINX-X[14]
+
+                                                                               QFormer [15], Perceiver Resampler[16],
+                                             Vision-Language Projector(§2.2)   LDPv2[17], VSS[18], C/D-Abstractor[19],
+                                                                               MEQ-Former[12]
+
+                                                                               MobileVLM [20], LLaVA-Phi [21],
+                                                                               Imp-v1 [22], TinyLLaVA [23],
+                                                                               Bunny [24], Gemini Nano-2 [2],
+                                                                               MobileVLM-v2 [17], MoE-LLaVA [25],
+                                                                               Cobra [13], Mini-Gemini [26],
+                                               Small Language Models(§2.3)
+                                                                               Vary-toy [27], TinyGPT-V [28],
+                       Architecture(§2)                                        SPHINX-Tiny [14], ALLaVA [29],
+                                                                               MM1 [30], LLaVA-Gemma [31],
+                                                                               Mipha [32], VL-Mamba [18]
+                                                                               MiniCPM-V 2.0 [33], DeepSeek-VL [34]
+
+                                                                               Mini-Gemini [26], LLaVA-UHD [35],
+                                                                               TextHawk [36], TinyChart [37], P2G [38],
+                                             Vision Token Compression(§2.4)    IXC2-4KHD [39], SPHINX-X[14], S2 [40]
+                                                                               LLaVA-PruMerge[41], MADTP[42],
+                                                                               MoVA[43], Video-LLaVA[44]
+
+                                                                               SPD [45], MoE-LLaVA [25],
+                                                 Efficient Structures(§2.5)    MM1 [30], Cobra [13], VL-Mamba [18],
+                                                                               FastV[46], VTW[47]
+
+                                                    Pre-Training(§5.1)         Idefics2[48], TinyLLaVA[23], VILA[49]
+
+
+
+
+Efficient MLLM
+                                                 Instruction-Tuning(§5.2)      LaVIN[50], HyperLLaVA[51]
+                         Training(§5)
+                                               Diverse Training Steps(§5.3)    SPHINX-X[14], Cobra[13], TinyGPT-V[28]
+
+                                                 Parameter Efficient
+                                                                               EAS [52], MemVP [53]
+                                                 Transfer Learning(§5.4)
+                                                                               CC595k[7], LLava-1.5-PT[54],
+                                                                               ShareGPT4V-PT[55],
+                                                 Pre-Training Data(§6.1)
+                                                                               Bunny-pretrain-LAION-2M[24],
+                                                                               ALLaVA-Caption-4V[29], etc.
+
+                                                                               LLaVA’s IT[7], LLaVA-1.5’s IT[54],
+                  Data and Benchmarks(§6)
+                                              Instrcution-Tuning Data(§6.2)    ShareGPT4V’s IT[55], Bunny-695K[24],
+                                                                               LVIS-INSTRUCT-4V[56], etc.
+
+                                                                               VQAv2 [57], TextVQA[58], GQA[59],
+                                                    Benchmarks(§6.3)
+                                                                               MME[60], MMBench[61], POPE[62]
+
+                                                Biomedical Analysis(§7.1)      LLaVA-Rad [63], MoE-TinyMed [64]
+
+                                                                               TextHawk [36], TinyChart [37],
+                       Application(§7)        Document Understanding(§7.2)
+                                                                               Monkey [65], HRVDA [66]
+
+                                                                               mPLUG-video [67], Video-LLaVA [44],
+                                               Video Comprehension(§7.3)
+                                                                               MA-LMM [68], LLaMA-VID [69]
+
+
+
+                 Figure 2: Organization of efficient multimodal large language models advancements.
+
+
+                 • Training surveys the landscape of training methodologies that are pivotal in the devel-
+                   opment of efficient MLLMs. It addresses the challenges associated with the pre-training
+                   stage, instruction-tuning stage, and the overall training strategy for state-of-the-art results.
+                 • Data and Benchmarks evaluates the efficiency of datasets and benchmarks used in the
+                   evaluation of multimodal language models. It assesses the trade-offs between dataset size,
+                   complexity, and computational cost, while advocating for the development of benchmarks
+                   that prioritize efficiency and relevance to real-world applications.
+                 • Application investigates the practical implications of efficient MLLMs in various do-
+                   mains, emphasizing the balance between performance and computational cost. By ad-
+                   dressing resource-intensive tasks such as high-resolution image understanding and medical
+
+
+                                                               3
+                         Figure 3: The architectures of efficient MLLMs.
+
+
+         question-answering, this section highlights the potential of efficient MLLMs to broaden
+         their application scope and contribute to real-world problem-solving.
+
+In summary, this survey delves into these research endeavors, exploring various strategies for making
+MLLMs more resource-efficient. We review the development history of efficient MLLMs, provide
+a taxonomy of the strategies for efficient MLLMs, and comprehensively compare the performance
+of existing efficient MLLMs.Through this exploration, we aspire to provide a comprehensive under-
+standing of the current state-of-the-art, thereby illuminating the intricate nuances of this emerging
+field. Furthermore, this survey serves as a roadmap, highlighting potential avenues for future re-
+search, and fostering a deeper comprehension of the challenges and opportunities that lie ahead in
+the domain of efficient MLLMs. In addition to the survey, we have established a GitHub repository
+where we compile the papers featured in the survey, organizing them with the same taxonomy at
+https://github.com/lijiannuist/Efficient-Multimodal-LLMs-Survey. We will actively maintain it and
+incorporate new research as it emerges.
+
+2     Architecture
+Following the standard MLLM framework, efficient MLLMs can be divided into three main mod-
+ules: a visual encoder g tasked with receiving and processing visual inputs, a pre-trained language
+model that manages the received multimodal signals and performs reasoning, and a visual-language
+projector P which functions as a bridge to align the two modalities. To enhance the efficiency of the
+general MLLMs, the primary optimization lies in handling high-resolution images, compressing vi-
+sion tokens, implementing efficient structures, and utilizing compact language models, among other
+strategies. A diagram of the architecture is illustrated in Figure. 3. Table. 1 surveys a summary of
+the efficient MLLMs, which outlines the base LLM, the vision encoder, image resolution, and the
+projector used to connect vision and language. These efficient MLLMs include: MobileVLM [20],
+LLaVA-Phi [21], Imp-v1 [22], TinyLLaVA [23], Bunny [24], Gemini Nano-2 [2], MobileVLM-
+v2 [17], MoE-LLaVA-3.6B [25], Cobra [13], Mini-Gemini [26], Vary-toy [27], TinyGPT-V [28],
+SPHINX-Tiny [14], ALLaVA [29], MM1-3B [30], LLaVA-Gemma [31], Mipha-3B [32], VL-
+Mamba[18], MiniCPM-V2.0 [70], DeepSeek-VL [34], KarmaVLM [71], moondream2 [72]. In
+this section, we sequentially present a comprehensive overview of these three modules, along with
+other efficient components.
+
+2.1   Vision Encoder
+
+Taking the input image Xv as input, the vision encoder compresses the original image into more
+compact patch features Zv , as represented by the following formula:
+                                           Zv = g(Xv ).                                           (1)
+
+
+                                                 4
+                                        Vision Encoder                                        LLM
+ Model                                                                                                               Vision-LLM Projector
+                             Variants         Resolution   Parameter Size          Variants         Parameter Size
+ MobileVLM [20]          CLIP ViT-L/14 [73]      336           0.3B           MobileLLaMA[20]           2.7B                LDP[20]
+ LLaVA-Phi [21]          CLIP ViT-L/14 [73]      336           0.3B              Phi-2[74]              2.7B                 MLP
+ Imp-v1 [22]                SigLIP [75]          384           0.4B              Phi-2[74]              2.7B                   -
+ TinyLLaVA [23]           SigLIP-SO [75]         384           0.4B              Phi-2[74]              2.7B                 MLP
+ Bunny [24]               SigLIP-SO [75]         384           0.4B              Phi-2[74]              2.7B                 MLP
+ MobileVLM-v2-3B [17]    CLIP ViT-L/14 [73]      336           0.3B           MobileLLaMA[17]           2.7B               LDPv2[17]
+ MoE-LLaVA-3.6B [25]      CLIP-Large [73]        384             -               Phi-2[74]              2.7B                 MLP
+                           DINOv2 [76]
+ Cobra [13]                                      384        0.3B+0.4B       Mamba-2.8b-Zephyr[77]       2.8B                  MLP
+                          SigLIP-SO [75]
+ Mini-Gemini [26]         CLIP-Large [73]        336             -               Gemma[78]               2B                   MLP
+ Vary-toy [27]               CLIP [73]           224             -                Qwen[79]              1.8B                   -
+ TinyGPT-V [28]              EVA [80]          224/448           -                Phi-2[74]             2.7B              Q-Former [15]
+                           DINOv2 [76]
+ SPHINX-Tiny [14]                                448             -              TinyLlama[82]           1.1B                    -
+                        CLIP-ConvNeXt [81]
+ ALLaVA-Longer [29]     CLIP-ViT-L/14 [73]       336           0.3B                Phi-2[74]            2.7B                     -
+ MM1-3B-MoE-Chat [30]   CLIPDFN -ViT-H [83]      378             -                     -                3B∗             C-Abstractor [19]
+ LLaVA-Gemma [31]           DinoV2 [76]           -              -             Gemma-2b-it[78]           2B                      -
+ Mipha-3B [32]              SigLIP [75]          384             -                 Phi-2[74]            2.7B                     -
+ VL-Mamba [18]            SigLIP-SO [75]         384             -          Mamba-2.8B-Slimpj[77]       2.8B               VSS-L2[18]
+ MiniCPM-V 2.0[33]          SigLIP [75]           -            0.4B             MiniCPM[70]             2.4B         Perceiver Resampler [16]
+ DeepSeek-VL [34]          SigLIP-L [75]         384           0.4B          DeepSeek-LLM[84]           1.3B                   MLP
+ KarmaVLM[71]             SigLIP-SO [75]         384           0.4B             Qwen1.5[79]             0.5B                     -
+ moondream2[72]             SigLIP[75]            -              -                Phi-1.5[85]           1.3B                     -
+ Bunny-v1.1-4B[24]          SigLIP[75]          1152†            -            Phi-3-Mini-4K[86]         3.8B                     -
+
+Table 1: The summary of 17 mainstream efficient MMLMs. ∗ indicates activated parameters.† :High
+resolution support is achieved with S2 -Wrapper[40].
+
+
+In line with mainstream MLLM practices, efficient MLLMs select pre-trained models that are se-
+mantically aligned with the text, represented by CLIP [73]. This approach facilitates better align-
+ment between the feature spaces of visual and text inputs. Since the vision encoder constitutes a
+relatively minor portion of the MLLM parameters, the advantages of lightweight optimization are
+less pronounced compared to the language model. Therefore, efficient MLLMs generally continue
+to employ visual encoders that are widely used in large-scale MLLMs, as detailed in Table 1.
+
+Multiple Vision Encoders BRAVE[12] in Figure. 4 performs an extensive ablation of various vi-
+sion encoders with distinct inductive biases for tackling MLMM tasks. The results indicate that there
+isn’t a single-encoder setup that consistently excels across different tasks, and encoders with diverse
+biases can yield surprisingly similar results. Presumably, incorporating multiple vision encoders
+contributes to capturing a wide range of visual representations, thereby enhancing the model’s com-
+prehension of visual data. Cobra[13] integrates DINOv2[76] and SigLIP[75] as its vision backbone,
+with the rationale that merging the low-level spatial features from DINOv2 and the semantic at-
+tributes offered by SigLIP will enhance performance on subsequent tasks. SPHINX-X[14] employs
+two vision encoders – DINOv2 and CLIP-ConvNeXt. Given that these models have been pre-trained
+via distinct learning methodologies (self-supervised versus weakly supervised) and network archi-
+tectures (ViT versus CNN), they are naturally capable of offering the most complementary and
+sophisticated visual knowledge.
+
+Lightweight Vision Encoder Vision Transformer architectures in real-world applications pose
+challenges due to hardware and environmental limitations, including processing power and compu-
+tational capabilities. ViTamin [11] represents a lightweight vision model, specifically tailored for
+vision and language models. It commences with a convolutional stem, succeeded by Mobile Con-
+volution Blocks in the first and second stages, and Transformer Blocks in the third stage. Remark-
+ably, ViTamin-XL, with a modest count of 436M parameters, attains an 82.9% ImageNet zero-shot
+accuracy. This outperforms the 82.0% accuracy achieved by EVA-E [80], which operates with a pa-
+rameter count ten times larger, at 4.4B. Simply replacing LLaVA’s image encoder with ViTamin-L
+can establish new standards in various MLLM performance metrics.
+
+2.2      Vision-Language Projector
+
+The task of the vision-language projector is to map the visual patch embeddings Zv into the text
+feature space:
+                                          Hv = P (Zv ),                                      (2)
+where Hv denotes the projected visual embeddings. The aligned visual features are used as prompts
+and inputted into the language model along with the text embeddings. Vision-language projector
+
+
+                                                                     5
+Figure 4: BRAVE [12] concatenates features from K different Vision Encoders in a sequence-wise
+manner. These concatenated features are then reduced by the MEQ-Former.
+
+
+avoids the high cost of training an end-to-end multimodal model from scratch and effectively lever-
+ages the capabilities of pre-trained language and vision models.
+
+
+MLP-based As outlined in [7, 54], the vision-language projector is typically realized using a
+straightforward, learnable Linear Projector or a Multi-Layer Perceptron (MLP), i.e., several linear
+projectors interleaved with non-linear activation functions, as illustrated in Table.1.
+
+
+Attention-based BLIP2 [15] introduces Q-Former, a lightweight transformer, which employs a
+set of learnable query vectors to extract visual features from a frozen vision model. Perceiver
+Resampler, proposed by Flamingo[16], contemplates the use of learnable latent queries as Q in
+cross-attention, while image features are unfolded and concatenated with Q to serve as K and V in
+cross-attention. By this means, the transformer output at the corresponding positions of the learn-
+able latent queries is taken as the aggregated representation of visual features, thereby standardizing
+variable-length video frame features into fixed-size features. MEQ-Former in BRAVE [12] designs
+a multi-encoder querying transformer to amalgamate features from multiple frozen vision encoders
+into a versatile representation that can be directly inputted into a frozen language model.
+
+
+CNN-based MobileVLMv2[17] proposes LDPv2, a new projector consisting of three parts: fea-
+ture transformation, token reduction, and positional information enhancement. By using point-wise
+convolution layers, average pooling, and a PEG module with a skip connection, LDPv2 achieves
+better efficiency, a 99.8% reduction in parameters, and slightly faster processing compared to the
+original LDP[20].
+
+
+Mamba-based VL-Mamba[18] implements the 2D vision selective scanning(VSS) technique
+within its vision-language projector, facilitating the amalgamation of diverse learning method-
+ologies. The VSS module primarily resolves the distinct processing approaches between one-
+dimensional sequential processing and two-dimensional non-causal visual information.
+
+
+Hybrid Structure Honeybee [19] put forward two visual projectors, namely C-Abstractor and D-
+Abstractor, which adhere to two primary design principles: (i) providing adaptability in terms of the
+number of visual tokens, and (ii) efficiently maintaining the local context. C-Abstractor, or Convo-
+lutional Abstractor, focuses on proficiently modeling the local context by employing a convolutional
+architecture. This structure consists of L ResNet blocks, followed by adaptive average pooling and
+additional L ResNet blocks, which facilitate the abstraction of visual features to any squared num-
+ber of visual tokens. Conversely, D-Abstractor, or Deformable attention-based Abstractor utilizes
+deformable attention, which maintains the local context through a 2-D coordinate-based sampling
+process, using reference points and sampling offsets.
+
+
+                                                  6
+      Figure 5: MobileVLM v2 [17] and Honeybee [19] efficient vision-language projector.
+
+
+2.3   Small Language Model
+
+The pre-trained small language model(SLM) serves as the core component of MLLMs, endowing
+it with many outstanding capabilities, such as zero-shot generalization, instruction following, and
+in-context learning. The SLM accepts input sequences containing multiple modalities and outputs
+corresponding text sequences. A text tokenizer is typically bundled with the SLM, mapping text
+prompts Xq to the text tokens Hq . The text tokens Hq and the visual tokens Hv are concatenated as
+the input of the language model, which outputs the final response sequence Ya in an autoregressive
+manner:
+                                               YL
+                             p(Ya |Hv , Hq ) =     p(yi |Hv , Hq , y<i ),                        (3)
+                                               i=1
+
+ where L denotes the length of Ya . As the SLM contributes the vast majority of MLLM parameters,
+its selection is closely related to the lightweight nature of MLLM. In comparison to conventional
+MLLMs with parameter sizes ranging from 7 billion to tens of billions[87, 88], efficient MLLMs
+typically employ language models with less than 3 billion parameters, such as phi2-2.7B[74] by
+Microsoft and Gemma-2B[78] by Google. Phi-2 trained on special data recipes can match the per-
+formance of models 25 times larger trained on regular data. Phi-3-mini [86] can be easily deployed
+locally on a modern phone and achieves a quality that seems on-par with models such as Mixtral
+8x7B [89] and GPT-3.5. In addition to utilizing pre-trained models, MobileVLM[20] downscales
+LLaMA[87] and trains from scratch using open-source datasets. The specific model scaling is illus-
+trated in the Table.1 and Table.4.
+
+2.4   Vision Token Compression
+
+Initial research has underscored the potential of MLLMs across various tasks, including visual ques-
+tion answering and image captioning. However, MLLMs face considerable challenges in tasks ne-
+cessitating intricate recognition, including crowd counting and OCR of small characters. A direct
+approach to address these challenges involves increasing the image resolution, practically, the num-
+ber of visual tokens. This strategy, nonetheless, imposes a substantial computational burden on
+MLLMs, primarily due to the quadratic scaling of computational costs with the number of input to-
+kens in the Transformer architecture. Motivated by this challenge, vision token compression, aimed
+to reduce the prohibitive computation budget caused by numerous tokens, has become an essential
+aspect of efficient MLLMs. We will explore this topic through several key techniques, including
+multi-view input, token processing, multi-scale information fusion, vision expert agents and video-
+specific methods.
+
+Multi-view Input Directly employing high-resolution vision encoders for fine-grained percep-
+tion is prohibitively costly and does not align with practical usage requirements. Therefore, to
+utilize low-resolution vision encoders while enabling MLLM to perceive detailed information, a
+common approach is to input multi-view HR images, i.e., a global view: low-resolution images
+obtained through resizing, and a local view: image patches derived from splitting. For example,
+
+
+                                                 7
+Figure 6: Comparision of Phi [86] (from left to right: phi-1.5, phi-2, phi-3-mini, phi-3-small) versus
+Llama-2 [91] family of models(7B, 13B, 34B, 70B) that were trained on the same fixed data.
+
+
+LLaVA-UHD [35] proposes an image modularization strategy that divides native-resolution im-
+ages into smaller variable-sized slices for efficient and extensible encoding. Inaddition, InternLM-
+XComposer2-4KHD [90] introduces a strategy that dynamically adjusts resolution with an automatic
+layout arrangement, which not only maintains the original aspect ratios of images but also adaptively
+alters patch layouts and counts, thereby enhancing the efficiency of image information extraction.
+By implementing an adaptive input strategy for images of varying resolutions, a balance between
+perceptual capability and efficiency can be achieved.
+
+Token Processing Techniques designed to process lengthy visual token squence are critical in ef-
+ficient MLLMs as they address the dual challenges of preserving fine-grained details and reducing
+computational complexity. LLaVA-UHD [35] presents a novel approach to manage the computa-
+tional burden associated with high-resolution images. It puts forward two key components: (1) a
+compression module that further condenses image tokens from visual encoders, significantly re-
+ducing the computational load, and (2) a spatial schema to organize slice tokens for LLMs. No-
+tably, LLaVA-UHD demonstrates its efficiency by supporting 6 times larger resolution images using
+only 94% of the inference computation compared to previous models. Furthermore, the model
+can be efficiently trained in academic settings, completing the process within 23 hours on 8 A100
+GPUs. LLaVA-PruMerge[41] and MADTP [42] propose an adaptive visual token reduction ap-
+proach that significantly decreases the number of visual tokens while preserving comparable model
+performance. TinyChart [37] and TextHawk [36] focus on document-oriented tasks, with the former
+adopting the Vision Token Merging module and the latter introducing the ReSampling and ReAr-
+rangement module. These modules can enhance fine-grained visual perception and information
+compression capabilities.
+
+Multi-Scale Information Fusion Utilizing multi-scale image information is indeed crucial for
+visual feature extraction. This approach allows the model to capture both the fine-grained details
+present in smaller scales and the broader context available in larger scales. Mini-Gemini [26] com-
+prises twin encoders, one for high-resolution images and the other for low-resolution visual em-
+bedding. It proposes Patch Info Mining, which uses low-resolution visual embeddings as queries
+to retrieve relevant visual cues from high-resolution candidates through cross-attention. Scaling on
+Scales (S 2 ) [40] demonstrated that a multi-scale smaller model has comparable learning capacity to
+a larger model, and pre-training smaller models with S 2 can match or even exceed the advantage of
+larger models on MLLM benchmarks while being more compute-efficient. After splitting the large
+image into small sub-images, S 2 -wrapper processes individual sub-images instead of using window
+attention, which allows using a pre-trained model that does not support window attention and avoids
+training additional parameters from scratch.It then interpolates the large feature map into the regular
+size, making sure the number of visual tokens stays acceptable.
+
+Vision Expert Agents Most MLLMs, due to their non-lossless image tokenization, struggle to
+fully capture the intricate details of text and objects. Leveraging vision expert agents is a solution
+to the problem of a single vision encoder’s limited generalization ability on detail-abundant content.
+P2G [38] employs expert agents for real-time grounding, enabling efficient and purposeful reasoning
+
+
+                                                  8
+Figure 7: S2 -Wrapper [40] is a simple mechanism that extends any pre-trained vision model to
+multiple image scales in a parameter-free manner.
+
+
+through multimodal prompting. This innovative framework facilitates plug-and-play grounding of
+reasoning in high-resolution scenarios that are rich in natural visuals and text. It achieves this by
+leveraging agents to enhance both textual and visual grounding and perception, like OCR Agent
+(text) or Grounding Agent (image). MoVA[43] addresses the issue of diminished generalization
+ability of an individual vision encoder across various contents by introducing an expert routing
+strategy. This approach enables the flexible and effective utilization of representations from multiple
+task-specific vision experts, thereby enhancing the generalization capabilities.
+
+Video-Specific Methods Video understanding also requires processing a large number of frames,
+which can pose a significant computational challenge within the context window of LLMs. Ely-
+sium [92] provides a trade-off between performance and visual token consumption, where T-Selector
+is introduced as a visual token compression network to enable LLMs to distinguish individual frames
+while reducing visual token use. VideoLLaVA [44], building upon LanguageBind [93], unifies vi-
+sual representation into the language feature space to advance foundational LLMs towards a unified
+language-vision LLM without incurring a large computational burden.
+
+2.5   Efficient Structures
+
+Efficient structures primarily explore three directions: Mixture-of-Experts, Mamba and Inference
+Acceleration.
+
+Mixture of Experts MoE enhances model capacity by modulating the total count of model pa-
+rameters while maintaining the activated parameters unchanged, hence, not significantly compro-
+mising the inference speed. MoE-LLaVA[25] presents an MoE-based sparse MLLM framework
+that effectively increases the number of parameters without compromising computational efficiency.
+Furthermore, it introduces MoE-Tuning, a three-stage training strategy designed to adapt MoE [89]
+to MLLMs and prevent model degradation caused by sparsity. MM1[30] designs two variants of
+MoE models. The first is a 3B-MoE model that employs 64 experts and substitutes a dense layer
+with a sparse one every two layers. The second is a 7B-MoE model that utilizes 32 experts and
+substitutes a dense layer with a sparse one every four layers.
+
+Mamba Cobra [13] incorporates the efficient Mamba [77] language model into the vision modal-
+ity and explores different modal fusion schemes to develop an effective multi-modal Mamba. Exper-
+iments show that it not only achieves competitive performance with state-of-the-art efficient meth-
+ods but also boasts faster speeds due to its linear sequential modeling.It also excels in overcom-
+ing visual illusions and spatial relationship judgments in closed-set challenging prediction bench-
+marks and achieves performance comparable to LLaVA while using only 43% of the parameters.
+VL-Mamba[18] substitutes the Transformer-based backbone language model with the pre-trained
+Mamba language model. It explores how to effectively implement the 2D vision selective scan
+mechanism for multimodal learning and the combinations of different vision encoders and pre-
+trained Mamba language model variants.
+
+Inference Acceleration SPD[45] proposes the speculative decoding with a language-only model
+to improve inference efficiency. By employing a language-only model as a draft model for specu-
+
+
+                                                  9
+                                  Figure 8: Structure of MOE [89](left) and Mamba [77](right).
+
+
+lative decoding, the need for image tokens and their associated processing components is bypassed.
+FastV [46] finds that most image tokens receive inefficient attention after the second decoder layer
+and achieve computation reduction by eliminating redundant visual tokens during the inference stage
+without sacrificing performance. VTW [47] asserts that visual tokens are not essential in the deeper
+layers of MLLM. It strategically removes all of them at a specific layer, allowing only text tokens to
+participate in the subsequent layers. This approach by VTW can reduce computational overhead by
+more than 40% across a variety of multimodal tasks, without compromising performance.
+
+
+3                   Efficient Vision
+
+Vision Transformer (ViT) [94] architectures have gained significant popularity and are widely used
+in computer vision applications. However, as ViT models have grown in size, the number of train-
+able parameters and operations has also increased, impacting their deployment and performance.
+Additionally, the computational and memory cost of self-attention grows quadratically with image
+resolution. Referring to the paper [95], this survey aims to explore the most efficient vision encoding
+methodologies that may be used for efficient MLLMs.
+
+                                                                                    Reformer[96], EfficientFormer[97],
+                                                      Architecture Design Methods
+                                                                                    EfficientFormerV2[98]
+
+                                                                                    Autoformer [99], NASViT [100],
+                       Compact Architecture(§3.1)     Architecture Search Methods
+                                                                                    TF-TAS [101], UniNet [102]
+
+                                                        Optimization of Attention   PatchMerger [103], DynamicViT [104],
+                                                        Mechanisms Methods          Sepvit [105]
+
+                                                         Unstructured Pruning       Cap [106], Cait [107]
+
+                                                                                    WDPruning [108], X-Pruner [109],
+
+
+
+
+ Efficient Vision
+                              Pruning(§3.2)                Structured Pruning
+                                                                                    VTP[110], PS-ViT[111]
+
+                                                            Hybrid Pruning          SPViT [112], ViT-Slim [113]
+
+                                                                                    DeiT [114], TinyViT [115], m2mKD [116],
+                                                           Homomorphic KD
+                                                                                    DeiT-Tiny [117], MiniViT [118]
+                       Knowledge Distillation(§3.3)
+                                                           Heteromorphic KD         DearKD [119], CiT [120]
+
+                                                                                    PTQ4ViT [121], APQ-ViT [122],
+                                                       Post-Training Quantization
+                                                                                    NoisyQuant [123]
+
+                                                                                    Quantformer [124] Bit-shrinking [125],
+                           Quantization(§3.4)         Quantization-Aware Training   Q-ViT [126], TerViT [127], BiViT [128],
+                                                                                    PackQViT [129], BinaryViT [130]
+
+                                                      Hardware-Aware Quantization   GPUSQ-ViT[131], Auto-ViT-Acc [132]
+
+
+
+                                       Figure 9: Organization of efficient vision advancements.
+
+
+
+                                                                    10
+3.1   Compact Architecture
+
+Compact Architecture refers to the design of lightweight and efficient models while maintaining high
+performance in downstream tasks. It encompasses various strategies and methodologies to reduce
+model size, computational complexity, and memory footprint without compromising performance.
+These strategies can be broadly categorized into three categories, 1) Architecture Design Methods,
+2) Architecture Search Methods, and 3) Optimization of Attention Mechanisms Methods.
+Architecture Design Methods involve creating new architectures [133] or adjusting existing
+ones [134] to achieve compactness without sacrificing performance. For example, Reformer [96]
+introduced locality-sensitive hashing in attention mechanisms to reduce complexity, while also
+employing reversible residual layers to store activations more efficiently. Furthermore, Efficient-
+Former [97] analyzed ViT-based model architectures and operators, introducing a dimension-
+consistent pure transformer paradigm and employing latency-driven slimming to produce optimized
+models. Additionally, EfficientFormerV2 [98] proposed a supernet with low latency and high pa-
+rameter efficiency.
+
+Architecture Search Methods involve employing neural architecture search algorithms [113]
+to explore and discover compact architectures tailored to specific tasks or constraints. For in-
+stance, Autoformer [99] intertwined weights within layers, enabling thorough training of thousands
+of subnets. NASViT [100] introduced a gradient projection algorithm, switchable layer scaling,
+and streamlined data augmentation, enhancing convergence and performance. Additionally, TF-
+TAS [101] investigated training-free architecture search methods, proposing an efficient scheme.
+UniNet [102] introduced context-aware down-sampling modules improving information accommo-
+dation by transformer and MLP operators.
+
+Optimization of Attention Mechanisms Methods focus on reducing computational complexity
+by introducing adaptive attention, learning sparse attention patterns, and dynamically adjusting at-
+tention mechanisms. Fayyaz et al. [135] implemented adaptive attention by scoring and adaptively
+sampling significant tokens. PatchMerger [103] extracted global information among regional to-
+kens and exchanged local self-attention with information among regional tokens via self-attention.
+DynamicViT [104] proposed an attention masking strategy to differentiably prune tokens by block-
+ing interactions with other tokens. Additionally, Sepvit [105] conducted local-global information
+interaction within and across windows using depthwise separable self-attention. These methods
+collectively optimize attention mechanisms, enhancing computational efficiency and performance.
+
+3.2   Pruning
+
+Pruning involves removing less essential weights from vision transformer models, typically catego-
+rized as unstructured pruning, structured pruning, and hybrid pruning techniques.
+
+Unstructured Pruning focuses on eliminating individual weights without considering their struc-
+tural arrangement within the model. Rao et al. [104] introduced a dynamic token sparsification
+framework for progressive and adaptive pruning of redundant tokens based on input, integrating
+a lightweight prediction module to estimate token importance scores and employing an attention
+masking strategy to differentiate token interactions and optimize the prediction module in an end-
+to-end fashion. Cap [106] proposed a novel theoretically-grounded pruner capable of accurately
+and efficiently handling intricate weight correlations during pruning, alongside an effective fine-
+tuning procedure for post-compression recovery. Cait [107] introduced asymmetric token merging
+to integrate neighboring tokens efficiently while preserving the spatial structure, paired with consis-
+tent dynamic channel pruning for uniform pruning of unimportant channels in Vision Transformers,
+enhancing model compression.
+
+Structured Pruning aims to remove structural components, such as attention heads or layers
+based on predefined criteria. For example, WDPruning [108] employed a binary mask to discern
+insignificant parameters based on their magnitudes. Additionally, Yu et al. [136] presented a unified
+framework integrating pruning to generate compact transformers. X-Pruner [109] utilizes an end-
+to-end learned explainability-aware mask to measure each unit’s contribution to predicting target
+classes and adaptively searches layer-wise thresholds to preserve the most informative unit while
+
+
+                                                  11
+Figure 10: Efficient vision transformer techniques in [138]. The dashed orange block highlights the
+component on which each optimization technique mainly focuses.
+
+
+determining the pruning rate. Additionally, VTP [110] reduces embedding dimensions through the
+integration of control coefficients, concurrently removing neurons with negligible coefficients. Tang
+et al. [111] eliminate redundant patches by first identifying effective patches in the last layer and
+then leveraging them to guide the selection process of previous layers, where patches with minimal
+impact on the final output feature are subsequently discarded.
+
+Hybrid Pruning , such as [137], investigates both unstructured and structured sparsity, intro-
+ducing a first-order importance approximation approach for attention head removal. SPViT [112]
+develops a dynamic attention-based multi-head token selector for adaptive instance-wise token se-
+lection, alongside a soft pruning technique consolidating less informative tokens into package tokens
+rather than discarding them. ViT-Slim [113] utilizes a learnable and unified sparsity constraint with
+pre-defined factors to represent global importance within the continuous search space across various
+dimensions.
+
+3.3   Knowledge Distillation
+
+Knowledge distillation is a technique in which a smaller model learns from a larger, more com-
+plex model to replicate its performance, enabling efficient deployment while maintaining predictive
+accuracy [139]. Knowledge distillation (KD) techniques for Vision Transformers (ViTs) can be
+categorized into two main types: 1) homomorphic KDs and 2) heteromorphic KDs.
+
+Homomorphic KDs can further classified into logit-level [114, 115], patch-level [117], module-
+level [116], and feature-level KDs [118]. For logit-level methods, in DeiT [114], a distillation token
+is incorporated into the self-attention module to emulate the class label inferred by the teacher model,
+facilitating interaction between the student attention and layers, thus enabling the learning of hard
+labels during back-propagation. TinyViT [115] applies distillation during pretraining, where logits
+from large teacher models are pre-stored in the hardware, enabling memory and computational ef-
+ficiency when transferring knowledge to scaled-down student transformers. Patch-level techniques
+like DeiT-Tiny [117] train a small student model to match a pre-trained teacher model on patch-level
+structures, then optimize with a decomposed manifold matching loss for reduced computational
+costs. Module-level methods involve segregating teacher modules from a pre-trained unified model,
+and student modules from a modular model. In m2mKD [116], these modules are combined with
+a shared meta-model, allowing the student module to emulate the behavior of the teacher module.
+Feature-level KD methods, as demonstrated by MiniViT [118], combine the weights of consecutive
+transformer blocks. This entails sharing weights across layers while introducing transformations to
+
+
+                                                  12
+enhance diversity. Additionally, weight distillation over self-attention is utilized to transfer knowl-
+edge from large-scale ViT models to compact models with multiplexed weights.
+
+Heteromorphic KDs involves transferring knowledge between models with differing architec-
+tures. For example, DearKD [119] proposes a novel two-stage framework, DearKD, departing from
+traditional methods for ViT architectures. In the first stage, they use a vanilla KD strategy to transfer
+CNN features to the ViT student model, representing a heteromorphic transfer. In the subsequent
+phase, if real samples are limited, they introduce a boundary-preserving intra-divergence loss to en-
+hance the process. Similarly, CiT [120] proposes a heteromorphic KD strategy, where knowledge
+is transferred from diverse models, such as a CNN and an involution neural network, resulting in
+improved performance for the ViT student model.
+
+3.4   Quantization
+
+ViT quantization is the process of reducing the precision of numerical representations in ViT models,
+typically transitioning from floating-point to fixed-point arithmetic [140]. This reduction in preci-
+sion aims to decrease memory usage, computational complexity, and energy consumption while
+preserving model accuracy to an acceptable level. Current research can be mainly categorized into
+post-training quantization, quantization-aware training, and hardware-aware quantization.
+
+Post-Training Quantization (PTQ) compresses trained ViT models by converting their param-
+eters from high-precision floating-point numbers to lower-precision fixed-point numbers, such as
+8-bit integers. For example, Liu et al. [141] introduced a ranking loss method to identify opti-
+mal low-bit quantization intervals for weights and inputs, ensuring the functionality of the attention
+mechanism. They also conducted an analysis to understand the relationship between quantization
+loss in different layers and feature diversity, exploring a mixed-precision quantization approach
+leveraging the nuclear norm of each attention map and output feature. Additionally, PTQ4ViT [121]
+introduced the twin uniform quantization method to minimize quantization error on activation val-
+ues following softmax and GELU functions, incorporating a Hessian-guided metric to enhance cal-
+ibration accuracy. APQ-ViT [122] proposed a unified Bottom-elimination Blockwise Calibration
+scheme to optimize the calibration metric, prioritizing crucial quantization errors and designing a
+Matthew-effect Preserving Quantization for Softmax to maintain the power-law character and at-
+tention mechanism functionality. NoisyQuant [123] proposes to add a fixed Uniform noisy bias
+to quantized values, the quantization error is significantly reduced under certain conditions. This
+technique successfully modifies heavy-tailed activation distributions to fit a given quantizer.
+
+Quantization-Aware Training (QAT) integrates quantization into the training cycle. This in-
+tegration is particularly advantageous when scaling down to ultra-low bit precision, such as 4 bits
+or lower, where PTQ struggles with significant performance loss. For example, Quantformer [124]
+leverages entropy information to maintain consistency in self-attention ranks and introduces a dif-
+ferentiable search mechanism to optimally group patch feature dimensions, reducing rounding and
+clipping inaccuracies. Q-ViT [126] incorporates a distillation token and Information Rectification
+Module (IRM) to counteract altered distributions in quantized attention modules. TerViT [127] and
+Bit-shrinking [125] progressively reduce model bit-width while regulating sharpness to maintain
+accuracy throughout quantization. PackQViT [129] mitigates outlier effects during quantization.
+BiViT [128] introduces Softmax-aware Binarization to adjust the binarization process, minimizing
+errors in binarizing softmax attention values. Xiao et al. [142] integrated a gradient regularization
+scheme to curb weight oscillation during binarization training and introduced an activation shift
+module to reduce information distortion in activations. Additionally, BinaryViT [130] integrates
+essential architectural elements from CNNs into a pure ViT framework, enhancing its capabilities.
+
+Hardware-Aware Quantization optimizes the quantization process of neural network models for
+specific hardware platforms (e.g., GPUs [131], FPGA [132]). It adjusts precision levels and quan-
+tization strategies to maximize performance and energy efficiency during inference. For example,
+Yu et al. [131] propose a compression scheme utilizing GPU-friendly 2:4 fine-grained structured
+sparsity and quantization. They prune a dense model into a sparse one using 2:4 structured pruning,
+leveraging GPU acceleration. Then, they quantize the sparse model into fixed-point representation
+through sparse-distillation-aware quantization-aware training, exploiting GPU speedup. Throughout
+the process, they employ mixed-strategy knowledge distillation, enabling support for supervised and
+
+
+                                                   13
+unsupervised learning styles. Auto-ViT-Acc [132] proposed a framework designed for quantizing
+ViT architectures to run inference on FPGA-powered devices. They apply the quantization function
+from a prior study specifically to the FNN module within the attention block, aiming to optimize
+FPGA resource utilization and accelerate inference.
+
+4                   Efficient LLMs
+
+                                               Sharing-based Attention    GQA [143], Multi-Query Attention[144]
+
+                                                Feature Information       Funnel-Transformer [145],
+                          Attention(§4.1)
+                                                Reduction                 Set Transformer[146]
+
+                                               Approximate Attention      Linformer [147], Performer[148]
+
+
+
+
+    Efficient LLM
+                                                 Mixture of Experts       GShard[149], Switch Transformer [150]
+                         Framework(§4.2)
+                                               Transformer-Alternative    RWKV[151], S4[152],
+                                               Architecture               DSS[153], Mamba[77]
+
+                                                 Parameter-Efficient      LLM-Adapters [154], (IA)3 [155],
+                                                 Fine-Tuning              LoRA-FA [156], DyLoRa [157]
+                         Fine-tuning(§4.3)
+                                             Full-Parameter fine-tuning   LOMO [158], MeZO[159]
+
+
+
+                          Figure 11: Organization of efficient large language models advancements.
+
+Occupying a significant majority of the parameter volume in MLLMs, LLM serves as a crucial entry
+point for enhancing the efficiency of MLLMs. In this section, similar to the survey paper [160], we
+provide a brief overview of the research progress in efficient LLMs, offering inspiration for the
+development of Efficient MLLMs.
+
+4.1                 Attention
+
+In the standard self-attention mechanism, the time complexity is O(n2 ), where n is the sequence
+length. This quadratic complexity arises due to the pairwise interactions between all input tokens,
+which can lead to scalability issues, especially when dealing with long sequences in LLMs. To
+tackle this, researchers have developed techniques to expedite attention mechanisms and reduce
+time complexity, such as sharing-based attention, feature information reduction, kernelization or
+low-rank, fixed and learnable pattern strategies, and hardware-assisted attention.
+
+Sharing-based Attention Sharing-based Attention aims to expedite attention computation dur-
+ing inference by by sharing computation resources across multiple Key-Value heads. For exam-
+ple, Llama-2 [91] incorporates a technique called grouped-query attention (GQA) [143] to opti-
+mize memory bandwidth during the autoregressive decoding. GQA is a Sharing-based Attention
+technique that seeks to achieve a balance between performance and efficiency, positioned between
+multi-head attention and multi-query attention [144] mechanisms. In multi-head attention, each head
+utilizes a distinct set of linear transformation parameters for queries, keys, and values. Conversely,
+multi-query attention shares a single set of key-value heads across all queries. GQA partitions all
+query heads into several groups, with each group’s query heads sharing a common key-value head,
+thereby establishing a rigorous equilibrium between effectiveness and computational cost.
+
+Feature Information Reduction Feature Information Reduction, as evidenced by models such as
+Funnel-Transformer[145] and Set Transformer[146], addresses the crucial need for computational
+efficiency in attention mechanisms, specifically by reducing the dimensionality or quantity of input
+features while preserving the essential information embedded within the data. A key motivation
+behind this strategy stems from the potential redundancy in maintaining full-length hidden repre-
+sentations across all layers in Transformer models. Funnel-Transformer [145] tackles this issue by
+progressively reducing the sequence size of hidden representations in self-attention models, such as
+
+
+                                                             14
+Figure 12: In GQA[59], a single set of key and value heads is allocated for each group of query
+heads, providing a balance between multi-head and multi-query attention mechanisms.
+
+
+sequence length. This reduction not only decreases computational complexity and memory usage
+but also frees up resources that can be allocated toward building deeper or wider models.
+
+Approximate Attention Approximate Attention facilitates models to efficiently focus on task-
+relevant information when processing long texts. Two pivotal concepts within Approximate Atten-
+tion are Kernelization and Low-Rank. Kernelization, e.g. [148], involves transforming a problem
+into a kernel-based framework with the goal of converting the original issue into a more manage-
+able one in a higher-dimensional space. Kernelization is primarily employed to map text sequences
+into a high-dimensional space, where task-related information can be more readily captured. In
+this new space, each word in the text sequence is represented as a high-dimensional vector, and the
+distances between these vectors serve to measure their similarities. Low-Rank [147] aims to decom-
+pose a high-dimensional matrix into the product of two lower-dimensional matrices. Consequently,
+by calculating the inverses of these two lower-dimensional matrices, an approximate inverse of the
+attention matrix can be obtained, thereby significantly reducing computational complexity.
+
+4.2   Framework
+
+Mixture of Experts The core idea behind MoE [89] is to decompose a large-scale model into sev-
+eral smaller models, each of which focuses on learning a specific part of the input data. During the
+training process, each expert is assigned a weight that determines its importance within the overall
+model. During the inference phase, given an input, all experts are ranked, and the most relevant
+ones are selected for computation. This approach considerably reduces the amount of computa-
+tion, as only a subset of experts is involved in the calculation.By distributing computational tasks
+among different experts, MoE achieves more efficient utilization of computational resources during
+both training and inference phases. In MoE, each expert has its own set of parameters; however,
+these parameters are shared during the training process. This parameter-sharing strategy reduces
+the overall number of parameters in the model, consequently lowering storage and computational
+costs. GShard [149] is a module composed of a set of lightweight annotation APIs and XLA com-
+piler extensions, which offers an elegant way to express various parallel computation patterns while
+making minimal changes to existing model code. It enables us to scale multi-lingual neural machine
+translation Transformer models with sparse gated mixtures of experts to over 600 billion parameters
+using automatic sharding. Switch Transformer [150] replaces the feedforward network (FFN) layer
+in the standard Transformer with a MoE routing layer, where each expert operates independently on
+the tokens in the sequence. Its training speed is four times faster than Google’s previously developed
+largest model, T5-XXL, under the same computational resources. The proposed training techniques
+have eliminated instability during the training process, demonstrating that large sparse models can
+also be trained in a low-precision format, such as bfloat16.
+
+Transformer-Alternative Structures Although the Transformer is the dominant architecture in
+current large-scale language models, models like RWKV [151] and Mamba [77] have emerged as
+popular solutions for achieving heightened efficiency and processing lengthy texts. These innovative
+models have demonstrated attributes similar to transformers, including the ability to handle long-
+range dependencies and parallel processing.RWKV model leverages a linear attention mechanism,
+enabling us to formulate the model as either a Transformer or a Recurrent Neural Network (RNN).
+
+
+                                                 15
+       Figure 13: The elements(left) block(middle) and architecture(right) in RWKV [151].
+
+
+This approach parallelizes computations during training and maintains constant computational and
+memory complexity during inference.
+State Space Models (SSMs) [152] can be formulated as a type of RNN for efficient autoregressive
+inference and have emerged as a promising alternative to attention mechanisms, offering near-linear
+computational complexity compared to the quadratic complexity of attention. SSMs are formulated
+as x’(t) = Ax(t) + Bu(t), y(t) = Cx(t) + Du(t), mapping a single-dimension input signal u(t) to an N-
+dimension latent state x(t) before projecting it to a single-dimension output signal y(t), with A, B, C,
+and D being parameters learned by gradient descent [152]. Several techniques have been proposed
+to enhance SSMs, such as the Structured State Space sequence model (S4) [152], which refines
+SSMs by conditioning matrix A with a low-rank correction, and the Diagonal State Space (DSS)
+model [153], which proposes fully diagonal parameterization of state spaces for greater efficiency.
+H3 stacks two SSMs to interact with their output and input projection, bridging the gap between
+SSMs and attention while adapting to modern hardware. Mamba [77], a selective state space model,
+has been introduced as a strong competitor to the Transformer architecture in large language models.
+Mamba incorporates a selection mechanism to eliminate irrelevant data and develops a hardware-
+aware parallel algorithm for recurrent operation. This results in competitive performance compared
+to LLMs of the same capacity, with faster inference speeds that scale linearly with time and con-
+stant memory usage. In conclusion, State Space Models offer significant potential as an alternative
+to attention mechanisms by providing near-linear computational complexity and effectively captur-
+ing long-range dependencies. With continuous advancements and refinements, SSMs are poised to
+become an influential approach in the field of deep learning and sequence processing.
+
+4.3   Fine-Tuning
+
+Fine-tuning, as the primary stage for adapting LLMs to downstream tasks and training MLLLMs to
+follow visual instructions, plays a crucial role in enhancing the efficiency of LLMs.
+
+Parameter-Efficient Fine-Tuning Parameter-Efficient Fine-Tuning (PEFT) is an approach that
+aims to achieve high performance with fewer parameters in Large Language Models (LLMs). Tech-
+niques such as adapter-based tuning and low-rank adaptation provide effective solutions to mitigate
+the computational and memory challenges associated with fine-tuning LLMs while maintaining their
+expressiveness and generalization capabilities. Adapter-based tuning introduces lightweight adapter
+modules into the pre-trained model’s architecture. These adapter modules, typically composed of
+feed-forward neural networks with a small number of parameters, are inserted between the layers
+of the original model. During fine-tuning, only the adapter parameters are updated, while the pre-
+trained model’s parameters remain fixed. This method significantly reduces the number of trainable
+parameters, leading to faster training and inference times without compromising the model’s per-
+formance. LLM-Adapters [154] presents a framework for integrating various adapters into large
+language models, enabling parameter-efficient fine-tuning for diverse tasks. This framework en-
+
+
+                                                  16
+compasses state-of-the-art openly accessible large language models and a wide range of widely-used
+adapters.(IA)3 [155] introduces a novel Parameter-Efficient Fine-Tuning method, Infused Adapters
+by Inhibiting and Amplifying Inner Activations, which learns vectors to weight model parame-
+ters through multiplication with activations, enabling robust few-shot performance and task mixing
+within batches during inference without manual model structure adjustments. Low-rank adapta-
+tion [161] employs matrix factorization techniques to reduce the number of parameters in the model.
+By decomposing the original weight matrices into lower-rank matrices, low-rank adaptation captures
+the most significant components of the model’s representations while discarding less important in-
+formation. This results in a more compact model with a reduced number of parameters, which can
+be fine-tuned more efficiently.In LoRA-FA [156], a variant of LoRA, the first low-rank matrix is
+frozen after initialization and used as a random projection, while the other is trained. This leads to
+a reduction in the number of parameters by half, while maintaining a performance comparable to
+the conventional LoRA technique.DyLoRa [157] introduces a dynamic low-rank adaptation tech-
+nique that enables the training of LoRA blocks for a range of ranks instead of a single rank, which
+is achieved by sorting the representations learned by the adapter modules during training across
+different ranks.
+
+Full-Parameter fine-tuning Full-parameter fine-tuning is an approach in which all the parame-
+ters of a pre-trained model are updated during the fine-tuning process. This method aims to achieve
+optimal performance on a specific downstream task by leveraging the entire capacity of the pre-
+trained model. While full-parameter fine-tuning often leads to state-of-the-art results and improved
+task-specific performance, it comes with higher resource requirements in terms of computational
+power and memory consumption. In an effort to lessen the burden associated with training, numer-
+ous studies have concentrated on enhancing memory efficiency during full-parameter fine-tuning.
+This strategic approach has effectively diminished the obstacles that once hindered progress in this
+field of research. LOMO [158] introduces a Low-Memory Optimization technique derived from
+Stochastic Gradient Descent (SGD) to reduce memory consumption. Typically, the ADAM opti-
+mizer is employed; however, the optimizer states in this approach occupy a significant amount of
+memory. By utilizing the modified SGD-based LOMO, memory usage can be reduced. While SGD
+itself faces three challenges, these issues tend to resolve themselves during model fine-tuning. The
+specific modification involves updating the parameters within the gradient computation rather than
+after an entire layer. MeZO[159] proposes an optimizer that computes gradients using merely two
+forward passes, enabling the fine-tuning of LLMs with a memory footprint equivalent to that of in-
+ference. With a GPU memory requirement of 55GB, it allows for the comprehensive fine-tuning of
+a 30B parameter model.
+
+
+5     Training
+
+The training process of efficient MLLMs is a critical aspect that determines their performance on
+downstream tasks and their ability to handle diverse modalities. In this section, we provide an
+overview of various training methodologies, including pre-training, instruction-tuning, diverse train-
+ing steps, and parameter-efficient transfer learning strategies. These approaches aim to optimize the
+alignment between different modalities, fine-tune the models on specific tasks, and minimize the
+computational and parameter costs associated with the transfer learning process. Figure.14 presents
+a schematic representation of the different training stages involved in the development of efficient
+MLLMs. In the following subsections, we delve deeper into each of these aspects and discuss their
+significance in the context of efficient MLLMs.
+
+5.1   Pre-Training
+
+In the pre-training stage, the primary focus is on aligning different modalities in the embedding
+space, enabling the language model to accept inputs from various modalities. This phase of training
+mainly involves large-scale text-paired data, predominantly in the form of image-caption pairs. An
+image-caption pair (X, Y ) is typically expanded into a single-turn conversation (Xinstruct , Xa ),
+where Xinstruct contains an image Xv and a randomly sampled question Xq from a set of instruc-
+tions asking the assistant to briefly describe the image, and Xa is the original image description.
+Given such a conversation, the model is trained to autoregressively predict the image description.
+Consequently, we can compute the probability of predicting Xa conditioned by Xv and optimize it
+
+
+                                                 17
+                           Figure 14: Training stages of efficient MLLMs.
+
+
+using a standard cross-entropy loss function:
+                                    L
+                                    X
+                              max         log pθ (xi |Xv , Xinstruct , Xa,<i ),                      (4)
+                                θ
+                                    i=1
+
+where L is the length of Xa and θ denotes the trainable parameters. In order to better align different
+modalities of knowledge and avoid catastrophic forgetting during the pre-training stage, θ typically
+includes only a learnable modality interface, i.e., a vision-language projector.
+
+Which part to unfreeze? Considering that only training the connector may not well align the
+vision and text information when using SLMs, TinyLlava[23] also opt to partially freeze pre-
+trained modules (i.e. vision encoder and SLM) to activate more parameters for learning alignment.
+VILA[49] reveals that updating the base LLM throughout the pre-training stage is essential to in-
+heriting some of the appealing LLM properties like in-context learning. ShareGPT4V[55] found
+that unfreezing more parameters, particularly in the latter half of the vision encoder’s layers, proves
+beneficial when learning larger and more diverse datasets, showing the choice of training recipe is
+closely related to the quality of the data.
+
+Multi-stage pre-training To maximize compute efficiency, Idefics2 [48] decomposes the pre-
+training in two stages. In the first stage, it limits the max image resolution to 384 pixels and use
+a large global batch size. In the second stage, PDF documents are introduced to increase image
+resolution to a maximum of 980 pixels for the text to be legible.
+
+5.2   Instruction-Tuning
+
+Instruction-tuning (IT) is a crucial aspect of efficient MLLMs, which aims to fine-tune the models on
+specific tasks by leveraging task-specific instructions. This approach is built upon the concept that
+MLLMs can understand and follow instructions provided in natural language, thereby enhancing
+their performance on the target task. The benefits of IT in efficient MLLMs are manifold. Firstly,
+it enables the model to adapt to a wide range of tasks with minimal changes to its architecture
+or training data. This makes it a flexible and efficient approach for fine-tuning on diverse tasks.
+Secondly, IT allows for better generalization, as the model learns to follow instructions and apply
+its knowledge to new and unseen tasks.
+The IT stage is typically conducted within the paradigm of Supervised Fine-Tuning (SFT). SFT
+datasets are often derived from a portion of the pre-training data, which is transformed into an
+instruction-based format, presented in the form of single-turn or multi-turn dialogue structures.
+Given an image Xv and its caption, a conversation data (Xq1 , Xa1 , . . . , XqT , XaT ) can be generated,
+where T is the total number of turns. Typically, we can organize the data into a sequence of instruc-
+                                                           t
+tions and responses following [7], where the instruction Xinstruct  at the t-th turn as:
+                       Randomly choose [Xq1 , Xv ] or [Xv , Xq1 ],
+                    
+         t                                                                   the first turn t = 1
+       Xinstruct =                                                                                    (5)
+                       Xqt .                                       the remaining turns t > 1
+
+                                                     18
+    Figure 15: Comparison of different multimodal adaptation schemes for LLMs in LaVIN [50].
+
+
+With this multimodal instruction-following sequence, IT can be performed by using the same auto-
+regressive training objective as that of the pre-training stage. A prevalent strategy involves main-
+taining the visual encoder weights in a fixed state while continuing to update the pre-trained weights
+of both the projector and the SLM during the IT process.
+
+Efficient IT Current IT solutions are prohibitively expensive, requiring optimization of a large
+number of parameters and additional large-scale training. LaVIN [50] introduces an innovative
+and cost-effective solution for efficient instruction tuning of MLLMs. The Mixture-of-Modality
+Adaptation (MMA) in LaVIN uses lightweight modules to bridge the gap between LLMs and VL
+tasks. This also facilitates the joint optimization of vision and language models. The actual cost of
+implementing LaVIN is remarkably low, for instance, it only requires 1.4 training hours with 3.8M
+trainable parameters. HyperLLaVA [51] studies the under-explored dynamic tuning strategy for
+MLLMs and leverages the visual and language-guided dynamic tuning for the projector and LLM
+in two-stage training.
+
+5.3   Diverse Training Steps
+
+The traditional two-stage strategy, which demands the manual assignment of various adjustable
+parameters and dataset combinations to different training stages, can be a laborious task. To mit-
+igate this, SPHINX-X[14] devises a single-stage, all-encompassing training pipeline that impar-
+tially treats all gathered datasets and consistently converts them into multi-modal, multi-turn dia-
+logue formats. Throughout this unified training phase, all parameters except vision ecnoders within
+SPHINX-X are activated. Cobra[13] also argues that the initial phase of pre-alignment may not
+be requisite, with the model remaining underfitted even post-finetuning. Consequently, it discards
+the pre-alignment stage, opting instead to directly finetune the entire SLM backbone along with the
+projector. TinyGPT-V[28] training process consists of four stages: an initial pre-training stage for
+vision-language understanding, a second stage for refining image modality processing, a third stage
+for human-like learning through fine-tuning, and a fourth stage for multi-task learning to enhance
+its conversational abilities as a chatbot.
+
+5.4   Parameter Efficient Transfer Learning
+
+Several studies adopt Parameter-Efficient Fine-Tuning (PEFT) techniques for transfer learning, like
+LoRA [161], to safeguard against the loss of pre-trained knowledge. Efficient Attention Skipping
+(EAS) module[52] proposes a novel parameter and computation-efficient tuning method for MLLMs
+to retain the high performance and reduce both parameter and computation expenditures on down-
+stream tasks. MemVP [53] argues that this transfer learning paradigm still exhibits inefficiency
+since it significantly increases the input length of the language models. Visual prompts in MemVP
+are concatenated with the weights of Feed Forward Networks for visual knowledge injection to re-
+duce the training time and inference latency of the finetuned MLLMs and surpass the performance
+of previous PEFT methods.
+
+6     Data and Benchmarks
+In this section, we provide an overview of the data and benchmarks used for training and evaluating
+efficient MLLMs. We discuss the significance of pre-training data, instruction-tuning data, and the
+
+
+                                                 19
+benchmarks employed to assess the performance of these models. The discussion highlights the
+importance of diverse and high-quality datasets in achieving robust and accurate MLLMs, as well
+as the various strategies employed to generate and refine these datasets. Furthermore, we present a
+comprehensive comparison of MLLM performance across established benchmarks, emphasizing the
+need for a thorough evaluation to ensure the effectiveness of these models in real-world applications.
+
+6.1    Pre-Training Data
+
+Pre-training data primarily serve two critical objectives: (1) promoting the integration of various
+modalities and (2) conveying comprehensive knowledge. Large-scale image-caption pair datasets
+naturally fulfill these requirements. Firstly, they predominantly originate from the internet, provid-
+ing an extensive data volume with a broad knowledge coverage. Secondly, the direct alignment
+between the two modalities is beneficial for training modality projectors. However, captions in such
+corpora are often brief and contain noise, which can be refined and filtered using automated meth-
+ods, such as employing the CLIP [13] model to eliminate image-text pairs with low similarity scores.
+A summary of frequently used pre-training datasets can be found in Figure2.
+
+ Dataset Name                  X Modality    #.X     #.T          #.X-T              Representative Publications
+ CC3M [162]                      Image      3.3M    3.3M          3.3M                TinyGPT-V[28],MM1[30]
+ CC12M [163]                     Image      12.4M   12.4M        12.4M                        MM1[30]
+ SBU [164]                       Image       1M      1M            1M                      TinyGPT-V[28]
+ LAION-5B [165]                  Image      5.9B    5.9B          5.9B                     TinyGPT-V[28]
+ LAION-COCO[166]                 Image      600M    600M          600M                      Vary-toy [27]
+ COYO [167]                      Image      747M    747M          747M                        MM1[30]
+ COCO Caption[168]               Image      164K     1M            1M                       Vary-toy [27]
+                                                                                  MobileVLM [20],LLaVA-Phi [21],
+ CC595k [7]                      Image      595K    595K          595K
+                                                                                 LLaVA-Gemma [31],Mini-Gemini [26]
+ RefCOCO[169]                    Image      20K     142K          142K                      Vary-toy [27]
+ DocVQA[170]                     Image      12K     50K            50K                      Vary-toy [27]
+                                                                                   Imp-v1 [22],MoE-LLaVA [25],
+ LLava-1.5-PT[54]                Image      558K    558K          558K               Vary-toy [27],Mipha [32],
+                                                                                  VL-Mamba [18],Tiny-LLaVA [23]
+ ShareGPT4V-PT [55]              Image      1246K   1246K        1246K           Tiny-LLava [23],MobileVLM V2 [17]
+ ShareGPT4 [55]                  Image      100K    100K          100K                      ALLaVA [29]
+ Bunny-pretrain-LAION-2M[24]     Image       2M      2M            2M                        Bunny [24]
+ ALLaVA-Caption-4V [29]          Image      715K    715K          715K             Mini-Gemini [26], ALLaVA[29]
+ MMC4 (Interleaved) [171]        Image      571M    43B     101.2M (Instances)           DeepSeek-VL [34]
+ Obelics (Interleaved)[172]      Image      353M    115M    141M (Instances)                  MM1[30]
+Table 2: The statistics for common MLLM PT datasets.#.X represents the quantity of X, #.T repre-
+sents the quantity of Text, and #.X-T represents the quantity of X-Text pairs, where X can be Image,
+Video, or Audio.
+
+
+A growing number of studies have investigated the production of high-quality fine-grained pre-
+trained data by leveraging powerful MLLMs like GPT-4V. These datasets typically offer more de-
+tailed and accurate image descriptions compared to their coarse-grained counterparts, enabling a
+closer alignment of image and text modalities. However, this method often requires the use of
+commercial MLLMs, leading to increased costs and a smaller data volume. ShareGPT4V[55] ad-
+dresses this issue by first training a captioner on 100K GPT-4V-generated data and then expanding
+the dataset to 1.2M using the pretrained captioner. Moreover,VILA’s[49] findings indicate that in-
+corporating interleaved pre-training data proves advantageous, while solely relying on image-text
+pairs is suboptimal in achieving the desired outcomes.
+
+6.2    Instruction-Tuning Data
+
+Instruction tuning(IT) is a crucial step in refining efficient MLLMs’ capacity to accurately interpret
+user instructions and effectively carry out the desired tasks. This procedure bears a strong connection
+to the concept of multi-task prompting.
+
+
+                                                       20
+A summary of frequently used pre-training datasets can be found in Table.3. High-quality IT data
+can be derived from task-specific datasets. For instance, consider a sample from VQA datasets where
+the input includes an image and a natural language question, and the output is the text-based answer
+to the question based on the image. This could easily form the multimodal input and response
+of the instruction sample. The instructions, or task descriptions, can be obtained either through
+manual creation or semi-automatic generation with the help of GPT. In addition to utilizing publicly
+available task-specific datasets, SPHINX-X[14] assembles a dataset focused on OCR from a wide
+range of PDF data sourced from the internet. Specifically, it begins by gathering a large-scale PDF
+dataset from the web. It then obtains the rendering results of each page in the PDF file, while
+simultaneously saving all text annotations along with their respective bounding boxes. Ultimately,
+these elements are converted into a unified question-answering format.
+While multi-task datasets provide an abundant source of data, they may not always be suitable
+for complex real-world situations, such as engaging in multi-turn conversations. To address this
+challenge, some research has explored the use of self-instruction by leveraging LLMs to gener-
+ate text-based or multimodal instruction-following data from a limited number of hand-annotated
+samples. SPHINX-X[14] assembles a rich multi-domain dataset with fine-grained correspondence
+between images and texts.It gathers images from diverse sources and then employs annotations to
+apply various markers onto the original images. By prompting GPT-4V with these marked images
+and tailored domain-specific guidelines, the system generates captions that offer an image overview,
+regional details and object relationships insight. During the training process, SPHINX-X utilizes the
+unaltered images rather than the marked ones. ALLaVA[29] propose to distill a caption and a QA
+pair for an image within a single session. Specifically, it prompts GPT-4V with an image, and ask it
+to first generate a fine-grained caption then a VQA pair.
+Additionally, excluding multimodal instructional data, conversations solely based on language be-
+tween users and assistants can significantly contribute to enhancing a model’s conversational exper-
+tise and responsiveness to directives.For example, VILA’s[49] research demonstrates that integrating
+text-only instructional data with image-text data during the fine-tuning process not only mitigates the
+decline in performance for text-only tasks but also enhances the accuracy of MLLM-related tasks.
+
+Dataset Name           Type   I→O                 Source                  Method      #.Instance      Representative Publications
+                                                                                                   MobileVLM [20], LLaVA-Phi [21],
+                                                                                                    Mini-Gemini [26], Vary-toy [27],
+LLaVA’s IT [7]         SFT    I+T→T           MS-COCO[173]                 Auto.        150K         TinyGPT-V [28], Imp-v1 [22],
+                                                                                                    ALLaVA [29],SPHINX-X [14],
+                                                                                                    LLaVA-Gemma [31],MM1 [30]
+                                                                                                   Tiny-LLaVA [23], Mini-Gemini [26],
+                                       LCS, COCO [173], SAM [174],
+ShareGPT4V’s IT[55]    SFT    I+T→T                                     Auto.+Manu.       –           MM1 [30], DeepSeek-VL [34],
+                                        TextCaps[175], WikiArt [176]
+                                                                                                            SPHINX-X [14]
+                                      LLaVA[7],Visual Genome[177],
+                                       VQAv2[57], ShareGPT[178],                                    Tiny-LLava [23], VL-Mamba [18],
+LLaVA-1.5’s IT [54]    SFT    I+T→T   A-OKVQA[179],TextCaps[175],       Auto.+Manu.     665K        Cobra [13], LLaVA-Gemma [31],
+                                         GQA[59], OKVQA[180],                                         Mipha [32], MoE-LLaVA [25]
+                                      OCRVQA, RefCOCO[169, 181]
+LRV-Instruct [182]     SFT    I+T→T         Visual Genome[177]             Auto.        300K          MoE-LLaVA [25], Cobra[13]
+                                                                                                   MoE-LLaVA [25], SPHINX-X [14],
+LVIS-INSTRUCT-4V[56]   SFT    I+T→T             LVIS [183]                 Auto.        220K
+                                                                                                     DeepSeek-VL [34], Cobra[13]
+                                                                                                   Mini-Gemini [26], SPHINX-X [14],
+LAION GPT4V[184]       SFT    I+T→T            LAION [166]                 Auto.        12.4k
+                                                                                                          DeepSeek-VL [34]
+MiniGPT-4’s IT [10]    SFT    I+T→T     CC3M [162], CC12M [163]            Auto.         5K                 TinyGPT-V [28],
+                                             MS-COCO[173],
+SVIT [185]             SFT    I+T→T                                        Auto.        3.2M               MoE-LLaVA [25]
+                                            Visual Genome[177]
+                                           SVIT-mix-665K[185],
+Bunny-695K [24]        SFT    I+T→T                                        Auto.        695K                  Bunny [24]
+                                      WizardLM-evol-instruct-70K[186]
+                                                                                                      MM1 [30], SPHINX-X [14],
+GQA[59]                SFT    I+T→T         Visual Genome[177]             Auto.        22M
+                                                                                                        LLaVA-Gemma [31]
+ Table 3: The statistics for common MLLM IT datasets. I→O:Input to Output Modalities,T:Text.
+
+
+
+6.3   Benchmarks
+
+With the aim of delivering an all-encompassing performance evaluation, we have assembled a table
+that demonstrates the effectiveness of 22 MLLMs across 14 well-established VL benchmarks, as
+depicted in Table.4. Additionally, for further reference, we have incorporated a comparison of results
+from 13 prominent and larger MLLMs.
+
+
+                                                              21
+Model                  LLM Backbone     VQAv2 GQA SQAI VQAT VizWiz MMMU MathV MMEP MMEC MMB SEED POPE LLAVAW MM-Vet
+Flamingo [16]           Chinchilla-7B     -       -      -     -     28.8       -        -       -         -      -       -        -      -      -
+BLIP-2 [15]           Flan-T5XXL(13B)   65.0    44.7    61.0 42.5    19.6       -        -     1293.8    290.0    -    -/46.4     85.3   38.1   22.4
+LLaVA [7]                Vicuna-13B       -     41.3     -   38.9     -         -        -       -         -      -       -        -      -      -
+MiniGPT-4 [10]           Vicuna-13B       -     30.8     -   19.4     -         -        -       -         -      -       -        -      -      -
+InstructBLIP [8]         Vicuna-13B       -     49.5    63.1 50.7    33.4       -        -     1212.8    291.8    -       -       78.9   58.2   25.6
+Qwen-VL-Chat [187]        Qwen-7B       78.2∗   57.5∗   68.2 61.5    38.9   35.9/32.9    -     1487.5    360.7   60.6  -/58.2      -      -      -
+LLaVA-1.5 [54]         Vicuna-1.5-13B   80.0∗   63.3∗   71.6 61.3    53.6       -        -     1531.3    295.4   67.7  -/68.2     85.9   70.7   35.4
+MiniGPT-v2-Chat [9]   LLaMA-2-Chat-7B     -     58.8     -   52.3    42.4       -        -       -         -      -       -        -      -      -
+InternVL-Chat [5]        Vicuna-13B     81.2∗   66.6∗    -   61.5    58.5       -        -     1586.4      -      -       -       87.6    -      -
+Emu2-Chat [6]            LLaMA-33B      84.9∗   65.1∗    -   66.6∗   54.9    -/34.1      -       -         -      -     62.8       -      -     48.5
+Gemini Pro [2]                -         71.2      -      -   74.6     -      47.9/–     45.2     -      436.79   73.6 –/70.7       -      -     64.3
+Gemini Ultra [2]              -         77.8      -      -   82.3     -      59.4/–     53.0     -         -      -       -        -      -      -
+GPT4V [1]                     -         77.2      -      -   78.0     -     56.8/55.7   49.9     -      517.14   75.8 67.3/69.1    -      -     67.6
+MobileVLM [20]     MobileLLaMA (2.7B)     -     59.0∗ 61.0    47.5    -         -        -     1288.9      -     59.6     -     84.9      -      -
+LLaVA-Phi [21]         Phi-2 (2.7B)     71.4∗     -   68.4    48.6   35.9       -        -     1335.1      -     59.8     -     85.0      -     28.9
+Imp-v1 [22]            Phi-2 (2.7B)     79.5      -   70.0    59.4    -         -        -     1434.0      -     66.5     -     88.0      -     33.1
+TinyLLaVA [23]         Phi-2 (2.7B)     79.9∗   62.0∗ 69.1    59.1    -         -        -     1464.9      -     66.9     -     86.4     75.8   32.0
+Bunny [24]             Phi-2 (2.7B)     79.8    62.5 70.9      -      -     38.2/33.0    -     1488.8 289.3      68.6  62.5/-   86.8      -      -
+Gemini Nano-2 [2]            -          67.5      -    -      65.9    -      32.6/-     30.6     -         -      -       -      -        -      -
+MobileVLM-v2 [17] MobileLLaMA(2.7B)       -     61.1 70.0     57.5    -         -        -     1440.5      -      -       -     84.7      -      -
+MoE-LLaVA [25]         Phi-2 (2.7B)     79.9∗       ∗
+                                                62.6 70.3     57.0   43.7       -        -     1431.3      -     68.0     -     85.7      -     35.9
+Cobra [13]             Mamba-2.8B       75.9    58.5   -      46.0   52.0       -        -       -         -      -       -     88.0      -      -
+Mini-Gemini [26]       Gemma-2B           -       -    -      56.2    -     31.7/29.1   29.4   1341.0 312.0      59.8     -      -        -     31.1
+Vary-toy [27]           Qwen-1.8B         -       -    -       -      -         -        -       -         -      -       -      -        -     29.0
+TinyGPT-V [28]         Phi-2 (2.7B)       -     33.6   -       -     24.8       -        -       -         -      -       -      -        -      -
+SPHINX-Tiny [14]     TinyLlama-1.1B       -       -    -      57.8    -         -       26.4   1261.2 242.1      56.6  17.1/-   82.2     52.3   23.8
+ALLaVA-Longer [29]     Phi-2 (2.7B)       -     50.0   -      50.3    -      33.2/-      -         1564.6†       64.6     -      -       71.7   35.5
+MM1-3B [30]              MM1-3B         82.5      -   76.1    72.9    -     38.6/35.7   32.6   1469.4 303.1      70.8 63.9/69.4 87.6     76.8   42.2
+LLaVA-Gemma [31]       Gemma-2b-it      71.4    58.7   -       -      -         -        -     1133.0 307.0       -       -     85.3      -     19.1
+Mipha-3B [32]          Phi-2 (2.7B)     81.3∗   63.9∗ 70.9    56.6   47.5       -        -     1488.9 295.0      69.7     -     86.7      -     32.1
+VL-Mamba [18]          Mamba-2.8B       76.6    56.2 65.4     48.9    -         -        -     1369.6      -     57.0     -     84.4      -     32.6
+MiniCPM-V 2.0[33]    MiniCPM-2.4B         -       -    -      74.1    -      38.2/-     38.7       1808.6†       69.6     -      -        -      -
+DeepSeek-VL [34]    DeepSeek-LLM-1B       -       -    -       -      -      32.2/-     31.1     -         -     64.6  -/66.7   87.6      -     36.8
+KarmaVLM[71]          Qwen1.5-0.5B        -       - 53.86    45.25    -         -        -       -         -     55.8     -      -       47.5    -
+moondream2[72]        Phi-1.5(1.3B)     77.7    61.7   -      49.7    -         -        -       -         -      -       -      -        -      -
+Bunny-v1.1-4B[24]     Phi-3-Mini-4K     81.7    63.4 76.3      -      -     40.2/38.8    -     1503.9 362.9      74.1 64.6/71.7 87.0      -      -
+Table 4: Comparison of mainstream MLLMs and efficient MLLMs on 14 VL benchmarks.
+VQAv2 [57]; VQAT : TextVQA [58]; GQA [59]; SQAI : ScienceQA-IMG [188]; VizWiz [189];
+MMMU [190]; MathV: MathVista [191]; MMEP/C : the Perception/Cognition split of MME [60];
+MMB: MMBench [61]; SEED: SEED-Bench [192]; POPE [62]; LLaVAW : LLaVA-Bench (In-the-
+Wild) [7]; MM-Vet [193]. The two numbers reported in MMMU denote the performance on the
+val and test split, respectively. The two numbers reported in SEED denote the performance on the
+whole SEED-Bench and the image part, respectively. † denotes the combined points of two splits.
+∗
+  indicates that training images of the datasets are observed during training.The red denotes the
+highest result of efficient MLLMs, and the blue denotes that of large-scale MLLMs.
+
+
+
+7       Applications
+
+From the preceding analysis, it’s clear that many efficient MLLM approaches evaluate their perfor-
+mances across a range of scenarios, like VQA, visual grounding, image segmentation, etc. However,
+it’s also crucial to explore these efficient architectures in well-established tasks to achieve their ul-
+timate performance. Therefore, we have chosen to introduce several downstream tasks, such as
+medical analysis, document understanding, and video comprehension.
+
+
+7.1     Biomedical Analysis
+
+Due to the high cost of annotating biomedical data, foundation models are poised to become a new
+paradigm in biomedicine, achieving state-of-the-art results on many applications, including medical
+question answering [194] and medical image classification [195]. Recently, multimodal generative
+AI has emerged as an exciting frontier in the biomedical domain, expanding the application scope
+from single-modality to multi-modality, such as VQA and radiology report generation.
+The mixture of Expert Tuning has effectively enhanced the performance of general MLLMs with
+fewer parameters, yet its application in resource-limited medical settings has not been fully explored.
+MoE-TinyMed [64] is a model tailored for medical applications that significantly lower parameter
+demands. LLaVA-Rad [63] is a state-of-the-art tool that demonstrates rapid performance on a sin-
+gle V100 GPU in private settings, making it highly applicable for real-world clinical scenarios. It
+employs a modular approach, integrating unimodal pre-trained models and emphasizing the training
+of lightweight adapters. As a result, LLaVA-Rad outperforms larger models such as GPT-4V and
+Med-PaLM in terms of standard metrics, showcasing its superior efficiency and effectiveness.
+
+
+                                                                       22
+7.2   Document Understanding
+
+Documents or charts serve as a crucial source of information, offering an intuitive visualization
+of data in various forms. They have become an indispensable part of information dissemination,
+business decision-making, and academic research. However, current chart understanding models
+still face two primary limitations: (1) The considerable number of parameters makes training and
+deployment challenging. For instance, ChartLlama [196], a 13-billion-parameter model, is difficult
+to deploy on a single consumer-grade GPU. (2) These models struggle with efficiently encoding
+high-resolution images, as vision transformers tend to produce lengthy feature sequences.
+To address the challenges of fine-grained visual perception and visual information compression for
+document-oriented MLLMs. TinyChart [37] outperforms several 13B MLLMs with Program-of-
+Thoughts (PoT) learning and Visual Token Merging strategy while excelling in faster inference
+speed at the same time. TextHawk [36] explores efficient fine-grained perception by designing four
+dedicated components to address challenges posed by document-oriented tasks. HRVDA [66] and
+Monkey [65] are also large multimodal models designed to address the challenges posed by high-
+resolution requirements in visual document understanding tasks.
+
+7.3   Video Comprehension
+
+Videos provide an impressively accurate representation of how humans continuously perceive the
+visual world. Intelligent video understanding is vital for a variety of real-world applications, in-
+cluding video category classification, video captioning, and video-text retrieval. Several works like
+videoChat [197] and Video-LLaMA [198] are LLM-based large multimodal models for end-to-end
+chat-centric video comprehension. However, these methods can only take in a limited number of
+frames for short video understanding.
+To address the computational challenges associated with processing long videos due to the excessive
+number of visual tokens, several approaches have been developed. mPLUG-video [67] is designed
+for video understanding tasks and begins with a TimeSformer-based video encoder to extract fea-
+tures from sparsely sampled video frames effectively, followed by a visual abstractor module to
+reduce sequence length. Video-LLaVA [44] excels in various video understanding tasks by unify-
+ing visual representations of images and videos into a single language feature space before projec-
+tion. This approach enables effective learning of multi-modal interactions with LanguageBind [93].
+LLaMA-VID [69] addresses this issue by representing each frame with two distinct tokens, namely
+context token and content token. The context token encodes the overall image context based on user
+input, whereas the content token encapsulates visual cues in each frame. This dual-token strategy
+significantly reduces the overload of long videos while preserving critical information. Instead of
+trying to process more frames simultaneously like most existing work, MA-LMM [68] proposes to
+process videos in an online manner and store past video information in a memory bank to reference
+historical video content for long-term analysis without exceeding LLMs’ context length constraints
+or GPU memory limits.
+
+
+8     Discussion and Conclusion
+
+8.1   Limitations and Future work
+
+The development of efficient MLLMs is still in its nascent stage, and there is ample room for im-
+provement. We summarize the current state of affairs as follows:
+
+       • At present, efficient MLLMs face challenges in processing extended-context multimodal
+         information, and they are typically limited to accepting single images. This constrains the
+         advancement of more sophisticated models capable of handling an increased number of
+         multimodal tokens. Such models would be beneficial for applications like comprehending
+         lengthy videos and analyzing extensive documents that incorporate a mix of images and
+         text, creating more versatile and powerful systems.
+       • The predominant efficient MLLMs mainly support dual input modalities - images and texts,
+         and a singular output modality - text. However, the tangible world encompasses a more
+         extensive array of modalities. By expanding the scope of efficient MLLMs to accommodate
+
+
+                                                 23
+         a richer diversity of input modalities, and augmenting their generative capacities, we can
+         significantly bolster their multifunctionality and widen their applicability.
+       • There are two principal pathways to fortify efficient MLLM models. Firstly, the incorpora-
+         tion of a more varied set of lightweight LLMs can render the design of MLLMs more adapt-
+         able, facilitating their customization to cater to a broad spectrum of requirements. Sec-
+         ondly, leveraging high-quality instruction tuning datasets can empower efficient MLLMs
+         to better comprehend and implement a vast array of instructions, thereby amplifying their
+         zero-shot learning capabilities.
+       • The development of embodied agents capable of deployment on edge devices represents a
+         crucial application prospect for efficient MLLMs. An agent possessing specialized knowl-
+         edge and the capability to interact with the real world has far-reaching implications, poten-
+         tially revolutionizing fields such as robotics, automation, and artificial intelligence.
+
+8.2   Conclusion
+
+In this study, we take a deep dive into the realm of efficient MLLM literature, providing an all-
+encompassing view of its central themes, including foundational theories and their extensions. Our
+goal is to identify and highlight areas that require further research and suggest potential avenues
+for future studies. We aim to provide a comprehensive perspective on the current state of efficient
+MLLM, with the hope of inspiring additional research. Given the dynamic nature of this field, it’s
+possible that some recent developments may not be fully covered. To counter this, we’ve set up a
+dedicated website that uses crowdsourcing to keep up with the latest advancements. This platform
+is intended to serve as a continually updated source of information, promoting ongoing growth in
+the field. Due to space constraints, we can’t cover all technical details in depth but have provided
+brief overviews of the key contributions in the field. In the future, we plan to continuously update
+and enhance the information on our website, adding new insights as they come to light.
+
+
+
+
+                                                 24
+References
+ [1] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman,
+     Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report.
+     arXiv preprint arXiv:2303.08774, 2023.
+
+ [2] Gemini Team, Rohan Anil, Sebastian Borgeaud, Yonghui Wu, Jean-Baptiste Alayrac, Jiahui Yu, Radu
+     Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, et al. Gemini: a family of highly capable
+     multimodal models. arXiv preprint arXiv:2312.11805, 2023.
+
+ [3] Qinghao Ye, Haiyang Xu, Guohai Xu, Jiabo Ye, Ming Yan, Yiyang Zhou, Junyang Wang, Anwen Hu,
+     Pengcheng Shi, Yaya Shi, Chaoya Jiang, Chenliang Li, Yuanhong Xu, Hehong Chen, Junfeng Tian,
+     Qi Qian, Ji Zhang, and Fei Huang. mplug-owl: Modularization empowers large language models with
+     multimodality, 2023.
+
+ [4] Qinghao Ye, Haiyang Xu, Jiabo Ye, Ming Yan, Anwen Hu, Haowei Liu, Qi Qian, Ji Zhang, Fei Huang,
+     and Jingren Zhou. mplug-owl2: Revolutionizing multi-modal large language model with modality col-
+     laboration, 2023.
+
+ [5] Zhe Chen, Jiannan Wu, Wenhai Wang, Weijie Su, Guo Chen, Sen Xing, Zhong Muyan, Qinglong Zhang,
+     Xizhou Zhu, Lewei Lu, et al. Internvl: Scaling up vision foundation models and aligning for generic
+     visual-linguistic tasks. arXiv preprint arXiv:2312.14238, 2023.
+
+ [6] Quan Sun, Yufeng Cui, Xiaosong Zhang, Fan Zhang, Qiying Yu, Zhengxiong Luo, Yueze Wang, Yong-
+     ming Rao, Jingjing Liu, Tiejun Huang, et al. Generative multimodal models are in-context learners.
+     arXiv preprint arXiv:2312.13286, 2023.
+
+ [7] Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong Jae Lee. Visual instruction tuning. In NeurIPS,
+     2023.
+
+ [8] Wenliang Dai, Junnan Li, Dongxu Li, Anthony Meng Huat Tiong, Junqi Zhao, Weisheng Wang, Boyang
+     Li, Pascale N Fung, and Steven Hoi. Instructblip: Towards general-purpose vision-language models
+     with instruction tuning. Advances in Neural Information Processing Systems, 36, 2024.
+
+ [9] Jun Chen, Deyao Zhu, Xiaoqian Shen, Xiang Li, Zechun Liu, Pengchuan Zhang, Raghuraman Krish-
+     namoorthi, Vikas Chandra, Yunyang Xiong, and Mohamed Elhoseiny. Minigpt-v2: large language model
+     as a unified interface for vision-language multi-task learning. arXiv preprint arXiv:2310.09478, 2023.
+
+[10] Deyao Zhu, Jun Chen, Xiaoqian Shen, Xiang Li, and Mohamed Elhoseiny. Minigpt-4: Enhancing
+     vision-language understanding with advanced large language models. arXiv preprint arXiv:2304.10592,
+     2023.
+
+[11] Jieneng Chen, Qihang Yu, Xiaohui Shen, Alan Yuille, and Liang-Chieh Chen. Vitamin: Designing
+     scalable vision models in the vision-language era, 2024.
+
+[12] Oğuzhan Fatih Kar, Alessio Tonioni, Petra Poklukar, Achin Kulshrestha, Amir Zamir, and Fed-
+     erico Tombari. BRAVE: Broadening the visual encoding of vision-language models. arXiv preprint
+     arXiv:2404.07204, 2024.
+
+[13] Han Zhao, Min Zhang, Wei Zhao, Pengxiang Ding, Siteng Huang, and Donglin Wang. Cobra: Extending
+     mamba to multi-modal large language model for efficient inference. arXiv preprint arXiv:2403.14520,
+     2024.
+
+[14] Peng Gao, Renrui Zhang, Chris Liu, Longtian Qiu, Siyuan Huang, Weifeng Lin, Shitian Zhao, Shijie
+     Geng, Ziyi Lin, Peng Jin, et al. Sphinx-x: Scaling data and parameters for a family of multi-modal large
+     language models. arXiv preprint arXiv:2402.05935, 2024.
+
+[15] Junnan Li, Dongxu Li, Silvio Savarese, and Steven Hoi. Blip-2: Bootstrapping language-image pre-
+     training with frozen image encoders and large language models. In International conference on machine
+     learning, pages 19730–19742. PMLR, 2023.
+
+[16] Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc,
+     Arthur Mensch, Katherine Millican, Malcolm Reynolds, et al. Flamingo: a visual language model for
+     few-shot learning. Advances in neural information processing systems, 35:23716–23736, 2022.
+
+[17] Xiangxiang Chu, Limeng Qiao, Xinyu Zhang, Shuang Xu, Fei Wei, Yang Yang, Xiaofei Sun, Yiming
+     Hu, Xinyang Lin, Bo Zhang, et al. Mobilevlm v2: Faster and stronger baseline for vision language
+     model. arXiv preprint arXiv:2402.03766, 2024.
+
+
+                                                    25
+[18] Yanyuan Qiao, Zheng Yu, Longteng Guo, Sihan Chen, Zijia Zhao, Mingzhen Sun, Qi Wu, and Jing Liu.
+     Vl-mamba: Exploring state space models for multimodal learning. arXiv preprint arXiv:2403.13600,
+     2024.
+[19] Junbum Cha, Wooyoung Kang, Jonghwan Mun, and Byungseok Roh. Honeybee: Locality-enhanced
+     projector for multimodal llm. arXiv preprint arXiv:2312.06742, 2023.
+[20] Xiangxiang Chu, Limeng Qiao, Xinyang Lin, Shuang Xu, Yang Yang, Yiming Hu, Fei Wei, Xinyu
+     Zhang, Bo Zhang, Xiaolin Wei, et al. Mobilevlm: A fast, reproducible and strong vision language
+     assistant for mobile devices. arXiv preprint arXiv:2312.16886, 2023.
+[21] Yichen Zhu, Minjie Zhu, Ning Liu, Zhicai Ou, Xiaofeng Mou, and Jian Tang. Llava-phi: Efficient
+     multi-modal assistant with small language model. arXiv preprint arXiv:2401.02330, 2024.
+[22] Zhenwei Shao, Xuecheng Ouyang, Zhenbiao Gai, Zhou Yu, and Jun Yu. Imp: An emprical study of
+     multimodal small language models, 2024.
+[23] Baichuan Zhou, Ying Hu, Xi Weng, Junlong Jia, Jie Luo, Xien Liu, Ji Wu, and Lei Huang. Tinyllava: A
+     framework of small-scale large multimodal models. arXiv preprint arXiv:2402.14289, 2024.
+[24] Muyang He, Yexin Liu, Boya Wu, Jianhao Yuan, Yueze Wang, Tiejun Huang, and Bo Zhao. Efficient
+     multimodal learning from data-centric perspective. arXiv preprint arXiv:2402.11530, 2024.
+[25] Bin Lin, Zhenyu Tang, Yang Ye, Jiaxi Cui, Bin Zhu, Peng Jin, Junwu Zhang, Munan Ning, and Li Yuan.
+     Moe-llava: Mixture of experts for large vision-language models. arXiv preprint arXiv:2401.15947,
+     2024.
+[26] Yanwei Li, Yuechen Zhang, Chengyao Wang, Zhisheng Zhong, Yixin Chen, Ruihang Chu, Shaoteng
+     Liu, and Jiaya Jia. Mini-gemini: Mining the potential of multi-modality vision language models. arXiv
+     preprint arXiv:2403.18814, 2024.
+[27] Haoran Wei, Lingyu Kong, Jinyue Chen, Liang Zhao, Zheng Ge, En Yu, Jianjian Sun, Chunrui Han,
+     and Xiangyu Zhang. Small language model meets with reinforced vision vocabulary. arXiv preprint
+     arXiv:2401.12503, 2024.
+[28] Zhengqing Yuan, Zhaoxu Li, and Lichao Sun. Tinygpt-v: Efficient multimodal large language model
+     via small backbones. arXiv preprint arXiv:2312.16862, 2023.
+[29] Guiming Hardy Chen, Shunian Chen, Ruifei Zhang, Junying Chen, Xiangbo Wu, Zhiyi Zhang, Zhihong
+     Chen, Jianquan Li, Xiang Wan, and Benyou Wang. Allava: Harnessing gpt4v-synthesized data for a lite
+     vision-language model. arXiv preprint arXiv:2402.11684, 2024.
+[30] Brandon McKinzie, Zhe Gan, Jean-Philippe Fauconnier, Sam Dodge, Bowen Zhang, Philipp Dufter,
+     Dhruti Shah, Xianzhi Du, Futang Peng, Floris Weers, et al. Mm1: Methods, analysis & insights from
+     multimodal llm pre-training. arXiv preprint arXiv:2403.09611, 2024.
+[31] Musashi Hinck, Matthew L Olson, David Cobbley, Shao-Yen Tseng, and Vasudev Lal. Llava-
+     gemma: Accelerating multimodal foundation models with a compact language model. arXiv preprint
+     arXiv:2404.01331, 2024.
+[32] Minjie Zhu, Yichen Zhu, Xin Liu, Ning Liu, Zhiyuan Xu, Chaomin Shen, Yaxin Peng, Zhicai Ou, Feifei
+     Feng, and Jian Tang. A comprehensive overhaul of multimodal assistant with small language models.
+     arXiv preprint arXiv:2403.06199, 2024.
+[33] Yuan Yao, Tianyu Yu, Chongyi Wang, Junbo Cui, Hongji Zhu, Tianchi Cai, Weilin Zhao, Kaihuo Zhang,
+     Yixin Hong, Haoyu Li, Shengding Hu, Zhi Zheng, Jie Zhou, Jie Cai, Chao Jia, Xu Han, Guoyang Zeng,
+     Dahai Li, Zhiyuan Liu, and Maosong Sun. Minicpm-v 2.0: An efficient end-side mllm with strong ocr
+     and understanding capabilities. https://github.com/OpenBMB/MiniCPM-V, 2024.
+[34] Haoyu Lu, Wen Liu, Bo Zhang, Bingxuan Wang, Kai Dong, Bo Liu, Jingxiang Sun, Tongzheng Ren,
+     Zhuoshu Li, Hao Yang, Yaofeng Sun, Chengqi Deng, Hanwei Xu, Zhenda Xie, and Chong Ruan.
+     Deepseek-vl: Towards real-world vision-language understanding, 2024.
+[35] Ruyi Xu, Yuan Yao, Zonghao Guo, Junbo Cui, Zanlin Ni, Chunjiang Ge, Tat-Seng Chua, Zhiyuan Liu,
+     Maosong Sun, and Gao Huang. Llava-uhd: an lmm perceiving any aspect ratio and high-resolution
+     images, 2024.
+[36] Ya-Qi Yu, Minghui Liao, Jihao Wu, Yongxin Liao, Xiaoyu Zheng, and Wei Zeng. Texthawk: Exploring
+     efficient fine-grained perception of multimodal large language models. arXiv preprint arXiv:2404.09204,
+     2024.
+
+
+                                                    26
+[37] Liang Zhang, Anwen Hu, Haiyang Xu, Ming Yan, Yichen Xu, Qin Jin, Ji Zhang, and Fei Huang. Tiny-
+     chart: Efficient chart understanding with visual token merging and program-of-thoughts learning. arXiv
+     preprint arXiv:2404.16635, 2024.
+[38] Jiaxing Chen, Yuxuan Liu, Dehu Li, Xiang An, Ziyong Feng, Yongle Zhao, and Yin Xie. Plug-and-play
+     grounding of reasoning in multimodal large language models. arXiv preprint arXiv:2403.19322, 2024.
+[39] Xiaoyi Dong, Pan Zhang, Yuhang Zang, Yuhang Cao, Bin Wang, Linke Ouyang, Songyang Zhang,
+     Haodong Duan, Wenwei Zhang, Yining Li, Hang Yan, Yang Gao, Zhe Chen, Xinyue Zhang, Wei Li,
+     Jingwen Li, Wenhai Wang, Kai Chen, Conghui He, Xingcheng Zhang, Jifeng Dai, Yu Qiao, Dahua
+     Lin, and Jiaqi Wang. Internlm-xcomposer2-4khd: A pioneering large vision-language model handling
+     resolutions from 336 pixels to 4k hd. arXiv preprint arXiv:2404.06512, 2024.
+[40] Baifeng Shi, Ziyang Wu, Maolin Mao, Xin Wang, and Trevor Darrell. When do we not need larger
+     vision models? arXiv preprint arXiv:2403.13043, 2024.
+[41] Yuzhang Shang, Mu Cai, Bingxin Xu, Yong Jae Lee, and Yan Yan. Llava-prumerge: Adaptive token
+     reduction for efficient large multimodal models, 2024.
+[42] Jianjian Cao, Peng Ye, Shengze Li, Chong Yu, Yansong Tang, Jiwen Lu, and Tao Chen. Madtp: Multi-
+     modal alignment-guided dynamic token pruning for accelerating vision-language transformer, 2024.
+[43] Zhuofan Zong, Bingqi Ma, Dazhong Shen, Guanglu Song, Hao Shao, Dongzhi Jiang, Hongsheng Li,
+     and Yu Liu. Mova: Adapting mixture of vision experts to multimodal context, 2024.
+[44] Bin Lin, Bin Zhu, Yang Ye, Munan Ning, Peng Jin, and Li Yuan. Video-llava: Learning united visual
+     representation by alignment before projection. arXiv preprint arXiv:2311.10122, 2023.
+[45] Mukul Gagrani, Raghavv Goel, Wonseok Jeon, Junyoung Park, Mingu Lee, and Christopher Lott. On
+     speculative decoding for multimodal large language models, 2024.
+[46] Liang Chen, Haozhe Zhao, Tianyu Liu, Shuai Bai, Junyang Lin, Chang Zhou, and Baobao Chang. An
+     image is worth 1/2 tokens after layer 2: Plug-and-play inference acceleration for large vision-language
+     models, 2024.
+[47] Zhihang Lin, Mingbao Lin, Luxi Lin, and Rongrong Ji. Boosting multimodal large language models
+     with visual tokens withdrawal for rapid inference, 2024.
+[48] Hugo Laurençon, Léo Tronchon, Matthieu Cord, and Victor Sanh. What matters when building vision-
+     language models?, 2024.
+[49] Ji Lin, Hongxu Yin, Wei Ping, Yao Lu, Pavlo Molchanov, Andrew Tao, Huizi Mao, Jan Kautz, Mo-
+     hammad Shoeybi, and Song Han. Vila: On pre-training for visual language models. arXiv preprint
+     arXiv:2312.07533, 2023.
+[50] Gen Luo, Yiyi Zhou, Tianhe Ren, Shengxin Chen, Xiaoshuai Sun, and Rongrong Ji. Cheap and quick:
+     Efficient vision-language instruction tuning for large language models. Advances in Neural Information
+     Processing Systems, 36, 2024.
+[51] Wenqiao Zhang, Tianwei Lin, Jiang Liu, Fangxun Shu, Haoyuan Li, Lei Zhang, He Wanggui, Hao Zhou,
+     Zheqi Lv, Hao Jiang, Juncheng Li, Siliang Tang, and Yueting Zhuang. Hyperllava: Dynamic visual and
+     language expert tuning for multimodal large language models, 2024.
+[52] Qiong Wu, Weihao Ye, Yiyi Zhou, Xiaoshuai Sun, and Rongrong Ji. Not all attention is needed: Param-
+     eter and computation efficient transfer learning for multi-modal large language models. arXiv preprint
+     arXiv:2403.15226, 2024.
+[53] Shibo Jie, Yehui Tang, Ning Ding, Zhi-Hong Deng, Kai Han, and Yunhe Wang. Memory-space visual
+     prompting for efficient vision-language fine-tuning, 2024.
+[54] Haotian Liu, Chunyuan Li, Yuheng Li, and Yong Jae Lee. Improved baselines with visual instruction
+     tuning. arXiv preprint arXiv:2310.03744, 2023.
+[55] Lin Chen, Jisong Li, Xiaoyi Dong, Pan Zhang, Conghui He, Jiaqi Wang, Feng Zhao, and Dahua
+     Lin. Sharegpt4v: Improving large multi-modal models with better captions. arXiv preprint
+     arXiv:2311.12793, 2023.
+[56] Junke Wang, Lingchen Meng, Zejia Weng, Bo He, Zuxuan Wu, and Yu-Gang Jiang. To see is to believe:
+     Prompting gpt-4v for better visual instruction tuning. arXiv preprint arXiv:2311.07574, 2023.
+
+
+                                                    27
+[57] Yash Goyal, Tejas Khot, Douglas Summers-Stay, Dhruv Batra, and Devi Parikh. Making the v in vqa
+     matter: Elevating the role of image understanding in visual question answering. In Proceedings of the
+     IEEE conference on computer vision and pattern recognition, pages 6904–6913, 2017.
+
+[58] Amanpreet Singh, Vivek Natarajan, Meet Shah, Yu Jiang, Xinlei Chen, Dhruv Batra, Devi Parikh, and
+     Marcus Rohrbach. Towards vqa models that can read. In Proceedings of the IEEE/CVF conference on
+     computer vision and pattern recognition, pages 8317–8326, 2019.
+
+[59] Drew A Hudson and Christopher D Manning. Gqa: A new dataset for real-world visual reasoning and
+     compositional question answering. In Proceedings of the IEEE/CVF conference on computer vision and
+     pattern recognition, pages 6700–6709, 2019.
+
+[60] Chaoyou Fu, Peixian Chen, Yunhang Shen, Yulei Qin, Mengdan Zhang, Xu Lin, Jinrui Yang, Xiawu
+     Zheng, Ke Li, Xing Sun, Yunsheng Wu, and Rongrong Ji. Mme: A comprehensive evaluation benchmark
+     for multimodal large language models, 2024.
+
+[61] Yuan Liu, Haodong Duan, Yuanhan Zhang, Bo Li, Songyang Zhang, Wangbo Zhao, Yike Yuan, Jiaqi
+     Wang, Conghui He, Ziwei Liu, et al. Mmbench: Is your multi-modal model an all-around player? arXiv
+     preprint arXiv:2307.06281, 2023.
+
+[62] Yifan Li, Yifan Du, Kun Zhou, Jinpeng Wang, Wayne Xin Zhao, and Ji-Rong Wen. Evaluating object
+     hallucination in large vision-language models. arXiv preprint arXiv:2305.10355, 2023.
+
+[63] Juan Manuel Zambrano Chaves, Shih-Cheng Huang, Yanbo Xu, Hanwen Xu, Naoto Usuyama, Sheng
+     Zhang, Fei Wang, Yujia Xie, Mahmoud Khademi, Ziyi Yang, Hany Awadalla, Julia Gong, Houdong
+     Hu, Jianwei Yang, Chunyuan Li, Jianfeng Gao, Yu Gu, Cliff Wong, Mu Wei, Tristan Naumann, Muhao
+     Chen, Matthew P. Lungren, Serena Yeung-Levy, Curtis P. Langlotz, Sheng Wang, and Hoifung Poon.
+     Training small multimodal models to bridge biomedical competency gap: A case study in radiology
+     imaging, 2024.
+
+[64] Songtao Jiang, Tuo Zheng, Yan Zhang, Yeying Jin, and Zuozhu Liu. Moe-tinymed: Mixture of experts
+     for tiny medical large vision-language models, 2024.
+
+[65] Zhang Li, Biao Yang, Qiang Liu, Zhiyin Ma, Shuo Zhang, Jingxu Yang, Yabo Sun, Yuliang Liu, and
+     Xiang Bai. Monkey: Image resolution and text label are important things for large multi-modal models,
+     2024.
+
+[66] Chaohu Liu, Kun Yin, Haoyu Cao, Xinghua Jiang, Xin Li, Yinsong Liu, Deqiang Jiang, Xing Sun, and
+     Linli Xu. Hrvda: High-resolution visual document assistant. arXiv preprint arXiv:2404.06918, 2024.
+
+[67] Haiyang Xu, Qinghao Ye, Ming Yan, Yaya Shi, Jiabo Ye, Yuanhong Xu, Chenliang Li, Bin Bi, Qi Qian,
+     Wei Wang, Guohai Xu, Ji Zhang, Songfang Huang, Fei Huang, and Jingren Zhou. mplug-2: A modular-
+     ized multi-modal foundation model across text, image and video, 2023.
+
+[68] Bo He, Hengduo Li, Young Kyun Jang, Menglin Jia, Xuefei Cao, Ashish Shah, Abhinav Shrivastava,
+     and Ser-Nam Lim. Ma-lmm: Memory-augmented large multimodal model for long-term video under-
+     standing, 2024.
+
+[69] Yanwei Li, Chengyao Wang, and Jiaya Jia. Llama-vid: An image is worth 2 tokens in large language
+     models, 2023.
+
+[70] Shengding Hu, Yuge Tu, Xu Han, Chaoqun He, Ganqu Cui, Xiang Long, Zhi Zheng, Yewei Fang,
+     Yuxiang Huang, Weilin Zhao, et al. Minicpm: Unveiling the potential of small language models with
+     scalable training strategies. arXiv preprint arXiv:2404.06395, 2024.
+
+[71] Karmavlm: A family of high efficiency and powerful visual language model. https://github.com/
+     thomas-yanxin/KarmaVLM, 2024.
+
+[72] tiny vision language model. https://github.com/vikhyat/moondream, 2024.
+
+[73] Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish
+     Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, et al. Learning transferable visual models from nat-
+     ural language supervision. In International conference on machine learning, pages 8748–8763. PMLR,
+     2021.
+
+[74] Mojan Javaheripi, Sébastien Bubeck, Marah Abdin, Jyoti Aneja, Sebastien Bubeck, Caio César Teodoro
+     Mendes, Weizhu Chen, Allie Del Giorno, Ronen Eldan, Sivakanth Gopi, et al. Phi-2: The surprising
+     power of small language models. Microsoft Research Blog, 2023.
+
+
+                                                    28
+[75] Xiaohua Zhai, Basil Mustafa, Alexander Kolesnikov, and Lucas Beyer. Sigmoid loss for language image
+     pre-training. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages
+     11975–11986, 2023.
+
+[76] Maxime Oquab, Timothée Darcet, Théo Moutakanni, Huy Vo, Marc Szafraniec, Vasil Khalidov, Pierre
+     Fernandez, Daniel Haziza, Francisco Massa, Alaaeldin El-Nouby, et al. Dinov2: Learning robust visual
+     features without supervision. arXiv preprint arXiv:2304.07193, 2023.
+
+[77] Albert Gu and Tri Dao. Mamba: Linear-time sequence modeling with selective state spaces. arXiv
+     preprint arXiv:2312.00752, 2023.
+
+[78] Gemma Team, Thomas Mesnard, Cassidy Hardin, Robert Dadashi, Surya Bhupatiraju, Shreya Pathak,
+     Laurent Sifre, Morgane Rivière, Mihir Sanjay Kale, Juliette Love, Pouya Tafti, Léonard Hussenot,
+     Pier Giuseppe Sessa, Aakanksha Chowdhery, Adam Roberts, Aditya Barua, Alex Botev, Alex Castro-
+     Ros, Ambrose Slone, Amélie Héliou, Andrea Tacchetti, Anna Bulanova, Antonia Paterson, Beth Tsai,
+     Bobak Shahriari, Charline Le Lan, Christopher A. Choquette-Choo, Clément Crepy, Daniel Cer, Daphne
+     Ippolito, David Reid, Elena Buchatskaya, Eric Ni, Eric Noland, Geng Yan, George Tucker, George-
+     Christian Muraru, Grigory Rozhdestvenskiy, Henryk Michalewski, Ian Tenney, Ivan Grishchenko, Jacob
+     Austin, James Keeling, Jane Labanowski, Jean-Baptiste Lespiau, Jeff Stanway, Jenny Brennan, Jeremy
+     Chen, Johan Ferret, Justin Chiu, Justin Mao-Jones, Katherine Lee, Kathy Yu, Katie Millican, Lars Lowe
+     Sjoesund, Lisa Lee, Lucas Dixon, Machel Reid, Maciej Mikuła, Mateo Wirth, Michael Sharman, Niko-
+     lai Chinaev, Nithum Thain, Olivier Bachem, Oscar Chang, Oscar Wahltinez, Paige Bailey, Paul Michel,
+     Petko Yotov, Rahma Chaabouni, Ramona Comanescu, Reena Jana, Rohan Anil, Ross McIlroy, Ruibo
+     Liu, Ryan Mullins, Samuel L Smith, Sebastian Borgeaud, Sertan Girgin, Sholto Douglas, Shree Pandya,
+     Siamak Shakeri, Soham De, Ted Klimenko, Tom Hennigan, Vlad Feinberg, Wojciech Stokowiec, Yu hui
+     Chen, Zafarali Ahmed, Zhitao Gong, Tris Warkentin, Ludovic Peran, Minh Giang, Clément Farabet,
+     Oriol Vinyals, Jeff Dean, Koray Kavukcuoglu, Demis Hassabis, Zoubin Ghahramani, Douglas Eck,
+     Joelle Barral, Fernando Pereira, Eli Collins, Armand Joulin, Noah Fiedel, Evan Senter, Alek Andreev,
+     and Kathleen Kenealy. Gemma: Open models based on gemini research and technology, 2024.
+
+[79] Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang, Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han,
+     Fei Huang, Binyuan Hui, Luo Ji, Mei Li, Junyang Lin, Runji Lin, Dayiheng Liu, Gao Liu, Chengqiang
+     Lu, Keming Lu, Jianxin Ma, Rui Men, Xingzhang Ren, Xuancheng Ren, Chuanqi Tan, Sinan Tan,
+     Jianhong Tu, Peng Wang, Shijie Wang, Wei Wang, Shengguang Wu, Benfeng Xu, Jin Xu, An Yang, Hao
+     Yang, Jian Yang, Shusheng Yang, Yang Yao, Bowen Yu, Hongyi Yuan, Zheng Yuan, Jianwei Zhang,
+     Xingxuan Zhang, Yichang Zhang, Zhenru Zhang, Chang Zhou, Jingren Zhou, Xiaohuan Zhou, and
+     Tianhang Zhu. Qwen technical report, 2023.
+
+[80] Yuxin Fang, Wen Wang, Binhui Xie, Quan Sun, Ledell Wu, Xinggang Wang, Tiejun Huang, Xinlong
+     Wang, and Yue Cao. Eva: Exploring the limits of masked visual representation learning at scale. In
+     Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 19358–
+     19369, 2023.
+
+[81] Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, and Saining Xie. A
+     convnet for the 2020s. In Proceedings of the IEEE/CVF conference on computer vision and pattern
+     recognition, pages 11976–11986, 2022.
+
+[82] Peiyuan Zhang, Guangtao Zeng, Tianduo Wang, and Wei Lu. Tinyllama: An open-source small language
+     model, 2024.
+
+[83] Alex Fang, Albin Madappally Jose, Amit Jain, Ludwig Schmidt, Alexander Toshev, and Vaishaal
+     Shankar. Data filtering networks. arXiv preprint arXiv:2309.17425, 2023.
+
+[84] DeepSeek-AI. Deepseek llm: Scaling open-source language models with longtermism. arXiv preprint
+     arXiv:2401.02954, 2024.
+
+[85] Yuanzhi Li, Sébastien Bubeck, Ronen Eldan, Allie Del Giorno, Suriya Gunasekar, and Yin Tat Lee.
+     Textbooks are all you need ii: phi-1.5 technical report, 2023.
+
+[86] Marah Abdin, Sam Ade Jacobs, Ammar Ahmad Awan, Jyoti Aneja, Ahmed Awadallah, Hany Awadalla,
+     Nguyen Bach, Amit Bahree, Arash Bakhtiari, Harkirat Behl, Alon Benhaim, Misha Bilenko, Johan
+     Bjorck, Sébastien Bubeck, Martin Cai, Caio César Teodoro Mendes, Weizhu Chen, Vishrav Chaudhary,
+     Parul Chopra, Allie Del Giorno, Gustavo de Rosa, Matthew Dixon, Ronen Eldan, Dan Iter, Amit Garg,
+     Abhishek Goswami, Suriya Gunasekar, Emman Haider, Junheng Hao, Russell J. Hewett, Jamie Huynh,
+     Mojan Javaheripi, Xin Jin, Piero Kauffmann, Nikos Karampatziakis, Dongwoo Kim, Mahoud Khademi,
+     Lev Kurilenko, James R. Lee, Yin Tat Lee, Yuanzhi Li, Chen Liang, Weishung Liu, Eric Lin, Zeqi Lin,
+
+
+                                                   29
+     Piyush Madan, Arindam Mitra, Hardik Modi, Anh Nguyen, Brandon Norick, Barun Patra, Daniel Perez-
+     Becker, Thomas Portet, Reid Pryzant, Heyang Qin, Marko Radmilac, Corby Rosset, Sambudha Roy,
+     Olatunji Ruwase, Olli Saarikivi, Amin Saied, Adil Salim, Michael Santacroce, Shital Shah, Ning Shang,
+     Hiteshi Sharma, Xia Song, Masahiro Tanaka, Xin Wang, Rachel Ward, Guanhua Wang, Philipp Witte,
+     Michael Wyatt, Can Xu, Jiahang Xu, Sonali Yadav, Fan Yang, Ziyi Yang, Donghan Yu, Chengruidong
+     Zhang, Cyril Zhang, Jianwen Zhang, Li Lyna Zhang, Yi Zhang, Yue Zhang, Yunan Zhang, and Xiren
+     Zhou. Phi-3 technical report: A highly capable language model locally on your phone, 2024.
+
+[87] Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne Lachaux, Timothée
+     Lacroix, Baptiste Rozière, Naman Goyal, Eric Hambro, Faisal Azhar, et al. Llama: Open and efficient
+     foundation language models. arXiv preprint arXiv:2302.13971, 2023.
+
+[88] Wei-Lin Chiang, Zhuohan Li, Zi Lin, Ying Sheng, Zhanghao Wu, Hao Zhang, Lianmin Zheng, Siyuan
+     Zhuang, Yonghao Zhuang, Joseph E Gonzalez, et al. Vicuna: An open-source chatbot impressing gpt-4
+     with 90%* chatgpt quality. See https://vicuna. lmsys. org (accessed 14 April 2023), 2(3):6, 2023.
+
+[89] Albert Q. Jiang, Alexandre Sablayrolles, Antoine Roux, Arthur Mensch, Blanche Savary, Chris Bam-
+     ford, Devendra Singh Chaplot, Diego de las Casas, Emma Bou Hanna, Florian Bressand, Gianna
+     Lengyel, Guillaume Bour, Guillaume Lample, Lélio Renard Lavaud, Lucile Saulnier, Marie-Anne
+     Lachaux, Pierre Stock, Sandeep Subramanian, Sophia Yang, Szymon Antoniak, Teven Le Scao,
+     Théophile Gervet, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. Mixtral
+     of experts, 2024.
+
+[90] Xiaoyi Dong, Pan Zhang, Yuhang Zang, Yuhang Cao, Bin Wang, Linke Ouyang, Songyang Zhang,
+     Haodong Duan, Wenwei Zhang, Yining Li, et al. Internlm-xcomposer2-4khd: A pioneering large vision-
+     language model handling resolutions from 336 pixels to 4k hd. arXiv preprint arXiv:2404.06512, 2024.
+
+[91] Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Niko-
+     lay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cris-
+     tian Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin
+     Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini,
+     Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Ko-
+     renev, Punit Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai
+     Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew
+     Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric Michael
+     Smith, Ranjan Subramanian, Xiaoqing Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian Xi-
+     ang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan
+     Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas Scialom. Llama 2: Open
+     foundation and fine-tuned chat models, 2023.
+
+[92] Han Wang, Yanjie Wang, Yongjie Ye, Yuxiang Nie, and Can Huang. Elysium: Exploring object-level
+     perception in videos via mllm, 2024.
+
+[93] Bin Zhu, Bin Lin, Munan Ning, Yang Yan, Jiaxi Cui, HongFa Wang, Yatian Pang, Wenhao Jiang,
+     Junwu Zhang, Zongwei Li, et al. Languagebind: Extending video-language pretraining to n-modality
+     by language-based semantic alignment. arXiv preprint arXiv:2310.01852, 2023.
+
+[94] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas
+     Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, and
+     Neil Houlsby. An image is worth 16x16 words: Transformers for image recognition at scale. ICLR,
+     2021.
+
+[95] Lorenzo Papa, Paolo Russo, Irene Amerini, and Luping Zhou. A survey on efficient vision transformers:
+     Algorithms, techniques, and performance benchmarking. IEEE Transactions on Pattern Analysis and
+     Machine Intelligence, page 1–20, 2024.
+
+[96] Nikita Kitaev, Łukasz Kaiser, and Anselm Levskaya. Reformer: The efficient transformer. arXiv preprint
+     arXiv:2001.04451, 2020.
+
+[97] Yanyu Li, Geng Yuan, Yang Wen, Ju Hu, Georgios Evangelidis, Sergey Tulyakov, Yanzhi Wang, and
+     Jian Ren. Efficientformer: Vision transformers at mobilenet speed. Advances in Neural Information
+     Processing Systems, 35:12934–12949, 2022.
+
+[98] Yanyu Li, Ju Hu, Yang Wen, Georgios Evangelidis, Kamyar Salahi, Yanzhi Wang, Sergey Tulyakov, and
+     Jian Ren. Rethinking vision transformers for mobilenet size and speed. In Proceedings of the IEEE/CVF
+     International Conference on Computer Vision, pages 16889–16900, 2023.
+
+
+                                                   30
+ [99] Minghao Chen, Houwen Peng, Jianlong Fu, and Haibin Ling. Autoformer: Searching transformers for
+      visual recognition. In Proceedings of the IEEE/CVF international conference on computer vision, pages
+      12270–12280, 2021.
+[100] Chengyue Gong and Dilin Wang. Nasvit: Neural architecture search for efficient vision transformers
+      with gradient conflict-aware supernet training. ICLR Proceedings 2022, 2022.
+[101] Qinqin Zhou, Kekai Sheng, Xiawu Zheng, Ke Li, Xing Sun, Yonghong Tian, Jie Chen, and Rongrong Ji.
+      Training-free transformer architecture search. In Proceedings of the IEEE/CVF Conference on Computer
+      Vision and Pattern Recognition, pages 10894–10903, 2022.
+[102] Jihao Liu, Xin Huang, Guanglu Song, Hongsheng Li, and Yu Liu. Uninet: Unified architecture search
+      with convolution, transformer, and mlp. In European Conference on Computer Vision, pages 33–49.
+      Springer, 2022.
+[103] Cedric Renggli, André Susano Pinto, Neil Houlsby, Basil Mustafa, Joan Puigcerver, and Carlos
+      Riquelme. Learning to merge tokens in vision transformers. arXiv preprint arXiv:2202.12015, 2022.
+[104] Yongming Rao, Wenliang Zhao, Benlin Liu, Jiwen Lu, Jie Zhou, and Cho-Jui Hsieh. Dynamicvit: Effi-
+      cient vision transformers with dynamic token sparsification. Advances in neural information processing
+      systems, 34:13937–13949, 2021.
+[105] Wei Li, Xing Wang, Xin Xia, Jie Wu, Xuefeng Xiao, Min Zheng, and Shiping Wen. Sepvit: Separable
+      vision transformer. arXiv preprint arXiv:2203.15380, 2022.
+[106] Denis Kuznedelev, Eldar Kurtić, Elias Frantar, and Dan Alistarh. Cap: Correlation-aware pruning for
+      highly-accurate sparse vision models. Advances in Neural Information Processing Systems, 36, 2024.
+[107] Ao Wang, Hui Chen, Zijia Lin, Sicheng Zhao, Jungong Han, and Guiguang Ding. Cait: Triple-win
+      compression towards high accuracy, fast inference, and favorable transferability for vits. arXiv preprint
+      arXiv:2309.15755, 2023.
+[108] Fang Yu, Kun Huang, Meng Wang, Yuan Cheng, Wei Chu, and Li Cui. Width & depth pruning for
+      vision transformers. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 36, pages
+      3143–3151, 2022.
+[109] Lu Yu and Wei Xiang. X-pruner: explainable pruning for vision transformers. In Proceedings of the
+      IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 24355–24363, 2023.
+[110] Mingjian Zhu, Yehui Tang, and Kai Han. Vision transformer pruning. arXiv preprint arXiv:2104.08500,
+      2021.
+[111] Yehui Tang, Kai Han, Yunhe Wang, Chang Xu, Jianyuan Guo, Chao Xu, and Dacheng Tao. Patch
+      slimming for efficient vision transformers. In Proceedings of the IEEE/CVF Conference on Computer
+      Vision and Pattern Recognition, pages 12165–12174, 2022.
+[112] Zhenglun Kong, Peiyan Dong, Xiaolong Ma, Xin Meng, Wei Niu, Mengshu Sun, Xuan Shen, Geng
+      Yuan, Bin Ren, Hao Tang, et al. Spvit: Enabling faster vision transformers via latency-aware soft token
+      pruning. In European conference on computer vision, pages 620–640. Springer, 2022.
+[113] Arnav Chavan, Zhiqiang Shen, Zhuang Liu, Zechun Liu, Kwang-Ting Cheng, and Eric P Xing. Vision
+      transformer slimming: Multi-dimension searching in continuous optimization space. In Proceedings of
+      the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 4931–4941, 2022.
+[114] Hugo Touvron, Matthieu Cord, Matthijs Douze, Francisco Massa, Alexandre Sablayrolles, and Hervé
+      Jégou. Training data-efficient image transformers & distillation through attention. In International
+      conference on machine learning, pages 10347–10357. PMLR, 2021.
+[115] Kan Wu, Jinnian Zhang, Houwen Peng, Mengchen Liu, Bin Xiao, Jianlong Fu, and Lu Yuan. Tinyvit:
+      Fast pretraining distillation for small vision transformers. In European Conference on Computer Vision,
+      pages 68–85. Springer, 2022.
+[116] Ka Man Lo, Yiming Liang, Wenyu Du, Yuantao Fan, Zili Wang, Wenhao Huang, Lei Ma, and Jie
+      Fu. m2mkd: Module-to-module knowledge distillation for modular transformers. arXiv preprint
+      arXiv:2402.16918, 2024.
+[117] Zhiwei Hao, Jianyuan Guo, Ding Jia, Kai Han, Yehui Tang, Chao Zhang, Han Hu, and Yunhe Wang.
+      Learning efficient vision transformers via fine-grained manifold distillation. Advances in Neural Infor-
+      mation Processing Systems, 35:9164–9175, 2022.
+
+
+                                                      31
+[118] Jinnian Zhang, Houwen Peng, Kan Wu, Mengchen Liu, Bin Xiao, Jianlong Fu, and Lu Yuan. Minivit:
+      Compressing vision transformers with weight multiplexing. In Proceedings of the IEEE/CVF Confer-
+      ence on Computer Vision and Pattern Recognition, pages 12145–12154, 2022.
+
+[119] Xianing Chen, Qiong Cao, Yujie Zhong, Jing Zhang, Shenghua Gao, and Dacheng Tao. Dearkd: Data-
+      efficient early knowledge distillation for vision transformers. In Proceedings of the IEEE/CVF Confer-
+      ence on Computer Vision and Pattern Recognition, pages 12052–12062, 2022.
+
+[120] Sucheng Ren, Zhengqi Gao, Tianyu Hua, Zihui Xue, Yonglong Tian, Shengfeng He, and Hang Zhao.
+      Co-advise: Cross inductive bias distillation. In Proceedings of the IEEE/CVF Conference on computer
+      vision and pattern recognition, pages 16773–16782, 2022.
+
+[121] Zhihang Yuan, Chenhao Xue, Yiqi Chen, Qiang Wu, and Guangyu Sun. Ptq4vit: Post-training quan-
+      tization for vision transformers with twin uniform quantization. In European conference on computer
+      vision, pages 191–207. Springer, 2022.
+
+[122] Yifu Ding, Haotong Qin, Qinghua Yan, Zhenhua Chai, Junjie Liu, Xiaolin Wei, and Xianglong Liu.
+      Towards accurate post-training quantization for vision transformer. In Proceedings of the 30th ACM
+      International Conference on Multimedia, pages 5380–5388, 2022.
+
+[123] Yijiang Liu, Huanrui Yang, Zhen Dong, Kurt Keutzer, Li Du, and Shanghang Zhang. Noisyquant:
+      Noisy bias-enhanced post-training activation quantization for vision transformers. In Proceedings of the
+      IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 20321–20330, 2023.
+
+[124] Ziwei Wang, Changyuan Wang, Xiuwei Xu, Jie Zhou, and Jiwen Lu. Quantformer: Learning extremely
+      low-precision vision transformers. IEEE Transactions on Pattern Analysis and Machine Intelligence,
+      2022.
+
+[125] Chen Lin, Bo Peng, Zheyang Li, Wenming Tan, Ye Ren, Jun Xiao, and Shiliang Pu. Bit-shrinking: Lim-
+      iting instantaneous sharpness for improving post-training quantization. In Proceedings of the IEEE/CVF
+      Conference on Computer Vision and Pattern Recognition, pages 16196–16205, 2023.
+
+[126] Yanjing Li, Sheng Xu, Baochang Zhang, Xianbin Cao, Peng Gao, and Guodong Guo. Q-vit: Accurate
+      and fully quantized low-bit vision transformer. Advances in neural information processing systems,
+      35:34451–34463, 2022.
+
+[127] Sheng Xu, Yanjing Li, Teli Ma, Bohan Zeng, Baochang Zhang, Peng Gao, and Jinhu Lv. Tervit: An
+      efficient ternary vision transformer. arXiv preprint arXiv:2201.08050, 2022.
+
+[128] Yefei He, Zhenyu Lou, Luoming Zhang, Jing Liu, Weijia Wu, Hong Zhou, and Bohan Zhuang. Bivit:
+      Extremely compressed binary vision transformers. In Proceedings of the IEEE/CVF International Con-
+      ference on Computer Vision, pages 5651–5663, 2023.
+
+[129] Peiyan Dong, Lei Lu, Chao Wu, Cheng Lyu, Geng Yuan, Hao Tang, and Yanzhi Wang. Packqvit:
+      Faster sub-8-bit vision transformers via full and packed quantization on the mobile. Advances in Neural
+      Information Processing Systems, 36, 2024.
+
+[130] Phuoc-Hoan Charles Le and Xinlin Li. Binaryvit: pushing binary vision transformers towards convolu-
+      tional models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recogni-
+      tion, pages 4664–4673, 2023.
+
+[131] Chong Yu, Tao Chen, Zhongxue Gan, and Jiayuan Fan. Boost vision transformer with gpu-friendly
+      sparsity and quantization. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+      Recognition, pages 22658–22668, 2023.
+
+[132] Zhengang Li, Mengshu Sun, Alec Lu, Haoyu Ma, Geng Yuan, Yanyue Xie, Hao Tang, Yanyu Li, Miriam
+      Leeser, Zhangyang Wang, et al. Auto-vit-acc: An fpga-aware automatic acceleration framework for
+      vision transformer with mixed-scheme quantization. In 2022 32nd International Conference on Field-
+      Programmable Logic and Applications (FPL), pages 109–116. IEEE, 2022.
+
+[133] Wenxiao Wang, Wei Chen, Qibo Qiu, Long Chen, Boxi Wu, Binbin Lin, Xiaofei He, and Wei Liu.
+      Crossformer++: A versatile vision transformer hinging on cross-scale attention. IEEE Transactions on
+      Pattern Analysis and Machine Intelligence, 2023.
+
+[134] Ali Hassani, Steven Walton, Nikhil Shah, Abulikemu Abuduweili, Jiachen Li, and Humphrey Shi. Es-
+      caping the big data paradigm with compact transformers. arXiv preprint arXiv:2104.05704, 2021.
+
+
+                                                     32
+[135] Mohsen Fayyaz, Soroush Abbasi Koohpayegani, Farnoush Rezaei Jafari, Sunando Sengupta, Hamid
+      Reza Vaezi Joze, Eric Sommerlade, Hamed Pirsiavash, and Jürgen Gall. Adaptive token sampling for
+      efficient vision transformers. In European Conference on Computer Vision, pages 396–414. Springer,
+      2022.
+[136] Shixing Yu, Tianlong Chen, Jiayi Shen, Huan Yuan, Jianchao Tan, Sen Yang, Ji Liu, and Zhangyang
+      Wang. Unified visual transformer compression. arXiv preprint arXiv:2203.08243, 2022.
+[137] Tianlong Chen, Yu Cheng, Zhe Gan, Lu Yuan, Lei Zhang, and Zhangyang Wang. Chasing sparsity in
+      vision transformers: An end-to-end exploration. Advances in Neural Information Processing Systems,
+      34:19974–19988, 2021.
+[138] Lorenzo Papa, Paolo Russo, Irene Amerini, and Luping Zhou. A survey on efficient vision transformers:
+      algorithms, techniques, and performance benchmarking. IEEE Transactions on Pattern Analysis and
+      Machine Intelligence, 2024.
+[139] Geoffrey Hinton, Oriol Vinyals, and Jeff Dean. Distilling the knowledge in a neural network. arXiv
+      preprint arXiv:1503.02531, 2015.
+[140] Dayou Du, Gu Gong, and Xiaowen Chu. Model quantization and hardware acceleration for vision
+      transformers: A comprehensive survey. arXiv preprint arXiv:2405.00314, 2024.
+[141] Zhenhua Liu, Yunhe Wang, Kai Han, Wei Zhang, Siwei Ma, and Wen Gao. Post-training quantization
+      for vision transformer. Advances in Neural Information Processing Systems, 34:28092–28103, 2021.
+[142] Junrui Xiao, Zhikai Li, Lianwei Yang, and Qingyi Gu. Binaryvit: Towards efficient and accurate binary
+      vision transformers. arXiv preprint arXiv:2305.14730, 2023.
+[143] Joshua Ainslie, James Lee-Thorp, Michiel de Jong, Yury Zemlyanskiy, Federico Lebrón, and Sumit
+      Sanghai. Gqa: Training generalized multi-query transformer models from multi-head checkpoints, 2023.
+[144] Noam Shazeer. Fast transformer decoding: One write-head is all you need.                arXiv preprint
+      arXiv:1911.02150, 2019.
+[145] Zihang Dai, Guokun Lai, Yiming Yang, and Quoc Le. Funnel-transformer: Filtering out sequential
+      redundancy for efficient language processing. Advances in neural information processing systems,
+      33:4271–4282, 2020.
+[146] Juho Lee, Yoonho Lee, Jungtaek Kim, Adam Kosiorek, Seungjin Choi, and Yee Whye Teh. Set trans-
+      former: A framework for attention-based permutation-invariant neural networks. In International con-
+      ference on machine learning, pages 3744–3753. PMLR, 2019.
+[147] Sinong Wang, Belinda Z. Li, Madian Khabsa, Han Fang, and Hao Ma. Linformer: Self-attention with
+      linear complexity, 2020.
+[148] Krzysztof Choromanski, Valerii Likhosherstov, David Dohan, Xingyou Song, Andreea Gane, Tamas
+      Sarlos, Peter Hawkins, Jared Davis, David Belanger, Lucy Colwell, et al. Masked language modeling
+      for proteins via linearly scalable long-context transformers. arXiv preprint arXiv:2006.03555, 2020.
+[149] Dmitry Lepikhin, HyoukJoong Lee, Yuanzhong Xu, Dehao Chen, Orhan Firat, Yanping Huang, Maxim
+      Krikun, Noam Shazeer, and Zhifeng Chen. Gshard: Scaling giant models with conditional computation
+      and automatic sharding. arXiv preprint arXiv:2006.16668, 2020.
+[150] William Fedus, Barret Zoph, and Noam Shazeer. Switch transformers: Scaling to trillion parameter
+      models with simple and efficient sparsity. Journal of Machine Learning Research, 23(120):1–39, 2022.
+[151] Bo Peng, Eric Alcaide, Quentin Anthony, Alon Albalak, Samuel Arcadinho, Huanqi Cao, Xin Cheng,
+      Michael Chung, Matteo Grella, Kranthi Kiran GV, et al. Rwkv: Reinventing rnns for the transformer
+      era. arXiv preprint arXiv:2305.13048, 2023.
+[152] Albert Gu, Karan Goel, and Christopher Ré. Efficiently modeling long sequences with structured state
+      spaces. arXiv preprint arXiv:2111.00396, 2021.
+[153] Ankit Gupta, Albert Gu, and Jonathan Berant. Diagonal state spaces are as effective as structured state
+      spaces. Advances in Neural Information Processing Systems, 35:22982–22994, 2022.
+[154] Zhiqiang Hu, Yihuai Lan, Lei Wang, Wanyu Xu, Ee-Peng Lim, Roy Ka-Wei Lee, Lidong Bing, and
+      Soujanya Poria. Llm-adapters: An adapter family for parameter-efficient fine-tuning of large language
+      models. arXiv preprint arXiv:2304.01933, 2023.
+
+
+                                                     33
+[155] Haokun Liu, Derek Tam, Mohammed Muqeeth, Jay Mohta, Tenghao Huang, Mohit Bansal, and Colin
+      Raffel. Few-shot parameter-efficient fine-tuning is better and cheaper than in-context learning. arXiv
+      preprint arXiv:2205.05638, 2022.
+[156] Longteng Zhang, Lin Zhang, Shaohuai Shi, Xiaowen Chu, and Bo Li. Lora-fa: Memory-efficient low-
+      rank adaptation for large language models fine-tuning. arXiv preprint arXiv:2308.03303, 2023.
+[157] Mojtaba Valipour, Mehdi Rezagholizadeh, Ivan Kobyzev, and Ali Ghodsi. Dylora: Parameter ef-
+      ficient tuning of pre-trained models using dynamic search-free low-rank adaptation. arXiv preprint
+      arXiv:2210.07558, 2022.
+[158] Kai Lv, Yuqing Yang, Tengxiao Liu, Qinghui Gao, Qipeng Guo, and Xipeng Qiu. Full parameter fine-
+      tuning for large language models with limited resources. arXiv preprint arXiv:2306.09782, 2023.
+[159] Sadhika Malladi, Tianyu Gao, Eshaan Nichani, Alex Damian, Jason D Lee, Danqi Chen, and Sanjeev
+      Arora. Fine-tuning language models with just forward passes. Advances in Neural Information Process-
+      ing Systems, 36:53038–53075, 2023.
+[160] Zhongwei Wan, Xin Wang, Che Liu, Samiul Alam, Yu Zheng, Jiachen Liu, Zhongnan Qu, Shen Yan,
+      Yi Zhu, Quanlu Zhang, Mosharaf Chowdhury, and Mi Zhang. Efficient large language models: A survey,
+      2024.
+[161] Edward J Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and
+      Weizhu Chen. LoRA: Low-rank adaptation of large language models. In International Conference on
+      Learning Representations, 2022.
+[162] Piyush Sharma, Nan Ding, Sebastian Goodman, and Radu Soricut. Conceptual captions: A cleaned,
+      hypernymed, image alt-text dataset for automatic image captioning. In Proceedings of the 56th Annual
+      Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2556–2565,
+      2018.
+[163] Soravit Changpinyo, Piyush Sharma, Nan Ding, and Radu Soricut. Conceptual 12m: Pushing web-
+      scale image-text pre-training to recognize long-tail visual concepts. In Proceedings of the IEEE/CVF
+      conference on computer vision and pattern recognition, pages 3558–3568, 2021.
+[164] Vicente Ordonez, Girish Kulkarni, and Tamara Berg. Im2text: Describing images using 1 million cap-
+      tioned photographs. Advances in neural information processing systems, 24, 2011.
+[165] Christoph Schuhmann, Romain Beaumont, Richard Vencu, Cade Gordon, Ross Wightman, Mehdi
+      Cherti, Theo Coombes, Aarush Katta, Clayton Mullis, Mitchell Wortsman, et al. Laion-5b: An open
+      large-scale dataset for training next generation image-text models. Advances in Neural Information
+      Processing Systems, 35:25278–25294, 2022.
+[166] Christoph Schuhmann, Richard Vencu, Romain Beaumont, Robert Kaczmarczyk, Clayton Mullis,
+      Aarush Katta, Theo Coombes, Jenia Jitsev, and Aran Komatsuzaki. Laion-400m: Open dataset of clip-
+      filtered 400 million image-text pairs. arXiv preprint arXiv:2111.02114, 2021.
+[167] Minwoo Byeon, Beomhee Park, Haecheon Kim, Sungjun Lee, Woonhyuk Baek, and Saehoon Kim.
+      Coyo-700m: Image-text pair dataset. https://github.com/kakaobrain/coyo-dataset, 2022.
+[168] Xinlei Chen, Hao Fang, Tsung-Yi Lin, Ramakrishna Vedantam, Saurabh Gupta, Piotr Dollár, and
+      C Lawrence Zitnick. Microsoft coco captions: Data collection and evaluation server. arXiv preprint
+      arXiv:1504.00325, 2015.
+[169] Sahar Kazemzadeh, Vicente Ordonez, Mark Matten, and Tamara Berg. Referitgame: Referring to objects
+      in photographs of natural scenes. In Proceedings of the 2014 conference on empirical methods in natural
+      language processing (EMNLP), pages 787–798, 2014.
+[170] Minesh Mathew, Dimosthenis Karatzas, and CV Jawahar. Docvqa: A dataset for vqa on document
+      images. In Proceedings of the IEEE/CVF winter conference on applications of computer vision, pages
+      2200–2209, 2021.
+[171] Wanrong Zhu, Jack Hessel, Anas Awadalla, Samir Yitzhak Gadre, Jesse Dodge, Alex Fang, Youngjae
+      Yu, Ludwig Schmidt, William Yang Wang, and Yejin Choi. Multimodal c4: An open, billion-scale
+      corpus of images interleaved with text. Advances in Neural Information Processing Systems, 36, 2024.
+[172] Hugo Laurençon, Lucile Saulnier, Léo Tronchon, Stas Bekman, Amanpreet Singh, Anton Lozhkov,
+      Thomas Wang, Siddharth Karamcheti, Alexander Rush, Douwe Kiela, et al. Obelics: An open web-
+      scale filtered dataset of interleaved image-text documents. Advances in Neural Information Processing
+      Systems, 36, 2024.
+
+
+                                                     34
+[173] Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár,
+      and C Lawrence Zitnick. Microsoft coco: Common objects in context. In Computer Vision–ECCV 2014:
+      13th European Conference, Zurich, Switzerland, September 6-12, 2014, Proceedings, Part V 13, pages
+      740–755. Springer, 2014.
+
+[174] Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao,
+      Spencer Whitehead, Alexander C Berg, Wan-Yen Lo, et al. Segment anything. In Proceedings of the
+      IEEE/CVF International Conference on Computer Vision, pages 4015–4026, 2023.
+
+[175] Oleksii Sidorov, Ronghang Hu, Marcus Rohrbach, and Amanpreet Singh. Textcaps: a dataset for image
+      captioning with reading comprehension. In Computer Vision–ECCV 2020: 16th European Conference,
+      Glasgow, UK, August 23–28, 2020, Proceedings, Part II 16, pages 742–758. Springer, 2020.
+
+[176] Babak Saleh and Ahmed Elgammal. Large-scale classification of fine-art paintings: Learning the right
+      metric on the right feature. arXiv preprint arXiv:1505.00855, 2015.
+
+[177] Ranjay Krishna, Yuke Zhu, Oliver Groth, Justin Johnson, Kenji Hata, Joshua Kravitz, Stephanie Chen,
+      Yannis Kalantidis, Li-Jia Li, David A Shamma, et al. Visual genome: Connecting language and vision
+      using crowdsourced dense image annotations. International journal of computer vision, 123:32–73,
+      2017.
+
+[178] Sharegpt. https://sharegpt.com/, 2023.
+
+[179] Dustin Schwenk, Apoorv Khandelwal, Christopher Clark, Kenneth Marino, and Roozbeh Mottaghi. A-
+      okvqa: A benchmark for visual question answering using world knowledge. In European Conference on
+      Computer Vision, pages 146–162. Springer, 2022.
+
+[180] Kenneth Marino, Mohammad Rastegari, Ali Farhadi, and Roozbeh Mottaghi. Ok-vqa: A visual question
+      answering benchmark requiring external knowledge. In Proceedings of the IEEE/cvf conference on
+      computer vision and pattern recognition, pages 3195–3204, 2019.
+
+[181] Junhua Mao, Jonathan Huang, Alexander Toshev, Oana Camburu, Alan L Yuille, and Kevin Murphy.
+      Generation and comprehension of unambiguous object descriptions. In Proceedings of the IEEE confer-
+      ence on computer vision and pattern recognition, pages 11–20, 2016.
+
+[182] Fuxiao Liu, Kevin Lin, Linjie Li, Jianfeng Wang, Yaser Yacoob, and Lijuan Wang. Mitigating hallucina-
+      tion in large multi-modal models via robust instruction tuning. In The Twelfth International Conference
+      on Learning Representations, 2023.
+
+[183] Agrim Gupta, Piotr Dollar, and Ross Girshick. Lvis: A dataset for large vocabulary instance segmen-
+      tation. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages
+      5356–5364, 2019.
+
+[184] LAION. Gpt-4v dataset. https://huggingface.co/datasets/laion/gpt4v-dataset, 2023.
+
+[185] Bo Zhao, Boya Wu, and Tiejun Huang. Svit: Scaling up visual instruction tuning. arXiv preprint
+      arXiv:2307.04087, 2023.
+
+[186] Can Xu, Qingfeng Sun, Kai Zheng, Xiubo Geng, Pu Zhao, Jiazhan Feng, Chongyang Tao, and Daxin
+      Jiang. Wizardlm: Empowering large language models to follow complex instructions. arXiv preprint
+      arXiv:2304.12244, 2023.
+
+[187] Jinze Bai, Shuai Bai, Shusheng Yang, Shijie Wang, Sinan Tan, Peng Wang, Junyang Lin, Chang Zhou,
+      and Jingren Zhou. Qwen-vl: A frontier large vision-language model with versatile abilities. arXiv
+      preprint arXiv:2308.12966, 2023.
+
+[188] Pan Lu, Swaroop Mishra, Tanglin Xia, Liang Qiu, Kai-Wei Chang, Song-Chun Zhu, Oyvind Tafjord,
+      Peter Clark, and Ashwin Kalyan. Learn to explain: Multimodal reasoning via thought chains for science
+      question answering. Advances in Neural Information Processing Systems, 35:2507–2521, 2022.
+
+[189] Danna Gurari, Qing Li, Abigale J Stangl, Anhong Guo, Chi Lin, Kristen Grauman, Jiebo Luo, and Jef-
+      frey P Bigham. Vizwiz grand challenge: Answering visual questions from blind people. In Proceedings
+      of the IEEE conference on computer vision and pattern recognition, pages 3608–3617, 2018.
+
+[190] Xiang Yue, Yuansheng Ni, Kai Zhang, Tianyu Zheng, Ruoqi Liu, Ge Zhang, Samuel Stevens, Dongfu
+      Jiang, Weiming Ren, Yuxuan Sun, et al. Mmmu: A massive multi-discipline multimodal understanding
+      and reasoning benchmark for expert agi. arXiv preprint arXiv:2311.16502, 2023.
+
+
+                                                     35
+[191] Pan Lu, Hritik Bansal, Tony Xia, Jiacheng Liu, Chunyuan Li, Hannaneh Hajishirzi, Hao Cheng, Kai-Wei
+      Chang, Michel Galley, and Jianfeng Gao. Mathvista: Evaluating mathematical reasoning of foundation
+      models in visual contexts. arXiv preprint arXiv:2310.02255, 2023.
+
+[192] Bohao Li, Rui Wang, Guangzhi Wang, Yuying Ge, Yixiao Ge, and Ying Shan. Seed-bench: Benchmark-
+      ing multimodal llms with generative comprehension. arXiv preprint arXiv:2307.16125, 2023.
+
+[193] Weihao Yu, Zhengyuan Yang, Linjie Li, Jianfeng Wang, Kevin Lin, Zicheng Liu, Xinchao Wang, and
+      Lijuan Wang. Mm-vet: Evaluating large multimodal models for integrated capabilities. arXiv preprint
+      arXiv:2308.02490, 2023.
+
+[194] Tao Tu, Shekoofeh Azizi, Danny Driess, Mike Schaekermann, Mohamed Amin, Pi-Chuan Chang, An-
+      drew Carroll, Charles Lau, Ryutaro Tanno, Ira Ktena, et al. Towards generalist biomedical ai. NEJM AI,
+      1(3):AIoa2300138, 2024.
+
+[195] Shekoofeh Azizi, Basil Mustafa, Fiona Ryan, Zachary Beaver, Jan Freyberg, Jonathan Deaton, Aaron
+      Loh, Alan Karthikesalingam, Simon Kornblith, Ting Chen, et al. Big self-supervised models advance
+      medical image classification. In Proceedings of the IEEE/CVF international conference on computer
+      vision, pages 3478–3488, 2021.
+
+[196] Yucheng Han, Chi Zhang, Xin Chen, Xu Yang, Zhibin Wang, Gang Yu, Bin Fu, and Hanwang Zhang.
+      Chartllama: A multimodal llm for chart understanding and generation, 2023.
+
+[197] KunChang Li, Yinan He, Yi Wang, Yizhuo Li, Wenhai Wang, Ping Luo, Yali Wang, Limin Wang, and
+      Yu Qiao. Videochat: Chat-centric video understanding. arXiv preprint arXiv:2305.06355, 2023.
+
+[198] Hang Zhang, Xin Li, and Lidong Bing. Video-llama: An instruction-tuned audio-visual language model
+      for video understanding. arXiv preprint arXiv:2306.02858, 2023.
+
+
+
+
+                                                    36
+
