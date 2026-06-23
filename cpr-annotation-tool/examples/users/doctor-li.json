@@ -1,0 +1,10 @@
+{
+  "user_id": "doctor-li",
+  "display_name": "李老师",
+  "roles": ["reviewer", "curator"],
+  "specialty": "重症医学科",
+  "credential_level": "主任医师",
+  "institution": "示例医院",
+  "active": true,
+  "created_at": "2026-06-01T09:00:00+08:00"
+}

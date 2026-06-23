@@ -1,0 +1,84 @@
+{
+  "contribution_id": "contrib_2026-06-22_doctor-zhang_0099",
+  "kind": "graded_video",
+  "dataset_ids": ["cpr-cohort-2026-06"],
+
+  "author": {
+    "annotator_id": "doctor-zhang",
+    "role": "专家",
+    "specialty": "急诊科",
+    "credential_level": "副主任医师"
+  },
+  "created_at": "2026-06-22T14:00:00+08:00",
+  "updated_at": "2026-06-22T14:38:00+08:00",
+  "rubric_version": "rubric-v2",
+
+  "step_links": [
+    "D1S1","D1S2","D1S3","D1S4",
+    "D2S1","D2S2","D2S3","D2S4","D2S5",
+    "D3S1","D3S2",
+    "D4S1","D4S2","D4S3",
+    "D5S1","D5S2","D5S3",
+    "D6S1","D6S2","D6S3","D6S4","D6S5",
+    "D7S1","D7S2","D7S3","D7S4",
+    "D8S1","D8S2"
+  ],
+  "error_links": [],
+
+  "media": [
+    {
+      "type": "video",
+      "media_id": "media_student5_full",
+      "path": "videos/cpr-cohort-2026-06/学生5.mp4",
+      "mime": "video/mp4",
+      "filesize_bytes": 81203456,
+      "checksum_sha256": "sha256:placeholder_student5_full",
+      "duration_sec": 324.3,
+      "fps": 30,
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+
+  "tags": ["repeat-annotation", "inter-rater"],
+  "language": "zh-CN",
+
+  "status": "approved",
+  "review": {
+    "reviewers": [
+      { "annotator_id": "doctor-li", "decision": "approved", "comment": "复测合理，与首标对比一致率 25/28 ≈ 89%", "at": "2026-06-23T10:00:00+08:00" }
+    ],
+    "current_decision": "approved",
+    "min_reviewer_count_for_approval": 1
+  },
+
+  "consent": {
+    "subject_consent_obtained": true,
+    "face_blur_applied": true,
+    "license": "anonymized-research"
+  },
+
+  "payload": {
+    "video_meta": {
+      "video_id": "学生5",
+      "duration_sec": 324.3,
+      "cohort_id": "cpr-cohort-2026-06",
+      "session_type": "repeat",
+      "repeat_of_record_id": "contrib_2026-06-08_doctor-zhang_0015",
+      "ai_draft_used": false,
+      "ai_draft_version": null
+    },
+
+    "_note": "为示例简化，本文件只展示 repeat 模式的 envelope 与 video_meta 字段。完整 28 步与 timeline_events 结构同 contrib_0001。inter-rater 系统会在落库时自动 diff repeat 与 primary，得出一致率。",
+
+    "steps": [],
+    "timeline_events": {},
+    "overall": {
+      "total_score": 78,
+      "category_scores": { "D1": 12, "D2": 18, "D3": 9, "D4": 11, "D5": 14, "D6": 8, "D7": 0, "D8": 6 },
+      "summary_comment": "复测：D7 全段未演示（学生 5 视频不含简易呼吸器场景），整体 78 分。",
+      "qualified": true
+    },
+    "labeling_minutes": 38
+  }
+}

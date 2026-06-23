@@ -1,0 +1,89 @@
+{
+  "contribution_id": "contrib_2026-06-08_doctor-zhang_0002",
+  "kind": "reference_positive",
+  "dataset_ids": ["cpr-cohort-2026-06"],
+
+  "author": {
+    "annotator_id": "doctor-zhang",
+    "role": "专家",
+    "specialty": "急诊科",
+    "credential_level": "副主任医师"
+  },
+  "created_at": "2026-06-08T16:30:00+08:00",
+  "updated_at": "2026-06-08T16:45:00+08:00",
+  "rubric_version": "rubric-v2",
+
+  "step_links": ["D2S3"],
+  "error_links": [],
+
+  "media": [
+    {
+      "type": "video",
+      "media_id": "media_xfh_001",
+      "path": "refs/positive/student5_compression_pose_156-185.mp4",
+      "thumbnail_path": "refs/positive/student5_compression_pose_thumb.jpg",
+      "mime": "video/mp4",
+      "filesize_bytes": 8532104,
+      "checksum_sha256": "sha256:placeholder_pos_pose_clip",
+      "duration_sec": 29.0,
+      "fps": 30,
+      "width": 1920,
+      "height": 1080,
+      "interval": { "start_sec": 0.0, "end_sec": 29.0 }
+    },
+    {
+      "type": "image",
+      "media_id": "media_xfh_002",
+      "path": "refs/positive/student5_pose_keyframe.jpg",
+      "frame_extracted_from": "media_xfh_001@8.5s",
+      "mime": "image/jpeg",
+      "filesize_bytes": 412035,
+      "checksum_sha256": "sha256:placeholder_pos_pose_keyframe",
+      "width": 1920,
+      "height": 1080,
+      "annotations_overlay": [
+        { "shape": "arrow", "coords": [240, 180, 240, 320], "label": "脊柱垂直" },
+        { "shape": "rect",  "coords": [200, 280, 320, 360], "label": "肘关节伸直" }
+      ]
+    }
+  ],
+
+  "explanation": {
+    "summary": "标准的胸外按压姿势：肘伸直 + 身体前倾 + 掌根贴胸骨中下 1/3",
+    "detailed_text": "本段从学生 5 第 3 轮按压选取（156-185s）。值得注意的对照点：\n1. 肘关节始终保持伸直锁定，整 29s 未见弯曲\n2. 身体前倾自然，依靠体重而非臂力按压\n3. 两手交锁、掌根贴稳，未滑移\n这是 15 个学生里少见的姿势保持稳定的样本，适合作为 D2S3 满分参照。",
+    "checkpoints": [
+      "肘关节角度 ≈ 180°",
+      "肩-肘-腕在一条垂直线上",
+      "下压主要靠髋部前倾"
+    ]
+  },
+
+  "tags": ["按压姿势", "EC手法外", "正面示范"],
+  "language": "zh-CN",
+
+  "status": "approved",
+  "review": {
+    "reviewers": [
+      { "annotator_id": "doctor-li", "decision": "approved", "comment": "示范清晰，可以入正样本库", "at": "2026-06-09T11:00:00+08:00" }
+    ],
+    "current_decision": "approved",
+    "min_reviewer_count_for_approval": 1
+  },
+
+  "consent": {
+    "subject_consent_obtained": true,
+    "face_blur_applied": true,
+    "license": "anonymized-research"
+  },
+
+  "payload": {
+    "title": "按压姿势标准示范（学生 5 第 3 轮截段）",
+    "demonstration_subject": "real_student_anonymized",
+    "key_features": [
+      "肘关节完全伸直，按压全程未弯曲",
+      "掌根置于胸骨中下 1/3，两手交锁",
+      "身体前倾，肩膀位于按压点正上方"
+    ],
+    "applies_to_error_codes_avoided": ["E10", "E11"]
+  }
+}

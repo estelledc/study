@@ -1,0 +1,26 @@
+{
+  "dataset_id": "cpr-cohort-2026-06",
+  "name": "CPR 2026 年 6 月队列",
+  "description": "示例医院 2026 年 6 月急救技能考核 CPR 视频队列。包含 15 个学生的完整考核录像 + 张老师贡献的参考库与 rubric 注解。用于 vea v1.0 baseline 训练与评估。",
+  "intended_use": ["vea-training", "vea-eval", "rubric-validation"],
+  "tags": ["cpr", "skills-assessment", "internal-cohort"],
+  "contribution_ids": [
+    "contrib_2026-06-08_doctor-zhang_0001",
+    "contrib_2026-06-08_doctor-zhang_0002",
+    "contrib_2026-06-08_doctor-zhang_0003",
+    "contrib_2026-06-08_doctor-zhang_0004",
+    "contrib_2026-06-08_doctor-zhang_0005",
+    "contrib_2026-06-09_doctor-zhang_0006",
+    "contrib_2026-06-09_doctor-zhang_0007",
+    "contrib_2026-06-22_doctor-zhang_0099"
+  ],
+  "created_by": "jason",
+  "created_at": "2026-06-01T10:00:00+08:00",
+  "updated_at": "2026-06-22T18:30:00+08:00",
+  "default_license_filter": "exclude_team_only",
+  "thresholds": {
+    "min_ref_negative_per_error": 3,
+    "min_ref_positive_per_step": 2,
+    "min_comparison_per_error": 1
+  }
+}

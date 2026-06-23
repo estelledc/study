@@ -1,0 +1,14 @@
+{
+  "relationship_id": "rel_2026-06-22_0004",
+  "from": "contrib_2026-06-22_doctor-zhang_0099",
+  "to":   "contrib_2026-06-08_doctor-zhang_0015",
+  "type": "supersedes",
+  "details": {
+    "supersede_reason": "inter-rater repeat measurement",
+    "agreement_step_count": 25,
+    "total_step_count": 28,
+    "agreement_ratio": 0.893
+  },
+  "created_by": "doctor-zhang",
+  "created_at": "2026-06-22T14:38:00+08:00"
+}

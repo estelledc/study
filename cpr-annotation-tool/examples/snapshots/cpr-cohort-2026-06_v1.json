@@ -1,0 +1,82 @@
+{
+  "snapshot_id": "cpr-cohort-2026-06@v1",
+  "dataset_id": "cpr-cohort-2026-06",
+  "version_label": "v1",
+  "created_at": "2026-06-25T18:00:00+08:00",
+  "created_by": "jason",
+  "description": "首个 snapshot：15 个 graded_video（含 3 个 repeat）+ 6 reference_positive + 12 reference_negative + 4 comparison_pair + 3 已批准 rubric_note。供 vea v1.0 baseline 训练 / 评估使用。",
+  "intended_use": ["vea-training", "vea-eval"],
+
+  "rubric_version": "rubric-v2",
+  "schema_version": "labeling-v3",
+
+  "contribution_ids": [
+    "contrib_2026-06-08_doctor-zhang_0001",
+    "contrib_2026-06-08_doctor-zhang_0002",
+    "contrib_2026-06-08_doctor-zhang_0003",
+    "contrib_2026-06-08_doctor-zhang_0004",
+    "contrib_2026-06-08_doctor-zhang_0005",
+    "contrib_2026-06-09_doctor-zhang_0006",
+    "contrib_2026-06-22_doctor-zhang_0099"
+  ],
+
+  "media_checksums": {
+    "media_student2_full":          "sha256:placeholder_student2_full",
+    "media_xfh_001":                "sha256:placeholder_pos_pose_clip",
+    "media_xfh_002":                "sha256:placeholder_pos_pose_keyframe",
+    "media_zhang_ec_demo":          "sha256:placeholder_zhang_ec",
+    "media_zhang_ec_handpose":      "sha256:placeholder_zhang_ec_hand",
+    "media_student12_slow":         "sha256:placeholder_neg_slow",
+    "media_student18_elbow_bent":   "sha256:placeholder_neg_elbow_image",
+    "media_student5_full":          "sha256:placeholder_student5_full"
+  },
+
+  "content_hash": "sha256:placeholder_snapshot_content_hash_v1",
+
+  "splits": {
+    "train": [
+      "contrib_2026-06-08_doctor-zhang_0001",
+      "contrib_2026-06-08_doctor-zhang_0002",
+      "contrib_2026-06-08_doctor-zhang_0003",
+      "contrib_2026-06-08_doctor-zhang_0004",
+      "contrib_2026-06-08_doctor-zhang_0005",
+      "contrib_2026-06-09_doctor-zhang_0006"
+    ],
+    "val": [],
+    "test": [],
+    "inter_rater_subset": [
+      "contrib_2026-06-22_doctor-zhang_0099"
+    ]
+  },
+
+  "stats": {
+    "by_kind": {
+      "graded_video": 2,
+      "reference_positive": 2,
+      "reference_negative": 2,
+      "comparison_pair": 1,
+      "rubric_note": 0
+    },
+    "by_step_coverage": {
+      "D2S3": { "graded": 1, "ref_pos": 1, "ref_neg": 1, "comparison": 1 },
+      "D2S5": { "graded": 1, "ref_pos": 0, "ref_neg": 1, "comparison": 0 },
+      "D7S2": { "graded": 1, "ref_pos": 1, "ref_neg": 0, "comparison": 0 }
+    },
+    "by_error_coverage": {
+      "E10": { "ref_neg": 1, "comparison": 1 },
+      "E13": { "ref_neg": 1, "comparison": 0 }
+    },
+    "gaps": [
+      { "target": "D6S5", "kind": "ref_neg", "current": 0, "threshold": 3 },
+      { "target": "E24",  "kind": "ref_neg", "current": 0, "threshold": 3 },
+      { "target": "D7S2", "kind": "ref_neg", "current": 0, "threshold": 3 }
+    ]
+  },
+
+  "audit": {
+    "signed_by": "jason",
+    "signature": "ed25519:placeholder_snapshot_signature_v1"
+  },
+
+  "status": "published"
+}

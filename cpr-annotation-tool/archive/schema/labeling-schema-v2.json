@@ -1,0 +1,271 @@
+{
+  "schema_version": "labeling-v2",
+  "rubric_version": "rubric-v2",
+  "rubric_ref": "../../cpr-eval/schema/rubric-v2.json",
+  "supersedes": "labeling-v1",
+
+  "design_principles": [
+    "1. vea 需要 4 类信号：批改过的考卷 / 正面示范 / 反面教材 / 对比说明",
+    "2. 媒介统一抽象为 media[]，video / image / 未来 audio 都走同一字段",
+    "3. 所有贡献必须挂到 rubric（step_links 必填，部分类型 error_links 必填）",
+    "4. 单人风险通过审批状态机 + 同人复测共同缓解",
+    "5. rubric 演进通过 rubric_note 类型贡献闭环，不再让老师卡在 33 个固定选项"
+  ],
+
+  "top_level": {
+    "note": "整个标注库由两个 collection 组成。每个 contribution 是一份独立 JSON 文件。",
+    "collections": {
+      "contributions/{contribution_id}.json": "所有贡献的容器（5 种 kind 共用一个 envelope）",
+      "rubric_proposals/{proposal_id}.json":  "rubric_note 类型的延伸记录（kind=propose_* 时必填，进审批流）"
+    }
+  },
+
+  "contribution_envelope": {
+    "contribution_id":  { "type": "string",   "required": true,  "example": "contrib_2026-06-05_doctor-zhang_0007" },
+    "kind":             { "type": "string",   "required": true,  "enum": ["graded_video", "reference_positive", "reference_negative", "comparison_pair", "rubric_note"] },
+
+    "author":           { "$ref": "#/types/Author",     "required": true },
+    "created_at":       { "type": "datetime", "required": true },
+    "updated_at":       { "type": "datetime", "required": true },
+
+    "rubric_version":   { "type": "string",   "required": true,  "example": "rubric-v2", "note": "贡献时锚定的 rubric 版本，用于跨版本兼容" },
+
+    "step_links":       { "type": "array<string>", "required": true,  "min_length": 1, "note": "该贡献关联到哪些 step。所有 kind 必填。" },
+    "error_links":      { "type": "array<string>", "required": "kind in (reference_negative, comparison_pair) 时必填", "note": "限定在 step_links 引用的 step 的 rubric.error_points 内" },
+
+    "media":            { "type": "array<Media>", "required": "kind != rubric_note 时必填，min 1", "note": "graded_video 必有 1 个 video；reference_* 可视频或图片或两者；comparison_pair 见 payload" },
+    "explanation":      { "$ref": "#/types/Explanation", "required": "kind != graded_video 时必填", "note": "graded_video 的解释在 step.notes / overall.summary_comment 里" },
+
+    "tags":             { "type": "array<string>", "required": false, "note": "自由标签：'EC手法' / '按压姿势' / '常见错误' 等" },
+    "language":         { "type": "string",   "required": true,  "default": "zh-CN" },
+
+    "status":           { "type": "string",   "required": true,  "enum": ["draft", "pending", "approved", "rejected", "deprecated"], "default": "draft" },
+    "review":           { "$ref": "#/types/Review", "required": false },
+    "supersedes":       { "type": "string",   "required": false, "note": "替换某旧 contribution_id 时填" },
+
+    "consent": {
+      "subject_consent_obtained": { "type": "boolean", "required": true, "note": "视频中可识别人物是否签署知情同意" },
+      "face_blur_applied":        { "type": "boolean", "required": false },
+      "license":                  { "type": "string",  "required": true, "enum": ["internal-only", "anonymized-research", "public-CC-BY"] }
+    },
+
+    "payload":          { "type": "kind-specific",  "required": true,  "note": "见下面 5 个 payload schema，按 kind 取对应字段" }
+  },
+
+  "payload_schemas": {
+
+    "graded_video": {
+      "purpose": "对学生 CPR 视频的整段评分（继承 v1 的核心）",
+      "video_meta": {
+        "video_id":       { "type": "string",   "required": true },
+        "duration_sec":   { "type": "number",   "required": true },
+        "cohort_id":      { "type": "string",   "required": true },
+        "session_type":   { "type": "string",   "required": true, "enum": ["primary", "repeat"] },
+        "repeat_of_record_id": { "type": "string", "required": false },
+        "ai_draft_used":  { "type": "boolean",  "required": true },
+        "ai_draft_version":   { "type": "string", "required": false }
+      },
+      "steps": {
+        "type": "array",
+        "length": 28,
+        "item_ref": "#/types/StepGrade"
+      },
+      "timeline_events": { "$ref": "#/types/TimelineEvents" },
+      "overall": {
+        "total_score":     { "type": "number",  "required": true },
+        "category_scores": { "type": "object",  "required": true },
+        "summary_comment": { "type": "string",  "required": false },
+        "qualified":       { "type": "boolean", "required": true }
+      },
+      "labeling_minutes":  { "type": "number",  "required": true }
+    },
+
+    "reference_positive": {
+      "purpose": "标准 / 正确示范，用于 vea 检索时取正样本",
+      "title":          { "type": "string", "required": true,  "example": "EC手法面罩贴合标准示范" },
+      "demonstration_subject": { "type": "string", "required": true, "enum": ["self_demo", "model_video", "training_clip", "other"], "note": "self_demo=老师亲自演示" },
+      "key_features":   { "type": "array<string>", "required": true, "min_length": 1, "note": "本示范在演示什么关键特征。例如 ['手肘伸直', '掌根贴胸骨中下1/3']" },
+      "applies_to_error_codes_avoided": { "type": "array<string>", "required": false, "note": "正例可选：本示范帮助避免哪些 E_code" }
+    },
+
+    "reference_negative": {
+      "purpose": "错误 / 易错示范，用于 vea 检索时取负样本",
+      "title":          { "type": "string", "required": true,  "example": "E10 手肘弯曲典型示范" },
+      "primary_error_code": { "type": "string", "required": true, "note": "主要演示哪个 E_code，必须 ∈ error_links" },
+      "secondary_error_codes": { "type": "array<string>", "required": false, "note": "顺便触犯的其他 E_code" },
+      "severity":       { "type": "string", "required": true, "enum": ["mild", "moderate", "severe"], "note": "错误程度，用于训练 AI 区分轻重" },
+      "demonstration_subject": { "type": "string", "required": true, "enum": ["self_demo", "real_student_anonymized", "training_clip", "other"] }
+    },
+
+    "comparison_pair": {
+      "purpose": "正反对照，最强的边界教学信号",
+      "title":          { "type": "string", "required": true,  "example": "EC 手法 vs 单手乱捂" },
+      "left": {
+        "label":          { "type": "string",  "required": true, "enum": ["positive", "negative"] },
+        "media_indices":  { "type": "array<int>", "required": true, "note": "引用 envelope.media[] 的下标" },
+        "caption":        { "type": "string",  "required": true }
+      },
+      "right": {
+        "label":          { "type": "string",  "required": true, "enum": ["positive", "negative"] },
+        "media_indices":  { "type": "array<int>", "required": true },
+        "caption":        { "type": "string",  "required": true }
+      },
+      "key_distinguishing_features": { "type": "array<string>", "required": true, "min_length": 1, "note": "区分两者的关键差异点列表" },
+      "common_mistake_explanation":  { "type": "string", "required": true, "note": "为什么人容易混淆这两种" }
+    },
+
+    "rubric_note": {
+      "purpose": "对 rubric 本身的注解、澄清或修订建议",
+      "proposal_kind": { "type": "string", "required": true, "enum": ["clarify_existing", "propose_new_error_code", "propose_new_step", "propose_rubric_split_or_merge", "general_note"] },
+      "scope": {
+        "type": "string", "required": true, "enum": ["step", "error_code", "category", "global"]
+      },
+      "scope_target": { "type": "string", "required": "scope != global 时必填", "example": "E10" },
+      "current_definition_quoted": { "type": "string", "required": false, "note": "引用当前定义原文，便于审议" },
+      "proposed_change":           { "type": "string", "required": "proposal_kind != general_note 时必填" },
+      "rationale":                 { "type": "string", "required": true },
+      "evidence_contribution_ids": { "type": "array<string>", "required": false, "note": "引用支持本提议的其他 contribution，如 'contrib_xxx 显示 E10 与 E_new 难以区分'" }
+    }
+  },
+
+  "types": {
+
+    "Author": {
+      "annotator_id":   { "type": "string",   "required": true,  "example": "doctor-zhang", "note": "脱敏后的老师标识" },
+      "role":           { "type": "string",   "required": true,  "enum": ["专家", "实习生", "AI-draft", "教研员"] },
+      "specialty":      { "type": "string",   "required": false, "example": "急诊科 / 重症医学" },
+      "credential_level": { "type": "string", "required": false, "enum": ["主任医师", "副主任医师", "主治医师", "住院医师", "其他"] }
+    },
+
+    "Media": {
+      "type":           { "type": "string",   "required": true,  "enum": ["video", "image"], "future": ["audio", "image_sequence"] },
+      "media_id":       { "type": "string",   "required": true,  "note": "网站上传后生成的稳定 ID" },
+      "path":           { "type": "string",   "required": true,  "note": "对象存储路径或本地相对路径" },
+      "thumbnail_path": { "type": "string",   "required": false, "note": "图片或视频缩略图，列表展示用" },
+      "mime":           { "type": "string",   "required": true,  "example": "video/mp4 | image/jpeg" },
+      "filesize_bytes": { "type": "integer",  "required": true },
+      "checksum_sha256":{ "type": "string",   "required": true,  "note": "去重 + 完整性校验" },
+
+      "duration_sec":   { "type": "number",   "required": "type=video 时必填" },
+      "fps":            { "type": "number",   "required": false },
+      "width":          { "type": "integer",  "required": false },
+      "height":         { "type": "integer",  "required": false },
+      "interval": {
+        "type": "object|null", "required": false,
+        "note": "如果只引用视频的一段，填 [start, end]。整段则填 null 或 [0, duration]",
+        "fields": {
+          "start_sec": "number",
+          "end_sec":   "number"
+        }
+      },
+      "frame_extracted_from": { "type": "string", "required": false, "example": "media_id_xxx@2.4s", "note": "图片是从某视频抽帧时的来源指针" },
+
+      "annotations_overlay": {
+        "type": "array<Annotation>", "required": false,
+        "note": "图像 / 视频上的标注图层（圈、箭头、热区）",
+        "item": {
+          "shape":  { "type": "string", "enum": ["rect", "circle", "arrow", "polyline", "freehand"] },
+          "coords": "array<number>",
+          "t_sec":  { "type": "number", "required": "type=video 时必填", "note": "标注出现的时刻" },
+          "label":  "string"
+        }
+      }
+    },
+
+    "Explanation": {
+      "summary":          { "type": "string",   "required": true,  "max_length": 200, "note": "1-2 句一句话总结" },
+      "detailed_text":    { "type": "string",   "required": false, "note": "可长可短的细节说明" },
+      "checkpoints":      { "type": "array<string>", "required": false, "note": "可勾选的关键判断点列表，用于教 AI 分解判断逻辑" },
+      "voice_memo_path":  { "type": "string",   "required": false, "note": "老师录的语音解说，可后续 ASR" }
+    },
+
+    "StepGrade": {
+      "step_id":          { "type": "string", "required": true },
+      "executed":         { "type": "boolean", "required": true },
+      "score_value":      { "type": "number",  "required": true },
+      "score_band":       { "type": "string",  "required": true, "enum": ["full", "partial", "zero"] },
+      "error_codes":      { "type": "array<string>", "required": true },
+      "error_timestamps": { "type": "array<{code,t_sec,note?}>", "required": true },
+      "interval":         { "type": "object|null", "required": true },
+      "confidence":       { "type": "string", "required": true, "enum": ["sure", "unsure"] },
+      "notes":            { "type": "string", "required": false }
+    },
+
+    "TimelineEvents": {
+      "compression": {
+        "first_compression_t":  "number|null",
+        "last_compression_t":   "number|null",
+        "total_count":          "integer|null",
+        "interruptions":        "array<{start_sec,end_sec,reason?}>",
+        "rounds":               "array<{round_no,start_sec,end_sec,count?}>"
+      },
+      "ventilation": {
+        "events": "array<{t_sec, duration_sec, source}>"
+      },
+      "key_speech": {
+        "events": "array<{phrase_id, t_sec, transcript}>",
+        "phrase_dictionary": {
+          "ENV_SAFE":     "现场安全 / 周围环境安全",
+          "ALL_CLEAR":    "所有人离开 / 离开患者",
+          "ENERGY_200J":  "200 焦 / 选 200J",
+          "MODE_MANUAL":  "手动模式 / 切换手动",
+          "START_CPR":    "我开始按压 / 开始 CPR (可选)",
+          "AED_ON":       "开机 / 打开除颤仪 (可选)"
+        }
+      }
+    },
+
+    "Review": {
+      "reviewers":    { "type": "array<{annotator_id, decision, comment, at}>", "required": false },
+      "current_decision": { "type": "string", "enum": ["approved", "rejected", "needs_revision"], "required": false },
+      "min_reviewer_count_for_approval": { "type": "integer", "default": 1, "note": "训练集入库门槛。MVP 阶段 1，后续可调高到 2" }
+    }
+  },
+
+  "validation_rules": [
+    "1. 所有 contribution 必须填 step_links 且至少 1 项",
+    "2. kind=reference_negative 必须 error_links 非空且 primary_error_code ∈ error_links",
+    "3. kind=comparison_pair 必须 error_links 非空，且 media 至少 2 个",
+    "4. kind=graded_video 的 payload.steps 必须严格 28 项，约束沿用 v1",
+    "5. 所有 error_codes / error_links 必须存在于当前 rubric_version 中",
+    "6. 所有 step_id 必须存在于当前 rubric_version 中",
+    "7. media 中 type=video 必须有 duration_sec；type=image 必须有 width/height",
+    "8. status=approved 必须 review.current_decision=approved 且 reviewers 满足 min_reviewer_count_for_approval",
+    "9. consent.subject_consent_obtained=false 时 license 必须 = 'internal-only'",
+    "10. supersedes 引用的旧 contribution 必须存在；自动把旧的标记为 deprecated"
+  ],
+
+  "vea_export": {
+    "purpose": "vea 训练 / 检索增强使用的扁平化视图",
+    "files": {
+      "gold_steps.parquet":     "graded_video 派生：video_id, step_id, score_value, error_codes, interval",
+      "gold_events.parquet":    "graded_video 派生：video_id, step_id, event_type, t_sec, duration_sec",
+      "gold_overall.parquet":   "graded_video 派生：video_id, total_score, qualified, annotator_id",
+      "ref_positive.parquet":   "reference_positive 派生：contribution_id, step_links, media_paths, key_features, explanation_summary",
+      "ref_negative.parquet":   "reference_negative 派生：contribution_id, step_links, primary_error_code, severity, media_paths, explanation_summary",
+      "comparison.parquet":     "comparison_pair 派生：contribution_id, step_links, error_links, left_media, right_media, distinguishing_features",
+      "rubric_notes.parquet":   "rubric_note 派生：proposal_kind, scope_target, proposed_change, rationale, status"
+    },
+    "default_filter": "status=approved AND consent.license != 'internal-only'（除非显式包含 internal-only）"
+  },
+
+  "coverage_dashboard": {
+    "purpose": "网站首屏展示，引导贡献流向稀缺处",
+    "metrics": {
+      "per_step":  "每个 step_id 的 graded_video / reference_positive / reference_negative / comparison 数量",
+      "per_error": "每个 E_code 的 reference_negative / comparison 数量",
+      "gaps":      "样本数 < threshold 的 step / error_code 列表，按缺口大小排序"
+    }
+  },
+
+  "migration_from_v1": [
+    "1. v1 的每个 record 等价于 v2 的 kind=graded_video contribution",
+    "2. v1.video_meta → v2.payload.video_meta",
+    "3. v1.steps → v2.payload.steps（结构一致）",
+    "4. v1.timeline_events → v2.payload.timeline_events（结构一致）",
+    "5. v1.overall → v2.payload.overall",
+    "6. v1.metadata.labeling_minutes → v2.payload.labeling_minutes",
+    "7. 自动生成 author / created_at / consent / status=approved（兼容假设）",
+    "8. v1 数据迁移脚本：scripts/migrate_v1_to_v2.py（待写）"
+  ]
+}

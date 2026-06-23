@@ -1,0 +1,89 @@
+{
+  "contribution_id": "contrib_2026-06-08_doctor-zhang_0003",
+  "kind": "reference_positive",
+  "dataset_ids": ["cpr-cohort-2026-06"],
+
+  "author": {
+    "annotator_id": "doctor-zhang",
+    "role": "专家",
+    "specialty": "急诊科",
+    "credential_level": "副主任医师"
+  },
+  "created_at": "2026-06-08T17:10:00+08:00",
+  "updated_at": "2026-06-08T17:14:00+08:00",
+  "rubric_version": "rubric-v2",
+
+  "step_links": ["D7S2"],
+  "error_links": [],
+
+  "media": [
+    {
+      "type": "video",
+      "media_id": "media_zhang_ec_demo",
+      "path": "refs/positive/zhang_ec_demo_8s.mp4",
+      "thumbnail_path": "refs/positive/zhang_ec_demo_thumb.jpg",
+      "mime": "video/mp4",
+      "filesize_bytes": 2104876,
+      "checksum_sha256": "sha256:placeholder_zhang_ec",
+      "duration_sec": 8.0,
+      "fps": 30,
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "type": "image",
+      "media_id": "media_zhang_ec_handpose",
+      "path": "refs/positive/zhang_ec_handpose.jpg",
+      "frame_extracted_from": "media_zhang_ec_demo@3.2s",
+      "mime": "image/jpeg",
+      "filesize_bytes": 365021,
+      "checksum_sha256": "sha256:placeholder_zhang_ec_hand",
+      "width": 1920,
+      "height": 1080,
+      "annotations_overlay": [
+        { "shape": "circle", "coords": [820, 540, 60], "label": "C 形扣面罩" },
+        { "shape": "circle", "coords": [820, 700, 60], "label": "E 形托下颌" }
+      ]
+    }
+  ],
+
+  "explanation": {
+    "summary": "EC 手法：拇指食指 C 形扣罩，中无名小指 E 形托下颌",
+    "detailed_text": "本段为本人 iPhone 拍摄演示（8s）。重点演示 EC 手法的两个手指分工与面罩贴合方向。",
+    "checkpoints": [
+      "拇指食指成 C 形扣面罩边缘",
+      "中、无名、小指成 E 形托下颌骨",
+      "面罩尖端朝头部、三角底贴下唇"
+    ],
+    "voice_memo_path": "refs/positive/zhang_ec_demo_voice.m4a"
+  },
+
+  "tags": ["EC手法", "专家自演", "面罩"],
+  "language": "zh-CN",
+
+  "status": "approved",
+  "review": {
+    "reviewers": [
+      { "annotator_id": "doctor-li", "decision": "approved", "comment": "经典示范，可作为 D7S2 教学材料", "at": "2026-06-09T11:05:00+08:00" }
+    ],
+    "current_decision": "approved",
+    "min_reviewer_count_for_approval": 1
+  },
+
+  "consent": {
+    "subject_consent_obtained": true,
+    "face_blur_applied": false,
+    "license": "anonymized-research"
+  },
+
+  "payload": {
+    "title": "EC 手法标准示范（专家自演）",
+    "demonstration_subject": "self_demo",
+    "key_features": [
+      "拇指食指成 C 形扣面罩边缘",
+      "中、无名、小指成 E 形托下颌骨",
+      "面罩尖端朝头部，三角底贴下唇"
+    ],
+    "applies_to_error_codes_avoided": ["E29", "E30"]
+  }
+}
