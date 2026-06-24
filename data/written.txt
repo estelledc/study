@@ -1578,3 +1578,7 @@ demikernel-2021
 mcmahan-fedavg-2017
 spacemacs
 embedded-hal
+kairouz-advances-fl-2019
+bonawitz-fl-system-2019
+doom-emacs
+probe-rs
