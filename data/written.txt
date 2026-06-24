@@ -1574,3 +1574,7 @@ snap-2019
 abadi-dpsgd-2016
 geany
 micropython
+demikernel-2021
+mcmahan-fedavg-2017
+spacemacs
+embedded-hal
