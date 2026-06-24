@@ -1570,3 +1570,7 @@ ix-2014
 erlingsson-rappor-2014
 textmate
 circuitpython
+snap-2019
+abadi-dpsgd-2016
+geany
+micropython
