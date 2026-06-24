@@ -139,10 +139,15 @@ C = 20×10^6 × log₂(1001) ≈ 200 Mbps
 - [[aes]] —— AES Rijndael 对称分组密码
 - [[bitcoin-core]] —— Bitcoin Core — 比特币参考实现
 - [[cerf-kahn-1974]] —— Cerf-Kahn 1974 — 用网关把异构网络拼成一个互联网
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[diskann-2019]] —— DiskANN — 单机十亿向量近邻检索（图存 SSD）
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[hamming-1950]] —— Hamming 纠错码
 - [[hnsw-2018]] —— HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)
 - [[huffman-1952]] —— Huffman 编码
+- [[karp-21]] —— Karp 21 — 21 个 NP-完全问题
+- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
 - [[maron-kuhns-1960]] —— Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[polar-codes-2009]] —— Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组

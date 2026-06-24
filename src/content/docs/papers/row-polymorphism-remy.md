@@ -149,5 +149,12 @@ addZ { x = 1.0, y = 2.0, color = "red" }
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[coeffect-petricek]] —— Coeffects — 让类型系统追踪「需要多少上下文」
+- [[effect-handlers]] —— 代数效应（Algebraic Effects）
+- [[gadt-pjones]] —— GADT — 让构造子告诉编译器"我返回的是更精确的类型"
+- [[gradual-typing]] —— 渐进类型 — 让动态和静态类型在同一份代码里共存
+- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
+- [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[standard-ml]] —— Standard ML — 让编译器替你把类型补完
+- [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 

@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 799 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 803 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：799 篇
+- **总数**：803 篇
 - **已分类**：139
-- **未分类**：660（落入"其他 / 待分类"段）
+- **未分类**：664（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 660 |
+| [其他 / 待分类](#其他--待分类) | 664 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 660 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 664 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -489,6 +489,7 @@ sidebar:
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
+| `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) |
 | `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) |
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
@@ -593,6 +594,7 @@ sidebar:
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
 | `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |
+| `ice-rfc-5245` | [ICE (RFC 5245) — 让两台藏在 NAT 后面的设备找到彼此](/study/papers/ice-rfc-5245/) |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
 | `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
@@ -837,6 +839,7 @@ sidebar:
 | `self-evolving-software-agents` | [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) |
+| `selinux-2001` | [SELinux — 给 Linux 装上不可绕过的安检门](/study/papers/selinux-2001/) |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
 | `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) |
@@ -926,6 +929,7 @@ sidebar:
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |
 | `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) |
 | `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) |
+| `vall-e-2023` | [VALL-E — 3 秒音频样本就能克隆你的声音](/study/papers/vall-e-2023/) |
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) |
@@ -967,7 +971,7 @@ sidebar:
 
 ---
 
-## 全部 799 篇（字母序）
+## 全部 803 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1200,6 +1204,7 @@ sidebar:
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 其他 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 其他 |
+| `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) | 其他 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
 | `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) | 其他 |
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) | 其他 |
@@ -1321,6 +1326,7 @@ sidebar:
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
 | `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | 其他 |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 其他 |
+| `ice-rfc-5245` | [ICE (RFC 5245) — 让两台藏在 NAT 后面的设备找到彼此](/study/papers/ice-rfc-5245/) | 其他 |
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
 | `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | 其他 |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 其他 |
@@ -1613,6 +1619,7 @@ sidebar:
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 其他 |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | 其他 |
 | `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
+| `selinux-2001` | [SELinux — 给 Linux 装上不可绕过的安检门](/study/papers/selinux-2001/) | 其他 |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | 其他 |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) | 其他 |
 | `sequential-consistency-1979` | [Sequential Consistency 1979 — 多处理器内存模型的第一个正确性标准](/study/papers/sequential-consistency-1979/) | 其他 |
@@ -1724,6 +1731,7 @@ sidebar:
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 其他 |
 | `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) | 其他 |
 | `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) | 其他 |
+| `vall-e-2023` | [VALL-E — 3 秒音频样本就能克隆你的声音](/study/papers/vall-e-2023/) | 其他 |
 | `vamp-verisoft-2006` | [VAMP — 把一颗有流水线、乱序、浮点和 cache 的处理器从门电路证到指令集](/study/papers/vamp-verisoft-2006/) | 其他 |
 | `vcc-2009` | [VCC — 给并发 C 加注解，让 SMT 自动证它对](/study/papers/vcc-2009/) | 其他 |
 | `veach-1995-mis` | [Veach MIS — 用一行加权公式让多种采样策略各取所长](/study/papers/veach-1995-mis/) | 其他 |

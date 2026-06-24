@@ -160,13 +160,16 @@ return <button disabled={isSubmitting}>登录</button>;
 
 - [[arktype]] —— arktype — schema 长得像 TypeScript 类型本身
 - [[conform]] —— Conform — 让浏览器原生 form 也能 type-safe 校验
+- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
+- [[echarts]] —— Apache ECharts — 给一个 JSON 就能画图的可视化库
 - [[mobx]] —— MobX — 让 state 像电子表格一样自动重算
+- [[observable-plot]] —— Observable Plot — 你说想看哪两列的关系，库自己画图
 - [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
+- [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
 - [[swr]] —— SWR — React 远程数据 hook 的极简流派
 - [[tanstack-query]] —— TanStack Query — 数据获取与缓存库
 - [[tanstack-router]] —— TanStack Router — 把 URL 当类型，编译器替你守路由
 - [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
-- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 - [[zod]] —— Zod — TypeScript-first schema 验证
 - [[zustand]] —— Zustand — 极简 React 状态管理
 

@@ -149,6 +149,7 @@ nonce        (4 字节)        <- 矿工要暴力试的就是它
 - [[byzantine-generals-1982]] —— 拜占庭将军问题 — 节点能撒谎时怎么达成一致
 - [[compound-v3]] —— Compound III (Comet) — 单抵押借贷重构
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
 - [[erigon]] —— Erigon — 存储优化型以太坊客户端
 - [[filecoin]] —— Filecoin / Lotus — IPFS 之上的去中心化存储市场
 - [[foundry]] —— Foundry — Paradigm 出品的 Rust 合约工具链

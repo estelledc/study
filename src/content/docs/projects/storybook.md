@@ -168,6 +168,5 @@ export const Clicked: StoryObj<typeof Button> = {
 - [[radix-ui]] —— Radix UI — unstyled accessible 的 React 组件原语库
 - [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
 - [[testing-library]] —— Testing Library — 像用户一样测前端，重构不再挂测试
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
 - [[vitest]] —— Vitest — Vite 原生测试框架
 

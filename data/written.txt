@@ -1526,3 +1526,11 @@ robyn
 lodestar
 kakoune
 nuttx
+vall-e-2023
+ice-rfc-5245
+selinux-2001
+dwork-dp-icalp-2006
+lite-xl
+embassy
+panda3d
+ffmpeg

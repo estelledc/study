@@ -153,6 +153,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[decision-transformer-2021]] —— Decision Transformer — 把强化学习当成"文字接龙"
 - [[dit]] —— DiT — Diffusion Transformer
 - [[dpo]] —— DPO — Direct Preference Optimization
+- [[dqn]] —— DQN — Deep Q-Network
 - [[flan-2021]] —— FLAN — 用自然语言指令教模型学会"听话"
 - [[flash-attention]] —— FlashAttention — 不改算法，只改数据怎么进 GPU
 - [[induction-heads]] —— Induction Heads — Transformer 的 in-context learning 引擎
@@ -178,6 +179,7 @@ GPT-3 这一篇论文引用数 30000+，是过去 6 年 AI 圈被引最频繁的
 - [[tabpfn-2023]] —— TabPFN — 一秒解决小表格分类的 Transformer
 - [[toolformer]] —— Toolformer — 教 LLM 自主调用 API
 - [[transformer-xl-2019]] —— Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去
+- [[vall-e-2023]] —— VALL-E — 3 秒音频样本就能克隆你的声音
 - [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
 - [[word2vec]] —— Word2Vec — 词向量奠基
 - [[xlnet-2019]] —— XLNet — 把句子打乱顺序读，借此同时拿到 AR 和双向

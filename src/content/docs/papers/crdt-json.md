@@ -169,7 +169,6 @@ console.log(docB.getMap('root').get('title'))
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[crdt-shapiro-2011]] —— CRDT — 让多副本各改各的，最终自动合一
 - [[crdt-sss-2011]] —— CRDT 形式定义 — SSS 2011 八页浓缩版
-- [[dns]] —— DNS — 把全球域名解析切成一棵可分布维护的树
 - [[dynamo]] —— Dynamo — 让购物车永远能写入的分布式存储
 - [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
 - [[immer]] —— Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态

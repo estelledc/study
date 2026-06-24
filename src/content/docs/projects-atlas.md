@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 730 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 734 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：730 个
+- **总数**：734 个
 - **已分类**：213
-- **未分类**：517（落入"其他 / 待分类"段）
+- **未分类**：521（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 517 |
+| [其他 / 待分类](#其他--待分类) | 521 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 517 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 521 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -650,6 +650,7 @@ sidebar:
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) |
+| `embassy` | [Embassy — 让单片机也能用 async/await](/study/projects/embassy/) |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
@@ -665,6 +666,7 @@ sidebar:
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) |
+| `ffmpeg` | [FFmpeg — 几乎所有视频工具背后都藏着它](/study/projects/ffmpeg/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
@@ -763,6 +765,7 @@ sidebar:
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `lima` | [Lima — macOS 上跑 Linux 虚拟机的轻量 CLI](/study/projects/lima/) |
 | `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) |
+| `lite-xl` | [Lite-XL — 不到 3MB 的编辑器也能扩展出花样](/study/projects/lite-xl/) |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) |
@@ -843,6 +846,7 @@ sidebar:
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
 | `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) |
+| `panda3d` | [Panda3D — 用 Python 写 3D 游戏的老牌引擎](/study/projects/panda3d/) |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
@@ -1026,7 +1030,7 @@ sidebar:
 
 ---
 
-## 全部 730 个（字母序）
+## 全部 734 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1219,6 +1223,7 @@ sidebar:
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | 其他 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | 其他 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | Web 框架 |
+| `embassy` | [Embassy — 让单片机也能用 async/await](/study/projects/embassy/) | 其他 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) | 其他 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
@@ -1242,6 +1247,7 @@ sidebar:
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | 其他 |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) | 其他 |
+| `ffmpeg` | [FFmpeg — 几乎所有视频工具背后都藏着它](/study/projects/ffmpeg/) | 其他 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | 其他 |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | 其他 |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
@@ -1372,6 +1378,7 @@ sidebar:
 | `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | i18n 国际化 |
 | `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | 其他 |
 | `listr2` | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | Terminal / 终端 |
+| `lite-xl` | [Lite-XL — 不到 3MB 的编辑器也能扩展出花样](/study/projects/lite-xl/) | 其他 |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | 其他 |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | 其他 |
@@ -1490,6 +1497,7 @@ sidebar:
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) | 其他 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
 | `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) | 其他 |
+| `panda3d` | [Panda3D — 用 Python 写 3D 游戏的老牌引擎](/study/projects/panda3d/) | 其他 |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | 其他 |
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) | 其他 |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | 其他 |

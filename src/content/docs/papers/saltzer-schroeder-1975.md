@@ -158,5 +158,7 @@ Cloudflare 后来必须做 1.1.1.1 客户端 + 系统级开关，让普通人也
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[selinux-2001]] —— SELinux — 给 Linux 装上不可绕过的安检门
 

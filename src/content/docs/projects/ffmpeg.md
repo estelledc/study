@@ -160,3 +160,7 @@ FFmpeg 诞生于 2000 年，作者是法国程序员 Fabrice Bellard（此人还
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
+- [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
+

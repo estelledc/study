@@ -150,6 +150,7 @@ let ciphertext = try sessionCipher.encrypt(plaintext)
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[age]] —— age — 把"用 GPG 加密一个文件"重新做对
+- [[embassy]] —— Embassy — 让单片机也能用 async/await
 - [[heartbleed-2014]] —— Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[lucky13-2013]] —— Lucky 13 — 用毫秒级时间差把 TLS 加密看穿

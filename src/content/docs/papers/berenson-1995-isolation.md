@@ -163,5 +163,14 @@ SI 防了读偏斜但防不了写偏斜，锁定义的 RR 防了 P2 但实现上
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
+- [[cockroachdb-2020]] —— CockroachDB 2020 — 没原子钟也能做全球强一致 SQL 数据库
+- [[eswaran-1976]] —— Eswaran 1976 — 串行化与谓词锁的源头
+- [[gray-1978-notes]] —— Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完
+- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
+- [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
+- [[saga-1987]] —— Sagas — 长事务拆成一串能"反向走回去"的小事务
+- [[selinger-1979]] —— Selinger 1979 — 基于代价的查询优化
+- [[spanner-2012]] —— Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳
 
