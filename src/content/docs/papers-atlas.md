@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 795 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 799 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：795 篇
+- **总数**：799 篇
 - **已分类**：139
-- **未分类**：656（落入"其他 / 待分类"段）
+- **未分类**：660（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 656 |
+| [其他 / 待分类](#其他--待分类) | 660 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 656 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 660 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -350,6 +350,7 @@ sidebar:
 | `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |
+| `berenson-1995-isolation` | [ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞](/study/papers/berenson-1995-isolation/) |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
 | `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
@@ -810,6 +811,7 @@ sidebar:
 | `rocketqa-2021` | [RocketQA — 把稠密检索的训练拧到工业级](/study/papers/rocketqa-2021/) |
 | `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) |
 | `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) |
+| `row-polymorphism-remy` | [Row Polymorphism — 让函数不必知道 record 的全部字段](/study/papers/row-polymorphism-remy/) |
 | `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) |
 | `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) |
 | `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) |
@@ -826,6 +828,7 @@ sidebar:
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
+| `sctp-multipath-2006` | [SCTP 多路径并发传输 — 在 MPTCP 之前，用多宿主实现多链路同时发数据](/study/papers/sctp-multipath-2006/) |
 | `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) |
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
@@ -946,6 +949,7 @@ sidebar:
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
 | `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) |
+| `whisper-2022` | [Whisper — 用 68 万小时"野生"音频教会模型听懂全世界](/study/papers/whisper-2022/) |
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) |
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) |
@@ -963,7 +967,7 @@ sidebar:
 
 ---
 
-## 全部 795 篇（字母序）
+## 全部 799 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1025,6 +1029,7 @@ sidebar:
 | `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | 其他 |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | 其他 |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | 其他 |
+| `berenson-1995-isolation` | [ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞](/study/papers/berenson-1995-isolation/) | 其他 |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | 其他 |
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) | 其他 |
@@ -1575,6 +1580,7 @@ sidebar:
 | `rocksdb-2017` | [RocksDB 2017 — 把 LSM-Tree 的"空间放大"压到极低的工业经验](/study/papers/rocksdb-2017/) | 其他 |
 | `rocksdb-lsm` | [LSM-tree 与 RocksDB — 把所有写都变成顺序写](/study/papers/rocksdb-lsm/) | 数据库 |
 | `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) | 其他 |
+| `row-polymorphism-remy` | [Row Polymorphism — 让函数不必知道 record 的全部字段](/study/papers/row-polymorphism-remy/) | 其他 |
 | `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) | 其他 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
 | `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) | 其他 |
@@ -1595,6 +1601,7 @@ sidebar:
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) | 其他 |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | 其他 |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | 其他 |
+| `sctp-multipath-2006` | [SCTP 多路径并发传输 — 在 MPTCP 之前，用多宿主实现多链路同时发数据](/study/papers/sctp-multipath-2006/) | 其他 |
 | `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) | 其他 |
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | 其他 |
@@ -1745,6 +1752,7 @@ sidebar:
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) | 其他 |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |
 | `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | 其他 |
+| `whisper-2022` | [Whisper — 用 68 万小时"野生"音频教会模型听懂全世界](/study/papers/whisper-2022/) | 其他 |
 | `whitted-1980` | [Whitted 1980 — 让光线在场景里递归跑三种次级射线](/study/papers/whitted-1980/) | 其他 |
 | `why3-2013` | [Why3 — 写一次程序规范，多个证明器一起来证](/study/papers/why3-2013/) | 其他 |
 | `wide-deep-2016` | [Wide & Deep — 让模型同时学会"记住"和"举一反三"](/study/papers/wide-deep-2016/) | 其他 |

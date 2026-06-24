@@ -190,6 +190,7 @@ let collect body =
 - [[plotkin-sos]] —— Plotkin SOS — 用规则讲清楚程序"走一步"是什么
 - [[push-pull-frp]] —— Push-Pull FRP — Functional Reactive Programming 实用化
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
+- [[row-polymorphism-remy]] —— Row Polymorphism — 让函数不必知道 record 的全部字段
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

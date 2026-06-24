@@ -153,4 +153,5 @@ scaling laws 的"Kaplan 版本"已经被超越，但**用三个变量预测 loss
 - [[grokking-2022]] —— Grokking — 训练 loss 早归零，几千步后才突然学会
 - [[lion-2023]] —— Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半
 - [[mixture-of-experts]] —— Mixture of Experts (MoE)
+- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
 

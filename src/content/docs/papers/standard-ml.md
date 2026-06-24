@@ -168,6 +168,7 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[program-comprehension-fmri]] —— Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区
 - [[refinement-types-1991]] —— Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"
 - [[reynolds-definitional-interpreters]] —— Reynolds Definitional Interpreters — 用一种语言去定义另一种语言
+- [[row-polymorphism-remy]] —— Row Polymorphism — 让函数不必知道 record 的全部字段
 - [[self-adjusting]] —— Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[theorems-for-free]] —— Theorems for Free — 类型签名直接给定理

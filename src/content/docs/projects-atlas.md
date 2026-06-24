@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 726 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 730 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：726 个
+- **总数**：730 个
 - **已分类**：213
-- **未分类**：513（落入"其他 / 待分类"段）
+- **未分类**：517（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 513 |
+| [其他 / 待分类](#其他--待分类) | 517 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 513 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 517 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -730,6 +730,7 @@ sidebar:
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) |
 | `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) |
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) |
+| `kakoune` | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
 | `kaniko` | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) |
@@ -770,6 +771,7 @@ sidebar:
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) |
+| `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) |
@@ -817,6 +819,7 @@ sidebar:
 | `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
+| `nuttx` | [Apache NuttX — 把 POSIX 塞进单片机的实时操作系统](/study/projects/nuttx/) |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) |
@@ -895,6 +898,7 @@ sidebar:
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) |
+| `robyn` | [Robyn — Rust 内核驱动的 Python 高性能 Web 框架](/study/projects/robyn/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) |
 | `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) |
@@ -1022,7 +1026,7 @@ sidebar:
 
 ---
 
-## 全部 726 个（字母序）
+## 全部 730 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1321,6 +1325,7 @@ sidebar:
 | `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) | 其他 |
 | `k9s` | [k9s — 让 kubectl 长出眼睛和键盘的终端 UI](/study/projects/k9s/) | 其他 |
 | `kafka` | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) | 数据库本体 / 存储引擎 |
+| `kakoune` | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | 其他 |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |
 | `kaniko` | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) | 其他 |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) | 其他 |
@@ -1376,6 +1381,7 @@ sidebar:
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | 其他 |
+| `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) | 其他 |
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | 监控 / 时序 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | 其他 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
@@ -1451,6 +1457,7 @@ sidebar:
 | `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) | 其他 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |
+| `nuttx` | [Apache NuttX — 把 POSIX 塞进单片机的实时操作系统](/study/projects/nuttx/) | 其他 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) | 其他 |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | 其他 |
@@ -1564,6 +1571,7 @@ sidebar:
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) | 其他 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) | 其他 |
+| `robyn` | [Robyn — Rust 内核驱动的 Python 高性能 Web 框架](/study/projects/robyn/) | 其他 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) | 其他 |
 | `rocksdb` | [RocksDB — 嵌入式 LSM 引擎](/study/projects/rocksdb/) | 数据库本体 / 存储引擎 |

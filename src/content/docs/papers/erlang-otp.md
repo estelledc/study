@@ -186,6 +186,7 @@ handle_call(get, _, State) -> {reply, {value, State}, State}.
 - [[orleans]] —— Orleans — 让分布式服务写起来像单机对象
 - [[phoenix]] —— Phoenix — Elixir/OTP 上的实时 web 框架
 - [[rabbitmq-server]] —— RabbitMQ — 用 Erlang 写的多协议消息总线
+- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
 - [[smalltalk-80]] —— Smalltalk-80
 - [[xstate]] —— XState — 把状态画成图，让矛盾写不出来
 

@@ -147,6 +147,7 @@ commit wait 是 Spanner 把"全球时钟同步"压到 epsilon 量级换来的—
 
 - [[aurora]] —— Aurora — 把数据库的下半身换成日志机
 - [[azure-storage-2011]] —— Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致
+- [[berenson-1995-isolation]] —— ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞
 - [[bigtable-2006]] —— Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统
 - [[brewer-cap-2000]] —— Brewer CAP — 网络一断电，一致性和可用性只能留一个
 - [[calvin-2012]] —— Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC

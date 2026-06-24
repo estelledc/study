@@ -190,6 +190,7 @@ async fn signup(form: web::Json<Signup>) -> String {
 - [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
 - [[plug]] —— Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
+- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用

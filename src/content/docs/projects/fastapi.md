@@ -214,6 +214,7 @@ def me(user: dict = Depends(current_user)):
 - [[rasa]] —— Rasa — 自己造一个能记住上下文的对话机器人
 - [[redash]] —— Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI
 - [[redis]] —— Redis — 内存键值数据库
+- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐

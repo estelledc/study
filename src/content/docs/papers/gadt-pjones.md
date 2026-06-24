@@ -158,6 +158,7 @@ safeHead (Cons x _) = x
 - [[linear-types]] —— 线性类型（Linear Types）
 - [[liquid-types]] —— Liquid Types — 让编译器自己推导出"哪些值才合法"
 - [[local-type-inference]] —— Local Type Inference — 编译器只看相邻节点也能推出类型
+- [[row-polymorphism-remy]] —— Row Polymorphism — 让函数不必知道 record 的全部字段
 - [[scala-macros]] —— Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码
 - [[system-f-reynolds-1974]] —— System F — 让类型也能像参数一样被传递
 - [[template-haskell]] —— Template Haskell — 让 Haskell 在编译期把代码当数据玩

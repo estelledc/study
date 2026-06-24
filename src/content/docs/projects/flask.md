@@ -193,6 +193,7 @@ def list_users():
 - [[postgresql]] —— PostgreSQL — 工业级关系数据库
 - [[quart]] —— Quart — Flask 完全 async 移植，API 同源 + ASGI 后端
 - [[redis]] —— Redis — 内存键值数据库
+- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
 - [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
 - [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎

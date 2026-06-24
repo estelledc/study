@@ -188,6 +188,7 @@ Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
 - [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
+- [[berenson-1995-isolation]] —— ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
 - [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言

@@ -152,5 +152,6 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - [[sam]] —— SAM — Segment Anything
 - [[stable-diffusion]] —— Stable Diffusion — 开源文生图引爆
 - [[vit]] —— ViT — Vision Transformer
+- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
 - [[word2vec]] —— Word2Vec — 词向量奠基
 

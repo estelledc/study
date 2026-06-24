@@ -202,6 +202,7 @@ let app = Router::new()
 - [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
 - [[quarkus]] —— Quarkus — 让 Java 启动比 Node 还快的云原生框架
 - [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
+- [[robyn]] —— Robyn — Rust 内核驱动的 Python 高性能 Web 框架
 - [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
 - [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
 - [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务

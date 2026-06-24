@@ -168,7 +168,6 @@ Property 'foo' does not exist on type 'Bar'. Did you mean 'baz'?
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andersen-pointer-analysis]] —— Andersen 指针分析 — 让编译器自己算出 p 可能指向谁
-- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[beck-tdd]] —— Beck TDD — 用红绿重构循环让设计自己长出来
 - [[debugging-dichotomy]] —— Debugging Dichotomy — 程序员真实 debug 行为分两轨
 - [[helium-type-errors]] —— Helium — 让类型错误说人话的教学版 Haskell

@@ -149,6 +149,7 @@ INSERT INTO emp VALUES ('alice', 12000);
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
+- [[berenson-1995-isolation]] —— ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞
 - [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
 - [[codd-1970]] —— Codd 1970 — 关系模型奠基
 - [[crdt-json]] —— CRDT JSON — 协同编辑 JSON 数据结构

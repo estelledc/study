@@ -151,4 +151,5 @@ WMT-14 英→法翻译任务，那年的成绩单：
 
 - [[attention]] —— Attention Is All You Need
 - [[fastertransformer-2021]] —— FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎
+- [[whisper-2022]] —— Whisper — 用 68 万小时"野生"音频教会模型听懂全世界
 
