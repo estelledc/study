@@ -87,8 +87,8 @@ SELECT _jsonb FROM test.users_xxxxx LIMIT 1;
 driver 端只换连接字符串：
 
 ```diff
-- mongodb+srv://atlas-user:pw@cluster0.mongodb.net/app
-+ mongodb://ferret-user:pw@ferretdb.internal:27017/app
+- mongodb+srv://<user>:<password>@cluster0.mongodb.net/app
++ mongodb://<user>:<password>@ferretdb.internal:27017/app
 ```
 
 数据迁移用官方 `mongorestore` 把 BSON 备份直接灌进 FerretDB——它自己再翻成 SQL 入库。
