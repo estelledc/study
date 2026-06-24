@@ -1562,3 +1562,7 @@ mqtt-s-2008
 mirage-2013
 atom
 arduino-cli
+arrakis-2014
+duchi-local-dp-2013
+xi-editor
+platformio-core
