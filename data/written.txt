@@ -1582,3 +1582,7 @@ kairouz-advances-fl-2019
 bonawitz-fl-system-2019
 doom-emacs
 probe-rs
+gentry-fhe-2009
+brakerski-bgv-2012
+lunarvim
+smoltcp
