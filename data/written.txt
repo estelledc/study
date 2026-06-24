@@ -1586,3 +1586,7 @@ gentry-fhe-2009
 brakerski-bgv-2012
 lunarvim
 smoltcp
+fan-vercauteren-bfv-2012
+cheon-ckks-2017
+lazyvim
+lwip
