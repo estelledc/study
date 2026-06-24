@@ -1590,3 +1590,7 @@ fan-vercauteren-bfv-2012
 cheon-ckks-2017
 lazyvim
 lwip
+chillotti-tfhe-2016
+ben-sasson-stark-2018
+nvchad
+mbedtls
