@@ -1566,3 +1566,7 @@ arrakis-2014
 duchi-local-dp-2013
 xi-editor
 platformio-core
+ix-2014
+erlingsson-rappor-2014
+textmate
+circuitpython
