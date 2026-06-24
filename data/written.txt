@@ -1534,3 +1534,11 @@ lite-xl
 embassy
 panda3d
 ffmpeg
+gcc-webrtc-2016
+capsicum-2010
+dwork-calibrating-noise-2006
+salsify-2018
+notepad-plus-plus
+buildroot
+bevy
+handbrake

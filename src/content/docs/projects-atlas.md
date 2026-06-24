@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 734 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 738 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：734 个
+- **总数**：738 个
 - **已分类**：213
-- **未分类**：521（落入"其他 / 待分类"段）
+- **未分类**：525（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 521 |
+| [其他 / 待分类](#其他--待分类) | 525 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 521 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 525 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -560,6 +560,7 @@ sidebar:
 | `bbolt` | [bbolt — Go 嵌入式 B+ 树 KV](/study/projects/bbolt/) |
 | `bentoml` | [BentoML — 模型打包部署](/study/projects/bentoml/) |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) |
+| `bevy` | [Bevy — 用 Rust 写游戏的现代 ECS 引擎](/study/projects/bevy/) |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) |
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
@@ -572,6 +573,7 @@ sidebar:
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) |
 | `buildah` | [Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工](/study/projects/buildah/) |
 | `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) |
+| `buildroot` | [Buildroot — 30 分钟从零搭出一个嵌入式 Linux](/study/projects/buildroot/) |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) |
@@ -704,6 +706,7 @@ sidebar:
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) |
 | `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
+| `handbrake` | [HandBrake — 把视频转码变成点两下鼠标的事](/study/projects/handbrake/) |
 | `handsontable` | [Handsontable — 浏览器里的 Excel](/study/projects/handsontable/) |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) |
@@ -819,6 +822,7 @@ sidebar:
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
+| `notepad-plus-plus` | [Notepad++ — 比记事本多两个加号的 Windows 编辑器](/study/projects/notepad-plus-plus/) |
 | `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
@@ -1030,7 +1034,7 @@ sidebar:
 
 ---
 
-## 全部 734 个（字母序）
+## 全部 738 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1098,6 +1102,7 @@ sidebar:
 | `bentoml` | [BentoML — 模型打包部署](/study/projects/bentoml/) | 其他 |
 | `besu` | [Hyperledger Besu — 用 Java 写的以太坊客户端](/study/projects/besu/) | 其他 |
 | `better-auth` | [better-auth — 把登录/OAuth/2FA/Passkey 拼成一行配置的 TS 认证框架](/study/projects/better-auth/) | Auth 认证 |
+| `bevy` | [Bevy — 用 Rust 写游戏的现代 ECS 引擎](/study/projects/bevy/) | 其他 |
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) | 其他 |
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) | 其他 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
@@ -1113,6 +1118,7 @@ sidebar:
 | `bubbletea` | [Bubble Tea — 用 Elm 架构写终端 UI 的 Go 框架](/study/projects/bubbletea/) | 其他 |
 | `buildah` | [Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工](/study/projects/buildah/) | 其他 |
 | `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) | 其他 |
+| `buildroot` | [Buildroot — 30 分钟从零搭出一个嵌入式 Linux](/study/projects/buildroot/) | 其他 |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | 其他 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |
@@ -1289,6 +1295,7 @@ sidebar:
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | 其他 |
 | `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) | 其他 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
+| `handbrake` | [HandBrake — 把视频转码变成点两下鼠标的事](/study/projects/handbrake/) | 其他 |
 | `handsontable` | [Handsontable — 浏览器里的 Excel](/study/projects/handsontable/) | 其他 |
 | `haproxy` | [HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡](/study/projects/haproxy/) | 其他 |
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | 其他 |
@@ -1461,6 +1468,7 @@ sidebar:
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | 其他 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | 其他 |
+| `notepad-plus-plus` | [Notepad++ — 比记事本多两个加号的 Windows 编辑器](/study/projects/notepad-plus-plus/) | 其他 |
 | `nsq` | [NSQ — Go 写的去中心化消息队列](/study/projects/nsq/) | 其他 |
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) | 其他 |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |

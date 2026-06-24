@@ -157,6 +157,7 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
 - [[csp-hoare-1978]] —— CSP — 进程之间只许喊话不许共用内存
 - [[dijkstra-shortest-path]] —— Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法
 - [[ebpf]] —— eBPF — 用户写小程序，内核证明安全后再跑

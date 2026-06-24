@@ -150,6 +150,7 @@ nix-shell -p python3 nodejs ffmpeg
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[asdf]] —— asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本
+- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
 - [[dagger]] —— Dagger — 用真正的编程语言写 CI pipeline
 - [[earthly]] —— Earthly — 把 Make 和 Dockerfile 揉一起的构建工具
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型

@@ -148,5 +148,10 @@ Cynthia Dwork 看到这个不可能性结果后想：既然精确回答不安全
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
+- [[rsa]] —— RSA 公钥密码
+- [[saltzer-schroeder-1975]] —— Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

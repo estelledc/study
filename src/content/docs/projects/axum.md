@@ -184,6 +184,7 @@ let app = Router::new()
 
 - [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
 - [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
+- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
 - [[conduit]] —— Conduit — Rust 写的极简 Matrix homeserver，单二进制 + 嵌入式数据库
 - [[connect-rpc]] —— ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议
 - [[express]] —— Express — Node.js 最经典的 Web 框架

@@ -156,8 +156,10 @@ Diff     = (6 - 2) * 10 = 40 个包
 - [[bbr-2017]] —— BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号
 - [[clark-1988]] —— Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样
 - [[cubic-2008]] —— CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱
+- [[gcc-webrtc-2016]] —— GCC (WebRTC) — 让视频通话不卡的拥塞控制算法
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
 - [[mogul-1995-persistent-http]] —— Mogul 1995 — 为什么 HTTP 必须改成"一根连接复用多次请求"
+- [[salsify-2018]] —— Salsify — 让编码器和传输层一起商量怎么发视频
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 

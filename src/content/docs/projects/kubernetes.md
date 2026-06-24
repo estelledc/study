@@ -141,6 +141,7 @@ kubectl get svc web   # 拿到外部 IP，浏览器打开就是 nginx 默认页
 - [[argocd]] —— Argo CD — Kubernetes GitOps 工具
 - [[backstage]] —— Backstage — 把公司散在各处的开发工具拼成一个门户
 - [[borg]] —— Borg — Google 把一万台机器假装成一台
+- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
 - [[calico]] —— Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器
 - [[cilium]] —— Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来
 - [[containerd]] —— containerd — Docker 和 Kubernetes 共用的那台容器运行机

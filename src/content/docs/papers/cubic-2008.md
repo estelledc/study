@@ -160,6 +160,7 @@ curl -o /dev/null https://speedtest.tele2.net/1GB.zip
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bbr-2017]] —— BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号
+- [[gcc-webrtc-2016]] —— GCC (WebRTC) — 让视频通话不卡的拥塞控制算法
 - [[jacobson-1988]] —— Jacobson 1988 — 让互联网不再被自己塞死
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tcp-vegas-1995]] —— TCP Vegas 1995 — 不等丢包，靠 RTT 早一步看见拥塞

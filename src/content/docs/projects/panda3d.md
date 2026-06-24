@@ -150,5 +150,10 @@ self.accept("arrow_down", self.camera.setY, [self.camera, -5])
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
+- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
+- [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
+- [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
+- [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[pytorch]] —— PyTorch — 深度学习主流框架
 

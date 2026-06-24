@@ -158,6 +158,8 @@ Cloudflare 后来必须做 1.1.1.1 客户端 + 系统级开关，让普通人也
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[capsicum-2010]] —— Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"
+- [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[selinux-2001]] —— SELinux — 给 Linux 装上不可绕过的安检门

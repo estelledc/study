@@ -167,6 +167,7 @@ BBB 录像的核心是**事件流回放**：会议过程中所有动作（谁说
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
 - [[mattermost]] —— Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[openmeetings]] —— Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统

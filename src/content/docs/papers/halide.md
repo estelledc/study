@@ -151,6 +151,7 @@ bx.compute_at(by,x); // 在 by 的某层循环内现算现用——内存小，b
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
 - [[cascades-1995]] —— Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器
 - [[cutlass-2020]] —— CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级
 - [[feautrier-polyhedral]] —— Feautrier 多面体调度 — 把循环并行化变成解几何方程

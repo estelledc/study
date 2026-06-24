@@ -153,6 +153,7 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[andromeda-2018]] —— Andromeda — Google Cloud 网络虚拟化的高速通道
+- [[capsicum-2010]] —— Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"
 - [[chubby]] —— Chubby — 给凡人用的分布式锁服务
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[ghost-2021]] —— ghOSt — 把 Linux 调度策略搬到用户态去写

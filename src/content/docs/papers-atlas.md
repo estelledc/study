@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 803 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 807 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：803 篇
+- **总数**：807 篇
 - **已分类**：139
-- **未分类**：664（落入"其他 / 待分类"段）
+- **未分类**：668（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 664 |
+| [其他 / 待分类](#其他--待分类) | 668 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 664 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 668 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -383,6 +383,7 @@ sidebar:
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) |
 | `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) |
 | `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) |
+| `capsicum-2010` | [Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"](/study/papers/capsicum-2010/) |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
@@ -489,6 +490,7 @@ sidebar:
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
+| `dwork-calibrating-noise-2006` | [校准噪声 — 往统计结果里加多少噪音才能保护隐私](/study/papers/dwork-calibrating-noise-2006/) |
 | `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) |
 | `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) |
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |
@@ -544,6 +546,7 @@ sidebar:
 | `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) |
 | `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) |
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) |
+| `gcc-webrtc-2016` | [GCC (WebRTC) — 让视频通话不卡的拥塞控制算法](/study/papers/gcc-webrtc-2016/) |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) |
 | `ghost-2021` | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) |
 | `gilbert-lynch-2002` | [Gilbert-Lynch 2002 — 把 CAP 从口号写成数学定理](/study/papers/gilbert-lynch-2002/) |
@@ -821,6 +824,7 @@ sidebar:
 | `saga-1987` | [Sagas — 长事务拆成一串能"反向走回去"的小事务](/study/papers/saga-1987/) |
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) |
 | `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) |
+| `salsify-2018` | [Salsify — 让编码器和传输层一起商量怎么发视频](/study/papers/salsify-2018/) |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
 | `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) |
 | `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) |
@@ -971,7 +975,7 @@ sidebar:
 
 ---
 
-## 全部 803 篇（字母序）
+## 全部 807 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1071,6 +1075,7 @@ sidebar:
 | `call-by-need-1995` | [Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算](/study/papers/call-by-need-1995/) | 其他 |
 | `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) | 其他 |
 | `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) | 其他 |
+| `capsicum-2010` | [Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"](/study/papers/capsicum-2010/) | 其他 |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) | 其他 |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
@@ -1204,6 +1209,7 @@ sidebar:
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 其他 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 其他 |
+| `dwork-calibrating-noise-2006` | [校准噪声 — 往统计结果里加多少噪音才能保护隐私](/study/papers/dwork-calibrating-noise-2006/) | 其他 |
 | `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) | 其他 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
 | `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) | 其他 |
@@ -1265,6 +1271,7 @@ sidebar:
 | `garland-heckbert-1997-qem` | [QEM — 给三角网格『瘦身』时算每一刀的代价](/study/papers/garland-heckbert-1997-qem/) | 其他 |
 | `gat-2018` | [GAT — 让图神经网络的邻居自带权重](/study/papers/gat-2018/) | 其他 |
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) | 其他 |
+| `gcc-webrtc-2016` | [GCC (WebRTC) — 让视频通话不卡的拥塞控制算法](/study/papers/gcc-webrtc-2016/) | 其他 |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) | 其他 |
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | OS / 集群管理 / 系统 |
@@ -1596,6 +1603,7 @@ sidebar:
 | `sagiv-shape-analysis` | [Sagiv 参数化形状分析 — 用三值逻辑证明链表树仍是链表树](/study/papers/sagiv-shape-analysis/) | 其他 |
 | `saito-takahashi-1990-gbuffer` | [Saito-Takahashi 1990 — 第一次提出 G-buffer 的论文](/study/papers/saito-takahashi-1990-gbuffer/) | 其他 |
 | `salsa-adapton` | [Salsa / Adapton — 让程序只重算"真的变了"的那一小块](/study/papers/salsa-adapton/) | 编译器 / 编程语言理论 |
+| `salsify-2018` | [Salsify — 让编码器和传输层一起商量怎么发视频](/study/papers/salsify-2018/) | 其他 |
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) | 其他 |
 | `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | 其他 |
 | `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) | 其他 |

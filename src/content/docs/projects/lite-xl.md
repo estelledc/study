@@ -149,5 +149,8 @@ end
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[codemirror]] —— CodeMirror — 编辑器不是一个类，是一组扩展的合奏
+- [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[notepad-plus-plus]] —— Notepad++ — 比记事本多两个加号的 Windows 编辑器
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 
