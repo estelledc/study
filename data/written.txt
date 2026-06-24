@@ -1558,3 +1558,7 @@ emacs
 openrct2
 openwrt
 shotcut
+mqtt-s-2008
+mirage-2013
+atom
+arduino-cli
