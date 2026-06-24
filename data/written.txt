@@ -1542,3 +1542,11 @@ notepad-plus-plus
 buildroot
 bevy
 handbrake
+wireguard-2017
+sgx-2013
+dwork-our-data-ourselves-2006
+tor-2004
+vim
+yocto-poky
+minetest
+mlt
