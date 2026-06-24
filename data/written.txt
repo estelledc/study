@@ -1550,3 +1550,11 @@ vim
 yocto-poky
 minetest
 mlt
+chaum-1981-mix
+haven-2014
+mironov-renyi-dp-2017
+mptcp-2012
+emacs
+openrct2
+openwrt
+shotcut
