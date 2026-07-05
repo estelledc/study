@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 738 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 764 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：738 个
+- **总数**：764 个
 - **已分类**：213
-- **未分类**：525（落入"其他 / 待分类"段）
+- **未分类**：551（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 525 |
+| [其他 / 待分类](#其他--待分类) | 551 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 525 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 551 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -534,6 +534,7 @@ sidebar:
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
+| `arduino-cli` | [Arduino CLI — 用命令行管理 Arduino 开发全流程](/study/projects/arduino-cli/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) |
 | `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) |
@@ -545,6 +546,7 @@ sidebar:
 | `ast-grep` | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
+| `atom` | [Atom — Web 技术做桌面编辑器的先驱](/study/projects/atom/) |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) |
 | `autogluon` | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) |
@@ -592,6 +594,7 @@ sidebar:
 | `chartist` | [Chartist — 极简 SVG 图表](/study/projects/chartist/) |
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) |
 | `cilium` | [Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来](/study/projects/cilium/) |
+| `circuitpython` | [CircuitPython — 拖文件就能给芯片写程序的 Python](/study/projects/circuitpython/) |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) |
@@ -634,6 +637,7 @@ sidebar:
 | `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
 | `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) |
+| `doom-emacs` | [Doom Emacs — 启动不到一秒的模块化 Emacs 配置](/study/projects/doom-emacs/) |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
@@ -652,7 +656,9 @@ sidebar:
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) |
+| `emacs` | [GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统](/study/projects/emacs/) |
 | `embassy` | [Embassy — 让单片机也能用 async/await](/study/projects/embassy/) |
+| `embedded-hal` | [embedded-hal — Rust 嵌入式硬件抽象的统一接口](/study/projects/embedded-hal/) |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
@@ -685,6 +691,7 @@ sidebar:
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) |
+| `geany` | [Geany — 用 C 写的轻量级 GTK 编辑器](/study/projects/geany/) |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
 | `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) |
@@ -759,6 +766,7 @@ sidebar:
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) |
+| `lazyvim` | [LazyVim — lazy.nvim 驱动的 Neovim 发行版](/study/projects/lazyvim/) |
 | `leaflet` | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `lens` | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) |
@@ -780,6 +788,8 @@ sidebar:
 | `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
+| `lunarvim` | [LunarVim — 开箱即用的 Neovim IDE 发行版](/study/projects/lunarvim/) |
+| `lwip` | [lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈](/study/projects/lwip/) |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) |
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) |
@@ -792,6 +802,7 @@ sidebar:
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
+| `mbedtls` | [Mbed TLS — 嵌入式设备的轻量级 TLS 加密库](/study/projects/mbedtls/) |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) |
@@ -801,10 +812,13 @@ sidebar:
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
 | `micro` | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
+| `micropython` | [MicroPython — 在巴掌大的芯片上跑 Python](/study/projects/micropython/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
+| `minetest` | [Minetest (Luanti) — 开源世界的 Minecraft](/study/projects/minetest/) |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) |
+| `mlt` | [MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎](/study/projects/mlt/) |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
 | `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
@@ -827,6 +841,7 @@ sidebar:
 | `numpy` | [NumPy — Python 科学计算基石](/study/projects/numpy/) |
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) |
 | `nuttx` | [Apache NuttX — 把 POSIX 塞进单片机的实时操作系统](/study/projects/nuttx/) |
+| `nvchad` | [NvChad — 极致美观的 Neovim 配置](/study/projects/nvchad/) |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) |
@@ -836,12 +851,14 @@ sidebar:
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
+| `openrct2` | [OpenRCT2 — 用逆向工程让 20 年前的游戏复活](/study/projects/openrct2/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) |
 | `opentelemetry-collector` | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) |
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
+| `openwrt` | [OpenWrt — 把家用路由器变成 Linux 服务器](/study/projects/openwrt/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
@@ -864,6 +881,7 @@ sidebar:
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
+| `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) |
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) |
 | `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) |
@@ -876,6 +894,7 @@ sidebar:
 | `postfix` | [Postfix — 把 sendmail 拆成一群最小权限的小工](/study/projects/postfix/) |
 | `pouchdb` | [PouchDB — 浏览器里的 CouchDB](/study/projects/pouchdb/) |
 | `prefect` | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) |
+| `probe-rs` | [probe-rs — Rust 写的嵌入式调试烧录工具](/study/projects/probe-rs/) |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) |
 | `promptfoo` | [promptfoo — 给 prompt 写单元测试的 CLI](/study/projects/promptfoo/) |
 | `prosody` | [Prosody — Lua 写的轻量 XMPP 服务器（嵌入式部署 + 模块化插件）](/study/projects/prosody/) |
@@ -928,6 +947,7 @@ sidebar:
 | `shell-gpt` | [shell-gpt — 把 LLM 接进 shell 当命令行助理](/study/projects/shell-gpt/) |
 | `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) |
 | `shfmt` | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) |
+| `shotcut` | [Shotcut — 零成本入门视频剪辑的开源选择](/study/projects/shotcut/) |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) |
 | `sigma-js` | [Sigma.js — 上万节点仍流畅的 WebGL 图渲染器](/study/projects/sigma-js/) |
@@ -941,12 +961,14 @@ sidebar:
 | `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) |
 | `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
+| `smoltcp` | [smoltcp — 在没有操作系统的芯片上跑 TCP/IP](/study/projects/smoltcp/) |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) |
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) |
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) |
 | `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) |
+| `spacemacs` | [Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置](/study/projects/spacemacs/) |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) |
@@ -971,6 +993,7 @@ sidebar:
 | `tempo` | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) |
+| `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) |
@@ -998,6 +1021,7 @@ sidebar:
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
+| `vim` | [Vim — 键盘上弹钢琴的编辑器](/study/projects/vim/) |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) |
 | `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
@@ -1016,9 +1040,11 @@ sidebar:
 | `woodpecker` | [Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI](/study/projects/woodpecker/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
+| `xi-editor` | [xi-editor — 异步架构编辑器的先驱实验](/study/projects/xi-editor/) |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
 | `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) |
 | `yazi` | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) |
+| `yocto-poky` | [Yocto — 工业级定制嵌入式 Linux 的标准答案](/study/projects/yocto-poky/) |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
@@ -1034,7 +1060,7 @@ sidebar:
 
 ---
 
-## 全部 738 个（字母序）
+## 全部 764 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1070,6 +1096,7 @@ sidebar:
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | 其他 |
 | `arangodb` | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | 数据库本体 / 存储引擎 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
+| `arduino-cli` | [Arduino CLI — 用命令行管理 Arduino 开发全流程](/study/projects/arduino-cli/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) | 其他 |
 | `argo-workflows` | [Argo Workflows — Kubernetes 原生工作流引擎](/study/projects/argo-workflows/) | 其他 |
@@ -1084,6 +1111,7 @@ sidebar:
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | 其他 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | 其他 |
+| `atom` | [Atom — Web 技术做桌面编辑器的先驱](/study/projects/atom/) | 其他 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) | 其他 |
 | `autogluon` | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) | 其他 |
@@ -1145,6 +1173,7 @@ sidebar:
 | `chi` | [chi — Go 标准库友好的轻量 HTTP router](/study/projects/chi/) | 其他 |
 | `chroma` | [Chroma — Python 优先的向量数据库](/study/projects/chroma/) | AI 应用 / Agent 平台 |
 | `cilium` | [Cilium — 用 eBPF 把 K8s 网络从 iptables 时代搬出来](/study/projects/cilium/) | 其他 |
+| `circuitpython` | [CircuitPython — 拖文件就能给芯片写程序的 Python](/study/projects/circuitpython/) | 其他 |
 | `clack` | [Clack — 给 Common Lisp 加一层标准化的 web 服务器接口](/study/projects/clack/) | CLI / 命令行工具 |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) | 其他 |
 | `claude-code` | [Claude Code — Anthropic 终端编程助手](/study/projects/claude-code/) | AI 应用 / Agent 平台 |
@@ -1204,6 +1233,7 @@ sidebar:
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) | 其他 |
 | `docusaurus` | [Docusaurus — 一组 plugin 协作出来的文档站框架](/study/projects/docusaurus/) | 文档站点 |
+| `doom-emacs` | [Doom Emacs — 启动不到一秒的模块化 Emacs 配置](/study/projects/doom-emacs/) | 其他 |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | 其他 |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | 其他 |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | 其他 |
@@ -1229,7 +1259,9 @@ sidebar:
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | 其他 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | 其他 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | Web 框架 |
+| `emacs` | [GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统](/study/projects/emacs/) | 其他 |
 | `embassy` | [Embassy — 让单片机也能用 async/await](/study/projects/embassy/) | 其他 |
+| `embedded-hal` | [embedded-hal — Rust 嵌入式硬件抽象的统一接口](/study/projects/embedded-hal/) | 其他 |
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) | 其他 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
@@ -1271,6 +1303,7 @@ sidebar:
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | 其他 |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | 其他 |
+| `geany` | [Geany — 用 C 写的轻量级 GTK 编辑器](/study/projects/geany/) | 其他 |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
 | `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) | 其他 |
@@ -1369,6 +1402,7 @@ sidebar:
 | `layerzero` | [LayerZero V2 — 让一条链上的合约能给另一条链上的合约发消息](/study/projects/layerzero/) | 其他 |
 | `lazydocker` | [lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷](/study/projects/lazydocker/) | 其他 |
 | `lazygit` | [lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick](/study/projects/lazygit/) | 其他 |
+| `lazyvim` | [LazyVim — lazy.nvim 驱动的 Neovim 发行版](/study/projects/lazyvim/) | 其他 |
 | `leaflet` | [Leaflet — 轻量交互式地图](/study/projects/leaflet/) | 其他 |
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) | 其他 |
 | `lens` | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) | 其他 |
@@ -1401,7 +1435,9 @@ sidebar:
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |
+| `lunarvim` | [LunarVim — 开箱即用的 Neovim IDE 发行版](/study/projects/lunarvim/) | 其他 |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | 日期时间 |
+| `lwip` | [lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈](/study/projects/lwip/) | 其他 |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) | 其他 |
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) | 其他 |
 | `mailcow` | [mailcow — Docker compose 一键起一整套邮件服务](/study/projects/mailcow/) | 其他 |
@@ -1416,6 +1452,7 @@ sidebar:
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) | 其他 |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | 其他 |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | 其他 |
+| `mbedtls` | [Mbed TLS — 嵌入式设备的轻量级 TLS 加密库](/study/projects/mbedtls/) | 其他 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) | 其他 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
@@ -1428,15 +1465,18 @@ sidebar:
 | `micro` | [micro — 终端里像 VS Code 一样顺手的纯 Go 编辑器](/study/projects/micro/) | 其他 |
 | `micromark` | [micromark — markdown 解析器里那台一个字一个字读的状态机](/study/projects/micromark/) | Markdown / 解析 |
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) | 其他 |
+| `micropython` | [MicroPython — 在巴掌大的芯片上跑 Python](/study/projects/micropython/) | 其他 |
 | `midscene` | [midscene — 用自然语言代替 selector 的浏览器自动化框架](/study/projects/midscene/) | AI 浏览器自动化 |
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | 其他 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
+| `minetest` | [Minetest (Luanti) — 开源世界的 Minecraft](/study/projects/minetest/) | 其他 |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) | 其他 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | 其他 |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) | 其他 |
+| `mlt` | [MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎](/study/projects/mlt/) | 其他 |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | 其他 |
 | `mobx` | [MobX — 让 state 像电子表格一样自动重算](/study/projects/mobx/) | 状态管理 |
 | `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) | 其他 |
@@ -1474,6 +1514,7 @@ sidebar:
 | `nushell` | [nushell — 让命令之间传 Excel 表而不是传纸条](/study/projects/nushell/) | 其他 |
 | `nuttx` | [Apache NuttX — 把 POSIX 塞进单片机的实时操作系统](/study/projects/nuttx/) | 其他 |
 | `nuxt` | [Nuxt — Vue 全栈框架](/study/projects/nuxt/) | Meta 框架 / 全栈 |
+| `nvchad` | [NvChad — 极致美观的 Neovim 配置](/study/projects/nvchad/) | 其他 |
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) | 其他 |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | 其他 |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | 其他 |
@@ -1488,6 +1529,7 @@ sidebar:
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | 其他 |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
+| `openrct2` | [OpenRCT2 — 用逆向工程让 20 年前的游戏复活](/study/projects/openrct2/) | 其他 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
@@ -1495,6 +1537,7 @@ sidebar:
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) | 其他 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
+| `openwrt` | [OpenWrt — 把家用路由器变成 Linux 服务器](/study/projects/openwrt/) | 其他 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |
@@ -1524,6 +1567,7 @@ sidebar:
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | 其他 |
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
+| `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) | 其他 |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | 其他 |
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | 其他 |
@@ -1543,6 +1587,7 @@ sidebar:
 | `preact` | [Preact — 3KB React 替代](/study/projects/preact/) | UI 框架 / Frontend Framework |
 | `prefect` | [Prefect — Python 原生编排，让数据流水线像写普通函数一样自然](/study/projects/prefect/) | 其他 |
 | `prisma` | [Prisma — 类型安全 ORM](/study/projects/prisma/) | ORM / DB 客户端 |
+| `probe-rs` | [probe-rs — Rust 写的嵌入式调试烧录工具](/study/projects/probe-rs/) | 其他 |
 | `procs` | [procs — ps 的现代替代，彩色 + 树视图 + 多列搜索](/study/projects/procs/) | 其他 |
 | `prom-client` | [prom-client — Node 服务暴露监控指标的事实标准 SDK](/study/projects/prom-client/) | 可观测 / 性能 |
 | `prometheus` | [Prometheus — 时序监控系统](/study/projects/prometheus/) | 监控 / 时序 |
@@ -1618,6 +1663,7 @@ sidebar:
 | `shellcheck` | [ShellCheck — shell 脚本的静态体检医生](/study/projects/shellcheck/) | 其他 |
 | `shfmt` | [shfmt — Shell 脚本的 gofmt（用 Go 写的统一格式化器）](/study/projects/shfmt/) | 其他 |
 | `shiki` | [shiki — 把 VS Code 那套染色搬到网页上](/study/projects/shiki/) | Markdown / 解析 |
+| `shotcut` | [Shotcut — 零成本入门视频剪辑的开源选择](/study/projects/shotcut/) | 其他 |
 | `sia` | [Sia / Renterd — 主机持续打卡才能拿钱的去中心化云存储](/study/projects/sia/) | 其他 |
 | `sidekiq` | [Sidekiq — Ruby 后台任务的事实标准](/study/projects/sidekiq/) | 其他 |
 | `sigma-js` | [Sigma.js — 上万节点仍流畅的 WebGL 图渲染器](/study/projects/sigma-js/) | 其他 |
@@ -1631,6 +1677,7 @@ sidebar:
 | `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) | 其他 |
 | `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
+| `smoltcp` | [smoltcp — 在没有操作系统的芯片上跑 TCP/IP](/study/projects/smoltcp/) | 其他 |
 | `snapshot` | [Snapshot — DAO 不花 Gas 也能投票的链下治理前端](/study/projects/snapshot/) | 其他 |
 | `socket-io` | [Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件](/study/projects/socket-io/) | 其他 |
 | `soketi` | [Soketi — 自己跑一台 Pusher，把实时通信费砍到零头](/study/projects/soketi/) | 其他 |
@@ -1639,6 +1686,7 @@ sidebar:
 | `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) | 其他 |
 | `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) | 其他 |
 | `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | Drag & Drop / Interaction |
+| `spacemacs` | [Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置](/study/projects/spacemacs/) | 其他 |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | 其他 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | 数据库本体 / 存储引擎 |
@@ -1683,6 +1731,7 @@ sidebar:
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) | 其他 |
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
 | `testing-library` | [Testing Library — 像用户一样测前端，重构不再挂测试](/study/projects/testing-library/) | 测试 / 验证 |
+| `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) | 其他 |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | 其他 |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | 其他 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
@@ -1726,6 +1775,7 @@ sidebar:
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
+| `vim` | [Vim — 键盘上弹钢琴的编辑器](/study/projects/vim/) | 其他 |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | 其他 |
 | `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) | 其他 |
 | `visx` | [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | 数据可视化 |
@@ -1756,12 +1806,14 @@ sidebar:
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | 其他 |
+| `xi-editor` | [xi-editor — 异步架构编辑器的先驱实验](/study/projects/xi-editor/) | 其他 |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | 其他 |
 | `xplr` | [xplr — 用 Lua 当配置语言的可 hack 终端文件管理器](/study/projects/xplr/) | 其他 |
 | `xstate` | [XState — 把状态画成图，让矛盾写不出来](/study/projects/xstate/) | 状态管理 |
 | `yargs` | [yargs — Node.js 命令行参数解析的事实标准](/study/projects/yargs/) | CLI / 命令行工具 |
 | `yazi` | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) | 其他 |
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
+| `yocto-poky` | [Yocto — 工业级定制嵌入式 Linux 的标准答案](/study/projects/yocto-poky/) | 其他 |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | 其他 |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) | 其他 |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | 其他 |
