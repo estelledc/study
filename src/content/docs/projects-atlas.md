@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 789 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 790 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：789 个
+- **总数**：790 个
 - **已分类**：214
-- **未分类**：575（落入"其他 / 待分类"段）
+- **未分类**：576（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 575 |
+| [其他 / 待分类](#其他--待分类) | 576 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 575 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 576 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -703,6 +703,7 @@ sidebar:
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) |
 | `geany` | [Geany — 用 C 写的轻量级 GTK 编辑器](/study/projects/geany/) |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) |
+| `ghostwriter` | [ghostwriter — Qt 干净 Markdown 写作器](/study/projects/ghostwriter/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
 | `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) |
 | `gitpod` | [Gitpod — 预构建云开发环境](/study/projects/gitpod/) |
@@ -1085,7 +1086,7 @@ sidebar:
 
 ---
 
-## 全部 789 个（字母序）
+## 全部 790 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1339,6 +1340,7 @@ sidebar:
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | 其他 |
 | `geany` | [Geany — 用 C 写的轻量级 GTK 编辑器](/study/projects/geany/) | 其他 |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) | 其他 |
+| `ghostwriter` | [ghostwriter — Qt 干净 Markdown 写作器](/study/projects/ghostwriter/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
 | `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) | 其他 |
 | `gitpod` | [Gitpod — 预构建云开发环境](/study/projects/gitpod/) | 其他 |
