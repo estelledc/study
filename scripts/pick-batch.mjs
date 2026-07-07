@@ -125,10 +125,13 @@ function assignWorktrees(items) {
   });
 }
 
-async function main() {
-  const args = parseArgs();
-
-  const { candidates, pool, graveyard, priority } = await loadPickQueues();
+export function pickBatch(args, queues = {}) {
+  const {
+    candidates = [],
+    pool = [],
+    graveyard = [],
+    priority = [],
+  } = queues;
 
   // graveyard 永久排除（按 slug 唯一，跨 area 安全）
   const graveSlugs = graveyardSlugs(graveyard);
@@ -183,11 +186,6 @@ async function main() {
   const all = [...rewriteItems, ...newItems];
   const assigned = assignWorktrees(all);
 
-  // 写回 priority-queue.jsonl：把刚选中的标 status=picked
-  if (priorityPicked.length > 0) {
-    await writePriorityQueue(markPriorityPicked(priority, priorityPicked));
-  }
-
   // 数量校验
   const issues = [];
   if (rewriteItems.length < args.rewrite) issues.push(`rewrite short: ${rewriteItems.length}/${args.rewrite}`);
@@ -195,12 +193,29 @@ async function main() {
   if (priorityItems.length < wantPriority) issues.push(`priority short: ${priorityItems.length}/${wantPriority}`);
   if (graveSlugs.size > 0) issues.push(`graveyard excluded: ${graveSlugs.size}`);
 
-  console.log(JSON.stringify({
-    requested: { count: args.count, rewrite: args.rewrite, new: args.new, priority_ratio: args.priorityRatio, want_priority: wantPriority },
-    actual: { count: assigned.length, rewrite: rewriteItems.length, new: newItems.length, priority: priorityItems.length, fallback: fallbackItems.length },
-    issues,
-    items: assigned,
-  }, null, 2));
+  return {
+    output: {
+      requested: { count: args.count, rewrite: args.rewrite, new: args.new, priority_ratio: args.priorityRatio, want_priority: wantPriority },
+      actual: { count: assigned.length, rewrite: rewriteItems.length, new: newItems.length, priority: priorityItems.length, fallback: fallbackItems.length },
+      issues,
+      items: assigned,
+    },
+    priorityPicked,
+    nextPriority: priorityPicked.length > 0 ? markPriorityPicked(priority, priorityPicked) : priority,
+  };
+}
+
+async function main() {
+  const args = parseArgs();
+  const queues = await loadPickQueues();
+  const { output, priorityPicked, nextPriority } = pickBatch(args, queues);
+
+  // 写回 priority-queue.jsonl：把刚选中的标 status=picked
+  if (priorityPicked.length > 0) {
+    await writePriorityQueue(nextPriority);
+  }
+
+  console.log(JSON.stringify(output, null, 2));
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
