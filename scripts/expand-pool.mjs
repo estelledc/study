@@ -10,15 +10,15 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { parseFrontmatterLoose } from './lib/frontmatter.mjs';
+import { readJsonl } from './lib/jsonl.mjs';
 import { CANDIDATES_PATH, PAPERS_DIR, PROJECTS_DIR } from './lib/paths.mjs';
-
-const CANDIDATES = CANDIDATES_PATH;
+import { writeCandidates } from './lib/queue-store.mjs';
 
 const RED_LINE = /blindbox|quanzhiping|video-eval-agent|sankuai|friday|cagent|aigc\.sankuai|美团|mis\.sankuai|cagent_fe_h5_blindbox|LongCat|6 件套/i;
 const WIKILINK_RE = /\[\[([a-z0-9][a-z0-9_.-]*)\]\]/g;
 
 // 抽取 ## 延伸阅读 / ## 关联 段（H2 边界）
-function extractTargetSections(text) {
+export function extractTargetSections(text) {
   const sectionStarts = [];
   const lines = text.split('\n');
   for (let i = 0; i < lines.length; i++) {
@@ -43,7 +43,7 @@ function extractTargetSections(text) {
 }
 
 // 从笔记 frontmatter 取 "分类:" 字段
-function extractCategory(text) {
+export function extractCategory(text) {
   const frontmatter = parseFrontmatterLoose(text);
   return frontmatter?.分类 ? String(frontmatter.分类).trim() : null;
 }
@@ -56,6 +56,41 @@ function parseArgs() {
     else if (a === '--dry-run') args.dryRun = true;
   }
   return args;
+}
+
+export function extractOrganicLinksFromNote(text, area, sourceSlug) {
+  const found = new Map(); // slug → { count, sources: Set, sourceTopics: [] }
+  const sourceCategory = extractCategory(text);
+  const target = extractTargetSections(text);
+  if (!target) return found;
+  let m;
+  WIKILINK_RE.lastIndex = 0;
+  while ((m = WIKILINK_RE.exec(target)) !== null) {
+    const slug = m[1];
+    if (!found.has(slug)) {
+      found.set(slug, { count: 0, sources: [], category: sourceCategory });
+    }
+    const entry = found.get(slug);
+    entry.count++;
+    if (entry.sources.length < 5) {
+      entry.sources.push(`${area}/${sourceSlug}`);
+    }
+  }
+  return found;
+}
+
+function mergeLinkMaps(target, source) {
+  for (const [slug, info] of source) {
+    if (!target.has(slug)) {
+      target.set(slug, { count: 0, sources: [], category: info.category });
+    }
+    const entry = target.get(slug);
+    entry.count += info.count;
+    for (const sourceRef of info.sources) {
+      if (entry.sources.length >= 5) break;
+      entry.sources.push(sourceRef);
+    }
+  }
 }
 
 async function scanNotesForLinks(dir, area) {
@@ -72,64 +107,25 @@ async function scanNotesForLinks(dir, area) {
     const filePath = path.join(dir, f);
     const text = await fs.readFile(filePath, 'utf8');
     const sourceSlug = f.replace(/\.md$/, '');
-    const sourceCategory = extractCategory(text);
-    const target = extractTargetSections(text);
-    if (!target) continue;
-    let m;
-    WIKILINK_RE.lastIndex = 0;
-    while ((m = WIKILINK_RE.exec(target)) !== null) {
-      const slug = m[1];
-      if (!found.has(slug)) {
-        found.set(slug, { count: 0, sources: [], category: sourceCategory });
-      }
-      const entry = found.get(slug);
-      entry.count++;
-      if (entry.sources.length < 5) {
-        entry.sources.push(`${area}/${sourceSlug}`);
-      }
-    }
+    mergeLinkMaps(found, extractOrganicLinksFromNote(text, area, sourceSlug));
   }
   return found;
 }
 
-async function readJsonl(filePath) {
-  const raw = await fs.readFile(filePath, 'utf8');
-  return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
-}
-
-async function appendJsonl(filePath, items) {
-  const lines = items.map(x => JSON.stringify(x)).join('\n') + '\n';
-  await fs.appendFile(filePath, lines);
-}
-
-async function main() {
-  const args = parseArgs();
-
-  // 1. 扫已写笔记
-  const papersLinks = await scanNotesForLinks(PAPERS_DIR, 'papers');
-  const projectsLinks = await scanNotesForLinks(PROJECTS_DIR, 'projects');
-
-  // 2. 已有 candidates（含 written / queued / blacklisted）
-  const existing = await readJsonl(CANDIDATES);
+export function buildOrganicCandidates({
+  papersLinks,
+  projectsLinks,
+  existing,
+  writtenPapers,
+  writtenProjects,
+  target = 50,
+}) {
   const existingKeys = new Set(existing.map(c => `${c.area}::${c.slug}`));
-
-  // 3. 已写 slug
-  const writtenPapers = new Set();
-  const writtenProjects = new Set();
-  try {
-    const ls = await fs.readdir(PAPERS_DIR);
-    ls.forEach(f => f.endsWith('.md') && !f.startsWith('_') && writtenPapers.add(f.replace(/\.md$/, '')));
-  } catch (e) {}
-  try {
-    const ls = await fs.readdir(PROJECTS_DIR);
-    ls.forEach(f => f.endsWith('.md') && !f.startsWith('_') && writtenProjects.add(f.replace(/\.md$/, '')));
-  } catch (e) {}
+  const newCandidates = [];
 
   // 4. 候选打分（papers area + projects area 各自处理）
   // 注意：[[slug]] 不带 area 前缀，需要推断。规则：先看 written 里有没有这个 slug（哪个 area）；
   // 没有就两边都加（保守，先加 papers area 因为 papers 段是论文链向更多论文）
-  const newCandidates = [];
-
   function isExcluded(area, slug) {
     // 跨 area 去重：任何 area 已有 candidate 就跳过
     if (existingKeys.has(`papers::${slug}`)) return true;
@@ -173,11 +169,45 @@ async function main() {
   newCandidates.sort((a, b) => b.organic_freq - a.organic_freq);
 
   // Top N
-  const picked = newCandidates.slice(0, args.target);
+  const picked = newCandidates.slice(0, target);
+
+  return { newCandidates, picked };
+}
+
+async function main() {
+  const args = parseArgs();
+
+  // 1. 扫已写笔记
+  const papersLinks = await scanNotesForLinks(PAPERS_DIR, 'papers');
+  const projectsLinks = await scanNotesForLinks(PROJECTS_DIR, 'projects');
+
+  // 2. 已有 candidates（含 written / queued / blacklisted）
+  const existing = await readJsonl(CANDIDATES_PATH);
+
+  // 3. 已写 slug
+  const writtenPapers = new Set();
+  const writtenProjects = new Set();
+  try {
+    const ls = await fs.readdir(PAPERS_DIR);
+    ls.forEach(f => f.endsWith('.md') && !f.startsWith('_') && writtenPapers.add(f.replace(/\.md$/, '')));
+  } catch (e) {}
+  try {
+    const ls = await fs.readdir(PROJECTS_DIR);
+    ls.forEach(f => f.endsWith('.md') && !f.startsWith('_') && writtenProjects.add(f.replace(/\.md$/, '')));
+  } catch (e) {}
+
+  const { newCandidates, picked } = buildOrganicCandidates({
+    papersLinks,
+    projectsLinks,
+    existing,
+    writtenPapers,
+    writtenProjects,
+    target: args.target,
+  });
 
   // 5. 写回（除非 dry-run）
   if (!args.dryRun && picked.length) {
-    await appendJsonl(CANDIDATES, picked);
+    await writeCandidates([...existing, ...picked]);
   }
 
   // 6. 报告
@@ -199,7 +229,9 @@ async function main() {
   }, null, 2));
 }
 
-main().catch(err => {
-  console.error('expand-pool failed:', err);
-  process.exit(1);
-});
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => {
+    console.error('expand-pool failed:', err);
+    process.exit(1);
+  });
+}
