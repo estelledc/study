@@ -1248,6 +1248,7 @@ llamaindex
 lm-evaluation-harness
 locust
 lodestar
+logseq
 loki
 longhorn
 lora-mac-node
