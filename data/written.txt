@@ -631,6 +631,7 @@ reed-solomon-1960
 refinement-types-1991
 reflexion
 reformer-2020
+regev-lwe-2005
 replug-2023
 reps-ifds
 resnet
