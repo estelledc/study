@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 777 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 778 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：777 个
+- **总数**：778 个
 - **已分类**：214
-- **未分类**：563（落入"其他 / 待分类"段）
+- **未分类**：564（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 563 |
+| [其他 / 待分类](#其他--待分类) | 564 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 563 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 564 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -600,6 +600,7 @@ sidebar:
 | `circuitpython` | [CircuitPython — 拖文件就能给芯片写程序的 Python](/study/projects/circuitpython/) |
 | `claude-agent-sdk` | [Claude Agent SDK — 把 Claude Code 装进 npm 包](/study/projects/claude-agent-sdk/) |
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
+| `cline` | [Cline — VS Code 自主编码代理](/study/projects/cline/) |
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) |
 | `cocos2d-x` | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) |
 | `code-server` | [code-server — 浏览器里的 VS Code](/study/projects/code-server/) |
@@ -1073,7 +1074,7 @@ sidebar:
 
 ---
 
-## 全部 777 个（字母序）
+## 全部 778 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1195,6 +1196,7 @@ sidebar:
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) | 其他 |
 | `clerk` | [Clerk — 把登录注册组织 MFA 整套外包给云的 SaaS 认证 SDK](/study/projects/clerk/) | Auth 认证 |
 | `clickhouse` | [ClickHouse — 列式 OLAP 数据库](/study/projects/clickhouse/) | 数据库本体 / 存储引擎 |
+| `cline` | [Cline — VS Code 自主编码代理](/study/projects/cline/) | 其他 |
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) | 其他 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
 | `cocos2d-x` | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | 其他 |
