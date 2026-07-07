@@ -324,6 +324,7 @@ ghost-2021
 gilbert-lynch-2002
 gin-2019
 glue-2018
+gmw-mental-game-1987
 goal-misgeneralization-2022
 godel-1931
 goldsmith-1987-bvh
