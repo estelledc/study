@@ -763,6 +763,7 @@ sycl-cpp-2020
 sycophancy-2023
 system-f-reynolds-1974
 system-r-1976
+szegedy-adversarial-2013
 t0-2021
 t5
 tabpfn-2023
