@@ -347,6 +347,7 @@ halide
 hamming-1950
 hanrahan-1991-hierarchical-radiosity
 haven-2014
+haystack-2010
 hazard-pointers-2004
 hdfs-2010
 heartbleed-2014
