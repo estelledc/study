@@ -1076,6 +1076,7 @@ fooocus
 foundry
 framer-motion
 frappe-gantt
+freemodbus
 freertos
 freeswitch
 fx
