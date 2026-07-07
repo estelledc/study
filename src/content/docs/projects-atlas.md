@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 790 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 791 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：790 个
+- **总数**：791 个
 - **已分类**：214
-- **未分类**：576（落入"其他 / 待分类"段）
+- **未分类**：577（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 576 |
+| [其他 / 待分类](#其他--待分类) | 577 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 576 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 577 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -762,6 +762,7 @@ sidebar:
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) |
 | `kind` | [kind — 用 Docker 容器当 K8s 节点的本地集群](/study/projects/kind/) |
 | `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) |
+| `klipper` | [Klipper — 把 3D 打印运动计算搬到主机上](/study/projects/klipper/) |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
@@ -1086,7 +1087,7 @@ sidebar:
 
 ---
 
-## 全部 790 个（字母序）
+## 全部 791 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1416,6 +1417,7 @@ sidebar:
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) | 其他 |
 | `kind` | [kind — 用 Docker 容器当 K8s 节点的本地集群](/study/projects/kind/) | 其他 |
 | `kitty` | [kitty — GPU 加速终端，把分屏和图片协议焊在一个二进制里](/study/projects/kitty/) | 其他 |
+| `klipper` | [Klipper — 把 3D 打印运动计算搬到主机上](/study/projects/klipper/) | 其他 |
 | `koa` | [Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架](/study/projects/koa/) | Web 框架 |
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) | 其他 |
 | `konva` | [Konva — 给 HTML5 Canvas 装一棵会响应的节点树](/study/projects/konva/) | 图像处理 / Canvas |
