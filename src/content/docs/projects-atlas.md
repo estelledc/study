@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 788 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 789 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：788 个
+- **总数**：789 个
 - **已分类**：214
-- **未分类**：574（落入"其他 / 待分类"段）
+- **未分类**：575（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 574 |
+| [其他 / 待分类](#其他--待分类) | 575 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 574 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 575 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -884,6 +884,7 @@ sidebar:
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
+| `paddle-lite` | [Paddle Lite — 端侧轻量推理引擎](/study/projects/paddle-lite/) |
 | `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) |
 | `panda3d` | [Panda3D — 用 Python 写 3D 游戏的老牌引擎](/study/projects/panda3d/) |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
@@ -1084,7 +1085,7 @@ sidebar:
 
 ---
 
-## 全部 788 个（字母序）
+## 全部 789 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1589,6 +1590,7 @@ sidebar:
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | 其他 |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) | 其他 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
+| `paddle-lite` | [Paddle Lite — 端侧轻量推理引擎](/study/projects/paddle-lite/) | 其他 |
 | `paddleocr` | [PaddleOCR — 中文 OCR 最强开源方案](/study/projects/paddleocr/) | 其他 |
 | `panda3d` | [Panda3D — 用 Python 写 3D 游戏的老牌引擎](/study/projects/panda3d/) | 其他 |
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) | 其他 |
