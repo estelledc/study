@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 859 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 860 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：859 篇
+- **总数**：860 篇
 - **已分类**：143
-- **未分类**：716（落入"其他 / 待分类"段）
+- **未分类**：717（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 716 |
+| [其他 / 待分类](#其他--待分类) | 717 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 716 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 717 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -710,6 +710,7 @@ sidebar:
 | `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) |
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) |
 | `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) |
+| `machanavajjhala-l-diversity-2007` | [Machanavajjhala l-Diversity 2007 — 给匿名分组补上敏感值多样性](/study/papers/machanavajjhala-l-diversity-2007/) |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
 | `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) |
@@ -1027,7 +1028,7 @@ sidebar:
 
 ---
 
-## 全部 859 篇（字母序）
+## 全部 860 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1510,6 +1511,7 @@ sidebar:
 | `lucky13-2013` | [Lucky 13 — 用毫秒级时间差把 TLS 加密看穿](/study/papers/lucky13-2013/) | 其他 |
 | `mach-1986` | [Mach — 把内核拆成消息互通的小服务](/study/papers/mach-1986/) | 其他 |
 | `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | 其他 |
+| `machanavajjhala-l-diversity-2007` | [Machanavajjhala l-Diversity 2007 — 给匿名分组补上敏感值多样性](/study/papers/machanavajjhala-l-diversity-2007/) | 其他 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 其他 |
