@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 857 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 858 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：857 篇
+- **总数**：858 篇
 - **已分类**：143
-- **未分类**：714（落入"其他 / 待分类"段）
+- **未分类**：715（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 714 |
+| [其他 / 待分类](#其他--待分类) | 715 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 714 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 715 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -822,6 +822,7 @@ sidebar:
 | `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) |
 | `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) |
+| `piotrowska-loopix-2017` | [Loopix — 用延迟和假流量保护通信关系](/study/papers/piotrowska-loopix-2017/) |
 | `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) |
 | `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) |
 | `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) |
@@ -1025,7 +1026,7 @@ sidebar:
 
 ---
 
-## 全部 857 篇（字母序）
+## 全部 858 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1632,6 +1633,7 @@ sidebar:
 | `personalized-pagerank-2003` | [Personalized PageRank — 给每个人一份属于自己的网页排名](/study/papers/personalized-pagerank-2003/) | 其他 |
 | `peyton-jones-stg` | [Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快](/study/papers/peyton-jones-stg/) | 其他 |
 | `phong-1975` | [Phong 1975 — 把光照拆成环境+漫反射+高光三项](/study/papers/phong-1975/) | 其他 |
+| `piotrowska-loopix-2017` | [Loopix — 用延迟和假流量保护通信关系](/study/papers/piotrowska-loopix-2017/) | 其他 |
 | `pipedream-2019` | [PipeDream — 1F1B 调度让流水线工位别空等](/study/papers/pipedream-2019/) | 其他 |
 | `pivot-tracing-2015` | [Pivot Tracing — 让运维事后想测什么就测什么](/study/papers/pivot-tracing-2015/) | 其他 |
 | `plan9-1995` | [Plan 9 — 把"一切皆文件"真的做到极致的下一代 UNIX](/study/papers/plan9-1995/) | 其他 |
