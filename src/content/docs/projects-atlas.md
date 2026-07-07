@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 785 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 786 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：785 个
+- **总数**：786 个
 - **已分类**：214
-- **未分类**：571（落入"其他 / 待分类"段）
+- **未分类**：572（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 571 |
+| [其他 / 待分类](#其他--待分类) | 572 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 571 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 572 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -809,6 +809,7 @@ sidebar:
 | `manticoresearch` | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) |
 | `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) |
+| `marktext` | [MarkText — 实时预览 Markdown 编辑器](/study/projects/marktext/) |
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
@@ -1081,7 +1082,7 @@ sidebar:
 
 ---
 
-## 全部 785 个（字母序）
+## 全部 786 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1480,6 +1481,7 @@ sidebar:
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 数据库本体 / 存储引擎 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
+| `marktext` | [MarkText — 实时预览 Markdown 编辑器](/study/projects/marktext/) | 其他 |
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) | 其他 |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) | 其他 |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | 其他 |
