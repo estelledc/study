@@ -975,6 +975,7 @@ clearml
 clerk
 clickhouse
 cline
+cmsis-nn
 cockroach
 cockroachdb
 cocos2d-x
