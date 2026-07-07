@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 787 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 788 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：787 个
+- **总数**：788 个
 - **已分类**：214
-- **未分类**：573（落入"其他 / 待分类"段）
+- **未分类**：574（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 573 |
+| [其他 / 待分类](#其他--待分类) | 574 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 573 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 574 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1074,6 +1074,7 @@ sidebar:
 | `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) |
 | `zephyr` | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) |
+| `zettlr` | [Zettlr — 学者向 Markdown 编辑器](/study/projects/zettlr/) |
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) |
 | `zookeeper` | [Apache ZooKeeper — 给一群机器装一个共同的小脑](/study/projects/zookeeper/) |
@@ -1083,7 +1084,7 @@ sidebar:
 
 ---
 
-## 全部 787 个（字母序）
+## 全部 788 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1866,6 +1867,7 @@ sidebar:
 | `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | 其他 |
 | `zellij` | [Zellij — Rust 写的现代终端复用器，开箱即用还能写 WebAssembly 插件](/study/projects/zellij/) | 其他 |
 | `zephyr` | [Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS](/study/projects/zephyr/) | 其他 |
+| `zettlr` | [Zettlr — 学者向 Markdown 编辑器](/study/projects/zettlr/) | 其他 |
 | `zincsearch` | [ZincSearch — 单二进制 Go 写的 ES 替代](/study/projects/zincsearch/) | 其他 |
 | `zksync-era` | [zkSync Era — Matter Labs 的 zkEVM L2](/study/projects/zksync-era/) | 其他 |
 | `zod` | [Zod — TypeScript-first schema 验证](/study/projects/zod/) | 表单 / Schema 校验 |
