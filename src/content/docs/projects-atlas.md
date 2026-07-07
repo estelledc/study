@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 766 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 767 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：766 个
+- **总数**：767 个
 - **已分类**：214
-- **未分类**：552（落入"其他 / 待分类"段）
+- **未分类**：553（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 552 |
+| [其他 / 待分类](#其他--待分类) | 553 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 552 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 553 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -601,6 +601,7 @@ sidebar:
 | `clearml` | [ClearML — 自托管 MLOps 套件](/study/projects/clearml/) |
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) |
 | `cocos2d-x` | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) |
+| `code-server` | [code-server — 浏览器里的 VS Code](/study/projects/code-server/) |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `comfyui` | [ComfyUI — 节点式扩散模型 GUI](/study/projects/comfyui/) |
@@ -1062,7 +1063,7 @@ sidebar:
 
 ---
 
-## 全部 766 个（字母序）
+## 全部 767 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1186,6 +1187,7 @@ sidebar:
 | `cockroach` | [CockroachDB — 全球分布式 SQL](/study/projects/cockroach/) | 其他 |
 | `cockroachdb` | [CockroachDB — 分布式 SQL 数据库](/study/projects/cockroachdb/) | 数据库本体 / 存储引擎 |
 | `cocos2d-x` | [Cocos2d-x — 一份 C++ 代码把 2D 手游跑遍 iOS / Android](/study/projects/cocos2d-x/) | 其他 |
+| `code-server` | [code-server — 浏览器里的 VS Code](/study/projects/code-server/) | 其他 |
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | 其他 |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) | 其他 |
