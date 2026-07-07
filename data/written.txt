@@ -450,6 +450,7 @@ lerner-seminal
 levoy-hanrahan-1996-light-field
 lfs-1991
 li-2018-redner
+li-t-closeness-2007
 lieberman-realtime-gc
 lindholm-2008-tesla
 linear-scan-reg-alloc
