@@ -968,6 +968,7 @@ claude-code
 clearml
 clerk
 clickhouse
+cline
 cockroach
 cockroachdb
 cocos2d-x
