@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 767 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 768 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：767 个
+- **总数**：768 个
 - **已分类**：214
-- **未分类**：553（落入"其他 / 待分类"段）
+- **未分类**：554（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 553 |
+| [其他 / 待分类](#其他--待分类) | 554 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 553 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 554 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -860,6 +860,7 @@ sidebar:
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
+| `openvscode-server` | [OpenVSCode Server：把上游 VS Code 跑进浏览器](/study/projects/openvscode-server/) |
 | `openwrt` | [OpenWrt — 把家用路由器变成 Linux 服务器](/study/projects/openwrt/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) |
@@ -1063,7 +1064,7 @@ sidebar:
 
 ---
 
-## 全部 767 个（字母序）
+## 全部 768 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1542,6 +1543,7 @@ sidebar:
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) | 其他 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
+| `openvscode-server` | [OpenVSCode Server：把上游 VS Code 跑进浏览器](/study/projects/openvscode-server/) | 其他 |
 | `openwrt` | [OpenWrt — 把家用路由器变成 Linux 服务器](/study/projects/openwrt/) | 其他 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | 其他 |
