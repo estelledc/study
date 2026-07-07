@@ -7,13 +7,13 @@
 //   node scripts/pick-batch.mjs --count 8 --rewrite 0 --new 8  # 全 NEW
 //   node scripts/pick-batch.mjs --count 120                 # round 满载
 
-import { readJsonl, writeJsonl } from './lib/jsonl.mjs';
 import {
-  CANDIDATES_PATH,
-  GRAVEYARD_PATH,
-  PRIORITY_QUEUE_PATH,
-  REWRITE_POOL_PATH,
-} from './lib/paths.mjs';
+  excludeGraveyard,
+  graveyardSlugs,
+  loadPickQueues,
+  markPriorityPicked,
+  writePriorityQueue,
+} from './lib/queue-store.mjs';
 
 function parseArgs() {
   const args = { count: 8, rewrite: null, new: null, priorityRatio: 0.7, noPriority: false };
@@ -128,18 +128,13 @@ function assignWorktrees(items) {
 async function main() {
   const args = parseArgs();
 
-  const [candidates, pool, graveyard, priority] = await Promise.all([
-    readJsonl(CANDIDATES_PATH, { missing: 'empty' }),
-    readJsonl(REWRITE_POOL_PATH, { missing: 'empty' }),
-    readJsonl(GRAVEYARD_PATH, { missing: 'empty' }),
-    readJsonl(PRIORITY_QUEUE_PATH, { missing: 'empty' }),
-  ]);
+  const { candidates, pool, graveyard, priority } = await loadPickQueues();
 
   // graveyard 永久排除（按 slug 唯一，跨 area 安全）
-  const graveSlugs = new Set(graveyard.map(g => g.slug));
-  const filteredPool = pool.filter(p => !graveSlugs.has(p.slug));
-  const filteredCandidates = candidates.filter(c => !graveSlugs.has(c.slug));
-  const filteredPriority = priority.filter(p => !graveSlugs.has(p.slug));
+  const graveSlugs = graveyardSlugs(graveyard);
+  const filteredPool = excludeGraveyard(pool, graveyard);
+  const filteredCandidates = excludeGraveyard(candidates, graveyard);
+  const filteredPriority = excludeGraveyard(priority, graveyard);
 
   const rewriteItems = pickRewrite(filteredPool, args.rewrite).map(x => ({
     slug: x.slug,
@@ -190,11 +185,7 @@ async function main() {
 
   // 写回 priority-queue.jsonl：把刚选中的标 status=picked
   if (priorityPicked.length > 0) {
-    const pickedKeys = new Set(priorityPicked.map(p => `${p.area}::${p.slug}`));
-    const updated = priority.map(p =>
-      pickedKeys.has(`${p.area}::${p.slug}`) ? { ...p, status: 'picked' } : p
-    );
-    await writeJsonl(PRIORITY_QUEUE_PATH, updated, { finalNewline: 'non-empty' });
+    await writePriorityQueue(markPriorityPicked(priority, priorityPicked));
   }
 
   // 数量校验

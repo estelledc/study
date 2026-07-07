@@ -16,8 +16,8 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { readJsonl, writeJsonl } from './lib/jsonl.mjs';
-import { CANDIDATES_PATH, PROMPTS_DIR, REWRITE_POOL_PATH, docsEntryRelativePath } from './lib/paths.mjs';
+import { loadDispatchQueues, markClaimed, writeCandidates, writeRewritePool } from './lib/queue-store.mjs';
+import { PROMPTS_DIR, docsEntryRelativePath } from './lib/paths.mjs';
 const HOME = process.env.HOME || '/Users/jason';
 
 // Worktree 配置（按 area + kind 分配）
@@ -139,8 +139,7 @@ function buildAssignment(kind, area, item, worktree) {
 async function main() {
   const args = parseArgs();
 
-  const candidates = await readJsonl(CANDIDATES_PATH);
-  const pool = await readJsonl(REWRITE_POOL_PATH);
+  const { candidates, pool } = await loadDispatchQueues();
 
   // 4 类各 N/2（除非奇数）
   const rewritePerArea = Math.floor(args.rewrite / 2);
@@ -194,22 +193,8 @@ async function main() {
 
   // 标 claimed（除非 dry-run）
   if (!args.dryRun) {
-    const rewriteClaimed = new Set([...papersRewrite, ...projectsRewrite].map(x => `${x.area}::${x.slug}`));
-    const newClaimed = new Set([...papersNew, ...projectsNew].map(x => `${x.area}::${x.slug}`));
-    for (const x of pool) {
-      if (rewriteClaimed.has(`${x.area}::${x.slug}`)) {
-        x.status = 'claimed';
-        x.claimed_by = assignments.find(a => a.slug === x.slug && a.area === x.area)?.worktree.name || null;
-      }
-    }
-    for (const x of candidates) {
-      if (newClaimed.has(`${x.area}::${x.slug}`)) {
-        x.status = 'claimed';
-        x.claimed_by = assignments.find(a => a.slug === x.slug && a.area === x.area)?.worktree.name || null;
-      }
-    }
-    await writeJsonl(REWRITE_POOL_PATH, pool);
-    await writeJsonl(CANDIDATES_PATH, candidates);
+    await writeRewritePool(markClaimed(pool, [...papersRewrite, ...projectsRewrite], assignments));
+    await writeCandidates(markClaimed(candidates, [...papersNew, ...projectsNew], assignments));
   }
 
   // Output to stdout: JSON array

@@ -5,10 +5,16 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {
-  CANDIDATES_PATH,
+  markCandidatesWritten,
+  markRewritePoolWritten,
+  readCandidatesOptional,
+  readRewritePoolOptional,
+  writeCandidates,
+  writeRewritePool,
+} from './lib/queue-store.mjs';
+import {
   PAPERS_DIR,
   PROJECTS_DIR,
-  REWRITE_POOL_PATH,
   WRITTEN_PATH,
 } from './lib/paths.mjs';
 
@@ -45,62 +51,19 @@ async function rebuildWritten() {
 }
 
 async function updateCandidatesStatus(written) {
-  const writtenSet = new Set(written.map(w => `${w.area}::${w.slug}`));
-  let raw;
-  try {
-    raw = await fs.readFile(CANDIDATES_PATH, 'utf8');
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      return { skipped: true, reason: 'candidates.jsonl not found, run extract-candidates first' };
-    }
-    throw err;
-  }
-  const lines = raw.split('\n').filter(Boolean);
-  let updated = 0;
-  let alreadyWritten = 0;
-  const out = lines.map(line => {
-    const c = JSON.parse(line);
-    const key = `${c.area}::${c.slug}`;
-    if (writtenSet.has(key)) {
-      if (c.status === 'written') {
-        alreadyWritten++;
-      } else if (c.status === 'queued' || c.status === 'claimed') {
-        c.status = 'written';
-        c.claimed_by = null;
-        updated++;
-      }
-      // blacklisted / failed 不动（虽然 written 但保留原状态供审）
-    }
-    return JSON.stringify(c);
-  });
-  await fs.writeFile(CANDIDATES_PATH, out.join('\n') + '\n');
-  return { updated, already_written: alreadyWritten };
+  const { rows, missing } = await readCandidatesOptional();
+  if (missing) return { skipped: true, reason: 'candidates.jsonl not found, run extract-candidates first' };
+  const result = markCandidatesWritten(rows, written);
+  await writeCandidates(result.rows);
+  return { updated: result.updated, already_written: result.already_written };
 }
 
 async function updateRewritePoolStatus(written) {
-  const writtenSet = new Set(written.map(w => `${w.area}::${w.slug}`));
-  let raw;
-  try {
-    raw = await fs.readFile(REWRITE_POOL_PATH, 'utf8');
-  } catch (err) {
-    if (err.code === 'ENOENT') return { skipped: true };
-    throw err;
-  }
-  const lines = raw.split('\n').filter(Boolean);
-  let claimedToWritten = 0;
-  const out = lines.map(line => {
-    const c = JSON.parse(line);
-    const key = `${c.area}::${c.slug}`;
-    // 已写笔记（claimed → written），不动 available（让 build-rewrite-pool 决定 legacy 是否仍需要 rewrite）
-    if (c.status === 'claimed' && writtenSet.has(key)) {
-      c.status = 'written';
-      c.claimed_by = null;
-      claimedToWritten++;
-    }
-    return JSON.stringify(c);
-  });
-  await fs.writeFile(REWRITE_POOL_PATH, out.join('\n') + '\n');
-  return { claimed_to_written: claimedToWritten };
+  const { rows, missing } = await readRewritePoolOptional();
+  if (missing) return { skipped: true };
+  const result = markRewritePoolWritten(rows, written);
+  await writeRewritePool(result.rows);
+  return { claimed_to_written: result.claimed_to_written };
 }
 
 async function main() {
