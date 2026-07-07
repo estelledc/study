@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 861 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 862 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：861 篇
+- **总数**：862 篇
 - **已分类**：143
-- **未分类**：718（落入"其他 / 待分类"段）
+- **未分类**：719（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 718 |
+| [其他 / 待分类](#其他--待分类) | 719 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 718 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 719 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -947,6 +947,7 @@ sidebar:
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
+| `szegedy-adversarial-2013` | [Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错](/study/papers/szegedy-adversarial-2013/) |
 | `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) |
 | `tabpfn-2023` | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) |
 | `tachyon-2014` | [Tachyon — 把集群存储推到内存速度，丢了再算回来](/study/papers/tachyon-2014/) |
@@ -1029,7 +1030,7 @@ sidebar:
 
 ---
 
-## 全部 861 篇（字母序）
+## 全部 862 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1797,6 +1798,7 @@ sidebar:
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | 其他 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
+| `szegedy-adversarial-2013` | [Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错](/study/papers/szegedy-adversarial-2013/) | 其他 |
 | `t0-2021` | [T0 — 让 50 个人各写各的提示词，模型反而更会听新指令](/study/papers/t0-2021/) | 其他 |
 | `t5` | [T5 — Text-to-Text Transfer Transformer](/study/papers/t5/) | NLP 基础与 Scaling |
 | `tabpfn-2023` | [TabPFN — 一秒解决小表格分类的 Transformer](/study/papers/tabpfn-2023/) | 其他 |
