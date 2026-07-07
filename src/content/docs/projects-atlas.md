@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 796 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 797 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：796 个
+- **总数**：797 个
 - **已分类**：214
-- **未分类**：582（落入"其他 / 待分类"段）
+- **未分类**：583（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 582 |
+| [其他 / 待分类](#其他--待分类) | 583 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 582 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 583 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -791,6 +791,7 @@ sidebar:
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `lima` | [Lima — macOS 上跑 Linux 虚拟机的轻量 CLI](/study/projects/lima/) |
 | `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) |
+| `linuxcnc` | [LinuxCNC — 实时控制 CNC 机床的开源系统](/study/projects/linuxcnc/) |
 | `lite-xl` | [Lite-XL — 不到 3MB 的编辑器也能扩展出花样](/study/projects/lite-xl/) |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
@@ -1092,7 +1093,7 @@ sidebar:
 
 ---
 
-## 全部 796 个（字母序）
+## 全部 797 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1464,6 +1465,7 @@ sidebar:
 | `lima` | [Lima — macOS 上跑 Linux 虚拟机的轻量 CLI](/study/projects/lima/) | 其他 |
 | `lingui` | [Lingui — 写自然字符串，编译期自动提取 i18n msgid](/study/projects/lingui/) | i18n 国际化 |
 | `linkerd2` | [Linkerd 2 — 用 Rust 写的轻量服务网格](/study/projects/linkerd2/) | 其他 |
+| `linuxcnc` | [LinuxCNC — 实时控制 CNC 机床的开源系统](/study/projects/linuxcnc/) | 其他 |
 | `listr2` | [listr2 — 把 CLI 任务跑成一棵会自己画进度的树](/study/projects/listr2/) | Terminal / 终端 |
 | `lite-xl` | [Lite-XL — 不到 3MB 的编辑器也能扩展出花样](/study/projects/lite-xl/) | 其他 |
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | 其他 |
