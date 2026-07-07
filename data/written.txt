@@ -224,6 +224,7 @@ dit
 dlrm-2019
 dns
 doc2query-2019
+doligez-leroy-concurrent-gc
 donar-2010
 dot-doh-perf-2020
 double-descent-2019
@@ -1508,6 +1509,7 @@ testing-library
 textmate
 textual
 the-silver-searcher
+theia
 thirdweb-sdk
 thrift
 tidb
