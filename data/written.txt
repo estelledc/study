@@ -64,6 +64,7 @@ bentley-1975-kdtree
 bentoml
 berenson-1995-isolation
 bernstein-1981-cc
+bernstein-sphincs-2015
 bert
 bert4rec-2019
 bidirectional-typing
