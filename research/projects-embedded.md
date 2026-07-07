@@ -120,7 +120,7 @@ Stars 量级为 2026 年 5 月近似值。
 |---|---|---|---:|---|
 | tflite-micro | TensorFlow Lite Micro | Google 的微控制器 TF Lite runtime，~16KB ROM 跑 INT8 推理，无 OS / 无 malloc | 2.5k | https://github.com/tensorflow/tflite-micro |
 | esp-dl | ESP-DL | Espressif 的 ESP32 神经网络推理库，针对 ESP32-S3 向量指令优化 | 1.1k | https://github.com/espressif/esp-dl |
-| cmsis-nn | CMSIS-NN | Arm 的 Cortex-M 神经网络算子库，SIMD/Helium 加速，TFLM 默认后端 | 1k | https://github.com/ARM-software/CMSIS-NN |
+| cmsis-nn | CMSIS-NN | 1k | Arm 的 Cortex-M 神经网络算子库，SIMD/Helium 加速，TFLM 默认后端 | https://github.com/ARM-software/CMSIS-NN |
 | ncnn | ncnn | 腾讯开源的端侧 CPU 推理框架，无第三方依赖，ARM NEON / Vulkan 双后端 | 21k | https://github.com/Tencent/ncnn |
 | paddle-lite | Paddle Lite | 百度的端侧轻量推理引擎，支持 ARM CPU / GPU / NPU / FPGA，模型转换 + 运行时一体 | 7k | https://github.com/PaddlePaddle/Paddle-Lite |
 
