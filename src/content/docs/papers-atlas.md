@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 869 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 870 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：869 篇
+- **总数**：870 篇
 - **已分类**：143
-- **未分类**：726（落入"其他 / 待分类"段）
+- **未分类**：727（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 726 |
+| [其他 / 待分类](#其他--待分类) | 727 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 726 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 727 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -788,6 +788,7 @@ sidebar:
 | `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) |
 | `newsome-taintcheck-2005` | [TaintCheck — 给不可信输入贴追踪标签](/study/papers/newsome-taintcheck-2005/) |
 | `nfs-1985` | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) |
+| `ngabonziza-trustzone-2016` | [TrustZone Explained — 把手机 CPU 分成普通区和保密区](/study/papers/ngabonziza-trustzone-2016/) |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) |
 | `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) |
@@ -1037,7 +1038,7 @@ sidebar:
 
 ---
 
-## 全部 869 篇（字母序）
+## 全部 870 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1606,6 +1607,7 @@ sidebar:
 | `newcombe-2011-kinectfusion` | [KinectFusion — 用消费级深度相机实时重建三维世界](/study/papers/newcombe-2011-kinectfusion/) | 其他 |
 | `newsome-taintcheck-2005` | [TaintCheck — 给不可信输入贴追踪标签](/study/papers/newsome-taintcheck-2005/) | 其他 |
 | `nfs-1985` | [NFS 1985 — 让远程磁盘看起来像本地磁盘](/study/papers/nfs-1985/) | 其他 |
+| `ngabonziza-trustzone-2016` | [TrustZone Explained — 把手机 CPU 分成普通区和保密区](/study/papers/ngabonziza-trustzone-2016/) | 其他 |
 | `nickolls-dally-2010-cuda-era` | [Nickolls-Dally 2010 — GPU 怎么从画三角形变成跑 AI](/study/papers/nickolls-dally-2010-cuda-era/) | 其他 |
 | `nieuwenhuis-dpll-t-2006` | [Nieuwenhuis-Oliveras-Tinelli 2006 — 给 SMT 求解器写一套数学规则书](/study/papers/nieuwenhuis-dpll-t-2006/) | 其他 |
 | `nimier-david-2019-mitsuba2` | [Mitsuba 2 — 一份渲染代码同时编出 CPU / GPU / 可微版](/study/papers/nimier-david-2019-mitsuba2/) | 其他 |
