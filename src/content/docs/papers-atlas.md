@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 849 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 850 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：849 篇
+- **总数**：850 篇
 - **已分类**：143
-- **未分类**：706（落入"其他 / 待分类"段）
+- **未分类**：707（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 706 |
+| [其他 / 待分类](#其他--待分类) | 707 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 706 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 707 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -361,6 +361,7 @@ sidebar:
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |
 | `berenson-1995-isolation` | [ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞](/study/papers/berenson-1995-isolation/) |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) |
+| `bernstein-sphincs-2015` | [SPHINCS 2015 — 不用记状态的后量子哈希签名](/study/papers/bernstein-sphincs-2015/) |
 | `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) |
 | `biere-bmc-1999` | [Bounded Model Checking — 把硬件验证翻译成一道 SAT 题](/study/papers/biere-bmc-1999/) |
 | `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) |
@@ -1017,7 +1018,7 @@ sidebar:
 
 ---
 
-## 全部 849 篇（字母序）
+## 全部 850 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1086,6 +1087,7 @@ sidebar:
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | 其他 |
 | `berenson-1995-isolation` | [ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞](/study/papers/berenson-1995-isolation/) | 其他 |
 | `bernstein-1981-cc` | [Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线](/study/papers/bernstein-1981-cc/) | 其他 |
+| `bernstein-sphincs-2015` | [SPHINCS 2015 — 不用记状态的后量子哈希签名](/study/papers/bernstein-sphincs-2015/) | 其他 |
 | `bert` | [BERT — 双向 Transformer 预训练](/study/papers/bert/) | NLP 基础与 Scaling |
 | `bert4rec-2019` | [BERT4Rec — 把 BERT 的 MLM 搬进序列推荐做双向建模](/study/papers/bert4rec-2019/) | 其他 |
 | `bidirectional-typing` | [双向类型检查 — 推断和检查两个方向交替前进](/study/papers/bidirectional-typing/) | 编译器 / 编程语言理论 |
