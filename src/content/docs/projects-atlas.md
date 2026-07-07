@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 780 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 781 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：780 个
+- **总数**：781 个
 - **已分类**：214
-- **未分类**：566（落入"其他 / 待分类"段）
+- **未分类**：567（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 566 |
+| [其他 / 待分类](#其他--待分类) | 567 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 566 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 567 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1009,6 +1009,7 @@ sidebar:
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) |
 | `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) |
+| `tflite-micro` | [TensorFlow Lite Micro — 把小模型塞进微控制器](/study/projects/tflite-micro/) |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) |
 | `theia` | [Eclipse Theia — 可定制的云端与桌面 IDE 框架](/study/projects/theia/) |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) |
@@ -1076,7 +1077,7 @@ sidebar:
 
 ---
 
-## 全部 780 个（字母序）
+## 全部 781 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1763,6 +1764,7 @@ sidebar:
 | `testing-library` | [Testing Library — 像用户一样测前端，重构不再挂测试](/study/projects/testing-library/) | 测试 / 验证 |
 | `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) | 其他 |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | 其他 |
+| `tflite-micro` | [TensorFlow Lite Micro — 把小模型塞进微控制器](/study/projects/tflite-micro/) | 其他 |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | 其他 |
 | `theia` | [Eclipse Theia — 可定制的云端与桌面 IDE 框架](/study/projects/theia/) | 其他 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
