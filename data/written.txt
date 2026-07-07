@@ -897,6 +897,7 @@ antv-f2
 antv-g2
 antv-g6
 antv-x6
+anytype-ts
 ape-framework
 apexcharts
 apollo-server
