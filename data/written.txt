@@ -303,6 +303,7 @@ fpga-hls-2011
 frama-c-2012
 frangipani-1997
 frank-effects
+freedman-psi-2004
 frenetic-2011
 fsdp-2023
 fsrs-spaced-repetition
