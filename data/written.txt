@@ -1499,6 +1499,7 @@ signal-ios
 signal-server
 signoz
 silero-vad
+silverbullet
 simple-peer
 sinatra
 skaffold
