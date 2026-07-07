@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 771 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 772 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：771 个
+- **总数**：772 个
 - **已分类**：214
-- **未分类**：557（落入"其他 / 待分类"段）
+- **未分类**：558（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 557 |
+| [其他 / 待分类](#其他--待分类) | 558 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 557 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 558 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -700,6 +700,7 @@ sidebar:
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) |
 | `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) |
+| `gitpod` | [Gitpod — 预构建云开发环境](/study/projects/gitpod/) |
 | `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) |
 | `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) |
@@ -1067,7 +1068,7 @@ sidebar:
 
 ---
 
-## 全部 771 个（字母序）
+## 全部 772 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1318,6 +1319,7 @@ sidebar:
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) | 其他 |
 | `gin` | [Gin — Go 写 web API 的事实标准框架](/study/projects/gin/) | 其他 |
 | `github-actions` | [GitHub Actions — 仓库自带的 CI/CD 流水线](/study/projects/github-actions/) | 其他 |
+| `gitpod` | [Gitpod — 预构建云开发环境](/study/projects/gitpod/) | 其他 |
 | `gitui` | [gitui — Rust 写的 git TUI，libgit2 直连让启动比 lazygit 快一个量级](/study/projects/gitui/) | 其他 |
 | `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) | 其他 |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | 其他 |
