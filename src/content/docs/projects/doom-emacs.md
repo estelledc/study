@@ -171,3 +171,8 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
+- [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
+

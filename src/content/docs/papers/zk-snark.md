@@ -158,10 +158,14 @@ Groth 2016 把证明压到极致：
 
 - [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
 - [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
+- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
 - [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
+- [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
 - [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
+- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[scroll]] —— Scroll — 字节码级 zkEVM

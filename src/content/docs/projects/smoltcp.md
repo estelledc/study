@@ -147,4 +147,8 @@ smoltcp 让我理解了三件事。第一，网络协议栈不是必须依赖操
 
 ## 反向链接
 
-（暂无）
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+

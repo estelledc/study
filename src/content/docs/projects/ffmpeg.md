@@ -164,5 +164,8 @@ FFmpeg 诞生于 2000 年，作者是法国程序员 Fabrice Bellard（此人还
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[handbrake]] —— HandBrake — 把视频转码变成点两下鼠标的事
+- [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
+- [[mlt]] —— MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎
 - [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
+- [[shotcut]] —— Shotcut — 零成本入门视频剪辑的开源选择
 

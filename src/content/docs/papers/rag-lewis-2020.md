@@ -146,6 +146,8 @@ answer = llama.generate(prompt)
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
 - [[milvus]] —— Milvus — 开源向量数据库
+- [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
+- [[nlp-rag-2024]] —— RAG for AIGC: 检索增强生成在 AI 生成内容中的应用 — 学习笔记
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 - [[replug-2023]] —— REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上
 - [[retro]] —— RETRO — DeepMind 的检索增强 LLM

@@ -179,10 +179,7 @@ Waymo Open Dataset 的启发是：好的数据集本身就是基础设施。
 
 ## 反向链接
 
-Waymo Open Dataset 适合作为理解自动驾驶感知的入口。
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-从它出发，可以继续看 3D detection、tracking、sensor fusion 和 dataset scaling。
+（暂无反向链接）
 
-如果把自动驾驶看成系统工程，它处在感知层。
-
-上游是传感器和标定，下游是预测、规划和控制。

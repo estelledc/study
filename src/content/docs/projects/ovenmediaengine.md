@@ -152,6 +152,7 @@ curl -X POST http://ome:8081/v1/vhosts/default/apps/app/streams/stream:startPush
 - [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[mlt]] —— MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎
 - [[nginx]] —— nginx — 高性能 Web 服务器
 - [[openmeetings]] —— Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统
 

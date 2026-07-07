@@ -173,3 +173,9 @@ int main() {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[circuitpython]] —— CircuitPython — 拖文件就能给芯片写程序的 Python
+- [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
+- [[micropython]] —— MicroPython — 在巴掌大的芯片上跑 Python
+- [[probe-rs]] —— probe-rs — Rust 写的嵌入式调试烧录工具
+

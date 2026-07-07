@@ -147,3 +147,7 @@ Jason Donenfeld 最初是做安全审计的。他在审计 OpenVPN 和 IPsec 实
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
+- [[openwrt]] —— OpenWrt — 把家用路由器变成 Linux 服务器
+

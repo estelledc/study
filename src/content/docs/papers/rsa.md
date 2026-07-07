@@ -164,10 +164,15 @@ OAuth、Auth0、Firebase、Supabase 几乎所有"无状态登录"都靠这条链
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
 - [[bitcoin]] —— Bitcoin 白皮书
+- [[chaum-1981-mix]] —— Mix Network — 用信封套信封让邮局也不知道谁寄给谁
+- [[chillotti-tfhe-2016]] —— TFHE 2016 — 把全同态加密的自举时间从分钟级压到 0.1 秒
 - [[diffie-hellman]] —— Diffie-Hellman 密钥交换
 - [[diffie-hellman-1976]] —— New Directions 1976 — 给协议世界写下公钥宪法
 - [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
+- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
 - [[turing-1936]] —— Turing 1936 可计算性
 

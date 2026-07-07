@@ -177,3 +177,7 @@ Spacemacs 的代码结构分三层：`core/`（启动引擎：加载顺序、Lay
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
+

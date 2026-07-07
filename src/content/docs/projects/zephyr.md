@@ -158,6 +158,8 @@ west flash                               # 烧录
 - [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
 - [[embassy]] —— Embassy — 让单片机也能用 async/await
 - [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
 - [[nix]] —— Nix — 把每个软件包当成纯函数的输出
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
 

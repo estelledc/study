@@ -159,4 +159,7 @@ TextMate 的源码结构分为三层：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-<!-- 本文档最后更新：2026-06-24 -->
+- [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[geany]] —— Geany — 用 C 写的轻量级 GTK 编辑器
+- [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
+

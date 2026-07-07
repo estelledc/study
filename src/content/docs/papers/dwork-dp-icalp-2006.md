@@ -149,7 +149,12 @@ Cynthia Dwork 看到这个不可能性结果后想：既然精确回答不安全
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[bitcoin]] —— Bitcoin 白皮书
+- [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
 - [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
+- [[dwork-our-data-ourselves-2006]] —— 分布式噪声 — 大家一起加噪音比一个人加更安全
+- [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
+- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 用一把更精确的尺子量隐私损失
 - [[rsa]] —— RSA 公钥密码
 - [[saltzer-schroeder-1975]] —— Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则
 - [[shannon-1948]] —— Shannon 1948 — 信息论的诞生

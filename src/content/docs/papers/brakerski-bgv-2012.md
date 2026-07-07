@@ -149,3 +149,9 @@ ct = (a, b) 其中 b = a·s + m + e (mod q)
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
+- [[chillotti-tfhe-2016]] —— TFHE 2016 — 把全同态加密的自举时间从分钟级压到 0.1 秒
+- [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
+- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
+

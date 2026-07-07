@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Round 末聚合：regen-atlas + regen-backlinks + fix-frontmatter + npm run build
-#                + amend regen 产物到最后 commit + push origin main + sync 8 worktree
+#                + amend regen 产物到最后 commit + optional push + sync 8 worktree
 # 失败两段式回退：先丢 regen，再 reset --hard PREV_HEAD
 #
 # 用法：
-#   bash scripts/finalize-round.sh                # 真跑
-#   DRY_RUN=1 bash scripts/finalize-round.sh      # 列操作
+#   bash scripts/finalize-round.sh                  # 本地 finalize + sync worktrees，不 push
+#   PUSH_REMOTE=1 bash scripts/finalize-round.sh    # finalize + push origin main + sync
+#   DRY_RUN=1 bash scripts/finalize-round.sh        # 列操作
 #
 # 由 workflow round 末调用（main 上已有若干 cherry-picked commits）
 
@@ -14,6 +15,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 DRY_RUN="${DRY_RUN:-0}"
+PUSH_REMOTE="${PUSH_REMOTE:-0}"
+SYNC_WORKTREES="${SYNC_WORKTREES:-1}"
 
 if [[ -z "${HOME:-}" ]]; then
   echo "ERROR: HOME is required to locate study worktrees" >&2
@@ -199,11 +202,20 @@ else
   fi
 fi
 
-# 6. push origin main（失败时自动 rebase 再试一次，但不让失败阻断后续 sync-written）
-echo "[finalize-round] push origin main"
-if [[ "$DRY_RUN" -eq 1 ]]; then
-  echo "  [DRY] git push origin main"
+# 6. Optional remote publish. Default stays local so production preview can run
+# without violating the "no push unless explicitly requested" rule.
+if [[ "$PUSH_REMOTE" -eq 1 ]]; then
+  echo "[finalize-round] push origin main"
 else
+  echo "[finalize-round] push origin main (skipped; set PUSH_REMOTE=1 to publish)"
+fi
+if [[ "$DRY_RUN" -eq 1 ]]; then
+  if [[ "$PUSH_REMOTE" -eq 1 ]]; then
+    echo "  [DRY] git push origin main"
+  else
+    echo "  [DRY] skip git push origin main"
+  fi
+elif [[ "$PUSH_REMOTE" -eq 1 ]]; then
   if ! git -c http.sslVerify=false push origin main 2>&1; then
     echo "  push rejected, attempt fetch + rebase + retry"
     git -c http.sslVerify=false fetch origin main 2>&1 | tail -3 || true
@@ -217,21 +229,38 @@ else
 fi
 
 # 7. Sync 8 worktree
-echo "[finalize-round] sync 8 worktrees"
-if [[ "$DRY_RUN" -eq 1 ]]; then
-  for w in "${WORKTREES[@]}"; do echo "  [DRY] sync $w"; done
+if [[ "$SYNC_WORKTREES" -eq 1 ]]; then
+  if [[ "$PUSH_REMOTE" -eq 1 ]]; then
+    SYNC_TARGET="origin/main"
+  else
+    SYNC_TARGET="$(git rev-parse HEAD)"
+  fi
+  echo "[finalize-round] sync 8 worktrees to $SYNC_TARGET"
 else
-  # 并行同步所有 worktree（fetch 是网络 IO，串行 ~9s → 并行 ~1.5s）
+  echo "[finalize-round] sync 8 worktrees (skipped; set SYNC_WORKTREES=1 to sync)"
+fi
+if [[ "$DRY_RUN" -eq 1 ]]; then
+  if [[ "$SYNC_WORKTREES" -eq 1 ]]; then
+    for w in "${WORKTREES[@]}"; do echo "  [DRY] sync $w -> $SYNC_TARGET"; done
+  else
+    echo "  [DRY] skip worktree sync"
+  fi
+elif [[ "$SYNC_WORKTREES" -eq 1 ]]; then
+  if [[ "$PUSH_REMOTE" -eq 1 ]]; then
+    git -c http.sslVerify=false fetch origin main >/dev/null 2>&1 || echo "  WARN: fetch origin main failed before sync"
+  fi
+  # 并行同步所有 worktree。默认同步到本地 main HEAD；发布时同步到 origin/main。
   for w in "${WORKTREES[@]}"; do
     [[ -d "$w" ]] || { echo "  WARN: missing: $w"; continue; }
     (
-      git -C "$w" -c http.sslVerify=false fetch origin main >/dev/null 2>&1
-      git -C "$w" reset --hard origin/main >/dev/null 2>&1
+      git -C "$w" reset --hard "$SYNC_TARGET" >/dev/null 2>&1
       git -C "$w" clean -fd >/dev/null 2>&1
-      echo "  synced $(basename $w)"
+      echo "  synced $(basename "$w")"
     ) &
   done
   wait
+else
+  :
 fi
 
 # 8. sync-written 同步索引 + rebuild rewrite-pool（已 rewrite 的从 available 摘掉）

@@ -161,4 +161,5 @@ luanti/
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[openrct2]] —— OpenRCT2 — 用逆向工程让 20 年前的游戏复活
+

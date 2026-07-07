@@ -144,6 +144,7 @@ rg --no-ignore "foo"         # 等价于 -u
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
+- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
 - [[bandwhich]] —— bandwhich — 按进程实时显示带宽占用的跨平台 TUI
 - [[bat]] —— bat — 现代 cat 替代
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
@@ -164,6 +165,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[htop]] —— htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）
 - [[jc]] —— jc — 把 100+ Unix 命令的输出一键 JSON 化
 - [[jq]] —— jq — JSON 的 sed/awk
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[lf]] —— lf — 终端里像 vim 一样翻文件
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
@@ -179,6 +181,7 @@ rg --no-ignore "foo"         # 等价于 -u
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
 - [[yq]] —— yq — YAML 的 jq（也吃 XML/TOML/properties）
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd

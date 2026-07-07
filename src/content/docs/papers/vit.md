@@ -150,6 +150,7 @@ ViT 是 2020 年代视觉的 ResNet 时刻——架构转折点。
 
 - [[3d-gaussian-splatting]] —— 3D Gaussian Splatting — 用一堆 3D 模糊光斑重建场景
 - [[attention]] —— Attention Is All You Need
+- [[autonomous-driving-waymo-2021]] —— Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving
 - [[bert]] —— BERT — 双向 Transformer 预训练
 - [[blip2-2023]] —— BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training

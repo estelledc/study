@@ -152,5 +152,14 @@ build-firmware:
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[kubernetes]] —— Kubernetes — 容器编排平台
+- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
+- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
+- [[openwrt]] —— OpenWrt — 把家用路由器变成 Linux 服务器
+- [[platformio-core]] —— PlatformIO Core — 一条命令编译上传任意嵌入式板子
+- [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
+- [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

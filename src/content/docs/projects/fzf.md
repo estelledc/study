@@ -158,6 +158,7 @@ rg --files | fzf --preview 'bat --color=always {}'
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
 - [[bat]] —— bat — 现代 cat 替代
 - [[bottom]] —— bottom — Rust 写的跨平台终端进程监控（widget 自由拼）
 - [[broot]] —— broot — 把 tree 命令升级成会过滤、能 cd、显大小、看 git 的交互树
@@ -172,18 +173,21 @@ rg --files | fzf --preview 'bat --color=always {}'
 - [[jq]] —— jq — JSON 的 sed/awk
 - [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
 - [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
 - [[lf]] —— lf — 终端里像 vim 一样翻文件
 - [[lsd]] —— lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）
 - [[miller]] —— Miller (mlr) — 懂 CSV/JSON 表头的 awk
 - [[ncdu]] —— ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件
 - [[neovim]] —— Neovim — Lua 可扩展 vim 现代分叉
 - [[nnn]] —— nnn — 50KB 内存就能跑的极简终端文件管理器
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
 - [[ranger]] —— ranger — Python 写的 vim 风格三栏文件管理器
 - [[ripgrep]] —— ripgrep — Rust 写的现代 grep
 - [[the-silver-searcher]] —— the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索
 - [[tig]] —— tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里
 - [[tmux]] —— tmux — 一个终端窗口里跑多个会话还能脱离重连
 - [[universal-ctags]] —— Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
 - [[xplr]] —— xplr — 用 Lua 当配置语言的可 hack 终端文件管理器
 - [[yazi]] —— yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图
 - [[zoxide]] —— zoxide — 学会你常去哪的智能 cd

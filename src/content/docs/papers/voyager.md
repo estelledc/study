@@ -149,6 +149,7 @@ Voyager 论文不是终点，它是一条路线的发车站。
 - [[metagpt]] —— MetaGPT — 多智能体软件公司
 - [[mind-skill]] —— MIND-Skill — 用归纳和演绎双 agent 抽 skill 并保证质量
 - [[mmskills-multimodal]] —— MMSkills — 把视觉 agent 的"操作经验"做成多模态卡片
+- [[nlp-agent-2024]] —— Cognitive Architectures for Language Agents (CoALA)
 - [[openhands]] —— OpenHands — 开源 AI 软件工程师
 - [[react]] —— React UI 组件库
 - [[skcc-skill-compiler]] —— SkCC — 给 LLM agent 写一个真正的 skill 编译器

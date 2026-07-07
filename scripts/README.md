@@ -77,7 +77,7 @@ bash scripts/finalize-round.sh
 
 `sync-and-merge-single.mjs` validates branch, clean state, commit hash, slug, area, and target path before cherry-pick. It rolls back only the current picked commit on quality-gate failure.
 
-`finalize-round.sh` handles atlas/backlink/frontmatter generation, build, whitelist staging, amend, and worktree sync. Its dry-run mode is part of `verify:pipeline`.
+`finalize-round.sh` handles atlas/backlink/frontmatter generation, build, whitelist staging, amend, and local worktree sync. It does not push by default; use `PUSH_REMOTE=1 bash scripts/finalize-round.sh` only when publishing is explicitly intended. Its dry-run mode is part of `verify:pipeline`.
 
 `sync-and-merge.sh` is now a legacy wrapper. It keeps dry-run preflight checks but refuses real batch mutation.
 

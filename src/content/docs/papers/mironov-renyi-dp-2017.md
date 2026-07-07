@@ -147,4 +147,11 @@ Rényi 散度以匈牙利数学家 Alfréd Rényi 命名，他在 1961 年提出
 
 ## 反向链接
 
-（暂无引用本页的笔记）
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
+- [[duchi-local-dp-2013]] —— Duchi 2013 — 本地差分隐私的统计极限
+- [[erlingsson-rappor-2014]] —— RAPPOR 2014 — 用随机应答在浏览器端实现本地差分隐私
+- [[kairouz-advances-fl-2019]] —— Kairouz 2019 — 联邦学习 58 个开放问题路线图
+- [[mcmahan-fedavg-2017]] —— FedAvg 2017 — 让手机本地训练模型再上传平均值
+

@@ -147,5 +147,7 @@ HandBrake 诞生于 2003 年，最初由法国开发者 Eric Petit（网名 tite
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
+- [[mlt]] —— MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎
+- [[shotcut]] —— Shotcut — 零成本入门视频剪辑的开源选择
 

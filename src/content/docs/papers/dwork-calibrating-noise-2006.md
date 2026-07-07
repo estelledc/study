@@ -147,5 +147,10 @@ Apple 在用户设备上直接对数据加噪（Local DP），然后发送给服
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[dwork-our-data-ourselves-2006]] —— 分布式噪声 — 大家一起加噪音比一个人加更安全
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 用一把更精确的尺子量隐私损失
+- [[saltzer-schroeder-1975]] —— Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

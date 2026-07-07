@@ -151,3 +151,16 @@ syntax on           " 语法高亮
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
+- [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
+- [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[emacs]] —— GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统
+- [[geany]] —— Geany — 用 C 写的轻量级 GTK 编辑器
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
+- [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
+- [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
+- [[textmate]] —— TextMate — macOS 上定义 bundle 宏系统的编辑器
+- [[xi-editor]] —— xi-editor — 异步架构编辑器的先驱实验
+

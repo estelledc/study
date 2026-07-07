@@ -148,3 +148,7 @@ end, { desc = "Lazygit" })
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
+- [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
+

@@ -153,6 +153,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
 - [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
 - [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
 - [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
@@ -178,6 +179,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
 - [[jax]] —— JAX — Google 函数式数值计算
+- [[kairouz-advances-fl-2019]] —— Kairouz 2019 — 联邦学习 58 个开放问题路线图
 - [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
 - [[keras]] —— Keras 3 — 一份模型代码跑三套后端
 - [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
@@ -186,6 +188,7 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 - [[llama-cpp]] —— llama.cpp — 让 LLM 在你电脑里直接跑
 - [[llvm]] —— LLVM — 模块化编译器框架
 - [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
+- [[mcmahan-fedavg-2017]] —— FedAvg 2017 — 让手机本地训练模型再上传平均值
 - [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
 - [[metaflow]] —— Metaflow — Netflix 给数据科学家的 Python 流水线
 - [[mlflow]] —— MLflow — 端到端 ML 生命周期

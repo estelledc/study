@@ -145,6 +145,7 @@ opkg list-installed           # 确认已安装
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[buildroot]] —— Buildroot — 最小化嵌入式 Linux 构建器
-- [[yocto-poky]] —— Yocto/Poky — 工业级嵌入式构建框架
-- [[nuttx]] —— NuttX — POSIX 兼容的实时操作系统
+- [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
+- [[platformio-core]] —— PlatformIO Core — 一条命令编译上传任意嵌入式板子
+- [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
+

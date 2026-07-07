@@ -153,6 +153,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[algol-60]] —— ALGOL 60 — BNF 与块结构
 - [[alpa-2022]] —— Alpa — 把张量/流水/数据并行统一成一道搜索题
 - [[art-2013]] —— ART 自适应基数树 — 内存数据库为主索引重新选材
+- [[ast-grep]] —— ast-grep — 按语法树搜代码、改代码的命令行工具
 - [[awodey-warren-2009]] —— Awodey-Warren — 把『相等的证明』看成两点之间的路径
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[biome]] —— Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）
@@ -216,6 +217,7 @@ TypeScript 自动推出 `T = number`、`U = number`、`result: number[]`。
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[metaml-multi-stage]] —— MetaML — 让你显式地写"先生成代码、再跑代码"
 - [[milner-pi-calculus]] —— π-演算 — 让通道名本身能在通道里流动
+- [[mirage-2013]] —— MirageOS 2013 — 应用和内核合体成一个超轻虚拟机
 - [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
 - [[move-language]] —— Move — 资源型智能合约语言
 - [[mycroft-strictness]] —— Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"

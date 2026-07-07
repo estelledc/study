@@ -169,3 +169,9 @@ Flower 把 FedAvg 的"选客户端 → 下发 → 本地训练 → 聚合"全封
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[bonawitz-fl-system-2019]] —— Bonawitz 2019 — Google 联邦学习的工业级系统设计
+- [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
+- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
+- [[kairouz-advances-fl-2019]] —— Kairouz 2019 — 联邦学习 58 个开放问题路线图
+

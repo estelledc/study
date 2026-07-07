@@ -173,3 +173,6 @@ runner = "probe-rs run --chip STM32F411CEUx"
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
+

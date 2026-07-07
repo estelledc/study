@@ -165,3 +165,6 @@ Scintilla 提供的能力包括：文本缓冲区管理、语法着色（通过 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）
+

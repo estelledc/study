@@ -147,3 +147,6 @@ NvChad 预配置了 nvim-lspconfig 和 mason.nvim 的集成。Mason 负责下载
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
+

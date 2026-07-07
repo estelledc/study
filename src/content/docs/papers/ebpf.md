@@ -164,4 +164,5 @@ Cilium 的做法：在网卡驱动 RX 最早的位置（`xdp_buff` 还没分配 
 - [[shenango-2019]] —— Shenango — 每 5 微秒重新分一次核的中央调度器
 - [[solana]] —— Solana — Rust 写的高性能 PoH 链
 - [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
 

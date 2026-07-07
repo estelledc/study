@@ -152,6 +152,7 @@ Tendermint / Cosmos / 早期以太坊 PoS：
 
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[chandy-lamport-1985]] —— Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福
+- [[dwork-our-data-ourselves-2006]] —— 分布式噪声 — 大家一起加噪音比一个人加更安全
 - [[farsite-2002]] —— Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器
 - [[ironfleet-2015]] —— IronFleet — 把分布式协议证到一行 bug 都没有
 - [[lamport-1978]] —— Lamport 1978 — 分布式系统里没有"绝对的同时"

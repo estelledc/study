@@ -155,5 +155,7 @@ self.accept("arrow_down", self.camera.setY, [self.camera, -5])
 - [[disney-brdf-2012]] —— Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶
 - [[halide]] —— Halide — 把"算什么"和"怎么算"分开写
 - [[kajiya-1986-rendering-equation]] —— Kajiya 渲染方程 — 把所有渲染算法统一成一个积分方程
+- [[minetest]] —— Minetest (Luanti) — 开源世界的 Minecraft
+- [[openrct2]] —— OpenRCT2 — 用逆向工程让 20 年前的游戏复活
 - [[pytorch]] —— PyTorch — 深度学习主流框架
 

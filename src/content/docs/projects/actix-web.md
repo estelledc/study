@@ -180,6 +180,7 @@ async fn signup(form: web::Json<Signup>) -> String {
 - [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
 - [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
 - [[embassy]] —— Embassy — 让单片机也能用 async/await
+- [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
 - [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[express]] —— Express — Node.js 最经典的 Web 框架

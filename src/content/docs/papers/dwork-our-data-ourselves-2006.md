@@ -169,4 +169,5 @@ Binomial(m, 0.5) ≈ N(m/2, m/4)    当 m 足够大时
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[mironov-renyi-dp-2017]] —— Rényi 差分隐私 — 用一把更精确的尺子量隐私损失
+

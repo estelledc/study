@@ -153,10 +153,13 @@ openssl pkey -in alice.pem -pubout -out alice.pub
 - [[element-android]] —— Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）
 - [[logjam-2015]] —— Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完
 - [[matrix-rust-sdk]] —— matrix-rust-sdk — Matrix 客户端的"共享发动机"
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
 - [[rsa]] —— RSA 公钥密码
 - [[saltzer-1984-e2e]] —— End-to-End Arguments — 把功能尽量推到端上做
+- [[sgx-2013]] —— Intel SGX — 在 CPU 里建一间谁都偷看不了的密室
 - [[signal-android]] —— Signal Android — 让 Android 上的每条消息都只有两端能看见
 - [[signal-ios]] —— Signal iOS — 让 iPhone 上的每条消息都只有两端能看见
 - [[tamarin-2012]] —— Tamarin — 让计算机自己证 Signal、TLS 1.3 这种带 DH 的协议是不是真安全
 - [[turing-1936]] —— Turing 1936 可计算性
+- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
 

@@ -155,4 +155,5 @@ CryptoVerif 证的是"**协议**用法对不对"，不是"**原语**安不安全
 - [[fstar]] —— F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里
 - [[mitls-2014-triple-handshake]] —— Triple Handshake — TLS 同一把主密钥被复用，黑客就能换人不换锁
 - [[proverif-2001]] —— ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全
+- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
 

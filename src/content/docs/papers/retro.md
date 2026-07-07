@@ -153,6 +153,7 @@ retro.eval(retrieval_db=wikipedia_2024)   # 换成 2024 年 Wikipedia
 - [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[gpt-3]] —— GPT-3 — Language Models are Few-Shot Learners
 - [[graphrag]] —— GraphRAG — 微软的知识图谱 + RAG
+- [[nlp-rag-2024]] —— RAG for AIGC: 检索增强生成在 AI 生成内容中的应用 — 学习笔记
 - [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
 - [[realm]] —— REALM — 把检索器和 BERT 一起预训练的第一篇论文
 

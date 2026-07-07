@@ -164,5 +164,8 @@ FreeRTOS 给了 5 种内存方案，按硬件特点选：
 - [[embassy]] —— Embassy — 让单片机也能用 async/await
 - [[erlang-otp]] —— Erlang OTP — 容错并发系统设计
 - [[hewitt-actor-model]] —— Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒
+- [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
+- [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+- [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
 - [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

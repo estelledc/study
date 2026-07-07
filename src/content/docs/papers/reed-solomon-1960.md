@@ -147,6 +147,7 @@ QR 码强制带 RS 冗余。四个等级对应不同的冗余比例：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
 - [[bitcoin]] —— Bitcoin 白皮书
 - [[f4-2014]] —— f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库
 - [[hamming-1950]] —— Hamming 纠错码

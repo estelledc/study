@@ -148,3 +148,11 @@ Arduino CLI 0.1.0 发布后，Arduino Create 在线编辑器、VS Code 插件、
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+- [[circuitpython]] —— CircuitPython — 拖文件就能给芯片写程序的 Python
+- [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
+- [[micropython]] —— MicroPython — 在巴掌大的芯片上跑 Python
+- [[platformio-core]] —— PlatformIO Core — 一条命令编译上传任意嵌入式板子
+- [[probe-rs]] —— probe-rs — Rust 写的嵌入式调试烧录工具
+- [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
+

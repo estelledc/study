@@ -151,7 +151,6 @@ model.wv.most_similar('cat')
 
 - [[attention]] —— Attention Is All You Need
 - [[bert]] —— BERT — 双向 Transformer 预训练
-- [[chinchilla]] —— Chinchilla — 训练大模型的数据/参数最优比
 - [[clip]] —— CLIP — Contrastive Language-Image Pre-training
 - [[dssm-2013]] —— DSSM — 把 query 和文档各编码成 128 维向量再算余弦
 - [[elmo-2018]] —— ELMo — 让词向量随上下文变化
@@ -159,6 +158,5 @@ model.wv.most_similar('cat')
 - [[koren-mf-2009]] —— Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书
 - [[lstm-1997]] —— LSTM — 用门控让神经网络记得住上一段话
 - [[ranknet-2005]] —— RankNet — 让搜索引擎学会比较两个结果谁更好
-- [[t5]] —— T5 — Text-to-Text Transfer Transformer
 - [[youtube-two-tower-2019]] —— YouTube 双塔召回 — 把 DSSM 搬进推荐并补上两件工业关键
 
