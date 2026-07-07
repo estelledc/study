@@ -756,6 +756,7 @@ subramanian-2002-internet-hierarchy
 sulsky-1994-mpm
 swe-agent
 swe-bench
+sweeney-k-anonymity-2002
 sycl-cpp-2020
 sycophancy-2023
 system-f-reynolds-1974
