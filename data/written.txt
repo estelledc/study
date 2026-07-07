@@ -424,6 +424,7 @@ karras-2012-parallel-bvh
 kazhdan-2006-poisson-recon
 kepler-architecture-2012
 kildall-dataflow
+kim-rowhammer-2014
 knrm-2017
 knuth-lr-1965
 knuth-taocp
