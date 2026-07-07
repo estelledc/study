@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 783 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 784 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：783 个
+- **总数**：784 个
 - **已分类**：214
-- **未分类**：569（落入"其他 / 待分类"段）
+- **未分类**：570（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 569 |
+| [其他 / 待分类](#其他--待分类) | 570 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 569 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 570 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -943,6 +943,7 @@ sidebar:
 | `robyn` | [Robyn — Rust 内核驱动的 Python 高性能 Web 框架](/study/projects/robyn/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) |
+| `roo-code` | [Roo Code — 多模式 VS Code AI 助手](/study/projects/roo-code/) |
 | `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) |
 | `rt-thread` | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) |
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) |
@@ -1079,7 +1080,7 @@ sidebar:
 
 ---
 
-## 全部 783 个（字母序）
+## 全部 784 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1672,6 +1673,7 @@ sidebar:
 | `rocksdb` | [RocksDB — 嵌入式 LSM 引擎](/study/projects/rocksdb/) | 数据库本体 / 存储引擎 |
 | `rolldown` | [rolldown — 用 Rust 给 Vite 当统一引擎的打包器](/study/projects/rolldown/) | 构建工具 / Bundler |
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
+| `roo-code` | [Roo Code — 多模式 VS Code AI 助手](/study/projects/roo-code/) | 其他 |
 | `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) | 其他 |
 | `rspack` | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | 构建工具 / Bundler |
 | `rt-thread` | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | 其他 |
