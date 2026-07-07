@@ -478,6 +478,7 @@ lstm-1997
 lucky13-2013
 mach-1986
 mach-vm-1987
+machanavajjhala-l-diversity-2007
 macklin-2014-position-based-fluids
 mae
 magic3d-2023
