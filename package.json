@@ -20,6 +20,8 @@
     "round:merge-one": "node scripts/round.mjs merge-one",
     "round:final-gate": "node scripts/round.mjs final-gate",
     "round:sync-worktrees": "node scripts/round.mjs sync-worktrees",
+    "round:auto-prepare": "node scripts/round.mjs auto-prepare",
+    "round:auto-advance": "node scripts/round.mjs auto-advance",
     "atlas": "node scripts/regen-atlas.mjs",
     "prebuild": "node scripts/regen-atlas.mjs"
   },

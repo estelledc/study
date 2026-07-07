@@ -23,8 +23,8 @@ test('dispatchBatch assigns rewrite and new items to the expected worktrees', ()
       { area: 'projects', slug: 'project-r', status: 'available', score: 9, path: 'src/content/docs/projects/project-r.md' },
     ],
     candidates: [
-      { area: 'papers', slug: 'paper-n', status: 'queued', topic: 'db', title: 'Paper N', meta: {} },
-      { area: 'projects', slug: 'project-n', status: 'queued', topic: 'ui', title: 'Project N', meta: {} },
+      { area: 'papers', slug: 'paper-n', status: 'queued', topic: 'db', title: 'Paper N', meta: { col3: '2020', col4: 'paper value description' } },
+      { area: 'projects', slug: 'project-n', status: 'queued', topic: 'ui', title: 'Project N', meta: { col3: '1.2k', col4: 'project value description' } },
     ],
   }, { home: HOME });
   const output = renderDispatchOutput(plan, TEMPLATES);
@@ -63,7 +63,7 @@ test('dispatchBatch is pure and markClaimed updates only selected rows', () => {
 
 test('renderDispatchOutput keeps prompt rendering separate from queue selection', () => {
   const plan = dispatchBatch(args({ rewrite: 0, new: 1 }), {
-    candidates: [{ area: 'projects', slug: 'project-n', status: 'queued', topic: 'ui', title: 'Value $1', meta: {} }],
+    candidates: [{ area: 'projects', slug: 'project-n', status: 'queued', topic: 'ui', title: 'Value $1', meta: { col3: '1.2k', col4: 'project value description' } }],
   }, { home: HOME });
   const output = renderDispatchOutput(plan, TEMPLATES);
 

@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
+import fs from 'node:fs';
 import { spawnSync } from 'node:child_process';
 
-import { docsEntryPath, ROOT } from './lib/paths.mjs';
+import { CANDIDATES_PATH, docsEntryPath, REWRITE_POOL_PATH, ROOT } from './lib/paths.mjs';
+import { validateWorkerResults } from './lib/auto-round.mjs';
 import {
   ATLAS_ALLOWED,
   RUNTIME_ALLOWED,
@@ -34,6 +36,7 @@ function parseArgs(argv = process.argv.slice(2)) {
     area: null,
     commit: null,
     lines: null,
+    results: null,
   };
   for (let i = 1; i < argv.length; i++) {
     const arg = argv[i];
@@ -44,6 +47,7 @@ function parseArgs(argv = process.argv.slice(2)) {
     else if (arg === '--area') args.area = argv[++i];
     else if (arg === '--commit') args.commit = argv[++i];
     else if (arg === '--lines') args.lines = parseInt(argv[++i], 10);
+    else if (arg === '--results') args.results = argv[++i];
     else throw new Error(`Unknown argument: ${arg}`);
   }
   return args;
@@ -113,12 +117,12 @@ function parseJsonOutput(result, label) {
   }
 }
 
-function dispatchDryRun(args) {
+function dispatchDryRun(args, options = {}) {
   const result = runNode('scripts/dispatch-batch.mjs', [
     '--rewrite', String(args.rewrite),
     '--new', String(args.new),
     '--dry-run',
-  ], { capture: true, echo: true });
+  ], { capture: true, echo: options.echo ?? true });
   const output = parseJsonOutput(result, 'dispatch dry-run');
   const issues = dispatchIssues(output);
   if (issues.length > 0) {
@@ -168,6 +172,23 @@ function roundPreflight(args) {
   runNpm('build:strict');
   runNpm('status:pipeline');
   dispatchDryRun(args);
+}
+
+function runCapturedToStderr(cmd, args, label) {
+  const result = run(cmd, args, { capture: true });
+  if (result.stdout) process.stderr.write(result.stdout);
+  if (result.stderr) process.stderr.write(result.stderr);
+  if (label) process.stderr.write(`[round] ${label} passed\n`);
+  return result;
+}
+
+function roundAutoPrepare(args) {
+  requireMainClean();
+  runCapturedToStderr('npm', ['run', 'verify:pipeline'], 'verify:pipeline');
+  runCapturedToStderr('npm', ['run', 'build:strict'], 'build:strict');
+  runCapturedToStderr('npm', ['run', 'status:pipeline'], 'status:pipeline');
+  const output = dispatchDryRun(args, { echo: false });
+  console.log(JSON.stringify(output, null, 2));
 }
 
 function roundDispatch(args) {
@@ -260,6 +281,38 @@ function roundSyncWorktrees() {
   }
 }
 
+function readJsonlSync(filePath) {
+  if (!fs.existsSync(filePath)) return [];
+  return fs.readFileSync(filePath, 'utf8')
+    .split('\n')
+    .filter((line) => line.trim())
+    .map((line, index) => {
+      try {
+        return JSON.parse(line);
+      } catch (err) {
+        throw new Error(`${filePath}:${index + 1} invalid JSON: ${err.message}`);
+      }
+    });
+}
+
+function parseResultsArg(raw) {
+  if (!raw) throw new Error('--results is required');
+  const text = fs.existsSync(raw) ? fs.readFileSync(raw, 'utf8') : raw;
+  return JSON.parse(text);
+}
+
+function roundAutoAdvance(args) {
+  requireMainClean();
+  const candidates = readJsonlSync(CANDIDATES_PATH);
+  const pool = readJsonlSync(REWRITE_POOL_PATH);
+  const mergeArgs = validateWorkerResults({ candidates, pool }, parseResultsArg(args.results));
+  for (const mergeArg of mergeArgs) {
+    roundMergeOne({ ...args, ...mergeArg, dryRun: false });
+  }
+  roundFinalGate();
+  roundSyncWorktrees();
+}
+
 function main() {
   const args = parseArgs();
   if (!args.command) {
@@ -270,6 +323,8 @@ function main() {
   else if (args.command === 'merge-one') roundMergeOne(args);
   else if (args.command === 'final-gate') roundFinalGate(args);
   else if (args.command === 'sync-worktrees') roundSyncWorktrees(args);
+  else if (args.command === 'auto-prepare') roundAutoPrepare(args);
+  else if (args.command === 'auto-advance') roundAutoAdvance(args);
   else throw new Error(`Unknown command: ${args.command}`);
 }
 

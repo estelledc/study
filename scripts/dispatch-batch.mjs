@@ -18,6 +18,7 @@ import { loadDispatchQueues, markClaimed, writeCandidates, writeRewritePool } fr
 import { docsEntryRelativePath } from './lib/paths.mjs';
 import { DISPATCH_PROMPT_KINDS, commonPromptVars, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
 import { worktreesForDispatch } from './lib/worktrees.mjs';
+import { formatCandidateMetadataIssue, validateCandidateRows } from './lib/candidate-metadata.mjs';
 
 function parseArgs() {
   const args = { rewrite: 4, new: 4, dryRun: false };
@@ -126,6 +127,7 @@ export function dispatchBatch(args, queues, options = {}) {
   if (projectsRewrite.length < (rewritePerArea + rewriteRemainder)) issues.push(`projects-rewrite short`);
   if (papersNew.length < newPerArea) issues.push(`papers-new short: got ${papersNew.length}, need ${newPerArea}`);
   if (projectsNew.length < (newPerArea + newRemainder)) issues.push(`projects-new short`);
+  issues.push(...validateCandidateRows([...papersNew, ...projectsNew]).map(formatCandidateMetadataIssue));
 
   // 分配 worktree
   const assignments = [];

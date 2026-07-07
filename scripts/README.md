@@ -68,6 +68,8 @@ Preflight before opening the round:
 npm run round:preflight -- --rewrite 0 --new 4
 ```
 
+Preflight and dispatch now validate the selected candidate metadata before any queue state is claimed. Project candidates must have stars in `meta.col3` and a value description in `meta.col4`; paper candidates must have a 4-digit year in `meta.col3` and a value description in `meta.col4`.
+
 Claim the four candidates. The command first performs the same dry-run and then commits only queue runtime state:
 
 ```bash
@@ -97,6 +99,40 @@ npm run round:sync-worktrees
 ```
 
 `round:sync-worktrees` requires main to be clean, pipeline to have no claimed or failed items, and all eight worktrees to be healthy before resetting them to local main HEAD. It never pushes.
+
+## Semi-Automatic 4-NEW Flow
+
+Prepare a clean machine-readable assignment payload without claiming rows:
+
+```bash
+npm run --silent round:auto-prepare -- --rewrite 0 --new 4 > /tmp/study-round.json
+```
+
+`round:auto-prepare` runs the same verification gates as preflight, sends logs to stderr, and writes stable JSON to stdout for the main agent to fan out to workers.
+
+After workers return JSON results, advance the claimed round in deterministic order:
+
+```bash
+npm run round:auto-advance -- --results /tmp/study-worker-results.json
+```
+
+`round:auto-advance` validates that worker results exactly cover the currently claimed slugs, then calls `round:merge-one` per slug, `round:final-gate`, and `round:sync-worktrees`. It stops on the current failing slug or stage and never substitutes candidates.
+
+## Manual Publish
+
+Round commands do not push. When publishing is explicitly requested, prefer the SSH remote because this machine's GitHub CLI auth is configured for SSH:
+
+```bash
+git push git@github.com:estelledc/study.git main
+git update-ref refs/remotes/origin/main HEAD
+```
+
+If you choose to change the saved origin URL, verify it first with:
+
+```bash
+git remote set-url origin git@github.com:estelledc/study.git
+git push --dry-run origin main
+```
 
 ## Dispatch And Pipeline Dry Run
 
