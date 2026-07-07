@@ -245,6 +245,7 @@ dropout-2014
 dspy
 dssm-2013
 dstreams-2013
+ducas-dilithium-2018
 duchi-local-dp-2013
 duckdb-2019
 dwork-calibrating-noise-2006
