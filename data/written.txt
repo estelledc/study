@@ -1220,6 +1220,7 @@ locust
 lodestar
 loki
 longhorn
+lora-mac-node
 lottie
 lsd
 lucia
