@@ -7,14 +7,13 @@
 //   node scripts/loop-status.mjs --md           # 只重写 STATUS.md
 
 import fs from 'node:fs/promises';
-import { execSync } from 'node:child_process';
 import { countNotesByArea } from './lib/content-store.mjs';
+import { gitOutput } from './lib/git.mjs';
 import { readJson } from './lib/json-store.mjs';
 import { readJsonl } from './lib/jsonl.mjs';
 import {
   CANDIDATES_PATH,
   REWRITE_POOL_PATH,
-  ROOT,
   STATUS_JSON_PATH,
   STATUS_MD_PATH,
 } from './lib/paths.mjs';
@@ -66,7 +65,7 @@ function progressBar(n, total, width = 30) {
 
 function gitLogShort(n = 5) {
   try {
-    return execSync(`git -C ${ROOT} log --oneline -${n}`, { encoding: 'utf8' }).trim();
+    return gitOutput(['log', '--oneline', `-${n}`]);
   } catch {
     return '(git log unavailable)';
   }
@@ -74,7 +73,7 @@ function gitLogShort(n = 5) {
 
 function gitLogBatchEvents(n = 10) {
   try {
-    return execSync(`git -C ${ROOT} log --oneline -${n} --grep='atlas+backlinks'`, { encoding: 'utf8' }).trim();
+    return gitOutput(['log', '--oneline', `-${n}`, '--grep=atlas+backlinks']);
   } catch {
     return '';
   }
