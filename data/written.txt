@@ -221,6 +221,7 @@ dijkstra-1965
 dijkstra-goto
 dijkstra-shortest-path
 din-2018
+dingledine-mixminion-2003
 dino
 disco-1997
 disel-2018
