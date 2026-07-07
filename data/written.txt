@@ -1639,6 +1639,7 @@ zcash
 zed
 zellij
 zephyr
+zettlr
 zincsearch
 zksync-era
 zod
