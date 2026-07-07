@@ -564,6 +564,7 @@ neumf-2017
 newcombe-2011-kinectfusion
 newsome-taintcheck-2005
 nfs-1985
+ngabonziza-trustzone-2016
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
 nimier-david-2019-mitsuba2
