@@ -1090,6 +1090,7 @@ geany
 gh
 gin
 github-actions
+gitpod
 gitui
 glab
 glances
