@@ -6,10 +6,10 @@
 // Themes are hardcoded slug→theme maps. New slugs default to "其他 / 待分类"
 // until added below.
 
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { parseFrontmatterLoose } from './lib/frontmatter.mjs';
-import { DOCS_DIR } from './lib/paths.mjs';
+import { DOCS_DIR, ROOT } from './lib/paths.mjs';
 
 // === Paper themes (order = display order) ===========================
 const THEMES_PAPERS = {
@@ -218,6 +218,12 @@ function buildReverseMap(themes) {
 const PAPER_OF = buildReverseMap(THEMES_PAPERS);
 const PROJECT_OF = buildReverseMap(THEMES_PROJECTS);
 
+async function clearAstroContentCache() {
+  // regen-atlas mutates generated docs before `astro build`; stale content-layer
+  // entries can otherwise report duplicate ids for atlas pages.
+  await rm(join(ROOT, 'node_modules/.astro'), { recursive: true, force: true });
+}
+
 async function loadAll(dir) {
   const dirAbs = join(DOCS_DIR, dir);
   const files = (await readdir(dirAbs)).filter((f) => f.endsWith('.md'));
@@ -369,6 +375,8 @@ function slugify(s) {
 
 // === Main ============================================================
 async function main() {
+  await clearAstroContentCache();
+
   const papers = await loadAll('papers');
   const projects = await loadAll('projects');
 
