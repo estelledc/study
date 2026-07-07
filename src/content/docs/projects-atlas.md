@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 772 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 773 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：772 个
+- **总数**：773 个
 - **已分类**：214
-- **未分类**：558（落入"其他 / 待分类"段）
+- **未分类**：559（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 558 |
+| [其他 / 待分类](#其他--待分类) | 559 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 558 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 559 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -946,6 +946,7 @@ sidebar:
 | `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
+| `sdk-nrf` | [Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK](/study/projects/sdk-nrf/) |
 | `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) |
 | `sealed-secrets` | [Sealed Secrets — 把加密后的 Secret 安全提交到 Git](/study/projects/sealed-secrets/) |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
@@ -1068,7 +1069,7 @@ sidebar:
 
 ---
 
-## 全部 772 个（字母序）
+## 全部 773 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1665,6 +1666,7 @@ sidebar:
 | `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) | 其他 |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | 其他 |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
+| `sdk-nrf` | [Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK](/study/projects/sdk-nrf/) | 其他 |
 | `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) | 其他 |
 | `sealed-secrets` | [Sealed Secrets — 把加密后的 Secret 安全提交到 Git](/study/projects/sealed-secrets/) | 其他 |
 | `sentry` | [Sentry — 把崩溃和报错自动收集 + 分组 + 可查询的错误监控平台](/study/projects/sentry/) | 可观测 / 性能 |
