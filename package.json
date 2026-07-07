@@ -11,6 +11,9 @@
     "astro": "astro",
     "test": "node --test",
     "verify:scripts": "npm test && node scripts/pick-batch.mjs --count 0 --rewrite 0 --new 0 --no-priority && node scripts/dispatch-batch.mjs --rewrite 0 --new 0 --dry-run && git diff --check",
+    "doctor:worktrees": "node scripts/worktree-doctor.mjs",
+    "status:pipeline": "node scripts/pipeline-summary.mjs",
+    "verify:pipeline": "npm run verify:scripts && npm run doctor:worktrees && node --test scripts/lib/prompts.test.mjs && node scripts/pipeline-summary.mjs --json && DRY_RUN=1 bash scripts/finalize-round.sh && DRY_RUN=1 bash scripts/sync-and-merge.sh",
     "atlas": "node scripts/regen-atlas.mjs",
     "prebuild": "node scripts/regen-atlas.mjs"
   },

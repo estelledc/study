@@ -131,8 +131,6 @@ async function main() {
 
   const ctx = await buildContext(args.slug, args.kind, args.worktreeIdx);
 
-  emit({ event: 'pipeline-context-built', slug: ctx.slug, kind: ctx.kind, worktree: ctx.branch_name });
-
   // 仅 dump 单 stage prompt（用于 manual 验证 / debug）
   if (args.dump) {
     if (!args.stage) {
@@ -142,6 +140,8 @@ async function main() {
     await dumpStagePrompt(args.stage, ctx);
     return;
   }
+
+  emit({ event: 'pipeline-context-built', slug: ctx.slug, kind: ctx.kind, worktree: ctx.branch_name });
 
   // 默认行为：并行读 6 个 stage 模板 + 并行写 6 个 rendered prompt 到 tmp
   const stages = PIPELINE_STAGES;
