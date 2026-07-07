@@ -964,6 +964,7 @@ cockroachdb
 cocos2d-x
 code-server
 codemirror
+coder
 collabora-online
 colossal-ai
 comfyui
