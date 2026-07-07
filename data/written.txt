@@ -1112,6 +1112,7 @@ fzf
 gdu
 geany
 gh
+ghostwriter
 gin
 github-actions
 gitpod
