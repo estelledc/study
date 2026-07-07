@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 865 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 866 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：865 篇
+- **总数**：866 篇
 - **已分类**：143
-- **未分类**：722（落入"其他 / 待分类"段）
+- **未分类**：723（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 722 |
+| [其他 / 待分类](#其他--待分类) | 723 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 722 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 723 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -666,6 +666,7 @@ sidebar:
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
+| `kocher-spectre-2019` | [Spectre — CPU 猜错路时也会泄密](/study/papers/kocher-spectre-2019/) |
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) |
 | `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) |
@@ -1033,7 +1034,7 @@ sidebar:
 
 ---
 
-## 全部 865 篇（字母序）
+## 全部 866 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1465,6 +1466,7 @@ sidebar:
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | 其他 |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) | 其他 |
 | `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
+| `kocher-spectre-2019` | [Spectre — CPU 猜错路时也会泄密](/study/papers/kocher-spectre-2019/) | 其他 |
 | `kokkos-2014` | [Kokkos — 一份 C++ 代码同时跑 CPU、GPU、Xeon Phi](/study/papers/kokkos-2014/) | 其他 |
 | `koren-mf-2009` | [Koren-Bell-Volinsky 2009 — 把推荐系统的 MF 写成 8 页教科书](/study/papers/koren-mf-2009/) | 其他 |
 | `krishnamurthy-1999-http11` | [Krishnamurthy 1999 — HTTP/1.0 到 1.1 究竟改了什么](/study/papers/krishnamurthy-1999-http11/) | 其他 |
