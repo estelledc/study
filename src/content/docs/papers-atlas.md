@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 840 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 841 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：840 篇
+- **总数**：841 篇
 - **已分类**：143
-- **未分类**：697（落入"其他 / 待分类"段）
+- **未分类**：698（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 697 |
+| [其他 / 待分类](#其他--待分类) | 698 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 697 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 698 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -596,6 +596,7 @@ sidebar:
 | `halide` | [Halide — 把"算什么"和"怎么算"分开写](/study/papers/halide/) |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) |
 | `haven-2014` | [Haven — 在不信任的云里给程序造一间安全屋](/study/papers/haven-2014/) |
+| `haystack-2010` | [Haystack 2010 — Facebook 小文件照片存储](/study/papers/haystack-2010/) |
 | `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) |
 | `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) |
@@ -1008,7 +1009,7 @@ sidebar:
 
 ---
 
-## 全部 840 篇（字母序）
+## 全部 841 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1360,6 +1361,7 @@ sidebar:
 | `hamming-1950` | [Hamming 纠错码](/study/papers/hamming-1950/) | 信息论 / 编码理论 |
 | `hanrahan-1991-hierarchical-radiosity` | [Hanrahan 1991 Hierarchical Radiosity — 让 radiosity 从 O(n²) 跌到 O(n)](/study/papers/hanrahan-1991-hierarchical-radiosity/) | 其他 |
 | `haven-2014` | [Haven — 在不信任的云里给程序造一间安全屋](/study/papers/haven-2014/) | 其他 |
+| `haystack-2010` | [Haystack 2010 — Facebook 小文件照片存储](/study/papers/haystack-2010/) | 其他 |
 | `hazard-pointers-2004` | [Hazard Pointers — 多线程下安全释放共享节点](/study/papers/hazard-pointers-2004/) | 其他 |
 | `hdfs-2010` | [HDFS — 把 GFS 用 Java 重写一遍并撑到 25 PB](/study/papers/hdfs-2010/) | 其他 |
 | `heartbleed-2014` | [Heartbleed — 一个忘了写边界检查的 bug 让全网 1/3 的 HTTPS 站点漏内存](/study/papers/heartbleed-2014/) | 其他 |
