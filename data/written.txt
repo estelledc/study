@@ -1327,6 +1327,7 @@ nanobrowser
 nanomq
 nanostores
 nats
+navigation2
 ncdu
 ncnn
 nebula
