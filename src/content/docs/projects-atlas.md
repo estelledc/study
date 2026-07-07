@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 793 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 794 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：793 个
+- **总数**：794 个
 - **已分类**：214
-- **未分类**：579（落入"其他 / 待分类"段）
+- **未分类**：580（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 579 |
+| [其他 / 待分类](#其他--待分类) | 580 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 579 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 580 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -981,6 +981,7 @@ sidebar:
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) |
 | `signoz` | [SigNoz — 自托管的 OpenTelemetry 一体化可观测平台](/study/projects/signoz/) |
 | `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) |
+| `silverbullet` | [SilverBullet — 自托管笔记 web 应用](/study/projects/silverbullet/) |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
 | `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) |
@@ -1089,7 +1090,7 @@ sidebar:
 
 ---
 
-## 全部 793 个（字母序）
+## 全部 794 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1726,6 +1727,7 @@ sidebar:
 | `signal-server` | [Signal-Server — 服务端看不到任何明文的即时通信后端](/study/projects/signal-server/) | 其他 |
 | `signoz` | [SigNoz — 自托管的 OpenTelemetry 一体化可观测平台](/study/projects/signoz/) | 其他 |
 | `silero-vad` | [Silero VAD — 轻量语音活动检测](/study/projects/silero-vad/) | 其他 |
+| `silverbullet` | [SilverBullet — 自托管笔记 web 应用](/study/projects/silverbullet/) | 其他 |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
 | `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) | 其他 |
