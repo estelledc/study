@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 858 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 859 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：858 篇
+- **总数**：859 篇
 - **已分类**：143
-- **未分类**：715（落入"其他 / 待分类"段）
+- **未分类**：716（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 715 |
+| [其他 / 待分类](#其他--待分类) | 716 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 715 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 716 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -940,6 +940,7 @@ sidebar:
 | `stylegan2-2020` | [StyleGAN2 — 把 StyleGAN 的水滴瑕疵和潜空间纠葛一起修掉](/study/papers/stylegan2-2020/) |
 | `subramanian-2002-internet-hierarchy` | [Subramanian 2002 — 用多个观察点把互联网切成 5 层](/study/papers/subramanian-2002-internet-hierarchy/) |
 | `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) |
+| `sweeney-k-anonymity-2002` | [Sweeney k-Anonymity 2002 — 删除姓名还不够的匿名化基线](/study/papers/sweeney-k-anonymity-2002/) |
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) |
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
@@ -1026,7 +1027,7 @@ sidebar:
 
 ---
 
-## 全部 858 篇（字母序）
+## 全部 859 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1787,6 +1788,7 @@ sidebar:
 | `sulsky-1994-mpm` | [MPM — 让粒子背着自己的历史，借网格算一遍力](/study/papers/sulsky-1994-mpm/) | 其他 |
 | `swe-agent` | [SWE-Agent — Princeton SWE-bench 解法](/study/papers/swe-agent/) | 智能体与 LLM 系统 |
 | `swe-bench` | [SWE-bench — 真实 GitHub Issue 评测](/study/papers/swe-bench/) | 智能体与 LLM 系统 |
+| `sweeney-k-anonymity-2002` | [Sweeney k-Anonymity 2002 — 删除姓名还不够的匿名化基线](/study/papers/sweeney-k-anonymity-2002/) | 其他 |
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) | 其他 |
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | 其他 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
