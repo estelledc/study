@@ -8,6 +8,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { extractFrontmatterBlock, hasFrontmatterKey, parseFrontmatterKeyValues } from './lib/frontmatter.mjs';
 import { PAPERS_DIR, PROJECTS_DIR, REWRITE_POOL_PATH, ROOT } from './lib/paths.mjs';
 
 const OUT_PATH = REWRITE_POOL_PATH;
@@ -21,21 +22,13 @@ const STD_H2 = [
 const ACADEMIC_H2 = /^##\s+(Definition|Theorem|Lemma|Corollary|Proof|定理|定义|引理)\b|^##\s+\d+\.\d+/m;
 
 function extractFrontmatter(text) {
-  const m = text.match(/^---\n([\s\S]*?)\n---/);
-  if (!m) return {};
-  const fields = {};
-  for (const line of m[1].split('\n')) {
-    const fm = line.match(/^(\w+|一-鿿+):\s*(.*)$/u);
-    if (fm) fields[fm[1]] = fm[2];
-  }
-  // 中文字段单独抓
-  const cnFields = m[1].matchAll(/^([一-鿿]+):\s*(.*)$/gmu);
-  for (const f of cnFields) fields[f[1]] = f[2];
-  // sidebar/description 简单标记
-  fields._has_sidebar = /^sidebar:/m.test(m[1]);
-  fields._has_description = /^description:/m.test(m[1]);
-  fields._has_source_cn = /^来源:/m.test(m[1]);
-  fields._has_category_cn = /^分类:/m.test(m[1]);
+  const frontmatter = extractFrontmatterBlock(text);
+  if (!frontmatter) return {};
+  const fields = parseFrontmatterKeyValues(frontmatter.block);
+  fields._has_sidebar = hasFrontmatterKey(text, 'sidebar');
+  fields._has_description = hasFrontmatterKey(text, 'description');
+  fields._has_source_cn = hasFrontmatterKey(text, '来源');
+  fields._has_category_cn = hasFrontmatterKey(text, '分类');
   return fields;
 }
 

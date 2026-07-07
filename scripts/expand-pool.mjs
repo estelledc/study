@@ -9,6 +9,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { parseFrontmatterLoose } from './lib/frontmatter.mjs';
 import { CANDIDATES_PATH, PAPERS_DIR, PROJECTS_DIR } from './lib/paths.mjs';
 
 const CANDIDATES = CANDIDATES_PATH;
@@ -43,10 +44,8 @@ function extractTargetSections(text) {
 
 // 从笔记 frontmatter 取 "分类:" 字段
 function extractCategory(text) {
-  const m = text.match(/^---\n([\s\S]*?)\n---/);
-  if (!m) return null;
-  const cat = m[1].match(/^分类:\s*(.+)$/m);
-  return cat ? cat[1].trim() : null;
+  const frontmatter = parseFrontmatterLoose(text);
+  return frontmatter?.分类 ? String(frontmatter.分类).trim() : null;
 }
 
 function parseArgs() {

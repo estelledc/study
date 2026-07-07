@@ -5,6 +5,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import yaml from 'js-yaml';
+import { extractFrontmatterBlock, replaceFrontmatterBlock } from './lib/frontmatter.mjs';
 import { DOCS_DIR } from './lib/paths.mjs';
 
 function isProblematic(value) {
@@ -66,16 +67,15 @@ function fixBlock(block) {
 
 async function processFile(path) {
   const raw = await readFile(path, 'utf8');
-  const m = raw.match(/^(---\n)([\s\S]*?)(\n---)/);
-  if (!m) return false;
-  const [, head, block, tail] = m;
+  const frontmatter = extractFrontmatterBlock(raw);
+  if (!frontmatter) return false;
 
   // Try strict parse — if works, leave alone
   try {
-    yaml.load(block);
+    yaml.load(frontmatter.block);
     return false;
   } catch (e) {
-    const fixed = fixBlock(block);
+    const fixed = fixBlock(frontmatter.block);
     // Verify the fix actually parses
     try {
       yaml.load(fixed);
@@ -83,7 +83,7 @@ async function processFile(path) {
       console.warn('STILL BROKEN:', path, '→', e2.message.split('\n')[0]);
       return false;
     }
-    const newRaw = head + fixed + tail + raw.slice(m[0].length);
+    const newRaw = replaceFrontmatterBlock(raw, fixed);
     await writeFile(path, newRaw, 'utf8');
     return true;
   }

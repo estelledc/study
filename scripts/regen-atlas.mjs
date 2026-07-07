@@ -8,7 +8,7 @@
 
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import yaml from 'js-yaml';
+import { parseFrontmatterLoose } from './lib/frontmatter.mjs';
 import { DOCS_DIR } from './lib/paths.mjs';
 
 // === Paper themes (order = display order) ===========================
@@ -218,34 +218,13 @@ function buildReverseMap(themes) {
 const PAPER_OF = buildReverseMap(THEMES_PAPERS);
 const PROJECT_OF = buildReverseMap(THEMES_PROJECTS);
 
-// === Frontmatter parsing ===========================================
-function parseFrontmatter(raw) {
-  const m = raw.match(/^---\n([\s\S]*?)\n---/);
-  if (!m) return null;
-  const block = m[1];
-  try {
-    return yaml.load(block);
-  } catch (e) {
-    // Fallback: line-by-line k: v extraction; tolerate unquoted commas/quotes.
-    const out = {};
-    for (const line of block.split('\n')) {
-      const km = line.match(/^([A-Za-z_一-龥][A-Za-z0-9_一-龥]*)\s*:\s*(.*)$/);
-      if (!km) continue;
-      const [, k, v] = km;
-      const stripped = v.replace(/^["']|["']$/g, '');
-      out[k] = stripped;
-    }
-    return out;
-  }
-}
-
 async function loadAll(dir) {
   const dirAbs = join(DOCS_DIR, dir);
   const files = (await readdir(dirAbs)).filter((f) => f.endsWith('.md'));
   const notes = [];
   for (const f of files) {
     const raw = await readFile(join(dirAbs, f), 'utf8');
-    const fm = parseFrontmatter(raw) ?? {};
+    const fm = parseFrontmatterLoose(raw) ?? {};
     const slug = f.replace(/\.md$/, '');
     notes.push({
       slug,

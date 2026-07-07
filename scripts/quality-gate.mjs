@@ -10,26 +10,13 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { extractFrontmatterBlock, parseFrontmatterLoose } from './lib/frontmatter.mjs';
 
 const RED_LINE = /blindbox|quanzhiping|video-eval-agent|sankuai|friday|cagent|aigc\.sankuai|美团|mis\.sankuai|cagent_fe_h5_blindbox|LongCat|6 件套/i;
 
 // 解析 frontmatter 为对象（仅取顶层 key:value，忽略嵌套）
 function parseFrontmatter(text) {
-  const m = text.match(/^---\n([\s\S]*?)\n---\n/);
-  if (!m) return null;
-  const obj = {};
-  for (const line of m[1].split('\n')) {
-    if (line === '' || /^\s+/.test(line)) continue;
-    const km = line.match(/^([\w一-鿿]+):\s*(.*)$/u);
-    if (km) {
-      let v = km[2].trim();
-      if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
-        v = v.slice(1, -1);
-      }
-      obj[km[1]] = v;
-    }
-  }
-  return obj;
+  return parseFrontmatterLoose(text);
 }
 
 function validateZhuangyuanV11(content, frontmatter) {
@@ -100,9 +87,9 @@ function checkLines(text, min = 150, max = 200) {
 }
 
 function checkFrontmatter(text) {
-  const m = text.match(/^---\n([\s\S]*?)\n---\n/);
-  if (!m) return { ok: false, reason: 'no frontmatter block (--- ... ---)' };
-  const body = m[1];
+  const frontmatter = extractFrontmatterBlock(text);
+  if (!frontmatter) return { ok: false, reason: 'no frontmatter block (--- ... ---)' };
+  const body = frontmatter.block;
 
   // 必须有 title
   if (!/^title:\s*\S/m.test(body)) {
