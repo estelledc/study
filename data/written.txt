@@ -84,6 +84,7 @@ bonawitz-fl-system-2019
 boogie-2005
 borg
 borg-omega-kube-2016
+bowe-halo-2019
 bpr-2009
 brakerski-bgv-2012
 branch-prediction-yeh-patt-1991
