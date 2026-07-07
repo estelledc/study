@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 871 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 872 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：871 篇
+- **总数**：872 篇
 - **已分类**：143
-- **未分类**：728（落入"其他 / 待分类"段）
+- **未分类**：729（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 728 |
+| [其他 / 待分类](#其他--待分类) | 729 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 728 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 729 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -340,6 +340,7 @@ sidebar:
 | `asterisk` | [Asterisk — 把企业总机做成一台 Linux 服务器](/study/papers/asterisk/) |
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) |
 | `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) |
+| `atzei-eth-attacks-2017` | [Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类](/study/papers/atzei-eth-attacks-2017/) |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) |
 | `autonomous-driving-waymo-2021` | [Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving](/study/papers/autonomous-driving-waymo-2021/) |
 | `avgustinov-codeql-2016` | [QL / CodeQL — 用面向对象外壳写可扩展代码查询](/study/papers/avgustinov-codeql-2016/) |
@@ -1039,7 +1040,7 @@ sidebar:
 
 ---
 
-## 全部 871 篇（字母序）
+## 全部 872 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1084,6 +1085,7 @@ sidebar:
 | `astree` | [ASTRÉE 分析器 — 让飞机控制代码的静态分析做到零警告](/study/papers/astree/) | 其他 |
 | `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) | 其他 |
 | `attention` | [Attention Is All You Need](/study/papers/attention/) | NLP 基础与 Scaling |
+| `atzei-eth-attacks-2017` | [Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类](/study/papers/atzei-eth-attacks-2017/) | 其他 |
 | `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | 其他 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
