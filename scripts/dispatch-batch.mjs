@@ -17,6 +17,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readJsonl, writeJsonl } from './lib/jsonl.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -55,15 +56,6 @@ function parseArgs() {
     else if (a === '--dry-run') args.dryRun = true;
   }
   return args;
-}
-
-async function readJsonl(filePath) {
-  const raw = await fs.readFile(filePath, 'utf8');
-  return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
-}
-
-async function writeJsonl(filePath, items) {
-  await fs.writeFile(filePath, items.map(x => JSON.stringify(x)).join('\n') + '\n');
 }
 
 function pickRewrite(pool, area, n) {

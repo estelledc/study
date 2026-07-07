@@ -13,6 +13,7 @@ import fs from 'node:fs/promises';
 import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readJsonl } from './lib/jsonl.mjs';
 import { emit } from './pipeline-events.mjs';
 import { validate } from './quality-gate.mjs';
 
@@ -60,11 +61,6 @@ function parseArgs() {
     else if (a === '--worktree') args.worktreeIdx = parseInt(process.argv[++i], 10);
   }
   return args;
-}
-
-async function readJsonl(p) {
-  const raw = await fs.readFile(p, 'utf8');
-  return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
 }
 
 async function findCandidate(slug) {

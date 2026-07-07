@@ -9,12 +9,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "test": "node --test",
     "atlas": "node scripts/regen-atlas.mjs",
     "prebuild": "node scripts/regen-atlas.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.30.3",
     "astro": "^5.0.0",
+    "js-yaml": "^4.3.0",
     "sharp": "^0.33.5"
   }
 }
