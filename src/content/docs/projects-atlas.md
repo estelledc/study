@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 798 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 799 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：798 个
+- **总数**：799 个
 - **已分类**：214
-- **未分类**：584（落入"其他 / 待分类"段）
+- **未分类**：585（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 584 |
+| [其他 / 待分类](#其他--待分类) | 585 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 584 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 585 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -957,6 +957,7 @@ sidebar:
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) |
 | `roo-code` | [Roo Code — 多模式 VS Code AI 助手](/study/projects/roo-code/) |
 | `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) |
+| `ros2` | [ROS 2 — 机器人软件的分布式消息底座](/study/projects/ros2/) |
 | `rt-thread` | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) |
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
@@ -1094,7 +1095,7 @@ sidebar:
 
 ---
 
-## 全部 798 个（字母序）
+## 全部 799 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1701,6 +1702,7 @@ sidebar:
 | `rollup` | [Rollup — ESM 优先的打包器](/study/projects/rollup/) | 构建工具 / Bundler |
 | `roo-code` | [Roo Code — 多模式 VS Code AI 助手](/study/projects/roo-code/) | 其他 |
 | `rook` | [Rook — 把 Ceph 装进 K8s 的 CRD 里](/study/projects/rook/) | 其他 |
+| `ros2` | [ROS 2 — 机器人软件的分布式消息底座](/study/projects/ros2/) | 其他 |
 | `rspack` | [rspack — 用 Rust 重写 webpack 的内核，但留下整个 plugin 生态](/study/projects/rspack/) | 构建工具 / Bundler |
 | `rt-thread` | [RT-Thread — 中文社区主导的物联网 RTOS](/study/projects/rt-thread/) | 其他 |
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) | 其他 |
