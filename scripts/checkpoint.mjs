@@ -5,15 +5,13 @@
 //   node scripts/checkpoint.mjs --write --round 8 --total-papers 163 ...
 //   node scripts/checkpoint.mjs --update <key> <value> # 单字段更新
 
-import fs from 'node:fs/promises';
+import { countNotesByArea } from './lib/content-store.mjs';
 import { readJsonOptional, writeJson } from './lib/json-store.mjs';
 import { readJsonl } from './lib/jsonl.mjs';
 import {
   CANDIDATES_PATH,
   CHECKPOINT_PATH,
   GRAVEYARD_PATH,
-  PAPERS_DIR,
-  PROJECTS_DIR,
   REWRITE_POOL_PATH,
 } from './lib/paths.mjs';
 
@@ -41,26 +39,16 @@ async function write(data) {
   await writeJson(CHECKPOINT, data);
 }
 
-async function countMd(dir) {
-  try {
-    return (await fs.readdir(dir)).filter(f => f.endsWith('.md') && !f.startsWith('_')).length;
-  } catch (err) {
-    if (err.code === 'ENOENT') return 0;
-    throw err;
-  }
-}
-
 async function autoStats() {
   // 单次读 candidates，本地双 filter；并行读 papers/projects/pool/graveyard
-  const [papers, projects, candidates, pool, graveyard] = await Promise.all([
-    countMd(PAPERS_DIR),
-    countMd(PROJECTS_DIR),
+  const [totals, candidates, pool, graveyard] = await Promise.all([
+    countNotesByArea(),
     readJsonl(CANDIDATES_PATH, { missing: 'empty' }),
     readJsonl(REWRITE_POOL_PATH, { missing: 'empty' }),
     readJsonl(GRAVEYARD_PATH, { missing: 'empty' }),
   ]);
   return {
-    total: { papers, projects },
+    total: totals,
     queue: {
       papers: candidates.filter(c => c.status === 'queued' && c.area === 'papers').length,
       projects: candidates.filter(c => c.status === 'queued' && c.area === 'projects').length,

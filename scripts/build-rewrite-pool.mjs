@@ -8,8 +8,9 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { listAreaNotes } from './lib/content-store.mjs';
 import { extractFrontmatterBlock, hasFrontmatterKey, parseFrontmatterKeyValues } from './lib/frontmatter.mjs';
-import { PAPERS_DIR, PROJECTS_DIR, REWRITE_POOL_PATH, ROOT } from './lib/paths.mjs';
+import { REWRITE_POOL_PATH, ROOT } from './lib/paths.mjs';
 
 const OUT_PATH = REWRITE_POOL_PATH;
 
@@ -85,19 +86,11 @@ async function scoreNote(filePath, area) {
   };
 }
 
-async function scanDir(dir, area) {
-  let entries;
-  try {
-    entries = await fs.readdir(dir);
-  } catch (err) {
-    if (err.code === 'ENOENT') return [];
-    throw err;
-  }
+async function scanArea(area) {
+  const notes = await listAreaNotes(area);
   const results = [];
-  for (const f of entries) {
-    if (!f.endsWith('.md') || f.startsWith('_')) continue;
-    const filePath = path.join(dir, f);
-    results.push(await scoreNote(filePath, area));
+  for (const note of notes) {
+    results.push(await scoreNote(note.path, area));
   }
   return results;
 }
@@ -121,8 +114,8 @@ async function loadExistingStatus() {
 async function main() {
   const incremental = process.argv.includes('--incremental') || process.argv.includes('-i');
   await fs.mkdir(path.dirname(OUT_PATH), { recursive: true });
-  const papers = await scanDir(PAPERS_DIR, 'papers');
-  const projects = await scanDir(PROJECTS_DIR, 'projects');
+  const papers = await scanArea('papers');
+  const projects = await scanArea('projects');
   const all = [...papers, ...projects];
 
   // 只保留 score >= 1 的（无 reason 就不算 rewrite 候选）

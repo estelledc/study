@@ -8,12 +8,11 @@
 
 import fs from 'node:fs/promises';
 import { execSync } from 'node:child_process';
+import { countNotesByArea } from './lib/content-store.mjs';
 import { readJson } from './lib/json-store.mjs';
 import { readJsonl } from './lib/jsonl.mjs';
 import {
   CANDIDATES_PATH,
-  PAPERS_DIR,
-  PROJECTS_DIR,
   REWRITE_POOL_PATH,
   ROOT,
   STATUS_JSON_PATH,
@@ -46,16 +45,6 @@ async function readJsonlSafe(filePath) {
 
 async function readJsonSafe(filePath, fallback) {
   return readJson(filePath, { missing: fallback });
-}
-
-async function countDir(dir) {
-  try {
-    const ls = await fs.readdir(dir);
-    return ls.filter(f => f.endsWith('.md') && !f.startsWith('_')).length;
-  } catch (err) {
-    if (err.code === 'ENOENT') return 0;
-    throw err;
-  }
 }
 
 function statusBreakdown(items) {
@@ -184,10 +173,7 @@ async function main() {
   const pool = await readJsonlSafe(REWRITE_POOL);
   const status = await readJsonSafe(STATUS_JSON, {});
 
-  const totals = {
-    papers: await countDir(PAPERS_DIR),
-    projects: await countDir(PROJECTS_DIR),
-  };
+  const totals = await countNotesByArea();
 
   const candByStatus = statusBreakdown(candidates);
   const poolByStatus = statusBreakdown(pool);

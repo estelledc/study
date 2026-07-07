@@ -4,6 +4,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { listAreaNotes } from './lib/content-store.mjs';
 import {
   markCandidatesWritten,
   markRewritePoolWritten,
@@ -13,26 +14,12 @@ import {
   writeRewritePool,
 } from './lib/queue-store.mjs';
 import {
-  PAPERS_DIR,
-  PROJECTS_DIR,
   WRITTEN_PATH,
 } from './lib/paths.mjs';
 
-async function listSlugs(dir, area) {
-  try {
-    const entries = await fs.readdir(dir);
-    return entries
-      .filter(f => f.endsWith('.md') && !f.startsWith('_'))
-      .map(f => ({ slug: f.replace(/\.md$/, ''), area }));
-  } catch (err) {
-    if (err.code === 'ENOENT') return [];
-    throw err;
-  }
-}
-
 async function rebuildWritten() {
-  const papers = await listSlugs(PAPERS_DIR, 'papers');
-  const projects = await listSlugs(PROJECTS_DIR, 'projects');
+  const papers = await listAreaNotes('papers');
+  const projects = await listAreaNotes('projects');
   const all = [...papers, ...projects];
   // 排序：按 area 分段
   papers.sort((a, b) => a.slug.localeCompare(b.slug));
