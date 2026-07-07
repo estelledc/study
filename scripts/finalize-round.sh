@@ -77,10 +77,11 @@ preflight() {
     [[ -f "$f" ]] || preflight_error "missing required data file: $f"
   done
 
-  local w
-  for w in "${WORKTREES[@]}"; do
-    [[ -d "$w" ]] || preflight_error "missing worktree: $w"
-  done
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    node "$ROOT/scripts/worktree-doctor.mjs" || true
+  else
+    node "$ROOT/scripts/worktree-doctor.mjs" --json --strict >/dev/null || preflight_error "worktree doctor failed"
+  fi
 }
 
 restore_regen_changes() {
