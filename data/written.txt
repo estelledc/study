@@ -546,6 +546,7 @@ netkat-2014
 neumann-2015-large-joins
 neumf-2017
 newcombe-2011-kinectfusion
+newsome-taintcheck-2005
 nfs-1985
 nickolls-dally-2010-cuda-era
 nieuwenhuis-dpll-t-2006
