@@ -24,15 +24,35 @@ lr search "{{title}}" -f json -l 3
 
 读 JSON 输出，从中提取 arXiv ID（如有）、DOI、引用数、作者列表。如果搜不到，跳到 Step 2 直接用 `{{url}}`。
 
-### Step 2：用 arxiv MCP 拿原文
+### Step 2：用 MinerU 拿原文（禁止 lr pdf）
 
-如果 Step 1 拿到 arXiv ID（形如 `2401.12345`）：
+papers 全文解析统一走 MinerU 精准解析 API。**不要**使用 `lr pdf` / `lr pdf read` / `mcp__arxiv__download_paper` / `mcp__arxiv__read_paper` / WebFetch OCR PDF，避免消耗错误额度。
 
-1. `mcp__arxiv__get_abstract` 拿摘要 + 元数据
-2. `mcp__arxiv__download_paper` 下载
-3. `mcp__arxiv__read_paper` 读全文
+先确认本机已经有密钥（密钥只放环境变量或 gitignored `.env`，不要写进笔记 / prompt / commit）：
 
-如果**没有** arXiv ID（老论文 / 闭源期刊）：用 WebFetch 拿 `{{url}}` 的内容（PDF 文本会被服务端 OCR / 抽取）。
+```bash
+test -n "$MINERU_API_KEY" || test -f "{{repo_root}}/.env"
+```
+
+用 MinerU 解析候选 URL，输出临时 Markdown 作为全文依据：
+
+```bash
+node {{repo_root}}/scripts/mineru-extract-url.mjs \
+  --url "{{url}}" \
+  --slug "{{slug}}" \
+  --out /tmp/{{slug}}-mineru/full.md
+```
+
+如果 `{{url}}` 是 DOI / landing page 且 MinerU 报 URL 解析失败：先用 `lr search` 结果或 DOI 页面找到真实 PDF URL，再用同一命令重试；如果只能下载到本地 PDF，则用批量上传 fallback：
+
+```bash
+node {{repo_root}}/scripts/mineru-extract-url.mjs \
+  --file /tmp/{{slug}}.pdf \
+  --slug "{{slug}}" \
+  --out /tmp/{{slug}}-mineru/full.md
+```
+
+读取 `/tmp/{{slug}}-mineru/full.md`，不要把 MinerU 输出全文直接复制进笔记，只消化成自己的 5 条问答。
 
 读完后心里要有以下 5 条问答的答案：
 - 这篇解决什么问题？

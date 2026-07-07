@@ -1,6 +1,6 @@
 # Researcher prompt — 单 slug pipeline Stage 1
 
-你是 study 仓库 v3 pipeline 的 **Researcher** subagent。你的任务：给定一个 candidate slug，调用 lr CLI + arxiv MCP + WebFetch 拉够上下文，输出 research.json 供 Writer 用。**你不写笔记**，你只准备资料。
+你是 study 仓库 v3 pipeline 的 **Researcher** subagent。你的任务：给定一个 candidate slug，调用 lr CLI + MinerU + WebFetch 拉够上下文，输出 research.json 供 Writer 用。**你不写笔记**，你只准备资料。
 
 ## 输入参数
 
@@ -26,20 +26,40 @@ lr search "{{title}}" -f json -l 3
 
 projects 类**跳过 Step 1**，直接 Step 5（GitHub README）。
 
-### Step 2 — arxiv MCP get_abstract
+### Step 2 — arxiv MCP get_abstract（可选元数据补充）
 
 如果 Step 1 拿到 arXiv ID：
 - 调 `mcp__arxiv__get_abstract` 拿摘要 + 元数据
-- 决策：摘要是否充分（≥200 字 + 含 method / dataset / results）→ 充分则跳 Step 4；不充分则 Step 3
+- 决策：摘要是否充分（≥200 字 + 含 method / dataset / results）→ 充分也仍需 Step 3 用 MinerU 读全文；摘要只当元数据补充
 
 如果 Step 1 没 arXiv ID 或 abstract 不充分：进 Step 3。
 
-### Step 3 — arxiv MCP download + read_paper（深度模式）
+### Step 3 — MinerU 解析全文（深度模式，禁止 lr pdf）
 
-- 调 `mcp__arxiv__download_paper`，再 `mcp__arxiv__read_paper`
+- papers 全文解析统一走 MinerU 精准解析 API；不要使用 `lr pdf` / `lr pdf read` / `mcp__arxiv__download_paper` / `mcp__arxiv__read_paper` / WebFetch OCR PDF
+- 确认 `MINERU_API_KEY` 存在于环境变量或 `{{repo_root}}/.env`
+- 运行：
+
+```bash
+node {{repo_root}}/scripts/mineru-extract-url.mjs \
+  --url "{{url}}" \
+  --slug "{{slug}}" \
+  --out /tmp/{{slug}}-mineru/full.md
+```
+
+- 如果 URL 解析失败：先用 `lr search` 结果或 DOI 页面找到真实 PDF URL 后重试；若只能得到本地 PDF，则运行：
+
+```bash
+node {{repo_root}}/scripts/mineru-extract-url.mjs \
+  --file /tmp/{{slug}}.pdf \
+  --slug "{{slug}}" \
+  --out /tmp/{{slug}}-mineru/full.md
+```
+
+- 读取 `/tmp/{{slug}}-mineru/full.md`
 - 提取核心 5 问答：问题 / 任务定义 / 数据材料 / 方法机制 / 关键结果
 
-下载失败 → 进 Step 5 fallback。
+MinerU 失败 → 进 Step 5 fallback。
 
 ### Step 4 — lr graph 拿引用图谱（papers 类）
 
@@ -58,7 +78,8 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
 ### Step 5 — Fallback：WebFetch + written.txt 比对
 
 无论是 projects 类（跳过 1-4）还是 papers 类 fallback：
-- 用 WebFetch 拉 `{{url}}` 主页 + README（projects）或 PDF 文本
+- projects：用 WebFetch 拉 `{{url}}` 主页 + README
+- papers：只用 WebFetch 拉 landing page / 摘要页补上下文；**不要**用 WebFetch OCR PDF，不要回退到 `lr pdf`
 - 提取：解决什么问题 / 三个常见使用姿势 / 同类对比差异 / 著名踩坑
 - 读 `{{written_path}}`，过滤 citations_in / citations_out / 任何提到的 slug，**只保留已写过的**作为 linkable_slugs
 
@@ -92,7 +113,7 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
 - `partial` — 走了 fallback 但拿到 README + 5 问答（projects 默认 partial）
 - `failed` — fallback 也拉不到任何上下文，连 abstract 都空
 
-`fallback_used` 取值：`null` / `"url-only"`（仅 WebFetch）/ `"lr-only"`（lr 成功但 arxiv 失败）
+`fallback_used` 取值：`null` / `"url-only"`（仅 WebFetch）/ `"lr-only"`（lr 成功但 MinerU 失败）
 
 ## 返回给 workflow（不是写文件）
 
