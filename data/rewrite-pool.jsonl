@@ -1,4 +1,4 @@
 {"slug":"lexical","area":"projects","path":"src/content/docs/projects/lexical.md","score":4,"reasons":["lines:682>250","legacy-frontmatter","h2-hits:1/11"],"lines":682,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"lottie","area":"projects","path":"src/content/docs/projects/lottie.md","score":4,"reasons":["lines:461>250","legacy-frontmatter","h2-hits:1/11"],"lines":461,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
 {"slug":"plane","area":"projects","path":"src/content/docs/projects/plane.md","score":4,"reasons":["lines:851>250","legacy-frontmatter","h2-hits:1/11"],"lines":851,"h2_hits":1,"status":"available","claimed_by":null,"attempts":0}
-{"slug":"hindley-milner","area":"papers","path":"src/content/docs/papers/hindley-milner.md","score":2,"reasons":["lines:278>250"],"lines":278,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
+{"slug":"hindley-milner","area":"papers","path":"src/content/docs/papers/hindley-milner.md","score":2,"reasons":["lines:277>250"],"lines":277,"h2_hits":11,"status":"available","claimed_by":null,"attempts":0}
