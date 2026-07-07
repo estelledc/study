@@ -8,6 +8,8 @@
 
 import fs from 'node:fs/promises';
 import { execSync } from 'node:child_process';
+import { readJson } from './lib/json-store.mjs';
+import { readJsonl } from './lib/jsonl.mjs';
 import {
   CANDIDATES_PATH,
   PAPERS_DIR,
@@ -39,22 +41,11 @@ function parseArgs() {
 }
 
 async function readJsonlSafe(filePath) {
-  try {
-    const raw = await fs.readFile(filePath, 'utf8');
-    return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
-  } catch (err) {
-    if (err.code === 'ENOENT') return [];
-    throw err;
-  }
+  return readJsonl(filePath, { missing: 'empty' });
 }
 
 async function readJsonSafe(filePath, fallback) {
-  try {
-    return JSON.parse(await fs.readFile(filePath, 'utf8'));
-  } catch (err) {
-    if (err.code === 'ENOENT') return fallback;
-    throw err;
-  }
+  return readJson(filePath, { missing: fallback });
 }
 
 async function countDir(dir) {

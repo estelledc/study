@@ -6,7 +6,8 @@
 //   node scripts/checkpoint.mjs --update <key> <value> # 单字段更新
 
 import fs from 'node:fs/promises';
-import path from 'node:path';
+import { readJsonOptional, writeJson } from './lib/json-store.mjs';
+import { readJsonl } from './lib/jsonl.mjs';
 import {
   CANDIDATES_PATH,
   CHECKPOINT_PATH,
@@ -32,17 +33,12 @@ const DEFAULT = {
 };
 
 async function read() {
-  try {
-    return JSON.parse(await fs.readFile(CHECKPOINT, 'utf8'));
-  } catch (err) {
-    if (err.code === 'ENOENT') return { ...DEFAULT };
-    throw err;
-  }
+  const { data, missing } = await readJsonOptional(CHECKPOINT);
+  return missing ? { ...DEFAULT } : data;
 }
 
 async function write(data) {
-  await fs.mkdir(path.dirname(CHECKPOINT), { recursive: true });
-  await fs.writeFile(CHECKPOINT, JSON.stringify(data, null, 2));
+  await writeJson(CHECKPOINT, data);
 }
 
 async function countMd(dir) {
@@ -54,24 +50,14 @@ async function countMd(dir) {
   }
 }
 
-async function readJsonlLines(filePath) {
-  try {
-    const raw = await fs.readFile(filePath, 'utf8');
-    return raw.split('\n').filter(Boolean).map(l => JSON.parse(l));
-  } catch (err) {
-    if (err.code === 'ENOENT') return [];
-    throw err;
-  }
-}
-
 async function autoStats() {
   // 单次读 candidates，本地双 filter；并行读 papers/projects/pool/graveyard
   const [papers, projects, candidates, pool, graveyard] = await Promise.all([
     countMd(PAPERS_DIR),
     countMd(PROJECTS_DIR),
-    readJsonlLines(CANDIDATES_PATH),
-    readJsonlLines(REWRITE_POOL_PATH),
-    readJsonlLines(GRAVEYARD_PATH),
+    readJsonl(CANDIDATES_PATH, { missing: 'empty' }),
+    readJsonl(REWRITE_POOL_PATH, { missing: 'empty' }),
+    readJsonl(GRAVEYARD_PATH, { missing: 'empty' }),
   ]);
   return {
     total: { papers, projects },

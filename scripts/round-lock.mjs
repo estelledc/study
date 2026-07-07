@@ -10,20 +10,19 @@
 //   - 若锁存在且 < 90 min → 拒绝（exit 1）
 
 import fs from 'node:fs/promises';
-import path from 'node:path';
+import { readJson, writeJson } from './lib/json-store.mjs';
 import { ROUND_LOCK_PATH } from './lib/paths.mjs';
 
 const LOCK = ROUND_LOCK_PATH;
 const STALE_MS = 90 * 60 * 1000;
 
 async function readLock() {
-  try { return JSON.parse(await fs.readFile(LOCK, 'utf8')); }
+  try { return await readJson(LOCK); }
   catch { return null; }
 }
 
 async function writeLock(d) {
-  await fs.mkdir(path.dirname(LOCK), { recursive: true });
-  await fs.writeFile(LOCK, JSON.stringify(d, null, 2));
+  await writeJson(LOCK, d);
 }
 
 async function deleteLock() {

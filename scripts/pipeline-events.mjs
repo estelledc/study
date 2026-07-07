@@ -2,6 +2,7 @@
 // 所有 stage transition 一行 JSON 写入 data/pipeline-events.jsonl
 
 import fs from 'node:fs';
+import { parseJson } from './lib/json-store.mjs';
 import { PIPELINE_EVENTS_PATH } from './lib/paths.mjs';
 
 const EVENTS_PATH = PIPELINE_EVENTS_PATH;
@@ -36,5 +37,5 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     console.error('usage: node pipeline-events.mjs \'{"event":"...", ...}\'');
     process.exit(2);
   }
-  emit(JSON.parse(raw));
+  emit(parseJson(raw, 'pipeline-event-arg'));
 }
