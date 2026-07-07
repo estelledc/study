@@ -1437,6 +1437,7 @@ scipy
 scoop
 scroll
 sd
+sdk-nrf
 seaborn
 sealed-secrets
 sentry
