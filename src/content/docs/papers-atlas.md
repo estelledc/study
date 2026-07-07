@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 846 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 847 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：846 篇
+- **总数**：847 篇
 - **已分类**：143
-- **未分类**：703（落入"其他 / 待分类"段）
+- **未分类**：704（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 703 |
+| [其他 / 待分类](#其他--待分类) | 704 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 703 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 704 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -839,6 +839,7 @@ sidebar:
 | `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
 | `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) |
+| `regev-lwe-2005` | [Regev LWE 2005 — 把带噪声方程变成后量子密码地基](/study/papers/regev-lwe-2005/) |
 | `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
@@ -1014,7 +1015,7 @@ sidebar:
 
 ---
 
-## 全部 846 篇（字母序）
+## 全部 847 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1650,6 +1651,7 @@ sidebar:
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) | 其他 |
 | `reflexion` | [Reflexion — 让 LLM 自我反思](/study/papers/reflexion/) | 智能体与 LLM 系统 |
 | `reformer-2020` | [Reformer — 用哈希分桶把 attention 从 O(L²) 压到 O(L log L)](/study/papers/reformer-2020/) | 其他 |
+| `regev-lwe-2005` | [Regev LWE 2005 — 把带噪声方程变成后量子密码地基](/study/papers/regev-lwe-2005/) | 其他 |
 | `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | 其他 |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 其他 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
