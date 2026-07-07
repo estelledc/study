@@ -301,6 +301,7 @@ fsdp-2023
 fsrs-spaced-repetition
 fstar
 g1-collector
+gabizon-plonk-2019
 gadt-pjones
 game-semantics-pcf
 gao-2001-as-relations
