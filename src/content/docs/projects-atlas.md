@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 774 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 775 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：774 个
+- **总数**：775 个
 - **已分类**：214
-- **未分类**：560（落入"其他 / 待分类"段）
+- **未分类**：561（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 560 |
+| [其他 / 待分类](#其他--待分类) | 561 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 560 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 561 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -794,6 +794,7 @@ sidebar:
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) |
 | `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) |
+| `lora-mac-node` | [LoRaMac-node — LoRaWAN 终端协议栈参考实现](/study/projects/lora-mac-node/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `lunarvim` | [LunarVim — 开箱即用的 Neovim IDE 发行版](/study/projects/lunarvim/) |
 | `lwip` | [lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈](/study/projects/lwip/) |
@@ -1070,7 +1071,7 @@ sidebar:
 
 ---
 
-## 全部 774 个（字母序）
+## 全部 775 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1448,6 +1449,7 @@ sidebar:
 | `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) | 其他 |
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | 监控 / 时序 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | 其他 |
+| `lora-mac-node` | [LoRaMac-node — LoRaWAN 终端协议栈参考实现](/study/projects/lora-mac-node/) | 其他 |
 | `lottie` | [lottie-web — 把设计师的 AE 工程变成跨端可渲染 JSON 的播放器](/study/projects/lottie/) | 动画 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |
