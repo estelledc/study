@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 776 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 777 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：776 个
+- **总数**：777 个
 - **已分类**：214
-- **未分类**：562（落入"其他 / 待分类"段）
+- **未分类**：563（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 562 |
+| [其他 / 待分类](#其他--待分类) | 563 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 562 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 563 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -831,6 +831,7 @@ sidebar:
 | `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
+| `mosquitto` | [Mosquitto — C 写的轻量 MQTT 消息中转站](/study/projects/mosquitto/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
@@ -1072,7 +1073,7 @@ sidebar:
 
 ---
 
-## 全部 776 个（字母序）
+## 全部 777 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1504,6 +1505,7 @@ sidebar:
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | 其他 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
+| `mosquitto` | [Mosquitto — C 写的轻量 MQTT 消息中转站](/study/projects/mosquitto/) | 其他 |
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | 其他 |
 | `msw` | [MSW — 让 mock 不改业务代码，在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
