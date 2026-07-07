@@ -1328,6 +1328,7 @@ oh-my-posh
 ollama
 open-sora
 openai-agents-sdk
+opencode
 openlayers
 openmeetings
 openrct2
