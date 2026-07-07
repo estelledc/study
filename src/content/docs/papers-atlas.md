@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 841 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 842 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：841 篇
+- **总数**：842 篇
 - **已分类**：143
-- **未分类**：698（落入"其他 / 待分类"段）
+- **未分类**：699（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 698 |
+| [其他 / 待分类](#其他--待分类) | 699 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 698 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 699 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -386,6 +386,7 @@ sidebar:
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
 | `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) |
+| `cadar-klee-2008` | [KLEE — 用符号执行自动给复杂系统程序生成高覆盖测试](/study/papers/cadar-klee-2008/) |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) |
@@ -1009,7 +1010,7 @@ sidebar:
 
 ---
 
-## 全部 841 篇（字母序）
+## 全部 842 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1109,6 +1110,7 @@ sidebar:
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
 | `bvt-1999` | [BVT 1999 — 让一份调度器同时照顾"急性子"和"老黄牛"](/study/papers/bvt-1999/) | 其他 |
 | `byzantine-generals-1982` | [拜占庭将军问题 — 节点能撒谎时怎么达成一致](/study/papers/byzantine-generals-1982/) | 其他 |
+| `cadar-klee-2008` | [KLEE — 用符号执行自动给复杂系统程序生成高覆盖测试](/study/papers/cadar-klee-2008/) | 其他 |
 | `caesar-rexford-2005` | [Caesar-Rexford 2005 — 你的包为什么绕了大半个地球](/study/papers/caesar-rexford-2005/) | 其他 |
 | `cakeml` | [CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器](/study/papers/cakeml/) | 其他 |
 | `calculus-of-constructions` | [Calculus of Constructions — 让程序和数学证明共用一种语言](/study/papers/calculus-of-constructions/) | 其他 |
