@@ -1263,6 +1263,7 @@ mariadb-server
 markdown-it
 marked
 marktext
+marlin
 matplotlib
 matrix-js-sdk
 matrix-rust-sdk
