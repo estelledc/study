@@ -1315,6 +1315,7 @@ opentelemetry-collector
 opentofu
 opentsdb
 openvidu
+openvscode-server
 openwrt
 openzeppelin-contracts
 operator-sdk
