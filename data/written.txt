@@ -194,6 +194,7 @@ cutlass-2020
 cytoscape-js
 dafny-2010
 dalle-2
+danezis-sphinx-2009
 dapper-2010
 dash-numa-1992
 dataflow-model-2015
