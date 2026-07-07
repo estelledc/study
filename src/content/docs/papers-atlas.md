@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 855 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 856 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：855 篇
+- **总数**：856 篇
 - **已分类**：143
-- **未分类**：712（落入"其他 / 待分类"段）
+- **未分类**：713（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 712 |
+| [其他 / 待分类](#其他--待分类) | 713 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 712 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 713 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -489,6 +489,7 @@ sidebar:
 | `diffie-hellman-1976` | [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) |
 | `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) |
 | `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) |
+| `dingledine-mixminion-2003` | [Mixminion — 用一次性回信票据保护匿名邮件](/study/papers/dingledine-mixminion-2003/) |
 | `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) |
 | `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) |
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |
@@ -1023,7 +1024,7 @@ sidebar:
 
 ---
 
-## 全部 855 篇（字母序）
+## 全部 856 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1249,6 +1250,7 @@ sidebar:
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) | 其他 |
+| `dingledine-mixminion-2003` | [Mixminion — 用一次性回信票据保护匿名邮件](/study/papers/dingledine-mixminion-2003/) | 其他 |
 | `dino` | [DINO 自监督视觉 transformer](/study/papers/dino/) | 计算机视觉 |
 | `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) | 其他 |
 | `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) | 其他 |
