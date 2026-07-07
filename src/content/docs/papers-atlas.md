@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 842 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 843 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：842 篇
+- **总数**：843 篇
 - **已分类**：143
-- **未分类**：699（落入"其他 / 待分类"段）
+- **未分类**：700（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 699 |
+| [其他 / 待分类](#其他--待分类) | 700 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 699 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 700 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -375,6 +375,7 @@ sidebar:
 | `bonawitz-fl-system-2019` | [Bonawitz 2019 — Google 联邦学习的工业级系统设计](/study/papers/bonawitz-fl-system-2019/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
+| `bowe-halo-2019` | [Halo 2019 — 不靠可信仪式递归压缩证明](/study/papers/bowe-halo-2019/) |
 | `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) |
 | `brakerski-bgv-2012` | [BGV 2012 — 不用自举也能做全同态加密](/study/papers/brakerski-bgv-2012/) |
 | `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) |
@@ -1010,7 +1011,7 @@ sidebar:
 
 ---
 
-## 全部 842 篇（字母序）
+## 全部 843 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1099,6 +1100,7 @@ sidebar:
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | 其他 |
+| `bowe-halo-2019` | [Halo 2019 — 不靠可信仪式递归压缩证明](/study/papers/bowe-halo-2019/) | 其他 |
 | `bpr-2009` | [BPR — 用『i 比 j 更受欢迎』替代『i 是正例 j 是负例』](/study/papers/bpr-2009/) | 其他 |
 | `brakerski-bgv-2012` | [BGV 2012 — 不用自举也能做全同态加密](/study/papers/brakerski-bgv-2012/) | 其他 |
 | `branch-prediction-yeh-patt-1991` | [Yeh-Patt 1991 — 用最近 12 条分支的历史给 CPU 算命](/study/papers/branch-prediction-yeh-patt-1991/) | 其他 |
