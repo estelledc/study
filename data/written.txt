@@ -1316,6 +1316,7 @@ mongodb
 mosquitto
 motion-one
 move-language
+moveit2
 msw
 mumble
 mysql
