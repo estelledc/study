@@ -2,6 +2,47 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkWikilinks from './scripts/remark-wikilinks.mjs';
 
+const textOnlyCodeFenceLanguages = [
+  'agda',
+  'algol',
+  'aql',
+  'bnf',
+  'caddyfile',
+  'capnp',
+  'cfg',
+  'conf',
+  'cuda',
+  'dafny',
+  'earthfile',
+  'edgeql',
+  'env',
+  'flux',
+  'fstar',
+  'granule',
+  'idris',
+  'isar',
+  'lambda',
+  'logql',
+  'ml',
+  'mlir',
+  'ngql',
+  'nuprl',
+  'org',
+  'p4',
+  'promela',
+  'promql',
+  'pseudo',
+  'self',
+  'sml',
+  'smt2',
+  'smv',
+  'thrift',
+  'tla',
+  'traceql',
+  'xonsh',
+  'yacc',
+];
+
 export default defineConfig({
   site: 'https://estelledc.github.io',
   base: '/study',
@@ -16,8 +57,13 @@ export default defineConfig({
       locales: {
         root: { label: '简体中文', lang: 'zh-CN' },
       },
-      social: {
-        github: 'https://github.com/estelledc/study',
+      social: [
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/estelledc/study' },
+      ],
+      expressiveCode: {
+        shiki: {
+          langAlias: Object.fromEntries(textOnlyCodeFenceLanguages.map((lang) => [lang, 'txt'])),
+        },
       },
       // Sidebar 是骨架，不放 100+ 笔记的扁平列表。
       // 笔记发现走 papers-atlas / projects-atlas（多维索引，scripts/regen-atlas.mjs 自动生成）

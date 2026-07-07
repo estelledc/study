@@ -18,7 +18,7 @@
     "prebuild": "node scripts/regen-atlas.mjs"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.30.3",
+    "@astrojs/starlight": "^0.37.7",
     "astro": "^5.0.0",
     "js-yaml": "^4.3.0",
     "sharp": "^0.33.5"

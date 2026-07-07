@@ -12,8 +12,8 @@ sidebar:
 ## 总览
 
 - **总数**：766 个
-- **已分类**：213
-- **未分类**：553（落入"其他 / 待分类"段）
+- **已分类**：214
+- **未分类**：552（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -27,7 +27,7 @@ sidebar:
 | [i18n 国际化](#i18n-国际化) | 5 |
 | [构建工具 / Bundler](#构建工具---bundler) | 12 |
 | [ORM / DB 客户端](#orm---db-客户端) | 8 |
-| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 23 |
+| [数据库本体 / 存储引擎](#数据库本体---存储引擎) | 24 |
 | [DevOps / 容器 / 运维](#devops---容器---运维) | 13 |
 | [监控 / 时序](#监控---时序) | 8 |
 | [Web 框架](#web-框架) | 6 |
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 553 |
+| [其他 / 待分类](#其他--待分类) | 552 |
 
 ---
 
@@ -165,7 +165,7 @@ sidebar:
 
 ## 数据库本体 / 存储引擎
 
-共 23 个。
+共 24 个。
 
 | 项目 | 描述 |
 |---|---|
@@ -178,6 +178,7 @@ sidebar:
 | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) |  |
 | [Apache Kafka — 分布式流处理平台](/study/projects/kafka/) |  |
 | [LevelDB — Google LSM 库](/study/projects/leveldb/) |  |
+| [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) |  |
 | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) |  |
 | [Milvus — 开源向量数据库](/study/projects/milvus/) |  |
 | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) |  |
@@ -502,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 553 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 552 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -798,7 +799,6 @@ sidebar:
 | `manticoresearch` | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) |
 | `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) |
-| `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) |
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
@@ -1448,7 +1448,7 @@ sidebar:
 | `manticoresearch` | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) | 其他 |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) | 其他 |
 | `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) | 其他 |
-| `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 其他 |
+| `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 数据库本体 / 存储引擎 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) | 其他 |

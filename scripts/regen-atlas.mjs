@@ -41,9 +41,9 @@ const THEMES_PAPERS = {
     'paxos', 'raft', 'spanner', 'chubby', 'lamport-1978',
   ],
   '数据库': [
-    'selinger-1979', 'volcano', 'snowflake', 'rocksdb-lsm', 'clickhouse',
-    'kafka', 'calvin', 'dynamo', 'aurora', 'bigtable',
-    'foundationdb', 'tigerbeetle',
+    'selinger-1979', 'volcano', 'snowflake-2016', 'rocksdb-lsm', 'clickhouse',
+    'kafka', 'calvin-2012', 'dynamo', 'aurora', 'bigtable-2006',
+    'foundationdb-2021', 'tigerbeetle',
   ],
   '分布式训练 / GPU': [
     'megatron-lm', 'deepspeed-zero', 'vllm', 'flash-attention',
@@ -114,8 +114,8 @@ const THEMES_PROJECTS = {
   ],
   '数据库本体 / 存储引擎': [
     'postgresql', 'redis', 'sqlite', 'clickhouse', 'mongodb',
-    'cockroachdb', 'tidb', 'cassandra', 'mariadb', 'mysql',
-    'rocksdb', 'leveldb', 'lmdb', 'valkey', 'duckdb',
+    'cockroachdb', 'tidb', 'cassandra', 'mariadb-server', 'mysql',
+    'rocksdb', 'leveldb', 'valkey', 'duckdb',
     'elasticsearch', 'kafka', 'milvus',
     'neo4j', 'dgraph', 'arangodb',
     'meilisearch', 'typesense', 'qdrant', 'weaviate',
@@ -133,10 +133,10 @@ const THEMES_PROJECTS = {
     'hono', 'fastify', 'express', 'koa', 'nestjs', 'elysia',
   ],
   'UI 框架 / Frontend Framework': [
-    'react', 'vue', 'svelte', 'solid', 'preact', 'qwik', 'lit',
+    'react', 'vue', 'svelte', 'solid', 'preact', 'qwik',
   ],
   'Meta 框架 / 全栈': [
-    'next-js', 'nuxt', 'remix', 'astro', 'sveltekit', 'gatsby',
+    'next-js', 'nuxt', 'remix', 'astro', 'sveltekit',
   ],
   'Auth 认证': [
     'auth-js', 'better-auth', 'lucia', 'clerk', 'supertokens',
