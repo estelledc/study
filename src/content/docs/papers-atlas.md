@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 853 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 854 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：853 篇
+- **总数**：854 篇
 - **已分类**：143
-- **未分类**：710（落入"其他 / 待分类"段）
+- **未分类**：711（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 710 |
+| [其他 / 待分类](#其他--待分类) | 711 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 710 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 711 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -560,6 +560,7 @@ sidebar:
 | `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) |
 | `frangipani-1997` | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) |
 | `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) |
+| `freedman-psi-2004` | [Freedman PSI 2004 — 把集合交集算出来但不交出名单](/study/papers/freedman-psi-2004/) |
 | `frenetic-2011` | [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) |
 | `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) |
 | `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) |
@@ -1021,7 +1022,7 @@ sidebar:
 
 ---
 
-## 全部 853 篇（字母序）
+## 全部 854 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1329,6 +1330,7 @@ sidebar:
 | `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) | 其他 |
 | `frangipani-1997` | [Frangipani — 把分布式文件系统盖在共享虚拟磁盘上](/study/papers/frangipani-1997/) | 其他 |
 | `frank-effects` | [Frank — 让 effect handler 写得就像普通函数](/study/papers/frank-effects/) | 其他 |
+| `freedman-psi-2004` | [Freedman PSI 2004 — 把集合交集算出来但不交出名单](/study/papers/freedman-psi-2004/) | 其他 |
 | `frenetic-2011` | [Frenetic 2011 — 把 OpenFlow 流表换成函数式程序](/study/papers/frenetic-2011/) | 其他 |
 | `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) | 其他 |
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
