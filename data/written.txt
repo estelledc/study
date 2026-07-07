@@ -171,6 +171,7 @@ cook-levin
 cook-torrance-1982
 copilot-rct
 cops-2011
+costan-sgx-explained-2016
 cot
 coturn
 couchdb
