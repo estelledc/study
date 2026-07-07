@@ -1361,6 +1361,7 @@ orleans
 otel-collector
 ovenmediaengine
 oxc
+paddle-lite
 paddleocr
 panda3d
 pandas
