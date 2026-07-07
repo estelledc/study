@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 868 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 869 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：868 篇
+- **总数**：869 篇
 - **已分类**：143
-- **未分类**：725（落入"其他 / 待分类"段）
+- **未分类**：726（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 725 |
+| [其他 / 待分类](#其他--待分类) | 726 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 725 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 726 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -449,6 +449,7 @@ sidebar:
 | `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) |
 | `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) |
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) |
+| `costan-sgx-explained-2016` | [Intel SGX Explained — 把云主机里的一小块程序锁进硬件保险箱](/study/papers/costan-sgx-explained-2016/) |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) |
 | `couchdb` | [CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库](/study/papers/couchdb/) |
 | `cousot-abstract-interpretation` | [Cousot 抽象解释 — 给静态分析一套统一数学框架](/study/papers/cousot-abstract-interpretation/) |
@@ -1036,7 +1037,7 @@ sidebar:
 
 ---
 
-## 全部 868 篇（字母序）
+## 全部 869 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1212,6 +1213,7 @@ sidebar:
 | `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) | 其他 |
 | `copilot-rct` | [Copilot RCT — AI 编程助手的第一个严格随机对照实验](/study/papers/copilot-rct/) | HCI / 软件工程研究 |
 | `cops-2011` | [COPS — 大规模跨地域存储如何用得起的代价拿到因果一致](/study/papers/cops-2011/) | 其他 |
+| `costan-sgx-explained-2016` | [Intel SGX Explained — 把云主机里的一小块程序锁进硬件保险箱](/study/papers/costan-sgx-explained-2016/) | 其他 |
 | `cot` | [Chain-of-Thought Prompting](/study/papers/cot/) | 智能体与 LLM 系统 |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源中转服务器](/study/papers/coturn/) | 其他 |
 | `couchdb` | [CouchDB — 把 HTTP + 多版本 + 多主复制揉成离线优先数据库](/study/papers/couchdb/) | 其他 |
