@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 800 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 801 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：800 个
+- **总数**：801 个
 - **已分类**：214
-- **未分类**：586（落入"其他 / 待分类"段）
+- **未分类**：587（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 586 |
+| [其他 / 待分类](#其他--待分类) | 587 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 586 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 587 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -846,6 +846,7 @@ sidebar:
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
 | `mosquitto` | [Mosquitto — C 写的轻量 MQTT 消息中转站](/study/projects/mosquitto/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
+| `moveit2` | [MoveIt 2 — ROS 2 上的机械臂运动规划框架](/study/projects/moveit2/) |
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
 | `nanomq` | [NanoMQ — 边缘侧超轻量 MQTT Broker](/study/projects/nanomq/) |
@@ -1096,7 +1097,7 @@ sidebar:
 
 ---
 
-## 全部 800 个（字母序）
+## 全部 801 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1544,6 +1545,7 @@ sidebar:
 | `mosquitto` | [Mosquitto — C 写的轻量 MQTT 消息中转站](/study/projects/mosquitto/) | 其他 |
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) | 其他 |
+| `moveit2` | [MoveIt 2 — ROS 2 上的机械臂运动规划框架](/study/projects/moveit2/) | 其他 |
 | `msw` | [MSW — 让 mock 不改业务代码，在网络层透明拦截](/study/projects/msw/) | 测试 / 验证 |
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) | 其他 |
 | `mysql` | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) | 数据库本体 / 存储引擎 |
