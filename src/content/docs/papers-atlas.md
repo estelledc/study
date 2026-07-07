@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 843 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 844 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：843 篇
+- **总数**：844 篇
 - **已分类**：143
-- **未分类**：700（落入"其他 / 待分类"段）
+- **未分类**：701（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 700 |
+| [其他 / 待分类](#其他--待分类) | 701 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 700 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 701 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -372,6 +372,7 @@ sidebar:
 | `blip2-2023` | [BLIP-2 — 用 188M 小桥接器把冻结的视觉模型和大语言模型拼起来](/study/papers/blip2-2023/) |
 | `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) |
+| `bohme-aflfast-2016` | [AFLFast — 把 fuzzing 的力气花在更少人走的路径上](/study/papers/bohme-aflfast-2016/) |
 | `bonawitz-fl-system-2019` | [Bonawitz 2019 — Google 联邦学习的工业级系统设计](/study/papers/bonawitz-fl-system-2019/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
@@ -1011,7 +1012,7 @@ sidebar:
 
 ---
 
-## 全部 843 篇（字母序）
+## 全部 844 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1096,6 +1097,7 @@ sidebar:
 | `block-max-wand-2011` | [Block-Max WAND — 给倒排索引加分块上界，跳过算不过 top-k 的整块](/study/papers/block-max-wand-2011/) | 其他 |
 | `bm25-okapi` | [BM25 — 给文档打分的"老配方"](/study/papers/bm25-okapi/) | 其他 |
 | `boehm-gc` | [Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC](/study/papers/boehm-gc/) | GC / 内存管理 |
+| `bohme-aflfast-2016` | [AFLFast — 把 fuzzing 的力气花在更少人走的路径上](/study/papers/bohme-aflfast-2016/) | 其他 |
 | `bonawitz-fl-system-2019` | [Bonawitz 2019 — Google 联邦学习的工业级系统设计](/study/papers/bonawitz-fl-system-2019/) | 其他 |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
