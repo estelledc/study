@@ -858,6 +858,7 @@ affine
 ag-grid
 age
 aichat
+aider
 aiortc
 airflow
 altair
