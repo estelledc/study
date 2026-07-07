@@ -1236,6 +1236,7 @@ lightningcss
 lima
 lingui
 linkerd2
+linuxcnc
 listr2
 lite-xl
 litellm-proxy
