@@ -15,8 +15,101 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 DRY_RUN="${DRY_RUN:-0}"
 
+if [[ -z "${HOME:-}" ]]; then
+  echo "ERROR: HOME is required to locate study worktrees" >&2
+  exit 2
+fi
+
+WORKTREES=(
+  "$HOME/study-refactor-papers"
+  "$HOME/study-refactor-papers-2"
+  "$HOME/study-refactor-papers-3"
+  "$HOME/study-refactor-papers-4"
+  "$HOME/study-refactor-projects"
+  "$HOME/study-refactor-projects-2"
+  "$HOME/study-refactor-projects-3"
+  "$HOME/study-refactor-projects-4"
+)
+
+REGEN_CHANGED_FILE_LIST="/tmp/finalize-regen-changed-$$.txt"
+BUILD_LOG="/tmp/finalize-build-$$.log"
+BUILD2_LOG="/tmp/finalize-build2-$$.log"
+trap 'rm -f "$REGEN_CHANGED_FILE_LIST" "$BUILD_LOG" "$BUILD2_LOG"' EXIT
+
 PREV_HEAD=$(git rev-parse HEAD)
 echo "[finalize-round] PREV_HEAD=$PREV_HEAD"
+
+preflight_error() {
+  local message="$1"
+  if [[ "$DRY_RUN" -eq 1 ]]; then
+    echo "  WARN: $message (dry-run continues)"
+    return
+  fi
+  echo "ERROR: $message" >&2
+  exit 2
+}
+
+preflight() {
+  echo "[finalize-round] preflight"
+  local branch
+  branch="$(git branch --show-current)"
+  if [[ "$branch" != "main" ]]; then
+    preflight_error "finalize-round must run on main, current branch is $branch"
+  fi
+
+  if [[ -n "$(git status --porcelain)" ]]; then
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+      echo "  WARN: worktree is dirty (dry-run continues)"
+    else
+      echo "ERROR: worktree must be clean before finalize-round" >&2
+      git status --short >&2
+      exit 2
+    fi
+  fi
+
+  local required_files=(
+    "data/candidates.jsonl"
+    "data/rewrite-pool.jsonl"
+    "data/written.txt"
+  )
+  local f
+  for f in "${required_files[@]}"; do
+    [[ -f "$f" ]] || preflight_error "missing required data file: $f"
+  done
+
+  local w
+  for w in "${WORKTREES[@]}"; do
+    [[ -d "$w" ]] || preflight_error "missing worktree: $w"
+  done
+}
+
+restore_regen_changes() {
+  if [[ ! -s "$REGEN_CHANGED_FILE_LIST" ]]; then
+    echo "  no recorded regen diff to restore"
+    return
+  fi
+  echo "  restoring recorded regen changes:"
+  sed 's/^/    /' "$REGEN_CHANGED_FILE_LIST"
+  xargs -r git checkout -- < "$REGEN_CHANGED_FILE_LIST"
+}
+
+stage_finalize_generated_changes() {
+  local changed_file
+  while IFS= read -r changed_file; do
+    [[ -n "$changed_file" ]] || continue
+    case "$changed_file" in
+      src/content/docs/papers-atlas.md|src/content/docs/projects-atlas.md|src/content/docs/papers/*.md|src/content/docs/projects/*.md)
+        git add "$changed_file"
+        ;;
+      *)
+        echo "  skip non-finalize diff: $changed_file"
+        ;;
+    esac
+  done
+  return 0
+}
+
+preflight
 
 # Helper: emit pipeline event
 emit() {
@@ -38,6 +131,10 @@ else
   node "$ROOT/scripts/regen-atlas.mjs"
   node "$ROOT/scripts/regen-backlinks.mjs"
   node "$ROOT/scripts/fix-frontmatter.mjs" 2>/dev/null || echo "  WARN: fix-frontmatter non-fatal"
+  git diff --name-only > "$REGEN_CHANGED_FILE_LIST"
+fi
+if [[ "$DRY_RUN" -eq 1 ]]; then
+  : > "$REGEN_CHANGED_FILE_LIST"
 fi
 
 # 2. Build
@@ -46,30 +143,29 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "  [DRY] npm run build"
   BUILD_OK=1
 else
-  if npm run build > /tmp/finalize-build-$$.log 2>&1; then
+  if npm run build > "$BUILD_LOG" 2>&1; then
     BUILD_OK=1
   else
     BUILD_OK=0
     echo "  BUILD FAIL stage 1 — last 20 lines:"
-    tail -20 /tmp/finalize-build-$$.log
+    tail -20 "$BUILD_LOG"
   fi
 fi
 
 # 3. Build fail Stage 1 → 丢 regen 产物，重 build
 if [[ "$BUILD_OK" -eq 0 ]]; then
   echo "[finalize-round] retry without regen artifacts"
-  # 还原 regen 产物（只 reset 这些文件，不动 cherry-picked 笔记）
-  git checkout -- src/content/docs/papers-atlas.md src/content/docs/projects-atlas.md 2>/dev/null || true
-  git checkout -- src/content/docs/papers/ src/content/docs/projects/ 2>/dev/null || true
+  # 还原本轮 regen 产生的变更，不按目录扫掉 cherry-picked 笔记。
+  restore_regen_changes
   # 重新只跑笔记 cherry-pick 的部分 + build
-  if npm run build > /tmp/finalize-build2-$$.log 2>&1; then
+  if npm run build > "$BUILD2_LOG" 2>&1; then
     echo "  Stage 2 build OK (without regen)"
     BUILD_OK=1
     REGEN_DROPPED=1
   else
     BUILD_OK=0
     echo "  BUILD FAIL stage 2 — last 20 lines:"
-    tail -20 /tmp/finalize-build2-$$.log
+    tail -20 "$BUILD2_LOG"
   fi
 fi
 
@@ -87,12 +183,16 @@ fi
 
 # 5. amend regen 产物到最后 cherry-picked commit
 if [[ "$DRY_RUN" -eq 1 ]]; then
-  echo "  [DRY] git diff --name-only | xargs git add && git commit --amend --no-edit"
+  echo "  [DRY] git diff --name-only | whitelist generated docs && git commit --amend --no-edit"
 else
   CHANGED=$(git diff --name-only)
   if [[ -n "$CHANGED" ]] || ! git diff --cached --quiet; then
-    echo "$CHANGED" | xargs -r git add
-    git commit --amend --no-edit
+    echo "$CHANGED" | stage_finalize_generated_changes
+    if ! git diff --cached --quiet; then
+      git commit --amend --no-edit
+    else
+      echo "  no whitelisted finalize diff to amend"
+    fi
   else
     echo "  no regen diff to amend"
   fi
@@ -117,16 +217,6 @@ fi
 
 # 7. Sync 8 worktree
 echo "[finalize-round] sync 8 worktrees"
-WORKTREES=(
-  "$HOME/study-refactor-papers"
-  "$HOME/study-refactor-papers-2"
-  "$HOME/study-refactor-papers-3"
-  "$HOME/study-refactor-papers-4"
-  "$HOME/study-refactor-projects"
-  "$HOME/study-refactor-projects-2"
-  "$HOME/study-refactor-projects-3"
-  "$HOME/study-refactor-projects-4"
-)
 if [[ "$DRY_RUN" -eq 1 ]]; then
   for w in "${WORKTREES[@]}"; do echo "  [DRY] sync $w"; done
 else
