@@ -66,7 +66,7 @@ CONFIG_UART_ASYNC_ADAPTER=y
 
 关键 overlay：
 
-```dts
+```text
 / { chosen {
   zephyr,console = &cdc_acm_uart0;
   nordic,nus-uart = &cdc_acm_uart0;
