@@ -1535,6 +1535,7 @@ terraform
 testing-library
 textmate
 textual
+tflite-micro
 the-silver-searcher
 theia
 thirdweb-sdk
