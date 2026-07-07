@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { gitOutput, validateCommitHash } from './git.mjs';
+import { gitOutput, statusPorcelain, validateCommitHash } from './git.mjs';
 
 test('gitOutput invokes git with an args array', () => {
   const calls = [];
@@ -18,6 +18,18 @@ test('gitOutput invokes git with an args array', () => {
 
 test('gitOutput rejects string commands', () => {
   assert.throws(() => gitOutput('status --short'), /args must be an array/);
+});
+
+test('statusPorcelain preserves leading status spaces', () => {
+  const out = statusPorcelain('/tmp/repo', {
+    execFileSync(command, args, options) {
+      assert.equal(command, 'git');
+      assert.deepEqual(args, ['status', '--porcelain']);
+      assert.equal(options.cwd, '/tmp/repo');
+      return ' M data/candidates.jsonl\n';
+    },
+  });
+  assert.equal(out, ' M data/candidates.jsonl');
 });
 
 test('validateCommitHash accepts short or full hex hashes only', () => {

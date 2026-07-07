@@ -25,7 +25,12 @@ export function currentBranch(cwd = ROOT, options = {}) {
 }
 
 export function statusPorcelain(cwd = ROOT, options = {}) {
-  return gitOutput(['status', '--porcelain'], { ...options, cwd });
+  const execFile = options.execFileSync || execFileSync;
+  return execFile('git', ['status', '--porcelain'], {
+    cwd,
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  }).replace(/\s+$/u, '');
 }
 
 export function requireCleanWorktree(cwd = ROOT, options = {}) {
