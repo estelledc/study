@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 775 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 776 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：775 个
+- **总数**：776 个
 - **已分类**：214
-- **未分类**：561（落入"其他 / 待分类"段）
+- **未分类**：562（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 561 |
+| [其他 / 待分类](#其他--待分类) | 562 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 561 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 562 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -516,6 +516,7 @@ sidebar:
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `age` | [age — 把"用 GPG 加密一个文件"重新做对](/study/projects/age/) |
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) |
+| `aider` | [Aider — 终端 AI 结对编程 CLI](/study/projects/aider/) |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) |
 | `altair` | [Altair — Python 上的 Vega-Lite 绑定](/study/projects/altair/) |
@@ -1071,7 +1072,7 @@ sidebar:
 
 ---
 
-## 全部 775 个（字母序）
+## 全部 776 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1085,6 +1086,7 @@ sidebar:
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
 | `age` | [age — 把"用 GPG 加密一个文件"重新做对](/study/projects/age/) | 其他 |
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) | 其他 |
+| `aider` | [Aider — 终端 AI 结对编程 CLI](/study/projects/aider/) | 其他 |
 | `aiortc` | [aiortc — 让 Python 服务端像浏览器一样讲 WebRTC](/study/projects/aiortc/) | 其他 |
 | `airflow` | [Apache Airflow — 用 Python 代码画工作流图，让调度器替你按图施工](/study/projects/airflow/) | 其他 |
 | `altair` | [Altair — Python 上的 Vega-Lite 绑定](/study/projects/altair/) | 其他 |
