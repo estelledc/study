@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 779 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 780 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：779 个
+- **总数**：780 个
 - **已分类**：214
-- **未分类**：565（落入"其他 / 待分类"段）
+- **未分类**：566（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 565 |
+| [其他 / 待分类](#其他--待分类) | 566 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 565 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 566 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1041,6 +1041,7 @@ sidebar:
 | `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) |
+| `void` | [Void — 开源 Cursor 替代](/study/projects/void/) |
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) |
 | `vscode` | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) |
@@ -1075,7 +1076,7 @@ sidebar:
 
 ---
 
-## 全部 779 个（字母序）
+## 全部 780 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1815,6 +1816,7 @@ sidebar:
 | `vitest` | [Vitest — Vite 原生测试框架](/study/projects/vitest/) | 测试 / 验证 |
 | `vllm` | [vLLM — 高吞吐 LLM 推理引擎](/study/projects/vllm/) | AI 应用 / Agent 平台 |
 | `vodozemac` | [vodozemac — Matrix 端到端加密的 Rust 内核](/study/projects/vodozemac/) | 其他 |
+| `void` | [Void — 开源 Cursor 替代](/study/projects/void/) | 其他 |
 | `voila` | [Voilà — 把 Jupyter Notebook 变成只显示输出的网页](/study/projects/voila/) | 其他 |
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) | 其他 |
 | `vscode` | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) | 其他 |
