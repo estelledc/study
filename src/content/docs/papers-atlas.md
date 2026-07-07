@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 856 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 857 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：856 篇
+- **总数**：857 篇
 - **已分类**：143
-- **未分类**：713（落入"其他 / 待分类"段）
+- **未分类**：714（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 713 |
+| [其他 / 待分类](#其他--待分类) | 714 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 713 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 714 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -469,6 +469,7 @@ sidebar:
 | `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) |
 | `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) |
+| `danezis-sphinx-2009` | [Danezis-Sphinx 2009 — 把匿名转发包压到可实用的大小](/study/papers/danezis-sphinx-2009/) |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |
 | `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
@@ -1024,7 +1025,7 @@ sidebar:
 
 ---
 
-## 全部 856 篇（字母序）
+## 全部 857 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1223,6 +1224,7 @@ sidebar:
 | `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | 其他 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | 其他 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
+| `danezis-sphinx-2009` | [Danezis-Sphinx 2009 — 把匿名转发包压到可实用的大小](/study/papers/danezis-sphinx-2009/) | 其他 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | 其他 |
 | `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) | 其他 |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | 其他 |
