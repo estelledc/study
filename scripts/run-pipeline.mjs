@@ -13,39 +13,17 @@ import fs from 'node:fs/promises';
 import fsSync from 'node:fs';
 import path from 'node:path';
 import { readJsonl } from './lib/jsonl.mjs';
-import { CANDIDATES_PATH, PROMPTS_DIR, REWRITE_POOL_PATH, docsEntryRelativePath } from './lib/paths.mjs';
+import { CANDIDATES_PATH, REWRITE_POOL_PATH, docsEntryRelativePath } from './lib/paths.mjs';
+import {
+  PIPELINE_STAGES,
+  loadPromptTemplate,
+  loadPromptTemplates,
+  promptPath,
+  renderTemplate,
+} from './lib/prompts.mjs';
+import { worktreeForPipelineKind } from './lib/worktrees.mjs';
 import { emit } from './pipeline-events.mjs';
 import { validate } from './quality-gate.mjs';
-
-const HOME = process.env.HOME || '/Users/jason';
-
-const PROMPTS = {
-  researcher: path.join(PROMPTS_DIR, 'researcher.md'),
-  writer: path.join(PROMPTS_DIR, 'writer.md'),
-  'reviewer-zero-base': path.join(PROMPTS_DIR, 'reviewer-zero-base.md'),
-  'reviewer-academic': path.join(PROMPTS_DIR, 'reviewer-academic.md'),
-  'reviewer-engineer': path.join(PROMPTS_DIR, 'reviewer-engineer.md'),
-  refiner: path.join(PROMPTS_DIR, 'refiner.md'),
-};
-
-// 4 papers worktree + 4 projects worktree。任何 paper kind（new/rewrite）都可用任意 papers worktree
-const WORKTREE_MAP = {
-  // papers: 0..3 任选
-  'paper:0': { name: 'papers',    path: `${HOME}/study-refactor-papers`,    branch: 'refactor/papers' },
-  'paper:1': { name: 'papers-2',  path: `${HOME}/study-refactor-papers-2`,  branch: 'refactor/papers-2' },
-  'paper:2': { name: 'papers-3',  path: `${HOME}/study-refactor-papers-3`,  branch: 'refactor/papers-3' },
-  'paper:3': { name: 'papers-4',  path: `${HOME}/study-refactor-papers-4`,  branch: 'refactor/papers-4' },
-  // projects: 0..3 任选
-  'project:0': { name: 'projects',   path: `${HOME}/study-refactor-projects`,   branch: 'refactor/projects' },
-  'project:1': { name: 'projects-2', path: `${HOME}/study-refactor-projects-2`, branch: 'refactor/projects-2' },
-  'project:2': { name: 'projects-3', path: `${HOME}/study-refactor-projects-3`, branch: 'refactor/projects-3' },
-  'project:3': { name: 'projects-4', path: `${HOME}/study-refactor-projects-4`, branch: 'refactor/projects-4' },
-};
-
-function lookupWorktree(kind, idx) {
-  const family = kind.endsWith('paper') ? 'paper' : 'project';
-  return WORKTREE_MAP[`${family}:${idx}`];
-}
 
 function parseArgs() {
   const args = { slug: null, stage: null, dump: false, kind: null, worktreeIdx: 0 };
@@ -85,15 +63,6 @@ function inferKind(slug, candidate, rewriteEntry, areaHint) {
   return areaHint === 'papers' ? 'new-paper' : 'new-project';
 }
 
-function renderPrompt(template, vars) {
-  // 用 split/join 做 literal 替换，避免 String.replace 把 v 中的 $&/$1 当反向引用
-  let out = template;
-  for (const [k, v] of Object.entries(vars)) {
-    out = out.split(`{{${k}}}`).join(String(v ?? ''));
-  }
-  return out;
-}
-
 async function buildContext(slug, kindOverride, worktreeIdx) {
   const candidate = await findCandidate(slug);
   const rewriteEntry = await findRewriteEntry(slug);
@@ -101,10 +70,7 @@ async function buildContext(slug, kindOverride, worktreeIdx) {
   const kind = kindOverride || inferKind(slug, candidate, rewriteEntry, candidate?.area);
   const area = kind.endsWith('paper') ? 'papers' : 'projects';
 
-  const worktree = lookupWorktree(kind, worktreeIdx);
-  if (!worktree) {
-    throw new Error(`No worktree for kind=${kind} idx=${worktreeIdx}`);
-  }
+  const worktree = worktreeForPipelineKind(kind, worktreeIdx);
 
   const isRewrite = kind.startsWith('rewrite-');
   const outputPath = `${worktree.path}/${docsEntryRelativePath(area, slug)}`;
@@ -138,12 +104,12 @@ async function buildContext(slug, kindOverride, worktreeIdx) {
 }
 
 async function dumpStagePrompt(stage, ctx) {
-  const tmpl = await fs.readFile(PROMPTS[stage], 'utf8');
-  const rendered = renderPrompt(tmpl, ctx);
+  const tmpl = await loadPromptTemplate(stage);
+  const rendered = renderTemplate(tmpl, ctx);
   console.log(JSON.stringify({
     stage,
     slug: ctx.slug,
-    prompt_path: PROMPTS[stage],
+    prompt_path: promptPath(stage),
     prompt_chars: rendered.length,
     output_path: ctx.output_path,
     research_json: ctx.research_json,
@@ -175,17 +141,17 @@ async function main() {
   }
 
   // 默认行为：并行读 6 个 stage 模板 + 并行写 6 个 rendered prompt 到 tmp
-  const stages = Object.keys(PROMPTS);
-  const templates = await Promise.all(stages.map(s => fs.readFile(PROMPTS[s], 'utf8')));
-  await Promise.all(stages.map((s, i) =>
-    fs.writeFile(path.join(ctx.tmp_dir, `${s}.prompt.md`), renderPrompt(templates[i], ctx))
+  const stages = PIPELINE_STAGES;
+  const templates = await loadPromptTemplates(stages);
+  await Promise.all(stages.map((s) =>
+    fs.writeFile(path.join(ctx.tmp_dir, `${s}.prompt.md`), renderTemplate(templates[s], ctx))
   ));
 
   // 输出 ctx + 各 stage prompt 路径，workflow 用
   console.log(JSON.stringify({
     ...ctx,
     stage_prompts: Object.fromEntries(
-      Object.keys(PROMPTS).map(s => [s, path.join(ctx.tmp_dir, `${s}.prompt.md`)])
+      PIPELINE_STAGES.map(s => [s, path.join(ctx.tmp_dir, `${s}.prompt.md`)])
     ),
   }, null, 2));
 }
@@ -197,6 +163,6 @@ main().catch(err => {
 });
 
 // Helpers exported for workflow programmatic use
-export { buildContext, renderPrompt, dumpStagePrompt };
-export const STAGES = Object.keys(PROMPTS);
+export { buildContext, renderTemplate as renderPrompt, dumpStagePrompt };
+export const STAGES = PIPELINE_STAGES;
 export const QUALITY_GATE = validate;

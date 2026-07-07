@@ -14,31 +14,10 @@
 //   projects-rewrite x 2 → projects / projects-2
 //   projects-new x 2     → projects-3 / projects-4
 
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import { loadDispatchQueues, markClaimed, writeCandidates, writeRewritePool } from './lib/queue-store.mjs';
-import { PROMPTS_DIR, docsEntryRelativePath } from './lib/paths.mjs';
-const HOME = process.env.HOME || '/Users/jason';
-
-// Worktree 配置（按 area + kind 分配）
-const WORKTREES = {
-  'papers-rewrite': [
-    { name: 'papers',   path: `${HOME}/study-refactor-papers`,   branch: 'refactor/papers'   },
-    { name: 'papers-2', path: `${HOME}/study-refactor-papers-2`, branch: 'refactor/papers-2' },
-  ],
-  'papers-new': [
-    { name: 'papers-3', path: `${HOME}/study-refactor-papers-3`, branch: 'refactor/papers-3' },
-    { name: 'papers-4', path: `${HOME}/study-refactor-papers-4`, branch: 'refactor/papers-4' },
-  ],
-  'projects-rewrite': [
-    { name: 'projects',   path: `${HOME}/study-refactor-projects`,   branch: 'refactor/projects'   },
-    { name: 'projects-2', path: `${HOME}/study-refactor-projects-2`, branch: 'refactor/projects-2' },
-  ],
-  'projects-new': [
-    { name: 'projects-3', path: `${HOME}/study-refactor-projects-3`, branch: 'refactor/projects-3' },
-    { name: 'projects-4', path: `${HOME}/study-refactor-projects-4`, branch: 'refactor/projects-4' },
-  ],
-};
+import { docsEntryRelativePath } from './lib/paths.mjs';
+import { DISPATCH_PROMPT_KINDS, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
+import { worktreesForDispatch } from './lib/worktrees.mjs';
 
 function parseArgs() {
   const args = { rewrite: 4, new: 4, dryRun: false };
@@ -87,24 +66,6 @@ function pickNew(candidates, area, n, excludeSlugs = new Set()) {
     i++;
   }
   return picked;
-}
-
-async function loadPromptTemplate(kind) {
-  const map = {
-    'new-paper': 'new-paper.md',
-    'rewrite-paper': 'rewrite-paper.md',
-    'new-project': 'new-project.md',
-    'rewrite-project': 'rewrite-project.md',
-  };
-  return fs.readFile(path.join(PROMPTS_DIR, map[kind]), 'utf8');
-}
-
-function renderPrompt(template, vars) {
-  let out = template;
-  for (const [k, v] of Object.entries(vars)) {
-    out = out.replace(new RegExp(`{{${k}}}`, 'g'), String(v));
-  }
-  return out;
 }
 
 function buildAssignment(kind, area, item, worktree) {
@@ -169,16 +130,18 @@ async function main() {
 
   // 分配 worktree
   const assignments = [];
-  papersRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-paper', 'papers', item, WORKTREES['papers-rewrite'][i])));
-  projectsRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-project', 'projects', item, WORKTREES['projects-rewrite'][i])));
-  papersNew.forEach((item, i) => assignments.push(buildAssignment('new-paper', 'papers', item, WORKTREES['papers-new'][i])));
-  projectsNew.forEach((item, i) => assignments.push(buildAssignment('new-project', 'projects', item, WORKTREES['projects-new'][i])));
+  const papersRewriteWorktrees = worktreesForDispatch('papers', 'rewrite');
+  const projectsRewriteWorktrees = worktreesForDispatch('projects', 'rewrite');
+  const papersNewWorktrees = worktreesForDispatch('papers', 'new');
+  const projectsNewWorktrees = worktreesForDispatch('projects', 'new');
+
+  papersRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-paper', 'papers', item, papersRewriteWorktrees[i])));
+  projectsRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-project', 'projects', item, projectsRewriteWorktrees[i])));
+  papersNew.forEach((item, i) => assignments.push(buildAssignment('new-paper', 'papers', item, papersNewWorktrees[i])));
+  projectsNew.forEach((item, i) => assignments.push(buildAssignment('new-project', 'projects', item, projectsNewWorktrees[i])));
 
   // Render prompts
-  const templates = {};
-  for (const kind of ['new-paper', 'rewrite-paper', 'new-project', 'rewrite-project']) {
-    templates[kind] = await loadPromptTemplate(kind);
-  }
+  const templates = await loadPromptTemplates(DISPATCH_PROMPT_KINDS);
 
   const output = assignments.map(a => ({
     kind: a.kind,
@@ -188,7 +151,7 @@ async function main() {
     worktree_path: a.worktree.path,
     branch: a.worktree.branch,
     output_path: a.vars.output_path,
-    prompt: renderPrompt(templates[a.kind], a.vars),
+    prompt: renderTemplate(templates[a.kind], a.vars),
   }));
 
   // 标 claimed（除非 dry-run）
