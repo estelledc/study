@@ -1102,6 +1102,7 @@ flax
 flowchart-js
 fluent-bit
 flux
+foam
 fooocus
 foundry
 framer-motion
