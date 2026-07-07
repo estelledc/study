@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 862 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 863 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：862 篇
+- **总数**：863 篇
 - **已分类**：143
-- **未分类**：719（落入"其他 / 待分类"段）
+- **未分类**：720（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 719 |
+| [其他 / 待分类](#其他--待分类) | 720 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 719 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 720 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -584,6 +584,7 @@ sidebar:
 | `gmw-mental-game-1987` | [GMW Mental Game — 多个人不交出秘密也能一起算答案](/study/papers/gmw-mental-game-1987/) |
 | `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) |
+| `goodfellow-fgsm-2014` | [Goodfellow FGSM — 用一次梯度就能造出对抗样本](/study/papers/goodfellow-fgsm-2014/) |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) |
 | `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) |
@@ -1030,7 +1031,7 @@ sidebar:
 
 ---
 
-## 全部 862 篇（字母序）
+## 全部 863 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1366,6 +1367,7 @@ sidebar:
 | `goal-misgeneralization-2022` | [Goal Misgeneralization — 奖励函数完全正确，AI 还是可能学歪](/study/papers/goal-misgeneralization-2022/) | 其他 |
 | `godel-1931` | [Gödel 1931 — 不完备性定理](/study/papers/godel-1931/) | 计算理论 / 数学基础 |
 | `goldsmith-1987-bvh` | [Goldsmith-Salmon 1987 — 让计算机自己给场景搭层次包围盒](/study/papers/goldsmith-1987-bvh/) | 其他 |
+| `goodfellow-fgsm-2014` | [Goodfellow FGSM — 用一次梯度就能造出对抗样本](/study/papers/goodfellow-fgsm-2014/) | 其他 |
 | `google-1998` | [Google 1998 — 把整个网络爬下来、压扁、再用一秒查到](/study/papers/google-1998/) | 其他 |
 | `goral-1984-radiosity` | [Goral 1984 Radiosity — 把建筑工程的辐射热传导算法搬进图形学](/study/papers/goral-1984-radiosity/) | 其他 |
 | `gortler-1996-lumigraph` | [Lumigraph — 给 4D 光场加一层粗糙几何，让插值不再鬼影](/study/papers/gortler-1996-lumigraph/) | 其他 |
