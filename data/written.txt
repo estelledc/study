@@ -1181,6 +1181,7 @@ jenkins
 jest
 jimp
 jitsi-videobridge
+joplin
 jotai
 jq
 js-joda
