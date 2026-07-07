@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 778 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 779 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：778 个
+- **总数**：779 个
 - **已分类**：214
-- **未分类**：564（落入"其他 / 待分类"段）
+- **未分类**：565（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 564 |
+| [其他 / 待分类](#其他--待分类) | 565 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 564 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 565 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -836,6 +836,7 @@ sidebar:
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
+| `nanomq` | [NanoMQ — 边缘侧超轻量 MQTT Broker](/study/projects/nanomq/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `nebula` | [NebulaGraph — 国产分布式图数据库](/study/projects/nebula/) |
@@ -1074,7 +1075,7 @@ sidebar:
 
 ---
 
-## 全部 778 个（字母序）
+## 全部 779 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1515,6 +1516,7 @@ sidebar:
 | `mysql` | [MySQL — 全球最流行关系数据库](/study/projects/mysql/) | 数据库本体 / 存储引擎 |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) | 其他 |
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | AI 浏览器自动化 |
+| `nanomq` | [NanoMQ — 边缘侧超轻量 MQTT Broker](/study/projects/nanomq/) | 其他 |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
