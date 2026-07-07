@@ -4,7 +4,7 @@
 
 ## 模板源真相
 
-唯一参考：**`/Users/jason/study/src/content/docs/papers/hindley-milner.md`**（176 行 12 段，零基础友好）。任何创作都对照它的结构与口吻，不要参考其他笔记（很多是早期 legacy 风格，要被 rewrite 的对象）。
+唯一参考：**`{{template_note_path}}`**（176 行 12 段，零基础友好）。任何创作都对照它的结构与口吻，不要参考其他笔记（很多是早期 legacy 风格，要被 rewrite 的对象）。
 
 ## 受众与口吻
 
@@ -75,8 +75,8 @@ mis.sankuai / cagent_fe_h5_blindbox / LongCat / 美团
 
 ## 文件路径
 
-- papers: `/Users/jason/study/src/content/docs/papers/<slug>.md`
-- projects: `/Users/jason/study/src/content/docs/projects/<slug>.md`
+- papers: `{{repo_root}}/src/content/docs/papers/<slug>.md`
+- projects: `{{repo_root}}/src/content/docs/projects/<slug>.md`
 - slug 必须 kebab-case：`^[a-z0-9][a-z0-9_.-]*$`
 
 ## Subagent 返回格式（强制 JSON）
@@ -110,7 +110,7 @@ mis.sankuai / cagent_fe_h5_blindbox / LongCat / 美团
 写完文件后，subagent 必须跑：
 
 ```bash
-node /Users/jason/study/scripts/quality-gate.mjs <写入的文件绝对路径>
+node {{quality_gate_path}} <写入的文件绝对路径>
 ```
 
 退出码 0 → 通过，commit；非 0 → 读 reasons，**重试一次**（同 prompt 重写）。第二次仍 fail → 不 commit，返回 failed JSON。

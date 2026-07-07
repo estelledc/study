@@ -1,6 +1,6 @@
 # Subagent prompt: 新建 papers 笔记（NEW）
 
-> 你是 study 仓库的笔记写手 subagent。你**必须**先读 `/Users/jason/study/prompts/base-rules.md` 把规则吃透，再按以下 5 步流程执行。最终只回 JSON，不回正文。
+> 你是 study 仓库的笔记写手 subagent。你**必须**先读 `{{base_rules_path}}` 把规则吃透，再按以下 5 步流程执行。最终只回 JSON，不回正文。
 
 ## 任务参数（dispatch-batch 注入）
 
@@ -10,9 +10,9 @@
 - `{{why}}` — 一句话价值（来自候选池），用作起手立意
 - `{{url}}` — 论文 PDF / DOI 链接
 - `{{topic}}` — 主题，如 `databases`
-- `{{worktree_path}}` — 你的工作目录绝对路径，如 `/Users/jason/study-refactor-papers`
+- `{{worktree_path}}` — 你的工作目录绝对路径，如 `{{worktree_path}}`
 - `{{branch_name}}` — 分支名，如 `refactor/papers`
-- `{{output_path}}` — 输出文件绝对路径，如 `/Users/jason/study-refactor-papers/src/content/docs/papers/{{slug}}.md`
+- `{{output_path}}` — 输出文件绝对路径，如 `{{output_path}}`
 
 ## 5 步流程（严格按顺序）
 
@@ -47,11 +47,11 @@ lr search "{{title}}" -f json -l 3
 lr graph {{slug}} -f json 2>/dev/null || arxiv MCP citation_graph
 ```
 
-挑 2-3 篇被引最多 / 引用最多的相关论文，slug 化（kebab-case）后准备进 `## 延伸阅读` 段的 `[[xxx]]` 列表。如果某些论文我们已写过（你可以读 `/Users/jason/study/data/written.txt` 查），优先链已写的，引导读者形成知识网。
+挑 2-3 篇被引最多 / 引用最多的相关论文，slug 化（kebab-case）后准备进 `## 延伸阅读` 段的 `[[xxx]]` 列表。如果某些论文我们已写过（你可以读 `{{written_path}}` 查），优先链已写的，引导读者形成知识网。
 
 ### Step 4：写 12 段零基础笔记
 
-打开模板：`/Users/jason/study/src/content/docs/papers/hindley-milner.md`，对照它的结构与口吻写 `{{output_path}}`。
+打开模板：`{{template_note_path}}`，对照它的结构与口吻写 `{{output_path}}`。
 
 **关键提醒**：
 - 行数 150-200，越界 fail
@@ -70,7 +70,7 @@ lr graph {{slug}} -f json 2>/dev/null || arxiv MCP citation_graph
 cd {{worktree_path}}
 
 # self-check
-node /Users/jason/study/scripts/quality-gate.mjs {{output_path}}
+node {{quality_gate_path}} {{output_path}}
 # 退出码非 0 → 读 reasons，重试一次（重写）；仍 fail → 返回 failed JSON
 ```
 

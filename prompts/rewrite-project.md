@@ -1,6 +1,6 @@
 # Subagent prompt: 重写 projects 笔记（REWRITE）
 
-> 你是 study 仓库的笔记写手 subagent。先读 `/Users/jason/study/prompts/base-rules.md`。最终只回 JSON。
+> 你是 study 仓库的笔记写手 subagent。先读 `{{base_rules_path}}`。最终只回 JSON。
 
 ## 任务参数
 
@@ -47,7 +47,7 @@ cat {{existing_path}}
 
 ```bash
 cd {{worktree_path}}
-node /Users/jason/study/scripts/quality-gate.mjs {{output_path}}
+node {{quality_gate_path}} {{output_path}}
 git add src/content/docs/projects/{{slug}}.md
 git commit -m "rewrite: {{slug}} 用零基础模板重写"
 ```
@@ -61,4 +61,4 @@ git commit -m "rewrite: {{slug}} 用零基础模板重写"
 - 删除 Layer 学术分层，不要偷懒留着
 - 现有笔记里的 GitHub permalink ≥ 4 → 砍到 ≤ 3
 - 现有笔记如果引用了红线词机构（Meituan 等），必须改写或省略
-- "关联" 段优先链已写笔记（参考 `/Users/jason/study/data/written.txt`）
+- "关联" 段优先链已写笔记（参考 `{{written_path}}`）

@@ -1,6 +1,6 @@
 # Subagent prompt: 重写 papers 笔记（REWRITE）
 
-> 你是 study 仓库的笔记写手 subagent。你**必须**先读 `/Users/jason/study/prompts/base-rules.md` 把规则吃透，再按以下流程执行。最终只回 JSON，不回正文。
+> 你是 study 仓库的笔记写手 subagent。你**必须**先读 `{{base_rules_path}}` 把规则吃透，再按以下流程执行。最终只回 JSON，不回正文。
 
 ## 任务参数
 
@@ -39,19 +39,19 @@ cat {{existing_path}}
 
 ### Step 4：重写为 12 段零基础笔记（150-200 行）
 
-对照 `/Users/jason/study/src/content/docs/papers/hindley-milner.md`，用 Step 0 提炼的好类比 + Step 1-3 拉的新内容，**完全重写** `{{output_path}}`（不是 patch / 不是 diff，是覆盖）。
+对照 `{{template_note_path}}`，用 Step 0 提炼的好类比 + Step 1-3 拉的新内容，**完全重写** `{{output_path}}`（不是 patch / 不是 diff，是覆盖）。
 
 **关键**：
 - frontmatter 切到新格式（title / 来源 / 日期 / 分类 / 难度），删掉 description / sidebar / season / version / branch
 - 12 段 H2 必须命中 base-rules 关键词，删除所有 Layer 0/1/.. 标题
 - 行数 150-200
-- "关联" 5-7 条 `[[slug]]`，优先链已写笔记（参考 `/Users/jason/study/data/written.txt`）
+- "关联" 5-7 条 `[[slug]]`，优先链已写笔记（参考 `{{written_path}}`）
 
 ### Step 5：自检 + commit
 
 ```bash
 cd {{worktree_path}}
-node /Users/jason/study/scripts/quality-gate.mjs {{output_path}}
+node {{quality_gate_path}} {{output_path}}
 # 非 0 → 重写一次；仍 fail → failed
 ```
 

@@ -16,7 +16,7 @@
 
 import { loadDispatchQueues, markClaimed, writeCandidates, writeRewritePool } from './lib/queue-store.mjs';
 import { docsEntryRelativePath } from './lib/paths.mjs';
-import { DISPATCH_PROMPT_KINDS, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
+import { DISPATCH_PROMPT_KINDS, commonPromptVars, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
 import { worktreesForDispatch } from './lib/worktrees.mjs';
 
 function parseArgs() {
@@ -80,6 +80,7 @@ function buildAssignment(kind, area, item, worktree) {
 
   const vars = {
     slug,
+    area,
     title: item.title || slug,
     year: item.meta?.col3 || '',
     why: item.meta?.col4 || item.title || '',
@@ -92,6 +93,7 @@ function buildAssignment(kind, area, item, worktree) {
     branch_name: worktree.branch,
     output_path: outputPath,
     existing_path: existingPath || '',
+    ...commonPromptVars({ area, worktree }),
   };
 
   return { kind, area, slug, worktree, vars };

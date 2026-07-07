@@ -16,6 +16,7 @@ import { readJsonl } from './lib/jsonl.mjs';
 import { CANDIDATES_PATH, REWRITE_POOL_PATH, docsEntryRelativePath } from './lib/paths.mjs';
 import {
   PIPELINE_STAGES,
+  commonPromptVars,
   loadPromptTemplate,
   loadPromptTemplates,
   promptPath,
@@ -101,6 +102,7 @@ async function buildContext(slug, kindOverride, worktreeIdx, options = {}) {
     writer_out: writerOut,
     reviews_json: reviewsJson,
     tmp_dir: tmpDir,
+    ...commonPromptVars({ area, worktree }),
   };
 }
 

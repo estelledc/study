@@ -4,8 +4,8 @@
 
 ## 必读
 
-- `/Users/jason/study/prompts/base-rules.md`
-- `/Users/jason/study/src/content/docs/papers/hindley-milner.md`
+- `{{base_rules_path}}`
+- `{{template_note_path}}`
 
 ## 输入
 

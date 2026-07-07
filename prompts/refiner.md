@@ -70,7 +70,7 @@ cat {{output_path}}
 ### Step 3 — Layer 1 self-check
 
 ```bash
-node /Users/jason/study/scripts/quality-gate.mjs {{output_path}}
+node {{quality_gate_path}} {{output_path}}
 ```
 
 通过 → Step 4。

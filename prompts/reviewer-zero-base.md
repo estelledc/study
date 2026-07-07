@@ -4,8 +4,8 @@
 
 ## 必读
 
-- `/Users/jason/study/prompts/base-rules.md`（base 12 段规则）
-- `/Users/jason/study/src/content/docs/papers/hindley-milner.md`（标杆——理想笔记的样子）
+- `{{base_rules_path}}`（base 12 段规则）
+- `{{template_note_path}}`（标杆——理想笔记的样子）
 
 ## 输入
 

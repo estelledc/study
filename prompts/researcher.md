@@ -60,7 +60,7 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
 无论是 projects 类（跳过 1-4）还是 papers 类 fallback：
 - 用 WebFetch 拉 `{{url}}` 主页 + README（projects）或 PDF 文本
 - 提取：解决什么问题 / 三个常见使用姿势 / 同类对比差异 / 著名踩坑
-- 读 `/Users/jason/study/data/written.txt`，过滤 citations_in / citations_out / 任何提到的 slug，**只保留已写过的**作为 linkable_slugs
+- 读 `{{written_path}}`，过滤 citations_in / citations_out / 任何提到的 slug，**只保留已写过的**作为 linkable_slugs
 
 ## 输出 schema（严格 JSON，写入 `{{output_json}}`）
 
@@ -113,4 +113,4 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
 
 - 不要写 `.md` 笔记（那是 Writer 的事）
 - 不要 commit / 不要动 worktree（那是 Single Merger 的事）
-- 红线词扫描：从原文 / README 看到 sankuai / 美团 / cagent / blindbox 等机构词，**写入 research.json 时改写或省略**（详见 `/Users/jason/study/prompts/base-rules.md`）
+- 红线词扫描：从原文 / README 看到 sankuai / 美团 / cagent / blindbox 等机构词，**写入 research.json 时改写或省略**（详见 `{{base_rules_path}}`）

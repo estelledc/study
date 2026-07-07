@@ -1,6 +1,12 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { PROMPTS_DIR } from './paths.mjs';
+import {
+  DOCS_DIR,
+  PROMPTS_DIR,
+  ROOT,
+  WRITTEN_PATH,
+  docsAreaDir,
+} from './paths.mjs';
 
 export const DISPATCH_PROMPT_KINDS = ['new-paper', 'rewrite-paper', 'new-project', 'rewrite-project'];
 
@@ -14,6 +20,7 @@ export const PIPELINE_STAGES = [
 ];
 
 const PROMPT_FILES = {
+  'base-rules': 'base-rules.md',
   'new-paper': 'new-paper.md',
   'rewrite-paper': 'rewrite-paper.md',
   'new-project': 'new-project.md',
@@ -25,6 +32,20 @@ const PROMPT_FILES = {
   'reviewer-engineer': 'reviewer-engineer.md',
   refiner: 'refiner.md',
 };
+
+export const ALL_PROMPT_KEYS = Object.keys(PROMPT_FILES);
+
+export function commonPromptVars({ area = null, worktree = null } = {}) {
+  const docsArea = area ? (worktree ? path.join(worktree.path, 'src/content/docs', area) : docsAreaDir(area)) : DOCS_DIR;
+  return {
+    repo_root: ROOT,
+    base_rules_path: path.join(PROMPTS_DIR, 'base-rules.md'),
+    template_note_path: path.join(DOCS_DIR, 'papers', 'hindley-milner.md'),
+    written_path: WRITTEN_PATH,
+    quality_gate_path: path.join(ROOT, 'scripts', 'quality-gate.mjs'),
+    docs_area_dir: docsArea,
+  };
+}
 
 export function promptPath(key) {
   const file = PROMPT_FILES[key];

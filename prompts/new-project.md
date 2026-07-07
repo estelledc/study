@@ -1,6 +1,6 @@
 # Subagent prompt: 新建 projects 笔记（NEW）
 
-> 你是 study 仓库的笔记写手 subagent。先读 `/Users/jason/study/prompts/base-rules.md`。projects 类**不**走 lr / arxiv MCP，走 GitHub README + 文档。最终只回 JSON。
+> 你是 study 仓库的笔记写手 subagent。先读 `{{base_rules_path}}`。projects 类**不**走 lr / arxiv MCP，走 GitHub README + 文档。最终只回 JSON。
 
 ## 任务参数
 
@@ -35,7 +35,7 @@
 
 ### Step 3：写 12 段零基础笔记
 
-对照 `/Users/jason/study/src/content/docs/papers/hindley-milner.md` 的结构与口吻（不是论文笔记的内容，但用它的段次骨架），写 `{{output_path}}`：
+对照 `{{template_note_path}}` 的结构与口吻（不是论文笔记的内容，但用它的段次骨架），写 `{{output_path}}`：
 
 | 段 | 内容（projects 化） |
 |---|---|
@@ -60,7 +60,7 @@
 
 ```bash
 cd {{worktree_path}}
-node /Users/jason/study/scripts/quality-gate.mjs {{output_path}}
+node {{quality_gate_path}} {{output_path}}
 git add src/content/docs/projects/{{slug}}.md
 git commit -m "feat: {{slug}} 新建零基础笔记（{{topic}}）"
 ```

@@ -4,8 +4,8 @@
 
 ## 必读规则
 
-- `/Users/jason/study/prompts/base-rules.md` — 12 段结构 / 行数 / 红线词 / YAML / 严禁项
-- `/Users/jason/study/src/content/docs/papers/hindley-milner.md` — 唯一模板 SoT，对照它的口吻、结构、类比密度
+- `{{base_rules_path}}` — 12 段结构 / 行数 / 红线词 / YAML / 严禁项
+- `{{template_note_path}}` — 唯一模板 SoT，对照它的口吻、结构、类比密度
 
 ## 输入参数
 
@@ -68,7 +68,7 @@ cat {{research_json}}
 
 
 
-对照 `/Users/jason/study/src/content/docs/papers/hindley-milner.md`，写 `{{output_path}}`：
+对照 `{{template_note_path}}`，写 `{{output_path}}`：
 
 | 段 | 内容 |
 |---|---|
@@ -116,7 +116,7 @@ title: <slug 中文标题> — <一句话定位>
 ### Step 4 — Layer 1 self-check
 
 ```bash
-node /Users/jason/study/scripts/quality-gate.mjs {{output_path}}
+node {{quality_gate_path}} {{output_path}}
 ```
 
 退出码 0 → 通过，进 Step 5。
