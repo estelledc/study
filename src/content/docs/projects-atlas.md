@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 795 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 796 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：795 个
+- **总数**：796 个
 - **已分类**：214
-- **未分类**：581（落入"其他 / 待分类"段）
+- **未分类**：582（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 581 |
+| [其他 / 待分类](#其他--待分类) | 582 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 581 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 582 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -801,6 +801,7 @@ sidebar:
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) |
 | `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) |
+| `logseq` | [Logseq — 块结构离线知识库](/study/projects/logseq/) |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) |
 | `lora-mac-node` | [LoRaMac-node — LoRaWAN 终端协议栈参考实现](/study/projects/lora-mac-node/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
@@ -1091,7 +1092,7 @@ sidebar:
 
 ---
 
-## 全部 795 个（字母序）
+## 全部 796 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1475,6 +1476,7 @@ sidebar:
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | 其他 |
 | `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) | 其他 |
+| `logseq` | [Logseq — 块结构离线知识库](/study/projects/logseq/) | 其他 |
 | `loki` | [Loki — 给日志做 Prometheus，只索引标签不索引内容](/study/projects/loki/) | 监控 / 时序 |
 | `longhorn` | [Longhorn — K8s 原生的轻量分布式块存储](/study/projects/longhorn/) | 其他 |
 | `lora-mac-node` | [LoRaMac-node — LoRaWAN 终端协议栈参考实现](/study/projects/lora-mac-node/) | 其他 |
