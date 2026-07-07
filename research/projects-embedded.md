@@ -141,7 +141,7 @@ Stars 量级为 2026 年 5 月近似值。
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| ros2 | ROS 2 | 机器人操作系统 v2，DDS 消息总线 + lifecycle + composability，工业级实时设计 | 4k | https://github.com/ros2/ros2 |
+| ros2 | ROS 2 | 4k | 机器人操作系统 v2，DDS 消息总线 + lifecycle + composability，工业级实时设计 | https://github.com/ros2/ros2 |
 | moveit2 | MoveIt 2 | ROS 2 上的机械臂运动规划框架，IK / 轨迹 / 碰撞检测 / RViz 一体 | 1.2k | https://github.com/moveit/moveit2 |
 | navigation2 | Nav2 | ROS 2 上的移动机器人导航栈，behavior tree + planner + controller 解耦 | 3.6k | https://github.com/ros-navigation/navigation2 |
 | gazebo-classic | Gazebo Classic | OSRF 的物理仿真器，URDF / SDF / 物理引擎插件，机器人仿真训练事实标准 | 1.4k | https://github.com/osrf/gazebo |
