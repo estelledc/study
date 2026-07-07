@@ -1445,6 +1445,7 @@ rocket-chat
 rocksdb
 rolldown
 rollup
+roo-code
 rook
 rspack
 rt-thread
