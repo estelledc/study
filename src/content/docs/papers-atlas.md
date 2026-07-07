@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 872 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 873 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：872 篇
+- **总数**：873 篇
 - **已分类**：143
-- **未分类**：729（落入"其他 / 待分类"段）
+- **未分类**：730（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 729 |
+| [其他 / 待分类](#其他--待分类) | 730 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 729 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 730 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -471,6 +471,7 @@ sidebar:
 | `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) |
 | `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) |
+| `daian-flash-boys-2020` | [Flash Boys 2.0 — MEV 把交易排序变成一门生意](/study/papers/daian-flash-boys-2020/) |
 | `danezis-sphinx-2009` | [Danezis-Sphinx 2009 — 把匿名转发包压到可实用的大小](/study/papers/danezis-sphinx-2009/) |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |
 | `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) |
@@ -1040,7 +1041,7 @@ sidebar:
 
 ---
 
-## 全部 872 篇（字母序）
+## 全部 873 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1240,6 +1241,7 @@ sidebar:
 | `cutlass-2020` | [CUTLASS — 把 SOTA GEMM 拆成可组合的 C++ 模板层级](/study/papers/cutlass-2020/) | 其他 |
 | `cytoscape-js` | [Cytoscape.js — 浏览器里画网络图、跑图算法的 JS 库](/study/papers/cytoscape-js/) | 其他 |
 | `dafny-2010` | [Dafny — 把"代码该满足的条件"直接写进语法，编译器自动证明](/study/papers/dafny-2010/) | 其他 |
+| `daian-flash-boys-2020` | [Flash Boys 2.0 — MEV 把交易排序变成一门生意](/study/papers/daian-flash-boys-2020/) | 其他 |
 | `dalle-2` | [DALL-E 2 — 基于 CLIP + 扩散的图像生成](/study/papers/dalle-2/) | 生成模型 / 扩散 |
 | `danezis-sphinx-2009` | [Danezis-Sphinx 2009 — 把匿名转发包压到可实用的大小](/study/papers/danezis-sphinx-2009/) | 其他 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | 其他 |
