@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 860 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 861 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：860 篇
+- **总数**：861 篇
 - **已分类**：143
-- **未分类**：717（落入"其他 / 待分类"段）
+- **未分类**：718（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 717 |
+| [其他 / 待分类](#其他--待分类) | 718 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 717 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 718 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -686,6 +686,7 @@ sidebar:
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) |
 | `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) |
 | `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) |
+| `li-t-closeness-2007` | [Li t-closeness 2007 — 用整体分布约束匿名分组](/study/papers/li-t-closeness-2007/) |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
 | `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |
@@ -1028,7 +1029,7 @@ sidebar:
 
 ---
 
-## 全部 860 篇（字母序）
+## 全部 861 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1483,6 +1484,7 @@ sidebar:
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | 其他 |
 | `lfs-1991` | [LFS 1991 — 把整个磁盘当日志写](/study/papers/lfs-1991/) | 其他 |
 | `li-2018-redner` | [redner — 让光线追踪能反向传播过几何边缘](/study/papers/li-2018-redner/) | 其他 |
+| `li-t-closeness-2007` | [Li t-closeness 2007 — 用整体分布约束匿名分组](/study/papers/li-t-closeness-2007/) | 其他 |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
 | `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) | 其他 |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 其他 |
