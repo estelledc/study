@@ -602,6 +602,7 @@ persistent-memory-2014
 personalized-pagerank-2003
 peyton-jones-stg
 phong-1975
+piotrowska-loopix-2017
 pipedream-2019
 pivot-tracing-2015
 plan9-1995
