@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 836 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 837 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：836 篇
+- **总数**：837 篇
 - **已分类**：139
-- **未分类**：697（落入"其他 / 待分类"段）
+- **未分类**：698（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 697 |
+| [其他 / 待分类](#其他--待分类) | 698 |
 
 ---
 
@@ -300,7 +300,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 697 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 698 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -487,6 +487,7 @@ sidebar:
 | `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) |
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) |
 | `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) |
+| `doligez-leroy-concurrent-gc` | [Doligez-Leroy Concurrent GC — ML 线程运行时里的准实时垃圾回收](/study/papers/doligez-leroy-concurrent-gc/) |
 | `donar-2010` | [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) |
 | `dot-doh-perf-2020` | [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) |
 | `double-descent-2019` | [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) |
@@ -1004,7 +1005,7 @@ sidebar:
 
 ---
 
-## 全部 836 篇（字母序）
+## 全部 837 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1233,6 +1234,7 @@ sidebar:
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) | 其他 |
 | `dns` | [DNS — 把全球域名解析切成一棵可分布维护的树](/study/papers/dns/) | 网络协议 |
 | `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) | 其他 |
+| `doligez-leroy-concurrent-gc` | [Doligez-Leroy Concurrent GC — ML 线程运行时里的准实时垃圾回收](/study/papers/doligez-leroy-concurrent-gc/) | 其他 |
 | `donar-2010` | [DONAR 2010 — 把 DNS 全球调度写成一道可解的优化题](/study/papers/donar-2010/) | 其他 |
 | `dot-doh-perf-2020` | [DoT/DoH 性能 — 给 DNS 加密之后网页变快还是变慢](/study/papers/dot-doh-perf-2020/) | 其他 |
 | `double-descent-2019` | [Double Descent — 模型越大越准，过参数化时代的反常识曲线](/study/papers/double-descent-2019/) | 其他 |

@@ -148,5 +148,9 @@ mbedtls_ssl_handshake(&ssl);  // 在 UDP 上完成握手
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[diffie-hellman]] —— Diffie-Hellman 密钥交换
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
+- [[libsignal]] —— libsignal — 端到端加密的 Rust 内核
+- [[lwip]] —— lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈
+- [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
 

@@ -151,6 +151,7 @@ Robin Milner 1973 年到爱丁堡，启动 LCF 项目（一个辅助证明程序
 - [[bidirectional-typing]] —— 双向类型检查 — 推断和检查两个方向交替前进
 - [[cakeml]] —— CakeML — 从源码到机器码每一步都被数学证明的 ML 编译器
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
+- [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy Concurrent GC — ML 线程运行时里的准实时垃圾回收
 - [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
 - [[hughes-fp-matters]] —— Why FP Matters — 函数式真正赢在能拆能粘
 - [[kahn-natural-semantics]] —— Kahn 自然语义 — 用一棵推理树说清楚程序求值

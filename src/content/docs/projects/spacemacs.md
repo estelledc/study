@@ -178,6 +178,11 @@ Spacemacs 的代码结构分三层：`core/`（启动引擎：加载顺序、Lay
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
 - [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[emacs]] —— GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统
 - [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
+- [[textmate]] —— TextMate — macOS 上定义 bundle 宏系统的编辑器
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 

@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 765 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 766 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：765 个
+- **总数**：766 个
 - **已分类**：213
-- **未分类**：552（落入"其他 / 待分类"段）
+- **未分类**：553（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 552 |
+| [其他 / 待分类](#其他--待分类) | 553 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 552 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 553 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -997,6 +997,7 @@ sidebar:
 | `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) |
+| `theia` | [Eclipse Theia — 可定制的云端与桌面 IDE 框架](/study/projects/theia/) |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) |
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
@@ -1061,7 +1062,7 @@ sidebar:
 
 ---
 
-## 全部 765 个（字母序）
+## 全部 766 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1736,6 +1737,7 @@ sidebar:
 | `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) | 其他 |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | 其他 |
 | `the-silver-searcher` | [the_silver_searcher (ag) — 比 grep/ack 快一个数量级的代码搜索](/study/projects/the-silver-searcher/) | 其他 |
+| `theia` | [Eclipse Theia — 可定制的云端与桌面 IDE 框架](/study/projects/theia/) | 其他 |
 | `thirdweb-sdk` | [thirdweb SDK — 一站式 Web3 全家桶](/study/projects/thirdweb-sdk/) | 其他 |
 | `thrift` | [Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码](/study/projects/thrift/) | 其他 |
 | `tidb` | [TiDB — HTAP 分布式数据库](/study/projects/tidb/) | 数据库本体 / 存储引擎 |

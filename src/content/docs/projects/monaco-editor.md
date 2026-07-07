@@ -160,6 +160,7 @@ monaco.languages.registerCompletionItemProvider('markdown', {
 - [[notepad-plus-plus]] —— Notepad++ — 比记事本多两个加号的 Windows 编辑器
 - [[prosemirror]] —— ProseMirror — schema 先定 DOM 后服从的富文本编辑器框架
 - [[shiki]] —— shiki — 把 VS Code 那套染色搬到网页上
+- [[theia]] —— Eclipse Theia — 可定制的云端与桌面 IDE 框架
 - [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 - [[vscodium]] —— VSCodium — 去微软遥测的 VS Code 干净构建
 

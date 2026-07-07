@@ -186,5 +186,11 @@ K               悬浮文档
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
+- [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
+- [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[emacs]] —— GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统
 - [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
+- [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
 

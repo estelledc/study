@@ -183,7 +183,10 @@ CircuitPython 从 MicroPython fork 而来，但做了大量取舍：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
 - [[embedded-hal]] —— embedded-hal — Rust 嵌入式硬件抽象的统一接口
 - [[micropython]] —— MicroPython — 在巴掌大的芯片上跑 Python
+- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
+- [[platformio-core]] —— PlatformIO Core — 一条命令编译上传任意嵌入式板子
 - [[probe-rs]] —— probe-rs — Rust 写的嵌入式调试烧录工具
 

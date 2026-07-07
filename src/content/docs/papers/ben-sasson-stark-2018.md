@@ -148,5 +148,10 @@ STARK rollup 做法：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[bitcoin]] —— Bitcoin 白皮书
+- [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
+- [[reed-solomon-1960]] —— Reed-Solomon 编码
+- [[rsa]] —— RSA 公钥密码
+- [[shannon-1948]] —— Shannon 1948 — 信息论的诞生
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

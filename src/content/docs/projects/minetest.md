@@ -161,5 +161,9 @@ luanti/
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[bevy]] —— Bevy — 用 Rust 写游戏的现代 ECS 引擎
+- [[ffmpeg]] —— FFmpeg — 几乎所有视频工具背后都藏着它
 - [[openrct2]] —— OpenRCT2 — 用逆向工程让 20 年前的游戏复活
+- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
+- [[sqlite]] —— SQLite — 嵌入式 SQL 数据库
 

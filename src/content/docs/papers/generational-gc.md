@@ -153,13 +153,13 @@ jstat -gcutil <pid> 1000
 - [[boehm-gc]] —— Boehm-Weiser 保守式垃圾回收 — 不改编译器也能给 C 加 GC
 - [[call-by-need-1995]] —— Call-by-Need Lambda Calculus — 给惰性求值一套真正的演算
 - [[cheney-gc]] —— Cheney 1970 — 把活对象复制走，原地丢弃整片堆
+- [[doligez-leroy-concurrent-gc]] —— Doligez-Leroy Concurrent GC — ML 线程运行时里的准实时垃圾回收
 - [[g1-collector]] —— G1 Garbage-First — 给暂停时间设个预算的垃圾回收器
 - [[immix-mark-region]] —— Immix — 把"扫"和"搬"两种垃圾回收揉成一个
 - [[lieberman-realtime-gc]] —— Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿
 - [[mccarthy-lisp]] —— McCarthy LISP 1960
 - [[peyton-jones-stg]] —— Peyton Jones STG — 让 Haskell 的 lazy 在普通 CPU 上跑得快
 - [[smalltalk-80]] —— Smalltalk-80
-- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
 - [[tofte-talpin-regions]] —— Tofte-Talpin Regions — 让类型系统替你管内存生命周期
 - [[zgc]] —— ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器
 

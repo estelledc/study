@@ -149,4 +149,10 @@ NvChad 预配置了 nvim-lspconfig 和 mason.nvim 的集成。Mason 负责下载
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
+- [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[fzf]] —— fzf — 命令行模糊查找
+- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
+- [[lazyvim]] —— LazyVim — lazy.nvim 驱动的 Neovim 发行版
+- [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
 

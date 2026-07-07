@@ -153,5 +153,12 @@ close(sock);
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[embassy]] —— Embassy — 让单片机也能用 async/await
+- [[freertos]] —— FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核
 - [[mbedtls]] —— Mbed TLS — 嵌入式设备的轻量级 TLS 加密库
+- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
+- [[rt-thread]] —— RT-Thread — 中文社区主导的物联网 RTOS
+- [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
+- [[tcp]] —— TCP — 在不可靠的 IP 上凿出一条 reliable 字节流
+- [[zephyr]] —— Zephyr — 一份代码树跑遍所有嵌入式芯片的开源 RTOS
 

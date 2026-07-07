@@ -181,5 +181,9 @@ Waymo Open Dataset 的启发是：好的数据集本身就是基础设施。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
+- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
+- [[resnet]] —— ResNet — 残差连接
+- [[sam]] —— SAM — Segment Anything
+- [[vit]] —— ViT — Vision Transformer
 

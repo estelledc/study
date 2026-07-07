@@ -150,5 +150,10 @@ end, { desc = "Lazygit" })
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[astronvim]] —— AstroNvim — 社区驱动的 Neovim 配置
+- [[fzf]] —— fzf — 命令行模糊查找
+- [[lazydocker]] —— lazydocker — Go 写的 Docker TUI，五面板看容器 / 镜像 / 网络 / 卷
+- [[lazygit]] —— lazygit — Go 写的全功能 git TUI，键盘驱动 stage / rebase / cherry-pick
 - [[nvchad]] —— NvChad — 极致美观的 Neovim 配置
+- [[ripgrep]] —— ripgrep — Rust 写的现代 grep
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
 

@@ -150,11 +150,7 @@ new Sortable(list, {
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
-- [[d3]] —— D3.js — 不是图表库，是写图表库的乐高
 - [[dnd-kit]] —— dnd-kit — React 现代拖拽 toolkit
 - [[playwright]] —— Playwright — 跨浏览器自动化测试
 - [[react-dnd]] —— react-dnd — React 时代第一个把拖拽拆成四层的库
-- [[react-hook-form]] —— react-hook-form — input 不进 React state 也能写表单
-- [[recharts]] —— Recharts — 用 JSX 直接拼出图表的 React 组件库
-- [[zod]] —— Zod — TypeScript-first schema 验证
 

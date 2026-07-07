@@ -159,7 +159,12 @@ TextMate 的源码结构分为三层：
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
 - [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
+- [[emacs]] —— GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统
 - [[geany]] —— Geany — 用 C 写的轻量级 GTK 编辑器
 - [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
+- [[vscode]] —— VS Code — 把编辑/调试/扩展捏成一个跨平台壳
+- [[xi-editor]] —— xi-editor — 异步架构编辑器的先驱实验
 

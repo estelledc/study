@@ -153,7 +153,6 @@ dayjs.tz('2026-05-30 10:00', 'America/New_York').format();
 
 - [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
 - [[date-fns]] —— date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数
-- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[pnpm]] —— pnpm — 全机器只存一份的 Node 包管理器
@@ -163,4 +162,5 @@ dayjs.tz('2026-05-30 10:00', 'America/New_York').format();
 - [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
 - [[turborepo]] —— Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"
 - [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

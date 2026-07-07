@@ -149,7 +149,6 @@ console.log(isAfter(end, start))            // true
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[dayjs]] —— Day.js — 用 2 KB 复刻 Moment 的极简日期库
-- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
 - [[js-joda]] —— js-joda — 把 Java 的 java.time 整套搬进 JS
 - [[luxon]] —— Luxon — 如果今天重写 Moment 应该长什么样
 - [[react-intl]] —— react-intl — 让 React 应用按 ICU 标准说人话
@@ -157,4 +156,5 @@ console.log(isAfter(end, start))            // true
 - [[temporal-polyfill]] —— temporal-polyfill — 给 JavaScript 装上现代日期时间标准的备胎
 - [[timelinejs]] —— TimelineJS — 把 Google Sheet 一键变成新闻时间线
 - [[vis-timeline]] —— vis-timeline — 时间轴 / 日程 / 历史事件三合一组件
+- [[vue-i18n]] —— vue-i18n — Vue 官方 i18n，切语言整页自己刷新
 

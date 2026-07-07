@@ -191,5 +191,9 @@ LLM 出现后，很多新系统看起来很新。
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-（暂无反向链接）
+- [[agentless]] —— Agentless — 反 Agent 派的 SWE-bench 解法
+- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
+- [[react]] —— React UI 组件库
+- [[reflexion]] —— Reflexion — 让 LLM 自我反思
+- [[voyager]] —— Voyager — LLM 终身学习智能体
 

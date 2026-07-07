@@ -179,8 +179,11 @@ Org Mode 把纯文本变成了带折叠、带日期、带标签、可导出 PDF/
 - [[atom]] —— Atom — Web 技术做桌面编辑器的先驱
 - [[doom-emacs]] —— Doom Emacs — 启动不到一秒的模块化 Emacs 配置
 - [[geany]] —— Geany — 用 C 写的轻量级 GTK 编辑器
+- [[kakoune]] —— Kakoune — 多光标优先模态编辑器
+- [[lite-xl]] —— Lite-XL — 不到 3MB 的编辑器也能扩展出花样
 - [[lunarvim]] —— LunarVim — 开箱即用的 Neovim IDE 发行版
 - [[spacemacs]] —— Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置
 - [[textmate]] —— TextMate — macOS 上定义 bundle 宏系统的编辑器
+- [[vim]] —— Vim — 键盘上弹钢琴的编辑器
 - [[xi-editor]] —— xi-editor — 异步架构编辑器的先驱实验
 

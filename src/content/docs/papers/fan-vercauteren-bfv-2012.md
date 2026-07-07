@@ -148,5 +148,10 @@ ct_doubled = evaluator.multiply_plain(
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
+- [[brakerski-bgv-2012]] —— BGV 2012 — 不用自举也能做全同态加密
 - [[chillotti-tfhe-2016]] —— TFHE 2016 — 把全同态加密的自举时间从分钟级压到 0.1 秒
+- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
+- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
+- [[rsa]] —— RSA 公钥密码
+- [[zk-snark]] —— zk-SNARK 零知识证明
 

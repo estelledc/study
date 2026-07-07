@@ -146,6 +146,12 @@ opkg list-installed           # 确认已安装
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
 - [[arduino-cli]] —— Arduino CLI — 用命令行管理 Arduino 开发全流程
+- [[buildroot]] —— Buildroot — 30 分钟从零搭出一个嵌入式 Linux
+- [[ethane-2007]] —— Ethane 2007 — 把企业网安全策略集中到一台中央电脑上
+- [[nix]] —— Nix — 把每个软件包当成纯函数的输出
+- [[nuttx]] —— Apache NuttX — 把 POSIX 塞进单片机的实时操作系统
 - [[platformio-core]] —— PlatformIO Core — 一条命令编译上传任意嵌入式板子
 - [[smoltcp]] —— smoltcp — 在没有操作系统的芯片上跑 TCP/IP
+- [[wireguard-2017]] —— WireGuard — 4000 行代码重写 VPN 的极简主义
+- [[yocto-poky]] —— Yocto — 工业级定制嵌入式 Linux 的标准答案
 
