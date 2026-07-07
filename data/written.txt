@@ -1302,6 +1302,7 @@ nanomq
 nanostores
 nats
 ncdu
+ncnn
 nebula
 neo4j
 neovim
