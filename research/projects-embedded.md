@@ -131,7 +131,7 @@ Stars 量级为 2026 年 5 月近似值。
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
 | klipper | Klipper | Python + C 双进程 3D 打印固件，运动学算到主机减压主控，开源圈最先进 | 10k | https://github.com/Klipper3d/klipper |
-| marlin | Marlin Firmware | 8-bit / 32-bit MCU 上跑的开源 3D 打印固件，G-code 解析教科书 | 16k | https://github.com/MarlinFirmware/Marlin |
+| marlin | Marlin Firmware | 16k | 8-bit / 32-bit MCU 上跑的开源 3D 打印固件，G-code 解析教科书 | https://github.com/MarlinFirmware/Marlin |
 | grbl | grbl | Arduino UNO 上跑的 G-code 解释器，~30 年的 CNC 控制鼻祖，500 行运动规划核心 | 6.4k | https://github.com/gnea/grbl |
 | linuxcnc | LinuxCNC | RTLinux 实时内核上的 CNC 机床控制系统，HAL + 实时步进 + GUI 一体 | 2k | https://github.com/LinuxCNC/linuxcnc |
 
