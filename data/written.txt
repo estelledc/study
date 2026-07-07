@@ -459,6 +459,7 @@ linear-scan-reg-alloc
 linear-types
 linearizability-1990
 lion-2023
+lipp-meltdown-2018
 liquid-types
 liu-2020-dlss
 llama
