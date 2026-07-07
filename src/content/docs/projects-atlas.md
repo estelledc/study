@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 781 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 782 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：781 个
+- **总数**：782 个
 - **已分类**：214
-- **未分类**：567（落入"其他 / 待分类"段）
+- **未分类**：568（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 567 |
+| [其他 / 待分类](#其他--待分类) | 568 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 567 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 568 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -860,6 +860,7 @@ sidebar:
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
 | `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
+| `opencode` | [OpenCode — 终端里的开源 AI 编程助手](/study/projects/opencode/) |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `openrct2` | [OpenRCT2 — 用逆向工程让 20 年前的游戏复活](/study/projects/openrct2/) |
@@ -1077,7 +1078,7 @@ sidebar:
 
 ---
 
-## 全部 781 个（字母序）
+## 全部 782 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1555,6 +1556,7 @@ sidebar:
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) | 其他 |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | 其他 |
+| `opencode` | [OpenCode — 终端里的开源 AI 编程助手](/study/projects/opencode/) | 其他 |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
 | `openrct2` | [OpenRCT2 — 用逆向工程让 20 年前的游戏复活](/study/projects/openrct2/) | 其他 |
