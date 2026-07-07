@@ -427,6 +427,7 @@ kildall-dataflow
 knrm-2017
 knuth-lr-1965
 knuth-taocp
+kocher-spectre-2019
 kokkos-2014
 koren-mf-2009
 krishnamurthy-1999-http11
