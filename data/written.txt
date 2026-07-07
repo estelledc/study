@@ -1276,6 +1276,7 @@ modin
 monaco-editor
 monero
 mongodb
+mosquitto
 motion-one
 move-language
 msw
