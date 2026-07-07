@@ -1253,6 +1253,7 @@ maplibre-gl
 mariadb-server
 markdown-it
 marked
+marktext
 matplotlib
 matrix-js-sdk
 matrix-rust-sdk
