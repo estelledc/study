@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 848 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 849 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：848 篇
+- **总数**：849 篇
 - **已分类**：143
-- **未分类**：705（落入"其他 / 待分类"段）
+- **未分类**：706（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 705 |
+| [其他 / 待分类](#其他--待分类) | 706 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 705 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 706 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -508,6 +508,7 @@ sidebar:
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
+| `ducas-dilithium-2018` | [CRYSTALS-Dilithium 2018 — 后量子时代的主力数字签名](/study/papers/ducas-dilithium-2018/) |
 | `duchi-local-dp-2013` | [Duchi 2013 — 本地差分隐私的统计极限](/study/papers/duchi-local-dp-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
 | `dwork-calibrating-noise-2006` | [校准噪声 — 往统计结果里加多少噪音才能保护隐私](/study/papers/dwork-calibrating-noise-2006/) |
@@ -1016,7 +1017,7 @@ sidebar:
 
 ---
 
-## 全部 848 篇（字母序）
+## 全部 849 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1266,6 +1267,7 @@ sidebar:
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | 其他 |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 其他 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
+| `ducas-dilithium-2018` | [CRYSTALS-Dilithium 2018 — 后量子时代的主力数字签名](/study/papers/ducas-dilithium-2018/) | 其他 |
 | `duchi-local-dp-2013` | [Duchi 2013 — 本地差分隐私的统计极限](/study/papers/duchi-local-dp-2013/) | 其他 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 其他 |
 | `dwork-calibrating-noise-2006` | [校准噪声 — 往统计结果里加多少噪音才能保护隐私](/study/papers/dwork-calibrating-noise-2006/) | 其他 |
