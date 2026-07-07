@@ -1592,6 +1592,7 @@ tldraw
 tmux
 torchtune
 traefik
+trilium
 triton-inference-server
 trl
 trpc
