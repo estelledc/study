@@ -97,11 +97,8 @@ function buildAssignment(kind, area, item, worktree) {
   return { kind, area, slug, worktree, vars };
 }
 
-async function main() {
-  const args = parseArgs();
-
-  const { candidates, pool } = await loadDispatchQueues();
-
+export function dispatchBatch(args, queues, options = {}) {
+  const { candidates = [], pool = [] } = queues;
   // 4 类各 N/2（除非奇数）
   const rewritePerArea = Math.floor(args.rewrite / 2);
   const newPerArea = Math.floor(args.new / 2);
@@ -130,20 +127,31 @@ async function main() {
 
   // 分配 worktree
   const assignments = [];
-  const papersRewriteWorktrees = worktreesForDispatch('papers', 'rewrite');
-  const projectsRewriteWorktrees = worktreesForDispatch('projects', 'rewrite');
-  const papersNewWorktrees = worktreesForDispatch('papers', 'new');
-  const projectsNewWorktrees = worktreesForDispatch('projects', 'new');
+  const papersRewriteWorktrees = worktreesForDispatch('papers', 'rewrite', options.home);
+  const projectsRewriteWorktrees = worktreesForDispatch('projects', 'rewrite', options.home);
+  const papersNewWorktrees = worktreesForDispatch('papers', 'new', options.home);
+  const projectsNewWorktrees = worktreesForDispatch('projects', 'new', options.home);
 
   papersRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-paper', 'papers', item, papersRewriteWorktrees[i])));
   projectsRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-project', 'projects', item, projectsRewriteWorktrees[i])));
   papersNew.forEach((item, i) => assignments.push(buildAssignment('new-paper', 'papers', item, papersNewWorktrees[i])));
   projectsNew.forEach((item, i) => assignments.push(buildAssignment('new-project', 'projects', item, projectsNewWorktrees[i])));
 
-  // Render prompts
-  const templates = await loadPromptTemplates(DISPATCH_PROMPT_KINDS);
+  return {
+    batch_size: assignments.length,
+    expected: args.rewrite + args.new,
+    issues,
+    dry_run: args.dryRun,
+    assignments,
+    picked: {
+      rewrite: [...papersRewrite, ...projectsRewrite],
+      new: [...papersNew, ...projectsNew],
+    },
+  };
+}
 
-  const output = assignments.map(a => ({
+export function renderDispatchOutput(plan, templates) {
+  const output = plan.assignments.map(a => ({
     kind: a.kind,
     area: a.area,
     slug: a.slug,
@@ -154,27 +162,42 @@ async function main() {
     prompt: renderTemplate(templates[a.kind], a.vars),
   }));
 
+  return {
+    batch_size: plan.batch_size,
+    expected: plan.expected,
+    issues: plan.issues,
+    dry_run: plan.dry_run,
+    assignments: output,
+  };
+}
+
+async function main() {
+  const args = parseArgs();
+
+  const { candidates, pool } = await loadDispatchQueues();
+  const plan = dispatchBatch(args, { candidates, pool });
+
+  // Render prompts
+  const templates = await loadPromptTemplates(DISPATCH_PROMPT_KINDS);
+  const output = renderDispatchOutput(plan, templates);
+
   // 标 claimed（除非 dry-run）
   if (!args.dryRun) {
-    await writeRewritePool(markClaimed(pool, [...papersRewrite, ...projectsRewrite], assignments));
-    await writeCandidates(markClaimed(candidates, [...papersNew, ...projectsNew], assignments));
+    await writeRewritePool(markClaimed(pool, plan.picked.rewrite, plan.assignments));
+    await writeCandidates(markClaimed(candidates, plan.picked.new, plan.assignments));
   }
 
   // Output to stdout: JSON array
-  console.log(JSON.stringify({
-    batch_size: assignments.length,
-    expected: args.rewrite + args.new,
-    issues,
-    dry_run: args.dryRun,
-    assignments: output,
-  }, null, 2));
+  console.log(JSON.stringify(output, null, 2));
 
-  if (issues.length && !args.dryRun) {
-    process.stderr.write(`WARNING: pool short on ${issues.length} slot(s)\n`);
+  if (plan.issues.length && !args.dryRun) {
+    process.stderr.write(`WARNING: pool short on ${plan.issues.length} slot(s)\n`);
   }
 }
 
-main().catch(err => {
-  console.error('dispatch-batch failed:', err);
-  process.exit(1);
-});
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => {
+    console.error('dispatch-batch failed:', err);
+    process.exit(1);
+  });
+}

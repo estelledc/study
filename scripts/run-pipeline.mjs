@@ -38,12 +38,13 @@ function parseArgs() {
   return args;
 }
 
-async function findCandidate(slug) {
-  const candidates = await readJsonl(CANDIDATES_PATH);
+async function findCandidate(slug, candidatesOverride = null) {
+  const candidates = candidatesOverride ?? await readJsonl(CANDIDATES_PATH);
   return candidates.find(c => c.slug === slug);
 }
 
-async function findRewriteEntry(slug) {
+async function findRewriteEntry(slug, poolOverride = null) {
+  if (poolOverride) return poolOverride.find(p => p.slug === slug) ?? null;
   try {
     const pool = await readJsonl(REWRITE_POOL_PATH);
     return pool.find(p => p.slug === slug);
@@ -63,21 +64,21 @@ function inferKind(slug, candidate, rewriteEntry, areaHint) {
   return areaHint === 'papers' ? 'new-paper' : 'new-project';
 }
 
-async function buildContext(slug, kindOverride, worktreeIdx) {
-  const candidate = await findCandidate(slug);
-  const rewriteEntry = await findRewriteEntry(slug);
+async function buildContext(slug, kindOverride, worktreeIdx, options = {}) {
+  const candidate = await findCandidate(slug, options.candidates);
+  const rewriteEntry = await findRewriteEntry(slug, options.rewritePool);
 
   const kind = kindOverride || inferKind(slug, candidate, rewriteEntry, candidate?.area);
   const area = kind.endsWith('paper') ? 'papers' : 'projects';
 
-  const worktree = worktreeForPipelineKind(kind, worktreeIdx);
+  const worktree = worktreeForPipelineKind(kind, worktreeIdx, options.home);
 
   const isRewrite = kind.startsWith('rewrite-');
   const outputPath = `${worktree.path}/${docsEntryRelativePath(area, slug)}`;
   const existingPath = isRewrite ? outputPath : '';
 
-  const tmpDir = `/tmp/pipeline-${slug}`;
-  fsSync.mkdirSync(tmpDir, { recursive: true });
+  const tmpDir = options.tmpDir || `/tmp/pipeline-${slug}`;
+  if (options.createTmpDir !== false) fsSync.mkdirSync(tmpDir, { recursive: true });
   const researchJson = path.join(tmpDir, 'research.json');
   const writerOut = path.join(tmpDir, 'writer.json');
   const reviewsJson = path.join(tmpDir, 'reviews.json');
@@ -156,11 +157,13 @@ async function main() {
   }, null, 2));
 }
 
-main().catch(err => {
-  console.error('run-pipeline failed:', err);
-  emit({ event: 'pipeline-driver-error', error: String(err) });
-  process.exit(1);
-});
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(err => {
+    console.error('run-pipeline failed:', err);
+    emit({ event: 'pipeline-driver-error', error: String(err) });
+    process.exit(1);
+  });
+}
 
 // Helpers exported for workflow programmatic use
 export { buildContext, renderTemplate as renderPrompt, dumpStagePrompt };
