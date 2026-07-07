@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 845 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 846 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：845 篇
+- **总数**：846 篇
 - **已分类**：143
-- **未分类**：702（落入"其他 / 待分类"段）
+- **未分类**：703（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 702 |
+| [其他 / 待分类](#其他--待分类) | 703 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 702 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 703 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -342,6 +342,7 @@ sidebar:
 | `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) |
 | `autonomous-driving-waymo-2021` | [Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving](/study/papers/autonomous-driving-waymo-2021/) |
+| `avgustinov-codeql-2016` | [QL / CodeQL — 用面向对象外壳写可扩展代码查询](/study/papers/avgustinov-codeql-2016/) |
 | `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) |
 | `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) |
 | `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) |
@@ -1013,7 +1014,7 @@ sidebar:
 
 ---
 
-## 全部 845 篇（字母序）
+## 全部 846 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1062,6 +1063,7 @@ sidebar:
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | 其他 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
 | `autonomous-driving-waymo-2021` | [Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving](/study/papers/autonomous-driving-waymo-2021/) | 其他 |
+| `avgustinov-codeql-2016` | [QL / CodeQL — 用面向对象外壳写可扩展代码查询](/study/papers/avgustinov-codeql-2016/) | 其他 |
 | `awodey-warren-2009` | [Awodey-Warren — 把『相等的证明』看成两点之间的路径](/study/papers/awodey-warren-2009/) | 其他 |
 | `awq` | [AWQ — 看激活脸色给权重打折](/study/papers/awq/) | 其他 |
 | `awq-2023` | [AWQ 2023 — 让 70B 大模型住进 RTX 4090](/study/papers/awq-2023/) | 其他 |
