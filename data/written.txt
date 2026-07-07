@@ -1037,6 +1037,7 @@ dvc
 earthly
 echarts
 echo
+eclipse-che
 edgedb
 effect
 ejabberd
