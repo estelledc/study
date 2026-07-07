@@ -91,6 +91,7 @@ brewer-cap-2000
 brill-moore-2000
 brook-2004
 btrfs-2013
+bunz-bulletproofs-2018
 burgess-2020-turing-rt
 bvt-1999
 byzantine-generals-1982
