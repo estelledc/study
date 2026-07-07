@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 769 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 770 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：769 个
+- **总数**：770 个
 - **已分类**：214
-- **未分类**：555（落入"其他 / 待分类"段）
+- **未分类**：556（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 555 |
+| [其他 / 待分类](#其他--待分类) | 556 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 555 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 556 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -858,6 +858,7 @@ sidebar:
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) |
 | `opentelemetry-collector` | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) |
+| `openthread` | [OpenThread — IPv6 over 802.15.4 mesh 的开源 Thread 实现](/study/projects/openthread/) |
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
@@ -1065,7 +1066,7 @@ sidebar:
 
 ---
 
-## 全部 769 个（字母序）
+## 全部 770 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1542,6 +1543,7 @@ sidebar:
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
 | `opentelemetry-collector` | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) | 其他 |
+| `openthread` | [OpenThread — IPv6 over 802.15.4 mesh 的开源 Thread 实现](/study/projects/openthread/) | 其他 |
 | `opentofu` | [OpenTofu — 社区接手的 Terraform](/study/projects/opentofu/) | 其他 |
 | `opentsdb` | [OpenTSDB — HBase 上的第一代分布式 TSDB](/study/projects/opentsdb/) | 其他 |
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
