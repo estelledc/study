@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "node --test",
+    "verify:scripts": "npm test && node scripts/pick-batch.mjs --count 0 --rewrite 0 --new 0 --no-priority && node scripts/dispatch-batch.mjs --rewrite 0 --new 0 --dry-run && git diff --check",
     "atlas": "node scripts/regen-atlas.mjs",
     "prebuild": "node scripts/regen-atlas.mjs"
   },
