@@ -104,9 +104,9 @@ ${query[[
 
 ### 案例 3：用 Space Lua 在 Markdown 里写小功能
 
-官方 Space Lua 文档给的最小定义是一个加法函数。实际使用时要把代码块语言写成 `space-lua`：
+官方 Space Lua 文档给的最小定义是一个加法函数。实际使用时可以把代码块语言写成 `space-lua`；这里用 `lua` 做等价高亮展示：
 
-```space-lua
+```lua
 -- adds two numbers
 function adder(a, b)
   return a + b
