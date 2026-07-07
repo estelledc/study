@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 794 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 795 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：794 个
+- **总数**：795 个
 - **已分类**：214
-- **未分类**：580（落入"其他 / 待分类"段）
+- **未分类**：581（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 580 |
+| [其他 / 待分类](#其他--待分类) | 581 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 580 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 581 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -720,6 +720,7 @@ sidebar:
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) |
 | `graphology` | [Graphology — 浏览器里的图数据结构与算法库](/study/projects/graphology/) |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) |
+| `grbl` | [Grbl — Arduino UNO 上跑的 CNC G-code 控制器](/study/projects/grbl/) |
 | `greenplum-db` | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) |
@@ -1090,7 +1091,7 @@ sidebar:
 
 ---
 
-## 全部 794 个（字母序）
+## 全部 795 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1363,6 +1364,7 @@ sidebar:
 | `grape` | [Grape — 用 Ruby DSL 专写 REST API 的轻量框架](/study/projects/grape/) | 其他 |
 | `graphology` | [Graphology — 浏览器里的图数据结构与算法库](/study/projects/graphology/) | 其他 |
 | `graphql-yoga` | [GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器](/study/projects/graphql-yoga/) | 其他 |
+| `grbl` | [Grbl — Arduino UNO 上跑的 CNC G-code 控制器](/study/projects/grbl/) | 其他 |
 | `greenplum-db` | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) | 其他 |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | 其他 |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | 其他 |
