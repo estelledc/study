@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 839 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 840 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：839 篇
+- **总数**：840 篇
 - **已分类**：143
-- **未分类**：696（落入"其他 / 待分类"段）
+- **未分类**：697（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 696 |
+| [其他 / 待分类](#其他--待分类) | 697 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 696 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 697 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -557,6 +557,7 @@ sidebar:
 | `fsdp-2023` | [PyTorch FSDP — 把大模型切成 N 份分到 N 张卡](/study/papers/fsdp-2023/) |
 | `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) |
 | `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) |
+| `gabizon-plonk-2019` | [PLONK — 一次通用布置，反复证明很多程序](/study/papers/gabizon-plonk-2019/) |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) |
 | `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) |
@@ -1007,7 +1008,7 @@ sidebar:
 
 ---
 
-## 全部 839 篇（字母序）
+## 全部 840 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1313,6 +1314,7 @@ sidebar:
 | `fsrs-spaced-repetition` | [FSRS — 让 Anki 知道每张卡什么时候快被你忘掉](/study/papers/fsrs-spaced-repetition/) | HCI / 软件工程研究 |
 | `fstar` | [F* — 把依赖类型、SMT 自动化、副作用追踪揉到一门语言里](/study/papers/fstar/) | 其他 |
 | `g1-collector` | [G1 Garbage-First — 给暂停时间设个预算的垃圾回收器](/study/papers/g1-collector/) | 其他 |
+| `gabizon-plonk-2019` | [PLONK — 一次通用布置，反复证明很多程序](/study/papers/gabizon-plonk-2019/) | 其他 |
 | `gadt-pjones` | [GADT — 让构造子告诉编译器"我返回的是更精确的类型"](/study/papers/gadt-pjones/) | 其他 |
 | `game-semantics-pcf` | [博弈论语义与 PCF — 把程序解释成两个人轮流下的对话棋](/study/papers/game-semantics-pcf/) | 其他 |
 | `gao-2001-as-relations` | [Gao 2001 — 用算法猜出互联网上 AS 之间谁给谁付钱](/study/papers/gao-2001-as-relations/) | 其他 |
