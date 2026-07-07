@@ -958,6 +958,7 @@ clickhouse
 cockroach
 cockroachdb
 cocos2d-x
+code-server
 codemirror
 collabora-online
 colossal-ai
