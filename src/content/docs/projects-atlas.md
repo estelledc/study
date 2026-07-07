@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 791 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 792 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：791 个
+- **总数**：792 个
 - **已分类**：214
-- **未分类**：577（落入"其他 / 待分类"段）
+- **未分类**：578（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 577 |
+| [其他 / 待分类](#其他--待分类) | 578 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 577 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 578 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -692,6 +692,7 @@ sidebar:
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) |
 | `fluent-bit` | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) |
+| `foam` | [Foam — 把 VS Code 变成 Markdown 双链知识库](/study/projects/foam/) |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
 | `frappe-gantt` | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) |
@@ -1087,7 +1088,7 @@ sidebar:
 
 ---
 
-## 全部 791 个（字母序）
+## 全部 792 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1329,6 +1330,7 @@ sidebar:
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | 其他 |
 | `fluent-bit` | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) | 其他 |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | 其他 |
+| `foam` | [Foam — 把 VS Code 变成 Markdown 双链知识库](/study/projects/foam/) | 其他 |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | 其他 |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
