@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 867 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 868 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：867 篇
+- **总数**：868 篇
 - **已分类**：143
-- **未分类**：724（落入"其他 / 待分类"段）
+- **未分类**：725（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 724 |
+| [其他 / 待分类](#其他--待分类) | 725 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 724 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 725 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -664,6 +664,7 @@ sidebar:
 | `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) |
+| `kim-rowhammer-2014` | [RowHammer 2014 — 反复读一行内存也能翻转邻居比特](/study/papers/kim-rowhammer-2014/) |
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) |
 | `kocher-spectre-2019` | [Spectre — CPU 猜错路时也会泄密](/study/papers/kocher-spectre-2019/) |
@@ -1035,7 +1036,7 @@ sidebar:
 
 ---
 
-## 全部 867 篇（字母序）
+## 全部 868 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1464,6 +1465,7 @@ sidebar:
 | `kazhdan-2006-poisson-recon` | [Poisson Surface Reconstruction — 把点云变成水密网格的全局解法](/study/papers/kazhdan-2006-poisson-recon/) | 其他 |
 | `kepler-architecture-2012` | [NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型](/study/papers/kepler-architecture-2012/) | 其他 |
 | `kildall-dataflow` | [Kildall 数据流框架 — 用一套格论统一所有全局编译优化](/study/papers/kildall-dataflow/) | 其他 |
+| `kim-rowhammer-2014` | [RowHammer 2014 — 反复读一行内存也能翻转邻居比特](/study/papers/kim-rowhammer-2014/) | 其他 |
 | `knrm-2017` | [K-NRM — 用核函数把交互矩阵变成可微排序信号](/study/papers/knrm-2017/) | 其他 |
 | `knuth-lr-1965` | [Knuth LR(k) — 编译器自己读懂语法的算法](/study/papers/knuth-lr-1965/) | 其他 |
 | `knuth-taocp` | [Knuth TAOCP — 计算机程序设计艺术](/study/papers/knuth-taocp/) | 计算理论 / 数学基础 |
