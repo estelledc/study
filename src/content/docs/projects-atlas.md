@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 799 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 800 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：799 个
+- **总数**：800 个
 - **已分类**：214
-- **未分类**：585（落入"其他 / 待分类"段）
+- **未分类**：586（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 585 |
+| [其他 / 待分类](#其他--待分类) | 586 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 585 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 586 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -529,6 +529,7 @@ sidebar:
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) |
 | `antv-x6` | [AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript](/study/projects/antv-x6/) |
+| `anytype-ts` | [Anytype — 本地优先块编辑器](/study/projects/anytype-ts/) |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
@@ -1095,7 +1096,7 @@ sidebar:
 
 ---
 
-## 全部 799 个（字母序）
+## 全部 800 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1124,6 +1125,7 @@ sidebar:
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | 其他 |
 | `antv-g6` | [AntV G6 — 把"关系数据"画成会自己摆位置的图](/study/projects/antv-g6/) | 其他 |
 | `antv-x6` | [AntV X6 — 把 mxGraph 的图编辑思路搬到 TypeScript](/study/projects/antv-x6/) | 其他 |
+| `anytype-ts` | [Anytype — 本地优先块编辑器](/study/projects/anytype-ts/) | 其他 |
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
