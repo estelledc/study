@@ -12,23 +12,20 @@
 import fs from 'node:fs/promises';
 import fsSync from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { readJsonl } from './lib/jsonl.mjs';
+import { CANDIDATES_PATH, PROMPTS_DIR, REWRITE_POOL_PATH, docsEntryRelativePath } from './lib/paths.mjs';
 import { emit } from './pipeline-events.mjs';
 import { validate } from './quality-gate.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
 const HOME = process.env.HOME || '/Users/jason';
 
 const PROMPTS = {
-  researcher: path.join(ROOT, 'prompts/researcher.md'),
-  writer: path.join(ROOT, 'prompts/writer.md'),
-  'reviewer-zero-base': path.join(ROOT, 'prompts/reviewer-zero-base.md'),
-  'reviewer-academic': path.join(ROOT, 'prompts/reviewer-academic.md'),
-  'reviewer-engineer': path.join(ROOT, 'prompts/reviewer-engineer.md'),
-  refiner: path.join(ROOT, 'prompts/refiner.md'),
+  researcher: path.join(PROMPTS_DIR, 'researcher.md'),
+  writer: path.join(PROMPTS_DIR, 'writer.md'),
+  'reviewer-zero-base': path.join(PROMPTS_DIR, 'reviewer-zero-base.md'),
+  'reviewer-academic': path.join(PROMPTS_DIR, 'reviewer-academic.md'),
+  'reviewer-engineer': path.join(PROMPTS_DIR, 'reviewer-engineer.md'),
+  refiner: path.join(PROMPTS_DIR, 'refiner.md'),
 };
 
 // 4 papers worktree + 4 projects worktree。任何 paper kind（new/rewrite）都可用任意 papers worktree
@@ -64,13 +61,13 @@ function parseArgs() {
 }
 
 async function findCandidate(slug) {
-  const candidates = await readJsonl(path.join(ROOT, 'data/candidates.jsonl'));
+  const candidates = await readJsonl(CANDIDATES_PATH);
   return candidates.find(c => c.slug === slug);
 }
 
 async function findRewriteEntry(slug) {
   try {
-    const pool = await readJsonl(path.join(ROOT, 'data/rewrite-pool.jsonl'));
+    const pool = await readJsonl(REWRITE_POOL_PATH);
     return pool.find(p => p.slug === slug);
   } catch {
     return null;
@@ -110,7 +107,7 @@ async function buildContext(slug, kindOverride, worktreeIdx) {
   }
 
   const isRewrite = kind.startsWith('rewrite-');
-  const outputPath = `${worktree.path}/src/content/docs/${area}/${slug}.md`;
+  const outputPath = `${worktree.path}/${docsEntryRelativePath(area, slug)}`;
   const existingPath = isRewrite ? outputPath : '';
 
   const tmpDir = `/tmp/pipeline-${slug}`;

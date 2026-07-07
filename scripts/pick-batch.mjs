@@ -7,17 +7,13 @@
 //   node scripts/pick-batch.mjs --count 8 --rewrite 0 --new 8  # 全 NEW
 //   node scripts/pick-batch.mjs --count 120                 # round 满载
 
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { readJsonl, writeJsonl } from './lib/jsonl.mjs';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const CANDIDATES = path.join(ROOT, 'data/candidates.jsonl');
-const REWRITE_POOL = path.join(ROOT, 'data/rewrite-pool.jsonl');
-const GRAVEYARD = path.join(ROOT, 'data/graveyard.jsonl');
-const PRIORITY = path.join(ROOT, 'data/priority-queue.jsonl');
+import {
+  CANDIDATES_PATH,
+  GRAVEYARD_PATH,
+  PRIORITY_QUEUE_PATH,
+  REWRITE_POOL_PATH,
+} from './lib/paths.mjs';
 
 function parseArgs() {
   const args = { count: 8, rewrite: null, new: null, priorityRatio: 0.7, noPriority: false };
@@ -133,10 +129,10 @@ async function main() {
   const args = parseArgs();
 
   const [candidates, pool, graveyard, priority] = await Promise.all([
-    readJsonl(CANDIDATES, { missing: 'empty' }),
-    readJsonl(REWRITE_POOL, { missing: 'empty' }),
-    readJsonl(GRAVEYARD, { missing: 'empty' }),
-    readJsonl(PRIORITY, { missing: 'empty' }),
+    readJsonl(CANDIDATES_PATH, { missing: 'empty' }),
+    readJsonl(REWRITE_POOL_PATH, { missing: 'empty' }),
+    readJsonl(GRAVEYARD_PATH, { missing: 'empty' }),
+    readJsonl(PRIORITY_QUEUE_PATH, { missing: 'empty' }),
   ]);
 
   // graveyard 永久排除（按 slug 唯一，跨 area 安全）
@@ -198,7 +194,7 @@ async function main() {
     const updated = priority.map(p =>
       pickedKeys.has(`${p.area}::${p.slug}`) ? { ...p, status: 'picked' } : p
     );
-    await writeJsonl(PRIORITY, updated, { finalNewline: 'non-empty' });
+    await writeJsonl(PRIORITY_QUEUE_PATH, updated, { finalNewline: 'non-empty' });
   }
 
   // 数量校验

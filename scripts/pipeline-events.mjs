@@ -2,13 +2,9 @@
 // 所有 stage transition 一行 JSON 写入 data/pipeline-events.jsonl
 
 import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { PIPELINE_EVENTS_PATH } from './lib/paths.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const EVENTS_PATH = path.join(ROOT, 'data', 'pipeline-events.jsonl');
+const EVENTS_PATH = PIPELINE_EVENTS_PATH;
 
 export function emit(event) {
   const enriched = {

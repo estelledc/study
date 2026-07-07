@@ -5,13 +5,9 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { CANDIDATES_PATH, RESEARCH_DIR } from './lib/paths.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const RESEARCH_DIR = path.join(ROOT, 'research');
-const OUT_PATH = path.join(ROOT, 'data', 'candidates.jsonl');
+const OUT_PATH = CANDIDATES_PATH;
 
 const RED_LINE = /blindbox|quanzhiping|video-eval-agent|sankuai|friday|cagent|aigc\.sankuai|美团|mis\.sankuai|cagent_fe_h5_blindbox|LongCat|6 件套/i;
 

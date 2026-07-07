@@ -8,14 +8,9 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { PAPERS_DIR, PROJECTS_DIR, REWRITE_POOL_PATH, ROOT } from './lib/paths.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const PAPERS_DIR = path.join(ROOT, 'src/content/docs/papers');
-const PROJECTS_DIR = path.join(ROOT, 'src/content/docs/projects');
-const OUT_PATH = path.join(ROOT, 'data', 'rewrite-pool.jsonl');
+const OUT_PATH = REWRITE_POOL_PATH;
 
 const STD_H2 = [
   '是什么', '为什么重要', '核心要点', '实践案例',

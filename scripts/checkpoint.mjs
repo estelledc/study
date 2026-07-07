@@ -7,12 +7,16 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import {
+  CANDIDATES_PATH,
+  CHECKPOINT_PATH,
+  GRAVEYARD_PATH,
+  PAPERS_DIR,
+  PROJECTS_DIR,
+  REWRITE_POOL_PATH,
+} from './lib/paths.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const CHECKPOINT = path.join(ROOT, 'data/checkpoint.json');
+const CHECKPOINT = CHECKPOINT_PATH;
 
 const DEFAULT = {
   version: 'v3',
@@ -63,11 +67,11 @@ async function readJsonlLines(filePath) {
 async function autoStats() {
   // 单次读 candidates，本地双 filter；并行读 papers/projects/pool/graveyard
   const [papers, projects, candidates, pool, graveyard] = await Promise.all([
-    countMd(path.join(ROOT, 'src/content/docs/papers')),
-    countMd(path.join(ROOT, 'src/content/docs/projects')),
-    readJsonlLines(path.join(ROOT, 'data/candidates.jsonl')),
-    readJsonlLines(path.join(ROOT, 'data/rewrite-pool.jsonl')),
-    readJsonlLines(path.join(ROOT, 'data/graveyard.jsonl')),
+    countMd(PAPERS_DIR),
+    countMd(PROJECTS_DIR),
+    readJsonlLines(CANDIDATES_PATH),
+    readJsonlLines(REWRITE_POOL_PATH),
+    readJsonlLines(GRAVEYARD_PATH),
   ]);
   return {
     total: { papers, projects },

@@ -11,10 +11,11 @@
 
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { PAPERS_DIR, PROJECTS_DIR } from './lib/paths.mjs';
 
 const ROOTS = {
-  papers: join(process.cwd(), 'src/content/docs/papers'),
-  projects: join(process.cwd(), 'src/content/docs/projects'),
+  papers: PAPERS_DIR,
+  projects: PROJECTS_DIR,
 };
 
 const WIKI_RE = /\[\[([a-z0-9_\-]+)(?:\|[^\]]+)?\]\]/g;

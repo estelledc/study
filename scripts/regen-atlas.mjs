@@ -9,8 +9,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import yaml from 'js-yaml';
-
-const ROOT = new URL('..', import.meta.url).pathname;
+import { DOCS_DIR } from './lib/paths.mjs';
 
 // === Paper themes (order = display order) ===========================
 const THEMES_PAPERS = {
@@ -241,7 +240,7 @@ function parseFrontmatter(raw) {
 }
 
 async function loadAll(dir) {
-  const dirAbs = join(ROOT, 'src/content/docs', dir);
+  const dirAbs = join(DOCS_DIR, dir);
   const files = (await readdir(dirAbs)).filter((f) => f.endsWith('.md'));
   const notes = [];
   for (const f of files) {
@@ -407,8 +406,8 @@ async function main() {
   const papersAtlas = renderAtlas(papers, 'papers');
   const projectsAtlas = renderAtlas(projects, 'projects');
 
-  await writeFile(join(ROOT, 'src/content/docs/papers-atlas.md'), papersAtlas, 'utf8');
-  await writeFile(join(ROOT, 'src/content/docs/projects-atlas.md'), projectsAtlas, 'utf8');
+  await writeFile(join(DOCS_DIR, 'papers-atlas.md'), papersAtlas, 'utf8');
+  await writeFile(join(DOCS_DIR, 'projects-atlas.md'), projectsAtlas, 'utf8');
 
   const pUnclass = papers.filter((n) => !PAPER_OF.has(n.slug)).length;
   const prUnclass = projects.filter((n) => !PROJECT_OF.has(n.slug)).length;

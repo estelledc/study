@@ -16,15 +16,8 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { readJsonl, writeJsonl } from './lib/jsonl.mjs';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const CANDIDATES = path.join(ROOT, 'data/candidates.jsonl');
-const REWRITE_POOL = path.join(ROOT, 'data/rewrite-pool.jsonl');
-const PROMPTS_DIR = path.join(ROOT, 'prompts');
+import { CANDIDATES_PATH, PROMPTS_DIR, REWRITE_POOL_PATH, docsEntryRelativePath } from './lib/paths.mjs';
 const HOME = process.env.HOME || '/Users/jason';
 
 // Worktree 配置（按 area + kind 分配）
@@ -118,9 +111,10 @@ function buildAssignment(kind, area, item, worktree) {
   const slug = item.slug;
   const isRewrite = kind.startsWith('rewrite-');
   const subdir = area; // papers / projects
-  const outputPath = `${worktree.path}/src/content/docs/${subdir}/${slug}.md`;
+  const relativePath = docsEntryRelativePath(subdir, slug);
+  const outputPath = `${worktree.path}/${relativePath}`;
   const existingPath = isRewrite
-    ? `${worktree.path}/${item.path || `src/content/docs/${subdir}/${slug}.md`}`
+    ? `${worktree.path}/${item.path || relativePath}`
     : null;
 
   const vars = {
@@ -145,8 +139,8 @@ function buildAssignment(kind, area, item, worktree) {
 async function main() {
   const args = parseArgs();
 
-  const candidates = await readJsonl(CANDIDATES);
-  const pool = await readJsonl(REWRITE_POOL);
+  const candidates = await readJsonl(CANDIDATES_PATH);
+  const pool = await readJsonl(REWRITE_POOL_PATH);
 
   // 4 类各 N/2（除非奇数）
   const rewritePerArea = Math.floor(args.rewrite / 2);
@@ -214,8 +208,8 @@ async function main() {
         x.claimed_by = assignments.find(a => a.slug === x.slug && a.area === x.area)?.worktree.name || null;
       }
     }
-    await writeJsonl(REWRITE_POOL, pool);
-    await writeJsonl(CANDIDATES, candidates);
+    await writeJsonl(REWRITE_POOL_PATH, pool);
+    await writeJsonl(CANDIDATES_PATH, candidates);
   }
 
   // Output to stdout: JSON array

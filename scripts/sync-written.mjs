@@ -4,16 +4,13 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const PAPERS_DIR = path.join(ROOT, 'src/content/docs/papers');
-const PROJECTS_DIR = path.join(ROOT, 'src/content/docs/projects');
-const WRITTEN_PATH = path.join(ROOT, 'data', 'written.txt');
-const CANDIDATES_PATH = path.join(ROOT, 'data', 'candidates.jsonl');
-const REWRITE_POOL_PATH = path.join(ROOT, 'data', 'rewrite-pool.jsonl');
+import {
+  CANDIDATES_PATH,
+  PAPERS_DIR,
+  PROJECTS_DIR,
+  REWRITE_POOL_PATH,
+  WRITTEN_PATH,
+} from './lib/paths.mjs';
 
 async function listSlugs(dir, area) {
   try {

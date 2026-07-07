@@ -8,13 +8,9 @@
 
 import { execSync } from 'node:child_process';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { emit } from './pipeline-events.mjs';
+import { docsEntryPath, ROOT } from './lib/paths.mjs';
 import { validate } from './quality-gate.mjs';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
 
 function parseArgs() {
   const args = { slug: null, commit: null, area: null, lines: null, round: null };
@@ -48,7 +44,7 @@ async function main() {
     process.exit(2);
   }
 
-  const filePath = path.join(ROOT, `src/content/docs/${args.area}/${args.slug}.md`);
+  const filePath = docsEntryPath(args.area, args.slug);
   emit({ event: 'merge-single-start', slug: args.slug, commit: args.commit, area: args.area });
 
   // 1. cherry-pick

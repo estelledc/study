@@ -4,12 +4,8 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { read as readCheckpoint } from './checkpoint.mjs';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
+import { DATA_DIR, PIPELINE_EVENTS_PATH } from './lib/paths.mjs';
 
 const TARGET = 20000;
 
@@ -48,7 +44,7 @@ async function main() {
   }
 
   // 5. STOP_SIGNAL file
-  if (await fileExists(path.join(ROOT, 'data/STOP_SIGNAL'))) {
+  if (await fileExists(path.join(DATA_DIR, 'STOP_SIGNAL'))) {
     console.log(JSON.stringify({ should_exit: true, reason: 'user-stop' }));
     return;
   }
@@ -56,7 +52,7 @@ async function main() {
   // 6. context-pressure (estimate from events line count; 长 session 累计写大量事件)
   // 粗估：> 20000 events 视为 session 老了
   try {
-    const eventsRaw = await fs.readFile(path.join(ROOT, 'data/pipeline-events.jsonl'), 'utf8');
+    const eventsRaw = await fs.readFile(PIPELINE_EVENTS_PATH, 'utf8');
     const eventCount = eventsRaw.split('\n').filter(Boolean).length;
     if (eventCount > 20000) {
       console.log(JSON.stringify({ should_exit: true, reason: 'context-pressure', events: eventCount }));

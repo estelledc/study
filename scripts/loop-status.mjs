@@ -7,19 +7,21 @@
 //   node scripts/loop-status.mjs --md           # 只重写 STATUS.md
 
 import fs from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import {
+  CANDIDATES_PATH,
+  PAPERS_DIR,
+  PROJECTS_DIR,
+  REWRITE_POOL_PATH,
+  ROOT,
+  STATUS_JSON_PATH,
+  STATUS_MD_PATH,
+} from './lib/paths.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '..');
-const CANDIDATES = path.join(ROOT, 'data/candidates.jsonl');
-const REWRITE_POOL = path.join(ROOT, 'data/rewrite-pool.jsonl');
-const STATUS_JSON = path.join(ROOT, 'data/status.json');
-const STATUS_MD = path.join(ROOT, 'data/STATUS.md');
-const PAPERS_DIR = path.join(ROOT, 'src/content/docs/papers');
-const PROJECTS_DIR = path.join(ROOT, 'src/content/docs/projects');
+const CANDIDATES = CANDIDATES_PATH;
+const REWRITE_POOL = REWRITE_POOL_PATH;
+const STATUS_JSON = STATUS_JSON_PATH;
+const STATUS_MD = STATUS_MD_PATH;
 
 const TARGET_PAPERS = 10000;
 const TARGET_PROJECTS = 10000;

@@ -4,12 +4,12 @@
 // 如果 slug 不存在 → 渲染成带 broken-link class 的 span（提示笔记尚未存在）
 
 import { readdirSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
 import { visit } from 'unist-util-visit';
+import { PAPERS_DIR, PROJECTS_DIR } from './lib/paths.mjs';
 
 const ROOTS = {
-  papers: join(process.cwd(), 'src/content/docs/papers'),
-  projects: join(process.cwd(), 'src/content/docs/projects'),
+  papers: PAPERS_DIR,
+  projects: PROJECTS_DIR,
 };
 
 // 启动时扫一次 slug → area 映射

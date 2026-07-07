@@ -5,8 +5,7 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import yaml from 'js-yaml';
-
-const ROOT = new URL('..', import.meta.url).pathname;
+import { DOCS_DIR } from './lib/paths.mjs';
 
 function isProblematic(value) {
   // YAML chokes on unquoted values with these patterns
@@ -91,17 +90,17 @@ async function processFile(path) {
 }
 
 async function main() {
-  const dirs = ['src/content/docs/papers', 'src/content/docs/projects'];
+  const dirs = ['papers', 'projects'];
   let fixed = 0;
   let total = 0;
   for (const dir of dirs) {
-    const dirAbs = join(ROOT, dir);
+    const dirAbs = join(DOCS_DIR, dir);
     const files = (await readdir(dirAbs)).filter((f) => f.endsWith('.md'));
     for (const f of files) {
       total++;
       const ok = await processFile(join(dirAbs, f));
       if (ok) {
-        console.log('fixed', join(dir, f));
+        console.log('fixed', join('src/content/docs', dir, f));
         fixed++;
       }
     }
