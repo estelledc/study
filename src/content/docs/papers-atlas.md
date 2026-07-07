@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 870 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 871 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：870 篇
+- **总数**：871 篇
 - **已分类**：143
-- **未分类**：727（落入"其他 / 待分类"段）
+- **未分类**：728（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 727 |
+| [其他 / 待分类](#其他--待分类) | 728 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 727 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 728 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -685,6 +685,7 @@ sidebar:
 | `layernorm-2016` | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) |
 | `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) |
 | `lean-tactics` | [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) |
+| `lee-keystone-2020` | [Keystone — 用开源 RISC-V 拼一套可定制 TEE](/study/papers/lee-keystone-2020/) |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) |
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) |
@@ -1038,7 +1039,7 @@ sidebar:
 
 ---
 
-## 全部 870 篇（字母序）
+## 全部 871 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1492,6 +1493,7 @@ sidebar:
 | `layernorm-2016` | [Layer Normalization — 把归一化方向从 batch 转到 feature，让 RNN/Transformer 也能稳定训](/study/papers/layernorm-2016/) | 其他 |
 | `lean-prover` | [Lean 4 — 用 Lean 重写的 Lean，让数学家和程序员共用一种语言](/study/papers/lean-prover/) | 其他 |
 | `lean-tactics` | [Lean Tactics — 让证明助手把"写证明"当成写程序](/study/papers/lean-tactics/) | 其他 |
+| `lee-keystone-2020` | [Keystone — 用开源 RISC-V 拼一套可定制 TEE](/study/papers/lee-keystone-2020/) | 其他 |
 | `leis-2015-optimizers` | [Leis 2015 — 用真实数据打脸所有数据库的查询优化器](/study/papers/leis-2015-optimizers/) | 其他 |
 | `lerner-seminal` | [Lerner 组合数据流 — 让小优化互相喂招](/study/papers/lerner-seminal/) | 其他 |
 | `levoy-hanrahan-1996-light-field` | [Light Field Rendering — 把场景拍成 4D 数组，新视角靠查表](/study/papers/levoy-hanrahan-1996-light-field/) | 其他 |
