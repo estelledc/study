@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 764 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 765 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：764 个
+- **总数**：765 个
 - **已分类**：213
-- **未分类**：551（落入"其他 / 待分类"段）
+- **未分类**：552（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 551 |
+| [其他 / 待分类](#其他--待分类) | 552 |
 
 ---
 
@@ -502,7 +502,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 551 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 552 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -545,6 +545,7 @@ sidebar:
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
 | `ast-grep` | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) |
+| `astronvim` | [AstroNvim — 社区驱动的 Neovim 配置](/study/projects/astronvim/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
 | `atom` | [Atom — Web 技术做桌面编辑器的先驱](/study/projects/atom/) |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) |
@@ -1060,7 +1061,7 @@ sidebar:
 
 ---
 
-## 全部 764 个（字母序）
+## 全部 765 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1110,6 +1111,7 @@ sidebar:
 | `ast-grep` | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) | 其他 |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | 其他 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
+| `astronvim` | [AstroNvim — 社区驱动的 Neovim 配置](/study/projects/astronvim/) | 其他 |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | 其他 |
 | `atom` | [Atom — Web 技术做桌面编辑器的先驱](/study/projects/atom/) | 其他 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
