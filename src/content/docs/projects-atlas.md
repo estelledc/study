@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 773 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 774 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：773 个
+- **总数**：774 个
 - **已分类**：214
-- **未分类**：559（落入"其他 / 待分类"段）
+- **未分类**：560（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 559 |
+| [其他 / 待分类](#其他--待分类) | 560 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 559 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 560 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -656,6 +656,7 @@ sidebar:
 | `dvc` | [DVC — 数据版本管理](/study/projects/dvc/) |
 | `earthly` | [Earthly — 把 Make 和 Dockerfile 揉一起的构建工具](/study/projects/earthly/) |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) |
+| `eclipse-che` | [Eclipse Che — Kubernetes 原生云 IDE](/study/projects/eclipse-che/) |
 | `edgedb` | [EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM](/study/projects/edgedb/) |
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
@@ -1069,7 +1070,7 @@ sidebar:
 
 ---
 
-## 全部 773 个（字母序）
+## 全部 774 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1264,6 +1265,7 @@ sidebar:
 | `earthly` | [Earthly — 把 Make 和 Dockerfile 揉一起的构建工具](/study/projects/earthly/) | 其他 |
 | `echarts` | [Apache ECharts — 给一个 JSON 就能画图的可视化库](/study/projects/echarts/) | 数据可视化 |
 | `echo` | [Echo — 极简高性能 Go 框架，5 行起服务](/study/projects/echo/) | 其他 |
+| `eclipse-che` | [Eclipse Che — Kubernetes 原生云 IDE](/study/projects/eclipse-che/) | 其他 |
 | `edgedb` | [EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM](/study/projects/edgedb/) | 其他 |
 | `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) | 其他 |
