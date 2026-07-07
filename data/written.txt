@@ -86,6 +86,7 @@ bonawitz-fl-system-2019
 boogie-2005
 borg
 borg-omega-kube-2016
+bos-kyber-2018
 bowe-halo-2019
 bpr-2009
 brakerski-bgv-2012
