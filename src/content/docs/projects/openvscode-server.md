@@ -65,7 +65,7 @@ docker run -it --init -p 3000:3000 \
 
 ### 案例 2：给团队做带工具链的镜像
 
-```Dockerfile
+```dockerfile
 FROM gitpod/openvscode-server:latest
 USER root
 RUN apt-get update && apt-get install -y ripgrep
