@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 863 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 864 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：863 个
+- **总数**：864 个
 - **已分类**：214
-- **未分类**：649（落入"其他 / 待分类"段）
+- **未分类**：650（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 649 |
+| [其他 / 待分类](#其他--待分类) | 650 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 649 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 650 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -839,6 +839,7 @@ sidebar:
 | `lora-mac-node` | [LoRaMac-node — LoRaWAN 终端协议栈参考实现](/study/projects/lora-mac-node/) |
 | `love2d` | [LÖVE — 用 Lua 写 2D 游戏的轻量框架](/study/projects/love2d/) |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
+| `luma-gl` | [luma.gl](/study/projects/luma-gl/) |
 | `lunarvim` | [LunarVim — 开箱即用的 Neovim IDE 发行版](/study/projects/lunarvim/) |
 | `lwip` | [lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈](/study/projects/lwip/) |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) |
@@ -1159,7 +1160,7 @@ sidebar:
 
 ---
 
-## 全部 863 个（字母序）
+## 全部 864 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1584,6 +1585,7 @@ sidebar:
 | `love2d` | [LÖVE — 用 Lua 写 2D 游戏的轻量框架](/study/projects/love2d/) | 其他 |
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) | 其他 |
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |
+| `luma-gl` | [luma.gl](/study/projects/luma-gl/) | 其他 |
 | `lunarvim` | [LunarVim — 开箱即用的 Neovim IDE 发行版](/study/projects/lunarvim/) | 其他 |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | 日期时间 |
 | `lwip` | [lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈](/study/projects/lwip/) | 其他 |
