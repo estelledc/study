@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 890 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 891 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：890 篇
+- **总数**：891 篇
 - **已分类**：143
-- **未分类**：747（落入"其他 / 待分类"段）
+- **未分类**：748（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 747 |
+| [其他 / 待分类](#其他--待分类) | 748 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 747 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 748 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -549,6 +549,7 @@ sidebar:
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |
 | `fan-vercauteren-bfv-2012` | [Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用](/study/papers/fan-vercauteren-bfv-2012/) |
+| `farm-2015` | [FaRM — 把一排机器的内存当成一个低延迟仓库](/study/papers/farm-2015/) |
 | `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) |
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) |
@@ -1058,7 +1059,7 @@ sidebar:
 
 ---
 
-## 全部 890 篇（字母序）
+## 全部 891 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1353,6 +1354,7 @@ sidebar:
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 其他 |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | 其他 |
 | `fan-vercauteren-bfv-2012` | [Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用](/study/papers/fan-vercauteren-bfv-2012/) | 其他 |
+| `farm-2015` | [FaRM — 把一排机器的内存当成一个低延迟仓库](/study/papers/farm-2015/) | 其他 |
 | `farsite-2002` | [Farsite — 把一群不可信桌面 PC 拼成一台可信文件服务器](/study/papers/farsite-2002/) | 其他 |
 | `fast-paxos-2006` | [Fast Paxos — 给 Paxos 加一条乐观快车道](/study/papers/fast-paxos-2006/) | 其他 |
 | `fastertransformer-2021` | [FasterTransformer 2021 — NVIDIA 第一代开源 LLM 推理引擎](/study/papers/fastertransformer-2021/) | 其他 |
