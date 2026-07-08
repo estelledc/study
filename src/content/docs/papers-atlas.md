@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 922 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 923 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：922 篇
+- **总数**：923 篇
 - **已分类**：143
-- **未分类**：779（落入"其他 / 待分类"段）
+- **未分类**：780（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 779 |
+| [其他 / 待分类](#其他--待分类) | 780 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 779 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 780 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -640,6 +640,7 @@ sidebar:
 | `hlc-2014` | [HLC 2014 — 把逻辑时钟和物理时钟合一，让普通服务器也能拍一致快照](/study/papers/hlc-2014/) |
 | `hnsw-2018` | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) |
 | `hoare-csp-1978` | [Hoare CSP 1978 — 把并发看成会对话的小程序](/study/papers/hoare-csp-1978/) |
+| `hoare-monitors-1974` | [Hoare Monitors 1974 — 把锁和等待队列封进一个房间](/study/papers/hoare-monitors-1974/) |
 | `hol-light-2009` | [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) |
 | `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) |
 | `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) |
@@ -1090,7 +1091,7 @@ sidebar:
 
 ---
 
-## 全部 922 篇（字母序）
+## 全部 923 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1488,6 +1489,7 @@ sidebar:
 | `hnsw-2018` | [HNSW — 多层近邻图让向量检索从 O(N) 降到近似 O(log N)](/study/papers/hnsw-2018/) | 其他 |
 | `hoare-csp-1978` | [Hoare CSP 1978 — 把并发看成会对话的小程序](/study/papers/hoare-csp-1978/) | 其他 |
 | `hoare-logic` | [Hoare Logic — 把"程序对不对"变成"数学证明对不对"](/study/papers/hoare-logic/) | HCI / 软件工程研究 |
+| `hoare-monitors-1974` | [Hoare Monitors 1974 — 把锁和等待队列封进一个房间](/study/papers/hoare-monitors-1974/) | 其他 |
 | `hol-light-2009` | [HOL Light — 不到 500 行 OCaml 写出能证开普勒猜想的证明助手](/study/papers/hol-light-2009/) | 其他 |
 | `holzmann-spin-1997` | [SPIN — 让计算机帮你穷举并发程序的所有可能执行](/study/papers/holzmann-spin-1997/) | 其他 |
 | `hopper-architecture-2022` | [NVIDIA Hopper — Transformer Engine + FP8 + TMA + Thread Block Cluster 把硅片为 LLM 量身定制](/study/papers/hopper-architecture-2022/) | 其他 |
