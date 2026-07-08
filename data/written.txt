@@ -1524,6 +1524,7 @@ ratatui
 rauc
 ravendb
 ray
+raylib
 react
 react-dnd
 react-flow
