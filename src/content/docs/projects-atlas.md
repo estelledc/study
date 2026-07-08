@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 840 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 841 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：840 个
+- **总数**：841 个
 - **已分类**：214
-- **未分类**：626（落入"其他 / 待分类"段）
+- **未分类**：627（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 626 |
+| [其他 / 待分类](#其他--待分类) | 627 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 626 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 627 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1113,6 +1113,7 @@ sidebar:
 | `woodpecker` | [Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI](/study/projects/woodpecker/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `x264` | [x264 — H.264/AVC 编码器](/study/projects/x264/) |
+| `x265` | [x265 — HEVC/H.265 编码器](/study/projects/x265/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
 | `xi-editor` | [xi-editor — 异步架构编辑器的先驱实验](/study/projects/xi-editor/) |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) |
@@ -1136,7 +1137,7 @@ sidebar:
 
 ---
 
-## 全部 840 个（字母序）
+## 全部 841 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1955,6 +1956,7 @@ sidebar:
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |
 | `x264` | [x264 — H.264/AVC 编码器](/study/projects/x264/) | 其他 |
+| `x265` | [x265 — HEVC/H.265 编码器](/study/projects/x265/) | 其他 |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) | 其他 |
 | `xi-editor` | [xi-editor — 异步架构编辑器的先驱实验](/study/projects/xi-editor/) | 其他 |
 | `xonsh` | [xonsh — 在同一行里同时写 bash 命令和 Python 代码](/study/projects/xonsh/) | 其他 |
