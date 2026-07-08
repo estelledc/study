@@ -449,6 +449,7 @@ kepler-architecture-2012
 kildall-dataflow
 kim-rowhammer-2014
 knrm-2017
+knuth-literate-1984
 knuth-lr-1965
 knuth-taocp
 kocher-spectre-2019
