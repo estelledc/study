@@ -160,6 +160,7 @@ cognitive-load-theory
 cohen-1985-hemicube
 colbert-2020
 colbert-v2
+columnar-storage-formats-2023
 comer-1979-btree
 compcert
 compiler-errors
