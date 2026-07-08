@@ -226,6 +226,7 @@ dewitt-gray-1992
 differential-datalog
 diffie-hellman
 diffie-hellman-1976
+diffusion-posterior-finite
 dijkstra-1965
 dijkstra-goto
 dijkstra-shortest-path
