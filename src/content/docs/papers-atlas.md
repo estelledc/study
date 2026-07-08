@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 906 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 907 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：906 篇
+- **总数**：907 篇
 - **已分类**：143
-- **未分类**：763（落入"其他 / 待分类"段）
+- **未分类**：764（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 763 |
+| [其他 / 待分类](#其他--待分类) | 764 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 763 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 764 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -904,6 +904,7 @@ sidebar:
 | `ron-2001` | [RON 2001 — 让一小撮节点自己绕开 BGP 故障](/study/papers/ron-2001/) |
 | `row-polymorphism-remy` | [Row Polymorphism — 让函数不必知道 record 的全部字段](/study/papers/row-polymorphism-remy/) |
 | `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) |
+| `rtp-llm-alibaba` | [RTP-LLM — 把大模型推理服务做成分阶段工厂](/study/papers/rtp-llm-alibaba/) |
 | `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) |
 | `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) |
 | `sac-2018` | [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) |
@@ -1074,7 +1075,7 @@ sidebar:
 
 ---
 
-## 全部 906 篇（字母序）
+## 全部 907 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1780,6 +1781,7 @@ sidebar:
 | `row-polymorphism-remy` | [Row Polymorphism — 让函数不必知道 record 的全部字段](/study/papers/row-polymorphism-remy/) | 其他 |
 | `rrf-cormack-2009` | [RRF — 把多个搜索结果列表合并成一个的最简单办法](/study/papers/rrf-cormack-2009/) | 其他 |
 | `rsa` | [RSA 公钥密码](/study/papers/rsa/) | 密码学 / 安全 |
+| `rtp-llm-alibaba` | [RTP-LLM — 把大模型推理服务做成分阶段工厂](/study/papers/rtp-llm-alibaba/) | 其他 |
 | `rtp-rfc-1889` | [RTP RFC 1889 — 让 UDP 也能跑实时音视频](/study/papers/rtp-rfc-1889/) | 其他 |
 | `rwkv-2023` | [RWKV — 让 RNN 拿到 Transformer 那张训练并行的入场券](/study/papers/rwkv-2023/) | 其他 |
 | `sac-2018` | [Soft Actor-Critic — 让强化学习既会拿分又愿意多试](/study/papers/sac-2018/) | 其他 |
