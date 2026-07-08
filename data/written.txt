@@ -486,6 +486,7 @@ linearizability-1990
 lion-2023
 lipp-meltdown-2018
 liquid-types
+liskov-abstraction-1974
 liu-2020-dlss
 llama
 llava
