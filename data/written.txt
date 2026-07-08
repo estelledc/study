@@ -1033,6 +1033,7 @@ cal-com
 calico
 candle
 canvas-datagrid
+capacitor
 capnproto
 captum
 cassandra
