@@ -1245,6 +1245,7 @@ hedgedoc
 helidon
 helix
 helm
+hermes
 hnswlib
 hocuspocus
 holoviews
