@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 822 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 823 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：822 个
+- **总数**：823 个
 - **已分类**：214
-- **未分类**：608（落入"其他 / 待分类"段）
+- **未分类**：609（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 608 |
+| [其他 / 待分类](#其他--待分类) | 609 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 608 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 609 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -811,6 +811,7 @@ sidebar:
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) |
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) |
+| `littlefs` | [littlefs — MCU 友好的掉电安全文件系统](/study/projects/littlefs/) |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
@@ -1118,7 +1119,7 @@ sidebar:
 
 ---
 
-## 全部 822 个（字母序）
+## 全部 823 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1511,6 +1512,7 @@ sidebar:
 | `litellm-proxy` | [LiteLLM Proxy — 自托管的 LLM 统一网关](/study/projects/litellm-proxy/) | 其他 |
 | `litestar` | [Litestar — 类型驱动的 ASGI 框架（原 Starlite）](/study/projects/litestar/) | 其他 |
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | 其他 |
+| `littlefs` | [littlefs — MCU 友好的掉电安全文件系统](/study/projects/littlefs/) | 其他 |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | 其他 |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) | 其他 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |
