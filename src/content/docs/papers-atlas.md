@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 934 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 935 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：934 篇
+- **总数**：935 篇
 - **已分类**：143
-- **未分类**：791（落入"其他 / 待分类"段）
+- **未分类**：792（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 791 |
+| [其他 / 待分类](#其他--待分类) | 792 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 791 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 792 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1041,6 +1041,7 @@ sidebar:
 | `tor-2004` | [Tor — 用三层洋葱皮让没人知道你在上网](/study/papers/tor-2004/) |
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) |
 | `transformer-xl-2019` | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) |
+| `tree-of-attention-2026` | [Tree-of-Attention: Branching Attention for Long-Context Reasoning](/study/papers/tree-of-attention-2026/) |
 | `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) |
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) |
 | `triton-2019` | [Triton 2019 — 让 Python 写出贴近 cuBLAS 的 GPU kernel](/study/papers/triton-2019/) |
@@ -1102,7 +1103,7 @@ sidebar:
 
 ---
 
-## 全部 934 篇（字母序）
+## 全部 935 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1972,6 +1973,7 @@ sidebar:
 | `toy-models-superposition` | [Toy Models of Superposition](/study/papers/toy-models-superposition/) | AI 安全与可解释性 |
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) | 其他 |
 | `transformer-xl-2019` | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) | 其他 |
+| `tree-of-attention-2026` | [Tree-of-Attention: Branching Attention for Long-Context Reasoning](/study/papers/tree-of-attention-2026/) | 其他 |
 | `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | 其他 |
 | `trees-that-grow` | [Trees that Grow — 可扩展的语法树设计](/study/papers/trees-that-grow/) | 编译器 / 编程语言理论 |
 | `trill-2014` | [Trill — 一个引擎同时跑流、批、交互三种分析](/study/papers/trill-2014/) | 其他 |
