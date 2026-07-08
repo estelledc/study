@@ -1,6 +1,6 @@
 ---
 title: Naiad — 面向流式数据的及时数据流系统
-来源: He et al., Naiad: A Timely Dataflow System, SOSP 2013
+来源: "He et al., Naiad: A Timely Dataflow System, SOSP 2013"
 日期: 2026-07-08
 分类: 分布式系统
 难度: 中级
