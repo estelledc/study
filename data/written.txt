@@ -525,6 +525,7 @@ mcmillan-smv-1993
 mcp-spec
 mcs-locks-1991
 meagher-1982-octree
+medcase-fhir
 medusa-2024
 megastore-2011
 megatron-lm
