@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 836 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 837 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：836 个
+- **总数**：837 个
 - **已分类**：214
-- **未分类**：622（落入"其他 / 待分类"段）
+- **未分类**：623（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 622 |
+| [其他 / 待分类](#其他--待分类) | 623 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 622 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 623 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -640,6 +640,7 @@ sidebar:
 | `dbt-core` | [dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来](/study/projects/dbt-core/) |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
+| `defold` | [Defold — King 出品的 Lua 跨平台游戏引擎](/study/projects/defold/) |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
 | `dhtmlx-gantt` | [DHTMLX Gantt — 给企业级排期用的全功能甘特组件](/study/projects/dhtmlx-gantt/) |
@@ -1132,7 +1133,7 @@ sidebar:
 
 ---
 
-## 全部 836 个（字母序）
+## 全部 837 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1302,6 +1303,7 @@ sidebar:
 | `dbt-core` | [dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来](/study/projects/dbt-core/) | 其他 |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | 其他 |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) | 其他 |
+| `defold` | [Defold — King 出品的 Lua 跨平台游戏引擎](/study/projects/defold/) | 其他 |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | 其他 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
