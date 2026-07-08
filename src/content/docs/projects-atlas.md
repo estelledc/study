@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 891 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 892 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：891 个
+- **总数**：892 个
 - **已分类**：214
-- **未分类**：677（落入"其他 / 待分类"段）
+- **未分类**：678（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 677 |
+| [其他 / 待分类](#其他--待分类) | 678 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 677 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 678 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1011,6 +1011,7 @@ sidebar:
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) |
+| `rapier` | [Rapier — Rust 现代物理引擎 — 学习笔记](/study/projects/rapier/) |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) |
 | `rauc` | [RAUC — 嵌入式 Linux 的 A/B 更新控制器](/study/projects/rauc/) |
@@ -1187,7 +1188,7 @@ sidebar:
 
 ---
 
-## 全部 891 个（字母序）
+## 全部 892 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1837,6 +1838,7 @@ sidebar:
 | `radix-ui` | [Radix UI — unstyled accessible 的 React 组件原语库](/study/projects/radix-ui/) | 基础组件 / Headless UI |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) | 其他 |
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) | 其他 |
+| `rapier` | [Rapier — Rust 现代物理引擎 — 学习笔记](/study/projects/rapier/) | 其他 |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) | 其他 |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | 其他 |
 | `rauc` | [RAUC — 嵌入式 Linux 的 A/B 更新控制器](/study/projects/rauc/) | 其他 |
