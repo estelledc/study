@@ -324,6 +324,7 @@ flamingo-2022
 flan-2021
 flash-attention
 flashattention-2
+flashattention-3-2024
 flat-datacenter-storage
 flexible-paxos-2016
 flexsc-2010
