@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 882 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 883 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：882 篇
+- **总数**：883 篇
 - **已分类**：143
-- **未分类**：739（落入"其他 / 待分类"段）
+- **未分类**：740（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 739 |
+| [其他 / 待分类](#其他--待分类) | 740 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 739 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 740 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -779,6 +779,7 @@ sidebar:
 | `monaghan-1992-sph` | [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) |
 | `monitors-1974` | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) |
+| `morsel-driven-2014` | [Morsel-Driven Parallelism — 把 SQL 查询切成小口分给多核](/study/papers/morsel-driven-2014/) |
 | `mptcp-2012` | [MPTCP — 让手机同时用 Wi-Fi 和 4G 传数据](/study/papers/mptcp-2012/) |
 | `mqtt-s-2008` | [MQTT-S 2008 — IoT 发布/订阅协议在传感网的扩展](/study/papers/mqtt-s-2008/) |
 | `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) |
@@ -1050,7 +1051,7 @@ sidebar:
 
 ---
 
-## 全部 882 篇（字母序）
+## 全部 883 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1609,6 +1610,7 @@ sidebar:
 | `monaghan-1992-sph` | [SPH — 把流体拆成一群带核的粒子](/study/papers/monaghan-1992-sph/) | 其他 |
 | `monetdb-x100-2005` | [MonetDB/X100 — 让数据库一次处理一向量行而不是一行](/study/papers/monetdb-x100-2005/) | 其他 |
 | `monitors-1974` | [Hoare Monitors 1974 — 把锁藏进对象里，让并发代码读起来像普通函数](/study/papers/monitors-1974/) | 其他 |
+| `morsel-driven-2014` | [Morsel-Driven Parallelism — 把 SQL 查询切成小口分给多核](/study/papers/morsel-driven-2014/) | 其他 |
 | `mptcp-2012` | [MPTCP — 让手机同时用 Wi-Fi 和 4G 传数据](/study/papers/mptcp-2012/) | 其他 |
 | `mqtt-s-2008` | [MQTT-S 2008 — IoT 发布/订阅协议在传感网的扩展](/study/papers/mqtt-s-2008/) | 其他 |
 | `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | 其他 |
