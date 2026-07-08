@@ -1353,6 +1353,7 @@ lottie
 love2d
 lsd
 lucia
+luma-gl
 lunarvim
 luxon
 lwip
