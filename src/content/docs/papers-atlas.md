@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 947 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 948 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：947 篇
+- **总数**：948 篇
 - **已分类**：143
-- **未分类**：804（落入"其他 / 待分类"段）
+- **未分类**：805（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 804 |
+| [其他 / 待分类](#其他--待分类) | 805 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 804 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 805 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -710,6 +710,7 @@ sidebar:
 | `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) |
 | `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) |
 | `kv-cache-budget-2026` | [KVBudget: Per-Request KV Cache Budgeting in vLLM-style Serving](/study/papers/kv-cache-budget-2026/) |
+| `kv-fold` | [KV-Fold: One-Step KV-Cache Recurrence for Long-Context Inference — 学习笔记](/study/papers/kv-fold/) |
 | `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) |
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) |
 | `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) |
@@ -1115,7 +1116,7 @@ sidebar:
 
 ---
 
-## 全部 947 篇（字母序）
+## 全部 948 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1591,6 +1592,7 @@ sidebar:
 | `kubernetes-2016` | [Kubernetes — 为什么选声明式 API 加协调环](/study/papers/kubernetes-2016/) | 其他 |
 | `kustomize` | [Kustomize — 不写模板也能给 K8s 配置分环境](/study/papers/kustomize/) | 其他 |
 | `kv-cache-budget-2026` | [KVBudget: Per-Request KV Cache Budgeting in vLLM-style Serving](/study/papers/kv-cache-budget-2026/) | 其他 |
+| `kv-fold` | [KV-Fold: One-Step KV-Cache Recurrence for Long-Context Inference — 学习笔记](/study/papers/kv-fold/) | 其他 |
 | `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | 其他 |
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | 其他 |
 | `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | 其他 |
