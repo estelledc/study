@@ -1160,6 +1160,7 @@ embedded-hal
 emotion
 emqx
 encore
+engine262
 enquirer
 envoy
 erigon
