@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 899 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 900 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：899 篇
+- **总数**：900 篇
 - **已分类**：143
-- **未分类**：756（落入"其他 / 待分类"段）
+- **未分类**：757（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 756 |
+| [其他 / 待分类](#其他--待分类) | 757 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 756 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 757 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1032,6 +1032,7 @@ sidebar:
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) |
+| `videomla` | [VideoMLA — 给长视频生成压缩 KV 缓存](/study/papers/videomla/) |
 | `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) |
 | `vogels-eventual-2009` | [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) |
 | `volcano-1994` | [Volcano 1994 — 把 SQL 执行写成 next() 拉式数据流](/study/papers/volcano-1994/) |
@@ -1067,7 +1068,7 @@ sidebar:
 
 ---
 
-## 全部 899 篇（字母序）
+## 全部 900 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1930,6 +1931,7 @@ sidebar:
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | 其他 |
+| `videomla` | [VideoMLA — 给长视频生成压缩 KV 缓存](/study/papers/videomla/) | 其他 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) | 其他 |
 | `vllm` | [vLLM — 把操作系统的分页搬进 GPU KV cache](/study/papers/vllm/) | 分布式训练 / GPU |
