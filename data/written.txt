@@ -555,6 +555,7 @@ meagher-1982-octree
 medcase-fhir
 medusa-2024
 megastore-2011
+megatron-core-moe-2026
 megatron-lm
 mem-ft-lora
 memcached-fb-2013
