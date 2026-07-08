@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 860 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 861 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：860 个
+- **总数**：861 个
 - **已分类**：214
-- **未分类**：646（落入"其他 / 待分类"段）
+- **未分类**：647（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 646 |
+| [其他 / 待分类](#其他--待分类) | 647 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 646 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 647 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -552,6 +552,7 @@ sidebar:
 | `astronvim` | [AstroNvim — 社区驱动的 Neovim 配置](/study/projects/astronvim/) |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) |
 | `atom` | [Atom — Web 技术做桌面编辑器的先驱](/study/projects/atom/) |
+| `aubio` | [Aubio — 用音频信号提取节奏与音高](/study/projects/aubio/) |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) |
 | `autogluon` | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) |
 | `automerge` | [Automerge — 让两份 JSON 自动合并的 CRDT 库](/study/projects/automerge/) |
@@ -1156,7 +1157,7 @@ sidebar:
 
 ---
 
-## 全部 860 个（字母序）
+## 全部 861 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1212,6 +1213,7 @@ sidebar:
 | `astronvim` | [AstroNvim — 社区驱动的 Neovim 配置](/study/projects/astronvim/) | 其他 |
 | `asynq` | [Asynq — Go 版 Sidekiq，把后台任务丢进 Redis 慢慢跑](/study/projects/asynq/) | 其他 |
 | `atom` | [Atom — Web 技术做桌面编辑器的先驱](/study/projects/atom/) | 其他 |
+| `aubio` | [Aubio — 用音频信号提取节奏与音高](/study/projects/aubio/) | 其他 |
 | `auth-js` | [Auth.js — 让 OAuth 登录和会话存储变成两个抽象](/study/projects/auth-js/) | Auth 认证 |
 | `autogen` | [AutoGen — 微软多 Agent 对话框架](/study/projects/autogen/) | 其他 |
 | `autogluon` | [AutoGluon — AWS AutoML 套件](/study/projects/autogluon/) | 其他 |
