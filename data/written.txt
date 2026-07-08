@@ -754,6 +754,7 @@ soltesz-2007
 sophia-2023
 sorkine-2004-laplacian-editing
 souffle-datalog
+soundness-bench
 spann-2021
 spanner
 spanner-2012
