@@ -1583,6 +1583,7 @@ temporal-polyfill
 tensorflow
 terraform
 testing-library
+texstudio
 textmate
 textual
 tflite-micro
