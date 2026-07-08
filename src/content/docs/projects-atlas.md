@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 803 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 804 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：803 个
+- **总数**：804 个
 - **已分类**：214
-- **未分类**：589（落入"其他 / 待分类"段）
+- **未分类**：590（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 589 |
+| [其他 / 待分类](#其他--待分类) | 590 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 589 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 590 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -992,6 +992,7 @@ sidebar:
 | `silverbullet` | [SilverBullet — 自托管笔记 web 应用](/study/projects/silverbullet/) |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) |
+| `siyuan` | [SiYuan — 国产块结构笔记](/study/projects/siyuan/) |
 | `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) |
 | `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) |
@@ -1099,7 +1100,7 @@ sidebar:
 
 ---
 
-## 全部 803 个（字母序）
+## 全部 804 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1747,6 +1748,7 @@ sidebar:
 | `silverbullet` | [SilverBullet — 自托管笔记 web 应用](/study/projects/silverbullet/) | 其他 |
 | `simple-peer` | [simple-peer — 三行代码把两个浏览器直接连起来](/study/projects/simple-peer/) | 其他 |
 | `sinatra` | [Sinatra — 用 Ruby 三行代码起一个 web 服务](/study/projects/sinatra/) | 其他 |
+| `siyuan` | [SiYuan — 国产块结构笔记](/study/projects/siyuan/) | 其他 |
 | `skaffold` | [Skaffold — K8s 本地开发的 build-deploy 自动循环](/study/projects/skaffold/) | 其他 |
 | `sled` | [sled — Rust 现代 BTree + LSM 混合嵌入式 KV](/study/projects/sled/) | 其他 |
 | `slim-framework` | [Slim — PHP 圈最轻的 web 框架，专给小 API 用](/study/projects/slim-framework/) | 其他 |
