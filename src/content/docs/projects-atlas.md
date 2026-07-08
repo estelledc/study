@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 806 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 807 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：806 个
+- **总数**：807 个
 - **已分类**：214
-- **未分类**：592（落入"其他 / 待分类"段）
+- **未分类**：593（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 592 |
+| [其他 / 待分类](#其他--待分类) | 593 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 592 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 593 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -741,6 +741,7 @@ sidebar:
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) |
+| `home-assistant` | [Home Assistant Core — 本地优先的家庭自动化大脑](/study/projects/home-assistant/) |
 | `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
@@ -1102,7 +1103,7 @@ sidebar:
 
 ---
 
-## 全部 806 个（字母序）
+## 全部 807 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1398,6 +1399,7 @@ sidebar:
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) | 其他 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) | 其他 |
+| `home-assistant` | [Home Assistant Core — 本地优先的家庭自动化大脑](/study/projects/home-assistant/) | 其他 |
 | `homebrew` | [Homebrew — macOS 上一行命令装好软件的包管理器](/study/projects/homebrew/) | 其他 |
 | `hono` | [Hono — 多运行时 Web 框架](/study/projects/hono/) | Web 框架 |
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | 其他 |
