@@ -1159,6 +1159,7 @@ fastapi
 faster-whisper
 fastify
 fd
+fdk-aac
 feast
 ferretdb
 ffmpeg
