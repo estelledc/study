@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 892 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 893 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：892 个
+- **总数**：893 个
 - **已分类**：214
-- **未分类**：678（落入"其他 / 待分类"段）
+- **未分类**：679（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 678 |
+| [其他 / 待分类](#其他--待分类) | 679 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 678 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 679 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -743,6 +743,7 @@ sidebar:
 | `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) |
 | `glide-data-grid` | [glide-data-grid — Canvas 画出来的百万行表格](/study/projects/glide-data-grid/) |
+| `glslify` | [glslify — Browserify 风格 GLSL 模块 — 学习笔记](/study/projects/glslify/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `godot` | [Godot — 开源游戏引擎和编辑器](/study/projects/godot/) |
@@ -1188,7 +1189,7 @@ sidebar:
 
 ---
 
-## 全部 892 个（字母序）
+## 全部 893 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1482,6 +1483,7 @@ sidebar:
 | `glab` | [glab — GitLab 官方命令行](/study/projects/glab/) | 其他 |
 | `glances` | [Glances — Python 写的全栈系统监控（终端 + Web + REST + 远程）](/study/projects/glances/) | 其他 |
 | `glide-data-grid` | [glide-data-grid — Canvas 画出来的百万行表格](/study/projects/glide-data-grid/) | 其他 |
+| `glslify` | [glslify — Browserify 风格 GLSL 模块 — 学习笔记](/study/projects/glslify/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
 | `godot` | [Godot — 开源游戏引擎和编辑器](/study/projects/godot/) | 其他 |
