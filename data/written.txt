@@ -1164,6 +1164,7 @@ greenplum-db
 gron
 grpc-go
 gsap
+gstreamer
 gum
 hadolint
 hanami
