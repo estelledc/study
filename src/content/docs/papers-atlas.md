@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 892 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 893 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：892 篇
+- **总数**：893 篇
 - **已分类**：143
-- **未分类**：749（落入"其他 / 待分类"段）
+- **未分类**：750（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 749 |
+| [其他 / 待分类](#其他--待分类) | 750 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 749 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 750 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -869,6 +869,7 @@ sidebar:
 | `r-bgp-2007` | [R-BGP 2007 — 故障切换前先把备份路径塞进邻居口袋](/study/papers/r-bgp-2007/) |
 | `rabin-ot-1981` | [Rabin OT 1981 — 不知道对方是否收到的秘密交换](/study/papers/rabin-ot-1981/) |
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) |
+| `ray-2018` | [Ray 2018 — 把任务和演员放进同一个分布式舞台](/study/papers/ray-2018/) |
 | `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
 | `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |
@@ -1060,7 +1061,7 @@ sidebar:
 
 ---
 
-## 全部 892 篇（字母序）
+## 全部 893 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1722,6 +1723,7 @@ sidebar:
 | `raft` | [Raft — 易理解的共识算法](/study/papers/raft/) | 分布式系统 |
 | `rag-lewis-2020` | [RAG (Lewis 2020) — 检索增强生成奠基](/study/papers/rag-lewis-2020/) | 智能体与 LLM 系统 |
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) | 其他 |
+| `ray-2018` | [Ray 2018 — 把任务和演员放进同一个分布式舞台](/study/papers/ray-2018/) | 其他 |
 | `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) | 其他 |
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | 其他 |
