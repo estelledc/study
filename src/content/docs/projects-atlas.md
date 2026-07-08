@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 830 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 831 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：830 个
+- **总数**：831 个
 - **已分类**：214
-- **未分类**：616（落入"其他 / 待分类"段）
+- **未分类**：617（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 616 |
+| [其他 / 待分类](#其他--待分类) | 617 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 616 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 617 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -966,6 +966,7 @@ sidebar:
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) |
+| `rauc` | [RAUC — 嵌入式 Linux 的 A/B 更新控制器](/study/projects/rauc/) |
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) |
@@ -1126,7 +1127,7 @@ sidebar:
 
 ---
 
-## 全部 830 个（字母序）
+## 全部 831 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1731,6 +1732,7 @@ sidebar:
 | `ranger` | [ranger — Python 写的 vim 风格三栏文件管理器](/study/projects/ranger/) | 其他 |
 | `rasa` | [Rasa — 自己造一个能记住上下文的对话机器人](/study/projects/rasa/) | 其他 |
 | `ratatui` | [ratatui — Rust 的立即模式 TUI 库，tui-rs 弃坑后社区接住](/study/projects/ratatui/) | 其他 |
+| `rauc` | [RAUC — 嵌入式 Linux 的 A/B 更新控制器](/study/projects/rauc/) | 其他 |
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) | 其他 |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
