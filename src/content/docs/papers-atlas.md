@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 875 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 876 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：875 篇
+- **总数**：876 篇
 - **已分类**：143
-- **未分类**：732（落入"其他 / 待分类"段）
+- **未分类**：733（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 732 |
+| [其他 / 待分类](#其他--待分类) | 733 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 732 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 733 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -870,6 +870,7 @@ sidebar:
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
 | `rfc-3833-dns-threats` | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) |
+| `rim-latent-reasoning` | [RiM Latent Reasoning — 给 LLM 一块不用说出口的工作记忆](/study/papers/rim-latent-reasoning/) |
 | `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) |
 | `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) |
 | `rm3-2001` | [RM3 — 让搜索引擎自己看一眼结果再重搜一次](/study/papers/rm3-2001/) |
@@ -1043,7 +1044,7 @@ sidebar:
 
 ---
 
-## 全部 875 篇（字母序）
+## 全部 876 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1712,6 +1713,7 @@ sidebar:
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 其他 |
 | `rfc-3833-dns-threats` | [RFC 3833 — IETF 第一次正式承认 DNS 不安全](/study/papers/rfc-3833-dns-threats/) | 其他 |
+| `rim-latent-reasoning` | [RiM Latent Reasoning — 给 LLM 一块不用说出口的工作记忆](/study/papers/rim-latent-reasoning/) | 其他 |
 | `ring-allreduce-2017` | [Ring All-Reduce — 把 HPC 的环形规约搬进深度学习](/study/papers/ring-allreduce-2017/) | 其他 |
 | `risc-i-1981` | [RISC I — 砍掉 90% 指令反而让 CPU 跑得更快](/study/papers/risc-i-1981/) | 其他 |
 | `rlhf-christiano` | [RLHF Christiano 2017 — 人类偏好做奖励](/study/papers/rlhf-christiano/) | 强化学习 |
