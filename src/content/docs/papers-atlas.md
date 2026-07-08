@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 918 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 919 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：918 篇
+- **总数**：919 篇
 - **已分类**：143
-- **未分类**：775（落入"其他 / 待分类"段）
+- **未分类**：776（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 775 |
+| [其他 / 待分类](#其他--待分类) | 776 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 775 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 776 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -501,6 +501,7 @@ sidebar:
 | `diffie-hellman-1976` | [New Directions 1976 — 给协议世界写下公钥宪法](/study/papers/diffie-hellman-1976/) |
 | `diffusion-posterior-finite` | [Diffusion Posterior Samplers Fail — 用有限样本看清扩散后验采样为什么翻车](/study/papers/diffusion-posterior-finite/) |
 | `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) |
+| `dijkstra-goto-1968` | [Go To Statement Considered Harmful — 控制流程的清晰优先级](/study/papers/dijkstra-goto-1968/) |
 | `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) |
 | `dingledine-mixminion-2003` | [Mixminion — 用一次性回信票据保护匿名邮件](/study/papers/dingledine-mixminion-2003/) |
 | `disco-1997` | [Disco — 让没改过的商用 OS 在 64 核大机器上一起跑](/study/papers/disco-1997/) |
@@ -1086,7 +1087,7 @@ sidebar:
 
 ---
 
-## 全部 918 篇（字母序）
+## 全部 919 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1323,6 +1324,7 @@ sidebar:
 | `diffusion-posterior-finite` | [Diffusion Posterior Samplers Fail — 用有限样本看清扩散后验采样为什么翻车](/study/papers/diffusion-posterior-finite/) | 其他 |
 | `dijkstra-1965` | [Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死](/study/papers/dijkstra-1965/) | 其他 |
 | `dijkstra-goto` | [Dijkstra 1968 — Go To Statement Considered Harmful](/study/papers/dijkstra-goto/) | HCI / 软件工程研究 |
+| `dijkstra-goto-1968` | [Go To Statement Considered Harmful — 控制流程的清晰优先级](/study/papers/dijkstra-goto-1968/) | 其他 |
 | `dijkstra-shortest-path` | [Dijkstra 最短路径 — 一杯咖啡时间想出来的贪心算法](/study/papers/dijkstra-shortest-path/) | 计算理论 / 数学基础 |
 | `din-2018` | [DIN — 让推荐模型按你看的广告决定该激活你哪段历史](/study/papers/din-2018/) | 其他 |
 | `dingledine-mixminion-2003` | [Mixminion — 用一次性回信票据保护匿名邮件](/study/papers/dingledine-mixminion-2003/) | 其他 |
