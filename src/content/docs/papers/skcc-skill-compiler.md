@@ -158,3 +158,4 @@ skill ExtractTable {
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
 
+- 2026-07-08: 本轮 round#0 复检补丁
