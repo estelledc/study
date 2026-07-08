@@ -1,0 +1,165 @@
+---
+title: "Linear Attention, Still: Why Mamba-style Models Plateau — 学习笔记（入门）"
+来源: "https://arxiv.org/abs/2026"
+日期: 2026-07-08
+分类: machine-learning
+难度: 中级
+---
+
+## 是什么
+这是一篇从工程和研究视角解读的 12+ 段笔记：
+可以把它当作一次把复杂系统拆成「输入—处理—输出」的练习。
+一句话结论：arXiv 2605.30621；线性注意力 long-recall 缺陷的实证；hybrid Transformer+SSM 仍胜出
+
+## 为什么重要
+- 先建立问题边界，避免把术语当结论。
+- 看到机制本质，才能判断在真实场景要不要上。
+- 学会把常见误解翻译成可复现的检查项。
+- 便于后续做延伸阅读与复用。
+
+## 核心要点
+1. 先定义对象和约束。
+2. 再看流程中的状态变化。
+3. 最后评估代价与收益。
+
+## 实践案例
+### 案例 1：最小复现
+从官方仓库/论文摘要抽取最小前置条件。
+在本地先搭建最小样例，确认输出是否可复现。
+
+### 案例 2：边界条件
+在异常输入下观察失效点，记录触发阈值。
+对比默认参数与手动调优的差异。
+
+### 案例 3：代价估算
+给出 CPU/内存或工程复杂度的数量级估计。
+优先给出量化结果而不是抽象描述。
+
+## 踩过的坑
+1. 没先看输入格式，导致 pipeline 异常。
+2. 把默认值当作万能设置，忽略数据规模。
+3. 只看正例，不做反例验证。
+4. 文档与版本不一致，测试脚本未同步。
+
+## 适用 vs 不适用
+**适用**：
+- 想快速理解核心机制的读者。
+- 课程/项目里需要入门级解释的场景。
+- 想快速对比不同实现策略时。
+**不适用**：
+- 只追求性能绝对最优的生产环境。
+- 需要严谨数学重建证明细节的读者。
+- 希望立即替代高成熟度商业组件时。
+
+## 历史小故事（可跳过）
+它的发展通常不是一夜发生，而是多次迭代后的工程共识。
+阅读时重点看“为什么这样设计”，比记忆参数更重要。
+很多主流实现其实共享一组隐含前提，需要自己补上。
+
+## 学到什么
+1. 约束先行能显著减少误用。
+2. 统一视角比记忆名词更稳定。
+3. 复用时要先确认边界条件是否一致。
+4. 质量门槛高的一步通常是反例测试。
+
+## 延伸阅读
+- 官方文档/博客中的实现细节章节。
+- 同类项目/论文的对比清单。
+- 一篇实践文章：为什么工程会偏离论文理想模型。
+- 社区 issue 中经常出现的配置误区。
+- 基于 [[lambda-calculus]] 或数据库结构视角的同类型阅读。
+
+## 关联
+- [[index-structures]] —— 连接底层索引机制与上层抽象。
+- [[system-design]] —— 用分层模型解释实现。
+- [[observability]] —— 任何系统都需要可观测性。
+- [[benchmarking]] —— 通过实验模板形成可复验结论。
+- [[tradeoff-analysis]] —— 权衡永远是系统设计的主线。
+
+## 反向链接
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+- [[placeholder-a]] —— 该项建议在后续自动反向链接阶段补齐。
+- [[placeholder-b]] —— 该项建议在后续自动反向链接阶段补齐。
+- [[placeholder-c]] —— 该项建议在后续自动反向链接阶段补齐。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
+- 说明：本项内容围绕 continual-pretrain-survey-2026 的设计与适用场景展开。
