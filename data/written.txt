@@ -1161,6 +1161,7 @@ edgedb
 effect
 ejabberd
 elasticsearch
+electron
 element-android
 element-web
 elysia
