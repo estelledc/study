@@ -1328,6 +1328,7 @@ megatron-lm
 meilisearch
 memcached
 memgraph
+mender
 mermaid
 metabase
 metaflow
