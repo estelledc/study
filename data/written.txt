@@ -1639,6 +1639,7 @@ typesense
 unified
 uniswap-v3
 universal-ctags
+unqlite
 unsloth
 unstorage
 unstructured
