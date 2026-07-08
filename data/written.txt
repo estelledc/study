@@ -1323,6 +1323,7 @@ leveldb
 lexical
 lf
 librechat
+librosa
 libsignal
 libvpx
 lightdash
