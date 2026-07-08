@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 883 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 884 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：883 个
+- **总数**：884 个
 - **已分类**：214
-- **未分类**：669（落入"其他 / 待分类"段）
+- **未分类**：670（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 669 |
+| [其他 / 待分类](#其他--待分类) | 670 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 669 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 670 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -594,6 +594,7 @@ sidebar:
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) |
+| `cannon-es` | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) |
 | `canvas-datagrid` | [canvas-datagrid — 整张表只用一块 canvas 画](/study/projects/canvas-datagrid/) |
 | `capacitor` | [capacitor](/study/projects/capacitor/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
@@ -1179,7 +1180,7 @@ sidebar:
 
 ---
 
-## 全部 883 个（字母序）
+## 全部 884 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1286,6 +1287,7 @@ sidebar:
 | `cal-com` | [cal.com — 自己能托管的开源 Calendly](/study/projects/cal-com/) | 数据应用 / SaaS |
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) | 其他 |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) | 其他 |
+| `cannon-es` | [Cannon-es — 把浏览器里的“重力+碰撞”变成可复用规则](/study/projects/cannon-es/) | 其他 |
 | `canvas-datagrid` | [canvas-datagrid — 整张表只用一块 canvas 画](/study/projects/canvas-datagrid/) | 其他 |
 | `capacitor` | [capacitor](/study/projects/capacitor/) | 其他 |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
