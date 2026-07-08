@@ -1168,6 +1168,7 @@ helm
 hnswlib
 hocuspocus
 holoviews
+home-assistant
 homebrew
 hono
 hot-chocolate
