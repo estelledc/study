@@ -715,6 +715,7 @@ sasrec-2018
 scala-macros
 scaling-laws
 scann-2020
+schgen-pcb
 scoop
 scott-strachey-denotational
 sctp-multipath-2006
