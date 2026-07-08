@@ -1,5 +1,5 @@
 ---
-title: KVBudget: Per-Request KV Cache Budgeting in vLLM-style Serving
+title: "KVBudget: Per-Request KV Cache Budgeting in vLLM-style Serving"
 来源: https://arxiv.org/abs/2605.30821
 日期: 2026-07-08
 分类: 机器学习
