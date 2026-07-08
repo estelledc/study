@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 873 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 874 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：873 个
+- **总数**：874 个
 - **已分类**：214
-- **未分类**：659（落入"其他 / 待分类"段）
+- **未分类**：660（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 659 |
+| [其他 / 待分类](#其他--待分类) | 660 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 659 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 660 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -624,6 +624,7 @@ sidebar:
 | `connect-rpc` | [ConnectRPC — 让 gRPC 在浏览器里裸跑的 RPC 协议](/study/projects/connect-rpc/) |
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) |
 | `coqui-tts` | [Coqui TTS — 多语种 TTS 工具包](/study/projects/coqui-tts/) |
+| `cordova` | [Cordova — 学习笔记（入门）](/study/projects/cordova/) |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) |
@@ -1169,7 +1170,7 @@ sidebar:
 
 ---
 
-## 全部 873 个（字母序）
+## 全部 874 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1320,6 +1321,7 @@ sidebar:
 | `continue` | [Continue — 让 AI code review 跑成 git 跟踪的 PR status check](/study/projects/continue/) | AI 应用 / Agent 平台 |
 | `conversations` | [Conversations — Android 上把 XMPP 加上 OMEMO 端到端加密的客户端](/study/projects/conversations/) | 其他 |
 | `coqui-tts` | [Coqui TTS — 多语种 TTS 工具包](/study/projects/coqui-tts/) | 其他 |
+| `cordova` | [Cordova — 学习笔记（入门）](/study/projects/cordova/) | 其他 |
 | `cosmos-sdk` | [Cosmos SDK — 应用链开发框架](/study/projects/cosmos-sdk/) | 其他 |
 | `cosmwasm` | [CosmWasm — Cosmos 上的 wasm 智能合约](/study/projects/cosmwasm/) | 其他 |
 | `coturn` | [coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器](/study/projects/coturn/) | 其他 |
