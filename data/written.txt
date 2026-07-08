@@ -905,6 +905,7 @@ anytype-ts
 ape-framework
 apexcharts
 apollo-server
+appflowy
 appwrite
 aptos-core
 aragon
