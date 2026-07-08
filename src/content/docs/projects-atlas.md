@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 805 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 806 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：805 个
+- **总数**：806 个
 - **已分类**：214
-- **未分类**：591（落入"其他 / 待分类"段）
+- **未分类**：592（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 591 |
+| [其他 / 待分类](#其他--待分类) | 592 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 591 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 592 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -533,6 +533,7 @@ sidebar:
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) |
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
+| `appflowy` | [AppFlowy — Rust 写的开源 Notion](/study/projects/appflowy/) |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) |
@@ -1101,7 +1102,7 @@ sidebar:
 
 ---
 
-## 全部 805 个（字母序）
+## 全部 806 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1134,6 +1135,7 @@ sidebar:
 | `ape-framework` | [Ape Framework — Python 智能合约开发一条龙](/study/projects/ape-framework/) | 其他 |
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
+| `appflowy` | [AppFlowy — Rust 写的开源 Notion](/study/projects/appflowy/) | 其他 |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | 其他 |
