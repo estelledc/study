@@ -1691,6 +1691,7 @@ webrtc-rs
 wezterm
 whisper
 why-did-you-render
+wireguard-go
 woodpecker
 wormhole
 wretch
