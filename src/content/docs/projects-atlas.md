@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 866 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 867 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：866 个
+- **总数**：867 个
 - **已分类**：214
-- **未分类**：652（落入"其他 / 待分类"段）
+- **未分类**：653（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 652 |
+| [其他 / 待分类](#其他--待分类) | 653 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 652 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 653 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -986,6 +986,7 @@ sidebar:
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) |
+| `quickjs` | [quickjs](/study/projects/quickjs/) |
 | `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/projects/rabbitmq-server/) |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) |
 | `rails` | [Ruby on Rails — 约定大于配置的全栈 Web 框架教科书](/study/projects/rails/) |
@@ -1162,7 +1163,7 @@ sidebar:
 
 ---
 
-## 全部 866 个（字母序）
+## 全部 867 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1785,6 +1786,7 @@ sidebar:
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) | 其他 |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) | 其他 |
+| `quickjs` | [quickjs](/study/projects/quickjs/) | 其他 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
 | `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/projects/rabbitmq-server/) | 其他 |
 | `rabby-wallet` | [Rabby Wallet — 签名前先告诉你"会变成什么样"的 EVM 钱包](/study/projects/rabby-wallet/) | 其他 |
