@@ -1436,6 +1436,7 @@ observable-framework
 observable-plot
 oclif
 ofetch
+ogre
 oh-my-posh
 ollama
 open-sora
