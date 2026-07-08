@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 839 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 840 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：839 个
+- **总数**：840 个
 - **已分类**：214
-- **未分类**：625（落入"其他 / 待分类"段）
+- **未分类**：626（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 625 |
+| [其他 / 待分类](#其他--待分类) | 626 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 625 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 626 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -847,6 +847,7 @@ sidebar:
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
 | `mbedtls` | [Mbed TLS — 嵌入式设备的轻量级 TLS 加密库](/study/projects/mbedtls/) |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
+| `melonjs` | [melonJS — 轻量 JS 2D 游戏引擎](/study/projects/melonjs/) |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) |
 | `mender` | [Mender — 给 IoT 设备做不会刷砖的 OTA 升级](/study/projects/mender/) |
@@ -1135,7 +1136,7 @@ sidebar:
 
 ---
 
-## 全部 839 个（字母序）
+## 全部 840 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1574,6 +1575,7 @@ sidebar:
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) | 其他 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
+| `melonjs` | [melonJS — 轻量 JS 2D 游戏引擎](/study/projects/melonjs/) | 其他 |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) | 其他 |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) | 其他 |
 | `mender` | [Mender — 给 IoT 设备做不会刷砖的 OTA 升级](/study/projects/mender/) | 其他 |
