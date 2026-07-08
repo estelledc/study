@@ -1096,6 +1096,7 @@ erigon
 errbot
 esbuild
 esp-dl
+esphome
 etcd
 ethers-js
 evidence
