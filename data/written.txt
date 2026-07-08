@@ -391,6 +391,7 @@ hindley-milner
 hits-1999
 hlc-2014
 hnsw-2018
+hoare-csp-1978
 hoare-logic
 hol-light-2009
 holzmann-spin-1997
