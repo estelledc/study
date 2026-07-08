@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 821 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 822 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：821 个
+- **总数**：822 个
 - **已分类**：214
-- **未分类**：607（落入"其他 / 待分类"段）
+- **未分类**：608（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 607 |
+| [其他 / 待分类](#其他--待分类) | 608 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 607 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 608 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -766,6 +766,7 @@ sidebar:
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
 | `jspdf` | [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) |
 | `jupyter-notebook` | [Jupyter Notebook — 经典数据科学笔记本](/study/projects/jupyter-notebook/) |
+| `jupyterlab` | [JupyterLab — 下一代 Jupyter IDE](/study/projects/jupyterlab/) |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) |
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) |
 | `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) |
@@ -1117,7 +1118,7 @@ sidebar:
 
 ---
 
-## 全部 821 个（字母序）
+## 全部 822 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1450,6 +1451,7 @@ sidebar:
 | `js-joda` | [js-joda — 把 Java 的 java.time 整套搬进 JS](/study/projects/js-joda/) | 日期时间 |
 | `jspdf` | [jsPDF — 浏览器里直接生成 PDF](/study/projects/jspdf/) | 其他 |
 | `jupyter-notebook` | [Jupyter Notebook — 经典数据科学笔记本](/study/projects/jupyter-notebook/) | 其他 |
+| `jupyterlab` | [JupyterLab — 下一代 Jupyter IDE](/study/projects/jupyterlab/) | 其他 |
 | `just` | [just — 把 make 拆成两半，只留 ‘命令编排’ 那一半](/study/projects/just/) | 其他 |
 | `k3s` | [k3s — 把完整 K8s 塞进一个 60 MB 的二进制](/study/projects/k3s/) | 其他 |
 | `k6` | [k6 — 用 JS 写脚本的现代负载测试器](/study/projects/k6/) | 其他 |
