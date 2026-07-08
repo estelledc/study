@@ -865,6 +865,7 @@ tor-2004
 toy-models-superposition
 tracemonkey
 transformer-xl-2019
+tree-of-attention-2026
 tree-of-thoughts-2023
 trees-that-grow
 trill-2014
