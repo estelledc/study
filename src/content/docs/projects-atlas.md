@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 844 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 845 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：844 个
+- **总数**：845 个
 - **已分类**：214
-- **未分类**：630（落入"其他 / 待分类"段）
+- **未分类**：631（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 630 |
+| [其他 / 待分类](#其他--待分类) | 631 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 630 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 631 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -637,6 +637,7 @@ sidebar:
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
 | `databend` | [Databend — Rust 写的存算分离云数仓](/study/projects/databend/) |
 | `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) |
+| `dav1d` | [dav1d — 纯 C 的超快 AV1 解码器](/study/projects/dav1d/) |
 | `dbt-core` | [dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来](/study/projects/dbt-core/) |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) |
 | `deepspeed` | [DeepSpeed — 微软分布式训练库](/study/projects/deepspeed/) |
@@ -1140,7 +1141,7 @@ sidebar:
 
 ---
 
-## 全部 844 个（字母序）
+## 全部 845 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1306,6 +1307,7 @@ sidebar:
 | `databend` | [Databend — Rust 写的存算分离云数仓](/study/projects/databend/) | 其他 |
 | `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) | 其他 |
 | `date-fns` | [date-fns — 不造新类型，给原生 Date 配 200+ 个独立函数](/study/projects/date-fns/) | 日期时间 |
+| `dav1d` | [dav1d — 纯 C 的超快 AV1 解码器](/study/projects/dav1d/) | 其他 |
 | `dayjs` | [Day.js — 用 2 KB 复刻 Moment 的极简日期库](/study/projects/dayjs/) | 日期时间 |
 | `dbt-core` | [dbt-core — 把 SQL 当工程代码写，让数据仓库里的转换跑起来](/study/projects/dbt-core/) | 其他 |
 | `debezium` | [Debezium — 把数据库的"刚刚改了"变成消息流](/study/projects/debezium/) | 其他 |
