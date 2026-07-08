@@ -13,6 +13,7 @@ afd-disagg-moe
 afs-1988
 agda-norell
 agent-r1-2511
+agent-skill-protocol-2026
 agentless
 akamai-2002
 akamai-2010
