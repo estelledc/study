@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 848 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 849 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：848 个
+- **总数**：849 个
 - **已分类**：214
-- **未分类**：634（落入"其他 / 待分类"段）
+- **未分类**：635（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 634 |
+| [其他 / 待分类](#其他--待分类) | 635 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 634 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 635 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -920,6 +920,7 @@ sidebar:
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
+| `opus` | [Opus — 低延迟全频带音频编解码](/study/projects/opus/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
 | `outline` | [Outline — 团队 Wiki 协作平台](/study/projects/outline/) |
@@ -1144,7 +1145,7 @@ sidebar:
 
 ---
 
-## 全部 848 个（字母序）
+## 全部 849 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1683,6 +1684,7 @@ sidebar:
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) | 其他 |
+| `opus` | [Opus — 低延迟全频带音频编解码](/study/projects/opus/) | 其他 |
 | `ora` | [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | 其他 |
