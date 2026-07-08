@@ -1800,6 +1800,7 @@ vscode
 vscodium
 vue
 vue-i18n
+wails
 walletconnect
 wandb
 warp
