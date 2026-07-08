@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 940 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 941 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：940 篇
+- **总数**：941 篇
 - **已分类**：143
-- **未分类**：797（落入"其他 / 待分类"段）
+- **未分类**：798（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 797 |
+| [其他 / 待分类](#其他--待分类) | 798 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 797 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 798 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -373,6 +373,7 @@ sidebar:
 | `big-little-2011` | [big.LITTLE — 让一颗芯片同时装快核和省电核](/study/papers/big-little-2011/) |
 | `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) |
 | `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) |
+| `bigtable-revisit-2024` | [Bigtable Then and Now (CIDR 2024 retrospective) — 学习笔记（入门）](/study/papers/bigtable-revisit-2024/) |
 | `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) |
 | `blink-2020` | [Blink — 按拓扑动态拼生成树替代 NCCL ring](/study/papers/blink-2020/) |
@@ -1108,7 +1109,7 @@ sidebar:
 
 ---
 
-## 全部 940 篇（字母序）
+## 全部 941 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1192,6 +1193,7 @@ sidebar:
 | `bigbench-2022` | [BIG-bench — 204 道题给大模型出考卷](/study/papers/bigbench-2022/) | 其他 |
 | `biggan-2018` | [BigGAN — 把 GAN 暴力放大到 ImageNet 512×512](/study/papers/biggan-2018/) | 其他 |
 | `bigtable-2006` | [Bigtable 2006 — Google 把行级随机读写做到 PB 级的存储系统](/study/papers/bigtable-2006/) | 数据库 |
+| `bigtable-revisit-2024` | [Bigtable Then and Now (CIDR 2024 retrospective) — 学习笔记（入门）](/study/papers/bigtable-revisit-2024/) | 其他 |
 | `bitcoin` | [Bitcoin 白皮书](/study/papers/bitcoin/) | 密码学 / 安全 |
 | `bittorrent-2003` | [BitTorrent — 用"以牙还牙"逼大家都上传](/study/papers/bittorrent-2003/) | 其他 |
 | `blackwell-architecture-2024` | [NVIDIA Blackwell — 双 die NV-HBI + 第二代 Transformer Engine + FP4 让万亿参数训练日常化](/study/papers/blackwell-architecture-2024/) | 其他 |
