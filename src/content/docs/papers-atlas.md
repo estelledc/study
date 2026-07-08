@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 884 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 885 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：884 篇
+- **总数**：885 篇
 - **已分类**：143
-- **未分类**：741（落入"其他 / 待分类"段）
+- **未分类**：742（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 741 |
+| [其他 / 待分类](#其他--待分类) | 742 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 741 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 742 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -529,6 +529,7 @@ sidebar:
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
 | `easycrypt-2011` | [EasyCrypt — 让密码学家的安全证明能被机器自动检查](/study/papers/easycrypt-2011/) |
 | `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) |
+| `efficient-compile-2011` | [Efficient Compile 2011 — 把 SQL 查询编译成贴近 CPU 的机器码](/study/papers/efficient-compile-2011/) |
 | `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
@@ -1052,7 +1053,7 @@ sidebar:
 
 ---
 
-## 全部 884 篇（字母序）
+## 全部 885 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1326,6 +1327,7 @@ sidebar:
 | `ebpf` | [eBPF — 用户写小程序，内核证明安全后再跑](/study/papers/ebpf/) | OS / 集群管理 / 系统 |
 | `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) | 其他 |
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
+| `efficient-compile-2011` | [Efficient Compile 2011 — 把 SQL 查询编译成贴近 CPU 的机器码](/study/papers/efficient-compile-2011/) | 其他 |
 | `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) | 其他 |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 其他 |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
