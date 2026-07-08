@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 917 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 918 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：917 篇
+- **总数**：918 篇
 - **已分类**：143
-- **未分类**：774（落入"其他 / 待分类"段）
+- **未分类**：775（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 774 |
+| [其他 / 待分类](#其他--待分类) | 775 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 774 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 775 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -389,6 +389,7 @@ sidebar:
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) |
 | `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) |
+| `brooks-no-silver-bullet-1986` | [No Silver Bullet — 软件工程里的本质与偶然](/study/papers/brooks-no-silver-bullet-1986/) |
 | `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) |
 | `bunz-bulletproofs-2018` | [Bulletproofs 2018：不用可信仪式的短范围证明](/study/papers/bunz-bulletproofs-2018/) |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) |
@@ -1085,7 +1086,7 @@ sidebar:
 
 ---
 
-## 全部 917 篇（字母序）
+## 全部 918 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1188,6 +1189,7 @@ sidebar:
 | `brewer-cap-2000` | [Brewer CAP — 网络一断电，一致性和可用性只能留一个](/study/papers/brewer-cap-2000/) | 其他 |
 | `brill-moore-2000` | [Brill-Moore 2000 — 把拼写纠错的编辑操作从单字符扩成任意子串](/study/papers/brill-moore-2000/) | 其他 |
 | `brook-2004` | [Brook for GPUs — 让显卡第一次能用人话编程](/study/papers/brook-2004/) | 其他 |
+| `brooks-no-silver-bullet-1986` | [No Silver Bullet — 软件工程里的本质与偶然](/study/papers/brooks-no-silver-bullet-1986/) | 其他 |
 | `btrfs-2013` | [Btrfs — Linux 上"写时复制 B-tree"的工业级文件系统](/study/papers/btrfs-2013/) | 其他 |
 | `bunz-bulletproofs-2018` | [Bulletproofs 2018：不用可信仪式的短范围证明](/study/papers/bunz-bulletproofs-2018/) | 其他 |
 | `burgess-2020-turing-rt` | [Burgess 2020 RTX ON — Turing 把光线追踪做进硅片](/study/papers/burgess-2020-turing-rt/) | 其他 |
