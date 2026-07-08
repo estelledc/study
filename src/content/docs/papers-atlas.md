@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 919 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 920 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：919 篇
+- **总数**：920 篇
 - **已分类**：143
-- **未分类**：776（落入"其他 / 待分类"段）
+- **未分类**：777（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 776 |
+| [其他 / 待分类](#其他--待分类) | 777 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 776 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 777 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -721,6 +721,7 @@ sidebar:
 | `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) |
 | `lipp-meltdown-2018` | [Meltdown — 从用户态读到内核内存的硬件漏洞](/study/papers/lipp-meltdown-2018/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
+| `liskov-abstraction-1974` | [Liskov 抽象数据类型 — 用操作而不是存储形状定义数据](/study/papers/liskov-abstraction-1974/) |
 | `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) |
 | `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) |
 | `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) |
@@ -1087,7 +1088,7 @@ sidebar:
 
 ---
 
-## 全部 919 篇（字母序）
+## 全部 920 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1578,6 +1579,7 @@ sidebar:
 | `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) | 其他 |
 | `lipp-meltdown-2018` | [Meltdown — 从用户态读到内核内存的硬件漏洞](/study/papers/lipp-meltdown-2018/) | 其他 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
+| `liskov-abstraction-1974` | [Liskov 抽象数据类型 — 用操作而不是存储形状定义数据](/study/papers/liskov-abstraction-1974/) | 其他 |
 | `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) | 其他 |
 | `llama` | [LLaMA — Meta 开源大语言模型](/study/papers/llama/) | NLP 基础与 Scaling |
 | `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |
