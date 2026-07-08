@@ -1817,6 +1817,7 @@ yazi
 yjs
 yocto-poky
 yq
+yt-dlp
 yugabyte-db
 zcash
 zed
