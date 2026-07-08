@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 885 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 886 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：885 个
+- **总数**：886 个
 - **已分类**：214
-- **未分类**：671（落入"其他 / 待分类"段）
+- **未分类**：672（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 671 |
+| [其他 / 待分类](#其他--待分类) | 672 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 671 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 672 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -698,6 +698,7 @@ sidebar:
 | `etherpad-lite` | [Etherpad — 经典协作文本编辑器](/study/projects/etherpad-lite/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
 | `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) |
+| `expo` | [Expo — 面向 React Native 的“开箱即用”应用生产线](/study/projects/expo/) |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
 | `faiss` | [FAISS — 向量检索的标准件库](/study/projects/faiss/) |
 | `fastai` | [fastai — 三行代码做迁移学习](/study/projects/fastai/) |
@@ -1181,7 +1182,7 @@ sidebar:
 
 ---
 
-## 全部 885 个（字母序）
+## 全部 886 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1426,6 +1427,7 @@ sidebar:
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | 其他 |
 | `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) | 其他 |
 | `excalidraw` | [Excalidraw — 手绘风协作白板](/study/projects/excalidraw/) | 数据应用 / SaaS |
+| `expo` | [Expo — 面向 React Native 的“开箱即用”应用生产线](/study/projects/expo/) | 其他 |
 | `express` | [Express — Node.js 最经典的 Web 框架](/study/projects/express/) | Web 框架 |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) | 其他 |
 | `fabric-js` | [Fabric.js — 给 Canvas 加一层"对象模型"，让画布图形可以拖](/study/projects/fabric-js/) | 图像处理 / Canvas |
