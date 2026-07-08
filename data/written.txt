@@ -991,6 +991,7 @@ astronvim
 asynq
 atom
 aubio
+audacity
 auth-js
 autogen
 autogluon
