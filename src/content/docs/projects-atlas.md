@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 816 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 817 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：816 个
+- **总数**：817 个
 - **已分类**：214
-- **未分类**：602（落入"其他 / 待分类"段）
+- **未分类**：603（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 602 |
+| [其他 / 待分类](#其他--待分类) | 603 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 602 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 603 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -689,6 +689,7 @@ sidebar:
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) |
 | `ffmpeg` | [FFmpeg — 几乎所有视频工具背后都藏着它](/study/projects/ffmpeg/) |
+| `ffmpeg-kit` | [FFmpegKit — 把 FFmpeg 装进移动 App 的封装层](/study/projects/ffmpeg-kit/) |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
@@ -1112,7 +1113,7 @@ sidebar:
 
 ---
 
-## 全部 816 个（字母序）
+## 全部 817 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1351,6 +1352,7 @@ sidebar:
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | 其他 |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) | 其他 |
 | `ffmpeg` | [FFmpeg — 几乎所有视频工具背后都藏着它](/study/projects/ffmpeg/) | 其他 |
+| `ffmpeg-kit` | [FFmpegKit — 把 FFmpeg 装进移动 App 的封装层](/study/projects/ffmpeg-kit/) | 其他 |
 | `fiber` | [Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架](/study/projects/fiber/) | 其他 |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | 其他 |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
