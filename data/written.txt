@@ -1309,6 +1309,7 @@ loki
 longhorn
 lora-mac-node
 lottie
+love2d
 lsd
 lucia
 lunarvim
