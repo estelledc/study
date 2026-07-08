@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 862 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 863 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：862 个
+- **总数**：863 个
 - **已分类**：214
-- **未分类**：648（落入"其他 / 待分类"段）
+- **未分类**：649（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 648 |
+| [其他 / 待分类](#其他--待分类) | 649 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 648 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 649 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -646,6 +646,7 @@ sidebar:
 | `defold` | [Defold — King 出品的 Lua 跨平台游戏引擎](/study/projects/defold/) |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) |
+| `deno` | [Deno — 安全优先的 TypeScript/JavaScript 运行时](/study/projects/deno/) |
 | `dhtmlx-gantt` | [DHTMLX Gantt — 给企业级排期用的全功能甘特组件](/study/projects/dhtmlx-gantt/) |
 | `discord-js` | [discord.js — Node.js Discord API 客户端事实标准](/study/projects/discord-js/) |
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
@@ -1158,7 +1159,7 @@ sidebar:
 
 ---
 
-## 全部 862 个（字母序）
+## 全部 863 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1334,6 +1335,7 @@ sidebar:
 | `defold` | [Defold — King 出品的 Lua 跨平台游戏引擎](/study/projects/defold/) | 其他 |
 | `delta` | [delta — git diff 的语法高亮分页器](/study/projects/delta/) | 其他 |
 | `dendrite` | [Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合](/study/projects/dendrite/) | 其他 |
+| `deno` | [Deno — 安全优先的 TypeScript/JavaScript 运行时](/study/projects/deno/) | 其他 |
 | `dgraph` | [Dgraph — 分布式图数据库](/study/projects/dgraph/) | 数据库本体 / 存储引擎 |
 | `dhtmlx-gantt` | [DHTMLX Gantt — 给企业级排期用的全功能甘特组件](/study/projects/dhtmlx-gantt/) | 其他 |
 | `dify` | [Dify — LLM 应用开发平台](/study/projects/dify/) | AI 应用 / Agent 平台 |
