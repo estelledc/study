@@ -1692,6 +1692,7 @@ styled-components
 stylex
 sui
 supabase
+supercollider
 superset
 supertokens
 surrealdb
