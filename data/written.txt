@@ -46,6 +46,7 @@ aurora
 aurora-exascale-2024
 autogen
 autonomous-driving-waymo-2021
+av2-video-spec
 avgustinov-codeql-2016
 awodey-warren-2009
 awq
