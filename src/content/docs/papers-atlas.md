@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 873 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 874 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：873 篇
+- **总数**：874 篇
 - **已分类**：143
-- **未分类**：730（落入"其他 / 待分类"段）
+- **未分类**：731（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 730 |
+| [其他 / 待分类](#其他--待分类) | 731 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 730 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 731 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -704,6 +704,7 @@ sidebar:
 | `liu-2020-dlss` | [DLSS 2.0 — 把 4K 实时渲染的一半工作量交给神经网络](/study/papers/liu-2020-dlss/) |
 | `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) |
 | `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) |
+| `llmsurgeon-data-mixture` | [LLMSurgeon — 从模型回答反推训练数据配方](/study/papers/llmsurgeon-data-mixture/) |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) |
 | `locus-1980` | [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) |
@@ -1041,7 +1042,7 @@ sidebar:
 
 ---
 
-## 全部 873 篇（字母序）
+## 全部 874 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1517,6 +1518,7 @@ sidebar:
 | `llava` | [LLaVA — 开源多模态对话模型](/study/papers/llava/) | 生成模型 / 扩散 |
 | `llm-int8-2022` | [LLM.int8() — 大模型激活值里藏着几个超大异常通道](/study/papers/llm-int8-2022/) | 其他 |
 | `llm-wiki-retrieval-reasoning` | [LLM-Wiki — 把外部知识编译成 agent 自己的"维基"](/study/papers/llm-wiki-retrieval-reasoning/) | 其他 |
+| `llmsurgeon-data-mixture` | [LLMSurgeon — 从模型回答反推训练数据配方](/study/papers/llmsurgeon-data-mixture/) | 其他 |
 | `llvm` | [LLVM — 模块化编译器框架](/study/papers/llvm/) | 编译器 / 编程语言理论 |
 | `lmdb-2011` | [LMDB 2011 — 把数据库直接 mmap 进内存的嵌入式 KV 存储](/study/papers/lmdb-2011/) | 其他 |
 | `local-type-inference` | [Local Type Inference — 编译器只看相邻节点也能推出类型](/study/papers/local-type-inference/) | 其他 |
