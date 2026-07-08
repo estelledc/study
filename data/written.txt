@@ -1696,6 +1696,7 @@ stern
 storj
 storybook
 strawberry
+streamlink
 streamlit
 styled-components
 stylex
