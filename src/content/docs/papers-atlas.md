@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 914 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 915 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：914 篇
+- **总数**：915 篇
 - **已分类**：143
-- **未分类**：771（落入"其他 / 待分类"段）
+- **未分类**：772（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 771 |
+| [其他 / 待分类](#其他--待分类) | 772 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 771 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 772 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -924,6 +924,7 @@ sidebar:
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
+| `scaling-hnsws-antirez` | [d-HNSW：面向 RDMA 反向索引内存的高性能向量搜索](/study/papers/scaling-hnsws-antirez/) |
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) |
 | `schgen-pcb` | [SchGen PCB — 把一句需求变成可编辑电路原理图](/study/papers/schgen-pcb/) |
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
@@ -1082,7 +1083,7 @@ sidebar:
 
 ---
 
-## 全部 914 篇（字母序）
+## 全部 915 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1810,6 +1811,7 @@ sidebar:
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) | 其他 |
+| `scaling-hnsws-antirez` | [d-HNSW：面向 RDMA 反向索引内存的高性能向量搜索](/study/papers/scaling-hnsws-antirez/) | 其他 |
 | `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) | 其他 |
 | `schgen-pcb` | [SchGen PCB — 把一句需求变成可编辑电路原理图](/study/papers/schgen-pcb/) | 其他 |
