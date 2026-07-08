@@ -1238,6 +1238,7 @@ gitui
 glab
 glances
 glide-data-grid
+glslify
 go-ethereum
 go-zero
 godot
