@@ -1271,6 +1271,7 @@ helidon
 helix
 helm
 hermes
+hls.js
 hnswlib
 hocuspocus
 holoviews
