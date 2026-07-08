@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 950 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 951 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：950 篇
+- **总数**：951 篇
 - **已分类**：143
-- **未分类**：807（落入"其他 / 待分类"段）
+- **未分类**：808（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 807 |
+| [其他 / 待分类](#其他--待分类) | 808 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 807 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 808 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -835,6 +835,7 @@ sidebar:
 | `nbeats-2020` | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) |
 | `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) |
+| `nestedkv` | [NestedKV: Nested Memory Routing for Long-Context KV Cache Compression — 学习笔记](/study/papers/nestedkv/) |
 | `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) |
 | `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) |
@@ -1118,7 +1119,7 @@ sidebar:
 
 ---
 
-## 全部 950 篇（字母序）
+## 全部 951 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1734,6 +1735,7 @@ sidebar:
 | `nbeats-2020` | [N-BEATS — 纯前馈网络在时序预测上打败统计派](/study/papers/nbeats-2020/) | 其他 |
 | `nelson-oppen-1979` | [Nelson-Oppen 1979 — 让多个判定程序坐下来交换"我刚发现 a=b"](/study/papers/nelson-oppen-1979/) | 其他 |
 | `nerf-2020` | [NeRF — 用一个 MLP 把整个场景"背"下来](/study/papers/nerf-2020/) | 其他 |
+| `nestedkv` | [NestedKV: Nested Memory Routing for Long-Context KV Cache Compression — 学习笔记](/study/papers/nestedkv/) | 其他 |
 | `netflix-bellkor-2009` | [BellKor Netflix Prize 2009 — 集成学习赢下 100 万美金的工程实录](/study/papers/netflix-bellkor-2009/) | 其他 |
 | `netkat-2014` | [NetKAT 2014 — 把网络转发写成可以做数学等式变换的代数式](/study/papers/netkat-2014/) | 其他 |
 | `neumann-2015-large-joins` | [Adaptive Optimization of Very Large Join Queries — 100 张表也敢精确求解](/study/papers/neumann-2015-large-joins/) | 其他 |
