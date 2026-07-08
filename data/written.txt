@@ -21,6 +21,7 @@ algol-60
 align-2021
 alpa-2022
 alphago
+amber-sigmod-2014
 amdahl-law-1967
 amoeba-1990
 ampere-architecture-2020
