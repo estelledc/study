@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 880 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 881 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：880 篇
+- **总数**：881 篇
 - **已分类**：143
-- **未分类**：737（落入"其他 / 待分类"段）
+- **未分类**：738（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 737 |
+| [其他 / 待分类](#其他--待分类) | 738 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 737 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 738 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1011,6 +1011,7 @@ sidebar:
 | `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) |
 | `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |
+| `velox-meta-2022` | [Velox — Meta 统一执行引擎](/study/papers/velox-meta-2022/) |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) |
@@ -1048,7 +1049,7 @@ sidebar:
 
 ---
 
-## 全部 880 篇（字母序）
+## 全部 881 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1890,6 +1891,7 @@ sidebar:
 | `veach-1997-mlt` | [Veach MLT — 用 Metropolis 在路径空间游走，专攻 BDPT 也算不动的难场景](/study/papers/veach-1997-mlt/) | 其他 |
 | `vega-lite` | [Vega-Lite — 用 JSON 三段式画复合图](/study/papers/vega-lite/) | 其他 |
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 其他 |
+| `velox-meta-2022` | [Velox — Meta 统一执行引擎](/study/papers/velox-meta-2022/) | 其他 |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | 其他 |
