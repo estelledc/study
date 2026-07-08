@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 847 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 848 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：847 个
+- **总数**：848 个
 - **已分类**：214
-- **未分类**：633（落入"其他 / 待分类"段）
+- **未分类**：634（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 633 |
+| [其他 / 待分类](#其他--待分类) | 634 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 633 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 634 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -943,6 +943,7 @@ sidebar:
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
 | `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) |
+| `playcanvas` | [PlayCanvas — Web 3D 引擎与可视化应用](/study/projects/playcanvas/) |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) |
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) |
 | `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) |
@@ -1143,7 +1144,7 @@ sidebar:
 
 ---
 
-## 全部 847 个（字母序）
+## 全部 848 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1712,6 +1713,7 @@ sidebar:
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | 图像处理 / Canvas |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) | 其他 |
+| `playcanvas` | [PlayCanvas — Web 3D 引擎与可视化应用](/study/projects/playcanvas/) | 其他 |
 | `playwright` | [Playwright — 跨浏览器自动化测试](/study/projects/playwright/) | 测试 / 验证 |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) | 其他 |
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | 其他 |
