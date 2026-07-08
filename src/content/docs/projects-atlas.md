@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 895 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 896 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：895 个
+- **总数**：896 个
 - **已分类**：214
-- **未分类**：681（落入"其他 / 待分类"段）
+- **未分类**：682（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 681 |
+| [其他 / 待分类](#其他--待分类) | 682 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 681 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 682 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1102,6 +1102,7 @@ sidebar:
 | `tabulator` | [Tabulator — 纯 JS 交互式表格](/study/projects/tabulator/) |
 | `tantivy` | [Tantivy — Rust 版 Lucene](/study/projects/tantivy/) |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) |
+| `tauri` | [tauri — 学习笔记](/study/projects/tauri/) |
 | `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) |
@@ -1191,7 +1192,7 @@ sidebar:
 
 ---
 
-## 全部 895 个（字母序）
+## 全部 896 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1968,6 +1969,7 @@ sidebar:
 | `tanstack-router` | [TanStack Router — 把 URL 当类型，编译器替你守路由](/study/projects/tanstack-router/) | 数据获取 / 路由 |
 | `tantivy` | [Tantivy — Rust 版 Lucene](/study/projects/tantivy/) | 其他 |
 | `task` | [Task — 用 YAML 写一份跨平台的 ‘项目命令清单’](/study/projects/task/) | 其他 |
+| `tauri` | [tauri — 学习笔记](/study/projects/tauri/) | 其他 |
 | `tdengine` | [TDengine — 一个设备一张表的国产 IoT 时序库](/study/projects/tdengine/) | 其他 |
 | `tekton` | [Tekton — 把 CI/CD 流水线当成 K8s 资源来声明](/study/projects/tekton/) | 其他 |
 | `teku` | [Teku — 用 Java 写的以太坊共识层客户端](/study/projects/teku/) | 其他 |
