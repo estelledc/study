@@ -464,6 +464,7 @@ lambdarank-2006
 lamport-1978
 lamport-tla-1994
 lampson-hints
+lampson-hints-1983
 landin-secd
 layernorm-2016
 lean-prover
