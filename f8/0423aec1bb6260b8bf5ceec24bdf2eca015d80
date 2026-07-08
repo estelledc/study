@@ -1,0 +1,41 @@
+README.md
+  s_e35b7949a98df4::t_f3fa4b7402e8cf 88,90,103-110
+prompts/base-rules.md
+  s_e35b7949a98df4::t_3060cd0d46231f 123
+prompts/new-paper.md
+  s_e35b7949a98df4::t_aa583a7f7b9c1e 64,67-73,76,91
+prompts/researcher.md
+  s_e35b7949a98df4::t_8045e08259a22c 64,67-73,76,78-82,84,111-116,121,130,141
+prompts/rewrite-paper.md
+  s_e35b7949a98df4::t_96e3c4592d2db7 34,36
+prompts/writer.md
+  s_e35b7949a98df4::t_6643d66f03deb9 44,92
+scripts/lib/paper-context.mjs
+  s_e35b7949a98df4::t_d31ad0c2d6adf8 1-422
+scripts/lib/paper-context.test.mjs
+  s_e35b7949a98df4::t_36c6c28a20badf 1-179
+scripts/lib/prompts.mjs
+  s_e35b7949a98df4::t_8046282b298194 46
+scripts/lib/prompts.test.mjs
+  s_e35b7949a98df4::t_2e230b440de3b8 33,78-106
+scripts/paper-context.mjs
+  s_e35b7949a98df4::t_87ced6cb5d5b90 1-108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "f80423aec1bb6260b8bf5ceec24bdf2eca015d80",
+  "prompts": {},
+  "sessions": {
+    "s_e35b7949a98df4": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "s_e35b7949a98df4",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
