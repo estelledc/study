@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 900 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 901 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：900 篇
+- **总数**：901 篇
 - **已分类**：143
-- **未分类**：757（落入"其他 / 待分类"段）
+- **未分类**：758（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 757 |
+| [其他 / 待分类](#其他--待分类) | 758 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 757 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 758 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -690,6 +690,7 @@ sidebar:
 | `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) |
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) |
 | `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) |
+| `lacuna-program-holes` | [LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞](/study/papers/lacuna-program-holes/) |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) |
 | `lakehouse-2021` | [Lakehouse 2021 — 把数据湖和数仓合成一套开放平台](/study/papers/lakehouse-2021/) |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |
@@ -1068,7 +1069,7 @@ sidebar:
 
 ---
 
-## 全部 900 篇（字母序）
+## 全部 901 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1524,6 +1525,7 @@ sidebar:
 | `kvm-2007` | [KVM 2007 — 把 Linux 内核本身变成 hypervisor](/study/papers/kvm-2007/) | 其他 |
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | 其他 |
 | `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | 其他 |
+| `lacuna-program-holes` | [LACUNA — 把 AI agent 的行动变成编译器先检查的程序洞](/study/papers/lacuna-program-holes/) | 其他 |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) | 其他 |
 | `lakehouse-2021` | [Lakehouse 2021 — 把数据湖和数仓合成一套开放平台](/study/papers/lakehouse-2021/) | 其他 |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | 其他 |
