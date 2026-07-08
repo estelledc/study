@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 948 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 949 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：948 篇
+- **总数**：949 篇
 - **已分类**：143
-- **未分类**：805（落入"其他 / 待分类"段）
+- **未分类**：806（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 805 |
+| [其他 / 待分类](#其他--待分类) | 806 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 805 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 806 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1077,6 +1077,7 @@ sidebar:
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) |
 | `velox-meta-2022` | [Velox — Meta 统一执行引擎](/study/papers/velox-meta-2022/) |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
+| `vericache` | [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 学习笔记](/study/papers/vericache/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) |
 | `verus-specgym` | [Verus-SpecGym — 让机器检查规格是不是写对了](/study/papers/verus-specgym/) |
@@ -1116,7 +1117,7 @@ sidebar:
 
 ---
 
-## 全部 948 篇（字母序）
+## 全部 949 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -2024,6 +2025,7 @@ sidebar:
 | `vellvm` | [Vellvm — 在 Coq 里给 LLVM IR 写一份机器证明的语义](/study/papers/vellvm/) | 其他 |
 | `velox-meta-2022` | [Velox — Meta 统一执行引擎](/study/papers/velox-meta-2022/) | 其他 |
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
+| `vericache` | [VeriCache: Turning Lossy KV Cache into Lossless LLM Inference — 学习笔记](/study/papers/vericache/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | 其他 |
 | `verus-specgym` | [Verus-SpecGym — 让机器检查规格是不是写对了](/study/papers/verus-specgym/) | 其他 |
