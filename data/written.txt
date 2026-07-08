@@ -1594,6 +1594,7 @@ rabby-wallet
 radix-ui
 rails
 ranger
+rapier
 rasa
 ratatui
 rauc
