@@ -1656,6 +1656,7 @@ tflite-micro
 the-silver-searcher
 theia
 thirdweb-sdk
+threejs
 thrift
 tidb
 tide
