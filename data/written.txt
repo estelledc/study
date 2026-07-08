@@ -701,6 +701,7 @@ ron-2001
 row-polymorphism-remy
 rrf-cormack-2009
 rsa
+rtp-llm-alibaba
 rtp-rfc-1889
 rwkv-2023
 sac-2018
