@@ -1501,6 +1501,7 @@ rails
 ranger
 rasa
 ratatui
+rauc
 ravendb
 ray
 react
