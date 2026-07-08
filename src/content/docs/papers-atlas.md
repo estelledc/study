@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 876 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 877 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：876 篇
+- **总数**：877 篇
 - **已分类**：143
-- **未分类**：733（落入"其他 / 待分类"段）
+- **未分类**：734（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 733 |
+| [其他 / 待分类](#其他--待分类) | 734 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 733 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 734 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -442,6 +442,7 @@ sidebar:
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) |
 | `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) |
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) |
+| `columnar-storage-formats-2023` | [Columnar Storage Formats 2023 — Parquet/ORC 的体检报告](/study/papers/columnar-storage-formats-2023/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
 | `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) |
@@ -1044,7 +1045,7 @@ sidebar:
 
 ---
 
-## 全部 876 篇（字母序）
+## 全部 877 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1209,6 +1210,7 @@ sidebar:
 | `cohen-1985-hemicube` | [Cohen-Greenberg 1985 Hemicube — 把渲染硬件挪去算辐射度积分](/study/papers/cohen-1985-hemicube/) | 其他 |
 | `colbert-2020` | [ColBERT — 让 BERT 检索既准又能扛大规模](/study/papers/colbert-2020/) | 其他 |
 | `colbert-v2` | [ColBERTv2 — 让向量检索既精又能扛百万文档](/study/papers/colbert-v2/) | 其他 |
+| `columnar-storage-formats-2023` | [Columnar Storage Formats 2023 — Parquet/ORC 的体检报告](/study/papers/columnar-storage-formats-2023/) | 其他 |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 其他 |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 其他 |
 | `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
