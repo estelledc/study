@@ -161,3 +161,4 @@ text_summary: "走近 → 面对 → 按 X 喂食"
 - [[webxskill]] —— WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引
 - [[zombie-agents-2602]] —— Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"
 
+- 2026-07-08: 本轮 round#0 复检补丁
