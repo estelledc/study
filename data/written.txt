@@ -269,6 +269,7 @@ easycrypt-2011
 ebpf
 edm-2022
 effect-handlers
+efficient-compile-2011
 effiskill
 electra-2020
 elmo-2018
