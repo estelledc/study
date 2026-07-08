@@ -1,5 +1,5 @@
 ---
-title: Cassandra: Eventually Consistent Tradeoffs
+title: "Cassandra: Eventually Consistent Tradeoffs"
 来源: https://www.cs.cornell.edu/projects/ladis2009/papers/lakshman-ladis2009.pdf
 日期: 2026-07-08
 分类: 分布式数据库
