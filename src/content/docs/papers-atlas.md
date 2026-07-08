@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 902 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 903 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：902 篇
+- **总数**：903 篇
 - **已分类**：143
-- **未分类**：759（落入"其他 / 待分类"段）
+- **未分类**：760（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 759 |
+| [其他 / 待分类](#其他--待分类) | 760 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 759 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 760 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1034,6 +1034,7 @@ sidebar:
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) |
+| `verus-specgym` | [Verus-SpecGym — 让机器检查规格是不是写对了](/study/papers/verus-specgym/) |
 | `videomla` | [VideoMLA — 给长视频生成压缩 KV 缓存](/study/papers/videomla/) |
 | `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) |
 | `vogels-eventual-2009` | [Eventually Consistent 2009 — 给互联网规模存储一套'放弃强一致'的官方词汇](/study/papers/vogels-eventual-2009/) |
@@ -1070,7 +1071,7 @@ sidebar:
 
 ---
 
-## 全部 902 篇（字母序）
+## 全部 903 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1935,6 +1936,7 @@ sidebar:
 | `verdi-2015` | [Verdi — 在 Coq 里完整证明 Raft 协议的分布式系统验证框架](/study/papers/verdi-2015/) | 其他 |
 | `verisoft-2008` | [Verisoft — 把整台计算机从晶体管到邮件客户端全部用数学证完](/study/papers/verisoft-2008/) | 其他 |
 | `vertica-2012` | [Vertica 2012 — C-Store 论文走向产品的七年改造账](/study/papers/vertica-2012/) | 其他 |
+| `verus-specgym` | [Verus-SpecGym — 让机器检查规格是不是写对了](/study/papers/verus-specgym/) | 其他 |
 | `videomla` | [VideoMLA — 给长视频生成压缩 KV 缓存](/study/papers/videomla/) | 其他 |
 | `vit` | [ViT — Vision Transformer](/study/papers/vit/) | 计算机视觉 |
 | `vl2-2009` | [VL2 — 让一万台服务器像在同一台交换机上](/study/papers/vl2-2009/) | 其他 |
