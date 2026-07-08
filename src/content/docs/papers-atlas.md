@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 889 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 890 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：889 篇
+- **总数**：890 篇
 - **已分类**：143
-- **未分类**：746（落入"其他 / 待分类"段）
+- **未分类**：747（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 746 |
+| [其他 / 待分类](#其他--待分类) | 747 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 746 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 747 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -766,6 +766,7 @@ sidebar:
 | `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) |
+| `mira-rubric` | [MIRA Rubric — 给混合训练数据先定评分尺再筛选](/study/papers/mira-rubric/) |
 | `mirage-2013` | [MirageOS 2013 — 应用和内核合体成一个超轻虚拟机](/study/papers/mirage-2013/) |
 | `mironov-renyi-dp-2017` | [Rényi 差分隐私 — 用一把更精确的尺子量隐私损失](/study/papers/mironov-renyi-dp-2017/) |
 | `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) |
@@ -1057,7 +1058,7 @@ sidebar:
 
 ---
 
-## 全部 889 篇（字母序）
+## 全部 890 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1602,6 +1603,7 @@ sidebar:
 | `minhash-broder-1997` | [MinHash — 用最小哈希值估算两个集合的重叠度](/study/papers/minhash-broder-1997/) | 其他 |
 | `minisat-2003` | [MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书](/study/papers/minisat-2003/) | 其他 |
 | `mips-1981` | [MIPS 1981 — 让编译器自己安排流水线，CPU 就不用管](/study/papers/mips-1981/) | 其他 |
+| `mira-rubric` | [MIRA Rubric — 给混合训练数据先定评分尺再筛选](/study/papers/mira-rubric/) | 其他 |
 | `mirage-2013` | [MirageOS 2013 — 应用和内核合体成一个超轻虚拟机](/study/papers/mirage-2013/) | 其他 |
 | `mironov-renyi-dp-2017` | [Rényi 差分隐私 — 用一把更精确的尺子量隐私损失](/study/papers/mironov-renyi-dp-2017/) | 其他 |
 | `misevolution-2509` | [Misevolution — 自进化 agent 也会"越改越坏"，连顶配模型也躲不过](/study/papers/misevolution-2509/) | 其他 |
