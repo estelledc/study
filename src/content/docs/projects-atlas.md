@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 884 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 885 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：884 个
+- **总数**：885 个
 - **已分类**：214
-- **未分类**：670（落入"其他 / 待分类"段）
+- **未分类**：671（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 670 |
+| [其他 / 待分类](#其他--待分类) | 671 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 670 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 671 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1086,6 +1086,7 @@ sidebar:
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
 | `streamlit` | [Streamlit — Python 几行写 Web 应用](/study/projects/streamlit/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
+| `supercollider` | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) |
 | `superset` | [Apache Superset — 开源 BI 平台](/study/projects/superset/) |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) |
 | `svt-av1` | [SVT-AV1 — Intel 主导的 AV1 编码器](/study/projects/svt-av1/) |
@@ -1180,7 +1181,7 @@ sidebar:
 
 ---
 
-## 全部 884 个（字母序）
+## 全部 885 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1932,6 +1933,7 @@ sidebar:
 | `stylex` | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) | 其他 |
 | `supabase` | [Supabase — Firebase 的开源替代](/study/projects/supabase/) | 数据应用 / SaaS |
+| `supercollider` | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) | 其他 |
 | `superset` | [Apache Superset — 开源 BI 平台](/study/projects/superset/) | 其他 |
 | `supertokens` | [SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe](/study/projects/supertokens/) | Auth 认证 |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) | 其他 |
