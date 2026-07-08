@@ -1576,6 +1576,7 @@ pytorch-lightning
 qdrant
 quarkus
 quart
+quasar
 questdb
 quickjs
 qwik
