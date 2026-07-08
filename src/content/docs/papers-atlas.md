@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 912 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 913 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：912 篇
+- **总数**：913 篇
 - **已分类**：143
-- **未分类**：769（落入"其他 / 待分类"段）
+- **未分类**：770（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 769 |
+| [其他 / 待分类](#其他--待分类) | 770 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 769 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 770 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -539,6 +539,7 @@ sidebar:
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) |
+| `entity-tracking-states` | [Entity Tracking States — 语言模型不是一路记账，而是最后临时汇总](/study/papers/entity-tracking-states/) |
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) |
 | `erlingsson-rappor-2014` | [RAPPOR 2014 — 用随机应答在浏览器端实现本地差分隐私](/study/papers/erlingsson-rappor-2014/) |
 | `eros-1999` | [EROS — 让 capability 内核跑得跟 Linux 一样快](/study/papers/eros-1999/) |
@@ -1080,7 +1081,7 @@ sidebar:
 
 ---
 
-## 全部 912 篇（字母序）
+## 全部 913 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1364,6 +1365,7 @@ sidebar:
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 其他 |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) | 其他 |
+| `entity-tracking-states` | [Entity Tracking States — 语言模型不是一路记账，而是最后临时汇总](/study/papers/entity-tracking-states/) | 其他 |
 | `epaxos-2013` | [EPaxos — 没有 leader 的 Paxos，让每个副本平起平坐](/study/papers/epaxos-2013/) | 其他 |
 | `erlang-otp` | [Erlang OTP — 容错并发系统设计](/study/papers/erlang-otp/) | 编译器 / 编程语言理论 |
 | `erlingsson-rappor-2014` | [RAPPOR 2014 — 用随机应答在浏览器端实现本地差分隐私](/study/papers/erlingsson-rappor-2014/) | 其他 |
