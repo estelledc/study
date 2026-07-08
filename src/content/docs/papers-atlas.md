@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 926 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 927 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：926 篇
+- **总数**：927 篇
 - **已分类**：143
-- **未分类**：783（落入"其他 / 待分类"段）
+- **未分类**：784（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 783 |
+| [其他 / 待分类](#其他--待分类) | 784 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 783 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 784 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -509,6 +509,7 @@ sidebar:
 | `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) |
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) |
 | `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) |
+| `distributed-snapshot-byzantine-2026` | [Byzantine Linearizability — 让拜占庭客户端也像排队办业务](/study/papers/distributed-snapshot-byzantine-2026/) |
 | `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) |
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) |
 | `doc2query-2019` | [doc2query — 让模型替文档预想"会被怎么搜"再写进倒排表](/study/papers/doc2query-2019/) |
@@ -1094,7 +1095,7 @@ sidebar:
 
 ---
 
-## 全部 926 篇（字母序）
+## 全部 927 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1341,6 +1342,7 @@ sidebar:
 | `disel-2018` | [Disel — 把分布式协议拆成可独立证明、可拼装的 Coq 模块](/study/papers/disel-2018/) | 其他 |
 | `diskann-2019` | [DiskANN — 单机十亿向量近邻检索（图存 SSD）](/study/papers/diskann-2019/) | 其他 |
 | `disney-brdf-2012` | [Disney Principled BRDF 2012 — 11 个滑块封装 Cook-Torrance 全家桶](/study/papers/disney-brdf-2012/) | 其他 |
+| `distributed-snapshot-byzantine-2026` | [Byzantine Linearizability — 让拜占庭客户端也像排队办业务](/study/papers/distributed-snapshot-byzantine-2026/) | 其他 |
 | `distserve` | [DistServe — 把 prefill 和 decode 拆到不同 GPU 上跑](/study/papers/distserve/) | 其他 |
 | `dit` | [DiT — Diffusion Transformer](/study/papers/dit/) | 生成模型 / 扩散 |
 | `dlrm-2019` | [DLRM — Meta 把工业推荐模型拆成 4 个标准积木](/study/papers/dlrm-2019/) | 其他 |
