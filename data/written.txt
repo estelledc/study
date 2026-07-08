@@ -232,6 +232,7 @@ diffie-hellman-1976
 diffusion-posterior-finite
 dijkstra-1965
 dijkstra-goto
+dijkstra-goto-1968
 dijkstra-shortest-path
 din-2018
 dingledine-mixminion-2003
