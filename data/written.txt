@@ -1099,6 +1099,7 @@ errbot
 esbuild
 esp-dl
 esphome
+espurna
 etcd
 ethers-js
 evidence
