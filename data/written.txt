@@ -393,6 +393,7 @@ hlc-2014
 hnsw-2018
 hoare-csp-1978
 hoare-logic
+hoare-monitors-1974
 hol-light-2009
 holzmann-spin-1997
 hopper-architecture-2022
