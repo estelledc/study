@@ -1203,6 +1203,7 @@ haproxy
 haraka
 hardhat
 haystack
+heaps
 hedgedoc
 helidon
 helix
