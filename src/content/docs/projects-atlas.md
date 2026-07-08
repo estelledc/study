@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 857 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 858 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：857 个
+- **总数**：858 个
 - **已分类**：214
-- **未分类**：643（落入"其他 / 待分类"段）
+- **未分类**：644（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 643 |
+| [其他 / 待分类](#其他--待分类) | 644 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 643 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 644 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -705,6 +705,7 @@ sidebar:
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) |
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) |
 | `fluent-bit` | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) |
+| `flutter` | [Flutter — Google 的 Dart 跨平台 UI 框架](/study/projects/flutter/) |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) |
 | `foam` | [Foam — 把 VS Code 变成 Markdown 双链知识库](/study/projects/foam/) |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
@@ -1153,7 +1154,7 @@ sidebar:
 
 ---
 
-## 全部 857 个（字母序）
+## 全部 858 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1408,6 +1409,7 @@ sidebar:
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | 其他 |
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | 其他 |
 | `fluent-bit` | [Fluent Bit — C 写的轻量日志 forwarder，K8s DaemonSet 默认选](/study/projects/fluent-bit/) | 其他 |
+| `flutter` | [Flutter — Google 的 Dart 跨平台 UI 框架](/study/projects/flutter/) | 其他 |
 | `flux` | [Flux — 让 Git 当 Kubernetes 集群的真理来源](/study/projects/flux/) | 其他 |
 | `foam` | [Foam — 把 VS Code 变成 Markdown 双链知识库](/study/projects/foam/) | 其他 |
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) | 其他 |
