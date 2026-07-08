@@ -1698,6 +1698,7 @@ trl
 trpc
 turbopack
 turborepo
+twgl
 twirp
 tyk
 typeorm
