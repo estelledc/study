@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 891 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 892 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：891 篇
+- **总数**：892 篇
 - **已分类**：143
-- **未分类**：748（落入"其他 / 待分类"段）
+- **未分类**：749（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 748 |
+| [其他 / 待分类](#其他--待分类) | 749 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 748 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 749 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -858,6 +858,7 @@ sidebar:
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
+| `projection-bench` | [ProjectionBench — 用逐步揭示信息测试科学假说生成](/study/papers/projection-bench/) |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
 | `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) |
 | `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) |
@@ -1059,7 +1060,7 @@ sidebar:
 
 ---
 
-## 全部 891 篇（字母序）
+## 全部 892 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1706,6 +1707,7 @@ sidebar:
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | 其他 |
 | `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
 | `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
+| `projection-bench` | [ProjectionBench — 用逐步揭示信息测试科学假说生成](/study/papers/projection-bench/) | 其他 |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) | 其他 |
 | `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) | 其他 |
 | `proverif-2001` | [ProVerif — 把密码协议翻成 Prolog 规则让计算机自己证安全](/study/papers/proverif-2001/) | 其他 |
