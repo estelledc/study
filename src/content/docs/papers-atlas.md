@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 946 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 947 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：946 篇
+- **总数**：947 篇
 - **已分类**：143
-- **未分类**：803（落入"其他 / 待分类"段）
+- **未分类**：804（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 803 |
+| [其他 / 待分类](#其他--待分类) | 804 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 803 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 804 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -783,6 +783,7 @@ sidebar:
 | `medcase-fhir` | [MedCase-Structured — 把病例文字变成 FHIR 病历来考 LLM](/study/papers/medcase-fhir/) |
 | `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) |
+| `megatron-core-moe-2026` | [Megatron-Core MoE — 大规模稀疏专家并行实践](/study/papers/megatron-core-moe-2026/) |
 | `mem-ft-lora` | [MemFT-LoRA — 用 LoRA 量出大模型能背多少精确内容](/study/papers/mem-ft-lora/) |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) |
 | `memcoder-co-evolution` | [MemCoder — code agent 跟着你 git commit 一起成长](/study/papers/memcoder-co-evolution/) |
@@ -1114,7 +1115,7 @@ sidebar:
 
 ---
 
-## 全部 946 篇（字母序）
+## 全部 947 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1674,6 +1675,7 @@ sidebar:
 | `medcase-fhir` | [MedCase-Structured — 把病例文字变成 FHIR 病历来考 LLM](/study/papers/medcase-fhir/) | 其他 |
 | `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) | 其他 |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) | 其他 |
+| `megatron-core-moe-2026` | [Megatron-Core MoE — 大规模稀疏专家并行实践](/study/papers/megatron-core-moe-2026/) | 其他 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
 | `mem-ft-lora` | [MemFT-LoRA — 用 LoRA 量出大模型能背多少精确内容](/study/papers/mem-ft-lora/) | 其他 |
 | `memcached-fb-2013` | [Scaling Memcache at Facebook — 万台缓存怎么不被踩塌](/study/papers/memcached-fb-2013/) | 其他 |
