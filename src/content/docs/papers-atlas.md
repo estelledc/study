@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 945 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 946 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：945 篇
+- **总数**：946 篇
 - **已分类**：143
-- **未分类**：802（落入"其他 / 待分类"段）
+- **未分类**：803（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 802 |
+| [其他 / 待分类](#其他--待分类) | 803 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 802 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 803 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -582,6 +582,7 @@ sidebar:
 | `flamingo-2022` | [Flamingo — 让冻结的大模型学会看图，几张样例就上手](/study/papers/flamingo-2022/) |
 | `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) |
 | `flashattention-2` | [FlashAttention-2 — 更高吞吐 Attention 的可执行优化](/study/papers/flashattention-2/) |
+| `flashattention-3-2024` | [FlashAttention-3 — 面向 H100 的异步与低精度注意力](/study/papers/flashattention-3-2024/) |
 | `flat-datacenter-storage` | [Flat Datacenter Storage](/study/papers/flat-datacenter-storage/) |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) |
 | `flexsc-2010` | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) |
@@ -1113,7 +1114,7 @@ sidebar:
 
 ---
 
-## 全部 945 篇（字母序）
+## 全部 946 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1442,6 +1443,7 @@ sidebar:
 | `flan-2021` | [FLAN — 用自然语言指令教模型学会"听话"](/study/papers/flan-2021/) | 其他 |
 | `flash-attention` | [FlashAttention — 不改算法，只改数据怎么进 GPU](/study/papers/flash-attention/) | 分布式训练 / GPU |
 | `flashattention-2` | [FlashAttention-2 — 更高吞吐 Attention 的可执行优化](/study/papers/flashattention-2/) | 其他 |
+| `flashattention-3-2024` | [FlashAttention-3 — 面向 H100 的异步与低精度注意力](/study/papers/flashattention-3-2024/) | 其他 |
 | `flat-datacenter-storage` | [Flat Datacenter Storage](/study/papers/flat-datacenter-storage/) | 其他 |
 | `flexible-paxos-2016` | [Flexible Paxos — 两阶段不一定都要多数派](/study/papers/flexible-paxos-2016/) | 其他 |
 | `flexsc-2010` | [FlexSC — 把系统调用从同步陷入改成异步队列](/study/papers/flexsc-2010/) | 其他 |
