@@ -1560,6 +1560,7 @@ react-dnd
 react-flow
 react-hook-form
 react-intl
+react-native
 react-spring
 recharts
 redash
