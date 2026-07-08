@@ -1551,6 +1551,7 @@ qdrant
 quarkus
 quart
 questdb
+quickjs
 qwik
 rabbitmq-server
 rabby-wallet
