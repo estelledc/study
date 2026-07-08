@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 874 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 875 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：874 篇
+- **总数**：875 篇
 - **已分类**：143
-- **未分类**：731（落入"其他 / 待分类"段）
+- **未分类**：732（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 731 |
+| [其他 / 待分类](#其他--待分类) | 732 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 731 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 732 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -680,6 +680,7 @@ sidebar:
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) |
 | `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) |
+| `lakehouse-2021` | [Lakehouse 2021 — 把数据湖和数仓合成一套开放平台](/study/papers/lakehouse-2021/) |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |
 | `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) |
 | `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) |
@@ -1042,7 +1043,7 @@ sidebar:
 
 ---
 
-## 全部 874 篇（字母序）
+## 全部 875 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1488,6 +1489,7 @@ sidebar:
 | `l4-1995` | [L4 — Liedtke 用 12KB 内核反驳"微内核必然慢"](/study/papers/l4-1995/) | 其他 |
 | `label-smoothing-2016` | [Label Smoothing — 别让模型对正确答案过度自信](/study/papers/label-smoothing-2016/) | 其他 |
 | `lafortune-1993-bdpt` | [Lafortune-Willems 1993 — 从相机和光源同时撒光线再"接龙"](/study/papers/lafortune-1993-bdpt/) | 其他 |
+| `lakehouse-2021` | [Lakehouse 2021 — 把数据湖和数仓合成一套开放平台](/study/papers/lakehouse-2021/) | 其他 |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) | 其他 |
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) | 其他 |
