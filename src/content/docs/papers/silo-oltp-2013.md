@@ -1,5 +1,5 @@
 ---
-title: Silo: Speedy Transactions in Multicore In-Memory Databases
+title: "Silo: Speedy Transactions in Multicore In-Memory Databases"
 来源: https://www.cs.cmu.edu/~pavlo/courses/fall2013/static/papers/silo.pdf
 日期: 2026-07-08
 分类: 并发数据库
