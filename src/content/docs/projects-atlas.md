@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 842 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 843 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：842 个
+- **总数**：843 个
 - **已分类**：214
-- **未分类**：628（落入"其他 / 待分类"段）
+- **未分类**：629（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 628 |
+| [其他 / 待分类](#其他--待分类) | 629 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 628 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 629 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -808,6 +808,7 @@ sidebar:
 | `lens` | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
+| `libvpx` | [libvpx — VP8/VP9 编解码器](/study/projects/libvpx/) |
 | `lightdash` | [Lightdash — 寄生在 dbt 项目里的开源 BI](/study/projects/lightdash/) |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) |
 | `lima` | [Lima — macOS 上跑 Linux 虚拟机的轻量 CLI](/study/projects/lima/) |
@@ -1138,7 +1139,7 @@ sidebar:
 
 ---
 
-## 全部 842 个（字母序）
+## 全部 843 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1525,6 +1526,7 @@ sidebar:
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | 其他 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) | 其他 |
+| `libvpx` | [libvpx — VP8/VP9 编解码器](/study/projects/libvpx/) | 其他 |
 | `lightdash` | [Lightdash — 寄生在 dbt 项目里的开源 BI](/study/projects/lightdash/) | 其他 |
 | `lighthouse` | [Lighthouse — Google 出品的网页质量审计工具](/study/projects/lighthouse/) | 其他 |
 | `lightningcss` | [lightningcss — 用 Rust 把 CSS 工具链一遍跑完的编译器](/study/projects/lightningcss/) | 构建工具 / Bundler |
