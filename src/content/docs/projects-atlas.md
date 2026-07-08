@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 841 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 842 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：841 个
+- **总数**：842 个
 - **已分类**：214
-- **未分类**：627（落入"其他 / 待分类"段）
+- **未分类**：628（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 627 |
+| [其他 / 待分类](#其他--待分类) | 628 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 627 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 628 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -977,6 +977,7 @@ sidebar:
 | `rauc` | [RAUC — 嵌入式 Linux 的 A/B 更新控制器](/study/projects/rauc/) |
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
+| `raylib` | [raylib — 极简 C 游戏库](/study/projects/raylib/) |
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) |
 | `redash` | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) |
 | `redpanda` | [Redpanda — Kafka 兼容的 C++ 实现](/study/projects/redpanda/) |
@@ -1137,7 +1138,7 @@ sidebar:
 
 ---
 
-## 全部 841 个（字母序）
+## 全部 842 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1753,6 +1754,7 @@ sidebar:
 | `rauc` | [RAUC — 嵌入式 Linux 的 A/B 更新控制器](/study/projects/rauc/) | 其他 |
 | `ravendb` | [RavenDB — .NET 生态首选的 ACID 文档数据库](/study/projects/ravendb/) | 其他 |
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) | 其他 |
+| `raylib` | [raylib — 极简 C 游戏库](/study/projects/raylib/) | 其他 |
 | `react` | [React UI 组件库](/study/projects/react/) | UI 框架 / Frontend Framework |
 | `react-dnd` | [react-dnd — React 时代第一个把拖拽拆成四层的库](/study/projects/react-dnd/) | Drag & Drop / Interaction |
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | 其他 |
