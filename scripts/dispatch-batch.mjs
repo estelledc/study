@@ -17,7 +17,7 @@
 import { loadDispatchQueues, markClaimed, writeCandidates, writeRewritePool } from './lib/queue-store.mjs';
 import { docsEntryRelativePath } from './lib/paths.mjs';
 import { DISPATCH_PROMPT_KINDS, commonPromptVars, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
-import { worktreesForDispatch } from './lib/worktrees.mjs';
+import { worktreeForAreaSlot, worktreesForDispatch } from './lib/worktrees.mjs';
 import { formatCandidateMetadataIssue, validateCandidateRows } from './lib/candidate-metadata.mjs';
 
 function parseArgs() {
@@ -100,6 +100,24 @@ function buildAssignment(kind, area, item, worktree) {
   return { kind, area, slug, worktree, vars };
 }
 
+function worktreesForCount(area, mode, count, companionCount, home) {
+  if (count <= 0) return [];
+
+  const primary = worktreesForDispatch(area, mode, home);
+  if (mode === 'new' && companionCount === 0 && count > primary.length) {
+    const overflow = [0, 1].map((slot) => worktreeForAreaSlot(area, slot, home));
+    return [...primary, ...overflow].slice(0, count);
+  }
+
+  return primary.slice(0, count);
+}
+
+function pushAssignment(assignments, kind, area, item, worktree) {
+  if (!worktree) return false;
+  assignments.push(buildAssignment(kind, area, item, worktree));
+  return true;
+}
+
 export function dispatchBatch(args, queues, options = {}) {
   const { candidates = [], pool = [] } = queues;
   // 4 类各 N/2（除非奇数）
@@ -131,15 +149,20 @@ export function dispatchBatch(args, queues, options = {}) {
 
   // 分配 worktree
   const assignments = [];
-  const papersRewriteWorktrees = worktreesForDispatch('papers', 'rewrite', options.home);
-  const projectsRewriteWorktrees = worktreesForDispatch('projects', 'rewrite', options.home);
-  const papersNewWorktrees = worktreesForDispatch('papers', 'new', options.home);
-  const projectsNewWorktrees = worktreesForDispatch('projects', 'new', options.home);
+  const papersRewriteWorktrees = worktreesForCount('papers', 'rewrite', papersRewrite.length, papersNew.length, options.home);
+  const projectsRewriteWorktrees = worktreesForCount('projects', 'rewrite', projectsRewrite.length, projectsNew.length, options.home);
+  const papersNewWorktrees = worktreesForCount('papers', 'new', papersNew.length, papersRewrite.length, options.home);
+  const projectsNewWorktrees = worktreesForCount('projects', 'new', projectsNew.length, projectsRewrite.length, options.home);
 
-  papersRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-paper', 'papers', item, papersRewriteWorktrees[i])));
-  projectsRewrite.forEach((item, i) => assignments.push(buildAssignment('rewrite-project', 'projects', item, projectsRewriteWorktrees[i])));
-  papersNew.forEach((item, i) => assignments.push(buildAssignment('new-paper', 'papers', item, papersNewWorktrees[i])));
-  projectsNew.forEach((item, i) => assignments.push(buildAssignment('new-project', 'projects', item, projectsNewWorktrees[i])));
+  if (papersRewrite.length > papersRewriteWorktrees.length) issues.push(`papers-rewrite worktree short: got ${papersRewriteWorktrees.length}, need ${papersRewrite.length}`);
+  if (projectsRewrite.length > projectsRewriteWorktrees.length) issues.push(`projects-rewrite worktree short: got ${projectsRewriteWorktrees.length}, need ${projectsRewrite.length}`);
+  if (papersNew.length > papersNewWorktrees.length) issues.push(`papers-new worktree short: got ${papersNewWorktrees.length}, need ${papersNew.length}`);
+  if (projectsNew.length > projectsNewWorktrees.length) issues.push(`projects-new worktree short: got ${projectsNewWorktrees.length}, need ${projectsNew.length}`);
+
+  papersRewrite.forEach((item, i) => pushAssignment(assignments, 'rewrite-paper', 'papers', item, papersRewriteWorktrees[i]));
+  projectsRewrite.forEach((item, i) => pushAssignment(assignments, 'rewrite-project', 'projects', item, projectsRewriteWorktrees[i]));
+  papersNew.forEach((item, i) => pushAssignment(assignments, 'new-paper', 'papers', item, papersNewWorktrees[i]));
+  projectsNew.forEach((item, i) => pushAssignment(assignments, 'new-project', 'projects', item, projectsNewWorktrees[i]));
 
   return {
     batch_size: assignments.length,

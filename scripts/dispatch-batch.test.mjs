@@ -16,6 +16,17 @@ function args(overrides = {}) {
   return { rewrite: 0, new: 0, dryRun: true, ...overrides };
 }
 
+function newCandidate(area, slug, topic = 'topic') {
+  return {
+    area,
+    slug,
+    status: 'queued',
+    topic,
+    title: slug,
+    meta: { col3: area === 'papers' ? '2020' : '1.2k', col4: `${slug} value description` },
+  };
+}
+
 test('dispatchBatch assigns rewrite and new items to the expected worktrees', () => {
   const plan = dispatchBatch(args({ rewrite: 2, new: 2 }), {
     pool: [
@@ -33,6 +44,35 @@ test('dispatchBatch assigns rewrite and new items to the expected worktrees', ()
   assert.deepEqual(output.assignments.map((a) => a.worktree), ['papers', 'projects', 'papers-3', 'projects-3']);
   assert.equal(output.batch_size, 4);
   assert.deepEqual(output.issues, []);
+});
+
+test('dispatchBatch can fill all area worktrees for all-NEW eight-wide rounds', () => {
+  const plan = dispatchBatch(args({ rewrite: 0, new: 8 }), {
+    candidates: [
+      newCandidate('papers', 'paper-a', 'a'),
+      newCandidate('papers', 'paper-b', 'b'),
+      newCandidate('papers', 'paper-c', 'c'),
+      newCandidate('papers', 'paper-d', 'd'),
+      newCandidate('projects', 'project-a', 'a'),
+      newCandidate('projects', 'project-b', 'b'),
+      newCandidate('projects', 'project-c', 'c'),
+      newCandidate('projects', 'project-d', 'd'),
+    ],
+  }, { home: HOME });
+  const output = renderDispatchOutput(plan, TEMPLATES);
+
+  assert.equal(output.batch_size, 8);
+  assert.deepEqual(output.issues, []);
+  assert.deepEqual(output.assignments.map((a) => a.worktree), [
+    'papers-3',
+    'papers-4',
+    'papers',
+    'papers-2',
+    'projects-3',
+    'projects-4',
+    'projects',
+    'projects-2',
+  ]);
 });
 
 test('dispatchBatch reports shortage issues without crashing on empty queues', () => {
