@@ -37,7 +37,7 @@ SuperCollider 把“音频工程 + 算法思维 + 编程范式”放到同一个
 
 ### 案例 1：最小音色与触发
 
-```supercollider
+```text
 // 先启动 server（首次执行后确认 connected）
 s.boot;
 
@@ -57,7 +57,7 @@ Synth("beep", [\freq, 880, \amp, 0.1]);
 
 ### 案例 2：节奏事件流
 
-```supercollider
+```text
 Pbind(
   \instrument, \beep,
   \dur, 0.25,
@@ -70,7 +70,7 @@ Pbind(
 
 ### 案例 3：给音色加噪声与包络变形
 
-```supercollider
+```text
 SynthDef(
   "dirty",
   {
