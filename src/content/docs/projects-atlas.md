@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 874 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 875 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：874 个
+- **总数**：875 个
 - **已分类**：214
-- **未分类**：660（落入"其他 / 待分类"段）
+- **未分类**：661（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 660 |
+| [其他 / 待分类](#其他--待分类) | 661 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 660 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 661 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -683,6 +683,7 @@ sidebar:
 | `embedded-hal` | [embedded-hal — Rust 嵌入式硬件抽象的统一接口](/study/projects/embedded-hal/) |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) |
+| `engine262` | [Boa — Rust 写的 ES 解释器 — 学习笔记（入门）](/study/projects/engine262/) |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) |
 | `errbot` | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) |
@@ -1170,7 +1171,7 @@ sidebar:
 
 ---
 
-## 全部 874 个（字母序）
+## 全部 875 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1396,6 +1397,7 @@ sidebar:
 | `emotion` | [Emotion — 在 JS 里写样式，让浏览器拿到一张唯一的 className](/study/projects/emotion/) | CSS / 样式 |
 | `emqx` | [EMQX — 单集群千万连接的 MQTT 物联网消息总线](/study/projects/emqx/) | 其他 |
 | `encore` | [Encore — 类型安全 Go/TS 后端框架，基础设施即代码](/study/projects/encore/) | 其他 |
+| `engine262` | [Boa — Rust 写的 ES 解释器 — 学习笔记（入门）](/study/projects/engine262/) | 其他 |
 | `enquirer` | [enquirer — 让 CLI 工具会问问题的轻量库](/study/projects/enquirer/) | Terminal / 终端 |
 | `envoy` | [Envoy — 把网络通信从业务代码里抠出来的代理进程](/study/projects/envoy/) | 其他 |
 | `erigon` | [Erigon — 存储优化型以太坊客户端](/study/projects/erigon/) | 其他 |
