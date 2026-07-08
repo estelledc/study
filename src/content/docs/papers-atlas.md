@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 905 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 906 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：905 篇
+- **总数**：906 篇
 - **已分类**：143
-- **未分类**：762（落入"其他 / 待分类"段）
+- **未分类**：763（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 762 |
+| [其他 / 待分类](#其他--待分类) | 763 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 762 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 763 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -753,6 +753,7 @@ sidebar:
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) |
 | `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) |
 | `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) |
+| `medcase-fhir` | [MedCase-Structured — 把病例文字变成 FHIR 病历来考 LLM](/study/papers/medcase-fhir/) |
 | `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) |
 | `mem-ft-lora` | [MemFT-LoRA — 用 LoRA 量出大模型能背多少精确内容](/study/papers/mem-ft-lora/) |
@@ -1073,7 +1074,7 @@ sidebar:
 
 ---
 
-## 全部 905 篇（字母序）
+## 全部 906 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1603,6 +1604,7 @@ sidebar:
 | `mcp-spec` | [MCP — 让一个 LLM 客户端能插任何外部能力的 USB 协议](/study/papers/mcp-spec/) | 其他 |
 | `mcs-locks-1991` | [MCS 锁 — 让每个线程自旋在自己的缓存行上](/study/papers/mcs-locks-1991/) | 其他 |
 | `meagher-1982-octree` | [Meagher 1982 八叉树 — 把立方体一分为八，递归地装下一整个 3D 世界](/study/papers/meagher-1982-octree/) | 其他 |
+| `medcase-fhir` | [MedCase-Structured — 把病例文字变成 FHIR 病历来考 LLM](/study/papers/medcase-fhir/) | 其他 |
 | `medusa-2024` | [Medusa — 让大模型自己同时猜好几个 token](/study/papers/medusa-2024/) | 其他 |
 | `megastore-2011` | [Megastore — 把数据切成"小数据库"换跨地域同步复制](/study/papers/megastore-2011/) | 其他 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 大规模训练框架](/study/papers/megatron-lm/) | 分布式训练 / GPU |
