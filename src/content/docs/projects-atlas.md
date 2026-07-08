@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 876 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 877 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：876 个
+- **总数**：877 个
 - **已分类**：214
-- **未分类**：662（落入"其他 / 待分类"段）
+- **未分类**：663（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 662 |
+| [其他 / 待分类](#其他--待分类) | 663 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 662 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 663 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -538,6 +538,7 @@ sidebar:
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
+| `ardour` | [Ardour — 专业级 DAW](/study/projects/ardour/) |
 | `arduino-cli` | [Arduino CLI — 用命令行管理 Arduino 开发全流程](/study/projects/arduino-cli/) |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) |
@@ -1172,7 +1173,7 @@ sidebar:
 
 ---
 
-## 全部 876 个（字母序）
+## 全部 877 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1211,6 +1212,7 @@ sidebar:
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | 其他 |
 | `arangodb` | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | 数据库本体 / 存储引擎 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
+| `ardour` | [Ardour — 专业级 DAW](/study/projects/ardour/) | 其他 |
 | `arduino-cli` | [Arduino CLI — 用命令行管理 Arduino 开发全流程](/study/projects/arduino-cli/) | 其他 |
 | `argent-x` | [Argent X — 让账户本身就是一个合约的 Starknet 钱包](/study/projects/argent-x/) | 其他 |
 | `argilla` | [Argilla — 给 LLM 训练数据做人工反馈的开源标注平台](/study/projects/argilla/) | 其他 |
