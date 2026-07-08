@@ -288,6 +288,7 @@ fan-vercauteren-bfv-2012
 farsite-2002
 fast-paxos-2006
 fastertransformer-2021
+fastlanes-compression
 fat-tree-2008
 feautrier-polyhedral
 fermi-architecture-2010
