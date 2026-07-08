@@ -1221,6 +1221,7 @@ jq
 js-joda
 jspdf
 jupyter-notebook
+jupyterlab
 just
 k3s
 k6
