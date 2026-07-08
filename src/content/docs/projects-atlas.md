@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 888 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 889 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：888 个
+- **总数**：889 个
 - **已分类**：214
-- **未分类**：674（落入"其他 / 待分类"段）
+- **未分类**：675（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 674 |
+| [其他 / 待分类](#其他--待分类) | 675 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 674 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 675 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1168,6 +1168,7 @@ sidebar:
 | `yazi` | [yazi — Rust 写的异步 TUI 文件管理器，终端里直接看图](/study/projects/yazi/) |
 | `yocto-poky` | [Yocto — 工业级定制嵌入式 Linux 的标准答案](/study/projects/yocto-poky/) |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) |
+| `yt-dlp` | [yt-dlp — 统一多站点下载器 CLI](/study/projects/yt-dlp/) |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) |
 | `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) |
@@ -1184,7 +1185,7 @@ sidebar:
 
 ---
 
-## 全部 888 个（字母序）
+## 全部 889 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2061,6 +2062,7 @@ sidebar:
 | `yjs` | [Yjs — 让任何编辑器都能接的协同编辑内核](/study/projects/yjs/) | 编辑器 / 富文本 |
 | `yocto-poky` | [Yocto — 工业级定制嵌入式 Linux 的标准答案](/study/projects/yocto-poky/) | 其他 |
 | `yq` | [yq — YAML 的 jq（也吃 XML/TOML/properties）](/study/projects/yq/) | 其他 |
+| `yt-dlp` | [yt-dlp — 统一多站点下载器 CLI](/study/projects/yt-dlp/) | 其他 |
 | `yugabyte-db` | [YugabyteDB — 复用 Postgres 源码的分布式 SQL](/study/projects/yugabyte-db/) | 其他 |
 | `zcash` | [Zcash — 让转账在链上"既能被验证，又看不见内容"](/study/projects/zcash/) | 其他 |
 | `zed` | [Zed — Atom 团队 Rust 重写的 GPU 协作编辑器](/study/projects/zed/) | 其他 |
