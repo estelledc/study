@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 887 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 888 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：887 篇
+- **总数**：888 篇
 - **已分类**：143
-- **未分类**：744（落入"其他 / 待分类"段）
+- **未分类**：745（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 744 |
+| [其他 / 待分类](#其他--待分类) | 745 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 744 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 745 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -874,6 +874,7 @@ sidebar:
 | `regev-lwe-2005` | [Regev LWE 2005 — 把带噪声方程变成后量子密码地基](/study/papers/regev-lwe-2005/) |
 | `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
+| `resolution-diagnostics-llm` | [Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率](/study/papers/resolution-diagnostics-llm/) |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
@@ -1055,7 +1056,7 @@ sidebar:
 
 ---
 
-## 全部 887 篇（字母序）
+## 全部 888 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1727,6 +1728,7 @@ sidebar:
 | `replug-2023` | [REPLUG — 不动 LLM 一根毛，只把检索器调到它的"口味"上](/study/papers/replug-2023/) | 其他 |
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) | 其他 |
 | `resnet` | [ResNet — 残差连接](/study/papers/resnet/) | 计算机视觉 |
+| `resolution-diagnostics-llm` | [Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率](/study/papers/resolution-diagnostics-llm/) | 其他 |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) | 其他 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
