@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 886 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 887 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：886 篇
+- **总数**：887 篇
 - **已分类**：143
-- **未分类**：743（落入"其他 / 待分类"段）
+- **未分类**：744（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 743 |
+| [其他 / 待分类](#其他--待分类) | 744 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 743 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 744 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1032,6 +1032,7 @@ sidebar:
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) |
 | `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) |
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) |
+| `wco-joins-relational-2020` | [WCO Joins 2020 — 把最坏情况最优连接搬进关系数据库](/study/papers/wco-joins-relational-2020/) |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) |
 | `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) |
 | `whisper-2022` | [Whisper — 用 68 万小时"野生"音频教会模型听懂全世界](/study/papers/whisper-2022/) |
@@ -1054,7 +1055,7 @@ sidebar:
 
 ---
 
-## 全部 886 篇（字母序）
+## 全部 887 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1922,6 +1923,7 @@ sidebar:
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/papers/wandb/) | 其他 |
 | `wang-2014-spdy` | [How Speedy is SPDY — 换协议没让网页变快多少](/study/papers/wang-2014-spdy/) | 其他 |
 | `ward-1992` | [Ward 1992 — 第一个能落地的各向异性反射模型](/study/papers/ward-1992/) | 其他 |
+| `wco-joins-relational-2020` | [WCO Joins 2020 — 把最坏情况最优连接搬进关系数据库](/study/papers/wco-joins-relational-2020/) | 其他 |
 | `websocket-rfc-6455` | [WebSocket RFC 6455 — 让浏览器和服务器开一条不挂断的双向电话](/study/papers/websocket-rfc-6455/) | 其他 |
 | `webxskill` | [WebXSkill — 给 Web agent 的可执行 skill 是参数化代码 + URL 图索引](/study/papers/webxskill/) | 其他 |
 | `whisper-2022` | [Whisper — 用 68 万小时"野生"音频教会模型听懂全世界](/study/papers/whisper-2022/) | 其他 |
