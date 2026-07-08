@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 889 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 890 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：889 个
+- **总数**：890 个
 - **已分类**：214
-- **未分类**：675（落入"其他 / 待分类"段）
+- **未分类**：676（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 675 |
+| [其他 / 待分类](#其他--待分类) | 676 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 675 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 676 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -680,6 +680,7 @@ sidebar:
 | `eclipse-che` | [Eclipse Che — Kubernetes 原生云 IDE](/study/projects/eclipse-che/) |
 | `edgedb` | [EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM](/study/projects/edgedb/) |
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) |
+| `electron` | [Electron — 跨平台桌面壳](/study/projects/electron/) |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) |
 | `emacs` | [GNU Emacs — 一个伪装成编辑器的 Lisp 操作系统](/study/projects/emacs/) |
@@ -1185,7 +1186,7 @@ sidebar:
 
 ---
 
-## 全部 889 个（字母序）
+## 全部 890 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1406,6 +1407,7 @@ sidebar:
 | `effect` | [Effect — 给 TypeScript 装上"会跟踪错误和依赖"的副作用引擎](/study/projects/effect/) | 状态管理 |
 | `ejabberd` | [ejabberd — Erlang 写的电信级 XMPP/MQTT 多协议服务器](/study/projects/ejabberd/) | 其他 |
 | `elasticsearch` | [Elasticsearch — 分布式搜索引擎](/study/projects/elasticsearch/) | 数据库本体 / 存储引擎 |
+| `electron` | [Electron — 跨平台桌面壳](/study/projects/electron/) | 其他 |
 | `element-android` | [Element Android — Matrix 协议官方 Android 客户端（Kotlin + Realm）](/study/projects/element-android/) | 其他 |
 | `element-web` | [Element Web — Matrix 协议旗舰 web 客户端（React + matrix-js-sdk）](/study/projects/element-web/) | 其他 |
 | `elysia` | [Elysia — 长在 Bun 上的极致类型安全 Web 框架](/study/projects/elysia/) | Web 框架 |
