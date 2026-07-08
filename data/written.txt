@@ -1172,6 +1172,7 @@ glances
 glide-data-grid
 go-ethereum
 go-zero
+godot
 got
 gqlgen
 gradio
