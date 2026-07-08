@@ -40,14 +40,14 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| flutter | flutter | Google 的 Dart 跨平台 UI 框架，自带 Skia 渲染层、不走 webview 也不走原生组件桥 | 165k | https://github.com/flutter/flutter |
-| react-native | react-native | Meta 的 JS 跨平台框架，用 React 写、桥接原生组件，新架构走 Fabric + JSI | 118k | https://github.com/facebook/react-native |
-| ionic-framework | ionic-framework | Web 技术（HTML/CSS/JS）打包成移动 app，主打 PWA + Web Components | 51k | https://github.com/ionic-team/ionic-framework |
-| capacitor | capacitor | Ionic 团队的现代 native bridge，替代 cordova 成 web → 原生新标准 | 12k | https://github.com/ionic-team/capacitor |
-| cordova | cordova | Apache 老牌 hybrid 框架，PhoneGap 的开源继承者（理解 webview 桥的鼻祖） | 5k | https://github.com/apache/cordova |
-| nativescript | nativescript | JS/TS 直接调原生 API，无 webview 也无 React，UI 用 XML 描述 | 25k | https://github.com/NativeScript/NativeScript |
-| quasar | quasar | Vue 全平台框架（SPA / SSR / PWA / Electron / 移动 app 一套代码） | 25k | https://github.com/quasarframework/quasar |
-| expo | expo | RN 的"开箱即用"工具链 + 云构建 + OTA 更新，事实上的 RN 现代入口 | 33k | https://github.com/expo/expo |
+| flutter | flutter | 165k | Google 的 Dart 跨平台 UI 框架，自带 Skia 渲染层、不走 webview 也不走原生组件桥 | https://github.com/flutter/flutter |
+| react-native | react-native | 118k | Meta 的 JS 跨平台框架，用 React 写、桥接原生组件，新架构走 Fabric + JSI | https://github.com/facebook/react-native |
+| ionic-framework | ionic-framework | 51k | Web 技术（HTML/CSS/JS）打包成移动 app，主打 PWA + Web Components | https://github.com/ionic-team/ionic-framework |
+| capacitor | capacitor | 12k | Ionic 团队的现代 native bridge，替代 cordova 成 web → 原生新标准 | https://github.com/ionic-team/capacitor |
+| cordova | cordova | 5k | Apache 老牌 hybrid 框架，PhoneGap 的开源继承者（理解 webview 桥的鼻祖） | https://github.com/apache/cordova |
+| nativescript | nativescript | 25k | JS/TS 直接调原生 API，无 webview 也无 React，UI 用 XML 描述 | https://github.com/NativeScript/NativeScript |
+| quasar | quasar | 25k | Vue 全平台框架（SPA / SSR / PWA / Electron / 移动 app 一套代码） | https://github.com/quasarframework/quasar |
+| expo | expo | 33k | RN 的"开箱即用"工具链 + 云构建 + OTA 更新，事实上的 RN 现代入口 | https://github.com/expo/expo |
 
 ---
 
@@ -55,13 +55,13 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| electron | electron | Chromium + Node.js 桌面框架，VSCode / Slack / Discord 的底层 | 115k | https://github.com/electron/electron |
-| tauri | tauri | Rust 写的 Electron 替代，用系统 webview + 单二进制（10MB vs Electron 100MB） | 84k | https://github.com/tauri-apps/tauri |
-| wails | wails | Go + Web 桌面框架，类似 Tauri 但后端是 Go | 26k | https://github.com/wailsapp/wails |
-| nodegui | nodegui | Qt 5 + Node.js 桌面框架，CSS 样式 + 原生组件（无 webview） | 9k | https://github.com/nodegui/nodegui |
-| neutralinojs | neutralinojs | 极简轻量桌面框架，单二进制 < 2MB（系统 webview + 自家 IPC） | 9k | https://github.com/neutralinojs/neutralinojs |
-| electron-builder | electron-builder | Electron 打包发布事实标准（autoupdate / 签名 / 多平台 installer） | 14k | https://github.com/electron-userland/electron-builder |
-| electron-forge | electron-forge | Electron 官方脚手架 + 打包工具（替代 builder 的官方答案） | 7k | https://github.com/electron/forge |
+| electron | electron | 115k | Chromium + Node.js 桌面框架，VSCode / Slack / Discord 的底层 | https://github.com/electron/electron |
+| tauri | tauri | 84k | Rust 写的 Electron 替代，用系统 webview + 单二进制（10MB vs Electron 100MB） | https://github.com/tauri-apps/tauri |
+| wails | wails | 26k | Go + Web 桌面框架，类似 Tauri 但后端是 Go | https://github.com/wailsapp/wails |
+| nodegui | nodegui | 9k | Qt 5 + Node.js 桌面框架，CSS 样式 + 原生组件（无 webview） | https://github.com/nodegui/nodegui |
+| neutralinojs | neutralinojs | 9k | 极简轻量桌面框架，单二进制 < 2MB（系统 webview + 自家 IPC） | https://github.com/neutralinojs/neutralinojs |
+| electron-builder | electron-builder | 14k | Electron 打包发布事实标准（autoupdate / 签名 / 多平台 installer） | https://github.com/electron-userland/electron-builder |
+| electron-forge | electron-forge | 7k | Electron 官方脚手架 + 打包工具（替代 builder 的官方答案） | https://github.com/electron/forge |
 
 ---
 
@@ -69,11 +69,11 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| flutter-rust-bridge | flutter-rust-bridge | Dart ↔ Rust FFI 代码生成器，让 Flutter 调 Rust 像调本地函数 | 5k | https://github.com/fzyzcjy/flutter_rust_bridge |
-| flame | flame | Flutter 上的 2D 游戏引擎，组件树 + ECS + 物理引擎 | 9k | https://github.com/flame-engine/flame |
-| flutter-quill | flutter-quill | Flutter 富文本编辑器，移植自 Web 的 Quill.js（Delta 格式） | 3k | https://github.com/singerdmx/flutter-quill |
-| fvm | fvm | Flutter 多版本管理器（类似 nvm，按项目锁 SDK 版本） | 5k | https://github.com/leoafarias/fvm |
-| flutterfire | flutterfire | Firebase 官方 Flutter SDK monorepo（Auth / Firestore / Cloud Messaging 全套） | 9k | https://github.com/firebase/flutterfire |
+| flutter-rust-bridge | flutter-rust-bridge | 5k | Dart ↔ Rust FFI 代码生成器，让 Flutter 调 Rust 像调本地函数 | https://github.com/fzyzcjy/flutter_rust_bridge |
+| flame | flame | 9k | Flutter 上的 2D 游戏引擎，组件树 + ECS + 物理引擎 | https://github.com/flame-engine/flame |
+| flutter-quill | flutter-quill | 3k | Flutter 富文本编辑器，移植自 Web 的 Quill.js（Delta 格式） | https://github.com/singerdmx/flutter-quill |
+| fvm | fvm | 5k | Flutter 多版本管理器（类似 nvm，按项目锁 SDK 版本） | https://github.com/leoafarias/fvm |
+| flutterfire | flutterfire | 9k | Firebase 官方 Flutter SDK monorepo（Auth / Firestore / Cloud Messaging 全套） | https://github.com/firebase/flutterfire |
 
 ---
 
@@ -81,13 +81,13 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| react-native-web | react-native-web | RN 渲染到 Web（一套代码 iOS / Android / Web 三端，twitter.com 用此） | 22k | https://github.com/necolas/react-native-web |
-| react-native-windows | react-native-windows | 微软维护的 RN Windows / UWP 端 | 17k | https://github.com/microsoft/react-native-windows |
-| react-native-macos | react-native-macos | 微软维护的 RN macOS 端，与 windows 共享 fabric 实现 | 17k | https://github.com/microsoft/react-native-macos |
-| react-native-paper | react-native-paper | Material Design 风格的 RN UI 组件库（Callstack 维护） | 13k | https://github.com/callstack/react-native-paper |
-| nativewind | nativewind | Tailwind CSS for RN（通过 babel 转 className → StyleSheet） | 6k | https://github.com/nativewind/nativewind |
-| tamagui | tamagui | 跨 React + RN UI 框架，编译时静态优化样式（atomic CSS + StyleSheet） | 14k | https://github.com/tamagui/tamagui |
-| native-base | native-base | RN UI 库（pre-tamagui 时代主流），跨平台主题系统 | 21k | https://github.com/GeekyAnts/NativeBase |
+| react-native-web | react-native-web | 22k | RN 渲染到 Web（一套代码 iOS / Android / Web 三端，twitter.com 用此） | https://github.com/necolas/react-native-web |
+| react-native-windows | react-native-windows | 17k | 微软维护的 RN Windows / UWP 端 | https://github.com/microsoft/react-native-windows |
+| react-native-macos | react-native-macos | 17k | 微软维护的 RN macOS 端，与 windows 共享 fabric 实现 | https://github.com/microsoft/react-native-macos |
+| react-native-paper | react-native-paper | 13k | Material Design 风格的 RN UI 组件库（Callstack 维护） | https://github.com/callstack/react-native-paper |
+| nativewind | nativewind | 6k | Tailwind CSS for RN（通过 babel 转 className → StyleSheet） | https://github.com/nativewind/nativewind |
+| tamagui | tamagui | 14k | 跨 React + RN UI 框架，编译时静态优化样式（atomic CSS + StyleSheet） | https://github.com/tamagui/tamagui |
+| native-base | native-base | 21k | RN UI 库（pre-tamagui 时代主流），跨平台主题系统 | https://github.com/GeekyAnts/NativeBase |
 
 ---
 
@@ -95,12 +95,12 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| taro | taro | 京东多端框架（React/Vue → 微信小程序 / H5 / RN / 支付宝小程序 / 抖音小程序） | 36k | https://github.com/NervJS/taro |
-| uni-app | uni-app | DCloud 多端框架（Vue → 6 大小程序 + H5 + iOS/Android APP） | 40k | https://github.com/dcloudio/uni-app |
-| kbone | kbone | 腾讯出品，让 Web 框架（Vue/React）的代码跑在微信小程序里 | 5k | https://github.com/Tencent/kbone |
-| chameleon | chameleon | 滴滴多端统一开发框架，自家 DSL 编译到 Web / 小程序 / Weex | 8k | https://github.com/didi/chameleon |
+| taro | taro | 36k | 京东多端框架（React/Vue → 微信小程序 / H5 / RN / 支付宝小程序 / 抖音小程序） | https://github.com/NervJS/taro |
+| uni-app | uni-app | 40k | DCloud 多端框架（Vue → 6 大小程序 + H5 + iOS/Android APP） | https://github.com/dcloudio/uni-app |
+| kbone | kbone | 5k | 腾讯出品，让 Web 框架（Vue/React）的代码跑在微信小程序里 | https://github.com/Tencent/kbone |
+| chameleon | chameleon | 8k | 滴滴多端统一开发框架，自家 DSL 编译到 Web / 小程序 / Weex | https://github.com/didi/chameleon |
 | mpvue | mpvue | 美团出品的 Vue → 微信小程序编译器（仅维护，但作为案例研究价值高） | 21k | https://github.com/Meituan-Dianping/mpvue |
-| remax | remax | 阿里出品 React → 小程序（不写自家 DSL，直接复用 React 运行时） | 6k | https://github.com/remaxjs/remax |
+| remax | remax | 6k | 阿里出品 React → 小程序（不写自家 DSL，直接复用 React 运行时） | https://github.com/remaxjs/remax |
 
 ---
 
@@ -108,10 +108,10 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| swift-collections | swift-collections | Apple 官方 Swift 数据结构补充包（Deque / OrderedSet / OrderedDictionary） | 4k | https://github.com/apple/swift-collections |
-| swift-nio | swift-nio | Apple 的 Swift 异步事件驱动网络框架（对标 Netty） | 8k | https://github.com/apple/swift-nio |
-| vapor | vapor | Swift 的 Web 后端框架（基于 SwiftNIO，Express / Fastify 风格） | 25k | https://github.com/vapor/vapor |
-| swiftui-introspect | swiftui-introspect | 让 SwiftUI 视图能访问底层 UIKit / AppKit 对象（绕开 SwiftUI 黑盒） | 5k | https://github.com/siteline/SwiftUI-Introspect |
+| swift-collections | swift-collections | 4k | Apple 官方 Swift 数据结构补充包（Deque / OrderedSet / OrderedDictionary） | https://github.com/apple/swift-collections |
+| swift-nio | swift-nio | 8k | Apple 的 Swift 异步事件驱动网络框架（对标 Netty） | https://github.com/apple/swift-nio |
+| vapor | vapor | 25k | Swift 的 Web 后端框架（基于 SwiftNIO，Express / Fastify 风格） | https://github.com/vapor/vapor |
+| swiftui-introspect | swiftui-introspect | 5k | 让 SwiftUI 视图能访问底层 UIKit / AppKit 对象（绕开 SwiftUI 黑盒） | https://github.com/siteline/SwiftUI-Introspect |
 
 ---
 
@@ -119,12 +119,12 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| retrofit | retrofit | Square 出品 Android HTTP 客户端，注解 + 接口 → 自动生成 OkHttp 调用 | 43k | https://github.com/square/retrofit |
-| okhttp | okhttp | Square 出品 HTTP 客户端，Android 网络层事实标准（连接池 / HTTP/2） | 46k | https://github.com/square/okhttp |
-| coil | coil | Compose 优先的 Kotlin 图片加载库（kotlinx coroutines + OkHttp） | 11k | https://github.com/coil-kt/coil |
-| glide | glide | Bumptech 的 Android 图片加载库（老牌主流，缓存 + 内存优化） | 35k | https://github.com/bumptech/glide |
-| accompanist | accompanist | Google 出品 Compose 工具集（permissions / pager / system-ui 等） | 8k | https://github.com/google/accompanist |
-| jetpack-compose-samples | jetpack-compose-samples | Google 官方 Compose 样例集合（Crane / Jetnews / Jetchat 三大教学样本） | 21k | https://github.com/android/compose-samples |
+| retrofit | retrofit | 43k | Square 出品 Android HTTP 客户端，注解 + 接口 → 自动生成 OkHttp 调用 | https://github.com/square/retrofit |
+| okhttp | okhttp | 46k | Square 出品 HTTP 客户端，Android 网络层事实标准（连接池 / HTTP/2） | https://github.com/square/okhttp |
+| coil | coil | 11k | Compose 优先的 Kotlin 图片加载库（kotlinx coroutines + OkHttp） | https://github.com/coil-kt/coil |
+| glide | glide | 35k | Bumptech 的 Android 图片加载库（老牌主流，缓存 + 内存优化） | https://github.com/bumptech/glide |
+| accompanist | accompanist | 8k | Google 出品 Compose 工具集（permissions / pager / system-ui 等） | https://github.com/google/accompanist |
+| jetpack-compose-samples | jetpack-compose-samples | 21k | Google 官方 Compose 样例集合（Crane / Jetnews / Jetchat 三大教学样本） | https://github.com/android/compose-samples |
 
 ---
 
@@ -132,10 +132,10 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| fastlane | fastlane | iOS / Android 自动化发布事实标准（截图 / 签名 / TestFlight / Play 提交） | 40k | https://github.com/fastlane/fastlane |
-| metro | metro | RN 官方 JS bundler（替代 webpack 优化 RN 增量构建 / HMR） | 5k | https://github.com/facebook/metro |
-| react-native-builder-bob | react-native-builder-bob | RN 库构建工具（Callstack 出品，npm 包含 commonjs/esm/d.ts 多产物） | 2k | https://github.com/callstack/react-native-builder-bob |
-| flipper | flipper | Meta 出品移动调试器（Network / Layout / Logs / Plugin 架构） | 13k | https://github.com/facebook/flipper |
+| fastlane | fastlane | 40k | iOS / Android 自动化发布事实标准（截图 / 签名 / TestFlight / Play 提交） | https://github.com/fastlane/fastlane |
+| metro | metro | 5k | RN 官方 JS bundler（替代 webpack 优化 RN 增量构建 / HMR） | https://github.com/facebook/metro |
+| react-native-builder-bob | react-native-builder-bob | 2k | RN 库构建工具（Callstack 出品，npm 包含 commonjs/esm/d.ts 多产物） | https://github.com/callstack/react-native-builder-bob |
+| flipper | flipper | 13k | Meta 出品移动调试器（Network / Layout / Logs / Plugin 架构） | https://github.com/facebook/flipper |
 
 ---
 
@@ -143,10 +143,10 @@ created: 2026-05-29
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| detox | detox | Wix 出品 RN E2E 测试框架（灰盒，能感知 RN 内部状态） | 11k | https://github.com/wix/Detox |
-| appium | appium | 跨平台移动 UI 自动化（iOS / Android / Web，WebDriver 协议） | 19k | https://github.com/appium/appium |
-| maestro | maestro | Mobile.dev 出品声明式移动 E2E（YAML 写流程，自然语言级简单） | 17k | https://github.com/mobile-dev-inc/maestro |
-| webdriverio | webdriverio | Node.js WebDriver 实现，桌面浏览器 + 移动 / 桌面 app 全覆盖 | 9k | https://github.com/webdriverio/webdriverio |
+| detox | detox | 11k | Wix 出品 RN E2E 测试框架（灰盒，能感知 RN 内部状态） | https://github.com/wix/Detox |
+| appium | appium | 19k | 跨平台移动 UI 自动化（iOS / Android / Web，WebDriver 协议） | https://github.com/appium/appium |
+| maestro | maestro | 17k | Mobile.dev 出品声明式移动 E2E（YAML 写流程，自然语言级简单） | https://github.com/mobile-dev-inc/maestro |
+| webdriverio | webdriverio | 9k | Node.js WebDriver 实现，桌面浏览器 + 移动 / 桌面 app 全覆盖 | https://github.com/webdriverio/webdriverio |
 
 ---
 
@@ -168,8 +168,8 @@ created: 2026-05-29
 | aframe | aframe | Mozilla 系出身 Web VR/AR 框架（HTML 标签写 3D 场景，three.js 包装） | 17k | https://github.com/aframevr/aframe |
 | ar-js | ar-js | 移动浏览器轻量 AR（marker / image / location，无需 app） | 16k | https://github.com/AR-js-org/AR.js |
 | mind-ar-js | mind-ar-js | 浏览器内图像追踪 / 人脸追踪 AR，纯 Web 不需 app | 4k | https://github.com/hiukim/mind-ar-js |
-| workbox | workbox | Google 出品 PWA Service Worker 工具集（缓存策略 / 后台同步 / 推送） | 12k | https://github.com/GoogleChrome/workbox |
-| pwa-builder | pwa-builder | Microsoft 出品 PWA 一键打包成 iOS / Android / Windows app 的工具 | 3k | https://github.com/pwa-builder/PWABuilder |
+| workbox | workbox | 12k | Google 出品 PWA Service Worker 工具集（缓存策略 / 后台同步 / 推送） | https://github.com/GoogleChrome/workbox |
+| pwa-builder | pwa-builder | 3k | Microsoft 出品 PWA 一键打包成 iOS / Android / Windows app 的工具 | https://github.com/pwa-builder/PWABuilder |
 
 ---
 

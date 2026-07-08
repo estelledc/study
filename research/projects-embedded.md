@@ -144,7 +144,7 @@ Stars 量级为 2026 年 5 月近似值。
 | ros2 | ROS 2 | 4k | 机器人操作系统 v2，DDS 消息总线 + lifecycle + composability，工业级实时设计 | https://github.com/ros2/ros2 |
 | moveit2 | MoveIt 2 | 1.2k | ROS 2 上的机械臂运动规划框架，IK / 轨迹 / 碰撞检测 / RViz 一体 | https://github.com/moveit/moveit2 |
 | navigation2 | Nav2 | 3.6k | ROS 2 上的移动机器人导航栈，behavior tree + planner + controller 解耦 | https://github.com/ros-navigation/navigation2 |
-| gazebo-classic | Gazebo Classic | OSRF 的物理仿真器，URDF / SDF / 物理引擎插件，机器人仿真训练事实标准 | 1.4k | https://github.com/osrf/gazebo |
+| gazebo-classic | Gazebo Classic | 1.4k | OSRF 的物理仿真器，URDF / SDF / 物理引擎插件，机器人仿真训练事实标准 | https://github.com/osrf/gazebo |
 
 ---
 
@@ -152,10 +152,10 @@ Stars 量级为 2026 年 5 月近似值。
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| home-assistant | Home Assistant Core | Python 的开源家庭自动化平台，2000+ integration，端侧 SQLite + WebSocket 架构 | 79k | https://github.com/home-assistant/core |
-| openhab | openHAB | Java OSGi 家庭自动化框架，bundle / binding 双层架构，欧洲社区强 | 3.3k | https://github.com/openhab/openhab-core |
-| esphome | ESPHome | YAML 配置生成 ESP32 / ESP8266 固件的工具链，与 Home Assistant 深度集成 | 9.5k | https://github.com/esphome/esphome |
-| espurna | ESPurna | 可商用的 ESP8266 / ESP32 通用智能开关固件（C++），MQTT / HTTP / 调试一体 | 3k | https://github.com/xoseperez/espurna |
+| home-assistant | Home Assistant Core | 79k | Python 的开源家庭自动化平台，2000+ integration，端侧 SQLite + WebSocket 架构 | https://github.com/home-assistant/core |
+| openhab | openHAB | 3.3k | Java OSGi 家庭自动化框架，bundle / binding 双层架构，欧洲社区强 | https://github.com/openhab/openhab-core |
+| esphome | ESPHome | 9.5k | YAML 配置生成 ESP32 / ESP8266 固件的工具链，与 Home Assistant 深度集成 | https://github.com/esphome/esphome |
+| espurna | ESPurna | 3k | 可商用的 ESP8266 / ESP32 通用智能开关固件（C++），MQTT / HTTP / 调试一体 | https://github.com/xoseperez/espurna |
 
 ---
 
@@ -163,9 +163,9 @@ Stars 量级为 2026 年 5 月近似值。
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| gstreamer | GStreamer | C 写的多媒体 pipeline 框架，element 模型 + 异步 dataflow，嵌入式 / 桌面通用 | 2.5k | https://github.com/GStreamer/gstreamer |
-| ffmpeg-kit | FFmpegKit | iOS / Android / tvOS 移动端 FFmpeg 封装，二进制 + 高层 Java/Swift API 一体 | 5.1k | https://github.com/arthenica/ffmpeg-kit |
-| janus-gateway | Janus WebRTC Gateway | C 写的 WebRTC 服务器，plugin 架构，SFU / 录制 / 流转推一体，边缘部署轻量 | 8.4k | https://github.com/meetecho/janus-gateway |
+| gstreamer | GStreamer | 2.5k | C 写的多媒体 pipeline 框架，element 模型 + 异步 dataflow，嵌入式 / 桌面通用 | https://github.com/GStreamer/gstreamer |
+| ffmpeg-kit | FFmpegKit | 5.1k | iOS / Android / tvOS 移动端 FFmpeg 封装，二进制 + 高层 Java/Swift API 一体 | https://github.com/arthenica/ffmpeg-kit |
+| janus-gateway | Janus WebRTC Gateway | 8.4k | C 写的 WebRTC 服务器，plugin 架构，SFU / 录制 / 流转推一体，边缘部署轻量 | https://github.com/meetecho/janus-gateway |
 
 ---
 
@@ -175,8 +175,8 @@ Stars 量级为 2026 年 5 月近似值。
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| unqlite | UnQLite | C 写的 NoSQL embedded DB，单文件 KV + JSON 文档双模，~50KB 代码量 | 2k | https://github.com/symisc/unqlite |
-| littlefs | littlefs | ARM 维护的 MCU 友好故障可恢复文件系统，掉电安全 + 损耗均衡 + 极小 RAM | 5.5k | https://github.com/littlefs-project/littlefs |
+| unqlite | UnQLite | 2k | C 写的 NoSQL embedded DB，单文件 KV + JSON 文档双模，~50KB 代码量 | https://github.com/symisc/unqlite |
+| littlefs | littlefs | 5.5k | ARM 维护的 MCU 友好故障可恢复文件系统，掉电安全 + 损耗均衡 + 极小 RAM | https://github.com/littlefs-project/littlefs |
 
 ---
 
@@ -184,8 +184,8 @@ Stars 量级为 2026 年 5 月近似值。
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| wireguard-go | WireGuard-Go | WireGuard VPN 的 Go 用户态实现，参考 ~3000 行密码学实现学习 VPN 内核 | 3.7k | https://github.com/WireGuard/wireguard-go |
-| shadowsocks-libev | shadowsocks-libev | C 写的 SOCKS5 加密代理服务端 / 客户端，OpenWrt / 嵌入式路由器主流方案 | 16k | https://github.com/shadowsocks/shadowsocks-libev |
+| wireguard-go | WireGuard-Go | 3.7k | WireGuard VPN 的 Go 用户态实现，参考 ~3000 行密码学实现学习 VPN 内核 | https://github.com/WireGuard/wireguard-go |
+| shadowsocks-libev | shadowsocks-libev | 16k | C 写的 SOCKS5 加密代理服务端 / 客户端，OpenWrt / 嵌入式路由器主流方案 | https://github.com/shadowsocks/shadowsocks-libev |
 
 ---
 
@@ -193,8 +193,8 @@ Stars 量级为 2026 年 5 月近似值。
 
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
-| mender | Mender | Go 写的 IoT OTA 客户端 + 服务端，A/B 双分区原子升级，工业级 fleet 管理 | 1.8k | https://github.com/mendersoftware/mender |
-| rauc | RAUC | C 写的嵌入式 Linux A/B 更新框架，bundle 签名 + dbus 控制，Yocto / Buildroot 集成 | 1k | https://github.com/rauc/rauc |
+| mender | Mender | 1.8k | Go 写的 IoT OTA 客户端 + 服务端，A/B 双分区原子升级，工业级 fleet 管理 | https://github.com/mendersoftware/mender |
+| rauc | RAUC | 1k | C 写的嵌入式 Linux A/B 更新框架，bundle 签名 + dbus 控制，Yocto / Buildroot 集成 | https://github.com/rauc/rauc |
 
 ---
 
