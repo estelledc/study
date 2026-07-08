@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 943 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 944 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：943 篇
+- **总数**：944 篇
 - **已分类**：143
-- **未分类**：800（落入"其他 / 待分类"段）
+- **未分类**：801（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 800 |
+| [其他 / 待分类](#其他--待分类) | 801 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 800 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 801 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -864,6 +864,7 @@ sidebar:
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) |
 | `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) |
 | `padmanabhan-1995-http-latency` | [Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快](/study/papers/padmanabhan-1995-http-latency/) |
+| `paged-attention-vllm` | [PagedAttention — 以页替代整段内存的显存管理](/study/papers/paged-attention-vllm/) |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |
 | `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) |
 | `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) |
@@ -1111,7 +1112,7 @@ sidebar:
 
 ---
 
-## 全部 943 篇（字母序）
+## 全部 944 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1758,6 +1759,7 @@ sidebar:
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | 其他 |
 | `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | 其他 |
 | `padmanabhan-1995-http-latency` | [Padmanabhan-Mogul 1995 — 把 HTTP 三种提速方案放一起跑，看谁真的快](/study/papers/padmanabhan-1995-http-latency/) | 其他 |
+| `paged-attention-vllm` | [PagedAttention — 以页替代整段内存的显存管理](/study/papers/paged-attention-vllm/) | 其他 |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) | 其他 |
