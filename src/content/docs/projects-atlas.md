@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 823 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 824 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：823 个
+- **总数**：824 个
 - **已分类**：214
-- **未分类**：609（落入"其他 / 待分类"段）
+- **未分类**：610（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 609 |
+| [其他 / 待分类](#其他--待分类) | 610 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 609 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 610 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -831,6 +831,7 @@ sidebar:
 | `manticoresearch` | [Manticore Search — 用 MySQL 协议连的搜索 + OLAP 引擎](/study/projects/manticoresearch/) |
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) |
 | `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) |
+| `marimo` | [marimo — 反应式 Python 笔记本](/study/projects/marimo/) |
 | `marktext` | [MarkText — 实时预览 Markdown 编辑器](/study/projects/marktext/) |
 | `marlin` | [Marlin Firmware — 3D 打印机里的运动控制大脑](/study/projects/marlin/) |
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) |
@@ -1119,7 +1120,7 @@ sidebar:
 
 ---
 
-## 全部 823 个（字母序）
+## 全部 824 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1538,6 +1539,7 @@ sidebar:
 | `mapbox-gl-js` | [Mapbox GL JS — 矢量瓦片 + WebGL 客户端渲染地图](/study/projects/mapbox-gl-js/) | 其他 |
 | `maplibre-gl` | [MapLibre GL JS — Mapbox v1 时代的社区分叉](/study/projects/maplibre-gl/) | 其他 |
 | `mariadb-server` | [mariadb-server — MySQL 原作者带走的那一支](/study/projects/mariadb-server/) | 数据库本体 / 存储引擎 |
+| `marimo` | [marimo — 反应式 Python 笔记本](/study/projects/marimo/) | 其他 |
 | `markdown-it` | [markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器](/study/projects/markdown-it/) | Markdown / 解析 |
 | `marked` | [marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器](/study/projects/marked/) | Markdown / 解析 |
 | `marktext` | [MarkText — 实时预览 Markdown 编辑器](/study/projects/marktext/) | 其他 |
