@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 949 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 950 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：949 篇
+- **总数**：950 篇
 - **已分类**：143
-- **未分类**：806（落入"其他 / 待分类"段）
+- **未分类**：807（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 806 |
+| [其他 / 待分类](#其他--待分类) | 807 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 806 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 807 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -864,6 +864,7 @@ sidebar:
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) |
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) |
+| `oscar-int2-kv` | [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization — 学习笔记](/study/papers/oscar-int2-kv/) |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) |
 | `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) |
@@ -1117,7 +1118,7 @@ sidebar:
 
 ---
 
-## 全部 949 篇（字母序）
+## 全部 950 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1764,6 +1765,7 @@ sidebar:
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) | 其他 |
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) | 其他 |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | 其他 |
+| `oscar-int2-kv` | [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization — 学习笔记](/study/papers/oscar-int2-kv/) | 其他 |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
 | `owens-2007-gpgpu-survey` | [Owens 2007 GPGPU 综述 — CUDA 之前 GPU 通用计算的黑魔法时代](/study/papers/owens-2007-gpgpu-survey/) | 其他 |
 | `p4-2014` | [P4 — 让交换机的转发逻辑像写代码一样改](/study/papers/p4-2014/) | 其他 |
