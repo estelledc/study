@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 939 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 940 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：939 篇
+- **总数**：940 篇
 - **已分类**：143
-- **未分类**：796（落入"其他 / 待分类"段）
+- **未分类**：797（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 796 |
+| [其他 / 待分类](#其他--待分类) | 797 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 796 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 797 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -323,6 +323,7 @@ sidebar:
 | `akamai-2010` | [Akamai 2010 — 从内容分发网络长成全球应用平台](/study/papers/akamai-2010/) |
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) |
+| `amber-sigmod-2014` | [Amber: Decoupling Access Methods from Stable Storage — 学习笔记（入门）](/study/papers/amber-sigmod-2014/) |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) |
 | `amoeba-1990` | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) |
@@ -1107,7 +1108,7 @@ sidebar:
 
 ---
 
-## 全部 939 篇（字母序）
+## 全部 940 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1133,6 +1134,7 @@ sidebar:
 | `align-2021` | [ALIGN — 用 18 亿条脏图文对训练，证明数据规模能压住噪声](/study/papers/align-2021/) | 其他 |
 | `alpa-2022` | [Alpa — 把张量/流水/数据并行统一成一道搜索题](/study/papers/alpa-2022/) | 其他 |
 | `alphago` | [AlphaGo — 击败围棋世界冠军](/study/papers/alphago/) | 强化学习 |
+| `amber-sigmod-2014` | [Amber: Decoupling Access Methods from Stable Storage — 学习笔记（入门）](/study/papers/amber-sigmod-2014/) | 其他 |
 | `amdahl-law-1967` | [Amdahl 定律 — 串行比例决定并行加速比的上界](/study/papers/amdahl-law-1967/) | 其他 |
 | `amoeba-1990` | [Amoeba — 把整个机房当一台操作系统](/study/papers/amoeba-1990/) | 其他 |
 | `ampere-architecture-2020` | [NVIDIA Ampere — 第三代 Tensor Core 加 TF32 / BF16 / FP64，结构化稀疏 + MIG 重写大模型时代硬件假设](/study/papers/ampere-architecture-2020/) | 其他 |
