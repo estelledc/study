@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 825 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 826 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：825 个
+- **总数**：826 个
 - **已分类**：214
-- **未分类**：611（落入"其他 / 待分类"段）
+- **未分类**：612（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 611 |
+| [其他 / 待分类](#其他--待分类) | 612 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 611 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 612 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -934,6 +934,7 @@ sidebar:
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) |
 | `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) |
+| `pluto-jl` | [Pluto.jl — Julia 反应式笔记本](/study/projects/pluto-jl/) |
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) |
 | `poem` | [poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架](/study/projects/poem/) |
 | `polars` | [Polars — Rust 写的列存 DataFrame](/study/projects/polars/) |
@@ -1121,7 +1122,7 @@ sidebar:
 
 ---
 
-## 全部 825 个（字母序）
+## 全部 826 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1682,6 +1683,7 @@ sidebar:
 | `plotly-py` | [Plotly.py — DataFrame 一行变交互图表](/study/projects/plotly-py/) | 其他 |
 | `plotnine` | [plotnine — Python 复刻 R 的 ggplot2](/study/projects/plotnine/) | 其他 |
 | `plug` | [Plug — 把 HTTP 中间件写成『conn 进 conn 出』的纯函数](/study/projects/plug/) | 其他 |
+| `pluto-jl` | [Pluto.jl — Julia 反应式笔记本](/study/projects/pluto-jl/) | 其他 |
 | `pnpm` | [pnpm — 全机器只存一份的 Node 包管理器](/study/projects/pnpm/) | Monorepo / 包管理 |
 | `pocketbase` | [PocketBase — 一个 Go 二进制就是完整的后端](/study/projects/pocketbase/) | 其他 |
 | `podman` | [Podman — 无 daemon 容器引擎](/study/projects/podman/) | DevOps / 容器 / 运维 |
