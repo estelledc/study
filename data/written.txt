@@ -723,6 +723,7 @@ sam
 sarathi-serve
 sasrec-2018
 scala-macros
+scaling-hnsws-antirez
 scaling-laws
 scann-2020
 schgen-pcb
