@@ -770,6 +770,7 @@ shellcheck
 shenango-2019
 shokri-mia-2017
 sillito-questions
+silo-oltp-2013
 silt-2011
 simhash-charikar-2002
 simrank-2002
