@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 894 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 895 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：894 个
+- **总数**：895 个
 - **已分类**：214
-- **未分类**：680（落入"其他 / 待分类"段）
+- **未分类**：681（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 680 |
+| [其他 / 待分类](#其他--待分类) | 681 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 680 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 681 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -772,6 +772,7 @@ sidebar:
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) |
 | `hermes` | [Hermes — Facebook 的 React Native JS 引擎](/study/projects/hermes/) |
+| `hls.js` | [hls.js — Web HLS 播放库 — 学习笔记](/study/projects/hls.js/) |
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) |
@@ -1190,7 +1191,7 @@ sidebar:
 
 ---
 
-## 全部 894 个（字母序）
+## 全部 895 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1517,6 +1518,7 @@ sidebar:
 | `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
 | `hermes` | [Hermes — Facebook 的 React Native JS 引擎](/study/projects/hermes/) | 其他 |
+| `hls.js` | [hls.js — Web HLS 播放库 — 学习笔记](/study/projects/hls.js/) | 其他 |
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) | 其他 |
 | `hocuspocus` | [Hocuspocus — 给 Yjs 配一个能直接上线的协作后端](/study/projects/hocuspocus/) | 其他 |
 | `holoviews` | [HoloViews — 一份声明 ⇄ 多后端自动绘图](/study/projects/holoviews/) | 其他 |
