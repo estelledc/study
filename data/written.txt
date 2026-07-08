@@ -1102,6 +1102,7 @@ dav1d
 dayjs
 dbt-core
 debezium
+deck-gl
 deepspeed
 defold
 delta
