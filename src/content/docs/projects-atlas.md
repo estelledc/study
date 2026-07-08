@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 898 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 899 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：898 个
+- **总数**：899 个
 - **已分类**：214
-- **未分类**：684（落入"其他 / 待分类"段）
+- **未分类**：685（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 684 |
+| [其他 / 待分类](#其他--待分类) | 685 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 684 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 685 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1157,6 +1157,7 @@ sidebar:
 | `vscodium` | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) |
 | `wails` | [wails — 学习笔记](/study/projects/wails/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
+| `wamr` | [WAMR — wasm 微运行时（嵌入式） — 学习笔记](/study/projects/wamr/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
 | `wasmer` | [Wasmer — 跨平台 wasm 运行时 — 学习笔记](/study/projects/wasmer/) |
@@ -1194,7 +1195,7 @@ sidebar:
 
 ---
 
-## 全部 898 个（字母序）
+## 全部 899 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2052,6 +2053,7 @@ sidebar:
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |
 | `wails` | [wails — 学习笔记](/study/projects/wails/) | 其他 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |
+| `wamr` | [WAMR — wasm 微运行时（嵌入式） — 学习笔记](/study/projects/wamr/) | 其他 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) | 其他 |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | 其他 |
 | `wasmer` | [Wasmer — 跨平台 wasm 运行时 — 学习笔记](/study/projects/wasmer/) | 其他 |
