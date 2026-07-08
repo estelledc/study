@@ -242,6 +242,7 @@ disco-1997
 disel-2018
 diskann-2019
 disney-brdf-2012
+distributed-snapshot-byzantine-2026
 distserve
 dit
 dlrm-2019
