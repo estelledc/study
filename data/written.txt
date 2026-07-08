@@ -1426,6 +1426,7 @@ nextra
 nginx
 nivo
 nnn
+node-js
 nodemailer
 nomad
 notepad-plus-plus
