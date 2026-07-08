@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 856 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 857 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：856 个
+- **总数**：857 个
 - **已分类**：214
-- **未分类**：642（落入"其他 / 待分类"段）
+- **未分类**：643（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 642 |
+| [其他 / 待分类](#其他--待分类) | 643 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 642 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 643 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1046,6 +1046,7 @@ sidebar:
 | `solana` | [Solana — Rust 写的高性能 PoH 链](/study/projects/solana/) |
 | `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) |
 | `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) |
+| `sox` | [SoX — 命令行音频处理瑞士军刀](/study/projects/sox/) |
 | `spacemacs` | [Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置](/study/projects/spacemacs/) |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
@@ -1152,7 +1153,7 @@ sidebar:
 
 ---
 
-## 全部 856 个（字母序）
+## 全部 857 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1856,6 +1857,7 @@ sidebar:
 | `sonic` | [Sonic — 极简前缀搜索引擎](/study/projects/sonic/) | 其他 |
 | `sops` | [SOPS — 让密码也能放心进 Git](/study/projects/sops/) | 其他 |
 | `sortablejs` | [SortableJS — 一行代码让任何列表能用手拖排序](/study/projects/sortablejs/) | Drag & Drop / Interaction |
+| `sox` | [SoX — 命令行音频处理瑞士军刀](/study/projects/sox/) | 其他 |
 | `spacemacs` | [Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置](/study/projects/spacemacs/) | 其他 |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | 其他 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
