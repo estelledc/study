@@ -1518,6 +1518,7 @@ silero-vad
 silverbullet
 simple-peer
 sinatra
+siyuan
 skaffold
 sled
 slim-framework
