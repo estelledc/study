@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 854 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 855 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：854 个
+- **总数**：855 个
 - **已分类**：214
-- **未分类**：640（落入"其他 / 待分类"段）
+- **未分类**：641（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 640 |
+| [其他 / 待分类](#其他--待分类) | 641 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 640 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 641 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -700,6 +700,7 @@ sidebar:
 | `filament` | [Filament — Google 跨平台 PBR 引擎](/study/projects/filament/) |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) |
+| `flac` | [FLAC — 无损音频压缩事实标准](/study/projects/flac/) |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) |
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) |
@@ -1150,7 +1151,7 @@ sidebar:
 
 ---
 
-## 全部 854 个（字母序）
+## 全部 855 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1400,6 +1401,7 @@ sidebar:
 | `filament` | [Filament — Google 跨平台 PBR 引擎](/study/projects/filament/) | 其他 |
 | `filecoin` | [Filecoin / Lotus — IPFS 之上的去中心化存储市场](/study/projects/filecoin/) | 其他 |
 | `fish` | [fish — 装好就比 bash 加插件好用的交互 shell](/study/projects/fish/) | 其他 |
+| `flac` | [FLAC — 无损音频压缩事实标准](/study/projects/flac/) | 其他 |
 | `flask` | [Flask — 用装饰器把 URL 接到函数上的 Python 微框架](/study/projects/flask/) | 其他 |
 | `flax` | [Flax — JAX 上的神经网络库](/study/projects/flax/) | 其他 |
 | `flowchart-js` | [flowchart.js — 文本生成流程图](/study/projects/flowchart-js/) | 其他 |
