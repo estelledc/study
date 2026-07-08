@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 896 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 897 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：896 篇
+- **总数**：897 篇
 - **已分类**：143
-- **未分类**：753（落入"其他 / 待分类"段）
+- **未分类**：754（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 753 |
+| [其他 / 待分类](#其他--待分类) | 754 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 753 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 754 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -838,6 +838,7 @@ sidebar:
 | `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) |
+| `passnet-graph-compiler` | [PassNet — 让大模型给图编译器写优化 pass](/study/papers/passnet-graph-compiler/) |
 | `pastry-2001` | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) |
 | `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) |
 | `paxos-simple-2001` | [Paxos Made Simple — Lamport 用平直英语把共识协议推导一遍](/study/papers/paxos-simple-2001/) |
@@ -1064,7 +1065,7 @@ sidebar:
 
 ---
 
-## 全部 896 篇（字母序）
+## 全部 897 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1686,6 +1687,7 @@ sidebar:
 | `parti-2022` | [Parti — 把文生图当作翻译，用自回归 Transformer 一像素接一像素地写](/study/papers/parti-2022/) | 其他 |
 | `partial-evaluation-jones` | [Jones-Gomard-Sestoft 1993 — Partial Evaluation 与自动程序生成](/study/papers/partial-evaluation-jones/) | 其他 |
 | `pascal-architecture-2016` | [NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡](/study/papers/pascal-architecture-2016/) | 其他 |
+| `passnet-graph-compiler` | [PassNet — 让大模型给图编译器写优化 pass](/study/papers/passnet-graph-compiler/) | 其他 |
 | `pastry-2001` | [Pastry — 用 nodeId 的前缀一位一位逼近目标](/study/papers/pastry-2001/) | 其他 |
 | `paxos` | [Paxos — 分布式共识算法](/study/papers/paxos/) | 分布式系统 |
 | `paxos-1998` | [Paxos 1998 — 古希腊议会寓言里藏的共识协议](/study/papers/paxos-1998/) | 其他 |
