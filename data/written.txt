@@ -980,6 +980,7 @@ astro
 astronvim
 asynq
 atom
+aubio
 auth-js
 autogen
 autogluon
