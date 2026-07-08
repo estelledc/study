@@ -1,5 +1,5 @@
 ---
-title: SCADS: Scale-Independent Storage
+title: "SCADS: Scale-Independent Storage"
 来源: https://amplab.cs.berkeley.edu/wp-content/uploads/2011/06/SCADS-Berkeley.pdf
 日期: 2026-07-08
 分类: 数据库
