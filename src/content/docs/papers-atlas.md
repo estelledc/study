@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 907 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 908 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：907 篇
+- **总数**：908 篇
 - **已分类**：143
-- **未分类**：764（落入"其他 / 待分类"段）
+- **未分类**：765（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 764 |
+| [其他 / 待分类](#其他--待分类) | 765 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 764 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 765 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -882,6 +882,7 @@ sidebar:
 | `ray-2018` | [Ray 2018 — 把任务和演员放进同一个分布式舞台](/study/papers/ray-2018/) |
 | `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
+| `reasoning-with-sampling` | [Reasoning with Sampling — 在关键决策点重采样推理过程](/study/papers/reasoning-with-sampling/) |
 | `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |
 | `reed-onion-routing-1998` | [Onion Routing 1998 — Tor 前身把匿名连接做成网络积木](/study/papers/reed-onion-routing-1998/) |
 | `refinement-types-1991` | [Refinement Types for ML — 让程序员告诉编译器"哪些子集才合法"](/study/papers/refinement-types-1991/) |
@@ -1075,7 +1076,7 @@ sidebar:
 
 ---
 
-## 全部 907 篇（字母序）
+## 全部 908 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1752,6 +1753,7 @@ sidebar:
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | 其他 |
 | `realm` | [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
+| `reasoning-with-sampling` | [Reasoning with Sampling — 在关键决策点重采样推理过程](/study/papers/reasoning-with-sampling/) | 其他 |
 | `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) | 其他 |
 | `reed-onion-routing-1998` | [Onion Routing 1998 — Tor 前身把匿名连接做成网络积木](/study/papers/reed-onion-routing-1998/) | 其他 |
 | `reed-solomon-1960` | [Reed-Solomon 编码](/study/papers/reed-solomon-1960/) | 信息论 / 编码理论 |
