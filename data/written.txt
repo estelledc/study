@@ -540,6 +540,7 @@ mine-octagon-2006
 minhash-broder-1997
 minisat-2003
 mips-1981
+mira-rubric
 mirage-2013
 mironov-renyi-dp-2017
 misevolution-2509
