@@ -1758,6 +1758,7 @@ unqlite
 unsloth
 unstorage
 unstructured
+v8
 valibot
 valkey
 valtio
