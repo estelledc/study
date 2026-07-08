@@ -1721,6 +1721,7 @@ tanstack-query
 tanstack-router
 tantivy
 task
+tauri
 tdengine
 tekton
 teku
