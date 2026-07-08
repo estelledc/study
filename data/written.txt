@@ -98,6 +98,7 @@ branch-prediction-yeh-patt-1991
 brewer-cap-2000
 brill-moore-2000
 brook-2004
+brooks-no-silver-bullet-1986
 btrfs-2013
 bunz-bulletproofs-2018
 burgess-2020-turing-rt
