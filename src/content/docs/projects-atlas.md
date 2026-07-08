@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 871 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 872 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：871 个
+- **总数**：872 个
 - **已分类**：214
-- **未分类**：657（落入"其他 / 待分类"段）
+- **未分类**：658（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 657 |
+| [其他 / 待分类](#其他--待分类) | 658 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 657 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 658 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -585,6 +585,7 @@ sidebar:
 | `buildah` | [Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工](/study/projects/buildah/) |
 | `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) |
 | `buildroot` | [Buildroot — 30 分钟从零搭出一个嵌入式 Linux](/study/projects/buildroot/) |
+| `bullet` | [Bullet — C++ 经典 3D 物理引擎 — 学习笔记（入门）](/study/projects/bullet/) |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) |
 | `cairo-lang` | [Cairo — Starknet 的 zk 友好编程语言](/study/projects/cairo-lang/) |
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) |
@@ -1167,7 +1168,7 @@ sidebar:
 
 ---
 
-## 全部 871 个（字母序）
+## 全部 872 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1262,6 +1263,7 @@ sidebar:
 | `buildah` | [Buildah — 不要守护进程，每次构建都是一个 fork 出来的小工](/study/projects/buildah/) | 其他 |
 | `buildkit` | [BuildKit — Docker 下一代镜像构建后端](/study/projects/buildkit/) | 其他 |
 | `buildroot` | [Buildroot — 30 分钟从零搭出一个嵌入式 Linux](/study/projects/buildroot/) | 其他 |
+| `bullet` | [Bullet — C++ 经典 3D 物理引擎 — 学习笔记（入门）](/study/projects/bullet/) | 其他 |
 | `bullmq` | [BullMQ — Node.js 上的 Redis 任务队列](/study/projects/bullmq/) | 其他 |
 | `bun` | [Bun — JS 全能运行时](/study/projects/bun/) | 构建工具 / Bundler |
 | `caddy` | [Caddy — 自动 HTTPS Web 服务器](/study/projects/caddy/) | DevOps / 容器 / 运维 |

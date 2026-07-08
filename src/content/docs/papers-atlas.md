@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 935 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 937 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：935 篇
+- **总数**：937 篇
 - **已分类**：143
-- **未分类**：792（落入"其他 / 待分类"段）
+- **未分类**：794（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 792 |
+| [其他 / 待分类](#其他--待分类) | 794 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 792 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 794 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -409,6 +409,7 @@ sidebar:
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
+| `cassandra-eventual-tradeoff` | [Cassandra: Eventually Consistent Tradeoffs](/study/papers/cassandra-eventual-tradeoff/) |
 | `catmull-1974-zbuffer` | [Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题](/study/papers/catmull-1974-zbuffer/) |
 | `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) |
 | `ccopd-distillation` | [CCOPD — 让多轮对话别被自己的旧话带偏](/study/papers/ccopd-distillation/) |
@@ -941,6 +942,7 @@ sidebar:
 | `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
+| `scads-database-2008` | [SCADS: Scale-Independent Storage](/study/papers/scads-database-2008/) |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) |
 | `scaling-hnsws-antirez` | [d-HNSW：面向 RDMA 反向索引内存的高性能向量搜索](/study/papers/scaling-hnsws-antirez/) |
 | `scann-2020` | [ScaNN — 让向量量化只精修「客户会看到的那一面」](/study/papers/scann-2020/) |
@@ -1103,7 +1105,7 @@ sidebar:
 
 ---
 
-## 全部 935 篇（字母序）
+## 全部 937 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1227,6 +1229,7 @@ sidebar:
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) | 其他 |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
+| `cassandra-eventual-tradeoff` | [Cassandra: Eventually Consistent Tradeoffs](/study/papers/cassandra-eventual-tradeoff/) | 其他 |
 | `catmull-1974-zbuffer` | [Catmull 1974 Z-buffer — 用一张深度图解决谁挡谁的问题](/study/papers/catmull-1974-zbuffer/) | 其他 |
 | `catmull-clark-1978` | [Catmull-Clark 1978 — 让任意拓扑网格收敛成光滑曲面](/study/papers/catmull-clark-1978/) | 其他 |
 | `causal-abstraction` | [Causal Abstraction — 神经网络与算法的因果对齐](/study/papers/causal-abstraction/) | AI 安全与可解释性 |
@@ -1848,6 +1851,7 @@ sidebar:
 | `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |
+| `scads-database-2008` | [SCADS: Scale-Independent Storage](/study/papers/scads-database-2008/) | 其他 |
 | `scala-macros` | [Scala Macros — 让 Scala 在编译期把方法调用替换成任意代码](/study/papers/scala-macros/) | 其他 |
 | `scaling-hnsws-antirez` | [d-HNSW：面向 RDMA 反向索引内存的高性能向量搜索](/study/papers/scaling-hnsws-antirez/) | 其他 |
 | `scaling-laws` | [Scaling Laws — 神经语言模型的缩放规律](/study/papers/scaling-laws/) | NLP 基础与 Scaling |
