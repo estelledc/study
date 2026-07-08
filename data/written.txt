@@ -388,6 +388,7 @@ hazard-pointers-2004
 hdfs-2010
 heartbleed-2014
 heckbert-1986-texture-survey
+hekaton-2013-sigmod
 helium-type-errors
 helland-2007
 herlihy-moss-tm
@@ -594,6 +595,7 @@ multics-1965
 muzero
 mycroft-strictness
 naiad-2013
+naiad-2013-sosp
 narwhal-tusk-2022
 nbeats-2020
 nelson-oppen-1979
