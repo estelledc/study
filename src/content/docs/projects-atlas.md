@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 881 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 882 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：881 个
+- **总数**：882 个
 - **已分类**：214
-- **未分类**：667（落入"其他 / 待分类"段）
+- **未分类**：668（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 667 |
+| [其他 / 待分类](#其他--待分类) | 668 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 667 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 668 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -999,6 +999,7 @@ sidebar:
 | `pytorch-lightning` | [PyTorch Lightning — PyTorch 训练循环抽象](/study/projects/pytorch-lightning/) |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) |
+| `quasar` | [Quasar Framework — 一套代码跑 Vue 全端的应用框架](/study/projects/quasar/) |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) |
 | `quickjs` | [quickjs](/study/projects/quickjs/) |
 | `rabbitmq-server` | [RabbitMQ — 用 Erlang 写的多协议消息总线](/study/projects/rabbitmq-server/) |
@@ -1177,7 +1178,7 @@ sidebar:
 
 ---
 
-## 全部 881 个（字母序）
+## 全部 882 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1813,6 +1814,7 @@ sidebar:
 | `qdrant` | [Qdrant — Rust 向量数据库](/study/projects/qdrant/) | 数据库本体 / 存储引擎 |
 | `quarkus` | [Quarkus — 让 Java 启动比 Node 还快的云原生框架](/study/projects/quarkus/) | 其他 |
 | `quart` | [Quart — Flask 完全 async 移植，API 同源 + ASGI 后端](/study/projects/quart/) | 其他 |
+| `quasar` | [Quasar Framework — 一套代码跑 Vue 全端的应用框架](/study/projects/quasar/) | 其他 |
 | `questdb` | [QuestDB — 高性能时序库](/study/projects/questdb/) | 其他 |
 | `quickjs` | [quickjs](/study/projects/quickjs/) | 其他 |
 | `qwik` | [Qwik — Resumable UI 框架](/study/projects/qwik/) | UI 框架 / Frontend Framework |
