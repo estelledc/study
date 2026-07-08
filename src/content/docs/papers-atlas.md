@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 910 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 911 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：910 篇
+- **总数**：911 篇
 - **已分类**：143
-- **未分类**：767（落入"其他 / 待分类"段）
+- **未分类**：768（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 767 |
+| [其他 / 待分类](#其他--待分类) | 768 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 767 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 768 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -867,6 +867,7 @@ sidebar:
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |
+| `ppc-preplan` | [PPC Preplan — 先想清楚题目类型再规划解法](/study/papers/ppc-preplan/) |
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
 | `projection-bench` | [ProjectionBench — 用逐步揭示信息测试科学假说生成](/study/papers/projection-bench/) |
@@ -1078,7 +1079,7 @@ sidebar:
 
 ---
 
-## 全部 910 篇（字母序）
+## 全部 911 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1731,6 +1732,7 @@ sidebar:
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) | 其他 |
 | `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) | 其他 |
+| `ppc-preplan` | [PPC Preplan — 先想清楚题目类型再规划解法](/study/papers/ppc-preplan/) | 其他 |
 | `ppo` | [PPO — Proximal Policy Optimization](/study/papers/ppo/) | 强化学习 |
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) | 其他 |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | 其他 |
