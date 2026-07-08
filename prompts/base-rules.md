@@ -120,5 +120,5 @@ node {{quality_gate_path}} <写入的文件绝对路径>
 ## 引用与延伸阅读
 
 - 引用其他笔记用 `[[slug]]`（双方括号），由 remark-wikilinks 自动渲染
-- 引用论文用 `lr cite format <ref>` 标准化（papers 类必做）
+- papers 类引用上下文以 `{{paper_context_path}}` 的输出为准；`lr cite format` 只在 helper 拿到 LightRead `resource_id` 时 best-effort 使用
 - 视频 / 网页用 markdown 链接：`[标题](url)`

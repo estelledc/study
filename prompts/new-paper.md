@@ -61,13 +61,19 @@ node {{repo_root}}/scripts/mineru-extract-url.mjs \
 - 方法或分析具体怎么 work？
 - 哪些结果最重要？
 
-### Step 3：用 lr graph 拿引用图谱（用于"延伸阅读"段）
+### Step 3：用 paper-context 拿引用上下文（用于"延伸阅读"段）
 
 ```bash
-lr graph {{slug}} -f json 2>/dev/null || arxiv MCP citation_graph
+node {{paper_context_path}} \
+  --slug "{{slug}}" \
+  --title "{{title}}" \
+  --url "{{url}}" \
+  --year "{{year}}" \
+  --full-md /tmp/{{slug}}-mineru/full.md \
+  --out /tmp/{{slug}}-paper-context.json
 ```
 
-挑 2-3 篇被引最多 / 引用最多的相关论文，slug 化（kebab-case）后准备进 `## 延伸阅读` 段的 `[[xxx]]` 列表。如果某些论文我们已写过（你可以读 `{{written_path}}` 查），优先链已写的，引导读者形成知识网。
+读取 `/tmp/{{slug}}-paper-context.json`，用 `citations_in` / `citations_out` / `linkable_slugs` 准备 `## 延伸阅读` 和 `## 关联`。`paper-context` 内部已经按 `lr search → OpenAlex → lr graph search/build → MinerU References → 手工最小引用` 做 fallback；不要再手写旧式 graph 命令，也不要对任意标题调用 citation format。
 
 ### Step 4：写 12 段零基础笔记
 
@@ -82,7 +88,7 @@ lr graph {{slug}} -f json 2>/dev/null || arxiv MCP citation_graph
 - "关联" 段 5-7 条 `[[slug]] —— 一句话`，slug 必须存在或合理预测会存在
 - "反向链接" 段标题下放 `<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->` 注释
 
-引用其他论文格式化用 `lr cite format <ref>`。
+引用其他论文优先使用 `paper-context` 的 `source_text` / `linkable_slugs`；`lr cite format` 只由 helper 在拿到 LightRead `resource_id` 时 best-effort 调用。
 
 ### Step 5：自检 + commit
 

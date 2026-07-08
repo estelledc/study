@@ -61,19 +61,27 @@ node {{repo_root}}/scripts/mineru-extract-url.mjs \
 
 MinerU 失败 → 进 Step 5 fallback。
 
-### Step 4 — lr graph 拿引用图谱（papers 类）
+### Step 4 — paper-context 拿引用上下文（papers 类）
 
 ```bash
-lr graph <arxiv_id_or_slug> -f json 2>/dev/null
+node {{paper_context_path}} \
+  --slug "{{slug}}" \
+  --title "{{title}}" \
+  --url "{{url}}" \
+  --year "{{year}}" \
+  --full-md /tmp/{{slug}}-mineru/full.md \
+  --out /tmp/pipeline-{{slug}}/paper-context.json
 ```
 
-或调 `mcp__arxiv__citation_graph`。
+读取 `/tmp/pipeline-{{slug}}/paper-context.json`，从中拿：
 
-挑：
-- ≤5 篇被引最多的相关论文（citations_in）
-- ≤5 篇本论文引用的（citations_out）
+- `paper`：标准论文元数据
+- `citations_in` / `citations_out`：引用上下文，每项自带 `source` 与 `confidence`
+- `linkable_slugs`：可进入 `## 关联` 的 slug
+- `source_text`：frontmatter `来源:` 的建议值
+- `fallback_used` / `warnings`：记录 graph、OpenAlex、References、manual citation 的实际路径
 
-slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
+`paper-context` 内部已经按 `lr search → OpenAlex → lr graph search/build → MinerU References → 手工最小引用` 做 best-effort fallback。不要再手写旧式 graph 命令，也不要对任意标题调用 citation format。
 
 ### Step 5 — Fallback：WebFetch + written.txt 比对
 
@@ -100,11 +108,17 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
   "citations_in": ["slug-or-title", "..."],
   "citations_out": ["slug-or-title", "..."],
   "linkable_slugs": ["volcano", "system-r-1976"],
+  "source_text": "<来自 paper-context 的 frontmatter 来源建议>",
+  "paper_context": {
+    "paper": { "title": "...", "authors": [], "year": 2024, "doi": null, "openalex_id": null },
+    "fallback_used": ["openalex", "references", "manual-citation"],
+    "warnings": []
+  },
   "key_pitfalls": ["1. ...", "2. ...", "3. ...", "4. ..."],
   "use_case_seeds": ["案例 1 思路", "案例 2 思路", "案例 3 思路"],
   "history_note": "<一两句历史背景>",
   "status": "ok|partial|failed",
-  "fallback_used": null
+  "fallback_used": []
 }
 ```
 
@@ -113,7 +127,7 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
 - `partial` — 走了 fallback 但拿到 README + 5 问答（projects 默认 partial）
 - `failed` — fallback 也拉不到任何上下文，连 abstract 都空
 
-`fallback_used` 取值：`null` / `"url-only"`（仅 WebFetch）/ `"lr-only"`（lr 成功但 MinerU 失败）
+`fallback_used` 是数组，取值来自实际路径，例如：`"url-only"`、`"lr-only"`、`"openalex"`、`"lr-graph"`、`"references"`、`"manual-citation"`。
 
 ## 返回给 workflow（不是写文件）
 
@@ -124,7 +138,7 @@ slug 化（kebab-case），准备给 Writer 用作"延伸阅读 / 关联"段。
   "slug": "{{slug}}",
   "research_path": "{{output_json}}",
   "status": "ok|partial|failed",
-  "fallback_used": null|"url-only"|"lr-only",
+  "fallback_used": [],
   "abstract_len": <number>,
   "linkable_count": <number>
 }

@@ -41,7 +41,7 @@ cat {{existing_path}}
 cat {{research_json}}
 ```
 
-从中拿到：abstract / core_qa / citations_in / citations_out / linkable_slugs / key_pitfalls / use_case_seeds / history_note。
+从中拿到：abstract / core_qa / citations_in / citations_out / linkable_slugs / source_text / paper_context.fallback_used / key_pitfalls / use_case_seeds / history_note。
 
 如果 `status: "failed"`，**不要写笔记**，直接返回：
 ```json
@@ -89,7 +89,7 @@ cat {{research_json}}
 ```yaml
 ---
 title: <slug 中文标题> — <一句话定位>
-来源: <作者. "标题". 期刊/会议 年份>  # papers
+来源: <优先使用 research.source_text；缺失时用 作者. "标题". 期刊/会议 年份>  # papers
 # 或
 来源: 'https://github.com/...'  # projects
 日期: 2026-05-30

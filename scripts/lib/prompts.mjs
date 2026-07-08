@@ -43,6 +43,7 @@ export function commonPromptVars({ area = null, worktree = null } = {}) {
     template_note_path: path.join(DOCS_DIR, 'papers', 'hindley-milner.md'),
     written_path: WRITTEN_PATH,
     quality_gate_path: path.join(ROOT, 'scripts', 'quality-gate.mjs'),
+    paper_context_path: path.join(ROOT, 'scripts', 'paper-context.mjs'),
     docs_area_dir: docsArea,
   };
 }
