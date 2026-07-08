@@ -1169,6 +1169,7 @@ haproxy
 haraka
 hardhat
 haystack
+hedgedoc
 helidon
 helix
 helm
