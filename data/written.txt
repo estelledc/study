@@ -664,6 +664,7 @@ retro
 reynolds-definitional-interpreters
 reynolds-separation-logic
 rfc-3833-dns-threats
+rim-latent-reasoning
 ring-allreduce-2017
 risc-i-1981
 rlhf-christiano
