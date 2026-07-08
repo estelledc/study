@@ -1160,6 +1160,7 @@ esbuild
 esp-dl
 esphome
 espurna
+essentia
 etcd
 etherpad-lite
 ethers-js
