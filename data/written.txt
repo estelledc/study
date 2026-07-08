@@ -1556,6 +1556,7 @@ recharts
 redash
 redis
 redpanda
+regl
 remix
 remix-ide
 reservoir-sdk
