@@ -1633,6 +1633,7 @@ supertokens
 surrealdb
 svelte
 sveltekit
+svt-av1
 swc
 swr
 symfony
