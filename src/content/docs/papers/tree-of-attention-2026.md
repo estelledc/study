@@ -1,5 +1,5 @@
 ---
-title: Tree-of-Attention: Branching Attention for Long-Context Reasoning
+title: "Tree-of-Attention: Branching Attention for Long-Context Reasoning"
 来源: https://arxiv.org/abs/2605.30789
 日期: 2026-07-08
 分类: 机器学习
