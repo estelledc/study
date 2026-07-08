@@ -1123,6 +1123,7 @@ freertos
 freeswitch
 fx
 fzf
+gazebo-classic
 gdu
 geany
 gh
