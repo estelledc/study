@@ -106,6 +106,7 @@ bunz-bulletproofs-2018
 burgess-2020-turing-rt
 bvt-1999
 byzantine-generals-1982
+cache-coherence-cxl3-2026
 cadar-klee-2008
 caesar-rexford-2005
 cakeml
