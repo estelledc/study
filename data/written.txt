@@ -735,6 +735,7 @@ self-evolving-software-agents
 self-pic
 self-rag-2023
 self-refine-2023
+self-trained-verification
 selinger-1979
 selinux-2001
 seq2seq-2014
