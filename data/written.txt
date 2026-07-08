@@ -1309,6 +1309,7 @@ manticoresearch
 mapbox-gl-js
 maplibre-gl
 mariadb-server
+marimo
 markdown-it
 marked
 marktext
