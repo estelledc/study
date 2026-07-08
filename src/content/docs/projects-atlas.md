@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 855 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 856 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：855 个
+- **总数**：856 个
 - **已分类**：214
-- **未分类**：641（落入"其他 / 待分类"段）
+- **未分类**：642（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 641 |
+| [其他 / 待分类](#其他--待分类) | 642 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 641 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 642 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1092,6 +1092,7 @@ sidebar:
 | `trilium` | [Trilium — 树形层级笔记系统](/study/projects/trilium/) |
 | `triton-inference-server` | [Triton Inference Server — NVIDIA 多框架推理服务化标杆](/study/projects/triton-inference-server/) |
 | `trl` | [TRL — RLHF / DPO / GRPO 训练库](/study/projects/trl/) |
+| `twgl` | [TWGL — 极薄 WebGL helpers](/study/projects/twgl/) |
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) |
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
@@ -1151,7 +1152,7 @@ sidebar:
 
 ---
 
-## 全部 855 个（字母序）
+## 全部 856 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1927,6 +1928,7 @@ sidebar:
 | `trpc` | [tRPC — TS 端到端类型安全 RPC](/study/projects/trpc/) | 数据获取 / 路由 |
 | `turbopack` | [Turbopack — 把 bundler 重做成增量计算应用](/study/projects/turbopack/) | 构建工具 / Bundler |
 | `turborepo` | [Turborepo — 让 monorepo 学会"哪些活已经干过了不要再干"](/study/projects/turborepo/) | Monorepo / 包管理 |
+| `twgl` | [TWGL — 极薄 WebGL helpers](/study/projects/twgl/) | 其他 |
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) | 其他 |
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) | 其他 |
 | `typeorm` | [TypeORM — Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
