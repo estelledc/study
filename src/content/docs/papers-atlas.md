@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 911 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 912 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：911 篇
+- **总数**：912 篇
 - **已分类**：143
-- **未分类**：768（落入"其他 / 待分类"段）
+- **未分类**：769（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 768 |
+| [其他 / 待分类](#其他--待分类) | 769 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 768 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 769 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -725,6 +725,7 @@ sidebar:
 | `locus-1980` | [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) |
 | `logjam-2015` | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) |
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) |
+| `lomo-modality` | [LoMo — 把同一句话换成图片也要看懂](/study/papers/lomo-modality/) |
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) |
 | `loong-doc-mt` | [Loong DocMT — 长文档翻译里的会挑上下文的代理](/study/papers/loong-doc-mt/) |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) |
@@ -1079,7 +1080,7 @@ sidebar:
 
 ---
 
-## 全部 911 篇（字母序）
+## 全部 912 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1577,6 +1578,7 @@ sidebar:
 | `locus-1980` | [LOCUS 1980 — 让一群机器看起来像同一台机器](/study/papers/locus-1980/) | 其他 |
 | `logjam-2015` | [Logjam 2015 — 全世界共用一把锁，国家级窃听者一次撬完](/study/papers/logjam-2015/) | 其他 |
 | `logoot-2010` | [Logoot — 给每个字符发一张"永不过期的座位号"](/study/papers/logoot-2010/) | 其他 |
+| `lomo-modality` | [LoMo — 把同一句话换成图片也要看懂](/study/papers/lomo-modality/) | 其他 |
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | 其他 |
 | `loong-doc-mt` | [Loong DocMT — 长文档翻译里的会挑上下文的代理](/study/papers/loong-doc-mt/) | 其他 |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) | 其他 |
