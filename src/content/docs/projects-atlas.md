@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 869 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 870 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：869 个
+- **总数**：870 个
 - **已分类**：214
-- **未分类**：655（落入"其他 / 待分类"段）
+- **未分类**：656（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 655 |
+| [其他 / 待分类](#其他--待分类) | 656 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 655 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 656 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -590,6 +590,7 @@ sidebar:
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) |
 | `canvas-datagrid` | [canvas-datagrid — 整张表只用一块 canvas 画](/study/projects/canvas-datagrid/) |
+| `capacitor` | [capacitor](/study/projects/capacitor/) |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) |
 | `celery` | [Celery — Python 把慢任务搬到后台干的工头](/study/projects/celery/) |
@@ -1165,7 +1166,7 @@ sidebar:
 
 ---
 
-## 全部 869 个（字母序）
+## 全部 870 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1268,6 +1269,7 @@ sidebar:
 | `calico` | [Calico — 用 BGP 路由把 K8s pod 当成一个个小路由器](/study/projects/calico/) | 其他 |
 | `candle` | [Candle — HuggingFace 出品的 Rust 推理框架](/study/projects/candle/) | 其他 |
 | `canvas-datagrid` | [canvas-datagrid — 整张表只用一块 canvas 画](/study/projects/canvas-datagrid/) | 其他 |
+| `capacitor` | [capacitor](/study/projects/capacitor/) | 其他 |
 | `capnproto` | [Capn Proto — 数据布局即 wire format 的零拷贝序列化 + RPC](/study/projects/capnproto/) | 其他 |
 | `captum` | [Captum — 给 PyTorch 模型装上 X 光机](/study/projects/captum/) | 其他 |
 | `cassandra` | [Apache Cassandra — 分布式宽列数据库](/study/projects/cassandra/) | 数据库本体 / 存储引擎 |
