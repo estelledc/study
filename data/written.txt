@@ -164,6 +164,7 @@ columnar-storage-formats-2023
 comer-1979-btree
 compcert
 compiler-errors
+compositional-incoherence
 consistency-models-2023
 consistent-hashing-1997
 constitutional-ai
