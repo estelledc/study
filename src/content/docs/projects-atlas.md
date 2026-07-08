@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 818 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 819 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：818 个
+- **总数**：819 个
 - **已分类**：214
-- **未分类**：604（落入"其他 / 待分类"段）
+- **未分类**：605（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 604 |
+| [其他 / 待分类](#其他--待分类) | 605 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 604 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 605 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -756,6 +756,7 @@ sidebar:
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) |
+| `janus-gateway` | [Janus WebRTC Gateway — 轻量 WebRTC 服务器和插件底座](/study/projects/janus-gateway/) |
 | `janusgraph` | [JanusGraph — 可插拔后端的分布式图数据库](/study/projects/janusgraph/) |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
@@ -1114,7 +1115,7 @@ sidebar:
 
 ---
 
-## 全部 818 个（字母序）
+## 全部 819 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1433,6 +1434,7 @@ sidebar:
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | 其他 |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | 其他 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
+| `janus-gateway` | [Janus WebRTC Gateway — 轻量 WebRTC 服务器和插件底座](/study/projects/janus-gateway/) | 其他 |
 | `janusgraph` | [JanusGraph — 可插拔后端的分布式图数据库](/study/projects/janusgraph/) | 其他 |
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) | 其他 |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) | 其他 |
