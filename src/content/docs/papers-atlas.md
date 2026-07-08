@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 941 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 943 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：941 篇
+- **总数**：943 篇
 - **已分类**：143
-- **未分类**：798（落入"其他 / 待分类"段）
+- **未分类**：800（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 798 |
+| [其他 / 待分类](#其他--待分类) | 800 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 798 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 800 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -732,6 +732,7 @@ sidebar:
 | `li-t-closeness-2007` | [Li t-closeness 2007 — 用整体分布约束匿名分组](/study/papers/li-t-closeness-2007/) |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) |
 | `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) |
+| `linear-attention-still-2026` | [Linear Attention, Still: Why Mamba-style Models Plateau](/study/papers/linear-attention-still-2026/) |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |
 | `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) |
 | `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) |
@@ -1058,6 +1059,7 @@ sidebar:
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) |
 | `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) |
 | `twine-2020` | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) |
+| `ucb-cs186-fa2024` | [UCB CS186 Fall 2024 Database Internals Reading List](/study/papers/ucb-cs186-fa2024/) |
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) |
 | `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) |
 | `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) |
@@ -1109,7 +1111,7 @@ sidebar:
 
 ---
 
-## 全部 941 篇（字母序）
+## 全部 943 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1610,6 +1612,7 @@ sidebar:
 | `li-t-closeness-2007` | [Li t-closeness 2007 — 用整体分布约束匿名分组](/study/papers/li-t-closeness-2007/) | 其他 |
 | `lieberman-realtime-gc` | [Lieberman-Hewitt 1983 — 把对象寿命统计偏斜兑换成有界停顿](/study/papers/lieberman-realtime-gc/) | 其他 |
 | `lindholm-2008-tesla` | [Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明](/study/papers/lindholm-2008-tesla/) | 其他 |
+| `linear-attention-still-2026` | [Linear Attention, Still: Why Mamba-style Models Plateau](/study/papers/linear-attention-still-2026/) | 其他 |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) | 其他 |
@@ -1998,6 +2001,7 @@ sidebar:
 | `tvm` | [TVM — 让一份模型能在所有硬件上跑得快](/study/papers/tvm/) | 其他 |
 | `tvm-2018` | [TVM OSDI 2018 — 把 Halide 思想搬到深度学习](/study/papers/tvm-2018/) | 其他 |
 | `twine-2020` | [Twine — Facebook 把整个数据中心当一台机器调度](/study/papers/twine-2020/) | 其他 |
+| `ucb-cs186-fa2024` | [UCB CS186 Fall 2024 Database Internals Reading List](/study/papers/ucb-cs186-fa2024/) | 其他 |
 | `unified-memory-2014` | [CUDA Unified Memory — 让 CPU 和 GPU 共享一张内存地图](/study/papers/unified-memory-2014/) | 其他 |
 | `unix-1974` | [UNIX 1974 — 用极小内核做出能用的分时系统](/study/papers/unix-1974/) | 其他 |
 | `v-system-1988` | [V 分布式系统 — 把局域网当成一台机器，内核只剩进程加 IPC](/study/papers/v-system-1988/) | 其他 |

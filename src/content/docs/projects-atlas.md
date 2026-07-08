@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 877 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 880 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：877 个
+- **总数**：880 个
 - **已分类**：214
-- **未分类**：663（落入"其他 / 待分类"段）
+- **未分类**：666（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 663 |
+| [其他 / 待分类](#其他--待分类) | 666 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 663 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 666 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -576,6 +576,7 @@ sidebar:
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
 | `blender` | [Blender — 全流程 3D 创作套件](/study/projects/blender/) |
+| `boa-engine` | [Boa — Rust 写的 ECMAScript 解释器](/study/projects/boa-engine/) |
 | `bokeh` | [Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流](/study/projects/bokeh/) |
 | `bookstack` | [BookStack — 文档型 Wiki](/study/projects/bookstack/) |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) |
@@ -867,6 +868,7 @@ sidebar:
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) |
+| `matter-js` | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
 | `mbedtls` | [Mbed TLS — 嵌入式设备的轻量级 TLS 加密库](/study/projects/mbedtls/) |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
@@ -897,6 +899,7 @@ sidebar:
 | `mumble` | [Mumble — 游戏圈用了 20 年的低延迟开源语音](/study/projects/mumble/) |
 | `mysql-server` | [mysql-server — 一个仓库装下整套 OLTP 引擎](/study/projects/mysql-server/) |
 | `nanomq` | [NanoMQ — 边缘侧超轻量 MQTT Broker](/study/projects/nanomq/) |
+| `nativescript` | [NativeScript](/study/projects/nativescript/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
 | `navigation2` | [Nav2 — ROS 2 移动机器人导航栈](/study/projects/navigation2/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
@@ -1173,7 +1176,7 @@ sidebar:
 
 ---
 
-## 全部 877 个（字母序）
+## 全部 880 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1257,6 +1260,7 @@ sidebar:
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
 | `blender` | [Blender — 全流程 3D 创作套件](/study/projects/blender/) | 其他 |
+| `boa-engine` | [Boa — Rust 写的 ECMAScript 解释器](/study/projects/boa-engine/) | 其他 |
 | `bokeh` | [Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流](/study/projects/bokeh/) | 其他 |
 | `bookstack` | [BookStack — 文档型 Wiki](/study/projects/bookstack/) | 其他 |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) | 其他 |
@@ -1630,6 +1634,7 @@ sidebar:
 | `matplotlib` | [matplotlib — Python 绘图基石](/study/projects/matplotlib/) | 其他 |
 | `matrix-js-sdk` | [matrix-js-sdk — Matrix Web/Node 端的"老大哥"客户端 SDK](/study/projects/matrix-js-sdk/) | 其他 |
 | `matrix-rust-sdk` | [matrix-rust-sdk — Matrix 客户端的"共享发动机"](/study/projects/matrix-rust-sdk/) | 其他 |
+| `matter-js` | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) | 其他 |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | 其他 |
 | `mbedtls` | [Mbed TLS — 嵌入式设备的轻量级 TLS 加密库](/study/projects/mbedtls/) | 其他 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
@@ -1676,6 +1681,7 @@ sidebar:
 | `nanobrowser` | [nanobrowser — 把 Chrome 扩展本身当成 AI agent 的运行沙箱](/study/projects/nanobrowser/) | AI 浏览器自动化 |
 | `nanomq` | [NanoMQ — 边缘侧超轻量 MQTT Broker](/study/projects/nanomq/) | 其他 |
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
+| `nativescript` | [NativeScript](/study/projects/nativescript/) | 其他 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
 | `navigation2` | [Nav2 — ROS 2 移动机器人导航栈](/study/projects/navigation2/) | 其他 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
