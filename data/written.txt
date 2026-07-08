@@ -1085,6 +1085,7 @@ containerd
 continue
 conversations
 coqui-tts
+cordova
 cosmos-sdk
 cosmwasm
 coturn
