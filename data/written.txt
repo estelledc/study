@@ -9,6 +9,7 @@ adam-2014
 adamw-2017
 adapton
 aes
+afd-disagg-moe
 afs-1988
 agda-norell
 agent-r1-2511
