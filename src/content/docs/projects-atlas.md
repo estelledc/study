@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 812 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 813 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：812 个
+- **总数**：813 个
 - **已分类**：214
-- **未分类**：598（落入"其他 / 待分类"段）
+- **未分类**：599（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 598 |
+| [其他 / 待分类](#其他--待分类) | 599 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 598 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 599 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -676,6 +676,7 @@ sidebar:
 | `errbot` | [Errbot — 用 Python 类写一个能进 Slack/Discord 的聊天机器人](/study/projects/errbot/) |
 | `esp-dl` | [ESP-DL — 把小模型塞进 ESP32 的推理库](/study/projects/esp-dl/) |
 | `esphome` | [ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件](/study/projects/esphome/) |
+| `espurna` | [ESPurna — 给便宜智能开关换一套本地大脑](/study/projects/espurna/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
 | `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) |
 | `eza` | [eza — 现代 ls 替代（exa 的社区接管 fork）](/study/projects/eza/) |
@@ -1108,7 +1109,7 @@ sidebar:
 
 ---
 
-## 全部 812 个（字母序）
+## 全部 813 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1329,6 +1330,7 @@ sidebar:
 | `esbuild` | [esbuild — 用 Go 写的极速 JS bundler](/study/projects/esbuild/) | 构建工具 / Bundler |
 | `esp-dl` | [ESP-DL — 把小模型塞进 ESP32 的推理库](/study/projects/esp-dl/) | 其他 |
 | `esphome` | [ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件](/study/projects/esphome/) | 其他 |
+| `espurna` | [ESPurna — 给便宜智能开关换一套本地大脑](/study/projects/espurna/) | 其他 |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | 其他 |
 | `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) | 其他 |
