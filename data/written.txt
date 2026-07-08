@@ -1540,6 +1540,7 @@ sentry
 sequelize
 sglang
 shadcn-ui
+shadowsocks-libev
 shap
 sharedb
 sharp
