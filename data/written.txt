@@ -1368,6 +1368,7 @@ livekit-flutter
 llama-cpp
 llamaindex
 lm-evaluation-harness
+lmms
 locust
 lodestar
 logseq
