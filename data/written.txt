@@ -1121,6 +1121,7 @@ fd
 feast
 ferretdb
 ffmpeg
+ffmpeg-kit
 fiber
 filecoin
 fish
