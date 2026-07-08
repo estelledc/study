@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 835 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 836 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：835 个
+- **总数**：836 个
 - **已分类**：214
-- **未分类**：621（落入"其他 / 待分类"段）
+- **未分类**：622（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 621 |
+| [其他 / 待分类](#其他--待分类) | 622 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 621 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 622 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -786,6 +786,7 @@ sidebar:
 | `kong` | [Kong — 基于 nginx + Lua 的云原生 API 网关](/study/projects/kong/) |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) |
+| `krita` | [Krita — 数字绘画专业编辑器](/study/projects/krita/) |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) |
 | `kubebuilder` | [Kubebuilder — 写 K8s Operator 的官方脚手架](/study/projects/kubebuilder/) |
 | `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) |
@@ -1131,7 +1132,7 @@ sidebar:
 
 ---
 
-## 全部 835 个（字母序）
+## 全部 836 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1487,6 +1488,7 @@ sidebar:
 | `konva` | [Konva — 给 HTML5 Canvas 装一棵会响应的节点树](/study/projects/konva/) | 图像处理 / Canvas |
 | `krakend` | [KrakenD — 把多个后端聚合成一次响应的高性能 API 网关](/study/projects/krakend/) | 其他 |
 | `kratos` | [kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务](/study/projects/kratos/) | 其他 |
+| `krita` | [Krita — 数字绘画专业编辑器](/study/projects/krita/) | 其他 |
 | `ktor` | [Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架](/study/projects/ktor/) | 其他 |
 | `kubebuilder` | [Kubebuilder — 写 K8s Operator 的官方脚手架](/study/projects/kubebuilder/) | 其他 |
 | `kubectx` | [kubectx — kubectl 切换 context 和 namespace 的两行命令](/study/projects/kubectx/) | 其他 |
