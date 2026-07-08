@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 807 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 808 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：807 个
+- **总数**：808 个
 - **已分类**：214
-- **未分类**：593（落入"其他 / 待分类"段）
+- **未分类**：594（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 593 |
+| [其他 / 待分类](#其他--待分类) | 594 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 593 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 594 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1031,6 +1031,7 @@ sidebar:
 | `tempo` | [Tempo — 把分布式追踪扔进 S3 的开源后端](/study/projects/tempo/) |
 | `temporal` | [Temporal — 持久化工作流引擎](/study/projects/temporal/) |
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) |
+| `texstudio` | [TeXstudio — LaTeX IDE](/study/projects/texstudio/) |
 | `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) |
 | `tflite-micro` | [TensorFlow Lite Micro — 把小模型塞进微控制器](/study/projects/tflite-micro/) |
@@ -1103,7 +1104,7 @@ sidebar:
 
 ---
 
-## 全部 807 个（字母序）
+## 全部 808 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1812,6 +1813,7 @@ sidebar:
 | `tensorflow` | [TensorFlow — Google 端到端 DL 平台](/study/projects/tensorflow/) | 其他 |
 | `terraform` | [Terraform — 基础设施即代码](/study/projects/terraform/) | DevOps / 容器 / 运维 |
 | `testing-library` | [Testing Library — 像用户一样测前端，重构不再挂测试](/study/projects/testing-library/) | 测试 / 验证 |
+| `texstudio` | [TeXstudio — LaTeX IDE](/study/projects/texstudio/) | 其他 |
 | `textmate` | [TextMate — macOS 上定义 bundle 宏系统的编辑器](/study/projects/textmate/) | 其他 |
 | `textual` | [Textual — 用 CSS 写终端界面的 Python 框架](/study/projects/textual/) | 其他 |
 | `tflite-micro` | [TensorFlow Lite Micro — 把小模型塞进微控制器](/study/projects/tflite-micro/) | 其他 |
