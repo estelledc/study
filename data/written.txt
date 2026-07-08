@@ -1287,6 +1287,7 @@ kuzu
 ky
 kysely
 label-studio
+lame
 lance
 lancedb
 langchain
