@@ -617,6 +617,7 @@ park-2019-deepsdf
 parti-2022
 partial-evaluation-jones
 pascal-architecture-2016
+passnet-graph-compiler
 pastry-2001
 paxos
 paxos-1998
