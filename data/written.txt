@@ -964,6 +964,7 @@ billboard-js
 biome
 bitcoin-core
 bokeh
+bookstack
 botbuilder-js
 botpress
 bottom
