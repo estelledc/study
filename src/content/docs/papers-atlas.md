@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 909 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 910 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：909 篇
+- **总数**：910 篇
 - **已分类**：143
-- **未分类**：766（落入"其他 / 待分类"段）
+- **未分类**：767（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 766 |
+| [其他 / 待分类](#其他--待分类) | 767 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 766 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 767 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -933,6 +933,7 @@ sidebar:
 | `self-evolving-software-agents` | [BDI-LLM Self-Evolving Agents — 让 agent 自己改自己源代码](/study/papers/self-evolving-software-agents/) |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) |
+| `self-trained-verification` | [Self-Trained Verification — 让模型先看标准答案学会挑错](/study/papers/self-trained-verification/) |
 | `selinux-2001` | [SELinux — 给 Linux 装上不可绕过的安检门](/study/papers/selinux-2001/) |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) |
 | `sequel-1974` | [SEQUEL 1974 — 让数据库"听懂"近似英语的查询](/study/papers/sequel-1974/) |
@@ -1077,7 +1078,7 @@ sidebar:
 
 ---
 
-## 全部 909 篇（字母序）
+## 全部 910 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1817,6 +1818,7 @@ sidebar:
 | `self-pic` | [Self / PIC — 内联缓存的诞生](/study/papers/self-pic/) | 编译器 / 编程语言理论 |
 | `self-rag-2023` | [Self-RAG — 让模型自己决定何时该查资料](/study/papers/self-rag-2023/) | 其他 |
 | `self-refine-2023` | [Self-Refine — 让同一个模型自己改自己写的东西](/study/papers/self-refine-2023/) | 其他 |
+| `self-trained-verification` | [Self-Trained Verification — 让模型先看标准答案学会挑错](/study/papers/self-trained-verification/) | 其他 |
 | `selinger-1979` | [Selinger 1979 — 基于代价的查询优化](/study/papers/selinger-1979/) | 数据库 |
 | `selinux-2001` | [SELinux — 给 Linux 装上不可绕过的安检门](/study/papers/selinux-2001/) | 其他 |
 | `seq2seq-2014` | [Seq2Seq — 把翻译变成端到端神经网络](/study/papers/seq2seq-2014/) | 其他 |
