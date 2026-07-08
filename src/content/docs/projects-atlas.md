@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 831 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 832 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：831 个
+- **总数**：832 个
 - **已分类**：214
-- **未分类**：617（落入"其他 / 待分类"段）
+- **未分类**：618（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 617 |
+| [其他 / 待分类](#其他--待分类) | 618 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 617 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 618 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -723,6 +723,7 @@ sidebar:
 | `glide-data-grid` | [glide-data-grid — Canvas 画出来的百万行表格](/study/projects/glide-data-grid/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
+| `godot` | [Godot — 开源游戏引擎和编辑器](/study/projects/godot/) |
 | `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) |
 | `gradio` | [Gradio — ML 模型 demo 框架](/study/projects/gradio/) |
 | `grafana-tempo` | [Grafana Tempo — 用对象存储装下你所有的 trace](/study/projects/grafana-tempo/) |
@@ -1127,7 +1128,7 @@ sidebar:
 
 ---
 
-## 全部 831 个（字母序）
+## 全部 832 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1401,6 +1402,7 @@ sidebar:
 | `glide-data-grid` | [glide-data-grid — Canvas 画出来的百万行表格](/study/projects/glide-data-grid/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
+| `godot` | [Godot — 开源游戏引擎和编辑器](/study/projects/godot/) | 其他 |
 | `got` | [got — Node 端 HTTP 客户端的瑞士军刀](/study/projects/got/) | HTTP 客户端 |
 | `gqlgen` | [gqlgen — Go 用 schema 先写好再让编译器生成 GraphQL server](/study/projects/gqlgen/) | 其他 |
 | `gradio` | [Gradio — ML 模型 demo 框架](/study/projects/gradio/) | 其他 |
