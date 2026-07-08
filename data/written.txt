@@ -441,6 +441,7 @@ kvm-2007
 l4-1995
 label-smoothing-2016
 lafortune-1993-bdpt
+lakehouse-2021
 lalr-deremer
 lambda-calculus
 lambdarank-2006
