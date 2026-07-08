@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 925 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 926 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：925 篇
+- **总数**：926 篇
 - **已分类**：143
-- **未分类**：782（落入"其他 / 待分类"段）
+- **未分类**：783（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 782 |
+| [其他 / 待分类](#其他--待分类) | 783 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 782 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 783 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -540,6 +540,7 @@ sidebar:
 | `edm-2022` | [EDM — 把扩散模型的训练配方一次拆清楚](/study/papers/edm-2022/) |
 | `efficient-compile-2011` | [Efficient Compile 2011 — 把 SQL 查询编译成贴近 CPU 的机器码](/study/papers/efficient-compile-2011/) |
 | `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) |
+| `egglog-incremental-2026` | [Egglog — 把 Datalog 和等式饱和合成一台推理引擎](/study/papers/egglog-incremental-2026/) |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) |
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) |
@@ -1093,7 +1094,7 @@ sidebar:
 
 ---
 
-## 全部 925 篇（字母序）
+## 全部 926 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1378,6 +1379,7 @@ sidebar:
 | `effect-handlers` | [代数效应（Algebraic Effects）](/study/papers/effect-handlers/) | 编译器 / 编程语言理论 |
 | `efficient-compile-2011` | [Efficient Compile 2011 — 把 SQL 查询编译成贴近 CPU 的机器码](/study/papers/efficient-compile-2011/) | 其他 |
 | `effiskill` | [EffiSkill — 把代码效率优化经验抽成两层 skill 库](/study/papers/effiskill/) | 其他 |
+| `egglog-incremental-2026` | [Egglog — 把 Datalog 和等式饱和合成一台推理引擎](/study/papers/egglog-incremental-2026/) | 其他 |
 | `electra-2020` | [ELECTRA — 把猜词题改成判真假题，训练效率 4 倍](/study/papers/electra-2020/) | 其他 |
 | `elmo-2018` | [ELMo — 让词向量随上下文变化](/study/papers/elmo-2018/) | 其他 |
 | `emqx` | [EMQX — Erlang 写的 MQTT broker，单集群扛千万 IoT 长连接](/study/papers/emqx/) | 其他 |
