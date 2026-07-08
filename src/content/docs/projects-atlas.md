@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 886 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 887 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：886 个
+- **总数**：887 个
 - **已分类**：214
-- **未分类**：672（落入"其他 / 待分类"段）
+- **未分类**：673（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 672 |
+| [其他 / 待分类](#其他--待分类) | 673 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 672 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 673 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1130,6 +1130,7 @@ sidebar:
 | `unqlite` | [UnQLite — C 写的嵌入式 NoSQL 双模数据库](/study/projects/unqlite/) |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
+| `v8` | [V8 — 让 JS 在极端性能下也能跑得稳的 JavaScript 引擎](/study/projects/v8/) |
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) |
 | `vector` | [Vector — Rust 写的统一可观测性数据管道](/study/projects/vector/) |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
@@ -1182,7 +1183,7 @@ sidebar:
 
 ---
 
-## 全部 886 个（字母序）
+## 全部 887 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2000,6 +2001,7 @@ sidebar:
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) | 其他 |
 | `unstorage` | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) | 其他 |
+| `v8` | [V8 — 让 JS 在极端性能下也能跑得稳的 JavaScript 引擎](/study/projects/v8/) | 其他 |
 | `valibot` | [Valibot — 拆成乐高的 TypeScript 校验库](/study/projects/valibot/) | 表单 / Schema 校验 |
 | `valkey` | [Valkey — Redis 7.4 的开源 fork](/study/projects/valkey/) | 数据库本体 / 存储引擎 |
 | `valtio` | [valtio — 让 state.x++ 直接驱动 React 重渲染的 Proxy 状态库](/study/projects/valtio/) | 状态管理 |
