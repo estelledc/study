@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 877 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 878 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：877 篇
+- **总数**：878 篇
 - **已分类**：143
-- **未分类**：734（落入"其他 / 待分类"段）
+- **未分类**：735（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 734 |
+| [其他 / 待分类](#其他--待分类) | 735 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 734 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 735 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -632,6 +632,7 @@ sidebar:
 | `hott-book-2013` | [HoTT Book — 把"相等"重定义为路径，再让数学和程序共用同一本教材](/study/papers/hott-book-2013/) |
 | `hu-2018-mls-mpm` | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) |
+| `hullft-ttft` | [HullFT — 让测试时微调既会挑样本又省算力](/study/papers/hullft-ttft/) |
 | `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) |
 | `ice-rfc-5245` | [ICE (RFC 5245) — 让两台藏在 NAT 后面的设备找到彼此](/study/papers/ice-rfc-5245/) |
@@ -1045,7 +1046,7 @@ sidebar:
 
 ---
 
-## 全部 877 篇（字母序）
+## 全部 878 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1437,6 +1438,7 @@ sidebar:
 | `hu-2018-mls-mpm` | [MLS-MPM — 把 MPM 重写到"几百行能跑实时"的现代版本](/study/papers/hu-2018-mls-mpm/) | 其他 |
 | `huffman-1952` | [Huffman 编码](/study/papers/huffman-1952/) | 信息论 / 编码理论 |
 | `hughes-fp-matters` | [Why FP Matters — 函数式真正赢在能拆能粘](/study/papers/hughes-fp-matters/) | 其他 |
+| `hullft-ttft` | [HullFT — 让测试时微调既会挑样本又省算力](/study/papers/hullft-ttft/) | 其他 |
 | `hydra-1974` | [HYDRA — 用 capability 把整个内核重做成对象 + 票据](/study/papers/hydra-1974/) | 其他 |
 | `hyperkernel-2017` | [Hyperkernel — 让 SMT 求解器一键验证操作系统内核](/study/papers/hyperkernel-2017/) | 其他 |
 | `ice-rfc-5245` | [ICE (RFC 5245) — 让两台藏在 NAT 后面的设备找到彼此](/study/papers/ice-rfc-5245/) | 其他 |
