@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 850 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 851 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：850 个
+- **总数**：851 个
 - **已分类**：214
-- **未分类**：636（落入"其他 / 待分类"段）
+- **未分类**：637（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 636 |
+| [其他 / 待分类](#其他--待分类) | 637 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 636 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 637 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -798,6 +798,7 @@ sidebar:
 | `kustomize` | [Kustomize — 不动原 YAML 的 K8s 配置叠加器](/study/projects/kustomize/) |
 | `kuzu` | [Kùzu — 把图数据库做成 DuckDB](/study/projects/kuzu/) |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) |
+| `lame` | [LAME — MP3 编码事实标准](/study/projects/lame/) |
 | `lance` | [Lance — AI 数据列存格式](/study/projects/lance/) |
 | `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) |
 | `lapce` | [Lapce — 把编辑器搬到 GPU 上的 Rust 实验](/study/projects/lapce/) |
@@ -1146,7 +1147,7 @@ sidebar:
 
 ---
 
-## 全部 850 个（字母序）
+## 全部 851 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1517,6 +1518,7 @@ sidebar:
 | `ky` | [ky — 把浏览器自带的 fetch 包成顺手工具](/study/projects/ky/) | HTTP 客户端 |
 | `kysely` | [Kysely — TypeScript SQL 查询构建器](/study/projects/kysely/) | ORM / DB 客户端 |
 | `label-studio` | [Label Studio — 文本图像音视频时序通吃的标注王者](/study/projects/label-studio/) | 其他 |
+| `lame` | [LAME — MP3 编码事实标准](/study/projects/lame/) | 其他 |
 | `lance` | [Lance — AI 数据列存格式](/study/projects/lance/) | 其他 |
 | `lancedb` | [LanceDB — 嵌入式向量库（进程内 + 对象存储）](/study/projects/lancedb/) | 其他 |
 | `langchain` | [LangChain — LLM 应用开发框架](/study/projects/langchain/) | AI 应用 / Agent 平台 |
