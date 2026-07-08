@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 820 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 821 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：820 个
+- **总数**：821 个
 - **已分类**：214
-- **未分类**：606（落入"其他 / 待分类"段）
+- **未分类**：607（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 606 |
+| [其他 / 待分类](#其他--待分类) | 607 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 606 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 607 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1066,6 +1066,7 @@ sidebar:
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) |
+| `unqlite` | [UnQLite — C 写的嵌入式 NoSQL 双模数据库](/study/projects/unqlite/) |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) |
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) |
@@ -1116,7 +1117,7 @@ sidebar:
 
 ---
 
-## 全部 820 个（字母序）
+## 全部 821 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1869,6 +1870,7 @@ sidebar:
 | `unified` | [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) | Markdown / 解析 |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) | 其他 |
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) | 其他 |
+| `unqlite` | [UnQLite — C 写的嵌入式 NoSQL 双模数据库](/study/projects/unqlite/) | 其他 |
 | `unsloth` | [Unsloth — 微调 2-5x 加速](/study/projects/unsloth/) | 其他 |
 | `unstorage` | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) | 其他基础设施 |
 | `unstructured` | [Unstructured — 把任意文档解析成 LLM 能吃的元素列表](/study/projects/unstructured/) | 其他 |
