@@ -116,6 +116,7 @@ cassandra-2010
 catmull-1974-zbuffer
 catmull-clark-1978
 causal-abstraction
+ccopd-distillation
 cell-be-2005
 ceph-2006
 cerf-kahn-1974
