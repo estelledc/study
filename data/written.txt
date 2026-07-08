@@ -672,6 +672,7 @@ rcu-2001
 react
 react-server-components
 realm
+reasoning-with-sampling
 red-1993
 reed-onion-routing-1998
 reed-solomon-1960
