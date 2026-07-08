@@ -471,6 +471,7 @@ llama
 llava
 llm-int8-2022
 llm-wiki-retrieval-reasoning
+llmsurgeon-data-mixture
 llvm
 lmdb-2011
 local-type-inference
