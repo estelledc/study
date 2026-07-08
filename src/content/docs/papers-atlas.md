@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 898 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 899 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：898 篇
+- **总数**：899 篇
 - **已分类**：143
-- **未分类**：755（落入"其他 / 待分类"段）
+- **未分类**：756（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 755 |
+| [其他 / 待分类](#其他--待分类) | 756 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 755 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 756 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -526,6 +526,7 @@ sidebar:
 | `dwork-calibrating-noise-2006` | [校准噪声 — 往统计结果里加多少噪音才能保护隐私](/study/papers/dwork-calibrating-noise-2006/) |
 | `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) |
 | `dwork-our-data-ourselves-2006` | [分布式噪声 — 大家一起加噪音比一个人加更安全](/study/papers/dwork-our-data-ourselves-2006/) |
+| `e-path-egraph` | [E-Path — 把 CFG 优化从单行通道改成候选池](/study/papers/e-path-egraph/) |
 | `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) |
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) |
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) |
@@ -1066,7 +1067,7 @@ sidebar:
 
 ---
 
-## 全部 898 篇（字母序）
+## 全部 899 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1335,6 +1336,7 @@ sidebar:
 | `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) | 其他 |
 | `dwork-our-data-ourselves-2006` | [分布式噪声 — 大家一起加噪音比一个人加更安全](/study/papers/dwork-our-data-ourselves-2006/) | 其他 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
+| `e-path-egraph` | [E-Path — 把 CFG 优化从单行通道改成候选池](/study/papers/e-path-egraph/) | 其他 |
 | `e5-2022` | [E5 — 用海量"自然出现的文本对"训通用 embedding](/study/papers/e5-2022/) | 其他 |
 | `eagle` | [EAGLE — 让大模型先在"特征层"猜下一步而不是猜 token](/study/papers/eagle/) | 其他 |
 | `earley-parser` | [Earley Parser — 一个表能解析任何 CFG 的通用解析器](/study/papers/earley-parser/) | 其他 |
