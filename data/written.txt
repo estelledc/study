@@ -648,6 +648,7 @@ pnueli-temporal-1977
 pnuts-2008
 polar-codes-2009
 pottier-merr
+ppc-preplan
 ppo
 presumed-abort-1986
 product-quantization-2011
