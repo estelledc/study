@@ -977,6 +977,7 @@ axelar
 axios
 axolotl
 axum
+babylonjs
 backstage
 badger
 balancer
