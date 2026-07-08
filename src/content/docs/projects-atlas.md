@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 859 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 860 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：859 个
+- **总数**：860 个
 - **已分类**：214
-- **未分类**：645（落入"其他 / 待分类"段）
+- **未分类**：646（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 645 |
+| [其他 / 待分类](#其他--待分类) | 646 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 645 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 646 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -948,6 +948,7 @@ sidebar:
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) |
 | `phaser` | [Phaser — HTML5 2D 游戏框架](/study/projects/phaser/) |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) |
+| `picogl` | [PicoGL.js — WebGL2 的轻量图形封装](/study/projects/picogl/) |
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
 | `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) |
@@ -1155,7 +1156,7 @@ sidebar:
 
 ---
 
-## 全部 859 个（字母序）
+## 全部 860 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1726,6 +1727,7 @@ sidebar:
 | `pgvector` | [pgvector — PostgreSQL 向量扩展](/study/projects/pgvector/) | 其他 |
 | `phaser` | [Phaser — HTML5 2D 游戏框架](/study/projects/phaser/) | 其他 |
 | `phoenix` | [Phoenix — Elixir/OTP 上的实时 web 框架](/study/projects/phoenix/) | 其他 |
+| `picogl` | [PicoGL.js — WebGL2 的轻量图形封装](/study/projects/picogl/) | 其他 |
 | `pino` | [pino — 日志不该阻塞热路径](/study/projects/pino/) | 可观测 / 性能 |
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) | 其他 |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | 其他 |
