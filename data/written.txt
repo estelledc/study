@@ -1441,6 +1441,7 @@ mysql-server
 nanobrowser
 nanomq
 nanostores
+nativescript
 nats
 navigation2
 ncdu
