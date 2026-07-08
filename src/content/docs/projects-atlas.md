@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 845 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 846 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：845 个
+- **总数**：846 个
 - **已分类**：214
-- **未分类**：631（落入"其他 / 待分类"段）
+- **未分类**：632（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 631 |
+| [其他 / 待分类](#其他--待分类) | 632 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 631 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 632 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -559,6 +559,7 @@ sidebar:
 | `axelar` | [Axelar — 通用跨链 gateway](/study/projects/axelar/) |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) |
+| `babylonjs` | [Babylon.js — Microsoft Web 3D 引擎](/study/projects/babylonjs/) |
 | `backstage` | [Backstage — 把公司散在各处的开发工具拼成一个门户](/study/projects/backstage/) |
 | `badger` | [Badger — Go 写的键值分离 LSM](/study/projects/badger/) |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) |
@@ -1141,7 +1142,7 @@ sidebar:
 
 ---
 
-## 全部 845 个（字母序）
+## 全部 846 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1206,6 +1207,7 @@ sidebar:
 | `axios` | [axios — 浏览器和 Node 都能用的 HTTP 客户端](/study/projects/axios/) | HTTP 客户端 |
 | `axolotl` | [Axolotl — YAML 驱动 LLM 微调](/study/projects/axolotl/) | 其他 |
 | `axum` | [axum — 用 Rust 类型系统当『路由参数表』的 Web 框架](/study/projects/axum/) | 其他 |
+| `babylonjs` | [Babylon.js — Microsoft Web 3D 引擎](/study/projects/babylonjs/) | 其他 |
 | `backstage` | [Backstage — 把公司散在各处的开发工具拼成一个门户](/study/projects/backstage/) | 其他 |
 | `badger` | [Badger — Go 写的键值分离 LSM](/study/projects/badger/) | 其他 |
 | `balancer` | [Balancer V2 — 通用 AMM 与权重池](/study/projects/balancer/) | 其他 |
