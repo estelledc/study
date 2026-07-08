@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 861 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 862 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：861 个
+- **总数**：862 个
 - **已分类**：214
-- **未分类**：647（落入"其他 / 待分类"段）
+- **未分类**：648（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 647 |
+| [其他 / 待分类](#其他--待分类) | 648 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 647 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 648 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -993,6 +993,7 @@ sidebar:
 | `ray` | [Ray — 把单机 Python 函数和类无缝扩展到整个集群](/study/projects/ray/) |
 | `raylib` | [raylib — 极简 C 游戏库](/study/projects/raylib/) |
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) |
+| `react-native` | [React Native — 一套代码跑多端的跨端运行时](/study/projects/react-native/) |
 | `redash` | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) |
 | `redpanda` | [Redpanda — Kafka 兼容的 C++ 实现](/study/projects/redpanda/) |
 | `regl` | [regl — 函数式 WebGL 封装](/study/projects/regl/) |
@@ -1157,7 +1158,7 @@ sidebar:
 
 ---
 
-## 全部 861 个（字母序）
+## 全部 862 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1793,6 +1794,7 @@ sidebar:
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) | 其他 |
 | `react-hook-form` | [react-hook-form — input 不进 React state 也能写表单](/study/projects/react-hook-form/) | 表单 / Schema 校验 |
 | `react-intl` | [react-intl — 让 React 应用按 ICU 标准说人话](/study/projects/react-intl/) | i18n 国际化 |
+| `react-native` | [React Native — 一套代码跑多端的跨端运行时](/study/projects/react-native/) | 其他 |
 | `react-spring` | [react-spring — 用真实弹簧的物理写网页动画](/study/projects/react-spring/) | 动画 |
 | `recharts` | [Recharts — 用 JSX 直接拼出图表的 React 组件库](/study/projects/recharts/) | 数据可视化 |
 | `redash` | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) | 其他 |
