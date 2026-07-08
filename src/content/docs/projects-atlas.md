@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 824 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 825 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：824 个
+- **总数**：825 个
 - **已分类**：214
-- **未分类**：610（落入"其他 / 待分类"段）
+- **未分类**：611（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 610 |
+| [其他 / 待分类](#其他--待分类) | 611 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 610 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 611 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1096,6 +1096,7 @@ sidebar:
 | `webrtc-rs` | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) |
 | `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) |
 | `whisper` | [Whisper — OpenAI 多语言 ASR](/study/projects/whisper/) |
+| `wireguard-go` | [WireGuard-Go — WireGuard VPN 的 Go 用户态实现](/study/projects/wireguard-go/) |
 | `woodpecker` | [Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI](/study/projects/woodpecker/) |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) |
 | `xh` | [xh — HTTPie 的 Rust 重写版](/study/projects/xh/) |
@@ -1120,7 +1121,7 @@ sidebar:
 
 ---
 
-## 全部 824 个（字母序）
+## 全部 825 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1921,6 +1922,7 @@ sidebar:
 | `wezterm` | [WezTerm — Rust 写的 GPU 加速终端，配置用 Lua 还自带多路复用](/study/projects/wezterm/) | 其他 |
 | `whisper` | [Whisper — OpenAI 多语言 ASR](/study/projects/whisper/) | 其他 |
 | `why-did-you-render` | [why-did-you-render — 让 React 告诉你这次渲染到底为什么](/study/projects/why-did-you-render/) | 可观测 / 性能 |
+| `wireguard-go` | [WireGuard-Go — WireGuard VPN 的 Go 用户态实现](/study/projects/wireguard-go/) | 其他 |
 | `woodpecker` | [Woodpecker CI — Drone 闭源后社区接棒的轻量自托管 CI](/study/projects/woodpecker/) | 其他 |
 | `wormhole` | [Wormhole — 多链之间替你跑腿的"邮政系统"](/study/projects/wormhole/) | 其他 |
 | `wretch` | [wretch — 把 fetch 写成一条链](/study/projects/wretch/) | HTTP 客户端 |
