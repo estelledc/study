@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 931 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 932 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：931 篇
+- **总数**：932 篇
 - **已分类**：143
-- **未分类**：788（落入"其他 / 待分类"段）
+- **未分类**：789（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 788 |
+| [其他 / 待分类](#其他--待分类) | 789 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 788 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 789 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -965,6 +965,7 @@ sidebar:
 | `shellcheck` | [ShellCheck — 帮你抓 Bash 脚本里那些"半夜才发作"的坑](/study/papers/shellcheck/) |
 | `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) |
 | `shokri-mia-2017` | [Shokri MIA 2017 — 判断一条数据是否被模型见过](/study/papers/shokri-mia-2017/) |
+| `silo-oltp-2013` | [Silo: Speedy Transactions in Multicore In-Memory Databases](/study/papers/silo-oltp-2013/) |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) |
 | `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) |
 | `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) |
@@ -1099,7 +1100,7 @@ sidebar:
 
 ---
 
-## 全部 931 篇（字母序）
+## 全部 932 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1874,6 +1875,7 @@ sidebar:
 | `shenango-2019` | [Shenango — 每 5 微秒重新分一次核的中央调度器](/study/papers/shenango-2019/) | 其他 |
 | `shokri-mia-2017` | [Shokri MIA 2017 — 判断一条数据是否被模型见过](/study/papers/shokri-mia-2017/) | 其他 |
 | `sillito-questions` | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) | HCI / 软件工程研究 |
+| `silo-oltp-2013` | [Silo: Speedy Transactions in Multicore In-Memory Databases](/study/papers/silo-oltp-2013/) | 其他 |
 | `silt-2011` | [SILT — 0.7 字节内存索引一条记录的 flash 键值存储](/study/papers/silt-2011/) | 其他 |
 | `simhash-charikar-2002` | [SimHash — 用随机超平面把余弦相似度变成汉明距离](/study/papers/simhash-charikar-2002/) | 其他 |
 | `simrank-2002` | [SimRank — 两个节点相似当且仅当它们的邻居相似](/study/papers/simrank-2002/) | 其他 |
