@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 815 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 816 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：815 个
+- **总数**：816 个
 - **已分类**：214
-- **未分类**：601（落入"其他 / 待分类"段）
+- **未分类**：602（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 601 |
+| [其他 / 待分类](#其他--待分类) | 602 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 601 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 602 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -903,6 +903,7 @@ sidebar:
 | `optimism` | [Optimism — 以太坊 L2 旗舰栈，把交易搬到便宜车道再回主网结算](/study/projects/optimism/) |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) |
+| `outline` | [Outline — 团队 Wiki 协作平台](/study/projects/outline/) |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) |
 | `overleaf` | [Overleaf — 在线 LaTeX 协作](/study/projects/overleaf/) |
 | `paddle-lite` | [Paddle Lite — 端侧轻量推理引擎](/study/projects/paddle-lite/) |
@@ -1111,7 +1112,7 @@ sidebar:
 
 ---
 
-## 全部 815 个（字母序）
+## 全部 816 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1634,6 +1635,7 @@ sidebar:
 | `ora` | [ora — 终端 spinner 用 ANSI 反复擦写同一行](/study/projects/ora/) | Terminal / 终端 |
 | `orleans` | [Orleans — 让分布式服务写起来像单机对象](/study/projects/orleans/) | 其他 |
 | `otel-collector` | [OpenTelemetry Collector — 可观测性数据的统一中转站](/study/projects/otel-collector/) | 其他 |
+| `outline` | [Outline — 团队 Wiki 协作平台](/study/projects/outline/) | 其他 |
 | `ovenmediaengine` | [OvenMediaEngine — 亚秒级直播流媒体服务器](/study/projects/ovenmediaengine/) | 其他 |
 | `overleaf` | [Overleaf — 在线 LaTeX 协作](/study/projects/overleaf/) | 其他 |
 | `oxc` | [oxc — Rust 写一整套 JS/TS 工具链的勇气](/study/projects/oxc/) | 构建工具 / Bundler |
