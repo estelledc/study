@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 896 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 897 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：896 个
+- **总数**：897 个
 - **已分类**：214
-- **未分类**：682（落入"其他 / 待分类"段）
+- **未分类**：683（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 682 |
+| [其他 / 待分类](#其他--待分类) | 683 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 682 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 683 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1155,6 +1155,7 @@ sidebar:
 | `volta` | [Volta — cd 进项目就自动换 Node 版本的工具链管理器](/study/projects/volta/) |
 | `vscode` | [VS Code — 把编辑/调试/扩展捏成一个跨平台壳](/study/projects/vscode/) |
 | `vscodium` | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) |
+| `wails` | [wails — 学习笔记](/study/projects/wails/) |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
@@ -1192,7 +1193,7 @@ sidebar:
 
 ---
 
-## 全部 896 个（字母序）
+## 全部 897 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2048,6 +2049,7 @@ sidebar:
 | `vscodium` | [VSCodium — 去微软遥测的 VS Code 干净构建](/study/projects/vscodium/) | 其他 |
 | `vue` | [Vue.js — 渐进式 UI 框架](/study/projects/vue/) | UI 框架 / Frontend Framework |
 | `vue-i18n` | [vue-i18n — Vue 官方 i18n，切语言整页自己刷新](/study/projects/vue-i18n/) | i18n 国际化 |
+| `wails` | [wails — 学习笔记](/study/projects/wails/) | 其他 |
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) | 其他 |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | 其他 |
