@@ -977,6 +977,7 @@ aptos-core
 aragon
 arangodb
 arbitrum
+ardour
 arduino-cli
 argent-x
 argilla
