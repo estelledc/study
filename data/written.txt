@@ -1345,6 +1345,7 @@ mbedtls
 mcp-ts-sdk
 megatron-lm
 meilisearch
+melonjs
 memcached
 memgraph
 mender
