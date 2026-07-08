@@ -903,6 +903,7 @@ vega-lite
 vellvm
 velox-meta-2022
 verdi-2015
+vericache
 verisoft-2008
 vertica-2012
 verus-specgym
