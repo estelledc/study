@@ -554,6 +554,7 @@ mogul-1995-persistent-http
 monaghan-1992-sph
 monetdb-x100-2005
 monitors-1974
+morsel-driven-2014
 mptcp-2012
 mqtt-s-2008
 ms-marco-2016
