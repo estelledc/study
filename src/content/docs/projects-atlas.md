@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 846 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 847 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：846 个
+- **总数**：847 个
 - **已分类**：214
-- **未分类**：632（落入"其他 / 待分类"段）
+- **未分类**：633（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 632 |
+| [其他 / 待分类](#其他--待分类) | 633 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 632 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 633 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1052,6 +1052,7 @@ sidebar:
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
 | `superset` | [Apache Superset — 开源 BI 平台](/study/projects/superset/) |
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) |
+| `svt-av1` | [SVT-AV1 — Intel 主导的 AV1 编码器](/study/projects/svt-av1/) |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) |
 | `synapse` | [Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通](/study/projects/synapse/) |
 | `tabulator` | [Tabulator — 纯 JS 交互式表格](/study/projects/tabulator/) |
@@ -1142,7 +1143,7 @@ sidebar:
 
 ---
 
-## 全部 846 个（字母序）
+## 全部 847 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1863,6 +1864,7 @@ sidebar:
 | `surrealdb` | [SurrealDB — 一种语法吃下 SQL 图 文档 向量](/study/projects/surrealdb/) | 其他 |
 | `svelte` | [Svelte — 编译时 UI 框架](/study/projects/svelte/) | UI 框架 / Frontend Framework |
 | `sveltekit` | [SvelteKit — Svelte 全栈框架](/study/projects/sveltekit/) | Meta 框架 / 全栈 |
+| `svt-av1` | [SVT-AV1 — Intel 主导的 AV1 编码器](/study/projects/svt-av1/) | 其他 |
 | `swc` | [SWC — Rust 写的 TS/JS 编译器](/study/projects/swc/) | 构建工具 / Bundler |
 | `swr` | [SWR — React 远程数据 hook 的极简流派](/study/projects/swr/) | 数据获取 / 路由 |
 | `symfony` | [Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来](/study/projects/symfony/) | 其他 |
