@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 853 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 854 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：853 个
+- **总数**：854 个
 - **已分类**：214
-- **未分类**：639（落入"其他 / 待分类"段）
+- **未分类**：640（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 639 |
+| [其他 / 待分类](#其他--待分类) | 640 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 639 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 640 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -990,6 +990,7 @@ sidebar:
 | `react-flow` | [React Flow / xyflow — 节点编辑器框架](/study/projects/react-flow/) |
 | `redash` | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) |
 | `redpanda` | [Redpanda — Kafka 兼容的 C++ 实现](/study/projects/redpanda/) |
+| `regl` | [regl — 函数式 WebGL 封装](/study/projects/regl/) |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) |
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) |
@@ -1149,7 +1150,7 @@ sidebar:
 
 ---
 
-## 全部 853 个（字母序）
+## 全部 854 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1785,6 +1786,7 @@ sidebar:
 | `redash` | [Redash — 浏览器里写 SQL、出图、做仪表板的开源 BI](/study/projects/redash/) | 其他 |
 | `redis` | [Redis — 内存键值数据库](/study/projects/redis/) | 数据库本体 / 存储引擎 |
 | `redpanda` | [Redpanda — Kafka 兼容的 C++ 实现](/study/projects/redpanda/) | 其他 |
+| `regl` | [regl — 函数式 WebGL 封装](/study/projects/regl/) | 其他 |
 | `remix` | [Remix — 拥抱 Web 标准的 React 全栈框架](/study/projects/remix/) | Meta 框架 / 全栈 |
 | `remix-ide` | [Remix IDE — 浏览器内 Solidity IDE](/study/projects/remix-ide/) | 其他 |
 | `reservoir-sdk` | [Reservoir SDK — 跨市场 NFT 聚合](/study/projects/reservoir-sdk/) | 其他 |
