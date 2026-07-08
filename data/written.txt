@@ -1794,6 +1794,7 @@ vue-i18n
 walletconnect
 wandb
 warp
+wasmtime
 weaviate
 web-vitals
 web3-js
