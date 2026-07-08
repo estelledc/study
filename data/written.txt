@@ -1072,6 +1072,7 @@ dayjs
 dbt-core
 debezium
 deepspeed
+defold
 delta
 dendrite
 dgraph
