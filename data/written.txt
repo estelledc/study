@@ -1076,6 +1076,7 @@ dask
 databend
 datadog
 date-fns
+dav1d
 dayjs
 dbt-core
 debezium
