@@ -319,6 +319,7 @@ firecracker-2020
 flamingo-2022
 flan-2021
 flash-attention
+flat-datacenter-storage
 flexible-paxos-2016
 flexsc-2010
 flink-2015
