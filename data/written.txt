@@ -1450,6 +1450,7 @@ peerjs-server
 penpot
 pg-boss-readme
 pgvector
+phaser
 phoenix
 pino
 pinot
