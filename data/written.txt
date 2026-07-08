@@ -496,6 +496,7 @@ li-2018-redner
 li-t-closeness-2007
 lieberman-realtime-gc
 lindholm-2008-tesla
+linear-attention-still-2026
 linear-scan-reg-alloc
 linear-types
 linearizability-1990
@@ -884,6 +885,7 @@ turing-architecture-2018
 tvm
 tvm-2018
 twine-2020
+ucb-cs186-fa2024
 unified-memory-2014
 unix-1974
 v-system-1988
@@ -1396,6 +1398,7 @@ marlin
 matplotlib
 matrix-js-sdk
 matrix-rust-sdk
+matter-js
 mattermost
 mbedtls
 mcp-ts-sdk
