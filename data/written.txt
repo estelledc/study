@@ -1047,6 +1047,7 @@ cairo-lang
 cal-com
 calico
 candle
+cannon-es
 canvas-datagrid
 capacitor
 capnproto
