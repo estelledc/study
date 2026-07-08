@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 828 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 829 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：828 个
+- **总数**：829 个
 - **已分类**：214
-- **未分类**：614（落入"其他 / 待分类"段）
+- **未分类**：615（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 614 |
+| [其他 / 待分类](#其他--待分类) | 615 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 614 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 615 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -842,6 +842,7 @@ sidebar:
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) |
+| `mender` | [Mender — 给 IoT 设备做不会刷砖的 OTA 升级](/study/projects/mender/) |
 | `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) |
 | `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) |
@@ -1124,7 +1125,7 @@ sidebar:
 
 ---
 
-## 全部 828 个（字母序）
+## 全部 829 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1558,6 +1559,7 @@ sidebar:
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
 | `memcached` | [Memcached — 经典内存缓存](/study/projects/memcached/) | 其他 |
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) | 其他 |
+| `mender` | [Mender — 给 IoT 设备做不会刷砖的 OTA 升级](/study/projects/mender/) | 其他 |
 | `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) | 其他 |
 | `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) | 其他 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | 其他 |
