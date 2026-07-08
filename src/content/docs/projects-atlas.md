@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 852 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 853 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：852 个
+- **总数**：853 个
 - **已分类**：214
-- **未分类**：638（落入"其他 / 待分类"段）
+- **未分类**：639（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 638 |
+| [其他 / 待分类](#其他--待分类) | 639 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 638 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 639 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -691,6 +691,7 @@ sidebar:
 | `fastapi` | [FastAPI — 用 Python 类型注解写 API](/study/projects/fastapi/) |
 | `faster-whisper` | [faster-whisper — Whisper 的 4× 加速重写版](/study/projects/faster-whisper/) |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) |
+| `fdk-aac` | [FDK-AAC — Fraunhofer AAC 编解码库](/study/projects/fdk-aac/) |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) |
 | `ffmpeg` | [FFmpeg — 几乎所有视频工具背后都藏着它](/study/projects/ffmpeg/) |
@@ -1148,7 +1149,7 @@ sidebar:
 
 ---
 
-## 全部 852 个（字母序）
+## 全部 853 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1389,6 +1390,7 @@ sidebar:
 | `faster-whisper` | [faster-whisper — Whisper 的 4× 加速重写版](/study/projects/faster-whisper/) | 其他 |
 | `fastify` | [Fastify — 让 schema 替你写校验和序列化的 Node.js 框架](/study/projects/fastify/) | Web 框架 |
 | `fd` | [fd — Rust 写的现代 find](/study/projects/fd/) | 其他 |
+| `fdk-aac` | [FDK-AAC — Fraunhofer AAC 编解码库](/study/projects/fdk-aac/) | 其他 |
 | `feast` | [Feast — 让训练和上线用同一份特征定义的开源 Feature Store](/study/projects/feast/) | 其他 |
 | `ferretdb` | [FerretDB — 用 PostgreSQL 当后端的开源 MongoDB 协议代理](/study/projects/ferretdb/) | 其他 |
 | `ffmpeg` | [FFmpeg — 几乎所有视频工具背后都藏着它](/study/projects/ffmpeg/) | 其他 |
