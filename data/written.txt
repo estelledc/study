@@ -79,6 +79,7 @@ big-little-2011
 bigbench-2022
 biggan-2018
 bigtable-2006
+bigtable-revisit-2024
 bitcoin
 bittorrent-2003
 blackwell-architecture-2024
