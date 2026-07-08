@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 879 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 880 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：879 篇
+- **总数**：880 篇
 - **已分类**：143
-- **未分类**：736（落入"其他 / 待分类"段）
+- **未分类**：737（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 736 |
+| [其他 / 待分类](#其他--待分类) | 737 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 736 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 737 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -445,6 +445,7 @@ sidebar:
 | `columnar-storage-formats-2023` | [Columnar Storage Formats 2023 — Parquet/ORC 的体检报告](/study/papers/columnar-storage-formats-2023/) |
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) |
+| `compositional-incoherence` | [Compositional Incoherence — 多组件 LLM 拼出来的概率账单不守恒](/study/papers/compositional-incoherence/) |
 | `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) |
 | `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) |
@@ -1047,7 +1048,7 @@ sidebar:
 
 ---
 
-## 全部 879 篇（字母序）
+## 全部 880 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1216,6 +1217,7 @@ sidebar:
 | `comer-1979-btree` | [Comer 1979 — B-Tree 综述：为什么这棵树到处都有](/study/papers/comer-1979-btree/) | 其他 |
 | `compcert` | [CompCert — 每条优化都被数学证明保持语义的 C 编译器](/study/papers/compcert/) | 其他 |
 | `compiler-errors` | [Compiler Error Messages — 让编译报错有用](/study/papers/compiler-errors/) | 编译器 / 编程语言理论 |
+| `compositional-incoherence` | [Compositional Incoherence — 多组件 LLM 拼出来的概率账单不守恒](/study/papers/compositional-incoherence/) | 其他 |
 | `consistency-models-2023` | [Consistency Models — 把 50 步扩散压成 1 步出图](/study/papers/consistency-models-2023/) | 其他 |
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) | 其他 |
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
