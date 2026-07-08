@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 893 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 894 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：893 个
+- **总数**：894 个
 - **已分类**：214
-- **未分类**：679（落入"其他 / 待分类"段）
+- **未分类**：680（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 679 |
+| [其他 / 待分类](#其他--待分类) | 680 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 679 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 680 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1089,6 +1089,7 @@ sidebar:
 | `stern` | [stern — 多 pod 多 container 日志聚合 tail](/study/projects/stern/) |
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) |
+| `streamlink` | [Streamlink — 直播流提取器 — 学习笔记](/study/projects/streamlink/) |
 | `streamlit` | [Streamlit — Python 几行写 Web 应用](/study/projects/streamlit/) |
 | `sui` | [Sui — 把链上资产拆成一个个独立对象的 L1](/study/projects/sui/) |
 | `supercollider` | [SuperCollider — 用代码搭实时声音的“乐器工厂”](/study/projects/supercollider/) |
@@ -1189,7 +1190,7 @@ sidebar:
 
 ---
 
-## 全部 893 个（字母序）
+## 全部 894 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1941,6 +1942,7 @@ sidebar:
 | `storj` | [Storj — S3 兼容的去中心化对象存储](/study/projects/storj/) | 其他 |
 | `storybook` | [Storybook — 给 UI 组件的独立工作台](/study/projects/storybook/) | 测试 / 验证 |
 | `strawberry` | [Strawberry — 用 Python 类型注解直接生成 GraphQL schema](/study/projects/strawberry/) | 其他 |
+| `streamlink` | [Streamlink — 直播流提取器 — 学习笔记](/study/projects/streamlink/) | 其他 |
 | `streamlit` | [Streamlit — Python 几行写 Web 应用](/study/projects/streamlit/) | 其他 |
 | `styled-components` | [styled-components — React 生态最早的 CSS-in-JS 库](/study/projects/styled-components/) | CSS / 样式 |
 | `stylex` | [StyleX — 编译期把样式拍扁成原子 className 的 CSS-in-JS](/study/projects/stylex/) | CSS / 样式 |
