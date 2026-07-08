@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 804 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 805 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：804 个
+- **总数**：805 个
 - **已分类**：214
-- **未分类**：590（落入"其他 / 待分类"段）
+- **未分类**：591（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 590 |
+| [其他 / 待分类](#其他--待分类) | 591 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 590 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 591 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -702,6 +702,7 @@ sidebar:
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) |
+| `gazebo-classic` | [Gazebo Classic — 机器人世界的物理排练场](/study/projects/gazebo-classic/) |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) |
 | `geany` | [Geany — 用 C 写的轻量级 GTK 编辑器](/study/projects/geany/) |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) |
@@ -1100,7 +1101,7 @@ sidebar:
 
 ---
 
-## 全部 804 个（字母序）
+## 全部 805 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1353,6 +1354,7 @@ sidebar:
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | 其他 |
 | `fx` | [fx — JSON 的交互式查看器（jq 的 TUI 表亲）](/study/projects/fx/) | 其他 |
 | `fzf` | [fzf — 命令行模糊查找](/study/projects/fzf/) | 其他 |
+| `gazebo-classic` | [Gazebo Classic — 机器人世界的物理排练场](/study/projects/gazebo-classic/) | 其他 |
 | `gdu` | [gdu — Go 写的并发 du 替代，单二进制扔到服务器扫满盘几秒钟出 TUI](/study/projects/gdu/) | 其他 |
 | `geany` | [Geany — 用 C 写的轻量级 GTK 编辑器](/study/projects/geany/) | 其他 |
 | `gh` | [gh — GitHub 官方命令行](/study/projects/gh/) | 其他 |
