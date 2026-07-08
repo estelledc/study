@@ -1804,6 +1804,7 @@ wails
 walletconnect
 wandb
 warp
+wasmer
 wasmtime
 weaviate
 web-vitals
