@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 829 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 830 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：829 个
+- **总数**：830 个
 - **已分类**：214
-- **未分类**：615（落入"其他 / 待分类"段）
+- **未分类**：616（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 615 |
+| [其他 / 待分类](#其他--待分类) | 616 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 615 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 616 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -571,6 +571,7 @@ sidebar:
 | `bigbluebutton` | [BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）](/study/projects/bigbluebutton/) |
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) |
+| `blender` | [Blender — 全流程 3D 创作套件](/study/projects/blender/) |
 | `bokeh` | [Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流](/study/projects/bokeh/) |
 | `bookstack` | [BookStack — 文档型 Wiki](/study/projects/bookstack/) |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) |
@@ -1125,7 +1126,7 @@ sidebar:
 
 ---
 
-## 全部 829 个（字母序）
+## 全部 830 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1204,6 +1205,7 @@ sidebar:
 | `billboard-js` | [billboard.js — c3.js 的 TypeScript 继任者](/study/projects/billboard-js/) | 其他 |
 | `biome` | [Biome — JS/TS 工具链一体化（Rust 写的 linter+formatter）](/study/projects/biome/) | 构建工具 / Bundler |
 | `bitcoin-core` | [Bitcoin Core — 比特币参考实现](/study/projects/bitcoin-core/) | 其他 |
+| `blender` | [Blender — 全流程 3D 创作套件](/study/projects/blender/) | 其他 |
 | `bokeh` | [Bokeh — 浏览器端交互式 Python 图，可挂 Server 做实时数据流](/study/projects/bokeh/) | 其他 |
 | `bookstack` | [BookStack — 文档型 Wiki](/study/projects/bookstack/) | 其他 |
 | `botbuilder-js` | [Bot Framework SDK JS — 微软多渠道 chatbot 的 Adapter + Middleware 抽象](/study/projects/botbuilder-js/) | 其他 |
