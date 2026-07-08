@@ -1802,6 +1802,7 @@ vue
 vue-i18n
 wails
 walletconnect
+wamr
 wandb
 warp
 wasmer
