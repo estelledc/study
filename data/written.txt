@@ -837,6 +837,7 @@ veach-1995-mis
 veach-1997-mlt
 vega-lite
 vellvm
+velox-meta-2022
 verdi-2015
 verisoft-2008
 vertica-2012
