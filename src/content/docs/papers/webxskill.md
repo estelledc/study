@@ -158,3 +158,4 @@ WebXSkill 的特殊之处是把"web 这种结构化环境"的特点用足——U
 - [[skill-sd-self-distillation]] —— Skill-SD — 用 agent 自己抽出的 skill 当 dynamic teacher 自蒸馏
 - [[voyager]] —— Voyager — LLM 终身学习智能体
 
+- 2026-07-08: 本轮 round#0 复检补丁
