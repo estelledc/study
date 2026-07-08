@@ -1453,6 +1453,7 @@ plotly-js
 plotly-py
 plotnine
 plug
+pluto-jl
 pnpm
 pocketbase
 podman
