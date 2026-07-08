@@ -1721,6 +1721,7 @@ wireguard-go
 woodpecker
 wormhole
 wretch
+x264
 xh
 xi-editor
 xonsh
