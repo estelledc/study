@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 897 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 898 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：897 个
+- **总数**：898 个
 - **已分类**：214
-- **未分类**：683（落入"其他 / 待分类"段）
+- **未分类**：684（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 683 |
+| [其他 / 待分类](#其他--待分类) | 684 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 683 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 684 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1159,6 +1159,7 @@ sidebar:
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) |
+| `wasmer` | [Wasmer — 跨平台 wasm 运行时 — 学习笔记](/study/projects/wasmer/) |
 | `wasmtime` | [Wasmtime — Rust 实现的 WASM 运行时](/study/projects/wasmtime/) |
 | `web3-js` | [web3.js — 老牌 EVM JavaScript 客户端库](/study/projects/web3-js/) |
 | `webrtc-rs` | [webrtc-rs — Rust 纯实现 WebRTC 协议栈，对标 Go 世界的 Pion](/study/projects/webrtc-rs/) |
@@ -1193,7 +1194,7 @@ sidebar:
 
 ---
 
-## 全部 897 个（字母序）
+## 全部 898 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2053,6 +2054,7 @@ sidebar:
 | `walletconnect` | [WalletConnect — dApp 与钱包之间的加密对讲机](/study/projects/walletconnect/) | 其他 |
 | `wandb` | [Weights & Biases — 几行 init 把指标系统代码自动入库](/study/projects/wandb/) | 其他 |
 | `warp` | [warp — Rust 里把请求处理拼成 Filter 积木的 web 框架](/study/projects/warp/) | 其他 |
+| `wasmer` | [Wasmer — 跨平台 wasm 运行时 — 学习笔记](/study/projects/wasmer/) | 其他 |
 | `wasmtime` | [Wasmtime — Rust 实现的 WASM 运行时](/study/projects/wasmtime/) | 其他 |
 | `weaviate` | [Weaviate — 模块化向量数据库](/study/projects/weaviate/) | 数据库本体 / 存储引擎 |
 | `web-vitals` | [web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上](/study/projects/web-vitals/) | 可观测 / 性能 |
