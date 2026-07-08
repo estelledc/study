@@ -1216,6 +1216,7 @@ immer
 immich
 influxdb
 ink
+inkscape
 inngest
 invokeai
 ipfs
