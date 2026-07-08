@@ -1100,6 +1100,7 @@ deepspeed
 defold
 delta
 dendrite
+deno
 dgraph
 dhtmlx-gantt
 dify
