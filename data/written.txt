@@ -642,6 +642,7 @@ presumed-abort-1986
 product-quantization-2011
 program-comprehension-fmri
 programmer-interruption
+projection-bench
 prolog-colmerauer
 prototypical-networks-2017
 proverif-2001
