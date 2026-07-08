@@ -280,6 +280,7 @@ edm-2022
 effect-handlers
 efficient-compile-2011
 effiskill
+egglog-incremental-2026
 electra-2020
 elmo-2018
 emqx
