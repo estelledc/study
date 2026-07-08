@@ -625,6 +625,7 @@ pagerank-1998
 pair-programming
 panel
 park-2019-deepsdf
+parnas-information-hiding-1972
 parti-2022
 partial-evaluation-jones
 pascal-architecture-2016
