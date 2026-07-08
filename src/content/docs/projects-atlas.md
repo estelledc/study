@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 887 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 888 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：887 个
+- **总数**：888 个
 - **已分类**：214
-- **未分类**：673（落入"其他 / 待分类"段）
+- **未分类**：674（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 673 |
+| [其他 / 待分类](#其他--待分类) | 674 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 673 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 674 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -973,6 +973,7 @@ sidebar:
 | `picogl` | [PicoGL.js — WebGL2 的轻量图形封装](/study/projects/picogl/) |
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
+| `planck` | [planck.js — 纯 JS Box2D 生态](/study/projects/planck/) |
 | `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) |
 | `playcanvas` | [PlayCanvas — Web 3D 引擎与可视化应用](/study/projects/playcanvas/) |
 | `plotly-js` | [Plotly.js — 一个 JSON 描述任何图表的浏览器全家桶](/study/projects/plotly-js/) |
@@ -1183,7 +1184,7 @@ sidebar:
 
 ---
 
-## 全部 887 个（字母序）
+## 全部 888 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1781,6 +1782,7 @@ sidebar:
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) | 其他 |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | 其他 |
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | 图像处理 / Canvas |
+| `planck` | [planck.js — 纯 JS Box2D 生态](/study/projects/planck/) | 其他 |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
 | `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) | 其他 |
 | `playcanvas` | [PlayCanvas — Web 3D 引擎与可视化应用](/study/projects/playcanvas/) | 其他 |
