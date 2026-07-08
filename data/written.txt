@@ -1716,6 +1716,7 @@ zcash
 zed
 zellij
 zephyr
+zeppelin
 zettlr
 zincsearch
 zksync-era
