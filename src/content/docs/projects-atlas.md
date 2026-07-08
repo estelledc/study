@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 826 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 827 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：826 个
+- **总数**：827 个
 - **已分类**：214
-- **未分类**：612（落入"其他 / 待分类"段）
+- **未分类**：613（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 612 |
+| [其他 / 待分类](#其他--待分类) | 613 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 612 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 613 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -994,6 +994,7 @@ sidebar:
 | `seaborn` | [seaborn — matplotlib 之上的一行统计图](/study/projects/seaborn/) |
 | `sealed-secrets` | [Sealed Secrets — 把加密后的 Secret 安全提交到 Git](/study/projects/sealed-secrets/) |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
+| `shadowsocks-libev` | [Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理](/study/projects/shadowsocks-libev/) |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
 | `shell-gpt` | [shell-gpt — 把 LLM 接进 shell 当命令行助理](/study/projects/shell-gpt/) |
@@ -1122,7 +1123,7 @@ sidebar:
 
 ---
 
-## 全部 826 个（字母序）
+## 全部 827 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1770,6 +1771,7 @@ sidebar:
 | `sequelize` | [Sequelize — 老牌 Node ORM](/study/projects/sequelize/) | ORM / DB 客户端 |
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) | 其他 |
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
+| `shadowsocks-libev` | [Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理](/study/projects/shadowsocks-libev/) | 其他 |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) | 其他 |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
