@@ -1295,6 +1295,7 @@ lexical
 lf
 librechat
 libsignal
+libvpx
 lightdash
 lighthouse
 lightningcss
