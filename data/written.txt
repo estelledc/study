@@ -1371,6 +1371,7 @@ ollama
 open-sora
 openai-agents-sdk
 opencode
+openhab
 openlayers
 openmeetings
 openrct2
