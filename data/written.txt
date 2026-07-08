@@ -667,6 +667,7 @@ regev-lwe-2005
 replug-2023
 reps-ifds
 resnet
+resolution-diagnostics-llm
 rest-fielding-2000
 retro
 reynolds-definitional-interpreters
