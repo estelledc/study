@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 868 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 869 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：868 个
+- **总数**：869 个
 - **已分类**：214
-- **未分类**：654（落入"其他 / 待分类"段）
+- **未分类**：655（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 654 |
+| [其他 / 待分类](#其他--待分类) | 655 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 654 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 655 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -685,6 +685,7 @@ sidebar:
 | `esp-dl` | [ESP-DL — 把小模型塞进 ESP32 的推理库](/study/projects/esp-dl/) |
 | `esphome` | [ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件](/study/projects/esphome/) |
 | `espurna` | [ESPurna — 给便宜智能开关换一套本地大脑](/study/projects/espurna/) |
+| `essentia` | [Essentia — 音乐信息检索工具箱](/study/projects/essentia/) |
 | `etherpad-lite` | [Etherpad — 经典协作文本编辑器](/study/projects/etherpad-lite/) |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) |
 | `evidence` | [Evidence — 把 Markdown + SQL 编译成静态报告站](/study/projects/evidence/) |
@@ -1164,7 +1165,7 @@ sidebar:
 
 ---
 
-## 全部 868 个（字母序）
+## 全部 869 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1394,6 +1395,7 @@ sidebar:
 | `esp-dl` | [ESP-DL — 把小模型塞进 ESP32 的推理库](/study/projects/esp-dl/) | 其他 |
 | `esphome` | [ESPHome — 用 YAML 给 ESP32 / ESP8266 生成智能家居固件](/study/projects/esphome/) | 其他 |
 | `espurna` | [ESPurna — 给便宜智能开关换一套本地大脑](/study/projects/espurna/) | 其他 |
+| `essentia` | [Essentia — 音乐信息检索工具箱](/study/projects/essentia/) | 其他 |
 | `etcd` | [etcd — 分布式键值数据库](/study/projects/etcd/) | DevOps / 容器 / 运维 |
 | `etherpad-lite` | [Etherpad — 经典协作文本编辑器](/study/projects/etherpad-lite/) | 其他 |
 | `ethers-js` | [ethers.js — 浏览器和 Node 都能用的以太坊客户端库](/study/projects/ethers-js/) | 其他 |
