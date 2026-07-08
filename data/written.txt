@@ -642,6 +642,7 @@ openhands
 opensearch
 optuna
 orca-continuous-batching
+oscar-int2-kv
 ot-1989
 owens-2007-gpgpu-survey
 p4-2014
