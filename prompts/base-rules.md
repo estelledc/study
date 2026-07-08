@@ -95,6 +95,8 @@ mis.sankuai / cagent_fe_h5_blindbox / LongCat / 美团
 }
 ```
 
+`lines` 必须取 quality gate 输出 JSON 的 `details.lines.lines`，不要用 `wc -l`、编辑器行号或人工估算。主流程会用同一口径验收 `/tmp/study-worker-results.json`。
+
 失败（任一 self-check 不过）：
 ```json
 {

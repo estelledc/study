@@ -52,6 +52,8 @@ git add src/content/docs/projects/{{slug}}.md
 git commit -m "rewrite: {{slug}} 用零基础模板重写"
 ```
 
+保留 quality gate 输出 JSON；返回成功 JSON 里的 `lines` 必须取 `details.lines.lines`，不要用 `wc -l` 或编辑器行号。
+
 ## 返回格式
 
 与 `new-paper.md` 同。

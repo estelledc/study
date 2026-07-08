@@ -94,6 +94,8 @@ node {{quality_gate_path}} {{output_path}}
 # 退出码非 0 → 读 reasons，重试一次（重写）；仍 fail → 返回 failed JSON
 ```
 
+保留 quality gate 输出 JSON；返回成功 JSON 里的 `lines` 必须取 `details.lines.lines`，不要用 `wc -l` 或编辑器行号。
+
 通过后 commit（在 worktree 内，不要切回 main）：
 
 ```bash
@@ -117,6 +119,8 @@ git commit -m "feat: {{slug}} 新建零基础笔记（{{topic}}）"
   "elapsed_ms": <number>
 }
 ```
+
+`lines` 必须来自 quality gate 输出 JSON 的 `details.lines.lines`。
 
 失败（self-check 两次都不过 / 工具不可用 / commit 失败）：
 ```json

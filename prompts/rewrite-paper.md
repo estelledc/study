@@ -55,6 +55,8 @@ node {{quality_gate_path}} {{output_path}}
 # 非 0 → 重写一次；仍 fail → failed
 ```
 
+保留 quality gate 输出 JSON；返回成功 JSON 里的 `lines` 必须取 `details.lines.lines`，不要用 `wc -l` 或编辑器行号。
+
 ```bash
 git add src/content/docs/papers/{{slug}}.md
 git commit -m "rewrite: {{slug}} 用零基础模板重写"

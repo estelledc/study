@@ -95,7 +95,11 @@ lr graph build "<arxiv-id>"  # 引用图谱
 操作：
 
 ```bash
-lr pdf outline "<paper.pdf>"  # 或手工读目录
+node scripts/mineru-extract-url.mjs \
+  --url "<paper-url-or-pdf-url>" \
+  --slug "<slug>" \
+  --out /tmp/<slug>-mineru/full.md
+# 读 /tmp/<slug>-mineru/full.md 的标题层级；不要用 lr pdf 解析全文
 ```
 
 输出"章节角色注释表"——每个 section 写一句它的角色：
@@ -125,7 +129,7 @@ lr pdf outline "<paper.pdf>"  # 或手工读目录
 操作：
 
 1. 选定 figure / algorithm（来自 Layer 2）
-2. **嵌入原图到笔记**（用 lr pdf 提图或截图）
+2. **嵌入原图到笔记**：先用 MinerU `full.md` 定位 figure / caption；需要图片时手工从 PDF 截图，或引用论文官网 / 作者公开图源。不要用 `lr pdf` 提图或解析全文
 3. 在笔记里写：
    - x 轴 / y 轴是什么单位
    - baseline 是谁，为什么选这几个 baseline
@@ -330,7 +334,8 @@ sidebar:
 | 搜论文 | `lr search "<query>" --year 2022-2026 --min-citations 50` |
 | 看推荐 | `lr papers` |
 | 引用图谱 | `lr graph build "<arxiv-id>"` |
-| 提 PDF 里的图 | `lr pdf image "<paper.pdf>" -p <page>` |
+| 解析 PDF 全文 | `node scripts/mineru-extract-url.mjs --url "<url>" --slug "<slug>" --out /tmp/<slug>-mineru/full.md` |
+| 定位 / 提取 figure | 读 MinerU `full.md` 的 figure / caption；图片用手工截图或作者公开图源，不走 `lr pdf` |
 | Agent 综述（多轮检索） | `lr agent "<topic>"` |
 
 ## 质量门：状元篇 Checklist

@@ -65,6 +65,8 @@ git add src/content/docs/projects/{{slug}}.md
 git commit -m "feat: {{slug}} 新建零基础笔记（{{topic}}）"
 ```
 
+保留 quality gate 输出 JSON；返回成功 JSON 里的 `lines` 必须取 `details.lines.lines`，不要用 `wc -l` 或编辑器行号。
+
 ## 返回格式
 
 与 `new-paper.md` 同：成功 / 失败 JSON。
