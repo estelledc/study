@@ -1483,6 +1483,7 @@ piper
 pixi
 plane
 platformio-core
+playcanvas
 playwright
 plotly-js
 plotly-py
