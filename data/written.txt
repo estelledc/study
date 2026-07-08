@@ -1281,6 +1281,7 @@ lite-xl
 litellm-proxy
 litestar
 litmus
+littlefs
 liveblocks
 livekit-flutter
 llama-cpp
