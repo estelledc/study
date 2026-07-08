@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 923 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 924 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：923 篇
+- **总数**：924 篇
 - **已分类**：143
-- **未分类**：780（落入"其他 / 待分类"段）
+- **未分类**：781（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 780 |
+| [其他 / 待分类](#其他--待分类) | 781 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 780 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 781 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -352,6 +352,7 @@ sidebar:
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) |
 | `b4-2013` | [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) |
+| `backus-fp-1978` | [Backus FP 1978 — 把程序从赋值循环里解放出来](/study/papers/backus-fp-1978/) |
 | `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) |
 | `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) |
 | `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) |
@@ -1091,7 +1092,7 @@ sidebar:
 
 ---
 
-## 全部 923 篇（字母序）
+## 全部 924 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1150,6 +1151,7 @@ sidebar:
 | `azure-storage-2011` | [Windows Azure Storage 2011 — 云对象存储第一次在工业界做到强一致](/study/papers/azure-storage-2011/) | 其他 |
 | `b-tree-1972` | [B-Tree 1972 — 磁盘友好的索引结构](/study/papers/b-tree-1972/) | 其他 |
 | `b4-2013` | [B4 — Google 用 SDN 把跨数据中心 WAN 利用率拉到 95%+](/study/papers/b4-2013/) | 其他 |
+| `backus-fp-1978` | [Backus FP 1978 — 把程序从赋值循环里解放出来](/study/papers/backus-fp-1978/) | 其他 |
 | `badger` | [BadgerDB — 把键和值分开存的 Go 原生 KV 库](/study/papers/badger/) | 其他 |
 | `baraff-witkin-1998-cloth` | [Baraff-Witkin 1998 — 让布料模拟敢走大时间步](/study/papers/baraff-witkin-1998-cloth/) | 其他 |
 | `barrelfish-2009` | [Barrelfish / Multikernel — 把多核机器当成一个小型网络来设计 OS](/study/papers/barrelfish-2009/) | 其他 |
