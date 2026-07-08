@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 865 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 866 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：865 个
+- **总数**：866 个
 - **已分类**：214
-- **未分类**：651（落入"其他 / 待分类"段）
+- **未分类**：652（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 651 |
+| [其他 / 待分类](#其他--待分类) | 652 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 651 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 652 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -767,6 +767,7 @@ sidebar:
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) |
 | `inkscape` | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) |
+| `ionic-framework` | [ionic-framework](/study/projects/ionic-framework/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) |
 | `janus-gateway` | [Janus WebRTC Gateway — 轻量 WebRTC 服务器和插件底座](/study/projects/janus-gateway/) |
@@ -1161,7 +1162,7 @@ sidebar:
 
 ---
 
-## 全部 865 个（字母序）
+## 全部 866 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1490,6 +1491,7 @@ sidebar:
 | `inkscape` | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) | 其他 |
 | `inngest` | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | 其他基础设施 |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) | 其他 |
+| `ionic-framework` | [ionic-framework](/study/projects/ionic-framework/) | 其他 |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | 其他 |
 | `istio` | [Istio — 给微服务装一层透明的网络治理面](/study/projects/istio/) | 其他 |
 | `jaeger` | [Jaeger — 分布式追踪系统](/study/projects/jaeger/) | 监控 / 时序 |
