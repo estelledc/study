@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 814 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 815 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：814 个
+- **总数**：815 个
 - **已分类**：214
-- **未分类**：600（落入"其他 / 待分类"段）
+- **未分类**：601（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 600 |
+| [其他 / 待分类](#其他--待分类) | 601 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 600 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 601 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -730,6 +730,7 @@ sidebar:
 | `greenplum-db` | [Greenplum — Postgres 改的 MPP 数仓](/study/projects/greenplum-db/) |
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) |
+| `gstreamer` | [GStreamer — 用积木管线处理音视频](/study/projects/gstreamer/) |
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) |
 | `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) |
@@ -1110,7 +1111,7 @@ sidebar:
 
 ---
 
-## 全部 814 个（字母序）
+## 全部 815 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1394,6 +1395,7 @@ sidebar:
 | `gron` | [gron — 把 JSON 拍平成 grep 能吃的赋值行](/study/projects/gron/) | 其他 |
 | `grpc-go` | [gRPC-Go — Google RPC 框架的官方 Go 实现](/study/projects/grpc-go/) | 其他 |
 | `gsap` | [GSAP — GreenSock 高性能动画](/study/projects/gsap/) | 动画 |
+| `gstreamer` | [GStreamer — 用积木管线处理音视频](/study/projects/gstreamer/) | 其他 |
 | `gum` | [gum — 把 TUI 组件搬进 shell 脚本](/study/projects/gum/) | 其他 |
 | `hadolint` | [hadolint — 给 Dockerfile 做体检的小工具](/study/projects/hadolint/) | 其他 |
 | `hanami` | [Hanami — Ruby 里既不是 Rails 也不是 Sinatra 的第三选择](/study/projects/hanami/) | 其他 |
