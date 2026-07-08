@@ -1026,6 +1026,7 @@ bookstack
 botbuilder-js
 botpress
 bottom
+box2d
 boxen
 broot
 browser-use
