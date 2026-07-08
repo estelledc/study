@@ -1725,6 +1725,7 @@ woodpecker
 wormhole
 wretch
 x264
+x265
 xh
 xi-editor
 xonsh
