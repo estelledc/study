@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 811 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 812 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：811 个
+- **总数**：812 个
 - **已分类**：214
-- **未分类**：597（落入"其他 / 待分类"段）
+- **未分类**：598（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 597 |
+| [其他 / 待分类](#其他--待分类) | 598 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 597 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 598 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -737,6 +737,7 @@ sidebar:
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) |
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) |
+| `hedgedoc` | [HedgeDoc — 协作 Markdown 编辑](/study/projects/hedgedoc/) |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) |
 | `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) |
 | `hnswlib` | [hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它](/study/projects/hnswlib/) |
@@ -1107,7 +1108,7 @@ sidebar:
 
 ---
 
-## 全部 811 个（字母序）
+## 全部 812 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1398,6 +1399,7 @@ sidebar:
 | `haraka` | [Haraka — 用 Node.js 写插件链式架构的 SMTP 服务器](/study/projects/haraka/) | 其他 |
 | `hardhat` | [Hardhat — Nomic Foundation 的 JS 合约框架](/study/projects/hardhat/) | 其他 |
 | `haystack` | [Haystack — 企业 NLP / RAG 流水线](/study/projects/haystack/) | 其他 |
+| `hedgedoc` | [HedgeDoc — 协作 Markdown 编辑](/study/projects/hedgedoc/) | 其他 |
 | `helidon` | [Helidon — 让 Java 微服务用同步代码写出反应式性能](/study/projects/helidon/) | 其他 |
 | `helix` | [Helix — Rust 后现代模态编辑器，LSP 和 Tree-sitter 默认开机](/study/projects/helix/) | 其他 |
 | `helm` | [Helm — Kubernetes 包管理器](/study/projects/helm/) | DevOps / 容器 / 运维 |
