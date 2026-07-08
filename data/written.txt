@@ -975,6 +975,7 @@ bigbluebutton
 billboard-js
 biome
 bitcoin-core
+blender
 bokeh
 bookstack
 botbuilder-js
