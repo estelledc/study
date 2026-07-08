@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 882 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 883 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：882 个
+- **总数**：883 个
 - **已分类**：214
-- **未分类**：668（落入"其他 / 待分类"段）
+- **未分类**：669（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 668 |
+| [其他 / 待分类](#其他--待分类) | 669 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 668 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 669 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -844,6 +844,7 @@ sidebar:
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
+| `llrt` | [LLRT — AWS Lambda 场景下的低延迟 JS 运行时](/study/projects/llrt/) |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) |
 | `lmms` | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) |
@@ -1178,7 +1179,7 @@ sidebar:
 
 ---
 
-## 全部 882 个（字母序）
+## 全部 883 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1605,6 +1606,7 @@ sidebar:
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) | 其他 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
+| `llrt` | [LLRT — AWS Lambda 场景下的低延迟 JS 运行时](/study/projects/llrt/) | 其他 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
 | `lmms` | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) | 其他 |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | 其他 |
