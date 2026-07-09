@@ -1559,6 +1559,7 @@ open-sora
 open3d
 openai-agents-sdk
 opencode
+opencv
 openhab
 openlayers
 openmeetings
