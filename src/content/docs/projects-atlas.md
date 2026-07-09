@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 940 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 941 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：940 个
+- **总数**：941 个
 - **已分类**：214
-- **未分类**：726（落入"其他 / 待分类"段）
+- **未分类**：727（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 726 |
+| [其他 / 待分类](#其他--待分类) | 727 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 726 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 727 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -734,6 +734,7 @@ sidebar:
 | `fooocus` | [Fooocus — 把 SDXL 做成傻瓜机](/study/projects/fooocus/) |
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) |
 | `frappe-gantt` | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) |
+| `freecad` | [FreeCAD — 参数化 CAD](/study/projects/freecad/) |
 | `freemodbus` | [FreeModbus：嵌入式设备的 Modbus 从站协议栈](/study/projects/freemodbus/) |
 | `freertos` | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) |
@@ -1236,7 +1237,7 @@ sidebar:
 
 ---
 
-## 全部 940 个（字母序）
+## 全部 941 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1521,6 +1522,7 @@ sidebar:
 | `foundry` | [Foundry — Paradigm 出品的 Rust 合约工具链](/study/projects/foundry/) | 其他 |
 | `framer-motion` | [Framer Motion — React 声明式动画](/study/projects/framer-motion/) | 动画 |
 | `frappe-gantt` | [Frappe Gantt — 200 行 SVG 写出的甘特图](/study/projects/frappe-gantt/) | 其他 |
+| `freecad` | [FreeCAD — 参数化 CAD](/study/projects/freecad/) | 其他 |
 | `freemodbus` | [FreeModbus：嵌入式设备的 Modbus 从站协议栈](/study/projects/freemodbus/) | 其他 |
 | `freertos` | [FreeRTOS-Kernel — KB 级 RAM 跑得动的可抢占多任务内核](/study/projects/freertos/) | 其他 |
 | `freeswitch` | [FreeSWITCH — 多线程软交换内核，给电话/视频会议当骨架](/study/projects/freeswitch/) | 其他 |
