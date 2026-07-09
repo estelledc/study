@@ -747,6 +747,7 @@ resnet
 resolution-diagnostics-llm
 rest-fielding-2000
 retro
+reyes-1987
 reynolds-definitional-interpreters
 reynolds-separation-logic
 rfc-3833-dns-threats
