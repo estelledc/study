@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 988 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 989 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：988 篇
+- **总数**：989 篇
 - **已分类**：143
-- **未分类**：845（落入"其他 / 待分类"段）
+- **未分类**：846（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 845 |
+| [其他 / 待分类](#其他--待分类) | 846 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 845 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 846 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -496,6 +496,7 @@ sidebar:
 | `danezis-sphinx-2009` | [Danezis-Sphinx 2009 — 把匿名转发包压到可实用的大小](/study/papers/danezis-sphinx-2009/) |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) |
 | `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) |
+| `data-lake-management-2019` | [Data Lake Management 2019 — 数据湖从文件堆变成可治理资产](/study/papers/data-lake-management-2019/) |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |
@@ -1156,7 +1157,7 @@ sidebar:
 
 ---
 
-## 全部 988 篇（字母序）
+## 全部 989 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1382,6 +1383,7 @@ sidebar:
 | `danezis-sphinx-2009` | [Danezis-Sphinx 2009 — 把匿名转发包压到可实用的大小](/study/papers/danezis-sphinx-2009/) | 其他 |
 | `dapper-2010` | [Dapper — Google 大规模分布式系统链路追踪基础设施](/study/papers/dapper-2010/) | 其他 |
 | `dash-numa-1992` | [Stanford DASH — 第一台真跑起来的目录式 CC-NUMA 多处理器](/study/papers/dash-numa-1992/) | 其他 |
+| `data-lake-management-2019` | [Data Lake Management 2019 — 数据湖从文件堆变成可治理资产](/study/papers/data-lake-management-2019/) | 其他 |
 | `dataflow-model-2015` | [Dataflow Model — 流处理的四问框架](/study/papers/dataflow-model-2015/) | 其他 |
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) | 其他 |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 其他 |
