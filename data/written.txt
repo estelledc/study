@@ -612,6 +612,7 @@ mueller-2007-pbd
 mueller-2022-instant-ngp
 multics-1965
 muzero
+mvcc
 mycroft-strictness
 naiad-2013
 naiad-2013-sosp
