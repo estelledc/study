@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 960 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 961 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：960 篇
+- **总数**：961 篇
 - **已分类**：143
-- **未分类**：817（落入"其他 / 待分类"段）
+- **未分类**：818（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 817 |
+| [其他 / 待分类](#其他--待分类) | 818 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 817 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 818 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -539,6 +539,7 @@ sidebar:
 | `duchi-local-dp-2013` | [Duchi 2013 — 本地差分隐私的统计极限](/study/papers/duchi-local-dp-2013/) |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) |
 | `dwork-calibrating-noise-2006` | [校准噪声 — 往统计结果里加多少噪音才能保护隐私](/study/papers/dwork-calibrating-noise-2006/) |
+| `dwork-dp-2006` | [Dwork DP 2006 — 用相邻数据集定义隐私](/study/papers/dwork-dp-2006/) |
 | `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) |
 | `dwork-our-data-ourselves-2006` | [分布式噪声 — 大家一起加噪音比一个人加更安全](/study/papers/dwork-our-data-ourselves-2006/) |
 | `e-path-egraph` | [E-Path — 把 CFG 优化从单行通道改成候选池](/study/papers/e-path-egraph/) |
@@ -1128,7 +1129,7 @@ sidebar:
 
 ---
 
-## 全部 960 篇（字母序）
+## 全部 961 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1409,6 +1410,7 @@ sidebar:
 | `duchi-local-dp-2013` | [Duchi 2013 — 本地差分隐私的统计极限](/study/papers/duchi-local-dp-2013/) | 其他 |
 | `duckdb-2019` | [DuckDB — 把 OLAP 数据库塞进你的 Python 进程](/study/papers/duckdb-2019/) | 其他 |
 | `dwork-calibrating-noise-2006` | [校准噪声 — 往统计结果里加多少噪音才能保护隐私](/study/papers/dwork-calibrating-noise-2006/) | 其他 |
+| `dwork-dp-2006` | [Dwork DP 2006 — 用相邻数据集定义隐私](/study/papers/dwork-dp-2006/) | 其他 |
 | `dwork-dp-icalp-2006` | [差分隐私 — 让统计结果有用但查不到任何一个人](/study/papers/dwork-dp-icalp-2006/) | 其他 |
 | `dwork-our-data-ourselves-2006` | [分布式噪声 — 大家一起加噪音比一个人加更安全](/study/papers/dwork-our-data-ourselves-2006/) | 其他 |
 | `dynamo` | [Dynamo — 让购物车永远能写入的分布式存储](/study/papers/dynamo/) | 数据库 |
