@@ -574,6 +574,7 @@ madry-pgd-2017
 mae
 magic3d-2023
 mahajan-2002-bgp-misconfig
+making-smart-contracts-smarter
 mamba
 maml-2017
 mapreduce
