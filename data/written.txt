@@ -1474,6 +1474,7 @@ nanomq
 nanostores
 nativescript
 nats
+nats-server
 navigation2
 ncdu
 ncnn
