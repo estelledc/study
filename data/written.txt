@@ -1417,6 +1417,7 @@ lerna
 leveldb
 lexical
 lf
+librecad
 librechat
 librosa
 libsignal
