@@ -1021,6 +1021,7 @@ apollo-server
 appflowy
 appwrite
 aptos-core
+ar-js
 aragon
 arangodb
 arbitrum
