@@ -1854,6 +1854,7 @@ victoriametrics
 video.js
 viem
 vim
+vips
 vis-network
 vis-timeline
 visx
