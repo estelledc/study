@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 961 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 962 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：961 篇
+- **总数**：962 篇
 - **已分类**：143
-- **未分类**：818（落入"其他 / 待分类"段）
+- **未分类**：819（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 818 |
+| [其他 / 待分类](#其他--待分类) | 819 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 818 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 819 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -501,6 +501,7 @@ sidebar:
 | `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) |
 | `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |
+| `delta-lake-2020` | [Delta Lake 2020 — 给对象存储补上事务日志](/study/papers/delta-lake-2020/) |
 | `demikernel-2021` | [Demikernel 2021 — 微秒级数据中心的 LibOS 架构](/study/papers/demikernel-2021/) |
 | `demystifying-data-org` | [Demystifying Data Organization — 给训练数据排队的四条原则](/study/papers/demystifying-data-org/) |
 | `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) |
@@ -1129,7 +1130,7 @@ sidebar:
 
 ---
 
-## 全部 961 篇（字母序）
+## 全部 962 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1364,6 +1365,7 @@ sidebar:
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) | 其他 |
+| `delta-lake-2020` | [Delta Lake 2020 — 给对象存储补上事务日志](/study/papers/delta-lake-2020/) | 其他 |
 | `demikernel-2021` | [Demikernel 2021 — 微秒级数据中心的 LibOS 架构](/study/papers/demikernel-2021/) | 其他 |
 | `demystifying-data-org` | [Demystifying Data Organization — 给训练数据排队的四条原则](/study/papers/demystifying-data-org/) | 其他 |
 | `denali-2002` | [Denali — 在一台机器上同时跑上千个轻量 VM 的早期实验](/study/papers/denali-2002/) | 其他 |
