@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1010 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1011 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1010 篇
+- **总数**：1011 篇
 - **已分类**：143
-- **未分类**：867（落入"其他 / 待分类"段）
+- **未分类**：868（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 867 |
+| [其他 / 待分类](#其他--待分类) | 868 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 867 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 868 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -346,6 +346,7 @@ sidebar:
 | `atlas-2022` | [Atlas — 把检索器和生成器一起训练，11B 打 540B](/study/papers/atlas-2022/) |
 | `atzei-eth-attacks-2017` | [Atzei Ethereum Attacks 2017 — 给智能合约漏洞做三层分类](/study/papers/atzei-eth-attacks-2017/) |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) |
+| `autograph-2004` | [Autograph 2004 — 自动给蠕虫写内容签名](/study/papers/autograph-2004/) |
 | `autonomous-driving-waymo-2021` | [Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving](/study/papers/autonomous-driving-waymo-2021/) |
 | `av2-video-spec` | [AV2 视频编码评测方法与压缩性能](/study/papers/av2-video-spec/) |
 | `avgustinov-codeql-2016` | [QL / CodeQL — 用面向对象外壳写可扩展代码查询](/study/papers/avgustinov-codeql-2016/) |
@@ -1178,7 +1179,7 @@ sidebar:
 
 ---
 
-## 全部 1010 篇（字母序）
+## 全部 1011 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1231,6 +1232,7 @@ sidebar:
 | `aurora` | [Aurora — 把数据库的下半身换成日志机](/study/papers/aurora/) | 数据库 |
 | `aurora-exascale-2024` | [Aurora 2024 — 不用 NVIDIA 也能造 2 EFLOPS 超算](/study/papers/aurora-exascale-2024/) | 其他 |
 | `autogen` | [AutoGen — 多智能体对话框架](/study/papers/autogen/) | 智能体与 LLM 系统 |
+| `autograph-2004` | [Autograph 2004 — 自动给蠕虫写内容签名](/study/papers/autograph-2004/) | 其他 |
 | `autonomous-driving-waymo-2021` | [Waymo Open Dataset: A Large-Scale Dataset for Autonomous Driving](/study/papers/autonomous-driving-waymo-2021/) | 其他 |
 | `av2-video-spec` | [AV2 视频编码评测方法与压缩性能](/study/papers/av2-video-spec/) | 其他 |
 | `avgustinov-codeql-2016` | [QL / CodeQL — 用面向对象外壳写可扩展代码查询](/study/papers/avgustinov-codeql-2016/) | 其他 |
