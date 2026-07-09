@@ -1250,6 +1250,7 @@ gitui
 glab
 glances
 glide-data-grid
+glsl-canvas
 glslify
 go-ethereum
 go-zero
