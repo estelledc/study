@@ -153,6 +153,7 @@ chord-2001
 chronos-2024
 chubby
 ci-effects
+ciel-universal-execution-engine-distributed-data-flow-2011
 cimatti-nusmv-2002
 clark-1988
 clarke-cegar-2003
