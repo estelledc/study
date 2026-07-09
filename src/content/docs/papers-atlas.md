@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 952 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 953 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：952 篇
+- **总数**：953 篇
 - **已分类**：143
-- **未分类**：809（落入"其他 / 待分类"段）
+- **未分类**：810（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 809 |
+| [其他 / 待分类](#其他--待分类) | 810 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 809 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 810 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -672,6 +672,7 @@ sidebar:
 | `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
+| `instant-ngp-2022` | [Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码](/study/papers/instant-ngp-2022/) |
 | `ipfs-2014` | [IPFS — 把"地址"换成"内容本身"的 P2P 文件系统](/study/papers/ipfs-2014/) |
 | `iris-2015` | [Iris 2015 — 把并发推理拆成 monoid + invariant 两块积木](/study/papers/iris-2015/) |
 | `ironfleet-2015` | [IronFleet — 把分布式协议证到一行 bug 都没有](/study/papers/ironfleet-2015/) |
@@ -1120,7 +1121,7 @@ sidebar:
 
 ---
 
-## 全部 952 篇（字母序）
+## 全部 953 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1553,6 +1554,7 @@ sidebar:
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) | 其他 |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) | 其他 |
+| `instant-ngp-2022` | [Instant-NGP — 秒级训练 NeRF 的多分辨率哈希编码](/study/papers/instant-ngp-2022/) | 其他 |
 | `instructgpt` | [InstructGPT — RLHF 让 LLM 听话](/study/papers/instructgpt/) | 智能体与 LLM 系统 |
 | `io-uring` | [io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall](/study/papers/io-uring/) | OS / 集群管理 / 系统 |
 | `ipfs-2014` | [IPFS — 把"地址"换成"内容本身"的 P2P 文件系统](/study/papers/ipfs-2014/) | 其他 |
