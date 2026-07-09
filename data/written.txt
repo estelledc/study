@@ -230,6 +230,7 @@ deepseek-coder-2024
 deepseek-r1
 deepspeed-zero
 deering-1988-triangle-processor
+delta-lake-2020
 demikernel-2021
 demystifying-data-org
 denali-2002
