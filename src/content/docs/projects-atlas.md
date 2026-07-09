@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 945 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 946 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：945 个
+- **总数**：946 个
 - **已分类**：214
-- **未分类**：731（落入"其他 / 待分类"段）
+- **未分类**：732（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 731 |
+| [其他 / 待分类](#其他--待分类) | 732 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 731 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 732 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -536,6 +536,7 @@ sidebar:
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) |
 | `appflowy` | [AppFlowy — Rust 写的开源 Notion](/study/projects/appflowy/) |
+| `appleseed` | [appleseed — 物理渲染器](/study/projects/appleseed/) |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
 | `ar-js` | [AR.js — 浏览器里跑 Web AR 标记追踪](/study/projects/ar-js/) |
@@ -1241,7 +1242,7 @@ sidebar:
 
 ---
 
-## 全部 945 个（字母序）
+## 全部 946 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1277,6 +1278,7 @@ sidebar:
 | `apexcharts` | [ApexCharts — 自带响应式与注解的 SVG 图表库](/study/projects/apexcharts/) | 其他 |
 | `apollo-server` | [Apollo Server — Node 端 GraphQL 服务端的事实标准](/study/projects/apollo-server/) | 其他 |
 | `appflowy` | [AppFlowy — Rust 写的开源 Notion](/study/projects/appflowy/) | 其他 |
+| `appleseed` | [appleseed — 物理渲染器](/study/projects/appleseed/) | 其他 |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
 | `ar-js` | [AR.js — 浏览器里跑 Web AR 标记追踪](/study/projects/ar-js/) | 其他 |
