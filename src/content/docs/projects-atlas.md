@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 901 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 902 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：901 个
+- **总数**：902 个
 - **已分类**：214
-- **未分类**：687（落入"其他 / 待分类"段）
+- **未分类**：688（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 687 |
+| [其他 / 待分类](#其他--待分类) | 688 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 687 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 688 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -901,6 +901,7 @@ sidebar:
 | `moby` | [Moby — Docker 把引擎拆开后的开源上游](/study/projects/moby/) |
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) |
+| `mongo` | [MongoDB — 文档数据库代表](/study/projects/mongo/) |
 | `mosquitto` | [Mosquitto — C 写的轻量 MQTT 消息中转站](/study/projects/mosquitto/) |
 | `move-language` | [Move — 资源型智能合约语言](/study/projects/move-language/) |
 | `moveit2` | [MoveIt 2 — ROS 2 上的机械臂运动规划框架](/study/projects/moveit2/) |
@@ -1197,7 +1198,7 @@ sidebar:
 
 ---
 
-## 全部 901 个（字母序）
+## 全部 902 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1698,6 +1699,7 @@ sidebar:
 | `modin` | [Modin — pandas 的分布式 drop-in（一行 import 自动并行）](/study/projects/modin/) | 其他 |
 | `monaco-editor` | [monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK](/study/projects/monaco-editor/) | 编辑器 / 富文本 |
 | `monero` | [Monero — 默认隐私的 PoW 加密货币](/study/projects/monero/) | 其他 |
+| `mongo` | [MongoDB — 文档数据库代表](/study/projects/mongo/) | 其他 |
 | `mongodb` | [MongoDB — 文档型 NoSQL 数据库](/study/projects/mongodb/) | 数据库本体 / 存储引擎 |
 | `mosquitto` | [Mosquitto — C 写的轻量 MQTT 消息中转站](/study/projects/mosquitto/) | 其他 |
 | `motion-one` | [Motion One — 把动画交给浏览器自己跑](/study/projects/motion-one/) | 动画 |
