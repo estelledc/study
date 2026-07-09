@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 954 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 955 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：954 个
+- **总数**：955 个
 - **已分类**：214
-- **未分类**：740（落入"其他 / 待分类"段）
+- **未分类**：741（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 740 |
+| [其他 / 待分类](#其他--待分类) | 741 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 740 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 741 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -912,6 +912,7 @@ sidebar:
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) |
 | `mender` | [Mender — 给 IoT 设备做不会刷砖的 OTA 升级](/study/projects/mender/) |
 | `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) |
+| `meshroom` | [Meshroom — AliceVision 节点式 GUI](/study/projects/meshroom/) |
 | `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) |
@@ -1250,7 +1251,7 @@ sidebar:
 
 ---
 
-## 全部 954 个（字母序）
+## 全部 955 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1754,6 +1755,7 @@ sidebar:
 | `memgraph` | [Memgraph — 内存图数据库](/study/projects/memgraph/) | 其他 |
 | `mender` | [Mender — 给 IoT 设备做不会刷砖的 OTA 升级](/study/projects/mender/) | 其他 |
 | `mermaid` | [Mermaid — 用文本写图，code review 友好的图表语言](/study/projects/mermaid/) | 其他 |
+| `meshroom` | [Meshroom — AliceVision 节点式 GUI](/study/projects/meshroom/) | 其他 |
 | `metabase` | [Metabase — 让非技术人查数](/study/projects/metabase/) | 其他 |
 | `metaflow` | [Metaflow — Netflix 给数据科学家的 Python 流水线](/study/projects/metaflow/) | 其他 |
 | `metamask` | [MetaMask — 装在浏览器里的以太坊钱包](/study/projects/metamask/) | 其他 |
