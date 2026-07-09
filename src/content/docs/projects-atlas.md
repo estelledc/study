@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 958 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 959 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：958 个
+- **总数**：959 个
 - **已分类**：214
-- **未分类**：744（落入"其他 / 待分类"段）
+- **未分类**：745（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 744 |
+| [其他 / 待分类](#其他--待分类) | 745 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 744 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 745 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -949,6 +949,7 @@ sidebar:
 | `neovim` | [Neovim — Lua 可扩展 vim 现代分叉](/study/projects/neovim/) |
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) |
+| `neutralinojs` | [neutralinojs — 系统 WebView 上的极简桌面壳](/study/projects/neutralinojs/) |
 | `nginx-rtmp-module` | [nginx-rtmp-module — 把 NGINX 变成直播入口](/study/projects/nginx-rtmp-module/) |
 | `nivo` | [nivo — React + d3 组件化图表](/study/projects/nivo/) |
 | `nix` | [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) |
@@ -1254,7 +1255,7 @@ sidebar:
 
 ---
 
-## 全部 958 个（字母序）
+## 全部 959 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1811,6 +1812,7 @@ sidebar:
 | `nerdctl` | [nerdctl — containerd 官方的 Docker 兼容 CLI](/study/projects/nerdctl/) | 其他 |
 | `nestjs` | [NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架](/study/projects/nestjs/) | Web 框架 |
 | `nethermind` | [Nethermind — .NET 写的高性能以太坊客户端](/study/projects/nethermind/) | 其他 |
+| `neutralinojs` | [neutralinojs — 系统 WebView 上的极简桌面壳](/study/projects/neutralinojs/) | 其他 |
 | `next-intl` | [next-intl — Next.js 专用的多语言开关](/study/projects/next-intl/) | i18n 国际化 |
 | `next-js` | [Next.js — React 全栈框架](/study/projects/next-js/) | Meta 框架 / 全栈 |
 | `nextra` | [Nextra — 在 Next.js 上盖一层文档站脚手架](/study/projects/nextra/) | 文档站点 |
