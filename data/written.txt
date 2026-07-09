@@ -332,6 +332,7 @@ fastlanes-compression
 fat-tree-2008
 feautrier-polyhedral
 fermi-architecture-2010
+feynman-simulating-physics-1982
 ffs-1984
 fidge-1988
 fielding-rest-2000
