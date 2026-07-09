@@ -1671,6 +1671,7 @@ sentry
 sequelize
 sglang
 shadcn-ui
+shader-park
 shadowsocks-libev
 shap
 sharedb
