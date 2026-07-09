@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 951 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 952 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：951 篇
+- **总数**：952 篇
 - **已分类**：143
-- **未分类**：808（落入"其他 / 待分类"段）
+- **未分类**：809（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 808 |
+| [其他 / 待分类](#其他--待分类) | 809 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 808 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 809 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -864,6 +864,7 @@ sidebar:
 | `openflow-2008` | [OpenFlow 2008 — 把交换机的『分拣规则』搬到一台中央电脑上](/study/papers/openflow-2008/) |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) |
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) |
+| `orca-2022` | [Orca — Transformer 生成模型的分布式推理调度](/study/papers/orca-2022/) |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) |
 | `oscar-int2-kv` | [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization — 学习笔记](/study/papers/oscar-int2-kv/) |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) |
@@ -1119,7 +1120,7 @@ sidebar:
 
 ---
 
-## 全部 951 篇（字母序）
+## 全部 952 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1766,6 +1767,7 @@ sidebar:
 | `openhands` | [OpenHands — 开源 AI 软件工程师](/study/papers/openhands/) | 智能体与 LLM 系统 |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/papers/opensearch/) | 其他 |
 | `optuna` | [Optuna — 让超参搜索像写普通 Python 代码一样自然](/study/papers/optuna/) | 其他 |
+| `orca-2022` | [Orca — Transformer 生成模型的分布式推理调度](/study/papers/orca-2022/) | 其他 |
 | `orca-continuous-batching` | [Orca — 让一批 LLM 请求随到随走，不再排队等最长那个](/study/papers/orca-continuous-batching/) | 其他 |
 | `oscar-int2-kv` | [OSCAR: Offline Spectral Covariance-Aware Rotation for 2-bit KV Cache Quantization — 学习笔记](/study/papers/oscar-int2-kv/) | 其他 |
 | `ot-1989` | [OT — 多人同时改一份文档，操作随上下文自动改坐标](/study/papers/ot-1989/) | 其他 |
