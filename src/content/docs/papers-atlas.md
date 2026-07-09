@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1011 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1012 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1011 篇
+- **总数**：1012 篇
 - **已分类**：143
-- **未分类**：868（落入"其他 / 待分类"段）
+- **未分类**：869（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 868 |
+| [其他 / 待分类](#其他--待分类) | 869 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 868 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 869 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -951,6 +951,7 @@ sidebar:
 | `prefix-cache-policy-2026` | [Beyond LRU: Prefix-Cache Policies for LLM Serving — 学习笔记（入门）](/study/papers/prefix-cache-policy-2026/) |
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) |
+| `program-shepherding-2002` | [Program Shepherding — 给每次跳转安排门卫](/study/papers/program-shepherding-2002/) |
 | `projection-bench` | [ProjectionBench — 用逐步揭示信息测试科学假说生成](/study/papers/projection-bench/) |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) |
 | `prototypical-networks-2017` | [Prototypical Networks — 每类算个均值，比距离就够了](/study/papers/prototypical-networks-2017/) |
@@ -1179,7 +1180,7 @@ sidebar:
 
 ---
 
-## 全部 1011 篇（字母序）
+## 全部 1012 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1918,6 +1919,7 @@ sidebar:
 | `presumed-abort-1986` | [Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识](/study/papers/presumed-abort-1986/) | 其他 |
 | `product-quantization-2011` | [Product Quantization — 把向量切碎再压成几个字节](/study/papers/product-quantization-2011/) | 其他 |
 | `program-comprehension-fmri` | [Program Comprehension fMRI — 程序员读代码时大脑亮的是语言区不是数学区](/study/papers/program-comprehension-fmri/) | HCI / 软件工程研究 |
+| `program-shepherding-2002` | [Program Shepherding — 给每次跳转安排门卫](/study/papers/program-shepherding-2002/) | 其他 |
 | `programmer-interruption` | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) | HCI / 软件工程研究 |
 | `projection-bench` | [ProjectionBench — 用逐步揭示信息测试科学假说生成](/study/papers/projection-bench/) | 其他 |
 | `prolog-colmerauer` | [Prolog 的诞生 — 让逻辑式子直接当程序跑](/study/papers/prolog-colmerauer/) | 其他 |
