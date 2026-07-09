@@ -1366,6 +1366,7 @@ janus-gateway
 janusgraph
 jax
 jc
+jellyfin
 jenkins
 jest
 jimp
