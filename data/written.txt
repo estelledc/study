@@ -1300,6 +1300,7 @@ hono
 hot-chocolate
 htop
 httpie
+hydra-synth
 i18next
 immer
 immich
