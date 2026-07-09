@@ -380,6 +380,7 @@ graalvm-truffle
 gradual-typing
 graf-saidi-1997
 granule
+graph-neural-networks
 graphormer-2021
 graphrag
 graphsage-2017
