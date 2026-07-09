@@ -1453,6 +1453,7 @@ moby
 modin
 monaco-editor
 monero
+mongo
 mongodb
 mosquitto
 motion-one
