@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 975 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 976 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：975 篇
+- **总数**：976 篇
 - **已分类**：143
-- **未分类**：832（落入"其他 / 待分类"段）
+- **未分类**：833（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 832 |
+| [其他 / 待分类](#其他--待分类) | 833 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 832 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 833 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -972,6 +972,7 @@ sidebar:
 | `salton-vsm-1975` | [Salton VSM 1975 — 把文档变成向量再用余弦比相似度](/study/papers/salton-vsm-1975/) |
 | `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) |
 | `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) |
+| `sanctum-2016` | [Sanctum 2016 — 用少量硬件改动做强隔离 enclave](/study/papers/sanctum-2016/) |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) |
 | `scads-database-2008` | [SCADS: Scale-Independent Storage](/study/papers/scads-database-2008/) |
@@ -1143,7 +1144,7 @@ sidebar:
 
 ---
 
-## 全部 975 篇（字母序）
+## 全部 976 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1919,6 +1920,7 @@ sidebar:
 | `saltzer-1984-e2e` | [End-to-End Arguments — 把功能尽量推到端上做](/study/papers/saltzer-1984-e2e/) | 其他 |
 | `saltzer-schroeder-1975` | [Saltzer-Schroeder 1975 — 8 条至今教科书还在引的安全设计原则](/study/papers/saltzer-schroeder-1975/) | 其他 |
 | `sam` | [SAM — Segment Anything](/study/papers/sam/) | 计算机视觉 |
+| `sanctum-2016` | [Sanctum 2016 — 用少量硬件改动做强隔离 enclave](/study/papers/sanctum-2016/) | 其他 |
 | `sarathi-serve` | [Sarathi-Serve — 让长 prompt 不再卡住所有人的流式回复](/study/papers/sarathi-serve/) | 其他 |
 | `sasrec-2018` | [SASRec — 用 Transformer 的 self-attention 替 RNN 做下一步推荐](/study/papers/sasrec-2018/) | 其他 |
 | `scads-database-2008` | [SCADS: Scale-Independent Storage](/study/papers/scads-database-2008/) | 其他 |
