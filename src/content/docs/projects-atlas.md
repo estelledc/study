@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 928 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 929 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：928 个
+- **总数**：929 个
 - **已分类**：214
-- **未分类**：714（落入"其他 / 待分类"段）
+- **未分类**：715（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 714 |
+| [其他 / 待分类](#其他--待分类) | 715 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 714 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 715 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1052,6 +1052,7 @@ sidebar:
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) |
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) |
+| `rive` | [Rive — 把矢量动画做成可交互组件的运行时](/study/projects/rive/) |
 | `robyn` | [Robyn — Rust 内核驱动的 Python 高性能 Web 框架](/study/projects/robyn/) |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) |
@@ -1224,7 +1225,7 @@ sidebar:
 
 ---
 
-## 全部 928 个（字母序）
+## 全部 929 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1923,6 +1924,7 @@ sidebar:
 | `rethinkdb` | [RethinkDB — 让数据库自己把更新推给客户端的先驱](/study/projects/rethinkdb/) | 其他 |
 | `ripgrep` | [ripgrep — Rust 写的现代 grep](/study/projects/ripgrep/) | 其他 |
 | `risingwave` | [RisingWave — Postgres 兼容的流式数据库，用物化视图替代 Flink + KV 组合](/study/projects/risingwave/) | 其他 |
+| `rive` | [Rive — 把矢量动画做成可交互组件的运行时](/study/projects/rive/) | 其他 |
 | `robyn` | [Robyn — Rust 内核驱动的 Python 高性能 Web 框架](/study/projects/robyn/) | 其他 |
 | `rocket` | [Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架](/study/projects/rocket/) | 其他 |
 | `rocket-chat` | [Rocket.Chat — 开源 Slack 替代，Meteor + MongoDB 全栈实时聊天](/study/projects/rocket-chat/) | 其他 |
