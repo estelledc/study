@@ -711,6 +711,7 @@ ranknet-2005
 ray-2018
 rcu-2001
 react
+react-agent
 react-server-components
 realm
 reasoning-with-sampling
