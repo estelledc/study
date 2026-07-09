@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 983 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 984 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：983 篇
+- **总数**：984 篇
 - **已分类**：143
-- **未分类**：840（落入"其他 / 待分类"段）
+- **未分类**：841（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 840 |
+| [其他 / 待分类](#其他--待分类) | 841 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 840 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 841 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -735,6 +735,7 @@ sidebar:
 | `lakehouse-2021` | [Lakehouse 2021 — 把数据湖和数仓合成一套开放平台](/study/papers/lakehouse-2021/) |
 | `lalr-deremer` | [DeRemer LALR(1) — 把 LR 表压到能用大小](/study/papers/lalr-deremer/) |
 | `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) |
+| `lamport-bakery` | [Lamport Bakery — 用取号排队解决并发互斥](/study/papers/lamport-bakery/) |
 | `lamport-time-clocks-1978` | [Lamport 逻辑时钟 — 分布式系统里先后顺序怎么说清楚](/study/papers/lamport-time-clocks-1978/) |
 | `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) |
 | `lampson-hints-1983` | [Lampson Hints 1983 — 系统设计思维起点](/study/papers/lampson-hints-1983/) |
@@ -1151,7 +1152,7 @@ sidebar:
 
 ---
 
-## 全部 983 篇（字母序）
+## 全部 984 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1654,6 +1655,7 @@ sidebar:
 | `lambda-calculus` | [λ-演算 — 用三条规则表达所有可计算函数](/study/papers/lambda-calculus/) | 计算理论 / 数学基础 |
 | `lambdarank-2006` | [LambdaRank — 跳过定义损失函数，直接把梯度写出来](/study/papers/lambdarank-2006/) | 其他 |
 | `lamport-1978` | [Lamport 1978 — 分布式系统里没有"绝对的同时"](/study/papers/lamport-1978/) | 分布式系统 |
+| `lamport-bakery` | [Lamport Bakery — 用取号排队解决并发互斥](/study/papers/lamport-bakery/) | 其他 |
 | `lamport-time-clocks-1978` | [Lamport 逻辑时钟 — 分布式系统里先后顺序怎么说清楚](/study/papers/lamport-time-clocks-1978/) | 其他 |
 | `lamport-tla-1994` | [TLA — 把状态机和时序逻辑捏成一个公式](/study/papers/lamport-tla-1994/) | 其他 |
 | `lampson-hints` | [Lampson Hints — 把做系统的隐式品味写成 27 条经验法则](/study/papers/lampson-hints/) | HCI / 软件工程研究 |
