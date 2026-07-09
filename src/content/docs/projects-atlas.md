@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 925 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 926 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：925 个
+- **总数**：926 个
 - **已分类**：214
-- **未分类**：711（落入"其他 / 待分类"段）
+- **未分类**：712（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 711 |
+| [其他 / 待分类](#其他--待分类) | 712 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 711 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 712 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -854,6 +854,7 @@ sidebar:
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) |
 | `littlefs` | [littlefs — MCU 友好的掉电安全文件系统](/study/projects/littlefs/) |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) |
+| `livekit` | [LiveKit — 开源实时多媒体 SFU](/study/projects/livekit/) |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) |
 | `llama-index` | [LlamaIndex — 给大模型接上私有资料库](/study/projects/llama-index/) |
@@ -1221,7 +1222,7 @@ sidebar:
 
 ---
 
-## 全部 925 个（字母序）
+## 全部 926 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1657,6 +1658,7 @@ sidebar:
 | `litmus` | [LitmusChaos — 给 K8s 集群安排"故意搞坏"的演习](/study/projects/litmus/) | 其他 |
 | `littlefs` | [littlefs — MCU 友好的掉电安全文件系统](/study/projects/littlefs/) | 其他 |
 | `liveblocks` | [Liveblocks — 多人协作的托管基础设施](/study/projects/liveblocks/) | 其他 |
+| `livekit` | [LiveKit — 开源实时多媒体 SFU](/study/projects/livekit/) | 其他 |
 | `livekit-flutter` | [LiveKit Flutter SDK — 一份 Dart 代码连通六个平台的实时音视频](/study/projects/livekit-flutter/) | 其他 |
 | `llama-cpp` | [llama.cpp — 让 LLM 在你电脑里直接跑](/study/projects/llama-cpp/) | 其他 |
 | `llama-index` | [LlamaIndex — 给大模型接上私有资料库](/study/projects/llama-index/) | 其他 |
