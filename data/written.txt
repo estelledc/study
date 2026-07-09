@@ -1132,6 +1132,7 @@ dagger
 dagster
 dasel
 dash
+dash.js
 dask
 databend
 datadog
