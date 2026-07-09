@@ -857,6 +857,7 @@ swe-bench
 sweeney-k-anonymity-2002
 sycl-cpp-2020
 sycophancy-2023
+system-design
 system-f-reynolds-1974
 system-r-1976
 szegedy-adversarial-2013
