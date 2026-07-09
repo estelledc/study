@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 958 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 959 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：958 篇
+- **总数**：959 篇
 - **已分类**：143
-- **未分类**：815（落入"其他 / 待分类"段）
+- **未分类**：816（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 815 |
+| [其他 / 待分类](#其他--待分类) | 816 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 815 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 816 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -922,6 +922,7 @@ sidebar:
 | `ranknet-2005` | [RankNet — 让搜索引擎学会比较两个结果谁更好](/study/papers/ranknet-2005/) |
 | `ray-2018` | [Ray 2018 — 把任务和演员放进同一个分布式舞台](/study/papers/ray-2018/) |
 | `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) |
+| `react-agent` | [ReAct Agent — 推理和行动交替的工具使用范式](/study/papers/react-agent/) |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) |
 | `reasoning-with-sampling` | [Reasoning with Sampling — 在关键决策点重采样推理过程](/study/papers/reasoning-with-sampling/) |
 | `red-1993` | [RED — 让路由器在队列还没塞满时就提前丢包](/study/papers/red-1993/) |
@@ -1126,7 +1127,7 @@ sidebar:
 
 ---
 
-## 全部 958 篇（字母序）
+## 全部 959 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1842,6 +1843,7 @@ sidebar:
 | `ray-2018` | [Ray 2018 — 把任务和演员放进同一个分布式舞台](/study/papers/ray-2018/) | 其他 |
 | `rcu-2001` | [RCU 2001 — 让"读"的代价归零的并发数据结构](/study/papers/rcu-2001/) | 其他 |
 | `react` | [ReAct — Reasoning and Acting](/study/papers/react/) | 智能体与 LLM 系统 |
+| `react-agent` | [ReAct Agent — 推理和行动交替的工具使用范式](/study/papers/react-agent/) | 其他 |
 | `react-server-components` | [React Server Components — 让组件自己决定在哪台机器跑](/study/papers/react-server-components/) | 其他 |
 | `realm` | [REALM — 把检索器和 BERT 一起预训练的第一篇论文](/study/papers/realm/) | 编译器 / 编程语言理论 |
 | `reasoning-with-sampling` | [Reasoning with Sampling — 在关键决策点重采样推理过程](/study/papers/reasoning-with-sampling/) | 其他 |
