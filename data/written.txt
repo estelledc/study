@@ -1735,6 +1735,7 @@ sanic
 scikit-learn
 scipy
 scoop
+scrcpy
 scroll
 sd
 sdk-nrf
