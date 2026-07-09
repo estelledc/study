@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 906 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 907 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：906 个
+- **总数**：907 个
 - **已分类**：214
-- **未分类**：692（落入"其他 / 待分类"段）
+- **未分类**：693（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 692 |
+| [其他 / 待分类](#其他--待分类) | 693 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 692 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 693 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -912,6 +912,7 @@ sidebar:
 | `nanomq` | [NanoMQ — 边缘侧超轻量 MQTT Broker](/study/projects/nanomq/) |
 | `nativescript` | [NativeScript](/study/projects/nativescript/) |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) |
+| `nats-server` | [NATS Server — 极简云原生消息总线](/study/projects/nats-server/) |
 | `navigation2` | [Nav2 — ROS 2 移动机器人导航栈](/study/projects/navigation2/) |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) |
 | `ncnn` | [ncnn — 腾讯开源的端侧神经网络推理框架](/study/projects/ncnn/) |
@@ -1202,7 +1203,7 @@ sidebar:
 
 ---
 
-## 全部 906 个（字母序）
+## 全部 907 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1720,6 +1721,7 @@ sidebar:
 | `nanostores` | [nanostores — 不到 1 KB 的"框架无关"状态库](/study/projects/nanostores/) | 状态管理 |
 | `nativescript` | [NativeScript](/study/projects/nativescript/) | 其他 |
 | `nats` | [NATS — 极简云原生消息系统](/study/projects/nats/) | 其他 |
+| `nats-server` | [NATS Server — 极简云原生消息总线](/study/projects/nats-server/) | 其他 |
 | `navigation2` | [Nav2 — ROS 2 移动机器人导航栈](/study/projects/navigation2/) | 其他 |
 | `ncdu` | [ncdu — du 的交互式 TUI，扫一次就能在终端里上下键钻目录删大文件](/study/projects/ncdu/) | 其他 |
 | `ncnn` | [ncnn — 腾讯开源的端侧神经网络推理框架](/study/projects/ncnn/) | 其他 |
