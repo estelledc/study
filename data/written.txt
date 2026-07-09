@@ -1348,6 +1348,7 @@ influxdb
 ink
 inkscape
 inngest
+insightface
 invokeai
 ionic-framework
 ipfs
