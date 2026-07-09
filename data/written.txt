@@ -1412,6 +1412,7 @@ litestar
 litmus
 littlefs
 liveblocks
+livekit
 livekit-flutter
 llama-cpp
 llama-index
