@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 991 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 992 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：991 篇
+- **总数**：992 篇
 - **已分类**：143
-- **未分类**：848（落入"其他 / 待分类"段）
+- **未分类**：849（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 848 |
+| [其他 / 待分类](#其他--待分类) | 849 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 848 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 849 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1043,6 +1043,7 @@ sidebar:
 | `soundness-bench` | [SoundnessBench — 判断 AI 科学家会不会把坏点子当好点子](/study/papers/soundness-bench/) |
 | `spann-2021` | [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) |
+| `spark-rdd` | [Spark RDD — 用血缘记录重建内存数据](/study/papers/spark-rdd/) |
 | `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) |
 | `sparsegpt-2023` | [SparseGPT — 175B 大模型一次过剪 50%，不重训](/study/papers/sparsegpt-2023/) |
 | `specinfer-2023` | [SpecInfer — 让大模型一次"猜一棵树"再并行验证](/study/papers/specinfer-2023/) |
@@ -1159,7 +1160,7 @@ sidebar:
 
 ---
 
-## 全部 991 篇（字母序）
+## 全部 992 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -2017,6 +2018,7 @@ sidebar:
 | `spann-2021` | [SPANN — 内存放中心、SSD 放向量的十亿级近邻检索](/study/papers/spann-2021/) | 其他 |
 | `spanner` | [Spanner — 全球分布式 SQL 数据库](/study/papers/spanner/) | 分布式系统 |
 | `spanner-2012` | [Spanner 2012 — 用原子钟和 GPS 给全球数据库发时间戳](/study/papers/spanner-2012/) | 其他 |
+| `spark-rdd` | [Spark RDD — 用血缘记录重建内存数据](/study/papers/spark-rdd/) | 其他 |
 | `sparrow-2013` | [Sparrow — 让毫秒级任务也能被精准调度的去中心化调度器](/study/papers/sparrow-2013/) | 其他 |
 | `sparse-autoencoders` | [Sparse Autoencoders — 把 superposition 解出来](/study/papers/sparse-autoencoders/) | AI 安全与可解释性 |
 | `sparsegpt-2023` | [SparseGPT — 175B 大模型一次过剪 50%，不重训](/study/papers/sparsegpt-2023/) | 其他 |
