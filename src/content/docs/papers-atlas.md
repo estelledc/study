@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 999 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1000 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：999 篇
+- **总数**：1000 篇
 - **已分类**：143
-- **未分类**：856（落入"其他 / 待分类"段）
+- **未分类**：857（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 856 |
+| [其他 / 待分类](#其他--待分类) | 857 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 856 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 857 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -504,6 +504,7 @@ sidebar:
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) |
 | `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) |
+| `ddpg-2015` | [DDPG 2015 — 让神经网络直接学会连续动作控制](/study/papers/ddpg-2015/) |
 | `debate-2018` | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
@@ -1167,7 +1168,7 @@ sidebar:
 
 ---
 
-## 全部 999 篇（字母序）
+## 全部 1000 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1401,6 +1402,7 @@ sidebar:
 | `davis-putnam-1960` | [Davis-Putnam 1960 — 让机器自动判断一堆逻辑式能不能同时成立](/study/papers/davis-putnam-1960/) | 其他 |
 | `dcn-2017` | [DCN — 在 DNN 旁边并联一条专门学特征交叉的网络](/study/papers/dcn-2017/) | 其他 |
 | `ddim-2020` | [DDIM — 把扩散模型 1000 步采样压到 50 步](/study/papers/ddim-2020/) | 其他 |
+| `ddpg-2015` | [DDPG 2015 — 让神经网络直接学会连续动作控制](/study/papers/ddpg-2015/) | 其他 |
 | `ddpm` | [DDPM — Denoising Diffusion Probabilistic Models](/study/papers/ddpm/) | 生成模型 / 扩散 |
 | `debate-2018` | [AI safety via debate — 让两个 AI 互辩，人类只当评委](/study/papers/debate-2018/) | 其他 |
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) | 其他 |
