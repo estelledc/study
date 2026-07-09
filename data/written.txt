@@ -1571,6 +1571,7 @@ nivo
 nix
 nnn
 node-js
+nodegui
 nodemailer
 nomad
 notepad-plus-plus
