@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1008 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1009 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1008 篇
+- **总数**：1009 篇
 - **已分类**：143
-- **未分类**：865（落入"其他 / 待分类"段）
+- **未分类**：866（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 865 |
+| [其他 / 待分类](#其他--待分类) | 866 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 865 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 866 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -585,6 +585,7 @@ sidebar:
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) |
+| `fairfuzz-2018` | [FairFuzz 2018 — 保护关键字节，让 fuzzing 往深处走](/study/papers/fairfuzz-2018/) |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) |
 | `fan-vercauteren-bfv-2012` | [Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用](/study/papers/fan-vercauteren-bfv-2012/) |
 | `farm-2015` | [FaRM — 把一排机器的内存当成一个低延迟仓库](/study/papers/farm-2015/) |
@@ -1176,7 +1177,7 @@ sidebar:
 
 ---
 
-## 全部 1008 篇（字母序）
+## 全部 1009 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1507,6 +1508,7 @@ sidebar:
 | `exokernel-1995` | [Exokernel — 把抽象推到用户态的极致设计](/study/papers/exokernel-1995/) | 其他 |
 | `f1-2013` | [F1 2013 — 把 Spanner 包成 SQL，扛起 AdWords 全部账单](/study/papers/f1-2013/) | 其他 |
 | `f4-2014` | [f4 — Facebook 把 90 天前的旧图片搬到一个省 40% 存储的仓库](/study/papers/f4-2014/) | 其他 |
+| `fairfuzz-2018` | [FairFuzz 2018 — 保护关键字节，让 fuzzing 往深处走](/study/papers/fairfuzz-2018/) | 其他 |
 | `faiss-2017` | [FAISS 2017 — 用 GPU 在十亿向量里找最近邻](/study/papers/faiss-2017/) | 其他 |
 | `fan-vercauteren-bfv-2012` | [Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用](/study/papers/fan-vercauteren-bfv-2012/) | 其他 |
 | `farm-2015` | [FaRM — 把一排机器的内存当成一个低延迟仓库](/study/papers/farm-2015/) | 其他 |
