@@ -188,6 +188,7 @@ consistent-hashing-1997
 constitutional-ai
 continual-pretrain-survey-2026
 contriever-2021
+controlled-channel-attacks-2015
 cook-1984-distributed-ray-tracing
 cook-1986-stochastic-sampling
 cook-levin
