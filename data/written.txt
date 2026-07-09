@@ -1570,6 +1570,7 @@ openhab
 openlayers
 openmeetings
 openrct2
+openscad
 opensea-js
 opensearch
 opentelemetry
