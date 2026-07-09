@@ -1383,6 +1383,7 @@ littlefs
 liveblocks
 livekit-flutter
 llama-cpp
+llama-index
 llamaindex
 llrt
 lm-evaluation-harness
