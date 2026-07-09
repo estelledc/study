@@ -279,6 +279,7 @@ dqn
 dreamfusion-2022
 dremel-2010
 dremel-decade-2020
+driller-2016
 drizzle-2017
 drmm-2016
 dropout-2014
