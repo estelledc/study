@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 920 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 921 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：920 个
+- **总数**：921 个
 - **已分类**：214
-- **未分类**：706（落入"其他 / 待分类"段）
+- **未分类**：707（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 706 |
+| [其他 / 待分类](#其他--待分类) | 707 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 706 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 707 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1068,6 +1068,7 @@ sidebar:
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
 | `shader-park` | [Shader Park — 程序化 SDF 着色器 DSL](/study/projects/shader-park/) |
 | `shadowsocks-libev` | [Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理](/study/projects/shadowsocks-libev/) |
+| `shaka-packager` | [Shaka Packager — 流媒体打包工具](/study/projects/shaka-packager/) |
 | `shaka-player` | [Shaka Player — Google 流媒体播放器](/study/projects/shaka-player/) |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
@@ -1216,7 +1217,7 @@ sidebar:
 
 ---
 
-## 全部 920 个（字母序）
+## 全部 921 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1938,6 +1939,7 @@ sidebar:
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `shader-park` | [Shader Park — 程序化 SDF 着色器 DSL](/study/projects/shader-park/) | 其他 |
 | `shadowsocks-libev` | [Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理](/study/projects/shadowsocks-libev/) | 其他 |
+| `shaka-packager` | [Shaka Packager — 流媒体打包工具](/study/projects/shaka-packager/) | 其他 |
 | `shaka-player` | [Shaka Player — Google 流媒体播放器](/study/projects/shaka-player/) | 其他 |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) | 其他 |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
