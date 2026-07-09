@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 931 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 932 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：931 个
+- **总数**：932 个
 - **已分类**：214
-- **未分类**：717（落入"其他 / 待分类"段）
+- **未分类**：718（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 717 |
+| [其他 / 待分类](#其他--待分类) | 718 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 717 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 718 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1178,6 +1178,7 @@ sidebar:
 | `video.js` | [Video.js — Web 视频播放器框架](/study/projects/video.js/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vim` | [Vim — 键盘上弹钢琴的编辑器](/study/projects/vim/) |
+| `vips` | [libvips — 流式低内存图像库](/study/projects/vips/) |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) |
 | `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) |
 | `vitess` | [Vitess — 给 MySQL 装上水平分片的代理层](/study/projects/vitess/) |
@@ -1227,7 +1228,7 @@ sidebar:
 
 ---
 
-## 全部 931 个（字母序）
+## 全部 932 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2099,6 +2100,7 @@ sidebar:
 | `video.js` | [Video.js — Web 视频播放器框架](/study/projects/video.js/) | 其他 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
 | `vim` | [Vim — 键盘上弹钢琴的编辑器](/study/projects/vim/) | 其他 |
+| `vips` | [libvips — 流式低内存图像库](/study/projects/vips/) | 其他 |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | 其他 |
 | `vis-timeline` | [vis-timeline — 时间轴 / 日程 / 历史事件三合一组件](/study/projects/vis-timeline/) | 其他 |
 | `visx` | [visx — 把 d3 拆成 30 块乐高的 React 可视化原语](/study/projects/visx/) | 数据可视化 |
