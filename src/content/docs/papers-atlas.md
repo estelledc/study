@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 955 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 956 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：955 篇
+- **总数**：956 篇
 - **已分类**：143
-- **未分类**：812（落入"其他 / 待分类"段）
+- **未分类**：813（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 812 |
+| [其他 / 待分类](#其他--待分类) | 813 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 812 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 813 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1002,6 +1002,7 @@ sidebar:
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) |
 | `snap-2019` | [Snap 2019 — Google 把网络栈搬到用户态微内核](/study/papers/snap-2019/) |
+| `snowflake` | [Snowflake — 云数仓把存储和计算拆开](/study/papers/snowflake/) |
 | `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) |
 | `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) |
 | `sophia-2023` | [Sophia — 让二阶优化器第一次在 LLM 预训练里跑得动](/study/papers/sophia-2023/) |
@@ -1123,7 +1124,7 @@ sidebar:
 
 ---
 
-## 全部 955 篇（字母序）
+## 全部 956 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1938,6 +1939,7 @@ sidebar:
 | `smoothquant-2023` | [SmoothQuant 2023 — 把激活的烫手山芋扔给权重](/study/papers/smoothquant-2023/) | 其他 |
 | `smr-1990` | [SMR 1990 — 把"容错服务"还原成"多副本一起跑同一台状态机"](/study/papers/smr-1990/) | 其他 |
 | `snap-2019` | [Snap 2019 — Google 把网络栈搬到用户态微内核](/study/papers/snap-2019/) | 其他 |
+| `snowflake` | [Snowflake — 云数仓把存储和计算拆开](/study/papers/snowflake/) | 其他 |
 | `snowflake-2016` | [Snowflake 2016 — 把数仓拆成 storage / compute / services 三层](/study/papers/snowflake-2016/) | 数据库 |
 | `soft-updates-1999` | [Soft Updates — 不写 journal 也能保证文件系统元数据一致](/study/papers/soft-updates-1999/) | 其他 |
 | `soltesz-2007` | [Soltesz 2007 — 容器：比虚拟机轻一档的隔离方案](/study/papers/soltesz-2007/) | 其他 |
