@@ -1519,6 +1519,7 @@ minikube
 minio
 minisearch
 mise
+mitsuba3
 mlflow
 mlt
 mlx
