@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 938 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 939 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：938 个
+- **总数**：939 个
 - **已分类**：214
-- **未分类**：724（落入"其他 / 待分类"段）
+- **未分类**：725（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 724 |
+| [其他 / 待分类](#其他--待分类) | 725 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 724 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 725 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -893,6 +893,7 @@ sidebar:
 | `matter-js` | [Matter.js — 2D 刚体世界里最轻的“物理白板”](/study/projects/matter-js/) |
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) |
 | `mbedtls` | [Mbed TLS — 嵌入式设备的轻量级 TLS 加密库](/study/projects/mbedtls/) |
+| `mediapipe` | [MediaPipe — Google ML 多模态流水线](/study/projects/mediapipe/) |
 | `mediasoup` | [mediasoup — 多人音视频会议的 SFU 路由器](/study/projects/mediasoup/) |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) |
 | `melonjs` | [melonJS — 轻量 JS 2D 游戏引擎](/study/projects/melonjs/) |
@@ -1234,7 +1235,7 @@ sidebar:
 
 ---
 
-## 全部 938 个（字母序）
+## 全部 939 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1718,6 +1719,7 @@ sidebar:
 | `mattermost` | [Mattermost — Slack 的开源自托管替代（Go 服务端 + React 客户端）](/study/projects/mattermost/) | 其他 |
 | `mbedtls` | [Mbed TLS — 嵌入式设备的轻量级 TLS 加密库](/study/projects/mbedtls/) | 其他 |
 | `mcp-ts-sdk` | [MCP TS SDK — Model Context Protocol TypeScript 实现](/study/projects/mcp-ts-sdk/) | AI 应用 / Agent 平台 |
+| `mediapipe` | [MediaPipe — Google ML 多模态流水线](/study/projects/mediapipe/) | 其他 |
 | `mediasoup` | [mediasoup — 多人音视频会议的 SFU 路由器](/study/projects/mediasoup/) | 其他 |
 | `megatron-lm` | [Megatron-LM — NVIDIA 张量并行库](/study/projects/megatron-lm/) | 其他 |
 | `meilisearch` | [MeiliSearch — 开发者友好的搜索引擎](/study/projects/meilisearch/) | 数据库本体 / 存储引擎 |
