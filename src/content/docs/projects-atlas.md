@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 943 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 944 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：943 个
+- **总数**：944 个
 - **已分类**：214
-- **未分类**：729（落入"其他 / 待分类"段）
+- **未分类**：730（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 729 |
+| [其他 / 待分类](#其他--待分类) | 730 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 729 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 730 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1173,6 +1173,7 @@ sidebar:
 | `twgl` | [TWGL — 极薄 WebGL helpers](/study/projects/twgl/) |
 | `twirp` | [Twirp — 用 protobuf 定义服务，但只走 HTTP/1.1 + JSON](/study/projects/twirp/) |
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) |
+| `ultralytics` | [Ultralytics — YOLOv8/v11 易用 SDK](/study/projects/ultralytics/) |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) |
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) |
 | `unqlite` | [UnQLite — C 写的嵌入式 NoSQL 双模数据库](/study/projects/unqlite/) |
@@ -1239,7 +1240,7 @@ sidebar:
 
 ---
 
-## 全部 943 个（字母序）
+## 全部 944 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2098,6 +2099,7 @@ sidebar:
 | `tyk` | [tyk — Go 实现的开源 API 网关，自带门户和多协议转换](/study/projects/tyk/) | 其他 |
 | `typeorm` | [TypeORM — Decorator-based ORM](/study/projects/typeorm/) | ORM / DB 客户端 |
 | `typesense` | [Typesense — 高性能搜索引擎](/study/projects/typesense/) | 数据库本体 / 存储引擎 |
+| `ultralytics` | [Ultralytics — YOLOv8/v11 易用 SDK](/study/projects/ultralytics/) | 其他 |
 | `unified` | [unified — 把文档处理拆成 AST + plugin 流水线](/study/projects/unified/) | Markdown / 解析 |
 | `uniswap-v3` | [Uniswap V3 — 集中流动性 AMM 核心合约](/study/projects/uniswap-v3/) | 其他 |
 | `universal-ctags` | [Universal Ctags — 老牌符号索引器，编辑器跳转到定义的底层引擎](/study/projects/universal-ctags/) | 其他 |
