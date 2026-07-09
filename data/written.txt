@@ -276,6 +276,7 @@ ducas-dilithium-2018
 duchi-local-dp-2013
 duckdb-2019
 dwork-calibrating-noise-2006
+dwork-dp-2006
 dwork-dp-icalp-2006
 dwork-our-data-ourselves-2006
 dynamo
