@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 966 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 967 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：966 篇
+- **总数**：967 篇
 - **已分类**：143
-- **未分类**：823（落入"其他 / 待分类"段）
+- **未分类**：824（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 823 |
+| [其他 / 待分类](#其他--待分类) | 824 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 823 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 824 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1041,6 +1041,7 @@ sidebar:
 | `sweeney-k-anonymity-2002` | [Sweeney k-Anonymity 2002 — 删除姓名还不够的匿名化基线](/study/papers/sweeney-k-anonymity-2002/) |
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) |
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) |
+| `system-design` | [The Datacenter as a Computer — 把机房当成一台巨型计算机](/study/papers/system-design/) |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) |
 | `szegedy-adversarial-2013` | [Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错](/study/papers/szegedy-adversarial-2013/) |
@@ -1134,7 +1135,7 @@ sidebar:
 
 ---
 
-## 全部 966 篇（字母序）
+## 全部 967 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1996,6 +1997,7 @@ sidebar:
 | `sweeney-k-anonymity-2002` | [Sweeney k-Anonymity 2002 — 删除姓名还不够的匿名化基线](/study/papers/sweeney-k-anonymity-2002/) | 其他 |
 | `sycl-cpp-2020` | [SYCL 2020 — 用一份标准 C++ 让 GPU/CPU/加速器一起跑](/study/papers/sycl-cpp-2020/) | 其他 |
 | `sycophancy-2023` | [Sycophancy 2023 — RLHF 模型为什么爱顺着用户说](/study/papers/sycophancy-2023/) | 其他 |
+| `system-design` | [The Datacenter as a Computer — 把机房当成一台巨型计算机](/study/papers/system-design/) | 其他 |
 | `system-f-reynolds-1974` | [System F — 让类型也能像参数一样被传递](/study/papers/system-f-reynolds-1974/) | 其他 |
 | `system-r-1976` | [System R 1976 — 第一个跑起来的关系数据库](/study/papers/system-r-1976/) | 其他 |
 | `szegedy-adversarial-2013` | [Szegedy 对抗样本 — 图片只改一点点，模型却会彻底看错](/study/papers/szegedy-adversarial-2013/) | 其他 |
