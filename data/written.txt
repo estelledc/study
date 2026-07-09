@@ -1484,6 +1484,7 @@ midscene
 mikro-orm
 miller
 milvus
+mind-ar-js
 minetest
 minikube
 minio
