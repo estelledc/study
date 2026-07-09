@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 911 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 912 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：911 个
+- **总数**：912 个
 - **已分类**：214
-- **未分类**：697（落入"其他 / 待分类"段）
+- **未分类**：698（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 697 |
+| [其他 / 待分类](#其他--待分类) | 698 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 697 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 698 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1061,6 +1061,7 @@ sidebar:
 | `sglang` | [SGLang — 结构化推理运行时](/study/projects/sglang/) |
 | `shader-park` | [Shader Park — 程序化 SDF 着色器 DSL](/study/projects/shader-park/) |
 | `shadowsocks-libev` | [Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理](/study/projects/shadowsocks-libev/) |
+| `shaka-player` | [Shaka Player — Google 流媒体播放器](/study/projects/shaka-player/) |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) |
 | `shell-gpt` | [shell-gpt — 把 LLM 接进 shell 当命令行助理](/study/projects/shell-gpt/) |
@@ -1207,7 +1208,7 @@ sidebar:
 
 ---
 
-## 全部 911 个（字母序）
+## 全部 912 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1922,6 +1923,7 @@ sidebar:
 | `shadcn-ui` | [shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"](/study/projects/shadcn-ui/) | 基础组件 / Headless UI |
 | `shader-park` | [Shader Park — 程序化 SDF 着色器 DSL](/study/projects/shader-park/) | 其他 |
 | `shadowsocks-libev` | [Shadowsocks-libev — 嵌入式设备上的轻量 SOCKS5 加密代理](/study/projects/shadowsocks-libev/) | 其他 |
+| `shaka-player` | [Shaka Player — Google 流媒体播放器](/study/projects/shaka-player/) | 其他 |
 | `shap` | [SHAP — 用博弈论给每个特征发工资](/study/projects/shap/) | 其他 |
 | `sharedb` | [ShareDB — 基于 OT 的实时数据库](/study/projects/sharedb/) | 其他 |
 | `sharp` | [sharp — 让 Node.js 处理图像快到不像 JS](/study/projects/sharp/) | 图像处理 / Canvas |
