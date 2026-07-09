@@ -1526,6 +1526,7 @@ openzeppelin-contracts
 operator-sdk
 optax
 optimism
+optuna
 opus
 ora
 orleans
