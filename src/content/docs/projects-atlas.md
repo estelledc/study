@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 909 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 910 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：909 个
+- **总数**：910 个
 - **已分类**：214
-- **未分类**：695（落入"其他 / 待分类"段）
+- **未分类**：696（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 695 |
+| [其他 / 待分类](#其他--待分类) | 696 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 695 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 696 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -783,6 +783,7 @@ sidebar:
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) |
+| `hydra-synth` | [Hydra — 实时视觉合成 livecoding](/study/projects/hydra-synth/) |
 | `inkscape` | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) |
 | `ionic-framework` | [ionic-framework](/study/projects/ionic-framework/) |
@@ -1205,7 +1206,7 @@ sidebar:
 
 ---
 
-## 全部 909 个（字母序）
+## 全部 910 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1544,6 +1545,7 @@ sidebar:
 | `hot-chocolate` | [Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器](/study/projects/hot-chocolate/) | 其他 |
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) | 其他 |
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) | 其他 |
+| `hydra-synth` | [Hydra — 实时视觉合成 livecoding](/study/projects/hydra-synth/) | 其他 |
 | `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | i18n 国际化 |
 | `immer` | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | 数据应用 / SaaS |
