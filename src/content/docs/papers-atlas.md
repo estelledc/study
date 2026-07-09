@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 972 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 973 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：972 篇
+- **总数**：973 篇
 - **已分类**：143
-- **未分类**：829（落入"其他 / 待分类"段）
+- **未分类**：830（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 829 |
+| [其他 / 待分类](#其他--待分类) | 830 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 829 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 830 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -803,6 +803,7 @@ sidebar:
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) |
 | `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) |
 | `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) |
+| `mesos` | [Mesos — 让多种计算框架共用一套集群](/study/papers/mesos/) |
 | `mesos-2011` | [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) |
 | `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) |
 | `metcalfe-boggs-1976` | [Metcalfe-Boggs 1976 — 一根线上几百台电脑怎么不打架](/study/papers/metcalfe-boggs-1976/) |
@@ -1140,7 +1141,7 @@ sidebar:
 
 ---
 
-## 全部 972 篇（字母序）
+## 全部 973 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1721,6 +1722,7 @@ sidebar:
 | `mencius-2008` | [Mencius — 让多台服务器轮流当 Paxos 的 leader](/study/papers/mencius-2008/) | 其他 |
 | `mermaid` | [Mermaid — 用文本写图，让代码评审能 diff 流程图](/study/papers/mermaid/) | 其他 |
 | `mesa-optimization-2019` | [Mesa-Optimization 2019 — 训出来的模型自己也是个优化器](/study/papers/mesa-optimization-2019/) | 其他 |
+| `mesos` | [Mesos — 让多种计算框架共用一套集群](/study/papers/mesos/) | 其他 |
 | `mesos-2011` | [Mesos 2011 — 把数据中心切成资源 offer 发给框架自己挑](/study/papers/mesos-2011/) | 其他 |
 | `metagpt` | [MetaGPT — 多智能体软件公司](/study/papers/metagpt/) | 智能体与 LLM 系统 |
 | `metaml-multi-stage` | [MetaML — 让你显式地写"先生成代码、再跑代码"](/study/papers/metaml-multi-stage/) | 其他 |
