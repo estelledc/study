@@ -506,6 +506,7 @@ linear-attention-still-2026
 linear-scan-reg-alloc
 linear-types
 linearizability-1990
+linux-kernel
 lion-2023
 lipp-meltdown-2018
 liquid-types
