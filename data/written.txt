@@ -204,6 +204,7 @@ csp-hoare-1978
 cstore-2005
 cubic-2008
 cubical-type-theory-2018
+cuda
 cuda-streams-concurrency-2018
 cudnn-2014
 curless-levoy-1996-tsdf
