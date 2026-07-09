@@ -221,6 +221,7 @@ dalle-2
 danezis-sphinx-2009
 dapper-2010
 dash-numa-1992
+data-lake-management-2019
 dataflow-model-2015
 davis-putnam-1960
 dcn-2017
