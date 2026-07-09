@@ -85,7 +85,7 @@ appleseed.cli.exe --message-verbosity debug \
 
 官方 OSL Rules and Conventions 文档给了 gamma correction shader 示例，并说明 `.osl` 源文件要用 `oslc` 编译成 `.oso` 后放进 shader 搜索路径。
 
-```osl
+```text
 shader gamma(
  color Cin = color(0, 0, 0),
  float exponent = 1,
