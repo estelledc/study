@@ -338,6 +338,7 @@ flexsc-2010
 flink-2015
 flink-snapshots-2015
 flp-1985
+foundationdb
 foundationdb-2021
 fpga-hls-2011
 frama-c-2012
