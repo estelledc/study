@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 981 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 982 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：981 篇
+- **总数**：982 篇
 - **已分类**：143
-- **未分类**：838（落入"其他 / 待分类"段）
+- **未分类**：839（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 838 |
+| [其他 / 待分类](#其他--待分类) | 839 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 838 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 839 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -426,6 +426,7 @@ sidebar:
 | `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) |
 | `cesium` | [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) |
+| `chain-of-thought` | [Chain-of-Thought — 让大模型先写步骤再回答](/study/papers/chain-of-thought/) |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) |
 | `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) |
@@ -1149,7 +1150,7 @@ sidebar:
 
 ---
 
-## 全部 981 篇（字母序）
+## 全部 982 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1291,6 +1292,7 @@ sidebar:
 | `certikos-2016` | [CertiKOS — 把整个并发内核拆成 30 多层每层都被 Coq 证过](/study/papers/certikos-2016/) | 其他 |
 | `cesium` | [CesiumJS — 把会动的 3D 地球塞进浏览器](/study/papers/cesium/) | 其他 |
 | `chaff-2001` | [Chaff 2001 — 把 CDCL 工程化的两个杀手锏](/study/papers/chaff-2001/) | 其他 |
+| `chain-of-thought` | [Chain-of-Thought — 让大模型先写步骤再回答](/study/papers/chain-of-thought/) | 其他 |
 | `chain-replication-2004` | [Chain Replication — 把多副本排成流水线，简单且强一致](/study/papers/chain-replication-2004/) | 其他 |
 | `chaitin-graph-coloring` | [Chaitin 图染色寄存器分配 — 把硬件资源问题翻译成数学问题](/study/papers/chaitin-graph-coloring/) | 其他 |
 | `chandy-lamport-1985` | [Chandy-Lamport 1985 — 分布式系统不停机也能拍一张全家福](/study/papers/chandy-lamport-1985/) | 其他 |
