@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 996 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 997 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：996 篇
+- **总数**：997 篇
 - **已分类**：143
-- **未分类**：853（落入"其他 / 待分类"段）
+- **未分类**：854（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 853 |
+| [其他 / 待分类](#其他--待分类) | 854 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 853 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 854 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -468,6 +468,7 @@ sidebar:
 | `consistent-hashing-1997` | [Consistent Hashing — 加机器只搬一小部分数据的哈希环](/study/papers/consistent-hashing-1997/) |
 | `continual-pretrain-survey-2026` | [Linear Attention, Still: Why Mamba-style Models Plateau — 学习笔记（入门）](/study/papers/continual-pretrain-survey-2026/) |
 | `contriever-2021` | [Contriever — 不用人工标注也能训练稠密检索器](/study/papers/contriever-2021/) |
+| `controlled-channel-attacks-2015` | [Controlled-Channel Attacks 2015 — 不可信操作系统也能用缺页记录偷看程序](/study/papers/controlled-channel-attacks-2015/) |
 | `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) |
 | `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) |
 | `cook-torrance-1982` | [Cook-Torrance 1982 — 把镜面反射拆成微面元 × 几何遮挡 × Fresnel](/study/papers/cook-torrance-1982/) |
@@ -1164,7 +1165,7 @@ sidebar:
 
 ---
 
-## 全部 996 篇（字母序）
+## 全部 997 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1357,6 +1358,7 @@ sidebar:
 | `constitutional-ai` | [Constitutional AI — Anthropic 的对齐方法](/study/papers/constitutional-ai/) | AI 安全与可解释性 |
 | `continual-pretrain-survey-2026` | [Linear Attention, Still: Why Mamba-style Models Plateau — 学习笔记（入门）](/study/papers/continual-pretrain-survey-2026/) | 其他 |
 | `contriever-2021` | [Contriever — 不用人工标注也能训练稠密检索器](/study/papers/contriever-2021/) | 其他 |
+| `controlled-channel-attacks-2015` | [Controlled-Channel Attacks 2015 — 不可信操作系统也能用缺页记录偷看程序](/study/papers/controlled-channel-attacks-2015/) | 其他 |
 | `cook-1984-distributed-ray-tracing` | [Distributed Ray Tracing — 把所有"模糊"效果统一成随机采样](/study/papers/cook-1984-distributed-ray-tracing/) | 其他 |
 | `cook-1986-stochastic-sampling` | [Cook 1986 — 用噪声换掉锯齿](/study/papers/cook-1986-stochastic-sampling/) | 其他 |
 | `cook-levin` | [Cook-Levin 定理 — NP-完全性的诞生](/study/papers/cook-levin/) | 计算理论 / 数学基础 |
