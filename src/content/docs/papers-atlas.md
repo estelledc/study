@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 993 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 994 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：993 篇
+- **总数**：994 篇
 - **已分类**：143
-- **未分类**：850（落入"其他 / 待分类"段）
+- **未分类**：851（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 850 |
+| [其他 / 待分类](#其他--待分类) | 851 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 850 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 851 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -854,6 +854,7 @@ sidebar:
 | `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) |
 | `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) |
+| `muller-2007-pbd` | [Position Based Dynamics — 直接修正位置的实时物理](/study/papers/muller-2007-pbd/) |
 | `multics-1965` | [MULTICS 1965 — 把计算机做成像电力一样的公共服务](/study/papers/multics-1965/) |
 | `mvcc` | [MVCC — 让读写互不挡路的版本账本](/study/papers/mvcc/) |
 | `mycroft-strictness` | [Mycroft 严格性分析 — 编译器替你判定哪些参数能"先算"](/study/papers/mycroft-strictness/) |
@@ -1161,7 +1162,7 @@ sidebar:
 
 ---
 
-## 全部 993 篇（字母序）
+## 全部 994 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1795,6 +1796,7 @@ sidebar:
 | `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | 其他 |
 | `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) | 其他 |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) | 其他 |
+| `muller-2007-pbd` | [Position Based Dynamics — 直接修正位置的实时物理](/study/papers/muller-2007-pbd/) | 其他 |
 | `multics-1965` | [MULTICS 1965 — 把计算机做成像电力一样的公共服务](/study/papers/multics-1965/) | 其他 |
 | `muzero` | [MuZero — 不用规则也能下棋](/study/papers/muzero/) | 强化学习 |
 | `mvcc` | [MVCC — 让读写互不挡路的版本账本](/study/papers/mvcc/) | 其他 |
