@@ -1515,6 +1515,7 @@ nvidia-gpu-operator
 nvidia-mig
 nvm
 nx
+obs-studio
 observable-framework
 observable-plot
 oclif
