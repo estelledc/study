@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 910 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 911 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：910 个
+- **总数**：911 个
 - **已分类**：214
-- **未分类**：696（落入"其他 / 待分类"段）
+- **未分类**：697（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 696 |
+| [其他 / 待分类](#其他--待分类) | 697 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 696 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 697 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1155,6 +1155,7 @@ sidebar:
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) |
+| `video.js` | [Video.js — Web 视频播放器框架](/study/projects/video.js/) |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) |
 | `vim` | [Vim — 键盘上弹钢琴的编辑器](/study/projects/vim/) |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) |
@@ -1206,7 +1207,7 @@ sidebar:
 
 ---
 
-## 全部 910 个（字母序）
+## 全部 911 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2055,6 +2056,7 @@ sidebar:
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) | 其他 |
 | `victoriametrics` | [VictoriaMetrics — 高性能 Prometheus 替代](/study/projects/victoriametrics/) | 监控 / 时序 |
+| `video.js` | [Video.js — Web 视频播放器框架](/study/projects/video.js/) | 其他 |
 | `viem` | [viem — 现代 TypeScript EVM 库](/study/projects/viem/) | 其他 |
 | `vim` | [Vim — 键盘上弹钢琴的编辑器](/study/projects/vim/) | 其他 |
 | `vis-network` | [vis-network — barnesHut 物理引擎驱动的网络图](/study/projects/vis-network/) | 其他 |
