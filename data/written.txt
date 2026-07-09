@@ -1342,6 +1342,7 @@ jc
 jenkins
 jest
 jimp
+jitsi-meet
 jitsi-videobridge
 joplin
 jotai
