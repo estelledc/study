@@ -1,0 +1,57 @@
+package.json
+  s_9340ed41c548fc::t_1291d61dc6a59d 11-14
+scripts/audit-content-counts.mjs
+  s_9340ed41c548fc::t_179d80f1573667 1-104
+scripts/audit-internal-links.mjs
+  s_9340ed41c548fc::t_59617200fd7129 1-126
+scripts/audit-wikilink-ambiguity.mjs
+  s_9340ed41c548fc::t_2c0cd6b8d43a7f 1-103
+scripts/remark-wikilinks.mjs
+  s_9340ed41c548fc::t_671667a643b126 4-6,9,11,18-24,26-27,29,33-35,38-39,42-90,93-95,106-108,115,119,127
+src/content/docs/about.md
+  s_9340ed41c548fc::t_d36977705a8219 3,17,127,169
+src/content/docs/career-plan.md
+  s_9340ed41c548fc::t_64a0afdb0c0c22 8,92,117,136-138
+src/content/docs/index.md
+  s_9340ed41c548fc::t_2d119b96e8b160 3,7,10,13,17,28,38,65
+src/content/docs/method.md
+  s_9340ed41c548fc::t_f4853f4149448c 3,10,14,16,31,53,69,100,121,136,160,224,241,245,411
+src/content/docs/papers-method.md
+  s_9340ed41c548fc::t_659744bcd82a86 14,212,351
+src/content/docs/papers-queue.md
+  s_9340ed41c548fc::t_a218dfd836c14b 3,8,16,20,109,133,150,152-153,162-164,173-174,183-185,187,196-198,206-207,209,242
+src/content/docs/papers/dijkstra-goto.md
+  s_9340ed41c548fc::t_9979610d4d9883 39,103,105,125,134-137
+src/content/docs/papers/mptcp-2012.md
+  s_9340ed41c548fc::t_6c0817c4456d99 149-153
+src/content/docs/papers/sctp-multipath-2006.md
+  s_9340ed41c548fc::t_c049f54bd7cc0e 142-146
+src/content/docs/projects/kakoune.md
+  s_9340ed41c548fc::t_5dc4b9fdbe946b 37,41,115-116,145-147
+src/content/docs/projects/lexical.md
+  s_9340ed41c548fc::t_4a9185d81a7b66 15,28,432,564
+src/content/docs/projects/lodestar.md
+  s_9340ed41c548fc::t_430c7d641a08ce 188-190
+src/content/docs/projects/nuttx.md
+  s_9340ed41c548fc::t_ad54f564864f0e 150-152
+src/content/docs/queue.md
+  s_9340ed41c548fc::t_808aad9df13a94 3,9,16,24,26,70,81,106,121,191-194
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "24cc5498ff54eefaffe77435f596e85456fb3387",
+  "prompts": {},
+  "sessions": {
+    "s_9340ed41c548fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9788d74c-dc80-4c60-8ed9-f8f7c8e0039a",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
