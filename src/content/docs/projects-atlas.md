@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 947 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 948 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：947 个
+- **总数**：948 个
 - **已分类**：214
-- **未分类**：733（落入"其他 / 待分类"段）
+- **未分类**：734（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 733 |
+| [其他 / 待分类](#其他--待分类) | 734 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 733 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 734 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -882,6 +882,7 @@ sidebar:
 | `lsd` | [lsd — 现代 ls 替代（LSDeluxe，主题化 + 图标，不押 git）](/study/projects/lsd/) |
 | `luma-gl` | [luma.gl](/study/projects/luma-gl/) |
 | `lunarvim` | [LunarVim — 开箱即用的 Neovim IDE 发行版](/study/projects/lunarvim/) |
+| `luxcorerender` | [LuxCoreRender — 物理光线追踪](/study/projects/luxcorerender/) |
 | `lwip` | [lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈](/study/projects/lwip/) |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) |
 | `mage` | [Mage — 用 Go 写 build 脚本，告别 Makefile](/study/projects/mage/) |
@@ -1243,7 +1244,7 @@ sidebar:
 
 ---
 
-## 全部 947 个（字母序）
+## 全部 948 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1711,6 +1712,7 @@ sidebar:
 | `lucia` | [Lucia — 主动把自己降级为"学习资源"的 TS 认证库](/study/projects/lucia/) | Auth 认证 |
 | `luma-gl` | [luma.gl](/study/projects/luma-gl/) | 其他 |
 | `lunarvim` | [LunarVim — 开箱即用的 Neovim IDE 发行版](/study/projects/lunarvim/) | 其他 |
+| `luxcorerender` | [LuxCoreRender — 物理光线追踪](/study/projects/luxcorerender/) | 其他 |
 | `luxon` | [Luxon — 如果今天重写 Moment 应该长什么样](/study/projects/luxon/) | 日期时间 |
 | `lwip` | [lwIP — 嵌入式系统的轻量级 TCP/IP 协议栈](/study/projects/lwip/) | 其他 |
 | `m3` | [M3 — Uber 的分布式 TSDB](/study/projects/m3/) | 其他 |
