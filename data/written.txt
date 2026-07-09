@@ -1242,6 +1242,7 @@ effect
 ejabberd
 elasticsearch
 electron
+electron-builder
 element-android
 element-web
 elysia
