@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 932 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 933 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：932 个
+- **总数**：933 个
 - **已分类**：214
-- **未分类**：718（落入"其他 / 待分类"段）
+- **未分类**：719（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 718 |
+| [其他 / 待分类](#其他--待分类) | 719 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 718 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 719 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -906,6 +906,7 @@ sidebar:
 | `micronaut` | [Micronaut — 编译期搞定 DI 的 JVM 云原生框架](/study/projects/micronaut/) |
 | `micropython` | [MicroPython — 在巴掌大的芯片上跑 Python](/study/projects/micropython/) |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) |
+| `mind-ar-js` | [MindAR — 不装原生 SDK 的浏览器图像/人脸 AR](/study/projects/mind-ar-js/) |
 | `minetest` | [Minetest (Luanti) — 开源世界的 Minecraft](/study/projects/minetest/) |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) |
@@ -1228,7 +1229,7 @@ sidebar:
 
 ---
 
-## 全部 932 个（字母序）
+## 全部 933 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1730,6 +1731,7 @@ sidebar:
 | `mikro-orm` | [MikroORM — Data Mapper Identity Map ORM](/study/projects/mikro-orm/) | ORM / DB 客户端 |
 | `miller` | [Miller (mlr) — 懂 CSV/JSON 表头的 awk](/study/projects/miller/) | 其他 |
 | `milvus` | [Milvus — 开源向量数据库](/study/projects/milvus/) | 数据库本体 / 存储引擎 |
+| `mind-ar-js` | [MindAR — 不装原生 SDK 的浏览器图像/人脸 AR](/study/projects/mind-ar-js/) | 其他 |
 | `minetest` | [Minetest (Luanti) — 开源世界的 Minecraft](/study/projects/minetest/) | 其他 |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) | 其他 |
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
