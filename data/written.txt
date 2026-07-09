@@ -904,6 +904,7 @@ toy-models-superposition
 tracemonkey
 tradeoff-analysis
 transformer
+transformer-2017
 transformer-xl-2019
 tree-of-attention-2026
 tree-of-thoughts-2023
