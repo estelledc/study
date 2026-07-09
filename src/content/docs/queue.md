@@ -1,19 +1,19 @@
 ---
 title: 推荐队列
-description: 按主题分组的 pillar 项目推荐——726 篇项目笔记的导航起点
+description: 按主题分组的 pillar 项目推荐——961 篇项目笔记的导航起点
 sidebar:
   order: 2
 ---
 
 > 不是"读哪 20 个"的清单，是"先读哪 5 个就能撑起一个领域"的导航。
-> 当前站点 726 篇项目笔记 + 785 篇论文笔记，凑数没有意义，**取舍**才有。
+> 当前站点 961 篇项目笔记 + 1014 篇论文笔记，凑数没有意义，**取舍**才有。
 > 每个主题给 3-5 个 pillar：反向链接最多、跨主题被引最广、读完能形成判断。
 
 ## 怎么用这页
 
 - 想入门某个领域 → 看对应主题的"先读这几个"
 - 想看全景 → 跳到文末 [全景 atlas](#全景-atlas)
-- 想读论文枢纽 → 走 [[papers-queue]] / [[papers-atlas]]
+- 想读论文枢纽 → 走 [papers-queue](/study/papers-queue/) / [papers-atlas](/study/papers-atlas/)
 - 想看挑选标准 → 看 [立场宣言](/study/about/)
 
 ---
@@ -21,9 +21,9 @@ sidebar:
 ## 前端与全栈
 
 承上 React 生态、向下到运行时与构建。这条线**反向链接最密**：
-[[react]] 一篇被 68 篇引用，是站点的前端枢纽。
+[React](/study/projects/react/) 一篇被 68 篇引用，是站点的前端枢纽。
 
-- [[react]] — 前端枢纽。Lexical / Next / Radix / shadcn 全部反向汇聚到这
+- [React](/study/projects/react/) — 前端枢纽。Lexical / Next / Radix / shadcn 全部反向汇聚到这
 - [[shadcn-ui]] — 不是组件库，是代码分发协议
 - [[tanstack-query]] — 服务端状态是独立物种，不是 Redux 的子集
 - [[zustand]] — 101 行核心 + 反 Provider 派的极简心智
@@ -67,7 +67,7 @@ sidebar:
 - [[tikv]] / [[tidb]] — Raft + Percolator 在生产规模的开源演进
 - [[cockroachdb]] — Spanner 思路的开源化（对应论文 [[spanner-2012]]）
 - [[temporal]] — 工作流编排：把"长任务 + 重试 + 状态"变成可写的代码
-- [[kafka]] — 事件日志的事实标准；[[pulsar]] 是同问题的另一种回答
+- [Kafka](/study/projects/kafka/) — 事件日志的事实标准；[[pulsar]] 是同问题的另一种回答
 
 ---
 
@@ -78,7 +78,7 @@ sidebar:
 
 - [[postgresql]] — 关系数据库的工程枢纽
 - [[sqlite]] — 嵌入式 + WAL，单文件数据库的极简哲学
-- [[clickhouse]] — 列式 OLAP 的开源王者
+- [ClickHouse](/study/projects/clickhouse/) — 列式 OLAP 的开源王者
 - [[duckdb]] — 进程内 OLAP，"SQLite for analytics"
 - [[mongodb]] / [[cassandra]] — 文档与宽列两条非关系路线
 
@@ -103,7 +103,7 @@ sidebar:
 论文根 [[attention]] (103) / [[bert]] (42)。
 
 - [[pytorch]] — 动态图 + autograd，论文实现侧的反向引最多
-- [[vllm]] / [[sglang]] — LLM 推理引擎，PagedAttention 与 RadixAttention 两路
+- [vLLM](/study/projects/vllm/) / [[sglang]] — LLM 推理引擎，PagedAttention 与 RadixAttention 两路
 - [[ray]] — 分布式 Python 的统一抽象
 - [[ollama]] — 本地 LLM 跑起来的最低门槛
 - [[comfyui]] — 节点式工作流，AI 图像生产的可编排心智
@@ -118,7 +118,7 @@ sidebar:
 - [[claude-code]] — 你天天用的工具自己怎么写的，元学习
 - [[mcp-ts-sdk]] — MCP 协议设计：让 AI 调用外部世界的最小契约
 - [[langchain]] / [[llamaindex]] — 早期 agent 框架的两种取舍
-- [[autogen]] / [[crewai]] — 多 agent 协作的两条路
+- [AutoGen](/study/projects/autogen/) / [[crewai]] — 多 agent 协作的两条路
 - [[anthropic-cookbook]] — 一线工程范式的样本库
 
 ---
@@ -188,10 +188,10 @@ PL 理论在论文侧根扎得最深：[[hindley-milner]] / [[lambda-calculus]] 
 
 ## 全景 atlas
 
-- 项目全景（726 篇按主题分组、反向链接热度、消化状态）：[[projects-atlas]]
-- 论文全景（785 篇按子领域、pillar 标记、未消化队列）：[[papers-atlas]]
-- 论文推荐入口（与本页平行的论文版导航）：[[papers-queue]]
-- 方法论与挑选标准：[[about]] / [[method]] / [[papers-method]]
+- 项目全景（961 篇按主题分组、反向链接热度、消化状态）：[projects-atlas](/study/projects-atlas/)
+- 论文全景（1014 篇按子领域、pillar 标记、未消化队列）：[papers-atlas](/study/papers-atlas/)
+- 论文推荐入口（与本页平行的论文版导航）：[papers-queue](/study/papers-queue/)
+- 方法论与挑选标准：[about](/study/about/) / [method](/study/method/) / [papers-method](/study/papers-method/)
 
 ## 这页的偏见
 

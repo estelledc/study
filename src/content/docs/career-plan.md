@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-> 本页是路径说明。具体笔记见左侧分组；当前规模 1500+ 篇（论文 785 + 项目 726）。
+> 本页是路径说明。具体笔记见左侧分组；当前规模 1900+ 篇（论文 1014 + 项目 961）。
 
 ## 1. 路径模型的演化
 
@@ -89,7 +89,7 @@ sidebar:
 
 ### 3.9 前端工程（项目侧）
 
-枢纽：[[react]]（68，前端门面，Lexical / Next / Radix 全部反向引）
+枢纽：[React](/study/projects/react/)（68，前端门面，Lexical / Next / Radix 全部反向引）
 
 横向对比：React vs Solid vs Svelte 响应式模型；CSR / SSR / RSC；headless（Radix / TanStack）vs 一体化（MUI）。
 
@@ -114,7 +114,7 @@ sidebar:
 
 ## 5. 当前优势与短板
 
-强项（截至当前 1500+ 篇规模）：
+强项（截至当前 1900+ 篇规模）：
 
 - 编程语言与类型理论：完整覆盖 HM / λ / Hoare 链
 - 分布式共识：Paxos / Raft / Lamport 主线齐全
@@ -133,8 +133,8 @@ sidebar:
 | 想做 | 去哪 |
 |------|------|
 | 看下一个研究目标 | [推荐队列](/study/queue/) |
-| 看主题统计 | [概览](/study/overview/) |
-| 看活跃链接 | [hot](/study/hot/) |
-| 看缺口与矛盾 | [issues](/study/issues/) |
+| 看项目主题统计 | [项目全景](/study/projects-atlas/) |
+| 看论文主题统计 | [论文全景](/study/papers-atlas/) |
+| 看方法论 | [7 层方法论](/study/method/) |
 
 具体笔记从左侧分组进，或在主题树里点枢纽节点。

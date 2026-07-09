@@ -1,11 +1,11 @@
 ---
 title: 论文队列
-description: 按 topic 分组的 pillar 推荐 —— 站内 785 篇论文笔记里，每条主线挑 3-5 篇代表作做切入点
+description: 按 topic 分组的 pillar 推荐 —— 站内 1014 篇论文笔记里，每条主线挑 3-5 篇代表作做切入点
 sidebar:
   order: 4
 ---
 
-> 站内累计 785 篇论文笔记，跨 14 个主题。这页不是"待读清单"，是
+> 站内累计 1014 篇论文笔记，跨 14 个主题。这页不是"待读清单"，是
 > **入门指引** —— 每个 topic 给 3-5 篇 pillar 论文 + 一行说明它
 > 为什么是该 topic 的支点。看完一条主线的 pillar，你就拿到了
 > 该 topic 整张反向链接图的入口。
@@ -13,11 +13,11 @@ sidebar:
 ## 怎么用这页
 
 - 不知道某个 topic 从哪读 → 来这里挑该主题 3-5 篇 pillar
-- 想看完整 785 篇分布与主题地图 → [papers-atlas](/study/papers-atlas/)
+- 想看完整 1014 篇分布与主题地图 → [papers-atlas](/study/papers-atlas/)
 - 想要"如何精读一篇论文"的方法 → [papers-method](/study/papers-method/)
 - 想看跨论文 + 项目的混合阅读节奏 → [queue](/study/queue/)
 
-每条 pillar 都给了 `[[slug]]` 双向链接，点进去就是该论文的笔记主页。
+每条已收录 pillar 都给了双向链接，点进去就是该论文的笔记主页。
 backlinks 数字是"站内有多少篇笔记反向引用过它"，是"该论文在这个图里有多核心"
 的最直接指标。
 
@@ -106,7 +106,7 @@ PL 是站内反向链接密度最高的 topic，pillar 都是"奠基级"：
 经典系统论文的"必读三件套"：
 
 1. [[unix-1974]] —— UNIX 哲学的源头文档（管道 / 一切皆文件 / 小工具组合）。
-2. [[lions-commentary]] —— V6 内核逐行讲解，OS 教学的开山之作。
+2. lions-commentary —— V6 内核逐行讲解，OS 教学的开山之作。
 3. [[exokernel-1995]] —— 反"抽象"的极端思路，影响了 Unikernel / 现代容器
    的设计哲学。
 4. [[mach-1986]] —— 微内核 + 消息传递，macOS / iOS 内核的祖先。
@@ -130,7 +130,7 @@ LLM 时代的"根 5 篇"：
 
 2022-2026 年最快迭代的子领域，pillar 都是近 4 年的：
 
-1. [[react]]（论文，不是前端框架）—— "think-act-observe" 循环的祖宗，对应
+1. [ReAct](/study/papers/react/)（论文，不是前端框架）—— "think-act-observe" 循环的祖宗，对应
    今天 Claude Code / Cursor agent loop。
 2. [[cot]] —— Chain-of-Thought，reasoning trace 为什么有用，ReAct 的根。
 3. [[reflexion]] —— ReAct 没 retry 的硬伤怎么补：加自我反思层。
@@ -147,10 +147,10 @@ crewAI / OpenHands）在抢什么空间。
 跨 PL + 验证两线，pillar 全部是"理论分水岭"：
 
 1. [[hoare-logic]] —— 前条件 / 后条件 / 不变量这套语法的源头。
-2. [[separation-logic]] —— 处理指针 + 堆的扩展，Rust borrow checker 的
+2. separation-logic —— 处理指针 + 堆的扩展，Rust borrow checker 的
    远房亲戚。
-3. [[curry-howard]] —— 命题 = 类型，证明 = 程序的对应关系。
-4. [[tla-plus]] —— Lamport 的工程化形式化方法，AWS / MongoDB 实战引用最多。
+3. curry-howard —— 命题 = 类型，证明 = 程序的对应关系。
+4. tla-plus —— Lamport 的工程化形式化方法，AWS / MongoDB 实战引用最多。
 
 ---
 
@@ -159,9 +159,9 @@ crewAI / OpenHands）在抢什么空间。
 数量不多但全是支柱：
 
 1. [[llvm]] —— 现代编译器 IR + Pass 框架的事实标准。
-2. [[ssa-form]] —— 静态单赋值，几乎所有现代编译器优化的 IR 基础。
-3. [[lattice-dataflow]] —— 数据流分析的格论基础。
-4. [[graph-coloring-regalloc]] —— 寄存器分配的经典图染色路线。
+2. ssa-form —— 静态单赋值，几乎所有现代编译器优化的 IR 基础。
+3. lattice-dataflow —— 数据流分析的格论基础。
+4. graph-coloring-regalloc —— 寄存器分配的经典图染色路线。
 
 ---
 
@@ -170,8 +170,8 @@ crewAI / OpenHands）在抢什么空间。
 近 2 年 3D / 渲染领域被 NeRF 与 Gaussian Splatting 重新洗了一遍：
 
 1. [[3d-gaussian-splatting]] —— 2023-2024 实时 3D 渲染的"新祖宗"。
-2. [[nerf]] —— Neural Radiance Field，3D 重建被神经网络重写的起点。
-3. [[ray-tracing-1980]] —— Whitted ray tracing，路径追踪的奠基。
+2. nerf —— Neural Radiance Field，3D 重建被神经网络重写的起点。
+3. ray-tracing-1980 —— Whitted ray tracing，路径追踪的奠基。
 4. [[reyes-1987]] —— Pixar 的 Reyes 架构，offline 渲染的经典思路。
 
 ---
@@ -180,11 +180,11 @@ crewAI / OpenHands）在抢什么空间。
 
 Internet 协议栈的 pillar 通常 1980s-1990s，QUIC 是新一代：
 
-1. [[tcp-1981]] —— RFC 793，TCP 的源头规格。
-2. [[bgp-rfc1771]] —— Internet 路由的脊梁。
-3. [[end-to-end-1984]] —— "End-to-End Arguments in System Design"，
+1. tcp-1981 —— RFC 793，TCP 的源头规格。
+2. bgp-rfc1771 —— Internet 路由的脊梁。
+3. end-to-end-1984 —— "End-to-End Arguments in System Design"，
    网络分层哲学的政治宣言。
-4. [[quic-2017]] —— TCP/TLS 替代路线的工程总结，HTTP/3 的基础。
+4. quic-2017 —— TCP/TLS 替代路线的工程总结，HTTP/3 的基础。
 
 ---
 
@@ -193,9 +193,9 @@ Internet 协议栈的 pillar 通常 1980s-1990s，QUIC 是新一代：
 从经典 IR 到向量检索：
 
 1. [[bm25]] —— TF-IDF 的工程标准变体，2025 年依然是"baseline 的 baseline"。
-2. [[pagerank]] —— Google 起家算法，图算法 + IR 的交叉点。
-3. [[hnsw]] —— 向量检索的现代支柱，Faiss / Milvus / pgvector 都基于它。
-4. [[colbert]] —— late-interaction retrieval，RAG 时代的 reranker 路线。
+2. pagerank —— Google 起家算法，图算法 + IR 的交叉点。
+3. hnsw —— 向量检索的现代支柱，Faiss / Milvus / pgvector 都基于它。
+4. colbert —— late-interaction retrieval，RAG 时代的 reranker 路线。
 
 ---
 
@@ -203,10 +203,10 @@ Internet 协议栈的 pillar 通常 1980s-1990s，QUIC 是新一代：
 
 数量大但 pillar 集中：
 
-1. [[bitcoin-2008]] —— 中本聪白皮书，PoW + UTXO 模型的奠基。
-2. [[ethereum-yellowpaper]] —— 智能合约 + EVM 的形式化规范。
+1. bitcoin-2008 —— 中本聪白皮书，PoW + UTXO 模型的奠基。
+2. ethereum-yellowpaper —— 智能合约 + EVM 的形式化规范。
 3. [[pbft-1999]] —— 拜占庭容错的工程化版本，联盟链 / Tendermint 的根。
-4. [[zk-snarks]] —— 零知识证明在区块链落地的关键。
+4. zk-snarks —— 零知识证明在区块链落地的关键。
 
 ---
 
@@ -239,7 +239,7 @@ Internet 协议栈的 pillar 通常 1980s-1990s，QUIC 是新一代：
 | 编译器 | 11 | [papers-atlas#编译器](/study/papers-atlas/) |
 | NLP | 11 | [papers-atlas#NLP](/study/papers-atlas/) |
 
-总计 785 篇笔记。这页只是"切入点"，真要展开请走对应 topic 的 atlas
+总计 1014 篇笔记。这页只是"切入点"，真要展开请走对应 topic 的 atlas
 分支。
 
 ---

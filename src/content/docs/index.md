@@ -1,20 +1,20 @@
 ---
 title: Jason's Study
-description: 1500+ 篇笔记的开源项目与论文研究站点，零基础友好，结论先行
+description: 1900+ 篇笔记的开源项目与论文研究站点，零基础友好，结论先行
 template: splash
 hero:
   title: 把开源项目和经典论文，啃成自己的语言
-  tagline: 1500+ 篇笔记，每篇 150-200 行，每篇 30 分钟读完。从日常类比起步，零术语假设。给同样想从零基础长出工程判断力的人。
+  tagline: 1900+ 篇笔记，每篇 150-200 行，每篇 30 分钟读完。从日常类比起步，零术语假设。给同样想从零基础长出工程判断力的人。
   actions:
     - text: 项目研究
-      link: /projects/
+      link: /study/queue/
       icon: right-arrow
     - text: 论文研究
-      link: /papers/
+      link: /study/papers-queue/
       icon: open-book
       variant: minimal
     - text: 方法论
-      link: /method/
+      link: /study/method/
       icon: setting
       variant: minimal
 ---
@@ -25,7 +25,7 @@ hero:
 
 ## 三句话定位
 
-- **规模**：785 篇论文 + 726 个项目 = 1511 篇笔记，按主题簇组织（分布式系统、编程语言、数据库、操作系统、机器学习、图形学、形式化方法等 19 个主题）。
+- **规模**：1014 篇论文 + 961 个项目 = 1975 篇笔记，按主题簇组织（分布式系统、编程语言、数据库、操作系统、机器学习、图形学、形式化方法等 19 个主题）。
 - **写法**：每篇 150-200 行，统一结构（一句话定位 / Why / How 从日常类比起步 / Hands-on / 与当前工作的连接 / 自检问题）。零术语假设，零基础友好。
 - **导航**：站点用反向链接织网，从任一篇都能跳到它的"祖宗"和"后代"。下面列的旗舰笔记是网中节点最密的几篇。
 
@@ -35,7 +35,7 @@ hero:
 
 读现代开源项目的代码组织、设计取舍、踩坑路径。门面级枢纽：
 
-- [[react]]（68 反向链接）— 前端枢纽，Lexical / Next / Radix 都向它汇
+- [React](/study/projects/react/)（68 反向链接）— 前端枢纽，Lexical / Next / Radix 都向它汇
 - [[pytorch]]（67）— ML 框架枢纽，论文实现侧最常被引
 - [[kubernetes]]（66）— 基础设施门面，跨容器/调度/网络
 - [[postgresql]]（66）— 数据库枢纽，drizzle / prisma / postgres-js 都反向引
@@ -62,4 +62,4 @@ hero:
 - **与当前工作的连接**：能立刻迁移的具体路径，不是抽象建议。
 - **自检问题**：留给下次精读时回头查。
 
-完整方法论见 [/method/](/method/)；要找具体笔记走左侧导航或站内搜索。
+完整方法论见 [method](/study/method/)；要找具体笔记走左侧导航或站内搜索。

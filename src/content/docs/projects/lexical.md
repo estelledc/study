@@ -12,7 +12,7 @@ branch: D
 > 不是开箱即用的"组件"，是 Meta 内部从 Draft.js 退役迁移到 Workplace / WhatsApp Web / Facebook composer 的"编辑器底座"——
 > 提供四件抽象：immutable `EditorState`、双缓冲 `commitPendingUpdates`、`LexicalNode` 继承面、React 中性的 plugin 注册器；
 > 上层（rich text、collab、autolink、markdown shortcut）都是 plugin，不在内核。
-> 同年代竞品 Slate / Tiptap / Draft.js / [prosemirror](/projects/prosemirror/) 各走一条路，本篇主要拆 Lexical 的"选择"。
+> 同年代竞品 Slate / Tiptap / Draft.js / [prosemirror](/study/projects/prosemirror/) 各走一条路，本篇主要拆 Lexical 的"选择"。
 
 | 维度 | 数据 |
 |---|---|
@@ -25,7 +25,7 @@ branch: D
 | 维护方 | Meta Platforms（前 Facebook）开源团队，core 在 React 与 Workplace 编辑器组共维护 |
 | 主要贡献者 | trueadm（Dominic Gannaway，~1486 commit / 也是 React Forget / React fast-refresh 作者）/ zurfyx / etrepum / acywatson / fantactuka |
 | License | MIT |
-| 类似项目 | [prosemirror](/projects/prosemirror/)（schema-first / Marijn Haverbeke）/ Slate.js（mutable doc + React-only）/ Tiptap（基于 ProseMirror 的封装）/ Draft.js（已弃，由本项目接班）/ [codemirror](/projects/codemirror/)（同作者风格但走 code 编辑） |
+| 类似项目 | [prosemirror](/study/projects/prosemirror/)（schema-first / Marijn Haverbeke）/ Slate.js（mutable doc + React-only）/ Tiptap（基于 ProseMirror 的封装）/ Draft.js（已弃，由本项目接班）/ [codemirror](/study/projects/codemirror/)（同作者风格但走 code 编辑） |
 
 ![Figure 1. Lexical 架构总览](/projects/lexical/01-architecture.webp)
 
@@ -429,7 +429,7 @@ function initializeEditor(
 
 - 整个 `LexicalComposer` 只有 14 行 React 代码——`useMemo([])` 创建 editor 一次、`useLayoutEffect` 设可编辑性、
   Context.Provider 把 `[editor, context]` 透下去。**这是 framework/SDK 设计的精髓**：React 集成只负责"挂 editor 到 React lifecycle"，
-  其他交给 vanilla 内核。对比 [prosemirror](/projects/prosemirror/) 没有官方 React 集成（社区 prosemirror-react）；
+  其他交给 vanilla 内核。对比 [prosemirror](/study/projects/prosemirror/) 没有官方 React 集成（社区 prosemirror-react）；
   Slate 把 React render 嵌进 view 层，这两套都不如 Lexical 的"React 是可选适配器"清爽。
 - `useMemo(() => ..., [])` 看起来"违反 React 规范"，但作者特意加了 eslint-disable 注释——editor 必须**只创建一次**，
   否则后续 plugin 注册的 listener 会丢。这是 React 18 strict mode 双调用 useEffect 的典型陷阱：useMemo 不会双调，
@@ -561,7 +561,7 @@ isEmpty(): boolean {
 
 > 找哲学不同的，不是同流派下位替代。富文本 / 编辑器框架的赛道里，Lexical 主要的对手是 ProseMirror、Slate、Draft.js、Tiptap、CodeMirror。
 
-| 维度 | **Lexical** | [ProseMirror](/projects/prosemirror/) | Slate.js | Draft.js（已弃） | Tiptap | [CodeMirror 6](/projects/codemirror/) |
+| 维度 | **Lexical** | [ProseMirror](/study/projects/prosemirror/) | Slate.js | Draft.js（已弃） | Tiptap | [CodeMirror 6](/study/projects/codemirror/) |
 |---|---|---|---|---|---|---|
 | **文档模型** | `Map<NodeKey, Node>` + 链表 | immutable Node 树（schema 校验） | 嵌套 JSON object（mutable） | immutable.js Record | 同 ProseMirror（封装） | Text rope + Decoration |
 | **变更模型** | `editor.update(fn)` + dirty set | Step 序列（apply/invert/map） | `Editor.apply(op)`，op 是 path-based | `EditorState.set(...)` | 同 ProseMirror | Transaction（state.update） |
