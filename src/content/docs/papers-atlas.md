@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 992 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 993 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：992 篇
+- **总数**：993 篇
 - **已分类**：143
-- **未分类**：849（落入"其他 / 待分类"段）
+- **未分类**：850（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 849 |
+| [其他 / 待分类](#其他--待分类) | 850 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 849 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 850 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -790,6 +790,7 @@ sidebar:
 | `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) |
 | `machanavajjhala-l-diversity-2007` | [Machanavajjhala l-Diversity 2007 — 给匿名分组补上敏感值多样性](/study/papers/machanavajjhala-l-diversity-2007/) |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) |
+| `macklin-2016-xpbd` | [XPBD — 让 PBD 的软硬程度不再跟帧率绑死](/study/papers/macklin-2016-xpbd/) |
 | `madry-pgd-2017` | [Madry PGD — 把对抗训练变成最坏情况演练](/study/papers/madry-pgd-2017/) |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
 | `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) |
@@ -1160,7 +1161,7 @@ sidebar:
 
 ---
 
-## 全部 992 篇（字母序）
+## 全部 993 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1723,6 +1724,7 @@ sidebar:
 | `mach-vm-1987` | [Mach VM — 把虚拟内存抽象成"对象"，与硬件解耦](/study/papers/mach-vm-1987/) | 其他 |
 | `machanavajjhala-l-diversity-2007` | [Machanavajjhala l-Diversity 2007 — 给匿名分组补上敏感值多样性](/study/papers/machanavajjhala-l-diversity-2007/) | 其他 |
 | `macklin-2014-position-based-fluids` | [Position Based Fluids — 把水也塞进 PBD 同一套框架](/study/papers/macklin-2014-position-based-fluids/) | 其他 |
+| `macklin-2016-xpbd` | [XPBD — 让 PBD 的软硬程度不再跟帧率绑死](/study/papers/macklin-2016-xpbd/) | 其他 |
 | `madry-pgd-2017` | [Madry PGD — 把对抗训练变成最坏情况演练](/study/papers/madry-pgd-2017/) | 其他 |
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 其他 |
