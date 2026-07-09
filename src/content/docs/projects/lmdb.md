@@ -80,7 +80,7 @@ mdb_txn_abort(txn);
 
 LMDB 起家就和 OpenLDAP 关系很深。OpenLDAP 管理员配置一个 mdb 数据库时，核心片段长这样：
 
-```ldif
+```text
 dn: olcDatabase=mdb,cn=config
 objectClass: olcDatabaseConfig
 objectClass: olcMdbConfig

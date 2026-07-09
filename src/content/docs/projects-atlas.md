@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 904 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 905 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：904 个
+- **总数**：905 个
 - **已分类**：214
-- **未分类**：690（落入"其他 / 待分类"段）
+- **未分类**：691（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 690 |
+| [其他 / 待分类](#其他--待分类) | 691 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 690 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 691 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -852,6 +852,7 @@ sidebar:
 | `llama-index` | [LlamaIndex — 给大模型接上私有资料库](/study/projects/llama-index/) |
 | `llrt` | [LLRT — AWS Lambda 场景下的低延迟 JS 运行时](/study/projects/llrt/) |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) |
+| `lmdb` | [LMDB — 内存映射 KV 库](/study/projects/lmdb/) |
 | `lmms` | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) |
 | `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) |
@@ -1200,7 +1201,7 @@ sidebar:
 
 ---
 
-## 全部 904 个（字母序）
+## 全部 905 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1635,6 +1636,7 @@ sidebar:
 | `llamaindex` | [LlamaIndex — LLM 数据框架](/study/projects/llamaindex/) | AI 应用 / Agent 平台 |
 | `llrt` | [LLRT — AWS Lambda 场景下的低延迟 JS 运行时](/study/projects/llrt/) | 其他 |
 | `lm-evaluation-harness` | [lm-evaluation-harness — LLM 基准评测底座](/study/projects/lm-evaluation-harness/) | 其他 |
+| `lmdb` | [LMDB — 内存映射 KV 库](/study/projects/lmdb/) | 其他 |
 | `lmms` | [LMMS — 低门槛入门的开源数字音乐工作站](/study/projects/lmms/) | 其他 |
 | `locust` | [Locust — 用 Python 写压测脚本的分布式负载工具](/study/projects/locust/) | 其他 |
 | `lodestar` | [Lodestar — 唯一用 TypeScript 写的以太坊共识层客户端](/study/projects/lodestar/) | 其他 |
