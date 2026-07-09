@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 965 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 966 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：965 篇
+- **总数**：966 篇
 - **已分类**：143
-- **未分类**：822（落入"其他 / 待分类"段）
+- **未分类**：823（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 822 |
+| [其他 / 待分类](#其他--待分类) | 823 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 822 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 823 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -675,6 +675,7 @@ sidebar:
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) |
 | `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) |
+| `index-structures` | [Learned Index Structures — 把数据库索引看成会预测位置的模型](/study/papers/index-structures/) |
 | `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) |
 | `ingres-1976` | [INGRES 1976 — Berkeley 平行实现的关系数据库](/study/papers/ingres-1976/) |
@@ -1133,7 +1134,7 @@ sidebar:
 
 ---
 
-## 全部 965 篇（字母序）
+## 全部 966 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1568,6 +1569,7 @@ sidebar:
 | `idris-brady` | [Idris — 让依赖类型从证明助理变成通用编程语言](/study/papers/idris-brady/) | 其他 |
 | `imagen-2022` | [Imagen — 文生图真正的引擎是语言模型](/study/papers/imagen-2022/) | 其他 |
 | `immix-mark-region` | [Immix — 把"扫"和"搬"两种垃圾回收揉成一个](/study/papers/immix-mark-region/) | 其他 |
+| `index-structures` | [Learned Index Structures — 把数据库索引看成会预测位置的模型](/study/papers/index-structures/) | 其他 |
 | `indri-2005` | [Indri 2005 — 把语言模型、推断网络、结构化查询拼成一个搜索引擎](/study/papers/indri-2005/) | 其他 |
 | `induction-heads` | [Induction Heads — Transformer 的 in-context learning 引擎](/study/papers/induction-heads/) | AI 安全与可解释性 |
 | `infer-biabduction` | [Bi-Abduction — 让静态分析自动猜出函数缺什么前提](/study/papers/infer-biabduction/) | 其他 |
