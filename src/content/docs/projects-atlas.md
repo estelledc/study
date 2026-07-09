@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 953 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 954 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：953 个
+- **总数**：954 个
 - **已分类**：214
-- **未分类**：739（落入"其他 / 待分类"段）
+- **未分类**：740（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 739 |
+| [其他 / 待分类](#其他--待分类) | 740 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 739 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 740 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -823,6 +823,7 @@ sidebar:
 | `kakoune` | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) |
 | `kaniko` | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) |
+| `kdenlive` | [Kdenlive — KDE 非线性视频剪辑](/study/projects/kdenlive/) |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) |
 | `kepler-gl` | [kepler.gl — 拖拽式百万点 GIS 探索界面](/study/projects/kepler-gl/) |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) |
@@ -1249,7 +1250,7 @@ sidebar:
 
 ---
 
-## 全部 953 个（字母序）
+## 全部 954 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1640,6 +1641,7 @@ sidebar:
 | `kakoune` | [Kakoune — 多光标优先模态编辑器](/study/projects/kakoune/) | 其他 |
 | `kamailio` | [Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器](/study/projects/kamailio/) | 其他 |
 | `kaniko` | [kaniko — 在没有 Docker 的容器里也能构建 Docker 镜像](/study/projects/kaniko/) | 其他 |
+| `kdenlive` | [Kdenlive — KDE 非线性视频剪辑](/study/projects/kdenlive/) | 其他 |
 | `kedro` | [Kedro — 把数据科学 notebook 改造成可复用模块化 pipeline](/study/projects/kedro/) | 其他 |
 | `kepler-gl` | [kepler.gl — 拖拽式百万点 GIS 探索界面](/study/projects/kepler-gl/) | 其他 |
 | `keras` | [Keras 3 — 一份模型代码跑三套后端](/study/projects/keras/) | 其他 |
