@@ -576,6 +576,7 @@ memcoder-co-evolution
 mencius-2008
 mermaid
 mesa-optimization-2019
+mesos
 mesos-2011
 metagpt
 metaml-multi-stage
