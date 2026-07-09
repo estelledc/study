@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 985 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 986 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：985 篇
+- **总数**：986 篇
 - **已分类**：143
-- **未分类**：842（落入"其他 / 待分类"段）
+- **未分类**：843（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 842 |
+| [其他 / 待分类](#其他--待分类) | 843 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 842 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 843 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -619,6 +619,7 @@ sidebar:
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) |
 | `gcc-webrtc-2016` | [GCC (WebRTC) — 让视频通话不卡的拥塞控制算法](/study/papers/gcc-webrtc-2016/) |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) |
+| `gemini-1.5-2024` | [Gemini 1.5 — 百万 token 多模态上下文的工程样板](/study/papers/gemini-1.5-2024/) |
 | `gentry-fhe-2009` | [Gentry 2009 — 第一个全同态加密方案](/study/papers/gentry-fhe-2009/) |
 | `gfs-2003` | [GFS 2003 — 把廉价机器拼成大文件仓库](/study/papers/gfs-2003/) |
 | `ghost-2021` | [ghOSt — 把 Linux 调度策略搬到用户态去写](/study/papers/ghost-2021/) |
@@ -1153,7 +1154,7 @@ sidebar:
 
 ---
 
-## 全部 985 篇（字母序）
+## 全部 986 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1521,6 +1522,7 @@ sidebar:
 | `gbrank-2007` | [GBRank — 把决策树堆起来学排序，一棵树纠正一处错排](/study/papers/gbrank-2007/) | 其他 |
 | `gcc-webrtc-2016` | [GCC (WebRTC) — 让视频通话不卡的拥塞控制算法](/study/papers/gcc-webrtc-2016/) | 其他 |
 | `gcn-2017` | [GCN 2017 — 把卷积搬到图结构上的最简版本](/study/papers/gcn-2017/) | 其他 |
+| `gemini-1.5-2024` | [Gemini 1.5 — 百万 token 多模态上下文的工程样板](/study/papers/gemini-1.5-2024/) | 其他 |
 | `generational-gc` | [Generational GC — 把全堆扫描换成"频繁扫小区，偶尔扫整堆"](/study/papers/generational-gc/) | GC / 内存管理 |
 | `gentry-fhe-2009` | [Gentry 2009 — 第一个全同态加密方案](/study/papers/gentry-fhe-2009/) | 其他 |
 | `gfs` | [GFS — 编译器决定不做哪些事](/study/papers/gfs/) | OS / 集群管理 / 系统 |
