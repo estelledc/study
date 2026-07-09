@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 919 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 920 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：919 个
+- **总数**：920 个
 - **已分类**：214
-- **未分类**：705（落入"其他 / 待分类"段）
+- **未分类**：706（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 705 |
+| [其他 / 待分类](#其他--待分类) | 706 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 705 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 706 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -947,6 +947,7 @@ sidebar:
 | `ogre` | [OGRE — 老牌 C++ 3D 渲染引擎](/study/projects/ogre/) |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
 | `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) |
+| `open3d` | [Open3D — 现代点云 / 几何库](/study/projects/open3d/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `opencode` | [OpenCode — 终端里的开源 AI 编程助手](/study/projects/opencode/) |
 | `openhab` | [openHAB — Java OSGi 家庭自动化框架](/study/projects/openhab/) |
@@ -1215,7 +1216,7 @@ sidebar:
 
 ---
 
-## 全部 919 个（字母序）
+## 全部 920 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1780,6 +1781,7 @@ sidebar:
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) | 其他 |
 | `ollama` | [Ollama — 本地跑 LLM 的工具](/study/projects/ollama/) | AI 应用 / Agent 平台 |
 | `open-sora` | [Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目](/study/projects/open-sora/) | 其他 |
+| `open3d` | [Open3D — 现代点云 / 几何库](/study/projects/open3d/) | 其他 |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | 其他 |
 | `opencode` | [OpenCode — 终端里的开源 AI 编程助手](/study/projects/opencode/) | 其他 |
 | `openhab` | [openHAB — Java OSGi 家庭自动化框架](/study/projects/openhab/) | 其他 |
