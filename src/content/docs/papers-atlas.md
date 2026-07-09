@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 968 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 969 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：968 篇
+- **总数**：969 篇
 - **已分类**：143
-- **未分类**：825（落入"其他 / 待分类"段）
+- **未分类**：826（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 825 |
+| [其他 / 待分类](#其他--待分类) | 826 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 825 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 826 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -363,6 +363,7 @@ sidebar:
 | `bbr-2017` | [BBR 2017 — 用瓶颈带宽和最小 RTT 替代丢包当拥塞信号](/study/papers/bbr-2017/) |
 | `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) |
 | `ben-sasson-stark-2018` | [STARK — 不需要"可信第三方"的计算正确性证明](/study/papers/ben-sasson-stark-2018/) |
+| `benchmarking` | [Wisconsin Benchmark — 给数据库出一套可重复的体检题](/study/papers/benchmarking/) |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) |
 | `berenson-1995-isolation` | [ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞](/study/papers/berenson-1995-isolation/) |
@@ -1136,7 +1137,7 @@ sidebar:
 
 ---
 
-## 全部 968 篇（字母序）
+## 全部 969 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1207,6 +1208,7 @@ sidebar:
 | `beck-tdd` | [Beck TDD — 用红绿重构循环让设计自己长出来](/study/papers/beck-tdd/) | HCI / 软件工程研究 |
 | `belady-1966` | [Belady 1966 — 缓存替换的理论最优与 FIFO 异常](/study/papers/belady-1966/) | 其他 |
 | `ben-sasson-stark-2018` | [STARK — 不需要"可信第三方"的计算正确性证明](/study/papers/ben-sasson-stark-2018/) | 其他 |
+| `benchmarking` | [Wisconsin Benchmark — 给数据库出一套可重复的体检题](/study/papers/benchmarking/) | 其他 |
 | `bentley-1975-kdtree` | [k-d 树 — 多维空间里的二叉搜索树](/study/papers/bentley-1975-kdtree/) | 其他 |
 | `bentoml` | [BentoML — 把模型 + 依赖 + API 打包成一个能直接跑的盒子](/study/papers/bentoml/) | 其他 |
 | `berenson-1995-isolation` | [ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞](/study/papers/berenson-1995-isolation/) | 其他 |
