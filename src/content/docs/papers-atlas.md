@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 962 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 963 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：962 篇
+- **总数**：963 篇
 - **已分类**：143
-- **未分类**：819（落入"其他 / 待分类"段）
+- **未分类**：820（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 819 |
+| [其他 / 待分类](#其他--待分类) | 820 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 819 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 820 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -632,6 +632,7 @@ sidebar:
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) |
 | `graf-saidi-1997` | [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) |
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) |
+| `graph-neural-networks` | [Graph Neural Networks — 把关系网络交给神经网络来读](/study/papers/graph-neural-networks/) |
 | `graphormer-2021` | [Graphormer — 标准 Transformer 直接刷爆 GNN](/study/papers/graphormer-2021/) |
 | `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) |
 | `gray-1978-notes` | [Gray 1978 — 数据库操作系统讲义，事务/2PL/2PC/恢复一次讲完](/study/papers/gray-1978-notes/) |
@@ -1130,7 +1131,7 @@ sidebar:
 
 ---
 
-## 全部 962 篇（字母序）
+## 全部 963 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1515,6 +1516,7 @@ sidebar:
 | `gradual-typing` | [渐进类型 — 让动态和静态类型在同一份代码里共存](/study/papers/gradual-typing/) | 其他 |
 | `graf-saidi-1997` | [Graf-Saïdi — 用谓词把无限状态压成有限抽象](/study/papers/graf-saidi-1997/) | 其他 |
 | `granule` | [Granule — 让类型系统同时数次数、看安全级、追副作用](/study/papers/granule/) | 其他 |
+| `graph-neural-networks` | [Graph Neural Networks — 把关系网络交给神经网络来读](/study/papers/graph-neural-networks/) | 其他 |
 | `graphormer-2021` | [Graphormer — 标准 Transformer 直接刷爆 GNN](/study/papers/graphormer-2021/) | 其他 |
 | `graphrag` | [GraphRAG — 微软的知识图谱 + RAG](/study/papers/graphrag/) | 智能体与 LLM 系统 |
 | `graphsage-2017` | [GraphSAGE 2017 — 给没见过的节点也能算嵌入](/study/papers/graphsage-2017/) | 其他 |
