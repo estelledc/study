@@ -1061,6 +1061,7 @@ arrow
 arrow-rs
 arweave
 asdf
+aseprite
 aspnetcore
 assimp
 ast-grep
