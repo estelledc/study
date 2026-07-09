@@ -827,6 +827,7 @@ shannon-1948
 shellcheck
 shenango-2019
 shokri-mia-2017
+shor-1994
 sillito-questions
 silo-oltp-2013
 silt-2011
