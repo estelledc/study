@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 936 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 937 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：936 个
+- **总数**：937 个
 - **已分类**：214
-- **未分类**：722（落入"其他 / 待分类"段）
+- **未分类**：723（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 722 |
+| [其他 / 待分类](#其他--待分类) | 723 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 722 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 723 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -972,6 +972,7 @@ sidebar:
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) |
 | `openvscode-server` | [OpenVSCode Server：把上游 VS Code 跑进浏览器](/study/projects/openvscode-server/) |
 | `openwrt` | [OpenWrt — 把家用路由器变成 Linux 服务器](/study/projects/openwrt/) |
+| `openxr-sdk` | [OpenXR SDK — Khronos VR/AR 标准参考实现](/study/projects/openxr-sdk/) |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) |
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) |
@@ -1232,7 +1233,7 @@ sidebar:
 
 ---
 
-## 全部 936 个（字母序）
+## 全部 937 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1823,6 +1824,7 @@ sidebar:
 | `openvidu` | [OpenVidu — 把 Kurento 包成开箱即用的视频会议 PaaS](/study/projects/openvidu/) | 其他 |
 | `openvscode-server` | [OpenVSCode Server：把上游 VS Code 跑进浏览器](/study/projects/openvscode-server/) | 其他 |
 | `openwrt` | [OpenWrt — 把家用路由器变成 Linux 服务器](/study/projects/openwrt/) | 其他 |
+| `openxr-sdk` | [OpenXR SDK — Khronos VR/AR 标准参考实现](/study/projects/openxr-sdk/) | 其他 |
 | `openzeppelin-contracts` | [OpenZeppelin Contracts — 以太坊智能合约的事实标准库](/study/projects/openzeppelin-contracts/) | 其他 |
 | `operator-sdk` | [Operator SDK — 写 K8s Operator 的"豪华套餐"版脚手架](/study/projects/operator-sdk/) | 其他 |
 | `optax` | [Optax — JAX 优化器组合库](/study/projects/optax/) | 其他 |
