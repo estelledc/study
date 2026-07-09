@@ -230,6 +230,7 @@ deberta-2021
 debevec-1998-rendering-with-natural-light
 debugging-dichotomy
 decision-transformer-2021
+deepfool-2016
 deepseek-coder-2024
 deepseek-r1
 deepspeed-zero
