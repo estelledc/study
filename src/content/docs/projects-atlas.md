@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 949 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 950 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：949 个
+- **总数**：950 个
 - **已分类**：214
-- **未分类**：735（落入"其他 / 待分类"段）
+- **未分类**：736（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 735 |
+| [其他 / 待分类](#其他--待分类) | 736 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 735 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 736 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1085,6 +1085,7 @@ sidebar:
 | `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) |
 | `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) |
+| `scrcpy` | [scrcpy — Android 屏幕镜像 / 录制](/study/projects/scrcpy/) |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) |
 | `sdk-nrf` | [Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK](/study/projects/sdk-nrf/) |
@@ -1245,7 +1246,7 @@ sidebar:
 
 ---
 
-## 全部 949 个（字母序）
+## 全部 950 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1981,6 +1982,7 @@ sidebar:
 | `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) | 其他 |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) | 其他 |
 | `scoop` | [Scoop — Windows 上的 Homebrew 风格命令行包管理器](/study/projects/scoop/) | 其他 |
+| `scrcpy` | [scrcpy — Android 屏幕镜像 / 录制](/study/projects/scrcpy/) | 其他 |
 | `scroll` | [Scroll — 字节码级 zkEVM](/study/projects/scroll/) | 其他 |
 | `sd` | [sd — 直觉语法的 sed 替代品（Rust 写的 find-and-replace）](/study/projects/sd/) | 其他 |
 | `sdk-nrf` | [Nordic Connect SDK — Nordic nRF 全家桶物联网 SDK](/study/projects/sdk-nrf/) | 其他 |
