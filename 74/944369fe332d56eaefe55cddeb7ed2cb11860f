@@ -1,0 +1,66 @@
+src/content/docs/papers/ddpg-2015.md
+  s_9a206d56fa90c6::t_3f8b9d0599c676 1-160 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a4f8eb17c0da26523dbf43f","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,160]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "74944369fe332d56eaefe55cddeb7ed2cb11860f",
+  "prompts": {},
+  "sessions": {
+    "s_9a206d56fa90c6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4f3c397c0da26523dba9bc",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "src/content/docs/papers/ddpg-2015.md": [
+      {
+        "hash": "s_9a206d56fa90c6::t_3f8b9d0599c676",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              160
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a4f8eb17c0da26523dbf43f",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  160
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_9a206d56fa90c6": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_9a206d56fa90c6::t_3f8b9d0599c676": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
