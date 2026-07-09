@@ -853,6 +853,7 @@ soundness-bench
 spann-2021
 spanner
 spanner-2012
+spark-rdd
 sparrow-2013
 sparse-autoencoders
 sparsegpt-2023
