@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 924 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 925 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：924 个
+- **总数**：925 个
 - **已分类**：214
-- **未分类**：710（落入"其他 / 待分类"段）
+- **未分类**：711（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 710 |
+| [其他 / 待分类](#其他--待分类) | 711 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 710 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 711 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1105,6 +1105,7 @@ sidebar:
 | `spacemacs` | [Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置](/study/projects/spacemacs/) |
 | `spectorjs` | [Spector.js — WebGL/WebGPU 调试器](/study/projects/spectorjs/) |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) |
+| `spine-runtimes` | [Spine Runtimes — 2D 骨骼动画运行时](/study/projects/spine-runtimes/) |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) |
 | `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) |
 | `starlette` | [Starlette — FastAPI 底下那台轻量 ASGI 引擎](/study/projects/starlette/) |
@@ -1220,7 +1221,7 @@ sidebar:
 
 ---
 
-## 全部 924 个（字母序）
+## 全部 925 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1983,6 +1984,7 @@ sidebar:
 | `spacemacs` | [Spacemacs — 让 Vim 党和 Emacs 党握手的编辑器配置](/study/projects/spacemacs/) | 其他 |
 | `spectorjs` | [Spector.js — WebGL/WebGPU 调试器](/study/projects/spectorjs/) | 其他 |
 | `spin` | [Spin — 用 WebAssembly 模块当 serverless handler 的开源框架](/study/projects/spin/) | 其他 |
+| `spine-runtimes` | [Spine Runtimes — 2D 骨骼动画运行时](/study/projects/spine-runtimes/) | 其他 |
 | `spring-boot` | [Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架](/study/projects/spring-boot/) | 其他 |
 | `sqlite` | [SQLite — 嵌入式 SQL 数据库](/study/projects/sqlite/) | 数据库本体 / 存储引擎 |
 | `stable-diffusion-webui` | [AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器](/study/projects/stable-diffusion-webui/) | 其他 |
