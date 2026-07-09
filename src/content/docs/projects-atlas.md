@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 952 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 953 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：952 个
+- **总数**：953 个
 - **已分类**：214
-- **未分类**：738（落入"其他 / 待分类"段）
+- **未分类**：739（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 738 |
+| [其他 / 待分类](#其他--待分类) | 739 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 738 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 739 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -625,6 +625,7 @@ sidebar:
 | `code-server` | [code-server — 浏览器里的 VS Code](/study/projects/code-server/) |
 | `coder` | [Coder — 自托管开发环境平台](/study/projects/coder/) |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) |
+| `colmap` | [COLMAP — 多视图 SfM/MVS 重建](/study/projects/colmap/) |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) |
 | `comfyui` | [ComfyUI — 节点式扩散模型 GUI](/study/projects/comfyui/) |
 | `compound-v3` | [Compound III (Comet) — 单抵押借贷重构](/study/projects/compound-v3/) |
@@ -1248,7 +1249,7 @@ sidebar:
 
 ---
 
-## 全部 952 个（字母序）
+## 全部 953 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1397,6 +1398,7 @@ sidebar:
 | `codemirror` | [CodeMirror — 编辑器不是一个类，是一组扩展的合奏](/study/projects/codemirror/) | 编辑器 / 富文本 |
 | `coder` | [Coder — 自托管开发环境平台](/study/projects/coder/) | 其他 |
 | `collabora-online` | [Collabora Online — 浏览器里直接编辑 Office 文档的开源后端](/study/projects/collabora-online/) | 其他 |
+| `colmap` | [COLMAP — 多视图 SfM/MVS 重建](/study/projects/colmap/) | 其他 |
 | `colossal-ai` | [Colossal-AI — 大模型训练系统](/study/projects/colossal-ai/) | 其他 |
 | `comfyui` | [ComfyUI — 节点式扩散模型 GUI](/study/projects/comfyui/) | 其他 |
 | `commander` | [commander.js — Node.js CLI 解析的声明式标准](/study/projects/commander/) | CLI / 命令行工具 |
