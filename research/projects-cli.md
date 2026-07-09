@@ -164,7 +164,7 @@
 | slug | 项目 | 一句话定位 | stars (≈) | GitHub |
 |---|---|---|---:|---|
 | homebrew | homebrew | macOS / Linux 的事实标准包管理器（Ruby 写） | 43k | https://github.com/Homebrew/brew |
-| nix | nix | 函数式声明式包管理器，可重复构建、原子升级 | 13k | https://github.com/NixOS/nix |
+| nix | nix | 13k | 函数式声明式包管理器，可重复构建、原子升级 | https://github.com/NixOS/nix |
 | mise | mise | 多语言运行时管理（asdf 替代）+ 任务运行 + 环境变量 | 13k | https://github.com/jdx/mise |
 | asdf | asdf | 多语言版本管理器（plugin 架构，Node / Python / Ruby 通吃） | 22k | https://github.com/asdf-vm/asdf |
 | scoop | scoop | Windows 的 Homebrew 风格包管理器（PowerShell 写） | 21k | https://github.com/ScoopInstaller/Scoop |
