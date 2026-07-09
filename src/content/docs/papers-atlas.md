@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1002 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1003 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1002 篇
+- **总数**：1003 篇
 - **已分类**：143
-- **未分类**：859（落入"其他 / 待分类"段）
+- **未分类**：860（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 859 |
+| [其他 / 待分类](#其他--待分类) | 860 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 859 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 860 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -937,6 +937,7 @@ sidebar:
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) |
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) |
+| `pointnet` | [PointNet — 直接吃点云的 3D 神经网络](/study/papers/pointnet/) |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) |
 | `ppc-preplan` | [PPC Preplan — 先想清楚题目类型再规划解法](/study/papers/ppc-preplan/) |
 | `prefix-cache-policy-2026` | [Beyond LRU: Prefix-Cache Policies for LLM Serving — 学习笔记（入门）](/study/papers/prefix-cache-policy-2026/) |
@@ -1170,7 +1171,7 @@ sidebar:
 
 ---
 
-## 全部 1002 篇（字母序）
+## 全部 1003 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1892,6 +1893,7 @@ sidebar:
 | `plotkin-sos` | [Plotkin SOS — 用规则讲清楚程序"走一步"是什么](/study/papers/plotkin-sos/) | 其他 |
 | `pnueli-temporal-1977` | [Pnueli 时序逻辑 — 给"永远不死锁""请求最终被响应"找一套数学语言](/study/papers/pnueli-temporal-1977/) | 其他 |
 | `pnuts-2008` | [PNUTS — 介于强一致与最终一致之间的实用一致性](/study/papers/pnuts-2008/) | 其他 |
+| `pointnet` | [PointNet — 直接吃点云的 3D 神经网络](/study/papers/pointnet/) | 其他 |
 | `polar-codes-2009` | [Polar 极化码 — 把好坏不一的信道整成"完美/全错"两组](/study/papers/polar-codes-2009/) | 信息论 / 编码理论 |
 | `pottier-merr` | [Pottier LR(1) Reachability — 让 LR 解析器的错误消息覆盖完整](/study/papers/pottier-merr/) | 其他 |
 | `ppc-preplan` | [PPC Preplan — 先想清楚题目类型再规划解法](/study/papers/ppc-preplan/) | 其他 |
