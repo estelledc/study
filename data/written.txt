@@ -1737,6 +1737,7 @@ sox
 spacemacs
 spectorjs
 spin
+spine-runtimes
 spring-boot
 sqlite
 stable-diffusion-webui
