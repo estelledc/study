@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1005 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1006 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1005 篇
+- **总数**：1006 篇
 - **已分类**：143
-- **未分类**：862（落入"其他 / 待分类"段）
+- **未分类**：863（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 862 |
+| [其他 / 待分类](#其他--待分类) | 863 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 862 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 863 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -547,6 +547,7 @@ sidebar:
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) |
 | `dropout-2014` | [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) |
+| `dryadlinq-system-general-purpose-distributed-data-parallel-2008` | [DryadLINQ — 把普通 C# 查询变成集群作业](/study/papers/dryadlinq-system-general-purpose-distributed-data-parallel-2008/) |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) |
@@ -1173,7 +1174,7 @@ sidebar:
 
 ---
 
-## 全部 1005 篇（字母序）
+## 全部 1006 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1462,6 +1463,7 @@ sidebar:
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) | 其他 |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) | 其他 |
 | `dropout-2014` | [Dropout — 训练时随机关掉一半神经元，反而学得更好](/study/papers/dropout-2014/) | 其他 |
+| `dryadlinq-system-general-purpose-distributed-data-parallel-2008` | [DryadLINQ — 把普通 C# 查询变成集群作业](/study/papers/dryadlinq-system-general-purpose-distributed-data-parallel-2008/) | 其他 |
 | `dspy` | [DSPy — 把 prompt 写成签名，让编译器替你调](/study/papers/dspy/) | 其他 |
 | `dssm-2013` | [DSSM — 把 query 和文档各编码成 128 维向量再算余弦](/study/papers/dssm-2013/) | 其他 |
 | `dstreams-2013` | [D-Streams — 把流处理伪装成一串很小的批](/study/papers/dstreams-2013/) | 其他 |
