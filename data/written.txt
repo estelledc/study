@@ -1033,6 +1033,7 @@ ape-framework
 apexcharts
 apollo-server
 appflowy
+appleseed
 appwrite
 aptos-core
 ar-js
