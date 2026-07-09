@@ -1608,6 +1608,7 @@ pgvector
 phaser
 phoenix
 picogl
+pillow
 pino
 pinot
 pion
