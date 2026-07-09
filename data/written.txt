@@ -1329,6 +1329,7 @@ htop
 httpie
 hydra-synth
 i18next
+imagemagick
 immer
 immich
 influxdb
