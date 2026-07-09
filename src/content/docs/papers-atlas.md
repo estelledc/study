@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1001 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1002 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1001 篇
+- **总数**：1002 篇
 - **已分类**：143
-- **未分类**：858（落入"其他 / 待分类"段）
+- **未分类**：859（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 858 |
+| [其他 / 待分类](#其他--待分类) | 859 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 858 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 859 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -591,6 +591,7 @@ sidebar:
 | `fat-tree-2008` | [Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心](/study/papers/fat-tree-2008/) |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) |
 | `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) |
+| `feynman-simulating-physics-1982` | [Feynman 1982 — 量子计算从模拟物理开始](/study/papers/feynman-simulating-physics-1982/) |
 | `ffs-1984` | [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) |
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) |
 | `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) |
@@ -1169,7 +1170,7 @@ sidebar:
 
 ---
 
-## 全部 1001 篇（字母序）
+## 全部 1002 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1506,6 +1507,7 @@ sidebar:
 | `fat-tree-2008` | [Fat-Tree 2008 — 用一堆便宜交换机搭出现代数据中心](/study/papers/fat-tree-2008/) | 其他 |
 | `feautrier-polyhedral` | [Feautrier 多面体调度 — 把循环并行化变成解几何方程](/study/papers/feautrier-polyhedral/) | 其他 |
 | `fermi-architecture-2010` | [NVIDIA Fermi — 把 GPU 从游戏卡推上超算](/study/papers/fermi-architecture-2010/) | 其他 |
+| `feynman-simulating-physics-1982` | [Feynman 1982 — 量子计算从模拟物理开始](/study/papers/feynman-simulating-physics-1982/) | 其他 |
 | `ffs-1984` | [FFS — 把磁盘几何写进文件系统](/study/papers/ffs-1984/) | 其他 |
 | `fidge-1988` | [Fidge 1988 — 给每个进程一份"账本向量"，让因果关系变成可判定](/study/papers/fidge-1988/) | 其他 |
 | `fielding-rest-2000` | [Fielding 2000 — 用约束推导法把 Web 的成功讲成了一门方法](/study/papers/fielding-rest-2000/) | 其他 |
