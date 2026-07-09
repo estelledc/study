@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 913 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 914 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：913 个
+- **总数**：914 个
 - **已分类**：214
-- **未分类**：699（落入"其他 / 待分类"段）
+- **未分类**：700（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 699 |
+| [其他 / 待分类](#其他--待分类) | 700 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 699 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 700 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -937,6 +937,7 @@ sidebar:
 | `nvidia-gpu-operator` | [NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈](/study/projects/nvidia-gpu-operator/) |
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) |
+| `obs-studio` | [OBS Studio — 直播推流软件事实标准](/study/projects/obs-studio/) |
 | `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/projects/observable-framework/) |
 | `ogre` | [OGRE — 老牌 C++ 3D 渲染引擎](/study/projects/ogre/) |
 | `oh-my-posh` | [oh-my-posh — 一份配置让所有 shell 都长一个样](/study/projects/oh-my-posh/) |
@@ -1209,7 +1210,7 @@ sidebar:
 
 ---
 
-## 全部 913 个（字母序）
+## 全部 914 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1760,6 +1761,7 @@ sidebar:
 | `nvidia-mig` | [NVIDIA MIG — 把一张 GPU 物理切成 7 张小卡](/study/projects/nvidia-mig/) | 其他 |
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/projects/nvm/) | 其他 |
 | `nx` | [Nx — 一个仓库装几十个项目时帮你少跑活的工具](/study/projects/nx/) | Monorepo / 包管理 |
+| `obs-studio` | [OBS Studio — 直播推流软件事实标准](/study/projects/obs-studio/) | 其他 |
 | `observable-framework` | [Observable Framework — 编译期跑数据，浏览器只看结果](/study/projects/observable-framework/) | 其他 |
 | `observable-plot` | [Observable Plot — 你说想看哪两列的关系，库自己画图](/study/projects/observable-plot/) | 数据可视化 |
 | `oclif` | [oclif — 给 50+ 命令的 CLI 一套"目录即路由"的框架](/study/projects/oclif/) | CLI / 命令行工具 |
