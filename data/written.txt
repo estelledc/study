@@ -1852,6 +1852,7 @@ twirp
 tyk
 typeorm
 typesense
+ultralytics
 unified
 uniswap-v3
 universal-ctags
