@@ -1,0 +1,113 @@
+src/content/docs/papers/delta-lake-2020.md
+  s_9a206d56fa90c6::t_d2dd540b97dd76 1-16,21-150 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a4f486b7c0da26523dbb6cb","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,16]},{"Range":[21,150]}]}]}
+  s_9a206d56fa90c6::t_b92ad79e7b4218 17-20 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a4f49137c0da26523dbb884","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[17,20]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "af1ff7e067a3e1cb38f087fccd860744f1161de3",
+  "prompts": {},
+  "sessions": {
+    "s_9a206d56fa90c6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4f3c397c0da26523dba9bc",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "src/content/docs/papers/delta-lake-2020.md": [
+      {
+        "hash": "s_9a206d56fa90c6::t_d2dd540b97dd76",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              16
+            ]
+          },
+          {
+            "Range": [
+              21,
+              150
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a4f486b7c0da26523dbb6cb",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  16
+                ]
+              },
+              {
+                "Range": [
+                  21,
+                  150
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_9a206d56fa90c6::t_b92ad79e7b4218",
+        "line_ranges": [
+          {
+            "Range": [
+              17,
+              20
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a4f49137c0da26523dbb884",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  17,
+                  20
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_9a206d56fa90c6": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_9a206d56fa90c6::t_b92ad79e7b4218": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_9a206d56fa90c6::t_d2dd540b97dd76": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
