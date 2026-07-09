@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1013 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1014 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1013 篇
+- **总数**：1014 篇
 - **已分类**：143
-- **未分类**：870（落入"其他 / 待分类"段）
+- **未分类**：871（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 870 |
+| [其他 / 待分类](#其他--待分类) | 871 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 870 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 871 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -805,6 +805,7 @@ sidebar:
 | `madry-pgd-2017` | [Madry PGD — 把对抗训练变成最坏情况演练](/study/papers/madry-pgd-2017/) |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) |
 | `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) |
+| `making-smart-contracts-smarter` | [Making Smart Contracts Smarter — Oyente 用符号执行给智能合约找漏洞](/study/papers/making-smart-contracts-smarter/) |
 | `maml-2017` | [MAML — 学一个"好起点"，几步就能学会新任务](/study/papers/maml-2017/) |
 | `marching-cubes-1987` | [Marching Cubes 1987 — 把体数据切成立方体查表生成三角网格](/study/papers/marching-cubes-1987/) |
 | `maron-kuhns-1960` | [Maron-Kuhns 1960 — 检索不是匹配，是猜"对你有用的概率"](/study/papers/maron-kuhns-1960/) |
@@ -1181,7 +1182,7 @@ sidebar:
 
 ---
 
-## 全部 1013 篇（字母序）
+## 全部 1014 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1760,6 +1761,7 @@ sidebar:
 | `mae` | [MAE — Masked Autoencoders](/study/papers/mae/) | 计算机视觉 |
 | `magic3d-2023` | [Magic3D — 把 DreamFusion 的 NeRF 拆成"先粗后精"两阶段](/study/papers/magic3d-2023/) | 其他 |
 | `mahajan-2002-bgp-misconfig` | [Mahajan 2002 — 三周看互联网，1% 的路由更新是手滑](/study/papers/mahajan-2002-bgp-misconfig/) | 其他 |
+| `making-smart-contracts-smarter` | [Making Smart Contracts Smarter — Oyente 用符号执行给智能合约找漏洞](/study/papers/making-smart-contracts-smarter/) | 其他 |
 | `mamba` | [Mamba — 选择性状态空间模型](/study/papers/mamba/) | NLP 基础与 Scaling |
 | `maml-2017` | [MAML — 学一个"好起点"，几步就能学会新任务](/study/papers/maml-2017/) | 其他 |
 | `mapreduce` | [MapReduce — 用户只写两个函数，框架替你扛千节点](/study/papers/mapreduce/) | OS / 集群管理 / 系统 |
