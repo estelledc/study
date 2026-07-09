@@ -810,6 +810,7 @@ smalltalk-80
 smoothquant-2023
 smr-1990
 snap-2019
+snowflake
 snowflake-2016
 soft-updates-1999
 soltesz-2007
