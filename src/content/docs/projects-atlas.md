@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 955 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 956 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：955 个
+- **总数**：956 个
 - **已分类**：214
-- **未分类**：741（落入"其他 / 待分类"段）
+- **未分类**：742（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 741 |
+| [其他 / 待分类](#其他--待分类) | 742 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 741 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 742 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1173,6 +1173,7 @@ sidebar:
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) |
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) |
+| `tiled` | [Tiled Map Editor — 通用 2D 关卡编辑](/study/projects/tiled/) |
 | `tilt` | [Tilt — K8s 微服务本地开发的"文件保存即上线"](/study/projects/tilt/) |
 | `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) |
 | `tldraw` | [tldraw — 把白板做成可嵌入的 SDK](/study/projects/tldraw/) |
@@ -1251,7 +1252,7 @@ sidebar:
 
 ---
 
-## 全部 955 个（字母序）
+## 全部 956 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2103,6 +2104,7 @@ sidebar:
 | `tide` | [Tide — async-std 阵营里 koa 风格的极简 Rust web 框架](/study/projects/tide/) | 其他 |
 | `tig` | [tig — 老牌 ncurses git 浏览器，把 log/blame/diff 玩到骨子里](/study/projects/tig/) | 其他 |
 | `tikv` | [TiKV — 分布式事务 KV](/study/projects/tikv/) | 其他 |
+| `tiled` | [Tiled Map Editor — 通用 2D 关卡编辑](/study/projects/tiled/) | 其他 |
 | `tilt` | [Tilt — K8s 微服务本地开发的"文件保存即上线"](/study/projects/tilt/) | 其他 |
 | `timelinejs` | [TimelineJS — 把 Google Sheet 一键变成新闻时间线](/study/projects/timelinejs/) | 其他 |
 | `timescaledb` | [TimescaleDB — PostgreSQL 时序扩展](/study/projects/timescaledb/) | 监控 / 时序 |
