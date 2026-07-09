@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 967 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 968 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：967 篇
+- **总数**：968 篇
 - **已分类**：143
-- **未分类**：824（落入"其他 / 待分类"段）
+- **未分类**：825（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 824 |
+| [其他 / 待分类](#其他--待分类) | 825 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 824 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 825 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -867,6 +867,7 @@ sidebar:
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) |
 | `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) |
 | `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) |
+| `observability` | [Dapper 可观测性 — 把一次请求走过的路画出来](/study/papers/observability/) |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) |
 | `omega-2013` | [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) |
 | `on-demand-container-loading` | [On-demand Container Loading — Lambda 把大镜像按需搬上车](/study/papers/on-demand-container-loading/) |
@@ -1135,7 +1136,7 @@ sidebar:
 
 ---
 
-## 全部 967 篇（字母序）
+## 全部 968 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1784,6 +1785,7 @@ sidebar:
 | `nvm` | [nvm — 在同一台机器上轻松切换 Node 版本](/study/papers/nvm/) | 其他 |
 | `nvme-protocol-2017` | [NVMe — 为 SSD 重写的存储协议](/study/papers/nvme-protocol-2017/) | 其他 |
 | `oauth-2.1-rfc` | [OAuth 2.1 — 把十年 OAuth 实战经验收口成一份能直接用的规范](/study/papers/oauth-2.1-rfc/) | 其他 |
+| `observability` | [Dapper 可观测性 — 把一次请求走过的路画出来](/study/papers/observability/) | 其他 |
 | `okapi-bm25-1994` | [Robertson-Walker 1994 — 把 2-Poisson 压成一行能算的公式](/study/papers/okapi-bm25-1994/) | 其他 |
 | `omega-2013` | [Omega 2013 — 让多个调度器同时改一份 cluster 状态](/study/papers/omega-2013/) | 其他 |
 | `on-demand-container-loading` | [On-demand Container Loading — Lambda 把大镜像按需搬上车](/study/papers/on-demand-container-loading/) | 其他 |
