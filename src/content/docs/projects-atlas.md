@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 956 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 957 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：956 个
+- **总数**：957 个
 - **已分类**：214
-- **未分类**：742（落入"其他 / 待分类"段）
+- **未分类**：743（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 742 |
+| [其他 / 待分类](#其他--待分类) | 743 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 742 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 743 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -953,6 +953,7 @@ sidebar:
 | `nix` | [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) |
 | `node-js` | [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) |
+| `nodegui` | [nodegui — 用 Node.js 写原生桌面窗口](/study/projects/nodegui/) |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) |
 | `notepad-plus-plus` | [Notepad++ — 比记事本多两个加号的 Windows 编辑器](/study/projects/notepad-plus-plus/) |
@@ -1252,7 +1253,7 @@ sidebar:
 
 ---
 
-## 全部 956 个（字母序）
+## 全部 957 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1817,6 +1818,7 @@ sidebar:
 | `nix` | [Nix — 函数式声明式包管理与可重复构建](/study/projects/nix/) | 其他 |
 | `nnn` | [nnn — 50KB 内存就能跑的极简终端文件管理器](/study/projects/nnn/) | 其他 |
 | `node-js` | [Node.js — 服务端 JS 运行时之父](/study/projects/node-js/) | 其他 |
+| `nodegui` | [nodegui — 用 Node.js 写原生桌面窗口](/study/projects/nodegui/) | 其他 |
 | `nodemailer` | [Nodemailer — Node.js 发邮件的事实标准](/study/projects/nodemailer/) | 其他 |
 | `nomad` | [Nomad — HashiCorp 出的"轻量版 K8s"工作负载调度器](/study/projects/nomad/) | 其他 |
 | `notepad-plus-plus` | [Notepad++ — 比记事本多两个加号的 Windows 编辑器](/study/projects/notepad-plus-plus/) | 其他 |
