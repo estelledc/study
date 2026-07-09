@@ -89,6 +89,7 @@ blink-2020
 blinn-1977
 blip2-2023
 block-max-wand-2011
+bm25
 bm25-okapi
 boehm-gc
 bohme-aflfast-2016
