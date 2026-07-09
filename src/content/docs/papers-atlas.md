@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 980 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 981 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：980 篇
+- **总数**：981 篇
 - **已分类**：143
-- **未分类**：837（落入"其他 / 待分类"段）
+- **未分类**：838（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 837 |
+| [其他 / 待分类](#其他--待分类) | 838 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 837 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 838 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -771,6 +771,7 @@ sidebar:
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) |
 | `loong-doc-mt` | [Loong DocMT — 长文档翻译里的会挑上下文的代理](/study/papers/loong-doc-mt/) |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) |
+| `lora` | [LoRA — 给冻结大模型贴低秩便签](/study/papers/lora/) |
 | `lottery-1994` | [彩票调度 — 用抽奖代替优先级的资源分配](/study/papers/lottery-1994/) |
 | `lottery-ticket-2019` | [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) |
 | `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) |
@@ -1148,7 +1149,7 @@ sidebar:
 
 ---
 
-## 全部 980 篇（字母序）
+## 全部 981 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1692,6 +1693,7 @@ sidebar:
 | `longformer-2020` | [Longformer — 滑窗加少数全局 token，把长文档喂进 Transformer](/study/papers/longformer-2020/) | 其他 |
 | `loong-doc-mt` | [Loong DocMT — 长文档翻译里的会挑上下文的代理](/study/papers/loong-doc-mt/) | 其他 |
 | `loop-1987-subdivision` | [Loop 1987 — 三角形网格的递归光滑细分](/study/papers/loop-1987-subdivision/) | 其他 |
+| `lora` | [LoRA — 给冻结大模型贴低秩便签](/study/papers/lora/) | 其他 |
 | `lottery-1994` | [彩票调度 — 用抽奖代替优先级的资源分配](/study/papers/lottery-1994/) | 其他 |
 | `lottery-ticket-2019` | [彩票假设 — 大网里藏着一张能独立训出来的小网](/study/papers/lottery-ticket-2019/) | 其他 |
 | `lsh-indyk-1998` | [LSH — 让相似点撞同一个桶，把高维最近邻查询从线性变成亚线性](/study/papers/lsh-indyk-1998/) | 其他 |
