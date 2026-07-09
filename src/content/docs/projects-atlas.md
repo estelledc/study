@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 921 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 922 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：921 个
+- **总数**：922 个
 - **已分类**：214
-- **未分类**：707（落入"其他 / 待分类"段）
+- **未分类**：708（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 707 |
+| [其他 / 待分类](#其他--待分类) | 708 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 707 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 708 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -980,6 +980,7 @@ sidebar:
 | `pandas` | [pandas — Python 表格数据事实标准](/study/projects/pandas/) |
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) |
+| `pcl` | [PCL — 点云算法的学术工具箱](/study/projects/pcl/) |
 | `pdfkit` | [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) |
 | `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) |
 | `pdfme` | [pdfme — TypeScript 模板化 PDF](/study/projects/pdfme/) |
@@ -1217,7 +1218,7 @@ sidebar:
 
 ---
 
-## 全部 921 个（字母序）
+## 全部 922 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1819,6 +1820,7 @@ sidebar:
 | `panel` | [Panel — 多绘图后端的 Python dashboard](/study/projects/panel/) | 其他 |
 | `partykit` | [PartyKit — Cloudflare Durable Objects 上的实时协作 framework](/study/projects/partykit/) | 其他 |
 | `patchright` | [patchright — 给 Playwright 打 patch 让浏览器自动化在反 bot 站点继续工作](/study/projects/patchright/) | AI 浏览器自动化 |
+| `pcl` | [PCL — 点云算法的学术工具箱](/study/projects/pcl/) | 其他 |
 | `pdfkit` | [PDFKit — 用画笔在 PDF 上一笔一笔画](/study/projects/pdfkit/) | 其他 |
 | `pdfmake` | [pdfmake — 用对象树声明 PDF，浏览器和 Node 都能跑](/study/projects/pdfmake/) | 其他 |
 | `pdfme` | [pdfme — TypeScript 模板化 PDF](/study/projects/pdfme/) | 其他 |
