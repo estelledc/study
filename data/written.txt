@@ -326,6 +326,7 @@ exg-experience-graphs
 exokernel-1995
 f1-2013
 f4-2014
+fairfuzz-2018
 faiss-2017
 fan-vercauteren-bfv-2012
 farm-2015
