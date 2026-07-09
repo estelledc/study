@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1004 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1005 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1004 篇
+- **总数**：1005 篇
 - **已分类**：143
-- **未分类**：861（落入"其他 / 待分类"段）
+- **未分类**：862（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 861 |
+| [其他 / 待分类](#其他--待分类) | 862 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 861 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 862 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -438,6 +438,7 @@ sidebar:
 | `chillotti-tfhe-2016` | [TFHE 2016 — 把全同态加密的自举时间从分钟级压到 0.1 秒](/study/papers/chillotti-tfhe-2016/) |
 | `chord-2001` | [Chord — 让上万台机器排成圈，查任何 key 都只走 log N 步](/study/papers/chord-2001/) |
 | `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) |
+| `ciel-universal-execution-engine-distributed-data-flow-2011` | [CIEL 2011 — 让分布式数据流会自己长出下一步](/study/papers/ciel-universal-execution-engine-distributed-data-flow-2011/) |
 | `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) |
 | `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) |
@@ -1172,7 +1173,7 @@ sidebar:
 
 ---
 
-## 全部 1004 篇（字母序）
+## 全部 1005 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1330,6 +1331,7 @@ sidebar:
 | `chronos-2024` | [Chronos — 把时间序列当语言来训练大模型](/study/papers/chronos-2024/) | 其他 |
 | `chubby` | [Chubby — 给凡人用的分布式锁服务](/study/papers/chubby/) | 分布式系统 |
 | `ci-effects` | [CI Effects — 持续集成不是免费午餐，价值看实现细节](/study/papers/ci-effects/) | 编译器 / 编程语言理论 |
+| `ciel-universal-execution-engine-distributed-data-flow-2011` | [CIEL 2011 — 让分布式数据流会自己长出下一步](/study/papers/ciel-universal-execution-engine-distributed-data-flow-2011/) | 其他 |
 | `cimatti-nusmv-2002` | [NuSMV 2 — 把 BDD 和 SAT 两种验证引擎装进同一个开源工具](/study/papers/cimatti-nusmv-2002/) | 其他 |
 | `clark-1988` | [Clark 1988 — TCP/IP 七大目标的优先级，决定了 Internet 长成今天这样](/study/papers/clark-1988/) | 其他 |
 | `clarke-cegar-2003` | [CEGAR — 用反例自动改进抽象，让大软件能被验证](/study/papers/clarke-cegar-2003/) | 其他 |
