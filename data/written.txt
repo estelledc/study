@@ -539,6 +539,7 @@ lomo-modality
 longformer-2020
 loong-doc-mt
 loop-1987-subdivision
+lora
 lottery-1994
 lottery-ticket-2019
 lsh-indyk-1998
