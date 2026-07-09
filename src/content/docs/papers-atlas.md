@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1007 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1008 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1007 篇
+- **总数**：1008 篇
 - **已分类**：143
-- **未分类**：864（落入"其他 / 待分类"段）
+- **未分类**：865（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 864 |
+| [其他 / 待分类](#其他--待分类) | 865 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 864 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 865 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -315,6 +315,7 @@ sidebar:
 | `adam-2014` | [Adam — 让深度学习自己挑步长的优化器](/study/papers/adam-2014/) |
 | `adamw-2017` | [AdamW — 把 weight decay 从梯度里拆出来](/study/papers/adamw-2017/) |
 | `afd-disagg-moe` | [AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图](/study/papers/afd-disagg-moe/) |
+| `aflgo-2017` | [AFLGo — 让灰盒 fuzzing 朝目标代码前进](/study/papers/aflgo-2017/) |
 | `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) |
 | `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) |
@@ -1175,7 +1176,7 @@ sidebar:
 
 ---
 
-## 全部 1007 篇（字母序）
+## 全部 1008 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1190,6 +1191,7 @@ sidebar:
 | `adapton` | [Adapton — 增量计算](/study/papers/adapton/) | 编译器 / 编程语言理论 |
 | `aes` | [AES Rijndael 对称分组密码](/study/papers/aes/) | 密码学 / 安全 |
 | `afd-disagg-moe` | [AFD Disagg MoE — 把注意力和 FFN 分开摆的 MoE 推理地图](/study/papers/afd-disagg-moe/) | 其他 |
+| `aflgo-2017` | [AFLGo — 让灰盒 fuzzing 朝目标代码前进](/study/papers/aflgo-2017/) | 其他 |
 | `afs-1988` | [AFS 1988 — 客户端缓存 + 回调失效让分布式文件系统真正能扩展](/study/papers/afs-1988/) | 其他 |
 | `agda-norell` | [Agda — 让你写代码的同时把数学也证明了](/study/papers/agda-norell/) | 其他 |
 | `agent-r1-2511` | [Agent-R1 — 把 LLM agent 当 RL 环境训练的模块化框架](/study/papers/agent-r1-2511/) | 其他 |
