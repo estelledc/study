@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 959 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 960 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：959 个
+- **总数**：960 个
 - **已分类**：214
-- **未分类**：745（落入"其他 / 待分类"段）
+- **未分类**：746（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 745 |
+| [其他 / 待分类](#其他--待分类) | 746 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 745 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 746 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1023,6 +1023,7 @@ sidebar:
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) |
 | `pion` | [Pion — Go 实现的 WebRTC 协议栈](/study/projects/pion/) |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) |
+| `piskel` | [Piskel — Web 像素艺术编辑器](/study/projects/piskel/) |
 | `planck` | [planck.js — 纯 JS Box2D 生态](/study/projects/planck/) |
 | `platformio-core` | [PlatformIO Core — 一条命令编译上传任意嵌入式板子](/study/projects/platformio-core/) |
 | `playcanvas` | [PlayCanvas — Web 3D 引擎与可视化应用](/study/projects/playcanvas/) |
@@ -1255,7 +1256,7 @@ sidebar:
 
 ---
 
-## 全部 959 个（字母序）
+## 全部 960 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1902,6 +1903,7 @@ sidebar:
 | `pinot` | [Apache Pinot — LinkedIn 起家的实时 OLAP](/study/projects/pinot/) | 其他 |
 | `pion` | [Pion — Go 实现的 WebRTC 协议栈](/study/projects/pion/) | 其他 |
 | `piper` | [Piper — 端侧低延迟 TTS](/study/projects/piper/) | 其他 |
+| `piskel` | [Piskel — Web 像素艺术编辑器](/study/projects/piskel/) | 其他 |
 | `pixi` | [PixiJS — 浏览器里画 2D 的高性能 GPU 引擎](/study/projects/pixi/) | 图像处理 / Canvas |
 | `planck` | [planck.js — 纯 JS Box2D 生态](/study/projects/planck/) | 其他 |
 | `plane` | [Plane — 把 Linear 的体感、Jira 的覆盖、GitHub Projects 的开放，全部塞进一个 turborepo + Django](/study/projects/plane/) | 数据应用 / SaaS |
