@@ -418,6 +418,7 @@ heckbert-1986-texture-survey
 hekaton-2013-sigmod
 helium-type-errors
 helland-2007
+helm-2022
 herlihy-moss-tm
 hewitt-actor-model
 hindley-milner
