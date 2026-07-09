@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 946 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 947 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：946 个
+- **总数**：947 个
 - **已分类**：214
-- **未分类**：732（落入"其他 / 待分类"段）
+- **未分类**：733（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 732 |
+| [其他 / 待分类](#其他--待分类) | 733 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 732 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 733 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1078,6 +1078,7 @@ sidebar:
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) |
+| `sam2` | [SAM 2 — 图像和视频都能抠轮廓的通用分割模型](/study/projects/sam2/) |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) |
 | `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) |
@@ -1242,7 +1243,7 @@ sidebar:
 
 ---
 
-## 全部 946 个（字母序）
+## 全部 947 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1971,6 +1972,7 @@ sidebar:
 | `runc` | [runc — Linux 容器最底层那个真正在 fork 进程的 CLI](/study/projects/runc/) | 其他 |
 | `safe-contracts` | [Safe — 多签智能账户合约](/study/projects/safe-contracts/) | 其他 |
 | `salvo` | [Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架](/study/projects/salvo/) | 其他 |
+| `sam2` | [SAM 2 — 图像和视频都能抠轮廓的通用分割模型](/study/projects/sam2/) | 其他 |
 | `sanic` | [Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐](/study/projects/sanic/) | 其他 |
 | `scikit-learn` | [scikit-learn — 经典 ML 库](/study/projects/scikit-learn/) | 其他 |
 | `scipy` | [SciPy — NumPy 之上的科学计算工具箱](/study/projects/scipy/) | 其他 |
