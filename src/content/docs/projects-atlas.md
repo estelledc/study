@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 937 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 938 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：937 个
+- **总数**：938 个
 - **已分类**：214
-- **未分类**：723（落入"其他 / 待分类"段）
+- **未分类**：724（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 723 |
+| [其他 / 待分类](#其他--待分类) | 724 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 723 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 724 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -963,6 +963,7 @@ sidebar:
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
 | `openrct2` | [OpenRCT2 — 用逆向工程让 20 年前的游戏复活](/study/projects/openrct2/) |
+| `openscad` | [OpenSCAD — 脚本式 CAD](/study/projects/openscad/) |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) |
 | `opentelemetry-collector` | [opentelemetry-collector — OTel 官方核心仓库与组件模型](/study/projects/opentelemetry-collector/) |
@@ -1233,7 +1234,7 @@ sidebar:
 
 ---
 
-## 全部 937 个（字母序）
+## 全部 938 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1814,6 +1815,7 @@ sidebar:
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
 | `openrct2` | [OpenRCT2 — 用逆向工程让 20 年前的游戏复活](/study/projects/openrct2/) | 其他 |
+| `openscad` | [OpenSCAD — 脚本式 CAD](/study/projects/openscad/) | 其他 |
 | `opensea-js` | [opensea-js — NFT 二级市场的官方 SDK](/study/projects/opensea-js/) | 其他 |
 | `opensearch` | [OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉](/study/projects/opensearch/) | 其他 |
 | `opentelemetry` | [OpenTelemetry — 让所有应用用同一种语言吐监控数据](/study/projects/opentelemetry/) | 监控 / 时序 |
