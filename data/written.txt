@@ -1181,6 +1181,7 @@ doom-emacs
 doris
 dovecot
 draco
+dragonbones
 dragonfly
 drawio
 drizzle
