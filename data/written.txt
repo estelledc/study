@@ -1389,6 +1389,7 @@ llama-index
 llamaindex
 llrt
 lm-evaluation-harness
+lmdb
 lmms
 locust
 lodestar
