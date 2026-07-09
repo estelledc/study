@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 934 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 935 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：934 个
+- **总数**：935 个
 - **已分类**：214
-- **未分类**：720（落入"其他 / 待分类"段）
+- **未分类**：721（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 720 |
+| [其他 / 待分类](#其他--待分类) | 721 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 720 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 721 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -958,6 +958,7 @@ sidebar:
 | `open3d` | [Open3D — 现代点云 / 几何库](/study/projects/open3d/) |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) |
 | `opencode` | [OpenCode — 终端里的开源 AI 编程助手](/study/projects/opencode/) |
+| `opencv` | [OpenCV — 计算机视觉库](/study/projects/opencv/) |
 | `openhab` | [openHAB — Java OSGi 家庭自动化框架](/study/projects/openhab/) |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) |
@@ -1230,7 +1231,7 @@ sidebar:
 
 ---
 
-## 全部 934 个（字母序）
+## 全部 935 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1806,6 +1807,7 @@ sidebar:
 | `open3d` | [Open3D — 现代点云 / 几何库](/study/projects/open3d/) | 其他 |
 | `openai-agents-sdk` | [OpenAI Agents SDK — 让多个 agent 协作的轻量框架](/study/projects/openai-agents-sdk/) | 其他 |
 | `opencode` | [OpenCode — 终端里的开源 AI 编程助手](/study/projects/opencode/) | 其他 |
+| `opencv` | [OpenCV — 计算机视觉库](/study/projects/opencv/) | 其他 |
 | `openhab` | [openHAB — Java OSGi 家庭自动化框架](/study/projects/openhab/) | 其他 |
 | `openlayers` | [OpenLayers — 全功能 GIS 前端](/study/projects/openlayers/) | 其他 |
 | `openmeetings` | [Apache OpenMeetings — 单 Java 进程跑完整 Web 会议系统](/study/projects/openmeetings/) | 其他 |
