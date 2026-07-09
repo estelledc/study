@@ -284,6 +284,7 @@ driller-2016
 drizzle-2017
 drmm-2016
 dropout-2014
+dryadlinq-system-general-purpose-distributed-data-parallel-2008
 dspy
 dssm-2013
 dstreams-2013
