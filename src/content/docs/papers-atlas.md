@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 986 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 987 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：986 篇
+- **总数**：987 篇
 - **已分类**：143
-- **未分类**：843（落入"其他 / 待分类"段）
+- **未分类**：844（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 843 |
+| [其他 / 待分类](#其他--待分类) | 844 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 843 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 844 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -600,6 +600,7 @@ sidebar:
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) |
 | `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) |
+| `flush-reload-2014` | [FLUSH+RELOAD 2014 — 用缓存时间偷看程序访问了哪行内存](/study/papers/flush-reload-2014/) |
 | `foundationdb` | [FoundationDB — 把事务、日志和存储拆开，再用仿真守住正确性](/study/papers/foundationdb/) |
 | `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) |
 | `frama-c-2012` | [Frama-C — 一个开源平台把 C 程序的多种验证方法拼到一起](/study/papers/frama-c-2012/) |
@@ -1154,7 +1155,7 @@ sidebar:
 
 ---
 
-## 全部 986 篇（字母序）
+## 全部 987 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1501,6 +1502,7 @@ sidebar:
 | `flink-2015` | [Apache Flink — 流批一体的单引擎](/study/papers/flink-2015/) | 其他 |
 | `flink-snapshots-2015` | [Flink 异步快照 — 不停机给流处理拍一致照片](/study/papers/flink-snapshots-2015/) | 其他 |
 | `flp-1985` | [FLP 1985 — 一个坏节点就能让异步共识永不终止](/study/papers/flp-1985/) | 其他 |
+| `flush-reload-2014` | [FLUSH+RELOAD 2014 — 用缓存时间偷看程序访问了哪行内存](/study/papers/flush-reload-2014/) | 其他 |
 | `foundationdb` | [FoundationDB — 把事务、日志和存储拆开，再用仿真守住正确性](/study/papers/foundationdb/) | 其他 |
 | `foundationdb-2021` | [FoundationDB 2021 — 把数据库拆成五个角色，再用一个 seed 烧十年 bug](/study/papers/foundationdb-2021/) | 数据库 |
 | `fpga-hls-2011` | [FPGA HLS 2011 — 把 C 代码自动翻译成芯片电路的范式](/study/papers/fpga-hls-2011/) | 其他 |
