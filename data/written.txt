@@ -880,6 +880,7 @@ toolformer
 tor-2004
 toy-models-superposition
 tracemonkey
+transformer
 transformer-xl-2019
 tree-of-attention-2026
 tree-of-thoughts-2023
@@ -1478,6 +1479,7 @@ next-js
 nextra
 nginx
 nivo
+nix
 nnn
 node-js
 nodemailer
