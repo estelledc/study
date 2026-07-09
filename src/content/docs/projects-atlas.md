@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 942 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 943 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：942 个
+- **总数**：943 个
 - **已分类**：214
-- **未分类**：728（落入"其他 / 待分类"段）
+- **未分类**：729（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 728 |
+| [其他 / 待分类](#其他--待分类) | 729 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 728 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 729 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -848,6 +848,7 @@ sidebar:
 | `ledger-app-sdk` | [Ledger App SDK — 在硬件钱包里写应用的 C 框架](/study/projects/ledger-app-sdk/) |
 | `lens` | [Lens — Kubernetes 集群的桌面 IDE](/study/projects/lens/) |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) |
+| `librecad` | [LibreCAD — 2D 工程绘图](/study/projects/librecad/) |
 | `librosa` | [librosa](/study/projects/librosa/) |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) |
 | `libvpx` | [libvpx — VP8/VP9 编解码器](/study/projects/libvpx/) |
@@ -1238,7 +1239,7 @@ sidebar:
 
 ---
 
-## 全部 942 个（字母序）
+## 全部 943 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1664,6 +1665,7 @@ sidebar:
 | `leveldb` | [LevelDB — Google LSM 库](/study/projects/leveldb/) | 数据库本体 / 存储引擎 |
 | `lexical` | [lexical — Meta 把富文本拆成 immutable EditorState + 双缓冲 reconciler 的协议](/study/projects/lexical/) | 编辑器 / 富文本 |
 | `lf` | [lf — 终端里像 vim 一样翻文件](/study/projects/lf/) | 其他 |
+| `librecad` | [LibreCAD — 2D 工程绘图](/study/projects/librecad/) | 其他 |
 | `librechat` | [LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器](/study/projects/librechat/) | AI 应用 / Agent 平台 |
 | `librosa` | [librosa](/study/projects/librosa/) | 其他 |
 | `libsignal` | [libsignal — 端到端加密的 Rust 内核](/study/projects/libsignal/) | 其他 |
