@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 957 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 958 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：957 篇
+- **总数**：958 篇
 - **已分类**：143
-- **未分类**：814（落入"其他 / 待分类"段）
+- **未分类**：815（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 814 |
+| [其他 / 待分类](#其他--待分类) | 815 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 814 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 815 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -741,6 +741,7 @@ sidebar:
 | `linear-attention-still-2026` | [Linear Attention, Still: Why Mamba-style Models Plateau](/study/papers/linear-attention-still-2026/) |
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) |
 | `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) |
+| `linux-kernel` | [Linux kernel — 三层解释开源内核如何协作](/study/papers/linux-kernel/) |
 | `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) |
 | `lipp-meltdown-2018` | [Meltdown — 从用户态读到内核内存的硬件漏洞](/study/papers/lipp-meltdown-2018/) |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) |
@@ -1125,7 +1126,7 @@ sidebar:
 
 ---
 
-## 全部 957 篇（字母序）
+## 全部 958 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1636,6 +1637,7 @@ sidebar:
 | `linear-scan-reg-alloc` | [Linear Scan 寄存器分配 — 把图染色换成单趟扫描，给 JIT 用](/study/papers/linear-scan-reg-alloc/) | 其他 |
 | `linear-types` | [线性类型（Linear Types）](/study/papers/linear-types/) | 编译器 / 编程语言理论 |
 | `linearizability-1990` | [Linearizability 1990 — 让并发对象看起来像一次只执行一个操作](/study/papers/linearizability-1990/) | 其他 |
+| `linux-kernel` | [Linux kernel — 三层解释开源内核如何协作](/study/papers/linux-kernel/) | 其他 |
 | `lion-2023` | [Lion — 让程序自己搜出来的优化器，比 AdamW 内存少一半](/study/papers/lion-2023/) | 其他 |
 | `lipp-meltdown-2018` | [Meltdown — 从用户态读到内核内存的硬件漏洞](/study/papers/lipp-meltdown-2018/) | 其他 |
 | `liquid-types` | [Liquid Types — 让编译器自己推导出"哪些值才合法"](/study/papers/liquid-types/) | 其他 |
