@@ -1564,6 +1564,7 @@ neovim
 nerdctl
 nestjs
 nethermind
+neutralinojs
 next-intl
 next-js
 nextra
