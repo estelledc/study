@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 979 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 980 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：979 篇
+- **总数**：980 篇
 - **已分类**：143
-- **未分类**：836（落入"其他 / 待分类"段）
+- **未分类**：837（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 836 |
+| [其他 / 待分类](#其他--待分类) | 837 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 836 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 837 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -503,6 +503,7 @@ sidebar:
 | `deberta-2021` | [DeBERTa — 把"内容"和"位置"拆成两路独立看的 BERT](/study/papers/deberta-2021/) |
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) |
 | `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) |
+| `deepfool-2016` | [DeepFool 2016 — 用最小扰动量出模型边界有多近](/study/papers/deepfool-2016/) |
 | `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) |
 | `deering-1988-triangle-processor` | [Deering 1988 Triangle Processor — 现代 GPU 的祖先架构](/study/papers/deering-1988-triangle-processor/) |
 | `delta-lake-2020` | [Delta Lake 2020 — 给对象存储补上事务日志](/study/papers/delta-lake-2020/) |
@@ -1147,7 +1148,7 @@ sidebar:
 
 ---
 
-## 全部 979 篇（字母序）
+## 全部 980 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1382,6 +1383,7 @@ sidebar:
 | `debevec-1998-rendering-with-natural-light` | [Debevec 1998 — 用真实世界的光照亮 CG 物体](/study/papers/debevec-1998-rendering-with-natural-light/) | 其他 |
 | `debugging-dichotomy` | [Debugging Dichotomy — 程序员真实 debug 行为分两轨](/study/papers/debugging-dichotomy/) | HCI / 软件工程研究 |
 | `decision-transformer-2021` | [Decision Transformer — 把强化学习当成"文字接龙"](/study/papers/decision-transformer-2021/) | 其他 |
+| `deepfool-2016` | [DeepFool 2016 — 用最小扰动量出模型边界有多近](/study/papers/deepfool-2016/) | 其他 |
 | `deepseek-coder-2024` | [DeepSeek-Coder — 按整个仓库喂代码的开源 SOTA](/study/papers/deepseek-coder-2024/) | 其他 |
 | `deepseek-r1` | [DeepSeek R1 — 强化学习推理模型](/study/papers/deepseek-r1/) | NLP 基础与 Scaling |
 | `deepspeed-zero` | [DeepSpeed ZeRO — 微软优化大模型训练显存](/study/papers/deepspeed-zero/) | 分布式训练 / GPU |
