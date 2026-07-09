@@ -748,6 +748,7 @@ resnet
 resolution-diagnostics-llm
 rest-fielding-2000
 retro
+reward-hacking
 reyes-1987
 reynolds-definitional-interpreters
 reynolds-separation-logic
