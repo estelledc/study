@@ -1576,6 +1576,7 @@ opentsdb
 openvidu
 openvscode-server
 openwrt
+openxr-sdk
 openzeppelin-contracts
 operator-sdk
 optax
