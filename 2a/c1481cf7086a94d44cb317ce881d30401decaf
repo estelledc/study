@@ -1,0 +1,66 @@
+src/content/docs/papers/sanctum-2016.md
+  s_9a206d56fa90c6::t_5761772ec908e9 1-160 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a4f654e7c0da26523dbd524","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,160]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "2ac1481cf7086a94d44cb317ce881d30401decaf",
+  "prompts": {},
+  "sessions": {
+    "s_9a206d56fa90c6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4f3c397c0da26523dba9bc",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "src/content/docs/papers/sanctum-2016.md": [
+      {
+        "hash": "s_9a206d56fa90c6::t_5761772ec908e9",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              160
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a4f654e7c0da26523dbd524",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  160
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_9a206d56fa90c6": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_9a206d56fa90c6::t_5761772ec908e9": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
