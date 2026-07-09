@@ -558,6 +558,7 @@ mach-1986
 mach-vm-1987
 machanavajjhala-l-diversity-2007
 macklin-2014-position-based-fluids
+macklin-2016-xpbd
 madry-pgd-2017
 mae
 magic3d-2023
