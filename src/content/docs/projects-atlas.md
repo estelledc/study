@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 950 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 951 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：950 个
+- **总数**：951 个
 - **已分类**：214
-- **未分类**：736（落入"其他 / 待分类"段）
+- **未分类**：737（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 736 |
+| [其他 / 待分类](#其他--待分类) | 737 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 736 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 737 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -920,6 +920,7 @@ sidebar:
 | `minetest` | [Minetest (Luanti) — 开源世界的 Minecraft](/study/projects/minetest/) |
 | `minikube` | [minikube — 一条命令在笔记本上起一个真 K8s 集群](/study/projects/minikube/) |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) |
+| `mitsuba3` | [Mitsuba 3 — 研究向可微渲染器](/study/projects/mitsuba3/) |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) |
 | `mlt` | [MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎](/study/projects/mlt/) |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) |
@@ -1246,7 +1247,7 @@ sidebar:
 
 ---
 
-## 全部 950 个（字母序）
+## 全部 951 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1764,6 +1765,7 @@ sidebar:
 | `minio` | [MinIO — S3 兼容对象存储](/study/projects/minio/) | DevOps / 容器 / 运维 |
 | `minisearch` | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) | 其他基础设施 |
 | `mise` | [mise — 一条命令切换项目用的 Node/Python/Go 版本](/study/projects/mise/) | 其他 |
+| `mitsuba3` | [Mitsuba 3 — 研究向可微渲染器](/study/projects/mitsuba3/) | 其他 |
 | `mlflow` | [MLflow — 端到端 ML 生命周期](/study/projects/mlflow/) | 其他 |
 | `mlt` | [MLT — 藏在 Kdenlive 和 Shotcut 背后的视频编辑引擎](/study/projects/mlt/) | 其他 |
 | `mlx` | [MLX — Apple Silicon 统一内存原生 ML 框架](/study/projects/mlx/) | 其他 |
