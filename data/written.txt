@@ -815,6 +815,7 @@ schgen-pcb
 scoop
 scott-strachey-denotational
 sctp-multipath-2006
+securify-2018
 sel4-2009
 self-adjusting
 self-consistency-2022
