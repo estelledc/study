@@ -1168,6 +1168,7 @@ docusaurus
 doom-emacs
 doris
 dovecot
+draco
 dragonfly
 drawio
 drizzle
