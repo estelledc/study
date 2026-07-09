@@ -1677,6 +1677,7 @@ sglang
 shadcn-ui
 shader-park
 shadowsocks-libev
+shaka-player
 shap
 sharedb
 sharp
