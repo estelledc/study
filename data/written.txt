@@ -78,6 +78,7 @@ biere-bmc-1999
 big-little-2011
 bigbench-2022
 biggan-2018
+bigtable
 bigtable-2006
 bigtable-revisit-2024
 bitcoin
