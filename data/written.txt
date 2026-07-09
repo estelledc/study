@@ -1150,6 +1150,7 @@ code-server
 codemirror
 coder
 collabora-online
+colmap
 colossal-ai
 comfyui
 commander
