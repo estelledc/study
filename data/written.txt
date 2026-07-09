@@ -1713,6 +1713,7 @@ sops
 sortablejs
 sox
 spacemacs
+spectorjs
 spin
 spring-boot
 sqlite
