@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 918 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 919 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：918 个
+- **总数**：919 个
 - **已分类**：214
-- **未分类**：704（落入"其他 / 待分类"段）
+- **未分类**：705（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 704 |
+| [其他 / 待分类](#其他--待分类) | 705 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 704 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 705 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -524,6 +524,7 @@ sidebar:
 | `anchor` | [Anchor — Solana 合约开发框架](/study/projects/anchor/) |
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) |
 | `annoy` | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) |
+| `ant-media-server` | [Ant Media Server — WebRTC / CMAF 直播服务](/study/projects/ant-media-server/) |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) |
 | `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) |
@@ -1214,7 +1215,7 @@ sidebar:
 
 ---
 
-## 全部 918 个（字母序）
+## 全部 919 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1238,6 +1239,7 @@ sidebar:
 | `ann-benchmarks` | [ANN-Benchmarks — 近似最近邻算法的统一擂台](/study/projects/ann-benchmarks/) | 其他 |
 | `annoy` | [Annoy — Spotify 的随机森林近似最近邻索引](/study/projects/annoy/) | 其他 |
 | `ansible` | [Ansible — 无 agent 配置管理](/study/projects/ansible/) | DevOps / 容器 / 运维 |
+| `ant-media-server` | [Ant Media Server — WebRTC / CMAF 直播服务](/study/projects/ant-media-server/) | 其他 |
 | `anthropic-cookbook` | [Anthropic Cookbook — Claude API 实战示例](/study/projects/anthropic-cookbook/) | 其他 |
 | `antv-f2` | [AntV F2 — 移动端 Canvas 图表，G2 同语法的轻量子集](/study/projects/antv-f2/) | 其他 |
 | `antv-g2` | [AntV G2 — 把 Grammar of Graphics 写成 JavaScript](/study/projects/antv-g2/) | 其他 |
