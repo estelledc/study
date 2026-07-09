@@ -1450,6 +1450,7 @@ matter-js
 mattermost
 mbedtls
 mcp-ts-sdk
+mediasoup
 megatron-lm
 meilisearch
 melonjs
