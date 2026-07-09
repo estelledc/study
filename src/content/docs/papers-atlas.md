@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 956 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 957 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：956 篇
+- **总数**：957 篇
 - **已分类**：143
-- **未分类**：813（落入"其他 / 待分类"段）
+- **未分类**：814（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 813 |
+| [其他 / 待分类](#其他--待分类) | 814 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 813 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 814 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -480,6 +480,7 @@ sidebar:
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) |
 | `cubic-2008` | [CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱](/study/papers/cubic-2008/) |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) |
+| `cuda` | [CUDA — 把显卡变成通用并行计算平台](/study/papers/cuda/) |
 | `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) |
 | `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) |
 | `curless-levoy-1996-tsdf` | [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) |
@@ -1124,7 +1125,7 @@ sidebar:
 
 ---
 
-## 全部 956 篇（字母序）
+## 全部 957 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1333,6 +1334,7 @@ sidebar:
 | `cstore-2005` | [C-Store — 把数据按列存，分析查询直接快十倍](/study/papers/cstore-2005/) | 其他 |
 | `cubic-2008` | [CUBIC 2008 — Linux 默认拥塞控制，三次曲线把千兆带宽喂饱](/study/papers/cubic-2008/) | 其他 |
 | `cubical-type-theory-2018` | [Cubical Type Theory — 让 Univalence 公理真的能算出结果](/study/papers/cubical-type-theory-2018/) | 其他 |
+| `cuda` | [CUDA — 把显卡变成通用并行计算平台](/study/papers/cuda/) | 其他 |
 | `cuda-streams-concurrency-2018` | [CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满](/study/papers/cuda-streams-concurrency-2018/) | 其他 |
 | `cudnn-2014` | [cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速](/study/papers/cudnn-2014/) | 其他 |
 | `curless-levoy-1996-tsdf` | [Curless-Levoy TSDF — 把多次扫描融成一个干净的 3D 模型](/study/papers/curless-levoy-1996-tsdf/) | 其他 |
