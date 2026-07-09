@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 916 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 917 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：916 个
+- **总数**：917 个
 - **已分类**：214
-- **未分类**：702（落入"其他 / 待分类"段）
+- **未分类**：703（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 702 |
+| [其他 / 待分类](#其他--待分类) | 703 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 702 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 703 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -667,6 +667,7 @@ sidebar:
 | `doom-emacs` | [Doom Emacs — 启动不到一秒的模块化 Emacs 配置](/study/projects/doom-emacs/) |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) |
+| `draco` | [Draco — Google 3D 网格压缩](/study/projects/draco/) |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) |
 | `drawio` | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) |
 | `drone` | [Drone CI — 容器原生的 YAML 流水线](/study/projects/drone/) |
@@ -1212,7 +1213,7 @@ sidebar:
 
 ---
 
-## 全部 916 个（字母序）
+## 全部 917 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1414,6 +1415,7 @@ sidebar:
 | `doom-emacs` | [Doom Emacs — 启动不到一秒的模块化 Emacs 配置](/study/projects/doom-emacs/) | 其他 |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) | 其他 |
 | `dovecot` | [Dovecot — 主流 IMAP/POP3 服务器](/study/projects/dovecot/) | 其他 |
+| `draco` | [Draco — Google 3D 网格压缩](/study/projects/draco/) | 其他 |
 | `dragonfly` | [Dragonfly — 多线程 Redis 替代](/study/projects/dragonfly/) | 其他 |
 | `drawio` | [drawio (diagrams.net) — 离线版 Visio](/study/projects/drawio/) | 其他 |
 | `drizzle` | [Drizzle ORM — 轻量 SQL-like ORM](/study/projects/drizzle/) | ORM / DB 客户端 |
