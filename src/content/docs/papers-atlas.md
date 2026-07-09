@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 974 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 975 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：974 篇
+- **总数**：975 篇
 - **已分类**：143
-- **未分类**：831（落入"其他 / 待分类"段）
+- **未分类**：832（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 831 |
+| [其他 / 待分类](#其他--待分类) | 832 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 831 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 832 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -387,6 +387,7 @@ sidebar:
 | `bohme-aflfast-2016` | [AFLFast — 把 fuzzing 的力气花在更少人走的路径上](/study/papers/bohme-aflfast-2016/) |
 | `bonawitz-fl-system-2019` | [Bonawitz 2019 — Google 联邦学习的工业级系统设计](/study/papers/bonawitz-fl-system-2019/) |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) |
+| `borg-2015` | [Borg 2015 — Google 把一万台机器假装成一台](/study/papers/borg-2015/) |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) |
 | `bos-kyber-2018` | [Bos-Kyber 2018 — 把后量子密钥交换做成可落地的标准候选](/study/papers/bos-kyber-2018/) |
 | `bowe-halo-2019` | [Halo 2019 — 不靠可信仪式递归压缩证明](/study/papers/bowe-halo-2019/) |
@@ -1142,7 +1143,7 @@ sidebar:
 
 ---
 
-## 全部 974 篇（字母序）
+## 全部 975 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1243,6 +1244,7 @@ sidebar:
 | `bonawitz-fl-system-2019` | [Bonawitz 2019 — Google 联邦学习的工业级系统设计](/study/papers/bonawitz-fl-system-2019/) | 其他 |
 | `boogie-2005` | [Boogie — 写一次验证后端，多种证明语言复用](/study/papers/boogie-2005/) | 其他 |
 | `borg` | [Borg — Google 把一万台机器假装成一台](/study/papers/borg/) | OS / 集群管理 / 系统 |
+| `borg-2015` | [Borg 2015 — Google 把一万台机器假装成一台](/study/papers/borg-2015/) | 其他 |
 | `borg-omega-kube-2016` | [Borg / Omega / Kubernetes — Google 调度器三代同源](/study/papers/borg-omega-kube-2016/) | 其他 |
 | `bos-kyber-2018` | [Bos-Kyber 2018 — 把后量子密钥交换做成可落地的标准候选](/study/papers/bos-kyber-2018/) | 其他 |
 | `bowe-halo-2019` | [Halo 2019 — 不靠可信仪式递归压缩证明](/study/papers/bowe-halo-2019/) | 其他 |
