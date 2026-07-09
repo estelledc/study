@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 903 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 904 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：903 个
+- **总数**：904 个
 - **已分类**：214
-- **未分类**：689（落入"其他 / 待分类"段）
+- **未分类**：690（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 689 |
+| [其他 / 待分类](#其他--待分类) | 690 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 689 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 690 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -1145,6 +1145,7 @@ sidebar:
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) |
 | `vector` | [Vector — Rust 写的统一可观测性数据管道](/study/projects/vector/) |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) |
+| `vega-lite` | [Vega-Lite — 高层声明式可视化语法](/study/projects/vega-lite/) |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) |
 | `vespa` | [Vespa — Yahoo 检索 + 排序引擎](/study/projects/vespa/) |
@@ -1199,7 +1200,7 @@ sidebar:
 
 ---
 
-## 全部 903 个（字母序）
+## 全部 904 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2036,6 +2037,7 @@ sidebar:
 | `vault` | [Vault — HashiCorp 把"密码本"做成可编程基础设施](/study/projects/vault/) | 其他 |
 | `vector` | [Vector — Rust 写的统一可观测性数据管道](/study/projects/vector/) | 其他 |
 | `vega` | [Vega — 整张图就是一棵 JSON](/study/projects/vega/) | 其他 |
+| `vega-lite` | [Vega-Lite — 高层声明式可视化语法](/study/projects/vega-lite/) | 其他 |
 | `velero` | [Velero — Kubernetes 集群备份与迁移](/study/projects/velero/) | 其他 |
 | `vercel-ai` | [Vercel AI SDK — 多 LLM Provider 统一 SDK](/study/projects/vercel-ai/) | AI 应用 / Agent 平台 |
 | `vertx` | [Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言](/study/projects/vertx/) | 其他 |
