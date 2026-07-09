@@ -1,0 +1,66 @@
+src/content/docs/papers/dwork-dp-2006.md
+  s_9a206d56fa90c6::t_49a9b4f218b2d9 1-167 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a4f453b7c0da26523dbb26b","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,167]}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "fa3aab881db0b47babf72ce5ed0a484bedbcf271",
+  "prompts": {},
+  "sessions": {
+    "s_9a206d56fa90c6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4f3c397c0da26523dba9bc",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "src/content/docs/papers/dwork-dp-2006.md": [
+      {
+        "hash": "s_9a206d56fa90c6::t_49a9b4f218b2d9",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              167
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a4f453b7c0da26523dbb26b",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  167
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_9a206d56fa90c6": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_9a206d56fa90c6::t_49a9b4f218b2d9": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
