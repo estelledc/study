@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 989 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 990 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：989 篇
+- **总数**：990 篇
 - **已分类**：143
-- **未分类**：846（落入"其他 / 待分类"段）
+- **未分类**：847（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 846 |
+| [其他 / 待分类](#其他--待分类) | 847 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 846 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 847 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -413,6 +413,7 @@ sidebar:
 | `calvin` | [Calvin — 先排队再执行的分布式事务系统](/study/papers/calvin/) |
 | `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) |
 | `capsicum-2010` | [Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"](/study/papers/capsicum-2010/) |
+| `carlini-wagner-2017` | [C&W 攻击 — 用强优化检验神经网络鲁棒性](/study/papers/carlini-wagner-2017/) |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) |
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) |
@@ -1157,7 +1158,7 @@ sidebar:
 
 ---
 
-## 全部 989 篇（字母序）
+## 全部 990 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1285,6 +1286,7 @@ sidebar:
 | `calvin-2012` | [Calvin 2012 — 先排好顺序再执行，让跨分区事务不再走 2PC](/study/papers/calvin-2012/) | 数据库 |
 | `cap-12-years-later-2012` | [CAP 十二年后 — Brewer 自己承认"三选二"是误读](/study/papers/cap-12-years-later-2012/) | 其他 |
 | `capsicum-2010` | [Capsicum — 给 UNIX 进程发"通行证"而不是"万能钥匙"](/study/papers/capsicum-2010/) | 其他 |
+| `carlini-wagner-2017` | [C&W 攻击 — 用强优化检验神经网络鲁棒性](/study/papers/carlini-wagner-2017/) | 其他 |
 | `cascades-1995` | [Cascades 1995 — 用规则 + Memo 拼装一个可扩展查询优化器](/study/papers/cascades-1995/) | 其他 |
 | `case-for-risc-1980` | [Case for RISC 1980 — 一篇没有芯片的论文，掀起 CPU 半世纪革命](/study/papers/case-for-risc-1980/) | 其他 |
 | `cassandra-2010` | [Cassandra 2010 — 把 Dynamo 的 P2P 骨架和 Bigtable 的列族数据模型拼成一个东西](/study/papers/cassandra-2010/) | 其他 |
