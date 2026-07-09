@@ -1466,6 +1466,7 @@ lsd
 lucia
 luma-gl
 lunarvim
+luxcorerender
 luxon
 lwip
 m3
