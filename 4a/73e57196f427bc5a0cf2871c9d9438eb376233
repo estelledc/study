@@ -1,0 +1,107 @@
+src/content/docs/papers/carlini-wagner-2017.md
+  s_9a206d56fa90c6::t_c6af88a329dd4b 1-125,127-149 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a4f7c997c0da26523dbe715","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Range":[1,125]},{"Range":[127,149]}]}]}
+  s_9a206d56fa90c6::t_47586d60d48c4d 126 gitai:{"mixed_line_ranges":[],"operations":[{"operation_id":"6a4f7cbc7c0da26523dbe752","tool_type":"agent","tool_id":"apply_patch","line_ranges":[{"Single":126}]}]}
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "4a73e57196f427bc5a0cf2871c9d9438eb376233",
+  "prompts": {},
+  "sessions": {
+    "s_9a206d56fa90c6": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a4f3c397c0da26523dba9bc",
+        "model": "gpt-5.5__max"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {
+    "src/content/docs/papers/carlini-wagner-2017.md": [
+      {
+        "hash": "s_9a206d56fa90c6::t_c6af88a329dd4b",
+        "line_ranges": [
+          {
+            "Range": [
+              1,
+              125
+            ]
+          },
+          {
+            "Range": [
+              127,
+              149
+            ]
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a4f7c997c0da26523dbe715",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Range": [
+                  1,
+                  125
+                ]
+              },
+              {
+                "Range": [
+                  127,
+                  149
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "hash": "s_9a206d56fa90c6::t_47586d60d48c4d",
+        "line_ranges": [
+          {
+            "Single": 126
+          }
+        ],
+        "mixed_line_ranges": [],
+        "operations": [
+          {
+            "operation_id": "6a4f7cbc7c0da26523dbe752",
+            "tool_type": "agent",
+            "tool_id": "apply_patch",
+            "line_ranges": [
+              {
+                "Single": 126
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "remote_transcripts": {
+    "s_9a206d56fa90c6": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_9a206d56fa90c6::t_47586d60d48c4d": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    },
+    "s_9a206d56fa90c6::t_c6af88a329dd4b": {
+      "tool": "trae",
+      "conversation_id": "6a4f3c397c0da26523dba9bc",
+      "session_id": "6a4f3c397c0da26523dba9bc",
+      "status": "remote_only",
+      "message": "Remote transcript resolution is not implemented yet for TRAE prompts."
+    }
+  }
+}
