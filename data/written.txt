@@ -1791,6 +1791,7 @@ vanilla-extract
 vault
 vector
 vega
+vega-lite
 velero
 vercel-ai
 vertx
