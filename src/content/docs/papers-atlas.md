@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1012 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1013 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1012 篇
+- **总数**：1013 篇
 - **已分类**：143
-- **未分类**：869（落入"其他 / 待分类"段）
+- **未分类**：870（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 869 |
+| [其他 / 待分类](#其他--待分类) | 870 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 869 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 870 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1015,6 +1015,7 @@ sidebar:
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) |
 | `sctp-multipath-2006` | [SCTP 多路径并发传输 — 在 MPTCP 之前，用多宿主实现多链路同时发数据](/study/papers/sctp-multipath-2006/) |
+| `securify-2018` | [Securify 2018 — 用规则自动查智能合约漏洞](/study/papers/securify-2018/) |
 | `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) |
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) |
 | `self-customization` | [SELF Customization — 给每种"调用者类型"现场打一份方法](/study/papers/self-customization/) |
@@ -1180,7 +1181,7 @@ sidebar:
 
 ---
 
-## 全部 1012 篇（字母序）
+## 全部 1013 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -2000,6 +2001,7 @@ sidebar:
 | `scoop` | [Scoop — Windows 上像 Homebrew 一样装命令行工具](/study/papers/scoop/) | 其他 |
 | `scott-strachey-denotational` | [Scott-Strachey 指称语义 — 给程序找一个独立于实现的数学含义](/study/papers/scott-strachey-denotational/) | 其他 |
 | `sctp-multipath-2006` | [SCTP 多路径并发传输 — 在 MPTCP 之前，用多宿主实现多链路同时发数据](/study/papers/sctp-multipath-2006/) | 其他 |
+| `securify-2018` | [Securify 2018 — 用规则自动查智能合约漏洞](/study/papers/securify-2018/) | 其他 |
 | `sel4-2009` | [seL4 — 第一个被数学证明"代码和规范完全一致"的操作系统内核](/study/papers/sel4-2009/) | 其他 |
 | `self-adjusting` | [Self-Adjusting Computation — 输入小幅变化时只重算受影响的那部分](/study/papers/self-adjusting/) | 编译器 / 编程语言理论 |
 | `self-consistency-2022` | [Self-Consistency — 让模型把同一道题做 40 遍再投票](/study/papers/self-consistency-2022/) | 其他 |
