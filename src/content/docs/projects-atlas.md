@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 941 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 942 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：941 个
+- **总数**：942 个
 - **已分类**：214
-- **未分类**：727（落入"其他 / 待分类"段）
+- **未分类**：728（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 727 |
+| [其他 / 待分类](#其他--待分类) | 728 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 727 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 728 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -795,6 +795,7 @@ sidebar:
 | `hydra-synth` | [Hydra — 实时视觉合成 livecoding](/study/projects/hydra-synth/) |
 | `imagemagick` | [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) |
 | `inkscape` | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) |
+| `insightface` | [InsightFace — 人脸识别 / 检测 SOTA 工具箱](/study/projects/insightface/) |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) |
 | `ionic-framework` | [ionic-framework](/study/projects/ionic-framework/) |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) |
@@ -1237,7 +1238,7 @@ sidebar:
 
 ---
 
-## 全部 941 个（字母序）
+## 全部 942 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1594,6 +1595,7 @@ sidebar:
 | `ink` | [ink — 用 React 组件树写终端 CLI](/study/projects/ink/) | CLI / 命令行工具 |
 | `inkscape` | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) | 其他 |
 | `inngest` | [Inngest — 让 async 函数自动从断点恢复的工作流引擎](/study/projects/inngest/) | 其他基础设施 |
+| `insightface` | [InsightFace — 人脸识别 / 检测 SOTA 工具箱](/study/projects/insightface/) | 其他 |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) | 其他 |
 | `ionic-framework` | [ionic-framework](/study/projects/ionic-framework/) | 其他 |
 | `ipfs` | [IPFS / Kubo — 按内容哈希定位的去中心化文件系统](/study/projects/ipfs/) | 其他 |
