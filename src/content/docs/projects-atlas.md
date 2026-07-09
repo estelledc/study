@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 908 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 909 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：908 个
+- **总数**：909 个
 - **已分类**：214
-- **未分类**：694（落入"其他 / 待分类"段）
+- **未分类**：695（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 694 |
+| [其他 / 待分类](#其他--待分类) | 695 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 694 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 695 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -644,6 +644,7 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) |
 | `dash` | [Dash — Plotly 的 Python 仪表板框架](/study/projects/dash/) |
+| `dash.js` | [dash.js — Web DASH 播放器官方参考实现](/study/projects/dash.js/) |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) |
 | `databend` | [Databend — Rust 写的存算分离云数仓](/study/projects/databend/) |
 | `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) |
@@ -1204,7 +1205,7 @@ sidebar:
 
 ---
 
-## 全部 908 个（字母序）
+## 全部 909 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1376,6 +1377,7 @@ sidebar:
 | `dagster` | [Dagster — 把流水线想成数据资产图，不是任务序列](/study/projects/dagster/) | 其他 |
 | `dasel` | [dasel — 一把刀同时切 JSON / YAML / TOML / XML / CSV](/study/projects/dasel/) | 其他 |
 | `dash` | [Dash — Plotly 的 Python 仪表板框架](/study/projects/dash/) | 其他 |
+| `dash.js` | [dash.js — Web DASH 播放器官方参考实现](/study/projects/dash.js/) | 其他 |
 | `dask` | [Dask — 让 pandas / NumPy 直接跑在比内存大的数据上](/study/projects/dask/) | 其他 |
 | `databend` | [Databend — Rust 写的存算分离云数仓](/study/projects/databend/) | 其他 |
 | `datadog` | [Datadog — 把所有监控装进一个仪表盘的 SaaS 标杆](/study/projects/datadog/) | 其他 |
