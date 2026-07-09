@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 917 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 918 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：917 个
+- **总数**：918 个
 - **已分类**：214
-- **未分类**：703（落入"其他 / 待分类"段）
+- **未分类**：704（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 703 |
+| [其他 / 待分类](#其他--待分类) | 704 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 703 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 704 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -748,6 +748,7 @@ sidebar:
 | `glide-data-grid` | [glide-data-grid — Canvas 画出来的百万行表格](/study/projects/glide-data-grid/) |
 | `glsl-canvas` | [glslCanvas — Book of Shaders 配套库](/study/projects/glsl-canvas/) |
 | `glslify` | [glslify — Browserify 风格 GLSL 模块 — 学习笔记](/study/projects/glslify/) |
+| `gltf-transform` | [glTF Transform — glTF 资产工具链](/study/projects/gltf-transform/) |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) |
 | `godot` | [Godot — 开源游戏引擎和编辑器](/study/projects/godot/) |
@@ -1213,7 +1214,7 @@ sidebar:
 
 ---
 
-## 全部 917 个（字母序）
+## 全部 918 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1512,6 +1513,7 @@ sidebar:
 | `glide-data-grid` | [glide-data-grid — Canvas 画出来的百万行表格](/study/projects/glide-data-grid/) | 其他 |
 | `glsl-canvas` | [glslCanvas — Book of Shaders 配套库](/study/projects/glsl-canvas/) | 其他 |
 | `glslify` | [glslify — Browserify 风格 GLSL 模块 — 学习笔记](/study/projects/glslify/) | 其他 |
+| `gltf-transform` | [glTF Transform — glTF 资产工具链](/study/projects/gltf-transform/) | 其他 |
 | `go-ethereum` | [Go-Ethereum (Geth) — 以太坊主流 Go 客户端](/study/projects/go-ethereum/) | 其他 |
 | `go-zero` | [go-zero — 一份契约文件生成整套 Go 微服务](/study/projects/go-zero/) | 其他 |
 | `godot` | [Godot — 开源游戏引擎和编辑器](/study/projects/godot/) | 其他 |
