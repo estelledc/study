@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 997 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 998 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：997 篇
+- **总数**：998 篇
 - **已分类**：143
-- **未分类**：854（落入"其他 / 待分类"段）
+- **未分类**：855（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 854 |
+| [其他 / 待分类](#其他--待分类) | 855 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 854 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 855 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -539,6 +539,7 @@ sidebar:
 | `dpll-1962` | [DPLL 1962 — 把"逻辑判定"从内存爆炸救成栈式回溯](/study/papers/dpll-1962/) |
 | `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) |
 | `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) |
+| `dremel-2010` | [Dremel 2010 — BigQuery 和 Parquet 背后的嵌套列式分析](/study/papers/dremel-2010/) |
 | `dremel-decade-2020` | [Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线](/study/papers/dremel-decade-2020/) |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) |
@@ -1165,7 +1166,7 @@ sidebar:
 
 ---
 
-## 全部 997 篇（字母序）
+## 全部 998 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1446,6 +1447,7 @@ sidebar:
 | `dpr-2020` | [DPR — 用 BERT 双塔把检索从 BM25 时代拉进稠密向量时代](/study/papers/dpr-2020/) | 其他 |
 | `dqn` | [DQN — Deep Q-Network](/study/papers/dqn/) | 强化学习 |
 | `dreamfusion-2022` | [DreamFusion — 用 2D 扩散模型当老师，把 NeRF 教成 3D](/study/papers/dreamfusion-2022/) | 其他 |
+| `dremel-2010` | [Dremel 2010 — BigQuery 和 Parquet 背后的嵌套列式分析](/study/papers/dremel-2010/) | 其他 |
 | `dremel-decade-2020` | [Dremel 十年回顾 — BigQuery 背后的交互式云数仓路线](/study/papers/dremel-decade-2020/) | 其他 |
 | `drizzle-2017` | [Drizzle — 让 micro-batch 也能跑出 100ms 延迟](/study/papers/drizzle-2017/) | 其他 |
 | `drmm-2016` | [DRMM — 检索里的匹配是相关性不是语义相似](/study/papers/drmm-2016/) | 其他 |
