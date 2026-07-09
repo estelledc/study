@@ -118,6 +118,7 @@ cakeml
 calculus-of-constructions
 calder-2015-anycast-cdn
 call-by-need-1995
+calvin
 calvin-2012
 cap-12-years-later-2012
 capsicum-2010
