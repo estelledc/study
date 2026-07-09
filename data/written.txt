@@ -1016,6 +1016,7 @@ arrow-rs
 arweave
 asdf
 aspnetcore
+assimp
 ast-grep
 asterisk
 astro
