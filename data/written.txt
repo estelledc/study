@@ -187,6 +187,7 @@ consistency-models-2023
 consistent-hashing-1997
 constitutional-ai
 continual-pretrain-survey-2026
+contriever-2021
 cook-1984-distributed-ray-tracing
 cook-1986-stochastic-sampling
 cook-levin
