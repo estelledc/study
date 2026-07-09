@@ -1692,6 +1692,7 @@ sglang
 shadcn-ui
 shader-park
 shadowsocks-libev
+shaka-packager
 shaka-player
 shap
 sharedb
