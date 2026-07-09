@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1009 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1010 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：1009 篇
+- **总数**：1010 篇
 - **已分类**：143
-- **未分类**：866（落入"其他 / 待分类"段）
+- **未分类**：867（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 866 |
+| [其他 / 待分类](#其他--待分类) | 867 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 866 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 867 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -915,6 +915,7 @@ sidebar:
 | `paged-attention` | [PagedAttention — 把 KV cache 当虚拟内存页来管理](/study/papers/paged-attention/) |
 | `paged-attention-vllm` | [PagedAttention — 以页替代整段内存的显存管理](/study/papers/paged-attention-vllm/) |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) |
+| `paillier-1999` | [Paillier 1999 — 能在密文上直接做加法的公钥加密](/study/papers/paillier-1999/) |
 | `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) |
 | `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) |
 | `parnas-information-hiding-1972` | [Parnas 信息隐藏 1972 — 模块化设计原则](/study/papers/parnas-information-hiding-1972/) |
@@ -1177,7 +1178,7 @@ sidebar:
 
 ---
 
-## 全部 1009 篇（字母序）
+## 全部 1010 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1875,6 +1876,7 @@ sidebar:
 | `paged-attention` | [PagedAttention — 把 KV cache 当虚拟内存页来管理](/study/papers/paged-attention/) | 其他 |
 | `paged-attention-vllm` | [PagedAttention — 以页替代整段内存的显存管理](/study/papers/paged-attention-vllm/) | 其他 |
 | `pagerank-1998` | [PageRank — 用随机游走给整个网络的页面打分](/study/papers/pagerank-1998/) | 其他 |
+| `paillier-1999` | [Paillier 1999 — 能在密文上直接做加法的公钥加密](/study/papers/paillier-1999/) | 其他 |
 | `pair-programming` | [Pair Programming — 两个人共用一台机器写代码](/study/papers/pair-programming/) | HCI / 软件工程研究 |
 | `panel` | [Panel — 把 notebook 一键变交互式 web app](/study/papers/panel/) | 其他 |
 | `park-2019-deepsdf` | [DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来](/study/papers/park-2019-deepsdf/) | 其他 |
