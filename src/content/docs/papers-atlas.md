@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 977 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 978 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：977 篇
+- **总数**：978 篇
 - **已分类**：143
-- **未分类**：834（落入"其他 / 待分类"段）
+- **未分类**：835（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 834 |
+| [其他 / 待分类](#其他--待分类) | 835 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 834 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 835 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -1080,6 +1080,7 @@ sidebar:
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) |
 | `tradeoff-analysis` | [The Tail at Scale — 尾延迟会被规模放大](/study/papers/tradeoff-analysis/) |
 | `transformer` | [Transformer — 让每个词一次看完整句话](/study/papers/transformer/) |
+| `transformer-2017` | [Attention Is All You Need — 用 self-attention 重写序列建模](/study/papers/transformer-2017/) |
 | `transformer-xl-2019` | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) |
 | `tree-of-attention-2026` | [Tree-of-Attention: Branching Attention for Long-Context Reasoning](/study/papers/tree-of-attention-2026/) |
 | `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) |
@@ -1145,7 +1146,7 @@ sidebar:
 
 ---
 
-## 全部 977 篇（字母序）
+## 全部 978 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -2054,6 +2055,7 @@ sidebar:
 | `tracemonkey` | [TraceMonkey — 只编"真的走过的那一条路"](/study/papers/tracemonkey/) | 其他 |
 | `tradeoff-analysis` | [The Tail at Scale — 尾延迟会被规模放大](/study/papers/tradeoff-analysis/) | 其他 |
 | `transformer` | [Transformer — 让每个词一次看完整句话](/study/papers/transformer/) | 其他 |
+| `transformer-2017` | [Attention Is All You Need — 用 self-attention 重写序列建模](/study/papers/transformer-2017/) | 其他 |
 | `transformer-xl-2019` | [Transformer-XL — 让 Transformer 像 RNN 那样把上下文滚动传下去](/study/papers/transformer-xl-2019/) | 其他 |
 | `tree-of-attention-2026` | [Tree-of-Attention: Branching Attention for Long-Context Reasoning](/study/papers/tree-of-attention-2026/) | 其他 |
 | `tree-of-thoughts-2023` | [Tree of Thoughts — 让 LLM 像下棋一样多想几步再答](/study/papers/tree-of-thoughts-2023/) | 其他 |
