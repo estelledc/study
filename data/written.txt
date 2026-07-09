@@ -498,6 +498,7 @@ lalr-deremer
 lambda-calculus
 lambdarank-2006
 lamport-1978
+lamport-bakery
 lamport-time-clocks-1978
 lamport-tla-1994
 lampson-hints
