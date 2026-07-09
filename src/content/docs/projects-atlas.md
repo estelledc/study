@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 933 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 934 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：933 个
+- **总数**：934 个
 - **已分类**：214
-- **未分类**：719（落入"其他 / 待分类"段）
+- **未分类**：720（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 719 |
+| [其他 / 待分类](#其他--待分类) | 720 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 719 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 720 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -538,6 +538,7 @@ sidebar:
 | `appflowy` | [AppFlowy — Rust 写的开源 Notion](/study/projects/appflowy/) |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) |
+| `ar-js` | [AR.js — 浏览器里跑 Web AR 标记追踪](/study/projects/ar-js/) |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) |
 | `ardour` | [Ardour — 专业级 DAW](/study/projects/ardour/) |
@@ -1229,7 +1230,7 @@ sidebar:
 
 ---
 
-## 全部 933 个（字母序）
+## 全部 934 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1267,6 +1268,7 @@ sidebar:
 | `appflowy` | [AppFlowy — Rust 写的开源 Notion](/study/projects/appflowy/) | 其他 |
 | `appwrite` | [Appwrite — 自己能装一遍的开源 Firebase](/study/projects/appwrite/) | 其他 |
 | `aptos-core` | [Aptos — Move 系高性能 L1](/study/projects/aptos-core/) | 其他 |
+| `ar-js` | [AR.js — 浏览器里跑 Web AR 标记追踪](/study/projects/ar-js/) | 其他 |
 | `aragon` | [Aragon OSx — 一份内核合约管所有 DAO 的乐高套件](/study/projects/aragon/) | 其他 |
 | `arangodb` | [ArangoDB — 文档+图+KV 三合一的多模型数据库](/study/projects/arangodb/) | 数据库本体 / 存储引擎 |
 | `arbitrum` | [Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端](/study/projects/arbitrum/) | 其他 |
