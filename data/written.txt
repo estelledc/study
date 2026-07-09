@@ -1726,6 +1726,7 @@ rt-thread
 runc
 safe-contracts
 salvo
+sam2
 sanic
 scikit-learn
 scipy
