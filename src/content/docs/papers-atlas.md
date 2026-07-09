@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 984 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 985 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：984 篇
+- **总数**：985 篇
 - **已分类**：143
-- **未分类**：841（落入"其他 / 待分类"段）
+- **未分类**：842（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 841 |
+| [其他 / 待分类](#其他--待分类) | 842 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 841 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 842 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -954,6 +954,7 @@ sidebar:
 | `reps-ifds` | [Reps-Horwitz-Sagiv IFDS — 把跨过程分析变成图上找路](/study/papers/reps-ifds/) |
 | `resolution-diagnostics-llm` | [Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率](/study/papers/resolution-diagnostics-llm/) |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) |
+| `reward-hacking` | [Concrete Problems in AI Safety — 把 AI 安全风险拆成工程问题](/study/papers/reward-hacking/) |
 | `reyes-1987` | [Reyes 1987 — 把电影级渲染拆成可流水线处理的小砖块](/study/papers/reyes-1987/) |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) |
@@ -1152,7 +1153,7 @@ sidebar:
 
 ---
 
-## 全部 984 篇（字母序）
+## 全部 985 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1905,6 +1906,7 @@ sidebar:
 | `resolution-diagnostics-llm` | [Resolution Diagnostics — 判断 LLM 排名差距有没有统计分辨率](/study/papers/resolution-diagnostics-llm/) | 其他 |
 | `rest-fielding-2000` | [REST — Fielding 2000 给 Web API 写下的设计宪法](/study/papers/rest-fielding-2000/) | 其他 |
 | `retro` | [RETRO — DeepMind 的检索增强 LLM](/study/papers/retro/) | 智能体与 LLM 系统 |
+| `reward-hacking` | [Concrete Problems in AI Safety — 把 AI 安全风险拆成工程问题](/study/papers/reward-hacking/) | 其他 |
 | `reyes-1987` | [Reyes 1987 — 把电影级渲染拆成可流水线处理的小砖块](/study/papers/reyes-1987/) | 其他 |
 | `reynolds-definitional-interpreters` | [Reynolds Definitional Interpreters — 用一种语言去定义另一种语言](/study/papers/reynolds-definitional-interpreters/) | 其他 |
 | `reynolds-separation-logic` | [Separation Logic — 把 Hoare 逻辑扩到带指针的程序](/study/papers/reynolds-separation-logic/) | 其他 |
