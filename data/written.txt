@@ -137,6 +137,7 @@ cerf-kahn-1974
 certikos-2016
 cesium
 chaff-2001
+chain-of-thought
 chain-replication-2004
 chaitin-graph-coloring
 chandy-lamport-1985
