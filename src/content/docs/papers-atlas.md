@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 994 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 995 篇论文 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：994 篇
+- **总数**：995 篇
 - **已分类**：143
-- **未分类**：851（落入"其他 / 待分类"段）
+- **未分类**：852（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -36,7 +36,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 851 |
+| [其他 / 待分类](#其他--待分类) | 852 |
 
 ---
 
@@ -304,7 +304,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 851 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 852 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 论文 |
 |---|---|
@@ -667,6 +667,7 @@ sidebar:
 | `hekaton-2013-sigmod` | [Hekaton — SQL Server 的内存原生 OLTP 引擎](/study/papers/hekaton-2013-sigmod/) |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) |
 | `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) |
+| `helm-2022` | [HELM 2022 — 给语言模型做全身体检](/study/papers/helm-2022/) |
 | `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) |
 | `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) |
 | `hits-1999` | [HITS — 给网页同时打两个分：权威页 + 索引页](/study/papers/hits-1999/) |
@@ -1162,7 +1163,7 @@ sidebar:
 
 ---
 
-## 全部 994 篇（字母序）
+## 全部 995 篇（字母序）
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -1585,6 +1586,7 @@ sidebar:
 | `hekaton-2013-sigmod` | [Hekaton — SQL Server 的内存原生 OLTP 引擎](/study/papers/hekaton-2013-sigmod/) | 其他 |
 | `helium-type-errors` | [Helium — 让类型错误说人话的教学版 Haskell](/study/papers/helium-type-errors/) | 其他 |
 | `helland-2007` | [Life Beyond Distributed Transactions — 大规模系统下放弃跨机事务的宣言](/study/papers/helland-2007/) | 其他 |
+| `helm-2022` | [HELM 2022 — 给语言模型做全身体检](/study/papers/helm-2022/) | 其他 |
 | `herlihy-moss-tm` | [Herlihy-Moss 事务内存 — 把数据库事务搬进 CPU](/study/papers/herlihy-moss-tm/) | 其他 |
 | `hewitt-actor-model` | [Hewitt Actor 模型 — 把计算拆成一群只会发消息的小邮筒](/study/papers/hewitt-actor-model/) | 其他 |
 | `hindley-milner` | [Hindley-Milner — 编译器自己猜变量类型](/study/papers/hindley-milner/) | 编译器 / 编程语言理论 |
