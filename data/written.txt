@@ -642,6 +642,7 @@ openflow-2008
 openhands
 opensearch
 optuna
+orca-2022
 orca-continuous-batching
 oscar-int2-kv
 ot-1989
