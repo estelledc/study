@@ -48,6 +48,7 @@ atzei-eth-attacks-2017
 aurora
 aurora-exascale-2024
 autogen
+autograph-2004
 autonomous-driving-waymo-2021
 av2-video-spec
 avgustinov-codeql-2016
