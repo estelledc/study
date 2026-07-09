@@ -39,7 +39,7 @@ Stars 量级为 2025-2026 区间近似值，仅作影响力参考；候选门槛
 | fastapi | FastAPI | 类型驱动 ASGI 框架，Pydantic 自动校验 + OpenAPI 自动生成，2020 后 Python 后端事实新标准 | 80k | https://github.com/fastapi/fastapi |
 | flask | Flask | 轻量 WSGI 微框架，extension 生态最广，"装饰器 + 蓝图"教学范本 | 68k | https://github.com/pallets/flask |
 | django | Django | 全功能 batteries-included 框架，自带 ORM / Admin / Auth，Instagram / Pinterest 出身 | 80k | https://github.com/django/django |
-| starlette | Starlette | Pure ASGI toolkit，FastAPI 的底座，~3k 行精读级代码 | 11k | https://github.com/encode/starlette |
+| starlette | Starlette | 11k | Pure ASGI toolkit，FastAPI 的底座，~3k 行精读级代码 | https://github.com/encode/starlette |
 | sanic | Sanic | 性能向 async Python 框架，对标 Node.js 高吞吐 | 18k | https://github.com/sanic-org/sanic |
 | litestar | Litestar | 类型驱动 ASGI 框架（原 Starlite），DI + 性能 + 文档三优 | 6.5k | https://github.com/litestar-org/litestar |
 | quart | Quart | Flask 完全 async 移植，API 同源 + ASGI 后端 | 3.3k | https://github.com/pallets/quart |
