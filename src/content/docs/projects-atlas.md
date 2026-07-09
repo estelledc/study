@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 939 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 940 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：939 个
+- **总数**：940 个
 - **已分类**：214
-- **未分类**：725（落入"其他 / 待分类"段）
+- **未分类**：726（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 725 |
+| [其他 / 待分类](#其他--待分类) | 726 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 725 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 726 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -666,6 +666,7 @@ sidebar:
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) |
 | `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) |
+| `dlib` | [dlib — C++ 机器学习 / CV 工具箱](/study/projects/dlib/) |
 | `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) |
 | `doom-emacs` | [Doom Emacs — 启动不到一秒的模块化 Emacs 配置](/study/projects/doom-emacs/) |
 | `doris` | [Apache Doris — MySQL 协议 MPP OLAP 数据库](/study/projects/doris/) |
@@ -1235,7 +1236,7 @@ sidebar:
 
 ---
 
-## 全部 939 个（字母序）
+## 全部 940 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1433,6 +1434,7 @@ sidebar:
 | `discord-py` | [discord.py — 用 Python 写 Discord 机器人的事实标准](/study/projects/discord-py/) | 其他 |
 | `dive` | [dive — 看清 Docker 镜像每一层加了什么文件的 TUI](/study/projects/dive/) | 其他 |
 | `django` | [Django — 全功能 batteries-included 的 Python web 框架](/study/projects/django/) | 其他 |
+| `dlib` | [dlib — C++ 机器学习 / CV 工具箱](/study/projects/dlib/) | 其他 |
 | `dnd-kit` | [dnd-kit — React 现代拖拽 toolkit](/study/projects/dnd-kit/) | Drag & Drop / Interaction |
 | `docker` | [Docker — 容器化平台](/study/projects/docker/) | DevOps / 容器 / 运维 |
 | `docker-compose` | [Docker Compose — 一份 YAML 起一整套开发栈](/study/projects/docker-compose/) | 其他 |
