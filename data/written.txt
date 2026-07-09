@@ -428,6 +428,7 @@ indri-2005
 induction-heads
 infer-biabduction
 ingres-1976
+instant-ngp-2022
 instructgpt
 io-uring
 ipfs-2014
