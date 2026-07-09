@@ -1383,6 +1383,7 @@ kaniko
 kedro
 kepler-gl
 keras
+kicad
 kind
 kitty
 klipper
