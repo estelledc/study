@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 929 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 930 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：929 个
+- **总数**：930 个
 - **已分类**：214
-- **未分类**：715（落入"其他 / 待分类"段）
+- **未分类**：716（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 715 |
+| [其他 / 待分类](#其他--待分类) | 716 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 715 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 716 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -513,6 +513,7 @@ sidebar:
 | `act` | [act — 在本地用 Docker 跑 GitHub Actions](/study/projects/act/) |
 | `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) |
+| `aframe` | [A-Frame — 用 HTML 搭 Web VR 场景](/study/projects/aframe/) |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) |
 | `age` | [age — 把"用 GPG 加密一个文件"重新做对](/study/projects/age/) |
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) |
@@ -1225,7 +1226,7 @@ sidebar:
 
 ---
 
-## 全部 929 个（字母序）
+## 全部 930 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1236,6 +1237,7 @@ sidebar:
 | `actions-runner-controller` | [Actions Runner Controller — 让 GitHub Actions 在你自己的 K8s 上跑](/study/projects/actions-runner-controller/) | 其他 |
 | `actix-web` | [Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架](/study/projects/actix-web/) | 其他 |
 | `affine` | [AFFiNE — 文档和白板共用同一棵 block 树的开源知识库](/study/projects/affine/) | 数据应用 / SaaS |
+| `aframe` | [A-Frame — 用 HTML 搭 Web VR 场景](/study/projects/aframe/) | 其他 |
 | `ag-grid` | [AG Grid — 企业级数据表格](/study/projects/ag-grid/) | 其他 |
 | `age` | [age — 把"用 GPG 加密一个文件"重新做对](/study/projects/age/) | 其他 |
 | `aichat` | [AIChat — 终端里的多模型 LLM 客户端](/study/projects/aichat/) | 其他 |
