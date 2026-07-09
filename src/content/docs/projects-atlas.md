@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 930 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 931 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：930 个
+- **总数**：931 个
 - **已分类**：214
-- **未分类**：716（落入"其他 / 待分类"段）
+- **未分类**：717（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 716 |
+| [其他 / 待分类](#其他--待分类) | 717 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 716 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 717 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -790,6 +790,7 @@ sidebar:
 | `htop` | [htop — top 的彩色交互替代（鼠标点选 / 树视图 / 过滤）](/study/projects/htop/) |
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) |
 | `hydra-synth` | [Hydra — 实时视觉合成 livecoding](/study/projects/hydra-synth/) |
+| `imagemagick` | [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) |
 | `inkscape` | [Inkscape — 矢量图形编辑器](/study/projects/inkscape/) |
 | `invokeai` | [InvokeAI — 工业级 Stable Diffusion 工具](/study/projects/invokeai/) |
 | `ionic-framework` | [ionic-framework](/study/projects/ionic-framework/) |
@@ -1226,7 +1227,7 @@ sidebar:
 
 ---
 
-## 全部 930 个（字母序）
+## 全部 931 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1573,6 +1574,7 @@ sidebar:
 | `httpie` | [HTTPie — curl 的人话版本](/study/projects/httpie/) | 其他 |
 | `hydra-synth` | [Hydra — 实时视觉合成 livecoding](/study/projects/hydra-synth/) | 其他 |
 | `i18next` | [i18next — 让一份 JS 代码同时讲几十种语言](/study/projects/i18next/) | i18n 国际化 |
+| `imagemagick` | [ImageMagick — 图像处理瑞士军刀](/study/projects/imagemagick/) | 其他 |
 | `immer` | [Immer — 用 Proxy 让你写"看起来可改"的代码却产出不可变状态](/study/projects/immer/) | 状态管理 |
 | `immich` | [Immich — 把家庭照片从别人的云里救回自己机器](/study/projects/immich/) | 数据应用 / SaaS |
 | `influxdb` | [InfluxDB — 专用时序数据库](/study/projects/influxdb/) | 监控 / 时序 |
