@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 927 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 928 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：927 个
+- **总数**：928 个
 - **已分类**：214
-- **未分类**：713（落入"其他 / 待分类"段）
+- **未分类**：714（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 713 |
+| [其他 / 待分类](#其他--待分类) | 714 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 713 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 714 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -799,6 +799,7 @@ sidebar:
 | `jax` | [JAX — Google 函数式数值计算](/study/projects/jax/) |
 | `jc` | [jc — 把 100+ Unix 命令的输出一键 JSON 化](/study/projects/jc/) |
 | `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) |
+| `jitsi-meet` | [Jitsi Meet — 开源视频会议的自托管套件](/study/projects/jitsi-meet/) |
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) |
 | `joplin` | [Joplin — 开源 Evernote 替代](/study/projects/joplin/) |
 | `jq` | [jq — JSON 的 sed/awk](/study/projects/jq/) |
@@ -1223,7 +1224,7 @@ sidebar:
 
 ---
 
-## 全部 927 个（字母序）
+## 全部 928 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1587,6 +1588,7 @@ sidebar:
 | `jenkins` | [Jenkins — 老牌开源 CI 服务器](/study/projects/jenkins/) | 其他 |
 | `jest` | [Jest — 一个包就能跑 JS 测试的全家桶](/study/projects/jest/) | 测试 / 验证 |
 | `jimp` | [jimp — 哪都能跑的纯 JS 图像处理库](/study/projects/jimp/) | 图像处理 / Canvas |
+| `jitsi-meet` | [Jitsi Meet — 开源视频会议的自托管套件](/study/projects/jitsi-meet/) | 其他 |
 | `jitsi-videobridge` | [Jitsi Videobridge — 只读 RTP 包头的 WebRTC 视频转发器](/study/projects/jitsi-videobridge/) | 其他 |
 | `joplin` | [Joplin — 开源 Evernote 替代](/study/projects/joplin/) | 其他 |
 | `jotai` | [Jotai — 原子化 React 状态管理](/study/projects/jotai/) | 状态管理 |
