@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 914 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 915 个项目 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -11,9 +11,9 @@ sidebar:
 
 ## 总览
 
-- **总数**：914 个
+- **总数**：915 个
 - **已分类**：214
-- **未分类**：700（落入"其他 / 待分类"段）
+- **未分类**：701（落入"其他 / 待分类"段）
 
 ### 按主题分布
 
@@ -52,7 +52,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 700 |
+| [其他 / 待分类](#其他--待分类) | 701 |
 
 ---
 
@@ -503,7 +503,7 @@ sidebar:
 
 ## 其他 / 待分类
 
-共 700 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+共 701 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
 
 | Slug | 项目 |
 |---|---|
@@ -548,6 +548,7 @@ sidebar:
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) |
+| `assimp` | [Assimp — 把 3D 模型格式统一成 aiScene 的导入库](/study/projects/assimp/) |
 | `ast-grep` | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) |
 | `astronvim` | [AstroNvim — 社区驱动的 Neovim 配置](/study/projects/astronvim/) |
@@ -1210,7 +1211,7 @@ sidebar:
 
 ---
 
-## 全部 914 个（字母序）
+## 全部 915 个（字母序）
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -1261,6 +1262,7 @@ sidebar:
 | `arweave` | [Arweave — 一次付费、永远存着的区块链](/study/projects/arweave/) | 其他 |
 | `asdf` | [asdf — 一个 CLI 管 Node/Python/Ruby 等几十种版本](/study/projects/asdf/) | 其他 |
 | `aspnetcore` | [ASP.NET Core — 微软跨平台 web 框架](/study/projects/aspnetcore/) | 其他 |
+| `assimp` | [Assimp — 把 3D 模型格式统一成 aiScene 的导入库](/study/projects/assimp/) | 其他 |
 | `ast-grep` | [ast-grep — 按语法树搜代码、改代码的命令行工具](/study/projects/ast-grep/) | 其他 |
 | `asterisk` | [Asterisk — 把企业总机变成一台 Linux 服务器](/study/projects/asterisk/) | 其他 |
 | `astro` | [Astro — 内容站点优先的 Web 框架](/study/projects/astro/) | Meta 框架 / 全栈 |
