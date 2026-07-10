@@ -1,0 +1,107 @@
+{
+  "slug": "dspy",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 trainset 用 for ... 省略，零基础能懂大意，但逐步展开会更稳。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "arXiv:2310.03714 / Khattab et al. 2023 与 stub 一致；18k+ stars、STORM 等属合理教学压缩。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "dspy.configure / Signature / BootstrapFewShot 概念正确可跟做；编译调用量与 metric 边界写得具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 trainset 用 for ... 省略，零基础能懂大意，但逐步展开会更稳。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "arXiv:2310.03714 / Khattab et al. 2023 与 stub 一致；18k+ stars、STORM 等属合理教学压缩。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "dspy.configure / Signature / BootstrapFewShot 概念正确可跟做；编译调用量与 metric 边界写得具体。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 153,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 153,
+  "l1_pass": true
+}

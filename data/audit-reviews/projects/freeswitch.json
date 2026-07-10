@@ -1,0 +1,107 @@
+{
+  "slug": "freeswitch",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "小总机 vs 机房交换机类比贴合；SIP/RTP/SBC 首次有桥接，但模块名堆叠对零基础略密。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SignalWire 维护、MPL、B2BUA/Sofia-SIP 与公开资料一致；Asterisk「单线程」属常见教学简化，可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "dialplan XML 与 ESL originate 示例概念正确；>200 路 / 小 PBX 边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "小总机 vs 机房交换机类比贴合；SIP/RTP/SBC 首次有桥接，但模块名堆叠对零基础略密。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "SignalWire 维护、MPL、B2BUA/Sofia-SIP 与公开资料一致；Asterisk「单线程」属常见教学简化，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "dialplan XML 与 ESL originate 示例概念正确；>200 路 / 小 PBX 边界量化清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 170,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 170,
+  "l1_pass": true
+}
