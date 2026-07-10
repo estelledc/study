@@ -86,12 +86,12 @@ showUser();
 前端读目录时写成这样：
 
 ```js
-
 async function loadFiles() {
   const entries = await Neutralino.filesystem.readDirectory('./');
   console.log(entries.map((entry) => entry.entry));
-
+}
 loadFiles();
+```
 
 这类权限配置是 Neutralinojs 和“把 Node 全塞进页面”路线最大的差异之一：默认要你把边界想清楚。
 
@@ -130,6 +130,7 @@ const client = new WS(url);
 client.onclose = () => process.exit(0);
 client.onmessage = (event) => console.log(event.data);
 ```
+
 逐部分解释：
 - 扩展本质是普通子进程，可以用 Node、Python、Go 或任何你能启动的语言写。
 - `stdin` 里传入端口和 token，避免把连接密钥暴露在命令行参数里。
