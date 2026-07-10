@@ -1,0 +1,131 @@
+{
+  "slug": "mockapetris-1988-dns",
+  "area": "papers",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "盖楼设计手记 / 邮政地址 / 连锁店 / 超市保质期类比层层贴合委派与 TTL"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "zone / NS / TTL / glue 首次出现都有日常桥接，零基础能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例1–2 有 hosts.txt→委派与 dig 输出逐步解释；案例3 扩展 TYPE 列表偏概念，可再补一句「运维加记录不用改协议代码」的跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Mockapetris & Dunlap SIGCOMM 1988；RFC 882/883→1034/1035 时间线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "hosts.txt→层次委派、TTL 弱一致、机制/策略分离与论文主张一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「协议代码一行没改」是教学简化（实现与解析器仍演进），核心「数据灵活扩展」未歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "dig TTL 示例与委派 NS 片段概念正确可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：TTL 旋钮、glue 循环、CNAME 顶点、明文 UDP/Kaminsky"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用全球命名/服务发现；不适用强一致/主动失效/高频读写，边界量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "盖楼设计手记 / 邮政地址 / 连锁店 / 超市保质期类比层层贴合委派与 TTL",
+        "zone / NS / TTL / glue 首次出现都有日常桥接，零基础能跟",
+        "案例1–2 有 hosts.txt→委派与 dig 输出逐步解释；案例3 扩展 TYPE 列表偏概念，可再补一句「运维加记录不用改协议代码」的跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "来源 Mockapetris & Dunlap SIGCOMM 1988；RFC 882/883→1034/1035 时间线正确",
+        "hosts.txt→层次委派、TTL 弱一致、机制/策略分离与论文主张一致",
+        "「协议代码一行没改」是教学简化（实现与解析器仍演进），核心「数据灵活扩展」未歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "dig TTL 示例与委派 NS 片段概念正确可跟做",
+        "踩坑具体：TTL 旋钮、glue 循环、CNAME 顶点、明文 UDP/Kaminsky",
+        "适用全球命名/服务发现；不适用强一致/主动失效/高频读写，边界量化清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "status": "passed",
+  "lines": 167,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

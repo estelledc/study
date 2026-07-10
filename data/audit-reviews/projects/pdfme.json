@@ -1,0 +1,142 @@
+{
+  "slug": "pdfme",
+  "area": "projects",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Word 邮件合并类比贴合「底版+字段+数据」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "basePdf / schemas / inputs 三件套桥接清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例1 用了 BLANK_PDF 但未说明从哪 import；缺「装包→写 template→generate→拿到 Uint8Array」逐步读法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 pdfme/pdfme MIT、站在 pdf-lib/fontkit 上叙述合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "hand-dot / Designer 先行 / v3 拆包 / v5 表格分页时间线与公开资料大体一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几乎不用 jsPDF」偏口语夸张，教学可接受但宜读成场景偏好而非绝对统计"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例1 未 import BLANK_PDF（应从 @pdfme/common）；踩坑写 Font.register() 与现行 API 不符，应为 options.font 注入"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Designer onSaveTemplate / 批量 generate 思路可跟做；坐标用 mm 的坑有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用固定版面填充；不适用流式排版/解析 PDF，边界清楚；缺「反向链接」占位"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4.0,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Word 邮件合并类比贴合「底版+字段+数据」",
+        "basePdf / schemas / inputs 三件套桥接清楚",
+        "案例1 用了 BLANK_PDF 但未说明从哪 import；缺「装包→写 template→generate→拿到 Uint8Array」逐步读法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4.0,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 pdfme/pdfme MIT、站在 pdf-lib/fontkit 上叙述合理",
+        "hand-dot / Designer 先行 / v3 拆包 / v5 表格分页时间线与公开资料大体一致",
+        "「几乎不用 jsPDF」偏口语夸张，教学可接受但宜读成场景偏好而非绝对统计"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例1 未 import BLANK_PDF（应从 @pdfme/common）；踩坑写 Font.register() 与现行 API 不符，应为 options.font 注入",
+        "Designer onSaveTemplate / 批量 generate 思路可跟做；坐标用 mm 的坑有用",
+        "适用固定版面填充；不适用流式排版/解析 PDF，边界清楚；缺「反向链接」占位"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "status": "refined",
+  "lines": 162,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 反向链接"
+    ],
+    "unresolved_hints": [],
+    "summary": "补 BLANK_PDF import 与逐步读法；Font.register 改为 options.font；补反向链接占位"
+  }
+}
