@@ -59,14 +59,15 @@ Build a todo app in a single HTML file. Include:
 如果 Cline 处在 Act mode，它会提出创建 `index.html`，展示要写入的代码，然后等待你批准。批准后你可以在终端打开结果：
 
 ```bash
-open index.html
+open index.html        # macOS
+xdg-open index.html    # Linux
 ```
 
 逐部分解释：
 
 - `single HTML file` 把任务边界压小，方便新手看清每一步修改
 - `Include:` 后面的清单是验收标准，Cline 会围绕它补齐 HTML、CSS、JS
-- `open index.html` 不是 Cline 专属，只是验证产物最直接的命令
+- `open` / `xdg-open` 不是 Cline 专属，只是验证产物最直接的命令
 
 ### 案例 2：用 CLI 做 GitHub issue 根因分析
 

@@ -148,3 +148,7 @@ CRDB 监控每个 range 的大小和负载。当某个 range 超过 512MB 或 QP
 - 受 Spanner（OSDI 2012）启发，但用 HLC 替代了 TrueTime 的硬件依赖
 - Raft 共识层是从 etcd 工程模式学的：把"复制 + 调度"做成同一个单元
 - 同代竞品：TiDB（MySQL 协议路线）、YugabyteDB（PG 协议但计算存储分层）、Spanner（闭源云服务）
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

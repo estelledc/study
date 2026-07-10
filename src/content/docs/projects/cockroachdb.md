@@ -96,7 +96,7 @@ ALTER TABLE users CONFIGURE ZONE USING
 
 2. **JOIN 优化器不如 PG 成熟**：基础查询没问题，复杂多表 JOIN 的执行计划有时不如 [[postgresql]] 的 planner。生产前要 `EXPLAIN ANALYZE` 验关键查询。
 
-3. **2022 年 BSL 许可证转向**：Cockroach Labs 把核心代码从 Apache 2.0 改成 BSL（Business Source License）。生产级功能（多区域、企业备份）走商业许可，开源版能跑但跨区域要付费。这点和 ElasticSearch、Redis 类似——"先开源拉用户、再商业化锁企业"的剧本。
+3. **2019 年 BSL、2024 年自托管许可再收紧**：CockroachDB 19.2 起从 Apache 2.0 转到 BSL，主要限制云厂商把它直接包装成商业 DBaaS；24.3 起自托管大客户进入 CockroachDB Software License / Enterprise 模式。选型时别只看旧 README，要按当前版本、收入规模和部署方式核对许可。
 
 4. **DDL 不阻塞读但要 staged**：改表结构（`ALTER TABLE`）的机制和 PG 不同——CockroachDB 把 schema 改动拆成多步、慢慢推开，不锁全表。好处是不停服改表，坏处是 DDL 完成时间不确定，迁移脚本要等。
 
@@ -121,9 +121,10 @@ ALTER TABLE users CONFIGURE ZONE USING
 - **2014 年**：3 名 ex-Google 工程师（Spencer Kimball、Peter Mattis、Ben Darnell）创办 Cockroach Labs，目标"做一个开源版的 [[spanner]]"——他们在 Google 用过 Spanner，知道这是未来。
 - **2015 年**：开源第一版，名字"Cockroach"取自蟑螂——核灾难都打不死的隐喻，对应"挂多少台都能恢复"的设计。
 - **2017 年**：1.0 GA 发布。
-- **2019 年**：估值 $30 亿，完成 D 轮融资。
-- **2022 年**：核心从 Apache 2.0 改成 BSL（3 年后回归 Apache）。社区炸过一波，但商业化必须做。
-- **2024 年起**：CockroachDB Cloud（托管服务）成主营收入线，自托管开源版仍在维护。
+- **2019 年**：Series C 融资后继续扩张；同年宣布 19.2 起采用 BSL，防止云厂商直接拿核心产品做商业托管。
+- **2020 年**：完成 Series D 融资，疫情和云迁移让分布式数据库需求升温。
+- **2021 年**：Series E / F 把公司估值推到数十亿美元级，CockroachDB Cloud 成为重点增长线。
+- **2024 年起**：自托管产品合并到新的 Enterprise 许可模型，个人、小团队和较小企业仍有免费使用口径，大客户要重新算商业成本。
 
 ## 学到什么
 
