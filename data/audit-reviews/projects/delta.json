@@ -1,0 +1,98 @@
+{
+  "slug": "delta",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "把“复用 bat 的 syntax 引擎”和“default git diff 60 年没做”改成更准确表述；历史标题需符合 base rules 的“历史小故事（可跳过）”。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "修正不可直接运行的 `git diff --side-by-side` 与 `rg --json | delta` 示例，改成 git/delta 能实际识别的命令并补逐步解释。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "把“复用 bat 的 syntax 引擎”和“default git diff 60 年没做”改成更准确表述；历史标题需符合 base rules 的“历史小故事（可跳过）”。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "修正不可直接运行的 `git diff --side-by-side` 与 `rg --json | delta` 示例，改成 git/delta 能实际识别的命令并补逐步解释。"
+      ]
+    }
+  ],
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 169,
+    "reasons": []
+  },
+  "lines": 169,
+  "l1_pass": true
+}
