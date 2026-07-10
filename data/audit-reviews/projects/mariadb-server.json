@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.66,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "handler / Galera / ColumnStore 术语首次出现缺日常桥接，零基础会卡在「可插拔引擎」抽象上。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 目录树缺少「逐部分解释」：应说明从哪进、碰到 ha_* 怎么跳；案例 2/3 也建议补 2-3 步说明。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Google（2014 内部切换）」可接受为公开叙述；若写死「全量」略满，改为「公开宣布内部迁移」更稳。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "JSON「LONGTEXT + CHECK」是早期 MariaDB 路径，后续版本有演进，建议加「早期/历史上」限定。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "整篇缺少「## 适用 vs 不适用场景」段，scope 无法评分——必须补上适用/不适用边界（最好带量化）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 编译产物路径写成 ./sql/mariadbd 偏乐观；应注明取决于 cmake 安装前缀，或改成更稳的「编译后在 bld 树里找 mariadbd」说明。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "handler / Galera / ColumnStore 术语首次出现缺日常桥接，零基础会卡在「可插拔引擎」抽象上。",
+        "案例 1 目录树缺少「逐部分解释」：应说明从哪进、碰到 ha_* 怎么跳；案例 2/3 也建议补 2-3 步说明。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Google（2014 内部切换）」可接受为公开叙述；若写死「全量」略满，改为「公开宣布内部迁移」更稳。",
+        "JSON「LONGTEXT + CHECK」是早期 MariaDB 路径，后续版本有演进，建议加「早期/历史上」限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 2
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "整篇缺少「## 适用 vs 不适用场景」段，scope 无法评分——必须补上适用/不适用边界（最好带量化）。",
+        "案例 3 编译产物路径写成 ./sql/mariadbd 偏乐观；应注明取决于 cmake 安装前缀，或改成更稳的「编译后在 bld 树里找 mariadbd」说明。"
+      ]
+    }
+  ]
+}

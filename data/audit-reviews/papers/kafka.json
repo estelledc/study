@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2/3 缺「逐部分解释」：零基础看完 producer.send / Debezium yaml / 扇出树后，仍不清楚每一步在干什么。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "CDC、sendfile、page cache 在核心要点里可再各加半句日常桥接（例如「操作系统帮你记最近读过的页」）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「永不修改、永不单删」略满：segment 会按 retention 整段删掉，compaction 也会按 key 丢掉旧值；可改成「不按单条消息原地改/删」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 Python 不是可跟做的 kafka-python API（group_id 不在 subscribe 参数里，value 也需序列化）；请标明「示意伪代码」并改成概念正确的最小步骤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用边界写得很具体，修好案例标注即可。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2/3 缺「逐部分解释」：零基础看完 producer.send / Debezium yaml / 扇出树后，仍不清楚每一步在干什么。",
+        "CDC、sendfile、page cache 在核心要点里可再各加半句日常桥接（例如「操作系统帮你记最近读过的页」）。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「永不修改、永不单删」略满：segment 会按 retention 整段删掉，compaction 也会按 key 丢掉旧值；可改成「不按单条消息原地改/删」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 Python 不是可跟做的 kafka-python API（group_id 不在 subscribe 参数里，value 也需序列化）；请标明「示意伪代码」并改成概念正确的最小步骤。",
+        "踩坑与适用边界写得很具体，修好案例标注即可。"
+      ]
+    }
+  ]
+}

@@ -33,11 +33,11 @@ echo "user-1::login" | kafka-console-producer --topic events --bootstrap-server 
 
 Kafka 的反直觉决定可以拆成 **3 件事**：
 
-1. **broker 重写成只追加的日志文件**：传统 broker 把每条消息当可单独 ack/delete/TTL 的实体，要维护 per-message 状态。Kafka 反过来——broker 上的 partition 就是一组顺序 segment 文件（如 `00000000000000000000.log`），写入是 O(1) 的 append，永不修改、永不单删。**类比**：传统 broker 是有 1 万张索引卡的档案柜（每张卡记一条消息状态）；Kafka 是一卷只能往末尾贴纸条的电报纸带。
+1. **broker 重写成只追加的日志文件**：传统 broker 把每条消息当可单独 ack/delete/TTL 的实体，要维护 per-message 状态。Kafka 反过来——broker 上的 partition 就是一组顺序 segment 文件（如 `00000000000000000000.log`），写入是 O(1) 的 append，**不按单条消息原地改/删**（过期按整段 retention 丢掉，compaction 按 key 留最新值）。**类比**：传统 broker 是有 1 万张索引卡的档案柜；Kafka 是一卷只能往末尾贴纸条的电报纸带。
 
-2. **offset 是 consumer 自己的状态**：传统 broker 必须记"谁读到哪、谁 ack 了什么"，这是 broker 复杂度的根源。Kafka 让 consumer 自己持有 offset，broker 只暴露 `fetch(topic, partition, offset, max_bytes)` 这一个接口。**broker 因此对"谁读了什么"完全无知**。
+2. **offset 是 consumer 自己的状态**：传统 broker 必须记"谁读到哪、谁 ack 了什么"，这是 broker 复杂度的根源。Kafka 让 consumer 自己持有 offset（游标：上次读到第几条），broker 只暴露 `fetch(topic, partition, offset, max_bytes)` 这一个接口。**broker 因此对"谁读了什么"完全无知**。
 
-3. **page cache + sendfile 做零拷贝扇出**：Kafka 不维护应用层 buffer 缓存，把"缓存什么"完全交给 OS。读取时 broker 通过 `sendfile(2)` 系统调用把内核 page cache 的字节直接 DMA 到 socket——**不进用户态、不复制、不序列化**。多个 consumer 订阅同一 topic 时只需要一份内存。
+3. **page cache + sendfile 做零拷贝扇出**：Kafka 不维护应用层 buffer，把"缓存什么"交给 OS 的 page cache（操作系统帮你记最近读过的磁盘页）。读时用 `sendfile(2)` 把内核页直接 DMA 到网卡——**不进用户态、不复制、不序列化**。多个 consumer 订同一 topic 只需一份内存。
 
 把 broker 从"有状态、复杂、慢"降级成"无状态、简单、快"——这是 Kafka 单 broker 比 ActiveMQ 高一个数量级吞吐的根本原因。
 
@@ -45,35 +45,41 @@ Kafka 的反直觉决定可以拆成 **3 件事**：
 
 ### 案例 1：用户行为日志 pipeline
 
-LinkedIn 的原始动机：每天数百 GB 的 page view / 搜索 / 广告点击事件，既要喂离线 Hadoop（推荐 / 反作弊），也要喂在线服务（实时报表 / feature store）。
+LinkedIn 的原始动机：每天数百 GB 的 page view / 搜索 / 广告点击，既要喂离线 Hadoop，也要喂在线报表。下面是**示意伪代码**（真实客户端里 `group_id` 在 Consumer 构造参数里）：
 
 ```python
-# 生产端：埋点服务发消息
-producer.send("page_view", key=user_id, value={
-    "url": "/feed", "ts": 1716868800
-})
+# 示意：生产端埋点
+producer.send("page_view", key=user_id, value=b'{"url":"/feed"}')
 
-# 消费端 1：实时报表（5 秒读一次）
-consumer.subscribe(["page_view"], group_id="dashboard")
-
-# 消费端 2：离线 ETL（每天凌晨从 offset=0 重读一周）
-consumer.subscribe(["page_view"], group_id="etl_hadoop")
+# 示意：两个独立消费组
+dashboard = Consumer(group_id="dashboard")   # 紧跟尾部
+etl = Consumer(group_id="etl_hadoop")        # 可从 offset=0 重读
+dashboard.subscribe(["page_view"])
+etl.subscribe(["page_view"])
 ```
 
-两个 consumer group 各自持有独立 offset，互不影响——broker 只存一份数据，被读 N 次。
+逐部分解释：
+
+1. **生产**：埋点服务只往 `page_view` 追加，不管谁会读
+2. **两个 group**：`dashboard` 与 `etl_hadoop` 各持自己的 offset，互不抢消息
+3. **一份存储**：broker 只存一份 partition；被读 N 次成本几乎不变
 
 ### 案例 2：CDC（数据库变更同步）
 
-把 MySQL/Postgres 的 binlog 写进 Kafka，下游想消费就消费：
+把 MySQL/Postgres 的 binlog（数据库变更流水）写进 Kafka，下游按需消费：
 
 ```yaml
-# Debezium connector 把 MySQL binlog 转成 Kafka 事件
+# Debezium connector：MySQL binlog → Kafka 事件（示意配置）
 source: mysql
 topic: orders.public.users
 key: user_id
 ```
 
-这是当前几乎所有"数据库 → 数仓 / Elasticsearch / Redis"同步链路的标配——一份 binlog，N 个下游各自重放。Kafka 的 retention（默认 7 天）让你"重放历史"成为日常操作而不是灾难恢复。
+逐部分解释：
+
+1. **抓变更**：connector 读数据库 binlog，转成 Kafka 消息
+2. **按表分 topic**：例如用户表进 `orders.public.users`
+3. **多下游重放**：数仓 / ES / Redis 各开一个 group；默认约 7 天 retention 让"重放历史"变日常
 
 ### 案例 3：扇出广播
 
@@ -81,12 +87,16 @@ key: user_id
 
 ```
 order_created (offset=42)
-   ├─→ consumer group "alert"  (实时告警，offset 跟尾部)
-   ├─→ consumer group "etl"    (每小时批量入仓，offset=30 落后)
-   └─→ consumer group "audit"  (审计回放，offset=0 从头读)
+   ├─→ group "alert"  实时告警，offset 跟尾部
+   ├─→ group "etl"    每小时入仓，offset=30 落后
+   └─→ group "audit"  审计回放，offset=0 从头读
 ```
 
-broker 只存一份 partition 文件，三个 group 各自读。**这是 Kafka 与传统 fan-out 的根本差别**——传统 broker 给每个订阅者维护一个 cursor，扇出成本随 consumer 数线性增长；Kafka 的扇出成本恒定（只多了几次 sendfile）。
+逐部分解释：
+
+1. **同一条消息**：offset=42 只在磁盘上存一次
+2. **三个游标**：每个 group 自己记读到哪，快的不等慢的
+3. **成本恒定**：传统 broker 每多一个订阅者就多一份 cursor 状态；Kafka 只多几次 `sendfile`
 
 ## 踩过的坑
 
