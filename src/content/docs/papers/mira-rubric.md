@@ -44,44 +44,45 @@ MIRA 的核心想法是：混在一起的数据格式差异太大，不能只给
 ### 案例 1：先按数据来源分组
 
 ```python
-sources = ["math_reason", "code_qa", "agent_trace"]
+# 论文：21 个来源；这里只写 3 个名字示意
+sources = load_all_sources()  # 实际 21 个
 embeddings = embed(sample_records_by_source(sources))
 groups = cluster_by_mean_embedding(embeddings, k=5)
 ```
 
 **逐部分解释**：
 
-- `sample_records_by_source`：每个来源抽一小批代表样本，不直接看全量
-- `embed`：把文本变成向量，方便比较内容相似度
-- `cluster_by_mean_embedding`：把相似来源放进同一组，后面每组有自己的 rubric
+- `load_all_sources`：拿到全部来源列表；示意里只提数学/代码/agent 几类
+- `embed`：把样本文本变成向量（一串数字坐标），方便比“内容像不像”
+- `cluster_by_mean_embedding(..., k=5)`：把相似来源收成 5 个能力组，后面每组自带评分尺
 
 ### 案例 2：从自由评价里抽出 anchor rubric
 
 ```python
-judgments = teacher.free_judge(records, dimensions=15)
+judgments = teacher.free_judge(records, dimensions=15)  # frontier 大模型当老师
 points = parse_dimension_reason_pairs(judgments)
 anchors = nearest_to_centroid(kmeans(embed(points), k=15))
 ```
 
 **逐部分解释**：
 
-- `free_judge`：teacher 自己命名维度，比如“工具调用格式”“推理完整性”
+- `free_judge`：老师自己起维度名，比如“工具调用格式”“推理完整性”
 - `parse_dimension_reason_pairs`：只抽出“维度名 + 原因”，不把整段评语照搬
 - `nearest_to_centroid`：每个聚类选最中心的判断点，当作稳定评分锚点
 
 ### 案例 3：可靠性 mask 怎么避免坏分数污染总分
 
 ```python
-scores = student.score(record, anchors)
-mask = mae_by_source_dim < 1.0
-final_score = trimmed_mean(scores[mask])
+scores = student.score(record, anchors)          # 0–10 分
+mask = mae_by_source_dim < 1.0                   # MAE=师生平均绝对误差
+final_score = trimmed_mean(scores[mask])         # 去掉极端后再平均
 ```
 
 **逐部分解释**：
 
-- `student.score`：学生评分器对 15 个 anchor 都输出分数和理由
-- `mae_by_source_dim < 1.0`：只保留 teacher-student 分歧小的来源-维度格子
-- `trimmed_mean`：对剩下的维度做稳健平均，避免一个不可靠维度拖偏结果
+- `student.score`：便宜学生评分器对 15 个锚点打分并给理由
+- `mae_by_source_dim < 1.0`：师生分差太大的“来源×维度”格子直接屏蔽，不进总分
+- `trimmed_mean`：对剩下维度做去极值平均，避免一个坏维度拖偏
 
 这三个案例合起来，就是 MIRA 的主链路：先分清“同类”，再归纳“怎么评”，最后只相信“学生学得可靠”的维度。
 
@@ -136,7 +137,7 @@ final_score = trimmed_mean(scores[mask])
 - 论文 PDF：[MIRA: Mid-training Rubric Anchoring for Source-Aware Data Selection](https://arxiv.org/pdf/2605.30288v1.pdf)
 - 相关方法：[DataMan: Data Manager for Pre-training Large Language Models](https://arxiv.org/abs/2502.19363)
 - 数据选择基线：[Data Selection for Language Models via Importance Resampling](https://arxiv.org/abs/2302.03169)
-- mid-training 背景：[A Survey on LLM Mid-training](https://arxiv.org/search/?query=A+survey+on+LLM+mid-training&searchtype=all)
+- 数据筛选综述背景：[The History and Recent Advances of Data Selection](https://arxiv.org/abs/2402.16827)
 - [[deepseek-r1]] —— 也是通过中间训练和强化学习强化推理能力的代表案例
 
 ## 关联
