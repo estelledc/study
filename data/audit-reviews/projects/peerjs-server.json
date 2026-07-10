@@ -1,0 +1,137 @@
+{
+  "slug": "peerjs-server",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 5,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "婚介所类比精准：只撮合握手、不管之后传话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "信令 / Peer ID / WebSocket / STUN·TURN 都有日常桥接，入门读者能抓住主线"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "独立部署、Express 挂载、自定义 ID 三案例代码完整可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 peers/peerjs-server；PeerServer / ExpressPeerServer / key·proxied·allow_discovery 描述与项目职责一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2013 客户端配套、后重写 TS、v1.0.2 稳定维护叙述合理；星标量级与现况接近"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "未把信令服务器夸成媒体中继，边界清晰无歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "PeerServer + 双浏览器 Peer 互连、ExpressPeerServer 挂载、generateClientId 均可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "proxied / discovery / 默认 key / TURN / Cloudflare ws 等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用轻量 P2P 信令；不适用多人 SFU / 需审计中继 / 去中心化，边界量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "婚介所类比精准：只撮合握手、不管之后传话",
+        "信令 / Peer ID / WebSocket / STUN·TURN 都有日常桥接，入门读者能抓住主线",
+        "独立部署、Express 挂载、自定义 ID 三案例代码完整可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 peers/peerjs-server；PeerServer / ExpressPeerServer / key·proxied·allow_discovery 描述与项目职责一致",
+        "2013 客户端配套、后重写 TS、v1.0.2 稳定维护叙述合理；星标量级与现况接近",
+        "未把信令服务器夸成媒体中继，边界清晰无歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "PeerServer + 双浏览器 Peer 互连、ExpressPeerServer 挂载、generateClientId 均可跟做",
+        "proxied / discovery / 默认 key / TURN / Cloudflare ws 等坑具体可操作",
+        "适用轻量 P2P 信令；不适用多人 SFU / 需审计中继 / 去中心化，边界量化清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 5,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 162,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}
