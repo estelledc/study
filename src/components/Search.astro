@@ -3,23 +3,37 @@ import DefaultSearch from '@astrojs/starlight/components/Search.astro';
 ---
 
 <DefaultSearch {...Astro.props} />
+<div
+  class="sl-hidden"
+  data-study-search-status
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+></div>
 
 <script>
   function installSearchStatusContract() {
     const host = document.querySelector('site-search');
-    if (!(host instanceof HTMLElement) || host.dataset.studyA11yObserver === 'ready') return;
+    const liveStatus = document.querySelector('[data-study-search-status]');
+    if (
+      !(host instanceof HTMLElement)
+      || !(liveStatus instanceof HTMLElement)
+      || host.dataset.studyA11yObserver === 'ready'
+    ) return;
 
-    const enhance = () => {
+    let announced = '';
+    const announce = () => {
       const message = host.querySelector('.pagefind-ui__message');
       if (!(message instanceof HTMLElement)) return;
-      message.setAttribute('role', 'status');
-      message.setAttribute('aria-live', 'polite');
-      message.setAttribute('aria-atomic', 'true');
+      const next = message.textContent?.trim() || '';
+      if (!next || next === announced) return;
+      announced = next;
+      liveStatus.textContent = next;
     };
 
     host.dataset.studyA11yObserver = 'ready';
-    enhance();
-    new MutationObserver(enhance).observe(host, { childList: true, subtree: true });
+    announce();
+    new MutationObserver(announce).observe(host, { childList: true, subtree: true, characterData: true });
   }
 
   document.addEventListener('DOMContentLoaded', installSearchStatusContract, { once: true });

@@ -5,7 +5,7 @@ const studyUrl = (route) => `/study${route}`;
 async function revealSearchResult(dialog, href) {
   const result = dialog.locator(`a[href$="${href}"]`).first();
   for (let page = 0; page < 10 && await result.count() === 0; page += 1) {
-    const more = dialog.getByRole('button', { name: 'Load more results' });
+    const more = dialog.getByRole('button', { name: '加载更多结果' });
     if (!await more.isVisible().catch(() => false)) break;
     const before = await dialog.locator('li').count();
     await more.click();
@@ -48,6 +48,12 @@ test('start and both legacy Atlas entrances remain navigable below /study', asyn
 
 test('Pagefind UI distinguishes the ReAct paper from the React project', async ({ page }) => {
   await page.goto(studyUrl('/'));
+  const liveStatus = page.locator('[data-study-search-status]');
+  await expect(liveStatus).toHaveAttribute('role', 'status');
+  await expect(liveStatus).toHaveAttribute('aria-live', 'polite');
+  await expect(liveStatus).toHaveAttribute('aria-atomic', 'true');
+  await expect(liveStatus).toBeEmpty();
+
   const trigger = page.getByRole('button', { name: '搜索', exact: true });
   await expect(trigger).toBeEnabled();
   await trigger.click();
@@ -57,13 +63,12 @@ test('Pagefind UI distinguishes the ReAct paper from the React project', async (
   await expect(input).toBeVisible();
   await input.fill('ReAct Reasoning Acting');
   const resultStatus = dialog.locator('.pagefind-ui__message');
-  await expect(resultStatus).toContainText(/results for ReAct Reasoning Acting/);
-  await expect(resultStatus).toHaveAttribute('role', 'status');
-  await expect(resultStatus).toHaveAttribute('aria-live', 'polite');
-  await expect(resultStatus).toHaveAttribute('aria-atomic', 'true');
+  await expect(resultStatus).toContainText(/个结果：ReAct Reasoning Acting/);
+  await expect(liveStatus).toHaveText(/个结果：ReAct Reasoning Acting/);
   await revealSearchResult(dialog, '/papers/react/');
 
   await input.fill('React 用写函数描述界面');
-  await expect(dialog.getByText(/results for React 用写函数描述界面/)).toBeVisible();
+  await expect(dialog.getByText(/个结果：React 用写函数描述界面/)).toBeVisible();
+  await expect(liveStatus).toHaveText(/个结果：React 用写函数描述界面/);
   await revealSearchResult(dialog, '/projects/react/');
 });

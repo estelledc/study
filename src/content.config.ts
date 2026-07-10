@@ -1,6 +1,6 @@
 import { defineCollection } from 'astro:content';
-import { docsLoader } from '@astrojs/starlight/loaders';
-import { docsSchema } from '@astrojs/starlight/schema';
+import { docsLoader, i18nLoader } from '@astrojs/starlight/loaders';
+import { docsSchema, i18nSchema } from '@astrojs/starlight/schema';
 import { z } from 'astro/zod';
 
 const isoDate = z.union([
@@ -56,5 +56,9 @@ export const collections = {
       // Optional by design: the audit layer reports old notes as legacy-unverified.
       extend: z.object({ trust: trustSchema.optional() }),
     }),
+  }),
+  i18n: defineCollection({
+    loader: i18nLoader(),
+    schema: i18nSchema(),
   }),
 };
