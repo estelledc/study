@@ -113,11 +113,11 @@ sudo bandwhich --total-utilization
 
 ## 历史小故事（可跳过）
 
-- **2014 年**：nethogs 流行起来，但作者只维护 Linux 版本，macOS 用户长期没替代品
-- **2019 年**：imsnif（Aleksey Pirogov，后来也写了终端复用器 zellij）开 bandwhich 仓库，目标"nethogs 该有的跨平台版"，第一版只支持 Linux/macOS
-- **2020 年**：加 Windows 支持，靠 Npcap 驱动绕过原生 raw socket 限制
-- **2022 年**：从 tui-rs 迁到 ratatui（前者作者弃坑，社区分叉续命），整个 Rust TUI 生态那年都在做这件事
-- **2024-2026**：跟 [[procs]] / [[btop]] / [[bottom]] 一起进入 "Rust 系统工具栈" 标配，brew / cargo / winget 全平台可装，11k stars
+- **2014 年**：nethogs 流行起来，但作者只维护 Linux 版本，macOS 用户长期缺少同等的按进程带宽工具。
+- **2019 年**：imsnif（Aram Drevekenin，后来也创建了终端复用器 Zellij）开 bandwhich 仓库，目标是做一个 "nethogs 该有的跨平台版"。
+- **2020 年**：项目补上 Windows 支持，靠 Npcap 驱动绕过原生 raw socket 限制。
+- **2023 年前后**：Rust TUI 生态从 tui-rs 转向 ratatui，bandwhich 这类三表界面也受益于社区继续维护底层组件。
+- **2024-2026**：跟 [[procs]] / [[btop]] / [[bottom]] 一起进入 "Rust 系统工具栈" 标配，brew / cargo / winget 全平台可装，GitHub star 量级已过万。
 
 ## 学到什么
 

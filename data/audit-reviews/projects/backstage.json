@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 和案例 3 缺少可照着看的配置或命令块，建议补 catalog 查询和模板参数示例并逐步解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史信息已经出现，但没有独立 历史小故事（可跳过）段，建议按模板抽出时间线。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "模板案例只描述后台动作，缺少参数输入和输出文件；补一个 template.yaml 或命令片段会更可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 和案例 3 缺少可照着看的配置或命令块，建议补 catalog 查询和模板参数示例并逐步解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "历史信息已经出现，但没有独立 历史小故事（可跳过）段，建议按模板抽出时间线。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "模板案例只描述后台动作，缺少参数输入和输出文件；补一个 template.yaml 或命令片段会更可操作。"
+      ]
+    }
+  ]
+}

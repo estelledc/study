@@ -1,0 +1,99 @@
+{
+  "slug": "bert",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "“所有大语言模型都建在 BERT 概念基础上”会误导 GPT/LLaMA 这类 decoder-only 路线，应改成共同继承 Transformer/预训练经验。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Google 搜索的 10% 查询表述应写成影响约 10% 英文查询，而不是效果提升 10%。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺少明确适用/不适用边界；需要区分理解/检索任务、生成任务、长上下文和低延迟约束。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "“所有大语言模型都建在 BERT 概念基础上”会误导 GPT/LLaMA 这类 decoder-only 路线，应改成共同继承 Transformer/预训练经验。",
+        "Google 搜索的 10% 查询表述应写成影响约 10% 英文查询，而不是效果提升 10%。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "缺少明确适用/不适用边界；需要区分理解/检索任务、生成任务、长上下文和低延迟约束。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 是什么",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 185,
+    "reasons": []
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "badger",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例偏使用场景枚举，缺少代码/伪代码和逐步解释；建议补 Go API 或 key/value 结构示例。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“唯一纯 Go 的生产级 KV 引擎”过于绝对且容易过期，建议改成当时少数、主打 LSM 的生产向选择。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补充可跟做的 Badger 事务写入示例，并弱化 fork/多进程一定 panic 的描述。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例偏使用场景枚举，缺少代码/伪代码和逐步解释；建议补 Go API 或 key/value 结构示例。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "“唯一纯 Go 的生产级 KV 引擎”过于绝对且容易过期，建议改成当时少数、主打 LSM 的生产向选择。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "补充可跟做的 Badger 事务写入示例，并弱化 fork/多进程一定 panic 的描述。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 176,
+    "reasons": []
+  }
+}

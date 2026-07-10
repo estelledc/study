@@ -1,0 +1,95 @@
+{
+  "slug": "balancer",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "Balancer V2 flash-loan fee 与 V3 时间线不要写成绝对固定；历史安全事件用更稳妥的“部分池型风险/迁出”表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "80/20 池的无常损失描述需要区分 IL 和主资产价格暴露；集成 flashLoan 时应读取当前 fee 配置。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Balancer V2 flash-loan fee 与 V3 时间线不要写成绝对固定；历史安全事件用更稳妥的“部分池型风险/迁出”表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "80/20 池的无常损失描述需要区分 IL 和主资产价格暴露；集成 flashLoan 时应读取当前 fee 配置。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 170,
+    "reasons": []
+  }
+}

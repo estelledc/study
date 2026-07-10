@@ -66,11 +66,37 @@ spec:
 - 详情页左侧：CI 状态（GitHub Actions 拉过来的）、最近一次部署（ArgoCD 拉过来的）、错误率（Sentry 拉过来的）
 - 详情页右侧：On-call 是谁（PagerDuty 拉过来的）、文档（TechDocs build 出来的）、依赖图（Catalog 算出来的）
 
+也可以直接把 Catalog 当作可查询目录：
+
+```text
+/catalog/default/component/order-service
+/catalog/default/group/team-checkout
+/api/catalog/entities?filter=kind=component,spec.owner=team-checkout
+```
+
+**逐部分解释**：
+
+- 第一行打开某个服务的详情页，适合排障时快速确认 owner 和依赖。
+- 第二行打开团队页，适合新人看这个团队负责哪些服务。
+- 第三行像查询数据库一样筛选实体，适合自动生成报表或健康检查。
+
 **核心价值**：信息没有搬家，只是入口统一了。
 
 ### 案例 3：新建项目用 Software Template
 
 点 Create，选 Node.js Microservice 模板，填名字 `coupon-service` 和 owner `team-promo`：
+
+```yaml
+parameters:
+  name: coupon-service
+  owner: team-promo
+  system: ecommerce
+steps:
+  - id: fetch
+    action: fetch:template
+  - id: publish
+    action: publish:github
+```
 
 Backstage 在后台 30 秒内做完：
 1. 在 GitHub 创建仓库 `coupon-service`
@@ -78,6 +104,12 @@ Backstage 在后台 30 秒内做完：
 3. 在 Catalog 里登记这个 Component
 4. 把 owner 设为 `team-promo`
 5. 给一个跑得起来的 Hello World
+
+**逐部分解释**：
+
+- `parameters` 是表单输入，避免新人手写一堆重复配置。
+- `fetch:template` 把模板目录渲染成真实项目文件。
+- `publish:github` 把结果发布到代码仓库，再让 Catalog 扫描。
 
 过去这一套要新人翻 3 篇 wiki、问 2 个人，现在 30 秒。
 
@@ -122,6 +154,13 @@ Monorepo：Lerna + Yarn workspaces
 - **Cortex / OpsLevel**：商业 SaaS，开箱即用但不开源
 - **Port**：无代码 IDP，配置驱动，适合不想写 React 的团队
 - **Roadie**：Backstage 的托管 SaaS（基于 Backstage 商业化）
+
+## 历史小故事（可跳过）
+
+- **2016 年**：Spotify 内部启动 Backstage，用来整理微服务和平台工具入口。
+- **2020 年 3 月**：Spotify 将 Backstage 开源，开发者门户这个词开始被更多团队采用。
+- **2022 年**：Backstage 捐给 CNCF，降低其他公司采用 Spotify 工具的心理门槛。
+- **2024 年后**：托管版和商业生态变多，Backstage 从开源框架扩展成平台工程生态。
 
 ## 学到什么
 

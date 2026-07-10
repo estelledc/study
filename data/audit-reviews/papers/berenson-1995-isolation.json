@@ -1,0 +1,100 @@
+{
+  "slug": "berenson-1995-isolation",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例原本主要是散文描述，建议改成明确的案例标题、事务时间线和逐步解释，方便零基础读者跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "弱化 PostgreSQL/Oracle 与 Snapshot Isolation 的默认关系表述；PostgreSQL 默认不是 Repeatable Read，Oracle 的 SI-like 重点是 SERIALIZABLE 级别。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "给并发异常补充可执行思维的伪代码或 SQL 轮廓，并说明应用侧需要加锁、原子 UPDATE 或 SERIALIZABLE 重试。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例原本主要是散文描述，建议改成明确的案例标题、事务时间线和逐步解释，方便零基础读者跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "弱化 PostgreSQL/Oracle 与 Snapshot Isolation 的默认关系表述；PostgreSQL 默认不是 Repeatable Read，Oracle 的 SI-like 重点是 SERIALIZABLE 级别。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "给并发异常补充可执行思维的伪代码或 SQL 轮廓，并说明应用侧需要加锁、原子 UPDATE 或 SERIALIZABLE 重试。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 192,
+    "reasons": []
+  }
+}
