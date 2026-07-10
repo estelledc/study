@@ -1,0 +1,129 @@
+{
+  "slug": "markdown-it",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "翻译机/词卡类比清楚；三案例有可跑代码。案例 2/3 可再补一句『逐部分解释』降低跳跃感。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Hexo 默认是 hexo-renderer-marked（marked），不是 markdown-it；markdown-it 是可选替代渲染器。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "docsify 默认用 marked；笔记『关联』已写 docsify 用 marked，与『是什么/适用』把 docsify 算进 markdown-it 阵营矛盾。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『VitePress/VuePress/Hexo 后端都是 markdown-it』应改为 VitePress/VuePress 为主，Hexo 需单独限定。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小 render / link_open plugin / TOC token 扫描可跟做；html:false 与 ruler 顺序踩坑实用。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段把 Hexo/docsify 列为 markdown-it 事实标准不准确；bundle 对比可保留但生态归属要改准。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "翻译机/词卡类比清楚；三案例有可跑代码。案例 2/3 可再补一句『逐部分解释』降低跳跃感。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Hexo 默认是 hexo-renderer-marked（marked），不是 markdown-it；markdown-it 是可选替代渲染器。",
+        "docsify 默认用 marked；笔记『关联』已写 docsify 用 marked，与『是什么/适用』把 docsify 算进 markdown-it 阵营矛盾。",
+        "『VitePress/VuePress/Hexo 后端都是 markdown-it』应改为 VitePress/VuePress 为主，Hexo 需单独限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "最小 render / link_open plugin / TOC token 扫描可跟做；html:false 与 ruler 顺序踩坑实用。",
+        "适用段把 Hexo/docsify 列为 markdown-it 事实标准不准确；bundle 对比可保留但生态归属要改准。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "audit_notes": "纠正 Hexo/docsify 默认引擎归属；适用边界与 VitePress/VuePress 对齐；案例 2/3 补逐部分解释。",
+  "lines": 162,
+  "l1_pass": true
+}
