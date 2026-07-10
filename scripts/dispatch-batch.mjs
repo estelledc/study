@@ -22,6 +22,7 @@ import { CANDIDATES_PATH, DATA_DIR, docsEntryRelativePath, REWRITE_POOL_PATH } f
 import { DISPATCH_PROMPT_KINDS, commonPromptVars, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
 import { worktreeForAreaSlot, worktreesForDispatch } from './lib/worktrees.mjs';
 import { formatCandidateMetadataIssue, validateCandidateRows } from './lib/candidate-metadata.mjs';
+import { parseNoteId, serializeNoteId } from './lib/note-id.mjs';
 import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import {
   assertNoPendingQueueTransaction,
@@ -180,13 +181,12 @@ export function dispatchBatch(args, queues, options = {}) {
   const projectsRewrite = pickRewrite(pool, 'projects', rewritePerArea + rewriteRemainder);
 
   // Pick new（避开本批已选的 rewrite slug）
-  const exclude = new Set([...papersRewrite, ...projectsRewrite].map(x => `${x.area}::${x.slug}`));
-  const papersNew = pickNew(candidates, 'papers', newPerArea, new Set(
-    [...exclude].filter(k => k.startsWith('papers::')).map(k => k.split('::')[1])
-  ));
-  const projectsNew = pickNew(candidates, 'projects', newPerArea + newRemainder, new Set(
-    [...exclude].filter(k => k.startsWith('projects::')).map(k => k.split('::')[1])
-  ));
+  const exclude = new Set([...papersRewrite, ...projectsRewrite].map(x => serializeNoteId(x.area, x.slug)));
+  const excludedSlugs = (area) => new Set(
+    [...exclude].map(parseNoteId).filter((note) => note.area === area).map((note) => note.slug),
+  );
+  const papersNew = pickNew(candidates, 'papers', newPerArea, excludedSlugs('papers'));
+  const projectsNew = pickNew(candidates, 'projects', newPerArea + newRemainder, excludedSlugs('projects'));
 
   // 数量校验
   const issues = [];

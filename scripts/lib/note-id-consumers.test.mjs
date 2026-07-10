@@ -27,6 +27,11 @@ const CONSUMERS = [
     importPath: './lib/note-id.mjs',
     symbols: ['isNoteArea', 'isNoteSlug'],
   },
+  {
+    path: 'scripts/dispatch-batch.mjs',
+    importPath: './lib/note-id.mjs',
+    symbols: ['parseNoteId', 'serializeNoteId'],
+  },
 ];
 
 function escapeRegex(value) {
