@@ -1,0 +1,127 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "师傅归纳 / 徒弟演绎类比好懂；三 loss 有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例把 TextGrad 修订过程写清楚，零基础可跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "实验基准是 AppWorld + BFCL-v3，不是 ALFWorld + WebShop；删掉膨胀率 60%/8-12pp 等未在论文出现的数字"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文强调 frozen deduction agent；主实验用 Qwen3.5-122B，跨模型设定用 GPT-5.4，不是 GPT-4+Claude 双基座硬性要求"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TextGrad 主要更新归纳 agent 的 prompt（再生成 skill），不宜写成直接对 skill 文本反传权重式更新"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例是教学伪流程可跟，但踩坑里『必须 GPT-4+Claude』与论文不符，会误导选型"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用应改为：需要可重复环境验证 + frozen deduction；单 LLM 也可 self-generation，不必写成硬性双厂商"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "师傅归纳 / 徒弟演绎类比好懂；三 loss 有日常桥接",
+        "三个案例把 TextGrad 修订过程写清楚，零基础可跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 2
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "实验基准是 AppWorld + BFCL-v3，不是 ALFWorld + WebShop；删掉膨胀率 60%/8-12pp 等未在论文出现的数字",
+        "论文强调 frozen deduction agent；主实验用 Qwen3.5-122B，跨模型设定用 GPT-5.4，不是 GPT-4+Claude 双基座硬性要求",
+        "TextGrad 主要更新归纳 agent 的 prompt（再生成 skill），不宜写成直接对 skill 文本反传权重式更新"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例是教学伪流程可跟，但踩坑里『必须 GPT-4+Claude』与论文不符，会误导选型",
+        "适用/不适用应改为：需要可重复环境验证 + frozen deduction；单 LLM 也可 self-generation，不必写成硬性双厂商"
+      ]
+    }
+  ],
+  "slug": "mind-skill",
+  "area": "papers",
+  "status": "refined",
+  "lines": 165,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "reason": "Fixed benchmarks to AppWorld+BFCL-v3; removed fabricated expansion metrics; clarified frozen deduction + TextGrad updates induction prompt.",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
