@@ -108,24 +108,5 @@
         "适用边界清楚；案例 3 工具名单需与 academic 同步纠错"
       ]
     }
-  ],
-  "slug": "nelson-oppen-1979",
-  "area": "papers",
-  "status": "refined",
-  "quality_gate": {
-    "pass": true,
-    "lines": 186
-  },
-  "lines": 186,
-  "l1_pass": true,
-  "refinement": {
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

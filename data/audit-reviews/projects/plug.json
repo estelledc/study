@@ -108,23 +108,5 @@
         "适用边界清楚；关联补 Phoenix/Cowboy 并加 ## 反向链接"
       ]
     }
-  ],
-  "slug": "plug",
-  "area": "projects",
-  "status": "refined",
-  "quality_gate": {
-    "pass": true,
-    "lines": 188
-  },
-  "lines": 188,
-  "l1_pass": true,
-  "refinement": {
-    "round": 1,
-    "sections_modified": [
-      "## 踩过的坑",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

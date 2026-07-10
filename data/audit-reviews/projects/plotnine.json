@@ -108,23 +108,5 @@
         "缺历史小故事与反向链接；关联仅 2 条偏少，建议补 matplotlib/ggplot2 血缘并加反向链接占位"
       ]
     }
-  ],
-  "slug": "plotnine",
-  "area": "projects",
-  "status": "refined",
-  "quality_gate": {
-    "pass": true,
-    "lines": 169
-  },
-  "lines": 169,
-  "l1_pass": true,
-  "refinement": {
-    "round": 1,
-    "sections_modified": [
-      "## 历史小故事（可跳过）",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
