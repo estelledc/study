@@ -1,7 +1,4 @@
 {
-  "slug": "janusgraph",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -80,24 +77,5 @@
         "Docker 案例应使用 JANUS_PROPS_TEMPLATE: cql（官方镜像默认 berkeleyje-lucene），仅写 janusgraph.storage.backend: cql 不是推荐写法，跟做容易踩坑"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic: 去掉 FoundationDB 正式后端与 Gremlin 跨越 Neo4j 的误导；engineer: Docker 改用 JANUS_PROPS_TEMPLATE: cql",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 192,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 192,
-  "l1_pass": true
+  ]
 }
