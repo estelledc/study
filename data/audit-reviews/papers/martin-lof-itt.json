@@ -1,0 +1,146 @@
+{
+  "slug": "martin-lof-itt",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "证明纸 vs 程序代码类比能抓住 Curry-Howard 直觉；难度高级可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "依赖类型 / Π / Σ 有白话桥接；判断等同 vs 命题等同在踩坑里解释清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Idris head、Lean add_comm、Agda double 四案例可读；宇宙悖论故事帮助理解分层"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Per Martin-Löf Intuitionistic Type Theory Bibliopolis 1984（1972 初稿）大体正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「1979 年 Bibliopolis 笔记修正版」不准确：宇宙层级在 Girard 悖论后于 1970 年代中期引入；Padua 讲义约 1980，Bibliopolis 正式出版 1984——应改正时间线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Coq 核心是 CoC/CIC，说成「ITT 的扩展」属教学简化；可改为「同属依赖类型/构造性传统的扩展」以免过度等同"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Agda/Idris/Lean 最小片段概念正确，可作跟读骨架（非完整工程）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（类型检查需计算/停机、判断vs命题等同、证明爆炸、排中律、宇宙多态）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚：形式化验证/Mathlib vs 日常业务、副作用、图灵完备需求"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "证明纸 vs 程序代码类比能抓住 Curry-Howard 直觉；难度高级可接受",
+        "依赖类型 / Π / Σ 有白话桥接；判断等同 vs 命题等同在踩坑里解释清楚",
+        "Idris head、Lean add_comm、Agda double 四案例可读；宇宙悖论故事帮助理解分层"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 Per Martin-Löf Intuitionistic Type Theory Bibliopolis 1984（1972 初稿）大体正确",
+        "「1979 年 Bibliopolis 笔记修正版」不准确：宇宙层级在 Girard 悖论后于 1970 年代中期引入；Padua 讲义约 1980，Bibliopolis 正式出版 1984——应改正时间线",
+        "Coq 核心是 CoC/CIC，说成「ITT 的扩展」属教学简化；可改为「同属依赖类型/构造性传统的扩展」以免过度等同"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Agda/Idris/Lean 最小片段概念正确，可作跟读骨架（非完整工程）",
+        "踩坑（类型检查需计算/停机、判断vs命题等同、证明爆炸、排中律、宇宙多态）具体可操作",
+        "适用边界清楚：形式化验证/Mathlib vs 日常业务、副作用、图灵完备需求"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "needs-refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 173,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 173,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": [],
+    "summary": "纠正宇宙层级/Bibliopolis 时间线；Coq 改为 CoC/CIC 近亲扩展表述。"
+  },
+  "sections_modified": [
+    "## 为什么重要",
+    "## 历史小故事（可跳过）"
+  ],
+  "unresolved_hints": []
+}
