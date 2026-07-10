@@ -1,7 +1,4 @@
 {
-  "slug": "gortler-1996-lumigraph",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -101,23 +98,5 @@
         "适用/不适用边界大体对；凹面 visual hull、蓝幕依赖说得清楚"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic/engineer：纠正 st/uv 平面赋值；案例 1 改为教学量级对比；删编造厘米误差；踩坑改为手持采集+rebin。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 153,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

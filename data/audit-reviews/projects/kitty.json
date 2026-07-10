@@ -1,7 +1,4 @@
 {
-  "slug": "kitty",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -91,22 +88,5 @@
         "分屏快捷键与 conf 语法可跟做；ssh/kitten、Wayland、image.nvim 踩坑有用"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic/engineer：案例 2 改为 icat + savefig 可复现路径；澄清 plt.show 需后端；Star 更新 33k。",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 156,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

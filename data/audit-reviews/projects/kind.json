@@ -1,7 +1,4 @@
 {
-  "slug": "kind",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.67,
   "reject_count": 0,
@@ -86,22 +83,5 @@
         "create/load/CI 片段可跟做；kind load、LoadBalancer、extraPortMappings、macOS VM 层踩坑具体"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：弱化『几乎所有 workflow』；Star 更新为 15k+。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 185,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

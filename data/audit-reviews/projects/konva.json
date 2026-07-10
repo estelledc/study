@@ -1,7 +1,4 @@
 {
-  "slug": "konva",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -81,10 +78,5 @@
         "『Stage.useStrictMode(true) 让它只更新真变化的属性』双重错误：API 是 import { useStrictMode } from 'react-konva'；默认非 strict 只更新变化 props，strict 才强制对齐 render 全部 props。应改正文与代价说明"
       ]
     }
-  ],
-  "refine_round": 1,
-  "sections_modified": [
-    "## 踩过的坑"
-  ],
-  "unresolved_hints": []
+  ]
 }

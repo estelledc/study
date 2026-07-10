@@ -1,7 +1,4 @@
 {
-  "slug": "goral-1984-radiosity",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.34,
   "reject_count": 0,
@@ -91,23 +88,5 @@
         "方程与矩阵形式概念正确；踩坑（仅漫反射 / form factor 贵 / 网格 / 动态失效）可操作，适用边界清楚"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：Cornell Box 改为红+蓝墙、标明 1984 原版无盒内遮挡；PDF 链到真实论文。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 192,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

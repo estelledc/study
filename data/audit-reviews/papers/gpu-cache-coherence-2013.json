@@ -1,7 +1,4 @@
 {
-  "slug": "gpu-cache-coherence-2013",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -81,10 +78,5 @@
         "时间线伪代码可跟读；时戳粒度/多卡/漏 fence/predictor 不对称踩坑有用；单芯片多 SM vs 多卡边界清楚。建议顺手修正 Strong/Weak 标签"
       ]
     }
-  ],
-  "refine_round": 1,
-  "sections_modified": [
-    "## 实践案例"
-  ],
-  "unresolved_hints": []
+  ]
 }
