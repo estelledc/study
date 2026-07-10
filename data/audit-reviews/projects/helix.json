@@ -1,7 +1,4 @@
 {
-  "slug": "helix",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "安装与键序案例可跟做；踩坑（键位反转、LSP 需自装、插件 alpha）具体可操作。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "helm",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -91,30 +88,5 @@
         "踩坑（values 不同步、hooks、subchart 嵌套）具体有用；适用/Operator 边界合理。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.67,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic+engineer needs-refine: Bitnami nginx 默认副本改为 1；历史改为 Helm 2 引入 Tiller",
-    "sections_modified": [
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 184,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 184,
-  "l1_pass": true
+  ]
 }
