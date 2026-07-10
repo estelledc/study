@@ -1,0 +1,109 @@
+{
+  "slug": "crdt-shapiro-2011",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 LWW-Register 只有一段叙述，缺少像案例 1/2 那样的逐步状态演示；建议补一组 A/B 并发写 + merge 取时间戳的小例子。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Figma 官方说明其多人协作是受 CRDT 启发的中心化简化（属性级 LWW），并非论文中的纯 CvRDT/CmRDT；Notion 也非公开的论文式 CRDT 实现。应改成「受 CRDT 思路影响 / 同类问题」而非暗示它们直接实现了本报告的数据结构。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用场景可再补一条量化边界（例如「需要跨副本线性化读」），但不阻塞通过。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 LWW-Register 只有一段叙述，缺少像案例 1/2 那样的逐步状态演示；建议补一组 A/B 并发写 + merge 取时间戳的小例子。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Figma 官方说明其多人协作是受 CRDT 启发的中心化简化（属性级 LWW），并非论文中的纯 CvRDT/CmRDT；Notion 也非公开的论文式 CRDT 实现。应改成「受 CRDT 思路影响 / 同类问题」而非暗示它们直接实现了本报告的数据结构。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "不适用场景可再补一条量化边界（例如「需要跨副本线性化读」），但不阻塞通过。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic 纠正 Figma/Notion 过度归因；zero-base 补强案例 3 LWW 逐步演示。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 175,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 175,
+  "l1_pass": true
+}
