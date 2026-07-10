@@ -21,7 +21,7 @@ title: glab — GitLab 官方命令行
 
 不理解 glab，下面这些事都说不清：
 
-- **为什么 GitLab 用户终于不再羡慕 gh**：2018 到 2022 之间 GitHub 用户用 gh 已成标配，GitLab 这边只有第三方 lab/glab；2022 GitLab 把 [[gh]] 的 contributor Clement Sam 的 glab 收编为官方工具，补齐了平台层缺失。
+- **为什么 GitLab 用户终于不再羡慕 gh**：2018 到 2022 之间 GitHub 用户用 gh 已成标配，GitLab 这边只有第三方 lab/glab；2022 GitLab 把 Clement Sam（GitHub: profclems）受 [[gh]] 启发写出的 glab 收编为官方工具，补齐了平台层缺失。
 - **为什么 GitLab CI/CD 命令比 gh 更深**：GitLab 是"Git + CI/CD 一体化"叙事的代表，所以 `glab ci` 子命令从 lint、view、status 一直深入到单个 job 的 `trace`——比 [[gh]] 的 `gh run` 多一层。
 - **为什么自建 GitLab 用户也能用同一个工具**：`GITLAB_HOST` / `GL_HOST` 一个环境变量切实例，公网 gitlab.com 与自建 gitlab.example.com 共用一份配置。
 - **为什么 glab 的扩展生态比 gh 弱**：glab 没有 `gh extension install` 那样的官方插件协议，社区贡献只能靠 alias + 脚本拼。是有意为之还是路径依赖待观察。
@@ -130,11 +130,17 @@ glab api projects/:id/issues?state=opened \
 - 高频并发 API 调用、复杂 webhook 处理 → 直接用 python-gitlab SDK 更顺手
 - 不会用终端的协作者 → GitLab 网页 UI 仍是主战场
 
+## 历史小故事（可跳过）
+
+- **2020 年 7 月**：Clement Sam（profclems）发布 glab，明确对标 [[gh]]，把 MR / issue / pipeline 拉回终端。
+- **2020–2022**：社区贡献把命令树铺开；同时还有第三方 `lab` 等竞品，但 glab 的 `gh` 镜像风格更易迁移。
+- **2022 年**：GitLab 官方接管，仓库迁到 `gitlab-org/cli`，补齐自建实例与 CI 深度；此后成为 GitLab 用户的事实标配。
+
 ## 学到什么
 
 1. **CLI 设计可以跨平台借鉴**：glab 命令结构和 [[gh]] 一对一镜像（mr ≈ pr / ci ≈ run / api 同名），降低切平台成本。两家敌对厂商各做各的 CLI，但用户体验趋同——这是好事。
 2. **同源 cobra 框架带来一致体感**：`<topic> <command> --flag` 的层级永远不变，记忆负担线性。
-3. **官方接管社区项目的范式**：profclems 个人写了 4 年，GitLab 把人 + 项目一起收编，比"自己从零写"快得多。GitLab Pages、Container Registry 都是同样路径。
+3. **官方接管社区项目的范式**：profclems 从 2020 写到 2022（约两年），GitLab 把人 + 项目一起收编，比"自己从零写"快得多。GitLab Pages、Container Registry 都是同样路径。
 4. **CI/CD 一体化 vs 平台分层**：GitLab 把 CI 写进核心，所以 `glab ci` 命令厚；GitHub 把 Actions 当独立产品挂上来，所以 `gh run` 命令薄。架构选择直接落进 CLI 的命令树。
 
 ## 延伸阅读
@@ -165,6 +171,6 @@ glab api projects/:id/issues?state=opened \
 
 glab 比 [[gh]] 强在 CI 深度（GitLab CI 是核心叙事）和自建实例支持（企业用户主场景）；弱在扩展生态（无 plugin 协议，靠 alias 拼）。两家命令命名高度对齐，从 [[gh]] 切到 glab 的学习成本几乎为零。
 
-## 一句话总结
+## 反向链接
 
-**glab 把 GitLab 网页能干的事压回终端**——OAuth + PAT 双轨认证、Cobra 命令树、`glab api` API 直通、`glab ci` 深入到 job 级别 trace、`GITLAB_HOST` 一键切自建实例。它不替代 git，而是补齐"GitLab 平台"这一层缺失的命令行接口。对每天和 MR / issue / pipeline 打交道的 GitLab 用户，是把 50 次窗口切换压回零的工具，2022 年 GitLab 官方接管后已成事实标配。
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
