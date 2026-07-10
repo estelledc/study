@@ -1,0 +1,105 @@
+{
+  "slug": "glue-2018",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "统考卷类比贴切，9 题一览表降低门槛；案例 2 可跟跑，诊断集例子稍抽象但仍可读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Wang et al. ICLR 2019 / arXiv:1804.07461 正确；BERT 论文表 72.8/79.6/82.1 与人类基线 87.1、WNLI 多数类坑均与公开叙述一致。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "datasets+transformers 最小示例可跑；WNLI/平均权重/dev≠test/污染风险都是实战坑；LLM 改用 MMLU 等边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "统考卷类比贴切，9 题一览表降低门槛；案例 2 可跟跑，诊断集例子稍抽象但仍可读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Wang et al. ICLR 2019 / arXiv:1804.07461 正确；BERT 论文表 72.8/79.6/82.1 与人类基线 87.1、WNLI 多数类坑均与公开叙述一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "datasets+transformers 最小示例可跑；WNLI/平均权重/dev≠test/污染风险都是实战坑；LLM 改用 MMLU 等边界清楚。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 159,
+    "reasons": []
+  },
+  "l1_pass": true
+}

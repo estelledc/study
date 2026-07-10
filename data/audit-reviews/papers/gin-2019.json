@@ -1,0 +1,108 @@
+{
+  "slug": "gin-2019",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "多重集/单射首次出现已有括号桥接，零基础仍可跟；核心公式段略密但不挡读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段写「2009 年 Gärtner 等人把 WL 改造成图核」不准确：把 WL 做成图核的是 Shervashidze 等人（NIPS 2009 / JMLR 2011）；Gärtner 相关的是更早的 subtree kernel（Ramon & Gärtner 2003），应改正作者与年份。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "scatter_add 方向依赖 edge_index 约定，教学上可跟；ε=0 撞车与连续特征单射前提写得很可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "多重集/单射首次出现已有括号桥接，零基础仍可跟；核心公式段略密但不挡读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "历史段写「2009 年 Gärtner 等人把 WL 改造成图核」不准确：把 WL 做成图核的是 Shervashidze 等人（NIPS 2009 / JMLR 2011）；Gärtner 相关的是更早的 subtree kernel（Ramon & Gärtner 2003），应改正作者与年份。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "scatter_add 方向依赖 edge_index 约定，教学上可跟；ε=0 撞车与连续特征单射前提写得很可操作。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：将 WL 图核归属从 Gärtner 2009 改为 Shervashidze 等人（NIPS 2009 / JMLR 2011）。",
+    "sections_modified": [
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 151,
+    "reasons": []
+  },
+  "l1_pass": true
+}
