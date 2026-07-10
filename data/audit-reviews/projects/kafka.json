@@ -1,0 +1,123 @@
+{
+  "slug": "kafka",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "传送带/offset 书签类比清晰；partition/consumer group 有桥接；关联只有 1 条且缺 ## 反向链接占位，结构偏薄"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Kafka 3.7 起 KRaft 默认开启，ZooKeeper 模式标记为废弃」不准确：ZooKeeper 自 3.5 起已 deprecated；3.7 仍支持 ZK，宜改为「3.5+ 废弃 ZK、新集群推荐 KRaft，4.0 移除 ZK」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Connect 一千多个连接器」「2020 年后逐渐替代 RabbitMQ 成为标准」偏营销夸大，宜弱化为生态连接器众多、在日志型管道场景更常见"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 docker-compose 片段缺 CLUSTER_ID / controller quorum / advertised listeners 等 KRaft 必填项，按原文无法直接起集群；建议补最小可跑环境变量或改成官方 quickstart 步骤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（partition 只增不减、rebalance、exactly-once 边界、lag 监控）具体有用；适用边界基本清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "传送带/offset 书签类比清晰；partition/consumer group 有桥接；关联只有 1 条且缺 ## 反向链接占位，结构偏薄"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「Kafka 3.7 起 KRaft 默认开启，ZooKeeper 模式标记为废弃」不准确：ZooKeeper 自 3.5 起已 deprecated；3.7 仍支持 ZK，宜改为「3.5+ 废弃 ZK、新集群推荐 KRaft，4.0 移除 ZK」",
+        "「Connect 一千多个连接器」「2020 年后逐渐替代 RabbitMQ 成为标准」偏营销夸大，宜弱化为生态连接器众多、在日志型管道场景更常见"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 docker-compose 片段缺 CLUSTER_ID / controller quorum / advertised listeners 等 KRaft 必填项，按原文无法直接起集群；建议补最小可跑环境变量或改成官方 quickstart 步骤",
+        "踩坑（partition 只增不减、rebalance、exactly-once 边界、lag 监控）具体有用；适用边界基本清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "engineer：补 KRaft docker 必填项；academic：纠正 ZK deprecate 时间线并弱化连接器/替代 RabbitMQ 夸大；补关联与反向链接。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 180,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
