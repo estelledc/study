@@ -1,0 +1,96 @@
+{
+  "slug": "frenetic-2011",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "「2012 年之后所有 SDN 论文都在比较 query 语言」过度绝对，应改成「大量/一批 SDN 控制面论文」之类限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一篇把 SDN 控制面讲成编程语言问题」偏满：同期还有 Nettle（PADL 2011）等；宜改成「标志性/代表性」或注明 Frenetic 是把 query+policy 组合讲清楚的里程碑"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「2012 年之后所有 SDN 论文都在比较 query 语言」过度绝对，应改成「大量/一批 SDN 控制面论文」之类限定",
+        "「第一篇把 SDN 控制面讲成编程语言问题」偏满：同期还有 Nettle（PADL 2011）等；宜改成「标志性/代表性」或注明 Frenetic 是把 query+policy 组合讲清楚的里程碑"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic: 弱化「所有 SDN 论文」「第一篇」绝对表述，改为标志性/一批论文并点出 Nettle 同期",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 177,
+  "l1_pass": true
+}

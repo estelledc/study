@@ -1,0 +1,103 @@
+{
+  "slug": "janusgraph",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "官方 storage.backend 简写目前是 berkeleyje/cql/hbase/inmemory/scylla，表里把 FoundationDB 列成正式后端不准确，应删或标明非官方/社区实验"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Gremlin 是图查询的事实标准…跨越 Neo4j」易误导：Neo4j 主语言是 Cypher；应改成 TinkerPop 系（JanusGraph/Neptune 等）的通行遍历语言，并与 Cypher 并列说明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Docker 案例应使用 JANUS_PROPS_TEMPLATE: cql（官方镜像默认 berkeleyje-lucene），仅写 janusgraph.storage.backend: cql 不是推荐写法，跟做容易踩坑"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "官方 storage.backend 简写目前是 berkeleyje/cql/hbase/inmemory/scylla，表里把 FoundationDB 列成正式后端不准确，应删或标明非官方/社区实验",
+        "「Gremlin 是图查询的事实标准…跨越 Neo4j」易误导：Neo4j 主语言是 Cypher；应改成 TinkerPop 系（JanusGraph/Neptune 等）的通行遍历语言，并与 Cypher 并列说明"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Docker 案例应使用 JANUS_PROPS_TEMPLATE: cql（官方镜像默认 berkeleyje-lucene），仅写 janusgraph.storage.backend: cql 不是推荐写法，跟做容易踩坑"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic: 去掉 FoundationDB 正式后端与 Gremlin 跨越 Neo4j 的误导；engineer: Docker 改用 JANUS_PROPS_TEMPLATE: cql",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 192,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 192,
+  "l1_pass": true
+}
