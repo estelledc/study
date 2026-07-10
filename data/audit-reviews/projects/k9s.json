@@ -1,7 +1,4 @@
 {
-  "slug": "k9s",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,12 +78,5 @@
         "CrashLoop / XRay / ctx 按键序列可跟做；踩坑含 RBAC、alias 误跳、大集群冷启动、distroless 无 shell，适用边界清楚"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "lines": 165,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

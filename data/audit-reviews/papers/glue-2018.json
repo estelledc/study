@@ -1,7 +1,4 @@
 {
-  "slug": "glue-2018",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,25 +78,5 @@
         "datasets+transformers 最小示例可跑；WNLI/平均权重/dev≠test/污染风险都是实战坑；LLM 改用 MMLU 等边界清楚。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 159,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

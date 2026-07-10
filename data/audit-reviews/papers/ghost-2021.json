@@ -1,7 +1,4 @@
 {
-  "slug": "ghost-2021",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,28 +83,5 @@
         "案例 1 事务决策流程可跟读；踩坑含 agent 饿死、拒绝率、per-CPU vs 中心化（16 核分界）与 patch 维护成本，边界清晰"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：纠正 Snap 对比对象（MicroQuanta 非 CFS）与 Search/CFS 数字；zero-base：四→五件事并补 CFS/OCC 桥接。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

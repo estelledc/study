@@ -1,7 +1,4 @@
 {
-  "slug": "kakoune",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.56,
   "reject_count": 0,
@@ -81,28 +78,5 @@
         "多光标按键流可跟做；kak-lsp/剪贴板坑具体；与 Helix/Neovim 边界清楚。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：Helix 启动年份由 2018 改为 2020（2021 公开发布）；star 量级同步为 ~11k。",
-    "sections_modified": [
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  },
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 157,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "gin-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -81,28 +78,5 @@
         "scatter_add 方向依赖 edge_index 约定，教学上可跟；ε=0 撞车与连续特征单射前提写得很可操作。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：将 WL 图核归属从 Gärtner 2009 改为 Shervashidze 等人（NIPS 2009 / JMLR 2011）。",
-    "sections_modified": [
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 151,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

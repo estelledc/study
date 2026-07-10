@@ -1,7 +1,4 @@
 {
-  "slug": "kamailio",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -81,29 +78,5 @@
         "cfg/KEMI 示例概念正确；rtpengine/NAT/shm 坑可操作；10K+ 与 <100 分机边界量化清楚。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：贡献者改为 ~250+；拆开 2008 改名与 SER 合并时间线；star 同步 ~2.8k。",
-    "sections_modified": [
-      "## 是什么",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 165,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

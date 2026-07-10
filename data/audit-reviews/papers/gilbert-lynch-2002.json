@@ -1,7 +1,4 @@
 {
-  "slug": "gilbert-lynch-2002",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.34,
   "reject_count": 0,
@@ -86,27 +83,5 @@
         "反证步骤与 AP 恢复伪流程可跟读；踩坑含 ACID-C 混淆、超时偷换 A、P 非 feature flag；适用/不适用有 PACELC 等边界"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.34,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：Spanner CAP 表述改归因 Brewer 澄清文，保留技术上 CP 结论。",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
