@@ -1,0 +1,107 @@
+{
+  "slug": "generational-gc",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "便利店冰柜类比贴合；write barrier / card table 有桥接，但「脏页表」对零基础仍偏抽象，可再补半句日常说法"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写 card table「64 字节一格」，与案例 2 的 >>9（512 字节）及 HotSpot 默认 card size=512 矛盾，应改为约 512 字节一卡"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「大对象 > Eden TLAB 阈值（约 8 KB）直进 old」过度简化：默认 PretenureSizeThreshold=0，G1 humongous 按 region 一半计；宜改成更准确的限定表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "jstat 案例与 write barrier 伪代码可跟做；适用/不适用边界有量化（<1ms、<64MB）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "便利店冰柜类比贴合；write barrier / card table 有桥接，但「脏页表」对零基础仍偏抽象，可再补半句日常说法"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点写 card table「64 字节一格」，与案例 2 的 >>9（512 字节）及 HotSpot 默认 card size=512 矛盾，应改为约 512 字节一卡",
+        "「大对象 > Eden TLAB 阈值（约 8 KB）直进 old」过度简化：默认 PretenureSizeThreshold=0，G1 humongous 按 region 一半计；宜改成更准确的限定表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "jstat 案例与 write barrier 伪代码可跟做；适用/不适用边界有量化（<1ms、<64MB）"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 165,
+    "reasons": []
+  },
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：card table 改为约 512 字节一卡；大对象晋升改为 PretenureSizeThreshold / G1 humongous 限定表述。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  }
+}
