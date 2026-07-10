@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关键事实速查",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2/3 缺少「逐部分解释」步骤，零基础读者难以把 Exemplars / Derived Fields / RED 落到操作顺序。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少「历史小故事」段，Tempo 从 2020 发布到 LGTM 栈的时间线对入门很有帮助。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文写 Ingester「攒最近 30 分钟」，关键事实速查又写「block 时间窗口默认 5 分钟」——与 max_block_duration 默认 30m 自相矛盾，应统一并区分 head block 切块时长 vs 单条 trace 存活时间。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 Jaeger + Cassandra 低 10-100 倍」是量级宣传口径，宜加「常见部署量级/官方宣传」限定，避免读成严格基准。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三个案例都是 workflow 叙述，缺少可跟做的最小配置片段（如 Loki derived_fields 正则、Tempo datasource 跳转思路）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里 Compactor 单点在较新架构已演进，可注明「经典 microservices 部署常见」以免过时。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2/3 缺少「逐部分解释」步骤，零基础读者难以把 Exemplars / Derived Fields / RED 落到操作顺序。",
+        "缺少「历史小故事」段，Tempo 从 2020 发布到 LGTM 栈的时间线对入门很有帮助。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关键事实速查",
+      "fix_hints": [
+        "正文写 Ingester「攒最近 30 分钟」，关键事实速查又写「block 时间窗口默认 5 分钟」——与 max_block_duration 默认 30m 自相矛盾，应统一并区分 head block 切块时长 vs 单条 trace 存活时间。",
+        "「比 Jaeger + Cassandra 低 10-100 倍」是量级宣传口径，宜加「常见部署量级/官方宣传」限定，避免读成严格基准。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三个案例都是 workflow 叙述，缺少可跟做的最小配置片段（如 Loki derived_fields 正则、Tempo datasource 跳转思路）。",
+        "踩坑里 Compactor 单点在较新架构已演进，可注明「经典 microservices 部署常见」以免过时。"
+      ]
+    }
+  ]
+}
