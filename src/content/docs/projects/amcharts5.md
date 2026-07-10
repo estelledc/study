@@ -152,3 +152,7 @@ polygonSeries.mapPolygons.template.events.on("click", (ev) => {
 - [[d3]] —— 底层"乐高"，amCharts 是"成品菜"
 - [[plotly-js]] —— 同样商业级图表库，定位科学绘图
 - [[recharts]] —— React 生态声明式图表，更轻
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

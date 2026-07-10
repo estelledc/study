@@ -1,0 +1,68 @@
+{
+  "slug": "agent-r1-2511",
+  "area": "papers",
+  "status": "refined",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "DeepSeek-R1 的年份写成 2024，需改为 2025",
+        "作者机构未由 research-stub 支撑，删除具体机构归属"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "targeted-refine",
+    "reason": "Academic reviewer found date and attribution issues below rewrite threshold",
+    "sections_modified": [
+      "## 历史小故事",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
