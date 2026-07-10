@@ -1,7 +1,4 @@
 {
-  "slug": "minio",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -91,31 +88,5 @@
         "forcePathStyle / multipart / 默认密码踩坑有用；SDK 示例可跟做。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "needs-refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 169,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 169,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 核心要点",
-      "## 适用 vs 不适用",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

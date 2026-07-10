@@ -1,7 +1,4 @@
 {
-  "slug": "mise",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -101,32 +98,5 @@
         "案例建议补逐部分解释，标明哪步写配置、哪步下载、哪步靠 activate 自动切 PATH。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.67,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 191,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 191,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "lamport-tla-1994",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -96,31 +93,5 @@
         "案例2 Next 省略对称动作，建议补全 process2 两条或明确「对称省略」并给 Mutex 检查入口命令（tlc）。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 196,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 196,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

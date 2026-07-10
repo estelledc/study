@@ -1,7 +1,4 @@
 {
-  "slug": "lamport-time-clocks-1978",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "receive=max+1 与 sorted(ts,pid) 可跟做；踩坑准确点出 C(A)<C(B) 不蕴含 happens-before；适用边界清楚，可再点明单机墙钟业务不适用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true,
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

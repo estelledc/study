@@ -1,7 +1,4 @@
 {
-  "slug": "lamport-bakery",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "伪代码与 before 比较正确；O(N) 扫描、号码无界、弱内存不可照抄等边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 169,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 169,
-  "l1_pass": true,
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

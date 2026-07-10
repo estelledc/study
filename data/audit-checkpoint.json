@@ -1,29 +1,29 @@
 {
-  "round_n": 86,
+  "round_n": 87,
   "total": 1975,
-  "audited": 1032,
+  "audited": 1044,
   "failed": 0,
-  "pending": 943,
+  "pending": 931,
   "by_status": {
-    "rewritten": 25,
-    "refined": 548,
-    "passed": 459,
-    "pending": 943
+    "rewritten": 26,
+    "refined": 554,
+    "passed": 464,
+    "pending": 931
   },
   "last_round": {
-    "round": 86,
+    "round": 87,
     "results": 12,
-    "passed": 4,
-    "refined": 8,
-    "rewritten": 0,
+    "passed": 5,
+    "refined": 6,
+    "rewritten": 1,
     "failed": 0,
-    "at": "2026-07-10T22:42:12.855Z"
+    "at": "2026-07-10T22:45:05.067Z"
   },
-  "next_action": "start-audit-round-87",
-  "updated_at": "2026-07-10T22:42:12.855Z",
+  "next_action": "start-audit-round-88",
+  "updated_at": "2026-07-10T22:45:05.067Z",
   "handoff": {
     "branch": "cursor/audit-all-notes-4844",
     "pr": "https://github.com/estelledc/study/pull/15",
-    "note": "round-86 done; audited 1032/1975; next start-audit-round-87"
+    "note": "round-87 done (lampson-hints-1983 rewrite); audited 1044/1975; next start-audit-round-88"
   }
 }

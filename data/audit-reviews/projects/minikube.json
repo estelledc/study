@@ -1,7 +1,4 @@
 {
-  "slug": "minikube",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "start/ingress/image load 可跟做；ImagePullBackOff、tunnel、默认 2C2G 踩坑具体；适用/兄弟工具表边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 167,
-  "l1_pass": true,
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }
