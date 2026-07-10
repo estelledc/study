@@ -152,6 +152,17 @@ Probe 把"故障注入"和"业务影响"绑到一起——没有 Probe 的实验
 - [Litmus 官方文档](https://docs.litmuschaos.io/) — 从 quick start 到 Probe 配置
 - [Chaos Hub](https://hub.litmuschaos.io/) — 现成的实验目录
 - [Netflix Chaos Engineering Principles](https://principlesofchaos.org/) — 混沌工程的祖师爷文档
-- [[argo-workflows]] —— Litmus 3.0 之后的 Workflow 底座
-- [[argocd]] —— GitOps 流水线常和 Litmus 搭配使用
-- [[kubernetes]] —— 一切的前提
+- [CNCF Litmus 项目页](https://www.cncf.io/projects/litmus/) — 孵化状态与治理信息
+
+## 关联
+
+- [[kubernetes]] —— Litmus 的运行底座；不懂 Deployment/Service/Probe 先别上混沌
+- [[argo-workflows]] —— Litmus 3.0 之后的 Workflow 编排引擎
+- [[argocd]] —— GitOps 流水线常和 Litmus 搭配，把演习 YAML 当代码管
+- [[prometheus]] —— promProbe 直接查指标，判断故障有没有打穿 SLO
+- [[grafana]] —— 演习期间看盘；ChaosResult 之外的业务视角
+- [[istio]] —— 服务网格的重试/熔断常被 Litmus 拿来验收
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
