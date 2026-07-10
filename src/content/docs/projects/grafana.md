@@ -20,7 +20,7 @@ Grafana 是一个**把时序数据画成折线图、仪表盘的可视化工具*
 
 - **监控可视化事实标准**：与 [[prometheus]] / Loki（日志）/ Tempo（追踪）深度集成，几乎所有 SRE 团队都在用
 - **100+ 数据源**：[[postgresql]] / [[mysql]] / [[clickhouse]] / [[elasticsearch]] / InfluxDB 全支持，一个看板可以混合多个来源
-- **Alerting 内置**：基于查询结果直接发邮件 / Slack / PagerDuty，不用再配 Alertmanager 之类的额外工具（虽然也可以接）
+- **Alerting 内置**：基于查询结果可直接发邮件 / Slack / PagerDuty；这是 Grafana 自己的告警路径（也可以继续把 Prometheus Alertmanager 当另一条链路）
 - **10w+ 公司部署**：从初创到 Netflix / PayPal / Bloomberg 都在用
 
 ## 核心要点
@@ -45,7 +45,7 @@ docker run -d -p 3000:3000 --name=grafana grafana/grafana
 
 ### 案例 2：加 [[prometheus]] 数据源
 
-进 Configuration → Data Sources → Add → Prometheus，URL 填 `http://prometheus:9090`（如果用 docker compose 跑在同一网络）或 `http://host.docker.internal:9090`（Mac 上跑本地 Prometheus）。Save & Test，绿勾就连上了。
+打开 **Connections → Data sources**（老版本菜单名可能是 Configuration → Data Sources）→ Add → Prometheus。URL 填 `http://prometheus:9090`（docker compose 同一网络）或 `http://host.docker.internal:9090`（本机 Prometheus）。Save & Test，绿勾就连上了。
 
 ### 案例 3：第一个 Panel
 
@@ -59,14 +59,16 @@ PromQL 含义：「过去 5 分钟内 HTTP 请求总数的每秒变化率」。G
 
 把图标 Title 改成 "QPS"，保存看板。下次打开就能看到实时数据流。
 
-### 案例 4：配一条 Alert
+### 案例 4：配一条 Alert（Unified Alerting）
 
-在 Panel 的 Alert Tab → Create Alert：
+Grafana 8 起用**统一告警**（不要再找旧版 Panel 里的 Alert Tab / `WHEN avg() OF query(...)` 语法）。大致步骤：
 
-- Condition：`WHEN avg() OF query(A, 5m, now) IS ABOVE 100`（QPS 5 分钟均值超过 100）
-- For：5m（持续 5 分钟才触发，避免抖动误报）
-- Notifications：选预先配好的 Slack Channel
+1. 左侧 **Alerting → Alert rules → New alert rule**
+2. 选 Prometheus 数据源，表达式写你真正关心的条件，例如 `rate(http_requests_total{status=~"5.."}[5m]) > 0.01`
+3. 设 **pending period**（如 5m）避免抖动误报
+4. 在 **Contact points** 里配好 Slack / 邮件，再绑到 notification policy
 
+要点：告警查询最好独立于"好看的折线 Panel"，语义对准事件本身。
 ## 踩过的坑
 
 1. **Panel query 不优化查爆 DB**：新人常写 `SELECT * FROM huge_table`，Grafana 默认 1000 行截断，但数据库该扫的还是扫完了。看板每 30 秒刷新一次 = 每 30 秒一次全表扫。生产事故级。**对策**：永远加 `WHERE time > $__timeFrom() AND time < $__timeTo()`（Grafana 内置时间宏），让 DB 用索引。

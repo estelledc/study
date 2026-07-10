@@ -22,8 +22,8 @@ EMQX 是一个**专门给海量 IoT 设备做消息中转的服务器**。日常
 
 不理解 EMQX，下面这些事都没法解释：
 
-- 为什么特斯拉、蔚来、米家这种"百万设备实时在线"的场景几乎都跑在 MQTT broker 上，而不是 HTTP 或 WebSocket 直连
-- 为什么这个领域里**Erlang 写的 broker 一直碾压 Java/Go 写的**——单机连接数差一个数量级
+- 为什么特斯拉、蔚来、米家这类"百万设备实时在线"场景，常见做法是走 MQTT broker，而不是让每台设备 HTTP 短连接或裸 WebSocket 直连业务服务
+- 为什么这个领域里 **Erlang 写的 broker 常在单机连接密度上占优**（同内存下往往能挂更多长连接）——和 Java/Go 实现比，差距可以到一个数量级，但具体还看调优与硬件
 - 为什么 5.x 版本要把集群方案从"全 mesh"换成"core + replicant"——千万连接逼着架构改一次
 - 为什么 IoT 团队总在讨论"QoS 0 还是 1"——这不是参数选择，是吞吐和可靠性的取舍
 
@@ -80,7 +80,9 @@ FROM "home/+/temp"
 WHERE payload.temp > 30
 ```
 
-意思是：从 `home/<任意>/temp` 这种 topic 收消息，只保留温度 > 30 的，转发到下游（比如 Kafka topic `alerts`、HTTP webhook、数据库）。
+意思是：从 `home/<任意>/temp` 这种 topic 收消息，只保留温度 > 30 的，再交给下游动作。
+
+开源版常见下游是 **HTTP / MQTT**（webhook、再发布到别的 topic）。**Kafka / Pulsar / 多数数据库 Sink 属于企业版**——规则引擎能过滤，不等于开源就能一键进 Kafka。选型时先对版本能力清单。
 
 这让 EMQX 不只是"转消息"，还是"实时过滤 + 路由"的小型流处理器。
 
@@ -92,7 +94,7 @@ WHERE payload.temp > 30
 
 3. **QoS 2 在大集群下吞吐塌**：QoS 2 需要 4 次握手（PUBLISH / PUBREC / PUBREL / PUBCOMP），跨节点路由时延迟放大。大流量场景一律 QoS 1 + 业务层去重。
 
-4. **免费版的"数据桥接"功能受限**：社区版能转 HTTP / Kafka 部分场景，企业版才解锁 Kafka 完整、Pulsar、InfluxDB、TDengine 等。选型时先看清楚清单。
+4. **开源版数据集成很窄**：社区版主要是 HTTP Server / MQTT 服务；Kafka、Pulsar、InfluxDB、TDengine 等 Sink 多在企业版。案例 3 的"进 Kafka"不要按开源默认能力来规划。
 
 5. **共享订阅（shared subscription）容易踩**：`$share/group1/topic` 让多消费者负载均衡，但**离线消息不会重发给已离开的成员**——QoS 1 + 共享订阅会丢消息，文档里写得不显眼。
 
@@ -125,7 +127,7 @@ MQTT 从"省卫星带宽"诞生，30 年后变成 IoT 默认协议。
 
 1. **场景塑造架构**：千万长连接逼出 Erlang，强一致逼出 Raft，海量分析逼出列存——技术选型本质是**对场景做减法**
 2. **协议设计的简洁有复利**：MQTT 头 2 字节、5 种核心包、QoS 三档——简单到嵌入式 8 位机也能实现，就跑遍世界
-3. **Erlang 的"长连接 + 不停机"是真护城河**：Java/Go 写的 broker 多年追不上，不是优化没做，是 VM 模型不一样
+3. **Erlang 的"长连接 + 不停机"是真护城河**：在海量长连接场景里，Erlang/OTP 的调度模型常让同类 Java/Go broker 难追平连接密度——不全是业务代码没优化，VM 模型就不一样
 4. **集群方案随规模迭代**：4.x mesh 在百万连接够用，千万连接必须 core+replicant；下一代可能再换
 
 ## 延伸阅读

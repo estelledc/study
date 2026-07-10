@@ -1,0 +1,113 @@
+{
+  "slug": "elmo-2018",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 ## 反向链接 占位段，与模板不一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1/4 表格数字与论文 Table 1 不符：SQuAD 应为基线 81.1→85.8（+4.7），不是 81.0→85.6；SNLI 基线是 88.0 不是 88.6，且 +0.7 与 88.6→88.7 自相矛盾"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "表格列名写「之前 SOTA」但填的是基线数字（SQuAD 当时 SOTA 是 84.4）；SRL 基线应为 81.4（81.7 是先前 SOTA）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 层权重数字未标明为示意，易被当成论文原表"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺少 ## 反向链接 占位段，与模板不一致"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/4 表格数字与论文 Table 1 不符：SQuAD 应为基线 81.1→85.8（+4.7），不是 81.0→85.6；SNLI 基线是 88.0 不是 88.6，且 +0.7 与 88.6→88.7 自相矛盾",
+        "表格列名写「之前 SOTA」但填的是基线数字（SQuAD 当时 SOTA 是 84.4）；SRL 基线应为 81.4（81.7 是先前 SOTA）",
+        "案例 2 层权重数字未标明为示意，易被当成论文原表"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：校正 Table 1 基线数字与列名，标明层权重为示意；补反向链接占位；弱化「全部从头训」表述。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
