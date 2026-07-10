@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "宜家/折叠桌类比贴合；api-server 等组件有列举但首次出现可再一句人话；三案例命令可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "CNCF 状态硬伤：k3s 于 2020-08 入沙箱，截至 2026 仍为 Sandbox（cncf.io/projects/k3s）；文中「2022-08 升级为孵化项目」及 frontmatter「CNCF 孵化项目」均不实，应改为仍处沙箱、孵化申请进行中"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "minikube「必等 30 秒虚拟机」已过时（Docker driver 可很快）；宜加限定或改成「传统 VM driver 场景」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "install/HA/k3d 命令可跟做；SQLite/traefik/klipper-lb/flannel 踩坑具体；>50 节点边界有量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "宜家/折叠桌类比贴合；api-server 等组件有列举但首次出现可再一句人话；三案例命令可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "CNCF 状态硬伤：k3s 于 2020-08 入沙箱，截至 2026 仍为 Sandbox（cncf.io/projects/k3s）；文中「2022-08 升级为孵化项目」及 frontmatter「CNCF 孵化项目」均不实，应改为仍处沙箱、孵化申请进行中",
+        "minikube「必等 30 秒虚拟机」已过时（Docker driver 可很快）；宜加限定或改成「传统 VM driver 场景」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "install/HA/k3d 命令可跟做；SQLite/traefik/klipper-lb/flannel 踩坑具体；>50 节点边界有量化"
+      ]
+    }
+  ]
+}

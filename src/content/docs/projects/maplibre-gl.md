@@ -75,18 +75,41 @@ new maplibregl.Map({
 
 ### 案例 2：用 PMTiles 做"零服务端"地图
 
-[[pmtiles]] 把整套瓦片打包成单文件，配 MapLibre 的协议扩展即可在浏览器直接读 S3 / R2 上的 .pmtiles：
+[[pmtiles]] 把整套瓦片打包成单文件，配 MapLibre 的协议扩展即可在浏览器直接读 S3 / R2 上的 `.pmtiles`：
 
 ```js
+import maplibregl from 'maplibre-gl';
 import { Protocol } from 'pmtiles';
+
 const protocol = new Protocol();
 maplibregl.addProtocol('pmtiles', protocol.tile);
+
 new maplibregl.Map({
-  style: { /* sources 用 pmtiles://https://... */ },
+  container: 'map',
+  center: [121.47, 31.23],
+  zoom: 10,
+  style: {
+    version: 8,
+    sources: {
+      protomaps: {
+        type: 'vector',
+        url: 'pmtiles://https://example.com/shanghai.pmtiles',
+      },
+    },
+    layers: [
+      {
+        id: 'roads',
+        type: 'line',
+        source: 'protomaps',
+        'source-layer': 'roads',
+        paint: { 'line-color': '#888', 'line-width': 1 },
+      },
+    ],
+  },
 });
 ```
 
-完全没后端，部署成本只有「上传一个文件 + 静态站点」。
+三步：注册 `pmtiles` 协议 → source 用 `pmtiles://https://...` → layer 按 `source-layer` 画线。完全没瓦片后端，部署成本只有「上传一个文件 + 静态站点」。
 
 ### 案例 3：Globe projection 与 3D terrain
 

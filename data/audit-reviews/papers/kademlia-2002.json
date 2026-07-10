@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "城市抽屉类比可用但略长；XOR/桶有 4 位算例桥接；BitTorrent 四步清晰"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Azureus DHT ≠ Mainline DHT：Azureus/Vuze 2005-05 先上线自有 Kademlia DHT；约三周后 BitTorrent Inc 推出互不兼容的 Mainline DHT，BEP-5 规范的是后者——文中「Azureus 第一个上线 Mainline DHT」应拆开写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点把三角不等式写成 d(x,y) <= d(x,z) XOR d(z,y) 易误导；应区分整数三角不等式与超度量 max 形式（踩坑段已写对，要点段应对齐）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "XOR/桶算例与四 RPC 可跟读；k/α/Sybil/NAT 踩坑具体；千万级 vs <1000 节点边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "城市抽屉类比可用但略长；XOR/桶有 4 位算例桥接；BitTorrent 四步清晰"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Azureus DHT ≠ Mainline DHT：Azureus/Vuze 2005-05 先上线自有 Kademlia DHT；约三周后 BitTorrent Inc 推出互不兼容的 Mainline DHT，BEP-5 规范的是后者——文中「Azureus 第一个上线 Mainline DHT」应拆开写",
+        "核心要点把三角不等式写成 d(x,y) <= d(x,z) XOR d(z,y) 易误导；应区分整数三角不等式与超度量 max 形式（踩坑段已写对，要点段应对齐）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "XOR/桶算例与四 RPC 可跟读；k/α/Sybil/NAT 踩坑具体；千万级 vs <1000 节点边界清楚"
+      ]
+    }
+  ]
+}
