@@ -1,0 +1,90 @@
+{
+  "slug": "konva",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "白板+花名册类比清楚；拖拽/多 Layer/react-konva 三案例逐步可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GitHub konvajs/konva、KineticJS→Konva 2014 fork 史实合理；踩坑里 Stage.useStrictMode 与官方 API/默认语义不符，建议工程师向修正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "『Stage.useStrictMode(true) 让它只更新真变化的属性』双重错误：API 是 import { useStrictMode } from 'react-konva'；默认非 strict 只更新变化 props，strict 才强制对齐 render 全部 props。应改正文与代价说明"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "白板+花名册类比清楚；拖拽/多 Layer/react-konva 三案例逐步可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "GitHub konvajs/konva、KineticJS→Konva 2014 fork 史实合理；踩坑里 Stage.useStrictMode 与官方 API/默认语义不符，建议工程师向修正"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "『Stage.useStrictMode(true) 让它只更新真变化的属性』双重错误：API 是 import { useStrictMode } from 'react-konva'；默认非 strict 只更新变化 props，strict 才强制对齐 render 全部 props。应改正文与代价说明"
+      ]
+    }
+  ],
+  "refine_round": 1,
+  "sections_modified": [
+    "## 踩过的坑"
+  ],
+  "unresolved_hints": []
+}
