@@ -1,0 +1,93 @@
+{
+  "slug": "distserve",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房双炉灶类比很贴；TP/PP 已有括号桥接，零基础可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "4.48x / 10.2x 与论文摘要一致；「GPU 同一时刻只能跑一个 kernel」略简化，教学可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例偏概念推演而非可跑代码，但对系统论文合适；适用边界有 >512 token / NVLink 等量化。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "厨房双炉灶类比很贴；TP/PP 已有括号桥接，零基础可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "4.48x / 10.2x 与论文摘要一致；「GPU 同一时刻只能跑一个 kernel」略简化，教学可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例偏概念推演而非可跑代码，但对系统论文合适；适用边界有 >512 token / NVLink 等量化。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 159,
+    "reasons": []
+  },
+  "lines": 159,
+  "l1_pass": true
+}
