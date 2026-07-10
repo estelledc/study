@@ -1,9 +1,5 @@
 {
-  "slug": "gat-2018",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
-  "lines": 182,
   "average": 4,
   "reject_count": 0,
   "needs_refine_count": 3,
@@ -97,20 +93,5 @@
         "踩坑里 GATv2 静态 attention 写得很有用，保持。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 182,
-    "reasons": []
-  },
-  "remediation": {
-    "status": "refined",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "jimp",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -81,26 +78,5 @@
         "v1 API 示例概念正确；若 refine 可在案例 2 注明 Buffer 在 Worker 侧常用 Uint8Array/polyfill，避免读者以为 Node Buffer 原生可用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "reject_count": 0,
-    "needs_refine_count": 1,
-    "action": "refine",
-    "reason": "zero-base needs-refine：三案例缺逐部分解释；顺带注明 Worker 侧 Buffer/Uint8Array"
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 173,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

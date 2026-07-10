@@ -1,7 +1,4 @@
 {
-  "slug": "gadt-pjones",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -86,27 +83,5 @@
         "Haskell 案例可跟做；适用边界已点出必须写顶层签名，量化可再略补一句「脚本/一次性工具别上 GADT」。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.45,
-    "reject_count": 0,
-    "needs_refine_count": 1,
-    "action": "refine",
-    "reason": "zero-base needs-refine：EqW/DataKinds 桥接与 polymorphic recursion 类比不足"
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

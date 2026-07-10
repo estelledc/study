@@ -1,9 +1,5 @@
 {
-  "slug": "jotai",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
-  "lines": 175,
   "average": 4.44,
   "reject_count": 0,
   "needs_refine_count": 1,
@@ -87,21 +83,5 @@
         "案例可跑；atom 定义位置、devtools、atomFamily GC、Provider scope 踩坑具体。适用边界可再补一点规模量级。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 175,
-    "reasons": []
-  },
-  "remediation": {
-    "status": "refined",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

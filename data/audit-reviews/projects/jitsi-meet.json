@@ -1,9 +1,5 @@
 {
-  "slug": "jitsi-meet",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
-  "lines": 180,
   "average": 4.89,
   "reject_count": 0,
   "needs_refine_count": 0,
@@ -82,12 +78,5 @@
         "apt 安装、IFrame API、Jibri/Jigasi compose 可跟做；10000/udp、JWT、自签证书等踩坑可操作"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 180,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

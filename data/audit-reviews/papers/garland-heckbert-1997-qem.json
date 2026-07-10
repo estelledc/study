@@ -1,9 +1,5 @@
 {
-  "slug": "garland-heckbert-1997-qem",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
-  "lines": 163,
   "average": 4.56,
   "reject_count": 0,
   "needs_refine_count": 0,
@@ -82,11 +78,5 @@
         "QSlim 命令可跟做；法线翻转、属性扩展、t 阈值等踩坑具体可操作。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 163,
-    "reasons": []
-  }
+  ]
 }

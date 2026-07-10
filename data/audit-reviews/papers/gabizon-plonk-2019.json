@@ -1,7 +1,4 @@
 {
-  "slug": "gabizon-plonk-2019",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,18 +78,5 @@
         "门约束与 permutation 伪代码概念正确，适合跟读；适用/不适用边界已写清 trusted setup 与 prover 成本。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "reject_count": 0,
-    "needs_refine_count": 0,
-    "action": "pass",
-    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

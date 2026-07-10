@@ -1,9 +1,5 @@
 {
-  "slug": "joplin",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
-  "lines": 166,
   "average": 4.55,
   "reject_count": 0,
   "needs_refine_count": 0,
@@ -76,11 +72,5 @@
         "终端/Web Clipper API 案例可跟做；移动端 >10MB 附件限制写得具体。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 166,
-    "reasons": []
-  }
+  ]
 }

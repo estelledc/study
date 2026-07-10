@@ -1,9 +1,5 @@
 {
-  "slug": "game-semantics-pcf",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
-  "lines": 168,
   "average": 4.67,
   "reject_count": 0,
   "needs_refine_count": 0,
@@ -82,12 +78,5 @@
         "对话伪代码与 parallel-or / call/cc 排除表概念正确；适用边界（非编译器 IR、工业语言仍开放）量化清楚"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 168,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "jest",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -69,18 +66,5 @@
       "weakest_section": "## 适用 vs 不适用场景",
       "fix_hints": []
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "reject_count": 0,
-    "needs_refine_count": 0,
-    "action": "pass",
-    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
