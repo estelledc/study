@@ -1,0 +1,145 @@
+{
+  "slug": "croft-harper-1979",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "BIM / PRP / p_i / u_i / coordination level 堆叠过密，首次出现需更短日常桥接后再给符号"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例偏代数推导，缺一个「三篇文档手工算分排序」的逐步跟做；模板只要 3 个案例，现有 4 个宜合并"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "关联只有 3 条，宜补到 5–7；踩坑 5 条宜压到 4 条"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2009 年 Lucene 默认切到 BM25」不准确：BM25 成为 Lucene 默认 Similarity 是 Lucene 6.0（2016）；应改正并加版本限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「1979 之后 BIM 真正进了工业系统（之前 3 年没人能跑）」略满，宜改为「零反馈设定下可部署的实用近似」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源与 Journal of Documentation 1979 著录合理；IDF 概率形式来自 Croft-Harper / RSJ 线的主线叙述可保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例缺少可跟做的迷你排序表（查询词、df、tf → 得分），现有公式骨架对工程读者不够落地"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑「当成 TF-IDF 同义词」「不是 1979 就出 BM25」具体有用；保持 4 条即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已点出无长度归一与 dense retrieval 边界，可再补一句「短查询+长文档需 1994 长度归一」的量化感"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "BIM / PRP / p_i / u_i / coordination level 堆叠过密，首次出现需更短日常桥接后再给符号",
+        "案例偏代数推导，缺一个「三篇文档手工算分排序」的逐步跟做；模板只要 3 个案例，现有 4 个宜合并",
+        "关联只有 3 条，宜补到 5–7；踩坑 5 条宜压到 4 条"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「2009 年 Lucene 默认切到 BM25」不准确：BM25 成为 Lucene 默认 Similarity 是 Lucene 6.0（2016）；应改正并加版本限定",
+        "「1979 之后 BIM 真正进了工业系统（之前 3 年没人能跑）」略满，宜改为「零反馈设定下可部署的实用近似」",
+        "来源与 Journal of Documentation 1979 著录合理；IDF 概率形式来自 Croft-Harper / RSJ 线的主线叙述可保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例缺少可跟做的迷你排序表（查询词、df、tf → 得分），现有公式骨架对工程读者不够落地",
+        "踩坑「当成 TF-IDF 同义词」「不是 1979 就出 BM25」具体有用；保持 4 条即可",
+        "适用/不适用已点出无长度归一与 dense retrieval 边界，可再补一句「短查询+长文档需 1994 长度归一」的量化感"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.56,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正 Lucene BM25 默认年份；压缩案例/踩坑到模板规模；补迷你排序表与关联链接；桥接 BIM/PRP 术语",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用",
+      "## 历史小故事",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 151,
+  "l1_pass": true
+}
