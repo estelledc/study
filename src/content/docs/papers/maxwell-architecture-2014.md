@@ -27,13 +27,13 @@ Maxwell 是 NVIDIA 2014 年发布的第四代通用 GPU 架构（前代见 [[kep
 
 Maxwell 在 Kepler 之上的关键升级可以拆成 **四件事**：
 
-1. **SMM 重组**：Kepler SMX = 192 cores + 4 调度器**共享一个大寄存器堆/指令缓存**；Maxwell SMM = **128 cores 拆成 4 个 32-core 分区**，每分区独立 warp scheduler + 独立 instruction buffer。意义：分区内调度不再撞别人，**每核执行效率约 +35%**——核数减少但单核更忙。
+1. **SMM 重组**（SMM = Maxwell 的一间"小工坊"）：Kepler 的 SMX = 192 核 + 4 个调度员**抢同一本记事本**；Maxwell 的 SMM = **128 核拆成 4 个 32 核小间**，每间自己的 warp 调度员（一次派 32 线程那一组）+ 自己的指令缓冲。意义：不再互相等同步；白皮书宣称**每核执行效率约 +35%**——核数少一点但更忙。
 
-2. **L2 扩 4 倍 + 独立 shared memory**：GM204 L2 = **2MB**（GK104 仅 512KB）；shared memory **96KB 独立**于 L1（Kepler 是 L1+shared 合计 64KB 切换）。意义：减少 DRAM 访问、给 shared memory 留更大空间——**功耗大头是 DRAM 来回，少访一次省一次电**。
+2. **L2 扩 4 倍 + 独立 shared memory**：GM204 L2 = **2MB**（GK104 仅 512KB）；shared memory **96KB 独立**于 L1（Kepler 是 L1+shared 合计 64KB 切换）。意义：少跑慢速外存——**功耗大头是 DRAM 来回，少访一次省一次电**。
 
-3. **指令调度静态化**：Kepler 用硬件 scoreboard 动态消解依赖（耗硅片、耗电）；Maxwell 让**编译器在指令里塞调度信息**（control codes），硬件读着照办。意义：硬件更简单、面积省下来加核加 cache、功耗下降。这是 Maxwell"不靠工艺也能翻倍"的核心秘密。
+3. **指令调度静态化**：Kepler 用硬件记分牌（scoreboard）现场判断"这条能不能跑"；Maxwell 让**编译器事先在指令里塞好等待/发射标记**（control codes），硬件照单执行。意义：硬件更简单，面积拿去加核加 cache——这是"不靠换工艺也能翻倍"的核心。
 
-4. **能效优先 vs 算力优先**：FP64 被砍到 **1/32 FP32**（Kepler GK110 是 1/3）。意义：**Maxwell 主动放弃 HPC 双精度市场**，把硅片预算全压在 FP32 + 能效——这个取舍换来桌面卡能塞 8B 晶体管、训练卡 M40 能 24/7 跑 DL。
+4. **能效优先 vs 算力优先**：双精度 FP64 砍到 **1/32 FP32**（Kepler GK110 是 1/3）。意义：**主动放弃 HPC 双精度市场**，硅片预算压在 FP32 + 能效——换来桌面卡能塞约 8B 晶体管、M40 能 24/7 跑 DL。
 
 ### 这四件事怎么互为支柱
 
@@ -155,3 +155,7 @@ d = e + f;   // 硬件自己看出独立，并发执行
 - [[pytorch]] —— Titan X 让 PyTorch 桌面 DL 真正普及
 - [[cuda]] —— 静态调度 + control code 是 Maxwell 起的，影响后续所有 SASS
 - [[attention]] —— Transformer 之前 RNN/CNN 论文很多训在 Titan X / M40 上
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
