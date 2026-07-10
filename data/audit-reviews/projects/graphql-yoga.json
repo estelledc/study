@@ -1,0 +1,81 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「还是自助点单那家餐厅」依赖读者读过 Apollo 笔记；独立阅读时类比略跳，非必须改。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "仓库现归 graphql-hive，来源 URL 仍指向 dotansimha 可重定向，可接受。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "v3 Fetch 统一包叙事与 The Guild 公告一致；v1 年份写 2018（仓库 2017）属软边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「还是自助点单那家餐厅」依赖读者读过 Apollo 笔记；独立阅读时类比略跳，非必须改。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "仓库现归 graphql-hive，来源 URL 仍指向 dotansimha 可重定向，可接受。",
+        "v3 Fetch 统一包叙事与 The Guild 公告一致；v1 年份写 2018（仓库 2017）属软边界。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": []
+    }
+  ]
+}
