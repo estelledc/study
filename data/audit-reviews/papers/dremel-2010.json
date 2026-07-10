@@ -1,0 +1,91 @@
+{
+  "slug": "dremel-2010",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "仓库分拣 / 区域经理汇总类比够用；repetition/definition level 用订单与 NULL 例子拆得清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "PVLDB 2010 / Melnik et al.、serving tree、r/d level、BigQuery 同年产品化与十年回顾脉络正确；教学简化未歪曲论文边界。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "proto + level 表 + 树形聚合伪 SQL 概念正确可跟读；坑里区分列式格式 vs 查询系统、慢 tablet 拖尾都具体；适用边界有 scan+aggregate vs 大 join。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "仓库分拣 / 区域经理汇总类比够用；repetition/definition level 用订单与 NULL 例子拆得清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "PVLDB 2010 / Melnik et al.、serving tree、r/d level、BigQuery 同年产品化与十年回顾脉络正确；教学简化未歪曲论文边界。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "proto + level 表 + 树形聚合伪 SQL 概念正确可跟读；坑里区分列式格式 vs 查询系统、慢 tablet 拖尾都具体；适用边界有 scan+aggregate vs 大 join。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  }
+}

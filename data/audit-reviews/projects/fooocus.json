@@ -1,0 +1,119 @@
+{
+  "slug": "fooocus",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "傻瓜机 vs 单反类比极贴；Gradio/CFG/scheduler 有语境，案例步骤清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "现行默认 preset（≥2.1.864）主模型为 juggernautXL，Refiner 为 not used；笔记把 Base→Refiner 80% 写成默认流程已过时，需加版本限定或改成可选能力。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「自动下载 SDXL refiner ~6GB」与当前默认下载清单不符。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者 lllyasviel / ControlNet / Forge / 来源 GitHub 正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 与坑 5 按「默认开 Refiner」写，跟当前默认关闭 Refiner 冲突，跟做会误导；应改成历史/可选两阶段，并更新首次下载目录。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "采样器 dpmpp_2m_sde_gpu + karras、prompt expansion、ldm_patched fork 仍正确；适用边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "傻瓜机 vs 单反类比极贴；Gradio/CFG/scheduler 有语境，案例步骤清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "现行默认 preset（≥2.1.864）主模型为 juggernautXL，Refiner 为 not used；笔记把 Base→Refiner 80% 写成默认流程已过时，需加版本限定或改成可选能力。",
+        "案例 1「自动下载 SDXL refiner ~6GB」与当前默认下载清单不符。",
+        "作者 lllyasviel / ControlNet / Forge / 来源 GitHub 正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 与坑 5 按「默认开 Refiner」写，跟当前默认关闭 Refiner 冲突，跟做会误导；应改成历史/可选两阶段，并更新首次下载目录。",
+        "采样器 dpmpp_2m_sde_gpu + karras、prompt expansion、ldm_patched fork 仍正确；适用边界清楚。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": [],
+    "note": "按 ≥2.1.864 默认 preset 修正：Refiner 默认关闭；案例1下载清单与案例4改为可选两阶段；坑5同步。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 151,
+    "reasons": []
+  }
+}
