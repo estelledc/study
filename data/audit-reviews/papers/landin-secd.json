@@ -1,0 +1,120 @@
+{
+  "slug": "landin-secd",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房四抽屉类比贯穿全文；案例 1 状态机逐步清楚。案例 3 的 30 行 Python 对零基础偏密，但有指令序列可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Landin 1964 / SECD 四寄存器 / CEK·CESK 简化主线正确。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「OCaml / Haskell / Scheme 的虚拟机都是 SECD 的工程化变体」过满：Haskell 的 STG 是懒求值另起炉灶，不宜与 ZINC 并列成 SECD 变体；应改成「不少函数式语言 bytecode VM（如 OCaml ZINC）可追溯到 SECD」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里「Standard ML —— 第一个 SECD 思想落地的工业语言」过满：更直接的落地是 Lispkit 等；SML 宜改成「类型系统与 SECD 求值机常一起出现在函数式实现课」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "secd_step 教学最小化正确（含 LDF 参数名与 RTN）；AP 弹栈顺序、Dump、CBV 踩坑具体；适用边界（Krivine/STG/CEK/SSA）清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "厨房四抽屉类比贯穿全文；案例 1 状态机逐步清楚。案例 3 的 30 行 Python 对零基础偏密，但有指令序列可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Landin 1964 / SECD 四寄存器 / CEK·CESK 简化主线正确。",
+        "「OCaml / Haskell / Scheme 的虚拟机都是 SECD 的工程化变体」过满：Haskell 的 STG 是懒求值另起炉灶，不宜与 ZINC 并列成 SECD 变体；应改成「不少函数式语言 bytecode VM（如 OCaml ZINC）可追溯到 SECD」。",
+        "关联里「Standard ML —— 第一个 SECD 思想落地的工业语言」过满：更直接的落地是 Lispkit 等；SML 宜改成「类型系统与 SECD 求值机常一起出现在函数式实现课」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "secd_step 教学最小化正确（含 LDF 参数名与 RTN）；AP 弹栈顺序、Dump、CBV 踩坑具体；适用边界（Krivine/STG/CEK/SSA）清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 186,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 186,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}
