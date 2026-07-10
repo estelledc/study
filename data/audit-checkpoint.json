@@ -1,0 +1,10 @@
+{
+  "round_n": 0,
+  "total": 1975,
+  "audited": 0,
+  "failed": 0,
+  "pending": 1975,
+  "by_status": { "pending": 1975 },
+  "next_action": "start-audit-round-1",
+  "updated_at": null
+}

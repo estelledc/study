@@ -21,6 +21,9 @@ export const STATUS_MD_PATH = path.join(DATA_DIR, 'STATUS.md');
 export const PIPELINE_EVENTS_PATH = path.join(DATA_DIR, 'pipeline-events.jsonl');
 export const ROUND_LOCK_PATH = path.join(DATA_DIR, 'round-lock.json');
 export const CHECKPOINT_PATH = path.join(DATA_DIR, 'checkpoint.json');
+export const AUDIT_POOL_PATH = path.join(DATA_DIR, 'audit-pool.jsonl');
+export const AUDIT_CHECKPOINT_PATH = path.join(DATA_DIR, 'audit-checkpoint.json');
+export const AUDIT_REVIEWS_DIR = path.join(DATA_DIR, 'audit-reviews');
 
 export function docsAreaDir(area) {
   if (area === 'papers') return PAPERS_DIR;
