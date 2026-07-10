@@ -1,0 +1,21 @@
+scripts/lib/merge-review-companion.test.mjs
+  s_fb84f4ced64b36::t_ab537f01f223d6 141-149
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "adf70a9df4beaa5cd2fc2f2643eb391d4d0e063a",
+  "prompts": {},
+  "sessions": {
+    "s_fb84f4ced64b36": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_fb84f4ced64b36",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
