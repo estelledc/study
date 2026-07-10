@@ -8,7 +8,7 @@ title: Docker — 容器化平台
 
 ## 是什么
 
-Docker 是一套**把应用和它的依赖打包成"集装箱"**的工具。任何机器只要装了 Docker，就能原封不动地跑这个集装箱，不管底层是 Linux、Mac 还是 Windows。
+Docker 是一套**把应用和它的依赖打包成"集装箱"**的工具。只要目标机器支持对应的操作系统和 CPU 架构，就能用同一套镜像启动同一套环境；Mac / Windows 通常是通过一层 Linux 虚拟机来跑 Linux 容器。
 
 日常类比：**以前部署像搬家**——你要把每件家具一件件搬到新房，到了发现插座不对、墙壁颜色不一样、空调装不上。**Docker 像搬集装箱**——家具一起进集装箱，整个箱子搬到新房，打开门就和老房一模一样。
 
@@ -26,10 +26,10 @@ docker run -e POSTGRES_PASSWORD=pass -p 5432:5432 postgres
 
 - 为什么"应用打包"从天级变成了分钟级——以前一台新机器装环境一整天，现在 `docker run` 一行搞定
 - 为什么 CI/CD 标准化了——开发、测试、生产环境跑的是同一个镜像，"在我这能跑"这句话彻底失效
-- 为什么 Kubernetes 时代的基石是 Docker——K8s 调度的最小单元就是容器，没有 Docker 就没有 K8s
+- 为什么 Kubernetes 时代离不开 Docker 带火的镜像模型——K8s 调度的最小单元是 Pod，但 Pod 里跑的仍是容器镜像
 - 为什么 Docker Hub 上 100k+ 镜像彻底改变了软件分发——从"下载安装包"变成"docker pull"
 
-简单说：**这是过去 12 年开发者工具最重要的一次范式转变**，把"环境配置"这个永恒头痛从开发者日常移除。
+简单说：**这是过去十多年开发者工具最重要的一次范式转变**，把"环境配置"这个永恒头痛从开发者日常移除。
 
 ## 核心要点
 
@@ -65,8 +65,8 @@ docker run -e POSTGRES_PASSWORD=pass -p 5432:5432 postgres
 ```dockerfile
 FROM node:20
 WORKDIR /app
-COPY package.json .
-RUN npm install
+COPY package.json package-lock.json ./
+RUN npm ci
 COPY . .
 CMD ["node", "index.js"]
 ```
@@ -75,8 +75,8 @@ CMD ["node", "index.js"]
 
 - `FROM node:20` —— 基于官方 Node.js 20 镜像（已经装好 node 和 npm）
 - `WORKDIR /app` —— 后续指令都在容器内 `/app` 目录执行
-- `COPY package.json .` —— 先只拷依赖清单，让 `npm install` 这一层能被缓存
-- `RUN npm install` —— 装依赖，结果固化成一层
+- `COPY package.json package-lock.json ./` —— 先只拷依赖清单，让安装依赖这一层能被缓存
+- `RUN npm ci` —— 按 lockfile 精确安装依赖，结果固化成一层
 - `COPY . .` —— 再拷源码（源码改动不会触发重装依赖）
 - `CMD ["node", "index.js"]` —— 容器启动时执行的命令
 
@@ -140,7 +140,8 @@ docker compose up -d
 - **2013 年**：Solomon Hykes 在 PyCon 上演示 Docker，5 分钟讲完——"Docker 是 Linux 容器的便携式运行时"。当晚社区炸了。
 - **2014 年**：Docker Inc 成立，Docker Hub 上线，开始大规模商业化。
 - **2017 年**：Kubernetes 在容器编排之战中击败 Docker Swarm，Docker 转型为"容器开发体验"工具，编排让位给 K8s。
-- **2020 年**：Docker 把开源核心运行时拆成 containerd（捐给 CNCF），Docker 自身专注上层用户体验。
+- **2017-2019 年**：Docker 将 containerd 捐给 CNCF，随后 containerd 毕业，成为 Kubernetes 等系统常用的底层运行时。
+- **2020 年以后**：Docker 自身更专注 Docker Desktop、Compose、BuildKit 等上层开发者体验。
 - **2021 年**：Docker Desktop 对大企业（>250 员工或 >1000 万营收）收费，社区震动，OrbStack / Lima / colima 等替代品爆发。
 - **2024 年**：Podman / OrbStack / Lima 成熟，Docker 不再是唯一选择，但 Dockerfile + 镜像格式仍是事实标准（OCI 规范）。
 
@@ -167,3 +168,7 @@ docker compose up -d
 - [[kafka]] —— Kafka 的本地开发环境几乎都是 Docker Compose 起的
 - [[postgresql]] —— Postgres 官方镜像是 Docker Hub 下载量 Top 10
 - [[redis]] —— Redis 也是 `docker run` 一行启动的典型代表
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
