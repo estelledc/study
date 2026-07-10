@@ -1,0 +1,140 @@
+{
+  "slug": "mlir",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "乐高积木 / 翻译接力类比贴合方言与渐进 lowering，开篇能抓住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Dialect / Operation / Region / Block / Attribute 首次出现有人话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例以路径图为主，步骤清楚；Triton 代码可再补一句「这是用户写的 DSL，不是 MLIR 文本」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Lattner et al. arXiv 2002.11054（2020）与 CGO 2021 正式发表应对齐；历史段写「2020 年 2 月：CGO 论文发表」把预印本与会议发表混为一谈"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "方言 / 渐进 lowering / CIRCT / StableHLO / Triton-on-MLIR 与公开文献一致，无硬伤歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「PyTorch 2.x Inductor 引入 MLIR 思路」属软表述可接受；未把 MLIR 说成发明 SSA"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "linalg / Triton / CIRCT 路径概念正确，属教学示意非可编译预期"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：lowering 顺序差 10x、TableGen 报错、文档滞后指向 mlir/test/"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚：DSL→加速器 / 多层降级适用；一次性脚本与纯解释器不适用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "乐高积木 / 翻译接力类比贴合方言与渐进 lowering，开篇能抓住",
+        "Dialect / Operation / Region / Block / Attribute 首次出现有人话桥接",
+        "三案例以路径图为主，步骤清楚；Triton 代码可再补一句「这是用户写的 DSL，不是 MLIR 文本」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 Lattner et al. arXiv 2002.11054（2020）与 CGO 2021 正式发表应对齐；历史段写「2020 年 2 月：CGO 论文发表」把预印本与会议发表混为一谈",
+        "方言 / 渐进 lowering / CIRCT / StableHLO / Triton-on-MLIR 与公开文献一致，无硬伤歪曲",
+        "「PyTorch 2.x Inductor 引入 MLIR 思路」属软表述可接受；未把 MLIR 说成发明 SSA"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "linalg / Triton / CIRCT 路径概念正确，属教学示意非可编译预期",
+        "踩坑具体：lowering 顺序差 10x、TableGen 报错、文档滞后指向 mlir/test/",
+        "适用边界清楚：DSL→加速器 / 多层降级适用；一次性脚本与纯解释器不适用"
+      ]
+    }
+  ],
+  "lines": 165,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "区分 arXiv 2020 预印本与 CGO 2021 正式发表",
+    "sections_modified": [
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  },
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  }
+}

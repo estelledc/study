@@ -1,0 +1,123 @@
+{
+  "slug": "mmlu-2021",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "高考+多资格考混卷类比贴合 57 科多选题，开篇即懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "few-shot / 0-shot / CoT / 数据污染 首次出现有人话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 数字对比清楚；案例 3 命令可跟做，可再补一句「要 GPU/模型权重」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Hendrycks et al. ICLR 2021 (arXiv:2009.03300) 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "15908 题 / 57 科 / GPT-3 43.9% / 人类专家约 89.8% / 随机 25% 与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「emergent ability 最早证据之一」属软表述可接受；未把 MMLU 说成测生成质量"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "hendrycks/test 与 lm-eval --tasks mmlu --num_fewshot 5 概念正确可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：污染、只能测多选、科目等权、约 6% 错标、prompt 差 5-10 分"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界量化清楚：>85% 换 MMLU-Pro；推理/中文/agent 各有替代基准"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "高考+多资格考混卷类比贴合 57 科多选题，开篇即懂",
+        "few-shot / 0-shot / CoT / 数据污染 首次出现有人话桥接",
+        "案例 1/2 数字对比清楚；案例 3 命令可跟做，可再补一句「要 GPU/模型权重」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Hendrycks et al. ICLR 2021 (arXiv:2009.03300) 正确",
+        "15908 题 / 57 科 / GPT-3 43.9% / 人类专家约 89.8% / 随机 25% 与论文一致",
+        "「emergent ability 最早证据之一」属软表述可接受；未把 MMLU 说成测生成质量"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "hendrycks/test 与 lm-eval --tasks mmlu --num_fewshot 5 概念正确可跟做",
+        "踩坑具体：污染、只能测多选、科目等权、约 6% 错标、prompt 差 5-10 分",
+        "适用边界量化清楚：>85% 换 MMLU-Pro；推理/中文/agent 各有替代基准"
+      ]
+    }
+  ],
+  "lines": 157,
+  "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
