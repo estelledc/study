@@ -1,0 +1,98 @@
+{
+  "slug": "gimp",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "透明胶片/厨房接口/流水线类比清楚；三个案例都有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1995 伯克利起源、2.10/GEGL、2025 GIMP 3/GTK3 时间线正确；GitHub 镜像 vs GNOME 主开发说明合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "batch Script-Fu 可跟做；Python/C 插件是教学最小片段；Save vs Export、GIMP 3 API 错位踩坑具体。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "透明胶片/厨房接口/流水线类比清楚；三个案例都有逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "1995 伯克利起源、2.10/GEGL、2025 GIMP 3/GTK3 时间线正确；GitHub 镜像 vs GNOME 主开发说明合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "batch Script-Fu 可跟做；Python/C 插件是教学最小片段；Save vs Export、GIMP 3 API 错位踩坑具体。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 192,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "dwork-dp-icalp-2006",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "班级身高/投票箱类比贴合；案例 2 步骤清楚，案例 1/3 偏叙述但仍可跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "ICALP 2006 命名/定义与 TCC 2006 机制姊妹篇区分正确；普查 ε≈19、Dinur-Nissim 2003 时间线合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "拉普拉斯均值例子敏感度计算正确；组合预算/Local vs Central 踩坑可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "班级身高/投票箱类比贴合；案例 2 步骤清楚，案例 1/3 偏叙述但仍可跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "ICALP 2006 命名/定义与 TCC 2006 机制姊妹篇区分正确；普查 ε≈19、Dinur-Nissim 2003 时间线合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "拉普拉斯均值例子敏感度计算正确；组合预算/Local vs Central 踩坑可操作。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
