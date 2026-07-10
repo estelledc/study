@@ -1,0 +1,106 @@
+{
+  "slug": "fzf",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Cmd+P 类比极贴；Ctrl+R / git 分支 / rg+bat 案例步骤清楚，零基础能跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「是什么」写 2013 年用 Go 写，与「历史小故事」2013 Ruby / 2015 Go 重写自相矛盾，应统一为先 Ruby 后 Go。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「还没出现替代品」过绝对（peco / skim 等存在）；star「60k+」已偏旧，宜弱化或更新。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "shell 集成 / preview / FZF_DEFAULT_COMMAND / 非 TTY 边界可操作；fbr 与 rg|fzf 示例可跟做。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Cmd+P 类比极贴；Ctrl+R / git 分支 / rg+bat 案例步骤清楚，零基础能跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「是什么」写 2013 年用 Go 写，与「历史小故事」2013 Ruby / 2015 Go 重写自相矛盾，应统一为先 Ruby 后 Go。",
+        "「还没出现替代品」过绝对（peco / skim 等存在）；star「60k+」已偏旧，宜弱化或更新。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "shell 集成 / preview / FZF_DEFAULT_COMMAND / 非 TTY 边界可操作；fbr 与 rg|fzf 示例可跟做。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": [],
+    "note": "统一 2013 Ruby→2015 Go 叙事；弱化「无替代品」并更新 star 量级。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 195,
+    "reasons": []
+  }
+}
