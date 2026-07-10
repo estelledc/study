@@ -3,103 +3,274 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const root = process.cwd();
-const docsDir = path.join(root, 'src/content/docs');
-const areas = ['papers', 'projects'];
-const WIKI_RE = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
+import {
+  createAliasIndex,
+  createNoteIndex,
+  extractWikilinks,
+  loadAliasConfig,
+  loadNoteRecords,
+  resolveWikilink,
+  serializeNoteId,
+  slugFromNoteFilename,
+} from './lib/note-id.mjs';
+import { DATA_DIR, DOCS_DIR, ROOT } from './lib/paths.mjs';
 
-function walk(dir, acc = []) {
+export const WIKILINK_CATEGORIES = Object.freeze([
+  'typo',
+  'alias',
+  'planned-note',
+  'external-concept',
+  'intentional-placeholder',
+  'unknown',
+]);
+
+const DEFAULT_BASELINE_PATH = path.join(DATA_DIR, 'wikilink-baseline.json');
+const DEFAULT_ALIAS_PATH = path.join(DATA_DIR, 'wikilink-aliases.json');
+
+function walkMarkdown(dir, acc = []) {
   if (!fs.existsSync(dir)) return acc;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(full, acc);
+    if (entry.isDirectory()) walkMarkdown(full, acc);
     else if (/\.mdx?$/.test(entry.name)) acc.push(full);
   }
   return acc;
 }
 
-function slugFromFile(file) {
-  return path.basename(file).replace(/\.mdx?$/, '');
-}
-
-function fileArea(file) {
-  const rel = path.relative(docsDir, file).replaceAll(path.sep, '/');
-  if (rel.startsWith('papers/')) return 'papers';
-  if (rel.startsWith('projects/')) return 'projects';
+function areaForFile(file, docsDir) {
+  const relative = path.relative(docsDir, file).replaceAll(path.sep, '/');
+  if (relative.startsWith('papers/')) return 'papers';
+  if (relative.startsWith('projects/')) return 'projects';
   return null;
 }
 
-const slugAreas = new Map();
-for (const area of areas) {
-  for (const file of walk(path.join(docsDir, area))) {
-    const slug = slugFromFile(file);
-    if (!slugAreas.has(slug)) slugAreas.set(slug, new Set());
-    slugAreas.get(slug).add(area);
-  }
+function sourceIdForFile(file, docsDir) {
+  const area = areaForFile(file, docsDir);
+  return area ? serializeNoteId(area, slugFromNoteFilename(path.basename(file))) : null;
 }
 
-const duplicates = new Map([...slugAreas.entries()].filter(([, set]) => set.size > 1));
-const problems = [];
-let historicalUnresolved = 0;
+function groupKey(sourceId, target) {
+  return `${sourceId}\0${target}`;
+}
 
-for (const file of walk(docsDir)) {
-  const rel = path.relative(root, file);
-  const area = fileArea(file);
-  const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+export function validateWikilinkBaseline(baseline) {
+  if (baseline?.version !== 1 || !baseline.budgets || !Array.isArray(baseline.groups)) {
+    throw new Error('wikilink baseline must use version 1 with budgets and groups');
+  }
+  const groups = new Map();
+  for (const record of baseline.groups) {
+    if (!record.source_id || !record.target || !Number.isInteger(record.count) || record.count < 1) {
+      throw new Error('wikilink baseline contains an invalid group');
+    }
+    if (!WIKILINK_CATEGORIES.includes(record.category) || !record.owner || !record.decision) {
+      throw new Error(`wikilink baseline group lacks classification ownership: ${record.source_id}`);
+    }
+    const key = groupKey(record.source_id, record.target);
+    if (groups.has(key)) throw new Error(`duplicate wikilink baseline group: ${record.source_id} -> ${record.target}`);
+    groups.set(key, record);
+  }
+  return groups;
+}
 
-  lines.forEach((line, idx) => {
-    for (const match of line.matchAll(WIKI_RE)) {
-      const raw = match[1].trim();
-      const lineNo = idx + 1;
-      const namespaced = raw.match(/^(papers|projects)[\/:]([a-z0-9_-]+)$/);
+function defaultClassification() {
+  return { category: 'unknown', owner: 'content-maintainers', decision: 'triage-required' };
+}
 
-      if (namespaced) {
-        const [, ns, slug] = namespaced;
-        if (!slugAreas.get(slug)?.has(ns)) {
-          problems.push({ file: rel, line: lineNo, raw, reason: `explicit namespace target not found: ${ns}/${slug}` });
+export function auditWikilinks({
+  docsDir,
+  noteRecords,
+  aliasRecords = [],
+  baseline = null,
+  enforceBaseline = true,
+}) {
+  const noteIndex = createNoteIndex(noteRecords);
+  const aliasIndex = createAliasIndex(aliasRecords, noteIndex);
+  const baselineGroups = baseline ? validateWikilinkBaseline(baseline) : new Map();
+  const unresolved = new Map();
+  const blocking = [];
+  const resolutionCounts = { direct: 0, 'same-area': 0, unique: 0, alias: 0 };
+  let occurrences = 0;
+  let namespacedMissing = 0;
+
+  for (const file of walkMarkdown(docsDir)) {
+    const relativeFile = path.relative(ROOT, file).replaceAll(path.sep, '/');
+    const sourceArea = areaForFile(file, docsDir);
+    const sourceId = sourceIdForFile(file, docsDir);
+    const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+
+    lines.forEach((line, index) => {
+      for (const link of extractWikilinks(line)) {
+        occurrences += 1;
+        const stableTarget = link.target || '<empty>';
+        const resolved = resolveWikilink(link.parsed, { sourceArea, noteIndex, aliasIndex });
+        if (resolved.ok) {
+          resolutionCounts[resolved.resolution] = (resolutionCounts[resolved.resolution] || 0) + 1;
+          continue;
         }
-        continue;
-      }
 
-      const knownAreas = slugAreas.get(raw);
-      if (!knownAreas) {
-        if (area) historicalUnresolved += 1;
-        else problems.push({ file: rel, line: lineNo, raw, reason: 'top-level docs wikilink target not found' });
-        continue;
-      }
+        const problem = {
+          file: relativeFile,
+          line: index + 1,
+          target: stableTarget,
+          reason: resolved.reason,
+        };
+        if (link.parsed.kind === 'explicit') namespacedMissing += 1;
+        if (!sourceId || link.parsed.kind === 'explicit') {
+          blocking.push(problem);
+          continue;
+        }
 
-      // 历史笔记里的 bare duplicate 继续按当前 area 解析，避免为此
-      // 批量改写 1900+ 篇。顶层产品页没有 area 上下文，必须显式消歧。
-      if (duplicates.has(raw) && !area) {
-        problems.push({
-          file: rel,
-          line: lineNo,
-          raw,
-          reason: `ambiguous top-level wikilink; candidates=${[...knownAreas].join(', ')}; use [[projects/${raw}|…]] or [[papers/${raw}|…]]`,
-        });
+        const key = groupKey(sourceId, stableTarget);
+        if (!unresolved.has(key)) {
+          const classification = baselineGroups.get(key) || defaultClassification();
+          unresolved.set(key, {
+            source_id: sourceId,
+            target: stableTarget,
+            count: 0,
+            category: classification.category,
+            owner: classification.owner,
+            decision: classification.decision,
+          });
+        }
+        unresolved.get(key).count += 1;
+      }
+    });
+  }
+
+  const groups = [...unresolved.values()].sort((a, b) =>
+    a.source_id.localeCompare(b.source_id) || a.target.localeCompare(b.target));
+  const categories = Object.fromEntries(WIKILINK_CATEGORIES.map((category) => [category, 0]));
+  for (const group of groups) categories[group.category] += group.count;
+  const unresolvedOccurrences = groups.reduce((sum, group) => sum + group.count, 0);
+  const duplicates = [...noteIndex.bySlug.entries()]
+    .filter(([, areas]) => areas.size > 1)
+    .map(([slug, areas]) => ({ slug, areas: [...areas.keys()].sort() }));
+  const budgetFailures = [];
+
+  if (enforceBaseline) {
+    if (!baseline) {
+      budgetFailures.push({ reason: 'wikilink baseline is missing' });
+    } else {
+      const budgets = baseline.budgets;
+      if (unresolvedOccurrences > budgets.unresolved_occurrences) {
+        budgetFailures.push({ reason: 'unresolved occurrence budget grew', current: unresolvedOccurrences, baseline: budgets.unresolved_occurrences });
+      }
+      if (categories.unknown > budgets.unknown_occurrences) {
+        budgetFailures.push({ reason: 'unknown occurrence budget grew', current: categories.unknown, baseline: budgets.unknown_occurrences });
+      }
+      for (const group of groups) {
+        const previous = baselineGroups.get(groupKey(group.source_id, group.target));
+        if (!previous || group.count > previous.count) {
+          budgetFailures.push({
+            reason: previous ? 'historical unresolved group grew' : 'new unresolved group',
+            source_id: group.source_id,
+            target: group.target,
+            current: group.count,
+            baseline: previous?.count || 0,
+          });
+        }
       }
     }
+  }
+
+  const summary = {
+    notes: noteIndex.byId.size,
+    wikilink_occurrences: occurrences,
+    resolved_occurrences: Object.values(resolutionCounts).reduce((sum, count) => sum + count, 0),
+    alias_resolved_occurrences: resolutionCounts.alias,
+    unresolved_occurrences: unresolvedOccurrences,
+    unresolved_unique_groups: groups.length,
+    categories,
+    duplicate_slugs: duplicates.length,
+    blocking: blocking.length,
+    namespaced_missing: namespacedMissing,
+    budget_failures: budgetFailures.length,
+  };
+
+  return {
+    valid: blocking.length === 0 && budgetFailures.length === 0,
+    summary,
+    resolution_counts: resolutionCounts,
+    duplicates,
+    blocking,
+    budget_failures: budgetFailures,
+    unresolved_groups: groups,
+  };
+}
+
+export function baselineFromAudit(result, { sourceCommit = null } = {}) {
+  return {
+    version: 1,
+    source_commit: sourceCommit,
+    budgets: {
+      blocking: 0,
+      namespaced_missing: 0,
+      unresolved_occurrences: result.summary.unresolved_occurrences,
+      unknown_occurrences: result.summary.categories.unknown,
+    },
+    groups: result.unresolved_groups,
+  };
+}
+
+function parseArgs(argv) {
+  const args = { json: false, writeBaseline: null, sourceCommit: null };
+  for (let index = 2; index < argv.length; index += 1) {
+    const arg = argv[index];
+    if (arg === '--json') args.json = true;
+    else if (arg === '--write-baseline') args.writeBaseline = argv[++index];
+    else if (arg === '--source-commit') args.sourceCommit = argv[++index];
+    else throw new Error(`unknown argument: ${arg}`);
+  }
+  return args;
+}
+
+export function runWikilinkAudit({
+  docsDir = DOCS_DIR,
+  baselinePath = DEFAULT_BASELINE_PATH,
+  aliasPath = DEFAULT_ALIAS_PATH,
+  json = false,
+  writeBaseline = null,
+  sourceCommit = null,
+  silent = false,
+} = {}) {
+  const noteRecords = loadNoteRecords({ docsDir });
+  const aliasRecords = loadAliasConfig(aliasPath);
+  const baseline = fs.existsSync(baselinePath) ? JSON.parse(fs.readFileSync(baselinePath, 'utf8')) : null;
+  const result = auditWikilinks({
+    docsDir,
+    noteRecords,
+    aliasRecords,
+    baseline: writeBaseline ? null : baseline,
+    enforceBaseline: !writeBaseline,
   });
-}
 
-if (duplicates.size) {
-  console.log('[audit:wikilinks] Duplicate slugs across papers/projects:');
-  for (const [slug, set] of duplicates) {
-    console.log(`- ${slug}: ${[...set].join(', ')}`);
+  if (writeBaseline) {
+    if (result.summary.blocking > 0 || result.summary.namespaced_missing > 0) {
+      throw new Error('refusing to write a baseline with blocking wikilink issues');
+    }
+    fs.writeFileSync(writeBaseline, `${JSON.stringify(baselineFromAudit(result, { sourceCommit }), null, 2)}\n`, 'utf8');
   }
-}
 
-if (historicalUnresolved) {
-  console.log(`[audit:wikilinks] Note: ${historicalUnresolved} unresolved wikilink(s) remain inside papers/projects and render as broken spans.`);
-}
-
-if (problems.length) {
-  console.error(`\n[audit:wikilinks] Found ${problems.length} blocking wikilink issue(s):\n`);
-  for (const p of problems) {
-    console.error(`- ${p.file}:${p.line} [[${p.raw}]] :: ${p.reason}`);
+  if (!silent && json) console.log(JSON.stringify(result, null, 2));
+  else if (!silent) {
+    console.log(
+      `[audit:wikilinks] notes=${result.summary.notes} unresolved=${result.summary.unresolved_occurrences} ` +
+      `unknown=${result.summary.categories.unknown} blocking=${result.summary.blocking} ` +
+      `budget_failures=${result.summary.budget_failures}`,
+    );
+    if (!result.valid) {
+      for (const problem of result.blocking) {
+        console.error(`- ${problem.file}:${problem.line} target=${problem.target} :: ${problem.reason}`);
+      }
+      for (const failure of result.budget_failures.slice(0, 20)) {
+        console.error(`- ${failure.reason}${failure.source_id ? `: ${failure.source_id} -> ${failure.target}` : ''}`);
+      }
+    }
   }
-  console.error('\nUse an explicit Markdown URL or slash namespace. For React/ReAct use [[projects/react|React]] and [[papers/react|ReAct]]. Colon namespace syntax remains supported for existing notes.');
-  process.exit(1);
+  if (!result.valid) process.exitCode = 1;
+  return result;
 }
 
-console.log('[audit:wikilinks] OK: no blocking ambiguous or unresolved top-level wikilinks detected.');
+if (import.meta.url === `file://${process.argv[1]}`) {
+  runWikilinkAudit(parseArgs(process.argv));
+}

@@ -1,0 +1,3944 @@
+{
+  "schema_version": "1.0",
+  "summary": {
+    "assets": 432,
+    "bytes": 37527185,
+    "referenced": 3,
+    "legacy_unreferenced": 429,
+    "duplicate_hash_groups": 5
+  },
+  "assets": [
+    {
+      "path": "public/favicon.svg",
+      "sha256": "ee1fb54ab68b23a415a71ba89244c2423da787c62e71f10ed1fd86d785d976ca",
+      "bytes": 337,
+      "width": 64,
+      "height": 64,
+      "format": "svg",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/3d-gaussian-splatting/01-architecture.webp",
+      "sha256": "ddd55e92baf1859c041966782484276cdae47af8d3b51e6a96756ea1c7543360",
+      "bytes": 107454,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/3d-gaussian-splatting/02-evolution.webp",
+      "sha256": "c62b0975cacc0ab17d7e6e3cfb1aec1d88e8ffa8a8ff5b89b65615eb4f8e0638",
+      "bytes": 100586,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/activation-patching/01-flow.webp",
+      "sha256": "e88034d2ccc000601f098f9984938909a8dd8968e4411267818e22805718216a",
+      "bytes": 18884,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/activation-patching/02-lineage.webp",
+      "sha256": "7972b4f8a5907d0a8cab2afbeeb4c554c7818a540f2717ce5e0e7e58e58e6bc7",
+      "bytes": 18448,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/adapton/01-eager-vs-lazy.webp",
+      "sha256": "175a28f0fbfe9d80d6da78a856142cf4272e7180cd758927d11e73e4e7aacdea",
+      "bytes": 121528,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/adapton/01-evolution.webp",
+      "sha256": "175a28f0fbfe9d80d6da78a856142cf4272e7180cd758927d11e73e4e7aacdea",
+      "bytes": 121528,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/adapton/02-adapton-primitives.webp",
+      "sha256": "ed31bad7837324a3509f1af7ce590b20646a024cae549b6c78b16da477adde30",
+      "bytes": 72336,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/aes/01-rounds.webp",
+      "sha256": "de0372c9c753672bcc481bb751ea49dae8c8ec19398328fe0703b67fe52ca32e",
+      "bytes": 25460,
+      "width": 900,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/agentless/01-pipeline.webp",
+      "sha256": "1d33178506a286000fa9523cc59f6a33df93857dff7c1e4dcd5074abee080675",
+      "bytes": 115144,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/agentless/02-lineage.webp",
+      "sha256": "9559786c8f171859e51b8e01a99b0bea5471a6620cecd1a58ff3300f83b28532",
+      "bytes": 95324,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/algol-60/01-bnf-grammar.webp",
+      "sha256": "633e57e72bcee68900e5a8c9f21fa5cd67ea69f16773afc8c285e77bf31b6d8c",
+      "bytes": 54000,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/alphago/01-three-networks.webp",
+      "sha256": "2f1c2d6a6568d3b6d8ee3ab6850cbaf086952c957385980017063496261abebe",
+      "bytes": 48294,
+      "width": 1100,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/alphago/02-mcts.webp",
+      "sha256": "6e0a0fde9c4c268a3856c4f8f116dbf1c51f96c1e00a9bdaca8b7b5924d47caa",
+      "bytes": 48916,
+      "width": 1100,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/anthropic-circuits/01-residual-qk-ov.webp",
+      "sha256": "28f6145a75824e97f1ba94de747499f7c9fb7346e841100a7da28bf5ab38c8d1",
+      "bytes": 107746,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/anthropic-circuits/02-evolution.webp",
+      "sha256": "9144d961b6f7d73dfde3d1d20c33cdc35cdd1af077320a617e71f11f6f779e72",
+      "bytes": 140394,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/attention/01-transformer-block.webp",
+      "sha256": "7418110cc9e190e120c43e1e6cfe1bcbbe03f8ae39b7fe971c517bbba976e518",
+      "bytes": 37792,
+      "width": 1200,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/attention/02-attention-formula.webp",
+      "sha256": "569681edb1222a3edae326c9872fc56175952618c4e550b2f72b095d630529f3",
+      "bytes": 45046,
+      "width": 1200,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/aurora/01-architecture.webp",
+      "sha256": "3bc742e4f12047cd7f9c141c6de0a7ebcbadf23a1f3b3407d0d86c71ea1d3534",
+      "bytes": 96358,
+      "width": 1400,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/aurora/02-genealogy.webp",
+      "sha256": "b2d339ef4654ebc2473750d401aa6a39b3d514787339b54525ea6f2c06cdd21d",
+      "bytes": 85156,
+      "width": 1400,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/autogen/01-architecture.webp",
+      "sha256": "37f78535ff09da01ffbb5f48d501b57aaadcca2ccf189ce9dd2268a113c5d847",
+      "bytes": 82058,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/autogen/02-lineage.webp",
+      "sha256": "5ddf45a33b4fab9436c63effadba6d3e114bcdb292e95633384147a10cf37645",
+      "bytes": 81312,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/beck-tdd/01-red-green-refactor.webp",
+      "sha256": "35d0e80cc0bda076a6988995fa6b8f77ce264c527d881f8f7bf0a6b4579ad8a6",
+      "bytes": 39982,
+      "width": 1400,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/bert/01-pretrain-finetune.webp",
+      "sha256": "1969f5f5a6fec013764943b149c4d53992838e7e79751bd2d7c3b5cc65152617",
+      "bytes": 56940,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/bert/02-bert-vs-gpt.webp",
+      "sha256": "b53c79dc630e8296211c4b8800d7d6c174f9aacc320dd13d5262a9f5d79db85a",
+      "bytes": 46678,
+      "width": 1200,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/bidirectional-typing/01-check-vs-infer.webp",
+      "sha256": "df39cd2306d7b27b06d65abd193a0a166562bd91b34af0fb3207067be13e779a",
+      "bytes": 80270,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/bidirectional-typing/02-lineage-tree.webp",
+      "sha256": "860d41b6fcfbcd6fcfb821b2fff8903d6887c415fc8710522c9ef61814224b5c",
+      "bytes": 111950,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/bigtable/01-data-model.webp",
+      "sha256": "c080b29dfaca05f159f6e72b9f7c02f6937ef5540f2da2711a62c1ce08cc4d63",
+      "bytes": 34760,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/bigtable/02-architecture.webp",
+      "sha256": "cb830fffc779b6a9eceb18d2c5cb4ba1a852366607af1c408b8750156e4a6b60",
+      "bytes": 47432,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/bitcoin/01-pow-blockchain.webp",
+      "sha256": "2d47e9317dd4a2f0baaec6d8a41ab37152e42373bd98a4decd6c4a91e6a78646",
+      "bytes": 86676,
+      "width": 1400,
+      "height": 1140,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/boehm-gc/01-conservative-gc-workflow.webp",
+      "sha256": "8e2512f50c36436a5f492fa3af0d7715ec02950a86647f0da76e5d18cfaa1f53",
+      "bytes": 17436,
+      "width": 900,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/boehm-gc/02-genealogy.webp",
+      "sha256": "0d16231105c803611e3b12494dd5faf3b2ef5dd15627608373af73d24826603f",
+      "bytes": 16270,
+      "width": 900,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/borg/01-borg-architecture.webp",
+      "sha256": "5f10f1c9977d8a3bdb1ab695e5487194fc4f5ed8668e104e79f8f700b13f7c42",
+      "bytes": 55850,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/borg/02-k8s-genealogy.webp",
+      "sha256": "246917fd2afa44c2885b1301b9f7b74d7dcf00d4e5dd49891fab1f5939aa70ad",
+      "bytes": 51280,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/calvin/01-architecture.webp",
+      "sha256": "fae62d482ec773c266c60e4122e8e6c3b90ae49d73d2ce77f72c61109d8f7cce",
+      "bytes": 65630,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/calvin/02-genealogy.webp",
+      "sha256": "09f9dbeba1f2fad94f437456988080a345bf0425e1af097e384803211730eade",
+      "bytes": 89924,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/causal-abstraction/01-causal-abstraction-diagram.webp",
+      "sha256": "184e9aa59ccf7a4591e2e2b312ab61bf114db6babf27d07d8bcbe337bcd258ae",
+      "bytes": 86650,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/causal-abstraction/02-lineage-factions.webp",
+      "sha256": "e417c5f6ebc6530ab1c2da5850ab05f9203d669ddf5b518c0e73a38f0064169e",
+      "bytes": 106060,
+      "width": 1600,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/cheney-gc/01-algorithm-steps.webp",
+      "sha256": "25e6826244676466bd87124c50e57bf03fa0422039a5ae54dcf59ee7c675ad7c",
+      "bytes": 20164,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/cheney-gc/02-genealogy.webp",
+      "sha256": "f02c8aa1faf7596f6081886df281db38c71e2d92ff79b6a48f40a0e96da62bab",
+      "bytes": 17682,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/chinchilla/01-three-methods.webp",
+      "sha256": "e99cf325608d7628bbd96f6c00ded911ab10454b6ef5effa632b1460d6ec3540",
+      "bytes": 84708,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/chinchilla/02-evolution-tree.webp",
+      "sha256": "00824a7584678eea3a1eae9c02799c52e492412af61200dda0423eff2076c9d5",
+      "bytes": 95260,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/chubby/01-architecture.webp",
+      "sha256": "23f1f2f740a200cd7e6470fe2271c5b337ef45148518dd7fec3b79113e55ad5b",
+      "bytes": 49906,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/chubby/02-api.webp",
+      "sha256": "4fe130195891eb5d10a14942a35510ec08da37bc4130a82809aa3f9316e7ec45",
+      "bytes": 52466,
+      "width": 1200,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ci-effects/01-ci-tradeoffs.webp",
+      "sha256": "3da722dd5d5bf6575744f147257afb6b0b848d4e61961e3ac1d2a1a8ef62dd03",
+      "bytes": 182388,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ci-effects/02-evolution-tree.webp",
+      "sha256": "65f2afa9efd64e9a604ecd909ba5700435b39cc5a222f136779371d51498ad78",
+      "bytes": 117484,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/clickhouse/01-architecture.webp",
+      "sha256": "39729a97170b03bc38c1db52009260eac0210e6b74cf178c2f7af66c69c66c7f",
+      "bytes": 78692,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/clickhouse/02-genealogy.webp",
+      "sha256": "a697972f57243ad432b008b0bf7406d179df240dfd82c8155a9f8d932093cba8",
+      "bytes": 78556,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/clip/01-contrastive-pretraining.webp",
+      "sha256": "058b2e47ea36e3ef095af38bb54f99b1455b3505e6e8f73645081b3fcba702a3",
+      "bytes": 28494,
+      "width": 1024,
+      "height": 704,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/clip/01-dual-tower.webp",
+      "sha256": "8d69d7a46f9b88c70952c68af29774b41f186cf14f17757577ca95dbcdd0f5ec",
+      "bytes": 76260,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/clip/02-evolution.webp",
+      "sha256": "baf736824e76b2135168f5be0cc7df896c233209781027ef856342369bb5471a",
+      "bytes": 118124,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/clip/02-zero-shot.webp",
+      "sha256": "e41187134a578e92973da3d2f5fd5c962f94a3e2611f02331acb3aea3e3f3f92",
+      "bytes": 33842,
+      "width": 1024,
+      "height": 656,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/cognitive-load-theory/01-three-loads.webp",
+      "sha256": "4ee2e5244e6676fd41026a5958fe638d5b754a7d559f26471ea451a99dd0cc81",
+      "bytes": 51532,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/cognitive-load-theory/02-influence-tree.webp",
+      "sha256": "3926309d9f7ffc0e2dd85d431416c043010b90077367aa9f54916d65d41e0669",
+      "bytes": 57554,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/compiler-errors/01-eye-tracking.webp",
+      "sha256": "452c1bf3087ef32f44e385c9fe582776fc25d149904230789370d81c7e16c2f3",
+      "bytes": 141126,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/compiler-errors/02-error-ux-evolution.webp",
+      "sha256": "30ccef6058f426d4aa6701440636903c127dcd1cbc0afc3ac205c5f540d959df",
+      "bytes": 127950,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/constitutional-ai/01-cai-pipeline.webp",
+      "sha256": "4128dd0bd0a2c8bf82e75de90b70024dc0808eb87c4d6903edbf1f0e8cfe0de2",
+      "bytes": 146420,
+      "width": 2400,
+      "height": 1500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/constitutional-ai/02-cai-lineage.webp",
+      "sha256": "1ce5f34b4c4aa3093b3bebd8d2eb29179617fb92b5c1a47bf60825bdec9816c5",
+      "bytes": 134548,
+      "width": 2400,
+      "height": 1500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/cook-levin/01-sat-reduction.webp",
+      "sha256": "0ccf10f11c2a8272983b77683b548a785cf6fa8ebf99a21e8bc599e613a51558",
+      "bytes": 59422,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/copilot-rct/01-rct-design.webp",
+      "sha256": "3a242001651d5f1871df93239d3a2d74f7709f9978f62b8d5bab97adb0592f3d",
+      "bytes": 76082,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/copilot-rct/02-evolution-tree.webp",
+      "sha256": "705da68535b074695d3b68c40814d70da4c47b94d1d31c8d08fc5f1016b80963",
+      "bytes": 98248,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/cot/01-standard-vs-cot.webp",
+      "sha256": "13cec8013532d236914d2860c880c410ce04ea69b0bc504576bb5910985da694",
+      "bytes": 127770,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/cot/02-evolution-tree.webp",
+      "sha256": "3e244d8f786f1ed5050eb2031f363e3ed3a8147def5df2513a7a59e5c42e9e38",
+      "bytes": 56298,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/crdt-json/01-data-model.webp",
+      "sha256": "9f5c2c4d05de1b9e072377092759eba9593bd90b773e209888641a2308dc0880",
+      "bytes": 162844,
+      "width": 1800,
+      "height": 1300,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/crdt-json/02-genealogy.webp",
+      "sha256": "217943b65c86bf3750fc0c56a12b008030dc5145167091a0b6b11f1992585dd0",
+      "bytes": 164594,
+      "width": 1800,
+      "height": 1300,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dalle-2/01-unclip-pipeline.webp",
+      "sha256": "28d70f8fad3aa923db7ae3728a1749f92e9b84f87fe7ac83c4183c5092aaab36",
+      "bytes": 33814,
+      "width": 1200,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dalle-2/02-prior-comparison.webp",
+      "sha256": "868b991d924740d83803e29e3557cfa6731e46914c71a2636db618bbd3409a0b",
+      "bytes": 35054,
+      "width": 1100,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ddpm/01-forward-reverse.webp",
+      "sha256": "a2e45e0d79d059b09254b089ddb1a315f80d23b064ec01fd8b5de396ae8de90f",
+      "bytes": 89872,
+      "width": 1400,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ddpm/02-loss-derivation.webp",
+      "sha256": "aabcbe93ecfe0fa69b520d9fd08953dc7200a086fac166611626ce5743868f6a",
+      "bytes": 65500,
+      "width": 1300,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/debugging-dichotomy/01-debug-distribution.webp",
+      "sha256": "66c6e6bbad980d241416b030a20f348ccc47c96b2771b0aafacf66fc080c5331",
+      "bytes": 88812,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/debugging-dichotomy/02-lineage-tree.webp",
+      "sha256": "265cb0aa09e6158e273f2a1de8fb1ab14d622a9a45710c48de96fca8896dd837",
+      "bytes": 120388,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/deepseek-r1/01-pipeline.webp",
+      "sha256": "21e78072df56db34c0af13edb1898995a068cc1ab0b96f489feb0363151cb6e6",
+      "bytes": 80406,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/deepseek-r1/02-lineage.webp",
+      "sha256": "039975fd96cc902582437536a8cf639cc2a059a3584f78fa37069031d08cfe9c",
+      "bytes": 93694,
+      "width": 1500,
+      "height": 950,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/deepspeed-zero/01-stages.webp",
+      "sha256": "42333d064b9acdddbd971106213169a3e56a9e6fa463d50c7cd6f10ee3ff5468",
+      "bytes": 19922,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/deepspeed-zero/02-genealogy.webp",
+      "sha256": "1a7ab2d8249b3893913c5303e943b15787b9dbfd37deb803c5b2eae6ef77f3b0",
+      "bytes": 16560,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/diffie-hellman/01-key-exchange.webp",
+      "sha256": "296cda6be42d6defd4edc2bf070f9600bd8b3512e73a7b054f29936b9114ab34",
+      "bytes": 94448,
+      "width": 1600,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dijkstra-goto/01-control-flow.webp",
+      "sha256": "1bf1057e598a1ff14e9e5376dc5976d544877b9d03e11ea2ab5f6c06bd2a935c",
+      "bytes": 93302,
+      "width": 1800,
+      "height": 1080,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dijkstra-shortest-path/01-relaxation.webp",
+      "sha256": "d4026c2a2c1d577755d885922d0e63912897007615bd4492e8f2c463bb3b7e3c",
+      "bytes": 45192,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dino/01-self-distillation.webp",
+      "sha256": "b24e69e4b691972adc57b03664b867aa5f273d684b4a7468ebcaa6a7d5341e7a",
+      "bytes": 41806,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dino/02-attention-emergence.webp",
+      "sha256": "246290ebd0c0fb03ff9d00aec15b581f393d909ffc9b8dde7aa4b470994a998f",
+      "bytes": 50850,
+      "width": 1500,
+      "height": 850,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dit/01-architecture.webp",
+      "sha256": "518d4c5469eee9918e51927801baf2725fc7773ea842a3bf67c6a8794864f997",
+      "bytes": 81284,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dit/02-scaling.webp",
+      "sha256": "456758a52688d579180de7eb421c03dab7a886d3433fe27d909745b20051bc9b",
+      "bytes": 45562,
+      "width": 1240,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dns/01-hierarchy.webp",
+      "sha256": "f39c7c6bf4db5985e04da65424bbcf47bcc5222e07daacaefcc28a864168fb60",
+      "bytes": 49958,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dns/02-recursive-iterative.webp",
+      "sha256": "dd489d185ad592958848e56d017fe40cd5a76adcb6eb92e2cc88cd46abf3a703",
+      "bytes": 82198,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dpo/01-rlhf-vs-dpo.webp",
+      "sha256": "266761bb88d8278762f98f56a291176c142ed48776784a63bde93c026222f0a5",
+      "bytes": 71508,
+      "width": 1400,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dpo/02-loss-derivation.webp",
+      "sha256": "53964db628926f8d60b67c428694a97a4c512c3bb272b3b3c2c64cdc0b165dc1",
+      "bytes": 85002,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dqn/01-architecture.webp",
+      "sha256": "b7643f713a1059e17e15ef811de72c145e630a0ee5116dfb1c856e631416ff3a",
+      "bytes": 36592,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dqn/02-atari-results.webp",
+      "sha256": "a2e2eb7a934138f23ce00b455fac77406278ab27f3b3ccd444842c745a298ad0",
+      "bytes": 34350,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dynamo/01-consistent-hashing.webp",
+      "sha256": "07fad03f30a4793141976c60ede2d3557bc506d17291cc981baad74a12b67265",
+      "bytes": 43126,
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dynamo/01-four-techniques.webp",
+      "sha256": "1dc63b849d58864824889119a877661d8e96593b2b6a5b3ea7e3a2671022b77f",
+      "bytes": 92114,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/dynamo/02-vector-clocks.webp",
+      "sha256": "273f1b804275de04c3cb8b200bf766bbfdc29cda2ac088a6f74a482ea1de565e",
+      "bytes": 56042,
+      "width": 1280,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ebpf/01-architecture.webp",
+      "sha256": "471d894c7a1327d31a72c974d9b62fd8ad74135c4162772d7d0144d94a0edad3",
+      "bytes": 91782,
+      "width": 1700,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ebpf/02-hooks.webp",
+      "sha256": "a73389896eb15c7a6009f82df84124397812df83b3ea297fdf6667ecd40f3c88",
+      "bytes": 104702,
+      "width": 1700,
+      "height": 950,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/effect-handlers/01-handler-workflow.webp",
+      "sha256": "074f89a7a27edc800aa1e89a75c654820a3932d04e59a0e5b2c39a6c020a7183",
+      "bytes": 99674,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/effect-handlers/02-influence-tree.webp",
+      "sha256": "cb7012f66f6f47ee07d8bf4dfc620f8aaaddcaa9c3121c75ebc5f2f106aca52e",
+      "bytes": 143688,
+      "width": 1600,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/erlang-otp/01-actor-model.webp",
+      "sha256": "a25db21b3f8a03cc8690461e01e45e7cb9074196c3f12d0fc742e104867fa08e",
+      "bytes": 133688,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/flash-attention/01-tiling-online-softmax.webp",
+      "sha256": "79f530f41cdfd3d4fb3eb7a5bb1adb69813fe28887ddc76c065172bf4f166e37",
+      "bytes": 123320,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/flash-attention/02-genealogy.webp",
+      "sha256": "11516dceae718147502ae60a962842aab57871ca0625c8071926f23c650b76c5",
+      "bytes": 117262,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/foundationdb/01-architecture.webp",
+      "sha256": "70d52d39d2a311a32d0ab5944f7ed9d8d11ca99f53b93f92a60500fdaebf6ac3",
+      "bytes": 86814,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/foundationdb/02-genealogy.webp",
+      "sha256": "f822dc16d948bab5e47364ed1852c1516970787c524100b28ae5313536257056",
+      "bytes": 111688,
+      "width": 1700,
+      "height": 1150,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/fsrs-spaced-repetition/01-dsr-model.webp",
+      "sha256": "b2cc1c61b84a89d423b3500c9c4dcf28ee29e90808598038e6dd999fd4288e07",
+      "bytes": 70736,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/fsrs-spaced-repetition/02-influence-tree.webp",
+      "sha256": "9f22edb939c7900f6c5630b93e428115788fdd382fc90aa0ea3b5126cab408d4",
+      "bytes": 90314,
+      "width": 1400,
+      "height": 1050,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/generational-gc/01-architecture.webp",
+      "sha256": "ba0ad5d47becbb05cca6e3dca9853f0a3a60fba71d73a0bdba31bf7ddab5d74e",
+      "bytes": 80226,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/generational-gc/02-genealogy.webp",
+      "sha256": "a315cf58eddd5c66f84d37916ea05c642e8d21a0f72507bccc35cf90d0c472b1",
+      "bytes": 118790,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/gfs/01-architecture.webp",
+      "sha256": "3b1ec5ffb975e1106d994b5e964401190b470622b925101adde4eac03b800ad2",
+      "bytes": 90344,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/gfs/02-evolution-tree.webp",
+      "sha256": "97380ae34c6a73bb899a26b55cbeee80b4c1ed3b4285a922676b03a29c584880",
+      "bytes": 163964,
+      "width": 1700,
+      "height": 1150,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/godel-1931/01-self-reference.webp",
+      "sha256": "a63da425b67befc2a47aab0edd215b9241c827f32145d0a3fa24d4a89b9544ea",
+      "bytes": 57762,
+      "width": 1200,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/gpt-3/01-scaling-curve.webp",
+      "sha256": "ac71cf17572309e2f5bff3666620e923b81b6c4d73d7c79572ad90aa298045d7",
+      "bytes": 43808,
+      "width": 880,
+      "height": 560,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/gpt-3/02-in-context-learning.webp",
+      "sha256": "53e3568160688a43418763e5fb828b23775bb38a875027d510ab0e2d819f20b3",
+      "bytes": 38648,
+      "width": 880,
+      "height": 620,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/graphrag/01-graphrag-pipeline.webp",
+      "sha256": "5d44c2e40f948e984cc32fe2a0a060948ad6033071de053eba179a5522ef0440",
+      "bytes": 113154,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/graphrag/02-evolution-tree.webp",
+      "sha256": "cbc317d81a3e120eaf66cb3cebd73981e81560dd0686baef2ea10da9c4b13b12",
+      "bytes": 93978,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/great-swe/01-eight-categories.webp",
+      "sha256": "0de85fc1992cc6f026f21bd56e67ef519097c2cbc077cc30112cc39eb63a4157",
+      "bytes": 243004,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/great-swe/02-evolution-tree.webp",
+      "sha256": "620a1100a7e38e24539f70c582fca4255b0a2a78da410e9dd2ba612bbd0bff76",
+      "bytes": 117022,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/hamming-1950/01-hamming-7-4.webp",
+      "sha256": "f3eba04bc4f29ceacdec908d0433d5792bc1bc0a5c84ad4b7a0fbc1303e1191d",
+      "bytes": 46220,
+      "width": 1100,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/hindley-milner/01-algorithm-w-trace.webp",
+      "sha256": "f1da669f57dfb0fa62a290af56d9afe9aba27031f56c79cdb0040bea78004d14",
+      "bytes": 153864,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/hindley-milner/02-influence-tree.webp",
+      "sha256": "142f37e5ad012e1bc4f3e51d4413339ae57cbdf506b8304c1c76e0156b8117d7",
+      "bytes": 107598,
+      "width": 1600,
+      "height": 1050,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/hoare-logic/01-triple.webp",
+      "sha256": "aafa420621ff27f72e779307c1637e1287aa8220197c2c03cea0424741a2f28f",
+      "bytes": 34848,
+      "width": 1200,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/http-2/01-multiplexing.webp",
+      "sha256": "349d9ddf9aa812c62e612fcd12a56db4a8b658dd00c1992e62f538bc4bbca1a7",
+      "bytes": 54644,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/http-2/02-frame-format.webp",
+      "sha256": "09371182cb237a56a7d28ff0243d74d542a8b07a3c0f457287a05a5920f78cd3",
+      "bytes": 56868,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/huffman-1952/01-prefix-tree.webp",
+      "sha256": "41e19b1ad9a99ac946d9cb34439ac94c6493c355ed92447fea073f609fb40fe1",
+      "bytes": 40690,
+      "width": 1400,
+      "height": 950,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/induction-heads/01-induction-mechanism.webp",
+      "sha256": "28f6145a75824e97f1ba94de747499f7c9fb7346e841100a7da28bf5ab38c8d1",
+      "bytes": 107746,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/induction-heads/02-mechinterp-lineage.webp",
+      "sha256": "9144d961b6f7d73dfde3d1d20c33cdc35cdd1af077320a617e71f11f6f779e72",
+      "bytes": 140394,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/instructgpt/01-pipeline.webp",
+      "sha256": "7928ba08e0b3d13400e40dff30c29a94a2b969ac34501ea19da74cce57b5ea06",
+      "bytes": 142320,
+      "width": 2200,
+      "height": 1400,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/instructgpt/02-lineage.webp",
+      "sha256": "85739e59cacbb82c16e90a947a38a0f942fd88858474e9a7c5c18abb35828257",
+      "bytes": 158308,
+      "width": 2400,
+      "height": 1500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/io-uring/01-rings.webp",
+      "sha256": "bf7da28e88183f76f474a6d5a5a62e392bf85f2d1046a6d04c55a6c2d3fffc9c",
+      "bytes": 97098,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/io-uring/02-vs-epoll.webp",
+      "sha256": "4da790322940ef4484dbed6f2b8fcd4849ae77986e3b2409563743387bd1e6a2",
+      "bytes": 48632,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/kafka/01-architecture.webp",
+      "sha256": "0af8881b9f72f6a108b31f47323b23d18f88375afcf5870fb6b3692856321d41",
+      "bytes": 95986,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/kafka/02-genealogy.webp",
+      "sha256": "4e9c0c53ec52b222deb9d0062580edf0e36a94515bc9bf629250edb02a5a10b7",
+      "bytes": 104900,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/karp-21/01-reduction-tree.webp",
+      "sha256": "2507dc451d54eaa97eb4c9b42999330359d353fa320de8abfbdbb4cb1b329910",
+      "bytes": 61068,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/knuth-taocp/01-mix-machine.webp",
+      "sha256": "45ced4c3135169dffe72ad111ada151b39fd832a59c940ba471195bb564a94e7",
+      "bytes": 54754,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/lambda-calculus/01-beta-reduction.webp",
+      "sha256": "4d620bcd2487464f0545ecbf2b270681f6c1c8fd065502be788f1a355e998014",
+      "bytes": 49512,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/lamport-1978/01-influence-map.webp",
+      "sha256": "5ccf18e79dbd2a9a70f2a4d121ba7a1283a10b50a882d3cd566eb2b7f820d95a",
+      "bytes": 184424,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/lampson-hints/01-design-tradeoffs.webp",
+      "sha256": "20a5d71319c478eb02f44fedc1faa404af106420f56e774938e4839e4b3dd4a7",
+      "bytes": 3596,
+      "width": 1200,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/linear-types/01-linear-vs-affine.webp",
+      "sha256": "57fdec340c690273f6bf3d4ef3c243b1ba76b139dfdf1ab164d655e0596c89de",
+      "bytes": 96276,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/linear-types/02-influence-tree.webp",
+      "sha256": "279ba6fc77b3792513a587a89da18194b5cefe1e12233168d6b42bc5b4abb009",
+      "bytes": 103778,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/llama/01-architecture.webp",
+      "sha256": "c11004bcda3e34ef1d2aed07f4d714e729648b010bb9b72143557465191b4fca",
+      "bytes": 96590,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/llama/02-lineage-tree.webp",
+      "sha256": "1e6c7751b29b08a6128927ba4ea47c2597ce98322b1a30ff3b70c48718d692cc",
+      "bytes": 84236,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/llava/01-architecture.webp",
+      "sha256": "90ab20ab73291566571b5d7fbddf306fd3da94d633d1a380ed4ebc530942c6a9",
+      "bytes": 30894,
+      "width": 1100,
+      "height": 640,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/llava/02-data-pipeline.webp",
+      "sha256": "9c0eb9b1718929ac6fa090609188c04ce63c15efefb862b5b3d3384227e313e1",
+      "bytes": 47134,
+      "width": 1100,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/llvm/01-llvm-pipeline.webp",
+      "sha256": "dd7380a9baa7d2b0e795f89ad3e0f200c5e78b018131259131f77d9fec5a6dbc",
+      "bytes": 30306,
+      "width": 1600,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/llvm/02-ir-example.webp",
+      "sha256": "f6c7295044b334208a747fc66322b41aef2a2a3b9118d6b1c6db3853d7bf7afa",
+      "bytes": 42532,
+      "width": 1600,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mae/01-architecture.webp",
+      "sha256": "327acd6de840d053c1f77647b7b0acc178f30f57ccf0357875082f5695c53afd",
+      "bytes": 64770,
+      "width": 1280,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mae/02-mask-ratio.webp",
+      "sha256": "bb49cd5615601e0c7c0be728def0b5684e8d8cd0ae664d06cc34532074f494fa",
+      "bytes": 42578,
+      "width": 1100,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mamba/01-architecture.webp",
+      "sha256": "106443cc86b55fd06a19817ab2b58db057ddc4e991f19727a4162a3dbb8b3ef0",
+      "bytes": 120986,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mamba/02-genealogy.webp",
+      "sha256": "40b10988cfd854d9e2106190ea92927fe38782137382f3c41a81d916578082f2",
+      "bytes": 133340,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mapreduce/01-execution.webp",
+      "sha256": "4e18bfe017ed173e2292340169a9278dc9e6825b17e8dfc432ee1f3bebf9ebcd",
+      "bytes": 127472,
+      "width": 1717,
+      "height": 916,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mapreduce/01-mr-flow.webp",
+      "sha256": "b93ad818a17a601ef74b8a81f8319ddb29a3ce08183f51006cd4c562cac9f50a",
+      "bytes": 85548,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mapreduce/02-fault-tolerance.webp",
+      "sha256": "23adad690b31db877e7ca375844fb15e125558a8dd7f1cc263764de530cefbb8",
+      "bytes": 85174,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mapreduce/02-tradeoff.webp",
+      "sha256": "c985d096d4c394e6bf17874c94ae893e70f88eccf49b21a6e91e0fedc2df137d",
+      "bytes": 202064,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mccarthy-lisp/01-eval-apply.webp",
+      "sha256": "d7af07e9462ed1a353937af4c85df2e2d7bcd24952a29d70183d599c02d8bee7",
+      "bytes": 51174,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/megatron-lm/01-tensor-parallel.webp",
+      "sha256": "34941360491664c40cbcb481d8401affadf2588414c23717bbbe65ab86ab0d71",
+      "bytes": 64622,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/megatron-lm/02-genealogy.webp",
+      "sha256": "9d98846c1c9f5c3b457d28f5d9b508d5eddd6770de584f117fd9804a2ec4d87a",
+      "bytes": 88426,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/metagpt/01-architecture.webp",
+      "sha256": "3e6e13c642f5ac105799b33b071635be20e5a0df7d6aea25a33b7827b1a7f479",
+      "bytes": 105354,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/metagpt/02-lineage.webp",
+      "sha256": "8bbf3339f726b552bab1f1522cfb670f668adceea100872c0ad8cbf082e9d70f",
+      "bytes": 102274,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mixture-of-experts/01-architecture.webp",
+      "sha256": "92b31aa7752ae66027092dd36b04057438adc6eb8421fd703296ab12f8d3cc01",
+      "bytes": 23842,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/mixture-of-experts/02-evolution.webp",
+      "sha256": "9dea2eeeedfda8cb40eae7742e71a558c332c606303069a8267c7b95306709b4",
+      "bytes": 23856,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/muzero/01-architecture.webp",
+      "sha256": "67c4a6923602ccfb3ed82248159240c68946a1a5dbaae4f19c3d4f6ea0c47bd5",
+      "bytes": 44898,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/muzero/02-mcts-latent.webp",
+      "sha256": "43590ec3edba85684000b9dc6dcf1cb0f6fef2216e1c58f8f2c0ecbdb4b455b9",
+      "bytes": 57908,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/no-silver-bullet/01-essence-vs-accident.webp",
+      "sha256": "3d907adc4e510512680acc80675df30a0af7b78a22772af0fd2bd52789257f77",
+      "bytes": 43352,
+      "width": 1200,
+      "height": 850,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/openhands/01-architecture.webp",
+      "sha256": "2583d81b02978b0cde447e5cdd12c4be2e32107c0843cb7296824fb9608d1a53",
+      "bytes": 172986,
+      "width": 1700,
+      "height": 1180,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/openhands/02-lineage.webp",
+      "sha256": "9f310c3bd231149628910419fb045b86c330df87c8140b9ab9f456a750c56daa",
+      "bytes": 143328,
+      "width": 1750,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/pair-programming/01-meta-analysis.webp",
+      "sha256": "e1edcc1b2bb25e4e1303d58eb6e7796aad84fe072f7344021719415f63e543c8",
+      "bytes": 126588,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/pair-programming/02-evolution-tree.webp",
+      "sha256": "018620476d2fa5fcd1eafc3a9950c8d7940470615b3b00fba205c51d9107c489",
+      "bytes": 92478,
+      "width": 1800,
+      "height": 1080,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/paxos/01-two-phase-protocol.webp",
+      "sha256": "322890e8715f9627f7f39fb92d67a0b447bf5436130498cede0c8c1178e0c62c",
+      "bytes": 43516,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/paxos/02-genealogy.webp",
+      "sha256": "748a3745451723f3442ad9a70c74bcd900b0e0163b29d944f6c98087c252f425",
+      "bytes": 75680,
+      "width": 1500,
+      "height": 950,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/polar-codes-2009/01-channel-polarization.webp",
+      "sha256": "34994f51b88975e241cd150b1eb005ed4ed8447f32b242a11bd0a08a2c3ee52b",
+      "bytes": 23514,
+      "width": 1400,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ppo/01-clip-objective.webp",
+      "sha256": "074b5245b236c7798df5a4a7caaccf90283ddee60545c2f18be08c1838b14365",
+      "bytes": 15378,
+      "width": 900,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ppo/02-mujoco-comparison.webp",
+      "sha256": "75d29d4a7df6ff049c0f8923f6959a813cb977ab4fd03347fe0be0692c106920",
+      "bytes": 23058,
+      "width": 900,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/program-comprehension-fmri/01-fmri-setup.webp",
+      "sha256": "28e3893b1d549db7a4271c37b8971ca18164be751e5ff5becbf5e3ae7aa2582b",
+      "bytes": 94218,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/program-comprehension-fmri/02-evolution-tree.webp",
+      "sha256": "baae940c70507530a336ad6841770d1f2a11d3ecfe4e5dff3e0dc5fc1e134e8a",
+      "bytes": 72704,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/programmer-interruption/01-recovery-curve.webp",
+      "sha256": "e3d925f89452a3a33f8f92f40105b96e2c8ffec9cbdb3545c16137aabe438e88",
+      "bytes": 72404,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/programmer-interruption/02-lineage-tree.webp",
+      "sha256": "0ae82a79ae48ca68a66cb67daf11a4ca972319d03bf92e39376c502194dc715a",
+      "bytes": 86432,
+      "width": 1280,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/push-pull-frp/01-events-signals.webp",
+      "sha256": "0de65a76f27572b1560e46617c81d16361cf756bd9a24445f2e176a9b99301f5",
+      "bytes": 125508,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/push-pull-frp/02-merge-and-stepper.webp",
+      "sha256": "94783f682c4ea220c397e52f28c43c381a544618ac7ca1a7347b48b93f9c906a",
+      "bytes": 66734,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/quic/01-stack-comparison.webp",
+      "sha256": "b4f22289493db5e18c940aff0018332071889e36ab277dbae502a85f47e926af",
+      "bytes": 40754,
+      "width": 1100,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/quic/02-stream-multiplexing.webp",
+      "sha256": "9e1b81aad18eae54db6310ced88c736196e58174bb77f86c1ed753206dd7d6fa",
+      "bytes": 35564,
+      "width": 1100,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/raft/01-state-transitions.webp",
+      "sha256": "162efc4243673960707be2e2d735ba0bed5e60f262e6a07a00b8b7ceb60e4ac7",
+      "bytes": 42826,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/raft/02-log-replication.webp",
+      "sha256": "aed022d7d8ba3637c66268fe85a56c128576c43e1123f4eb4ebb6b06d4ca3ced",
+      "bytes": 56872,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/rag-lewis-2020/01-rag-architecture.webp",
+      "sha256": "055353956cc0732ea5fb09096fe508e51a0977266f3934f88fd2e76f3a002c29",
+      "bytes": 125224,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/rag-lewis-2020/02-evolution-tree.webp",
+      "sha256": "7cfbdc21d6bd24c4413a0cda81a55e76fbeaea88bff796421ac5f43f7d23e70d",
+      "bytes": 144048,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/react/01-react-loop.webp",
+      "sha256": "c5ec02b5955a2d67c5aacd9247993b5a0660b58ed6910a95454f5578a56436c2",
+      "bytes": 91254,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/react/02-wikienv-actions.webp",
+      "sha256": "b1e470e49ef39a82a5084b1aaf62aa6d03107e72b97b4f648b498868666c17f3",
+      "bytes": 66308,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/react/03-evolution-tree.webp",
+      "sha256": "aa20ee6295f42f6b6709d3505462cb0c800b4b43365b8246ccb34a3329b28717",
+      "bytes": 127122,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/realm/01-pipeline.webp",
+      "sha256": "c524cac3fb2c8f5c0be01e13c00002f0c803dcfa06bf8e53b7ab72435d84128f",
+      "bytes": 143084,
+      "width": 1800,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/realm/02-evolution-tree.webp",
+      "sha256": "42e05f226716778c03ff9eeb05ef486b9362e4e7e1654e97e6d68f5ba5c72ce6",
+      "bytes": 132040,
+      "width": 1800,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/reed-solomon-1960/01-rs-encoding.webp",
+      "sha256": "1faa9f96ec180adc7c5af8db7683259b3e84e2e24910a5164a07547df4fca5fa",
+      "bytes": 76474,
+      "width": 1200,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/reflexion/01-three-models.webp",
+      "sha256": "0754a69639276c51dfce42c23580c58314a04481c5639598a1f830684f2e9221",
+      "bytes": 162408,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/reflexion/02-algorithm-loop.webp",
+      "sha256": "20f683921cfea913ca4bd91fed66ec9a4233a9dbf2079ff58cbc07185b205813",
+      "bytes": 65764,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/resnet/01-residual-block.webp",
+      "sha256": "305d20e097be664595aaddb3dc9f1e9dd5bd9a7f198cd95a800c556c88b1f214",
+      "bytes": 39414,
+      "width": 1200,
+      "height": 780,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/resnet/02-architectures.webp",
+      "sha256": "7fb14dd2a8c1f61e8df52061ffa7ea7d34dab086b8363f02bbe20cd06b290fba",
+      "bytes": 41076,
+      "width": 1200,
+      "height": 780,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/retro/01-retro-architecture.webp",
+      "sha256": "aca9796aed019145c3197354be6bb683fa677df7aa230f0291b546e0921fcdac",
+      "bytes": 175454,
+      "width": 1800,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/retro/02-evolution-tree.webp",
+      "sha256": "58f7e27728e29b166b04d1ff5f5d1a328a383e65b33ad970ae703a825ea0c9f9",
+      "bytes": 179378,
+      "width": 1800,
+      "height": 1300,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/rlhf-christiano/01-rlhf-pipeline.webp",
+      "sha256": "3a7ab352c610d8def9a32a1666e4d42893e1629a5b03335c5902037c1706a1db",
+      "bytes": 74728,
+      "width": 1700,
+      "height": 1080,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/rlhf-christiano/02-rlhf-lineage.webp",
+      "sha256": "357e6fd4cf15061e46594fc5e59dad79fea1e454c797ecbd284bc7037b16ca01",
+      "bytes": 92574,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/rocksdb-lsm/01-write-path.webp",
+      "sha256": "b82d2382d12cac2449d75377de2754ab23bc993dffd00ae051f83a94183b465a",
+      "bytes": 48812,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/rocksdb-lsm/02-genealogy.webp",
+      "sha256": "3ced7557d411cf4dc1b58379a37351d34b066dfb513e77bf2e72a6d4cef9d9a7",
+      "bytes": 80352,
+      "width": 1500,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/rsa/01-rsa-keygen.webp",
+      "sha256": "02f8825fc05b695513cb4c32f583b510116caad175b46c7cee4bac7099ceb5dc",
+      "bytes": 131772,
+      "width": 1600,
+      "height": 1600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/salsa-adapton/01-architecture.webp",
+      "sha256": "175a28f0fbfe9d80d6da78a856142cf4272e7180cd758927d11e73e4e7aacdea",
+      "bytes": 121528,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/salsa-adapton/02-genealogy.webp",
+      "sha256": "ed31bad7837324a3509f1af7ce590b20646a024cae549b6c78b16da477adde30",
+      "bytes": 72336,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sam/01-architecture.webp",
+      "sha256": "b245c29e526a0bafbef2ad482af50aaece99a7578034bad13c4f8eccfc699acc",
+      "bytes": 91378,
+      "width": 1600,
+      "height": 980,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sam/02-lineage.webp",
+      "sha256": "011db1843a3c260ccb95850e9737a41474da67f0dad93e4e948df8e0069e7170",
+      "bytes": 127858,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/scaling-laws/01-three-power-laws.webp",
+      "sha256": "6df0130e427fbc6095fe5bed012afc26628e94b523b1ee06540e91c3a08bd868",
+      "bytes": 69026,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/scaling-laws/02-evolution-tree.webp",
+      "sha256": "58f57a765e4073e1d79d23e3286d1f948a8c3562edab95a8afed565b8defbec8",
+      "bytes": 123642,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/self-adjusting/01-ddg.webp",
+      "sha256": "eb5bc68e1bb2d949d21e97315281ad45968c906e3db5db6688deab9841686eb6",
+      "bytes": 43410,
+      "width": 1700,
+      "height": 950,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/self-adjusting/02-evolution.webp",
+      "sha256": "663c41d70d6ba040f1b488b1516139be5416c4df7daf6781646f7e9290e0b449",
+      "bytes": 77986,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/self-pic/01-pic-states.webp",
+      "sha256": "0418912a8167ccc73f0a6aea267c65367a0386109ccb66fe7d84914c71acb370",
+      "bytes": 48050,
+      "width": 1600,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/self-pic/02-pic-cache.webp",
+      "sha256": "de13bdbbf3c2912dcc38faf0f63d19c0abf44362e4cbfa8cb055e12518f2c0bd",
+      "bytes": 71132,
+      "width": 1600,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/selinger-1979/01-pipeline.webp",
+      "sha256": "dd87ede8540b2552d16ef93f4c44d5989343ad34c94cd59533e3912d8b4bb5da",
+      "bytes": 88192,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/selinger-1979/02-genealogy.webp",
+      "sha256": "f38d2efd4a47ce9a28d986069208e81e26d7579b4176322d80b2904d256903e6",
+      "bytes": 131316,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/shannon-1948/01-channel-capacity.webp",
+      "sha256": "d050468eb2737ee33415ecae726a089f4c878bc12052027f4acad5d789fb3347",
+      "bytes": 20088,
+      "width": 900,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sillito-questions/01-44-questions-tree.webp",
+      "sha256": "af68996810d10f5f01226c9e4419ad68dc199c2a83c35b42b12658a1a660ba9c",
+      "bytes": 106954,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sillito-questions/02-lineage-tree.webp",
+      "sha256": "d56b09f2da142772ff3251b5f46d6adedca30b79f1af8b9c237dd362d6c13f55",
+      "bytes": 112672,
+      "width": 1600,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/simula-67/01-classes-objects.webp",
+      "sha256": "58346d74208523bf3e1794d98ad59866528d8b7fb045b0d57c82ffd59ea68b3b",
+      "bytes": 30060,
+      "width": 900,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sleeper-agents/01-pipeline.webp",
+      "sha256": "ae6d5f5042aa658cef9b1f8ea256b6eab8377a8f19944bf96f7f96c134742d2b",
+      "bytes": 101840,
+      "width": 1700,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sleeper-agents/02-lineage.webp",
+      "sha256": "1d5925f158de58c467a2263acd909250f74ddf947dc5b03d432b8befaa055123",
+      "bytes": 125790,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/smalltalk-80/01-message-passing.webp",
+      "sha256": "b3370bb3250d8a2aa2d8f7afae6b0113d8bc1ca41fad1d58b593ed76795ea338",
+      "bytes": 27480,
+      "width": 900,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/snowflake/01-architecture.webp",
+      "sha256": "c0376be787a1c18396f69fcd5c2df1dbb0d3e454779792dd021f709e9be2ee90",
+      "bytes": 152632,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/snowflake/02-genealogy.webp",
+      "sha256": "13c591f5d6ca6dc479993ca2f9ed30f73083abc28062c9cfa404db06d2aaff5f",
+      "bytes": 151194,
+      "width": 1700,
+      "height": 1050,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/spanner/01-truetime-interval.webp",
+      "sha256": "34ca6f4e43b4014656b8cce12f27cb494d5101a998c4f578749b5b7d7b731cfb",
+      "bytes": 30678,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/spanner/02-architecture.webp",
+      "sha256": "0eb4c56a4e2566458c38818708bc1685774274a485eba9255807c603f92ff387",
+      "bytes": 54958,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sparse-autoencoders/01-sae-architecture.webp",
+      "sha256": "cbbb33999a356c003c8808c45e6bef7e32ce795e435cc80eba8ee9598e8c0685",
+      "bytes": 78484,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/sparse-autoencoders/02-sae-lineage.webp",
+      "sha256": "93be1a6a93c9720785bdd1d77f9e269469f0f54a8e3781aac26c492a3cf9b5e1",
+      "bytes": 145840,
+      "width": 1700,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ssa/01-dominance-frontier.webp",
+      "sha256": "228f398fd5f64e8fd2d13313c99ad1cf55a66931b21df956027e2dec1eaf7810",
+      "bytes": 39032,
+      "width": 1600,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/ssa/02-phi-insertion.webp",
+      "sha256": "388e2fa5cfe7cda8425a216596ae5f57c9e89ca4fc07e259071c0442dda45b87",
+      "bytes": 25756,
+      "width": 1600,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/stable-diffusion/01-architecture.webp",
+      "sha256": "68c0de290bb466d40e6b0ae2c92ca65fcd86ea22f561b67a8faceaff8eb4b572",
+      "bytes": 61236,
+      "width": 1600,
+      "height": 980,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/stable-diffusion/02-lineage.webp",
+      "sha256": "b6f12f7ff1a67961395167bc57377b85a0fbb20206c19ac48cc1b934d4417885",
+      "bytes": 95956,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/standard-ml/01-type-inference.webp",
+      "sha256": "74ae47cc8fa10e1076c89ee389bce13bcecc62ebfa8905bd7a7b44a6e496787f",
+      "bytes": 95198,
+      "width": 1400,
+      "height": 1020,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/swe-agent/01-aci-loop.webp",
+      "sha256": "59f183f2dab3212d6cf6e699251a6d2606ed816ca06a045477c7c8e7c198d0cd",
+      "bytes": 100790,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/swe-agent/02-evolution.webp",
+      "sha256": "1c1f14336c913f2481ed207856a531a6236ed322d347565c47645f12cc626efb",
+      "bytes": 76924,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/swe-bench/01-task-structure.webp",
+      "sha256": "a3467b0aea2418003dad4e6767614fd55571570dab62c0943cbd1508d94ae13c",
+      "bytes": 122254,
+      "width": 1400,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/swe-bench/02-leaderboard-evolution.webp",
+      "sha256": "ffe486630db4178f0c970ee26bb6bd33df5d3ce75795f305f0a2ea0eade2ec87",
+      "bytes": 58674,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/t5/01-text-to-text.webp",
+      "sha256": "55fcba672e377e15a8a3a2a93cdfe7e5bbacca537b32963c21875792c4596380",
+      "bytes": 30798,
+      "width": 1200,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/t5/02-architecture-comparison.webp",
+      "sha256": "795368d5c40e978eed567dcbd84ebdc1c0c7a4c90f4ac4d54a759f9b08d8fcba",
+      "bytes": 57738,
+      "width": 1300,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/tcp/01-three-way-handshake.webp",
+      "sha256": "e0b174f99a8888cc60f32d57a5f2730a093f3790f4e41f238cb93b5030dadff7",
+      "bytes": 39422,
+      "width": 1200,
+      "height": 1500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/tcp/02-state-machine.webp",
+      "sha256": "0608117051b50d729f4f67205bb56b9bf11a4de717cd123ac99365ffdda4133e",
+      "bytes": 45918,
+      "width": 1400,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/theorems-for-free/01-relational-parametricity.webp",
+      "sha256": "f57d46b24017310e2e29abb9464a99a514450103c448d9c5f9fb0c75332dcdcb",
+      "bytes": 51330,
+      "width": 1600,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/tigerbeetle/01-architecture.webp",
+      "sha256": "538779e246998d2d11047418d1a616e9f1d9c0af431d27a8f16e5210ed6864b7",
+      "bytes": 99754,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/tigerbeetle/02-genealogy.webp",
+      "sha256": "566ecdfd128b406c1cf8b203f62ae9aeafed4d2910887189cb88968158da5374",
+      "bytes": 117852,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/tls-1.3/01-handshake.webp",
+      "sha256": "241c8c900867421ccc4619c97dce91b51bd81dd51c08b417a867f8778e4e949d",
+      "bytes": 34810,
+      "width": 1100,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/tls-1.3/02-vs-tls12.webp",
+      "sha256": "b1784dfcf06736480defa07f632b6d947f4db48831204a53e02f9dd316ca44ae",
+      "bytes": 33684,
+      "width": 1100,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/toolformer/01-pipeline.webp",
+      "sha256": "b42cc7f43d12ba4fe7eedcb2bddac0a68fb4c735aee7f6dafb5f94e356c2a024",
+      "bytes": 73234,
+      "width": 1774,
+      "height": 887,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/toolformer/02-routes-compare.webp",
+      "sha256": "0a56e00b2f57eb71fd704b86a8d2a16cf5b1cef37402b1ca955fd339001c1b75",
+      "bytes": 245066,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/toy-models-superposition/01-architecture-geometry.webp",
+      "sha256": "540affefb39d020d6720b6da2cd16ced20b58ce605ee2478b19a40469cad1c1f",
+      "bytes": 103742,
+      "width": 2226,
+      "height": 1245,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/toy-models-superposition/02-lineage.webp",
+      "sha256": "7781f8c9adad73f972866cd315e72f2ebe3a1f06f1c92061d57fb240e11470ed",
+      "bytes": 210398,
+      "width": 2226,
+      "height": 1385,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/trees-that-grow/01-extension-fields.webp",
+      "sha256": "953c2d39e92bdc9bca683074778bec7e1950a9db4633b6b6f563c4c7ae81a58d",
+      "bytes": 112070,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/trees-that-grow/01-ttg-extension.webp",
+      "sha256": "5591167508515fac3bba161a6fa0418dd84e870681c3cd0c953709f90f39e7eb",
+      "bytes": 66140,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/turing-1936/01-turing-machine.webp",
+      "sha256": "80436b5223785b5d6a246e89efbbe5c205552c433a68917d8bcedf24262411eb",
+      "bytes": 28848,
+      "width": 1280,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/vit/01-architecture.webp",
+      "sha256": "7e78282e3825a5ee42a38d0d33dc85fdf376f9a79a73b7c3148db255b52f6ee6",
+      "bytes": 33642,
+      "width": 1100,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/vit/02-scaling.webp",
+      "sha256": "db2fff7279abd10fe13030c30f49e3c3bff5b4884d96fe47a31b54b4b605424b",
+      "bytes": 33124,
+      "width": 1000,
+      "height": 640,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/vllm/01-paged-attention.webp",
+      "sha256": "4feb9a2490fcb0fb02b300eaed1d0272016fbffbce2c821babf37fc325746965",
+      "bytes": 68688,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/vllm/02-genealogy.webp",
+      "sha256": "51b620db0f1a3c79287a04ce5e6b9e215a697df9af9997cb0c4de39e2fbb3b23",
+      "bytes": 100916,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/volcano/01-iterator.webp",
+      "sha256": "9f9eb8a5fa1c1bee4404e817f654ae087a702a8f251c403a8d67677f9a71a40d",
+      "bytes": 71132,
+      "width": 1808,
+      "height": 1175,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/volcano/02-genealogy.webp",
+      "sha256": "67bc049892ca86cd0e0f11d07a67d36fbaf4beec00fc878b2b2924a1e114eae2",
+      "bytes": 73724,
+      "width": 1762,
+      "height": 1175,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/voyager/01-three-loops.webp",
+      "sha256": "266f6c4c934c56171f1b9a53366a5a4912183483f64496ba6b215d26031e1635",
+      "bytes": 91296,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/voyager/02-lineage.webp",
+      "sha256": "1a56254ffd5acea567596b23f0d43c27b89ec120b2d3a76f0ff878f3bc4aa865",
+      "bytes": 109798,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/wadler-prettier/01-operators-laws-best.webp",
+      "sha256": "a8251a22abec0c0b774681f8b6178ce99fe7c4895df7763dbd7bf3b43886c2c8",
+      "bytes": 83994,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/word2vec/01-cbow-skipgram.webp",
+      "sha256": "44c864c02024dec583963a4b252b2a3940c1f4ff418425452e944966d33a1474",
+      "bytes": 34204,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/word2vec/02-vector-arithmetic.webp",
+      "sha256": "1e60f2d6ab80154abe12bc9973591d7af504e65e4133747ff0065f8dd61f6a6b",
+      "bytes": 34894,
+      "width": 1100,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/zgc/01-architecture.webp",
+      "sha256": "f8c0107a27f2c4512bf1858ee803210c025489cebd585b0de944e14ba64ba5ac",
+      "bytes": 81452,
+      "width": 1700,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/zgc/02-genealogy.webp",
+      "sha256": "f5330a6ae46b49a4a5c69a4944488f754595478a65a15fbaefc06c82675552ba",
+      "bytes": 79880,
+      "width": 1900,
+      "height": 1050,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/papers/zk-snark/01-prover-verifier.webp",
+      "sha256": "964bb4b94321f7a65b896f0cb186aabe5e43fbdaa6a92fd57d3cbcb070d1dea9",
+      "bytes": 64706,
+      "width": 1400,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/affine/01-architecture.webp",
+      "sha256": "d96ee955e97ac1f1c112e32df518560dae6bc9baec2983b0ba210e9454823f31",
+      "bytes": 107026,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/affine/02-block-reuse.webp",
+      "sha256": "1da1f961bb6ed00c718e872bfd70fac06e3f5ea275618d1c1f3c6d20eec1effb",
+      "bytes": 54616,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/anime/01-anime-engine.webp",
+      "sha256": "8cfccf6c91f0f5d785375d7d1b356a24b3f576141cc098fd772571a018b6594c",
+      "bytes": 138652,
+      "width": 1672,
+      "height": 941,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/arktype/01-syntax-comparison.webp",
+      "sha256": "e9c8bb97ae466bb64f5ace7c06ed8999ce0dd65b2c58ceaf0578b081a81349b6",
+      "bytes": 56216,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/auth-js/01-architecture.webp",
+      "sha256": "63f299c653a39c1996b47b5de1e7f239a033fcb6a5d32d49f2d497e747f2f5b6",
+      "bytes": 265420,
+      "width": 2400,
+      "height": 1400,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/axios/01-architecture.webp",
+      "sha256": "14e5219439db4514f3d1b05f13f63a16b078afc23809615789e4d03623666a31",
+      "bytes": 79924,
+      "width": 1280,
+      "height": 920,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/better-auth/01-architecture.webp",
+      "sha256": "17c3289deea2b5cebc8aa5a58463471cf3f616ff51da5eeadd4992ba1c3268d4",
+      "bytes": 192606,
+      "width": 2400,
+      "height": 1400,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/biome/01-pipeline.webp",
+      "sha256": "14989733f878ba9d66eed2de1c726bfea08b515058b72ccc735febcb89584937",
+      "bytes": 80670,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/biome/02-formatter-ir.webp",
+      "sha256": "f01e9dc0d07e6cc20ed519e661cedba5685c08f23063936945207bf8cf8026ce",
+      "bytes": 105340,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/boxen/01-box-rendering.webp",
+      "sha256": "5560188a6478371fbd30d5286294f7f3e65dd6453246d146341edc53f43c983a",
+      "bytes": 22266,
+      "width": 900,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/browser-use/01-architecture.webp",
+      "sha256": "57b6c8f7f8cd47703f19c2f6c1fee956c36ebb2dce22230f976e7a0d2eda9824",
+      "bytes": 361038,
+      "width": 2400,
+      "height": 2400,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/bun/01-pipeline.webp",
+      "sha256": "42f71facc6a9dd3f24b9fa69e473488966619452facca3289a978685f3631442",
+      "bytes": 64422,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/bun/02-bundler-internals.webp",
+      "sha256": "7da020b761a628afbf204f7e49d130fc5b6f71732184740f1a83b6b0726ea2e3",
+      "bytes": 76230,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/cal-com/01-architecture.webp",
+      "sha256": "f2c48a8227e4c19889a769012c0b37b3e8282995601682f8c8bd40410a347145",
+      "bytes": 63170,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/cal-com/02-handle-new-booking.webp",
+      "sha256": "3eab0c3c3537f17d17ad663224326c001587761a2049886d1b262a58b57b2eb8",
+      "bytes": 44416,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/chalk/01-ansi-codes.webp",
+      "sha256": "efbad82de8f1bca549bba1f5633a6192607a7737e22a45e27307f81505992236",
+      "bytes": 19986,
+      "width": 1000,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/changesets/01-workflow.webp",
+      "sha256": "d5c25ce7034ff8688722c598a68a915482f63d5e95b155ce9f4c5bdf67d22749",
+      "bytes": 71554,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/chatwoot/01-architecture.webp",
+      "sha256": "91288b56cdb0de24d07aa8a30c9e2f8861ab8a2675fd5bf7364bb411539716db",
+      "bytes": 121666,
+      "width": 1700,
+      "height": 1700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/chatwoot/02-realtime-flow.webp",
+      "sha256": "4fe946aee3c828f75ca088e8f902a81c59f6252472ba5fa7f37cf004512a52dd",
+      "bytes": 141936,
+      "width": 1600,
+      "height": 1600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/chroma/01-architecture.webp",
+      "sha256": "5715d2278a01a16698ab0006c7bcbdf23480915b3615539301d368167358305b",
+      "bytes": 155980,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/clack/01-prompt-flow.webp",
+      "sha256": "c5f4e5f0ed9d4432682c8ccf8f4a88e24c0cdcb9a2093765d57826e06d05df38",
+      "bytes": 40026,
+      "width": 1600,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/claude-code/01-product-shape.webp",
+      "sha256": "9e6323a58da88951b5be251ad8df421625a9d61c2cf8ce1ea663723702ad82d6",
+      "bytes": 69856,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/claude-code/02-agent-loop.webp",
+      "sha256": "fee528b4868afe7fbc49fb74029f396282642331299c0e8607c5826896a8b302",
+      "bytes": 83446,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/clerk/01-architecture.webp",
+      "sha256": "d3b173991a8762683badfc6098e8650c47217f0e5f6c94f65b344b585a850fa2",
+      "bytes": 132306,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/codemirror/01-architecture.webp",
+      "sha256": "d737086e0d2501cd11dfe91479ff8dd9779385de0cf29edee5fbdc04398030ad",
+      "bytes": 87764,
+      "width": 1500,
+      "height": 950,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/commander/01-command-tree.webp",
+      "sha256": "bbdf9d0d4c53a6196336ee75e2b8e0948b16315b6015feea9cfb7fb958a26ee5",
+      "bytes": 52540,
+      "width": 1200,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/continue/01-architecture-dual-track.webp",
+      "sha256": "5e0cc721bb20de13fe2749e9beb46e9c102801757512b6950345e6d65bf06c10",
+      "bytes": 86438,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/d3/01-architecture.webp",
+      "sha256": "3eb42493bd231d63fa40be8f5a83f9c7e545800bf031e5ad53e46419eeb5fbdd",
+      "bytes": 57300,
+      "width": 1200,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/date-fns/01-bundle-vs-moment.webp",
+      "sha256": "b7f005f0045692dd06b48a938c9e2bd6f3c89b6f6f10f4bde348b12f483310a8",
+      "bytes": 48850,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/dayjs/01-plugin-architecture.webp",
+      "sha256": "b3ca8ce5be3cfc720c3f134a325e3bf77326e730d7b2be359bd6b6bab68dafd6",
+      "bytes": 54934,
+      "width": 1400,
+      "height": 980,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/dify/01-architecture.webp",
+      "sha256": "eee6cd05afbc1dd01eb34f4ef2065468ea6f179fd3882c0df1f99c6a94115c1d",
+      "bytes": 149544,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/dify/02-workflow-rag.webp",
+      "sha256": "7b3f45ab1cfb26b1b0f52e7b274817167f3bb6bc10c93a693a3e72f7387ea831",
+      "bytes": 174226,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/dnd-kit/01-collision-detection.webp",
+      "sha256": "ce57c310f533c02bb18aa3d00f47def7952ac15f44574999e8aea5014e42c8a4",
+      "bytes": 41494,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/docusaurus/01-architecture.webp",
+      "sha256": "63e03803d5de7457a1ebee4fcf9b823f379cb570ad132e9233efb37802a10c78",
+      "bytes": 193962,
+      "width": 1600,
+      "height": 1600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/drizzle/01-architecture.webp",
+      "sha256": "32982b1a53c4f20bf8f12810c3bdba1c249f6af305f40107538fca273d6e70b4",
+      "bytes": 89254,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/duckdb-wasm/01-architecture.webp",
+      "sha256": "59767df95b3271f01990d556ba4b81287930127ce65691442ae431cdb4a6f589",
+      "bytes": 93312,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/echarts/01-architecture.webp",
+      "sha256": "eda71a82f8a241dd5d38a5d3a7e7b827ba39115a4c33cf44d919b7cc163feefc",
+      "bytes": 92382,
+      "width": 1200,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/effect/01-effect-vs-promise.webp",
+      "sha256": "4328709fb155b00aba27d29f37d640b3231a2fddb28e24338f49d7010a967cf7",
+      "bytes": 76740,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/elysia/01-bun-runtime.webp",
+      "sha256": "70710cc1ca982a50dd628b56e6fae06d2bfdf1832f628c3c2e269be606169a75",
+      "bytes": 326430,
+      "width": 2560,
+      "height": 2560,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/emotion/01-runtime-css.webp",
+      "sha256": "a5e0cc2054ae7cc765a1147134c35ecd586675aefb2cc6be0be567a2c73196fe",
+      "bytes": 31700,
+      "width": 1200,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/enquirer/01-prompt-types.webp",
+      "sha256": "51e76326ed75be1ed87bd8be740be019d131bfc437045ecb52d907e55596e653",
+      "bytes": 25908,
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/esbuild/01-go-pipeline.webp",
+      "sha256": "a2bd8c13a2ab61181bace928e09fbffdd71e025f551f6ae098341d12977d7509",
+      "bytes": 86720,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/excalidraw/01-three-tracks-store.webp",
+      "sha256": "b4c07485f9b91e350e7ccf6d2243ccd7eb306b4b5f744514b89f9488cde6b64c",
+      "bytes": 80442,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/excalidraw/02-collab-flow.webp",
+      "sha256": "634341c7e46536672fea88df5687d601d7046367b8966f924f193db31c9565b1",
+      "bytes": 93966,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/fabric-js/01-canvas-objects.webp",
+      "sha256": "5c0586ee71045009a953e1d9a7244b2cacccc70a6ddc5de4fef0e0a20336343c",
+      "bytes": 39724,
+      "width": 1200,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/fastify/01-architecture.webp",
+      "sha256": "b93833ecb4757b2c091da2344d9995aa8e8998341c40edef488eb7303c270651",
+      "bytes": 84586,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/framer-motion/01-architecture.webp",
+      "sha256": "c81db1bd316daf58dc3cf877eddad2a655b9bdb3385a378cba1e23ac3fb95443",
+      "bytes": 84576,
+      "width": 1600,
+      "height": 980,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/got/01-feature-matrix.webp",
+      "sha256": "33abb4738555463bccd601708f4797427fb30d70ba551a4190daf74d11e6b760",
+      "bytes": 51612,
+      "width": 1200,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/gsap/01-architecture.webp",
+      "sha256": "92bfe588b4f20e493e3fd3df0286ba277927f239c81f38c8815e9a697dadcd74",
+      "bytes": 136044,
+      "width": 2067,
+      "height": 1261,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/hono/01-router-comparison.webp",
+      "sha256": "25a81ea0ca9dd88193e0d74540adac0981ef830c50ade683236b0a199694eefd",
+      "bytes": 86656,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/i18next/01-architecture.webp",
+      "sha256": "734215735d4b9ab8855a20060514938c83c0ab242e23877cf5e2b8cd0c8c4629",
+      "bytes": 65176,
+      "width": 1200,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/immer/01-produce-dataflow.webp",
+      "sha256": "1c43f219208cb619f5fa150536bf86266e934684bea9fda164bdd464462f8410",
+      "bytes": 91664,
+      "width": 1700,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/immich/01-architecture.webp",
+      "sha256": "00e2f82cad583dcdade7902c5889d984624607b00e8a2165ce0ff2a2046e6525",
+      "bytes": 137228,
+      "width": 1700,
+      "height": 1180,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/ink/01-react-cli.webp",
+      "sha256": "faf827888fd1167000398da2dc6f18d22fcce29e24212651d5f46edafe0a941c",
+      "bytes": 26296,
+      "width": 900,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/inngest/01-replay.webp",
+      "sha256": "2ebeeeb05010f4a29accf7484ae6a68dc1082b95ae8b1cb5d5bca8f08a883f7a",
+      "bytes": 56156,
+      "width": 1500,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/jest/01-architecture.webp",
+      "sha256": "f3efa2dbbeaabba15492de36893a6bc54db27ae51e5fbfaad76feb53fc4e42f6",
+      "bytes": 48614,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/jimp/01-pure-js.webp",
+      "sha256": "66abaa9320a4ae87865197c6cf421b7e7a635298dcb6d36ed610700238e3b648",
+      "bytes": 69268,
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/jotai/01-atom-graph.webp",
+      "sha256": "19cf41c46696971b0c9a7e0dfa96e3d507fded38df7e55dc086989f15b48fef2",
+      "bytes": 161014,
+      "width": 1600,
+      "height": 1600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/js-joda/01-java-port.webp",
+      "sha256": "966772eaffd500d3f48eece85ec25de3c44263de3a213aafbd90c47003533948",
+      "bytes": 52084,
+      "width": 1280,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/koa/01-onion-model.webp",
+      "sha256": "5f975fba3dd949aadb406c3f22330c687df696b16f973371bef03bbb04821260",
+      "bytes": 66184,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/konva/01-stage-layer.webp",
+      "sha256": "c9965d2e546cc7ccb39fb6ab7a8912eb330a1ecc6bb4cf7ef30e73f0c0c6e3a1",
+      "bytes": 38438,
+      "width": 1100,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/ky/01-pipeline.webp",
+      "sha256": "63700ebd8334d9c431a9ac86832e0c57dfd4f42654d13e6813f6ec2fe9948434",
+      "bytes": 43920,
+      "width": 1280,
+      "height": 920,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/kysely/01-type-flow.webp",
+      "sha256": "71dd5a3e859d77580979a113f9fc089b77dca9d966475f738350ae18ff5ef040",
+      "bytes": 121396,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/langfuse/01-architecture.webp",
+      "sha256": "e6d211c57c1a13f4c2e07080e18a2a8069633537e82d0977208e0045499b30c0",
+      "bytes": 106190,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/lerna/01-timeline.webp",
+      "sha256": "ff83fdd6c84ce319a815b527d71d8f02029543e540db2ae670e3e39e05eb3ca8",
+      "bytes": 70714,
+      "width": 1600,
+      "height": 980,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/lexical/01-architecture.webp",
+      "sha256": "5736534883aef4874bd01701b6673837554fca7af01bd635beeee826779a91de",
+      "bytes": 118522,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": [
+        "src/content/docs/projects/lexical.md:30"
+      ]
+    },
+    {
+      "path": "public/projects/librechat/01-architecture.webp",
+      "sha256": "455462af060141a99a79699e9e8e92b7e1cd7aa0931991e98567eb65e1d57a40",
+      "bytes": 124454,
+      "width": 1600,
+      "height": 1600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/lightningcss/01-pipeline.webp",
+      "sha256": "44726b15935a7f931880a6528399c57f0ef7bad41aca0a2bedb11c0165cbc42e",
+      "bytes": 101734,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/lightningcss/02-genealogy.webp",
+      "sha256": "ea1fe3339f7fa5e67ee953340121f95a58cb022e1ad9006596642ae9ca75aa5d",
+      "bytes": 88878,
+      "width": 1500,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/lingui/01-macro-pipeline.webp",
+      "sha256": "d20a6ca7420a9982963b5308dad88e7ffeb9a1f32a8997cef75ba997c285e343",
+      "bytes": 49128,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/listr2/01-task-tree.webp",
+      "sha256": "dc45877ac0f11f0ab937d4f2291f5f2e4e62d41ff6e39ad69c71fdf8eedfea1d",
+      "bytes": 86264,
+      "width": 1280,
+      "height": 860,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/lottie/01-workflow.webp",
+      "sha256": "930ba7571b0b05278ee211f82aacf8470b204094b33be7bb5ceae974fe442059",
+      "bytes": 44188,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": [
+        "src/content/docs/projects/lottie.md:62"
+      ]
+    },
+    {
+      "path": "public/projects/lucia/01-evolution.webp",
+      "sha256": "2e2ce10b340ba66e54f3e25cd7b4b4f422c1b575c3e11c7353fa9c0b7bbceeb0",
+      "bytes": 72078,
+      "width": 2064,
+      "height": 1184,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/luxon/01-tz-i18n.webp",
+      "sha256": "b446ce3281858318853c7ab3e154bda1c26c0a9387170da22e8e19bdab0c5dd5",
+      "bytes": 46810,
+      "width": 1280,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/markdown-it/01-token-stream.webp",
+      "sha256": "3363729e9ee3e4f7ceae21b12d28866ebef4aa8a5a07fa17db90206a90f17327",
+      "bytes": 75430,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/marked/01-regex-flow.webp",
+      "sha256": "7d478eb6cb9befa8f3f27c846da708e6232b46e1c6a60b55c37c9b0c137e1495",
+      "bytes": 295358,
+      "width": 2560,
+      "height": 1440,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/mcp-ts-sdk/01-mcp-architecture.webp",
+      "sha256": "e2d57248d49e77cdd0a08cad4485b77adf82bc95cd27eea66f3e67ddf2ac0352",
+      "bytes": 104290,
+      "width": 1280,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/micromark/01-streaming-state-machine.webp",
+      "sha256": "bed95305f6c5b710496c303fafd3a768213f028a242b062e5d35be3f17f5cae5",
+      "bytes": 28822,
+      "width": 900,
+      "height": 600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/midscene/01-architecture.webp",
+      "sha256": "e734cfb1cc8aff506a1e3b0b7c82bd5f841205398d22c704f460568c833e8c64",
+      "bytes": 76428,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/mikro-orm/01-uow.webp",
+      "sha256": "5a743589d303c5009cb216f30bf02a278def293b095a80c0060ea8d1385d41c5",
+      "bytes": 80562,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/minisearch/01-architecture.webp",
+      "sha256": "7434b7fbe4130095c14aa88c5040ca5457a2ca3108a9b65ca53d8648780bc339",
+      "bytes": 98146,
+      "width": 1600,
+      "height": 980,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/mobx/01-tfrp-dataflow.webp",
+      "sha256": "2da09c2d72c4340a46c9e08dbc1c21256fa8a808ac2b5eaaa0775992630958fe",
+      "bytes": 127374,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/monaco-editor/01-architecture.webp",
+      "sha256": "f0dbffa221da830f2d40142a83aa355a0309161e0404eadf2b57bda28b5498eb",
+      "bytes": 190160,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/motion-one/01-architecture.webp",
+      "sha256": "614dfede1c6c95e0369ddabcab7f6edbdead950e919f246d4d8dfbeeb8126e67",
+      "bytes": 84686,
+      "width": 1200,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/msw/01-architecture.webp",
+      "sha256": "c04fe0ab88d5291f8126646f82017b9b319aac03995094f5dbd0b973de65e0b6",
+      "bytes": 123664,
+      "width": 1700,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/nanobrowser/01-architecture.webp",
+      "sha256": "b59e5682661c799c1ad7738c43843f07f613795fc38a4f3ac5b1096a9ad28567",
+      "bytes": 260634,
+      "width": 2400,
+      "height": 1800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/nanostores/01-architecture.webp",
+      "sha256": "11c8b08bd794c28d6464f666a650fadf65de08976ab7b698f51c43e9bf194537",
+      "bytes": 81190,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/nestjs/01-module-di.webp",
+      "sha256": "e64c8d722f22a8b3823cf18eec0229729066d3ef88154961ee1887a655413f6d",
+      "bytes": 82920,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/next-intl/01-app-router.webp",
+      "sha256": "a55912b8e6c6146ce49532939910d0725763047b6353a532393c4725cdd141ae",
+      "bytes": 83734,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/nextra/01-architecture.webp",
+      "sha256": "cdc787c93fc3f62b1230dc274af3ade1ebcae3eff031c256e572a8d181239b94",
+      "bytes": 128192,
+      "width": 2400,
+      "height": 1400,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/nx/01-architecture.webp",
+      "sha256": "a0550a303afc2433116517024396fb40dc5a7c07c01e4795b7b952c1c37d3da3",
+      "bytes": 110706,
+      "width": 1400,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/oclif/01-plugin-system.webp",
+      "sha256": "15529ce74dacffaa1f26823ebf5bc0a44cd339bee61a6b9cb0a6c7ec7eebf1b9",
+      "bytes": 55538,
+      "width": 1200,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/ofetch/01-architecture.webp",
+      "sha256": "a344ae5a07176747e24b63ce9a5da1b9ab5379e58cf22f657615509596ef7082",
+      "bytes": 60648,
+      "width": 1280,
+      "height": 920,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/ollama/01-architecture.webp",
+      "sha256": "cbd306b4ad37600c5dcd69be414d9f8f224044af02b39a26e3d469d294c260ea",
+      "bytes": 92578,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/ora/01-spinner.webp",
+      "sha256": "c8b1436eb63373ca3f74820159665a3f8f2b7b1da208cb955b968c406b9c3dfe",
+      "bytes": 44550,
+      "width": 1200,
+      "height": 640,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/oxc/01-stack.webp",
+      "sha256": "f17e7b7db9c5725d470047ad9ff9892e754824457d9bf75ea56cc8de997ef89f",
+      "bytes": 79156,
+      "width": 2000,
+      "height": 1300,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/oxc/02-ecosystem.webp",
+      "sha256": "c3136bea1aebe36bf1388bd2f8ef21dc4d64676d1892c4bb111097628fc221df",
+      "bytes": 67220,
+      "width": 2000,
+      "height": 1300,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/patchright/01-architecture.webp",
+      "sha256": "0d4d2c9451ce44dab4daaef8abec1319eec654bdb213b1898a90f184d6abb8f6",
+      "bytes": 162680,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/penpot/01-architecture.webp",
+      "sha256": "ed0581f0f8ae0e06db31789c0c78199df0b258dc5da898f50e16316df65fb993",
+      "bytes": 114094,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/penpot/02-rpc-dispatcher.webp",
+      "sha256": "96cdebb59a946df99e1db35d932dd0d32e994628b893d16de28aea0581e03c79",
+      "bytes": 119026,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/pino/01-data-flow.webp",
+      "sha256": "2efa63e407276bbb9331c28ea1fcded3bbacd40b431215a12772a947668f6f41",
+      "bytes": 104576,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/pixi/01-webgl-pipeline.webp",
+      "sha256": "0433d4c10da0e854d1dbece063f14e7700bc54bf2ef5ae98d7d58c5d32ca8691",
+      "bytes": 23094,
+      "width": 1400,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/plane/01-architecture.webp",
+      "sha256": "9a607f7bccbb82b812bb636bbff64eef3ce386325aa1909f8374c329a0ec7d5f",
+      "bytes": 91250,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": [
+        "src/content/docs/projects/plane.md:78"
+      ]
+    },
+    {
+      "path": "public/projects/playwright/01-architecture.webp",
+      "sha256": "70c7919b1462a6ac4de64e2b8bf9deddd4ea692c2c8ee267662114c330c571e7",
+      "bytes": 102666,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/pnpm/01-architecture.webp",
+      "sha256": "938ff1e46fedbae1eab6cf692dcbae85bbbaea5927530f229fc0d5e235048c24",
+      "bytes": 106718,
+      "width": 1400,
+      "height": 920,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/postgres-js/01-data-flow.webp",
+      "sha256": "5d094b769f3ebb38cb54af18e06629ca0a549e16d156685d7184f809fc6f7a58",
+      "bytes": 90998,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/prisma/01-architecture.webp",
+      "sha256": "18f97028e105ff95c49469a68cd8277c8b32761ada7fcec480fb7c852cb04869",
+      "bytes": 99196,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/prom-client/01-data-flow.webp",
+      "sha256": "746e8a681db1844dc11fc8068f433064a20714db3f4dd77db03f53cf5ded33d0",
+      "bytes": 109728,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/prosemirror/01-architecture.webp",
+      "sha256": "db2a1940b313c2c8169e2ab0fa554e8dac3daf888d3b2a5e2117c0cad747e67a",
+      "bytes": 60470,
+      "width": 1280,
+      "height": 720,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/radix-ui/01-architecture.webp",
+      "sha256": "5772d510037029e5ed1a706d40ec4a61cd47dde65c502bd4fe25caaa8dbf1175",
+      "bytes": 122040,
+      "width": 1500,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/radix-ui/02-controllable-state.webp",
+      "sha256": "e15ec73755458e816b7e0ee18e0e35251874dc94fe04379fc4e42d85c4b9376c",
+      "bytes": 85168,
+      "width": 1500,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/react-dnd/01-html5-backend.webp",
+      "sha256": "40f2b1cfe87c03ef14304acde11713ad7d443590a30d7804eebc8533b428b3bd",
+      "bytes": 29198,
+      "width": 900,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/react-hook-form/01-architecture.webp",
+      "sha256": "f6eb630f968ae150d41abc9d48eabe1f0623fc2d7077c8142b7744725c335c4c",
+      "bytes": 81252,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/react-intl/01-formatjs-monorepo.webp",
+      "sha256": "a8e082f927c7a839299c5f265eff0511bbdc6e6a789e62a7271ee1d2bee7562a",
+      "bytes": 71218,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/react-spring/01-architecture.webp",
+      "sha256": "9d472de5dfa0ec68635f30ce786079abec740620fd39ce240583cb50e7e6bfca",
+      "bytes": 66862,
+      "width": 1200,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/recharts/01-component-tree.webp",
+      "sha256": "55d39b52b324bbd133cc520e15048a96523627ff88fdd6af2d75d9d3090c140e",
+      "bytes": 63842,
+      "width": 1400,
+      "height": 980,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/rolldown/01-pipeline.webp",
+      "sha256": "bed8cb3dadd61c5fdb3f00cfd403ad85763f3e923cac698440463091b5805f81",
+      "bytes": 99878,
+      "width": 1800,
+      "height": 1180,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/rolldown/02-lineage.webp",
+      "sha256": "5362de85975c80c2889cdbc65f69fe3ef8379227af357d93ec30873c4b7a68c8",
+      "bytes": 55664,
+      "width": 1800,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/rollup/01-tree-shake.webp",
+      "sha256": "e9de524e97edf3b4d91a7628706d4c440e000038b2d3332ae117262918a1a461",
+      "bytes": 97768,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/rspack/01-pipeline.webp",
+      "sha256": "127ab775319215f3329200577b700d96298319c17ff64cc7b6413a1e22655b2a",
+      "bytes": 167870,
+      "width": 1800,
+      "height": 1500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/rspack/02-genealogy.webp",
+      "sha256": "c9178c1b63f6d0763a53f50d6047134a818ae090e2c029e2fc33e1bea7cd2b14",
+      "bytes": 87284,
+      "width": 1800,
+      "height": 1300,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/sentry/01-architecture.webp",
+      "sha256": "72bb3c915819e10b3873da7da228f0af6d54ad364c378778add96caf33cddcf7",
+      "bytes": 122340,
+      "width": 1680,
+      "height": 1040,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/sentry/02-grouping.webp",
+      "sha256": "9e89ae4775c862f212470d8ba76205f64e98cdef746108a9bddb81fd2b5f624b",
+      "bytes": 116534,
+      "width": 1500,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/sequelize/01-model-flow.webp",
+      "sha256": "8c81cae9e8decdfe3dd468e86a3260666e73f5c5a81c818cdb47a23a2c50f5fe",
+      "bytes": 103956,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/shadcn-ui/01-distribution-flow.webp",
+      "sha256": "05b5c76045f6fe32af63779d378fb881e872693f8fe7148d185be9932e5df936",
+      "bytes": 123746,
+      "width": 1600,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/sharp/01-pipeline.webp",
+      "sha256": "1383b5f2304341b791fdd8a8a916bf8763ce4315368cbb1b4c87ec25d3edd027",
+      "bytes": 21738,
+      "width": 1000,
+      "height": 380,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/shiki/01-tm-grammar.webp",
+      "sha256": "87ff10f8e4c54e817b1e5072ade7830ee1ae1edaf9892fabcdc5eb5afce52533",
+      "bytes": 150688,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/stagehand/01-architecture.webp",
+      "sha256": "82df963d30e580529b289edfd69fe352da3de0f7f9238ae4025c6d09501d075a",
+      "bytes": 144796,
+      "width": 1600,
+      "height": 1600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/starlight/01-architecture.webp",
+      "sha256": "6d5c83fd4eb5cc64dc5546903dec16e13b6445bac13980cde00cae9eb55c3024",
+      "bytes": 167542,
+      "width": 1600,
+      "height": 1600,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/steel-browser/01-architecture.webp",
+      "sha256": "6240ad48246e9c1e0c072db2ca9ef245847a07829b960cad96237507b4b3ffec",
+      "bytes": 147908,
+      "width": 1900,
+      "height": 1180,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/storybook/01-architecture.webp",
+      "sha256": "f037ec9cdcc91f85f18c4b9e271acef0bd5377076bef6e1843c462afd3b69189",
+      "bytes": 110886,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/styled-components/01-template-literal.webp",
+      "sha256": "53be849757fdc2e407b03520feee4e916d9bb57654b0f04aa59fa06eb5968a63",
+      "bytes": 17260,
+      "width": 1400,
+      "height": 700,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/stylex/01-atomic-css.webp",
+      "sha256": "e9c8bb97ae466bb64f5ace7c06ed8999ce0dd65b2c58ceaf0578b081a81349b6",
+      "bytes": 56216,
+      "width": 1200,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/supabase/01-architecture.webp",
+      "sha256": "0bbe575c7a0f84c4732667998167c72b4f4adea925b5db206b56951e7b11f067",
+      "bytes": 52610,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/supabase/01-data-flow.webp",
+      "sha256": "8f1b1c4e6fbcbb67a317c46ee72a852354775ea0c3c09119a953c38d9f04ad59",
+      "bytes": 45242,
+      "width": 1400,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/supertokens/01-architecture.webp",
+      "sha256": "4b5d166b1f5550b48db0ea23b2dd3c7071625bd276104320d67d2fd1c587b3a8",
+      "bytes": 108476,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/swc/01-architecture.webp",
+      "sha256": "b9a0c5a053c58b35c4f37b90a6e9afadf5ca8e9a8ea10a108b5ed404675c019b",
+      "bytes": 69544,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/swr/01-swr-vs-tanstack-query.webp",
+      "sha256": "0a1323a0e6cd0dd0991e07f232b1e8d9d1c919f4036629670fe4373b89bb6891",
+      "bytes": 72952,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/tailwind/01-utility-first.webp",
+      "sha256": "608d6c194ab27b6e5893c206b75b2430953d070efbd2927d97a350310cf5b0d6",
+      "bytes": 38904,
+      "width": 1200,
+      "height": 800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/tanstack-form/01-architecture.webp",
+      "sha256": "e8143e760025d8d5d3ac4b5009cfb06fea450ae2511ed0ce93e0eb5c47521836",
+      "bytes": 80942,
+      "width": 1280,
+      "height": 880,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/tanstack-query/01-query-lifecycle.webp",
+      "sha256": "eaf58c1edc46a7abdc6f768ea425d921db1be9261e964942db4073ded8be5942",
+      "bytes": 73700,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/tanstack-router/01-type-flow.webp",
+      "sha256": "fb3c8c052ec935f73790711a4d48ba948e6836fa5968c21dad3846a296eb474e",
+      "bytes": 97948,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/temporal-polyfill/01-class-hierarchy.webp",
+      "sha256": "021efee65626c698de3b51a4ccd031132ea44ef84a916be9f76bf9abfa0b73f4",
+      "bytes": 46280,
+      "width": 1280,
+      "height": 860,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/testing-library/01-architecture.webp",
+      "sha256": "1d69791eed42f0c2a2ed01a7097c5bacce18a64285204d293cdd3404573c757d",
+      "bytes": 134348,
+      "width": 1700,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/trpc/01-proxy-magic.webp",
+      "sha256": "45853536011834488cf764cadd3402c27463a4ea4f698f948c5934b060e9c3da",
+      "bytes": 70686,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/turbopack/01-pipeline.webp",
+      "sha256": "33e429b7466d51ce2bb5f22b2530520bd163e2a583bfb6dd8239078db5adfb53",
+      "bytes": 142442,
+      "width": 1800,
+      "height": 1500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/turbopack/02-lineage.webp",
+      "sha256": "4ce594a9361687cdcae73e4298e559c7722c531e17709591979ae3a1150ffc7c",
+      "bytes": 124662,
+      "width": 1800,
+      "height": 1300,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/turborepo/01-architecture.webp",
+      "sha256": "ae04d95505163bb19a9193a302fab176dba3ae16527d0a8c1807e143a6396809",
+      "bytes": 62932,
+      "width": 1280,
+      "height": 1280,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/typeorm/01-decorator.webp",
+      "sha256": "a8a3f14e4adf2487140c46a6cf67f624a04ea4fec7297835cc91b9b26c6f7874",
+      "bytes": 95366,
+      "width": 1200,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/unified/01-pipeline.webp",
+      "sha256": "db63569c8d863b57d38209db30cc75eaa884b147cb989bebf2722aee6366f5f1",
+      "bytes": 120668,
+      "width": 2560,
+      "height": 1440,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/unstorage/01-architecture.webp",
+      "sha256": "ceddd0983c06d3cdea6f84e0caca28b5464363002bd9a799f901cea9115633a4",
+      "bytes": 120256,
+      "width": 1800,
+      "height": 1800,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/valibot/01-bundle-comparison.webp",
+      "sha256": "2e51e824088cf83a687588edf9cb49765be78dc9b14b721003b5702ea60ae945",
+      "bytes": 36626,
+      "width": 1280,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/valtio/01-data-flow.webp",
+      "sha256": "97d4bb96891efa65a82faad7ce2c3878a81bf670c240c37aa36fe0f9a59ece94",
+      "bytes": 125214,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vanilla-extract/01-zero-runtime.webp",
+      "sha256": "caed4385faef35fc16536aa348ed2a58dbe261a61e02fb8cc72eae6c3c2a4a8c",
+      "bytes": 157390,
+      "width": 1700,
+      "height": 1080,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vercel-ai/01-architecture.webp",
+      "sha256": "4afa83a2b7bfd592f670065938469fc89fbdc5c4664501f1468a86b085b5def1",
+      "bytes": 117084,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/visx/01-monorepo.webp",
+      "sha256": "b34bcec8afae108f8c3c3fdc6db9cee6b19dd365935814aafb0764e23974b9c1",
+      "bytes": 38110,
+      "width": 1280,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vite/01-dev-vs-build.webp",
+      "sha256": "fe564347cc0c4a0ab3c1f09d559e1b5eacd3ed2c8a2964e028c4fb8abea02a6b",
+      "bytes": 68546,
+      "width": 1280,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vite/01-pipeline.webp",
+      "sha256": "0dc668e98dd729d99ef1261e163bb76dba893499de82c574ba7fbd2fbe66b8c7",
+      "bytes": 60472,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vite/02-transform-request.webp",
+      "sha256": "dc41d29705e8c3d21efe36ce7319f18475948a2cd6f4ba31219baa15434246d1",
+      "bytes": 32696,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vitepress/01-architecture.webp",
+      "sha256": "103e37faddc362cc06c5c796784a30cb44e8b9f3d219205a77745bf23d4ed961",
+      "bytes": 90482,
+      "width": 1600,
+      "height": 1000,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vitest/01-architecture.webp",
+      "sha256": "96b406a476eb12a5b81ceadbf20d35db20980dec21be150443c35c35288296fd",
+      "bytes": 114678,
+      "width": 1700,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/vue-i18n/01-composition-api.webp",
+      "sha256": "7a727f596ccc0a7d6eee5081617dc5c7ca021163f326e9890e5413e6ca9b2d8d",
+      "bytes": 53196,
+      "width": 1280,
+      "height": 820,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/web-vitals/01-pipeline.webp",
+      "sha256": "23f841ff4e631e6aeb16f3c0bd6d64b2d51442cb3afe376824708883e967e9e7",
+      "bytes": 108690,
+      "width": 1680,
+      "height": 1080,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/webpack/01-pipeline.webp",
+      "sha256": "e960be09d0fe1bc3c2bbb136e2489a29299899d2e30fcee6d4f04ed438479b3e",
+      "bytes": 49220,
+      "width": 1600,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/why-did-you-render/01-wdyr-flow.webp",
+      "sha256": "ac36a699f732c00cf353b04cf72b17bda6f43f339fc2844e626a54a5c1edc5ae",
+      "bytes": 174048,
+      "width": 1600,
+      "height": 1200,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/wretch/01-fluent-chain.webp",
+      "sha256": "4b37a5f8fff6bc071a82e9a9fbbfb152bbe34033a21390c369f34fca0535a8b2",
+      "bytes": 60872,
+      "width": 1500,
+      "height": 760,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/xstate/01-actor-model.webp",
+      "sha256": "7b521c6a62563e4821f8cf34df3156056e4caf4a9d4b925c66b94296aafe6fe8",
+      "bytes": 123784,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/yargs/01-cli-pipeline.webp",
+      "sha256": "a5b5cc9ab53361149b26db5df6e5a7bc19fe4dab042f08f19c2f6df6eb655c97",
+      "bytes": 24928,
+      "width": 900,
+      "height": 500,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/yjs/01-architecture.webp",
+      "sha256": "0be8e001dbac308c0afa0f1d4990c6e5f897d3c54893aa3380a3958dfc84a311",
+      "bytes": 127656,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/zod/01-architecture.webp",
+      "sha256": "e9c6330227f16803f3b2d0bdb57caec833415cebc213088b92cd31bf0622eeab",
+      "bytes": 96752,
+      "width": 1400,
+      "height": 900,
+      "format": "webp",
+      "referenced_by": []
+    },
+    {
+      "path": "public/projects/zustand/01-vanilla-core.webp",
+      "sha256": "a5bf2fda4269d348fbd7c9aabae65cb01bd5baa5c1b42b1c34146daf535bdab0",
+      "bytes": 137070,
+      "width": 1600,
+      "height": 1100,
+      "format": "webp",
+      "referenced_by": []
+    }
+  ],
+  "duplicate_hashes": [
+    {
+      "sha256": "175a28f0fbfe9d80d6da78a856142cf4272e7180cd758927d11e73e4e7aacdea",
+      "paths": [
+        "public/papers/adapton/01-eager-vs-lazy.webp",
+        "public/papers/adapton/01-evolution.webp",
+        "public/papers/salsa-adapton/01-architecture.webp"
+      ]
+    },
+    {
+      "sha256": "28f6145a75824e97f1ba94de747499f7c9fb7346e841100a7da28bf5ab38c8d1",
+      "paths": [
+        "public/papers/anthropic-circuits/01-residual-qk-ov.webp",
+        "public/papers/induction-heads/01-induction-mechanism.webp"
+      ]
+    },
+    {
+      "sha256": "9144d961b6f7d73dfde3d1d20c33cdc35cdd1af077320a617e71f11f6f779e72",
+      "paths": [
+        "public/papers/anthropic-circuits/02-evolution.webp",
+        "public/papers/induction-heads/02-mechinterp-lineage.webp"
+      ]
+    },
+    {
+      "sha256": "e9c8bb97ae466bb64f5ace7c06ed8999ce0dd65b2c58ceaf0578b081a81349b6",
+      "paths": [
+        "public/projects/arktype/01-syntax-comparison.webp",
+        "public/projects/stylex/01-atomic-css.webp"
+      ]
+    },
+    {
+      "sha256": "ed31bad7837324a3509f1af7ce590b20646a024cae549b6c78b16da477adde30",
+      "paths": [
+        "public/papers/adapton/02-adapton-primitives.webp",
+        "public/papers/salsa-adapton/02-genealogy.webp"
+      ]
+    }
+  ]
+}

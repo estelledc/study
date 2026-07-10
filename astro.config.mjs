@@ -65,6 +65,9 @@ export default defineConfig({
           langAlias: Object.fromEntries(textOnlyCodeFenceLanguages.map((lang) => [lang, 'txt'])),
         },
       },
+      components: {
+        PageTitle: './src/components/PageTitle.astro',
+      },
       // Sidebar 是骨架，不放 100+ 笔记的扁平列表。
       // 笔记发现走 papers-atlas / projects-atlas（多维索引，scripts/regen-atlas.mjs 自动生成）
       // + 顶部 Pagefind 搜索（Cmd-K）+ 笔记尾部 [[backlink]]。

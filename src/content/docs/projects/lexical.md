@@ -27,7 +27,7 @@ branch: D
 | License | MIT |
 | 类似项目 | [prosemirror](/study/projects/prosemirror/)（schema-first / Marijn Haverbeke）/ Slate.js（mutable doc + React-only）/ Tiptap（基于 ProseMirror 的封装）/ Draft.js（已弃，由本项目接班）/ [codemirror](/study/projects/codemirror/)（同作者风格但走 code 编辑） |
 
-![Figure 1. Lexical 架构总览](/projects/lexical/01-architecture.webp)
+![Figure 1. Lexical 架构总览](/study/projects/lexical/01-architecture.webp)
 
 > Figure 1：上排是 `editor.update(fn)` 的生命周期——`$beginUpdate` 把当前 `_editorState` 浅拷贝成 `_pendingEditorState`，
 > 让 fn 在沙箱里改 Node，再 `queueMicrotask` 调度 `$commitPendingUpdates`；中排展开 commit——

@@ -2,6 +2,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { homepageTrustClaimFailures } from './lib/homepage-trust.mjs';
 
 const root = process.cwd();
 const distDir = path.join(root, 'dist');
@@ -107,6 +108,8 @@ const anchors = extractAnchors(html);
 const text = visibleText(html);
 const h1Texts = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map((match) => visibleText(match[1]));
 const requiredHeroTitle = '从真实项目和经典论文里，建立工程判断力';
+
+for (const message of homepageTrustClaimFailures(html)) fail(message);
 
 if (h1Texts.length !== 1 || h1Texts[0] !== requiredHeroTitle) {
   fail(`Built homepage must contain exactly one H1 with "${requiredHeroTitle}"; found ${JSON.stringify(h1Texts)}`);

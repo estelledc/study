@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "base_url": "/study",
+  "queries": [
+    {
+      "query": "React UI 组件库",
+      "must_include": ["/study/projects/react/"]
+    },
+    {
+      "query": "ReAct Reasoning Acting",
+      "must_include": ["/study/papers/react/"]
+    },
+    {
+      "query": "分布式系统",
+      "minimum_results": 1
+    },
+    {
+      "query": "不存在不存在",
+      "maximum_results": 0
+    }
+  ]
+}

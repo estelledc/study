@@ -9,7 +9,7 @@
 ## 这是什么
 
 围绕"AI 时代产品工程师"成长路径，深度研究 **GitHub 开源项目** + **学术论文** 并写笔记的站点。
-Astro + Starlight 构建，已发布到 GitHub Pages，每次推 main 自动 redeploy。
+Astro + Starlight 构建，已发布到 GitHub Pages；main 变更只有在共用 CI 门禁通过后才进入部署 job。
 
 两条平行学习线（状态独立维护，避免 worktree 间冲突）：
 
@@ -27,10 +27,10 @@ src/content/docs/
 ├── career-plan.md       ← 培养路线
 ├── method.md            ← 项目消化方法论（7 层）
 ├── queue.md             ← 项目推荐队列
-├── projects/            ← 项目研究笔记（20 篇）
+├── projects/            ← 项目研究笔记（由内容审计统计）
 ├── papers-method.md     ← 论文消化方法论（8 层）
 ├── papers-queue.md      ← 论文推荐队列（20 篇 / 4 季度）
-└── papers/              ← 论文研究笔记（进行中）
+└── papers/              ← 论文研究笔记（由内容审计统计）
 
 public/papers/<paper-slug>/   ← 每篇论文的 figure（webp 格式）
 ```
@@ -38,7 +38,7 @@ public/papers/<paper-slug>/   ← 每篇论文的 figure（webp 格式）
 ## 本地开发
 
 ```bash
-npm install
+npm ci
 npm run dev    # http://localhost:4321/study/
 npm run build  # 输出到 dist/
 ```
@@ -47,7 +47,7 @@ npm run build  # 输出到 dist/
 
 已通过 GitHub Pages 部署在 <https://estelledc.github.io/study/>。
 
-`.github/workflows/deploy.yml` 监听 main 分支，每次 push 自动 build + deploy。
+`.github/workflows/deploy.yml` 只监听 main；功能分支和草稿 PR 不部署。合并 main 与生产发布需要单独确认，并先通过共用 `verify:ci` 门禁。
 
 ## 项目研究方法论速记（7 层，~75 分钟一篇）
 
@@ -115,7 +115,7 @@ node scripts/paper-context.mjs --slug <slug> --title "<title>" --url "<url>" --y
         ↓                              ↓                       ↓
   prompt 描述每页内容    →    ~/.codex/generated_images/    →    public/papers/<slug>/*.webp
                                                                        ↓
-                                                            笔记 ![alt](/papers/<slug>/01.webp)
+                                                            笔记 ![alt](/study/papers/<slug>/01.webp)
 ```
 
 每篇论文笔记的 figure 放在 `public/papers/<paper-slug>/`，用 webp 格式（PNG 转 webp 压缩 13-15×，每张 60-130KB）。
@@ -123,8 +123,8 @@ node scripts/paper-context.mjs --slug <slug> --title "<title>" --url "<url>" --y
 ## 公开站红线（项目级 hard rule）
 
 - 正文 + commit message 都不得出现私域内部上下文（项目代号 / 内部域名 / 团队关系等）
-- 凡出现一律 `git reset --soft` + 重写 commit + force push
-- 红线条目存在 Claude Code 全局 memory，下次违反会自动加载提醒
+- 发现疑似敏感内容立即停止发布，运行 tracked-file 红线审计并按泄漏类型处理；不要在日志或 fixture 中复述命中原文。
+- 已发布历史是否需要轮换凭证或重写必须单独评估和授权，不能用默认 force push 处理。
 
 ## 发布历史
 

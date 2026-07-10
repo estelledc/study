@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://estelledc.github.io/study/sitemap-index.xml
