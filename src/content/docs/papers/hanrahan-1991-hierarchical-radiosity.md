@@ -118,8 +118,8 @@ Unreal Engine 的 Lightmass 烘焙器在 2010 年代初仍然用层次化 radios
 
 - **1987**：Greengard 和 Rokhlin 在数学上发表 Fast Multipole Method，把 N-body 物理仿真从 O(n²) 降到 O(n)
 - **1989**：Hanrahan 在 Pixar 完成 RenderMan 设计，转去 Princeton 做教授
-- **1991**：Hanrahan 带 Salzman、Aupperle 把 FMM 思想搬进 radiosity，发表本文
-- **同年**：Hanrahan 离开 Princeton 去 Stanford 创建 graphics lab，从此那里出了 Levoy / Pharr / Ng 一脉
+- **1991**：Hanrahan 带 Salzman、Aupperle 把 FMM 思想搬进 radiosity，发表本文（当时他仍在 Princeton）
+- **1994**：Hanrahan 离开 Princeton 加入 Stanford 创建 graphics lab，此后那里走出 Levoy / Pharr / Ng 一脉
 - **2019**：Hanrahan 与 Ed Catmull 共享图灵奖，表彰 3D 计算机图形学的奠基贡献
 
 ## 学到什么
