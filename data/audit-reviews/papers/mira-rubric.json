@@ -1,0 +1,141 @@
+{
+  "slug": "mira-rubric",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "食材分尺 / 老师分科批改类比贴合 mid-training 筛选"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "MAE、trimmed_mean、frontier judge、embedding 首次出现缺白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只列 3 个 source 却 cluster k=5，零基础会以为矛盾；宜注明示意或改成与正文一致的 21 源→5 组"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "21 源 / 5 组、~2M teacher 标签、MIRA-Group 25B macro 64.20 vs Random 63.23 / DataMan 63.01 / Raw 63.83 / Global 61.81 与论文 Table 1 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "MAE<1（0–10 分制）再 trimmed mean 的可靠性 mask 表述正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读『A Survey on LLM Mid-training』目前是 arXiv 搜索页而非稳定论文条目，宜换成具体条目或删掉"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三段伪代码把分组→锚点→mask 聚合主链路串起来，教学可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖困惑度误伤、统一 rubric、teacher 全量成本、全局阈值抽干低均值来源，可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化（千万级语料 / 几千条不必上 MIRA），清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "食材分尺 / 老师分科批改类比贴合 mid-training 筛选",
+        "MAE、trimmed_mean、frontier judge、embedding 首次出现缺白话桥接",
+        "案例 1 只列 3 个 source 却 cluster k=5，零基础会以为矛盾；宜注明示意或改成与正文一致的 21 源→5 组"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "21 源 / 5 组、~2M teacher 标签、MIRA-Group 25B macro 64.20 vs Random 63.23 / DataMan 63.01 / Raw 63.83 / Global 61.81 与论文 Table 1 一致",
+        "MAE<1（0–10 分制）再 trimmed mean 的可靠性 mask 表述正确",
+        "延伸阅读『A Survey on LLM Mid-training』目前是 arXiv 搜索页而非稳定论文条目，宜换成具体条目或删掉"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三段伪代码把分组→锚点→mask 聚合主链路串起来，教学可跟",
+        "踩坑覆盖困惑度误伤、统一 rubric、teacher 全量成本、全局阈值抽干低均值来源，可操作",
+        "适用边界有量化（千万级语料 / 几千条不必上 MIRA），清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 155,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 155,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": [],
+    "summary": "补 MAE/trimmed_mean 白话；案例1标明21源示意；替换无效 mid-training 搜索链接"
+  }
+}

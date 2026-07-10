@@ -1,0 +1,143 @@
+{
+  "slug": "paddleocr",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "流水线工厂（质检/翻转/抄写/文档管家）类比非常贴合三段 OCR"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "CML / UDML / DSR / PFHead 缩写堆叠，缺一句人话解释各自在干什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 代码清晰；案例 3 步骤可跟但缺最小命令示例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『中文 Hmean 比 v3 提升约 10%』不符官方：中文端到端约 +4.5%（英文场景才约 +10%），学到什么段同样写错"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "DSR 官方是 Dynamic Shrink Ratio（检测训练动态 shrink），不是 Distillation with Stricter Rules"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "CML / UDML / PFHead / SVTR_LCNet 大方向对，但勿把蒸馏全家桶说成唯一结构变化来源"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "PaddleOCR / PPStructure 最小示例概念正确，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "框架冲突、小 batch GPU 不划算、方向分类误伤英文、表格极限、长尾需微调等坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用对照 easyocr、ONNX、商用 API、Donut 边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "流水线工厂（质检/翻转/抄写/文档管家）类比非常贴合三段 OCR",
+        "CML / UDML / DSR / PFHead 缩写堆叠，缺一句人话解释各自在干什么",
+        "案例 1–2 代码清晰；案例 3 步骤可跟但缺最小命令示例"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "『中文 Hmean 比 v3 提升约 10%』不符官方：中文端到端约 +4.5%（英文场景才约 +10%），学到什么段同样写错",
+        "DSR 官方是 Dynamic Shrink Ratio（检测训练动态 shrink），不是 Distillation with Stricter Rules",
+        "CML / UDML / PFHead / SVTR_LCNet 大方向对，但勿把蒸馏全家桶说成唯一结构变化来源"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "PaddleOCR / PPStructure 最小示例概念正确，可跟做",
+        "框架冲突、小 batch GPU 不划算、方向分类误伤英文、表格极限、长尾需微调等坑具体",
+        "适用/不适用对照 easyocr、ONNX、商用 API、Donut 边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.67,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 162,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 学到什么"
+    ],
+    "unresolved_hints": [],
+    "summary": "中文 Hmean 改为约+4.5%；DSR 改为 Dynamic Shrink Ratio；案例3补训练/导出命令；缩写加白话"
+  }
+}
