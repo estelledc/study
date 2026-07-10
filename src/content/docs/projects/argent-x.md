@@ -126,7 +126,7 @@ await starknet.account.execute([
 - **2022 年**：Starknet alpha 主网上线，协议层原生支持 AA（账户都是合约），Argent Labs 把同一套思路平移到 Starknet，发布 Argent X 浏览器扩展。
 - **2023 年**：starknetkit 库发布，统一 Argent X / Braavos 的 dApp 连接接口，Starknet 生态整体启动。
 - **2024 年**：Starknet 主网放量、空投预期推高用户数，Argent X 和 Braavos 并列成 Starknet 钱包入口；Argent Mobile 也开始支持 Starknet 账户。
-- **2025 年**：Argent 在 [[zk-snark]] 类 zkRollup 生态里继续做"账户即合约"标准制定者，账户类升级路径透明、社区可审。
+- **2025 年**：Argent 继续围绕 Starknet 的账户合约、账户类升级和多设备恢复做标准制定者，账户能力透明、社区可审。
 
 ## 学到什么
 
@@ -152,7 +152,7 @@ await starknet.account.execute([
 - [[hardhat]] —— EVM 合约开发框架，与 Argent X 不在同生态但是开发者熟悉的对照
 - [[foundry]] —— 同上，对应 Starknet 生态会用 starkli / scarb / [[ape-framework]] 类工具
 - [[bitcoin-core]] —— Argent X 不支持比特币，写在这里是为了划清生态边界
-- [[zk-snark]] —— Starknet 是 ZK Rollup，Argent X 间接受益于 ZK 的低成本
+- [[zksync-era]] —— 同样是 L2 生态的钱包体验参照，但账户抽象路径和 Starknet 不同
 
 ## 反向链接
 

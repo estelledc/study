@@ -118,7 +118,7 @@ Arduino CLI 启动 daemon 模式后暴露 gRPC 端口，任何语言写的前端
 
 Go 被选中有两个原因：交叉编译到所有目标平台只需设置两个环境变量（GOOS/GOARCH），以及 Go 的 `cobra` 库天然适合做 CLI 子命令结构。最终产物是一个不到 30MB 的静态链接二进制，下载即用。
 
-Arduino CLI 0.1.0 发布后，Arduino Create 在线编辑器、VS Code 插件、PlatformIO 的 Arduino 框架支持都开始依赖它。到 2024 年 GitHub stars 突破 4k，成为官方推荐的"headless Arduino"方案。Arduino IDE 2.0 本身也是一个 Electron 壳 + Arduino CLI daemon 的组合。
+Arduino CLI 0.1.0 发布后，Arduino Create 在线编辑器、VS Code Arduino 扩展开始把它当作可复用后端；PlatformIO 则走自己的平台包和构建体系，是同一赛道的对照组。到 2024 年 GitHub stars 突破 4k，Arduino CLI 成为官方推荐的"headless Arduino"方案。Arduino IDE 2.0 本身也是一个 Electron 壳 + Arduino CLI daemon 的组合。
 
 ## 学到什么
 

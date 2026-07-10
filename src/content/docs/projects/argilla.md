@@ -132,6 +132,13 @@ distilabel 用大模型批量生成候选 → Argilla 让人工筛选/修正 →
 - 简单分类 / NER 不需要协作 → 用 doccano，部署轻
 - 不带搜索后端的极简部署 → Argilla 强依赖 ES
 
+## 历史小故事（可跳过）
+
+- **2017 年**：Argilla 前身 Rubrix 开始围绕 NLP 标注和主动学习做开源工具。
+- **2021 年**：项目更名为 Argilla，重点转向团队协作的数据标注与模型反馈闭环。
+- **2023 年**：LLM 微调和 RLHF 爆发后，Argilla 把 Feedback Dataset、ranking、rating 等工作流推到台前。
+- **2024 年**：Hugging Face 收购 Argilla，标志着 HF 生态开始补齐"数据生产"这一环。
+
 ## 学到什么
 
 1. **专一比通用更值钱**：Label Studio 啥都能标，但 LLM 团队选 Argilla——因为 RLHF 流程默认配齐
@@ -157,3 +164,7 @@ distilabel 用大模型批量生成候选 → Argilla 让人工筛选/修正 →
 - [[lm-evaluation-harness]] —— 评测端，Argilla 做评测数据准备
 - [[autotrain]] —— HF 的零代码训练，和 Argilla 标注端搭配最顺
 - [[langfuse]] —— 偏向 LLM 应用观测和评估，Argilla 偏向训练数据生产，互补不重叠
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
