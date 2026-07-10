@@ -1,0 +1,126 @@
+{
+  "slug": "nestjs",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "lines": 182,
+  "l1_pass": true,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工厂/车间/工人/调度类比生动，DI 概念零基础能跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 缺少「逐部分解释」步骤，直接跳到注意点"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 guard/interceptor/pipe 管线术语堆叠，建议拆成请求路径 3-4 步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Kamil Mysliwiec 2017、Angular 思想迁移叙事正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向官方 repo + docs 合理；5M weekly downloads 为约数可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "v11 stage 3 decorator 迁移方向与官方路线一致，未过度承诺完成度"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小 AppModule + NestFactory 示例可跟做；design:paramtypes 注入步骤清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "REQUEST scope、Fastify 迁移、forwardRef、TS decorator baggage 四条踩坑可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有团队规模与边缘部署边界；正文超 200 行需压缩反向链接或次要段"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工厂/车间/工人/调度类比生动，DI 概念零基础能跟",
+        "案例 1 缺少「逐部分解释」步骤，直接跳到注意点",
+        "案例 3 guard/interceptor/pipe 管线术语堆叠，建议拆成请求路径 3-4 步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Kamil Mysliwiec 2017、Angular 思想迁移叙事正确",
+        "来源指向官方 repo + docs 合理；5M weekly downloads 为约数可接受",
+        "v11 stage 3 decorator 迁移方向与官方路线一致，未过度承诺完成度"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "最小 AppModule + NestFactory 示例可跟做；design:paramtypes 注入步骤清楚",
+        "REQUEST scope、Fastify 迁移、forwardRef、TS decorator baggage 四条踩坑可操作",
+        "适用/不适用有团队规模与边缘部署边界；正文超 200 行需压缩反向链接或次要段"
+      ]
+    }
+  ],
+  "sections_modified": [
+    "## 实践案例",
+    "## 历史小故事",
+    "## 学到什么",
+    "## 延伸阅读",
+    "## 关联",
+    "## 反向链接"
+  ],
+  "unresolved_hints": []
+}
