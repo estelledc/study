@@ -1,0 +1,107 @@
+{
+  "slug": "doc2query-2019",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "便签/老检索员类比很贴；案例 3 的 T5 fine-tune 片段偏短，但案例 2 的拼接文本已把主流程讲清。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「0.184→0.277」在为什么重要里略把原版与 docTTTTTquery 并称；表格已拆开，属可接受的教学压缩。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "80 条采样、领域外退化、标签泄漏等踩坑可操作；适用边界有万级文档/万字长文等量化提示。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "便签/老检索员类比很贴；案例 3 的 T5 fine-tune 片段偏短，但案例 2 的拼接文本已把主流程讲清。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「0.184→0.277」在为什么重要里略把原版与 docTTTTTquery 并称；表格已拆开，属可接受的教学压缩。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "80 条采样、领域外退化、标签泄漏等踩坑可操作；适用边界有万级文档/万字长文等量化提示。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 163,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true,
+  "refinement": {
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "slug": "dns",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 Kubernetes Service 片段偏短，可再补一句 CoreDNS 如何把 service 名写成 A 记录的直觉步骤。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 1 把 Facebook 2021 宕机归因于「TTL 太低导致权威被压垮」不准确：根因是骨干网/BGP 撤回了权威 DNS 前缀，短 TTL 只是让缓存更快失效；应改写归因。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Facebook 2021 案例应写成 BGP 撤回 DNS 路由 → 权威不可达 → 短 TTL 缓存迅速过期，而不是「低 TTL 把权威压垮」的 thundering-herd 叙事。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 Kubernetes Service 片段偏短，可再补一句 CoreDNS 如何把 service 名写成 A 记录的直觉步骤。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 1 把 Facebook 2021 宕机归因于「TTL 太低导致权威被压垮」不准确：根因是骨干网/BGP 撤回了权威 DNS 前缀，短 TTL 只是让缓存更快失效；应改写归因。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "Facebook 2021 案例应写成 BGP 撤回 DNS 路由 → 权威不可达 → 短 TTL 缓存迅速过期，而不是「低 TTL 把权威压垮」的 thundering-herd 叙事。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 169,
+    "reasons": []
+  },
+  "lines": 169,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正 Facebook 2021 宕机归因：改为 BGP 撤回权威 DNS 前缀 + 短 TTL 放大，而非「低 TTL 压垮权威」。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  }
+}
