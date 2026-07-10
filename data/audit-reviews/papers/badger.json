@@ -1,0 +1,57 @@
+{
+  "slug": "badger",
+  "area": "papers",
+  "title": "BadgerDB — 把键和值分开存的 Go 原生 KV 库",
+  "status": "passed",
+  "action": "pass",
+  "output_path": "/workspace/src/content/docs/papers/badger.md",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "rejects": 0,
+    "needs_refine": 0,
+    "decision": "pass"
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 157
+  }
+}
