@@ -10,10 +10,10 @@ title: 代数效应（Algebraic Effects）
 
 代数效应 + handler 是一套**把程序里的副作用（IO、异常、状态、异步、随机）做成可拦截事件**的机制。日常类比：写 try/catch 时只能"接住异常"，但代数效应让你能接住**任何**"非纯操作"——读文件、改全局变量、yield 一个值、抛随机数——然后由调用方决定怎么处理。
 
-你写：
+你写（OCaml 5 示意；完整声明见案例）：
 
 ```ocaml
-effect Get_state : int
+(* 先 open Effect；真实声明是 type _ Effect.t += Get_state : int Effect.t *)
 let v = perform Get_state    (* "我要拿全局 state" *)
 ```
 
@@ -25,10 +25,10 @@ let v = perform Get_state    (* "我要拿全局 state" *)
 
 不理解 effect handler，下面这些事都看不清：
 
-- 为什么 **OCaml 5（2022）** 抛弃了 callback / Promise，改用 `effect ... try_with`——它就是 handler
+- 为什么 **OCaml 5（2022）** 用 effect handler 做并发原语（`Effect` + `try_with` / `match ... with effect`）——Lwt/Async 仍在，并不是"抛弃 Promise"
 - 为什么 **async/await、try-catch、generator yield** 在 effect 视角下是同一个东西的 4 种特例
 - 为什么 **Koka / Unison / Roc** 这些 2020 后的新语言把 handler 当杀手特性
-- 为什么 React 团队 2018 提过 "Algebraic Effects for React" RFC——Suspense / `use(promise)` 底层就是这个
+- 为什么 React 团队讨论过 Algebraic Effects——Suspense / `use(promise)` **受其思路启发**，实现上并不是把 PP09 原样嵌进 React
 
 函数式编程界从 1990s monad 派吵到 2020s，"如何抽象副作用"的圣杯就是 effect handler。
 
@@ -36,52 +36,44 @@ let v = perform Get_state    (* "我要拿全局 state" *)
 
 代数效应的工作机制可以拆成 **三步**：
 
-1. **声明效应**：`effect Foo : T` 告诉编译器"我会调用一个名叫 Foo 的可拦截操作"。类比：按下电梯按钮——你不知道电梯怎么来，只知道按了之后会回来一个楼层数。
+1. **声明效应**：OCaml 5 用 `type _ Effect.t += Foo : T Effect.t`（论文里常写成 `effect Foo`）。类比：按电梯按钮——你只声明要楼层，不管电梯怎么调度。
 
-2. **handler 拦截**：`try_with body { Foo -> ... }` 把 body 围起来，body 里每次 `perform Foo` 都被劫持到 handler 子句。类比：你按下按钮的瞬间，整栋楼的"电梯调度系统"接管了请求。
+2. **handler 拦截**：`try_with body { effc = ... }` 把 body 围起来，每次 `perform` 都被劫持。类比：按钮一按，整栋楼的调度系统接管请求。
 
-3. **continuation（剩下要做的事）一等公民**：handler 拿到一个 `k`——代表"body 在 perform 之后到 handler 边界为止的尾部"。handler 可以：
-   - **不调 k** → 异常（abort）
-   - **调 k 一次** → 状态 / IO / generator
-   - **调 k 多次** → 不确定性 / 搜索
-
-这三种组合就把 6 种独立的副作用（异常、状态、async、generator、随机、协程）压成了**同一个抽象**。
+3. **continuation（剩下要做的事）一等公民**：handler 拿到 `k`（perform 之后到 handler 边界的尾部）。不调 k → 异常；调一次 → 状态/IO/generator；调多次 → 搜索。六种副作用压成**同一抽象**。
 
 ## 实践案例
 
-### 案例 1：用 effect 写异常（OCaml 5）
+以下均默认已 `open Effect` / `open Effect.Deep`。效应用 `type _ Effect.t += ...` 扩展，**不是** `effect Foo : T`。
+
+### 案例 1：用 effect 写异常
 
 ```ocaml
-effect Raise : string -> 'a
+type _ Effect.t += Raise : string -> 'a Effect.t
 
 let safe_div a b =
-  if b = 0 then perform (Raise "divide by zero")
-  else a / b
+  if b = 0 then perform (Raise "divide by zero") else a / b
 
-(* handler：直接 abort，不调 k *)
 let result =
   try_with (fun () -> safe_div 10 0) ()
     { effc = fun (type a) (e : a Effect.t) ->
         match e with
         | Raise msg -> Some (fun _k -> Printf.sprintf "caught: %s" msg)
         | _ -> None }
-(* result = "caught: divide by zero" *)
+(* result = "caught: divide by zero"；不调 k = 异常语义 *)
 ```
 
-**关键**：handler 拿到 `_k` 但**不调用**——这就是异常语义。`Raise` 的返回类型是 `'a`（任意类型），因为它从不真的"返回"。
-
-### 案例 2：用 effect 写状态（取 / 设全局）
+### 案例 2：用 effect 写状态
 
 ```ocaml
-effect Get : int
-effect Put : int -> unit
+type _ Effect.t += Get : int Effect.t
+type _ Effect.t += Put : int -> unit Effect.t
 
 let counter () =
   let s = perform Get in
   perform (Put (s + 1));
-  perform Get  (* 返回 s+1 *)
+  perform Get
 
-(* handler：用闭包变量装 state，每次都调 k 一次 *)
 let run init body =
   let state = ref init in
   try_with body ()
@@ -90,20 +82,16 @@ let run init body =
         | Get -> Some (fun k -> continue k !state)
         | Put v -> Some (fun k -> state := v; continue k ())
         | _ -> None }
-(* run 10 counter = 11 *)
+(* run 10 counter = 11；continue 来自 Effect.Deep *)
 ```
-
-**关键**：`continue k value` 让 body 在 `perform` 处假装"返回了 value"继续跑。这就是"调用方决定语义"——同一段 `counter` 也可以被另一个 handler 解释成"读文件 / 写文件"。
 
 ### 案例 3：用 effect 写 generator
 
 ```ocaml
-effect Yield : int -> unit
+type _ Effect.t += Yield : int -> unit Effect.t
 
-let count_to n =
-  for i = 1 to n do perform (Yield i) done
+let count_to n = for i = 1 to n do perform (Yield i) done
 
-(* handler：把每次 yield 的值收集到 list *)
 let collect body =
   let acc = ref [] in
   try_with body ()
@@ -112,10 +100,8 @@ let collect body =
         | Yield v -> Some (fun k -> acc := v :: !acc; continue k ())
         | _ -> None };
   List.rev !acc
-(* collect (fun () -> count_to 3) = [1; 2; 3] *)
+(* collect (fun () -> count_to 3) = [1; 2; 3]；与 Get/Raise 同属 effect *)
 ```
-
-**关键**：`Yield` 看起来像 Python 的 `yield`，但**它本质上和 Get/Put/Raise 是同一种东西**——都是 effect。`for` 循环里你不会觉得"这是一个 generator"，但 handler 视角下它就是。
 
 ## 踩过的坑
 
@@ -157,7 +143,7 @@ let collect body =
 1. **副作用可以抽象**——不必硬编码到关键字（try/catch/yield/async）里，可以做成用户定义的接口
 2. **continuation 是一等公民**这个想法早在 1980s 就有（Felleisen），但 PP09 把它"驯服"到 handler 边界内才让它可类型化、可工业化
 3. **理论的 elegance 与工业的现实有距离**——multi-shot、effect typing、forwarding 在工业落地时全部被打折，留下的是"分离 effect 与 handler"的核心思想
-4. **17 年 = 一篇论文从思想到生产语言主线的距离**——和 HM 从 1969 到 1990s 的节奏接近
+4. **约 19 年（2003 模型 → 2022 OCaml 5）= 一篇思想从模型到生产语言主线的距离**——和 HM 从 1969 到 1990s 的节奏接近
 
 ## 延伸阅读
 
