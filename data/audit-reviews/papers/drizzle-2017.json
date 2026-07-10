@@ -1,7 +1,4 @@
 {
-  "slug": "drizzle-2017",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -85,20 +82,5 @@
         "案例 3 对比数字应按论文 Yahoo Streaming Benchmark（128 节点）重写，避免读者拿错基线调参。"
       ]
     }
-  ],
-  "refinement": {
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": [],
-    "note": "修正案例 3：128 节点与 Yahoo 延迟/恢复数字；弱化「Flink 借鉴 Drizzle」表述。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

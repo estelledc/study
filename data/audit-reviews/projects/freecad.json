@@ -1,7 +1,4 @@
 {
-  "slug": "freecad",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -80,20 +77,5 @@
         "TechDraw 脚本 API 作教学示意可接受；踩坑里拓扑命名仍成立，可补一句 1.0 已缓解但未消灭。"
       ]
     }
-  ],
-  "refinement": {
-    "sections_modified": [
-      "## 为什么重要",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": [],
-    "note": "更新 stars 约 32k；写清 FreeCAD 1.0 TNP mitigation（缓解非根除）。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 198,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

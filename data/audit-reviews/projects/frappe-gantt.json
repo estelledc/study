@@ -1,7 +1,4 @@
 {
-  "slug": "frappe-gantt",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -96,24 +93,5 @@
         "view modes 里 Quarter Day / Half Day 是可配置项（旧默认列表），正文可保留但注明可自定义 view_modes。"
       ]
     }
-  ],
-  "refinement": {
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 反向链接"
-    ],
-    "unresolved_hints": [],
-    "note": "修正星数与创建年份；案例容器改为 div；弱化「200 行」绝对化；补反向链接段。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

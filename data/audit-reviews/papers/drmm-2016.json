@@ -1,7 +1,4 @@
 {
-  "slug": "drmm-2016",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -69,11 +66,5 @@
       "weakest_section": "## 实践案例",
       "fix_hints": []
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
