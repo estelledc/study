@@ -25,7 +25,7 @@ dig example.com | jc --dig | jq '.[].answer[].data'
 
 不理解 jc，下面这些事都没法解释：
 
-- 为什么 Ansible 在 `community.general.from_jc` 里把 jc 抬成内置 filter——一个 8k 星的小工具，被运维基建吸收
+- 为什么 Ansible 在 `community.general.jc` 里把 jc 抬成内置 filter——一个 8k 星的小工具，被运维基建吸收
 - 为什么"shell 命令 + jq"这一对在 jc 出现前总是缺一块——jq 只懂 JSON，但 50 年的 Unix 命令都不说 JSON
 - 为什么 [[gron]] / [[dasel]] / [[fx]] 这些 JSON 工具的 README 里频繁出现 jc——它们是下游，jc 是上游
 - 为什么写 100 个小 parser 比写一个"通用文本解析器"更靠谱
@@ -128,7 +128,7 @@ cat /etc/fstab | jc --fstab | jq '.[] | select(.fs_type=="ext4")'
 ## 历史小故事（可跳过）
 
 - **2019**：Kelly Brazil 在 GitHub 首发 jc 1.0，最初只覆盖约 30 个命令。立项动机是他在写 Ansible playbook 时，每个 shell module 后都要写一段脆弱的 awk/sed 解析
-- **2020**：Ansible 把 `community.general.from_jc` filter 收进官方集合，jc 一步进入企业自动化生态
+- **2020**：Ansible 把 `community.general.jc` filter 收进官方集合，jc 一步进入企业自动化生态
 - **2021**：突破 100 parser，加 magic 模式（`jc <command>`），减少一次 shell 管道符的输入
 - **2023**：开始有 streaming parser 子集（`--ls-s` / `--ping-s` 等），处理长输出不一次性 OOM
 - **2024-2026**：持续按月发版，社区 PR 是 parser 数量增长的主力——这是"被基建吸收"后的健康曲线
@@ -139,7 +139,7 @@ cat /etc/fstab | jc --fstab | jq '.[] | select(.fs_type=="ext4")'
 2. **接生态比造生态省力**——jc 没有发明 JSON、没有发明 jq，只是把"老命令世界"和"JSON 工具世界"接起来。这种"胶水位置"的工具往往生命周期最长
 3. **Schema 比覆盖更重要**——parser 的难点不在"切字段"而在"给字段起一致的名字 + 转一致的类型"。这是 8k stars 8 年累积出的协议设计
 4. **shell 管道还能再活 30 年**——只要每一节都做好"读取 → 翻译 → 吐出"的本职，老协议永远不会真的死
-5. **被基建吸收是开源工具的最高荣誉**——Ansible 把 `from_jc` 收进官方 filter，jc 就从"小工具"升级为"事实标准"。一旦 playbook 里到处是 `| from_jc`，就再也下不来了
+5. **被基建吸收是开源工具的最高荣誉**——Ansible 把 `jc` 收进官方 filter，jc 就从"小工具"升级为"事实标准"。一旦 playbook 里到处是 `| community.general.jc(...)`，就再也下不来了
 
 ## 延伸阅读
 
@@ -157,3 +157,7 @@ cat /etc/fstab | jc --fstab | jq '.[] | select(.fs_type=="ext4")'
 - [[gron]] —— 把 jc 的嵌套 JSON 拍平成行，让 grep / [[ripgrep]] 也能查
 - [[ripgrep]] —— gron + ripgrep 处理 jc 输出的"老派"组合
 - [[fd]] —— `fd ... -x sh -c '... | jc --xxx | jq ...'` 批量结构化命令输出
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
