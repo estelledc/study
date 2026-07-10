@@ -23,7 +23,7 @@ Foundry 是一套**用 Rust 写的以太坊智能合约开发工具链**，由 P
 
 不理解 Foundry 怎么工作，下面这些事都没法解释：
 
-- 为什么 Uniswap / Aave / Optimism 这些头部项目从 Hardhat 全迁过来了
+- 为什么 Uniswap / Aave / Optimism 这些头部项目大量从 Hardhat 迁到 Foundry、甚至默认用它
 - 为什么一个 fuzz 测试能在 1 秒内跑完 256 轮，Hardhat 跑同样的得分钟级
 - 为什么 audit 报告里到处是 `forge test --gas-report` 的截图
 - 为什么 Solidity 开发者今天面试基本默认会问"用过 Foundry 吗"
@@ -105,7 +105,7 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 
 3. **fuzz 默认 256 轮覆盖不到罕见路径**：复杂状态机（如 AMM、借贷协议）光靠 fuzz 不够，需要写 invariant test 让 foundry 随机调用合约一系列函数，校验全局不变量始终成立。
 
-4. **anvil --fork-url 不缓存 RPC 请求**：每次重启都重新拉链上数据，公链 RPC 限频会让 fork 极慢。修法：本地起 archive 节点，或加 `--fork-block-number` 锁定区块（这样数据是确定的）。
+4. **fork 首次仍慢、缓存也会 miss**：`anvil --fork-url` 虽有磁盘缓存，但冷启动、换 RPC、或跨很多历史区块时仍会狂打公链限频。修法：加 `--fork-block-number` 锁定区块，或本地起 archive 节点。
 
 ## 适用 vs 不适用场景
 
@@ -128,8 +128,8 @@ function testFuzz_AddNeverOverflow(uint128 a, uint128 b) public {
 - **2021 年底**：Georgios Konstantopoulos 在 Paradigm 内部启动 Foundry，最初定位是 "dapptools 的 Rust 重写版"（dapptools 是 DappHub 用 Nix 写的更早工具链，使用门槛高）
 - **2022 年**：正式开源，靠"测试用 Solidity 写 + 编译快十倍"快速圈粉
 - **2023 年**：Optimism / Arbitrum / Base 等 L2 团队官方推荐 Foundry，Uniswap V4 全程 Foundry 开发
-- **2024-2025 年**：陆续加入 chisel REPL、coverage、Vyper 支持，事实上替代 Hardhat 成为头部 DeFi 协议默认工具
-- **2026 年**：发布 v1.x，进入"维护 + 性能优化"阶段，社区围绕 cheatcodes 扩展生态（如 forge-std 标准库）
+- **2024 年**：陆续加入 coverage、Vyper 支持等，头部 DeFi 协议越来越多默认用 Foundry
+- **2025 年 2 月**：发布 v1.0（稳定 API 与发版节奏），之后进入维护 + 性能优化；社区围绕 cheatcodes / forge-std 扩展生态
 
 ## 学到什么
 

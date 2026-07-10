@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "revm / cheatcodes 已有桥接；GM 命令与博物馆类比足够零基础跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2026 年：发布 v1.x」不准确：Foundry v1.0 于 2025-02 发布（Paradigm 公告 / GitHub tag），应改为 2025 年。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Uniswap / Aave / Optimism 从 Hardhat 全迁过来了」过满：头部项目广泛采用属实，但「全迁」绝对化，宜改为「大量迁移/默认采用」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "坑 4「anvil --fork-url 不缓存 RPC」已过时：较新 Foundry 会对 fork 做磁盘缓存；应改为「默认缓存仍可能 miss / 首次仍慢，建议 --fork-block-number 锁定或自建 archive」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码可跟做；适用边界对非 EVM / JS 重度项目写得清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "revm / cheatcodes 已有桥接；GM 命令与博物馆类比足够零基础跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2026 年：发布 v1.x」不准确：Foundry v1.0 于 2025-02 发布（Paradigm 公告 / GitHub tag），应改为 2025 年。",
+        "「Uniswap / Aave / Optimism 从 Hardhat 全迁过来了」过满：头部项目广泛采用属实，但「全迁」绝对化，宜改为「大量迁移/默认采用」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "坑 4「anvil --fork-url 不缓存 RPC」已过时：较新 Foundry 会对 fork 做磁盘缓存；应改为「默认缓存仍可能 miss / 首次仍慢，建议 --fork-block-number 锁定或自建 archive」。",
+        "案例代码可跟做；适用边界对非 EVM / JS 重度项目写得清楚。"
+      ]
+    }
+  ]
+}
