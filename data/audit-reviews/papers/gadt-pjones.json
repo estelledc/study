@@ -1,0 +1,112 @@
+{
+  "slug": "gadt-pjones",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 EqW/Refl 与案例 3 的 DataKinds/kind 首次出现桥接偏短，零基础会在「类型相等见证」「把 Nat 提升到类型层」处卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "踩过的坑里 polymorphic recursion 虽有直白讲，建议再补一句日常类比（同一张菜谱允许每次换不同食材规格）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Rust enum 是 GADT 弱化版」属教学简化，可接受；ICFP 2006 / OutsideIn(X) 时间线与来源一致。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Haskell 案例可跟做；适用边界已点出必须写顶层签名，量化可再略补一句「脚本/一次性工具别上 GADT」。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 EqW/Refl 与案例 3 的 DataKinds/kind 首次出现桥接偏短，零基础会在「类型相等见证」「把 Nat 提升到类型层」处卡住",
+        "踩过的坑里 polymorphic recursion 虽有直白讲，建议再补一句日常类比（同一张菜谱允许每次换不同食材规格）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Rust enum 是 GADT 弱化版」属教学简化，可接受；ICFP 2006 / OutsideIn(X) 时间线与来源一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Haskell 案例可跟做；适用边界已点出必须写顶层签名，量化可再略补一句「脚本/一次性工具别上 GADT」。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "action": "refine",
+    "reason": "zero-base needs-refine：EqW/DataKinds 桥接与 polymorphic recursion 类比不足"
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
