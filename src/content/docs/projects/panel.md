@@ -99,7 +99,14 @@ template = pn.template.FastListTemplate(
 template.servable()
 ```
 
-`FastListTemplate` 来自 Microsoft FAST，自带 navbar / sidebar / 暗色模式 / 主题色变量。原型不用让设计师再贴一次皮就能给老板演示。
+逐步读：
+
+1. `FastListTemplate` 来自 Microsoft FAST，自带 navbar / sidebar / 暗色模式
+2. `sidebar=[...]` 把筛选控件放左边；`main=[...]` 把图放主区
+3. `accent="#0f766e"` 只改主题色变量，不用手写 CSS
+4. 仍调用 `.servable()`，`panel serve` 后就是带壳的看板
+
+原型不用让设计师再贴一次皮就能给老板演示。
 
 ### 案例 3：notebook 直出，serve 直接跑
 
@@ -140,6 +147,13 @@ pn.Column(slider, pn.bind(lambda v: f"平方={v*v}", slider))
 - 复杂前端交互（拖拽编辑器 / 多页路由 / 表单校验）——还是上真前端
 - 团队共享有状态后端（用户隔离、权限、长连接）——Panel 不替你管，要外接
 
+## 历史小故事（可跳过）
+
+- **2018**：Philipp Rudiger 在 Anaconda / HoloViz 里发起 Panel，目标是"notebook 里的图一键变 Web 应用"
+- **2019**：公开发布，和 [[bokeh]]、HoloViews、Datashader 绑成同一生态
+- **2023 年 6 月**：发布 1.0 GA，API 稳定承诺落地，PyData 演讲明显增多
+- **之后**：`panel convert` 走向 Pyodide / WASM 静态部署，探索性分析和可分享站点之间的缝更窄
+
 ## 学到什么
 
 1. **反应式 vs 整段重跑是 dashboard 框架的两条主路**：Panel 选反应式得到了"重计算只发生在被影响的地方"，代价是依赖追踪心智成本；[[streamlit]] 选整段重跑换来了"无回调即写应用"的极简但每次全量重算
@@ -164,3 +178,7 @@ pn.Column(slider, pn.bind(lambda v: f"平方={v*v}", slider))
 - [[altair]] —— Panel 通过 `pn.pane.Vega` 直接吃 Vega-Lite spec
 - [[plotly-js]] —— Panel 内置 Plotly pane
 - [[gradio]] —— ML demo 场景的同代竞品
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

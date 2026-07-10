@@ -1,0 +1,141 @@
+{
+  "slug": "mixture-of-experts",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "全能博士 vs 专家组、医院分诊类比贴合 MoE"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "router / expert / top-k / load balance 有白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 只有叙述没有代码与逐步解释，零基础难复现「怎么选 expert」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Shazeer 2017 / Switch 2021 / Mixtral 2024 来源链合理；Mixtral ~47B/13B active、DeepSeek-V3 671B/37B 量级正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2024 之后开源 LLM 几乎全转 MoE」过满，宜改为「大量新开源旗舰转向 MoE」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Mixtral「质量接近 70B dense」宜改为「论文称对标 Llama 2 70B 量级」避免营销口吻"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（router 正反馈、softmax fp32、all-to-all、capacity factor、单卡 cache miss）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例缺可跟做的 top-k routing 伪代码/最小实现"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有 GPU 数量与微调难度量化，保持"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "全能博士 vs 专家组、医院分诊类比贴合 MoE",
+        "router / expert / top-k / load balance 有白话",
+        "案例 1–3 只有叙述没有代码与逐步解释，零基础难复现「怎么选 expert」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Shazeer 2017 / Switch 2021 / Mixtral 2024 来源链合理；Mixtral ~47B/13B active、DeepSeek-V3 671B/37B 量级正确",
+        "「2024 之后开源 LLM 几乎全转 MoE」过满，宜改为「大量新开源旗舰转向 MoE」",
+        "Mixtral「质量接近 70B dense」宜改为「论文称对标 Llama 2 70B 量级」避免营销口吻"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "踩坑（router 正反馈、softmax fp32、all-to-all、capacity factor、单卡 cache miss）具体可操作",
+        "案例缺可跟做的 top-k routing 伪代码/最小实现",
+        "适用边界有 GPU 数量与微调难度量化，保持"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 152,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 152,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例"
+    ],
+    "unresolved_hints": [],
+    "summary": "弱化「几乎全转MoE」与70B营销口吻；补top-k routing伪代码与逐步解释"
+  }
+}
