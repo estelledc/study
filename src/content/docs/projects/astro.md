@@ -197,34 +197,3 @@ export const collections = { blog }
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[changesets]] —— changesets — 让每个 PR 自带版本号 bump 声明
-- [[docusaurus]] —— Docusaurus — 一组 plugin 协作出来的文档站框架
-- [[i18next]] —— i18next — 让一份 JS 代码同时讲几十种语言
-- [[lighthouse]] —— Lighthouse — Google 出品的网页质量审计工具
-- [[lucia]] —— Lucia — 主动把自己降级为"学习资源"的 TS 认证库
-- [[markdown-it]] —— markdown-it — 把 Markdown 文本变成 HTML 的工业级解析器
-- [[micromark]] —— micromark — markdown 解析器里那台一个字一个字读的状态机
-- [[minisearch]] —— minisearch — 浏览器里的小型全文搜索引擎
-- [[motion-one]] —— Motion One — 把动画交给浏览器自己跑
-- [[next-js]] —— Next.js — React 全栈框架
-- [[nextra]] —— Nextra — 在 Next.js 上盖一层文档站脚手架
-- [[nuxt]] —— Nuxt — Vue 全栈框架
-- [[observable-framework]] —— Observable Framework — 编译期跑数据，浏览器只看结果
-- [[oxc]] —— oxc — Rust 写一整套 JS/TS 工具链的勇气
-- [[preact]] —— Preact — 3KB React 替代
-- [[react]] —— React UI 组件库
-- [[remix]] —— Remix — 拥抱 Web 标准的 React 全栈框架
-- [[shadcn-ui]] —— shadcn/ui — 把 React 组件从 npm 包变成"源码 + CLI 协议"
-- [[solid]] —— SolidJS — 细粒度响应式 UI 框架
-- [[starlight]] —— Starlight — Astro 文档站点主题
-- [[svelte]] —— Svelte — 编译时 UI 框架
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
-- [[valibot]] —— Valibot — 拆成乐高的 TypeScript 校验库
-- [[vanilla-extract]] —— vanilla-extract — 把 CSS 写成 TypeScript，浏览器看到的却是零字节运行时
-- [[vite]] —— Vite — 浏览器自己加载源码的构建工具
-- [[vitepress]] —— VitePress — Vue 团队用 Vite 写的静态文档站点生成器
-- [[vue]] —— Vue.js — 渐进式 UI 框架
-- [[web-vitals]] —— web-vitals — 让你在自己页面测的数和 Google 排名用的数对得上
-- [[zod]] —— Zod — TypeScript-first schema 验证
-
