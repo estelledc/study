@@ -116,13 +116,13 @@ DuckDB 编了 Wasm 版本，可以在浏览器里直接跑分析查询。OpenAI 
 
 **适用**：
 - Notebook / 脚本里做 SQL 分析（取代 Pandas + 取代起 PG）
-- 中等规模 ETL（GB 到 TB 之间，单机磁盘装得下）
+- 中等规模 ETL（大约 1–100GB，单机磁盘舒适区；再大要看内存/磁盘与并发写入模式）
 - 嵌入到桌面 / 移动 / Wasm 应用做本地分析（单文件库，跨平台）
 - 直接读 Parquet/Arrow 做数据科学预处理
 
 **不适用**：
 - 高并发 OLTP 写入（用 PostgreSQL / MySQL）
-- 分布式大数据（用 ClickHouse / Snowflake / BigQuery）
+- 分布式或稳定超过几百 GB、需要副本/分片的大数据（用 ClickHouse / Snowflake / BigQuery）
 - 需要严格服务隔离/多租户（嵌入式天然没隔离）
 - 全文搜索（用 Elasticsearch / Postgres FTS）
 
