@@ -1,0 +1,128 @@
+{
+  "slug": "lambda-calculus",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "纸条类比贴合；案例 1/2 有逐步拆解，案例 3 Y combinator 对零基础仍陡，但已标明不展开。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 1936 Entscheidungsproblem 论文直接说成 λ-演算的诞生略偏：λ-演算在 Church 1932/1933 已提出；1936 文是用 λ-可定义性证不可判定。建议在「是什么/历史」加一句时间线限定。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「React Hooks 本质就是 λ」教学跳跃过大，宜改成「闭包/高阶函数的工业用法可追溯到 λ」之类弱化表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Church–Turing 论题、α/β、Church encoding、Y、合流性主线正确；来源 AJM 1936 条目本身可保留。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "β-reduction / Church numerals / Y 概念可跟；变量捕获与 Ω、求值顺序踩坑具体；适用边界清楚。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "正文+反向链接已超过 quality-gate 200 行上限，refine 时需压缩反向链接或正文以过门。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "纸条类比贴合；案例 1/2 有逐步拆解，案例 3 Y combinator 对零基础仍陡，但已标明不展开。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "把 1936 Entscheidungsproblem 论文直接说成 λ-演算的诞生略偏：λ-演算在 Church 1932/1933 已提出；1936 文是用 λ-可定义性证不可判定。建议在「是什么/历史」加一句时间线限定。",
+        "「React Hooks 本质就是 λ」教学跳跃过大，宜改成「闭包/高阶函数的工业用法可追溯到 λ」之类弱化表述。",
+        "Church–Turing 论题、α/β、Church encoding、Y、合流性主线正确；来源 AJM 1936 条目本身可保留。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "β-reduction / Church numerals / Y 概念可跟；变量捕获与 Ω、求值顺序踩坑具体；适用边界清楚。",
+        "正文+反向链接已超过 quality-gate 200 行上限，refine 时需压缩反向链接或正文以过门。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "needs-refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 160,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 历史小故事",
+      "## 学到什么",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}

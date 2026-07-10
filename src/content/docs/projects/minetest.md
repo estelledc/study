@@ -1,6 +1,6 @@
 ---
 title: Minetest (Luanti) — 开源世界的 Minecraft
-来源: 'https://github.com/minetest/minetest'
+来源: 'https://github.com/luanti-org/luanti'
 日期: 2026-06-24
 分类: 图形
 难度: 初级
@@ -73,13 +73,14 @@ minetest.register_node("mymod:glowstone", {
   节省了 60%
 ```
 
-## 怎么跑起来
+### 案例 3：下载预编译包或从源码跑起来
 
-最快的体验方式是直接下载预编译包。去 [luanti.org](https://www.luanti.org/) 下载对应平台的安装包（Windows/macOS/Linux/Android 都有），解压即可运行，不需要编译。启动后在主菜单的"Content"标签页里安装一个游戏包（比如 Mineclonia 或 VoxeLibre），然后回到"Start Game"创建新世界就能玩了。
+**逐步解释**：
 
-如果想从源码编译（学引擎的人推荐这条路），需要 C++17 编译器、CMake、IrrlichtMt（Luanti 自维护的 Irrlicht 分支）、LuaJIT、SQLite3 等依赖。基本流程是 `cmake -B build && cmake --build build`，具体参数见仓库 `doc/compiling/` 目录。编译产物是一个可执行文件，直接运行即可。
-
-想写 Mod 的话，在游戏目录下创建 `mods/mymod/init.lua`，引擎启动时会自动加载。不需要重新编译引擎，改完 Lua 文件重启游戏就能看到效果。
+1. **最快体验**：去 [luanti.org](https://www.luanti.org/) 下载对应平台安装包（Windows / macOS / Linux / Android），解压即可运行，不必先编译。
+2. **装一个游戏包**：启动后在主菜单 Content 里安装 Mineclonia 或 VoxeLibre，再回 Start Game 创建新世界。
+3. **从源码编译（学引擎）**：需要 C++17、CMake、IrrlichtMt、LuaJIT、SQLite3 等；基本流程是 `cmake -B build && cmake --build build`，细节见仓库 `doc/compiling/`。
+4. **写 Mod**：在游戏目录建 `mods/mymod/init.lua`，引擎启动会自动加载；改 Lua 后重启游戏即可，不必重编引擎。
 
 ## 踩过的坑
 
@@ -106,6 +107,13 @@ minetest.register_node("mymod:glowstone", {
 - 需要大量现成内容——Minecraft 的 mod 和社区内容量级远超 Luanti
 - 做非体素类型的游戏——引擎设计深度绑定体素世界，拿它做 2D 平台跳跃或 3D 射击不合适
 - 需要稳定的商业 API——引擎 API 在不同版本间有 breaking change，商业项目要考虑维护成本
+
+## 历史小故事（可跳过）
+
+- **2010 年**：芬兰程序员 Perttu Ahola（celeron55）以 Minetest-c55 起步，最初目标接近「Minecraft 克隆实验」。
+- **之后多年**：去掉 -c55 后缀，以 Minetest 之名成长为「引擎 + Lua mod」平台；社区游戏远不止默认的 Minetest Game。
+- **2024-10-13**：官方宣布引擎更名为 **Luanti**（芬兰语 luonti「创造」+ Lua），仓库迁到 `luanti-org/luanti`，旧 `minetest/minetest` 链接 301 跳转。
+- **今天**：ContentDB 上仍能看到 Minetest Game、VoxeLibre、Mineclonia 等；名字在换，体素引擎 + Lua 内容层的分工没变。
 
 ## 学到什么
 
@@ -144,10 +152,11 @@ luanti/
 ## 延伸阅读
 
 - 官方网站：[Luanti.org](https://www.luanti.org/) ——下载、游戏列表、Mod 仓库入口
-- Lua API 参考：[doc/lua_api.md](https://github.com/luanti-org/luanti/blob/master/doc/lua_api.md) ——写 Mod 的完整 API 文档，Mod 作者的圣经
-- 架构全景：[DeepWiki - Luanti Overview](https://deepwiki.com/luanti-org/luanti/1-overview) ——代码级别的架构讲解，适合想读源码的人
-- 社区 Mod 仓库：[ContentDB](https://content.luanti.org/) ——浏览和安装社区创建的 Mod、游戏、材质包
-- CSDN 技术解析：[Luanti 的前世今生与技术解析](https://blog.csdn.net/LcGero/article/details/160525489) ——中文深度技术分析
+- 官方仓库：[luanti-org/luanti](https://github.com/luanti-org/luanti) ——引擎源码（旧 minetest/minetest 会重定向到这里）
+- Lua API 参考：[doc/lua_api.md](https://github.com/luanti-org/luanti/blob/master/doc/lua_api.md) ——写 Mod 的完整 API 文档
+- 架构全景：[DeepWiki - Luanti Overview](https://deepwiki.com/luanti-org/luanti/1-overview) ——代码级架构讲解
+- 社区 Mod 仓库：[ContentDB](https://content.luanti.org/) ——浏览安装 Mod、游戏、材质包
+- 更名公告：[Introducing Our New Name](https://blog.luanti.org/2024/10/13/Introducing-Our-New-Name/) ——2024-10 Luanti 命名说明
 
 ## 关联
 
