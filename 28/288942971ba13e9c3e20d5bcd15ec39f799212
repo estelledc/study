@@ -1,0 +1,21 @@
+data/performance-baseline.json
+  s_c0ef734f65f4e0::t_2a70b59977b2d1 1-42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "28288942971ba13e9c3e20d5bcd15ec39f799212",
+  "prompts": {},
+  "sessions": {
+    "s_c0ef734f65f4e0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_c0ef734f65f4e0",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
