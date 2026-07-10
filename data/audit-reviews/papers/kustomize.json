@@ -1,0 +1,93 @@
+{
+  "slug": "kustomize",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 hash 滚动可以再拆成「生成 → 改写引用 → 触发滚动」三步，零基础会更稳。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写成 SIG-CLI 项目而非单篇论文是合理的；白皮书链接 goo.gl 可能失效，延伸阅读宜保留可核对出处。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚；可再点明「环境差异字段数很少」时最甜点，复杂 if/for 仍应 Helm。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 hash 滚动可以再拆成「生成 → 改写引用 → 触发滚动」三步，零基础会更稳。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源写成 SIG-CLI 项目而非单篇论文是合理的；白皮书链接 goo.gl 可能失效，延伸阅读宜保留可核对出处。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用边界清楚；可再点明「环境差异字段数很少」时最甜点，复杂 if/for 仍应 Helm。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 173,
+    "reasons": []
+  },
+  "lines": 173,
+  "l1_pass": true
+}

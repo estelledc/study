@@ -1,0 +1,100 @@
+{
+  "slug": "kv-cache-budget-2026",
+  "area": "papers",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.33,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter / ## 是什么",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "正文是通用模板话术，与 KV cache / vLLM 无关；案例无代码；反向链接后用重复「补充观察」凑行数。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 arXiv:2605.30821 实际是图谱 spectral inducibility，与题名 KVBudget 完全不符；正文无任何可核对的 KV budgeting 事实。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无可跟做的 serving/KV 预算示例，踩坑与适用边界全是空话，无法当工程入门笔记。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "正文是通用模板话术，与 KV cache / vLLM 无关；案例无代码；反向链接后用重复「补充观察」凑行数。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 1,
+        "no_distortion": 1
+      },
+      "average": 1,
+      "verdict": "reject",
+      "weakest_section": "frontmatter / ## 是什么",
+      "fix_hints": [
+        "来源 arXiv:2605.30821 实际是图谱 spectral inducibility，与题名 KVBudget 完全不符；正文无任何可核对的 KV budgeting 事实。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 1,
+        "scope_correct": 2
+      },
+      "average": 1.33,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无可跟做的 serving/KV 预算示例，踩坑与适用边界全是空话，无法当工程入门笔记。"
+      ]
+    }
+  ],
+  "rewrite": {
+    "status": "rewritten",
+    "sections_modified": [
+      "full-note"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 150,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

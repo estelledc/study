@@ -100,7 +100,7 @@ python flow.py resume --origin-run-id 1234
 
 ## 实践案例
 
-### 三步上手
+### 案例 1：三步上手训练流
 
 ```python
 class TrainFlow(FlowSpec):
@@ -120,9 +120,9 @@ class TrainFlow(FlowSpec):
         print(f"acc={self.model.score}")
 ```
 
-`python train_flow.py run` 在本地用 CPU 跑通；改成 `--with kubernetes:gpu=1` 推到 GPU 集群——同一份代码。
+**逐部分**：`start` 把数据挂到 `self`（自动进 datastore）；`train` 叠 `@kubernetes(gpu=1)` 声明要 GPU；`end` 读回 `self.model`。本地 `python train_flow.py run`；上云只改调用：`python train_flow.py run --with kubernetes`。
 
-### Client API 回看历史
+### 案例 2：Client API 回看历史
 
 ```python
 from metaflow import Flow
@@ -130,49 +130,46 @@ run = Flow("TrainFlow").latest_successful_run
 print(run.data.model.score)
 ```
 
-可以在任意 Python 脚本里直接拉历史 run 的任意 artifact，做模型对比、A/B 评估、报告生成。
+**逐部分**：`Flow("TrainFlow")` 按名字打开流水线；`latest_successful_run` 取最近成功 run；`run.data.model` 反序列化当时存下的 artifact。可在任意脚本里做模型对比或报告，不必重跑。
 
-## 生态对比
+### 案例 3：挂了以后 resume
 
-| 维度 | Metaflow | Airflow | Kubeflow | Dagster |
-|------|----------|---------|----------|---------|
-| 目标用户 | 数据科学家 | 数据工程师 | ML 工程师 | 数据工程师 |
-| 学习曲线 | 低 | 中 | 高 | 中 |
-| Artifact 版本 | **自动** | 无 | 弱 | 自动 |
-| 本地开发 | **优秀** | 一般 | 困难 | 优秀 |
-| Scheduler | 借 Argo/SFN | 自带 | Argo | 自带 |
-| 多云 | AWS/k8s | 任意 | k8s only | 任意 |
+```bash
+python train_flow.py resume --origin-run-id 1234
+```
 
-定位：**ML 调度里的"开发体验最优解"**，但 production scheduler 借别人的肩膀。
+**逐部分**：① 原 run `1234` 的已完成 step 产物仍在 datastore；② `resume` 从失败 step 接着跑，跳过已成功节点；③ 新 run 仍有自己的 run_id，可追溯。适合训练中途 OOM / 节点被杀后接着干。
+
+定位对比（一句话）：相对 Airflow / Kubeflow，Metaflow 是 **ML 开发体验层**——artifact 自动版本、本地到云同一份代码；production scheduler 仍借 Argo / Step Functions。
 
 ## 踩过的坑
 
 1. **AWS 历史包袱**：早期文档默认 S3 + Batch，k8s 后加且文档一度滞后
-2. **artifact 必须 picklable**：自定义类 `__reduce__` 不当会爆；存大模型权重让 datastore 爆容量
+2. **artifact 必须 picklable**：自定义类 `__reduce__` 不当会爆；大模型权重易撑爆 datastore
 3. **production scheduler 是借的**：Argo / Step Functions 各有 quirks，复杂触发要看底层
-4. **多 flow 弱治理**：A flow 输出喂 B flow 没原生 asset graph，大型团队不如 Dagster 清晰
-5. **`@conda` 启动慢**：每 step 单独环境冷启要分钟级；docker 镜像缓存能缓解
+4. **多 flow 弱治理**：A→B 没有原生 asset graph，大型团队不如 Dagster 清晰
+5. **`@conda` 启动慢**：每 step 冷启可达分钟级；用 docker 镜像缓存缓解
 
 ## 适用 vs 不适用场景
 
-**适用**：团队主力是数据科学家，不想学 k8s/Airflow operator；主线是原型到训练到批量推理到上线，artifact 版本很重要；已经有 AWS 或 k8s 基础设施想加一层 dev-friendly 抽象；fan-out 并行批量任务。
+**适用**：主力是数据科学家；原型→训练→批量推理要同一份代码；已有 AWS/k8s，想加一层友好抽象；foreach 扇出批量任务。
 
-**不适用**：纯 ETL / 数据工程编排（用 Airflow / Dagster）；复杂事件触发 / SLA 监控（Airflow 生态更全）；极小项目（裸 .py 够了）；完整 ML serving 平台一站式（用 Kubeflow / SageMaker）。
+**不适用**：纯 ETL（Airflow / Dagster）；复杂事件触发 / SLA（Airflow 更全）；极小脚本（裸 `.py` 够了）；要一站式 serving（Kubeflow / SageMaker）。
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - **2017**：Netflix 内部启动 Metaflow
-- **2019.12**：开源 + Netflix Tech Blog 长文，明确 human-centric ML 定位
-- **2021**：`@kubernetes` 装饰器加入，正式脱离 AWS-only
-- **2022**：Outerbounds 公司成立（Ville Tuulos 等），做托管和企业支持
-- **2023+**：`@parallel` 分布式训练成熟；与 Dagster / Prefect 形成 data-scientist-friendly 阵营
+- **2019.12**：开源 + Tech Blog，明确 human-centric ML 定位
+- **2021**：`@kubernetes` 加入，脱离 AWS-only
+- **2022**：Outerbounds 成立（Ville Tuulos 等），做托管与企业支持
+- **2023+**：`@parallel` 成熟；与 Dagster / Prefect 同属 data-scientist-friendly 阵营
 
 ## 学到什么
 
-1. **装饰器是好抽象**：infra 决策和业务逻辑放同一个文件，比 YAML 体验好太多
-2. **不重复造 scheduler**：production 调度让给 Argo / Step Functions，自己专注开发体验
-3. **artifact 自动持久化**是 resume / debug / 回看的基石，比手写 checkpoint 干净
-4. **本地到云零迁移**靠同一份代码 + 不同 backend，比拼的是 API 设计
+1. **装饰器是好抽象**：infra 与业务同文件，比 YAML 体验好
+2. **不重复造 scheduler**：生产调度让给 Argo / SFN，自己专注开发体验
+3. **artifact 自动持久化**是 resume / debug / 回看的基石
+4. **本地到云零迁移**靠同一份代码 + 不同 backend
 
 ## 延伸阅读
 
@@ -180,13 +177,17 @@ print(run.data.model.score)
 - GitHub：[Netflix/metaflow](https://github.com/Netflix/metaflow)
 - Netflix Tech Blog：[Open-Sourcing Metaflow](https://netflixtechblog.com/open-sourcing-metaflow-a-human-centric-framework-for-data-science-fa72e04a5d9)
 - 商业托管：[outerbounds.com](https://outerbounds.com)
-- [[airflow]] —— 通用 DAG 调度，对比 Metaflow 的 ML 偏向
-- [[clearml]] —— MLOps 同类，trace 重 + 调度轻
-- [[dagster]] —— data-scientist-friendly 阵营的另一选项
+- [[airflow]] —— 通用 DAG，对比 Metaflow 的 ML 偏向
+- [[dagster]] —— 同阵营另一选项
 
 ## 关联
 
-- [[airflow]] —— 不竞争，借其变体 Argo 做 production scheduler
-- [[clearml]] —— 同为 MLOps，ClearML 偏 tracking，Metaflow 偏 orchestration
-- [[dagster]] —— 都强调开发体验，Dagster 偏数据工程，Metaflow 偏 ML
-- [[pytorch]] —— Metaflow 训练 step 最常托管的框架
+- [[airflow]] —— 不直接竞争；借 Argo 变体做 production scheduler
+- [[clearml]] —— ClearML 偏 tracking，Metaflow 偏 orchestration
+- [[dagster]] —— 都强调开发体验；Dagster 偏数据工程，Metaflow 偏 ML
+- [[pytorch]] —— 训练 step 最常托管的框架
+- [[kubernetes]] —— `@kubernetes` / Argo 落地的宿主
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
