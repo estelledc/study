@@ -1,0 +1,125 @@
+{
+  "slug": "diskann-2019",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "搜索伪代码里 candidates - visited 对 list 不成立，零基础照抄会懵；修好集合写法即可。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Bing 单机百万 QPS」过满：论文是 16 核上 >5000 QPS、<3ms 均值延迟、95%+ 1-recall@1，应改对齐论文数字。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「ChatGPT / Pinecone / Milvus 底层就是 DiskANN」易读成必然依赖；应改为向量库/RAG 场景可选用 DiskANN 类 SSD 索引，勿绑死具体产品。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2「单线程 200 QPS」与论文主结果（多核 >5000 QPS）口径不一致，建议改写为论文报告的 16 核吞吐与延迟。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "search 伪代码：list 不能用 candidates - visited；应用 set，并用 PQ 距离选未访问候选。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（PQ 天花板、NVMe、不可增量、alpha）具体可操作，适用边界量化清楚，可保留。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "搜索伪代码里 candidates - visited 对 list 不成立，零基础照抄会懵；修好集合写法即可。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Bing 单机百万 QPS」过满：论文是 16 核上 >5000 QPS、<3ms 均值延迟、95%+ 1-recall@1，应改对齐论文数字。",
+        "「ChatGPT / Pinecone / Milvus 底层就是 DiskANN」易读成必然依赖；应改为向量库/RAG 场景可选用 DiskANN 类 SSD 索引，勿绑死具体产品。",
+        "案例 2「单线程 200 QPS」与论文主结果（多核 >5000 QPS）口径不一致，建议改写为论文报告的 16 核吞吐与延迟。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "search 伪代码：list 不能用 candidates - visited；应用 set，并用 PQ 距离选未访问候选。",
+        "踩坑（PQ 天花板、NVMe、不可增量、alpha）具体可操作，适用边界量化清楚，可保留。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 180,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 180,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "reason": "弱化 Bing/ChatGPT 过满表述并对齐论文 QPS/延迟；修正 search 伪代码 set 写法与案例 2 吞吐口径。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

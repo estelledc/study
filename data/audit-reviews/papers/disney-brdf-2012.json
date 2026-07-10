@@ -1,0 +1,115 @@
+{
+  "slug": "disney-brdf-2012",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "单反 vs 手机相机类比很贴；GTR/Schlick 对零基础仍密，但 metallic 两行代码能落地。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Real Shading in UE4（Karis）是 SIGGRAPH 2013 Course，不是 2014；「为什么重要」与「历史小故事」两处年份应对齐为 2013。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Disney BRDF 是在 Wreck-It Ralph（2012）上采用并延续后续影片，不是「Ralph 之后才整片采用」；应按课程笔记表述修正。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "metallic/F0 两行 GLSL 概念正确；踩坑（specular 映射、假 SSS、roughness clamp）可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "单反 vs 手机相机类比很贴；GTR/Schlick 对零基础仍密，但 metallic 两行代码能落地。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Real Shading in UE4（Karis）是 SIGGRAPH 2013 Course，不是 2014；「为什么重要」与「历史小故事」两处年份应对齐为 2013。",
+        "Disney BRDF 是在 Wreck-It Ralph（2012）上采用并延续后续影片，不是「Ralph 之后才整片采用」；应按课程笔记表述修正。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "metallic/F0 两行 GLSL 概念正确；踩坑（specular 映射、假 SSS、roughness clamp）可操作。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 172,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "reason": "Karis/UE4 年份改为 2013；Ralph 采用时间线按课程笔记改为 2012 上片使用。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  }
+}
