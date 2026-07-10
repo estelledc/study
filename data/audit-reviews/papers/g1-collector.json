@@ -1,0 +1,92 @@
+{
+  "slug": "g1-collector",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "外卖调度类比贴合；SATB / RSet 有桥接但案例 2 偏示意、少逐步命令"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Detlefs et al. ISMM 2004、JDK 7u4 正式 / JDK 9 默认等时间线正确；吞吐低 5-10% 为工程约数，可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "调参 flags 与 humongous 路径概念正确；踩坑含 to-space exhausted 等可操作信号"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "外卖调度类比贴合；SATB / RSet 有桥接但案例 2 偏示意、少逐步命令"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "Detlefs et al. ISMM 2004、JDK 7u4 正式 / JDK 9 默认等时间线正确；吞吐低 5-10% 为工程约数，可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "调参 flags 与 humongous 路径概念正确；踩坑含 to-space exhausted 等可操作信号"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  },
+  "l1_pass": true
+}
