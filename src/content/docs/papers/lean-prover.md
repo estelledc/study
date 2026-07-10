@@ -27,7 +27,7 @@ theorem or_true (b : Bool) : or true b = true := rfl
 不理解 Lean 4 的设计，下面这些事都没法解释：
 
 - 为什么数学家 **Peter Scholze 把 Liquid Tensor Conjecture** 拿到 Lean 上让计算机验证
-- 为什么 **mathlib4** 半百万行的形式数学库越长越快，没在性能上垮掉
+- 为什么 **mathlib4** 这种上百万行量级的形式数学库越长越快，没在性能上垮掉
 - 为什么 Lean 4 比 Coq / Agda 更受新一代形式数学社区欢迎——核心是性能 + 元编程开放
 - 为什么"用证明助手当通用编程语言"这个想法 30 年来第一次像真的（FBIP + 编 C）
 
@@ -35,13 +35,13 @@ theorem or_true (b : Bool) : or true b = true := rfl
 
 Lean 4 的革命性在 **四件事**：
 
-1. **自举**：Lean 4 的内核之外的全部组件——parser、elaborator、tactic、code generator——都用 Lean 写。类比：Word 的菜单按钮全是 Word 的宏，用户随时改。
+1. **自举**：Lean 4 的**可信内核仍是 C++**；内核之外——parser、elaborator、tactic、code generator——都用 Lean 写。类比：发动机还是原厂件，仪表盘和菜单全改成用户可改的宏。
 
-2. **卫生宏（hygienic macros）**：借鉴 Scheme 家族，用 `` `(...)`` 引用语法树、`$x` 反引用——同时解决"语法可扩展"和"名字捕获不出 bug"两个老问题。
+2. **卫生宏（hygienic macros）**：宏展开时自动给临时变量换"不会撞名的身份证号"。借鉴 Scheme，用 `` `(...)`` 包语法树模板、`$x` 往洞里填——语法可扩展，又不会把用户变量悄悄改名。
 
-3. **Tabled typeclass resolution**：用 discrimination tree 索引 + 记忆化的 λ-Prolog 解释器，把 Lean 3 在 mathlib 里指数爆炸的 typeclass 解析压回多项式时间。
+3. **Tabled typeclass resolution**：typeclass 像"按接口自动找实现"。Lean 4 用 discrimination tree（按形状快速查表）+ 记忆化，把 Lean 3 在 mathlib 里指数爆炸的查找压回可接受时间。
 
-4. **Functional but in-place（FBIP）**：纯函数式代码 + 引用计数，**当对象不被共享时就地改**——树更新、列表 map 都能 0 分配，性能跟 ocamlopt / GHC 比肩。
+4. **Functional but in-place（FBIP）**：纯函数式写法 + 引用计数，**没人共享时就地改**——树更新、列表 map 都能 0 分配，性能跟 ocamlopt / GHC 比肩。
 
 ## 实践案例
 
@@ -60,7 +60,7 @@ def simplify : BoolExpr → BoolExpr
   | e       => e
 ```
 
-**逐部分**：`inductive` 定义递归数据类型；`def` 定义函数；模式匹配跟 OCaml / Haskell 一样。这段代码**既是程序又能被证明正确**——下面写一行 `theorem denote_simplify : ... := by induction p ...` 就能形式化证明"简化后语义不变"。
+**逐部分**：`inductive` 定义递归数据类型；`def` 定义函数；`mkOr` / `mkNot` 是论文里的辅助构造（此处省略）。模式匹配跟 OCaml 一样。这段**既是程序又能被证明正确**——再写 `theorem denote_simplify ...` 即可证"简化后语义不变"。
 
 ### 案例 2：用宏定义嵌入式 DSL
 
@@ -71,7 +71,7 @@ macro_rules
   | `(`[BExpr| $p ∨ $q])  => `(BoolExpr.or `[BExpr| $p] `[BExpr| $q])
 ```
 
-这几行让你可以写 `` `[BExpr| p ∨ q] `` 而不是 `BoolExpr.or (BoolExpr.var "p") (BoolExpr.var "q")`。**关键是 hygienic**：宏里临时变量不会和用户代码里同名变量打架。
+反引号 `` `(...)`` 包的是语法树模板，`$` 是往洞里填。这几行让你写 `` `[BExpr| p ∨ q] `` 而不是手拼 `BoolExpr.or ...`。**关键是 hygienic**：宏里临时名不会和用户变量打架。
 
 ### 案例 3：FBIP 让 map 0 分配
 
@@ -113,7 +113,7 @@ def map : (α → β) → List α → List β
 - **2013 年**：Leonardo de Moura 在 Microsoft Research 启动 Lean 项目，目标是给 SMT 求解器（他做过 Z3）找一个更好的搭档——基于 Calculus of Inductive Constructions。
 - **2017 年**：Lean 3 + mathlib 启动。**Kevin Buzzard 的 Xena 项目**把本科生数学搬上 Lean，社区开始扩张。
 - **2020 年**：Peter Scholze 抛出 **Liquid Tensor Experiment** 挑战——把他自己都不完全相信的定理放上 Lean 让计算机验证。一年内完成。
-- **2021 年**：de Moura + 博士生 Sebastian Ullrich 发布 Lean 4，这篇 CADE 论文。从 C++ 内核重写为 Lean 自举。
+- **2021 年**：de Moura + Sebastian Ullrich 发布 Lean 4（本笔记 CADE 论文）。**内核仍为 C++**；parser / elaborator / tactic 等外圈用 Lean 自举重写。
 - **2023-2025 年**：mathlib4 迁移完成，Lean 4 成为形式数学社区的事实标准。
 
 ## 学到什么

@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "缺 ## 历史小故事（可跳过）时间线，零基础读者少了「为什么叫 Moby」的故事锚点"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 是调用链示意图，建议补 2-3 步「你在仓库里先打开哪个文件、再跟到哪」的跟读步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Moby 不再含 swarm」易误导：swarm classic 已废弃，但 dockerd 仍含 Swarm mode；应改成「swarm classic 已废弃，Swarm mode 仍在但非主流」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "缺历史时间线段，2017 改名等关键事实无处安放，建议补 ## 历史小故事（可跳过）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可加量化边界（例如：只跑容器选 docs；要改引擎/排 dockerd 卡死再读 Moby；K8s 1.24+ 已不经 dockerd）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 dind 编译路径概念正确，可注明需要 Docker 已安装且首次 make 较慢"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺 ## 历史小故事（可跳过）时间线，零基础读者少了「为什么叫 Moby」的故事锚点",
+        "案例 1 是调用链示意图，建议补 2-3 步「你在仓库里先打开哪个文件、再跟到哪」的跟读步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「Moby 不再含 swarm」易误导：swarm classic 已废弃，但 dockerd 仍含 Swarm mode；应改成「swarm classic 已废弃，Swarm mode 仍在但非主流」",
+        "缺历史时间线段，2017 改名等关键事实无处安放，建议补 ## 历史小故事（可跳过）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用可加量化边界（例如：只跑容器选 docs；要改引擎/排 dockerd 卡死再读 Moby；K8s 1.24+ 已不经 dockerd）",
+        "案例 3 的 dind 编译路径概念正确，可注明需要 Docker 已安装且首次 make 较慢"
+      ]
+    }
+  ]
+}

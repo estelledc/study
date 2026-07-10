@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Excel 类比很贴；Atom/Derivation 已有举牌类比托住，暂无必须修改项"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Weststrate / Mendix / Proxy 演进时间线总体可靠；「三大方案」属社区共识表述，无硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "async/await 与忘记 observer 的坑非常可操作；缺 ## 反向链接 占位，但不影响工程可读性，非阻断"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Excel 类比很贴；Atom/Derivation 已有举牌类比托住，暂无必须修改项"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Weststrate / Mendix / Proxy 演进时间线总体可靠；「三大方案」属社区共识表述，无硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "async/await 与忘记 observer 的坑非常可操作；缺 ## 反向链接 占位，但不影响工程可读性，非阻断"
+      ]
+    }
+  ]
+}
