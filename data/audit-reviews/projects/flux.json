@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "小狗/扫地机器人类比很贴；controller 快递柜类比能懂。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 bootstrap 一行命令缺逐步拆解；案例 3 只有目录树，建议补 2-3 句说明各集群如何指向 path。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "文末缺 ## 反向链接 占位段，结构不完整。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GitOps 2017 / Flux v2 2020 / CNCF incubation 2021 → graduated 2022 主线正确；「2021→2023」表述略宽但仍可接受。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Flux 就是这个词的发明者」宜理解为 Weaveworks 提出 GitOps 并以 Flux 落地，当前写法教学可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 2 把 field-level drift 与 prune 绑在一起不准确：prune 管的是「Git 里已不存在的资源是否删除」，不管未声明字段被 kubectl edit 改掉；应分开写 SSA/字段所有权 vs prune。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "bootstrap / ImagePolicy / 多集群 path 方向正确；适用边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "小狗/扫地机器人类比很贴；controller 快递柜类比能懂。",
+        "案例 1 bootstrap 一行命令缺逐步拆解；案例 3 只有目录树，建议补 2-3 句说明各集群如何指向 path。",
+        "文末缺 ## 反向链接 占位段，结构不完整。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "GitOps 2017 / Flux v2 2020 / CNCF incubation 2021 → graduated 2022 主线正确；「2021→2023」表述略宽但仍可接受。",
+        "「Flux 就是这个词的发明者」宜理解为 Weaveworks 提出 GitOps 并以 Flux 落地，当前写法教学可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 2 把 field-level drift 与 prune 绑在一起不准确：prune 管的是「Git 里已不存在的资源是否删除」，不管未声明字段被 kubectl edit 改掉；应分开写 SSA/字段所有权 vs prune。",
+        "bootstrap / ImagePolicy / 多集群 path 方向正确；适用边界清楚。"
+      ]
+    }
+  ]
+}

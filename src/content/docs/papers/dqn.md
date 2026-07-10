@@ -25,7 +25,7 @@ DQN（**Deep Q-Network**）是 DeepMind 2013 年 arXiv 预印本 + 2015 年 Natu
 不理解 DQN，下面这些事都没法解释：
 
 - 为什么 [[alphago]] 能 4-1 击败李世石——它的「价值网络」本质是 DQN 的近亲
-- 为什么 ChatGPT 微调用 RLHF（强化学习 + 人类反馈）能跑——RLHF 用的 PPO 是 DQN 路线长出来的
+- 为什么 ChatGPT 微调用 RLHF（强化学习 + 人类反馈）能跑——深度 RL 被 DQN 带火后，RLHF 常用的 PPO 等策略梯度方法才进入主流（PPO 与 DQN 是并列路线，不是后者后代）
 - 为什么 RL 圈在 2013 之前几乎没人关注，2015 之后突然变成 AI 最热的方向之一
 - 为什么后续 [[muzero]] / [[ppo]] / Rainbow / SAC / DDPG 全在 DQN 思路上演化
 

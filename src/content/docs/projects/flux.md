@@ -62,7 +62,13 @@ flux bootstrap github \
   --path=clusters/prod --personal
 ```
 
-这一条命令做了：在集群装 Flux 6 个 controller、生成一份 Kustomization 指向 Git 的 `clusters/prod/`、把 SSH key 写进 GitHub。从此你**只改 Git，不动集群**。
+逐步看它做了什么：
+
+1. 在集群里装上 Flux 的 6 个 controller（source / kustomize / helm 等）。
+2. 在 Git 仓生成一份指向 `clusters/prod/` 的 Kustomization 清单。
+3. 把部署用的 SSH deploy key 写进 GitHub，让集群能只读拉配置。
+
+从此你**只改 Git，不动集群**；Flux 按 `interval` 自己 reconcile。
 
 ### 案例 2：镜像自动升级
 
@@ -87,13 +93,13 @@ k8s-config/
     prod/   → prod 配置
 ```
 
-每个集群跑一个 Flux，各自指向自己的 path。同一份 base + overlay，**三套环境差异 < 50 行**。
+每个集群各自跑一个 Flux：dev 集群的 GitRepository/Kustomization 指向 `clusters/dev/`，prod 指向 `clusters/prod/`。公共 Deployment 放 base，环境差异（副本数、域名、资源限额）写在 overlay 里——同一份 base + overlay，**三套环境差异通常 < 50 行**。
 
 ## 踩过的坑
 
 1. **v1 和 v2 不兼容**：2020 年重写，单进程 → 多 controller。v1 的 `--git-poll-interval` 这种 flag 在 v2 全没了，要重写所有声明。老教程别看；2020 年之前的中文文章基本作废。
 
-2. **drift detection 只管声明过的字段**：你在 Git 里只写了 `replicas: 3`，有人 `kubectl edit` 改了 `image`，Flux **不会**把 image 拉回来。这是 server-side apply 的默认行为，不是 bug；想要严格也行，加 `prune: true` + 在 Kustomization 里显式列字段。
+2. **drift detection 只管声明过的字段**：你在 Git 里只写了 `replicas: 3`，有人 `kubectl edit` 改了未出现在清单里的 `image`，Flux **默认不会**把 image 拉回来——这是 server-side apply 的字段所有权行为，不是 bug。想严格对齐，要把该字段写进 Git 清单让 Flux 接管；`prune: true` 管的是另一件事：删除「Git 里已经不存在、但集群里还留着」的资源。
 
 3. **image automation 要写权限**：自动改回 Git 必须给 Flux 写权限，意味着集群里的 SSH key 能 push 到生产仓。漏出来 = 整条 GitOps 链被劫持。建议单独的 deploy key + 单独 branch + PR 走人审核。
 
@@ -153,3 +159,7 @@ k8s-config/
 - [[kustomize]] —— Flux kustomize-controller 的核心依赖
 - [[helm]] —— Flux helm-controller 把 HelmRelease 翻成实际部署
 - [[kubernetes]] —— Flux 整套架构都建在 controller pattern 上
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
