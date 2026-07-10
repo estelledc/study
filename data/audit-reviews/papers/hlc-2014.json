@@ -1,0 +1,118 @@
+{
+  "slug": "hlc-2014",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "支票/小票类比很贴；epsilon / max_offset 已有数量级，零基础可跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "FoundationDB 用中心化 master/sequencer 发版本号，不是 HLC；「是什么」末句应删掉 FoundationDB"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TiDB 用 PD 集中 TSO，不是 per-node HLC；「为什么重要 / 适用」里把 TiDB 写成 HLC 孩子需改成对照或删掉"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码与论文 Algorithm 1 对齐，可跟做；适用列表若含 TiDB 建议注明是 TSO 路线以免工程选型误导"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "支票/小票类比很贴；epsilon / max_offset 已有数量级，零基础可跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "FoundationDB 用中心化 master/sequencer 发版本号，不是 HLC；「是什么」末句应删掉 FoundationDB",
+        "TiDB 用 PD 集中 TSO，不是 per-node HLC；「为什么重要 / 适用」里把 TiDB 写成 HLC 孩子需改成对照或删掉"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "伪代码与论文 Algorithm 1 对齐，可跟做；适用列表若含 TiDB 建议注明是 TSO 路线以免工程选型误导"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "pass_count": 2,
+    "action": "refine",
+    "reason": "存在 needs-refine（1）或单票 reject；平均分 4.45。"
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：FoundationDB 非 HLC；TiDB 为 PD TSO。从是什么/为什么重要/适用三处纠正。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": [],
+    "summary": "删掉 FoundationDB 为 HLC 孩子的说法；TiDB 标明为 TSO 对照路线。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 183,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 183,
+  "l1_pass": true
+}
