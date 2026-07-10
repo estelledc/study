@@ -138,7 +138,7 @@ colmap pose_prior_mapper \
 - **2016 年左右**：Johannes Schönberger 等人把 Structure-from-Motion 和 Multi-View Stereo 的关键工作发表出来，COLMAP 逐渐成为论文和工程里的常用 baseline。
 - **早期定位**：它不是单一算法 demo，而是把无序照片重建、GUI、命令行和文件格式都打通的研究软件。
 - **社区演进**：项目后来加入 PyCOLMAP、更多特征和匹配选项、rig 支持、全局 SfM 等能力。
-- **今天的地位**：约 8.5k stars，很多 3D 视觉论文会默认把“用 COLMAP 求位姿”当成前处理步骤。
+- **今天的地位**：GitHub stars 已过万，很多 3D 视觉论文会默认把“用 COLMAP 求位姿”当成前处理步骤。
 
 ## 学到什么
 
