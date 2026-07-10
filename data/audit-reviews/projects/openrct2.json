@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "天书菜谱→普通话类比极强，逆向工程对零基础有画面感"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "只有 2 个实践案例；模板期望 3 个，且案例 2 是结构示意缺少「怎么遍历/怎么改」的逐步动作"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "GameAction / TileElement / tick 有桥接，但插件系统只在要点里提过，缺一个最小可跟做的插件案例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub OpenRCT2/OpenRCT2；Chris Sawyer 汇编、IntelOrca 2014 启动、C++ 重写主线事实正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「完美还原」偏绝对，宜弱化为「高度兼容/行为对齐」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "40 tick、GameAction、Duktape 插件等工程描述与项目公开资料一致，无明显歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "TrackPlaceAction Query/Execute 骨架概念正确，可跟做理解同步模型"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（反编译≠理解、全局状态债、RCT1/2 格式、定点 vs 浮点）非常具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（非现代 3D/ECS、非通用引擎）；建议再补一个最小 JS 插件骨架作案例 3"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "天书菜谱→普通话类比极强，逆向工程对零基础有画面感",
+        "只有 2 个实践案例；模板期望 3 个，且案例 2 是结构示意缺少「怎么遍历/怎么改」的逐步动作",
+        "GameAction / TileElement / tick 有桥接，但插件系统只在要点里提过，缺一个最小可跟做的插件案例"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 GitHub OpenRCT2/OpenRCT2；Chris Sawyer 汇编、IntelOrca 2014 启动、C++ 重写主线事实正确",
+        "「完美还原」偏绝对，宜弱化为「高度兼容/行为对齐」",
+        "40 tick、GameAction、Duktape 插件等工程描述与项目公开资料一致，无明显歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "TrackPlaceAction Query/Execute 骨架概念正确，可跟做理解同步模型",
+        "踩坑（反编译≠理解、全局状态债、RCT1/2 格式、定点 vs 浮点）非常具体",
+        "适用/不适用边界清楚（非现代 3D/ECS、非通用引擎）；建议再补一个最小 JS 插件骨架作案例 3"
+      ]
+    }
+  ]
+}
