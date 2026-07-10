@@ -1,0 +1,93 @@
+{
+  "slug": "jupyter-notebook",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实验记录本+厨房柜台类比贴合；案例 1 偏短但仍有逐步解释，零基础可跟跑。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "jupyter/notebook 来源正确；2015 大拆分、v7 转向 JupyterLab 组件等时间线合理，无硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "安装与 cell 示例可跟做；踩坑覆盖 kernel 残留、v6→v7 扩展、环境错配与 trust，适用边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实验记录本+厨房柜台类比贴合；案例 1 偏短但仍有逐步解释，零基础可跟跑。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "jupyter/notebook 来源正确；2015 大拆分、v7 转向 JupyterLab 组件等时间线合理，无硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "安装与 cell 示例可跟做；踩坑覆盖 kernel 残留、v6→v7 扩展、环境错配与 trust，适用边界清楚。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 196,
+    "reasons": []
+  },
+  "l1_pass": true,
+  "lines": 196
+}
