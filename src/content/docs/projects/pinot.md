@@ -79,7 +79,7 @@ GROUP BY region
 
 **有 Star-Tree 时**：如果建了 "(region, device) → SUM(clicks)" 的预聚合，Server 直接从树里读聚合值，**跳过整段扫描**。同样 8 个段、原本要扫几百万行，现在只读几百个聚合节点——延迟从几百毫秒降到几十毫秒。
 
-这就是 LinkedIn 用 Pinot 撑起亿级 QPS user-facing dashboard 的核心武器。
+这就是 LinkedIn 用 Pinot 撑起「面向亿级用户、毫秒级 p99」的 user-facing dashboard 的核心武器。
 
 ### 案例 3：和 Druid 的取舍对比
 
@@ -107,7 +107,7 @@ LinkedIn 内部曾同时跑 Druid 和 Pinot。后来选 Pinot 主推的原因：
 
 **适用**：
 
-- 用户面向的实时仪表板（毫秒级 p99，亿级 QPS）
+- 用户面向的实时仪表板（面向亿级用户、毫秒级 p99 的高并发聚合）
 - 时间序列 + 高基数维度（广告、风控、订单流、IoT）
 - Kafka 实时流入 + 历史回溯统一查询
 - 高频固定模式聚合（GROUP BY + SUM/COUNT）

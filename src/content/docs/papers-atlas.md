@@ -870,7 +870,7 @@ sidebar:
 | `morsel-driven-2014` | [Morsel-Driven Parallelism — 把 SQL 查询切成小口分给多核](/study/papers/morsel-driven-2014/) |
 | `mptcp-2012` | [MPTCP — 让手机同时用 Wi-Fi 和 4G 传数据](/study/papers/mptcp-2012/) |
 | `mqtt-s-2008` | [MQTT-S 2008 — IoT 发布/订阅协议在传感网的扩展](/study/papers/mqtt-s-2008/) |
-| `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) |
+| `ms-marco-2016` | [MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) |
 | `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) |
 | `muller-2007-pbd` | [Position Based Dynamics — 直接修正位置的实时物理](/study/papers/muller-2007-pbd/) |
@@ -1835,7 +1835,7 @@ sidebar:
 | `morsel-driven-2014` | [Morsel-Driven Parallelism — 把 SQL 查询切成小口分给多核](/study/papers/morsel-driven-2014/) | 其他 |
 | `mptcp-2012` | [MPTCP — 让手机同时用 Wi-Fi 和 4G 传数据](/study/papers/mptcp-2012/) | 其他 |
 | `mqtt-s-2008` | [MQTT-S 2008 — IoT 发布/订阅协议在传感网的扩展](/study/papers/mqtt-s-2008/) | 其他 |
-| `ms-marco-2016` | [MS MARCO — 1 千万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | 其他 |
+| `ms-marco-2016` | [MS MARCO — 约百万 Bing 真实查询喂饱神经检索的标准评测集](/study/papers/ms-marco-2016/) | 其他 |
 | `mueller-2007-pbd` | [Position Based Dynamics — 跳过力，直接挪位置](/study/papers/mueller-2007-pbd/) | 其他 |
 | `mueller-2022-instant-ngp` | [Instant-NGP — 把 NeRF 训练从几小时压到 5 秒](/study/papers/mueller-2022-instant-ngp/) | 其他 |
 | `muller-2007-pbd` | [Position Based Dynamics — 直接修正位置的实时物理](/study/papers/muller-2007-pbd/) | 其他 |
