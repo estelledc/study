@@ -7,13 +7,23 @@
 //   node scripts/pick-batch.mjs --count 8 --rewrite 0 --new 8  # 全 NEW
 //   node scripts/pick-batch.mjs --count 120                 # round 满载
 
+import { createHash } from 'node:crypto';
+
 import {
+  claimToken,
+  commitQueueState,
   excludeGraveyard,
-  graveyardSlugs,
+  graveyardIdentities,
   loadPickQueues,
+  markClaimed,
   markPriorityPicked,
-  writePriorityQueue,
 } from './lib/queue-store.mjs';
+import {
+  CANDIDATES_PATH,
+  DATA_DIR,
+  PRIORITY_QUEUE_PATH,
+  REWRITE_POOL_PATH,
+} from './lib/paths.mjs';
 
 function parseArgs() {
   const args = { count: 8, rewrite: null, new: null, priorityRatio: 0.7, noPriority: false };
@@ -125,6 +135,39 @@ function assignWorktrees(items) {
   });
 }
 
+function sha256(value) {
+  return createHash('sha256').update(value).digest('hex');
+}
+
+function pickInputHash(queues) {
+  return sha256(JSON.stringify({
+    candidates: queues.candidates || [],
+    pool: queues.pool || [],
+    graveyard: queues.graveyard || [],
+    priority: queues.priority || [],
+    priority_missing: Boolean(queues.priorityMissing),
+  }));
+}
+
+function computePickPlanHash(output) {
+  return sha256(JSON.stringify({
+    requested: output.requested,
+    queue_input_hash: output.queue_input_hash,
+    items: output.items.map((item) => ({
+      area: item.area,
+      slug: item.slug,
+      kind: item.kind,
+      worktree_idx: item.worktree_idx,
+      source: item.source || null,
+    })),
+  }));
+}
+
+function assignmentFor(item) {
+  const name = item.worktree_idx === 0 ? item.area : `${item.area}-${item.worktree_idx + 1}`;
+  return { area: item.area, slug: item.slug, worktree: { name } };
+}
+
 export function pickBatch(args, queues = {}) {
   const {
     candidates = [],
@@ -133,8 +176,8 @@ export function pickBatch(args, queues = {}) {
     priority = [],
   } = queues;
 
-  // graveyard 永久排除（按 slug 唯一，跨 area 安全）
-  const graveSlugs = graveyardSlugs(graveyard);
+  // 新数据按 area::slug 排除；无 area 的旧记录继续按裸 slug 双读。
+  const graveyardIds = graveyardIdentities(graveyard);
   const filteredPool = excludeGraveyard(pool, graveyard);
   const filteredCandidates = excludeGraveyard(candidates, graveyard);
   const filteredPriority = excludeGraveyard(priority, graveyard);
@@ -188,32 +231,112 @@ export function pickBatch(args, queues = {}) {
 
   // 数量校验
   const issues = [];
+  const warnings = [];
+  if (args.count !== args.rewrite + args.new) {
+    issues.push(`requested split mismatch: count=${args.count}, rewrite+new=${args.rewrite + args.new}`);
+  }
   if (rewriteItems.length < args.rewrite) issues.push(`rewrite short: ${rewriteItems.length}/${args.rewrite}`);
   if (newItems.length < args.new) issues.push(`new short: ${newItems.length}/${args.new}`);
   if (priorityItems.length < wantPriority) issues.push(`priority short: ${priorityItems.length}/${wantPriority}`);
-  if (graveSlugs.size > 0) issues.push(`graveyard excluded: ${graveSlugs.size}`);
+  const candidateKeys = new Set(candidates
+    .filter((row) => row.status === 'queued')
+    .map((row) => `${row.area}::${row.slug}`));
+  const missingPriorityCandidates = priorityItems
+    .map((item) => `${item.area}::${item.slug}`)
+    .filter((key) => !candidateKeys.has(key));
+  if (missingPriorityCandidates.length > 0) {
+    issues.push(`priority candidate missing: ${missingPriorityCandidates.join(', ')}`);
+  }
+  const graveyardCount = graveyardIds.keys.size + graveyardIds.legacySlugs.size;
+  if (graveyardCount > 0) warnings.push(`graveyard excluded: ${graveyardCount}`);
+
+  const output = {
+    requested: { count: args.count, rewrite: args.rewrite, new: args.new, priority_ratio: args.priorityRatio, want_priority: wantPriority },
+    actual: { count: assigned.length, rewrite: rewriteItems.length, new: newItems.length, priority: priorityItems.length, fallback: fallbackItems.length },
+    issues,
+    warnings,
+    items: assigned,
+    queue_input_hash: pickInputHash(queues),
+  };
+  output.plan_hash = computePickPlanHash(output);
+  output.items = output.items.map((item) => ({
+    ...item,
+    claim_token: claimToken(output.plan_hash, item),
+    claim_generation: output.plan_hash,
+  }));
 
   return {
-    output: {
-      requested: { count: args.count, rewrite: args.rewrite, new: args.new, priority_ratio: args.priorityRatio, want_priority: wantPriority },
-      actual: { count: assigned.length, rewrite: rewriteItems.length, new: newItems.length, priority: priorityItems.length, fallback: fallbackItems.length },
-      issues,
-      items: assigned,
-    },
+    output,
     priorityPicked,
-    nextPriority: priorityPicked.length > 0 ? markPriorityPicked(priority, priorityPicked) : priority,
+    nextPriority: issues.length === 0 && priorityPicked.length > 0
+      ? markPriorityPicked(priority, priorityPicked)
+      : priority,
   };
+}
+
+export async function applyPickPlan(plan, queues, options = {}) {
+  const { output } = plan;
+  if (!output || !Array.isArray(output.items)) throw new Error('pick plan is malformed');
+  const issues = [...(output.issues || [])];
+  if (output.actual.count !== output.requested.count ||
+      output.actual.rewrite !== output.requested.rewrite ||
+      output.actual.new !== output.requested.new) {
+    issues.push('pick counts do not match the request');
+  }
+  if (issues.length > 0) throw new Error(`pick plan is not applicable: ${issues.join('; ')}`);
+  if (pickInputHash(queues) !== output.queue_input_hash) {
+    throw new Error('pick queue input changed after planning');
+  }
+  if (computePickPlanHash(output) !== output.plan_hash) {
+    throw new Error('pick plan hash mismatch');
+  }
+  if (output.items.length === 0) {
+    return { generation: output.plan_hash, applied: [], no_op: true };
+  }
+
+  const assignments = output.items.map(assignmentFor);
+  const claimOptions = {
+    planHash: output.plan_hash,
+    generation: output.plan_hash,
+    claimedAt: options.claimedAt,
+    leaseMs: options.leaseMs,
+  };
+  const rewritePicked = output.items.filter((item) => item.kind.startsWith('rewrite-'));
+  const newPicked = output.items.filter((item) => item.kind.startsWith('new-'));
+  const nextPool = markClaimed(queues.pool || [], rewritePicked, assignments, claimOptions);
+  const nextCandidates = markClaimed(queues.candidates || [], newPicked, assignments, claimOptions);
+  const nextPriority = plan.priorityPicked.length > 0
+    ? markPriorityPicked(queues.priority || [], plan.priorityPicked)
+    : (queues.priority || []);
+  const includePriority = !queues.priorityMissing || plan.priorityPicked.length > 0;
+
+  return commitQueueState({
+    candidates: nextCandidates,
+    rewritePool: nextPool,
+    ...(includePriority ? { priority: nextPriority } : {}),
+  }, {
+    directory: options.directory || DATA_DIR,
+    generation: output.plan_hash,
+    paths: options.paths || {
+      candidates: CANDIDATES_PATH,
+      rewritePool: REWRITE_POOL_PATH,
+      priority: PRIORITY_QUEUE_PATH,
+    },
+    expectedState: {
+      candidates: queues.candidates || [],
+      rewritePool: queues.pool || [],
+      ...(includePriority ? { priority: queues.priority || [] } : {}),
+    },
+    hooks: options.hooks,
+  });
 }
 
 async function main() {
   const args = parseArgs();
   const queues = await loadPickQueues();
-  const { output, priorityPicked, nextPriority } = pickBatch(args, queues);
-
-  // 写回 priority-queue.jsonl：把刚选中的标 status=picked
-  if (priorityPicked.length > 0) {
-    await writePriorityQueue(nextPriority);
-  }
+  const plan = pickBatch(args, queues);
+  const { output } = plan;
+  await applyPickPlan(plan, queues);
 
   console.log(JSON.stringify(output, null, 2));
 }

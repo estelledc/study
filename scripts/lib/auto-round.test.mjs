@@ -18,13 +18,22 @@ function candidates() {
   ];
 }
 
-function workerResults() {
-  return [
+function workerResults(claimedRows) {
+  const base = [
     { area: 'papers', slug: 'p1', commit: 'aaaaaaa', lines: 160, self_check: 'pass' },
     { area: 'papers', slug: 'p2', commit: 'bbbbbbb', lines: 170, self_check: 'pass' },
     { area: 'projects', slug: 'pr1', commit: 'ccccccc', lines: 180, self_check: 'pass' },
     { area: 'projects', slug: 'pr2', commit: 'ddddddd', lines: 190, self_check: 'pass' },
   ];
+  const claimedByKey = new Map(claimedRows.map((row) => [`${row.area}::${row.slug}`, row]));
+  return base.map((result) => {
+    const claimed = claimedByKey.get(`${result.area}::${result.slug}`);
+    return {
+      ...result,
+      claim_token: claimed?.claim_token,
+      claim_generation: claimed?.claim_generation,
+    };
+  });
 }
 
 test('autoPrepareState claims the planned 4 NEW assignments', () => {
@@ -52,7 +61,7 @@ test('applyWorkerResultsToRuntime advances claimed rows to written', () => {
   );
   const advanced = applyWorkerResultsToRuntime(
     { candidates: prepared.nextCandidates, pool: [], written: [] },
-    workerResults(),
+    workerResults(prepared.nextCandidates),
   );
 
   assert.deepEqual(advanced.mergeArgs.map((item) => [item.area, item.slug]), [
@@ -73,10 +82,41 @@ test('validateWorkerResults blocks missing, duplicate, mismatched, bad hash, and
     { home: HOME },
   );
   const queues = { candidates: prepared.nextCandidates, pool: [] };
+  const results = workerResults(prepared.nextCandidates);
 
-  assert.throws(() => validateWorkerResults(queues, workerResults().slice(0, 3)), /missing worker result/);
-  assert.throws(() => validateWorkerResults(queues, [...workerResults(), workerResults()[0]]), /duplicate worker result/);
-  assert.throws(() => validateWorkerResults(queues, [{ ...workerResults()[0], area: 'projects' }, ...workerResults().slice(1)]), /does not match claimed row/);
-  assert.throws(() => validateWorkerResults(queues, [{ ...workerResults()[0], commit: 'not-a-hash' }, ...workerResults().slice(1)]), /Invalid commit hash/);
-  assert.throws(() => validateWorkerResults(queues, [{ ...workerResults()[0], lines: 999 }, ...workerResults().slice(1)]), /invalid lines/);
+  assert.throws(() => validateWorkerResults(queues, results.slice(0, 3)), /missing worker result/);
+  assert.throws(() => validateWorkerResults(queues, [...results, results[0]]), /duplicate worker result/);
+  assert.throws(() => validateWorkerResults(queues, [{ ...results[0], area: 'projects' }, ...results.slice(1)]), /does not match claimed row/);
+  assert.throws(() => validateWorkerResults(queues, [{ ...results[0], commit: 'not-a-hash' }, ...results.slice(1)]), /Invalid commit hash/);
+  assert.throws(() => validateWorkerResults(queues, [{ ...results[0], lines: 999 }, ...results.slice(1)]), /invalid lines/);
+});
+
+test('validateWorkerResults rejects a stale result after the same assignment is reclaimed', () => {
+  const queues = {
+    candidates: [{
+      area: 'papers', slug: 'same-assignment', status: 'claimed', claimed_by: 'papers-3',
+      claim_token: 'current-token', claim_generation: 'generation-b',
+    }],
+    pool: [],
+  };
+  const base = {
+    area: 'papers', slug: 'same-assignment', commit: 'abcdef1', lines: 160, self_check: 'pass',
+  };
+
+  assert.throws(
+    () => validateWorkerResults(queues, [{
+      ...base,
+      claim_token: 'stale-token',
+      claim_generation: 'generation-a',
+    }]),
+    /claim_(?:token|generation).*mismatch/,
+  );
+  assert.deepEqual(validateWorkerResults(queues, [{
+    ...base,
+    claim_token: 'current-token',
+    claim_generation: 'generation-b',
+  }]), [{
+    area: 'papers', slug: 'same-assignment', commit: 'abcdef1', lines: 160,
+    claim_token: 'current-token', claim_generation: 'generation-b', claimed_by: 'papers-3',
+  }]);
 });

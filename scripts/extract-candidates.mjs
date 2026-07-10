@@ -5,6 +5,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { isNoteSlug, serializeNoteId } from './lib/note-id.mjs';
 import { CANDIDATES_PATH, RESEARCH_DIR } from './lib/paths.mjs';
 import { writeCandidates } from './lib/queue-store.mjs';
 
@@ -35,6 +36,7 @@ export function parseCandidateLine(line, meta, filename) {
   const match = line.match(TABLE_ROW);
   if (!match) return null;
   const [, slug, col2, col3, col4, url] = match;
+  if (!isNoteSlug(slug)) return null;
   const candidate = {
     slug,
     area: meta.area,
@@ -69,7 +71,7 @@ export function dedupeCandidates(candidates) {
   const deduped = [];
   let duplicatesRemoved = 0;
   for (const candidate of candidates) {
-    const key = `${candidate.area}::${candidate.slug}`;
+    const key = serializeNoteId(candidate.area, candidate.slug);
     if (seen.has(key)) {
       duplicatesRemoved++;
       continue;

@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 
-import { parseJsonl, readJsonl, writeJsonl } from './jsonl.mjs';
+import { parseJsonl, readJsonl, serializeJsonl, writeJsonl } from './jsonl.mjs';
 
 test('parseJsonl skips blank lines and parses records', () => {
   assert.deepEqual(parseJsonl('{"a":1}\n\n{"b":2}\n'), [{ a: 1 }, { b: 2 }]);
@@ -36,4 +36,9 @@ test('writeJsonl preserves non-empty final newline mode', async () => {
   } finally {
     await rm(dir, { recursive: true, force: true });
   }
+});
+
+test('serializeJsonl keeps the existing JSONL byte contract', () => {
+  assert.equal(serializeJsonl([{ a: 1 }, { b: 2 }]), '{"a":1}\n{"b":2}\n');
+  assert.equal(serializeJsonl([], { finalNewline: 'non-empty' }), '');
 });

@@ -14,21 +14,69 @@
 //   projects-rewrite x 2 → projects / projects-2
 //   projects-new x 2     → projects-3 / projects-4
 
-import { loadDispatchQueues, markClaimed, writeCandidates, writeRewritePool } from './lib/queue-store.mjs';
-import { docsEntryRelativePath } from './lib/paths.mjs';
+import { createHash, randomUUID } from 'node:crypto';
+
+import { emit } from './pipeline-events.mjs';
+import { claimToken, commitQueueState, loadDispatchQueues, markClaimed } from './lib/queue-store.mjs';
+import { CANDIDATES_PATH, DATA_DIR, docsEntryRelativePath, REWRITE_POOL_PATH } from './lib/paths.mjs';
 import { DISPATCH_PROMPT_KINDS, commonPromptVars, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
 import { worktreeForAreaSlot, worktreesForDispatch } from './lib/worktrees.mjs';
 import { formatCandidateMetadataIssue, validateCandidateRows } from './lib/candidate-metadata.mjs';
+import {
+  assertNoPendingQueueTransaction,
+  recoverQueueTransaction,
+} from './lib/queue-transaction.mjs';
+import { acquireRoundLock, releaseRoundLock, renewLease } from './round-lock.mjs';
 
 function parseArgs() {
-  const args = { rewrite: 4, new: 4, dryRun: false };
+  const args = {
+    rewrite: 4,
+    new: 4,
+    dryRun: false,
+    round: null,
+    ownerToken: null,
+    workflowRunId: process.env.GITHUB_RUN_ID || `local-${process.pid}`,
+  };
   for (let i = 2; i < process.argv.length; i++) {
     const a = process.argv[i];
     if (a === '--rewrite') args.rewrite = parseInt(process.argv[++i], 10);
     else if (a === '--new') args.new = parseInt(process.argv[++i], 10);
     else if (a === '--dry-run') args.dryRun = true;
+    else if (a === '--round') args.round = parseInt(process.argv[++i], 10);
+    else if (a === '--owner-token') args.ownerToken = process.argv[++i];
+    else if (a === '--workflow-run-id') args.workflowRunId = process.argv[++i];
+    else if (a === '--json') continue;
+    else throw new Error(`Unknown argument: ${a}`);
   }
   return args;
+}
+
+function sha256(value) {
+  return createHash('sha256').update(value).digest('hex');
+}
+
+function queueInputHash(queues) {
+  return sha256(JSON.stringify({
+    candidates: queues.candidates || [],
+    pool: queues.pool || [],
+  }));
+}
+
+export function computeDispatchPlanHash(plan) {
+  return sha256(JSON.stringify({
+    expected: plan.expected,
+    queue_input_hash: plan.queue_input_hash,
+    assignments: plan.assignments.map((assignment) => ({
+      kind: assignment.kind,
+      area: assignment.area,
+      slug: assignment.slug,
+      worktree: assignment.worktree.name,
+    })),
+    picked: {
+      rewrite: plan.picked.rewrite.map((item) => `${item.area}::${item.slug}`),
+      new: plan.picked.new.map((item) => `${item.area}::${item.slug}`),
+    },
+  }));
 }
 
 function pickRewrite(pool, area, n) {
@@ -164,7 +212,7 @@ export function dispatchBatch(args, queues, options = {}) {
   papersNew.forEach((item, i) => pushAssignment(assignments, 'new-paper', 'papers', item, papersNewWorktrees[i]));
   projectsNew.forEach((item, i) => pushAssignment(assignments, 'new-project', 'projects', item, projectsNewWorktrees[i]));
 
-  return {
+  const plan = {
     batch_size: assignments.length,
     expected: args.rewrite + args.new,
     issues,
@@ -175,31 +223,97 @@ export function dispatchBatch(args, queues, options = {}) {
       new: [...papersNew, ...projectsNew],
     },
   };
+  plan.queue_input_hash = queueInputHash({ candidates, pool });
+  plan.plan_hash = computeDispatchPlanHash(plan);
+  return plan;
 }
 
-export function renderDispatchOutput(plan, templates) {
-  const output = plan.assignments.map(a => ({
-    kind: a.kind,
-    area: a.area,
-    slug: a.slug,
-    worktree: a.worktree.name,
-    worktree_path: a.worktree.path,
-    branch: a.worktree.branch,
-    output_path: a.vars.output_path,
-    prompt: renderTemplate(templates[a.kind], a.vars),
-  }));
+export function renderDispatchOutput(plan, templates, options = {}) {
+  const claimGeneration = options.generation || plan.plan_hash;
+  const output = plan.assignments.map((a) => {
+    const token = claimToken(plan.plan_hash, a);
+    const vars = {
+      ...a.vars,
+      claim_token: token,
+      claim_generation: claimGeneration,
+    };
+    return {
+      kind: a.kind,
+      area: a.area,
+      slug: a.slug,
+      worktree: a.worktree.name,
+      worktree_path: a.worktree.path,
+      branch: a.worktree.branch,
+      output_path: a.vars.output_path,
+      claim_token: token,
+      claim_generation: claimGeneration,
+      prompt: renderTemplate(templates[a.kind], vars),
+    };
+  });
 
   return {
     batch_size: plan.batch_size,
     expected: plan.expected,
     issues: plan.issues,
     dry_run: plan.dry_run,
+    plan_hash: plan.plan_hash,
+    queue_input_hash: plan.queue_input_hash,
     assignments: output,
   };
 }
 
-async function main() {
-  const args = parseArgs();
+export async function applyDispatchPlan(plan, queues, options = {}) {
+  const issues = [...(plan.issues || [])];
+  if (plan.batch_size !== plan.expected) {
+    issues.push(`batch-size mismatch: got ${plan.batch_size}, expected ${plan.expected}`);
+  }
+  if (issues.length > 0) {
+    throw new Error(`dispatch plan is not applicable: ${issues.join('; ')}`);
+  }
+  if (queueInputHash(queues) !== plan.queue_input_hash) {
+    throw new Error('dispatch queue input changed after planning');
+  }
+  if (computeDispatchPlanHash(plan) !== plan.plan_hash) {
+    throw new Error('dispatch plan hash mismatch');
+  }
+
+  const claimOptions = {
+    planHash: plan.plan_hash,
+    generation: plan.plan_hash,
+    claimedAt: options.claimedAt,
+    leaseMs: options.leaseMs,
+  };
+  const nextRewritePool = markClaimed(
+    queues.pool || [],
+    plan.picked.rewrite,
+    plan.assignments,
+    claimOptions,
+  );
+  const nextCandidates = markClaimed(
+    queues.candidates || [],
+    plan.picked.new,
+    plan.assignments,
+    claimOptions,
+  );
+  const transaction = await commitQueueState({
+    candidates: nextCandidates,
+    rewritePool: nextRewritePool,
+  }, {
+    generation: plan.plan_hash,
+    directory: options.directory,
+    paths: options.paths,
+    expectedState: { candidates: queues.candidates || [], rewritePool: queues.pool || [] },
+    hooks: options.hooks,
+  });
+  return { transaction, candidates: nextCandidates, pool: nextRewritePool };
+}
+
+async function executeDispatch(args) {
+  if (args.dryRun) {
+    await assertNoPendingQueueTransaction({ directory: DATA_DIR });
+  } else {
+    await recoverQueueTransaction({ directory: DATA_DIR });
+  }
 
   const { candidates, pool } = await loadDispatchQueues();
   const plan = dispatchBatch(args, { candidates, pool });
@@ -208,18 +322,66 @@ async function main() {
   const templates = await loadPromptTemplates(DISPATCH_PROMPT_KINDS);
   const output = renderDispatchOutput(plan, templates);
 
-  // 标 claimed（除非 dry-run）
+  // 标 claimed（除非 dry-run）。任何 shortage/issue 都在事务前失败，不写一字节。
   if (!args.dryRun) {
-    await writeRewritePool(markClaimed(pool, plan.picked.rewrite, plan.assignments));
-    await writeCandidates(markClaimed(candidates, plan.picked.new, plan.assignments));
+    await applyDispatchPlan(plan, { candidates, pool }, {
+      directory: DATA_DIR,
+      paths: { candidates: CANDIDATES_PATH, rewritePool: REWRITE_POOL_PATH },
+    });
+    emit({
+      event: 'round-lifecycle-start',
+      lifecycle_id: plan.plan_hash,
+      generation: plan.plan_hash,
+      round_n: args.round,
+      batch_size: plan.batch_size,
+    });
   }
 
   // Output to stdout: JSON array
   console.log(JSON.stringify(output, null, 2));
 
-  if (plan.issues.length && !args.dryRun) {
-    process.stderr.write(`WARNING: pool short on ${plan.issues.length} slot(s)\n`);
+}
+
+async function main() {
+  const args = parseArgs();
+  if (args.dryRun) {
+    await executeDispatch(args);
+    return;
   }
+
+  if (args.ownerToken) {
+    const renewed = await renewLease(args.ownerToken);
+    if (!renewed.renewed) throw new Error(`round lock validation failed: ${renewed.reason}`);
+    await executeDispatch(args);
+    return;
+  }
+
+  const ownerToken = randomUUID();
+  const acquired = await acquireRoundLock({
+    round: args.round,
+    workflowRunId: args.workflowRunId,
+    ownerToken,
+  });
+  if (!acquired.acquired) throw new Error(`round lock refused: ${acquired.reason}`);
+  let operationError;
+  try {
+    await executeDispatch(args);
+  } catch (err) {
+    operationError = err;
+  }
+  let released;
+  let releaseError;
+  try {
+    released = await releaseRoundLock(ownerToken);
+    if (!released.released) releaseError = new Error(`round lock release refused: ${released.reason}`);
+  } catch (err) {
+    releaseError = err;
+  }
+  if (operationError) {
+    if (releaseError) operationError.message += `; lock release failed: ${releaseError.message}`;
+    throw operationError;
+  }
+  if (releaseError) throw releaseError;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

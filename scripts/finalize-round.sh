@@ -14,9 +14,14 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
+source "$ROOT/scripts/lib/publish-main.sh"
 DRY_RUN="${DRY_RUN:-0}"
 PUSH_REMOTE="${PUSH_REMOTE:-0}"
 SYNC_WORKTREES="${SYNC_WORKTREES:-1}"
+PUBLISH_ALLOWED_IDENTITY="github.com/estelledc/study"
+PUSH_SENT=false
+REMOTE_HEAD_VERIFIED=false
+DEPLOY_STATUS="not-requested"
 
 if [[ -z "${HOME:-}" ]]; then
   echo "ERROR: HOME is required to locate study worktrees" >&2
@@ -125,6 +130,18 @@ emit() {
   node "$ROOT/scripts/pipeline-events.mjs" "$event_json"
 }
 
+assert_finalize_head() {
+  local stage="$1"
+  local actual_head
+  actual_head="$(git rev-parse HEAD)"
+  if [[ "$actual_head" != "$LOCAL_HEAD" ]]; then
+    emit "{\"event\":\"round-finalize-fail\",\"stage\":\"$stage\",\"reason\":\"local-head-drift\",\"expected_head\":\"$LOCAL_HEAD\",\"actual_head\":\"$actual_head\"}"
+    echo "[finalize-round] STOPPED — HEAD drift at $stage (expected $LOCAL_HEAD, got $actual_head)" >&2
+    return 1
+  fi
+  return 0
+}
+
 emit "{\"event\":\"round-finalize-start\",\"prev_head\":\"$PREV_HEAD\"}"
 
 # 1. Regen
@@ -184,6 +201,7 @@ if [[ "$BUILD_OK" -eq 0 ]]; then
   fi
   exit 3
 fi
+emit "{\"event\":\"round-finalize-build-success\",\"local_build_ok\":true,\"publish_requested\":$([[ "$PUSH_REMOTE" -eq 1 ]] && echo true || echo false)}"
 
 # 5. amend regen 产物到最后 cherry-picked commit
 if [[ "$DRY_RUN" -eq 1 ]]; then
@@ -204,37 +222,57 @@ fi
 
 # 6. Optional remote publish. Default stays local so production preview can run
 # without violating the "no push unless explicitly requested" rule.
+if [[ "$DRY_RUN" -eq 0 ]] && [[ -n "$(git status --porcelain)" ]]; then
+  emit "{\"event\":\"round-finalize-fail\",\"stage\":\"local-state\",\"reason\":\"worktree-dirty-after-amend\"}"
+  echo "[finalize-round] STOPPED — local worktree differs from the commit that was built" >&2
+  git status --short >&2
+  exit 40
+fi
+LOCAL_HEAD=$(git rev-parse HEAD)
 if [[ "$PUSH_REMOTE" -eq 1 ]]; then
-  echo "[finalize-round] push origin main"
+  echo "[finalize-round] publish origin/main (fetch -> fast-forward proof -> push -> remote SHA proof)"
 else
   echo "[finalize-round] push origin main (skipped; set PUSH_REMOTE=1 to publish)"
 fi
 if [[ "$DRY_RUN" -eq 1 ]]; then
   if [[ "$PUSH_REMOTE" -eq 1 ]]; then
-    echo "  [DRY] git push origin main"
+    echo "  [DRY] git fetch --no-tags origin main"
+    echo "  [DRY] verify origin fetch/push URLs resolve to $PUBLISH_ALLOWED_IDENTITY"
+    echo "  [DRY] reject disabled TLS verification and HTTP redirects"
+    echo "  [DRY] git merge-base --is-ancestor FETCH_HEAD $LOCAL_HEAD"
+    echo "  [DRY] git push --porcelain --no-follow-tags origin $LOCAL_HEAD:refs/heads/main"
+    echo "  [DRY] git ls-remote --exit-code --refs origin refs/heads/main && compare full SHA"
   else
     echo "  [DRY] skip git push origin main"
   fi
 elif [[ "$PUSH_REMOTE" -eq 1 ]]; then
-  if ! git -c http.sslVerify=false push origin main 2>&1; then
-    echo "  push rejected, attempt fetch + rebase + retry"
-    git -c http.sslVerify=false fetch origin main 2>&1 | tail -3 || true
-    if git rebase origin/main 2>&1 | tail -3; then
-      git -c http.sslVerify=false push origin main 2>&1 | tail -3 || echo "  WARN: push still failing, continuing anyway"
-    else
-      echo "  WARN: rebase failed, aborting and continuing"
-      git rebase --abort 2>/dev/null || true
-    fi
+  emit "{\"event\":\"round-publish-start\",\"expected_head\":\"$LOCAL_HEAD\",\"remote\":\"origin\",\"branch\":\"main\"}"
+  if publish_main \
+      "$ROOT" "$LOCAL_HEAD" "$ROOT/scripts/lib/verify-remote-head.mjs" \
+      origin main "$PUBLISH_ALLOWED_IDENTITY"; then
+    PUSH_SENT=true
+    REMOTE_HEAD_VERIFIED=true
+    DEPLOY_STATUS="not-verified"
+    emit "{\"event\":\"round-publish-success\",\"expected_head\":\"$LOCAL_HEAD\",\"local_head\":\"$LOCAL_HEAD\",\"push_sent\":true,\"remote_head_verified\":true,\"remote_head\":\"$PUBLISH_REMOTE_SHA\",\"deploy_status\":\"not-verified\"}"
+  else
+    PUBLISH_EXIT=$?
+    emit "{\"event\":\"round-publish-fail\",\"stage\":\"$PUBLISH_FAILURE_STAGE\",\"expected_head\":\"$LOCAL_HEAD\",\"push_sent\":$PUBLISH_PUSH_SENT,\"remote_head_verified\":false,\"deploy_status\":\"not-verified\"}"
+    echo "[finalize-round] STOPPED — publish failed at $PUBLISH_FAILURE_STAGE; local HEAD remains $LOCAL_HEAD" >&2
+    exit "$PUBLISH_EXIT"
   fi
 fi
 
+if [[ "$DRY_RUN" -eq 0 ]]; then
+  assert_finalize_head "before-worktree-sync" || exit 46
+fi
+
 # 7. Sync 8 worktree
+if [[ "$DRY_RUN" -eq 0 ]] && [[ "$PUSH_REMOTE" -eq 1 ]] && [[ "$REMOTE_HEAD_VERIFIED" != true ]]; then
+  echo "[finalize-round] STOPPED — refusing to sync before remote HEAD proof" >&2
+  exit 44
+fi
 if [[ "$SYNC_WORKTREES" -eq 1 ]]; then
-  if [[ "$PUSH_REMOTE" -eq 1 ]]; then
-    SYNC_TARGET="origin/main"
-  else
-    SYNC_TARGET="$(git rev-parse HEAD)"
-  fi
+  SYNC_TARGET="$LOCAL_HEAD"
   echo "[finalize-round] sync 8 worktrees to $SYNC_TARGET"
 else
   echo "[finalize-round] sync 8 worktrees (skipped; set SYNC_WORKTREES=1 to sync)"
@@ -246,19 +284,31 @@ if [[ "$DRY_RUN" -eq 1 ]]; then
     echo "  [DRY] skip worktree sync"
   fi
 elif [[ "$SYNC_WORKTREES" -eq 1 ]]; then
-  if [[ "$PUSH_REMOTE" -eq 1 ]]; then
-    git -c http.sslVerify=false fetch origin main >/dev/null 2>&1 || echo "  WARN: fetch origin main failed before sync"
-  fi
-  # 并行同步所有 worktree。默认同步到本地 main HEAD；发布时同步到 origin/main。
+  # 远端发布已在上一步证明 full SHA；这里不再访问网络。
+  SYNC_PIDS=()
   for w in "${WORKTREES[@]}"; do
     [[ -d "$w" ]] || { echo "  WARN: missing: $w"; continue; }
     (
-      git -C "$w" reset --hard "$SYNC_TARGET" >/dev/null 2>&1
-      git -C "$w" clean -fd >/dev/null 2>&1
-      echo "  synced $(basename "$w")"
+      if git -C "$w" reset --hard "$SYNC_TARGET" >/dev/null 2>&1 &&
+         git -C "$w" clean -fd >/dev/null 2>&1; then
+        echo "  synced $(basename "$w")"
+      else
+        echo "  ERROR: failed to sync $(basename "$w")" >&2
+        exit 1
+      fi
     ) &
+    SYNC_PIDS+=("$!")
   done
-  wait
+  SYNC_FAILED=0
+  for pid in "${SYNC_PIDS[@]}"; do
+    wait "$pid" || SYNC_FAILED=1
+  done
+  if [[ "$SYNC_FAILED" -ne 0 ]]; then
+    emit "{\"event\":\"round-finalize-sync-fail\",\"sync_target\":\"$SYNC_TARGET\"}"
+    echo "[finalize-round] STOPPED — one or more worktrees failed to sync" >&2
+    exit 45
+  fi
+  assert_finalize_head "after-worktree-sync" || exit 46
 else
   :
 fi
@@ -267,8 +317,28 @@ fi
 if [[ "$DRY_RUN" -eq 0 ]]; then
   node "$ROOT/scripts/sync-written.mjs" >/dev/null 2>&1
   node "$ROOT/scripts/build-rewrite-pool.mjs" --incremental >/dev/null 2>&1
+  assert_finalize_head "after-runtime-rebuild" || exit 46
+  if [[ -n "$(git status --porcelain)" ]]; then
+    emit "{\"event\":\"round-finalize-fail\",\"stage\":\"after-runtime-rebuild\",\"reason\":\"worktree-dirty\",\"expected_head\":\"$LOCAL_HEAD\"}"
+    echo "[finalize-round] STOPPED — runtime rebuild left uncommitted state" >&2
+    git status --short >&2
+    exit 47
+  fi
 fi
 
-NEW_HEAD=$(git rev-parse --short HEAD)
-emit "{\"event\":\"round-finalize-end\",\"build_ok\":true,\"new_head\":\"$NEW_HEAD\",\"regen_dropped\":${REGEN_DROPPED:-0}}"
-echo "[finalize-round] DONE — main HEAD=$NEW_HEAD"
+NEW_HEAD=$(git rev-parse HEAD)
+if [[ "$DRY_RUN" -eq 0 ]] && [[ "$NEW_HEAD" != "$LOCAL_HEAD" ]]; then
+  emit "{\"event\":\"round-finalize-fail\",\"stage\":\"final-head-cas\",\"reason\":\"local-head-drift\",\"expected_head\":\"$LOCAL_HEAD\",\"actual_head\":\"$NEW_HEAD\"}"
+  echo "[finalize-round] STOPPED — final HEAD differs from the published/finalized object" >&2
+  exit 46
+fi
+emit "{\"event\":\"round-finalize-end\",\"local_build_ok\":true,\"expected_head\":\"$LOCAL_HEAD\",\"local_head\":\"$NEW_HEAD\",\"push_sent\":$PUSH_SENT,\"remote_head_verified\":$REMOTE_HEAD_VERIFIED,\"remote_head\":\"${PUBLISH_REMOTE_SHA:-}\",\"deploy_status\":\"$DEPLOY_STATUS\",\"new_head\":\"$NEW_HEAD\",\"regen_dropped\":${REGEN_DROPPED:-0}}"
+if [[ "$DRY_RUN" -eq 1 ]]; then
+  echo "[finalize-round] DRY RUN COMPLETE — no remote operation was executed"
+else
+  echo "[finalize-round] LOCAL FINALIZE COMPLETE — main HEAD=$NEW_HEAD"
+  if [[ "$REMOTE_HEAD_VERIFIED" == true ]]; then
+    echo "[finalize-round] REMOTE HEAD VERIFIED — origin/main=$NEW_HEAD"
+    echo "[finalize-round] Pages deploy status: NOT VERIFIED (check the Pages workflow separately)"
+  fi
+fi

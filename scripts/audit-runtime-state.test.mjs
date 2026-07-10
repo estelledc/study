@@ -75,3 +75,29 @@ test('buildRuntimeAudit exposes missing runtime files and worktree issues', () =
   assert.equal(audit.worktrees.missing, 8);
   assert.deepEqual(audit.claimed_debt.recover_to_queued.map((row) => row.slug), ['legacy']);
 });
+
+test('buildRuntimeAudit treats only expired owner leases as mechanically recoverable', () => {
+  const audit = buildRuntimeAudit(baseInputs({
+    now: '2026-07-10T00:30:00.000Z',
+    candidates: [
+      {
+        area: 'papers', slug: 'expired', status: 'claimed', claimed_by: 'papers-3',
+        lease_expires_at: '2026-07-10T00:00:00.000Z', claim_generation: 'g1',
+      },
+      {
+        area: 'papers', slug: 'active', status: 'claimed', claimed_by: 'papers-4',
+        lease_expires_at: '2026-07-10T01:00:00.000Z', claim_generation: 'g2',
+      },
+      {
+        area: 'papers', slug: 'completed', status: 'claimed', claimed_by: 'papers',
+        lease_expires_at: '2026-07-10T01:00:00.000Z', claim_generation: 'g2',
+      },
+    ],
+    written: [{ area: 'papers', slug: 'completed' }],
+    notes: [{ area: 'papers', slug: 'completed' }],
+  }));
+
+  assert.deepEqual(audit.claimed_debt.recover_to_queued.map((row) => row.slug), ['expired']);
+  assert.deepEqual(audit.claimed_debt.needs_review.map((row) => row.slug), ['active']);
+  assert.deepEqual(audit.claimed_debt.written_and_indexed.map((row) => row.slug), ['completed']);
+});

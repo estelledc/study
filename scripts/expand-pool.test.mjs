@@ -41,7 +41,7 @@ test('extractOrganicLinksFromNote records category and source references', () =>
 
   assert.deepEqual(links.get('ssa'), {
     count: 2,
-    sources: ['papers/source-note', 'papers/source-note'],
+    sources: ['papers::source-note', 'papers::source-note'],
     category: 'compilers',
   });
 });

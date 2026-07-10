@@ -2,22 +2,23 @@
 // 扫 src/content/docs/{papers,projects}/*.md → data/written.txt
 // 同时更新 data/candidates.jsonl 中已写 slug 的 status="written"
 
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import { listAreaNotes } from './lib/content-store.mjs';
 import {
+  commitQueueState,
   markCandidatesWritten,
   markRewritePoolWritten,
   readCandidatesOptional,
   readRewritePoolOptional,
-  writeCandidates,
-  writeRewritePool,
 } from './lib/queue-store.mjs';
 import {
+  CANDIDATES_PATH,
+  DATA_DIR,
+  REWRITE_POOL_PATH,
   WRITTEN_PATH,
 } from './lib/paths.mjs';
+import { recoverQueueTransaction } from './lib/queue-transaction.mjs';
 
-async function rebuildWritten() {
+async function buildWrittenState() {
   const papers = await listAreaNotes('papers');
   const projects = await listAreaNotes('projects');
   const all = [...papers, ...projects];
@@ -32,31 +33,47 @@ async function rebuildWritten() {
     ...projects.map(x => x.slug),
     '',
   ];
-  await fs.mkdir(path.dirname(WRITTEN_PATH), { recursive: true });
-  await fs.writeFile(WRITTEN_PATH, lines.join('\n'));
-  return { papers: papers.length, projects: projects.length, all };
-}
-
-async function updateCandidatesStatus(written) {
-  const { rows, missing } = await readCandidatesOptional();
-  if (missing) return { skipped: true, reason: 'candidates.jsonl not found, run extract-candidates first' };
-  const result = markCandidatesWritten(rows, written);
-  await writeCandidates(result.rows);
-  return { updated: result.updated, already_written: result.already_written };
-}
-
-async function updateRewritePoolStatus(written) {
-  const { rows, missing } = await readRewritePoolOptional();
-  if (missing) return { skipped: true };
-  const result = markRewritePoolWritten(rows, written);
-  await writeRewritePool(result.rows);
-  return { claimed_to_written: result.claimed_to_written };
+  return { papers: papers.length, projects: projects.length, all, text: lines.join('\n') };
 }
 
 async function main() {
-  const w = await rebuildWritten();
-  const c = await updateCandidatesStatus(w.all);
-  const r = await updateRewritePoolStatus(w.all);
+  await recoverQueueTransaction({ directory: DATA_DIR });
+  const [w, candidatesInput, rewriteInput] = await Promise.all([
+    buildWrittenState(),
+    readCandidatesOptional(),
+    readRewritePoolOptional(),
+  ]);
+  const candidates = candidatesInput.missing
+    ? null
+    : markCandidatesWritten(candidatesInput.rows, w.all);
+  const rewritePool = rewriteInput.missing
+    ? null
+    : markRewritePoolWritten(rewriteInput.rows, w.all);
+
+  await commitQueueState({
+    ...(candidates ? { candidates: candidates.rows } : {}),
+    ...(rewritePool ? { rewritePool: rewritePool.rows } : {}),
+    writtenText: w.text,
+  }, {
+    directory: DATA_DIR,
+    generation: `sync-written-${Date.now()}`,
+    paths: {
+      candidates: CANDIDATES_PATH,
+      rewritePool: REWRITE_POOL_PATH,
+      written: WRITTEN_PATH,
+    },
+    expectedState: {
+      ...(candidates ? { candidates: candidatesInput.rows } : {}),
+      ...(rewritePool ? { rewritePool: rewriteInput.rows } : {}),
+    },
+  });
+
+  const c = candidates
+    ? { updated: candidates.updated, already_written: candidates.already_written }
+    : { skipped: true, reason: 'candidates.jsonl not found, run extract-candidates first' };
+  const r = rewritePool
+    ? { claimed_to_written: rewritePool.claimed_to_written }
+    : { skipped: true };
   console.log(JSON.stringify({
     written: { papers: w.papers, projects: w.projects, total: w.papers + w.projects },
     candidates_updated: c,
