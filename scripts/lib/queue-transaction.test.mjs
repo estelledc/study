@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import fs from 'node:fs/promises';
 import os from 'node:os';
@@ -84,7 +85,10 @@ test('failure before the durable manifest keeps the previous generation', async 
   assert.equal(await fs.readFile(files.candidates, 'utf8'), 'old-candidates\n');
   assert.equal(await fs.readFile(files.rewritePool, 'utf8'), 'old-rewrite\n');
   assert.equal((await inspectQueueTransaction({ directory: files.directory })).pending, false);
-  assert.deepEqual((await fs.readdir(files.directory)).sort(), ['candidates.jsonl', 'rewrite-pool.jsonl']);
+  assert.deepEqual(
+    (await fs.readdir(files.directory)).sort(),
+    ['.queue-transaction.guard', 'candidates.jsonl', 'rewrite-pool.jsonl'],
+  );
 });
 
 test('a crash before atomic manifest publication never exposes truncated JSON', async () => {
@@ -107,7 +111,10 @@ test('a crash before atomic manifest publication never exposes truncated JSON', 
   assert.equal(await fs.readFile(files.candidates, 'utf8'), 'old-candidates\n');
   assert.equal(await fs.readFile(files.rewritePool, 'utf8'), 'old-rewrite\n');
   assert.equal((await inspectQueueTransaction({ directory: files.directory })).pending, false);
-  assert.deepEqual((await fs.readdir(files.directory)).sort(), ['candidates.jsonl', 'rewrite-pool.jsonl']);
+  assert.deepEqual(
+    (await fs.readdir(files.directory)).sort(),
+    ['.queue-transaction.guard', 'candidates.jsonl', 'rewrite-pool.jsonl'],
+  );
 });
 
 test('a crash after atomic manifest publication retains a complete recoverable journal', async () => {
@@ -180,28 +187,193 @@ test('concurrent recoverers serialize behind the transaction guard', async () =>
   assert.equal((await inspectQueueTransaction({ directory: files.directory })).pending, false);
 });
 
-test('a guard left by a dead process is quarantined before the next transaction', async () => {
+test('many simultaneous contenders never overlap the guarded critical section', async () => {
   const files = await fixture();
-  await fs.writeFile(
-    path.join(files.directory, '.queue-transaction.guard'),
-    `${JSON.stringify({
-      schema_version: 1,
-      owner_token: 'dead-owner',
-      pid: 2_147_483_647,
-      acquired_at: '2026-07-10T00:00:00.000Z',
-    })}\n`,
-    'utf8',
-  );
+  let active = 0;
+  let maximumActive = 0;
+  const attempts = Array.from({ length: 24 }, (_, index) => commitQueueTransaction([
+    { path: files.candidates, content: `candidate-${index}\n` },
+  ], {
+    generation: `contender-${index}`,
+    hooks: {
+      async beforeManifest() {
+        active += 1;
+        maximumActive = Math.max(maximumActive, active);
+        await new Promise((resolve) => setTimeout(resolve, 40));
+        active -= 1;
+      },
+    },
+  }));
 
-  await commitQueueTransaction([
-    { path: files.candidates, content: 'new-candidates\n' },
-  ], { generation: 'after-dead-owner' });
+  const results = await Promise.allSettled(attempts);
+  assert.equal(maximumActive, 1);
+  assert.equal(results.some(({ status }) => status === 'fulfilled'), true);
+  for (const result of results) {
+    if (result.status === 'rejected') assert.equal(result.reason.code, 'QUEUE_TRANSACTION_ACTIVE');
+  }
+});
 
-  assert.equal(await fs.readFile(files.candidates, 'utf8'), 'new-candidates\n');
+test('killing the lock helper does not release the parent-held critical section', async () => {
+  const files = await fixture();
+  let releaseFirst;
+  let firstEntered;
+  const mayFinish = new Promise((resolve) => { releaseFirst = resolve; });
+  const entered = new Promise((resolve) => { firstEntered = resolve; });
+  const first = commitQueueTransaction([
+    { path: files.candidates, content: 'first-after-helper-crash\n' },
+  ], {
+    generation: 'helper-crash-owner',
+    hooks: {
+      async afterGuardAcquired({ helperPid, helperExited }) {
+        process.kill(helperPid, 'SIGKILL');
+        await helperExited;
+      },
+      async beforeManifest() {
+        firstEntered();
+        await mayFinish;
+      },
+    },
+  });
+  await entered;
+
   await assert.rejects(
-    () => fs.access(path.join(files.directory, '.queue-transaction.guard')),
-    { code: 'ENOENT' },
+    () => commitQueueTransaction([
+      { path: files.rewritePool, content: 'second-must-not-enter\n' },
+    ], { generation: 'helper-crash-contender' }),
+    { code: 'QUEUE_TRANSACTION_ACTIVE' },
   );
+  releaseFirst();
+  await assert.rejects(() => first, /lock helper release failed/);
+  assert.equal(await fs.readFile(files.candidates, 'utf8'), 'first-after-helper-crash\n');
+  assert.equal(await fs.readFile(files.rewritePool, 'utf8'), 'old-rewrite\n');
+});
+
+test('killing the parent process releases the inherited advisory lock', async () => {
+  const files = await fixture();
+  const moduleUrl = new URL('./queue-transaction.mjs', import.meta.url).href;
+  const childCode = `
+    import { commitQueueTransaction } from ${JSON.stringify(moduleUrl)};
+    await commitQueueTransaction([{
+      path: process.env.STUDY_QUEUE_TARGET,
+      content: 'orphaned-before-manifest\\n',
+    }], {
+      generation: 'killed-parent',
+      hooks: {
+        beforeManifest() {
+          process.stdout.write('ENTERED\\n');
+          return new Promise(() => {});
+        },
+      },
+    });
+  `;
+  const child = spawn(process.execPath, ['--input-type=module', '--eval', childCode], {
+    env: { ...process.env, STUDY_QUEUE_TARGET: files.candidates },
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  await new Promise((resolve, reject) => {
+    let output = '';
+    const timer = setTimeout(() => reject(new Error('child transaction did not enter')), 5_000);
+    child.stdout.on('data', (chunk) => {
+      output += chunk.toString('utf8');
+      if (!output.includes('ENTERED\n')) return;
+      clearTimeout(timer);
+      resolve();
+    });
+    child.once('error', (error) => {
+      clearTimeout(timer);
+      reject(error);
+    });
+    child.once('exit', (code, signal) => {
+      if (output.includes('ENTERED\n')) return;
+      clearTimeout(timer);
+      reject(new Error(`child transaction exited early: ${code}/${signal}`));
+    });
+  });
+  child.kill('SIGKILL');
+  await new Promise((resolve) => child.once('exit', resolve));
+
+  let acquired = false;
+  for (let attempt = 0; attempt < 20 && !acquired; attempt += 1) {
+    try {
+      await commitQueueTransaction([
+        { path: files.candidates, content: 'after-parent-crash\n' },
+      ], { generation: 'after-killed-parent' });
+      acquired = true;
+    } catch (error) {
+      if (error.code !== 'QUEUE_TRANSACTION_ACTIVE') throw error;
+      await new Promise((resolve) => setTimeout(resolve, 25));
+    }
+  }
+  assert.equal(acquired, true);
+  assert.equal(await fs.readFile(files.candidates, 'utf8'), 'after-parent-crash\n');
+});
+
+test('pre-existing empty or partial guard files cannot strand the advisory lock', async () => {
+  const files = await fixture();
+  const guardPath = path.join(files.directory, '.queue-transaction.guard');
+  for (const [index, content] of ['', '{"partial"'].entries()) {
+    await fs.writeFile(guardPath, content, 'utf8');
+    await commitQueueTransaction([
+      { path: files.candidates, content: `new-candidates-${index}\n` },
+    ], { generation: `after-partial-guard-${index}` });
+    assert.equal(await fs.readFile(files.candidates, 'utf8'), `new-candidates-${index}\n`);
+  }
+  assert.equal((await fs.stat(guardPath)).isFile(), true);
+});
+
+test('a stale guard file and many recoverers append a pending event exactly once', async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'study-queue-many-recoverers-'));
+  const events = path.join(directory, 'pipeline-events.jsonl');
+  const candidates = path.join(directory, 'candidates.jsonl');
+  const previousEvents = '{"event":"old"}\n';
+  const transactionEvent = '{"event":"recover-once"}\n';
+  await fs.writeFile(events, previousEvents, 'utf8');
+  await fs.writeFile(candidates, '{"status":"old"}\n', 'utf8');
+
+  await assert.rejects(
+    () => commitQueueTransaction([
+      {
+        path: events,
+        content: `${previousEvents}${transactionEvent}`,
+        expectedContent: previousEvents,
+        appendOnly: true,
+      },
+      {
+        path: candidates,
+        content: '{"status":"new"}\n',
+        expectedContent: '{"status":"old"}\n',
+      },
+    ], {
+      generation: 'many-recoverers',
+      hooks: {
+        afterManifestPublished() {
+          throw new Error('injected-pending-many-recoverers');
+        },
+      },
+    }),
+    /injected-pending-many-recoverers/,
+  );
+
+  const attempts = Array.from({ length: 16 }, () => recoverQueueTransaction({
+    directory,
+    hooks: {
+      async beforeApply({ index }) {
+        if (index === 0) await new Promise((resolve) => setTimeout(resolve, 40));
+      },
+    },
+  }));
+  const results = await Promise.allSettled(attempts);
+  const recovered = results.filter(
+    (result) => result.status === 'fulfilled' && result.value.recovered === true,
+  );
+  assert.equal(recovered.length, 1);
+  for (const result of results) {
+    if (result.status === 'rejected') assert.equal(result.reason.code, 'QUEUE_TRANSACTION_ACTIVE');
+  }
+  const finalEvents = await fs.readFile(events, 'utf8');
+  assert.equal(finalEvents.match(/recover-once/g)?.length, 1);
+  for (const line of finalEvents.trimEnd().split('\n')) assert.doesNotThrow(() => JSON.parse(line));
+  assert.equal(await fs.readFile(candidates, 'utf8'), '{"status":"new"}\n');
 });
 
 test('a concurrent commit is rejected while the transaction guard is held', async () => {
@@ -299,6 +471,40 @@ test('append-only apply preserves a concurrent event written inside the pre-appl
   );
   assert.equal(await fs.readFile(candidates, 'utf8'), '{"status":"new"}\n');
   assert.equal((await inspectQueueTransaction({ directory })).pending, false);
+});
+
+test('a near-limit append remains one complete JSONL record beside concurrent writers', async () => {
+  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'study-queue-near-limit-'));
+  const events = path.join(directory, 'pipeline-events.jsonl');
+  const previousEvents = '{"event":"old"}\n';
+  const transactionEvent = `${JSON.stringify({ event: 'near-limit', payload: 'a'.repeat(250 * 1024) })}\n`;
+  await fs.writeFile(events, previousEvents, 'utf8');
+
+  await commitQueueTransaction([{
+    path: events,
+    content: `${previousEvents}${transactionEvent}`,
+    expectedContent: previousEvents,
+    appendOnly: true,
+  }], {
+    generation: 'near-limit-append',
+    hooks: {
+      async beforeApply({ index }) {
+        if (index !== 0) return;
+        await Promise.all(Array.from({ length: 200 }, (_, writer) => fs.appendFile(
+          events,
+          `${JSON.stringify({ event: 'concurrent', writer })}\n`,
+          'utf8',
+        )));
+      },
+    },
+  });
+
+  const rows = (await fs.readFile(events, 'utf8')).trimEnd().split('\n').map((line) => JSON.parse(line));
+  assert.equal(rows.filter(({ event }) => event === 'old').length, 1);
+  assert.equal(rows.filter(({ event }) => event === 'concurrent').length, 200);
+  const nearLimit = rows.filter(({ event }) => event === 'near-limit');
+  assert.equal(nearLimit.length, 1);
+  assert.equal(nearLimit[0].payload.length, 250 * 1024);
 });
 
 test('append-only segments above the single-write bound fail before publishing a manifest', async () => {

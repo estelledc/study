@@ -22,6 +22,8 @@ Common statuses:
 - `failed`: attempted and failed; inspect `data/pipeline-events.jsonl`.
 - `blacklisted`: excluded by red-line or policy filters.
 
+Queue transaction commit and recovery share one POSIX advisory lock through the bundled `scripts/lib/queue-lock.py` helper. Supported macOS/Linux operation therefore requires `python3` with the standard `fcntl` module. Node keeps the inherited lock file descriptor open for the entire critical section, so a helper crash cannot drop the lock early and a parent crash is released by the kernel without PID-file takeover. The ignored `data/.queue-transaction.guard` inode is persistent and must not be deleted while a pipeline process is running.
+
 ## Fast Checks
 
 Run the script-level gate before refactoring:

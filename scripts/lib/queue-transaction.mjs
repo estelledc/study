@@ -1,14 +1,17 @@
+import { spawn } from 'node:child_process';
 import { createHash, randomUUID } from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { atomicWriteFile, parseJson, syncDirectory } from './json-store.mjs';
 
 export const QUEUE_TRANSACTION_MANIFEST = '.queue-transaction.json';
 const QUEUE_TRANSACTION_GUARD = '.queue-transaction.guard';
 const TRANSACTION_SCHEMA_VERSION = 1;
-const TRANSACTION_GUARD_SCHEMA_VERSION = 1;
 const MAX_APPEND_SEGMENT_BYTES = 256 * 1024;
+const QUEUE_LOCK_HELPER = fileURLToPath(new URL('./queue-lock.py', import.meta.url));
+const LOCK_HELPER_START_TIMEOUT_MS = 5_000;
 
 function sha256(data) {
   return createHash('sha256').update(data).digest('hex');
@@ -23,116 +26,109 @@ async function readOptionalBytes(filePath) {
   }
 }
 
-function processIsAlive(pid) {
-  if (!Number.isSafeInteger(pid) || pid <= 0) return null;
-  try {
-    process.kill(pid, 0);
-    return true;
-  } catch (err) {
-    if (err.code === 'ESRCH') return false;
-    if (err.code === 'EPERM') return true;
-    return null;
+function waitForChildExit(child) {
+  if (child.exitCode != null || child.signalCode != null) {
+    return Promise.resolve({ code: child.exitCode, signal: child.signalCode });
   }
-}
-
-async function createTransactionGuard(guardPath) {
-  const metadata = {
-    schema_version: TRANSACTION_GUARD_SCHEMA_VERSION,
-    owner_token: randomUUID(),
-    pid: process.pid,
-    acquired_at: new Date().toISOString(),
-  };
-  let handle;
-  let created = false;
-  try {
-    handle = await fs.open(guardPath, 'wx', 0o600);
-    created = true;
-    await handle.writeFile(`${JSON.stringify(metadata)}\n`, 'utf8');
-    await handle.sync();
-    await handle.close();
-    handle = null;
-    await syncDirectory(path.dirname(guardPath));
-    return metadata;
-  } catch (err) {
-    await handle?.close().catch(() => {});
-    if (created) {
-      await fs.unlink(guardPath).catch((cleanupErr) => {
-        if (cleanupErr.code !== 'ENOENT') throw cleanupErr;
-      });
-    }
-    throw err;
-  }
-}
-
-async function inspectTransactionGuard(guardPath) {
-  let metadata;
-  try {
-    metadata = JSON.parse(await fs.readFile(guardPath, 'utf8'));
-  } catch (err) {
-    throw new Error(`queue transaction guard is unreadable: ${err.message}`);
-  }
-  if (
-    metadata?.schema_version !== TRANSACTION_GUARD_SCHEMA_VERSION
-    || typeof metadata.owner_token !== 'string'
-    || metadata.owner_token.length === 0
-    || !Number.isSafeInteger(metadata.pid)
-    || metadata.pid <= 0
-  ) {
-    throw new Error('queue transaction guard is malformed');
-  }
-  return metadata;
+  return new Promise((resolve) => {
+    child.once('exit', (code, signal) => resolve({ code, signal }));
+  });
 }
 
 async function acquireTransactionGuard(directory) {
   const guardPath = path.join(directory, QUEUE_TRANSACTION_GUARD);
   await fs.mkdir(directory, { recursive: true });
-  for (let attempt = 0; attempt < 5; attempt += 1) {
-    try {
-      return { guardPath, metadata: await createTransactionGuard(guardPath) };
-    } catch (err) {
-      if (err.code !== 'EEXIST') throw err;
-      const existing = await inspectTransactionGuard(guardPath);
-      if (processIsAlive(existing.pid) !== false) {
-        const busy = new Error('another queue transaction operation is active');
-        busy.code = 'QUEUE_TRANSACTION_ACTIVE';
-        throw busy;
-      }
+  const handle = await fs.open(guardPath, 'a+', 0o600);
+  let child;
+  try {
+    child = spawn('python3', [QUEUE_LOCK_HELPER], {
+      // fd 3 is a duplicate of the parent's open file description. The parent
+      // intentionally keeps its FileHandle open, so a helper crash cannot drop
+      // the advisory lock while JavaScript is still inside the critical section.
+      stdio: ['pipe', 'pipe', 'pipe', handle.fd],
+    });
+    const status = await new Promise((resolve, reject) => {
+      let stdout = '';
+      let stderr = '';
+      let settled = false;
+      const timer = setTimeout(() => finish(new Error('queue transaction lock helper timed out')), LOCK_HELPER_START_TIMEOUT_MS);
+      const cleanup = () => {
+        clearTimeout(timer);
+        child.stdout.off('data', onStdout);
+        child.stderr.off('data', onStderr);
+        child.off('error', onError);
+        child.off('exit', onExit);
+      };
+      const finish = (error, value) => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        if (error) reject(error);
+        else resolve(value);
+      };
+      const onStdout = (chunk) => {
+        stdout += chunk.toString('utf8');
+        const newline = stdout.indexOf('\n');
+        if (newline !== -1) finish(null, stdout.slice(0, newline).trim());
+      };
+      const onStderr = (chunk) => {
+        if (stderr.length < 2_048) stderr += chunk.toString('utf8');
+      };
+      const onError = (error) => finish(new Error(`queue transaction lock helper failed: ${error.message}`));
+      const onExit = (code, signal) => {
+        if (code === 73) finish(null, 'BUSY');
+        else finish(new Error(
+          `queue transaction lock helper exited before ready (code=${code}, signal=${signal || 'none'}${stderr.trim() ? `: ${stderr.trim()}` : ''})`,
+        ));
+      };
+      child.stdout.on('data', onStdout);
+      child.stderr.on('data', onStderr);
+      child.once('error', onError);
+      child.once('exit', onExit);
+    }).catch((error) => {
+      child.kill('SIGKILL');
+      throw error;
+    });
 
-      const quarantine = `${guardPath}.stale-${randomUUID()}`;
-      try {
-        await fs.rename(guardPath, quarantine);
-      } catch (renameErr) {
-        if (renameErr.code === 'ENOENT') continue;
-        throw renameErr;
-      }
-      const moved = await inspectTransactionGuard(quarantine);
-      if (moved.owner_token !== existing.owner_token) {
-        await fs.rename(quarantine, guardPath).catch(() => {});
-        const busy = new Error('queue transaction guard changed during stale recovery');
-        busy.code = 'QUEUE_TRANSACTION_ACTIVE';
-        throw busy;
-      }
-      await fs.unlink(quarantine);
-      await syncDirectory(directory);
+    if (status === 'LOCKED') {
+      return { child, guardPath, handle, helperExited: waitForChildExit(child) };
     }
+    if (status === 'BUSY') {
+      const exited = await waitForChildExit(child);
+      if (exited.code !== 73) {
+        throw new Error(`queue transaction lock helper busy exit was inconsistent: ${exited.code}`);
+      }
+      const busy = new Error('another queue transaction operation is active');
+      busy.code = 'QUEUE_TRANSACTION_ACTIVE';
+      throw busy;
+    }
+    child.kill('SIGKILL');
+    throw new Error(`queue transaction lock helper returned an invalid status: ${status}`);
+  } catch (error) {
+    await handle.close().catch(() => {});
+    throw error;
   }
-  throw new Error('could not acquire queue transaction guard after stale recovery');
 }
 
 async function releaseTransactionGuard(guard) {
-  const current = await inspectTransactionGuard(guard.guardPath);
-  if (current.owner_token !== guard.metadata.owner_token) {
-    throw new Error('queue transaction guard owner mismatch at release');
+  guard.child.stdin.on('error', () => {});
+  guard.child.stdin.end();
+  const { code, signal } = await guard.helperExited;
+  await guard.handle.close();
+  if (code !== 0 || signal != null) {
+    throw new Error(`queue transaction lock helper release failed (code=${code}, signal=${signal || 'none'})`);
   }
-  await fs.unlink(guard.guardPath);
-  await syncDirectory(path.dirname(guard.guardPath));
 }
 
-async function withTransactionGuard(directory, operation) {
+async function withTransactionGuard(directory, operation, hooks) {
   const guard = await acquireTransactionGuard(directory);
   let result;
   let operationError;
   try {
+    await hooks?.afterGuardAcquired?.({
+      helperPid: guard.child.pid,
+      helperExited: guard.helperExited,
+    });
     result = await operation();
   } catch (err) {
     operationError = err;
@@ -626,7 +622,7 @@ export async function commitQueueTransaction(updates, options = {}) {
   return withTransactionGuard(directory, () => commitQueueTransactionUnlocked(updates, {
     ...options,
     directory,
-  }));
+  }), options.hooks);
 }
 
 export async function recoverQueueTransaction(options = {}) {
@@ -634,5 +630,5 @@ export async function recoverQueueTransaction(options = {}) {
   return withTransactionGuard(directory, () => recoverQueueTransactionUnlocked({
     ...options,
     directory,
-  }));
+  }), options.hooks);
 }
