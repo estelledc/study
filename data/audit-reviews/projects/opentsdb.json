@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "HBase 大楼装修类比生动；UID/row key 有白话原因，案例 curl 可读但 UID 注册对零基础仍偏密"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2018+：Yahoo / 雅虎日本 / 阿里早期监控大量跑 OpenTSDB」时间线错位：这些部署主要在 2010s 中前期，不宜写成 2018 起才大量跑"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「metric + tags 是 OpenTSDB 首创，后来被 prometheus / influxdb / victoriametrics 全部继承」过满：Prometheus labels 更多承自 Borgmon；宜改为「早期推广了 metric+tags 标签维度，后辈广泛采用类似模型」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "put/query/uid API 概念正确可跟做；高基数/compaction/部署门槛踩坑具体；适用边界有竞品对照"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "HBase 大楼装修类比生动；UID/row key 有白话原因，案例 curl 可读但 UID 注册对零基础仍偏密"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2018+：Yahoo / 雅虎日本 / 阿里早期监控大量跑 OpenTSDB」时间线错位：这些部署主要在 2010s 中前期，不宜写成 2018 起才大量跑",
+        "「metric + tags 是 OpenTSDB 首创，后来被 prometheus / influxdb / victoriametrics 全部继承」过满：Prometheus labels 更多承自 Borgmon；宜改为「早期推广了 metric+tags 标签维度，后辈广泛采用类似模型」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "put/query/uid API 概念正确可跟做；高基数/compaction/部署门槛踩坑具体；适用边界有竞品对照"
+      ]
+    }
+  ]
+}

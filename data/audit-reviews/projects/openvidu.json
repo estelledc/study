@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "半成品披萨类比贴合；SDK/控制面/媒体面有桥接；案例 3 对照阅读偏概念，动手感弱于案例 1"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Kurento→OpenVidu 封装、2016 Twilio 收购 Kurento、Pro 双轨与公开时间线大体一致；市场份额表述属观察性可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 只口述 POST /sessions 与 connection，缺可跟做的 curl/JSON 请求体（sessionId + token），建议补两段 REST 示例"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "KMS 版本对齐 / COMPOSED 录制资源 / TURN / Pro badge 踩坑具体有用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "半成品披萨类比贴合；SDK/控制面/媒体面有桥接；案例 3 对照阅读偏概念，动手感弱于案例 1"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Kurento→OpenVidu 封装、2016 Twilio 收购 Kurento、Pro 双轨与公开时间线大体一致；市场份额表述属观察性可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只口述 POST /sessions 与 connection，缺可跟做的 curl/JSON 请求体（sessionId + token），建议补两段 REST 示例",
+        "KMS 版本对齐 / COMPOSED 录制资源 / TURN / Pro badge 踩坑具体有用"
+      ]
+    }
+  ]
+}
