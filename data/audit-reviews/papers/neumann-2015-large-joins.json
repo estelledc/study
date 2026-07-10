@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "导航软件远近切换类比把 adaptive 无 cliff 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "connected subgraph / DPhyp / IKKBZ / GOO 有白话桥接；rank、IDP 窗口对零基础仍偏陡但可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例按 50/369/4598 表量级递进，步骤清楚；案例 1 子图数量级表述宜再核对"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Neumann & Radke SIGMOD 2018 / hugejoins.pdf 与 stub 一致；slug 含 2015 但不改正文来源即可"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「≈ 2^50 / 一些剪枝 = 几十万」算术不通：2^50 量级远超几十万；应改为「星型连通子图远超 10000 预算」并删掉错误等式"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「现代 OLAP 引擎都在抄」过度概括；宜改为「不少现代 OLAP / BI 优化器借鉴先估搜索空间再选算法」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "optimize() 伪代码路径 A/B 决策骨架正确，可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：GEQO 硬切、只数表数、纯 GOO 局部最优、常数因子/DPhypE"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 50-500/1000+ 表与 OLTP 小查询、outer join、静态模板边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "导航软件远近切换类比把 adaptive 无 cliff 讲透",
+        "connected subgraph / DPhyp / IKKBZ / GOO 有白话桥接；rank、IDP 窗口对零基础仍偏陡但可接受",
+        "三案例按 50/369/4598 表量级递进，步骤清楚；案例 1 子图数量级表述宜再核对"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 Neumann & Radke SIGMOD 2018 / hugejoins.pdf 与 stub 一致；slug 含 2015 但不改正文来源即可",
+        "案例 1「≈ 2^50 / 一些剪枝 = 几十万」算术不通：2^50 量级远超几十万；应改为「星型连通子图远超 10000 预算」并删掉错误等式",
+        "「现代 OLAP 引擎都在抄」过度概括；宜改为「不少现代 OLAP / BI 优化器借鉴先估搜索空间再选算法」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "optimize() 伪代码路径 A/B 决策骨架正确，可跟读",
+        "踩坑具体：GEQO 硬切、只数表数、纯 GOO 局部最优、常数因子/DPhypE",
+        "适用 50-500/1000+ 表与 OLTP 小查询、outer join、静态模板边界清楚"
+      ]
+    }
+  ]
+}

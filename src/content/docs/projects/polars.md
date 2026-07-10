@@ -99,13 +99,13 @@ result = (
     pl.scan_csv("huge_log.csv")           # 50GB 单文件
       .filter(pl.col("status") == 500)
       .group_by("endpoint").agg(pl.len())
-      .collect(streaming=True)            # 流式跑，不全部加载
+      .collect(engine="streaming")        # 流式跑，不全部加载
 )
 ```
 
 **逐部分解释**：
 
-- `streaming=True` 让引擎分块读、分块算、最后聚合，内存峰值只跟 group_by 的 cardinality 有关
+- `engine="streaming"` 让引擎分块读、分块算、最后聚合，内存峰值只跟 group_by 的 cardinality 有关（旧写法 `streaming=True` 在 1.x 已弃用）
 - pandas 必须 `read_csv(chunksize=...)` 自己手写循环；Polars 自动切
 - 这是单机替代 Spark 的核心场景——8GB 内存的笔记本跑 50GB 日志
 
