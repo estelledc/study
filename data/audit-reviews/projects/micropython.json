@@ -1,0 +1,121 @@
+{
+  "slug": "micropython",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 与 CPython 的关键区别",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "房车厨房类比生动；REPL/machine 有桥接；点灯与 mpremote 案例清楚。额外「与 CPython」段信息密但可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Damien George Kickstarter、BBC micro:bit、CircuitPython fork、MIT 许可等主线正确；案例把 GPIO36 ADC 写成「内部温度传感器」不准确，属工程细节。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 用 machine.ADC(Pin(36)) 标注「内部温度传感器」会误导：ESP32 内部温度应走 esp32.raw_temperature()/专用 API，GPIO36 是外部 ADC 通道；应改成读外部模拟传感器或纠正 API。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "笔记 204 行超过 quality-gate 200 行上限，需压缩。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "REPL 点灯、mpremote、内存/Flash/HTTPS 踩坑与 Flash<256KB 边界具体有用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 与 CPython 的关键区别",
+      "fix_hints": [
+        "房车厨房类比生动；REPL/machine 有桥接；点灯与 mpremote 案例清楚。额外「与 CPython」段信息密但可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Damien George Kickstarter、BBC micro:bit、CircuitPython fork、MIT 许可等主线正确；案例把 GPIO36 ADC 写成「内部温度传感器」不准确，属工程细节。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 用 machine.ADC(Pin(36)) 标注「内部温度传感器」会误导：ESP32 内部温度应走 esp32.raw_temperature()/专用 API，GPIO36 是外部 ADC 通道；应改成读外部模拟传感器或纠正 API。",
+        "笔记 204 行超过 quality-gate 200 行上限，需压缩。",
+        "REPL 点灯、mpremote、内存/Flash/HTTPS 踩坑与 Flash<256KB 边界具体有用。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "needs-refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 190,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 190,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 与 CPython 的关键区别",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  }
+}
