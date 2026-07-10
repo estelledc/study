@@ -1,7 +1,4 @@
 {
-  "slug": "lima",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -81,32 +78,5 @@
         "命令与 yaml 可跟做；镜像下载/QEMU IO/端口 bind/Rosetta 踩坑具体；不适用里把 Linux 主机一刀切排除不准确，应改为「Linux 主机虽支持但多数场景直接容器/裸机更简单」之类。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": [],
-    "reason": "修正 Lima 1.0 发布时间为 2024-11；纠正 Linux 主机不适用表述；补 ## 反向链接占位。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 166,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 166,
-  "l1_pass": true
+  ]
 }

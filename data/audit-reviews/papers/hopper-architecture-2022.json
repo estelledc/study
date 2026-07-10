@@ -1,7 +1,4 @@
 {
-  "slug": "hopper-architecture-2022",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -106,33 +103,5 @@
         "适用边界含 FP4/Blackwell、H200 显存、消费光追、L4/L40S 经济推理，量化清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": [],
-    "summary": "纠正 ChatGPT/H100 训练表述与五件清单对齐；PCIe NVLink 补 bridge/成对限制；GPT-4 时间线弱化为公开披露有限。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 190,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 190,
-  "l1_pass": true
+  ]
 }

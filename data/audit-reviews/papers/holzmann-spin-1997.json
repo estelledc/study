@@ -1,7 +1,4 @@
 {
-  "slug": "holzmann-spin-1997",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.56,
   "reject_count": 0,
@@ -81,30 +78,5 @@
         "案例 1 写 `spin -search` 不是标准流程；应改为 `spin -a` 生成 pan.c → 编译 → `./pan`。Promela atomic/锁模型概念正确；状态爆炸/Promela≠C/LTL 写反/公平性踩坑很实用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": [],
-    "summary": "案例 1 将错误的 spin -search 改为 spin -a → gcc pan → ./pan，并补 spin -t -p 回放反例。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 157,
-  "l1_pass": true
+  ]
 }

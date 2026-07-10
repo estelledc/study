@@ -1,7 +1,4 @@
 {
-  "slug": "hol-light-2009",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.56,
   "reject_count": 0,
@@ -81,30 +78,5 @@
         "REFL/TRANS/MP 与 prove+ARITH_TAC、goalstack 对话概念正确可跟读；500 行内核误解/HOL≠Coq/REPL 抽象类型踩坑具体；适用边界含依赖类型与 SMT 对照。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": [],
-    "summary": "修正 Overview PDF 链接为 hollight.pdf，并注明 holhol.pdf 为 2006 自验证论文。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 168,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 168,
-  "l1_pass": true
+  ]
 }

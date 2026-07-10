@@ -1,7 +1,4 @@
 {
-  "slug": "lingui",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "Trans/Plural/i18n.load+activate 可跟做；Babel/SWC、macro 调试、placeholder 耦合、.po 门槛踩坑具体；Next RSC/esbuild/短文案边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.89,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "hoare-logic",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.89,
   "reject_count": 0,
@@ -37,10 +34,7 @@
       "reviewer": "engineer",
       "hint": "赋值反推与阶乘不变式可手推；Dafny 注解可跟读；部分正确/别名/不变式瓶颈踩坑具体；适用边界有航空核电 vs 业务代码量化对比。"
     },
-    {
-      "reviewer": "quality-gate",
-      "hint": "Initial quality gate failed with lines:235>200; trim generated backlink tail to stay within 150-200 lines."
-    }
+    "Initial quality gate failed with lines:235>200; trim generated backlink tail to stay within 150-200 lines."
   ],
   "reviews": [
     {
@@ -85,33 +79,5 @@
         "赋值反推与阶乘不变式可手推；Dafny 注解可跟读；部分正确/别名/不变式瓶颈踩坑具体；适用边界有航空核电 vs 业务代码量化对比。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.89,
-    "verdict": "pass",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "base_rule_findings": [
-      "Initial quality gate failed: lines:235>200"
-    ]
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 反向链接"
-    ],
-    "unresolved_hints": [],
-    "reason": "三审均为 pass，但初始 quality-gate 因 lines:235>200 失败；截断自动生成反向链接后通过。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 193,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 193,
-  "l1_pass": true
+  ]
 }

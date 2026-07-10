@@ -1,7 +1,4 @@
 {
-  "slug": "linkerd2",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 5,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "install/annotate/viz/HTTPRoute 命令与 YAML 可跟做；HTTP/2 计费、init container、HA、multicluster、无插件扩展踩坑具体；<1000 服务与复杂 L7 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 5,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 155,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 155,
-  "l1_pass": true
+  ]
 }
