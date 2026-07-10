@@ -70,6 +70,14 @@ Condenser 通过架构限制把这件事强制做到——head 层只能拿 [CLS
 
 虽然字面没重合，但同属一篇——loss 要它们的 [CLS] 接近。这逼模型学到"主题级聚类"而非"字面匹配"。
 
+```python
+cls_a = encoder(span_a)["CLS"]
+cls_b = encoder(span_b)["CLS"]
+loss = contrastive_loss(positive=(cls_a, cls_b), negatives=batch_other_docs)
+```
+
+三行拆开看：第一行把 span A 压成一个代表整段的向量，第二行对 span B 做同样的事，第三行告诉模型"同文档这两段要靠近，别的文档要远离"。
+
 ### 案例 3：MS MARCO 上的实测
 
 - 原始 BERT + DPR fine-tune：MRR@10 约 33
@@ -151,3 +159,7 @@ Condenser 通过架构限制把这件事强制做到——head 层只能拿 [CLS
 ## 一句话总结
 
 coCondenser = "**先把 [CLS] 训练成会聚合段落的指针，再做检索 fine-tune**"。它把 dense retrieval 的精力点从 fine-tune 阶段（hard negative、episode）往前挪到预训练阶段（架构限制 + 同文档对比），换来更简单的下游训练流程和更高的天花板。后续 RetroMAE / SimLM / E5 / BGE 全是这条路上的延伸——理解了 coCondenser，理解了 2022 年之后所有"通用 embedding"模型的训练骨架。
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
