@@ -1,7 +1,4 @@
 {
-  "slug": "faiss-2017",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -96,29 +93,5 @@
         "坑 5 训练样本量建议应改为按 nlist/码本规模取足够多样本（常见数万级），不要写 256×m。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "纠正 35 分钟/200μs 错位数字与训练样本量建议；案例 2 改为示意表，案例 3 补伪代码；弱化 PQ 0.65 极限表述。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 181,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "fan-vercauteren-bfv-2012",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -91,28 +88,5 @@
         "适用边界已有「毫秒级/深度有限/整数 vs CKKS」——可保留；修好代码后即可。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.67,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic 指出 BFV 不应把模数切换并列为核心噪声控制，且噪声「翻倍」过度简化；engineer/zero-base 指出 SEAL API 与未定义 encode() 不可跟做。已改为 scale-invariant+重线性化表述，并重写三案例为 SEAL 风格可跟读代码。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

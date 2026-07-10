@@ -1,7 +1,4 @@
 {
-  "slug": "handsontable",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -86,30 +83,5 @@
         "licenseKey、afterChange、autoColumnSize、paste 精度都是实战坑；案例 2/3 可跑但缺逐步注释。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base 要求案例 2/3 补逐部分解释；academic 要求区分 AGPL 与 SSPL/ELv2，并弱化「最完整」表述。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 199,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

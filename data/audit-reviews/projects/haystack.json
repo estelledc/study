@@ -1,7 +1,4 @@
 {
-  "slug": "haystack",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -75,24 +72,5 @@
         "案例里 store/template 未初始化，教学上可接受；若再润色可加一行注释说明需先建 DocumentStore"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "All reviewers passed; no refinement required",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

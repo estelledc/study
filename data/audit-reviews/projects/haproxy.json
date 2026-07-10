@@ -1,7 +1,4 @@
 {
-  "slug": "haproxy",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,28 +88,5 @@
         "timeout / maxconn / httpchk 三条很实用；适用边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "弱化云 LB「底层就是 HAProxy」表述；把 reload 坑改成短连接 hitless / 长连接拖退的准确说法。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "fairfuzz-2018",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,24 +78,5 @@
         "伪代码能跟读；踩坑把「未覆盖分支 / 完整语法 / magic number」边界写清楚，适用场景量化够用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

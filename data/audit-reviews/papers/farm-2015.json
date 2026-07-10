@@ -1,7 +1,4 @@
 {
-  "slug": "farm-2015",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -24,7 +21,24 @@
       "verdict": "pass"
     }
   ],
-  "fix_hints": [],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "仓库通行卡/自助扫码/高铁配套类比贴合；RDMA 有日常桥接；三案例均有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 NSDI 2014、作者与 PhyCo/2GB 大页、lock-free RDMA read + 事务/function shipping 与论文一致；slug 含 2015 但不影响正文引用。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例为教学伪代码，概念正确可跟读；NIC 页表/NFS 无关的大页与轮询踩坑具体。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有工作集进内存、读多写少、轮询绑核等边界。"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -69,24 +83,5 @@
         "适用/不适用有工作集进内存、读多写少、轮询绑核等边界。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

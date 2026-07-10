@@ -1,7 +1,4 @@
 {
-  "slug": "hardhat",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -24,7 +21,20 @@
       "verdict": "pass"
     }
   ],
-  "fix_hints": [],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Node/jest/sourcemap 类比把 Hardhat Network 与栈跟踪讲透；EVM 有括号桥接；三案例逐步可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 NomicFoundation/hardhat、Buidler→Hardhat、console.sol / forking / Hardhat 3+EDR 与公开资料一致；「教程 90%」略修辞但不构成硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "init/compile/test、console.sol、mainnet forking 配置可跟做；测试私钥扫钱、toolbox require、v3 迁移等踩坑可操作；适用/不适用与 Foundry 边界清楚。"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -68,24 +78,5 @@
         "init/compile/test、console.sol、mainnet forking 配置可跟做；测试私钥扫钱、toolbox require、v3 迁移等踩坑可操作；适用/不适用与 Foundry 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.89,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 187,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
