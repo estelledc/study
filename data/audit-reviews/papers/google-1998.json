@@ -1,7 +1,4 @@
 {
-  "slug": "google-1998",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,32 +88,5 @@
         "Hit list 位布局与查询路径可跟读；DNS/robots/HTML/去重踩坑具体；现代神经检索边界清楚"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：纠正正排/倒排 37GB 误植、查询时延改为 1–10 秒、弱化「第一次完整做完」；历史时间线与反向链接一并修。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 157,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

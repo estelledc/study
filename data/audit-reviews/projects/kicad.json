@@ -1,7 +1,4 @@
 {
-  "slug": "kicad",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,19 +78,5 @@
         "kicad-cli ERC/DRC/Gerber/STEP 案例可跟做；符号≠封装、DRC 前重铺铜等踩坑可操作"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 166,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

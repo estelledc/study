@@ -1,7 +1,4 @@
 {
-  "slug": "goodfellow-fgsm-2014",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,19 +78,5 @@
         "案例概念正确；踩坑（随机噪声/浅层模型/ensemble/对抗训练上限）可操作；白盒 vs 多步攻击边界清楚"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 151,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "keras",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -86,32 +83,5 @@
         "后端切换/fit 断梯度/多后端边界等踩坑很实用；关联里 [[hindley-milner]] 牵强，应换成真实相关项目；适用里 KerasClassifier 边界需更新"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base：案例 2/3 补逐部分解释；academic：弱化课程绝对化、KerasClassifier 改为 scikeras；engineer：去掉牵强 hindley-milner 关联并补反向链接。",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 176,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }
