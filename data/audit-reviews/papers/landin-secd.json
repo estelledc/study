@@ -1,7 +1,4 @@
 {
-  "slug": "landin-secd",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -91,30 +88,5 @@
         "secd_step 教学最小化正确（含 LDF 参数名与 RTN）；AP 弹栈顺序、Dump、CBV 踩坑具体；适用边界（Krivine/STG/CEK/SSA）清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 186,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 186,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

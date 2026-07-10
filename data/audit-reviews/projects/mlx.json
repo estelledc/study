@@ -1,7 +1,4 @@
 {
-  "slug": "mlx",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -91,31 +88,5 @@
         "mlx-lm / MLP 训练环 / LoRA 命令可跟；print 同步、冷启动、bf16 代际、跨平台踩坑具体；单机研究 vs 多机生产边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 165,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 165,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

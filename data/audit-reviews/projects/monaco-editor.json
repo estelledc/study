@@ -1,7 +1,4 @@
 {
-  "slug": "monaco-editor",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -86,29 +83,5 @@
         "案例可跑；若 refine 可补一句 vite/webpack 需配 worker，否则 create 后语言服务 404"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 172,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "开篇降术语密度；区分内置 worker 与 LSP；案例 1 拆成四步并提示 worker entry",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

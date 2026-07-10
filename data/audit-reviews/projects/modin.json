@@ -1,7 +1,4 @@
 {
-  "slug": "modin",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -91,28 +88,5 @@
         "案例数字（12 秒 / 4 分钟）宜标明为示意量级，避免被当成可复现基准"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 172,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正 OpaQ 误名与 100%/90% 矛盾；案例补逐部分解释并标明示意数字",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
