@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房排程类比贯穿全文，贴合多目标权衡"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "GNNPP / RLMOE / RLDBG / CDFG / μ 首次出现缺全称或一句话桥接，零基础会卡在缩写墙"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例有逐部分解释，但案例 1 只讲 -O3 习惯，未把「图→预测→RL 选 pass」串成可跟读步骤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Sadr & Alidoost Nia arXiv:2605.23435（2026）正确；45% 执行时间下降已限定同能耗预算，与摘要一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GNN 预测 + RL 探索 + 自更新数据库的分工未歪曲论文主张"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "μ 作为体积/速度权衡系数可再点明是论文多目标标量化参数，避免读者当成通用符号"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例以伪代码/约束公式为主，对论文笔记可跟读；reward 公式是教学简化可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖顺序≠选 pass、GNN 不直接出序列、45% 需约束语境、Pareto 是集合——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界区分小项目训练成本与无稳定测量环境，建议补一句「无 profiling 预算时先用 -O2/-Os」量化提示"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "厨房排程类比贯穿全文，贴合多目标权衡",
+        "GNNPP / RLMOE / RLDBG / CDFG / μ 首次出现缺全称或一句话桥接，零基础会卡在缩写墙",
+        "三个案例有逐部分解释，但案例 1 只讲 -O3 习惯，未把「图→预测→RL 选 pass」串成可跟读步骤"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "来源 Sadr & Alidoost Nia arXiv:2605.23435（2026）正确；45% 执行时间下降已限定同能耗预算，与摘要一致",
+        "GNN 预测 + RL 探索 + 自更新数据库的分工未歪曲论文主张",
+        "μ 作为体积/速度权衡系数可再点明是论文多目标标量化参数，避免读者当成通用符号"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例以伪代码/约束公式为主，对论文笔记可跟读；reward 公式是教学简化可接受",
+        "踩坑覆盖顺序≠选 pass、GNN 不直接出序列、45% 需约束语境、Pareto 是集合——可操作",
+        "适用边界区分小项目训练成本与无稳定测量环境，建议补一句「无 profiling 预算时先用 -O2/-Os」量化提示"
+      ]
+    }
+  ]
+}

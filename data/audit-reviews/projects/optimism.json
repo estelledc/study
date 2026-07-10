@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "二环辅路类比贯穿 L2 结算与安全检查，贴合"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "op-node / batcher / proposer 与乐观假设、欺诈证明、DA 都有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "提款 5 步与 devnet batcher 案例逐步清楚，零基础能跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 ethereum-optimism/optimism 仓库正确；7 天挑战期、EIP-4844 blob、Fault Proofs 2024 主网激活与公开时间线一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬伤：Bedrock 主网升级是 2023-06（非 2022-06），历史小故事年份写错"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Mantle 等几十条链分叉」略宽：Mantle 后来偏离 OP Stack，宜写成「曾基于 / 多条 OP Stack 链」避免过度概括"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "viem 换 chain 与 CrossChainMessenger 提款流程概念正确可跟做；@eth-optimism/sdk 偏旧但仍能说明步骤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（7 天窗口、中心化 sequencer、EVM-equivalent 差异、calldata/blob 成本）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有 gas 占比与即时最终性对照，量化提示够用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "二环辅路类比贯穿 L2 结算与安全检查，贴合",
+        "op-node / batcher / proposer 与乐观假设、欺诈证明、DA 都有日常桥接",
+        "提款 5 步与 devnet batcher 案例逐步清楚，零基础能跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 ethereum-optimism/optimism 仓库正确；7 天挑战期、EIP-4844 blob、Fault Proofs 2024 主网激活与公开时间线一致",
+        "硬伤：Bedrock 主网升级是 2023-06（非 2022-06），历史小故事年份写错",
+        "「Mantle 等几十条链分叉」略宽：Mantle 后来偏离 OP Stack，宜写成「曾基于 / 多条 OP Stack 链」避免过度概括"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "viem 换 chain 与 CrossChainMessenger 提款流程概念正确可跟做；@eth-optimism/sdk 偏旧但仍能说明步骤",
+        "踩坑（7 天窗口、中心化 sequencer、EVM-equivalent 差异、calldata/blob 成本）具体可操作",
+        "适用边界有 gas 占比与即时最终性对照，量化提示够用"
+      ]
+    }
+  ]
+}

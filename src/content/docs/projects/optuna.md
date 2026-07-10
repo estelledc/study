@@ -92,13 +92,19 @@ def objective(trial):
         if trial.should_prune():
             raise optuna.TrialPruned()
     return 1.0 - clf.score(X_val, y_val)
+
+study = optuna.create_study(
+    direction="minimize",
+    pruner=optuna.pruners.MedianPruner(),
+)
+study.optimize(objective, n_trials=40)
 ```
 
 逐部分解释：
 
-- `report(error, step)` 像每训练一轮就交一次小测成绩
-- `should_prune()` 根据其他 trial 的历史成绩判断"这次还有没有希望"
-- 剪枝不是报错，而是有意义地放弃差路线，把时间让给下一组参数
+- 必须在 `create_study` 挂上 `MedianPruner`；默认 NopPruner 时 `should_prune()` 几乎永不触发
+- `report(error, step)` 每轮交小测；落后于历史中位数就会被剪掉
+- `optimize` 才会真正跑 trial；剪枝是放弃差路线，不是程序崩溃
 
 ### 案例 3：把实验保存下来，失败后继续跑
 
@@ -159,13 +165,6 @@ python search.py
 - **早期痛点**：很多 HPO 工具要求先用配置文件写死搜索空间，动态模型结构表达不方便。
 - **Optuna 的选择**：采用 imperative / define-by-run API，让搜索空间在 objective 运行时由 Python 代码自然生成。
 - **后来扩展**：项目加入多目标优化、剪枝、RDB 存储、dashboard、OptunaHub 等能力，从算法库变成实验工程工具箱。
-
-## 与同类对比
-
-- **Grid Search**：像把所有格子都扫一遍，简单但组合爆炸；Optuna 会根据历史结果调整下一步。
-- **Random Search**：比网格更灵活，但不主动学习；Optuna 默认 TPE 会把好区域和坏区域分开建模。
-- **Ray Tune / Vizier 类系统**：更偏大规模调度平台；Optuna 更像轻量 Python 库，先把单个项目接起来。
-- **手写脚本循环**：能跑，但很容易丢日志、丢中间结果、无法续跑；Optuna 把这些边角工程固定下来。
 
 ## 学到什么
 

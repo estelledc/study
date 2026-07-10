@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "班级对表 + 组长传时间类比贴合 stratum 树与四时间戳"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "offset/delay 公式有代入数字，术语有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3/4 偏概念对比，缺可跟做的配置或命令步骤；建议至少给一个 chrony/ntp.conf 迷你部署案例带逐行解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Mills IEEE ToC 39(10) 1991 正确；θ/δ 四时间戳公式与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "stratum、falseticker/truechimer、PLL 纪律环未歪曲；NTPv3 RFC 1305 / NTS RFC 8915 后续引用合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「至少 4 台上游」对应 3f+1（f=1）教学简化可接受，已点明 Byzantine 投票动机"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "手算 offset/delay 可跟做；内网部署建议方向正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（路径不对称、stratum≠精度、不能做事务序、monlist DDoS）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界对照 TrueTime/HLC/PTP，量化到毫秒 vs 亚微秒清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "班级对表 + 组长传时间类比贴合 stratum 树与四时间戳",
+        "offset/delay 公式有代入数字，术语有桥接",
+        "案例 2/3/4 偏概念对比，缺可跟做的配置或命令步骤；建议至少给一个 chrony/ntp.conf 迷你部署案例带逐行解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Mills IEEE ToC 39(10) 1991 正确；θ/δ 四时间戳公式与论文一致",
+        "stratum、falseticker/truechimer、PLL 纪律环未歪曲；NTPv3 RFC 1305 / NTS RFC 8915 后续引用合理",
+        "「至少 4 台上游」对应 3f+1（f=1）教学简化可接受，已点明 Byzantine 投票动机"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "手算 offset/delay 可跟做；内网部署建议方向正确",
+        "踩坑（路径不对称、stratum≠精度、不能做事务序、monlist DDoS）具体可操作",
+        "适用边界对照 TrueTime/HLC/PTP，量化到毫秒 vs 亚微秒清楚"
+      ]
+    }
+  ]
+}

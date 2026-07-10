@@ -68,24 +68,33 @@ t3 = 100.030  (客户端收到，本地时钟)
 
 结论：客户端比服务器慢 50.010 秒，单程时延约 10ms。客户端会**慢慢加快本地时钟**，几分钟内追上服务器。
 
-### 案例 2：为什么 stratum 数字不直接代表精度
+### 案例 2：用 chrony 配一台内网客户端
 
-新人常以为"stratum 越小越准"。错。stratum 只是**到根的图距离**。一台 stratum 3 服务器如果接的是稳定光纤 + 多个良配上游，可能比一台跨大陆链路的 stratum 2 更准。**真正看精度要看 dispersion 和 jitter 两个指标**。
+```conf
+# /etc/chrony/chrony.conf（教学迷你例）
+server ntp1.example.internal iburst
+server ntp2.example.internal iburst
+server ntp3.example.internal iburst
+server ntp4.example.internal iburst
+makestep 1.0 3
+```
 
-### 案例 3：NTP 在内网部署该怎么搭
+**逐部分解释**：
 
-100 节点的小集群，常见错误是只配一台上游。Mills 论文反复强调要**至少 4 台**——前 3 台是为了 Byzantine 容错（投票剔除一台说谎的还能多数决），第 4 台是冗余。生产环境一般本地部 2-3 台 stratum 2，对外指向 4 台不同 ISP / pool.ntp.org 的 stratum 1/2。
+- 四条 `server`：对应 Mills 强调的多上游；至少 4 台才能在一台说谎时仍多数决。
+- `iburst`：刚启动时连发几包，加快第一次收敛。
+- `makestep 1.0 3`：前 3 次若偏差 >1 秒允许跳变，之后改用平滑微调（纪律环）。
+- stratum 只是到根的跳数；真正看精度要盯 dispersion / jitter，不是数字越小就一定更准。
 
-### 案例 4：把 NTP 和 Spanner TrueTime 放一起对比
+### 案例 3：NTP 给不出误差上界（对照 TrueTime）
 
 | 维度 | NTP | TrueTime |
 |---|---|---|
-| 时间源 | 多级服务器树 | 每数据中心一组 GPS + 原子钟 |
 | 输出 | 单点估计（now） | 区间 [earliest, latest] |
 | 精度 | 公网毫秒，LAN 亚毫秒 | 数据中心约 7ms 区间宽度 |
-| 用途 | 通用计时 | 跨大陆事务序，用 commit-wait 等区间 |
+| 用途 | 通用计时 | 跨大陆事务序（commit-wait） |
 
-理解 TrueTime 的设计动机，最快的路径就是先理解 NTP 给不出"误差上界"——它没有把 dispersion 作为一个数值返回给应用层，应用只能拿到"现在大概是 X"。
+**逐部分解释**：NTP 应用层通常只拿到“现在大概是 X”；TrueTime 把不确定区间显式返回。强一致数据库要的是上界，不是点估计——这就是 Spanner 另起炉灶的原因。
 
 ## 踩过的坑
 
