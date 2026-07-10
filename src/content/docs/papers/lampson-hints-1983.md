@@ -1,6 +1,6 @@
 ---
 title: Lampson Hints 1983 — 系统设计思维起点
-来源: 'https://bwlampson.site/33-Hints/Acrobat.pdf'
+来源: 'Butler W. Lampson, "Hints for Computer System Design", ACM SIGOPS OSR 17(5): 33-48, October 1983 (SOSP keynote); https://bwlampson.site/33-Hints/Acrobat.pdf'
 日期: 2026-07-08
 分类: engineering-culture
 难度: 初级
@@ -8,143 +8,145 @@ title: Lampson Hints 1983 — 系统设计思维起点
 
 ## 是什么
 
-Lampson提示 是一种**把数据湖的便宜开放存储，和数据仓库的可靠查询能力，放进同一套平台**的架构。日常类比：以前家里有一个大仓库放所有原材料，又有一个精装修厨房只做少数菜；Lampson提示 想把两者打通，让原材料仍然放在便宜仓库里，但厨房可以直接安全、高效地取用。
+Lampson Hints 1983 是 Butler Lampson 在 SOSP 主题演讲里写下的 **27 条计算机系统设计经验法则**。日常类比：像一位老师傅把带徒弟时反复叮嘱的口诀写成清单——不是考试定理，是"踩过坑才知道该这样做"的启发式。
 
-这篇论文的核心不是发明一个新文件格式，而是给一个正在成形的系统设计取名：数据放在对象存储和 Parquet/ORC 这类开放格式里，上面加一层元数据，让它具备事务、版本、审计、索引、缓存和查询优化。
+论文开篇就说："These are not theorems, they are heuristics." 每条 hint 都有反例；价值在于给你一套**共同语言**，让设计讨论从"我觉得"变成"这违反了 KISS / leave it to the client"。
 
-换句话说，Lampson提示 的目标是：**不要为了 BI、机器学习、数据科学各复制一份数据**。同一份开放数据，既能被 SQL 引擎查，也能被 Spark、TensorFlow、PyTorch 这类工具直接读。
+Lampson 按想优化的属性分成三类：**functionality**（做什么）、**performance**（做多快）、**correctness**（做对没有）。读这篇，是把"系统设计怎么想"从隐式品味变成可传授的起点。
 
 ## 为什么重要
 
-不理解 Lampson提示，下面这些事都很难解释：
+不理解这篇，下面这些事都很难解释：
 
-- 为什么很多公司明明有数据湖，还要把一部分数据再搬进数仓，最后 ETL 越堆越多。
-- 为什么机器学习团队常抱怨数仓数据不好直接用，BI 团队又抱怨数据湖不可靠。
-- 为什么 Delta Lake、Iceberg、Hudi 这类“表格式数据湖”会变成现代数据平台的核心组件。
-- 为什么开放格式和对象存储不是“低配版数仓”，而可能变成下一代分析平台的底座。
+- 为什么资深工程师看到"通用业务平台"就皱眉——hint 提醒不要为想象中的需求预先泛化。
+- 为什么 HTTP PUT 可安全重试、POST 却常要 Idempotency-Key——动作要原子或可重启。
+- 为什么 K8s / etcd 文档强调名字指对象不指路径——1983 年就写成 hint。
+- 为什么 16 页旧文 40 年后仍被 Russ Cox、架构课和 code review 引用。
 
 ## 核心要点
 
-Lampson提示 可以拆成 **三层能力**：
+可以先抓住 **三条入门思维**：
 
-1. **开放存储**：底层仍是便宜、可直接访问的对象存储和 Parquet/ORC 文件。类比：食材还在大仓库，不锁进某一家厨房的专用盒子里。
+1. **先做最小可用，再扩展（KISS）**。类比：先学会炒一个蛋，再谈满汉全席。不要第一版就塞 finalizer、多 worker、所有扩展点。
 
-2. **元数据层**：在文件上方记录“哪些文件属于当前表版本”。类比：仓库有一本台账，写清楚今天这道菜能用哪些食材，哪些已经作废。
+2. **机制留在系统，策略留给客户**。类比：厨房提供灶台和锅（机制），菜谱由厨师决定（策略）。Linux VFS、Go `io.Reader`、K8s CRD 都是这条的现代版。
 
-3. **性能与治理能力**：缓存热数据、保存统计信息、调整文件布局，让 SQL 和 ML 都跑得动。类比：常用食材放近一点，标签贴清楚，厨师不用每次翻完整个仓库。
+3. **失败时仍要"对"**。类比：快递要么整箱送达，要么明确退回，别半路拆散。端到端校验、原子/幂等动作、名字指稳定对象，都是 correctness 侧的口诀。
 
-这三层合起来，才是论文说的 Lampson提示；只有便宜文件存储，不算完整 Lampson提示。
+三类会交叉：过载时主动 shed load 既是性能也是正确性。分类是"主导动机"，不是互斥标签。
 
 ## 实践案例
 
-### 案例 1：旧式两层架构为什么慢
+### 案例 1：第一版 API 只做 happy path
 
-```sql
--- 先把原始数据进湖
-COPY raw_orders TO 's3://lake/raw_orders/';
+```go
+// ❌ 一上来就预设所有扩展点
+func Reconcile(ctx context.Context, req Request) (Result, error) {
+    if err := handleFinalizer(ctx, req); err != nil { return Result{}, err }
+    if err := acquireLeader(ctx); err != nil { return Result{}, err }
+    return Result{}, nil // 主逻辑还没写
+}
 
--- 再清洗一遍搬进数仓
-INSERT INTO warehouse.orders
-SELECT user_id, amount, created_at
-FROM lake.raw_orders
-WHERE amount IS NOT NULL;
+// ✅ 先让最简路径工作
+func Reconcile(ctx context.Context, req Request) (Result, error) {
+    obj := &MyCRD{}
+    if err := get(ctx, req.Name, obj); err != nil {
+        return Result{}, ignoreNotFound(err)
+    }
+    return ensureDesired(ctx, obj)
+}
 ```
 
 **逐部分解释**：
 
-- 第一行把数据放进数据湖，优点是便宜、格式开放、能装很多类型的数据。
-- 第二段又把同一批数据复制进数仓，优点是 BI 查询快，缺点是多了一条管道。
-- 论文指出，复制越多，数据越容易变旧；管道越多，失败和口径不一致的机会越多。
+- 错例把 finalizer、选主塞进第一版，正是 second-system / 过早泛化。
+- 对例只做读取 + 对齐期望状态；需求暴露后再加复杂度。
+- 对应 hint：KISS，以及"不要为假想需求预先设计"。
 
-### 案例 2：元数据层怎样让“文件堆”变成“表”
+### 案例 2：缓存必须带失效协议
 
-```json
-{"version": 7, "add": "s3://lake/orders/part-007.parquet"}
-{"version": 8, "remove": "s3://lake/orders/part-003.parquet"}
-{"version": 8, "add": "s3://lake/orders/part-008.parquet"}
+```text
+读请求 → 查本地 cache
+  hit  → 直接返回
+  miss → 读主存/远端，写入 cache，并登记"谁依赖这份数据"
+写请求 → 更新主数据 → 按登记表失效或更新相关 cache
 ```
 
 **逐部分解释**：
 
-- 数据文件仍然是普通 Parquet，别的计算引擎可以直接读。
-- 日志告诉系统：第 8 版表包含哪些文件，不包含哪些文件。
-- 有了这个台账，系统才能做事务、回滚、时间旅行和并发控制。
+- 只写"能缓存就缓存"不够；Lampson 强调 invalidation / capacity / coherence。
+- 没有失效协议，用户会看到过期视图，性能 hint 反而伤正确性。
+- 工程落地：CDN、DNS TTL、etcd watcher 同步池都在显式管理失效。
 
-### 案例 3：机器学习为什么也能受益
+### 案例 3：HTTP 方法里的原子或可重启
 
-```python
-orders = spark.read.format("delta").load("/lake/orders")
-vip = orders.where("country = 'CN'").select("user_id", "amount")
-features = vip.groupBy("user_id").sum("amount")
+```http
+PUT /users/42
+{"name": "Ada"}
+
+POST /orders
+{"item": "book", "qty": 1}
+Idempotency-Key: ord-7f3a
 ```
 
 **逐部分解释**：
 
-- 代码看起来像普通 DataFrame 操作，但它不是马上逐行执行。
-- Spark 会先把过滤、选列、聚合变成计划，再交给 Lampson提示 的数据源层。
-- 数据源层可以利用缓存、统计信息和数据布局，只读必要文件，减少机器学习前处理的等待。
+- PUT 幂等：重复发送结果与一次相同，网络抖动时可安全重试。
+- POST 默认不幂等：重复会下多单；用 Idempotency-Key 把"可重启"补回去。
+- 对应 hint：动作要么原子，要么设计成可安全重启。
 
 ## 踩过的坑
 
-1. **把 Lampson提示 理解成“湖加仓的营销词”**：原因是它真正新增的是开放文件上的事务元数据和优化层，不只是换个名字。
-
-2. **以为有 Parquet 就等于 Lampson提示**：原因是 Parquet 只解决存储格式，不能自动解决事务、版本、质量约束和索引。
-
-3. **以为它能免掉所有数据治理工作**：原因是 Lampson提示 减少复制和失败点，但清洗逻辑、权限、质量规则仍然要人设计。
-
-4. **只看 SQL 性能，不看 ML 访问方式**：原因是论文的关键诉求之一就是让非 SQL 的高级分析也能直接读同一份数据。
+1. **把 hints 当定理**：KISS 与 plan-for-change 会冲突；正确做法是先问每条的反例是什么。
+2. **把 KISS 理解成不写抽象**：Lampson 反对的是假想需求上的分层，不是拒绝整理已出现的重复。
+3. **缓存不管失效**：贵结果全进 cache，却不写失效，用户看到旧数据。
+4. **leave-it-to-client 极端化**：什么都甩给调用方等于无设计；难在知道**哪些**决定该留下。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 公司已经有大量数据放在 S3、ADLS、GCS 或 HDFS 这类存储里。
-- 同一批数据既要给 BI 报表用，也要给机器学习和数据科学用。
-- 团队想减少湖到仓、仓到特征工程之间的重复 ETL。
-- 数据平台需要开放格式，避免所有数据被锁进某个封闭存储格式。
+- 学 OS、数据库、编译器、Web 框架时建立设计共同语言。
+- code review 里用短标签讨论 trade-off（"这是过早泛化"）。
+- 单机/局部系统的心智模型训练。
 
 **不适用**：
 
-- 数据量很小，直接用单机数据库或普通 PostgreSQL 就够。
-- 业务只需要强事务 OLTP，比如订单扣库存，而不是分析查询。
-- 团队没有数据治理能力，只想靠架构名词自动解决脏数据。
-- 查询完全依赖某个专有数仓的深度优化，且不需要开放访问。
+- 分布式共识细节——要补 Paxos / Raft / [[lamport-1978]]。
+- 完整安全威胁模型——除 end-to-end 外几乎未覆盖，看 Saltzer-Schroeder。
+- 测试策略与项目管理——分别是 TDD 与《人月神话》的领域。
 
 ## 历史小故事（可跳过）
 
-- **第一代**：企业把业务数据库里的数据抽到集中式数仓，主要服务 BI 和报表。
-- **Hadoop 时代**：数据湖兴起，大家把原始数据放进便宜文件系统，但治理能力变弱。
-- **2015 年后**：云对象存储普及，S3、ADLS、GCS 让湖更便宜、更耐用，但湖和仓的双层架构更复杂。
-- **2020 年前后**：Delta Lake、Iceberg、Hudi 这类元数据层成熟，开始把事务和版本带回数据湖。
-- **2021 年**：这篇 CIDR 论文把趋势总结为 Lampson提示，并用 TPC-DS 结果说明开放格式上也能做到接近云数仓的 SQL 性能。
+- **1972 年**：Lampson 加入 Xerox PARC，参与 Alto、Bravo、Ethernet、Pilot 等系统。
+- **Pilot 教训**：多种"打开模式"组合里大半从未被用，却变成 bug 农场——后来写成"不要泛化"。
+- **1983 年**：CSL 预印本后以 SOSP keynote 发表，OSR 17(5)，约 16 页 27 条 hints。
+- **1992 年**：Lampson 获图灵奖；此后 Bentley、Hennessy-Patterson、Go modules、K8s conventions 持续引用同类思维。
 
 ## 学到什么
 
-1. **架构创新有时不是新算法，而是重新划边界**：Lampson提示 把“存储格式是否开放”变成平台设计的核心问题。
-
-2. **开放性和性能不是绝对冲突**：缓存、辅助统计、数据布局可以弥补开放文件格式带来的部分限制。
-
-3. **元数据是数据平台的方向盘**：没有元数据层，数据湖只是文件堆；有了版本和事务，文件堆才像表。
-
-4. **现代数据平台要同时服务 SQL 和非 SQL**：机器学习、数据科学、特征工程都需要直接访问大规模数据。
+1. **设计品味可以写成可教的启发式**，不必只靠口耳相传。
+2. **hints 有边界和反例**；判断力是看到冲突后仍能选择。
+3. **按 functionality / performance / correctness 提问**，比纯感觉更系统。
+4. **机制与策略分离**是接口设计的长期主线。
 
 ## 延伸阅读
 
-- 原论文 PDF：[Lampson提示: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics](https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf)
-- [[delta-lake-2020]] —— 图谱中最贴近本文的系统论文，解释元数据层怎样给对象存储补上 ACID。
-- [[snowflake-2016]] —— 云数仓代表作，可对比 Lampson提示 为什么强调开放直接访问。
-- [[cstore-2005]] —— 列式分析数据库的经典起点，帮助理解为什么布局和列裁剪会影响 SQL 性能。
-- [[data-lake-management-2019]] —— 合理预测会存在的后续笔记，可补数据湖治理和发现问题。
+- 论文 PDF：[Hints for Computer System Design](https://bwlampson.site/33-Hints/Acrobat.pdf)
+- Saltzer, Reed, Clark — End-to-End Arguments（TOCS 1984）
+- [[lampson-hints]] —— 同文另一篇笔记，偏 27 条分类细读
+- [[gray-1981-transaction]] —— atomic-or-restartable 的事务展开
+- [[saltzer-schroeder-1975]] —— 安全设计原则清单，可对照阅读
 
 ## 关联
 
-- [[codd-1970]] —— 关系模型让“表”成为分析系统的基本抽象，Lampson提示 仍在服务表查询。
-- [[cstore-2005]] —— Lampson提示 的 SQL 性能问题，很大一部分来自列式存储和布局优化传统。
-- [[snowflake-2016]] —— 同样是云原生分析平台，但更偏封闭数仓，适合作对照。
-- [[mapreduce]] —— 数据湖早期受 Hadoop 生态影响很深，MapReduce 是那条路线的入口。
-- [[bigtable-2006]] —— 云端大规模存储系统的代表，帮助理解存储和计算分离的背景。
-- [[greenplum-db]] —— MPP 数仓路线的工程代表，可对比 Lampson提示 为什么要减少数据复制。
-- [[delta-lake-2020]] —— Lampson提示 论文中反复依赖的元数据层实例。
+- [[lampson-hints]] —— 同一论文的并行笔记，互补细读
+- [[tcp]] —— end-to-end 在传输层的经典落地
+- [[kubernetes]] —— names refer to objects 的现代 API 约定
+- [[etcd]] —— caching + 后台追赶的工业例子
+- [[gray-1981-transaction]] —— 原子性与可恢复动作的理论侧
+- [[beck-tdd]] —— 补上 hints 未讲的测试策略
+- [[lamport-1978]] —— 分布式时间与顺序，超出本文范围的下一课
 
 ## 反向链接
 

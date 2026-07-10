@@ -1,0 +1,73 @@
+{
+  "slug": "mlflow",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.0,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    { "reviewer": "zero-base", "section": "## 实践案例", "verdict": "needs-refine" },
+    { "reviewer": "academic", "section": "## 是什么", "verdict": "pass" },
+    { "reviewer": "engineer", "section": "## 实践案例", "verdict": "pass" }
+  ],
+  "fix_hints": [
+    { "reviewer": "zero-base", "hint": "实验室记录簿类比好；但三案例缺少「逐部分解释」，案例 1 几乎只有两行命令。" },
+    { "reviewer": "zero-base", "hint": "缺少「## 历史小故事（可跳过）」段，12 段结构不完整。" },
+    { "reviewer": "academic", "hint": "Databricks 2018 / Matei Zaharia / Apache 2.0 正确；stars ~19k 偏旧（约 27k），refine 时更新约数即可。" },
+    { "reviewer": "engineer", "hint": "Tracking/Registry/pyfunc 案例概念正确；Stage→Alias、本地存储、大 artifact 踩坑有用；适用边界清楚。" }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": { "analogy": 4, "accessibility": 4, "case_clarity": 3 },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实验室记录簿类比好；但三案例缺少「逐部分解释」，案例 1 几乎只有两行命令。",
+        "缺少「## 历史小故事（可跳过）」段，12 段结构不完整。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": { "fact_accuracy": 4, "citation_correctness": 4, "no_distortion": 4 },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": ["Databricks 2018 / Matei Zaharia / Apache 2.0 正确；stars ~19k 偏旧（约 27k），refine 时更新约数即可。"]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": { "code_runnable": 4, "pitfalls_useful": 5, "scope_correct": 4 },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": ["Tracking/Registry/pyfunc 案例概念正确；Stage→Alias、本地存储、大 artifact 踩坑有用；适用边界清楚。"]
+    }
+  ],
+  "aggregate": {
+    "average": 4.0,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "zero-base needs-refine：补历史小故事、案例逐部分解释；更新 stars 约数；quality-gate 通过。",
+    "sections_modified": ["## 是什么", "## 为什么重要", "## 核心要点", "## 实践案例", "## 踩过的坑", "## 历史小故事（可跳过）", "## 学到什么", "## 延伸阅读", "## 关联"],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 152,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 152,
+  "l1_pass": true
+}
