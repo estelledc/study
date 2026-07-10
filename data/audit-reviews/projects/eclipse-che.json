@@ -1,7 +1,4 @@
 {
-  "slug": "eclipse-che",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -75,30 +72,5 @@
       "weakest_section": "## 踩过的坑",
       "fix_hints": []
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base needs-refine：为 Pod/PVC/CR/UDI 补日常桥接",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 183,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 183,
-  "l1_pass": true
+  ]
 }

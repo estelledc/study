@@ -1,7 +1,4 @@
 {
-  "slug": "echo",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -75,29 +72,5 @@
         "案例 3 的 middleware.JWT([]byte(\"secret\")) 在现行 Echo 中已不在核心 middleware；应改为 echo-jwt 用法或改用仍在核心的中间件示例（如 CORS/BasicAuth）并保持洋葱顺序说明"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "engineer needs-refine：案例3 middleware.JWT 已拆包，改为核心 KeyAuth（v5 签名）并注明 echo-jwt",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 177,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 177,
-  "l1_pass": true
+  ]
 }
