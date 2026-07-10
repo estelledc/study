@@ -1,0 +1,29 @@
+.github/dependabot.yml
+  s_559c506f367bd5::t_57bce5991c9331 1-7
+scripts/audit-action-pins.mjs
+  s_559c506f367bd5::t_98e3489d72dc2d 52-65,68-73,79
+scripts/audit-action-pins.test.mjs
+  s_559c506f367bd5::t_d650ee1cc4037e 4,24-34
+scripts/verify-ci.mjs
+  s_559c506f367bd5::t_38d3617ba0b0e5 17-22,64-66
+scripts/verify-ci.test.mjs
+  s_559c506f367bd5::t_c09819f5b568d0 11,32-37,64-65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "cfceddae87657198176beaf2b00f6b9da7ff0454",
+  "prompts": {},
+  "sessions": {
+    "s_559c506f367bd5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_559c506f367bd5",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
