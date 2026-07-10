@@ -78,19 +78,23 @@ function Counter() {
 ### 案例 2：把 Yjs Doc 搭在 Liveblocks 上跑 Tiptap
 
 ```tsx
+import { useEffect, useState } from 'react'
 import { useRoom } from '@liveblocks/react'
 import { LiveblocksYjsProvider } from '@liveblocks/yjs'
 import * as Y from 'yjs'
 
 function Editor() {
   const room = useRoom()
-  const yDoc = new Y.Doc()
-  const provider = new LiveblocksYjsProvider(room, yDoc)
-  // 把 yDoc 接到 Tiptap / ProseMirror / Monaco 的 Yjs 绑定，剩下和原生 Yjs 一样
+  const [yDoc] = useState(() => new Y.Doc())
+  useEffect(() => {
+    const provider = new LiveblocksYjsProvider(room, yDoc)
+    return () => provider.destroy()
+  }, [room, yDoc])
+  // 把 yDoc 接到 Tiptap / ProseMirror / Monaco 的 Yjs 绑定
 }
 ```
 
-为什么要这么套？因为富文本协同 Yjs 的 YATA / YText 比 Liveblocks Storage 更细粒度（按字符）。Liveblocks 在这里只当传输 + 持久化层。
+为什么要这么套？因为富文本协同 Yjs 的 YATA / YText 比 Liveblocks Storage 更细粒度（按字符）。Liveblocks 在这里只当传输 + 持久化层。Provider 要在 effect 里创建并在卸载时 `destroy`，不要写在渲染路径上。
 
 ### 案例 3：Mutation 必须显式声明，不能直接改
 
@@ -113,9 +117,9 @@ const addShape = useMutation(({ storage }) => {
 
 2. **Storage 改动只能在 useMutation / room.batch 里**：直接对返回的快照做变更不会广播，而且 TypeScript 会拦你。
 
-3. **冲突解决是 last-write-wins**：断网期间两边都改同一个键，重连后后到的覆盖先到的——不像 Yjs / Automerge 保留双方历史。要"无损合并"就用 `@liveblocks/yjs`。
+3. **同键冲突偏 LWW，不是“全盘不要历史”**：Storage 仍是 CRDT 树——`LiveList` 并发插入可以合并；但 `LiveObject` 上两边断网改**同一个键**，重连后通常后写覆盖先写。要字符级保留双方编辑历史，用 `@liveblocks/yjs`。
 
-4. **免费层 MAU 上限**：免费版 MAU 100，超出按量计费。做 demo 没事；公开产品要算账。
+4. **免费层 MAU 上限**：免费档有 MAU 限额（具体数字以官网定价为准），超出按量计费。做 demo 通常没事；公开产品要先算账。
 
 5. **`@liveblocks/yjs` 升级敏感**：和 Tiptap / Lexical 的 Yjs 绑定一起升级时容易破坏——锁版本，跟着官方迁移指南来。
 
@@ -132,11 +136,17 @@ const addShape = useMutation(({ storage }) => {
 - 高频游戏状态同步 → 用专业实时引擎（Colyseus / 自写 UDP）
 - 只想要裸 CRDT、不要托管 → [[yjs]]
 
+## 历史小故事（可跳过）
+
+- **2021 前后**：Liveblocks 从协同白板/文档场景起步，把 Room + Presence 收成 React hooks，降低“自己搭 WebSocket”的门槛。
+- **产品化**：随后补上 Storage、Comments、Notifications，定位从实时同步层扩成协作基础设施。
+- **与 Yjs 合流**：推出 `@liveblocks/yjs`，让 Tiptap / Monaco 用户把传输和持久化交给托管，不必自建 y-websocket。
+
 ## 学到什么
 
 1. **协作基建在被 SaaS 化**——以前 3 人月的活，现在半天搞定，门槛下沉到产品默认功能
 2. **Storage / Presence 二分法很重要**：持久 vs 临时，混在一起会做出很怪的产品
-3. **CRDT 不止一种**：Liveblocks 自家 Storage 是 last-write-wins 风格，富文本场景要叠 [[yjs]] 这种保留历史的 CRDT
+3. **CRDT 不止一种**：Liveblocks Storage 对同键常偏 LWW，富文本要叠 [[yjs]] 这种保留编辑历史的 CRDT
 4. **托管换的是"把基建外包"**，代价是数据走 SaaS、按 MAU 计费——这是个工程权衡，不是技术优劣
 
 ## 延伸阅读
@@ -153,3 +163,7 @@ const addShape = useMutation(({ storage }) => {
 - [[automerge]] —— local-first 的 JSON CRDT；和 Liveblocks 的 always-online 路线对立
 - [[crdt-shapiro-2011]] —— CRDT 的数学定义；Liveblocks Storage 的 LiveList / LiveMap 是它的工程实例
 - [[crdt-json-2017]] —— 嵌套 JSON CRDT 收敛证明；Liveblocks 的复合 Storage 是它的产品化形态
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

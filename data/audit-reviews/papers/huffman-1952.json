@@ -1,0 +1,107 @@
+{
+  "slug": "huffman-1952",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "中文高频字/罕见字类比贴合；前缀码与最小堆三步桥接清楚；手算表、ABBA 对比、Python 三案例均可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1952 Proc. IRE、Shannon-Fano 次优、H≤L<H+1、DEFLATE/ANS 时间线与交换论证均准确；教学简化未歪曲最优性。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Python heapq 示例可跑；静态/自适应、均匀分布、小文件码表、整数 bit、LSB-first 踩坑具体；适用边界含 HPACK/ANS 对照。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "中文高频字/罕见字类比贴合；前缀码与最小堆三步桥接清楚；手算表、ABBA 对比、Python 三案例均可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "1952 Proc. IRE、Shannon-Fano 次优、H≤L<H+1、DEFLATE/ANS 时间线与交换论证均准确；教学简化未歪曲最优性。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Python heapq 示例可跑；静态/自适应、均匀分布、小文件码表、整数 bit、LSB-first 踩坑具体；适用边界含 HPACK/ANS 对照。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true
+}
