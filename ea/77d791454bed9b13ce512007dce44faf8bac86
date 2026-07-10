@@ -1,0 +1,21 @@
+scripts/sync-and-merge.sh
+  s_776369e07f4c3f::t_c0f3b9d90ff4ad 76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "ea77d791454bed9b13ce512007dce44faf8bac86",
+  "prompts": {},
+  "sessions": {
+    "s_776369e07f4c3f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_776369e07f4c3f",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
