@@ -1,0 +1,41 @@
+docs/release-and-rollback.md
+  s_8b595f5a573dd5::t_05a30be4cc8bd7 3,21,24
+scripts/README.md
+  s_8b595f5a573dd5::t_794194923978fa 104,110,128,154
+scripts/audit-operation-entrypoints.mjs
+  s_8b595f5a573dd5::t_a4db0af6d4b2b3 19-24,58-72,91-100,102,104-113
+scripts/audit-operation-entrypoints.test.mjs
+  s_8b595f5a573dd5::t_4b0a556806898a 4,26-32
+scripts/dispatch-batch.mjs
+  s_8b595f5a573dd5::t_f45f496d08d249 25,353-357
+scripts/finalize-round.sh
+  s_8b595f5a573dd5::t_1b5ae182f412b9 2-3,9,12,14-15,19-20,24-25
+scripts/finalize-round.test.sh
+  s_8b595f5a573dd5::t_3627342cf44cf9 5,7,9-12,14-15,18-20,24-28,32
+scripts/lib/operations-policy.mjs
+  s_8b595f5a573dd5::t_b6ae4ef48c8183 1-48
+scripts/lib/operations-policy.test.mjs
+  s_8b595f5a573dd5::t_3030a996aa7230 1-25
+scripts/pick-batch.mjs
+  s_8b595f5a573dd5::t_9755f7bcfbf85e 27,337-340
+scripts/round.mjs
+  s_8b595f5a573dd5::t_d33064f2d01136 28,262-263,335-336,364,389
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "22558fab87771000fbba476095cb4f679d70ba9d",
+  "prompts": {},
+  "sessions": {
+    "s_8b595f5a573dd5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_8b595f5a573dd5",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
