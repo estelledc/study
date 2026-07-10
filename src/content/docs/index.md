@@ -35,14 +35,12 @@ template: splash
       <p>从 React、TanStack Query 到 shadcn/ui，理解状态、数据和组件背后的工程取舍。</p>
       <footer>先读：React → TanStack Query → shadcn/ui</footer>
     </a>
-
     <a class="study-path-card" href="/study/topics/ai-agent/">
       <span class="study-chip">路线 · 零基础友好</span>
       <h3>AI Agent 入门</h3>
       <p>从 Attention、Chain-of-Thought 到 ReAct，拆开智能体“思考、行动、观察”的主循环。</p>
       <footer>先读：Attention → CoT → ReAct</footer>
     </a>
-
     <a class="study-path-card" href="/study/topics/distributed-systems/">
       <span class="study-chip">路线 · 想补系统基础</span>
       <h3>系统底层入门</h3>

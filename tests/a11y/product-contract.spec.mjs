@@ -25,6 +25,10 @@ test('homepage exposes the three CTAs, six themes, and React/ReAct disambiguatio
   }
 
   await expect(page.locator('a.study-topic-card')).toHaveCount(6);
+  await expect(page.locator('a.study-path-card')).toHaveCount(3);
+  for (const href of ['/study/topics/frontend/', '/study/topics/ai-agent/', '/study/topics/distributed-systems/']) {
+    await expect(page.locator(`a.study-path-card[href="${href}"]`)).toHaveCount(1);
+  }
   await expect(page.locator('a.study-note-card[href="/study/projects/react/"] h3')).toHaveText('React');
   await expect(page.locator('a.study-note-card[href="/study/papers/react/"] h3')).toHaveText('ReAct');
 });
@@ -52,7 +56,11 @@ test('Pagefind UI distinguishes the ReAct paper from the React project', async (
   const input = dialog.locator('input[type="search"], input').first();
   await expect(input).toBeVisible();
   await input.fill('ReAct Reasoning Acting');
-  await expect(dialog.getByText(/results for ReAct Reasoning Acting/)).toBeVisible();
+  const resultStatus = dialog.locator('.pagefind-ui__message');
+  await expect(resultStatus).toContainText(/results for ReAct Reasoning Acting/);
+  await expect(resultStatus).toHaveAttribute('role', 'status');
+  await expect(resultStatus).toHaveAttribute('aria-live', 'polite');
+  await expect(resultStatus).toHaveAttribute('aria-atomic', 'true');
   await revealSearchResult(dialog, '/papers/react/');
 
   await input.fill('React 用写函数描述界面');

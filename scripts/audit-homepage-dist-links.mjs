@@ -126,6 +126,17 @@ for (const expected of requiredCtas) {
   if (!found) fail(`Built homepage is missing CTA "${expected.text}" -> ${expected.pathname}`);
 }
 
+const requiredStarterPaths = [
+  { text: '前端产品工程', pathname: '/study/topics/frontend/' },
+  { text: 'AI Agent 入门', pathname: '/study/topics/ai-agent/' },
+  { text: '系统底层入门', pathname: '/study/topics/distributed-systems/' },
+];
+
+for (const expected of requiredStarterPaths) {
+  const found = anchors.some((anchor) => pathnameOf(anchor.href) === expected.pathname && anchor.text.includes(expected.text));
+  if (!found) fail(`Built homepage is missing starter path "${expected.text}" -> ${expected.pathname}`);
+}
+
 for (const [pattern, label] of [
   [/1500\s*\+/, '1500+'],
   [/1511/, '1511'],
@@ -179,4 +190,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`[audit:homepage-dist] OK: three CTAs, React/ReAct targets, /study base paths, and ${new Set(hrefs.filter((href) => href.startsWith('/study'))).size} built targets verified in ${path.relative(root, homepagePath)}.`);
+console.log(`[audit:homepage-dist] OK: three CTAs, three starter paths, React/ReAct targets, /study base paths, and ${new Set(hrefs.filter((href) => href.startsWith('/study'))).size} built targets verified in ${path.relative(root, homepagePath)}.`);

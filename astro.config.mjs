@@ -67,6 +67,7 @@ export default defineConfig({
       },
       components: {
         PageTitle: './src/components/PageTitle.astro',
+        Search: './src/components/Search.astro',
       },
       // Sidebar 是骨架，不放 100+ 笔记的扁平列表。
       // 笔记发现走 papers-atlas / projects-atlas（多维索引，scripts/regen-atlas.mjs 自动生成）
