@@ -1,8 +1,5 @@
 {
-  "slug": "ddpm",
-  "area": "papers",
-  "status": "refined",
-  "action": "refine",
+  "action": "pass",
   "average": 4.33,
   "reject_count": 0,
   "needs_refine_count": 0,
@@ -81,22 +78,5 @@
         "训练循环描述正确，若补 5 行伪代码会更可跟做；适用边界已区分实时/离散 token。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 156,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true,
-  "refine": {
-    "round": 1,
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

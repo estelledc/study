@@ -1,7 +1,4 @@
 {
-  "slug": "emotion",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -75,13 +72,5 @@
       "weakest_section": "## 适用 vs 不适用场景",
       "fix_hints": []
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 176,
-    "reasons": []
-  },
-  "lines": 176,
-  "l1_pass": true
+  ]
 }

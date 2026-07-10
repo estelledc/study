@@ -1,7 +1,4 @@
 {
-  "slug": "embedded-hal",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "0.2→1.0 迁移与 SpiDevice/SpiBus 选型坑很实用；BMP280 示例概念正确（转换公式已标明简化）。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 163,
-    "reasons": []
-  },
-  "lines": 163,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "elysia",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -91,25 +88,5 @@
         "踩坑可补一句：用 Node 时要显式装 adapter 并设 adapter，不是 drop-in。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 176,
-    "reasons": []
-  },
-  "lines": 176,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 踩过的坑",
-      "## 适用",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

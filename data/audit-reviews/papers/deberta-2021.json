@@ -1,7 +1,4 @@
 {
-  "slug": "deberta-2021",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -91,21 +88,5 @@
         "案例 2 的 HF 片段可跑，但缺 tokenizer/model 输出怎么接到分类头的一步；不影响 pass"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 163,
-    "reasons": []
-  },
-  "lines": 163,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

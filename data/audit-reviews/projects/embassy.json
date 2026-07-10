@@ -1,7 +1,4 @@
 {
-  "slug": "embassy",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -86,20 +83,5 @@
         "LED 示例概念正确可跟读；硬实时不适用边界写得清楚。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 162,
-    "reasons": []
-  },
-  "lines": 162,
-  "l1_pass": true,
-  "refine": {
-    "round": 1,
-    "sections_modified": [
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

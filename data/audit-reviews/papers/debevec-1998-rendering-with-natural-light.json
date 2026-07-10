@@ -1,7 +1,4 @@
 {
-  "slug": "debevec-1998-rendering-with-natural-light",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "无可编程片段，但 light probe 流程与差分公式可操作；踩坑有档数/穿帮/几何/朝向/tone mapping 量化边界"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 162,
-    "reasons": []
-  },
-  "lines": 162,
-  "l1_pass": true
+  ]
 }

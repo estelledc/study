@@ -1,7 +1,4 @@
 {
-  "slug": "emacs",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -91,24 +88,5 @@
         "最小配置速查实用；可注明 fido-vertical-mode 需 Emacs 28+，避免旧版跟做失败。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 190,
-    "reasons": []
-  },
-  "lines": 190,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 历史小故事",
-      "## 最小配置速查"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

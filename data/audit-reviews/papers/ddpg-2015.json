@@ -1,7 +1,4 @@
 {
-  "slug": "ddpg-2015",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.11,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "伪代码未写 terminal done mask，教学可接受；生产实现需 (1-done)。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 161,
-    "reasons": []
-  },
-  "lines": 161,
-  "l1_pass": true
+  ]
 }
