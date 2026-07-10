@@ -1,0 +1,106 @@
+{
+  "slug": "lazydocker",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "值机大屏类比贴合；三案例步骤清楚，但个别快捷键若写错会误导跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者/仓库/gocui 同源叙述与公开事实一致；star 数为约数可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 写「按 5 切到 Services」错误：官方键位 2=Services、5=Volumes；应改为按 2。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 写「按 m 切到 stats 标签页」不准确：m 是 view logs；切 logs/stats/config 等标签应用 [ / ]。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "值机大屏类比贴合；三案例步骤清楚，但个别快捷键若写错会误导跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "作者/仓库/gocui 同源叙述与公开事实一致；star 数为约数可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 写「按 5 切到 Services」错误：官方键位 2=Services、5=Volumes；应改为按 2。",
+        "案例 1 写「按 m 切到 stats 标签页」不准确：m 是 view logs；切 logs/stats/config 等标签应用 [ / ]。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 162,
+    "reasons": []
+  },
+  "lines": 162,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

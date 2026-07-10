@@ -1,0 +1,93 @@
+{
+  "slug": "haystack-2010",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "信封/相册、书签、取餐窗口类比贴合；三案例逐步解释到位。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Beaver et al. OSDI 2010、Directory/Store/Cache/Needle 与公开摘要一致；教学简化未歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码读/写/修改路径概念正确；适用边界有量化倾向（海量小对象、写一次读多次）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "信封/相册、书签、取餐窗口类比贴合；三案例逐步解释到位。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Beaver et al. OSDI 2010、Directory/Store/Cache/Needle 与公开摘要一致；教学简化未歪曲。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "伪代码读/写/修改路径概念正确；适用边界有量化倾向（海量小对象、写一次读多次）。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}
