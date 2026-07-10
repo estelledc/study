@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 5 放在「踩过的坑」下容易迷路，建议并回实践案例或标明是补充数据表。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "外卖查地址类比很贴，Do53/DoT/DoH 三层对照零基础能跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写 PAM 2020 有误：论文发表于 The Web Conference (WWW’20)，应改为 WWW 2020；历史小故事同改。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 5 写 Alexa Top 1500 不准确：原文测的是 Alexa top 1,000 与 top 99,000–100,000 两档，应改口径或加限定。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "弱网叙事略绝对：论文指出在部分有损蜂窝条件下 DoT/DoH 因 TCP 重传反而 PLT 更好，进一步恶化后 Do53 才显著反超；核心要点第 3 条宜加这层限定。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "连接复用 ASCII 图对工程决策有用；适用边界（公共解析器 / HTTP/2 时代）写得清楚。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "若修弱网结论，建议同步改「移动端弱网回退 Do53」为「严重劣化时回退，中等有损蜂窝未必」。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 5 放在「踩过的坑」下容易迷路，建议并回实践案例或标明是补充数据表。",
+        "外卖查地址类比很贴，Do53/DoT/DoH 三层对照零基础能跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 2,
+        "no_distortion": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源写 PAM 2020 有误：论文发表于 The Web Conference (WWW’20)，应改为 WWW 2020；历史小故事同改。",
+        "案例 5 写 Alexa Top 1500 不准确：原文测的是 Alexa top 1,000 与 top 99,000–100,000 两档，应改口径或加限定。",
+        "弱网叙事略绝对：论文指出在部分有损蜂窝条件下 DoT/DoH 因 TCP 重传反而 PLT 更好，进一步恶化后 Do53 才显著反超；核心要点第 3 条宜加这层限定。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "连接复用 ASCII 图对工程决策有用；适用边界（公共解析器 / HTTP/2 时代）写得清楚。",
+        "若修弱网结论，建议同步改「移动端弱网回退 Do53」为「严重劣化时回退，中等有损蜂窝未必」。"
+      ]
+    }
+  ]
+}
