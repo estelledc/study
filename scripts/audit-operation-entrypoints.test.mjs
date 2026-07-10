@@ -25,7 +25,7 @@ test('rejects unsafe legacy entrypoint patterns', () => {
 });
 
 test('audits executable operation entrypoints as well as policy documents', () => {
-  for (const required of ['package.json', 'scripts/pick-batch.mjs', 'scripts/dispatch-batch.mjs', 'scripts/round.mjs', 'scripts/finalize-round.sh']) {
+  for (const required of ['package.json', 'scripts/pick-batch.mjs', 'scripts/dispatch-batch.mjs', 'scripts/promote-candidates.mjs', 'scripts/round.mjs', 'scripts/finalize-round.sh']) {
     assert.equal(ACTIVE_OPERATION_FILES.includes(required), true);
   }
   assert.deepEqual(auditOperationEntrypoints(), []);

@@ -125,7 +125,7 @@ After workers return JSON results, advance the claimed round in deterministic or
 npm run round:auto-advance -- --round <n> --results /tmp/study-worker-results.json
 ```
 
-`round:auto-advance` is fail-closed while bulk production is disabled. After a separately reviewed policy grants a bounded target, it validates that worker results exactly cover the claimed slugs and echo each current `claim_token` and `claim_generation`, then calls `round:merge-one` per slug under one owner lock and finishes at `round:final-gate`. It never synchronizes legacy worktrees.
+`round:auto-advance` is fail-closed while bulk production is disabled. Changing a tracked policy field to `APPROVED` does not unlock it: a future implementation must first add an expiring, operation-bound, single-use approval receipt. The command never synchronizes legacy worktrees.
 
 ## Remote publication
 

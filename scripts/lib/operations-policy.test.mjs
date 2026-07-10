@@ -12,7 +12,7 @@ test('allows a no-op without granting future mutation authority', () => {
   assert.deepEqual(bulkOperationDecision({}, 0), { allowed: true, reason: 'no-op' });
 });
 
-test('enforces both approved target and per-round maximum', () => {
+test('a tracked APPROVED flag is not a replayable mutation capability', () => {
   const policy = { bulk_production: {
     enabled: true,
     requires_explicit_operator_approval: true,
@@ -20,6 +20,8 @@ test('enforces both approved target and per-round maximum', () => {
     approved_target: 3,
     maximum_new_items_per_authorized_round: 4,
   } };
-  assert.equal(bulkOperationDecision(policy, 3).allowed, true);
-  assert.equal(bulkOperationDecision(policy, 4).reason, 'authorized-bound-exceeded');
+  assert.deepEqual(
+    bulkOperationDecision(policy, 1),
+    { allowed: false, reason: 'single-use-approval-required' },
+  );
 });

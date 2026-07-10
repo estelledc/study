@@ -19,6 +19,7 @@ export const ACTIVE_OPERATION_FILES = [
   'package.json',
   'scripts/pick-batch.mjs',
   'scripts/dispatch-batch.mjs',
+  'scripts/promote-candidates.mjs',
   'scripts/round.mjs',
   'scripts/finalize-round.sh',
   'scripts/sync-and-merge.sh',
@@ -59,6 +60,7 @@ export function auditOperationEntrypoints(root = ROOT) {
   const authorizationContracts = [
     ['scripts/pick-batch.mjs', 'assertBulkOperationAuthorized'],
     ['scripts/dispatch-batch.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/promote-candidates.mjs', 'assertBulkOperationAuthorized'],
     ['scripts/round.mjs', 'assertBulkOperationAuthorized'],
   ];
   for (const [relative, contract] of authorizationContracts) {

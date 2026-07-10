@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { promotePaperCandidates } from './lib/candidate-maintenance.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import { readCandidates, writeCandidates } from './lib/queue-store.mjs';
 
 function parseArgs(argv) {
@@ -51,6 +52,9 @@ function renderHuman(result, args) {
 
 async function main() {
   const args = parseArgs(process.argv);
+  if (!args.dryRun) {
+    assertBulkOperationAuthorized({ operation: 'promote:candidates', requestedItems: args.limit });
+  }
   const candidates = await readCandidates();
   const result = promotePaperCandidates(candidates, { limit: args.limit });
 
