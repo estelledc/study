@@ -1,0 +1,101 @@
+{
+  "slug": "freemodbus",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工厂问答翻译员类比贴合；案例 1 标题写 STM32，但只有通用 eMBInit，缺串口/定时器移植层逐步说明，零基础难跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "从站/RTU·ASCII·TCP/BSD 与仓库来源正确；历史段用「文档生成 2018」暗示项目年代易误解，应写清 FreeModbus 约 2006–2007 起、v1.6.0 为官方发布点。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 未展示 port 层（UART RX/TX、帧间隔定时器），跟做会卡在「能编译但收不到帧」；地址 off-by-one / 波特率 / eMBPoll / 回调越界踩坑有用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工厂问答翻译员类比贴合；案例 1 标题写 STM32，但只有通用 eMBInit，缺串口/定时器移植层逐步说明，零基础难跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "从站/RTU·ASCII·TCP/BSD 与仓库来源正确；历史段用「文档生成 2018」暗示项目年代易误解，应写清 FreeModbus 约 2006–2007 起、v1.6.0 为官方发布点。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 未展示 port 层（UART RX/TX、帧间隔定时器），跟做会卡在「能编译但收不到帧」；地址 off-by-one / 波特率 / eMBPoll / 回调越界踩坑有用。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 实践案例",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": [],
+    "note": "案例 1 补 UART/定时器 port 层与帧间隔说明；历史改为 2006–2007 起源并澄清 2018 仅为文档生成时间。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 166,
+    "reasons": []
+  }
+}

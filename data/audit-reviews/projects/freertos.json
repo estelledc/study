@@ -1,0 +1,106 @@
+{
+  "slug": "freertos",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "消防车通道类比贴合硬实时；案例 1 queue 协作清楚，案例 2 偏口述缺代码但仍能跟住思路。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "信号量/互斥锁确由 queue 实现，但事件组是独立 event_groups 位图对象，不是「位图 queue」；「一份代码服务四种原语」过度概括，需拆开表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Barry 2003、AWS 2017 MIT、SafeRTOS / FreeRTOS 11 SMP 时间线正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 API 用法正确；栈溢出水印、FromISR、tickless、静态分配踩坑可操作；MMU/SMP/SafeRTOS 边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "消防车通道类比贴合硬实时；案例 1 queue 协作清楚，案例 2 偏口述缺代码但仍能跟住思路。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "信号量/互斥锁确由 queue 实现，但事件组是独立 event_groups 位图对象，不是「位图 queue」；「一份代码服务四种原语」过度概括，需拆开表述。",
+        "Barry 2003、AWS 2017 MIT、SafeRTOS / FreeRTOS 11 SMP 时间线正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 API 用法正确；栈溢出水印、FromISR、tickless、静态分配踩坑可操作；MMU/SMP/SafeRTOS 边界清楚。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 学到什么"
+    ],
+    "unresolved_hints": [],
+    "note": "拆开事件组：信号量/互斥锁基于 queue，事件组是独立位图同步，不再写成「万物皆 queue」。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 172,
+    "reasons": []
+  }
+}
