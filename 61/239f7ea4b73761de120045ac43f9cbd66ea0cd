@@ -1,0 +1,29 @@
+CHANGELOG.md
+  s_26277b96b3ce53::t_969f5fed7e0750 8
+scripts/README.md
+  s_26277b96b3ce53::t_b3fcb633c18434 25-26
+scripts/lib/queue-lock.py
+  s_26277b96b3ce53::t_77a503c6958f27 1-28
+scripts/lib/queue-transaction.mjs
+  s_26277b96b3ce53::t_c1aedda76a8a1e 1,5,13-14,29-31,33-35,41-91,93-99,101-103,105-109,114-119,123,128-131,625,633
+scripts/lib/queue-transaction.test.mjs
+  s_26277b96b3ce53::t_1378a962ba452a 2,88-91,114-117,190-216,218-243,245-249,251-331,334-354,356-376,476-509
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "61239f7ea4b73761de120045ac43f9cbd66ea0cd",
+  "prompts": {},
+  "sessions": {
+    "s_26277b96b3ce53": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_26277b96b3ce53",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
