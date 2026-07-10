@@ -1,7 +1,4 @@
 {
-  "slug": "deepseek-r1",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,22 +88,5 @@
         "踩坑与适用边界（可验证任务 / token 成本 / 无工具调用）对工程落地有用。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 162,
-    "reasons": []
-  },
-  "lines": 162,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

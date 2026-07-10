@@ -1,7 +1,4 @@
 {
-  "slug": "erigon",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -86,24 +83,5 @@
         "多链端口错开、prune.mode 默认 full、MDBX 网盘坑都很具体可操作。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 166,
-    "reasons": []
-  },
-  "lines": 166,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "frontmatter",
-      "## 是什么",
-      "## 为什么重要",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

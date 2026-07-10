@@ -1,7 +1,4 @@
 {
-  "slug": "errbot",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -75,13 +72,5 @@
         "「关联」4 条略少（模板 5–7），但踩坑与 webhook 案例已够工程向。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 161,
-    "reasons": []
-  },
-  "lines": 161,
-  "l1_pass": true
+  ]
 }
