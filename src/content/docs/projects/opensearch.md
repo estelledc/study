@@ -138,7 +138,7 @@ OpenSearch 1.x → 2.x 不能滚动升级，必须 reindex。社区文档「roll
 - 需要 [[elasticsearch]] 商业版才有的「跨集群 search 同步」企业级功能（OpenSearch 也在做但不成熟）
 - 团队已经熟悉 Kibana，迁 OpenSearch Dashboards 切换成本未必小
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - 2021-01：Elastic 宣布把 ES + Kibana 从 Apache 2.0 改成 SSPL + Elastic License v2
 - 2021-04：AWS 宣布 fork 7.10.2，命名 OpenSearch + OpenSearch Dashboards
@@ -155,10 +155,24 @@ OpenSearch 1.x → 2.x 不能滚动升级，必须 reindex。社区文档「roll
 3. **fork 的成功依赖治理而不是代码**：OpenSearch 真正稳下来不是 1.0 GA，是 2024 转给 Linux Foundation 那一刻
 4. **「默认就有」是产品力**：把 ES 收费的安全 / 告警 / SQL 默认开启，是 OpenSearch 在中型公司里赢 ES 的最大原因
 
+## 延伸阅读
+
+- 官方文档：https://opensearch.org/docs/latest/
+- 仓库：https://github.com/opensearch-project/OpenSearch
+- 迁移指南：OpenSearch 文档中的「Migrating from Elasticsearch」章节
+- [[elasticsearch]] —— 同源祖先与许可证分叉对照
+- [[lucene]] —— 倒排索引共同底座
+- [[milvus]] —— 若向量是主负载，可对照专用向量库
+
 ## 关联
 
 - [[elasticsearch]] —— 同源祖先；2021 改许可证后才有 OpenSearch 这棵树
 - [[lucene]] —— 共同的底层倒排索引引擎，两边都在用
-- [[mongodb]] —— 最早用 SSPL 的项目，没遇到 fork；OpenSearch 是反例
-- [[grafana]] —— 监控可视化常对接 OpenSearch；Grafana Labs 自己也是 AGPL 路线
-- [[prometheus]] —— 时序监控生态里和 OpenSearch 互补：Prometheus 存指标，OpenSearch 存日志
+- [[mongodb]] —— 最早用 SSPL 的项目之一；OpenSearch 是「被 fork」的对照样本
+- [[grafana]] —— 监控可视化常对接 OpenSearch
+- [[prometheus]] —— 指标存 Prometheus，日志/检索常落 OpenSearch
+- [[milvus]] —— 向量检索专用引擎，可与 OpenSearch k-NN 对照
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

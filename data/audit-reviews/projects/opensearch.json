@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 反向链接",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "咖啡馆配方 fork 类比精准好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SSPL / 客户端握手 / knn_vector 有足够桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "docker / opensearch-py / knn mapping 三案例步骤清楚；缺延伸阅读段会让零基础无处继续"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2021-01 SSPL、2021-04 fork 7.10.2、2021-09 服务改名、2024-09 LF 基金会时间线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源给 GitHub 主仓合理；可补官方文档链接到延伸阅读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 ES 早内置 k-NN」表述大体成立，未把治理争议写成单方道德叙事"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "单节点 docker、opensearch-py 切换、knn_vector mapping 均可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "ES8 客户端拒连、自签证书、_index_template、跨大版本须 reindex 四条踩坑可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺 ## 延伸阅读 与 ## 反向链接 占位；历史小故事标题应加「（可跳过）」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "咖啡馆配方 fork 类比精准好懂",
+        "SSPL / 客户端握手 / knn_vector 有足够桥接",
+        "docker / opensearch-py / knn mapping 三案例步骤清楚；缺延伸阅读段会让零基础无处继续"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "2021-01 SSPL、2021-04 fork 7.10.2、2021-09 服务改名、2024-09 LF 基金会时间线正确",
+        "来源给 GitHub 主仓合理；可补官方文档链接到延伸阅读",
+        "「比 ES 早内置 k-NN」表述大体成立，未把治理争议写成单方道德叙事"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "单节点 docker、opensearch-py 切换、knn_vector mapping 均可跟做",
+        "ES8 客户端拒连、自签证书、_index_template、跨大版本须 reindex 四条踩坑可操作",
+        "缺 ## 延伸阅读 与 ## 反向链接 占位；历史小故事标题应加「（可跳过）」"
+      ]
+    }
+  ]
+}
