@@ -137,7 +137,7 @@ T3: 同 T2，稳定
 
 ## 关联
 
-- [[spin]] —— 用 LTL 路线的工业 model checker，与 CTL 路线互补
+- [[holzmann-spin-1997]] —— 用 LTL 路线的工业 model checker，与 CTL 路线互补
 - [[hoare-logic]] —— 程序验证的"人写证明"路线，与 model checking 互补
 - [[csp-hoare-1978]] —— 并发模型，CTL 常用来写 CSP 程序的需求
 - [[fstar]] —— 把定理证明 + 类型 + SMT 揉一起，model checking 的精神后继之一

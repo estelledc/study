@@ -70,6 +70,12 @@ curl -X PUT http://admin:pass@localhost:5984/notes/n1 \
   -d '{"_id": "n1", "_rev": "1-abc...", "title": "couchdb v2"}'
 ```
 
+这段命令分三步看：
+
+1. `PUT /notes` 先建一个数据库，像先新建一本空笔记本。
+2. `POST /notes` 写入一条 JSON 文档，CouchDB 回你一个 `_rev`，相当于页码版本。
+3. `PUT /notes/n1` 修改时必须带旧 `_rev`，不带就会报冲突，避免两个人互相覆盖。
+
 整个生命周期不需要任何驱动，shell 就够。
 
 ### 案例 3：建立两个数据库之间的持续复制
@@ -80,7 +86,7 @@ curl -X POST http://admin:pass@localhost:5984/_replicate \
   -d '{"source": "notes", "target": "http://other:5984/notes", "continuous": true}'
 ```
 
-之后两边任一方写入，另一方几秒内同步过去。**双向**只要再发一条反向 replicate 即可。这就是 PouchDB 让浏览器做"离线笔记 + 上线自动同步"的底层依赖。
+这里的 `source` 是本地库，`target` 是远端库，`continuous: true` 表示不要只同步一次，而是持续监听新变化。之后本地写入会推到远端；**双向**只要再发一条反向 replicate 即可。这就是 PouchDB 让浏览器做"离线笔记 + 上线自动同步"的底层依赖。
 
 ## 踩过的坑
 
@@ -150,3 +156,9 @@ curl -X POST http://admin:pass@localhost:5984/_replicate \
 - [[redis]] —— 内存 KV，对照存储与查询模型
 - [[rest-fielding-2000]] —— CouchDB 是 REST 思想最纯净的工程落地
 - [[erlang-otp]] —— CouchDB 选 Erlang 的根本原因（容错 + 轻量进程）
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
+（暂无反向链接）

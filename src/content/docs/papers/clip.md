@@ -60,6 +60,12 @@ predicted = classes[scores.argmax()]   # → "cat"
 
 搜 `"sunset over ocean"`：
 
+```python
+query = clip.encode_text(["sunset over ocean"])
+gallery = clip.encode_image(all_photos)
+topk = (gallery @ query.T).topk(10)
+```
+
 - 把这段文字过文本编码器，得到一个查询向量
 - 把图库里所有图过图像编码器，得到 N 个图像向量
 - 算余弦相似度排序，返回 top-K
@@ -69,6 +75,11 @@ predicted = classes[scores.argmax()]   # → "cat"
 ### 案例 3：Stable Diffusion 用 CLIP 文本编码器
 
 输入 `"a cat in space"`：
+
+```python
+text = clip_text_encoder("a cat in space")
+image = diffusion_model.sample(condition=text)
+```
 
 - CLIP text encoder 把这句话编成 embedding
 - 扩散模型把这个 embedding 当条件，从纯噪声反推出一张图
@@ -124,6 +135,15 @@ CLIP 真正的 novelty 不是"对比 image-text"（ConVIRT 已经做了），而
 - 官方代码：[openai/CLIP](https://github.com/openai/CLIP)（训练代码不公开，只放了推理 + checkpoint）
 - 开源复现：[mlfoundations/open_clip](https://github.com/mlfoundations/open_clip)（LAION 数据训练，最接近原版）
 - 视频解读：[Yannic Kilcher — CLIP](https://www.youtube.com/watch?v=T9XSU0pKX2E)（论文逐节讲解，1 小时）
+
+## 关联
+
+- [[align-2021]] —— 同样用大规模图文对训练，说明数据规模能压住噪声
+- [[dalle-2]] —— 把 CLIP 表征接到扩散生成里，形成文生图路线
+- [[stable-diffusion]] —— 依赖文本编码器把 prompt 变成生成条件
+- [[llava]] —— 把 CLIP 视觉编码器接到大语言模型上做对话
+- [[vit]] —— CLIP 的图像塔常用 Vision Transformer 作为骨架
+- [[word2vec]] —— 都是在向量空间里用距离表达语义相近
 
 ## 反向链接
 
