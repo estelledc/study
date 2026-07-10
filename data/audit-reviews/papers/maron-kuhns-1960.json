@@ -1,0 +1,131 @@
+{
+  "slug": "maron-kuhns-1960",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书管理员猜可能性的类比把「匹配→概率排序」讲清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "贝叶斯公式有「看意思就好」缓冲；P(rel|q,d) 首次有读法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例从 ES/BM25/RAG 落到今天工具，步骤可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Maron & Kuhns JACM 1960 正确；PRP 归到 Robertson 1977 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教学用贝叶斯展开可接受；「embedding 源头」略宽，但标成 term weighting 谱系尚可"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "BM25 _score 写成概率的「代理」有软化，未把打分硬说成概率"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "ES match 查询示例可跟；BM25 IDF 公式概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "term 独立假设 / 无法从语料估概率等坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用排序系统、不适用精确匹配有边界；候选 <10 的量化可用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "图书管理员猜可能性的类比把「匹配→概率排序」讲清楚",
+        "贝叶斯公式有「看意思就好」缓冲；P(rel|q,d) 首次有读法",
+        "案例从 ES/BM25/RAG 落到今天工具，步骤可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Maron & Kuhns JACM 1960 正确；PRP 归到 Robertson 1977 正确",
+        "教学用贝叶斯展开可接受；「embedding 源头」略宽，但标成 term weighting 谱系尚可",
+        "BM25 _score 写成概率的「代理」有软化，未把打分硬说成概率"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "ES match 查询示例可跟；BM25 IDF 公式概念正确",
+        "term 独立假设 / 无法从语料估概率等坑具体",
+        "适用排序系统、不适用精确匹配有边界；候选 <10 的量化可用"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true
+}

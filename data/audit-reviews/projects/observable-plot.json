@@ -1,0 +1,140 @@
+{
+  "slug": "observable-plot",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "点菜/厨师类比把声明式画图讲透；Mark/Channel/Scale/Transform 各有日常类比"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/3 有逐部分解释；案例 2 facet 偏短，可再拆一步「拆成几张子图」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/observablehq/plot、Bostock 2021 开源时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬伤：案例 2 写「共享 y scale 但 x 各自独立」——Plot facet 默认共享全部位置 scale，并不提供 ggplot2 式 free scale"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「反 D3」偏修辞；Plot 依赖并封装 D3，宜弱化为「声明式高层 / 命令式底层」对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "散点+回归 / binX 直方图代码可跟做，API 形状正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "≤10k / >10k、React 重绘、transform 嵌套顺序等踩坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化；与 recharts/visx/echarts/d3 对照清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "点菜/厨师类比把声明式画图讲透；Mark/Channel/Scale/Transform 各有日常类比",
+        "案例 1/3 有逐部分解释；案例 2 facet 偏短，可再拆一步「拆成几张子图」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 github.com/observablehq/plot、Bostock 2021 开源时间线合理",
+        "硬伤：案例 2 写「共享 y scale 但 x 各自独立」——Plot facet 默认共享全部位置 scale，并不提供 ggplot2 式 free scale",
+        "「反 D3」偏修辞；Plot 依赖并封装 D3，宜弱化为「声明式高层 / 命令式底层」对照"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "散点+回归 / binX 直方图代码可跟做，API 形状正确",
+        "≤10k / >10k、React 重绘、transform 嵌套顺序等踩坑具体",
+        "适用边界有量化；与 recharts/visx/echarts/d3 对照清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 185,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 185,
+  "l1_pass": true,
+  "sections_modified": [
+    "## 为什么重要",
+    "## 实践案例"
+  ],
+  "unresolved_hints": [],
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 facet 默认共享全部 scale；弱化「反 D3」为声明式高层对照；案例 2 补逐部分解释。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

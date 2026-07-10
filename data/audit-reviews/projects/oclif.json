@@ -1,0 +1,121 @@
+{
+  "slug": "oclif",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "加盟手册 / 邮政地址 / 外包装标签类比把三层架构讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 对 static 字段、parse、this.log 有逐部分解释，零基础可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Heroku 2018 开源、Salesforce 主导、@oclif/core / Node 18+ 与公开资料一致；Shopify CLI 仍依赖 oclif"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「200ms / 80ms」属体验向数量级，可接受为教学表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Command/Flags/Args 与 BaseCommand/init/catch 示例可跑可测"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "大小写、manifest prepack、process.exit vs this.error 踩坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "50+ / <20 / 20-50 模糊带量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "加盟手册 / 邮政地址 / 外包装标签类比把三层架构讲透",
+        "案例 1 对 static 字段、parse、this.log 有逐部分解释，零基础可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Heroku 2018 开源、Salesforce 主导、@oclif/core / Node 18+ 与公开资料一致；Shopify CLI 仍依赖 oclif",
+        "「200ms / 80ms」属体验向数量级，可接受为教学表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Command/Flags/Args 与 BaseCommand/init/catch 示例可跑可测",
+        "大小写、manifest prepack、process.exit vs this.error 踩坑具体可操作",
+        "50+ / <20 / 20-50 模糊带量化清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 182,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 182,
+  "l1_pass": true
+}
