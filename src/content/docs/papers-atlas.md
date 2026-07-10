@@ -1,6 +1,6 @@
 ---
 title: 论文全景索引
-description: 1014 篇论文 · 按主题分类 · 自动从 frontmatter 生成
+description: 1014 篇论文的全量地图 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 论文全景索引
@@ -9,11 +9,16 @@ sidebar:
 > 本页由 `scripts/regen-atlas.mjs` 自动生成（每次 build 前重跑）。
 > 调整分类：编辑脚本里的 `THEMES_PAPERS` 字典。
 
+> Atlas 是全量地图，适合已经知道关键词的人。新手建议先走 [从这里开始](/study/start/) 或 [按主题学习](/study/topics/)。
+
 ## 总览
 
-- **总数**：1014 篇
-- **已分类**：143
-- **未分类**：871（落入"其他 / 待分类"段）
+<div class="study-stats-strip">
+  <div><strong>1014</strong><span>论文总数</span></div>
+  <div><strong>143</strong><span>已进入主题分类</span></div>
+  <div><strong>871</strong><span>暂未收纳进主题路线</span></div>
+  <div><strong>14.1%</strong><span>分类覆盖率（143 / 1014）</span></div>
+</div>
 
 ### 按主题分布
 
@@ -36,7 +41,7 @@ sidebar:
 | [信息论 / 编码理论](#信息论---编码理论) | 5 |
 | [密码学 / 安全](#密码学---安全) | 5 |
 | [HCI / 软件工程研究](#hci---软件工程研究) | 14 |
-| [其他 / 待分类](#其他--待分类) | 871 |
+| [暂未收纳进主题路线](#temporarily-unrouted) | 871 |
 
 ---
 
@@ -302,9 +307,10 @@ sidebar:
 | [Programmer Interruption — IDE 数据告诉你被打断后多久才能继续敲代码](/study/papers/programmer-interruption/) |  |
 | [Sillito 44 问题 — 程序员改代码时到底在问什么](/study/papers/sillito-questions/) |  |
 
-## 其他 / 待分类
+<details class="study-details">
+<summary id="temporarily-unrouted">暂未收纳进主题路线（871 篇）</summary>
 
-共 871 篇。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+这些内容已经有笔记，但还没有进入精选学习路径；这不是质量低的标记，只代表它们还没被整理进主题页。你可以用 Cmd/Ctrl + K 搜索名称直接访问。
 
 | Slug | 论文 |
 |---|---|
@@ -1180,9 +1186,12 @@ sidebar:
 | `zfs-2003` | [ZFS — 把磁盘当成水池，每滴水都贴标签](/study/papers/zfs-2003/) |
 | `zombie-agents-2602` | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) |
 
+</details>
+
 ---
 
-## 全部 1014 篇（字母序）
+<details class="study-details">
+<summary>全部 1014 篇（字母序）</summary>
 
 | Slug | 论文 | 主题 |
 |---|---|---|
@@ -2200,3 +2209,5 @@ sidebar:
 | `zgc` | [ZGC — 让 GC 停顿与堆大小解耦的低延迟回收器](/study/papers/zgc/) | GC / 内存管理 |
 | `zk-snark` | [zk-SNARK 零知识证明](/study/papers/zk-snark/) | 密码学 / 安全 |
 | `zombie-agents-2602` | [Zombie Agents — 自进化 agent 的长期记忆能被持久化"借尸还魂"](/study/papers/zombie-agents-2602/) | 其他 |
+
+</details>

@@ -3,8 +3,8 @@
 // Run: node scripts/regen-atlas.mjs (also runs as `prebuild` automatically)
 //
 // Notes are grouped by THEME (semantic clustering), not by Season (chronological).
-// Themes are hardcoded slug→theme maps. New slugs default to "其他 / 待分类"
-// until added below.
+// Themes are hardcoded slug→theme maps. New slugs remain available in a folded
+// "暂未收纳进主题路线" pool until they are selected for a curated path.
 
 import { readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -274,13 +274,15 @@ function renderAtlas(notes, kind) {
   }
 
   const total = notes.length;
+  const classified = total - unclassified.length;
+  const coverage = total === 0 ? '0.0' : ((classified / total) * 100).toFixed(1);
   const lines = [];
   const titleZh = isPapers ? '论文' : '项目';
   const path = isPapers ? 'papers' : 'projects';
 
   lines.push('---');
   lines.push(`title: ${titleZh}全景索引`);
-  lines.push(`description: ${total} ${isPapers ? '篇' : '个'}${titleZh} · 按主题分类 · 自动从 frontmatter 生成`);
+  lines.push(`description: ${total} ${isPapers ? '篇' : '个'}${titleZh}的全量地图 · 按主题分类 · 自动从 frontmatter 生成`);
   lines.push('sidebar:');
   lines.push('  order: 5');
   lines.push(`  label: ${titleZh}全景索引`);
@@ -289,11 +291,16 @@ function renderAtlas(notes, kind) {
   lines.push('> 本页由 `scripts/regen-atlas.mjs` 自动生成（每次 build 前重跑）。');
   lines.push('> 调整分类：编辑脚本里的 `THEMES_' + (isPapers ? 'PAPERS' : 'PROJECTS') + '` 字典。');
   lines.push('');
+  lines.push('> Atlas 是全量地图，适合已经知道关键词的人。新手建议先走 [从这里开始](/study/start/) 或 [按主题学习](/study/topics/)。');
+  lines.push('');
   lines.push('## 总览');
   lines.push('');
-  lines.push(`- **总数**：${total} ${isPapers ? '篇' : '个'}`);
-  lines.push(`- **已分类**：${total - unclassified.length}`);
-  if (unclassified.length) lines.push(`- **未分类**：${unclassified.length}（落入"其他 / 待分类"段）`);
+  lines.push('<div class="study-stats-strip">');
+  lines.push(`  <div><strong>${total}</strong><span>${titleZh}总数</span></div>`);
+  lines.push(`  <div><strong>${classified}</strong><span>已进入主题分类</span></div>`);
+  lines.push(`  <div><strong>${unclassified.length}</strong><span>暂未收纳进主题路线</span></div>`);
+  lines.push(`  <div><strong>${coverage}%</strong><span>分类覆盖率（${classified} / ${total}）</span></div>`);
+  lines.push('</div>');
   lines.push('');
 
   // Theme summary table
@@ -307,7 +314,7 @@ function renderAtlas(notes, kind) {
     lines.push(`| [${theme}](#${slugify(theme)}) | ${items.length} |`);
   }
   if (unclassified.length) {
-    lines.push(`| [其他 / 待分类](#其他--待分类) | ${unclassified.length} |`);
+    lines.push(`| [暂未收纳进主题路线](#temporarily-unrouted) | ${unclassified.length} |`);
   }
   lines.push('');
   lines.push('---');
@@ -334,9 +341,10 @@ function renderAtlas(notes, kind) {
   // Unclassified
   if (unclassified.length) {
     unclassified.sort((a, b) => a.slug.localeCompare(b.slug));
-    lines.push('## 其他 / 待分类');
+    lines.push('<details class="study-details">');
+    lines.push(`<summary id="temporarily-unrouted">暂未收纳进主题路线（${unclassified.length} ${isPapers ? '篇' : '个'}）</summary>`);
     lines.push('');
-    lines.push(`共 ${unclassified.length} ${isPapers ? '篇' : '个'}。补到主题分类需要编辑 \`scripts/regen-atlas.mjs\`。`);
+    lines.push('这些内容已经有笔记，但还没有进入精选学习路径；这不是质量低的标记，只代表它们还没被整理进主题页。你可以用 Cmd/Ctrl + K 搜索名称直接访问。');
     lines.push('');
     lines.push(`| Slug | ${isPapers ? '论文' : '项目'} |`);
     lines.push('|---|---|');
@@ -344,12 +352,15 @@ function renderAtlas(notes, kind) {
       lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${path}/${it.slug}/) |`);
     }
     lines.push('');
+    lines.push('</details>');
+    lines.push('');
   }
 
   // Full alphabetical fallback for keyboard browsing
   lines.push('---');
   lines.push('');
-  lines.push(`## 全部 ${total} ${isPapers ? '篇' : '个'}（字母序）`);
+  lines.push('<details class="study-details">');
+  lines.push(`<summary>全部 ${total} ${isPapers ? '篇' : '个'}（字母序）</summary>`);
   lines.push('');
   lines.push(`| Slug | ${isPapers ? '论文' : '项目'} | 主题 |`);
   lines.push('|---|---|---|');
@@ -358,6 +369,8 @@ function renderAtlas(notes, kind) {
     const theme = slugOf.get(it.slug) ?? '其他';
     lines.push(`| \`${it.slug}\` | [${escapeMd(it.title)}](/study/${path}/${it.slug}/) | ${theme} |`);
   }
+  lines.push('');
+  lines.push('</details>');
   lines.push('');
 
   return lines.join('\n');
@@ -398,8 +411,8 @@ async function main() {
 
   const pUnclass = papers.filter((n) => !PAPER_OF.has(n.slug)).length;
   const prUnclass = projects.filter((n) => !PROJECT_OF.has(n.slug)).length;
-  console.log(`papers-atlas.md   ${papers.length} 篇  (${papers.length - pUnclass} 已分类 / ${pUnclass} 待分类)`);
-  console.log(`projects-atlas.md ${projects.length} 个  (${projects.length - prUnclass} 已分类 / ${prUnclass} 待分类)`);
+  console.log(`papers-atlas.md   ${papers.length} 篇  (${papers.length - pUnclass} 已分类 / ${pUnclass} 暂未收纳)`);
+  console.log(`projects-atlas.md ${projects.length} 个  (${projects.length - prUnclass} 已分类 / ${prUnclass} 暂未收纳)`);
 }
 
 main().catch((e) => {

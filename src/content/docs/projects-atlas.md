@@ -1,6 +1,6 @@
 ---
 title: 项目全景索引
-description: 961 个项目 · 按主题分类 · 自动从 frontmatter 生成
+description: 961 个项目的全量地图 · 按主题分类 · 自动从 frontmatter 生成
 sidebar:
   order: 5
   label: 项目全景索引
@@ -9,11 +9,16 @@ sidebar:
 > 本页由 `scripts/regen-atlas.mjs` 自动生成（每次 build 前重跑）。
 > 调整分类：编辑脚本里的 `THEMES_PROJECTS` 字典。
 
+> Atlas 是全量地图，适合已经知道关键词的人。新手建议先走 [从这里开始](/study/start/) 或 [按主题学习](/study/topics/)。
+
 ## 总览
 
-- **总数**：961 个
-- **已分类**：214
-- **未分类**：747（落入"其他 / 待分类"段）
+<div class="study-stats-strip">
+  <div><strong>961</strong><span>项目总数</span></div>
+  <div><strong>214</strong><span>已进入主题分类</span></div>
+  <div><strong>747</strong><span>暂未收纳进主题路线</span></div>
+  <div><strong>22.3%</strong><span>分类覆盖率（214 / 961）</span></div>
+</div>
 
 ### 按主题分布
 
@@ -52,7 +57,7 @@ sidebar:
 | [Terminal / 终端](#terminal---终端) | 5 |
 | [Drag & Drop / Interaction](#drag--drop---interaction) | 3 |
 | [其他基础设施](#其他基础设施) | 3 |
-| [其他 / 待分类](#其他--待分类) | 747 |
+| [暂未收纳进主题路线](#temporarily-unrouted) | 747 |
 
 ---
 
@@ -501,9 +506,10 @@ sidebar:
 | [minisearch — 浏览器里的小型全文搜索引擎](/study/projects/minisearch/) |  |
 | [unstorage — 让 KV 存储不绑死运行时的统一抽象层](/study/projects/unstorage/) |  |
 
-## 其他 / 待分类
+<details class="study-details">
+<summary id="temporarily-unrouted">暂未收纳进主题路线（747 个）</summary>
 
-共 747 个。补到主题分类需要编辑 `scripts/regen-atlas.mjs`。
+这些内容已经有笔记，但还没有进入精选学习路径；这不是质量低的标记，只代表它们还没被整理进主题页。你可以用 Cmd/Ctrl + K 搜索名称直接访问。
 
 | Slug | 项目 |
 |---|---|
@@ -1255,9 +1261,12 @@ sidebar:
 | `zsh` | [zsh — 比 bash 更聪明的兼容派 shell](/study/projects/zsh/) |
 | `zulip` | [Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）](/study/projects/zulip/) |
 
+</details>
+
 ---
 
-## 全部 961 个（字母序）
+<details class="study-details">
+<summary>全部 961 个（字母序）</summary>
 
 | Slug | 项目 | 主题 |
 |---|---|---|
@@ -2222,3 +2231,5 @@ sidebar:
 | `zsh` | [zsh — 比 bash 更聪明的兼容派 shell](/study/projects/zsh/) | 其他 |
 | `zulip` | [Zulip — 强制 topic 的开源团队聊天（Django + Tornado 长轮询）](/study/projects/zulip/) | 其他 |
 | `zustand` | [Zustand — 极简 React 状态管理](/study/projects/zustand/) | 状态管理 |
+
+</details>
