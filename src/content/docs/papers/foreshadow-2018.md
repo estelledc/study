@@ -47,18 +47,24 @@ Foreshadow 可以拆成 **三步**：
 ### 案例 1：最小 Foreshadow 读字节流程
 
 ```c
+for (i = 0; i < 256; i++) clflush(&oracle[i * 4096]);  // 先擦掉探测数组
 mprotect(secret_page, 4096, PROT_NONE);
-value = transient_read(secret_ptr);
-touch(oracle[value * 4096]);
+value = transient_read(secret_ptr);   // 异常前短暂读到秘密字节
+touch(oracle[value * 4096]);          // 把字节编码成“哪一格变热”
+// 正式状态回滚后，用 FLUSH+RELOAD 测哪一格最快：
+for (i = 0; i < 256; i++) {
+  t = timed_reload(&oracle[i * 4096]);
+  if (t < threshold) recovered = i;   // 命中的那一格就是秘密字节
+}
 ```
 
 **逐部分解释**：
 
-- `mprotect` 让目标页在页表里变成 not-present，正常执行一定会触发 page fault
-- `transient_read` 代表异常退休前的短窗口，不是程序语义上的合法读取
-- `oracle[value * 4096]` 把 0-255 的 secret byte 映射到 256 个相隔很远的位置
-- 正式状态会被丢掉，但被访问过的 oracle slot 会留在缓存里
-
+- 先 `clflush` oracle：没有这一步，旧缓存命中会干扰后面的计时判断
+- `mprotect` 让目标页变成 not-present，正常执行最终会 page fault
+- `transient_read` 是异常退休前的短窗口，不是合法程序语义上的读取
+- `touch(oracle[value * 4096])` 把 0–255 映射到 256 个相隔很远的槽位
+- 回滚后用 `timed_reload` 找最快的槽：那一格的下标就是恢复出的字节
 ### 案例 2：为什么它能避开 SGX abort page 语义
 
 ```txt
