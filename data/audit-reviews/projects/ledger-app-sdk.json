@@ -1,0 +1,110 @@
+{
+  "slug": "ledger-app-sdk",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "APDU/BIP32/NBGL 已有桥接；案例 2 可再点一句「硬化路径最高位 0x80000000 表示什么」帮助零基础。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "仓库与 BOLOS/Clear Signing 叙述与官方定位一致；时间线属教学归纳，未见硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2：`uint8_t bip32_path[] = {44 | 0x80000000, ...}` 类型错误——硬化路径分量是 32 位，应改为 `uint32_t`（或官方 path 数组类型），否则 0x80000000 截断后语义全错。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "APDU/BIP32/NBGL 已有桥接；案例 2 可再点一句「硬化路径最高位 0x80000000 表示什么」帮助零基础。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "仓库与 BOLOS/Clear Signing 叙述与官方定位一致；时间线属教学归纳，未见硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2：`uint8_t bip32_path[] = {44 | 0x80000000, ...}` 类型错误——硬化路径分量是 32 位，应改为 `uint32_t`（或官方 path 数组类型），否则 0x80000000 截断后语义全错。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 172,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "reason": "engineer：案例 2 bip32_path 改为 uint32_t，并说明 0x80000000 hardened 语义。",
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}
