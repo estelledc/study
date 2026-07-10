@@ -1,7 +1,4 @@
 {
-  "slug": "librosa",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.11,
   "reject_count": 0,
@@ -101,36 +98,5 @@
         "适用/不适用拆成两个 H2，且缺量化边界（如实时延迟、片段长度）；反向链接后堆了额外实践段落，应收回正文并统一『适用 vs 不适用』结构。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base/engineer needs-refine：补强化验单类比与术语桥接，补全 beat_track/mel 相似度可运行案例，合并适用段并收回反向链接后堆砌内容，补 SciPy 2015 时间线。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }

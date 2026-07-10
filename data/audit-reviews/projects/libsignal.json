@@ -1,7 +1,4 @@
 {
-  "slug": "libsignal",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,22 +78,5 @@
         "Kotlin/Swift 片段是示意 API，概念正确；踩坑（FFI 泄漏、预共享键耗尽、Sealed Sender 元数据边界）可操作"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "reject_count": 0,
-    "needs_refine_count": 0,
-    "pass_count": 3,
-    "action": "pass",
-    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
-  },
-  "refinement": null,
-  "quality_gate": {
-    "pass": true,
-    "lines": 169,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 169,
-  "l1_pass": true
+  ]
 }

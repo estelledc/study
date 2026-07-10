@@ -1,7 +1,4 @@
 {
-  "slug": "libvpx",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,22 +78,5 @@
         "构建/编码/PGO 三案例可跟做；踩坑具体（宽高、NASM、容器 vs codec）；适用边界与 ffmpeg/x264/AV1 对照清楚"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "reject_count": 0,
-    "needs_refine_count": 0,
-    "pass_count": 3,
-    "action": "pass",
-    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
-  },
-  "refinement": null,
-  "quality_gate": {
-    "pass": true,
-    "lines": 165,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 165,
-  "l1_pass": true
+  ]
 }

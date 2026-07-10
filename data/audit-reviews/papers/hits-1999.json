@@ -1,7 +1,4 @@
 {
-  "slug": "hits-1999",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -81,31 +78,5 @@
         "案例 2 手算数字自相矛盾（a(C)=2 与 h 侧仍用 a(C)=1），跟做会失败；改成一轮完整交替更新并给出归一化后的向量"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "reject_count": 0,
-    "needs_refine_count": 2,
-    "pass_count": 1,
-    "action": "refine",
-    "reason": "存在 needs-refine（2）或单票 reject；平均分 4.11。"
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base/engineer：案例 2 手算 a/h 数字自相矛盾；按交替更新写清并用新 a 算 h，补归一化。",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": [],
-    "summary": "修正 HITS 三页小图手算：先 a 后 h，给出归一化向量。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 162,
-  "l1_pass": true
+  ]
 }
