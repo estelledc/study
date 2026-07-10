@@ -9,6 +9,8 @@ import { promisify } from 'node:util';
 const execFile = promisify(execFileCallback);
 const FROZEN_PUBLIC_REDLINE_BASELINE_COMMIT = 'acbf24baf4641c0f80a2a6c624abfb37f4cadefc';
 const PUBLIC_REDLINE_BASELINE_SCHEMA = 'study-public-redline-baseline-v1';
+const FROZEN_PUBLIC_REDLINE_ENTRY_COUNT = 6;
+const FROZEN_PUBLIC_REDLINE_ENTRIES_SHA256 = 'a843e8f165d32bbb22609247e59785df702b63e6ad1450549c79097d528a21fb';
 const BASELINE_VERIFICATION_ERROR = 'public-redline baseline verification failed';
 const PLACEHOLDER_USERS = new Set([
   'app', 'coder', 'container', 'default', 'home', 'me', 'name', 'node', 'oai',
@@ -312,6 +314,11 @@ export async function verifyPublicRedlineBaseline(baseline, rootDir = process.cw
       }
       if (!findingsByPath.get(entry.path).has(key)) throw new Error();
     }
+    const canonicalEntries = `${[...seenEntries].sort().join('\n')}\n`;
+    if (
+      seenEntries.size !== FROZEN_PUBLIC_REDLINE_ENTRY_COUNT
+      || createHash('sha256').update(canonicalEntries).digest('hex') !== FROZEN_PUBLIC_REDLINE_ENTRIES_SHA256
+    ) throw new Error();
   } catch {
     // Do not propagate Git stderr, paths, fingerprints, or matched source values.
     throw new Error(BASELINE_VERIFICATION_ERROR);

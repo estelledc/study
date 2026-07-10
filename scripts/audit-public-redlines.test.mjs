@@ -27,6 +27,21 @@ function fictionalSensitiveText() {
   return [mac, linux, windows, privateKey, token].join('\n');
 }
 
+async function initIsolatedRepositoryWithFrozenObjects(rootDir) {
+  await execFile('git', ['init', '-q'], { cwd: rootDir });
+  const { stdout } = await execFile('git', ['rev-parse', '--git-path', 'objects'], {
+    cwd: REPOSITORY_ROOT,
+  });
+  const sourceObjects = path.resolve(REPOSITORY_ROOT, stdout.trim());
+  const alternatesDirectory = path.join(rootDir, '.git', 'objects', 'info');
+  await fs.mkdir(alternatesDirectory, { recursive: true });
+  await fs.writeFile(path.join(alternatesDirectory, 'alternates'), `${sourceObjects}\n`, 'utf8');
+  return JSON.parse(await fs.readFile(
+    path.join(REPOSITORY_ROOT, 'data/public-redline-baseline.json'),
+    'utf8',
+  ));
+}
+
 test('fictional fixtures detect three user-home forms, key headers and tokens', () => {
   const findings = scanTextForPublicRedlines(fictionalSensitiveText(), 'fixture.txt');
   assert.deepEqual(findings.map(({ category }) => category).sort(), [
@@ -125,6 +140,20 @@ test('audit proves every baseline entry from the frozen commit and rejects addit
       return true;
     },
   );
+
+  const historicalButUnapproved = {
+    category: 'posix-user-absolute-path',
+    path: '.claude/skills/auto-push/SKILL.md',
+    fingerprint: '01963be059371c815ec7280b90f8aa97e562ef6e29aa6a70e459d691d29c0132',
+  };
+  await assert.rejects(
+    auditPublicRedlines({
+      rootDir: REPOSITORY_ROOT,
+      baseline: { ...baseline, entries: [...baseline.entries, historicalButUnapproved] },
+      suppliedPaths: [],
+    }),
+    { message: 'public-redline baseline verification failed' },
+  );
 });
 
 test('placeholder paths and URL path fragments are suppressed', () => {
@@ -151,7 +180,7 @@ test('tracked environment variants and signing artifacts are file-level violatio
 
 test('supplied stdin candidates are intersected with Git tracked files', async () => {
   const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'study-redlines-'));
-  await execFile('git', ['init', '-q'], { cwd: rootDir });
+  const baseline = await initIsolatedRepositoryWithFrozenObjects(rootDir);
   await fs.writeFile(path.join(rootDir, '.gitignore'), '.env.*\n', 'utf8');
   await fs.writeFile(path.join(rootDir, 'safe.txt'), 'public text\n', 'utf8');
   await fs.writeFile(
@@ -163,11 +192,7 @@ test('supplied stdin candidates are intersected with Git tracked files', async (
 
   const report = await auditPublicRedlines({
     rootDir,
-    baseline: {
-      schema_version: 'study-public-redline-baseline-v1',
-      baseline_commit: FROZEN_BASELINE_COMMIT,
-      entries: [],
-    },
+    baseline,
     suppliedPaths: ['safe.txt', '.env.local'],
   });
   assert.equal(report.summary.files_scanned, 1);
@@ -178,7 +203,7 @@ test('supplied stdin candidates are intersected with Git tracked files', async (
 
 test('tracked symlinks are blocked without following an ignored target', async () => {
   const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'study-redline-link-'));
-  await execFile('git', ['init', '-q'], { cwd: rootDir });
+  const baseline = await initIsolatedRepositoryWithFrozenObjects(rootDir);
   await fs.writeFile(path.join(rootDir, '.gitignore'), '.env.*\n', 'utf8');
   await fs.writeFile(path.join(rootDir, '.env.local'), fictionalSensitiveText(), 'utf8');
   await fs.symlink('.env.local', path.join(rootDir, 'linked-runtime'));
@@ -186,11 +211,7 @@ test('tracked symlinks are blocked without following an ignored target', async (
 
   const report = await auditPublicRedlines({
     rootDir,
-    baseline: {
-      schema_version: 'study-public-redline-baseline-v1',
-      baseline_commit: FROZEN_BASELINE_COMMIT,
-      entries: [],
-    },
+    baseline,
     suppliedPaths: ['linked-runtime', '.env.local'],
   });
   assert.equal(report.summary.files_scanned, 1);
@@ -261,7 +282,7 @@ test('known text extensions decode the whole UTF-8 file before checking Unicode 
 
 test('tracked binary audit blocks embedded tokens while allowing a strict WebP fixture', async () => {
   const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'study-redline-binary-'));
-  await execFile('git', ['init', '-q'], { cwd: rootDir });
+  const baseline = await initIsolatedRepositoryWithFrozenObjects(rootDir);
   await fs.mkdir(path.join(rootDir, 'public'), { recursive: true });
   const token = [['gh', 'p_'].join(''), 'f'.repeat(36)].join('');
   await fs.writeFile(path.join(rootDir, 'public/valid.webp'), webp());
@@ -269,11 +290,7 @@ test('tracked binary audit blocks embedded tokens while allowing a strict WebP f
   await execFile('git', ['add', 'public'], { cwd: rootDir });
   const report = await auditPublicRedlines({
     rootDir,
-    baseline: {
-      schema_version: 'study-public-redline-baseline-v1',
-      baseline_commit: FROZEN_BASELINE_COMMIT,
-      entries: [],
-    },
+    baseline,
   });
   assert.equal(report.summary.binary_allowed, 2);
   assert.equal(report.summary.blocking >= 1, true);
