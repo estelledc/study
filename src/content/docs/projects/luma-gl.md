@@ -1,5 +1,5 @@
 ---
-title: luma.gl
+title: luma.gl — 给 WebGPU/WebGL 用的中低层 GPU 工具箱
 来源: https://github.com/visgl/luma.gl
 日期: 2026-07-08
 分类: 图形可视化
@@ -8,155 +8,142 @@ title: luma.gl
 
 ## 是什么
 
-**luma.gl** 是一套面向 WebGPU / WebGL 的中低层 GPU 工具集。日常类比：
+**luma.gl** 是一套面向 WebGPU / WebGL 的**中低层 GPU 工具集**（vis.gl 生态的底层）。日常类比：
 
-- 如果 Canvas 是“画布”，
-- WebGL 是“画笔工具”，
-- 那 luma.gl 就是“提供刷子、调色板、分层合成流水线的画室后端”。
+- Canvas 是画布，WebGL/WebGPU 是画笔说明书；
+- luma.gl 是**画室后端**：刷子（shader）、颜料桶（Buffer/Texture）、流水线（Model/animation loop）都备好，你仍自己决定画什么。
 
-它不是一个单一的大框架，而是一组围绕 `GPU context` 的构建块：
+它不是 Three.js 那种成品 3D 引擎，而是一组围绕 **GPU Device（显卡上下文）** 的构建块：shader（着色器，GPU 上跑的小程序）管理、缓冲区/纹理封装、动画循环、资源生命周期。少写样板，又不被高层框架绑死。
 
-- shader 管理、
-- 缓冲区和纹理封装、
-- 动画循环、
-- 对象模型与资源生命周期。
-
-这让你不必从最底层 API 里每次重写样板，也不会被框架完全绑死。
+一句话定位：**你要自己控 GPU，但不想每次从 `getContext('webgl2')` 重写样板时，用 luma.gl。**
 
 ## 为什么重要
 
-很多前端可视化项目在 WebGL 里踩坑最早是：
+不理解 luma.gl，下面这些事说不清：
 
-- 管线代码过于重复，
-- shader 生命周期乱、资源泄漏，
-- 每个项目都在重复同一套初始化逻辑。
-
-luma.gl 的意义在于：
-
-- **把“图形底层固定动作”工程化**；
-- 在保持低层控制权的前提下加快起步；
-- 与 vis.gl 体系（deck.gl 等）保持配套。
-
-它和 Three.js 的差别在于：
-
-- Three.js 更偏“成品引擎体验”；
-- luma.gl 更偏“你想自己控制 GPU 的高级封装层”。
+- 为什么 deck.gl 能画上万个地理点还不至于每次从 raw WebGL 重写——底层管线多半落在 luma.gl
+- 为什么前端可视化最容易「全黑屏 / 内存飙升」——shader 类型对不上、GPU 资源没 dispose（释放）
+- 为什么选 Three.js 还是 luma.gl：要成品场景选前者；要**自己控管线**又要少写样板选后者
+- 为什么 WebGPU 普及后 luma.gl v9 把 Device 抽象成统一入口——同一套 Model API 可落到 WebGL2 或 WebGPU
 
 ## 核心要点
 
-### 1. 以 WebGPU/WebGL API 为锚点的薄封装
+1. **薄封装，锚在真实 GPU API**：不把细节藏死。类比：给你更好握的螺丝刀，不是全自动装配线。`Device` 统一创建 Buffer / Texture / 渲染通道。
 
-luma.gl 不是把 GPU 抽象得过于高层，不让你碰细节。它更像“给你更顺手的 API 入口”。
+2. **Shader module 可拼装**：把光照、投影等 GLSL/WGSL 片段做成 module 复用，减少复制字符串和 attribute（顶点属性）传错。
 
-### 2. Shader module 系统
+3. **对象化资源生命周期**：`Buffer`（GPU 内存块）、`Texture`（贴图）、`Framebuffer`（离屏画布）有统一创建/销毁语义；长运行应用靠 `destroy`/`dispose` 回收。
 
-你可以把常用 shader 片段封装为 module，
-在多个项目间复用，减少重复字符串拼接和属性传递 bug。
+4. **Model + animation loop**：`Model` 绑齐 shader、几何、bindings 后 `draw`；loop 不只是裸 `requestAnimationFrame`，可按设备节奏调度。
+5. **服务可视化栈，不是图表库**：deck.gl / kepler.gl 用它画图层；你要的是折线、柱状图 UI，应先看高层图表库。
 
-### 3. 对象化资源管理
-
-`Buffer`、`Texture`、`Framebuffer` 等都可通过统一对象语义管理。
-
-- 有利于生命周期管理；
-- 有利于异常路径下的回收。
-
-### 4. animation loop 与设备抽象
-
-动画循环不是仅靠 `requestAnimationFrame` 裸调度。
-
-- 可替换的 loop 结构；
-- 与设备特性匹配的更新节奏。
-
-### 5. 与数据可视化栈协作
-
-luma.gl 常常在 deck.gl 生态扮演底层支撑，
-例如大量几何体、地理数据可视化的渲染。它提供“底层能力”，不是应用级图表定义。
+把这五条合在一起看：luma.gl 的价值在「工程化的低层」，不在「开箱即用的场景编辑器」。
 
 ## 实践案例
 
-### 案例 1：渲染一条折线轨迹
+### 案例 1：用 Model 画一条折线轨迹
 
-你有一组 3D 坐标点：
+```js
+import {luma} from '@luma.gl/core'
+import {Model} from '@luma.gl/engine'
 
-1. 用 `Buffer` 上传坐标；
-2. 绑定 shader 与 attribute；
-3. 每帧更新 transform 与 viewport；
-4. 绘制时直接提交 draw call。
+const device = await luma.createDevice({type: 'webgl'})
+const positions = device.createBuffer({
+  data: new Float32Array([0, 0, 0, 1, 0, 0, 1, 1, 0]) // 3 个 xyz 点
+})
+const model = new Model(device, {
+  vs: `attribute vec3 positions; void main() {
+    gl_Position = vec4(positions, 1.0); }`,
+  fs: `void main() { gl_FragColor = vec4(0.2, 0.6, 1.0, 1.0); }`,
+  attributes: {positions},
+  bufferLayout: [{name: 'positions', format: 'float32x3'}],
+  topology: 'line-strip'
+})
+const pass = device.beginRenderPass({clearColor: [0, 0, 0, 1]})
+model.draw(pass)
+pass.end()
+```
 
-相比直接 raw WebGL，你少写大量状态绑定细节。
+**逐部分**：`createDevice` 拿到 GPU 入口 → `createBuffer` 上传坐标 → `Model` 绑顶点着色器/片元着色器与 attribute → `beginRenderPass` + `draw` 提交一帧。比手写 raw WebGL 少大量状态绑定。
 
-### 案例 2：在一个项目复用 Shader Module
+### 案例 2：Shader module 跨项目复用
 
-项目 A/B/C 都需要同一组法线与光照逻辑。
+```js
+// lighting.glsl.js —— 抽成 module，A/B 项目 import 同一份
+export const lighting = {
+  name: 'lighting',
+  vs: `vec3 lightDir;`,
+  fs: `vec3 applyLight(vec3 color, vec3 n) {
+    return color * max(dot(n, lightDir), 0.0); }`
+}
+// 使用方：modules: [lighting]，再在主 shader 里调用 applyLight
+```
 
-- 传统方式：每个项目复制字符串；
-- luma.gl 方式：抽成 module，统一维护版本。
+传统做法是每个项目复制光照字符串；module 化后改一处、版本可锁定，减少「这个项目忘了同步法线」类 bug。deck.gl 图层里大量投影/拾取逻辑也是同一套路。
 
-### 案例 3：性能排查
+### 案例 3：帧率不稳时的三步排查
 
-你发现帧率不稳定。
+1. 在每帧后打日志：活跃 `buffer`/`texture` 数量是否只增不减（泄漏信号）。
+2. 确认路由离开或销毁图层时调用了资源 `destroy`（不要只删 JS 引用）。
+3. 核对 attribute `format`（如 `float32x3`）与 shader 里 `vec3` 一致——对不上常见症状是**全黑屏**且无 JS 异常。
 
-- 检查 resource life-cycle 是否异常增长，
-- 检查重复创建纹理是否跨帧泄漏，
-- 检查 loop 节奏是否与 GPU 同步导致卡顿。
+可选第四步：用浏览器 Performance/GPU 面板看是否每帧同步上传大 Buffer；轨迹回放应复用 Buffer + `write`，而不是反复 `createBuffer`。
 
 ## 踩过的坑
 
-1. **把它当全栈框架用**：luma.gl 适合可视化与可视工程底层，不等于“按钮和布局一把梭”。
-2. **忽略设备兼容策略**：WebGPU 支持度、浏览器差异要提前测试。
-3. **误配 shader 数据类型**：attribute 映射错误是最常见的“全黑屏”来源。
-4. **资源回收不及时**：未及时 dispose 的 GPU 资源会在长运行里造成内存飙升。
-5. **过早抽象**：新项目若不需要复杂管线，不要一次性铺太深，先从简单渲染起。
+1. **当全栈 UI 框架用**：luma.gl 不管按钮/布局；页面壳仍用 React/Vue，它只负责画布内 GPU。
+2. **忽略 WebGPU 支持度**：生产前用 `luma.createDevice({type: 'best-available'})`，并在目标浏览器矩阵（Chrome/Safari/Firefox）各测一遍。
+3. **attribute 类型映射错**：CPU 侧 `Float32Array` 长度/format 与 shader 不一致 → 黑屏，优先打 `device.getDefaultCanvasContext()` 相关日志。
+4. **长运行不 destroy**：轨迹回放数小时后 GPU 内存飙升，先查是否每帧 `createBuffer` 却从不释放。
 
-## 适用场景
+## 适用 vs 不适用场景
 
-- 数据可视化、地理空间渲染、仿真可视化。
-- 需要自定义 shader、渲染管线可控的项目。
-- 以 deck.gl、kepler.gl 等体系为主的可视化平台。
+**适用**：
 
-## 不适用场景
+- 地理/大数据可视化底层（点数常在 10⁴–10⁶，需自定义 shader）
+- 已有或计划接入 deck.gl / kepler.gl 的平台
+- 需要 WebGL2 与 WebGPU 同一套资源抽象的中型渲染模块（约数百到数千行渲染代码）
 
-- 你只是要做普通 CRUD 后台；
-- 你不想维护 WebGL 资源生命周期；
-- 希望“几分钟内”做出标准图表 UI（这时候高级可视化库更快）。
+**不适用**：
 
-## 历史小故事
+- CRUD 后台或标准图表（ECharts/Chart.js 更快）
+- 不想碰 GPU 资源生命周期的团队
+- 只要「几分钟出场景」的产品演示（Three.js / Babylon 更合适）
+- 纯 2D 看板且无自定义管线需求——上 luma.gl 会过度工程
 
-luma.gl 出现时，社区里一个共识是：
+## 历史小故事（可跳过）
 
-- 直接写 WebGL 太底层，
-- 但三方库又不一定合口味。
-
-vis.gl 的思路是把生态拆分：
-
-- luma.gl 做低层 GPU 工具，
-- deck.gl 做高层图层与场景。
-
-这让团队可以按项目复杂度选层次，而不被“全功能框架”绑死。
+- **2016–2017**：vis.gl（源自 Uber 可视化开源）把「低层 GPU」与「高层图层」拆开——luma.gl 负责前者，deck.gl 负责后者，避免一个巨无霸框架绑死所有项目。
+- **随后几年**：WebGL2 成为默认后端；shader module、资源对象模型成型，社区开始把它当「可视化专用 GPU 工具箱」。
+- **v9 一代**：向 WebGPU 对齐，`Device` / `Model` / RenderPass 成为主叙事；旧式直接摸 `gl` 的写法逐渐退到兼容层，文档示例也改为 Device 优先。
 
 ## 学到什么
 
-1. 图形栈里，不是“越高层越省心”，而是“越可控越可复用”。
-2. 统一的 shader/module 体系能明显降低维护成本。
-3. 资源生命周期管理是 GPU 应用里最容易被忽视却最致命的质量问题。
-4. 选 luma.gl 的场景往往是“要做的不是图表，而是渲染系统”。
+1. 图形栈的关键不是「越高层越省心」，而是**可控与复用的平衡点**。
+2. 统一的 shader module 能显著降低多项目光照/投影漂移。
+3. GPU 资源生命周期是长运行可视化里最容易被忽视的质量问题。
+4. 选 luma.gl 通常意味着：你要做的是**渲染系统**，不是一张图表。
+5. 与 deck.gl 分层协作时，先问「我在改图层语义还是改 GPU 资源」——前者留在 deck，后者才下沉到 luma。
 
 ## 延伸阅读
 
-- GitHub 仓库与文档：[visgl/luma.gl](https://github.com/visgl/luma.gl)
-- 示例与演进：vis.gl 官网教程与生态项目。
-- 同类栈对比：
-  - [[webgl-01]] —— WebGL 基础与调试。
-  - [[deck-gl]] —— 可视化图层体系。
+- 仓库与文档：[visgl/luma.gl](https://github.com/visgl/luma.gl)
+- API：[Model](https://luma.gl/docs/api-reference/engine/model) / [Device](https://luma.gl/docs/api-reference/core/device)
+- vis.gl 生态总览：从 luma.gl → deck.gl → kepler.gl 的分层
+- [[deck-gl]] —— 建在 luma.gl 之上的图层体系
+- [[webgl-01]] —— WebGL 基础与调试
+- [[webgpu]] —— 浏览器下一代 GPU API
 
 ## 关联
 
-- [[deck-gl]] —— 可视化高层框架。
-- [[webgpu]] —— WebGPU API 方向。
-- [[webgl]] —— WebGL 历史基础。
-- [[visualization-engine]] —— 数据可视化系统工程。
+- [[deck-gl]] —— 可视化高层框架，运行时依赖 luma.gl 能力
+- [[webgpu]] —— luma.gl v9 主推后端之一
+- [[webgl]] —— 长期兼容的 WebGL2 路径
+- [[visualization-engine]] —— 数据可视化系统工程语境
+- [[threejs]] —— 更偏成品引擎的对照选项
+- [[kepler-gl]] —— 更上层的地理分析应用，间接建立在同一生态
 
 ## 反向链接
 
-- [[luma-gl]] —— 本条目本体。
-- [[deck-gl]] —— 与可视化栈的同频协作。
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+
