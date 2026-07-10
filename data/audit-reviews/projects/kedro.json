@@ -1,0 +1,86 @@
+{
+  "slug": "kedro",
+  "area": "projects",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "装修标准化包类比贴合；OmegaConfigLoader 对零基础稍陡，但有版本锚点，可接受。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "QuantumBlack / 2019 开源 / LF AI & Data 叙事与公开资料一致；star 数属快照，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "node/catalog 最小例子可跟做；踩坑（别当调度器、别在 node 里读文件）非常可操作。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "reject_count": 0,
+    "needs_refine_count": 0,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。",
+    "weakest_sections": [
+      {
+        "reviewer": "zero-base",
+        "section": "## 核心要点",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "academic",
+        "section": "## 历史小故事（可跳过）",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "engineer",
+        "section": "## 适用 vs 不适用场景",
+        "verdict": "pass"
+      }
+    ],
+    "fix_hints": [
+      {
+        "reviewer": "zero-base",
+        "hint": "装修标准化包类比贴合；OmegaConfigLoader 对零基础稍陡，但有版本锚点，可接受。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "QuantumBlack / 2019 开源 / LF AI & Data 叙事与公开资料一致；star 数属快照，可接受。"
+      },
+      {
+        "reviewer": "engineer",
+        "hint": "node/catalog 最小例子可跟做；踩坑（别当调度器、别在 node 里读文件）非常可操作。"
+      }
+    ]
+  }
+}

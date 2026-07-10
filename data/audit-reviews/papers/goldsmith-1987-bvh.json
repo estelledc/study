@@ -1,0 +1,91 @@
+{
+  "slug": "goldsmith-1987-bvh",
+  "area": "papers",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "仓库找针 / 飞镖类比很强；案例 1 数字若修正后会更易跟算。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "核心要点把几何概率归因于「Mally」不成立，应为 Crofton（或写「几何概率 / 积分几何经典结果」）。",
+        "案例 1 写「0.1m³ 小盒子」却给表面积 0.06 m²——后者对应边长约 0.1m（体积 0.001m³）；体积与表面积口径不一致，需改正。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "binned SAH / Embree / SBVH 边界写得具体；不适用场景有量化（<100 物体、每帧大变用 LBVH）。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.34,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "action": "refine",
+    "reason": "存在 needs-refine 或平均分 < 4；reject < 2，走 refine。",
+    "weakest_sections": [
+      {
+        "reviewer": "zero-base",
+        "section": "## 实践案例",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "academic",
+        "section": "## 实践案例",
+        "verdict": "needs-refine"
+      },
+      {
+        "reviewer": "engineer",
+        "section": "## 实践案例",
+        "verdict": "pass"
+      }
+    ],
+    "fix_hints": [
+      {
+        "reviewer": "zero-base",
+        "hint": "仓库找针 / 飞镖类比很强；案例 1 数字若修正后会更易跟算。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "核心要点把几何概率归因于「Mally」不成立，应为 Crofton（或写「几何概率 / 积分几何经典结果」）。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "案例 1 写「0.1m³ 小盒子」却给表面积 0.06 m²——后者对应边长约 0.1m（体积 0.001m³）；体积与表面积口径不一致，需改正。"
+      },
+      {
+        "reviewer": "engineer",
+        "hint": "binned SAH / Embree / SBVH 边界写得具体；不适用场景有量化（<100 物体、每帧大变用 LBVH）。"
+      }
+    ]
+  }
+}

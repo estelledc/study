@@ -1,0 +1,86 @@
+{
+  "slug": "kepler-gl",
+  "area": "projects",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Excel 透视表类比贴合；attribute/uniform 对零基础稍陡，但有「传 GPU 一次」桥接，可接受。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Lyft / 滴滴都把它当事实标准」略满，属行业归纳；Uber 2018 开源与 OpenJS 托管主线正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "React 嵌入示例概念正确；踩坑（Mapbox token、5M 点内存、schemaManager.save）可操作。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "reject_count": 0,
+    "needs_refine_count": 0,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。",
+    "weakest_sections": [
+      {
+        "reviewer": "zero-base",
+        "section": "## 核心要点",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "academic",
+        "section": "## 为什么重要",
+        "verdict": "pass"
+      },
+      {
+        "reviewer": "engineer",
+        "section": "## 实践案例",
+        "verdict": "pass"
+      }
+    ],
+    "fix_hints": [
+      {
+        "reviewer": "zero-base",
+        "hint": "Excel 透视表类比贴合；attribute/uniform 对零基础稍陡，但有「传 GPU 一次」桥接，可接受。"
+      },
+      {
+        "reviewer": "academic",
+        "hint": "「Lyft / 滴滴都把它当事实标准」略满，属行业归纳；Uber 2018 开源与 OpenJS 托管主线正确。"
+      },
+      {
+        "reviewer": "engineer",
+        "hint": "React 嵌入示例概念正确；踩坑（Mapbox token、5M 点内存、schemaManager.save）可操作。"
+      }
+    ]
+  }
+}
