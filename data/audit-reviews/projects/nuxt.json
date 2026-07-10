@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "酒店服务类比清晰；缺「历史小故事」段，零基础读者少一条时间线锚点"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 2 写「必须装 Volar + @nuxt/typescript」：@nuxt/typescript 是 Nuxt 2 包；Nuxt 3 应写官方 Vue - Official / Volar + 内置 TypeScript 支持"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 3 同时提 process.server 与 import.meta.client：Nuxt 3 主推 import.meta.server/client，宜标明旧写法以免混用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–3 可跟做；踩坑里 TS 插件与 process.server 表述需按 Nuxt 3 校正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "缺历史小故事；适用/不适用边界尚可，可补一句「中大型 SSR 站 vs 纯 SPA」量化取舍"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "酒店服务类比清晰；缺「历史小故事」段，零基础读者少一条时间线锚点"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 2 写「必须装 Volar + @nuxt/typescript」：@nuxt/typescript 是 Nuxt 2 包；Nuxt 3 应写官方 Vue - Official / Volar + 内置 TypeScript 支持",
+        "踩坑 3 同时提 process.server 与 import.meta.client：Nuxt 3 主推 import.meta.server/client，宜标明旧写法以免混用"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例 1–3 可跟做；踩坑里 TS 插件与 process.server 表述需按 Nuxt 3 校正",
+        "缺历史小故事；适用/不适用边界尚可，可补一句「中大型 SSR 站 vs 纯 SPA」量化取舍"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "BERT 盖词 vs MAE 盖图块类比很好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都是结果数字，缺少像模板那样的可逐步读的伪代码（mask→encode→decode→MSE）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 He et al. CVPR 2022 / arXiv:2111.06377 正确；ViT-H 87.8%、ADE20K 53.6 等数字与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「2021 年做的」指 arXiv 时间可接受，可加半句「CVPR 2022」避免和会议年混淆"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例无任何可跟做伪代码/API 骨架，工程师无法复现 mask ratio / asymmetric forward"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用边界有用；全文 142 行低于 quality-gate 150 下限，必须扩写"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "BERT 盖词 vs MAE 盖图块类比很好",
+        "三个案例都是结果数字，缺少像模板那样的可逐步读的伪代码（mask→encode→decode→MSE）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 He et al. CVPR 2022 / arXiv:2111.06377 正确；ViT-H 87.8%、ADE20K 53.6 等数字与论文一致",
+        "开篇「2021 年做的」指 arXiv 时间可接受，可加半句「CVPR 2022」避免和会议年混淆"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例无任何可跟做伪代码/API 骨架，工程师无法复现 mask ratio / asymmetric forward",
+        "踩坑与适用边界有用；全文 142 行低于 quality-gate 150 下限，必须扩写"
+      ]
+    }
+  ]
+}
