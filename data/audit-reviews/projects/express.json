@@ -1,7 +1,4 @@
 {
-  "slug": "express",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.44,
   "reject_count": 0,
@@ -81,29 +78,5 @@
         "笔记已超 200 行 quality-gate：反向链接被 regen 堆到 50+ 条，应清空为占位；适用场景里 QPS>5万 可保留但标明是粗量级经验阈值。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "清空超长反向链接以通过 200 行门禁；补 v5 稳定版时间线；弱化绝对 QPS 阈值表述。",
-    "sections_modified": [
-      "## 历史小故事",
-      "## 适用 vs 不适用场景",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "lines": 168,
-  "quality_gate": {
-    "pass": true,
-    "lines": 168,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

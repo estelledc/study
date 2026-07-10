@@ -1,7 +1,4 @@
 {
-  "slug": "dijkstra-1965",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -81,28 +78,5 @@
         "伪代码与现代 Mutex/内存模型踩坑对工程读者很有用；适用边界清晰。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "纠正「8 页纸 / 4 页正文」页数误述，统一为 CACM 短文约一两页。",
-    "sections_modified": [
-      "## 是什么",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  },
-  "lines": 165,
-  "quality_gate": {
-    "pass": true,
-    "lines": 165,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

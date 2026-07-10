@@ -1,7 +1,4 @@
 {
-  "slug": "diffusion-posterior-finite",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,19 +78,5 @@
         "案例是教学级伪实现，可跟做；适用/不适用已标明诊断用途而非生产采样器。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "lines": 150,
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

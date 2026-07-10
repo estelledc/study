@@ -1,7 +1,4 @@
 {
-  "slug": "expo",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.56,
   "reject_count": 0,
@@ -81,32 +78,5 @@
         "不要全局 npm i -g create-expo-app，改用 npx；profile 示例需可编译；适用/不适用缺少可操作边界（如是否需要自定义原生模块、是否必须脱离 managed/CNG）。末尾「额外补充」与反向链接堆砌应收敛到模板结构。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.56,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "补齐案例逐步解释与可编译示例，去掉无出处 30% 表述与额外补充段，收敛适用边界与历史节点。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "lines": 159,
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
