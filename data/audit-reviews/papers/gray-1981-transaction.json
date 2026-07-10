@@ -1,0 +1,105 @@
+{
+  "slug": "gray-1981-transaction",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "ATM/婚礼/合同类比贴合；案例 1 有逐步解释，2PC 婚礼类比可跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "VLDB 1981 / TR 81.3、ACI→ACID(1983)、Saga 1987 时序正确；『30% 性能代价』属教学量级估计，未构成硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "转账 SQL 可跟做；update-in-place/死锁平方律/长事务/real action 踩坑具体；毫秒级短事务边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5.0,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "ATM/婚礼/合同类比贴合；案例 1 有逐步解释，2PC 婚礼类比可跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "VLDB 1981 / TR 81.3、ACI→ACID(1983)、Saga 1987 时序正确；『30% 性能代价』属教学量级估计，未构成硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5.0,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "转账 SQL 可跟做；update-in-place/死锁平方律/长事务/real action 踩坑具体；毫秒级短事务边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 171,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "l1_pass": true
+}

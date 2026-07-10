@@ -125,15 +125,19 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 'B';
 COMMIT;
 ```
 
-三个动词、原子语义、隔离级别 —— **每一项**都是 Gray 1978 定义的。
+**逐步看**：① `BEGIN` 打开事务边界；② 两条 `UPDATE` 先写 WAL，再改缓冲页；③ `COMMIT` 只保证日志落盘。中间断电 → 重启按 UNDO 撤掉未提交改动。三个动词与原子语义都是 Gray 1978 定下的。
 
 ### 案例 2：MySQL InnoDB 的锁层级
 
-InnoDB 锁的类型：`IS / IX / S / X / SIX` —— 直接照搬 Gray 的意向锁表格，连命名都没改。
+InnoDB 锁类型：`IS / IX / S / X / SIX`——照搬 Gray 意向锁表，连命名都没改。
+
+**逐步看**：① 事务要改一行，先在表上拿 `IX`（意向排他）；② 再在行上拿 `X`；③ 另一事务想锁整表时，看到表上已有 `IX`，无法直接上表级 `X`，只能等。粗细粒度靠意向锁共存，正是讲义里的锁粒度层级。
 
 ### 案例 3：Spanner 跨洲事务用 2PC
 
-Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是一句 `COMMIT`。Gray 1978 的协议，46 年后跑在跨洲光纤上。
+Spanner 跨数据中心写订单，内部仍是 prepare → commit。
+
+**逐步看**：① 协调者问各副本"能提交吗？"（prepare）；② 副本写好 redo 后回 YES；③ 全 YES 才广播 COMMIT，对外仍是一句 `COMMIT`。Gray 1978 的 2PC，46 年后跑在跨洲光纤上；协调者挂掉仍会阻塞——讲义里写过的缺陷没变。
 
 ## 踩过的坑
 
@@ -185,18 +189,4 @@ Spanner 跨数据中心写一笔订单，内部跑 Paxos + 2PC。对外仍然是
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[aries-1992]] —— ARIES 1992 — 数据库崩溃后怎么把账目对回来
-- [[bayou-1995]] —— Bayou — 离线先改本地，再回来和别人合并
-- [[berenson-1995-isolation]] —— ANSI SQL 隔离级别批判 — 教科书的隔离定义其实有漏洞
-- [[bernstein-1981-cc]] —— Bernstein 1981 并发控制综述 — 把分布式数据库的 20+ 算法整成两条主线
-- [[cockroachdb]] —— CockroachDB — 分布式 SQL 数据库
-- [[dewitt-gray-1992]] —— DeWitt-Gray 1992 — 并行数据库取代专用机的宣言
-- [[gray-1981-transaction]] —— Gray 1981 — 把"事务"提升为通用抽象
-- [[multics-1965]] —— MULTICS 1965 — 把计算机做成像电力一样的公共服务
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[presumed-abort-1986]] —— Presumed Abort/Commit — 让 2PC 少写日志少发消息的两个默认共识
-- [[saga-1987]] —— Sagas — 长事务拆成一串能"反向走回去"的小事务
-- [[spanner]] —— Spanner — 全球分布式 SQL 数据库
-- [[unix-1974]] —— UNIX 1974 — 用极小内核做出能用的分时系统
 
