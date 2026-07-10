@@ -1,0 +1,31 @@
+scripts/lib/note-id-consumers.test.mjs
+  s_59c0a87a55583f::t_474cac5ac90384 1-58
+scripts/lib/queue-store.mjs
+  s_59c0a87a55583f::t_d62c5ff2ae2e49 4,18,212
+scripts/lib/queue-store.test.mjs
+  s_59c0a87a55583f::t_aeacb14964382c 30-52
+scripts/lib/queue-transaction.mjs
+  s_59c0a87a55583f::t_b7504650af6e61 27-53,90-101,188-202,218-219,311-312,319-324,328-333
+scripts/lib/queue-transaction.test.mjs
+  s_59c0a87a55583f::t_d44efcb3db7d45 168-226
+scripts/recover-queue-state.test.mjs
+  s_59c0a87a55583f::t_0b1e8e9de704b9 14,174,187-191,198-202,209
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "57dceffbd727436b80d5ac298a942d518173ba32",
+  "prompts": {},
+  "sessions": {
+    "s_59c0a87a55583f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_59c0a87a55583f",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
