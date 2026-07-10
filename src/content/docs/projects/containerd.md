@@ -35,7 +35,7 @@ nerdctl run -d -p 8080:80 nginx
 - 为什么 2022 年 Kubernetes 1.24 移除 dockershim 后**集群没崩**——因为 containerd 早就是 K8s 默认运行时，dockershim 只是中间垫片
 - 为什么 Docker 装好后里面**也跑着一个 containerd 守护进程**——Docker 自己 2017 年把这块剥离捐给了 CNCF
 - 为什么排查容器问题时，老司机会跳过 `docker ps` 直接用 `ctr` 或 `crictl`——绕过上层就能看到运行时真实状态
-- 为什么 nerdctl / Podman / K3s 这些项目敢说自己『不依赖 Docker』——它们都直接对接 containerd
+- 为什么 nerdctl / K3s / Kubernetes 这些工具敢说自己『不依赖 Docker』——它们直接对接 containerd 或 CRI，而 Podman 走的是另一条无守护进程路线
 
 ## 核心要点
 
@@ -133,6 +133,15 @@ ctr run -d --rm docker.io/library/nginx:latest demo
 - Windows 容器场景受限（虽然支持，但生态主要在 Linux）
 - 想要『一个二进制全包』的开发者体验——那是 Docker 的定位
 
+## 历史小故事（可跳过）
+
+- **2013 年前后**：Docker 把容器体验打包成一个完整产品，运行时逻辑还和 build / CLI 混在一起
+- **2015 年**：OCI 成立，镜像格式和 runtime 接口开始标准化，runc 成为底层执行器
+- **2016 年**：containerd 从 Docker 中拆出来，专注镜像拉取、快照、容器生命周期这些稳定内核
+- **2017 年**：Docker 将 containerd 捐给 CNCF，Kubernetes 社区也推动 CRI 运行时接口成熟
+- **2019 年**：containerd 从 CNCF 毕业，成为生产 K8s 集群里最常见的运行时底座
+- **2022 年**：Kubernetes 1.24 移除 dockershim，containerd 从“Docker 背后的组件”变成很多集群的直接入口
+
 ## 学到什么
 
 1. **关注点分离的胜利**：Docker 把『build / 运行 / 编排』全做了，K8s 时代发现『运行』这块最稳定，剥出来标准化就成了 containerd——CNCF 2019 年毕业。
@@ -153,3 +162,7 @@ ctr run -d --rm docker.io/library/nginx:latest demo
 - [[kubernetes]] —— 最大用户，1.24 版本起直接走 containerd 而不再经 Docker
 - [[runc]] —— containerd 默认调用的 OCI runtime，真正创建 namespace / cgroup
 - [[k3s]] —— 轻量 K8s 发行版，内置 containerd 不需要单独安装
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

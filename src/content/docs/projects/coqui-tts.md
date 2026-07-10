@@ -156,3 +156,7 @@ tts --text "$(cat article.txt)" \
 - [[pytorch]] —— Coqui TTS 训练和推理框架
 - [[transformers]] —— XTTS-v2 的 Transformer 主干和 HuggingFace 同生态
 - [[hindley-milner]] —— 不直接相关，但同样体现「一套通用机制覆盖大量特例」的设计哲学
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

@@ -141,7 +141,7 @@ NuSMV -bmc -bmc_length 30 pipeline.smv
 - [[biere-bmc-1999]] —— BMC 算法本体，NuSMV 2 把它装成第二个引擎
 - [[clarke-emerson-1981]] —— CTL 模型检测的源头，NuSMV 验证的语言之一
 - [[clarke-cegar-2003]] —— 反例驱动抽象细化，是 NuSMV 状态爆炸的常用解法
-- [[spin]] —— 同时代另一个流派的模型检测器，显式状态枚举 + LTL，互为对照
+- [[holzmann-spin-1997]] —— 同时代另一个流派的模型检测器，显式状态枚举 + LTL，互为对照
 - [[ssa]] —— 编译器领域同样追求"符号化压缩信息"的思路
 - [[hoare-logic]] —— 命题级程序证明的另一支，跟模型检测互补：Hoare 偏手工偏无穷状态，NuSMV 偏自动偏有限状态
 
@@ -152,8 +152,8 @@ NuSMV -bmc -bmc_length 30 pipeline.smv
 - [[biere-bmc-1999]] —— Bounded Model Checking — 把硬件验证翻译成一道 SAT 题
 - [[clarke-cegar-2003]] —— CEGAR — 用反例自动改进抽象，让大软件能被验证
 - [[clarke-emerson-1981]] —— Clarke-Emerson 1981 — 让机器自己检查并发程序对不对
+- [[holzmann-spin-1997]] —— SPIN — 让计算机帮你穷举并发程序的所有可能执行
 - [[hoare-logic]] —— Hoare Logic — 把"程序对不对"变成"数学证明对不对"
 - [[mcmillan-smv-1993]] —— McMillan SMV 1993 — 把状态空间从 10^6 推到 10^20 的符号模型检测
-- [[spin]] —— Spin — 用 WebAssembly 模块当 serverless handler 的开源框架
 - [[ssa]] —— SSA — 静态单赋值形式
 
