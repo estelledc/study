@@ -50,7 +50,9 @@ gc():
 ### 案例 1：50 行 C 跑通 Cheney 主循环
 
 ```c
-typedef struct Cell { int header; struct Cell *child[2]; } Cell;
+#include <stdint.h>
+
+typedef struct Cell { uintptr_t header; struct Cell *child[2]; } Cell;
 static char *from_space, *to_space, *scan, *free_ptr;
 
 static Cell *forward(Cell *p) {
