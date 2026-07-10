@@ -1,0 +1,132 @@
+{
+  "slug": "hydra-1974",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例多为叙事，缺少代码/伪代码与『逐部分解释』，零基础很难把 capability 检查落到可跟做步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4/5 偏延伸联想，建议至少把案例 1 或 2 改成带伪代码的三步演示"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『HYDRA 之前没人系统化讲过机制 vs 策略』略绝对，可改成『HYDRA 是最早在完整内核里把两者同时讲清楚的系统之一』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "适用段把 seL4 写成『详见 [[hyperkernel-2017]]』易误导：hyperkernel 不是 seL4，应分开表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例没有可跟做的伪代码（如 C-list 查找 + 权限位检查），工程师视角难以验证概念"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "建议补一个最小 capability check / revoke 伪代码，并保留踩坑里 fd vs capability 的对比"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例多为叙事，缺少代码/伪代码与『逐部分解释』，零基础很难把 capability 检查落到可跟做步骤",
+        "案例 4/5 偏延伸联想，建议至少把案例 1 或 2 改成带伪代码的三步演示"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『HYDRA 之前没人系统化讲过机制 vs 策略』略绝对，可改成『HYDRA 是最早在完整内核里把两者同时讲清楚的系统之一』",
+        "适用段把 seL4 写成『详见 [[hyperkernel-2017]]』易误导：hyperkernel 不是 seL4，应分开表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例没有可跟做的伪代码（如 C-list 查找 + 权限位检查），工程师视角难以验证概念",
+        "建议补一个最小 capability check / revoke 伪代码，并保留踩坑里 fd vs capability 的对比"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 158,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true,
+  "audit_notes": "补 capability check/revoke/confused-deputy 伪代码与逐部分解释；弱化机制/策略绝对化表述；拆开 seL4 与 hyperkernel 关联；删非模板对比/一句话/下一步段并清空手填反向链接。"
+}
