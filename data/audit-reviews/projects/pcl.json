@@ -1,0 +1,137 @@
+{
+  "slug": "pcl",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "散装乐高分类台类比贴合滤波/邻域/分割流水线"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "PointCloud / KdTree / VoxelGrid / RANSAC 均有逐步白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有官方教程级代码 + 逐部分解释，零基础可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 PointCloudLibrary/pcl；ICRA 2011 Rusu & Cousins「3D is here」正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "VoxelGrid 46万→4万、1cm leaf、平面 RANSAC 与官方教程一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "定位为几何算法工具箱而非 3D 引擎/深度学习框架，无歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "KdTree / VoxelGrid / SACSegmentation 三例可跟做，参数含义清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "leaf size、单位、RANSAC 多参数联动等坑有用；可再补一条 IO/编译依赖坑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 C++ 点云流水线；不适用纯 Python 交互/建模渲染，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "散装乐高分类台类比贴合滤波/邻域/分割流水线",
+        "PointCloud / KdTree / VoxelGrid / RANSAC 均有逐步白话",
+        "三案例均有官方教程级代码 + 逐部分解释，零基础可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 PointCloudLibrary/pcl；ICRA 2011 Rusu & Cousins「3D is here」正确",
+        "VoxelGrid 46万→4万、1cm leaf、平面 RANSAC 与官方教程一致",
+        "定位为几何算法工具箱而非 3D 引擎/深度学习框架，无歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "KdTree / VoxelGrid / SACSegmentation 三例可跟做，参数含义清楚",
+        "leaf size、单位、RANSAC 多参数联动等坑有用；可再补一条 IO/编译依赖坑",
+        "适用 C++ 点云流水线；不适用纯 Python 交互/建模渲染，边界清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 177,
+  "l1_pass": true,
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}
