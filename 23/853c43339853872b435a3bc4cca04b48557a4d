@@ -1,0 +1,43 @@
+astro.config.mjs
+  s_9340ed41c548fc::t_3dc7fc2c8d799e 55,73,75,77-83,87,89-91,95-103,109
+public/favicon.svg
+  s_9340ed41c548fc::t_252c00681470d3 1-13
+src/content/docs/index.md
+  s_9340ed41c548fc::t_deb4d6b14bf174 2-3,7-16,18-23,25,27-29,31-37,39-44,46-53,55-57,59-67,69-71,73-83,85-87,89-94,96-99
+src/content/docs/start.md
+  s_9340ed41c548fc::t_95158bf74baa16 1-85
+src/content/docs/topics/ai-agent.md
+  s_9340ed41c548fc::t_c0e03ef3797fbf 1-77
+src/content/docs/topics/database.md
+  s_9340ed41c548fc::t_7713b993ac675d 1-47
+src/content/docs/topics/distributed-systems.md
+  s_9340ed41c548fc::t_71c585bb39cb55 1-47
+src/content/docs/topics/frontend.md
+  s_9340ed41c548fc::t_cdfa52bdd3cff5 1-67
+src/content/docs/topics/index.md
+  s_9340ed41c548fc::t_19e33ebfbf7e3e 1-55
+src/content/docs/topics/infrastructure.md
+  s_9340ed41c548fc::t_b4e338ec62fde9 1-47
+src/content/docs/topics/pl-type-systems.md
+  s_9340ed41c548fc::t_0e95f4f70dda2a 1-47
+src/styles/jx/product-ui.css
+  s_9340ed41c548fc::t_e56e7648e1c424 1-385
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "23853c43339853872b435a3bc4cca04b48557a4d",
+  "prompts": {},
+  "sessions": {
+    "s_9340ed41c548fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9788d74c-dc80-4c60-8ed9-f8f7c8e0039a",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
