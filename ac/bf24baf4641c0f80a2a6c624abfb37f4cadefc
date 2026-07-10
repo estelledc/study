@@ -1,0 +1,31 @@
+package.json
+  s_9340ed41c548fc::t_58eda4263b9d97 14-16
+scripts/audit-homepage-dist-links.mjs
+  s_9340ed41c548fc::t_5aaf445c7d08e2 1-179
+scripts/audit-internal-links.mjs
+  s_9340ed41c548fc::t_1b66bbf79e6db3 34-36
+scripts/audit-product-ia.mjs
+  s_9340ed41c548fc::t_6d9564541be00c 1-316
+scripts/audit-wikilink-ambiguity.mjs
+  s_9340ed41c548fc::t_43f619398b3a8f 54,59,71-73,78,101
+scripts/remark-wikilinks.mjs
+  s_9340ed41c548fc::t_8a657a7ac0884c 4-5,44-46,65,71,90,109
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "acbf24baf4641c0f80a2a6c624abfb37f4cadefc",
+  "prompts": {},
+  "sessions": {
+    "s_9340ed41c548fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9788d74c-dc80-4c60-8ed9-f8f7c8e0039a",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
