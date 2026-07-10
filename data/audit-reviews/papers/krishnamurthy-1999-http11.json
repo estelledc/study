@@ -1,7 +1,4 @@
 {
-  "slug": "krishnamurthy-1999-http11",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "协议时序伪代码可跟读；流水线野外难用/Vary/ETag 踩坑具体；适用边界含 HTTP/2/3 升级场景。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 187,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 187,
-  "l1_pass": true
+  ]
 }

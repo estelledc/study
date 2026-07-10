@@ -1,7 +1,4 @@
 {
-  "slug": "memcached",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,32 +88,5 @@
         "踩坑（slab 钙化、expire>30天、无认证）非常可操作；适用/不适用与 Redis 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正多线程合入时间线；案例 2 补 import json 与 db 参数说明。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 166,
-    "reasons": []
-  },
-  "lines": 166,
-  "l1_pass": true
+  ]
 }

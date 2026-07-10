@@ -1,7 +1,4 @@
 {
-  "slug": "memgraph",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -111,35 +108,5 @@
         "CREATE STREAM 语法宜贴近官方 CREATE KAFKA STREAM 写法，避免照抄失败。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "弱化厂商 benchmark/兼容性绝对化；统一内存口径；案例补逐部分解释；CREATE KAFKA STREAM；补反向链接；RedisGraph 停维年份。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 194,
-    "reasons": []
-  },
-  "lines": 194,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "kocher-spectre-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,30 +83,5 @@
         "边界检查/缓存测速/lfence 教学片段概念正确；踩坑与适用边界（不能当扫描清单、勿轻易复现 PoC）清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "去掉 sgxpectre 条目中的 lr graph search 流水线残留话术。",
-    "sections_modified": [
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 151,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

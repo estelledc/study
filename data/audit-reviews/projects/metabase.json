@@ -1,7 +1,4 @@
 {
-  "slug": "metabase",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -91,35 +88,5 @@
         "jar 与 JWT 嵌入示例可跟做；H2/直连生产库/Clojure 门槛踩坑有用；案例过多稀释重点，建议压到 3 个可跑通路径。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "收敛实践案例为 3 个并补逐部分解释；Pulse 改为 Dashboard Subscriptions；stars 更新；补 ## 反向链接。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 延伸阅读",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true
+  ]
 }

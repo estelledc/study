@@ -1,7 +1,4 @@
 {
-  "slug": "meshroom",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 5,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "meshroom_batch/compute 与自定义 CommandLineNode 可跟做；CUDA/路径/缓存踩坑可操作；适用边界含单图/镜面/实时等反例。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 5,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 187,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 187,
-  "l1_pass": true
+  ]
 }
