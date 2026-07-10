@@ -1,0 +1,114 @@
+{
+  "slug": "krakend",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "总服务员/外卖聚合类比贴合；案例 1 有逐部分解释，案例 2/3 稍短但仍可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「配置一改就生效」与后半句「启动时静态化成内部路由表」矛盾：KrakenD 生产不热更新配置，改配置需重启（dev 的 :watch 也是重启进程）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "应改成：配置在启动时编译进路由表所以快，但改配置必须重启/滚动发布"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "JSON 配置可跟做；超时/字段映射/CE-EE 差距踩坑有用；适用边界有 QPS 量级。建议顺手修正「配置热生效」误导"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "总服务员/外卖聚合类比贴合；案例 1 有逐部分解释，案例 2/3 稍短但仍可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「配置一改就生效」与后半句「启动时静态化成内部路由表」矛盾：KrakenD 生产不热更新配置，改配置需重启（dev 的 :watch 也是重启进程）",
+        "应改成：配置在启动时编译进路由表所以快，但改配置必须重启/滚动发布"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "JSON 配置可跟做；超时/字段映射/CE-EE 差距踩坑有用；适用边界有 QPS 量级。建议顺手修正「配置热生效」误导"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 170,
+    "reasons": []
+  },
+  "lines": 170,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：纠正「配置一改就生效」——改为启动编译路由表、改配置需重启/滚动发布。",
+    "sections_modified": [
+      "## 为什么重要"
+    ],
+    "unresolved_hints": []
+  }
+}

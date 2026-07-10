@@ -12,7 +12,7 @@ GPU 厂商（NVIDIA / AMD）不会把内部电路图给你看。但你想优化 
 
 **写一堆极小的 CUDA 程序，每个只为暴露一个细节，跑很多次记时间，再从时间差反推真实参数**。这就是"微基准（microbenchmarking）"。
 
-Wong 等 2010 年这篇 ISPASS 论文，把这套方法**第一次系统化**用在 GPU 上，逆向出了 NVIDIA GT200（GeForce GTX 280）几乎所有微架构常数：L1/L2 大小、line 长度、TLB 层数、warp 调度策略、SFU 流水线深度。
+Wong 等 2010 年这篇 ISPASS 论文，把这套方法**第一次系统化**用在 GPU 上，逆向出了 NVIDIA GT200（GeForce GTX 280）几乎所有微架构常数：texture / constant / instruction 各级 cache 大小与 line 长度、TLB 层数、warp 调度策略、SFU 流水线深度。注意：GT200 的 **global memory 本身不经 L1/L2 cache**（论文实测 uncached），常被引用的「约 5KB L1」指的是 **texture L1**。
 
 日常类比：盲品红酒——不让你看标签，只用舌头一口口尝，然后推产地和年份。这里舌头换成了 GPU 计时器。
 
@@ -39,28 +39,32 @@ Wong 等 2010 年这篇 ISPASS 论文，把这套方法**第一次系统化**用
 
 ## 实践案例
 
-### 案例 1：测 L1 cache 大小
+### 案例 1：测 texture L1 cache 大小
 
-写一个 kernel：
+GT200 上要复现论文的 5KB 数字，探针必须走 **texture 路径**（`tex1Dfetch` / texture 绑定），不能只读普通 global 指针——后者论文测得是 **uncached ~400+ cycle**，看不到 L1 台阶。
+
+示意（省略 CUDA texture 绑定样板）：
 
 ```cuda
-__global__ void probe(int *arr, int N, int stride) {
+texture<int, 1, cudaReadModeElementType> tex;
+__global__ void probe(int N, int stride, int *out) {
+  int tid = threadIdx.x;
   int sum = 0;
   for (int i = 0; i < ITER; i++)
-    sum += arr[(i * stride) % N];
-  out[tid] = sum;
+    sum += tex1Dfetch(tex, (i * stride) % N);
+  out[tid] = sum;  // 写回，防止编译器删掉整段 load
 }
 ```
 
-固定 stride（比如 32 字节，刚好一个 cache line），把 N 从 1KB 慢慢调大。**画一张图**：横轴 N、纵轴单次访问的耗时。
+固定小 stride（论文用 8–32 字节量级），把足迹 N 从 1KB 慢慢调大。**画一张图**：横轴 N、纵轴单次访问耗时。
 
 观察现象：
 
-- N < L1 容量时，访问全在 L1 里，每次几个 cycle
-- N 一旦超过 L1，开始 miss 到 L2，单次耗时**陡增** 5–10 倍
-- N 超过 L2，再次陡增到 global memory 的 400+ cycle
+- N < texture L1 时，命中 L1，延迟相对低
+- N 超过 L1，miss 到 texture L2，耗时**上台阶**
+- N 再超过 L2（论文测约 **256KB**），落到 DRAM，再上台阶
 
-第一个突变点的横坐标就是 L1 大小。Wong 等测出 GT200 的 L1 数据 cache 约 **5KB / SM**——这数字 NVIDIA 文档里**根本没写**。
+第一个突变点的横坐标就是 texture L1 大小。Wong 等测出 GT200 的 texture L1 约 **5KB / SM**（20-way、32B line）——这数字 NVIDIA 文档里**根本没写**。
 
 ### 案例 2：测 TLB（虚拟地址翻译缓存）
 
@@ -124,7 +128,7 @@ else                work_B();
 ## 学到什么
 
 1. **闭源硬件不是黑盒**——只要你能控制输入、能精确测时间，足够多的实验可以反推任意细节
-2. **方法论 vs 结果**——本文的结果（GT200 cache 5KB）已过期，但方法论是永恒的
+2. **方法论 vs 结果**——本文的结果（GT200 texture L1 ≈5KB）已过期，但方法论是永恒的
 3. **测量科学的一般套路**：单变量探针 + 大量重复 + 找突变点。这套思路在心理学（反应时）/ 生物学（剂量反应）/ 安全研究（侧信道）都通用
 4. **不要相信官方文档的全部**——也不要不信任何东西。自己测一遍，**心里有数**
 5. **科学论文的"标准开场"**：现代 GPU 优化论文几乎都先用半节做微基准复现，确立硬件常数，再讨论自己的优化。没这一节读者不信你

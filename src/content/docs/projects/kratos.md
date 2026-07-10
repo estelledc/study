@@ -29,7 +29,7 @@ cd helloworld && kratos run
 - 为什么写一份 `.proto` 文件就能同时跑 HTTP 和 gRPC，不用自己写两套 handler
 - 为什么 Go 微服务框架那么多（gin / echo / chi / fiber / go-zero / hertz），还需要 kratos 这一个
 - 为什么有的中间件（鉴权、限流）写一次两边都生效，有的（CORS）就只能写在 HTTP 一侧
-- 为什么 v2 升 v3 不是改个 import 路径就行，要逐处审 New() 调用
+- 为什么 2026 年的 v3 升级不是改个 import 路径就行，要逐处审 New() 调用与显式依赖
 
 ## 核心要点
 
@@ -45,9 +45,10 @@ kratos 把"微服务一堆套件"拆成 **三层抽象**：
 
 ## 实践案例
 
-### 案例 1：用 CLI 生成第一个项目
+### 案例 1：用 CLI 生成第一个项目（v2）
 
 ```bash
+# 本笔记示例固定走 v2；若你要试 v3，把路径里的 /v2 换成 /v3，并确认本机 Go ≥ 1.25
 go install github.com/go-kratos/kratos/cmd/kratos/v2@latest
 kratos new helloworld
 cd helloworld
@@ -105,7 +106,7 @@ grpcSrv.Use(logging.Server(logger))
 
 ## 踩过的坑
 
-1. **v2 升 v3 不是平滑升级**——v3 把隐式行为（自动注入 logger、默认中间件顺序）改成显式，老项目得逐处审 `kratos.New(...)` 调用，不是改 import 路径就完事，跨大版本前先看 CHANGELOG。
+1. **v2 升 v3（2026）不是平滑升级**——v3 把隐式行为（自动注入 logger、默认中间件顺序）改成显式，并要求 Go 1.25+；老项目得逐处审 `kratos.New(...)` 与 encoding/JWT 等搬迁，不是改 import 路径就完事，跨大版本前先看官方 migration / CHANGELOG。
 
 2. **CLI 缺 protoc 插件**——第一次跑 `kratos proto add` 经常报 `protoc-gen-go-http: program not found`，要先 `go install` protoc-gen-go / protoc-gen-go-grpc / protoc-gen-go-http / protoc-gen-openapi 四个，README 里那段经常被新人跳过。
 
@@ -132,7 +133,7 @@ grpcSrv.Use(logging.Server(logger))
 - **2019 年**：起源于一家国内视频网站的内部 Go 微服务框架，开源到 GitHub
 - **2020 年**：受 [go-kit](https://github.com/go-kit/kit) / [go-micro](https://github.com/go-micro/go-micro) / [google/go-cloud](https://github.com/google/go-cloud) / [go-zero](https://github.com/zeromicro/go-zero) 几个项目影响，逐步形成"Transport + Middleware + 可插拔组件"风格
 - **2021 年**：发布 v2，重写了 Transport 抽象，把 HTTP 和 gRPC 真正拉到同一层
-- **2023 年**：发布 v3，砍核心依赖、把隐式行为改显式（"explicit is better than implicit"），要求 Go 1.25+
+- **2026 年 6 月**：发布 v3.0.0，砍核心依赖、把隐式行为改显式（"explicit is better than implicit"），要求 **Go 1.25+**；下面实践案例仍以更常见的 **v2** 安装路径演示，升 v3 前先读官方 migration
 - **现在**：社区 maintainer 来自多家公司，是中文 Go 社区最活跃的微服务项目之一，star 数 24k+
 
 ## 学到什么
