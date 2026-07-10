@@ -1,7 +1,4 @@
 {
-  "slug": "dpll-1962",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,26 +78,5 @@
         "手算案例与伪代码可跟做；适用边界已区分 SAT / SMT Theory / MaxSAT，工程上足够。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 183,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 183,
-  "l1_pass": true
+  ]
 }

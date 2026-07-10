@@ -1,7 +1,4 @@
 {
-  "slug": "fluent-bit",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -81,26 +78,5 @@
         "INI 配置与 Helm 示例可跟做；踩坑均带具体解法（Inotify / Use_Kubelet / filesystem buffer）。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 163,
-  "l1_pass": true
+  ]
 }

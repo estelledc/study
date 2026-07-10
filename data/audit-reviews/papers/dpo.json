@@ -1,7 +1,4 @@
 {
-  "slug": "dpo",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,32 +88,5 @@
         "dpo_loss 与 TRL 调用概念正确；全文行数 <150，quality-gate 会拦，需扩写到 150–200。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "zero-base/academic needs-refine + 行数<150：修正 Llama 2/PPO 表述，桥接 σ/BCE，拆案例步骤，扩到 quality-gate 通过。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 153,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 153,
-  "l1_pass": true
+  ]
 }
