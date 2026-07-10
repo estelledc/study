@@ -91,15 +91,17 @@ e.POST("/users", func(c *echo.Context) error {
 
 ```go
 e := echo.New()
-e.Use(middleware.Recover())        // 必须第一个，兜底 panic
-e.Use(middleware.Logger())         // 第二，记录所有请求
+e.Use(middleware.Recover()) // 必须第一个，兜底 panic
+e.Use(middleware.Logger())  // 第二，记录所有请求
 api := e.Group("/api")
-api.Use(middleware.JWT([]byte("secret")))  // 仅 /api/* 需要 JWT
+api.Use(middleware.KeyAuth(func(c *echo.Context, key string, _ middleware.ExtractorSource) (bool, error) {
+    return key == "secret", nil // 仅 /api/* 要带 key
+}))
 api.GET("/profile", profileHandler)
 e.Start(":1323")
 ```
 
-执行顺序（洋葱模型）：Recover 进 → Logger 进 → JWT 进 → handler → JWT 出 → Logger 出 → Recover 出。`/api/profile` 走完整链；外层 `/login` 这种不在 group 里的路由不过 JWT。
+执行顺序（洋葱模型）：Recover 进 → Logger 进 → KeyAuth 进 → handler → KeyAuth 出 → Logger 出 → Recover 出。`/api/profile` 走完整链；外层 `/login` 不在 group 里，不过 KeyAuth。JWT 同类需求请用独立包 `labstack/echo-jwt`，不再放在核心 `middleware` 里。
 
 ## 踩过的坑
 

@@ -1,0 +1,103 @@
+{
+  "slug": "echo",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写 middleware.JWT 易让人以为仍在 echo/middleware 核心包；JWT 已拆到 echo-jwt，建议注明（不构成硬伤）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 middleware.JWT([]byte(\"secret\")) 在现行 Echo 中已不在核心 middleware；应改为 echo-jwt 用法或改用仍在核心的中间件示例（如 CORS/BasicAuth）并保持洋葱顺序说明"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写 middleware.JWT 易让人以为仍在 echo/middleware 核心包；JWT 已拆到 echo-jwt，建议注明（不构成硬伤）"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 middleware.JWT([]byte(\"secret\")) 在现行 Echo 中已不在核心 middleware；应改为 echo-jwt 用法或改用仍在核心的中间件示例（如 CORS/BasicAuth）并保持洋葱顺序说明"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "engineer needs-refine：案例3 middleware.JWT 已拆包，改为核心 KeyAuth（v5 签名）并注明 echo-jwt",
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 177,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 177,
+  "l1_pass": true
+}
