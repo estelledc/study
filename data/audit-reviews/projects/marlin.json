@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨师/菜谱类比贴合；G-code/Planner/HAL/PID 有日常桥接；配置、启动 G-code、PID/调平三案例逐步解释清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 MarlinFirmware/Marlin；~17k stars 与公开数据一致；Erik van der Zalm / 1.x AVR / 2.x HAL 叙述与社区史实相符，未把 Marlin 说成唯一固件"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Configuration.h / pio 环境名 / M303·G29·M500 示例可跟做；配置分支不匹配、G29 未 M500、8-bit 空间踩坑具体；与 Klipper/闭源包边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "厨师/菜谱类比贴合；G-code/Planner/HAL/PID 有日常桥接；配置、启动 G-code、PID/调平三案例逐步解释清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 MarlinFirmware/Marlin；~17k stars 与公开数据一致；Erik van der Zalm / 1.x AVR / 2.x HAL 叙述与社区史实相符，未把 Marlin 说成唯一固件"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Configuration.h / pio 环境名 / M303·G29·M500 示例可跟做；配置分支不匹配、G29 未 M500、8-bit 空间踩坑具体；与 Klipper/闭源包边界清楚"
+      ]
+    }
+  ]
+}

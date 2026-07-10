@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "开放式厨房类比生动；术语几乎全有日常桥接；CLI/会议纪要/Mermaid 三案例逐步解释清楚，另有「先做这件事」入门路径"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 marktext/marktext；五万多 stars 与公开数据一致；定位相对 Typora/Obsidian/VS Code 未歪曲；维护空窗叙述属合理概括"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "CLI/--safe、表格快捷键、相对资源目录示例可跟做；非知识库/sandbox/版本状态踩坑具体；与 Pandoc/CI 边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "开放式厨房类比生动；术语几乎全有日常桥接；CLI/会议纪要/Mermaid 三案例逐步解释清楚，另有「先做这件事」入门路径"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源指向 marktext/marktext；五万多 stars 与公开数据一致；定位相对 Typora/Obsidian/VS Code 未歪曲；维护空窗叙述属合理概括"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "CLI/--safe、表格快捷键、相对资源目录示例可跟做；非知识库/sandbox/版本状态踩坑具体；与 Pandoc/CI 边界清楚"
+      ]
+    }
+  ]
+}
