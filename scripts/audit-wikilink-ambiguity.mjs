@@ -51,12 +51,12 @@ for (const file of walk(docsDir)) {
     for (const match of line.matchAll(WIKI_RE)) {
       const raw = match[1].trim();
       const lineNo = idx + 1;
-      const namespaced = raw.match(/^(papers|projects):([a-z0-9_-]+)$/);
+      const namespaced = raw.match(/^(papers|projects)[\/:]([a-z0-9_-]+)$/);
 
       if (namespaced) {
         const [, ns, slug] = namespaced;
         if (!slugAreas.get(slug)?.has(ns)) {
-          problems.push({ file: rel, line: lineNo, raw, reason: `explicit namespace target not found: ${ns}:${slug}` });
+          problems.push({ file: rel, line: lineNo, raw, reason: `explicit namespace target not found: ${ns}/${slug}` });
         }
         continue;
       }
@@ -68,12 +68,14 @@ for (const file of walk(docsDir)) {
         continue;
       }
 
-      if (duplicates.has(raw) && (!area || !knownAreas.has(area))) {
+      // 历史笔记里的 bare duplicate 继续按当前 area 解析，避免为此
+      // 批量改写 1900+ 篇。顶层产品页没有 area 上下文，必须显式消歧。
+      if (duplicates.has(raw) && !area) {
         problems.push({
           file: rel,
           line: lineNo,
           raw,
-          reason: `ambiguous wikilink without namespace; candidates=${[...knownAreas].join(', ')}`,
+          reason: `ambiguous top-level wikilink; candidates=${[...knownAreas].join(', ')}; use [[projects/${raw}|…]] or [[papers/${raw}|…]]`,
         });
       }
     }
@@ -96,7 +98,7 @@ if (problems.length) {
   for (const p of problems) {
     console.error(`- ${p.file}:${p.line} [[${p.raw}]] :: ${p.reason}`);
   }
-  console.error('\nUse an explicit markdown link or namespace syntax such as [[projects:react|React]].');
+  console.error('\nUse an explicit Markdown URL or slash namespace. For React/ReAct use [[projects/react|React]] and [[papers/react|ReAct]]. Colon namespace syntax remains supported for existing notes.');
   process.exit(1);
 }
 

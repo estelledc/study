@@ -1,7 +1,8 @@
 // 轻量 [[slug]] / [[slug|显示文本]] → markdown 链接转换器
 // 在 build 时把 Obsidian 双链语法转成 Starlight 可识别的 [text](/study/<area>/<slug>)
 // slug 来源：扫描 src/content/docs/papers/*.md 和 src/content/docs/projects/*.md
-// 支持 [[projects:react|React]] / [[papers:react|ReAct]] 显式消歧
+// 支持推荐的 [[projects/react|React]] / [[papers/react|ReAct]]，
+// 也兼容旧的 [[projects:react|React]] / [[papers:react|ReAct]] 写法。
 // 如果 slug 不存在或顶层页面无法消歧 → 渲染成带 broken-link class 的 span
 // （提示笔记尚未存在，避免静默跳到错误对象）
 
@@ -40,8 +41,9 @@ function buildSlugIndex() {
 }
 
 const SLUG_INDEX = buildSlugIndex();
-// 形如 [[slug]] / [[area:slug]] / [[slug|显示]]，slug 允许 a-z 0-9 - _
-const WIKI_RE = /\[\[([a-z0-9_\-]+(?::[a-z0-9_\-]+)?)(?:\|([^\]]+))?\]\]/g;
+// 形如 [[slug]] / [[area/slug]] / [[area:slug]] / [[slug|显示]]。
+// slug 允许 a-z 0-9 - _；显式 namespace 只允许一层。
+const WIKI_RE = /\[\[([a-z0-9_-]+(?:[\/:][a-z0-9_-]+)?)(?:\|([^\]]+))?\]\]/g;
 
 function escapeHtml(s) {
   return String(s)
@@ -60,13 +62,13 @@ function sourceArea(filePath) {
 }
 
 function resolveWikilink(target, fileArea) {
-  const namespaced = target.match(/^(papers|projects):([a-z0-9_\-]+)$/);
+  const namespaced = target.match(/^(papers|projects)[\/:]([a-z0-9_-]+)$/);
   if (namespaced) {
     const [, area, slug] = namespaced;
     if (SLUG_INDEX.byArea.get(area)?.has(slug)) {
       return { ok: true, area, slug };
     }
-    return { ok: false, slug, reason: `missing namespace target ${area}:${slug}` };
+    return { ok: false, slug, reason: `missing namespace target ${area}/${slug}` };
   }
 
   const areas = SLUG_INDEX.bySlug.get(target);
@@ -85,7 +87,7 @@ function resolveWikilink(target, fileArea) {
   return {
     ok: false,
     slug: target,
-    reason: `ambiguous target: ${[...areas].join(', ')}`,
+    reason: `ambiguous target: ${[...areas].join(', ')}; use an explicit projects/${target} or papers/${target} target`,
   };
 }
 
@@ -104,7 +106,7 @@ export default function remarkWikilinks() {
 
       while ((m = WIKI_RE.exec(value)) !== null) {
         const [full, target, alias] = m;
-        const display = alias || target.replace(/^(papers|projects):/, '');
+        const display = alias || target.replace(/^(papers|projects)[\/:]/, '');
         const resolved = resolveWikilink(target, fileArea);
 
         // 前面那段普通文本

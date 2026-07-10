@@ -31,8 +31,9 @@ function getBase() {
 function routeFromDoc(file) {
   const rel = path.relative(docsDir, file).replaceAll(path.sep, '/');
   const slug = rel.replace(/\.mdx?$/, '');
-  if (slug === 'index') return `${base}/`;
-  return `${base}/${slug}/`;
+  const routeSlug = slug.replace(/(?:^|\/)index$/, '');
+  if (!routeSlug) return `${base}/`;
+  return `${base}/${routeSlug}/`;
 }
 
 function normalizeUrl(raw) {
