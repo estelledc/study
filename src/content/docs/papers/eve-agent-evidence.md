@@ -58,7 +58,7 @@ def verifier(item, model):
     return score_with - score_without
 ```
 
-如果 `gain < 0.1`，这条样本对训练几乎没用——丢。如果 `gain > 0.5`，这条是好教材——保。中间区段需要做样本权重，按 gain 加权进 batch，比硬阈值更平滑。
+教学上可先按增益分档：`gain` 接近 0 的样本几乎不贡献新信息，可丢掉；增益明显为正的样本优先进 batch；中间区段按 gain 加权，比一刀切硬阈值更平滑。具体阈值要按任务校准，不要照搬别人的数字。
 
 ### 案例 3：和传统 self-instruct 对比
 
@@ -72,13 +72,13 @@ def verifier(item, model):
 
 EVE 不增加人工标注成本，但把"凭空生成的训练样本"问题堵死了。它的成本主要在 verifier——每条样本要做两次推理（带 evidence + 不带），相当于训练吞吐减半。
 
-### 案例 4：HotpotQA 上的训练曲线（论文报告）
+### 案例 4：HotpotQA 上的评测口径（对齐论文）
 
-EVE 在 HotpotQA 上对比 self-instruct baseline，前 5 个 epoch 性能持平，但第 8 个 epoch 之后开始拉开——baseline 因为 OOD 幻觉缓慢退化，EVE 因为 evidence 滤掉了脏数据反而稳定上升。这说明 EVE 的优势是**长期累积**而不是短期 boost：训练得越久，差距越明显。
+论文不是在讲"第几个 epoch 曲线怎么弯"，而是在 **七个开放域 QA**（含 HotpotQA）上同时报三类指标：答案 exact match、证据是否被判定为支撑、以及"答对且证据也过关"的联合率。EVE-Agent 的卖点是：在相近算力/搜索预算下，**证据支撑率明显抬升，答案正确率也不掉**——可审计不是拿准确率换来的装饰。读表时先看 HotpotQA 这一列的 evidence / joint，再回头看平均列，才不会把"会讲故事"和"给得出处"混成一个分数。
 
 ### 案例 5：边际增益不为 0 也未必有用
 
-考虑这种情况：模型不带 evidence 时随机猜对了 50%，带 evidence 时升到 55%。gain=0.05，看似有信号但太弱——可能只是 evidence 引导了某个表面线索（如关键词匹配），不是真在用证据推理。论文建议在 gain 上设 hard threshold（如 0.2），而不是把所有正 gain 样本都收。
+考虑这种情况：模型不带 evidence 时随机猜对了 50%，带 evidence 时升到 55%。gain=0.05，看似有信号但太弱——可能只是 evidence 引导了某个表面线索（如关键词匹配），不是真在用证据推理。实现上可先丢掉近零增益样本，再按任务调一条最低增益门槛；不要把所有正 gain 都当高质量教材。
 
 ### 案例 6：和 RLHF 的训练信号对比
 
@@ -86,10 +86,10 @@ RLHF 的 reward 来自人类偏好，**单一标量信号**，无法追溯具体
 
 ## 踩过的坑
 
-1. **span 太长 verifier 失灵**：evidence 取整段 paragraph 时，模型不加它也能从里面找答案，gain 偏低 → 训练信号噪声大；论文实测 ≤ 100 tokens 时 gain 分布最分明。
-2. **proposer 偷懒抄 span 当问题**：让 question 和 evidence 字面重合度过高，模型只是在做 copy，没学推理；要加去重检查（如 BLEU < 0.3）。
-3. **verifier 用同一个模型自己测自己**：scoring model 和 trained model 同源会循环偏差；论文建议用一个**冻结的 reference model** 作为 scorer，定期换不更新。
-4. **多文档场景 span 来源歧义**：同一答案在多份文档里都有依据，evidence span 该取谁？目前论文只示范单文档情形，多文档时建议按 retrieval rank 取 top-1，但这是开放问题。
+1. **span 太长 verifier 失灵**：evidence 取整段 paragraph 时，无关事实变多，边际增益被稀释；论文也用 brevity bonus 鼓励短而准的 span。教学实现可先限制在几十到一百 tokens 量级，再按增益分布微调。
+2. **proposer 偷懒抄 span 当问题**：让 question 和 evidence 字面重合度过高，模型只是在做 copy，没学推理；论文的 validity filter 会丢掉"答案直接嵌在问题里"的退化题，工程上还可再加字面重合检查。
+3. **verifier 用同一个模型自己测自己**：scoring model 和 trained model 同源会循环偏差；更稳的做法是用一个**冻结的 reference model** 作为 scorer，定期换但不跟着训。
+4. **多文档场景 span 来源歧义**：同一答案在多份文档里都有依据，evidence span 该取谁？论文主设定是源文本上的 verbatim span；多文档时常见折中是按 retrieval rank 取 top-1，但这仍是开放问题。
 
 ## 适用 vs 不适用场景
 

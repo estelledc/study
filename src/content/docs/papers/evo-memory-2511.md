@@ -27,44 +27,47 @@ Evo-Memory 是 2025 年 11 月一篇论文，做了两件事：第一，把 10+ 
 
 Evo-Memory 三块拼图：
 
-1. **统一接口**：所有 memory 模块抽成 `search / write / update` 三个原语。10+ 种现有方法（A-MEM、MemGPT、Reflexion-buffer、graph memory、向量库等）都能套进同一壳子，方便对比。类比：把 USB-A、Type-C、Lightning 都接到一个 hub 上。
+1. **统一接口**：论文把 memory-augmented agent 收成可对比的壳（检索 / 更新 / 上下文拼装）。工程落地时常再收成 `search / write / update` 三个调用点，方便把 Amem、Mem0、LangMem、workflow memory 等装进同一评测环。类比：把 USB-A、Type-C、Lightning 都接到一个 hub 上。
 
-2. **流式数据集**：把 10 个数据集（既有多轮目标导向也有单轮推理 QA）改写成"task stream"——一个一个串起来，agent 必须按序处理。类比：把高考的所有学科混成一张连续答题卡，做完一题不能回头。
+2. **流式数据集**：把约 10 个数据集（多轮目标导向 + 单轮推理/QA）改写成"task stream"——一个一个串起来，agent 必须按序处理。类比：把高考的所有学科混成一张连续答题卡，做完一题不能回头。
 
-3. **ExpRAG + ReMem**：作者给两个 baseline。ExpRAG 检索过去经验来辅助新任务；ReMem 是 action-think-memory refine 三段循环——动手、反思、修 memory。类比：ExpRAG 是"看历史档案"，ReMem 是"先想再做再总结"。
+3. **ExpRAG + ReMem**：作者给两个强相关基线。ExpRAG 检索过去经验来辅助新任务；ReMem 是 action–think–memory refine 三段循环——动手、反思、修 memory。类比：ExpRAG 是"看历史档案"，ReMem 是"先想再做再总结"。
 
 ## 实践案例
 
-### 案例 1：把 A-MEM 和 MemGPT 装进 Evo-Memory
+### 案例 1：把两种 memory 装进同一评测壳
+
+目标：同一条 task stream、同一个 backbone，只换 memory 适配器。
 
 ```python
-class AMemAdapter:
-    def search(self, query): ...
-    def write(self, item): ...
-    def update(self, item, new_meta): ...
+class MemoryAdapter:
+    def search(self, query, k=4):
+        # 1) 编码 query  2) 在已有 memory 里取 top-k
+        return retriever.top_k(query, self.store, k)
 
-class MemGPTAdapter:
-    def search(self, query): ...
-    def write(self, item): ...
-    def update(self, item, new_meta): ...
+    def write(self, item):
+        # 把本轮 (task, action, result) 写成一条可检索经验
+        self.store.append(item)
 
-bench.run(model=gpt4, memory=AMemAdapter())
-bench.run(model=gpt4, memory=MemGPTAdapter())
+    def update(self, item_id, patch):
+        # refine：改旧记忆，而不是永远 append
+        self.store[item_id] = {**self.store[item_id], **patch}
+
+bench.run(model=backbone, memory=AmemAdapter())
+bench.run(model=backbone, memory=Mem0Adapter())
 # 同样数据流、同样模型，第一次能横向对比
 ```
 
-### 案例 2：流式答题真的能区分方法
+**逐部分解释**：
 
-在静态 QA 上 A-MEM 和 MemGPT 几乎打平。换到 Evo-Memory 流式跑 500 个任务：
+- `search`：对应论文里的检索步，决定"这题先看哪些旧经验"
+- `write`：任务结束后落一条新经验，供后续题复用
+- `update`：ReMem 一类方法的关键——修正/剪枝旧记忆，而不是只堆日志
+- `bench.run(...)`：固定 stream 与模型，只换 adapter，分数才可比
 
-```
-       前 100 题  301-500 题  累计平均
-A-MEM     62%       64%        63%
-MemGPT    61%       70%        66%
-ReMem     63%       77%        71%
-```
+### 案例 2：流式答题才看得出"会不会长记性"
 
-差距在"后期 task"才显现——这就是"自进化"应该测的能力，静态 benchmark 看不到。
+静态 QA 上，轻量 cache（如 Amem）和结构化 memory（如 Mem0）可能看起来差不多。换到 Evo-Memory 的顺序流之后，差异常出现在**后半段任务**：会 refine / 复用经验的方法（ExpRAG、ReMem）更容易把前期踩坑变成后期加成。读论文结果时，不要只看总平均，还要看多轮环境（AlfWorld、BabyAI 等）和单轮推理集是否同向提升。
 
 ### 案例 3：ReMem 的 action-think-memory 循环
 
@@ -76,30 +79,21 @@ for task in stream:
     memory.refine(task, think, action, result)  # 关键的 refine 步
 ```
 
-`refine` 不是简单 append，而是触发更新已有 memory（如修正之前错的判断）。这一步是 ReMem 击败简单 append 类方法的关键。
+`refine` 不是简单 append，而是触发更新已有 memory（如修正之前错的判断）。这一步是 ReMem 相对"只检索不整理"方法的关键分水岭。
 
-### 案例 4：相关度三档实验
+### 案例 4：任务相似度决定 memory 赚不赚钱
 
-Evo-Memory 设计了 high / mid / low 三档任务相关度。论文展示：
-
-```
-              low corr   mid corr   high corr
-no memory       45%        47%        46%
-A-MEM           45%        58%        72%
-ReMem           48%        66%        81%
-```
-
-低相关下 memory 几乎无用、高相关下提升巨大——单一相关度的 benchmark 容易得出片面结论，三档设计才公允。
+论文用任务嵌入的簇内相似度分析增益：相似度高的数据集（如结构重复的 PDDL / AlfWorld）上，ReMem 类方法提升更大；更散的集合（如某些数学/研究生推理集）上，可迁移经验少，memory 加成变薄。作者报告过增益与任务相似度呈正相关（不同 backbone 上 Pearson r 大约在 0.5–0.7 量级）。含义很直接：**别用单一相关度的考卷给所有 memory 方法打总分**。
 
 ## 踩过的坑
 
 1. **流式 vs 静态指标搞混**：累计准确率会掩盖学习曲线——必须看分段曲线，看后期是否真的提升。
 
-2. **memory 大小没控制**：A 模块 memory 长成 100MB，B 模块 1MB——比较不公平。Evo-Memory 强制 budget。
+2. **memory 大小没控制**：A 模块 memory 长成 100MB，B 模块 1MB——比较不公平。Evo-Memory 用统一检索预算（如 top-k）和截断约束来压平。
 
-3. **LLM 服务不稳定干扰评估**：流式跑 500 任务遇 rate limit / 模型版本变化影响巨大。论文要求固定 snapshot。
+3. **LLM 服务不稳定干扰评估**：流式长跑遇 rate limit / 模型版本漂移影响巨大。评测要固定模型 snapshot 与提示模板。
 
-4. **task 之间相关性是双刃剑**：相关度高 memory 收益巨大但容易"作弊"（类似题），相关度低 memory 几乎无用。Evo-Memory 设计了三档相关度。
+4. **task 相似度是双刃剑**：簇内相似度高时 memory 收益大，但也更容易"靠类似题取巧"；相似度低时 memory 几乎帮不上忙。看结果时要连着任务相似度一起读。
 
 ## 适用 vs 不适用场景
 

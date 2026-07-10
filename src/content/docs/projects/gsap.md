@@ -24,11 +24,11 @@ gsap.to(".box", { x: 100, duration: 1 })
 
 不学 GSAP，下面这些事都会被卡住：
 
-- **跑得快**：比 jQuery / 朴素 CSS transition 快 ~20×。原理是它跳过 DOM 重读，把动画值算好直接写
+- **跑得快**：官方常说相对 jQuery 最高约 20×。原理是它跳过反复 DOM 重读，把动画值算好直接写；别把它理解成"比 CSS transition 快 20 倍"
 - **Timeline API**：能精细编排几十个动画——串联（一个接一个）、并联（同时跑）、嵌套（动画里套动画）。其他库做不到这个粒度
-- **浏览器兼容性极好**：IE9 都能跑。给老项目接一段动画不会爆
-- **大型互动站默认底层**：Apple 产品页、NASA、Awwwards 获奖站、SpaceX 发布会页面，背后都是它
-- **2024 年完全免费**：包括以前付费的 ScrollTrigger / DrawSVG / MorphSVG / SplitText 全套插件。Webflow 收购后开源了所有付费功能
+- **兼容性稳**：GSAP 3 面向现代主流浏览器；老项目若还卡在 IE，那是 GSAP 2 时代的故事，不要默认拿 GSAP 3 去扛
+- **大型互动站默认底层**：Apple 产品页、NASA、Awwwards 获奖站等互动页，背后经常是它
+- **2024 年起插件免费**：Webflow 收购后，以前 Club 付费的 ScrollTrigger / DrawSVG / MorphSVG / SplitText 等改为免费可用
 
 ## 核心要点
 
@@ -103,9 +103,9 @@ gsap.to(".box", {
 
 ## 踩过的坑
 
-1. **被 kill 的 tween 仍会触发 `onComplete`**：默认 `kill()` 只停播放，回调还在队列里。要彻底杀干净用 `tween.kill(true)`，第二个参数是"是否一并清回调"。
+1. **搞反 `kill()` 和 `onComplete`**：GSAP 3 里 `tween.kill()` 会立刻停掉动画，并且**通常不会**再触发 `onComplete`。API 是 `kill(target, propertiesList)`——按目标和属性局部杀掉，不是 `kill(true)` 清回调。若要在被中断时做事，用 `onInterrupt`；若要播完再收尾，别 `kill()`，改 `pause()` / 等它自然结束。
 
-2. **React 用必须用 `useGSAP` hook**：旧版用 `useEffect` 创建 tween，React 18 strict mode 会渲染两次，动画跑两遍。`@gsap/react` 包提供的 `useGSAP` hook 会自动处理 cleanup 和 strict mode。
+2. **React 用必须用 `useGSAP` hook**：旧版用 `useEffect` 创建 tween，React 18 strict mode 会创建两次，动画跑两遍。`@gsap/react` 包提供的 `useGSAP` hook 会自动处理 cleanup 和 strict mode。
 
 3. **ScrollTrigger 的 `markers` 调试好用，但 production 要删**：
    ```js
@@ -113,7 +113,7 @@ gsap.to(".box", {
    ```
    忘删上线，用户会看到一堆诡异的彩条。
 
-4. **SSR 配合要在 useEffect 内创建**：Next.js / Remix 里 GSAP 不能在 server 端跑（碰不到 window），必须用 `useEffect` 包起来。否则 build 时直接炸。
+4. **SSR 配合要在 useEffect 内创建**：Next.js / Remix 里 GSAP 不能在 server 端跑（碰不到 window），必须用 `useEffect` / `useGSAP` 包起来。否则 build 时直接炸。
 
 ## 适用 vs 不适用场景
 
@@ -121,15 +121,16 @@ gsap.to(".box", {
 
 - 复杂时间轴动画（多段串并联嵌套）
 - 滚动驱动的互动站（产品介绍页 / 故事网站）
-- SVG / Canvas / WebGL 高频更新（GSAP 的 ticker 比 requestAnimationFrame 包装更稳）
-- 老项目兼容性要求高（IE9+）
+- SVG / Canvas / WebGL 高频更新（GSAP 的 ticker 比手写 requestAnimationFrame 更省心）
+- 需要跨框架、命令式精确编排的现代浏览器项目
 
 **不适用**：
 
 - 极简过渡（鼠标 hover 变色）→ 直接 CSS transition 更省事
 - React 组件级的进入退出动画 → [[framer-motion]] 的 `<AnimatePresence>` 更对味
 - 严格遵守 React 声明式哲学的项目 → GSAP 是命令式，会和 state 驱动的 UI 打架
-- 体积敏感（核心 50KB+，加插件再涨）→ Web Animations API 原生免费
+- 体积敏感（核心约几十 KB，加插件再涨）→ Web Animations API 原生免费
+- 还必须支持 IE9/IE10 → 别硬上 GSAP 3，那是历史版本的战场
 
 ## 历史小故事（可跳过）
 

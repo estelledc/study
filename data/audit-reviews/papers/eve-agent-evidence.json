@@ -1,0 +1,104 @@
+{
+  "slug": "eve-agent-evidence",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4 的 HotpotQA 训练曲线读起来像论文原表，零基础会当真；宜标明是教学示意或改成论文真实评测口径。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 4 把「前 5 epoch 持平、第 8 epoch 拉开、baseline OOD 幻觉退化」写成论文报告；原论文在 HotpotQA 等七数据集上报告的是 EM / evidence score / joint，并非这条 epoch 训练曲线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「论文实测 ≤100 tokens」「论文建议 gain hard threshold 0.2」「BLEU < 0.3」等具体阈值在原文找不到对应表述；应改成教学建议，或对齐论文的 brevity bonus / validity filter 口径。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码可跟做；阈值类坑若改成教学建议后，避免再写成「论文实测」以免误导实现选型。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 的 HotpotQA 训练曲线读起来像论文原表，零基础会当真；宜标明是教学示意或改成论文真实评测口径。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 把「前 5 epoch 持平、第 8 epoch 拉开、baseline OOD 幻觉退化」写成论文报告；原论文在 HotpotQA 等七数据集上报告的是 EM / evidence score / joint，并非这条 epoch 训练曲线。",
+        "「论文实测 ≤100 tokens」「论文建议 gain hard threshold 0.2」「BLEU < 0.3」等具体阈值在原文找不到对应表述；应改成教学建议，或对齐论文的 brevity bonus / validity filter 口径。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "伪代码可跟做；阈值类坑若改成教学建议后，避免再写成「论文实测」以免误导实现选型。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 160,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  }
+}
