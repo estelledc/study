@@ -1,7 +1,4 @@
 {
-  "slug": "electron",
-  "area": "projects",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1.78,
   "reject_count": 3,
@@ -96,21 +93,5 @@
         "踩坑条目过短且缺场景（contextIsolation、nodeIntegration、签名更新等未展开）。"
       ]
     }
-  ],
-  "rewrite": {
-    "status": "rewritten",
-    "reason": "三审中 3 人 reject：原文为通用 scaffold，歪曲 Electron 机制且无可用代码；已按零基础模板全量重写。",
-    "sections_modified": [
-      "full note"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 181,
-    "reasons": []
-  },
-  "lines": 181,
-  "l1_pass": true
+  ]
 }
