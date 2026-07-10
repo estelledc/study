@@ -1,0 +1,107 @@
+{
+  "slug": "lingui",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.89,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "点菜/番茄炒蛋类比贴合；msgid/fuzzy/gettext 桥接清楚；Plural extract→翻译→compile、切语言、fuzzy 三案例均有逐步解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 js-lingui + lingui.dev 合理；Babel macro→msgid→.po→compile 链路与项目设计一致；「用户量 1/100」属量级修辞，未歪曲核心机制。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Trans/Plural/i18n.load+activate 可跟做；Babel/SWC、macro 调试、placeholder 耦合、.po 门槛踩坑具体；Next RSC/esbuild/短文案边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "点菜/番茄炒蛋类比贴合；msgid/fuzzy/gettext 桥接清楚；Plural extract→翻译→compile、切语言、fuzzy 三案例均有逐步解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源指向 js-lingui + lingui.dev 合理；Babel macro→msgid→.po→compile 链路与项目设计一致；「用户量 1/100」属量级修辞，未歪曲核心机制。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "Trans/Plural/i18n.load+activate 可跟做；Babel/SWC、macro 调试、placeholder 耦合、.po 门槛踩坑具体；Next RSC/esbuild/短文案边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 158,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

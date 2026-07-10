@@ -1,0 +1,110 @@
+{
+  "slug": "hol-light-2009",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "严苛数学老师/保险箱钥匙类比贴合；thm/战术/LCF 桥接清楚；案例偏多（5 个），案例 3/4 偏叙事，案例 1/2/5 有逐步解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读把 TPHOLs 2009 Overview 链到了 holhol.pdf（实为 IJCAR 2006 Towards self-verification）；应改为 hollight.pdf。内核约 400 行、<500 行表述与 Harrison 一致；Flyspeck 2014、Itanium 浮点验证事实正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "REFL/TRANS/MP 与 prove+ARITH_TAC、goalstack 对话概念正确可跟读；500 行内核误解/HOL≠Coq/REPL 抽象类型踩坑具体；适用边界含依赖类型与 SMT 对照。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "严苛数学老师/保险箱钥匙类比贴合；thm/战术/LCF 桥接清楚；案例偏多（5 个），案例 3/4 偏叙事，案例 1/2/5 有逐步解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 3,
+        "no_distortion": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "延伸阅读把 TPHOLs 2009 Overview 链到了 holhol.pdf（实为 IJCAR 2006 Towards self-verification）；应改为 hollight.pdf。内核约 400 行、<500 行表述与 Harrison 一致；Flyspeck 2014、Itanium 浮点验证事实正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "REFL/TRANS/MP 与 prove+ARITH_TAC、goalstack 对话概念正确可跟读；500 行内核误解/HOL≠Coq/REPL 抽象类型踩坑具体；适用边界含依赖类型与 SMT 对照。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": [],
+    "summary": "修正 Overview PDF 链接为 hollight.pdf，并注明 holhol.pdf 为 2006 自验证论文。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 168,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 168,
+  "l1_pass": true
+}
