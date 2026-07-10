@@ -19,7 +19,7 @@ FFmpegSession session =
 
 这行不是在手机里启动一个普通 shell，而是通过 FFmpegKit 的 wrapper API 把 FFmpeg 命令交给随包带进来的原生库执行，再把成功、失败、日志、进度统计包装成 session 返回给 App。
 
-截至 2026-07，原仓库约 5.8k stars，并在 2026-07-02 归档；README 说明维护延续到 FFmpegKitNext。学它的价值不是“新项目立刻采用”，而是看懂移动端如何把复杂 C/C++ 多媒体能力包装成跨平台 SDK。
+截至 2026-07，原仓库约 5.8k stars。官方于 **2025-01-06** 宣布退休，仓库约 **2025-06** 归档只读；**2026-07** README 补充说明维护延续到 FFmpegKitNext。学它的价值不是“新项目立刻采用”，而是看懂移动端如何把复杂 C/C++ 多媒体能力包装成跨平台 SDK。
 
 ## 为什么重要
 
@@ -124,7 +124,7 @@ FFmpegKitConfig.writeToPipe(image1Path, pipe1);
 
 ## 踩过的坑
 
-1. **仓库已退休**：2026-07 README 写明 FFmpegKit 已 officially retired，新项目要先评估 FFmpegKitNext 或社区包。
+1. **仓库已退休**：2025-01 起 officially retired，2026-07 README 仍强调这一点并指向 FFmpegKitNext；新项目要先评估 FFmpegKitNext 或社区包。
 2. **包名决定能力**：`min`、`audio`、`video`、`full`、`full-gpl` 启用的外部库不同，选错包会出现“命令存在但编码器不存在”。
 3. **GPL 后缀不是装饰**：启用 GPL 库或使用 `-gpl` 预编译包会让整个 bundle 进入 GPL v3 约束，商业分发要先确认法务边界。
 4. **移动文件路径最容易炸**：Android SAF uri、iOS 沙盒路径、空格和引号都会影响 FFmpeg 命令，必须用官方提供的 SAF / pipe / font directory API 处理。
@@ -140,7 +140,8 @@ FFmpegKitConfig.writeToPipe(image1Path, pipe1);
 
 **不适用**：
 
-- 2026 之后从零启动的新项目，且必须长期跟进最新 FFmpeg 版本
+- 2025 退休之后从零启动、又必须长期跟进最新 FFmpeg 的新项目（应评估 FFmpegKitNext 或自建）
+- 仍假设 Maven / CocoaPods / npm 能一键拉到官方预编译包——二进制已按计划下架，CI 会 404
 - 只需要播放视频，不需要转码处理；这类场景用系统播放器或播放器 SDK 更轻
 - 对 App 体积极端敏感，无法接受捆绑多媒体原生库
 - 对许可证边界没有把握，却想直接使用 `full-gpl` 之类包
@@ -151,7 +152,8 @@ FFmpegKitConfig.writeToPipe(image1Path, pipe1);
 - **2018-2020 年前后**：移动端社区常用 MobileFFmpeg、flutter_ffmpeg、react-native-ffmpeg 把 FFmpeg 带进 App。
 - **2021 年**：FFmpegKit 统一这些路线，定位成支持 Android、Apple 平台、Flutter、React Native、Linux 的一套工具集合。
 - **2023 年**：6.0 系列发布，Android / Apple、Flutter、React Native 包跟随 FFmpeg 6.0。
-- **2026 年 7 月**：原仓库归档，README 指向由原作者维护的 FFmpegKitNext；历史文档和 release 继续保留。
+- **2025-01-06**：作者宣布 FFmpegKit officially retired；随后预编译包按计划从公共仓库下架，仓库约 2025-06 归档。
+- **2026-07**：归档仓库 README 更新，指向原作者维护的 FFmpegKitNext；历史文档和 release 仍保留。
 
 ## 学到什么
 
