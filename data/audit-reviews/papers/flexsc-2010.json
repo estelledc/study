@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的吞吐数字与论文摘要不一致时，零基础读者会把错误数字当事实记住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文摘要与贡献列表写的是 Apache up to 116%、MySQL up to 40%、BIND up to 105%；笔记写成 Apache +63%、MySQL +115%，数字对调/错位，必须按论文改。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Figure 1 / 正文是「约 14000 cycles」后用户态 IPC 才回升，不是「14000 条指令」；案例 1 与成本表应改成 cycles。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「~32K→~52K (+63%)」与论文「多核最高约 +116% / 单核 batching 最高约 +86%」不符，应改用论文给出的相对提升，或标明来自某图并核对。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "syscall page 状态机可读；吞吐数字修好后案例即可跟做。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的吞吐数字与论文摘要不一致时，零基础读者会把错误数字当事实记住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "论文摘要与贡献列表写的是 Apache up to 116%、MySQL up to 40%、BIND up to 105%；笔记写成 Apache +63%、MySQL +115%，数字对调/错位，必须按论文改。",
+        "Figure 1 / 正文是「约 14000 cycles」后用户态 IPC 才回升，不是「14000 条指令」；案例 1 与成本表应改成 cycles。",
+        "案例 1「~32K→~52K (+63%)」与论文「多核最高约 +116% / 单核 batching 最高约 +86%」不符，应改用论文给出的相对提升，或标明来自某图并核对。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "syscall page 状态机可读；吞吐数字修好后案例即可跟做。"
+      ]
+    }
+  ]
+}

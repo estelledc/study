@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "冲印店/气味标签类比好懂；时间线若过时会误导「现在装哪一版」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "模型列表里是 SigLIP / multilingual CLIP（MCLIP）等，未见 MobileCLIP；「MobileCLIP / SigLIP」应改成仓库实际提供的轻量选项（如 SigLIP2 / 较小 ViT）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2026 年主线已到 v3.x（非仍停在 v2.7.x）；时间线应更新到 v3，并把「进入 100k stars」放到与现实更接近的时段（约 2025 末–2026）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "sha1 去重与 NestJS/Python/Flutter/Svelte 拆分整体正确，可保留。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "searchSmart 伪代码与流水线清楚；HNSW 内存估算有量化边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "冲印店/气味标签类比好懂；时间线若过时会误导「现在装哪一版」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "模型列表里是 SigLIP / multilingual CLIP（MCLIP）等，未见 MobileCLIP；「MobileCLIP / SigLIP」应改成仓库实际提供的轻量选项（如 SigLIP2 / 较小 ViT）。",
+        "2026 年主线已到 v3.x（非仍停在 v2.7.x）；时间线应更新到 v3，并把「进入 100k stars」放到与现实更接近的时段（约 2025 末–2026）。",
+        "sha1 去重与 NestJS/Python/Flutter/Svelte 拆分整体正确，可保留。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "searchSmart 伪代码与流水线清楚；HNSW 内存估算有量化边界。"
+      ]
+    }
+  ]
+}

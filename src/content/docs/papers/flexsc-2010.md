@@ -17,7 +17,7 @@ FlexSC 提出一个朴素却颠覆的想法：**别让程序"陷入内核"了，
 - 传统 syscall = 用户态写一条 `syscall` 指令 → CPU 触发软异常 → 进内核 → 内核办完 → 回用户态。**每次都要切两次**。
 - FlexSC syscall = 用户态把请求写进一块共享内存里的 **syscall page**（系统调用页）→ 内核里有专门的 syscall 线程在另一个 CPU 核上**轮询**这页 → 看到新请求就办 → 办完写回结果。用户态线程**完全不切换模式**。
 
-论文实测：Apache web server 吞吐 +63%，MySQL +115%。这是 2010 年 OSDI 的论文，也是后来 Linux **io_uring**（2019）SQ/CQ 双 ring 设计的直接祖先。
+论文实测：Apache 吞吐最高约 **+116%**，MySQL 约 **+40%**，BIND 约 **+105%**。这是 2010 年 OSDI 的论文，也是后来 Linux **io_uring**（2019）SQ/CQ 双 ring 设计的重要先驱。
 
 ## 为什么重要
 
@@ -44,12 +44,13 @@ FlexSC 的设计能拆成 **三个洞察**：
 
 ### 案例 1：Apache 实测的吞吐曲线
 
-论文用一个改造过的 Apache（基于 libflexsc 用户态库），跑静态文件 benchmark：
+论文用 **FlexSC-Threads**（与 NPTL 二进制兼容的 M:N 用户态线程库）跑未改源码的 Apache 2.2 + ApacheBench：
 
-- 传统 syscall：吞吐 ~32 K req/s，CPU 利用率里 **40% 在 mode switch**
-- FlexSC：吞吐 ~52 K req/s，**+63%**，且**用了更少的核**（因为 syscall 集中到专核，应用线程独占其他核）
+- 单核（主要靠 batching）：吞吐最高约 **+86%**
+- 2/4 核（再加跨核调度）：吞吐最高约 **+116%**
+- 同期 MySQL/sysbench 约 **+37%–40%**，BIND 约 **+105%**
 
-关键数字：传统模式下，一个 syscall 之后，**用户态代码要跑 14000 条指令**才能让 cache 重新热起来。FlexSC 把这个 14000 条降到几乎为 0。
+关键数字：一次 `pwrite` 之后，用户态 IPC 要再跑大约 **14000 cycles** 才回到 syscall 前的水平（Figure 1）。FlexSC 不切模式，就把这笔间接污染摊掉了。
 
 ### 案例 2：syscall page 长什么样
 
@@ -85,9 +86,9 @@ io_uring（Linux 5.1，2019）的核心数据结构：
 
 | 成本来源 | 单次 syscall（2010 年） | KPTI 后（2018+） |
 | --- | --- | --- |
-| 模式切换指令 | ~150 cycles | ~150 cycles |
-| TLB flush | 隐含 | **+800 cycles**（KPTI 强制）|
-| L1/L2 cache 被内核污染 | ~14000 条用户指令"重新热"才回归 | 同上 |
+| 模式切换往返 | ~150 cycles（论文 null syscall） | 量级仍在 |
+| TLB / 页表隔离 | 隐含在污染里 | **KPTI 再抬一轮**（常见再贵数倍） |
+| L1/L2 cache 被内核污染 | 用户态 IPC 约 **14000 cycles** 才回升 | 同上量级 |
 | 分支预测器被污染 | 难量化但可观 | 同上 |
 
 FlexSC 把这一整列成本压到接近 0——因为**根本不切模式**。

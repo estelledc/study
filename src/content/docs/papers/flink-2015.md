@@ -15,7 +15,7 @@ Flink 是一个**把"流处理"当主角、"批处理"当配角**的开源数据
 - `DataStream` API：处理永不结束的事件（点击日志、传感器、金融行情）
 - `DataSet` API：处理有头有尾的文件（HDFS 上的一天日志）
 
-两套 API **共享同一个 runtime**——同样的算子调度、同样的 state、同样的快照。这是 2015 年开源世界第一次有人把"流批一体"工程上做出来。
+两套 API **共享同一个 runtime**——同样的算子调度、同样的 state、同样的快照。相对当时已有的 Spark Streaming（把流切成 micro-batch），Flink 把主张反过来做成工程：**流优先，批只是有界流**。
 
 ## 为什么重要
 
@@ -53,7 +53,7 @@ Source ──▶ Map ──▶ KeyBy ──▶ Window ──▶ Sink
 - t=2：Window 收到 → 同样拍照
 - t=3：Sink 收到 → 拍照 → barrier #1 全图完成
 
-**关键**：拍照时**算子还在处理后续数据**——异步落盘，不阻塞流。这就是相对 Chandy-Lamport 1985 的改进：原版要"停下来收 marker"，ABS 让 marker 随数据飘。
+**关键**：拍照时**算子还在处理后续数据**——异步落盘，不阻塞流。相对 [[chandy-lamport-1985]]：经典算法用 marker 对齐通道、进程本地记状态；ABS 把 barrier **嵌进 dataflow**，并让 state 异步落对象存储，专为持续算子图设计。
 
 ### 案例 2：event time 解决乱序
 
@@ -133,7 +133,7 @@ env.execute("hourly-clicks");
 ## 学到什么
 
 1. **抽象的方向决定一切**：选"批是流的特例"还是"流是批的特例"，会长出完全不同的系统。Flink 的工程优势 80% 来自这个选择。
-2. **老算法 + 一点改造 = 新工业标准**：Chandy-Lamport 1985 在分布式课本里躺了 30 年；Flink 把"阻塞 marker"改成"飘动 barrier"，立刻变成 PB 级流处理的引擎心脏。
+2. **老算法 + 一点改造 = 新工业标准**：Chandy-Lamport 1985 在分布式课本里躺了 30 年；Flink 把 marker 对齐改成 dataflow 里的异步 barrier 快照，立刻变成 PB 级流处理的引擎心脏。
 3. **时间是分布式系统的一等公民**：event time vs processing time 不是细节，是世界观。承认时间不可靠，用 watermark 显式建模——这是处理现实数据的成熟态度。
 4. **理论 → 算法 → 工程**：1985（Chandy-Lamport）→ 2014（ABS 论文）→ 2015（开源工业系统）→ 2020s（事实标准）。又一个 30 年周期。
 
@@ -143,13 +143,18 @@ env.execute("hourly-clicks");
 - ABS 算法原论文：[Lightweight Asynchronous Snapshots for Distributed Dataflows](https://arxiv.org/abs/1506.08603)（Carbone et al., 2015，单独讲快照）
 - 官方文档：[Stateful Computations over Data Streams](https://flink.apache.org/)（中文版完整，从 quickstart 到 state backend 调优）
 - 视频：[Tyler Akidau — The world beyond batch](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-101/)（Google Beam 之父，把流处理思想史讲清楚）
-- [[lamport-1978]] —— Chandy-Lamport 快照是 ABS 算法的祖宗
+- [[chandy-lamport-1985]] —— 分布式快照祖宗；ABS 把它嵌进流式 dataflow
 - [[kafka]] —— Flink 上游 source replay 的实际承担者
 
 ## 关联
 
-- [[lamport-1978]] —— 分布式快照的开山之作；Flink 把"阻塞 marker"改成"飘 barrier"
+- [[chandy-lamport-1985]] —— 分布式快照开山之作；Flink ABS 把 barrier 嵌进算子图并异步落盘
 - [[kafka]] —— Flink 端到端 exactly-once 的另一半：source 必须能按 offset 重放
 - [[kildall-dataflow]] —— dataflow 思想更早的源头（编译器全局优化）
 - [[calvin-2012]] —— 同样追求强一致，但选了"确定性事务"而非"快照恢复"路径
 - [[spanner-2012]] —— 强一致分布式数据库；时间观（TrueTime）与 Flink 的 event time 互为镜像
+- [[lamport-1978]] —— happens-before / 逻辑时钟；理解乱序与因果的前置
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
