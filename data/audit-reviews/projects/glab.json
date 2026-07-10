@@ -1,7 +1,4 @@
 {
-  "slug": "glab",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.34,
   "reject_count": 0,
@@ -86,29 +83,5 @@
         "MR/CI autologin/api 例子可跟做；GITLAB_TOKEN 优先级、自建 OAuth、ci lint --server-side 踩坑具体。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.34,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 177,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic：Clement Sam 非 gh contributor；「写了4年」应为约两年。已改正并补历史小故事/反向链接。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 学到什么",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

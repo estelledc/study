@@ -1,7 +1,4 @@
 {
-  "slug": "e5-2022",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,28 +83,5 @@
         "sentence_transformers + FAISS 例子可跑；前缀/噪声过滤踩坑可操作；512 token 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 183,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic：案例1用 e5-large-v2 跑中文并写跨语言过满；BEIR 超 BM25 应限定为 E5-PT 无标注设定。已改英文例句并区分 multilingual-e5 / E5-PT。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 相关概念词典"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

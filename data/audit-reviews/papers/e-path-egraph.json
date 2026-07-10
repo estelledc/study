@@ -1,7 +1,4 @@
 {
-  "slug": "e-path-egraph",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,18 +78,5 @@
         "LICM 前后候选与 cost extraction 伪代码概念正确；prototype 边界（无环/reducible/无 alias）写得可操作。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

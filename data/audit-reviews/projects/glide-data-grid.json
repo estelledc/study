@@ -1,11 +1,40 @@
 {
-  "slug": "glide-data-grid",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
-  "lines": 175,
   "average": 4.33,
-  "l1_pass": true,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 2 称 experimental.strict 用于开启读屏：事实错误。strict 只约束 getCellContent 可见区调用；无障碍树默认开启，关闭才是 experimental.disableAccessibilityTree"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 2 修复建议写错 API：应改为「无障碍默认开；勿设 disableAccessibilityTree；可开 pageUp/pageDown keybindings 并实测读屏」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 可补一句需包一层 React 组件/挂载，但不阻塞跟做"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -48,16 +77,5 @@
         "案例 1 可补一句需包一层 React 组件/挂载，但不阻塞跟做"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "reject_count": 0,
-    "needs_refine_count": 2,
-    "action": "refine",
-    "reason": "存在 needs-refine 或事实/代码硬伤，已定向 refine。"
-  },
-  "sections_modified": [
-    "## 踩过的坑"
-  ],
-  "unresolved_hints": []
+  ]
 }
