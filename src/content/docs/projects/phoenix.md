@@ -27,8 +27,8 @@ end
 
 不理解 Phoenix，下面这些事都没法解释：
 
-- 为什么一台机器能挂 200 万 WebSocket 连接（业界做过 benchmark），而 Node 单进程到几万就吃力
-- 为什么 Discord、Pinterest 早期用 Elixir/Phoenix 做实时消息和通知系统
+- 为什么官方 benchmark 能在一台机器挂约 200 万 WebSocket，而 Node 单进程到几万就吃力
+- 为什么 Discord、Pinterest 等公司早期用 Elixir/OTP 做实时消息和通知（Phoenix 是同生态的 web 层）
 - 为什么 LiveView 出现后，"小团队也能做协作型应用"成为可能——不必再养一个 React/Vue 前端组
 - 为什么"框架像 Rails 但写起来像 Erlang"成立——它继承了 OTP 的容错哲学
 
@@ -62,6 +62,12 @@ defmodule ChatLive do
   def handle_info({:msg, t}, socket) do
     {:noreply, update(socket, :messages, &[t | &1])}
   end
+  def render(assigns) do
+    ~H"""
+    <ul><li :for={m <- @messages}>{m}</li></ul>
+    <form phx-submit="send"><input name="text" /></form>
+    """
+  end
 end
 ```
 
@@ -69,22 +75,26 @@ end
 
 - `mount` 是首次连接 — 订阅 PubSub topic、初始化 messages 为空列表
 - `handle_event` 接浏览器事件（用户敲回车）— 把消息广播到 topic
-- `handle_info` 接进程消息 — 把新消息塞进 socket，框架自动推 diff
-- 浏览器看到列表更新，**没写一行 JS**
+- `handle_info` 接进程消息 — 把新消息塞进 socket；`render` 用 HEEx 画出列表和输入框，框架自动推 diff
+- 浏览器看到列表更新，**没写一行手写 JS**
 
 ### 案例 2：Channel 做行情广播
 
 ```elixir
+# 1) 在 socket router 里声明路由（不是随便写在模块里）
 channel "quotes:*", QuoteChannel
+
+# 2) Channel 模块：浏览器 join "quotes:btc" 后才能收到该 topic
 defmodule QuoteChannel do
   use Phoenix.Channel
   def join("quotes:" <> sym, _, socket), do: {:ok, assign(socket, :symbol, sym)}
 end
-# 后台进程拿到行情后：
+
+# 3) 后台进程拿到行情后广播：
 MyAppWeb.Endpoint.broadcast("quotes:btc", "tick", %{price: 67_000})
 ```
 
-一个进程订阅交易所 feed，把每条 tick broadcast 到 `quotes:btc` topic；几十万浏览器加入这个 topic，**谁加入谁就收到**。多节点部署时给 PubSub 配 Redis/PG2 适配器，跨机器也能广播。
+一个进程订阅交易所 feed，把每条 tick broadcast 到 `quotes:btc`；浏览器先 join 同名 topic，**谁加入谁就收到**。多节点部署时给 PubSub 配 Redis 或 Postgres 适配器（或 OTP `:pg`），跨机器才能互相广播。
 
 ### 案例 3：Context 把业务逻辑从 Controller 抽出
 
@@ -105,7 +115,7 @@ MyApp.Accounts.register_user(params)
 
 1. **LiveView 状态在服务端**：长连接断了、服务端进程挂了，UI 状态丢失。需要把关键状态用 Ecto 持久化或 PubSub 重建，不要把 LiveView 当浏览器 state 用。
 
-2. **Channel 广播默认单节点**：多节点部署不配 PubSub 适配器（Redis/PG2），不同机器的客户端互相收不到消息。生产前必检。
+2. **Channel 广播默认单节点**：多节点部署不配 PubSub 适配器（Redis / Postgres / OTP `:pg`），不同机器的客户端互相收不到消息。生产前必检。
 
 3. **Ecto changeset 不是 ActiveRecord**：changeset 只做"校验 + 准备变更"，必须显式 `Repo.insert/update` 才落库。新人常忘最后那一步，以为返回 `:ok` 就写进去了。
 
