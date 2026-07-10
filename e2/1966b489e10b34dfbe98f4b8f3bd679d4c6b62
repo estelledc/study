@@ -1,0 +1,113 @@
+docs/release-and-rollback.md
+  s_4c8f801a305244::t_434e1879895228 1-62
+scripts/audit-runtime-state.mjs
+  s_4c8f801a305244::t_68c78df46630f9 80-81,86-89,94-100,116,149-150
+scripts/audit-runtime-state.test.mjs
+  s_4c8f801a305244::t_cb312471f880fc 78-103
+scripts/dispatch-batch.mjs
+  s_4c8f801a305244::t_76d0a12e1f118a 17-21,25-29,32-39,45-49,54-81,215,226-228,231-252,259-260,265-316,325,327-337,343-382,384
+scripts/dispatch-batch.test.mjs
+  s_4c8f801a305244::t_1946a52e9b95d7 4-9,117-195
+scripts/expand-pool.mjs
+  s_4c8f801a305244::t_2a36b7e9f7264c 14-18,70-75,82,115,129,137-138,161,198,202
+scripts/expand-pool.test.mjs
+  s_4c8f801a305244::t_66e5bf51c05840 44
+scripts/extract-candidates.mjs
+  s_4c8f801a305244::t_4fc7027bd7af77 8,39,74
+scripts/finalize-round.sh
+  s_4c8f801a305244::t_45870ea0afa094 17,21-24,133-144,204,225-231,233,239-244,249-261,265-268,270-273,275,287-288,292-298,300,302-311,320-326,329-344
+scripts/finalize-round.test.sh
+  s_4c8f801a305244::t_72cde92cb2d9f2 1-227
+scripts/lib/auto-round.mjs
+  s_4c8f801a305244::t_c7f74a44afb39b 34-45,91-92,95-102,120-122
+scripts/lib/auto-round.test.mjs
+  s_4c8f801a305244::t_7f0dc9145a3684 21-22,28-36,64,85-92,94-121
+scripts/lib/git-commit-scope.mjs
+  s_4c8f801a305244::t_91d237dfb82dac 1-155
+scripts/lib/git-commit-scope.test.mjs
+  s_4c8f801a305244::t_80f0d4cb155721 1-256
+scripts/lib/json-store.mjs
+  s_4c8f801a305244::t_30225f2d674e11 3-50,86-89
+scripts/lib/json-store.test.mjs
+  s_4c8f801a305244::t_4a79582eef4077 7,41-59
+scripts/lib/jsonl.mjs
+  s_4c8f801a305244::t_6a3bf01fac25ac 2,31,37-44
+scripts/lib/jsonl.test.mjs
+  s_4c8f801a305244::t_a1e6a7fd736c0c 7,40-44
+scripts/lib/merge-review-companion.mjs
+  s_4c8f801a305244::t_e26b5ab0ab5cb2 1-372
+scripts/lib/merge-review-companion.test.mjs
+  s_4c8f801a305244::t_e539827a2a4462 1-310
+scripts/lib/pipeline-review.mjs
+  s_4c8f801a305244::t_35fdeeb08f90e7 1-104
+scripts/lib/pipeline-review.test.mjs
+  s_4c8f801a305244::t_531eb6a6f85dc5 1-108
+scripts/lib/prompts.test.mjs
+  s_4c8f801a305244::t_8e211da1e2687c 70-71,75,81-98
+scripts/lib/publish-main.sh
+  s_4c8f801a305244::t_11b15f2173eb7a 1-217
+scripts/lib/queue-store.mjs
+  s_4c8f801a305244::t_ea621c384cd8eb 1-3,7,10,12-14,70,74,76-82,93-100,104-107,117-121,126-139,143-160,173,186,192-251
+scripts/lib/queue-store.test.mjs
+  s_4c8f801a305244::t_a8dac4e008dcbb 13,17-19,21-27,49-66
+scripts/lib/queue-transaction.mjs
+  s_4c8f801a305244::t_e565cdcf3593d9 1-279
+scripts/lib/queue-transaction.test.mjs
+  s_4c8f801a305244::t_e5eabe189ec6cb 1-167
+scripts/lib/round-utils.mjs
+  s_4c8f801a305244::t_06cdf3ea1c13ea 58-60
+scripts/lib/round-utils.test.mjs
+  s_4c8f801a305244::t_7ae637e89c8a5c 45-56
+scripts/lib/verify-remote-head.mjs
+  s_4c8f801a305244::t_ab0cd2d53b4b21 1-247
+scripts/lib/verify-remote-head.test.mjs
+  s_4c8f801a305244::t_23c84bbe1a7e36 1-176
+scripts/pick-batch.mjs
+  s_4c8f801a305244::t_604926b8cae80d 10-11,13-14,16,18,21-26,138-170,179-180,234-237,241-266,269,271-302,304-331,337-339
+scripts/pick-batch.test.mjs
+  s_4c8f801a305244::t_97d8f58371dc61 2-4,7-8,28-29,60,81-167
+scripts/pipeline-summary.mjs
+  s_4c8f801a305244::t_030cd61203c036 37,55-99,125-136,140,142,144-146,159-162,190,194-196,242-244
+scripts/pipeline-summary.test.mjs
+  s_4c8f801a305244::t_7035a0c6dd5040 64-65,70-123
+scripts/recover-queue-state.mjs
+  s_4c8f801a305244::t_1b9fe52c488f2b 7-8,13-15,57-67,69-70,72-76,79-88,90,93,95-96,98-102,104,107-112,115-127,129-130,146-167,177-185,187,193,200-201,236,243-252,254-256,260-281,288-289
+scripts/recover-queue-state.test.mjs
+  s_4c8f801a305244::t_f8c6cfe22cff29 2-4,8,13-14,53,55-58,61,64,68-104,126-199
+scripts/round-lock.mjs
+  s_4c8f801a305244::t_dbb46225ac8812 3,5-7,10-12,14-17,20-24,27-29,32-150,152-154,158-170,172-174,176-194,196-300,302-372,376-379
+scripts/round-lock.test.mjs
+  s_4c8f801a305244::t_ee6d49e0de6525 1-95
+scripts/round.mjs
+  s_4c8f801a305244::t_9bd8e35c9b74a5 5,8,27,43-49,61-67,73-108,199,206,219-224,253,256,261-273,276-285,287-288,296-301,316-342,347,355,400,402-413,416,422-423,427,432,435
+scripts/run-pipeline.mjs
+  s_4c8f801a305244::t_b6f45cc17a6569 6-7,15,18,20,29-38,43-53,57,62-68,73,75,78-79,82,88-93,101,105-109,111-114,122,127-128,132,148-150,156-207,214-215,228-229,233-242,254-261,282-292
+scripts/run-pipeline.test.mjs
+  s_4c8f801a305244::t_fb2ed98176784c 2-5,7,9,12,14,16,28-35,40,55-68,72-132
+scripts/sync-and-merge-single.mjs
+  s_4c8f801a305244::t_b7115d78165a37 3,6-9,12,21-40,42-65,68-79,87-92,98,105,121-130,134-256,263-309,315,320-322,326-345,347-356,362-368,370-371,373-389,392-443,448-457,464-465,471-481
+scripts/sync-and-merge-single.test.mjs
+  s_4c8f801a305244::t_5e1a66864dfc5c 2-5,8-14,16-26,28,30-70,74-78,80-90,93-94,96-237,242-298
+scripts/sync-and-merge.sh
+  s_4c8f801a305244::t_c74d6ce0c1c502 5,75,82,87
+scripts/sync-written.mjs
+  s_4c8f801a305244::t_10b9171b9eef49 7,14-16,19,21,36,39-51,53-69,71-76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e21966b489e10b34dfbe98f4b8f3bd679d4c6b62",
+  "prompts": {},
+  "sessions": {
+    "s_4c8f801a305244": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_4c8f801a305244",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
