@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "医院化验单类比贴合「统一格式、换厂商不重写」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "API/SDK/OTLP/Collector、span/trace_id 有桥接，整体能跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有字段解释；案例 2–4 缺逐部分解释；文末缺 ## 反向链接 占位"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 opentelemetry.io/docs 合理；OpenTracing+OpenCensus→2019 OTel、Tracing 1.0(2021)、Logs 1.0(2023)、profiling 2024 时间线大体正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "W3C Trace Context / OTLP / Semantic Conventions 叙述与规范一致，教学简化未歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "[[grpc]] / [[protobuf]] 仓库无对应笔记，关联段宜改链或删以免断链"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "span 示例与 traceparent 解析概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "直连脆、head vs tail sampling、Semantic Conventions 三坑有用；「永远 SDK→Collector」略绝对，小实验可直连"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺量化：建议补批处理默认延迟量级（秒级）、单体何时不必上 Collector 的边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "医院化验单类比贴合「统一格式、换厂商不重写」",
+        "API/SDK/OTLP/Collector、span/trace_id 有桥接，整体能跟住",
+        "案例 1 有字段解释；案例 2–4 缺逐部分解释；文末缺 ## 反向链接 占位"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "来源 opentelemetry.io/docs 合理；OpenTracing+OpenCensus→2019 OTel、Tracing 1.0(2021)、Logs 1.0(2023)、profiling 2024 时间线大体正确",
+        "W3C Trace Context / OTLP / Semantic Conventions 叙述与规范一致，教学简化未歪曲",
+        "[[grpc]] / [[protobuf]] 仓库无对应笔记，关联段宜改链或删以免断链"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "span 示例与 traceparent 解析概念正确可跟",
+        "直连脆、head vs tail sampling、Semantic Conventions 三坑有用；「永远 SDK→Collector」略绝对，小实验可直连",
+        "适用/不适用缺量化：建议补批处理默认延迟量级（秒级）、单体何时不必上 Collector 的边界"
+      ]
+    }
+  ]
+}

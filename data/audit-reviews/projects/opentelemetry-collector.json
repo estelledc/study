@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "手机主板 vs 外设类比贴合 core/contrib 分仓"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Factory / pipeline / pdata 有对照桥接，中级难度可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 OCB YAML 缺逐部分解释；「历史与定位」宜改回模板名「历史小故事（可跳过）」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 open-telemetry/opentelemetry-collector 正确；core/contrib/OCB、connector 2023、profiles alpha 叙事合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「5.4k star」已过时（现网约 7k），宜写成「笔记时点约 5–7k」或更新量级并保留日期语境"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2019 立项来自 OpenCensus Service、2020 分仓与公开史一致，无硬伤歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "OCB builder-config 与 Factory 接口示意概念正确可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "core 不含厂商组件、版本对齐、pdata Clone、unknown component、service.telemetry 五坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界分清读源码 vs 拉 contrib 二进制，量化够用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "手机主板 vs 外设类比贴合 core/contrib 分仓",
+        "Factory / pipeline / pdata 有对照桥接，中级难度可接受",
+        "案例 1 OCB YAML 缺逐部分解释；「历史与定位」宜改回模板名「历史小故事（可跳过）」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 open-telemetry/opentelemetry-collector 正确；core/contrib/OCB、connector 2023、profiles alpha 叙事合理",
+        "「5.4k star」已过时（现网约 7k），宜写成「笔记时点约 5–7k」或更新量级并保留日期语境",
+        "2019 立项来自 OpenCensus Service、2020 分仓与公开史一致，无硬伤歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "OCB builder-config 与 Factory 接口示意概念正确可跟",
+        "core 不含厂商组件、版本对齐、pdata Clone、unknown component、service.telemetry 五坑具体可操作",
+        "适用边界分清读源码 vs 拉 contrib 二进制，量化够用"
+      ]
+    }
+  ]
+}
