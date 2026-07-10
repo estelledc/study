@@ -1,0 +1,116 @@
+{
+  "slug": "lancedb",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "IVF-PQ / HNSW / IVF-HNSW / ANN 首次出现缺一句日常桥接，零基础会在索引名单处卡住。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "书架 vs 图书馆类比清楚；四案例可跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点写 db.checkout(version=N)，官方 API 是 table.checkout(version=...)；案例 3 写法正确，正文需对齐。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『比 Parquet 快 10~100 倍』偏厂商口径，宜加『官方/博客宣称』或弱化为数量级。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "db.checkout 不可跟做，应改为 table.checkout；案例 1/2/4 与 prefilter 踩坑可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "单写多读 / S3 延迟 / compact 版本膨胀边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "IVF-PQ / HNSW / IVF-HNSW / ANN 首次出现缺一句日常桥接，零基础会在索引名单处卡住。",
+        "书架 vs 图书馆类比清楚；四案例可跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点写 db.checkout(version=N)，官方 API 是 table.checkout(version=...)；案例 3 写法正确，正文需对齐。",
+        "『比 Parquet 快 10~100 倍』偏厂商口径，宜加『官方/博客宣称』或弱化为数量级。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "db.checkout 不可跟做，应改为 table.checkout；案例 1/2/4 与 prefilter 踩坑可操作。",
+        "单写多读 / S3 延迟 / compact 版本膨胀边界清楚。"
+      ]
+    }
+  ],
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

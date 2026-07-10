@@ -1,0 +1,93 @@
+{
+  "slug": "gshard-2020",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜谱/厨房类比贴合；SPMD / all-to-all 有上下文托住，但核心要点仍偏密——不影响跟读通过。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Lepikhin et al. arXiv 2006.16668 / ICLR 2021、600B、2048 TPU v3、4 天、100→英、top-2 与公开摘要一致；『每 token ~2B』为数量级教学简化，可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mesh_split 为教学伪 API，概念正确；capacity drop / all-to-all / SPMD straggler 踩坑可操作；>10B 与动态形状边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "菜谱/厨房类比贴合；SPMD / all-to-all 有上下文托住，但核心要点仍偏密——不影响跟读通过。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Lepikhin et al. arXiv 2006.16668 / ICLR 2021、600B、2048 TPU v3、4 天、100→英、top-2 与公开摘要一致；『每 token ~2B』为数量级教学简化，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "mesh_split 为教学伪 API，概念正确；capacity drop / all-to-all / SPMD straggler 踩坑可操作；>10B 与动态形状边界清楚。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 161,
+    "reasons": []
+  },
+  "lines": 161,
+  "l1_pass": true
+}
