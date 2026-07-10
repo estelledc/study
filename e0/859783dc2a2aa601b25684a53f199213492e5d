@@ -1,0 +1,25 @@
+scripts/regen-atlas.mjs
+  s_9340ed41c548fc::t_0afcd1490bf5dd 6-7,277-278,285,294-295,298-303,317,344-345,347,355-356,362-363,373-374,414-415
+src/content/docs/papers-atlas.md
+  s_9340ed41c548fc::t_1bbe1a1b51edab 3,12-13,16-21,44,310-311,313,1189-1190,1193-1194,2212-2213
+src/content/docs/projects-atlas.md
+  s_9340ed41c548fc::t_a7b7b774c92375 3,12-13,16-21,60,509-510,512,1264-1265,1268-1269,2234-2235
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e0859783dc2a2aa601b25684a53f199213492e5d",
+  "prompts": {},
+  "sessions": {
+    "s_9340ed41c548fc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9788d74c-dc80-4c60-8ed9-f8f7c8e0039a",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
