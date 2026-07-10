@@ -7,6 +7,9 @@ import path from 'node:path';
 import { promisify } from 'node:util';
 
 const execFile = promisify(execFileCallback);
+const FROZEN_PUBLIC_REDLINE_BASELINE_COMMIT = 'acbf24baf4641c0f80a2a6c624abfb37f4cadefc';
+const PUBLIC_REDLINE_BASELINE_SCHEMA = 'study-public-redline-baseline-v1';
+const BASELINE_VERIFICATION_ERROR = 'public-redline baseline verification failed';
 const PLACEHOLDER_USERS = new Set([
   'app', 'coder', 'container', 'default', 'home', 'me', 'name', 'node', 'oai',
   'public', 'root', 'runner', 'ubuntu', 'user', 'username',
@@ -253,10 +256,66 @@ export function scanBufferForPublicRedlines(buffer, relativePath) {
 }
 
 export async function loadPublicRedlineBaseline(rootDir = process.cwd()) {
-  return JSON.parse(await fs.readFile(
-    path.join(rootDir, 'data', 'public-redline-baseline.json'),
-    'utf8',
-  ));
+  try {
+    const baseline = JSON.parse(await fs.readFile(
+      path.join(rootDir, 'data', 'public-redline-baseline.json'),
+      'utf8',
+    ));
+    await verifyPublicRedlineBaseline(baseline, rootDir);
+    return baseline;
+  } catch {
+    throw new Error(BASELINE_VERIFICATION_ERROR);
+  }
+}
+
+function isCanonicalBaselinePath(value) {
+  if (typeof value !== 'string' || value.length === 0 || value.includes('\0')) return false;
+  if (value !== normalizePath(value) || path.posix.isAbsolute(value)) return false;
+  return value.split('/').every((segment) => segment !== '' && segment !== '.' && segment !== '..');
+}
+
+function baselineEntryKey(entry) {
+  return `${entry.category}\0${entry.path}\0${entry.fingerprint}`;
+}
+
+async function scanFrozenBaselineBlob(rootDir, relativePath) {
+  const objectSpec = `${FROZEN_PUBLIC_REDLINE_BASELINE_COMMIT}:${relativePath}`;
+  const { stdout } = await execFile('git', ['cat-file', 'blob', objectSpec], {
+    cwd: rootDir,
+    encoding: 'buffer',
+    maxBuffer: 50 * 1024 * 1024,
+  });
+  return scanBufferForPublicRedlines(stdout, relativePath);
+}
+
+export async function verifyPublicRedlineBaseline(baseline, rootDir = process.cwd()) {
+  try {
+    if (baseline?.schema_version !== PUBLIC_REDLINE_BASELINE_SCHEMA) throw new Error();
+    if (baseline.baseline_commit !== FROZEN_PUBLIC_REDLINE_BASELINE_COMMIT) throw new Error();
+    if (!Array.isArray(baseline.entries)) throw new Error();
+
+    const seenEntries = new Set();
+    const findingsByPath = new Map();
+    for (const entry of baseline.entries) {
+      if (!entry || typeof entry !== 'object') throw new Error();
+      if (!/^[a-z0-9-]+$/.test(entry.category ?? '')) throw new Error();
+      if (!isCanonicalBaselinePath(entry.path)) throw new Error();
+      if (!/^[a-f0-9]{64}$/.test(entry.fingerprint ?? '')) throw new Error();
+
+      const key = baselineEntryKey(entry);
+      if (seenEntries.has(key)) throw new Error();
+      seenEntries.add(key);
+
+      if (!findingsByPath.has(entry.path)) {
+        const frozenFindings = await scanFrozenBaselineBlob(rootDir, entry.path);
+        findingsByPath.set(entry.path, new Set(frozenFindings.map(baselineEntryKey)));
+      }
+      if (!findingsByPath.get(entry.path).has(key)) throw new Error();
+    }
+  } catch {
+    // Do not propagate Git stderr, paths, fingerprints, or matched source values.
+    throw new Error(BASELINE_VERIFICATION_ERROR);
+  }
 }
 
 export function classifyWithBaseline(findings, baseline) {
@@ -287,7 +346,9 @@ function isInsideRoot(rootDir, relativePath) {
 
 export async function auditPublicRedlines(options = {}) {
   const rootDir = path.resolve(options.rootDir ?? process.cwd());
+  const hasSuppliedBaseline = options.baseline !== undefined && options.baseline !== null;
   const baseline = options.baseline ?? await loadPublicRedlineBaseline(rootDir);
+  if (hasSuppliedBaseline) await verifyPublicRedlineBaseline(baseline, rootDir);
   const tracked = await trackedFiles(rootDir);
   const trackedSet = new Set(tracked);
   const supplied = options.suppliedPaths

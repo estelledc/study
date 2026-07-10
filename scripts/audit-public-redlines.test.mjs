@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
+import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 
 import {
@@ -14,6 +15,8 @@ import {
 } from './audit-public-redlines.mjs';
 
 const execFile = promisify(execFileCallback);
+const REPOSITORY_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const FROZEN_BASELINE_COMMIT = 'acbf24baf4641c0f80a2a6c624abfb37f4cadefc';
 
 function fictionalSensitiveText() {
   const mac = ['', 'Users', 'sample-person', 'work', 'repo'].join('/');
@@ -62,6 +65,68 @@ test('legacy baseline is keyed by category, path and fingerprint rather than lin
   assert.equal(classifyWithBaseline([{ ...movedLine, path: 'elsewhere.md' }], baseline)[0].status, 'BLOCKING');
 });
 
+test('audit rejects a mutable baseline commit before granting legacy status', async () => {
+  const baseline = JSON.parse(await fs.readFile(
+    path.join(REPOSITORY_ROOT, 'data/public-redline-baseline.json'),
+    'utf8',
+  ));
+  await assert.rejects(
+    auditPublicRedlines({
+      rootDir: REPOSITORY_ROOT,
+      baseline: { ...baseline, baseline_commit: 'b'.repeat(40) },
+      suppliedPaths: [],
+    }),
+    { message: 'public-redline baseline verification failed' },
+  );
+});
+
+test('audit proves every baseline entry from the frozen commit and rejects additions fail-closed', async () => {
+  const baseline = JSON.parse(await fs.readFile(
+    path.join(REPOSITORY_ROOT, 'data/public-redline-baseline.json'),
+    'utf8',
+  ));
+  assert.equal(baseline.baseline_commit, FROZEN_BASELINE_COMMIT);
+
+  const valid = await auditPublicRedlines({
+    rootDir: REPOSITORY_ROOT,
+    baseline,
+    suppliedPaths: [],
+  });
+  assert.equal(valid.baseline_commit, FROZEN_BASELINE_COMMIT);
+
+  const altered = {
+    ...baseline.entries[0],
+    fingerprint: '0'.repeat(64),
+  };
+  await assert.rejects(
+    auditPublicRedlines({
+      rootDir: REPOSITORY_ROOT,
+      baseline: { ...baseline, entries: [altered, ...baseline.entries.slice(1)] },
+      suppliedPaths: [],
+    }),
+    { message: 'public-redline baseline verification failed' },
+  );
+
+  const unproven = {
+    category: 'private-key-material',
+    path: 'private/do-not-leak-this-marker.md',
+    fingerprint: '0'.repeat(64),
+  };
+  await assert.rejects(
+    auditPublicRedlines({
+      rootDir: REPOSITORY_ROOT,
+      baseline: { ...baseline, entries: [...baseline.entries, unproven] },
+      suppliedPaths: [],
+    }),
+    (error) => {
+      assert.equal(error.message, 'public-redline baseline verification failed');
+      assert.equal(error.message.includes(unproven.path), false);
+      assert.equal(error.message.includes(unproven.fingerprint), false);
+      return true;
+    },
+  );
+});
+
 test('placeholder paths and URL path fragments are suppressed', () => {
   const placeholders = [
     ['https:', '', 'example.test', 'home', 'person', 'repo'].join('/'),
@@ -98,7 +163,11 @@ test('supplied stdin candidates are intersected with Git tracked files', async (
 
   const report = await auditPublicRedlines({
     rootDir,
-    baseline: { baseline_commit: 'test', entries: [] },
+    baseline: {
+      schema_version: 'study-public-redline-baseline-v1',
+      baseline_commit: FROZEN_BASELINE_COMMIT,
+      entries: [],
+    },
     suppliedPaths: ['safe.txt', '.env.local'],
   });
   assert.equal(report.summary.files_scanned, 1);
@@ -117,7 +186,11 @@ test('tracked symlinks are blocked without following an ignored target', async (
 
   const report = await auditPublicRedlines({
     rootDir,
-    baseline: { baseline_commit: 'test', entries: [] },
+    baseline: {
+      schema_version: 'study-public-redline-baseline-v1',
+      baseline_commit: FROZEN_BASELINE_COMMIT,
+      entries: [],
+    },
     suppliedPaths: ['linked-runtime', '.env.local'],
   });
   assert.equal(report.summary.files_scanned, 1);
@@ -196,7 +269,11 @@ test('tracked binary audit blocks embedded tokens while allowing a strict WebP f
   await execFile('git', ['add', 'public'], { cwd: rootDir });
   const report = await auditPublicRedlines({
     rootDir,
-    baseline: { baseline_commit: 'test', entries: [] },
+    baseline: {
+      schema_version: 'study-public-redline-baseline-v1',
+      baseline_commit: FROZEN_BASELINE_COMMIT,
+      entries: [],
+    },
   });
   assert.equal(report.summary.binary_allowed, 2);
   assert.equal(report.summary.blocking >= 1, true);
