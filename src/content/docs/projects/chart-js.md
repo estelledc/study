@@ -29,7 +29,7 @@ new Chart(ctx, {
 - 为什么前端教学第一周的"画个图"作业基本都用它（极简 API + 文档友好）
 - 为什么后台管理项目宁可不要花哨效果也选它，而不是 D3——D3 学一周才能出第一张图
 - 为什么 Canvas 上画图比 SVG 省内存——SVG 每个点都是 DOM 节点，Canvas 是一张位图
-- 为什么数据量超过 1 万点要装 decimation 插件——Canvas 每帧都要重画整张图
+- 为什么数据量超过 1 万点要启用 decimation——Canvas 每帧都要重画整张图
 
 ## 核心要点
 
@@ -110,11 +110,11 @@ new Chart(ctx, { type: 'line', data, plugins: [watermark] })
 
 1. **Canvas 没有 DOM**：不能用 CSS 改图表元素的样式，所有外观（颜色、字号、间距）都得走 `options`。新人第一次想 inspect 元素改 hover 颜色就懵了。
 
-2. **高 DPR 屏幕糊**：Mac Retina 上默认渲染分辨率不够，文字边缘有锯齿。解法：`options.devicePixelRatio = window.devicePixelRatio` 或让父容器有明确宽高。
+2. **手动改 canvas 尺寸后变糊**：CSS 宽高和实际像素宽高不一致时，文字边缘会有锯齿。解法：让父容器有明确宽高，交给 Chart.js 响应式逻辑同步 DPR。
 
 3. **v2 / v3 / v4 多次 breaking**：旧教程里 `Chart.defaults.global.xxx` 在 v3+ 已经移除；scale 配置从 `xAxes: [{...}]` 数组变成 `x: {...}` 对象。看教程先确认版本。
 
-4. **大数据量卡顿**：超过 1 万点每帧都要重画，CPU 占满。解法：装 `chartjs-plugin-decimation` 自动采样，或换成 WebGL 系（deck.gl / regl）。
+4. **大数据量卡顿**：超过 1 万点每帧都要重画，CPU 占满。解法：开启 Chart.js 内置 decimation 采样，或换成 WebGL 系（deck.gl / regl）。
 
 5. **无障碍弱**：屏幕阅读器读不到 canvas 内容。政府站、教育站要么提供 `<table>` fallback，要么换 SVG 系（Recharts / Observable Plot）。
 
@@ -166,3 +166,7 @@ new Chart(ctx, { type: 'line', data, plugins: [watermark] })
 - [[recharts]] —— 同类教学定位，但走 React + SVG 路线
 - [[echarts]] —— 同样 Canvas 渲染，但配置项体量大十倍
 - [[observable-plot]] —— grammar of graphics 思路，对比"配置式"和"组合式"
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
