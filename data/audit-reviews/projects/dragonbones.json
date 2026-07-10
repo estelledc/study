@@ -1,7 +1,4 @@
 {
-  "slug": "dragonbones",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -75,12 +72,5 @@
       "weakest_section": "## 适用",
       "fix_hints": []
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 191
-  },
-  "lines": 191,
-  "l1_pass": true
+  ]
 }

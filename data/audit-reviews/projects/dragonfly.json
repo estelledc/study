@@ -1,7 +1,4 @@
 {
-  "slug": "dragonfly",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -111,12 +108,5 @@
         "适用场景已有「单实例吃满 CPU」等边界，保持即可"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 151
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

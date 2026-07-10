@@ -1,7 +1,4 @@
 {
-  "slug": "crdt-json-2017",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.44,
   "reject_count": 0,
@@ -111,12 +108,5 @@
         "补上 ## 反向链接 占位，并控制在 150–200 行"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 155
-  },
-  "lines": 155,
-  "l1_pass": true
+  ]
 }

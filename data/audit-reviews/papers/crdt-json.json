@@ -1,7 +1,4 @@
 {
-  "slug": "crdt-json",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.44,
   "reject_count": 0,
@@ -111,12 +108,5 @@
         "踩坑与适用整体可用；保持「百万操作/大表」等量化边界即可"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 152
-  },
-  "lines": 152,
-  "l1_pass": true
+  ]
 }
