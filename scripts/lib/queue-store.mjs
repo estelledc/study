@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 
 import { readJsonl, serializeJsonl, writeJsonl } from './jsonl.mjs';
+import { serializeNoteId } from './note-id.mjs';
 import {
   CANDIDATES_PATH,
   GRAVEYARD_PATH,
@@ -14,7 +15,7 @@ import { commitQueueTransaction } from './queue-transaction.mjs';
 export const DEFAULT_CLAIM_LEASE_MS = 90 * 60 * 1000;
 
 export function queueKey(item) {
-  return `${item.area}::${item.slug}`;
+  return serializeNoteId(item?.area, item?.slug);
 }
 
 function keySet(items) {
@@ -208,6 +209,7 @@ export async function commitQueueState(state, options = {}) {
     updates.push({
       path: paths.events,
       content: state.eventsText,
+      appendOnly: true,
       ...(Object.hasOwn(options.expectedState || {}, 'eventsText')
         ? { expectedContent: options.expectedState.eventsText }
         : {}),

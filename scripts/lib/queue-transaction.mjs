@@ -24,6 +24,33 @@ function digestOrNull(data) {
   return data == null ? null : sha256(data);
 }
 
+function isCompleteJsonl(buffer) {
+  if (!Buffer.isBuffer(buffer) || buffer.length === 0 || buffer.at(-1) !== 0x0a) return false;
+  let text;
+  try {
+    text = new TextDecoder('utf-8', { fatal: true }).decode(buffer);
+  } catch {
+    return false;
+  }
+  const lines = text.slice(0, -1).split('\n');
+  if (lines.length === 0 || lines.some((line) => line.trim() === '')) return false;
+  try {
+    for (const line of lines) JSON.parse(line);
+  } catch {
+    return false;
+  }
+  return true;
+}
+
+function appendOnlyTargetIncludesNext(current, entry) {
+  if (entry.append_only !== true || !Buffer.isBuffer(current)) return false;
+  const nextBytes = entry.next_bytes;
+  if (!Number.isSafeInteger(nextBytes) || nextBytes < 0 || current.length <= nextBytes) return false;
+  const next = current.subarray(0, nextBytes);
+  if (sha256(next) !== entry.next_sha256 || !isCompleteJsonl(next)) return false;
+  return isCompleteJsonl(current.subarray(nextBytes));
+}
+
 function transactionDirectory(updates, explicitDirectory) {
   if (explicitDirectory) return path.resolve(explicitDirectory);
   if (updates.length === 0) throw new Error('queue transaction requires at least one update');
@@ -59,6 +86,18 @@ function validateManifest(manifest) {
     }
     if (entry.previous_sha256 != null && !/^[a-f0-9]{64}$/.test(entry.previous_sha256)) {
       throw new Error(`invalid previous digest for ${entry.target}`);
+    }
+    if (entry.append_only != null && typeof entry.append_only !== 'boolean') {
+      throw new Error(`invalid append-only marker for ${entry.target}`);
+    }
+    if (entry.next_bytes != null && (!Number.isSafeInteger(entry.next_bytes) || entry.next_bytes < 0)) {
+      throw new Error(`invalid next byte length for ${entry.target}`);
+    }
+    if (entry.append_only === true && !Number.isSafeInteger(entry.next_bytes)) {
+      throw new Error(`append-only entry is missing next byte length for ${entry.target}`);
+    }
+    if (entry.bytes != null && entry.next_bytes != null && entry.bytes !== entry.next_bytes) {
+      throw new Error(`queue transaction byte lengths disagree for ${entry.target}`);
     }
   }
   return manifest;
@@ -146,6 +185,21 @@ export async function commitQueueTransaction(updates, options = {}) {
           throw new Error(`queue transaction expected input mismatch: ${target}`);
         }
       }
+      const appendOnly = update.appendOnly === true;
+      if (update.appendOnly != null && typeof update.appendOnly !== 'boolean') {
+        throw new Error(`queue transaction append-only marker is invalid: ${target}`);
+      }
+      if (appendOnly) {
+        if (!Object.hasOwn(update, 'expectedContent')) {
+          throw new Error(`append-only queue transaction requires expected content: ${target}`);
+        }
+        if (previous && !content.subarray(0, previous.length).equals(previous)) {
+          throw new Error(`append-only queue transaction replaced existing content: ${target}`);
+        }
+        if (!isCompleteJsonl(content)) {
+          throw new Error(`append-only queue transaction requires complete JSONL: ${target}`);
+        }
+      }
       const staged = `.queue-transaction.${safeGeneration}.${transactionId}.${index}.next`;
       const stagedPath = path.join(directory, staged);
       let targetMode = 0o666;
@@ -161,6 +215,8 @@ export async function commitQueueTransaction(updates, options = {}) {
         previous_sha256: digestOrNull(previous),
         next_sha256: sha256(content),
         bytes: content.byteLength,
+        next_bytes: content.byteLength,
+        append_only: appendOnly,
       });
       await options.hooks?.afterStage?.({ index, generation, targetPath, stagedPath });
     }
@@ -252,8 +308,15 @@ export async function recoverQueueTransaction(options = {}) {
   for (const [index, entry] of manifest.files.entries()) {
     const targetPath = path.join(directory, entry.target);
     const stagedPath = path.join(directory, entry.staged);
-    const targetDigest = digestOrNull(await readOptionalBytes(targetPath));
+    const targetBytes = await readOptionalBytes(targetPath);
+    const targetDigest = digestOrNull(targetBytes);
     if (targetDigest === entry.next_sha256) {
+      await fs.unlink(stagedPath).catch((err) => {
+        if (err.code !== 'ENOENT') throw err;
+      });
+      continue;
+    }
+    if (appendOnlyTargetIncludesNext(targetBytes, entry)) {
       await fs.unlink(stagedPath).catch((err) => {
         if (err.code !== 'ENOENT') throw err;
       });
@@ -262,8 +325,12 @@ export async function recoverQueueTransaction(options = {}) {
     if (targetDigest !== entry.previous_sha256) {
       throw new Error(`cannot recover queue transaction ${manifest.generation}: ${entry.target} diverged`);
     }
-    const stagedDigest = digestOrNull(await readOptionalBytes(stagedPath));
-    if (stagedDigest !== entry.next_sha256) {
+    const stagedBytes = await readOptionalBytes(stagedPath);
+    const stagedDigest = digestOrNull(stagedBytes);
+    if (
+      stagedDigest !== entry.next_sha256
+      || (entry.next_bytes != null && stagedBytes?.length !== entry.next_bytes)
+    ) {
       throw new Error(`cannot recover queue transaction ${manifest.generation}: staged ${entry.staged} is missing or corrupt`);
     }
     await options.hooks?.beforeApply?.({ index, generation: manifest.generation, targetPath, stagedPath });

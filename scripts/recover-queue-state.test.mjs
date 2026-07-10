@@ -11,7 +11,7 @@ import {
   recoverRewritePool,
 } from './recover-queue-state.mjs';
 import { commitQueueState } from './lib/queue-store.mjs';
-import { recoverQueueTransaction } from './lib/queue-transaction.mjs';
+import { inspectQueueTransaction, recoverQueueTransaction } from './lib/queue-transaction.mjs';
 
 const context = {
   noteSet: new Set(['papers::note-exists', 'projects::rewrite-done']),
@@ -171,6 +171,7 @@ test('recovery state and its audit event finish the same crash-recoverable trans
   const eventUpdate = buildRecoveryEventUpdate(eventsText, plan, {
     now: '2026-07-10T00:00:00.000Z',
   });
+  const concurrentEvent = '{"event":"concurrent-append","area":"papers","slug":"other"}\n';
 
   await assert.rejects(
     () => commitQueueState({
@@ -183,13 +184,21 @@ test('recovery state and its audit event finish the same crash-recoverable trans
       paths,
       expectedState: { candidates, rewritePool, eventsText },
       hooks: {
-        afterApply({ index }) {
-          if (index === 0) throw new Error('injected-recovery-crash');
+        async afterApply({ index }) {
+          if (index === 0) {
+            await fs.appendFile(paths.events, concurrentEvent, 'utf8');
+            throw new Error('injected-recovery-crash');
+          }
         },
       },
     }),
     /injected-recovery-crash/,
   );
+
+  const pending = await inspectQueueTransaction({ directory });
+  const eventsEntry = pending.manifest.files.find((entry) => entry.target === 'pipeline-events.jsonl');
+  assert.equal(eventsEntry.append_only, true);
+  assert.equal(eventsEntry.next_bytes, Buffer.byteLength(eventUpdate.text));
 
   await recoverQueueTransaction({ directory });
   assert.match(await fs.readFile(paths.candidates, 'utf8'), /"status":"queued"/);
@@ -197,4 +206,5 @@ test('recovery state and its audit event finish the same crash-recoverable trans
   const eventsAfter = await fs.readFile(paths.events, 'utf8');
   assert.equal(eventsAfter.match(/pipeline-graveyard/g)?.length, 1);
   assert.equal(eventsAfter.match(/claim-lease-recovered/g)?.length, 1);
+  assert.equal(eventsAfter.match(/concurrent-append/g)?.length, 1);
 });

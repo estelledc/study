@@ -27,6 +27,29 @@ test('queueKey and excludeGraveyard use area::slug while dual-reading legacy gra
   ]);
 });
 
+test('queueKey preserves dotted slugs through the shared NoteId grammar', () => {
+  assert.equal(queueKey({ area: 'projects', slug: 'dash.js' }), 'projects::dash.js');
+  assert.equal(queueKey({ area: 'papers', slug: 'tls-1.3' }), 'papers::tls-1.3');
+});
+
+test('queueKey fails closed for invalid areas and slugs', () => {
+  assert.throws(
+    () => queueKey({ area: 'notes', slug: 'react' }),
+    (error) => error?.code === 'AREA_INVALID',
+  );
+  assert.throws(
+    () => queueKey({ area: 'papers', slug: '../react' }),
+    (error) => error?.code === 'SLUG_INVALID',
+  );
+});
+
+test('queueKey keeps the same slug independent across note areas', () => {
+  assert.notEqual(
+    queueKey({ area: 'papers', slug: 'react' }),
+    queueKey({ area: 'projects', slug: 'react' }),
+  );
+});
+
 test('markPriorityPicked updates only selected priority rows', () => {
   const rows = [
     { area: 'papers', slug: 'a', status: 'new' },

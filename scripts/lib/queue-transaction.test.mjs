@@ -165,3 +165,62 @@ test('a stale concurrent transaction loses CAS without leaving an unrecoverable 
   assert.equal(await fs.readFile(files.rewritePool, 'utf8'), 'winner-rewrite\n');
   assert.equal((await inspectQueueTransaction({ directory: files.directory })).pending, false);
 });
+
+for (const fixture of [
+  {
+    name: 'an incomplete concurrent JSONL suffix',
+    mutate: (events) => fs.appendFile(events, '{"event":"partial"', 'utf8'),
+  },
+  {
+    name: 'a changed append-only prefix followed by valid JSONL',
+    mutate: (events) => fs.writeFile(
+      events,
+      '{"event":"tampered-prefix"}\n{"event":"concurrent"}\n',
+      'utf8',
+    ),
+  },
+]) {
+  test(`append-only recovery fails closed for ${fixture.name}`, async () => {
+    const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'study-queue-append-only-'));
+    const events = path.join(directory, 'pipeline-events.jsonl');
+    const candidates = path.join(directory, 'candidates.jsonl');
+    const previousEvents = '{"event":"old"}\n';
+    const nextEvents = `${previousEvents}{"event":"recovery"}\n`;
+    await fs.writeFile(events, previousEvents, 'utf8');
+    await fs.writeFile(candidates, '{"status":"old"}\n', 'utf8');
+
+    await assert.rejects(
+      () => commitQueueTransaction([
+        {
+          path: events,
+          content: nextEvents,
+          expectedContent: previousEvents,
+          appendOnly: true,
+        },
+        {
+          path: candidates,
+          content: '{"status":"new"}\n',
+          expectedContent: '{"status":"old"}\n',
+        },
+      ], {
+        generation: 'append-only-invalid',
+        hooks: {
+          async afterApply({ index }) {
+            if (index === 0) {
+              await fixture.mutate(events);
+              throw new Error('injected-append-only-crash');
+            }
+          },
+        },
+      }),
+      /injected-append-only-crash/,
+    );
+
+    await assert.rejects(
+      () => recoverQueueTransaction({ directory }),
+      /pipeline-events\.jsonl diverged/,
+    );
+    assert.equal((await inspectQueueTransaction({ directory })).pending, true);
+    assert.equal(await fs.readFile(candidates, 'utf8'), '{"status":"old"}\n');
+  });
+}
