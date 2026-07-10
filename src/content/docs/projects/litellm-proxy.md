@@ -130,7 +130,7 @@ curl -X POST http://localhost:4000/key/generate \
 
 - **2023 年初**：Ishaan Jaffer 与 Krrish Dholakia 在做应用时受困于"每接一家 LLM 重写一遍调用代码"，开源了 LiteLLM SDK。
 - **2023 年夏**：社区反复要"一个服务器版本"——团队不想每个客户端都装 SDK。Proxy 诞生。
-- **2024 年初**：进入 Y Combinator W23。Proxy 逐渐被 Netflix、Adobe、Lemonade 等公开提到作为 LLM 网关方案。
+- **2023 年（YC W23）**：进入 Y Combinator Winter 2023。YC/官网等公开材料里常提到 Adobe、Lemonade、Samsara 等作为采用方。
 - **2024-2025**：加入 virtual key、budget、guardrails，从『协议转换器』演进成『AI 网关』。
 
 ## 学到什么

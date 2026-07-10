@@ -1,0 +1,119 @@
+{
+  "slug": "hott-book-2013",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜谱合订类比贴合；identity type / HIT 有桥接，高级主题下可跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『陶哲轩用 Lean 形式化——HoTT Book 是源头铺垫』过强：Lean/mathlib 主线是 set-truncated，与 HoTT 并行影响形式化文化，不宜写成直接源头。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『Lean 4 / Coq / Agda 都有 HIT、Cubical』不准确：Cubical/HIT 主要在 Cubical Agda、Coq HoTT 等；Lean 4 并未把 HoTT 当默认地基。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "书本身、Univalence、HIT、π₁(S¹)=ℤ 等核心事实与引用年份大体正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Agda HIT 示例概念正确；踩坑点出 univalence 无计算规则很关键；适用边界区分 Cubical 与业务代码清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "菜谱合订类比贴合；identity type / HIT 有桥接，高级主题下可跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『陶哲轩用 Lean 形式化——HoTT Book 是源头铺垫』过强：Lean/mathlib 主线是 set-truncated，与 HoTT 并行影响形式化文化，不宜写成直接源头。",
+        "『Lean 4 / Coq / Agda 都有 HIT、Cubical』不准确：Cubical/HIT 主要在 Cubical Agda、Coq HoTT 等；Lean 4 并未把 HoTT 当默认地基。",
+        "书本身、Univalence、HIT、π₁(S¹)=ℤ 等核心事实与引用年份大体正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Agda HIT 示例概念正确；踩坑点出 univalence 无计算规则很关键；适用边界区分 Cubical 与业务代码清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "needs-refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 169,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 169,
+  "l1_pass": true
+}
