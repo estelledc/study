@@ -1,0 +1,27 @@
+astro.config.mjs
+  s_04b3a8efa078b9::t_fab21acdbd7d4b 70
+scripts/audit-homepage-dist-links.mjs
+  s_04b3a8efa078b9::t_61febbf052d961 129-139,193
+src/components/Search.astro
+  s_04b3a8efa078b9::t_6de3388267e83d 1-27
+tests/a11y/product-contract.spec.mjs
+  s_04b3a8efa078b9::t_a2f20866688d5d 28-31,59-63
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "d907d0200c693260b61d887b7f059e71c6788bbe",
+  "prompts": {},
+  "sessions": {
+    "s_04b3a8efa078b9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_04b3a8efa078b9",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
