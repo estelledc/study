@@ -1,0 +1,21 @@
+CHANGELOG.md
+  s_d5cf4544de0145::t_391915e63cb3cf 6,8-9,11,13,16-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "fdbd7799058e80b5f43f55ae95b6d147caa770f4",
+  "prompts": {},
+  "sessions": {
+    "s_d5cf4544de0145": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_d5cf4544de0145",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
