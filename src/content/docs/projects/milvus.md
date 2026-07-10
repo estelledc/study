@@ -24,7 +24,7 @@ Milvus 是一个**开源的向量数据库**——把"找相似图片 / 文本 /
 - **RAG（检索增强生成）**：ChatGPT 答你的私有文档问题，背后是把文档切片 → 向量化 → 存进 Milvus → 提问时检索最相关 3 段塞进 prompt
 - **推荐系统**：抖音 / 小红书算"猜你喜欢"，本质是把用户行为变成向量，找相似用户喜欢的内容
 - **以图搜图 / 多模态搜索**：拼多多"拍立淘"、Google Lens 都是这类技术
-- **赛道格局**：Pinecone（闭源 SaaS） / Weaviate / Qdrant / Chroma / Milvus 五家竞争。Milvus 是国产（Zilliz 出品）+ Apache 2.0 开源 + 唯一进入 LF AI & Data Foundation 的毕业项目
+- **赛道格局**：Pinecone（闭源 SaaS） / Weaviate / Qdrant / Chroma / Milvus 五家竞争。Milvus 是国产（Zilliz 出品）+ Apache 2.0 开源，也是该赛道里较早进入 LF AI & Data Foundation 并毕业的项目
 
 一句话：大模型时代每多一个 RAG 应用，向量数据库的市场就大一格。
 
@@ -150,53 +150,38 @@ retriever = vs.as_retriever(search_kwargs={"k": 4})
 - 需要事务 / 强一致 → 找传统关系数据库
 - 只查 metadata 不查向量 → 退回 [[postgresql]] + pgvector 扩展更省心
 
-## 历史小故事
+## 历史小故事（可跳过）
 
-- **2017 年**：上海 Zilliz 公司创立，最初做"非结构化数据管理"工具，FAISS（Facebook 出品）为起点
+- **2017 年**：上海 Zilliz 创立，从 FAISS 起步做非结构化数据管理
 - **2019 年**：Milvus 1.0 开源，定位"为 AI 设计的向量数据库"
-- **2021 年**：Milvus 2.0 重构成云原生分离式架构（计算 / 存储 / 协调分离）
-- **2022 年**：加入 Linux Foundation AI & Data，成为该基金会**首个**毕业的向量数据库项目
-- **2023 年**：ChatGPT 引爆 RAG 浪潮，Milvus 下载量年增 10 倍
-- **2024 年**：Milvus 2.4 引入 GPU 索引和 sparse vector（稀疏向量，做关键词 + 语义混合搜索）
+- **2020–2021**：加入 LF AI & Data 孵化，2021-06 毕业；同年 2.0 改成云原生分离架构
+- **2023 年**：ChatGPT 引爆 RAG，Milvus 下载量年增约 10 倍
+- **2024 年**：2.4 引入 GPU 索引与 sparse vector（关键词 + 语义混合）
 
 ## 学到什么
 
-1. **向量数据库不是新 SQL**——它解决的是"按语义找"而非"按主键找"，与关系库**互补**而非替代
-2. **索引选择 = 三角妥协**：内存大小 / 查询延迟 / 准确率，HNSW / IVF / DiskANN 各占一角
-3. **ANN 的本质是工程权衡**——精确最近邻是 NP 难类问题，工业界都用近似算法
-4. **国产开源也能做到全球第一梯队**：Milvus 现在 GitHub 30k+ star，与 Pinecone 等闭源对手长期共存
+1. **向量库不是新 SQL**——解决"按语义找"，与关系库互补而非替代
+2. **索引 = 三角妥协**：内存 / 延迟 / 准确率，HNSW / IVF / DiskANN 各占一角
+3. **ANN 是工程权衡**——高维精确最近邻太慢（维度灾难），工业界用近似换速度
+4. **国产开源可进全球第一梯队**：Milvus 现 30k+ star，与 Pinecone 等长期共存
 
 ## 延伸阅读
 
-- 官方文档：[milvus.io](https://milvus.io/docs)（中英双语，例子完整）
-- 论文：[Milvus: A Purpose-Built Vector Data Management System (SIGMOD 2021)](https://www.cs.purdue.edu/homes/csjgwang/pubs/SIGMOD21_Milvus.pdf)（讲设计哲学）
-- HNSW 原论文：[Malkov & Yashunin 2018](https://arxiv.org/abs/1603.09320)（图索引的数学基础）
-- [[clip]] —— 图文统一向量化模型，Milvus 最常见的输入源
-- [[chroma]] —— 同赛道轻量竞品，本地小项目首选
+- 官方文档：[milvus.io](https://milvus.io/docs)（中英双语）
+- 论文：[Milvus (SIGMOD 2021)](https://www.cs.purdue.edu/homes/csjgwang/pubs/SIGMOD21_Milvus.pdf)
+- HNSW：[Malkov & Yashunin 2018](https://arxiv.org/abs/1603.09320)
+- [[clip]] —— 图文统一向量化，Milvus 常见输入源
+- [[chroma]] —— 同赛道轻量竞品
 
 ## 关联
 
-- [[clip]] —— OpenAI 把"图 + 文"统一到同一向量空间，Milvus 把这些向量存起来
-- [[postgresql]] —— 关系库代表，Milvus 在 API 设计上学了它（create / insert / search）
-- [[chroma]] —— 同赛道开源向量库，定位更轻量，Milvus 走集群路线
+- [[clip]] —— 把图文映射到同一向量空间，Milvus 负责存与搜
+- [[postgresql]] —— 关系库代表；Milvus API 学了 create / insert / search
+- [[chroma]] —— 更轻量的开源向量库，Milvus 走集群路线
+- [[faiss]] —— 底层 ANN 算法库，许多向量库的起点
+- [[rag-lewis-2020]] —— RAG 奠基；向量库是其检索层常见实现
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[ann-benchmarks]] —— ANN-Benchmarks — 近似最近邻算法的统一擂台
-- [[chroma]] —— Chroma — Python 优先的向量数据库
-- [[clip]] —— CLIP — Contrastive Language-Image Pre-training
-- [[faiss]] —— FAISS — 向量检索的标准件库
-- [[filip-2021]] —— FILIP — 把 CLIP 的图文对齐细化到 token 级
-- [[hnswlib]] —— hnswlib — HNSW 论文作者写的参考实现，业界向量库都基于它
-- [[lancedb]] —— LanceDB — 嵌入式向量库（进程内 + 对象存储）
-- [[langchain]] —— LangChain — LLM 应用开发框架
-- [[opensearch]] —— OpenSearch — AWS 主导的 Apache 2.0 搜索引擎分叉
-- [[pgvector]] —— pgvector — PostgreSQL 向量扩展
-- [[postgresql]] —— PostgreSQL — 工业级关系数据库
-- [[qdrant]] —— Qdrant — Rust 向量数据库
-- [[rag-lewis-2020]] —— RAG (Lewis 2020) — 检索增强生成奠基
-- [[vespa]] —— Vespa — Yahoo 检索 + 排序引擎
-- [[weaviate]] —— Weaviate — 模块化向量数据库
 
