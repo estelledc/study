@@ -1,0 +1,109 @@
+{
+  "slug": "erigon",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "开篇把 Erigon 全节点 ~1.1TB 对比「geth archive 2TB+」是档位错位；后文又写归档曾要 12TB+，数字自相矛盾。应分清 full vs archive，并给硬件/时间前提。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「约 4 小时同步主网」依赖快照与 NVMe 等条件，应加限定，避免读成普适 SLA。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆/索引盒与身份证号类比清楚；三机制拆解对零基础友好。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "多链端口错开、prune.mode 默认 full、MDBX 网盘坑都很具体可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "图书馆/索引盒与身份证号类比清楚；三机制拆解对零基础友好。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇把 Erigon 全节点 ~1.1TB 对比「geth archive 2TB+」是档位错位；后文又写归档曾要 12TB+，数字自相矛盾。应分清 full vs archive，并给硬件/时间前提。",
+        "「约 4 小时同步主网」依赖快照与 NVMe 等条件，应加限定，避免读成普适 SLA。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "多链端口错开、prune.mode 默认 full、MDBX 网盘坑都很具体可操作。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 166,
+    "reasons": []
+  },
+  "lines": 166,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "frontmatter",
+      "## 是什么",
+      "## 为什么重要",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  }
+}
