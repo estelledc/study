@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜谱/字条类比把 brackets/escape/run 讲得很贴"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 power 代码里出现未绑定的 x，零基础会卡住；应写成带 x 参数或 fn x => 的完整特化"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有叙述无代码步骤；案例 3 Lisp 对比清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Taha & Sheard TCS 2000、三算符 + 类型化代码值与论文一致；时间线（PEPM 1997→TCS 2000→MetaOCaml）合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 power 写法错误：else 分支用 ~x 但 x 未作为代码参数传入，与经典 MetaML/MetaOCaml 特化例不符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑写「必须 ~<3> + 1」不准确：escape 只能出现在 brackets 内部，应改为先 ! 再运算或在 brackets 内 escape"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 代码不可跟做（未绑定 x）；应改成 fun power n x = ... 或生成 <fn x => ...> 再 !"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 1 的修复建议 ~<3>+1 在语法上非法，会误导实现者"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有 DSL 与一次性脚本边界；run 昂贵的量化方向对"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "菜谱/字条类比把 brackets/escape/run 讲得很贴",
+        "案例 1 的 power 代码里出现未绑定的 x，零基础会卡住；应写成带 x 参数或 fn x => 的完整特化",
+        "案例 2 只有叙述无代码步骤；案例 3 Lisp 对比清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 Taha & Sheard TCS 2000、三算符 + 类型化代码值与论文一致；时间线（PEPM 1997→TCS 2000→MetaOCaml）合理",
+        "案例 1 power 写法错误：else 分支用 ~x 但 x 未作为代码参数传入，与经典 MetaML/MetaOCaml 特化例不符",
+        "踩坑写「必须 ~<3> + 1」不准确：escape 只能出现在 brackets 内部，应改为先 ! 再运算或在 brackets 内 escape"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 代码不可跟做（未绑定 x）；应改成 fun power n x = ... 或生成 <fn x => ...> 再 !",
+        "踩坑 1 的修复建议 ~<3>+1 在语法上非法，会误导实现者",
+        "适用/不适用有 DSL 与一次性脚本边界；run 昂贵的量化方向对"
+      ]
+    }
+  ]
+}
