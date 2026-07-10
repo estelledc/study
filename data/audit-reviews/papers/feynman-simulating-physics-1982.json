@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "暴雨/Excel 记账 vs 缩小版天气系统类比极贴；三个案例都有代码 + 逐部分解释，零基础能跟住状态爆炸与 2/3 vs 3/4。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「负概率」首次出现已有相位抵消桥接，可读性好。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Feynman IJTP 1982、页码 467-488、1981 会议 keynote 时间线正确；明确区分猜想与后来 Deutsch/Lloyd 补齐，无硬伤。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 的 2/3 vs cos²(30°)=3/4 对应文中 EPR/Bell 式讨论，教学简化可接受；宜记住这是论文论证线而非完整 CHSH 实验报告。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则 JS 小例子可直接跑，状态计数与 Monte Carlo 对比概念正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（非 Shor、非 BQP 证明、非容错芯片）；踩坑区分离散化 vs 量子化有用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "暴雨/Excel 记账 vs 缩小版天气系统类比极贴；三个案例都有代码 + 逐部分解释，零基础能跟住状态爆炸与 2/3 vs 3/4。",
+        "「负概率」首次出现已有相位抵消桥接，可读性好。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "来源 Feynman IJTP 1982、页码 467-488、1981 会议 keynote 时间线正确；明确区分猜想与后来 Deutsch/Lloyd 补齐，无硬伤。",
+        "案例 3 的 2/3 vs cos²(30°)=3/4 对应文中 EPR/Bell 式讨论，教学简化可接受；宜记住这是论文论证线而非完整 CHSH 实验报告。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "三则 JS 小例子可直接跑，状态计数与 Monte Carlo 对比概念正确。",
+        "适用/不适用边界清楚（非 Shor、非 BQP 证明、非容错芯片）；踩坑区分离散化 vs 量子化有用。"
+      ]
+    }
+  ]
+}

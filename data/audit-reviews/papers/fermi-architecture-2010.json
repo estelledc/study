@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "赛车/气囊类比很贴；案例 3 把 FlashAttention 挂到 Fermi L2 上只有散文，零基础难跟「到底改了哪一步」——建议换成带伪代码的访存/并发案例，或给案例 3 补分步。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "warp / FMA / SM 首次出现可再补半句中文桥接。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「GPU 第一次进超算」不准确：天河一号 A 是 GPU 第一次登顶 Top500；更早的天河一号等已用加速卡。应改成「第一次登顶 Top500」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 把 2022 年 FlashAttention 直接归因于 Fermi L2 偏牵强；宜弱化或改成「Fermi 定型的 L1/L2 层次被后续 IO-aware kernel 沿用」并标明年代跨度。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Wittenbrink et al. IEEE Micro 2011 与白皮书链接合理；512 核 / 768KB L2 / 可配 64KB / FP64 半速与架构描述一致。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "stencil / nvidia-smi ECC / torch.float64 案例概念正确可跟做；踩坑（游戏卡无 ECC、GTX FP64 阉到 1/8、默认 stream 串行、FMA 末位差）具体可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚；案例 3 缺可执行步骤，但不挡整体通过。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "赛车/气囊类比很贴；案例 3 把 FlashAttention 挂到 Fermi L2 上只有散文，零基础难跟「到底改了哪一步」——建议换成带伪代码的访存/并发案例，或给案例 3 补分步。",
+        "warp / FMA / SM 首次出现可再补半句中文桥接。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「GPU 第一次进超算」不准确：天河一号 A 是 GPU 第一次登顶 Top500；更早的天河一号等已用加速卡。应改成「第一次登顶 Top500」。",
+        "案例 3 把 2022 年 FlashAttention 直接归因于 Fermi L2 偏牵强；宜弱化或改成「Fermi 定型的 L1/L2 层次被后续 IO-aware kernel 沿用」并标明年代跨度。",
+        "来源 Wittenbrink et al. IEEE Micro 2011 与白皮书链接合理；512 核 / 768KB L2 / 可配 64KB / FP64 半速与架构描述一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "stencil / nvidia-smi ECC / torch.float64 案例概念正确可跟做；踩坑（游戏卡无 ECC、GTX FP64 阉到 1/8、默认 stream 串行、FMA 末位差）具体可操作。",
+        "适用边界清楚；案例 3 缺可执行步骤，但不挡整体通过。"
+      ]
+    }
+  ]
+}

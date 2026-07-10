@@ -18,22 +18,22 @@ Fermi 是 NVIDIA 2009 年公布、2010 年出货的第二代通用 GPU 架构（
 
 不理解 Fermi，下面这些事都没法解释：
 
-- 为什么 2010 年中国天河一号 A 用 **7168 块 Fermi M2050** 拿下 Top500 第一——这是 GPU 第一次进超算
+- 为什么 2010 年中国天河一号 A 用 **7168 块 Fermi M2050** 拿下 Top500 第一——这是 **GPU 第一次登顶**超算榜（更早机器已用加速卡，但未登顶）
 - 为什么 2012 年 AlexNet 选 **GTX 580**（Fermi 升级版 GF110）训练 ImageNet——它的 cache 和并发 kernel 让训练循环可行
-- 为什么今天 [[pytorch]] 切 FP32/FP64 不用换硬件——Fermi 之后 FP64 半速成默认
+- 为什么今天 [[pytorch]] 切 FP32/FP64 不用换硬件——Fermi 之后计算卡上 FP64≈半速成默认
 - 为什么 Kepler / Maxwell / Pascal / Volta / Ampere / Hopper 的内存层次都长一个样——它们都是 Fermi 模板的微调
 
 ## 核心要点
 
 Fermi 在 Tesla 基础上的关键升级可以拆成 **四件事**：
 
-1. **真正的 cache 层次**：Tesla 只有"程序员管的 16KB shared memory"，没有自动 cache。Fermi 加了 **每 SM 64KB 可配**（L1 + shared 自由切分）+ **768KB L2 全 SM 共享**。意义：**程序员不用再把每个 byte 都手工搬进 shared memory**——访存模式不完美的代码也能拿到加速。
+1. **真正的 cache 层次**：Tesla 只有"程序员管的 16KB shared memory"（一块大家约定好怎么用的小黑板），没有自动 cache。Fermi 加了 **每 SM 64KB 可配**（L1 + shared 自由切分）+ **768KB L2 全 SM 共享**。意义：**程序员不用再把每个 byte 都手工搬进 shared memory**——访存模式不完美的代码也能拿到加速。
 
-2. **ECC 全链路保护**：寄存器、L1、L2、显存任何一比特翻转都能检测纠错。意义：HPC 用户的硬门槛——金融定价、药物模拟、气候模型不能容忍**软错误**（cosmic ray 翻转一个 bit 导致结果错但程序不崩）。Tesla 没 ECC，被这些行业一票否决。
+2. **ECC 全链路保护**：寄存器、L1、L2、显存任何一比特翻转都能检测纠错。意义：HPC 用户的硬门槛——金融定价、药物模拟、气候模型不能容忍**软错误**（宇宙射线翻转一个 bit 导致结果错但程序不崩）。Tesla 没 ECC，被这些行业一票否决。
 
-3. **FP64 半速**：双精度性能从 Tesla 的**单精度 1/8** 提到 **1/2**。意义：CFD（流体）、有限元、量子化学这类**必须双精度**的科学计算第一次跑得动。Tesla 上跑 FP64 的算力不如一块好 CPU，Fermi 上是 CPU 的 5-10 倍。
+3. **FP64 半速**：双精度（每个数约 8 字节、精度更高）性能从 Tesla 的**单精度 1/8** 提到 **1/2**。意义：CFD（流体）、有限元、量子化学这类**必须双精度**的科学计算第一次跑得动。Tesla 上跑 FP64 的算力不如一块好 CPU，Fermi 上是 CPU 的 5-10 倍。
 
-4. **并发 kernel + unified address space**：最多 **16 个 kernel 同时跑**（Tesla 只能 1 个）；global / shared / local 三种内存共用 **64-bit 统一地址**——C++ 的指针、虚函数、new/delete 第一次在 GPU 上能用。意义：GPU 编程从"受限 C"升级到"接近完整 C++"，能搬现成大型代码库上来。
+4. **并发 kernel + unified address space**：kernel = 一次提交给 GPU 的函数；最多 **16 个 kernel 同时跑**（Tesla 只能 1 个）。global / shared / local 三种内存共用 **64-bit 统一地址**——C++ 的指针、虚函数、new/delete 第一次在 GPU 上能用。意义：GPU 编程从"受限 C"升级到"接近完整 C++"，能搬现成大型代码库上来。
 
 ### 这四件事为什么必须一起出现
 
@@ -69,9 +69,24 @@ nvidia-smi -q -d ECC   # 查纠错计数
 
 打开后，**显存可用容量 -12%、带宽 -15%**（用来存 ECC syndrome bits）。但任何 cosmic ray / 电压抖动导致的单 bit 翻转会被纠正、双 bit 翻转会被报告。**金融银行 / 医学影像 / 国家实验室的合规审计需要这个开关**——Tesla 没这开关就直接卡在采购环节。
 
-### 案例 3：[[flash-attention]] 与 Fermi 的间接关系
+### 案例 3：并发 kernel 要显式开 stream
 
-FlashAttention 显式管理 shared memory（Tesla 引入的层）。但**它在 Fermi 之后才出现**有原因：Fermi 后才有 **L2 共享**——多个 SM 之间数据复用不再走 DRAM。FlashAttention-2/3 的 inter-block 通信优化依赖的就是 Fermi 这套层次。
+```cuda
+cudaStream_t s1, s2;
+cudaStreamCreate(&s1);
+cudaStreamCreate(&s2);
+kernelA<<<grid, block, 0, s1>>>(...);  // 流 1
+kernelB<<<grid, block, 0, s2>>>(...);  // 流 2，可与 A 重叠
+cudaDeviceSynchronize();
+```
+
+**逐部分解释**：
+
+- 默认 stream（第 4 参数省略）上的 kernel **串行**——升到 Fermi 也不自动并发
+- `cudaStreamCreate` 建独立队列；最多约 **16 路** kernel 可重叠（算力/访存够时）
+- 老代码不改 stream，**看不到** Fermi「并发 kernel」收益——这是升级后最常见的「卡没变快」原因
+
+（补充：2022 年的 [[flash-attention]] 仍显式管 shared memory；它沿用的是 Fermi 定型的 L1/L2 层次，但中间隔了十余年架构迭代，不宜说「因为 Fermi 才有 FlashAttention」。）
 
 ### 案例 4：[[pytorch]] FP32/FP64 切换
 
@@ -80,11 +95,11 @@ x = torch.randn(1024, 1024, dtype=torch.float64).cuda()
 y = x @ x.T   # 双精度矩阵乘
 ```
 
-Tesla 上这一行**慢 8 倍**于 FP32，几乎没人用。Fermi 之后只**慢 2 倍**，FP64 训练（如某些科研模型）第一次有意义。今天 PyTorch 里 `dtype=torch.float64` 在 H100 上跑得动，根因是 Fermi 立的"半速 FP64" 默认。
+Tesla 上这一行相对 FP32 大约 **慢 8 倍**，几乎没人用。Fermi **计算卡**上约 **慢 2 倍**，FP64 科研计算第一次有意义。今天 PyTorch 里 `dtype=torch.float64` 能在现代 GPU 上跑，根因之一是 Fermi 把「可用的 FP64」立成计算卡默认。
 
 ## 踩过的坑
 
-1. **L1 不是银弹**：随机访存仍然慢；**warp 合并访存**依然是性能命门。L1 只对"邻近线程访问邻近地址" 有救——这条 Tesla 的规矩 Fermi 没废。
+1. **L1 不是银弹**：随机访存仍然慢；**warp**（32 线程一捆一起跑）**合并访存**依然是性能命门。L1 只对"邻近线程访问邻近地址" 有救——这条 Tesla 的规矩 Fermi 没废。
 
 2. **ECC 开关游戏卡阉了**：GeForce 系列（GTX 580 等）默认**无 ECC**，只有 Tesla M 系/Quadro 才有。买错卡型号合规过不去——这是 NVIDIA 切市场的刀。
 
@@ -96,7 +111,7 @@ Tesla 上这一行**慢 8 倍**于 FP32，几乎没人用。Fermi 之后只**慢
 
 6. **ECC 默认开还是关**：Tesla 计算卡出厂默认开，**实测显存带宽下降 12-15%**。游戏卡型号永远关。如果做合规审计要明确写在代码里 `nvidia-smi -e 1`，否则下次重启可能被运维改回。
 
-7. **FMA 改变数值结果**：Fermi 引入 IEEE 754-2008 FMA（fused multiply-add），`a*b+c` 一步算完只舍入一次。**和老 GPU 比对结果时会出现末位差异**——不是 bug，是更精确，但跨硬件回归测试会假报失败。
+7. **FMA 改变数值结果**：Fermi 引入 IEEE 754-2008 **FMA**（fused multiply-add，乘加一次完成），`a*b+c` 一步算完只舍入一次。**和老 GPU 比对结果时会出现末位差异**——不是 bug，是更精确，但跨硬件回归测试会假报失败。
 
 ## 适用 vs 不适用场景
 
@@ -149,3 +164,7 @@ Tesla 上这一行**慢 8 倍**于 FP32，几乎没人用。Fermi 之后只**慢
 - [[mapreduce]] —— 同时代的"切大计算成小块"另一条路（集群方向），Fermi 走单卡 HPC 方向
 - [[attention]] —— Transformer 的核心算子，矩阵乘吃满 Fermi 引入的 L2 共享
 - [[bigtable]] —— 同时代 Google 的大数据系统；和 Fermi 代表"集群 vs 单卡"两条放大计算的路线
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
