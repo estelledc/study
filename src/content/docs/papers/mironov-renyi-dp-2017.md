@@ -10,7 +10,7 @@ title: Rényi 差分隐私 — 用一把更精确的尺子量隐私损失
 
 你在超市结账时经常看到"买三件打八折"这种规则——它把多次购买打包成一个更优惠的价格，而不是每次单独算折扣再加起来。Rényi 差分隐私（Rényi Differential Privacy，简称 RDP）做的事情很类似：它用一种更聪明的方式把多次查询的隐私损失"打包计算"，结果比逐次相加更精确、更紧凑。
 
-回顾一下背景。[[dwork-dp-icalp-2006]] 定义了 ε-差分隐私：对邻接数据集 D 和 D'，算法输出的概率比值被 e^ε 限制。[[dwork-calibrating-noise-2006]] 给出了拉普拉斯机制。[[dwork-our-data-ourselves-2006]] 引入高斯机制和 (ε,δ)-DP。但这些工具在面对"组合多次查询"时都有一个痛点：隐私预算的追踪不够精确。
+回顾一下背景。[[dwork-dp-icalp-2006]] 定义了 ε-差分隐私：对邻接数据集 D 和 D'（只差一个人的两份数据），算法输出的概率比值被 e^ε 限制。[[dwork-calibrating-noise-2006]] 给出了拉普拉斯机制。[[dwork-our-data-ourselves-2006]] 引入高斯机制和 (ε,δ)-DP。但这些工具在面对"组合多次查询"时都有一个痛点：隐私预算的追踪不够精确。
 
 经典的顺序组合定理说"做 k 次 ε-DP 的查询，总隐私损失是 kε"。高级组合定理改善到 O(ε√k)，但仍然偏松。当你训练一个深度学习模型、每一步梯度都加一次噪声、迭代几万步时，这个"偏松"会导致你要么加过多噪声（模型没用了），要么过早耗尽预算。
 
@@ -53,7 +53,7 @@ D_α(P || Q) = 1/(α-1) · ln E_Q[(P/Q)^α]
 
 **高斯机制的精确分析**
 
-高斯机制是 RDP 分析最干净、工业应用最广的场景。设查询函数 L2 敏感度为 Δ₂，加标准差为 σ 的高斯噪声，则该机制满足 (α, α·Δ₂²/(2σ²))-RDP，对所有 α > 1 同时成立——闭式解，无需数值近似。
+高斯机制是 RDP 分析最干净、工业应用最广的场景。设查询函数的 L2 敏感度为 Δ₂（换一个人，查询结果最多能偏多少，用欧氏距离量），加标准差为 σ 的高斯噪声，则该机制满足 (α, α·Δ₂²/(2σ²))-RDP，对所有 α > 1 同时成立——闭式解，无需数值近似。
 
 组合 k 步后对一组 α 网格逐个计算 ε = k·α·Δ₂²/(2σ²) + ln(1/δ)/(α-1)，取 min 即得最紧的 (ε,δ)-DP 保证。实际代码里对 α 的网格（如 [1.5, 2, 3, ..., 256]）逐个计算取 min，计算量极小（几十次浮点运算）但精度提升巨大。
 
@@ -63,7 +63,7 @@ D_α(P || Q) = 1/(α-1) · ln E_Q[(P/Q)^α]
 
 **隐私定义光谱**
 
-RDP 处于隐私定义的"光谱"上：纯 DP（ε-DP，等价 α=∞ 的 RDP，组合最松）→ RDP（可调 α，组合紧）→ (ε,δ)-DP（最终输出格式）。zCDP（Bun & Maddock 2016）等价于固定 α=2 的 RDP，更简单但不够灵活；GDP（Dong et al. 2019）用假设检验视角对高斯机制渐近最优。
+RDP 处于隐私定义的"光谱"上：纯 DP（ε-DP，等价 α=∞ 的 RDP，组合最松）→ RDP（可调 α，组合紧）→ (ε,δ)-DP（最终输出格式）。zCDP（Bun & Steinke 2016）用线性族 ε(α)=ρα 约束整条 RDP 曲线，是更简单但更少自由度的特例；GDP（Dong et al. 2019）用假设检验视角对高斯机制渐近最优。
 
 ## 实践案例
 
@@ -136,7 +136,7 @@ Rényi 散度以匈牙利数学家 Alfréd Rényi 命名，他在 1961 年提出
 - Abadi et al., "Deep Learning with Differential Privacy" (CCS 2016)——首次将 moments accountant（RDP 的前身）用于 DP-SGD
 - Balle et al., "Hypothesis Testing Interpretations and Renyi Differential Privacy" (AISTATS 2020)——更紧的子采样界
 - Google `dp-accounting` 库 / Meta Opacus——生产级 RDP 会计实现
-- Bun & Maddock, "Concentrated Differential Privacy" (2016)——zCDP，RDP 的 α=2 特例
+- Bun & Steinke, "Concentrated Differential Privacy" (2016)——zCDP，用 ε(α)=ρα 简化 RDP 曲线
 - Dong, Roth & Su, "Gaussian Differential Privacy" (JRSS-B 2022)——渐近最优刻画
 
 ## 关联
