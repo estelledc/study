@@ -1,0 +1,100 @@
+{
+  "slug": "billboard-js",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "“韩国互联网公司大量用它”和“改个 import 就跑”过于绝对，stub 只能支撑 Naver 维护、c3 兼容和迁移友好；应弱化为逐项迁移。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "“同一家做相机的另一个团队”类比容易误导 c3.js 与 billboard.js 的作者关系，应改成保留旧接口的后继维护者。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 base rules 要求的 `## 反向链接` 占位段，补齐后读者和自动脚本更容易对齐结构。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺少 base rules 要求的 `## 反向链接` 占位段，建议补齐。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "“韩国互联网公司大量用它”和“改个 import 就跑”过于绝对，stub 只能支撑 Naver 维护、c3 兼容和迁移友好；应弱化为逐项迁移。",
+        "“同一家做相机的另一个团队”类比容易误导 c3.js 与 billboard.js 的作者关系，应改成保留旧接口的后继维护者。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 实践案例",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 156,
+    "reasons": []
+  }
+}
