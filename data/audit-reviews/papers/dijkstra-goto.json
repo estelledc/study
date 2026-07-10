@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "是什么缺少日常类比，直接进入「文本位置↔状态」抽象；CFG/reducible/RAII/前置条件对零基础无桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例只有 Linux fork.c 一则且偏内核，需拆成 3 个由浅入深、带逐步解释的案例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Pascal 第一个语法上完全去掉 goto 的主流语言」不准确：ISO Pascal 仍保留 goto；应改为 Wirth 系设计哲学转向结构化、Oberon 等更彻底"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「不到一页」与 CACM 11(3):147–148 两页跨页不完全一致，宜写成「约一两页的 letter」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "goto cleanup 示例与语言能力差异踩坑对工程读者很有用；适用边界清晰"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 2
+      },
+      "average": 2.0,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "是什么缺少日常类比，直接进入「文本位置↔状态」抽象；CFG/reducible/RAII/前置条件对零基础无桥接",
+        "实践案例只有 Linux fork.c 一则且偏内核，需拆成 3 个由浅入深、带逐步解释的案例"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.0,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Pascal 第一个语法上完全去掉 goto 的主流语言」不准确：ISO Pascal 仍保留 goto；应改为 Wirth 系设计哲学转向结构化、Oberon 等更彻底",
+        "「不到一页」与 CACM 11(3):147–148 两页跨页不完全一致，宜写成「约一两页的 letter」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "goto cleanup 示例与语言能力差异踩坑对工程读者很有用；适用边界清晰"
+      ]
+    }
+  ]
+}

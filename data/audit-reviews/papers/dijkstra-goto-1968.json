@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "导航类比可用；案例 3 状态机示例偏弱，但仍有逐步解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源应补全为 CACM 11(3):147–148, 1968；正文称「论文」宜改为 letter/读者来信"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心论点被收成泛化的「可读性」，应回到 Dijkstra 原意：静态文本位置与动态执行历史错位导致状态不可唯一推断"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏口号（「规模化吞可读性」），应写成具体场景：如 C 里无 RAII 时硬不用 cleanup goto、或嵌套五层 if 代替受限跳转"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺少量化或语言边界（C vs Rust/Java）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.0,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "导航类比可用；案例 3 状态机示例偏弱，但仍有逐步解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3.0,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源应补全为 CACM 11(3):147–148, 1968；正文称「论文」宜改为 letter/读者来信",
+        "核心论点被收成泛化的「可读性」，应回到 Dijkstra 原意：静态文本位置与动态执行历史错位导致状态不可唯一推断"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑偏口号（「规模化吞可读性」），应写成具体场景：如 C 里无 RAII 时硬不用 cleanup goto、或嵌套五层 if 代替受限跳转",
+        "适用/不适用缺少量化或语言边界（C vs Rust/Java）"
+      ]
+    }
+  ]
+}

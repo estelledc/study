@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "粉笔 vs 磁贴类比极强；案例 3 偏设计说明，案例 1–2 可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Excalidraw 自研场景模型（rough.js 等），并非基于 fabric；不宜写「Excalidraw 早期原型用 fabric」——可改为「Miro 类白板/在线设计工具的早期 Canvas 原型常借 fabric 快速出 demo」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "跨域 Image、v5/v6 API、animate 不重绘等踩坑非常可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "粉笔 vs 磁贴类比极强；案例 3 偏设计说明，案例 1–2 可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.0,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Excalidraw 自研场景模型（rough.js 等），并非基于 fabric；不宜写「Excalidraw 早期原型用 fabric」——可改为「Miro 类白板/在线设计工具的早期 Canvas 原型常借 fabric 快速出 demo」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5.0,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "跨域 Image、v5/v6 API、animate 不重绘等踩坑非常可操作"
+      ]
+    }
+  ]
+}
