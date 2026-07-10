@@ -1,7 +1,4 @@
 {
-  "slug": "graalvm-truffle",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,25 +78,5 @@
         "@Specialization DSL 与 Polyglot.eval 教学片段可跟读；特化爆炸/@CompilationFinal/稳定阈值踩坑具体；内存与启动时间边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "base_rule_findings": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "all three reviewers passed and aggregate average is at least 4.0",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "krakend",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -86,29 +83,5 @@
         "JSON 配置可跟做；超时/字段映射/CE-EE 差距踩坑有用；适用边界有 QPS 量级。建议顺手修正「配置热生效」误导"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 170,
-    "reasons": []
-  },
-  "lines": 170,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：纠正「配置一改就生效」——改为启动编译路由表、改配置需重启/滚动发布。",
-    "sections_modified": [
-      "## 为什么重要"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

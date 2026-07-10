@@ -1,7 +1,4 @@
 {
-  "slug": "kratos",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -91,32 +88,5 @@
         "protoc 插件缺失、etcd panic、CORS 污染 gRPC 等踩坑很实用"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 177,
-    "reasons": []
-  },
-  "lines": 177,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：v3 发布时间改为 2026-06；engineer：案例标明基于 v2，与 v3/Go 1.25 时间线对齐。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

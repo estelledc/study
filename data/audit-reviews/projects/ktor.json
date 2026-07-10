@@ -1,7 +1,4 @@
 {
-  "slug": "ktor",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -81,28 +78,5 @@
         "embeddedServer/JWT/WebSocket/HttpClient 教学片段概念正确；install 顺序、CIO、HOCON 覆盖、ContentNegotiation 踩坑具体。建议给案例 1 补逐步解释，并注明 JWT 依赖需另加。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "base_rule_findings": []
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "added step-by-step explanations to three practice cases; bumped version note to 3.5.x / 14k+ stars",
-    "sections_modified": [
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 190,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

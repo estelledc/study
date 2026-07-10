@@ -1,7 +1,4 @@
 {
-  "slug": "krita",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,25 +78,5 @@
         "--export / --export-sequence 与 createDocument 片段可跟做；.kra 交付、CMYK 软打样、脚本入口踩坑具体；相对 GIMP/Inkscape/剪辑/3D 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.89,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "base_rule_findings": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "all three reviewers passed and aggregate average is at least 4.0",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

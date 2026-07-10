@@ -1,7 +1,4 @@
 {
-  "slug": "gpudirect-rdma-2014",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "调用栈与拓扑对比可跟读；BAR1/跨 NUMA/小消息混合策略踩坑可操作；单机 NVLink vs 跨机 RDMA 边界清楚"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 153,
-    "reasons": []
-  },
-  "lines": 153,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "gradual-typing",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -81,28 +78,5 @@
         "mypy 与函数 wrapper 案例可跟读；blame/性能/TS unsound 踩坑有用。案例 1 注释把 * 与字符串拼接混谈，应按 JS 语义改成 NaN，或改用 + 演示拼接。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "base_rule_findings": []
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "fixed case-1 JS * vs + runtime claim; clarified upward vs downward cast check",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

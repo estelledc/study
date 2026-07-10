@@ -1,7 +1,4 @@
 {
-  "slug": "gpu-microbenchmarking-2010",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -91,31 +88,5 @@
         "踩坑（编译器删探针 / warm-up / 锁频 / 代际过期）具体可操作；适用边界清楚"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 170,
-    "reasons": []
-  },
-  "lines": 170,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic/engineer：案例 1 把 texture L1 误写成 global L1 数据 cache，且伪代码缺声明；改为 texture 路径并补全 out/tid。",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
