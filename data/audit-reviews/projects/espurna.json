@@ -1,0 +1,93 @@
+{
+  "slug": "espurna",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "编译 flag / 运行时设置的区分对零基础稍陡，但案例 3 已用 HTTP 配置把它落地。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "仓库、MQTT /set 约定、默认口令、闪存布局坑与公开 Wiki/README 一致；ESP32 仍需看分支的限定合理。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "PlatformIO 环境名与 MQTT/HTTP 示例可跟做；TLS/OTA/默认密码踩坑具体可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "编译 flag / 运行时设置的区分对零基础稍陡，但案例 3 已用 HTTP 配置把它落地。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "仓库、MQTT /set 约定、默认口令、闪存布局坑与公开 Wiki/README 一致；ESP32 仍需看分支的限定合理。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "PlatformIO 环境名与 MQTT/HTTP 示例可跟做；TLS/OTA/默认密码踩坑具体可操作。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 172,
+    "reasons": []
+  },
+  "lines": 172,
+  "l1_pass": true
+}
