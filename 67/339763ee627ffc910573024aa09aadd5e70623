@@ -1,0 +1,23 @@
+src/components/Search.astro
+  s_5e267aa9a2783e::t_a4c691e64ba647 7
+tests/a11y/product-contract.spec.mjs
+  s_5e267aa9a2783e::t_f5a8f84efcb884 51,66-67,71-72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "67339763ee627ffc910573024aa09aadd5e70623",
+  "prompts": {},
+  "sessions": {
+    "s_5e267aa9a2783e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_5e267aa9a2783e",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
