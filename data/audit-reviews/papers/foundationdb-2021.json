@@ -1,0 +1,85 @@
+{
+  "slug": "foundationdb-2021",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "大楼/餐厅/图书馆类比生动；Flow/BUGGIFY 有白话桥接；三案例步骤清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "SIGMOD 2021 industrial track、五角色、5 秒窗口、确定性仿真与开源时间线准确；『潮流源头』略满但仍属合理教学概括。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "incr_counter 与 OCC 冲突文本可跟；5 秒/热 key/ops 复杂度踩坑具体；多 region 等不适用边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "大楼/餐厅/图书馆类比生动；Flow/BUGGIFY 有白话桥接；三案例步骤清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "SIGMOD 2021 industrial track、五角色、5 秒窗口、确定性仿真与开源时间线准确；『潮流源头』略满但仍属合理教学概括。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "incr_counter 与 OCC 冲突文本可跟；5 秒/热 key/ops 复杂度踩坑具体；多 region 等不适用边界量化清楚。"
+      ]
+    }
+  ]
+}
