@@ -1,0 +1,123 @@
+{
+  "slug": "greenplum-db",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1、2 只有 SQL 没有逐部分解释，零基础不易抓住「为什么这样写」；建议各补 2–3 条 bullet。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 ## 历史小故事（可跳过），被 ## 技术亮点替代，结构与模板不一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Broadcom 2024 改私有」不准确：公开报道是 GitHub 仓库被归档为只读/社区停更，不是简单「改私有」；应改为「归档只读、上游开源更新停摆」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "fork 自 PostgreSQL 8.2、shared-nothing、Motion/gpfdist 等主干事实正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "DISTRIBUTED BY / REPLICATED / gpfdist 语法概念正确；踩坑（倾斜、standby、VACUUM、升级）可操作；适用边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1、2 只有 SQL 没有逐部分解释，零基础不易抓住「为什么这样写」；建议各补 2–3 条 bullet。",
+        "缺少 ## 历史小故事（可跳过），被 ## 技术亮点替代，结构与模板不一致。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「Broadcom 2024 改私有」不准确：公开报道是 GitHub 仓库被归档为只读/社区停更，不是简单「改私有」；应改为「归档只读、上游开源更新停摆」。",
+        "fork 自 PostgreSQL 8.2、shared-nothing、Motion/gpfdist 等主干事实正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "DISTRIBUTED BY / REPLICATED / gpfdist 语法概念正确；踩坑（倾斜、standby、VACUUM、升级）可操作；适用边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 180,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 180,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "zero-base：案例补逐部分解释并恢复历史小故事；academic：Broadcom 事件改为归档只读。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  }
+}

@@ -24,7 +24,7 @@ Greenplum 是一个**把 PostgreSQL 横向切成几十台机器一起跑**的 MP
 - 为什么"把单机数据库改成 MPP"听起来简单，但 20 年里只有少数几家做成
 - 为什么国内大行、运营商的传统分析仓很多年都跑在 Greenplum 上
 - 为什么 Snowflake / BigQuery 出现后，Greenplum 这种 shared-nothing 老路开始式微
-- 为什么 2024 年 Broadcom 把 gpdb 仓库改私有时，社区会立刻分出 Cloudberry 等 fork——它的代码库是 PG 派 MPP 的样板
+- 为什么 2024 年 Broadcom 把 gpdb 仓库归档只读后，社区会转向 Cloudberry 等 fork——它的代码库是 PG 派 MPP 的样板
 
 ## 核心要点
 
@@ -63,6 +63,12 @@ CREATE TABLE users (
 
 两张表都按 `user_id` 分布，`JOIN ON o.user_id = u.user_id` 时**同 segment 本地完成**，不用网络 shuffle——这是 Greenplum 性能的甜点。
 
+逐部分解释：
+
+- `DISTRIBUTED BY (user_id)`：按用户哈希切片，同一用户的订单和资料落在同一 segment。
+- 同键 JOIN：执行计划里看不到 `Redistribute Motion`，网络几乎不搬行。
+- 若改成一边按 `order_id`、一边按 `user_id`：JOIN 前必须 redistribute，延迟会明显上去。
+
 ### 案例 2：维度表用复制表
 
 ```sql
@@ -73,6 +79,12 @@ CREATE TABLE dim_city (
 ```
 
 只有几千行的维度表，每个 segment 各存一份。事实表 JOIN 维度表时**不需要 broadcast**，省一次全量分发。
+
+逐部分解释：
+
+- `DISTRIBUTED REPLICATED`：小表在每个 segment 留完整副本，换空间省网络。
+- 适合城市、币种这类很少变的维度；大事实表仍用 hash 分布。
+- 维度一更新要写遍所有 segment，所以只拿来放真正的小表。
 
 ### 案例 3：并行装载 gpfdist
 
@@ -88,7 +100,11 @@ FORMAT 'CSV';
 INSERT INTO orders SELECT * FROM ext_orders;
 ```
 
-`gpfdist` 是一个轻量 HTTP 服务，segment 们**并发去拉自己那份**，TB 级 CSV 几十分钟入库；走 coordinator 单点 INSERT 要跑一天。
+逐部分解释：
+
+- `gpfdist`：轻量 HTTP 文件服务，把 CSV 目录暴露给集群。
+- `LOCATION ('gpfdist://...')`：外部表只描述"去哪拉"，不先塞进 coordinator。
+- `INSERT ... SELECT`：各 segment **并发拉自己那份**；TB 级常几十分钟，单点 INSERT 可能要一天。
 
 ## 踩过的坑
 
@@ -102,7 +118,7 @@ INSERT INTO orders SELECT * FROM ext_orders;
 
 5. **升级痛苦**：跨大版本（5 → 6 → 7）官方推荐 `gpbackup` + `gprestore`，TB 级数据停机几小时到一天。in-place 升级工具长期不稳。
 
-6. **Broadcom 2024 改私有**：上游开源更新事实上停了。继续投入要看社区 fork（Cloudberry 等）能不能跟上 PG 主线和安全补丁。
+6. **Broadcom 2024 归档上游**：`greenplum-db/gpdb` 等仓库被归档为只读，社区更新停摆。继续投入要看 Cloudberry 等 fork 能否跟上 PG 主线与安全补丁。
 
 ## 适用 vs 不适用场景
 
@@ -120,21 +136,19 @@ INSERT INTO orders SELECT * FROM ext_orders;
 - 云原生弹性伸缩、按量付费 → Snowflake / BigQuery / Databricks
 - 海量小查询、每 query 都希望毫秒级返回（每个 query 都要走 coordinator 拆计划，启动开销大）
 
-## 技术亮点
+## 历史小故事（可跳过）
 
-- **PG 兼容**：psql / JDBC / ODBC / 各类 BI 工具直接连，SQL 是标准 PG 方言
-- **Motion 算子可见**：执行计划清楚标出数据搬运，调优有抓手
-- **Polymorphic storage**：行存与列存混用，按表选最优物理布局
-- **gpfdist 并行装载**：避开 coordinator 瓶颈，走 segment 直连
-- **Resource Group**（基于 Linux cgroup）：CPU / 内存按组配额，避免大查询拖死小查询
-- **ORCA 优化器**（可选）：Pivotal 自研的代价优化器，针对分布式 JOIN 顺序做更深搜索
+- **2005 前后**：Greenplum 在 PostgreSQL 8.2 上做 shared-nothing 改造，瞄准分析型 SQL。
+- **2010 年**：EMC 收购；随后进入 Pivotal，ORCA 优化器、列存与资源组逐渐补齐。
+- **2015–2019**：开源 gpdb 进入更多国内金融/运营商数仓；VMware 接手后继续发大版本。
+- **2024 年**：Broadcom 收购 VMware 后，上游 GitHub 仓库归档只读；社区转向 Apache Cloudberry 等延续。
 
 ## 学到什么
 
-1. **Shared-nothing 是上一代 MPP 数仓的主流路径**：Teradata / Vertica / Redshift / Greenplum 都是这条路；存储和计算绑在一起，扩容要同时加机器和加磁盘
-2. **在成熟单机数据库上做 MPP 改造代价巨大**：Greenplum 用了 10 年才把 PG 改成稳定 MPP，事务、catalog、备份、升级每一处都要重写
+1. **Shared-nothing 是上一代 MPP 数仓的主流路径**：Teradata / Vertica / Redshift / Greenplum 都是这条路；存算绑在一起，扩容要同时加机器和磁盘
+2. **在成熟单机库上做 MPP 改造代价巨大**：事务、catalog、备份、升级几乎处处要重写；Motion 可见、gpfdist、ORCA 都是长出来的补丁式能力
 3. **数据分布是 MPP 的灵魂**：分布键选对，JOIN 几乎免费；选错，再多机器也是看一台慢
-4. **开源治理影响选型**：商业母公司易主直接决定项目命运，2024 年的 Broadcom 事件是教科书案例
+4. **开源治理影响选型**：母公司易主可让上游停更，2024 归档事件是教科书案例
 
 ## 延伸阅读
 
