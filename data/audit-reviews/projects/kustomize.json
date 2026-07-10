@@ -1,0 +1,113 @@
+{
+  "slug": "kustomize",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "咖啡/穿衣服类比贴合；Base/Overlay/Patch 三段可跟读，案例目录结构清楚。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "K8s 1.14 内置 kubectl apply -k 正确；GitHub star 数会漂移，『11k』宜写成约数或弱化。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "patchesStrategicMerge 示例仍可跑，但新版更推荐 patches:；踩坑（两套 patch、kubectl 内置落后、无 if/else）具体可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "咖啡/穿衣服类比贴合；Base/Overlay/Patch 三段可跟读，案例目录结构清楚。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "K8s 1.14 内置 kubectl apply -k 正确；GitHub star 数会漂移，『11k』宜写成约数或弱化。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "patchesStrategicMerge 示例仍可跑，但新版更推荐 patches:；踩坑（两套 patch、kubectl 内置落后、无 if/else）具体可操作。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审均为 pass，但 quality-gate 因行数>200 失败；裁剪反向链接为占位，示例改用 patches:，弱化 star 数。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 踩过的坑",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 200,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 200,
+  "l1_pass": true
+}
