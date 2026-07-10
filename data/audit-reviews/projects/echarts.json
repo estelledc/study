@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 5,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "option/series/component 三抽象已有日常类比，零基础可跟读；无需必改。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "ASF 孵化/毕业时间、LTTB 出处与 zrender 历史动机均合理，未见硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "按需引入 silent fail、dispose、resize 都具体可操作；边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "option/series/component 三抽象已有日常类比，零基础可跟读；无需必改。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "ASF 孵化/毕业时间、LTTB 出处与 zrender 历史动机均合理，未见硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "按需引入 silent fail、dispose、resize 都具体可操作；边界量化清楚。"
+      ]
+    }
+  ]
+}
