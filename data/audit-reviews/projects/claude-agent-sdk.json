@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例只有两个完整案例，建议补一个按消息流提取最终结果的逐步示例。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "补齐 base-rules 要求的 ## 历史小故事（可跳过） 与 ## 反向链接 占位段。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "补一个更贴近真实 SDK 消费方式的代码片段，说明如何分拣异步消息流，避免把工具事件当最终回答。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例只有两个完整案例，建议补一个按消息流提取最终结果的逐步示例。",
+        "补齐 base-rules 要求的 ## 历史小故事（可跳过） 与 ## 反向链接 占位段。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "补一个更贴近真实 SDK 消费方式的代码片段，说明如何分拣异步消息流，避免把工具事件当最终回答。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 192,
+    "reasons": []
+  }
+}

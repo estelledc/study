@@ -54,6 +54,22 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 新人写第一个 OpenGL 立方体常忘了 `glEnable(GL_DEPTH_TEST)`，结果立方体某些面颠倒——**后画的覆盖先画的**，与"谁离镜头近"无关。这就退化成了 1970 年代的"画家算法"。开了深度测试立刻正常。在 WebGL / three.js 里也一样，调试 3D 怪现象第一步就是看深度测试有没有开。
 
+```js
+// three.js 里故意关掉深度测试，会看到后画的面盖住前面的面
+material.depthTest = false
+renderer.render(scene, camera)
+
+// 修复：让每个片元先和 depth buffer 比较
+material.depthTest = true
+renderer.render(scene, camera)
+```
+
+逐部分解释：
+
+- `depthTest = false` 时，渲染顺序比几何远近更重要，所以画面会"穿帮"
+- `depthTest = true` 时，GPU 才会为每个像素检查谁更靠近相机
+- 如果 3D 物体前后关系异常，先查这一项比先改模型顶点更有效
+
 ### 案例 3：Z-fighting（深度冲突）
 
 两个三角形几乎重合（比如墙上贴海报），depth buffer 精度有限（通常 24 位定点），它们的 z 值在浮点误差内分不清，每帧随机选一个像素胜出，画面上出现刺眼的闪烁条纹。这是 Z-buffer 算法的内在缺陷。修法三种：
@@ -62,9 +78,34 @@ glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 - 用 `glPolygonOffset` 给后画的偏移一个小 z
 - 提高近裁剪面 `near`，把宝贵精度让给近处
 
+```c
+glEnable(GL_POLYGON_OFFSET_FILL);
+glPolygonOffset(-1.0f, -1.0f);
+drawPosterOnWall();
+glDisable(GL_POLYGON_OFFSET_FILL);
+```
+
+逐部分解释：
+
+- `GL_POLYGON_OFFSET_FILL` 告诉 GPU：填充多边形时给深度值加一个小偏移
+- `glPolygonOffset` 的两个参数控制偏移大小，让海报稳定赢过墙面
+- 这只是工程补丁，根因仍是两个面太接近、depth buffer 精度不够
+
 ### 案例 4：用 Z-buffer 做后处理特效
 
 游戏里的"景深模糊"、"屏幕空间环境光遮蔽（SSAO）"、"屏幕空间反射"都不是新算几何，而是**直接读 Z-buffer**：每像素深度差就够推断"这个像素离相机多远、附近有没有遮挡"。Z-buffer 在 2010 年代被重新发现是"几何信息的免费副产品"。
+
+```glsl
+float z = texture(depthTexture, uv).r;
+float blur = smoothstep(focusNear, focusFar, abs(z - focusDepth));
+vec3 color = mix(sharpColor, blurredColor, blur);
+```
+
+逐部分解释：
+
+- `depthTexture` 就是一帧渲染时留下的 Z-buffer 拷贝
+- `abs(z - focusDepth)` 表示当前像素离焦点平面有多远
+- `mix` 按距离混合清晰图和模糊图，这就是景深效果的最小模型
 
 ## 踩过的坑
 
