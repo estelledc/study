@@ -130,23 +130,38 @@ Held（API 收到，等 Worker）
 - 团队没 sysadmin：邮件运维比想象复杂，IP / DNS / 反垃圾每一项单独都是坑
 - 想要收件箱（IMAP/POP3 给真人用）：Postal **只发不收终端邮件**，要这个用 mailcow
 
+## 历史小故事（可跳过）
+
+- **2015 前后**：英国主机商 Krystal Hosting 自己写投递平台，给客户发 transactional 邮件，不想把正文交给第三方 SaaS。
+- **2017**：以 Postal 之名开源（MIT），社区开始自托管；定位从一开始就是"开发者 API 发信"，不是收件箱。
+- **2018–2021**：补齐 webhook、IP pool、多租户 org 模型，GitHub stars 过万，成为 Mailgun / SendGrid 的常见自托管对照。
+- **2.0 起**：部分队列路径从强依赖 RabbitMQ 转向 MariaDB，老 docker-compose / 运维教程容易踩空。
+- **今天**：仍由社区维护，适合有 DevOps 能力、要数据主权的团队；投递率战场仍在 IP 信誉，不在框架本身。
+
 ## 学到什么
 
 1. **transactional 邮件 ≠ 邮箱服务器**：前者是"一次性触发的程序邮件"，后者是"长期存放用户邮件"。架构不一样，工具不一样
 2. **IP 信誉是核心资产**：技术只占发邮件这件事的 30%，剩下 70% 是 IP / 域名 / 历史发送行为的长期声誉
 3. **异步队列是邮件平台的脊柱**：RabbitMQ + Worker 池让"高峰期 10 万封/分钟"和"重试退避"两件事都能优雅处理
 4. **webhook = 反向数据流**：发出去之后的命运（bounce / open / click）不推回来，业务系统就是瞎子
-5. **三层账户模型适合多租户**：org / mail server / credential 这种切法不仅是 Postal 的，几乎所有面向开发者的发邮件 SaaS 都长这样——值得抄到自家"对外 API"的权限设计里
-6. **自托管不是省钱第一**：算 TCO 时把 IP warmup 时间、运维人时、bounce 率监控算进去，月发量 < 50k 几乎一定亏。它的核心卖点是**控制权**，不是单价
+5. **自托管卖的是控制权**：月发量 < 50k 算上 warmup 与运维人时几乎一定亏；org / mail server / credential 三层模型值得抄到对外 API 权限设计
 
 ## 延伸阅读
 
 - 官网：[postalserver.io](https://postalserver.io/)（架构图 + 部署指南）
 - 文档：[docs.postalserver.io](https://docs.postalserver.io/)（API / webhook / 监控）
 - 源码：[github.com/postalserver/postal](https://github.com/postalserver/postal)（Ruby on Rails，读 `app/models/message.rb` 看消息状态机）
+- [[mailcow]] —— 自托管完整邮箱（IMAP + Webmail），和 Postal 互补
 
 ## 关联
 
 - [[mailcow]] —— 同样自托管邮件，但做的是"完整邮箱服务"（IMAP + Webmail），和 Postal 互补不重叠
 - [[nginx]] —— Postal 前面通常挂 nginx 做 TLS 终止 + 反代
 - [[caddy]] —— nginx 的现代替代，自动 HTTPS 对单 VPS 部署 Postal 更友好
+- [[postfix]] —— 经典 MTA；Postal 自研 SMTP 栈，对照看"投递引擎 vs 完整邮件平台"
+- [[rabbitmq-server]] —— Postal 早期/部分路径的消息管道，理解入队→Worker 出队主线
+- [[nodemailer]] —— Node 侧发信库；接 Postal SMTP/HTTP API 时常见客户端
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
