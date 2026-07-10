@@ -1,7 +1,4 @@
 {
-  "slug": "ironfleet-2015",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -86,32 +83,5 @@
         "Dafny 规约/simulation 可跟读；trigger、liveness、规约写错、I/O reduction 踩坑具体；fail-stop/迭代成本边界清楚"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "按论文改正吞吐/2.4× 与证明比例口径，去掉与 3.7 人年矛盾的 8 人 1.5 年",
-    "sections_modified": [
-      "## 实践案例",
-      "## 适用",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true
+  ]
 }

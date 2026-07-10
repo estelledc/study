@@ -1,7 +1,4 @@
 {
-  "slug": "iris-2015",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,31 +83,5 @@
         "适用边界清楚；可再点明「需要 Coq/专家证明成本」的量化预期（人月级）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正 invariant 记号 ⌜I⌝→inv N I、Iris 5.x→4.x，并补 fractional permission 日常桥接",
-    "sections_modified": [
-      "## 实践案例",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 155,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 155,
-  "l1_pass": true
+  ]
 }

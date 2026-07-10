@@ -1,7 +1,4 @@
 {
-  "slug": "instant-ngp-2022",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.56,
   "reject_count": 0,
@@ -106,38 +103,5 @@
         "踩坑（表太小/缺粗层/忽略 fused CUDA）具体；适用边界有 GPU 与城市级分块提示，可保留。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.56,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "补 8 角插值步骤与术语桥接；去掉填充段；关联改 NeRF/3DGS/Plenoxels；扩到 quality-gate 行数。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 核心要点",
-      "## 为什么重要",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }
