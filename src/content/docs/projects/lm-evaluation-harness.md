@@ -26,7 +26,7 @@ lm_eval --model hf \
 
 不理解 harness，下面这些事都没法解释：
 
-- **HuggingFace OpenLLM Leaderboard** 的分数从哪来——后端就是 harness，谁也别想偷偷改算法
+- **HuggingFace OpenLLM Leaderboard** 的分数从哪来——公开任务定义降低了私下改评测口径的空间
 - 为什么论文里报 MMLU 时常常带一句 `we use lm-evaluation-harness vX.Y.Z`——不带就没法复现
 - 为什么同一个模型，A 团队报 65 分、B 团队报 71 分——大概率是 prompt 模板版本不同 / few-shot 数不同
 - 为什么"公开基准跑分高"和"实际任务能用"中间隔了一条沟——harness 解决前者，不保证后者
@@ -78,7 +78,12 @@ lm_eval --model vllm \
   --batch_size auto
 ```
 
-把 `--model hf` 换成 `--model vllm`，**同一份评测脚本**直接享受 vLLM 的 PagedAttention + 连续批处理。在 7B 模型上 MMLU 评测从 1 小时降到 5 分钟级别——这就是模型适配层解耦的好处。
+**逐部分解释**：
+
+- `--model vllm`：换后端，不改任务 YAML；适配层把请求翻译成 vLLM 调用。
+- `tensor_parallel_size=2`：两卡切模型，适合单卡装不下的权重。
+- `--batch_size auto`：自动探最大可行 batch；显存不够时再改成固定小数。
+- 同一套 `mmlu` 任务下，7B 常见从约 1 小时降到数分钟——解耦的收益是**换引擎不换卷子**。
 
 ### 案例 3：自定义任务，YAML 写一个就够
 
@@ -95,7 +100,12 @@ metric_list:
   - metric: acc
 ```
 
-放到 `lm_eval/tasks/` 下，`--tasks chengyu_blank` 就能跑。**不写一行 Python**。
+**逐部分解释**：
+
+- `dataset_path`：题目从哪加载（HuggingFace 数据集名或本地路径）。
+- `doc_to_text` / `doc_to_choice` / `doc_to_target`：Jinja2 模板，分别拼题干、选项列表、标准答案字段。
+- `output_type: multiple_choice`：走 loglikelihood 比选项，而不是自由生成。
+- 放到 `lm_eval/tasks/` 后 `--tasks chengyu_blank` 即可；**通常不用写 Python**。
 
 ## 踩过的坑
 
@@ -126,6 +136,13 @@ metric_list:
 - 评测**多轮工具调用 / agent 行为**——harness 主要面向单轮问答，多轮要 SWE-bench / AgentBench 等专门工具
 - 中文 / 小语种垂直基准覆盖一般，要自己加 YAML 或转用 OpenCompass
 
+## 历史小故事（可跳过）
+
+- **2021 前后**：EleutherAI 把分散的 LLM 评测脚本收成 harness，方便复现 GPT-Neo / GPT-J 一类开源模型的分数。
+- **v0.3 → v0.4**：任务定义从偏代码转向 YAML + Jinja2，加基准的门槛明显下降。
+- **Leaderboard 时代**：HuggingFace Open LLM Leaderboard 等用它做后端，"报分要写版本号"变成社区习惯。
+- **今天**：仍是开源评测默认选项之一；中文场景常与 OpenCompass 等互补。
+
 ## 学到什么
 
 1. **跑分框架最大的价值不是算分，是定义"什么叫公平评测"**——prompt 模板、few-shot 数、metric 选法都是争议点，harness 把它们写进 YAML 后才能"对上账"。
@@ -149,3 +166,7 @@ metric_list:
 - [[accelerate]] —— 多卡评测时常和 harness 配合，让 7B+ 模型单机多卡跑 MMLU
 - [[ann-benchmarks]] —— 同样思路的"统一基准框架"，但面向向量检索而非 LLM
 - [[litellm-proxy]] —— 想评测闭源 API 模型时，可以让 harness 通过 LiteLLM 代理统一接入
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
