@@ -1,0 +1,111 @@
+{
+  "slug": "electra-2020",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少「## 适用」段，读者学完不知道何时该用 ELECTRA；案例 4 偏叙事，可并入适用/学到什么"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「学到的东西多 6 倍以上」按 100%/15% 覆盖率推算，与后文论文主张的 ~4× 算力效率混谈，易歪曲；应区分「token 覆盖更密」与「端到端算力约 4×」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "正文缺「## 适用 vs 不适用」边界段；踩坑第 5 条只覆盖生成任务，应补量化适用场景（判别/抽取 NLU、小算力预训练等）与不适用（生成式 LM、只想直接用现成大模型等）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "缺少「## 适用」段，读者学完不知道何时该用 ELECTRA；案例 4 偏叙事，可并入适用/学到什么"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇「学到的东西多 6 倍以上」按 100%/15% 覆盖率推算，与后文论文主张的 ~4× 算力效率混谈，易歪曲；应区分「token 覆盖更密」与「端到端算力约 4×」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "正文缺「## 适用 vs 不适用」边界段；踩坑第 5 条只覆盖生成任务，应补量化适用场景（判别/抽取 NLU、小算力预训练等）与不适用（生成式 LM、只想直接用现成大模型等）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic：区分 token 覆盖密度与论文 ~4× 算力效率；engineer/zero-base：补 ## 适用 vs 不适用，并去掉偏叙事的案例 4、压缩学到什么以控行数。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
