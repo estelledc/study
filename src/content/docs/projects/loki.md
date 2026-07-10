@@ -18,10 +18,10 @@ Loki 是 Grafana Labs 2018 年开源的日志聚合系统。一句话定位：**
 
 ## 为什么重要
 
-- **存储成本拉开 10x**：ELK 索引开销约日志体积的 50-200%，Loki 只占 2-5%（因为不全文倒排）
+- **存储成本常可拉开一个数量级**：业界经验上 ELK 全文倒排索引开销约日志体积的 50–200%，Loki 只索引 label，索引侧常落到约 2–5%（量级说法，视压缩与保留策略而变）
 - **K8s 日志聚合事实选项**：Promtail / Vector DaemonSet 自动抓 pod 日志、贴 namespace/pod/container label，开箱可用
 - **和 Prometheus + Grafana 三件套配齐**：监控告警 → 跳日志 → 跳 trace，全在一个 label 体系里
-- **CNCF 沙箱毕业候选**：Grafana 系（Prometheus 生态、[[grafana-tempo]]、Loki）已成云原生可观测性默认栈
+- **Grafana 系可观测栈默认件**：Loki 由 Grafana Labs 维护（**不是** CNCF 托管项目），与 [[prometheus]] 生态、[[grafana-tempo]] 一起常被当成云原生可观测默认组合
 - **写 LogQL 是 SRE 新硬指标**：和 PromQL 同源，会一个就会另一个
 
 ## 核心要点

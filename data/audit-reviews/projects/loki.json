@@ -1,0 +1,115 @@
+{
+  "slug": "loki",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆书脊标签类比贴合；stream/chunk/LogQL 桥接清楚；三案例均有逐步解释与正误对照。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「CNCF 沙箱毕业候选」不实：Loki 由 Grafana Labs 维护，并非 CNCF 托管项目（与 Prometheus/Cortex 不同）；应改为云原生可观测栈事实选项之类表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2018 发布、LogQL、v3.0 Bloom/TSDB 等时间线大体合理；存储成本 10x 为业界量级说法可保留但宜标「量级」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "compose 最小栈可跟做；高基数 label 正误示范可操作；适用/不适用有 TB/天与全文搜边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "图书馆书脊标签类比贴合；stream/chunk/LogQL 桥接清楚；三案例均有逐步解释与正误对照。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「CNCF 沙箱毕业候选」不实：Loki 由 Grafana Labs 维护，并非 CNCF 托管项目（与 Prometheus/Cortex 不同）；应改为云原生可观测栈事实选项之类表述。",
+        "2018 发布、LogQL、v3.0 Bloom/TSDB 等时间线大体合理；存储成本 10x 为业界量级说法可保留但宜标「量级」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "compose 最小栈可跟做；高基数 label 正误示范可操作；适用/不适用有 TB/天与全文搜边界。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "纠正「CNCF 沙箱毕业候选」：Loki 非 CNCF 托管；存储成本改为量级表述。",
+    "sections_modified": [
+      "## 为什么重要"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 154,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 154,
+  "l1_pass": true
+}
