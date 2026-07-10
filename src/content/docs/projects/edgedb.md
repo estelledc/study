@@ -1,6 +1,6 @@
 ---
 title: EdgeDB / Gel — 在 Postgres 上长出图风查询语言，让类型系统替你做 ORM
-来源: EdgeDB Documentation, https://docs.edgedb.com/ ；项目主页 https://geldata.com/
+来源: 'EdgeDB Documentation, https://docs.edgedb.com/ ；项目主页 https://geldata.com/'
 日期: 2026-05-31
 分类: 基础设施
 难度: 中级
@@ -69,7 +69,7 @@ const movies = await prisma.movie.findMany({
 // movies 的类型靠 Prisma 推；嵌套 3 层后类型推断常常掉链子
 ```
 
-EdgeDB 写法：
+EdgeDB 写法（需先 `edgedb generate` 出 query builder，再 `import e from './edgeql'`）：
 
 ```ts
 const q = e.select(e.Movie, m => ({
@@ -80,19 +80,17 @@ const movies = await q.run(client);
 // movies 的类型是 EdgeQL 编译器算出来的，跟 schema 一致
 ```
 
-差异：**Prisma 是应用层 TS 库映射 SQL**，EdgeDB 是**查询语言原生支持嵌套**，类型推断走的是查询语言的语义而不是 ORM 的元编程。
+差异：**Prisma 是应用层 TS 库映射 SQL**，EdgeDB 是**查询语言原生支持嵌套**，类型推断走查询语义而不是 ORM 元编程。
 
 ### 案例 2：迁移流程
 
-```bash
-# 1. 改 dbschema/default.esdl 加一个字段
-# 2. 让 CLI 生成迁移脚本
-edgedb migration create
-# 3. review / 调整生成的迁移，apply
-edgedb migrate
-```
+假设你在 `Movie` 上新加 `required year: int32`：
 
-`migration create` 的本质是**对比当前数据库状态和你想要的状态，生成 diff**。和"手写 up.sql + down.sql"路线比，少写一半。
+1. 改 `dbschema/default.esdl`，保存声明式目标状态（不是手写 ALTER）。
+2. 跑 `edgedb migration create`：CLI 对比**当前库状态**和 **.esdl 目标**，生成带注释的迁移脚本供 review。
+3. 确认无误后 `edgedb migrate` apply；库里出现新列，旧数据若缺 year 会按迁移策略报错或回填。
+
+和"手写 up.sql + down.sql"比，少维护半条链；代价是你必须读懂生成的 diff，不能盲点 apply。
 
 ### 案例 3：访问策略
 
@@ -107,7 +105,11 @@ type BlogPost {
 }
 ```
 
-这条策略**编译进每条修改这个对象的查询**。你不用在应用层写 if 判断，权限规则跟 schema 在同一个文件里。
+逐步看：
+
+1. `global current_user` 由客户端会话注入（登录后 set global），不是应用里临时变量。
+2. 任何人 `update BlogPost` 时，引擎把策略编译进 SQL；`.author ≠ current_user` 的行直接不可见/不可改。
+3. 对比应用层 `if (post.authorId !== me)`：规则和 schema 同文件，漏写 if 的窗口被关掉。
 
 ## 踩过的坑
 
