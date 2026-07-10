@@ -1,0 +1,100 @@
+{
+  "slug": "flashattention-3-2024",
+  "area": "papers",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.67,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "仓库装卸类比未桥接 WGMMA/TMA/FP8；案例仍是「最小配置→灰度」模板，零基础无法理解 FA3 相对 FA2 多了什么；反向链接重复占位。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "arXiv 2407.08608 正确，但未写清 FA3 三技（warp-specialization 重叠、matmul/softmax 交错、FP8 block quantization）及 H100 FP16 ~740 TFLOPs/s、FP8 ~1.2 PFLOPs/s、FP8 误差低 2.6× 等结果；正文泛化成「可控性提升」歪曲论文。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无 hopper/flash_attn_3 安装与调用示例；未写明仅 Hopper（H100/H800）、CUDA≥12.3、FP8 前向等边界，无法落地。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "仓库装卸类比未桥接 WGMMA/TMA/FP8；案例仍是「最小配置→灰度」模板，零基础无法理解 FA3 相对 FA2 多了什么；反向链接重复占位。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 1,
+        "citation_correctness": 3,
+        "no_distortion": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "arXiv 2407.08608 正确，但未写清 FA3 三技（warp-specialization 重叠、matmul/softmax 交错、FP8 block quantization）及 H100 FP16 ~740 TFLOPs/s、FP8 ~1.2 PFLOPs/s、FP8 误差低 2.6× 等结果；正文泛化成「可控性提升」歪曲论文。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 2,
+        "scope_correct": 2
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无 hopper/flash_attn_3 安装与调用示例；未写明仅 Hopper（H100/H800）、CUDA≥12.3、FP8 前向等边界，无法落地。"
+      ]
+    }
+  ],
+  "rewrite": {
+    "status": "rewritten",
+    "sections_modified": [
+      "full-note"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 158,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "hydra-synth",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "录像合成台/点号接线类比贴合；三案例均有逐部分解释，source→transform→out 心智模型清晰。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "ojack/hydra、WebGL 编译、o0–o3、音频 a.fft 与官方文档路径一致；历史灵感（Sandin、Satellite Arts、Crutchfield）标注为灵感线而非直系技术继承，表述克制。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "浏览器可跟做的 osc/cam/fft 示例正确；.out()/CORS/initVideo/音频校准踩坑可操作；不适用边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "录像合成台/点号接线类比贴合；三案例均有逐部分解释，source→transform→out 心智模型清晰。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "ojack/hydra、WebGL 编译、o0–o3、音频 a.fft 与官方文档路径一致；历史灵感（Sandin、Satellite Arts、Crutchfield）标注为灵感线而非直系技术继承，表述克制。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "浏览器可跟做的 osc/cam/fft 示例正确；.out()/CORS/initVideo/音频校准踩坑可操作；不适用边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "All reviewers passed; no refinement required",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 164,
+    "reasons": []
+  },
+  "lines": 164,
+  "l1_pass": true
+}

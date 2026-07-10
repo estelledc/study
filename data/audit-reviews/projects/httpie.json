@@ -1,0 +1,106 @@
+{
+  "slug": "httpie",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "curl 瑞士军刀 vs 人话默认值类比清晰；DSL 表与案例逐步解释对零基础友好。可选：补 ## 反向链接 占位以对齐模板。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub httpie/cli、2012 起源与 v3 拆仓时间线合理；「几乎每个公司文档都给两版」略满，但整体不构成硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "命令可跟做；= vs :=、--form、Python 冷启动换 xh、binary --print=Hh 等踩坑具体；适用边界量化清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "curl 瑞士军刀 vs 人话默认值类比清晰；DSL 表与案例逐步解释对零基础友好。可选：补 ## 反向链接 占位以对齐模板。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 GitHub httpie/cli、2012 起源与 v3 拆仓时间线合理；「几乎每个公司文档都给两版」略满，但整体不构成硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "命令可跟做；= vs :=、--form、Python 冷启动换 xh、binary --print=Hh 等踩坑具体；适用边界量化清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "All reviewers passed; no refinement required",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 172,
+    "reasons": []
+  },
+  "lines": 172,
+  "l1_pass": true
+}
