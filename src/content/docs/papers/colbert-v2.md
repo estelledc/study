@@ -86,7 +86,7 @@ ColBERTv2 是当时**唯一兼具高精度 + 可索引**的方案。
 
 ## 踩过的坑
 
-1. **MaxSim 的 max 不可导**：训练时用 softmax 近似（temperature 控制锐度）。直接 hard max 反向传不动。
+1. **MaxSim 的梯度很稀疏**：`max` 是分段可导的，反向传播只会主要回到每个查询 token 选中的文档 token。调试召回差时，要看是不是少数高分 token 把训练信号“吸走”了。
 
 2. **超长文档要切 chunk**：BERT 限 512 token，长文档切成多段后跨段语义会断。RAGatouille 默认按 256 token 滑窗切，重叠处取分数最大值。
 

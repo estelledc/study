@@ -80,7 +80,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 
 1. **索引大小爆炸**：每个 token 一个 128 维向量，MS MARCO 8.8M 篇文档要 154GB。这是后来 ColBERTv2 用残差压缩压到 16GB 的直接动机。
 
-2. **MaxSim 的 max 不可导**：训练时反向传不动。原文用 softmax 近似（带 temperature 参数）来过桥。这是机器学习里 '不可导用近似' 的标准操作。
+2. **MaxSim 的梯度很尖**：`max` 是分段可导的，但梯度只流向当前最像的文档 token。训练时要靠 ranking loss 和足够好的负样本让这个选择稳定，不能把它当成普通平均池化。
 
 3. **查询/文档长度受限**：BERT 限 512 token，长查询要截断；长文档要切 chunk，跨 chunk 语义会断。
 
@@ -122,7 +122,7 @@ cross-encoder 把 `[CLS] q [SEP] d [SEP]` 一起过 BERT，q 和 d 互相 attent
 1. **'什么时候交互' 是检索设计的关键开关**——early（拼一起过 BERT）/ late（各编码后聚合）/ no（单向量），三档对应三种 trade-off
 2. **保留 token 粒度+轻量聚合** 是把 '大模型表达力' 和 '索引可行性' 兼得的通用模式
 3. **工程权衡可视化**：精度 / 延迟 / 索引大小 是检索三角，没有银弹
-4. **不可导问题用近似过桥**：MaxSim 的 max 反向传不动，softmax 加 temperature 是常见解法
+4. **尖锐匹配需要好负样本**：MaxSim 只奖励每个查询 token 最像的那个文档 token，训练质量高度依赖 hard negatives
 5. **为下游而设计的表示比通用表示更管用**：128 维投影是为 MaxSim 而生，不是通用 embedding
 6. **预索引能力来自 '编码独立'**：cross-encoder 慢的根源是查询和文档互相 attention，ColBERT 把这条边切断后立刻获得索引可行性。这条 '砍依赖换效率' 的经验在系统设计里反复出现
 
