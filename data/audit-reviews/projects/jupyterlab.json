@@ -1,7 +1,4 @@
 {
-  "slug": "jupyterlab",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,12 +78,5 @@
         "启动/workspaces/labextension 命令可跟做；踩坑含 PATH、根目录启动、source extension 等可操作项"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 157,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }

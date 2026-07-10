@@ -1,7 +1,4 @@
 {
-  "slug": "gcn-2017",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "伪代码概念正确（A_norm @ Linear）；踩坑覆盖自环/归一化/transductive/大图，适用边界清晰。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 163,
-    "reasons": []
-  },
-  "l1_pass": true,
-  "lines": 163
+  ]
 }

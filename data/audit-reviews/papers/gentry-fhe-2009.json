@@ -1,7 +1,4 @@
 {
-  "slug": "gentry-fhe-2009",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -91,22 +88,5 @@
         "踩坑（同态≠全同态、自举昂贵、密文膨胀、SEAL 量级）具体有用；适用边界有 10^4–10^6 量化"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 181,
-    "reasons": []
-  },
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base/engineer：实践案例改为 3 个并补可跟读伪代码与逐步解释；公式改为 Dec(Eval(...))。",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

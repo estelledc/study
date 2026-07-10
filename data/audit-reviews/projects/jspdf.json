@@ -1,7 +1,4 @@
 {
-  "slug": "jspdf",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -91,31 +88,5 @@
         "中文字体/基线/html2canvas 不可搜等踩坑很有用，保持。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic/engineer：纠正踩坑 4「format 数组强制 mm」误述；补历史小故事与反向链接占位。",
-    "sections_modified": [
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 173,
-    "reasons": []
-  },
-  "l1_pass": true,
-  "lines": 173
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "gemini-1.5-2024",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "案例为概念伪代码可接受；适用/不适用把 RAG 成本与长上下文边界写清楚，踩坑覆盖检索≠推理与多 needle。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 162,
-    "reasons": []
-  },
-  "l1_pass": true,
-  "lines": 162
+  ]
 }

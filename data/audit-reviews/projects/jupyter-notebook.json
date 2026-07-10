@@ -1,7 +1,4 @@
 {
-  "slug": "jupyter-notebook",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "安装与 cell 示例可跟做；踩坑覆盖 kernel 残留、v6→v7 扩展、环境错配与 trust，适用边界清楚。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 196,
-    "reasons": []
-  },
-  "l1_pass": true,
-  "lines": 196
+  ]
 }
