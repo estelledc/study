@@ -43,7 +43,7 @@
         "accessibility": 5,
         "case_clarity": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 踩过的坑",
       "fix_hints": [
@@ -57,7 +57,7 @@
         "citation_correctness": 5,
         "no_distortion": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 历史小故事",
       "fix_hints": [
@@ -71,7 +71,7 @@
         "pitfalls_useful": 5,
         "scope_correct": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 适用",
       "fix_hints": [

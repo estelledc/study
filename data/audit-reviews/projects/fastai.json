@@ -1,7 +1,4 @@
 {
-  "slug": "fastai",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -81,33 +78,5 @@
         "DataBlock/fine_tune/Callback 案例可跟做；适用场景缺量化边界（如单卡图像分类 <10 万张、研究新算法请直用 PyTorch）；补历史小故事与反向链接占位以过模板完整性"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 164,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "补历史小故事与反向链接占位；弱化「500万人」营销口径；适用场景加单卡/<10万张等量化；去掉非标准「一句话定位」H2",
-    "sections_modified": [
-      "## 是什么",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

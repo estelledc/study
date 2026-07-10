@@ -1,7 +1,4 @@
 {
-  "slug": "dijkstra-shortest-path",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "堆版 Dijkstra 与懒惰删除可跟做；负边/全点对/路网毫秒级边界清楚；「百万级以下」是粗量级经验阈值，可接受"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 172,
-    "reasons": []
-  },
-  "lines": 172,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  }
+  ]
 }

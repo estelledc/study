@@ -1,7 +1,4 @@
 {
-  "slug": "faiss",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "FlatL2 / index_factory / GPU 迁移路径概念正确；案例 2 的 train_set/database 未给出构造，教学上可跟读；nprobe/GIL/持久化踩坑很工程"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 159,
-    "reasons": []
-  },
-  "lines": 159,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  }
+  ]
 }

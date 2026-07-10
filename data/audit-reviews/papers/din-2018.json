@@ -1,7 +1,4 @@
 {
-  "slug": "din-2018",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "权重示例与 MBA 公式可跟读；踩坑（勿 softmax、L 与 QPS、冷启动分桶）可操作；适用边界有 >1000 / <5 条等量化"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 160,
-    "reasons": []
-  },
-  "lines": 160,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  }
+  ]
 }
