@@ -1,4 +1,40 @@
 {
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Vect 长度类比贴合；elaboration/totality 有桥接；案例 3 SQL DSL 对零基础偏抽象，但前两例可托住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Brady 2013 JFP、Martin-Löf 1971、Idris 2 / QTT 时间线正确；『Agda/Coq 写不了普通程序』略满，教学简化可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Vect append / zip hole 概念正确可跟；totality 与编译速度踩坑具体；适用边界清楚，缺量化编译耗时非必须。"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",

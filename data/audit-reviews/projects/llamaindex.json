@@ -1,4 +1,40 @@
 {
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书管理员/瑞士军刀类比好；案例 1 只回指上文缺逐步解释，案例 2 Sub-question 无代码与拆合步骤，建议补 3 步说明。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『生产级 RAG 必须检索+重排』『re-ranker 做成默认选项』过满：as_query_engine 默认不做 cross-encoder 重排，应改为可选/常见生产增强。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Hybrid QueryFusionRetriever 可跟；embedding 重建与 chunk 踩坑实用；案例 1 宜显式写出 Settings.llm 替换一行。"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",

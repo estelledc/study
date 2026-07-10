@@ -1,7 +1,4 @@
 {
-  "slug": "llama-index",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "案例 1 可跑；案例 2/3 为概念骨架但步骤清楚；切片/embedding/混用/延迟踩坑可操作；适用边界有量化直觉。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 154,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "hyperkernel-2017",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.55,
   "reject_count": 0,
@@ -101,38 +98,5 @@
         "踩坑里「信任基包括 Z3 + Rosette + Racket」需改为 Z3 + Python 规约解释器 + LLVM 工具链。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.55,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refined",
-    "reason": "修正 Rosette 误述为 Python 规约+LLVM IR；去掉重复作者；统一 seL4=Isabelle；更新案例2与信任基。",
-    "sections_modified": [
-      "frontmatter",
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 一句话区分类似工作",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

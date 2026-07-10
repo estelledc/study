@@ -1,7 +1,4 @@
 {
-  "slug": "llama-cpp",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,30 +83,5 @@
         "案例命令可跟做；适用边界（端侧 vs vLLM）清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refined",
-    "reason": "修正 KV cache 显存随上下文近似线性增长（非平方）；补 ## 反向链接占位。",
-    "sections_modified": [
-      "## 踩过的坑",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true
+  ]
 }
