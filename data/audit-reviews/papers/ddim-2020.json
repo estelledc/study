@@ -1,0 +1,108 @@
+{
+  "slug": "ddim-2020",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Markov / sigma / ODE 对零基础仍偏密，但楼梯类比与案例能托住；可在要点 1 再补半句「边缘分布=只看某一层长什么样」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1：CIFAR-10 上 DDIM η=0 时 100 步 FID 约 4.16、1000 步约 4.04（论文 Table 1）；正文写「100 步约 4.04」把 1000 步数字错挂到 100 步，需改正。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Midjourney、Sora 用的 DPM-Solver」属推断，建议改为「产品侧常见加速采样器多属 DDIM/ODE 一脉」以免过满。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "ddim_step 是骨架可接受；若补一行 x_0_hat / pred_eps 伪代码会更好跟做，非必须。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Markov / sigma / ODE 对零基础仍偏密，但楼梯类比与案例能托住；可在要点 1 再补半句「边缘分布=只看某一层长什么样」。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1：CIFAR-10 上 DDIM η=0 时 100 步 FID 约 4.16、1000 步约 4.04（论文 Table 1）；正文写「100 步约 4.04」把 1000 步数字错挂到 100 步，需改正。",
+        "「Midjourney、Sora 用的 DPM-Solver」属推断，建议改为「产品侧常见加速采样器多属 DDIM/ODE 一脉」以免过满。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "ddim_step 是骨架可接受；若补一行 x_0_hat / pred_eps 伪代码会更好跟做，非必须。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 156,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

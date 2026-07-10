@@ -1,0 +1,115 @@
+{
+  "slug": "elysia",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "macro / TypeBox 对非 TS 读者仍抽象，但充电桩类比与案例 1 逐步解释已够用。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「绑死在 Bun runtime 上」过满：官方已提供 @elysiajs/node 等 adapter，应改为「Bun-first / 为 Bun 深度优化，Node 可跑但非主路径」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史：Bun 1.0 发布于 2023-09，不宜写成「2024 年 Bun 1.0 + Elysia 1.0 同期」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「不适用：必须跑在 Node」需同步更新：现有 Node adapter，应写成「可跑但丢失 Bun macro/JSC 红利，QPS 优势不明显时不如直接用 Hono/Fastify」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可补一句：用 Node 时要显式装 adapter 并设 adapter，不是 drop-in。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "macro / TypeBox 对非 TS 读者仍抽象，但充电桩类比与案例 1 逐步解释已够用。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「绑死在 Bun runtime 上」过满：官方已提供 @elysiajs/node 等 adapter，应改为「Bun-first / 为 Bun 深度优化，Node 可跑但非主路径」。",
+        "历史：Bun 1.0 发布于 2023-09，不宜写成「2024 年 Bun 1.0 + Elysia 1.0 同期」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "「不适用：必须跑在 Node」需同步更新：现有 Node adapter，应写成「可跑但丢失 Bun macro/JSC 红利，QPS 优势不明显时不如直接用 Hono/Fastify」。",
+        "踩坑可补一句：用 Node 时要显式装 adapter 并设 adapter，不是 drop-in。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 176,
+    "reasons": []
+  },
+  "lines": 176,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 踩过的坑",
+      "## 适用",
+      "## 历史小故事"
+    ],
+    "unresolved_hints": []
+  }
+}
