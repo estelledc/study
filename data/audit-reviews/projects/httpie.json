@@ -1,7 +1,4 @@
 {
-  "slug": "httpie",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,26 +78,5 @@
         "命令可跟做；= vs :=、--form、Python 冷启动换 xh、binary --print=Hh 等踩坑具体；适用边界量化清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "All reviewers passed; no refinement required",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 172,
-    "reasons": []
-  },
-  "lines": 172,
-  "l1_pass": true
+  ]
 }

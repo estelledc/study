@@ -1,7 +1,4 @@
 {
-  "slug": "flat-datacenter-storage",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 2.78,
   "reject_count": 0,
@@ -111,31 +108,5 @@
         "反向链接段被手写内容与文末补丁占满，应恢复 regen 占位注释并删掉游离段落"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 2.78,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "三审均为 needs-refine：补作者/OSDI 来源、重写实践案例伪代码、合并适用段、修复反向链接占位，并弱化对外部公司的因果外推。",
-    "sections_modified": [
-      "frontmatter",
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

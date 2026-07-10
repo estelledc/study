@@ -1,7 +1,4 @@
 {
-  "slug": "hydra-synth",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,26 +78,5 @@
         "浏览器可跟做的 osc/cam/fft 示例正确；.out()/CORS/initVideo/音频校准踩坑可操作；不适用边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "All reviewers passed; no refinement required",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 164,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true
+  ]
 }

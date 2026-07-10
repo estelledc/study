@@ -1,7 +1,4 @@
 {
-  "slug": "flexible-paxos-2016",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -69,28 +66,5 @@
       "weakest_section": "## 实践案例",
       "fix_hints": []
     }
-  ],
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic 指出 etcd/TiKV「可调 quorum 根基」过满；已改为启发后续 Flexible Raft / 可调 quorum 讨论，并修正历史与适用表述。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "flashattention-3-2024",
-  "area": "papers",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1.67,
   "reject_count": 3,
@@ -81,20 +78,5 @@
         "无 hopper/flash_attn_3 安装与调用示例；未写明仅 Hopper（H100/H800）、CUDA≥12.3、FP8 前向等边界，无法落地。"
       ]
     }
-  ],
-  "rewrite": {
-    "status": "rewritten",
-    "sections_modified": [
-      "full-note"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 158,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true
+  ]
 }

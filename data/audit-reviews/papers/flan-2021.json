@@ -1,12 +1,22 @@
 {
   "slug": "flan-2021",
   "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.67,
-  "reject_count": 0,
-  "needs_refine_count": 1,
-  "pass_count": 2,
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "填空题学生类比清楚；四步流程与 NLI 模板可跟读；规模开关案例具体。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "FLAN 缩写应为 Finetuned Language Net（论文原文），不是 Finetuned Language Models；标题里的 Models 是描述做法。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "SFT≠RLHF、模板数消融、8B 反向收益与数据污染坑都可操作；≥60B / <10B 边界清楚。"
+    }
+  ],
   "weakest_sections": [
     {
       "reviewer": "zero-base",
@@ -24,20 +34,6 @@
       "verdict": "pass"
     }
   ],
-  "fix_hints": [
-    {
-      "reviewer": "zero-base",
-      "hint": "填空题学生类比清楚；四步流程与 NLI 模板可跟读；规模开关案例具体。"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "FLAN 缩写应为 Finetuned Language Net（论文原文），不是 Finetuned Language Models；标题里的 Models 是描述做法。"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "SFT≠RLHF、模板数消融、8B 反向收益与数据污染坑都可操作；≥60B / <10B 边界清楚。"
-    }
-  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -46,7 +42,7 @@
         "accessibility": 5,
         "case_clarity": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -60,7 +56,7 @@
         "citation_correctness": 5,
         "no_distortion": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 是什么",
       "fix_hints": [
@@ -74,34 +70,12 @@
         "pitfalls_useful": 5,
         "scope_correct": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 适用 vs 不适用场景",
       "fix_hints": [
         "SFT≠RLHF、模板数消融、8B 反向收益与数据污染坑都可操作；≥60B / <10B 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic：纠正 FLAN = Finetuned Language Net，并区分论文标题措辞。",
-    "sections_modified": [
-      "## 是什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

@@ -1,29 +1,8 @@
 {
   "slug": "htop",
   "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.56,
-  "reject_count": 0,
-  "needs_refine_count": 1,
-  "pass_count": 2,
-  "weakest_sections": [
-    {
-      "reviewer": "zero-base",
-      "section": "## 核心要点",
-      "verdict": "pass"
-    },
-    {
-      "reviewer": "academic",
-      "section": "## 历史小故事（可跳过）",
-      "verdict": "needs-refine"
-    },
-    {
-      "reviewer": "engineer",
-      "section": "## 适用 vs 不适用场景",
-      "verdict": "pass"
-    }
-  ],
   "fix_hints": [
     {
       "reviewer": "zero-base",
@@ -42,6 +21,23 @@
       "hint": "macOS sudo/codesign、tmux 截 F-key、过滤藏子树、CPU% 单核/全核歧义都是实战硬坑；监控边界清楚。"
     }
   ],
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -50,7 +46,7 @@
         "accessibility": 5,
         "case_clarity": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 核心要点",
       "fix_hints": [
@@ -79,36 +75,12 @@
         "pitfalls_useful": 5,
         "scope_correct": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 适用 vs 不适用场景",
       "fix_hints": [
         "macOS sudo/codesign、tmux 截 F-key、过滤藏子树、CPU% 单核/全核歧义都是实战硬坑；监控边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic：纠正 v2.0 已跨平台；改写平台抽象表述；标题改为历史小故事。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 历史小故事（可跳过）",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

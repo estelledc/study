@@ -1,12 +1,22 @@
 {
   "slug": "flash-attention",
   "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
-  "reject_count": 0,
-  "needs_refine_count": 3,
-  "pass_count": 0,
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐馆/仓库类比与 tiling/online softmax 桥接好；案例 2 手算中间量 e^(1-3) 写成 1.135（应为 ≈0.135），l 累加随之错。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "online softmax 手算：e^(-2)≈0.135 误写为 1.135，导致 l₁/l_new 错误；最终 softmax 数值碰巧接近正确值，需改正中间步骤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 流式累加中间态算错，跟做会算不出文中最终分布；block size / mask-in-kernel / fp32 累加坑仍有用。"
+    }
+  ],
   "weakest_sections": [
     {
       "reviewer": "zero-base",
@@ -22,20 +32,6 @@
       "reviewer": "engineer",
       "section": "## 实践案例",
       "verdict": "needs-refine"
-    }
-  ],
-  "fix_hints": [
-    {
-      "reviewer": "zero-base",
-      "hint": "餐馆/仓库类比与 tiling/online softmax 桥接好；案例 2 手算中间量 e^(1-3) 写成 1.135（应为 ≈0.135），l 累加随之错。"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "online softmax 手算：e^(-2)≈0.135 误写为 1.135，导致 l₁/l_new 错误；最终 softmax 数值碰巧接近正确值，需改正中间步骤。"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "案例 2 流式累加中间态算错，跟做会算不出文中最终分布；block size / mask-in-kernel / fp32 累加坑仍有用。"
     }
   ],
   "reviews": [
@@ -81,27 +77,5 @@
         "案例 2 流式累加中间态算错，跟做会算不出文中最终分布；block size / mask-in-kernel / fp32 累加坑仍有用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正 online softmax 手算：l₁=1.135、l_new=1.503，最终除以 1.503。",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 185,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

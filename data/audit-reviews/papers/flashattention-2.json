@@ -1,7 +1,4 @@
 {
-  "slug": "flashattention-2",
-  "area": "papers",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1.67,
   "reject_count": 3,
@@ -81,20 +78,5 @@
         "无 flash_attn / SDPA 可跟做最小例子；踩坑与适用边界全是运维套话，缺少 head_dim/causal/编译安装等真实工程约束。"
       ]
     }
-  ],
-  "rewrite": {
-    "status": "rewritten",
-    "sections_modified": [
-      "full-note"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 157,
-    "reasons": []
-  },
-  "lines": 157,
-  "l1_pass": true
+  ]
 }
