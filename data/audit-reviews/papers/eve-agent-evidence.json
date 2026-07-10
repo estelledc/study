@@ -1,7 +1,4 @@
 {
-  "slug": "eve-agent-evidence",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -86,19 +83,5 @@
         "伪代码可跟做；阈值类坑若改成教学建议后，避免再写成「论文实测」以免误导实现选型。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 160,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

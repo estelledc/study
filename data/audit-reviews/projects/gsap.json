@@ -1,7 +1,4 @@
 {
-  "slug": "gsap",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -96,20 +93,5 @@
         "适用场景写「IE9+」与 GSAP 3 现实不符；应改成现代浏览器，并把老 IE 需求指向历史版本。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 182,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

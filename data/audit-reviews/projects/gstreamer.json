@@ -1,7 +1,4 @@
 {
-  "slug": "gstreamer",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -69,11 +66,5 @@
         "Python playbin 示例偏最短路径（未写 bus/主循环），作为教学 min example 可接受。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 169,
-    "reasons": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "evo-memory-2511",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -86,20 +83,5 @@
         "案例 1 adapter 全是 ... 占位，工程师跟做不出最小对比；至少补 search/write/update 的伪实现步骤，并说明统一接口如何跑同一 stream。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 158,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
