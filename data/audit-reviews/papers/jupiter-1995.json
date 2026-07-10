@@ -1,0 +1,85 @@
+{
+  "slug": "jupiter-1995",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "卫星电话类比与 abcde 逐步例子很强；「两个数」可再点一句对应「我发了几条/我收了几条」，但不影响跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Nichols et al. UIST 1995 与 Wave/Jupiter 传承主线正确；「所有 OT 工业产品都是 Jupiter」略强，作教学归纳可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "server 伪代码抓住了 unseen history transform 的要点；生产细节（checkpoint/校验）已在踩坑补足。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "卫星电话类比与 abcde 逐步例子很强；「两个数」可再点一句对应「我发了几条/我收了几条」，但不影响跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Nichols et al. UIST 1995 与 Wave/Jupiter 传承主线正确；「所有 OT 工业产品都是 Jupiter」略强，作教学归纳可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "server 伪代码抓住了 unseen history transform 的要点；生产细节（checkpoint/校验）已在踩坑补足。"
+      ]
+    }
+  ]
+}

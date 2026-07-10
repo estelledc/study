@@ -19,7 +19,7 @@ cd mailcow-dockerized
 docker compose up -d
 ```
 
-20 分钟后，浏览器打开 `https://你的域名:8443`，登录 admin 账号，加邮箱/域名/DKIM——全是点鼠标。
+20 分钟后，浏览器打开 `https://你的域名`（默认 `HTTPS_PORT=443`；若前面还有反代，才常改成 `8443`），登录 admin 账号，加邮箱/域名/DKIM——全是点鼠标。
 
 GitHub **10k stars**，AGPLv3，适合中小企业自托管邮件、个人多域名邮箱。
 
@@ -88,13 +88,13 @@ SKIP_CLAMD=n                        # 1G 小机器可设 y 关掉省 1.5G 内存
 
 ### 案例 4：升级一次发生什么
 
-跑 `./update.sh`：
+跑 `./update.sh` 前，先用 `helper-scripts/backup_and_restore.sh` 备份。然后：
 
 1. 检测当前 commit 与 master 的差异，列出本机要被覆盖的本地修改
 2. 拉新镜像（`docker compose pull`）
 3. 停旧容器，跑数据库迁移脚本（`data/web/inc/init_db.inc.php`）
 4. 重新 `docker compose up -d`
-5. Watchdog 接管健康检查，发现新版异常会回滚
+5. Watchdog 接管健康检查：容器不健康时会**重启对应服务**，但**不会自动回滚到旧镜像**——真要回退，靠事先备份
 
 升级的关键是**数据卷不动**——MariaDB / 邮件文件 / DKIM key 全在 named volume 里，重建容器不影响数据。
 

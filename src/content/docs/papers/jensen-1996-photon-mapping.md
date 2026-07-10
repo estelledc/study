@@ -71,9 +71,11 @@ V-Ray 里这就是 **Caustics** 复选框背后的算法。
 
 ### 案例 2：皮肤渲染
 
-皮肤的真实感来自次表面散射：脸颊在强光下会呈现淡红，因为光钻进皮肤、在皮下散射、几毫米外再出来时已经被血色染过。
+皮肤的真实感来自次表面散射：脸颊在强光下会呈现淡红，因为光钻进皮肤、在皮下散射、几毫米外再出来时已经被血色染过。分三步看：
 
-体积光子图把光子存进皮肤体积里。渲染时一个表面点不是直接查 BRDF，而是查"我半径 r 内的体积光子能量加权和"。Mental Ray 的 misss_fast_skin 着色器用的就是这套思路。
+1. **撒体积光子**：第一遍让光子钻进皮肤体积，在皮下散射后把能量存进体积光子图（不是只贴在表面）
+2. **表面点查邻域**：第二遍渲染脸颊某像素时，不直接查 BRDF，而是查"半径 r 内的体积光子"
+3. **加权出射**：按距离加权求和，得到被血色染过的出射光——Mental Ray 的 `misss_fast_skin` 着色器就是这套思路
 
 ### 案例 3：博物馆建筑可视化
 
@@ -90,7 +92,7 @@ V-Ray 里这就是 **Caustics** 复选框背后的算法。
 
 1. **光子图是有偏估计**：半径 r 里数光子等于把"那一小块面积上的能量平均"。r 选大了会糊掉细节（光斑边缘变模糊），选小了又会掉回噪声。**自适应半径**（Final Gathering 时按几何曲率调整 r）是工程修补。
 
-2. **内存压力大**：百万级光子每个要存 (位置 12B + 方向 8B + 能量 12B + 标志 4B) ≈ 36B，3000 万光子要 1GB+。后来 **SPPM**（Stochastic Progressive Photon Mapping，Hachisuka 2009）用迭代精化让内存恒定不变。
+2. **内存压力大**：百万级光子每个要存 (位置 12B + 方向 8B + 能量 12B + 标志 4B) ≈ 36B，3000 万光子要 1GB+。后来 **PPM**（Progressive Photon Mapping，Hachisuka 2008）用多轮迭代精化；**SPPM**（Stochastic Progressive Photon Mapping，Knaus & Zwicker 2011）进一步把内存压到近似恒定。
 
 3. **焦散难调**：玻璃球的焦散需要光子直接落到桌面才有效。如果场景里玻璃球被一层漫反射涂层覆盖，光子会在涂层处停下来——焦散没了。这要求建模师把"焦散物体"标记好，让光子穿过去。
 
@@ -119,7 +121,8 @@ V-Ray 里这就是 **Caustics** 复选框背后的算法。
 - **1995 年**：Jensen 在 Eurographics Workshop 发表 photon mapping 早期版本
 - **1996 年**：Jensen 在 Rendering Techniques 给出完整两 pass 框架（本笔记主参考）
 - **2001 年**：Jensen 出书 *Realistic Image Synthesis Using Photon Mapping*，成为图形学经典教材
-- **2008–2010 年**：Hachisuka 系列工作（PPM、SPPM）解决内存问题
+- **2008 年**：Hachisuka 提出 PPM（Progressive Photon Mapping），用多轮迭代缓解内存
+- **2011 年**：Knaus & Zwicker 提出 SPPM，进一步把内存压到近似恒定
 - **2018 年**：NVIDIA RTX + OptiX 让实时光线追踪进入消费级，纯路径追踪在不少场景压过光子映射
 - **至今**：V-Ray / Corona / Mental Ray 在专业建筑可视化和影视特效里仍保留光子映射模式
 

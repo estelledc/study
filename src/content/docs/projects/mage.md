@@ -15,7 +15,7 @@ Mage 是一个**用 Go 函数当 build target 的构建工具**，目标和 Make
 最小例子：
 
 ```go
-// +build mage
+//go:build mage
 
 package main
 

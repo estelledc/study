@@ -1,0 +1,95 @@
+{
+  "slug": "mailcow",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "宜家类比与加邮箱四步很清楚；13 容器清单略密，但已按职责分组，零基础可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇写 `https://你的域名:8443`，但默认 HTTPS_PORT 是 443；8443 是反代场景示例端口，与后文 mailcow.conf 的 HTTPS_PORT=443 矛盾。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 4 称 Watchdog「发现新版异常会回滚」不准确：Watchdog 通常是重启不健康容器，不会自动回滚到旧镜像；升级回退需事先 backup。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 升级流程把「Watchdog 回滚」写得过满；应改成重启自愈 + 强调 update 前跑 backup_and_restore.sh。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "RBL/端口/内存/DKIM 踩坑非常可操作；适用人数与 2G 内存边界量化到位。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "宜家类比与加邮箱四步很清楚；13 容器清单略密，但已按职责分组，零基础可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇写 `https://你的域名:8443`，但默认 HTTPS_PORT 是 443；8443 是反代场景示例端口，与后文 mailcow.conf 的 HTTPS_PORT=443 矛盾。",
+        "案例 4 称 Watchdog「发现新版异常会回滚」不准确：Watchdog 通常是重启不健康容器，不会自动回滚到旧镜像；升级回退需事先 backup。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 升级流程把「Watchdog 回滚」写得过满；应改成重启自愈 + 强调 update 前跑 backup_and_restore.sh。",
+        "RBL/端口/内存/DKIM 踩坑非常可操作；适用人数与 2G 内存边界量化到位。"
+      ]
+    }
+  ]
+}
