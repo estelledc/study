@@ -1,7 +1,4 @@
 {
-  "slug": "heckbert-1986-texture-survey",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,21 +78,5 @@
         "MIP 1+1/4+…=4/3 推导可跟做；适用边界（非 PBR/NeRF/RTX）量化清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 167,
-  "l1_pass": true
+  ]
 }

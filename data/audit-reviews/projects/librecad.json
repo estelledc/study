@@ -1,7 +1,4 @@
 {
-  "slug": "librecad",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.67,
   "reject_count": 0,
@@ -86,30 +83,5 @@
         "dxf2* 与 command line 坐标/变量示例可跟做；相对坐标 @、layer 0、macOS quarantine、Qt 分支踩坑具体；2D vs 3D 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：历史小故事 stars 约 2.2k → 约 6.1k。",
-    "sections_modified": [
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 168,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 168,
-  "l1_pass": true
+  ]
 }

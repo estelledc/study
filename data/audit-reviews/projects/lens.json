@@ -1,7 +1,4 @@
 {
-  "slug": "lens",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -81,21 +78,5 @@
         "强制登录、BSL 边界、Electron 内存、exec plugin PATH 都是可操作踩坑；适用/不适用量化清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 168,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 168,
-  "l1_pass": true
+  ]
 }

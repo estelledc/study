@@ -1,7 +1,4 @@
 {
-  "slug": "helland-2007",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -86,33 +83,5 @@
         "幂等伪码与 PENDING→CONFIRMED activity 流程概念正确；entity 切分/幂等≠纯函数/乱序踩坑可操作；适用边界清楚，量化可再补一句延迟或分片规模。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：四个抽象→五个；延伸阅读 unc 笔误；补 ## 关联 / ## 反向链接。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 延伸阅读",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 166,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 166,
-  "l1_pass": true
+  ]
 }

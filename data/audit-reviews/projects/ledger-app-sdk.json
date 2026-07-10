@@ -1,7 +1,4 @@
 {
-  "slug": "ledger-app-sdk",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -81,30 +78,5 @@
         "案例 2：`uint8_t bip32_path[] = {44 | 0x80000000, ...}` 类型错误——硬化路径分量是 32 位，应改为 `uint32_t`（或官方 path 数组类型），否则 0x80000000 截断后语义全错。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 172,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 172,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "reason": "engineer：案例 2 bip32_path 改为 uint32_t，并说明 0x80000000 hardened 语义。",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

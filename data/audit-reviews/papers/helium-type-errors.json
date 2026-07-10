@@ -1,7 +1,4 @@
 {
-  "slug": "helium-type-errors",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,21 +78,5 @@
         "Haskell 误用示例概念正确；教学编译器边界、启发式误报、siblings 维护成本写得可操作。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 177,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 177,
-  "l1_pass": true
+  ]
 }

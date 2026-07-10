@@ -1,7 +1,4 @@
 {
-  "slug": "heartbleed-2014",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -81,30 +78,5 @@
         "memcpy 简化示例概念正确；实践段若补一条可跟做的版本检查/探测步骤会更贴工程师视角。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 161,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 161,
-  "l1_pass": true,
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "reason": "zero-base：实践案例从检查清单改为可跟做的两则逐步案例，并为 OCSP/CRL 补日常桥接。",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

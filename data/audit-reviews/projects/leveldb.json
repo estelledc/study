@@ -1,7 +1,4 @@
 {
-  "slug": "leveldb",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -86,33 +83,5 @@
         "Put 路径与 tombstone 案例概念正确；L0 stall/单线程 compaction/无 CF 踩坑具体；适用边界有量化。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "补 ## 反向链接；三种放大/SST 并入核心要点；案例 1 改为可跟做 Open API 并逐步解释。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

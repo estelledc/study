@@ -1,7 +1,4 @@
 {
-  "slug": "lerna",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,21 +78,5 @@
         "init/publish 命令可跟做；reject-cycles、conventional commits、bootstrap 已删等踩坑具体可操作；适用边界清晰。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 167,
-  "l1_pass": true
+  ]
 }

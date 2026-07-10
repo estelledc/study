@@ -1,7 +1,4 @@
 {
-  "slug": "hekaton-2013-sigmod",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3,
   "reject_count": 0,
@@ -111,37 +108,5 @@
         "反向链接段后有大量无关填充句，应清掉以免污染笔记"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正 Diaconu et al. 作者与标题；补 latch-free/MVCC/native compile；案例逐步解释；清理反向链接填充；具体化 DURABILITY/BUCKET_COUNT 踩坑。",
-    "sections_modified": [
-      "frontmatter",
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }
