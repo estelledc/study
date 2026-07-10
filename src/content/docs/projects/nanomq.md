@@ -155,7 +155,7 @@ curl -u admin:public http://localhost:8081/api/v4/prometheus
 - NanoMQ 由 EMQ 边缘计算团队维护，README 把它定位成 LF Edge 生态里的边缘消息平台。
 - 它的底层思路和 NNG 有渊源：用异步 I/O 和消息传递把 MQTT Broker 做得更适合嵌入式环境。
 - 文档后来逐步把桥接、HTTP API、网关、Bench 工具拆成独立章节，说明它从“小 Broker”演化成“边缘消息工具箱”。
-- 候选池记录的 stars 量级约 1.9k，说明它不是巨无霸项目，但在 MQTT 边缘场景里有稳定关注。
+- GitHub 上 stars 大约两千量级：不是巨无霸项目，但在 MQTT 边缘场景里有稳定关注。
 
 ## 学到什么
 
