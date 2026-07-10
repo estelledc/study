@@ -1,0 +1,319 @@
+.claude/skills/auto-push/SKILL.md
+  s_3d46b745654a72::t_3aaca9acb1347d 3,6,8,10,12-15,17
+.github/workflows/ci.yml
+  s_3d46b745654a72::t_20cef416bf8bf6 1-45
+.github/workflows/content-health.yml
+  s_3d46b745654a72::t_4b058e5d419e92 1-80
+.github/workflows/deploy.yml
+  s_3d46b745654a72::t_2f2c7c7d3b0de2 18-21,23-26,30-46,53-56,62
+CHANGELOG.md
+  s_3d46b745654a72::t_57fd50744be298 1-19
+README.md
+  s_3d46b745654a72::t_65743b4443a4db 12,30,33,41,50,118,126-127
+SESSION-HANDOFF-2026-05-29.md
+  s_3d46b745654a72::t_a659ded8324c45 1,3,5,7,9-12,14
+SESSION-HANDOFF.md
+  s_3d46b745654a72::t_8aa005e4997a41 1,3,5,7-11,13,15-18,21,23-25
+STATUS-PAPERS.md
+  s_3d46b745654a72::t_f53a342744b45d 3-4
+STATUS-PROJECTS.md
+  s_3d46b745654a72::t_718af354953209 3-4
+astro.config.mjs
+  s_3d46b745654a72::t_2514cde1c4cceb 68-70
+data/asset-manifest.json
+  s_3d46b745654a72::t_af73616ae35dee 1-3944
+data/asset-orphan-baseline.json
+  s_3d46b745654a72::t_e4ef54d837b8e6 1-435
+data/note-index.json
+  s_3d46b745654a72::t_91e2360ec93c75 1-63693
+data/operations-policy.json
+  s_3d46b745654a72::t_372333e93c1c42 1-35
+data/performance-budget.json
+  s_3d46b745654a72::t_e011756ed4e7ab 1-41
+data/search-contract.json
+  s_3d46b745654a72::t_a44b88271e749d 1-22
+data/taxonomy.json
+  s_3d46b745654a72::t_79745113419cc5 1-2621
+data/wikilink-aliases.json
+  s_3d46b745654a72::t_e71b4b7af8d9cc 1-4
+data/wikilink-baseline.json
+  s_3d46b745654a72::t_feac07582ceaec 1-10900
+docs/archive/auto-push-v3.md
+  s_3d46b745654a72::t_f9579686533249 1-21
+docs/asset-policy.md
+  s_3d46b745654a72::t_fc2379f132cdea 1-15
+docs/ci-contract.md
+  s_3d46b745654a72::t_1208b0b858d220 1-29
+docs/follow-up-plan.md
+  s_3d46b745654a72::t_802dac307b558f 1,3,5,7-9,11
+docs/operations-index.md
+  s_3d46b745654a72::t_220ae9020b3a75 1-33
+docs/operations-policy.md
+  s_3d46b745654a72::t_cc70a60f2c8e23 1-24
+docs/performance-budget.md
+  s_3d46b745654a72::t_f9a50cb235cfce 1-17
+docs/search-seo-contract.md
+  s_3d46b745654a72::t_a6cd56b1c4f517 1-16
+docs/wikilink-governance.md
+  s_3d46b745654a72::t_ecc68e2351a81c 1-54
+package-lock.json
+  s_3d46b745654a72::t_a90ff120da9937 15-18,169-181,1341-1356,2558-2567,5490-5536
+package.json
+  s_3d46b745654a72::t_0492800e0d8952 16-29,34,36,58-61
+playwright.config.mjs
+  s_3d46b745654a72::t_8c08ca52511e21 1-34
+public/robots.txt
+  s_3d46b745654a72::t_2861437729ebfe 1-4
+scripts/README.md
+  s_3d46b745654a72::t_6042a8a4f7b75e 5,41-46,67,69,82,88-91,94,102,125,128,130,132,145,152,154
+scripts/audit-a11y-static.mjs
+  s_3d46b745654a72::t_4c8dd5e4b42ec9 1-33
+scripts/audit-a11y-static.test.mjs
+  s_3d46b745654a72::t_6537204a5e8817 1-21
+scripts/audit-action-pins.mjs
+  s_3d46b745654a72::t_4ebdb840847f73 1-62
+scripts/audit-action-pins.test.mjs
+  s_3d46b745654a72::t_3e8c8e569c2864 1-23
+scripts/audit-assets.mjs
+  s_3d46b745654a72::t_977de4bfc6b668 1-171
+scripts/audit-assets.test.mjs
+  s_3d46b745654a72::t_57cb3443ae043d 1-49
+scripts/audit-doc-lifecycle.mjs
+  s_3d46b745654a72::t_e0458404436cc8 1-56
+scripts/audit-doc-lifecycle.test.mjs
+  s_3d46b745654a72::t_0b1f455fe6496a 1-24
+scripts/audit-homepage-dist-links.mjs
+  s_3d46b745654a72::t_6aa9e165dc4118 5,112-113
+scripts/audit-operation-entrypoints.mjs
+  s_3d46b745654a72::t_60cc6573a2065a 1-80
+scripts/audit-operation-entrypoints.test.mjs
+  s_3d46b745654a72::t_da2a8057d5d1f0 1-25
+scripts/audit-pagefind.mjs
+  s_3d46b745654a72::t_fb583c8474ec47 1-101
+scripts/audit-pagefind.test.mjs
+  s_3d46b745654a72::t_620f81248d299a 1-28
+scripts/audit-pages-artifact.mjs
+  s_3d46b745654a72::t_82a5f3ef2bfa83 1-52
+scripts/audit-pages-artifact.test.mjs
+  s_3d46b745654a72::t_c41d0aa4715ae9 1-26
+scripts/audit-seo-output.mjs
+  s_3d46b745654a72::t_13e1e732fc8f08 1-114
+scripts/audit-seo-output.test.mjs
+  s_3d46b745654a72::t_4fae837a03a298 1-26
+scripts/audit-wikilink-ambiguity.mjs
+  s_3d46b745654a72::t_d3706e2e64448c 6-16,18-30,32,34,40-44,47-53,56-58,60-72,75-108,111-135,137-148,150-171,174-198,201-212,215-224,227-251,253-271,274-276
+scripts/audit-wikilink-ambiguity.test.mjs
+  s_3d46b745654a72::t_19dc0a386ef9c6 1-111
+scripts/benchmark-atlas.mjs
+  s_3d46b745654a72::t_a94c7436a0954a 1-66
+scripts/benchmark-atlas.test.mjs
+  s_3d46b745654a72::t_9e35fcb3c34ccc 1-35
+scripts/benchmark-site.mjs
+  s_3d46b745654a72::t_b9743666c8443a 1-228
+scripts/benchmark-site.test.mjs
+  s_3d46b745654a72::t_412d8d3a4a90d7 1-50
+scripts/build-diagnostics.mjs
+  s_3d46b745654a72::t_81ffa5a43a3cc3 1-78
+scripts/build-diagnostics.test.mjs
+  s_3d46b745654a72::t_f510e9ecf23339 1-26
+scripts/build-strict.mjs
+  s_3d46b745654a72::t_c6438c79e10d32 20
+scripts/classify-wikilinks.mjs
+  s_3d46b745654a72::t_a3e1554d8fd6b4 1-26
+scripts/exit-conditions.mjs
+  s_3d46b745654a72::t_2cfb2daf363007 10-39,46-54,57-64,68,75,81,88,94
+scripts/exit-conditions.test.mjs
+  s_3d46b745654a72::t_6e362318616e0d 1-65
+scripts/lib/taxonomy.mjs
+  s_3d46b745654a72::t_05aab6a92886d6 1-350
+scripts/lib/taxonomy.test.mjs
+  s_3d46b745654a72::t_2b8fdd4c80ed56 1-158
+scripts/regen-atlas.mjs
+  s_3d46b745654a72::t_1dbde3853db5d1 3-4,6-13,15,17-18,21-22,25-28,31-34,37-38,41-84,86-90,93,95-96,98,100-101,103,105,107-109,111-112,114-146,148-155,157-186,188-192,194,197-204,207-227,229-230,232-249,251-258,261-271
+scripts/regen-atlas.test.mjs
+  s_3d46b745654a72::t_5e962ad698d180 1-98
+scripts/regen-backlinks.mjs
+  s_3d46b745654a72::t_811d90b0c29cb6 1-28,31-34,37-39,42-51,54-85,87-113,115-129,131-135,137-142,144-154,157-167,169-170,173-175
+scripts/regen-backlinks.test.mjs
+  s_3d46b745654a72::t_53eddaac4d61e9 1-101
+scripts/remark-wikilinks.mjs
+  s_3d46b745654a72::t_3d50de8ecd5ea6 1-3,8-22,29,31-33,37-43,45,48-61,64,66,71,73,76,78-80,84-96
+scripts/remark-wikilinks.test.mjs
+  s_3d46b745654a72::t_678997c01c4d29 1-67
+scripts/verify-ci.mjs
+  s_3d46b745654a72::t_aa87764fea1639 1-88
+scripts/verify-ci.test.mjs
+  s_3d46b745654a72::t_ccb3d79a0cf49b 1-57
+src/content/docs/atlas/papers/topic-papers-agents-and-llm-systems-01.md
+  s_3d46b745654a72::t_7b127b6dc43eed 1-68
+src/content/docs/atlas/papers/topic-papers-ai-safety-and-interpretability-01.md
+  s_3d46b745654a72::t_f7aa65966a3d20 1-24
+src/content/docs/atlas/papers/topic-papers-compilers-and-programming-language-theory-01.md
+  s_3d46b745654a72::t_b6f9534d354f50 1-117
+src/content/docs/atlas/papers/topic-papers-compilers-and-programming-language-theory-02.md
+  s_3d46b745654a72::t_9400cc6c664e9b 1-44
+src/content/docs/atlas/papers/topic-papers-computation-theory-and-mathematical-foundations-01.md
+  s_3d46b745654a72::t_11ed90ac76b622 1-24
+src/content/docs/atlas/papers/topic-papers-computer-architecture-01.md
+  s_3d46b745654a72::t_fe4f002b0630ba 1-24
+src/content/docs/atlas/papers/topic-papers-computer-graphics-and-visualization-01.md
+  s_3d46b745654a72::t_97de513e3a76b5 1-77
+src/content/docs/atlas/papers/topic-papers-computer-vision-01.md
+  s_3d46b745654a72::t_f1ca9d93134ea3 1-26
+src/content/docs/atlas/papers/topic-papers-cryptography-and-security-01.md
+  s_3d46b745654a72::t_0f7da1ceb41dca 1-86
+src/content/docs/atlas/papers/topic-papers-databases-01.md
+  s_3d46b745654a72::t_2afe728b1bfe95 1-99
+src/content/docs/atlas/papers/topic-papers-distributed-systems-01.md
+  s_3d46b745654a72::t_f5a7cc07775db0 1-117
+src/content/docs/atlas/papers/topic-papers-distributed-systems-02.md
+  s_3d46b745654a72::t_712b5542ace580 1-20
+src/content/docs/atlas/papers/topic-papers-distributed-training-and-gpu-01.md
+  s_3d46b745654a72::t_848940937a4661 1-39
+src/content/docs/atlas/papers/topic-papers-formal-methods-01.md
+  s_3d46b745654a72::t_3c6e0595a80abe 1-50
+src/content/docs/atlas/papers/topic-papers-garbage-collection-and-memory-management-01.md
+  s_3d46b745654a72::t_60800dd4640805 1-20
+src/content/docs/atlas/papers/topic-papers-generative-models-and-diffusion-01.md
+  s_3d46b745654a72::t_74aa7aa5b1b37b 1-25
+src/content/docs/atlas/papers/topic-papers-hci-and-software-engineering-research-01.md
+  s_3d46b745654a72::t_85b5c39350ecd1 1-36
+src/content/docs/atlas/papers/topic-papers-information-and-coding-theory-01.md
+  s_3d46b745654a72::t_29451f477c89d0 1-20
+src/content/docs/atlas/papers/topic-papers-information-retrieval-and-recommendation-01.md
+  s_3d46b745654a72::t_b21da17f31dfd0 1-67
+src/content/docs/atlas/papers/topic-papers-machine-learning-systems-01.md
+  s_3d46b745654a72::t_bbdc79203582b6 1-24
+src/content/docs/atlas/papers/topic-papers-network-protocols-01.md
+  s_3d46b745654a72::t_85de920116254c 1-78
+src/content/docs/atlas/papers/topic-papers-nlp-foundations-and-scaling-01.md
+  s_3d46b745654a72::t_127fb1e84e0f90 1-117
+src/content/docs/atlas/papers/topic-papers-nlp-foundations-and-scaling-02.md
+  s_3d46b745654a72::t_c8aab6567c943d 1-32
+src/content/docs/atlas/papers/topic-papers-operating-systems-and-cluster-management-01.md
+  s_3d46b745654a72::t_aafd0d9a41e526 1-117
+src/content/docs/atlas/papers/topic-papers-operating-systems-and-cluster-management-02.md
+  s_3d46b745654a72::t_94f4ba39384651 1-27
+src/content/docs/atlas/papers/topic-papers-reinforcement-learning-01.md
+  s_3d46b745654a72::t_ff70a034cc34ec 1-23
+src/content/docs/atlas/papers/unclassified-01.md
+  s_3d46b745654a72::t_8231d003a1b105 1-34
+src/content/docs/atlas/projects/topic-projects-ai-applications-and-agent-platforms-01.md
+  s_3d46b745654a72::t_42215b85d5e4ac 1-43
+src/content/docs/atlas/projects/topic-projects-ai-browser-automation-01.md
+  s_3d46b745654a72::t_d8fbaf1076272a 1-21
+src/content/docs/atlas/projects/topic-projects-animation-01.md
+  s_3d46b745654a72::t_9ead91c1e6c202 1-21
+src/content/docs/atlas/projects/topic-projects-authentication-01.md
+  s_3d46b745654a72::t_2245cd60ac4602 1-20
+src/content/docs/atlas/projects/topic-projects-backend-and-apis-01.md
+  s_3d46b745654a72::t_014c3ca0652b37 1-71
+src/content/docs/atlas/projects/topic-projects-blockchain-01.md
+  s_3d46b745654a72::t_67781153e48acc 1-74
+src/content/docs/atlas/projects/topic-projects-build-tools-and-bundlers-01.md
+  s_3d46b745654a72::t_7416ed8511d50f 1-29
+src/content/docs/atlas/projects/topic-projects-cli-tools-01.md
+  s_3d46b745654a72::t_657d859921bba3 1-84
+src/content/docs/atlas/projects/topic-projects-communication-and-media-01.md
+  s_3d46b745654a72::t_0a1a603d53d549 1-92
+src/content/docs/atlas/projects/topic-projects-css-and-styling-01.md
+  s_3d46b745654a72::t_d7361aad354b91 1-20
+src/content/docs/atlas/projects/topic-projects-data-applications-and-saas-01.md
+  s_3d46b745654a72::t_5656d1eb8cd4ed 1-23
+src/content/docs/atlas/projects/topic-projects-data-fetching-and-routing-01.md
+  s_3d46b745654a72::t_c970390929427c 1-19
+src/content/docs/atlas/projects/topic-projects-data-science-and-ai-01.md
+  s_3d46b745654a72::t_df67ce990408e5 1-59
+src/content/docs/atlas/projects/topic-projects-data-visualization-01.md
+  s_3d46b745654a72::t_2f6fae7558c567 1-69
+src/content/docs/atlas/projects/topic-projects-databases-and-storage-engines-01.md
+  s_3d46b745654a72::t_5ec766d9705584 1-92
+src/content/docs/atlas/projects/topic-projects-date-and-time-01.md
+  s_3d46b745654a72::t_1844087ea78b1d 1-20
+src/content/docs/atlas/projects/topic-projects-devops-containers-and-operations-01.md
+  s_3d46b745654a72::t_0cbc8c3cede7a6 1-71
+src/content/docs/atlas/projects/topic-projects-documentation-sites-01.md
+  s_3d46b745654a72::t_672054a6516c4a 1-19
+src/content/docs/atlas/projects/topic-projects-drag-and-drop-interaction-01.md
+  s_3d46b745654a72::t_04c290aed71627 1-18
+src/content/docs/atlas/projects/topic-projects-editors-and-rich-text-01.md
+  s_3d46b745654a72::t_882dd7fc3b953f 1-82
+src/content/docs/atlas/projects/topic-projects-embedded-systems-01.md
+  s_3d46b745654a72::t_002e7e7712cf02 1-69
+src/content/docs/atlas/projects/topic-projects-forms-and-schema-validation-01.md
+  s_3d46b745654a72::t_2c6e1c18a39cff 1-20
+src/content/docs/atlas/projects/topic-projects-general-developer-tools-01.md
+  s_3d46b745654a72::t_9ffa4a6c7526a5 1-26
+src/content/docs/atlas/projects/topic-projects-headless-ui-components-01.md
+  s_3d46b745654a72::t_561558650ce3d1 1-17
+src/content/docs/atlas/projects/topic-projects-http-clients-01.md
+  s_3d46b745654a72::t_f1ae4384cac3fc 1-20
+src/content/docs/atlas/projects/topic-projects-image-processing-and-canvas-01.md
+  s_3d46b745654a72::t_c1847b7e261fdd 1-73
+src/content/docs/atlas/projects/topic-projects-infrastructure-utilities-01.md
+  s_3d46b745654a72::t_d281421a51d5ac 1-59
+src/content/docs/atlas/projects/topic-projects-internationalization-01.md
+  s_3d46b745654a72::t_a05c6672d073de 1-20
+src/content/docs/atlas/projects/topic-projects-markdown-and-parsing-01.md
+  s_3d46b745654a72::t_7f1526db6ea843 1-20
+src/content/docs/atlas/projects/topic-projects-meta-and-full-stack-frameworks-01.md
+  s_3d46b745654a72::t_8bdf89352de996 1-20
+src/content/docs/atlas/projects/topic-projects-mobile-development-01.md
+  s_3d46b745654a72::t_16dc13aeb59a58 1-27
+src/content/docs/atlas/projects/topic-projects-monitoring-and-time-series-01.md
+  s_3d46b745654a72::t_68c1305bc054c5 1-24
+src/content/docs/atlas/projects/topic-projects-monorepos-and-package-management-01.md
+  s_3d46b745654a72::t_11b10b96f137d9 1-20
+src/content/docs/atlas/projects/topic-projects-observability-and-performance-01.md
+  s_3d46b745654a72::t_2fa9e9a7cd25d8 1-26
+src/content/docs/atlas/projects/topic-projects-orm-and-database-clients-01.md
+  s_3d46b745654a72::t_c9c88b185ebb7b 1-23
+src/content/docs/atlas/projects/topic-projects-state-management-01.md
+  s_3d46b745654a72::t_fc9a6c9a991187 1-23
+src/content/docs/atlas/projects/topic-projects-terminal-tools-01.md
+  s_3d46b745654a72::t_5bea3b165dda07 1-21
+src/content/docs/atlas/projects/topic-projects-testing-and-verification-01.md
+  s_3d46b745654a72::t_21ab113ebcb1de 1-21
+src/content/docs/atlas/projects/topic-projects-ui-and-frontend-frameworks-01.md
+  s_3d46b745654a72::t_3129fdec7aaef8 1-28
+src/content/docs/atlas/projects/topic-projects-web-frameworks-01.md
+  s_3d46b745654a72::t_c036859f708a8f 1-29
+src/content/docs/atlas/projects/unclassified-01.md
+  s_3d46b745654a72::t_2a8ea21345d4af 1-43
+src/content/docs/papers-atlas.md
+  s_3d46b745654a72::t_b46c13aeb92b2b 3,9-10,16-18,21-67,70,72,74,78,80-82
+src/content/docs/projects-atlas.md
+  s_3d46b745654a72::t_51c40f488f4f7e 3,9-10,16-18,21-85,88,90,92,96,98-100
+src/content/docs/projects/lexical.md
+  s_3d46b745654a72::t_4685b9eb2e1467 30
+src/content/docs/projects/plane.md
+  s_3d46b745654a72::t_ca5bc627f4a842 78
+src/content/docs/wikilink-health.md
+  s_3d46b745654a72::t_281ee10f79c9e1 1-28
+src/styles/jx/product-ui.css
+  s_3d46b745654a72::t_1d85f4a859cc69 12-14,30,124
+tests/a11y/manual-matrix.md
+  s_3d46b745654a72::t_b8fea7a11f613b 1-19
+tests/a11y/product-contract.spec.mjs
+  s_3d46b745654a72::t_2b9b4df27b7c82 1-61
+tests/a11y/site.spec.mjs
+  s_3d46b745654a72::t_9f3a017fda67b4 1-151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "25331e229778ae2bb9a15108d73838be38a951a6",
+  "prompts": {},
+  "sessions": {
+    "s_3d46b745654a72": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_3d46b745654a72",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
