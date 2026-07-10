@@ -1,0 +1,104 @@
+{
+  "slug": "fairfuzz-2018",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 mask 判断写成 `if op in mask[pos]`，对零基础略跳；可补一句 mask 三项布尔分别对应覆盖/插入/删除。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "ASE 2018、Lemieux & Sen、rare branch + mutation/branch mask 与论文一致；shadow-mode 3–10× 为教学量级归纳，可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码能跟读；踩坑把「未覆盖分支 / 完整语法 / magic number」边界写清楚，适用场景量化够用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 mask 判断写成 `if op in mask[pos]`，对零基础略跳；可补一句 mask 三项布尔分别对应覆盖/插入/删除。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "ASE 2018、Lemieux & Sen、rare branch + mutation/branch mask 与论文一致；shadow-mode 3–10× 为教学量级归纳，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "伪代码能跟读；踩坑把「未覆盖分支 / 完整语法 / magic number」边界写清楚，适用场景量化够用。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 164,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
