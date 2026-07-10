@@ -1,0 +1,67 @@
+{
+  "slug": "eagle",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "lines": 159,
+  "average": 4.11,
+  "l1_pass": true,
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「ADR-6」对零基础读者无桥接，可改成「推理服务选型文档」或删掉缩写"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「vLLM / SGLang …默认带 EAGLE 加速」过满：二者是集成/推荐路径，并非所有部署默认开启；宜改为「支持并把 EAGLE 列为推荐 draft」",
+        "不适用里「EAGLE head 虽小（~1B）」把 70B 量级的相对比例写成绝对体积，宜改为「约 target 的 1–2%（大模型上可达数百 MB～1B 级）」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 vLLM API 已过时：顶层 speculative_model / num_speculative_tokens 应改为 speculative_config={method, model, num_speculative_tokens}"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "reject_count": 0,
+    "needs_refine_count": 2,
+    "action": "refine",
+    "reason": "存在 needs-refine 或事实/代码硬伤，已定向 refine。"
+  },
+  "sections_modified": [
+    "## 为什么重要",
+    "## 实践案例",
+    "## 适用 vs 不适用场景"
+  ],
+  "unresolved_hints": []
+}

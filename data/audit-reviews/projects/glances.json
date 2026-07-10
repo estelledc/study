@@ -1,0 +1,64 @@
+{
+  "slug": "glances",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "lines": 165,
+  "average": 4.44,
+  "l1_pass": true,
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 --export-prometheus-host / --export-prometheus-port 与官方文档不符（host/port 写在 glances.conf 的 [prometheus]），属工程事实，交 engineer 修"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3：官方无 --export-prometheus-host/--export-prometheus-port CLI；应改为 glances.conf 的 [prometheus] host/port，再 glances --export prometheus",
+        "踩坑 4 里「改 --export-prometheus-port」同样应改为改配置文件 port"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "action": "refine",
+    "reason": "存在 needs-refine 或事实/代码硬伤，已定向 refine。"
+  },
+  "sections_modified": [
+    "## 实践案例",
+    "## 踩过的坑"
+  ],
+  "unresolved_hints": []
+}
