@@ -1,7 +1,4 @@
 {
-  "slug": "lm-evaluation-harness",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -101,33 +98,5 @@
         "适用/不适用已区分对话质量、agent、中文垂直基准，边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": [],
-    "summary": "补案例 2/3 逐部分解释；补历史小故事与反向链接；弱化 Leaderboard 口语夸张。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 173,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 173,
-  "l1_pass": true
+  ]
 }

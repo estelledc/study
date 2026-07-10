@@ -1,7 +1,4 @@
 {
-  "slug": "lmdb",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -86,22 +83,5 @@
         "C API / OpenLDAP 配置 / mdb_stat 运维命令可跟做；长读事务、跨事务指针、远程 FS 踩坑具体可操作。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 191,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 191,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "lmms",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -106,38 +103,5 @@
         "适用边界大体清楚；额外验证清单 H2 应并入案例或删除以免破坏 12 段结构。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.67,
-    "verdict": "needs-refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

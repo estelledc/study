@@ -1,7 +1,4 @@
 {
-  "slug": "immix-mark-region",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -106,32 +103,5 @@
         "适用边界已有嵌入式 <1MB、STW 等量化提示，足够通过。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "status": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": [],
-    "summary": "修正总时间/空间口径；弱化 G1 region『Immix 带火』表述；Cheney 改为 1970。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 177,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 177,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "locust",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 5,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "HttpUser 示例与 headless/CI 命令可跑；wait_time/session/gevent 混用/同机压测/孵化过快/RPS 均值踩坑具体；vs k6/wrk2/浏览器工具边界量化清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 5,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true
+  ]
 }

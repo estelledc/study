@@ -1,7 +1,4 @@
 {
-  "slug": "index-structures",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,22 +78,5 @@
         "JS 示意代码概念正确（线性 CDF、两级 RMI、误差窗口查找）；只读/分布漂移/磁盘页等适用边界量化清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 168,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 168,
-  "l1_pass": true
+  ]
 }
