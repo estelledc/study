@@ -1,7 +1,4 @@
 {
-  "slug": "haystack-2010",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "伪代码读/写/修改路径概念正确；适用边界有量化倾向（海量小对象、写一次读多次）。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 158,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true
+  ]
 }

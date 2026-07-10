@@ -1,7 +1,4 @@
 {
-  "slug": "lazygit",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "面板编号与 rebase/stage 步骤可跟做；Windows 终端/大仓库/rebase 中断等踩坑可操作；CI/巨型 monorepo 边界清楚。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 170,
-    "reasons": []
-  },
-  "lines": 170,
-  "l1_pass": true
+  ]
 }
