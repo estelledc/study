@@ -1,7 +1,4 @@
 {
-  "slug": "greenplum-db",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -91,33 +88,5 @@
         "DISTRIBUTED BY / REPLICATED / gpfdist 语法概念正确；踩坑（倾斜、standby、VACUUM、升级）可操作；适用边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 180,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 180,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base：案例补逐部分解释并恢复历史小故事；academic：Broadcom 事件改为归档只读。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

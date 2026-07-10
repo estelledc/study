@@ -1,7 +1,4 @@
 {
-  "slug": "eros-1999",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -91,32 +88,5 @@
         "伪代码与 checkpoint 步骤概念正确；适用边界已有量化（快照间隔、移植成本），可通过。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 155,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 155,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：弱化 seL4「直接继承 EROS IPC」表述；补反向链接占位。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 历史小故事（可跳过）",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

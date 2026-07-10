@@ -1,7 +1,4 @@
 {
-  "slug": "grbl",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "串口命令可跟做；踩坑（ok≠完成、startup block、EEPROM 关中断、$X≠定位）具体可操作；边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true
+  ]
 }

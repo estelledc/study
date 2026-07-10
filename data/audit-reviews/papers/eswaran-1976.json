@@ -1,7 +1,4 @@
 {
-  "slug": "eswaran-1976",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,30 +88,5 @@
         "「跨地域分布式 → 单纯 2PL 太慢，需要 Paxos/Raft」把并发控制与共识混在一起；宜写成「跨机复制/共识另需 Paxos/Raft，单靠本地 2PL 不够」。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 162,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic/engineer：纠正 PG 默认 2PL 误述；区分本地锁与跨机共识；弱化 ACID 绝对化。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
