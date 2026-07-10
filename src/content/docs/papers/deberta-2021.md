@@ -67,11 +67,13 @@ DeBERTa 的办法：在 softmax 前的最后一两层 transformer block，把 ab
 
 ## 实践案例
 
-### 案例 1：超过人类的那个数字到底什么意思
+### 案例 1：超过人类的那个数字怎么读
 
-SuperGLUE 是 2019 年 NYU + Google 出的一个比 GLUE 更难的语言理解 benchmark，包含 BoolQ / CB / COPA / WiC 等 8 个任务。**人类基线 89.8**——找标注员答题取平均的成绩。
+按三步读 SuperGLUE 成绩：
 
-DeBERTa 1.5B 单模型 89.9，ensemble 90.3。这是 transformer 编码器在通用语言理解上**第一次平均成绩压过人**。注意是"平均"——单个任务上人类还是更强，只是综合分扳回来了。
+1. **任务集**：2019 年 NYU + Google 出的比 GLUE 更难的语言理解榜，含 BoolQ / CB / COPA / WiC 等 8 个任务
+2. **人类基线 89.8**：找标注员答题取平均的综合分（macro-average）
+3. **模型分**：DeBERTa 1.5B **单模型 89.9**、ensemble 90.3——编码器路线**第一次平均分压过人**。注意是"平均"：单任务上人类往往仍更强，综合分才扳回来
 
 ### 案例 2：HuggingFace 怎么用
 
@@ -83,18 +85,21 @@ out = model(**tok("DeBERTa decouples content and position.", return_tensors="pt"
 # out.last_hidden_state: [1, seq_len, 768]
 ```
 
-用法和 BERT 完全一样——这是它落地快的关键。后续的 v3 版本把 MLM 换成 ELECTRA-style 的 RTD（Replaced Token Detection），效率又提了一截。
+用法和 BERT 一样——落地快的关键。v3 把预训练目标从 MLM（猜被遮的词）换成 ELECTRA 式的 **RTD（Replaced Token Detection，判断每个词是否被换过）**，同样算力下通常更省、下游分更高。
 
-### 案例 3：什么时候用 DeBERTa 而不是 LLM
+### 案例 3：当判别器而不是生成器
 
-2026 年的 LLM 已经很强，但做这几件事时 DeBERTa 还是更划算：
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+tok = AutoTokenizer.from_pretrained("microsoft/deberta-v3-base")
+clf = AutoModelForSequenceClassification.from_pretrained(
+    "microsoft/deberta-v3-base", num_labels=2
+)
+batch = tok("这段是答案吗？", return_tensors="pt")
+logits = clf(**batch).logits  # [1, 2]，接 softmax 即二分类
+```
 
-- **句子分类 / NLI / 情感分析**——700M 的 deberta-v3-large 部署成本远低于 7B LLM，准确率还更高
-- **检索 re-ranker**——cross-encoder 打分排序，速度敏感
-- **分类型 RAG 的过滤器**——判断"这段是不是答案"，binary 输出
-
-LLM 强在生成和指令理解；编码器强在判别和稠密表示。两边各有地盘。
-
+步骤：加载带分类头的 checkpoint → tokenize → 取 `logits`。适合 NLI / 情感 / re-ranker / RAG 过滤器；生成与指令跟随仍是 LLM 地盘。
 ## 踩过的坑
 
 1. **相对位置矩阵很费显存**——bucket 数和 max_seq_len 一起决定 P 矩阵大小。长文本任务上调 max_relative_positions 时显存会爆
