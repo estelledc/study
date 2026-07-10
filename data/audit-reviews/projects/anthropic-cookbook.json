@@ -1,0 +1,84 @@
+{
+  "slug": "anthropic-cookbook",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "lines": 170,
+  "l1_pass": true,
+  "sections_modified": [
+    "frontmatter",
+    "## 是什么",
+    "## 为什么重要",
+    "## 踩过的坑",
+    "## 历史小故事（可跳过）",
+    "## 延伸阅读",
+    "## 反向链接"
+  ],
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter / ## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    "仓库已解析为 anthropics/claude-cookbooks，且 license 为 MIT，不应继续写 Apache 2.0。",
+    "避免写死不存在或易变的 Haiku 4 模型名。",
+    "补齐标准 ## 历史小故事（可跳过）与 ## 反向链接结构。"
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "frontmatter / ## 为什么重要",
+      "fix_hints": [
+        "把仓库 URL 与 license 更新为当前 GitHub 元数据。",
+        "把具体便宜模型建议写成 Haiku 系列，避免错误精确版本。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    }
+  ]
+}
