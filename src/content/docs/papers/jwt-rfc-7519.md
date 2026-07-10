@@ -33,7 +33,7 @@ JWT 的安全和便利建立在**三件事**上：
 
 1. **三段式编码**：`base64url(header) + "." + base64url(payload) + "." + signature`。前两段任何人都能解开看，**这是设计意图**——payload 是公开的 claims，不是秘密。
 
-2. **七个标准 claims**（payload 里的字段）：
+2. **七个注册 claims**（RFC 里的 Registered Claim Names，**都是可选字段**）：
    - `iss`（issuer 签发方）/ `sub`（subject 用户 ID）/ `aud`（audience 给谁用）
    - `exp`（过期时间）/ `nbf`（生效时间）/ `iat`（签发时间）—— 三者都是 Unix 秒数
    - `jti`（token ID，用来做黑名单）
@@ -72,7 +72,7 @@ eyJhbGciOiJub25lIn0.eyJzdWIiOiJhZG1pbiJ9.
 
 ### 案例 4：手动解一个 JWT 看里面是什么
 
-拿到一个 token，前两段就是 base64url：
+前两段是 **base64url**（用 `-`/`_`，且常省略 `=` 填充）。下面例子碰巧没有特殊字符，用普通 base64 也能解；真 token 请先 `tr '_-' '/+'` 并补 `=`，或用 jwt.io 调试：
 
 ```bash
 echo 'eyJhbGciOiJIUzI1NiJ9' | base64 -d
@@ -82,7 +82,7 @@ echo 'eyJzdWIiOiIxMjMiLCJleHAiOjE3MDB9' | base64 -d
 # {"sub":"123","exp":1700}
 ```
 
-**一行命令暴露所有 claims**——这就是为什么 payload 不能放秘密。第三段是字节签名，base64 解出来是乱码，那才是"防伪用的"。
+**解开前两段就能看见全部 claims**——所以 payload 不能放秘密。第三段是签名字节，解出来是乱码，那才是防伪用的。
 
 ## 踩过的坑
 
@@ -139,11 +139,11 @@ echo 'eyJzdWIiOiIxMjMiLCJleHAiOjE3MDB9' | base64 -d
 
 ## 关联
 
-- [[rest-fielding-2000]] —— REST 主张无状态，JWT 是它在认证层的自然落地
+- [[rest-fielding-2000]] —— REST 主张无状态（§5.1.3），JWT 是认证层的自然落地
 - [[token-bucket-stripe]] —— 限流用 token 思想，但和 JWT 是不同维度的"令牌"
 - [[aes]] —— JWE 加密版 JWT 底层用 AES-GCM
 - [[oauth-2-rfc-6749]] —— OAuth 2.0 框架经常配 JWT 作为 access token 格式
-- [[rest-fielding-2000]] §5.1.3 stateless constraint —— JWT 的设计直接呼应 REST 无状态约束
+- [[oauth-2.1-rfc]] —— 更新一代的 OAuth 实践收口，常与 JWT access token 一起出现
 
 ## 反向链接
 

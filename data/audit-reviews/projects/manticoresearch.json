@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「兼职工」类比略飘，但 MySQL 协议 + MATCH 例子能让零基础跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「官方说比 ES 快 15 倍」放在「为什么重要」易被当成定论；应立刻标明厂商自测、场景/数据规模限定，或移到延伸阅读式表述。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "SQL 案例与 rt_mem_limit / 中文分词坑具体可操作；适用边界有千万级文档量级，够用。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「兼职工」类比略飘，但 MySQL 协议 + MATCH 例子能让零基础跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「官方说比 ES 快 15 倍」放在「为什么重要」易被当成定论；应立刻标明厂商自测、场景/数据规模限定，或移到延伸阅读式表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "SQL 案例与 rt_mem_limit / 中文分词坑具体可操作；适用边界有千万级文档量级，够用。"
+      ]
+    }
+  ]
+}
