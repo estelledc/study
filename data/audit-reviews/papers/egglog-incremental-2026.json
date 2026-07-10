@@ -1,7 +1,4 @@
 {
-  "slug": "egglog-incremental-2026",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -75,24 +72,5 @@
         "案例语法概念正确；若再修可补一句 (run)/(extract) 入口，方便读者跟做完整闭环"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

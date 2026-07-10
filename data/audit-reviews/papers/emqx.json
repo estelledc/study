@@ -1,7 +1,4 @@
 {
-  "slug": "emqx",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -80,30 +77,5 @@
         "案例 3 提到 Kafka 下游时，应显式标注企业版能力，避免选型踩坑"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic/engineer：标明 Kafka Sink 为企业版；弱化 Erlang「碾压」绝对表述；同步修正开源数据集成坑点。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
