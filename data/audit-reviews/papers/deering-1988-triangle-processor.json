@@ -1,0 +1,71 @@
+{
+  "slug": "deering-1988-triangle-processor",
+  "area": "papers",
+  "round": 42,
+  "output_path": "/workspace/src/content/docs/papers/deering-1988-triangle-processor.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇把 Deering 说成 GPU『起点』略绝对，好在踩坑段有纠正；可在首段加半句限定。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "『Sun 收购后做成 GT / ZX』不准确：Deering 后来加入 Sun 并参与 GT/ZX，但 GT 并未直接复用 Triangle Processor / NVS 那两颗芯片，应改成『思路延续 / 参与架构』而非『做成』。",
+        "开篇『GPU 一路演化的起点』宜加限定（像素端+隐藏面消除这条线），与踩坑段『不是唯一起点』对齐。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "pass_count": 2,
+    "verdict": "refine",
+    "action": "refine"
+  },
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 是什么",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 157,
+    "reasons": []
+  }
+}

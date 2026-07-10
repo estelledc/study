@@ -1,0 +1,63 @@
+{
+  "slug": "delta-lake-2020",
+  "area": "papers",
+  "round": 42,
+  "output_path": "/workspace/src/content/docs/papers/delta-lake-2020.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "reject_count": 0,
+    "needs_refine_count": 0,
+    "pass_count": 3,
+    "verdict": "pass",
+    "action": "pass"
+  },
+  "remediation": {
+    "status": "passed",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 151,
+    "reasons": []
+  }
+}

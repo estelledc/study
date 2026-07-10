@@ -1,0 +1,69 @@
+{
+  "slug": "esbuild",
+  "area": "projects",
+  "round": 42,
+  "output_path": "/workspace/src/content/docs/projects/esbuild.md",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "『撼动统治』偏修辞，可接受；速度倍数区间与官方宣传一致即可。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 plugin 的 onResolve 把 args.path（常为相对路径如 ./logo.svg）原样交给 onLoad 的 readFile，会读失败；应 path.join(args.resolveDir, args.path) 或等价绝对路径解析。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "reject_count": 0,
+    "needs_refine_count": 1,
+    "pass_count": 2,
+    "verdict": "refine",
+    "action": "refine"
+  },
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "final_quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 192,
+    "reasons": []
+  }
+}
