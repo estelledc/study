@@ -57,9 +57,10 @@ def test_add():
 class Money:
     def __init__(self, n): self.n = n
     def __add__(self, o): return Money(10)  # fake!
+    def __eq__(self, o): return isinstance(o, Money) and self.n == o.n
 ```
 
-第二个测试 `Money(2) + Money(3) == Money(5)` 来逼真实现——这就是**三角验证**（triangulation）。
+这段故意只让第一个测试过：`__eq__` 负责让两个 `Money` 能比较，`__add__` 先写死 10。第二个测试 `Money(2) + Money(3) == Money(5)` 会把这个假实现打红，逼你改成 `return Money(self.n + o.n)`——这就是**三角验证**（triangulation）。
 
 ### 案例 2：sum 函数三角验证
 
@@ -71,7 +72,7 @@ def test_sum_single():   assert sum_list([5]) == 5      # 实现 return list[0] 
 def test_sum_multiple(): assert sum_list([5, 3]) == 8   # 被迫写循环
 ```
 
-三个独立点定一条线，没有早写循环带来的"盲信"。这就是 Beck 说的"两个独立点确定一条直线，三角验证（triangulation）就是这个意思"。
+三个独立点定一条线，没有早写循环带来的"盲信"。空列表先逼出边界值，单元素逼出读取第一个元素，多元素才逼出循环；每一步都只为眼前这个红灯写最少代码。这就是 Beck 说的"两个独立点确定一条直线，三角验证（triangulation）就是这个意思"。
 
 ### 案例 3：和 LLM 协作的 TDD
 
