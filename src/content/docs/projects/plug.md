@@ -139,7 +139,7 @@ end
 
 3. **Plug.Router 必须有 catch-all**：路由匹配是函数模式匹配——没匹配到任何 `match`/`get`/`post`，Erlang 直接抛 `FunctionClauseError`。永远在最后写 `match _ do send_resp(conn, 404, ...) end`。
 
-4. **init 在编译期跑**：`init/1` 的返回值会被宏烤进 BEAM 字节码——你在 init 里读 `System.get_env/1` 拿到的是**编译机器的环境变量**，不是部署机器的。运行期配置必须放 `call/2` 或用 `runtime_init: true`。
+4. **init 在编译期跑**：`init/1` 的返回值会被宏烤进 BEAM 字节码——你在 init 里读 `System.get_env/1` 拿到的是**编译机器的环境变量**，不是部署机器的。运行期配置必须放 `call/2`，或在 Builder 上写 `use Plug.Builder, init_mode: :runtime`（注意不是虚构的 `runtime_init: true`）。
 
 ## 适用 vs 不适用场景
 
@@ -180,4 +180,8 @@ end
 - [[actix-web]] —— Rust 另一选择，actor 模型，与 Plug 哲学相反
 - [[warp]] —— Rust filter pipeline，与 Plug.Builder 串接思路同源
 - [[fastapi]] —— Python 把 Plug 思路用类型注解再实现一遍
-- [[biome]] —— Elixir 之外的工具链一体化对照
+- [[phoenix]] —— 建在 Plug 之上的全栈框架；Endpoint 本身就是一条 Plug pipeline
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

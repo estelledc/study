@@ -1,0 +1,129 @@
+{
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "侦探接力 / backcast 复述案情类比贯穿全文，双重残差好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "lookback / forecast / backcast / 基函数有桥接；sMAPE、ETS 可再补半句日常说法"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–4 从块内部→残差接力→可解释/通用基，步骤清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Oreshkin et al. ICLR 2020 / arXiv:1905.10437 与 stub 一致；M4 上约 3% sMAPE 优于冠军、180 模型集成与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「N-HiTS / TFT / TimesFM 都把残差堆叠当默认 building block」过度概括：TFT 是 Transformer+变量选择，不是 N-BEATS 式双重残差堆叠；应改为 N-HiTS / 部分基础模型继承残差堆叠，TFT 走另一条路"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「纯神经网络第一次打败统计派」宜限定为 M4/M3/TOURISM 竞赛设定下的公开结果，避免读成一切时序任务"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码概念正确：四层 FC→θ_b/θ_f→基函数；双重残差 x:=x-b、forecast 相加可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：univariate、180 集成、lookback=k×H、分频段训练、损失敏感"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已量化外生变量、极少数据、点预测 vs 分布"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "侦探接力 / backcast 复述案情类比贯穿全文，双重残差好懂",
+        "lookback / forecast / backcast / 基函数有桥接；sMAPE、ETS 可再补半句日常说法",
+        "案例 1–4 从块内部→残差接力→可解释/通用基，步骤清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Oreshkin et al. ICLR 2020 / arXiv:1905.10437 与 stub 一致；M4 上约 3% sMAPE 优于冠军、180 模型集成与论文一致",
+        "「N-HiTS / TFT / TimesFM 都把残差堆叠当默认 building block」过度概括：TFT 是 Transformer+变量选择，不是 N-BEATS 式双重残差堆叠；应改为 N-HiTS / 部分基础模型继承残差堆叠，TFT 走另一条路",
+        "「纯神经网络第一次打败统计派」宜限定为 M4/M3/TOURISM 竞赛设定下的公开结果，避免读成一切时序任务"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "伪代码概念正确：四层 FC→θ_b/θ_f→基函数；双重残差 x:=x-b、forecast 相加可跟读",
+        "踩坑具体：univariate、180 集成、lookback=k×H、分频段训练、损失敏感",
+        "适用/不适用已量化外生变量、极少数据、点预测 vs 分布"
+      ]
+    }
+  ],
+  "slug": "nbeats-2020",
+  "area": "papers",
+  "status": "refined",
+  "quality_gate": {
+    "pass": true,
+    "lines": 155
+  },
+  "lines": 155,
+  "l1_pass": true,
+  "refinement": {
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要"
+    ],
+    "unresolved_hints": []
+  }
+}

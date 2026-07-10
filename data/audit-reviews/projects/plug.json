@@ -1,0 +1,130 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "流水线工位 / 不可变盒子类比统一好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "init/call、halt、Builder 有桥接；BEAM 可再半句「Erlang 虚拟机」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 从 Hello→Pipeline→Router，逐部分解释完整"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/elixir-plug/plug、José Valim 2013、Rack 谱系、Phoenix 建于 Plug 正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「runtime_init: true」不是 Plug API：应为 Plug.Builder 的 init_mode: :runtime"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Bandit 2023 / Cowboy 切换叙事合理；关联里 [[biome]] 与 Plug 无直接血缘，宜换成 phoenix 或 cowboy/bandit"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "HelloPlug / Builder / Router 示例概念可跑；缺反向链接占位"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 4 应改为 use Plug.Builder, init_mode: :runtime，避免误导复制 runtime_init: true"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚；关联补 Phoenix/Cowboy 并加 ## 反向链接"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "流水线工位 / 不可变盒子类比统一好懂",
+        "init/call、halt、Builder 有桥接；BEAM 可再半句「Erlang 虚拟机」",
+        "案例 1–3 从 Hello→Pipeline→Router，逐部分解释完整"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "来源 github.com/elixir-plug/plug、José Valim 2013、Rack 谱系、Phoenix 建于 Plug 正确",
+        "「runtime_init: true」不是 Plug API：应为 Plug.Builder 的 init_mode: :runtime",
+        "Bandit 2023 / Cowboy 切换叙事合理；关联里 [[biome]] 与 Plug 无直接血缘，宜换成 phoenix 或 cowboy/bandit"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "HelloPlug / Builder / Router 示例概念可跑；缺反向链接占位",
+        "踩坑 4 应改为 use Plug.Builder, init_mode: :runtime，避免误导复制 runtime_init: true",
+        "适用边界清楚；关联补 Phoenix/Cowboy 并加 ## 反向链接"
+      ]
+    }
+  ],
+  "slug": "plug",
+  "area": "projects",
+  "status": "refined",
+  "quality_gate": {
+    "pass": true,
+    "lines": 188
+  },
+  "lines": 188,
+  "l1_pass": true,
+  "refinement": {
+    "round": 1,
+    "sections_modified": [
+      "## 踩过的坑",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}
