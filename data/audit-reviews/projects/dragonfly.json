@@ -1,0 +1,122 @@
+{
+  "slug": "dragonfly",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 很好；案例 2 只有官方数字没有跟做步骤，案例 3 几乎全是注释清单，零基础不知道先验证哪条命令"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "多出 ## 怎么读源码、缺少 ## 反向链接，偏离 12 段模板"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "踩坑写了 6 条，模板只要 4 条，可合并精简"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「完整实现了 RESP2/3」过满：Dragonfly 兼容常用 Redis 命令与协议，但并非全命令/全 module 等价；应加限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Dashtable … 所以总体省 30%」把官方综合内存收益几乎全算到一张表上；应写成官方宣称约省内存，Dashtable 是原因之一"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "25× / 4M ops/s 应标明来自官方 benchmark 条件（核数、workload），避免读成普适定律"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 替换步骤应写成可执行检查清单（先 INFO/命令探测兼容性，再切流量），而不是三行注释"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "持久化不互通的坑写得好；可把「怎么读源码」压缩进延伸阅读，腾出结构给 ## 反向链接"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景已有「单实例吃满 CPU」等边界，保持即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 很好；案例 2 只有官方数字没有跟做步骤，案例 3 几乎全是注释清单，零基础不知道先验证哪条命令",
+        "多出 ## 怎么读源码、缺少 ## 反向链接，偏离 12 段模板",
+        "踩坑写了 6 条，模板只要 4 条，可合并精简"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「完整实现了 RESP2/3」过满：Dragonfly 兼容常用 Redis 命令与协议，但并非全命令/全 module 等价；应加限定",
+        "「Dashtable … 所以总体省 30%」把官方综合内存收益几乎全算到一张表上；应写成官方宣称约省内存，Dashtable 是原因之一",
+        "25× / 4M ops/s 应标明来自官方 benchmark 条件（核数、workload），避免读成普适定律"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 替换步骤应写成可执行检查清单（先 INFO/命令探测兼容性，再切流量），而不是三行注释",
+        "持久化不互通的坑写得好；可把「怎么读源码」压缩进延伸阅读，腾出结构给 ## 反向链接",
+        "适用场景已有「单实例吃满 CPU」等边界，保持即可"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 151
+  },
+  "lines": 151,
+  "l1_pass": true
+}

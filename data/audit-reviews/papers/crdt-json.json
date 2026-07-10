@@ -1,0 +1,122 @@
+{
+  "slug": "crdt-json",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点把 map 说成「Lamport 大者赢」，案例 1 又讲 multi-value 双值保留，零基础会打架；统一成一种规则并首次出现时桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Lamport 时间戳、tombstone、multi-value register 首次出现缺一句日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 只有结果摘要，缺逐步「谁发出什么、合并时看什么」；案例 4 的 Yjs 代码也没写出合并后实际读到什么"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Kleppmann & Beresford 2017 对并发赋值用的是 multi-value register，不是「map key 一律 Lamport 大者赢」；核心要点与案例 1 自相矛盾"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「合并就是按时间戳重排所有操作」过度简化：list/map 还有锚点、tombstone 与嵌套路径规则，不只是全局重排"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 Figma/Notion/Linear 都写成 CRDT 产品引擎偏满；可改为「协同产品里常见 CRDT 或同类无冲突合并思路」并保留 local-first / Automerge / Yjs 作为更稳的例子"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 4 用 Yjs Map.set 演示，但 Yjs 对同一 key 是 LWW 语义，和前文 multi-value 叙事不一致；应改用 Automerge 演示 MV，或明确标注 Yjs 是 LWW 工程取舍"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Yjs 示例应补上合并后 console 期望（或说明双方最终读到同一确定值），否则跟做的人无法验收"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用整体可用；保持「百万操作/大表」等量化边界即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "核心要点把 map 说成「Lamport 大者赢」，案例 1 又讲 multi-value 双值保留，零基础会打架；统一成一种规则并首次出现时桥接",
+        "Lamport 时间戳、tombstone、multi-value register 首次出现缺一句日常桥接",
+        "案例 1–3 只有结果摘要，缺逐步「谁发出什么、合并时看什么」；案例 4 的 Yjs 代码也没写出合并后实际读到什么"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Kleppmann & Beresford 2017 对并发赋值用的是 multi-value register，不是「map key 一律 Lamport 大者赢」；核心要点与案例 1 自相矛盾",
+        "「合并就是按时间戳重排所有操作」过度简化：list/map 还有锚点、tombstone 与嵌套路径规则，不只是全局重排",
+        "把 Figma/Notion/Linear 都写成 CRDT 产品引擎偏满；可改为「协同产品里常见 CRDT 或同类无冲突合并思路」并保留 local-first / Automerge / Yjs 作为更稳的例子"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 用 Yjs Map.set 演示，但 Yjs 对同一 key 是 LWW 语义，和前文 multi-value 叙事不一致；应改用 Automerge 演示 MV，或明确标注 Yjs 是 LWW 工程取舍",
+        "Yjs 示例应补上合并后 console 期望（或说明双方最终读到同一确定值），否则跟做的人无法验收",
+        "踩坑与适用整体可用；保持「百万操作/大表」等量化边界即可"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 152
+  },
+  "lines": 152,
+  "l1_pass": true
+}
