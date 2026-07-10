@@ -1,43 +1,4 @@
 {
-  "slug": "liveblocks",
-  "area": "projects",
-  "status": "refined",
-  "action": "refine",
-  "average": 4.11,
-  "reject_count": 0,
-  "needs_refine_count": 2,
-  "pass_count": 1,
-  "weakest_sections": [
-    {
-      "reviewer": "zero-base",
-      "section": "## 实践案例",
-      "verdict": "pass"
-    },
-    {
-      "reviewer": "academic",
-      "section": "## 踩过的坑",
-      "verdict": "needs-refine"
-    },
-    {
-      "reviewer": "engineer",
-      "section": "## 实践案例",
-      "verdict": "needs-refine"
-    }
-  ],
-  "fix_hints": [
-    {
-      "reviewer": "zero-base",
-      "hint": "租车 vs 自造引擎类比贴合；Room/Storage/Presence 桥接清楚；计数器与 mutation 案例可跟，Yjs 套接示例偏素描。"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "前文称 Storage 为 CRDT，踩坑却笼统写成『冲突解决是 last-write-wins』，应区分 LiveObject 同键 LWW 与 LiveList 可合并插入，并保留『要字符级历史用 yjs』的边界。"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "案例 2 在渲染路径直接 new Y.Doc/Provider，缺挂载/销毁，应改成 useState+useEffect（或等价）以免误导可跟做写法；MAU 免费层数字宜标『以官网为准』。"
-    }
-  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -81,34 +42,5 @@
         "案例 2 在渲染路径直接 new Y.Doc/Provider，缺挂载/销毁，应改成 useState+useEffect（或等价）以免误导可跟做写法；MAU 免费层数字宜标『以官网为准』。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "needs-refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic 指出同键 LWW 表述过粗；engineer 指出 Yjs Provider 写在渲染路径。已区分 LiveObject/LiveList，案例 2 改为 useState+useEffect，并补历史小故事与反向链接。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 学到什么",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 170,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 170,
-  "l1_pass": true
+  ]
 }

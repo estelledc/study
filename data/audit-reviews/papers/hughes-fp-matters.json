@@ -1,43 +1,4 @@
 {
-  "slug": "hughes-fp-matters",
-  "area": "papers",
-  "status": "passed",
-  "action": "pass",
-  "average": 4.78,
-  "reject_count": 0,
-  "needs_refine_count": 0,
-  "pass_count": 3,
-  "weakest_sections": [
-    {
-      "reviewer": "zero-base",
-      "section": "## 实践案例",
-      "verdict": "pass"
-    },
-    {
-      "reviewer": "academic",
-      "section": "## 为什么重要",
-      "verdict": "pass"
-    },
-    {
-      "reviewer": "engineer",
-      "section": "## 实践案例",
-      "verdict": "pass"
-    }
-  ],
-  "fix_hints": [
-    {
-      "reviewer": "zero-base",
-      "hint": "乐高凸起凹槽类比贴合；高阶/惰性桥接清楚；foldr 与 Newton 案例逐步可跟，alpha-beta 对零基础略密但仍可读。"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "1989 Computer Journal、高阶+惰性作胶水、Newton/博弈树例子与原文一致；未把 FP 夸成更安全/更快。"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "Haskell 教学代码可跟读；纯≠无 bug、惰性≠性能、浅惰性凑不出博弈树等踩坑具体；适用边界含 IO 密集与严格语言限制。"
-    }
-  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -81,27 +42,5 @@
         "Haskell 教学代码可跟读；纯≠无 bug、惰性≠性能、浅惰性凑不出博弈树等踩坑具体；适用边界含 IO 密集与严格语言限制。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 170,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 170,
-  "l1_pass": true
+  ]
 }
