@@ -1,0 +1,117 @@
+{
+  "slug": "keras",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "乐高类比清楚；案例 2/3 缺少逐部分解释，新手不易抓住 Functional API 与 callback 各自解决什么问题"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『MIT、Stanford、Coursera 的 DL 课程都用它当第一周作业』过强，宜改为『许多入门课用它当第一周作业』"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "适用里 KerasClassifier 在 Keras 3 已不在核心包，宜注明需 scikeras 或删掉该条"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "后端切换/fit 断梯度/多后端边界等踩坑很实用；关联里 [[hindley-milner]] 牵强，应换成真实相关项目；适用里 KerasClassifier 边界需更新"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "乐高类比清楚；案例 2/3 缺少逐部分解释，新手不易抓住 Functional API 与 callback 各自解决什么问题"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "『MIT、Stanford、Coursera 的 DL 课程都用它当第一周作业』过强，宜改为『许多入门课用它当第一周作业』",
+        "适用里 KerasClassifier 在 Keras 3 已不在核心包，宜注明需 scikeras 或删掉该条"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "后端切换/fit 断梯度/多后端边界等踩坑很实用；关联里 [[hindley-milner]] 牵强，应换成真实相关项目；适用里 KerasClassifier 边界需更新"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "zero-base：案例 2/3 补逐部分解释；academic：弱化课程绝对化、KerasClassifier 改为 scikeras；engineer：去掉牵强 hindley-milner 关联并补反向链接。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 176,
+    "reasons": []
+  },
+  "l1_pass": true
+}

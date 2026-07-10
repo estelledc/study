@@ -1,0 +1,99 @@
+{
+  "slug": "kicad",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨房/菜谱类比贴合；ERC/DRC 在后文案例有解释，首现可再点一句，但不挡跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1992 Charras、CERN 投入、GitLab 主开发、2026 CERN 元件库开源均可核"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "kicad-cli ERC/DRC/Gerber/STEP 案例可跟做；符号≠封装、DRC 前重铺铜等踩坑可操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "厨房/菜谱类比贴合；ERC/DRC 在后文案例有解释，首现可再点一句，但不挡跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "1992 Charras、CERN 投入、GitLab 主开发、2026 CERN 元件库开源均可核"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "kicad-cli ERC/DRC/Gerber/STEP 案例可跟做；符号≠封装、DRC 前重铺铜等踩坑可操作"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.67,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 166,
+    "reasons": []
+  },
+  "l1_pass": true
+}
