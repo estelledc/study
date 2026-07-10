@@ -1,0 +1,141 @@
+{
+  "slug": "minisat-2003",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "通胀/合同类比贴合 VSIDS 与学子句回收，开篇能抓住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "CDCL / VSIDS / watched literals / BCP / trail 首次堆出时缺白话桥接，零基础难跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只列文件名缺逐步读法；案例 2 C++ 过密，需在循环外加一句人话说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Eén & Sörensson SAT 2003 (LNCS 2919) 正确；CDCL←GRASP、VSIDS/watched←Chaff 谱系清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "连续衰减 VSIDS、conflict minimization、assumptions API、Glucose 2009 LBD 叙述与公开文献一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『被引近万』属量级修辞，可接受教学近似；未把 MiniSat 说成发明 CDCL"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "watched literals 伪代码概念正确，blocker 优化说明有用；属教学伪代码非可编译预期"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：minimization 分层、bump 顺序、assumptions≠公式、learnt 标记删错会假 UNSAT"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化：百万变量内基线、SOTA 换 CaDiCaL/Kissat、随机 3-SAT/QBF 不适用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "通胀/合同类比贴合 VSIDS 与学子句回收，开篇能抓住",
+        "CDCL / VSIDS / watched literals / BCP / trail 首次堆出时缺白话桥接，零基础难跟",
+        "案例 1 只列文件名缺逐步读法；案例 2 C++ 过密，需在循环外加一句人话说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 Eén & Sörensson SAT 2003 (LNCS 2919) 正确；CDCL←GRASP、VSIDS/watched←Chaff 谱系清楚",
+        "连续衰减 VSIDS、conflict minimization、assumptions API、Glucose 2009 LBD 叙述与公开文献一致",
+        "『被引近万』属量级修辞，可接受教学近似；未把 MiniSat 说成发明 CDCL"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "watched literals 伪代码概念正确，blocker 优化说明有用；属教学伪代码非可编译预期",
+        "踩坑具体：minimization 分层、bump 顺序、assumptions≠公式、learnt 标记删错会假 UNSAT",
+        "适用边界有量化：百万变量内基线、SOTA 换 CaDiCaL/Kissat、随机 3-SAT/QBF 不适用"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 185,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 185,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "桥接 CDCL/VSIDS/watched/BCP；案例1加逐步读法；案例2加人话说明",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

@@ -8,7 +8,7 @@ title: MiniSat 2003 — 600 行 C++ 把 CDCL 写成教科书
 
 ## 是什么
 
-MiniSat 是 2003 年瑞典 Chalmers 两位研究生 Niklas Eén 和 Niklas Sörensson 写的 SAT 求解器。它**没有发明新算法**——主循环是 GRASP 1996 的 CDCL，决策启发式是 Chaff 2001 的 VSIDS，单元传播是 Chaff 2001 的 watched literals。
+MiniSat 是 2003 年瑞典 Chalmers 两位研究生 Niklas Eén 和 Niklas Sörensson 写的 SAT 求解器（判断一堆逻辑子句能不能同时为真的程序）。它**没有发明新算法**——主循环是 GRASP 1996 的 **CDCL**（Conflict-Driven Clause Learning：撞墙就学一条新规则再换路），决策启发式是 Chaff 2001 的 **VSIDS**（给常参与冲突的变量加分，优先试它们），单元传播用 Chaff 2001 的 **watched literals**（每条子句只盯两个文字，少做无效检查）。
 
 它做的是另一件事：
 
@@ -57,46 +57,41 @@ CDCL 不限学子句数会爆内存。MiniSat 给每条学子句也维护一个 
 
 ### 案例 1：四个文件读完整个 CDCL
 
-MiniSat 1.14 的核心：
+MiniSat 1.14 的核心就四个文件。建议按这个顺序读：
 
-```
-Solver.h / Solver.C  —— 主循环 + 数据结构（搜索、传播、分析、回溯）
-SolverTypes.h        —— Lit / Clause / Var 编码
-Heap.h               —— activity 决策队列
-Vec.h                —— 自定义动态数组
-```
+1. `SolverTypes.h` —— 看 `Lit` / `Var` / `Clause` 怎么编码（一个整数就能表示「变量 x 取真/假」）。
+2. `Vec.h` / `Heap.h` —— 动态数组和按 activity 排序的小顶堆，后面决策队列靠它。
+3. `Solver.h` / `Solver.C` —— 主循环：搜索、传播、冲突分析、回溯。
 
-`Solver::search()` 大约 60 行就把"决策 → BCP → 冲突分析 → backjump → restart"串完。第一次读 SAT 教材时跟代码对一遍，CDCL 就懂了。
+`Solver::search()` 大约 60 行就把「决策 → **BCP**（Boolean Constraint Propagation，根据已赋值强制推出更多赋值）→ 冲突分析 → backjump → restart」串完。第一次读 SAT 教材时跟代码对一遍，CDCL 就懂了。
 
 ### 案例 2：watched literals 的 MiniSat 实现
 
+人话版：每条子句只「盯」两个文字。某个文字刚被赋成假时，才去检查盯着它的子句——若还能找到别的未假文字就换盯；若只剩一个候选就强制它为真（单元传播）；若连候选都没有就报冲突。`trail` 是已赋值文字的时间线（既当栈又当队列）。
+
 ```cpp
-// Solver::propagate 里的核心循环（伪代码化）
+// Solver::propagate 核心（伪代码）：从 trail 取出刚变 true 的 p
 while (qhead < trail.size()) {
-    Lit p = trail[qhead++];      // 刚被赋 true 的文字
-    vec<Watcher>& ws = watches[~p];  // 盯着 ¬p 的子句
+    Lit p = trail[qhead++];
+    vec<Watcher>& ws = watches[~p];  // 盯着 ¬p 的子句们
     for (Watcher& w : ws) {
-        // 已有另一个 watched 是 true → 提前退出
-        if (value(w.blocker) == True) continue;
+        if (value(w.blocker) == True) continue;  // 提示文字已真 → 子句已满足
         Clause& c = ca[w.cref];
-        // 把 ¬p 调到 c[1] 位置
-        if (c[0] == ~p) std::swap(c[0], c[1]);
-        // 找新 watch
+        if (c[0] == ~p) std::swap(c[0], c[1]);  // 让 ¬p 落在 c[1]
         for (int k = 2; k < c.size(); k++)
             if (value(c[k]) != False) {
                 std::swap(c[1], c[k]);
-                watches[~c[1]].push(w);
+                watches[~c[1]].push(w);  // 换一个新 watch
                 goto NextClause;
             }
-        // 找不到 → 这是单元子句
-        if (value(c[0]) == False) return conflict;
-        else uncheckedEnqueue(c[0], w.cref);
+        if (value(c[0]) == False) return conflict;  // 全假 → 冲突
+        else uncheckedEnqueue(c[0], w.cref);        // 只剩 c[0] → 强制为真
         NextClause:;
     }
 }
 ```
 
-`blocker` 是 MiniSat 的小优化：每个 watch 多存一个"如果它已 true，子句肯定满足，可以跳过 cache miss"的提示文字。
+`blocker` 是小优化：每个 watch 多存一个提示文字，已为真就可跳过，少踩一次 cache miss。
 
 ### 案例 3：你电脑里的 MiniSat 后裔
 
