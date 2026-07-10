@@ -1,7 +1,4 @@
 {
-  "slug": "duckdb-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "适用写「GB 到 TB」，踩坑写「稳定超过几百 GB 就该换」互相打架；适用应改成约 1–100GB（单机磁盘舒适区），与踩坑对齐。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 适用 vs 不适用"
-    ],
-    "unresolved_hints": [],
-    "note": "适用规模改为约 1–100GB，与踩坑「几百 GB 换工具」对齐；不适用补分布式/副本分片边界。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 165,
-    "reasons": []
-  }
+  ]
 }

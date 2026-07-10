@@ -1,7 +1,4 @@
 {
-  "slug": "duchi-local-dp-2013",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,22 +88,5 @@
         "RAPPOR/Apple 流程可跟读；案例 3 数值推演建议与理论界表述对齐，避免读者按错公式估样本量。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": [],
-    "note": "修正「指数级用户」为 1/ε² 量级；案例 3 与 O(1/n) vs O(1/(n·ε²)) 对齐；弱化 GDPR/LDP 免责表述；RAPPOR 改为随机化响应类机制的工程落地。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 158,
-    "reasons": []
-  }
+  ]
 }

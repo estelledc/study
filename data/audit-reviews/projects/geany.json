@@ -1,7 +1,4 @@
 {
-  "slug": "geany",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,11 +78,5 @@
         "Build Commands 占位符与跨文件符号限制写得可操作；适用/不适用边界清晰。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 177,
-    "reasons": []
-  }
+  ]
 }

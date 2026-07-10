@@ -1,7 +1,4 @@
 {
-  "slug": "gdu",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "案例 5 用 `gdu --db scan.db`：官方按扩展名选引擎（*.sqlite / *.badger），`.db` 可能选错；应写成 `scan.sqlite`，读取用 `-r/--read-from-storage`。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": [],
-    "note": "案例 5 改为 scan.sqlite / -r --read-from-storage，并注明 *.sqlite 与 *.badger 扩展名选引擎。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 167,
-    "reasons": []
-  }
+  ]
 }
