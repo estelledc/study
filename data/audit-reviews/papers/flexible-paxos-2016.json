@@ -1,0 +1,96 @@
+{
+  "slug": "flexible-paxos-2016",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "「etcd / TiKV 支持可调 quorum，理论根基就是这篇」过满：二者主线是 Raft 多数派，FPaxos 更多是可借鉴的 quorum 放松；应改成「启发了后续可调 quorum / Flexible Raft 一类工作」，避免写成已落地产品功能的直接根基"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「etcd / TiKV 支持可调 quorum，理论根基就是这篇」过满：二者主线是 Raft 多数派，FPaxos 更多是可借鉴的 quorum 放松；应改成「启发了后续可调 quorum / Flexible Raft 一类工作」，避免写成已落地产品功能的直接根基"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic 指出 etcd/TiKV「可调 quorum 根基」过满；已改为启发后续 Flexible Raft / 可调 quorum 讨论，并修正历史与适用表述。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

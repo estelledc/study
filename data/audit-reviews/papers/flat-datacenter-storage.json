@@ -1,0 +1,141 @@
+{
+  "slug": "flat-datacenter-storage",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 2.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter 来源",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "三个实践案例只有对比 bullet，没有可跟做的伪代码/步骤拆解，应按模板补成「场景 → 命令/伪代码 → 逐部分解释」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「bisection bandwidth」等术语首次出现缺日常桥接；第 31 行有残留反斜杠破坏排版"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点拆成 5 条偏散，建议收成 3 条主线（全带宽网络 / 条带化与元数据分散 / 流控与快速恢复）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源应写成 Nightingale 等作者 + Flat Datacenter Storage + OSDI 2012，不宜只留 USENIX URL"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Facebook/Meta/字节因此走向全网最短平均响应」属过度外推；FDS 是 Microsoft Research 的 locality-oblivious blob store，应限定为该设计思路的影响而非直接因果"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "恢复优先级表述宜对齐论文：磁盘间全带宽并行重建 + 元数据 tract 分散，避免写成「先修元数据再修对象」的绝对口诀"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例需补可跟做的伪代码（如 TLT 查 tractserver、条带写、流控窗口），否则工程师无法验证概念"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用应合并为「适用 vs 不适用」并加量化边界（如机柜数、是否具备接近 full bisection 的网络）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "反向链接段被手写内容与文末补丁占满，应恢复 regen 占位注释并删掉游离段落"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三个实践案例只有对比 bullet，没有可跟做的伪代码/步骤拆解，应按模板补成「场景 → 命令/伪代码 → 逐部分解释」",
+        "「bisection bandwidth」等术语首次出现缺日常桥接；第 31 行有残留反斜杠破坏排版",
+        "核心要点拆成 5 条偏散，建议收成 3 条主线（全带宽网络 / 条带化与元数据分散 / 流控与快速恢复）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 2,
+        "no_distortion": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "frontmatter 来源",
+      "fix_hints": [
+        "来源应写成 Nightingale 等作者 + Flat Datacenter Storage + OSDI 2012，不宜只留 USENIX URL",
+        "「Facebook/Meta/字节因此走向全网最短平均响应」属过度外推；FDS 是 Microsoft Research 的 locality-oblivious blob store，应限定为该设计思路的影响而非直接因果",
+        "恢复优先级表述宜对齐论文：磁盘间全带宽并行重建 + 元数据 tract 分散，避免写成「先修元数据再修对象」的绝对口诀"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例需补可跟做的伪代码（如 TLT 查 tractserver、条带写、流控窗口），否则工程师无法验证概念",
+        "适用/不适用应合并为「适用 vs 不适用」并加量化边界（如机柜数、是否具备接近 full bisection 的网络）",
+        "反向链接段被手写内容与文末补丁占满，应恢复 regen 占位注释并删掉游离段落"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 2.78,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "三审均为 needs-refine：补作者/OSDI 来源、重写实践案例伪代码、合并适用段、修复反向链接占位，并弱化对外部公司的因果外推。",
+    "sections_modified": [
+      "frontmatter",
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
