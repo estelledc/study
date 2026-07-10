@@ -8,7 +8,7 @@ title: Dijkstra 1965 — N 个进程怎么轮流上厕所而且谁也别卡死
 
 ## 是什么
 
-这是计算机历史上**第一篇**用纯软件（只靠普通的读和写共享变量）解决"N 个并发进程怎么排队互斥"的论文。8 页纸，作者是 Edsger Dijkstra。
+这是计算机历史上**第一篇**用纯软件（只靠普通的读和写共享变量）解决"N 个并发进程怎么排队互斥"的论文。CACM 原文极短（大约一两页），作者是 Edsger Dijkstra。
 
 日常类比：办公室只有 1 个洗手间，**N 个人**都要用。规则要满足三条：
 
@@ -141,7 +141,7 @@ JVM 在底层做的事情，一层层拆开：
 
 ## 延伸阅读
 
-- 论文 PDF：[Dijkstra 1965 — Solution of a Problem in Concurrent Programming Control](https://dl.acm.org/doi/10.1145/365559.365617)（4 页正文，密度极高）
+- 论文 PDF：[Dijkstra 1965 — Solution of a Problem in Concurrent Programming Control](https://dl.acm.org/doi/10.1145/365559.365617)（CACM 短文，密度极高）
 - EWD123 中文导读：[Cooperating Sequential Processes](https://www.cs.utexas.edu/~EWD/transcriptions/EWD01xx/EWD123.html)（信号量的诞生地）
 - 教科书：Andrew Tanenbaum《Modern Operating Systems》第 2 章互斥
 - 视频：[Brian Will — The Mutual Exclusion Problem](https://www.youtube.com/results?search_query=mutual+exclusion+problem+dijkstra)

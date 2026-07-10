@@ -1,0 +1,108 @@
+{
+  "slug": "dijkstra-1965",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "洗手间类比极强；案例 1–3 偏叙事，案例 4 的 Java 拆解更易跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「8 页纸」与后文「4 页正文」都不准确：CACM 1965 原文极短（约 1–2 页），应改正并统一；其余互斥三条、饥饿未解决、Knuth 1966、EWD123 信号量时间线总体正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码与现代 Mutex/内存模型踩坑对工程读者很有用；适用边界清晰。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "洗手间类比极强；案例 1–3 偏叙事，案例 4 的 Java 拆解更易跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「8 页纸」与后文「4 页正文」都不准确：CACM 1965 原文极短（约 1–2 页），应改正并统一；其余互斥三条、饥饿未解决、Knuth 1966、EWD123 信号量时间线总体正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "伪代码与现代 Mutex/内存模型踩坑对工程读者很有用；适用边界清晰。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正「8 页纸 / 4 页正文」页数误述，统一为 CACM 短文约一两页。",
+    "sections_modified": [
+      "## 是什么",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "lines": 165,
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

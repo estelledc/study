@@ -1,0 +1,112 @@
+{
+  "slug": "expo",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 profile.tsx 缺 Text 导入，且缺少「逐部分解释」；案例 3 只有命令，建议拆成「何时 OTA / 何时必须打二进制」三步。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「减少 30% 的路由约定学习成本」无出处，应改为定性表述；历史小故事偏空泛，宜点出 Expo 从 ExpoKit/经典工作流到 CNG/prebuild 与 EAS 的关键节点。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不要全局 npm i -g create-expo-app，改用 npx；profile 示例需可编译；适用/不适用缺少可操作边界（如是否需要自定义原生模块、是否必须脱离 managed/CNG）。末尾「额外补充」与反向链接堆砌应收敛到模板结构。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 profile.tsx 缺 Text 导入，且缺少「逐部分解释」；案例 3 只有命令，建议拆成「何时 OTA / 何时必须打二进制」三步。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "「减少 30% 的路由约定学习成本」无出处，应改为定性表述；历史小故事偏空泛，宜点出 Expo 从 ExpoKit/经典工作流到 CNG/prebuild 与 EAS 的关键节点。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "不要全局 npm i -g create-expo-app，改用 npx；profile 示例需可编译；适用/不适用缺少可操作边界（如是否需要自定义原生模块、是否必须脱离 managed/CNG）。末尾「额外补充」与反向链接堆砌应收敛到模板结构。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.56,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "补齐案例逐步解释与可编译示例，去掉无出处 30% 表述与额外补充段，收敛适用边界与历史节点。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "lines": 159,
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

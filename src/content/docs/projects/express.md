@@ -121,7 +121,7 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 
 **不适用**：
 
-- 极致性能敏感场景（单机 QPS > 5 万）→ 选 Fastify 或 Hono
+- 极致性能敏感场景（粗量级：单机持续 QPS 上万且延迟预算很紧）→ 选 Fastify 或 Hono
 - 需要类型安全的 RPC 风格 API → 选 NestJS / tRPC
 - Edge Runtime / Cloudflare Workers → Express 依赖 Node API，跑不动；选 Hono / Itty Router
 - 完整的"全栈框架体验"（路由 + ORM + 队列 + Auth）→ 选 NestJS / RedwoodJS / Next.js
@@ -132,7 +132,7 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 - **2012**：v3 发布，引入 view engine、把 Connect 内置中间件直接打包
 - **2014**：v4 拆出 router 子包、移除 Connect 内置中间件（推 body-parser 等独立包）；同年 TJ 把项目交给 StrongLoop / IBM，自己离场
 - **2016**：项目移交给 OpenJS Foundation TSC 集体维护
-- **2024**：v5 RC 发布——10 年没动后终于出大版本：原生 async 错误处理、严格 path-to-regexp、移除若干废弃 API
+- **2024**：v5 RC；随后 v5 稳定版落地——原生 async 错误处理、更严格的 path-to-regexp、移除若干废弃 API
 - 这是个"技术过气但生态不灭"的范例，类比 jQuery 之于前端
 
 ## 学到什么
@@ -164,56 +164,4 @@ v5 起 async 错误自动传给错误中间件，可以省略 try/catch——这
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[apollo-server]] —— Apollo Server — Node 端 GraphQL 服务端的事实标准
-- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[auth-js]] —— Auth.js — 让 OAuth 登录和会话存储变成两个抽象
-- [[axios]] —— axios — 浏览器和 Node 都能用的 HTTP 客户端
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
-- [[chatwoot]] —— chatwoot — 把 11 种外部聊天渠道归一到同一张消息表
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
-- [[django]] —— Django — 全功能 batteries-included 的 Python web 框架
-- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
-- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[fiber]] —— Fiber — 把 Express 写法搬到 Go 上的高性能 web 框架
-- [[flask]] —— Flask — 用装饰器把 URL 接到函数上的 Python 微框架
-- [[framer-motion]] —— Framer Motion — React 声明式动画
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[grape]] —— Grape — 用 Ruby DSL 专写 REST API 的轻量框架
-- [[graphql-yoga]] —— GraphQL Yoga — 跨运行时的轻量 GraphQL 服务器
-- [[hono]] —— Hono — 多运行时 Web 框架
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
-- [[ktor]] —— Ktor — 用 Kotlin DSL 拼出来的异步 Web 框架
-- [[ky]] —— ky — 把浏览器自带的 fetch 包成顺手工具
-- [[laravel]] —— Laravel — 现代 PHP 全栈框架，Eloquent + Blade + Artisan 三件套
-- [[librechat]] —— LibreChat — 让一份聊天 UI 同时连 OpenAI / Anthropic / Google / 本地模型，对话留在自己的服务器
-- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
-- [[marked]] —— marked — 用一堆正则把 markdown 变成 HTML 的轻量解析器
-- [[msw]] —— MSW — 让 mock 不改业务代码，在网络层透明拦截
-- [[nestjs]] —— NestJS — 把 Angular 思想搬到 Node.js 后端的企业级框架
-- [[nginx]] —— nginx — 高性能 Web 服务器
-- [[nodemailer]] —— Nodemailer — Node.js 发邮件的事实标准
-- [[pino]] —— pino — 日志不该阻塞热路径
-- [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
-- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
-- [[rails]] —— Ruby on Rails — 约定大于配置的全栈 Web 框架教科书
-- [[rocket]] —— Rocket — 用 Rust attribute macro 把路由当函数签名写的 web 框架
-- [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
-- [[sinatra]] —— Sinatra — 用 Ruby 三行代码起一个 web 服务
-- [[slim-framework]] —— Slim — PHP 圈最轻的 web 框架，专给小 API 用
-- [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
-- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
-- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
-- [[starlette]] —— Starlette — FastAPI 底下那台轻量 ASGI 引擎
-- [[supertokens]] —— SuperTokens — 自托管认证框架，把登录方式做成可拼装的 Recipe
-- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
-- [[unified]] —— unified — 把文档处理拆成 AST + plugin 流水线
-- [[vertx]] —— Vert.x — Eclipse 出品的 polyglot reactive JVM toolkit，用事件总线 + verticle 把 Node.js 那套搬到多语言
-- [[zod]] —— Zod — TypeScript-first schema 验证
 
