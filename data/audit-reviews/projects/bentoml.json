@@ -1,0 +1,100 @@
+{
+  "slug": "bentoml",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "### Service",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "sklearn Iris 案例和上方 Image Service 示例不连贯，读者不知道输入到底是图片还是 4 个数字；需要统一成同一个可跟做例子。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "base-rules 要求历史小故事段；当前缺少该段，应补 2019 开源、Yatai/BentoCloud/API 演进的简短时间线。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Service 代码里的模型 tag、输入类型和 sklearn 保存示例不一致；应改成 `iris_clf:latest`、加载 sklearn 模型并接收 `list[float]`。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "sklearn Iris 案例和上方 Image Service 示例不连贯，读者不知道输入到底是图片还是 4 个数字；需要统一成同一个可跟做例子。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "base-rules 要求历史小故事段；当前缺少该段，应补 2019 开源、Yatai/BentoCloud/API 演进的简短时间线。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "### Service",
+      "fix_hints": [
+        "Service 代码里的模型 tag、输入类型和 sklearn 保存示例不一致；应改成 `iris_clf:latest`、加载 sklearn 模型并接收 `list[float]`。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "### Service — 用类型注解描述 API",
+      "## 实践案例",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 193,
+    "reasons": []
+  }
+}

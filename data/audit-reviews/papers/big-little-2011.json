@@ -1,0 +1,99 @@
+{
+  "slug": "big-little-2011",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例多为事实列表，缺少可跟着理解的步骤；建议加一个简化调度伪代码并逐项解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "线程迁移不应写成硬件保存寄存器并刷脏缓存；应区分 OS 上下文切换与 CCI-400 硬件缓存一致性。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "需要给出更像工程判断的调度例子，说明何时留在小核、何时搬到大核。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例多为事实列表，缺少可跟着理解的步骤；建议加一个简化调度伪代码并逐项解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "线程迁移不应写成硬件保存寄存器并刷脏缓存；应区分 OS 上下文切换与 CCI-400 硬件缓存一致性。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "需要给出更像工程判断的调度例子，说明何时留在小核、何时搬到大核。"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 173,
+    "reasons": []
+  }
+}

@@ -23,13 +23,13 @@ export const auth = betterAuth({
 });
 ```
 
-这一段后，服务端立刻有 `/api/auth/sign-in/email`、`/api/auth/sign-up/email`、`/api/auth/passkey/register` 等十几个 endpoint；前端 `authClient.passkey.signIn()` 这种方法**自动**出现在 IDE 自动补全里——你没写任何类型定义。这就是 better-auth 主打的"plugin 一装，类型自己长出来"。
+这一段后，服务端立刻有 `/api/auth/sign-in/email`、`/api/auth/sign-up/email`、`/api/auth/passkey/register` 等十几个 endpoint；前端再接上 `passkeyClient()` 后，`authClient.passkey.signIn()` 这种方法会出现在 IDE 自动补全里——你没写任何类型定义。这就是 better-auth 主打的"plugin 一装，类型自己长出来"。
 
 ## 为什么重要
 
 不理解 better-auth 的 plugin 注册表 + adapter 抽象，下面几件事都没法解释：
 
-- 为什么 2024 年起一堆 TS 项目从 Auth.js / Clerk 迁过来——Auth.js 的扩展点在 v5 还没稳定，Clerk 用户量过 10k MAU 单价贵到离谱
+- 为什么不少 TS 项目会拿它和 Auth.js / Clerk 对比——Auth.js 偏 Provider/Adapter，Clerk 偏托管 SaaS，better-auth 则把自托管、插件和类型推导放在同一个包里
 - 为什么 better-auth 能同时跑在 Next.js / SvelteKit / Hono / Bun / Cloudflare Workers 上——它的 `handler(request)` 接收标准 `Request`，谁都能转给它
 - 为什么"装一个 plugin 就多一组方法"在 TS 里能做到——靠的是 declaration merging（声明合并）这种少见但工业级的语言机制
 - 为什么相同代码切换 ORM（Drizzle ↔ Prisma ↔ Kysely）只需改一行——adapter 把 CRUD 抽成统一接口
@@ -71,7 +71,10 @@ export const auth = betterAuth({
 ### 案例 2：加 GitHub OAuth + Passkey
 
 ```ts
+import { betterAuth } from "better-auth";
+import { createAuthClient } from "better-auth/client";
 import { passkey } from "@better-auth/passkey";
+import { passkeyClient } from "@better-auth/passkey/client";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db, { provider: "pg" }),
@@ -84,12 +87,16 @@ export const auth = betterAuth({
   },
   plugins: [passkey()],
 });
+
+export const authClient = createAuthClient({
+  plugins: [passkeyClient()],
+});
 ```
 
 **逐部分解释**：
 
 - `socialProviders.github` 自动产生 `/sign-in/social?provider=github` 与回调；PKCE / state / nonce 都不需要你管
-- `plugins: [passkey()]` 让前端 `authClient.passkey.register()` 与 `authClient.passkey.signIn()` 直接出现在自动补全里
+- 服务端 `plugins: [passkey()]` 负责 Passkey 注册/登录 endpoint；客户端 `passkeyClient()` 负责把 `authClient.passkey.register()` 与 `authClient.passkey.signIn()` 挂到类型里
 - 因为 passkey 在独立子包 `@better-auth/passkey`，不用 Passkey 的项目体积不增加
 
 ### 案例 3：多租户组织

@@ -38,7 +38,7 @@ big.LITTLE 由三件事组成：
    - **CPU Migration**：核对核切——每个 big 核配一个 LITTLE 核，软件二选一。
    - **Global Task Scheduling（GTS）**：OS 看到所有核，自由调度。最灵活，对调度器要求最高。
 
-迁移本身的机制也值得拆开看：当 OS 决定把一个线程从 A15 搬到 A7，硬件会**保存当前核的寄存器状态**，通过 CCI-400 把缓存中"脏的部分"刷给目标核所在簇，然后在 A7 上恢复寄存器，从断点继续执行。整个过程对应用程序透明——它只感觉到"突然变慢了一点"，但不会出错。
+迁移本身的机制也值得拆开看：当 OS 决定把一个线程从 A15 搬到 A7，内核先像普通上下文切换一样保存寄存器和程序计数器，再把任务放到目标核的运行队列；CCI-400 负责让两簇缓存保持一致，目标核能直接看到正确的数据，而不是靠应用自己刷缓存。整个过程对应用程序透明——它只感觉到"突然变慢了一点"，但不会出错。
 
 ## 实践案例
 
@@ -60,6 +60,19 @@ big.LITTLE 由三件事组成：
 - Android 内核里的 EAS（Energy Aware Scheduler）就是 GTS 思路的直接产物
 - 调度器读取每个核的"能效曲线"（性能 vs 功耗），决定线程放哪
 - 今天**几乎所有 Android 旗舰机的 Linux 内核都跑 EAS**——big.LITTLE 的影响远超 ARM 自己的产品线
+
+可以把它想成一段很粗的调度伪代码：
+
+```python
+if task.util_avg > little_core.capacity:
+    target = big_core
+elif task.is_background:
+    target = little_core
+else:
+    target = current_core
+```
+
+逐部分解释：`util_avg` 是任务最近有多忙，`little_core.capacity` 是小核能扛的上限，`is_background` 是"不急"的提示。真正内核比这复杂得多，但核心判断就是"忙到小核扛不住才搬去大核"。
 
 ### 案例 4：苹果 M1 的 4 + 4 配置
 

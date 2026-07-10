@@ -26,16 +26,16 @@ Besu 由 Linux Foundation 旗下的 Hyperledger 项目维护，Apache 2.0 协议
 
 不了解 Besu 这种"非 Geth 客户端"，下面这些事都没法解释：
 
-- 为什么以太坊圈反复强调 **"客户端多样性"**——Geth 占了 80%，万一它有 bug 整个网络都瘫，所以 Besu / Nethermind / Erigon 这些少数派就是活的备份
+- 为什么以太坊圈反复强调 **"客户端多样性"**——执行层客户端如果过度集中，某个实现的 bug 就可能拖垮整张网，所以 Besu / Nethermind / Erigon 这些非 Geth 客户端就是活的备份
 - 为什么银行 / 券商搭联盟链时常选 Besu 而不是 Geth——Java 是企业里最熟的语言，运维链路、JVM 监控工具、合规审计都能直接复用
-- 为什么 IBFT 2.0 / QBFT 这类**毫秒级出块、无 PoW**的共识能跑起来——Besu 在原生支持，私链不需要拼算力
+- 为什么 IBFT 2.0 / QBFT 这类**秒级出块、确定性最终性、无 PoW**的共识能跑起来——Besu 原生支持，私链不需要拼算力
 - 为什么写 Solidity 的人会先在自己机器里跑一条 Besu 私链——比连测试网快、不要测试币、想重置就 `rm -rf data/`
 
 ## 核心要点
 
 Besu 的设计可以拆成 **3 个核心点**：
 
-1. **可插拔共识**：以太坊主网用 PoS（合并后），但 Besu 同时实现了 Ethash、Clique、IBFT 2.0、QBFT 四种共识算法。**类比**：像同一个汽车底盘，可以装柴油、汽油或电动引擎。换共识只改 `genesis.json` 一个文件，节点代码不动。
+1. **可插拔共识**：以太坊主网合并后走 PoS 执行层流程；私链里，Besu 主要用 QBFT / IBFT 2.0 这类 PoA 共识，开发网还可用 Ethash。**类比**：像同一个汽车底盘，可以装柴油、汽油或电动引擎。换共识通常只改 `genesis.json` 一个文件，节点代码不动。
 
 2. **EVM 兼容到字节码级别**：Besu 跑的字节码和 Geth 完全一样。**类比**：就像两个不同厂家的 PDF 阅读器打开同一份 PDF。这是"多客户端能在同一条链上共存"的前提——你的合约不会因为换了客户端就变行为。
 
@@ -108,7 +108,7 @@ System.out.println("最新块号: " + bn.getBlockNumber());
 
 **不适用**：
 
-- 想要极致同步速度的主网归档节点——Erigon（Go 写的）几天能同步完，Besu 要一周
+- 想要极致同步速度的主网归档节点——Erigon 这类存储优化客户端通常更适合；Besu 更看重企业集成和 Java 运维生态
 - 学习以太坊协议本身——Geth 文档更全、社区更大、教程更多
 - 资源极受限场景（树莓派 / VPS 1 GB）——JVM 至少要 4 GB 起步
 - 需要最新协议升级第一时间支持的场景——Geth 通常先实现，Besu 滞后几周
@@ -118,8 +118,8 @@ System.out.println("最新块号: " + bn.getBlockNumber());
 - **2017 年**：金融科技公司 PegaSys（ConsenSys 子公司）启动 Pantheon 项目，目标是企业级以太坊客户端
 - **2019 年**：Pantheon 捐给 Linux Foundation Hyperledger，更名 Hyperledger Besu——成为 Hyperledger 第一个公链兼容客户端（之前 Hyperledger Fabric / Sawtooth 都是私链专用）
 - **2022 年**：以太坊 The Merge，Besu 顺利切换到 PoS Engine API，成为合并后客户端多样性的关键拼图
-- **2024 年**：JPMorgan 的 Onyx 平台、Société Générale 的 SG-Forge 等机构都用 Besu 跑生产链——Apache 2.0 让企业放心
-- 当前 Star 量级：约 1.6k；不大，但用户都是机构，社区稳
+- **2024 年以后**：Besu 继续作为企业以太坊和权限链场景的重要客户端维护；Apache 2.0 让机构可以放心做二次开发
+- 当前社区规模不如 Geth / Nethermind 那样显眼，但用户画像更偏机构和联盟链，维护节奏相对稳定
 
 ## 学到什么
 
