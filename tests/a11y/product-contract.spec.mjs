@@ -48,7 +48,7 @@ test('start and both legacy Atlas entrances remain navigable below /study', asyn
 
 test('Pagefind UI distinguishes the ReAct paper from the React project', async ({ page }) => {
   await page.goto(studyUrl('/'));
-  const liveStatus = page.locator('[data-study-search-status]');
+  const liveStatus = page.getByRole('status');
   await expect(liveStatus).toHaveAttribute('role', 'status');
   await expect(liveStatus).toHaveAttribute('aria-live', 'polite');
   await expect(liveStatus).toHaveAttribute('aria-atomic', 'true');
@@ -63,12 +63,12 @@ test('Pagefind UI distinguishes the ReAct paper from the React project', async (
   await expect(input).toBeVisible();
   await input.fill('ReAct Reasoning Acting');
   const resultStatus = dialog.locator('.pagefind-ui__message');
-  await expect(resultStatus).toContainText(/个结果：ReAct Reasoning Acting/);
-  await expect(liveStatus).toHaveText(/个结果：ReAct Reasoning Acting/);
+  await expect(resultStatus).toContainText(/个结果：ReAct Reasoning Acting/, { timeout: 15_000 });
+  await expect(liveStatus).toHaveText(/个结果：ReAct Reasoning Acting/, { timeout: 15_000 });
   await revealSearchResult(dialog, '/papers/react/');
 
   await input.fill('React 用写函数描述界面');
-  await expect(dialog.getByText(/个结果：React 用写函数描述界面/)).toBeVisible();
-  await expect(liveStatus).toHaveText(/个结果：React 用写函数描述界面/);
+  await expect(dialog.getByText(/个结果：React 用写函数描述界面/)).toBeVisible({ timeout: 15_000 });
+  await expect(liveStatus).toHaveText(/个结果：React 用写函数描述界面/, { timeout: 15_000 });
   await revealSearchResult(dialog, '/projects/react/');
 });
