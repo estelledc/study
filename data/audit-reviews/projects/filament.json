@@ -1,7 +1,4 @@
 {
-  "slug": "filament",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "Android / cmgen / matc 三案例概念正确可跟做；beginFrame 返回 false 跳帧写得很实用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 192,
-    "reasons": []
-  },
-  "lines": 192,
-  "l1_pass": true,
-  "refinement": {
-    "action": "pass",
-    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "dns",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -81,30 +78,5 @@
         "Facebook 2021 案例应写成 BGP 撤回 DNS 路由 → 权威不可达 → 短 TTL 缓存迅速过期，而不是「低 TTL 把权威压垮」的 thundering-herd 叙事。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 169,
-    "reasons": []
-  },
-  "lines": 169,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "reason": "纠正 Facebook 2021 宕机归因：改为 BGP 撤回权威 DNS 前缀 + 短 TTL 放大，而非「低 TTL 压垮权威」。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
