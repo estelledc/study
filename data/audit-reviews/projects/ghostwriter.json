@@ -1,0 +1,60 @@
+{
+  "slug": "ghostwriter",
+  "area": "projects",
+  "note_path": "src/content/docs/projects/ghostwriter.md",
+  "research_stub_path": "/tmp/audit-round-50/projects-ghostwriter/research-stub.json",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5.0,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源仍写 wereturtle 仓库，正文已说明迁入 KDE 并重定向，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5.0,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "aggregate": {
+    "average": 4.89,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4.0。",
+    "reject_count": 0,
+    "initial_quality_gate": {
+      "pass": true,
+      "lines": 179
+    },
+    "final_quality_gate": {
+      "pass": true,
+      "lines": 179
+    }
+  }
+}
