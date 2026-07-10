@@ -53,13 +53,14 @@ Client.EVM2AnyMessage memory message = Client.EVM2AnyMessage({
     feeToken: address(linkToken)
 });
 uint256 fee = router.getFee(destChainSelector, message);
+IERC20(linkToken).approve(routerAddr, fee);  // 用 LINK 付 CCIP 手续费
 router.ccipSend{value: 0}(destChainSelector, message);
 ```
 
 **逐部分解释**：
 - `destChainSelector` 是目标链的 64 位 ID（Optimism Sepolia 是 5224473277236331295 这种大数）
 - `feeToken` 选 LINK 或目标链原生币付手续费
-- `getFee` 必须先调——不调直接发会因为 gas 不够 revert
+- `getFee` 必须先调；用 LINK 付费时还要先 `approve`，否则 Router 拉不到手续费会 revert
 
 ### 案例 2：跨链转 USDC
 
@@ -90,7 +91,7 @@ contract MyReceiver is CCIPReceiver {
 }
 ```
 
-继承 `CCIPReceiver`，只重写 `_ccipReceive`。Router 会替你做 sender 校验。
+继承 `CCIPReceiver`，只重写 `_ccipReceive`。基类会先确认调用者是本链 CCIP Router；你的业务代码还要检查 `msg.sourceChainSelector` 和 `msg.sender`，避免不认识的源链或合约发消息进来。
 
 ## 踩过的坑
 
