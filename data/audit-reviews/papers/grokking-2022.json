@@ -1,7 +1,4 @@
 {
-  "slug": "grokking-2022",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -81,36 +78,5 @@
         "曲线表与 wd 对照表概念可跟；早停/超参敏感/勿推广到生产与 double descent 区分清楚；适用边界有量化成本提醒。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic 指出作者 Burns→Burda，以及「wd=0 永远不 grok」与原文 §3.1 无 wd 延迟泛化实验冲突；已改名并收窄 weight decay 表述。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true
+  ]
 }

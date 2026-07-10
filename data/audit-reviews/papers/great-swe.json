@@ -1,7 +1,4 @@
 {
-  "slug": "great-swe",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.34,
   "reject_count": 0,
@@ -81,38 +78,5 @@
         "自评 checklist / STAR 题 / retro 用法可跟做；KPI 量化与跨行业照搬的踩坑具体；适用边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.34,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic 指出「8 大类别按频次」与 Productivity 垫底不符 ICSE 2015 的 internal/external 模型，且 Microsoft 为明文样本非推断；已按 Fig.1 四块改写并收紧 SPACE/Aristotle 表述。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 159,
-  "l1_pass": true
+  ]
 }

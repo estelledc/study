@@ -1,7 +1,4 @@
 {
-  "slug": "lance",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -81,33 +78,5 @@
         "案例 1 的 versions/time-travel API 可跟；案例 2/3 缺最小可跑示例（如 create_index / 列投影）。踩坑（写慢、小文件 compact、ANN 调参）具体；『零运维』略满，S3+索引仍有运维面。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base/engineer 指出案例 2/3 缺代码与逐步解释，并弱化 star/零运维；补全 RAG 索引与列投影示例，压缩 Parquet 对照表以过行数门禁。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 165,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 165,
-  "l1_pass": true
+  ]
 }

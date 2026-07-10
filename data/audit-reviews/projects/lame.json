@@ -1,7 +1,4 @@
 {
-  "slug": "lame",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "lame CLI、ABR/VBR、管道与 libmp3lame init/encode/flush 流程概念正确；-f/CBR 听感/VBR tag/专利时间线踩坑可操作；适用边界含 Opus/FLAC 对照。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.89,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true
+  ]
 }
