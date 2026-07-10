@@ -73,7 +73,7 @@ preflight
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "[sync-and-merge] legacy batch merge is disabled"
   echo "  [DRY] use npm run round:merge-one with assignment provenance per commit"
-  echo "  [DRY] then run bash scripts/finalize-round.sh"
+  echo "  [DRY] then run npm run round:final-gate"
   exit 0
 fi
 
