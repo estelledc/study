@@ -1,7 +1,4 @@
 {
-  "slug": "kepler-architecture-2012",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -101,33 +98,5 @@
         "案例 1 AlexNet 未导入，宜标成示意或补最小占位；踩坑（GK104/K80 双 GPU/DP 开销/CUDA 12）具体有用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正 Fermi 双调度器、Kepler 用 __shfl_xor；弱化 Graphs/MPS 谱系；案例补逐部分解释。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 163,
-  "l1_pass": true
+  ]
 }

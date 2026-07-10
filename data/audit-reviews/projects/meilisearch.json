@@ -1,4 +1,48 @@
 {
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工业机房 vs 即装即用对比清楚；Spotify 类比略飘，但不挡理解；Docker/curl 案例可跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "协议写「现在 Server Side Public License」错误：Community Edition 仍是 MIT；Enterprise Edition 才是 BUSL，从未切到 SSPL。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Ranking rules 写成「5 层且 typo 第一」与官方默认不符：默认顺序是 words → typo → proximity → attribute → sort → exactness（至少 6 条）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "托管版应称 Meilisearch Cloud，不是 MeiliCloud。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "curl/Docker 概念可跟做；大版本 dump/restore、内存倍率、聚合弱项踩坑实用；适用 <10GB / 不适用日志百 GB 边界清楚。"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -44,25 +88,5 @@
         "curl/Docker 概念可跟做；大版本 dump/restore、内存倍率、聚合弱项踩坑实用；适用 <10GB / 不适用日志百 GB 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正协议（MIT CE / BUSL EE，非 SSPL）、ranking rules 默认顺序与层数、Meilisearch Cloud 命名；顺带收紧开篇类比。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 历史"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

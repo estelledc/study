@@ -1,7 +1,4 @@
 {
-  "slug": "mediapipe",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.89,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "Gesture/Pose/Face 示例贴近官方 Tasks API；时间戳递增、FlowLimiter、Edge TPU 模型格式等踩坑可操作；适用/不适用边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.89,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 198,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 198,
-  "l1_pass": true
+  ]
 }

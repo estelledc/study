@@ -1,4 +1,40 @@
 {
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「只读开头几个字就猜出整句」更像 LL 自顶向下；LR 应改成自底向上拼装、靠前瞻决定何时归约的类比，否则零基础会把 L/R 方向记反。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Information and Control 1965、LR(k)=LR(1) 语言能力、DeRemer SLR/LALR、yacc LALR(1) 脉络正确；开篇类比略偏 LL，但核心要点未歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "算术表达式表 + yacc 片段 + dangling else 冲突均可跟做；R≠从右扫、LALR≠纯 LR(1) 踩坑精准；适用/不适用边界清楚。"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -42,22 +78,5 @@
         "算术表达式表 + yacc 片段 + dangling else 冲突均可跟做；R≠从右扫、LALR≠纯 LR(1) 踩坑精准；适用/不适用边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "重写开篇类比：从偏 LL 的「读开头猜结构」改为自底向上拼装 + 前瞻决定归约，并点明 R 不是从右扫描。",
-    "sections_modified": [
-      "## 是什么"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

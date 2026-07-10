@@ -1,7 +1,4 @@
 {
-  "slug": "mcp-ts-sdk",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -101,32 +98,5 @@
         "案例可补一两句字段级解释，降低复制粘贴后的迷茫。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "区分 MCP 与 Messages API tool_use；案例补逐部分解释；历史改历史小故事并弱化 v1.0 frozen。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 175,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 175,
-  "l1_pass": true
+  ]
 }

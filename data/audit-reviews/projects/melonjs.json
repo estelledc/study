@@ -1,4 +1,40 @@
 {
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "空白画布/游乐场/工具箱类比贴合；Application/Stage/Tiled 三层有桥接；三案例均有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GitHub 来源与 Application/Tiled/WebGL↔Canvas 定位与官方 README 一致；星数/版本细节会漂，量级与方向仍对。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Hello World / Tiled Platformer / Renderable 可跟做；video.init 过时、BitmapText、update 返回值、薄碰撞片踩坑具体；与 Phaser/Pixi/Godot 边界清楚。"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -42,19 +78,5 @@
         "Hello World / Tiled Platformer / Renderable 可跟做；video.init 过时、BitmapText、update 返回值、薄碰撞片踩坑具体；与 Phaser/Pixi/Godot 边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }
