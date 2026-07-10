@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import test from 'node:test';
 
 import {
@@ -30,6 +31,17 @@ test('ignores missing, malformed, and all-zero event SHAs', () => {
 test('uses an explicit freshness date or a UTC date fallback', () => {
   assert.equal(freshnessAsOf({ STUDY_FRESHNESS_AS_OF: '2026-07-10' }), '2026-07-10');
   assert.equal(freshnessAsOf({}, new Date('2027-02-03T23:59:00Z')), '2027-02-03');
+});
+
+test('initializes runner-temp paths at step runtime in both workflows', () => {
+  for (const workflow of ['.github/workflows/ci.yml', '.github/workflows/deploy.yml']) {
+    const source = fs.readFileSync(workflow, 'utf8');
+    assert.doesNotMatch(source, /^\s+STUDY_BUILD_LOG:\s*\$\{\{\s*runner\.temp\s*\}\}/mu);
+    assert.match(
+      source,
+      /echo "STUDY_BUILD_LOG=\$RUNNER_TEMP\/study-build\.log" >> "\$GITHUB_ENV"/u,
+    );
+  }
 });
 
 test('runs the portable CI contract in a stable order', () => {
