@@ -8,7 +8,7 @@ title: 'faster-whisper — Whisper 的 4× 加速重写版'
 
 ## 是什么
 
-faster-whisper 是 SYSTRAN 维护的 **Whisper 推理加速库**：把 OpenAI 的 PyTorch 实现换成 **CTranslate2**（一个 C++/CUDA 的 Transformer 推理引擎）重写，**精度不变、速度 4 倍、显存减半**。日常类比：原版 Whisper 像一台手动挡轿车——能开但费油；faster-whisper 是同一辆车换了 ECU 重新调校，油耗腰斩、加速更猛，**但驾驶感觉完全一样**。
+faster-whisper 是 SYSTRAN 维护的 **Whisper 推理加速库**：把 OpenAI 的 PyTorch 实现换成 **CTranslate2**（一个 C++/CUDA 的 Transformer 推理引擎）重写，**速度约 4 倍、显存约减半**；fp16 与原版基本对齐，INT8 会有轻微精度损失但多数场景可接受。日常类比：原版 Whisper 像一台手动挡轿车——能开但费油；faster-whisper 是同一辆车换了 ECU 重新调校，油耗腰斩、加速更猛，**驾驶手感仍接近原车**。
 
 最小用法：
 
@@ -32,7 +32,7 @@ for seg in segments:
 
 不理解 faster-whisper，下面这些事会卡住你：
 
-- 为什么 2023 年之后**几乎所有线上字幕工具、AI 笔记 app 的 ASR 后端**都是 faster-whisper 而不是原版——同一张 RTX 3090，原版跑 large-v3 要 10 GB 还慢，faster-whisper INT8 只要 3 GB 还快 4 倍
+- 为什么 2023 年之后**大量常见开源字幕工具、AI 笔记 app 的 ASR 后端**改用 faster-whisper 而不是原版——同一张 RTX 3090，原版跑 large-v3 要 10 GB 还慢，faster-whisper INT8 只要约 3 GB 还快约 4 倍
 - 为什么本地跑 large 模型从「奢侈」变成「日常」——8 GB 消费级显卡也能流畅推理
 - 为什么 [[whisperx]]、subtitle-generator、HuggingFace ASR space 都把 faster-whisper 当默认引擎——它是 Whisper 生态的**事实推理层**
 - 理解它你才知道：**模型权重不变，光换推理后端，能拿到 4 倍加速**——这是工程优化的极限案例
@@ -161,3 +161,7 @@ print(" ".join(s.text for s in segments))
 - [[whisperx]] —— 在 faster-whisper 之上加说话人分离和词级强制对齐
 - [[transformers]] —— HuggingFace 模型仓库，faster-whisper 通过 `ct2-transformers-converter` 从这里转模型
 - [[pytorch]] —— 原版 Whisper 训练框架，faster-whisper 推理时已不依赖
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
