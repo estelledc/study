@@ -8,7 +8,7 @@ title: OpenLayers — 全功能 GIS 前端
 
 ## 是什么
 
-OpenLayers（**OL**）是一套 2006 年由 MetaCarta 开源、BSD-2-Clause 协议的 JavaScript 地图库，专门给"专业 GIS"前端用。日常类比：如果 Leaflet 是家用相机（拍清楚就行），OL 是单反——你能换镜头（Canvas / WebGL / SVG 三种渲染层）、调底片（任意地图投影）、读各种胶卷规格（WMS / WMTS / WFS / KML / GeoJSON / MVT 一堆 OGC 协议）。
+OpenLayers（**OL**）是一套 2006 年由 MetaCarta 开源、BSD-2-Clause 协议的 JavaScript 地图库，专门给"专业 GIS"前端用。日常类比：如果 Leaflet 是家用相机（拍清楚就行），OL 是单反——你能换镜头（现代主路径是 **Canvas**，矢量可切 **WebGL**；SVG 是 OL2 老能力，不是现行并列三渲染器）、调底片（任意地图投影）、读各种胶卷规格（WMS / WMTS / WFS / KML / GeoJSON / MVT 一堆 OGC 协议）。
 
 最小例子：
 
@@ -82,7 +82,11 @@ map.addLayer(new TileLayer({
 }))
 ```
 
-WMS（Web Map Service）是 OGC 标准协议，GeoServer / MapServer / ArcGIS Server 全都支持。Leaflet 也能接，但 OL 把 WMS / WMTS / WFS 三个协议做成了一等公民，参数提示更全。
+**逐部分解释**：
+
+- `TileWMS` 是 Source：负责按当前视野向服务器要栅格瓦片。
+- `LAYERS: 'topp:states'` 告诉 GeoServer 画哪一层；`TILED: true` 让它按瓦片切，而不是整图一张。
+- WMS（Web Map Service）是 OGC 标准；OL 把 WMS / WMTS / WFS 做成一等公民，比 Leaflet 插件拼装更省事。
 
 ### 案例 3：WebGL 矢量渲染器（10.x 实验）
 
@@ -95,7 +99,11 @@ map.addLayer(new WebGLVectorLayer({
 }))
 ```
 
-百万级点用 Canvas 会卡，换成 WebGL 渲染器同一套 Source 不变。代价：style 写法是受限的"flat style"（不是普通 `ol/style/Style`），复杂样式不一定支持。
+**逐部分解释**：
+
+- Source 仍是原来的 `vectorSource`，只换 Layer 壳到 WebGL。
+- `style` 必须用受限的 flat style 键名，不是普通 `ol/style/Style` 对象。
+- 百万级点用 Canvas 会卡；复杂符号学若 flat style 表达不了，就还得退回 Canvas。
 
 ## 踩过的坑
 
@@ -150,3 +158,9 @@ map.addLayer(new WebGLVectorLayer({
 - [[leaflet]] —— 同领域轻量竞品，38KB 核心，OL 的反面教材式参照
 - [[d3]] —— d3-geo 提供任意投影计算，OL 提供交互容器，复杂可视化常组合用
 - [[echarts]] —— 国内地图可视化竞品，自带 GL 后端但 GIS 专业度不及 OL
+- [[cesium]] —— 3D 地球/倾斜视角路线，OL 仍扎根在 2D GIS 协议与投影
+- [[maplibre-gl]] —— 矢量瓦片 + Style Spec 路线，OL 更偏 OGC 与任意投影
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
