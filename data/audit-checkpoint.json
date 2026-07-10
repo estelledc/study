@@ -1,37 +1,29 @@
 {
-  "round_n": 5,
+  "round_n": 6,
   "total": 1975,
-  "audited": 60,
+  "audited": 72,
   "failed": 0,
-  "pending": 1915,
+  "pending": 1903,
   "by_status": {
     "rewritten": 4,
-    "refined": 32,
-    "passed": 24,
-    "pending": 1915
+    "refined": 35,
+    "passed": 33,
+    "pending": 1903
   },
   "last_round": {
-    "round": 5,
+    "round": 6,
     "results": 12,
-    "passed": 4,
-    "refined": 7,
-    "rewritten": 1,
+    "passed": 9,
+    "refined": 3,
+    "rewritten": 0,
     "failed": 0,
-    "at": "2026-07-10T17:24:46.964Z"
+    "at": "2026-07-10T17:34:25.291Z"
   },
-  "next_action": "start-audit-round-6",
-  "updated_at": "2026-07-10T17:24:46.964Z",
+  "next_action": "start-audit-round-7",
+  "updated_at": "2026-07-10T17:34:25.291Z",
   "handoff": {
     "branch": "cursor/audit-all-notes-4844",
     "pr": "https://github.com/estelledc/study/pull/15",
-    "resume": [
-      "cat data/audit-checkpoint.json",
-      "node scripts/pick-audit-batch.mjs --count 12 --claim round-N",
-      "node scripts/prepare-audit-slug.mjs --slug SLUG --area AREA --out /tmp/audit-round-N/AREA-SLUG",
-      "run 3-reviewer audit + optional refine/rewrite + quality-gate",
-      "node scripts/finalize-audit-round.mjs --round N --results /tmp/audit-round-N/results.jsonl",
-      "git commit && git push && update PR"
-    ],
     "note": "Do NOT rebuild audit-pool with --force; preserve terminal statuses."
   }
 }

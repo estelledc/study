@@ -78,19 +78,23 @@ await dbs.createDocument("DB_ID", "notes", ID.unique(),
 在控制台建一个 Node.js Function，绑事件 `buckets.images.files.*.create`：
 
 ```js
-import { Client, Storage } from "node-appwrite";
+import { Client, ID, InputFile, Storage } from "node-appwrite";
 import sharp from "sharp";
 export default async ({ req, res, log }) => {
+  const client = new Client()
+    .setEndpoint(process.env.APPWRITE_ENDPOINT)
+    .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
+    .setKey(process.env.APPWRITE_API_KEY);
   const { bucketId, $id: fileId } = req.body;
-  const storage = new Storage(new Client().setEndpoint(...).setKey(process.env.API_KEY));
-  const buf = await storage.getFileDownload(bucketId, fileId);
-  const thumb = await sharp(buf).resize(200, 200).toBuffer();
-  await storage.createFile("thumbs", fileId, new File([thumb], "t.jpg"));
+  const storage = new Storage(client);
+  const source = Buffer.from(await storage.getFileDownload(bucketId, fileId));
+  const thumb = await sharp(source).resize(200, 200).jpeg().toBuffer();
+  await storage.createFile("thumbs", ID.unique(), InputFile.fromBuffer(thumb, `${fileId}.jpg`));
   return res.json({ ok: true });
 };
 ```
 
-这个 Function 在容器隔离环境里跑，事件触发时 Appwrite 直接把 `req.body` 注入；写回 storage 时用同一个 client。整个流程**不需要单独的消息队列**——Appwrite 内部用 worker 把事件分发给 Functions Executor。
+这个 Function 在容器隔离环境里跑，事件触发时 Appwrite 直接把 `req.body` 注入；server SDK 用 API key 读原图，再用 `InputFile.fromBuffer` 把缩略图写回 storage。整个流程**不需要单独的消息队列**——Appwrite 内部用 worker 把事件分发给 Functions Executor。
 
 ## 踩过的坑
 

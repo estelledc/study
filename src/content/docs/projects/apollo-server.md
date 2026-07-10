@@ -137,7 +137,7 @@ const server = new ApolloServer({ schema: buildSubgraphSchema({ typeDefs, resolv
 - **2016 年**：Apollo（公司原名 Meteor）推出 Apollo Server 把 GraphQL 在 Node 落地
 - **2018 年**：Apollo Federation v1 让多 service schema 合并；2021 v2 改进
 - **2022 年**：v4 大重构，所有 `apollo-server-*` 子包合并到 `@apollo/server`
-- **2024 年**：v5 精简启动流程 + 性能优化
+- **2025 年前后**：v5 继续收敛运行时边界，重点放在新版 Node.js、Express 5 等宿主环境兼容
 
 ## 学到什么
 
