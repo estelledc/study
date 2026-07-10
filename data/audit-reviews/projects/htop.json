@@ -1,0 +1,114 @@
+{
+  "slug": "htop",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "top 报表 vs htop 电子表类比清楚；F-key / 树视图 / 过滤案例可直接跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "跨平台在 v2.0（约 2016）已有，不宜写成 2020 v3.0 才正式支持多平台；平台层是社区接管后继续打磨，不是从零发明。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "章节标题宜用「历史小故事（可跳过）」以对齐模板。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "macOS sudo/codesign、tmux 截 F-key、过滤藏子树、CPU% 单核/全核歧义都是实战硬坑；监控边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5.0,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "top 报表 vs htop 电子表类比清楚；F-key / 树视图 / 过滤案例可直接跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "跨平台在 v2.0（约 2016）已有，不宜写成 2020 v3.0 才正式支持多平台；平台层是社区接管后继续打磨，不是从零发明。",
+        "章节标题宜用「历史小故事（可跳过）」以对齐模板。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5.0,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "macOS sudo/codesign、tmux 截 F-key、过滤藏子树、CPU% 单核/全核歧义都是实战硬坑；监控边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic：纠正 v2.0 已跨平台；改写平台抽象表述；标题改为历史小故事。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
