@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的布尔向量转移可再拆成「选谓词→列向量→问 PVS→看可达」四步编号，零基础跟读会更稳。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史写 CEGAR 发明于 2000 与 slug clarke-cegar-2003（JACM）并存可接受；若提年份宜标明 CAV 2000 / JACM 2003。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「百级谓词」可再点明是工业工具经验量级而非原文实验规模，非必须。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的布尔向量转移可再拆成「选谓词→列向量→问 PVS→看可达」四步编号，零基础跟读会更稳。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史写 CEGAR 发明于 2000 与 slug clarke-cegar-2003（JACM）并存可接受；若提年份宜标明 CAV 2000 / JACM 2003。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "「百级谓词」可再点明是工业工具经验量级而非原文实验规模，非必须。"
+      ]
+    }
+  ]
+}
