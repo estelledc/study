@@ -88,9 +88,25 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 `logic` 里直接用 `l.svcCtx.Cache.Get(key)`。这样换 Redis 实现或加 MySQL 时，只改 ServiceContext 一处，所有 logic 都跟着拿到。
 
-### 案例 3：一份 .proto 同时生成 RPC + gateway
+### 案例 3：一份 .proto 生成 RPC，再由 HTTP 调它
 
-写一份 protobuf 接口，`goctl rpc` 生成 RPC server，再用 `goctl api` + RPC client 调用，就拿到了一个对外是 HTTP / 对内是 RPC 的双层架构。等价于手写 `grpc` + `grpc-gateway` + 自己拼一遍中间件，但代码少一半。生成的代码默认接 [[etcd]] 做服务发现。
+先写最小 `greet.proto`：
+
+```protobuf
+syntax = "proto3";
+package greet;
+message Request { string name = 1; }
+message Response { string message = 1; }
+service Greet { rpc Ping(Request) returns (Response); }
+```
+
+**逐步做**：
+
+1. `goctl rpc protoc greet.proto --go_out=. --go-grpc_out=. --zrpc_out=.` 生成 RPC server 骨架与客户端。
+2. 在生成的 `internal/logic` 里实现 `Ping`，返回 `"hello " + in.Name`。
+3. HTTP 侧仍用案例 1 的 `.api`；在 `ServiceContext` 里挂上 RPC client，logic 里调用 `l.svcCtx.GreetRpc.Ping(...)`。
+
+这样对外是 HTTP、对内是 RPC。生成代码默认可接 [[etcd]] 做服务发现；比手写 `grpc` + gateway + 中间件少很多样板，但要遵守“只改 logic”。
 
 ## 踩过的坑
 

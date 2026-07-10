@@ -1,0 +1,133 @@
+{
+  "slug": "effiskill",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.33,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工具书类比可用；案例 1/2 缺「逐部分解释」，案例 3 建立在错误的闭环设定上，零基础会学歪流程。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文 Stage II 明确是 execution-free、推理时不依赖 runtime feedback；笔记把「Closed-loop Verification / 失败回灌反例 skill」写成核心第三步，歪曲原意。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "[[react]] 链到 React UI 组件库，应改为 [[react-agent]]（ReAct）；延伸阅读 github.com/ 空链应换成 arXiv/论文页。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "3.7~12.5pp 数字大致对应 OPT 成功率相对最强基线，宜标明是 optimization success rate。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "before/after 代码可读，但踩坑与适用场景按「必须跑 benchmark 闭环」写，和论文 execution-free 设定冲突。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "评测主线是 EffiBench-X（竞赛风格慢/快程序对），适用段写成 Web 后端/数据处理过宽，应收窄并点出无在线执行反馈的部署场景。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工具书类比可用；案例 1/2 缺「逐部分解释」，案例 3 建立在错误的闭环设定上，零基础会学歪流程。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "论文 Stage II 明确是 execution-free、推理时不依赖 runtime feedback；笔记把「Closed-loop Verification / 失败回灌反例 skill」写成核心第三步，歪曲原意。",
+        "[[react]] 链到 React UI 组件库，应改为 [[react-agent]]（ReAct）；延伸阅读 github.com/ 空链应换成 arXiv/论文页。",
+        "3.7~12.5pp 数字大致对应 OPT 成功率相对最强基线，宜标明是 optimization success rate。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "before/after 代码可读，但踩坑与适用场景按「必须跑 benchmark 闭环」写，和论文 execution-free 设定冲突。",
+        "评测主线是 EffiBench-X（竞赛风格慢/快程序对），适用段写成 Web 后端/数据处理过宽，应收窄并点出无在线执行反馈的部署场景。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正 Closed-loop 歪曲为 execution-free；案例补逐部分解释；[[react]]→[[react-agent]]；收窄适用场景并标明 OPT 成功率。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true
+}

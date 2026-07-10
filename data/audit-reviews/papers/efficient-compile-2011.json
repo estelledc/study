@@ -1,0 +1,107 @@
+{
+  "slug": "efficient-compile-2011",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "服务员流水线/快递入仓类比贴合；pipeline breaker、I-cache 首次出现可再补半句中文桥接，但不挡跟读。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Neumann PVLDB/VLDB 2011 与 DOI 正确；正文写 TPC-CH，原文评测主线是 TPC-H 类 OLAP 查询，教学可接受但宜写成 TPC-H。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "SQL/伪代码/分支布局案例可跟做；编译时间 vs 执行时间、热路径 LLVM 踩坑具体；极短查询边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "服务员流水线/快递入仓类比贴合；pipeline breaker、I-cache 首次出现可再补半句中文桥接，但不挡跟读。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Neumann PVLDB/VLDB 2011 与 DOI 正确；正文写 TPC-CH，原文评测主线是 TPC-H 类 OLAP 查询，教学可接受但宜写成 TPC-H。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "SQL/伪代码/分支布局案例可跟做；编译时间 vs 执行时间、热路径 LLVM 踩坑具体；极短查询边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 193,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 193,
+  "l1_pass": true
+}

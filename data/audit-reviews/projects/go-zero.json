@@ -1,0 +1,109 @@
+{
+  "slug": "go-zero",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "安全气囊/4S 流水线类比很好；案例 1/2 有代码，但案例 3 只有口头描述，缺逐步命令与生成结果解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub zeromicro/go-zero 正确；2018 内部、2020 开源与公开 README/作者叙述一致；「三大框架」属社区概括，可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "greet.api / ServiceContext 可跟做；端口撞车、生成覆盖、限流阈值踩坑具体；案例 3 缺可复制的 goctl rpc 命令链。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "安全气囊/4S 流水线类比很好；案例 1/2 有代码，但案例 3 只有口头描述，缺逐步命令与生成结果解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 GitHub zeromicro/go-zero 正确；2018 内部、2020 开源与公开 README/作者叙述一致；「三大框架」属社区概括，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "greet.api / ServiceContext 可跟做；端口撞车、生成覆盖、限流阈值踩坑具体；案例 3 缺可复制的 goctl rpc 命令链。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "补全案例 3：给出 .proto 最小样例、goctl rpc 命令链，以及 HTTP logic 调 RPC 的逐步说明。",
+    "sections_modified": [
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 181,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 181,
+  "l1_pass": true
+}
