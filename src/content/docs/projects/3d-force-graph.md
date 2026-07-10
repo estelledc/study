@@ -120,7 +120,7 @@ ForceGraph3D()
 
 3. **WebGL 上下文一个 tab 最多 16 个**：同时挂 16+ 个图实例会"context lost"，老的图变白屏。解决方法是用单实例 + 切数据，或销毁不可见的实例。
 
-4. **VR 模式要求 HTTPS**：`3d-force-graph-vr` 走 WebXR，本地 `http://localhost` 也不行，得跑 mkcert / ngrok 出来 https URL 才能进 VR。
+4. **VR 模式要求安全来源**：`3d-force-graph-vr` 走 WebXR，浏览器要求 secure context。`localhost` 通常可以开发调试；手机或头显访问开发机 IP 时，普通 HTTP 不行，得用 mkcert / ngrok 提供 HTTPS。
 
 5. **数据要"引用同一对象"才认得**：`links` 里的 `source` 和 `target` 第一次传是字符串 ID，库会**就地把它替换成节点对象**。下一次更新数据如果你又传字符串，库以为是新节点，整个图重排。建议用 `graphData(data)` 后操作返回的 `data.nodes`。
 
@@ -137,6 +137,13 @@ ForceGraph3D()
 - 节点 > 5000 的大图——上 sigma.js 或 cosmograph（GPU 加速）
 - 严格图论分析（最短路 / 社区检测） → 用 cytoscape.js
 - 移动端低端机——WebGL 跑物理模拟挺重，老安卓会卡
+
+## 历史小故事（可跳过）
+
+- **2011 年前后**：d3-force 把力导向布局做成前端常用工具，网络图开始能直接在浏览器里跑。
+- **2013-2015 年**：three.js 和 WebGL 生态成熟，普通网页也能承载 3D 场景、相机和材质。
+- **2016 年后**：Vasco Asturiano 把 force-graph 系列拆成 2D、3D、VR、AR 和 React 绑定，统一成相近的链式 API。
+- **今天**：3d-force-graph 常被用来做知识图谱、依赖关系和安全拓扑 demo，重点不是严肃分析，而是让复杂关系先“看得见”。
 
 ## 学到什么
 
@@ -159,3 +166,7 @@ ForceGraph3D()
 - [[d3]] —— 力导向布局来自 d3-force，搬到 3D 后是 d3-force-3d
 - [[graphology]] —— 纯数据结构层的图库，可与 3d-force-graph 配合（前者算，后者画）
 - [[cytoscape]] —— 同领域偏分析的替代方案
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

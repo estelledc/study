@@ -1,0 +1,57 @@
+{
+  "slug": "a3c-2016",
+  "area": "papers",
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例和类比能跟读，但开头“半小时”与后文“半天”不一致，会让新手误读训练尺度。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "“第一次证明 RL 不必上 GPU”过于绝对，应限定为深度 RL / Atari 这类神经网络训练场景。",
+        "开头“半小时”与论文数字和后文表格不一致，应改为“几个小时到半天”一类更稳妥表述。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联里有“[[ssa]] —— 完全无关，仅作占位”，这是明显占位内容，需替换成真实相关的 PPO/A2C 血缘说明或删除。",
+        "适用/不适用中关于环境模拟速度的边界可更清楚地区分“单机多核 A3C”和“大规模分布式 actor”。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.67,
+    "reject_count": 0,
+    "needs_refine_count": 2,
+    "action": "refine",
+    "reason": "存在 needs-refine，且平均分 < 4；没有 reviewer reject。"
+  }
+}

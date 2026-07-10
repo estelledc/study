@@ -63,19 +63,20 @@ model, optimizer, data_loader = privacy_engine.make_private(
     max_grad_norm=1.0,      # C，裁剪阈值
 )
 
-# 训练循环和以前一样
-for batch in data_loader:
-    loss = criterion(model(batch), labels)
+# 训练循环和以前一样，只是每个 batch 要拆出输入和标签
+for inputs, labels in data_loader:
+    optimizer.zero_grad()
+    outputs = model(inputs)
+    loss = criterion(outputs, labels)
     loss.backward()
     optimizer.step()         # 内部自动做裁剪+加噪
-    optimizer.zero_grad()
 
 # 训练完查看花了多少隐私预算
 epsilon = privacy_engine.get_epsilon(delta=1e-5)
 print(f"训练完成，epsilon = {epsilon:.2f}")
 ```
 
-Opacus 在 `optimizer.step()` 内部自动完成"逐样本裁剪 → 求和 → 加噪 → 更新"四步。`noise_multiplier` 对应论文的 sigma，`max_grad_norm` 对应裁剪阈值 C。训练完后用 `get_epsilon` 查看实际消耗的隐私预算。
+Opacus 在 `optimizer.step()` 内部自动完成"逐样本裁剪 → 求和 → 加噪 → 更新"四步。`inputs, labels` 来自普通 PyTorch dataloader，先清空上一轮梯度再反传；`noise_multiplier` 对应论文的 sigma，`max_grad_norm` 对应裁剪阈值 C。训练完后用 `get_epsilon` 查看实际消耗的隐私预算。
 
 ### 案例 2：裁剪阈值 C 怎么选
 

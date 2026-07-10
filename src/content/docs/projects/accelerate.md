@@ -22,6 +22,7 @@ for batch in dataloader:
     loss = model(batch).loss
     accelerator.backward(loss)   # 替代 loss.backward()
     optimizer.step()
+    optimizer.zero_grad()
 ```
 
 只多了 3 处改动。然后 `accelerate config` 选一次后端，`accelerate launch train.py` 启动——同一份代码在单卡 / 8 卡 DDP / FSDP / DeepSpeed ZeRO-3 / TPU 全跑得起来。
@@ -73,6 +74,7 @@ for batch in dataloader:                # batch 已经在正确 device 上
     loss = model(batch).loss
     accelerator.backward(loss)          # 自动梯度同步
     optimizer.step()
+    optimizer.zero_grad()
 ```
 
 然后 `accelerate launch train.py`。**没有 `init_process_group`、没有 `LOCAL_RANK`、没有 `DistributedSampler`**。
@@ -96,7 +98,9 @@ mixed_precision: bf16
 
 ```python
 from accelerate import init_empty_weights, load_checkpoint_and_dispatch
+from transformers import AutoConfig, AutoModelForCausalLM
 
+config = AutoConfig.from_pretrained("llama-70b/")
 with init_empty_weights():               # 只造结构，不分配权重
     model = AutoModelForCausalLM.from_config(config)
 
