@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Excel vs 搬箱子类比极强；abilities 四件套有桥接；案例 1 解释充分，案例 2/3 略短但仍可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Diem/Aptos/Sui 分流与 arxiv 2004.05106 正确；Coin 同时 has key+store 是教学合并，未歪曲资源语义主线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "withdraw/deposit 教学模型可跟；abilities/Aptos-Sui 方言/Prover 边界具体；适用场景可再补量化但已够用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Excel vs 搬箱子类比极强；abilities 四件套有桥接；案例 1 解释充分，案例 2/3 略短但仍可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Diem/Aptos/Sui 分流与 arxiv 2004.05106 正确；Coin 同时 has key+store 是教学合并，未歪曲资源语义主线"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "withdraw/deposit 教学模型可跟；abilities/Aptos-Sui 方言/Prover 边界具体；适用场景可再补量化但已够用"
+      ]
+    }
+  ]
+}

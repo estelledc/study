@@ -29,7 +29,7 @@ animate("#box", { x: [0, 300] }, { duration: 1 })
 - 为什么 [[framer-motion]] 50KB 而 motion 只有 3KB，但很多 API 长得几乎一样
 - 为什么写 [[astro]] / [[vue]] 静态站时不想拖 React 进来，却又想要现代动画库
 - 为什么 [[anime]] 这种老牌 vanilla JS 动画库在 v3 (2019) 后基本停滞
-- 为什么写动画时主线程 60fps 算下来"还是卡"——RAF 抢不到 CPU 时间片，WAAPI 不抢
+- 为什么写动画时主线程 60fps 算下来"还是卡"——`requestAnimationFrame`（简称 RAF，每帧回调一次的老写法）抢不到 CPU 时间片，WAAPI 不抢
 
 ## 核心要点
 
@@ -39,7 +39,7 @@ Motion One 的设计可以拆成 **三个关键判断**：
 
 2. **spring 也要走 native**：spring 是连续物理曲线、WAAPI 不原生支持，但可以**预采样 30 个点**翻译成 `linear(0, 0.1, ..., 1)` 字符串塞进 WAAPI。类比：直播信号没法直接走电报，那就把它录成 30 张快照按顺序发。
 
-3. **同代码三套打包**：`motion`（vanilla 3KB / 18KB） / `motion/react`（hooks） / `motion/vue`（composables）共享 `motion-dom` 内核，按需 tree-shake。类比：同一道菜，堂食 / 外卖 / 自取三个窗口共用一个厨房。
+3. **同代码三套打包**：`motion`（vanilla 3KB / 18KB） / `motion/react`（hooks） / `motion/vue`（composables）共享 `motion-dom` 内核，按需 tree-shake（打包时丢掉没用到的代码）。类比：同一道菜，堂食 / 外卖 / 自取三个窗口共用一个厨房。
 
 三件事合起来叫"WAAPI-first 动画哲学"。
 
@@ -68,27 +68,33 @@ animate("#box", { x: [0, 300] },
   { type: "spring", stiffness: 200, damping: 8, repeat: Infinity })
 ```
 
-DevTools → Animations 面板能看到 `transform` 的 easing 变成了 `linear(0, 0.012, 0.045, ..., 1)` 这种 30 段字符串——这就是 Motion 把物理 spring 预采样成 WAAPI 能理解的形式。它的精彩在于：spring 也跑在合成线程，主线程依然空闲。
+**逐部分解释**：
+
+- `type: "spring"` 告诉 Motion：别用普通缓动曲线，改用弹簧物理
+- `stiffness` / `damping` 是弹簧硬度和阻尼；Motion 先算出整条曲线，再预采样成约 30 个点
+- DevTools → Animations 能看到 easing 变成 `linear(0, 0.012, ..., 1)`——这是 WAAPI 能吃的离散形式，动画仍跑在合成线程
 
 ### 案例 3：scroll-linked + inView
 
 ```js
 import { animate, scroll, inView } from "motion"
-// 滚动驱动 y 位移：滚动条从顶到底，hero 同步从 0 平移到 -200px
 scroll(animate("#hero", { y: [0, -200] }))
-// 卡片入屏淡入上浮
 inView("#card", el => animate(el, { opacity: [0, 1], y: [40, 0] }))
 ```
 
-`scroll()` 把动画 progress 绑到滚动 progress（依赖 ScrollTimeline，新浏览器原生支持）；`inView()` 包装 IntersectionObserver——两行替代手写 30 行 boilerplate，是做营销页 landing page parallax / 卡片入场的常见诉求。
+**逐部分解释**：
+
+- `scroll(...)` 把动画进度绑到页面滚动进度（新浏览器用原生 ScrollTimeline）
+- `inView("#card", ...)` 包装 IntersectionObserver：元素进入视口才开启动画
+- 两行替代手写几十行监听代码，常见于营销页视差和卡片入场
 
 ## 踩过的坑
 
 1. **mini build 静默吃掉 spring**：`import { animate } from "motion/mini"` 砍掉物理引擎换 3KB，写 `type: "spring"` 不报错也不工作——文档没在 import 时给警告，新手一脸懵。
 
-2. **解析解 spring 改不了**：Motion 的 spring 是线性二阶 ODE 解析解，加不了非线性阻尼或多力叠加。要做"游戏感"物理（弹跳 + 摩擦组合）只能换 [[react-spring]] 的 imperative API。
+2. **解析解 spring 改不了**：Motion 的 spring 是线性二阶微分方程（ODE）的闭式解，加不了非线性阻尼或多力叠加。要做"游戏感"物理（弹跳 + 摩擦组合）只能换 [[react-spring]] 的 imperative API。
 
-3. **underdamped 振荡假 spring**：`damping < 5` 时 spring 高频振荡，30 点预采样不够细，肉眼可见阶梯感——与 [[react-spring]] 真正每帧 RK4 积分相比有视觉差。低阻尼场景慎用。
+3. **欠阻尼振荡假 spring**：`damping < 5`（欠阻尼 / underdamped）时 spring 高频振荡，30 点预采样不够细，肉眼可见阶梯感——与 [[react-spring]] 真正每帧数值积分相比有视觉差。低阻尼场景慎用。
 
 4. **老 Safari 退回 RAF**：WAAPI `linear()` easing 字符串需要 Chrome 115+ / Safari 16+。老浏览器走 RAF fallback 路径，意味着"主线程 0 cost"承诺只在 modern browser 兑现。
 
