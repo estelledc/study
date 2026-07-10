@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "精装修改毛坯房类比极强，开篇直觉好"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点一次抛出 musl/procd/DTS/netifd/hardware offloading，缺逐词白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 步骤可跟；UCI 与 opkg 例子具体"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 openwrt/openwrt 正确；WRT54G/GPL、LEDE 2018 合并等史实合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「一百多块钱家用路由器跑 Docker」易过度承诺：典型 16MB flash 设备跑不动容器，宜限定到存储/内存足够的机型或外挂存储"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "stars/commit/设备数属快照级描述，可保留约数"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "feeds/menuconfig/UCI/opkg 命令可跟做；首次编译耗时有预期"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "闪存炸、博通驱动、feeds 分离、sysupgrade 丢包等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用表与 buildroot/yocto/nuttx 边界量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "精装修改毛坯房类比极强，开篇直觉好",
+        "核心要点一次抛出 musl/procd/DTS/netifd/hardware offloading，缺逐词白话桥接",
+        "案例 1–3 步骤可跟；UCI 与 opkg 例子具体"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 openwrt/openwrt 正确；WRT54G/GPL、LEDE 2018 合并等史实合理",
+        "「一百多块钱家用路由器跑 Docker」易过度承诺：典型 16MB flash 设备跑不动容器，宜限定到存储/内存足够的机型或外挂存储",
+        "stars/commit/设备数属快照级描述，可保留约数"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "feeds/menuconfig/UCI/opkg 命令可跟做；首次编译耗时有预期",
+        "闪存炸、博通驱动、feeds 分离、sysupgrade 丢包等坑具体可操作",
+        "适用表与 buildroot/yocto/nuttx 边界量化清楚"
+      ]
+    }
+  ]
+}
