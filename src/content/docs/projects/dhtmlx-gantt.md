@@ -152,3 +152,7 @@ gantt.setWorkTime({ date: new Date(2026, 9, 1), hours: false })  // 国庆放假
 - [[antv-g2]] —— 通用图表语法库，凸显甘特图为何要单独做特化产品
 - [[chartist]] —— SVG + 零依赖路线，进一步衬托 DIV + smart rendering 的取舍
 - [[d3]] —— SVG 数据驱动祖师，DHTMLX 反向选了 DIV 路径
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
