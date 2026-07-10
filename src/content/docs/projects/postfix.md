@@ -21,10 +21,10 @@ Postfix 是 1998 年 IBM 研究员 Wietse Venema 写的一个**邮件服务器**
 
 不理解 Postfix，下面这些事都没法解释：
 
-- 为什么 1990s 几乎所有 Unix 服务器都跑 sendmail，2010s 主流 Linux 发行版默认 MTA 全切到 Postfix
+- 为什么 1990s 几乎所有 Unix 服务器都跑 sendmail，而 Debian/Ubuntu 等不少主流发行版后来默认 MTA 切到 Postfix（仍有发行版默认 Exim 等）
 - 为什么"邮件服务器"这种 80 年代的老技术现在还在每天跑——只要有 SMTP，就有 MTA
 - 为什么 Postfix 和 nginx、Redis 一样被列为"工业级开源基础设施"——它们都是把一个老问题用更安全/更快的架构重写一遍
-- 为什么 Gmail / Yahoo Mail 早期后台跑的是 Postfix，而不是自研
+- 为什么 Google 等大型站点曾大规模使用并维护 Postfix（Wietse 后来也在 Google 继续维护），而不是从零自研 MTA
 
 ## 核心要点
 
@@ -149,3 +149,7 @@ support@example.com  alice@example.com bob@example.com carol@example.com
 - [[kafka]] —— 队列设计思路对照：Postfix 用磁盘目录队列，Kafka 用 append-only log
 - [[envoy]] —— 都把"多进程隔离 + 配置即数据"作为核心架构选择
 - [[haproxy]] —— 同为 C 写的高并发网络组件，单进程事件驱动对照 Postfix 多进程拆分
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

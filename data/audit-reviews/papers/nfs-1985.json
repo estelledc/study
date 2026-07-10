@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "工位文档/C 盘类比把「远程像本地」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "file_handle / RPC / XDR / VFS / 幂等有白话桥接；inode 对零基础仍偏陡但可接受"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有解释但缺「逐部分解释」标签；案例 1 mount 步骤可再拆细"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Sandberg et al. USENIX Summer 1985 / RFC 1094 / v3·v4 时间线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「所有操作执行多次和执行一次结果一样」过满：NFSv2 的 CREATE/REMOVE 等并非严格幂等，论文与实现都承认重试语义有例外；应改为「读写按 offset 覆盖等核心路径按幂等设计，部分元数据操作仍有重试坑」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比同期的 AFS」可保留对比，但 AFS 1983 起研、目标更强一致；不宜暗示 NFS 只是「更简单的同期替代」而抹掉目标差异"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mount / crash-retry / close-to-open 教学路径概念正确，可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：无锁+NLM、uid 自报、UDP 碎片、ESTALE"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用局域网弱一致 vs WAN>50ms / 强锁 / 海量小文件 / 只追加 边界清楚且有量化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "工位文档/C 盘类比把「远程像本地」讲透",
+        "file_handle / RPC / XDR / VFS / 幂等有白话桥接；inode 对零基础仍偏陡但可接受",
+        "案例 1–3 有解释但缺「逐部分解释」标签；案例 1 mount 步骤可再拆细"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 Sandberg et al. USENIX Summer 1985 / RFC 1094 / v3·v4 时间线正确",
+        "「所有操作执行多次和执行一次结果一样」过满：NFSv2 的 CREATE/REMOVE 等并非严格幂等，论文与实现都承认重试语义有例外；应改为「读写按 offset 覆盖等核心路径按幂等设计，部分元数据操作仍有重试坑」",
+        "「比同期的 AFS」可保留对比，但 AFS 1983 起研、目标更强一致；不宜暗示 NFS 只是「更简单的同期替代」而抹掉目标差异"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "mount / crash-retry / close-to-open 教学路径概念正确，可跟读",
+        "踩坑具体：无锁+NLM、uid 自报、UDP 碎片、ESTALE",
+        "适用局域网弱一致 vs WAN>50ms / 强锁 / 海量小文件 / 只追加 边界清楚且有量化"
+      ]
+    }
+  ]
+}
