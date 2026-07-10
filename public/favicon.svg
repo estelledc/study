@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Jason's Study</title>
+  <rect width="64" height="64" rx="15" fill="#c4452d"/>
+  <text
+    x="32"
+    y="44"
+    fill="#fffdf8"
+    font-family="ui-sans-serif, system-ui, sans-serif"
+    font-size="38"
+    font-weight="750"
+    text-anchor="middle"
+  >S</text>
+</svg>

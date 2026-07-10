@@ -1,0 +1,385 @@
+/*
+ * Product UI layer for Jason's Study.
+ * Scoped to .study-* components so Starlight's default reading layout remains intact.
+ */
+
+:root {
+  --study-bg: #faf6f0;
+  --study-surface: #fffdf8;
+  --study-surface-2: #f7efe6;
+  --study-ink: #1a1a1a;
+  --study-muted: #6f6a61;
+  --study-accent: #c4452d;
+  --study-accent-soft: rgba(196, 69, 45, 0.08);
+  --study-border: rgba(26, 26, 26, 0.1);
+  --study-shadow: 0 18px 48px rgba(26, 26, 26, 0.08);
+  --study-radius-lg: 24px;
+  --study-radius-md: 16px;
+  --study-radius-sm: 999px;
+}
+
+:root[data-theme='dark'] {
+  --study-bg: #171412;
+  --study-surface: #211d1a;
+  --study-surface-2: #2a231f;
+  --study-ink: #f4ece3;
+  --study-muted: #b8ada3;
+  --study-accent: #ff8a65;
+  --study-accent-soft: rgba(255, 138, 101, 0.12);
+  --study-border: rgba(244, 236, 227, 0.14);
+  --study-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+.study-hero-panel,
+.study-section,
+.study-callout,
+.study-meta-panel {
+  color: var(--study-ink);
+}
+
+.study-hero-panel {
+  position: relative;
+  overflow: hidden;
+  margin: 1.25rem 0 2rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-lg);
+  background:
+    radial-gradient(circle at 0% 0%, var(--study-accent-soft), transparent 32rem),
+    linear-gradient(135deg, var(--study-surface), var(--study-surface-2));
+  box-shadow: var(--study-shadow);
+}
+
+.study-kicker,
+.study-chip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-sm);
+  background: var(--study-accent-soft);
+  color: var(--study-accent);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  padding: 0.42rem 0.68rem;
+  overflow-wrap: anywhere;
+}
+
+.study-hero-panel h1 {
+  max-width: 12ch;
+  margin: 1rem 0;
+  color: var(--study-ink);
+  font-size: clamp(2.3rem, 7vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.study-hero-panel h2 {
+  max-width: 16ch;
+  margin: 1rem 0;
+  color: var(--study-ink);
+  font-size: clamp(1.9rem, 5vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.study-hero-panel p {
+  max-width: 68ch;
+  color: var(--study-muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.75;
+}
+
+.study-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.study-button,
+.study-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.6rem;
+  border-radius: var(--study-radius-sm);
+  padding: 0.72rem 1rem;
+  font-weight: 720;
+  text-align: center;
+  text-decoration: none !important;
+  overflow-wrap: anywhere;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.study-button {
+  border: 1px solid var(--study-accent);
+  background: var(--study-accent);
+  color: white !important;
+}
+
+.study-button-secondary {
+  border: 1px solid var(--study-border);
+  background: var(--study-surface);
+  color: var(--study-ink) !important;
+}
+
+.study-button:hover,
+.study-button-secondary:hover,
+.study-path-card:hover,
+.study-topic-card:hover,
+.study-note-card:hover {
+  transform: translateY(-1px);
+}
+
+.study-button:focus-visible,
+.study-button-secondary:focus-visible,
+.study-path-card:focus-visible,
+.study-topic-card:focus-visible,
+.study-note-card:focus-visible,
+.study-details summary:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--study-accent), transparent 55%);
+  outline-offset: 3px;
+}
+
+.study-section {
+  margin: 2.5rem 0;
+}
+
+.study-section > h2 {
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.study-section > p,
+.study-muted {
+  color: var(--study-muted);
+}
+
+.study-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  max-width: 100%;
+  margin: 1rem 0 1.5rem;
+}
+
+.study-card-grid > * {
+  min-width: 0;
+}
+
+.study-path-card,
+.study-topic-card,
+.study-note-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-md);
+  background: var(--study-surface);
+  color: var(--study-ink) !important;
+  padding: 1.05rem;
+  text-decoration: none !important;
+  overflow-wrap: anywhere;
+  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.04);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.study-path-card:hover,
+.study-topic-card:hover,
+.study-note-card:hover {
+  border-color: color-mix(in srgb, var(--study-accent), var(--study-border) 55%);
+  box-shadow: var(--study-shadow);
+}
+
+.study-path-card h3,
+.study-topic-card h3,
+.study-note-card h3 {
+  margin: 0;
+  color: var(--study-ink);
+  font-size: 1.12rem;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+}
+
+.study-path-card p,
+.study-topic-card p,
+.study-note-card p {
+  margin: 0;
+  color: var(--study-muted);
+  line-height: 1.65;
+}
+
+.study-path-card footer,
+.study-topic-card footer,
+.study-note-card footer {
+  margin-top: auto;
+  border-top: 1px solid var(--study-border);
+  color: var(--study-muted);
+  font-size: 0.9rem;
+  padding-top: 0.75rem;
+}
+
+.study-note-card {
+  gap: 0.62rem;
+}
+
+.study-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  color: var(--study-muted);
+  font-size: 0.78rem;
+}
+
+.study-meta-row span {
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-sm);
+  padding: 0.22rem 0.5rem;
+}
+
+.study-why {
+  border-left: 3px solid var(--study-accent);
+  background: var(--study-accent-soft);
+  border-radius: 0 0.75rem 0.75rem 0;
+  color: var(--study-ink);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-top: 0.25rem;
+  padding: 0.65rem 0.75rem;
+}
+
+.study-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  gap: 0.75rem;
+  max-width: 100%;
+  margin: 1.25rem 0;
+}
+
+.study-stats-strip > div {
+  min-width: 0;
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-md);
+  background: var(--study-surface);
+  padding: 0.9rem 1rem;
+}
+
+.study-stats-strip strong {
+  display: block;
+  color: var(--study-ink);
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.study-stats-strip span {
+  color: var(--study-muted);
+  font-size: 0.86rem;
+}
+
+.study-callout,
+.study-meta-panel {
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-md);
+  background: var(--study-accent-soft);
+  padding: 1rem;
+}
+
+.study-callout strong {
+  display: block;
+  color: var(--study-ink);
+}
+
+.study-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.study-meta-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
+  gap: 0.75rem;
+  max-width: 100%;
+  margin: 1rem 0;
+}
+
+.study-meta-panel div {
+  min-width: 0;
+  border-radius: 0.9rem;
+  background: var(--study-surface);
+  padding: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.study-meta-panel strong {
+  display: block;
+  color: var(--study-muted);
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.study-meta-panel span {
+  color: var(--study-ink);
+  font-weight: 650;
+}
+
+.study-details {
+  max-width: 100%;
+  border: 1px solid var(--study-border);
+  border-radius: var(--study-radius-md);
+  background: var(--study-surface);
+  margin: 1rem 0;
+  padding: 0.95rem 1rem;
+  overflow-wrap: anywhere;
+}
+
+.study-details summary {
+  cursor: pointer;
+  color: var(--study-ink);
+  font-weight: 720;
+}
+
+.study-details[open] summary {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 48rem) {
+  .study-hero-panel {
+    border-radius: 18px;
+    padding: 1.25rem;
+  }
+
+  .study-hero-panel h1 {
+    max-width: 12ch;
+    font-size: clamp(2.15rem, 12vw, 3.5rem);
+  }
+
+  .study-hero-panel h2 {
+    max-width: 14ch;
+    font-size: clamp(1.75rem, 9vw, 2.75rem);
+  }
+
+  .study-cta-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .study-button,
+  .study-button-secondary {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .study-button,
+  .study-button-secondary,
+  .study-path-card,
+  .study-topic-card,
+  .study-note-card {
+    transition: none;
+  }
+}

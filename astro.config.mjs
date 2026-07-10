@@ -52,7 +52,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Jason's Study",
-      description: '通过研究 GitHub 开源项目持续学习——AI 时代产品工程师培养路线',
+      description: '给零基础工程师的开源项目与论文学习地图',
       defaultLocale: 'root',
       locales: {
         root: { label: '简体中文', lang: 'zh-CN' },
@@ -70,22 +70,35 @@ export default defineConfig({
       // + 顶部 Pagefind 搜索（Cmd-K）+ 笔记尾部 [[backlink]]。
       sidebar: [
         { label: '主页', link: '/' },
-        { label: '立场宣言', link: '/about/' },
-        { label: '培养计划', link: '/career-plan/' },
+        { label: '从这里开始', link: '/start/' },
         {
-          label: '项目研究',
+          label: '学习路径',
           items: [
-            { label: '项目消化方法论', link: '/method/' },
-            { label: '项目推荐队列', link: '/queue/' },
-            { label: '项目全景索引', link: '/projects-atlas/' },
+            { label: '主题总览', link: '/topics/' },
+            { label: '前端与全栈', link: '/topics/frontend/' },
+            { label: 'AI Agent 与 LLM 系统', link: '/topics/ai-agent/' },
+            { label: '数据库', link: '/topics/database/' },
+            { label: '分布式系统', link: '/topics/distributed-systems/' },
+            { label: '编程语言与类型系统', link: '/topics/pl-type-systems/' },
+            { label: '基础设施', link: '/topics/infrastructure/' },
           ],
         },
         {
-          label: '论文研究',
+          label: '精选与索引',
           items: [
-            { label: '论文消化方法论', link: '/papers-method/' },
-            { label: '论文推荐队列', link: '/papers-queue/' },
+            { label: '项目精选队列', link: '/queue/' },
+            { label: '论文精选队列', link: '/papers-queue/' },
+            { label: '项目全景索引', link: '/projects-atlas/' },
             { label: '论文全景索引', link: '/papers-atlas/' },
+          ],
+        },
+        {
+          label: '方法论',
+          items: [
+            { label: '怎么消化一个 GitHub 项目', link: '/method/' },
+            { label: '怎么消化一篇论文', link: '/papers-method/' },
+            { label: '立场宣言', link: '/about/' },
+            { label: '培养计划', link: '/career-plan/' },
           ],
         },
       ],
@@ -93,6 +106,7 @@ export default defineConfig({
         './src/styles/jx/tokens.css',
         './src/styles/jx/base.css',
         './src/styles/jx/components.css',
+        './src/styles/jx/product-ui.css',
         './src/styles/custom.css',
         './src/styles/opendesign-theme.css',
       ],
