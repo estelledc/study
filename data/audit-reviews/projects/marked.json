@@ -1,7 +1,4 @@
 {
-  "slug": "marked",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -91,32 +88,5 @@
         "踩坑与适用边界总体可用；CommonMark ~80% 可保留为粗量级说法。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 180,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "audit_notes": "renderer.link 改为现行 token 签名；区分 tokenizer first-match 与 renderer 后注册覆盖。",
-  "lines": 180,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "markdown-it",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -96,34 +93,5 @@
         "适用段把 Hexo/docsify 列为 markdown-it 事实标准不准确；bundle 对比可保留但生态归属要改准。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "audit_notes": "纠正 Hexo/docsify 默认引擎归属；适用边界与 VitePress/VuePress 对齐；案例 2/3 补逐部分解释。",
-  "lines": 162,
-  "l1_pass": true
+  ]
 }

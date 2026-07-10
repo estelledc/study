@@ -1,7 +1,4 @@
 {
-  "slug": "kahn-natural-semantics",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
@@ -96,31 +93,5 @@
         "推理规则与 Coq Inductive 可跟做；死循环/可变 map/异常扩展踩坑具体；适用边界与 small-step/指称语义对照清楚。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 核心要点",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 178,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4.45,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "audit_notes": "弱化「没有变量」与「找不到树=不终止」；big-step/small-step 改为观察粒度表述。",
-  "lines": 178,
-  "l1_pass": true
+  ]
 }

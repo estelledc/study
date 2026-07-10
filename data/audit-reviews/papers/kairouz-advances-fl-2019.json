@@ -1,7 +1,4 @@
 {
-  "slug": "kairouz-advances-fl-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -101,33 +98,5 @@
         "综述笔记也应给最小 FedAvg 伪代码或通信轮次示意，否则工程师难以把开放问题落到实现骨架。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 为什么重要",
-      "## 前置知识",
-      "## 实践案例",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 173,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "audit_notes": "修正 non-IID 英文展开；弱化「首次五分类」；补 FedAvg 伪代码与逐部分解释。",
-  "lines": 173,
-  "l1_pass": true
+  ]
 }
