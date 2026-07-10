@@ -10,7 +10,7 @@ title: Lance — AI 数据列存格式
 
 Lance 是一种**面向 AI 工作负载的列式磁盘文件格式**，自我定位是 "Parquet for AI"。日常类比：Parquet 像图书馆按书架顺序借书，从第一本读到最后一本很快；Lance 像图书馆给每本书都贴了索书号，你想跳着借哪本就借哪本。
 
-它由 LanceDB 公司主导，用 Rust 写，Apache 2.0 协议，GitHub 约 4.4k stars。一句话：**把列存从"批量扫描"改造成"AI 训练 + 向量检索"友好的随机访问基底**。
+它由 LanceDB 公司主导，用 Rust 写，Apache 2.0 协议。一句话：**把列存从"批量扫描"改造成"AI 训练 + 向量检索"友好的随机访问基底**。
 
 ```python
 import lance
@@ -44,7 +44,7 @@ Lance 的设计可以拆成 **四个关键决策**：
 
 1. **抛弃 row group**：Parquet 把数据切成 row group（默认 128MB），同一 row group 内跨页跳读慢。Lance 不分组，每列一个文件，列内自带细粒度索引页，随机访问 100 倍于 Parquet（官方 benchmark）。
 
-2. **向量是一等公民**：fixed_size_list of float 是原生类型，可以直接在文件里挂 IVF / PQ / HNSW 这类近似最近邻（ANN）索引。读 embedding 列 + 查最近邻是一次 IO。
+2. **向量是一等公民**：固定长度的 float 列表（embedding）是原生类型，可以直接在文件里挂近似最近邻索引（常见如 IVF 分桶、PQ 压缩；具体种类随版本演进）。读 embedding 列 + 查最近邻可以走同一套存储。
 
 3. **多版本与零拷贝**：写新数据不重写旧 fragment，只追加新 fragment + 新 manifest。可以 time-travel 回任何旧版本，也可以只更新某几列（叫 column-level update）。类比 git：每次 commit 是新 fragment，HEAD 是 manifest。
 

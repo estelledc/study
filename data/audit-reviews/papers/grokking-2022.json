@@ -1,0 +1,116 @@
+{
+  "slug": "grokking-2022",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "背书→开窍类比生动；weight decay / 相变有山谷桥接。案例 3 傅里叶电路对零基础偏陡，但有三角恒等式落地，主线仍可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者应为 Power / Burda / Edwards / Babuschkin / Misra（历史段误写 Burns）。原文强调 weight decay 大幅提升数据效率，但 §3.1 著名延迟泛化曲线用的是无 weight decay 的 Adam——『关掉就永远不 grok』过度绝对化，需改成『极有效 / 无正则时常停在记忆解，但非论文唯一设定』。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "曲线表与 wd 对照表概念可跟；早停/超参敏感/勿推广到生产与 double descent 区分清楚；适用边界有量化成本提醒。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "背书→开窍类比生动；weight decay / 相变有山谷桥接。案例 3 傅里叶电路对零基础偏陡，但有三角恒等式落地，主线仍可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "作者应为 Power / Burda / Edwards / Babuschkin / Misra（历史段误写 Burns）。原文强调 weight decay 大幅提升数据效率，但 §3.1 著名延迟泛化曲线用的是无 weight decay 的 Adam——『关掉就永远不 grok』过度绝对化，需改成『极有效 / 无正则时常停在记忆解，但非论文唯一设定』。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "曲线表与 wd 对照表概念可跟；早停/超参敏感/勿推广到生产与 double descent 区分清楚；适用边界有量化成本提醒。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic 指出作者 Burns→Burda，以及「wd=0 永远不 grok」与原文 §3.1 无 wd 延迟泛化实验冲突；已改名并收窄 weight decay 表述。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 158,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

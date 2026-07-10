@@ -1,0 +1,118 @@
+{
+  "slug": "great-swe",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.34,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "老厨师类比贴合；open coding / axial coding 有便利贴桥接。『8 大类别』列表把 Teamwork/SE、Communication/Knowledge 合并，零基础对照案例 3 的 8 项会懵，但不挡主线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "ICSE 2015 作者 Li/Ko/Zhu、59 人、53 属性正确，且样本明确来自 Microsoft（非『推断』）。论文模型是 internal（personal + decision making）与 external（teammates + software product），并非按频次排序的『8 大类别』，也未把 Productivity 单列为垫底类别——需按原文结构改写，避免教学过度归并。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "自评 checklist / STAR 题 / retro 用法可跟做；KPI 量化与跨行业照搬的踩坑具体；适用边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "老厨师类比贴合；open coding / axial coding 有便利贴桥接。『8 大类别』列表把 Teamwork/SE、Communication/Knowledge 合并，零基础对照案例 3 的 8 项会懵，但不挡主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "ICSE 2015 作者 Li/Ko/Zhu、59 人、53 属性正确，且样本明确来自 Microsoft（非『推断』）。论文模型是 internal（personal + decision making）与 external（teammates + software product），并非按频次排序的『8 大类别』，也未把 Productivity 单列为垫底类别——需按原文结构改写，避免教学过度归并。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "自评 checklist / STAR 题 / retro 用法可跟做；KPI 量化与跨行业照搬的踩坑具体；适用边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.34,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic 指出「8 大类别按频次」与 Productivity 垫底不符 ICSE 2015 的 internal/external 模型，且 Microsoft 为明文样本非推断；已按 Fig.1 四块改写并收紧 SPACE/Aristotle 表述。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 159,
+  "l1_pass": true
+}

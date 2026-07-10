@@ -1,0 +1,113 @@
+{
+  "slug": "lance",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "图书馆索书号类比贴合；row group / IVF / PQ / HNSW 首次出现偏密。案例 2、3 只有叙事没有代码与逐步解释，零基础难以跟做。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "LanceDB/Rust/Apache-2.0 与『Parquet for AI』定位合理；『约 4.4k stars』易过时宜弱化；100× 随机访问来自项目 benchmark 宣传，保留『官方 benchmark』限定即可。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 versions/time-travel API 可跟；案例 2/3 缺最小可跑示例（如 create_index / 列投影）。踩坑（写慢、小文件 compact、ANN 调参）具体；『零运维』略满，S3+索引仍有运维面。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "图书馆索书号类比贴合；row group / IVF / PQ / HNSW 首次出现偏密。案例 2、3 只有叙事没有代码与逐步解释，零基础难以跟做。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "LanceDB/Rust/Apache-2.0 与『Parquet for AI』定位合理；『约 4.4k stars』易过时宜弱化；100× 随机访问来自项目 benchmark 宣传，保留『官方 benchmark』限定即可。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 versions/time-travel API 可跟；案例 2/3 缺最小可跑示例（如 create_index / 列投影）。踩坑（写慢、小文件 compact、ANN 调参）具体；『零运维』略满，S3+索引仍有运维面。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "zero-base/engineer 指出案例 2/3 缺代码与逐步解释，并弱化 star/零运维；补全 RAG 索引与列投影示例，压缩 Parquet 对照表以过行数门禁。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 165,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 165,
+  "l1_pass": true
+}
