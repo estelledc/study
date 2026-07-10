@@ -81,19 +81,42 @@ resources:
 
 ## 实践案例
 
-### 案例 1：一张 A100 跑 7 个模型推理
+### 案例 1：一张 A100 跑 7 个小模型推理
 
-某团队有 4 张 A100，要给业务部门部署 20 个小模型 endpoint。整卡分配只够 4 个，排队等不起。
+某团队有 4 张 A100，要给业务部署 20 个小模型 endpoint。整卡只够 4 个。
 
-切法：每张卡切 7 个 `1g.5gb`，4×7 = 28 个 endpoint 容量，每个 endpoint 占一片，显存 5GB 够跑 7B 量化模型。互不抢 SM，p99 延迟稳。
+1. `nvidia-smi -i 0 -mig 1` 开 MIG（GPU 会重置）
+2. `nvidia-smi mig -cgi 19,19,19,19,19,19,19 -C` 切 7×`1g.5gb`（19 是该 profile id）
+3. `nvidia-smi -L` 应看到 7 个 `MIG-...` UUID
+4. 每个 endpoint 设 `CUDA_VISIBLE_DEVICES=MIG-<uuid>`，或在 K8s 里申请 `nvidia.com/mig-1g.5gb: 1`
 
-### 案例 2：CI/CD 流水线
+4×7 = 28 片容量；5GB 够跑 7B 量化权重（KV cache 仍要精算）。硬件隔离，p99 更稳。
 
-PR 单元测试要 GPU 跑 5 分钟。整卡分配等于一次只能跑一个 PR。切成 7 片后 7 个 PR 并发跑，吞吐 ×7。
+### 案例 2：CI/CD 流水线并发
+
+PR 单测要 GPU 跑 5 分钟。整卡一次只能跑一个 PR。
+
+1. 同上切成 7 片
+2. CI runner 每次领一片 UUID，跑完释放
+3. 吞吐近似 ×7（注意：重切 profile 要停进程，别在流水线里动态改切片）
 
 ### 案例 3：在线 + 批量混部
 
-在线推理峰值要 4g.20gb，剩下空间切成 3g.20gb 给夜间批量。两边硬件隔离，批量再忙不会拖慢在线。
+1. 规划合法组合：例如 `4g.20gb`（在线）+ `3g.20gb`（批量）= 7 计算片
+2. 一次切好，两边分别绑不同 UUID
+3. 批量再忙也不会拖慢在线——这是 time-slicing 做不到的
+
+### 案例 4：K8s 里申请一片
+
+装上 [[nvidia-gpu-operator]] 且节点 MIG 配好后：
+
+```yaml
+resources:
+  limits:
+    nvidia.com/mig-1g.5gb: 1
+```
+
+调度器按 extended resource 分配；老的 `nvidia.com/gpu: 1` 在纯 MIG 节点上会一直 Pending。
 
 ## 踩过的坑
 
@@ -138,6 +161,13 @@ PR 单元测试要 GPU 跑 5 分钟。整卡分配等于一次只能跑一个 PR
 
 **关键差别**：time-slicing 是软件层轮转，一个进程跑死循环全员变慢；vGPU 走 hypervisor，开销大但灵活；MIG 是硬件墙，开销最小但 profile 固定。
 
+## 历史小故事（可跳过）
+
+- **2020**：A100 发布，MIG 作为硬件多实例首发——之前云厂商只能整卡卖或软件时间片共享
+- **2021–2022**：AWS / GCP / Azure 陆续上架 1/7、1/2 等 MIG 规格；K8s 用 `nvidia.com/mig-*` 资源名
+- **2022**：H100 继续支持 MIG（profile 与 A100 略有不同，驱动要更新）
+- **配套工具**：GPU Operator 的 MIG Manager、mig-parted、DCGM 实例级指标，把「能切」变成「能运维」
+
 ## 学到什么
 
 1. **隔离的代价是灵活性**：MIG 用固定 profile 换硬件级隔离，不能动态调
@@ -161,3 +191,7 @@ PR 单元测试要 GPU 跑 5 分钟。整卡分配等于一次只能跑一个 PR
 - [[cuda]] —— 计算 API，MIG 对上层透明
 - [[vllm]] —— 推理引擎，多 endpoint 部署常和 MIG 搭配
 - [[accelerate]] —— HuggingFace 设备抽象，可绑定到 MIG 实例
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
