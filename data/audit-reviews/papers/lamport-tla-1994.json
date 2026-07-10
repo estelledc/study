@@ -1,0 +1,126 @@
+{
+  "slug": "lamport-tla-1994",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "连续剧类比很好；但 Fairness / CHOOSE / 精化蕴含对零基础仍陡。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例1–2缺少「逐部分解释」条目化拆解；案例2用省略号，新人难独立复述互斥规范。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "TOPLAS 1994、stuttering、精化=蕴含、TLA+ / TLC / Newcombe CACM 2015 主线正确。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩过的坑里 `\\cup` 像 LaTeX 残留，应改成普通 ∪ 或删掉；「工业落地最成功」属评价性表述，可弱化为「工业采用最广之一」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小 Spec / 互斥 / AWS 反例深度可跟思路；公平性与状态空间爆炸踩坑可操作。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例2 Next 省略对称动作，建议补全 process2 两条或明确「对称省略」并给 Mutex 检查入口命令（tlc）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "连续剧类比很好；但 Fairness / CHOOSE / 精化蕴含对零基础仍陡。",
+        "案例1–2缺少「逐部分解释」条目化拆解；案例2用省略号，新人难独立复述互斥规范。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "TOPLAS 1994、stuttering、精化=蕴含、TLA+ / TLC / Newcombe CACM 2015 主线正确。",
+        "踩过的坑里 `\\cup` 像 LaTeX 残留，应改成普通 ∪ 或删掉；「工业落地最成功」属评价性表述，可弱化为「工业采用最广之一」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "最小 Spec / 互斥 / AWS 反例深度可跟思路；公平性与状态空间爆炸踩坑可操作。",
+        "案例2 Next 省略对称动作，建议补全 process2 两条或明确「对称省略」并给 Mutex 检查入口命令（tlc）。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 196,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 196,
+  "l1_pass": true,
+  "refinement": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  }
+}
