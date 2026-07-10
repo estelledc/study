@@ -1,0 +1,117 @@
+{
+  "action": "refine",
+  "average": 4.34,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮筒小机器类比够用；transporter / sendMail 两动作好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "SMTP/DKIM/OAuth2、cid 内嵌、Ethereal 均有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例逐步可跟：附件 HTML、测试账号、Gmail OAuth2"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/nodemailer/nodemailer、作者 Andris Reinman、2010 开源时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "硬伤/不一致：「是什么」写 MIT，历史写 v6 起 MIT-0——应统一为现行 MIT-0（或写清演进）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「零依赖」大体符合项目自述；stars/周下载为约数，教学可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "createTransport / sendMail / Ethereal / OAuth2 示例可跑可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Gmail 535、云厂商封 25、pool 不退出、中文编码、忘 await 坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用事务邮件 vs 不适用浏览器/打开率追踪/百万级营销，边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "邮筒小机器类比够用；transporter / sendMail 两动作好懂",
+        "SMTP/DKIM/OAuth2、cid 内嵌、Ethereal 均有桥接",
+        "三案例逐步可跟：附件 HTML、测试账号、Gmail OAuth2"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 github.com/nodemailer/nodemailer、作者 Andris Reinman、2010 开源时间线合理",
+        "硬伤/不一致：「是什么」写 MIT，历史写 v6 起 MIT-0——应统一为现行 MIT-0（或写清演进）",
+        "「零依赖」大体符合项目自述；stars/周下载为约数，教学可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "createTransport / sendMail / Ethereal / OAuth2 示例可跑可跟做",
+        "Gmail 535、云厂商封 25、pool 不退出、中文编码、忘 await 坑具体可操作",
+        "适用事务邮件 vs 不适用浏览器/打开率追踪/百万级营销，边界清楚"
+      ]
+    }
+  ],
+  "slug": "nodemailer",
+  "area": "projects",
+  "status": "refined",
+  "lines": 177,
+  "l1_pass": true
+}

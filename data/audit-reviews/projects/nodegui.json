@@ -1,0 +1,117 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "厨师进专业厨房 / 木匠做柜台类比把「JS≠webview」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "QMainWindow、Qt Style Sheet、objectName、垃圾回收保活均有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例都有逐部分解释；global.win 坑对零基础很关键"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/nodegui/nodegui 正确；Qt6 与旧 Qt5/Qode 文档并存的提醒属实"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "原生 Qt widget 而非 Chromium/webview 的定位无歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "frontmatter 分类写 mobile 与正文「不做移动端」略冲，但不构成正文硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小窗口 / FlexLayout+样式 / fs 读文件三例概念正确可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "QT_LINK_MIRROR、文档版本混淆、GC 掉窗口、CSS≠QSS 坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用内部工具 vs 不适用完整 Web/Canvas 边界清楚，并点明非移动端"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "厨师进专业厨房 / 木匠做柜台类比把「JS≠webview」讲透",
+        "QMainWindow、Qt Style Sheet、objectName、垃圾回收保活均有桥接",
+        "三案例都有逐部分解释；global.win 坑对零基础很关键"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 github.com/nodegui/nodegui 正确；Qt6 与旧 Qt5/Qode 文档并存的提醒属实",
+        "原生 Qt widget 而非 Chromium/webview 的定位无歪曲",
+        "frontmatter 分类写 mobile 与正文「不做移动端」略冲，但不构成正文硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "最小窗口 / FlexLayout+样式 / fs 读文件三例概念正确可跟做",
+        "QT_LINK_MIRROR、文档版本混淆、GC 掉窗口、CSS≠QSS 坑具体可操作",
+        "适用内部工具 vs 不适用完整 Web/Canvas 边界清楚，并点明非移动端"
+      ]
+    }
+  ],
+  "slug": "nodegui",
+  "area": "projects",
+  "status": "passed",
+  "lines": 191,
+  "l1_pass": true
+}

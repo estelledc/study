@@ -29,7 +29,7 @@ await transporter.sendMail({
 })
 ```
 
-GitHub **17k stars**，MIT 许可，npm 周下载 700 万次。Node.js 生态发邮件几乎只用它——没有"它和谁谁谁竞争"，只有"它和它的不同 transport"。
+GitHub **约 17k stars**，现行 **MIT-0** 许可（v6 起从 MIT 放宽；比 MIT 更松，连署名都可省），npm 周下载约数百万次。Node.js 生态发邮件几乎都用它——竞争库很少，日常差别主要在选哪个 transport。
 
 ## 为什么重要
 
@@ -149,8 +149,8 @@ Nodemailer 内部会用 refresh_token 去 Google 换 access_token，过期自动
 
 - **2010 年**：Andris Reinman（爱沙尼亚开发者）开源 Nodemailer，比 npm 1.0 还早一年。
 - 同作者后续写了 **smtp-server**（收邮件的服务端）、**ZoneMTA**（出站邮件中继）、**WildDuck**（IMAP 服务器）、**EmailEngine**（IMAP 转 HTTP API）——形成一整套 Node.js 邮件全家桶。
-- v6 (2020) 开始改成 **MIT-0** 许可——比 MIT 更宽松，连署名都可以省。
-- 16 年没换主作者、没大版本断裂、API 形状基本不变——开源软件里少见的稳定。
+- v6 (2020) 起许可证改为 **MIT-0**（此前为 MIT）——比 MIT 更宽松，连署名都可以省；正文「是什么」里说的现行许可即指此。
+- 十余年没换主作者、没大版本断裂、API 形状基本不变——开源软件里少见的稳定。
 
 ## 学到什么
 
