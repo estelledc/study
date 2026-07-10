@@ -31,51 +31,22 @@ Doom 的设计围绕**三个原则**：
 
 **3. Vim 键位是默认公民。** Doom 的按键体系建立在 `SPC`（Space）作为 leader key 之上——按空格弹出命令菜单，再按一个字母选分类（`SPC f` = 文件操作，`SPC b` = Buffer 操作，`SPC g` = Git 操作）。这套设计借鉴了 [[spacemacs]]，但 Doom 的实现更轻量。
 
-## 三文件配置体系
+用户配置拆成三个文件，各管一件事：
 
-Doom 把用户配置拆成三个文件，各管一件事：
-
-**`~/.doom.d/init.el`** —— 模块开关。这里你只做"选什么"的决定：
+**`~/.config/doom/init.el`（或 `~/.doom.d/init.el`）** —— 模块开关，只做"选什么"：
 
 ```elisp
-(doom! :input
-       :completion
-       (company +childframe)   ; 代码补全
+(doom! :completion
        (vertico +icons)        ; 模糊搜索
-
-       :ui
-       doom-dashboard           ; 启动画面
-       (popup +defaults)        ; 弹窗管理
-       treemacs                 ; 文件树
-
        :editor
        evil                     ; Vim 模拟
-       snippets                 ; 代码片段
-
        :lang
-       (python +lsp +pyright)   ; Python 开发
-       (org +roam +journal)     ; Org Mode
-       (rust +lsp)              ; Rust 开发
-       )
+       (python +lsp +pyright)
+       (org +roam +journal)
+       (rust +lsp))
 ```
 
-**`~/.doom.d/config.el`** —— 个人偏好。模块启用后的微调写这里：
-
-```elisp
-(setq doom-theme 'doom-one)        ; 主题
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14))
-(setq display-line-numbers-type 'relative)  ; 相对行号
-(setq org-directory "~/org/")       ; Org 文件位置
-```
-
-**`~/.doom.d/packages.el`** —— 额外包。Doom 模块不带但你想装的包写这里：
-
-```elisp
-(package! copilot :recipe (:host github :repo "copilot-emacs/copilot.el"))
-(package! wakatime-mode)
-```
-
-改完任何配置后跑 `doom sync`，Doom 的包管理器会安装/删除包、重新编译、重新生成 autoloads。
+**`config.el`** —— 个人偏好（主题、字体、目录）；**`packages.el`** —— 额外包。改完 `init.el` / `packages.el` 后跑 `doom sync` 才会装包、重编译。
 
 ## 实践案例
 
@@ -91,11 +62,16 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 
 ### 案例 2：日常操作（Vim 用户视角）
 
-如果你之前用 [[vim]]，这些操作完全一致：`i` 进入插入模式、`Esc` 回到 Normal 模式、`dd` 删行、`yy` 复制行、`/keyword` 搜索、`:wq` 保存退出。Doom 在此基础上加了 `SPC` leader 系统：
+跟做一条最短路径：打开文件 → 改一行 → 保存。
 
-- `SPC f f` — 模糊搜索打开文件（类似 VS Code 的 `Ctrl+P`）
+1. `SPC f f` 模糊搜文件（类似 VS Code `Ctrl+P`），回车打开
+2. 按 `i` 进入插入模式，改文字；`Esc` 回 Normal
+3. `:w` 保存（或 `SPC f s`）；要退出用 `:q`
+
+其余按键与 Vim 一致：`dd` 删行、`yy` 复制、`/keyword` 搜索。Doom 在 Vim 之上加了 `SPC` leader：
+
 - `SPC b b` — 切换 Buffer
-- `SPC s p` — 在项目内全文搜索（用 ripgrep）
+- `SPC s p` — 项目内全文搜索（ripgrep）
 - `SPC g g` — 打开 Magit（Git 界面）
 - `SPC w v` — 垂直分屏
 
@@ -118,13 +94,15 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 
 3. **升级偶尔会炸**：`doom upgrade` 拉最新代码，偶尔会因为上游包 breaking change 导致启动失败。安全做法是升级前先 `doom sync` 确认当前能跑，升级后看报错日志 `*Messages*` buffer，实在修不了就 `git checkout` 退回。
 
+4. **配置目录搞混**：老教程写 `~/.doom.d/`，新安装默认常是 `~/.config/doom/`。改错目录等于白改；以 `doom doctor` 打印的路径为准。
+
 ## 适用 vs 不适用场景
 
 **适用**：
 
 - 你是 Vim 用户但想要 Emacs 的 Org Mode / Magit / Lisp 环境——Doom 让你几乎不用改肌肉记忆
-- 你想用 Emacs 但没时间从零配置——Doom 的模块系统 20 分钟就能搭出生产级环境
-- 你想要极快的启动速度——Doom 优化后冷启动通常 < 1 秒
+- 你想用 Emacs 但没时间从零配置——约 150 个模块，勾选后 20 分钟能搭出可用环境
+- 你想要极快的启动速度——优化后冷启动通常 < 1 秒（未优化原版常见 3–5 秒）
 - 你喜欢声明式配置而非命令式——"勾选模块"比"手动 require + hook + keybind"简单十倍
 
 **不适用**：
