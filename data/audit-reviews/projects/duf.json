@@ -1,7 +1,4 @@
 {
-  "slug": "duf",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.56,
   "reject_count": 0,
@@ -91,31 +88,5 @@
         "踩坑里「看到 100% 但还能写」可保留，但不要暗示 duf 单独展示 reserved。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.56,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 157,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "reason": "删除不存在的 reserved 列声称；纠正 JSON 为 snake_case；案例 4 改为可跟做的 hide-mp 过滤。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

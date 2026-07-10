@@ -1,7 +1,4 @@
 {
-  "slug": "cuda-streams-concurrency-2018",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -86,32 +83,5 @@
         "案例 4 H2D/kernel/D2H 流水很实用，但建议标明这是 streams 工程最佳实践补充，避免读者以为是该论文主实验。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "reason": "纠正来源为 Dai et al. HPCA 2018 正确标题；区分论文结论与 H2D 工程补充；更新 DOI。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "cuda",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.22,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "案例只有 device kernel / launch，缺 cudaMalloc/Memcpy 宿主侧骨架；教学可接受，但可在案例 2 补一行注释标明 d_* 是 device pointer。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

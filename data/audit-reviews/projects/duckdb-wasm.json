@@ -1,7 +1,4 @@
 {
-  "slug": "duckdb-wasm",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -86,30 +83,5 @@
         "案例 3 的 CREATE FUNCTION … AS (s.upper()) 不是 duckdb-wasm 注册 JS UDF 的正确 API；应改为 conn.createScalarFunction / bindings.createScalarFunction 一类可跟做示例。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "reason": "修复案例 3 错误 UDF API；纠正 2018/OPFS 时间线；收窄相对 sql.js 的倍速表述。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
