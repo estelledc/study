@@ -1,0 +1,106 @@
+{
+  "slug": "jitsi-videobridge",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "lines": 150,
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮局分拣类比很好；案例多为 ASCII 示意，缺一条可跟做的启动/配置命令与逐步解释"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「单实例撑 100 路就到顶」「Zoom 后端都是 SFU」过绝对；Octo 宜点明现称 secure-octo / relay，避免读成旧版 VPN 组播方案"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作；实践案例缺可跑片段；关联仅 3 条应扩到 5–7（jitsi-meet / mediasoup / livekit / coturn 等）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "邮局分拣类比很好；案例多为 ASCII 示意，缺一条可跟做的启动/配置命令与逐步解释"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「单实例撑 100 路就到顶」「Zoom 后端都是 SFU」过绝对；Octo 宜点明现称 secure-octo / relay，避免读成旧版 VPN 组播方案"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "踩坑具体可操作；实践案例缺可跑片段；关联仅 3 条应扩到 5–7（jitsi-meet / mediasoup / livekit / coturn 等）"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 150,
+    "reasons": []
+  },
+  "l1_pass": true,
+  "remediation": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}

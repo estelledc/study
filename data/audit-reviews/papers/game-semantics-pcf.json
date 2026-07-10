@@ -1,0 +1,93 @@
+{
+  "slug": "game-semantics-pcf",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "lines": 168,
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "点餐类比与 OQ/PQ/OA/PA 标签把抽象对话规则落到可跟读步骤；history-free / comonad 段仍偏密，但高级主题可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "AJM I&C 2000、Plotkin 1977、1993 三组独立发现与 HO/Nickau 对照正确；教学简化未歪曲 full abstraction / definability"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "对话伪代码与 parallel-or / call/cc 排除表概念正确；适用边界（非编译器 IR、工业语言仍开放）量化清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "点餐类比与 OQ/PQ/OA/PA 标签把抽象对话规则落到可跟读步骤；history-free / comonad 段仍偏密，但高级主题可接受"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "AJM I&C 2000、Plotkin 1977、1993 三组独立发现与 HO/Nickau 对照正确；教学简化未歪曲 full abstraction / definability"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "对话伪代码与 parallel-or / call/cc 排除表概念正确；适用边界（非编译器 IR、工业语言仍开放）量化清楚"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 168,
+    "reasons": []
+  },
+  "l1_pass": true
+}

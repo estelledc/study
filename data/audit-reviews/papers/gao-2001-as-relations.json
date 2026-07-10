@@ -1,0 +1,105 @@
+{
+  "slug": "gao-2001-as-relations",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "lines": 150,
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递公司类比贴合；案例 1/2 有度数数字但缺可跟做的伪代码块与「逐部分解释」，建议把度数启发式写成可逐步跑的伪代码"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「被引超过 2000 次」与「Tier-1 有 18 个」偏绝对且会随时间变；建议改成约数并点明 CAIDA 排名会更新"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "算法步骤在核心要点里有，但实践案例缺可运行/可逐步执行的伪代码；关联段仅 4 条，建议补到 5–7 并链 mahajan / subramanian 等"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "快递公司类比贴合；案例 1/2 有度数数字但缺可跟做的伪代码块与「逐部分解释」，建议把度数启发式写成可逐步跑的伪代码"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「被引超过 2000 次」与「Tier-1 有 18 个」偏绝对且会随时间变；建议改成约数并点明 CAIDA 排名会更新"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "算法步骤在核心要点里有，但实践案例缺可运行/可逐步执行的伪代码；关联段仅 4 条，建议补到 5–7 并链 mahajan / subramanian 等"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 150,
+    "reasons": []
+  },
+  "l1_pass": true,
+  "remediation": {
+    "status": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用",
+      "## 历史小故事",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}
