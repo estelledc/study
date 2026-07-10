@@ -1,7 +1,4 @@
 {
-  "slug": "cryptoverif-2008",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.33,
   "reject_count": 0,
@@ -111,35 +108,5 @@
         "适用边界与 ProVerif/Tamarin/EasyCrypt 对照有价值，但应放进 ## 适用 而非独立 H2 表"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.33,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "去掉多余 H2；收窄 Signal/5G 过满表述；术语桥接；案例压到 3 个并把工具对照并入适用",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }

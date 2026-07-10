@@ -1,7 +1,4 @@
 {
-  "slug": "druid",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -91,13 +88,5 @@
         "踩坑与适用有量化（1-10 秒延迟、<100GB），保持；补案例时控制在 150–200 行"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 182,
-    "reasons": []
-  },
-  "lines": 182,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "csp-hoare-1978",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -86,13 +83,5 @@
         "适用/不适用边界清楚，可再点明「无缓冲会合 vs 有缓冲解耦」的量化取舍（延迟 vs 吞吐）"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 180,
-    "reasons": []
-  },
-  "lines": 180,
-  "l1_pass": true
+  ]
 }

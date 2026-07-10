@@ -1,7 +1,4 @@
 {
-  "slug": "dspy",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -106,13 +103,5 @@
         "补上历史小故事，把「与同类对比」并入适用或延伸阅读，控制 150–200 行"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 176,
-    "reasons": []
-  },
-  "lines": 176,
-  "l1_pass": true
+  ]
 }

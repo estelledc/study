@@ -1,7 +1,4 @@
 {
-  "slug": "cstore-2005",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -86,13 +83,5 @@
         "适用里写 HTAP 可以，但宜标明「原论文是读优化列存，HTAP 是后世 WS+RS 思路的延伸」以免读者以为 2005 系统已是完整 HTAP 产品"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 168,
-    "reasons": []
-  },
-  "lines": 168,
-  "l1_pass": true
+  ]
 }

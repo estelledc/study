@@ -1,7 +1,4 @@
 {
-  "slug": "croft-harper-1979",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.56,
   "reject_count": 0,
@@ -111,35 +108,5 @@
         "适用/不适用已点出无长度归一与 dense retrieval 边界，可再补一句「短查询+长文档需 1994 长度归一」的量化感"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.56,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "修正 Lucene BM25 默认年份；压缩案例/踩坑到模板规模；补迷你排序表与关联链接；桥接 BIM/PRP 术语",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用",
-      "## 历史小故事",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }
