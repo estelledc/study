@@ -136,67 +136,46 @@ location /static/ {
 
 - **2002 年**：Sysoev 在俄罗斯门户 Rambler 工作，Apache 顶不住流量，自己开始写 nginx。
 - **2004 年 10 月**：第一版开源，俄文文档为主，先在俄语圈火起来。
-- **2008 年**：Cloudflare 把 nginx 作为边缘节点的核心组件之一，nginx 进入西方主流视野。
+- **2010 年前后**：Cloudflare 等把 nginx 用作边缘节点核心组件之一，nginx 进入西方主流视野。
 - **2011 年**：Sysoev 创立 nginx Inc.，全职维护开源版 + 卖商业版（nginx Plus）。
-- **2017 年**：nginx Plus 加入主动健康检查、动态 reconfig 等企业特性。
-- **2019 年**：F5 Networks 以 6.7 亿美金收购 nginx Inc.。
-- **2024 年起**：原核心维护者 Maxim Dounin 因和 F5 在安全披露上的分歧离开，fork 出 freenginx；OpenResty / Tengine（阿里）/ Angie 等社区分支也活跃起来。
+- **2019 年**：F5 Networks 以约 6.7 亿美金收购 nginx Inc.。
+- **2024 年起**：原核心维护者 Maxim Dounin 因和 F5 在安全披露上的分歧离开，fork 出 freenginx；OpenResty / Tengine / Angie 等社区分支也活跃起来。
 
 ## 学到什么
 
 - **事件驱动 + 单线程** 不是慢，是把 "等 I/O" 的时间利用起来——这是 Node.js / Redis / Envoy 共享的底层思路
 - **配置即代码、没有数据库** 让 nginx 重启快、好回滚——这是 12factor 的雏形
-- **master + worker 模型** 在 PostgreSQL / Redis Cluster / Chrome 浏览器里都能看到——一个控制进程 + 多个干活进程，崩一个不影响其他
-- **协议中立 + 模块化** 让一个工具同时是 Web 服务器 / 代理 / 负载均衡器——别再为每个角色装一个软件
+- **master + worker 模型** 在 PostgreSQL / Redis Cluster / Chrome 里都能看到——一个控制进程 + 多个干活进程
+- **协议中立 + 模块化** 让一个工具同时是 Web 服务器 / 代理 / 负载均衡器
 
 ## 延伸阅读
 
-- 官方文档：搜 "nginx docs"，看 Sysoev 风格的简洁文档（指令分类齐全）
-- 经典书：《Nginx 高性能 Web 服务器详解》—— 苗泽，中文且含源码层讲解
-- 配置生成器：DigitalOcean 的 NGINXConfig 工具，可视化拼配置文件，调参好用
-- [[redis]] —— 同样的事件驱动单线程模型，理解一个就懂另一个
-- [[express]] —— 后端常见就放在 nginx 后面，由 nginx 终止 SSL
+- 官方文档：搜 "nginx docs"，指令分类齐全
+- 经典书：《Nginx 高性能 Web 服务器详解》—— 苗泽
+- 配置生成器：DigitalOcean NGINXConfig，可视化拼配置
+- [[redis]] —— 同样的事件驱动单线程模型
+- [[express]] —— 常放在 nginx 后面，由 nginx 终止 SSL
 
 ## 关联
 
 - [[express]] —— Node.js 后端框架，常作为 nginx upstream 的目标
-- [[next-js]] —— 全栈框架部署时通常前面架 nginx 做 SSL 终止 + 静态缓存
+- [[next-js]] —— 部署时通常前面架 nginx 做 SSL 终止 + 静态缓存
 - [[redis]] —— 同样是单线程 + epoll 的事件驱动设计
 - [[kafka]] —— 一起组成 "流量入口 + 后端异步处理" 的标准架构
+- [[envoy]] —— 服务网格/可观测性更强的代理对照
+- [[haproxy]] —— 另一路高性能负载均衡对照
+- [[kong]] —— 基于 nginx + Lua 的 API 网关
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[ansible]] —— Ansible — 无 agent 配置管理
-- [[bigbluebutton]] —— BigBlueButton — 教育向开源 Web 会议平台（HTML5 + WebRTC + 白板）
 - [[caddy]] —— Caddy — 自动 HTTPS Web 服务器
-- [[coturn]] —— coturn — 帮 WebRTC 穿越 NAT 的开源 TURN/STUN 中转服务器
-- [[dendrite]] —— Dendrite — Go 写的第二代 Matrix homeserver，组件可拆可合
-- [[docker-compose]] —— Docker Compose — 一份 YAML 起一整套开发栈
-- [[dovecot]] —— Dovecot — 主流 IMAP/POP3 服务器
-- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
 - [[envoy]] —— Envoy — 把网络通信从业务代码里抠出来的代理进程
 - [[express]] —— Express — Node.js 最经典的 Web 框架
 - [[haproxy]] —— HAProxy — 高性能 LB，TCP/HTTP 双层负载均衡
-- [[io-uring]] —— io_uring — Linux 让 N 次 IO 摊销到 1 次 syscall
-- [[istio]] —— Istio — 给微服务装一层透明的网络治理面
-- [[kamailio]] —— Kamailio — 把电信级 SIP 流量塞进一台 Linux 服务器
 - [[kong]] —— Kong — 基于 nginx + Lua 的云原生 API 网关
-- [[krakend]] —— KrakenD — 把多个后端聚合成一次响应的高性能 API 网关
-- [[memcached]] —— Memcached — 经典内存缓存
 - [[next-js]] —— Next.js — React 全栈框架
-- [[ovenmediaengine]] —— OvenMediaEngine — 亚秒级直播流媒体服务器
-- [[pino]] —— pino — 日志不该阻塞热路径
-- [[postal]] —— Postal — 自托管的 Mailgun / SendGrid 替代
-- [[postfix]] —— Postfix — 把 sendmail 拆成一群最小权限的小工
-- [[prom-client]] —— prom-client — Node 服务暴露监控指标的事实标准 SDK
-- [[prometheus]] —— Prometheus — 时序监控系统
 - [[redis]] —— Redis — 内存键值数据库
-- [[sanic]] —— Sanic — 性能向 async Python 框架，对标 Node.js 高吞吐
-- [[soketi]] —— Soketi — 自己跑一台 Pusher，把实时通信费砍到零头
-- [[synapse]] —— Synapse — Matrix 协议的参考 homeserver，让聊天像电邮一样能跨服务器互通
-- [[thrift]] —— Thrift — 写一份 IDL 自动生成 28 种语言的 RPC 代码
 - [[traefik]] —— Traefik — 现代云原生反向代理
-- [[tyk]] —— tyk — Go 实现的开源 API 网关，自带门户和多协议转换
 

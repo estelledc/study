@@ -1,0 +1,151 @@
+{
+  "slug": "nginx",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "lines": 182,
+  "l1_pass": true,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 反向链接",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "中餐馆 vs 日料吧台类比把「一连接一进程」讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "epoll/worker/upstream 有日常桥接，零基础能跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三份配置案例有效果说明；反向链接过长挤占阅读焦点，宜压缩"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2008 年 Cloudflare 把 nginx 作为边缘核心」年份偏早：Cloudflare 约 2009 成立、2010 公开服务，应改为 2009–2010 或「2010 年起」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/nginx/nginx、Sysoev 2004、F5 收购、freenginx fork 主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "master/worker、epoll、proxy_pass 机制描述无歪曲"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "反向代理/upstream/gzip 配置可直接跟做，keepalive 示例正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "nginx -t、proxy_buffers、keepalive、access.log、worker_connections 坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；全文超 200 行需压缩反向链接以过 quality-gate"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 反向链接",
+      "fix_hints": [
+        "中餐馆 vs 日料吧台类比把「一连接一进程」讲透",
+        "epoll/worker/upstream 有日常桥接，零基础能跟住",
+        "三份配置案例有效果说明；反向链接过长挤占阅读焦点，宜压缩"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「2008 年 Cloudflare 把 nginx 作为边缘核心」年份偏早：Cloudflare 约 2009 成立、2010 公开服务，应改为 2009–2010 或「2010 年起」",
+        "来源 github.com/nginx/nginx、Sysoev 2004、F5 收购、freenginx fork 主线正确",
+        "master/worker、epoll、proxy_pass 机制描述无歪曲"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "反向代理/upstream/gzip 配置可直接跟做，keepalive 示例正确",
+        "nginx -t、proxy_buffers、keepalive、access.log、worker_connections 坑具体可操作",
+        "适用/不适用边界清楚；全文超 200 行需压缩反向链接以过 quality-gate"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 182,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "sections_modified": [
+    "## 历史小故事",
+    "## 学到什么",
+    "## 延伸阅读",
+    "## 关联",
+    "## 反向链接"
+  ],
+  "unresolved_hints": [],
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 Cloudflare 年份；压缩反向链接与尾部段落使行数落入 150–200。",
+    "sections_modified": [
+      "## 历史小故事",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  }
+}
