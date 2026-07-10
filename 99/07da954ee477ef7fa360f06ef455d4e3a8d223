@@ -1,0 +1,111 @@
+.gitignore
+  s_c980e8b9b9f92d::t_af46f8f36d02e9 4-5,19-38,48-51,61-62
+data/content-contract-baseline.json
+  s_c980e8b9b9f92d::t_42d98d656294c9 1-9
+data/freshness-policy.json
+  s_c980e8b9b9f92d::t_df997dbadfd616 1-47
+data/official-source-registry.json
+  s_c980e8b9b9f92d::t_cc9dd825c2b67e 1-15
+data/public-redline-baseline.json
+  s_c980e8b9b9f92d::t_2a0840861cca9e 1-36
+data/review-evidence.schema.json
+  s_c980e8b9b9f92d::t_1c4c428c35d278 1-36
+data/review-evidence/.gitkeep
+  s_c980e8b9b9f92d::t_dd9e7ee1b0eb67 1
+data/review-receipts.schema.json
+  s_c980e8b9b9f92d::t_bd129044a328cd 1-116
+data/review-receipts/.gitkeep
+  s_c980e8b9b9f92d::t_93d8b06bbcd10a 1
+docs/content-contract.md
+  s_c980e8b9b9f92d::t_c1bd1e9804f756 1-64
+docs/content-quality-rubric.md
+  s_c980e8b9b9f92d::t_aee3b9dd5a2def 1-65
+docs/freshness-policy.md
+  s_c980e8b9b9f92d::t_4f355b2b259cb6 1-46
+docs/public-repository-policy.md
+  s_c980e8b9b9f92d::t_6b448c31ae9d23 1-37
+docs/review-evidence-contract.md
+  s_c980e8b9b9f92d::t_dc2a6f1938a9ab 1-62
+prompts/base-rules.md
+  s_c980e8b9b9f92d::t_ff4ca2d574bf63 3,7,16,18-20,22-31,35-37,41,50-63,67-68,81,83,85,105-106,111-112,133-135
+prompts/new-paper.md
+  s_c980e8b9b9f92d::t_9c52c95eb25117 16-17,127-128
+prompts/new-project.md
+  s_c980e8b9b9f92d::t_a8f844de8fa6e6 16-17,74
+prompts/reviewer-academic.md
+  s_c980e8b9b9f92d::t_bedd628796f671 43,56,64-68,78
+prompts/reviewer-engineer.md
+  s_c980e8b9b9f92d::t_8f7a23cfcefc9b 3,18-23,41-42,46-48,61-62,69-73,82-96
+prompts/reviewer-zero-base.md
+  s_c980e8b9b9f92d::t_0f9dddade321b2 7-8,32-37,46-47,61-62,69-73,79-80
+prompts/rewrite-paper.md
+  s_c980e8b9b9f92d::t_3049f7c7797fbe 13-14,69
+prompts/rewrite-project.md
+  s_c980e8b9b9f92d::t_d6f8def24a5caa 14-15,61
+prompts/writer.md
+  s_c980e8b9b9f92d::t_3585fdcf6d85a5 3,7-8,51,53,55-60,62,64,75-88,92-93,115,158
+scripts/analyze-template-similarity.mjs
+  s_c980e8b9b9f92d::t_497349d8fa95f1 1-225
+scripts/analyze-template-similarity.test.mjs
+  s_c980e8b9b9f92d::t_176de65a2086c6 1-87
+scripts/audit-content-contract.mjs
+  s_c980e8b9b9f92d::t_1d39db904edfbe 1-366
+scripts/audit-content-contract.test.mjs
+  s_c980e8b9b9f92d::t_4e7d41a0b237f3 1-250
+scripts/audit-freshness.mjs
+  s_c980e8b9b9f92d::t_a02a34ff809d6e 1-130
+scripts/audit-freshness.test.mjs
+  s_c980e8b9b9f92d::t_49d4b5767276f2 1-199
+scripts/audit-public-redlines.mjs
+  s_c980e8b9b9f92d::t_1f2ae1f742aa65 1-389
+scripts/audit-public-redlines.test.mjs
+  s_c980e8b9b9f92d::t_a11eff28fb144b 1-204
+scripts/lib/freshness.mjs
+  s_c980e8b9b9f92d::t_7b783a65bcd7d6 1-189
+scripts/lib/homepage-trust.mjs
+  s_c980e8b9b9f92d::t_69693a64d004fd 1-24
+scripts/lib/homepage-trust.test.mjs
+  s_c980e8b9b9f92d::t_a7de57a90b4f8a 1-17
+scripts/lib/note-discovery.mjs
+  s_c980e8b9b9f92d::t_fe426de7ed7597 1-51
+scripts/lib/note-id.mjs
+  s_c980e8b9b9f92d::t_de827063734d07 1-230
+scripts/lib/note-id.test.mjs
+  s_c980e8b9b9f92d::t_1ad85877812019 1-115
+scripts/lib/official-source.mjs
+  s_c980e8b9b9f92d::t_236d3a7793a6e3 1-22
+scripts/lib/review-receipt.mjs
+  s_c980e8b9b9f92d::t_434d062e615b7c 1-417
+scripts/lib/review-receipt.test.mjs
+  s_c980e8b9b9f92d::t_accee821654c19 1-270
+scripts/quality-gate.mjs
+  s_c980e8b9b9f92d::t_5165505f9bc620 2-4,9-16,65-75,85-90,93,99-100,102-109,141-154,158,168-218,220-244,265,273-274,276-278,282,285-287,289-293,298,301,307,310,316-352
+scripts/quality-gate.test.mjs
+  s_c980e8b9b9f92d::t_5b09ed15dbce3c 1-127
+src/components/FreshnessBadge.astro
+  s_c980e8b9b9f92d::t_9c7429b9627b32 1-74
+src/components/PageTitle.astro
+  s_c980e8b9b9f92d::t_71ada61f2cad21 1-12
+src/content.config.ts
+  s_c980e8b9b9f92d::t_0a5505b0502ec4 4-50,53-59
+src/content/docs/index.md
+  s_c980e8b9b9f92d::t_aa1db435321607 91-92,94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "9907da954ee477ef7fa360f06ef455d4e3a8d223",
+  "prompts": {},
+  "sessions": {
+    "s_c980e8b9b9f92d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_c980e8b9b9f92d",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
