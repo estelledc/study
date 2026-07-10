@@ -1,0 +1,127 @@
+{
+  "slug": "hotspot-server-compiler",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "小馆子点菜→刻流程卡片类比贯穿 profile/编译/deopt；Sea-of-Nodes 乐高网、考场染色也贴合。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "虚调用单态化、公共子表达式、寄存器分配三案例步骤清楚，术语有桥接。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Paleczny/Vick/Click 2001、sea-of-nodes、deoptimization、CompileThreshold≈10000 与论文/HotSpot 史一致。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『C++ 虚函数永远查 vtable』相对教学简化（静态/LTO 也可去虚），正文已用对照意图，可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "单态化伪代码与 uncommon trap 流程概念正确；寄存器分配为示意非可跑 JVM 补丁。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "编译开销、deopt 重建、内联爆炸、spill 循环踩坑具体。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "长服务 vs 短任务/反射抖动/嵌入式/硬实时边界清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "小馆子点菜→刻流程卡片类比贯穿 profile/编译/deopt；Sea-of-Nodes 乐高网、考场染色也贴合。",
+        "虚调用单态化、公共子表达式、寄存器分配三案例步骤清楚，术语有桥接。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Paleczny/Vick/Click 2001、sea-of-nodes、deoptimization、CompileThreshold≈10000 与论文/HotSpot 史一致。",
+        "『C++ 虚函数永远查 vtable』相对教学简化（静态/LTO 也可去虚），正文已用对照意图，可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "单态化伪代码与 uncommon trap 流程概念正确；寄存器分配为示意非可跑 JVM 补丁。",
+        "编译开销、deopt 重建、内联爆炸、spill 循环踩坑具体。",
+        "长服务 vs 短任务/反射抖动/嵌入式/硬实时边界清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 167,
+  "l1_pass": true
+}
