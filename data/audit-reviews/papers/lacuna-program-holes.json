@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "capture checking / 词法作用域对零基础仍偏硬，可再补一句「作用域=这段代码看得见的变量」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Scala 3 capture checking 仍偏实验特性，表述已基本贴合论文方向，可保留但不宜写成已全面落地的语言标配"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界可再点明宿主需支持 runtime recompile / typed hole 的工程前提"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "capture checking / 词法作用域对零基础仍偏硬，可再补一句「作用域=这段代码看得见的变量」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Scala 3 capture checking 仍偏实验特性，表述已基本贴合论文方向，可保留但不宜写成已全面落地的语言标配"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用边界可再点明宿主需支持 runtime recompile / typed hole 的工程前提"
+      ]
+    }
+  ]
+}

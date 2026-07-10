@@ -1,0 +1,86 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "仓库 created_at 为 2024-07，不应写成「2025 年：midscene 开源」；应改为 2024 年下半年开源，并把后续平台扩展放到 2025。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「9k+ star」已过时（现约 14k+），可改为「上万 star」或删具体数字。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Insight 写成「截图 + 简化 DOM」与当前官方「纯视觉截图定位、DOM 可选」不完全一致，应弱化 DOM 为可选输入。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "TaskCache 命中条件写得很实用；若 Insight 改为纯视觉优先，缓存键描述也应对齐「截图哈希 + prompt」为主"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "仓库 created_at 为 2024-07，不应写成「2025 年：midscene 开源」；应改为 2024 年下半年开源，并把后续平台扩展放到 2025。",
+        "「9k+ star」已过时（现约 14k+），可改为「上万 star」或删具体数字。",
+        "Insight 写成「截图 + 简化 DOM」与当前官方「纯视觉截图定位、DOM 可选」不完全一致，应弱化 DOM 为可选输入。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "TaskCache 命中条件写得很实用；若 Insight 改为纯视觉优先，缓存键描述也应对齐「截图哈希 + prompt」为主"
+      ]
+    }
+  ]
+}
