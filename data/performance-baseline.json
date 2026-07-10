@@ -29,12 +29,12 @@
     "landing_direct_note_links": 0
   },
   "repository": {
-    "tracked_files": 2732,
-    "tracked_bytes": 61619975,
-    "source_archive_bytes": 48351043
+    "tracked_files": 2733,
+    "tracked_bytes": 61621107,
+    "source_archive_bytes": 48351737
   },
   "source": {
-    "commit": "25331e229778ae2bb9a15108d73838be38a951a6",
+    "commit": "adf70a9df4beaa5cd2fc2f2643eb391d4d0e063a",
     "node": "v26.4.0",
     "npm": "11.17.0",
     "platform": "darwin-arm64"
