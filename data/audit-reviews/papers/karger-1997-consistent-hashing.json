@@ -1,7 +1,4 @@
 {
-  "slug": "karger-1997-consistent-hashing",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -69,18 +66,5 @@
       "weakest_section": "## 适用 vs 不适用场景",
       "fix_hints": []
     }
-  ],
-  "aggregate": {
-    "average": 4.78,
-    "verdict": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

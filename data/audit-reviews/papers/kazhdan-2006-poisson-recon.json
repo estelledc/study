@@ -1,43 +1,4 @@
 {
-  "slug": "kazhdan-2006-poisson-recon",
-  "area": "papers",
-  "status": "passed",
-  "action": "pass",
-  "average": 4.78,
-  "reject_count": 0,
-  "needs_refine_count": 0,
-  "pass_count": 3,
-  "weakest_sections": [
-    {
-      "reviewer": "zero-base",
-      "section": "## 核心要点",
-      "verdict": "pass"
-    },
-    {
-      "reviewer": "academic",
-      "section": "## 为什么重要",
-      "verdict": "pass"
-    },
-    {
-      "reviewer": "engineer",
-      "section": "## 实践案例",
-      "verdict": "pass"
-    }
-  ],
-  "fix_hints": [
-    {
-      "reviewer": "zero-base",
-      "hint": "碎瓷片/花瓶类比贴合；χ/梯度/Poisson 桥接清楚；Open3D 三案例均有逐参数/逐部分解释。"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "作者/SGP 2006/Screened 2013 正确；「事实标准」有 Meshlab/Open3D/PCL 支撑；「无真正取代品」已用神经方法对照弱化，可接受。"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "案例 1 可跟做；案例 2 续写用 np.quantile 时需自行 import numpy（教学片段可接受）；法线/depth/开放面/isovalue 踩坑具体；适用边界量化清楚。"
-    }
-  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -46,7 +7,7 @@
         "accessibility": 5,
         "case_clarity": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 核心要点",
       "fix_hints": [
@@ -95,13 +56,5 @@
     "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
     "sections_modified": [],
     "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 160,
-  "l1_pass": true
+  }
 }

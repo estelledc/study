@@ -1,51 +1,4 @@
 {
-  "slug": "mattermost",
-  "area": "projects",
-  "status": "refined",
-  "action": "refine",
-  "average": 4.0,
-  "reject_count": 0,
-  "needs_refine_count": 2,
-  "pass_count": 1,
-  "weakest_sections": [
-    {
-      "reviewer": "zero-base",
-      "section": "## 实践案例",
-      "verdict": "needs-refine"
-    },
-    {
-      "reviewer": "academic",
-      "section": "## 是什么",
-      "verdict": "pass"
-    },
-    {
-      "reviewer": "engineer",
-      "section": "## 实践案例",
-      "verdict": "needs-refine"
-    }
-  ],
-  "fix_hints": [
-    {
-      "reviewer": "zero-base",
-      "hint": "缺标准 ## 实践案例（### 案例 1/2/3 + 逐部分解释）；现有「怎么本地跑起来」只有 bash，零基础缺少跟做结构。"
-    },
-    {
-      "reviewer": "zero-base",
-      "hint": "缺 ## 历史小故事（可跳过）时间线；非模板段「关键架构选择/阅读路线」可并入核心要点或案例。"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "Go+React/自托管/MIT+Enterprise/非联邦与公开定位一致；星数写 32k 略旧（量级仍对）；Playbooks/Boards/Calls 描述未夸大。"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "缺实践案例：应把本地启动、发消息调用链、插件/slash command 收成 ### 案例并补逐部分解释。"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "踩坑具体可操作；适用边界（联邦/SaaS/E2EE）清楚。"
-    }
-  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -83,7 +36,7 @@
         "pitfalls_useful": 5,
         "scope_correct": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -93,7 +46,7 @@
     }
   ],
   "aggregate": {
-    "average": 4.0,
+    "average": 4,
     "verdict": "refine",
     "action": "refine",
     "rejects": 0,
@@ -113,14 +66,5 @@
       "## 关联"
     ],
     "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true,
-  "audit_notes": "重构为 12 段模板：新增实践案例三则与历史时间线；星数改为约 3 万+ 避免过时硬数字。"
+  }
 }

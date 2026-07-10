@@ -1,7 +1,4 @@
 {
-  "slug": "matplotlib",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -96,29 +93,5 @@
         "踩坑与适用边界写得很具体，修好案例即可"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base/engineer：补全案例 1/2 可跟做数据与 numpy import，并加反向链接占位；academic：弱化 constrained_layout 年代表述。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 188,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

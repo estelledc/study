@@ -1,7 +1,4 @@
 {
-  "slug": "matrix-js-sdk",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,29 +83,5 @@
         "最小例子与踩坑可操作；案例 3 若补 5 行订阅骨架会更好"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：纠正「几百万行 React」夸大与「专属底座」绝对化；顺带给案例 3 补最小订阅骨架。",
-    "sections_modified": [
-      "## 是什么",
-      "## 与 matrix-rust-sdk 的定位差异",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 187,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }
