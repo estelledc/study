@@ -20,11 +20,12 @@
 | 条目 | 类型 | 当前状态 | 回流判断 |
 |---|---|---|---|
 | `browser-from-scratch/` | 长期路线图 / toy 实验 | paused | 恢复真实执行前，不新增 learning |
-| `embodied-ai/` | 外部研究站 | reference | 读 `_meta/embodied-ai.md`，不逐文件纳入当前主线 |
 | `iot-reading-station/` | 外部阅读站 | reference | 读 `_meta/iot-reading-station.md`，只在任务触发时回流方法 |
 | `multimodal-papers/` | 论文 txt / zh 材料包 | reference | 被当前任务引用时再补来源卡或 learning |
 | ResearchStudio 笔记 | 架构观察 / 部署记录 | reference | 能复用为研究流水线或工具方法时再提炼 |
 | Lark iOS 历史探索报告 | 历史探索报告 | reference | 只作背景索引；当前 iOS 学习以最新计划和脱敏样本为准 |
+
+`embodied-ai` 已迁到 `explorations/embodied-ai/` 作为顶层独立项目，统一入口仍是 [`_meta/embodied-ai.md`](../_meta/embodied-ai.md)。
 
 ## 回流规则
 
