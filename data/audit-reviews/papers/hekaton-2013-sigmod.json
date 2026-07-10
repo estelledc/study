@@ -1,0 +1,147 @@
+{
+  "slug": "hekaton-2013-sigmod",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "frontmatter / ## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "OLTP、悲观锁、MEMORY_OPTIMIZED 等术语首次出现缺少一句日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例只有代码+两行 bullet，缺少逐步解释；案例 3 伪 bash 对零基础几乎无信息"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "为什么重要只有 3 条，且表述偏口号，建议改成「不理解就解释不了什么」的四条清单"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者写成 Hao et al. 错误：SIGMOD 2013 论文作者是 Diaconu, Freedman, Ismert, Larson, Mittal, Stonecipher, Verma, Zwilling（应写 Diaconu et al.）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源标题写成 SQL Server\\ Memory，应为 SQL Server's Memory-Optimized OLTP Engine"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点过度简化：论文关键贡献是 latch-free 结构、乐观多版本并发控制、以及仅访问内存表的存储过程可编译为本地代码，笔记几乎未写到"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 BEGIN ATOMIC 块不完整（缺 END），跟做会卡住；案例 3 伪脚本应换成可理解的 T-SQL/natively compiled proc 示意"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑过虚：应点名 SCHEMA_ONLY vs SCHEMA_AND_DATA、内存表不支持的特性、跨内存表与磁盘表事务边界等具体坑"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "反向链接段后有大量无关填充句，应清掉以免污染笔记"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "OLTP、悲观锁、MEMORY_OPTIMIZED 等术语首次出现缺少一句日常桥接",
+        "三个案例只有代码+两行 bullet，缺少逐步解释；案例 3 伪 bash 对零基础几乎无信息",
+        "为什么重要只有 3 条，且表述偏口号，建议改成「不理解就解释不了什么」的四条清单"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 2,
+        "no_distortion": 3
+      },
+      "average": 2.33,
+      "verdict": "needs-refine",
+      "weakest_section": "frontmatter / ## 核心要点",
+      "fix_hints": [
+        "作者写成 Hao et al. 错误：SIGMOD 2013 论文作者是 Diaconu, Freedman, Ismert, Larson, Mittal, Stonecipher, Verma, Zwilling（应写 Diaconu et al.）",
+        "来源标题写成 SQL Server\\ Memory，应为 SQL Server's Memory-Optimized OLTP Engine",
+        "核心要点过度简化：论文关键贡献是 latch-free 结构、乐观多版本并发控制、以及仅访问内存表的存储过程可编译为本地代码，笔记几乎未写到"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例 2 的 BEGIN ATOMIC 块不完整（缺 END），跟做会卡住；案例 3 伪脚本应换成可理解的 T-SQL/natively compiled proc 示意",
+        "踩坑过虚：应点名 SCHEMA_ONLY vs SCHEMA_AND_DATA、内存表不支持的特性、跨内存表与磁盘表事务边界等具体坑",
+        "反向链接段后有大量无关填充句，应清掉以免污染笔记"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正 Diaconu et al. 作者与标题；补 latch-free/MVCC/native compile；案例逐步解释；清理反向链接填充；具体化 DURABILITY/BUCKET_COUNT 踩坑。",
+    "sections_modified": [
+      "frontmatter",
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}

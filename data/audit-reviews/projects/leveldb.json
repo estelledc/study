@@ -1,0 +1,118 @@
+{
+  "slug": "leveldb",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有叙述没有代码/逐步操作，零基础难以『跟做』；建议补打开目录或 API 级步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少 ## 反向链接 占位段；另有『三种放大』『SSTable』额外 H2，建议并入核心要点以贴合模板"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Ghemawat/Dean、RocksDB fork、leveled compaction、WAL/MemTable/SST 主线事实正确，无明显歪曲。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Put 路径与 tombstone 案例概念正确；L0 stall/单线程 compaction/无 CF 踩坑具体；适用边界有量化。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 只有叙述没有代码/逐步操作，零基础难以『跟做』；建议补打开目录或 API 级步骤",
+        "缺少 ## 反向链接 占位段；另有『三种放大』『SSTable』额外 H2，建议并入核心要点以贴合模板"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Ghemawat/Dean、RocksDB fork、leveled compaction、WAL/MemTable/SST 主线事实正确，无明显歪曲。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Put 路径与 tombstone 案例概念正确；L0 stall/单线程 compaction/无 CF 踩坑具体；适用边界有量化。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "补 ## 反向链接；三种放大/SST 并入核心要点；案例 1 改为可跟做 Open API 并逐步解释。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 151,
+  "l1_pass": true
+}
