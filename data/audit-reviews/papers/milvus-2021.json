@@ -1,4 +1,7 @@
 {
+  "slug": "milvus-2021",
+  "area": "papers",
+  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -94,9 +97,6 @@
       ]
     }
   ],
-  "slug": "milvus-2021",
-  "area": "papers",
-  "status": "passed",
   "lines": 154,
   "l1_pass": true,
   "quality_gate": {

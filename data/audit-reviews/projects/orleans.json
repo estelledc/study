@@ -1,4 +1,7 @@
 {
+  "slug": "orleans",
+  "area": "projects",
+  "status": "refined",
   "action": "refine",
   "average": 4.67,
   "reject_count": 0,
@@ -99,11 +102,14 @@
       ]
     }
   ],
-  "slug": "orleans",
-  "area": "projects",
-  "status": "refined",
   "lines": 167,
   "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  },
   "refinement": {
     "action": "refine",
     "reason": "Corrected Orleans/Halo timeline: MSR ~2009–2010, Halo services from 2011, Halo 4 2012, MSR-TR 2014, OSS 2015-01.",
@@ -111,11 +117,5 @@
       "## 历史小故事（可跳过）"
     ],
     "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
   }
 }

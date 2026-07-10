@@ -1,4 +1,7 @@
 {
+  "slug": "otel-collector",
+  "area": "projects",
+  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -99,11 +102,14 @@
       ]
     }
   ],
-  "slug": "otel-collector",
-  "area": "projects",
-  "status": "refined",
   "lines": 172,
   "l1_pass": true,
+  "quality_gate": {
+    "pass": true,
+    "lines": 172,
+    "l1_pass": true,
+    "reasons": []
+  },
   "refinement": {
     "action": "refine",
     "reason": "Renamed history H2; fixed Collector/OTel timeline; added runnable YAML cases and 反向链接 placeholder.",
@@ -113,11 +119,5 @@
       "## 反向链接"
     ],
     "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 172,
-    "l1_pass": true,
-    "reasons": []
   }
 }
