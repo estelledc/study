@@ -1,7 +1,4 @@
 {
-  "slug": "mailcow",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
