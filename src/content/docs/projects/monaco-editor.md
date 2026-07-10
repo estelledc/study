@@ -8,7 +8,7 @@ title: monaco-editor — 把 VSCode 编辑器搬进浏览器的 SDK
 
 ## 是什么
 
-Monaco Editor 是 Microsoft 把 **VSCode 桌面版的代码编辑器整块拆出来**，重新打包成可以挂进任何网页的 JavaScript 库。日常类比：像把一辆赛车的发动机原样搬上一辆家用车——你拿到的不是仿制件，是同一颗发动机。它由四件抽象组成：`ITextModel`（基于 PieceTree 的文本真理源）+ `ICodeEditor`（用户输入控制器）+ Web Worker LSP（跨线程语言服务）+ Provider Registry（hover / completion 注册器）。
+Monaco Editor 是 Microsoft 把 **VSCode 桌面版的代码编辑器整块拆出来**，重新打包成可以挂进任何网页的 JavaScript 库。日常类比：像把一辆赛车的发动机原样搬上一辆家用车——你拿到的不是仿制件，是同一颗发动机。
 
 你写：
 
@@ -19,7 +19,7 @@ monaco.editor.create(document.getElementById('container'), {
 })
 ```
 
-页面上立刻就有了一个**会自动补全、悬浮看类型、点击跳转定义、实时报错**的编辑器。它不是一个高级 textarea，而是 IDE 的浏览器版。GitHub Codespaces、StackBlitz、Replit、CodeSandbox 这些"在网页里写代码"的产品，底层用的就是它。
+页面上立刻就有了一个**会自动补全、悬浮看类型、点击跳转定义、实时报错**的编辑器。它不是一个高级 textarea，而是 IDE 的浏览器版。GitHub Codespaces、StackBlitz、Replit、CodeSandbox 这些"在网页里写代码"的产品，底层用的就是它。内部再拆成：文本模型（`ITextModel` / PieceTree）、编辑器控制器（`ICodeEditor`）、跑在 Web Worker 里的语言服务，以及补全/hover 的 Provider 注册表。
 
 ## 为什么重要
 
@@ -38,7 +38,7 @@ Monaco 的设计可以拆成 **三块**：
 
 2. **DOM 是单向投影**：`TextModel → ViewModel → DOM` 只能从左到右流，键盘输入要走 `TypeOperations` 转成对 model 的 edit，DOM 不能反向写 model。类比：水电站只能从上游放水，不能让下游倒灌。这条规则保证了折叠、minimap、IME 三件互不打架。
 
-3. **语言服务跑在 Web Worker**：TypeScript 编译器、CSS 解析器都是几百毫秒的同步任务，放主线程会卡键盘。Monaco 默认起 4 个 worker（TS / JSON / CSS / HTML），主线程通过 `postMessage` 异步要结果。worker 内部存的是 model 的镜像副本，主线程发 edit diff 过去保持同步。
+3. **语言服务跑在 Web Worker**：TypeScript 编译器、CSS 解析器都是几百毫秒的同步任务，放主线程会卡键盘。Monaco 默认起 4 个内置 worker（TS / JSON / CSS / HTML），主线程通过 `postMessage` 异步要结果；这是内置语言服务，不是完整 LSP。若要接外部语言服务器，再用 `monaco-languageclient` 把 LSP 桥进来。
 
 三块加起来，就是为什么 Monaco 能做到"桌面 VSCode 用什么 API，网页就能用什么 API"。
 
@@ -58,7 +58,12 @@ Monaco 的设计可以拆成 **三块**：
 </script>
 ```
 
-**逐部分解释**：`create()` 拿一个 DOM 容器和配置，返回一个 editor 实例。`language` 决定起哪个 worker，`theme` 决定配色。这一行就拥有了完整的 JS 编辑能力。底层会同时初始化 PieceTree 缓冲、ViewModel、并启动对应的语言 worker。
+逐部分解释：
+
+- `create(container, options)`：在指定 DOM 节点挂上编辑器，返回 editor 实例
+- `language: 'javascript'`：决定启用哪个内置语言 worker（未配 bundler worker entry 会 404）
+- `theme: 'vs-dark'`：只改配色，不改文本模型
+- 底层同时初始化 PieceTree 缓冲、ViewModel，并启动对应 worker
 
 ### 案例 2：拿到内容 + 监听变化
 
