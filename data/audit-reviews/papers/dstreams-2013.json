@@ -1,7 +1,4 @@
 {
-  "slug": "dstreams-2013",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -81,11 +78,5 @@
         "StreamingContext WordCount 与 checkpoint 示例概念正确；batch interval / lineage / driver HA / backpressure 坑具体；亚秒延迟与 event-time 边界清楚。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 166,
-    "reasons": []
-  }
+  ]
 }

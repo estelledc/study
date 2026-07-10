@@ -1,7 +1,4 @@
 {
-  "slug": "dssm-2013",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -81,31 +78,5 @@
         "letter trigram / 三层 MLP 维度表可跟做；曝光偏差与中文 trigram 失效踩坑具体。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic 指出「参数共享 ⇒ 无法离线预计算」事实错误；已改核心要点第 4 条与常见困惑 Q2，并把谱系小故事改回历史小故事。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 几个常见困惑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 157,
-  "l1_pass": true
+  ]
 }

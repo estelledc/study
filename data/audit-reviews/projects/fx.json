@@ -1,7 +1,4 @@
 {
-  "slug": "fx",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -81,33 +78,5 @@
         "案例 4 的 `.users | map(.email)` + Ctrl+S 无法按描述跟做；应改为 dig 路径或 CLI 的 JS 表达式示例（如 fx 'x.users.map(u => u.email)'）。空格折叠键位同样会让读者当场踩坑。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "三审指出空格键位、. dig vs jq REPL、JS vs jq DSL、Ctrl+S 等与现行 Go 版不符；已改核心要点、案例 4/5、适用与学到什么。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 179,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 179,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "gazebo-classic",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -81,11 +78,5 @@
         "world / spawn / plugin 命令与路径坑可跟做；EOL 与物理参数坑具体；Classic 维护资产 vs 新项目迁移边界量化清楚。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 199,
-    "reasons": []
-  }
+  ]
 }

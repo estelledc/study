@@ -1,7 +1,4 @@
 {
-  "slug": "ducas-dilithium-2018",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.22,
   "reject_count": 0,
@@ -81,11 +78,5 @@
         "伪代码抓住 mask / abort / hint 主路径，概念可跟读；签名≠加密、论文版≠FIPS、拒绝采样次数等坑有用；KEM vs 签名 / Falcon 尺寸权衡边界清楚。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 154,
-    "reasons": []
-  }
+  ]
 }

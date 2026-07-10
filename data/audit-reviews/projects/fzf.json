@@ -1,7 +1,4 @@
 {
-  "slug": "fzf",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -86,21 +83,5 @@
         "shell 集成 / preview / FZF_DEFAULT_COMMAND / 非 TTY 边界可操作；fbr 与 rg|fzf 示例可跟做。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 是什么",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": [],
-    "note": "统一 2013 Ruby→2015 Go 叙事；弱化「无替代品」并更新 star 量级。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 195,
-    "reasons": []
-  }
+  ]
 }

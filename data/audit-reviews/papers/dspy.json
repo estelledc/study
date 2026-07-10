@@ -1,7 +1,4 @@
 {
-  "slug": "dspy",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "dspy.configure / Signature / BootstrapFewShot 概念正确可跟做；编译调用量与 metric 边界写得具体。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 153,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 153,
-  "l1_pass": true
+  ]
 }
