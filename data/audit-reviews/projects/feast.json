@@ -1,7 +1,4 @@
 {
-  "slug": "feast",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -101,33 +98,5 @@
         "踩坑（不算特征、schema 只走 feast apply、TTL vs 物化频率）具体有用。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 176,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 176,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "reason": "补 timedelta import 与完整 entity_df；纠正 Tecton≠Feast 商业版；补反向链接段。",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 延伸阅读",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

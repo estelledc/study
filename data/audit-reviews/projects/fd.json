@@ -1,7 +1,4 @@
 {
-  "slug": "fd",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -81,22 +78,5 @@
         "`fd -e md docs` 实际是「扩展名 md 且文件名匹配 docs」；要搜 docs/ 目录应写 `fd -e md . docs` 或 `fd -e md --search-path docs`。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "reason": "案例 2 误把 pattern 当搜索根路径；核心要点误称默认过滤二进制扩展名。已纠正 CLI 语义并删掉二进制扩展名说法。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 154,
-    "reasons": []
-  },
-  "lines": 154,
-  "l1_pass": true
+  ]
 }

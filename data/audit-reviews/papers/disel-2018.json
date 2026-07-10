@@ -1,7 +1,4 @@
 {
-  "slug": "disel-2018",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,14 +78,5 @@
         "Coq 片段是教学伪代码但步骤可跟；拜占庭/性能/SMT 边界清楚。"
       ]
     }
-  ],
-  "refinement": null,
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 156,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true
+  ]
 }

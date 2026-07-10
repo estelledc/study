@@ -1,7 +1,4 @@
 {
-  "slug": "distserve",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "案例偏概念推演而非可跑代码，但对系统论文合适；适用边界有 >512 token / NVLink 等量化。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 159,
-    "reasons": []
-  },
-  "lines": 159,
-  "l1_pass": true
+  ]
 }

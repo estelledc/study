@@ -1,7 +1,4 @@
 {
-  "slug": "ferretdb",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -86,32 +83,5 @@
         "案例 1 用 host.docker.internal，默认 Linux Docker 常连不上；应改用 host gateway 或 compose 网络，并在踩坑里点明。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "zero-base/engineer needs-refine：补案例逐步解释、Docker 网络可跟做写法、BSON 桥接与反向链接段。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 168,
-    "reasons": []
-  },
-  "lines": 168,
-  "l1_pass": true
+  ]
 }

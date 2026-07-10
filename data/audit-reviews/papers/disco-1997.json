@@ -1,7 +1,4 @@
 {
-  "slug": "disco-1997",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,14 +78,5 @@
         "论文笔记以机制步骤代替可跑代码可接受；VMM vs container、x86 trap 缺口、16%→<3% 边界都具体可操作。"
       ]
     }
-  ],
-  "refinement": null,
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 156,
-    "reasons": []
-  },
-  "lines": 156,
-  "l1_pass": true
+  ]
 }

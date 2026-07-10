@@ -1,7 +1,4 @@
 {
-  "slug": "fdk-aac",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,21 +78,5 @@
         "cmake + aac-enc 与 aacEncOpen/SetParam/Encode 顺序可跟做；案例 3 需 AOSP 树属系统侧演示，可接受。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 166,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 166,
-  "l1_pass": true
+  ]
 }

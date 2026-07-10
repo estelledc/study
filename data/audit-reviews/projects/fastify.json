@@ -1,7 +1,4 @@
 {
-  "slug": "fastify",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -81,22 +78,5 @@
         "「不写 response schema = 性能归零」过满：会回退 JSON.stringify、吞吐掉一截，但路由/封装等仍在；应改成「序列化红利大打折扣」。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "reason": "academic 指出 find-my-way 复杂度误写为 O(log n)；engineer 指出「性能归零」过满。已改为路径段数复杂度，并弱化无 response schema 的表述。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 196,
-    "reasons": []
-  },
-  "lines": 196,
-  "l1_pass": true
+  ]
 }

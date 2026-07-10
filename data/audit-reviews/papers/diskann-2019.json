@@ -1,7 +1,4 @@
 {
-  "slug": "diskann-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -96,30 +93,5 @@
         "踩坑（PQ 天花板、NVMe、不可增量、alpha）具体可操作，适用边界量化清楚，可保留。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 180,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 180,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "reason": "弱化 Bing/ChatGPT 过满表述并对齐论文 QPS/延迟；修正 search 伪代码 set 写法与案例 2 吞吐口径。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
