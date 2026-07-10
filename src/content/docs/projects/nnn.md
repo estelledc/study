@@ -64,17 +64,22 @@ nnn               # 直接打开当前目录
 
 ### 案例 2：把 cd 替换成 nnn
 
-很多人最常做的事是"找到一个目录然后 cd 过去"。nnn 提供 `-c`（cd-on-quit）模式：
+很多人最常做的事是"找到一个目录然后 cd 过去"。官方做法是设 `NNN_TMPFILE`，退出时 nnn 往里写一行 `cd '路径'`，再 `source` 进当前 shell：
 
 ```bash
-# 把这两行加到 ~/.zshrc 或 ~/.bashrc
+# 加到 ~/.zshrc 或 ~/.bashrc
 n() {
+    [ -n "$NNN_TMPFILE" ] && return
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
     nnn -dH "$@"
-    cd "$(cat ${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd)"
+    if [ -f "$NNN_TMPFILE" ]; then
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE"
+    fi
 }
 ```
 
-之后在终端输 `n`，浏览器弹出来；按 `q` 退出时，**当前 shell 的工作目录就跳到你最后停的地方**。
+之后在终端输 `n`，文件列表弹出来；按 `q` 退出时，**当前 shell 的工作目录就跳到你最后停的地方**。
 
 这一招让 nnn 从"独立程序"变成"shell 的延伸"。第一次用会觉得"原来 cd 可以这样"。
 
@@ -116,7 +121,7 @@ sel="$(find . -type d 2>/dev/null | fzf)"
 **不适用**：
 - 需要图形预览大量图片/视频（用 ranger + ueberzug 折腾少）
 - Windows 原生用户（除非你已用 WSL）
-- 团队需要"开箱即用 + 配置丰富"——这类用 [yazi](https://github.com/sxyazri/yazi) 或 ranger
+- 团队需要"开箱即用 + 配置丰富"——这类用 [yazi](https://github.com/sxyazi/yazi) 或 ranger
 - 完全没用过 vim 风格按键的新人——学习曲线陡
 
 ## 历史小故事（可跳过）
@@ -139,7 +144,7 @@ sel="$(find . -type d 2>/dev/null | fzf)"
 
 - 官方 GitHub：[jarun/nnn](https://github.com/jarun/nnn)（README 自带演示 GIF，不用看视频）
 - 插件仓库：[nnn-plugins](https://github.com/jarun/nnn/tree/master/plugins)（80+ 个 shell 脚本，挑两个看就懂协议）
-- 同类对比：[yazi](https://github.com/sxyazri/yazi)（Rust 写的现代版，配置丰富但启动慢 5 倍）
+- 同类对比：[yazi](https://github.com/sxyazi/yazi)（Rust 写的现代版，配置丰富但启动慢 5 倍）
 - 同类对比：[ranger](https://github.com/ranger/ranger)（Python，老牌，功能多体感重）
 - [[fzf]] —— 模糊查找器，和 nnn 黄金搭档
 - [[ripgrep]] —— 快速文本搜索，和 nnn 在工作流里互补
