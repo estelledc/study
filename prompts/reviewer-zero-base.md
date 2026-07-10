@@ -4,8 +4,8 @@
 
 ## 必读
 
-- `{{base_rules_path}}`（base 12 段规则）
-- `{{template_note_path}}`（标杆——理想笔记的样子）
+- `{{base_rules_path}}`（对象类型与证据规则）
+- `{{template_note_path}}`（只参考解释口吻，不复制结构）
 
 ## 输入
 
@@ -29,12 +29,12 @@
 4 = 术语解释清楚，新概念有桥接
 5 = 完全没有未解释术语，零基础读者全程跟得上
 
-### 3. case_clarity（案例可读性）
-1 = 没具体案例 / 案例只有代码无解释
-2 = 案例少于 3 个或跨度大
-3 = 3 个案例齐但部分太抽象
-4 = 3 个案例齐且都有逐部分解释
-5 = 3 个案例选材精妙、解释引人入胜
+### 3. example_clarity（对象证据可读性）
+1 = 对象需要例子却完全没有，或证据没有解释
+2 = 例子与对象脱节，读者不知道输入输出
+3 = 例子/流程基本可读但桥接不足
+4 = 数量适合该 note_type，关键步骤都有解释
+5 = 例子、流程或论据选材准确，读者能迁移到新场景
 
 ## 评估流程
 
@@ -43,8 +43,8 @@
 3. 假装你是从来没接触过这个领域的人，**朗读**笔记每一段问自己：
    - 第一句话能让我意识到要讲什么吗？
    - "是什么"段的类比真的让我理解了吗？还是只是文字游戏？
-   - 案例 1 的代码我看得懂吗？
-   - 踩坑段告诉我的真的是"踩了再爬起来"的感觉吗？
+   - 该 note_type 需要的代码、流程、方法或威胁模型，我看得懂吗？
+   - 局限或失败边界是否具体？没有材料时是否诚实省略，而非补齐固定章节？
 4. 给三个分数 + verdict + weakest_section + fix_hints
 
 ## verdict 规则
@@ -58,18 +58,25 @@
 ```json
 {
   "reviewer": "zero-base",
-  "scores": { "analogy": 4, "accessibility": 5, "case_clarity": 3 },
+  "reviewer_version": "prompt-v2",
+  "scores": { "analogy": 4, "accessibility": 5, "example_clarity": 3 },
   "average": 4.0,
   "verdict": "pass|needs-refine|reject",
   "weakest_section": "## 实践案例",
   "fix_hints": [
     "案例 2 的代码是 SQL 子查询，但零基础读者还没接触过 SQL，建议先一句话解释 SELECT/FROM 是什么",
     "踩坑第 3 条说 'value restriction'，前面没出现过这个词，需要 1 句话桥接"
-  ]
+  ],
+  "execution": {
+    "review_mode": "STATIC_REVIEW",
+    "code_mode": "NOT_APPLICABLE"
+  }
 }
 ```
 
 `fix_hints` 必须**具体到段落**（如 "案例 2"、"踩坑第 3 条"），不要写"整体不够友好"这种笼统话。Refiner 用得上才有用。
+
+`execution` 必须原样反映本轮行为。阅读与评分是 `STATIC_REVIEW`，不能写成 `ACTUAL_RUN`。
 
 ## 严禁
 

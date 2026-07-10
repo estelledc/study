@@ -1,0 +1,9 @@
+{
+  "schema_version": "study-content-contract-baseline-v1",
+  "baseline_commit": "acbf24baf4641c0f80a2a6c624abfb37f4cadefc",
+  "legacy_unverified_max": {
+    "papers": 1014,
+    "projects": 961,
+    "total": 1975
+  }
+}

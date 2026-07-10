@@ -1,0 +1,74 @@
+---
+import freshnessPolicy from '../../data/freshness-policy.json';
+import officialSourceRegistry from '../../data/official-source-registry.json';
+import {
+  classifyFreshness,
+  freshnessBadgeDomAttributes,
+  freshnessBadgeModel,
+  resolveFreshnessAsOf,
+} from '../../scripts/lib/freshness.mjs';
+
+interface Props {
+  frontmatter: Record<string, unknown>;
+  asOf?: string;
+}
+
+const { frontmatter, asOf } = Astro.props;
+const auditDate = resolveFreshnessAsOf({
+  explicitAsOf: asOf,
+  envAsOf: process.env.STUDY_FRESHNESS_AS_OF,
+  policy: freshnessPolicy,
+});
+const result = classifyFreshness(frontmatter, {
+  asOf: auditDate.value,
+  policy: freshnessPolicy,
+  officialSourceRegistry,
+});
+const badge = freshnessBadgeModel(result);
+const domAttributes = freshnessBadgeDomAttributes(result);
+---
+
+<span
+  class:list={['freshness-badge', `freshness-${badge.variant}`]}
+  role="status"
+  aria-label={`内容复核状态：${badge.description}`}
+  title={badge.description}
+  data-freshness-status={domAttributes['data-freshness-status']}
+  data-freshness-due-soon={domAttributes['data-freshness-due-soon']}
+  data-pagefind-meta="freshness[data-freshness-status]"
+>
+  {badge.label}
+</span>
+
+<style>
+  .freshness-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 0.6rem;
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 999px;
+    color: var(--sl-color-gray-2);
+    background: var(--sl-color-gray-6);
+    font-size: var(--sl-text-xs);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .freshness-current {
+    border-color: var(--sl-color-green);
+    color: var(--sl-color-green-high);
+  }
+
+  .freshness-soon {
+    border-color: var(--sl-color-orange);
+    color: var(--sl-color-orange-high);
+  }
+
+  .freshness-due,
+  .freshness-invalid {
+    border-color: var(--sl-color-red);
+    color: var(--sl-color-red-high);
+  }
+</style>

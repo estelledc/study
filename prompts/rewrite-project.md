@@ -11,6 +11,8 @@
 - `{{existing_path}}` — 现有文件绝对路径
 - `{{output_path}}` — 输出路径（同 existing_path）
 - `{{github_url}}` — 该项目 GitHub URL（如果现有 frontmatter 没有，dispatch-batch 会从 candidates.jsonl / atlas / web 推断后注入）
+- `{{claim_token}}` — 本次 claim token，成功 JSON 必须原样回传
+- `{{claim_generation}}` — 本次 claim generation，成功 JSON 必须原样回传
 
 ## 流程
 
@@ -56,7 +58,7 @@ git commit -m "rewrite: {{slug}} 用零基础模板重写"
 
 ## 返回格式
 
-与 `new-paper.md` 同。
+与 `new-paper.md` 同。成功时必须原样包含 `"claim_token":"{{claim_token}}"` 与 `"claim_generation":"{{claim_generation}}"`。
 
 ## 特别提醒
 

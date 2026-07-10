@@ -13,6 +13,8 @@
 - `{{worktree_path}}` — 你的工作目录绝对路径，如 `{{worktree_path}}`
 - `{{branch_name}}` — 分支名，如 `refactor/papers`
 - `{{output_path}}` — 输出文件绝对路径，如 `{{output_path}}`
+- `{{claim_token}}` — 本次 claim token，成功 JSON 必须原样回传
+- `{{claim_generation}}` — 本次 claim generation，成功 JSON 必须原样回传
 
 ## 5 步流程（严格按顺序）
 
@@ -122,6 +124,8 @@ git commit -m "feat: {{slug}} 新建零基础笔记（{{topic}}）"
   "worktree": "{{branch_name}}",
   "lines": <number>,
   "self_check": "pass",
+  "claim_token": "{{claim_token}}",
+  "claim_generation": "{{claim_generation}}",
   "elapsed_ms": <number>
 }
 ```

@@ -88,9 +88,10 @@ template: splash
 
   <div class="study-card-grid">
     <div class="study-callout"><strong>不是摘要</strong><p>不只复述“它做了什么”，还追问它解决了哪个旧问题、为什么选择这条路。</p></div>
-    <div class="study-callout"><strong>不是收藏夹</strong><p>项目笔记会落到真实源码、核心文件与一个可以动手验证的最小实验。</p></div>
-    <div class="study-callout"><strong>不是百科</strong><p>每篇都有能力承诺：读完以后，你应该能解释、判断或亲手完成什么。</p></div>
+    <div class="study-callout"><strong>不是收藏夹</strong><p>项目笔记会尽量定位到公开源码与核心文件；是否实际运行，以页面复核状态和对应证据为准。</p></div>
+    <div class="study-callout"><strong>不是百科</strong><p>笔记会说明希望你读完后能解释、判断或尝试什么，但“待复核”不代表代码已经实际运行。</p></div>
   </div>
+  <p class="study-evidence-note"><strong>先看复核状态：</strong>尚未迁移到当前证据契约的历史内容统一标为“待复核”；它们可以作为学习入口，但不据此宣称已经完成真实运行或最新版本复核。</p>
 </section>
 
 <div class="study-callout">

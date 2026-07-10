@@ -1,0 +1,47 @@
+{
+  "schema_version": "study-freshness-policy-v1",
+  "default_build_as_of": "2026-07-10",
+  "due_soon_days": 30,
+  "rules": [
+    {
+      "id": "stable-paper",
+      "source_kind": "paper",
+      "note_types": ["paper", "concept"],
+      "max_review_days": null,
+      "official_source_required": false,
+      "applicable_version_required": false
+    },
+    {
+      "id": "evolving-paper",
+      "source_kind": "paper",
+      "note_types": ["protocol"],
+      "max_review_days": 730,
+      "official_source_required": false,
+      "applicable_version_required": true
+    },
+    {
+      "id": "security-paper",
+      "source_kind": "paper",
+      "note_types": ["security-guidance"],
+      "max_review_days": 365,
+      "official_source_required": false,
+      "applicable_version_required": true
+    },
+    {
+      "id": "active-project",
+      "source_kind": "project",
+      "note_types": ["concept", "library", "system", "protocol", "tool"],
+      "max_review_days": 365,
+      "official_source_required": false,
+      "applicable_version_required": false
+    },
+    {
+      "id": "platform-and-security",
+      "source_kind": "project",
+      "note_types": ["platform-api", "security-guidance"],
+      "max_review_days": 90,
+      "official_source_required": true,
+      "applicable_version_required": true
+    }
+  ]
+}
