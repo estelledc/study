@@ -69,7 +69,7 @@
         "accessibility": 4,
         "case_clarity": 3
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -85,7 +85,7 @@
         "citation_correctness": 4,
         "no_distortion": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "pass",
       "weakest_section": "## 历史小故事（可跳过）",
       "fix_hints": [

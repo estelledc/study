@@ -1,25 +1,25 @@
 {
-  "round_n": 105,
+  "round_n": 106,
   "total": 1975,
-  "audited": 1260,
+  "audited": 1272,
   "failed": 0,
-  "pending": 715,
+  "pending": 703,
   "by_status": {
     "rewritten": 29,
-    "refined": 684,
-    "passed": 547,
-    "pending": 715
+    "refined": 690,
+    "passed": 553,
+    "pending": 703
   },
   "last_round": {
-    "round": 105,
+    "round": 106,
     "results": 12,
     "passed": 6,
     "refined": 6,
     "rewritten": 0,
     "failed": 0,
-    "at": "2026-07-10T23:34:42.056Z"
+    "at": "2026-07-10T23:37:08.436Z"
   },
-  "next_action": "start-audit-round-106",
-  "updated_at": "2026-07-10T23:34:42.056Z",
-  "handoff": "Round 105 done (6p/6r). Audited 1260/1975. Continue round 106+."
+  "next_action": "start-audit-round-107",
+  "updated_at": "2026-07-10T23:37:08.436Z",
+  "handoff": "Round 106 done (6p/6r). Audited 1272/1975. Continue round 107+."
 }
