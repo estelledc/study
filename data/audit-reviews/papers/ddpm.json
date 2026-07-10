@@ -1,0 +1,102 @@
+{
+  "slug": "ddpm",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 数字清楚，但缺「从噪声到图」的逐步操作清单，零基础跟做感略弱。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一个把它跑成 SOTA」宜限定为「首次在 CIFAR-10 等标准基准上追平/超过主流 GAN 的 FID」，避免抹掉 2015 diffusion / 2019 NCSN 的先驱地位。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "训练循环描述正确，若补 5 行伪代码会更可跟做；适用边界已区分实时/离散 token。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 数字清楚，但缺「从噪声到图」的逐步操作清单，零基础跟做感略弱。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「第一个把它跑成 SOTA」宜限定为「首次在 CIFAR-10 等标准基准上追平/超过主流 GAN 的 FID」，避免抹掉 2015 diffusion / 2019 NCSN 的先驱地位。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "训练循环描述正确，若补 5 行伪代码会更可跟做；适用边界已区分实时/离散 token。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 156,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true,
+  "refine": {
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  }
+}

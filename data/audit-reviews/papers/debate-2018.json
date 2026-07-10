@@ -1,0 +1,105 @@
+{
+  "slug": "debate-2018",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 关联",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "NP/PSPACE 类比对零基础偏硬，但文中已用「只看一条分支」桥接，可接受。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "[[amplification-hell-2014]] 是 DNS/NTP 反射放大攻击论文，不是 Christiano 的 iterated amplification；关联文案写成「兄弟协议」属于硬伤，必须删改。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "MNIST 59.4%→88.9% / 48.2%→85.2% 与论文一致；作者 Irving/Christiano/Amodei 与 arXiv 1805.00899 正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "关联里 amplification-hell 链错会误导读者跳转；协议/踩坑本身可操作。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "NP/PSPACE 类比对零基础偏硬，但文中已用「只看一条分支」桥接，可接受。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "[[amplification-hell-2014]] 是 DNS/NTP 反射放大攻击论文，不是 Christiano 的 iterated amplification；关联文案写成「兄弟协议」属于硬伤，必须删改。",
+        "MNIST 59.4%→88.9% / 48.2%→85.2% 与论文一致；作者 Irving/Christiano/Amodei 与 arXiv 1805.00899 正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "关联里 amplification-hell 链错会误导读者跳转；协议/踩坑本身可操作。"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 164,
+    "reasons": []
+  },
+  "lines": 164,
+  "l1_pass": true,
+  "refine": {
+    "round": 1,
+    "sections_modified": [
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}
