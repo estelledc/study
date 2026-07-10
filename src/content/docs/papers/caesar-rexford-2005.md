@@ -51,7 +51,20 @@ ISP 跟邻居有三种关系：
 - **peer**：双方流量大致对等，互连不付钱。中性。
 - **provider**（上游）：我付钱给邻居，让它帮我转。我亏钱。
 
-ISP 的常见配置：把 LocalPref 划成区间——**客户 90-99 / peer 80-89 / provider 70-79 / backup 60-69**。同一个目的地有多条路时，先选客户（赚钱），再选 peer（省钱），最后才走 provider（亏钱）。
+ISP 的常见配置：把 LocalPref 划成区间——**客户 90-99 / peer 80-89 / provider 70-79 / backup 60-69**。可以把它想成一张入口打分表：
+
+```text
+from customer  -> set local-pref 95
+from peer      -> set local-pref 85
+from provider  -> set local-pref 75
+```
+
+**逐部分解释**：
+
+- 路由从客户进来，先被贴上 95 分，因为转发这类流量通常能赚钱
+- 路由从 peer 进来，贴 85 分，表示互惠但不是最高优先级
+- 路由从上游进来，贴 75 分，除非没别的选择，否则少用
+- 同一个目的地有多条路时，先比较 LocalPref，再看 AS_PATH 长短
 
 后果：你的包从北京到东京，理论上"经一个海底光缆"就到，但你的运营商可能没跟东京 ISP 直连（没 peer），只能从美国上游绕——**你的包先去了美国西海岸，再回日本**。这不是 bug，是经济规律。
 
@@ -67,6 +80,17 @@ B 跟 A、C 都是 peer。A 学到的路由 B **不能**导出给 C——因为 
 
 实现：B 的入口策略给从 A 学到的每条路由打一个 **community 标签** `Xpeer`（一种可附加在路由上的字符串）。然后 B 的出口策略在导给 C 之前过滤掉所有带 `Xpeer` 的路由。
 
+```text
+import from A: add community Xpeer
+export to C:  deny if community contains Xpeer
+```
+
+**逐部分解释**：
+
+- `import from A` 是入口策略，先给来源做标记
+- `export to C` 是出口策略，出门前再检查标签
+- `deny` 不代表目的地不存在，只代表 B 不愿意替两个 peer 免费中转
+
 community 是 BGP 最灵活的"加注释"机制，可以编码各种本地约定——但**没有跨 ISP 标准**，每家自定义，所以容易误配。
 
 ### 案例 4：让对方少给我发流量（MED 与 AS prepending）
@@ -75,6 +99,18 @@ community 是 BGP 最灵活的"加注释"机制，可以编码各种本地约定
 
 - **MED**：在该链路上把 MED 调高（数字越大越不优先），邻居会去走它的另一条入口
 - **AS prepending**：在 AS_PATH 里把自己的 AS 号重复几次（比如 `[A, A, A, B]`），让邻居觉得这条路"很长"，从而降优先
+
+```text
+overloaded link: set med 200
+normal link:     set med 50
+backup trick:    prepend my-as 3 times
+```
+
+**逐部分解释**：
+
+- MED 像给同一家邻居看的"入口拥堵牌"，只在对方愿意比较时有效
+- AS prepending 像故意把路线牌写长，让对方的第二步决策觉得它不划算
+- 两招都只是建议，不是命令；对方的 LocalPref 仍可能把你的暗示覆盖掉
 
 后者更野——AS_PATH 是对方决策第 2 步看的，AS prepending 利用了"第 2 步：路径越短越好"。但 prepending 可能被对方用 LocalPref（第 1 步）覆盖，所以**不一定有效**。
 

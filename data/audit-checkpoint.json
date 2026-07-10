@@ -1,26 +1,26 @@
 {
-  "round_n": 19,
+  "round_n": 20,
   "total": 1975,
-  "audited": 228,
+  "audited": 240,
   "failed": 0,
-  "pending": 1747,
+  "pending": 1735,
   "by_status": {
     "rewritten": 10,
-    "refined": 108,
-    "passed": 110,
-    "pending": 1747
+    "refined": 115,
+    "passed": 115,
+    "pending": 1735
   },
   "last_round": {
-    "round": 19,
+    "round": 20,
     "results": 12,
-    "passed": 8,
-    "refined": 3,
-    "rewritten": 1,
+    "passed": 5,
+    "refined": 7,
+    "rewritten": 0,
     "failed": 0,
-    "at": "2026-07-10T18:44:37.323Z"
+    "at": "2026-07-10T18:50:25.882Z"
   },
-  "next_action": "start-audit-round-20",
-  "updated_at": "2026-07-10T18:44:37.323Z",
+  "next_action": "start-audit-round-21",
+  "updated_at": "2026-07-10T18:50:25.882Z",
   "handoff": {
     "branch": "cursor/audit-all-notes-4844",
     "pr": "https://github.com/estelledc/study/pull/15"
