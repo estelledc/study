@@ -131,16 +131,17 @@ print(weights)  # [0, 0, 1, 0]
 ## 延伸阅读
 
 - 论文 PDF：[Xu et al. 2026 — How LoRA Remembers?](https://arxiv.org/abs/2605.30260)（本篇，重点看 Section 3-5）
-- [[lora-2021]] —— LoRA 原始论文，解释为什么低秩增量可以高效微调大模型。
-- [[understanding-lora-knowledge-memory]] —— 直接前作，把 LoRA 当作知识记忆模块评估。
+- [[lora]] —— LoRA 原始论文，解释为什么低秩增量可以高效微调大模型。
+- [Understanding LoRA as Knowledge Memory (arXiv 2603.01097)](https://arxiv.org/abs/2603.01097) —— 直接前作，把 LoRA 当作知识记忆模块评估。
 - [[rag-lewis-2020]] —— 外部检索式记忆的代表，和本文的参数记忆形成对照。
-- [[beyond-memorization-random-access]] —— 讨论语言模型能否随机访问已记住内容。
-- [[memory3-2024]] —— 把显式 memory 放在参数和 RAG 之间的另一条路线。
+- [[attention]] —— 自回归每步依赖前文，帮助理解单 token 错误为何会级联。
+- [[self-rag-2023]] —— 检索增强的另一条路线，和参数记忆对照看。
 
 ## 关联
 
 - [[attention]] —— 自回归生成每一步都依赖前文，单 token 错误才会级联扩散。
 - [[rag-lewis-2020]] —— RAG 是开卷查资料，本文研究闭卷写入参数。
+- [[lora]] —— 本文把 LoRA 当记忆探针，先读原始低秩适配再回来。
 - [[self-rag-2023]] —— Self-RAG 让模型决定何时检索，本文让模型不用检索也能背。
 - [[chinchilla]] —— 都用 scaling law 思维看参数、数据和性能之间的关系。
 - [[llm-int8-2022]] —— 都说明平均指标背后可能藏着少数关键位置或通道。

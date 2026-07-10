@@ -78,13 +78,19 @@ traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
               ^版本  ^trace_id (32位)              ^parent_span_id   ^flags
 ```
 
-这是 **W3C Trace Context** 标准。服务 B 的 SDK 自动读这个头，把自己新建的 span 的 `parent_id` 设成 `00f067aa0ba902b7`，`trace_id` 继承同一个。后端拿到所有 span 后按 trace_id 聚合、按 parent_id 拼树。
+**逐部分解释**：
 
-### 案例 3：为什么 Collector 不能省
+- 这是 **W3C Trace Context** 标准头，不是某家厂商私货。
+- 服务 B 的 SDK 读这个头：新建 span 的 `parent_id` = `00f067aa0ba902b7`，`trace_id` 继承同一串。
+- 后端按 `trace_id` 聚合同一请求、按 `parent_id` 拼成树。
+
+### 案例 3：为什么生产里常加 Collector
 
 直连：`SDK → 后端`。问题：每台机器都要配后端凭证；后端宕机时数据丢；批量压缩在每个 SDK 实例里重复。
 
 加 Collector：`SDK → Collector → 后端`。Collector 集中做缓冲 / 重试 / 采样 / 加 K8s 元信息。换后端只改 Collector 配置，不动应用。
+
+**逐部分解释**：本地 demo 直连后端完全可以；多服务、要统一采样/脱敏/换厂商时，Collector 才变成架构决策而不是可选项。
 
 ### 案例 4：Semantic Conventions（语义约定）
 
@@ -94,12 +100,12 @@ traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
 - 数据库类型 → `db.system`（值是 `postgresql` / `mysql` / `redis`）
 - 消息中间件 → `messaging.system`（值是 `kafka` / `rabbitmq`）
 
-不遵守 Semantic Conventions 的代价：dashboard 上同一字段在 Java 服务叫 `http.method`，Go 服务叫 `httpMethod`，永远聚不到一起。
+**逐部分解释**：不遵守的代价是 dashboard 上同一字段在 Java 叫 `http.method`、Go 叫 `httpMethod`，永远聚不到一起。约定名字比多埋几个点更重要。
 
 ## 踩过的坑
 
-1. **把 SDK 当 Collector 用**：直连后端方便但脆，正确姿势永远是 SDK → Collector → 后端
-2. **Auto-instrumentation 全开**：Java agent 默认埋 50+ 框架，生产环境 CPU 飙 15%。要按需开
+1. **把 SDK 当 Collector 用**：本地 demo 直连后端没问题；多实例生产里直连脆（凭证分散、后端抖动易丢数），常见姿势是 SDK → Collector → 后端
+2. **Auto-instrumentation 全开**：Java agent 默认可埋几十个框架，生产里 CPU 开销常见到两位数百分比量级。要按需开
 3. **Head sampling 1% 然后看不到错误**：随机 1% 采样后稀有错误链路全丢。错误要走 **tail sampling**（在 Collector 看完整条 trace 再决定留不留）
 4. **trace_id 没串到 log 里**：log 不带 trace_id，监控只能"看见慢"但点不到"哪行 log 慢"
 5. **不遵守 Semantic Convention**：自己造名字，团队规模一大全是孤儿字段
@@ -111,12 +117,13 @@ traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
 - 微服务 / 多语言 / 多团队架构——OTel 是事实标准
 - 想避免 vendor lock-in——OTLP 让换后端只改配置
 - 三个信号要联动分析（trace + metric + log 串 trace_id）
+- 需要统一采样、脱敏、加 K8s 元信息——上 Collector 比每台 SDK 各写一遍划算
 
 **不适用**：
 
-- 单体小应用——直接用 Prometheus + 普通日志够用，OTel 是过度工程
-- 实时性极强（毫秒级反馈环）——OTel 默认批处理几秒延迟
-- 嵌入式 / 资源极受限——SDK 内存开销不低
+- 单体小应用、只要本机指标——Prometheus + 普通日志通常够用，上全套 OTel 是过度工程
+- 实时性极强（毫秒级反馈环）——SDK/Collector 默认批处理常见是秒级导出延迟
+- 嵌入式 / 资源极受限——SDK 内存与线程开销不低
 
 ## 历史小故事（可跳过）
 
@@ -149,6 +156,11 @@ traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
 
 - [[prometheus]] —— OTel metric 信号兼容 Prometheus exposition format
 - [[jaeger]] —— OTel trace 后端的常见落地
-- [[grpc]] —— OTLP 默认走 gRPC 传输
-- [[protobuf]] —— OTLP 数据编码格式
+- [[otel-collector]] —— Collector 运维与 pipeline 配置视角
+- [[opentelemetry-collector]] —— Collector 核心仓库与组件模型
 - [[kubernetes]] —— Collector 常作为 DaemonSet 部署，自动注入 pod 元信息
+- [[grpc-go]] —— OTLP 常用 gRPC 传输（Go 实现入口）
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
