@@ -1,7 +1,4 @@
 {
-  "slug": "go-ethereum",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -91,29 +88,5 @@
         "案例 1 的 personal API 在新版本已弱化，可注明仅 --dev 调试或改用 eth.accounts 演示"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic 纠正 Sepolia≠2015 主网创世、Nethermind 非 Geth fork、份额表述加量级限定；案例去掉 personal API 暴露风险。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 177,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

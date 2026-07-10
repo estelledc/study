@@ -1,7 +1,4 @@
 {
-  "slug": "godot",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "官方入门脚本可跟做；节点名大小写、忘记乘 delta、物理回调改状态踩坑具体；3D 写实重资产边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 194,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 194,
-  "l1_pass": true
+  ]
 }

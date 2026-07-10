@@ -1,7 +1,4 @@
 {
-  "slug": "effiskill",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.33,
   "reject_count": 0,
@@ -96,38 +93,5 @@
         "评测主线是 EffiBench-X（竞赛风格慢/快程序对），适用段写成 Web 后端/数据处理过宽，应收窄并点出无在线执行反馈的部署场景。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "纠正 Closed-loop 歪曲为 execution-free；案例补逐部分解释；[[react]]→[[react-agent]]；收窄适用场景并标明 OPT 成功率。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 163,
-  "l1_pass": true
+  ]
 }

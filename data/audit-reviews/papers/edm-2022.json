@@ -1,7 +1,4 @@
 {
-  "slug": "edm-2022",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -91,29 +88,5 @@
         "案例代码是教学伪代码即可，但可注明需自备 denoise/F 网络与 sigma 调度才能跑通"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic 指出消融表与论文 Table 不对齐、ImageNet FID 路径被压成「一夜」、SD3/Turbo「全部继承」过满；已改为分层读数并弱化继承表述。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

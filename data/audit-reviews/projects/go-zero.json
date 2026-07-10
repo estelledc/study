@@ -1,7 +1,4 @@
 {
-  "slug": "go-zero",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -81,29 +78,5 @@
         "greet.api / ServiceContext 可跟做；端口撞车、生成覆盖、限流阈值踩坑具体；案例 3 缺可复制的 goctl rpc 命令链。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "补全案例 3：给出 .proto 最小样例、goctl rpc 命令链，以及 HTTP logic 调 RPC 的逐步说明。",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 181,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 181,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "efficient-compile-2011",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -81,27 +78,5 @@
         "SQL/伪代码/分支布局案例可跟做；编译时间 vs 执行时间、热路径 LLVM 踩坑具体；极短查询边界清楚。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 193,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 193,
-  "l1_pass": true
+  ]
 }
