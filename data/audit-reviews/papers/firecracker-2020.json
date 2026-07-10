@@ -1,0 +1,82 @@
+{
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "TCB / Jailer / vsock 已有桥接，整体可跟读；若再润色可把 TCB 用一句「需要信任的代码总量」再点明一次。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「代码量从 140 万行降到 5 万行」与「TCB 大约降到 1/5」数量级不一致（约 1/28）；应改成与 LOC 一致的表述，或删掉 1/5 改说攻击面缩小一个数量级。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与密度数字具体；适用边界清楚。可选：注明 snapshot/restore 已部分补回，但 live migration 仍非目标。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "TCB / Jailer / vsock 已有桥接，整体可跟读；若再润色可把 TCB 用一句「需要信任的代码总量」再点明一次。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「代码量从 140 万行降到 5 万行」与「TCB 大约降到 1/5」数量级不一致（约 1/28）；应改成与 LOC 一致的表述，或删掉 1/5 改说攻击面缩小一个数量级。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "踩坑与密度数字具体；适用边界清楚。可选：注明 snapshot/restore 已部分补回，但 live migration 仍非目标。"
+      ]
+    }
+  ]
+}
