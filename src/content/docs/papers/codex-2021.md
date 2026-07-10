@@ -101,20 +101,19 @@ assert incr_list([1, 2, 3]) == [2, 3, 4]
 ### 案例 3：Codex 在 IDE 里的形态
 
 ```python
-# 你写：
 def fibonacci(n):
     """Return the n-th Fibonacci number."""
     # ← Copilot 在这里补：
-
-# 模型补：
     if n <= 1:
         return n
     return fibonacci(n-1) + fibonacci(n-2)
 ```
 
-注意几个细节：
+**逐部分解释**：
 
-- **触发点是 docstring 写完那一刻**——和 HumanEval 的训练形态完全一致
+- 你先写函数名和 docstring，Codex 从自然语言描述里猜出"第 n 个 Fibonacci 数"这个目标
+- `if n <= 1` 是递归出口，避免函数一直调用自己；这也是测试里最容易漏掉的边界
+- 最后一行把问题拆成 `n-1` 和 `n-2` 两个小问题，写法直观但性能不高，适合演示不适合大 n
 - **多候选**：Copilot 会准备 3-5 个候选，按 Tab 切换
 - **上下文窗口有限**：早期 Codex 只看你当前文件附近几千 token，跨文件理解弱
 
