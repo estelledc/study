@@ -1,0 +1,136 @@
+{
+  "slug": "librosa",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "『实验室前台』类比偏虚，应换成更日常的厨房调料/体检化验单类比并贯穿全文。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "STFT / MFCC / chroma 首次出现缺中文桥接，零基础跟不住。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 只有一句话没有逐步代码与解释，需补成可跟做的 3 步。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "定位为音频特征工程库正确；Scipy 2015 McFee et al. 引用合理；历史段缺具体年份时间线，建议补 2015 论文与后续版本节点。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "仅案例 1 有可运行代码；beat_track 与 mel 相似度需补完整示例。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑偏泛，应写清 sr 未统一 / hop_length 与模型 shape 的具体失败现象。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用拆成两个 H2，且缺量化边界（如实时延迟、片段长度）；反向链接后堆了额外实践段落，应收回正文并统一『适用 vs 不适用』结构。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "『实验室前台』类比偏虚，应换成更日常的厨房调料/体检化验单类比并贯穿全文。",
+        "STFT / MFCC / chroma 首次出现缺中文桥接，零基础跟不住。",
+        "案例 2/3 只有一句话没有逐步代码与解释，需补成可跟做的 3 步。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "定位为音频特征工程库正确；Scipy 2015 McFee et al. 引用合理；历史段缺具体年份时间线，建议补 2015 论文与后续版本节点。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "仅案例 1 有可运行代码；beat_track 与 mel 相似度需补完整示例。",
+        "踩坑偏泛，应写清 sr 未统一 / hop_length 与模型 shape 的具体失败现象。",
+        "适用/不适用拆成两个 H2，且缺量化边界（如实时延迟、片段长度）；反向链接后堆了额外实践段落，应收回正文并统一『适用 vs 不适用』结构。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "zero-base/engineer needs-refine：补强化验单类比与术语桥接，补全 beat_track/mel 相似度可运行案例，合并适用段并收回反向链接后堆砌内容，补 SciPy 2015 时间线。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 150,
+  "l1_pass": true
+}
