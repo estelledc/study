@@ -1,0 +1,25 @@
+.github/workflows/ci.yml
+  s_4f77f5abefc26e::t_301c0c8d260d48 31-34
+.github/workflows/deploy.yml
+  s_4f77f5abefc26e::t_66cc156f7dbd0d 31-34
+scripts/verify-ci.test.mjs
+  s_4f77f5abefc26e::t_2722211ba30e3d 2,36-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "da6b02e31bcb0f8de3e14c66bf42776a52df6a5d",
+  "prompts": {},
+  "sessions": {
+    "s_4f77f5abefc26e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_4f77f5abefc26e",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
