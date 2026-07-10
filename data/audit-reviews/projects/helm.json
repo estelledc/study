@@ -1,0 +1,120 @@
+{
+  "slug": "helm",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "apt/yum 类比贴合；Chart/Release 桥接清楚，案例步骤可跟。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2016：Helm 1.0 发布，引入 Tiller」不准确——Tiller 是 Helm 2 的标志；Helm Classic/v1 与 Helm 2 应分开表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例写 bitnami/nginx「默认 5 个副本」与当前 Bitnami chart 默认 replicaCount: 1 不符，需改正。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "helm install 流程可跟，但「默认 5 个副本」会误导跟做预期（实际默认多为 1）；改准后即可。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（values 不同步、hooks、subchart 嵌套）具体有用；适用/Operator 边界合理。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "apt/yum 类比贴合；Chart/Release 桥接清楚，案例步骤可跟。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2016：Helm 1.0 发布，引入 Tiller」不准确——Tiller 是 Helm 2 的标志；Helm Classic/v1 与 Helm 2 应分开表述。",
+        "案例写 bitnami/nginx「默认 5 个副本」与当前 Bitnami chart 默认 replicaCount: 1 不符，需改正。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "helm install 流程可跟，但「默认 5 个副本」会误导跟做预期（实际默认多为 1）；改准后即可。",
+        "踩坑（values 不同步、hooks、subchart 嵌套）具体有用；适用/Operator 边界合理。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.67,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic+engineer needs-refine: Bitnami nginx 默认副本改为 1；历史改为 Helm 2 引入 Tiller",
+    "sections_modified": [
+      "## 实践案例",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 184,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 184,
+  "l1_pass": true
+}

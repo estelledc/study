@@ -1,0 +1,107 @@
+{
+  "slug": "feautrier-polyhedral",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "流水线类比够用；Farkas/ILP 对零基础仍陡，但对应表与案例 1–2 把几何直觉托住了。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Feautrier 1992 IJPP 仿射调度定位正确；文中 LP 与 ILP 用语略混（Farkas 后常落 LP/PIP），教学简化可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "matmul/skewing 依赖与 θ 推导可跟读；仿射硬约束与 codegen 坑写得很工程。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "流水线类比够用；Farkas/ILP 对零基础仍陡，但对应表与案例 1–2 把几何直觉托住了。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Feautrier 1992 IJPP 仿射调度定位正确；文中 LP 与 ILP 用语略混（Farkas 后常落 LP/PIP），教学简化可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "matmul/skewing 依赖与 θ 推导可跟读；仿射硬约束与 codegen 坑写得很工程。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三位 reviewer 均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 176,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 176,
+  "l1_pass": true
+}
