@@ -72,7 +72,12 @@ class AppModule {}
 NestFactory.create(AppModule).then(app => app.listen(3000));
 ```
 
-注意 controller 里**直接 return** 业务数据，框架自动序列化 JSON——不用 `res.json()`。
+**逐部分解释**：
+
+1. `@Injectable` 把 `UsersService` 登记为可注入工人；`@Controller('users')` 挂路由前缀
+2. constructor 声明依赖 → Nest 启动时自动塞进单例；`@Get()` 映射 `GET /users`
+3. `list()` **直接 return** 数据，框架序列化 JSON——不用 `res.json()`
+4. `@Module` 把 controller + provider 打包；`NestFactory.create` 建依赖图后听 3000
 
 ### 案例 2：DI 怎么从元数据自动注入
 
@@ -82,26 +87,20 @@ class Logger { log(msg: string) { console.log(msg); } }
 
 @Injectable()
 class UsersService {
-  constructor(private logger: Logger) {}  // ← TS 编译写入 design:paramtypes
+  constructor(private logger: Logger) {}  // ← TS 写入 design:paramtypes
 }
 ```
 
-TS 开启 `emitDecoratorMetadata` 后，编译器把 `Logger` 类型写进 metadata。NestJS 启动时：
+TS 开 `emitDecoratorMetadata` 后，Nest 启动时：① 读 `design:paramtypes` 得 `[Logger]`；② `resolve(Logger)` 拿单例；③ `new UsersService(logger)`。全程不用手写 wire。
 
-1. 读 `Reflect.getMetadata('design:paramtypes', UsersService)` 拿到 `[Logger]`
-2. 递归 `resolve(Logger)` 拿单例
-3. `new UsersService(loggerInstance)` 完成注入
-
-整个过程**没让你写一行手动 wire 代码**。这是 NestJS 一切的根。
-
-### 案例 3：guard + interceptor + pipe 搭管线
+### 案例 3：guard + pipe 搭管线
 
 ```ts
 @Injectable()
 class JwtAuthGuard implements CanActivate {
   canActivate(ctx: ExecutionContext): boolean {
     const req = ctx.switchToHttp().getRequest();
-    return !!verifyToken(req.headers.authorization);
+    return !!req.headers.authorization?.startsWith('Bearer ');
   }
 }
 
@@ -113,7 +112,7 @@ class UsersController {
 }
 ```
 
-请求进来按 **middleware → guard → interceptor → pipe → handler → interceptor → filter** 走管线。每一阶段都有专门的接口（`CanActivate` / `NestInterceptor` / `PipeTransform` / `ExceptionFilter`），各司其职——比 Express 的"线性中间件链"类型化更强。
+**逐部分解释**：请求按 **guard → pipe → handler** 走。① `@UseGuards` 先验 token 头；② `ParseIntPipe` 把 `:id` 转成 number；③ handler 只收已校验参数。比 Express 线性中间件链类型更强。
 
 ## 踩过的坑
 
@@ -143,62 +142,40 @@ class UsersController {
 
 ## 历史小故事（可跳过）
 
-- **2017-05** v1：Kamil Mysliwiec 发布，Angular 2 思想搬到 Node.js，TypeScript-first
-- **2018-2020 v5-7**：稳定 GraphQL/Microservice/WebSocket 三传输层；Fastify adapter stable
-- **2022-2024 v9-10**：Standalone application、custom decorator 简化、Node 16+ 起步
-- **2025 v11**：原生 ESM，Node 20+，开始迁移到 stage 3 decorator
+- **2017-05** v1：Kamil Mysliwiec 发布，Angular 思想搬到 Node.js，TypeScript-first
+- **2018-2020 v5-7**：GraphQL / Microservice / WebSocket 与 Fastify adapter 稳定
+- **2022-2024 v9-10**：Standalone application、Node 16+ 起步
+- **2025 v11**：原生 ESM、Node 20+，开始迁 stage 3 decorator
 
-8 年从 0 长到 5M weekly downloads，成为 Node 后端的"企业级范本"。
+8 年长到约 5M weekly downloads，成 Node 后端企业级范本。
 
 ## 学到什么
 
-1. **decorator + Reflect.metadata 是 NestJS 一切的根**：TS 编译 emit metadata 才让 DI 自动化成立
-2. **module 是依赖图打包单元**：四元组（imports/providers/controllers/exports）决定可见性
-3. **adapter 模式解耦 HTTP 层**——同一套上层代码可切 Express/Fastify/Kafka/gRPC
+1. **decorator + Reflect.metadata 是根**：TS emit metadata 才让 DI 自动化成立
+2. **module 是依赖图打包单元**：imports/providers/controllers/exports 决定可见性
+3. **adapter 解耦 HTTP 层**——上层可切 Express / Fastify / Kafka / gRPC
+4. **结构有成本**：小项目仪式感是负担；收益在多 controller、多 transport 时显现
 
 ## 延伸阅读
 
-- 官方文档：[docs.nestjs.com](https://docs.nestjs.com)（中文社区翻译质量也高）
-- 视频：[Marius Espejo — NestJS Crash Course](https://www.youtube.com/c/MariusEspejo)（一小时跑通 controller / module / DI）
-- 源码精读：`packages/core/scanner.ts` + `instance-loader.ts` 看 DI 实例化的拓扑序算法
-- 对比阅读：[[fastapi]] 的 Depends 比 NestJS DI 简化一半，看抽象数量怎么影响学习曲线
+- 官方文档：[docs.nestjs.com](https://docs.nestjs.com)
+- 视频：[Marius Espejo — NestJS Crash Course](https://www.youtube.com/c/MariusEspejo)
+- 源码：`packages/core/scanner.ts` + `instance-loader.ts`（DI 拓扑序）
+- 对比：[[fastapi]] 的 Depends 比 NestJS DI 更简，看抽象数量如何影响学习曲线
+- [[spring-boot]] —— Java 侧 annotation / IoC 对照
 
 ## 关联
 
-- [[express]] —— NestJS 的默认 HTTP adapter，被 NestJS 包了一层 module + DI
-- [[fastify]] —— NestJS 的高性能可选 adapter，schema 校验思路和 NestJS class-validator 互补
-- [[koa]] —— async/await 中间件思想原型，和 NestJS 同代但走极简路线
-- [[hono]] —— 边缘 runtime first 的对手，NestJS 不覆盖的赛道
-- [[spring-boot]] —— Java 世界的 NestJS"思想原型"，annotation/IoC/AOP 一一对应
-- [[fastapi]] —— Python 同思路（type hint + Depends + Pydantic），DI 简化版
-- [[aspnetcore]] —— .NET 世界的同位框架，DI/middleware/filter 三件套思路相同
+- [[express]] —— 默认 HTTP adapter，被包了一层 module + DI
+- [[fastify]] —— 高性能可选 adapter
+- [[koa]] —— 同代极简 async 中间件路线
+- [[hono]] —— 边缘 runtime 赛道，NestJS 不覆盖
+- [[spring-boot]] —— Java 思想原型，annotation/IoC/AOP 对应
+- [[fastapi]] —— Python type hint + Depends 简化版
+- [[aspnetcore]] —— .NET 同位框架，DI/middleware/filter 同构
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[affine]] —— AFFiNE — 文档和白板共用同一棵 block 树的开源知识库
-- [[aspnetcore]] —— ASP.NET Core — 微软跨平台 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[bullmq]] —— BullMQ — Node.js 上的 Redis 任务队列
-- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
-- [[drizzle]] —— Drizzle ORM — 轻量 SQL-like ORM
-- [[echo]] —— Echo — 极简高性能 Go 框架，5 行起服务
-- [[elysia]] —— Elysia — 长在 Bun 上的极致类型安全 Web 框架
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[fastify]] —— Fastify — 让 schema 替你写校验和序列化的 Node.js 框架
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[hono]] —— Hono — 多运行时 Web 框架
-- [[hot-chocolate]] —— Hot Chocolate — .NET 里 code-first 写 GraphQL 服务器
-- [[immich]] —— Immich — 把家庭照片从别人的云里救回自己机器
-- [[koa]] —— Koa — async/await + ctx 对象 + 洋葱模型 的极简 Node.js web 框架
-- [[litestar]] —— Litestar — 类型驱动的 ASGI 框架（原 Starlite）
-- [[micronaut]] —— Micronaut — 编译期搞定 DI 的 JVM 云原生框架
-- [[prisma]] —— Prisma — 类型安全 ORM
-- [[socket-io]] —— Socket.IO — 让浏览器和 Node.js 像打电话一样互相喊事件
-- [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
-- [[symfony]] —— Symfony — 把 PHP 框架拆成 30 个独立组件再拼起来
-- [[trpc]] —— tRPC — TS 端到端类型安全 RPC
-- [[zod]] —— Zod — TypeScript-first schema 验证
 
