@@ -1,0 +1,122 @@
+{
+  "slug": "dpo",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "家长/小孩类比很好；Loss 公式里的 σ（sigmoid）与 BCE 首次出现缺少零基础桥接。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 dpo_loss 可再拆成「算 ratio → 相减 → logsigmoid」三步中文解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Llama 2 / Llama 3 … 几乎一夜切掉了 PPO」不准确：Llama 2 Chat 仍走 RLHF/PPO；应改为 Llama 3 / Zephyr / Tülu 等切到 DPO。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源与 NeurIPS 2023 引用正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "dpo_loss 与 TRL 调用概念正确；全文行数 <150，quality-gate 会拦，需扩写到 150–200。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "家长/小孩类比很好；Loss 公式里的 σ（sigmoid）与 BCE 首次出现缺少零基础桥接。",
+        "案例 2 的 dpo_loss 可再拆成「算 ratio → 相减 → logsigmoid」三步中文解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Llama 2 / Llama 3 … 几乎一夜切掉了 PPO」不准确：Llama 2 Chat 仍走 RLHF/PPO；应改为 Llama 3 / Zephyr / Tülu 等切到 DPO。",
+        "来源与 NeurIPS 2023 引用正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "dpo_loss 与 TRL 调用概念正确；全文行数 <150，quality-gate 会拦，需扩写到 150–200。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "zero-base/academic needs-refine + 行数<150：修正 Llama 2/PPO 表述，桥接 σ/BCE，拆案例步骤，扩到 quality-gate 通过。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 153,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 153,
+  "l1_pass": true
+}

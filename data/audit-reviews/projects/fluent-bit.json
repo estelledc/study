@@ -1,0 +1,106 @@
+{
+  "slug": "fluent-bit",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "打印机类比清楚；案例 3 的 cardinality 已用「每个请求一个新 stream」解释，零基础可跟住。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「每个云厂商 K8s 默认都内置 Fluent Bit」略满，更准确是常见默认选项之一；不构成硬伤。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "INI 配置与 Helm 示例可跟做；踩坑均带具体解法（Inotify / Use_Kubelet / filesystem buffer）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "打印机类比清楚；案例 3 的 cardinality 已用「每个请求一个新 stream」解释，零基础可跟住。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「每个云厂商 K8s 默认都内置 Fluent Bit」略满，更准确是常见默认选项之一；不构成硬伤。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用",
+      "fix_hints": [
+        "INI 配置与 Helm 示例可跟做；踩坑均带具体解法（Inotify / Use_Kubelet / filesystem buffer）。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，平均分 ≥ 4；未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true
+}
