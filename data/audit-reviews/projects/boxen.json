@@ -1,0 +1,93 @@
+{
+  "slug": "boxen",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "每周下载约 3000 万次、CommonJS 40%+ 等数字容易过期或缺少来源，建议改成稳健表述。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "当前质量门失败于 lines:208>200，需要删减非必要的反向链接生成内容或压缩冗余句。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "每周下载约 3000 万次、CommonJS 40%+ 等数字容易过期或缺少来源，建议改成稳健表述。",
+        "当前质量门失败于 lines:208>200，需要删减非必要的反向链接生成内容或压缩冗余句。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": []
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 是什么",
+      "## 踩过的坑",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 199,
+    "reasons": []
+  }
+}

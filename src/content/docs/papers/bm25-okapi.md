@@ -1,6 +1,6 @@
 ---
 title: BM25 — 给文档打分的"老配方"
-来源: Robertson & Walker, "Some Simple Effective Approximations to the 2-Poisson Model for Probabilistic Weighted Retrieval", SIGIR 1994
+来源: 'Robertson & Walker, "Some Simple Effective Approximations to the 2-Poisson Model for Probabilistic Weighted Retrieval", SIGIR 1994'
 日期: 2026-05-31
 分类: 数据检索
 难度: 入门
@@ -19,7 +19,7 @@ BM25 是一个**给文档打分**的公式：你给它一个查询（query），
 - 为什么 Lucene / Elasticsearch / OpenSearch **默认排序**还是它（不是神经网络）
 - 为什么 RAG 系统都在做 **hybrid retrieval**（一边 BM25 一边 dense embedding）而不是只用向量
 - 为什么搜 `CVE-2024-1234` 这种 ID、产品型号、人名时，纯向量检索会丢，BM25 不会
-- 为什么 1994 年的公式在 2026 年的 LLM 系统里还坐在第一道闸门
+- 为什么 1994 年的公式在现代 LLM 系统里还常坐在第一道闸门
 
 ## 核心要点
 
@@ -124,7 +124,7 @@ scores = bm25.get_scores(["发酵", "酒精"])
 - **80 年代末**：City University London 的 Okapi 项目开干，试 BM1、BM11、BM15…一个个版本调。
 - **1994 年**：Robertson & Walker 在 SIGIR 发论文，形式化 **BM25**——把 PRP 的理论近似成一个能算的公式。
 - **1995 年**：TREC-3 评测 BM25 成绩压倒性，成为新基线。
-- **2009 年**：Lucene 把默认排序从 TF-IDF 改成 BM25。
+- **2016 年前后**：Lucene 6 / Elasticsearch 5 默认排序转向 BM25，传统检索基线进入更多工程系统。
 - **2020 年代**：RAG 兴起，BM25 + dense 的 hybrid 重新成为主流。
 
 ## 学到什么
@@ -132,7 +132,7 @@ scores = bm25.get_scores(["发酵", "酒精"])
 1. **简单统计 + 几个超参数**就能做出 30 年不过时的工业级排序——不是所有问题都需要神经网络
 2. **饱和 + 长度归一化**这两个直觉非常 portable，做任何排序公式都能借鉴
 3. **dense 不是万能**——精确名词、罕见词、ID 这些场景，字面匹配是不可替代的兜底
-4. **理论 → 工程实证 → 产品默认**：1976 PRP → 1994 BM25 → 2009 Lucene 默认，每一步都要十多年
+4. **理论 → 工程实证 → 产品默认**：1976 PRP → 1994 BM25 → 2010s 搜索引擎默认，每一步都要十多年
 5. **基线很重要**：任何号称"我比 BM25 强"的检索方法，先在同一份测试集上跑一遍 BM25 才有说服力——这条规矩从 TREC 一路传到今天的 BEIR / MTEB
 
 ## 延伸阅读
@@ -148,4 +148,8 @@ scores = bm25.get_scores(["发酵", "酒精"])
 - [[tfidf-classic]] —— TF-IDF 是 BM25 的直接前身，BM25 在它基础上加饱和和长度归一
 - [[dense-retrieval-dpr]] —— 稠密检索靠语义，BM25 靠字面，互补
 - [[rrf-fusion]] —— BM25 和 dense 两路结果常用 RRF 融合
-- [[lucene]] —— Lucene 2009 起把默认排序换成 BM25
+- [[lucene]] —— Lucene 6 起把默认排序换成 BM25
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

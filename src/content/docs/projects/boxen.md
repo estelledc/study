@@ -27,7 +27,7 @@ console.log(boxen('Hello, world!', {padding: 1}));
 └───────────────────┘
 ```
 
-Sindre Sorhus 2014 年起维护，每周下载约 3000 万次。npm 全局装包之后那个"Update available 1.0.0 → 1.1.0"提示框、CLI 启动时的 banner、错误信息高亮，几乎都是它画的。
+Sindre Sorhus 2014 年起维护，长期是 Node CLI 生态里的高下载量小工具。npm 全局装包之后那个"Update available 1.0.0 → 1.1.0"提示框、CLI 启动时的 banner、错误信息高亮，很多都可以用它画。
 
 ## 为什么重要
 
@@ -139,7 +139,7 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 
 2. **wrap-ansi 是 boxen 的"暗侧"依赖**：朴素换行会把 `\x1b[31m` 切成两半让颜色失效，wrap-ansi 在每次换行时关闭当前色、下一行重新打开——任何处理终端字符串的库都绕不开。
 
-3. **v6 改 ESM-only 是生态级断崖**：CommonJS 项目（仍占 Node 生态 40%+）必须用动态 `import()` 或卡在 v5。技术上正确，但很多 CLI 工具至今没升上来。
+3. **v6 改 ESM-only 是生态级断崖**：还停在 CommonJS 的项目必须用动态 `import()` 或卡在 v5。技术上正确，但不少旧 CLI 工具升级成本很高。
 
 4. **嵌套 box 不友好**：把 boxen 输出再喂给另一个 boxen，外层宽度计算会被内层 ANSI 边框字符干扰，对不齐。boxen 假设输入是"内容"而非"已渲染的框"——要嵌套请改用 ink（React-for-CLI）。
 
@@ -196,12 +196,3 @@ function boxenLite(text, {padding = 0, borderStyle = 'single'} = {}) {
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[chalk]] —— chalk — 让 console.log 输出彩色字符串的 Node 库
-- [[clack]] —— Clack — 给 Common Lisp 加一层标准化的 web 服务器接口
-- [[commander]] —— commander.js — Node.js CLI 解析的声明式标准
-- [[ink]] —— ink — 用 React 组件树写终端 CLI
-- [[listr2]] —— listr2 — 把 CLI 任务跑成一棵会自己画进度的树
-- [[ora]] —— ora — 终端 spinner 用 ANSI 反复擦写同一行
-- [[yargs]] —— yargs — Node.js 命令行参数解析的事实标准
-

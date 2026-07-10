@@ -1,0 +1,101 @@
+{
+  "slug": "bm25-okapi",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "academic",
+      "hint": "frontmatter 来源含逗号和引号，应按 base rules 用单引号包裹。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Lucene 默认 BM25 的时间线写成 2009，需改为 Lucene 6 / Elasticsearch 5 前后的 2010s。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "补齐 ## 反向链接 占位段，保持 12 段结构。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "frontmatter 来源含逗号和引号，应按 base rules 用单引号包裹。",
+        "Lucene 默认 BM25 的时间线写成 2009，需改为 Lucene 6 / Elasticsearch 5 前后的 2010s。",
+        "补齐 ## 反向链接 占位段，保持 12 段结构。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": []
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "frontmatter",
+      "## 为什么重要",
+      "## 历史小故事",
+      "## 学到什么",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 156,
+    "reasons": []
+  }
+}
