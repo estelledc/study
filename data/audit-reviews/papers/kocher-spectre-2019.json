@@ -1,0 +1,115 @@
+{
+  "slug": "kocher-spectre-2019",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐厅/厨房痕迹类比贯穿全文；三案例均有逐部分解释；高级主题对零基础仍偏难，但桥接足够跟住主线。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读里 [[sgxpectre-2019]] 写成「`lr graph search` 显示的高相关后续工作」是流水线残留话术，应改成正常学术关联说明（SGX 场景下的 Spectre 变体）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Spectre 机制、与 Meltdown 区分、2018 披露 / 2019 IEEE S&P 发表时间线总体正确。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "边界检查/缓存测速/lfence 教学片段概念正确；踩坑与适用边界（不能当扫描清单、勿轻易复现 PoC）清楚。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "餐厅/厨房痕迹类比贯穿全文；三案例均有逐部分解释；高级主题对零基础仍偏难，但桥接足够跟住主线。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "延伸阅读里 [[sgxpectre-2019]] 写成「`lr graph search` 显示的高相关后续工作」是流水线残留话术，应改成正常学术关联说明（SGX 场景下的 Spectre 变体）。",
+        "Spectre 机制、与 Meltdown 区分、2018 披露 / 2019 IEEE S&P 发表时间线总体正确。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "边界检查/缓存测速/lfence 教学片段概念正确；踩坑与适用边界（不能当扫描清单、勿轻易复现 PoC）清楚。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "去掉 sgxpectre 条目中的 lr graph search 流水线残留话术。",
+    "sections_modified": [
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 151,
+    "reasons": []
+  },
+  "lines": 151,
+  "l1_pass": true
+}
