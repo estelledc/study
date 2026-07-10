@@ -21,21 +21,21 @@ bun build app.ts      # 打包（替代 webpack / esbuild）
 bun test              # 跑测试（替代 jest / vitest）
 ```
 
-不用装 `typescript`、`ts-node`、`jest`、`webpack` 这些工具——Bun 把它们全部收进一个二进制里。
+跑常见 TypeScript、测试和打包任务时，不用先装 `ts-node`、`jest`、`webpack` 这些工具——Bun 把运行时和工具链入口收进一个二进制里；严格类型检查仍然要交给 `tsc` 或编辑器。
 
 ## 为什么重要
 
 不理解 Bun，下面这些事都没法解释：
 
 - 为什么 2024 年突然有一堆人说"我把 Node 换成 Bun，启动快了好几倍"
-- 为什么 `bun install` 装 100 个包**比 pnpm 还快 30 倍**——明明 pnpm 已经够快了
+- 为什么一些 benchmark 里 `bun install` 明显快过 npm / pnpm——明明 pnpm 已经够快了
 - 为什么 Bun 文件里没看到 `import 'http'` 也能 `Bun.serve` 起一个 HTTP server
 - 为什么有人说"Bun 是给前端工程师写后端的最低门槛"
 
 Bun 的核心价值有四点：
 
-1. **启动快 4 倍**：Node 启动 ~80ms，Bun ~30ms。原因是 Zig 写的 JIT + JavaScriptCore 引擎（不是 Node 用的 V8）
-2. **`bun install` 快 30 倍**：用全局二进制 cache + hardlink + 并行下载——和 pnpm 思路像但更激进
+1. **启动快**：Node 启动常见是几十毫秒量级，Bun 在冷启动任务上通常更短。原因是运行时用 Zig 嵌入 JavaScriptCore（不是 Node 用的 V8），JSC 的启动路径更轻
+2. **`bun install` 快**：用全局二进制 cache + hardlink + 并行下载——和 pnpm 思路像但更激进，具体倍数取决于网络、缓存和 lockfile
 3. **内置一切**：TypeScript / JSX / SQLite / 测试框架原生支持，不用配 `tsconfig` + `babel` + `jest`
 4. **Web 标准 API 是一等公民**：`fetch` / `WebSocket` / `FormData` 直接用，Node 要等到 v18 才慢慢补齐
 
@@ -66,12 +66,12 @@ Bun 之所以能"全能 + 快"，靠 **三个底层选择**：
 ### 案例 1：30 秒起一个 React 项目
 
 ```bash
-bun create react-app my-app
+bun create vite my-app --template react
 cd my-app
 bun dev
 ```
 
-`bun dev` 启动 dev server 从命令敲下到浏览器能访问 ~200ms。同样的 `npm run dev` ~2-3s 起步。
+`bun dev` 启动 dev server 通常比传统 npm 脚本少一次 Node 工具链启动；实际从命令敲下到浏览器能访问，要看项目大小和插件数量。
 
 ### 案例 2：跑 Jest 兼容的测试
 
@@ -89,7 +89,7 @@ test("加法", () => {
 bun test    # 不用装 jest，不用配 babel，不用 ts-jest
 ```
 
-API 和 Jest 几乎一样（`describe` / `it` / `expect` / `mock`）——直接搬现有 Jest 测试基本能跑。
+基础 API 和 Jest 很像（`describe` / `it` / `expect` / `mock`）——简单单元测试通常能少改迁移；重度依赖 Jest 插件或自定义环境时仍要逐项验证。
 
 ### 案例 3：用 Bun 写 HTTP server
 
@@ -107,7 +107,7 @@ Bun.serve({
 - `Bun.serve` 是 Bun 内置 API，不用 `import 'http'`
 - `fetch(req)` 接收一个标准 Web `Request` 对象，返回标准 `Response` 对象——这就是"Web 标准 API 一等公民"
 - 同样的代码逻辑在 Node 里要 `http.createServer((req, res) => res.end(...))`，写法和浏览器 API 完全不一样
-- 用 Bun 写完这段，**直接搬到 Cloudflare Workers / Deno Deploy 几乎不用改**——因为它们都用 Web 标准 API
+- `fetch(req) { return new Response(...) }` 这一层逻辑接近 Cloudflare Workers / Deno Deploy——因为它们都用 Web 标准 API；外层启动方式仍要按各平台改
 
 ## 踩过的坑
 
@@ -154,7 +154,7 @@ Bun.serve({
 
 ## 学到什么
 
-1. **一个二进制 = 一条 pipeline**：Node 是 4 个独立工具（runtime / npm / bundler / test runner）用 stdio 串起来；Bun 是 4 个 phase 共享同一个内存里的 AST。**省掉序列化 / IPC / 4 次启动**才是快的真正来源。
+1. **一个二进制 = 更短的工具链路径**：Node 项目常把 runtime / npm / bundler / test runner 分给多个工具；Bun 把运行、安装、打包、测试放进同一个入口。**少装少启动少搬数据**，才是快的真正来源。
 
 2. **选语言 = 选 trade-off**：Zig 没 GC + C ABI 互操作好；Rust borrow checker 严格但 hot path 写起来不直观；Go 简单但性能上限低。Bun 选 Zig 是赌"hot path 优化空间 > 语言成熟度"。
 
@@ -165,10 +165,10 @@ Bun.serve({
 ## 延伸阅读
 
 - 官方 docs：[bun.sh/docs](https://bun.com/docs)——产品功能完整清单
-- 源码：[github.com/oven-sh/bun](https://github.com/oven-sh/bun)——Zig 写的 lex / parse / bundle / test runner pipeline
+- 源码：[github.com/oven-sh/bun](https://github.com/oven-sh/bun)——Zig 写的 runtime、package manager、bundler、test runner
 - Jarred Sumner 的早期访谈：[ChangeLog Podcast — Bun](https://changelog.com/podcast/512)——讲为什么选 Zig 和 JSC
 - [[zig]] —— Bun 的实现语言
-- [[esbuild]] —— Bun lexer 的祖先（Go 实现，更易读）
+- [[esbuild]] —— JS bundler 的速度标杆，适合对照理解 Bun 的工具链目标
 
 ## 关联
 

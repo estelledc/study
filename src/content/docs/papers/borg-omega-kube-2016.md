@@ -130,6 +130,13 @@ while True:
 - 调度算法论文（不证明任何算法，是经验报告）
 - Omega 详细架构文献（点到为止，要看 EuroSys 2013 原文）
 
+## 历史小故事（可跳过）
+
+- **2003 年左右**：Borg 在 Google 内部成形，目标是把大规模服务和批处理任务放进同一个集群池里跑。
+- **2013 年**：Omega 论文公开，尝试用 shared state 和乐观并发支持多个调度器并行决策。
+- **2014 年**：Kubernetes 开源，把 Borg/Omega 里的经验改写成社区能用的 pod、label、controller 和声明式 API。
+- **2016 年**：ACM Queue 这篇文章把三代系统放在一起复盘，重点不是炫技，而是解释设计选择从哪里来。
+
 ## 学到什么
 
 1. **K8s 不是发明，是提炼**——把 Borg 12 年的运维直觉 + Omega 的实验结论开源化
@@ -152,3 +159,7 @@ while True:
 - [[paxos]] — Borg 时代的 BorgMaster 用 Paxos 做副本复制
 - [[paxos-simple-2001]] — Lamport 简化版，理解 BorgMaster Paxos 的最快路径
 - [[epaxos-2013]] — 同期共识协议演化方向，与 Raft 并列
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

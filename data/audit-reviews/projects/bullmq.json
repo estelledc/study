@@ -1,0 +1,94 @@
+{
+  "slug": "bullmq",
+  "area": "projects",
+  "round": 18,
+  "status": "refined",
+  "action": "refine",
+  "lines": 166,
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    "不要把 GitHub 热度表述成已知使用方数量；改为生态常见程度。",
+    "repeatable job 的只跑一次应限定为相同 repeat key / 同一触发点生成一份 job。",
+    "失败 job 清理问题应描述为配置 attempts/backoff 后最终失败仍保留，不要说默认指数退避。",
+    "job.data 序列化要区分 Date、Buffer、类实例的 JSON 化结果。"
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": []
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "将 6.5k+ 使用方改成不带精确数量的生态描述。",
+        "修正默认重试 / 指数退避说法，BullMQ 需要显式配置 attempts/backoff。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "repeatable job 的示例补充同一 repeat key 的边界。",
+        "job.data 的序列化坑要写成具体 JSON 化后果。"
+      ]
+    }
+  ],
+  "remediation": {
+    "status": "refined",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 166,
+    "reasons": []
+  }
+}
