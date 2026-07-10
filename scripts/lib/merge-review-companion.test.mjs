@@ -138,7 +138,15 @@ async function fixture(options = {}) {
 }
 
 async function cleanup(value) {
-  await fs.rm(value.root, { recursive: true, force: true });
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    try {
+      await fs.rm(value.root, { recursive: true, force: true });
+      return;
+    } catch (error) {
+      if (!['EBUSY', 'ENOTEMPTY'].includes(error.code) || attempt === 4) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 50 * (attempt + 1)));
+    }
+  }
 }
 
 test('porcelain parser preserves index/worktree status and rejects renames', () => {
