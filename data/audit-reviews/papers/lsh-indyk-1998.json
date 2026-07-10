@@ -1,0 +1,97 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 关联",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "MD5 追求散列 vs LSH 故意撞车类比一针见血"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "ρ / (r1,r2,p1,p2) 首次有中文桥接；案例 1 比特采样概率算得清楚"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Indyk & Motwani STOC 1998、ρ=log(1/p1)/log(1/p2)、Hamming 下 ρ≈1/c、MinHash/Datar L2 时间线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里精确高维 NN「接近 NP-hard」经 Cook-Levin 略跳，教学可接受但宜读作硬度直觉而非字面归约"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "比特采样/MinHash/p-stable 与案例 4 工程账概念可跟；k/L 调参、冷桶、空间放大踩坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用（高维海量近似 vs 低维精确/HNSW）量化边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "MD5 追求散列 vs LSH 故意撞车类比一针见血",
+        "ρ / (r1,r2,p1,p2) 首次有中文桥接；案例 1 比特采样概率算得清楚"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 关联",
+      "fix_hints": [
+        "Indyk & Motwani STOC 1998、ρ=log(1/p1)/log(1/p2)、Hamming 下 ρ≈1/c、MinHash/Datar L2 时间线正确",
+        "关联里精确高维 NN「接近 NP-hard」经 Cook-Levin 略跳，教学可接受但宜读作硬度直觉而非字面归约"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "比特采样/MinHash/p-stable 与案例 4 工程账概念可跟；k/L 调参、冷桶、空间放大踩坑具体",
+        "适用/不适用（高维海量近似 vs 低维精确/HNSW）量化边界清楚"
+      ]
+    }
+  ]
+}
