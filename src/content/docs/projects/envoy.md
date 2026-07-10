@@ -52,22 +52,39 @@ clusters:
 
 ### 案例 1：本地两个进程做最小代理
 
-跑一个最小 envoy，把 `:9001` 转到 `httpbin.org`，验证"业务调本地、Envoy 跨网"这个 sidecar 心智模型：
+跑最小 envoy，把 `:9001` 转到 `httpbin.org`：
 
 ```yaml
 static_resources:
   listeners:
-  - address: { socket_address: { port_value: 9001 } }
+  - address: { socket_address: { address: 0.0.0.0, port_value: 9001 } }
     filter_chains:
-    - filters: [{ name: envoy.filters.network.http_connection_manager, ... }]
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: ingress
+          route_config:
+            virtual_hosts:
+            - name: all
+              domains: ["*"]
+              routes:
+              - match: { prefix: "/" }
+                route: { cluster: httpbin }
+          http_filters:
+          - name: envoy.filters.http.router
   clusters:
   - name: httpbin
     type: LOGICAL_DNS
     load_assignment:
-      endpoints: [{ lb_endpoints: [{ endpoint: { address: { socket_address: { address: httpbin.org, port_value: 80 }}}}]}]
+      cluster_name: httpbin
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address: { socket_address: { address: httpbin.org, port_value: 80 } }
 ```
 
-`curl localhost:9001/get` → 业务以为在调本地，Envoy 实际转给了远端。这是 sidecar 心智模型最小验证。
+**逐部分解释**：`listeners` 是业务看到的本地门；`route` 指到 `httpbin` 集群；`clusters` 才是真正上游。`curl localhost:9001/get` 时业务以为在调本地，Envoy 实际转给远端。
 
 ### 案例 2：金丝雀发布（10% 流量切新版本）
 
@@ -139,7 +156,7 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 - 视频：CNCF YouTube "Envoy Internals Deep Dive" —— 看 filter chain 怎么跑
 - xDS REST/gRPC 协议规范（GitHub envoyproxy/data-plane-api） —— 想自己写 control plane 必看
 - [[nginx]] —— 老一代 L7 代理，对照看能更懂 Envoy 哪里"动态"
-- [[kubernetes]] —— Envoy 几乎只在 k8s 里部署 sidecar
+- [[kubernetes]] —— mesh sidecar 的常见宿主；Envoy 也常作边缘/独立代理
 
 ## 关联
 
@@ -150,7 +167,7 @@ curl localhost:9901/config_dump                       # 看当前生效配置
 - [[traefik]] —— 云原生 ingress，自动发现服务，跟 Envoy 在 k8s 边缘代理位置重叠
 - [[krakend]] —— API gateway 聚合多后端，跟 Envoy 是不同抽象层
 - [[http-2]] —— Envoy 原生支持 HTTP/2，是它早期相对 nginx 的核心优势之一
-- [[kubernetes]] —— Envoy 几乎只在 k8s pod 里以 sidecar 形态部署
+- [[kubernetes]] —— sidecar 主战场在 k8s；边缘网关 / 独立进程部署同样常见
 
 ## 反向链接
 

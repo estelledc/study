@@ -15,11 +15,11 @@ DeepSeek-Coder 是 2024 年 1 月开源的一组代码大模型，从 1.3B 到 3
 1. **按仓库（repo-level）组织数据**——同一个 GitHub 项目的文件不再被打散，而是按 `import` / `include` 关系排成依赖顺序后整体喂进模型。
 2. **学会"填中间"**——除了续写，还专门用 fill-in-the-middle（FIM）目标，让模型练在已有代码中间挖个洞补回来。
 
-结果：33B 版本在主流代码基准上首次让开源模型同时超过 Meta CodeLlama-34B 和 OpenAI 的 GPT-3.5 / Codex。
+结果：在作者复现设定下，33B 版本在多数主流代码基准上同时超过 Meta CodeLlama-34B，Instruct 版也超过 OpenAI GPT-3.5 / Codex。
 
 ## 为什么重要
 
-- **打破"开源代码模型不如闭源"的格局**：HumanEval 上 33B-Instruct 拿 79.3%，是开源侧第一次过 GPT-3.5（约 76%）。
+- **打破"开源代码模型不如闭源"的格局**：HumanEval 上 33B-Instruct 拿 79.3%，在作者评测设定下超过 GPT-3.5-Turbo（约 76%）。
 - **许可宽松**：明确允许商用，相比 LLaMA-2 系列对小公司更友好——很多 AI IDE 创业团队的本地推理底座最早都用它。
 - **两个范式后来被反复复用**：repo-level 拓扑排序、FIM 占 50% 训练量，几乎成了 2024 年后开源代码模型的标准动作。
 - **小模型也能打**：7B 版本性能接近 CodeLlama-34B（参数小 5×），说明数据组织和训练目标比单纯堆参数更值钱——这给资源有限的团队指了条路。
@@ -79,18 +79,23 @@ def add(a, b):
 
 模型看到 `<PRE>` + `<SUF>`，要预测 `<MID>` 段。训练时 50% 样本走这条路、50% 仍是普通从左到右续写，两种能力都不丢。
 
-### 案例 3：为什么 7B 就能逼近 34B
+### 案例 3：IDE 光标在中间时 FIM 怎么用
 
-CodeLlama-34B 的训练语料没做仓库级整理，文件之间的依赖关系靠模型自己从零碎样本里"猜"。DeepSeek-Coder-7B 直接看到拓扑序仓库 + FIM 训练，相当于做了 5 年题的学生 vs 做了 1 年题但题型对路的学生——后者反而效率更高。这是"数据组织 > 模型规模"在 2024 年被实证的经典案例。
+```python
+# 用户文件里光标停在中间；模型实际吃到的是：
+prompt = """<PRE>def parse_csv(path):
+    <SUF>
+    return rows
+<MID>"""
+# 模型应补：with open(path) as f: rows = list(csv.reader(f))
+completion = model.generate(prompt)
+```
 
-### 案例 4：实际用 IDE 时它在做什么
+**逐部分解释**：
 
-光标停在某个函数体中间，前面已经写了 `def parse_csv(path):`，后面留着 `return rows`。
-
-- 续写式模型：只看到前缀 `def parse_csv(path):`，要从无到有续到 `return rows`——容易跑偏。
-- FIM 模型（DeepSeek-Coder）：同时看到前缀 `def parse_csv(path):` 和后缀 `return rows`，知道目标是产出 `rows`，自然会补 `with open(path) as f: rows = list(csv.reader(f))`。
-
-这就是为什么 IDE 补全用 FIM 模型体验明显更好——它"知道你最后想要什么"。
+- 续写式模型只见前缀，容易写到与 `return rows` 对不上；FIM 同时看见前缀和后缀，目标被后缀钉住。
+- 本地试用时把 tokenizer 的 FIM 特殊符号按模型卡说明填上，再 `generate`；这就是 IDE 补全体验更好的原因。
+- 同理可解释为何 7B 能逼近 CodeLlama-34B：题型（repo 序 + FIM）比对路，比单纯堆参数更值钱。
 
 ## 踩过的坑
 
@@ -147,6 +152,6 @@ CodeLlama-34B 的训练语料没做仓库级整理，文件之间的依赖关系
 - [[attention]] —— Transformer 注意力机制是底座
 - [[deepseek-r1]] —— 同团队后续推理模型，训练范式延续
 
-## 一句话总结
+## 反向链接
 
-把训练数据从"碎纸片"装订成"按依赖序排好的整本教材"，再让模型一半时间练"挖空补回"——参数少 5 倍也能反超同期 SOTA。开源代码模型从这一篇开始真正有了能用的本地底座。
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
