@@ -46,7 +46,7 @@
         "accessibility": 1,
         "case_clarity": 1
       },
-      "average": 1.0,
+      "average": 1,
       "verdict": "reject",
       "weakest_section": "## 是什么",
       "fix_hints": [
@@ -74,7 +74,7 @@
         "pitfalls_useful": 1,
         "scope_correct": 1
       },
-      "average": 1.0,
+      "average": 1,
       "verdict": "reject",
       "weakest_section": "## 实践案例",
       "fix_hints": [

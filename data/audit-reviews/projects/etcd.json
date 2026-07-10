@@ -54,7 +54,7 @@
         "accessibility": 5,
         "case_clarity": 5
       },
-      "average": 5.0,
+      "average": 5,
       "verdict": "pass",
       "weakest_section": "## 适用 vs 不适用场景",
       "fix_hints": [

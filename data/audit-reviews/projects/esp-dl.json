@@ -1,9 +1,28 @@
 {
-  "slug": "esp-dl",
-  "area": "projects",
-  "round": 42,
-  "output_path": "/workspace/src/content/docs/projects/esp-dl.md",
-  "reviewers": [
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [],
+  "reviews": [
     {
       "reviewer": "zero-base",
       "scores": {
@@ -40,24 +59,5 @@
       "weakest_section": "## 实践案例",
       "fix_hints": []
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "reject_count": 0,
-    "needs_refine_count": 0,
-    "pass_count": 3,
-    "verdict": "pass",
-    "action": "pass"
-  },
-  "remediation": {
-    "status": "passed",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "final_quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 175,
-    "reasons": []
-  }
+  ]
 }
