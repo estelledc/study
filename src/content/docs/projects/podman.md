@@ -30,8 +30,8 @@ podman run -p 8080:80 nginx
 不理解 Podman 这种"无 daemon"路线，下面这些事都没法解释：
 
 - 为什么 Red Hat / Fedora / RHEL 8+ **默认不装 docker**，而是装 podman
-- 为什么云厂商的安全合规扫描越来越偏好 podman 跑 CI 容器
-- 为什么 GitHub Actions 的 self-hosted runner 推荐 podman 替 docker
+- 为什么云厂商的安全合规扫描越来越偏好无 root daemon 的容器引擎跑 CI
+- 为什么部分 self-hosted CI（含部分 GitHub Actions runner 场景）会用 podman 替 docker——图的是无长期 dockerd、更好做 rootless
 - 为什么 Kubernetes 1.24 之后弃用 dockershim，podman 反而毫无影响
 
 四个关键优势：
@@ -142,31 +142,40 @@ sudo systemctl enable --now pod-webapp
 - Windows 桌面开发 → Docker Desktop 体验更成熟
 - 需要 docker swarm 的小集群编排 → podman 没对应物，直接上 [[kubernetes]]
 
-## 历史小故事
+## 历史小故事（可跳过）
 
 - **2018**：Red Hat 启动 libpod 项目，定位为 "无 daemon 的容器引擎库"
 - **2019**：Podman 1.0 发布，CLI 接口与 docker 对齐
 - **2020**：podman-compose 加入，开始啃 compose 兼容性
-- **2021**：Podman 4 引入 BuildKit ABI，build 性能追上 docker buildx
-- **2022**：Kubernetes 1.24 移除 dockershim，podman 因为本来就不依赖 docker socket，零迁移成本
-- **2024**：Podman 5 默认开启 user namespace，rootless 体验进一步默认化
+- **2022**：Podman 4.0 发布，引入与 BuildKit 对齐的构建能力；同年 Kubernetes 1.24 移除 dockershim，podman 本就不依赖 docker socket，零迁移成本
+- **2024**：Podman 5 默认强化 user namespace，rootless 体验进一步默认化
 
 ## 学到什么
 
-1. **架构差异比命令兼容更重要**：podman 和 docker 命令几乎一样，但 daemon vs no-daemon 的差别决定了运维心智完全不同
+1. **架构差异比命令兼容更重要**：命令几乎一样，daemon vs no-daemon 决定运维心智完全不同
 2. **rootless 是默认而不是补丁**：从一开始就这么设计，比事后加更彻底
 3. **Pod 是好抽象**：把"一组共享网络的容器"独立出来，比 docker 的 `--network=container:xxx` 干净
-4. **接口兼容 ≠ 实现兼容**：换底层引擎的常见思路是先保接口（用户无感），再优化实现
+4. **接口兼容 ≠ 实现兼容**：先保接口（用户无感），再换底层实现
 
 ## 延伸阅读
 
 - 官方文档：[Podman Documentation](https://docs.podman.io/)
-- 与 docker 命令对照表：[Podman vs Docker](https://docs.podman.io/en/latest/Commands.html)
-- Rootless 容器原理：[Rootless Containers](https://rootlesscontaine.rs/)
-- [[docker]] —— Podman 的对照参照系，理解 daemon 架构
+- 命令对照：[Podman vs Docker](https://docs.podman.io/en/latest/Commands.html)
+- Rootless 原理：[Rootless Containers](https://rootlesscontaine.rs/)
+- [[docker]] —— daemon 架构对照系
 - [[kubernetes]] —— Pod 概念的原始来源
 
 ## 关联
 
-- [[docker]] —— 命令行 99% 兼容；最大区别是有无 daemon
-- [[kubernetes]] —— Podman 的 Pod 概念直接对齐 k8s Pod，是本地学习 k8s 的好桥
+- [[docker]] —— 命令行高度兼容；最大区别是有无长期 daemon
+- [[kubernetes]] —— `podman pod` 直接对齐 k8s Pod，本地学编排的好桥
+- [[buildah]] —— 同属 containers 生态，专注无 daemon 镜像构建
+- [[containerd]] —— 另一条「有 daemon 的」行业运行时，对照理解 CRI
+- [[cri-o]] —— 专为 Kubernetes 的轻量运行时，和 podman 同出 Red Hat 系
+- [[runc]] —— 底层 OCI runtime；podman/docker/containerd 最终都落到它（或兼容实现）
+- [[nerdctl]] —— containerd 的 docker 兼容 CLI，对照「换 CLI 不换架构」另一条路
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
+

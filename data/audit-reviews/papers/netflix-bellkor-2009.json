@@ -1,0 +1,121 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "高考冲刺班混合猜分类比把 blending 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "偏置 / SVD++ / Probe-Quiz-Test 都有白话桥接；潜因子对零基础仍需多读一遍"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 逐步清楚；案例 4 timeSVD++ 公式略密但仍可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Koren et al. Netflix Prize Grand Prize 技术报告 2009 正确；配套 SVD++ KDD 2008、IEEE Computer 2009 合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "RMSE 0.9514→约 0.8567、三队合并、The Ensemble 同分晚 20 分钟、Narayanan-Shmatikov 去匿名化时间线与公开史实一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第一次系统讲清时序漂移」属教学压缩，方向正确；缺 ## 反向链接占位但不挡通过"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "偏置公式、latent factor SGD、blending 伪代码概念正确，可跟做教学推演"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：三队合并、同分提交、Probe/Quiz 隔离、时序外推、工业未全套上线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用显式评分/离线 RMSE vs 隐式反馈/top-N/冷启动/实时推理边界清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "高考冲刺班混合猜分类比把 blending 讲透",
+        "偏置 / SVD++ / Probe-Quiz-Test 都有白话桥接；潜因子对零基础仍需多读一遍",
+        "案例 1–3 逐步清楚；案例 4 timeSVD++ 公式略密但仍可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 Koren et al. Netflix Prize Grand Prize 技术报告 2009 正确；配套 SVD++ KDD 2008、IEEE Computer 2009 合理",
+        "RMSE 0.9514→约 0.8567、三队合并、The Ensemble 同分晚 20 分钟、Narayanan-Shmatikov 去匿名化时间线与公开史实一致",
+        "「第一次系统讲清时序漂移」属教学压缩，方向正确；缺 ## 反向链接占位但不挡通过"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "偏置公式、latent factor SGD、blending 伪代码概念正确，可跟做教学推演",
+        "踩坑具体：三队合并、同分提交、Probe/Quiz 隔离、时序外推、工业未全套上线",
+        "适用显式评分/离线 RMSE vs 隐式反馈/top-N/冷启动/实时推理边界清楚"
+      ]
+    }
+  ],
+  "slug": "netflix-bellkor-2009",
+  "area": "papers",
+  "status": "passed",
+  "quality_gate": {
+    "pass": true,
+    "lines": 154
+  },
+  "lines": 154,
+  "l1_pass": true
+}
