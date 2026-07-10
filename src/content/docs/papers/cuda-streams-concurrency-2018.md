@@ -1,6 +1,6 @@
 ---
 title: CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
-来源: "Wang et al., A Quantitative Study of GPU Concurrent Kernel Execution, IEEE 2018"
+来源: 'Dai, Lin, Li, Zhao, Wang. "Accelerate GPU Concurrent Kernel Execution by Mitigating Memory Pipeline Stalls". HPCA 2018'
 日期: 2026-05-31
 分类: GPU 架构
 难度: 中级
@@ -8,11 +8,11 @@ title: CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 
 ## 是什么
 
-这篇论文做了一件很朴素的事：**把 CUDA streams 的并发收益量化测一遍，看看官方文档说的"多 kernel 同时跑"在真实硬件上到底能省多少时间**。
+这篇 HPCA 2018 论文（Dai 等）做的事是：**量化并解释 GPU 上多 kernel 同跑时为什么经常跑不满，尤其是 intra-SM 共享时的访存流水线停顿与 cache 干扰**。工程上读它，是为了看清 CUDA streams / concurrent kernel 的真实收益边界。
 
-日常类比：餐厅有 8 个炉灶（SM），文档告诉你"我们支持同时炒两道菜"。听起来 2 倍速。论文的工作就是真去后厨架个秒表，发现大多数情况下第二道菜根本没开火——因为第一道菜的厨师把 8 个炉灶全占了。
+日常类比：餐厅有 8 个炉灶（SM），文档告诉你"我们支持同时炒两道菜"。听起来 2 倍速。论文和同期测量工作一起说明：多数时候第二道菜根本没开火——第一道菜把炉灶和灶台通道（显存流水线）占满了。
 
-结论一句话：**streams 并发能跑，但能省时间的场景比文档暗示的窄得多**。
+结论一句话：**streams 并发能跑，但能省时间的场景比文档暗示的窄得多**；本文后半也会补上 H2D 重叠等工程实践（那是 streams 稳赚姿势，不是该论文主实验）。
 
 ## 为什么重要
 
@@ -27,15 +27,15 @@ title: CUDA Streams 并发量化研究 — 为什么 SM 利用率拉不满
 
 ## 核心要点
 
-论文用三件事撑起结论：
+论文用三件事撑起结论（left-over / 争用是 GPU 并发的通用背景；本文重点在 intra-SM 共享时的访存干扰）：
 
 1. **left-over 策略**：NVIDIA 默认调度器先把所有 SM 给第一个 kernel，它吃饱后剩下的才给第二个。绝大多数真实 kernel 体积够大，第一个就吃满，第二个等于在排队，**没有真并发**。
 
-2. **资源争用**：就算两个 kernel 都挤进 SM，它们还要抢 L2 cache、显存带宽、warp scheduler 端口。两个 memory-bound kernel 同跑可能比串行还慢——cache 互相踢出去（thrashing）。
+2. **资源争用与流水线停顿**：就算两个 kernel 都挤进 SM，它们还要抢 L2/L1、显存带宽、warp scheduler 端口。memory-bound kernel 容易把访存流水线堵死，拖累同 SM 上的另一个 kernel——论文的核心量化对象。
 
-3. **真有收益的窄区间**：kernel 必须**小**（占不满 SM）+ 资源**互补**（一个算多一个读多）+ 通信开销别太重。这三个条件同时满足时，2 路并发能见到 1.3 至 1.7 倍加速；超过这个窄区间收益就掉到 1.0 附近。
+3. **真有收益的窄区间**：kernel 必须**小**（占不满 SM）+ 资源**互补**（一个算多一个读多）+ 通信开销别太重。条件同时满足时，2 路并发常见约 1.3 至 1.7 倍；出了这个窄区间就掉回 ~1.0。H2D/kernel 重叠是另一类收益，见案例 4。
 
-实验方法上，作者用一组合成 kernel（控制 SM 占用率、寄存器压力、访存量三个变量）做笛卡尔积测试，测每对组合的并发收益。这种"先合成再扫参"的做法是 GPU 量化研究的标配，单测真实应用噪声太大没法归因。
+实验方法上，作者用合成与真实 kernel 组合扫参，观察并发时的停顿与加速。这种"先控变量再归因"的做法是 GPU 量化研究的标配。
 
 ## 实践案例
 
@@ -67,7 +67,7 @@ export CUDA_MPS_ACTIVE_THREAD_PERCENTAGE=50
 
 Volta 后的 MPS 让你强制把 SM 切两半，每个进程拿 50%。这绕开了 left-over，相当于硬件级"两个炉灶你一半我一半"。但代价是单 kernel 性能下降，要看总吞吐是否真的赚。
 
-### 案例 4：H2D 拷贝与 kernel 重叠（streams 真正稳赚的姿势）
+### 案例 4：H2D 拷贝与 kernel 重叠（工程补充，非论文主实验）
 
 ```cuda
 cudaMemcpyAsync(d_A, h_A, sz, cudaMemcpyHostToDevice, s1);
@@ -75,7 +75,7 @@ kernel<<<g, b, 0, s2>>>(d_B);  // 用上一批已经拷好的数据算
 cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 ```
 
-三个 stream 各做一段，PCIe 传输和计算同时进行。这个收益 streams 几乎一定能赚——前提是 host 内存得是 pinned（`cudaMallocHost`），否则 PCIe 拷贝退化成同步阻塞。这才是 streams 设计的初心，kernel-kernel 并发只是顺带支持。
+三个 stream 各做一段，PCIe 传输和计算同时进行。这是 CUDA streams 的经典工程用法，几乎一定能赚——前提是 host 内存得是 pinned（`cudaMallocHost`），否则拷贝退化成同步阻塞。它和论文关注的 kernel-kernel / intra-SM 争用是不同问题：前者稳赚，后者收益很窄。
 
 ## 踩过的坑
 
@@ -110,7 +110,7 @@ cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 - **2010 年 Fermi**：第一次支持 concurrent kernel execution，但只有 1 条硬件队列，提交就串行
 - **2012 年 Kepler GK110**：Hyper-Q 出现，32 条队列让"提交"不阻塞，但执行还是 left-over
 - **2017 年 Volta**：MPS 升级，第一次允许显式 SM 分区（`CUDA_MPS_ACTIVE_THREAD_PERCENTAGE`）
-- **2018 年这篇论文**：把上面三代硬件的并发收益横评一遍，给工业界泼了盆冷水——"streams 没你想得那么好用"
+- **2018 年这篇 HPCA 论文**：聚焦 concurrent kernel 的访存流水线停顿与干扰，说明"能并发"不等于"一定更快"
 - **2020 年 Ampere**：MIG（Multi-Instance GPU）把分区做到了硬件物理隔离，是 MPS 的下一代
 - **2022 年 Hopper**：CUDA Graphs 进一步把"调度"提前到编译期，绕开运行期 launch 开销与调度噪声
 
@@ -130,7 +130,7 @@ cudaMemcpyAsync(h_C, d_C, sz, cudaMemcpyDeviceToHost, s3);
 
 ## 延伸阅读
 
-- 论文 PDF：[IEEE Xplore 8525447](https://ieeexplore.ieee.org/document/8525447)
+- 论文 PDF：[HPCA 2018 — Accelerate GPU Concurrent Kernel Execution…](https://doi.org/10.1109/HPCA.2018.00027)
 - 配套读物：NVIDIA 工程师博客 [GPU Pro Tip: CUDA 7 Streams Simplify Concurrency](https://developer.nvidia.com/blog/gpu-pro-tip-cuda-7-streams-simplify-concurrency/)（讲 per-thread default stream 怎么解决"默认流隐式同步"）
 - NVIDIA 官方：[CUDA C Programming Guide — Streams](https://docs.nvidia.com/cuda/cuda-c-programming-guide/#streams)（看完论文再看官方文档，对照"它没明说的那些限制"）
 - [[gpu-microbenchmarking-2010]] —— 测 GPU 微观行为的方法学先驱

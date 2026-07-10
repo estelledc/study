@@ -1,0 +1,121 @@
+{
+  "slug": "duf",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4 是工具对照表，不是可跟做实践；建议改成带 --output / --hide-mp 的具体命令案例，并把对照表挪到关联或学到什么。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「duf 把 reserved 字段单独列出来」不成立：官方列只有 mountpoint/size/used/avail/usage/inodes/…，无 reserved 列；应删改该条。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 声称 JSON 是驼峰 mountPoint，与源码 json tag（mount_point 等 snake_case）矛盾，且同段 jq 已用 .mount_point——需统一纠正。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 正文说驼峰、jq 用 snake_case，会直接误导脚本；应按 mounts.go 的 json tag 改成 mount_point / device_type / fs_type。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里「看到 100% 但还能写」可保留，但不要暗示 duf 单独展示 reserved。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 4 是工具对照表，不是可跟做实践；建议改成带 --output / --hide-mp 的具体命令案例，并把对照表挪到关联或学到什么。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「duf 把 reserved 字段单独列出来」不成立：官方列只有 mountpoint/size/used/avail/usage/inodes/…，无 reserved 列；应删改该条。",
+        "案例 2 声称 JSON 是驼峰 mountPoint，与源码 json tag（mount_point 等 snake_case）矛盾，且同段 jq 已用 .mount_point——需统一纠正。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 正文说驼峰、jq 用 snake_case，会直接误导脚本；应按 mounts.go 的 json tag 改成 mount_point / device_type / fs_type。",
+        "踩坑里「看到 100% 但还能写」可保留，但不要暗示 duf 单独展示 reserved。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.56,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 157,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 157,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refine",
+    "reason": "删除不存在的 reserved 列声称；纠正 JSON 为 snake_case；案例 4 改为可跟做的 hide-mp 过滤。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}
