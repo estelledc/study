@@ -29,7 +29,7 @@ n 个表面就 n 个方程,联立解,得出每块表面有多亮。
 不理解 radiosity,下面这些事讲不通:
 
 - 为什么 1980 年 Whitted 的 ray tracing 能渲染**玻璃球反射镜面光**,但**白墙照亮房间**这种漫反射间接光却拿不下
-- 为什么 Cornell box(那个红墙绿墙的标准测试场景)长那个样 —— 它就是 1984 年这篇论文的副产物
+- 为什么 Cornell box(那个红墙蓝墙的标准测试场景)长那个样 —— 它就是 1984 年这篇论文的副产物
 - 为什么现代游戏引擎里有**烘焙光照**(lightmap baking)这一步 —— 思想直接继承自 radiosity
 - 1980s 图形学有**两条平行线**:ray tracing 走镜面/折射,radiosity 走漫反射间接光。1986 Kajiya 用 rendering equation 统一两者
 
@@ -78,13 +78,13 @@ F_ij = (1 / A_i) * 双重积分(cos_i * cos_j / (pi * r^2) * V_ij dA_i dA_j)
 
 ### 案例 1 — Cornell Box 怎么来的
 
-论文配套图:一个**红墙绿墙白色立方体房间**,顶部一个发光面板,里面摆几个色块。
+论文配套图:一个**红墙 + 蓝墙 + 三面灰墙**的立方体房间,顶部一块发光面板。1984 原版为了解析算 form factor,**盒内没有遮挡物**;后来常见的"红绿墙 + 盒内色块"是后续演示变体。
 
 这个场景**没什么艺术追求** —— 它是为了**验证算法**:
 
-- 红墙会把红色"染"到旁边的白色立方体侧面 —— 漫反射间接光的色彩传递(color bleeding)
+- 红墙 / 蓝墙会把颜色"染"到灰墙与地板 —— 漫反射间接光的色彩传递(color bleeding)
 - ray tracing 1980 算不出这种染色,因为它的 ambient term 是常数
-- radiosity 能 —— 红墙的 B_红 算出来后,白墙看见红墙,通过 form factor 把红色带过来
+- radiosity 能 —— 红墙的 B_红 算出来后,灰墙看见红墙,通过 form factor 把红色带过来
 
 **color bleeding** 就是 radiosity 给图形学留的一张名片。今天每个游戏引擎的烘焙光照都有这个效果。
 
@@ -154,8 +154,8 @@ Unity / Unreal 里的 light probe(光照探针):
 
 ## 延伸阅读
 
-- 论文 PDF:[Goral et al. 1984 — Modeling the Interaction of Light Between Diffuse Surfaces](https://www.graphics.cornell.edu/online/box/history.html)
-- Cornell Box 历史页:[Cornell Program of Computer Graphics — The Cornell Box](https://www.graphics.cornell.edu/online/box/)
+- 论文 PDF:[Goral et al. 1984 — Modeling the Interaction of Light Between Diffuse Surfaces](https://www.cs.rpi.edu/~cutler/classes/advancedgraphics/S10/papers/goral.pdf)
+- Cornell Box 历史页:[Cornell Program of Computer Graphics — The Cornell Box](https://www.graphics.cornell.edu/online/box/history.html)
 - 教科书:[Cohen & Wallace, "Radiosity and Realistic Image Synthesis", 1993](https://www.cs.cornell.edu/courses/cs6630/2012sp/notes/) —— radiosity 时代的标准参考
 - [[whitted-1980]] —— 同期 ray tracing 论文,radiosity 的对照面
 - [[kajiya-1986-rendering-equation]] —— 把两条路线统一的积分方程

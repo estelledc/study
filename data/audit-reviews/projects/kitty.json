@@ -1,0 +1,112 @@
+{
+  "slug": "kitty",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "老电视/显卡类比贴合；分屏与 conf 案例清楚；matplotlib 一行命令缺『要配后端』说明，零基础会以为开箱即用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『plt.show() 在 kitty 里图直接画在终端』过满：默认仍可能弹 GUI，需 matplotlib kitty 后端或走 icat"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Star 写 26k 已偏低（约 33k），可更新；Kovid Goyal / GPLv3 / 无原生 Windows 正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 matplotlib 命令按现状不可复现『终端内嵌图』，应改成 icat 为主，并注明需配置后端"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "分屏快捷键与 conf 语法可跟做；ssh/kitten、Wayland、image.nvim 踩坑有用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "老电视/显卡类比贴合；分屏与 conf 案例清楚；matplotlib 一行命令缺『要配后端』说明，零基础会以为开箱即用"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "『plt.show() 在 kitty 里图直接画在终端』过满：默认仍可能弹 GUI，需 matplotlib kitty 后端或走 icat",
+        "Star 写 26k 已偏低（约 33k），可更新；Kovid Goyal / GPLv3 / 无原生 Windows 正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 matplotlib 命令按现状不可复现『终端内嵌图』，应改成 icat 为主，并注明需配置后端",
+        "分屏快捷键与 conf 语法可跟做；ssh/kitten、Wayland、image.nvim 踩坑有用"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic/engineer：案例 2 改为 icat + savefig 可复现路径；澄清 plt.show 需后端；Star 更新 33k。",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 156,
+    "reasons": []
+  },
+  "l1_pass": true
+}

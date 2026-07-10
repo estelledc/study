@@ -17,14 +17,14 @@ title: kind — 用 Docker 容器当 K8s 节点的本地集群
 - **kind** 直接在你客厅地毯上摆 11 个机器人小球员——每个机器人就是一个 Docker 容器，11 个容器组成一支球队
 - 因为是容器套容器（Docker-in-Docker），**启动只要 10-30 秒**，比 minikube 快 2-3 倍
 
-仓库 14k+ Star，Apache-2.0，Go 写的。2018 年 Google 工程师 Benjamin Elder 起的项目，现在归 Kubernetes SIG-Testing 维护。**K8s 项目自己的 CI 跑端到端测试就是用 kind**——这是最强的可信度证明：K8s 团队信任它能复现真实集群的行为。
+仓库 15k+ Star，Apache-2.0，Go 写的。2018 年 Google 工程师 Benjamin Elder 起的项目，现在归 Kubernetes SIG-Testing 维护。**K8s 项目自己的 CI 跑端到端测试就是用 kind**——这是最强的可信度证明：K8s 团队信任它能复现真实集群的行为。
 
 ## 为什么重要
 
 如果只学一个本地 K8s 工具，kind 是 CI / 自动化场景的事实标准：
 
 - **K8s 自己的 e2e 测试用它**——你写的 controller / operator 想跑 K8s 官方 conformance 测试，kind 是最近的复现环境
-- **GitHub Actions 几乎所有 K8s 相关 workflow 都用 kind**——`helm/kind-action` 月下载量百万级，因为它启动快、不依赖虚拟化、CI runner 上能跑
+- **GitHub Actions 里大量 K8s 相关 workflow 用 kind**——`helm/kind-action` 很常见，因为它启动快、不依赖虚拟化、CI runner 上能跑
 - **多集群拓扑零成本**——`kind create cluster --name a` / `--name b`，一条命令再起一个，测 cluster federation / multi-cluster mesh 不用开第二台机器
 - **节点数量随便加**——配置文件里写几个 control-plane 几个 worker，kind 就起几个容器；测调度策略 / Pod affinity / taint 不用真买机器
 
