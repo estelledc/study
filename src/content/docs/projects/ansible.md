@@ -132,7 +132,7 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 - 大规模容器编排 → 用 [[kubernetes]]，Ansible 部署 k8s 集群可以，但管运行中的容器不合适
 - Windows 大规模管理 → 能管，但 WinRM 比 SSH 麻烦得多，不如用 Windows 原生的 DSC
 
-## 历史
+## 历史小故事（可跳过）
 
 - **2012 年**：Michael DeHaan 写出 Ansible（之前他是 Puppet 早期员工，对 agent 模型不满意）
 - **2013 年**：Ansible Inc. 成立，融资做商业化
@@ -150,9 +150,21 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 3. **YAML 是双刃剑**——人类可读，但缩进和类型坑也最多
 4. **边界感**：Terraform 创建、Ansible 配置、Kubernetes 编排，三个工具各管一段，别试图让一个工具干完所有事
 
+## 延伸阅读
+
+- 官方仓库：[ansible/ansible](https://github.com/ansible/ansible)
+- 官方文档：[Ansible Documentation](https://docs.ansible.com/)
+- 入门教程：[Ansible Getting Started](https://docs.ansible.com/ansible/latest/getting_started/index.html)
+- 动态清单：[Working with dynamic inventory](https://docs.ansible.com/ansible/latest/inventory_guide/intro_dynamic_inventory.html)
+- [[terraform]] —— 和 Ansible 最常见的 IaC 分工对照
+
 ## 关联
 
 - [[terraform]] —— 配套使用：Terraform 创建机器，Ansible 配置软件
 - [[docker]] —— 容器化后 Ansible 用得少了，但部署 Docker 本身仍常用
 - [[kubernetes]] —— k8s 集群初装常用 Ansible（kubespray 项目就是 ansible playbook）
 - [[nginx]] —— Ansible playbook 最常见的部署对象之一
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
