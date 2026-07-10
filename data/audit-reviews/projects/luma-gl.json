@@ -1,7 +1,4 @@
 {
-  "slug": "luma-gl",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.22,
   "reject_count": 0,
@@ -96,40 +93,5 @@
         "适用/不适用拆成两个 H2 且缺少量化边界（如点数规模、是否需要自定义管线）。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base/engineer：案例无代码、术语缺桥接、适用边界弱。已补 Model/Buffer 示例、术语解释、量化适用，并合并适用段。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事",
-      "## 学到什么",
-      "## 延伸阅读",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "ix-2014",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -106,33 +103,5 @@
         "踩坑（独占核、Dune 绑内核、自研 TCP、跨域通信）具体可操作；适用边界有「每秒 <1 万 / >百万次 I/O」量化，好。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：memcached 尾延迟应为 >2× 而非 10×，并区分短消息微基准 ~10× 吞吐；弱化 io_uring 谱系继承表述；案例改为可跟做步骤。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 162,
-  "l1_pass": true
+  ]
 }

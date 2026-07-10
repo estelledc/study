@@ -1,7 +1,4 @@
 {
-  "slug": "islands-architecture",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -86,27 +83,5 @@
         "Astro client 指令示例可跟做；跨岛状态/岛过多踩坑具体；单页 <10 岛有量化边界。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 159,
-  "l1_pass": true,
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "luxon",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -85,32 +82,5 @@
       "weakest_section": "## 适用",
       "fix_hints": []
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "academic：[[temporal]] 误指 Temporal.io 工作流，改为 [[temporal-polyfill]]；修正「IANA 时区内置」与 Intl 委托表述；案例 2 补逐部分解释。",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 170,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 170,
-  "l1_pass": true
+  ]
 }
