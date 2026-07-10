@@ -1,0 +1,64 @@
+{
+  "slug": "activation-patching",
+  "area": "papers",
+  "note_path": "src/content/docs/papers/activation-patching.md",
+  "research_stub_path": "/tmp/audit-round-2/papers-activation-patching/research-stub.json",
+  "reviewers": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 偏概念对照、少一步可跟做操作；不影响通过，但后续可补一个最小 feature patching 步骤。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "对“各大实验室都把它当地基工具”的表述略宽，但整体事实方向与来源一致。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "ROME 伪代码是教学级近似，不是可直接运行实现；当前注释已足够避免误导。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "action": "pass",
+    "reason": "三位 reviewer 均为 pass，且平均分 >= 4.0。",
+    "reject_count": 0,
+    "initial_quality_gate": {
+      "pass": true,
+      "lines": 153
+    },
+    "final_quality_gate": {
+      "pass": true,
+      "lines": 153
+    }
+  }
+}

@@ -66,7 +66,7 @@ A-Frame 可以拆成 **三层**：
 
 ### 案例 2：给展品加凝视或鼠标点击反馈
 
-Cursor 文档说明，WebGL 物体不会天然收到浏览器 `click`；A-Frame 用 cursor + raycaster 合成 `click`、`mouseenter`、`mouseleave` 等事件。
+官方交互文档说明，WebGL 物体不会天然收到浏览器 `click`；A-Frame 用 cursor + raycaster 合成 `click`、`mouseenter`、`mouseleave` 等事件。
 
 ```html
 <script>
