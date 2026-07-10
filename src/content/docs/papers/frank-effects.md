@@ -27,9 +27,9 @@ state s x              = x
 
 不理解 Frank，下面这些事都没法解释：
 
-- 为什么 OCaml 5 的 effect handler 能让"异步"看起来像同步代码——它的语法骨架就是 Frank 一脉
+- 为什么 OCaml 5 的 effect handler 能让"异步"看起来像同步代码——它和 Frank 同属 algebraic effect handler 一脉（思想相近，语法并不照搬）
 - 为什么 algebraic effect 比 monad transformer 更可组合——Frank 的 multihandler 直接告诉你答案
-- 为什么 Koka / Eff / Idris-Eff 这些研究语言都不让你写 effect 变量——Frank 用 ambient ability 把这步省了
+- 为什么有的系统签名里要写长长的 effect 行（如 Koka 的 effect row），而 Frank 源码里很少手写——它用 ambient ability 把能力从外向内灌
 - 为什么"effect 系统的工业化"被认为是 2020 年代 PL 的关键路标
 
 ## 核心要点
@@ -40,9 +40,9 @@ Frank 的设计齿轮有 **三个**：
 
 2. **双向类型检查（bidirectional）**：类型信息不是从代码"挤出来"，而是从外向内"灌进去"。需要 `Int` 时就 push `Int` 进去检查。类比：拼图先看槽位形状，再去找符合的块，不是反过来。
 
-3. **ambient ability 向内传播**：当前作用域"自带哪些 effect 能力"是一个隐式集合，谁调你你就自带谁的能力。源代码里几乎不需要写 effect 变量，写出来的签名也读得懂。
+3. **ambient ability 向内传播**：当前作用域"自带哪些 effect 能力"是一个隐式集合——像房间里已经通了电，进来的电器不用每次重报"我要用电"。谁调你你就自带谁的能力；源代码里很少手写 effect 变量。
 
-老式 Plotkin-Pretnar handler 用累加：函数签名要写 effect 变量 `ε`，每嵌套一层就 union。Frank 反过来——签名只写"我需要哪些"，能力从外层"灌"进来。少一个变量，签名读起来短得多。
+老式 Plotkin-Pretnar handler 常在签名里累加 effect 变量 `ε`；Koka 一类语言则显式写 effect row。Frank 反过来——签名主要写"我需要哪些"，能力从外层"灌"进来，读起来短得多。
 
 ## 实践案例
 
