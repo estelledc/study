@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.56,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "速读高手 vs 背诵全文类比很强，selectivity 有日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "四个案例全是结果叙述，没有可逐步读的伪代码（读 token→算 Δ/B/C→更新 h→输出）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "额外「案例补充」段挤占结构，零基础更需要案例里的最小步骤而不是 Jamba 工程长文"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Gu & Dao 2023 / arXiv:2312.00752 正确；5× throughput、Pile 300B、优于同规模 Pythia 与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇写「Carnegie Mellon 的 Albert Gu 和 Tri Dao」易让人以为两人同属 CMU；Dao 通常署 Princeton，应分开写机构或只写人名"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「基因组学几乎垄断」「仅在 7B 以下 Transformer 仍占优」超出论文主张，属过度外推，需弱化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例无任何可跟做伪代码/API 骨架，工程师无法复现 selective scan 一步"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（ICL 弱、无 KV cache 修辞、HiPPO/Delta 超参、生态）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "全文行数低于 quality-gate 150 下限，必须扩写；建议压缩「案例补充」并把伪代码放进案例 1"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 2
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "速读高手 vs 背诵全文类比很强，selectivity 有日常桥接",
+        "四个案例全是结果叙述，没有可逐步读的伪代码（读 token→算 Δ/B/C→更新 h→输出）",
+        "额外「案例补充」段挤占结构，零基础更需要案例里的最小步骤而不是 Jamba 工程长文"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "来源 Gu & Dao 2023 / arXiv:2312.00752 正确；5× throughput、Pile 300B、优于同规模 Pythia 与论文一致",
+        "开篇写「Carnegie Mellon 的 Albert Gu 和 Tri Dao」易让人以为两人同属 CMU；Dao 通常署 Princeton，应分开写机构或只写人名",
+        "「基因组学几乎垄断」「仅在 7B 以下 Transformer 仍占优」超出论文主张，属过度外推，需弱化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例无任何可跟做伪代码/API 骨架，工程师无法复现 selective scan 一步",
+        "踩坑（ICL 弱、无 KV cache 修辞、HiPPO/Delta 超参、生态）具体可操作",
+        "全文行数低于 quality-gate 150 下限，必须扩写；建议压缩「案例补充」并把伪代码放进案例 1"
+      ]
+    }
+  ]
+}
