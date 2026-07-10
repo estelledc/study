@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "银行柜员/对账单与下单时间窗类比贯穿全文，线性化点好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 ASCII 时序对零基础略密，可再补一句「P1 整笔办完后 P2 才开始读」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Herlihy & Wing TOPLAS 1990、locality、real-time order 表述正确；CAP 的 C 取 linearizability 与 Gilbert & Lynch 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段写「2003 年起推 transactional memory」有硬伤：Herlihy & Moss 硬件 TM 是 ISCA 1993；2003 更贴 DSTM/软件 TM 热潮，应改年或改表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Raft read_index + heartbeat 多数派确认的教学伪代码概念正确、可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（与 serializability 混淆、线性化点放错、多数派写≠端到端）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段边界清楚；跨地域低延迟写可再点一句延迟代价量级"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "银行柜员/对账单与下单时间窗类比贯穿全文，线性化点好懂",
+        "案例 1 ASCII 时序对零基础略密，可再补一句「P1 整笔办完后 P2 才开始读」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Herlihy & Wing TOPLAS 1990、locality、real-time order 表述正确；CAP 的 C 取 linearizability 与 Gilbert & Lynch 一致",
+        "历史段写「2003 年起推 transactional memory」有硬伤：Herlihy & Moss 硬件 TM 是 ISCA 1993；2003 更贴 DSTM/软件 TM 热潮，应改年或改表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Raft read_index + heartbeat 多数派确认的教学伪代码概念正确、可跟读",
+        "踩坑（与 serializability 混淆、线性化点放错、多数派写≠端到端）具体可操作",
+        "适用段边界清楚；跨地域低延迟写可再点一句延迟代价量级"
+      ]
+    }
+  ]
+}
