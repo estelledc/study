@@ -1,0 +1,107 @@
+{
+  "slug": "mermaid",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.78,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "Markdown 写图类比贴合；flowchart/sequence/state 三案例逐步解释符号；入门友好。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub + Knut Sveidqvist 2014 正确；GitHub 2022 原生支持、d3+dagre 渲染叙述合理。图类型数量与 jison 解析器表述略简化（新版本持续扩展），教学可接受。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三类图示例可直接粘贴；反引号/中文空格/graph→flowchart/大图性能踩坑具体；与 PlantUML/Graphviz/Figma 选型表有边界。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "Markdown 写图类比贴合；flowchart/sequence/state 三案例逐步解释符号；入门友好。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "来源 GitHub + Knut Sveidqvist 2014 正确；GitHub 2022 原生支持、d3+dagre 渲染叙述合理。图类型数量与 jison 解析器表述略简化（新版本持续扩展），教学可接受。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "三类图示例可直接粘贴；反引号/中文空格/graph→flowchart/大图性能踩坑具体；与 PlantUML/Graphviz/Figma 选型表有边界。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.78,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 167,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 167,
+  "l1_pass": true
+}
