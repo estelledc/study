@@ -1,0 +1,116 @@
+{
+  "slug": "electron",
+  "area": "projects",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 1.78,
+  "reject_count": 3,
+  "needs_refine_count": 0,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "正文混入通用 pipeline 模板（依赖识别/吞吐/灰度），与 Electron 桌面壳无关。"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例没有 BrowserWindow、preload、IPC 的可跟做步骤，只有空泛清单。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把主进程/渲染进程/IPC 写成通用“可控性提升、吞吐上升”，严重歪曲 Electron 的实际机制与价值。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事与学到什么完全是通用调参话术，未交代 Atom Shell → Electron 的真实演进。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "无任何可运行代码或命令；反向链接区塞满重复“复盘要点”占位垃圾。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑条目过短且缺场景（contextIsolation、nodeIntegration、签名更新等未展开）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 2,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "正文混入通用 pipeline 模板（依赖识别/吞吐/灰度），与 Electron 桌面壳无关。",
+        "实践案例没有 BrowserWindow、preload、IPC 的可跟做步骤，只有空泛清单。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 3,
+        "no_distortion": 1
+      },
+      "average": 2,
+      "verdict": "reject",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "把主进程/渲染进程/IPC 写成通用“可控性提升、吞吐上升”，严重歪曲 Electron 的实际机制与价值。",
+        "历史小故事与学到什么完全是通用调参话术，未交代 Atom Shell → Electron 的真实演进。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 2,
+        "scope_correct": 2
+      },
+      "average": 1.67,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "无任何可运行代码或命令；反向链接区塞满重复“复盘要点”占位垃圾。",
+        "踩坑条目过短且缺场景（contextIsolation、nodeIntegration、签名更新等未展开）。"
+      ]
+    }
+  ],
+  "rewrite": {
+    "status": "rewritten",
+    "reason": "三审中 3 人 reject：原文为通用 scaffold，歪曲 Electron 机制且无可用代码；已按零基础模板全量重写。",
+    "sections_modified": [
+      "full note"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 181,
+    "reasons": []
+  },
+  "lines": 181,
+  "l1_pass": true
+}
