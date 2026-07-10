@@ -1,0 +1,107 @@
+{
+  "slug": "meshroom",
+  "area": "projects",
+  "status": "passed",
+  "action": "pass",
+  "average": 5,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "拼图师/厨房流水线/调色缓存类比生动；SfM/DepthMap 等有桥接；三案例均有逐部分解释。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "AliceVision/Meshroom 分工、Monstree、~12k stars、2021 ACM MMSys 论文与官方叙述一致；未把摄影测量夸成单图重建。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "meshroom_batch/compute 与自定义 CommandLineNode 可跟做；CUDA/路径/缓存踩坑可操作；适用边界含单图/镜面/实时等反例。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "拼图师/厨房流水线/调色缓存类比生动；SfM/DepthMap 等有桥接；三案例均有逐部分解释。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "AliceVision/Meshroom 分工、Monstree、~12k stars、2021 ACM MMSys 论文与官方叙述一致；未把摄影测量夸成单图重建。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "meshroom_batch/compute 与自定义 CommandLineNode 可跟做；CUDA/路径/缓存踩坑可操作；适用边界含单图/镜面/实时等反例。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 5,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 187,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 187,
+  "l1_pass": true
+}
