@@ -92,11 +92,11 @@ dust -j /var/lib/docker > disk-snapshot.json
 
 ## 踩过的坑
 
-1. **默认是 disk usage 不是 apparent size**：dust 默认报"实际占了多少块"（4KB 对齐），du 也一样。如果你比对的是 `ls -l` 的逻辑大小，会差几个百分点——加 `-b` 切到 apparent size 才能对齐。
+1. **默认是 disk usage 不是 apparent size**：dust 默认报"实际占了多少块"（块对齐），du 也一样。如果你比对的是 `ls -l` 的逻辑大小，会差几个百分点——加 `-s`（apparent-size）才对齐。注意：`-b` 在 dust 里是关掉百分比/条形图，不是字节模式。
 
 2. **极深嵌套触发栈溢出**：dust 用递归 walk，碰到 1000+ 层嵌套（构建产物、go vendor）会爆栈。解决：`-S` 调大栈，或者 `-d 3` 限制深度直接绕开。
 
-3. **硬链接默认只算一次**：Time Machine 备份、pnpm store 里有大量硬链接，dust 默认按 inode 去重，可能算出来比 `du` 小。需要"物理空间总和"加 `-P`（physical）才算全。
+3. **硬链接默认只算一次**：Time Machine 备份、pnpm store 里有大量硬链接，dust 默认按 inode 去重，可能算出来比"逐条相加"小。需要把每个硬链接都按完整长度计入时，同样用 `-s`（apparent-size）；`-P` 只是关掉进度条，不是 physical。
 
 4. **snap 安装版被沙箱锁死**：Ubuntu snap 装的 dust 只能扫 `/home`，扫 `/var/log` 直接 permission denied。换 `cargo install du-dust` 或 brew 装的非沙箱版才能扫系统盘。
 
