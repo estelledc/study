@@ -31,19 +31,21 @@ curl -d 'hello nsq' 'http://127.0.0.1:4151/pub?topic=events'
 - 为什么有了 Kafka 这种巨无霸，bitly / stripe / digital ocean / segment 这些中等规模公司还在用 NSQ
 - 为什么「消息队列」也可以**没有共识层、没有 leader 选举、没有复杂集群协调**
 - 为什么 Go 在 2012 年（语言才 1.0 不久）就被选来写大型分布式中间件
-- 为什么 NSQ 的设计思想后来被 Pulsar / Redpanda 等新一代队列部分继承
+- 为什么「轻量、无共识」的消息队列思路，在 Kafka 变重之后仍然有人讨论和选型
 
 简单说：**NSQ 证明了消息队列不一定要往「越来越重」的方向卷**——选择放弃回放、顺序、强一致这些功能，换来运维成本接近零。
 
 ## 核心要点
 
-NSQ 的架构可以拆成 **三个进程** 加 **两个抽象**：
+NSQ 的架构可以拆成 **两个核心守护进程 + 一个管理 UI**，再加 **topic / channel 两个抽象**：
 
 1. **nsqd**：守护进程，真正接收消息、排队、推送给 consumer。每台机器跑一个或多个，互相之间**完全独立**——一个节点挂了只影响那个节点上的消息。
 
 2. **nsqlookupd**：目录服务（**不存消息**）。nsqd 启动后向所有 nsqlookupd 注册「我有 topic A、B」；consumer 查任意一个 nsqlookupd 拿到「topic A 在 host1、host3 上」的合并视图，直接 TCP 连过去。多个 nsqlookupd 互不通信——这种**最终一致的发现**比 ZooKeeper 强一致便宜一个数量级。
 
-3. **topic / channel 模型**：topic 是消息流名字（如 `clicks`）；每个 channel 订阅 topic 都**拿一份完整副本**（如 `clicks#analytics`、`clicks#archive`）；channel 内多个 consumer **负载均衡分摊**消息。
+3. **nsqadmin**：只读管理界面，连 lookupd 看 topic / channel / lag；**不参与消息路径**，挂了也不影响收发。
+
+4. **topic / channel 模型**：topic 是消息流名字（如 `clicks`）；每个 channel 订阅 topic 都**拿一份完整副本**（如 `clicks#analytics`、`clicks#archive`）；channel 内多个 consumer **负载均衡分摊**消息。
 
 简单说：**topic 是广播频道，channel 是订阅副本（每个副本独立消费），channel 里的 consumer 是分工干活的工人**。
 
@@ -94,7 +96,7 @@ nsqd --lookupd-tcp-address=127.0.0.1:4160 \
 
 2. **不保证顺序**：同一个 topic 的消息可能落到不同 nsqd 节点上，consumer 从多个节点拉取时顺序就乱了。需要严格 FIFO 的场景（如订单状态机）选错就翻车。
 
-3. **mem-queue-size 默认值**：消息默认走内存队列（默认 10000 条），超过才写磁盘 backend。如果 consumer 短时间挂掉、消息突增，**内存里的会先丢**——生产环境一般要把这个值调到 0（强制走磁盘）或加大磁盘 backend 配额。
+3. **mem-queue-size 与崩溃丢消息**：消息先走内存队列（默认约 10000 条），超出部分进磁盘 backend。**consumer 短时挂掉不会丢**（会超时重入队）；真正危险的是 **nsqd 进程崩溃**——当时还在内存、未落盘的消息会没。生产常把 `mem-queue-size` 调小（甚至 0）逼更多消息走磁盘，或接受「崩溃窗口内可能丢」。
 
 4. **无内置复制**：单 nsqd 节点磁盘坏了消息就丢。官方有 `nsq_to_nsq` 工具做镜像，但要自己搭、自己监控。生产高可用方案是「多 producer 写多个 nsqd 节点 + consumer 读所有节点」，靠业务层去重。
 
