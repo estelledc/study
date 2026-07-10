@@ -1,0 +1,116 @@
+{
+  "slug": "ardour",
+  "area": "projects",
+  "status": "rewritten",
+  "action": "rewrite",
+  "average": 2.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    "Practice cases need concrete code or commands plus step-by-step explanations.",
+    "Remove extra post-backlink H2 sections and bring the note back to the 12-section template.",
+    "Use allowed difficulty wording and make applicability boundaries more concrete."
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Cases describe workflows but do not include code/commands or detailed part-by-part explanations."
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Historical claims are too vague to audit; either qualify them or anchor them to stable project history."
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 3,
+        "scope_correct": 3
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Add realistic commands, routing examples, or configuration snippets that a learner can follow.",
+        "Make buffer, routing, plugin-version, and export pitfalls more operational."
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 2.89,
+    "verdict": "needs-refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false,
+    "base_rule_findings": [
+      "difficulty uses non-standard value 进阶",
+      "extra H2 sections appear after ## 反向链接",
+      "practice cases lack code blocks and 逐部分解释"
+    ]
+  },
+  "refinement": {
+    "action": "rewrite",
+    "round": 1,
+    "reason": "Issues affected the template, examples, frontmatter, and post-backlink structure, so a full project-template rewrite was safer than local refinement.",
+    "sections_modified": [
+      "frontmatter",
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "audit_notes": "Rewrote the note to a 12-section project template with command/routing examples and removed extra post-backlink sections."
+}

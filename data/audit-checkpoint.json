@@ -1,29 +1,29 @@
 {
-  "round_n": 6,
+  "round_n": 7,
   "total": 1975,
-  "audited": 72,
+  "audited": 84,
   "failed": 0,
-  "pending": 1903,
+  "pending": 1891,
   "by_status": {
-    "rewritten": 4,
-    "refined": 35,
-    "passed": 33,
-    "pending": 1903
+    "rewritten": 5,
+    "refined": 40,
+    "passed": 39,
+    "pending": 1891
   },
   "last_round": {
-    "round": 6,
+    "round": 7,
     "results": 12,
-    "passed": 9,
-    "refined": 3,
-    "rewritten": 0,
+    "passed": 6,
+    "refined": 5,
+    "rewritten": 1,
     "failed": 0,
-    "at": "2026-07-10T17:34:25.291Z"
+    "at": "2026-07-10T17:39:28.126Z"
   },
-  "next_action": "start-audit-round-7",
-  "updated_at": "2026-07-10T17:34:25.291Z",
+  "next_action": "start-audit-round-8",
+  "updated_at": "2026-07-10T17:39:28.126Z",
   "handoff": {
     "branch": "cursor/audit-all-notes-4844",
     "pr": "https://github.com/estelledc/study/pull/15",
-    "note": "Do NOT rebuild audit-pool with --force; preserve terminal statuses."
+    "note": "Do NOT rebuild audit-pool with --force"
   }
 }

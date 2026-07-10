@@ -41,6 +41,8 @@ OSx 的设计可以浓缩成 **三层 + 一根权限内核**：
 
 ### 案例 1：用 SDK 一键部署一个 token-voting DAO
 
+下面是最小调用骨架，`context` 和 `tokenVotingPluginInstallParams` 按官方 SDK 示例先构好：
+
 ```ts
 import { Client } from '@aragon/sdk-client'
 const client = new Client(context)
@@ -61,14 +63,20 @@ for await (const step of steps) console.log(step)
 ### 案例 2：DAO 执行一笔外部交易
 
 ```solidity
-// 提案通过后，投票插件调 DAO.execute
+// 提案通过后，投票插件调 DAO.execute；target/recipient 换成真实地址
+address target = 0x1111111111111111111111111111111111111111;
+bytes memory data = abi.encodeWithSignature(
+  "transfer(address,uint256)",
+  recipient,
+  1 ether
+);
 IDAO.Action[] memory actions = new IDAO.Action[](1);
 actions[0] = IDAO.Action({
-  to: 0xUniswapRouter,
-  value: 1 ether,
-  data: abi.encodeCall(swap, (...))
+  to: target,
+  value: 0,
+  data: data
 });
-dao.execute(callId, actions, allowFailureMap);
+dao.execute(bytes32("payroll-1"), actions, 0);
 ```
 
 DAO 像一个**多功能遥控器**：传一组 `Action`（去哪、转多少、调什么函数），DAO 一次性帮你全打出去。所有"对外动作"都走这一个入口。
