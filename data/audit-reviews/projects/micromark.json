@@ -1,18 +1,9 @@
 {
-  "slug": "micromark",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
   "needs_refine_count": 2,
   "pass_count": 1,
-  "lines": 156,
-  "l1_pass": true,
-  "sections_modified": [
-    "## 实践案例",
-    "## 适用 vs 不适用场景"
-  ],
   "weakest_sections": [
     {
       "reviewer": "zero-base",

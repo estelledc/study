@@ -1,7 +1,4 @@
 {
-  "slug": "metamask",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -69,13 +66,5 @@
       "weakest_section": "## 适用 vs 不适用场景",
       "fix_hints": []
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 171,
-    "reasons": []
-  },
-  "lines": 171,
-  "l1_pass": true
+  ]
 }

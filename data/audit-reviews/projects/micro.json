@@ -1,15 +1,9 @@
 {
-  "slug": "micro",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.78,
   "reject_count": 0,
   "needs_refine_count": 0,
   "pass_count": 3,
-  "lines": 155,
-  "l1_pass": true,
-  "sections_modified": [],
   "weakest_sections": [
     {
       "reviewer": "zero-base",

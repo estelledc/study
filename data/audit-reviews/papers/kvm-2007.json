@@ -1,17 +1,9 @@
 {
-  "slug": "kvm-2007",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.45,
   "reject_count": 0,
   "needs_refine_count": 1,
   "pass_count": 2,
-  "lines": 161,
-  "l1_pass": true,
-  "sections_modified": [
-    "## 为什么重要"
-  ],
   "weakest_sections": [
     {
       "reviewer": "zero-base",

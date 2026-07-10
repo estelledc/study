@@ -1,7 +1,4 @@
 {
-  "slug": "kv-cache-budget-2026",
-  "area": "papers",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1.33,
   "reject_count": 3,
@@ -81,20 +78,5 @@
         "无可跟做的 serving/KV 预算示例，踩坑与适用边界全是空话，无法当工程入门笔记。"
       ]
     }
-  ],
-  "rewrite": {
-    "status": "rewritten",
-    "sections_modified": [
-      "full-note"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 150,
-    "reasons": []
-  },
-  "lines": 150,
-  "l1_pass": true
+  ]
 }

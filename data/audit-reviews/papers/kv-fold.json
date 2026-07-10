@@ -1,17 +1,9 @@
 {
-  "slug": "kv-fold",
-  "area": "papers",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1,
   "reject_count": 3,
   "needs_refine_count": 0,
   "pass_count": 0,
-  "lines": 151,
-  "l1_pass": true,
-  "sections_modified": [
-    "full-note"
-  ],
   "weakest_sections": [
     {
       "reviewer": "zero-base",

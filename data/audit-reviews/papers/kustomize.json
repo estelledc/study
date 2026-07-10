@@ -1,7 +1,4 @@
 {
-  "slug": "kustomize",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -81,13 +78,5 @@
         "适用边界清楚；可再点明「环境差异字段数很少」时最甜点，复杂 if/for 仍应 Helm。"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 173,
-    "reasons": []
-  },
-  "lines": 173,
-  "l1_pass": true
+  ]
 }
