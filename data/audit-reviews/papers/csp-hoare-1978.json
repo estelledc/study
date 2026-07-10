@@ -1,0 +1,98 @@
+{
+  "slug": "csp-hoare-1978",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 素数筛只有流水线示意，没有像案例 1 那样给出可逐步读的伪代码进程体"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Don't communicate by sharing memory…是 CSP 1978 论文里那句话的直译」事实错误：该句是 Go 社区/Rob Pike 的 proverb，论文并无此原文；应改为「受 CSP 启发的 Go 口号」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Go 把 1978 论文语义几乎一比一」过满：Go 有缓冲 channel、共享内存+锁仍一等公民；宜改为「无缓冲 channel 的会合语义贴近 1978，整体是工程化子集/变体」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚，可再点明「无缓冲会合 vs 有缓冲解耦」的量化取舍（延迟 vs 吞吐）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 素数筛只有流水线示意，没有像案例 1 那样给出可逐步读的伪代码进程体"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Don't communicate by sharing memory…是 CSP 1978 论文里那句话的直译」事实错误：该句是 Go 社区/Rob Pike 的 proverb，论文并无此原文；应改为「受 CSP 启发的 Go 口号」",
+        "「Go 把 1978 论文语义几乎一比一」过满：Go 有缓冲 channel、共享内存+锁仍一等公民；宜改为「无缓冲 channel 的会合语义贴近 1978，整体是工程化子集/变体」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用",
+      "fix_hints": [
+        "适用/不适用边界清楚，可再点明「无缓冲会合 vs 有缓冲解耦」的量化取舍（延迟 vs 吞吐）"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "l1_pass": true,
+    "lines": 180,
+    "reasons": []
+  },
+  "lines": 180,
+  "l1_pass": true
+}

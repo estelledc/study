@@ -21,7 +21,7 @@ C-Store 把同一列的值连续摆在磁盘上，再单独压缩——同列的
 - 为什么 ClickHouse / Snowflake / Redshift 这些"现代数仓"扫百亿行只要几秒——靠的是列存 + 列内压缩 + 向量化
 - 为什么数据分析师跑同一个 SQL 在 MySQL 上要 20 分钟、在 ClickHouse 上 2 秒——不是 SQL 写得不一样，是底层布局不一样
 - 为什么 OLTP（在线交易）和 OLAP（在线分析）一直分两套系统——行存和列存是物理层面的根本分歧
-- 为什么 Vertica（C-Store 的商业版）2011 年被 HP 用 3.4 亿美元收购——这条技术路线值这个钱
+- 为什么 Vertica（C-Store 的商业化）2011 年被 HP 收购——列存分析这条路线已被大厂当成战略资产
 
 ## 核心要点
 
@@ -98,7 +98,7 @@ projection P2: (date, region, amount) 按 date 排序
 
 - 数据仓库 / OLAP / BI 报表——列少、行多、聚合多的查询
 - 时序数据 / 日志分析——天然按时间列排序，压缩比极高
-- HTAP 混合负载（用 WS+RS 隔离写读）
+- 读多写少、可接受分钟级批量合并的分析库（后世 HTAP 借了 WS+RS 思路，但 2005 原文是读优化列存）
 
 **不适用**：
 
@@ -113,7 +113,7 @@ projection P2: (date, region, amount) 按 date 排序
 - **1999 年**：荷兰 CWI 实验室的 MonetDB 推出，把列存做到内存里，启发后来很多研究
 - **2005 年**：Stonebraker（已经造过 Ingres 和 Postgres）带年轻博士生 Daniel Abadi 在 MIT 写 C-Store，论文拿下 VLDB 2005 best paper
 - **2006 年**：项目商业化为 Vertica，主打"分析比 Oracle 快十倍"
-- **2011 年**：HP 以 3.4 亿美元收购 Vertica；同期 Redshift（基于 ParAccel，列存）由 Amazon 推出
+- **2011 年**：HP 收购 Vertica（金额未公开）；同期 Amazon 推出 Redshift（基于 ParAccel，同属列存）
 - **2016 年后**：Snowflake、ClickHouse、DuckDB 把这条路线做到云原生 / 单机极致 / 嵌入式三个方向
 - **2020+**：Apache Parquet/ORC 文件格式让"列存"从数据库下沉到数据湖，Iceberg/Delta Lake 在其上做事务——C-Store 的物理布局思想现在跑在 S3 上
 
