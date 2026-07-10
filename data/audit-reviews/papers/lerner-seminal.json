@@ -1,0 +1,102 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "传菜类比把「互相喂招」讲活了；phase-order vs 不动点对照清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 LLVM PreservedAnalyses 对零基础偏跳，可再补一句「pass 跑完声明哪些分析结果还能用」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "POPL 2002、Lerner/Grove/Chambers、Whirlwind 落地正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段把 Rosette 挂到 Lerner 名下略混（Rosette 主线是 Torlak；Lerner 更贴 PEC）；教学可接受但宜弱化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/2 的 const-prop + DCE 交互可跟读，概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（震荡/良序、调试不可观察、工业仍 phase-order）具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用段可再补一句量化：如 JIT 热路径上多次扫图的编译延迟敏感"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "传菜类比把「互相喂招」讲活了；phase-order vs 不动点对照清楚",
+        "案例 3 LLVM PreservedAnalyses 对零基础偏跳，可再补一句「pass 跑完声明哪些分析结果还能用」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "POPL 2002、Lerner/Grove/Chambers、Whirlwind 落地正确",
+        "历史段把 Rosette 挂到 Lerner 名下略混（Rosette 主线是 Torlak；Lerner 更贴 PEC）；教学可接受但宜弱化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 1/2 的 const-prop + DCE 交互可跟读，概念正确",
+        "踩坑（震荡/良序、调试不可观察、工业仍 phase-order）具体可操作",
+        "适用段可再补一句量化：如 JIT 热路径上多次扫图的编译延迟敏感"
+      ]
+    }
+  ]
+}

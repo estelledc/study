@@ -1,0 +1,107 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "档案袋 vs 表格类比清楚；BSON/文档有桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例都有「逐部分解释」，零基础可跟住 insertOne / rs.initiate / shardCollection"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "mongod/mongos、副本集 oplog、16MB 文档上限、SSPL 2018 主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「从一开始就不只想做单机 JSON」略事后叙事（分片能力后加）；教学可接受"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "不适用段「金融账本」宜注明 MongoDB 4.0+ 有多文档事务，但仍非账本首选"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三则 shell 案例可跟做；hashed userId 分片动机正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "w:1 vs 多数派、16MB、分片键热点都具体；可再点名 writeConcern majority / w:\"majority\" 写法"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（JOIN/小数据量/分片键不可预测）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "档案袋 vs 表格类比清楚；BSON/文档有桥接",
+        "三个案例都有「逐部分解释」，零基础可跟住 insertOne / rs.initiate / shardCollection"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "mongod/mongos、副本集 oplog、16MB 文档上限、SSPL 2018 主线正确",
+        "「从一开始就不只想做单机 JSON」略事后叙事（分片能力后加）；教学可接受",
+        "不适用段「金融账本」宜注明 MongoDB 4.0+ 有多文档事务，但仍非账本首选"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "三则 shell 案例可跟做；hashed userId 分片动机正确",
+        "w:1 vs 多数派、16MB、分片键热点都具体；可再点名 writeConcern majority / w:\"majority\" 写法",
+        "适用/不适用边界清楚（JOIN/小数据量/分片键不可预测）"
+      ]
+    }
+  ]
+}
