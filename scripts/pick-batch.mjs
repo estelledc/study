@@ -24,6 +24,7 @@ import {
   PRIORITY_QUEUE_PATH,
   REWRITE_POOL_PATH,
 } from './lib/paths.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 
 function parseArgs() {
   const args = { count: 8, rewrite: null, new: null, priorityRatio: 0.7, noPriority: false };
@@ -333,6 +334,10 @@ export async function applyPickPlan(plan, queues, options = {}) {
 
 async function main() {
   const args = parseArgs();
+  assertBulkOperationAuthorized({
+    operation: 'pick-batch',
+    requestedItems: args.rewrite + args.new,
+  });
   const queues = await loadPickQueues();
   const plan = pickBatch(args, queues);
   const { output } = plan;

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { auditOperationText } from './audit-operation-entrypoints.mjs';
+import { ACTIVE_OPERATION_FILES, auditOperationEntrypoints, auditOperationText } from './audit-operation-entrypoints.mjs';
 
 test('accepts the bounded policy language', () => {
   assert.deepEqual(auditOperationText('Bulk production is disabled. Use a dry-run and open a draft PR.'), []);
@@ -22,4 +22,11 @@ test('rejects unsafe legacy entrypoint patterns', () => {
   for (const [sample, category] of samples) {
     assert.equal(auditOperationText(sample)[0].includes(category), true);
   }
+});
+
+test('audits executable operation entrypoints as well as policy documents', () => {
+  for (const required of ['package.json', 'scripts/pick-batch.mjs', 'scripts/dispatch-batch.mjs', 'scripts/round.mjs', 'scripts/finalize-round.sh']) {
+    assert.equal(ACTIVE_OPERATION_FILES.includes(required), true);
+  }
+  assert.deepEqual(auditOperationEntrypoints(), []);
 });

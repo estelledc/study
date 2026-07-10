@@ -101,13 +101,13 @@ npm run round:final-gate
 
 `round:final-gate` runs the publish-prep checks without pushing: local log, `verify:pipeline`, `build:strict`, git status, and pipeline summary. It requires a clean worktree, `claimed=0`, and zero failures in the current lifecycle; historical failure events remain preserved.
 
-Only after the final gate passes, sync the eight canonical worktrees locally:
+Legacy worktree synchronization is intentionally disabled:
 
 ```bash
 npm run round:sync-worktrees
 ```
 
-`round:sync-worktrees` requires main to be clean, pipeline to have no claimed or failed items, and all eight worktrees to be healthy before resetting them to local main HEAD. It never pushes.
+`round:sync-worktrees` always refuses. A clean worktree can still contain branch-only commits, so bulk reset/clean is not a safe health operation. Archive or advance each legacy branch only after a separate per-branch review.
 
 ## Semi-Automatic 4-NEW Flow
 
@@ -125,7 +125,7 @@ After workers return JSON results, advance the claimed round in deterministic or
 npm run round:auto-advance -- --round <n> --results /tmp/study-worker-results.json
 ```
 
-`round:auto-advance` validates that worker results exactly cover the currently claimed slugs and echo each current `claim_token` and `claim_generation`, then calls `round:merge-one` per slug under one owner lock, `round:final-gate`, and `round:sync-worktrees`. The final gate runs both the desktop pipeline contract and the shared `verify:ci` contract before any worktree reset/clean step. It stops on the current failing slug or stage and never substitutes candidates.
+`round:auto-advance` is fail-closed while bulk production is disabled. After a separately reviewed policy grants a bounded target, it validates that worker results exactly cover the claimed slugs and echo each current `claim_token` and `claim_generation`, then calls `round:merge-one` per slug under one owner lock and finishes at `round:final-gate`. It never synchronizes legacy worktrees.
 
 ## Remote publication
 
@@ -151,7 +151,7 @@ node scripts/run-pipeline.mjs --area papers|projects --slug <slug> --stage resea
 
 For the 4-NEW flow, use `round:merge-one` (or `round:auto-advance`). `sync-and-merge-single.mjs` is an internal implementation detail: it requires the live round owner token plus the complete assignment provenance and refuses standalone/manual mutation. It verifies receipt generation, note/source hashes, staged evidence and an exact source-status allowlist before cherry-pick; after adding companion blobs it proves the canonical commit contains only the reviewed note, receipt and referenced evidence. Its rollback first verifies a clean tree, then uses an atomic branch-ref compare-and-swap against the captured picked HEAD before restoring the captured pre-pick HEAD.
 
-`finalize-round.sh` is the legacy/full finalize path. It handles atlas/backlink/frontmatter generation, build, whitelist staging, amend, and local worktree sync. Its dry-run mode is part of `verify:pipeline`; current policy does not authorize its remote-publish mode.
+`finalize-round.sh` is retired. Its only supported mode is the deterministic no-mutation dry run used by `verify:pipeline`; publish and worktree-sync flags are rejected.
 
 `sync-and-merge.sh` is now a legacy wrapper. It keeps dry-run preflight checks but refuses real batch mutation.
 

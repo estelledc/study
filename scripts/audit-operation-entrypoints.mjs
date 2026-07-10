@@ -16,6 +16,12 @@ export const ACTIVE_OPERATION_FILES = [
   'scripts/README.md',
   'README.md',
   'data/operations-policy.json',
+  'package.json',
+  'scripts/pick-batch.mjs',
+  'scripts/dispatch-batch.mjs',
+  'scripts/round.mjs',
+  'scripts/finalize-round.sh',
+  'scripts/sync-and-merge.sh',
 ];
 
 const FORBIDDEN = [
@@ -49,6 +55,21 @@ export function auditOperationEntrypoints(root = ROOT) {
     }
     failures.push(...auditOperationText(fs.readFileSync(file, 'utf8'), relative));
   }
+
+  const authorizationContracts = [
+    ['scripts/pick-batch.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/dispatch-batch.mjs', 'assertBulkOperationAuthorized'],
+    ['scripts/round.mjs', 'assertBulkOperationAuthorized'],
+  ];
+  for (const [relative, contract] of authorizationContracts) {
+    const content = fs.readFileSync(path.join(root, relative), 'utf8');
+    if (!content.includes(contract)) failures.push(`${relative}: missing-${contract}`);
+  }
+
+  const round = fs.readFileSync(path.join(root, 'scripts/round.mjs'), 'utf8');
+  if (!/round:sync-worktrees is disabled/u.test(round)) {
+    failures.push('scripts/round.mjs: destructive-worktree-sync-must-be-disabled');
+  }
   const policyPath = path.join(root, 'data/operations-policy.json');
   try {
     const policy = JSON.parse(fs.readFileSync(policyPath, 'utf8'));
@@ -67,8 +88,29 @@ export function auditOperationEntrypoints(root = ROOT) {
   return failures;
 }
 
+function parseArgs(argv = process.argv.slice(2)) {
+  const args = { json: false, tracked: false };
+  for (const arg of argv) {
+    if (arg === '--json') args.json = true;
+    else if (arg === '--tracked') args.tracked = true;
+    else throw new Error(`unknown argument: ${arg}`);
+  }
+  return args;
+}
+
 function main() {
+  const args = parseArgs();
   const failures = auditOperationEntrypoints();
+  if (args.json) {
+    console.log(JSON.stringify({
+      schema_version: 'study-operation-entrypoint-audit-v1',
+      scope: args.tracked ? 'tracked-active-entrypoints' : 'active-entrypoints',
+      ok: failures.length === 0,
+      files_scanned: ACTIVE_OPERATION_FILES.length,
+      failures,
+    }, null, 2));
+    process.exit(failures.length ? 1 : 0);
+  }
   if (failures.length) {
     console.error(`[audit:operations] Found ${failures.length} issue(s):`);
     for (const failure of failures) console.error(`- ${failure}`);

@@ -25,6 +25,7 @@ import {
   validateCommitHash,
 } from './lib/git.mjs';
 import { acquireRoundLock, releaseRoundLock, renewLease } from './round-lock.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 
 const MAX_BUFFER = 100 * 1024 * 1024;
 
@@ -258,6 +259,8 @@ async function roundDispatch(args) {
     return;
   }
 
+  assertBulkOperationAuthorized({ operation: 'round:dispatch', requestedItems: args.rewrite + args.new });
+
   await withRoundOperationLock(args, 'dispatch', async ({ ownerToken }) => {
     dispatchDryRun(args);
     snapshot('before dispatch');
@@ -329,6 +332,8 @@ async function roundMergeOne(rawArgs) {
     return;
   }
 
+  assertBulkOperationAuthorized({ operation: 'round:merge-one', requestedItems: 1 });
+
   if (args.ownerToken) {
     const renewed = await renewLease(args.ownerToken);
     if (!renewed.renewed) throw new Error(`merge-one lock renewal refused: ${renewed.reason}`);
@@ -356,25 +361,7 @@ function roundFinalGate() {
 }
 
 function roundSyncWorktrees() {
-  requireMainClean();
-  const summary = pipelineSummaryJson();
-  const issues = finalGateIssues(summary, '');
-  if (issues.length > 0) {
-    throw new Error(`refusing worktree sync: ${issues.join('; ')}`);
-  }
-
-  const doctor = runNode('scripts/worktree-doctor.mjs', ['--json', '--strict'], { capture: true, echo: true });
-  const report = parseJsonOutput(doctor, 'worktree doctor');
-  if (!report.ok || report.healthy !== 8) {
-    throw new Error(`refusing worktree sync: healthy=${report.healthy}/${report.checked}`);
-  }
-
-  const target = gitOutput(['rev-parse', 'HEAD'], { cwd: ROOT });
-  console.log(`[round] sync 8 worktrees to ${target}`);
-  for (const worktree of report.results) {
-    run('git', ['-C', worktree.path, 'reset', '--hard', target]);
-    run('git', ['-C', worktree.path, 'clean', '-fd']);
-  }
+  throw new Error('round:sync-worktrees is disabled: legacy worktrees require explicit per-branch archival review');
 }
 
 function readJsonlSync(filePath) {
@@ -399,6 +386,7 @@ function parseResultsArg(raw) {
 
 async function roundAutoAdvance(args) {
   requireMainClean();
+  assertBulkOperationAuthorized({ operation: 'round:auto-advance', requestedItems: 1 });
   await withRoundOperationLock(args, 'auto-advance', async ({ ownerToken }) => {
     const candidates = readJsonlSync(CANDIDATES_PATH);
     const pool = readJsonlSync(REWRITE_POOL_PATH);
@@ -409,7 +397,6 @@ async function roundAutoAdvance(args) {
       await roundMergeOne({ ...args, ...mergeArg, ownerToken, dryRun: false });
     }
     roundFinalGate();
-    roundSyncWorktrees();
   });
 }
 

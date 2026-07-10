@@ -1,6 +1,6 @@
 # 发布与回滚
 
-本文描述 `main` 发布接口的安全边界。当前机器政策禁止直接推送 `main`；正常改动先走 PR 和 CI。`finalize-round.sh` 是兼容旧流水线的本地聚合入口，不代表当前获得发布授权，也不代表 Pages 已部署。
+本文描述 `main` 发布接口的安全边界。当前机器政策禁止直接推送 `main`；正常改动先走 PR 和 CI。`finalize-round.sh` 已退役，只保留无副作用 dry-run 兼容检查，不再具有聚合、发布或同步能力。
 
 ## 四个独立状态
 
@@ -18,10 +18,10 @@
 ```bash
 git status --short
 git rev-parse HEAD
-DRY_RUN=1 PUSH_REMOTE=1 bash scripts/finalize-round.sh
+npm run round:final-gate
 ```
 
-上述命令只验证计划，不发送 push。当前交付方式是功能分支 + 草稿 PR；merge 和生产部署分别确认。只有未来显式变更机器 policy 并单独授权发布后，`REMOTE HEAD VERIFIED` 才能证明远端 commit；随后仍须在 GitHub Actions 单独确认对应 SHA 的 Pages workflow。不要通过空提交或改写历史来“触发”部署。
+上述命令只验证本地状态，不发送 push。当前交付方式是功能分支 + 草稿 PR；merge 和生产部署分别确认。未来即使显式变更机器 policy，也必须使用经审查的 PR/分支保护流程；随后仍须在 GitHub Actions 单独确认对应 SHA 的 Pages workflow。不要通过空提交或改写历史来“触发”部署。
 
 ## 已知良好版本
 

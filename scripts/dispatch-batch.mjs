@@ -22,6 +22,7 @@ import { CANDIDATES_PATH, DATA_DIR, docsEntryRelativePath, REWRITE_POOL_PATH } f
 import { DISPATCH_PROMPT_KINDS, commonPromptVars, loadPromptTemplates, renderTemplate } from './lib/prompts.mjs';
 import { worktreeForAreaSlot, worktreesForDispatch } from './lib/worktrees.mjs';
 import { formatCandidateMetadataIssue, validateCandidateRows } from './lib/candidate-metadata.mjs';
+import { assertBulkOperationAuthorized } from './lib/operations-policy.mjs';
 import {
   assertNoPendingQueueTransaction,
   recoverQueueTransaction,
@@ -348,6 +349,11 @@ async function main() {
     await executeDispatch(args);
     return;
   }
+
+  assertBulkOperationAuthorized({
+    operation: 'dispatch-batch',
+    requestedItems: args.rewrite + args.new,
+  });
 
   if (args.ownerToken) {
     const renewed = await renewLease(args.ownerToken);
