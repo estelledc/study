@@ -1,7 +1,4 @@
 {
-  "slug": "gray-1978-notes",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -54,7 +51,7 @@
         "accessibility": 4,
         "case_clarity": 3
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -83,7 +80,7 @@
         "pitfalls_useful": 5,
         "scope_correct": 4
       },
-      "average": 4.0,
+      "average": 4,
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
@@ -91,29 +88,5 @@
         "踩坑（ACID 命名、2PL 死锁、2PC 阻塞）具体可操作；行数 203>200 需压到 ≤200"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "zero-base/engineer：案例 2/3 补逐步解释；清空超长反向链接列表使行数 ≤200。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 193,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "l1_pass": true
+  ]
 }
