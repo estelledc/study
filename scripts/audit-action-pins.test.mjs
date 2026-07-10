@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { findUnpinnedActions } from './audit-action-pins.mjs';
+import { dependabotActionsFailures, findUnpinnedActions } from './audit-action-pins.mjs';
 
 test('accepts full action SHAs with version comments and local actions', () => {
   const failures = findUnpinnedActions(`
@@ -20,4 +20,15 @@ test('rejects moving tags, branches, short SHAs, and missing version comments', 
     findUnpinnedActions('- uses: owner/action@0123456789abcdef0123456789abcdef01234567')[0],
     /version comment/,
   );
+});
+
+test('requires a scheduled github-actions Dependabot policy', () => {
+  assert.deepEqual(dependabotActionsFailures(`
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+`), []);
+  assert.equal(dependabotActionsFailures('updates: []').length, 3);
 });

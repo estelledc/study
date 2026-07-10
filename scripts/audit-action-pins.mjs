@@ -49,14 +49,34 @@ export function auditWorkflowDirectory(workflowsDir) {
   return failures;
 }
 
+export function dependabotActionsFailures(text, file = '.github/dependabot.yml') {
+  const failures = [];
+  if (!/package-ecosystem:\s*["']?github-actions["']?/u.test(text)) {
+    failures.push(`${file}: must configure the github-actions ecosystem`);
+  }
+  if (!/directory:\s*["']?\/["']?/u.test(text)) {
+    failures.push(`${file}: github-actions updates must cover the repository root`);
+  }
+  if (!/interval:\s*["']?(?:daily|weekly|monthly)["']?/u.test(text)) {
+    failures.push(`${file}: must use a bounded Dependabot schedule`);
+  }
+  return failures;
+}
+
 function main() {
   const failures = auditWorkflowDirectory(path.join(ROOT, '.github', 'workflows'));
+  const dependabotPath = path.join(ROOT, '.github', 'dependabot.yml');
+  if (!fs.existsSync(dependabotPath)) {
+    failures.push('.github/dependabot.yml: missing github-actions update policy');
+  } else {
+    failures.push(...dependabotActionsFailures(fs.readFileSync(dependabotPath, 'utf8')));
+  }
   if (failures.length) {
     console.error(`[audit:action-pins] Found ${failures.length} issue(s):`);
     for (const failure of failures) console.error(`- ${failure}`);
     process.exit(1);
   }
-  console.log('[audit:action-pins] OK: every external action uses a full commit SHA and version comment.');
+  console.log('[audit:action-pins] OK: external actions are SHA-pinned and scheduled for reviewed update PRs.');
 }
 
 if (fileURLToPath(import.meta.url) === path.resolve(process.argv[1] || '')) main();

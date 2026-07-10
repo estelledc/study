@@ -14,6 +14,12 @@ export function changedFromArgs(env = process.env) {
   return ['--changed-from', ref];
 }
 
+export function whitespaceDiffArgs(env = process.env) {
+  const ref = String(env.STUDY_CHANGED_FROM || '').trim();
+  if (!COMMIT_SHA_RE.test(ref) || /^0{40}$/.test(ref)) return ['diff', '--check'];
+  return ['diff', '--check', `${ref}...HEAD`];
+}
+
 export function freshnessAsOf(env = process.env, now = new Date()) {
   const explicit = String(env.STUDY_FRESHNESS_AS_OF || '').trim();
   if (/^\d{4}-\d{2}-\d{2}$/.test(explicit)) return explicit;
@@ -55,7 +61,9 @@ export function buildCiSteps(env = process.env) {
   { name: 'Pages artifact boundary', command: 'node', args: ['scripts/audit-pages-artifact.mjs'] },
   { name: 'Atlas performance budget', command: 'node', args: ['scripts/benchmark-atlas.mjs'] },
   { name: 'site performance budget', command: 'node', args: ['scripts/benchmark-site.mjs'] },
-  { name: 'diff whitespace', command: 'git', args: ['diff', '--check'] },
+  { name: 'generated tracked output drift', command: 'git', args: ['diff', '--exit-code'] },
+  { name: 'staged output drift', command: 'git', args: ['diff', '--cached', '--exit-code'] },
+  { name: 'diff whitespace', command: 'git', args: whitespaceDiffArgs(env) },
   ];
 }
 

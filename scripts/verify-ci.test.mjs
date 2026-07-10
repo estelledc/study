@@ -8,6 +8,7 @@ import {
   CI_STEPS,
   freshnessAsOf,
   runCiSteps,
+  whitespaceDiffArgs,
 } from './verify-ci.mjs';
 
 test('adds a valid PR base commit to the incremental content contract', () => {
@@ -26,6 +27,12 @@ test('ignores missing, malformed, and all-zero event SHAs', () => {
   assert.deepEqual(changedFromArgs({ STUDY_CHANGED_FROM: 'origin/main' }), []);
   assert.deepEqual(changedFromArgs({ STUDY_CHANGED_FROM: '0'.repeat(40) }), []);
   assert.equal(buildCiSteps({}).some(({ name }) => name === 'changed-note quality gate'), false);
+});
+
+test('checks committed PR whitespace from the trusted base SHA', () => {
+  const sha = 'b'.repeat(40);
+  assert.deepEqual(whitespaceDiffArgs({ STUDY_CHANGED_FROM: sha }), ['diff', '--check', `${sha}...HEAD`]);
+  assert.deepEqual(whitespaceDiffArgs({ STUDY_CHANGED_FROM: 'origin/main' }), ['diff', '--check']);
 });
 
 test('uses an explicit freshness date or a UTC date fallback', () => {
@@ -54,6 +61,8 @@ test('runs the portable CI contract in a stable order', () => {
   assert.deepEqual(seen, CI_STEPS.map((step) => step.name));
   assert.equal(seen.includes('strict build'), true);
   assert.equal(seen.includes('homepage and base links'), true);
+  assert.equal(seen.includes('generated tracked output drift'), true);
+  assert.equal(seen.includes('staged output drift'), true);
   assert.equal(seen.some((name) => name.includes('worktree')), false);
 });
 
