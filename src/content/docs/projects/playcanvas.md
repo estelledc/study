@@ -53,59 +53,64 @@ document.body.appendChild(canvas);
 const app = new Application(canvas);
 app.setCanvasFillMode(FILLMODE_FILL_WINDOW);
 app.setCanvasResolution(RESOLUTION_AUTO);
+app.start(); // 不开 update 循环就没有画面
+
+const camera = new Entity('camera');
+camera.addComponent('camera', {
+  clearColor: new Color(0.1, 0.1, 0.1)
+});
+camera.setPosition(0, 0, 3);
+app.root.addChild(camera);
+
+const light = new Entity('light');
+light.addComponent('light');
+light.setEulerAngles(45, 45, 0);
+app.root.addChild(light);
 
 const cube = new Entity('cube');
 cube.addComponent('render', { type: 'box' });
 app.root.addChild(cube);
-
-const camera = new Entity('camera');
-app.root.addChild(camera);
 ```
 
 逐部分解释：
 
-- `Application` 和画布是引擎启动入口。
-- `Entity` + `render component` 让你把可见对象当作场景节点管理。
-- 设置 `fill mode` 与分辨率策略比手写 `resize` 事件更稳定。
+- `Application` + `app.start()`：引擎入口；不 `start` 就不会进每帧渲染。
+- `camera` 组件：没有相机等于“舞台没观众席”，什么都看不见。
+- `light` 组件：没有光，默认材质的盒子会接近全黑。
+- `render` + `box`：把可见物体当场景节点挂到 `app.root`。
 
-### 案例 2：加上输入与动画节奏
+### 案例 2：加上动画节奏
 
 ```js
 app.on('update', dt => {
   cube.rotate(10 * dt, 20 * dt, 30 * dt);
 });
-
 window.addEventListener('resize', () => app.resizeCanvas());
 ```
 
 逐部分解释：
 
-- `update` 回调给你一个固定的按帧执行口，适合动画逻辑。
-- `rotate` 的参数对应轴向角速度，能快速观察场景是否正确连通。
-- `resizeCanvas` 使窗口/设备切换不产生拉伸失真。
+- `update` 是按帧回调，`dt` 是上一帧到现在的秒数。
+- `rotate` 用角速度乘 `dt`，窗口大小变化时记得 `resizeCanvas`。
 
 ### 案例 3：快速起步工作流
 
 ```sh
 npm create playcanvas@latest
-cd my-app
-npm install
-npm run build
+cd my-app && npm install && npm run build
 ```
 
 逐部分解释：
 
-- `create-playcanvas` 负责把项目骨架先搭出来。
-- 依赖安装后执行 build，先验证运行链路是否完整。
-- 对非深度渲染研究者来说，这是“先能跑起来，再继续优化”最稳路径。
+- `create-playcanvas` 先搭项目骨架；`build` 验证整条运行链路。
+- 非图形研究者：先能跑，再谈 shader / 资源管线。
 
 ## 踩过的坑
 
-1. **误以为 WebGPU 开箱即用**：不同浏览器支持有差异，先确认回退策略。
-2. **场景资源未分级加载**：一次性拉太多贴图会导致首次可交互时间过长。
-3. **把播放链路当作通用交互主链**：音频、物理、渲染共享资源时要做优先级调度。
-4. **把编辑器和运行时逻辑混在一起**：组件职责混乱后，后续改动会很慢。
-
+1. **WebGPU 不是处处可用**：Safari / 旧 Chrome 可能没有；启动时检测失败要回退 WebGL2，否则白屏。
+2. **首屏贴图一次拉满**：把 4K 贴图全塞进首包，手机上 TTI 轻松超过 5 秒；按距离/优先级分级加载。
+3. **音频/物理和渲染抢同一帧预算**：物理步或解码占满主线程时，帧率会先掉，要给系统分优先级。
+4. **编辑器脚本直接当 runtime**：在 Editor 里写的生命周期钩子原样进生产，热重载和打包路径会对不上。
 ## 适用 vs 不适用场景
 
 **适用**：
