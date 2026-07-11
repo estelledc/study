@@ -1,0 +1,132 @@
+{
+  "slug": "park-2019-deepsdf",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 用 encode(office_chair) 与前文「砍掉编码器」矛盾，零基础读者会以为还有编码器；应改成查已训好的 z 或说明插值用的是训练得到的潜码"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的「6 万 KB ≈ 13 MB」与开篇「不到 10 MB」口径不一致，建议统一并加一句人话解释共享 MLP + 人均 1KB 潜码"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Occupancy Networks 为 arXiv 1812.03828（2018-12），DeepSDF 为 1901.05103（2019-01）；「同月几乎同一周」不准确，应改为约一个月内先后上线、同中 CVPR 2019"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点里 skip connection 表述成「把输入坐标拼到第 4 层」偏窄：论文是把 latent+xyz 再次拼接到第 4 层输出"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「不到 10 MB」与案例表「整类 ~13 MB」冲突，需按同一口径改写"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 伪代码 encode() 在 auto-decoder 设定下不可跑：应改为从训练得到的 z 表取码，或对观测点优化 z 后再插值"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 补全 loss 可补一句：观测点近似表面所以目标 SDF≈0，与训练时用真值 SDF 监督不同，避免跟做时混用两套目标"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 用 encode(office_chair) 与前文「砍掉编码器」矛盾，零基础读者会以为还有编码器；应改成查已训好的 z 或说明插值用的是训练得到的潜码",
+        "案例 1 的「6 万 KB ≈ 13 MB」与开篇「不到 10 MB」口径不一致，建议统一并加一句人话解释共享 MLP + 人均 1KB 潜码"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "Occupancy Networks 为 arXiv 1812.03828（2018-12），DeepSDF 为 1901.05103（2019-01）；「同月几乎同一周」不准确，应改为约一个月内先后上线、同中 CVPR 2019",
+        "核心要点里 skip connection 表述成「把输入坐标拼到第 4 层」偏窄：论文是把 latent+xyz 再次拼接到第 4 层输出",
+        "开篇「不到 10 MB」与案例表「整类 ~13 MB」冲突，需按同一口径改写"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 伪代码 encode() 在 auto-decoder 设定下不可跑：应改为从训练得到的 z 表取码，或对观测点优化 z 后再插值",
+        "案例 2 补全 loss 可补一句：观测点近似表面所以目标 SDF≈0，与训练时用真值 SDF 监督不同，避免跟做时混用两套目标"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：案例3 encode()与auto-decoder矛盾；Occupancy Networks时间线误写同月；skip/存储口径需纠；补全loss目标需区分",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事",
+      "## 学到什么",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 164,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  }
+}
