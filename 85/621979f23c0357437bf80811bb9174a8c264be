@@ -1,0 +1,23 @@
+CHANGELOG.md
+  s_7419cc1826b850::t_09df2d98cc29da 5-7
+tests/a11y/manual-matrix.md
+  s_7419cc1826b850::t_0238c71705c9a4 5-6,13-19,21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "85621979f23c0357437bf80811bb9174a8c264be",
+  "prompts": {},
+  "sessions": {
+    "s_7419cc1826b850": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_7419cc1826b850",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
