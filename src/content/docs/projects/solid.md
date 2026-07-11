@@ -25,10 +25,10 @@ function Hello() {
 
 不理解 Solid，下面这些事都没法解释：
 
-- **比 React 快 1.5-3 倍**：JS Framework Benchmark 长期前三，背后是"细粒度反应式 + 无 virtual DOM diff"两个机制叠加
+- **Benchmark 里长期前三**：JS Framework Benchmark 上常压过 React 一截，背后是"细粒度反应式 + 无 virtual DOM diff"（具体倍数随场景变，别当硬指标）
 - **JSX 看起来像 React 但底层完全不同**：组件函数只跑一次这个事实改写了所有"重渲染心智"，是理解现代响应式框架的钥匙
-- **启发了 React Compiler**：React 团队 2024 年推出的 React Compiler 借鉴了 Solid 编译期细粒度追踪的思路
-- **SolidStart 是 Next.js 的有力替代**：同样是 SSR + 路由 + 数据加载，但 runtime 体积小得多
+- **和 React Compiler 同向**：2024 年 React Compiler 也在做编译期细粒度优化；社区常拿 Solid / Svelte 5 作对照，不是官方认亲声明
+- **SolidStart 对标全栈路线**：同样是 SSR + 路由 + 数据加载，runtime 体积通常比 React 栈小一截
 
 ## 核心要点
 
@@ -74,7 +74,13 @@ function Logger() {
 }
 ```
 
-`createEffect` 自动追踪 `name()`——每次输入框变化就打日志。**没有依赖数组**——你读了什么它就追什么，比 React 的 `useEffect([deps])` 心智简单很多。
+**三步跟读**：
+
+1. **读了谁**：effect 里调用了 `name()` → 自动订阅 `name`
+2. **谁变**：输入框 `onInput` → `setName` → signal 更新
+3. **谁重跑**：只有这个 effect 重跑打日志；`Logger` 组件函数本身仍不重跑
+
+**没有依赖数组**——读了什么就追什么，比 React `useEffect([deps])` 心智简单。
 
 ### 案例 3：嵌套 createMemo 派生
 
@@ -89,7 +95,11 @@ function Cart() {
 }
 ```
 
-`total` 依赖 `items`，`taxed` 依赖 `total`。`items` 变 → `total` 重算 → `taxed` 重算 → 只更新那个 `<div>` 的文本。整条链路是**惰性 + 缓存**的——没人读 `taxed()` 它就不算。
+**三步跟读**：
+
+1. **读了谁**：`total` 读 `items()`；`taxed` 读 `total()`；JSX 读 `taxed()`
+2. **谁变**：`setItems(...)` 改购物车
+3. **谁重跑/更新**：`total` 重算 → `taxed` 重算 → 只改那个 `<div>` 文本；整条链路**惰性 + 缓存**——没人读 `taxed()` 就不算
 
 ## 踩过的坑
 
