@@ -164,49 +164,36 @@ fn rocket() -> _ {
 ## 历史小故事（可跳过）
 
 - **2016 年**：Sergio Benitez 在 Stanford 读 PhD 期间启动 Rocket，灵感来自 Flask + Sinatra
-- **2017 年**：0.3 发布，nightly procedural macro 实现『编译期校验路由 / 参数』，社区震撼
-- **2018-2022 年**：长期是 Rust 上『最易上手 web 框架』的代名词，但 nightly 依赖让生产团队望而却步
-- **2024 年 5 月**：0.5.1 stable 正式发布，迁到 stable Rust + tokio + hyper 1.x；治理迁到社区基金会 RWF2，重新进入企业选型清单
+- **2017 年**：0.3 发布，nightly procedural macro 做编译期路由/参数校验，社区震撼
+- **2018-2022 年**：长期是 Rust 上『最易上手 web 框架』，但 nightly 依赖让生产团队望而却步
+- **2023 年 11 月**：0.5.0 首个 stable，迁到 stable Rust + tokio + hyper；治理迁到 RWF2
+- **2024 年 5 月**：0.5.1 补丁发布，企业选型讨论明显回暖
 
 ## 学到什么
 
-1. **类型系统能替你做的，框架就替你做掉**——Rocket 把鉴权、参数解析、响应序列化都做成 trait，让编译器在调用 handler 前替你检查合法性
-2. **attribute macro 是 DX 利器但也是技术债**——0.4 的 nightly 依赖卡死了很多团队，DSL 越魔法越难升级
-3. **请求守卫 vs 中间件不是同一个抽象**——守卫绑在『参数类型』上，中间件绑在『路由 / 服务』上，组合方式完全不同
-4. **stable + governance 才是项目能进入生产的两道门**——0.5 stable + RWF2 基金会 让 Rocket 重新进入企业选型清单
+1. **类型系统能替你做的，框架就替你做掉**——鉴权、参数解析、响应序列化做成 trait，编译器在调 handler 前检查
+2. **attribute macro 是 DX 利器也是技术债**——0.4 的 nightly 依赖卡死很多团队，DSL 越魔法越难升级
+3. **请求守卫 vs 中间件不是同一个抽象**——守卫绑参数类型，中间件绑路由/服务，组合方式完全不同
+4. **stable + governance 才是进生产的两道门**——0.5 stable + RWF2 让 Rocket 重新进入企业选型清单
 
 ## 延伸阅读
 
-- 官方文档：[rocket.rs](https://rocket.rs/)（Quickstart + Guide 章节零基础友好）
-- GitHub README：[rwf2/Rocket](https://github.com/rwf2/Rocket)
-- Rust 官方 forum 0.5 升级讨论帖（搜 `rocket 0.5 stable`）
-- [[actix-web]] —— Rust 另一主流 web 框架，吞吐导向 / 生命周期重
-- [[axum]] —— Tokio 官方，tower 中间件生态，函数式风格
+- 官方文档：[rocket.rs](https://rocket.rs/)（Quickstart + Guide 零基础友好）
+- GitHub：[rwf2/Rocket](https://github.com/rwf2/Rocket)
+- [[actix-web]] —— Rust 另一主流 web 框架，吞吐导向
+- [[axum]] —— Tokio 官方，tower 中间件生态
 - [[fastapi]] —— Python 上类型驱动 web 的代表，思路最像
 
 ## 关联
 
 - [[axum]] —— 同领域、tower middleware 派、无宏路由声明
 - [[actix-web]] —— 同领域、actor 起家、TechEmpower 卷王
-- [[fastapi]] —— Python 的『类型即文档』代表，思路最像 Rocket
-- [[express]] —— Node 老牌动态类型 web 框架，反衬静态类型代价
-- [[gin]] —— Go 高性能 web 框架，路由用方法链而非 attribute
-- [[chi]] —— Go 极简路由库，对比 Rocket 的『宏 + 类型』重量级
-- [[encore]] —— 一站式 Go/TS 后端框架，对比 Rocket 只管 web 层
+- [[fastapi]] —— Python『类型即文档』代表，思路最像 Rocket
+- [[express]] —— Node 老牌动态类型 web，反衬静态类型代价
+- [[gin]] —— Go 高性能 web，路由用方法链而非 attribute
+- [[chi]] —— Go 极简路由库，对比 Rocket『宏 + 类型』重量级
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[actix-web]] —— Actix Web — Rust 上长期占据 TechEmpower 榜首的 web 框架
-- [[axum]] —— axum — 用 Rust 类型系统当『路由参数表』的 Web 框架
-- [[chi]] —— chi — Go 标准库友好的轻量 HTTP router
-- [[encore]] —— Encore — 类型安全 Go/TS 后端框架，基础设施即代码
-- [[express]] —— Express — Node.js 最经典的 Web 框架
-- [[fastapi]] —— FastAPI — 用 Python 类型注解写 API
-- [[gin]] —— Gin — Go 写 web API 的事实标准框架
-- [[poem]] —— poem — 一份 impl 块同时变 HTTP API + OpenAPI 文档站的 Rust 框架
-- [[salvo]] —— Salvo — 把中间件和处理器统一成一个 Handler trait 的 Rust web 框架
-- [[tide]] —— Tide — async-std 阵营里 koa 风格的极简 Rust web 框架
-- [[warp]] —— warp — Rust 里把请求处理拼成 Filter 积木的 web 框架
 
