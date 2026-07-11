@@ -1,0 +1,122 @@
+{
+  "slug": "starlight",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 可补一句「还需要 package.json 依赖与 src/content.config.ts（或官方 create 脚手架）」避免读者以为只改一个文件就能跑。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Anthropic Claude 文档与 Bun 文档实际是 Mintlify，不是 Starlight；请改为 Cloudflare Workers、Astro 官方文档等真实采用方。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事：@astrojs/starlight@0.1.0 发布于 2023-06-05，不是 2023-09；请改正月份。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「Pagefind 只到 page 级、要 section 级必须 Algolia」过绝对：Pagefind 可按标题/锚点出结果；请改成「默认偏页面级召回，细粒度 API/字段搜索再考虑 DocSearch/Algolia」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑里「MDX 单引号 props 某些版本会出问题」证据弱，建议删掉或改成更可复现的坑（如 content collection schema / MDX 与 .md 扩展名混用）。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 可补一句「还需要 package.json 依赖与 src/content.config.ts（或官方 create 脚手架）」避免读者以为只改一个文件就能跑。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Anthropic Claude 文档与 Bun 文档实际是 Mintlify，不是 Starlight；请改为 Cloudflare Workers、Astro 官方文档等真实采用方。",
+        "历史小故事：@astrojs/starlight@0.1.0 发布于 2023-06-05，不是 2023-09；请改正月份。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "「Pagefind 只到 page 级、要 section 级必须 Algolia」过绝对：Pagefind 可按标题/锚点出结果；请改成「默认偏页面级召回，细粒度 API/字段搜索再考虑 DocSearch/Algolia」。",
+        "踩坑里「MDX 单引号 props 某些版本会出问题」证据弱，建议删掉或改成更可复现的坑（如 content collection schema / MDX 与 .md 扩展名混用）。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "academic：Claude/Bun 误标为 Starlight、0.1 发布月错误；engineer：Pagefind/Algolia 边界过绝对、MDX 单引号坑证据弱。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正采用方与 0.1 日期；案例 1 补脚手架说明；弱化 Pagefind 边界；MDX 坑改为 .md/.mdx 混用。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 186,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

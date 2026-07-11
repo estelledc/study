@@ -25,7 +25,7 @@ export default {
 
 不理解 Starlight，下面这些事都没法解释：
 
-- 为什么 Anthropic 的 Claude 文档、Cloudflare Workers 文档、Bun 文档、Astro 自家文档**长得风格类似**——它们都是 Starlight
+- 为什么 Cloudflare Workers 文档、Astro 自家文档、以及不少开源项目文档**长得风格类似**——它们都是 Starlight（注意：Claude / Bun 文档是 Mintlify，别混）
 - 为什么这个 study 站只用 5-10 行配置就有侧边栏 + 搜索 + 暗色模式——开箱即用的边界画在哪里
 - 为什么文档站不用接 Algolia 也能全文搜索——Starlight 自带 Pagefind，**离线索引、零 SaaS 依赖**
 - 为什么"写 markdown 就有像样网站"这件事在 2024 年才真正普及——是 Astro 的 island 架构 + Starlight 的薄壳一起完成的
@@ -63,7 +63,7 @@ export default {
 }
 ```
 
-加一个 `src/content/docs/index.md` 写点内容——`npm run dev` 后浏览器打开就是个完整文档站。这是 Starlight 最 minimal 的姿势。
+再用官方 `npm create astro@latest -- --template starlight`（或手写 `package.json` + `src/content.config.ts`）补齐依赖与 content collection，加 `src/content/docs/index.md` 后 `npm run dev` 就是完整文档站。上面片段只展示 integration 核心。
 
 ### 案例 2：在 markdown 里嵌组件
 
@@ -110,7 +110,7 @@ export default {
 
 2. **Pagefind 中文需要二次跑**：默认 Pagefind 用英文分词，中文搜索会把"文档站点"当作一个整体词，搜"文档"搜不到。修复：build 完后 `pagefind --site dist --force-language zh` 二次跑，启用中文分词器。
 
-3. **MDX 注释 vs Astro 注释语法不同**：`.astro` 文件用 `<!-- -->` 注释，`.mdx` 文件里写 JSX 必须用 `{/* */}`——混用会报 parser error 但错误信息不直观。同理给 MDX 组件传 props 用 `<Card title="X" />` 不是 `<Card title='X' />`（单引号在某些版本会出问题）。
+3. **`.md` 与 `.mdx` 混用踩坑**：只有需要 `import` 组件的页面才用 `.mdx`；纯文档留 `.md`。`.mdx` 里 JSX 注释必须用 `{/* */}`（不是 HTML `<!-- -->`），否则 parser 报错且信息不直观。
 
 4. **Starlight 0.30 默认开 Pagefind UI**：升级后发现自定义搜索框不工作——是因为 0.30 内置了一个 Pagefind 搜索 UI 抢了快捷键。要么用内置的（删自定义代码），要么在配置里 `pagefind: false` 关掉。
 
@@ -126,13 +126,13 @@ export default {
 - 需要复杂动态交互（用户登录态、实时数据、API mock）的产品文档 → 用 [[nextra]] 或 [[docusaurus]]，吃 React 全 hydration
 - Vue 系团队 → 用 [[vitepress]]，Vue 心智一致
 - 不想自己运维、能付费 → Mintlify 等托管 SaaS，但锁部署
-- 需要"section 级搜索"（在 H3 内搜词） → Pagefind 只到 page 级，要 Algolia
+- 需要细粒度 API/字段级搜索（OpenAPI playground、按参数名召回）→ Pagefind 默认偏页面/标题召回，再考虑 DocSearch / Algolia
 
 ## 历史小故事（可跳过）
 
 - **2022 年**：Astro 1.0 发布，island 架构成熟——但写文档站还是要自己拼 sidebar / 搜索 / i18n 三大件，每个项目重新写一遍。
 - **2023 年 Q4**：Astro core team 判断"docs 站点 80% 的脚手架已经长在 Astro 里了"，缺的只是一层 convention 壳。
-- **2023-09**：`@astrojs/starlight` 0.1 发布。
+- **2023-06**：`@astrojs/starlight` 0.1.0 发布（2023-06-05）。
 - **2024-2025**：Cloudflare、Bun、Anthropic 等大型项目把文档站迁移到 Starlight，**"docs as Astro integration"** 成为一种通用范式。
 - **2026-05**：稳定版 0.39，配套生态 starlight-tailwind / starlight-markdoc / starlight-blog 等社区扩展。
 
