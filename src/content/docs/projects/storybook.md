@@ -30,7 +30,7 @@ export const Disabled = { args: { label: 'Click', disabled: true } }
 - 为什么 Material UI / Chakra / shadcn / Ant Design 这些组件库官网**长得几乎一样**——都用 Storybook 渲染
 - 为什么 Storybook 不是 test runner、不是 dev server、不是 docs site，但**这三件事它都能做一点**
 - 为什么 Manager UI 跑 React 18，Preview 里能跑用户的 React 16/17/19——同一个浏览器标签页里**有两个不同版本的 React**
-- 为什么 Storybook 9 (2025) 把 Vitest 整进核心——一份 `play()` 函数既渲染又测试，不再两套断言
+- 为什么 Storybook 9 (2025) 把 Vitest 做成一等公民测试体验——一份 `play()` 函数既渲染又测试，不再两套断言
 
 ## 核心要点
 
@@ -38,7 +38,7 @@ Storybook 的设计可以拆成 **三层物理隔离**：
 
 1. **Manager UI**：顶层 React app（左侧菜单/工具栏/Addon 面板）。它跑 Storybook 自己的 React 18，**和你的项目无关**。换句话说，Manager 自己是一个独立 SPA。
 2. **Preview iframe**：浏览器里嵌一个 `<iframe>`，里面跑**你项目的 React** + 你的组件。Manager 看不见 Preview 的 DOM，反之亦然——CSS reset、全局 polyfill、错误边界都互不污染。
-3. **postMessage Channel**：Manager 改 props（如 controls panel 拨开关）→ 通过 `window.postMessage` 把消息丢给 Preview iframe；Preview 报告 play 测试结果 → 也走这条通道回 Manager。消息体走 `telejson` 双向序列化，能传函数引用和循环结构。
+3. **postMessage Channel**：Manager 改 props（如 controls panel 拨开关）→ 通过 `window.postMessage` 把消息丢给 Preview iframe；Preview 报告 play 测试结果 → 也走这条通道回 Manager。消息体走 `telejson`（跨 iframe 的序列化库）双向序列化，能传函数引用和循环结构。
 
 加起来叫 "**双 window + 一根通道**"。这种隔离让 Storybook 可以同时支持任意框架（React、Vue、Svelte、Angular）和任意版本，代价是跨 frame 调试困难（要切 DevTools frame context）。
 
@@ -79,7 +79,7 @@ export const Clicked: StoryObj<typeof Button> = {
 }
 ```
 
-打开 Storybook，进 Clicked 这个 story，**自动模拟点击 → 断言 DOM**。同一段 `play()` 在 Vitest 里也能跑（v9 起 storybook 把 Vitest 集成进核心）——浏览器里调试、CI 里跑测试，**只写一次**。
+打开 Storybook，进 Clicked 这个 story，**自动模拟点击 → 断言 DOM**。同一段 `play()` 在 Vitest 里也能跑（v9 起通过 `@storybook/addon-vitest` 集成）——浏览器里调试、CI 里跑测试，**只写一次**。
 
 ### 案例 3：addon = preview 端 + manager 端
 
@@ -123,10 +123,10 @@ export const Clicked: StoryObj<typeof Button> = {
 
 - **2016 年**：Arunoda Susiripala 在 Kadira 公司给 Meteor 项目造了 React Storybook，只能渲染 React 组件、没 Manager UI、没 addon——就是个 "iframe 里挂组件" 的工具。
 - **2017 年**：项目改名 Storybook（去掉 React 前缀），扩到 Vue/Angular。这一步让它从"React 工具"变成"前端通用工具"。
-- **2021 年**：CSF 2.0 发布——story 从 React JSX 函数变成可移植格式，Ladle / Histoire / Vitest 都能读 CSF 文件。**CSF 实质成了行业标准**。
-- **2024 年**：CSF 3.0——`args` 对象代替 `.bind()`，story 从"函数"变成"数据"。
-- **2025-06**：Storybook 9 把 Vitest 拉进核心——`play()` 既能在浏览器跑、也能在 jsdom 跑。
-- **2026-05**：v10.4.1 发布，Vitest 集成稳定 + a11y addon 默认开启。
+- **约 2019–2020**：CSF 2（随 Storybook 5.2/6）把 story 收成可移植的 ES Module 格式，Ladle / Histoire / Vitest 都能读。**CSF 实质成了行业标准**。
+- **2021 / 2023**：CSF 3 实验版约 2021 推出（`args` 对象代替 `.bind()`，story 从"函数"变成"数据"）；**Storybook 7（2023）起 CSF 3 成为默认**。
+- **2025-06**：Storybook 9 把 Vitest 测试体验做成一等公民（`@storybook/addon-vitest`）——`play()` 既能在浏览器跑、也能在测试 runner 里跑。
+- **2026-05**：v10.4.x 发布，Vitest 集成稳定 + a11y addon 默认开启。
 
 10 年里，Storybook 从"React 单一工具"变成"任意 framework 工作台"，再变成"组件级 dev + docs + test 一体台"——靠的是双 window 隔离 + CSF 标准化两个稳定支柱。中间引入过的功能（docs site、interactions、a11y、Vitest）都是新长上去的枝叶，**主干 8 年没改**。
 
@@ -148,7 +148,7 @@ export const Clicked: StoryObj<typeof Button> = {
 
 ## 关联
 
-- [[vitest]] —— Storybook 9 把 Vitest 拉进核心做 play 测试 runner
+- [[vitest]] —— Storybook 9 把 Vitest 做成一等公民测试体验（addon-vitest）跑 play
 - [[playwright]] —— 视觉/交互回归备选方案，与 Storybook play 互补
 - [[shadcn-ui]] —— 用 Storybook 做组件文档与示例的代表项目
 - [[radix-ui]] —— 同样用 Storybook 展示无样式 headless 组件状态
