@@ -16,7 +16,8 @@ import {
 } from './paths.mjs';
 
 test('paths point at the study repository layout', () => {
-  assert.equal(path.basename(ROOT), 'study');
+  // Cloud/agent checkouts may use /workspace; GitHub Actions uses the repo name.
+  assert.match(path.basename(ROOT), /^(study|workspace)$/);
   assert.equal(DOCS_RELATIVE_DIR, 'src/content/docs');
   assert.equal(DOCS_DIR, path.join(ROOT, DOCS_RELATIVE_DIR));
   assert.equal(PAPERS_DIR, path.join(DOCS_DIR, 'papers'));
