@@ -1,0 +1,135 @@
+{
+  "slug": "storj",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "中央仓库 vs 明信片邮局类比贯穿全文，零基础直觉很强，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Reed-Solomon / AES-GCM / passphrase / access grant 首次堆叠；需各加一句日常说法（纠删码=多抄几份能拼回；AES-GCM=带校验的加密锁）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 graceful exit / 抵押金可再补半句「正常退役要走完流程，否则扣押金」桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/storj/storj 合理；Satellite 链下协调 + 客户端加密 + 纠删码主线正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「IPFS / Filecoin 都在用 IPFS-Storj gateway」过满：Storj 提供 IPFS gateway，Filecoin 并不依赖该 gateway——宜改为「可用 Storj 做 IPFS 持久层补强」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "公开材料常写重建阈值 29、上传约 80 片；文档亦出现 29/110 扩容参数——宜在核心要点加一句「教学按 29-of-80 讲，线上参数可能更高扩容」避免绝对化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "uplink / storagenode docker / rclone S3 gateway 教学向可跟做；cp 三步解释清楚"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑（Satellite 单点、S3 兼容差、SNO 门槛、冷热成本）具体；可补一句 egress 单价量级提醒"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（冷归档/S3 迁移 vs 强一致库/数据驻留/极小对象）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "中央仓库 vs 明信片邮局类比贯穿全文，零基础直觉很强，保留",
+        "核心要点里 Reed-Solomon / AES-GCM / passphrase / access grant 首次堆叠；需各加一句日常说法（纠删码=多抄几份能拼回；AES-GCM=带校验的加密锁）",
+        "案例 2 的 graceful exit / 抵押金可再补半句「正常退役要走完流程，否则扣押金」桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 github.com/storj/storj 合理；Satellite 链下协调 + 客户端加密 + 纠删码主线正确",
+        "「IPFS / Filecoin 都在用 IPFS-Storj gateway」过满：Storj 提供 IPFS gateway，Filecoin 并不依赖该 gateway——宜改为「可用 Storj 做 IPFS 持久层补强」",
+        "公开材料常写重建阈值 29、上传约 80 片；文档亦出现 29/110 扩容参数——宜在核心要点加一句「教学按 29-of-80 讲，线上参数可能更高扩容」避免绝对化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "uplink / storagenode docker / rclone S3 gateway 教学向可跟做；cp 三步解释清楚",
+        "踩坑（Satellite 单点、S3 兼容差、SNO 门槛、冷热成本）具体；可补一句 egress 单价量级提醒",
+        "适用边界清楚（冷归档/S3 迁移 vs 强一致库/数据驻留/极小对象）"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "reason": "弱化 Filecoin/gateway 过满表述；纠删码加 29-of-80 教学限定与 29/110 提示；术语桥接 AES-GCM/access grant/graceful exit；egress 踩坑写清。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true
+}
