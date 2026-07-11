@@ -1,0 +1,140 @@
+{
+  "slug": "reps-ifds",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "城市地图/钥匙/黑箱类比贯穿核心要点，零基础直觉很强，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「MOP-on-realizable-paths」「tabulation」首次出现缺中文括号桥接；「分配（distributive）」宜补一句日常说法（如「每个事实可独立推，合起来等于一起推」）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐步解释，案例 2/3 偏结论；建议案例 2 拆成 source→sanitizer→sink 三步查图，案例 3 用「为什么 y=x 不能拆成独立事实」再走一遍"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「学到什么」5 条，按模板压到 3–4 条"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Reps/Horwitz/Sagiv POPL 1995 与 O(E·D^3) tabulation、1996 IDE 扩展均正确，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「精确（MOP-on-realizable-paths）」表述符合论文主张；教学简化未歪曲分配性约束"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "适用段里 MOP 缩写对读者突兀，建议括号补全「所有可实现路径上的交汇解」以免被误读为另一套算法名"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例代码是教学级伪流程，概念正确，跟读足够"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑可操作：realizable path、非分配硬塞、D 过大、堆/全局副作用——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（taint vs 常量传播/路径敏感）；可在案例 2 补一句「查 (sink, data) 可达即报警」与工具用法对齐"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "城市地图/钥匙/黑箱类比贯穿核心要点，零基础直觉很强，保留",
+        "「MOP-on-realizable-paths」「tabulation」首次出现缺中文括号桥接；「分配（distributive）」宜补一句日常说法（如「每个事实可独立推，合起来等于一起推」）",
+        "案例 1 有逐步解释，案例 2/3 偏结论；建议案例 2 拆成 source→sanitizer→sink 三步查图，案例 3 用「为什么 y=x 不能拆成独立事实」再走一遍",
+        "「学到什么」5 条，按模板压到 3–4 条"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "来源 Reps/Horwitz/Sagiv POPL 1995 与 O(E·D^3) tabulation、1996 IDE 扩展均正确，可保留",
+        "「精确（MOP-on-realizable-paths）」表述符合论文主张；教学简化未歪曲分配性约束",
+        "适用段里 MOP 缩写对读者突兀，建议括号补全「所有可实现路径上的交汇解」以免被误读为另一套算法名"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例代码是教学级伪流程，概念正确，跟读足够",
+        "踩坑可操作：realizable path、非分配硬塞、D 过大、堆/全局副作用——保留",
+        "适用/不适用边界清楚（taint vs 常量传播/路径敏感）；可在案例 2 补一句「查 (sink, data) 可达即报警」与工具用法对齐"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：桥接 tabulation/MOP/分配性；案例 2/3 补逐步查图；学到什么压到 4 条",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 164,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 164,
+  "l1_pass": true
+}

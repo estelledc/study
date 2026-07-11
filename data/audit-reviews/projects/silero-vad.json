@@ -1,0 +1,147 @@
+{
+  "slug": "silero-vad",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "传达室大爷类比贴合「只守门不识内容」，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 用 utils[0]/utils[2] 下标，零基础难跟；应像开篇一样具名解包"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有叙事、无逐步步骤；建议拆成「跑 VAD→切段→加 padding→导出」四步"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "ASR/ONNX/TTS 有一定桥接，入门难度整体可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇写「30 毫秒」小块，踩坑写 512 样本=32 ms——自相矛盾；官方固定窗是 512@16kHz=32 ms，应全文统一"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2022 年之后开源语音流水线几乎清一色用 Silero」过绝对，宜改为「广泛默认/常见首选」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 GitHub snakers4/silero-vad、MIT、多语种训练主张与项目自述一致；2 MB / ONNX 部署量级合理"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1：faster-whisper 的 transcribe 返回 (segments, info)，segments 是生成器，写成 text,_ = asr.transcribe(chunk) 会误导；应迭代 segments 取 .text"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 片段里直接用 vad(...)，未展示 load；建议补一行 model 加载或注明承接案例 1"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑非常可操作（采样率、512 窗、阈值、Hub 缓存、非降噪）——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界量化清楚（diarization/唤醒/情感/音乐）——保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "传达室大爷类比贴合「只守门不识内容」，保留",
+        "案例 1 用 utils[0]/utils[2] 下标，零基础难跟；应像开篇一样具名解包",
+        "案例 3 只有叙事、无逐步步骤；建议拆成「跑 VAD→切段→加 padding→导出」四步",
+        "ASR/ONNX/TTS 有一定桥接，入门难度整体可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇写「30 毫秒」小块，踩坑写 512 样本=32 ms——自相矛盾；官方固定窗是 512@16kHz=32 ms，应全文统一",
+        "「2022 年之后开源语音流水线几乎清一色用 Silero」过绝对，宜改为「广泛默认/常见首选」",
+        "来源 GitHub snakers4/silero-vad、MIT、多语种训练主张与项目自述一致；2 MB / ONNX 部署量级合理"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1：faster-whisper 的 transcribe 返回 (segments, info)，segments 是生成器，写成 text,_ = asr.transcribe(chunk) 会误导；应迭代 segments 取 .text",
+        "案例 2 片段里直接用 vad(...)，未展示 load；建议补一行 model 加载或注明承接案例 1",
+        "踩坑非常可操作（采样率、512 窗、阈值、Hub 缓存、非降噪）——保留",
+        "适用/不适用边界量化清楚（diarization/唤醒/情感/音乐）——保留"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：统一 32ms/512 窗；弱化「清一色」；修复 faster-whisper API 与具名解包；案例 2 补加载；案例 3 拆四步",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 173,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 173,
+  "l1_pass": true
+}
