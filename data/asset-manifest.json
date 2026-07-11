@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "summary": {
-    "assets": 432,
-    "bytes": 37527185,
-    "referenced": 0,
+    "assets": 433,
+    "bytes": 37563581,
+    "referenced": 1,
     "legacy_unreferenced": 432,
     "duplicate_hash_groups": 5
   },
@@ -16,6 +16,18 @@
       "height": 64,
       "format": "svg",
       "referenced_by": []
+    },
+    {
+      "path": "public/og-study.webp",
+      "sha256": "ab5991a605b53ef445a46e018f0345b5b6ccd286387ff97eda3989260eebbb44",
+      "bytes": 36396,
+      "width": 1200,
+      "height": 630,
+      "format": "webp",
+      "referenced_by": [
+        "astro.config.mjs:83",
+        "astro.config.mjs:99"
+      ]
     },
     {
       "path": "public/papers/3d-gaussian-splatting/01-architecture.webp",

@@ -48,6 +48,7 @@ export function collectImageReferences(docsDir = DOCS_DIR) {
         const decorative = /<!--\s*decorative\s*-->/i.test(lines[index])
           || /<!--\s*decorative\s*-->/i.test(lines[index - 1] || '');
         references.push({
+          kind: 'content',
           source: path.relative(ROOT, file).split(path.sep).join('/'),
           line: index + 1,
           alt: match[1].trim(),
@@ -60,17 +61,54 @@ export function collectImageReferences(docsDir = DOCS_DIR) {
   return references.sort((a, b) => `${a.source}:${a.line}:${a.url}`.localeCompare(`${b.source}:${b.line}:${b.url}`));
 }
 
-export async function buildAssetReport({ publicDir = path.join(ROOT, 'public'), docsDir = DOCS_DIR } = {}) {
+export function collectSiteMetadataImageReferences(configFile = path.join(ROOT, 'astro.config.mjs')) {
+  if (!configFile || !fs.existsSync(configFile)) return [];
+  const source = path.resolve(configFile).startsWith(`${path.resolve(ROOT)}${path.sep}`)
+    ? path.relative(ROOT, configFile).split(path.sep).join('/')
+    : path.basename(configFile);
+  const references = [];
+  const lines = fs.readFileSync(configFile, 'utf8').split(/\r?\n/);
+  for (let index = 0; index < lines.length; index += 1) {
+    const pattern = /content:\s*(['"])(https:\/\/[^'"]+\.(?:webp|png|jpe?g|gif|svg))\1/gi;
+    for (const match of lines[index].matchAll(pattern)) {
+      let parsed;
+      try {
+        parsed = new URL(match[2]);
+      } catch {
+        continue;
+      }
+      if (parsed.hostname !== 'estelledc.github.io') continue;
+      references.push({
+        kind: 'metadata',
+        source,
+        line: index + 1,
+        url: parsed.pathname,
+      });
+    }
+  }
+  return references.sort((a, b) => `${a.source}:${a.line}:${a.url}`.localeCompare(`${b.source}:${b.line}:${b.url}`));
+}
+
+export async function buildAssetReport({
+  publicDir = path.join(ROOT, 'public'),
+  docsDir = DOCS_DIR,
+  configFile = path.join(ROOT, 'astro.config.mjs'),
+} = {}) {
   const issues = [];
-  const references = collectImageReferences(docsDir);
+  const references = [
+    ...collectImageReferences(docsDir),
+    ...collectSiteMetadataImageReferences(configFile),
+  ];
   const referencedBy = new Map();
 
   for (const reference of references) {
-    if (!reference.alt && !reference.decorative) {
-      issues.push(`${reference.source}:${reference.line} image alt text is empty without an explicit decorative marker`);
-    }
-    if (reference.alt && reference.decorative) {
-      issues.push(`${reference.source}:${reference.line} decorative image must use empty alt text`);
+    if (reference.kind === 'content') {
+      if (!reference.alt && !reference.decorative) {
+        issues.push(`${reference.source}:${reference.line} image alt text is empty without an explicit decorative marker`);
+      }
+      if (reference.alt && reference.decorative) {
+        issues.push(`${reference.source}:${reference.line} decorative image must use empty alt text`);
+      }
     }
     if (!reference.url.startsWith('/study/')) {
       issues.push(`${reference.source}:${reference.line} image URL bypasses the /study base: ${reference.url}`);

@@ -2,6 +2,23 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import remarkWikilinks from './scripts/remark-wikilinks.mjs';
 
+const studyStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: "Jason's Study",
+  alternateName: 'Jason 的工程学习地图',
+  url: 'https://estelledc.github.io/study/',
+  description: '给零基础工程师的开源项目与论文学习地图，从真实项目和经典论文里建立工程判断力。',
+  inLanguage: ['zh-CN', 'en'],
+  author: {
+    '@type': 'Person',
+    '@id': 'https://estelledc.github.io/#person',
+    name: 'Jason Xun',
+    url: 'https://estelledc.github.io/',
+    sameAs: ['https://github.com/estelledc'],
+  },
+};
+
 const textOnlyCodeFenceLanguages = [
   'agda',
   'algol',
@@ -57,6 +74,37 @@ export default defineConfig({
       locales: {
         root: { label: '简体中文', lang: 'zh-CN' },
       },
+      head: [
+        { tag: 'meta', attrs: { name: 'theme-color', content: '#faf6f0' } },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: 'https://estelledc.github.io/study/og-study.webp',
+          },
+        },
+        { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
+        { tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image:alt',
+            content: "Jason's Study — 从真实项目和经典论文里建立工程判断力",
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:image',
+            content: 'https://estelledc.github.io/study/og-study.webp',
+          },
+        },
+        {
+          tag: 'script',
+          attrs: { type: 'application/ld+json' },
+          content: JSON.stringify(studyStructuredData),
+        },
+      ],
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/estelledc/study' },
       ],
@@ -68,6 +116,8 @@ export default defineConfig({
       components: {
         PageTitle: './src/components/PageTitle.astro',
         Search: './src/components/Search.astro',
+        Header: './src/components/StudyHeader.astro',
+        MobileMenuFooter: './src/components/StudyMobileMenuFooter.astro',
       },
       // Sidebar 是骨架，不放 100+ 笔记的扁平列表。
       // 笔记发现走 papers-atlas / projects-atlas（多维索引，scripts/regen-atlas.mjs 自动生成）

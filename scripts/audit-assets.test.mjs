@@ -6,7 +6,11 @@ import test from 'node:test';
 
 import sharp from 'sharp';
 
-import { buildAssetReport, evaluateOrphanLifecycle } from './audit-assets.mjs';
+import {
+  buildAssetReport,
+  collectSiteMetadataImageReferences,
+  evaluateOrphanLifecycle,
+} from './audit-assets.mjs';
 
 test('audits base-safe image URLs, alt text, targets, dimensions, and orphans', async (t) => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'study-assets-'));
@@ -35,7 +39,7 @@ test('audits base-safe image URLs, alt text, targets, dimensions, and orphans', 
     '![](/study/projects/demo/used.webp)',
   ].join('\n'));
 
-  const report = await buildAssetReport({ publicDir, docsDir });
+  const report = await buildAssetReport({ publicDir, docsDir, configFile: null });
   assert.equal(report.manifest.summary.assets, 2);
   assert.deepEqual(report.orphanPaths, ['public/orphan.webp']);
   assert.ok(report.issues.some((issue) => issue.includes('alt text is empty')));
@@ -46,6 +50,34 @@ test('audits base-safe image URLs, alt text, targets, dimensions, and orphans', 
   assert.equal(used.width, 2);
   assert.equal(used.height, 3);
   assert.equal(used.referenced_by.some((source) => source.includes('extra.mdx')), true);
+});
+
+test('treats canonical site metadata images as first-class asset references', async (t) => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'study-metadata-assets-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const publicDir = path.join(root, 'public');
+  const docsDir = path.join(root, 'docs');
+  const configFile = path.join(root, 'astro.config.mjs');
+  fs.mkdirSync(publicDir, { recursive: true });
+  fs.mkdirSync(docsDir, { recursive: true });
+  await sharp({ create: { width: 1200, height: 630, channels: 3, background: '#fff' } })
+    .webp()
+    .toFile(path.join(publicDir, 'og-study.webp'));
+  fs.writeFileSync(configFile, [
+    "content: 'https://estelledc.github.io/study/og-study.webp',",
+    "content: 'https://example.com/study/external.webp',",
+  ].join('\n'));
+
+  assert.deepEqual(collectSiteMetadataImageReferences(configFile), [{
+    kind: 'metadata',
+    source: 'astro.config.mjs',
+    line: 1,
+    url: '/study/og-study.webp',
+  }]);
+  const report = await buildAssetReport({ publicDir, docsDir, configFile });
+  assert.deepEqual(report.orphanPaths, []);
+  assert.deepEqual(report.issues, []);
+  assert.deepEqual(report.manifest.assets[0].referenced_by, ['astro.config.mjs:1']);
 });
 
 test('requires explicit provenance for newly retained orphan assets', () => {

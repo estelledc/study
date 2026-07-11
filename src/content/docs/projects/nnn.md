@@ -13,7 +13,7 @@ nnn（读作 "n cubed"，n³）是一个**在终端里浏览和管理文件**的
 你打开它，看到的就是一列文件名：
 
 ```
-/home/jason/code
+~/projects
 > nnn/
   ranger/
   notes.md

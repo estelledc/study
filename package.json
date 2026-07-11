@@ -33,6 +33,7 @@
     "audit:seo": "node scripts/audit-seo-output.mjs",
     "audit:a11y-static": "node scripts/audit-a11y-static.mjs",
     "audit:toolchain": "node scripts/audit-toolchain.mjs",
+    "generate:og": "node scripts/generate-showcase-og.mjs",
     "audit": "npm run audit:links && npm run audit:wikilinks && npm run audit:counts && npm run audit:product-ia",
     "preview": "astro preview",
     "astro": "astro",
@@ -54,7 +55,7 @@
     "round:auto-prepare": "node scripts/round.mjs auto-prepare",
     "round:auto-advance": "node scripts/round.mjs auto-advance",
     "atlas": "node scripts/regen-atlas.mjs",
-    "prebuild": "node scripts/regen-atlas.mjs"
+    "prebuild": "node scripts/regen-atlas.mjs && npm run generate:og"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.37.7",

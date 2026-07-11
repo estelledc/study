@@ -48,12 +48,12 @@ V 的设计可以拆成 **四块**：
 你在工作站 A 上写：
 
 ```c
-fd = open("/users/jason/report.txt");
+fd = open("/users/student/report.txt");
 ```
 
 实际过程：
 
-1. C 库把 `open` 翻译成一条 V 消息：`Send(file_server, "open /users/jason/report.txt")`
+1. C 库把 `open` 翻译成一条 V 消息：`Send(file_server, "open /users/student/report.txt")`
 2. V 内核查命名服务（也是个用户态进程），知道 `file_server` 在工作站 B 上
 3. V 内核把消息封成 VMTP 包，通过 LAN 发给 B
 4. B 上的文件服务进程收到、读盘、回一个文件句柄
