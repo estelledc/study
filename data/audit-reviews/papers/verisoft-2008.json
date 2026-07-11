@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 仍以叙述为主，若再加强可补一段接合定理示意伪代码（非必须）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「方法学被 NICTA seL4…继承」略宽；保持「同期参照/谱系」表述即可，已无直系后代硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "示意定理已标明非可检 Isabelle；案例 3 可再补一行端到端伪代码，但当前可跟读"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 仍以叙述为主，若再加强可补一段接合定理示意伪代码（非必须）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「方法学被 NICTA seL4…继承」略宽；保持「同期参照/谱系」表述即可，已无直系后代硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "示意定理已标明非可检 Isabelle；案例 3 可再补一行端到端伪代码，但当前可跟读"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 β=2 power heuristic / 提议密度对零基础偏陡，可先用「几位向导各报把握，按把握加权听谁的」再点 MIS"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「《阿凡达》《冰雪奇缘》水下场景用过」宜弱化为「同类工业渲染管线受益于 BDPT/MIS/MLT 思想」；「30 年没人超越」略绝对，可改为「路径空间 MCMC 主线仍沿此思路」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "主循环 splat 写 f(x)/pdf_target(x)，案例 4 才引入归一化常数 b；可在伪代码注释里标明最终像素乘 b，避免跟做时漏归一化"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 β=2 power heuristic / 提议密度对零基础偏陡，可先用「几位向导各报把握，按把握加权听谁的」再点 MIS"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「《阿凡达》《冰雪奇缘》水下场景用过」宜弱化为「同类工业渲染管线受益于 BDPT/MIS/MLT 思想」；「30 年没人超越」略绝对，可改为「路径空间 MCMC 主线仍沿此思路」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "主循环 splat 写 f(x)/pdf_target(x)，案例 4 才引入归一化常数 b；可在伪代码注释里标明最终像素乘 b，避免跟做时漏归一化"
+      ]
+    }
+  ]
+}

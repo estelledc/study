@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "要点 4（zle）和 5（RPROMPT）偏短，可各补一句日常类比，方便零基础把「插件改命令行」和「右侧状态栏」对上号"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇「自带现代体验」仍略满：菜单补全依赖 zstyle/compinit，正文已展示配置，可再弱化成「配好后体验接近现代 shell」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用侧可再点明 Linux 发行版默认多为 bash、zsh 需自行安装，避免读者以为处处默认"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "要点 4（zle）和 5（RPROMPT）偏短，可各补一句日常类比，方便零基础把「插件改命令行」和「右侧状态栏」对上号"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇「自带现代体验」仍略满：菜单补全依赖 zstyle/compinit，正文已展示配置，可再弱化成「配好后体验接近现代 shell」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用侧可再点明 Linux 发行版默认多为 bash、zsh 需自行安装，避免读者以为处处默认"
+      ]
+    }
+  ]
+}

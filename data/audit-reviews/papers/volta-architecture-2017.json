@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 修前/修后代码几乎一样，应拆成「错在哪 → 为何 ITS 下会竞态 → 加 __syncwarp() 后发生什么」三步，并给完整可对照片段"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3/4 是规格清单，缺模板式「逐部分解释」：各用 3 条说明拓扑/显存/算力分别意味着什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "是什么段硅片规格一行过密（晶体管/工艺/SM/Tensor/带宽），拆成两句并给 SM、Tensor Core 各一句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「DGX-2 … 2 PB/s 内部带宽」数量级错误：公开材料多为约 2.4 TB/s 量级的 NVSwitch 带宽，应改为 TB/s 并加来源限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「第六代通用 GPU 架构」与常见「Volta = 第 7 代」说法冲突；可改为「Pascal 之后一代 / Volta 架构」避免代际编号硬伤"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "标题与正文「6 倍 / 6-12 倍」并存：建议标明相对基准（相对 P100 FP16 packed ≈6×，营销峰值可达约 12×）以免读者以为矛盾"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 reduction 示例在 Volta 上仍可能不够完整：建议在 shared 读写两侧都标 __syncwarp()，或注明这是最小示意、真实 port 需按 CUDA 9 Independent Thread Scheduling 指南改"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一条量化：单卡 16/32GB、多卡常见 8（DGX-1V）或 16（DGX-2），与 A100 80GB 对照更清晰"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 修前/修后代码几乎一样，应拆成「错在哪 → 为何 ITS 下会竞态 → 加 __syncwarp() 后发生什么」三步，并给完整可对照片段",
+        "案例 3/4 是规格清单，缺模板式「逐部分解释」：各用 3 条说明拓扑/显存/算力分别意味着什么",
+        "是什么段硅片规格一行过密（晶体管/工艺/SM/Tensor/带宽），拆成两句并给 SM、Tensor Core 各一句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「DGX-2 … 2 PB/s 内部带宽」数量级错误：公开材料多为约 2.4 TB/s 量级的 NVSwitch 带宽，应改为 TB/s 并加来源限定",
+        "「第六代通用 GPU 架构」与常见「Volta = 第 7 代」说法冲突；可改为「Pascal 之后一代 / Volta 架构」避免代际编号硬伤",
+        "标题与正文「6 倍 / 6-12 倍」并存：建议标明相对基准（相对 P100 FP16 packed ≈6×，营销峰值可达约 12×）以免读者以为矛盾"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 reduction 示例在 Volta 上仍可能不够完整：建议在 shared 读写两侧都标 __syncwarp()，或注明这是最小示意、真实 port 需按 CUDA 9 Independent Thread Scheduling 指南改",
+        "适用场景可补一条量化：单卡 16/32GB、多卡常见 8（DGX-1V）或 16（DGX-2），与 A100 80GB 对照更清晰"
+      ]
+    }
+  ]
+}

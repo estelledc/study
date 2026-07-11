@@ -1,0 +1,87 @@
+{
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有系统名单、没有代码与逐步解释，建议补一段短 WAM 指令或对照表，让零基础也能跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "开篇写「不再解释，是真编译」，后文又说 SWI 解释 WAM 字节码——建议改成「编译到 WAM 指令后再执行」，避免把抽象机本身说成原生机器码"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Mercury LLDS 说成「WAM 加类型信息的扩展版」略过简；可改成「受 WAM 启发的低级 IR」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚，但缺少量化锚点（例如「单线程深度回溯、无约束传播时 WAM 足够」），可补一句规模/场景量级"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只有系统名单、没有代码与逐步解释，建议补一段短 WAM 指令或对照表，让零基础也能跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "开篇写「不再解释，是真编译」，后文又说 SWI 解释 WAM 字节码——建议改成「编译到 WAM 指令后再执行」，避免把抽象机本身说成原生机器码",
+        "Mercury LLDS 说成「WAM 加类型信息的扩展版」略过简；可改成「受 WAM 启发的低级 IR」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用边界清楚，但缺少量化锚点（例如「单线程深度回溯、无约束传播时 WAM 足够」），可补一句规模/场景量级"
+      ]
+    }
+  ]
+}

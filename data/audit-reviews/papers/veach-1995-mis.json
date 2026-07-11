@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有 β 对照表、案例 3 只有一行 C++，都缺少像案例 1 那样的逐步解释；建议各补 2–3 步「这段在算什么」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "pdf / BSDF / 立体角 首次出现时再加半句日常桥接（例如 pdf≈「这个方向被抽中的概率」），零基础否则会在核心要点卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「为什么重要」可改成「不理解 MIS 就解释不了…」四条结论式 bullet，更贴模板口吻"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「max 不是连续函数、会让估计器偏差」不准确：Veach 的 maximum heuristic 在权重归一且 p_i=0⇒w_i=0 时仍无偏，问题是不连续导致方差变差，不是引入偏差"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 表里把 β=∞ maximum heuristic 标成「不可用」过绝对；论文讨论过该 heuristic，工程上不推荐但并非数学上不可用"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段「2014 奥斯卡」可写清是 Academy Sci-Tech / Technical Achievement，并避免把《阿凡达》等片直接写成「这篇 9 页论文的直接产物」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 伪代码权重未乘 n_i（踩坑第 2 条强调了 n_i）；若默认各采 1 次应在注释写明，避免和踩坑矛盾"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一句量化边界（例如「只有一种策略、或两种 pdf 几乎处处相等时 MIS 收益接近 0」）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有 β 对照表、案例 3 只有一行 C++，都缺少像案例 1 那样的逐步解释；建议各补 2–3 步「这段在算什么」",
+        "pdf / BSDF / 立体角 首次出现时再加半句日常桥接（例如 pdf≈「这个方向被抽中的概率」），零基础否则会在核心要点卡住",
+        "「为什么重要」可改成「不理解 MIS 就解释不了…」四条结论式 bullet，更贴模板口吻"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「max 不是连续函数、会让估计器偏差」不准确：Veach 的 maximum heuristic 在权重归一且 p_i=0⇒w_i=0 时仍无偏，问题是不连续导致方差变差，不是引入偏差",
+        "案例 2 表里把 β=∞ maximum heuristic 标成「不可用」过绝对；论文讨论过该 heuristic，工程上不推荐但并非数学上不可用",
+        "历史段「2014 奥斯卡」可写清是 Academy Sci-Tech / Technical Achievement，并避免把《阿凡达》等片直接写成「这篇 9 页论文的直接产物」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 伪代码权重未乘 n_i（踩坑第 2 条强调了 n_i）；若默认各采 1 次应在注释写明，避免和踩坑矛盾",
+        "适用/不适用可补一句量化边界（例如「只有一种策略、或两种 pdf 几乎处处相等时 MIS 收益接近 0」）"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有文字描述，没有像案例 1/2 那样的代码片段 +「逐部分解释」；应补一段失败回灌改代码的短 JS 伪代码并拆步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的检索 top-5 只在核心要点里提过，实践里没展示；可加 2–3 行检索伪代码让零基础读者看见「怎么从向量库拿旧技能」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「相对 prior SOTA」可点名论文对比的 AutoGPT / ReAct / Reflexion 一类基线，避免读者以为是对传统 RL 的倍数；数字 3.3× / 15.3× 本身与论文一致，属可选加强"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 缺可跟做的失败回灌伪代码（异常字符串 → 下一轮 prompt → 改后函数）；建议补短代码并标明输入（异常/背包）与输出（改写后的步骤）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 可补一行语义检索 top-k 伪代码，把「检索命中 chopWood」写成可见的 retrieve(query, k=5) 调用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只有文字描述，没有像案例 1/2 那样的代码片段 +「逐部分解释」；应补一段失败回灌改代码的短 JS 伪代码并拆步说明",
+        "案例 2 的检索 top-5 只在核心要点里提过，实践里没展示；可加 2–3 行检索伪代码让零基础读者看见「怎么从向量库拿旧技能」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「相对 prior SOTA」可点名论文对比的 AutoGPT / ReAct / Reflexion 一类基线，避免读者以为是对传统 RL 的倍数；数字 3.3× / 15.3× 本身与论文一致，属可选加强"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 缺可跟做的失败回灌伪代码（异常字符串 → 下一轮 prompt → 改后函数）；建议补短代码并标明输入（异常/背包）与输出（改写后的步骤）",
+        "案例 2 可补一行语义检索 top-k 伪代码，把「检索命中 chopWood」写成可见的 retrieve(query, k=5) 调用"
+      ]
+    }
+  ]
+}

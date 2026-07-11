@@ -26,72 +26,58 @@ zk-SNARK 给一个工程化答案：你交给朋友一张"证明卡片"，他花
 
 不理解 zk-SNARK，下面这些都解释不通：
 
-- **zkRollup**（zkSync / Starknet / Polygon zkEVM）每秒处理几千笔交易、Gas 费降到几分之一——靠的就是把一批交易压成一个 200 字节的证明，L1 验证一次就行
-- **隐私支付**（Tornado Cash / Aztec）链上转账金额可以隐藏，但仍能证明"账目守恒、没有凭空印钱"
+- **zkRollup**（zkSync / Polygon zkEVM 等 SNARK 系）把一批交易压成约 200 字节证明，L1 验证一次即可降 Gas（Starknet 同类思路但主路径是 STARK）
+- **隐私支付**（Tornado Cash / Aztec）链上转账金额可隐藏，仍能证明"账目守恒、没有凭空印钱"
 - **AI 模型验证（zkML）**：证明"这个输出确实是模型 A 算出来的"而不暴露权重
 - **匿名投票 / 身份验证 / 跨链桥**：证明属性（"我满 18 岁"/"在白名单"）而不暴露身份
 
-一句话：zk-SNARK 把 1985 年纸面上的理论，变成 2016 年起每天在以太坊上跑的基础设施。
+一句话：zk-SNARK 把 1985 年纸面上的理论，变成 2016 年后（Zcash Sapling 2018 起大规模落地）每天在链上跑的基础设施。
 
 ## 核心要点
 
 zk-SNARK 的三大性质（每个都不能丢）：
 
-1. **完备性（Completeness）**：陈述真的，验证一定通过
-2. **可靠性（Soundness）**：陈述假的，验证几乎不可能通过（攻击者要破解某个公认密码学假设才行）
-3. **零知识（Zero-Knowledge）**：验证者除"陈述为真"外学不到任何关于秘密的信息
+1. **完备性（Completeness）**：陈述真的，验证一定通过。类比：真有钥匙，锁一定能开。
+2. **可靠性（Soundness）**：陈述假的，验证几乎不可能通过。类比：没钥匙却开锁，概率极低。
+3. **零知识（Zero-Knowledge）**：验证者除"陈述为真"外学不到秘密。类比：看你开了锁，仍不知道密码是几。
 
-工作流分三阶段：
+工作流分三阶段：Setup 生成密钥对 (EK, VK)（随机数须销毁，称 toxic waste）→ Prove 用 EK+秘密 w 生成约 200 字节证明 π（10⁶ 约束常要几分钟、十几 GB 内存）→ Verify 用 VK+公开输入+π 做几次配对检查，毫秒级且与电路大小无关。
 
-```
-Setup（一次性可信仪式）
-  生成 (EK, VK)，分发给 Prover 和 Verifier
-  用过的随机数必须销毁 —— 所谓 "toxic waste"
-
-Prove（每次有新陈述时跑一次）
-  Prover 用 EK + 秘密 w 生成证明 π（约 200 字节）
-  这一步慢：10^6 约束要几分钟、吃几十 GB 内存
-
-Verify（每次验证）
-  Verifier 用 VK + 公开输入 + π，跑几次双线性配对
-  毫秒级，且与电路大小无关
-```
-
-**核心抽象**：把"程序 C(x, w) = 1"翻译成"多项式恒等式存在解"。这一步叫 R1CS（Rank-1 Constraint System）→ QAP（Quadratic Arithmetic Program）转换。
+**核心抽象**：先把程序拆成"每步最多一次乘法"的约束表（R1CS，像把菜谱拆成单步），再编成多项式考卷（QAP）。Verifier 的"双线性配对"像特殊验钞灯：不打开信封也能确认印章匹配。
 
 ## 实践案例
 
-### 案例 1：toy 例子——证明"我知道 x 满足 x³ + x + 5 = 35"
+### 案例 1：证明"我知道 x 满足 x³ + x + 5 = 35"
 
-把表达式拆成单步乘法（这是 R1CS 的核心要求——每条约束最多一次乘法）：
+把式子拆成单步乘法（R1CS：每条约束最多一次乘法）：
 
 ```
-y = x · x         约束 1
-z = y · x         约束 2  （此时 z = x³）
-out = z + x + 5   约束 3  （out 应等于 35）
+y = x · x         # 约束 1
+z = y · x         # 约束 2 → z = x³
+out = z + x + 5   # 约束 3；公开要求 out == 35
 ```
 
-Prover 知道 x = 3 → 算出 (y, z, out) = (9, 27, 35) → 生成证明。Verifier 不知道 x 是几，只验证多项式恒等式成立。
+**逐部分解释**：公开输入 `out=35`；私密见证 `x=3`；中间值 `y=9, z=27`。Prover 交出 π；Verifier 只检查三条约束是否同时成立，看不到 x。
 
-### 案例 2：Groth16 的工程数字
+### 案例 2：Groth16 的 Setup → Prove → Verify
 
-Groth 2016 把证明压到极致：
+Groth 2016 把证明压到 3 个群元素（约 192 字节）：
 
-- **证明大小**：3 个群元素，约 192 字节（一条短信的体积）
-- **验证时间**：约 1.5 毫秒
-- **验证只看 3 次配对运算**：`e(A, B) = e(α, β) · e(L, γ) · e(C, δ)`
+1. **Setup**：对固定电路做可信仪式，产出 EK/VK；随机数销毁
+2. **Prove**：Prover 用 EK + 见证算出 `(A, B, C)` 三点，组成 π
+3. **Verify**：检查 `e(A, B) = e(α, β) · e(L, γ) · e(C, δ)`（约 3 次配对，~1.5 ms）
 
-代价：Prover 仍然慢、需要 per-circuit trusted setup、安全性基于"通用群模型"+ 一个非标准假设。但对 Zcash / Tornado Cash 这种"电路固定"的场景，这权衡很划算。
+**逐部分解释**：A/B/C 是证明的三个"印章"；配对像验钞灯，确认印章匹配却不泄露见证。代价是 per-circuit trusted setup；电路固定时（Zcash Sapling / Tornado Cash）很划算。
 
-### 案例 3：zkVM——把任意程序变成 zk 证明
+### 案例 3：zkVM——任意程序变证明
 
-新一代项目（Risc0 / SP1）让你**直接写 Rust / C 代码**，编译到 RISC-V 字节码，然后让 zkVM 给整个执行 trace 生成 zk 证明：
+```rust
+fn fib(n: u32) -> u32 { /* ... */ }
+// zkVM: 编译 → 跑出执行 trace → 对 trace 生成 π
+assert!(verify(vk, public_n_and_out, π));
+```
 
-- 你写 `fn fib(n: u32) -> u32 { ... }`
-- zkVM 跑出结果 + 一个证明
-- 任何人验证："这个函数确实按代码跑出来了，没作弊"
-
-这把 zk 从"密码学家专用"推到"普通开发者也能用"。代价是 Prover 比直接计算慢约 100~1000 倍。
+**逐部分解释**：你写普通 Rust；zkVM（Risc0 / SP1）记录每步 CPU 状态成 trace，再压成证明。验证者只确认"按这段代码跑出了该输出"。代价：Prover 比直接算慢约 100–1000 倍。
 
 ## 踩过的坑
 
@@ -107,30 +93,30 @@ Groth 2016 把证明压到极致：
 
 **适用**：
 
-- 计算可验证外包（client 让 cloud 跑算法，不想信任 cloud 没作弊）
-- 隐私保护应用（链上支付、匿名投票、属性证明）
-- L2 扩容（zkRollup：把 1000 笔交易压成一个证明，丢回 L1）
-- 跨链桥（用 zk 证明源链状态，不依赖第三方多签）
+- 计算可验证外包（证明约 192B、验证 1–2ms，适合"云端算、客户端验"）
+- 隐私支付 / 匿名投票 / 属性证明（隐藏金额或身份，仍证守恒）
+- L2 扩容（10⁵–10⁶ 约束电路把约 1000 笔交易压成一个证明回 L1）
+- 跨链桥（用 zk 证源链状态，不依赖第三方多签）
 
 **不适用**：
 
-- Prover 延迟敏感的场景（毫秒级响应要求）
-- 大模型实时推理（zkML 还在早期，慢 1000 倍以上）
-- 资源受限设备做 Prover（手机不太行，要靠专用 GPU farm）
-- 不能容忍密码学假设破解风险的场景（量子计算威胁部分 SNARK 方案）
+- Prover 要毫秒级响应（10⁶ 约束常要秒到分钟级）
+- 大模型实时推理（zkML 早期，常慢 1000× 以上）
+- 手机等做 Prover（常需 16–64GB 内存 + GPU farm）
+- 不能接受配对型假设/量子威胁的场景（宜看 STARK 等后量子路线）
 
 ## 历史小故事（可跳过）
 
 - **1985**：Goldwasser-Micali-Rackoff 提出 ZKP 概念。三人后来都拿了图灵奖。但当时验证一个简单声明要花几分钟，纯理论玩具。
 - **2010**：Groth-Sahai 把 pairing-based 零知识证明推进一步，但还不实用。
 - **2013**：Pinocchio（Microsoft Research）做出第一个工程级系统：证明 288 字节、验证 9 毫秒。从理论到工业的引爆点。
-- **2016**：Groth16（本笔记论文）把证明压到 3 个群元素、192 字节。Zcash 直接采用，至今仍是最被部署的版本之一。
-- **2019**：Plonk 引入 universal setup——一次仪式所有电路共用。zkSync / Polygon zkEVM 大规模采用。
+- **2016**：Groth16（本笔记论文）把证明压到 3 个群元素、约 192 字节。
+- **2018**：Zcash Sapling 升级采用 Groth16，成为最早大规模部署之一。
+- **2019**：Plonk 引入 universal setup；zkSync / Polygon zkEVM 等后续采用。
 - **2020**：Halo / Halo2 实现无 trusted setup + 递归证明。
-- **2022 起**：Risc0 / SP1 zkVM 把 zk 推向通用计算，开发者门槛大幅降低。
-- **2024 起**：STARK + zkEVM 主流化，以太坊 L2 大半依赖 zk。
+- **2022 起**：Risc0 / SP1 zkVM 降低开发门槛；STARK / zkEVM 在以太坊 L2 普及。
 
-四十年从"理论可能"到"每天数千万笔交易跑在上面"。
+约四十年从"理论可能"到"每天大量链上交易跑在上面"。
 
 ## 学到什么
 
@@ -148,24 +134,20 @@ Groth 2016 把证明压到极致：
 
 ## 关联
 
-- [[godel-1931]] —— 数理逻辑根基；零知识的"模拟器"论证范式与不完备性的反证逻辑相通
-- [[cook-levin]] —— NP-完全性；zk-SNARK 通常用于证明 NP 语言的成员资格
+- [[godel-1931]] —— 数理逻辑；零知识"模拟器"论证与反证范式相通
+- [[cook-levin]] —— NP-完全性；zk-SNARK 常证 NP 成员资格
 - [[turing-1936]] —— 可计算性；zkVM 把任意可计算函数变成可证明对象
+- [[ben-sasson-stark-2018]] —— STARK；无 trusted setup 的对照路线
+- [[polygon-zkevm]] —— 用 SNARK/STARK 给以太坊 L2 扩容的落地
 
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
 
-- [[arbitrum]] —— Arbitrum Nitro — Offchain Labs 的 Optimistic Rollup 客户端
-- [[argent-x]] —— Argent X — 让账户本身就是一个合约的 Starknet 钱包
-- [[ben-sasson-stark-2018]] —— STARK — 不需要"可信第三方"的计算正确性证明
-- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好编程语言
-- [[cheon-ckks-2017]] —— CKKS — 让加密数据也能做浮点运算
+- [[arbitrum]] —— Arbitrum Nitro — Optimistic Rollup 客户端
+- [[ben-sasson-stark-2018]] —— STARK — 不需要可信第三方的正确性证明
+- [[cairo-lang]] —— Cairo — Starknet 的 zk 友好语言
 - [[cook-levin]] —— Cook-Levin 定理 — NP-完全性的诞生
-- [[dwork-calibrating-noise-2006]] —— 校准噪声 — 往统计结果里加多少噪音才能保护隐私
-- [[dwork-dp-icalp-2006]] —— 差分隐私 — 让统计结果有用但查不到任何一个人
-- [[fan-vercauteren-bfv-2012]] —— Fan-Vercauteren BFV — 让加密数据上做整数运算变得实际可用
-- [[gentry-fhe-2009]] —— Gentry 2009 — 第一个全同态加密方案
 - [[godel-1931]] —— Gödel 1931 — 不完备性定理
 - [[polygon-zkevm]] —— Polygon zkEVM — 用零知识证明给以太坊扩容
 - [[scroll]] —— Scroll — 字节码级 zkEVM

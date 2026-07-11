@@ -13,7 +13,7 @@ title: VR Revisited 2012 — VR 协议的"工程化重写版"
 它和 1988 版的协议主线相同（primary/backup + view change + viewstamp），但补齐了三块原文没说清楚的工程细节：
 
 1. **显式 status 字段**：每个节点有 `status ∈ {normal, view-change, recovering}`，是一台标准状态机
-2. **client table（客户端表）**：每客户端记录最近一次 (request-num, result)，天然实现"恰好一次"语义
+2. **client table（客户端表）**：每客户端记录最近一次 (request-num, result)，天然实现 **at-most-once（至多一次）**——重复请求不重做
 3. **reconfiguration（成员变更）**：动态加减节点走 view change 同一套机制，新增专门章节
 
 今天讲 VR、写 VR 实现、把 VR 跟 [[raft]] 对照——大家引的都是这一版，**不是 1988 原文**。
@@ -31,19 +31,19 @@ title: VR Revisited 2012 — VR 协议的"工程化重写版"
 
 VR Revisited 把节点分成两种角色（动态切换），由 **三个子协议** 串联起来：
 
-1. **Normal case**（正常路径）：客户端 → primary 分配 op-number → 发 `PREPARE` 给 backups → 收齐 `f+1` 个 `PREPARE-OK` → committed → 回客户端
+1. **Normal case**（正常路径）：客户端 → primary 分配 op-number → 发 `PREPARE` 给 backups → primary 自计 1 票再等 `f` 个 `PREPARE-OK`（合计 `f+1`）→ committed → 回客户端
 2. **View change**（换届）：任一节点超时 → 发 `START-VIEW-CHANGE(v+1)` → 收齐 `f+1` 个 `DO-VIEW-CHANGE`（带各自 log）→ 新 primary 挑最大 viewstamp 的 log 做基线 → 发 `START-VIEW`
 3. **Recovery**（崩溃恢复）：重启节点带 nonce 发 `RECOVERY` → 收齐 `f+1` 个 `RECOVERY-RESPONSE`（**必含当前 primary**）才能并入 view
 
-**关键不变量**：`2f+1` 节点容忍 `f` 故障；正常路径需 `f+1` ACK；换届需 `f+1` 参与；recovery 需 `f+1` 响应。任意两个 quorum 必交集 ≥ 1 个节点，保证 committed 日志不会在换届中丢失——这是所有 leader-based 共识协议的几何基石。
+**关键不变量**：`2f+1` 节点容忍 `f` 故障；正常路径 quorum 是含 primary 共 `f+1`；换届 / recovery 各需 `f+1`。任意两个 quorum 必交集 ≥ 1，committed 日志不会在换届中丢失——这是 leader-based 共识的几何基石。
 
 **2012 相对 1988 的三个新东西**：
 
-1. **client table**：primary 维护 `client_id → (last_request_num, last_result)`，重发请求直接返缓存结果，天然 at-most-once
-2. **explicit status 状态机**：节点何时能服务请求、何时只能等换届完成，写得很清楚
-3. **reconfiguration**：把"加机器/换机器"做成一个特殊 op，提交后切到新成员组的新 view
+1. **client table**：primary 维护 `client_id → (last_request_num, last_result)`，重发直接返缓存，天然 at-most-once
+2. **explicit status 状态机**：节点何时能服务、何时只能等换届，写成枚举
+3. **reconfiguration**：把"加/换机器"做成特殊 op，提交后切到新成员组的新 view
 
-**viewstamp = (view-number, op-number)**，字典序比较，view 优先。这一条让换届时挑基线只需"取最大 viewstamp 的 log"，不必看节点身份。
+**viewstamp = (view-number, op-number)**，类比"第几届会议 + 第几号议案"，字典序比较且 view 优先。换届挑基线只需"取最大 viewstamp 的 log"，不必看节点身份。
 
 ## 实践案例
 
@@ -88,13 +88,13 @@ P3 收齐 3 个响应 + 必含 primary → 用 P0 的 commit-num 知道哪些已
 
 ```
 管理员 → primary P0 发 RECONFIGURATION(new_config={P0..P6})
-P0: 把它当一条特殊 op 走 PREPARE → 收齐 f+1 PREPARE-OK → committed
+P0: 当特殊 op 走 PREPARE → 自计+等 f 个 PREPARE-OK（合计 f+1）→ committed
 所有节点收到 commit 后，停止接受新 client 请求
 P0 触发 view change 进入 view+1，新成员组开始服务
 P5、P6 走 state transfer 拉历史 log → 进入 normal status
 ```
 
-把成员变更复用 view change 的好处：协议核心只有"normal / view-change / recovery"三态，不用为成员变更新增第四种状态机分支，**复杂度收敛**。这是 2012 区别于 1988 的最有工程感的设计。
+把成员变更复用 view change：协议核心仍是"normal / view-change / recovery"三态，不为成员变更再开第四种状态机，**复杂度收敛**。这是 2012 相对 1988 最有工程感的设计。
 
 ## 踩过的坑
 
@@ -109,17 +109,17 @@ P5、P6 走 state transfer 拉历史 log → 进入 normal status
 
 **适用**：
 
-- state machine replication，3-7 副本
-- 需要明确"恰好一次"语义且不想在应用层手写去重的系统
-- 跨机房三副本，希望 leader 路径快、follower 异步追
-- 需要支持运行时加减节点（reconfiguration）的长期运行系统
+- state machine replication，3–7 副本（f=1 要 3 节点，f=2 要 5 节点）
+- 需要协议层 at-most-once、不想在应用层手写去重的系统
+- 同城/跨机房三副本：正常路径约 1 个 RTT 提交，view change 通常 1–2 个超时周期
+- 需要运行时加减节点（reconfiguration）的长期运行系统
 
 **不适用**：
 
-- 拜占庭故障场景 → 用 PBFT（Castro & Liskov 1999）
+- 拜占庭故障 → 用 PBFT（Castro & Liskov 1999）
 - leaderless / multi-master → 用 EPaxos / Generalized Paxos
 - 单机 / 双机 → VR 至少 `2f+1`，f=1 起步要 3 节点
-- 强延迟敏感 + 跨大洲 → Spanner 用的是 Paxos + TrueTime，处理跨洲延迟有更细节的设计 ([[spanner-2012]])
+- 强延迟敏感 + 跨大洲 → Spanner 用 Paxos + TrueTime，跨洲延迟另有设计 ([[spanner-2012]])
 
 ## 历史小故事（可跳过）
 

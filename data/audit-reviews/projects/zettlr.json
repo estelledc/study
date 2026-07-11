@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 里 CSL / citekey 对零基础仍偏密，可再补一句‘像给每本书贴编号标签’的桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "‘约 13k stars’与 4.0 八周年表述宜保持近似口径，避免写成精确到日的硬事实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界可再点明桌面端与 Pandoc/LaTeX 依赖，方便读者判断安装成本"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 里 CSL / citekey 对零基础仍偏密，可再补一句‘像给每本书贴编号标签’的桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "‘约 13k stars’与 4.0 八周年表述宜保持近似口径，避免写成精确到日的硬事实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用边界可再点明桌面端与 Pandoc/LaTeX 依赖，方便读者判断安装成本"
+      ]
+    }
+  ]
+}

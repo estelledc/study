@@ -23,10 +23,10 @@ sum (map (+1) [1..n])
 
 不理解 supercompilation，下面这些事都没法解释：
 
-- 为什么 GHC 的 `SpecConstr` / `inline` / deforestation 能把 Haskell 的高阶抽象编译到几乎和手写 C 一样快
-- 为什么"自动定理证明 = 程序变换"这条 30 年前的旧路径在现代 SMT 求解器里还在复现
-- 为什么 Futamura 第一/第二投影"用 specializer 当编译器"听起来玄学但真的能跑
-- 为什么现代 superoptimizer（LLVM Souper / Truffle/Graal）骨架仍然是 1986 年这套机制
+- 为什么函数式编译器里"按构造子特化 / 消中间列表"这类优化（GHC 的 SpecConstr、deforestation）听起来像魔法——它们和 SC 共享"模拟再回写"的亲缘
+- 为什么"自动定理证明 ≈ 程序变换"这条旧路径，在现代求解器里仍以"化简到不动点"的形式复现
+- 为什么"把解释器特化成编译器"（Futamura 投影）听起来玄学但真能跑——SC 是能做出来的机制之一
+- 为什么现代 JIT 的部分求值特化（如 Truffle/Graal）仍在做"已知部分先算完、未知部分留残差"——和 1986 的 driving 同族，但不是同一套算法
 
 ## 核心要点
 
@@ -34,7 +34,7 @@ supercompilation 的核心动作可以拆成 **三步**，整体叫 **driving + 
 
 1. **driving（驱动）**：从程序入口出发，**用符号值**模拟每一步执行，生成一棵 process tree（过程树）。每个节点是一个 configuration——"当前环境绑定 + 当前要算的表达式"。类比：把代码当剧本，演员（变量）拿占位符上台，导演记下每一步动作。
 
-2. **generalization（推广）**：树会无限长（递归函数自然如此），需要在"危险节点"把 configuration 抽象成更一般的形式（比如把具体的 `cons 1 xs` 变成 `cons a as`）。判断危险用 **whistle**——通常是 Higman 嵌入或同胚嵌入。类比：速记员发现"刚才那段话好像在重复"，赶紧标记一下。
+2. **generalization（推广）**：树会无限长（递归函数自然如此），需要在"危险节点"把 configuration 抽象成更一般的形式（比如把具体的 `cons 1 xs` 变成 `cons a as`）。判断危险用 **whistle（哨子）**——像速记员的"重复感警报"：结构越嵌越深、越来越像祖先节点时就吹哨停下；学术上常用 Higman / 同胚嵌入做判定。
 
 3. **folding（折叠）**：当新 configuration 是树上某个祖先 configuration 的实例时，**回边接环**而不是继续展开。这样无限的树压成了有限的图。从这张图反生成的代码就是 **residual program（残差程序）**——和原程序语义等价，但已经把解释器开销、中间数据结构都压扁了。
 
@@ -65,17 +65,17 @@ sumPlusOne n = go 0 1 n
 
 ### 案例 2：解释器特化（Futamura 第一投影）
 
-写一个 mini-lang 解释器 `eval :: Source -> Input -> Output`。给定一段固定源码 `src0`，supercompile `eval src0`：
+写一个 mini-lang 解释器 `eval :: Source -> Input -> Output`。给定固定源码 `src0`，对 `eval src0` 做 supercompile：
 
-- driving 把 `eval` 的解释循环按 `src0` 的 AST 结构展开
-- 每个 case 分支变成针对 `src0` 具体节点的代码
-- fold 出一段**只针对 `src0` 的专用 Haskell 代码**
+1. driving：按 `src0` 的 AST 节点逐步展开 `eval` 的解释循环（已知源码、未知输入）
+2. 每个 case 分支变成**只服务 `src0` 该节点**的专用代码，解释器分发开销被消掉
+3. fold：把重复出现的 configuration 接回环，输出一段**只针对 `src0` 的残差程序**
 
-相当于免费拿到了一个该语言的编译器。这就是 Futamura 1971 的"specializer-as-compiler"，supercompilation 是它能真做出来的机制之一。
+相当于免费拿到该语言的一个专用编译结果。这就是 Futamura 1971 的"specializer 当编译器"；SC 是能真做出来的机制之一。
 
 ### 案例 3：程序等价证明
 
-`fact_recursive n` 和 `fact_iterative n` 算阶乘语义相同但写法不同：
+`factR` 与 `factI` 写法不同但都算阶乘：
 
 ```hs
 factR 0 = 1
@@ -85,7 +85,13 @@ factI n = go 1 1 where
   go acc i = if i > n then acc else go (acc * i) (i+1)
 ```
 
-各自做 supercompilation，得到两张残差图。如果两张图**同构**（变量 rename 后节点和边一一对应），就证明了两个程序等价。Turchin 团队的早期 Refal 系统就是这样做定理证明的——把"证明 A=B"归约为"supercompile A 和 B，看图同构"。
+**逐步对照**：
+
+1. 各自 driving → 两棵 process tree（递归展开 vs 累加循环）
+2. whistle + generalization 把无限展开压成有限图
+3. 若两张残差图**同构**（rename 后节点/边一一对应）→ 证明语义等价
+
+Turchin 早期 Refal 系统就把"证明 A=B"归约为"supercompile 后看图同构"。
 
 ## 踩过的坑
 
@@ -100,14 +106,14 @@ factI n = go 1 1 where
 ## 适用 vs 不适用场景
 
 **适用**：
-- 函数式语言的深度优化（GHC、Refal、Sorensen-Gluck 的 first-order FL）
+- 函数式语言的深度优化（Refal、Sorensen-Glück first-order FL；工业上常拆成 SpecConstr / fusion 等局部手段）
 - 解释器特化 / DSL 编译（Futamura 投影的工程实现）
-- 程序等价证明 / 简单定理证明（图同构归约）
-- 现代 partial-eval JIT（Truffle/Graal 的 Tree-shaking 思想接近）
+- 程序等价证明 / 简单定理证明（残差图同构归约）
+- 与 partial-eval JIT 同族的特化思路（Truffle/Graal 等）
 
 **不适用**：
 - 命令式 / 副作用密集的语言：driving 必须追踪 store，复杂度爆炸
-- 对编译时间敏感的场景：supercompilation 编译期开销极大（指数级 process tree 搜索）
+- 对编译时间敏感的场景：完整 SC 编译期开销极大（指数级 process tree 搜索）
 - 需要可预测的 binary size：generalization 策略不当时残差会膨胀
 - 嵌入式 / 受限内存：编译期内存占用难控
 
@@ -118,15 +124,14 @@ factI n = go 1 1 where
 - **1986 年**：Turchin 在 ACM TOPLAS 发表本论文，把 supercompilation 概念第一次完整学术定型——driving / generalization / folding 三件套加 process tree 模型
 - **1996 年**：Sorensen 和 Gluck 把 supercompilation 迁移到 first-order 函数式语言，做出 positive supercompilation——这是后续学术圈的主线
 - **2007 年**：Hamilton 提出 distillation，比 supercompilation 更激进的变换框架，能消除更多中间结构
-- **2010s 后**：思想扩散到 GHC SpecConstr、Truffle/Graal partial-eval、LLVM Souper superoptimizer
+- **2010s 后**：思想扩散到 GHC SpecConstr、Truffle/Graal partial-eval；注意 LLVM Souper 等 **superoptimizer** 名字相近但问题不同（穷举指令等价），不要混为一谈
 
 ## 学到什么
 
 1. **元解释 + 推广折叠**是程序变换的通用骨架——driving 找信息、generalization 控终止、folding 收回路
-2. **partial evaluation ⊆ supercompilation**：前者是后者在 generalization 策略最保守、不主动推广时的退化情形
-3. **理论 → 工程**隔了 10 年：1986 论文 → 1996 Sorensen-Gluck 落地 → 2010s 工业级 partial-eval JIT
-4. **越强的程序变换 = 越难的终止性证明**：whistle 不是细节，它决定了机制能不能在编译期停下来
-5. **同一份程序的多种写法可以收敛成同一张图**——这是把"等价证明"变成"图同构"的钥匙
+2. **PE 是 SC 的近亲**：generalization 极保守、不主动推广时，SC 的行为会接近 partial evaluation（不宜写成严格集合包含）
+3. **理论 → 工程**隔了约 10 年：1986 论文 → 1996 Sorensen-Glück 落地 → 2010s 工业级 partial-eval JIT
+4. **越强的程序变换 = 越难的终止性证明**：whistle（重复感警报）决定编译期能不能停下来
 
 ## 延伸阅读
 
@@ -138,7 +143,7 @@ factI n = go 1 1 where
 
 ## 关联
 
-- [[partial-evaluation-jones]] —— Partial Evaluation 是 supercompilation 在不主动推广时的退化情形
+- [[partial-evaluation-jones]] —— Partial Evaluation 与 SC 近亲：推广极保守时行为接近
 - [[peyton-jones-stg]] —— GHC 的 STG + SpecConstr 把 supercompilation 思想做进工业编译器
 - [[hindley-milner]] —— HM 推类型，supercompilation 推程序；都是"编译器自己推一遍"的范式
 - [[landin-secd]] —— SECD 是抽象机求值的祖宗，process tree 可看作 SECD 的符号化版本

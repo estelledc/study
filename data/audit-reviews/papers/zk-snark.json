@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有工程数字列表，缺「Setup→Prove→Verify」编号步骤与逐部分解释（对照模板案例 2）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 提到写 Rust/fib 但没有代码块和逐行说明，建议补最小伪代码并解释「执行 trace → 证明」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点末尾 R1CS/QAP、双线性配对首次出现缺日常桥接，零基础会在这里掉队"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2016 年起每天在以太坊上跑」不准确：Groth16 2016 年发表，Zcash Sapling（2018）才大规模采用；以太坊 zkRollup 更晚，宜改成「区块链/Zcash 起」并区分时间线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "把 Starknet 与 zkSync/Polygon zkEVM 并列成 SNARK 系 zkRollup 易误导：Starknet 主路径是 STARK，应标明或改成 SNARK 系例子"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史段「Zcash 直接采用」Groth16：Zcash 上线初版非 Groth16，Sapling 升级才换；建议写清 Sapling/2018"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 约束拆解概念正确，但缺可跟做的见证赋值表（公开 out=35、私密 x=3、中间 y/z）与「Verifier 只检查约束」对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 无最小可跟伪代码；至少给一段 zkVM 风格 prove/verify 伪代码，避免只剩口号"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可再补量化：证明大小约 192B、验证约 1–2ms、Prover 内存 16–64GB、电路规模 10^5–10^6 约束的边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有工程数字列表，缺「Setup→Prove→Verify」编号步骤与逐部分解释（对照模板案例 2）",
+        "案例 3 提到写 Rust/fib 但没有代码块和逐行说明，建议补最小伪代码并解释「执行 trace → 证明」",
+        "核心要点末尾 R1CS/QAP、双线性配对首次出现缺日常桥接，零基础会在这里掉队"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「2016 年起每天在以太坊上跑」不准确：Groth16 2016 年发表，Zcash Sapling（2018）才大规模采用；以太坊 zkRollup 更晚，宜改成「区块链/Zcash 起」并区分时间线",
+        "把 Starknet 与 zkSync/Polygon zkEVM 并列成 SNARK 系 zkRollup 易误导：Starknet 主路径是 STARK，应标明或改成 SNARK 系例子",
+        "历史段「Zcash 直接采用」Groth16：Zcash 上线初版非 Groth16，Sapling 升级才换；建议写清 Sapling/2018"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 约束拆解概念正确，但缺可跟做的见证赋值表（公开 out=35、私密 x=3、中间 y/z）与「Verifier 只检查约束」对照",
+        "案例 3 无最小可跟伪代码；至少给一段 zkVM 风格 prove/verify 伪代码，避免只剩口号",
+        "适用/不适用可再补量化：证明大小约 192B、验证约 1–2ms、Prover 内存 16–64GB、电路规模 10^5–10^6 约束的边界"
+      ]
+    }
+  ]
+}

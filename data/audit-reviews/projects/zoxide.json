@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 可再点明「最后一段关键词还要匹配路径最后一段」这条官方匹配规则，避免读者以为任意子串都行"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史时间线（z.sh 2009 / autojump 2010 / zoxide 2018）大体合理，若再核一次各项目首发年份会更稳"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 已覆盖 brew/apt/cargo；若补一行 bash/fish 的 init 变体会更完整，非必须"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 可再点明「最后一段关键词还要匹配路径最后一段」这条官方匹配规则，避免读者以为任意子串都行"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "历史时间线（z.sh 2009 / autojump 2010 / zoxide 2018）大体合理，若再核一次各项目首发年份会更稳"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 已覆盖 brew/apt/cargo；若补一行 bash/fish 的 init 变体会更完整，非必须"
+      ]
+    }
+  ]
+}

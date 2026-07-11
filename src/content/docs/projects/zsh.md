@@ -8,23 +8,29 @@ title: zsh — 比 bash 更聪明的兼容派 shell
 
 ## 是什么
 
-zsh 全名 **Z Shell**，是一个**既能跑老 bash 脚本、又自带现代体验**的命令行 shell。日常类比：bash 像 1979 年的固话机，fish 是另起炉灶的智能机，zsh 则是**把固话机改装成智能机**——拨号方式没变，多了来电显示、通讯录、自动补全。
+zsh 全名 **Z Shell**，是一个**多数老 bash 脚本能直接或小改跑、又自带现代体验**的命令行 shell。日常类比：bash 像老固话机，fish 是另起炉灶的智能机，zsh 则是**把固话机改装成智能机**——拨号方式没变，多了来电显示、通讯录、自动补全。
 
-打开它，最常见的体验是：
+打开它，启用补全后最常见的体验是：
+
+```zsh
+# 常见配置：让补全变成可切换的菜单
+zstyle ':completion:*' menu select
+# 然后输入 git che 再按 Tab
+```
 
 ```
 $ git che<TAB>
 checkout  cherry-pick  cherry
 ```
 
-按 Tab 列出可选项，再 Tab 在选项之间切换，回车选定。这种"补全菜单可视化"是 zsh 默认就有，而 bash 要按两下 Tab 才显示一个粗糙列表。
+按 Tab 列出可选项，再 Tab 在选项之间切换，回车选定。这种菜单式补全靠 `compinit` + 上面那行 `zstyle`；bash 默认要按两下 Tab 才显示一个粗糙列表。
 
 ## 为什么重要
 
 不学 zsh 也能写代码，但理解它能让你看清三件事：
 
 - **macOS Catalina（2019）起 zsh 是系统默认 shell** —— 苹果把 bash 换掉，是 zsh 推广史最大的一次顺风
-- **POSIX 兼容 + 扩展叠加** —— 和 fish 的"故意不兼容"相反，zsh 选择"老脚本一字不改能跑，新功能往上加"。这是更保守、也更主流的演化路径
+- **兼容优先 + 扩展叠加** —— 和 fish 的"故意不兼容"相反，zsh 选择"多数 bash 脚本可直接或小改运行，新功能往上加"。这是更保守、也更主流的演化路径
 - **zsh 是基础设施，不是终点** —— oh-my-zsh / prezto / zinit / starship 都把它当宿主，学会底层后这些"全家桶"才不再是黑盒
 
 如果你 macOS 默认就在用 zsh，花一个下午搞懂它的启动文件链和补全系统，回报率比换 fish 还高——因为你已经在用了。
@@ -90,17 +96,26 @@ autoload -U zmv
 zmv '(*).jpeg' '$1.jpg'
 ```
 
-把所有 `.jpeg` 改成 `.jpg`。`(*)` 是捕获组，`$1` 是反引用。**不用写 for 循环**——这是 zsh 内建的杀手锏。
+**逐部分解释**：
+
+- `autoload -U zmv`：先把内建的批量改名工具加载进来
+- `(*)` 像夹子夹住文件名主体；`.jpeg` 是要换掉的后缀
+- `$1` 是夹子夹到的那一段，拼成新名字 `.jpg`
+- **不用写 for 循环**——这是 zsh 内建的杀手锏
 
 ### 案例 2：参数扩展旗标
 
 ```zsh
 files=(a.txt b.txt c.txt)
-echo ${(j:, :)files}    # 输出 a.txt, b.txt, c.txt
-echo ${(U)PATH}         # 把 PATH 全大写
+echo ${(j:, :)files}    # → a.txt, b.txt, c.txt
+echo ${(U)PATH}         # → 把 PATH 全大写
 ```
 
-`${(j:, :)var}` 用逗号空格 join 数组；`${(U)var}` 大写化。bash 完全没有这种短旗标。
+**逐部分解释**：
+
+1. `files=(...)` 先做一个数组，三个文件名各占一格
+2. `${(j:, :)files}` 里的 `(j:, :)` 是旗标：用逗号+空格把格子拼成一串
+3. `${(U)PATH}` 的 `(U)` 是"全大写"旗标——bash 没有这种短写法
 
 ### 案例 3：用 typeset -U 给 PATH 去重
 
@@ -109,7 +124,11 @@ typeset -U path
 path=(~/bin /usr/local/bin $path)
 ```
 
-`typeset -U` 声明数组**自动去重**——后加重复值会被忽略。常年累月加 PATH 不再爆炸。
+**逐部分解释**：
+
+1. zsh 里小写 `path` 数组和 `PATH` 字符串是联动的
+2. `typeset -U path` 声明：**这个数组自动去重**，后加的重复值会被忽略
+3. 再往里塞目录时，常年累月加 PATH 也不会爆炸成一长串重复项
 
 ## 踩过的坑
 
@@ -126,12 +145,12 @@ path=(~/bin /usr/local/bin $path)
 **适用**：
 
 - macOS 日常用户（系统默认就是它）
-- 想要"老脚本能跑 + 现代体验"的兼顾派
+- 本机交互：想要"老脚本大多能跑 + 现代体验"的兼顾派
 - 用 oh-my-zsh / starship / powerlevel10k 全家桶的人
 
 **不适用**：
 
-- 服务器最小 init 脚本（用 `/bin/sh` 更稳）
+- CI / 服务器最小 init 脚本——优先 `/bin/sh`，本机交互再上 zsh
 - 嵌入式或 BusyBox 环境（zsh 体积比 ash/bash 大）
 - 想要极致开箱体验的人——zsh 默认很朴素，要靠插件堆出 fish 那种感觉
 

@@ -20,7 +20,7 @@ SELECT name FROM users WHERE age > 18;
 
 执行时根节点（Project）调一次 `Next()`，向下传给 Filter，Filter 又向下喊 Scan，Scan 从磁盘读一行回来——再一路向上返回到 Project。**整个执行就是"沿树自顶向下喊、自底向上抬"**，懒得不能再懒。
 
-这套接口让 36 年后的 PostgreSQL / Oracle / SQL Server / Spark / DuckDB 几乎一字不差地复用。**Volcano 是现代 SQL 执行器的骨架**。
+这套接口让约 32 年后的 PostgreSQL / Oracle / SQL Server / Spark / DuckDB 几乎一字不差地复用。**Volcano 是现代 SQL 执行器的骨架**。
 
 ## 为什么重要
 
@@ -72,21 +72,24 @@ Exchange(hash by user_id)   ← 把并行性藏在这里
 Scan(events)
 ```
 
-加上 Exchange 后，Scan 在 4 个 worker 上并行扫表，Exchange 内部按 `user_id` 哈希 shuffle 到上游 4 个 Aggregate 实例。**Aggregate 完全感知不到自己被并行化**，它收到的还是普通的 `next()` 调用。
+**逐部分解释**：
 
-这就是论文的杀手锏：**并行性是一个可插拔的 wrapper，不污染算子代码**。
+1. 没插 Exchange 时：一个进程里 Aggregate 喊 `next()` → Scan 吐一行 → 再聚合
+2. 插上 Exchange 后：Scan 在 4 个 worker 上并行扫表；Exchange 按 `user_id` 哈希把行分到上游 4 个 Aggregate（这叫 shuffle，像分拣口把包裹分到不同传送带）
+3. Aggregate 仍只看见普通的 `next()`——**完全感知不到自己被并行化**
 
-### 案例 3：DuckDB 把 Next() 升级成 GetChunk()
+杀手锏：**并行性是可插拔的 wrapper，不污染算子代码**。
 
-DuckDB 源码 `src/include/duckdb/execution/physical_operator.hpp`：
+### 案例 3：DuckDB 把 Next() 升级成按批取数
+
+原版 Volcano 一次端一盘菜（一行）；DuckDB 一次端一托盘（一批行）。接口仍叫「拉下一批」，源码里对应 `GetChunk` / `Execute` 这类按批返回：
 
 ```cpp
-virtual OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
+// 概念接口：一次填满一个 DataChunk（约 1024 行），而不是 1 行
+OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
 ```
 
-每次返回 1024 行（一个 `DataChunk`）而不是 1 行。**这就是向量化执行**——保留 Volcano 的算子树形状，把"一行一调用"改成"一批一调用"，摊平 virtual call 开销。
-
-对照原版 Volcano，唯一的差别是**返回的颗粒度**：行 → 批。算子树形状、调用方向、Open/Close 钩子完全一样。Volcano 模型还活着，只是吃了药变快了。
+**这就是向量化执行**——保留算子树形状，把"一行一调用"改成"一批一调用"，摊平每次虚函数跳转的开销。对照原版，差别只在**颗粒度**：行 → 批。Volcano 骨架还活着，只是吃了药变快了。
 
 ## 踩过的坑
 
@@ -109,8 +112,8 @@ virtual OperatorResultType Execute(DataChunk &input, DataChunk &chunk, ...);
 
 **不适用**：
 
-- 极致 OLAP 性能（CPU bound）→ 改向量化（DuckDB）或编译（HyPer / Photon）
-- 实时流处理且每行延迟敏感 → push-based 模型（Flink）更自然
+- 极致 OLAP、CPU 已是瓶颈（扫描吞吐要逼近内存带宽）→ 向量化（DuckDB）或编译（HyPer / Photon）
+- 实时流处理且单行延迟要亚毫秒 → push-based（Flink）更自然
 - 嵌入式键值访问（不需要算子组合）→ 直接调存储引擎更简单
 
 ## 历史小故事（可跳过）

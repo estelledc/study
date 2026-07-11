@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/3 只有文字对比，缺像模板那样的代码块 +「逐部分解释」；建议给 in-batch 打分矩阵或伪代码并逐步拆开"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 score 公式可保留，但应补 3 步：先算内积、再减 logQ、再看热门为何被抬回"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「ANN」「L2」「softmax」首次出现时用一句日常话桥接，避免零基础卡在术语上"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「参数不共享是因为要离线建库」因果略偏：离线建库要求的是 item 塔与 user 解耦可预计算；不共享主要因两侧特征空间不同——建议改成「两侧特征不同故参数不共享；item 塔可离线预计算」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「一次前向拿到 B 倍负样本」宜写成「约 B-1 个负样本」，避免数量表述过满"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例缺可跟做的最小伪代码（如 batch 内 logits 矩阵 + logQ 校正一行）；补一段 10 行内的教学伪代码即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可再量化一条延迟或库规模边界（例如「在线 P99 < 20ms 且库 > 100 万」）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 1 的 false-negative mask 很好，可补一句「同 batch 内相同 item_id 的 off-diagonal 置 -inf」让人能直接落地"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/3 只有文字对比，缺像模板那样的代码块 +「逐部分解释」；建议给 in-batch 打分矩阵或伪代码并逐步拆开",
+        "案例 2 的 score 公式可保留，但应补 3 步：先算内积、再减 logQ、再看热门为何被抬回",
+        "「ANN」「L2」「softmax」首次出现时用一句日常话桥接，避免零基础卡在术语上"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「参数不共享是因为要离线建库」因果略偏：离线建库要求的是 item 塔与 user 解耦可预计算；不共享主要因两侧特征空间不同——建议改成「两侧特征不同故参数不共享；item 塔可离线预计算」",
+        "「一次前向拿到 B 倍负样本」宜写成「约 B-1 个负样本」，避免数量表述过满"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例缺可跟做的最小伪代码（如 batch 内 logits 矩阵 + logQ 校正一行）；补一段 10 行内的教学伪代码即可",
+        "适用/不适用可再量化一条延迟或库规模边界（例如「在线 P99 < 20ms 且库 > 100 万」）",
+        "踩坑 1 的 false-negative mask 很好，可补一句「同 batch 内相同 item_id 的 off-diagonal 置 -inf」让人能直接落地"
+      ]
+    }
+  ]
+}
