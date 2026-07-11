@@ -1,0 +1,149 @@
+{
+  "slug": "sled",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.33,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "活页笔记本类比能讲清「读连续、写追加、再整理」，可保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "epoch-based reclamation / MemTable / SST / freelist / fanout / cgo 对零基础缺桥接；Rust 侧应说 FFI 而非 cgo"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "四个案例全是叙述、无代码、无「逐部分解释」；应压成 3 个案例，每个给可跟做的 Rust 片段并拆步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "多处把 Rust 绑 RocksDB 写成「cgo」——cgo 是 Go 术语，Rust 应为 FFI/bindgen；请全文改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源指向 github.com/spacejam/sled、作者 Tyler Neely、长期 0.x beta 合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「追加日志接近 1 倍 WAL」低估页重写/GC 写放大；「读接近 B+、写接近 LSM」宜加限定，避免像已达工业标杆"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例无任何可跟做代码；至少补 open/insert/get、range 前缀扫描、事务或 flush 三例"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "0.x 格式、内存簿记、GC 抖动、恢复扫日志、大 value、无二级索引、维护节奏等坑具体有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用 GB 级/单进程多线程、不适用多进程共享与格式稳定生产路径——边界清楚，可保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 2
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "活页笔记本类比能讲清「读连续、写追加、再整理」，可保留",
+        "epoch-based reclamation / MemTable / SST / freelist / fanout / cgo 对零基础缺桥接；Rust 侧应说 FFI 而非 cgo",
+        "四个案例全是叙述、无代码、无「逐部分解释」；应压成 3 个案例，每个给可跟做的 Rust 片段并拆步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "多处把 Rust 绑 RocksDB 写成「cgo」——cgo 是 Go 术语，Rust 应为 FFI/bindgen；请全文改正",
+        "来源指向 github.com/spacejam/sled、作者 Tyler Neely、长期 0.x beta 合理",
+        "「追加日志接近 1 倍 WAL」低估页重写/GC 写放大；「读接近 B+、写接近 LSM」宜加限定，避免像已达工业标杆"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 2,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例无任何可跟做代码；至少补 open/insert/get、range 前缀扫描、事务或 flush 三例",
+        "0.x 格式、内存簿记、GC 抖动、恢复扫日志、大 value、无二级索引、维护节奏等坑具体有用",
+        "适用 GB 级/单进程多线程、不适用多进程共享与格式稳定生产路径——边界清楚，可保留"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false,
+    "reason": "三审均 needs-refine：案例无代码、cgo 误用、写放大表述过满"
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "补 3 个可跟做 Rust 案例；cgo→FFI；弱化写放大/工业对标表述；补 epoch/SST 白话桥接",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 相比 bbolt / RocksDB 改了什么",
+      "## 三种放大：混合派的曲线",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 190,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "slug": "reyes-1987",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.44,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "布景道具 / 厨房切块 / 裁布量尺类比贴合 Reyes 的统一表示与坐标系分工"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "dice / micropolygon / bucket 有白话桥接，案例逐步解释清楚"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「shade tree / shadow map」在「为什么重要」里可再各补半句白话，零基础更稳"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Cook/Carpenter/Catmull、SIGGRAPH 1987、微多边形 dice、分桶、jittered sampling、Z-buffer 与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源题名/作者/DOI 与 ACM 10.1145/37401.37414 匹配；延伸阅读指向合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Renders Everything You Ever Saw」写成「常被解释为」即可，勿当论文正式命名；shade-before-hide 的浪费表述正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "split/dice/bucket/Z-buffer 伪代码概念正确，可跟读对照生产管线"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「不是单算法」「切太细爆炸」「先着色后可见性浪费」「别和 path tracing 混谈」四坑具体"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：离线电影曲面/位移 vs 实时 GPU 三角 vs 强全局光照 vs 难 bound 的透明体积"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "布景道具 / 厨房切块 / 裁布量尺类比贴合 Reyes 的统一表示与坐标系分工",
+        "dice / micropolygon / bucket 有白话桥接，案例逐步解释清楚",
+        "「shade tree / shadow map」在「为什么重要」里可再各补半句白话，零基础更稳"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Cook/Carpenter/Catmull、SIGGRAPH 1987、微多边形 dice、分桶、jittered sampling、Z-buffer 与论文一致",
+        "来源题名/作者/DOI 与 ACM 10.1145/37401.37414 匹配；延伸阅读指向合理",
+        "「Renders Everything You Ever Saw」写成「常被解释为」即可，勿当论文正式命名；shade-before-hide 的浪费表述正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 5
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "split/dice/bucket/Z-buffer 伪代码概念正确，可跟读对照生产管线",
+        "「不是单算法」「切太细爆炸」「先着色后可见性浪费」「别和 path tracing 混谈」四坑具体",
+        "适用/不适用边界清楚：离线电影曲面/位移 vs 实时 GPU 三角 vs 强全局光照 vs 难 bound 的透明体积"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.44,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true,
+    "reason": "三审全 pass，平均 4.44 ≥ 4.0"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 150,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
