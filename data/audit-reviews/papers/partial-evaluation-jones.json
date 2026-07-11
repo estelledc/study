@@ -1,0 +1,151 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "蛋糕食谱 / 剧本红黑台词类比把 static vs dynamic 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "BTA / residual / polyvariant 首次出现有桥接；Futamura 射影仍偏密，可再补半句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 power 可跟做；案例 2–4 缺逐步拆解，案例 3 直接甩 Java 注解对零基础不友好——建议压成 3 个案例并给案例 2 逐步对应 mix 等式"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "原书官方著录为 xii+415 页，不是「528 页」；「是什么」「历史小故事」「延伸阅读」三处需改正"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑章号错位：generalization 在第 4/14 章而非第 8 章；7.4 是 self-application 配方不是 let-insertion（let-insertion 在第 5 章）；第 11 章是 C 语言 PE，CPS 在 12.3"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Gomard 后来去做指针分析（不是 Andersen）」史实颠倒：C-Mix/指针相关章节作者是 Lars Ole Andersen；Gomard 后创业（Netcompany），应删改"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Jones 是 Cousot 抽象解释学派在北欧的主要传承者」过满；BTA 与 AI 相关即可，勿写成学派传人"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 Scheme power→power_5 概念正确可跟；案例 2 只有等式无逐步输入输出，建议补 interp/source/dynamic 三步对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：BTA 过保守/过激进、polyvariant 不停机、self-app 难调试、PE-unfriendly 解释器——保留；章号引用需随 academic 一并修正"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（代码膨胀几十倍、副作用全 dynamic）；可再点明「静态参数占比高才值得 PE」的量化直觉"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "蛋糕食谱 / 剧本红黑台词类比把 static vs dynamic 讲透，零基础直觉强",
+        "BTA / residual / polyvariant 首次出现有桥接；Futamura 射影仍偏密，可再补半句白话",
+        "案例 1 power 可跟做；案例 2–4 缺逐步拆解，案例 3 直接甩 Java 注解对零基础不友好——建议压成 3 个案例并给案例 2 逐步对应 mix 等式"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "原书官方著录为 xii+415 页，不是「528 页」；「是什么」「历史小故事」「延伸阅读」三处需改正",
+        "踩坑章号错位：generalization 在第 4/14 章而非第 8 章；7.4 是 self-application 配方不是 let-insertion（let-insertion 在第 5 章）；第 11 章是 C 语言 PE，CPS 在 12.3",
+        "「Gomard 后来去做指针分析（不是 Andersen）」史实颠倒：C-Mix/指针相关章节作者是 Lars Ole Andersen；Gomard 后创业（Netcompany），应删改",
+        "「Jones 是 Cousot 抽象解释学派在北欧的主要传承者」过满；BTA 与 AI 相关即可，勿写成学派传人"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 Scheme power→power_5 概念正确可跟；案例 2 只有等式无逐步输入输出，建议补 interp/source/dynamic 三步对照",
+        "踩坑具体可操作：BTA 过保守/过激进、polyvariant 不停机、self-app 难调试、PE-unfriendly 解释器——保留；章号引用需随 academic 一并修正",
+        "适用/不适用有边界（代码膨胀几十倍、副作用全 dynamic）；可再点明「静态参数占比高才值得 PE」的量化直觉"
+      ]
+    }
+  ],
+  "slug": "partial-evaluation-jones",
+  "area": "papers",
+  "status": "refined",
+  "lines": 159,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.67,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：528页→415；章号错位；Gomard/Andersen 史实颠倒；案例压成3个并补 Futamura 逐步对照",
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
