@@ -1,0 +1,137 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "岔路口/改作文类比贯穿全文，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Metropolis-Hastings / power distribution / 熵 首次出现有部分桥接，但 MH 仍偏术语堆叠，建议在要点 2 加一句「像掷骰子决定要不要换新答案」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 都是 2 行函数，缺端到端：保留前缀→在熵跳变处切开→重采样后缀→按接受率决定换不换；建议把案例 3 扩成完整伪代码流程"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "作者/算法名/基准（MATH500、HumanEval、GPQA Diamond、AIME26）与 arXiv:2605.30327 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "前置工作写成 Karan and Du 正确；接受率简化已在文中声明，未歪曲目标分布不变的核心主张"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "伪代码概念正确，且注明真实接受率还有校正项"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑把低温 vs power、均匀切点、MH 校正讲清楚，可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺量化：可补论文常用设定如 α≈4、N_MCMC≈10、长推理链任务，以及对延迟敏感场景「多次前向」的代价提示"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "岔路口/改作文类比贯穿全文，零基础直觉强",
+        "Metropolis-Hastings / power distribution / 熵 首次出现有部分桥接，但 MH 仍偏术语堆叠，建议在要点 2 加一句「像掷骰子决定要不要换新答案」",
+        "案例 1–3 都是 2 行函数，缺端到端：保留前缀→在熵跳变处切开→重采样后缀→按接受率决定换不换；建议把案例 3 扩成完整伪代码流程"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "作者/算法名/基准（MATH500、HumanEval、GPQA Diamond、AIME26）与 arXiv:2605.30327 一致",
+        "前置工作写成 Karan and Du 正确；接受率简化已在文中声明，未歪曲目标分布不变的核心主张"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "伪代码概念正确，且注明真实接受率还有校正项",
+        "踩坑把低温 vs power、均匀切点、MH 校正讲清楚，可操作",
+        "适用/不适用缺量化：可补论文常用设定如 α≈4、N_MCMC≈10、长推理链任务，以及对延迟敏感场景「多次前向」的代价提示"
+      ]
+    }
+  ],
+  "slug": "reasoning-with-sampling",
+  "area": "papers",
+  "status": "refined",
+  "lines": 156,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：案例 3 扩成端到端 MH 步；MH 加掷骰子桥接；适用场景补 α≈4 / N_MCMC≈10 量化",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  }
+}
