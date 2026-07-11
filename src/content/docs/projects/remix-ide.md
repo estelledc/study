@@ -29,7 +29,7 @@ contract Hello {
 
 不理解 Remix IDE，下面这些事都没法解释：
 
-- 为什么市面上 90% 的 Solidity 入门教程第一步都是"打开 remix.ethereum.org"，而不是"先 npm install"
+- 为什么大量 Solidity 入门教程第一步都是"打开 remix.ethereum.org"，而不是"先 npm install"
 - 为什么有些链上交易出 bug 时，工程师把 tx hash 粘到一个网页就能逐行回放
 - 为什么 OpenZeppelin / Uniswap 等库能在浏览器里**直接 import**，没有本地 node_modules
 - 为什么从 [[hardhat]] / [[foundry]] 这种本地工具链转过来的人，仍然会回头用 Remix 调试
@@ -38,11 +38,11 @@ contract Hello {
 
 可以把 Remix IDE 拆成 **三层**：
 
-1. **编辑器 + 编译器**：左边写 `.sol`，右边的 Solidity Compiler 面板内嵌了 `solc`，点 Compile 就出 ABI / bytecode。类比：自带烤箱的厨房——食材进去、面包出来，不用另装设备。
+1. **编辑器 + 编译器**：左边写 `.sol`，右边的 Solidity Compiler 面板内嵌了 `solc`，点 Compile 就出 ABI（给外部调用看的接口说明书）和 bytecode（链上实际跑的机器码）。类比：自带烤箱的厨房——食材进去、面包出来，不用另装设备。
 
 2. **Deploy & Run 面板**：选 ENVIRONMENT（Remix VM 沙箱 / 浏览器钱包 / WalletConnect / 本地 Hardhat），选账户，点 Deploy。部署后的合约会出现在 "Deployed Contracts" 列表，每个 public 函数都自动生成可点击的按钮。
 
-3. **Debugger**：粘一个交易 hash 进去，能逐 opcode 步进，看 Stack / Memory / Storage / 局部变量。类比：影碟机的逐帧播放，你能看见 EVM 把每一步打到哪个寄存器。
+3. **Debugger**：粘一个交易 hash 进去，能逐 opcode（单条 EVM 机器指令）步进，看 Stack / Memory / Storage / 局部变量。类比：影碟机的逐帧播放——EVM 是栈机，你能看见每一步 Stack 顶和存储槽怎么变。
 
 三层之间靠 **Remix Plugin Engine** 串起来——每个面板都是独立 plugin，第三方（OpenZeppelin Wizard / Sourcify 验证 / Slither 静态分析）只要写个 plugin manifest 就能装进来。这意味着官方团队不用什么都自己做，社区缺什么补什么。
 
@@ -125,11 +125,11 @@ contract HelloTest {
 
 ## 历史小故事（可跳过）
 
-- **2016 年**：Ethereum 基金会的 Solidity 团队做 Browser-Solidity，目的是让教程可以零门槛跑——当年装 [[go-ethereum]] + solc 是劝退新人的最大门槛
-- **2017 年**：改名 Remix，开始引入 plugin 概念
-- **2019 年前后**：合并到 ethereum/remix-project monorepo，分出 web 版 / Desktop / VSCode 扩展三种发行
+- **2015–2016 年**：社区已有 browser-solidity（浏览器里写 Solidity）；当年装 [[go-ethereum]] + solc 仍是劝退新人的大门槛
+- **2016 年 5 月**：Ethereum 基金会博客宣布 Remix——把可复用的 html5/js 调试模块做出来，目标是嵌进 browser-solidity 以及 VS Code 等编辑器
+- **2018 年前后**：Remix IDE 走向插件化（约 v0.7），外部团队可挂自己的工具；随后与相关仓库收敛进 remix-project monorepo，分出 web / Desktop / VSCode 扩展
 - **2022-2024**：插件生态成熟，OpenZeppelin Wizard、Sourcify 验证、Slither 分析都做成 plugin
-- **2026 年**：v2.2.0 仍在迭代，Apache-2.0，已成 Solidity 教程默认入门环境
+- **2026 年**：remix-project 已到 v2.5.x 线，Apache-2.0，仍是 Solidity 教程默认入门环境
 - 这条历史也解释了为什么 [[hardhat]] / [[foundry]] 出现后 Remix 仍然没被替代——它瞄准的是入门和调试，不是工程化
 
 ## 学到什么

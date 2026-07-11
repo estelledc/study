@@ -24,10 +24,12 @@ Jeh & Widom 2003 这篇文章解决的就是 **怎么算得起**。
 
 不理解 PPR，下面这些事都没法解释：
 
-- 今天的推荐系统在用户-商品图上做召回，背后跑的常是 PPR 而不是原版 PageRank
-- Twitter 的 Who-To-Follow、Pinterest 的 Pixie 召回引擎、LinkedIn 的『你可能认识的人』都建在 PPR 上
-- GNN 主流方法 APPNP（ICLR 2019）的核心传播算子就是 PPR 矩阵——某种意义上 2003 这篇为 2019 的图神经网络写好了数学
+- 今天的推荐系统在用户-商品图上做召回，背后跑的常是带重启的随机游走（PPR / RWR）而不是原版 PageRank
+- Pinterest Pixie 是明确的大规模 RWR/PPR 召回；Twitter Who-To-Follow 等则多用 circle-of-trust + SALSA 一类近亲随机游走
+- 图神经网络（GNN：在邻居之间传消息的模型）里，APPNP（ICLR 2019）的核心传播算子就是 PPR 矩阵——某种意义上 2003 这篇为 2019 的图模型写好了数学
 - 蛋白质相互作用网络里找疾病基因、知识图谱里做实体扩展，套路都是『从你关心的种子节点出发跑 PPR』
+
+补充一句边界：Haveliwala 2002 的 Topic-Sensitive PageRank 已做『按主题偏置』；本文贡献是 hub 分解，让任意稀疏偏好在网页图上算得起。
 
 ## 核心要点
 
@@ -74,19 +76,19 @@ PPR 的工程难题有三层，每层 Jeh-Widom 给一个工具：
 
 ### 案例 3：GNN 里的 PPR 影子
 
-APPNP 公式：
+先把 GNN 想成『每个节点听邻居说话』的传话模型；传太多层，大家声音会糊成一片（over-smoothing，过平滑）。APPNP 不堆很多层卷积，而是用一次 PPR 式传播把起点特征散开：
 
 ```
 H = (1 - α) · A_hat · H  +  α · X
 ```
 
-把它和 PPR 公式对照：
+对照 PPR：
 
 ```
 PR = (1 - c) · M · PR  +  c · v
 ```
 
-**结构一模一样**。APPNP 把 GNN 的多层卷积换成 PPR 传播，参数更少、深度可控、不会过平滑（over-smoothing）。这就是 PPR 数学在 2019 年的回响。
+**结构一模一样**（`X`/`v` 是重启回到的『起点』，`α`/`c` 是跳回概率）。参数更少、深度可控、更不容易过平滑——这是 PPR 数学在 2019 年的回响。
 
 ## 踩过的坑
 
@@ -120,8 +122,9 @@ PR = (1 - c) · M · PR  +  c · v
 
 - **1998**：Page 和 Brin 在 Stanford 写下 PageRank，论文脚注一句『teleport 向量可以非均匀』为 PPR 埋下伏笔。
 - **2002**：Glen Jeh 和导师 Jennifer Widom 在 KDD 发表 SimRank（基于随机游走的节点相似度）。
-- **2003**：同一组写出本文，第一次系统解决『PPR 怎么算得起』。Glen Jeh 当时是 Widom 的博士生。
-- **2013–2017**：Twitter WTF、Pinterest Pixie 等工业系统在十亿级图上落地 PPR，论文里都致谢这套分解框架。
+- **2002**：Haveliwala 提出 Topic-Sensitive PageRank（按主题预计算偏置向量）；个性化有了，但还不是任意用户偏好的可扩展分解。
+- **2003**：Jeh & Widom 写出本文，用 hub / skeleton / partial vectors 系统解决『任意稀疏偏好的 PPR 怎么算得起』。Glen Jeh 当时是 Widom 的博士生。
+- **2013–2017**：Twitter WTF、Pinterest Pixie 等工业系统在十亿级图上落地随机游走召回（Pixie 明确是 RWR/PPR；WTF 更偏 SALSA 近亲），扩展了这篇分解思路的工程边界。
 - **2019**：Klicpera 等人提出 APPNP，把 PPR 矩阵直接做成 GNN 传播算子——一篇 2003 信息检索论文，重新点亮深度学习时代。
 
 ## 学到什么
@@ -134,7 +137,7 @@ PR = (1 - c) · M · PR  +  c · v
 ## 延伸阅读
 
 - 论文 PDF：[Jeh & Widom 2003 — Scaling Personalized Web Search](http://ilpubs.stanford.edu:8090/596/)（10 页，建议先读 Section 2-3）
-- 入门博客：[The Personalized PageRank Algorithm — Sebastian Schmidl](https://web.archive.org/web/2024/https://schmidl.com/posts/ppr/)（用图示讲线性定理）
+- 入门读物：[Personalized PageRank — Wikipedia](https://en.wikipedia.org/wiki/PageRank#Personalized_PageRank)（先建立直觉，再回论文 Section 2-3）
 - 工业落地：[Pinterest Pixie — Random Walk on a Real-Time Graph (2017)](https://medium.com/pinterest-engineering/an-update-on-pixie-pinterests-recommendation-system-6f273f737e1b)
 - GNN 桥梁：[APPNP — Predict then Propagate (Klicpera et al., ICLR 2019)](https://arxiv.org/abs/1810.05997)
 - 增量 PPR：[Bahmani, Chowdhury, Goel — Fast Incremental and Personalized PageRank (2010)](https://arxiv.org/abs/1006.2880)
