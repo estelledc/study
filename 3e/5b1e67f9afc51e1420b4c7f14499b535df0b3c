@@ -1,0 +1,51 @@
+.github/workflows/deploy.yml
+  s_a9ccc48eb7d4a6::t_f3eb3543346bf4 21-22,61,73
+astro.config.mjs
+  s_a9ccc48eb7d4a6::t_4ba075ff9c237f 5-19,75-105,151-154
+package.json
+  s_a9ccc48eb7d4a6::t_82c8129b53ae60 16,36
+scripts/audit-homepage-dist-links.mjs
+  s_a9ccc48eb7d4a6::t_06417f420feb08 68-77,125-183,195-205
+scripts/audit-product-ia.mjs
+  s_a9ccc48eb7d4a6::t_a5148ce865c2c4 25-27,86,89-91,119-130,196-259,352-354
+scripts/generate-showcase-og.mjs
+  s_a9ccc48eb7d4a6::t_b3c2dc0177641b 1-42
+scripts/showcase.test.mjs
+  s_a9ccc48eb7d4a6::t_02470c35ce9e54 1-66
+src/components/StudyHeader.astro
+  s_a9ccc48eb7d4a6::t_f2aa185793cb69 1-123
+src/components/StudyMobileMenuFooter.astro
+  s_a9ccc48eb7d4a6::t_b8cf1d7b3edcc6 1-56
+src/content/docs/index.md
+  s_a9ccc48eb7d4a6::t_cefa7d1bdfdc79 5-25,30,33,39-41,49-53,55-57,59-81,83-84
+src/styles/jx/VERSION
+  s_a9ccc48eb7d4a6::t_929ccd0ce4a6f5 1
+src/styles/jx/base.css
+  s_a9ccc48eb7d4a6::t_e78fb2d64498ee 1,10,29-47,81-113,160
+src/styles/jx/components.css
+  s_a9ccc48eb7d4a6::t_37e500b9a10141 22-24,64-83,210-590
+src/styles/jx/product-ui.css
+  s_a9ccc48eb7d4a6::t_f760362bd7c5ec 96-108,116-131,192-234,438-442,452-455
+src/styles/jx/tokens.css
+  s_a9ccc48eb7d4a6::t_34ec936b802fe3 1,3,44-55,74,110-111,163-174
+src/styles/opendesign-theme.css
+  s_a9ccc48eb7d4a6::t_89ef8beb7c1324 30-43,61-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "3e5b1e67f9afc51e1420b4c7f14499b535df0b3c",
+  "prompts": {},
+  "sessions": {
+    "s_a9ccc48eb7d4a6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_a9ccc48eb7d4a6",
+        "model": "unknown"
+      },
+      "human_author": "Jason <150260202+estelledc@users.noreply.github.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
