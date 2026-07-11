@@ -52,12 +52,14 @@ list reverse(list x) {
 }
 ```
 
-证明思路：
+不变式：`list(α, x) * list(rev(β), y)`，其中 α + β = 原始序列。每轮 while 拆四步：
 
-- 不变式：`list(α, x) * list(rev(β), y)`，其中 α + β = 原始序列
-- 每轮 while：从 x 那块"切"一格出来，"拼"到 y 那块
-- frame rule 保证不在循环里的内存原封不动
-- 经典 Hoare 要写半页才能说清楚"链表节点不互相别名"，分离逻辑直接用 \* 蕴含
+1. **切**：从 x 链表头"切"下一格（节点），`t` 记住原 next
+2. **改**：把该节点的 next 指向 y（接到已反转段）
+3. **拼**：把该节点并入 y 那块堆（\* 右侧变长）
+4. **推进**：x 移到 `t`；frame rule 保证循环外内存不动
+
+经典 Hoare 要写半页才能说清"节点不互相别名"；分离逻辑用 \* 直接蕴含。
 
 ### 案例 2：Frame rule 让模块化证明可能
 
@@ -67,7 +69,7 @@ list reverse(list x) {
 {list(l) * htbl(h)} list_append(l, x) {list(l') * htbl(h)}
 ```
 
-`htbl(h)` 这块根本不被 list_append 触碰，frame rule 自动把它保留下来。换成经典 Hoare，每次都要重新证 hashtable 性质未变——n 个模块就要写 n² 个证明。
+`list_append` 的 footprint 只有 `list(l)`；`htbl(h)` 在 \* 另一侧、命令不碰它，所以**调用前后不用重证哈希表性质**——frame rule 自动保留。经典 Hoare 每次都要重证未变，n 个模块≈ n² 个证明。
 
 ### 案例 3：Rust 借用检查器 = 静态分离逻辑
 
@@ -87,7 +89,7 @@ let r2 = &mut v;    // ❌ 编译失败
 
 3. **frame rule 滥用**：要求命令的 footprint（真正读写的内存）封闭。调用未知函数 `f(x)` 时不能盲目 frame，得知道 f 只动 x 指向的那块——否则 R 里被偷偷读写就证错。
 
-4. **magic wand 反方向**：`P -* Q` 读作"再加一个满足 P 的堆能让整个堆满足 Q"，是 \* 的左伴随。绝大多数人第一次写都把方向写反，编码 list segment 时尤其常踩。
+4. **magic wand 反方向**：`P -* Q`（magic wand）是 \* 的**反向工具**——读作"再拼上一块满足 P 的堆，整体就满足 Q"。绝大多数人第一次把方向写反，编码 list segment 时尤其常踩。
 
 ## 适用 vs 不适用场景
 
@@ -110,8 +112,8 @@ let r2 = &mut v;    // ❌ 编译失败
 - **1969 年**：Hoare 提三元组 `{P}c{Q}`，但堆+指针是公开的痛点
 - **1972 年**：Burstall 第一次尝试用"distinct list assertion"描述链表分离，但没系统化
 - **1999 年**：O'Hearn 和 Pym 在伦敦发明 Bunched Implications (BI) 逻辑，给"资源分块"提供代数基础
-- **2001 年**：Ishtiaq & O'Hearn 把 BI 接到指针程序上，命名 separating conjunction
-- **2002 年**：Reynolds 在 LICS invited talk 把所有线索拼成完整系统并定名 Separation Logic
+- **2001 年**：Ishtiaq & O'Hearn 把 BI 接到指针程序，给出 frame rule 与可释放内存的经典堆模型（\* 本身由 Reynolds 更早引入）
+- **2002 年**：Reynolds 在 LICS invited talk 把线索拼成完整系统并定名 Separation Logic
 - **2007 年起**：Brookes 扩到并发；2015 年 Iris 在 Coq 落地；Infer 让它在工业界跑起来
 
 ## 学到什么

@@ -12,7 +12,7 @@ title: smoltcp — 在没有操作系统的芯片上跑 TCP/IP
 
 具体来说，smoltcp 是一个独立的、事件驱动的 TCP/IP 协议栈实现，专门为裸机（bare-metal）和实时系统设计。它不需要操作系统、不做堆内存分配（zero heap allocation）、所有缓冲区大小在编译时确定。从以太网帧解析、ARP 地址解析、IPv4/IPv6 路由，到 TCP 可靠传输、UDP 数据报、ICMP ping、DHCP 自动配网、DNS 域名解析——一个 crate 全包了。
 
-项目名字 smol 就是"small"的俚语写法，强调**小而完整**的设计哲学。在与 Linux TCP 协议栈的环回测试中，smoltcp 能跑到约 1 Gbps 吞吐量，证明"小"不意味着"慢"。它在 Rust 稳定版 1.65+ 上编译，MIT/Apache-2.0 双许可证，目前是 Embassy 网络层（embassy-net）的底层引擎，GitHub 4.3k star，是 Rust 嵌入式生态中最广泛使用的网络协议栈。
+项目名字 smol 就是"small"的俚语写法，强调**小而完整**的设计哲学。在与 Linux TCP 协议栈的环回测试中，smoltcp 能跑到约 Gbps 量级吞吐量，证明"小"不意味着"慢"。它在稳定版 Rust 上编译（上游 MSRV 会随版本抬升），采用 0-clause BSD（0BSD）许可证，目前是 Embassy 网络层（embassy-net）的底层引擎，GitHub 约 4.5k star，是 Rust 嵌入式生态中最广泛使用的网络协议栈。
 
 设计上 smoltcp 明确拒绝复杂的编译期技巧（比如重度的宏魔法或类型体操），宁可牺牲一点极致性能也要保持代码的可读性和可审计性。这对安全关键的嵌入式场景来说是正确的取舍——你需要能看懂协议栈在做什么。
 
@@ -22,7 +22,7 @@ title: smoltcp — 在没有操作系统的芯片上跑 TCP/IP
 
 smoltcp 填补了一个独特的生态位：**Rust 原生、no_std、零堆分配、开源、跨芯片**。具体好处有三个方面。
 
-内存安全方面，TCP/IP 协议栈处理的都是来自网络的不可信数据——畸形数据包、超长字段、非法校验和。用 C 写的 lwIP 曾多次爆出缓冲区溢出漏洞。Rust 的所有权系统和边界检查在编译期就堵住了这类问题，smoltcp 上线以来没有一个 CVE。
+内存安全方面，TCP/IP 协议栈处理的都是来自网络的不可信数据——畸形数据包、超长字段、非法校验和。用 C 写的 lwIP 曾多次爆出缓冲区溢出漏洞。Rust 的所有权系统和边界检查在编译期就堵住了这类问题；公开 CVE 记录里 smoltcp 也极少见同类内存破坏通告（仍要以实际审计为准）。
 
 资源可控方面，smoltcp 不使用堆分配，所有 socket 缓冲区、ARP 缓存、路由表大小都是用户在编译时指定的。你能精确计算整个协议栈的 RAM 占用——对只有 64KB RAM 的 MCU 来说，这种确定性是刚需。
 
@@ -40,9 +40,9 @@ smoltcp 的架构分四层，从下往上分别是：物理层抽象、协议解
 
 **Socket 层**提供了应用程序的编程接口。smoltcp 支持 TCP socket（可靠流式传输）、UDP socket（无连接数据报）、Raw socket（直接收发 IP 包）、ICMP socket（ping/traceroute）和 DHCP socket（自动获取 IP）。每个 socket 有独立的收发缓冲区，你指定缓冲区大小就确定了它的 RAM 占用。
 
-协议覆盖面上，链路层支持以太网 II 帧（含 VLAN 802.1Q tag）和 IEEE 802.15.4（6LoWPAN 短距离无线，常见于 Zigbee 和 Thread 场景）。网络层支持 IPv4（含分片重组、可配置的重组缓冲区超时）和 IPv6（含邻居发现 NDP、无状态地址自动配置 SLAAC），IPv4 和 IPv6 可以同时启用双栈，也可以只启用其中一种来节省资源。传输层支持 TCP（Nagle 算法、窗口缩放、选择性确认 SACK、拥塞控制、延迟 ACK）和 UDP。应用层辅助协议支持 DHCP 客户端、DNS 客户端（A 和 AAAA 记录）和 IGMP。
+协议覆盖面上，链路层支持以太网 II 帧（含 VLAN 802.1Q tag）和 IEEE 802.15.4（6LoWPAN 短距离无线，常见于 Zigbee 和 Thread 场景）。网络层支持 IPv4（含分片重组、可配置的重组缓冲区超时）和 IPv6（含邻居发现 NDP、无状态地址自动配置 SLAAC），IPv4 和 IPv6 可以同时启用双栈，也可以只启用其中一种来节省资源。传输层支持 TCP（Nagle、窗口缩放、可选拥塞控制、延迟 ACK）和 UDP；**选择性确认 SACK 上游明确未实现**。应用层辅助协议支持 DHCP 客户端、DNS 客户端（A/AAAA）和 IGMP。
 
-尚未实现的功能包括：TCP 时间戳选项、路径 MTU 发现、IPv6 流标签、IPsec、PPP/PPPoE、mDNS、SNMP。这些大多是"还没人去写"而不是"设计上不支持"——smoltcp 的模块化设计让新协议的添加相对独立。
+尚未实现的功能包括：TCP SACK、TCP 时间戳选项、路径 MTU 发现、IPv6 流标签、IPsec、PPP/PPPoE、mDNS、SNMP。这些大多是"还没人去写"而不是"设计上不支持"——模块化设计让新协议添加相对独立。
 
 内存模型上 smoltcp 零堆分配：ARP 缓存用固定大小数组（满了按 LRU 淘汰最旧条目）、Socket 缓冲区是用户传入的 `&mut [u8]` 切片——你给多大它就用多大、路由表是固定长度数组（通常只需 1-2 条默认路由）。好处是编译时精确算出 RAM 占用，不会有运行时内存不足的意外；代价是动态创建 socket 需要预分配所有缓冲区空间，但对几十 KB RAM 的 MCU 来说这通常不是问题。
 
@@ -52,7 +52,7 @@ smoltcp 的架构分四层，从下往上分别是：物理层抽象、协议解
 
 ## 实践案例
 
-最常见的场景是在 STM32 + Embassy 上实现一个 TCP 服务器。Embassy 的 `embassy-net` 本质上是 smoltcp 的异步包装层，做了三件事：把 `iface.poll()` 包装成后台 async task 配合执行器自动唤醒；把 socket 操作包装成 `async fn`（如 `TcpSocket::read().await` 在数据到达前让出 CPU）；用 embassy-time 提供单调时钟作为 `poll` 的时间戳参数。
+最常见场景：STM32 + Embassy 上跑 TCP 服务器。`embassy-net` 是 smoltcp 的异步包装：后台 task 调 `iface.poll()`、socket 变成 `.await`、embassy-time 提供单调时钟。下面按四步跟（类型名是教学简化，真实工程以 embassy-net 文档为准）：
 
 ```rust
 use embassy_net::{Stack, tcp::TcpSocket};
@@ -64,24 +64,23 @@ async fn net_task(stack: &'static Stack<Device>) -> ! {
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
-    // ... 初始化硬件、配置以太网 MAC ...
+    // 1. 初始化：硬件 MAC + 创建 Stack，并 spawn net_task 持续 poll
+    // 2. 开 socket：预分配收发缓冲，RAM 占用编译期就定死
     let mut rx_buf = [0u8; 4096];
     let mut tx_buf = [0u8; 4096];
     let mut socket = TcpSocket::new(stack, &mut rx_buf, &mut tx_buf);
 
-    socket.accept(80).await.unwrap(); // 监听 80 端口
+    // 3. accept：等客户端连上（底层 ARP/IP/TCP 握手由 smoltcp 做）
+    socket.accept(80).await.unwrap();
+    // 4. 读写后 close：写响应，再优雅关闭
     socket.write_all(b"Hello from MCU!\n").await.unwrap();
     socket.close();
 }
 ```
 
-这段代码在一颗没有操作系统的 STM32 芯片上跑了一个能响应 TCP 连接的服务器。底层 smoltcp 处理了 ARP 解析、IP 路由、TCP 三次握手、流控窗口、ACK 重传——你完全不用操心这些。缓冲区各 4096 字节是一个合理的起点，足够处理大多数 HTTP 请求/响应；如果做 OTA 固件下载可以加大到 8192 字节以提升吞吐量。
+为什么这样拆：步骤 1 保证协议栈有人驱动；步骤 2 用固定缓冲换确定性内存；步骤 3/4 才是业务。缓冲各 4KB 够一般 HTTP；OTA 可提到 8KB。不用 Embassy 时，仓库 TAP 上的 HTTP 示例约 100 行，可先在开发机验证再烧到 MCU（[[probe-rs]] + defmt-rtt）。
 
-不用 Embassy 也行——smoltcp 仓库自带 Linux TAP 设备上的完整 HTTP 服务器示例约 100 行代码，可以在开发机上验证协议逻辑后再移植到真实硬件。用 [[probe-rs]] 把固件烧进 MCU，通过 defmt-rtt 实时看协议栈日志，是调试 smoltcp 网络问题的标准流程。
-
-注意 embassy-net 目前不支持在运行时动态添加/删除 IP 地址或修改路由表。如果你的设备需要运行中切换网络配置（比如从 DHCP 切到静态 IP），需要重建整个 Stack 实例。这个限制来自 Rust 的借用检查——Interface 持有 IP 列表的可变引用，运行时改它需要停掉整个协议栈。
-
-开发阶段建议同时启用 `log` feature 配合 `defmt` 后端，通过 RTT（Real-Time Transfer）实时看协议栈内部的收发日志、ARP 解析过程、TCP 状态迁移等信息。发布时关掉日志 feature 可以省几 KB Flash 和不少运行时开销。
+注意：embassy-net 通常不能运行时改 IP/路由，切换 DHCP↔静态往往要重建 Stack（借用检查限制）。开发开 `log`/`defmt` 看收发与 TCP 状态；发布关掉可省 Flash。
 
 ## 踩过的坑
 
@@ -101,7 +100,7 @@ async fn main(spawner: Spawner) {
 
 **不太适合**：需要完整网络功能的 Linux 级设备（用 Linux 自带的 TCP/IP 栈更合适，见 [[openwrt]]）；需要 PPP/PPPoE 拨号上网的场景（smoltcp 不支持）；需要 IPsec/TLS 加密传输（smoltcp 只到传输层，TLS 需要额外的 crate 如 `embedded-tls` 或 `rustls` 的 no_std 版本）；需要同时维持数百个并发连接的高并发服务器（受限于预分配缓冲区模型）。
 
-与 lwIP 对比：lwIP 支持多线程模型（有内核线程版 tcpip_thread），smoltcp 纯单线程事件驱动。lwIP 需要 `pbuf` 内存池管理（本质是简易堆），smoltcp 零堆分配。lwIP 功能更全（PPP、SNMP、mDNS、MQTT 等），smoltcp 功能覆盖面更窄但核心协议完整。lwIP 代码约 4 万行 C，smoltcp 约 2 万行 Rust——后者靠类型系统省去了大量防御性检查代码。性能方面两者在相同硬件上吞吐量接近，不是选型决定因素。
+与 lwIP 对比：lwIP 支持多线程模型（有内核线程版 tcpip_thread），smoltcp 纯单线程事件驱动。lwIP 需要 `pbuf` 内存池管理（本质是简易堆），smoltcp 零堆分配。lwIP 功能更全（PPP、SNMP、mDNS 等）；smoltcp 核心协议完整，但 **SACK 等高级 TCP 选项仍缺**，选型时要核对上游 README。性能两者接近，通常不是决定因素。
 
 如果项目已在 [[nuttx]]/FreeRTOS 上跑 C，切到 smoltcp 收益不大——迁移成本高于收益。但 Rust 嵌入式新项目几乎是唯一合理选择。
 
