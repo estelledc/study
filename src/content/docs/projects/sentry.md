@@ -115,7 +115,7 @@ Sentry.init({
 
 ## 踩过的坑
 
-1. **PII 默认会被上报**：用户邮箱、IP、cookie 这些『可识别个人信息』如果不脱敏直接进 event，公司一旦走 GDPR 审计就会出事。修法：`sentry_sdk.init(send_default_pii=False)` + 在 SDK 端自己 hook `before_send` 过滤敏感字段。
+1. **PII 仍可能从业务侧漏进 event**：现行 SDK 默认 `send_default_pii` 关闭，不会主动塞邮箱/IP/cookie；但你自己 `set_user`、打日志、面包屑里仍可能带上。修法：保持默认关闭、勿盲目开 `True`，并用 `before_send` 过滤敏感字段。
 
 2. **前端忘传 source maps**：上线后看到的堆栈是 `t.x at app.min.js:1:9374`，根本不知道哪行代码。原因：浏览器只有压缩后的 JS，源码到压缩的映射只在你打包机器上。修法：CI 加一步 `sentry-cli sourcemaps upload`。
 
