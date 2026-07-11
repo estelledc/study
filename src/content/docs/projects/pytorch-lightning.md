@@ -13,6 +13,7 @@ PyTorch Lightning 是一个**把 PyTorch 训练里"工程代码"和"研究代码
 你写：
 
 ```python
+import torch
 import pytorch_lightning as pl
 
 class MyModel(pl.LightningModule):
@@ -34,9 +35,9 @@ trainer.fit(model, dataloader)
 
 不理解 Lightning，下面这些事都没法解释：
 
-- 为什么 2020 年后**论文复现仓库一半是 LightningModule**——审稿人看代码结构一致，省精力
+- 为什么 2020 年后**相当一部分论文复现仓库采用 LightningModule 结构**——审稿人看代码结构一致，省精力
 - 为什么"研究代码上生产"过去要重写一遍，现在只需把 `Trainer` 参数从 `devices=1` 改成 `devices=8, strategy='ddp'`
-- 为什么 HuggingFace、NVIDIA NeMo、PyTorch Geometric 等上游库都内置 Lightning 适配
+- 为什么 NVIDIA NeMo、PyTorch Geometric 等上游库常提供 Lightning 适配或示例
 - 为什么 2.0 又拆出 **Fabric**——承认"全收口的 Trainer 不适合所有人"，提供半自动选项
 
 ## 核心要点
@@ -71,6 +72,9 @@ for epoch in range(10):
 Lightning 版本（device / zero_grad / backward / step 全没了）：
 
 ```python
+import torch
+import pytorch_lightning as pl
+
 class M(pl.LightningModule):
     def training_step(self, batch, idx):
         x, y = batch
@@ -138,7 +142,7 @@ trainer = pl.Trainer(callbacks=[
 - **2020 年**：1.0 发布，公司 Grid AI 成立做云训练平台，Lightning 是开源前端
 - **2022 年**：Grid AI 改名 **Lightning AI**，框架升级 Lightning 2.0 路线图
 - **2023-03**：Lightning 2.0 发布，重写 Trainer，**Lightning Fabric** 作为底层 API 单独发布，`torch.compile` 一等公民
-- **现在**：~29k stars，HuggingFace、NVIDIA NeMo、PyTorch Geometric 等上游内置 Lightning 适配
+- **现在**：~29k stars，NVIDIA NeMo、PyTorch Geometric 等上游常提供 Lightning 适配或示例
 
 ## 学到什么
 
@@ -146,7 +150,7 @@ trainer = pl.Trainer(callbacks=[
 2. **"约定优于配置"再次胜利**——所有 LightningModule 长得一样，让大型项目协作和论文复现的认知负担骤降
 3. **2.0 引入 Fabric 是一次妥协**——承认"完全包住 for 循环"挡住了部分用户（强化学习 / 自定义采样），需要分层抽象
 4. **API 命名稳定性 >> 功能丰富度**——Lightning 早期 hook 改名带走一批用户，后来吸取教训保持兼容
-5. **生态比框架重要**——Lightning 真正护城河不是技术而是 callback 生态 + 上游适配（HuggingFace 直接给 LightningTrainer）
+5. **生态比框架重要**——Lightning 真正护城河不是技术而是 callback 生态 + 上游适配（多家库提供 Lightning 示例/集成，而非取代各自 Trainer）
 
 ## 延伸阅读
 

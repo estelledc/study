@@ -53,19 +53,22 @@ PyTorch 的能力可以拆成 **四层**：
 import torch
 from torch import nn
 
+# 假数据：假装已有 dataloader，每步给一对 (x, y)
+x = torch.randn(8, 10)
+y = torch.randn(8, 1)
+
 model = nn.Sequential(nn.Linear(10, 32), nn.ReLU(), nn.Linear(32, 1))
 opt = torch.optim.Adam(model.parameters(), lr=1e-3)
 loss_fn = nn.MSELoss()
 
-for x, y in dataloader:
-    pred = model(x)
-    loss = loss_fn(pred, y)
-    opt.zero_grad()      # 清掉上一轮的梯度
-    loss.backward()      # 反向传播
-    opt.step()           # 用梯度更新参数
+pred = model(x)
+loss = loss_fn(pred, y)
+opt.zero_grad()      # 清掉上一轮的梯度
+loss.backward()      # 反向传播
+opt.step()           # 用梯度更新参数
 ```
 
-这 6 行就是**所有 PyTorch 训练**的骨架。`forward → loss → backward → step`，循环到收敛。
+这几行就是**所有 PyTorch 训练**的骨架。`forward → loss → backward → step`，套进 `for` 循环到收敛。
 
 ### 案例 2：动态图的威力——`if` 分支随便用
 
@@ -152,76 +155,4 @@ PyTorch 2.0+ 把 forward 抓成图，TorchInductor 生成 Triton kernel，常见
 ## 反向链接
 
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-
-- [[abadi-dpsgd-2016]] —— DP-SGD 2016 — 给深度学习训练加上差分隐私保护
-- [[accelerate]] —— Accelerate — HuggingFace 设备/分布式抽象
-- [[adam-2014]] —— Adam — 让深度学习自己挑步长的优化器
-- [[adamw-2017]] —— AdamW — 把 weight decay 从梯度里拆出来
-- [[axolotl]] —— Axolotl — YAML 驱动 LLM 微调
-- [[bentoml]] —— BentoML — 模型打包部署
-- [[candle]] —— Candle — HuggingFace 出品的 Rust 推理框架
-- [[captum]] —— Captum — 给 PyTorch 模型装上 X 光机
-- [[clearml]] —— ClearML — 自托管 MLOps 套件
-- [[colossal-ai]] —— Colossal-AI — 大模型训练系统
-- [[comfyui]] —— ComfyUI — 节点式扩散模型 GUI
-- [[coqui-tts]] —— Coqui TTS — 多语种 TTS 工具包
-- [[cudnn-2014]] —— cuDNN — 把卷积写成矩阵乘，让所有深度学习框架共享底层加速
-- [[deepspeed]] —— DeepSpeed — 微软分布式训练库
-- [[dlrm-2019]] —— DLRM — Meta 把工业推荐模型拆成 4 个标准积木
-- [[dspy]] —— DSPy — 把 prompt 写成签名，让编译器替你调
-- [[fastai]] —— fastai — 三行代码做迁移学习
-- [[faster-whisper]] —— faster-whisper — Whisper 的 4× 加速重写版
-- [[fermi-architecture-2010]] —— NVIDIA Fermi — 把 GPU 从游戏卡推上超算
-- [[flax]] —— Flax — JAX 上的神经网络库
-- [[fsdp-2023]] —— PyTorch FSDP — 把大模型切成 N 份分到 N 张卡
-- [[gcn-2017]] —— GCN 2017 — 把卷积搬到图结构上的最简版本
-- [[graphsage-2017]] —— GraphSAGE 2017 — 给没见过的节点也能算嵌入
-- [[hindley-milner]] —— Hindley-Milner — 编译器自己猜变量类型
-- [[invokeai]] —— InvokeAI — 工业级 Stable Diffusion 工具
-- [[jax]] —— JAX — Google 函数式数值计算
-- [[kairouz-advances-fl-2019]] —— Kairouz 2019 — 联邦学习 58 个开放问题路线图
-- [[kepler-architecture-2012]] —— NVIDIA Kepler — 把 GPU 调成深度学习训练默认机型
-- [[keras]] —— Keras 3 — 一份模型代码跑三套后端
-- [[lambda-calculus]] —— λ-演算 — 用三条规则表达所有可计算函数
-- [[li-2018-redner]] —— redner — 让光线追踪能反向传播过几何边缘
-- [[lindholm-2008-tesla]] —— Lindholm 2008 Tesla — SM、warp、SIMT 这套词汇的官方出生证明
-- [[llama-cpp]] —— llama.cpp — 让 LLM 在你电脑里直接跑
-- [[llvm]] —— LLVM — 模块化编译器框架
-- [[maxwell-architecture-2014]] —— NVIDIA Maxwell — 同一工艺节点把性能每瓦翻一倍
-- [[mcmahan-fedavg-2017]] —— FedAvg 2017 — 让手机本地训练模型再上传平均值
-- [[megatron-lm]] —— Megatron-LM — NVIDIA 张量并行库
-- [[metaflow]] —— Metaflow — Netflix 给数据科学家的 Python 流水线
-- [[mlflow]] —— MLflow — 端到端 ML 生命周期
-- [[mlx]] —— MLX — Apple Silicon 统一内存原生 ML 框架
-- [[mueller-2022-instant-ngp]] —— Instant-NGP — 把 NeRF 训练从几小时压到 5 秒
-- [[nerf-2020]] —— NeRF — 用一个 MLP 把整个场景"背"下来
-- [[neumf-2017]] —— NeuMF — 用神经网络替掉推荐系统的内积
-- [[nvidia-gpu-operator]] —— NVIDIA GPU Operator — K8s 上自动装 GPU 软件栈
-- [[open-sora]] —— Open-Sora — 把 Sora 黑盒一比一开源的视频生成项目
-- [[opencl-2010]] —— OpenCL 2010 — 一份代码同时跑 CPU/GPU/DSP/FPGA 的开放标准
-- [[optax]] —— Optax — JAX 优化器组合库
-- [[optuna]] —— Optuna — 让超参搜索像写普通 Python 代码一样自然
-- [[paddleocr]] —— PaddleOCR — 中文 OCR 最强开源方案
-- [[panda3d]] —— Panda3D — 用 Python 写 3D 游戏的老牌引擎
-- [[park-2019-deepsdf]] —— DeepSDF — 用一个 MLP 把整类 3D 形状的距离场背下来
-- [[pascal-architecture-2016]] —— NVIDIA Pascal P100 — HBM2 + NVLink + FP16 让 Tesla 真正变成 AI 卡
-- [[pipedream-2019]] —— PipeDream — 1F1B 调度让流水线工位别空等
-- [[piper]] —— Piper — 端侧低延迟 TTS
-- [[plenoxels-2022]] —— Plenoxels — 不要神经网络也能渲染辐射场
-- [[ps-li-2014]] —— Parameter Server — 多机训练前 AllReduce 时代的工业标准
-- [[pytorch-lightning]] —— PyTorch Lightning — PyTorch 训练循环抽象
-- [[ray]] —— Ray — 把单机 Python 函数和类无缝扩展到整个集群
-- [[ring-allreduce-2017]] —— Ring All-Reduce — 把 HPC 的环形规约搬进深度学习
-- [[sglang]] —— SGLang — 结构化推理运行时
-- [[shap]] —— SHAP — 用博弈论给每个特征发工资
-- [[ssa]] —— SSA — 静态单赋值形式
-- [[stable-diffusion-webui]] —— AUTOMATIC1111 SD WebUI — 把 Stable Diffusion 装进浏览器
-- [[taso-2019]] —— TASO — 让机器自己发现深度学习图重写规则
-- [[tensorflow]] —— TensorFlow — Google 端到端 DL 平台
-- [[tensorflow-osdi-2016]] —— TensorFlow — 把神经网络拆成数据流图再跑到任何机器上
-- [[tesla-architecture-2008]] —— NVIDIA Tesla — 把显卡改造成通用并行计算机
-- [[torchtune]] —— torchtune — PyTorch 官方 LLM 微调库
-- [[trl]] —— TRL — RLHF / DPO / GRPO 训练库
-- [[wandb]] —— Weights & Biases — 几行 init 把指标系统代码自动入库
-- [[whisper]] —— Whisper — OpenAI 多语言 ASR
 
