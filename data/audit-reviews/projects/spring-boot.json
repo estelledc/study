@@ -1,0 +1,143 @@
+{
+  "slug": "spring-boot",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "精装房 / 餐厅套餐类比贴合，三件套好记"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 都有「逐部分解释」，零基础能跟住 Hello/JPA/Actuator"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 spring.factories / @ConditionalOn* 可再补半句日常类比（「菜单上有这道菜才上桌」）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Spring Boot 4.0 GA 是 2025-11-20，不是「2026 年 4 月」；请改正年份"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「冷启动从秒级压到毫秒级」对普通 JVM/native 都过满，宜弱化为 native-image 改善冷启动"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Boot 3+ 自动装配入口主要是 META-INF/spring/…AutoConfiguration.imports，不宜只写 spring.factories；CVE-2022-22965（Spring4Shell）主因是数据绑定，勿写成 Actuator 暴露专属"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Hello / JpaRepository / Actuator YAML 概念正确，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "dependency:tree、--debug AUTO-CONFIGURATION REPORT、/actuator/env 等坑可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界有量化（200MB+ 堆、FaaS 冷启动）；全文超 200 行需压缩反向链接外的冗长句，否则 quality-gate 不过"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "精装房 / 餐厅套餐类比贴合，三件套好记",
+        "案例 1–3 都有「逐部分解释」，零基础能跟住 Hello/JPA/Actuator",
+        "核心要点里 spring.factories / @ConditionalOn* 可再补半句日常类比（「菜单上有这道菜才上桌」）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Spring Boot 4.0 GA 是 2025-11-20，不是「2026 年 4 月」；请改正年份",
+        "「冷启动从秒级压到毫秒级」对普通 JVM/native 都过满，宜弱化为 native-image 改善冷启动",
+        "Boot 3+ 自动装配入口主要是 META-INF/spring/…AutoConfiguration.imports，不宜只写 spring.factories；CVE-2022-22965（Spring4Shell）主因是数据绑定，勿写成 Actuator 暴露专属"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "Hello / JpaRepository / Actuator YAML 概念正确，可跟做",
+        "dependency:tree、--debug AUTO-CONFIGURATION REPORT、/actuator/env 等坑可操作",
+        "适用边界有量化（200MB+ 堆、FaaS 冷启动）；全文超 200 行需压缩反向链接外的冗长句，否则 quality-gate 不过"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：改正 Boot 4.0 为 2025-11；弱化毫秒级冷启动；AutoConfiguration.imports；拆开 Spring4Shell 与 Actuator；压行数过 gate。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic needs-refine：改正 Boot 4.0 为 2025-11；弱化毫秒级冷启动；AutoConfiguration.imports；拆开 Spring4Shell 与 Actuator；压行数过 gate。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 实践案例",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 154,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

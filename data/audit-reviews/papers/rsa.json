@@ -1,0 +1,141 @@
+{
+  "slug": "rsa",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "邮箱投递口类比贴合，公钥贴公告板也好懂"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "φ(n)、扩展欧几里得、欧拉定理首次出现时桥接偏短，零基础可能卡在「d 怎么算出来」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 应补一句「为什么 7×103≡1 (mod 120)」的白话；案例 3 JWT 缺最小代码/伪代码，建议补 3 行示意签名拼装"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "CACM 1978 来源、1977 发明、2002 图灵奖、RSA-129/1994、专利 2000 到期均合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教科书 RSA 与 OAEP/PSS 坑写清楚，未把裸公式当成生产方案"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「1024 数小时可分解」「2030 前联邦必须迁移」偏修辞；NIST 正式名已是 ML-KEM/ML-DSA，Kyber/Dilithium 可作曾用名保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "toy 模运算与 OpenSSL genrsa/dgst 流程可跟做；JWT 案例偏概念，补伪代码更稳"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "混合加密、OAEP/PSS、密钥长度、RNG、量子迁移等坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：大文件走混合加密、高频签名走 Ed25519、长期机密走 PQC"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "邮箱投递口类比贴合，公钥贴公告板也好懂",
+        "φ(n)、扩展欧几里得、欧拉定理首次出现时桥接偏短，零基础可能卡在「d 怎么算出来」",
+        "案例 1 应补一句「为什么 7×103≡1 (mod 120)」的白话；案例 3 JWT 缺最小代码/伪代码，建议补 3 行示意签名拼装"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "CACM 1978 来源、1977 发明、2002 图灵奖、RSA-129/1994、专利 2000 到期均合理",
+        "教科书 RSA 与 OAEP/PSS 坑写清楚，未把裸公式当成生产方案",
+        "「1024 数小时可分解」「2030 前联邦必须迁移」偏修辞；NIST 正式名已是 ML-KEM/ML-DSA，Kyber/Dilithium 可作曾用名保留"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "toy 模运算与 OpenSSL genrsa/dgst 流程可跟做；JWT 案例偏概念，补伪代码更稳",
+        "混合加密、OAEP/PSS、密钥长度、RNG、量子迁移等坑具体可操作",
+        "适用/不适用边界清楚：大文件走混合加密、高频签名走 Ed25519、长期机密走 PQC"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "zero-base needs-refine：补 φ(n)/d 白话与 JWT 伪代码；顺带弱化 1024/2030 修辞并更新 PQC 正式名。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "zero-base needs-refine：补 φ(n)/d 白话与 JWT 伪代码；顺带弱化 1024/2030 修辞并更新 PQC 正式名。",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
