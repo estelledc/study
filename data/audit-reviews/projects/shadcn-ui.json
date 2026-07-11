@@ -1,0 +1,143 @@
+{
+  "slug": "shadcn-ui",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "外卖 vs 菜谱类比把『包』和『源码协议』讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Zod / Kahn 拓扑 / ts-morph 在 CLI 九步里有语境，基本可跟；可再各加半句白话（校验形状 / 排依赖顺序 / 改配置文件）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例具体可跟：init→add button、改 --primary、自建 registry JSON"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 4 自相矛盾：既说『默认会覆盖』又说『需要 --overwrite 显式确认』；实际 CLI 遇已有文件会提示，--overwrite 才跳过确认强制覆盖"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "『根本没有 npm 包』略绝对——没有的是组件运行时包，CLI 本身仍是 npm 上的 shadcn 包；可弱化表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/shadcn-ui/ui、registry schema、React 19 ref-as-prop / v4 时间线与官方叙事一致；教学简化可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–3 命令与 JSON 可跟做；registryDependencies 拉 utils 的递归行为描述正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 4 覆盖行为写错/写糊：应改成『已有文件会提示；加 --overwrite 或确认后本地魔改会被冲掉』，避免『无声无息』误导"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（own 源码 / MUI 双体系 / 非 React-Tailwind / Node-only CLI）；可再点明升级=重跑 add 的同步成本"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "外卖 vs 菜谱类比把『包』和『源码协议』讲透，零基础直觉强",
+        "Zod / Kahn 拓扑 / ts-morph 在 CLI 九步里有语境，基本可跟；可再各加半句白话（校验形状 / 排依赖顺序 / 改配置文件）",
+        "三案例具体可跟：init→add button、改 --primary、自建 registry JSON"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 4 自相矛盾：既说『默认会覆盖』又说『需要 --overwrite 显式确认』；实际 CLI 遇已有文件会提示，--overwrite 才跳过确认强制覆盖",
+        "『根本没有 npm 包』略绝对——没有的是组件运行时包，CLI 本身仍是 npm 上的 shadcn 包；可弱化表述",
+        "来源 github.com/shadcn-ui/ui、registry schema、React 19 ref-as-prop / v4 时间线与官方叙事一致；教学简化可接受"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例 1–3 命令与 JSON 可跟做；registryDependencies 拉 utils 的递归行为描述正确",
+        "踩坑 4 覆盖行为写错/写糊：应改成『已有文件会提示；加 --overwrite 或确认后本地魔改会被冲掉』，避免『无声无息』误导",
+        "适用/不适用边界清楚（own 源码 / MUI 双体系 / 非 React-Tailwind / Node-only CLI）；可再点明升级=重跑 add 的同步成本"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "修正覆盖/--overwrite 踩坑表述；弱化「没有 npm 包」；Zod/Kahn/ts-morph 白话桥接；适用补升级同步成本",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 168,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 168,
+  "l1_pass": true
+}
