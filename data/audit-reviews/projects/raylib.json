@@ -32,11 +32,11 @@
     },
     {
       "reviewer": "zero-base",
-      "hint": "三案例都有逐部分解释；案例 2 片段依赖 screenWidth 上下文，跟做略费劲"
+      "hint": "三案例都有逐部分解释；案例 2 片段依赖 screenWidth 上下文，跟做略费劲但不挡理解"
     },
     {
       "reviewer": "academic",
-      "hint": "1.0（2013-11）、1.1/rlgl（2014）、1.3 shader/camera/raygui（2015）、physac/音频演进（2016）与 HISTORY 一致"
+      "hint": "1.0（2013-11）、1.1/rlgl（2014）、摄像机/shader/raygui/音频演进与官方 HISTORY 量级一致"
     },
     {
       "reviewer": "academic",
@@ -44,7 +44,7 @@
     },
     {
       "reviewer": "academic",
-      "hint": "FAQ 定位 graphics library 非完整引擎，未歪曲；『2015-2016 更多平台』略宽（Android/RPi/Web 主在 2014）但不构成硬伤"
+      "hint": "FAQ 定位 graphics library 非完整引擎，未歪曲；『2015-2016 更多平台』略宽但不构成硬伤"
     },
     {
       "reviewer": "engineer",
@@ -56,7 +56,7 @@
     },
     {
       "reviewer": "engineer",
-      "hint": "适用教学/jam/小 2D·3D 原型 vs 要编辑器管线/现代底层 API——边界清楚，量化可再紧一点"
+      "hint": "适用教学/jam/小 2D·3D 原型 vs 要编辑器管线/现代底层 API——边界清楚"
     }
   ],
   "reviews": [
@@ -73,7 +73,7 @@
       "fix_hints": [
         "马克笔/白纸、翻页书、工具箱、厨房器具类比贯穿全文，零基础友好",
         "InitWindow / game loop / Camera2D / MusicStream 均有白话桥接；世界坐标仍稍密",
-        "三案例都有逐部分解释；案例 2 片段依赖 screenWidth 上下文，跟做略费劲"
+        "三案例都有逐部分解释；案例 2 片段依赖 screenWidth 上下文，跟做略费劲但不挡理解"
       ]
     },
     {
@@ -87,9 +87,9 @@
       "verdict": "pass",
       "weakest_section": "## 历史小故事",
       "fix_hints": [
-        "1.0（2013-11）、1.1/rlgl（2014）、1.3 shader/camera/raygui（2015）、physac/音频演进（2016）与 HISTORY 一致",
+        "1.0（2013-11）、1.1/rlgl（2014）、摄像机/shader/raygui/音频演进与官方 HISTORY 量级一致",
         "来源 raysan5/raylib 合理；『三万多 stars / 140+ examples / 70+ bindings』与 README 量级相符",
-        "FAQ 定位 graphics library 非完整引擎，未歪曲；『2015-2016 更多平台』略宽（Android/RPi/Web 主在 2014）但不构成硬伤"
+        "FAQ 定位 graphics library 非完整引擎，未歪曲；『2015-2016 更多平台』略宽但不构成硬伤"
       ]
     },
     {
@@ -105,13 +105,15 @@
       "fix_hints": [
         "是什么段完整可编译骨架正确；案例摘自官方 basic window / core_2d_camera / audio_music_stream，概念可跟",
         "踩坑具体：当引擎用、忘 UpdateMusicStream、不 Unload、只看 cheatsheet——可操作",
-        "适用教学/jam/小 2D·3D 原型 vs 要编辑器管线/现代底层 API——边界清楚，量化可再紧一点"
+        "适用教学/jam/小 2D·3D 原型 vs 要编辑器管线/现代底层 API——边界清楚"
       ]
     }
   ],
   "slug": "raylib",
   "area": "projects",
   "status": "passed",
+  "lines": 199,
+  "l1_pass": true,
   "aggregate": {
     "average": 4.33,
     "verdict": "pass",
@@ -120,18 +122,16 @@
     "needs_refine": 0,
     "all_pass": true
   },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，平均 4.33 ≥ 4.0，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
   "quality_gate": {
     "pass": true,
     "lines": 199,
     "l1_pass": true,
     "reasons": []
   },
-  "lines": 199,
-  "l1_pass": true
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，平均 ≥ 4.0，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
 }

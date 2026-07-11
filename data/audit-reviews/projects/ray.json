@@ -1,19 +1,19 @@
 {
   "action": "refine",
-  "average": 3.89,
+  "average": 4.22,
   "reject_count": 0,
-  "needs_refine_count": 3,
-  "pass_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
       "section": "## 实践案例",
-      "verdict": "needs-refine"
+      "verdict": "pass"
     },
     {
       "reviewer": "academic",
       "section": "## 历史小故事",
-      "verdict": "needs-refine"
+      "verdict": "pass"
     },
     {
       "reviewer": "engineer",
@@ -24,39 +24,39 @@
   "fix_hints": [
     {
       "reviewer": "zero-base",
-      "hint": "案例 2 直接抛 ParamServer 代码，缺『起 actor → worker 拉权重 → 回传梯度』的分步白话"
+      "hint": "人才中介所类比贯穿 task/actor，取货单号桥接 ObjectRef，零基础直觉强"
     },
     {
       "reviewer": "zero-base",
-      "hint": "案例 3 Tune 一行带过，应拆成：定义 train_fn → 搜参空间 → ASHA 早停 三步"
+      "hint": "GCS / Raylet / placement group / Plasma 均有白话；核心要点后半仍偏密但可跟"
     },
     {
       "reviewer": "zero-base",
-      "hint": "核心要点里 ObjectRef / placement group 首次出现偏密，可各补半句日常桥接"
+      "hint": "三案例都有①②③分步；案例 2 parameter server 流程清楚，案例 3 ASHA 早停有白话"
     },
     {
       "reviewer": "academic",
-      "hint": "Ray 1.0 于 2020-09-30 宣布（Anyscale / Ray Summit），不是 2021；历史段应改为 2020"
+      "hint": "OSDI 2018 Moritz 等论文、docs.ray.io 来源与 Anyscale 2019 时间线合理"
     },
     {
       "reviewer": "academic",
-      "hint": "『OpenAI 训 GPT』偏绝对；宜弱化为『OpenAI 等大规模训练/服务场景采用 Ray』并保留 Uber/Pinterest 等公开案例"
+      "hint": "Ray 1.0 写为 2020-09-30 Ray Summit 宣布，与公开叙述一致；对象存储注明曾称 Plasma"
     },
     {
       "reviewer": "academic",
-      "hint": "OSDI 2018 论文与 docs.ray.io 来源合理；Plasma 现多称 object store，可注明『曾称 Plasma』以免过时"
+      "hint": "OpenAI/Uber/Pinterest 等表述已弱化为公开采用规模化 Python 计算，未写成『训 GPT』绝对化；2024–2025 能力点属软概括可接受"
     },
     {
       "reviewer": "engineer",
-      "hint": "案例 1 缺 import numpy / ray.init 上下文；应补最小可跟做骨架或注明沿用文首 init"
+      "hint": "案例 3 写 tune.schedulers.ASHAScheduler：from ray import tune 后通常没有 schedulers 属性，应改为 from ray.tune.schedulers import ASHAScheduler 再传入"
     },
     {
       "reviewer": "engineer",
-      "hint": "案例 2 的 init_weights、compute_grad 未定义，读者无法跟做；给 stub 或伪实现"
+      "hint": "案例 1 注明沿用文首 ray.init 可接受；案例 2 compute_grad stub 足够跟做概念"
     },
     {
       "reviewer": "engineer",
-      "hint": "案例 3 tune.run 可用，但 train_fn 应给最小签名（config→metric）以免 API 悬空"
+      "hint": "踩坑具体可操作（串行 get、对象存储 70%、actor 非 DB）；适用/不适用边界清楚，单机秒级开销有量化"
     }
   ],
   "reviews": [
@@ -65,31 +65,31 @@
       "scores": {
         "analogy": 5,
         "accessibility": 4,
-        "case_clarity": 3
+        "case_clarity": 4
       },
-      "average": 4,
-      "verdict": "needs-refine",
+      "average": 4.33,
+      "verdict": "pass",
       "weakest_section": "## 实践案例",
       "fix_hints": [
-        "案例 2 直接抛 ParamServer 代码，缺『起 actor → worker 拉权重 → 回传梯度』的分步白话",
-        "案例 3 Tune 一行带过，应拆成：定义 train_fn → 搜参空间 → ASHA 早停 三步",
-        "核心要点里 ObjectRef / placement group 首次出现偏密，可各补半句日常桥接"
+        "人才中介所类比贯穿 task/actor，取货单号桥接 ObjectRef，零基础直觉强",
+        "GCS / Raylet / placement group / Plasma 均有白话；核心要点后半仍偏密但可跟",
+        "三案例都有①②③分步；案例 2 parameter server 流程清楚，案例 3 ASHA 早停有白话"
       ]
     },
     {
       "reviewer": "academic",
       "scores": {
-        "fact_accuracy": 3,
-        "citation_correctness": 4,
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
         "no_distortion": 4
       },
-      "average": 3.67,
-      "verdict": "needs-refine",
+      "average": 4.33,
+      "verdict": "pass",
       "weakest_section": "## 历史小故事",
       "fix_hints": [
-        "Ray 1.0 于 2020-09-30 宣布（Anyscale / Ray Summit），不是 2021；历史段应改为 2020",
-        "『OpenAI 训 GPT』偏绝对；宜弱化为『OpenAI 等大规模训练/服务场景采用 Ray』并保留 Uber/Pinterest 等公开案例",
-        "OSDI 2018 论文与 docs.ray.io 来源合理；Plasma 现多称 object store，可注明『曾称 Plasma』以免过时"
+        "OSDI 2018 Moritz 等论文、docs.ray.io 来源与 Anyscale 2019 时间线合理",
+        "Ray 1.0 写为 2020-09-30 Ray Summit 宣布，与公开叙述一致；对象存储注明曾称 Plasma",
+        "OpenAI/Uber/Pinterest 等表述已弱化为公开采用规模化 Python 计算，未写成『训 GPT』绝对化；2024–2025 能力点属软概括可接受"
       ]
     },
     {
@@ -103,41 +103,37 @@
       "verdict": "needs-refine",
       "weakest_section": "## 实践案例",
       "fix_hints": [
-        "案例 1 缺 import numpy / ray.init 上下文；应补最小可跟做骨架或注明沿用文首 init",
-        "案例 2 的 init_weights、compute_grad 未定义，读者无法跟做；给 stub 或伪实现",
-        "案例 3 tune.run 可用，但 train_fn 应给最小签名（config→metric）以免 API 悬空"
+        "案例 3 写 tune.schedulers.ASHAScheduler：from ray import tune 后通常没有 schedulers 属性，应改为 from ray.tune.schedulers import ASHAScheduler 再传入",
+        "案例 1 注明沿用文首 ray.init 可接受；案例 2 compute_grad stub 足够跟做概念",
+        "踩坑具体可操作（串行 get、对象存储 70%、actor 非 DB）；适用/不适用边界清楚，单机秒级开销有量化"
       ]
     }
   ],
   "slug": "ray",
   "area": "projects",
   "status": "refined",
-  "lines": 192,
+  "lines": 193,
   "l1_pass": true,
   "aggregate": {
-    "average": 3.89,
+    "average": 4.22,
     "verdict": "refine",
     "action": "refine",
     "rejects": 0,
-    "needs_refine": 3,
+    "needs_refine": 1,
     "all_pass": false
   },
   "quality_gate": {
     "pass": true,
-    "lines": 192,
+    "lines": 193,
     "l1_pass": true,
     "reasons": []
   },
   "refinement": {
     "action": "refine",
     "round": 1,
-    "reason": "纠 Ray 1.0 年份 2020；弱化 OpenAI 表述；案例补分步与 stub；ObjectRef/Plasma/placement group 桥接；补反向链接",
+    "reason": "engineer needs-refine：案例 3 ASHAScheduler 改为 from ray.tune.schedulers import ASHAScheduler",
     "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事",
-      "## 反向链接"
+      "## 实践案例"
     ],
     "unresolved_hints": []
   }

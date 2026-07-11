@@ -118,6 +118,7 @@ print(ray.get([worker.remote(ps, b) for b in batches]))
 
 ```python
 from ray import tune
+from ray.tune.schedulers import ASHAScheduler
 
 def train_fn(config):
     # stub：真实场景换成模型训练；这里用假 loss 演示
@@ -127,7 +128,7 @@ tune.run(
     train_fn,
     config={"lr": tune.loguniform(1e-4, 1e-1)},
     num_samples=20,
-    scheduler=tune.schedulers.ASHAScheduler(metric="score", mode="max"),
+    scheduler=ASHAScheduler(metric="score", mode="max"),
 )
 ```
 
