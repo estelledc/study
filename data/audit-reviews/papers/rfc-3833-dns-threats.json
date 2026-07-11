@@ -1,7 +1,4 @@
 {
-  "slug": "rfc-3833-dns-threats",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -81,32 +78,5 @@
         "案例 1 攻击流程可补一句「真实 Kaminsky 还依赖当时源端口可预测/未随机化」，避免读者以为只猜 16 位 ID 就够。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "修正 §2.2 为 ID 猜测（非生日攻击）；案例 1 补源端口可预测说明与 authority/additional 桥接。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正 §2.2 为 ID 猜测（非生日攻击）；案例 1 补源端口可预测说明与 authority/additional 桥接。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 159,
-  "l1_pass": true
+  ]
 }

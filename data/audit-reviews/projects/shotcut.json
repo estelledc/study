@@ -1,14 +1,9 @@
 {
-  "slug": "shotcut",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
   "needs_refine_count": 0,
   "pass_count": 3,
-  "lines": 154,
-  "l1_pass": true,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
@@ -83,25 +78,5 @@
         "边界对比充分；适用段偏长段落，但不影响可操作性。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

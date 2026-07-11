@@ -1,7 +1,4 @@
 {
-  "slug": "sox",
-  "area": "projects",
-  "status": "passed",
   "action": "pass",
   "average": 4.33,
   "reject_count": 0,
@@ -81,20 +78,5 @@
         "踩坑可补一条：输入文件参数（-r/-c）与效果（rate/channels）位置搞反会导致「以为重采样了其实只改了读法」。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三位 reviewer 均为 pass，且平均分 >= 4。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

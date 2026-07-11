@@ -1,7 +1,4 @@
 {
-  "slug": "rocksdb-2017",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,30 +83,5 @@
         "适用段可补一句生产开启方式：options.level_compaction_dynamic_level_bytes = true（或对应配置项）。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "academic needs-refine：案例 3「数百 PB」夸大、25%→10% 非论文实测数字；其余两位 pass。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正数百 PB/25%→10% 表述；案例 3 拆四步；适用段补 dynamic_level_bytes 开启方式。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 167,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

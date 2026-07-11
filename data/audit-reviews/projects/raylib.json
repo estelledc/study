@@ -108,30 +108,5 @@
         "适用教学/jam/小 2D·3D 原型 vs 要编辑器管线/现代底层 API——边界清楚"
       ]
     }
-  ],
-  "slug": "raylib",
-  "area": "projects",
-  "status": "passed",
-  "lines": 199,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 199,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，平均 ≥ 4.0，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

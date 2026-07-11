@@ -1,7 +1,4 @@
 {
-  "slug": "spine-runtimes",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.67,
   "reject_count": 0,
@@ -112,27 +109,7 @@
       ]
     }
   ],
-  "aggregate": {
-    "average": 4.67,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "academic needs-refine：GitHub stars 3.7k 已过时；其余两位 pass。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "更新 stars 为约 5.2k。",
-    "sections_modified": [
-      "## 是什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 196,
-    "l1_pass": true,
-    "reasons": []
-  }
+  "slug": "spine-runtimes",
+  "area": "projects",
+  "status": "refined"
 }

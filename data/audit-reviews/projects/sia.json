@@ -108,37 +108,5 @@
         "适用边界有冷数据/秒级读延迟/与 Arweave·IPFS·Filecoin 对照；可再点明合约续约运维成本"
       ]
     }
-  ],
-  "slug": "sia",
-  "area": "projects",
-  "status": "refined",
-  "lines": 172,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 172,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refined",
-    "round": 1,
-    "reason": "修复 Blake2b≠SHA-256 硬伤；案例 2/3 补真实 CLI/HTTP 与逐部分解释；弱化共识事故绝对表述。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

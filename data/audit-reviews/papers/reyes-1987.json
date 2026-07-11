@@ -1,7 +1,4 @@
 {
-  "slug": "reyes-1987",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.44,
   "reject_count": 0,
@@ -111,20 +108,5 @@
         "适用/不适用边界清楚：离线电影曲面/位移 vs 实时 GPU 三角 vs 强全局光照 vs 难 bound 的透明体积"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三审全 pass，平均 4.44 ≥ 4.0"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 150,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

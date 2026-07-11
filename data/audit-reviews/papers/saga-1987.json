@@ -1,7 +1,4 @@
 {
-  "slug": "saga-1987",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,30 +83,5 @@
         "适用场景可补一条量化边界：例如「单 saga 步骤数常见 ≤10、单步 P99 <1s；跨组织/跨库且无法 2PC 时优先考虑」。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "zero-base/engineer needs-refine：案例 3 嵌套 try 难读且会双重补偿；适用缺量化边界；academic 仅 CAP 表述偏绝对。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "案例 3 改为线性编排+done 列表倒序补偿；适用补 ≤10 步/P99<1s；弱化 CAP/AP 绝对表述。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

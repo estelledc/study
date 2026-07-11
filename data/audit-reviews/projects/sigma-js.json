@@ -108,35 +108,5 @@
         "适用/不适用边界清楚（上万节点交互 vs cytoscape/react-flow/Cosmograph）；量化门槛可保留"
       ]
     }
-  ],
-  "slug": "sigma-js",
-  "area": "projects",
-  "status": "refined",
-  "lines": 183,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "needs-refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 183,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：graphology 非数据库；案例2补 Sigma 初始化；历史改为 Canvas+WebGL 并更新 Star 口径",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "rsa",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -111,31 +108,5 @@
         "适用/不适用边界清楚：大文件走混合加密、高频签名走 Ed25519、长期机密走 PQC"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "zero-base needs-refine：补 φ(n)/d 白话与 JWT 伪代码；顺带弱化 1024/2030 修辞并更新 PQC 正式名。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "zero-base needs-refine：补 φ(n)/d 白话与 JWT 伪代码；顺带弱化 1024/2030 修辞并更新 PQC 正式名。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

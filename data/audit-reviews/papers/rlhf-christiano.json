@@ -108,40 +108,5 @@
         "适用/不适用有量化（<1000 pair→DPO、可验证奖励 vs 风格礼貌）；冷启动 ensemble 噪声边界清楚"
       ]
     }
-  ],
-  "slug": "rlhf-christiano",
-  "area": "papers",
-  "status": "refined",
-  "lines": 151,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：纠正 ARC 创办年份与 2017 A2C/TRPO（非 PPO）；案例 1/2 补四步；弱化「OpenAI 发明」与 KL 骨架表述",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

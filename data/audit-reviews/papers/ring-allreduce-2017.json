@@ -1,7 +1,4 @@
 {
-  "slug": "ring-allreduce-2017",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -101,32 +98,5 @@
         "案例 2 可注明需 WORLD_SIZE≥2 且各进程同一 process group，否则 init 后单进程看不出 ring。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "修正 NCCL 2.4/tree 年份；对齐 Horovod 88% 基准；弱化「全部基于」；修正案例 4 每步/总量带宽估算；案例 2 注明 WORLD_SIZE。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正 NCCL 2.4/tree 年份；对齐 Horovod 88% 基准；弱化「全部基于」；修正案例 4 每步/总量带宽估算；案例 2 注明 WORLD_SIZE。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

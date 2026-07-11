@@ -1,7 +1,4 @@
 {
-  "slug": "sled",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.33,
   "reject_count": 0,
@@ -111,39 +108,5 @@
         "适用 GB 级/单进程多线程、不适用多进程共享与格式稳定生产路径——边界清楚，可保留"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false,
-    "reason": "三审均 needs-refine：案例无代码、cgo 误用、写放大表述过满"
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "补 3 个可跟做 Rust 案例；cgo→FFI；弱化写放大/工业对标表述；补 epoch/SST 白话桥接",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 相比 bbolt / RocksDB 改了什么",
-      "## 三种放大：混合派的曲线",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 延伸阅读"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 190,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

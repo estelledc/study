@@ -108,34 +108,5 @@
         "适用/不适用边界清楚（~7KB、dashboard vs 全员 React/shadcn）；可再补一句「列表大更新仍要用 For/索引策略」"
       ]
     }
-  ],
-  "slug": "solid",
-  "area": "projects",
-  "status": "refined",
-  "lines": 178,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：案例 2/3 补「读了谁→谁变→谁重跑」三步；弱化 React Compiler / 1.5–3× 硬表述",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 178,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

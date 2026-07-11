@@ -108,37 +108,5 @@
         "适用边界缺量化（如交互热点占比、bundle 敏感页）；Remix 并列易误导，应收紧为 App Router / 明确有 RSC 运行时的框架，并点明纯 SPA / Pages Router / 强离线不适用"
       ]
     }
-  ],
-  "slug": "react-server-components",
-  "area": "papers",
-  "status": "refined",
-  "lines": 170,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 170,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refined",
-    "round": 1,
-    "reason": "三审 needs-refine：统一 Flight/HTML 表述；案例补逐步解释；Next 13.4 稳定节点；收紧 Remix/适用量化；去掉 ADR-5 黑箱",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用",
-      "## 学到什么",
-      "## 历史小故事"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

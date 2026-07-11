@@ -1,7 +1,44 @@
 {
-  "slug": "ravendb",
-  "area": "projects",
-  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "衣柜绑锁类比清楚；实践案例三则有步骤；核心要点 Subscription 片段若 worker 未定义会让跟读者卡住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "v3/v5/v6 年份与 Voron/Corax 并存表述已正确；GitHub star 写约 3.5k 略偏低（现约 4k），宜更新"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "核心要点 §5 Subscription 示例 Create 后直接 worker.Run，worker 未定义，无法跟做；应补 GetSubscriptionWorker（案例 3 已写对，核心要点需对齐）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 ClusterWide 与案例 2/3 可跟做；踩坑与适用边界清楚——保留"
+    }
+  ],
   "reviews": [
     {
       "reviewer": "zero-base",
@@ -47,6 +84,11 @@
       ]
     }
   ],
+  "slug": "ravendb",
+  "area": "projects",
+  "status": "refined",
+  "lines": 198,
+  "l1_pass": true,
   "aggregate": {
     "average": 3.89,
     "reject_count": 0,

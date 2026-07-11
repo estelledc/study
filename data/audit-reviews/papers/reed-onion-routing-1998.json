@@ -108,30 +108,5 @@
         "适用/不适用边界清楚（元数据隐藏 / 全局观察者 / 高吞吐实时）；可再点明多跳延迟与带宽代价的数量级"
       ]
     }
-  ],
-  "slug": "reed-onion-routing-1998",
-  "area": "papers",
-  "status": "passed",
-  "lines": 159,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 159,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

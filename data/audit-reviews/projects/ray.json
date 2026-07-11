@@ -108,33 +108,5 @@
         "踩坑具体可操作（串行 get、对象存储 70%、actor 非 DB）；适用/不适用边界清楚，单机秒级开销有量化"
       ]
     }
-  ],
-  "slug": "ray",
-  "area": "projects",
-  "status": "refined",
-  "lines": 193,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 193,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "engineer needs-refine：案例 3 ASHAScheduler 改为 from ray.tune.schedulers import ASHAScheduler",
-    "sections_modified": [
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

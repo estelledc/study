@@ -108,30 +108,5 @@
         "适用/不适用边界清楚（后量子公钥/FHE vs AES 对称、无参数不上生产、NTRU/SIS/Ring-LWE 各有边界）；可再点明玩具模数 q=7 仅演示"
       ]
     }
-  ],
-  "slug": "regev-lwe-2005",
-  "area": "papers",
-  "status": "passed",
-  "lines": 151,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "none",
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "signal-server",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -111,26 +108,5 @@
         "适用缺量化边界：多设备扇出是 O(设备数) 份密文、待投队列按收件设备存、自架仍暴露元数据；不适用可补「内容审核/服务端搜索与 E2E 互斥」的工程代价一句"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：补案例逐部分解释；修正 OWS/Whisper Systems 年表与 PCD 2017；去掉 Skype 误述；适用补扇出量化与自架元数据边界",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 170,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 170,
-  "l1_pass": true
+  ]
 }

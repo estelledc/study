@@ -1,7 +1,4 @@
 {
-  "slug": "silero-vad",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4,
   "reject_count": 0,
@@ -121,27 +118,5 @@
         "适用/不适用边界量化清楚（diarization/唤醒/情感/音乐）——保留"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：统一 32ms/512 窗；弱化「清一色」；修复 faster-whisper API 与具名解包；案例 2 补加载；案例 3 拆四步",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 173,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 173,
-  "l1_pass": true
+  ]
 }

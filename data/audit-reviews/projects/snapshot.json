@@ -1,7 +1,4 @@
 {
-  "slug": "snapshot",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -86,32 +83,5 @@
         "适用场景可补一条量化边界（如「单次链上投票 Gas 常 >$5–50 时零 Gas 链下投票更划算」），让边界更可操作。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "创始人改为 Fabien Marino；DeFi Summer 年份改为 2021 治理热潮表述；quadratic 案例补三步；适用场景加 Gas 量化边界。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "创始人改为 Fabien Marino；DeFi Summer 年份改为 2021 治理热潮表述；quadratic 案例补三步；适用场景加 Gas 量化边界。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 160,
-  "l1_pass": true
+  ]
 }

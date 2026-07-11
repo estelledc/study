@@ -1,7 +1,4 @@
 {
-  "slug": "soketi",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -86,29 +83,5 @@
         "配了 Redis adapter 后跨节点广播不依赖 sticky；sticky 主要利于 presence/本地连接状态与减 reconnect，案例 2 宜分开写清。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "去掉 PHP Foundation 误述，改为 Laravel 文档自托管选项；拆清 Redis 广播与 sticky 分工；维护状态表述更贴近年份。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "去掉 PHP Foundation 误述，改为 Laravel 文档自托管选项；拆清 Redis 广播与 sticky 分工；维护状态表述更贴近年份。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

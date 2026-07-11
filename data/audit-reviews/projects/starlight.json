@@ -1,7 +1,4 @@
 {
-  "slug": "starlight",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -91,32 +88,5 @@
         "踩坑里「MDX 单引号 props 某些版本会出问题」证据弱，建议删掉或改成更可复现的坑（如 content collection schema / MDX 与 .md 扩展名混用）。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "academic：Claude/Bun 误标为 Starlight、0.1 发布月错误；engineer：Pagefind/Algolia 边界过绝对、MDX 单引号坑证据弱。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "纠正采用方与 0.1 日期；案例 1 补脚手架说明；弱化 Pagefind 边界；MDX 坑改为 .md/.mdx 混用。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 186,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

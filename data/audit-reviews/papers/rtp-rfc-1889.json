@@ -108,31 +108,5 @@
         "适用/不适用边界清楚（实时通话 vs 文件/百万直播/车载 TSN）；可再点明 WebRTC 生产默认 SRTP+ICE"
       ]
     }
-  ],
-  "slug": "rtp-rfc-1889",
-  "area": "papers",
-  "status": "passed",
-  "lines": 160,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "pass",
-    "round": 0,
-    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
-    "sections_modified": [],
-    "unresolved_hints": []
-  }
+  ]
 }

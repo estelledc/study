@@ -1,7 +1,4 @@
 {
-  "slug": "sortablejs",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.33,
   "reject_count": 0,
@@ -81,33 +78,5 @@
         "不适用可补一条量化边界：列表项上千且需虚拟滚动时，SortableJS 直接绑全量 DOM 会卡，应换虚拟列表方案。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "academic needs-refine：改掉「Vue 团队/官方」误称；类比与不适用边界补强。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic needs-refine：改掉「Vue 团队/官方」误称；类比与不适用边界补强。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 158,
-  "l1_pass": true
+  ]
 }

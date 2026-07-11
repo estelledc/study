@@ -1,14 +1,9 @@
 {
-  "slug": "red-1993",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
   "needs_refine_count": 2,
   "pass_count": 1,
-  "lines": 155,
-  "l1_pass": true,
   "weakest_sections": [
     {
       "reviewer": "zero-base",
@@ -98,32 +93,5 @@
         "适用段已区分骨干/家用；若 refine 可把「有 ECN 能力的现代 TCP（Linux 4.x+ 默认开）」改成更可核对的表述（如需显式协商/路径支持）"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "桥接 cwnd/DCTCP/L4S；纠正 RED count 非 per-flow；弱化家用默认 CoDel/ECN 路径表述；补 ## 反向链接",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 155,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

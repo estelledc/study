@@ -108,37 +108,5 @@
         "适用/不适用边界清楚（bash/sh CI vs zsh-only / 运行时 bug / shfmt）；案例 1 的 action tag 用 @master 不稳定，建议钉版本或写「选用维护中的 ShellCheck Action」"
       ]
     }
-  ],
-  "slug": "shellcheck",
-  "area": "projects",
-  "status": "refined",
-  "lines": 156,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 156,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refined",
-    "round": 1,
-    "reason": "三审 needs-refine：案例补 CI 步骤与 SC 读法；弱化「不接即少数」；历史改历史小故事；补反向链接；Action 钉版本",
-    "sections_modified": [
-      "## 实践案例",
-      "## 为什么重要",
-      "## 历史小故事",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "retro",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.67,
   "reject_count": 0,
@@ -116,29 +113,5 @@
         "适用边界清楚（自有 corpus / 知识可换 vs 产品级 RAG / 长上下文 / 多跳）；可补一条量化：检索库规模从 Wikipedia(~4B) 到 MassiveText(~1.7T) 增益持续"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：修正 Pile valid loss 1.85 与 NQ EM/Gopher 硬伤；泄漏表述改为重叠过滤；案例 1 补步骤；案例 3 标明伪代码；术语桥接与万亿规模限定",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 适用 vs 不适用场景",
-      "## 学到什么",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 163,
-  "l1_pass": true
+  ]
 }

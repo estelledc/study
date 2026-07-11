@@ -1,7 +1,4 @@
 {
-  "slug": "rwkv-2023",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -111,28 +108,5 @@
         "适用/不适用边界清楚：端侧/流式/压缩式长文 vs ICL/精确召回/密集 tool-use"
       ]
     }
-  ],
-  "aggregate": {
-    "action": "refine",
-    "average": 4.22,
-    "reject": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "zero-base needs-refine：实践案例缺逐步拆解；academic/engineer pass。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "案例1拆成装模型→对话变长→对比显存三步；案例2补存state→来token→更新→吐字；弱化「几乎都选RWKV」修辞。",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 162,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

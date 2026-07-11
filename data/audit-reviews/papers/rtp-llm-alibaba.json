@@ -108,36 +108,5 @@
         "适用/不适用边界清楚；可再点明短 prompt / 无高速互联时 PD 拆分可能不划算（文中踩坑已有，适用段可呼应一句）"
       ]
     }
-  ],
-  "slug": "rtp-llm-alibaba",
-  "area": "papers",
-  "status": "refined",
-  "lines": 151,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.22,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：修正「几百亿到几百亿」；桥接 TTFT/TPOT/PD-Fusion vs Disaggregation；适用呼应短 prompt PD 亏本",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

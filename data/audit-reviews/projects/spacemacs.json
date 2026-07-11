@@ -108,25 +108,5 @@
         "适用 Vim→Emacs 生态 / 开箱配置；不适用极致启动（Doom）、精确控包、只需写代码（VS Code+Vim）——边界清楚"
       ]
     }
-  ],
-  "slug": "spacemacs",
-  "area": "projects",
-  "status": "passed",
-  "aggregate": {
-    "average": 4.44,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三位 reviewer 均为 pass，平均分 4.44 >= 4。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 189,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 189,
-  "l1_pass": true
+  ]
 }

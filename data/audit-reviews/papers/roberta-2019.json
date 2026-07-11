@@ -1,7 +1,4 @@
 {
-  "slug": "roberta-2019",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.78,
   "reject_count": 0,
@@ -111,34 +108,5 @@
         "缺独立「适用/不适用」边界（何时直接用 RoBERTa 权重 vs 何时该换更大 decoder-only）；建议补量化场景"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false,
-    "reason": "三审均 needs-refine：案例1消融中间行非论文原表；缺适用段与可跟做加载示例；静态mask/NSP表述需收紧。"
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 165,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 165,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refined",
-    "round": 1,
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 学到什么"
-    ],
-    "unresolved_hints": [],
-    "notes": "案例1对齐论文 Table 4（SQuAD2.0/MNLI 累积）；区分 BERT~13GB vs RoBERTa 16GB/160GB；修正静态mask描述并弱化NSP定论；补 HF 微调片段与适用/不适用；压缩学到什么以控行数。"
-  }
+  ]
 }

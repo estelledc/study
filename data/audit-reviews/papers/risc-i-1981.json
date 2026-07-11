@@ -1,7 +1,4 @@
 {
-  "slug": "risc-i-1981",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -112,6 +109,11 @@
       ]
     }
   ],
+  "slug": "risc-i-1981",
+  "area": "papers",
+  "status": "refined",
+  "lines": 164,
+  "l1_pass": true,
   "aggregate": {
     "average": 4.22,
     "verdict": "refine",
@@ -136,7 +138,5 @@
     "lines": 164,
     "l1_pass": true,
     "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true
+  }
 }

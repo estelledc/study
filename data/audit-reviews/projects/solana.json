@@ -1,7 +1,4 @@
 {
-  "slug": "solana",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -112,6 +109,11 @@
       ]
     }
   ],
+  "slug": "solana",
+  "area": "projects",
+  "status": "refined",
+  "lines": 180,
+  "l1_pass": true,
   "aggregate": {
     "average": 4.11,
     "verdict": "refine",
@@ -136,7 +138,5 @@
     "lines": 180,
     "l1_pass": true,
     "reasons": []
-  },
-  "lines": 180,
-  "l1_pass": true
+  }
 }

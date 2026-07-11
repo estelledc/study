@@ -1,7 +1,4 @@
 {
-  "slug": "reward-hacking",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.56,
   "reject_count": 0,
@@ -111,21 +108,5 @@
         "适用/不适用边界清楚：RL/agent KPI vs 离线分类、恶意攻防、AGI 长期证明"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.56,
-    "verdict": "pass",
-    "action": "pass",
-    "rejects": 0,
-    "needs_refine": 0,
-    "all_pass": true,
-    "reason": "三审全 pass，均分 4.56 ≥ 4.0"
-  },
-  "lines": 158,
-  "quality_gate": {
-    "pass": true,
-    "lines": 158,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

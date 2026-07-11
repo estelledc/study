@@ -108,36 +108,5 @@
         "适用/不适用边界清楚（本地出图/测 LoRA vs 复杂节点图/生产调度/SD3·Flux）；建议补 ## 反向链接 占位"
       ]
     }
-  ],
-  "slug": "stable-diffusion-webui",
-  "area": "projects",
-  "status": "refined",
-  "lines": 154,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：首 commit 改为 2022-08-22；「几周内」改为同日；补反向链接；stars 口径微调",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "rocketqa-2021",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -86,31 +83,5 @@
         "踩坑 2 与论文实现不符，修正为 differentiable all-gather；可补一句社区 PyTorch 复现常 detach 导致掉点的工程差异。"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "academic/zero-base needs-refine：修正 differentiable all_gather；案例 2 拆成四步并桥接 MRR@10。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic/zero-base needs-refine：修正 differentiable all_gather；案例 2 拆成四步并桥接 MRR@10。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 182,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 182,
-  "l1_pass": true
+  ]
 }

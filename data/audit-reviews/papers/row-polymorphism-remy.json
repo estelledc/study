@@ -108,37 +108,5 @@
         "适用/不适用边界清楚（透传 vs 名义类型 / concatenation / 运行时反射）"
       ]
     }
-  ],
-  "slug": "row-polymorphism-remy",
-  "area": "papers",
-  "status": "refined",
-  "lines": 160,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "修正 RR-1431 为 1991、拆开 POPL 1989 与研究报告；PureScript 改为 2013；补形式化白话与 OCaml 对象类型说明。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正 RR-1431 为 1991、拆开 POPL 1989 与研究报告；PureScript 改为 2013；补形式化白话与 OCaml 对象类型说明。",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "frontmatter 来源"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

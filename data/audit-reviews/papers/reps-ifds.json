@@ -1,7 +1,4 @@
 {
-  "slug": "reps-ifds",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 4.22,
   "reject_count": 0,
@@ -116,25 +113,5 @@
         "适用/不适用边界清楚（taint vs 常量传播/路径敏感）；可在案例 2 补一句「查 (sink, data) 可达即报警」与工具用法对齐"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：桥接 tabulation/MOP/分配性；案例 2/3 补逐步查图；学到什么压到 4 条",
-    "sections_modified": [
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 164,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "lines": 164,
-  "l1_pass": true
+  ]
 }

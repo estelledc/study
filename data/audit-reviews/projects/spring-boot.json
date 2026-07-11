@@ -1,7 +1,4 @@
 {
-  "slug": "spring-boot",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -111,33 +108,5 @@
         "适用边界有量化（200MB+ 堆、FaaS 冷启动）；全文超 200 行需压缩反向链接外的冗长句，否则 quality-gate 不过"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "academic needs-refine：改正 Boot 4.0 为 2025-11；弱化毫秒级冷启动；AutoConfiguration.imports；拆开 Spring4Shell 与 Actuator；压行数过 gate。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "academic needs-refine：改正 Boot 4.0 为 2025-11；弱化毫秒级冷启动；AutoConfiguration.imports；拆开 Spring4Shell 与 Actuator；压行数过 gate。",
-    "sections_modified": [
-      "## 核心要点",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）",
-      "## 实践案例",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 154,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

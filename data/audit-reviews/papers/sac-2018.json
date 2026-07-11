@@ -108,35 +108,5 @@
         "适用/不适用边界清楚；「样本效率高 10 倍」宜标成量级经验而非硬指标"
       ]
     }
-  ],
-  "slug": "sac-2018",
-  "area": "papers",
-  "status": "refined",
-  "lines": 157,
-  "l1_pass": true,
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：弱化「全面超越 TD3」与「去掉熵=TD3」；案例补三步拆解与 v2 伪代码；10 倍改为量级经验",
-    "sections_modified": [
-      "## 是什么",
-      "## 核心要点",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 157,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  }
+  ]
 }

@@ -108,37 +108,5 @@
         "适用 MCU/确定性内存 vs 不适用 PPP/IPsec/高并发边界清楚；与 lwIP 对比有用，可补一句「SACK 等高级 TCP 选项仍缺」"
       ]
     }
-  ],
-  "slug": "smoltcp",
-  "area": "projects",
-  "status": "refined",
-  "lines": 160,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false,
-    "reason": "三审均 needs-refine：SACK/许可证事实错误 + 案例缺逐步。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "改正 0BSD 许可证、删除错误 SACK 支持并写入未实现；弱化无 CVE/MSRV；实践案例拆四步；lwIP 对比补 SACK 缺口。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 160,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

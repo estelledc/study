@@ -1,7 +1,4 @@
 {
-  "slug": "skaffold",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -111,32 +108,5 @@
         "适用/不适用边界清楚：kind 本地循环 vs docker-compose、Tilt UI、Garden、Telepresence"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 4.11,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "zero-base/academic needs-refine：案例缺逐步拆解；历史年份有误；行数超限"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正 2018 介绍/2019 GA；案例补逐步拆解与为什么；Tilt 改并列竞品；压行数并清空反向链接占位",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "lines": 188,
-  "quality_gate": {
-    "pass": true,
-    "lines": 188,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

@@ -108,35 +108,5 @@
         "适用/不适用边界清楚：顺序指针程序 vs 纯函数/高阶需 Iris/并发需 CSL"
       ]
     }
-  ],
-  "slug": "reynolds-separation-logic",
-  "area": "papers",
-  "status": "refined",
-  "lines": 169,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 4.33,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 1,
-    "all_pass": false,
-    "reason": "zero-base needs-refine：实践案例缺逐步拆解；academic/engineer pass。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "案例1拆成切/改/拼/推进四步；案例2补「为何不用重证 htbl」；magic wand 加反向工具桥接；历史段修正 * 与 frame rule 归因。",
-    "sections_modified": [
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事（可跳过）"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 169,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

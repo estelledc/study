@@ -1,7 +1,4 @@
 {
-  "slug": "stagehand",
-  "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 4.11,
   "reject_count": 0,
@@ -111,28 +108,5 @@
         "适用/不适用边界清楚：渐进加 AI / 结构化抽取 vs canvas·VLM、跨端 Computer Use、纯 Python 栈"
       ]
     }
-  ],
-  "aggregate": {
-    "action": "refine",
-    "average": 4.11,
-    "reject": 0,
-    "needs_refine": 2,
-    "all_pass": false,
-    "reason": "zero-base/engineer needs-refine：案例2未注入llmClient；academic pass。"
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "开篇改为「优先走确定性路径」；案例2补全 LoggingClient 注入 Stagehand 构造与 goto/act。",
-    "sections_modified": [
-      "## 是什么",
-      "## 实践案例"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 169,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

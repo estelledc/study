@@ -108,39 +108,5 @@
         "不适用写「SQLite 不跨进程」不准确（多进程可共享文件）；应改为不适合多机写扩展/无原生跨机复制；适用补量化如读多写少、库体积量级"
       ]
     }
-  ],
-  "slug": "sqlite",
-  "area": "projects",
-  "status": "refined",
-  "lines": 151,
-  "l1_pass": true,
-  "aggregate": {
-    "average": 3.78,
-    "verdict": "refine",
-    "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 151,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：案例补逐部分解释；拆开 JSON(2015)/Window(2018)；弱化 DO-178B 取证表述；修正「不跨进程」；适用补量化",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 学到什么",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  }
+  ]
 }
