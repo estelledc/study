@@ -30,13 +30,13 @@ Conal Elliott 是 FRP 之父，这篇论文是他用 12 年时间反思 + 修复
 
 Push-Pull FRP 的设计可以拆成 **三件事**：
 
-1. **两种类型**：`Event a`（离散，push）vs `Behavior a`（连续，pull）。前者是 `[(时间, 值)]` 列表，后者是 `时间 -> 值` 函数。类型上的区分让运行时走不同 codepath。
+1. **两种类型**：`Event a`（离散，push）vs `Behavior a`（连续，pull）。类比：门铃 vs 墙上温度计——门铃响一次处理一次，温度计随时可读。前者语义上是 `[(时间, 值)]` 列表，后者是 `时间 -> 值` 函数；类型分开后运行时才能走不同 codepath。
 
-2. **两个操作**：`Sample`（拿当前 Behavior 的值）+ `React`（订阅 Event 触发回调）。前者是 pull 路径，后者是 push 路径。
+2. **两个操作**：`Sample`（拿当前 Behavior 的值）+ `React`（订阅 Event 触发回调）。类比：你抬头看一眼温度计（pull）vs 门铃响了你去开门（push）。
 
-3. **互转算子**：`stepper :: a -> Event a -> Behavior a` 把事件流转成"分段常数信号"（事件来时跳变、之间保持不变）；`snapshot :: Behavior a -> Event b -> Event (a, b)` 在事件触发瞬间采样信号。
+3. **互转算子**：`stepper` 把事件流转成"分段常数信号"（事件来时跳变、之间保持）；`snapshot` 在事件触发瞬间采样信号。类比：步进开关记住上次拨到哪一档；拍照快门按下那一刻记下当前读数。
 
-性能关键：纯 pull 模型每帧都要重算所有 signal，CPU 满载；push-pull 让 signal 按需计算，论文宣称比纯 pull 快 10-100 倍。
+性能关键：纯 pull 每帧重算所有 signal，像每秒把整栋楼温度计全读一遍；push-pull 只在输入变化时重算，论文强调的是少浪费重算、反应延迟接近瞬时，而不是给出固定倍速数字。
 
 ## 实践案例
 
@@ -72,7 +72,7 @@ const mousePos$ = mouseMove$.pipe(
 const clickPositions$ = click$.pipe(withLatestFrom(mousePos$))
 ```
 
-RxJS 用 `shareReplay(1)` "缓存最后一个值"假装连续——但代价是**每个订阅者都要持有缓存**，长跑容易内存泄漏。Push-Pull FRP 的 Behavior 在数学上就是 `时间 -> 值`，不需要缓存。
+逐部分解释：`mouseMove$` 是 push 事件流；`shareReplay(1)` 把"最后一个位置"缓存起来，假装成 Behavior；`withLatestFrom` 近似论文的 `snapshot`（点击时带上当前坐标）。代价是每个订阅者都要持有缓存，长跑易泄漏。Push-Pull 的 Behavior 在数学上就是 `时间 -> 值`，不靠缓存伪装连续。
 
 ### 案例 3：与 SolidJS 对比
 
@@ -81,7 +81,7 @@ const [count, setCount] = createSignal(0)   // signal：pull
 createEffect(() => console.log(count()))     // effect：push 触发
 ```
 
-SolidJS 的 `createSignal` 接近 Push-Pull 的 Behavior（pull-when-read），`createEffect` 是 push 端订阅者。这就是为什么 Solid 比 React 快——它**显式区分** push 和 pull，而 React 是单一 state pull、统一靠 re-render 触发。
+逐部分解释：`createSignal` 接近 Behavior——读 `count()` 才取值（pull）；`setCount` 改变后，依赖它的 `createEffect` 被通知（push）。Solid **显式区分**两侧；React 更像单一 state + 统一 re-render，边界没画在类型上。
 
 ## 踩过的坑
 
@@ -97,7 +97,7 @@ SolidJS 的 `createSignal` 接近 Push-Pull 的 Behavior（pull-when-read），`
 
 **适用**：
 - 需要严格区分 event vs signal 的反应式系统（动画、交互式 UI、游戏）
-- 性能敏感场景——纯 pull 太慢、纯 push 表达不了连续信号
+- 性能敏感：纯 pull 按帧全量采样（如 60fps 每帧扫一遍依赖图）太贵，又需要连续信号语义
 - 想要可证明正确性的反应式库（Reactive Banana / Reflex-FRP）
 
 **不适用**：

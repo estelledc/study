@@ -31,8 +31,8 @@ west build -b nrf52840dk/nrf52840 nrf/samples/bluetooth/peripheral_uart
 
 - 为什么 Nordic 新项目不再从旧 nRF5 SDK 起步，而是从 Zephyr 的 `west build`、`prj.conf`、`.overlay` 起步。
 - 为什么同一块 nRF52840 可以今天跑 BLE UART，明天跑 Thread CLI，后天又变成 Matter 灯泡。
-- 为什么 nRF5340 这种双核芯片要分 `cpuapp` 和网络核，构建时还会出现 sysbuild、IPC radio、TF-M。
-- 为什么 nRF91 蜂窝板的代码看起来像 Zephyr 网络程序，但真正连网还依赖 Nordic modem library 和 SIM/运营商环境。
+- 为什么 nRF5340 双核要分应用核与网络核：构建常走 **sysbuild**（一次编多镜像），核间靠 **IPC radio**（核间通信搬无线协议），安全侧还有 **TF-M**（Trusted Firmware-M，把密钥等放进隔离的安全世界）。
+- 为什么 nRF91 蜂窝板看起来像 Zephyr 网络程序，却仍依赖 Nordic modem library 和 SIM/运营商环境。
 
 ## 核心要点
 
@@ -64,7 +64,7 @@ CONFIG_BT_NUS=y
 CONFIG_UART_ASYNC_ADAPTER=y
 ```
 
-关键 overlay：
+关键 overlay（示意；完整文件需合法 Devicetree 节点语法）：
 
 ```text
 / { chosen {
@@ -73,7 +73,7 @@ CONFIG_UART_ASYNC_ADAPTER=y
 }; };
 ```
 
-逐部分解释：`peripheral_uart` 使用 Nordic UART Service，把 UART 数据搬到 BLE GATT；`prj_cdc.conf` 打开 USB CDC ACM；`usb.overlay` 把 NUS 的串口入口从物理 UART 换成 USB 虚拟串口。
+逐部分解释：`peripheral_uart` 用 Nordic UART Service 把串口数据搬到 BLE GATT；`prj_cdc.conf` 开 USB CDC ACM；`usb.overlay` 把 NUS 入口从物理 UART 换成 USB 虚拟串口。
 
 ### 案例 2：先跑 Thread CLI，再理解 Matter 灯泡
 
@@ -110,10 +110,9 @@ chip-tool onoff on 1 1
 ### 案例 3：nRF91 蜂窝 FOTA，从服务器下载新固件
 
 ```conf
-# app_update.conf
+# 示意配置（键名随 sample/版本可能不同，以仓库 README 为准）
 CONFIG_DOWNLOAD_HOST="firmware.example.com"
 CONFIG_DOWNLOAD_FILE_V1="nrf91/app_update_v1.bin"
-CONFIG_DOWNLOAD_FILE_V2="nrf91/app_update_v2.bin"
 CONFIG_USE_HTTPS=y
 ```
 
@@ -124,7 +123,7 @@ west build -b nrf9160dk/nrf9160/ns \
 west flash
 ```
 
-逐部分解释：`http_update` 用 `fota_download` 下载镜像，用 MCUboot 的 secondary slot 做升级；`nrf9160dk/nrf9160/ns` 表示应用跑在非安全世界，TF-M 负责安全边界；下载成功不等于立即生效，重启后 bootloader 才会切换镜像。
+逐部分解释：`http_update` 用 `fota_download` 下载，MCUboot secondary slot 升级；板名里的 `ns` = non-secure（应用跑非安全世界，TF-M 管安全边界）；下载成功≠立刻生效，重启后 bootloader 才切镜像。
 
 ## 踩过的坑
 
@@ -147,10 +146,10 @@ west flash
 
 **不适用**：
 
-- 只想点灯、读一个 GPIO、做课堂演示，Arduino 或裸机 HAL 会更轻。
-- 非 Nordic 芯片为主的产品线，直接用上游 Zephyr、ESP-IDF 或厂商 SDK 更自然。
-- 极端硬实时或极小 ROM/RAM 场景，NCS 的协议栈和构建层会显得太重。
-- 团队无法投入硬件 bring-up、射频认证、运营商测试，NCS 不能替你跳过这些现实流程。
+- 只想点灯、读 GPIO、课堂演示，Arduino 或裸机 HAL 更轻。
+- 非 Nordic 为主的产品线，上游 Zephyr / ESP-IDF / 厂商 SDK 更自然。
+- Flash/RAM 紧到几十 KB、或要微秒级硬实时中断路径时，NCS 协议栈与构建层通常过重。
+- 团队无法投入 bring-up、射频认证、运营商测试时，NCS 也跳不过这些流程。
 
 ## 边界：BLE / Thread / Matter / 蜂窝 IoT
 
