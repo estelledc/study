@@ -1,0 +1,113 @@
+{
+  "slug": "sortablejs",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "超市货架挡板类比稍远，可换成更贴「拖着换位」的日常画面（如把固定书架改成可抽拉滑轨、用手把书挪到另一格）。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "vue.draggable / vue.draggable.next 是社区（David Desmaisons 等）基于 SortableJS 的适配层，不是 Vue 核心团队产品；请改掉「Vue 团队」「官方拖拽方案」表述，改为「Vue 生态事实标准 / 社区适配层」。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用可补一条量化边界：列表项上千且需虚拟滚动时，SortableJS 直接绑全量 DOM 会卡，应换虚拟列表方案。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 5,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "超市货架挡板类比稍远，可换成更贴「拖着换位」的日常画面（如把固定书架改成可抽拉滑轨、用手把书挪到另一格）。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "vue.draggable / vue.draggable.next 是社区（David Desmaisons 等）基于 SortableJS 的适配层，不是 Vue 核心团队产品；请改掉「Vue 团队」「官方拖拽方案」表述，改为「Vue 生态事实标准 / 社区适配层」。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "不适用可补一条量化边界：列表项上千且需虚拟滚动时，SortableJS 直接绑全量 DOM 会卡，应换虚拟列表方案。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：改掉「Vue 团队/官方」误称；类比与不适用边界补强。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "academic needs-refine：改掉「Vue 团队/官方」误称；类比与不适用边界补强。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 158,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 158,
+  "l1_pass": true
+}

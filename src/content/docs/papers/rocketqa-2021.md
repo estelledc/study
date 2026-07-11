@@ -46,9 +46,14 @@ RocketQA 的优化拆成 **三步**：
 
 ### 案例 2：去噪硬负例的杀伤力
 
-论文里有一组对照：直接用 BM25 top-100 当硬负例，MRR@10 比纯 in-batch 还**低**。为什么？因为 BM25 在词面相关性上很强，召回的 top-100 里可能有 30 个段落确实含正确答案，把这些当负例训，模型学到的信号是噪声。
+论文里有一组对照：直接用 BM25 top-100 当硬负例，MRR@10（前 10 个结果里相关文档排得有多靠前）比纯 in-batch 还**低**。去噪流程可拆成四步：
 
-去噪后（cross-encoder 打分 < 0.1 才保留），同样的 BM25 候选池，MRR@10 反而涨 3 个点。这是 RocketQA 论文里最反直觉的实验之一。
+1. **召回**：用 BM25（或当前 retriever）取出 top-100 候选段落
+2. **打分**：用已训好的 cross-encoder 给每个「问题 + 段落」打相关分
+3. **过滤**：只保留得分极低（论文阈值 < 0.1）的当硬负例；中等分全部丢掉
+4. **重训**：用去噪后的硬负例再训 dual-encoder
+
+为什么有效？BM25 词面相关性强，top-100 里常混着未标注的真相关段落；把它们当负例等于教模型「对的也是错的」。去噪后同样候选池，MRR@10 反而涨约 3 个点——这是论文里最反直觉的实验之一。
 
 ### 案例 3：和 ANCE 的关系
 
@@ -71,7 +76,7 @@ RocketQA 的优化拆成 **三步**：
 
 1. **Cross-encoder 训练数据从哪来**：第一步训 cross-encoder 时还没去噪样本，所以它本身也带噪。论文里靠 'cross-encoder 比 retriever 容量大' 来抵消——它能从噪声里学到更稳的相关性判断。但如果你的 cross-encoder 模型太小，整个流程会塌。
 
-2. **All_gather 的反传**：如果直接 all_gather 别人的向量参与 loss，反传时梯度回不到别人那张卡（PyTorch 默认 all_gather 不带梯度）。要用 `dist.all_gather` 配合自定义 autograd function，或者干脆只让别人的向量当 'detached 负例'——RocketQA 走的是后者。
+2. **All_gather 的反传**：跨卡借负样本时，别人卡上的段落向量也要能参与本卡的对比损失。原论文在 PaddlePaddle FleetX 里用的是 **differentiable all_gather**（可反传的跨卡聚合）。PyTorch 默认 `dist.all_gather` 不带梯度，社区复现常改成「别人的向量当 detached 负例」或手写带梯度的 all_gather——没做对时，常见「复现比 paper 低 1–2 个点」。
 
 3. **伪标签的污染**：cross-encoder 的伪标签也会错。如果直接把所有 cross-encoder 高分的样本加进去，会引入系统性偏差。论文里只取 cross-encoder 极高置信度（top-k 而非 threshold）的样本，并控制每个 query 最多扩 1 个正例。
 
