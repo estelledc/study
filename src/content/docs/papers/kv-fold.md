@@ -1,6 +1,6 @@
 ---
-title: KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文
-来源: Nadali et al., "KV-Fold: One-Step KV-Cache Recurrence for Long-Context Inference", arXiv:2605.12471, 2026
+title: "KV-Fold — 把 KV cache 当成 fold 的累加器，一段一段读长文"
+来源: "Nadali et al., KV-Fold: One-Step KV-Cache Recurrence for Long-Context Inference, arXiv:2605.12471, 2026"
 日期: 2026-07-08
 分类: LLM 推理
 难度: 中级
