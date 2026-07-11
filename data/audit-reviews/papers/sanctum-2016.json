@@ -1,0 +1,123 @@
+{
+  "slug": "sanctum-2016",
+  "area": "papers",
+  "status": "passed",
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "保险箱/公开图纸、酒店整层楼、电梯监控、门锁vs前台类比贯穿，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "enclave / DRAM region / TLB / LLC / security monitor / attestation 首次出现有白话桥接；ORAM、DMA 在「为什么重要」里有语境"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 均有代码+逐部分解释；案例 2 的 EVRANGE/eptbr 对零基础略密，但子弹已解释，可保留"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Costan/Lebedev/Devadas, USENIX Security 2016；eprint 2015/564 与 USENIX 页一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源题名 Minimal Hardware Extensions for Strong Software Isolation 正确；延伸阅读指向 eprint 与 USENIX 合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "教学简化（伪代码 monitor/页表切换）未歪曲威胁模型；明确不承诺物理/DRAM带宽侧信道与 DoS，与论文边界一致"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例伪代码概念正确：先 copy_from_untrusted、enclave 自持页表、monitor 批 region；可跟读，论文笔记可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：非 SGX 换皮、侧信道边界、DoS、runtime I/O 代理——可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：RISC-V TEE 研究 vs 商用 SGX/SEV/TDX、物理攻击、超大 demand paging"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "保险箱/公开图纸、酒店整层楼、电梯监控、门锁vs前台类比贯穿，零基础直觉强",
+        "enclave / DRAM region / TLB / LLC / security monitor / attestation 首次出现有白话桥接；ORAM、DMA 在「为什么重要」里有语境",
+        "案例 1–3 均有代码+逐部分解释；案例 2 的 EVRANGE/eptbr 对零基础略密，但子弹已解释，可保留"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "Costan/Lebedev/Devadas, USENIX Security 2016；eprint 2015/564 与 USENIX 页一致",
+        "来源题名 Minimal Hardware Extensions for Strong Software Isolation 正确；延伸阅读指向 eprint 与 USENIX 合理",
+        "教学简化（伪代码 monitor/页表切换）未歪曲威胁模型；明确不承诺物理/DRAM带宽侧信道与 DoS，与论文边界一致"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例伪代码概念正确：先 copy_from_untrusted、enclave 自持页表、monitor 批 region；可跟读，论文笔记可接受",
+        "踩坑具体：非 SGX 换皮、侧信道边界、DoS、runtime I/O 代理——可操作",
+        "适用/不适用边界清楚：RISC-V TEE 研究 vs 商用 SGX/SEV/TDX、物理攻击、超大 demand paging"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "lines": 161,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 161,
+  "l1_pass": true
+}
