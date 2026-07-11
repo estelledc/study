@@ -1,0 +1,142 @@
+{
+  "slug": "surrealdb",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "实践案例只有 2 个且缺「逐部分解释」；按模板补案例 3（如 LIVE SELECT 或图遍历），每案拆成 3 步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺「历史小故事（可跳过）」与「反向链接」标准段名，零基础导航会断"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "1.0 GA 是 2023-09（约 9/13–14），不是 8 月"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "向量索引示例写 MTREE；现行文档主推 HNSW（及 3.1+ DISKANN），MTREE 已过时——请改示例"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「对 ArangoDB 拿 Rust 重写一遍」歪曲：SurrealDB 是独立新项目，不是 ArangoDB 的 Rust 移植"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "分布式后端写 TiKV/FoundationDB 已偏旧；现行架构更强调 SurrealDS/Cloud，单机仍 RocksDB/SurrealKV——请按现状改写并加年份限定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "MTREE 向量索引在当前 SurrealQL 已非推荐路径，跟做会失败；请改成 HNSW + <|K|> / knn 查询形态"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用可补量化：例如单机 RocksDB 原型/中小流量；万级 LIVE 长连接需单独网关规划（与踩坑对齐）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例只有 2 个且缺「逐部分解释」；按模板补案例 3（如 LIVE SELECT 或图遍历），每案拆成 3 步说明",
+        "缺「历史小故事（可跳过）」与「反向链接」标准段名，零基础导航会断"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "1.0 GA 是 2023-09（约 9/13–14），不是 8 月",
+        "向量索引示例写 MTREE；现行文档主推 HNSW（及 3.1+ DISKANN），MTREE 已过时——请改示例",
+        "「对 ArangoDB 拿 Rust 重写一遍」歪曲：SurrealDB 是独立新项目，不是 ArangoDB 的 Rust 移植",
+        "分布式后端写 TiKV/FoundationDB 已偏旧；现行架构更强调 SurrealDS/Cloud，单机仍 RocksDB/SurrealKV——请按现状改写并加年份限定"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "MTREE 向量索引在当前 SurrealQL 已非推荐路径，跟做会失败；请改成 HNSW + <|K|> / knn 查询形态",
+        "适用可补量化：例如单机 RocksDB 原型/中小流量；万级 LIVE 长连接需单独网关规划（与踩坑对齐）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false,
+    "reason": "修正 1.0 GA 为 2023-09；去掉「重写 ArangoDB」歪曲；MTREE→HNSW；更新存储后端；补案例 3/逐部分解释/历史小故事/反向链接；适用补量化。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 1.0 GA 为 2023-09；去掉「重写 ArangoDB」歪曲；MTREE→HNSW；更新存储后端；补案例 3/逐部分解释/历史小故事/反向链接；适用补量化。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读",
+      "## 关联",
+      "## 反向链接"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 195,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
