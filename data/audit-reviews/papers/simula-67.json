@@ -1,0 +1,142 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "沙盘士兵类比把「有状态的个体」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "class/object、prefix、detach/resume、:- vs := 均有白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 有代码与用法；案例 3 协程轨迹可再拆成更短的逐步时间线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「协程也是它发明的」过强：Conway 1958/1963 已提出 coroutine；SIMULA 是首批把对称协程写进通用语言的，宜改写"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读 PDF 链到 ALGOL Bulletin A22，不是 Common Base Language；宜换 CHM Simula-CommonBaseLanguage.pdf"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写 Dahl & Nygaard 1968 可接受，正式 Common Base 还含 Myhrhaug；Turing 2001 / 二人 2002 去世属实"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Account / SavingsAccount / Producer-Consumer 伪代码概念正确，教学可跟读"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：prefix 方向、inner vs super、对称协程、1968 GC 暂停"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（学 OOP 根 vs 生产代码/极致性能/FP）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "沙盘士兵类比把「有状态的个体」讲透，零基础直觉强",
+        "class/object、prefix、detach/resume、:- vs := 均有白话桥接",
+        "案例 1–3 有代码与用法；案例 3 协程轨迹可再拆成更短的逐步时间线"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「协程也是它发明的」过强：Conway 1958/1963 已提出 coroutine；SIMULA 是首批把对称协程写进通用语言的，宜改写",
+        "延伸阅读 PDF 链到 ALGOL Bulletin A22，不是 Common Base Language；宜换 CHM Simula-CommonBaseLanguage.pdf",
+        "来源写 Dahl & Nygaard 1968 可接受，正式 Common Base 还含 Myhrhaug；Turing 2001 / 二人 2002 去世属实"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "Account / SavingsAccount / Producer-Consumer 伪代码概念正确，教学可跟读",
+        "踩坑具体：prefix 方向、inner vs super、对称协程、1968 GC 暂停",
+        "适用/不适用边界清楚（学 OOP 根 vs 生产代码/极致性能/FP）"
+      ]
+    }
+  ],
+  "slug": "simula-67",
+  "area": "papers",
+  "status": "refined",
+  "lines": 200,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：协程发明表述过强 + PDF 链错；平均 3.89 → refine"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "弱化协程「发明」表述并点出 Conway；更换 Common Base Language PDF 链接",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 200,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
