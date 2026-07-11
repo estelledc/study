@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.33,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "同学转述 / 咖啡渍收据 / 略错账单类比把噪声方程讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "GapSVP / SIVP 首次出现有「最坏格问题」桥接；Kyber / Dilithium / FHE 有后量子语境可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释；案例 3 可再补一句「合法者用 s 消掉主项后看落在圆环哪一侧」的日常对照，降低函数感"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Oded Regev, STOC 2005 / JACM 2009 著录正确；LWE 定义、量子 worst-case 归约到 GapSVP/SIVP、经典公钥加密方案与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "搜索版/判定版可转化、噪声参数权衡、Ajtai 1996 / BKW 2003 / Peikert 2009 / Ring-LWE 2010 时间线合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读 arXiv 2401.03703 是后期再上传；建议同时或改链作者页 qcrypto.pdf（https://cims.nyu.edu/~regev/papers/qcrypto.pdf），避免读者误以为 2024 新文"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–2 的 numpy 取模运算概念正确、可跟做；案例 3 是 Regev 加密直觉版（子集求和 + q/2 编码）教学可跟"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：无噪声可消元、量子只在归约里、搜索/判定勿混、噪声与 q/维度联调——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（后量子公钥/FHE vs AES 对称、无参数不上生产、NTRU/SIS/Ring-LWE 各有边界）；可再点明玩具模数 q=7 仅演示"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "同学转述 / 咖啡渍收据 / 略错账单类比把噪声方程讲透，零基础直觉强",
+        "GapSVP / SIVP 首次出现有「最坏格问题」桥接；Kyber / Dilithium / FHE 有后量子语境可跟",
+        "三案例均有逐部分解释；案例 3 可再补一句「合法者用 s 消掉主项后看落在圆环哪一侧」的日常对照，降低函数感"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "Oded Regev, STOC 2005 / JACM 2009 著录正确；LWE 定义、量子 worst-case 归约到 GapSVP/SIVP、经典公钥加密方案与论文一致",
+        "搜索版/判定版可转化、噪声参数权衡、Ajtai 1996 / BKW 2003 / Peikert 2009 / Ring-LWE 2010 时间线合理",
+        "延伸阅读 arXiv 2401.03703 是后期再上传；建议同时或改链作者页 qcrypto.pdf（https://cims.nyu.edu/~regev/papers/qcrypto.pdf），避免读者误以为 2024 新文"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1–2 的 numpy 取模运算概念正确、可跟做；案例 3 是 Regev 加密直觉版（子集求和 + q/2 编码）教学可跟",
+        "踩坑具体可操作：无噪声可消元、量子只在归约里、搜索/判定勿混、噪声与 q/维度联调——保留",
+        "适用/不适用边界清楚（后量子公钥/FHE vs AES 对称、无参数不上生产、NTRU/SIS/Ring-LWE 各有边界）；可再点明玩具模数 q=7 仅演示"
+      ]
+    }
+  ],
+  "slug": "regev-lwe-2005",
+  "area": "papers",
+  "status": "passed",
+  "lines": 151,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.33,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}

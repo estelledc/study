@@ -1,0 +1,136 @@
+{
+  "slug": "signal-server",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "快递分拣中心 / 信封明信片类比把「服务端只读地址」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "enclave / sealed sender / 扇出首次有白话桥接；WebSocket / FoundationDB / APNs 有工程语境可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例缺「逐部分解释」小标题：案例 1–3 应把步骤拆成条目解释（为何客户端按设备加密、为何推送载荷为空、enclave 远程证明在防什么）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2010 年创立 Open Whisper Systems」有误：2010 是 Whisper Systems + TextSecure；Open Whisper Systems 约 2013 年由 Moxie 另立以继续开源开发"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "私密联系人发现技术预览博客为 2017-09；写「2018 年上线」易当成精确商用节点，宜改为 2017 预览/随后客户端接入"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「WhatsApp / Messenger / Skype 都借鉴了 Signal Protocol」中 Skype 不准确；应改为 WhatsApp / Facebook Messenger 等，去掉 Skype 或改口吻"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 投递流程与案例 3 依赖盘点概念正确、可跟做；建议点明 API 路径为教学示意而非保证与当前主线路径一字不差"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：事后补 E2E 难、元数据/sealed sender、推送勿塞预览、WebSocket 重连退避——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用缺量化边界：多设备扇出是 O(设备数) 份密文、待投队列按收件设备存、自架仍暴露元数据；不适用可补「内容审核/服务端搜索与 E2E 互斥」的工程代价一句"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "快递分拣中心 / 信封明信片类比把「服务端只读地址」讲透，零基础直觉强",
+        "enclave / sealed sender / 扇出首次有白话桥接；WebSocket / FoundationDB / APNs 有工程语境可跟",
+        "三案例缺「逐部分解释」小标题：案例 1–3 应把步骤拆成条目解释（为何客户端按设备加密、为何推送载荷为空、enclave 远程证明在防什么）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「2010 年创立 Open Whisper Systems」有误：2010 是 Whisper Systems + TextSecure；Open Whisper Systems 约 2013 年由 Moxie 另立以继续开源开发",
+        "私密联系人发现技术预览博客为 2017-09；写「2018 年上线」易当成精确商用节点，宜改为 2017 预览/随后客户端接入",
+        "「WhatsApp / Messenger / Skype 都借鉴了 Signal Protocol」中 Skype 不准确；应改为 WhatsApp / Facebook Messenger 等，去掉 Skype 或改口吻"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 1 投递流程与案例 3 依赖盘点概念正确、可跟做；建议点明 API 路径为教学示意而非保证与当前主线路径一字不差",
+        "踩坑具体可操作：事后补 E2E 难、元数据/sealed sender、推送勿塞预览、WebSocket 重连退避——保留",
+        "适用缺量化边界：多设备扇出是 O(设备数) 份密文、待投队列按收件设备存、自架仍暴露元数据；不适用可补「内容审核/服务端搜索与 E2E 互斥」的工程代价一句"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：补案例逐部分解释；修正 OWS/Whisper Systems 年表与 PCD 2017；去掉 Skype 误述；适用补扇出量化与自架元数据边界",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 170,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 170,
+  "l1_pass": true
+}
