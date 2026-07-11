@@ -3,7 +3,7 @@
   "base_url": "/study",
   "queries": [
     {
-      "query": "React UI 组件库",
+      "query": "React 用组件描述界面的 JavaScript 库",
       "must_include": ["/study/projects/react/"]
     },
     {

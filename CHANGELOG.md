@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- STUDY-T015：主线重写 React 笔记后，以准确的“React 用组件描述界面的 JavaScript 库”语境重绑 Pagefind 查询合同；不再把 React 误称为现成 UI 组件库。
+
 - STUDY-T001/STUDY-T002：新增向后兼容的内容信任 schema、增量迁移门和可验证 review receipt；receipt/evidence 以精确 companion allowlist 进入同一个 canonical note commit，缺失、陈旧、重放或额外 dirty path 会在队列标记完成前失败；旧 1,975 篇保持 `legacy-unverified`，未改正文。
 - STUDY-T003：建立 tracked-files 隐私红线、历史指纹基线与脱敏输出；基线固定到 `acbf24ba`，逐条从冻结 Git blob 重证并锁定获批 6 项的规范化摘要，普通 PR 不能靠追加历史 fingerprint 降级新泄漏。
 - STUDY-T004/STUDY-T006：worker 合并改为单目标 commit scope、assignment 来源绑定；远端发布校验仓库身份、正常 TLS、精确远端 commit 与并发一致性。
