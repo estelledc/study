@@ -1,7 +1,4 @@
 {
-  "slug": "paillier-1999",
-  "area": "papers",
-  "status": "passed",
   "action": "pass",
   "average": 4.67,
   "reject_count": 0,
@@ -75,11 +72,5 @@
         "适用/不适用可补一句量化边界（例如密文约 2|n| 比特、教学用小素数不可直接上生产）"
       ]
     }
-  ],
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 165,
-    "reasons": []
-  }
+  ]
 }

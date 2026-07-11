@@ -1,7 +1,4 @@
 {
-  "slug": "paged-attention-vllm",
-  "area": "papers",
-  "status": "rewritten",
   "action": "rewrite",
   "average": 1.44,
   "reject_count": 3,
@@ -111,20 +108,5 @@
         "适用/不适用无量化边界（在线多并发 vs 单请求离线、decoder-only decode vs encoder-only）"
       ]
     }
-  ],
-  "rewrite": {
-    "status": "rewritten",
-    "sections_modified": [
-      "full-note"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 151,
-    "reasons": []
-  },
-  "lines": 151,
-  "l1_pass": true
+  ]
 }

@@ -1,7 +1,4 @@
 {
-  "slug": "pagerank-1998",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -96,29 +93,5 @@
         "案例公式用 (1-d)+dΣ、代码用 (1-d)/N 已说明等价，保持即可；重点是让矩阵可复现"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.89,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
-  },
-  "refinement": {
-    "action": "refine",
-    "reason": "修正「6 页」与市值过满表述；案例 1 补全四页手算；案例 2 换成可运行 4×4 矩阵。",
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 实践案例",
-      "## 学到什么"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 163,
-    "l1_pass": true,
-    "reasons": []
-  }
+  ]
 }

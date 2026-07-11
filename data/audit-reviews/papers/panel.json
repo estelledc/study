@@ -1,7 +1,4 @@
 {
-  "slug": "panel",
-  "area": "papers",
-  "status": "refined",
   "action": "refine",
   "average": 3.33,
   "reject_count": 0,
@@ -111,34 +108,5 @@
         "适用/不适用缺少量化边界：例如「单机内部工具、并发 < 十人级」适用；「多租户 session、复杂 RBAC、毫秒级 API」不适用"
       ]
     }
-  ],
-  "aggregate": {
-    "average": 3.33,
-    "verdict": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false,
-    "base_rule_findings": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "sections_modified": [
-      "## 是什么",
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 适用 vs 不适用场景",
-      "## 历史小故事（可跳过）",
-      "## 关联"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "lines": 168,
-    "l1_pass": true,
-    "reasons": []
-  },
-  "audit_notes": "三审均 needs-refine（avg 3.33）。定向修复：案例2补可跑假数据与三步说明；案例1加 pip 与分步注释；Param/WASM 桥接；1.0 日期改为 2023-05；弱化 Streamlit/Dash 绝对化；适用场景加并发量化边界。"
+  ]
 }

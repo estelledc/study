@@ -108,17 +108,5 @@
         "适用/不适用边界清楚（Rust CLI 交互 vs 低代码表单/非 Rust）"
       ]
     }
-  ],
-  "final_quality_gate": {
-    "pass": true,
-    "lines": 165
-  },
-  "sections_modified": [
-    "## 是什么",
-    "## 为什么重要",
-    "## 核心要点",
-    "## 实践案例",
-    "## 反向链接"
-  ],
-  "refine_round": 1
+  ]
 }

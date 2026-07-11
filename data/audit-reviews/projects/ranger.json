@@ -1,7 +1,6 @@
 {
   "slug": "ranger",
   "area": "projects",
-  "status": "refined",
   "action": "refine",
   "average": 3.89,
   "reject_count": 0,
@@ -81,21 +80,5 @@
         "案例1需解释 --choosedir 与退出后 cd 的机制；案例2应给出可复现的按键序列与编辑器替换步骤。"
       ]
     }
-  ],
-  "refinement": {
-    "action": "refine",
-    "sections_modified": [
-      "## 实践案例",
-      "## 历史小故事（可跳过）",
-      "## 关联",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
-  },
-  "quality_gate": {
-    "pass": true,
-    "l1_pass": true,
-    "lines": 167,
-    "reasons": []
-  }
+  ]
 }
