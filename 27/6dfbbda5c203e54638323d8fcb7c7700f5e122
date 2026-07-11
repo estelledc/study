@@ -1,0 +1,23 @@
+scripts/audit-public-redlines.mjs
+  s_33b0f5bd3c9e35::t_5104377ccf1a05 37
+scripts/audit-public-redlines.test.mjs
+  s_33b0f5bd3c9e35::t_387730184e8819 269-274
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "276dfbbda5c203e54638323d8fcb7c7700f5e122",
+  "prompts": {},
+  "sessions": {
+    "s_33b0f5bd3c9e35": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_33b0f5bd3c9e35",
+        "model": "unknown"
+      },
+      "human_author": "zhouxun <zhouxun.13@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
