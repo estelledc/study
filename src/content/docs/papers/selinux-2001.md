@@ -19,9 +19,9 @@ SELinux（Security-Enhanced Linux）是一套**强制访问控制（MAC）框架
 ## 为什么重要
 
 - Linux 内核漏洞或应用被攻破后，DAC 权限形同虚设——攻击者拿到 root 就等于拿到一切。SELinux 让“拿到 root 不等于拿到一切”成为可能
-- 实际案例：2014 年 Heartbleed 漏洞暴露时，启用 SELinux 的系统攻击面显著小于未启用的系统
+- 实际案例：2014 年 Shellshock 一类远程命令执行里，被攻破的服务若落在 SELinux 域里，横向读 shadow、改系统文件会被策略拦住（注意：像 Heartbleed 这种**同进程内存泄密**，MAC 挡不住，只能靠补丁）
 - 直接催生了 **LSM（Linux Security Modules）** 框架——今天所有主流安全模块（AppArmor、SMACK、Landlock）都通过 LSM 挂载
-- Android 4.3 起默认启用 SELinux，全球数十亿设备的沙箱隔离依赖它
+- Android 4.3 引入 SELinux（多为 permissive），4.4 起更多域切到 enforcing；全球数十亿设备的应用沙箱依赖它
 - 论文提出的“策略与机制分离”设计哲学，至今仍是操作系统安全的黄金准则
 - RHEL、CentOS、Fedora 默认开启 SELinux，企业服务器市场占有率巨大
 
@@ -43,7 +43,7 @@ SELinux（Security-Enhanced Linux）是一套**强制访问控制（MAC）框架
 
 ### 案例 1：Web 服务器被攻破后的差异
 
-没有 SELinux：Apache 被注入 shell → 攻击者以 `www-data` 身份读 `/etc/shadow`、改系统文件、装后门。严重时可以安装 rootkit、簟改日志、拒不承认入侵。
+没有 SELinux：Apache 被注入 shell → 攻击者以 `www-data` 身份读 `/etc/shadow`、改系统文件、装后门。严重时可以安装 rootkit、篡改日志、拒不承认入侵。
 
 有 SELinux：Apache 进程标签为 `httpd_t`，策略只允许它读 `httpd_content_t` 类型的文件、监听 `http_port_t`。即使被注入 shell，进程仍被限制在 `httpd_t` 权限笼子里——读不了 shadow，改不了系统文件。攻击者能做的事被封锁在非常小的范围内。
 
