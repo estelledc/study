@@ -1,0 +1,143 @@
+{
+  "slug": "redpanda",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "公寓楼 / 保安亭 / 每核一间小屋类比把 ZK + JVM + thread-per-core 讲透"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Seastar / Raft / io_uring 首次出现有桥接；案例 1–3 命令可跟做"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Redpanda / Pulsar / WarpStream 几乎都用 Raft」事实错误：Pulsar 数据面是 BookKeeper，不是 Raft；应改成 Redpanda / WarpStream（或同类）用 Raft，Pulsar 另走 BookKeeper"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「学到什么」里「新一代消息系统几乎都选 Raft」同样过满，需与上条一并收窄"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「P99 差距能到 10 倍」偏营销口径，建议改为「社区/官方基准常见数倍到约一个数量级，视负载而定」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1「没有 Controller」易误解：Redpanda 仍有内置 controller Raft group，只是无独立 ZK/KRaft 进程——应点明"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1–2 的 rpk / confluent-kafka 可跟做，概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 5「kafka-topics.sh 等不能直接用」过绝对：协议兼容下不少 Kafka 工具可连 Redpanda，更准确是「官方推荐并完整覆盖的是 rpk，Kafka 脚本非一等公民」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "BSL / --memory / fsync+NVMe / WASM 生态差距——具体可操作，保留；适用边界（Streams DSL、纯 OSS、超大规模）清楚"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "公寓楼 / 保安亭 / 每核一间小屋类比把 ZK + JVM + thread-per-core 讲透",
+        "Seastar / Raft / io_uring 首次出现有桥接；案例 1–3 命令可跟做"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Redpanda / Pulsar / WarpStream 几乎都用 Raft」事实错误：Pulsar 数据面是 BookKeeper，不是 Raft；应改成 Redpanda / WarpStream（或同类）用 Raft，Pulsar 另走 BookKeeper",
+        "「学到什么」里「新一代消息系统几乎都选 Raft」同样过满，需与上条一并收窄",
+        "「P99 差距能到 10 倍」偏营销口径，建议改为「社区/官方基准常见数倍到约一个数量级，视负载而定」",
+        "案例 1「没有 Controller」易误解：Redpanda 仍有内置 controller Raft group，只是无独立 ZK/KRaft 进程——应点明"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "案例 1–2 的 rpk / confluent-kafka 可跟做，概念正确",
+        "踩坑 5「kafka-topics.sh 等不能直接用」过绝对：协议兼容下不少 Kafka 工具可连 Redpanda，更准确是「官方推荐并完整覆盖的是 rpk，Kafka 脚本非一等公民」",
+        "BSL / --memory / fsync+NVMe / WASM 生态差距——具体可操作，保留；适用边界（Streams DSL、纯 OSS、超大规模）清楚"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "academic 纠正 Pulsar≠Raft、收窄 P99 10× 与「无 Controller」表述；engineer 修正 kafka 脚本踩坑绝对化。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true
+}
