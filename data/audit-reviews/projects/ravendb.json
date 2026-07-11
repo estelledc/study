@@ -1,95 +1,34 @@
 {
-  "action": "refine",
-  "average": 3.56,
-  "reject_count": 0,
-  "needs_refine_count": 3,
-  "pass_count": 0,
-  "weakest_sections": [
-    {
-      "reviewer": "zero-base",
-      "section": "## 实践案例",
-      "verdict": "needs-refine"
-    },
-    {
-      "reviewer": "academic",
-      "section": "## 历史小故事",
-      "verdict": "needs-refine"
-    },
-    {
-      "reviewer": "engineer",
-      "section": "## 实践案例",
-      "verdict": "needs-refine"
-    }
-  ],
-  "fix_hints": [
-    {
-      "reviewer": "zero-base",
-      "hint": "衣柜+绑锁类比把跨文档事务讲清楚，零基础能建立直觉"
-    },
-    {
-      "reviewer": "zero-base",
-      "hint": "change-vector / 预计算索引 / Raft 有白话桥接；Corax、LINQ 对零基础仍偏密但可接受"
-    },
-    {
-      "reviewer": "zero-base",
-      "hint": "实践案例只有 2 个且案例 2 无代码、无逐步拆解；应按模板补案例 3，并把案例 2 拆成可跟做步骤"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "版本年份有误：v3 应为 2014（非 2015）、v5.0 时间序列为 2020（非 2021）、v6.0 Corax 为 2023-08（非 2024）；v7 向量搜索 2025 可保留"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "『v4 重写存储引擎 Voron』不准确：Voron 在 v3.0 引入，v4.0 才成为唯一引擎并大幅增强；『v6 切到 Corax』过度——v6 起 Corax 与 Lucene 并存可选，非全面替换"
-    },
-    {
-      "reviewer": "academic",
-      "hint": "来源 github.com/ravendb/ravendb、Oren Eini/Ayende、AGPLv3、跨文档 ACID 自 v1、MongoDB 4.0 多文档事务主线合理；『禁止 ad-hoc 全表查』偏绝对（存在 auto-index / 集合扫描路径）"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "案例 1 ClusterWide + Load/Store/SaveChanges 概念正确可跟；案例 2 只有叙事无 RQL/索引代码；缺案例 3（如 Subscription 消费）"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "踩坑具体可操作：AGPL 传染、读己写不到、强制索引、生态小——保留"
-    },
-    {
-      "reviewer": "engineer",
-      "hint": "适用/不适用边界清楚（.NET 一站式 vs PB 级/非 .NET/OLAP/纯 KV）"
-    }
-  ],
+  "slug": "ravendb",
+  "area": "projects",
+  "status": "refined",
   "reviews": [
     {
       "reviewer": "zero-base",
       "scores": {
         "analogy": 4,
         "accessibility": 4,
-        "case_clarity": 3
+        "case_clarity": 4
       },
-      "average": 3.67,
-      "verdict": "needs-refine",
-      "weakest_section": "## 实践案例",
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
       "fix_hints": [
-        "衣柜+绑锁类比把跨文档事务讲清楚，零基础能建立直觉",
-        "change-vector / 预计算索引 / Raft 有白话桥接；Corax、LINQ 对零基础仍偏密但可接受",
-        "实践案例只有 2 个且案例 2 无代码、无逐步拆解；应按模板补案例 3，并把案例 2 拆成可跟做步骤"
+        "衣柜绑锁类比清楚；实践案例三则有步骤；核心要点 Subscription 片段若 worker 未定义会让跟读者卡住"
       ]
     },
     {
       "reviewer": "academic",
       "scores": {
-        "fact_accuracy": 3,
+        "fact_accuracy": 4,
         "citation_correctness": 4,
-        "no_distortion": 3
+        "no_distortion": 4
       },
-      "average": 3.33,
-      "verdict": "needs-refine",
-      "weakest_section": "## 历史小故事",
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
       "fix_hints": [
-        "版本年份有误：v3 应为 2014（非 2015）、v5.0 时间序列为 2020（非 2021）、v6.0 Corax 为 2023-08（非 2024）；v7 向量搜索 2025 可保留",
-        "『v4 重写存储引擎 Voron』不准确：Voron 在 v3.0 引入，v4.0 才成为唯一引擎并大幅增强；『v6 切到 Corax』过度——v6 起 Corax 与 Lucene 并存可选，非全面替换",
-        "来源 github.com/ravendb/ravendb、Oren Eini/Ayende、AGPLv3、跨文档 ACID 自 v1、MongoDB 4.0 多文档事务主线合理；『禁止 ad-hoc 全表查』偏绝对（存在 auto-index / 集合扫描路径）"
+        "v3/v5/v6 年份与 Voron/Corax 并存表述已正确；GitHub star 写约 3.5k 略偏低（现约 4k），宜更新"
       ]
     },
     {
@@ -101,45 +40,35 @@
       },
       "average": 3.67,
       "verdict": "needs-refine",
-      "weakest_section": "## 实践案例",
+      "weakest_section": "## 核心要点",
       "fix_hints": [
-        "案例 1 ClusterWide + Load/Store/SaveChanges 概念正确可跟；案例 2 只有叙事无 RQL/索引代码；缺案例 3（如 Subscription 消费）",
-        "踩坑具体可操作：AGPL 传染、读己写不到、强制索引、生态小——保留",
-        "适用/不适用边界清楚（.NET 一站式 vs PB 级/非 .NET/OLAP/纯 KV）"
+        "核心要点 §5 Subscription 示例 Create 后直接 worker.Run，worker 未定义，无法跟做；应补 GetSubscriptionWorker（案例 3 已写对，核心要点需对齐）",
+        "案例 1 ClusterWide 与案例 2/3 可跟做；踩坑与适用边界清楚——保留"
       ]
     }
   ],
-  "slug": "ravendb",
-  "area": "projects",
-  "status": "refined",
-  "lines": 198,
-  "l1_pass": true,
   "aggregate": {
-    "average": 3.56,
-    "verdict": "refine",
+    "average": 3.89,
+    "reject_count": 0,
+    "needs_refine_count": 1,
     "action": "refine",
-    "rejects": 0,
-    "needs_refine": 3,
-    "all_pass": false
+    "reason": "engineer needs-refine（核心要点 Subscription worker 未定义）；平均分 < 4；未达 rewrite 阈值。"
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "补齐核心要点 Subscription 的 GetSubscriptionWorker；star 约 3.5k → 约 4k",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
   },
   "quality_gate": {
     "pass": true,
     "lines": 198,
     "l1_pass": true,
     "reasons": []
-  },
-  "refinement": {
-    "action": "refine",
-    "round": 1,
-    "reason": "三审 needs-refine：纠 v3/v5/v6 年份与 Voron/Corax 表述；补案例 2 代码与案例 3 Subscription；弱化禁止 ad-hoc；补反向链接",
-    "sections_modified": [
-      "## 为什么重要",
-      "## 核心要点",
-      "## 实践案例",
-      "## 踩过的坑",
-      "## 历史小故事",
-      "## 反向链接"
-    ],
-    "unresolved_hints": []
   }
 }
