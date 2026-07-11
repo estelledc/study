@@ -1,0 +1,138 @@
+{
+  "slug": "starship",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "智能灯控 / 一份 toml 点亮多 shell 的类比贴合，保留"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 步骤清楚（安装→最小配置→Nerd Font/plain-text）；案例 2 可再点明 format 串里每个 $模块 对应屏幕上哪一段"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「PROMPT_COMMAND / vcs_info」首次出现已有语境，零基础大体能跟住"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/starship/starship、Matan Kushner（matchai）正确"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2019 年 7 月用 JavaScript 写出第一版 starship.rs」与史实不符：仓库自 2019 起即以 Rust 为主；应改为「受 spaceship-prompt / robbyrussell-node 等 JS/ZSH prompt 启发，直接用 Rust 做跨 shell 外挂」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「8 月因 Node 慢而 Rust 重写」易读成 starship 自身从 JS 迁到 Rust——歪曲；可写「刻意避开 Node 启动开销，选 Rust 单二进制」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2026 年 45k+ star」偏旧（同期已更高），可改为「数万 star / 跨 shell prompt 事实标准之一」避免钉死过时数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "安装/toml/preset 命令可跟做；plain-text-symbols 路径实用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑覆盖 init 未写入 rc、与 p10k 冲突、慢云模块、format 空格——具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用已有 <50ms / pure / 无二进制权限等边界；可补一句「默认 command_timeout 约 500ms，慢模块建议 disabled」与核心要点呼应"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "智能灯控 / 一份 toml 点亮多 shell 的类比贴合，保留",
+        "案例 1–3 步骤清楚（安装→最小配置→Nerd Font/plain-text）；案例 2 可再点明 format 串里每个 $模块 对应屏幕上哪一段",
+        "「PROMPT_COMMAND / vcs_info」首次出现已有语境，零基础大体能跟住"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源 github.com/starship/starship、Matan Kushner（matchai）正确",
+        "「2019 年 7 月用 JavaScript 写出第一版 starship.rs」与史实不符：仓库自 2019 起即以 Rust 为主；应改为「受 spaceship-prompt / robbyrussell-node 等 JS/ZSH prompt 启发，直接用 Rust 做跨 shell 外挂」",
+        "「8 月因 Node 慢而 Rust 重写」易读成 starship 自身从 JS 迁到 Rust——歪曲；可写「刻意避开 Node 启动开销，选 Rust 单二进制」",
+        "「2026 年 45k+ star」偏旧（同期已更高），可改为「数万 star / 跨 shell prompt 事实标准之一」避免钉死过时数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "安装/toml/preset 命令可跟做；plain-text-symbols 路径实用",
+        "踩坑覆盖 init 未写入 rc、与 p10k 冲突、慢云模块、format 空格——具体可操作",
+        "不适用已有 <50ms / pure / 无二进制权限等边界；可补一句「默认 command_timeout 约 500ms，慢模块建议 disabled」与核心要点呼应"
+      ]
+    }
+  ],
+  "refinement": {
+    "action": "refine",
+    "reason": "纠正「JS 首版再 Rust 重写」史实为受 spaceship/robbyrussell-node 启发、自始 Rust；弱化过时 star 数；format 模块对照与 command_timeout 呼应。",
+    "sections_modified": [
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 159,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 159,
+  "l1_pass": true
+}
