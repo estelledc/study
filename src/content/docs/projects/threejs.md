@@ -8,24 +8,28 @@ title: Three.js — 轻量 3D 渲染引擎
 
 ## 是什么
 
-Three.js 是一个让网页“会画 3D”的工具箱。你可以把它想成“把复杂的 WebGL 指令重写成更好记的 API”。  
+Three.js 是浏览器里的**轻量 3D 工具箱**：把底层 WebGL（网页画 3D 的原生接口）收成更好记的对象。
 
-不熟悉图形 API 的人最容易记住它的角色：你不用直接写大量 shader / 缓冲区绑定 / 矩阵上传，先用 `Scene`、`Camera`、`Renderer` 组成一条清晰流水线。  
+日常类比：你要拍产品照，不必自己焊灯架、调光圈、手算透视——搭一个摄影棚就行。Three.js 里 `Scene` 是棚、`Camera` 是相机、`Light` 是灯、`Mesh` 是被拍的物体、`Renderer` 是快门按下后出图的那一步。
 
 ```js
 import * as THREE from 'three'
 
 const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000)
+const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 1000)
 camera.position.set(0, 1, 5)
 
 const renderer = new THREE.WebGLRenderer()
-renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setSize(innerWidth, innerHeight)
 document.body.appendChild(renderer.domElement)
 
-const geo = new THREE.BoxGeometry(1, 1, 1)
-const mat = new THREE.MeshStandardMaterial({ color: 0x44aa88 })
-const mesh = new THREE.Mesh(geo, mat)
+scene.add(new THREE.AmbientLight(0xffffff, 0.4))
+scene.add(new THREE.DirectionalLight(0xffffff, 0.8))
+
+const mesh = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshStandardMaterial({ color: 0x44aa88 })
+)
 scene.add(mesh)
 
 renderer.setAnimationLoop(() => {
@@ -34,130 +38,123 @@ renderer.setAnimationLoop(() => {
 })
 ```
 
-这是“最小可跑 3D 场景”：场景、网格、相机、渲染循环齐活。  
+注意：`MeshStandardMaterial` 靠光照显色；没灯时画面会近乎全黑——这是跟做时最常见的第一坑。
 
 ## 为什么重要
 
-在工程上，Three.js 一直能解释“轻量”这件事：  
+不理解 Three.js，下面这些事都不好解释：
 
-1. 大多数业务想要的是可交付效果，不是发明一个完整引擎；  
-2. 它把复杂度压平，让前端也能快速做数据可视化、交互地图、产品演示；  
-3. 一套生态（Docs、Manual、Examples）和插件机制足够让项目不至于“写到一半没资料”。  
-
-它的核心价值不是“最好玩”，而是“上手快且生态够大”。  
+- 为什么前端能在网页里做可交互 3D，却不必手写整套管线
+- 为什么产品演示、数据大屏、地图可视化常先选它而不是完整游戏引擎
+- 为什么「会 JS」就能进 3D：生态（Docs / Manual / Examples）把门槛压低了
+- 为什么 WebGPU 成熟后它仍在：同一套 Scene 模型可渐进换渲染后端
 
 ## 核心要点
 
-### 1）核心构成：Scene / Camera / Mesh / Material / Light
-
-几乎所有场景都围绕这几件事：
-
-- `Scene`：放东西的舞台  
-- `Camera`：决定你从哪个视角看  
-- `Mesh`：几何体 + 材质  
-- `Renderer`：把结果画到 Canvas  
-- `Light`：让材质体现明暗和层次  
-
-### 2）渲染循环
-
-Three.js 不会替你“想象”动画时机；你需要 `setAnimationLoop` 提供每帧更新。  
-
-```js
-renderer.setAnimationLoop(() => {
-  object.position.x = Math.sin(performance.now() * 0.001)
-  renderer.render(scene, camera)
-})
-```
-
-### 3）几何体与材质分离
-
-`Geometry` 决定形状，`Material` 决定视觉表现。这种解耦让可复用性很高，模型换材质不用改拓扑。  
-
-### 4）材质体系
-
-- `MeshBasicMaterial` 快速原型，不受光照影响。  
-- `MeshStandardMaterial` 用 PBR 工作流时更接近现实。  
-- `PointsMaterial` 适合点云可视化。  
-
-### 5）多渲染器
-
-虽然默认主流是 WebGL，也支持 WebGPU 渐进接入，另外还有 SVG / CSS3D 生态组件。  
+1. **五件套搭骨架**：`Scene`（舞台）+ `Camera`（视角）+ `Mesh`（几何+材质）+ `Light`（明暗）+ `Renderer`（画到 Canvas）。缺灯或忘 `render`，场景再漂亮也出不了图。
+2. **渲染循环自己推**：用 `setAnimationLoop` 每帧改变换再 `render`；库不会替你“想象”动画时机。
+3. **几何与材质分离**：`Geometry` 管形状，`Material` 管外观。换皮不用改拓扑——像同一模具换涂料。
+4. **材质选型**：`MeshBasicMaterial` 不受光（原型快）；`MeshStandardMaterial` 走 PBR（基于物理的着色，更像真实材质）；`PointsMaterial` 适合点云。
+5. **多渲染后端**：默认 WebGL；可渐进接 WebGPU；另有 CSS3D / SVG 等旁路组件。
 
 ## 实践案例
 
-### 案例 1：做一个可交互仪表盘点
+### 案例 1：旋转立方体（最小可跑）
 
-你可以把数据库返回的数据转成 `SphereGeometry` + `Line`，用 `Raycaster` 做 hover 交互。  
+按「是什么」里的代码逐步核对：
 
-- 数据项 -> 坐标 -> 点对象
-- 鼠标移动 -> `raycaster.setFromCamera` -> 命中测试 -> 显示 tooltip  
+1. 创建 `Scene` / `PerspectiveCamera` / `WebGLRenderer`，把 `domElement` 挂到页面
+2. 加 `AmbientLight` + `DirectionalLight`（Standard 材质必需）
+3. `BoxGeometry` + `MeshStandardMaterial` 组成 `Mesh` 并 `scene.add`
+4. `setAnimationLoop` 里改 `rotation.y` 再 `render`
 
-### 案例 2：地理数据轻量三维展示
+能转起来，说明五件套已通。若全黑，先查有没有灯。
 
-若要展示建筑热力分布，不必一上来就推 GPU 大型框架。先用 `CylinderGeometry` 或低面片网格做原型，确认交互先行。  
+### 案例 2：Raycaster 做 hover 拾取
 
-### 案例 3：教育场景可视化
+把数据点建成 `SphereGeometry` 小球；鼠标移动时：
 
-把树状结构转为“浮动球 + 连线”；课程里能直观看到层级关系。  
+```js
+const raycaster = new THREE.Raycaster()
+const pointer = new THREE.Vector2()
+function onMove(e) {
+  pointer.x = (e.clientX / innerWidth) * 2 - 1
+  pointer.y = -(e.clientY / innerHeight) * 2 + 1
+  raycaster.setFromCamera(pointer, camera)
+  const hits = raycaster.intersectObjects(points)
+  // hits[0] 即最近命中；据此改色或显示 tooltip
+}
+```
 
-### 案例 4：产品宣传页微交互
+Raycaster（射线拾取）= 从相机射出一根“手指”，看先碰到谁——交互仪表盘的基础。
 
-对高转化页面来说，小范围粒子/缓动就能带来“动静结合”的体验，Three.js 的优势在“足够快地表达 3D”。  
+### 案例 3：地理热力柱原型
+
+用 `CylinderGeometry` 按经纬度摆柱、高度映射数值。先低面片确认缩放与拾取，再换成精细模型或 InstancedMesh——避免一上来上重型引擎。百级柱体通常够用；上千根优先实例化。
 
 ## 踩过的坑
 
-1. **每帧创建对象**：在动画循环里频繁 `new` 会触发 GC，掉帧明显。  
-2. **忘记销毁监听器**：`controls.dispose()` / `renderer.dispose()` 不做，单页应用会越来越卡。  
-3. **材质错用**：`MeshBasicMaterial` 做复杂照明场景会失真，反过来 WebGL 性能也被浪费。  
-4. **单位不一致**：尺寸比例和坐标系方向不统一会导致模型“漂”。  
-5. **坐标误用**：`PerspectiveCamera` 的近远裁剪面设太窄导致物体闪烁消失。  
-6. **Resize 未处理**：窗口变化后不调用 `camera.aspect` 与 `renderer.setSize`，会变形。  
-7. **不懂性能层级**：大量 Mesh 不分批更新，超出 GPU 上下文上限。  
+1. **每帧 `new` 对象**：loop 里频繁创建几何/材质会触发 GC，掉帧明显。
+2. **忘记 dispose**：SPA 切页不做 `geometry.dispose()` / `material.dispose()` / `renderer.dispose()`，显存与监听器泄漏。
+3. **Standard 材质没灯**：跟做全黑，误以为“库坏了”。
+4. **近远裁剪过窄**：`PerspectiveCamera` 的 near/far 设错，物体闪烁或突然消失。
+5. **Resize 未同步**：窗口变化后不改 `camera.aspect` 与 `renderer.setSize`，画面拉伸。
+6. **上千独立 Mesh 不分批**：draw call 爆炸；合并几何或用 InstancedMesh。
 
-## 适用和不适用
+## 适用 vs 不适用场景
 
-### 适用场景
+**适用**：
+- 网页端轻量 3D（产品展示、教学示意、百到数千 mesh 的可视化）
+- 团队以 JS 为主，要在数天内做出可交互 MVP
+- 需要 Raycaster 拾取、轨道控制、加载 glTF 等常见能力
 
-- 需要网页端轻量 3D 展示，尤其是可交互场景；  
-- 需要快速从“纯前端”切到“3D 可视化”而无需组建底层图形管线；  
-- 团队以 JS 为主，研发速度优先；  
-- MVP 阶段要把效果说清楚并快速验证。  
+**不适用**：
+- AAA 级实时光追 / 大规模开放世界（考虑专用引擎）
+- 强实时物理且延迟预算极紧（毫秒级），Three.js 物理多为插件级
+- 必须以原生 App 深绑移动 GPU 时，WebView 方案往往不够
 
-### 不适用场景
+## 历史小故事（可跳过）
 
-- 你要做 AAA 级别渲染（如复杂实时光追、大规模粒子流）；  
-- 强实时物理模拟且延迟预算极低，建议考虑专用引擎；  
-- 需要深度跨平台本地部署（移动端原生场景复杂时）。  
+- **2010 前后**：Ricardo Cabello（mrdoob）开源 three.js，把“自己写 WebGL 管线”的门槛拉低。
+- **2010s**：Examples 与社区插件把重心从底层语法转到交互与视觉。
+- **2020s**：glTF 成为默认模型交换；生态模板化。
+- **现在**：WebGPURenderer 渐进可用，同一套场景图迁向更现代图形 API。
 
-## 历史小故事
+## 一些可能的疑问
 
-2010 年前后，Web 3D 常常要自己搭 WebGL 管线。three.js 的出现把“能否自己写 shader”这道门槛拉低，社区逐渐把重心从底层语法改到交互设计。  
+**问：为什么加了立方体还是黑的？**
 
-这导致一个有趣的演变：  
+多半用了 `MeshStandardMaterial` 却没加灯。先加环境光，或临时换成 `MeshBasicMaterial` 验证几何是否在视野内。
 
-- 2010s：先有“库”；  
-- 2020s：出现大量示例、插件和模板；  
-- 现在：WebGPU 逐步成熟，three.js 也在往更现代图形 API 迁移。  
+**问：Three.js 和游戏引擎什么关系？**
+
+它是场景图 + 渲染封装，不是完整游戏引擎。没有内置关卡编辑器、完整物理与网络同步；适合网页可视化与轻交互，不适合 3A 管线。
+
+**问：该从 WebGL 还是 WebGPU 入门？**
+
+先 WebGLRenderer 跟完官方例子；等场景稳定再试 WebGPURenderer。API 心智模型（Scene/Camera/Mesh）不变，换的是后端。
 
 ## 学到什么
 
-1. 工具价值不是替代技术，而是降低决策摩擦；  
-2. 3D 体验先搭骨架（Scene/Camera/Material），再优化细节；  
-3. 能跑就好，但要提前规划销毁与重用，性能才会在迭代中稳住。  
+1. 工具价值是降低决策摩擦，不是替代图形学本身。
+2. 先搭 Scene/Camera/Light/Mesh/Renderer 骨架，再谈材质与性能。
+3. 能跑只是起点：dispose、复用、控制 draw call，迭代才稳。
 
 ## 延伸阅读
 
-- 官方文档：https://threejs.org/docs/  
-- 示例站点：https://threejs.org/examples/  
-- Manual：https://threejs.org/manual/  
-- 官方 Wiki：https://github.com/mrdoob/three.js/wiki  
-- 对比方向：Three.js 与 Babylon.js 的生态差异  
+- 官方文档：https://threejs.org/docs/
+- 示例：https://threejs.org/examples/
+- Manual：https://threejs.org/manual/
+- 仓库：https://github.com/mrdoob/three.js
+- 对比：Babylon.js 更偏完整引擎向；Three.js 更偏轻量场景图
 
 ## 关联
 
-- [[webgl]] —— 三维渲染的底层语义抽象  
-- [[webgpu]] —— 下一代浏览器图形入口  
-- [[d3]] —— 2D 与 3D 可视化的互补实践  
+- [[webgl]] —— 浏览器 3D 的底层绘图接口；Three.js 是其上的场景图封装
+- [[webgpu]] —— 下一代浏览器图形 API；Three.js 正渐进接入
+- [[d3]] —— 2D 数据可视化常与 Three.js 3D 展陈互补
+- [[gltf]] —— 现代 3D 资源交换格式，Three.js 加载器一等公民
+- [[canvas]] —— 2D 画布；理解 Renderer 输出目标时的对照物
 
 ## 反向链接
 
