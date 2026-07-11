@@ -1,0 +1,23 @@
+.github/workflows/ci.yml
+  s_f0917cab87042b::t_214bcfcd1619ec 22,25,40
+.github/workflows/deploy.yml
+  s_f0917cab87042b::t_5ea03c7bf6b921 21-22,26,61,73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "a7fa4ad2b0c5e4a6450df6cce7fb22bbfa58357e",
+  "prompts": {},
+  "sessions": {
+    "s_f0917cab87042b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "s_f0917cab87042b",
+        "model": "unknown"
+      },
+      "human_author": "Jason <150260202+estelledc@users.noreply.github.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
