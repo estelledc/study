@@ -1,0 +1,143 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "翻书学生类比贴合「按需检索 + 自检」，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Retrieve/IsRel/IsSup/IsUse 有取值表；aleatoric、critic 蒸馏可再补一句白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4「逐句 IsSup」误放在 ## 踩过的坑 下，结构易混；建议挪回实践案例并拆成可跟的 3 步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Asai et al. ICLR 2024 Oral / arXiv:2310.11511；Self-RAG-13B PopQA 55.8、FactScore 80.2、ARC-Chal 73.1 与论文表一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「FLARE…都在 Self-RAG 的 reflection token 路上演化」时间线反了：FLARE（2023-04）早于 Self-RAG（2023-10）；宜改为后继 CRAG/Adaptive-RAG 等沿按需检索+批判演化，FLARE 是前驱"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例表「ChatGPT (RAG)」把 Ret-ChatGPT 的 PopQA/ARC 与 ChatGPT 的 FactScore 混在一行；学到什么里把 o1 thinking token 直接挂到 Self-RAG 同源过强，宜弱化为「控制信号嵌进生成」的后续对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "推理流程与 reflection token 样例概念正确，可跟读；缺最小伪代码循环（Retrieve→retrieve K→IsRel/IsSup/IsUse→选段）但不挡理解"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：GPT-4 critic 成本、延迟 1.5–2×、Retrieve 校准、必须重训 vs CRAG 外挂"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（开源可微调 / 闭源 API / 低延迟 SLA）；案例 4 放错节不影响工程信息密度"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "翻书学生类比贴合「按需检索 + 自检」，零基础直觉强",
+        "Retrieve/IsRel/IsSup/IsUse 有取值表；aleatoric、critic 蒸馏可再补一句白话",
+        "案例 4「逐句 IsSup」误放在 ## 踩过的坑 下，结构易混；建议挪回实践案例并拆成可跟的 3 步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Asai et al. ICLR 2024 Oral / arXiv:2310.11511；Self-RAG-13B PopQA 55.8、FactScore 80.2、ARC-Chal 73.1 与论文表一致",
+        "「FLARE…都在 Self-RAG 的 reflection token 路上演化」时间线反了：FLARE（2023-04）早于 Self-RAG（2023-10）；宜改为后继 CRAG/Adaptive-RAG 等沿按需检索+批判演化，FLARE 是前驱",
+        "案例表「ChatGPT (RAG)」把 Ret-ChatGPT 的 PopQA/ARC 与 ChatGPT 的 FactScore 混在一行；学到什么里把 o1 thinking token 直接挂到 Self-RAG 同源过强，宜弱化为「控制信号嵌进生成」的后续对照"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "推理流程与 reflection token 样例概念正确，可跟读；缺最小伪代码循环（Retrieve→retrieve K→IsRel/IsSup/IsUse→选段）但不挡理解",
+        "踩坑具体：GPT-4 critic 成本、延迟 1.5–2×、Retrieve 校准、必须重训 vs CRAG 外挂",
+        "适用边界清楚（开源可微调 / 闭源 API / 低延迟 SLA）；案例 4 放错节不影响工程信息密度"
+      ]
+    }
+  ],
+  "slug": "self-rag-2023",
+  "area": "papers",
+  "status": "refined",
+  "lines": 168,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "修正 FLARE 时间线与 ChatGPT 基线混表；案例 4 挪回实践案例并拆三步；弱化 o1 同源表述；补 aleatoric 白话"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 FLARE 时间线与 ChatGPT 基线混表；案例 4 挪回实践案例并拆三步；弱化 o1 同源表述；补 aleatoric 白话",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 168,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
