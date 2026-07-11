@@ -39,7 +39,7 @@ new Sigma(graph, document.getElementById('container'))
 
 Sigma.js 的设计可以拆成 **四件套**：
 
-1. **数据结构外置**：Sigma 不存图，它**接收一个 graphology 实例**。graphology 是同一作者写的纯数据库，专门管节点/边的增删改查、广度优先、连通分量等算法。两边职责清爽：graphology 算，Sigma 画。
+1. **数据结构外置**：Sigma 不存图，它**接收一个 graphology 实例**。graphology 是同一作者写的**纯图数据结构 / 算法库**（数据层，不是数据库），专门管节点/边的增删改查、广度优先、连通分量等。两边职责清爽：graphology 算，Sigma 画。
 
 2. **WebGL 渲染管线**：节点和边各自走一对 vertex shader + fragment shader，把"画 1 万个圆"压成一次 GPU 调用。日常类比：原来一笔一笔涂色（Canvas），现在一次性把所有形状塞给显卡（WebGL），延迟差一个数量级。
 
@@ -68,7 +68,12 @@ Sigma 不内置布局——这是有意的设计。布局算法属于"数据层"
 
 ### 案例 2：reducer 实现 hover 高亮
 
+先接上案例 1 的 `graph`，再创建 `sigma`，然后挂 hover：
+
 ```js
+const container = document.getElementById('container')
+const sigma = new Sigma(graph, container)
+
 let hovered = null
 sigma.on('enterNode', ({ node }) => { hovered = node; sigma.refresh() })
 sigma.on('leaveNode', () => { hovered = null; sigma.refresh() })
@@ -81,7 +86,7 @@ sigma.setSetting('nodeReducer', (node, data) => {
 })
 ```
 
-reducer 是 Sigma 交互的灵魂：每次 `refresh()` 时都会问一遍"这个节点现在该长什么样"。原图数据不变，渲染时临时改属性——所以撤销 hover 不需要 undo。
+reducer 是交互的灵魂：每次 `refresh()` 问一遍"这个节点现在该长什么样"。原图不变，只临时改渲染属性——撤销 hover 不需要 undo。
 
 ### 案例 3：camera API 编程式定位
 
@@ -137,9 +142,9 @@ new Sigma(graph, container, {
 ## 历史小故事（可跳过）
 
 - **2010 年代初**：巴黎 Sciences Po 的 médialab（社会科学计算实验室）需要在网页上展示研究的关系网络。同一个实验室此前还诞生了桌面老牌 Gephi。
-- **2013 年**：Alexis Jacomy 公开 Sigma.js v1，Canvas + SVG 双 renderer，能跑 1000 节点。社交网络研究圈快速采纳。
+- **2013–2014 年**：Alexis Jacomy 公开 Sigma.js v1（约 2013 draft / 2014 正式），主线是 **Canvas + WebGL** renderer（SVG 多为导出/插件路径），能跑约千级节点。社交网络研究圈快速采纳。
 - **2021 年**：v2 完全重写——TypeScript + WebGL 默认，作者把图数据结构剥离成独立项目 graphology。这一刀让两边都长得更快。
-- **2026 年**：Sigma 已到 v3.x，GitHub 11k Star。配合 graphology 几乎成为"网页大图可视化"的事实标准之一。
+- **2026 年**：Sigma 已到 v3.x（另有 v4 alpha），GitHub 约 12k Star。配合 graphology 几乎成为"网页大图可视化"的事实标准之一。
 
 ## 学到什么
 
