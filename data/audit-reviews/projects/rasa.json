@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 直接抛 FormPolicy，缺少「激活表单 → 逐槽追问 → 填完退出」的分步白话"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 Custom Action 可补一句：主进程只负责对话，5055 上的 Action Server 才真正调 API"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Tracker 很好，但 Policy 首次出现缺日常类比（如「按菜谱选下一步」）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Rasa 2.0 起 FormPolicy 已由 RulePolicy 接管表单循环，3.x 已移除 FormPolicy；案例 2 应改写为 RulePolicy / rules 激活 form"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "DIET 论文（Bunk et al. 2020, arXiv:2004.09936）与来源 RasaHQ/rasa 引用合理；「省一半参数且准确率更高」宜弱化为「更轻量、联合训练常更稳」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联/延伸里 [[langchain-tutorial]]、[[transformers-attention]] 在仓库无对应 slug，应改为现有条目如 [[langchain]]、[[transformer]]"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 按现行 Rasa 应写 RulePolicy + rules.yml 激活 book_flight_form，不要再写 FormPolicy"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "forms 示例缺 slot 映射示意；踩坑已提 slot_mappings，案例里应给最小 mappings（或注明 3.x 写在 slots 段）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "Custom Action 示例概念正确（5055 Action Server）；可补 return [] 表示不改槽，避免读者以为必须 return Event"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 直接抛 FormPolicy，缺少「激活表单 → 逐槽追问 → 填完退出」的分步白话",
+        "案例 3 Custom Action 可补一句：主进程只负责对话，5055 上的 Action Server 才真正调 API",
+        "核心要点里 Tracker 很好，但 Policy 首次出现缺日常类比（如「按菜谱选下一步」）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "Rasa 2.0 起 FormPolicy 已由 RulePolicy 接管表单循环，3.x 已移除 FormPolicy；案例 2 应改写为 RulePolicy / rules 激活 form",
+        "DIET 论文（Bunk et al. 2020, arXiv:2004.09936）与来源 RasaHQ/rasa 引用合理；「省一半参数且准确率更高」宜弱化为「更轻量、联合训练常更稳」",
+        "关联/延伸里 [[langchain-tutorial]]、[[transformers-attention]] 在仓库无对应 slug，应改为现有条目如 [[langchain]]、[[transformer]]"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 按现行 Rasa 应写 RulePolicy + rules.yml 激活 book_flight_form，不要再写 FormPolicy",
+        "forms 示例缺 slot 映射示意；踩坑已提 slot_mappings，案例里应给最小 mappings（或注明 3.x 写在 slots 段）",
+        "Custom Action 示例概念正确（5055 Action Server）；可补 return [] 表示不改槽，避免读者以为必须 return Event"
+      ]
+    }
+  ],
+  "slug": "rasa",
+  "area": "projects",
+  "status": "refined",
+  "lines": 186,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.67,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 186,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "案例 2 FormPolicy→RulePolicy；补表单分步与 slot 映射说明；弱化 DIET 表述；修复失效 wikilink；补齐关联",
+    "sections_modified": [
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 延伸阅读",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  }
+}
