@@ -1,0 +1,142 @@
+{
+  "slug": "resnet",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "盖楼/电梯类比把 shortcut 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Bottleneck 的 channel/1×1 降维对零基础稍陡，但有「压到 64 维再算」桥接，可跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 有逐行解释；案例 2 是对照表、案例 3 是生态用法，步骤感略弱于案例 1"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 表把 VGG-19 写成 top-5 9.33%：论文 Table 3（10-crop）是 VGG-16 = 9.33%，不是 VGG-19"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "同表 ResNet-50/101 写成 7.02%/6.21%，与论文 Table 3 的 6.71%/6.05% 不一致；ResNet-152 5.71% 与 ensemble 3.57% 正确，建议整表对齐论文 10-crop 数字"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 He et al. / CVPR 2016（arXiv 2015）正确；开篇用「梯度消失」叙事、踩坑再纠正为优化困难——教学可接受，但表内数字应先修硬伤"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 残差块伪代码概念正确，可跟做；维度不匹配时的 1×1 投影在踩坑里已补"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：优化困难≠梯度消失、shape mismatch 投影、1202 层过拟合、add vs concat"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有 >30 层 / <10 层等边界；边缘设备显存压力点到为止，可保留"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "盖楼/电梯类比把 shortcut 讲透，零基础直觉强",
+        "Bottleneck 的 channel/1×1 降维对零基础稍陡，但有「压到 64 维再算」桥接，可跟住",
+        "案例 1 有逐行解释；案例 2 是对照表、案例 3 是生态用法，步骤感略弱于案例 1"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 表把 VGG-19 写成 top-5 9.33%：论文 Table 3（10-crop）是 VGG-16 = 9.33%，不是 VGG-19",
+        "同表 ResNet-50/101 写成 7.02%/6.21%，与论文 Table 3 的 6.71%/6.05% 不一致；ResNet-152 5.71% 与 ensemble 3.57% 正确，建议整表对齐论文 10-crop 数字",
+        "来源 He et al. / CVPR 2016（arXiv 2015）正确；开篇用「梯度消失」叙事、踩坑再纠正为优化困难——教学可接受，但表内数字应先修硬伤"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 1 残差块伪代码概念正确，可跟做；维度不匹配时的 1×1 投影在踩坑里已补",
+        "踩坑具体可操作：优化困难≠梯度消失、shape mismatch 投影、1202 层过拟合、add vs concat",
+        "适用/不适用有 >30 层 / <10 层等边界；边缘设备显存压力点到为止，可保留"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "academic needs-refine：案例 2 表 VGG-19/错误率与论文 Table 3（VGG-16 9.33%、ResNet-50/101 6.71%/6.05%）不一致。"
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 187,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 187,
+  "l1_pass": true,
+  "refinement": {
+    "action": "refined",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 实践案例"
+    ],
+    "unresolved_hints": [],
+    "notes": "开篇弱化「梯度消失」单一叙事；案例 2 表对齐论文 Table 3（VGG-16 9.33%、ResNet-34/50/101/152 的 10-crop top-5）。"
+  }
+}
