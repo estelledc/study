@@ -1,0 +1,142 @@
+{
+  "slug": "solana",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "预约制餐厅类比贴合「预先声明账号 → 并行切配」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "PoH / Sealevel / Gulf Stream / Tower BFT 有白话；开头图里的 Turbine 在核心要点未展开，零基础可能以为漏了一块"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 代码对照清楚；案例 2 是路径图、案例 3 是表格，步骤感略弱但仍可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2「leader 收齐 ~64k 笔交易」易与 65k TPS 设计目标混淆：400ms slot 下 65k TPS ≈ 每 slot ~26k 笔，不是 64k；请改正或改成「冲着设计吞吐目标收交易」并避免把 TPS 当 per-slot"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "PoH 写成「VDF 风味」可接受；需保持「PoH≠共识、共识是 Tower BFT」以免歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源仍写 solana-labs/solana；主客户端已迁 Anza/Agave，可注明历史仓库或改指向 anza-xyz/agave"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 Anchor Accounts 是教学最小例，缺 token_program 等真实账户，可跟思路；建议加半句「生产还要声明 Token Program 等」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：PoH≠共识、账号预先声明、rent-exempt、宕机与费市场/QUIC"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（高频 DEX/微支付 vs 国库级安全/纯 Solidity 团队）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "预约制餐厅类比贴合「预先声明账号 → 并行切配」",
+        "PoH / Sealevel / Gulf Stream / Tower BFT 有白话；开头图里的 Turbine 在核心要点未展开，零基础可能以为漏了一块",
+        "案例 1 代码对照清楚；案例 2 是路径图、案例 3 是表格，步骤感略弱但仍可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2「leader 收齐 ~64k 笔交易」易与 65k TPS 设计目标混淆：400ms slot 下 65k TPS ≈ 每 slot ~26k 笔，不是 64k；请改正或改成「冲着设计吞吐目标收交易」并避免把 TPS 当 per-slot",
+        "PoH 写成「VDF 风味」可接受；需保持「PoH≠共识、共识是 Tower BFT」以免歪曲",
+        "来源仍写 solana-labs/solana；主客户端已迁 Anza/Agave，可注明历史仓库或改指向 anza-xyz/agave"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 Anchor Accounts 是教学最小例，缺 token_program 等真实账户，可跟思路；建议加半句「生产还要声明 Token Program 等」",
+        "踩坑具体：PoH≠共识、账号预先声明、rent-exempt、宕机与费市场/QUIC",
+        "适用/不适用边界清楚（高频 DEX/微支付 vs 国库级安全/纯 Solidity 团队）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.11,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正 per-slot ~64k→~26k（65k TPS×400ms）；补 Turbine；来源改 anza-xyz/agave；Anchor 例注明省略 token_program。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 per-slot ~64k→~26k（65k TPS×400ms）；补 Turbine；来源改 anza-xyz/agave；Anchor 例注明省略 token_program。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 180,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 180,
+  "l1_pass": true
+}

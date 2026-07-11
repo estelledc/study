@@ -102,7 +102,7 @@ RISC I 的核心论点：**让硬件简单，把复杂度推给编译器**。
 
 1. **"RISC 就是指令少"是误解**：现代 ARM 有几百条指令，仍然是 RISC。**关键不是数量，是"每条都简单、定长、单周期"**。CISC 的真正特征是变长指令 + 内存操作数 + 微码实现。
 
-2. **寄存器窗口是把双刃剑**：函数调用快了，但**操作系统切换进程**时要保存全部 138 个寄存器，慢一倍。后来 MIPS / ARM / RISC-V 都放弃了寄存器窗口，**只有 SPARC**（Sun 的 RISC 直系后代）保留下来。
+2. **寄存器窗口是把双刃剑**：函数调用快了，但**操作系统切换进程**时要保存全部物理寄存器——RISC I 是 **78 个**，RISC II（1983）扩到 **138 个**——上下文切换反而更重。后来 MIPS / ARM / RISC-V 都放弃了寄存器窗口，**只有 SPARC**（Sun 的 RISC 直系后代）保留下来。
 
 3. **"CISC 死了"也是误解**：x86 没死，桌面 / 服务器还在主导。但 x86 内部从 1995 年起就是"CISC 壳 + RISC 芯"。所以**不是 RISC 赢了 CISC，是 RISC 思想赢了**——它甚至住进了 CISC 的家里。
 
@@ -124,7 +124,7 @@ RISC I 的核心论点：**让硬件简单，把复杂度推给编译器**。
 - **1970 年代**：内存又贵又慢。设计哲学是"指令越复杂越好"——一条指令做的事多，程序就短，省内存。VAX-11 极致之作，连"求多项式"都是一条指令。
 - **1975 年**：IBM 内部项目 801（John Cocke 主导）发现：**编译器只用了 CISC 指令集的 20%**，剩下 80% 的复杂指令几乎没人生成。但 IBM 没公开。
 - **1980 年**：Patterson 在 Berkeley 也独立做出同样观察，决定造一颗"反潮流"的芯片，证明 simpler is faster。
-- **1981 年 5 月**：ISCA 论文发表，**6 页**。同年 Stanford 的 Hennessy 也发表 MIPS 论文，思路相通。
+- **1981 年 5 月**：ISCA 论文发表（常见手稿约 8 页）。同年 Stanford 的 Hennessy 也发表 MIPS 论文，思路相通。
 - **1985 年**：Acorn（英国）发布 ARM1，受 RISC I 直接启发。后来这家公司的命运——你今天的手机就是。
 - **2010 年**：Berkeley 又开始 RISC-V 项目，免费开源 ISA，三十年后回到原点又一次革命。
 
@@ -137,7 +137,7 @@ RISC I 的核心论点：**让硬件简单，把复杂度推给编译器**。
 
 ## 延伸阅读
 
-- 论文 PDF：[RISC I 1981](https://people.eecs.berkeley.edu/~kubitron/cs252/handouts/papers/RISC-I.pdf)（8 页，可读性极高）
+- 论文 PDF：[RISC I 1981](https://people.eecs.berkeley.edu/~kubitron/cs252/handouts/papers/RISC-I.pdf)（常见手稿约 8 页，可读性极高）
 - Patterson & Hennessy 教科书：《Computer Organization and Design》（计算机体系结构经典，作者就是 Patterson 本人）
 - 视频：[The Berkeley View on RISC](https://www.youtube.com/results?search_query=patterson+risc) — Patterson 多次公开讲过这段历史
 - [[tomasulo-1967]] —— 同样是体系结构里"硬件自动化"的代表，但走相反方向（CPU 自己重排指令）

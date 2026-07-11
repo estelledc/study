@@ -1,0 +1,142 @@
+{
+  "slug": "risc-i-1981",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "瑞士军刀 vs 厨刀、酒店滑动牌类比贴合，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "微码 / 寄存器窗口 / μops 有白话桥接；案例 2 的「类 RISC 微指令」可再补半句「CPU 内部把复杂指令拆成小步骤」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 调用步骤对照清楚；案例 2–3 偏叙述，仍可读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑 2 写「保存全部 138 个寄存器」：138/8 窗口是 RISC II（1983），RISC I 是 78 物理寄存器 / 6 窗口；请改成 78，或写明「RISC II / 后期窗口机」再提 138"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 Patterson & Séquin ISCA 1981、31 条指令、44k 晶体管、定长 load/store——与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事写「6 页」、延伸阅读写「8 页」不一致；统一为实际 PDF/proceedings 页数或删掉精确页数"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 用 C 调用对照 VAX 栈 vs 窗口指针，教学可跟；非可跑基准但概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：指令少≠RISC、窗口拖累上下文切换、CISC 壳+RISC 芯、代码体积膨胀"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（功耗敏感/编译器教学 vs 遗留二进制/极端体积）；可再补一句「桌面 x86 兼容场景仍以 CISC 外壳为主」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "瑞士军刀 vs 厨刀、酒店滑动牌类比贴合，零基础直觉强",
+        "微码 / 寄存器窗口 / μops 有白话桥接；案例 2 的「类 RISC 微指令」可再补半句「CPU 内部把复杂指令拆成小步骤」",
+        "案例 1 调用步骤对照清楚；案例 2–3 偏叙述，仍可读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 2 写「保存全部 138 个寄存器」：138/8 窗口是 RISC II（1983），RISC I 是 78 物理寄存器 / 6 窗口；请改成 78，或写明「RISC II / 后期窗口机」再提 138",
+        "来源 Patterson & Séquin ISCA 1981、31 条指令、44k 晶体管、定长 load/store——与论文一致",
+        "历史小故事写「6 页」、延伸阅读写「8 页」不一致；统一为实际 PDF/proceedings 页数或删掉精确页数"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "案例 1 用 C 调用对照 VAX 栈 vs 窗口指针，教学可跟；非可跑基准但概念正确",
+        "踩坑具体：指令少≠RISC、窗口拖累上下文切换、CISC 壳+RISC 芯、代码体积膨胀",
+        "适用/不适用有边界（功耗敏感/编译器教学 vs 遗留二进制/极端体积）；可再补一句「桌面 x86 兼容场景仍以 CISC 外壳为主」"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正踩坑 2 的 138→区分 RISC I 78 / RISC II 138；统一论文页数表述为约 8 页。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正踩坑 2 的 138→区分 RISC I 78 / RISC II 138；统一论文页数表述为约 8 页。",
+    "sections_modified": [
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 164,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 164,
+  "l1_pass": true
+}
