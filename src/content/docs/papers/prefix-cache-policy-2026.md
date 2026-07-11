@@ -1,165 +1,149 @@
 ---
-title: "Beyond LRU: Prefix-Cache Policies for LLM Serving — 学习笔记（入门）"
-来源: "https://arxiv.org/abs/2026"
+title: Beyond LRU — 混杂负载下的 LLM 前缀缓存淘汰（UniCache）
+来源: 'Ouyang, Qiao, Xing, "UniCache: Unifying Prefix Cache Eviction for Heterogeneous LLM Serving Workloads", POMACS 2026'
 日期: 2026-07-08
 分类: machine-learning
 难度: 中级
 ---
 
 ## 是什么
-这是一篇从工程和研究视角解读的 12+ 段笔记：
-可以把它当作一次把复杂系统拆成「输入—处理—输出」的练习。
-一句话结论：arXiv 2605.30654；LRU 在 prefix tree 上的失效；workload-aware GDSF 变体优于 vLLM 默认
+
+**前缀缓存（prefix cache）** 做一件事：多个请求如果共享同一段开头 prompt，就把这段已经算好的注意力 Key/Value（KV）留下来，下一请求直接复用，少做一遍昂贵的 prefill。
+
+日常类比：图书馆前台有一块**有限的热门书架**。读者 A 刚读完《哈利·波特》第 1–3 章，读者 B 也要从第 1 章读起——若书架还留着前三章，B 就不用重新从仓库搬。GPU 显存就是这块书架；**淘汰策略**决定「空间不够时先撤哪几本」。
+
+注意：这里的「前缀」是**字节级相同的 prompt 开头**，不是语义相近的改写句。
+
+主流引擎（[[vllm]] / [[sglang]]）默认常用 **LRU**（最近最少使用）：谁最久没被摸到，谁先被踢。UniCache（POMACS 2026）指出：真实流量是**聊天多轮 + 单轮 API 模板**混在一起的，一把 LRU 管所有人会系统性丢命中。它按任务分队列、兼顾「会话复用」和「结构复用」，在混杂负载上把前缀命中率最多抬高约 **17.32%**，相关延迟最多降到约 **3.63×** 更短。
+
+一句话：Beyond LRU = **别假设所有请求的前缀都「越新越值钱」**；混杂负载要用统一、分任务的淘汰策略。
+
+读者只需记住：缓存「开没开」是开关；**踢谁**才是混部场景的胜负手。
 
 ## 为什么重要
-- 先建立问题边界，避免把术语当结论。
-- 看到机制本质，才能判断在真实场景要不要上。
-- 学会把常见误解翻译成可复现的检查项。
-- 便于后续做延伸阅读与复用。
+
+不理解前缀缓存淘汰，下面这些事都讲不清：
+
+- 为什么同一台 [[vllm]] 上「纯聊天」和「文档问答 API」混跑时，默认 LRU 命中率会塌
+- 为什么只按访问次数（LFU）也不行：聊完的长会话会霸占书架，把还在用的模板前缀挤掉
+- 为什么「按业务类型各开一把 LRU」（Workload-Aware / WA）仍不够：各队列之间还在抢同一块显存，缺全局协调
+- 为什么显存预算一紧，TTFT / QTTFT 会先被「本可命中却被踢掉的前缀」拖垮
+
+服务侧体感也很直接：前缀 miss 会把本可跳过的 prefill 重新算一遍，队列一堵，尾延迟先爆。
 
 ## 核心要点
-1. 先定义对象和约束。
-2. 再看流程中的状态变化。
-3. 最后评估代价与收益。
+
+1. **两种复用，不是一种**。多轮聊天主要是**会话复用（session reuse）**：同一会话下一轮把历史拼进 prompt，前缀几乎整段可复用。单轮 API 主要是**结构复用（structural reuse）**：不同请求共享 system / 工具说明 / 模板头。类比：前者像「同一本书连着读」，后者像「很多读者都先翻同一本说明书封面」。论文还观察到：跨会话 / 跨任务复用往往极低（ShareGPT 跨会话复用可低至约 1% 量级），所以「全局一锅炖」并不划算。
+
+2. **单信号启发式会偏科**。ShareGPT 类负载上 LRU/WA 往往更好；MASH-QA 类模板负载上 LFU 更好；混在一起时，LFU 可能总分最差。类比：只按「最近谁借过」或只按「谁借过最多次」管混杂书架，总会牺牲其中一类读者。
+
+3. **UniCache = 分任务队列 + 全局协调**。每个任务队列用贴合自己复用模式的优先级挑「候选牺牲品」；全局再按「谁用较少容量换来较多命中」决定最终踢谁。decode 阶段 KV 几乎不复用（论文观察复用可低至约 0–3%），应优先腾给 prefill 前缀；同一 prompt 里越靠后的块越难命中，宜**从尾部先踢**以保住共享头。离线 OPT（Belady 式「踢最远才再用的块」）只作上限对照，线上不可实现，但能告诉你启发式还差多远。
 
 ## 实践案例
-### 案例 1：最小复现
-从官方仓库/论文摘要抽取最小前置条件。
-在本地先搭建最小样例，确认输出是否可复现。
 
-### 案例 2：边界条件
-在异常输入下观察失效点，记录触发阈值。
-对比默认参数与手动调优的差异。
+### 案例 1：前缀命中长什么样
 
-### 案例 3：代价估算
-给出 CPU/内存或工程复杂度的数量级估计。
-优先给出量化结果而不是抽象描述。
+```text
+请求 A:  [SYS][DOC_42][问：作者是谁？]
+请求 B:  [SYS][DOC_42][问：出版年？]
+         ^^^^^^^^  可复用的前缀块
+```
+
+逐步理解：
+
+1. A 算完后，引擎把 `[SYS][DOC_42]` 对应 KV 块放进前缀缓存
+2. B 到来时按块哈希做前缀匹配，命中则跳过这段 prefill
+3. 若缓存满且淘汰策略误踢了 `[SYS]`，B 只能从头重算——这就是策略的代价
+
+类比收束：书架上少了「说明书封面」，后面所有读者都得再跑一趟仓库。
+
+### 案例 2：混杂负载上 LRU 为何失手
+
+```text
+时刻 t1: 聊天会话 S 刚结束，历史块仍很「新」→ LRU 舍不得踢
+时刻 t2: 文档 QA 模板头 T 稍旧，但接下来 100 个 API 都要用 T
+时刻 t3: LRU 先踢 T → 模板流量集体 miss；S 的块却占着茅坑
+```
+
+对照论文动机实验（Llama-3.2-1B、A100、ShareGPT+MASH-QA 混合）：LRU 总分命中约 **0.57**，WA 约 **0.58**，但各任务内最优策略并不相同——说明「一个全局 LRU」不是混杂场景的答案。
+
+### 案例 3：UniCache 式决策（教学伪代码）
+
+```python
+def unicache_evict(task_queues, need_blocks):
+    # 每队列按本地策略提名 1 个最不值钱的块
+    candidates = [q.pick_victim() for q in task_queues if q]
+    # 全局分：命中贡献 / 占用容量（高分队列的块更该留）
+    victim = min(candidates, key=lambda b: hit_per_byte(b.queue))
+    return victim
+```
+
+逐步理解：
+
+1. 本地尊重「聊天看时效、模板看结构/频率」
+2. 全局用效率分避免某一类任务独占显存
+3. 实现上论文接到 vLLM 的 CPU 侧缓存控制路径，不必改模型算子；也可用他们的 trace 模拟器先扫策略再上 GPU
+
+混杂 hybrid trace 上，论文报告命中率相对基线提升约 **3.86%–17.32%**，QTTFT 约 **1.10×–3.63×** 改善——数字随负载配比与缓存预算变化，别当成固定 SLA。
 
 ## 踩过的坑
-1. 没先看输入格式，导致 pipeline 异常。
-2. 把默认值当作万能设置，忽略数据规模。
-3. 只看正例，不做反例验证。
-4. 文档与版本不一致，测试脚本未同步。
+
+1. **把 LRU 当万能默认**：同质多轮聊天还行；聊天+RAG/工具 API 一混，命中率与尾延迟会一起坏。
+2. **只上 LFU**：长会话累计次数高，结束后仍占坑，反而伤害活跃模板前缀。
+3. **按任务分队列却不做全局协调（朴素 WA）**：各队列内部更合理，但跨任务抢同一 GPU 缓存时仍可能整体次优。
+4. **舍不得踢 decode 块 / 从头部踢**：decode 复用极低；从头部踢会直接打断结构前缀共享。
+
+补充检查项：上线前先画「任务配比 × 缓存预算」热力图；只看单一 ShareGPT 曲线就改默认策略，很容易过拟合。
 
 ## 适用 vs 不适用
+
 **适用**：
-- 想快速理解核心机制的读者。
-- 课程/项目里需要入门级解释的场景。
-- 想快速对比不同实现策略时。
+
+- 一台引擎同时服务多类流量（多轮聊天 + 单轮模板 API）
+- 已开前缀缓存，但默认 LRU 在混部时命中率上不去
+- 想用 trace/模拟器先估策略，再改 vLLM 淘汰模块
+- 能给请求打上粗粒度任务标签（聊天 / 文档 QA / 工具调用等）
+
 **不适用**：
-- 只追求性能绝对最优的生产环境。
-- 需要严谨数学重建证明细节的读者。
-- 希望立即替代高成熟度商业组件时。
+
+- 几乎纯同质多轮、缓存很宽裕——LRU 往往已经够用
+- 主要瓶颈是算力/网络而非前缀命中
+- 需要跨请求「语义相似但不字节相同」的复用——前缀缓存要求**精确前缀匹配**
+- 无法区分任务类型、又不愿维护多队列元数据时——复杂度可能高于收益
 
 ## 历史小故事（可跳过）
-它的发展通常不是一夜发生，而是多次迭代后的工程共识。
-阅读时重点看“为什么这样设计”，比记忆参数更重要。
-很多主流实现其实共享一组隐含前提，需要自己补上。
+
+- **经典缓存**：操作系统页替换里 Belady OPT / LRU / LFU 争论了几十年；前缀缓存把战场搬到了 GPU KV。
+- **2023**：[[paged-attention-vllm]] 让 KV 按块管理，前缀共享与淘汰成为一等公民。
+- **2024–2025**：SGLang RadixAttention、各类 workload-aware / learned eviction（如 LPC）出现，仍多偏单一复用信号。
+- **2026**：UniCache 系统刻画 session vs structural 两种复用，并在混杂负载上给出统一淘汰与 vLLM 实现。
 
 ## 学到什么
-1. 约束先行能显著减少误用。
-2. 统一视角比记忆名词更稳定。
-3. 复用时要先确认边界条件是否一致。
-4. 质量门槛高的一步通常是反例测试。
+
+1. 前缀缓存的收益，上限往往卡在**淘汰策略是否匹配真实复用形态**，而不只是「开没开缓存」。
+2. 混杂 LLM 流量至少要同时看见**会话时效**和**模板结构**，再加一层全局容量协调。
+3. 评测要用混合 trace；单一数据集上的「最优策略」换个负载可能变最差。
+4. 工程上优先保护 prefill 共享头，大胆回收几乎不复用的 decode 尾部。
+5. 「Beyond LRU」不是否定 LRU，而是承认：**负载一异质，单一启发式就会偏科**。
 
 ## 延伸阅读
-- 官方文档/博客中的实现细节章节。
-- 同类项目/论文的对比清单。
-- 一篇实践文章：为什么工程会偏离论文理想模型。
-- 社区 issue 中经常出现的配置误区。
-- 基于 [[lambda-calculus]] 或数据库结构视角的同类型阅读。
+
+- UniCache PDF：[jxing.me/pdf/unicache-sigmetrics26.pdf](https://jxing.me/pdf/unicache-sigmetrics26.pdf)
+- DOI：[10.1145/3805652](https://doi.org/10.1145/3805652)
+- [[paged-attention-vllm]] —— 块级 KV 与前缀共享的底座
+- [[sglang-2024]] —— RadixAttention 路线的前缀树缓存
+- [[kv-cache-budget-2026]] —— 显存预算与 KV 策略的另一面
+- vLLM 文档中的 Automatic Prefix Caching 章节（对照默认 LRU 行为）
 
 ## 关联
-- [[index-structures]] —— 连接底层索引机制与上层抽象。
-- [[system-design]] —— 用分层模型解释实现。
-- [[observability]] —— 任何系统都需要可观测性。
-- [[benchmarking]] —— 通过实验模板形成可复验结论。
-- [[tradeoff-analysis]] —— 权衡永远是系统设计的主线。
+
+- [[paged-attention-vllm]] —— 前缀缓存依赖的分页 KV 管理
+- [[vllm]] —— UniCache 对接的主流开源 serving 引擎
+- [[sglang-2024]] —— 另一套前缀缓存实现（RadixAttention）
+- [[kv-cache-budget-2026]] —— KV 显存预算与保留策略
+- [[flash-attention]] —— 降低注意力算力，与缓存命中互补
+- [[oscar-int2-kv]] —— 从「压 KV 位宽」另一侧缓解显存压力
 
 ## 反向链接
+
 <!-- 由 scripts/regen-backlinks.mjs 自动生成 -->
-- [[placeholder-a]] —— 该项建议在后续自动反向链接阶段补齐。
-- [[placeholder-b]] —— 该项建议在后续自动反向链接阶段补齐。
-- [[placeholder-c]] —— 该项建议在后续自动反向链接阶段补齐。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
-- 说明：本项内容围绕 prefix-cache-policy-2026 的设计与适用场景展开。
