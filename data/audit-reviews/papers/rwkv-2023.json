@@ -1,0 +1,138 @@
+{
+  "slug": "rwkv-2023",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "完形填空/小本子/全班笔记类比贯穿，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "prefix-sum / receptance / time decay / KV cache 有白话桥接，WKV 公式旁也有解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 多为对比叙述，缺逐步拆解；建议案例 1 写成「装模型→对话变长→对比 KV cache 涨 vs state 固定」三步，案例 2 补「存 state→来 token→更新→吐字」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Peng et al. EMNLP Findings 2023 / arXiv 2305.13048、14B on The Pile、训练并行+推理常显存与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源题名/年份/venue 正确；延伸阅读指向 arXiv 与 BlinkDL/RWKV-LM 合理"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「端侧一开始几乎都选 RWKV」偏修辞；WKV 公式为教学简化（略 receptance/u），可保留但勿当完整定义"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "WKV 伪代码与 scan/递推对照概念正确，可跟读；案例偏场景叙述而非可跑脚本，论文笔记可接受"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "fp16 溢出、长程召回、w 初始化、batch state、prompt 顺序五条坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚：端侧/流式/压缩式长文 vs ICL/精确召回/密集 tool-use"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "完形填空/小本子/全班笔记类比贯穿，零基础直觉强",
+        "prefix-sum / receptance / time decay / KV cache 有白话桥接，WKV 公式旁也有解释",
+        "案例 1–3 多为对比叙述，缺逐步拆解；建议案例 1 写成「装模型→对话变长→对比 KV cache 涨 vs state 固定」三步，案例 2 补「存 state→来 token→更新→吐字」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "Peng et al. EMNLP Findings 2023 / arXiv 2305.13048、14B on The Pile、训练并行+推理常显存与论文一致",
+        "来源题名/年份/venue 正确；延伸阅读指向 arXiv 与 BlinkDL/RWKV-LM 合理",
+        "「端侧一开始几乎都选 RWKV」偏修辞；WKV 公式为教学简化（略 receptance/u），可保留但勿当完整定义"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "WKV 伪代码与 scan/递推对照概念正确，可跟读；案例偏场景叙述而非可跑脚本，论文笔记可接受",
+        "fp16 溢出、长程召回、w 初始化、batch state、prompt 顺序五条坑具体可操作",
+        "适用/不适用边界清楚：端侧/流式/压缩式长文 vs ICL/精确召回/密集 tool-use"
+      ]
+    }
+  ],
+  "aggregate": {
+    "action": "refine",
+    "average": 4.22,
+    "reject": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "zero-base needs-refine：实践案例缺逐步拆解；academic/engineer pass。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "案例1拆成装模型→对话变长→对比显存三步；案例2补存state→来token→更新→吐字；弱化「几乎都选RWKV」修辞。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 162,
+    "l1_pass": true,
+    "reasons": []
+  }
+}

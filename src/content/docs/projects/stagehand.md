@@ -8,7 +8,7 @@ title: stagehand — Playwright 加 LLM 的混血框架
 
 ## 是什么
 
-stagehand 是一套**让 LLM 操作浏览器，但默认不用 LLM** 的 TypeScript 框架。日常类比：像一个有副驾驶的老司机——副驾驶（LLM）只在司机（Playwright selector）开错路时才插嘴指方向，平时一句话不说。
+stagehand 是一套**让 LLM 帮你操作浏览器，但优先走确定性路径** 的 TypeScript 框架。日常类比：像一个有副驾驶的老司机——副驾驶（LLM）只在司机（Playwright selector）开错路时才插嘴指方向，平时一句话不说。
 
 你写：
 
@@ -16,7 +16,7 @@ stagehand 是一套**让 LLM 操作浏览器，但默认不用 LLM** 的 TypeScr
 await page.act("click the sign in button")
 ```
 
-stagehand 第一次会让 LLM 看一眼页面、给出一个 selector，然后**像普通 Playwright 一样直接点**。下一次同一个动作？走 cache，连 LLM 都不调。
+stagehand **第一次**会让 LLM 看一眼页面、给出一个 selector，然后**像普通 Playwright 一样直接点**。下一次同一个动作？走 cache，连 LLM 都不调。
 
 这种 "deterministic 优先 + LLM fallback" 的设计，是 v3 版本和早期 LLM-driven 框架（每步都过 LLM）的最大区别。仓库 22.8k stars / MIT / Browserbase 公司维护。
 
@@ -78,10 +78,16 @@ class LoggingClient extends LLMClient {
   }
 }
 
-await page.act("click the first link")  // 控制台只打 1 次
+const stagehand = new Stagehand({
+  env: "LOCAL",
+  llmClient: new LoggingClient({ modelName: "gpt-4o" }),
+})
+await stagehand.init()
+await stagehand.page.goto("https://example.com")
+await stagehand.page.act("click the first link") // 控制台只打 1 次
 ```
 
-干净页面：每次 act 严格 1 个 LLM call。如果开 `selfHeal: true` 且第一次 selector 失效，会变 2 次。
+关键是把 `llmClient` 注入构造函数，否则看不到调用次数。干净页面：每次 act 严格 1 次 LLM call；开 `selfHeal: true` 且第一次 selector 失效，会变 2 次。
 
 ### 案例 3：observe 拿候选元素自己写循环
 
