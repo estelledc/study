@@ -27,7 +27,7 @@ let rec eval expr env = match expr with
 
 不理解这篇，下面这些事都没法解释：
 
-- 为什么 Scheme 1975 第一份报告里管自己叫"a definitional interpreter"——它直接踩在这论文肩膀上
+- 为什么 Scheme 1975 的解释器设计会引用这篇论文——Sussman / Steele 借了 Reynolds 的 continuation 思路
 - 为什么"闭包"既能是函数也能是数据记录——defunctionalization 就是把前者机械变成后者
 - 为什么编译器课里突然冒出 CPS 变换——它是 Reynolds 用来消除"求值顺序依赖"的工具
 - 为什么 SECD 抽象机和元循环解释器看起来天差地别，其实是同一份起点的两个变换终点
@@ -59,7 +59,7 @@ let rec eval e env = match e with
   | App (f, a) -> let VFun g = eval f env in g (eval a env)
 ```
 
-**逐部分解释**：`VFun` 是 OCaml 闭包包一层。`Lam` 直接用 OCaml 的 `fun v -> ...` 表达。简洁，但"OCaml 是按值"这个事实会传染给 defined language——这就是 Reynolds 说的"求值顺序依赖"。同一份代码搬到 Haskell（按需）跑出的语义会变，定义就不闭合。
+**逐部分解释**：`VFun` 是教学简化——论文用 defining language 的 lambda 直接表示函数值，这里用 OCaml 闭包等价演示。`Lam` 直接用 `fun v -> ...` 表达。简洁，但"OCaml 是按值"会传染给 defined language——这就是"求值顺序依赖"。同一份代码搬到 Haskell（按需）语义会变，定义就不闭合。
 
 ### 案例 2：defunctionalize 后的一阶版
 
@@ -90,7 +90,7 @@ and apply (Closure c) v k =
 let run e = eval e [] (fun v -> v)
 ```
 
-**逐部分解释**：每个 `eval` 多一个 `k`（continuation，"接下来怎么用结果"）。主程序传 `fun v -> v` 作初始 continuation。现在求值顺序由 `eval` 内部的 `k` 嵌套决定，不再借宿主语言——这就是 order-of-application independence。再把 `k` 也 defunctionalize（每个 `fun vf -> ...` 变成带标签的记录），就得到一台栈式抽象机，几乎就是 SECD。
+**逐部分解释**：每个 `eval` 多一个 `k`（continuation，"接下来怎么用结果"）。`App` 的口头顺序是三步：① 先求 `f` 得到 `vf`；② 再求 `a` 得到 `va`；③ 再 `apply vf va k`。主程序传 `fun v -> v` 作初始 continuation。求值顺序由 `k` 嵌套决定，不再借宿主语言。再把 `k` 也 defunctionalize，就得到一台栈式抽象机，几乎就是 SECD。
 
 ## 踩过的坑
 
@@ -118,7 +118,7 @@ let run e = eval e [] (fun v -> v)
 
 - **1960-1970**：McCarthy LISP、Landin SECD、Vienna PL/I 各写各的解释器，风格五花八门，互相比较困难
 - **1972 年**：Reynolds 在 Syracuse 大学，把这些都放进"高阶/一阶 × 求值顺序敏感/不敏感"的 2×2 表格，并展示由变换互推；论文发表在 ACM National Conference
-- **1975 年**：Sussman 和 Steele 在 MIT 写出 Scheme，原始论文里直接称这是"a definitional interpreter for actor-style programs"——CPS 思想直接借用
+- **1975 年**：Sussman 和 Steele 在 MIT 写出 Scheme（AI Memo 349），正文引用 Reynolds，并用 continuation / `CATCH` 处理控制流——CPS 思想直接借用
 - **1978 年**：Steele 硕士论文 Rabbit 编译器用 CPS 中间表示编译，奠定后来 Appel 1991 *Compiling with Continuations* 整本书
 - **1991 年**：Appel 出版 *Compiling with Continuations*，把 CPS 中间表示作为编译器主流路线，算 Reynolds 思路的工业落地版
 - **1998 年**：HOSC 期刊邀请重印这篇 1972 旧文，因为它的影响力一直在扩散，至此正式成"经典必读"

@@ -1,0 +1,117 @@
+{
+  "slug": "slim-framework",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 可在代码前补一句「先 composer require slim/slim slim/psr7」，与踩坑 1 呼应，零基础才不会卡在缺 ResponseFactory。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Slim、Laravel、Symfony 的中间件可以互换」过度简化：Laravel 长期用自有 middleware 接口，并非与 PSR-15 中间件即插即用；请弱化为「PSR-15 让符合标准的中间件可跨框架复用，Laravel/Symfony 也逐步对齐」。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」写 Laravel 启动约 1-2MB，「适用」又写 Laravel 1MB / Slim 200KB，数字不一致；请统一为同一数量级表述（如 Slim 数百 KB 级 vs Laravel 数 MB 级）。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑 4 写成 addErrorMiddleware($app, false, false, false) 是错的：Slim 4 API 是 $app->addErrorMiddleware($displayErrorDetails, $logErrors, $logErrorDetails)，请改正。"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 可在代码前补一句「先 composer require slim/slim slim/psr7」，与踩坑 1 呼应，零基础才不会卡在缺 ResponseFactory。"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "「Slim、Laravel、Symfony 的中间件可以互换」过度简化：Laravel 长期用自有 middleware 接口，并非与 PSR-15 中间件即插即用；请弱化为「PSR-15 让符合标准的中间件可跨框架复用，Laravel/Symfony 也逐步对齐」。",
+        "「为什么重要」写 Laravel 启动约 1-2MB，「适用」又写 Laravel 1MB / Slim 200KB，数字不一致；请统一为同一数量级表述（如 Slim 数百 KB 级 vs Laravel 数 MB 级）。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 3,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "踩坑 4 写成 addErrorMiddleware($app, false, false, false) 是错的：Slim 4 API 是 $app->addErrorMiddleware($displayErrorDetails, $logErrors, $logErrorDetails)，请改正。"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "改正 addErrorMiddleware API；统一内存量级表述；弱化 Laravel 中间件可互换；案例 1 补 composer require。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "改正 addErrorMiddleware API；统一内存量级表述；弱化 Laravel 中间件可互换；案例 1 补 composer require。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 适用 vs 不适用场景",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 189,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
