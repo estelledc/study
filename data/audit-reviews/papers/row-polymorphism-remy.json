@@ -1,0 +1,144 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "前台找房 / 快递附页 / 信封收件人等类比贴合，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点末尾 ρ ::= · | r | … 形式化语法偏密，可再补半句白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三个语言案例（OCaml / PureScript / Elm）步骤清楚，能跟读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源写 INRIA Research Report 1989，但题名 Type Inference for Records in a Natural Extension of ML 对应 RR-1431（1991-05）；1989 是 POPL「Records and variants as a natural extension of ML」。请拆开年份与题名。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事把「1989 INRIA 发表本论文」与 RR-1431 混为一谈；应区分 POPL 1989 与 RR-1431 1991。"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "PureScript 约 2013 起步，写 2012 略早；教学可接受但宜改正。"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 是 OCaml 对象类型（#name / ..），与 record 行变量同族但语法不同，可点明「对象类型里的 row」以免读者去找 {..} record 语法"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "lacks / restrict-then-extend、报错难读等踩坑具体可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（透传 vs 名义类型 / concatenation / 运行时反射）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "前台找房 / 快递附页 / 信封收件人等类比贴合，零基础直觉强",
+        "核心要点末尾 ρ ::= · | r | … 形式化语法偏密，可再补半句白话桥接",
+        "三个语言案例（OCaml / PureScript / Elm）步骤清楚，能跟读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "来源写 INRIA Research Report 1989，但题名 Type Inference for Records in a Natural Extension of ML 对应 RR-1431（1991-05）；1989 是 POPL「Records and variants as a natural extension of ML」。请拆开年份与题名。",
+        "历史小故事把「1989 INRIA 发表本论文」与 RR-1431 混为一谈；应区分 POPL 1989 与 RR-1431 1991。",
+        "PureScript 约 2013 起步，写 2012 略早；教学可接受但宜改正。"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 是 OCaml 对象类型（#name / ..），与 record 行变量同族但语法不同，可点明「对象类型里的 row」以免读者去找 {..} record 语法",
+        "lacks / restrict-then-extend、报错难读等踩坑具体可操作",
+        "适用/不适用边界清楚（透传 vs 名义类型 / concatenation / 运行时反射）"
+      ]
+    }
+  ],
+  "slug": "row-polymorphism-remy",
+  "area": "papers",
+  "status": "refined",
+  "lines": 160,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.89,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正 RR-1431 为 1991、拆开 POPL 1989 与研究报告；PureScript 改为 2013；补形式化白话与 OCaml 对象类型说明。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正 RR-1431 为 1991、拆开 POPL 1989 与研究报告；PureScript 改为 2013；补形式化白话与 OCaml 对象类型说明。",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 历史小故事（可跳过）",
+      "frontmatter 来源"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 160,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
