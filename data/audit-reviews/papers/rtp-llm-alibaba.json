@@ -1,0 +1,143 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "中央厨房类比贯穿全文，备菜/热炒/冷链对应 prefill/decode/cache，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "TTFT / TPOT / PD-Fusion / PD-Disaggregation 首次出现缺白话桥接；建议在是什么或核心要点写清「首 token 延迟」「同机融合 vs 分机拆开」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例均有逐部分解释；案例 1 可再补一句「用户先等整份试卷读完才看到第一个字」对照 TTFT"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Boyu Tan et al. / arXiv 2605.29639 / 2026 著录正确；PD disaggregation、分层 KV、file-order 加载与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Qwen3-Coder-480B TTFT 4.72x–5.33x、235B TP=8 加载约 204s→33s 与 Table 4/7 相符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几百亿到几百亿参数」笔误，论文评测是 8B–235B，应改为「几十亿到几百亿」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三案例伪代码概念正确：PD 拆分、前缀命中调度、顺序读+异步广播均可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：tokens/s 误判、短 prompt PD 亏本、远端 cache 代价、加载拖住灰度——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚；可再点明短 prompt / 无高速互联时 PD 拆分可能不划算（文中踩坑已有，适用段可呼应一句）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "中央厨房类比贯穿全文，备菜/热炒/冷链对应 prefill/decode/cache，零基础直觉强",
+        "TTFT / TPOT / PD-Fusion / PD-Disaggregation 首次出现缺白话桥接；建议在是什么或核心要点写清「首 token 延迟」「同机融合 vs 分机拆开」",
+        "三案例均有逐部分解释；案例 1 可再补一句「用户先等整份试卷读完才看到第一个字」对照 TTFT"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "Boyu Tan et al. / arXiv 2605.29639 / 2026 著录正确；PD disaggregation、分层 KV、file-order 加载与论文一致",
+        "Qwen3-Coder-480B TTFT 4.72x–5.33x、235B TP=8 加载约 204s→33s 与 Table 4/7 相符",
+        "「几百亿到几百亿参数」笔误，论文评测是 8B–235B，应改为「几十亿到几百亿」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "三案例伪代码概念正确：PD 拆分、前缀命中调度、顺序读+异步广播均可跟做",
+        "踩坑具体可操作：tokens/s 误判、短 prompt PD 亏本、远端 cache 代价、加载拖住灰度——保留",
+        "适用/不适用边界清楚；可再点明短 prompt / 无高速互联时 PD 拆分可能不划算（文中踩坑已有，适用段可呼应一句）"
+      ]
+    }
+  ],
+  "slug": "rtp-llm-alibaba",
+  "area": "papers",
+  "status": "refined",
+  "lines": 151,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.22,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 151,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "三审 needs-refine：修正「几百亿到几百亿」；桥接 TTFT/TPOT/PD-Fusion vs Disaggregation；适用呼应短 prompt PD 亏本",
+    "sections_modified": [
+      "## 是什么",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景"
+    ],
+    "unresolved_hints": []
+  }
+}
