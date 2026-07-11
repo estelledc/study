@@ -1,0 +1,137 @@
+{
+  "action": "pass",
+  "average": 4.56,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "副驾 senior / man 手册 vs sgpt 类比把「终端里问命令」讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "-s / -c / 管道 / Ctrl+L 首次出现有场景桥接；LiteLLM 一句「协议翻译层」可跟"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–2 有交互与重定向解释；案例 3–4 偏演示，可再各补一句「为什么比切窗口快」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 TheR1D/shell_gpt 正确；v1.5.1（2026-05-06）与 GitHub release 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "-s 确认交互、Ctrl+L 集成、USE_LITELLM、roles/chat 缓存路径与官方 README 一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「终端 LLM 三件套」是社区推荐口吻而非官方排名，教学可接受但宜读作并列工具而非权威榜单"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "四案例命令可跟：-s 确认、 -c 重定向、管道审 diff、Ctrl+L 续写——概念正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：OpenAI 计费、危险命令先 D、/tmp 缓存、tmux 吞 Ctrl+L、roles 不热加载、LiteLLM 转译——保留"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（命令行重度 vs GUI/多模型 RAG/长链 agent）；可再点明按次计费与延迟"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "副驾 senior / man 手册 vs sgpt 类比把「终端里问命令」讲透，零基础直觉强",
+        "-s / -c / 管道 / Ctrl+L 首次出现有场景桥接；LiteLLM 一句「协议翻译层」可跟",
+        "案例 1–2 有交互与重定向解释；案例 3–4 偏演示，可再各补一句「为什么比切窗口快」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "来源 TheR1D/shell_gpt 正确；v1.5.1（2026-05-06）与 GitHub release 一致",
+        "-s 确认交互、Ctrl+L 集成、USE_LITELLM、roles/chat 缓存路径与官方 README 一致",
+        "「终端 LLM 三件套」是社区推荐口吻而非官方排名，教学可接受但宜读作并列工具而非权威榜单"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "四案例命令可跟：-s 确认、 -c 重定向、管道审 diff、Ctrl+L 续写——概念正确",
+        "踩坑具体可操作：OpenAI 计费、危险命令先 D、/tmp 缓存、tmux 吞 Ctrl+L、roles 不热加载、LiteLLM 转译——保留",
+        "适用/不适用边界清楚（命令行重度 vs GUI/多模型 RAG/长链 agent）；可再点明按次计费与延迟"
+      ]
+    }
+  ],
+  "slug": "shell-gpt",
+  "area": "projects",
+  "status": "passed",
+  "lines": 154,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 4.56,
+    "verdict": "pass",
+    "action": "pass",
+    "rejects": 0,
+    "needs_refine": 0,
+    "all_pass": true
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 154,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "refinement": {
+    "action": "none",
+    "reason": "三审均为 pass，未触发 refiner；quality-gate 已通过。",
+    "sections_modified": [],
+    "unresolved_hints": []
+  }
+}
