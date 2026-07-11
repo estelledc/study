@@ -1,0 +1,144 @@
+{
+  "slug": "panel",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.33,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 直接用 scores / y / precision / recall，零基础读者不知道从哪来；补 2-3 行假数据与函数定义，并拆成「滑块 → bind → 只重算指标」三步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 缺逐步解释：先说 pn.extension 注册后端，再分别包三种图，最后 Tabs 切换"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Param / 反应式 / WASM 首次出现时各加一句日常桥接（例如 Param≈可监听的旋钮值）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "Panel 1.0 正式发布约为 2023-05-18（HoloViz Discourse / Zenodo），frontmatter 与历史段写「2023-06」应改为 2023-05"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「同一作者的 Param 库（2003 年起）」易误导：Param 更早由 HoloViz/相关作者群维护，Rudiger 是主要维护者之一而非唯一创始人；改为「同生态的 Param（约 2003 年起，Panel 反应式依赖它）」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Streamlit / Dash 做不到这种灵活度/WASM」宜加限定（原生一等公民多后端 / 官方 panel convert），避免绝对化"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 不是可跟做的最小例子：缺 scores/y 与 precision/recall 定义；补 numpy 假分数 + 简单 precision/recall 计算即可"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 依赖 vega_datasets / plotly / altair，注明 pip 安装或改成不额外依赖的最小混搭"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺少量化边界：例如「单机内部工具、并发 < 十人级」适用；「多租户 session、复杂 RBAC、毫秒级 API」不适用"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 直接用 scores / y / precision / recall，零基础读者不知道从哪来；补 2-3 行假数据与函数定义，并拆成「滑块 → bind → 只重算指标」三步说明",
+        "案例 1 缺逐步解释：先说 pn.extension 注册后端，再分别包三种图，最后 Tabs 切换",
+        "核心要点里 Param / 反应式 / WASM 首次出现时各加一句日常桥接（例如 Param≈可监听的旋钮值）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "Panel 1.0 正式发布约为 2023-05-18（HoloViz Discourse / Zenodo），frontmatter 与历史段写「2023-06」应改为 2023-05",
+        "「同一作者的 Param 库（2003 年起）」易误导：Param 更早由 HoloViz/相关作者群维护，Rudiger 是主要维护者之一而非唯一创始人；改为「同生态的 Param（约 2003 年起，Panel 反应式依赖它）」",
+        "「Streamlit / Dash 做不到这种灵活度/WASM」宜加限定（原生一等公民多后端 / 官方 panel convert），避免绝对化"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 不是可跟做的最小例子：缺 scores/y 与 precision/recall 定义；补 numpy 假分数 + 简单 precision/recall 计算即可",
+        "案例 1 依赖 vega_datasets / plotly / altair，注明 pip 安装或改成不额外依赖的最小混搭",
+        "适用/不适用缺少量化边界：例如「单机内部工具、并发 < 十人级」适用；「多租户 session、复杂 RBAC、毫秒级 API」不适用"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.33,
+    "verdict": "refine",
+    "rejects": 0,
+    "needs_refine": 3,
+    "all_pass": false,
+    "base_rule_findings": []
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 关联"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 168,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "audit_notes": "三审均 needs-refine（avg 3.33）。定向修复：案例2补可跑假数据与三步说明；案例1加 pip 与分步注释；Param/WASM 桥接；1.0 日期改为 2023-05；弱化 Streamlit/Dash 绝对化；适用场景加并发量化边界。"
+}
