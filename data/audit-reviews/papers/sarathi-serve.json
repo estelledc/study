@@ -1,0 +1,144 @@
+{
+  "slug": "sarathi-serve",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 数字直觉（小段算术）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "餐厅备餐/上菜类比贴合 prefill 卡住 decode 的痛点，零基础能立刻建立直觉"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "chunked prefill / stall-free batching / TBT 均有白话桥接；数字直觉段对零基础略密但有「几乎免费塞进去」收束"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 开关可跟做；案例 2–4 用用户感知与监控数字对照清楚，案例 3 公式可再拆成「先测再调」三步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「数字直觉」写 Llama-2-13B 在 A100 的 25/22/28 ms——论文评测是 Mistral-7B / Yi-34B / LLaMA2-70B / Falcon-180B，未见 Llama-2-13B 这组数；应改成论文模型或标明教学示意并去掉伪精确毫秒"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「vLLM v0.4 把 chunked prefill 设成默认」过满：2024-07 起对 >32K 上下文默认开启，V1 才几乎总开；宜改成「同年起逐步默认/长上下文默认」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「涨 2.6 倍吞吐」应对齐论文：Mistral-7B 单卡 A100 相对 vLLM 最高约 2.6× serving capacity，勿写成泛化结论"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 LLM(..., enable_chunked_prefill=True, max_num_batched_tokens=...) 与 vLLM API 一致，可跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：chunk 过小 attention 重复读 KV、过大又卡顿、混合 kernel、换卡重 profile——都可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（在线对话 TBT SLO vs 离线 embedding / 极短 prompt）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "餐厅备餐/上菜类比贴合 prefill 卡住 decode 的痛点，零基础能立刻建立直觉",
+        "chunked prefill / stall-free batching / TBT 均有白话桥接；数字直觉段对零基础略密但有「几乎免费塞进去」收束",
+        "案例 1 开关可跟做；案例 2–4 用用户感知与监控数字对照清楚，案例 3 公式可再拆成「先测再调」三步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 数字直觉（小段算术）",
+      "fix_hints": [
+        "「数字直觉」写 Llama-2-13B 在 A100 的 25/22/28 ms——论文评测是 Mistral-7B / Yi-34B / LLaMA2-70B / Falcon-180B，未见 Llama-2-13B 这组数；应改成论文模型或标明教学示意并去掉伪精确毫秒",
+        "「vLLM v0.4 把 chunked prefill 设成默认」过满：2024-07 起对 >32K 上下文默认开启，V1 才几乎总开；宜改成「同年起逐步默认/长上下文默认」",
+        "「涨 2.6 倍吞吐」应对齐论文：Mistral-7B 单卡 A100 相对 vLLM 最高约 2.6× serving capacity，勿写成泛化结论"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 的 LLM(..., enable_chunked_prefill=True, max_num_batched_tokens=...) 与 vLLM API 一致，可跟做",
+        "踩坑具体：chunk 过小 attention 重复读 KV、过大又卡顿、混合 kernel、换卡重 profile——都可操作",
+        "适用边界清楚（在线对话 TBT SLO vs 离线 embedding / 极短 prompt）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "修正伪精确 Llama-2-13B 毫秒表为论文模型/算术强度直觉；vLLM 默认改为长上下文/V1 逐步默认；2.6× 对齐 Mistral-7B/A100。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正伪精确 Llama-2-13B 毫秒表为论文模型/算术强度直觉；vLLM 默认改为长上下文/V1 逐步默认；2.6× 对齐 Mistral-7B/A100。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 数字直觉（小段算术）",
+      "## 历史小故事（可跳过）",
+      "## 学到什么"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 156,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 156,
+  "l1_pass": true
+}
