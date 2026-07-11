@@ -48,7 +48,7 @@ Vitest 的心智模型只有 **三件事**：
 
 1. **共享 Vite config**：`resolve.alias` / `define` / `plugins` / 环境变量在测试时全部生效。类比：开发和测试是同一辆车的两个挡位，不是两辆车。
 
-2. **浏览器模式（experimental）**：传统测试用 `jsdom` 模拟浏览器（慢、不全），Vitest browser mode 直接驱动 Playwright / WebDriver 在**真浏览器**里跑。组件单测的真实度跃升一个量级。
+2. **浏览器模式（已 stable）**：传统测试用 `jsdom` 模拟浏览器（慢、不全），Vitest browser mode 直接驱动 Playwright / WebDriver 在**真浏览器**里跑。组件单测的真实度跃升一个量级。
 
 3. **Snapshot / mock / coverage 内置**：不用配 `babel-jest`、不用装 `@types/jest`、不用拼 `nyc`。`expect(x).toMatchSnapshot()` / `vi.mock('./api')` / `vitest run --coverage` 开箱即用。
 
@@ -80,6 +80,8 @@ npx vitest run
 
 ### 案例 2：Mock 一个 module
 
+假设 `greet(id)` 内部调用 `fetchUser(id)` 再拼 `"Hello, " + name`：
+
 ```js
 import { test, expect, vi } from 'vitest'
 import { fetchUser } from './api'
@@ -96,7 +98,11 @@ test('greet uses mocked fetchUser', async () => {
 })
 ```
 
-`vi.mock` 与 `jest.mock` 规则一致——**必须写在文件顶部**（被 esbuild 提升到所有 import 之前）。`vi.fn()` 创建带 spy 能力的假函数。
+**逐部分解释**：
+
+- `vi.mock('./api', factory)`：把 `./api` 换成假实现，**必须写在文件顶部**（esbuild 会提升到所有 import 之前）
+- `vi.fn(...)`：带 spy 的假函数，后面才能 `toHaveBeenCalledWith`
+- 真网络不会被打到——测的是 `greet` 怎么用返回值，不是 API 本身
 
 ### 案例 3：Coverage 一行命令
 
@@ -104,30 +110,21 @@ test('greet uses mocked fetchUser', async () => {
 npx vitest run --coverage
 ```
 
-默认 v8 provider，跑完在 `coverage/` 目录生成 HTML 报告。`open coverage/index.html` 看每行命中情况。
+**逐部分解释**：
 
-要换 Istanbul：
-
-```js
-// vitest.config.ts
-export default defineConfig({
-  test: {
-    coverage: { provider: 'istanbul' },
-  },
-})
-```
+- 默认用 **v8** provider，跑完在 `coverage/` 生成 HTML；`open coverage/index.html` 看每行命中
+- 要换 Istanbul：在 `vite.config.ts` 里加 `test: { coverage: { provider: 'istanbul' } }`
+- 首次可能提示装 `@vitest/coverage-v8`——按提示装即可
 
 ## 踩过的坑
 
-1. **jsdom vs happy-dom 选哪个**：默认 `jsdom`（Mozilla 维护，慢但兼容性高）；`happy-dom` 快 2-3 倍但 API 覆盖不全（某些 DOM 边缘特性缺失）。组件库通常先 happy-dom 跑通，CI 关键路径再切 jsdom。
+1. **默认不是 jsdom**：Vitest 默认 `environment: 'node'`。测 DOM 组件要显式设 `jsdom`（兼容高、偏慢）或 `happy-dom`（快 2-3 倍、API 略少）。组件库常先 happy-dom，CI 关键路径再切 jsdom。
 
-2. **Mock hoisting 陷阱**：`vi.mock(path, factory)` 会被 esbuild 提升到 import 之前。如果 factory 内部引用了**还没 import 的变量**，会报 `Cannot access before initialization`。解决方式：用 `vi.hoisted(() => ...)` 显式提升变量。
+2. **Mock hoisting 陷阱**：`vi.mock(path, factory)` 会被 esbuild 提升到 import 之前。如果 factory 内部引用了**还没 import 的变量**，会报 `Cannot access before initialization`。解决：用 `vi.hoisted(() => ...)` 显式提升变量。
 
-3. **React 18 Testing Library 配合**：`@testing-library/react` 18+ 在 Vitest 里要确保 `environment: 'jsdom'` 且装 `@testing-library/jest-dom`。canvas / WebGL 测试还要 `vitest-canvas-mock` 兜底。
+3. **React Testing Library 配合**：`@testing-library/react` 要设 `environment: 'jsdom'` 并装 `@testing-library/jest-dom`。canvas / WebGL 还要 `vitest-canvas-mock` 兜底。
 
-4. **`globals: true` 选项**：开了之后 `describe / it / expect` 自动全局可用（兼容 Jest 默认行为）。看起来方便，但失去 import 显式性，IDE 跳转 / type-check / tree-shaking 都更弱。**新项目直接 `import { describe } from 'vitest'`**，不要开 globals。
-
-5. **错误堆栈在 worker 里偶尔不准**：source map 经过 Vite ModuleRunner 后再经过 IPC 传回主进程，少数情况下行号偏移 1-2。已知 issue，不致命但偶尔影响调试——加 `--no-isolate` 跑可以暂时绕开。
+4. **`globals: true` 选项**：开了之后 `describe / it / expect` 全局可用（兼容 Jest）。方便但失去 import 显式性，IDE 跳转更弱。**新项目直接 `import { describe } from 'vitest'`**，不要开 globals。
 
 ## 适用 vs 不适用场景
 
@@ -147,12 +144,12 @@ export default defineConfig({
 
 ## 历史小故事（可跳过）
 
-- **2021 年**：Anthony Fu（antfu）启动 Vitest 项目，目标是"让 Vite 项目跑测试不用切 Jest"。
-- **2022 年**：Vitest 1.0 发布。VoidZero（Vite 母公司）全职雇员 sheremet-va 接手主要维护。
-- **2024 年**：Stack Overflow 调查显示 Vitest 在前端测试框架中**用户量逼近 Jest**，Vue / Svelte / Solid / Astro 默认推荐。
-- **2026 年**：v3 当家，浏览器模式从 experimental 走向 stable。
+- **2021 年**：Anthony Fu（antfu）启动 Vitest，目标是"让 Vite 项目跑测试不用切 Jest"。
+- **2023 年 12 月**：Vitest 1.0 发布；维护重心逐步交给 sheremet-va 等全职贡献者。
+- **2024 年**：Stack Overflow 调查显示 Vitest 在前端测试框架中**用户量逼近 Jest**；Vue / Svelte / Solid / Astro 默认推荐。
+- **2024 年末**：Vitest 3.0 发布，浏览器模式从 experimental 走向 stable。
 
-3 年时间从"小众替代品"到"事实标准"。
+约 3 年从"小众替代品"到"事实标准"。
 
 ## 学到什么
 

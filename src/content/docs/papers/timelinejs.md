@@ -1,6 +1,6 @@
 ---
 title: TimelineJS — 一张 Google Sheet 直接变成交互时间轴
-来源: NUKnightLab/TimelineJS3 (GitHub, 10k+ stars), Zach Wise 2012
+来源: NUKnightLab/TimelineJS3 (GitHub, ~3k stars), Zach Wise 2012
 日期: 2026-06-01
 分类: 基础设施
 难度: 入门
@@ -27,11 +27,11 @@ TimelineJS 是 Northwestern 大学 Knight Lab 出的一个**前端组件**：你
 
 TimelineJS 的设计可以拆成 **四层**：
 
-1. **数据层 = Google Sheet**：一张表，每行一个时间点。列固定：Year / Month / Day / Headline / Text / Media（媒体 URL）/ Caption。Sheet 公开发布到 Web 后会暴露成可读 JSON。
+1. **数据层 = Google Sheet**：一张表，每行一个时间点。列固定：Year / Month / Day / Headline / Text / Media（媒体 URL）/ Caption。Sheet 点"发布到网络"后，浏览器可公开拉取表格数据（常见是 CSV；也可走 Sheets API）。
 
 2. **取数层 = JS 拉表**：浏览器里跑一段 JS，把 Sheet 当 API 拉下来，转成内部数据模型。**没有自己的后端**——这是它能"零运维"的关键。
 
-3. **渲染层 = 原生 JS + CSS**：横向滚动条 + 上下分栏（上：日期轴；下：当前事件的图文）。键盘左右键、鼠标拖动、点缩略图都能切换。**没用任何 React / Vue 框架**，纯 vanilla JS（2012 年的产物）。
+3. **渲染层 = 原生 JS + CSS**：横向滚动条 + 上下分栏（上：日期轴；下：当前事件的图文）。键盘左右键、鼠标拖动、点缩略图都能切换。**没用任何 React / Vue 框架**，纯 vanilla JS（"原味" JavaScript，不依赖前端框架——2012 年的产物）。
 
 4. **嵌入层 = iframe**：托管版给你一段 `<iframe src="cdn.knightlab.com/...">`，直接贴进任何 CMS / 博客 / 富文本编辑器。
 
@@ -43,7 +43,7 @@ TimelineJS 的设计可以拆成 **四层**：
 
 1. 打开 [timeline.knightlab.com](https://timeline.knightlab.com/)，点 "Make a Timeline"
 2. 复制官方 Google Sheet 模板到自己账户
-3. 填几行：
+3. 按模板列填几行（对应 Year / Month / Day / Headline / Text / Media）：
    ```
    2024 | 9  | 1  | 入学 | 第一次远离家乡    | (空)
    2025 | 6  | 15 | 实习 | 加入某团队做后端  | https://github.com/...
@@ -65,11 +65,11 @@ TimelineJS 的设计可以拆成 **四层**：
 - Google Maps 链接 → 嵌入小地图
 - Flickr / SoundCloud / Spotify → 各自的播放器
 
-它的秘密：**对每个 URL 跑一遍 oEmbed 协议**——一种通用规范，让任何站点对外暴露"我这条 URL 应该被怎么嵌入"。TimelineJS 不为每家平台单独写代码，而是讲一种通用语言。
+**逐部分解释**：它不是为每家平台单独写爬虫，而是对每个 URL 跑一遍 **oEmbed**——一种通用规范，让站点对外声明"这条链接该怎么嵌"。类比：像统一的"快递面单格式"，TimelineJS 只认面单，不关心包裹里是视频还是地图。
 
 ### 案例 3：自托管 = 跳过 Google Sheet
 
-如果不想依赖 Google：
+`timeline3/css` 与 `timeline3/js` 来自官方仓库的 dist 构建产物。不想依赖 Google 时，直接喂 JSON：
 
 ```html
 <link rel="stylesheet" href="timeline3/css/timeline.css">
@@ -87,19 +87,19 @@ TimelineJS 的设计可以拆成 **四层**：
 </script>
 ```
 
-直接喂 JSON。这条路适合"想内嵌进自家系统、又不想暴露 Google Sheet"的场景。
+**逐部分解释**：`events` 里每条有 `start_date`（时间）和 `text`（标题/正文）；`new TL.Timeline(...)` 把数据画进页面上的那个 `div`。适合"想内嵌进自家系统、又不想暴露 Google Sheet"的场景。
 
 ## 踩过的坑
 
-1. **Google Sheet 必须设为"发布到网络"**：仅"任何人可看"不够。点 文件 → 发布到网络，才能拿到供 JS 拉取的 CSV/JSON。新人 90% 卡在这一步。
+1. **Google Sheet 必须设为"发布到网络"**：仅"任何人可看"不够。点 文件 → 发布到网络，才能公开拉取表格数据。新人 90% 卡在这一步。
 
-2. **Google API 历史上断过几次**：2020 年前后 Google 改了 Sheet 公开数据接口，老版 TimelineJS 大批失效。Knight Lab 推 V3 改用新接口才修好。**强依赖第三方平台是这套架构的脆弱点**。
+2. **Google API 历史上断过几次**：公开拉取接口改过，老版 TimelineJS 曾大批失效；V3 改用新接口才稳住。**强依赖第三方平台是这套架构的脆弱点**。
 
 3. **超过 50 条事件性能下降**：横向轴会变得拥挤，缩略图加载也慢。官方建议控制在 20–50 条之间。如果是**百年级**的历史时间轴，要分章节做几条。
 
 4. **不支持垂直时间轴 / 分支**：只能横向单线。需要"分支并行多条线"的，要找 Vis.js 或自己写 D3。
 
-5. **iframe 嵌入会被 CSP 拦**：现代网站常加 Content-Security-Policy `frame-src` 限制。如果 iframe 不显示，先看浏览器控制台错误。
+5. **iframe 嵌入会被 CSP 拦**：CSP（Content-Security-Policy）像网站的"访客白名单"，常限制 `frame-src`。如果 iframe 不显示，先看浏览器控制台错误。
 
 ## 适用 vs 不适用场景
 
@@ -121,16 +121,16 @@ TimelineJS 的设计可以拆成 **四层**：
 ## 历史小故事（可跳过）
 
 - **2012 年**：Northwestern 大学新闻学院的 Knight Lab 成立，目标是"把数字工具做得让记者也能用"。Zach Wise（前 NYT 多媒体记者）开发第一版 TimelineJS。
-- **2013–2016 年**：在 NYT、Time、Radiolab、Le Monde 等大媒体扩散，成为新闻业事实标准之一。
-- **2017 年**：发布 V3 (TimelineJS3)，重写为 ES6，改用 Google Sheets v4 API，性能和移动端体验大幅提升。
-- **2020 年**：Google 改 API 又一次让老站点失效，社区催 Knight Lab 修；同期 oEmbed 嵌入也因为 Twitter / Instagram 政策变化做了补丁。
+- **2013–2014 年**：在 NYT、Time、Radiolab、Le Monde 等大媒体扩散，成为新闻业事实标准之一。
+- **2015 年**：TimelineJS3 公开可用（仓库约 2014 年创建），重写并改用新的 Google Sheets 接口，性能和移动端体验提升。
+- **2020 年**：Google / 嵌入策略再变，老站点与 WordPress 插件需升级；oEmbed 也因 Twitter / Instagram 政策变化做过补丁。
 - **至今**：仍在维护（每年若干次小更新），是 Knight Lab "新闻工具家族" 的旗舰产品。
 
 ## 学到什么
 
 1. **"表格当后端"是低代码工具的经典套路**——Google Sheet / Airtable / Notion 都被这么用，本质是"把 SaaS 当 DB"
 2. **oEmbed 是被低估的协议**——一段 URL 自描述自己应该怎么嵌入，让平台间互通无需 N×M 写胶水代码
-3. **零运维 = 别有自己的后端**——TimelineJS 不存任何用户数据，只在用户浏览器里跑，所以 Knight Lab 一个小团队能维护它 10+ 年
+3. **零运维 = 别有自己的后端**——TimelineJS 不存任何用户数据，只在用户浏览器里跑，所以小团队能维护它 10+ 年
 4. **iframe 嵌入仍然是 Web 跨站集成最稳的方案**——比 Web Component / micro-frontend 都简单，CMS 时代以来就没变过
 5. **限制 = 设计**——只支持横向、只支持 Google Sheet、只支持 ~50 条，正是这些限制让它"5 分钟上手"
 
@@ -147,6 +147,7 @@ TimelineJS 的设计可以拆成 **四层**：
 - [[d3-2011]] —— 灵活度高 100 倍但门槛也高 100 倍；TimelineJS 是 D3 时代之外的"零代码"那一极
 - [[oembed-protocol]] —— TimelineJS 媒体嵌入背后的协议
 - [[google-sheets-api]] —— 它把 Sheet 当后端的关键依赖
+- [[iframe-web-embed]] —— 托管版靠 iframe 跨站嵌入的同一条路
 
 ## 反向链接
 

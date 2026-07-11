@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 引用 state.context.data，但前面的 fetchMachine 从未定义 context/assign，零基础会跟丢"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 缺少模板式「逐部分解释」步骤，建议各补 2-3 句拆解 matches / 层级跳转"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "核心要点里 mailbox / _snapshot / system._relay 偏实现私有细节，教学可保留概念但避免暗示这些是稳定公开 API"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「4 个 boolean」与后面 data/error/retries 混用略不准，可改成「多个标志位」以免事实口吻过硬"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 用 #auth.anonymous / #auth.authenticated，但 createMachine 未设 id: 'auth'，绝对路径目标无效"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 state.context.data 依赖未在机器里声明的 context，应补 context + assign 或改成不依赖 context 的展示"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 引用 state.context.data，但前面的 fetchMachine 从未定义 context/assign，零基础会跟丢",
+        "案例 2/3 缺少模板式「逐部分解释」步骤，建议各补 2-3 句拆解 matches / 层级跳转"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点里 mailbox / _snapshot / system._relay 偏实现私有细节，教学可保留概念但避免暗示这些是稳定公开 API",
+        "「4 个 boolean」与后面 data/error/retries 混用略不准，可改成「多个标志位」以免事实口吻过硬"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 用 #auth.anonymous / #auth.authenticated，但 createMachine 未设 id: 'auth'，绝对路径目标无效",
+        "案例 2 的 state.context.data 依赖未在机器里声明的 context，应补 context + assign 或改成不依赖 context 的展示"
+      ]
+    }
+  ]
+}

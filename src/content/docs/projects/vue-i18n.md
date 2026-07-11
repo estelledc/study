@@ -1,5 +1,5 @@
 ---
-title: vue-i18n — Vue 官方 i18n，切语言整页自己刷新
+title: vue-i18n — Vue 官网推荐的 i18n，切语言整页自己刷新
 来源: 'https://github.com/intlify/vue-i18n-next'
 日期: 2026-05-30
 分类: projects
@@ -26,8 +26,8 @@ const {t} = useI18n();
 
 不理解 vue-i18n，下面这些事都没法做：
 
-- Vue 项目要做多语言时该选什么——Vue 官网和 Nuxt 都默认它，是 Vue 生态事实标准
-- 为什么 `t("apple", 5)` 会自己输出 "5 apples" 而不是 "5 apple"——背后是 ICU 复数标准
+- Vue 项目要做多语言时该选什么——Vue 官网与 Nuxt 文档都推荐它（Intlify 维护，非 vuejs 直属仓）
+- 为什么 `t("apple", {count: 5})` 会输出 "5 apples" 而不是 "5 apple"——背后是 ICU 风格复数
 - 为什么切语言不需要刷新整页——locale 是 reactive ref，Vue 自己重跑模板
 - 为什么生产环境要装 unplugin-vue-i18n——编译期预编译 messages，bundle 直接砍掉一半
 
@@ -36,7 +36,7 @@ const {t} = useI18n();
 vue-i18n 三个支柱，类比"翻译三角"：
 
 1. **Composition API hook**（useI18n）：组件喊一声 `useI18n()` 就拿到 t/d/n 三把刀。类比：进厨房直接拿配好的工具包，不用每次自带。
-2. **ICU MessageFormat**：复数、性别、选择都用 `{count, plural, one {...} other {...}}` 这套 Unicode 标准写。类比：用国际通用菜谱符号，不用每个厨师自己发明记号。
+2. **ICU 风格 MessageFormat**：复数、性别、选择都用 `{count, plural, one {...} other {...}}` 这套写法。类比：用国际通用菜谱符号，不用每个厨师自己发明记号。
 3. **Reactive locale**：`locale` 是个 Vue ref，改它等于改一个响应式变量，整棵组件树自动重渲染。类比：餐厅墙上有个总开关，一拨切语言模式，所有桌子的菜单贴纸同时翻面。
 
 合在一起：`createI18n({locale, messages})` 注册一次 → 任意组件 `useI18n()` 取工具 → 改 `locale.value` 即可整页换语言。
@@ -49,9 +49,9 @@ vue-i18n 三个支柱，类比"翻译三角"：
 // main.ts
 import {createI18n} from "vue-i18n";
 const i18n = createI18n({
-  legacy: false,                    // 用 Composition API
+  legacy: false,                    // 关掉旧 Options API，走 Composition
   locale: "zh",
-  fallbackLocale: "en",
+  fallbackLocale: "en",             // 缺 key 时回退英文
   messages: {
     zh: {welcome: "欢迎，{name}"},
     en: {welcome: "Welcome, {name}"}
@@ -71,9 +71,9 @@ const {t, locale} = useI18n();
 </template>
 ```
 
-按按钮 → `locale.value` 变 → 模板里 `t()` 重新求值 → h1 文字立刻刷新。**没有 `window.location.reload()`**。
+按按钮 → 模板里改 `locale`（等同改 ref）→ 所有 `t()` 重算 → h1 立刻刷新，**没有整页 reload**。
 
-### 案例 2：ICU 复数
+### 案例 2：ICU 风格复数
 
 ```json
 // locales/en.json
@@ -82,13 +82,13 @@ const {t, locale} = useI18n();
 
 ```vue
 <template>
-  <p>{{ t("apple", 0) }}</p>  <!-- No apples -->
-  <p>{{ t("apple", 1) }}</p>  <!-- 1 apple -->
-  <p>{{ t("apple", 5) }}</p>  <!-- 5 apples -->
+  <p>{{ t("apple", {count: 0}) }}</p>  <!-- No apples -->
+  <p>{{ t("apple", {count: 1}) }}</p>  <!-- 1 apple -->
+  <p>{{ t("apple", {count: 5}) }}</p>  <!-- 5 apples -->
 </template>
 ```
 
-逐部分解释：`{count, plural, ...}` 是 ICU 语法，`=0` 精确匹配 0，`one` 是英语单数槽，`other` 是兜底，`#` 代表传入的数字。同样的 messages 直接喂给 react-intl 也能用，因为是统一 Unicode 标准。
+逐部分解释：`{count, plural, ...}` 是 ICU 风格语法，`=0` 精确匹配 0，`one` 是英语单数槽，`other` 是兜底，`#` 代表传入的数字。与 [[react-intl]] 同族，思路可共享，但不是无改粘贴——两边细节（链接消息、插件开关）仍有差。
 
 ### 案例 3：unplugin-vue-i18n 砍 bundle
 
@@ -106,7 +106,7 @@ export default defineConfig({
 });
 ```
 
-效果：vue-i18n 核心从 ~15 KB 降到 ~5 KB。原理是把 `.json` messages 在 build 时编成 JS 函数，运行时不再带 MessageCompiler。代价：dev 阶段动态加 message 必须重启 vite。
+类比：编译期把菜谱印成成品，运行时不用再带厨师（MessageCompiler）。效果：核心从 ~15 KB 降到 ~5 KB。代价：dev 阶段动态加 message 必须重启 vite。
 
 ## 踩过的坑
 
@@ -119,7 +119,7 @@ export default defineConfig({
 
 适用：
 - Vue 3 项目做多语言（事实标准，文档生态最齐）
-- 团队需要 ICU 标准（与 react-intl / next-intl 共享 messages 文件）
+- 团队需要 ICU 风格复数（与 [[react-intl]] / [[next-intl]] 同族，思路可对齐）
 - 想要 reactive 切语言、不刷新页面
 
 不适用：
@@ -157,8 +157,8 @@ export default defineConfig({
 - [[react-intl]] —— React 阵营同样基于 ICU MessageFormat
 - [[next-intl]] —— Next.js 专用 i18n，思路与 vue-i18n 平行
 - [[lingui]] —— 走 macro 编译期提取文案的另一条路
-- [[vue]] —— vue-i18n 是 Vue 官方推荐插件
-- [[nuxt]] —— Nuxt 文档默认用 vue-i18n
+- [[vue]] —— vue-i18n 是 Vue 官网推荐的 i18n 插件
+- [[nuxt]] —— Nuxt 文档默认基于 vue-i18n
 - [[vite]] —— unplugin-vue-i18n 主要跑在 Vite 上做编译期优化
 
 ## 反向链接

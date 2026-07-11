@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 vtctldclient 命令带省略号且缺少逐步解释，建议拆成「建 workflow → 等复制追上 → SwitchTraffic」三步并说明每步在干什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 vindex 类型枚举（lookup/numeric/unicode_loose_md5）对零基础偏密，可各留一句人话或砍到只讲 hash + lookup"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「千万 QPS」作为单机 MySQL 写入上限严重夸大，应改为更合理的量级（如数万～十万 QPS / TB 级表）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「vtgate 不是完整 MySQL parser」略歪曲：Vitess 有较完整 SQL 解析，限制主要在分片场景下的执行/下推，建议改成「复杂 SQL 在分片下可能被拒绝或 scatter-gather」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「主线版本 v20」可能过时，核对后改为当时主线大版本或改成「仍在活跃演进」以免钉死错误版本号"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 命令不完整（ApplyShardRoutingRules ...），教学示例应给出可跟读的最小命令序列，并注明需已有 Vitess 集群"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景里「千万 QPS」量化不可信，应改成接近单机写入上限的真实量级，并保留 TB 级表等可感知边界"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "MoveTables / SwitchTraffic 示例可补一句前置条件（已 ApplyVSchema、源 shard 健康），避免读者以为三条命令就能原地 reshard"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 vtctldclient 命令带省略号且缺少逐步解释，建议拆成「建 workflow → 等复制追上 → SwitchTraffic」三步并说明每步在干什么",
+        "核心要点里 vindex 类型枚举（lookup/numeric/unicode_loose_md5）对零基础偏密，可各留一句人话或砍到只讲 hash + lookup"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "「千万 QPS」作为单机 MySQL 写入上限严重夸大，应改为更合理的量级（如数万～十万 QPS / TB 级表）",
+        "「vtgate 不是完整 MySQL parser」略歪曲：Vitess 有较完整 SQL 解析，限制主要在分片场景下的执行/下推，建议改成「复杂 SQL 在分片下可能被拒绝或 scatter-gather」",
+        "「主线版本 v20」可能过时，核对后改为当时主线大版本或改成「仍在活跃演进」以免钉死错误版本号"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 命令不完整（ApplyShardRoutingRules ...），教学示例应给出可跟读的最小命令序列，并注明需已有 Vitess 集群",
+        "适用场景里「千万 QPS」量化不可信，应改成接近单机写入上限的真实量级，并保留 TB 级表等可感知边界",
+        "MoveTables / SwitchTraffic 示例可补一句前置条件（已 ApplyVSchema、源 shard 健康），避免读者以为三条命令就能原地 reshard"
+      ]
+    }
+  ]
+}

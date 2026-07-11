@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2/3 缺少「逐部分解释」：案例 1 应拆开 segments/start/text 各字段含义；案例 2 应说明 task=translate 与默认 transcribe 的差别；案例 3 应解释 make / -m / -f 各步在干什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Encoder-Decoder、log-mel、自回归、弱监督等术语首次出现缺日常桥接；踩坑里 VAD、diarization、fp16、INT8、CTranslate2 对零基础过陡，需一句人话"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Apple 的 Voice Memo 转写背后几乎都是 Whisper」不准确：Apple 端侧转写主要用自研语音识别，不宜与 ChatGPT 语音输入并列归因 Whisper；改为「各类 AI 笔记 / 开源字幕工具」或加限定"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「没有任何语音专用的奇技淫巧」略绝对：仍用 mel 频谱与语音专用 token 协议，可弱化为「没有传统 ASR 那套声学模型 + 发音词典流水线」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用里自引用 [[whisper]] 的 initial_prompt 应改为直接写参数名，避免笔记自链"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 whisper.cpp 的 ./main 入口在新版本常改为 whisper-cli，可加一句「旧版 main / 新版 whisper-cli」以免跟做踩空"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2/3 缺少「逐部分解释」：案例 1 应拆开 segments/start/text 各字段含义；案例 2 应说明 task=translate 与默认 transcribe 的差别；案例 3 应解释 make / -m / -f 各步在干什么",
+        "核心要点里 Encoder-Decoder、log-mel、自回归、弱监督等术语首次出现缺日常桥接；踩坑里 VAD、diarization、fp16、INT8、CTranslate2 对零基础过陡，需一句人话"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「Apple 的 Voice Memo 转写背后几乎都是 Whisper」不准确：Apple 端侧转写主要用自研语音识别，不宜与 ChatGPT 语音输入并列归因 Whisper；改为「各类 AI 笔记 / 开源字幕工具」或加限定",
+        "「没有任何语音专用的奇技淫巧」略绝对：仍用 mel 频谱与语音专用 token 协议，可弱化为「没有传统 ASR 那套声学模型 + 发音词典流水线」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "不适用里自引用 [[whisper]] 的 initial_prompt 应改为直接写参数名，避免笔记自链",
+        "案例 3 whisper.cpp 的 ./main 入口在新版本常改为 whisper-cli，可加一句「旧版 main / 新版 whisper-cli」以免跟做踩空"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 缺少像模板那样的「逐部分解释」，建议补 2–3 句说明三行各自在做什么"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「dispatch / radix / CUB / NMS」对零基础仍偏硬，可各加半句日常桥接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「C++17 std::execution::par 在 NVCC 下路由到 Thrust」不准确：GPU 上的 stdpar 是 NVC++ 的 -stdpar，底层可走 Thrust，不是 nvcc 默认行为"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事写「2022 年合并成 CCCL」偏早：NVIDIA 于 2023-10 宣布 Thrust/CUB/libcudacxx 统一进 nvidia/cccl"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「CUDA 7.5 才有 __device__ lambda」略简：CUDA 7.0 已引入 device lambda，7.5 更可用——可改成「约 CUDA 7.x」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1/2/3 的 h_v、N、x/y/z 未声明，教学可接受，但案例 1 最好补一行 host_vector 初始化以免读者卡壳"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑与适用边界已经具体且有量化，保持即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 缺少像模板那样的「逐部分解释」，建议补 2–3 句说明三行各自在做什么",
+        "「dispatch / radix / CUB / NMS」对零基础仍偏硬，可各加半句日常桥接"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「C++17 std::execution::par 在 NVCC 下路由到 Thrust」不准确：GPU 上的 stdpar 是 NVC++ 的 -stdpar，底层可走 Thrust，不是 nvcc 默认行为",
+        "历史小故事写「2022 年合并成 CCCL」偏早：NVIDIA 于 2023-10 宣布 Thrust/CUB/libcudacxx 统一进 nvidia/cccl",
+        "「CUDA 7.5 才有 __device__ lambda」略简：CUDA 7.0 已引入 device lambda，7.5 更可用——可改成「约 CUDA 7.x」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2/3 的 h_v、N、x/y/z 未声明，教学可接受，但案例 1 最好补一行 host_vector 初始化以免读者卡壳",
+        "踩坑与适用边界已经具体且有量化，保持即可"
+      ]
+    }
+  ]
+}

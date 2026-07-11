@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有叙述没有 docker-compose 片段和逐步操作，零基础跟不住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "webhook / OAuth / emptyDir / RBAC 等术语缺少一句日常桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 4 的 k8s 细节对零基础过重，可压缩或挪到延伸阅读"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「没有数据库 schema 也没有 web admin 必填项」过度简化：Woodpecker server 实际依赖 SQLite/Postgres 存仓库与构建记录"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「事实标准 CI」表述偏绝对，宜改为 Codeberg 等平台的默认/常用 CI"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "缺少独立「历史小故事」时间线，fork 年份与 1.0 发布挤在「是什么」里，来源博客链接偏泛"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 缺最小可跟做的 compose/环境变量片段，无法按文复现 Forgejo+Woodpecker 握手"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例宜收敛到 3 个；案例 4 可并入踩坑或适用场景，避免超长"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "secrets 语法示例可在案例 1 补一行，与踩坑第 4 条呼应"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有叙述没有 docker-compose 片段和逐步操作，零基础跟不住",
+        "webhook / OAuth / emptyDir / RBAC 等术语缺少一句日常桥接",
+        "案例 4 的 k8s 细节对零基础过重，可压缩或挪到延伸阅读"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「没有数据库 schema 也没有 web admin 必填项」过度简化：Woodpecker server 实际依赖 SQLite/Postgres 存仓库与构建记录",
+        "「事实标准 CI」表述偏绝对，宜改为 Codeberg 等平台的默认/常用 CI",
+        "缺少独立「历史小故事」时间线，fork 年份与 1.0 发布挤在「是什么」里，来源博客链接偏泛"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 缺最小可跟做的 compose/环境变量片段，无法按文复现 Forgejo+Woodpecker 握手",
+        "案例宜收敛到 3 个；案例 4 可并入踩坑或适用场景，避免超长",
+        "secrets 语法示例可在案例 1 补一行，与踩坑第 4 条呼应"
+      ]
+    }
+  ]
+}

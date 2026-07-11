@@ -1,0 +1,87 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 3 条 CRDT 仍偏抽象，可再补一句日常类比（如多人同时改同一份共享文档、系统自动合并）帮助零基础读者落地"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「为什么重要」中「xi-editor 是第一个把 rope 推到工程实践」过强：rope 早有工程先例，应改为「现代开源编辑器语境里较早系统实践并公开讲 tradeoff」之类表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「关联」里把 tree-sitter 写成「xi-editor 后期探索的增量解析方案」易误导：xi 做的是自研增量高亮/插件架构，tree-sitter 主要由 Atom 路线发展；应改成「同属增量解析方向，xi 讨论过接入但未合入核心」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例均为协议/伪流程示意，对已归档项目可接受；若再补一句如何本地 clone 并对照 rust/rope 目录阅读，跟做性会更强"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "核心要点第 3 条 CRDT 仍偏抽象，可再补一句日常类比（如多人同时改同一份共享文档、系统自动合并）帮助零基础读者落地"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「为什么重要」中「xi-editor 是第一个把 rope 推到工程实践」过强：rope 早有工程先例，应改为「现代开源编辑器语境里较早系统实践并公开讲 tradeoff」之类表述",
+        "「关联」里把 tree-sitter 写成「xi-editor 后期探索的增量解析方案」易误导：xi 做的是自研增量高亮/插件架构，tree-sitter 主要由 Atom 路线发展；应改成「同属增量解析方向，xi 讨论过接入但未合入核心」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例均为协议/伪流程示意，对已归档项目可接受；若再补一句如何本地 clone 并对照 rust/rope 目录阅读，跟做性会更强"
+      ]
+    }
+  ]
+}

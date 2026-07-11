@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 一个完整的搜索循环长什么样",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有文字步骤、没有可对照的伪代码/代码块，建议补一段匹配→替换→估时的迷你示例"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「一个完整的搜索循环」里突然出现 SMT 求解器，零基础读者缺桥接，应用一句话类比（如验算老师用公理本核对）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "论文写明约 5 分钟生成 743 条候选（28744 经剪枝），不是「枚举器跑约 10 小时」；也不是「验证通过约 60%」——743 是剪枝后数量，随后用 Z3 验证全部"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「BERT 比 TensorFlow XLA 快 1.6 倍」过窄且数字无出处；论文是对新架构相对 SOTA 框架最高约 2.8×（cuDNN 后端约 1.3–2.8×）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「比 MetaFlow 提速 1.3 到 2.8 倍」误把相对现有框架的加速归因给 MetaFlow；TASO 继承 MetaFlow 搜索，加速主要来自自动规则+联合 layout"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "若补案例，可用 TASO Python/ONNX 风格伪代码展示一次 apply substitution，避免只停留在口头搜索循环"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有文字步骤、没有可对照的伪代码/代码块，建议补一段匹配→替换→估时的迷你示例",
+        "「一个完整的搜索循环」里突然出现 SMT 求解器，零基础读者缺桥接，应用一句话类比（如验算老师用公理本核对）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 一个完整的搜索循环长什么样",
+      "fix_hints": [
+        "论文写明约 5 分钟生成 743 条候选（28744 经剪枝），不是「枚举器跑约 10 小时」；也不是「验证通过约 60%」——743 是剪枝后数量，随后用 Z3 验证全部",
+        "「BERT 比 TensorFlow XLA 快 1.6 倍」过窄且数字无出处；论文是对新架构相对 SOTA 框架最高约 2.8×（cuDNN 后端约 1.3–2.8×）",
+        "「比 MetaFlow 提速 1.3 到 2.8 倍」误把相对现有框架的加速归因给 MetaFlow；TASO 继承 MetaFlow 搜索，加速主要来自自动规则+联合 layout"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "若补案例，可用 TASO Python/ONNX 风格伪代码展示一次 apply substitution，避免只停留在口头搜索循环"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「弱主观性 / FLP / MEV / PBS」首次出现缺日常桥接，零基础会在踩坑段掉队；各加一句白话解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 一口气甩出 CheckTx/BeginBlock/DeliverTx/EndBlock/Commit，建议拆成「进池前检查 → 执行交易 → 交状态根」三步再点方法名"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写「Anvil（Rust）」作 ABCI 接入示例有误：Anvil 是 Foundry 的以太坊本地节点，不是 Tendermint ABCI server；应改成真实 ABCI 实现（如 CosmWasm / 自写 Go ABCI / 其他明确例子）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 称「核心方法只有 4 个」却列出 CheckTx/BeginBlock/DeliverTx/EndBlock/Commit 共 5 个，计数与列举不一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 写超过 f 后「停摆但不会出错 / 永远不会两个块都最终化」过度简化：经典 BFT 在 >1/3 拜占庭时安全性定理不再成立，可能出现冲突最终化；应改成「≤1/3 时安全优先；>1/3 时安全与活性都可能失效，经济上靠双签证据罚没」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 ABCI 分层图概念正确，但「Anvil（Rust）」示例名错误，跟做时会搜到无关工具；换成可检索的 ABCI 示例名即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "「弱主观性 / FLP / MEV / PBS」首次出现缺日常桥接，零基础会在踩坑段掉队；各加一句白话解释",
+        "案例 3 一口气甩出 CheckTx/BeginBlock/DeliverTx/EndBlock/Commit，建议拆成「进池前检查 → 执行交易 → 交状态根」三步再点方法名"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写「Anvil（Rust）」作 ABCI 接入示例有误：Anvil 是 Foundry 的以太坊本地节点，不是 Tendermint ABCI server；应改成真实 ABCI 实现（如 CosmWasm / 自写 Go ABCI / 其他明确例子）",
+        "案例 3 称「核心方法只有 4 个」却列出 CheckTx/BeginBlock/DeliverTx/EndBlock/Commit 共 5 个，计数与列举不一致",
+        "案例 1 写超过 f 后「停摆但不会出错 / 永远不会两个块都最终化」过度简化：经典 BFT 在 >1/3 拜占庭时安全性定理不再成立，可能出现冲突最终化；应改成「≤1/3 时安全优先；>1/3 时安全与活性都可能失效，经济上靠双签证据罚没」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 ABCI 分层图概念正确，但「Anvil（Rust）」示例名错误，跟做时会搜到无关工具；换成可检索的 ABCI 示例名即可"
+      ]
+    }
+  ]
+}

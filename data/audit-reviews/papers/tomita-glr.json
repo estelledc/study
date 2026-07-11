@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.67,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 把 tree-sitter 容错写成「假设有 )」的 GLR 分叉，零基础读者跟不住机制；应拆成：冲突分叉 → 增量重算 → 与报错容错的区别，并给一小段伪代码或逐步编号"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 的 shift/reduce 两条路缺少「最终选哪条、为何丢掉右移」的逐步对照，建议补 2-3 步推理"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点里 Multi-Action / packed node / parse forest 术语密度高，可各加一句更短的日常类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读里 Scott & Johnstone 2006 的链接指向 gll.pdf（GLL），不是 RNGLR；应换成 Right-Nulled GLR 正确文献/链接"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 把 tree-sitter 的错误恢复写成 GLR 栈分叉「假设有 )」，歪曲了 GLR 歧义探索与 error recovery 的边界；应分开写：GLR 处理合法歧义，容错/增量是额外机制"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 1 的 C++ >> 叙述略简化：经典问题常涉及词法把 >> 合成一 token；教学可保留，但应标明是「歧义/冲突延后消解」示意，避免写成纯 LR 动作表必然同时 shift>> 与 reduce 两个 >"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例缺少可跟做的最小 bison/%glr-parser 或伪代码片段；至少给一段展示冲突动作与 %dprec/%merge 的迷你文法"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 无代码且机制描述偏 IDE 宣传，建议改成「歧义文法 + 增量重解析范围」的可核对步骤，避免暗示 GLR 自动插入缺失括号"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用已有边界，可补一句「无歧义时接近线性、歧义局部才付立方代价」与踩坑呼应"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 把 tree-sitter 容错写成「假设有 )」的 GLR 分叉，零基础读者跟不住机制；应拆成：冲突分叉 → 增量重算 → 与报错容错的区别，并给一小段伪代码或逐步编号",
+        "案例 1 的 shift/reduce 两条路缺少「最终选哪条、为何丢掉右移」的逐步对照，建议补 2-3 步推理",
+        "核心要点里 Multi-Action / packed node / parse forest 术语密度高，可各加一句更短的日常类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 3,
+        "no_distortion": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "延伸阅读里 Scott & Johnstone 2006 的链接指向 gll.pdf（GLL），不是 RNGLR；应换成 Right-Nulled GLR 正确文献/链接",
+        "案例 2 把 tree-sitter 的错误恢复写成 GLR 栈分叉「假设有 )」，歪曲了 GLR 歧义探索与 error recovery 的边界；应分开写：GLR 处理合法歧义，容错/增量是额外机制",
+        "案例 1 的 C++ >> 叙述略简化：经典问题常涉及词法把 >> 合成一 token；教学可保留，但应标明是「歧义/冲突延后消解」示意，避免写成纯 LR 动作表必然同时 shift>> 与 reduce 两个 >"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例缺少可跟做的最小 bison/%glr-parser 或伪代码片段；至少给一段展示冲突动作与 %dprec/%merge 的迷你文法",
+        "案例 2 无代码且机制描述偏 IDE 宣传，建议改成「歧义文法 + 增量重解析范围」的可核对步骤，避免暗示 GLR 自动插入缺失括号",
+        "适用/不适用已有边界，可补一句「无歧义时接近线性、歧义局部才付立方代价」与踩坑呼应"
+      ]
+    }
+  ]
+}

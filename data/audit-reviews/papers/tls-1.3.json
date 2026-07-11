@@ -1,0 +1,82 @@
+{
+  "action": "pass",
+  "average": 4.67,
+  "reject_count": 0,
+  "needs_refine_count": 0,
+  "pass_count": 3,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "要点 2/3 里 AEAD、HKDF、CCM 对零基础仍偏密，可各加半句日常桥接（如「加密同时验真伪」「用标签从同一根密钥分出不同用途的钥匙」）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 2 写「被动监听者能看到你访问哪个网站」主要归因于明文证书；教学可接受，但同连接上 SNI 本就明文泄露域名，措辞可避免暗示证书是唯一线索"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "不适用里 IoT「< 64KB 内存」与「DTLS 1.3 + CCM-8」方向对，但可再点明多数嵌入式仍卡在库体积/硬件加速而非协议本身"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 5
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "要点 2/3 里 AEAD、HKDF、CCM 对零基础仍偏密，可各加半句日常桥接（如「加密同时验真伪」「用标签从同一根密钥分出不同用途的钥匙」）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 5,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 写「被动监听者能看到你访问哪个网站」主要归因于明文证书；教学可接受，但同连接上 SNI 本就明文泄露域名，措辞可避免暗示证书是唯一线索"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "不适用里 IoT「< 64KB 内存」与「DTLS 1.3 + CCM-8」方向对，但可再点明多数嵌入式仍卡在库体积/硬件加速而非协议本身"
+      ]
+    }
+  ]
+}

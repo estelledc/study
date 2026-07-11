@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 学到什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 没有像案例 1 那样的代码块与编号逐步解释，零基础读者较难自己复现可视化；可补一段画 W 方向的伪代码或 3 步操作清单"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩过的坑 #2 与学到什么 #4 把 toy 模型里的 sparsity phase change 直接等同于 LLM 训练曲线的「突然学会/涌现」，超出论文主张，应改成「toy 里可见相变；真实 LLM 涌现是否同源仍开放」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "适用/不适用写「论文主要例子是文本特征」不准确——正文实验是合成特征的 toy autoencoder，文本/GPT-2 多义神经元是动机与后续观察，应改表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 的 Python/DNA 神经元宜标明来自后续/相关 Anthropic 观察，避免读成 Toy Models 正文实验结论"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 代码缺 import torch，且未展示稀疏输入采样与训练一步，跟做时无法直接跑出案例 2 的几何图；可补 5–10 行最小训练/可视化伪代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一句量化边界（如 n_features≫n_hidden、稀疏度 S 接近 1 才稳定 superposition）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 没有像案例 1 那样的代码块与编号逐步解释，零基础读者较难自己复现可视化；可补一段画 W 方向的伪代码或 3 步操作清单"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 学到什么",
+      "fix_hints": [
+        "踩过的坑 #2 与学到什么 #4 把 toy 模型里的 sparsity phase change 直接等同于 LLM 训练曲线的「突然学会/涌现」，超出论文主张，应改成「toy 里可见相变；真实 LLM 涌现是否同源仍开放」",
+        "适用/不适用写「论文主要例子是文本特征」不准确——正文实验是合成特征的 toy autoencoder，文本/GPT-2 多义神经元是动机与后续观察，应改表述",
+        "案例 3 的 Python/DNA 神经元宜标明来自后续/相关 Anthropic 观察，避免读成 Toy Models 正文实验结论"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 代码缺 import torch，且未展示稀疏输入采样与训练一步，跟做时无法直接跑出案例 2 的几何图；可补 5–10 行最小训练/可视化伪代码",
+        "适用/不适用可补一句量化边界（如 n_features≫n_hidden、稀疏度 S 接近 1 才稳定 superposition）"
+      ]
+    }
+  ]
+}

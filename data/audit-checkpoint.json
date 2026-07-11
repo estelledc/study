@@ -1,30 +1,38 @@
 {
-  "round_n": 121,
+  "round_n": 122,
   "total": 1975,
-  "audited": 1800,
+  "audited": 1900,
   "failed": 0,
-  "pending": 175,
+  "pending": 75,
   "by_status": {
-    "rewritten": 42,
-    "refined": 1066,
-    "passed": 692,
-    "pending": 175
+    "rewritten": 48,
+    "refined": 1136,
+    "passed": 716,
+    "pending": 75
   },
   "last_round": {
-    "round": 121,
+    "round": 122,
     "results": 100,
-    "passed": 26,
-    "refined": 73,
-    "rewritten": 1,
+    "passed": 24,
+    "refined": 70,
+    "rewritten": 6,
     "failed": 0,
-    "at": "2026-07-11T01:14:28.468Z"
+    "at": "2026-07-11T01:30:03.060Z"
   },
-  "next_action": "start-audit-round-122",
-  "updated_at": "2026-07-11T01:14:28.468Z",
+  "next_action": "start-audit-round-123",
+  "updated_at": "2026-07-11T01:30:03.060Z",
   "handoff": {
     "mode": "100-wide-true-concurrent",
-    "last_round": 121,
-    "summary": "100 agents x 1 note; 26 passed / 73 refined / 1 rewritten",
-    "next": "start-audit-round-122 with --count 100 (175 pending)"
+    "last_round": 122,
+    "summary": {
+      "round": 122,
+      "results": 100,
+      "passed": 24,
+      "refined": 70,
+      "rewritten": 6,
+      "failed": 0,
+      "at": "2026-07-11T01:30:03.060Z"
+    },
+    "next": "start-audit-round-123 with remaining pending (~75)"
   }
 }

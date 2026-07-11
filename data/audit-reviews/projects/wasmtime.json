@@ -1,0 +1,112 @@
+{
+  "action": "rewrite",
+  "average": 2.33,
+  "reject_count": 2,
+  "needs_refine_count": 1,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "reject"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "三个案例全是可套任何项目的空模板，无代码、无逐步解释；应写成加载 .wasm、调函数、配 WASI 权限的可跟做步骤"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "WASM / WASI / Cranelift / WIT / ABI 首次出现缺日常桥接，零基础跟不住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "「是什么」里的「主链路」与 Wasmtime 无关，应删掉并保留插件执行场类比后展开"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文大量通用「接入层/主链路/参数对比」套话，几乎未陈述 Wasmtime 作为 Bytecode Alliance 运行时的真实定位，属过度泛化到歪曲"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事写成通用上线流程，应改为 Wasmtime/Cranelift/WASI/组件模型相关时间线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读自链 [[wasmtime]] 无意义；反向链接被 35 条重复复盘要点污染，应留空占位"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "实践案例无任何可运行命令或伪代码，无法跟做；至少给出 wasmtime CLI 跑模块、嵌入式 API 调用、WASI 权限配置三类最小示例"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用缺少量化边界（冷启动、内存上限、与容器/原生对比场景）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩过的坑编号全是 1.，且缺具体失败症状与修复动作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 3,
+        "accessibility": 2,
+        "case_clarity": 1
+      },
+      "average": 2,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三个案例全是可套任何项目的空模板，无代码、无逐步解释；应写成加载 .wasm、调函数、配 WASI 权限的可跟做步骤",
+        "WASM / WASI / Cranelift / WIT / ABI 首次出现缺日常桥接，零基础跟不住",
+        "「是什么」里的「主链路」与 Wasmtime 无关，应删掉并保留插件执行场类比后展开"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 2
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "正文大量通用「接入层/主链路/参数对比」套话，几乎未陈述 Wasmtime 作为 Bytecode Alliance 运行时的真实定位，属过度泛化到歪曲",
+        "历史小故事写成通用上线流程，应改为 Wasmtime/Cranelift/WASI/组件模型相关时间线",
+        "延伸阅读自链 [[wasmtime]] 无意义；反向链接被 35 条重复复盘要点污染，应留空占位"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 1,
+        "pitfalls_useful": 3,
+        "scope_correct": 2
+      },
+      "average": 2,
+      "verdict": "reject",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "实践案例无任何可运行命令或伪代码，无法跟做；至少给出 wasmtime CLI 跑模块、嵌入式 API 调用、WASI 权限配置三类最小示例",
+        "适用/不适用缺少量化边界（冷启动、内存上限、与容器/原生对比场景）",
+        "踩过的坑编号全是 1.，且缺具体失败症状与修复动作"
+      ]
+    }
+  ]
+}

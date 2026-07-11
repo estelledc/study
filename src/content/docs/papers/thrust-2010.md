@@ -31,7 +31,7 @@ thrust::sort(d_v.begin(), d_v.end());
 - 为什么 NVIDIA 自己说 GPU 编程"应该像写 STL"——这是十多年前定下的接口哲学
 - 为什么 PyTorch / RAPIDS / cuDF 这些库底下能"无脑"调到高性能并行原语——Thrust 是其中一层
 - 为什么 GPU 上的 `sort`、`scan`、`reduce` 这种"老掉牙"算法值得发一篇论文——把它们做成可组合、可分派、可零拷贝的迭代器接口才是难点
-- 为什么 C++17 加的 `std::execution::par` 在 NVCC 下能直接跑 GPU——编译器把它路由到 Thrust
+- 为什么 C++17 的 `std::execution::par` 能在 GPU 上跑——NVIDIA 的 NVC++ 用 `-stdpar` 把并行算法接到 Thrust 一类后端（不是 nvcc 默认行为）
 
 ## 核心要点
 
@@ -39,9 +39,9 @@ Thrust 的接口设计可以拆成 **三块**：
 
 1. **容器（container）**：`host_vector<T>` 和 `device_vector<T>`。日常类比：两个一模一样的购物袋，一个放厨房（CPU 内存）、一个放冰箱（显存）。把厨房袋赋给冰箱袋，**自动**完成跨设备拷贝。
 
-2. **迭代器（iterator）**：算法不直接吃容器，吃的是迭代器（`begin()` / `end()`）。这层抽象关键在哪？库通过迭代器的**类型**判断"数据在 host 还是 device"，然后把调用 dispatch 到对应 kernel。
+2. **迭代器（iterator）**：算法不直接吃容器，吃的是迭代器（`begin()` / `end()`）。这层抽象关键在哪？库看迭代器的**类型**判断"数据在 host 还是 device"，再**分派**（dispatch）到对应 GPU/CPU 实现——像快递按地址选仓库。
 
-3. **算法（algorithm）**：`sort` / `reduce` / `scan` / `transform` / `unique` / `partition`，名字和 STL 一一对应。每个算法内部根据迭代器类型 + 数据类型选最优实现（比如 `sort` 在数值键上走 radix sort，自定义比较走 merge sort）。
+3. **算法（algorithm）**：`sort` / `reduce` / `scan` / `transform` / `unique` / `partition`，名字和 STL 一一对应。内部按类型选实现：数值键走**基数排序**（radix，按位桶分，近似线性），自定义比较走归并排序。
 
 加上一个**杀手锏**：**fancy iterator**——`counting_iterator(0)` 不占显存，按需生成 0,1,2,...；`transform_iterator(it, f)` 不存数据，迭代时算 `f(*it)`。这让你能写出**零拷贝、零中间分配**的流水线。
 
@@ -50,14 +50,16 @@ Thrust 的接口设计可以拆成 **三块**：
 ### 案例 1：一行 GPU 排序
 
 ```cpp
+#include <thrust/host_vector.h>
 #include <thrust/device_vector.h>
 #include <thrust/sort.h>
+thrust::host_vector<int> h_v(3); h_v[0]=3; h_v[1]=1; h_v[2]=2;
 thrust::device_vector<int> d_v = h_v;        // host->device 拷贝
 thrust::sort(d_v.begin(), d_v.end());        // GPU 上排
 h_v = d_v;                                   // device->host 拷贝
 ```
 
-整个 CUDA 调度细节（block 大小、shared memory、warp 同步）**全藏在 sort 里面**。
+**逐部分解释**：先在 CPU 侧准备 `h_v`；赋值给 `d_v` 触发一次显存拷贝；`sort` 在 GPU 上排好；再赋回 `h_v` 取回结果。block 大小、共享内存、warp 同步等 CUDA 细节**全藏在 sort 里面**。
 
 ### 案例 2：fancy iterator 做"零拷贝"求 1..N 的平方和
 
@@ -87,14 +89,14 @@ struct saxpy {
 thrust::transform(x.begin(), x.end(), y.begin(), z.begin(), saxpy(2.0f));
 ```
 
-`__host__ __device__` 是关键标注：告诉 NVCC "这个函数能在 CPU 也能在 GPU 上调"。早年 CUDA 不支持 `__device__` lambda，所以必须手写一个 struct（仿函数）；CUDA 7.5 之后才能写成 lambda，Thrust 才真正"像 STL"。
+`__host__ __device__` 是关键标注：告诉编译器"这个函数能在 CPU 也能在 GPU 上调"。早年 CUDA 不支持 device 侧 lambda，所以必须手写仿函数 struct；约 CUDA 7.x 起才能写成 lambda，Thrust 才真正"像 STL"。
 
 ## 踩过的坑
 
 1. **functor 必须 device-callable**：忘写 `__device__` 标注，NVCC 编译就报"can not be called from device code"。
 2. **device_vector 不是 std::vector**：能 push_back 但**慢**——每次都触发 host-device 同步。预分配 `resize(N)` 再写。
 3. **临时 host_vector 拷贝陷阱**：`thrust::host_vector<int> h = d_v;` 看起来一行，背后是 `cudaMemcpy` + 同步。循环里反复写就是性能杀手。
-4. **误以为 Thrust 总比手写慢**：sort/scan 这种通用原语，Thrust 调的 CUB 实现往往**比新手手写更快**——人家把 warp shuffle、shared memory bank conflict 都调过了。
+4. **误以为 Thrust 总比手写慢**：sort/scan 这类通用原语，Thrust 常调底层库 CUB（更贴硬件的积木），往往**比新手手写更快**——warp 内交换、共享内存冲突都调过了。
 5. **fancy iterator 不能取 `&*it` 当指针**：它根本没有底层内存，地址没有意义。只能在算法里用、不能强转 raw pointer。
 6. **sort 自定义比较器慢于默认**：默认走 radix sort（O(N)），自定义比较强制走 merge sort（O(N log N)）。能用默认就别传 comp。
 7. **execution policy 容易忘**：`thrust::sort(thrust::device, ...)` 显式指定后端，不指定时由迭代器类型推；混迭代器（host + device）会出意想不到的 dispatch。
@@ -104,7 +106,7 @@ thrust::transform(x.begin(), x.end(), y.begin(), z.begin(), saxpy(2.0f));
 **适用**：
 - 数据并行的"教科书算法"——排序、前缀和、reduce、map、filter
 - 不想（或不会）手写 CUDA kernel 但要 GPU 加速
-- 数据已在 GPU 上的后处理（比如深度学习推理后的 NMS、topk）
+- 数据已在 GPU 上的后处理（比如推理后的非极大值抑制 NMS、取前 k 名 topk）
 
 **不适用**：
 - 算法本质串行或依赖复杂（动态规划、图遍历某些场景）
@@ -116,9 +118,9 @@ thrust::transform(x.begin(), x.end(), y.begin(), z.begin(), saxpy(2.0f));
 - **2008 年**：Hoberock 和 Bell 在 NVIDIA Research 内部写了个叫 Komrade 的小库，灵感就是 Stepanov 1994 的 STL。
 - **2009 年**：开源，改名 Thrust。
 - **2010 年**：随 CUDA 4.0 进官方发行包，本论文/章节正式介绍设计哲学。
-- **2014 年**：CUDA 7.5 加 `__device__` lambda，Thrust 才真正"像 STL"——之前每个小操作都得写仿函数 struct。
+- **约 2014–2015**：CUDA 7.x 引入可用的 `__device__` lambda，Thrust 才真正"像 STL"——之前每个小操作都得写仿函数 struct。
 - **同期**：Duane Merrill 写了 CUB，更底层、性能更极致；Thrust 的很多算法后来直接调 CUB。
-- **2022 年**：NVIDIA 把 Thrust + CUB + libcu++ 合并成 CCCL（CUDA C++ Core Libraries），三家终于一个仓库。
+- **2023 年**：NVIDIA 宣布把 Thrust + CUB + libcu++ 合并进 CCCL（CUDA C++ Core Libraries）统一仓库。
 
 ## 学到什么
 

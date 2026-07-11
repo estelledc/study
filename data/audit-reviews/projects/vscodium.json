@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只给了 docker run，缺少改 product.json 的具体字段与逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 偏概念列举，缺少可跟做的命令或配置片段"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "建议把案例压到 3 个，每个都有代码 + 逐部分解释，对齐模板"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「零代码差异」略过强：仓库确有 patch/，应写成「几乎不改上游源码、只维护 patch 与 product.json」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史里「24k stars」属瞬时数字，可改为「数万 stars」或注明约数"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 self-host open-vsx 应补上 VSCodium 侧 extensionsGallery 配置示例，否则读者无法跟做"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "mitmproxy 抓包案例可保留，但 HTTPS 需信任证书这一步至少提一句，否则新手会以为「没流量=零遥测」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只给了 docker run，缺少改 product.json 的具体字段与逐步解释",
+        "案例 3 偏概念列举，缺少可跟做的命令或配置片段",
+        "建议把案例压到 3 个，每个都有代码 + 逐部分解释，对齐模板"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「零代码差异」略过强：仓库确有 patch/，应写成「几乎不改上游源码、只维护 patch 与 product.json」",
+        "历史里「24k stars」属瞬时数字，可改为「数万 stars」或注明约数"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 self-host open-vsx 应补上 VSCodium 侧 extensionsGallery 配置示例，否则读者无法跟做",
+        "mitmproxy 抓包案例可保留，但 HTTPS 需信任证书这一步至少提一句，否则新手会以为「没流量=零遥测」"
+      ]
+    }
+  ]
+}

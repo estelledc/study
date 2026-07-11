@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.11,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 SVG plugin 只有代码和一句 hook 说明，缺少「为什么要写 transform / 返回什么 / 怎么用」的逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 alias 配置缺少逐部分解释（alias 键、path.resolve、dev/build 为何共用）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少「历史小故事（可跳过）」段，零基础读者不知道 Vite 从何而来"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Module Federation 目前 webpack 5 仍是唯一成熟方案」略绝对——Vite 生态已有实验/社区方案，可改为「生产级成熟度仍以 webpack 5 为主」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几乎所有新框架底层都换成了 Vite」可软化为「多数主流元框架」以免过度概括"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 @svgr/core transform 调用签名偏简略，跟做时可能因默认 SVG 资源处理而踩坑；建议补一句「需让 .svg 走自定义 transform 而非默认 asset URL」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 用 __dirname 在纯 ESM vite.config.ts 里可能不可用，可注明用 import.meta.url 或 fileURLToPath"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 SVG plugin 只有代码和一句 hook 说明，缺少「为什么要写 transform / 返回什么 / 怎么用」的逐步解释",
+        "案例 3 的 alias 配置缺少逐部分解释（alias 键、path.resolve、dev/build 为何共用）",
+        "缺少「历史小故事（可跳过）」段，零基础读者不知道 Vite 从何而来"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "「Module Federation 目前 webpack 5 仍是唯一成熟方案」略绝对——Vite 生态已有实验/社区方案，可改为「生产级成熟度仍以 webpack 5 为主」",
+        "「几乎所有新框架底层都换成了 Vite」可软化为「多数主流元框架」以免过度概括"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 @svgr/core transform 调用签名偏简略，跟做时可能因默认 SVG 资源处理而踩坑；建议补一句「需让 .svg 走自定义 transform 而非默认 asset URL」",
+        "案例 3 用 __dirname 在纯 ESM vite.config.ts 里可能不可用，可注明用 import.meta.url 或 fileURLToPath"
+      ]
+    }
+  ]
+}

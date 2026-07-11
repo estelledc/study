@@ -34,7 +34,7 @@ VSCodium 的整套机制可以拆成 **三块**：
 
 1. **它不是 fork，是构建脚本**：仓库里没有 src/，只有 build.sh / patch/ / product.json。脚本的工作流程是 `git clone microsoft/vscode → 应用 patch → 执行 yarn gulp vscode-darwin-x64 → 签名打包`。类比：不是改菜谱，是用同一份菜谱但换掉一两味调料。这样上游升级几乎零成本——除非微软改了构建脚本本身。
 
-2. **product.json 是开关总闸**：vscode 源码里 product.json 控制了**所有品牌和服务端点**——logo、产品名、telemetry endpoint、marketplace URL、内置扩展白名单、Settings Sync server。VSCodium 提供一份"中性版" product.json 直接覆盖，不用动一行 src/ 代码就把遥测和品牌全部抹掉。这是它能做到"零代码差异"的关键。
+2. **product.json 是开关总闸**：vscode 源码里 product.json 控制了**所有品牌和服务端点**——logo、产品名、telemetry endpoint、marketplace URL、内置扩展白名单、Settings Sync server。VSCodium 用一份"中性版" product.json 覆盖，再加少量 patch/ 补丁；几乎不改上游 src/，只维护构建参数差异。这是它长期成本远低于 fork 的关键。
 
 3. **Marketplace 替代是 open-vsx.org**：微软的 marketplace 协议禁止非官方 VS Code 客户端连接（ToS 第 1.b 条）。VSCodium 默认指向 Eclipse 基金会维护的 open-vsx.org，绝大部分主流扩展（ESLint / Prettier / GitLens / Vim / Rust Analyzer）作者都同步发布两边。少数微软自家扩展（Pylance / Remote-SSH / C++）只发到官方 marketplace，且 license 内置了"仅限官方 VS Code"检查，VSCodium 装上会报错。
 
@@ -46,54 +46,64 @@ VSCodium 的整套机制可以拆成 **三块**：
 
 ```bash
 brew install --cask vscodium
-# 启动命令是 codium
 codium ~/projects/foo
-
-# 把 git 默认编辑器换掉
 git config --global core.editor 'codium --wait'
-```
-
-切换前先把 VS Code 的 settings.json 复制过去：
-
-```bash
 cp -r "$HOME/Library/Application Support/Code/User" \
       "$HOME/Library/Application Support/VSCodium/User"
 ```
 
-扩展需要重装一次——VSCodium 的扩展目录是 `~/.vscode-oss/extensions/`，不是 `~/.vscode/extensions/`。
+**逐部分解释**：
 
-### 案例 2：在受监管环境部署内网 marketplace
+- `brew install --cask vscodium`：装的是社区干净构建，命令叫 `codium` 不是 `code`
+- `git config ... --wait`：让 git commit 弹窗用 VSCodium，`--wait` 表示关窗才继续
+- `cp -r .../Code/User .../VSCodium/User`：把主题、快捷键、settings.json 一并迁过去
+- 扩展要重装：目录是 `~/.vscode-oss/extensions/`，不是 `~/.vscode/extensions/`
 
-合规审查通过 VSCodium（零遥测 + MIT）后，扩展也要走内网。Eclipse 提供 open-vsx 的 self-host 镜像：
+### 案例 2：内网 marketplace（self-host open-vsx）
+
+合规通过 VSCodium 后，扩展也要走内网。先起 open-vsx，再让客户端指向它：
 
 ```bash
 docker run -p 8080:8080 ghcr.io/eclipse/openvsx-server:latest
-# 然后给 VSCodium 改 product.json 指向内网
 ```
 
-team 配一份 settings.json 模板下发，所有人扩展走内网 registry，再不会有"装个扩展把代码索引发到外网"的合规风险。
+在用户 settings.json（或团队下发的模板）里写：
 
-### 案例 3：用作 AI 编程插件的开发基线
+```json
+{
+  "extensionsGallery": {
+    "serviceUrl": "http://intranet.example:8080/vscode/gallery",
+    "itemUrl": "http://intranet.example:8080/vscode/item",
+    "resourceUrlTemplate": "http://intranet.example:8080/vscode/asset/{publisher}/{name}/{version}/Microsoft.VisualStudio.Code.WebResources/{path}"
+  }
+}
+```
 
-做 [[continue]] / [[claude-code]] / Cursor 这类 AI 编程插件的人，常拿 VSCodium 当干净测试基线：
+**逐部分解释**：
 
-- 没有官方 marketplace ToS 限制——可以自由发布到 open-vsx
-- 没有遥测干扰——能精确测自家插件的网络流量
-- 命令行叫 codium，与官方 code 共存不冲突，开发和日常用机分离
+1. Docker 起的是 Eclipse 的 open-vsx 服务端（扩展商店本体）
+2. `extensionsGallery` 告诉 VSCodium："别去公网 open-vsx，去内网这台"
+3. `serviceUrl` / `itemUrl` 分别管搜索列表和详情页；URL 按你们反向代理实际路径改
+4. 之后装扩展不再把索引请求打到外网——这是受监管环境最常卡的合规点
 
-### 案例 4：验证 VSCodium 真的零遥测
+### 案例 3：抓包验证真的零遥测
 
-不要光信 README，自己抓包验证：
+不要光信 README，自己用 mitmproxy 看流量：
 
 ```bash
-# macOS：装 mitmproxy 当系统代理
 brew install mitmproxy
 mitmproxy -p 8080
-# 把系统 HTTP/HTTPS 代理指向 127.0.0.1:8080，启动 codium，操作 5 分钟
+# 1) 浏览器打开 http://mitm.it 安装并信任 mitmproxy CA（否则 HTTPS 解密失败）
+# 2) 系统 HTTP/HTTPS 代理设为 127.0.0.1:8080
+# 3) 启动 codium，正常编辑 5 分钟，看 mitmproxy 列表
 ```
 
-会看到 VSCodium 只在以下场景发请求：扩展安装走 open-vsx.org、更新检查走 github.com/VSCodium/vscodium/releases。对比官方 VS Code 启动后会向 vortex.data.microsoft.com / mobile.events.data.microsoft.com 发数十个 telemetry beacon——这一对比就是合规审查最有说服力的证据。
+**逐部分解释**：
 
+- 不信任 CA 时，HTTPS 会握手失败或显示空白——**不是**"零流量"，是你没解密成功
+- 正常解密后，VSCodium 常见请求只有：open-vsx.org（装扩展）、github.com/VSCodium/.../releases（查更新）
+- 对比官方 VS Code：启动后会向 `vortex.data.microsoft.com` 等域名打出一串 telemetry beacon
+- 这一对比是合规审查里最有说服力的证据；AI 插件开发者也常用同一手法确认自家扩展没夹带意外外联
 ## 踩过的坑
 
 1. **微软自家扩展装不了**：Pylance / Remote-SSH / Remote-Containers / Live Share / C++ IntelliSense 这五个最常用的扩展 license 写死"仅限 VS Code 官方构建"，VSCodium 装上会报 "this extension is not compatible"。代替方案：Pylance → Pyright（同公司的开源版）；Remote-SSH → Open Remote SSH（社区 fork）；C++ → clangd 扩展。
@@ -124,7 +134,7 @@ mitmproxy -p 8080
 - **2015 年**：微软把 VS Code 源码以 MIT 许可开源，但官方下载的二进制是用**包含微软专有组件**的构建脚本打的——logo / 品牌 / 部分内置扩展不在 MIT 里。
 - **2017 年前后**：社区维护者发现"自己重新构建一份干净的 VS Code"是可行的——只要把 product.json 换掉就行。VSCodium 项目在 GitHub 上线，最初是几个志愿者的脚本仓库。
 - **2019 年起**：随着 GitHub 被微软收购、Telemetry 默认开启，VSCodium 用户激增。Homebrew / Scoop / WinGet 都把它收进了官方仓库。
-- **现在**：仓库 24k stars，项目核心**仍然只有几百行 shell + 几份 patch**——它最了不起的不是技术，是"把构建脚本本身做成一个长期维护的项目"这个洞察。
+- **现在**：仓库约数万 stars，项目核心**仍然只有几百行 shell + 几份 patch**——它最了不起的不是技术，是"把构建脚本本身做成一个长期维护的项目"这个洞察。
 
 ## 学到什么
 

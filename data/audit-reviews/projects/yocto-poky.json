@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 3.89,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事（可跳过）",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 只有文件路径和两行配置，缺少「为什么要 FILESEXTRAPATHS」「补丁文件放哪」的逐步说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 切换 MACHINE/DISTRO 后没有说明还要加 meta-raspberrypi 等层，零基础会卡在找不到机器配置"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「偶数版本是长期支持（LTS）」不准确：LTS 是指定发布（如 Kirkstone 4.0、Scarthgap 5.0），并非简单按偶数字号"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "正文写「截至 2025 年」与 frontmatter 日期 2026-06-24 不一致，应改为与笔记日期对齐或写明具体 LTS 代号"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 MACHINE=raspberrypi4-64 依赖 meta-raspberrypi，文中未提如何加入 BBLAYERS，跟做会失败"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 用 git:// 克隆在部分网络环境不可用，可补充 https://git.yoctoproject.org/poky 作为备选"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 只有文件路径和两行配置，缺少「为什么要 FILESEXTRAPATHS」「补丁文件放哪」的逐步说明",
+        "案例 3 切换 MACHINE/DISTRO 后没有说明还要加 meta-raspberrypi 等层，零基础会卡在找不到机器配置"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 历史小故事（可跳过）",
+      "fix_hints": [
+        "「偶数版本是长期支持（LTS）」不准确：LTS 是指定发布（如 Kirkstone 4.0、Scarthgap 5.0），并非简单按偶数字号",
+        "正文写「截至 2025 年」与 frontmatter 日期 2026-06-24 不一致，应改为与笔记日期对齐或写明具体 LTS 代号"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 MACHINE=raspberrypi4-64 依赖 meta-raspberrypi，文中未提如何加入 BBLAYERS，跟做会失败",
+        "案例 1 用 git:// 克隆在部分网络环境不可用，可补充 https://git.yoctoproject.org/poky 作为备选"
+      ]
+    }
+  ]
+}

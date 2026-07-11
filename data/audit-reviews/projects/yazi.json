@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 4,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 的 Lua 预览器只有代码和一句注册说明，缺少「peek 做什么 / Command 管道 / ya.preview_widgets 怎么画」的逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 的 DDS 示例过短，零基础读者不知道 ya 与 yazi 的分工，也缺逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "缺少「历史小故事（可跳过）」段，读者不知道 yazi 从何而来、为何相对 ranger 出现"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「把 90 年代的 Python/C 终端工具」不准确——ranger 约 2009 年，宜改为「老一代 / 上一代」以免歪曲时间线"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「lf / nnn 没做图片协议」过绝对——它们可经外挂预览；宜改为「默认不内建原生图片协议」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「这条赛道目前的 SOTA」偏口号，可软化为「异步 + 原生图片协议组合上目前最完整的之一」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 用 `ya pub --str \"$(pwd)\" cd` 不对：跳目录应走 `ya emit cd \"$(pwd)\"`（DDS 文档里 emit 才是 action 载体）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 写 `parquet = \"parquet\"` 不是真实 yazi.toml 写法；应给 `[plugin] prepend_previewers = [{ name = \"*.parquet\", run = \"parquet\" }]`"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 可补一句：需本机已装 duckdb，且插件目录名须为 `parquet.yazi`"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 Lua 预览器只有代码和一句注册说明，缺少「peek 做什么 / Command 管道 / ya.preview_widgets 怎么画」的逐步解释",
+        "案例 3 的 DDS 示例过短，零基础读者不知道 ya 与 yazi 的分工，也缺逐步解释",
+        "缺少「历史小故事（可跳过）」段，读者不知道 yazi 从何而来、为何相对 ranger 出现"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「把 90 年代的 Python/C 终端工具」不准确——ranger 约 2009 年，宜改为「老一代 / 上一代」以免歪曲时间线",
+        "「lf / nnn 没做图片协议」过绝对——它们可经外挂预览；宜改为「默认不内建原生图片协议」",
+        "「这条赛道目前的 SOTA」偏口号，可软化为「异步 + 原生图片协议组合上目前最完整的之一」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 用 `ya pub --str \"$(pwd)\" cd` 不对：跳目录应走 `ya emit cd \"$(pwd)\"`（DDS 文档里 emit 才是 action 载体）",
+        "案例 2 写 `parquet = \"parquet\"` 不是真实 yazi.toml 写法；应给 `[plugin] prepend_previewers = [{ name = \"*.parquet\", run = \"parquet\" }]`",
+        "案例 2 可补一句：需本机已装 duckdb，且插件目录名须为 `parquet.yazi`"
+      ]
+    }
+  ]
+}

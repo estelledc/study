@@ -1,0 +1,97 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 是什么",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1/2 只有一两行代码，缺少逐步解释（每行在干什么、跑完去哪看）"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 没有代码或可跟做步骤，建议补一段打开 run 链接后对照看哪些字段的说明"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「研究界默认实验跟踪工具」偏营销口吻，可改成「广泛采用」之类更可核验的表述"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2024 起开源版可用」略笼统：客户端本就开源，自托管 server 能力可写清一点以免误解"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "最小示例里 train_step() 是占位，可加一句说明读者需换成自己的训练步"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑已很具体；适用/不适用可再补一条量化边界（如「单机 <10 次实验」）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1/2 只有一两行代码，缺少逐步解释（每行在干什么、跑完去哪看）",
+        "案例 3 没有代码或可跟做步骤，建议补一段打开 run 链接后对照看哪些字段的说明"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 是什么",
+      "fix_hints": [
+        "「研究界默认实验跟踪工具」偏营销口吻，可改成「广泛采用」之类更可核验的表述",
+        "「2024 起开源版可用」略笼统：客户端本就开源，自托管 server 能力可写清一点以免误解"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "最小示例里 train_step() 是占位，可加一句说明读者需换成自己的训练步",
+        "踩坑已很具体；适用/不适用可再补一条量化边界（如「单机 <10 次实验」）"
+      ]
+    }
+  ]
+}

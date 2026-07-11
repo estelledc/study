@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.44,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 延伸阅读",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2/3 缺少「逐部分解释」：案例 2 建议按「reify 拿字段→拼 Exp→splice 回去」三步拆；案例 3 按「power 递归生成→外层 quotation 包 lambda→splice 成 cube」拆开"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现的 Q Exp、reify、AST、cross-stage persistence、splice 各加一句日常桥接，否则零基础读者会在「核心要点」卡住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 虽短但可补一句「最终机器码和手写 add1 一样」，避免读者以为 TH 会改变运行时语义"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "延伸阅读把 Pickering et al.「Working with Source Plugins」(Haskell 2019) 当成 Typed TH 形式化来源不准确；Typed TH 应指向 Mainland/Eisenberg 相关工作或明确区分 source plugins 与 Typed TH"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "历史小故事「2016 年 Pickering 等补完 Typed TH 形式语义」年份/作者归因偏飘，建议改成可核对的出处或弱化为「后来 GHC 加入 Typed TH（Q (TExp t)）」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「Lean / Idris / Scala 3 公开承认抄了 TH」过强：可改为「设计上借鉴了 TH / MetaML 式 staging」并避免「公开承认抄了」这种无法核对的表述"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 deriveShow ''User 不是可跟做的真实 API，应标明是示意，或改成 Language.Haskell.TH.Lib 拼 instance 的最小可跑骨架（含 {-# LANGUAGE TemplateHaskell #-}）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 power / varE 'x / 嵌套 $( [| \\x -> $(power 3) |] ) 对跟做不友好：建议改成单层 splice 的 powerN 例子，并说明 x 名字如何进入生成代码"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景已有 Yesod 30%+ 量化，可再补一句「小库偶尔用 makeLenses 可接受；热路径模块避免大面积 splice」作为工程边界"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2/3 缺少「逐部分解释」：案例 2 建议按「reify 拿字段→拼 Exp→splice 回去」三步拆；案例 3 按「power 递归生成→外层 quotation 包 lambda→splice 成 cube」拆开",
+        "首次出现的 Q Exp、reify、AST、cross-stage persistence、splice 各加一句日常桥接，否则零基础读者会在「核心要点」卡住",
+        "案例 1 虽短但可补一句「最终机器码和手写 add1 一样」，避免读者以为 TH 会改变运行时语义"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 延伸阅读",
+      "fix_hints": [
+        "延伸阅读把 Pickering et al.「Working with Source Plugins」(Haskell 2019) 当成 Typed TH 形式化来源不准确；Typed TH 应指向 Mainland/Eisenberg 相关工作或明确区分 source plugins 与 Typed TH",
+        "历史小故事「2016 年 Pickering 等补完 Typed TH 形式语义」年份/作者归因偏飘，建议改成可核对的出处或弱化为「后来 GHC 加入 Typed TH（Q (TExp t)）」",
+        "「Lean / Idris / Scala 3 公开承认抄了 TH」过强：可改为「设计上借鉴了 TH / MetaML 式 staging」并避免「公开承认抄了」这种无法核对的表述"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 deriveShow ''User 不是可跟做的真实 API，应标明是示意，或改成 Language.Haskell.TH.Lib 拼 instance 的最小可跑骨架（含 {-# LANGUAGE TemplateHaskell #-}）",
+        "案例 3 的 power / varE 'x / 嵌套 $( [| \\x -> $(power 3) |] ) 对跟做不友好：建议改成单层 splice 的 powerN 例子，并说明 x 名字如何进入生成代码",
+        "适用场景已有 Yesod 30%+ 量化，可再补一句「小库偶尔用 makeLenses 可接受；热路径模块避免大面积 splice」作为工程边界"
+      ]
+    }
+  ]
+}

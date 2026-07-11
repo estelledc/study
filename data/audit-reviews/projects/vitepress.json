@@ -1,0 +1,107 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 历史小故事",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有空壳注释，没有可跟做的最小插件效果与逐步解释"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "hydration / SSG / SSR / ESM / HMR 等术语缺少零基础桥接句"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 2 建议拆成「注册 → 在 md 里用 → 为何必须 enhanceApp」三步"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「17 个插件」「~6k 行」「commit 数」属快照数字，建议标明大致量级或避免写死精确值"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "2.0-alpha.17 / brc-dd 接手等细节随时间漂移，延伸阅读已够用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 3 的 markdown-it 插件示例不可运行，应给一个最小可验证的 ruler 效果（如替换标记）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 1 的 lean.js 路径依赖主题/版本，可补一句「文件名含 hash，以实际 dist 为准」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑条目很具体，保持；案例侧补齐可跟做性即可"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 3
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 只有空壳注释，没有可跟做的最小插件效果与逐步解释",
+        "hydration / SSG / SSR / ESM / HMR 等术语缺少零基础桥接句",
+        "案例 2 建议拆成「注册 → 在 md 里用 → 为何必须 enhanceApp」三步"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 历史小故事",
+      "fix_hints": [
+        "「17 个插件」「~6k 行」「commit 数」属快照数字，建议标明大致量级或避免写死精确值",
+        "2.0-alpha.17 / brc-dd 接手等细节随时间漂移，延伸阅读已够用"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 的 markdown-it 插件示例不可运行，应给一个最小可验证的 ruler 效果（如替换标记）",
+        "案例 1 的 lean.js 路径依赖主题/版本，可补一句「文件名含 hash，以实际 dist 为准」",
+        "踩坑条目很具体，保持；案例侧补齐可跟做性即可"
+      ]
+    }
+  ]
+}

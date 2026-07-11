@@ -20,7 +20,7 @@ g = a + d;
 
 按"先写先做"的死板规则，第三行得等前两行都算完。Tomasulo 让 CPU 看出"前两行互不依赖"，**同时**送进两个加法器一起算，第三行等结果广播回来再算。三步可能压成两步。
 
-这套机制的三大件——**保留站**（reservation station）、**寄存器重命名**（register renaming）、**公共数据总线**（CDB）——构成了现代所有超标量乱序 CPU 的核心骨架。Apple M 芯片大核、x86 Zen、ARM Cortex-A 内部都是 Tomasulo 的徒孙。
+这套机制的三大件——**保留站**（reservation station）、**寄存器重命名**（register renaming）、**公共数据总线**（CDB）——构成了现代超标量乱序 CPU 的核心骨架。Apple M 大核、x86 Zen、ARM Cortex-X / 高端乱序 Cortex-A 都是 Tomasulo 的徒孙（同系列里的 A53/A55 等顺序核不算）。
 
 ## 为什么重要
 
@@ -29,7 +29,7 @@ g = a + d;
 - 为什么现代 CPU 主频卡在 5 GHz 二十年，性能却年年涨——靠**同时跑多条指令**而不是更快跑一条
 - 为什么 CPU benchmark 经常出现"实际 IPC 大于 1"——一个时钟周期跑完不止一条指令，靠的就是乱序发射
 - 为什么编译器优化和 CPU 调度看起来在做重叠的事——编译器是静态调度，CPU 是动态调度，互补不替代
-- 为什么 Spectre / Meltdown 这类侧信道漏洞会出现在 2018——它们的根因正是 Tomasulo 的"投机执行"（speculative execution）后代
+- 为什么 Spectre / Meltdown 会出现在 2018——乱序/投机执行谱系上的后代：错预测路径留下的微架构痕迹（如 cache）可被侧信道读走，不是 1967 原文本身的设计目标
 
 ## 核心要点
 
@@ -81,16 +81,16 @@ i2: R5 = R3 + R4     (依赖 i1 的结果)
 
 i2 没有反复轮询，是 CDB 主动喊它。
 
-### 案例 3：现代 CPU 的影子
+### 案例 3：一条指令在现代核里走完
 
-打开 Intel 第 13 代 Core 或 Apple M3 的微架构图，你会看到：
+以 `R3 = R1 * R2` 为例，跟读四步（名字是后人加的，骨架仍是 Tomasulo）：
 
-- **Reorder Buffer**（ROB）—— 1988 年加的，让 Tomasulo 支持精确异常（异常发生时能回到指令完成前的精确状态）
-- **Physical Register File**（PRF）—— 把"重命名后的临时身份"做成一大堆物理寄存器，比 360 Model 91 时代精致很多
-- **Scheduler / Issue Queue** —— 就是保留站换了个名字
-- **Result Bus / Forwarding Network** —— CDB 的多通道升级版
+1. **发射**：前端按程序序取指；重命名表给 `R3` 换一个新物理寄存器身份（像换临时工号），指令进 Scheduler（保留站的现代名）
+2. **等待**：若 `R1`/`R2` 还没就绪，指令在 Scheduler 里睡；谁算完谁经 Result Bus（CDB 升级版）广播 tag+值
+3. **执行**：操作数齐了就进乘法器；算完再广播，唤醒下游
+4. **提交**：结果先记在 Reorder Buffer（ROB，1988 年补上）里；按原程序序提交，异常时能回到"精确状态"（像账本按页回滚，不是算到哪算到哪）
 
-骨架没变，规模大了 50 倍。
+Physical Register File（PRF）就是那一大堆"临时工号"对应的真实格子。骨架没变，规模大了几十倍。
 
 ## 踩过的坑
 
@@ -102,21 +102,20 @@ i2 没有反复轮询，是 CDB 主动喊它。
 
 4. **静态 vs 动态调度不是替代关系**：编译器可以重排指令（静态调度），CPU 又可以乱序发射（动态调度）。两者是叠加优化，不是二选一。VLIW 架构（如 Itanium）赌"全靠编译器"，结果失败——因为编译时不知道 cache miss 等运行时信息。
 
-5. **投机执行 + Tomasulo = Spectre 漏洞土壤**：现代 CPU 在分支预测错的情况下也会乱序往前算，错了再回滚。但回滚不擦 cache，泄漏数据——这是 Tomasulo 思想往前推了 50 年后冒出的副作用。
+5. **投机执行把乱序推远了才冒出 Spectre**：错预测路径也会往前算，回滚却常不擦 cache，侧信道可读残留——这是谱系后代的副作用，不是 1967 原文要解决的问题。
 
 ## 适用 vs 不适用场景
 
 **适用**：
 
-- 通用 CPU 大核（Apple M、x86 P-core、ARM Cortex-X）—— 主流方案
-- 高性能 GPU 的部分调度逻辑 —— Volta 之后 NVIDIA 的 warp scheduler 也借鉴
-- FPGA 软核 CPU（Rocket、BOOM）—— BOOM 直接以 Tomasulo 为蓝本
+- 通用 CPU 乱序大核（Apple M、x86 P-core、ARM Cortex-X / 高端 Cortex-A）—— 主流方案
+- FPGA 软核里的乱序实现（如 BOOM）—— 直接以 Tomasulo 为蓝本，便于对照论文读 RTL
 
 **不适用**：
 
-- 嵌入式/低功耗核 —— Cortex-M 系列用顺序流水线，乱序硬件代价（ROB / 重命名表 / 唤醒电路）功耗换不回性能
-- VLIW / DSP —— 把调度责任丢给编译器，硬件极简
-- 早期 GPU 的 SIMT —— 用大量线程隐藏延迟，不需要单线程乱序
+- 嵌入式/低功耗核 —— Cortex-M、A53/A55 等顺序流水线；乱序要付 ROB + 重命名表 + 唤醒网络的面积/功耗，同工艺下往往换不回性能
+- VLIW / DSP —— 调度丢给编译器，硬件极简
+- GPU SIMT —— 用大量线程藏延迟，一般不靠单线程保留站式乱序（独立线程调度 ≠ Tomasulo）
 
 ## 历史小故事（可跳过）
 
@@ -150,3 +149,8 @@ i2 没有反复轮询，是 CDB 主动喊它。
 - [[hotspot-server-compiler]] —— JVM 的 C2 编译器在 IR 层做静态调度，与 CPU Tomasulo 互补
 - [[self-pic]] —— 内联缓存，CPU 投机思想在动态语言运行时的对应物
 - [[tracemonkey]] —— 只编译"真的走过的那条路"，与乱序投机执行精神相通
+- [[ampere-architecture-2020]] —— GPU 用线程藏延迟，对照 CPU 单线程 Tomasulo 乱序
+
+## 反向链接
+
+<!-- 由 scripts/regen-backlinks.mjs 自动生成 -->

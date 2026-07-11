@@ -1,0 +1,112 @@
+{
+  "action": "refine",
+  "average": 3.22,
+  "reject_count": 0,
+  "needs_refine_count": 3,
+  "pass_count": 0,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 用伪 bash 编号列表，缺少像模板那样的「逐部分解释」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3 只有注释没有可跟做步骤，建议改成打开大文件后的具体操作说明"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "LSP / DAP / AGPL 等缩写首次出现时可再补半句白话"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "笔记日期 2026-06-01，但 Zed Windows 已于 2025 官方稳定；「无官方版 / 社区 fork」是硬伤，踩坑与适用段需改"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "GPUI 后端应写明 Windows 走 DirectX，不只 Metal/Vulkan"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "CRDT「无需中心服务器仲裁」过度简化——Zed 协作仍经 collab 服务同步，应改成「冲突合并本地算、同步可走服务」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "「Windows 主力（无官方版）」已过时，会误导选型；改为真实边界（扩展薄、AGPL、重 IDE 调试弱）"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑第 1 条 macOS 优先叙事过时，应改成平台差异或安装注意点"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 SSH 远程可补：装好后如何确认 remote server、断线重连等一步操作"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 1 用伪 bash 编号列表，缺少像模板那样的「逐部分解释」",
+        "案例 3 只有注释没有可跟做步骤，建议改成打开大文件后的具体操作说明",
+        "LSP / DAP / AGPL 等缩写首次出现时可再补半句白话"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 2,
+        "citation_correctness": 4,
+        "no_distortion": 3
+      },
+      "average": 3,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "笔记日期 2026-06-01，但 Zed Windows 已于 2025 官方稳定；「无官方版 / 社区 fork」是硬伤，踩坑与适用段需改",
+        "GPUI 后端应写明 Windows 走 DirectX，不只 Metal/Vulkan",
+        "CRDT「无需中心服务器仲裁」过度简化——Zed 协作仍经 collab 服务同步，应改成「冲突合并本地算、同步可走服务」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 2,
+        "scope_correct": 2
+      },
+      "average": 2.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "「Windows 主力（无官方版）」已过时，会误导选型；改为真实边界（扩展薄、AGPL、重 IDE 调试弱）",
+        "踩坑第 1 条 macOS 优先叙事过时，应改成平台差异或安装注意点",
+        "案例 2 SSH 远程可补：装好后如何确认 remote server、断线重连等一步操作"
+      ]
+    }
+  ]
+}

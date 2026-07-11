@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 3/4 没有代码也没有「逐部分解释」；按模板压成 3 个案例，每个都要有代码块 + 逐步拆解"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1 只有数字对比，建议补一段「怎么读这条曲线」的逐步解释，方便零基础跟住"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "首次出现的 MuJoCo、off-policy、Lipschitz 各加半句日常桥接，否则「学到什么」末尾会掉队"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「三招里没有任何一招是 TD3 原创」略过满：clipped double Q（对连续动作取 min）是本文的具体配方，建议改成「单招都能在前人里找到影子，但组合成套是 TD3 的贡献」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "HalfCheetah「3000→9500」宜标明是论文图中的近似量级，避免读成精确复现数字"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 伪代码正确但未写明「两个 critic 共用同一 y、actor 只用 Q1 反传」；补两行注释可避免跟错实现"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用场景可补一句量化：标准 MuJoCo 约 1e6 steps、确定性部署；稀疏奖励需另搜超参"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 3
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3/4 没有代码也没有「逐部分解释」；按模板压成 3 个案例，每个都要有代码块 + 逐步拆解",
+        "案例 1 只有数字对比，建议补一段「怎么读这条曲线」的逐步解释，方便零基础跟住",
+        "首次出现的 MuJoCo、off-policy、Lipschitz 各加半句日常桥接，否则「学到什么」末尾会掉队"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "「三招里没有任何一招是 TD3 原创」略过满：clipped double Q（对连续动作取 min）是本文的具体配方，建议改成「单招都能在前人里找到影子，但组合成套是 TD3 的贡献」",
+        "HalfCheetah「3000→9500」宜标明是论文图中的近似量级，避免读成精确复现数字"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 伪代码正确但未写明「两个 critic 共用同一 y、actor 只用 Q1 反传」；补两行注释可避免跟错实现",
+        "适用场景可补一句量化：标准 MuJoCo 约 1e6 steps、确定性部署；稀疏奖励需另搜超参"
+      ]
+    }
+  ]
+}

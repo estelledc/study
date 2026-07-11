@@ -1,0 +1,102 @@
+{
+  "action": "refine",
+  "average": 4.22,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 是什么 / ## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "「抽象语法树」「lock-in」「护城河」对零基础缺桥接，用一句日常类比再说术语"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "K8s / Helm / Docker Compose 首次出现时用半句话说明是什么配置文件场景"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "核心要点第 2 条可改成「先把各种格式翻成同一本账本再查改」之类的类比"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「yq 是唯一一行管道里改完的方式」略绝对，同段或适用边界应点出 dasel 等同类"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「几乎所有 Helm chart README 都假设你装了 yq」偏夸张，可改成「常见/大量」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用可补一条量化边界：例如「单文件字段级改动用 yq；跨文件 overlay 用 Kustomize」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 5 可点明 eval-all 与 select(document_index) 的常见写法差异，避免新人只记子命令名"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 4,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 是什么 / ## 核心要点",
+      "fix_hints": [
+        "「抽象语法树」「lock-in」「护城河」对零基础缺桥接，用一句日常类比再说术语",
+        "K8s / Helm / Docker Compose 首次出现时用半句话说明是什么配置文件场景",
+        "核心要点第 2 条可改成「先把各种格式翻成同一本账本再查改」之类的类比"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 4,
+        "citation_correctness": 5,
+        "no_distortion": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "「yq 是唯一一行管道里改完的方式」略绝对，同段或适用边界应点出 dasel 等同类",
+        "「几乎所有 Helm chart README 都假设你装了 yq」偏夸张，可改成「常见/大量」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "适用/不适用可补一条量化边界：例如「单文件字段级改动用 yq；跨文件 overlay 用 Kustomize」",
+        "案例 5 可点明 eval-all 与 select(document_index) 的常见写法差异，避免新人只记子命令名"
+      ]
+    }
+  ]
+}
