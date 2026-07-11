@@ -1,0 +1,147 @@
+{
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "needs-refine"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "两个翻译员背靠背类比把 encoder/decoder 讲透，零基础直觉强"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "BLEU / beam search / <EOS> 有半句白话；案例 3 可再点明 BLEU 是「机器译文和人工参考译文的重合打分」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "三案例有数字对比与因果解释；案例本身偏论文观察，对零基础仍可跟"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "案例 3 写「纯神经网络还没赢 SMT」歪曲论文主结论：集成 34.81 已超过文中 phrase-based SMT baseline 33.30；37.0 是当年 WMT'14 最强系统（含 SMT 等），不是他们对比的那条 baseline"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「encoder-decoder 这个词就是这篇论文定的」不准确：Cho et al. EMNLP 2014（更早）已用 RNN Encoder–Decoder 命名；本文贡献是端到端深 LSTM 翻译，不是造词"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源/作者/NeurIPS 2014、反转 25.9→30.6、集成 34.8、重排序 36.5、384M 参数等数字与论文一致"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "踩坑「长句 BLEU 掉得很惨」相对本文略满：论文称反转后对长句相对稳健；固定向量瓶颈是后续 attention 工作强调的局限，宜加限定"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "三案例全是论文结果叙述，缺可跟做的最小伪代码/训练步（encode→decode→loss）；建议案例 2 或 3 补 8–12 行教学伪代码并逐部分解释"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体可操作：固定向量瓶颈、反转 hack、须用 LSTM、beam vs 贪心、集成成本、OOV——有用"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用边界清楚（变长 seq→seq / 强对齐标注 / 长文档须 attention / 串行延迟）——可接受"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 4,
+        "case_clarity": 4
+      },
+      "average": 4.33,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "两个翻译员背靠背类比把 encoder/decoder 讲透，零基础直觉强",
+        "BLEU / beam search / <EOS> 有半句白话；案例 3 可再点明 BLEU 是「机器译文和人工参考译文的重合打分」",
+        "三案例有数字对比与因果解释；案例本身偏论文观察，对零基础仍可跟"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 5,
+        "no_distortion": 2
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 3 写「纯神经网络还没赢 SMT」歪曲论文主结论：集成 34.81 已超过文中 phrase-based SMT baseline 33.30；37.0 是当年 WMT'14 最强系统（含 SMT 等），不是他们对比的那条 baseline",
+        "「encoder-decoder 这个词就是这篇论文定的」不准确：Cho et al. EMNLP 2014（更早）已用 RNN Encoder–Decoder 命名；本文贡献是端到端深 LSTM 翻译，不是造词",
+        "来源/作者/NeurIPS 2014、反转 25.9→30.6、集成 34.8、重排序 36.5、384M 参数等数字与论文一致",
+        "踩坑「长句 BLEU 掉得很惨」相对本文略满：论文称反转后对长句相对稳健；固定向量瓶颈是后续 attention 工作强调的局限，宜加限定"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 3,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "三案例全是论文结果叙述，缺可跟做的最小伪代码/训练步（encode→decode→loss）；建议案例 2 或 3 补 8–12 行教学伪代码并逐部分解释",
+        "踩坑具体可操作：固定向量瓶颈、反转 hack、须用 LSTM、beam vs 贪心、集成成本、OOV——有用",
+        "适用边界清楚（变长 seq→seq / 强对齐标注 / 长文档须 attention / 串行延迟）——可接受"
+      ]
+    }
+  ],
+  "slug": "seq2seq-2014",
+  "area": "papers",
+  "status": "refined",
+  "lines": 163,
+  "l1_pass": true,
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false
+  },
+  "refinement": {
+    "action": "refine",
+    "round": 1,
+    "reason": "纠正「还没赢 SMT」：集成 34.81 已超 baseline 33.30；encoder-decoder 造词归 Cho；补反转训练伪代码；长句瓶颈加限定",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 实践案例",
+      "## 踩过的坑"
+    ],
+    "unresolved_hints": []
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  }
+}
