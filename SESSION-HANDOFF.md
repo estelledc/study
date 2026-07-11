@@ -57,4 +57,4 @@
 
 ## 完整 plan
 
-`/Users/jason/.claude/plans/optimized-honking-dusk.md`
+`$HOME/.claude/plans/optimized-honking-dusk.md`

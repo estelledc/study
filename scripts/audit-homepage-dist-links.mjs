@@ -91,6 +91,16 @@ function isFile(file) {
   }
 }
 
+function collectHtmlFiles(directory) {
+  const files = [];
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...collectHtmlFiles(file));
+    if (entry.isFile() && entry.name.endsWith('.html')) files.push(file);
+  }
+  return files;
+}
+
 function distCandidatesFor(pathname) {
   let decoded;
   try {
@@ -148,7 +158,24 @@ if (renderedPathCards.length !== 3) {
   fail(`Built homepage must render three learning-path cards; found ${renderedPathCards.length}.`);
 }
 
-for (const escapedMarkup of ['&lt;a class="study-path-card"', '&lt;div class="jx-proof__metrics"']) {
+const renderedGoldenCards = [...html.matchAll(/<article\b[^>]*class="[^"]*\bstudy-golden-card\b[^"]*"/gi)];
+if (renderedGoldenCards.length !== 3) {
+  fail(`Built homepage must render three golden-path articles; found ${renderedGoldenCards.length}.`);
+}
+
+for (const title of [
+  '组件究竟该在哪台机器运行？',
+  'Agent 为什么要边做、边看、边改？',
+  '多数派为什么能保住同一本账？',
+]) {
+  if (!text.includes(title)) fail(`Built homepage is missing rendered golden-path title: ${title}`);
+}
+
+for (const escapedMarkup of [
+  '&lt;a class="study-path-card"',
+  '&lt;article class="study-golden-card"',
+  '&lt;div class="jx-proof__metrics"',
+]) {
   if (html.includes(escapedMarkup)) {
     fail(`Built homepage contains escaped showcase markup instead of rendered UI: ${escapedMarkup}`);
   }
@@ -179,6 +206,24 @@ if (
 
 if (!hasTagWithAttributes(html, 'script', { type: 'application/ld+json' }) || !html.includes('"@type":"WebSite"')) {
   fail('Built homepage is missing WebSite JSON-LD.');
+}
+
+for (const file of collectHtmlFiles(distDir)) {
+  const page = fs.readFileSync(file, 'utf8');
+  const displayPath = path.relative(root, file);
+
+  if (!page.includes('"@id":"https://estelledc.github.io/#person"')) {
+    fail(`${displayPath} is missing the canonical Person @id.`);
+  }
+  if (!page.includes('"name":"Jason Xun"')) {
+    fail(`${displayPath} is missing the canonical public author name.`);
+  }
+  if (/#jason\b/i.test(page) || /"name"\s*:\s*"Jason"/.test(page)) {
+    fail(`${displayPath} contains legacy Person identity metadata.`);
+  }
+  if (/\/(?:Users|home)\/(?:jason|bytedance)\b/i.test(page)) {
+    fail(`${displayPath} exposes a machine-specific home-directory path.`);
+  }
 }
 
 const requiredCtas = [

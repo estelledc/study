@@ -206,7 +206,7 @@ Stars 量级为 2025-2026 区间近似值，用于影响力参考；候选门槛
 
 ## 与现有 atlas 的去重确认
 
-已扫过 `/Users/jason/study/src/content/docs/projects/` 下 200 个 slug：
+已扫过 `src/content/docs/projects/` 下 200 个 slug：
 
 - 区块链 / Web3 主题完全空白，bitcoin 仅以 paper 形式收录于 papers 一侧
 - 唯一同名项 `elysia.md` 是 Bun 上的 web 框架，与本文件 60 个 slug 无关

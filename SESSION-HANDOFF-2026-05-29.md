@@ -22,9 +22,9 @@ papers 10000 + projects 10000（用户在最近一次 `/goal` 设定）
 ## 基础设施
 
 - **8 个 worktree**（全部 sync 到 main）：
-  - `/Users/jason/study-refactor-papers` (refactor/papers)
-  - `/Users/jason/study-refactor-papers-2` 到 `-4`
-  - `/Users/jason/study-refactor-projects` 到 `-4`
+  - `$HOME/study-refactor-papers` (refactor/papers)
+  - `$HOME/study-refactor-papers-2` 到 `-4`
+  - `$HOME/study-refactor-projects` 到 `-4`
 - **scripts/regen-atlas.mjs** — 主题分类自动映射 30+ 主题
 - **scripts/regen-backlinks.mjs** — 自动填 ## 反向链接 段
 - **scripts/remark-wikilinks.mjs** — `[[slug]]` → markdown 链接
@@ -99,14 +99,14 @@ papers 10000 + projects 10000（用户在最近一次 `/goal` 设定）
 
 ```bash
 # 看进度
-cd /Users/jason/study
+cd "$HOME/study"
 ls src/content/docs/papers/*.md | wc -l
 ls src/content/docs/projects/*.md | wc -l
 
 # Sync 8 worktree
 for w in study-refactor-papers study-refactor-papers-2 study-refactor-papers-3 study-refactor-papers-4 \
          study-refactor-projects study-refactor-projects-2 study-refactor-projects-3 study-refactor-projects-4; do
-  cd /Users/jason/$w
+  cd "$HOME/$w"
   git -c http.sslVerify=false fetch origin main
   git -c http.sslVerify=false reset --hard origin/main
 done

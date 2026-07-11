@@ -12,8 +12,10 @@ const studyStructuredData = {
   inLanguage: ['zh-CN', 'en'],
   author: {
     '@type': 'Person',
-    name: 'Jason',
-    url: 'https://estelledc.github.io/about/',
+    '@id': 'https://estelledc.github.io/#person',
+    name: 'Jason Xun',
+    url: 'https://estelledc.github.io/',
+    sameAs: ['https://github.com/estelledc'],
   },
 };
 

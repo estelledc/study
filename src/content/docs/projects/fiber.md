@@ -78,7 +78,7 @@ type User struct {
 
 app.Get("/users/:id", func(c fiber.Ctx) error {
     id := c.Params("id")
-    return c.JSON(User{ID: id, Name: "Jason"})
+    return c.JSON(User{ID: id, Name: "Ada"})
 })
 ```
 
@@ -88,7 +88,7 @@ app.Get("/users/:id", func(c fiber.Ctx) error {
 - `c.JSON` 自动设 `Content-Type: application/json` 并把结构体序列化
 - 结构体字段后面的 `` `json:"id"` `` 是 Go 的标签语法，告诉序列化器输出小写 `id`
 
-请求 `curl localhost:3000/users/42` 拿到 `{"id":"42","name":"Jason"}`。
+请求 `curl localhost:3000/users/42` 拿到 `{"id":"42","name":"Ada"}`。
 
 ### 案例 3：中间件链
 
@@ -186,4 +186,3 @@ app.Get("/secret", authMiddleware, func(c fiber.Ctx) error {
 - [[kratos]] —— kratos — Go 微服务一锅出 HTTP 和 gRPC 两份服务
 - [[pocketbase]] —— PocketBase — 一个 Go 二进制就是完整的后端
 - [[spring-boot]] —— Spring Boot — 用 Auto-configuration 把 Java 后端从 XML 地狱里救出来的事实标准框架
-

@@ -41,6 +41,54 @@ head:
   </aside>
 </div>
 
+<section class="study-section study-golden-section" id="golden-paths">
+  <div class="jx-case-question">
+    <p class="jx-case-question__label">Golden paths / 黄金路径</p>
+    <div>
+      <h2 class="jx-case-question__prompt">三条路径，把经典思想、真实实现和一个最小验证放在同一张桌上。</h2>
+      <p class="jx-case-question__context">这些不是“最热门”排行，而是已经出现在首页枢纽与主题路径中的三个可核查入口。每张卡都公开来源和人工审查状态。</p>
+    </div>
+  </div>
+
+<div class="study-golden-grid">
+<article class="study-golden-card">
+<div class="study-golden-card__meta"><span>01 · Runtime boundary</span><span class="jx-source-tag" data-source="external">公开源码 + RFC</span></div>
+<h3>组件究竟该在哪台机器运行？</h3>
+<p class="study-golden-card__thesis">从 Next.js 的真实框架约定，回到 React Server Components 对执行、打包与序列化边界的定义。</p>
+<dl>
+<div><dt>真实项目</dt><dd><a href="/study/projects/next-js/">Next.js</a></dd></div>
+<div><dt>经典材料</dt><dd><a href="/study/papers/react-server-components/">React Server Components RFC</a></dd></div>
+<div><dt>最小验证</dt><dd>画出一个 server 组件包 client 按钮的边界，并解释为什么函数 props 不能跨过去。</dd></div>
+</dl>
+<p class="study-golden-card__review" data-review-state="untracked"><strong>人工审查状态：</strong>首页已精选；逐段事实审校未单独记录，关键结论需回到 RFC 与项目源码。</p>
+</article>
+<article class="study-golden-card">
+<div class="study-golden-card__meta"><span>02 · Agent loop</span><span class="jx-source-tag" data-source="external">公开源码 + 论文</span></div>
+<h3>Agent 为什么要边做、边看、边改？</h3>
+<p class="study-golden-card__thesis">从 Claude Code 的工程循环，对照 ReAct 把 Thought、Action、Observation 组织成可观察轨迹的思想。</p>
+<dl>
+<div><dt>真实项目</dt><dd><a href="/study/projects/claude-code/">Claude Code</a></dd></div>
+<div><dt>经典论文</dt><dd><a href="/study/papers/react-agent/">ReAct</a></dd></div>
+<div><dt>最小验证</dt><dd>取一次真实小任务，写出三轮行动轨迹，并指出哪条 Observation 改变了下一步。</dd></div>
+</dl>
+<p class="study-golden-card__review" data-review-state="untracked"><strong>人工审查状态：</strong>首页已精选；逐段事实审校未单独记录，工具行为应回到当前版本与论文原文。</p>
+</article>
+<article class="study-golden-card">
+<div class="study-golden-card__meta"><span>03 · Consensus</span><span class="jx-source-tag" data-source="external">公开源码 + 论文</span></div>
+<h3>多数派为什么能保住同一本账？</h3>
+<p class="study-golden-card__thesis">从 etcd 的生产型 KV 接口，回到 Raft 对 leader、日志复制和 safety 的拆分。</p>
+<dl>
+<div><dt>真实项目</dt><dd><a href="/study/projects/etcd/">etcd</a></dd></div>
+<div><dt>经典论文</dt><dd><a href="/study/papers/raft-2014/">Raft 2014</a></dd></div>
+<div><dt>最小验证</dt><dd>画 5 个节点的两组多数派，证明任意两个 3 节点集合必有交集，再标出失去多数派时为何必须停写。</dd></div>
+</dl>
+<p class="study-golden-card__review" data-review-state="untracked"><strong>人工审查状态：</strong>首页已精选；逐段事实审校未单独记录，协议细节需回到论文和 etcd 文档。</p>
+</article>
+</div>
+
+  <p class="jx-verification-line">六个站内入口均由当前内容文件生成；构建会继续检查链接，但不会把链接存在等同于人工事实审校。</p>
+</section>
+
 <section class="study-section">
   <h2>先选一条新手路径</h2>
   <p>不要从全量索引的第一条开始读。选一条路线，先完成前三篇，再决定向哪个分支扩展。</p>
