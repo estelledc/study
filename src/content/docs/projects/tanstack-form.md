@@ -12,7 +12,7 @@ TanStack Form 是一个**让你写一份表单校验逻辑、在 React/Vue/Solid
 
 它的"核心"`@tanstack/form-core` 是一段不依赖任何框架的纯 JS 代码，负责管字段值、跑校验、追错误。每种框架再各有一个薄薄的"适配层"`@tanstack/react-form` / `@tanstack/vue-form` 等，把核心结果接到当前框架的渲染机制上。
 
-它和最有名的对手 **react-hook-form**（RHF）的区别：RHF 只能在 React 里用，TanStack Form 跨五个框架。代价是每个字段要多写 3-4 行（必须显式给 `value` / `onChange` / `onBlur` 三件套）。2024-10 发的 v1.0 RC 还引入了 **standardSchema** 接口，让 zod / valibot / arktype 这些校验库可以零成本互换。
+它和最有名的对手 **react-hook-form**（RHF）的区别：RHF 只能在 React 里用，TanStack Form 跨五个框架。代价是每个字段要多写 3-4 行（必须显式给 `value` / `onChange` / `onBlur` 三件套）。2024-10 的 v1 RC 引入了 **standardSchema** 接口；**2025-03-03 官方宣布 v1 stable**，zod / valibot / arktype 可零成本互换。
 
 ## 为什么重要
 
@@ -31,7 +31,7 @@ TanStack Form 的设计可以拆成 **三个支柱**：
 
 2. **显式 selector 订阅**：用 `form.useStore(s => s.values.email)` 主动声明"我只关心 email 字段"。类比：订报纸时只勾"体育版"，别的不送；vs RHF 用 Proxy 自动嗅探读了哪个字段。
 
-3. **standardSchema 接口**：v1.0 RC 引入的统一校验协议。zod / valibot / arktype 都实现这个接口，TanStack Form 直接吃。类比：USB 接口标准化以后，鼠标键盘 U 盘随便插。
+3. **standardSchema 接口**：v1 RC 起引入、v1 stable 沿用的统一校验协议。zod / valibot / arktype 都实现这个接口，TanStack Form 直接吃。类比：USB 接口标准化以后，鼠标键盘 U 盘随便插。
 
 ## 实践案例
 
@@ -68,7 +68,7 @@ function LoginForm() {
 }
 ```
 
-逐部分解释：`useForm` 给你一个 form 对象；`form.Field` 是 render-prop 写法，把当前字段的 state + handler 交给你；`field.handleChange` 触发 store 更新。整段就是显式 controlled 三件套。
+逐部分解释：`useForm` 给你一个 form 对象；`form.Field` 是 render-prop 写法，把当前字段的 state + handler 交给你；`field.handleChange` 触发 store 更新。整段就是显式 controlled 三件套。`password` 字段写法同理（再抄一块 `form.Field name="password"` 即可），上面为省篇幅只展开了 email。
 
 ### 案例 2：跨框架共享 schema
 
@@ -101,7 +101,7 @@ return <button disabled={isSubmitting}>登录</button>;
 
 2. **selector 写错容易订阅过多**：`useStore(s => s)` 直接返回整个 state 等于退化成全表渲染；正确做法是 `useStore(s => s.values.email)` 取最小子集。
 
-3. **v1.0 仍在 RC**：2024-10 的版本号还是 RC，小版本之间偶有 break。生产用要锁版本 + 看 changelog。
+3. **曾长期 RC，现已 stable 仍要锁 major**：2025-03 起 v1 稳定，但 minor/patch 仍可能改 API 细节；生产锁 major + 读 changelog，不要假设「stable = 永不 break」。
 
 4. **standardSchema 兼容性看版本**：必须 zod 4 / valibot 1.0 / arktype 2 这些版本才有原生 standardSchema 实现，老版本 zod 3 还得走 wrapper，类型推导偶尔挂掉。
 
@@ -125,7 +125,8 @@ return <button disabled={isSubmitting}>登录</button>;
 - **2017 年**：Tanner Linsley 开源 react-table，火到成为 React 表格事实标准
 - **2020 年**：react-table v8 改名 TanStack Table，第一次走 framework-agnostic 路线
 - **2023 年 9 月**：TanStack Form v0.1 发布，把同一套架构搬到表单
-- **2024 年 10 月**：v1.0 RC 引入 standardSchema 接口，与 zod 4 / valibot 1.0 同期成熟
+- **2024 年 10 月**：v1 RC 引入 standardSchema，与 zod 4 / valibot 1.0 同期成熟
+- **2025 年 3 月**：官方宣布 TanStack Form **v1 stable**（五框架齐发）
 
 整条路线是同一个商业判断：未来 3-5 年前端框架更分散，跨框架的 state 抽象会成刚需。
 
