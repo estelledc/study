@@ -1,0 +1,148 @@
+{
+  "slug": "sillito-questions",
+  "area": "papers",
+  "status": "refined",
+  "action": "refine",
+  "average": 3.78,
+  "reject_count": 0,
+  "needs_refine_count": 2,
+  "pass_count": 1,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 踩过的坑",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 核心要点",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 实践案例",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "菜谱四步 + 图书馆找书架类比贴合「关注范围由小到大」"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "Cohen's kappa / inductive coding / saturation 首次出现缺白话桥接，零基础会卡在踩坑第 4 条与学到什么第 3 条"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 是 checklist/对照表，可跟；案例 1 可再补一句「每勾一项时实际打开哪个 IDE 视图」"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "四类正确对应 Finding / Building on / Subgraph / Groups；但编号应为 Q1–5 / Q6–20 / Q21–33 / Q34–44（5+15+13+11），文中 Q6–15、Q16–35、Q36–44 与论文不符"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "DOI 应为 10.1109/TSE.2008.26，不是 2008.35；工业场是 16 名程序员（非 25）；「Where is this method called」是 Q12 不是 Q5"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "LaToza & Myers Hard-to-Answer Questions 是 PLATEAU 2010（179 人问卷），不是 ICSE 2007；ICSE 2007 是 Program comprehension as fact finding。Q42/Q43 是 change impact，不是 commit「改了什么」"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "案例 2 的 IDE 功能对照表可跟读；修正 Q 编号后仍可用作导航优先级清单"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：开放列表、类非互斥、lab 低估 Groups、编码者系统性偏差——均可操作对照"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用边界清楚（IDE 优先级 / agent rubric vs ML·嵌入式完整列表 / 非 change task）"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 3,
+        "case_clarity": 4
+      },
+      "average": 4,
+      "verdict": "needs-refine",
+      "weakest_section": "## 踩过的坑",
+      "fix_hints": [
+        "菜谱四步 + 图书馆找书架类比贴合「关注范围由小到大」",
+        "Cohen's kappa / inductive coding / saturation 首次出现缺白话桥接，零基础会卡在踩坑第 4 条与学到什么第 3 条",
+        "案例 1–3 是 checklist/对照表，可跟；案例 1 可再补一句「每勾一项时实际打开哪个 IDE 视图」"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 3,
+        "no_distortion": 4
+      },
+      "average": 3.33,
+      "verdict": "needs-refine",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "四类正确对应 Finding / Building on / Subgraph / Groups；但编号应为 Q1–5 / Q6–20 / Q21–33 / Q34–44（5+15+13+11），文中 Q6–15、Q16–35、Q36–44 与论文不符",
+        "DOI 应为 10.1109/TSE.2008.26，不是 2008.35；工业场是 16 名程序员（非 25）；「Where is this method called」是 Q12 不是 Q5",
+        "LaToza & Myers Hard-to-Answer Questions 是 PLATEAU 2010（179 人问卷），不是 ICSE 2007；ICSE 2007 是 Program comprehension as fact finding。Q42/Q43 是 change impact，不是 commit「改了什么」"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 4,
+        "pitfalls_useful": 4,
+        "scope_correct": 4
+      },
+      "average": 4,
+      "verdict": "pass",
+      "weakest_section": "## 实践案例",
+      "fix_hints": [
+        "案例 2 的 IDE 功能对照表可跟读；修正 Q 编号后仍可用作导航优先级清单",
+        "踩坑具体：开放列表、类非互斥、lab 低估 Groups、编码者系统性偏差——均可操作对照",
+        "适用/不适用边界清楚（IDE 优先级 / agent rubric vs ML·嵌入式完整列表 / 非 change task）"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 3.78,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 2,
+    "all_pass": false,
+    "reason": "修正四类题号为 Q1–5/Q6–20/Q21–33/Q34–44；DOI→2008.26；工业场 N=16；LaToza 改为 PLATEAU 2010；补 kappa 白话桥接。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "修正四类题号为 Q1–5/Q6–20/Q21–33/Q34–44；DOI→2008.26；工业场 N=16；LaToza 改为 PLATEAU 2010；补 kappa 白话桥接。",
+    "sections_modified": [
+      "## 是什么",
+      "## 为什么重要",
+      "## 核心要点",
+      "## 实践案例",
+      "## 踩过的坑",
+      "## 历史小故事（可跳过）",
+      "## 学到什么",
+      "## 延伸阅读"
+    ],
+    "unresolved_hints": [],
+    "round": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 164,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 164,
+  "l1_pass": true
+}

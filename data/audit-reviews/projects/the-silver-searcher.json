@@ -1,0 +1,144 @@
+{
+  "slug": "the-silver-searcher",
+  "area": "projects",
+  "status": "refined",
+  "action": "refine",
+  "average": 4.45,
+  "reject_count": 0,
+  "needs_refine_count": 1,
+  "pass_count": 2,
+  "weakest_sections": [
+    {
+      "reviewer": "zero-base",
+      "section": "## 核心要点",
+      "verdict": "pass"
+    },
+    {
+      "reviewer": "academic",
+      "section": "## 为什么重要",
+      "verdict": "needs-refine"
+    },
+    {
+      "reviewer": "engineer",
+      "section": "## 适用 vs 不适用场景",
+      "verdict": "pass"
+    }
+  ],
+  "fix_hints": [
+    {
+      "reviewer": "zero-base",
+      "hint": "抽屉翻找 + 勿动标签类比贴合多线程与默认跳过 ignore"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "mmap / Boyer-Moore / PCRE JIT 均有复印书页、跳着比对等白话桥接"
+    },
+    {
+      "reviewer": "zero-base",
+      "hint": "案例 1–3 逐部分解释清楚（-G 过滤、vimgrep quickfix、.ignore 语法）"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "来源 github.com/ggreer/the_silver_searcher 正确；mmap / pthreads / Boyer-Moore / PCRE JIT / 尊重 .gitignore 与官方叙事一致；8GB≈3.2s vs ack≈110s 出自 README"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "「2018 年 Rust 写的 ripgrep」不准确：ripgrep 2016-09 首发（BurntSushi 对比文同年）；宜改为 2016"
+    },
+    {
+      "reviewer": "academic",
+      "hint": "关联里「fd —— 同作者生态」有误：fd 作者是 sharkdp，不是 Geoff Greer；应改成互补工具表述。.agignore→.ignore 在 2.0 前后的说法大体正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "ag / vimrc / .ignore 示例可跟做；-G 与 --vimgrep 解释正确"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "踩坑具体：** glob、*.log 前导斜杠、超大单文件 mmap、.agignore silent fail——均可操作"
+    },
+    {
+      "reviewer": "engineer",
+      "hint": "适用/不适用有边界（git 仓搜代码 vs 超大日志 / AST / 已用 rg）；可再点明「多数机器上 rg 已是默认更优选择」"
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "zero-base",
+      "scores": {
+        "analogy": 5,
+        "accessibility": 5,
+        "case_clarity": 5
+      },
+      "average": 5,
+      "verdict": "pass",
+      "weakest_section": "## 核心要点",
+      "fix_hints": [
+        "抽屉翻找 + 勿动标签类比贴合多线程与默认跳过 ignore",
+        "mmap / Boyer-Moore / PCRE JIT 均有复印书页、跳着比对等白话桥接",
+        "案例 1–3 逐部分解释清楚（-G 过滤、vimgrep quickfix、.ignore 语法）"
+      ]
+    },
+    {
+      "reviewer": "academic",
+      "scores": {
+        "fact_accuracy": 3,
+        "citation_correctness": 4,
+        "no_distortion": 4
+      },
+      "average": 3.67,
+      "verdict": "needs-refine",
+      "weakest_section": "## 为什么重要",
+      "fix_hints": [
+        "来源 github.com/ggreer/the_silver_searcher 正确；mmap / pthreads / Boyer-Moore / PCRE JIT / 尊重 .gitignore 与官方叙事一致；8GB≈3.2s vs ack≈110s 出自 README",
+        "「2018 年 Rust 写的 ripgrep」不准确：ripgrep 2016-09 首发（BurntSushi 对比文同年）；宜改为 2016",
+        "关联里「fd —— 同作者生态」有误：fd 作者是 sharkdp，不是 Geoff Greer；应改成互补工具表述。.agignore→.ignore 在 2.0 前后的说法大体正确"
+      ]
+    },
+    {
+      "reviewer": "engineer",
+      "scores": {
+        "code_runnable": 5,
+        "pitfalls_useful": 5,
+        "scope_correct": 4
+      },
+      "average": 4.67,
+      "verdict": "pass",
+      "weakest_section": "## 适用 vs 不适用场景",
+      "fix_hints": [
+        "ag / vimrc / .ignore 示例可跟做；-G 与 --vimgrep 解释正确",
+        "踩坑具体：** glob、*.log 前导斜杠、超大单文件 mmap、.agignore silent fail——均可操作",
+        "适用/不适用有边界（git 仓搜代码 vs 超大日志 / AST / 已用 rg）；可再点明「多数机器上 rg 已是默认更优选择」"
+      ]
+    }
+  ],
+  "aggregate": {
+    "average": 4.45,
+    "verdict": "refine",
+    "action": "refine",
+    "rejects": 0,
+    "needs_refine": 1,
+    "all_pass": false,
+    "reason": "ripgrep 首发改为 2016；fd 作者改为 sharkdp；适用边界补一句 rg 更优。"
+  },
+  "refinement": {
+    "action": "refine",
+    "reason": "ripgrep 首发改为 2016；fd 作者改为 sharkdp；适用边界补一句 rg 更优。",
+    "sections_modified": [
+      "## 为什么重要",
+      "## 适用 vs 不适用场景",
+      "## 历史小故事（可跳过）",
+      "## 关联"
+    ],
+    "unresolved_hints": [],
+    "round": 1
+  },
+  "quality_gate": {
+    "pass": true,
+    "lines": 163,
+    "l1_pass": true,
+    "reasons": []
+  },
+  "lines": 163,
+  "l1_pass": true
+}
